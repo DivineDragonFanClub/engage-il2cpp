@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rectint/RectInt.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RectInt {
-    pub m_x_min: i32,
-    pub m_y_min: i32,
-    pub m_width: i32,
-    pub m_height: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rectint/RectInt.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RectInt{pub m_x_min:i32,pub m_y_min:i32,pub m_width:i32,pub m_height:i32,}
+impl::unity2::ClassIdentity for RectInt{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="RectInt";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RectInt {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "RectInt";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RectInt {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RectInt{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,53 @@ impl ::unity2::IlType for RectInt {
 #[cfg(feature = "unity_engine-rectint-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rectint")]
-impl RectInt { # [doc = "`get_x()` overload"] pub fn get_x (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RectInt , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b690usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: option :: Option :: None) } } } # [doc = "`set_x(i32)` overload"] pub fn set_x (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RectInt , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b6a0usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_y()` overload"] pub fn get_y (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RectInt , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b6b0usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: option :: Option :: None) } } } # [doc = "`set_y(i32)` overload"] pub fn set_y (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RectInt , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b6c0usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_width()` overload"] pub fn get_width (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RectInt , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b6d0usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: option :: Option :: None) } } } # [doc = "`set_width(i32)` overload"] pub fn set_width (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RectInt , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b6e0usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_height()` overload"] pub fn get_height (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RectInt , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b6f0usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: option :: Option :: None) } } } # [doc = "`set_height(i32)` overload"] pub fn set_height (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RectInt , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b700usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32, i32, i32)` overload"] pub fn ctor (& mut self , x_min : impl :: core :: convert :: Into < i32 > , y_min : impl :: core :: convert :: Into < i32 > , width : impl :: core :: convert :: Into < i32 > , height : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RectInt , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b710usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: convert :: Into :: into (x_min) , :: core :: convert :: Into :: into (y_min) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut RectInt , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b720usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rectint::RectInt)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rectint :: RectInt >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RectInt , crate :: unity_engine :: rectint :: RectInt , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7b9b0usize) as * mut u8) ; __inner (self as * mut RectInt , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rectint")]impl RectInt{#[doc="`get_x()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b690usize)as*mut u8,i32;
+(*mut RectInt)self as*mut RectInt)}
+}
+#[doc="`set_x(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b6a0usize)as*mut u8,();
+(*mut RectInt)self as*mut RectInt,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_y()` overload"]pub fn get_y(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b6b0usize)as*mut u8,i32;
+(*mut RectInt)self as*mut RectInt)}
+}
+#[doc="`set_y(i32)` overload"]pub fn set_y(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b6c0usize)as*mut u8,();
+(*mut RectInt)self as*mut RectInt,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_width()` overload"]pub fn get_width(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b6d0usize)as*mut u8,i32;
+(*mut RectInt)self as*mut RectInt)}
+}
+#[doc="`set_width(i32)` overload"]pub fn set_width(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b6e0usize)as*mut u8,();
+(*mut RectInt)self as*mut RectInt,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_height()` overload"]pub fn get_height(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b6f0usize)as*mut u8,i32;
+(*mut RectInt)self as*mut RectInt)}
+}
+#[doc="`set_height(i32)` overload"]pub fn set_height(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b700usize)as*mut u8,();
+(*mut RectInt)self as*mut RectInt,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32, i32, i32, i32)` overload"]pub fn ctor(&mut self,x_min:impl::core::convert::Into<i32> ,y_min:impl::core::convert::Into<i32> ,width:impl::core::convert::Into<i32> ,height:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b710usize)as*mut u8,();
+(*mut RectInt)self as*mut RectInt,(i32)::core::convert::Into::into(x_min),(i32)::core::convert::Into::into(y_min),(i32)::core::convert::Into::into(width),(i32)::core::convert::Into::into(height))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b720usize)as*mut u8, ::unity2::Il2CppString;
+(*mut RectInt)self as*mut RectInt)}
+}
+#[doc="`Equals(crate::unity_engine::rectint::RectInt)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rectint::RectInt>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7b9b0usize)as*mut u8,bool;
+(*mut RectInt)self as*mut RectInt,(crate::unity_engine::rectint::RectInt)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-rectint")]
-impl RectInt { pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RectInt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="unity_engine-rectint")]impl RectInt{pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
 #[cfg(feature = "unity_engine-rectint")]
 #[doc(hidden)]

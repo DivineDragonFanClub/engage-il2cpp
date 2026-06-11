@@ -4,84 +4,133 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialMenuItem.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MaterialMenuItem_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materialmenuitem/MaterialMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="MaterialMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MaterialMenuItem_SelectEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_SelectEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialMenuItem.SelectEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MaterialMenuItem_SelectEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materialmenuitem/MaterialMenuItem_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MaterialMenuItem.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MaterialMenuItem_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MaterialMenuItem {
-# [offset (112)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler ,
-# [offset (120)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materialmenuitem/MaterialMenuItem.md"))]#[::unity2::class(namespace="App",name="MaterialMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MaterialMenuItem{#[offset(112)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-materialmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-materialmenuitem")]
-pub trait IMaterialMenuItem_DecideEventHandlerMethods : IMaterialMenuItem_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < MaterialMenuItem_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208d590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Il2CppString)` overload"] fn invoke (self , material_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MaterialMenuItem_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem_DecideEventHandler , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208d5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (material_id) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-materialmenuitem")]
-impl < __T : IMaterialMenuItem_DecideEventHandler > IMaterialMenuItem_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MaterialMenuItem_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IMaterialMenuItem_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-materialmenuitem")]pub trait IMaterialMenuItem_SelectEventHandlerMethods:IMaterialMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MaterialMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d950usize)as*mut u8,();
+(MaterialMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,material_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MaterialMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d970usize)as*mut u8,();
+(MaterialMenuItem_SelectEventHandler)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_id))}
+}
 }
 
-#[cfg(feature = "app-materialmenuitem")]
-pub trait IMaterialMenuItem_SelectEventHandlerMethods : IMaterialMenuItem_SelectEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < MaterialMenuItem_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem_SelectEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208d950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Il2CppString)` overload"] fn invoke (self , material_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MaterialMenuItem_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem_SelectEventHandler , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208d970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (material_id) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-materialmenuitem")]impl<__T:IMaterialMenuItem_SelectEventHandler>IMaterialMenuItem_SelectEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-materialmenuitem")]
-impl < __T : IMaterialMenuItem_SelectEventHandler > IMaterialMenuItem_SelectEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem_SelectEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem_SelectEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MaterialMenuItem_SelectEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IMaterialMenuItem_SelectEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-materialmenuitem")]
-pub trait IMaterialMenuItemMethods : IMaterialMenuItem { # [doc = "`get_m_ItemRefineExchangeData()` overload"] fn get_m_item_refine_exchange_data (self ,) -> crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData { unsafe { let __receiver = < MaterialMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_ItemRefineExchangeData(crate::app::itemrefineexchangedata::ItemRefineExchangeData)` overload"] fn set_m_item_refine_exchange_data (self , value : impl :: core :: convert :: Into < crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData >) -> () { unsafe { let __receiver = < MaterialMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem , crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)` overload"] fn ctor (self , item_refine_exchange_data : impl :: core :: convert :: Into < crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler >) -> () { unsafe { let __receiver = < MaterialMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem , crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData , crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler , crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca0f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item_refine_exchange_data) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MaterialMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSelectEventHandler(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)` overload"] fn set_select_event_handler (self , select_event_handler : impl :: core :: convert :: Into < crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler >) -> () { unsafe { let __receiver = < MaterialMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem , crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (select_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MaterialMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MaterialMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialMenuItem_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IMaterialMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-materialmenuitem")]
-impl < __T : IMaterialMenuItem > IMaterialMenuItemMethods for __T { }
+#[cfg(feature="app-materialmenuitem")]pub trait IMaterialMenuItem_DecideEventHandlerMethods:IMaterialMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MaterialMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d590usize)as*mut u8,();
+(MaterialMenuItem_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,material_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MaterialMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d5b0usize)as*mut u8,();
+(MaterialMenuItem_DecideEventHandler)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_id))}
+}
+}
 
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem { pub fn get_m_item_refine_exchange_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_item_refine_exchange_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_select_event_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-materialmenuitem")]impl<__T:IMaterialMenuItem_DecideEventHandler>IMaterialMenuItem_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem {
-# [doc = "`.ctor(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)` — overload selector"] pub fn new (item_refine_exchange_data : crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData , select_event_handler : crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler , decide_event_handler : crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MaterialMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMaterialMenuItemMethods > :: ctor (this , item_refine_exchange_data , select_event_handler , decide_event_handler) ; this }
+#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialMenuItem_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IMaterialMenuItem_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-materialmenuitem")]pub trait IMaterialMenuItemMethods:IMaterialMenuItem{#[doc="`get_m_ItemRefineExchangeData()` overload"]fn get_m_item_refine_exchange_data(self,)->crate::app::itemrefineexchangedata::ItemRefineExchangeData{unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca0d0usize)as*mut u8,crate::app::itemrefineexchangedata::ItemRefineExchangeData;
+(MaterialMenuItem)__receiver)}
+}
+#[doc="`set_m_ItemRefineExchangeData(crate::app::itemrefineexchangedata::ItemRefineExchangeData)` overload"]fn set_m_item_refine_exchange_data(self,value:impl::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData>)->(){unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca0e0usize)as*mut u8,();
+(MaterialMenuItem)__receiver,(crate::app::itemrefineexchangedata::ItemRefineExchangeData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)` overload"]fn ctor(self,item_refine_exchange_data:impl::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData> ,select_event_handler:impl::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler>)->(){unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca0f0usize)as*mut u8,();
+(MaterialMenuItem)__receiver,(crate::app::itemrefineexchangedata::ItemRefineExchangeData)::core::convert::Into::into(item_refine_exchange_data),(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca160usize)as*mut u8, ::unity2::Il2CppString;
+(MaterialMenuItem)__receiver)}
+}
+#[doc="`SetSelectEventHandler(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)` overload"]fn set_select_event_handler(self,select_event_handler:impl::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler>)->(){unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca170usize)as*mut u8,();
+(MaterialMenuItem)__receiver,(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca180usize)as*mut u8,();
+(MaterialMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca1d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MaterialMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-materialmenuitem")]impl<__T:IMaterialMenuItem>IMaterialMenuItemMethods for __T{}
+
+#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem{pub fn get_m_item_refine_exchange_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_item_refine_exchange_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_select_event_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem{#[doc="`.ctor(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)` — overload selector"]pub fn new(item_refine_exchange_data:crate::app::itemrefineexchangedata::ItemRefineExchangeData,select_event_handler:crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,decide_event_handler:crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialMenuItem), ::core::stringify!(new),));
+ <Self as IMaterialMenuItemMethods> ::ctor(this,item_refine_exchange_data,select_event_handler,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-materialmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MaterialMenuItem_DecideEventHandler;
-    pub use super::IMaterialMenuItem_DecideEventHandler;
-    pub use super::IMaterialMenuItem_DecideEventHandlerMethods;
     pub use super::MaterialMenuItem_SelectEventHandler;
     pub use super::IMaterialMenuItem_SelectEventHandler;
     pub use super::IMaterialMenuItem_SelectEventHandlerMethods;
+    pub use super::MaterialMenuItem_DecideEventHandler;
+    pub use super::IMaterialMenuItem_DecideEventHandler;
+    pub use super::IMaterialMenuItem_DecideEventHandlerMethods;
     pub use super::MaterialMenuItem;
     pub use super::IMaterialMenuItem;
     pub use super::IMaterialMenuItemMethods;

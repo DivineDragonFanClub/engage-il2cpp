@@ -4,43 +4,249 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: moon_sharp :: interpreter :: interpreterexception :: { IInterpreterException , InterpreterException }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::moon_sharp::interpreter::interpreterexception::{IInterpreterException,InterpreterException}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/syntaxerrorexception/SyntaxErrorException.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "SyntaxErrorException")] # [parent (crate :: moon_sharp :: interpreter :: interpreterexception :: InterpreterException)] pub struct SyntaxErrorException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/syntaxerrorexception/SyntaxErrorException.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="SyntaxErrorException")]#[parent(crate::moon_sharp::interpreter::interpreterexception::InterpreterException)]pub struct SyntaxErrorException{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SyntaxErrorException_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_token { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , "get_Token" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , "get_Token" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_token { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , "set_Token" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , "set_Token" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_to_line { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , "get_ToLine" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , "get_ToLine" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_from_line { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , "get_FromLine" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , "get_FromLine" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_premature_stream_termination { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , "get_IsPrematureStreamTermination" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , "get_IsPrematureStreamTermination" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_premature_stream_termination { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , "set_IsPrematureStreamTermination" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , "set_IsPrematureStreamTermination" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_4 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_5 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: syntaxerrorexception :: SyntaxErrorException as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_decorate_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , "DecorateMessage" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , "DecorateMessage" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_rethrow { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () , "Rethrow" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SyntaxErrorException as :: unity2 :: ClassIdentity > :: NAME , "Rethrow" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-syntaxerrorexception")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SyntaxErrorException_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_token{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),"get_Token",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,"get_Token",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_token{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::token::Token as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),"set_Token",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,"set_Token",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_to_line{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),"get_ToLine",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,"get_ToLine",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_from_line{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),"get_FromLine",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,"get_FromLine",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_is_premature_stream_termination{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),"get_IsPrematureStreamTermination",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,"get_IsPrematureStreamTermination",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_is_premature_stream_termination{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),"set_IsPrematureStreamTermination",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,"set_IsPrematureStreamTermination",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::token::Token as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::system::object::Object>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::token::Token as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_3{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::system::object::Object>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),".ctor",4,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_4{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_5{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_decorate_message{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),"DecorateMessage",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,"DecorateMessage",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_rethrow{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SyntaxErrorException as::unity2::ClassIdentity> ::class(),"Rethrow",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SyntaxErrorException as::unity2::ClassIdentity> ::NAME,"Rethrow",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
-pub trait ISyntaxErrorExceptionMethods : ISyntaxErrorException { # [doc = "`get_Token()` overload"] fn get_token (self ,) -> crate :: moon_sharp :: interpreter :: tree :: token :: Token { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tree :: token :: Token = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_get_token :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Token(crate::moon_sharp::interpreter::tree::token::Token)` overload"] fn set_token (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token >) -> () { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , crate :: moon_sharp :: interpreter :: tree :: token :: Token , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_set_token :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ToLine()` overload"] fn get_to_line (self ,) -> i32 { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_get_to_line :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FromLine()` overload"] fn get_from_line (self ,) -> i32 { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_get_from_line :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPrematureStreamTermination()` overload"] fn get_is_premature_stream_termination (self ,) -> bool { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_get_is_premature_stream_termination :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsPrematureStreamTermination(bool)` overload"] fn set_is_premature_stream_termination (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_set_is_premature_stream_termination :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn ctor (self , t : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token > , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , crate :: moon_sharp :: interpreter :: tree :: token :: Token , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (format) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString)` overload"] fn ctor_2 (self , t : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token > , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , crate :: moon_sharp :: interpreter :: tree :: token :: Token , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_ctor_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn ctor_3 (self , script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , sref : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef > , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , crate :: moon_sharp :: interpreter :: script :: Script , crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_ctor_3 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (script) , :: core :: convert :: Into :: into (sref) , :: core :: convert :: Into :: into (format) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString)` overload"] fn ctor_4 (self , script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , sref : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef > , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , crate :: moon_sharp :: interpreter :: script :: Script , crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_ctor_4 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (script) , :: core :: convert :: Into :: into (sref) , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException)` overload"] fn ctor_5 (self , syntax_error_exception : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: syntaxerrorexception :: SyntaxErrorException >) -> () { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , crate :: moon_sharp :: interpreter :: syntaxerrorexception :: SyntaxErrorException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_ctor_5 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (syntax_error_exception) , :: core :: option :: Option :: None) } } } # [doc = "`DecorateMessage(crate::moon_sharp::interpreter::script::Script)` overload"] fn decorate_message (self , script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script >) -> () { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , crate :: moon_sharp :: interpreter :: script :: Script , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_decorate_message :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (script) , :: core :: option :: Option :: None) } } } # [doc = "`Rethrow()` overload"] fn rethrow (self ,) -> () { unsafe { let __receiver = < SyntaxErrorException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyntaxErrorException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SyntaxErrorException_unity2_raw :: __lookup_rethrow :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-syntaxerrorexception")]pub trait ISyntaxErrorExceptionMethods:ISyntaxErrorException{#[doc="`get_Token()` overload"]fn get_token(self,)->crate::moon_sharp::interpreter::tree::token::Token{unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_get_token::get_method_info().method_ptr,crate::moon_sharp::interpreter::tree::token::Token;
+(SyntaxErrorException)__receiver)}
+}
+#[doc="`set_Token(crate::moon_sharp::interpreter::tree::token::Token)` overload"]fn set_token(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>)->(){unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_set_token::get_method_info().method_ptr,();
+(SyntaxErrorException)__receiver,(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(value))}
+}
+#[doc="`get_ToLine()` overload"]fn get_to_line(self,)->i32{unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_get_to_line::get_method_info().method_ptr,i32;
+(SyntaxErrorException)__receiver)}
+}
+#[doc="`get_FromLine()` overload"]fn get_from_line(self,)->i32{unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_get_from_line::get_method_info().method_ptr,i32;
+(SyntaxErrorException)__receiver)}
+}
+#[doc="`get_IsPrematureStreamTermination()` overload"]fn get_is_premature_stream_termination(self,)->bool{unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_get_is_premature_stream_termination::get_method_info().method_ptr,bool;
+(SyntaxErrorException)__receiver)}
+}
+#[doc="`set_IsPrematureStreamTermination(bool)` overload"]fn set_is_premature_stream_termination(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_set_is_premature_stream_termination::get_method_info().method_ptr,();
+(SyntaxErrorException)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn ctor(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(SyntaxErrorException)__receiver,(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(t),(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString)` overload"]fn ctor_2(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_ctor_2::get_method_info().method_ptr,();
+(SyntaxErrorException)__receiver,(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(t),(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn ctor_3(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,sref:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_ctor_3::get_method_info().method_ptr,();
+(SyntaxErrorException)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)::core::convert::Into::into(sref),(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString)` overload"]fn ctor_4(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,sref:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_ctor_4::get_method_info().method_ptr,();
+(SyntaxErrorException)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)::core::convert::Into::into(sref),(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException)` overload"]fn ctor_5(self,syntax_error_exception:impl::core::convert::Into<crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException>)->(){unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_ctor_5::get_method_info().method_ptr,();
+(SyntaxErrorException)__receiver,(crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException)::core::convert::Into::into(syntax_error_exception))}
+}
+#[doc="`DecorateMessage(crate::moon_sharp::interpreter::script::Script)` overload"]fn decorate_message(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script>)->(){unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_decorate_message::get_method_info().method_ptr,();
+(SyntaxErrorException)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script))}
+}
+#[doc="`Rethrow()` overload"]fn rethrow(self,)->(){unsafe{let __receiver= <SyntaxErrorException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SyntaxErrorException_unity2_raw::__lookup_rethrow::get_method_info().method_ptr,();
+(SyntaxErrorException)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
-impl < __T : ISyntaxErrorException > ISyntaxErrorExceptionMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-syntaxerrorexception")]impl<__T:ISyntaxErrorException>ISyntaxErrorExceptionMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
-impl SyntaxErrorException { pub fn get_token_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_token_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_to_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_from_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_premature_stream_termination_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_is_premature_stream_termination_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn decorate_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn rethrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyntaxErrorException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="moon_sharp-interpreter-syntaxerrorexception")]impl SyntaxErrorException{pub fn get_token_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_token_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_to_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_from_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_premature_stream_termination_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_is_premature_stream_termination_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn decorate_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn rethrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
-impl SyntaxErrorException {
-# [doc = "`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"] pub fn new (t : crate :: moon_sharp :: interpreter :: tree :: token :: Token , format : :: unity2 :: Il2CppString , args : :: unity2 :: Array < crate :: system :: object :: Object >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SyntaxErrorException) , :: core :: stringify ! (new) ,)) ; < Self as ISyntaxErrorExceptionMethods > :: ctor (this , t , format , args) ; this }
-
-# [doc = "`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString)` — overload selector"] pub fn new_2 (t : crate :: moon_sharp :: interpreter :: tree :: token :: Token , message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SyntaxErrorException) , :: core :: stringify ! (new_2) ,)) ; < Self as ISyntaxErrorExceptionMethods > :: ctor_2 (this , t , message) ; this }
-
-# [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"] pub fn new_3 (script : crate :: moon_sharp :: interpreter :: script :: Script , sref : crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef , format : :: unity2 :: Il2CppString , args : :: unity2 :: Array < crate :: system :: object :: Object >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SyntaxErrorException) , :: core :: stringify ! (new_3) ,)) ; < Self as ISyntaxErrorExceptionMethods > :: ctor_3 (this , script , sref , format , args) ; this }
-
-# [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString)` — overload selector"] pub fn new_4 (script : crate :: moon_sharp :: interpreter :: script :: Script , sref : crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef , message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SyntaxErrorException) , :: core :: stringify ! (new_4) ,)) ; < Self as ISyntaxErrorExceptionMethods > :: ctor_4 (this , script , sref , message) ; this }
-
-# [doc = "`.ctor(crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException)` — overload selector"] pub fn new_5 (syntax_error_exception : crate :: moon_sharp :: interpreter :: syntaxerrorexception :: SyntaxErrorException) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SyntaxErrorException) , :: core :: stringify ! (new_5) ,)) ; < Self as ISyntaxErrorExceptionMethods > :: ctor_5 (this , syntax_error_exception) ; this }
+#[cfg(feature="moon_sharp-interpreter-syntaxerrorexception")]impl SyntaxErrorException{#[doc="`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"]pub fn new(t:crate::moon_sharp::interpreter::tree::token::Token,format: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SyntaxErrorException), ::core::stringify!(new),));
+ <Self as ISyntaxErrorExceptionMethods> ::ctor(this,t,format,args);
+this}
+#[doc="`.ctor(crate::moon_sharp::interpreter::tree::token::Token, ::unity2::Il2CppString)` — overload selector"]pub fn new_2(t:crate::moon_sharp::interpreter::tree::token::Token,message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SyntaxErrorException), ::core::stringify!(new_2),));
+ <Self as ISyntaxErrorExceptionMethods> ::ctor_2(this,t,message);
+this}
+#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"]pub fn new_3(script:crate::moon_sharp::interpreter::script::Script,sref:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,format: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SyntaxErrorException), ::core::stringify!(new_3),));
+ <Self as ISyntaxErrorExceptionMethods> ::ctor_3(this,script,sref,format,args);
+this}
+#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::Il2CppString)` — overload selector"]pub fn new_4(script:crate::moon_sharp::interpreter::script::Script,sref:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SyntaxErrorException), ::core::stringify!(new_4),));
+ <Self as ISyntaxErrorExceptionMethods> ::ctor_4(this,script,sref,message);
+this}
+#[doc="`.ctor(crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException)` — overload selector"]pub fn new_5(syntax_error_exception:crate::moon_sharp::interpreter::syntaxerrorexception::SyntaxErrorException)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SyntaxErrorException), ::core::stringify!(new_5),));
+ <Self as ISyntaxErrorExceptionMethods> ::ctor_5(this,syntax_error_exception);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]

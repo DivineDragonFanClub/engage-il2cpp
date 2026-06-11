@@ -4,35 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsignaltrack/MagicSignalTrack.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "MagicSignalTrack")] # [parent (crate :: system :: object :: Object)] pub struct MagicSignalTrack {
-# [offset (16)] # [rename (name = "m_Title")] pub m_title : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Help")] pub m_help : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_IsSubBullet")] pub m_is_sub_bullet : bool ,
-# [offset (40)] # [rename (name = "Signals")] pub signals : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: magicsignal :: MagicSignal > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/magicsignaltrack/MagicSignalTrack.md"))]#[::unity2::class(namespace="Combat",name="MagicSignalTrack")]#[parent(crate::system::object::Object)]pub struct MagicSignalTrack{#[offset(16)]#[rename(name="m_Title")]pub m_title: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Help")]pub m_help: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_IsSubBullet")]pub m_is_sub_bullet:bool, #[offset(40)]#[rename(name="Signals")]pub signals:crate::system::collections::generic::list_1::List_1<crate::combat::magicsignal::MagicSignal> ,}
 
 }
 
 #[cfg(feature = "combat-magicsignaltrack-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-magicsignaltrack")]
-pub trait IMagicSignalTrackMethods : IMagicSignalTrack { # [doc = "`get_EndTime()` overload"] fn get_end_time (self ,) -> f32 { unsafe { let __receiver = < MagicSignalTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTrack , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EndTime(f32)` overload"] fn set_end_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MagicSignalTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTrack , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"] fn ctor (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , help : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_sub_bullet : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MagicSignalTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTrack , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf2ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (title) , :: core :: convert :: Into :: into (help) , :: core :: convert :: Into :: into (is_sub_bullet) , :: core :: option :: Option :: None) } } } # [doc = "`Find(crate::combat::magiccommand::MagicCommand)` overload"] fn find (self , cmd : impl :: core :: convert :: Into < crate :: combat :: magiccommand :: MagicCommand >) -> crate :: combat :: magicsignal :: MagicSignal { unsafe { let __receiver = < MagicSignalTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSignalTrack , crate :: combat :: magiccommand :: MagicCommand , :: unity2 :: OptionalMethod ,) -> crate :: combat :: magicsignal :: MagicSignal = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf5ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-magicsignaltrack")]pub trait IMagicSignalTrackMethods:IMagicSignalTrack{#[doc="`get_EndTime()` overload"]fn get_end_time(self,)->f32{unsafe{let __receiver= <MagicSignalTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5a90usize)as*mut u8,f32;
+(MagicSignalTrack)__receiver)}
+}
+#[doc="`set_EndTime(f32)` overload"]fn set_end_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MagicSignalTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5aa0usize)as*mut u8,();
+(MagicSignalTrack)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]fn ctor(self,title:impl::core::convert::Into< ::unity2::Il2CppString> ,help:impl::core::convert::Into< ::unity2::Il2CppString> ,is_sub_bullet:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MagicSignalTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf2ca0usize)as*mut u8,();
+(MagicSignalTrack)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title),(::unity2::Il2CppString)::core::convert::Into::into(help),(bool)::core::convert::Into::into(is_sub_bullet))}
+}
+#[doc="`Find(crate::combat::magiccommand::MagicCommand)` overload"]fn find(self,cmd:impl::core::convert::Into<crate::combat::magiccommand::MagicCommand>)->crate::combat::magicsignal::MagicSignal{unsafe{let __receiver= <MagicSignalTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf5ab0usize)as*mut u8,crate::combat::magicsignal::MagicSignal;
+(MagicSignalTrack)__receiver,(crate::combat::magiccommand::MagicCommand)::core::convert::Into::into(cmd))}
+}
+}
 
-#[cfg(feature = "combat-magicsignaltrack")]
-impl < __T : IMagicSignalTrack > IMagicSignalTrackMethods for __T { }
+#[cfg(feature="combat-magicsignaltrack")]impl<__T:IMagicSignalTrack>IMagicSignalTrackMethods for __T{}
 
-#[cfg(feature = "combat-magicsignaltrack")]
-impl MagicSignalTrack { pub fn get_end_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_end_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn find_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSignalTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-magicsignaltrack")]impl MagicSignalTrack{pub fn get_end_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_end_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn find_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-magicsignaltrack")]
-impl MagicSignalTrack {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` — overload selector"] pub fn new (title : :: unity2 :: Il2CppString , help : :: unity2 :: Il2CppString , is_sub_bullet : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MagicSignalTrack) , :: core :: stringify ! (new) ,)) ; < Self as IMagicSignalTrackMethods > :: ctor (this , title , help , is_sub_bullet) ; this }
+#[cfg(feature="combat-magicsignaltrack")]impl MagicSignalTrack{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` — overload selector"]pub fn new(title: ::unity2::Il2CppString,help: ::unity2::Il2CppString,is_sub_bullet:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MagicSignalTrack), ::core::stringify!(new),));
+ <Self as IMagicSignalTrackMethods> ::ctor(this,title,help,is_sub_bullet);
+this}
 }
 
 #[cfg(feature = "combat-magicsignaltrack")]

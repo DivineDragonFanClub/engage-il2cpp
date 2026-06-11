@@ -4,40 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akearlyreflections/AkEarlyReflections.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEarlyReflections")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkEarlyReflections {
-# [offset (32)] # [rename (name = "reflectionsVolume")] pub reflections_volume : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akearlyreflections/AkEarlyReflections.md"))]#[::unity2::class(namespace="",name="AkEarlyReflections")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkEarlyReflections{#[offset(32)]#[rename(name="reflectionsVolume")]pub reflections_volume:f32,}
 
 }
 
 #[cfg(feature = "root-akearlyreflections-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akearlyreflections")]
-pub trait IAkEarlyReflectionsMethods : IAkEarlyReflections { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkEarlyReflections as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEarlyReflections , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f19600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetEarlyReflectionsVolume(f32)` overload"] fn set_early_reflections_volume (self , volume : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkEarlyReflections as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEarlyReflections , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f196e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (volume) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEarlyReflections as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEarlyReflections , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f19780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akearlyreflections")]pub trait IAkEarlyReflectionsMethods:IAkEarlyReflections{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkEarlyReflections as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f19600usize)as*mut u8,();
+(AkEarlyReflections)__receiver)}
+}
+#[doc="`SetEarlyReflectionsVolume(f32)` overload"]fn set_early_reflections_volume(self,volume:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkEarlyReflections as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f196e0usize)as*mut u8,();
+(AkEarlyReflections)__receiver,(f32)::core::convert::Into::into(volume))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEarlyReflections as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f19780usize)as*mut u8,();
+(AkEarlyReflections)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akearlyreflections")]
-impl < __T : IAkEarlyReflections > IAkEarlyReflectionsMethods for __T { }
+#[cfg(feature="root-akearlyreflections")]impl<__T:IAkEarlyReflections>IAkEarlyReflectionsMethods for __T{}
 
-#[cfg(feature = "root-akearlyreflections")]
-impl AkEarlyReflections { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEarlyReflections as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_early_reflections_volume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEarlyReflections as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEarlyReflections as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-akearlyreflections")]impl AkEarlyReflections{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_early_reflections_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-akearlyreflections")]
-impl AkEarlyReflections {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEarlyReflections) , :: core :: stringify ! (new) ,)) ; < Self as IAkEarlyReflectionsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akearlyreflections")]impl AkEarlyReflections{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEarlyReflections), ::core::stringify!(new),));
+ <Self as IAkEarlyReflectionsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akearlyreflections")]

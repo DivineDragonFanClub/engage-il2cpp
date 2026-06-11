@@ -4,23 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/zoneut/ZoneUt.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ZoneUt")] # [parent (crate :: system :: object :: Object)] pub struct ZoneUt {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/zoneut/ZoneUt.md"))]#[::unity2::class(namespace="Combat",name="ZoneUt")]#[parent(crate::system::object::Object)]pub struct ZoneUt{}
 
 }
 
 #[cfg(feature = "combat-zoneut-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-zoneut")]
-impl ZoneUt { # [doc = "`Select(i32, i32)` overload"] pub fn select (zone : impl :: core :: convert :: Into < i32 > , last_index : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29405b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (zone) , :: core :: convert :: Into :: into (last_index) , :: core :: option :: Option :: None) } } } # [doc = "`IndexToRad(i32)` overload"] pub fn index_to_rad (zone_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2940870usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (zone_index) , :: core :: option :: Option :: None) } } } # [doc = "`Reverse(i32)` overload"] pub fn reverse (zone : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2940890usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (zone) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-zoneut")]impl ZoneUt{#[doc="`Select(i32, i32)` overload"]pub fn select(zone:impl::core::convert::Into<i32> ,last_index:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29405b0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(zone),(i32)::core::convert::Into::into(last_index))}
+}
+#[doc="`IndexToRad(i32)` overload"]pub fn index_to_rad(zone_index:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2940870usize)as*mut u8,f32;
+(i32)::core::convert::Into::into(zone_index))}
+}
+#[doc="`Reverse(i32)` overload"]pub fn reverse(zone:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2940890usize)as*mut u8,f32;
+(i32)::core::convert::Into::into(zone))}
+}
+}
 
-#[cfg(feature = "combat-zoneut")]
-impl ZoneUt { pub fn select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ZoneUt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn index_to_rad_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ZoneUt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ZoneUt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-zoneut")]impl ZoneUt{pub fn select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn index_to_rad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "combat-zoneut")]
 #[doc(hidden)]

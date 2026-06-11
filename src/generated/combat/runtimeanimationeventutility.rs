@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/runtimeanimationeventutility/RuntimeAnimationEventUtility.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "RuntimeAnimationEventUtility")] # [parent (crate :: system :: object :: Object)] pub struct RuntimeAnimationEventUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/runtimeanimationeventutility/RuntimeAnimationEventUtility.md"))]#[::unity2::class(namespace="Combat",name="RuntimeAnimationEventUtility")]#[parent(crate::system::object::Object)]pub struct RuntimeAnimationEventUtility{}
 
 }
 
 #[cfg(feature = "combat-runtimeanimationeventutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-runtimeanimationeventutility")]
-impl RuntimeAnimationEventUtility { # [doc = "`FindByName(::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>, ::unity2::Il2CppString)` overload"] pub fn find_by_name (events : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: animationevent :: AnimationEvent > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: animationevent :: AnimationEvent { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: animationevent :: AnimationEvent > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationevent :: AnimationEvent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3820usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (events) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-runtimeanimationeventutility")]impl RuntimeAnimationEventUtility{#[doc="`FindByName(::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>, ::unity2::Il2CppString)` overload"]pub fn find_by_name(events:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent> > ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::animationevent::AnimationEvent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3820usize)as*mut u8,crate::unity_engine::animationevent::AnimationEvent;
+(::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>)::core::convert::Into::into(events),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "combat-runtimeanimationeventutility")]
-impl RuntimeAnimationEventUtility { pub fn find_by_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeAnimationEventUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-runtimeanimationeventutility")]impl RuntimeAnimationEventUtility{pub fn find_by_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-runtimeanimationeventutility")]
 #[doc(hidden)]

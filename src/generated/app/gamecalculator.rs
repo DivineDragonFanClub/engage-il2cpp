@@ -4,38 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatormanager :: { CalculatorManager , ICalculatorManager }
- ;
- use crate :: app :: calculatorutil :: { CalculatorUtil , ICalculatorUtil }
- ;
- use crate :: app :: systemcalculator :: { ISystemCalculator , SystemCalculator }
- ;
- use crate :: app :: systemcalculatorinstance_1 :: { ISystemCalculatorInstance_1 , SystemCalculatorInstance_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatormanager::{CalculatorManager,ICalculatorManager}
+;
+use crate::app::calculatorutil::{CalculatorUtil,ICalculatorUtil}
+;
+use crate::app::systemcalculator::{ISystemCalculator,SystemCalculator}
+;
+use crate::app::systemcalculatorinstance_1::{ISystemCalculatorInstance_1,SystemCalculatorInstance_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamecalculator/GameCalculator.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameCalculator")] # [parent (crate :: app :: systemcalculatorinstance_1 :: SystemCalculatorInstance_1 < crate :: app :: gamecalculator :: GameCalculator >)] pub struct GameCalculator {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamecalculator/GameCalculator.md"))]#[::unity2::class(namespace="App",name="GameCalculator")]#[parent(crate::app::systemcalculatorinstance_1::SystemCalculatorInstance_1<crate::app::gamecalculator::GameCalculator>)]pub struct GameCalculator{}
 
 }
 
 #[cfg(feature = "app-gamecalculator-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gamecalculator")]
-pub trait IGameCalculatorMethods : IGameCalculator { fn add_command_with_reverse < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< GameCalculator as :: unity2 :: ClassIdentity > :: class () , "AddCommandWithReverse" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < GameCalculator as :: unity2 :: ClassIdentity > :: NAME , "AddCommandWithReverse" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < GameCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (GameCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2278420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gamecalculator")]pub trait IGameCalculatorMethods:IGameCalculator{fn add_command_with_reverse<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<GameCalculator as::unity2::ClassIdentity> ::class(),"AddCommandWithReverse",0,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <GameCalculator as::unity2::ClassIdentity> ::NAME,"AddCommandWithReverse",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <GameCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(GameCalculator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2278420usize)as*mut u8,();
+(GameCalculator)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gamecalculator")]
-impl < __T : IGameCalculator > IGameCalculatorMethods for __T { }
+#[cfg(feature="app-gamecalculator")]impl<__T:IGameCalculator>IGameCalculatorMethods for __T{}
 
-#[cfg(feature = "app-gamecalculator")]
-impl GameCalculator { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-gamecalculator")]impl GameCalculator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-gamecalculator")]
-impl GameCalculator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameCalculator) , :: core :: stringify ! (new) ,)) ; < Self as IGameCalculatorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gamecalculator")]impl GameCalculator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameCalculator), ::core::stringify!(new),));
+ <Self as IGameCalculatorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gamecalculator")]

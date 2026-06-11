@@ -4,30 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/staticaccessorattribute/StaticAccessorAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "StaticAccessorAttribute")] pub struct StaticAccessorAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/staticaccessorattribute/StaticAccessorAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="StaticAccessorAttribute")]pub struct StaticAccessorAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-staticaccessorattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-staticaccessorattribute")]
-pub trait IStaticAccessorAttributeMethods : IStaticAccessorAttribute { # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StaticAccessorAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StaticAccessorAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_Type(crate::unity_engine::bindings::staticaccessortype::StaticAccessorType)` overload"] fn set_type (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: bindings :: staticaccessortype :: StaticAccessorType >) -> () { unsafe { let __receiver = < StaticAccessorAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StaticAccessorAttribute , crate :: unity_engine :: bindings :: staticaccessortype :: StaticAccessorType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f385a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StaticAccessorAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StaticAccessorAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f385b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::bindings::staticaccessortype::StaticAccessorType)` overload"] fn ctor_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: bindings :: staticaccessortype :: StaticAccessorType >) -> () { unsafe { let __receiver = < StaticAccessorAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StaticAccessorAttribute , :: unity2 :: Il2CppString , crate :: unity_engine :: bindings :: staticaccessortype :: StaticAccessorType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f385f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-staticaccessorattribute")]pub trait IStaticAccessorAttributeMethods:IStaticAccessorAttribute{#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StaticAccessorAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38590usize)as*mut u8,();
+(StaticAccessorAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`set_Type(crate::unity_engine::bindings::staticaccessortype::StaticAccessorType)` overload"]fn set_type(self,value:impl::core::convert::Into<crate::unity_engine::bindings::staticaccessortype::StaticAccessorType>)->(){unsafe{let __receiver= <StaticAccessorAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f385a0usize)as*mut u8,();
+(StaticAccessorAttribute)__receiver,(crate::unity_engine::bindings::staticaccessortype::StaticAccessorType)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StaticAccessorAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f385b0usize)as*mut u8,();
+(StaticAccessorAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::bindings::staticaccessortype::StaticAccessorType)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into<crate::unity_engine::bindings::staticaccessortype::StaticAccessorType>)->(){unsafe{let __receiver= <StaticAccessorAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f385f0usize)as*mut u8,();
+(StaticAccessorAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::bindings::staticaccessortype::StaticAccessorType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-staticaccessorattribute")]
-impl < __T : IStaticAccessorAttribute > IStaticAccessorAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-staticaccessorattribute")]impl<__T:IStaticAccessorAttribute>IStaticAccessorAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-staticaccessorattribute")]
-impl StaticAccessorAttribute { pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StaticAccessorAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StaticAccessorAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StaticAccessorAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StaticAccessorAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-bindings-staticaccessorattribute")]impl StaticAccessorAttribute{pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-bindings-staticaccessorattribute")]
-impl StaticAccessorAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StaticAccessorAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IStaticAccessorAttributeMethods > :: ctor (this , name) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::bindings::staticaccessortype::StaticAccessorType)` — overload selector"] pub fn new_2 (name : :: unity2 :: Il2CppString , r#type : crate :: unity_engine :: bindings :: staticaccessortype :: StaticAccessorType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StaticAccessorAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as IStaticAccessorAttributeMethods > :: ctor_2 (this , name , r#type) ; this }
+#[cfg(feature="unity_engine-bindings-staticaccessorattribute")]impl StaticAccessorAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StaticAccessorAttribute), ::core::stringify!(new),));
+ <Self as IStaticAccessorAttributeMethods> ::ctor(this,name);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::bindings::staticaccessortype::StaticAccessorType)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString,r#type:crate::unity_engine::bindings::staticaccessortype::StaticAccessorType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StaticAccessorAttribute), ::core::stringify!(new_2),));
+ <Self as IStaticAccessorAttributeMethods> ::ctor_2(this,name,r#type);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-staticaccessorattribute")]

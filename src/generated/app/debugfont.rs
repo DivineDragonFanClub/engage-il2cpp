@@ -4,81 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugfont/DebugFont_Scope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DebugFont_Scope {
-    pub m_style: crate :: unity_engine :: guistyle :: GUIStyle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugfont/DebugFont_Scope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DebugFont_Scope{pub m_style:crate::unity_engine::guistyle::GUIStyle,}
+impl::unity2::ClassIdentity for DebugFont_Scope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DebugFont.Scope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DebugFont_Scope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for DebugFont_Scope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DebugFont.Scope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for DebugFont_Scope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugfont/DebugFont.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugFont")] # [parent (crate :: system :: object :: Object)] pub struct DebugFont {
-# [static_field] # [rename (name = "s_Font")] pub s_font : crate :: unity_engine :: font :: Font ,
-# [static_field] # [rename (name = "s_NormalStyle")] pub s_normal_style : crate :: unity_engine :: guistyle :: GUIStyle ,
-# [static_field] # [rename (name = "s_MiddleStyle")] pub s_middle_style : crate :: unity_engine :: guistyle :: GUIStyle ,
-# [static_field] # [rename (name = "s_SmallStyle")] pub s_small_style : crate :: unity_engine :: guistyle :: GUIStyle ,
-# [static_field] # [rename (name = "s_CurrentStyle")] pub s_current_style : crate :: unity_engine :: guistyle :: GUIStyle ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugfont/DebugFont.md"))]#[::unity2::class(namespace="App",name="DebugFont")]#[parent(crate::system::object::Object)]pub struct DebugFont{#[static_field]#[rename(name="s_Font")]pub s_font:crate::unity_engine::font::Font, #[static_field]#[rename(name="s_NormalStyle")]pub s_normal_style:crate::unity_engine::guistyle::GUIStyle, #[static_field]#[rename(name="s_MiddleStyle")]pub s_middle_style:crate::unity_engine::guistyle::GUIStyle, #[static_field]#[rename(name="s_SmallStyle")]pub s_small_style:crate::unity_engine::guistyle::GUIStyle, #[static_field]#[rename(name="s_CurrentStyle")]pub s_current_style:crate::unity_engine::guistyle::GUIStyle,}
 
 }
 
 #[cfg(feature = "app-debugfont-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debugfont")]
-impl DebugFont_Scope { # [doc = "`.ctor(crate::unity_engine::guistyle::GUIStyle)` overload"] pub fn ctor (& mut self , style : impl :: core :: convert :: Into < crate :: unity_engine :: guistyle :: GUIStyle >) -> () { unsafe { { let __inner : extern "C" fn (* mut DebugFont_Scope , crate :: unity_engine :: guistyle :: GUIStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4400usize) as * mut u8) ; __inner (self as * mut DebugFont_Scope , :: core :: convert :: Into :: into (style) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut DebugFont_Scope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19d4540usize) as * mut u8) ; __inner (self as * mut DebugFont_Scope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugfont")]impl DebugFont_Scope{#[doc="`.ctor(crate::unity_engine::guistyle::GUIStyle)` overload"]pub fn ctor(&mut self,style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4400usize)as*mut u8,();
+(*mut DebugFont_Scope)self as*mut DebugFont_Scope,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19d4540usize)as*mut u8,();
+(*mut DebugFont_Scope)self as*mut DebugFont_Scope)}
+}
+}
 
-#[cfg(feature = "app-debugfont")]
-impl DebugFont_Scope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont_Scope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont_Scope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-debugfont")]impl DebugFont_Scope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-debugfont")]
-impl DebugFont { # [doc = "`Intialize()` overload"] pub fn intialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a042b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateStyle(i32)` overload"] pub fn create_style (size : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: guistyle :: GUIStyle { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: guistyle :: GUIStyle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a043f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`GetFont()` overload"] pub fn get_font () -> crate :: unity_engine :: font :: Font { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: font :: Font = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04560usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_NormalStyle()` overload"] pub fn get_normal_style () -> crate :: unity_engine :: guistyle :: GUIStyle { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: guistyle :: GUIStyle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a045d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_MiddleStyle()` overload"] pub fn get_middle_style () -> crate :: unity_engine :: guistyle :: GUIStyle { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: guistyle :: GUIStyle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04640usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_SmallStyle()` overload"] pub fn get_small_style () -> crate :: unity_engine :: guistyle :: GUIStyle { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: guistyle :: GUIStyle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a046b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_CurrentStyle()` overload"] pub fn get_current_style () -> crate :: unity_engine :: guistyle :: GUIStyle { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: guistyle :: GUIStyle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04720usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_CurrentStyle(crate::unity_engine::guistyle::GUIStyle)` overload"] pub fn set_current_style (value : impl :: core :: convert :: Into < crate :: unity_engine :: guistyle :: GUIStyle >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: guistyle :: GUIStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FontSize()` overload"] pub fn get_font_size () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a03360usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_LineSize()` overload"] pub fn get_line_size () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a033d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04820usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugfont")]impl DebugFont{#[doc="`Intialize()` overload"]pub fn intialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a042b0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateStyle(i32)` overload"]pub fn create_style(size:impl::core::convert::Into<i32>)->crate::unity_engine::guistyle::GUIStyle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a043f0usize)as*mut u8,crate::unity_engine::guistyle::GUIStyle;
+(i32)::core::convert::Into::into(size))}
+}
+#[doc="`GetFont()` overload"]pub fn get_font()->crate::unity_engine::font::Font{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04560usize)as*mut u8,crate::unity_engine::font::Font;
+)}
+}
+#[doc="`get_NormalStyle()` overload"]pub fn get_normal_style()->crate::unity_engine::guistyle::GUIStyle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a045d0usize)as*mut u8,crate::unity_engine::guistyle::GUIStyle;
+)}
+}
+#[doc="`get_MiddleStyle()` overload"]pub fn get_middle_style()->crate::unity_engine::guistyle::GUIStyle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04640usize)as*mut u8,crate::unity_engine::guistyle::GUIStyle;
+)}
+}
+#[doc="`get_SmallStyle()` overload"]pub fn get_small_style()->crate::unity_engine::guistyle::GUIStyle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a046b0usize)as*mut u8,crate::unity_engine::guistyle::GUIStyle;
+)}
+}
+#[doc="`get_CurrentStyle()` overload"]pub fn get_current_style()->crate::unity_engine::guistyle::GUIStyle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04720usize)as*mut u8,crate::unity_engine::guistyle::GUIStyle;
+)}
+}
+#[doc="`set_CurrentStyle(crate::unity_engine::guistyle::GUIStyle)` overload"]pub fn set_current_style(value:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04790usize)as*mut u8,();
+(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(value))}
+}
+#[doc="`get_FontSize()` overload"]pub fn get_font_size()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a03360usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_LineSize()` overload"]pub fn get_line_size()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a033d0usize)as*mut u8,i32;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04820usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-debugfont")]
-pub trait IDebugFontMethods : IDebugFont { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugFont as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugFont , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugfont")]pub trait IDebugFontMethods:IDebugFont{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugFont as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04810usize)as*mut u8,();
+(DebugFont)__receiver)}
+}
+}
 
-#[cfg(feature = "app-debugfont")]
-impl < __T : IDebugFont > IDebugFontMethods for __T { }
+#[cfg(feature="app-debugfont")]impl<__T:IDebugFont>IDebugFontMethods for __T{}
 
-#[cfg(feature = "app-debugfont")]
-impl DebugFont { pub fn intialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_font_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_normal_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_middle_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_small_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_current_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_current_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_font_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_line_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugFont as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-debugfont")]impl DebugFont{pub fn intialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_font_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_normal_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_middle_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_small_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_current_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_current_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_font_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_line_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-debugfont")]
-impl DebugFont {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugFont) , :: core :: stringify ! (new) ,)) ; < Self as IDebugFontMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debugfont")]impl DebugFont{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugFont), ::core::stringify!(new),));
+ <Self as IDebugFontMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debugfont")]

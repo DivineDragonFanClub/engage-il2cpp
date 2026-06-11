@@ -4,42 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: volumecomponent :: { IVolumeComponent , VolumeComponent }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::volumecomponent::{IVolumeComponent,VolumeComponent}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customgradationfilter/CustomGradationFilter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "CustomGradationFilter")] # [parent (crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent)] pub struct CustomGradationFilter {
-# [offset (56)] # [rename (name = "color")] pub color : crate :: unity_engine :: rendering :: colorparameter :: ColorParameter ,
-# [offset (64)] # [rename (name = "alpha")] pub alpha : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-# [offset (72)] # [rename (name = "vignetteCenter")] pub vignette_center : crate :: unity_engine :: rendering :: vector2parameter :: Vector2Parameter ,
-# [offset (80)] # [rename (name = "vignetteIntensity")] pub vignette_intensity : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-# [offset (88)] # [rename (name = "vignetteSmoothness")] pub vignette_smoothness : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/customgradationfilter/CustomGradationFilter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="CustomGradationFilter")]#[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]pub struct CustomGradationFilter{#[offset(56)]#[rename(name="color")]pub color:crate::unity_engine::rendering::colorparameter::ColorParameter, #[offset(64)]#[rename(name="alpha")]pub alpha:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter, #[offset(72)]#[rename(name="vignetteCenter")]pub vignette_center:crate::unity_engine::rendering::vector2parameter::Vector2Parameter, #[offset(80)]#[rename(name="vignetteIntensity")]pub vignette_intensity:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter, #[offset(88)]#[rename(name="vignetteSmoothness")]pub vignette_smoothness:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customgradationfilter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customgradationfilter")]
-pub trait ICustomGradationFilterMethods : ICustomGradationFilter { # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < CustomGradationFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomGradationFilter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4b7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsTileCompatible()` overload"] fn is_tile_compatible (self ,) -> bool { unsafe { let __receiver = < CustomGradationFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomGradationFilter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4b830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CustomGradationFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomGradationFilter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4b840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customgradationfilter")]pub trait ICustomGradationFilterMethods:ICustomGradationFilter{#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <CustomGradationFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4b7d0usize)as*mut u8,bool;
+(CustomGradationFilter)__receiver)}
+}
+#[doc="`IsTileCompatible()` overload"]fn is_tile_compatible(self,)->bool{unsafe{let __receiver= <CustomGradationFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4b830usize)as*mut u8,bool;
+(CustomGradationFilter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomGradationFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4b840usize)as*mut u8,();
+(CustomGradationFilter)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customgradationfilter")]
-impl < __T : ICustomGradationFilter > ICustomGradationFilterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-customgradationfilter")]impl<__T:ICustomGradationFilter>ICustomGradationFilterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customgradationfilter")]
-impl CustomGradationFilter { pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomGradationFilter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_tile_compatible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomGradationFilter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomGradationFilter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customgradationfilter")]impl CustomGradationFilter{pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_tile_compatible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customgradationfilter")]
-impl CustomGradationFilter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomGradationFilter) , :: core :: stringify ! (new) ,)) ; < Self as ICustomGradationFilterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-customgradationfilter")]impl CustomGradationFilter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomGradationFilter), ::core::stringify!(new),));
+ <Self as ICustomGradationFilterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customgradationfilter")]

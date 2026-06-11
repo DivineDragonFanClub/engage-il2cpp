@@ -4,55 +4,110 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font_FontTextureRebuildCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Font.FontTextureRebuildCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Font_FontTextureRebuildCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/font/Font_FontTextureRebuildCallback.md"))]#[::unity2::class(namespace="UnityEngine",name="Font.FontTextureRebuildCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Font_FontTextureRebuildCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Font")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct Font {
-# [static_field] # [rename (name = "textureRebuilt")] pub texture_rebuilt : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: font :: Font > ,
-# [offset (24)] # [rename (name = "m_FontTextureRebuildCallback")] pub m_font_texture_rebuild_callback : crate :: unity_engine :: font :: Font_FontTextureRebuildCallback ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/font/Font.md"))]#[::unity2::class(namespace="UnityEngine",name="Font")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct Font{#[static_field]#[rename(name="textureRebuilt")]pub texture_rebuilt:crate::system::action_1::Action_1<crate::unity_engine::font::Font> , #[offset(24)]#[rename(name="m_FontTextureRebuildCallback")]pub m_font_texture_rebuild_callback:crate::unity_engine::font::Font_FontTextureRebuildCallback,}
 
 }
 
 #[cfg(feature = "unity_engine-font-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-font")]
-pub trait IFont_FontTextureRebuildCallbackMethods : IFont_FontTextureRebuildCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Font_FontTextureRebuildCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Font_FontTextureRebuildCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f314f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < Font_FontTextureRebuildCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Font_FontTextureRebuildCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-font")]
-impl < __T : IFont_FontTextureRebuildCallback > IFont_FontTextureRebuildCallbackMethods for __T { }
-
-#[cfg(feature = "unity_engine-font")]
-impl Font_FontTextureRebuildCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font_FontTextureRebuildCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font_FontTextureRebuildCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "unity_engine-font")]
-impl Font_FontTextureRebuildCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Font_FontTextureRebuildCallback) , :: core :: stringify ! (new) ,)) ; < Self as IFont_FontTextureRebuildCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-font")]pub trait IFont_FontTextureRebuildCallbackMethods:IFont_FontTextureRebuildCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Font_FontTextureRebuildCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f314f0usize)as*mut u8,();
+(Font_FontTextureRebuildCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <Font_FontTextureRebuildCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f180usize)as*mut u8,();
+(Font_FontTextureRebuildCallback)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-font")]
-impl Font { # [doc = "`add_textureRebuilt(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)` overload"] pub fn add_texture_rebuilt (value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: font :: Font > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: font :: Font > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2ee70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_textureRebuilt(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)` overload"] pub fn remove_texture_rebuilt (value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: font :: Font > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: font :: Font > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2ef30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`InvokeTextureRebuilt_Internal(crate::unity_engine::font::Font)` overload"] pub fn invoke_texture_rebuilt_internal (font : impl :: core :: convert :: Into < crate :: unity_engine :: font :: Font >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: font :: Font , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f0e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (font) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-font")]impl<__T:IFont_FontTextureRebuildCallback>IFont_FontTextureRebuildCallbackMethods for __T{}
 
-#[cfg(feature = "unity_engine-font")]
-pub trait IFontMethods : IFont { # [doc = "`get_material()` overload"] fn get_material (self ,) -> crate :: unity_engine :: material :: Material { unsafe { let __receiver = < Font as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Font , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2eff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_dynamic()` overload"] fn get_dynamic (self ,) -> bool { unsafe { let __receiver = < Font as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Font , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_fontSize()` overload"] fn get_font_size (self ,) -> i32 { unsafe { let __receiver = < Font as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Font , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HasCharacter(u16)` overload"] fn has_character (self , c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { let __receiver = < Font as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Font , u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`HasCharacter(i32)` overload"] fn has_character_2 (self , c : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < Font as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Font , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f3e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`GetCharacterInfo(u16, *mutcrate::unity_engine::characterinfo::CharacterInfo, i32, crate::unity_engine::fontstyle::FontStyle)` overload"] fn get_character_info (self , ch : impl :: core :: convert :: Into < u16 > , size : impl :: core :: convert :: Into < i32 > , style : impl :: core :: convert :: Into < crate :: unity_engine :: fontstyle :: FontStyle >) -> (bool , crate :: unity_engine :: characterinfo :: CharacterInfo) { unsafe { let __receiver = < Font as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: characterinfo :: CharacterInfo > :: uninit () ; let __ret = { { let __inner : extern "C" fn (Font , u16 , * mut crate :: unity_engine :: characterinfo :: CharacterInfo , i32 , crate :: unity_engine :: fontstyle :: FontStyle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ch) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (size) , :: core :: convert :: Into :: into (style) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetCharacterInfo(u16, *mutcrate::unity_engine::characterinfo::CharacterInfo)` overload"] fn get_character_info_2 (self , ch : impl :: core :: convert :: Into < u16 >) -> (bool , crate :: unity_engine :: characterinfo :: CharacterInfo) { unsafe { let __receiver = < Font as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: characterinfo :: CharacterInfo > :: uninit () ; let __ret = { { let __inner : extern "C" fn (Font , u16 , * mut crate :: unity_engine :: characterinfo :: CharacterInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2f4a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ch) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="unity_engine-font")]impl Font_FontTextureRebuildCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-font")]
-impl < __T : IFont > IFontMethods for __T { }
+#[cfg(feature="unity_engine-font")]impl Font_FontTextureRebuildCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Font_FontTextureRebuildCallback), ::core::stringify!(new),));
+ <Self as IFont_FontTextureRebuildCallbackMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "unity_engine-font")]
-impl Font { pub fn add_texture_rebuilt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn remove_texture_rebuilt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_dynamic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_font_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn invoke_texture_rebuilt_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn has_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn has_character_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_character_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_character_info_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Font as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-font")]impl Font{#[doc="`add_textureRebuilt(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)` overload"]pub fn add_texture_rebuilt(value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::font::Font> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2ee70usize)as*mut u8,();
+(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)::core::convert::Into::into(value))}
+}
+#[doc="`remove_textureRebuilt(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)` overload"]pub fn remove_texture_rebuilt(value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::font::Font> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2ef30usize)as*mut u8,();
+(crate::system::action_1::Action_1<crate::unity_engine::font::Font>)::core::convert::Into::into(value))}
+}
+#[doc="`InvokeTextureRebuilt_Internal(crate::unity_engine::font::Font)` overload"]pub fn invoke_texture_rebuilt_internal(font:impl::core::convert::Into<crate::unity_engine::font::Font>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f0e0usize)as*mut u8,();
+(crate::unity_engine::font::Font)::core::convert::Into::into(font))}
+}
+}
+
+#[cfg(feature="unity_engine-font")]pub trait IFontMethods:IFont{#[doc="`get_material()` overload"]fn get_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <Font as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2eff0usize)as*mut u8,crate::unity_engine::material::Material;
+(Font)__receiver)}
+}
+#[doc="`get_dynamic()` overload"]fn get_dynamic(self,)->bool{unsafe{let __receiver= <Font as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f040usize)as*mut u8,bool;
+(Font)__receiver)}
+}
+#[doc="`get_fontSize()` overload"]fn get_font_size(self,)->i32{unsafe{let __receiver= <Font as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f090usize)as*mut u8,i32;
+(Font)__receiver)}
+}
+#[doc="`HasCharacter(u16)` overload"]fn has_character(self,c:impl::core::convert::Into<u16>)->bool{unsafe{let __receiver= <Font as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f390usize)as*mut u8,bool;
+(Font)__receiver,(u16)::core::convert::Into::into(c))}
+}
+#[doc="`HasCharacter(i32)` overload"]fn has_character_2(self,c:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <Font as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f3e0usize)as*mut u8,bool;
+(Font)__receiver,(i32)::core::convert::Into::into(c))}
+}
+#[doc="`GetCharacterInfo(u16, *mutcrate::unity_engine::characterinfo::CharacterInfo, i32, crate::unity_engine::fontstyle::FontStyle)` overload"]fn get_character_info(self,ch:impl::core::convert::Into<u16> ,size:impl::core::convert::Into<i32> ,style:impl::core::convert::Into<crate::unity_engine::fontstyle::FontStyle>)->(bool,crate::unity_engine::characterinfo::CharacterInfo){unsafe{let __receiver= <Font as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::characterinfo::CharacterInfo> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f430usize)as*mut u8,bool;
+(Font)__receiver,(u16)::core::convert::Into::into(ch),(*mut crate::unity_engine::characterinfo::CharacterInfo)__out_0.as_mut_ptr(),(i32)::core::convert::Into::into(size),(crate::unity_engine::fontstyle::FontStyle)::core::convert::Into::into(style))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetCharacterInfo(u16, *mutcrate::unity_engine::characterinfo::CharacterInfo)` overload"]fn get_character_info_2(self,ch:impl::core::convert::Into<u16>)->(bool,crate::unity_engine::characterinfo::CharacterInfo){unsafe{let __receiver= <Font as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::characterinfo::CharacterInfo> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f2f4a0usize)as*mut u8,bool;
+(Font)__receiver,(u16)::core::convert::Into::into(ch),(*mut crate::unity_engine::characterinfo::CharacterInfo)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
+
+#[cfg(feature="unity_engine-font")]impl<__T:IFont>IFontMethods for __T{}
+
+#[cfg(feature="unity_engine-font")]impl Font{pub fn add_texture_rebuilt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn remove_texture_rebuilt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_dynamic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_font_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn invoke_texture_rebuilt_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn has_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn has_character_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_character_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_character_info_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
 #[cfg(feature = "unity_engine-font")]
 #[doc(hidden)]

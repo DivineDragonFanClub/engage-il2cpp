@@ -4,49 +4,139 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsetting/MapSetting.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSetting")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapsetting :: MapSetting >)] pub struct MapSetting {
-# [offset (32)] # [rename (name = "m_MapTerrain")] pub m_map_terrain : crate :: app :: mapterrain :: MapTerrain ,
-# [offset (40)] # [rename (name = "m_ObjectList")] pub m_object_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapobject :: MapObject > ,
-# [offset (48)] # [rename (name = "m_ObjectDictionary")] pub m_object_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: mapobject :: MapObject > ,
-# [static_field] # [rename (name = "s_BackupList")] pub s_backup_list : crate :: app :: mapbackuplist :: MapBackupList ,
-# [offset (56)] # [rename (name = "m_MapDevelop")] pub m_map_develop : crate :: app :: mapterrain :: MapTerrain ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsetting/MapSetting.md"))]#[::unity2::class(namespace="App",name="MapSetting")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::mapsetting::MapSetting>)]pub struct MapSetting{#[offset(32)]#[rename(name="m_MapTerrain")]pub m_map_terrain:crate::app::mapterrain::MapTerrain, #[offset(40)]#[rename(name="m_ObjectList")]pub m_object_list:crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject> , #[offset(48)]#[rename(name="m_ObjectDictionary")]pub m_object_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::mapobject::MapObject> , #[static_field]#[rename(name="s_BackupList")]pub s_backup_list:crate::app::mapbackuplist::MapBackupList, #[offset(56)]#[rename(name="m_MapDevelop")]pub m_map_develop:crate::app::mapterrain::MapTerrain,}
 
 }
 
 #[cfg(feature = "app-mapsetting-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsetting")]
-impl MapSetting { # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] pub fn serialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f428c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] pub fn deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Resume()` overload"] pub fn resume () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f429c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_MapTerrain()` overload"] pub fn get_map_terrain () -> crate :: app :: mapterrain :: MapTerrain { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mapterrain :: MapTerrain = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42a60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Width()` overload"] pub fn get_width () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42b50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Height()` overload"] pub fn get_height () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42c10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42e00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsetting")]impl MapSetting{#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f428c0usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f42940usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Resume()` overload"]pub fn resume()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f429c0usize)as*mut u8,();
+)}
+}
+#[doc="`get_MapTerrain()` overload"]pub fn get_map_terrain()->crate::app::mapterrain::MapTerrain{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f42a60usize)as*mut u8,crate::app::mapterrain::MapTerrain;
+)}
+}
+#[doc="`get_Width()` overload"]pub fn get_width()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f42b50usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_Height()` overload"]pub fn get_height()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f42c10usize)as*mut u8,i32;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f42e00usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mapsetting")]
-pub trait IMapSettingMethods : IMapSetting { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f41b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f41b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindMapObjectFromName(::unity2::Il2CppString)` overload"] fn find_map_object_from_name (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: mapobject :: MapObject { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapobject :: MapObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`FindMapObjectFromKey(::unity2::Il2CppString)` overload"] fn find_map_object_from_key (self , key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: mapobject :: MapObject { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapobject :: MapObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f422d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Inactive()` overload"] fn inactive (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangedActiveScene(crate::unity_engine::scene_management::scene::Scene, crate::unity_engine::scene_management::scene::Scene)` overload"] fn changed_active_scene (self , current : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: scene :: Scene > , next : impl :: core :: convert :: Into < crate :: unity_engine :: scene_management :: scene :: Scene >) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , crate :: unity_engine :: scene_management :: scene :: Scene , crate :: unity_engine :: scene_management :: scene :: Scene , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f426c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (next) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f427f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CommitMapObject()` overload"] fn commit_map_object (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f41fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetObjectList()` overload"] fn get_object_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapobject :: MapObject > { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapobject :: MapObject > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateLODGroup()` overload"] fn update_lod_group (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f41d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSetting as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSetting , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f42cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsetting")]pub trait IMapSettingMethods:IMapSetting{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41b30usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41b90usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f42130usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+#[doc="`FindMapObjectFromName(::unity2::Il2CppString)` overload"]fn find_map_object_from_name(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::mapobject::MapObject{unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f42140usize)as*mut u8,crate::app::mapobject::MapObject;
+(MapSetting)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`FindMapObjectFromKey(::unity2::Il2CppString)` overload"]fn find_map_object_from_key(self,key:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::mapobject::MapObject{unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f422d0usize)as*mut u8,crate::app::mapobject::MapObject;
+(MapSetting)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key))}
+}
+#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f42360usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+#[doc="`Inactive()` overload"]fn inactive(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f42560usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+#[doc="`ChangedActiveScene(crate::unity_engine::scene_management::scene::Scene, crate::unity_engine::scene_management::scene::Scene)` overload"]fn changed_active_scene(self,current:impl::core::convert::Into<crate::unity_engine::scene_management::scene::Scene> ,next:impl::core::convert::Into<crate::unity_engine::scene_management::scene::Scene>)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f426c0usize)as*mut u8,();
+(MapSetting)__receiver,(crate::unity_engine::scene_management::scene::Scene)::core::convert::Into::into(current),(crate::unity_engine::scene_management::scene::Scene)::core::convert::Into::into(next))}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f42720usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f427f0usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+#[doc="`CommitMapObject()` overload"]fn commit_map_object(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41fa0usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+#[doc="`GetObjectList()` overload"]fn get_object_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject>{unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f42a50usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject> ;
+(MapSetting)__receiver)}
+}
+#[doc="`UpdateLODGroup()` overload"]fn update_lod_group(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41d40usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSetting as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f42cd0usize)as*mut u8,();
+(MapSetting)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsetting")]
-impl < __T : IMapSetting > IMapSettingMethods for __T { }
+#[cfg(feature="app-mapsetting")]impl<__T:IMapSetting>IMapSettingMethods for __T{}
 
-#[cfg(feature = "app-mapsetting")]
-impl MapSetting { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn find_map_object_from_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn find_map_object_from_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn inactive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn changed_active_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn commit_map_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn resume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_object_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn update_lod_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_map_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSetting as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="app-mapsetting")]impl MapSetting{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn find_map_object_from_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn find_map_object_from_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn inactive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn changed_active_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn commit_map_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_object_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn update_lod_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_map_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "app-mapsetting")]
-impl MapSetting {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSetting) , :: core :: stringify ! (new) ,)) ; < Self as IMapSettingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsetting")]impl MapSetting{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSetting), ::core::stringify!(new),));
+ <Self as IMapSettingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsetting")]

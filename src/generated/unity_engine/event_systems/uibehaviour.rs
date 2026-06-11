@@ -4,38 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/uibehaviour/UIBehaviour.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "UIBehaviour")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UIBehaviour {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/uibehaviour/UIBehaviour.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="UIBehaviour")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UIBehaviour{}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-uibehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-pub trait IUIBehaviourMethods : IUIBehaviour { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c091e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c091c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c08630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRectTransformDimensionsChange()` overload"] fn on_rect_transform_dimensions_change (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBeforeTransformParentChanged()` overload"] fn on_before_transform_parent_changed (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTransformParentChanged()` overload"] fn on_transform_parent_changed (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDidApplyAnimationProperties()` overload"] fn on_did_apply_animation_properties (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCanvasGroupChanged()` overload"] fn on_canvas_group_changed (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCanvasHierarchyChanged()` overload"] fn on_canvas_hierarchy_changed (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDestroyed()` overload"] fn is_destroyed (self ,) -> bool { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UIBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c091a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-uibehaviour")]pub trait IUIBehaviourMethods:IUIBehaviour{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a6f0usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c091e0usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c091c0usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a700usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08630usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a710usize)as*mut u8,bool;
+(UIBehaviour)__receiver)}
+}
+#[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a720usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`OnBeforeTransformParentChanged()` overload"]fn on_before_transform_parent_changed(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a730usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a740usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a750usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`OnCanvasGroupChanged()` overload"]fn on_canvas_group_changed(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a760usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a770usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+#[doc="`IsDestroyed()` overload"]fn is_destroyed(self,)->bool{unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a780usize)as*mut u8,bool;
+(UIBehaviour)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UIBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c091a0usize)as*mut u8,();
+(UIBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-impl < __T : IUIBehaviour > IUIBehaviourMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-uibehaviour")]impl<__T:IUIBehaviour>IUIBehaviourMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-impl UIBehaviour { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_rect_transform_dimensions_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_before_transform_parent_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_transform_parent_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_did_apply_animation_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_canvas_group_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_canvas_hierarchy_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_destroyed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="unity_engine-event_systems-uibehaviour")]impl UIBehaviour{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_rect_transform_dimensions_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_before_transform_parent_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_transform_parent_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_did_apply_animation_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_canvas_group_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_canvas_hierarchy_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_destroyed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-uibehaviour")]
-impl UIBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UIBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IUIBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-uibehaviour")]impl UIBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UIBehaviour), ::core::stringify!(new),));
+ <Self as IUIBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-uibehaviour")]

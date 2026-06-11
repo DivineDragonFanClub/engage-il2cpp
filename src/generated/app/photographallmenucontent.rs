@@ -4,44 +4,78 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographallmenucontent/PhotographAllMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographAllMenuContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PhotographAllMenuContent {
-# [static_field] # [rename (name = "s_MenuPrefabPath")] pub s_menu_prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_CameraKeyHelp")] pub m_camera_key_help : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographallmenucontent/PhotographAllMenuContent.md"))]#[::unity2::class(namespace="App",name="PhotographAllMenuContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct PhotographAllMenuContent{#[static_field]#[rename(name="s_MenuPrefabPath")]pub s_menu_prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_CameraKeyHelp")]pub m_camera_key_help:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-photographallmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographallmenucontent")]
-impl PhotographAllMenuContent { # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: photographallmenucontent :: PhotographAllMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: photographallmenucontent :: PhotographAllMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687a70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::photographallmenucontent::PhotographAllMenuContent)` overload"] pub fn destroy (menu_content : impl :: core :: convert :: Into < crate :: app :: photographallmenucontent :: PhotographAllMenuContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: photographallmenucontent :: PhotographAllMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`LoadResource()` overload"] pub fn load_resource () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687e00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResource()` overload"] pub fn is_loading_resource () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687fd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadResource()` overload"] pub fn unload_resource () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2688070usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2688120usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographallmenucontent")]impl PhotographAllMenuContent{#[doc="`Create()` overload"]pub fn create()->crate::app::photographallmenucontent::PhotographAllMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2687a70usize)as*mut u8,crate::app::photographallmenucontent::PhotographAllMenuContent;
+)}
+}
+#[doc="`Destroy(crate::app::photographallmenucontent::PhotographAllMenuContent)` overload"]pub fn destroy(menu_content:impl::core::convert::Into<crate::app::photographallmenucontent::PhotographAllMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2687b70usize)as*mut u8,();
+(crate::app::photographallmenucontent::PhotographAllMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`LoadResource()` overload"]pub fn load_resource()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2687e00usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingResource()` overload"]pub fn is_loading_resource()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2687fd0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadResource()` overload"]pub fn unload_resource()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2688070usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2688120usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-photographallmenucontent")]
-pub trait IPhotographAllMenuContentMethods : IPhotographAllMenuContent { # [doc = "`SetMyCardIsVisible(bool)` overload"] fn set_my_card_is_visible (self , is_visible : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographAllMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographAllMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_visible) , :: core :: option :: Option :: None) } } } # [doc = "`SetCameraKeyHelpIsVisible(bool)` overload"] fn set_camera_key_help_is_visible (self , is_visible : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographAllMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographAllMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_visible) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographAllMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographAllMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2688110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographallmenucontent")]pub trait IPhotographAllMenuContentMethods:IPhotographAllMenuContent{#[doc="`SetMyCardIsVisible(bool)` overload"]fn set_my_card_is_visible(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographAllMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687c50usize)as*mut u8,();
+(PhotographAllMenuContent)__receiver,(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`SetCameraKeyHelpIsVisible(bool)` overload"]fn set_camera_key_help_is_visible(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographAllMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687df0usize)as*mut u8,();
+(PhotographAllMenuContent)__receiver,(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographAllMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2688110usize)as*mut u8,();
+(PhotographAllMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographallmenucontent")]
-impl < __T : IPhotographAllMenuContent > IPhotographAllMenuContentMethods for __T { }
+#[cfg(feature="app-photographallmenucontent")]impl<__T:IPhotographAllMenuContent>IPhotographAllMenuContentMethods for __T{}
 
-#[cfg(feature = "app-photographallmenucontent")]
-impl PhotographAllMenuContent { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographAllMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographAllMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_my_card_is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographAllMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_camera_key_help_is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographAllMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographAllMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographAllMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographAllMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographAllMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographAllMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-photographallmenucontent")]impl PhotographAllMenuContent{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_my_card_is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_camera_key_help_is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_loading_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unload_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-photographallmenucontent")]
-impl PhotographAllMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographAllMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographAllMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographallmenucontent")]impl PhotographAllMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographAllMenuContent), ::core::stringify!(new),));
+ <Self as IPhotographAllMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-photographallmenucontent")]

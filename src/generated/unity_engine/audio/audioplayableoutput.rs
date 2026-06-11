@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/audio/audioplayableoutput/AudioPlayableOutput.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AudioPlayableOutput {
-    pub m_handle: crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/audio/audioplayableoutput/AudioPlayableOutput.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AudioPlayableOutput{pub m_handle:crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,}
+impl::unity2::ClassIdentity for AudioPlayableOutput{const NAMESPACE: &'static str="UnityEngine.Audio";
+const NAME: &'static str="AudioPlayableOutput";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for AudioPlayableOutput {
-    const NAMESPACE: &'static str = "UnityEngine.Audio";
-
-    const NAME: &'static str = "AudioPlayableOutput";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AudioPlayableOutput {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for AudioPlayableOutput{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,33 @@ impl ::unity2::IlType for AudioPlayableOutput {
 #[cfg(feature = "unity_engine-audio-audioplayableoutput-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-audio-audioplayableoutput")]
-impl AudioPlayableOutput { # [doc = "`op_Explicit(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"] pub fn op_explicit (output : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutput :: PlayableOutput >) -> crate :: unity_engine :: audio :: audioplayableoutput :: AudioPlayableOutput { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playableoutput :: PlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: audio :: audioplayableoutput :: AudioPlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3ecb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (output) , :: core :: option :: Option :: None) } } } # [doc = "`InternalSetEvaluateOnSeek(*mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle, bool)` overload"] pub fn internal_set_evaluate_on_seek (value : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3ed50usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-audio-audioplayableoutput")]impl AudioPlayableOutput{#[doc="`op_Explicit(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"]pub fn op_explicit(output:impl::core::convert::Into<crate::unity_engine::playables::playableoutput::PlayableOutput>)->crate::unity_engine::audio::audioplayableoutput::AudioPlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ecb0usize)as*mut u8,crate::unity_engine::audio::audioplayableoutput::AudioPlayableOutput;
+(crate::unity_engine::playables::playableoutput::PlayableOutput)::core::convert::Into::into(output))}
+}
+#[doc="`InternalSetEvaluateOnSeek(*mutcrate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle, bool)` overload"]pub fn internal_set_evaluate_on_seek(value:impl::core::convert::Into<bool>)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ed50usize)as*mut u8,();
+(*mut crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-audio-audioplayableoutput")]
-impl AudioPlayableOutput { # [doc = "`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle >) -> () { unsafe { { let __inner : extern "C" fn (* mut AudioPlayableOutput , crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3ebe0usize) as * mut u8) ; __inner (self as * mut AudioPlayableOutput , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { unsafe { { let __inner : extern "C" fn (* mut AudioPlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3eca0usize) as * mut u8) ; __inner (self as * mut AudioPlayableOutput , :: core :: option :: Option :: None) } } } # [doc = "`SetEvaluateOnSeek(bool)` overload"] pub fn set_evaluate_on_seek (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut AudioPlayableOutput , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3ed00usize) as * mut u8) ; __inner (self as * mut AudioPlayableOutput , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-audio-audioplayableoutput")]impl AudioPlayableOutput{#[doc="`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ebe0usize)as*mut u8,();
+(*mut AudioPlayableOutput)self as*mut AudioPlayableOutput,(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3eca0usize)as*mut u8,crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle;
+(*mut AudioPlayableOutput)self as*mut AudioPlayableOutput)}
+}
+#[doc="`SetEvaluateOnSeek(bool)` overload"]pub fn set_evaluate_on_seek(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ed00usize)as*mut u8,();
+(*mut AudioPlayableOutput)self as*mut AudioPlayableOutput,(bool)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-audio-audioplayableoutput")]
-impl AudioPlayableOutput { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn op_explicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_evaluate_on_seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn internal_set_evaluate_on_seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioPlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-audio-audioplayableoutput")]impl AudioPlayableOutput{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn op_explicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_evaluate_on_seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn internal_set_evaluate_on_seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-audio-audioplayableoutput")]
 #[doc(hidden)]

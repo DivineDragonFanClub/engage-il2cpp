@@ -4,32 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameexititem/GameExitItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameExitItem")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct GameExitItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameexititem/GameExitItem.md"))]#[::unity2::class(namespace="App",name="GameExitItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct GameExitItem{}
 
 }
 
 #[cfg(feature = "app-gameexititem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gameexititem")]
-pub trait IGameExitItemMethods : IGameExitItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameExitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameExitItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227bef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNameEnglish()` overload"] fn get_name_english (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameExitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameExitItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227bf40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < GameExitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameExitItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227bf90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameExitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameExitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227bfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gameexititem")]pub trait IGameExitItemMethods:IGameExitItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameExitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227bef0usize)as*mut u8, ::unity2::Il2CppString;
+(GameExitItem)__receiver)}
+}
+#[doc="`GetNameEnglish()` overload"]fn get_name_english(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameExitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227bf40usize)as*mut u8, ::unity2::Il2CppString;
+(GameExitItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <GameExitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227bf90usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(GameExitItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameExitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227bfa0usize)as*mut u8,();
+(GameExitItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gameexititem")]
-impl < __T : IGameExitItem > IGameExitItemMethods for __T { }
+#[cfg(feature="app-gameexititem")]impl<__T:IGameExitItem>IGameExitItemMethods for __T{}
 
-#[cfg(feature = "app-gameexititem")]
-impl GameExitItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameExitItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_english_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameExitItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameExitItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameExitItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-gameexititem")]impl GameExitItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_english_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-gameexititem")]
-impl GameExitItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameExitItem) , :: core :: stringify ! (new) ,)) ; < Self as IGameExitItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gameexititem")]impl GameExitItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameExitItem), ::core::stringify!(new),));
+ <Self as IGameExitItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gameexititem")]

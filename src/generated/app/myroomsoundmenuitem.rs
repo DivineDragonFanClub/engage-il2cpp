@@ -4,36 +4,96 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundmenuitem/MyRoomSoundMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomSoundMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MyRoomSoundMenuItem {
-# [offset (112)] # [rename (name = "m_eventName")] pub m_event_name : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_label")] pub m_label : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_help")] pub m_help : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsoundmenuitem/MyRoomSoundMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomSoundMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomSoundMenuItem{#[offset(112)]#[rename(name="m_eventName")]pub m_event_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_label")]pub m_label: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_help")]pub m_help: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-myroomsoundmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomsoundmenuitem")]
-pub trait IMyRoomSoundMenuItemMethods : IMyRoomSoundMenuItem { # [doc = "`get_Callback()` overload"] fn get_callback (self ,) -> crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a0e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPlay()` overload"] fn get_is_play (self ,) -> bool { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a0330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_EventName()` overload"] fn get_event_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a0e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"] fn ctor (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , help : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x239f010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (help) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a0e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a0f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a0fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a11b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a1240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCursorMoveEnd()` overload"] fn on_cursor_move_end (self ,) -> () { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a1250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCurrentMusicName()` overload"] fn set_current_music_name (self ,) -> () { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a0770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMusicName(::unity2::Il2CppString)` overload"] fn set_music_name (self , music_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a12a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (music_name) , :: core :: option :: Option :: None) } } } # [doc = "`SetMusicHelpText(::unity2::Il2CppString)` overload"] fn set_music_help_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomSoundMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a1110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomsoundmenuitem")]pub trait IMyRoomSoundMenuItemMethods:IMyRoomSoundMenuItem{#[doc="`get_Callback()` overload"]fn get_callback(self,)->crate::system::action_1::Action_1< ::unity2::Il2CppString>{unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a0e60usize)as*mut u8,crate::system::action_1::Action_1< ::unity2::Il2CppString> ;
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`get_IsPlay()` overload"]fn get_is_play(self,)->bool{unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a0330usize)as*mut u8,bool;
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`get_EventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a0e70usize)as*mut u8, ::unity2::Il2CppString;
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]fn ctor(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,help:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x239f010usize)as*mut u8,();
+(MyRoomSoundMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(help),(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(callback))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a0e80usize)as*mut u8, ::unity2::Il2CppString;
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a0f20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a0fd0usize)as*mut u8,();
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a11b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a1240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a1250usize)as*mut u8,();
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`SetCurrentMusicName()` overload"]fn set_current_music_name(self,)->(){unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a0770usize)as*mut u8,();
+(MyRoomSoundMenuItem)__receiver)}
+}
+#[doc="`SetMusicName(::unity2::Il2CppString)` overload"]fn set_music_name(self,music_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a12a0usize)as*mut u8,();
+(MyRoomSoundMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(music_name))}
+}
+#[doc="`SetMusicHelpText(::unity2::Il2CppString)` overload"]fn set_music_help_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MyRoomSoundMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a1110usize)as*mut u8,();
+(MyRoomSoundMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+}
 
-#[cfg(feature = "app-myroomsoundmenuitem")]
-impl < __T : IMyRoomSoundMenuItem > IMyRoomSoundMenuItemMethods for __T { }
+#[cfg(feature="app-myroomsoundmenuitem")]impl<__T:IMyRoomSoundMenuItem>IMyRoomSoundMenuItemMethods for __T{}
 
-#[cfg(feature = "app-myroomsoundmenuitem")]
-impl MyRoomSoundMenuItem { pub fn get_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_cursor_move_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_current_music_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_music_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_music_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-myroomsoundmenuitem")]impl MyRoomSoundMenuItem{pub fn get_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_current_music_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_music_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_music_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-myroomsoundmenuitem")]
-impl MyRoomSoundMenuItem {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` — overload selector"] pub fn new (event_name : :: unity2 :: Il2CppString , name : :: unity2 :: Il2CppString , help : :: unity2 :: Il2CppString , callback : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomSoundMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomSoundMenuItemMethods > :: ctor (this , event_name , name , help , callback) ; this }
+#[cfg(feature="app-myroomsoundmenuitem")]impl MyRoomSoundMenuItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` — overload selector"]pub fn new(event_name: ::unity2::Il2CppString,name: ::unity2::Il2CppString,help: ::unity2::Il2CppString,callback:crate::system::action_1::Action_1< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomSoundMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomSoundMenuItemMethods> ::ctor(this,event_name,name,help,callback);
+this}
 }
 
 #[cfg(feature = "app-myroomsoundmenuitem")]

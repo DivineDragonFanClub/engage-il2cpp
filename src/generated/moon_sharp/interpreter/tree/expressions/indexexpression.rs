@@ -4,43 +4,116 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: moon_sharp :: interpreter :: tree :: expression :: { Expression , IExpression }
- ;
- use crate :: moon_sharp :: interpreter :: tree :: nodebase :: { INodeBase , NodeBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::moon_sharp::interpreter::tree::expression::{Expression,IExpression}
+;
+use crate::moon_sharp::interpreter::tree::nodebase::{INodeBase,NodeBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/indexexpression/IndexExpression.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Tree.Expressions" , name = "IndexExpression")] # [parent (crate :: moon_sharp :: interpreter :: tree :: expression :: Expression)] pub struct IndexExpression {
-# [offset (32)] # [rename (name = "m_BaseExp")] pub m_base_exp : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
-# [offset (40)] # [rename (name = "m_IndexExp")] pub m_index_exp : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
-# [offset (48)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/expressions/indexexpression/IndexExpression.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Tree.Expressions",name="IndexExpression")]#[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]pub struct IndexExpression{#[offset(32)]#[rename(name="m_BaseExp")]pub m_base_exp:crate::moon_sharp::interpreter::tree::expression::Expression, #[offset(40)]#[rename(name="m_IndexExp")]pub m_index_exp:crate::moon_sharp::interpreter::tree::expression::Expression, #[offset(48)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IndexExpression_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: expression :: Expression as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IndexExpression as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IndexExpression as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: expression :: Expression as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IndexExpression as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IndexExpression as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compile { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IndexExpression as :: unity2 :: ClassIdentity > :: class () , "Compile" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IndexExpression as :: unity2 :: ClassIdentity > :: NAME , "Compile" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compile_assignment { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IndexExpression as :: unity2 :: ClassIdentity > :: class () , "CompileAssignment" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IndexExpression as :: unity2 :: ClassIdentity > :: NAME , "CompileAssignment" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_eval { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< IndexExpression as :: unity2 :: ClassIdentity > :: class () , "Eval" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < IndexExpression as :: unity2 :: ClassIdentity > :: NAME , "Eval" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-tree-expressions-indexexpression")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IndexExpression_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::expression::Expression as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::tree::expression::Expression as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<IndexExpression as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <IndexExpression as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::expression::Expression as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<IndexExpression as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <IndexExpression as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<IndexExpression as::unity2::ClassIdentity> ::class(),"Compile",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <IndexExpression as::unity2::ClassIdentity> ::NAME,"Compile",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile_assignment{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<IndexExpression as::unity2::ClassIdentity> ::class(),"CompileAssignment",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <IndexExpression as::unity2::ClassIdentity> ::NAME,"CompileAssignment",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_eval{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<IndexExpression as::unity2::ClassIdentity> ::class(),"Eval",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <IndexExpression as::unity2::ClassIdentity> ::NAME,"Eval",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression")]
-pub trait IIndexExpressionMethods : IIndexExpression { # [doc = "`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"] fn ctor (self , base_exp : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression > , index_exp : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression > , lcontext : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext >) -> () { unsafe { let __receiver = < IndexExpression as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IndexExpression , crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__IndexExpression_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (base_exp) , :: core :: convert :: Into :: into (index_exp) , :: core :: convert :: Into :: into (lcontext) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, ::unity2::Il2CppString, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"] fn ctor_2 (self , base_exp : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: expression :: Expression > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , lcontext : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext >) -> () { unsafe { let __receiver = < IndexExpression as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IndexExpression , crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__IndexExpression_unity2_raw :: __lookup_ctor_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (base_exp) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (lcontext) , :: core :: option :: Option :: None) } } } # [doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"] fn compile (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode >) -> () { unsafe { let __receiver = < IndexExpression as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IndexExpression , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__IndexExpression_unity2_raw :: __lookup_compile :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: option :: Option :: None) } } } # [doc = "`CompileAssignment(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, i32, i32)` overload"] fn compile_assignment (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode > , stackofs : impl :: core :: convert :: Into < i32 > , tupleidx : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < IndexExpression as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IndexExpression , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__IndexExpression_unity2_raw :: __lookup_compile_assignment :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: convert :: Into :: into (stackofs) , :: core :: convert :: Into :: into (tupleidx) , :: core :: option :: Option :: None) } } } # [doc = "`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"] fn eval (self , context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < IndexExpression as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IndexExpression , crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__IndexExpression_unity2_raw :: __lookup_eval :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-tree-expressions-indexexpression")]pub trait IIndexExpressionMethods:IIndexExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]fn ctor(self,base_exp:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression> ,index_exp:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression> ,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>)->(){unsafe{let __receiver= <IndexExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__IndexExpression_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(IndexExpression)__receiver,(crate::moon_sharp::interpreter::tree::expression::Expression)::core::convert::Into::into(base_exp),(crate::moon_sharp::interpreter::tree::expression::Expression)::core::convert::Into::into(index_exp),(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, ::unity2::Il2CppString, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]fn ctor_2(self,base_exp:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>)->(){unsafe{let __receiver= <IndexExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__IndexExpression_unity2_raw::__lookup_ctor_2::get_method_info().method_ptr,();
+(IndexExpression)__receiver,(crate::moon_sharp::interpreter::tree::expression::Expression)::core::convert::Into::into(base_exp),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
+}
+#[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <IndexExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__IndexExpression_unity2_raw::__lookup_compile::get_method_info().method_ptr,();
+(IndexExpression)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc))}
+}
+#[doc="`CompileAssignment(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, i32, i32)` overload"]fn compile_assignment(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode> ,stackofs:impl::core::convert::Into<i32> ,tupleidx:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IndexExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__IndexExpression_unity2_raw::__lookup_compile_assignment::get_method_info().method_ptr,();
+(IndexExpression)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc),(i32)::core::convert::Into::into(stackofs),(i32)::core::convert::Into::into(tupleidx))}
+}
+#[doc="`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]fn eval(self,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <IndexExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__IndexExpression_unity2_raw::__lookup_eval::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(IndexExpression)__receiver,(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(context))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression")]
-impl < __T : IIndexExpression > IIndexExpressionMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-tree-expressions-indexexpression")]impl<__T:IIndexExpression>IIndexExpressionMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression")]
-impl IndexExpression { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IndexExpression as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IndexExpression as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn compile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IndexExpression as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn compile_assignment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IndexExpression as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn eval_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IndexExpression as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="moon_sharp-interpreter-tree-expressions-indexexpression")]impl IndexExpression{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn compile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn compile_assignment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn eval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression")]
-impl IndexExpression {
-# [doc = "`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"] pub fn new (base_exp : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , index_exp : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IndexExpression) , :: core :: stringify ! (new) ,)) ; < Self as IIndexExpressionMethods > :: ctor (this , base_exp , index_exp , lcontext) ; this }
-
-# [doc = "`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, ::unity2::Il2CppString, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"] pub fn new_2 (base_exp : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression , name : :: unity2 :: Il2CppString , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IndexExpression) , :: core :: stringify ! (new_2) ,)) ; < Self as IIndexExpressionMethods > :: ctor_2 (this , base_exp , name , lcontext) ; this }
+#[cfg(feature="moon_sharp-interpreter-tree-expressions-indexexpression")]impl IndexExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]pub fn new(base_exp:crate::moon_sharp::interpreter::tree::expression::Expression,index_exp:crate::moon_sharp::interpreter::tree::expression::Expression,lcontext:crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IndexExpression), ::core::stringify!(new),));
+ <Self as IIndexExpressionMethods> ::ctor(this,base_exp,index_exp,lcontext);
+this}
+#[doc="`.ctor(crate::moon_sharp::interpreter::tree::expression::Expression, ::unity2::Il2CppString, crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]pub fn new_2(base_exp:crate::moon_sharp::interpreter::tree::expression::Expression,name: ::unity2::Il2CppString,lcontext:crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IndexExpression), ::core::stringify!(new_2),));
+ <Self as IIndexExpressionMethods> ::ctor_2(this,base_exp,name,lcontext);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression")]

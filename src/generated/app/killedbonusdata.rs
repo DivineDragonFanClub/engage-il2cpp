@@ -4,188 +4,193 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "KilledBonusData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: killedbonusdata :: KilledBonusData_Flags >)] pub struct KilledBonusData_FlagField {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/killedbonusdata/KilledBonusData_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct KilledBonusData_Kinds  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KilledBonusData_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for KilledBonusData_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="KilledBonusData.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for KilledBonusData_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl KilledBonusData_Kinds{pub fn none()->Self{Self{value:0}
+}
+pub fn piece_of_bond()->Self{Self{value:1}
+}
+pub fn exp()->Self{Self{value:2}
+}
+pub fn engage_count()->Self{Self{value:3}
+}
+pub fn god_exp()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for KilledBonusData_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "KilledBonusData.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KilledBonusData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for KilledBonusData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="KilledBonusData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for KilledBonusData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl KilledBonusData_Flags{pub fn god()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::IlType for KilledBonusData_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData_FlagField.md"))]#[::unity2::class(namespace="App",name="KilledBonusData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::killedbonusdata::KilledBonusData_Flags>)]pub struct KilledBonusData_FlagField{}
 
 
-impl  KilledBonusData_Kinds  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn piece_of_bond() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn exp() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn engage_count() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn god_exp() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/killedbonusdata/KilledBonusData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct KilledBonusData_Flags  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for KilledBonusData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "KilledBonusData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for KilledBonusData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  KilledBonusData_Flags  {
-    pub fn god() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData.md"))] # [:: unity2 :: class (namespace = "App" , name = "KilledBonusData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: killedbonusdata :: KilledBonusData >)] pub struct KilledBonusData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killedbonusdata/KilledBonusData.md"))]#[::unity2::class(namespace="App",name="KilledBonusData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::killedbonusdata::KilledBonusData>)]pub struct KilledBonusData{}
 
 }
 
 #[cfg(feature = "app-killedbonusdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-killedbonusdata")]
-pub trait IKilledBonusData_FlagFieldMethods : IKilledBonusData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < KilledBonusData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd41a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: killedbonusdata :: KilledBonusData_Flags >) -> () { unsafe { let __receiver = < KilledBonusData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData_FlagField , crate :: app :: killedbonusdata :: KilledBonusData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd4200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`ToInt(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: killedbonusdata :: KilledBonusData_Flags >) -> i32 { unsafe { let __receiver = < KilledBonusData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData_FlagField , crate :: app :: killedbonusdata :: KilledBonusData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd4260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-killedbonusdata")]
-impl < __T : IKilledBonusData_FlagField > IKilledBonusData_FlagFieldMethods for __T { }
-
-#[cfg(feature = "app-killedbonusdata")]
-impl KilledBonusData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-killedbonusdata")]
-impl KilledBonusData_FlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KilledBonusData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IKilledBonusData_FlagFieldMethods > :: ctor (this , f) ; this }
-
-# [doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: killedbonusdata :: KilledBonusData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KilledBonusData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IKilledBonusData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
+#[cfg(feature="app-killedbonusdata")]pub trait IKilledBonusData_FlagFieldMethods:IKilledBonusData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <KilledBonusData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd41a0usize)as*mut u8,();
+(KilledBonusData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::killedbonusdata::KilledBonusData_Flags>)->(){unsafe{let __receiver= <KilledBonusData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd4200usize)as*mut u8,();
+(KilledBonusData_FlagField)__receiver,(crate::app::killedbonusdata::KilledBonusData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::killedbonusdata::KilledBonusData_Flags>)->i32{unsafe{let __receiver= <KilledBonusData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd4260usize)as*mut u8,i32;
+(KilledBonusData_FlagField)__receiver,(crate::app::killedbonusdata::KilledBonusData_Flags)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-killedbonusdata")]
-impl KilledBonusData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdaca0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-killedbonusdata")]impl<__T:IKilledBonusData_FlagField>IKilledBonusData_FlagFieldMethods for __T{}
 
-#[cfg(feature = "app-killedbonusdata")]
-pub trait IKilledBonusDataMethods : IKilledBonusData { # [doc = "`get_Kind()` overload"] fn get_kind (self ,) -> crate :: app :: killedbonusdata :: KilledBonusData_Kinds { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , :: unity2 :: OptionalMethod ,) -> crate :: app :: killedbonusdata :: KilledBonusData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdad50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Kind(crate::app::killedbonusdata::KilledBonusData_Kinds)` overload"] fn set_kind (self , value : impl :: core :: convert :: Into < crate :: app :: killedbonusdata :: KilledBonusData_Kinds >) -> () { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , crate :: app :: killedbonusdata :: KilledBonusData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdad60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdad70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value(i32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdad80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Rate()` overload"] fn get_rate (self ,) -> u8 { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdad90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Rate(u8)` overload"] fn set_rate (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdada0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: killedbonusdata :: KilledBonusData_FlagField { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , :: unity2 :: OptionalMethod ,) -> crate :: app :: killedbonusdata :: KilledBonusData_FlagField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdadb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::killedbonusdata::KilledBonusData_FlagField)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: killedbonusdata :: KilledBonusData_FlagField >) -> () { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , crate :: app :: killedbonusdata :: KilledBonusData_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdadc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Cid()` overload"] fn get_cid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdadd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Cid(::unity2::Il2CppString)` overload"] fn set_cid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdade0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdadf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < KilledBonusData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KilledBonusData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdae80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-killedbonusdata")]impl KilledBonusData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-killedbonusdata")]
-impl < __T : IKilledBonusData > IKilledBonusDataMethods for __T { }
+#[cfg(feature="app-killedbonusdata")]impl KilledBonusData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KilledBonusData_FlagField), ::core::stringify!(new),));
+ <Self as IKilledBonusData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` — overload selector"]pub fn new_2(f:crate::app::killedbonusdata::KilledBonusData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KilledBonusData_FlagField), ::core::stringify!(new_2),));
+ <Self as IKilledBonusData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
 
-#[cfg(feature = "app-killedbonusdata")]
-impl KilledBonusData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KilledBonusData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-killedbonusdata")]impl KilledBonusData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdaca0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-killedbonusdata")]
-impl KilledBonusData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KilledBonusData) , :: core :: stringify ! (new) ,)) ; < Self as IKilledBonusDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-killedbonusdata")]pub trait IKilledBonusDataMethods:IKilledBonusData{#[doc="`get_Kind()` overload"]fn get_kind(self,)->crate::app::killedbonusdata::KilledBonusData_Kinds{unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdad50usize)as*mut u8,crate::app::killedbonusdata::KilledBonusData_Kinds;
+(KilledBonusData)__receiver)}
+}
+#[doc="`set_Kind(crate::app::killedbonusdata::KilledBonusData_Kinds)` overload"]fn set_kind(self,value:impl::core::convert::Into<crate::app::killedbonusdata::KilledBonusData_Kinds>)->(){unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdad60usize)as*mut u8,();
+(KilledBonusData)__receiver,(crate::app::killedbonusdata::KilledBonusData_Kinds)::core::convert::Into::into(value))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdad70usize)as*mut u8,i32;
+(KilledBonusData)__receiver)}
+}
+#[doc="`set_Value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdad80usize)as*mut u8,();
+(KilledBonusData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Rate()` overload"]fn get_rate(self,)->u8{unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdad90usize)as*mut u8,u8;
+(KilledBonusData)__receiver)}
+}
+#[doc="`set_Rate(u8)` overload"]fn set_rate(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdada0usize)as*mut u8,();
+(KilledBonusData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::killedbonusdata::KilledBonusData_FlagField{unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdadb0usize)as*mut u8,crate::app::killedbonusdata::KilledBonusData_FlagField;
+(KilledBonusData)__receiver)}
+}
+#[doc="`set_Flag(crate::app::killedbonusdata::KilledBonusData_FlagField)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::killedbonusdata::KilledBonusData_FlagField>)->(){unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdadc0usize)as*mut u8,();
+(KilledBonusData)__receiver,(crate::app::killedbonusdata::KilledBonusData_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdadd0usize)as*mut u8, ::unity2::Il2CppString;
+(KilledBonusData)__receiver)}
+}
+#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdade0usize)as*mut u8,();
+(KilledBonusData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdadf0usize)as*mut u8, ::unity2::Il2CppString;
+(KilledBonusData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <KilledBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdae80usize)as*mut u8,();
+(KilledBonusData)__receiver)}
+}
+}
+
+#[cfg(feature="app-killedbonusdata")]impl<__T:IKilledBonusData>IKilledBonusDataMethods for __T{}
+
+#[cfg(feature="app-killedbonusdata")]impl KilledBonusData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-killedbonusdata")]impl KilledBonusData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KilledBonusData), ::core::stringify!(new),));
+ <Self as IKilledBonusDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-killedbonusdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::KilledBonusData_Kinds;
+    pub use super::KilledBonusData_Flags;
     pub use super::KilledBonusData_FlagField;
     pub use super::IKilledBonusData_FlagField;
     pub use super::IKilledBonusData_FlagFieldMethods;
-    pub use super::KilledBonusData_Kinds;
-    pub use super::KilledBonusData_Flags;
     pub use super::KilledBonusData;
     pub use super::IKilledBonusData;
     pub use super::IKilledBonusDataMethods;

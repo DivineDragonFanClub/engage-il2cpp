@@ -4,27 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/yoga/yoganode/YogaNode.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Yoga" , name = "YogaNode")] # [parent (crate :: system :: object :: Object)] pub struct YogaNode {
-# [offset (16)] # [rename (name = "_ygNode")] pub yg_node : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "_measureFunction")] pub measure_function : crate :: unity_engine :: yoga :: measurefunction :: MeasureFunction ,
-# [offset (32)] # [rename (name = "_baselineFunction")] pub baseline_function : crate :: unity_engine :: yoga :: baselinefunction :: BaselineFunction ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/yoga/yoganode/YogaNode.md"))]#[::unity2::class(namespace="UnityEngine.Yoga",name="YogaNode")]#[parent(crate::system::object::Object)]pub struct YogaNode{#[offset(16)]#[rename(name="_ygNode")]pub yg_node: ::unity2::IntPtr, #[offset(24)]#[rename(name="_measureFunction")]pub measure_function:crate::unity_engine::yoga::measurefunction::MeasureFunction, #[offset(32)]#[rename(name="_baselineFunction")]pub baseline_function:crate::unity_engine::yoga::baselinefunction::BaselineFunction,}
 
 }
 
 #[cfg(feature = "unity_engine-yoga-yoganode-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-yoga-yoganode")]
-impl YogaNode { # [doc = "`MeasureInternal(crate::unity_engine::yoga::yoganode::YogaNode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)` overload"] pub fn measure_internal (node : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yoganode :: YogaNode > , width : impl :: core :: convert :: Into < f32 > , width_mode : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode > , height : impl :: core :: convert :: Into < f32 > , height_mode : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode >) -> crate :: unity_engine :: yoga :: yogasize :: YogaSize { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: yoga :: yoganode :: YogaNode , f32 , crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , f32 , crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: yoga :: yogasize :: YogaSize = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f400f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (width_mode) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (height_mode) , :: core :: option :: Option :: None) } } } # [doc = "`BaselineInternal(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32)` overload"] pub fn baseline_internal (node : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yoganode :: YogaNode > , width : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: yoga :: yoganode :: YogaNode , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f401c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-yoga-yoganode")]impl YogaNode{#[doc="`MeasureInternal(crate::unity_engine::yoga::yoganode::YogaNode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)` overload"]pub fn measure_internal(node:impl::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode> ,width:impl::core::convert::Into<f32> ,width_mode:impl::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode> ,height:impl::core::convert::Into<f32> ,height_mode:impl::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode>)->crate::unity_engine::yoga::yogasize::YogaSize{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f400f0usize)as*mut u8,crate::unity_engine::yoga::yogasize::YogaSize;
+(crate::unity_engine::yoga::yoganode::YogaNode)::core::convert::Into::into(node),(f32)::core::convert::Into::into(width),(crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)::core::convert::Into::into(width_mode),(f32)::core::convert::Into::into(height),(crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)::core::convert::Into::into(height_mode))}
+}
+#[doc="`BaselineInternal(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32)` overload"]pub fn baseline_internal(node:impl::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode> ,width:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f401c0usize)as*mut u8,f32;
+(crate::unity_engine::yoga::yoganode::YogaNode)::core::convert::Into::into(node),(f32)::core::convert::Into::into(width),(f32)::core::convert::Into::into(height))}
+}
+}
 
-#[cfg(feature = "unity_engine-yoga-yoganode")]
-impl YogaNode { pub fn measure_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < YogaNode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn baseline_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < YogaNode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-yoga-yoganode")]impl YogaNode{pub fn measure_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn baseline_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-yoga-yoganode")]
 #[doc(hidden)]

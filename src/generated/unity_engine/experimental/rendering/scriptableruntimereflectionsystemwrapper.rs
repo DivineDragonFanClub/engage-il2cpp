@@ -4,30 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/scriptableruntimereflectionsystemwrapper/ScriptableRuntimeReflectionSystemWrapper.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering" , name = "ScriptableRuntimeReflectionSystemWrapper")] # [parent (crate :: system :: object :: Object)] pub struct ScriptableRuntimeReflectionSystemWrapper {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/scriptableruntimereflectionsystemwrapper/ScriptableRuntimeReflectionSystemWrapper.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering",name="ScriptableRuntimeReflectionSystemWrapper")]#[parent(crate::system::object::Object)]pub struct ScriptableRuntimeReflectionSystemWrapper{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]
-pub trait IScriptableRuntimeReflectionSystemWrapperMethods : IScriptableRuntimeReflectionSystemWrapper { # [doc = "`get_implementation()` overload"] fn get_implementation (self ,) -> crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem { unsafe { let __receiver = < ScriptableRuntimeReflectionSystemWrapper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRuntimeReflectionSystemWrapper , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_implementation(crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem)` overload"] fn set_implementation (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem >) -> () { unsafe { let __receiver = < ScriptableRuntimeReflectionSystemWrapper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRuntimeReflectionSystemWrapper , crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_ScriptableRuntimeReflectionSystemWrapper_TickRealtimeProbes(*mutbool)` overload"] fn internal_scriptable_runtime_reflection_system_wrapper_tick_realtime_probes (self ,) -> bool { unsafe { let __receiver = < ScriptableRuntimeReflectionSystemWrapper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; { let __inner : extern "C" fn (ScriptableRuntimeReflectionSystemWrapper , * mut bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e740usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ScriptableRuntimeReflectionSystemWrapper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRuntimeReflectionSystemWrapper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]pub trait IScriptableRuntimeReflectionSystemWrapperMethods:IScriptableRuntimeReflectionSystemWrapper{#[doc="`get_implementation()` overload"]fn get_implementation(self,)->crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem{unsafe{let __receiver= <ScriptableRuntimeReflectionSystemWrapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e720usize)as*mut u8,crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem;
+(ScriptableRuntimeReflectionSystemWrapper)__receiver)}
+}
+#[doc="`set_implementation(crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem)` overload"]fn set_implementation(self,value:impl::core::convert::Into<crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem>)->(){unsafe{let __receiver= <ScriptableRuntimeReflectionSystemWrapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e730usize)as*mut u8,();
+(ScriptableRuntimeReflectionSystemWrapper)__receiver,(crate::unity_engine::experimental::rendering::iscriptableruntimereflectionsystem::IScriptableRuntimeReflectionSystem)::core::convert::Into::into(value))}
+}
+#[doc="`Internal_ScriptableRuntimeReflectionSystemWrapper_TickRealtimeProbes(*mutbool)` overload"]fn internal_scriptable_runtime_reflection_system_wrapper_tick_realtime_probes(self,)->bool{unsafe{let __receiver= <ScriptableRuntimeReflectionSystemWrapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e740usize)as*mut u8,();
+(ScriptableRuntimeReflectionSystemWrapper)__receiver,(*mut bool)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptableRuntimeReflectionSystemWrapper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e710usize)as*mut u8,();
+(ScriptableRuntimeReflectionSystemWrapper)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]
-impl < __T : IScriptableRuntimeReflectionSystemWrapper > IScriptableRuntimeReflectionSystemWrapperMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]impl<__T:IScriptableRuntimeReflectionSystemWrapper>IScriptableRuntimeReflectionSystemWrapperMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]
-impl ScriptableRuntimeReflectionSystemWrapper { pub fn get_implementation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRuntimeReflectionSystemWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_implementation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRuntimeReflectionSystemWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn internal_scriptable_runtime_reflection_system_wrapper_tick_realtime_probes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRuntimeReflectionSystemWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRuntimeReflectionSystemWrapper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]impl ScriptableRuntimeReflectionSystemWrapper{pub fn get_implementation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_implementation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn internal_scriptable_runtime_reflection_system_wrapper_tick_realtime_probes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]
-impl ScriptableRuntimeReflectionSystemWrapper {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScriptableRuntimeReflectionSystemWrapper) , :: core :: stringify ! (new) ,)) ; < Self as IScriptableRuntimeReflectionSystemWrapperMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]impl ScriptableRuntimeReflectionSystemWrapper{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptableRuntimeReflectionSystemWrapper), ::core::stringify!(new),));
+ <Self as IScriptableRuntimeReflectionSystemWrapperMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]

@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/yoga/baselinefunction/BaselineFunction.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Yoga" , name = "BaselineFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct BaselineFunction {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/yoga/baselinefunction/BaselineFunction.md"))]#[::unity2::class(namespace="UnityEngine.Yoga",name="BaselineFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct BaselineFunction{}
 
 }
 
 #[cfg(feature = "unity_engine-yoga-baselinefunction-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-yoga-baselinefunction")]
-pub trait IBaselineFunctionMethods : IBaselineFunction { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BaselineFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaselineFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3f6c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32)` overload"] fn invoke (self , node : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yoganode :: YogaNode > , width : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < BaselineFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaselineFunction , crate :: unity_engine :: yoga :: yoganode :: YogaNode , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3f6e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-yoga-baselinefunction")]pub trait IBaselineFunctionMethods:IBaselineFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BaselineFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f6c0usize)as*mut u8,();
+(BaselineFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32)` overload"]fn invoke(self,node:impl::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode> ,width:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <BaselineFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f6e0usize)as*mut u8,f32;
+(BaselineFunction)__receiver,(crate::unity_engine::yoga::yoganode::YogaNode)::core::convert::Into::into(node),(f32)::core::convert::Into::into(width),(f32)::core::convert::Into::into(height))}
+}
+}
 
-#[cfg(feature = "unity_engine-yoga-baselinefunction")]
-impl < __T : IBaselineFunction > IBaselineFunctionMethods for __T { }
+#[cfg(feature="unity_engine-yoga-baselinefunction")]impl<__T:IBaselineFunction>IBaselineFunctionMethods for __T{}
 
-#[cfg(feature = "unity_engine-yoga-baselinefunction")]
-impl BaselineFunction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaselineFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaselineFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-yoga-baselinefunction")]impl BaselineFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-yoga-baselinefunction")]
-impl BaselineFunction {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BaselineFunction) , :: core :: stringify ! (new) ,)) ; < Self as IBaselineFunctionMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-yoga-baselinefunction")]impl BaselineFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BaselineFunction), ::core::stringify!(new),));
+ <Self as IBaselineFunctionMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "unity_engine-yoga-baselinefunction")]

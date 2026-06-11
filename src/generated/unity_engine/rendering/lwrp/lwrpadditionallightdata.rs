@@ -4,30 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/lwrp/lwrpadditionallightdata/LWRPAdditionalLightData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.LWRP" , name = "LWRPAdditionalLightData")] # [parent (crate :: system :: object :: Object)] pub struct LWRPAdditionalLightData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/lwrp/lwrpadditionallightdata/LWRPAdditionalLightData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.LWRP",name="LWRPAdditionalLightData")]#[parent(crate::system::object::Object)]pub struct LWRPAdditionalLightData{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionallightdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionallightdata")]
-pub trait ILWRPAdditionalLightDataMethods : ILWRPAdditionalLightData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LWRPAdditionalLightData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LWRPAdditionalLightData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef17b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-lwrp-lwrpadditionallightdata")]pub trait ILWRPAdditionalLightDataMethods:ILWRPAdditionalLightData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LWRPAdditionalLightData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef17b0usize)as*mut u8,();
+(LWRPAdditionalLightData)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionallightdata")]
-impl < __T : ILWRPAdditionalLightData > ILWRPAdditionalLightDataMethods for __T { }
+#[cfg(feature="unity_engine-rendering-lwrp-lwrpadditionallightdata")]impl<__T:ILWRPAdditionalLightData>ILWRPAdditionalLightDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionallightdata")]
-impl LWRPAdditionalLightData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LWRPAdditionalLightData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-lwrp-lwrpadditionallightdata")]impl LWRPAdditionalLightData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionallightdata")]
-impl LWRPAdditionalLightData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LWRPAdditionalLightData) , :: core :: stringify ! (new) ,)) ; < Self as ILWRPAdditionalLightDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-lwrp-lwrpadditionallightdata")]impl LWRPAdditionalLightData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LWRPAdditionalLightData), ::core::stringify!(new),));
+ <Self as ILWRPAdditionalLightDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionallightdata")]

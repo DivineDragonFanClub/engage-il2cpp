@@ -4,95 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor_Method.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SoftNormalsToVertexColor_Method  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor_Method.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SoftNormalsToVertexColor_Method{pub value:i32,}
+impl::unity2::ClassIdentity for SoftNormalsToVertexColor_Method{const NAMESPACE: &'static str="";
+const NAME: &'static str="SoftNormalsToVertexColor.Method";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SoftNormalsToVertexColor_Method{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SoftNormalsToVertexColor_Method{pub fn simple()->Self{Self{value:0}
+}
+pub fn angular_deviation()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SoftNormalsToVertexColor_Method  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "SoftNormalsToVertexColor.Method";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SoftNormalsToVertexColor_Method  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SoftNormalsToVertexColor_Method  {
-    pub fn simple() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn angular_deviation() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor.md"))] # [:: unity2 :: class (namespace = "" , name = "SoftNormalsToVertexColor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct SoftNormalsToVertexColor {
-# [offset (24)] # [rename (name = "method")] pub method : crate :: root :: softnormalstovertexcolor :: SoftNormalsToVertexColor_Method ,
-# [offset (28)] # [rename (name = "generateOnAwake")] pub generate_on_awake : bool ,
-# [offset (29)] # [rename (name = "generateNow")] pub generate_now : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/softnormalstovertexcolor/SoftNormalsToVertexColor.md"))]#[::unity2::class(namespace="",name="SoftNormalsToVertexColor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SoftNormalsToVertexColor{#[offset(24)]#[rename(name="method")]pub method:crate::root::softnormalstovertexcolor::SoftNormalsToVertexColor_Method, #[offset(28)]#[rename(name="generateOnAwake")]pub generate_on_awake:bool, #[offset(29)]#[rename(name="generateNow")]pub generate_now:bool,}
 
 }
 
 #[cfg(feature = "root-softnormalstovertexcolor-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-softnormalstovertexcolor")]
-pub trait ISoftNormalsToVertexColorMethods : ISoftNormalsToVertexColor { # [doc = "`OnDrawGizmos()` overload"] fn on_draw_gizmos (self ,) -> () { unsafe { let __receiver = < SoftNormalsToVertexColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftNormalsToVertexColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdd440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < SoftNormalsToVertexColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftNormalsToVertexColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdd560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryGenerate()` overload"] fn try_generate (self ,) -> () { unsafe { let __receiver = < SoftNormalsToVertexColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftNormalsToVertexColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdd460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Generate(crate::unity_engine::mesh::Mesh)` overload"] fn generate (self , m : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh >) -> () { unsafe { let __receiver = < SoftNormalsToVertexColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftNormalsToVertexColor , crate :: unity_engine :: mesh :: Mesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdd570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (m) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SoftNormalsToVertexColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SoftNormalsToVertexColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdde30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-softnormalstovertexcolor")]pub trait ISoftNormalsToVertexColorMethods:ISoftNormalsToVertexColor{#[doc="`OnDrawGizmos()` overload"]fn on_draw_gizmos(self,)->(){unsafe{let __receiver= <SoftNormalsToVertexColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdd440usize)as*mut u8,();
+(SoftNormalsToVertexColor)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <SoftNormalsToVertexColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdd560usize)as*mut u8,();
+(SoftNormalsToVertexColor)__receiver)}
+}
+#[doc="`TryGenerate()` overload"]fn try_generate(self,)->(){unsafe{let __receiver= <SoftNormalsToVertexColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdd460usize)as*mut u8,();
+(SoftNormalsToVertexColor)__receiver)}
+}
+#[doc="`Generate(crate::unity_engine::mesh::Mesh)` overload"]fn generate(self,m:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <SoftNormalsToVertexColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdd570usize)as*mut u8,();
+(SoftNormalsToVertexColor)__receiver,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(m))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoftNormalsToVertexColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdde30usize)as*mut u8,();
+(SoftNormalsToVertexColor)__receiver)}
+}
+}
 
-#[cfg(feature = "root-softnormalstovertexcolor")]
-impl < __T : ISoftNormalsToVertexColor > ISoftNormalsToVertexColorMethods for __T { }
+#[cfg(feature="root-softnormalstovertexcolor")]impl<__T:ISoftNormalsToVertexColor>ISoftNormalsToVertexColorMethods for __T{}
 
-#[cfg(feature = "root-softnormalstovertexcolor")]
-impl SoftNormalsToVertexColor { pub fn on_draw_gizmos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftNormalsToVertexColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftNormalsToVertexColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_generate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftNormalsToVertexColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn generate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftNormalsToVertexColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SoftNormalsToVertexColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-softnormalstovertexcolor")]impl SoftNormalsToVertexColor{pub fn on_draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_generate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn generate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-softnormalstovertexcolor")]
-impl SoftNormalsToVertexColor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SoftNormalsToVertexColor) , :: core :: stringify ! (new) ,)) ; < Self as ISoftNormalsToVertexColorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-softnormalstovertexcolor")]impl SoftNormalsToVertexColor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoftNormalsToVertexColor), ::core::stringify!(new),));
+ <Self as ISoftNormalsToVertexColorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-softnormalstovertexcolor")]

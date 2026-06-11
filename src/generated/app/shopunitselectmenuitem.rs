@@ -4,35 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopunitselectmenuitem/ShopUnitSelectMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopUnitSelectMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ShopUnitSelectMenuItem {
-# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_DecideEventHandler ,
-# [offset (120)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_SelectEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopunitselectmenuitem/ShopUnitSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="ShopUnitSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ShopUnitSelectMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler, #[offset(120)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::shopunitselectmenu::ShopUnitSelectMenu_SelectEventHandler,}
 
 }
 
 #[cfg(feature = "app-shopunitselectmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-shopunitselectmenuitem")]
-pub trait IShopUnitSelectMenuItemMethods : IShopUnitSelectMenuItem { # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < ShopUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2479ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Unit(crate::app::unit::Unit)` overload"] fn set_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < ShopUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopUnitSelectMenuItem , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2479ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::unit::Unit, crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler, crate::app::shopunitselectmenu::ShopUnitSelectMenu_SelectEventHandler)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_DecideEventHandler > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_SelectEventHandler >) -> () { unsafe { let __receiver = < ShopUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopUnitSelectMenuItem , crate :: app :: unit :: Unit , crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_DecideEventHandler , crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_SelectEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2479af0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < ShopUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2479b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ShopUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2479ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetInitialColor()` overload"] fn set_initial_color (self ,) -> () { unsafe { let __receiver = < ShopUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2479b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ShopUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2479cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ShopUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2479cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < ShopUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2479d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopunitselectmenuitem")]pub trait IShopUnitSelectMenuItemMethods:IShopUnitSelectMenuItem{#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <ShopUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2479ad0usize)as*mut u8,crate::app::unit::Unit;
+(ShopUnitSelectMenuItem)__receiver)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]fn set_unit(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ShopUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2479ae0usize)as*mut u8,();
+(ShopUnitSelectMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler, crate::app::shopunitselectmenu::ShopUnitSelectMenu_SelectEventHandler)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::shopunitselectmenu::ShopUnitSelectMenu_SelectEventHandler>)->(){unsafe{let __receiver= <ShopUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2479af0usize)as*mut u8,();
+(ShopUnitSelectMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::shopunitselectmenu::ShopUnitSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <ShopUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2479b60usize)as*mut u8,();
+(ShopUnitSelectMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ShopUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2479ca0usize)as*mut u8,();
+(ShopUnitSelectMenuItem)__receiver)}
+}
+#[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <ShopUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2479b70usize)as*mut u8,();
+(ShopUnitSelectMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2479cb0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ShopUnitSelectMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2479cf0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ShopUnitSelectMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ShopUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2479d30usize)as*mut u8,();
+(ShopUnitSelectMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-shopunitselectmenuitem")]
-impl < __T : IShopUnitSelectMenuItem > IShopUnitSelectMenuItemMethods for __T { }
+#[cfg(feature="app-shopunitselectmenuitem")]impl<__T:IShopUnitSelectMenuItem>IShopUnitSelectMenuItemMethods for __T{}
 
-#[cfg(feature = "app-shopunitselectmenuitem")]
-impl ShopUnitSelectMenuItem { pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_initial_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-shopunitselectmenuitem")]impl ShopUnitSelectMenuItem{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_initial_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-shopunitselectmenuitem")]
-impl ShopUnitSelectMenuItem {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler, crate::app::shopunitselectmenu::ShopUnitSelectMenu_SelectEventHandler)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , decide_event_handler : crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_DecideEventHandler , select_event_handler : crate :: app :: shopunitselectmenu :: ShopUnitSelectMenu_SelectEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopUnitSelectMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IShopUnitSelectMenuItemMethods > :: ctor (this , unit , decide_event_handler , select_event_handler) ; this }
+#[cfg(feature="app-shopunitselectmenuitem")]impl ShopUnitSelectMenuItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler, crate::app::shopunitselectmenu::ShopUnitSelectMenu_SelectEventHandler)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,decide_event_handler:crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler,select_event_handler:crate::app::shopunitselectmenu::ShopUnitSelectMenu_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopUnitSelectMenuItem), ::core::stringify!(new),));
+ <Self as IShopUnitSelectMenuItemMethods> ::ctor(this,unit,decide_event_handler,select_event_handler);
+this}
 }
 
 #[cfg(feature = "app-shopunitselectmenuitem")]

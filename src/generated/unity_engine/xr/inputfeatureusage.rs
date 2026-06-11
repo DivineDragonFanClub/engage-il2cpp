@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/inputfeatureusage/InputFeatureUsage.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct InputFeatureUsage {
-    pub m_name: :: unity2 :: Il2CppString,
-    pub m_internal_type: crate :: unity_engine :: xr :: inputfeaturetype :: InputFeatureType,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/inputfeatureusage/InputFeatureUsage.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct InputFeatureUsage{pub m_name: ::unity2::Il2CppString,pub m_internal_type:crate::unity_engine::xr::inputfeaturetype::InputFeatureType,}
+impl::unity2::ClassIdentity for InputFeatureUsage{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="InputFeatureUsage";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for InputFeatureUsage {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "InputFeatureUsage";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for InputFeatureUsage {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for InputFeatureUsage{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,29 @@ impl ::unity2::IlType for InputFeatureUsage {
 #[cfg(feature = "unity_engine-xr-inputfeatureusage-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-inputfeatureusage")]
-impl InputFeatureUsage { # [doc = "`get_name()` overload"] pub fn get_name (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut InputFeatureUsage , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e860usize) as * mut u8) ; __inner (self as * mut InputFeatureUsage , :: core :: option :: Option :: None) } } } # [doc = "`get_internalType()` overload"] pub fn get_internal_type (& mut self ,) -> crate :: unity_engine :: xr :: inputfeaturetype :: InputFeatureType { unsafe { { let __inner : extern "C" fn (* mut InputFeatureUsage , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: inputfeaturetype :: InputFeatureType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e870usize) as * mut u8) ; __inner (self as * mut InputFeatureUsage , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut InputFeatureUsage , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e880usize) as * mut u8) ; __inner (self as * mut InputFeatureUsage , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::xr::inputfeatureusage::InputFeatureUsage)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: inputfeatureusage :: InputFeatureUsage >) -> bool { unsafe { { let __inner : extern "C" fn (* mut InputFeatureUsage , crate :: unity_engine :: xr :: inputfeatureusage :: InputFeatureUsage , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e920usize) as * mut u8) ; __inner (self as * mut InputFeatureUsage , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut InputFeatureUsage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e970usize) as * mut u8) ; __inner (self as * mut InputFeatureUsage , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-inputfeatureusage")]impl InputFeatureUsage{#[doc="`get_name()` overload"]pub fn get_name(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e860usize)as*mut u8, ::unity2::Il2CppString;
+(*mut InputFeatureUsage)self as*mut InputFeatureUsage)}
+}
+#[doc="`get_internalType()` overload"]pub fn get_internal_type(&mut self,)->crate::unity_engine::xr::inputfeaturetype::InputFeatureType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e870usize)as*mut u8,crate::unity_engine::xr::inputfeaturetype::InputFeatureType;
+(*mut InputFeatureUsage)self as*mut InputFeatureUsage)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e880usize)as*mut u8,bool;
+(*mut InputFeatureUsage)self as*mut InputFeatureUsage,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::xr::inputfeatureusage::InputFeatureUsage)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::xr::inputfeatureusage::InputFeatureUsage>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e920usize)as*mut u8,bool;
+(*mut InputFeatureUsage)self as*mut InputFeatureUsage,(crate::unity_engine::xr::inputfeatureusage::InputFeatureUsage)::core::convert::Into::into(other))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e970usize)as*mut u8,i32;
+(*mut InputFeatureUsage)self as*mut InputFeatureUsage)}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-inputfeatureusage")]
-impl InputFeatureUsage { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputFeatureUsage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_internal_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputFeatureUsage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputFeatureUsage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputFeatureUsage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputFeatureUsage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-xr-inputfeatureusage")]impl InputFeatureUsage{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_internal_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-xr-inputfeatureusage")]
 #[doc(hidden)]

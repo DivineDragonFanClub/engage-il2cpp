@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: trackasset :: { ITrackAsset , TrackAsset }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/markertrack/MarkerTrack.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "MarkerTrack")] # [parent (crate :: unity_engine :: timeline :: trackasset :: TrackAsset)] pub struct MarkerTrack {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/markertrack/MarkerTrack.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="MarkerTrack")]#[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]pub struct MarkerTrack{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-markertrack-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-markertrack")]
-pub trait IMarkerTrackMethods : IMarkerTrack { # [doc = "`get_outputs()` overload"] fn get_outputs (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > { unsafe { let __receiver = < MarkerTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MarkerTrack , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d8420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MarkerTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MarkerTrack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d86a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-markertrack")]pub trait IMarkerTrackMethods:IMarkerTrack{#[doc="`get_outputs()` overload"]fn get_outputs(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{unsafe{let __receiver= <MarkerTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d8420usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> ;
+(MarkerTrack)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MarkerTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d86a0usize)as*mut u8,();
+(MarkerTrack)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-markertrack")]
-impl < __T : IMarkerTrack > IMarkerTrackMethods for __T { }
+#[cfg(feature="unity_engine-timeline-markertrack")]impl<__T:IMarkerTrack>IMarkerTrackMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-markertrack")]
-impl MarkerTrack { pub fn get_outputs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MarkerTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-timeline-markertrack")]impl MarkerTrack{pub fn get_outputs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-timeline-markertrack")]
-impl MarkerTrack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MarkerTrack) , :: core :: stringify ! (new) ,)) ; < Self as IMarkerTrackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-markertrack")]impl MarkerTrack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MarkerTrack), ::core::stringify!(new),));
+ <Self as IMarkerTrackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-markertrack")]

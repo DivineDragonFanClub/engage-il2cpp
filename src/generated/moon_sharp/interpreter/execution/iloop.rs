@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/iloop/ILoop.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Execution" , name = "ILoop")] pub struct ILoop {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/execution/iloop/ILoop.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Execution",name="ILoop")]pub struct ILoop{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iloop-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ILoop_unity2_raw { use super :: * ; pub unsafe fn compile_break (this : ILoop , bc : crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CompileBreak") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CompileBreak" , < ILoop as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILoop , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , bc , __mi) } pub unsafe fn is_boundary (this : ILoop , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IsBoundary") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IsBoundary" , < ILoop as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILoop , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="moon_sharp-interpreter-execution-iloop")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ILoop_unity2_raw{use super:: * ;
+pub unsafe fn compile_break(this:ILoop,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CompileBreak").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CompileBreak", <ILoop as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILoop,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bc,__mi)}
+pub unsafe fn is_boundary(this:ILoop,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsBoundary").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsBoundary", <ILoop as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILoop, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
-pub trait IILoopMethods : IILoop { # [doc = "`CompileBreak(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"] fn compile_break (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode >) -> () { unsafe { let __receiver = < ILoop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILoop_unity2_raw :: compile_break (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: option :: Option :: None) } } # [doc = "`IsBoundary()` overload"] fn is_boundary (self ,) -> bool { unsafe { let __receiver = < ILoop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILoop_unity2_raw :: is_boundary (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="moon_sharp-interpreter-execution-iloop")]pub trait IILoopMethods:IILoop{#[doc="`CompileBreak(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile_break(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <ILoop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILoop_unity2_raw::compile_break(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
+}
+#[doc="`IsBoundary()` overload"]fn is_boundary(self,)->bool{unsafe{let __receiver= <ILoop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILoop_unity2_raw::is_boundary(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
-impl < __T : IILoop > IILoopMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-execution-iloop")]impl<__T:IILoop>IILoopMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
-impl ILoop { pub fn compile_break_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILoop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_boundary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILoop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="moon_sharp-interpreter-execution-iloop")]impl ILoop{pub fn compile_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_boundary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
 #[doc(hidden)]

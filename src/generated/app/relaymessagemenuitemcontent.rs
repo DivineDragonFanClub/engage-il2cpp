@@ -4,43 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenuitemcontent/RelayMessageMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayMessageMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct RelayMessageMenuItemContent {
-# [offset (72)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_StampImage")] pub m_stamp_image : crate :: unity_engine :: ui :: image :: Image ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymessagemenuitemcontent/RelayMessageMenuItemContent.md"))]#[::unity2::class(namespace="App",name="RelayMessageMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct RelayMessageMenuItemContent{#[offset(72)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_StampImage")]pub m_stamp_image:crate::unity_engine::ui::image::Image,}
 
 }
 
 #[cfg(feature = "app-relaymessagemenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relaymessagemenuitemcontent")]
-pub trait IRelayMessageMenuItemContentMethods : IRelayMessageMenuItemContent { # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < RelayMessageMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayMessageMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2001260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetData(crate::app::relaystampdata::RelayStampData)` overload"] fn set_data (self , data : impl :: core :: convert :: Into < crate :: app :: relaystampdata :: RelayStampData >) -> () { unsafe { let __receiver = < RelayMessageMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayMessageMenuItemContent , crate :: app :: relaystampdata :: RelayStampData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20012f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayMessageMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayMessageMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20016c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relaymessagemenuitemcontent")]pub trait IRelayMessageMenuItemContentMethods:IRelayMessageMenuItemContent{#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <RelayMessageMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2001260usize)as*mut u8,();
+(RelayMessageMenuItemContent)__receiver)}
+}
+#[doc="`SetData(crate::app::relaystampdata::RelayStampData)` overload"]fn set_data(self,data:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData>)->(){unsafe{let __receiver= <RelayMessageMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20012f0usize)as*mut u8,();
+(RelayMessageMenuItemContent)__receiver,(crate::app::relaystampdata::RelayStampData)::core::convert::Into::into(data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayMessageMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20016c0usize)as*mut u8,();
+(RelayMessageMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relaymessagemenuitemcontent")]
-impl < __T : IRelayMessageMenuItemContent > IRelayMessageMenuItemContentMethods for __T { }
+#[cfg(feature="app-relaymessagemenuitemcontent")]impl<__T:IRelayMessageMenuItemContent>IRelayMessageMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-relaymessagemenuitemcontent")]
-impl RelayMessageMenuItemContent { pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMessageMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMessageMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMessageMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-relaymessagemenuitemcontent")]impl RelayMessageMenuItemContent{pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-relaymessagemenuitemcontent")]
-impl RelayMessageMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayMessageMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IRelayMessageMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relaymessagemenuitemcontent")]impl RelayMessageMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayMessageMenuItemContent), ::core::stringify!(new),));
+ <Self as IRelayMessageMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relaymessagemenuitemcontent")]

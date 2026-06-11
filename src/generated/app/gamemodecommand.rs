@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamemodecommand/GameModeCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameModeCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct GameModeCommand {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamemodecommand/GameModeCommand.md"))]#[::unity2::class(namespace="App",name="GameModeCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct GameModeCommand{}
 
 }
 
 #[cfg(feature = "app-gamemodecommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gamemodecommand")]
-pub trait IGameModeCommandMethods : IGameModeCommand { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameModeCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameModeCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Get()` overload"] fn get (self ,) -> f32 { unsafe { let __receiver = < GameModeCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameModeCommand , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22805c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameModeCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameModeCommand , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22786c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gamemodecommand")]pub trait IGameModeCommandMethods:IGameModeCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameModeCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280570usize)as*mut u8, ::unity2::Il2CppString;
+(GameModeCommand)__receiver)}
+}
+#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <GameModeCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22805c0usize)as*mut u8,f32;
+(GameModeCommand)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameModeCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22786c0usize)as*mut u8,();
+(GameModeCommand)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gamemodecommand")]
-impl < __T : IGameModeCommand > IGameModeCommandMethods for __T { }
+#[cfg(feature="app-gamemodecommand")]impl<__T:IGameModeCommand>IGameModeCommandMethods for __T{}
 
-#[cfg(feature = "app-gamemodecommand")]
-impl GameModeCommand { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameModeCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameModeCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameModeCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-gamemodecommand")]impl GameModeCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-gamemodecommand")]
-impl GameModeCommand {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameModeCommand) , :: core :: stringify ! (new) ,)) ; < Self as IGameModeCommandMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gamemodecommand")]impl GameModeCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameModeCommand), ::core::stringify!(new),));
+ <Self as IGameModeCommandMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gamemodecommand")]

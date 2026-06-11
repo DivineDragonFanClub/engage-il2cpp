@@ -4,73 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rendertargetidentifier/RenderTargetIdentifier.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RenderTargetIdentifier {
-    pub m_type: crate :: unity_engine :: rendering :: builtinrendertexturetype :: BuiltinRenderTextureType,
-    pub m_name_id: i32,
-    pub m_instance_id: i32,
-    pub m_buffer_pointer: :: unity2 :: IntPtr,
-    pub m_mip_level: i32,
-    pub m_cube_face: crate :: unity_engine :: cubemapface :: CubemapFace,
-    pub m_depth_slice: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/rendertargetidentifier/RenderTargetIdentifier.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderTargetIdentifier{pub m_type:crate::unity_engine::rendering::builtinrendertexturetype::BuiltinRenderTextureType,pub m_name_id:i32,pub m_instance_id:i32,pub m_buffer_pointer: ::unity2::IntPtr,pub m_mip_level:i32,pub m_cube_face:crate::unity_engine::cubemapface::CubemapFace,pub m_depth_slice:i32,}
+impl::unity2::ClassIdentity for RenderTargetIdentifier{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="RenderTargetIdentifier";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RenderTargetIdentifier {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "RenderTargetIdentifier";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for RenderTargetIdentifier{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for RenderTargetIdentifier {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl RenderTargetIdentifier{#[inline]pub fn all_depth_slices()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"AllDepthSlices");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_all_depth_slices(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"AllDepthSlices");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl RenderTargetIdentifier {
-    #[inline]
-    pub fn all_depth_slices() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "AllDepthSlices");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_all_depth_slices(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "AllDepthSlices");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -78,14 +34,71 @@ impl RenderTargetIdentifier {
 #[cfg(feature = "unity_engine-rendering-rendertargetidentifier-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-rendertargetidentifier")]
-impl RenderTargetIdentifier { # [doc = "`op_Implicit(crate::unity_engine::rendering::builtinrendertexturetype::BuiltinRenderTextureType)` overload"] pub fn op_implicit (r#type : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: builtinrendertexturetype :: BuiltinRenderTextureType >) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: builtinrendertexturetype :: BuiltinRenderTextureType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f84270usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(i32)` overload"] pub fn op_implicit_2 (name_id : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f842e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name_id) , :: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(crate::unity_engine::texture::Texture)` overload"] pub fn op_implicit_3 (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture >) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: texture :: Texture , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f84340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tex) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f848c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f84970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-rendertargetidentifier")]impl RenderTargetIdentifier{#[doc="`op_Implicit(crate::unity_engine::rendering::builtinrendertexturetype::BuiltinRenderTextureType)` overload"]pub fn op_implicit(r#type:impl::core::convert::Into<crate::unity_engine::rendering::builtinrendertexturetype::BuiltinRenderTextureType>)->crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f84270usize)as*mut u8,crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+(crate::unity_engine::rendering::builtinrendertexturetype::BuiltinRenderTextureType)::core::convert::Into::into(r#type))}
+}
+#[doc="`op_Implicit(i32)` overload"]pub fn op_implicit_2(name_id:impl::core::convert::Into<i32>)->crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f842e0usize)as*mut u8,crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+(i32)::core::convert::Into::into(name_id))}
+}
+#[doc="`op_Implicit(crate::unity_engine::texture::Texture)` overload"]pub fn op_implicit_3(tex:impl::core::convert::Into<crate::unity_engine::texture::Texture>)->crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f84340usize)as*mut u8,crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+(crate::unity_engine::texture::Texture)::core::convert::Into::into(tex))}
+}
+#[doc="`op_Equality(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> ,rhs:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f848c0usize)as*mut u8,bool;
+(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(lhs),(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> ,rhs:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f84970usize)as*mut u8,bool;
+(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(lhs),(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-rendertargetidentifier")]
-impl RenderTargetIdentifier { # [doc = "`.ctor(crate::unity_engine::rendering::builtinrendertexturetype::BuiltinRenderTextureType)` overload"] pub fn ctor (& mut self , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: builtinrendertexturetype :: BuiltinRenderTextureType >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , crate :: unity_engine :: rendering :: builtinrendertexturetype :: BuiltinRenderTextureType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83e50usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] pub fn ctor_2 (& mut self , name_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83eb0usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: convert :: Into :: into (name_id) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"] pub fn ctor_3 (& mut self , name_id : impl :: core :: convert :: Into < i32 > , mip_level : impl :: core :: convert :: Into < i32 > , cube_face : impl :: core :: convert :: Into < crate :: unity_engine :: cubemapface :: CubemapFace > , depth_slice : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , i32 , i32 , crate :: unity_engine :: cubemapface :: CubemapFace , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83f10usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: convert :: Into :: into (name_id) , :: core :: convert :: Into :: into (mip_level) , :: core :: convert :: Into :: into (cube_face) , :: core :: convert :: Into :: into (depth_slice) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"] pub fn ctor_4 (& mut self , render_target_identifier : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > , mip_level : impl :: core :: convert :: Into < i32 > , cube_face : impl :: core :: convert :: Into < crate :: unity_engine :: cubemapface :: CubemapFace > , depth_slice : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , i32 , crate :: unity_engine :: cubemapface :: CubemapFace , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83f90usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: convert :: Into :: into (render_target_identifier) , :: core :: convert :: Into :: into (mip_level) , :: core :: convert :: Into :: into (cube_face) , :: core :: convert :: Into :: into (depth_slice) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::texture::Texture)` overload"] pub fn ctor_5 (& mut self , tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , crate :: unity_engine :: texture :: Texture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83fc0usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: convert :: Into :: into (tex) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::texture::Texture, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"] pub fn ctor_6 (& mut self , tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture > , mip_level : impl :: core :: convert :: Into < i32 > , cube_face : impl :: core :: convert :: Into < crate :: unity_engine :: cubemapface :: CubemapFace > , depth_slice : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , crate :: unity_engine :: texture :: Texture , i32 , crate :: unity_engine :: cubemapface :: CubemapFace , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f84110usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: convert :: Into :: into (tex) , :: core :: convert :: Into :: into (mip_level) , :: core :: convert :: Into :: into (cube_face) , :: core :: convert :: Into :: into (depth_slice) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f843b0usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f846c0usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"] pub fn equals (& mut self , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f84720usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RenderTargetIdentifier , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f847d0usize) as * mut u8) ; __inner (self as * mut RenderTargetIdentifier , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-rendertargetidentifier")]impl RenderTargetIdentifier{#[doc="`.ctor(crate::unity_engine::rendering::builtinrendertexturetype::BuiltinRenderTextureType)` overload"]pub fn ctor(&mut self,r#type:impl::core::convert::Into<crate::unity_engine::rendering::builtinrendertexturetype::BuiltinRenderTextureType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83e50usize)as*mut u8,();
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier,(crate::unity_engine::rendering::builtinrendertexturetype::BuiltinRenderTextureType)::core::convert::Into::into(r#type))}
+}
+#[doc="`.ctor(i32)` overload"]pub fn ctor_2(&mut self,name_id:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83eb0usize)as*mut u8,();
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier,(i32)::core::convert::Into::into(name_id))}
+}
+#[doc="`.ctor(i32, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]pub fn ctor_3(&mut self,name_id:impl::core::convert::Into<i32> ,mip_level:impl::core::convert::Into<i32> ,cube_face:impl::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace> ,depth_slice:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83f10usize)as*mut u8,();
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier,(i32)::core::convert::Into::into(name_id),(i32)::core::convert::Into::into(mip_level),(crate::unity_engine::cubemapface::CubemapFace)::core::convert::Into::into(cube_face),(i32)::core::convert::Into::into(depth_slice))}
+}
+#[doc="`.ctor(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]pub fn ctor_4(&mut self,render_target_identifier:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier> ,mip_level:impl::core::convert::Into<i32> ,cube_face:impl::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace> ,depth_slice:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83f90usize)as*mut u8,();
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier,(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(render_target_identifier),(i32)::core::convert::Into::into(mip_level),(crate::unity_engine::cubemapface::CubemapFace)::core::convert::Into::into(cube_face),(i32)::core::convert::Into::into(depth_slice))}
+}
+#[doc="`.ctor(crate::unity_engine::texture::Texture)` overload"]pub fn ctor_5(&mut self,tex:impl::core::convert::Into<crate::unity_engine::texture::Texture>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83fc0usize)as*mut u8,();
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier,(crate::unity_engine::texture::Texture)::core::convert::Into::into(tex))}
+}
+#[doc="`.ctor(crate::unity_engine::texture::Texture, i32, crate::unity_engine::cubemapface::CubemapFace, i32)` overload"]pub fn ctor_6(&mut self,tex:impl::core::convert::Into<crate::unity_engine::texture::Texture> ,mip_level:impl::core::convert::Into<i32> ,cube_face:impl::core::convert::Into<crate::unity_engine::cubemapface::CubemapFace> ,depth_slice:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f84110usize)as*mut u8,();
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier,(crate::unity_engine::texture::Texture)::core::convert::Into::into(tex),(i32)::core::convert::Into::into(mip_level),(crate::unity_engine::cubemapface::CubemapFace)::core::convert::Into::into(cube_face),(i32)::core::convert::Into::into(depth_slice))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f843b0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier)}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f846c0usize)as*mut u8,i32;
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier)}
+}
+#[doc="`Equals(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)` overload"]pub fn equals(&mut self,rhs:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f84720usize)as*mut u8,bool;
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier,(crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier)::core::convert::Into::into(rhs))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f847d0usize)as*mut u8,bool;
+(*mut RenderTargetIdentifier)self as*mut RenderTargetIdentifier,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-rendertargetidentifier")]
-impl RenderTargetIdentifier { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn op_implicit_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn op_implicit_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetIdentifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="unity_engine-rendering-rendertargetidentifier")]impl RenderTargetIdentifier{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn op_implicit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn op_implicit_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
 #[cfg(feature = "unity_engine-rendering-rendertargetidentifier")]
 #[doc(hidden)]

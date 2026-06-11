@@ -4,25 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/stacktraceutility/StackTraceUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "StackTraceUtility")] # [parent (crate :: system :: object :: Object)] pub struct StackTraceUtility {
-# [static_field] # [rename (name = "projectFolder")] pub project_folder_field : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/stacktraceutility/StackTraceUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="StackTraceUtility")]#[parent(crate::system::object::Object)]pub struct StackTraceUtility{#[static_field]#[rename(name="projectFolder")]pub project_folder_field: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-stacktraceutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-stacktraceutility")]
-impl StackTraceUtility { # [doc = "`SetProjectFolder(::unity2::Il2CppString)` overload"] pub fn set_project_folder (folder : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f99730usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (folder) , :: core :: option :: Option :: None) } } } # [doc = "`ExtractStackTrace()` overload"] pub fn extract_stack_trace () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f99840usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ExtractStringFromExceptionInternal(crate::system::object::Object, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn extract_string_from_exception_internal (exceptiono : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; { let __inner : extern "C" fn (crate :: system :: object :: Object , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9a050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (exceptiono) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9a3d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-stacktraceutility")]impl StackTraceUtility{#[doc="`SetProjectFolder(::unity2::Il2CppString)` overload"]pub fn set_project_folder(folder:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f99730usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(folder))}
+}
+#[doc="`ExtractStackTrace()` overload"]pub fn extract_stack_trace()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f99840usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`ExtractStringFromExceptionInternal(crate::system::object::Object, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]pub fn extract_string_from_exception_internal(exceptiono:impl::core::convert::Into<crate::system::object::Object>)->(::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f9a050usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(exceptiono),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9a3d0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-stacktraceutility")]
-impl StackTraceUtility { pub fn set_project_folder_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StackTraceUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn extract_stack_trace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StackTraceUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn extract_string_from_exception_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StackTraceUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StackTraceUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-stacktraceutility")]impl StackTraceUtility{pub fn set_project_folder_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn extract_stack_trace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn extract_string_from_exception_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-stacktraceutility")]
 #[doc(hidden)]

@@ -4,32 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: collections :: generic :: enumequalitycomparer_1 :: { EnumEqualityComparer_1 , IEnumEqualityComparer_1 }
- ;
- use crate :: system :: collections :: generic :: equalitycomparer_1 :: { EqualityComparer_1 , IEqualityComparer_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::collections::generic::enumequalitycomparer_1::{EnumEqualityComparer_1,IEnumEqualityComparer_1}
+;
+use crate::system::collections::generic::equalitycomparer_1::{EqualityComparer_1,IEqualityComparer_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/sbyteenumequalitycomparer_1/SByteEnumEqualityComparer_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "SByteEnumEqualityComparer`1")] # [parent (crate :: system :: collections :: generic :: enumequalitycomparer_1 :: EnumEqualityComparer_1 < T0 >)] # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < T0 >)] # [parent (crate :: system :: object :: Object)] pub struct SByteEnumEqualityComparer_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/sbyteenumequalitycomparer_1/SByteEnumEqualityComparer_1.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="SByteEnumEqualityComparer`1")]#[parent(crate::system::collections::generic::enumequalitycomparer_1::EnumEqualityComparer_1<T0>)]#[parent(crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1<T0>)]#[parent(crate::system::object::Object)]pub struct SByteEnumEqualityComparer_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "system-collections-generic-sbyteenumequalitycomparer_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-sbyteenumequalitycomparer_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > SByteEnumEqualityComparer_1 < T0 > {
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
-
-# [doc = "`GetHashCode(T0)` overload"] # [method (name = "GetHashCode" , args = 1)] pub fn get_hash_code (self , obj : T0) -> i32 ;
+#[cfg(feature="system-collections-generic-sbyteenumequalitycomparer_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>SByteEnumEqualityComparer_1<T0>{#[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
+ #[doc="`GetHashCode(T0)` overload"]#[method(name="GetHashCode",args=1)]pub fn get_hash_code(self,obj:T0)->i32;
 }
 
-#[cfg(feature = "system-collections-generic-sbyteenumequalitycomparer_1")]
-impl < T0 : :: unity2 :: ClassIdentity > SByteEnumEqualityComparer_1 < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SByteEnumEqualityComparer_1) , :: core :: stringify ! (new) ,)) ; < Self as ISByteEnumEqualityComparer_1Methods < T0 > > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-generic-sbyteenumequalitycomparer_1")]impl<T0: ::unity2::ClassIdentity>SByteEnumEqualityComparer_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SByteEnumEqualityComparer_1), ::core::stringify!(new),));
+ <Self as ISByteEnumEqualityComparer_1Methods<T0> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-generic-sbyteenumequalitycomparer_1")]

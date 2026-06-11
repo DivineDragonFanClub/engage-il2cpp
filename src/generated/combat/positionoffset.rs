@@ -4,40 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/positionoffset/PositionOffset.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PositionOffset")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PositionOffset {
-# [offset (24)] # [rename (name = "Radius")] pub radius : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/positionoffset/PositionOffset.md"))]#[::unity2::class(namespace="Combat",name="PositionOffset")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct PositionOffset{#[offset(24)]#[rename(name="Radius")]pub radius:f32,}
 
 }
 
 #[cfg(feature = "combat-positionoffset-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-positionoffset")]
-pub trait IPositionOffsetMethods : IPositionOffset { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < PositionOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PositionOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PositionOffset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PositionOffset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28156f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-positionoffset")]pub trait IPositionOffsetMethods:IPositionOffset{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <PositionOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815660usize)as*mut u8,();
+(PositionOffset)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PositionOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28156f0usize)as*mut u8,();
+(PositionOffset)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-positionoffset")]
-impl < __T : IPositionOffset > IPositionOffsetMethods for __T { }
+#[cfg(feature="combat-positionoffset")]impl<__T:IPositionOffset>IPositionOffsetMethods for __T{}
 
-#[cfg(feature = "combat-positionoffset")]
-impl PositionOffset { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PositionOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PositionOffset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-positionoffset")]impl PositionOffset{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "combat-positionoffset")]
-impl PositionOffset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PositionOffset) , :: core :: stringify ! (new) ,)) ; < Self as IPositionOffsetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-positionoffset")]impl PositionOffset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PositionOffset), ::core::stringify!(new),));
+ <Self as IPositionOffsetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-positionoffset")]

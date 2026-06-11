@@ -4,32 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/collider2d/Collider2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Collider2D")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct Collider2D {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/collider2d/Collider2D.md"))]#[::unity2::class(namespace="UnityEngine",name="Collider2D")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct Collider2D{}
 
 }
 
 #[cfg(feature = "unity_engine-collider2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-collider2d")]
-pub trait ICollider2DMethods : ICollider2D { # [doc = "`get_attachedRigidbody()` overload"] fn get_attached_rigidbody (self ,) -> crate :: unity_engine :: rigidbody2d :: Rigidbody2D { unsafe { let __receiver = < Collider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Collider2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rigidbody2d :: Rigidbody2D = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_bounds()` overload"] fn get_bounds (self ,) -> crate :: unity_engine :: bounds :: Bounds { unsafe { let __receiver = < Collider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Collider2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f315a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OverlapPoint(crate::unity_engine::vector2::Vector2)` overload"] fn overlap_point (self , point : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> bool { unsafe { let __receiver = < Collider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Collider2D , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (point) , :: core :: option :: Option :: None) } } } # [doc = "`get_bounds_Injected(*mutcrate::unity_engine::bounds::Bounds)` overload"] fn get_bounds_injected (self ,) -> crate :: unity_engine :: bounds :: Bounds { unsafe { let __receiver = < Collider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: bounds :: Bounds > :: uninit () ; { let __inner : extern "C" fn (Collider2D , * mut crate :: unity_engine :: bounds :: Bounds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31620usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`OverlapPoint_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"] fn overlap_point_injected (self ,) -> (bool , crate :: unity_engine :: vector2 :: Vector2) { unsafe { let __receiver = < Collider2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (Collider2D , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f316d0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="unity_engine-collider2d")]pub trait ICollider2DMethods:ICollider2D{#[doc="`get_attachedRigidbody()` overload"]fn get_attached_rigidbody(self,)->crate::unity_engine::rigidbody2d::Rigidbody2D{unsafe{let __receiver= <Collider2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f31550usize)as*mut u8,crate::unity_engine::rigidbody2d::Rigidbody2D;
+(Collider2D)__receiver)}
+}
+#[doc="`get_bounds()` overload"]fn get_bounds(self,)->crate::unity_engine::bounds::Bounds{unsafe{let __receiver= <Collider2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f315a0usize)as*mut u8,crate::unity_engine::bounds::Bounds;
+(Collider2D)__receiver)}
+}
+#[doc="`OverlapPoint(crate::unity_engine::vector2::Vector2)` overload"]fn overlap_point(self,point:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->bool{unsafe{let __receiver= <Collider2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f31670usize)as*mut u8,bool;
+(Collider2D)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(point))}
+}
+#[doc="`get_bounds_Injected(*mutcrate::unity_engine::bounds::Bounds)` overload"]fn get_bounds_injected(self,)->crate::unity_engine::bounds::Bounds{unsafe{let __receiver= <Collider2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::bounds::Bounds> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f31620usize)as*mut u8,();
+(Collider2D)__receiver,(*mut crate::unity_engine::bounds::Bounds)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`OverlapPoint_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]fn overlap_point_injected(self,)->(bool,crate::unity_engine::vector2::Vector2){unsafe{let __receiver= <Collider2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f316d0usize)as*mut u8,bool;
+(Collider2D)__receiver,(*mut crate::unity_engine::vector2::Vector2)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-collider2d")]
-impl < __T : ICollider2D > ICollider2DMethods for __T { }
+#[cfg(feature="unity_engine-collider2d")]impl<__T:ICollider2D>ICollider2DMethods for __T{}
 
-#[cfg(feature = "unity_engine-collider2d")]
-impl Collider2D { pub fn get_attached_rigidbody_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Collider2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_bounds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Collider2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn overlap_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Collider2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_bounds_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Collider2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn overlap_point_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Collider2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-collider2d")]impl Collider2D{pub fn get_attached_rigidbody_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_bounds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn overlap_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_bounds_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn overlap_point_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-collider2d")]
 #[doc(hidden)]

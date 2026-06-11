@@ -4,296 +4,108 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatorutil/CalculatorUtil_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CalculatorUtil_Type  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil_Entity.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil.Entity")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil_Entity{#[offset(16)]#[rename(name="m_Type")]pub m_type:crate::app::calculatorutil::CalculatorUtil_Type, #[offset(24)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Value")]pub m_value:f32, #[offset(36)]#[rename(name="m_Code")]pub m_code:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil{#[static_field]#[rename(name="NullArgs")]pub null_args:crate::system::collections::generic::list_1::List_1<f32> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CalculatorUtil_Type{pub value:i32,}
+impl::unity2::ClassIdentity for CalculatorUtil_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="CalculatorUtil.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for CalculatorUtil_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "CalculatorUtil.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for CalculatorUtil_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for CalculatorUtil_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl CalculatorUtil_Type{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  CalculatorUtil_Type  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn add() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn sub() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn mul() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn div() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn per() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn or() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn and() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn xor() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn l_shift() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn r_shift() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn equal() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn nequal() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn less() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn lequal() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn greater() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn gequal() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn assign() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn or_assign() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn and_assign() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn xor_assign() -> Self {
-        Self { value: 20 }
-
-    }
-
-
-    pub fn add_assign() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn sub_assign() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn mul_assign() -> Self {
-        Self { value: 23 }
-
-    }
-
-
-    pub fn div_assign() -> Self {
-        Self { value: 24 }
-
-    }
-
-
-    pub fn per_assign() -> Self {
-        Self { value: 25 }
-
-    }
-
-
-    pub fn ls_assign() -> Self {
-        Self { value: 26 }
-
-    }
-
-
-    pub fn rs_assign() -> Self {
-        Self { value: 27 }
-
-    }
-
-
-    pub fn open() -> Self {
-        Self { value: 28 }
-
-    }
-
-
-    pub fn close() -> Self {
-        Self { value: 29 }
-
-    }
-
-
-    pub fn comma() -> Self {
-        Self { value: 30 }
-
-    }
-
-
-    pub fn log_or() -> Self {
-        Self { value: 31 }
-
-    }
-
-
-    pub fn log_and() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn negative() -> Self {
-        Self { value: 33 }
-
-    }
-
-
-    pub fn number() -> Self {
-        Self { value: 34 }
-
-    }
-
-
-    pub fn variable() -> Self {
-        Self { value: 35 }
-
-    }
-
-
-    pub fn function() -> Self {
-        Self { value: 36 }
-
-    }
-
-
-    pub fn args() -> Self {
-        Self { value: 37 }
-
-    }
-
-
-    pub fn string() -> Self {
-        Self { value: 38 }
-
-    }
-
+pub fn add()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorUtil.Entity")] # [parent (crate :: system :: object :: Object)] pub struct CalculatorUtil_Entity {
-# [offset (16)] # [rename (name = "m_Type")] pub m_type : crate :: app :: calculatorutil :: CalculatorUtil_Type ,
-# [offset (24)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_Value")] pub m_value : f32 ,
-# [offset (36)] # [rename (name = "m_Code")] pub m_code : i32 ,
+pub fn sub()->Self{Self{value:2}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorUtil")] # [parent (crate :: system :: object :: Object)] pub struct CalculatorUtil {
-# [static_field] # [rename (name = "NullArgs")] pub null_args : crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > ,
+pub fn mul()->Self{Self{value:3}
+}
+pub fn div()->Self{Self{value:4}
+}
+pub fn per()->Self{Self{value:5}
+}
+pub fn or()->Self{Self{value:6}
+}
+pub fn and()->Self{Self{value:7}
+}
+pub fn xor()->Self{Self{value:8}
+}
+pub fn l_shift()->Self{Self{value:9}
+}
+pub fn r_shift()->Self{Self{value:10}
+}
+pub fn equal()->Self{Self{value:11}
+}
+pub fn nequal()->Self{Self{value:12}
+}
+pub fn less()->Self{Self{value:13}
+}
+pub fn lequal()->Self{Self{value:14}
+}
+pub fn greater()->Self{Self{value:15}
+}
+pub fn gequal()->Self{Self{value:16}
+}
+pub fn assign()->Self{Self{value:17}
+}
+pub fn or_assign()->Self{Self{value:18}
+}
+pub fn and_assign()->Self{Self{value:19}
+}
+pub fn xor_assign()->Self{Self{value:20}
+}
+pub fn add_assign()->Self{Self{value:21}
+}
+pub fn sub_assign()->Self{Self{value:22}
+}
+pub fn mul_assign()->Self{Self{value:23}
+}
+pub fn div_assign()->Self{Self{value:24}
+}
+pub fn per_assign()->Self{Self{value:25}
+}
+pub fn ls_assign()->Self{Self{value:26}
+}
+pub fn rs_assign()->Self{Self{value:27}
+}
+pub fn open()->Self{Self{value:28}
+}
+pub fn close()->Self{Self{value:29}
+}
+pub fn comma()->Self{Self{value:30}
+}
+pub fn log_or()->Self{Self{value:31}
+}
+pub fn log_and()->Self{Self{value:32}
+}
+pub fn negative()->Self{Self{value:33}
+}
+pub fn number()->Self{Self{value:34}
+}
+pub fn variable()->Self{Self{value:35}
+}
+pub fn function()->Self{Self{value:36}
+}
+pub fn args()->Self{Self{value:37}
+}
+pub fn string()->Self{Self{value:38}
+}
 }
 
 }
@@ -301,47 +113,138 @@ impl  CalculatorUtil_Type  {
 #[cfg(feature = "app-calculatorutil-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-calculatorutil")]
-pub trait ICalculatorUtil_EntityMethods : ICalculatorUtil_Entity { # [doc = "`get_Type()` overload"] fn get_type (self ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CalculatorUtil_Entity , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bd700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CalculatorUtil_Entity , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bd710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> f32 { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CalculatorUtil_Entity , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bd720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Code()` overload"] fn get_code (self ,) -> i32 { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CalculatorUtil_Entity , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bd730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CalculatorUtil_Entity as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CalculatorUtil_Entity , crate :: app :: calculatorutil :: CalculatorUtil_Type , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bd740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-calculatorutil")]
-impl < __T : ICalculatorUtil_Entity > ICalculatorUtil_EntityMethods for __T { }
-
-#[cfg(feature = "app-calculatorutil")]
-impl CalculatorUtil_Entity { pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil_Entity as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-calculatorutil")]
-impl CalculatorUtil_Entity {
-# [doc = "`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` — overload selector"] pub fn new (r#type : crate :: app :: calculatorutil :: CalculatorUtil_Type , name : :: unity2 :: Il2CppString , value : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CalculatorUtil_Entity) , :: core :: stringify ! (new) ,)) ; < Self as ICalculatorUtil_EntityMethods > :: ctor (this , r#type , name , value) ; this }
+#[cfg(feature="app-calculatorutil")]pub trait ICalculatorUtil_EntityMethods:ICalculatorUtil_Entity{#[doc="`get_Type()` overload"]fn get_type(self,)->crate::app::calculatorutil::CalculatorUtil_Type{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd700usize)as*mut u8,crate::app::calculatorutil::CalculatorUtil_Type;
+(CalculatorUtil_Entity)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd710usize)as*mut u8, ::unity2::Il2CppString;
+(CalculatorUtil_Entity)__receiver)}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd720usize)as*mut u8,f32;
+(CalculatorUtil_Entity)__receiver)}
+}
+#[doc="`get_Code()` overload"]fn get_code(self,)->i32{unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd730usize)as*mut u8,i32;
+(CalculatorUtil_Entity)__receiver)}
+}
+#[doc="`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CalculatorUtil_Entity as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd740usize)as*mut u8,();
+(CalculatorUtil_Entity)__receiver,(crate::app::calculatorutil::CalculatorUtil_Type)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-calculatorutil")]
-impl CalculatorUtil { # [doc = "`GetPriority(crate::app::calculatorutil::CalculatorUtil_Type)` overload"] pub fn get_priority (r#type : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: calculatorutil :: CalculatorUtil_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29935a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`IsNegative(crate::app::calculatorutil::CalculatorUtil_Type, crate::app::calculatorutil::CalculatorUtil_Type)` overload"] pub fn is_negative (now : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type > , old : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: calculatorutil :: CalculatorUtil_Type , crate :: app :: calculatorutil :: CalculatorUtil_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29935d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (old) , :: core :: option :: Option :: None) } } } # [doc = "`IsAssign(crate::app::calculatorutil::CalculatorUtil_Type)` overload"] pub fn is_assign (r#type : impl :: core :: convert :: Into < crate :: app :: calculatorutil :: CalculatorUtil_Type >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: calculatorutil :: CalculatorUtil_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298f690usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetSingleType(u16)` overload"] pub fn get_single_type (name : impl :: core :: convert :: Into < u16 >) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetThreeType(::unity2::Il2CppString, i32)` overload"] pub fn get_three_type (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetDoubleType(::unity2::Il2CppString, i32)` overload"] pub fn get_double_type (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993720usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsCode(u16)` overload"] pub fn is_code (name : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29938f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsNumber(u16)` overload"] pub fn is_number (name : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsString(u16)` overload"] pub fn is_string (name : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993990usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsArgs(::unity2::Il2CppString, i32)` overload"] pub fn is_args (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29939a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsEmpty(u16)` overload"] pub fn is_empty (name : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993a90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`StringToNumber(::unity2::Il2CppString, i32)` overload"] pub fn string_to_number (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993ac0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`StringToString(::unity2::Il2CppString, i32)` overload"] pub fn string_to_string (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993bf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`StringToArgs(::unity2::Il2CppString, i32)` overload"] pub fn string_to_args (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993d40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`StringToName(::unity2::Il2CppString, i32)` overload"] pub fn string_to_name (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993d50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2993f70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-calculatorutil")]impl<__T:ICalculatorUtil_Entity>ICalculatorUtil_EntityMethods for __T{}
 
-#[cfg(feature = "app-calculatorutil")]
-pub trait ICalculatorUtilMethods : ICalculatorUtil { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CalculatorUtil as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CalculatorUtil , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298d8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-calculatorutil")]impl CalculatorUtil_Entity{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-calculatorutil")]
-impl < __T : ICalculatorUtil > ICalculatorUtilMethods for __T { }
+#[cfg(feature="app-calculatorutil")]impl CalculatorUtil_Entity{#[doc="`.ctor(crate::app::calculatorutil::CalculatorUtil_Type, ::unity2::Il2CppString, f32)` — overload selector"]pub fn new(r#type:crate::app::calculatorutil::CalculatorUtil_Type,name: ::unity2::Il2CppString,value:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CalculatorUtil_Entity), ::core::stringify!(new),));
+ <Self as ICalculatorUtil_EntityMethods> ::ctor(this,r#type,name,value);
+this}
+}
 
-#[cfg(feature = "app-calculatorutil")]
-impl CalculatorUtil { pub fn get_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_negative_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_assign_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_single_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_three_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_double_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_args_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn string_to_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn string_to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn string_to_args_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn string_to_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CalculatorUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-calculatorutil")]impl CalculatorUtil{#[doc="`GetPriority(crate::app::calculatorutil::CalculatorUtil_Type)` overload"]pub fn get_priority(r#type:impl::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29935a0usize)as*mut u8,i32;
+(crate::app::calculatorutil::CalculatorUtil_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`IsNegative(crate::app::calculatorutil::CalculatorUtil_Type, crate::app::calculatorutil::CalculatorUtil_Type)` overload"]pub fn is_negative(now:impl::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type> ,old:impl::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29935d0usize)as*mut u8,bool;
+(crate::app::calculatorutil::CalculatorUtil_Type)::core::convert::Into::into(now),(crate::app::calculatorutil::CalculatorUtil_Type)::core::convert::Into::into(old))}
+}
+#[doc="`IsAssign(crate::app::calculatorutil::CalculatorUtil_Type)` overload"]pub fn is_assign(r#type:impl::core::convert::Into<crate::app::calculatorutil::CalculatorUtil_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298f690usize)as*mut u8,bool;
+(crate::app::calculatorutil::CalculatorUtil_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetSingleType(u16)` overload"]pub fn get_single_type(name:impl::core::convert::Into<u16>)->crate::app::calculatorutil::CalculatorUtil_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993600usize)as*mut u8,crate::app::calculatorutil::CalculatorUtil_Type;
+(u16)::core::convert::Into::into(name))}
+}
+#[doc="`GetThreeType(::unity2::Il2CppString, i32)` overload"]pub fn get_three_type(name:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->crate::app::calculatorutil::CalculatorUtil_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993660usize)as*mut u8,crate::app::calculatorutil::CalculatorUtil_Type;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetDoubleType(::unity2::Il2CppString, i32)` overload"]pub fn get_double_type(name:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->crate::app::calculatorutil::CalculatorUtil_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993720usize)as*mut u8,crate::app::calculatorutil::CalculatorUtil_Type;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsCode(u16)` overload"]pub fn is_code(name:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29938f0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(name))}
+}
+#[doc="`IsNumber(u16)` overload"]pub fn is_number(name:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993960usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(name))}
+}
+#[doc="`IsString(u16)` overload"]pub fn is_string(name:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993990usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(name))}
+}
+#[doc="`IsArgs(::unity2::Il2CppString, i32)` overload"]pub fn is_args(name:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29939a0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsEmpty(u16)` overload"]pub fn is_empty(name:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993a90usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(name))}
+}
+#[doc="`StringToNumber(::unity2::Il2CppString, i32)` overload"]pub fn string_to_number(name:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993ac0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`StringToString(::unity2::Il2CppString, i32)` overload"]pub fn string_to_string(name:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993bf0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`StringToArgs(::unity2::Il2CppString, i32)` overload"]pub fn string_to_args(name:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993d40usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`StringToName(::unity2::Il2CppString, i32)` overload"]pub fn string_to_name(name:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993d50usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2993f70usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-calculatorutil")]
-impl CalculatorUtil {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CalculatorUtil) , :: core :: stringify ! (new) ,)) ; < Self as ICalculatorUtilMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-calculatorutil")]pub trait ICalculatorUtilMethods:ICalculatorUtil{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CalculatorUtil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298d8f0usize)as*mut u8,();
+(CalculatorUtil)__receiver)}
+}
+}
+
+#[cfg(feature="app-calculatorutil")]impl<__T:ICalculatorUtil>ICalculatorUtilMethods for __T{}
+
+#[cfg(feature="app-calculatorutil")]impl CalculatorUtil{pub fn get_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_negative_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_assign_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_single_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_three_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_double_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn string_to_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn string_to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn string_to_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn string_to_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-calculatorutil")]impl CalculatorUtil{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CalculatorUtil), ::core::stringify!(new),));
+ <Self as ICalculatorUtilMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-calculatorutil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CalculatorUtil_Type;
     pub use super::CalculatorUtil_Entity;
     pub use super::ICalculatorUtil_Entity;
     pub use super::ICalculatorUtil_EntityMethods;
     pub use super::CalculatorUtil;
     pub use super::ICalculatorUtil;
     pub use super::ICalculatorUtilMethods;
+    pub use super::CalculatorUtil_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

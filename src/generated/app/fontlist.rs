@@ -4,42 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonscriptableobject_1 :: { ISingletonScriptableObject_1 , SingletonScriptableObject_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonscriptableobject_1::{ISingletonScriptableObject_1,SingletonScriptableObject_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fontlist/FontList.md"))] # [:: unity2 :: class (namespace = "App" , name = "FontList")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: fontlist :: FontList >)] pub struct FontList {
-# [offset (24)] # [rename (name = "m_FontArray")] pub m_font_array : :: unity2 :: Array < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > ,
-# [offset (32)] # [rename (name = "m_ReplaceCharactar")] pub m_replace_charactar : u16 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fontlist/FontList.md"))]#[::unity2::class(namespace="App",name="FontList")]#[parent(crate::app::singletonscriptableobject_1::SingletonScriptableObject_1<crate::app::fontlist::FontList>)]pub struct FontList{#[offset(24)]#[rename(name="m_FontArray")]pub m_font_array: ::unity2::Array<crate::tm_pro::tmp_fontasset::TMP_FontAsset> , #[offset(32)]#[rename(name="m_ReplaceCharactar")]pub m_replace_charactar:u16,}
 
 }
 
 #[cfg(feature = "app-fontlist-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fontlist")]
-impl FontList { # [doc = "`CheckFontExist(*mut::unity2::Il2CppString)` overload"] pub fn check_font_exist () -> (bool , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26102c0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="app-fontlist")]impl FontList{#[doc="`CheckFontExist(*mut::unity2::Il2CppString)` overload"]pub fn check_font_exist()->(bool, ::unity2::Il2CppString){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x26102c0usize)as*mut u8,bool;
+(*mut::unity2::Il2CppString)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "app-fontlist")]
-pub trait IFontListMethods : IFontList { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FontList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FontList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fontlist")]pub trait IFontListMethods:IFontList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FontList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610620usize)as*mut u8,();
+(FontList)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fontlist")]
-impl < __T : IFontList > IFontListMethods for __T { }
+#[cfg(feature="app-fontlist")]impl<__T:IFontList>IFontListMethods for __T{}
 
-#[cfg(feature = "app-fontlist")]
-impl FontList { pub fn check_font_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-fontlist")]impl FontList{pub fn check_font_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-fontlist")]
-impl FontList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FontList) , :: core :: stringify ! (new) ,)) ; < Self as IFontListMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fontlist")]impl FontList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FontList), ::core::stringify!(new),));
+ <Self as IFontListMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fontlist")]

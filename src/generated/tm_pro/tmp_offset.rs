@@ -4,70 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_offset/TMP_Offset.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_Offset {
-    pub m_left: f32,
-    pub m_right: f32,
-    pub m_top: f32,
-    pub m_bottom: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_offset/TMP_Offset.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_Offset{pub m_left:f32,pub m_right:f32,pub m_top:f32,pub m_bottom:f32,}
+impl::unity2::ClassIdentity for TMP_Offset{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_Offset";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TMP_Offset {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_Offset";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for TMP_Offset{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for TMP_Offset {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl TMP_Offset{#[inline]pub fn k_zero_offset()->crate::tm_pro::tmp_offset::TMP_Offset{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"k_ZeroOffset");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_k_zero_offset(value:crate::tm_pro::tmp_offset::TMP_Offset){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"k_ZeroOffset");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl TMP_Offset {
-    #[inline]
-    pub fn k_zero_offset() -> crate :: tm_pro :: tmp_offset :: TMP_Offset {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_ZeroOffset");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_k_zero_offset(value: crate :: tm_pro :: tmp_offset :: TMP_Offset) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_ZeroOffset");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -75,14 +34,99 @@ impl TMP_Offset {
 #[cfg(feature = "tm_pro-tmp_offset-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_offset")]
-impl TMP_Offset { # [doc = "`get_zero()` overload"] pub fn get_zero () -> crate :: tm_pro :: tmp_offset :: TMP_Offset { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_offset :: TMP_Offset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829d10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::tm_pro::tmp_offset::TMP_Offset, crate::tm_pro::tmp_offset::TMP_Offset)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_offset :: TMP_Offset > , rhs : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_offset :: TMP_Offset >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_offset :: TMP_Offset , crate :: tm_pro :: tmp_offset :: TMP_Offset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829dc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::tm_pro::tmp_offset::TMP_Offset, crate::tm_pro::tmp_offset::TMP_Offset)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_offset :: TMP_Offset > , rhs : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_offset :: TMP_Offset >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_offset :: TMP_Offset , crate :: tm_pro :: tmp_offset :: TMP_Offset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829df0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(crate::tm_pro::tmp_offset::TMP_Offset, f32)` overload"] pub fn op_multiply (a : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_offset :: TMP_Offset > , b : impl :: core :: convert :: Into < f32 >) -> crate :: tm_pro :: tmp_offset :: TMP_Offset { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_offset :: TMP_Offset , f32 , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_offset :: TMP_Offset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829eb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_offset")]impl TMP_Offset{#[doc="`get_zero()` overload"]pub fn get_zero()->crate::tm_pro::tmp_offset::TMP_Offset{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829d10usize)as*mut u8,crate::tm_pro::tmp_offset::TMP_Offset;
+)}
+}
+#[doc="`op_Equality(crate::tm_pro::tmp_offset::TMP_Offset, crate::tm_pro::tmp_offset::TMP_Offset)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset> ,rhs:impl::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829dc0usize)as*mut u8,bool;
+(crate::tm_pro::tmp_offset::TMP_Offset)::core::convert::Into::into(lhs),(crate::tm_pro::tmp_offset::TMP_Offset)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::tm_pro::tmp_offset::TMP_Offset, crate::tm_pro::tmp_offset::TMP_Offset)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset> ,rhs:impl::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829df0usize)as*mut u8,bool;
+(crate::tm_pro::tmp_offset::TMP_Offset)::core::convert::Into::into(lhs),(crate::tm_pro::tmp_offset::TMP_Offset)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Multiply(crate::tm_pro::tmp_offset::TMP_Offset, f32)` overload"]pub fn op_multiply(a:impl::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset> ,b:impl::core::convert::Into<f32>)->crate::tm_pro::tmp_offset::TMP_Offset{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829eb0usize)as*mut u8,crate::tm_pro::tmp_offset::TMP_Offset;
+(crate::tm_pro::tmp_offset::TMP_Offset)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282a080usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_offset")]
-impl TMP_Offset { # [doc = "`get_left()` overload"] pub fn get_left (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829c50usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: option :: Option :: None) } } } # [doc = "`set_left(f32)` overload"] pub fn set_left (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829c60usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_right()` overload"] pub fn get_right (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829c70usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: option :: Option :: None) } } } # [doc = "`set_right(f32)` overload"] pub fn set_right (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829c80usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_top()` overload"] pub fn get_top (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829c90usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: option :: Option :: None) } } } # [doc = "`set_top(f32)` overload"] pub fn set_top (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829ca0usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_bottom()` overload"] pub fn get_bottom (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829cb0usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: option :: Option :: None) } } } # [doc = "`set_bottom(f32)` overload"] pub fn set_bottom (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829cc0usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_horizontal()` overload"] pub fn get_horizontal (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829cd0usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: option :: Option :: None) } } } # [doc = "`set_horizontal(f32)` overload"] pub fn set_horizontal (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829ce0usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_vertical()` overload"] pub fn get_vertical (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829cf0usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: option :: Option :: None) } } } # [doc = "`set_vertical(f32)` overload"] pub fn set_vertical (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829d00usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32, f32, f32, f32)` overload"] pub fn ctor (& mut self , left : impl :: core :: convert :: Into < f32 > , right : impl :: core :: convert :: Into < f32 > , top : impl :: core :: convert :: Into < f32 > , bottom : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829d80usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: convert :: Into :: into (top) , :: core :: convert :: Into :: into (bottom) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32, f32)` overload"] pub fn ctor_2 (& mut self , horizontal : impl :: core :: convert :: Into < f32 > , vertical : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829da0usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (horizontal) , :: core :: convert :: Into :: into (vertical) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829ed0usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829f40usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::tm_pro::tmp_offset::TMP_Offset)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_offset :: TMP_Offset >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TMP_Offset , crate :: tm_pro :: tmp_offset :: TMP_Offset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2829fc0usize) as * mut u8) ; __inner (self as * mut TMP_Offset , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_offset")]impl TMP_Offset{#[doc="`get_left()` overload"]pub fn get_left(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829c50usize)as*mut u8,f32;
+(*mut TMP_Offset)self as*mut TMP_Offset)}
+}
+#[doc="`set_left(f32)` overload"]pub fn set_left(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829c60usize)as*mut u8,();
+(*mut TMP_Offset)self as*mut TMP_Offset,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_right()` overload"]pub fn get_right(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829c70usize)as*mut u8,f32;
+(*mut TMP_Offset)self as*mut TMP_Offset)}
+}
+#[doc="`set_right(f32)` overload"]pub fn set_right(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829c80usize)as*mut u8,();
+(*mut TMP_Offset)self as*mut TMP_Offset,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_top()` overload"]pub fn get_top(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829c90usize)as*mut u8,f32;
+(*mut TMP_Offset)self as*mut TMP_Offset)}
+}
+#[doc="`set_top(f32)` overload"]pub fn set_top(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829ca0usize)as*mut u8,();
+(*mut TMP_Offset)self as*mut TMP_Offset,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_bottom()` overload"]pub fn get_bottom(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829cb0usize)as*mut u8,f32;
+(*mut TMP_Offset)self as*mut TMP_Offset)}
+}
+#[doc="`set_bottom(f32)` overload"]pub fn set_bottom(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829cc0usize)as*mut u8,();
+(*mut TMP_Offset)self as*mut TMP_Offset,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_horizontal()` overload"]pub fn get_horizontal(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829cd0usize)as*mut u8,f32;
+(*mut TMP_Offset)self as*mut TMP_Offset)}
+}
+#[doc="`set_horizontal(f32)` overload"]pub fn set_horizontal(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829ce0usize)as*mut u8,();
+(*mut TMP_Offset)self as*mut TMP_Offset,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_vertical()` overload"]pub fn get_vertical(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829cf0usize)as*mut u8,f32;
+(*mut TMP_Offset)self as*mut TMP_Offset)}
+}
+#[doc="`set_vertical(f32)` overload"]pub fn set_vertical(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829d00usize)as*mut u8,();
+(*mut TMP_Offset)self as*mut TMP_Offset,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(f32, f32, f32, f32)` overload"]pub fn ctor(&mut self,left:impl::core::convert::Into<f32> ,right:impl::core::convert::Into<f32> ,top:impl::core::convert::Into<f32> ,bottom:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829d80usize)as*mut u8,();
+(*mut TMP_Offset)self as*mut TMP_Offset,(f32)::core::convert::Into::into(left),(f32)::core::convert::Into::into(right),(f32)::core::convert::Into::into(top),(f32)::core::convert::Into::into(bottom))}
+}
+#[doc="`.ctor(f32, f32)` overload"]pub fn ctor_2(&mut self,horizontal:impl::core::convert::Into<f32> ,vertical:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829da0usize)as*mut u8,();
+(*mut TMP_Offset)self as*mut TMP_Offset,(f32)::core::convert::Into::into(horizontal),(f32)::core::convert::Into::into(vertical))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829ed0usize)as*mut u8,i32;
+(*mut TMP_Offset)self as*mut TMP_Offset)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829f40usize)as*mut u8,bool;
+(*mut TMP_Offset)self as*mut TMP_Offset,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::tm_pro::tmp_offset::TMP_Offset)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::tm_pro::tmp_offset::TMP_Offset>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2829fc0usize)as*mut u8,bool;
+(*mut TMP_Offset)self as*mut TMP_Offset,(crate::tm_pro::tmp_offset::TMP_Offset)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_offset")]
-impl TMP_Offset { pub fn get_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_bottom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_bottom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn op_multiply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Offset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="tm_pro-tmp_offset")]impl TMP_Offset{pub fn get_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_bottom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_bottom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn op_multiply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
 #[cfg(feature = "tm_pro-tmp_offset")]
 #[doc(hidden)]

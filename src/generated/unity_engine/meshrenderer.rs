@@ -4,36 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: renderer :: { IRenderer , Renderer }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::renderer::{IRenderer,Renderer}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/meshrenderer/MeshRenderer.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "MeshRenderer")] # [parent (crate :: unity_engine :: renderer :: Renderer)] pub struct MeshRenderer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/meshrenderer/MeshRenderer.md"))]#[::unity2::class(namespace="UnityEngine",name="MeshRenderer")]#[parent(crate::unity_engine::renderer::Renderer)]pub struct MeshRenderer{}
 
 }
 
 #[cfg(feature = "unity_engine-meshrenderer-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-meshrenderer")]
-pub trait IMeshRendererMethods : IMeshRenderer { # [doc = "`DontStripMeshRenderer()` overload"] fn dont_strip_mesh_renderer (self ,) -> () { unsafe { let __receiver = < MeshRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ecd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_additionalVertexStreams()` overload"] fn get_additional_vertex_streams (self ,) -> crate :: unity_engine :: mesh :: Mesh { unsafe { let __receiver = < MeshRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ecd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_additionalVertexStreams(crate::unity_engine::mesh::Mesh)` overload"] fn set_additional_vertex_streams (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh >) -> () { unsafe { let __receiver = < MeshRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshRenderer , crate :: unity_engine :: mesh :: Mesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ecd90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_enlightenVertexStream()` overload"] fn get_enlighten_vertex_stream (self ,) -> crate :: unity_engine :: mesh :: Mesh { unsafe { let __receiver = < MeshRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshRenderer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ecde0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_enlightenVertexStream(crate::unity_engine::mesh::Mesh)` overload"] fn set_enlighten_vertex_stream (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh >) -> () { unsafe { let __receiver = < MeshRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshRenderer , crate :: unity_engine :: mesh :: Mesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ece30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_subMeshStartIndex()` overload"] fn get_sub_mesh_start_index (self ,) -> i32 { unsafe { let __receiver = < MeshRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshRenderer , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ece80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MeshRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32eced0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-meshrenderer")]pub trait IMeshRendererMethods:IMeshRenderer{#[doc="`DontStripMeshRenderer()` overload"]fn dont_strip_mesh_renderer(self,)->(){unsafe{let __receiver= <MeshRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32ecd30usize)as*mut u8,();
+(MeshRenderer)__receiver)}
+}
+#[doc="`get_additionalVertexStreams()` overload"]fn get_additional_vertex_streams(self,)->crate::unity_engine::mesh::Mesh{unsafe{let __receiver= <MeshRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32ecd40usize)as*mut u8,crate::unity_engine::mesh::Mesh;
+(MeshRenderer)__receiver)}
+}
+#[doc="`set_additionalVertexStreams(crate::unity_engine::mesh::Mesh)` overload"]fn set_additional_vertex_streams(self,value:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <MeshRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32ecd90usize)as*mut u8,();
+(MeshRenderer)__receiver,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(value))}
+}
+#[doc="`get_enlightenVertexStream()` overload"]fn get_enlighten_vertex_stream(self,)->crate::unity_engine::mesh::Mesh{unsafe{let __receiver= <MeshRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32ecde0usize)as*mut u8,crate::unity_engine::mesh::Mesh;
+(MeshRenderer)__receiver)}
+}
+#[doc="`set_enlightenVertexStream(crate::unity_engine::mesh::Mesh)` overload"]fn set_enlighten_vertex_stream(self,value:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <MeshRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32ece30usize)as*mut u8,();
+(MeshRenderer)__receiver,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(value))}
+}
+#[doc="`get_subMeshStartIndex()` overload"]fn get_sub_mesh_start_index(self,)->i32{unsafe{let __receiver= <MeshRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32ece80usize)as*mut u8,i32;
+(MeshRenderer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MeshRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32eced0usize)as*mut u8,();
+(MeshRenderer)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-meshrenderer")]
-impl < __T : IMeshRenderer > IMeshRendererMethods for __T { }
+#[cfg(feature="unity_engine-meshrenderer")]impl<__T:IMeshRenderer>IMeshRendererMethods for __T{}
 
-#[cfg(feature = "unity_engine-meshrenderer")]
-impl MeshRenderer { pub fn dont_strip_mesh_renderer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_additional_vertex_streams_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_additional_vertex_streams_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_enlighten_vertex_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_enlighten_vertex_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_sub_mesh_start_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-meshrenderer")]impl MeshRenderer{pub fn dont_strip_mesh_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_additional_vertex_streams_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_additional_vertex_streams_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_enlighten_vertex_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_enlighten_vertex_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_sub_mesh_start_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-meshrenderer")]
-impl MeshRenderer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MeshRenderer) , :: core :: stringify ! (new) ,)) ; < Self as IMeshRendererMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-meshrenderer")]impl MeshRenderer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MeshRenderer), ::core::stringify!(new),));
+ <Self as IMeshRendererMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-meshrenderer")]

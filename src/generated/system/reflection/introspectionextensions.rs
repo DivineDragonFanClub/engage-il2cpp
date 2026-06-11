@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/introspectionextensions/IntrospectionExtensions.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "IntrospectionExtensions")] # [parent (crate :: system :: object :: Object)] pub struct IntrospectionExtensions {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/introspectionextensions/IntrospectionExtensions.md"))]#[::unity2::class(namespace="System.Reflection",name="IntrospectionExtensions")]#[parent(crate::system::object::Object)]pub struct IntrospectionExtensions{}
 
 }
 
 #[cfg(feature = "system-reflection-introspectionextensions-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-introspectionextensions")]
-impl IntrospectionExtensions { # [doc = "`GetTypeInfo(::unity2::SystemType)` overload"] pub fn get_type_info (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: reflection :: typeinfo :: TypeInfo { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: typeinfo :: TypeInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3263860usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-introspectionextensions")]impl IntrospectionExtensions{#[doc="`GetTypeInfo(::unity2::SystemType)` overload"]pub fn get_type_info(r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::reflection::typeinfo::TypeInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3263860usize)as*mut u8,crate::system::reflection::typeinfo::TypeInfo;
+(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "system-reflection-introspectionextensions")]
-impl IntrospectionExtensions { pub fn get_type_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntrospectionExtensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-introspectionextensions")]impl IntrospectionExtensions{pub fn get_type_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "system-reflection-introspectionextensions")]
 #[doc(hidden)]

@@ -4,44 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mvproot/MVPRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "MVPRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MVPRoot {
-# [offset (24)] # [rename (name = "m_MVPTitleText")] pub m_mvp_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_UnitText")] pub m_unit_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_GodObj")] pub m_god_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_TurnTitleText")] pub m_turn_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_ValueText")] pub m_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mvproot/MVPRoot.md"))]#[::unity2::class(namespace="",name="MVPRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MVPRoot{#[offset(24)]#[rename(name="m_MVPTitleText")]pub m_mvp_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_UnitText")]pub m_unit_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_GodObj")]pub m_god_obj:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_TurnTitleText")]pub m_turn_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "root-mvproot-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mvproot")]
-pub trait IMVPRootMethods : IMVPRoot { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MVPRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MVPRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf12a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < MVPRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MVPRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MVPRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MVPRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf17c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mvproot")]pub trait IMVPRootMethods:IMVPRoot{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MVPRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf12a0usize)as*mut u8,();
+(MVPRoot)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <MVPRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1730usize)as*mut u8,();
+(MVPRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MVPRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf17c0usize)as*mut u8,();
+(MVPRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mvproot")]
-impl < __T : IMVPRoot > IMVPRootMethods for __T { }
+#[cfg(feature="root-mvproot")]impl<__T:IMVPRoot>IMVPRootMethods for __T{}
 
-#[cfg(feature = "root-mvproot")]
-impl MVPRoot { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MVPRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MVPRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MVPRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-mvproot")]impl MVPRoot{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-mvproot")]
-impl MVPRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MVPRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMVPRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mvproot")]impl MVPRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MVPRoot), ::core::stringify!(new),));
+ <Self as IMVPRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mvproot")]

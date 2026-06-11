@@ -4,104 +4,168 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_TradeMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillEditEquipSkillSubMenu.TradeMenuItem")] # [parent (crate :: app :: skilleditequipskillsubmenu :: SkillEditEquipSkillSubMenu_BaseEquipMenuItem)] pub struct SkillEditEquipSkillSubMenu_TradeMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu.md"))]#[::unity2::class(namespace="App",name="SkillEditEquipSkillSubMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct SkillEditEquipSkillSubMenu{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_BaseEquipMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillEditEquipSkillSubMenu.BaseEquipMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct SkillEditEquipSkillSubMenu_BaseEquipMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_BaseEquipMenuItem.md"))]#[::unity2::class(namespace="App",name="SkillEditEquipSkillSubMenu.BaseEquipMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct SkillEditEquipSkillSubMenu_BaseEquipMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillEditEquipSkillSubMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct SkillEditEquipSkillSubMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_TradeMenuItem.md"))]#[::unity2::class(namespace="App",name="SkillEditEquipSkillSubMenu.TradeMenuItem")]#[parent(crate::app::skilleditequipskillsubmenu::SkillEditEquipSkillSubMenu_BaseEquipMenuItem)]pub struct SkillEditEquipSkillSubMenu_TradeMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_RemoveMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillEditEquipSkillSubMenu.RemoveMenuItem")] # [parent (crate :: app :: skilleditequipskillsubmenu :: SkillEditEquipSkillSubMenu_BaseEquipMenuItem)] pub struct SkillEditEquipSkillSubMenu_RemoveMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_RemoveMenuItem.md"))]#[::unity2::class(namespace="App",name="SkillEditEquipSkillSubMenu.RemoveMenuItem")]#[parent(crate::app::skilleditequipskillsubmenu::SkillEditEquipSkillSubMenu_BaseEquipMenuItem)]pub struct SkillEditEquipSkillSubMenu_RemoveMenuItem{}
 
 }
 
 #[cfg(feature = "app-skilleditequipskillsubmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-pub trait ISkillEditEquipSkillSubMenu_TradeMenuItemMethods : ISkillEditEquipSkillSubMenu_TradeMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_TradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_TradeMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_TradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_TradeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_TradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_TradeMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_TradeMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_TradeMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6eab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl < __T : ISkillEditEquipSkillSubMenu_TradeMenuItem > ISkillEditEquipSkillSubMenu_TradeMenuItemMethods for __T { }
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu_TradeMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_TradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_TradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_TradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_TradeMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu_TradeMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillEditEquipSkillSubMenu_TradeMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ISkillEditEquipSkillSubMenu_TradeMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl SkillEditEquipSkillSubMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,parent_menu:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x249d700usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(parent_menu),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
 }
 
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-pub trait ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods : ISkillEditEquipSkillSubMenu_BaseEquipMenuItem { # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_BaseEquipMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_BaseEquipMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_BaseEquipMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl < __T : ISkillEditEquipSkillSubMenu_BaseEquipMenuItem > ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods for __T { }
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem { pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_BaseEquipMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillEditEquipSkillSubMenu_BaseEquipMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-skilleditequipskillsubmenu")]pub trait ISkillEditEquipSkillSubMenuMethods:ISkillEditEquipSkillSubMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <SkillEditEquipSkillSubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249da50usize)as*mut u8,();
+(SkillEditEquipSkillSubMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SkillEditEquipSkillSubMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249dae0usize)as*mut u8, ::unity2::Il2CppString;
+(SkillEditEquipSkillSubMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , parent_menu : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249d700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (parent_menu) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl<__T:ISkillEditEquipSkillSubMenu>ISkillEditEquipSkillSubMenuMethods for __T{}
 
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-pub trait ISkillEditEquipSkillSubMenuMethods : ISkillEditEquipSkillSubMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent >) -> () { unsafe { let __receiver = < SkillEditEquipSkillSubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249da50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SkillEditEquipSkillSubMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249dae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl < __T : ISkillEditEquipSkillSubMenu > ISkillEditEquipSkillSubMenuMethods for __T { }
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillEditEquipSkillSubMenu) , :: core :: stringify ! (new) ,)) ; < Self as ISkillEditEquipSkillSubMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl SkillEditEquipSkillSubMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-pub trait ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods : ISkillEditEquipSkillSubMenu_RemoveMenuItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_RemoveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_RemoveMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_RemoveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_RemoveMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_RemoveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_RemoveMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillEditEquipSkillSubMenu_RemoveMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillSubMenu_RemoveMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6e890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl SkillEditEquipSkillSubMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillEditEquipSkillSubMenu), ::core::stringify!(new),));
+ <Self as ISkillEditEquipSkillSubMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
 
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl < __T : ISkillEditEquipSkillSubMenu_RemoveMenuItem > ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods for __T { }
+#[cfg(feature="app-skilleditequipskillsubmenu")]pub trait ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods:ISkillEditEquipSkillSubMenu_BaseEquipMenuItem{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e3c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SkillEditEquipSkillSubMenu_BaseEquipMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e500usize)as*mut u8,();
+(SkillEditEquipSkillSubMenu_BaseEquipMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillEditEquipSkillSubMenu_BaseEquipMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e5b0usize)as*mut u8,();
+(SkillEditEquipSkillSubMenu_BaseEquipMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu_RemoveMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_RemoveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_RemoveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_RemoveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillSubMenu_RemoveMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl<__T:ISkillEditEquipSkillSubMenu_BaseEquipMenuItem>ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods for __T{}
 
-#[cfg(feature = "app-skilleditequipskillsubmenu")]
-impl SkillEditEquipSkillSubMenu_RemoveMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillEditEquipSkillSubMenu_RemoveMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem{pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillEditEquipSkillSubMenu_BaseEquipMenuItem), ::core::stringify!(new),));
+ <Self as ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-skilleditequipskillsubmenu")]pub trait ISkillEditEquipSkillSubMenu_TradeMenuItemMethods:ISkillEditEquipSkillSubMenu_TradeMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SkillEditEquipSkillSubMenu_TradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e8a0usize)as*mut u8, ::unity2::Il2CppString;
+(SkillEditEquipSkillSubMenu_TradeMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SkillEditEquipSkillSubMenu_TradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e920usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SkillEditEquipSkillSubMenu_TradeMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillEditEquipSkillSubMenu_TradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e9b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SkillEditEquipSkillSubMenu_TradeMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillEditEquipSkillSubMenu_TradeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6eab0usize)as*mut u8,();
+(SkillEditEquipSkillSubMenu_TradeMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl<__T:ISkillEditEquipSkillSubMenu_TradeMenuItem>ISkillEditEquipSkillSubMenu_TradeMenuItemMethods for __T{}
+
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl SkillEditEquipSkillSubMenu_TradeMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl SkillEditEquipSkillSubMenu_TradeMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillEditEquipSkillSubMenu_TradeMenuItem), ::core::stringify!(new),));
+ <Self as ISkillEditEquipSkillSubMenu_TradeMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-skilleditequipskillsubmenu")]pub trait ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods:ISkillEditEquipSkillSubMenu_RemoveMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SkillEditEquipSkillSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e5c0usize)as*mut u8, ::unity2::Il2CppString;
+(SkillEditEquipSkillSubMenu_RemoveMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SkillEditEquipSkillSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e640usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SkillEditEquipSkillSubMenu_RemoveMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillEditEquipSkillSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e650usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SkillEditEquipSkillSubMenu_RemoveMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillEditEquipSkillSubMenu_RemoveMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e890usize)as*mut u8,();
+(SkillEditEquipSkillSubMenu_RemoveMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl<__T:ISkillEditEquipSkillSubMenu_RemoveMenuItem>ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods for __T{}
+
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl SkillEditEquipSkillSubMenu_RemoveMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-skilleditequipskillsubmenu")]impl SkillEditEquipSkillSubMenu_RemoveMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillEditEquipSkillSubMenu_RemoveMenuItem), ::core::stringify!(new),));
+ <Self as ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-skilleditequipskillsubmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SkillEditEquipSkillSubMenu_TradeMenuItem;
-    pub use super::ISkillEditEquipSkillSubMenu_TradeMenuItem;
-    pub use super::ISkillEditEquipSkillSubMenu_TradeMenuItemMethods;
-    pub use super::SkillEditEquipSkillSubMenu_BaseEquipMenuItem;
-    pub use super::ISkillEditEquipSkillSubMenu_BaseEquipMenuItem;
-    pub use super::ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods;
     pub use super::SkillEditEquipSkillSubMenu;
     pub use super::ISkillEditEquipSkillSubMenu;
     pub use super::ISkillEditEquipSkillSubMenuMethods;
+    pub use super::SkillEditEquipSkillSubMenu_BaseEquipMenuItem;
+    pub use super::ISkillEditEquipSkillSubMenu_BaseEquipMenuItem;
+    pub use super::ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods;
+    pub use super::SkillEditEquipSkillSubMenu_TradeMenuItem;
+    pub use super::ISkillEditEquipSkillSubMenu_TradeMenuItem;
+    pub use super::ISkillEditEquipSkillSubMenu_TradeMenuItemMethods;
     pub use super::SkillEditEquipSkillSubMenu_RemoveMenuItem;
     pub use super::ISkillEditEquipSkillSubMenu_RemoveMenuItem;
     pub use super::ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods;

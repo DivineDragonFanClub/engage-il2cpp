@@ -4,146 +4,195 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: { IResourceProviderBase , ResourceProviderBase }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::{IResourceProviderBase,ResourceProviderBase}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.ResourceProviders" , name = "ContentCatalogProvider")] # [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)] pub struct ContentCatalogProvider {
-# [offset (28)] # [rename (name = "DisableCatalogUpdateOnStart")] pub disable_catalog_update_on_start : bool ,
-# [offset (29)] # [rename (name = "IsLocalCatalogInBundle")] pub is_local_catalog_in_bundle : bool ,
-# [offset (32)] # [rename (name = "m_LocationToCatalogLoadOpMap")] pub m_location_to_catalog_load_op_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: unity_engine :: addressable_assets :: resource_providers :: contentcatalogprovider :: ContentCatalogProvider_InternalOp > ,
-# [offset (40)] # [rename (name = "m_RM")] pub m_rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.ResourceProviders",name="ContentCatalogProvider")]#[parent(crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase)]pub struct ContentCatalogProvider{#[offset(28)]#[rename(name="DisableCatalogUpdateOnStart")]pub disable_catalog_update_on_start:bool, #[offset(29)]#[rename(name="IsLocalCatalogInBundle")]pub is_local_catalog_in_bundle:bool, #[offset(32)]#[rename(name="m_LocationToCatalogLoadOpMap")]pub m_location_to_catalog_load_op_map:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::addressable_assets::resource_providers::contentcatalogprovider::ContentCatalogProvider_InternalOp> , #[offset(40)]#[rename(name="m_RM")]pub m_rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.ResourceProviders",name="ContentCatalogProvider.InternalOp.BundledCatalog")]#[parent(crate::system::object::Object)]pub struct ContentCatalogProvider_InternalOp_BundledCatalog{#[offset(16)]#[rename(name="m_BundlePath")]pub m_bundle_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_OpInProgress")]pub m_op_in_progress:bool, #[offset(32)]#[rename(name="m_LoadBundleRequest")]pub m_load_bundle_request:crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest, #[offset(40)]#[rename(name="m_CatalogAssetBundle")]pub m_catalog_asset_bundle:crate::unity_engine::assetbundle::AssetBundle, #[offset(48)]#[rename(name="m_LoadTextAssetRequest")]pub m_load_text_asset_request:crate::unity_engine::assetbundlerequest::AssetBundleRequest, #[offset(56)]#[rename(name="m_CatalogData")]pub m_catalog_data:crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData, #[offset(64)]#[rename(name="OnLoaded")]pub on_loaded:crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_DependencyHashIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ContentCatalogProvider_DependencyHashIndex{pub value:i32,}
+impl::unity2::ClassIdentity for ContentCatalogProvider_DependencyHashIndex{const NAMESPACE: &'static str="UnityEngine.AddressableAssets.ResourceProviders";
+const NAME: &'static str="ContentCatalogProvider.DependencyHashIndex";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ContentCatalogProvider_DependencyHashIndex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ContentCatalogProvider_DependencyHashIndex{pub fn remote()->Self{Self{value:0}
+}
+pub fn cache()->Self{Self{value:1}
+}
+pub fn count()->Self{Self{value:2}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.ResourceProviders" , name = "ContentCatalogProvider.InternalOp")] # [parent (crate :: system :: object :: Object)] pub struct ContentCatalogProvider_InternalOp {
-# [offset (16)] # [rename (name = "m_LocalDataPath")] pub m_local_data_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_RemoteHashValue")] pub m_remote_hash_value : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_LocalHashValue")] pub m_local_hash_value : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_ProviderInterface")] pub m_provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
-# [offset (64)] # [rename (name = "m_ContentCatalogData")] pub m_content_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
-# [offset (72)] # [rename (name = "m_ContentCatalogDataLoadOp")] pub m_content_catalog_data_load_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
-# [offset (96)] # [rename (name = "m_BundledCatalog")] pub m_bundled_catalog : crate :: unity_engine :: addressable_assets :: resource_providers :: contentcatalogprovider :: ContentCatalogProvider_InternalOp_BundledCatalog ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_DependencyHashIndex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ContentCatalogProvider_DependencyHashIndex  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for ContentCatalogProvider_DependencyHashIndex  {
-    const NAMESPACE: &'static str = "UnityEngine.AddressableAssets.ResourceProviders";
-
-    const NAME: &'static str = "ContentCatalogProvider.DependencyHashIndex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ContentCatalogProvider_DependencyHashIndex  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ContentCatalogProvider_DependencyHashIndex  {
-    pub fn remote() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn cache() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.ResourceProviders" , name = "ContentCatalogProvider.InternalOp.BundledCatalog")] # [parent (crate :: system :: object :: Object)] pub struct ContentCatalogProvider_InternalOp_BundledCatalog {
-# [offset (16)] # [rename (name = "m_BundlePath")] pub m_bundle_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_OpInProgress")] pub m_op_in_progress : bool ,
-# [offset (32)] # [rename (name = "m_LoadBundleRequest")] pub m_load_bundle_request : crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest ,
-# [offset (40)] # [rename (name = "m_CatalogAssetBundle")] pub m_catalog_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
-# [offset (48)] # [rename (name = "m_LoadTextAssetRequest")] pub m_load_text_asset_request : crate :: unity_engine :: assetbundlerequest :: AssetBundleRequest ,
-# [offset (56)] # [rename (name = "m_CatalogData")] pub m_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
-# [offset (64)] # [rename (name = "OnLoaded")] pub on_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.ResourceProviders",name="ContentCatalogProvider.InternalOp")]#[parent(crate::system::object::Object)]pub struct ContentCatalogProvider_InternalOp{#[offset(16)]#[rename(name="m_LocalDataPath")]pub m_local_data_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_RemoteHashValue")]pub m_remote_hash_value: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_LocalHashValue")]pub m_local_hash_value: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_ProviderInterface")]pub m_provider_interface:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, #[offset(64)]#[rename(name="m_ContentCatalogData")]pub m_content_catalog_data:crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData, #[offset(72)]#[rename(name="m_ContentCatalogDataLoadOp")]pub m_content_catalog_data_load_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData> , #[offset(96)]#[rename(name="m_BundledCatalog")]pub m_bundled_catalog:crate::unity_engine::addressable_assets::resource_providers::contentcatalogprovider::ContentCatalogProvider_InternalOp_BundledCatalog,}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-pub trait IContentCatalogProviderMethods : IContentCatalogProvider { # [doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"] fn ctor (self , resource_manager_instance : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager >) -> () { unsafe { let __receiver = < ContentCatalogProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db5640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (resource_manager_instance) , :: core :: option :: Option :: None) } } } # [doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"] fn release (self , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < ContentCatalogProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db5700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (location) , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"] fn provide (self , provider_interface : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle >) -> () { unsafe { let __receiver = < ContentCatalogProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db57f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (provider_interface) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl < __T : IContentCatalogProvider > IContentCatalogProviderMethods for __T { }
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn provide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider {
-# [doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"] pub fn new (resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ContentCatalogProvider) , :: core :: stringify ! (new) ,)) ; < Self as IContentCatalogProviderMethods > :: ctor (this , resource_manager_instance) ; this }
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]pub trait IContentCatalogProviderMethods:IContentCatalogProvider{#[doc="`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]fn ctor(self,resource_manager_instance:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>)->(){unsafe{let __receiver= <ContentCatalogProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db5640usize)as*mut u8,();
+(ContentCatalogProvider)__receiver,(crate::unity_engine::resource_management::resourcemanager::ResourceManager)::core::convert::Into::into(resource_manager_instance))}
+}
+#[doc="`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]fn release(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ContentCatalogProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db5700usize)as*mut u8,();
+(ContentCatalogProvider)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location),(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn provide(self,provider_interface:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <ContentCatalogProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db57f0usize)as*mut u8,();
+(ContentCatalogProvider)__receiver,(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)::core::convert::Into::into(provider_interface))}
+}
 }
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-pub trait IContentCatalogProvider_InternalOpMethods : IContentCatalogProvider_InternalOp { # [doc = "`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, bool, bool)` overload"] fn start (self , provider_interface : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle > , disable_catalog_update_on_start : impl :: core :: convert :: Into < bool > , is_local_catalog_in_bundle : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db5950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (provider_interface) , :: core :: convert :: Into :: into (disable_catalog_update_on_start) , :: core :: convert :: Into :: into (is_local_catalog_in_bundle) , :: core :: option :: Option :: None) } } } # [doc = "`WaitForCompletionCallback()` overload"] fn wait_for_completion_callback (self ,) -> bool { unsafe { let __receiver = < ContentCatalogProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbff70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db57e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadCatalog(::unity2::Il2CppString, bool, bool)` overload"] fn load_catalog (self , id_to_load : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_local_catalog_in_bundle : impl :: core :: convert :: Into < bool > , is_local_catalog : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp , :: unity2 :: Il2CppString , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbfa20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id_to_load) , :: core :: convert :: Into :: into (is_local_catalog_in_bundle) , :: core :: convert :: Into :: into (is_local_catalog) , :: core :: option :: Option :: None) } } } # [doc = "`CatalogLoadOpCompleteCallback(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"] fn catalog_load_op_complete_callback (self , op : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > >) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } # [doc = "`GetTransformedInternalId(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"] fn get_transformed_internal_id (self , loc : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ContentCatalogProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbf950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (loc) , :: core :: option :: Option :: None) } } } # [doc = "`DetermineIdToLoad(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>, bool)` overload"] fn determine_id_to_load (self , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , dependency_objects : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > > , disable_catalog_update_on_start : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ContentCatalogProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbef70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (location) , :: core :: convert :: Into :: into (dependency_objects) , :: core :: convert :: Into :: into (disable_catalog_update_on_start) , :: core :: option :: Option :: None) } } } # [doc = "`OnCatalogLoaded(crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData)` overload"] fn on_catalog_loaded (self , ccd : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp , crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ccd) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db5940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]impl<__T:IContentCatalogProvider>IContentCatalogProviderMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl < __T : IContentCatalogProvider_InternalOp > IContentCatalogProvider_InternalOpMethods for __T { }
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider_InternalOp { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn wait_for_completion_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_catalog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn catalog_load_op_complete_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_transformed_internal_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn determine_id_to_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_catalog_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider_InternalOp {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ContentCatalogProvider_InternalOp) , :: core :: stringify ! (new) ,)) ; < Self as IContentCatalogProvider_InternalOpMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]impl ContentCatalogProvider{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn provide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-pub trait IContentCatalogProvider_InternalOp_BundledCatalogMethods : IContentCatalogProvider_InternalOp_BundledCatalog { # [doc = "`add_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"] fn add_on_loaded (self , value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > >) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"] fn remove_on_loaded (self , value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > >) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OpInProgress()` overload"] fn get_op_in_progress (self ,) -> bool { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_OpIsSuccess()` overload"] fn get_op_is_success (self ,) -> bool { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , bundle_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bundle_path) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadCatalogFromBundleAsync()` overload"] fn load_catalog_from_bundle_async (self ,) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadTextAssetRequestComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"] fn load_text_asset_request_complete (self , op : impl :: core :: convert :: Into < crate :: unity_engine :: asyncoperation :: AsyncOperation >) -> () { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , crate :: unity_engine :: asyncoperation :: AsyncOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } # [doc = "`WaitForCompletion()` overload"] fn wait_for_completion (self ,) -> bool { unsafe { let __receiver = < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentCatalogProvider_InternalOp_BundledCatalog , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc0060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]impl ContentCatalogProvider{#[doc="`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"]pub fn new(resource_manager_instance:crate::unity_engine::resource_management::resourcemanager::ResourceManager)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContentCatalogProvider), ::core::stringify!(new),));
+ <Self as IContentCatalogProviderMethods> ::ctor(this,resource_manager_instance);
+this}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl < __T : IContentCatalogProvider_InternalOp_BundledCatalog > IContentCatalogProvider_InternalOp_BundledCatalogMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]pub trait IContentCatalogProvider_InternalOp_BundledCatalogMethods:IContentCatalogProvider_InternalOp_BundledCatalog{#[doc="`add_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]fn add_on_loaded(self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData> >)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0280usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver,(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)::core::convert::Into::into(value))}
+}
+#[doc="`remove_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]fn remove_on_loaded(self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData> >)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0aa0usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver,(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_OpInProgress()` overload"]fn get_op_in_progress(self,)->bool{unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0b50usize)as*mut u8,bool;
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver)}
+}
+#[doc="`get_OpIsSuccess()` overload"]fn get_op_is_success(self,)->bool{unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0b60usize)as*mut u8,bool;
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,bundle_path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0160usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(bundle_path))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0b80usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver)}
+}
+#[doc="`Unload()` overload"]fn unload(self,)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0c10usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver)}
+}
+#[doc="`LoadCatalogFromBundleAsync()` overload"]fn load_catalog_from_bundle_async(self,)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0330usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver)}
+}
+#[doc="`LoadTextAssetRequestComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]fn load_text_asset_request_complete(self,op:impl::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0c50usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver,(crate::unity_engine::asyncoperation::AsyncOperation)::core::convert::Into::into(op))}
+}
+#[doc="`WaitForCompletion()` overload"]fn wait_for_completion(self,)->bool{unsafe{let __receiver= <ContentCatalogProvider_InternalOp_BundledCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0060usize)as*mut u8,bool;
+(ContentCatalogProvider_InternalOp_BundledCatalog)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider_InternalOp_BundledCatalog { pub fn add_on_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn remove_on_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_op_in_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_op_is_success_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn load_catalog_from_bundle_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn load_text_asset_request_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn wait_for_completion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentCatalogProvider_InternalOp_BundledCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]impl<__T:IContentCatalogProvider_InternalOp_BundledCatalog>IContentCatalogProvider_InternalOp_BundledCatalogMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider_InternalOp_BundledCatalog {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (bundle_path : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ContentCatalogProvider_InternalOp_BundledCatalog) , :: core :: stringify ! (new) ,)) ; < Self as IContentCatalogProvider_InternalOp_BundledCatalogMethods > :: ctor (this , bundle_path) ; this }
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]impl ContentCatalogProvider_InternalOp_BundledCatalog{pub fn add_on_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn remove_on_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_op_in_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_op_is_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn load_catalog_from_bundle_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_text_asset_request_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]impl ContentCatalogProvider_InternalOp_BundledCatalog{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(bundle_path: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContentCatalogProvider_InternalOp_BundledCatalog), ::core::stringify!(new),));
+ <Self as IContentCatalogProvider_InternalOp_BundledCatalogMethods> ::ctor(this,bundle_path);
+this}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]pub trait IContentCatalogProvider_InternalOpMethods:IContentCatalogProvider_InternalOp{#[doc="`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, bool, bool)` overload"]fn start(self,provider_interface:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle> ,disable_catalog_update_on_start:impl::core::convert::Into<bool> ,is_local_catalog_in_bundle:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db5950usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp)__receiver,(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)::core::convert::Into::into(provider_interface),(bool)::core::convert::Into::into(disable_catalog_update_on_start),(bool)::core::convert::Into::into(is_local_catalog_in_bundle))}
+}
+#[doc="`WaitForCompletionCallback()` overload"]fn wait_for_completion_callback(self,)->bool{unsafe{let __receiver= <ContentCatalogProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbff70usize)as*mut u8,bool;
+(ContentCatalogProvider_InternalOp)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db57e0usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp)__receiver)}
+}
+#[doc="`LoadCatalog(::unity2::Il2CppString, bool, bool)` overload"]fn load_catalog(self,id_to_load:impl::core::convert::Into< ::unity2::Il2CppString> ,is_local_catalog_in_bundle:impl::core::convert::Into<bool> ,is_local_catalog:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbfa20usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(id_to_load),(bool)::core::convert::Into::into(is_local_catalog_in_bundle),(bool)::core::convert::Into::into(is_local_catalog))}
+}
+#[doc="`CatalogLoadOpCompleteCallback(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]fn catalog_load_op_complete_callback(self,op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData> >)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0460usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp)__receiver,(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)::core::convert::Into::into(op))}
+}
+#[doc="`GetTransformedInternalId(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn get_transformed_internal_id(self,loc:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbf950usize)as*mut u8, ::unity2::Il2CppString;
+(ContentCatalogProvider_InternalOp)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(loc))}
+}
+#[doc="`DetermineIdToLoad(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>, bool)` overload"]fn determine_id_to_load(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,dependency_objects:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> > ,disable_catalog_update_on_start:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef70usize)as*mut u8, ::unity2::Il2CppString;
+(ContentCatalogProvider_InternalOp)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location),(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object>)::core::convert::Into::into(dependency_objects),(bool)::core::convert::Into::into(disable_catalog_update_on_start))}
+}
+#[doc="`OnCatalogLoaded(crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData)` overload"]fn on_catalog_loaded(self,ccd:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0550usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp)__receiver,(crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData)::core::convert::Into::into(ccd))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ContentCatalogProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db5940usize)as*mut u8,();
+(ContentCatalogProvider_InternalOp)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]impl<__T:IContentCatalogProvider_InternalOp>IContentCatalogProvider_InternalOpMethods for __T{}
+
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]impl ContentCatalogProvider_InternalOp{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn wait_for_completion_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_catalog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn catalog_load_op_complete_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_transformed_internal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn determine_id_to_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_catalog_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]impl ContentCatalogProvider_InternalOp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContentCatalogProvider_InternalOp), ::core::stringify!(new),));
+ <Self as IContentCatalogProvider_InternalOpMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
@@ -152,13 +201,13 @@ pub mod prelude {
     pub use super::ContentCatalogProvider;
     pub use super::IContentCatalogProvider;
     pub use super::IContentCatalogProviderMethods;
-    pub use super::ContentCatalogProvider_InternalOp;
-    pub use super::IContentCatalogProvider_InternalOp;
-    pub use super::IContentCatalogProvider_InternalOpMethods;
-    pub use super::ContentCatalogProvider_DependencyHashIndex;
     pub use super::ContentCatalogProvider_InternalOp_BundledCatalog;
     pub use super::IContentCatalogProvider_InternalOp_BundledCatalog;
     pub use super::IContentCatalogProvider_InternalOp_BundledCatalogMethods;
+    pub use super::ContentCatalogProvider_DependencyHashIndex;
+    pub use super::ContentCatalogProvider_InternalOp;
+    pub use super::IContentCatalogProvider_InternalOp;
+    pub use super::IContentCatalogProvider_InternalOpMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

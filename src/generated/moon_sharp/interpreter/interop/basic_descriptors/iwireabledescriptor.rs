@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/basic_descriptors/iwireabledescriptor/IWireableDescriptor.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors" , name = "IWireableDescriptor")] pub struct IWireableDescriptor {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/basic_descriptors/iwireabledescriptor/IWireableDescriptor.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop.BasicDescriptors",name="IWireableDescriptor")]pub struct IWireableDescriptor{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IWireableDescriptor_unity2_raw { use super :: * ; pub unsafe fn prepare_for_wiring (this : IWireableDescriptor , t : crate :: moon_sharp :: interpreter :: table :: Table , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("PrepareForWiring") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "PrepareForWiring" , < IWireableDescriptor as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IWireableDescriptor , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , t , __mi) } }
+#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IWireableDescriptor_unity2_raw{use super:: * ;
+pub unsafe fn prepare_for_wiring(this:IWireableDescriptor,t:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareForWiring").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","PrepareForWiring", <IWireableDescriptor as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IWireableDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,__mi)}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]
-pub trait IIWireableDescriptorMethods : IIWireableDescriptor { # [doc = "`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"] fn prepare_for_wiring (self , t : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> () { unsafe { let __receiver = < IWireableDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IWireableDescriptor_unity2_raw :: prepare_for_wiring (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]pub trait IIWireableDescriptorMethods:IIWireableDescriptor{#[doc="`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]fn prepare_for_wiring(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <IWireableDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IWireableDescriptor_unity2_raw::prepare_for_wiring(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]
-impl < __T : IIWireableDescriptor > IIWireableDescriptorMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]impl<__T:IIWireableDescriptor>IIWireableDescriptorMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]
-impl IWireableDescriptor { pub fn prepare_for_wiring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IWireableDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]impl IWireableDescriptor{pub fn prepare_for_wiring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]
 #[doc(hidden)]

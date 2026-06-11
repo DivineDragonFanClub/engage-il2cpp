@@ -4,130 +4,173 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRewardSequence.ProcDiscardMessage")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct CommonRewardSequence_ProcDiscardMessage {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]#[::unity2::class(namespace="App",name="CommonRewardSequence.ProcDiscardMessage")]#[parent(crate::app::procinst::ProcInst)]pub struct CommonRewardSequence_ProcDiscardMessage{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonrewardsequence/CommonRewardSequence_Label2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CommonRewardSequence_Label2  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CommonRewardSequence_Label2{pub value:i32,}
+impl::unity2::ClassIdentity for CommonRewardSequence_Label2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="CommonRewardSequence.Label2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CommonRewardSequence_Label2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CommonRewardSequence_Label2{pub fn entry()->Self{Self{value:0}
+}
+pub fn check_level_up()->Self{Self{value:1}
+}
+pub fn close()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for CommonRewardSequence_Label2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "CommonRewardSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for CommonRewardSequence_Label2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  CommonRewardSequence_Label2  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn check_level_up() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn close() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardsequence/CommonRewardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRewardSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct CommonRewardSequence {
-# [offset (112)] # [rename (name = "m_Bg")] pub m_bg : crate :: app :: menubg :: MenuBg ,
-# [offset (120)] # [rename (name = "m_RewardExpList")] pub m_reward_exp_list : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unit :: Unit , i32 > ,
-# [offset (128)] # [rename (name = "m_RewardItemList")] pub m_reward_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > ,
-# [offset (136)] # [rename (name = "m_RewardMoney")] pub m_reward_money : i32 ,
-# [offset (140)] # [rename (name = "m_IsDiscard")] pub m_is_discard : bool ,
-# [offset (141)] # [rename (name = "m_IsCreateBg")] pub m_is_create_bg : bool ,
-# [offset (142)] # [rename (name = "m_IsClear")] pub m_is_clear : bool ,
-# [offset (144)] # [rename (name = "TitleMID")] pub title_mid : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "m_LevelUpUnitList")] pub m_level_up_unit_list : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unit :: Unit , i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence.md"))]#[::unity2::class(namespace="App",name="CommonRewardSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct CommonRewardSequence{#[offset(112)]#[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[offset(120)]#[rename(name="m_RewardExpList")]pub m_reward_exp_list:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> , #[offset(128)]#[rename(name="m_RewardItemList")]pub m_reward_item_list:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> , #[offset(136)]#[rename(name="m_RewardMoney")]pub m_reward_money:i32, #[offset(140)]#[rename(name="m_IsDiscard")]pub m_is_discard:bool, #[offset(141)]#[rename(name="m_IsCreateBg")]pub m_is_create_bg:bool, #[offset(142)]#[rename(name="m_IsClear")]pub m_is_clear:bool, #[offset(144)]#[rename(name="TitleMID")]pub title_mid: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_LevelUpUnitList")]pub m_level_up_unit_list:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> ,}
 
 }
 
 #[cfg(feature = "app-commonrewardsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commonrewardsequence")]
-impl CommonRewardSequence_ProcDiscardMessage { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cb910usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-commonrewardsequence")]
-pub trait ICommonRewardSequence_ProcDiscardMessageMethods : ICommonRewardSequence_ProcDiscardMessage { # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < CommonRewardSequence_ProcDiscardMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence_ProcDiscardMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cb880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CommonRewardSequence_ProcDiscardMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence_ProcDiscardMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cbb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-commonrewardsequence")]
-impl < __T : ICommonRewardSequence_ProcDiscardMessage > ICommonRewardSequence_ProcDiscardMessageMethods for __T { }
-
-#[cfg(feature = "app-commonrewardsequence")]
-impl CommonRewardSequence_ProcDiscardMessage { pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence_ProcDiscardMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence_ProcDiscardMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence_ProcDiscardMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-commonrewardsequence")]
-impl CommonRewardSequence_ProcDiscardMessage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRewardSequence_ProcDiscardMessage) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRewardSequence_ProcDiscardMessageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence_ProcDiscardMessage{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19cb910usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-commonrewardsequence")]
-impl CommonRewardSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , reward_exp_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unit :: Unit , i32 > > , reward_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > > , reward_money : impl :: core :: convert :: Into < i32 > , is_create_bg : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unit :: Unit , i32 > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (reward_exp_list) , :: core :: convert :: Into :: into (reward_list) , :: core :: convert :: Into :: into (reward_money) , :: core :: convert :: Into :: into (is_create_bg) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindClear(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"] pub fn create_bind_clear (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , reward_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25338c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (reward_list) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindForWell(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, ::unity2::Il2CppString)` overload"] pub fn create_bind_for_well (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , reward_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > > , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2533950usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (reward_list) , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateBindDiscardMessage(crate::app::procinst::ProcInst, bool)` overload"] pub fn try_create_bind_discard_message (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , discard : impl :: core :: convert :: Into < bool >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25343a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (discard) , :: core :: option :: Option :: None) } } } # [doc = "`CalcRewardItemList(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, *muti32, *mutbool)` overload"] pub fn calc_reward_item_list (item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > >) -> (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > , i32 , bool) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , * mut i32 , * mut bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25343b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item_list) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="app-commonrewardsequence")]pub trait ICommonRewardSequence_ProcDiscardMessageMethods:ICommonRewardSequence_ProcDiscardMessage{#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <CommonRewardSequence_ProcDiscardMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cb880usize)as*mut u8,();
+(CommonRewardSequence_ProcDiscardMessage)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CommonRewardSequence_ProcDiscardMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbb10usize)as*mut u8,();
+(CommonRewardSequence_ProcDiscardMessage)__receiver)}
+}
+}
 
-#[cfg(feature = "app-commonrewardsequence")]
-pub trait ICommonRewardSequenceMethods : ICommonRewardSequence { # [doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool, bool)` overload"] fn ctor (self , reward_exp_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unit :: Unit , i32 > > , reward_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > > , reward_money : impl :: core :: convert :: Into < i32 > , is_create_bg : impl :: core :: convert :: Into < bool > , is_clear : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unit :: Unit , i32 > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , i32 , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (reward_exp_list) , :: core :: convert :: Into :: into (reward_item_list) , :: core :: convert :: Into :: into (reward_money) , :: core :: convert :: Into :: into (is_create_bg) , :: core :: convert :: Into :: into (is_clear) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2533170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDescForWell()` overload"] fn create_desc_for_well (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2533a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadRes()` overload"] fn load_res (self ,) -> () { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2533e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingRes()` overload"] fn is_loading_res (self ,) -> bool { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2533f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenRewardExp()` overload"] fn open_reward_exp (self ,) -> () { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2534090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckLevelUp()` overload"] fn check_level_up (self ,) -> () { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25341b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcRewardItemList()` overload"] fn calc_reward_item_list_2 (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: itemdata :: ItemData , i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2534790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenRewardItem()` overload"] fn open_reward_item (self ,) -> () { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25347b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenRewardItemForWell()` overload"] fn open_reward_item_for_well (self ,) -> () { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25349b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25352d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckItemOverflow()` overload"] fn check_item_overflow (self ,) -> () { unsafe { let __receiver = < CommonRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2535430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewardsequence")]impl<__T:ICommonRewardSequence_ProcDiscardMessage>ICommonRewardSequence_ProcDiscardMessageMethods for __T{}
 
-#[cfg(feature = "app-commonrewardsequence")]
-impl < __T : ICommonRewardSequence > ICommonRewardSequenceMethods for __T { }
+#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence_ProcDiscardMessage{pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-commonrewardsequence")]
-impl CommonRewardSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_for_well_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_desc_for_well_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn load_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_loading_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn open_reward_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn check_level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn try_create_bind_discard_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn calc_reward_item_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn calc_reward_item_list_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn open_reward_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn open_reward_item_for_well_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn check_item_overflow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence_ProcDiscardMessage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRewardSequence_ProcDiscardMessage), ::core::stringify!(new),));
+ <Self as ICommonRewardSequence_ProcDiscardMessageMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-commonrewardsequence")]
-impl CommonRewardSequence {
-# [doc = "`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool, bool)` — overload selector"] pub fn new (reward_exp_list : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unit :: Unit , i32 > , reward_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , reward_money : i32 , is_create_bg : bool , is_clear : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRewardSequence) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRewardSequenceMethods > :: ctor (this , reward_exp_list , reward_item_list , reward_money , is_create_bg , is_clear) ; this }
+#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,reward_exp_list:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> > ,reward_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> > ,reward_money:impl::core::convert::Into<i32> ,is_create_bg:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2532f40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>)::core::convert::Into::into(reward_exp_list),(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(reward_list),(i32)::core::convert::Into::into(reward_money),(bool)::core::convert::Into::into(is_create_bg))}
+}
+#[doc="`CreateBindClear(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]pub fn create_bind_clear(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,reward_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25338c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(reward_list))}
+}
+#[doc="`CreateBindForWell(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, ::unity2::Il2CppString)` overload"]pub fn create_bind_for_well(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,reward_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> > ,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2533950usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(reward_list),(::unity2::Il2CppString)::core::convert::Into::into(title))}
+}
+#[doc="`TryCreateBindDiscardMessage(crate::app::procinst::ProcInst, bool)` overload"]pub fn try_create_bind_discard_message(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,discard:impl::core::convert::Into<bool>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25343a0usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(discard))}
+}
+#[doc="`CalcRewardItemList(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, *muti32, *mutbool)` overload"]pub fn calc_reward_item_list(item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> >)->(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32> ,i32,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25343b0usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32> ;
+(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(item_list),(*mut i32)__out_0.as_mut_ptr(),(*mut bool)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+}
+
+#[cfg(feature="app-commonrewardsequence")]pub trait ICommonRewardSequenceMethods:ICommonRewardSequence{#[doc="`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool, bool)` overload"]fn ctor(self,reward_exp_list:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> > ,reward_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> > ,reward_money:impl::core::convert::Into<i32> ,is_create_bg:impl::core::convert::Into<bool> ,is_clear:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532ff0usize)as*mut u8,();
+(CommonRewardSequence)__receiver,(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>)::core::convert::Into::into(reward_exp_list),(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(reward_item_list),(i32)::core::convert::Into::into(reward_money),(bool)::core::convert::Into::into(is_create_bg),(bool)::core::convert::Into::into(is_clear))}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2533170usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`CreateDescForWell()` overload"]fn create_desc_for_well(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2533a00usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`LoadRes()` overload"]fn load_res(self,)->(){unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2533e70usize)as*mut u8,();
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`IsLoadingRes()` overload"]fn is_loading_res(self,)->bool{unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2533f80usize)as*mut u8,bool;
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`OpenRewardExp()` overload"]fn open_reward_exp(self,)->(){unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2534090usize)as*mut u8,();
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`CheckLevelUp()` overload"]fn check_level_up(self,)->(){unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25341b0usize)as*mut u8,();
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`CalcRewardItemList()` overload"]fn calc_reward_item_list_2(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32>{unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2534790usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::itemdata::ItemData,i32> ;
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`OpenRewardItem()` overload"]fn open_reward_item(self,)->(){unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25347b0usize)as*mut u8,();
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`OpenRewardItemForWell()` overload"]fn open_reward_item_for_well(self,)->(){unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25349b0usize)as*mut u8,();
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25352d0usize)as*mut u8,();
+(CommonRewardSequence)__receiver)}
+}
+#[doc="`CheckItemOverflow()` overload"]fn check_item_overflow(self,)->(){unsafe{let __receiver= <CommonRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2535430usize)as*mut u8,();
+(CommonRewardSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-commonrewardsequence")]impl<__T:ICommonRewardSequence>ICommonRewardSequenceMethods for __T{}
+
+#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_for_well_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_desc_for_well_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn load_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_loading_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn open_reward_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn check_level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_create_bind_discard_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn calc_reward_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn calc_reward_item_list_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn open_reward_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn open_reward_item_for_well_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn check_item_overflow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence{#[doc="`.ctor(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool, bool)` — overload selector"]pub fn new(reward_exp_list:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> ,reward_item_list:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> ,reward_money:i32,is_create_bg:bool,is_clear:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRewardSequence), ::core::stringify!(new),));
+ <Self as ICommonRewardSequenceMethods> ::ctor(this,reward_exp_list,reward_item_list,reward_money,is_create_bg,is_clear);
+this}
 }
 
 #[cfg(feature = "app-commonrewardsequence")]

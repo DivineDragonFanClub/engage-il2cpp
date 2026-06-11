@@ -4,215 +4,243 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayStampData_Kinds  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaystampdata/RelayStampData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayStampData_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for RelayStampData_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RelayStampData.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RelayStampData_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RelayStampData_Kinds{pub fn lithos()->Self{Self{value:0}
+}
+pub fn filene()->Self{Self{value:1}
+}
+pub fn brodia()->Self{Self{value:2}
+}
+pub fn ircion()->Self{Self{value:3}
+}
+pub fn solum()->Self{Self{value:4}
+}
+pub fn other()->Self{Self{value:5}
+}
+pub fn god()->Self{Self{value:6}
+}
+pub fn count()->Self{Self{value:7}
+}
+pub fn country_count()->Self{Self{value:6}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for RelayStampData_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayStampData.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaystampdata/RelayStampData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayStampData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for RelayStampData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RelayStampData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RelayStampData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RelayStampData_Flags{pub fn no_filter()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::IlType for RelayStampData_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaystampdata/RelayStampData_FlagField.md"))]#[::unity2::class(namespace="App",name="RelayStampData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::relaystampdata::RelayStampData_Flags>)]pub struct RelayStampData_FlagField{}
 
 
-impl  RelayStampData_Kinds  {
-    pub fn lithos() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn filene() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn brodia() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn ircion() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn solum() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn other() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn god() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn count() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn country_count() -> Self {
-        Self { value: 6 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStampData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relaystampdata :: RelayStampData >)] pub struct RelayStampData {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStampData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaystampdata :: RelayStampData_Flags >)] pub struct RelayStampData_FlagField {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayStampData_Flags  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RelayStampData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayStampData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RelayStampData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RelayStampData_Flags  {
-    pub fn no_filter() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaystampdata/RelayStampData.md"))]#[::unity2::class(namespace="App",name="RelayStampData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::relaystampdata::RelayStampData>)]pub struct RelayStampData{}
 
 }
 
 #[cfg(feature = "app-relaystampdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relaystampdata")]
-impl RelayStampData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d3c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGetFromSerialNo(u8)` overload"] pub fn try_get_from_serial_no (serial_no : impl :: core :: convert :: Into < u8 >) -> crate :: app :: relaystampdata :: RelayStampData { unsafe { { let __inner : extern "C" fn (u8 , :: unity2 :: OptionalMethod ,) -> crate :: app :: relaystampdata :: RelayStampData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200a8f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (serial_no) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-relaystampdata")]
-pub trait IRelayStampDataMethods : IRelayStampData { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SerialNo()` overload"] fn get_serial_no (self ,) -> u8 { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SerialNo(u8)` overload"] fn set_serial_no (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d4a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Pid()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Pid(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d4c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Gid()` overload"] fn get_gid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Gid(::unity2::Il2CppString)` overload"] fn set_gid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d4e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Kind()` overload"] fn get_kind (self ,) -> crate :: app :: relaystampdata :: RelayStampData_Kinds { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> crate :: app :: relaystampdata :: RelayStampData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Kind(crate::app::relaystampdata::RelayStampData_Kinds)` overload"] fn set_kind (self , value : impl :: core :: convert :: Into < crate :: app :: relaystampdata :: RelayStampData_Kinds >) -> () { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , crate :: app :: relaystampdata :: RelayStampData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Sort()` overload"] fn get_sort (self ,) -> i32 { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Sort(i32)` overload"] fn set_sort (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: relaystampdata :: RelayStampData_FlagField { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> crate :: app :: relaystampdata :: RelayStampData_FlagField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::relaystampdata::RelayStampData_FlagField)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: relaystampdata :: RelayStampData_FlagField >) -> () { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , crate :: app :: relaystampdata :: RelayStampData_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Voice()` overload"] fn get_voice (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Voice(::unity2::Il2CppString)` overload"] fn set_voice (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetMessage()` overload"] fn get_message (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2001560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-relaystampdata")]
-impl < __T : IRelayStampData > IRelayStampDataMethods for __T { }
-
-#[cfg(feature = "app-relaystampdata")]
-impl RelayStampData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_serial_no_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_serial_no_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn try_get_from_serial_no_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
-
-#[cfg(feature = "app-relaystampdata")]
-impl RelayStampData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayStampData) , :: core :: stringify ! (new) ,)) ; < Self as IRelayStampDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relaystampdata")]pub trait IRelayStampData_FlagFieldMethods:IRelayStampData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayStampData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bf70usize)as*mut u8,();
+(RelayStampData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::relaystampdata::RelayStampData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData_Flags>)->(){unsafe{let __receiver= <RelayStampData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bfd0usize)as*mut u8,();
+(RelayStampData_FlagField)__receiver,(crate::app::relaystampdata::RelayStampData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::relaystampdata::RelayStampData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData_Flags>)->i32{unsafe{let __receiver= <RelayStampData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0c030usize)as*mut u8,i32;
+(RelayStampData_FlagField)__receiver,(crate::app::relaystampdata::RelayStampData_Flags)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-relaystampdata")]
-pub trait IRelayStampData_FlagFieldMethods : IRelayStampData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RelayStampData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b0bf70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::relaystampdata::RelayStampData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: relaystampdata :: RelayStampData_Flags >) -> () { unsafe { let __receiver = < RelayStampData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData_FlagField , crate :: app :: relaystampdata :: RelayStampData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b0bfd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`ToInt(crate::app::relaystampdata::RelayStampData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: relaystampdata :: RelayStampData_Flags >) -> i32 { unsafe { let __receiver = < RelayStampData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStampData_FlagField , crate :: app :: relaystampdata :: RelayStampData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b0c030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relaystampdata")]impl<__T:IRelayStampData_FlagField>IRelayStampData_FlagFieldMethods for __T{}
 
-#[cfg(feature = "app-relaystampdata")]
-impl < __T : IRelayStampData_FlagField > IRelayStampData_FlagFieldMethods for __T { }
+#[cfg(feature="app-relaystampdata")]impl RelayStampData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-relaystampdata")]
-impl RelayStampData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStampData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-relaystampdata")]impl RelayStampData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayStampData_FlagField), ::core::stringify!(new),));
+ <Self as IRelayStampData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::relaystampdata::RelayStampData_Flags)` — overload selector"]pub fn new_2(f:crate::app::relaystampdata::RelayStampData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayStampData_FlagField), ::core::stringify!(new_2),));
+ <Self as IRelayStampData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
 
-#[cfg(feature = "app-relaystampdata")]
-impl RelayStampData_FlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayStampData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IRelayStampData_FlagFieldMethods > :: ctor (this , f) ; this }
+#[cfg(feature="app-relaystampdata")]impl RelayStampData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200d3c0usize)as*mut u8,();
+)}
+}
+#[doc="`TryGetFromSerialNo(u8)` overload"]pub fn try_get_from_serial_no(serial_no:impl::core::convert::Into<u8>)->crate::app::relaystampdata::RelayStampData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200a8f0usize)as*mut u8,crate::app::relaystampdata::RelayStampData;
+(u8)::core::convert::Into::into(serial_no))}
+}
+}
 
-# [doc = "`.ctor(crate::app::relaystampdata::RelayStampData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: relaystampdata :: RelayStampData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayStampData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IRelayStampData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
+#[cfg(feature="app-relaystampdata")]pub trait IRelayStampDataMethods:IRelayStampData{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d470usize)as*mut u8, ::unity2::Il2CppString;
+(RelayStampData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d480usize)as*mut u8,();
+(RelayStampData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SerialNo()` overload"]fn get_serial_no(self,)->u8{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d490usize)as*mut u8,u8;
+(RelayStampData)__receiver)}
+}
+#[doc="`set_SerialNo(u8)` overload"]fn set_serial_no(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d4a0usize)as*mut u8,();
+(RelayStampData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Pid()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d4b0usize)as*mut u8, ::unity2::Il2CppString;
+(RelayStampData)__receiver)}
+}
+#[doc="`set_Pid(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d4c0usize)as*mut u8,();
+(RelayStampData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Gid()` overload"]fn get_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d4d0usize)as*mut u8, ::unity2::Il2CppString;
+(RelayStampData)__receiver)}
+}
+#[doc="`set_Gid(::unity2::Il2CppString)` overload"]fn set_gid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d4e0usize)as*mut u8,();
+(RelayStampData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Kind()` overload"]fn get_kind(self,)->crate::app::relaystampdata::RelayStampData_Kinds{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d4f0usize)as*mut u8,crate::app::relaystampdata::RelayStampData_Kinds;
+(RelayStampData)__receiver)}
+}
+#[doc="`set_Kind(crate::app::relaystampdata::RelayStampData_Kinds)` overload"]fn set_kind(self,value:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData_Kinds>)->(){unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d500usize)as*mut u8,();
+(RelayStampData)__receiver,(crate::app::relaystampdata::RelayStampData_Kinds)::core::convert::Into::into(value))}
+}
+#[doc="`get_Sort()` overload"]fn get_sort(self,)->i32{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d510usize)as*mut u8,i32;
+(RelayStampData)__receiver)}
+}
+#[doc="`set_Sort(i32)` overload"]fn set_sort(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d520usize)as*mut u8,();
+(RelayStampData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::relaystampdata::RelayStampData_FlagField{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d530usize)as*mut u8,crate::app::relaystampdata::RelayStampData_FlagField;
+(RelayStampData)__receiver)}
+}
+#[doc="`set_Flag(crate::app::relaystampdata::RelayStampData_FlagField)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData_FlagField>)->(){unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d540usize)as*mut u8,();
+(RelayStampData)__receiver,(crate::app::relaystampdata::RelayStampData_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`get_Voice()` overload"]fn get_voice(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d550usize)as*mut u8, ::unity2::Il2CppString;
+(RelayStampData)__receiver)}
+}
+#[doc="`set_Voice(::unity2::Il2CppString)` overload"]fn set_voice(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d560usize)as*mut u8,();
+(RelayStampData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetMessage()` overload"]fn get_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2001560usize)as*mut u8, ::unity2::Il2CppString;
+(RelayStampData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d570usize)as*mut u8, ::unity2::Il2CppString;
+(RelayStampData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d580usize)as*mut u8,();
+(RelayStampData)__receiver)}
+}
+}
+
+#[cfg(feature="app-relaystampdata")]impl<__T:IRelayStampData>IRelayStampDataMethods for __T{}
+
+#[cfg(feature="app-relaystampdata")]impl RelayStampData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_serial_no_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_serial_no_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn try_get_from_serial_no_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="app-relaystampdata")]impl RelayStampData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayStampData), ::core::stringify!(new),));
+ <Self as IRelayStampDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relaystampdata")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RelayStampData_Kinds;
-    pub use super::RelayStampData;
-    pub use super::IRelayStampData;
-    pub use super::IRelayStampDataMethods;
+    pub use super::RelayStampData_Flags;
     pub use super::RelayStampData_FlagField;
     pub use super::IRelayStampData_FlagField;
     pub use super::IRelayStampData_FlagFieldMethods;
-    pub use super::RelayStampData_Flags;
+    pub use super::RelayStampData;
+    pub use super::IRelayStampData;
+    pub use super::IRelayStampDataMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

@@ -4,39 +4,55 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: pokeinspector :: { IPokeInspector , PokeInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::pokeinspector::{IPokeInspector,PokeInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commandinspector/CommandInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommandInspector")] # [parent (crate :: app :: pokeinspector :: PokeInspector)] pub struct CommandInspector {
-# [offset (80)] # [rename (name = "m_Range")] pub m_range : i32 ,
-# [offset (88)] # [rename (name = "m_Mid")] pub m_mid : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commandinspector/CommandInspector.md"))]#[::unity2::class(namespace="App",name="CommandInspector")]#[parent(crate::app::pokeinspector::PokeInspector)]pub struct CommandInspector{#[offset(80)]#[rename(name="m_Range")]pub m_range:i32, #[offset(88)]#[rename(name="m_Mid")]pub m_mid: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-commandinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commandinspector")]
-pub trait ICommandInspectorMethods : ICommandInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < CommandInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommandInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`GetLabel()` overload"] fn get_label (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CommandInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommandInspector , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRange()` overload"] fn get_range (self ,) -> i32 { unsafe { let __receiver = < CommandInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommandInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Color()` overload"] fn get_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < CommandInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommandInspector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commandinspector")]pub trait ICommandInspectorMethods:ICommandInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <CommandInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f560usize)as*mut u8,();
+(CommandInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CommandInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f6b0usize)as*mut u8, ::unity2::Il2CppString;
+(CommandInspector)__receiver)}
+}
+#[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <CommandInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f700usize)as*mut u8,i32;
+(CommandInspector)__receiver)}
+}
+#[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <CommandInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f710usize)as*mut u8,crate::unity_engine::color::Color;
+(CommandInspector)__receiver)}
+}
+}
 
-#[cfg(feature = "app-commandinspector")]
-impl < __T : ICommandInspector > ICommandInspectorMethods for __T { }
+#[cfg(feature="app-commandinspector")]impl<__T:ICommandInspector>ICommandInspectorMethods for __T{}
 
-#[cfg(feature = "app-commandinspector")]
-impl CommandInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommandInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommandInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommandInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommandInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-commandinspector")]impl CommandInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-commandinspector")]
-impl CommandInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommandInspector) , :: core :: stringify ! (new) ,)) ; < Self as ICommandInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-commandinspector")]impl CommandInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommandInspector), ::core::stringify!(new),));
+ <Self as ICommandInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-commandinspector")]

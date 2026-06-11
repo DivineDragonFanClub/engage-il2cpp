@@ -4,30 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/usedbynativecodeattribute/UsedByNativeCodeAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Scripting" , name = "UsedByNativeCodeAttribute")] pub struct UsedByNativeCodeAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scripting/usedbynativecodeattribute/UsedByNativeCodeAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Scripting",name="UsedByNativeCodeAttribute")]pub struct UsedByNativeCodeAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-scripting-usedbynativecodeattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scripting-usedbynativecodeattribute")]
-pub trait IUsedByNativeCodeAttributeMethods : IUsedByNativeCodeAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UsedByNativeCodeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UsedByNativeCodeAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UsedByNativeCodeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UsedByNativeCodeAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UsedByNativeCodeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UsedByNativeCodeAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scripting-usedbynativecodeattribute")]pub trait IUsedByNativeCodeAttributeMethods:IUsedByNativeCodeAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UsedByNativeCodeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38730usize)as*mut u8,();
+(UsedByNativeCodeAttribute)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UsedByNativeCodeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38740usize)as*mut u8,();
+(UsedByNativeCodeAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UsedByNativeCodeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38780usize)as*mut u8,();
+(UsedByNativeCodeAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-scripting-usedbynativecodeattribute")]
-impl < __T : IUsedByNativeCodeAttribute > IUsedByNativeCodeAttributeMethods for __T { }
+#[cfg(feature="unity_engine-scripting-usedbynativecodeattribute")]impl<__T:IUsedByNativeCodeAttribute>IUsedByNativeCodeAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-scripting-usedbynativecodeattribute")]
-impl UsedByNativeCodeAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UsedByNativeCodeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UsedByNativeCodeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UsedByNativeCodeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-scripting-usedbynativecodeattribute")]impl UsedByNativeCodeAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-scripting-usedbynativecodeattribute")]
-impl UsedByNativeCodeAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UsedByNativeCodeAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IUsedByNativeCodeAttributeMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UsedByNativeCodeAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as IUsedByNativeCodeAttributeMethods > :: ctor_2 (this , name) ; this }
+#[cfg(feature="unity_engine-scripting-usedbynativecodeattribute")]impl UsedByNativeCodeAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UsedByNativeCodeAttribute), ::core::stringify!(new),));
+ <Self as IUsedByNativeCodeAttributeMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UsedByNativeCodeAttribute), ::core::stringify!(new_2),));
+ <Self as IUsedByNativeCodeAttributeMethods> ::ctor_2(this,name);
+this}
 }
 
 #[cfg(feature = "unity_engine-scripting-usedbynativecodeattribute")]

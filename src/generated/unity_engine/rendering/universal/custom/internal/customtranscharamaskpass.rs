@@ -4,38 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customtranscharamaskpass/CustomTransCharaMaskPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomTransCharaMaskPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct CustomTransCharaMaskPass {
-# [static_field] # [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-# [offset (120)] # [rename (name = "m_FilteringSettings")] pub m_filtering_settings : crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings ,
-# [offset (144)] # [rename (name = "m_ShaderTagId")] pub m_shader_tag_id : crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId ,
-# [offset (152)] # [rename (name = "m_DepthDestination")] pub m_depth_destination : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/internal/customtranscharamaskpass/CustomTransCharaMaskPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom.Internal",name="CustomTransCharaMaskPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct CustomTransCharaMaskPass{#[static_field]#[rename(name="m_ProfilerTag")]pub m_profiler_tag: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_ProfilingSampler")]pub m_profiling_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[offset(120)]#[rename(name="m_FilteringSettings")]pub m_filtering_settings:crate::unity_engine::rendering::filteringsettings::FilteringSettings, #[offset(144)]#[rename(name="m_ShaderTagId")]pub m_shader_tag_id:crate::unity_engine::rendering::shadertagid::ShaderTagId, #[offset(152)]#[rename(name="m_DepthDestination")]pub m_depth_destination:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtranscharamaskpass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]
-pub trait ICustomTransCharaMaskPassMethods : ICustomTransCharaMaskPass { # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , layer_mask : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < CustomTransCharaMaskPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomTransCharaMaskPass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4f400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"] fn setup (self , depth_destination : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle >) -> () { unsafe { let __receiver = < CustomTransCharaMaskPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomTransCharaMaskPass , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4f590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (depth_destination) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < CustomTransCharaMaskPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (CustomTransCharaMaskPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4f5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]pub trait ICustomTransCharaMaskPassMethods:ICustomTransCharaMaskPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent> ,layer_mask:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->(){unsafe{let __receiver= <CustomTransCharaMaskPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4f400usize)as*mut u8,();
+(CustomTransCharaMaskPass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt),(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(layer_mask))}
+}
+#[doc="`Setup(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]fn setup(self,depth_destination:impl::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)->(){unsafe{let __receiver= <CustomTransCharaMaskPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4f590usize)as*mut u8,();
+(CustomTransCharaMaskPass)__receiver,(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)::core::convert::Into::into(depth_destination))}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <CustomTransCharaMaskPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4f5b0usize)as*mut u8,();
+(CustomTransCharaMaskPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]
-impl < __T : ICustomTransCharaMaskPass > ICustomTransCharaMaskPassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]impl<__T:ICustomTransCharaMaskPass>ICustomTransCharaMaskPassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]
-impl CustomTransCharaMaskPass { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTransCharaMaskPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTransCharaMaskPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTransCharaMaskPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]impl CustomTransCharaMaskPass{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]
-impl CustomTransCharaMaskPass {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , layer_mask : crate :: unity_engine :: layermask :: LayerMask) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomTransCharaMaskPass) , :: core :: stringify ! (new) ,)) ; < Self as ICustomTransCharaMaskPassMethods > :: ctor (this , evt , layer_mask) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]impl CustomTransCharaMaskPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::layermask::LayerMask)` — overload selector"]pub fn new(evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,layer_mask:crate::unity_engine::layermask::LayerMask)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomTransCharaMaskPass), ::core::stringify!(new),));
+ <Self as ICustomTransCharaMaskPassMethods> ::ctor(this,evt,layer_mask);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtranscharamaskpass")]

@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ipaintgetter/IPaintGetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "IPaintGetter")] pub struct IPaintGetter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ipaintgetter/IPaintGetter.md"))]#[::unity2::class(namespace="App",name="IPaintGetter")]pub struct IPaintGetter{}
 
 }
 
 #[cfg(feature = "app-ipaintgetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ipaintgetter")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IPaintGetter_unity2_raw { use super :: * ; pub unsafe fn get (this : IPaintGetter , x : f32 , y : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Get") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Get" , < IPaintGetter as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IPaintGetter , f32 , f32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , x , y , __mi) } }
+#[cfg(feature="app-ipaintgetter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPaintGetter_unity2_raw{use super:: * ;
+pub unsafe fn get(this:IPaintGetter,x:f32,y:f32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Get").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Get", <IPaintGetter as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IPaintGetter,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,y,__mi)}
+}
 
-#[cfg(feature = "app-ipaintgetter")]
-pub trait IIPaintGetterMethods : IIPaintGetter { # [doc = "`Get(f32, f32)` overload"] fn get (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IPaintGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IPaintGetter_unity2_raw :: get (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="app-ipaintgetter")]pub trait IIPaintGetterMethods:IIPaintGetter{#[doc="`Get(f32, f32)` overload"]fn get(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <IPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IPaintGetter_unity2_raw::get(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "app-ipaintgetter")]
-impl < __T : IIPaintGetter > IIPaintGetterMethods for __T { }
+#[cfg(feature="app-ipaintgetter")]impl<__T:IIPaintGetter>IIPaintGetterMethods for __T{}
 
-#[cfg(feature = "app-ipaintgetter")]
-impl IPaintGetter { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IPaintGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-ipaintgetter")]impl IPaintGetter{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "app-ipaintgetter")]
 #[doc(hidden)]

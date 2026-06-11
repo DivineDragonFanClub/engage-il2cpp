@@ -4,35 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmovecontroller/HubMoveController.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMoveController")] # [parent (crate :: system :: object :: Object)] pub struct HubMoveController {
-# [offset (24)] # [rename (name = "m_unit")] pub m_unit : crate :: app :: hubunitcontroller :: HubUnitController ,
-# [offset (32)] # [rename (name = "m_State")] pub m_state : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubmovestate :: HubMoveState > ,
-# [offset (40)] # [rename (name = "m_current")] pub m_current : crate :: app :: hubmovestate :: HubMoveState ,
-# [offset (48)] # [rename (name = "m_ActiveIndex")] pub m_active_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmovecontroller/HubMoveController.md"))]#[::unity2::class(namespace="App",name="HubMoveController")]#[parent(crate::system::object::Object)]pub struct HubMoveController{#[offset(24)]#[rename(name="m_unit")]pub m_unit:crate::app::hubunitcontroller::HubUnitController, #[offset(32)]#[rename(name="m_State")]pub m_state:crate::system::collections::generic::list_1::List_1<crate::app::hubmovestate::HubMoveState> , #[offset(40)]#[rename(name="m_current")]pub m_current:crate::app::hubmovestate::HubMoveState, #[offset(48)]#[rename(name="m_ActiveIndex")]pub m_active_index:i32,}
 
 }
 
 #[cfg(feature = "app-hubmovecontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmovecontroller")]
-pub trait IHubMoveControllerMethods : IHubMoveController { # [doc = "`get_IsPause()` overload"] fn get_is_pause (self ,) -> bool { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bea30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsPause(bool)` overload"] fn set_is_pause (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bea40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::hubmovedata::HubMoveData>)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: hubunitcontroller :: HubUnitController > , move_data : impl :: core :: convert :: Into < crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: hubmovedata :: HubMoveData > >) -> () { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , crate :: app :: hubunitcontroller :: HubUnitController , crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: hubmovedata :: HubMoveData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bea50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (move_data) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Pause(bool)` overload"] fn pause (self , force : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force) , :: core :: option :: Option :: None) } } } # [doc = "`Resume()` overload"] fn resume (self ,) -> () { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SelectState()` overload"] fn select_state (self ,) -> crate :: app :: hubmovestate :: HubMoveState { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmovestate :: HubMoveState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryGetPosition(::unity2::Il2CppString)` overload"] fn try_get_position (self , locator_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetState(crate::app::hubmovedata::HubMoveData)` overload"] fn get_state (self , data : impl :: core :: convert :: Into < crate :: app :: hubmovedata :: HubMoveData >) -> crate :: app :: hubmovestate :: HubMoveState { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , crate :: app :: hubmovedata :: HubMoveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmovestate :: HubMoveState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDrawGizmos()` overload"] fn on_draw_gizmos (self ,) -> () { unsafe { let __receiver = < HubMoveController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmovecontroller")]pub trait IHubMoveControllerMethods:IHubMoveController{#[doc="`get_IsPause()` overload"]fn get_is_pause(self,)->bool{unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bea30usize)as*mut u8,bool;
+(HubMoveController)__receiver)}
+}
+#[doc="`set_IsPause(bool)` overload"]fn set_is_pause(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bea40usize)as*mut u8,();
+(HubMoveController)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::hubmovedata::HubMoveData>)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::hubunitcontroller::HubUnitController> ,move_data:impl::core::convert::Into<crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::hubmovedata::HubMoveData> >)->(){unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bea50usize)as*mut u8,();
+(HubMoveController)__receiver,(crate::app::hubunitcontroller::HubUnitController)::core::convert::Into::into(unit),(crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::hubmovedata::HubMoveData>)::core::convert::Into::into(move_data))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf3d0usize)as*mut u8,();
+(HubMoveController)__receiver)}
+}
+#[doc="`Pause(bool)` overload"]fn pause(self,force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf500usize)as*mut u8,();
+(HubMoveController)__receiver,(bool)::core::convert::Into::into(force))}
+}
+#[doc="`Resume()` overload"]fn resume(self,)->(){unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf5a0usize)as*mut u8,();
+(HubMoveController)__receiver)}
+}
+#[doc="`SelectState()` overload"]fn select_state(self,)->crate::app::hubmovestate::HubMoveState{unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf310usize)as*mut u8,crate::app::hubmovestate::HubMoveState;
+(HubMoveController)__receiver)}
+}
+#[doc="`TryGetPosition(::unity2::Il2CppString)` overload"]fn try_get_position(self,locator_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf0a0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(HubMoveController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(locator_name))}
+}
+#[doc="`GetState(crate::app::hubmovedata::HubMoveData)` overload"]fn get_state(self,data:impl::core::convert::Into<crate::app::hubmovedata::HubMoveData>)->crate::app::hubmovestate::HubMoveState{unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf150usize)as*mut u8,crate::app::hubmovestate::HubMoveState;
+(HubMoveController)__receiver,(crate::app::hubmovedata::HubMoveData)::core::convert::Into::into(data))}
+}
+#[doc="`OnDrawGizmos()` overload"]fn on_draw_gizmos(self,)->(){unsafe{let __receiver= <HubMoveController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf690usize)as*mut u8,();
+(HubMoveController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmovecontroller")]
-impl < __T : IHubMoveController > IHubMoveControllerMethods for __T { }
+#[cfg(feature="app-hubmovecontroller")]impl<__T:IHubMoveController>IHubMoveControllerMethods for __T{}
 
-#[cfg(feature = "app-hubmovecontroller")]
-impl HubMoveController { pub fn get_is_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn resume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn select_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn try_get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_draw_gizmos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-hubmovecontroller")]impl HubMoveController{pub fn get_is_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn select_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn try_get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-hubmovecontroller")]
-impl HubMoveController {
-# [doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::hubmovedata::HubMoveData>)` — overload selector"] pub fn new (unit : crate :: app :: hubunitcontroller :: HubUnitController , move_data : crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: hubmovedata :: HubMoveData >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMoveController) , :: core :: stringify ! (new) ,)) ; < Self as IHubMoveControllerMethods > :: ctor (this , unit , move_data) ; this }
+#[cfg(feature="app-hubmovecontroller")]impl HubMoveController{#[doc="`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::hubmovedata::HubMoveData>)` — overload selector"]pub fn new(unit:crate::app::hubunitcontroller::HubUnitController,move_data:crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::hubmovedata::HubMoveData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMoveController), ::core::stringify!(new),));
+ <Self as IHubMoveControllerMethods> ::ctor(this,unit,move_data);
+this}
 }
 
 #[cfg(feature = "app-hubmovecontroller")]

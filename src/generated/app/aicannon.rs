@@ -4,153 +4,181 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicannon/AICannon_CannonData.md"))] # [:: unity2 :: class (namespace = "App" , name = "AICannon.CannonData")] # [parent (crate :: system :: object :: Object)] pub struct AICannon_CannonData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon.md"))]#[::unity2::class(namespace="App",name="AICannon")]#[parent(crate::system::object::Object)]pub struct AICannon{#[offset(16)]#[rename(name="m_Cannons")]pub m_cannons:crate::system::collections::generic::list_1::List_1<crate::app::aicannon::AICannon_CannonData> , #[offset(24)]#[rename(name="m_Simulator")]pub m_simulator:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(32)]#[rename(name="m_EnemiesMoveImage")]pub m_enemies_move_image:crate::app::mapdeploymoveimage::MapDeployMoveImage, #[offset(40)]#[rename(name="m_NearEnemies")]pub m_near_enemies: ::unity2::Array<crate::app::unit::Unit> , #[offset(48)]#[rename(name="m_EnemyDists")]pub m_enemy_dists: ::unity2::Array<i32> ,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_ChangeEquipScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AICannon_ChangeEquipScope {
-    pub m_actor: crate :: app :: unit :: Unit,
-    pub m_equipped_index: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon_ChangeEquipScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AICannon_ChangeEquipScope{pub m_actor:crate::app::unit::Unit,pub m_equipped_index:i32,}
+impl::unity2::ClassIdentity for AICannon_ChangeEquipScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AICannon.ChangeEquipScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AICannon_ChangeEquipScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for AICannon_ChangeEquipScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AICannon.ChangeEquipScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon_CannonSkillScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AICannon_CannonSkillScope{pub m_actor:crate::app::unit::Unit,pub m_cannon_inspector:crate::app::cannoninspector::CannonInspector,}
+impl::unity2::ClassIdentity for AICannon_CannonSkillScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AICannon.CannonSkillScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AICannon_CannonSkillScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::IlType for AICannon_ChangeEquipScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_CannonSkillScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AICannon_CannonSkillScope {
-    pub m_actor: crate :: app :: unit :: Unit,
-    pub m_cannon_inspector: crate :: app :: cannoninspector :: CannonInspector,
-}
-
-
-impl ::unity2::ClassIdentity for AICannon_CannonSkillScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AICannon.CannonSkillScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AICannon_CannonSkillScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicannon/AICannon.md"))] # [:: unity2 :: class (namespace = "App" , name = "AICannon")] # [parent (crate :: system :: object :: Object)] pub struct AICannon {
-# [offset (16)] # [rename (name = "m_Cannons")] pub m_cannons : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: aicannon :: AICannon_CannonData > ,
-# [offset (24)] # [rename (name = "m_Simulator")] pub m_simulator : crate :: app :: aibattlesimulator :: AIBattleSimulator ,
-# [offset (32)] # [rename (name = "m_EnemiesMoveImage")] pub m_enemies_move_image : crate :: app :: mapdeploymoveimage :: MapDeployMoveImage ,
-# [offset (40)] # [rename (name = "m_NearEnemies")] pub m_near_enemies : :: unity2 :: Array < crate :: app :: unit :: Unit > ,
-# [offset (48)] # [rename (name = "m_EnemyDists")] pub m_enemy_dists : :: unity2 :: Array < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon_CannonData.md"))]#[::unity2::class(namespace="App",name="AICannon.CannonData")]#[parent(crate::system::object::Object)]pub struct AICannon_CannonData{}
 
 }
 
 #[cfg(feature = "app-aicannon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-aicannon")]
-pub trait IAICannon_CannonDataMethods : IAICannon_CannonData { # [doc = "`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` overload"] fn ctor (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , inspector : impl :: core :: convert :: Into < crate :: app :: cannoninspector :: CannonInspector >) -> () { unsafe { let __receiver = < AICannon_CannonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon_CannonData , i32 , i32 , crate :: app :: cannoninspector :: CannonInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29413c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (inspector) , :: core :: option :: Option :: None) } } } # [doc = "`get_X()` overload"] fn get_x (self ,) -> i32 { unsafe { let __receiver = < AICannon_CannonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon_CannonData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29420b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> i32 { unsafe { let __receiver = < AICannon_CannonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon_CannonData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29420c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Inspector()` overload"] fn get_inspector (self ,) -> crate :: app :: cannoninspector :: CannonInspector { unsafe { let __receiver = < AICannon_CannonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon_CannonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: cannoninspector :: CannonInspector = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29420d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Occupant()` overload"] fn get_occupant (self ,) -> i32 { unsafe { let __receiver = < AICannon_CannonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon_CannonData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29420e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Occupant(i32)` overload"] fn set_occupant (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AICannon_CannonData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon_CannonData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29420f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-aicannon")]
-impl < __T : IAICannon_CannonData > IAICannon_CannonDataMethods for __T { }
-
-#[cfg(feature = "app-aicannon")]
-impl AICannon_CannonData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_CannonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_CannonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_CannonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_inspector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_CannonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_occupant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_CannonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_occupant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_CannonData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-aicannon")]
-impl AICannon_CannonData {
-# [doc = "`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` — overload selector"] pub fn new (x : i32 , z : i32 , inspector : crate :: app :: cannoninspector :: CannonInspector) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AICannon_CannonData) , :: core :: stringify ! (new) ,)) ; < Self as IAICannon_CannonDataMethods > :: ctor (this , x , z , inspector) ; this }
+#[cfg(feature="app-aicannon")]impl AICannon{#[doc="`CanUse(crate::app::unit::Unit, crate::app::aicannon::AICannon_CannonData)` overload"]pub fn can_use(actor:impl::core::convert::Into<crate::app::unit::Unit> ,cannon:impl::core::convert::Into<crate::app::aicannon::AICannon_CannonData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x192c8a0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::aicannon::AICannon_CannonData)::core::convert::Into::into(cannon))}
+}
 }
 
-#[cfg(feature = "app-aicannon")]
-impl AICannon_ChangeEquipScope { # [doc = "`.ctor(crate::app::unit::Unit)` overload"] pub fn ctor (& mut self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (* mut AICannon_ChangeEquipScope , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942160usize) as * mut u8) ; __inner (self as * mut AICannon_ChangeEquipScope , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut AICannon_ChangeEquipScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29421a0usize) as * mut u8) ; __inner (self as * mut AICannon_ChangeEquipScope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aicannon")]pub trait IAICannonMethods:IAICannon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AICannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19232d0usize)as*mut u8,();
+(AICannon)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <AICannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x192a340usize)as*mut u8,();
+(AICannon)__receiver)}
+}
+#[doc="`Think(crate::app::unit::Unit, u32, f32)` overload"]fn think(self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,attack_score:impl::core::convert::Into<u32> ,kill_rate:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <AICannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x192a5b0usize)as*mut u8,bool;
+(AICannon)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor),(u32)::core::convert::Into::into(attack_score),(f32)::core::convert::Into::into(kill_rate))}
+}
+#[doc="`ThinkFireCannon(crate::app::unit::Unit)` overload"]fn think_fire_cannon(self,actor:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <AICannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x192b590usize)as*mut u8,bool;
+(AICannon)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor))}
+}
+#[doc="`ThinkCommonCheck(crate::app::unit::Unit, crate::app::aicannon::AICannon_CannonData, *muti32, *mutcrate::app::skilldata::SkillData)` overload"]fn think_common_check(self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,cannon:impl::core::convert::Into<crate::app::aicannon::AICannon_CannonData>)->(bool,i32,crate::app::skilldata::SkillData){unsafe{let __receiver= <AICannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::app::skilldata::SkillData> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x192b320usize)as*mut u8,bool;
+(AICannon)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::aicannon::AICannon_CannonData)::core::convert::Into::into(cannon),(*mut i32)__out_0.as_mut_ptr(),(*mut crate::app::skilldata::SkillData)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`EnumerateCannon()` overload"]fn enumerate_cannon(self,)->crate::system::collections::generic::list_1::List_1<crate::app::aicannon::AICannon_CannonData>{unsafe{let __receiver= <AICannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x192a200usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::aicannon::AICannon_CannonData> ;
+(AICannon)__receiver)}
+}
+#[doc="`get_Cannons()` overload"]fn get_cannons(self,)->crate::system::collections::generic::list_1::List_1<crate::app::aicannon::AICannon_CannonData>{unsafe{let __receiver= <AICannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x192d0c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::aicannon::AICannon_CannonData> ;
+(AICannon)__receiver)}
+}
+}
 
-#[cfg(feature = "app-aicannon")]
-impl AICannon_ChangeEquipScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_ChangeEquipScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-aicannon")]impl<__T:IAICannon>IAICannonMethods for __T{}
 
-#[cfg(feature = "app-aicannon")]
-impl AICannon_CannonSkillScope { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::cannoninspector::CannonInspector)` overload"] pub fn ctor (& mut self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , cannon_inspector : impl :: core :: convert :: Into < crate :: app :: cannoninspector :: CannonInspector >) -> () { unsafe { { let __inner : extern "C" fn (* mut AICannon_CannonSkillScope , crate :: app :: unit :: Unit , crate :: app :: cannoninspector :: CannonInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942100usize) as * mut u8) ; __inner (self as * mut AICannon_CannonSkillScope , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (cannon_inspector) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut AICannon_CannonSkillScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2942150usize) as * mut u8) ; __inner (self as * mut AICannon_CannonSkillScope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aicannon")]impl AICannon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn think_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn think_fire_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn think_common_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn can_use_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn enumerate_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_cannons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-aicannon")]
-impl AICannon_CannonSkillScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon_CannonSkillScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-aicannon")]impl AICannon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AICannon), ::core::stringify!(new),));
+ <Self as IAICannonMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-aicannon")]
-impl AICannon { # [doc = "`CanUse(crate::app::unit::Unit, crate::app::aicannon::AICannon_CannonData)` overload"] pub fn can_use (actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , cannon : impl :: core :: convert :: Into < crate :: app :: aicannon :: AICannon_CannonData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: aicannon :: AICannon_CannonData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192c8a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (cannon) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aicannon")]impl AICannon_ChangeEquipScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,actor:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2942160usize)as*mut u8,();
+(*mut AICannon_ChangeEquipScope)self as*mut AICannon_ChangeEquipScope,(crate::app::unit::Unit)::core::convert::Into::into(actor))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29421a0usize)as*mut u8,();
+(*mut AICannon_ChangeEquipScope)self as*mut AICannon_ChangeEquipScope)}
+}
+}
 
-#[cfg(feature = "app-aicannon")]
-pub trait IAICannonMethods : IAICannon { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AICannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19232d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < AICannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192a340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Think(crate::app::unit::Unit, u32, f32)` overload"] fn think (self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , attack_score : impl :: core :: convert :: Into < u32 > , kill_rate : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < AICannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon , crate :: app :: unit :: Unit , u32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192a5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (attack_score) , :: core :: convert :: Into :: into (kill_rate) , :: core :: option :: Option :: None) } } } # [doc = "`ThinkFireCannon(crate::app::unit::Unit)` overload"] fn think_fire_cannon (self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < AICannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192b590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } # [doc = "`ThinkCommonCheck(crate::app::unit::Unit, crate::app::aicannon::AICannon_CannonData, *muti32, *mutcrate::app::skilldata::SkillData)` overload"] fn think_common_check (self , actor : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , cannon : impl :: core :: convert :: Into < crate :: app :: aicannon :: AICannon_CannonData >) -> (bool , i32 , crate :: app :: skilldata :: SkillData) { unsafe { let __receiver = < AICannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: app :: skilldata :: SkillData > :: uninit () ; let __ret = { { let __inner : extern "C" fn (AICannon , crate :: app :: unit :: Unit , crate :: app :: aicannon :: AICannon_CannonData , * mut i32 , * mut crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192b320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (cannon) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`EnumerateCannon()` overload"] fn enumerate_cannon (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: aicannon :: AICannon_CannonData > { unsafe { let __receiver = < AICannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: aicannon :: AICannon_CannonData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192a200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Cannons()` overload"] fn get_cannons (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: aicannon :: AICannon_CannonData > { unsafe { let __receiver = < AICannon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AICannon , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: aicannon :: AICannon_CannonData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x192d0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aicannon")]impl AICannon_ChangeEquipScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-aicannon")]
-impl < __T : IAICannon > IAICannonMethods for __T { }
+#[cfg(feature="app-aicannon")]impl AICannon_CannonSkillScope{#[doc="`.ctor(crate::app::unit::Unit, crate::app::cannoninspector::CannonInspector)` overload"]pub fn ctor(&mut self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,cannon_inspector:impl::core::convert::Into<crate::app::cannoninspector::CannonInspector>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2942100usize)as*mut u8,();
+(*mut AICannon_CannonSkillScope)self as*mut AICannon_CannonSkillScope,(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::cannoninspector::CannonInspector)::core::convert::Into::into(cannon_inspector))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2942150usize)as*mut u8,();
+(*mut AICannon_CannonSkillScope)self as*mut AICannon_CannonSkillScope)}
+}
+}
 
-#[cfg(feature = "app-aicannon")]
-impl AICannon { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn think_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn think_fire_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn think_common_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn can_use_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn enumerate_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_cannons_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AICannon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-aicannon")]impl AICannon_CannonSkillScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-aicannon")]
-impl AICannon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AICannon) , :: core :: stringify ! (new) ,)) ; < Self as IAICannonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aicannon")]pub trait IAICannon_CannonDataMethods:IAICannon_CannonData{#[doc="`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,inspector:impl::core::convert::Into<crate::app::cannoninspector::CannonInspector>)->(){unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29413c0usize)as*mut u8,();
+(AICannon_CannonData)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::cannoninspector::CannonInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420b0usize)as*mut u8,i32;
+(AICannon_CannonData)__receiver)}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420c0usize)as*mut u8,i32;
+(AICannon_CannonData)__receiver)}
+}
+#[doc="`get_Inspector()` overload"]fn get_inspector(self,)->crate::app::cannoninspector::CannonInspector{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420d0usize)as*mut u8,crate::app::cannoninspector::CannonInspector;
+(AICannon_CannonData)__receiver)}
+}
+#[doc="`get_Occupant()` overload"]fn get_occupant(self,)->i32{unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420e0usize)as*mut u8,i32;
+(AICannon_CannonData)__receiver)}
+}
+#[doc="`set_Occupant(i32)` overload"]fn set_occupant(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AICannon_CannonData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29420f0usize)as*mut u8,();
+(AICannon_CannonData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-aicannon")]impl<__T:IAICannon_CannonData>IAICannon_CannonDataMethods for __T{}
+
+#[cfg(feature="app-aicannon")]impl AICannon_CannonData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_inspector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_occupant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_occupant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-aicannon")]impl AICannon_CannonData{#[doc="`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` — overload selector"]pub fn new(x:i32,z:i32,inspector:crate::app::cannoninspector::CannonInspector)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AICannon_CannonData), ::core::stringify!(new),));
+ <Self as IAICannon_CannonDataMethods> ::ctor(this,x,z,inspector);
+this}
 }
 
 #[cfg(feature = "app-aicannon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AICannon_CannonData;
-    pub use super::IAICannon_CannonData;
-    pub use super::IAICannon_CannonDataMethods;
-    pub use super::AICannon_ChangeEquipScope;
-    pub use super::AICannon_CannonSkillScope;
     pub use super::AICannon;
     pub use super::IAICannon;
     pub use super::IAICannonMethods;
+    pub use super::AICannon_ChangeEquipScope;
+    pub use super::AICannon_CannonSkillScope;
+    pub use super::AICannon_CannonData;
+    pub use super::IAICannon_CannonData;
+    pub use super::IAICannon_CannonDataMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

@@ -4,40 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eachinspector/EachInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "EachInspector")] # [parent (crate :: app :: mapinspector :: MapInspector)] pub struct EachInspector {
-# [offset (48)] # [rename (name = "m_FromPerson")] pub m_from_person : i32 ,
-# [offset (52)] # [rename (name = "m_FromForce")] pub m_from_force : i32 ,
-# [offset (56)] # [rename (name = "m_ToPerson")] pub m_to_person : i32 ,
-# [offset (60)] # [rename (name = "m_ToForce")] pub m_to_force : i32 ,
-# [offset (64)] # [rename (name = "m_Both")] pub m_both : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eachinspector/EachInspector.md"))]#[::unity2::class(namespace="App",name="EachInspector")]#[parent(crate::app::mapinspector::MapInspector)]pub struct EachInspector{#[offset(48)]#[rename(name="m_FromPerson")]pub m_from_person:i32, #[offset(52)]#[rename(name="m_FromForce")]pub m_from_force:i32, #[offset(56)]#[rename(name="m_ToPerson")]pub m_to_person:i32, #[offset(60)]#[rename(name="m_ToForce")]pub m_to_force:i32, #[offset(64)]#[rename(name="m_Both")]pub m_both:bool,}
 
 }
 
 #[cfg(feature = "app-eachinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-eachinspector")]
-pub trait IEachInspectorMethods : IEachInspector { # [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , kind : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector_Kind > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < EachInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EachInspector , crate :: app :: mapinspector :: MapInspector_Kind , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4bb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`IsEach(i32, i32, i32, i32)` overload"] fn is_each (self , from_person : impl :: core :: convert :: Into < i32 > , from_force : impl :: core :: convert :: Into < i32 > , to_person : impl :: core :: convert :: Into < i32 > , to_force : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < EachInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EachInspector , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from_person) , :: core :: convert :: Into :: into (from_force) , :: core :: convert :: Into :: into (to_person) , :: core :: convert :: Into :: into (to_force) , :: core :: option :: Option :: None) } } } # [doc = "`IsEanble(i32, i32, i32, i32)` overload"] fn is_eanble (self , from_person : impl :: core :: convert :: Into < i32 > , from_force : impl :: core :: convert :: Into < i32 > , to_person : impl :: core :: convert :: Into < i32 > , to_force : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < EachInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EachInspector , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d4e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from_person) , :: core :: convert :: Into :: into (from_force) , :: core :: convert :: Into :: into (to_person) , :: core :: convert :: Into :: into (to_force) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eachinspector")]pub trait IEachInspectorMethods:IEachInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EachInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4bb0usize)as*mut u8,();
+(EachInspector)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`IsEach(i32, i32, i32, i32)` overload"]fn is_each(self,from_person:impl::core::convert::Into<i32> ,from_force:impl::core::convert::Into<i32> ,to_person:impl::core::convert::Into<i32> ,to_force:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <EachInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4d20usize)as*mut u8,bool;
+(EachInspector)__receiver,(i32)::core::convert::Into::into(from_person),(i32)::core::convert::Into::into(from_force),(i32)::core::convert::Into::into(to_person),(i32)::core::convert::Into::into(to_force))}
+}
+#[doc="`IsEanble(i32, i32, i32, i32)` overload"]fn is_eanble(self,from_person:impl::core::convert::Into<i32> ,from_force:impl::core::convert::Into<i32> ,to_person:impl::core::convert::Into<i32> ,to_force:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <EachInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d4e30usize)as*mut u8,bool;
+(EachInspector)__receiver,(i32)::core::convert::Into::into(from_person),(i32)::core::convert::Into::into(from_force),(i32)::core::convert::Into::into(to_person),(i32)::core::convert::Into::into(to_force))}
+}
+}
 
-#[cfg(feature = "app-eachinspector")]
-impl < __T : IEachInspector > IEachInspectorMethods for __T { }
+#[cfg(feature="app-eachinspector")]impl<__T:IEachInspector>IEachInspectorMethods for __T{}
 
-#[cfg(feature = "app-eachinspector")]
-impl EachInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EachInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_each_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EachInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_eanble_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EachInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-eachinspector")]impl EachInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_each_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_eanble_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-eachinspector")]
-impl EachInspector {
-# [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (kind : crate :: app :: mapinspector :: MapInspector_Kind , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EachInspector) , :: core :: stringify ! (new) ,)) ; < Self as IEachInspectorMethods > :: ctor (this , kind , args) ; this }
+#[cfg(feature="app-eachinspector")]impl EachInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(kind:crate::app::mapinspector::MapInspector_Kind,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EachInspector), ::core::stringify!(new),));
+ <Self as IEachInspectorMethods> ::ctor(this,kind,args);
+this}
 }
 
 #[cfg(feature = "app-eachinspector")]

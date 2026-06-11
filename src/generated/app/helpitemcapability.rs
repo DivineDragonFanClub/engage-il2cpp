@@ -4,42 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: helpitembase :: { HelpItemBase , IHelpItemBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::helpitembase::{HelpItemBase,IHelpItemBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemcapability/HelpItemCapability.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemCapability")] # [parent (crate :: app :: helpitembase :: HelpItemBase)] pub struct HelpItemCapability {
-# [offset (80)] # [rename (name = "m_Type")] pub m_type : crate :: app :: capabilitydefinition :: CapabilityDefinition_Type ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpitemcapability/HelpItemCapability.md"))]#[::unity2::class(namespace="App",name="HelpItemCapability")]#[parent(crate::app::helpitembase::HelpItemBase)]pub struct HelpItemCapability{#[offset(80)]#[rename(name="m_Type")]pub m_type:crate::app::capabilitydefinition::CapabilityDefinition_Type,}
 
 }
 
 #[cfg(feature = "app-helpitemcapability-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpitemcapability")]
-pub trait IHelpItemCapabilityMethods : IHelpItemCapability { # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < HelpItemCapability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemCapability , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"] fn set_contents (self , setter : impl :: core :: convert :: Into < crate :: app :: helpparamsetter :: HelpParamSetter >) -> () { unsafe { let __receiver = < HelpItemCapability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemCapability , crate :: app :: helpparamsetter :: HelpParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemCapability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemCapability , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpitemcapability")]pub trait IHelpItemCapabilityMethods:IHelpItemCapability{#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemCapability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c6c0usize)as*mut u8,bool;
+(HelpItemCapability)__receiver)}
+}
+#[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemCapability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c740usize)as*mut u8,();
+(HelpItemCapability)__receiver,(crate::app::helpparamsetter::HelpParamSetter)::core::convert::Into::into(setter))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemCapability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c7f0usize)as*mut u8,();
+(HelpItemCapability)__receiver)}
+}
+}
 
-#[cfg(feature = "app-helpitemcapability")]
-impl < __T : IHelpItemCapability > IHelpItemCapabilityMethods for __T { }
+#[cfg(feature="app-helpitemcapability")]impl<__T:IHelpItemCapability>IHelpItemCapabilityMethods for __T{}
 
-#[cfg(feature = "app-helpitemcapability")]
-impl HelpItemCapability { pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemCapability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemCapability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemCapability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-helpitemcapability")]impl HelpItemCapability{pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-helpitemcapability")]
-impl HelpItemCapability {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemCapability) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemCapabilityMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpitemcapability")]impl HelpItemCapability{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpItemCapability), ::core::stringify!(new),));
+ <Self as IHelpItemCapabilityMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpitemcapability")]

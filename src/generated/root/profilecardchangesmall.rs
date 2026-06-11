@@ -4,36 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: statemachinebehaviour :: { IStateMachineBehaviour , StateMachineBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::statemachinebehaviour::{IStateMachineBehaviour,StateMachineBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/profilecardchangesmall/ProfileCardChangeSmall.md"))] # [:: unity2 :: class (namespace = "" , name = "ProfileCardChangeSmall")] # [parent (crate :: unity_engine :: statemachinebehaviour :: StateMachineBehaviour)] pub struct ProfileCardChangeSmall {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/profilecardchangesmall/ProfileCardChangeSmall.md"))]#[::unity2::class(namespace="",name="ProfileCardChangeSmall")]#[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]pub struct ProfileCardChangeSmall{}
 
 }
 
 #[cfg(feature = "root-profilecardchangesmall-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-profilecardchangesmall")]
-pub trait IProfileCardChangeSmallMethods : IProfileCardChangeSmall { # [doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_exit (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProfileCardChangeSmall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardChangeSmall , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230cf50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardChangeSmall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardChangeSmall , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230cfb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-profilecardchangesmall")]pub trait IProfileCardChangeSmallMethods:IProfileCardChangeSmall{#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardChangeSmall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230cf50usize)as*mut u8,();
+(ProfileCardChangeSmall)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardChangeSmall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230cfb0usize)as*mut u8,();
+(ProfileCardChangeSmall)__receiver)}
+}
+}
 
-#[cfg(feature = "root-profilecardchangesmall")]
-impl < __T : IProfileCardChangeSmall > IProfileCardChangeSmallMethods for __T { }
+#[cfg(feature="root-profilecardchangesmall")]impl<__T:IProfileCardChangeSmall>IProfileCardChangeSmallMethods for __T{}
 
-#[cfg(feature = "root-profilecardchangesmall")]
-impl ProfileCardChangeSmall { pub fn on_state_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardChangeSmall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardChangeSmall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-profilecardchangesmall")]impl ProfileCardChangeSmall{pub fn on_state_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-profilecardchangesmall")]
-impl ProfileCardChangeSmall {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardChangeSmall) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardChangeSmallMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-profilecardchangesmall")]impl ProfileCardChangeSmall{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardChangeSmall), ::core::stringify!(new),));
+ <Self as IProfileCardChangeSmallMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-profilecardchangesmall")]

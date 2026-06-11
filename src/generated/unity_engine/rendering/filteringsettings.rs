@@ -4,48 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/filteringsettings/FilteringSettings.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FilteringSettings {
-    pub m_render_queue_range: crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange,
-    pub m_layer_mask: i32,
-    pub m_rendering_layer_mask: u32,
-    pub m_exclude_motion_vector_objects: i32,
-    pub m_sorting_layer_range: crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/filteringsettings/FilteringSettings.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FilteringSettings{pub m_render_queue_range:crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,pub m_layer_mask:i32,pub m_rendering_layer_mask:u32,pub m_exclude_motion_vector_objects:i32,pub m_sorting_layer_range:crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange,}
+impl::unity2::ClassIdentity for FilteringSettings{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="FilteringSettings";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for FilteringSettings {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "FilteringSettings";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for FilteringSettings {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for FilteringSettings{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -53,11 +26,41 @@ impl ::unity2::IlType for FilteringSettings {
 #[cfg(feature = "unity_engine-rendering-filteringsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-filteringsettings")]
-impl FilteringSettings { # [doc = "`set_renderQueueRange(crate::unity_engine::rendering::renderqueuerange::RenderQueueRange)` overload"] pub fn set_render_queue_range (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange >) -> () { unsafe { { let __inner : extern "C" fn (* mut FilteringSettings , crate :: unity_engine :: rendering :: renderqueuerange :: RenderQueueRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d660usize) as * mut u8) ; __inner (self as * mut FilteringSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_layerMask(i32)` overload"] pub fn set_layer_mask (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FilteringSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d670usize) as * mut u8) ; __inner (self as * mut FilteringSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_renderingLayerMask(u32)` overload"] pub fn set_rendering_layer_mask (& mut self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FilteringSettings , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d680usize) as * mut u8) ; __inner (self as * mut FilteringSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_excludeMotionVectorObjects(bool)` overload"] pub fn set_exclude_motion_vector_objects (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut FilteringSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d690usize) as * mut u8) ; __inner (self as * mut FilteringSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_sortingLayerRange(crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange)` overload"] pub fn set_sorting_layer_range (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange >) -> () { unsafe { { let __inner : extern "C" fn (* mut FilteringSettings , crate :: unity_engine :: rendering :: sortinglayerrange :: SortingLayerRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d6a0usize) as * mut u8) ; __inner (self as * mut FilteringSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::filteringsettings::FilteringSettings)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings >) -> bool { unsafe { { let __inner : extern "C" fn (* mut FilteringSettings , crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d6b0usize) as * mut u8) ; __inner (self as * mut FilteringSettings , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut FilteringSettings , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d720usize) as * mut u8) ; __inner (self as * mut FilteringSettings , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut FilteringSettings , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d7e0usize) as * mut u8) ; __inner (self as * mut FilteringSettings , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-filteringsettings")]impl FilteringSettings{#[doc="`set_renderQueueRange(crate::unity_engine::rendering::renderqueuerange::RenderQueueRange)` overload"]pub fn set_render_queue_range(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::renderqueuerange::RenderQueueRange>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d660usize)as*mut u8,();
+(*mut FilteringSettings)self as*mut FilteringSettings,(crate::unity_engine::rendering::renderqueuerange::RenderQueueRange)::core::convert::Into::into(value))}
+}
+#[doc="`set_layerMask(i32)` overload"]pub fn set_layer_mask(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d670usize)as*mut u8,();
+(*mut FilteringSettings)self as*mut FilteringSettings,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`set_renderingLayerMask(u32)` overload"]pub fn set_rendering_layer_mask(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d680usize)as*mut u8,();
+(*mut FilteringSettings)self as*mut FilteringSettings,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`set_excludeMotionVectorObjects(bool)` overload"]pub fn set_exclude_motion_vector_objects(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d690usize)as*mut u8,();
+(*mut FilteringSettings)self as*mut FilteringSettings,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`set_sortingLayerRange(crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange)` overload"]pub fn set_sorting_layer_range(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d6a0usize)as*mut u8,();
+(*mut FilteringSettings)self as*mut FilteringSettings,(crate::unity_engine::rendering::sortinglayerrange::SortingLayerRange)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::filteringsettings::FilteringSettings)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::filteringsettings::FilteringSettings>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d6b0usize)as*mut u8,bool;
+(*mut FilteringSettings)self as*mut FilteringSettings,(crate::unity_engine::rendering::filteringsettings::FilteringSettings)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d720usize)as*mut u8,bool;
+(*mut FilteringSettings)self as*mut FilteringSettings,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d7e0usize)as*mut u8,i32;
+(*mut FilteringSettings)self as*mut FilteringSettings)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-filteringsettings")]
-impl FilteringSettings { pub fn set_render_queue_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FilteringSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FilteringSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_rendering_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FilteringSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_exclude_motion_vector_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FilteringSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_sorting_layer_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FilteringSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FilteringSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FilteringSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FilteringSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-rendering-filteringsettings")]impl FilteringSettings{pub fn set_render_queue_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rendering_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_exclude_motion_vector_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_sorting_layer_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-rendering-filteringsettings")]
 #[doc(hidden)]

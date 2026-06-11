@@ -4,232 +4,306 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_MonitoringCallback.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackManager.MonitoringCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkCallbackManager_MonitoringCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackmanager/AkCallbackManager_BGMCallback.md"))]#[::unity2::class(namespace="",name="AkCallbackManager.BGMCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkCallbackManager_BGMCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_EventCallbackPackage.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackManager.EventCallbackPackage")] # [parent (crate :: system :: object :: Object)] pub struct AkCallbackManager_EventCallbackPackage {
-# [offset (16)] # [rename (name = "m_bNotifyEndOfEvent")] pub m_b_notify_end_of_event : bool ,
-# [offset (24)] # [rename (name = "m_Callback")] pub m_callback : crate :: root :: akcallbackmanager :: AkCallbackManager_EventCallback ,
-# [offset (32)] # [rename (name = "m_Cookie")] pub m_cookie : :: unity2 :: IlInstance ,
-# [offset (40)] # [rename (name = "m_playingID")] pub m_playing_id : u32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackmanager/AkCallbackManager_BGMCallbackPackage.md"))]#[::unity2::class(namespace="",name="AkCallbackManager.BGMCallbackPackage")]#[parent(crate::system::object::Object)]pub struct AkCallbackManager_BGMCallbackPackage{#[offset(16)]#[rename(name="m_Callback")]pub m_callback:crate::root::akcallbackmanager::AkCallbackManager_BGMCallback, #[offset(24)]#[rename(name="m_Cookie")]pub m_cookie: ::unity2::IlInstance,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BankCallbackPackage.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackManager.BankCallbackPackage")] # [parent (crate :: system :: object :: Object)] pub struct AkCallbackManager_BankCallbackPackage {
-# [offset (16)] # [rename (name = "m_Callback")] pub m_callback : crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback ,
-# [offset (24)] # [rename (name = "m_Cookie")] pub m_cookie : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackmanager/AkCallbackManager.md"))]#[::unity2::class(namespace="",name="AkCallbackManager")]#[parent(crate::system::object::Object)]pub struct AkCallbackManager{#[static_field]#[rename(name="AkEventCallbackInfo")]pub ak_event_callback_info:crate::root::akeventcallbackinfo::AkEventCallbackInfo, #[static_field]#[rename(name="AkDynamicSequenceItemCallbackInfo")]pub ak_dynamic_sequence_item_callback_info:crate::root::akdynamicsequenceitemcallbackinfo::AkDynamicSequenceItemCallbackInfo, #[static_field]#[rename(name="AkMIDIEventCallbackInfo")]pub ak_midi_event_callback_info:crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo, #[static_field]#[rename(name="AkMarkerCallbackInfo")]pub ak_marker_callback_info:crate::root::akmarkercallbackinfo::AkMarkerCallbackInfo, #[static_field]#[rename(name="AkDurationCallbackInfo")]pub ak_duration_callback_info:crate::root::akdurationcallbackinfo::AkDurationCallbackInfo, #[static_field]#[rename(name="AkMusicSyncCallbackInfo")]pub ak_music_sync_callback_info:crate::root::akmusicsynccallbackinfo::AkMusicSyncCallbackInfo, #[static_field]#[rename(name="AkMusicPlaylistCallbackInfo")]pub ak_music_playlist_callback_info:crate::root::akmusicplaylistcallbackinfo::AkMusicPlaylistCallbackInfo, #[static_field]#[rename(name="AkAudioSourceChangeCallbackInfo")]pub ak_audio_source_change_callback_info:crate::root::akaudiosourcechangecallbackinfo::AkAudioSourceChangeCallbackInfo, #[static_field]#[rename(name="AkMonitoringCallbackInfo")]pub ak_monitoring_callback_info:crate::root::akmonitoringcallbackinfo::AkMonitoringCallbackInfo, #[static_field]#[rename(name="AkBankCallbackInfo")]pub ak_bank_callback_info:crate::root::akbankcallbackinfo::AkBankCallbackInfo, #[static_field]#[rename(name="m_mapEventCallbacks")]pub m_map_event_callbacks:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage> , #[static_field]#[rename(name="m_mapBankCallbacks")]pub m_map_bank_callbacks:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::akcallbackmanager::AkCallbackManager_BankCallbackPackage> , #[static_field]#[rename(name="m_LastAddedEventPackage")]pub m_last_added_event_package:crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage, #[static_field]#[rename(name="m_pNotifMem")]pub m_p_notif_mem: ::unity2::IntPtr, #[static_field]#[rename(name="m_MonitoringCB")]pub m_monitoring_cb:crate::root::akcallbackmanager::AkCallbackManager_MonitoringCallback, #[static_field]#[rename(name="ms_sourceChangeCallbackPkg")]pub ms_source_change_callback_pkg:crate::root::akcallbackmanager::AkCallbackManager_BGMCallbackPackage,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BGMCallbackPackage.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackManager.BGMCallbackPackage")] # [parent (crate :: system :: object :: Object)] pub struct AkCallbackManager_BGMCallbackPackage {
-# [offset (16)] # [rename (name = "m_Callback")] pub m_callback : crate :: root :: akcallbackmanager :: AkCallbackManager_BGMCallback ,
-# [offset (24)] # [rename (name = "m_Cookie")] pub m_cookie : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackmanager/AkCallbackManager_InitializationSettings.md"))]#[::unity2::class(namespace="",name="AkCallbackManager.InitializationSettings")]#[parent(crate::system::object::Object)]pub struct AkCallbackManager_InitializationSettings{#[static_field]#[rename(name="DefaultBufferSize")]pub default_buffer_size:i32, #[static_field]#[rename(name="DefaultIsLoggingEnabled")]pub default_is_logging_enabled:bool, #[offset(16)]#[rename(name="BufferSize")]pub buffer_size:i32, #[offset(20)]#[rename(name="IsLoggingEnabled")]pub is_logging_enabled:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackManager")] # [parent (crate :: system :: object :: Object)] pub struct AkCallbackManager {
-# [static_field] # [rename (name = "AkEventCallbackInfo")] pub ak_event_callback_info : crate :: root :: akeventcallbackinfo :: AkEventCallbackInfo ,
-# [static_field] # [rename (name = "AkDynamicSequenceItemCallbackInfo")] pub ak_dynamic_sequence_item_callback_info : crate :: root :: akdynamicsequenceitemcallbackinfo :: AkDynamicSequenceItemCallbackInfo ,
-# [static_field] # [rename (name = "AkMIDIEventCallbackInfo")] pub ak_midi_event_callback_info : crate :: root :: akmidieventcallbackinfo :: AkMIDIEventCallbackInfo ,
-# [static_field] # [rename (name = "AkMarkerCallbackInfo")] pub ak_marker_callback_info : crate :: root :: akmarkercallbackinfo :: AkMarkerCallbackInfo ,
-# [static_field] # [rename (name = "AkDurationCallbackInfo")] pub ak_duration_callback_info : crate :: root :: akdurationcallbackinfo :: AkDurationCallbackInfo ,
-# [static_field] # [rename (name = "AkMusicSyncCallbackInfo")] pub ak_music_sync_callback_info : crate :: root :: akmusicsynccallbackinfo :: AkMusicSyncCallbackInfo ,
-# [static_field] # [rename (name = "AkMusicPlaylistCallbackInfo")] pub ak_music_playlist_callback_info : crate :: root :: akmusicplaylistcallbackinfo :: AkMusicPlaylistCallbackInfo ,
-# [static_field] # [rename (name = "AkAudioSourceChangeCallbackInfo")] pub ak_audio_source_change_callback_info : crate :: root :: akaudiosourcechangecallbackinfo :: AkAudioSourceChangeCallbackInfo ,
-# [static_field] # [rename (name = "AkMonitoringCallbackInfo")] pub ak_monitoring_callback_info : crate :: root :: akmonitoringcallbackinfo :: AkMonitoringCallbackInfo ,
-# [static_field] # [rename (name = "AkBankCallbackInfo")] pub ak_bank_callback_info : crate :: root :: akbankcallbackinfo :: AkBankCallbackInfo ,
-# [static_field] # [rename (name = "m_mapEventCallbacks")] pub m_map_event_callbacks : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: akcallbackmanager :: AkCallbackManager_EventCallbackPackage > ,
-# [static_field] # [rename (name = "m_mapBankCallbacks")] pub m_map_bank_callbacks : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallbackPackage > ,
-# [static_field] # [rename (name = "m_LastAddedEventPackage")] pub m_last_added_event_package : crate :: root :: akcallbackmanager :: AkCallbackManager_EventCallbackPackage ,
-# [static_field] # [rename (name = "m_pNotifMem")] pub m_p_notif_mem : :: unity2 :: IntPtr ,
-# [static_field] # [rename (name = "m_MonitoringCB")] pub m_monitoring_cb : crate :: root :: akcallbackmanager :: AkCallbackManager_MonitoringCallback ,
-# [static_field] # [rename (name = "ms_sourceChangeCallbackPkg")] pub ms_source_change_callback_pkg : crate :: root :: akcallbackmanager :: AkCallbackManager_BGMCallbackPackage ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackmanager/AkCallbackManager_EventCallback.md"))]#[::unity2::class(namespace="",name="AkCallbackManager.EventCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkCallbackManager_EventCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BGMCallback.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackManager.BGMCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkCallbackManager_BGMCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackmanager/AkCallbackManager_BankCallbackPackage.md"))]#[::unity2::class(namespace="",name="AkCallbackManager.BankCallbackPackage")]#[parent(crate::system::object::Object)]pub struct AkCallbackManager_BankCallbackPackage{#[offset(16)]#[rename(name="m_Callback")]pub m_callback:crate::root::akcallbackmanager::AkCallbackManager_BankCallback, #[offset(24)]#[rename(name="m_Cookie")]pub m_cookie: ::unity2::IlInstance,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_BankCallback.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackManager.BankCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkCallbackManager_BankCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackmanager/AkCallbackManager_MonitoringCallback.md"))]#[::unity2::class(namespace="",name="AkCallbackManager.MonitoringCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkCallbackManager_MonitoringCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_InitializationSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackManager.InitializationSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCallbackManager_InitializationSettings {
-# [static_field] # [rename (name = "DefaultBufferSize")] pub default_buffer_size : i32 ,
-# [static_field] # [rename (name = "DefaultIsLoggingEnabled")] pub default_is_logging_enabled : bool ,
-# [offset (16)] # [rename (name = "BufferSize")] pub buffer_size : i32 ,
-# [offset (20)] # [rename (name = "IsLoggingEnabled")] pub is_logging_enabled : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackmanager/AkCallbackManager_EventCallbackPackage.md"))]#[::unity2::class(namespace="",name="AkCallbackManager.EventCallbackPackage")]#[parent(crate::system::object::Object)]pub struct AkCallbackManager_EventCallbackPackage{#[offset(16)]#[rename(name="m_bNotifyEndOfEvent")]pub m_b_notify_end_of_event:bool, #[offset(24)]#[rename(name="m_Callback")]pub m_callback:crate::root::akcallbackmanager::AkCallbackManager_EventCallback, #[offset(32)]#[rename(name="m_Cookie")]pub m_cookie: ::unity2::IlInstance, #[offset(40)]#[rename(name="m_playingID")]pub m_playing_id:u32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackmanager/AkCallbackManager_EventCallback.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackManager.EventCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkCallbackManager_EventCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackmanager/AkCallbackManager_BankCallback.md"))]#[::unity2::class(namespace="",name="AkCallbackManager.BankCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkCallbackManager_BankCallback{}
 
 }
 
 #[cfg(feature = "root-akcallbackmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_MonitoringCallbackMethods : IAkCallbackManager_MonitoringCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkCallbackManager_MonitoringCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_MonitoringCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9e080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::root::akmonitorerrorcode::AkMonitorErrorCode, crate::root::akmonitorerrorlevel::AkMonitorErrorLevel, u32, u64, ::unity2::Il2CppString)` overload"] fn invoke (self , in_error_code : impl :: core :: convert :: Into < crate :: root :: akmonitorerrorcode :: AkMonitorErrorCode > , in_error_level : impl :: core :: convert :: Into < crate :: root :: akmonitorerrorlevel :: AkMonitorErrorLevel > , in_playing_id : impl :: core :: convert :: Into < u32 > , in_game_obj_id : impl :: core :: convert :: Into < u64 > , in_msg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkCallbackManager_MonitoringCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_MonitoringCallback , crate :: root :: akmonitorerrorcode :: AkMonitorErrorCode , crate :: root :: akmonitorerrorlevel :: AkMonitorErrorLevel , u32 , u64 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9e0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_error_code) , :: core :: convert :: Into :: into (in_error_level) , :: core :: convert :: Into :: into (in_playing_id) , :: core :: convert :: Into :: into (in_game_obj_id) , :: core :: convert :: Into :: into (in_msg) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl < __T : IAkCallbackManager_MonitoringCallback > IAkCallbackManager_MonitoringCallbackMethods for __T { }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_MonitoringCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_MonitoringCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_MonitoringCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_MonitoringCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackManager_MonitoringCallback) , :: core :: stringify ! (new) ,)) ; < Self as IAkCallbackManager_MonitoringCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-akcallbackmanager")]pub trait IAkCallbackManager_BGMCallbackMethods:IAkCallbackManager_BGMCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkCallbackManager_BGMCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9d4a0usize)as*mut u8,();
+(AkCallbackManager_BGMCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool, crate::system::object::Object)` overload"]fn invoke(self,in_b_other_audio_playing:impl::core::convert::Into<bool> ,in_cookie:impl::core::convert::Into<crate::system::object::Object>)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkCallbackManager_BGMCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9d4c0usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkCallbackManager_BGMCallback)__receiver,(bool)::core::convert::Into::into(in_b_other_audio_playing),(crate::system::object::Object)::core::convert::Into::into(in_cookie))}
+}
 }
 
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_EventCallbackPackage { # [doc = "`Create(crate::root::akcallbackmanager::AkCallbackManager_EventCallback, crate::system::object::Object, *mutu32)` overload"] pub fn create (in_cb : impl :: core :: convert :: Into < crate :: root :: akcallbackmanager :: AkCallbackManager_EventCallback > , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> (crate :: root :: akcallbackmanager :: AkCallbackManager_EventCallbackPackage , u32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: root :: akcallbackmanager :: AkCallbackManager_EventCallback , crate :: system :: object :: Object , * mut u32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcallbackmanager :: AkCallbackManager_EventCallbackPackage = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9de40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_cb) , :: core :: convert :: Into :: into (in_cookie) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="root-akcallbackmanager")]impl<__T:IAkCallbackManager_BGMCallback>IAkCallbackManager_BGMCallbackMethods for __T{}
 
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_EventCallbackPackageMethods : IAkCallbackManager_EventCallbackPackage { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCallbackManager_EventCallbackPackage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_EventCallbackPackage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9df80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl < __T : IAkCallbackManager_EventCallbackPackage > IAkCallbackManager_EventCallbackPackageMethods for __T { }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_EventCallbackPackage { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_EventCallbackPackage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_EventCallbackPackage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_EventCallbackPackage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackManager_EventCallbackPackage) , :: core :: stringify ! (new) ,)) ; < Self as IAkCallbackManager_EventCallbackPackageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_BGMCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_BankCallbackPackageMethods : IAkCallbackManager_BankCallbackPackage { # [doc = "`.ctor(crate::root::akcallbackmanager::AkCallbackManager_BankCallback, crate::system::object::Object)` overload"] fn ctor (self , in_cb : impl :: core :: convert :: Into < crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback > , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < AkCallbackManager_BankCallbackPackage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_BankCallbackPackage , crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9d8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_cb) , :: core :: convert :: Into :: into (in_cookie) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl < __T : IAkCallbackManager_BankCallbackPackage > IAkCallbackManager_BankCallbackPackageMethods for __T { }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BankCallbackPackage { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_BankCallbackPackage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BankCallbackPackage {
-# [doc = "`.ctor(crate::root::akcallbackmanager::AkCallbackManager_BankCallback, crate::system::object::Object)` — overload selector"] pub fn new (in_cb : crate :: root :: akcallbackmanager :: AkCallbackManager_BankCallback , in_cookie : crate :: system :: object :: Object) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackManager_BankCallbackPackage) , :: core :: stringify ! (new) ,)) ; < Self as IAkCallbackManager_BankCallbackPackageMethods > :: ctor (this , in_cb , in_cookie) ; this }
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_BGMCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackManager_BGMCallback), ::core::stringify!(new),));
+ <Self as IAkCallbackManager_BGMCallbackMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_BGMCallbackPackageMethods : IAkCallbackManager_BGMCallbackPackage { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCallbackManager_BGMCallbackPackage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_BGMCallbackPackage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9d7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl < __T : IAkCallbackManager_BGMCallbackPackage > IAkCallbackManager_BGMCallbackPackageMethods for __T { }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BGMCallbackPackage { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_BGMCallbackPackage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BGMCallbackPackage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackManager_BGMCallbackPackage) , :: core :: stringify ! (new) ,)) ; < Self as IAkCallbackManager_BGMCallbackPackageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akcallbackmanager")]pub trait IAkCallbackManager_BGMCallbackPackageMethods:IAkCallbackManager_BGMCallbackPackage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCallbackManager_BGMCallbackPackage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9d7d0usize)as*mut u8,();
+(AkCallbackManager_BGMCallbackPackage)__receiver)}
+}
 }
 
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager { # [doc = "`get_IsLoggingEnabled()` overload"] pub fn get_is_logging_enabled () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd4340usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsLoggingEnabled(bool)` overload"] pub fn set_is_logging_enabled (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd43b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveEventCallback(u32)` overload"] pub fn remove_event_callback (in_playing_id : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd4430usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_playing_id) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveEventCallbackCookie(crate::system::object::Object)` overload"] pub fn remove_event_callback_cookie (in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd4700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_cookie) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveBankCallback(crate::system::object::Object)` overload"] pub fn remove_bank_callback (in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd49c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_cookie) , :: core :: option :: Option :: None) } } } # [doc = "`SetLastAddedPlayingID(u32)` overload"] pub fn set_last_added_playing_id (in_playing_id : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd4c80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_playing_id) , :: core :: option :: Option :: None) } } } # [doc = "`Init(crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings)` overload"] pub fn init (settings : impl :: core :: convert :: Into < crate :: root :: akcallbackmanager :: AkCallbackManager_InitializationSettings >) -> crate :: root :: akresult :: AKRESULT { unsafe { { let __inner : extern "C" fn (crate :: root :: akcallbackmanager :: AkCallbackManager_InitializationSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd4d60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (settings) , :: core :: option :: Option :: None) } } } # [doc = "`Term()` overload"] pub fn term () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd4ed0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetMonitoringCallback(crate::root::akmonitorerrorlevel::AkMonitorErrorLevel, crate::root::akcallbackmanager::AkCallbackManager_MonitoringCallback)` overload"] pub fn set_monitoring_callback (in_level : impl :: core :: convert :: Into < crate :: root :: akmonitorerrorlevel :: AkMonitorErrorLevel > , in_cb : impl :: core :: convert :: Into < crate :: root :: akcallbackmanager :: AkCallbackManager_MonitoringCallback >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: akmonitorerrorlevel :: AkMonitorErrorLevel , crate :: root :: akcallbackmanager :: AkCallbackManager_MonitoringCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd4fc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_level) , :: core :: convert :: Into :: into (in_cb) , :: core :: option :: Option :: None) } } } # [doc = "`SetBGMCallback(crate::root::akcallbackmanager::AkCallbackManager_BGMCallback, crate::system::object::Object)` overload"] pub fn set_bgm_callback (in_cb : impl :: core :: convert :: Into < crate :: root :: akcallbackmanager :: AkCallbackManager_BGMCallback > , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: akcallbackmanager :: AkCallbackManager_BGMCallback , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd5050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_cb) , :: core :: convert :: Into :: into (in_cookie) , :: core :: option :: Option :: None) } } } # [doc = "`PostCallbacks()` overload"] pub fn post_callbacks () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd5120usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd5d70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcallbackmanager")]impl<__T:IAkCallbackManager_BGMCallbackPackage>IAkCallbackManager_BGMCallbackPackageMethods for __T{}
 
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager { pub fn get_is_logging_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_logging_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn remove_event_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn remove_event_callback_cookie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn remove_bank_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_last_added_playing_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn term_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_monitoring_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_bgm_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn post_callbacks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_BGMCallbackMethods : IAkCallbackManager_BGMCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkCallbackManager_BGMCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_BGMCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9d4a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(bool, crate::system::object::Object)` overload"] fn invoke (self , in_b_other_audio_playing : impl :: core :: convert :: Into < bool > , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkCallbackManager_BGMCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_BGMCallback , bool , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9d4c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_b_other_audio_playing) , :: core :: convert :: Into :: into (in_cookie) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl < __T : IAkCallbackManager_BGMCallback > IAkCallbackManager_BGMCallbackMethods for __T { }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BGMCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_BGMCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_BGMCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BGMCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackManager_BGMCallback) , :: core :: stringify ! (new) ,)) ; < Self as IAkCallbackManager_BGMCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_BGMCallbackPackage{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_BankCallbackMethods : IAkCallbackManager_BankCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkCallbackManager_BankCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_BankCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c9a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"] fn invoke (self , in_bank_id : impl :: core :: convert :: Into < u32 > , in_in_memory_bank_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , in_e_load_result : impl :: core :: convert :: Into < crate :: root :: akresult :: AKRESULT > , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < AkCallbackManager_BankCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_BankCallback , u32 , :: unity2 :: IntPtr , crate :: root :: akresult :: AKRESULT , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9c650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_bank_id) , :: core :: convert :: Into :: into (in_in_memory_bank_ptr) , :: core :: convert :: Into :: into (in_e_load_result) , :: core :: convert :: Into :: into (in_cookie) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl < __T : IAkCallbackManager_BankCallback > IAkCallbackManager_BankCallbackMethods for __T { }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BankCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_BankCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_BankCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_BankCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackManager_BankCallback) , :: core :: stringify ! (new) ,)) ; < Self as IAkCallbackManager_BankCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_BGMCallbackPackage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackManager_BGMCallbackPackage), ::core::stringify!(new),));
+ <Self as IAkCallbackManager_BGMCallbackPackageMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_InitializationSettings { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9e020usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_InitializationSettingsMethods : IAkCallbackManager_InitializationSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCallbackManager_InitializationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_InitializationSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9df90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl < __T : IAkCallbackManager_InitializationSettings > IAkCallbackManager_InitializationSettingsMethods for __T { }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_InitializationSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_InitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_InitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_InitializationSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackManager_InitializationSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkCallbackManager_InitializationSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager{#[doc="`get_IsLoggingEnabled()` overload"]pub fn get_is_logging_enabled()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd4340usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsLoggingEnabled(bool)` overload"]pub fn set_is_logging_enabled(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd43b0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`RemoveEventCallback(u32)` overload"]pub fn remove_event_callback(in_playing_id:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd4430usize)as*mut u8,();
+(u32)::core::convert::Into::into(in_playing_id))}
+}
+#[doc="`RemoveEventCallbackCookie(crate::system::object::Object)` overload"]pub fn remove_event_callback_cookie(in_cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd4700usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(in_cookie))}
+}
+#[doc="`RemoveBankCallback(crate::system::object::Object)` overload"]pub fn remove_bank_callback(in_cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd49c0usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(in_cookie))}
+}
+#[doc="`SetLastAddedPlayingID(u32)` overload"]pub fn set_last_added_playing_id(in_playing_id:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd4c80usize)as*mut u8,();
+(u32)::core::convert::Into::into(in_playing_id))}
+}
+#[doc="`Init(crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings)` overload"]pub fn init(settings:impl::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings>)->crate::root::akresult::AKRESULT{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd4d60usize)as*mut u8,crate::root::akresult::AKRESULT;
+(crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings)::core::convert::Into::into(settings))}
+}
+#[doc="`Term()` overload"]pub fn term()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd4ed0usize)as*mut u8,();
+)}
+}
+#[doc="`SetMonitoringCallback(crate::root::akmonitorerrorlevel::AkMonitorErrorLevel, crate::root::akcallbackmanager::AkCallbackManager_MonitoringCallback)` overload"]pub fn set_monitoring_callback(in_level:impl::core::convert::Into<crate::root::akmonitorerrorlevel::AkMonitorErrorLevel> ,in_cb:impl::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_MonitoringCallback>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd4fc0usize)as*mut u8,();
+(crate::root::akmonitorerrorlevel::AkMonitorErrorLevel)::core::convert::Into::into(in_level),(crate::root::akcallbackmanager::AkCallbackManager_MonitoringCallback)::core::convert::Into::into(in_cb))}
+}
+#[doc="`SetBGMCallback(crate::root::akcallbackmanager::AkCallbackManager_BGMCallback, crate::system::object::Object)` overload"]pub fn set_bgm_callback(in_cb:impl::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_BGMCallback> ,in_cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd5050usize)as*mut u8,();
+(crate::root::akcallbackmanager::AkCallbackManager_BGMCallback)::core::convert::Into::into(in_cb),(crate::system::object::Object)::core::convert::Into::into(in_cookie))}
+}
+#[doc="`PostCallbacks()` overload"]pub fn post_callbacks()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd5120usize)as*mut u8,i32;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd5d70usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "root-akcallbackmanager")]
-pub trait IAkCallbackManager_EventCallbackMethods : IAkCallbackManager_EventCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkCallbackManager_EventCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_EventCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9d9c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"] fn invoke (self , in_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object > , in_type : impl :: core :: convert :: Into < crate :: root :: akcallbacktype :: AkCallbackType > , in_info : impl :: core :: convert :: Into < crate :: root :: akcallbackinfo :: AkCallbackInfo >) -> () { unsafe { let __receiver = < AkCallbackManager_EventCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackManager_EventCallback , crate :: system :: object :: Object , crate :: root :: akcallbacktype :: AkCallbackType , crate :: root :: akcallbackinfo :: AkCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9d9e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_cookie) , :: core :: convert :: Into :: into (in_type) , :: core :: convert :: Into :: into (in_info) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager{pub fn get_is_logging_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_logging_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_event_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn remove_event_callback_cookie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn remove_bank_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_last_added_playing_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn term_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_monitoring_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_bgm_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn post_callbacks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "root-akcallbackmanager")]
-impl < __T : IAkCallbackManager_EventCallback > IAkCallbackManager_EventCallbackMethods for __T { }
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_InitializationSettings{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e020usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_EventCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_EventCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackManager_EventCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-akcallbackmanager")]pub trait IAkCallbackManager_InitializationSettingsMethods:IAkCallbackManager_InitializationSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCallbackManager_InitializationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9df90usize)as*mut u8,();
+(AkCallbackManager_InitializationSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akcallbackmanager")]
-impl AkCallbackManager_EventCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackManager_EventCallback) , :: core :: stringify ! (new) ,)) ; < Self as IAkCallbackManager_EventCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-akcallbackmanager")]impl<__T:IAkCallbackManager_InitializationSettings>IAkCallbackManager_InitializationSettingsMethods for __T{}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_InitializationSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_InitializationSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackManager_InitializationSettings), ::core::stringify!(new),));
+ <Self as IAkCallbackManager_InitializationSettingsMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-akcallbackmanager")]pub trait IAkCallbackManager_EventCallbackMethods:IAkCallbackManager_EventCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkCallbackManager_EventCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9d9c0usize)as*mut u8,();
+(AkCallbackManager_EventCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]fn invoke(self,in_cookie:impl::core::convert::Into<crate::system::object::Object> ,in_type:impl::core::convert::Into<crate::root::akcallbacktype::AkCallbackType> ,in_info:impl::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>)->(){unsafe{let __receiver= <AkCallbackManager_EventCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9d9e0usize)as*mut u8,();
+(AkCallbackManager_EventCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(in_cookie),(crate::root::akcallbacktype::AkCallbackType)::core::convert::Into::into(in_type),(crate::root::akcallbackinfo::AkCallbackInfo)::core::convert::Into::into(in_info))}
+}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl<__T:IAkCallbackManager_EventCallback>IAkCallbackManager_EventCallbackMethods for __T{}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_EventCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_EventCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackManager_EventCallback), ::core::stringify!(new),));
+ <Self as IAkCallbackManager_EventCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="root-akcallbackmanager")]pub trait IAkCallbackManager_BankCallbackPackageMethods:IAkCallbackManager_BankCallbackPackage{#[doc="`.ctor(crate::root::akcallbackmanager::AkCallbackManager_BankCallback, crate::system::object::Object)` overload"]fn ctor(self,in_cb:impl::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_BankCallback> ,in_cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AkCallbackManager_BankCallbackPackage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9d8e0usize)as*mut u8,();
+(AkCallbackManager_BankCallbackPackage)__receiver,(crate::root::akcallbackmanager::AkCallbackManager_BankCallback)::core::convert::Into::into(in_cb),(crate::system::object::Object)::core::convert::Into::into(in_cookie))}
+}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl<__T:IAkCallbackManager_BankCallbackPackage>IAkCallbackManager_BankCallbackPackageMethods for __T{}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_BankCallbackPackage{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_BankCallbackPackage{#[doc="`.ctor(crate::root::akcallbackmanager::AkCallbackManager_BankCallback, crate::system::object::Object)` — overload selector"]pub fn new(in_cb:crate::root::akcallbackmanager::AkCallbackManager_BankCallback,in_cookie:crate::system::object::Object)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackManager_BankCallbackPackage), ::core::stringify!(new),));
+ <Self as IAkCallbackManager_BankCallbackPackageMethods> ::ctor(this,in_cb,in_cookie);
+this}
+}
+
+#[cfg(feature="root-akcallbackmanager")]pub trait IAkCallbackManager_MonitoringCallbackMethods:IAkCallbackManager_MonitoringCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkCallbackManager_MonitoringCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e080usize)as*mut u8,();
+(AkCallbackManager_MonitoringCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::root::akmonitorerrorcode::AkMonitorErrorCode, crate::root::akmonitorerrorlevel::AkMonitorErrorLevel, u32, u64, ::unity2::Il2CppString)` overload"]fn invoke(self,in_error_code:impl::core::convert::Into<crate::root::akmonitorerrorcode::AkMonitorErrorCode> ,in_error_level:impl::core::convert::Into<crate::root::akmonitorerrorlevel::AkMonitorErrorLevel> ,in_playing_id:impl::core::convert::Into<u32> ,in_game_obj_id:impl::core::convert::Into<u64> ,in_msg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkCallbackManager_MonitoringCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e0a0usize)as*mut u8,();
+(AkCallbackManager_MonitoringCallback)__receiver,(crate::root::akmonitorerrorcode::AkMonitorErrorCode)::core::convert::Into::into(in_error_code),(crate::root::akmonitorerrorlevel::AkMonitorErrorLevel)::core::convert::Into::into(in_error_level),(u32)::core::convert::Into::into(in_playing_id),(u64)::core::convert::Into::into(in_game_obj_id),(::unity2::Il2CppString)::core::convert::Into::into(in_msg))}
+}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl<__T:IAkCallbackManager_MonitoringCallback>IAkCallbackManager_MonitoringCallbackMethods for __T{}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_MonitoringCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_MonitoringCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackManager_MonitoringCallback), ::core::stringify!(new),));
+ <Self as IAkCallbackManager_MonitoringCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_EventCallbackPackage{#[doc="`Create(crate::root::akcallbackmanager::AkCallbackManager_EventCallback, crate::system::object::Object, *mutu32)` overload"]pub fn create(in_cb:impl::core::convert::Into<crate::root::akcallbackmanager::AkCallbackManager_EventCallback> ,in_cookie:impl::core::convert::Into<crate::system::object::Object>)->(crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage,u32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1b9de40usize)as*mut u8,crate::root::akcallbackmanager::AkCallbackManager_EventCallbackPackage;
+(crate::root::akcallbackmanager::AkCallbackManager_EventCallback)::core::convert::Into::into(in_cb),(crate::system::object::Object)::core::convert::Into::into(in_cookie),(*mut u32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
+
+#[cfg(feature="root-akcallbackmanager")]pub trait IAkCallbackManager_EventCallbackPackageMethods:IAkCallbackManager_EventCallbackPackage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCallbackManager_EventCallbackPackage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9df80usize)as*mut u8,();
+(AkCallbackManager_EventCallbackPackage)__receiver)}
+}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl<__T:IAkCallbackManager_EventCallbackPackage>IAkCallbackManager_EventCallbackPackageMethods for __T{}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_EventCallbackPackage{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_EventCallbackPackage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackManager_EventCallbackPackage), ::core::stringify!(new),));
+ <Self as IAkCallbackManager_EventCallbackPackageMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-akcallbackmanager")]pub trait IAkCallbackManager_BankCallbackMethods:IAkCallbackManager_BankCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkCallbackManager_BankCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c9a0usize)as*mut u8,();
+(AkCallbackManager_BankCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]fn invoke(self,in_bank_id:impl::core::convert::Into<u32> ,in_in_memory_bank_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,in_e_load_result:impl::core::convert::Into<crate::root::akresult::AKRESULT> ,in_cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AkCallbackManager_BankCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9c650usize)as*mut u8,();
+(AkCallbackManager_BankCallback)__receiver,(u32)::core::convert::Into::into(in_bank_id),(::unity2::IntPtr)::core::convert::Into::into(in_in_memory_bank_ptr),(crate::root::akresult::AKRESULT)::core::convert::Into::into(in_e_load_result),(crate::system::object::Object)::core::convert::Into::into(in_cookie))}
+}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl<__T:IAkCallbackManager_BankCallback>IAkCallbackManager_BankCallbackMethods for __T{}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_BankCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akcallbackmanager")]impl AkCallbackManager_BankCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackManager_BankCallback), ::core::stringify!(new),));
+ <Self as IAkCallbackManager_BankCallbackMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "root-akcallbackmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkCallbackManager_MonitoringCallback;
-    pub use super::IAkCallbackManager_MonitoringCallback;
-    pub use super::IAkCallbackManager_MonitoringCallbackMethods;
-    pub use super::AkCallbackManager_EventCallbackPackage;
-    pub use super::IAkCallbackManager_EventCallbackPackage;
-    pub use super::IAkCallbackManager_EventCallbackPackageMethods;
-    pub use super::AkCallbackManager_BankCallbackPackage;
-    pub use super::IAkCallbackManager_BankCallbackPackage;
-    pub use super::IAkCallbackManager_BankCallbackPackageMethods;
+    pub use super::AkCallbackManager_BGMCallback;
+    pub use super::IAkCallbackManager_BGMCallback;
+    pub use super::IAkCallbackManager_BGMCallbackMethods;
     pub use super::AkCallbackManager_BGMCallbackPackage;
     pub use super::IAkCallbackManager_BGMCallbackPackage;
     pub use super::IAkCallbackManager_BGMCallbackPackageMethods;
     pub use super::AkCallbackManager;
     pub use super::IAkCallbackManager;
-    pub use super::AkCallbackManager_BGMCallback;
-    pub use super::IAkCallbackManager_BGMCallback;
-    pub use super::IAkCallbackManager_BGMCallbackMethods;
-    pub use super::AkCallbackManager_BankCallback;
-    pub use super::IAkCallbackManager_BankCallback;
-    pub use super::IAkCallbackManager_BankCallbackMethods;
     pub use super::AkCallbackManager_InitializationSettings;
     pub use super::IAkCallbackManager_InitializationSettings;
     pub use super::IAkCallbackManager_InitializationSettingsMethods;
     pub use super::AkCallbackManager_EventCallback;
     pub use super::IAkCallbackManager_EventCallback;
     pub use super::IAkCallbackManager_EventCallbackMethods;
+    pub use super::AkCallbackManager_BankCallbackPackage;
+    pub use super::IAkCallbackManager_BankCallbackPackage;
+    pub use super::IAkCallbackManager_BankCallbackPackageMethods;
+    pub use super::AkCallbackManager_MonitoringCallback;
+    pub use super::IAkCallbackManager_MonitoringCallback;
+    pub use super::IAkCallbackManager_MonitoringCallbackMethods;
+    pub use super::AkCallbackManager_EventCallbackPackage;
+    pub use super::IAkCallbackManager_EventCallbackPackage;
+    pub use super::IAkCallbackManager_EventCallbackPackageMethods;
+    pub use super::AkCallbackManager_BankCallback;
+    pub use super::IAkCallbackManager_BankCallback;
+    pub use super::IAkCallbackManager_BankCallbackMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

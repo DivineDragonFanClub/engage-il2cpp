@@ -4,45 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: helpitembase :: { HelpItemBase , IHelpItemBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::helpitembase::{HelpItemBase,IHelpItemBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemskill/HelpItemSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemSkill")] # [parent (crate :: app :: helpitembase :: HelpItemBase)] pub struct HelpItemSkill {
-# [offset (80)] # [rename (name = "m_SkillData")] pub m_skill_data : crate :: app :: skilldata :: SkillData ,
-# [offset (88)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (96)] # [rename (name = "m_IsForcedEngage")] pub m_is_forced_engage : bool ,
-# [offset (97)] # [rename (name = "m_IsForceDisplay")] pub m_is_force_display : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpitemskill/HelpItemSkill.md"))]#[::unity2::class(namespace="App",name="HelpItemSkill")]#[parent(crate::app::helpitembase::HelpItemBase)]pub struct HelpItemSkill{#[offset(80)]#[rename(name="m_SkillData")]pub m_skill_data:crate::app::skilldata::SkillData, #[offset(88)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(96)]#[rename(name="m_IsForcedEngage")]pub m_is_forced_engage:bool, #[offset(97)]#[rename(name="m_IsForceDisplay")]pub m_is_force_display:bool,}
 
 }
 
 #[cfg(feature = "app-helpitemskill-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpitemskill")]
-pub trait IHelpItemSkillMethods : IHelpItemSkill { # [doc = "`SetSkillData(crate::app::skilldata::SkillData, crate::app::unit::Unit, bool)` overload"] fn set_skill_data (self , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , is_forced_engage : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HelpItemSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemSkill , crate :: app :: skilldata :: SkillData , crate :: app :: unit :: Unit , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297db10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (is_forced_engage) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < HelpItemSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemSkill , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297db60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"] fn set_contents (self , setter : impl :: core :: convert :: Into < crate :: app :: helpparamsetter :: HelpParamSetter >) -> () { unsafe { let __receiver = < HelpItemSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemSkill , crate :: app :: helpparamsetter :: HelpParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297db90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } } # [doc = "`SetForceDisplay()` overload"] fn set_force_display (self ,) -> () { unsafe { let __receiver = < HelpItemSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297dd20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297dd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpitemskill")]pub trait IHelpItemSkillMethods:IHelpItemSkill{#[doc="`SetSkillData(crate::app::skilldata::SkillData, crate::app::unit::Unit, bool)` overload"]fn set_skill_data(self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,is_forced_engage:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HelpItemSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297db10usize)as*mut u8,();
+(HelpItemSkill)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(is_forced_engage))}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297db60usize)as*mut u8,bool;
+(HelpItemSkill)__receiver)}
+}
+#[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297db90usize)as*mut u8,();
+(HelpItemSkill)__receiver,(crate::app::helpparamsetter::HelpParamSetter)::core::convert::Into::into(setter))}
+}
+#[doc="`SetForceDisplay()` overload"]fn set_force_display(self,)->(){unsafe{let __receiver= <HelpItemSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297dd20usize)as*mut u8,();
+(HelpItemSkill)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297dd30usize)as*mut u8,();
+(HelpItemSkill)__receiver)}
+}
+}
 
-#[cfg(feature = "app-helpitemskill")]
-impl < __T : IHelpItemSkill > IHelpItemSkillMethods for __T { }
+#[cfg(feature="app-helpitemskill")]impl<__T:IHelpItemSkill>IHelpItemSkillMethods for __T{}
 
-#[cfg(feature = "app-helpitemskill")]
-impl HelpItemSkill { pub fn set_skill_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_force_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-helpitemskill")]impl HelpItemSkill{pub fn set_skill_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_force_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-helpitemskill")]
-impl HelpItemSkill {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemSkill) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemSkillMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpitemskill")]impl HelpItemSkill{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpItemSkill), ::core::stringify!(new),));
+ <Self as IHelpItemSkillMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpitemskill")]

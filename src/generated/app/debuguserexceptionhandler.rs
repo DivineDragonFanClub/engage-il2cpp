@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuguserexceptionhandler/DebugUserExceptionHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugUserExceptionHandler")] # [parent (crate :: system :: object :: Object)] pub struct DebugUserExceptionHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debuguserexceptionhandler/DebugUserExceptionHandler.md"))]#[::unity2::class(namespace="App",name="DebugUserExceptionHandler")]#[parent(crate::system::object::Object)]pub struct DebugUserExceptionHandler{}
 
 }
 
 #[cfg(feature = "app-debuguserexceptionhandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debuguserexceptionhandler")]
-impl DebugUserExceptionHandler { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a11a30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ExceptionHandler(::unity2::Il2CppString)` overload"] pub fn exception_handler (exception_info : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a118b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (exception_info) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debuguserexceptionhandler")]impl DebugUserExceptionHandler{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a11a30usize)as*mut u8,();
+)}
+}
+#[doc="`ExceptionHandler(::unity2::Il2CppString)` overload"]pub fn exception_handler(exception_info:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a118b0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(exception_info))}
+}
+}
 
-#[cfg(feature = "app-debuguserexceptionhandler")]
-impl DebugUserExceptionHandler { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUserExceptionHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn exception_handler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUserExceptionHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-debuguserexceptionhandler")]impl DebugUserExceptionHandler{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn exception_handler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "app-debuguserexceptionhandler")]
 #[doc(hidden)]

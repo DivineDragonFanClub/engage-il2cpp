@@ -4,42 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/_privateimplementationdetails____staticarrayinittypesize_21252/_PrivateImplementationDetails____StaticArrayInitTypeSize_21252.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct _PrivateImplementationDetails____StaticArrayInitTypeSize_21252 {}
-
-
-impl ::unity2::ClassIdentity for _PrivateImplementationDetails____StaticArrayInitTypeSize_21252 {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "<PrivateImplementationDetails>.__StaticArrayInitTypeSize=21252";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/_privateimplementationdetails____staticarrayinittypesize_21252/_PrivateImplementationDetails____StaticArrayInitTypeSize_21252.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct _PrivateImplementationDetails____StaticArrayInitTypeSize_21252{}
+impl::unity2::ClassIdentity for _PrivateImplementationDetails____StaticArrayInitTypeSize_21252{const NAMESPACE: &'static str="";
+const NAME: &'static str="<PrivateImplementationDetails>.__StaticArrayInitTypeSize=21252";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for _PrivateImplementationDetails____StaticArrayInitTypeSize_21252 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for _PrivateImplementationDetails____StaticArrayInitTypeSize_21252{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }

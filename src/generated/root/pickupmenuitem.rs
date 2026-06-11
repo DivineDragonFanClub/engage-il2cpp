@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: tutoriallisttopbasicmenuitem :: { ITutorialListTopBasicMenuItem , TutorialListTopBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::tutoriallisttopbasicmenuitem::{ITutorialListTopBasicMenuItem,TutorialListTopBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/pickupmenuitem/PickUpMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "PickUpMenuItem")] # [parent (crate :: root :: tutoriallisttopbasicmenuitem :: TutorialListTopBasicMenuItem)] pub struct PickUpMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/pickupmenuitem/PickUpMenuItem.md"))]#[::unity2::class(namespace="",name="PickUpMenuItem")]#[parent(crate::root::tutoriallisttopbasicmenuitem::TutorialListTopBasicMenuItem)]pub struct PickUpMenuItem{}
 
 }
 
 #[cfg(feature = "root-pickupmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-pickupmenuitem")]
-pub trait IPickUpMenuItemMethods : IPickUpMenuItem { # [doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"] fn ctor (self , is_get_all_tutorial : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < PickUpMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PickUpMenuItem , bool , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_get_all_tutorial) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PickUpMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PickUpMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-pickupmenuitem")]pub trait IPickUpMenuItemMethods:IPickUpMenuItem{#[doc="`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"]fn ctor(self,is_get_all_tutorial:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <PickUpMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b620usize)as*mut u8,();
+(PickUpMenuItem)__receiver,(bool)::core::convert::Into::into(is_get_all_tutorial),(crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PickUpMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b6f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PickUpMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-pickupmenuitem")]
-impl < __T : IPickUpMenuItem > IPickUpMenuItemMethods for __T { }
+#[cfg(feature="root-pickupmenuitem")]impl<__T:IPickUpMenuItem>IPickUpMenuItemMethods for __T{}
 
-#[cfg(feature = "root-pickupmenuitem")]
-impl PickUpMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PickUpMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PickUpMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-pickupmenuitem")]impl PickUpMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-pickupmenuitem")]
-impl PickUpMenuItem {
-# [doc = "`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"] pub fn new (is_get_all_tutorial : bool , decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PickUpMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IPickUpMenuItemMethods > :: ctor (this , is_get_all_tutorial , decide_event_handler) ; this }
+#[cfg(feature="root-pickupmenuitem")]impl PickUpMenuItem{#[doc="`.ctor(bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"]pub fn new(is_get_all_tutorial:bool,decide_event_handler:crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PickUpMenuItem), ::core::stringify!(new),));
+ <Self as IPickUpMenuItemMethods> ::ctor(this,is_get_all_tutorial,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "root-pickupmenuitem")]

@@ -4,42 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: app :: ringlistskillmenu :: { IRingListSkillMenu_MenuContent , RingListSkillMenu_MenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::app::ringlistskillmenu::{IRingListSkillMenu_MenuContent,RingListSkillMenu_MenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistskillmenucontent/RingListSkillMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingListSkillMenuContent")] # [parent (crate :: app :: ringlistskillmenu :: RingListSkillMenu_MenuContent)] pub struct RingListSkillMenuContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringlistskillmenucontent/RingListSkillMenuContent.md"))]#[::unity2::class(namespace="App",name="RingListSkillMenuContent")]#[parent(crate::app::ringlistskillmenu::RingListSkillMenu_MenuContent)]pub struct RingListSkillMenuContent{}
 
 }
 
 #[cfg(feature = "app-ringlistskillmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringlistskillmenucontent")]
-pub trait IRingListSkillMenuContentMethods : IRingListSkillMenuContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingListSkillMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingListSkillMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2430ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringlistskillmenucontent")]pub trait IRingListSkillMenuContentMethods:IRingListSkillMenuContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingListSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2430ea0usize)as*mut u8,();
+(RingListSkillMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringlistskillmenucontent")]
-impl < __T : IRingListSkillMenuContent > IRingListSkillMenuContentMethods for __T { }
+#[cfg(feature="app-ringlistskillmenucontent")]impl<__T:IRingListSkillMenuContent>IRingListSkillMenuContentMethods for __T{}
 
-#[cfg(feature = "app-ringlistskillmenucontent")]
-impl RingListSkillMenuContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingListSkillMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-ringlistskillmenucontent")]impl RingListSkillMenuContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-ringlistskillmenucontent")]
-impl RingListSkillMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingListSkillMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IRingListSkillMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringlistskillmenucontent")]impl RingListSkillMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingListSkillMenuContent), ::core::stringify!(new),));
+ <Self as IRingListSkillMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringlistskillmenucontent")]

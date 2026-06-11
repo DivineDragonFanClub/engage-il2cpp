@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animations/animationplayablebinding/AnimationPlayableBinding.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Animations" , name = "AnimationPlayableBinding")] # [parent (crate :: system :: object :: Object)] pub struct AnimationPlayableBinding {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animations/animationplayablebinding/AnimationPlayableBinding.md"))]#[::unity2::class(namespace="UnityEngine.Animations",name="AnimationPlayableBinding")]#[parent(crate::system::object::Object)]pub struct AnimationPlayableBinding{}
 
 }
 
 #[cfg(feature = "unity_engine-animations-animationplayablebinding-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animations-animationplayablebinding")]
-impl AnimationPlayableBinding { # [doc = "`Create(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"] pub fn create (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , key : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> crate :: unity_engine :: playables :: playablebinding :: PlayableBinding { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablebinding :: PlayableBinding = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`CreateAnimationOutput(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"] pub fn create_animation_output (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eaf360usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animations-animationplayablebinding")]impl AnimationPlayableBinding{#[doc="`Create(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]pub fn create(name:impl::core::convert::Into< ::unity2::Il2CppString> ,key:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->crate::unity_engine::playables::playablebinding::PlayableBinding{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf200usize)as*mut u8,crate::unity_engine::playables::playablebinding::PlayableBinding;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(key))}
+}
+#[doc="`CreateAnimationOutput(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"]pub fn create_animation_output(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::playables::playableoutput::PlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaf360usize)as*mut u8,crate::unity_engine::playables::playableoutput::PlayableOutput;
+(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "unity_engine-animations-animationplayablebinding")]
-impl AnimationPlayableBinding { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableBinding as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_animation_output_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayableBinding as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-animations-animationplayablebinding")]impl AnimationPlayableBinding{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_animation_output_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-animations-animationplayablebinding")]
 #[doc(hidden)]

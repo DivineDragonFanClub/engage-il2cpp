@@ -4,47 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemholdinginfowindow/ItemHoldingInfoWindow.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemHoldingInfoWindow")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ItemHoldingInfoWindow {
-# [offset (24)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_KindFrameObject")] pub m_kind_frame_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_UnusedHoldingTitleText")] pub m_unused_holding_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_UnusedHoldingValueText")] pub m_unused_holding_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "m_TotalHoldingTitleText")] pub m_total_holding_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "m_TotalHoldingValueText")] pub m_total_holding_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "ForceMask")] pub force_mask : u32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemholdinginfowindow/ItemHoldingInfoWindow.md"))]#[::unity2::class(namespace="App",name="ItemHoldingInfoWindow")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ItemHoldingInfoWindow{#[offset(24)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_KindFrameObject")]pub m_kind_frame_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_UnusedHoldingTitleText")]pub m_unused_holding_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_UnusedHoldingValueText")]pub m_unused_holding_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_TotalHoldingTitleText")]pub m_total_holding_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_TotalHoldingValueText")]pub m_total_holding_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="ForceMask")]pub force_mask:u32,}
 
 }
 
 #[cfg(feature = "app-itemholdinginfowindow-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-itemholdinginfowindow")]
-pub trait IItemHoldingInfoWindowMethods : IItemHoldingInfoWindow { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ItemHoldingInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemHoldingInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203f310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < ItemHoldingInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemHoldingInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203f540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetData(crate::app::unititem::UnitItem)` overload"] fn set_data (self , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < ItemHoldingInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemHoldingInfoWindow , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203f640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ItemHoldingInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemHoldingInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x203fca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemholdinginfowindow")]pub trait IItemHoldingInfoWindowMethods:IItemHoldingInfoWindow{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ItemHoldingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203f310usize)as*mut u8,();
+(ItemHoldingInfoWindow)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <ItemHoldingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203f540usize)as*mut u8,();
+(ItemHoldingInfoWindow)__receiver)}
+}
+#[doc="`SetData(crate::app::unititem::UnitItem)` overload"]fn set_data(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <ItemHoldingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203f640usize)as*mut u8,();
+(ItemHoldingInfoWindow)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemHoldingInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x203fca0usize)as*mut u8,();
+(ItemHoldingInfoWindow)__receiver)}
+}
+}
 
-#[cfg(feature = "app-itemholdinginfowindow")]
-impl < __T : IItemHoldingInfoWindow > IItemHoldingInfoWindowMethods for __T { }
+#[cfg(feature="app-itemholdinginfowindow")]impl<__T:IItemHoldingInfoWindow>IItemHoldingInfoWindowMethods for __T{}
 
-#[cfg(feature = "app-itemholdinginfowindow")]
-impl ItemHoldingInfoWindow { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemHoldingInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemHoldingInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemHoldingInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemHoldingInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-itemholdinginfowindow")]impl ItemHoldingInfoWindow{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-itemholdinginfowindow")]
-impl ItemHoldingInfoWindow {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemHoldingInfoWindow) , :: core :: stringify ! (new) ,)) ; < Self as IItemHoldingInfoWindowMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-itemholdinginfowindow")]impl ItemHoldingInfoWindow{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemHoldingInfoWindow), ::core::stringify!(new),));
+ <Self as IItemHoldingInfoWindowMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-itemholdinginfowindow")]

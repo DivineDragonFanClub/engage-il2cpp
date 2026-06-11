@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackcolorattribute/TrackColorAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TrackColorAttribute")] pub struct TrackColorAttribute {
-# [offset (16)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/trackcolorattribute/TrackColorAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TrackColorAttribute")]pub struct TrackColorAttribute{#[offset(16)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-trackcolorattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
-pub trait ITrackColorAttributeMethods : ITrackColorAttribute { # [doc = "`.ctor(f32, f32, f32)` overload"] fn ctor (self , r : impl :: core :: convert :: Into < f32 > , g : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TrackColorAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrackColorAttribute , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ea6c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r) , :: core :: convert :: Into :: into (g) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-trackcolorattribute")]pub trait ITrackColorAttributeMethods:ITrackColorAttribute{#[doc="`.ctor(f32, f32, f32)` overload"]fn ctor(self,r:impl::core::convert::Into<f32> ,g:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TrackColorAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ea6c0usize)as*mut u8,();
+(TrackColorAttribute)__receiver,(f32)::core::convert::Into::into(r),(f32)::core::convert::Into::into(g),(f32)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
-impl < __T : ITrackColorAttribute > ITrackColorAttributeMethods for __T { }
+#[cfg(feature="unity_engine-timeline-trackcolorattribute")]impl<__T:ITrackColorAttribute>ITrackColorAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
-impl TrackColorAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackColorAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-trackcolorattribute")]impl TrackColorAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-timeline-trackcolorattribute")]
-impl TrackColorAttribute {
-# [doc = "`.ctor(f32, f32, f32)` — overload selector"] pub fn new (r : f32 , g : f32 , b : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TrackColorAttribute) , :: core :: stringify ! (new) ,)) ; < Self as ITrackColorAttributeMethods > :: ctor (this , r , g , b) ; this }
+#[cfg(feature="unity_engine-timeline-trackcolorattribute")]impl TrackColorAttribute{#[doc="`.ctor(f32, f32, f32)` — overload selector"]pub fn new(r:f32,g:f32,b:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TrackColorAttribute), ::core::stringify!(new),));
+ <Self as ITrackColorAttributeMethods> ::ctor(this,r,g,b);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-trackcolorattribute")]

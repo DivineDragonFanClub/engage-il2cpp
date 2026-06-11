@@ -4,39 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/transparentsettingspass/TransparentSettingsPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "TransparentSettingsPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct TransparentSettingsPass {
-# [offset (112)] # [rename (name = "m_shouldReceiveShadows")] pub m_should_receive_shadows : bool ,
-# [static_field] # [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/transparentsettingspass/TransparentSettingsPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="TransparentSettingsPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct TransparentSettingsPass{#[offset(112)]#[rename(name="m_shouldReceiveShadows")]pub m_should_receive_shadows:bool, #[static_field]#[rename(name="m_ProfilerTag")]pub m_profiler_tag: ::unity2::Il2CppString, #[static_field]#[rename(name="m_ProfilingSampler")]pub m_profiling_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass")]
-impl TransparentSettingsPass { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca4300usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-transparentsettingspass")]impl TransparentSettingsPass{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ca4300usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass")]
-pub trait ITransparentSettingsPassMethods : ITransparentSettingsPass { # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, bool)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , shadow_receive_supported : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TransparentSettingsPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransparentSettingsPass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca4030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (shadow_receive_supported) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(*mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn setup (self ,) -> (bool , crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData) { unsafe { let __receiver = < TransparentSettingsPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; let __ret = { { let __inner : extern "C" fn (TransparentSettingsPass , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca40e0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < TransparentSettingsPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (TransparentSettingsPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ca40f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-rendering-universal-transparentsettingspass")]pub trait ITransparentSettingsPassMethods:ITransparentSettingsPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, bool)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent> ,shadow_receive_supported:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TransparentSettingsPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca4030usize)as*mut u8,();
+(TransparentSettingsPass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt),(bool)::core::convert::Into::into(shadow_receive_supported))}
+}
+#[doc="`Setup(*mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn setup(self,)->(bool,crate::unity_engine::rendering::universal::renderingdata::RenderingData){unsafe{let __receiver= <TransparentSettingsPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2ca40e0usize)as*mut u8,bool;
+(TransparentSettingsPass)__receiver,(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <TransparentSettingsPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca40f0usize)as*mut u8,();
+(TransparentSettingsPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass")]
-impl < __T : ITransparentSettingsPass > ITransparentSettingsPassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-transparentsettingspass")]impl<__T:ITransparentSettingsPass>ITransparentSettingsPassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass")]
-impl TransparentSettingsPass { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransparentSettingsPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransparentSettingsPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransparentSettingsPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransparentSettingsPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-rendering-universal-transparentsettingspass")]impl TransparentSettingsPass{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass")]
-impl TransparentSettingsPass {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, bool)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , shadow_receive_supported : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TransparentSettingsPass) , :: core :: stringify ! (new) ,)) ; < Self as ITransparentSettingsPassMethods > :: ctor (this , evt , shadow_receive_supported) ; this }
+#[cfg(feature="unity_engine-rendering-universal-transparentsettingspass")]impl TransparentSettingsPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, bool)` — overload selector"]pub fn new(evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,shadow_receive_supported:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TransparentSettingsPass), ::core::stringify!(new),));
+ <Self as ITransparentSettingsPassMethods> ::ctor(this,evt,shadow_receive_supported);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass")]

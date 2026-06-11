@@ -4,36 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: dynamicmesh :: { DynamicMesh , IDynamicMesh }
- ;
- use crate :: app :: map :: { IMap_CellMesh , Map_CellMesh }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::dynamicmesh::{DynamicMesh,IDynamicMesh}
+;
+use crate::app::map::{IMap_CellMesh,Map_CellMesh}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainmesh/TerrainMesh.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainMesh")] # [parent (crate :: app :: map :: Map_CellMesh)] pub struct TerrainMesh {
-# [offset (112)] # [rename (name = "m_Size")] pub m_size : crate :: unity_engine :: vector2 :: Vector2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terrainmesh/TerrainMesh.md"))]#[::unity2::class(namespace="App",name="TerrainMesh")]#[parent(crate::app::map::Map_CellMesh)]pub struct TerrainMesh{#[offset(112)]#[rename(name="m_Size")]pub m_size:crate::unity_engine::vector2::Vector2,}
 
 }
 
 #[cfg(feature = "app-terrainmesh-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-terrainmesh")]
-pub trait ITerrainMeshMethods : ITerrainMesh { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e5680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddMesh(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"] fn add_mesh (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , size : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < TerrainMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainMesh , i32 , i32 , crate :: unity_engine :: color :: Color , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e56c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`GetPosition(i32)` overload"] fn get_position (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < TerrainMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainMesh , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e5e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Update(crate::app::mapterrain::MapTerrain, bool, bool)` overload"] fn update (self , terrain : impl :: core :: convert :: Into < crate :: app :: mapterrain :: MapTerrain > , show_layer : impl :: core :: convert :: Into < bool > , show_overlap : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TerrainMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainMesh , crate :: app :: mapterrain :: MapTerrain , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e5ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (terrain) , :: core :: convert :: Into :: into (show_layer) , :: core :: convert :: Into :: into (show_overlap) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update_2 (self ,) -> () { unsafe { let __receiver = < TerrainMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e6b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-terrainmesh")]pub trait ITerrainMeshMethods:ITerrainMesh{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e5680usize)as*mut u8,();
+(TerrainMesh)__receiver)}
+}
+#[doc="`AddMesh(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]fn add_mesh(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <TerrainMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e56c0usize)as*mut u8,();
+(TerrainMesh)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pos),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(size))}
+}
+#[doc="`GetPosition(i32)` overload"]fn get_position(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <TerrainMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e5e60usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(TerrainMesh)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Update(crate::app::mapterrain::MapTerrain, bool, bool)` overload"]fn update(self,terrain:impl::core::convert::Into<crate::app::mapterrain::MapTerrain> ,show_layer:impl::core::convert::Into<bool> ,show_overlap:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TerrainMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e5ea0usize)as*mut u8,();
+(TerrainMesh)__receiver,(crate::app::mapterrain::MapTerrain)::core::convert::Into::into(terrain),(bool)::core::convert::Into::into(show_layer),(bool)::core::convert::Into::into(show_overlap))}
+}
+#[doc="`Update()` overload"]fn update_2(self,)->(){unsafe{let __receiver= <TerrainMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e6b40usize)as*mut u8,();
+(TerrainMesh)__receiver)}
+}
+}
 
-#[cfg(feature = "app-terrainmesh")]
-impl < __T : ITerrainMesh > ITerrainMeshMethods for __T { }
+#[cfg(feature="app-terrainmesh")]impl<__T:ITerrainMesh>ITerrainMeshMethods for __T{}
 
-#[cfg(feature = "app-terrainmesh")]
-impl TerrainMesh { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-terrainmesh")]impl TerrainMesh{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-terrainmesh")]
-impl TerrainMesh {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainMesh) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainMeshMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-terrainmesh")]impl TerrainMesh{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainMesh), ::core::stringify!(new),));
+ <Self as ITerrainMeshMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-terrainmesh")]

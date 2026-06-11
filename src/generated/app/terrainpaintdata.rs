@@ -4,39 +4,78 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainpaintdata/TerrainPaintData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainPaintData")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct TerrainPaintData {
-# [offset (24)] # [rename (name = "SplitCount")] pub split_count_field : i32 ,
-# [offset (28)] # [rename (name = "TerrainSize")] pub terrain_size_field : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (40)] # [rename (name = "Name")] pub name_field : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (48)] # [rename (name = "Index")] pub index_field : :: unity2 :: Array < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terrainpaintdata/TerrainPaintData.md"))]#[::unity2::class(namespace="App",name="TerrainPaintData")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct TerrainPaintData{#[offset(24)]#[rename(name="SplitCount")]pub split_count_field:i32, #[offset(28)]#[rename(name="TerrainSize")]pub terrain_size_field:crate::unity_engine::vector2::Vector2, #[offset(40)]#[rename(name="Name")]pub name_field: ::unity2::Array< ::unity2::Il2CppString> , #[offset(48)]#[rename(name="Index")]pub index_field: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "app-terrainpaintdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-terrainpaintdata")]
-pub trait ITerrainPaintDataMethods : ITerrainPaintData { # [doc = "`set__TerrainSize(crate::unity_engine::vector2::Vector2)` overload"] fn set_terrain_size (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < TerrainPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintData , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get__TerrainSize()` overload"] fn get_terrain_size (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < TerrainPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set__SplitCount(i32)` overload"] fn set_split_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get__SplitCount()` overload"] fn get_split_count (self ,) -> i32 { unsafe { let __receiver = < TerrainPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set__Name(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < TerrainPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get__Name()` overload"] fn get_name (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < TerrainPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set__Index(::unity2::Array<i32>)` overload"] fn set_index (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> () { unsafe { let __receiver = < TerrainPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintData , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get__Index()` overload"] fn get_index (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < TerrainPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-terrainpaintdata")]pub trait ITerrainPaintDataMethods:ITerrainPaintData{#[doc="`set__TerrainSize(crate::unity_engine::vector2::Vector2)` overload"]fn set_terrain_size(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <TerrainPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7100usize)as*mut u8,();
+(TerrainPaintData)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get__TerrainSize()` overload"]fn get_terrain_size(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <TerrainPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7110usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(TerrainPaintData)__receiver)}
+}
+#[doc="`set__SplitCount(i32)` overload"]fn set_split_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TerrainPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7120usize)as*mut u8,();
+(TerrainPaintData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get__SplitCount()` overload"]fn get_split_count(self,)->i32{unsafe{let __receiver= <TerrainPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7130usize)as*mut u8,i32;
+(TerrainPaintData)__receiver)}
+}
+#[doc="`set__Name(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <TerrainPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7140usize)as*mut u8,();
+(TerrainPaintData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get__Name()` overload"]fn get_name(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <TerrainPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7150usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(TerrainPaintData)__receiver)}
+}
+#[doc="`set__Index(::unity2::Array<i32>)` overload"]fn set_index(self,value:impl::core::convert::Into< ::unity2::Array<i32> >)->(){unsafe{let __receiver= <TerrainPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7160usize)as*mut u8,();
+(TerrainPaintData)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(value))}
+}
+#[doc="`get__Index()` overload"]fn get_index(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <TerrainPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7170usize)as*mut u8, ::unity2::Array<i32> ;
+(TerrainPaintData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7180usize)as*mut u8,();
+(TerrainPaintData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-terrainpaintdata")]
-impl < __T : ITerrainPaintData > ITerrainPaintDataMethods for __T { }
+#[cfg(feature="app-terrainpaintdata")]impl<__T:ITerrainPaintData>ITerrainPaintDataMethods for __T{}
 
-#[cfg(feature = "app-terrainpaintdata")]
-impl TerrainPaintData { pub fn set_terrain_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_terrain_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_split_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_split_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-terrainpaintdata")]impl TerrainPaintData{pub fn set_terrain_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_terrain_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_split_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_split_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-terrainpaintdata")]
-impl TerrainPaintData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainPaintData) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainPaintDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-terrainpaintdata")]impl TerrainPaintData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainPaintData), ::core::stringify!(new),));
+ <Self as ITerrainPaintDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-terrainpaintdata")]

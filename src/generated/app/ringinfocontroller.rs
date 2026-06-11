@@ -4,45 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfocontroller/RingInfoController.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingInfoController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingInfoController {
-# [offset (24)] # [rename (name = "m_RingName")] pub m_ring_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_RingConditionIconImage")] pub m_ring_condition_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_GodName")] pub m_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_RingImage")] pub m_ring_image : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_Message")] pub m_message : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "m_ConditionIcons")] pub m_condition_icons : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: sprite :: Sprite > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringinfocontroller/RingInfoController.md"))]#[::unity2::class(namespace="App",name="RingInfoController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingInfoController{#[offset(24)]#[rename(name="m_RingName")]pub m_ring_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_RingConditionIconImage")]pub m_ring_condition_icon_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_GodName")]pub m_god_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_RingImage")]pub m_ring_image:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_Message")]pub m_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_ConditionIcons")]pub m_condition_icons:crate::system::collections::generic::list_1::List_1<crate::unity_engine::sprite::Sprite> ,}
 
 }
 
 #[cfg(feature = "app-ringinfocontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringinfocontroller")]
-pub trait IRingInfoControllerMethods : IRingInfoController { # [doc = "`GetHelpText(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn get_help_text (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingInfoController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingInfoController , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x242c450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetRingNameText(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn get_ring_name_text (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingInfoController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingInfoController , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x242c630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetStatus(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn set_status (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < RingInfoController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingInfoController , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x242c760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`set_RingImageTexture(crate::unity_engine::rendertexture::RenderTexture)` overload"] fn set_ring_image_texture (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendertexture :: RenderTexture >) -> () { unsafe { let __receiver = < RingInfoController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingInfoController , crate :: unity_engine :: rendertexture :: RenderTexture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x242c890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < RingInfoController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingInfoController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x242c910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < RingInfoController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingInfoController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x242c930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingInfoController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingInfoController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x242c940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringinfocontroller")]pub trait IRingInfoControllerMethods:IRingInfoController{#[doc="`GetHelpText(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn get_help_text(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingInfoController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242c450usize)as*mut u8, ::unity2::Il2CppString;
+(RingInfoController)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetRingNameText(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn get_ring_name_text(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingInfoController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242c630usize)as*mut u8, ::unity2::Il2CppString;
+(RingInfoController)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetStatus(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn set_status(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <RingInfoController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242c760usize)as*mut u8,();
+(RingInfoController)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`set_RingImageTexture(crate::unity_engine::rendertexture::RenderTexture)` overload"]fn set_ring_image_texture(self,value:impl::core::convert::Into<crate::unity_engine::rendertexture::RenderTexture>)->(){unsafe{let __receiver= <RingInfoController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242c890usize)as*mut u8,();
+(RingInfoController)__receiver,(crate::unity_engine::rendertexture::RenderTexture)::core::convert::Into::into(value))}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <RingInfoController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242c910usize)as*mut u8,();
+(RingInfoController)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RingInfoController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242c930usize)as*mut u8,();
+(RingInfoController)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingInfoController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x242c940usize)as*mut u8,();
+(RingInfoController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringinfocontroller")]
-impl < __T : IRingInfoController > IRingInfoControllerMethods for __T { }
+#[cfg(feature="app-ringinfocontroller")]impl<__T:IRingInfoController>IRingInfoControllerMethods for __T{}
 
-#[cfg(feature = "app-ringinfocontroller")]
-impl RingInfoController { pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingInfoController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_ring_name_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingInfoController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingInfoController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_ring_image_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingInfoController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingInfoController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingInfoController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingInfoController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-ringinfocontroller")]impl RingInfoController{pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_ring_name_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_ring_image_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-ringinfocontroller")]
-impl RingInfoController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingInfoController) , :: core :: stringify ! (new) ,)) ; < Self as IRingInfoControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringinfocontroller")]impl RingInfoController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingInfoController), ::core::stringify!(new),));
+ <Self as IRingInfoControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringinfocontroller")]

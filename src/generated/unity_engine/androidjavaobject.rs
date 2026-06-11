@@ -4,41 +4,145 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavaobject/AndroidJavaObject.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AndroidJavaObject")] # [parent (crate :: system :: object :: Object)] pub struct AndroidJavaObject {
-# [static_field] # [rename (name = "enableDebugPrints")] pub enable_debug_prints : bool ,
-# [offset (16)] # [rename (name = "m_jobject")] pub m_jobject : crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef ,
-# [offset (24)] # [rename (name = "m_jclass")] pub m_jclass : crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/androidjavaobject/AndroidJavaObject.md"))]#[::unity2::class(namespace="UnityEngine",name="AndroidJavaObject")]#[parent(crate::system::object::Object)]pub struct AndroidJavaObject{#[static_field]#[rename(name="enableDebugPrints")]pub enable_debug_prints:bool, #[offset(16)]#[rename(name="m_jobject")]pub m_jobject:crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef, #[offset(24)]#[rename(name="m_jclass")]pub m_jclass:crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef,}
 
 }
 
 #[cfg(feature = "unity_engine-androidjavaobject-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-androidjavaobject")]
-impl AndroidJavaObject { # [doc = "`AndroidJavaObjectDeleteLocalRef(::unity2::IntPtr)` overload"] pub fn android_java_object_delete_local_ref (jobject : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f126e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (jobject) , :: core :: option :: Option :: None) } } } # [doc = "`AndroidJavaClassDeleteLocalRef(::unity2::IntPtr)` overload"] pub fn android_java_class_delete_local_ref (jclass : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: unity_engine :: androidjavaclass :: AndroidJavaClass { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaclass :: AndroidJavaClass = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f12820usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (jclass) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f12960usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-androidjavaobject")]impl AndroidJavaObject{#[doc="`AndroidJavaObjectDeleteLocalRef(::unity2::IntPtr)` overload"]pub fn android_java_object_delete_local_ref(jobject:impl::core::convert::Into< ::unity2::IntPtr>)->crate::unity_engine::androidjavaobject::AndroidJavaObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f126e0usize)as*mut u8,crate::unity_engine::androidjavaobject::AndroidJavaObject;
+(::unity2::IntPtr)::core::convert::Into::into(jobject))}
+}
+#[doc="`AndroidJavaClassDeleteLocalRef(::unity2::IntPtr)` overload"]pub fn android_java_class_delete_local_ref(jclass:impl::core::convert::Into< ::unity2::IntPtr>)->crate::unity_engine::androidjavaclass::AndroidJavaClass{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f12820usize)as*mut u8,crate::unity_engine::androidjavaclass::AndroidJavaClass;
+(::unity2::IntPtr)::core::convert::Into::into(jclass))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f12960usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-androidjavaobject")]
-pub trait IAndroidJavaObjectMethods : IAndroidJavaObject { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn ctor (self , class_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f11e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (class_name) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f121e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRawObject()` overload"] fn get_raw_object (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f12260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRawClass()` overload"] fn get_raw_class (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f12280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } fn call < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , method_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () , "Call" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaObject as :: unity2 :: ClassIdentity > :: NAME , "Call" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (AndroidJavaObject , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (method_name) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } fn call_static < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , method_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () , "CallStatic" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < AndroidJavaObject as :: unity2 :: ClassIdentity > :: NAME , "CallStatic" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (AndroidJavaObject , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (method_name) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`DebugPrint(::unity2::Il2CppString)` overload"] fn debug_print (self , msg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f11a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (msg) , :: core :: option :: Option :: None) } } } # [doc = "`_AndroidJavaObject(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn android_java_object (self , class_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f11e90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (class_name) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor_2 (self , jobject : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f122b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (jobject) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_3 (self ,) -> () { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f11840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f12520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose_2 (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AndroidJavaObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaObject , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f125a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-androidjavaobject")]pub trait IAndroidJavaObjectMethods:IAndroidJavaObject{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn ctor(self,class_name:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f11e50usize)as*mut u8,();
+(AndroidJavaObject)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(class_name),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f121e0usize)as*mut u8,();
+(AndroidJavaObject)__receiver)}
+}
+#[doc="`GetRawObject()` overload"]fn get_raw_object(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12260usize)as*mut u8, ::unity2::IntPtr;
+(AndroidJavaObject)__receiver)}
+}
+#[doc="`GetRawClass()` overload"]fn get_raw_class(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12280usize)as*mut u8, ::unity2::IntPtr;
+(AndroidJavaObject)__receiver)}
+}
+fn call<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,method_name:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<AndroidJavaObject as::unity2::ClassIdentity> ::class(),"Call",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AndroidJavaObject as::unity2::ClassIdentity> ::NAME,"Call",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(AndroidJavaObject, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::convert::Into::into(method_name), ::core::convert::Into::into(args), ::core::option::Option::Some(__mi_opaque),)}
+}
+fn call_static<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,method_name:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<AndroidJavaObject as::unity2::ClassIdentity> ::class(),"CallStatic",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <AndroidJavaObject as::unity2::ClassIdentity> ::NAME,"CallStatic",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(AndroidJavaObject, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::convert::Into::into(method_name), ::core::convert::Into::into(args), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`DebugPrint(::unity2::Il2CppString)` overload"]fn debug_print(self,msg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f11a90usize)as*mut u8,();
+(AndroidJavaObject)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(msg))}
+}
+#[doc="`_AndroidJavaObject(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn android_java_object(self,class_name:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f11e90usize)as*mut u8,();
+(AndroidJavaObject)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(class_name),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor(::unity2::IntPtr)` overload"]fn ctor_2(self,jobject:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f122b0usize)as*mut u8,();
+(AndroidJavaObject)__receiver,(::unity2::IntPtr)::core::convert::Into::into(jobject))}
+}
+#[doc="`.ctor()` overload"]fn ctor_3(self,)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f11840usize)as*mut u8,();
+(AndroidJavaObject)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12520usize)as*mut u8,();
+(AndroidJavaObject)__receiver)}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose_2(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AndroidJavaObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f125a0usize)as*mut u8,();
+(AndroidJavaObject)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+}
 
-#[cfg(feature = "unity_engine-androidjavaobject")]
-impl < __T : IAndroidJavaObject > IAndroidJavaObjectMethods for __T { }
+#[cfg(feature="unity_engine-androidjavaobject")]impl<__T:IAndroidJavaObject>IAndroidJavaObjectMethods for __T{}
 
-#[cfg(feature = "unity_engine-androidjavaobject")]
-impl AndroidJavaObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_raw_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_raw_class_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn debug_print_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn android_java_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn dispose_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn android_java_object_delete_local_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn android_java_class_delete_local_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="unity_engine-androidjavaobject")]impl AndroidJavaObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_raw_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_raw_class_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn debug_print_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn android_java_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn android_java_object_delete_local_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn android_java_class_delete_local_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "unity_engine-androidjavaobject")]
-impl AndroidJavaObject {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"] pub fn new (class_name : :: unity2 :: Il2CppString , args : :: unity2 :: Array < crate :: system :: object :: Object >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AndroidJavaObject) , :: core :: stringify ! (new) ,)) ; < Self as IAndroidJavaObjectMethods > :: ctor (this , class_name , args) ; this }
-
-# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new_2 (jobject : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AndroidJavaObject) , :: core :: stringify ! (new_2) ,)) ; < Self as IAndroidJavaObjectMethods > :: ctor_2 (this , jobject) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_3 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AndroidJavaObject) , :: core :: stringify ! (new_3) ,)) ; < Self as IAndroidJavaObjectMethods > :: ctor_3 (this ,) ; this }
+#[cfg(feature="unity_engine-androidjavaobject")]impl AndroidJavaObject{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` — overload selector"]pub fn new(class_name: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AndroidJavaObject), ::core::stringify!(new),));
+ <Self as IAndroidJavaObjectMethods> ::ctor(this,class_name,args);
+this}
+#[doc="`.ctor(::unity2::IntPtr)` — overload selector"]pub fn new_2(jobject: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AndroidJavaObject), ::core::stringify!(new_2),));
+ <Self as IAndroidJavaObjectMethods> ::ctor_2(this,jobject);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_3()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AndroidJavaObject), ::core::stringify!(new_3),));
+ <Self as IAndroidJavaObjectMethods> ::ctor_3(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-androidjavaobject")]

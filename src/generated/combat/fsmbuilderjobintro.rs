@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: fsmbuilder :: { FSMBuilder , IFSMBuilder }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::fsmbuilder::{FSMBuilder,IFSMBuilder}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderjobintro/FSMBuilderJobIntro.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FSMBuilderJobIntro")] # [parent (crate :: combat :: fsmbuilder :: FSMBuilder)] pub struct FSMBuilderJobIntro {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fsmbuilderjobintro/FSMBuilderJobIntro.md"))]#[::unity2::class(namespace="Combat",name="FSMBuilderJobIntro")]#[parent(crate::combat::fsmbuilder::FSMBuilder)]pub struct FSMBuilderJobIntro{}
 
 }
 
 #[cfg(feature = "combat-fsmbuilderjobintro-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fsmbuilderjobintro")]
-pub trait IFSMBuilderJobIntroMethods : IFSMBuilderJobIntro { # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < FSMBuilderJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderJobIntro , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4a1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddAttack(crate::combat::phase::Phase)` overload"] fn add_attack (self , p : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < FSMBuilderJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderJobIntro , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4a990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FSMBuilderJobIntro as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderJobIntro , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d478b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuilderjobintro")]pub trait IFSMBuilderJobIntroMethods:IFSMBuilderJobIntro{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <FSMBuilderJobIntro as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4a1f0usize)as*mut u8,();
+(FSMBuilderJobIntro)__receiver)}
+}
+#[doc="`AddAttack(crate::combat::phase::Phase)` overload"]fn add_attack(self,p:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <FSMBuilderJobIntro as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4a990usize)as*mut u8,();
+(FSMBuilderJobIntro)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(p))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSMBuilderJobIntro as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d478b0usize)as*mut u8,();
+(FSMBuilderJobIntro)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-fsmbuilderjobintro")]
-impl < __T : IFSMBuilderJobIntro > IFSMBuilderJobIntroMethods for __T { }
+#[cfg(feature="combat-fsmbuilderjobintro")]impl<__T:IFSMBuilderJobIntro>IFSMBuilderJobIntroMethods for __T{}
 
-#[cfg(feature = "combat-fsmbuilderjobintro")]
-impl FSMBuilderJobIntro { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderJobIntro as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderJobIntro as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderJobIntro as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-fsmbuilderjobintro")]impl FSMBuilderJobIntro{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-fsmbuilderjobintro")]
-impl FSMBuilderJobIntro {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FSMBuilderJobIntro) , :: core :: stringify ! (new) ,)) ; < Self as IFSMBuilderJobIntroMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-fsmbuilderjobintro")]impl FSMBuilderJobIntro{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FSMBuilderJobIntro), ::core::stringify!(new),));
+ <Self as IFSMBuilderJobIntroMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-fsmbuilderjobintro")]

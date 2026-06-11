@@ -4,36 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: fieldinfo :: { FieldInfo , IFieldInfo }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
- use crate :: system :: reflection :: runtimefieldinfo :: { IRuntimeFieldInfo , RuntimeFieldInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::fieldinfo::{FieldInfo,IFieldInfo}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
+use crate::system::reflection::runtimefieldinfo::{IRuntimeFieldInfo,RuntimeFieldInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/rtfieldinfo/RtFieldInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "RtFieldInfo")] # [parent (crate :: system :: reflection :: runtimefieldinfo :: RuntimeFieldInfo)] pub struct RtFieldInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/rtfieldinfo/RtFieldInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="RtFieldInfo")]#[parent(crate::system::reflection::runtimefieldinfo::RuntimeFieldInfo)]pub struct RtFieldInfo{}
 
 }
 
 #[cfg(feature = "system-reflection-rtfieldinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-rtfieldinfo")]
-pub trait IRtFieldInfoMethods : IRtFieldInfo { # [doc = "`UnsafeGetValue(crate::system::object::Object)` overload"] fn unsafe_get_value (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { unsafe { let __receiver = < RtFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RtFieldInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd32e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`CheckConsistency(crate::system::object::Object)` overload"] fn check_consistency (self , target : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < RtFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RtFieldInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd32f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RtFieldInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RtFieldInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd3670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-rtfieldinfo")]pub trait IRtFieldInfoMethods:IRtFieldInfo{#[doc="`UnsafeGetValue(crate::system::object::Object)` overload"]fn unsafe_get_value(self,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <RtFieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd32e0usize)as*mut u8,crate::system::object::Object;
+(RtFieldInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`CheckConsistency(crate::system::object::Object)` overload"]fn check_consistency(self,target:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <RtFieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd32f0usize)as*mut u8,();
+(RtFieldInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(target))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RtFieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd3670usize)as*mut u8,();
+(RtFieldInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-rtfieldinfo")]
-impl < __T : IRtFieldInfo > IRtFieldInfoMethods for __T { }
+#[cfg(feature="system-reflection-rtfieldinfo")]impl<__T:IRtFieldInfo>IRtFieldInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-rtfieldinfo")]
-impl RtFieldInfo { pub fn unsafe_get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RtFieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn check_consistency_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RtFieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RtFieldInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="system-reflection-rtfieldinfo")]impl RtFieldInfo{pub fn unsafe_get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn check_consistency_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "system-reflection-rtfieldinfo")]
-impl RtFieldInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RtFieldInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRtFieldInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-rtfieldinfo")]impl RtFieldInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RtFieldInfo), ::core::stringify!(new),));
+ <Self as IRtFieldInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-rtfieldinfo")]

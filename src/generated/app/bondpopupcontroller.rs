@@ -4,47 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bondpopupcontroller/BondPopUpController.md"))] # [:: unity2 :: class (namespace = "App" , name = "BondPopUpController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct BondPopUpController {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_PopupObject")] pub m_popup_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: app :: uniticon :: UnitIcon ,
-# [offset (48)] # [rename (name = "m_GodIcon")] pub m_god_icon : crate :: app :: uniticon :: UnitIcon ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bondpopupcontroller/BondPopUpController.md"))]#[::unity2::class(namespace="App",name="BondPopUpController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct BondPopUpController{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_PopupObject")]pub m_popup_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_UnitIcon")]pub m_unit_icon:crate::app::uniticon::UnitIcon, #[offset(48)]#[rename(name="m_GodIcon")]pub m_god_icon:crate::app::uniticon::UnitIcon,}
 
 }
 
 #[cfg(feature = "app-bondpopupcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bondpopupcontroller")]
-impl BondPopUpController { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a350usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a3f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a470usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::unit::Unit, crate::app::godunit::GodUnit, f32)` overload"] pub fn create (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , offset_pos_y : impl :: core :: convert :: Into < f32 >) -> crate :: app :: bondpopupcontroller :: BondPopUpController { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: bondpopupcontroller :: BondPopUpController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a4f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (offset_pos_y) , :: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::unit::Unit, crate::app::goddata::GodData, f32)` overload"] pub fn create_2 (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData > , offset_pos_y : impl :: core :: convert :: Into < f32 >) -> crate :: app :: bondpopupcontroller :: BondPopUpController { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: goddata :: GodData , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: bondpopupcontroller :: BondPopUpController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a5a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (offset_pos_y) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bondpopupcontroller")]impl BondPopUpController{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298a350usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298a3f0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298a470usize)as*mut u8,();
+)}
+}
+#[doc="`Create(crate::app::unit::Unit, crate::app::godunit::GodUnit, f32)` overload"]pub fn create(unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,offset_pos_y:impl::core::convert::Into<f32>)->crate::app::bondpopupcontroller::BondPopUpController{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298a4f0usize)as*mut u8,crate::app::bondpopupcontroller::BondPopUpController;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(f32)::core::convert::Into::into(offset_pos_y))}
+}
+#[doc="`Create(crate::app::unit::Unit, crate::app::goddata::GodData, f32)` overload"]pub fn create_2(unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::goddata::GodData> ,offset_pos_y:impl::core::convert::Into<f32>)->crate::app::bondpopupcontroller::BondPopUpController{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298a5a0usize)as*mut u8,crate::app::bondpopupcontroller::BondPopUpController;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::goddata::GodData)::core::convert::Into::into(god),(f32)::core::convert::Into::into(offset_pos_y))}
+}
+}
 
-#[cfg(feature = "app-bondpopupcontroller")]
-pub trait IBondPopUpControllerMethods : IBondPopUpController { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BondPopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondPopUpController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize(f32)` overload"] fn initialize (self , offset_pos_y : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < BondPopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondPopUpController , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (offset_pos_y) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < BondPopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondPopUpController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetIcon(crate::app::unit::Unit, crate::app::goddata::GodData)` overload"] fn set_icon (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < BondPopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondPopUpController , crate :: app :: unit :: Unit , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bondpopupcontroller")]pub trait IBondPopUpControllerMethods:IBondPopUpController{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BondPopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298a870usize)as*mut u8,();
+(BondPopUpController)__receiver)}
+}
+#[doc="`Initialize(f32)` overload"]fn initialize(self,offset_pos_y:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <BondPopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298a7c0usize)as*mut u8,();
+(BondPopUpController)__receiver,(f32)::core::convert::Into::into(offset_pos_y))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <BondPopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298a880usize)as*mut u8,();
+(BondPopUpController)__receiver)}
+}
+#[doc="`SetIcon(crate::app::unit::Unit, crate::app::goddata::GodData)` overload"]fn set_icon(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <BondPopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298a830usize)as*mut u8,();
+(BondPopUpController)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::goddata::GodData)::core::convert::Into::into(god))}
+}
+}
 
-#[cfg(feature = "app-bondpopupcontroller")]
-impl < __T : IBondPopUpController > IBondPopUpControllerMethods for __T { }
+#[cfg(feature="app-bondpopupcontroller")]impl<__T:IBondPopUpController>IBondPopUpControllerMethods for __T{}
 
-#[cfg(feature = "app-bondpopupcontroller")]
-impl BondPopUpController { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondPopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondPopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondPopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondPopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondPopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondPopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondPopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondPopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondPopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-bondpopupcontroller")]impl BondPopUpController{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-bondpopupcontroller")]
-impl BondPopUpController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BondPopUpController) , :: core :: stringify ! (new) ,)) ; < Self as IBondPopUpControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-bondpopupcontroller")]impl BondPopUpController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BondPopUpController), ::core::stringify!(new),));
+ <Self as IBondPopUpControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-bondpopupcontroller")]

@@ -4,35 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/playreportstruct/PlayReportStruct.md"))] # [:: unity2 :: class (namespace = "App" , name = "PlayReportStruct")] # [parent (crate :: system :: object :: Object)] pub struct PlayReportStruct {
-# [static_field] # [rename (name = "s_KeyValueCount")] pub s_key_value_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/playreportstruct/PlayReportStruct.md"))]#[::unity2::class(namespace="App",name="PlayReportStruct")]#[parent(crate::system::object::Object)]pub struct PlayReportStruct{#[static_field]#[rename(name="s_KeyValueCount")]pub s_key_value_count:i32,}
 
 }
 
 #[cfg(feature = "app-playreportstruct-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-playreportstruct")]
-impl PlayReportStruct { # [doc = "`SetBuffer(i64)` overload"] pub fn set_buffer (buffer_size : impl :: core :: convert :: Into < i64 >) -> () { unsafe { { let __inner : extern "C" fn (i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2813140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (buffer_size) , :: core :: option :: Option :: None) } } } # [doc = "`GetKeyValueCount()` overload"] pub fn get_key_value_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814160usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, i64)` overload"] pub fn add (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < i64 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2813270usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, u64)` overload"] pub fn add_2 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < u64 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, f32)` overload"] pub fn add_3 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28142b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, f64)` overload"] pub fn add_4 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < f64 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814360usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn add_5 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28131c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, bool)` overload"] pub fn add_6 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2813320usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814420usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-playreportstruct")]impl PlayReportStruct{#[doc="`SetBuffer(i64)` overload"]pub fn set_buffer(buffer_size:impl::core::convert::Into<i64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2813140usize)as*mut u8,();
+(i64)::core::convert::Into::into(buffer_size))}
+}
+#[doc="`GetKeyValueCount()` overload"]pub fn get_key_value_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2814160usize)as*mut u8,i32;
+)}
+}
+#[doc="`Add(::unity2::Il2CppString, i64)` overload"]pub fn add(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<i64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2813270usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(i64)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, u64)` overload"]pub fn add_2(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<u64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2814200usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(u64)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, f32)` overload"]pub fn add_3(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28142b0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(f32)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, f64)` overload"]pub fn add_4(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<f64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2814360usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(f64)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn add_5(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28131c0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(::unity2::Il2CppString)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, bool)` overload"]pub fn add_6(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2813320usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(bool)::core::convert::Into::into(val))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2814420usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-playreportstruct")]
-pub trait IPlayReportStructMethods : IPlayReportStruct { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayReportStruct as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayReportStruct , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-playreportstruct")]pub trait IPlayReportStructMethods:IPlayReportStruct{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayReportStruct as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814410usize)as*mut u8,();
+(PlayReportStruct)__receiver)}
+}
+}
 
-#[cfg(feature = "app-playreportstruct")]
-impl < __T : IPlayReportStruct > IPlayReportStructMethods for __T { }
+#[cfg(feature="app-playreportstruct")]impl<__T:IPlayReportStruct>IPlayReportStructMethods for __T{}
 
-#[cfg(feature = "app-playreportstruct")]
-impl PlayReportStruct { pub fn set_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_key_value_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn add_6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportStruct as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-playreportstruct")]impl PlayReportStruct{pub fn set_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_key_value_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-playreportstruct")]
-impl PlayReportStruct {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayReportStruct) , :: core :: stringify ! (new) ,)) ; < Self as IPlayReportStructMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-playreportstruct")]impl PlayReportStruct{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayReportStruct), ::core::stringify!(new),));
+ <Self as IPlayReportStructMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-playreportstruct")]

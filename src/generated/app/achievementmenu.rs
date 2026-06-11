@@ -4,144 +4,264 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: exchangeyesnodialog :: { ExchangeYesNoDialog , IExchangeYesNoDialog }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::exchangeyesnodialog::{ExchangeYesNoDialog,IExchangeYesNoDialog}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_AchievementMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "AchievementMenu.AchievementMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct AchievementMenu_AchievementMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievementmenu/AchievementMenu.md"))]#[::unity2::class(namespace="App",name="AchievementMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct AchievementMenu{#[static_field]#[rename(name="m_SelectCategory")]pub m_select_category:i32, #[static_field]#[rename(name="m_DispAchievementKind")]pub m_disp_achievement_kind: ::unity2::Array<bool> , #[offset(200)]#[rename(name="m_MenuSelectList")]pub m_menu_select_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_AchievementMenuNoneItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "AchievementMenu.AchievementMenuNoneItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct AchievementMenu_AchievementMenuNoneItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievementmenu/AchievementMenu_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="AchievementMenu.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct AchievementMenu_YesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::system::action::Action,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_YesMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "AchievementMenu.YesMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct AchievementMenu_YesMenuItem {
-# [offset (112)] # [rename (name = "m_YesEventHandler")] pub m_yes_event_handler : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievementmenu/AchievementMenu_AchievementMenuNoneItem.md"))]#[::unity2::class(namespace="App",name="AchievementMenu.AchievementMenuNoneItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AchievementMenu_AchievementMenuNoneItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_GetBondsExchangeDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "AchievementMenu.GetBondsExchangeDialog")] # [parent (crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog)] pub struct AchievementMenu_GetBondsExchangeDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievementmenu/AchievementMenu_GetBondsExchangeDialog.md"))]#[::unity2::class(namespace="App",name="AchievementMenu.GetBondsExchangeDialog")]#[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]pub struct AchievementMenu_GetBondsExchangeDialog{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "AchievementMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct AchievementMenu {
-# [static_field] # [rename (name = "m_SelectCategory")] pub m_select_category : i32 ,
-# [static_field] # [rename (name = "m_DispAchievementKind")] pub m_disp_achievement_kind : :: unity2 :: Array < bool > ,
-# [offset (200)] # [rename (name = "m_MenuSelectList")] pub m_menu_select_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuselect :: BasicMenuSelect > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievementmenu/AchievementMenu_AchievementMenuItem.md"))]#[::unity2::class(namespace="App",name="AchievementMenu.AchievementMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AchievementMenu_AchievementMenuItem{}
 
 }
 
 #[cfg(feature = "app-achievementmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-achievementmenu")]
-pub trait IAchievementMenu_AchievementMenuItemMethods : IAchievementMenu_AchievementMenuItem { # [doc = "`get_AchieveData()` overload"] fn get_achieve_data (self ,) -> crate :: app :: achievedata :: AchieveData { unsafe { let __receiver = < AchievementMenu_AchievementMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_AchievementMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b986f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AchieveData(crate::app::achievedata::AchieveData)` overload"] fn set_achieve_data (self , value : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData >) -> () { unsafe { let __receiver = < AchievementMenu_AchievementMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_AchievementMenuItem , crate :: app :: achievedata :: AchieveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b98700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::achievedata::AchieveData)` overload"] fn ctor (self , achieve_data : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData >) -> () { unsafe { let __receiver = < AchievementMenu_AchievementMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_AchievementMenuItem , crate :: app :: achievedata :: AchieveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b98710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (achieve_data) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < AchievementMenu_AchievementMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_AchievementMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b98750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchievementMenu_AchievementMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_AchievementMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b987b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AchievementMenu_AchievementMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_AchievementMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b987c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-achievementmenu")]
-impl < __T : IAchievementMenu_AchievementMenuItem > IAchievementMenu_AchievementMenuItemMethods for __T { }
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_AchievementMenuItem { pub fn get_achieve_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_AchievementMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_achieve_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_AchievementMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_AchievementMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_AchievementMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_AchievementMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_AchievementMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_AchievementMenuItem {
-# [doc = "`.ctor(crate::app::achievedata::AchieveData)` — overload selector"] pub fn new (achieve_data : crate :: app :: achievedata :: AchieveData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AchievementMenu_AchievementMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IAchievementMenu_AchievementMenuItemMethods > :: ctor (this , achieve_data) ; this }
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cdfa0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateMenuItem()` overload"]pub fn create_menu_item()->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ce1d0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+)}
+}
+#[doc="`UpdateDispAchievementCategory(crate::app::achievedata::AchieveData_Categories)` overload"]pub fn update_disp_achievement_category(disp_category:impl::core::convert::Into<crate::app::achievedata::AchieveData_Categories>)->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cf8c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+(crate::app::achievedata::AchieveData_Categories)::core::convert::Into::into(disp_category))}
+}
+#[doc="`UpdateDispAchievementStateCleared()` overload"]pub fn update_disp_achievement_state_cleared()->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cf710usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+)}
+}
+#[doc="`SetDisplayFromKind(crate::app::achievedata::AchieveData)` overload"]pub fn set_display_from_kind(data:impl::core::convert::Into<crate::app::achievedata::AchieveData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cfd80usize)as*mut u8,bool;
+(crate::app::achievedata::AchieveData)::core::convert::Into::into(data))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d04a0usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-achievementmenu")]
-pub trait IAchievementMenu_AchievementMenuNoneItemMethods : IAchievementMenu_AchievementMenuNoneItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AchievementMenu_AchievementMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_AchievementMenuNoneItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b98d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < AchievementMenu_AchievementMenuNoneItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_AchievementMenuNoneItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b98df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-achievementmenu")]
-impl < __T : IAchievementMenu_AchievementMenuNoneItem > IAchievementMenu_AchievementMenuNoneItemMethods for __T { }
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_AchievementMenuNoneItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_AchievementMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_AchievementMenuNoneItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_AchievementMenuNoneItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AchievementMenu_AchievementMenuNoneItem) , :: core :: stringify ! (new) ,)) ; < Self as IAchievementMenu_AchievementMenuNoneItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-achievementmenu")]pub trait IAchievementMenuMethods:IAchievementMenu{#[doc="`GetSelectCategory()` overload"]fn get_select_category(self,)->i32{unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27cdf30usize)as*mut u8,i32;
+(AchievementMenu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::achievementmenucontent::AchievementMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::achievementmenucontent::AchievementMenuContent>)->(){unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ce3a0usize)as*mut u8,();
+(AchievementMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::achievementmenucontent::AchievementMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ce960usize)as*mut u8, ::unity2::Il2CppString;
+(AchievementMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ce9b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AchievementMenu)__receiver)}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ce9c0usize)as*mut u8,();
+(AchievementMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27cef90usize)as*mut u8,();
+(AchievementMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27cf270usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AchievementMenu)__receiver)}
+}
+#[doc="`UpdateAchievementList(bool)` overload"]fn update_achievement_list(self,is_sort:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27cede0usize)as*mut u8,();
+(AchievementMenu)__receiver,(bool)::core::convert::Into::into(is_sort))}
+}
+#[doc="`GetAllRewardNum()` overload"]fn get_all_reward_num(self,)->i32{unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27cf590usize)as*mut u8,i32;
+(AchievementMenu)__receiver)}
+}
+#[doc="`GetAllReward()` overload"]fn get_all_reward(self,)->(){unsafe{let __receiver= <AchievementMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d00e0usize)as*mut u8,();
+(AchievementMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-achievementmenu")]
-pub trait IAchievementMenu_YesMenuItemMethods : IAchievementMenu_YesMenuItem { # [doc = "`.ctor(crate::system::action::Action)` overload"] fn ctor (self , yes_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < AchievementMenu_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_YesMenuItem , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b98e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (yes_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AchievementMenu_YesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_YesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b98ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-achievementmenu")]impl<__T:IAchievementMenu>IAchievementMenuMethods for __T{}
 
-#[cfg(feature = "app-achievementmenu")]
-impl < __T : IAchievementMenu_YesMenuItem > IAchievementMenu_YesMenuItemMethods for __T { }
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_YesMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_YesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_YesMenuItem {
-# [doc = "`.ctor(crate::system::action::Action)` — overload selector"] pub fn new (yes_event_handler : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AchievementMenu_YesMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IAchievementMenu_YesMenuItemMethods > :: ctor (this , yes_event_handler) ; this }
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu{pub fn get_select_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_achievement_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_disp_achievement_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn update_disp_achievement_state_cleared_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_all_reward_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_all_reward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_display_from_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_GetBondsExchangeDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , bonds_num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b98a60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (message) , :: core :: convert :: Into :: into (bonds_num) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-achievementmenu")]
-pub trait IAchievementMenu_GetBondsExchangeDialogMethods : IAchievementMenu_GetBondsExchangeDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: exchangedialogcontent :: ExchangeDialogContent > , top_message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , get_item_title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , get_item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > > , get_money_param : impl :: core :: convert :: Into < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam > , cost_item_title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , cost_item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > > , cost_money_param : impl :: core :: convert :: Into < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam >) -> () { unsafe { let __receiver = < AchievementMenu_GetBondsExchangeDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu_GetBondsExchangeDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: exchangedialogcontent :: ExchangeDialogContent , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b98e00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (top_message) , :: core :: convert :: Into :: into (get_item_title) , :: core :: convert :: Into :: into (get_item_param_list) , :: core :: convert :: Into :: into (get_money_param) , :: core :: convert :: Into :: into (cost_item_title) , :: core :: convert :: Into :: into (cost_item_param_list) , :: core :: convert :: Into :: into (cost_money_param) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-achievementmenu")]
-impl < __T : IAchievementMenu_GetBondsExchangeDialog > IAchievementMenu_GetBondsExchangeDialogMethods for __T { }
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_GetBondsExchangeDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_GetBondsExchangeDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu_GetBondsExchangeDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_GetBondsExchangeDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: exchangedialogcontent :: ExchangeDialogContent , top_message : :: unity2 :: Il2CppString , get_item_title : :: unity2 :: Il2CppString , get_item_param_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , get_money_param : crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam , cost_item_title : :: unity2 :: Il2CppString , cost_item_param_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , cost_money_param : crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AchievementMenu_GetBondsExchangeDialog) , :: core :: stringify ! (new) ,)) ; < Self as IAchievementMenu_GetBondsExchangeDialogMethods > :: ctor (this , menu_item_list , menu_content , top_message , get_item_title , get_item_param_list , get_money_param , cost_item_title , cost_item_param_list , cost_money_param) ; this }
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::achievementmenucontent::AchievementMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::achievementmenucontent::AchievementMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AchievementMenu), ::core::stringify!(new),));
+ <Self as IAchievementMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cdfa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenuItem()` overload"] pub fn create_menu_item () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ce1d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UpdateDispAchievementCategory(crate::app::achievedata::AchieveData_Categories)` overload"] pub fn update_disp_achievement_category (disp_category : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Categories >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Categories , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cf8c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (disp_category) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDispAchievementStateCleared()` overload"] pub fn update_disp_achievement_state_cleared () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cf710usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetDisplayFromKind(crate::app::achievedata::AchieveData)` overload"] pub fn set_display_from_kind (data : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cfd80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d04a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-achievementmenu")]pub trait IAchievementMenu_YesMenuItemMethods:IAchievementMenu_YesMenuItem{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <AchievementMenu_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b98e10usize)as*mut u8,();
+(AchievementMenu_YesMenuItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(yes_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AchievementMenu_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b98ec0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AchievementMenu_YesMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-achievementmenu")]
-pub trait IAchievementMenuMethods : IAchievementMenu { # [doc = "`GetSelectCategory()` overload"] fn get_select_category (self ,) -> i32 { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cdf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::achievementmenucontent::AchievementMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: achievementmenucontent :: AchievementMenuContent >) -> () { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: achievementmenucontent :: AchievementMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ce3a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ce960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ce9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyLeft(bool)` overload"] fn key_left (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ce9c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyRight(bool)` overload"] fn key_right (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cef90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cf270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAchievementList(bool)` overload"] fn update_achievement_list (self , is_sort : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cede0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_sort) , :: core :: option :: Option :: None) } } } # [doc = "`GetAllRewardNum()` overload"] fn get_all_reward_num (self ,) -> i32 { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cf590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAllReward()` overload"] fn get_all_reward (self ,) -> () { unsafe { let __receiver = < AchievementMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d00e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-achievementmenu")]impl<__T:IAchievementMenu_YesMenuItem>IAchievementMenu_YesMenuItemMethods for __T{}
 
-#[cfg(feature = "app-achievementmenu")]
-impl < __T : IAchievementMenu > IAchievementMenuMethods for __T { }
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu { pub fn get_select_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn key_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn key_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_achievement_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_disp_achievement_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn update_disp_achievement_state_cleared_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_all_reward_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_all_reward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_display_from_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu_YesMenuItem{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(yes_event_handler:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AchievementMenu_YesMenuItem), ::core::stringify!(new),));
+ <Self as IAchievementMenu_YesMenuItemMethods> ::ctor(this,yes_event_handler);
+this}
+}
 
-#[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::achievementmenucontent::AchievementMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: achievementmenucontent :: AchievementMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AchievementMenu) , :: core :: stringify ! (new) ,)) ; < Self as IAchievementMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-achievementmenu")]pub trait IAchievementMenu_AchievementMenuNoneItemMethods:IAchievementMenu_AchievementMenuNoneItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AchievementMenu_AchievementMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b98d50usize)as*mut u8,();
+(AchievementMenu_AchievementMenuNoneItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <AchievementMenu_AchievementMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b98df0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(AchievementMenu_AchievementMenuNoneItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-achievementmenu")]impl<__T:IAchievementMenu_AchievementMenuNoneItem>IAchievementMenu_AchievementMenuNoneItemMethods for __T{}
+
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu_AchievementMenuNoneItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu_AchievementMenuNoneItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AchievementMenu_AchievementMenuNoneItem), ::core::stringify!(new),));
+ <Self as IAchievementMenu_AchievementMenuNoneItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu_GetBondsExchangeDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,bonds_num:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b98a60usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message),(i32)::core::convert::Into::into(bonds_num))}
+}
+}
+
+#[cfg(feature="app-achievementmenu")]pub trait IAchievementMenu_GetBondsExchangeDialogMethods:IAchievementMenu_GetBondsExchangeDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::exchangedialogcontent::ExchangeDialogContent> ,top_message:impl::core::convert::Into< ::unity2::Il2CppString> ,get_item_title:impl::core::convert::Into< ::unity2::Il2CppString> ,get_item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> > ,get_money_param:impl::core::convert::Into<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam> ,cost_item_title:impl::core::convert::Into< ::unity2::Il2CppString> ,cost_item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> > ,cost_money_param:impl::core::convert::Into<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam>)->(){unsafe{let __receiver= <AchievementMenu_GetBondsExchangeDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b98e00usize)as*mut u8,();
+(AchievementMenu_GetBondsExchangeDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::exchangedialogcontent::ExchangeDialogContent)::core::convert::Into::into(menu_content),(::unity2::Il2CppString)::core::convert::Into::into(top_message),(::unity2::Il2CppString)::core::convert::Into::into(get_item_title),(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)::core::convert::Into::into(get_item_param_list),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)::core::convert::Into::into(get_money_param),(::unity2::Il2CppString)::core::convert::Into::into(cost_item_title),(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)::core::convert::Into::into(cost_item_param_list),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)::core::convert::Into::into(cost_money_param))}
+}
+}
+
+#[cfg(feature="app-achievementmenu")]impl<__T:IAchievementMenu_GetBondsExchangeDialog>IAchievementMenu_GetBondsExchangeDialogMethods for __T{}
+
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu_GetBondsExchangeDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu_GetBondsExchangeDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::exchangedialogcontent::ExchangeDialogContent,top_message: ::unity2::Il2CppString,get_item_title: ::unity2::Il2CppString,get_item_param_list:crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> ,get_money_param:crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,cost_item_title: ::unity2::Il2CppString,cost_item_param_list:crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> ,cost_money_param:crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AchievementMenu_GetBondsExchangeDialog), ::core::stringify!(new),));
+ <Self as IAchievementMenu_GetBondsExchangeDialogMethods> ::ctor(this,menu_item_list,menu_content,top_message,get_item_title,get_item_param_list,get_money_param,cost_item_title,cost_item_param_list,cost_money_param);
+this}
+}
+
+#[cfg(feature="app-achievementmenu")]pub trait IAchievementMenu_AchievementMenuItemMethods:IAchievementMenu_AchievementMenuItem{#[doc="`get_AchieveData()` overload"]fn get_achieve_data(self,)->crate::app::achievedata::AchieveData{unsafe{let __receiver= <AchievementMenu_AchievementMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b986f0usize)as*mut u8,crate::app::achievedata::AchieveData;
+(AchievementMenu_AchievementMenuItem)__receiver)}
+}
+#[doc="`set_AchieveData(crate::app::achievedata::AchieveData)` overload"]fn set_achieve_data(self,value:impl::core::convert::Into<crate::app::achievedata::AchieveData>)->(){unsafe{let __receiver= <AchievementMenu_AchievementMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b98700usize)as*mut u8,();
+(AchievementMenu_AchievementMenuItem)__receiver,(crate::app::achievedata::AchieveData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::achievedata::AchieveData)` overload"]fn ctor(self,achieve_data:impl::core::convert::Into<crate::app::achievedata::AchieveData>)->(){unsafe{let __receiver= <AchievementMenu_AchievementMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b98710usize)as*mut u8,();
+(AchievementMenu_AchievementMenuItem)__receiver,(crate::app::achievedata::AchieveData)::core::convert::Into::into(achieve_data))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <AchievementMenu_AchievementMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b98750usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(AchievementMenu_AchievementMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AchievementMenu_AchievementMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b987b0usize)as*mut u8, ::unity2::Il2CppString;
+(AchievementMenu_AchievementMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AchievementMenu_AchievementMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b987c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AchievementMenu_AchievementMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-achievementmenu")]impl<__T:IAchievementMenu_AchievementMenuItem>IAchievementMenu_AchievementMenuItemMethods for __T{}
+
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu_AchievementMenuItem{pub fn get_achieve_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_achieve_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-achievementmenu")]impl AchievementMenu_AchievementMenuItem{#[doc="`.ctor(crate::app::achievedata::AchieveData)` — overload selector"]pub fn new(achieve_data:crate::app::achievedata::AchieveData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AchievementMenu_AchievementMenuItem), ::core::stringify!(new),));
+ <Self as IAchievementMenu_AchievementMenuItemMethods> ::ctor(this,achieve_data);
+this}
 }
 
 #[cfg(feature = "app-achievementmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AchievementMenu_AchievementMenuItem;
-    pub use super::IAchievementMenu_AchievementMenuItem;
-    pub use super::IAchievementMenu_AchievementMenuItemMethods;
-    pub use super::AchievementMenu_AchievementMenuNoneItem;
-    pub use super::IAchievementMenu_AchievementMenuNoneItem;
-    pub use super::IAchievementMenu_AchievementMenuNoneItemMethods;
-    pub use super::AchievementMenu_YesMenuItem;
-    pub use super::IAchievementMenu_YesMenuItem;
-    pub use super::IAchievementMenu_YesMenuItemMethods;
-    pub use super::AchievementMenu_GetBondsExchangeDialog;
-    pub use super::IAchievementMenu_GetBondsExchangeDialog;
-    pub use super::IAchievementMenu_GetBondsExchangeDialogMethods;
     pub use super::AchievementMenu;
     pub use super::IAchievementMenu;
     pub use super::IAchievementMenuMethods;
+    pub use super::AchievementMenu_YesMenuItem;
+    pub use super::IAchievementMenu_YesMenuItem;
+    pub use super::IAchievementMenu_YesMenuItemMethods;
+    pub use super::AchievementMenu_AchievementMenuNoneItem;
+    pub use super::IAchievementMenu_AchievementMenuNoneItem;
+    pub use super::IAchievementMenu_AchievementMenuNoneItemMethods;
+    pub use super::AchievementMenu_GetBondsExchangeDialog;
+    pub use super::IAchievementMenu_GetBondsExchangeDialog;
+    pub use super::IAchievementMenu_GetBondsExchangeDialogMethods;
+    pub use super::AchievementMenu_AchievementMenuItem;
+    pub use super::IAchievementMenu_AchievementMenuItem;
+    pub use super::IAchievementMenu_AchievementMenuItemMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

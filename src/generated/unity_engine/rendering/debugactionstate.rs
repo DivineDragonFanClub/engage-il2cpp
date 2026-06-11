@@ -4,77 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/debugactionstate/DebugActionState_DebugActionKeyType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DebugActionState_DebugActionKeyType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/debugactionstate/DebugActionState.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="DebugActionState")]#[parent(crate::system::object::Object)]pub struct DebugActionState{#[offset(16)]#[rename(name="m_Type")]pub m_type:crate::unity_engine::rendering::debugactionstate::DebugActionState_DebugActionKeyType, #[offset(24)]#[rename(name="m_PressedButtons")]pub m_pressed_buttons: ::unity2::Array< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_PressedAxis")]pub m_pressed_axis: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_PressedKeys")]pub m_pressed_keys: ::unity2::Array<crate::unity_engine::keycode::KeyCode> , #[offset(48)]#[rename(name="m_TriggerPressedUp")]pub m_trigger_pressed_up: ::unity2::Array<bool> , #[offset(56)]#[rename(name="m_Timer")]pub m_timer:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/debugactionstate/DebugActionState_DebugActionKeyType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DebugActionState_DebugActionKeyType{pub value:i32,}
+impl::unity2::ClassIdentity for DebugActionState_DebugActionKeyType{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="DebugActionState.DebugActionKeyType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for DebugActionState_DebugActionKeyType  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "DebugActionState.DebugActionKeyType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for DebugActionState_DebugActionKeyType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for DebugActionState_DebugActionKeyType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl DebugActionState_DebugActionKeyType{pub fn button()->Self{Self{value:0}
 }
-
-
-impl  DebugActionState_DebugActionKeyType  {
-    pub fn button() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn axis() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn key() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn axis()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/debugactionstate/DebugActionState.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "DebugActionState")] # [parent (crate :: system :: object :: Object)] pub struct DebugActionState {
-# [offset (16)] # [rename (name = "m_Type")] pub m_type : crate :: unity_engine :: rendering :: debugactionstate :: DebugActionState_DebugActionKeyType ,
-# [offset (24)] # [rename (name = "m_PressedButtons")] pub m_pressed_buttons : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (32)] # [rename (name = "m_PressedAxis")] pub m_pressed_axis : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_PressedKeys")] pub m_pressed_keys : :: unity2 :: Array < crate :: unity_engine :: keycode :: KeyCode > ,
-# [offset (48)] # [rename (name = "m_TriggerPressedUp")] pub m_trigger_pressed_up : :: unity2 :: Array < bool > ,
-# [offset (56)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
+pub fn key()->Self{Self{value:2}
+}
 }
 
 }
@@ -82,27 +38,81 @@ impl  DebugActionState_DebugActionKeyType  {
 #[cfg(feature = "unity_engine-rendering-debugactionstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-debugactionstate")]
-pub trait IDebugActionStateMethods : IDebugActionState { # [doc = "`get_runningAction()` overload"] fn get_running_action (self ,) -> bool { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3536740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_runningAction(bool)` overload"] fn set_running_action (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3536750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_actionState()` overload"] fn get_action_state (self ,) -> f32 { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3536760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_actionState(f32)` overload"] fn set_action_state (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3536770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Trigger(i32, f32)` overload"] fn trigger (self , trigger_count : impl :: core :: convert :: Into < i32 > , state : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3536780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (trigger_count) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`TriggerWithButton(::unity2::Array<::unity2::Il2CppString>, f32)` overload"] fn trigger_with_button (self , buttons : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > > , state : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , :: unity2 :: Array < :: unity2 :: Il2CppString > , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3536860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buttons) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`TriggerWithAxis(::unity2::Il2CppString, f32)` overload"] fn trigger_with_axis (self , axis : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35368f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (axis) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`TriggerWithKey(::unity2::Array<crate::unity_engine::keycode::KeyCode>, f32)` overload"] fn trigger_with_key (self , keys : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: keycode :: KeyCode > > , state : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , :: unity2 :: Array < crate :: unity_engine :: keycode :: KeyCode > , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3536940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (keys) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35369d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update(crate::unity_engine::rendering::debugactiondesc::DebugActionDesc)` overload"] fn update (self , desc : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugactiondesc :: DebugActionDesc >) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , crate :: unity_engine :: rendering :: debugactiondesc :: DebugActionDesc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35369f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (desc) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugActionState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugActionState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3536bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-debugactionstate")]pub trait IDebugActionStateMethods:IDebugActionState{#[doc="`get_runningAction()` overload"]fn get_running_action(self,)->bool{unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3536740usize)as*mut u8,bool;
+(DebugActionState)__receiver)}
+}
+#[doc="`set_runningAction(bool)` overload"]fn set_running_action(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3536750usize)as*mut u8,();
+(DebugActionState)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_actionState()` overload"]fn get_action_state(self,)->f32{unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3536760usize)as*mut u8,f32;
+(DebugActionState)__receiver)}
+}
+#[doc="`set_actionState(f32)` overload"]fn set_action_state(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3536770usize)as*mut u8,();
+(DebugActionState)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Trigger(i32, f32)` overload"]fn trigger(self,trigger_count:impl::core::convert::Into<i32> ,state:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3536780usize)as*mut u8,();
+(DebugActionState)__receiver,(i32)::core::convert::Into::into(trigger_count),(f32)::core::convert::Into::into(state))}
+}
+#[doc="`TriggerWithButton(::unity2::Array<::unity2::Il2CppString>, f32)` overload"]fn trigger_with_button(self,buttons:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,state:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3536860usize)as*mut u8,();
+(DebugActionState)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(buttons),(f32)::core::convert::Into::into(state))}
+}
+#[doc="`TriggerWithAxis(::unity2::Il2CppString, f32)` overload"]fn trigger_with_axis(self,axis:impl::core::convert::Into< ::unity2::Il2CppString> ,state:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35368f0usize)as*mut u8,();
+(DebugActionState)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(axis),(f32)::core::convert::Into::into(state))}
+}
+#[doc="`TriggerWithKey(::unity2::Array<crate::unity_engine::keycode::KeyCode>, f32)` overload"]fn trigger_with_key(self,keys:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::keycode::KeyCode> > ,state:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3536940usize)as*mut u8,();
+(DebugActionState)__receiver,(::unity2::Array<crate::unity_engine::keycode::KeyCode>)::core::convert::Into::into(keys),(f32)::core::convert::Into::into(state))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35369d0usize)as*mut u8,();
+(DebugActionState)__receiver)}
+}
+#[doc="`Update(crate::unity_engine::rendering::debugactiondesc::DebugActionDesc)` overload"]fn update(self,desc:impl::core::convert::Into<crate::unity_engine::rendering::debugactiondesc::DebugActionDesc>)->(){unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35369f0usize)as*mut u8,();
+(DebugActionState)__receiver,(crate::unity_engine::rendering::debugactiondesc::DebugActionDesc)::core::convert::Into::into(desc))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugActionState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3536bf0usize)as*mut u8,();
+(DebugActionState)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-debugactionstate")]
-impl < __T : IDebugActionState > IDebugActionStateMethods for __T { }
+#[cfg(feature="unity_engine-rendering-debugactionstate")]impl<__T:IDebugActionState>IDebugActionStateMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-debugactionstate")]
-impl DebugActionState { pub fn get_running_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_running_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_action_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_action_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn trigger_with_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn trigger_with_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn trigger_with_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugActionState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-rendering-debugactionstate")]impl DebugActionState{pub fn get_running_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_running_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_action_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_action_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn trigger_with_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn trigger_with_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn trigger_with_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "unity_engine-rendering-debugactionstate")]
-impl DebugActionState {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugActionState) , :: core :: stringify ! (new) ,)) ; < Self as IDebugActionStateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-debugactionstate")]impl DebugActionState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugActionState), ::core::stringify!(new),));
+ <Self as IDebugActionStateMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-debugactionstate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugActionState_DebugActionKeyType;
     pub use super::DebugActionState;
     pub use super::IDebugActionState;
     pub use super::IDebugActionStateMethods;
+    pub use super::DebugActionState_DebugActionKeyType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

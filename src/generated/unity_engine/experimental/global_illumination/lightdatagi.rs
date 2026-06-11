@@ -4,59 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/lightdatagi/LightDataGI.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LightDataGI {
-    pub instance_id: i32,
-    pub cookie_id: i32,
-    pub cookie_scale: f32,
-    pub color: crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor,
-    pub indirect_color: crate :: unity_engine :: experimental :: global_illumination :: linearcolor :: LinearColor,
-    pub orientation: crate :: unity_engine :: quaternion :: Quaternion,
-    pub position: crate :: unity_engine :: vector3 :: Vector3,
-    pub range: f32,
-    pub cone_angle: f32,
-    pub inner_cone_angle: f32,
-    pub shape0: f32,
-    pub shape1: f32,
-    pub r#type: crate :: unity_engine :: experimental :: global_illumination :: lighttype_2 :: LightType_2,
-    pub mode: crate :: unity_engine :: experimental :: global_illumination :: lightmode :: LightMode,
-    pub shadow: u8,
-    pub falloff: crate :: unity_engine :: experimental :: global_illumination :: fallofftype :: FalloffType,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/global_illumination/lightdatagi/LightDataGI.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LightDataGI{pub instance_id:i32,pub cookie_id:i32,pub cookie_scale:f32,pub color:crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,pub indirect_color:crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,pub orientation:crate::unity_engine::quaternion::Quaternion,pub position:crate::unity_engine::vector3::Vector3,pub range:f32,pub cone_angle:f32,pub inner_cone_angle:f32,pub shape0:f32,pub shape1:f32,pub r#type:crate::unity_engine::experimental::global_illumination::lighttype_2::LightType_2,pub mode:crate::unity_engine::experimental::global_illumination::lightmode::LightMode,pub shadow:u8,pub falloff:crate::unity_engine::experimental::global_illumination::fallofftype::FalloffType,}
+impl::unity2::ClassIdentity for LightDataGI{const NAMESPACE: &'static str="UnityEngine.Experimental.GlobalIllumination";
+const NAME: &'static str="LightDataGI";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for LightDataGI {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
-
-    const NAME: &'static str = "LightDataGI";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for LightDataGI {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for LightDataGI{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -64,11 +26,48 @@ impl ::unity2::IlType for LightDataGI {
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightdatagi-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightdatagi")]
-impl LightDataGI { # [doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"] pub fn init (& mut self ,) -> (crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight , crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie > :: uninit () ; { let __inner : extern "C" fn (* mut LightDataGI , * mut crate :: unity_engine :: experimental :: global_illumination :: directionallight :: DirectionalLight , * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c54f80usize) as * mut u8) ; __inner (self as * mut LightDataGI , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::pointlight::PointLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"] pub fn init_2 (& mut self ,) -> (crate :: unity_engine :: experimental :: global_illumination :: pointlight :: PointLight , crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: pointlight :: PointLight > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie > :: uninit () ; { let __inner : extern "C" fn (* mut LightDataGI , * mut crate :: unity_engine :: experimental :: global_illumination :: pointlight :: PointLight , * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c55010usize) as * mut u8) ; __inner (self as * mut LightDataGI , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::spotlight::SpotLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"] pub fn init_3 (& mut self ,) -> (crate :: unity_engine :: experimental :: global_illumination :: spotlight :: SpotLight , crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: spotlight :: SpotLight > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie > :: uninit () ; { let __inner : extern "C" fn (* mut LightDataGI , * mut crate :: unity_engine :: experimental :: global_illumination :: spotlight :: SpotLight , * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c550d0usize) as * mut u8) ; __inner (self as * mut LightDataGI , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"] pub fn init_4 (& mut self ,) -> (crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight , crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie > :: uninit () ; { let __inner : extern "C" fn (* mut LightDataGI , * mut crate :: unity_engine :: experimental :: global_illumination :: rectanglelight :: RectangleLight , * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c55180usize) as * mut u8) ; __inner (self as * mut LightDataGI , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Init(*mutcrate::unity_engine::experimental::global_illumination::disclight::DiscLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"] pub fn init_5 (& mut self ,) -> (crate :: unity_engine :: experimental :: global_illumination :: disclight :: DiscLight , crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: disclight :: DiscLight > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie > :: uninit () ; { let __inner : extern "C" fn (* mut LightDataGI , * mut crate :: unity_engine :: experimental :: global_illumination :: disclight :: DiscLight , * mut crate :: unity_engine :: experimental :: global_illumination :: cookie :: Cookie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c55220usize) as * mut u8) ; __inner (self as * mut LightDataGI , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`InitNoBake(i32)` overload"] pub fn init_no_bake (& mut self , light_instance_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut LightDataGI , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c552b0usize) as * mut u8) ; __inner (self as * mut LightDataGI , :: core :: convert :: Into :: into (light_instance_id) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-global_illumination-lightdatagi")]impl LightDataGI{#[doc="`Init(*mutcrate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]pub fn init(&mut self,)->(crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight,crate::unity_engine::experimental::global_illumination::cookie::Cookie){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::cookie::Cookie> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c54f80usize)as*mut u8,();
+(*mut LightDataGI)self as*mut LightDataGI,(*mut crate::unity_engine::experimental::global_illumination::directionallight::DirectionalLight)__out_0.as_mut_ptr(),(*mut crate::unity_engine::experimental::global_illumination::cookie::Cookie)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Init(*mutcrate::unity_engine::experimental::global_illumination::pointlight::PointLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]pub fn init_2(&mut self,)->(crate::unity_engine::experimental::global_illumination::pointlight::PointLight,crate::unity_engine::experimental::global_illumination::cookie::Cookie){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::pointlight::PointLight> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::cookie::Cookie> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c55010usize)as*mut u8,();
+(*mut LightDataGI)self as*mut LightDataGI,(*mut crate::unity_engine::experimental::global_illumination::pointlight::PointLight)__out_0.as_mut_ptr(),(*mut crate::unity_engine::experimental::global_illumination::cookie::Cookie)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Init(*mutcrate::unity_engine::experimental::global_illumination::spotlight::SpotLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]pub fn init_3(&mut self,)->(crate::unity_engine::experimental::global_illumination::spotlight::SpotLight,crate::unity_engine::experimental::global_illumination::cookie::Cookie){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::spotlight::SpotLight> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::cookie::Cookie> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c550d0usize)as*mut u8,();
+(*mut LightDataGI)self as*mut LightDataGI,(*mut crate::unity_engine::experimental::global_illumination::spotlight::SpotLight)__out_0.as_mut_ptr(),(*mut crate::unity_engine::experimental::global_illumination::cookie::Cookie)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Init(*mutcrate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]pub fn init_4(&mut self,)->(crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight,crate::unity_engine::experimental::global_illumination::cookie::Cookie){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::cookie::Cookie> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c55180usize)as*mut u8,();
+(*mut LightDataGI)self as*mut LightDataGI,(*mut crate::unity_engine::experimental::global_illumination::rectanglelight::RectangleLight)__out_0.as_mut_ptr(),(*mut crate::unity_engine::experimental::global_illumination::cookie::Cookie)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Init(*mutcrate::unity_engine::experimental::global_illumination::disclight::DiscLight, *mutcrate::unity_engine::experimental::global_illumination::cookie::Cookie)` overload"]pub fn init_5(&mut self,)->(crate::unity_engine::experimental::global_illumination::disclight::DiscLight,crate::unity_engine::experimental::global_illumination::cookie::Cookie){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::disclight::DiscLight> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::global_illumination::cookie::Cookie> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c55220usize)as*mut u8,();
+(*mut LightDataGI)self as*mut LightDataGI,(*mut crate::unity_engine::experimental::global_illumination::disclight::DiscLight)__out_0.as_mut_ptr(),(*mut crate::unity_engine::experimental::global_illumination::cookie::Cookie)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`InitNoBake(i32)` overload"]pub fn init_no_bake(&mut self,light_instance_id:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c552b0usize)as*mut u8,();
+(*mut LightDataGI)self as*mut LightDataGI,(i32)::core::convert::Into::into(light_instance_id))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightdatagi")]
-impl LightDataGI { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightDataGI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn init_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightDataGI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightDataGI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn init_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightDataGI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn init_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightDataGI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn init_no_bake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightDataGI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-experimental-global_illumination-lightdatagi")]impl LightDataGI{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn init_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn init_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn init_no_bake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightdatagi")]
 #[doc(hidden)]

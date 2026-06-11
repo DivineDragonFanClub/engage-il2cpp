@@ -4,53 +4,137 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsortieposition/MapSortiePosition.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSortiePosition")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsortieposition :: MapSortiePosition >)] pub struct MapSortiePosition {
-# [static_field] # [rename (name = "MaxCount")] pub max_count : i32 ,
-# [offset (32)] # [rename (name = "m_Data")] pub m_data : :: unity2 :: Array < crate :: app :: mapsortieposition :: MapSortiePosition_Data > ,
-# [offset (40)] # [rename (name = "m_DataCount")] pub m_data_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsortieposition/MapSortiePosition.md"))]#[::unity2::class(namespace="App",name="MapSortiePosition")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapsortieposition::MapSortiePosition>)]pub struct MapSortiePosition{#[static_field]#[rename(name="MaxCount")]pub max_count:i32, #[offset(32)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<crate::app::mapsortieposition::MapSortiePosition_Data> , #[offset(40)]#[rename(name="m_DataCount")]pub m_data_count:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsortieposition/MapSortiePosition_Data.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSortiePosition.Data")] # [parent (crate :: system :: object :: Object)] pub struct MapSortiePosition_Data {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsortieposition/MapSortiePosition_Data.md"))]#[::unity2::class(namespace="App",name="MapSortiePosition.Data")]#[parent(crate::system::object::Object)]pub struct MapSortiePosition_Data{}
 
 }
 
 #[cfg(feature = "app-mapsortieposition-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsortieposition")]
-pub trait IMapSortiePositionMethods : IMapSortiePosition { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f50d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Prepare()` overload"] fn prepare (self ,) -> () { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f50e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f50f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(i32, i32, f32)` overload"] fn add (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , angle : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , i32 , i32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f50f70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (angle) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f50f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Get(i32)` overload"] fn get (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapsortieposition :: MapSortiePosition_Data { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsortieposition :: MapSortiePosition_Data = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetIndex(i32, i32)` overload"] fn get_index (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSortiePosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsortieposition")]
-impl < __T : IMapSortiePosition > IMapSortiePositionMethods for __T { }
-
-#[cfg(feature = "app-mapsortieposition")]
-impl MapSortiePosition { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
-
-#[cfg(feature = "app-mapsortieposition")]
-impl MapSortiePosition {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSortiePosition) , :: core :: stringify ! (new) ,)) ; < Self as IMapSortiePositionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsortieposition")]pub trait IMapSortiePositionMethods:IMapSortiePosition{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f50d70usize)as*mut u8,();
+(MapSortiePosition)__receiver)}
+}
+#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f50e00usize)as*mut u8,();
+(MapSortiePosition)__receiver)}
+}
+#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f50f40usize)as*mut u8,();
+(MapSortiePosition)__receiver)}
+}
+#[doc="`Add(i32, i32, f32)` overload"]fn add(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,angle:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f50f70usize)as*mut u8,bool;
+(MapSortiePosition)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(f32)::core::convert::Into::into(angle))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f50f30usize)as*mut u8,();
+(MapSortiePosition)__receiver)}
+}
+#[doc="`Get(i32)` overload"]fn get(self,index:impl::core::convert::Into<i32>)->crate::app::mapsortieposition::MapSortiePosition_Data{unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51150usize)as*mut u8,crate::app::mapsortieposition::MapSortiePosition_Data;
+(MapSortiePosition)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetIndex(i32, i32)` overload"]fn get_index(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51190usize)as*mut u8,i32;
+(MapSortiePosition)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51210usize)as*mut u8,i32;
+(MapSortiePosition)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51220usize)as*mut u8,i32;
+(MapSortiePosition)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51230usize)as*mut u8,();
+(MapSortiePosition)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSortiePosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51320usize)as*mut u8,();
+(MapSortiePosition)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
 }
 
-#[cfg(feature = "app-mapsortieposition")]
-pub trait IMapSortiePosition_DataMethods : IMapSortiePosition_Data { # [doc = "`get_X()` overload"] fn get_x (self ,) -> i32 { unsafe { let __receiver = < MapSortiePosition_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition_Data , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3e860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_X(i32)` overload"] fn set_x (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSortiePosition_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition_Data , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3e870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> i32 { unsafe { let __receiver = < MapSortiePosition_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition_Data , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3e880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Z(i32)` overload"] fn set_z (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSortiePosition_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition_Data , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3e890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Angle()` overload"] fn get_angle (self ,) -> f32 { unsafe { let __receiver = < MapSortiePosition_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition_Data , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3e8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Angle(f32)` overload"] fn set_angle (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapSortiePosition_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition_Data , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3e8b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSortiePosition_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSortiePosition_Data , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3e8c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsortieposition")]impl<__T:IMapSortiePosition>IMapSortiePositionMethods for __T{}
 
-#[cfg(feature = "app-mapsortieposition")]
-impl < __T : IMapSortiePosition_Data > IMapSortiePosition_DataMethods for __T { }
+#[cfg(feature="app-mapsortieposition")]impl MapSortiePosition{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-mapsortieposition")]
-impl MapSortiePosition_Data { pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSortiePosition_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-mapsortieposition")]impl MapSortiePosition{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSortiePosition), ::core::stringify!(new),));
+ <Self as IMapSortiePositionMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mapsortieposition")]
-impl MapSortiePosition_Data {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSortiePosition_Data) , :: core :: stringify ! (new) ,)) ; < Self as IMapSortiePosition_DataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsortieposition")]pub trait IMapSortiePosition_DataMethods:IMapSortiePosition_Data{#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapSortiePosition_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e860usize)as*mut u8,i32;
+(MapSortiePosition_Data)__receiver)}
+}
+#[doc="`set_X(i32)` overload"]fn set_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSortiePosition_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e870usize)as*mut u8,();
+(MapSortiePosition_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapSortiePosition_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e880usize)as*mut u8,i32;
+(MapSortiePosition_Data)__receiver)}
+}
+#[doc="`set_Z(i32)` overload"]fn set_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSortiePosition_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e890usize)as*mut u8,();
+(MapSortiePosition_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Angle()` overload"]fn get_angle(self,)->f32{unsafe{let __receiver= <MapSortiePosition_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e8a0usize)as*mut u8,f32;
+(MapSortiePosition_Data)__receiver)}
+}
+#[doc="`set_Angle(f32)` overload"]fn set_angle(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapSortiePosition_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e8b0usize)as*mut u8,();
+(MapSortiePosition_Data)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSortiePosition_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e8c0usize)as*mut u8,();
+(MapSortiePosition_Data)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsortieposition")]impl<__T:IMapSortiePosition_Data>IMapSortiePosition_DataMethods for __T{}
+
+#[cfg(feature="app-mapsortieposition")]impl MapSortiePosition_Data{pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mapsortieposition")]impl MapSortiePosition_Data{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSortiePosition_Data), ::core::stringify!(new),));
+ <Self as IMapSortiePosition_DataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsortieposition")]

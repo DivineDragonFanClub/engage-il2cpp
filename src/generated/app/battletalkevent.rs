@@ -4,40 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procbattlecallback :: { IProcBattleCallback , ProcBattleCallback }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procbattlecallback::{IProcBattleCallback,ProcBattleCallback}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battletalkevent/BattleTalkEvent.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleTalkEvent")] # [parent (crate :: app :: procbattlecallback :: ProcBattleCallback)] pub struct BattleTalkEvent {
-# [offset (136)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (144)] # [rename (name = "m_Target")] pub m_target : crate :: app :: unit :: Unit ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battletalkevent/BattleTalkEvent.md"))]#[::unity2::class(namespace="App",name="BattleTalkEvent")]#[parent(crate::app::procbattlecallback::ProcBattleCallback)]pub struct BattleTalkEvent{#[offset(136)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(144)]#[rename(name="m_Target")]pub m_target:crate::app::unit::Unit,}
 
 }
 
 #[cfg(feature = "app-battletalkevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battletalkevent")]
-impl BattleTalkEvent { # [doc = "`IsEnable(crate::app::battlecalculator::BattleCalculator)` overload"] pub fn is_enable (calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battlecalculator :: BattleCalculator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (calculator) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnable(crate::app::battlecalculator::BattleCalculator, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn is_enable_2 (calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battlecalculator :: BattleCalculator , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e938d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, crate::system::action::Action)` overload"] pub fn try_create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , completed : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: battlecalculator :: BattleCalculator , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (completed) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, crate::app::unit::Unit, crate::app::unit::Unit, crate::system::action::Action)` overload"] pub fn try_create_bind_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , completed : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: battlecalculator :: BattleCalculator , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e939e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (completed) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battletalkevent")]impl BattleTalkEvent{#[doc="`IsEnable(crate::app::battlecalculator::BattleCalculator)` overload"]pub fn is_enable(calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e93810usize)as*mut u8,bool;
+(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator))}
+}
+#[doc="`IsEnable(crate::app::battlecalculator::BattleCalculator, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn is_enable_2(calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e938d0usize)as*mut u8,bool;
+(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, crate::system::action::Action)` overload"]pub fn try_create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,completed:impl::core::convert::Into<crate::system::action::Action>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e93970usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::system::action::Action)::core::convert::Into::into(completed))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, crate::app::unit::Unit, crate::app::unit::Unit, crate::system::action::Action)` overload"]pub fn try_create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,completed:impl::core::convert::Into<crate::system::action::Action>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e939e0usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target),(crate::system::action::Action)::core::convert::Into::into(completed))}
+}
+}
 
-#[cfg(feature = "app-battletalkevent")]
-pub trait IBattleTalkEventMethods : IBattleTalkEvent { # [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::unit::Unit, crate::app::unit::Unit, crate::system::action::Action)` overload"] fn ctor (self , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , completed : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < BattleTalkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleTalkEvent , crate :: app :: battlecalculator :: BattleCalculator , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (completed) , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < BattleTalkEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleTalkEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e937e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battletalkevent")]pub trait IBattleTalkEventMethods:IBattleTalkEvent{#[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::unit::Unit, crate::app::unit::Unit, crate::system::action::Action)` overload"]fn ctor(self,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,completed:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <BattleTalkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e93780usize)as*mut u8,();
+(BattleTalkEvent)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target),(crate::system::action::Action)::core::convert::Into::into(completed))}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <BattleTalkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e937e0usize)as*mut u8,();
+(BattleTalkEvent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-battletalkevent")]
-impl < __T : IBattleTalkEvent > IBattleTalkEventMethods for __T { }
+#[cfg(feature="app-battletalkevent")]impl<__T:IBattleTalkEvent>IBattleTalkEventMethods for __T{}
 
-#[cfg(feature = "app-battletalkevent")]
-impl BattleTalkEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleTalkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleTalkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleTalkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_enable_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleTalkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn try_create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleTalkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn try_create_bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleTalkEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-battletalkevent")]impl BattleTalkEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_enable_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn try_create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-battletalkevent")]
-impl BattleTalkEvent {
-# [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::unit::Unit, crate::app::unit::Unit, crate::system::action::Action)` — overload selector"] pub fn new (calculator : crate :: app :: battlecalculator :: BattleCalculator , unit : crate :: app :: unit :: Unit , target : crate :: app :: unit :: Unit , completed : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleTalkEvent) , :: core :: stringify ! (new) ,)) ; < Self as IBattleTalkEventMethods > :: ctor (this , calculator , unit , target , completed) ; this }
+#[cfg(feature="app-battletalkevent")]impl BattleTalkEvent{#[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::unit::Unit, crate::app::unit::Unit, crate::system::action::Action)` — overload selector"]pub fn new(calculator:crate::app::battlecalculator::BattleCalculator,unit:crate::app::unit::Unit,target:crate::app::unit::Unit,completed:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleTalkEvent), ::core::stringify!(new),));
+ <Self as IBattleTalkEventMethods> ::ctor(this,calculator,unit,target,completed);
+this}
 }
 
 #[cfg(feature = "app-battletalkevent")]

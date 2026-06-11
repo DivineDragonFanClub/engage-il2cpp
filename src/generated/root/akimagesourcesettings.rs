@@ -4,40 +4,95 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akimagesourcesettings/AkImageSourceSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkImageSourceSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkImageSourceSettings {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akimagesourcesettings/AkImageSourceSettings.md"))]#[::unity2::class(namespace="",name="AkImageSourceSettings")]#[parent(crate::system::object::Object)]pub struct AkImageSourceSettings{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akimagesourcesettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akimagesourcesettings")]
-impl AkImageSourceSettings { # [doc = "`getCPtr(crate::root::akimagesourcesettings::AkImageSourceSettings)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akimagesourcesettings :: AkImageSourceSettings >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akimagesourcesettings :: AkImageSourceSettings , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f20140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akimagesourcesettings")]impl AkImageSourceSettings{#[doc="`getCPtr(crate::root::akimagesourcesettings::AkImageSourceSettings)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akimagesourcesettings::AkImageSourceSettings>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f20140usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akimagesourcesettings::AkImageSourceSettings)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akimagesourcesettings")]
-pub trait IAkImageSourceSettingsMethods : IAkImageSourceSettings { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f20100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f201a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f201d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f20240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f203d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::vector3::Vector3, f32, f32)` overload"] fn ctor_3 (self , in_source_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , in_f_distance_scaling_factor : impl :: core :: convert :: Into < f32 > , in_f_level : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , crate :: unity_engine :: vector3 :: Vector3 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f20460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_source_position) , :: core :: convert :: Into :: into (in_f_distance_scaling_factor) , :: core :: convert :: Into :: into (in_f_level) , :: core :: option :: Option :: None) } } } # [doc = "`SetOneTexture(u32)` overload"] fn set_one_texture (self , in_texture : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f20530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_texture) , :: core :: option :: Option :: None) } } } # [doc = "`SetName(::unity2::Il2CppString)` overload"] fn set_name (self , in_p_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f205b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_p_name) , :: core :: option :: Option :: None) } } } # [doc = "`set_params_(crate::root::akimagesourceparams::AkImageSourceParams)` overload"] fn set_params (self , value : impl :: core :: convert :: Into < crate :: root :: akimagesourceparams :: AkImageSourceParams >) -> () { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , crate :: root :: akimagesourceparams :: AkImageSourceParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f20630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_params_()` overload"] fn get_params (self ,) -> crate :: root :: akimagesourceparams :: AkImageSourceParams { unsafe { let __receiver = < AkImageSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkImageSourceSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akimagesourceparams :: AkImageSourceParams = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f206f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akimagesourcesettings")]pub trait IAkImageSourceSettingsMethods:IAkImageSourceSettings{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f20100usize)as*mut u8,();
+(AkImageSourceSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f201a0usize)as*mut u8,();
+(AkImageSourceSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f201d0usize)as*mut u8,();
+(AkImageSourceSettings)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f20240usize)as*mut u8,();
+(AkImageSourceSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f203d0usize)as*mut u8,();
+(AkImageSourceSettings)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::vector3::Vector3, f32, f32)` overload"]fn ctor_3(self,in_source_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,in_f_distance_scaling_factor:impl::core::convert::Into<f32> ,in_f_level:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f20460usize)as*mut u8,();
+(AkImageSourceSettings)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_source_position),(f32)::core::convert::Into::into(in_f_distance_scaling_factor),(f32)::core::convert::Into::into(in_f_level))}
+}
+#[doc="`SetOneTexture(u32)` overload"]fn set_one_texture(self,in_texture:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f20530usize)as*mut u8,();
+(AkImageSourceSettings)__receiver,(u32)::core::convert::Into::into(in_texture))}
+}
+#[doc="`SetName(::unity2::Il2CppString)` overload"]fn set_name(self,in_p_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f205b0usize)as*mut u8,();
+(AkImageSourceSettings)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(in_p_name))}
+}
+#[doc="`set_params_(crate::root::akimagesourceparams::AkImageSourceParams)` overload"]fn set_params(self,value:impl::core::convert::Into<crate::root::akimagesourceparams::AkImageSourceParams>)->(){unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f20630usize)as*mut u8,();
+(AkImageSourceSettings)__receiver,(crate::root::akimagesourceparams::AkImageSourceParams)::core::convert::Into::into(value))}
+}
+#[doc="`get_params_()` overload"]fn get_params(self,)->crate::root::akimagesourceparams::AkImageSourceParams{unsafe{let __receiver= <AkImageSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f206f0usize)as*mut u8,crate::root::akimagesourceparams::AkImageSourceParams;
+(AkImageSourceSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akimagesourcesettings")]
-impl < __T : IAkImageSourceSettings > IAkImageSourceSettingsMethods for __T { }
+#[cfg(feature="root-akimagesourcesettings")]impl<__T:IAkImageSourceSettings>IAkImageSourceSettingsMethods for __T{}
 
-#[cfg(feature = "root-akimagesourcesettings")]
-impl AkImageSourceSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_one_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkImageSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="root-akimagesourcesettings")]impl AkImageSourceSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_one_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_params_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_params_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "root-akimagesourcesettings")]
-impl AkImageSourceSettings {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkImageSourceSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkImageSourceSettingsMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkImageSourceSettings) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkImageSourceSettingsMethods > :: ctor_2 (this ,) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::vector3::Vector3, f32, f32)` — overload selector"] pub fn new_3 (in_source_position : crate :: unity_engine :: vector3 :: Vector3 , in_f_distance_scaling_factor : f32 , in_f_level : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkImageSourceSettings) , :: core :: stringify ! (new_3) ,)) ; < Self as IAkImageSourceSettingsMethods > :: ctor_3 (this , in_source_position , in_f_distance_scaling_factor , in_f_level) ; this }
+#[cfg(feature="root-akimagesourcesettings")]impl AkImageSourceSettings{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkImageSourceSettings), ::core::stringify!(new),));
+ <Self as IAkImageSourceSettingsMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkImageSourceSettings), ::core::stringify!(new_2),));
+ <Self as IAkImageSourceSettingsMethods> ::ctor_2(this,);
+this}
+#[doc="`.ctor(crate::unity_engine::vector3::Vector3, f32, f32)` — overload selector"]pub fn new_3(in_source_position:crate::unity_engine::vector3::Vector3,in_f_distance_scaling_factor:f32,in_f_level:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkImageSourceSettings), ::core::stringify!(new_3),));
+ <Self as IAkImageSourceSettingsMethods> ::ctor_3(this,in_source_position,in_f_distance_scaling_factor,in_f_level);
+this}
 }
 
 #[cfg(feature = "root-akimagesourcesettings")]

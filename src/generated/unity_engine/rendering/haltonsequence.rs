@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/haltonsequence/HaltonSequence.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "HaltonSequence")] # [parent (crate :: system :: object :: Object)] pub struct HaltonSequence {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/haltonsequence/HaltonSequence.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="HaltonSequence")]#[parent(crate::system::object::Object)]pub struct HaltonSequence{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-haltonsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-haltonsequence")]
-impl HaltonSequence { # [doc = "`Get(i32, i32)` overload"] pub fn get (index : impl :: core :: convert :: Into < i32 > , radix : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aae80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (radix) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-haltonsequence")]impl HaltonSequence{#[doc="`Get(i32, i32)` overload"]pub fn get(index:impl::core::convert::Into<i32> ,radix:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30aae80usize)as*mut u8,f32;
+(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(radix))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-haltonsequence")]
-impl HaltonSequence { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HaltonSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-haltonsequence")]impl HaltonSequence{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-rendering-haltonsequence")]
 #[doc(hidden)]

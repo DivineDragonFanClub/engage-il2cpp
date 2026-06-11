@@ -4,105 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/resourcehandle/ResourceHandle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ResourceHandle {
-    pub m_value: u32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/resourcehandle/ResourceHandle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ResourceHandle{pub m_value:u32,}
+impl::unity2::ClassIdentity for ResourceHandle{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
+const NAME: &'static str="ResourceHandle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ResourceHandle {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
-    const NAME: &'static str = "ResourceHandle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for ResourceHandle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for ResourceHandle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl ResourceHandle{#[inline]pub fn k_validity_mask()->u32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kValidityMask");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_k_validity_mask(value:u32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kValidityMask");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl ResourceHandle {
-    #[inline]
-    pub fn k_validity_mask() -> u32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kValidityMask");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_k_validity_mask(value: u32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kValidityMask");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn k_index_mask() -> u32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kIndexMask");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_k_index_mask(value: u32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kIndexMask");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn s_current_valid_bit() -> u32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_CurrentValidBit");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_current_valid_bit(value: u32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_CurrentValidBit");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn k_index_mask()->u32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kIndexMask");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_k_index_mask(value:u32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kIndexMask");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn s_current_valid_bit()->u32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_CurrentValidBit");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_current_valid_bit(value:u32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_CurrentValidBit");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -110,14 +48,47 @@ impl ResourceHandle {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle")]
-impl ResourceHandle { # [doc = "`op_Implicit(crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle)` overload"] pub fn op_implicit (handle : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ddc10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`NewFrame(i32)` overload"] pub fn new_frame (execution_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33dcff0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (execution_index) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e0b60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-resourcehandle")]impl ResourceHandle{#[doc="`op_Implicit(crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle)` overload"]pub fn op_implicit(handle:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33ddc10usize)as*mut u8,i32;
+(crate::unity_engine::experimental::rendering::render_graph_module::resourcehandle::ResourceHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`NewFrame(i32)` overload"]pub fn new_frame(execution_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33dcff0usize)as*mut u8,();
+(i32)::core::convert::Into::into(execution_index))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e0b60usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle")]
-impl ResourceHandle { # [doc = "`get_index()` overload"] pub fn get_index (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ResourceHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33dd1a0usize) as * mut u8) ; __inner (self as * mut ResourceHandle , :: core :: option :: Option :: None) } } } # [doc = "`get_type()` overload"] pub fn get_type (& mut self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType { unsafe { { let __inner : extern "C" fn (* mut ResourceHandle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e0a20usize) as * mut u8) ; __inner (self as * mut ResourceHandle , :: core :: option :: Option :: None) } } } # [doc = "`set_type(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType)` overload"] pub fn set_type (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType >) -> () { unsafe { { let __inner : extern "C" fn (* mut ResourceHandle , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e0a30usize) as * mut u8) ; __inner (self as * mut ResourceHandle , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_iType()` overload"] pub fn get_i_type (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ResourceHandle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33dbf90usize) as * mut u8) ; __inner (self as * mut ResourceHandle , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType)` overload"] pub fn ctor (& mut self , value : impl :: core :: convert :: Into < i32 > , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType >) -> () { unsafe { { let __inner : extern "C" fn (* mut ResourceHandle , i32 , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e0a40usize) as * mut u8) ; __inner (self as * mut ResourceHandle , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] pub fn is_valid (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut ResourceHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e0ad0usize) as * mut u8) ; __inner (self as * mut ResourceHandle , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-resourcehandle")]impl ResourceHandle{#[doc="`get_index()` overload"]pub fn get_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33dd1a0usize)as*mut u8,i32;
+(*mut ResourceHandle)self as*mut ResourceHandle)}
+}
+#[doc="`get_type()` overload"]pub fn get_type(&mut self,)->crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e0a20usize)as*mut u8,crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType;
+(*mut ResourceHandle)self as*mut ResourceHandle)}
+}
+#[doc="`set_type(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType)` overload"]pub fn set_type(&mut self,value:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e0a30usize)as*mut u8,();
+(*mut ResourceHandle)self as*mut ResourceHandle,(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType)::core::convert::Into::into(value))}
+}
+#[doc="`get_iType()` overload"]pub fn get_i_type(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33dbf90usize)as*mut u8,i32;
+(*mut ResourceHandle)self as*mut ResourceHandle)}
+}
+#[doc="`.ctor(i32, crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType)` overload"]pub fn ctor(&mut self,value:impl::core::convert::Into<i32> ,r#type:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e0a40usize)as*mut u8,();
+(*mut ResourceHandle)self as*mut ResourceHandle,(i32)::core::convert::Into::into(value),(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcetype::RenderGraphResourceType)::core::convert::Into::into(r#type))}
+}
+#[doc="`IsValid()` overload"]pub fn is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e0ad0usize)as*mut u8,bool;
+(*mut ResourceHandle)self as*mut ResourceHandle)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle")]
-impl ResourceHandle { pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_i_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn new_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-resourcehandle")]impl ResourceHandle{pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_i_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn new_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle")]
 #[doc(hidden)]

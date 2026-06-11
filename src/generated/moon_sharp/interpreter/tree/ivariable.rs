@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/ivariable/IVariable.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Tree" , name = "IVariable")] pub struct IVariable {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/ivariable/IVariable.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Tree",name="IVariable")]pub struct IVariable{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-ivariable-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IVariable_unity2_raw { use super :: * ; pub unsafe fn compile_assignment (this : IVariable , bc : crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , stackofs : i32 , tupleidx : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CompileAssignment") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CompileAssignment" , < IVariable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IVariable , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , bc , stackofs , tupleidx , __mi) } }
+#[cfg(feature="moon_sharp-interpreter-tree-ivariable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IVariable_unity2_raw{use super:: * ;
+pub unsafe fn compile_assignment(this:IVariable,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,stackofs:i32,tupleidx:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CompileAssignment").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CompileAssignment", <IVariable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IVariable,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bc,stackofs,tupleidx,__mi)}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
-pub trait IIVariableMethods : IIVariable { # [doc = "`CompileAssignment(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, i32, i32)` overload"] fn compile_assignment (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode > , stackofs : impl :: core :: convert :: Into < i32 > , tupleidx : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < IVariable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IVariable_unity2_raw :: compile_assignment (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: convert :: Into :: into (stackofs) , :: core :: convert :: Into :: into (tupleidx) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="moon_sharp-interpreter-tree-ivariable")]pub trait IIVariableMethods:IIVariable{#[doc="`CompileAssignment(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, i32, i32)` overload"]fn compile_assignment(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode> ,stackofs:impl::core::convert::Into<i32> ,tupleidx:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IVariable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IVariable_unity2_raw::compile_assignment(__receiver, ::core::convert::Into::into(bc), ::core::convert::Into::into(stackofs), ::core::convert::Into::into(tupleidx), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
-impl < __T : IIVariable > IIVariableMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-tree-ivariable")]impl<__T:IIVariable>IIVariableMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
-impl IVariable { pub fn compile_assignment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="moon_sharp-interpreter-tree-ivariable")]impl IVariable{pub fn compile_assignment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-tree-ivariable")]
 #[doc(hidden)]

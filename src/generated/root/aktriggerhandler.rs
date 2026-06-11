@@ -4,54 +4,97 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggerhandler/AkTriggerHandler.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTriggerHandler")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AkTriggerHandler {
-# [static_field] # [rename (name = "AWAKE_TRIGGER_ID")] pub awake_trigger_id : i32 ,
-# [static_field] # [rename (name = "START_TRIGGER_ID")] pub start_trigger_id : i32 ,
-# [static_field] # [rename (name = "DESTROY_TRIGGER_ID")] pub destroy_trigger_id : i32 ,
-# [static_field] # [rename (name = "ON_ENABLE_TRIGGER_ID")] pub on_enable_trigger_id : i32 ,
-# [static_field] # [rename (name = "MAX_NB_TRIGGERS")] pub max_nb_triggers : i32 ,
-# [static_field] # [rename (name = "triggerTypes")] pub trigger_types : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , :: unity2 :: Il2CppString > ,
-# [offset (24)] # [rename (name = "didDestroy")] pub did_destroy : bool ,
-# [offset (32)] # [rename (name = "triggerList")] pub trigger_list : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
-# [offset (40)] # [rename (name = "useOtherObject")] pub use_other_object : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktriggerhandler/AkTriggerHandler.md"))]#[::unity2::class(namespace="",name="AkTriggerHandler")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkTriggerHandler{#[static_field]#[rename(name="AWAKE_TRIGGER_ID")]pub awake_trigger_id:i32, #[static_field]#[rename(name="START_TRIGGER_ID")]pub start_trigger_id:i32, #[static_field]#[rename(name="DESTROY_TRIGGER_ID")]pub destroy_trigger_id:i32, #[static_field]#[rename(name="ON_ENABLE_TRIGGER_ID")]pub on_enable_trigger_id:i32, #[static_field]#[rename(name="MAX_NB_TRIGGERS")]pub max_nb_triggers:i32, #[static_field]#[rename(name="triggerTypes")]pub trigger_types:crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString> , #[offset(24)]#[rename(name="didDestroy")]pub did_destroy:bool, #[offset(32)]#[rename(name="triggerList")]pub trigger_list:crate::system::collections::generic::list_1::List_1<i32> , #[offset(40)]#[rename(name="useOtherObject")]pub use_other_object:bool,}
 
 }
 
 #[cfg(feature = "root-aktriggerhandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aktriggerhandler")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkTriggerHandler_unity2_raw { use super :: * ; pub unsafe fn handle_event (this : AkTriggerHandler , in_game_object : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("HandleEvent") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "HandleEvent" , < AkTriggerHandler as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (AkTriggerHandler , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , in_game_object , __mi) } }
+#[cfg(feature="root-aktriggerhandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkTriggerHandler_unity2_raw{use super:: * ;
+pub unsafe fn handle_event(this:AkTriggerHandler,in_game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("HandleEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","HandleEvent", <AkTriggerHandler as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(AkTriggerHandler,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,in_game_object,__mi)}
+}
 
-#[cfg(feature = "root-aktriggerhandler")]
-impl AkTriggerHandler { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2bcf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktriggerhandler")]impl AkTriggerHandler{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2bcf0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-aktriggerhandler")]
-pub trait IAkTriggerHandlerMethods : IAkTriggerHandler { # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkTriggerHandler_unity2_raw :: handle_event (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2b070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2b590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2b620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DoDestroy()` overload"] fn do_destroy (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2b6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2bba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RegisterTriggers(crate::system::collections::generic::list_1::List_1<i32>, crate::root::aktriggerbase::AkTriggerBase_Trigger)` overload"] fn register_triggers (self , in_trigger_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > > , in_delegate : impl :: core :: convert :: Into < crate :: root :: aktriggerbase :: AkTriggerBase_Trigger >) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerHandler , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , crate :: root :: aktriggerbase :: AkTriggerBase_Trigger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2b100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_trigger_list) , :: core :: convert :: Into :: into (in_delegate) , :: core :: option :: Option :: None) } } } # [doc = "`UnregisterTriggers(crate::system::collections::generic::list_1::List_1<i32>, crate::root::aktriggerbase::AkTriggerBase_Trigger)` overload"] fn unregister_triggers (self , in_trigger_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > > , in_delegate : impl :: core :: convert :: Into < crate :: root :: aktriggerbase :: AkTriggerBase_Trigger >) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerHandler , crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > , crate :: root :: aktriggerbase :: AkTriggerBase_Trigger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2b750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_trigger_list) , :: core :: convert :: Into :: into (in_delegate) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkTriggerHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2bc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktriggerhandler")]pub trait IAkTriggerHandlerMethods:IAkTriggerHandler{#[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AkTriggerHandler_unity2_raw::handle_event(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <AkTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2b070usize)as*mut u8,();
+(AkTriggerHandler)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2b590usize)as*mut u8,();
+(AkTriggerHandler)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <AkTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2b620usize)as*mut u8,();
+(AkTriggerHandler)__receiver)}
+}
+#[doc="`DoDestroy()` overload"]fn do_destroy(self,)->(){unsafe{let __receiver= <AkTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2b6c0usize)as*mut u8,();
+(AkTriggerHandler)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2bba0usize)as*mut u8,();
+(AkTriggerHandler)__receiver)}
+}
+#[doc="`RegisterTriggers(crate::system::collections::generic::list_1::List_1<i32>, crate::root::aktriggerbase::AkTriggerBase_Trigger)` overload"]fn register_triggers(self,in_trigger_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32> > ,in_delegate:impl::core::convert::Into<crate::root::aktriggerbase::AkTriggerBase_Trigger>)->(){unsafe{let __receiver= <AkTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2b100usize)as*mut u8,();
+(AkTriggerHandler)__receiver,(crate::system::collections::generic::list_1::List_1<i32>)::core::convert::Into::into(in_trigger_list),(crate::root::aktriggerbase::AkTriggerBase_Trigger)::core::convert::Into::into(in_delegate))}
+}
+#[doc="`UnregisterTriggers(crate::system::collections::generic::list_1::List_1<i32>, crate::root::aktriggerbase::AkTriggerBase_Trigger)` overload"]fn unregister_triggers(self,in_trigger_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<i32> > ,in_delegate:impl::core::convert::Into<crate::root::aktriggerbase::AkTriggerBase_Trigger>)->(){unsafe{let __receiver= <AkTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2b750usize)as*mut u8,();
+(AkTriggerHandler)__receiver,(crate::system::collections::generic::list_1::List_1<i32>)::core::convert::Into::into(in_trigger_list),(crate::root::aktriggerbase::AkTriggerBase_Trigger)::core::convert::Into::into(in_delegate))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2bc30usize)as*mut u8,();
+(AkTriggerHandler)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aktriggerhandler")]
-impl < __T : IAkTriggerHandler > IAkTriggerHandlerMethods for __T { }
+#[cfg(feature="root-aktriggerhandler")]impl<__T:IAkTriggerHandler>IAkTriggerHandlerMethods for __T{}
 
-#[cfg(feature = "root-aktriggerhandler")]
-impl AkTriggerHandler { pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn do_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn register_triggers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn unregister_triggers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="root-aktriggerhandler")]impl AkTriggerHandler{pub fn handle_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn do_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn register_triggers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn unregister_triggers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "root-aktriggerhandler")]
-impl AkTriggerHandler {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTriggerHandler) , :: core :: stringify ! (new) ,)) ; < Self as IAkTriggerHandlerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-aktriggerhandler")]impl AkTriggerHandler{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTriggerHandler), ::core::stringify!(new),));
+ <Self as IAkTriggerHandlerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-aktriggerhandler")]

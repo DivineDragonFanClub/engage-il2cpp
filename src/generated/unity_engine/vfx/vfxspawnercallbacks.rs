@@ -4,37 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxspawnercallbacks/VFXSpawnerCallbacks.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VFXSpawnerCallbacks")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct VFXSpawnerCallbacks {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vfx/vfxspawnercallbacks/VFXSpawnerCallbacks.md"))]#[::unity2::class(namespace="UnityEngine.VFX",name="VFXSpawnerCallbacks")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct VFXSpawnerCallbacks{}
 
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VFXSpawnerCallbacks_unity2_raw { use super :: * ; pub unsafe fn on_play (this : VFXSpawnerCallbacks , state : crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , vfx_values : crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , vfx_component : crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnPlay") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnPlay" , < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (VFXSpawnerCallbacks , crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , state , vfx_values , vfx_component , __mi) } pub unsafe fn on_update (this : VFXSpawnerCallbacks , state : crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , vfx_values : crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , vfx_component : crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnUpdate") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnUpdate" , < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (VFXSpawnerCallbacks , crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , state , vfx_values , vfx_component , __mi) } pub unsafe fn on_stop (this : VFXSpawnerCallbacks , state : crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , vfx_values : crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , vfx_component : crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnStop") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnStop" , < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (VFXSpawnerCallbacks , crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState , crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues , crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , state , vfx_values , vfx_component , __mi) } }
+#[cfg(feature="unity_engine-vfx-vfxspawnercallbacks")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VFXSpawnerCallbacks_unity2_raw{use super:: * ;
+pub unsafe fn on_play(this:VFXSpawnerCallbacks,state:crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,vfx_values:crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,vfx_component:crate::unity_engine::vfx::visualeffect::VisualEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnPlay").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnPlay", <VFXSpawnerCallbacks as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(VFXSpawnerCallbacks,crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,crate::unity_engine::vfx::visualeffect::VisualEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,state,vfx_values,vfx_component,__mi)}
+pub unsafe fn on_update(this:VFXSpawnerCallbacks,state:crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,vfx_values:crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,vfx_component:crate::unity_engine::vfx::visualeffect::VisualEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnUpdate").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnUpdate", <VFXSpawnerCallbacks as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(VFXSpawnerCallbacks,crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,crate::unity_engine::vfx::visualeffect::VisualEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,state,vfx_values,vfx_component,__mi)}
+pub unsafe fn on_stop(this:VFXSpawnerCallbacks,state:crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,vfx_values:crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,vfx_component:crate::unity_engine::vfx::visualeffect::VisualEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnStop").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnStop", <VFXSpawnerCallbacks as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(VFXSpawnerCallbacks,crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,crate::unity_engine::vfx::visualeffect::VisualEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,state,vfx_values,vfx_component,__mi)}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
-pub trait IVFXSpawnerCallbacksMethods : IVFXSpawnerCallbacks { # [doc = "`OnPlay(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"] fn on_play (self , state : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState > , vfx_values : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues > , vfx_component : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect >) -> () { unsafe { let __receiver = < VFXSpawnerCallbacks as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerCallbacks_unity2_raw :: on_play (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (vfx_values) , :: core :: convert :: Into :: into (vfx_component) , :: core :: option :: Option :: None) } } # [doc = "`OnUpdate(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"] fn on_update (self , state : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState > , vfx_values : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues > , vfx_component : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect >) -> () { unsafe { let __receiver = < VFXSpawnerCallbacks as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerCallbacks_unity2_raw :: on_update (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (vfx_values) , :: core :: convert :: Into :: into (vfx_component) , :: core :: option :: Option :: None) } } # [doc = "`OnStop(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"] fn on_stop (self , state : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState > , vfx_values : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: vfxexpressionvalues :: VFXExpressionValues > , vfx_component : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect >) -> () { unsafe { let __receiver = < VFXSpawnerCallbacks as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VFXSpawnerCallbacks_unity2_raw :: on_stop (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (vfx_values) , :: core :: convert :: Into :: into (vfx_component) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VFXSpawnerCallbacks as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXSpawnerCallbacks , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f448a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-vfxspawnercallbacks")]pub trait IVFXSpawnerCallbacksMethods:IVFXSpawnerCallbacks{#[doc="`OnPlay(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"]fn on_play(self,state:impl::core::convert::Into<crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState> ,vfx_values:impl::core::convert::Into<crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues> ,vfx_component:impl::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect>)->(){unsafe{let __receiver= <VFXSpawnerCallbacks as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__VFXSpawnerCallbacks_unity2_raw::on_play(__receiver, ::core::convert::Into::into(state), ::core::convert::Into::into(vfx_values), ::core::convert::Into::into(vfx_component), ::core::option::Option::None)}
+}
+#[doc="`OnUpdate(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"]fn on_update(self,state:impl::core::convert::Into<crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState> ,vfx_values:impl::core::convert::Into<crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues> ,vfx_component:impl::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect>)->(){unsafe{let __receiver= <VFXSpawnerCallbacks as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__VFXSpawnerCallbacks_unity2_raw::on_update(__receiver, ::core::convert::Into::into(state), ::core::convert::Into::into(vfx_values), ::core::convert::Into::into(vfx_component), ::core::option::Option::None)}
+}
+#[doc="`OnStop(crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState, crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues, crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"]fn on_stop(self,state:impl::core::convert::Into<crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState> ,vfx_values:impl::core::convert::Into<crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues> ,vfx_component:impl::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect>)->(){unsafe{let __receiver= <VFXSpawnerCallbacks as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__VFXSpawnerCallbacks_unity2_raw::on_stop(__receiver, ::core::convert::Into::into(state), ::core::convert::Into::into(vfx_values), ::core::convert::Into::into(vfx_component), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VFXSpawnerCallbacks as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f448a0usize)as*mut u8,();
+(VFXSpawnerCallbacks)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
-impl < __T : IVFXSpawnerCallbacks > IVFXSpawnerCallbacksMethods for __T { }
+#[cfg(feature="unity_engine-vfx-vfxspawnercallbacks")]impl<__T:IVFXSpawnerCallbacks>IVFXSpawnerCallbacksMethods for __T{}
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
-impl VFXSpawnerCallbacks { pub fn on_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerCallbacks as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-vfx-vfxspawnercallbacks")]impl VFXSpawnerCallbacks{pub fn on_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]
-impl VFXSpawnerCallbacks {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VFXSpawnerCallbacks) , :: core :: stringify ! (new) ,)) ; < Self as IVFXSpawnerCallbacksMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-vfx-vfxspawnercallbacks")]impl VFXSpawnerCallbacks{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VFXSpawnerCallbacks), ::core::stringify!(new),));
+ <Self as IVFXSpawnerCallbacksMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnercallbacks")]

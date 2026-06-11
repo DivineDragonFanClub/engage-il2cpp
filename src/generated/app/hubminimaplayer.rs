@@ -4,41 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimaplayer/HubMiniMapLayer.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMiniMapLayer")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubMiniMapLayer {
-# [offset (24)] # [rename (name = "m_Layer")] pub m_layer : i32 ,
-# [offset (32)] # [rename (name = "m_EnvSoundID")] pub m_env_sound_id : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubminimaplayer/HubMiniMapLayer.md"))]#[::unity2::class(namespace="App",name="HubMiniMapLayer")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubMiniMapLayer{#[offset(24)]#[rename(name="m_Layer")]pub m_layer:i32, #[offset(32)]#[rename(name="m_EnvSoundID")]pub m_env_sound_id: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-hubminimaplayer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubminimaplayer")]
-pub trait IHubMiniMapLayerMethods : IHubMiniMapLayer { # [doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_enter (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < HubMiniMapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMiniMapLayer , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28be6f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`OnTriggerExit(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_exit (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < HubMiniMapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMiniMapLayer , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28be890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMiniMapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMiniMapLayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bea10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubminimaplayer")]pub trait IHubMiniMapLayerMethods:IHubMiniMapLayer{#[doc="`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_enter(self,other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <HubMiniMapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28be6f0usize)as*mut u8,();
+(HubMiniMapLayer)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(other))}
+}
+#[doc="`OnTriggerExit(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_exit(self,other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <HubMiniMapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28be890usize)as*mut u8,();
+(HubMiniMapLayer)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(other))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMiniMapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bea10usize)as*mut u8,();
+(HubMiniMapLayer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubminimaplayer")]
-impl < __T : IHubMiniMapLayer > IHubMiniMapLayerMethods for __T { }
+#[cfg(feature="app-hubminimaplayer")]impl<__T:IHubMiniMapLayer>IHubMiniMapLayerMethods for __T{}
 
-#[cfg(feature = "app-hubminimaplayer")]
-impl HubMiniMapLayer { pub fn on_trigger_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMiniMapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_trigger_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMiniMapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMiniMapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-hubminimaplayer")]impl HubMiniMapLayer{pub fn on_trigger_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_trigger_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-hubminimaplayer")]
-impl HubMiniMapLayer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMiniMapLayer) , :: core :: stringify ! (new) ,)) ; < Self as IHubMiniMapLayerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubminimaplayer")]impl HubMiniMapLayer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMiniMapLayer), ::core::stringify!(new),));
+ <Self as IHubMiniMapLayerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubminimaplayer")]

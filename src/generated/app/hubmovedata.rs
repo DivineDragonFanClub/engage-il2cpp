@@ -4,39 +4,146 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmovedata/HubMoveData.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMoveData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubmovedata :: HubMoveData >)] pub struct HubMoveData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmovedata/HubMoveData.md"))]#[::unity2::class(namespace="App",name="HubMoveData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::hubmovedata::HubMoveData>)]pub struct HubMoveData{}
 
 }
 
 #[cfg(feature = "app-hubmovedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmovedata")]
-impl HubMoveData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf780usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmovedata")]impl HubMoveData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28bf780usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubmovedata")]
-pub trait IHubMoveDataMethods : IHubMoveData { # [doc = "`get_MoveType()` overload"] fn get_move_type (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MoveType(::unity2::Il2CppString)` overload"] fn set_move_type (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Locator()` overload"] fn get_locator (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Locator(::unity2::Il2CppString)` overload"] fn set_locator (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BodyName()` overload"] fn get_body_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BodyName(::unity2::Il2CppString)` overload"] fn set_body_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FaceName()` overload"] fn get_face_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FaceName(::unity2::Il2CppString)` overload"] fn set_face_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsTurn()` overload"] fn get_is_turn (self ,) -> bool { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf8b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsTurn(bool)` overload"] fn set_is_turn (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf8c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_StartSec()` overload"] fn get_start_sec (self ,) -> f32 { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_StartSec(f32)` overload"] fn set_start_sec (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EndSec()` overload"] fn get_end_sec (self ,) -> f32 { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EndSec(f32)` overload"] fn set_end_sec (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MoveSpeed()` overload"] fn get_move_speed (self ,) -> f32 { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MoveSpeed(f32)` overload"] fn set_move_speed (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MoveSec()` overload"] fn get_move_sec (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MoveSec(::unity2::Il2CppString)` overload"] fn set_move_sec (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bf950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bfa30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMoveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28bfa40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmovedata")]pub trait IHubMoveDataMethods:IHubMoveData{#[doc="`get_MoveType()` overload"]fn get_move_type(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf830usize)as*mut u8, ::unity2::Il2CppString;
+(HubMoveData)__receiver)}
+}
+#[doc="`set_MoveType(::unity2::Il2CppString)` overload"]fn set_move_type(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf840usize)as*mut u8,();
+(HubMoveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Locator()` overload"]fn get_locator(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf850usize)as*mut u8, ::unity2::Il2CppString;
+(HubMoveData)__receiver)}
+}
+#[doc="`set_Locator(::unity2::Il2CppString)` overload"]fn set_locator(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf860usize)as*mut u8,();
+(HubMoveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BodyName()` overload"]fn get_body_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf870usize)as*mut u8, ::unity2::Il2CppString;
+(HubMoveData)__receiver)}
+}
+#[doc="`set_BodyName(::unity2::Il2CppString)` overload"]fn set_body_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf880usize)as*mut u8,();
+(HubMoveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_FaceName()` overload"]fn get_face_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf890usize)as*mut u8, ::unity2::Il2CppString;
+(HubMoveData)__receiver)}
+}
+#[doc="`set_FaceName(::unity2::Il2CppString)` overload"]fn set_face_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf8a0usize)as*mut u8,();
+(HubMoveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsTurn()` overload"]fn get_is_turn(self,)->bool{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf8b0usize)as*mut u8,bool;
+(HubMoveData)__receiver)}
+}
+#[doc="`set_IsTurn(bool)` overload"]fn set_is_turn(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf8c0usize)as*mut u8,();
+(HubMoveData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_StartSec()` overload"]fn get_start_sec(self,)->f32{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf8d0usize)as*mut u8,f32;
+(HubMoveData)__receiver)}
+}
+#[doc="`set_StartSec(f32)` overload"]fn set_start_sec(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf8e0usize)as*mut u8,();
+(HubMoveData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_EndSec()` overload"]fn get_end_sec(self,)->f32{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf8f0usize)as*mut u8,f32;
+(HubMoveData)__receiver)}
+}
+#[doc="`set_EndSec(f32)` overload"]fn set_end_sec(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf900usize)as*mut u8,();
+(HubMoveData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveSpeed()` overload"]fn get_move_speed(self,)->f32{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf910usize)as*mut u8,f32;
+(HubMoveData)__receiver)}
+}
+#[doc="`set_MoveSpeed(f32)` overload"]fn set_move_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf920usize)as*mut u8,();
+(HubMoveData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveSec()` overload"]fn get_move_sec(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf930usize)as*mut u8, ::unity2::Il2CppString;
+(HubMoveData)__receiver)}
+}
+#[doc="`set_MoveSec(::unity2::Il2CppString)` overload"]fn set_move_sec(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf940usize)as*mut u8,();
+(HubMoveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf950usize)as*mut u8,();
+(HubMoveData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bfa30usize)as*mut u8, ::unity2::Il2CppString;
+(HubMoveData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28bfa40usize)as*mut u8,();
+(HubMoveData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmovedata")]
-impl < __T : IHubMoveData > IHubMoveDataMethods for __T { }
+#[cfg(feature="app-hubmovedata")]impl<__T:IHubMoveData>IHubMoveDataMethods for __T{}
 
-#[cfg(feature = "app-hubmovedata")]
-impl HubMoveData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_move_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_move_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_body_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_body_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_face_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_face_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_is_turn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_is_turn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_start_sec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_start_sec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_end_sec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_end_sec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_move_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_move_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_move_sec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_move_sec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-hubmovedata")]impl HubMoveData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_move_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_move_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_body_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_body_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_face_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_face_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_is_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_is_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_start_sec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_start_sec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_end_sec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_end_sec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_move_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_move_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_move_sec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_move_sec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-hubmovedata")]
-impl HubMoveData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMoveData) , :: core :: stringify ! (new) ,)) ; < Self as IHubMoveDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmovedata")]impl HubMoveData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMoveData), ::core::stringify!(new),));
+ <Self as IHubMoveDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmovedata")]

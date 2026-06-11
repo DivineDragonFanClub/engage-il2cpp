@@ -4,51 +4,26 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/shadervariantcollection/ShaderVariantCollection.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ShaderVariantCollection")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct ShaderVariantCollection {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/shadervariantcollection/ShaderVariantCollection.md"))]#[::unity2::class(namespace="UnityEngine",name="ShaderVariantCollection")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct ShaderVariantCollection{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/shadervariantcollection/ShaderVariantCollection_ShaderVariant.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ShaderVariantCollection_ShaderVariant {
-    pub shader: crate :: unity_engine :: shader :: Shader,
-    pub pass_type: crate :: unity_engine :: rendering :: passtype :: PassType,
-    pub keywords: :: unity2 :: Array < :: unity2 :: Il2CppString >,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/shadervariantcollection/ShaderVariantCollection_ShaderVariant.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ShaderVariantCollection_ShaderVariant{pub shader:crate::unity_engine::shader::Shader,pub pass_type:crate::unity_engine::rendering::passtype::PassType,pub keywords: ::unity2::Array< ::unity2::Il2CppString>,}
+impl::unity2::ClassIdentity for ShaderVariantCollection_ShaderVariant{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ShaderVariantCollection.ShaderVariant";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ShaderVariantCollection_ShaderVariant {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ShaderVariantCollection.ShaderVariant";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ShaderVariantCollection_ShaderVariant {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ShaderVariantCollection_ShaderVariant{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -56,21 +31,83 @@ impl ::unity2::IlType for ShaderVariantCollection_ShaderVariant {
 #[cfg(feature = "unity_engine-shadervariantcollection-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-shadervariantcollection")]
-impl ShaderVariantCollection { # [doc = "`Internal_Create(crate::unity_engine::shadervariantcollection::ShaderVariantCollection)` overload"] pub fn internal_create (svc : impl :: core :: convert :: Into < crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f932f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (svc) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-shadervariantcollection")]impl ShaderVariantCollection{#[doc="`Internal_Create(crate::unity_engine::shadervariantcollection::ShaderVariantCollection)` overload"]pub fn internal_create(svc:impl::core::convert::Into<crate::unity_engine::shadervariantcollection::ShaderVariantCollection>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f932f0usize)as*mut u8,();
+(crate::unity_engine::shadervariantcollection::ShaderVariantCollection)::core::convert::Into::into(svc))}
+}
+}
 
-#[cfg(feature = "unity_engine-shadervariantcollection")]
-pub trait IShaderVariantCollectionMethods : IShaderVariantCollection { # [doc = "`get_shaderCount()` overload"] fn get_shader_count (self ,) -> i32 { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_variantCount()` overload"] fn get_variant_count (self ,) -> i32 { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_isWarmedUp()` overload"] fn get_is_warmed_up (self ,) -> bool { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f930b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddVariant(crate::unity_engine::shader::Shader, crate::unity_engine::rendering::passtype::PassType, ::unity2::Array<::unity2::Il2CppString>)` overload"] fn add_variant (self , shader : impl :: core :: convert :: Into < crate :: unity_engine :: shader :: Shader > , pass_type : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: passtype :: PassType > , keywords : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> bool { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , crate :: unity_engine :: shader :: Shader , crate :: unity_engine :: rendering :: passtype :: PassType , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (shader) , :: core :: convert :: Into :: into (pass_type) , :: core :: convert :: Into :: into (keywords) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveVariant(crate::unity_engine::shader::Shader, crate::unity_engine::rendering::passtype::PassType, ::unity2::Array<::unity2::Il2CppString>)` overload"] fn remove_variant (self , shader : impl :: core :: convert :: Into < crate :: unity_engine :: shader :: Shader > , pass_type : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: passtype :: PassType > , keywords : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> bool { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , crate :: unity_engine :: shader :: Shader , crate :: unity_engine :: rendering :: passtype :: PassType , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (shader) , :: core :: convert :: Into :: into (pass_type) , :: core :: convert :: Into :: into (keywords) , :: core :: option :: Option :: None) } } } # [doc = "`ContainsVariant(crate::unity_engine::shader::Shader, crate::unity_engine::rendering::passtype::PassType, ::unity2::Array<::unity2::Il2CppString>)` overload"] fn contains_variant (self , shader : impl :: core :: convert :: Into < crate :: unity_engine :: shader :: Shader > , pass_type : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: passtype :: PassType > , keywords : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> bool { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , crate :: unity_engine :: shader :: Shader , crate :: unity_engine :: rendering :: passtype :: PassType , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f931e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (shader) , :: core :: convert :: Into :: into (pass_type) , :: core :: convert :: Into :: into (keywords) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WarmUp()` overload"] fn warm_up (self ,) -> () { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f932a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)` overload"] fn add (self , variant : impl :: core :: convert :: Into < crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant >) -> bool { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f933e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (variant) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)` overload"] fn remove (self , variant : impl :: core :: convert :: Into < crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant >) -> bool { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f93450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (variant) , :: core :: option :: Option :: None) } } } # [doc = "`Contains(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)` overload"] fn contains (self , variant : impl :: core :: convert :: Into < crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant >) -> bool { unsafe { let __receiver = < ShaderVariantCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShaderVariantCollection , crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f934c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (variant) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-shadervariantcollection")]pub trait IShaderVariantCollectionMethods:IShaderVariantCollection{#[doc="`get_shaderCount()` overload"]fn get_shader_count(self,)->i32{unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f93010usize)as*mut u8,i32;
+(ShaderVariantCollection)__receiver)}
+}
+#[doc="`get_variantCount()` overload"]fn get_variant_count(self,)->i32{unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f93060usize)as*mut u8,i32;
+(ShaderVariantCollection)__receiver)}
+}
+#[doc="`get_isWarmedUp()` overload"]fn get_is_warmed_up(self,)->bool{unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f930b0usize)as*mut u8,bool;
+(ShaderVariantCollection)__receiver)}
+}
+#[doc="`AddVariant(crate::unity_engine::shader::Shader, crate::unity_engine::rendering::passtype::PassType, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn add_variant(self,shader:impl::core::convert::Into<crate::unity_engine::shader::Shader> ,pass_type:impl::core::convert::Into<crate::unity_engine::rendering::passtype::PassType> ,keywords:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f93100usize)as*mut u8,bool;
+(ShaderVariantCollection)__receiver,(crate::unity_engine::shader::Shader)::core::convert::Into::into(shader),(crate::unity_engine::rendering::passtype::PassType)::core::convert::Into::into(pass_type),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(keywords))}
+}
+#[doc="`RemoveVariant(crate::unity_engine::shader::Shader, crate::unity_engine::rendering::passtype::PassType, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn remove_variant(self,shader:impl::core::convert::Into<crate::unity_engine::shader::Shader> ,pass_type:impl::core::convert::Into<crate::unity_engine::rendering::passtype::PassType> ,keywords:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f93170usize)as*mut u8,bool;
+(ShaderVariantCollection)__receiver,(crate::unity_engine::shader::Shader)::core::convert::Into::into(shader),(crate::unity_engine::rendering::passtype::PassType)::core::convert::Into::into(pass_type),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(keywords))}
+}
+#[doc="`ContainsVariant(crate::unity_engine::shader::Shader, crate::unity_engine::rendering::passtype::PassType, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn contains_variant(self,shader:impl::core::convert::Into<crate::unity_engine::shader::Shader> ,pass_type:impl::core::convert::Into<crate::unity_engine::rendering::passtype::PassType> ,keywords:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f931e0usize)as*mut u8,bool;
+(ShaderVariantCollection)__receiver,(crate::unity_engine::shader::Shader)::core::convert::Into::into(shader),(crate::unity_engine::rendering::passtype::PassType)::core::convert::Into::into(pass_type),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(keywords))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f93250usize)as*mut u8,();
+(ShaderVariantCollection)__receiver)}
+}
+#[doc="`WarmUp()` overload"]fn warm_up(self,)->(){unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f932a0usize)as*mut u8,();
+(ShaderVariantCollection)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f93340usize)as*mut u8,();
+(ShaderVariantCollection)__receiver)}
+}
+#[doc="`Add(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)` overload"]fn add(self,variant:impl::core::convert::Into<crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant>)->bool{unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f933e0usize)as*mut u8,bool;
+(ShaderVariantCollection)__receiver,(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)::core::convert::Into::into(variant))}
+}
+#[doc="`Remove(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)` overload"]fn remove(self,variant:impl::core::convert::Into<crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant>)->bool{unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f93450usize)as*mut u8,bool;
+(ShaderVariantCollection)__receiver,(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)::core::convert::Into::into(variant))}
+}
+#[doc="`Contains(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)` overload"]fn contains(self,variant:impl::core::convert::Into<crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant>)->bool{unsafe{let __receiver= <ShaderVariantCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f934c0usize)as*mut u8,bool;
+(ShaderVariantCollection)__receiver,(crate::unity_engine::shadervariantcollection::ShaderVariantCollection_ShaderVariant)::core::convert::Into::into(variant))}
+}
+}
 
-#[cfg(feature = "unity_engine-shadervariantcollection")]
-impl < __T : IShaderVariantCollection > IShaderVariantCollectionMethods for __T { }
+#[cfg(feature="unity_engine-shadervariantcollection")]impl<__T:IShaderVariantCollection>IShaderVariantCollectionMethods for __T{}
 
-#[cfg(feature = "unity_engine-shadervariantcollection")]
-impl ShaderVariantCollection { pub fn get_shader_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_variant_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_warmed_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_variant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn remove_variant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn contains_variant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn warm_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn internal_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderVariantCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="unity_engine-shadervariantcollection")]impl ShaderVariantCollection{pub fn get_shader_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_variant_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_warmed_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_variant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn remove_variant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn contains_variant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn warm_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn internal_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "unity_engine-shadervariantcollection")]
-impl ShaderVariantCollection {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShaderVariantCollection) , :: core :: stringify ! (new) ,)) ; < Self as IShaderVariantCollectionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-shadervariantcollection")]impl ShaderVariantCollection{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShaderVariantCollection), ::core::stringify!(new),));
+ <Self as IShaderVariantCollectionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-shadervariantcollection")]

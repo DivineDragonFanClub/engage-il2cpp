@@ -4,47 +4,88 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: graphic :: { Graphic , IGraphic }
- ;
- use crate :: unity_engine :: ui :: maskablegraphic :: { IMaskableGraphic , MaskableGraphic }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::graphic::{Graphic,IGraphic}
+;
+use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/rawimage/RawImage.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "RawImage")] # [parent (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic)] pub struct RawImage {
-# [offset (208)] # [rename (name = "m_Texture")] pub m_texture : crate :: unity_engine :: texture :: Texture ,
-# [offset (216)] # [rename (name = "m_UVRect")] pub m_uv_rect : crate :: unity_engine :: rect :: Rect ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/rawimage/RawImage.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="RawImage")]#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]pub struct RawImage{#[offset(208)]#[rename(name="m_Texture")]pub m_texture:crate::unity_engine::texture::Texture, #[offset(216)]#[rename(name="m_UVRect")]pub m_uv_rect:crate::unity_engine::rect::Rect,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-rawimage-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-rawimage")]
-pub trait IRawImageMethods : IRawImage { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RawImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_mainTexture()` overload"] fn get_main_texture (self ,) -> crate :: unity_engine :: texture :: Texture { unsafe { let __receiver = < RawImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawImage , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture :: Texture = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37219c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_texture()` overload"] fn get_texture (self ,) -> crate :: unity_engine :: texture :: Texture { unsafe { let __receiver = < RawImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawImage , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture :: Texture = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_texture(crate::unity_engine::texture::Texture)` overload"] fn set_texture (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture >) -> () { unsafe { let __receiver = < RawImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawImage , crate :: unity_engine :: texture :: Texture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uvRect()` overload"] fn get_uv_rect (self ,) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < RawImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawImage , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uvRect(crate::unity_engine::rect::Rect)` overload"] fn set_uv_rect (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect >) -> () { unsafe { let __receiver = < RawImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawImage , crate :: unity_engine :: rect :: Rect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721c40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetNativeSize()` overload"] fn set_native_size (self ,) -> () { unsafe { let __receiver = < RawImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn on_populate_mesh (self , vh : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < RawImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawImage , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (vh) , :: core :: option :: Option :: None) } } } # [doc = "`OnDidApplyAnimationProperties()` overload"] fn on_did_apply_animation_properties (self ,) -> () { unsafe { let __receiver = < RawImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RawImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3722280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-rawimage")]pub trait IRawImageMethods:IRawImage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721960usize)as*mut u8,();
+(RawImage)__receiver)}
+}
+#[doc="`get_mainTexture()` overload"]fn get_main_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37219c0usize)as*mut u8,crate::unity_engine::texture::Texture;
+(RawImage)__receiver)}
+}
+#[doc="`get_texture()` overload"]fn get_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721b40usize)as*mut u8,crate::unity_engine::texture::Texture;
+(RawImage)__receiver)}
+}
+#[doc="`set_texture(crate::unity_engine::texture::Texture)` overload"]fn set_texture(self,value:impl::core::convert::Into<crate::unity_engine::texture::Texture>)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721b50usize)as*mut u8,();
+(RawImage)__receiver,(crate::unity_engine::texture::Texture)::core::convert::Into::into(value))}
+}
+#[doc="`get_uvRect()` overload"]fn get_uv_rect(self,)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721c30usize)as*mut u8,crate::unity_engine::rect::Rect;
+(RawImage)__receiver)}
+}
+#[doc="`set_uvRect(crate::unity_engine::rect::Rect)` overload"]fn set_uv_rect(self,value:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721c40usize)as*mut u8,();
+(RawImage)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(value))}
+}
+#[doc="`SetNativeSize()` overload"]fn set_native_size(self,)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721cd0usize)as*mut u8,();
+(RawImage)__receiver)}
+}
+#[doc="`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn on_populate_mesh(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721e40usize)as*mut u8,();
+(RawImage)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vh))}
+}
+#[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3722280usize)as*mut u8,();
+(RawImage)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-rawimage")]
-impl < __T : IRawImage > IRawImageMethods for __T { }
+#[cfg(feature="unity_engine-ui-rawimage")]impl<__T:IRawImage>IRawImageMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-rawimage")]
-impl RawImage { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_main_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_uv_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_uv_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_native_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_populate_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_did_apply_animation_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RawImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-ui-rawimage")]impl RawImage{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_main_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_uv_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_uv_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_native_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_populate_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_did_apply_animation_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "unity_engine-ui-rawimage")]
-impl RawImage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RawImage) , :: core :: stringify ! (new) ,)) ; < Self as IRawImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-rawimage")]impl RawImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RawImage), ::core::stringify!(new),));
+ <Self as IRawImageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-rawimage")]

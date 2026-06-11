@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/sortinglayer/SortingLayer.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SortingLayer {
-    pub m_id: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/sortinglayer/SortingLayer.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SortingLayer{pub m_id:i32,}
+impl::unity2::ClassIdentity for SortingLayer{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="SortingLayer";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for SortingLayer {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "SortingLayer";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SortingLayer {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SortingLayer{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,35 @@ impl ::unity2::IlType for SortingLayer {
 #[cfg(feature = "unity_engine-sortinglayer-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-sortinglayer")]
-impl SortingLayer { # [doc = "`get_layers()` overload"] pub fn get_layers () -> :: unity2 :: Array < crate :: unity_engine :: sortinglayer :: SortingLayer > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: sortinglayer :: SortingLayer > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94660usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetSortingLayerIDsInternal()` overload"] pub fn get_sorting_layer_i_ds_internal () -> :: unity2 :: Array < i32 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94730usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetLayerValueFromID(i32)` overload"] pub fn get_layer_value_from_id (id : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94610usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`IDToName(i32)` overload"] pub fn id_to_name (id : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94770usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-sortinglayer")]impl SortingLayer{#[doc="`get_layers()` overload"]pub fn get_layers()-> ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94660usize)as*mut u8, ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer> ;
+)}
+}
+#[doc="`GetSortingLayerIDsInternal()` overload"]pub fn get_sorting_layer_i_ds_internal()-> ::unity2::Array<i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94730usize)as*mut u8, ::unity2::Array<i32> ;
+)}
+}
+#[doc="`GetLayerValueFromID(i32)` overload"]pub fn get_layer_value_from_id(id:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94610usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(id))}
+}
+#[doc="`IDToName(i32)` overload"]pub fn id_to_name(id:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94770usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(id))}
+}
+}
 
-#[cfg(feature = "unity_engine-sortinglayer")]
-impl SortingLayer { # [doc = "`get_id()` overload"] pub fn get_id (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SortingLayer , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f945b0usize) as * mut u8) ; __inner (self as * mut SortingLayer , :: core :: option :: Option :: None) } } } # [doc = "`get_value()` overload"] pub fn get_value (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SortingLayer , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f945c0usize) as * mut u8) ; __inner (self as * mut SortingLayer , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-sortinglayer")]impl SortingLayer{#[doc="`get_id()` overload"]pub fn get_id(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f945b0usize)as*mut u8,i32;
+(*mut SortingLayer)self as*mut SortingLayer)}
+}
+#[doc="`get_value()` overload"]pub fn get_value(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f945c0usize)as*mut u8,i32;
+(*mut SortingLayer)self as*mut SortingLayer)}
+}
+}
 
-#[cfg(feature = "unity_engine-sortinglayer")]
-impl SortingLayer { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_layers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_sorting_layer_i_ds_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_layer_value_from_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn id_to_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-sortinglayer")]impl SortingLayer{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_layers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_sorting_layer_i_ds_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_layer_value_from_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn id_to_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-sortinglayer")]
 #[doc(hidden)]

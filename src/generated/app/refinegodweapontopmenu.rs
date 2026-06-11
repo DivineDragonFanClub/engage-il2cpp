@@ -4,177 +4,183 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu_ResetMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponTopMenu.ResetMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefineGodWeaponTopMenu_ResetMenuItem {
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefineGodWeaponTopMenu_Result2{pub value:i32,}
+impl::unity2::ClassIdentity for RefineGodWeaponTopMenu_Result2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RefineGodWeaponTopMenu.Result2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RefineGodWeaponTopMenu_Result2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RefineGodWeaponTopMenu_Result2{pub fn refine()->Self{Self{value:0}
+}
+pub fn reset()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponTopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefineGodWeaponTopMenu {
-# [offset (200)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineGodWeaponTopMenu_DecideEventHandler{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu_Result2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RefineGodWeaponTopMenu_Result2  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu_ResetMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponTopMenu.ResetMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefineGodWeaponTopMenu_ResetMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler,}
 
 
-impl  ::unity2::ClassIdentity for RefineGodWeaponTopMenu_Result2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefineGodWeaponTopMenu.Result2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefineGodWeaponTopMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler,}
 
 
-impl  ::unity2::IlType for RefineGodWeaponTopMenu_Result2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RefineGodWeaponTopMenu_Result2  {
-    pub fn refine() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn reset() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu_RefineMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponTopMenu.RefineMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefineGodWeaponTopMenu_RefineMenuItem {
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponTopMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefineGodWeaponTopMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweapontopmenu/RefineGodWeaponTopMenu_RefineMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponTopMenu.RefineMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefineGodWeaponTopMenu_RefineMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-refinegodweapontopmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refinegodweapontopmenu")]
-pub trait IRefineGodWeaponTopMenu_ResetMenuItemMethods : IRefineGodWeaponTopMenu_ResetMenuItem { # [doc = "`.ctor(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` overload"] fn ctor (self , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineGodWeaponTopMenu_ResetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu_ResetMenuItem , crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af84a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineGodWeaponTopMenu_ResetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu_ResetMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af8550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl < __T : IRefineGodWeaponTopMenu_ResetMenuItem > IRefineGodWeaponTopMenu_ResetMenuItemMethods for __T { }
-
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl RefineGodWeaponTopMenu_ResetMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu_ResetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu_ResetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl RefineGodWeaponTopMenu_ResetMenuItem {
-# [doc = "`.ctor(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` — overload selector"] pub fn new (decide_event_handler : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineGodWeaponTopMenu_ResetMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineGodWeaponTopMenu_ResetMenuItemMethods > :: ctor (this , decide_event_handler) ; this }
+#[cfg(feature="app-refinegodweapontopmenu")]pub trait IRefineGodWeaponTopMenu_DecideEventHandlerMethods:IRefineGodWeaponTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineGodWeaponTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af80a0usize)as*mut u8,();
+(RefineGodWeaponTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2>)->(){unsafe{let __receiver= <RefineGodWeaponTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af80c0usize)as*mut u8,();
+(RefineGodWeaponTopMenu_DecideEventHandler)__receiver,(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2)::core::convert::Into::into(result))}
+}
 }
 
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl RefineGodWeaponTopMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , initial_selected : impl :: core :: convert :: Into < crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 , crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29512c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (initial_selected) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refinegodweapontopmenu")]impl<__T:IRefineGodWeaponTopMenu_DecideEventHandler>IRefineGodWeaponTopMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-refinegodweapontopmenu")]
-pub trait IRefineGodWeaponTopMenuMethods : IRefineGodWeaponTopMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: shoptopmenucontent :: ShopTopMenuContent > , initial_selected : impl :: core :: convert :: Into < crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineGodWeaponTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: shoptopmenucontent :: ShopTopMenuContent , crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 , crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29514b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (initial_selected) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineGodWeaponTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2951540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTutorial()` overload"] fn get_tutorial (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineGodWeaponTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2951590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineGodWeaponTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29515e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl < __T : IRefineGodWeaponTopMenu > IRefineGodWeaponTopMenuMethods for __T { }
-
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl RefineGodWeaponTopMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl RefineGodWeaponTopMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: shoptopmenucontent :: ShopTopMenuContent , initial_selected : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 , decide_event_handler : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineGodWeaponTopMenu) , :: core :: stringify ! (new) ,)) ; < Self as IRefineGodWeaponTopMenuMethods > :: ctor (this , menu_item_list , menu_content , initial_selected , decide_event_handler) ; this }
+#[cfg(feature="app-refinegodweapontopmenu")]impl RefineGodWeaponTopMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-refinegodweapontopmenu")]
-pub trait IRefineGodWeaponTopMenu_RefineMenuItemMethods : IRefineGodWeaponTopMenu_RefineMenuItem { # [doc = "`.ctor(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` overload"] fn ctor (self , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineGodWeaponTopMenu_RefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu_RefineMenuItem , crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af83c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineGodWeaponTopMenu_RefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu_RefineMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af8470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl < __T : IRefineGodWeaponTopMenu_RefineMenuItem > IRefineGodWeaponTopMenu_RefineMenuItemMethods for __T { }
-
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl RefineGodWeaponTopMenu_RefineMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu_RefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu_RefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl RefineGodWeaponTopMenu_RefineMenuItem {
-# [doc = "`.ctor(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` — overload selector"] pub fn new (decide_event_handler : crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineGodWeaponTopMenu_RefineMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineGodWeaponTopMenu_RefineMenuItemMethods > :: ctor (this , decide_event_handler) ; this }
+#[cfg(feature="app-refinegodweapontopmenu")]impl RefineGodWeaponTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineGodWeaponTopMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "app-refinegodweapontopmenu")]
-pub trait IRefineGodWeaponTopMenu_DecideEventHandlerMethods : IRefineGodWeaponTopMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefineGodWeaponTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af80a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 >) -> () { unsafe { let __receiver = < RefineGodWeaponTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponTopMenu_DecideEventHandler , crate :: app :: refinegodweapontopmenu :: RefineGodWeaponTopMenu_Result2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af80c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refinegodweapontopmenu")]pub trait IRefineGodWeaponTopMenu_ResetMenuItemMethods:IRefineGodWeaponTopMenu_ResetMenuItem{#[doc="`.ctor(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefineGodWeaponTopMenu_ResetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af84a0usize)as*mut u8,();
+(RefineGodWeaponTopMenu_ResetMenuItem)__receiver,(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineGodWeaponTopMenu_ResetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8550usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineGodWeaponTopMenu_ResetMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl < __T : IRefineGodWeaponTopMenu_DecideEventHandler > IRefineGodWeaponTopMenu_DecideEventHandlerMethods for __T { }
+#[cfg(feature="app-refinegodweapontopmenu")]impl<__T:IRefineGodWeaponTopMenu_ResetMenuItem>IRefineGodWeaponTopMenu_ResetMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl RefineGodWeaponTopMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-refinegodweapontopmenu")]impl RefineGodWeaponTopMenu_ResetMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-refinegodweapontopmenu")]
-impl RefineGodWeaponTopMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineGodWeaponTopMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefineGodWeaponTopMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refinegodweapontopmenu")]impl RefineGodWeaponTopMenu_ResetMenuItem{#[doc="`.ctor(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineGodWeaponTopMenu_ResetMenuItem), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponTopMenu_ResetMenuItemMethods> ::ctor(this,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-refinegodweapontopmenu")]impl RefineGodWeaponTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29512c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+}
+
+#[cfg(feature="app-refinegodweapontopmenu")]pub trait IRefineGodWeaponTopMenuMethods:IRefineGodWeaponTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::shoptopmenucontent::ShopTopMenuContent> ,initial_selected:impl::core::convert::Into<crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefineGodWeaponTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29514b0usize)as*mut u8,();
+(RefineGodWeaponTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::shoptopmenucontent::ShopTopMenuContent)::core::convert::Into::into(menu_content),(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineGodWeaponTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2951540usize)as*mut u8, ::unity2::Il2CppString;
+(RefineGodWeaponTopMenu)__receiver)}
+}
+#[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineGodWeaponTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2951590usize)as*mut u8, ::unity2::Il2CppString;
+(RefineGodWeaponTopMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineGodWeaponTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29515e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineGodWeaponTopMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-refinegodweapontopmenu")]impl<__T:IRefineGodWeaponTopMenu>IRefineGodWeaponTopMenuMethods for __T{}
+
+#[cfg(feature="app-refinegodweapontopmenu")]impl RefineGodWeaponTopMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-refinegodweapontopmenu")]impl RefineGodWeaponTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::shoptopmenucontent::ShopTopMenuContent, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2, crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::shoptopmenucontent::ShopTopMenuContent,initial_selected:crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2,decide_event_handler:crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineGodWeaponTopMenu), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponTopMenuMethods> ::ctor(this,menu_item_list,menu_content,initial_selected,decide_event_handler);
+this}
+}
+
+#[cfg(feature="app-refinegodweapontopmenu")]pub trait IRefineGodWeaponTopMenu_RefineMenuItemMethods:IRefineGodWeaponTopMenu_RefineMenuItem{#[doc="`.ctor(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefineGodWeaponTopMenu_RefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af83c0usize)as*mut u8,();
+(RefineGodWeaponTopMenu_RefineMenuItem)__receiver,(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineGodWeaponTopMenu_RefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8470usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineGodWeaponTopMenu_RefineMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-refinegodweapontopmenu")]impl<__T:IRefineGodWeaponTopMenu_RefineMenuItem>IRefineGodWeaponTopMenu_RefineMenuItemMethods for __T{}
+
+#[cfg(feature="app-refinegodweapontopmenu")]impl RefineGodWeaponTopMenu_RefineMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refinegodweapontopmenu")]impl RefineGodWeaponTopMenu_RefineMenuItem{#[doc="`.ctor(crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineGodWeaponTopMenu_RefineMenuItem), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponTopMenu_RefineMenuItemMethods> ::ctor(this,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refinegodweapontopmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RefineGodWeaponTopMenu_Result2;
+    pub use super::RefineGodWeaponTopMenu_DecideEventHandler;
+    pub use super::IRefineGodWeaponTopMenu_DecideEventHandler;
+    pub use super::IRefineGodWeaponTopMenu_DecideEventHandlerMethods;
     pub use super::RefineGodWeaponTopMenu_ResetMenuItem;
     pub use super::IRefineGodWeaponTopMenu_ResetMenuItem;
     pub use super::IRefineGodWeaponTopMenu_ResetMenuItemMethods;
     pub use super::RefineGodWeaponTopMenu;
     pub use super::IRefineGodWeaponTopMenu;
     pub use super::IRefineGodWeaponTopMenuMethods;
-    pub use super::RefineGodWeaponTopMenu_Result2;
     pub use super::RefineGodWeaponTopMenu_RefineMenuItem;
     pub use super::IRefineGodWeaponTopMenu_RefineMenuItem;
     pub use super::IRefineGodWeaponTopMenu_RefineMenuItemMethods;
-    pub use super::RefineGodWeaponTopMenu_DecideEventHandler;
-    pub use super::IRefineGodWeaponTopMenu_DecideEventHandler;
-    pub use super::IRefineGodWeaponTopMenu_DecideEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

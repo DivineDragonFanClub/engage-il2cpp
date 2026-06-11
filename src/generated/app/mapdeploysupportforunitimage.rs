@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapdeploybitimage :: { IMapDeployBitImage , MapDeployBitImage }
- ;
- use crate :: app :: mapimagecorebit :: { IMapImageCoreBit , MapImageCoreBit }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapdeploybitimage::{IMapDeployBitImage,MapDeployBitImage}
+;
+use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploysupportforunitimage/MapDeploySupportForUnitImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapDeploySupportForUnitImage")] # [parent (crate :: app :: mapdeploybitimage :: MapDeployBitImage)] pub struct MapDeploySupportForUnitImage {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeploysupportforunitimage/MapDeploySupportForUnitImage.md"))]#[::unity2::class(namespace="App",name="MapDeploySupportForUnitImage")]#[parent(crate::app::mapdeploybitimage::MapDeployBitImage)]pub struct MapDeploySupportForUnitImage{}
 
 }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapdeploysupportforunitimage")]
-pub trait IMapDeploySupportForUnitImageMethods : IMapDeploySupportForUnitImage { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapDeploySupportForUnitImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeploySupportForUnitImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapdeploysupportforunitimage")]pub trait IMapDeploySupportForUnitImageMethods:IMapDeploySupportForUnitImage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDeploySupportForUnitImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3f60usize)as*mut u8,();
+(MapDeploySupportForUnitImage)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapdeploysupportforunitimage")]
-impl < __T : IMapDeploySupportForUnitImage > IMapDeploySupportForUnitImageMethods for __T { }
+#[cfg(feature="app-mapdeploysupportforunitimage")]impl<__T:IMapDeploySupportForUnitImage>IMapDeploySupportForUnitImageMethods for __T{}
 
-#[cfg(feature = "app-mapdeploysupportforunitimage")]
-impl MapDeploySupportForUnitImage { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeploySupportForUnitImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-mapdeploysupportforunitimage")]impl MapDeploySupportForUnitImage{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-mapdeploysupportforunitimage")]
-impl MapDeploySupportForUnitImage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapDeploySupportForUnitImage) , :: core :: stringify ! (new) ,)) ; < Self as IMapDeploySupportForUnitImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapdeploysupportforunitimage")]impl MapDeploySupportForUnitImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDeploySupportForUnitImage), ::core::stringify!(new),));
+ <Self as IMapDeploySupportForUnitImageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage")]

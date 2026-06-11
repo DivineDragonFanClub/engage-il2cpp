@@ -4,141 +4,135 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticemanager/NoticeManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "NoticeManager")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: noticemanager :: NoticeManager >)] pub struct NoticeManager {
-# [offset (32)] # [rename (name = "m_AchievementPopUp")] pub m_achievement_pop_up : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (48)] # [rename (name = "m_TextMesh")] pub m_text_mesh : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_ClearObject")] pub m_clear_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_Queues")] pub m_queues : :: unity2 :: Array < crate :: system :: collections :: generic :: queue_1 :: Queue_1 < :: unity2 :: Il2CppString > > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticemanager/NoticeManager_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NoticeManager_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for NoticeManager_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NoticeManager.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NoticeManager_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NoticeManager_Kinds{pub fn none()->Self{Self{value:0}
+}
+pub fn facility()->Self{Self{value:1}
+}
+pub fn kizuna()->Self{Self{value:2}
+}
+pub fn tutorial()->Self{Self{value:3}
+}
+pub fn notebook()->Self{Self{value:4}
+}
+pub fn ring_list()->Self{Self{value:5}
+}
+pub fn num()->Self{Self{value:6}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticemanager/NoticeManager_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NoticeManager_Kinds  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for NoticeManager_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NoticeManager.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for NoticeManager_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  NoticeManager_Kinds  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn facility() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn kizuna() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn tutorial() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn notebook() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn ring_list() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 6 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/noticemanager/NoticeManager.md"))]#[::unity2::class(namespace="App",name="NoticeManager")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::noticemanager::NoticeManager>)]pub struct NoticeManager{#[offset(32)]#[rename(name="m_AchievementPopUp")]pub m_achievement_pop_up:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(48)]#[rename(name="m_TextMesh")]pub m_text_mesh:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_ClearObject")]pub m_clear_object:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_Queues")]pub m_queues: ::unity2::Array<crate::system::collections::generic::queue_1::Queue_1< ::unity2::Il2CppString> > ,}
 
 }
 
 #[cfg(feature = "app-noticemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-noticemanager")]
-impl NoticeManager { # [doc = "`Add(crate::app::noticemanager::NoticeManager_Kinds, ::unity2::Il2CppString)` overload"] pub fn add (kind : impl :: core :: convert :: Into < crate :: app :: noticemanager :: NoticeManager_Kinds > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: noticemanager :: NoticeManager_Kinds , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1b540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1b690usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] pub fn stop () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1b820usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CanKizunaTalk()` overload"] pub fn can_kizuna_talk () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1b950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UpdateKizunaTalk()` overload"] pub fn update_kizuna_talk () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1be90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-noticemanager")]impl NoticeManager{#[doc="`Add(crate::app::noticemanager::NoticeManager_Kinds, ::unity2::Il2CppString)` overload"]pub fn add(kind:impl::core::convert::Into<crate::app::noticemanager::NoticeManager_Kinds> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1b540usize)as*mut u8,();
+(crate::app::noticemanager::NoticeManager_Kinds)::core::convert::Into::into(kind),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1b690usize)as*mut u8,();
+)}
+}
+#[doc="`Stop()` overload"]pub fn stop()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1b820usize)as*mut u8,();
+)}
+}
+#[doc="`CanKizunaTalk()` overload"]pub fn can_kizuna_talk()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1b950usize)as*mut u8,bool;
+)}
+}
+#[doc="`UpdateKizunaTalk()` overload"]pub fn update_kizuna_talk()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1be90usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-noticemanager")]
-pub trait INoticeManagerMethods : INoticeManager { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1bf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1c1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsFinish(crate::unity_engine::animator::Animator)` overload"] fn is_finish (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> bool { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeManager , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1c420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: option :: Option :: None) } } } # [doc = "`CanShow()` overload"] fn can_show (self ,) -> bool { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1c500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Show(::unity2::Il2CppString, bool)` overload"] fn show (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , clear : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeManager , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1c8b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (clear) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1c980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NoticeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoticeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1cba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-noticemanager")]pub trait INoticeManagerMethods:INoticeManager{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <NoticeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1bf30usize)as*mut u8,();
+(NoticeManager)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <NoticeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1c1e0usize)as*mut u8,();
+(NoticeManager)__receiver)}
+}
+#[doc="`IsFinish(crate::unity_engine::animator::Animator)` overload"]fn is_finish(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->bool{unsafe{let __receiver= <NoticeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1c420usize)as*mut u8,bool;
+(NoticeManager)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
+}
+#[doc="`CanShow()` overload"]fn can_show(self,)->bool{unsafe{let __receiver= <NoticeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1c500usize)as*mut u8,bool;
+(NoticeManager)__receiver)}
+}
+#[doc="`Show(::unity2::Il2CppString, bool)` overload"]fn show(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,clear:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoticeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1c8b0usize)as*mut u8,();
+(NoticeManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(bool)::core::convert::Into::into(clear))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <NoticeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1c980usize)as*mut u8,();
+(NoticeManager)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NoticeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1cba0usize)as*mut u8,();
+(NoticeManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-noticemanager")]
-impl < __T : INoticeManager > INoticeManagerMethods for __T { }
+#[cfg(feature="app-noticemanager")]impl<__T:INoticeManager>INoticeManagerMethods for __T{}
 
-#[cfg(feature = "app-noticemanager")]
-impl NoticeManager { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn can_kizuna_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_kizuna_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn can_show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoticeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-noticemanager")]impl NoticeManager{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn can_kizuna_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_kizuna_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_finish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn can_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-noticemanager")]
-impl NoticeManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NoticeManager) , :: core :: stringify ! (new) ,)) ; < Self as INoticeManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-noticemanager")]impl NoticeManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoticeManager), ::core::stringify!(new),));
+ <Self as INoticeManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-noticemanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NoticeManager_Kinds;
     pub use super::NoticeManager;
     pub use super::INoticeManager;
     pub use super::INoticeManagerMethods;
-    pub use super::NoticeManager_Kinds;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

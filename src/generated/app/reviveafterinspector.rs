@@ -4,36 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: app :: unitinspector :: { IUnitInspector , UnitInspector }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::app::unitinspector::{IUnitInspector,UnitInspector}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/reviveafterinspector/ReviveAfterInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "ReviveAfterInspector")] # [parent (crate :: app :: unitinspector :: UnitInspector)] pub struct ReviveAfterInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/reviveafterinspector/ReviveAfterInspector.md"))]#[::unity2::class(namespace="App",name="ReviveAfterInspector")]#[parent(crate::app::unitinspector::UnitInspector)]pub struct ReviveAfterInspector{}
 
 }
 
 #[cfg(feature = "app-reviveafterinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-reviveafterinspector")]
-pub trait IReviveAfterInspectorMethods : IReviveAfterInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < ReviveAfterInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReviveAfterInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20189d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-reviveafterinspector")]pub trait IReviveAfterInspectorMethods:IReviveAfterInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <ReviveAfterInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20189d0usize)as*mut u8,();
+(ReviveAfterInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+}
 
-#[cfg(feature = "app-reviveafterinspector")]
-impl < __T : IReviveAfterInspector > IReviveAfterInspectorMethods for __T { }
+#[cfg(feature="app-reviveafterinspector")]impl<__T:IReviveAfterInspector>IReviveAfterInspectorMethods for __T{}
 
-#[cfg(feature = "app-reviveafterinspector")]
-impl ReviveAfterInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReviveAfterInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-reviveafterinspector")]impl ReviveAfterInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-reviveafterinspector")]
-impl ReviveAfterInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReviveAfterInspector) , :: core :: stringify ! (new) ,)) ; < Self as IReviveAfterInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-reviveafterinspector")]impl ReviveAfterInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReviveAfterInspector), ::core::stringify!(new),));
+ <Self as IReviveAfterInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-reviveafterinspector")]

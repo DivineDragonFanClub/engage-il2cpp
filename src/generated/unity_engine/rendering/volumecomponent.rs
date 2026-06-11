@@ -4,37 +4,98 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumecomponent/VolumeComponent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "VolumeComponent")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct VolumeComponent {
-# [offset (24)] # [rename (name = "active")] pub active : bool ,
-# [offset (48)] # [rename (name = "m_AdvancedMode")] pub m_advanced_mode : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/volumecomponent/VolumeComponent.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="VolumeComponent")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct VolumeComponent{#[offset(24)]#[rename(name="active")]pub active:bool, #[offset(48)]#[rename(name="m_AdvancedMode")]pub m_advanced_mode:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponent-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-volumecomponent")]
-pub trait IVolumeComponentMethods : IVolumeComponent { # [doc = "`get_displayName()` overload"] fn get_display_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e56b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_displayName(::unity2::Il2CppString)` overload"] fn set_display_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e56c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_parameters()` overload"] fn get_parameters (self ,) -> crate :: system :: collections :: object_model :: readonlycollection_1 :: ReadOnlyCollection_1 < crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter > { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: object_model :: readonlycollection_1 :: ReadOnlyCollection_1 < crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e56d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_parameters(crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter>)` overload"] fn set_parameters (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: object_model :: readonlycollection_1 :: ReadOnlyCollection_1 < crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter > >) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , crate :: system :: collections :: object_model :: readonlycollection_1 :: ReadOnlyCollection_1 < crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e56e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e56f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e5cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Override(crate::unity_engine::rendering::volumecomponent::VolumeComponent, f32)` overload"] fn r#override (self , state : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent > , interp_factor : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e5ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (interp_factor) , :: core :: option :: Option :: None) } } } # [doc = "`SetAllOverridesTo(bool)` overload"] fn set_all_overrides_to (self , state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e6020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`SetAllOverridesTo(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter>, bool)` overload"] fn set_all_overrides_to_2 (self , enumerable : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter > > , state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter > , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e6030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enumerable) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e6500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e65d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e65e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VolumeComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e66b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-volumecomponent")]pub trait IVolumeComponentMethods:IVolumeComponent{#[doc="`get_displayName()` overload"]fn get_display_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e56b0usize)as*mut u8, ::unity2::Il2CppString;
+(VolumeComponent)__receiver)}
+}
+#[doc="`set_displayName(::unity2::Il2CppString)` overload"]fn set_display_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e56c0usize)as*mut u8,();
+(VolumeComponent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_parameters()` overload"]fn get_parameters(self,)->crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter>{unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e56d0usize)as*mut u8,crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter> ;
+(VolumeComponent)__receiver)}
+}
+#[doc="`set_parameters(crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter>)` overload"]fn set_parameters(self,value:impl::core::convert::Into<crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter> >)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e56e0usize)as*mut u8,();
+(VolumeComponent)__receiver,(crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter>)::core::convert::Into::into(value))}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e56f0usize)as*mut u8,();
+(VolumeComponent)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e5cc0usize)as*mut u8,();
+(VolumeComponent)__receiver)}
+}
+#[doc="`Override(crate::unity_engine::rendering::volumecomponent::VolumeComponent, f32)` overload"]fn r#override(self,state:impl::core::convert::Into<crate::unity_engine::rendering::volumecomponent::VolumeComponent> ,interp_factor:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e5ef0usize)as*mut u8,();
+(VolumeComponent)__receiver,(crate::unity_engine::rendering::volumecomponent::VolumeComponent)::core::convert::Into::into(state),(f32)::core::convert::Into::into(interp_factor))}
+}
+#[doc="`SetAllOverridesTo(bool)` overload"]fn set_all_overrides_to(self,state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e6020usize)as*mut u8,();
+(VolumeComponent)__receiver,(bool)::core::convert::Into::into(state))}
+}
+#[doc="`SetAllOverridesTo(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter>, bool)` overload"]fn set_all_overrides_to_2(self,enumerable:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter> > ,state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e6030usize)as*mut u8,();
+(VolumeComponent)__receiver,(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter>)::core::convert::Into::into(enumerable),(bool)::core::convert::Into::into(state))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e6500usize)as*mut u8,i32;
+(VolumeComponent)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e65d0usize)as*mut u8,();
+(VolumeComponent)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e65e0usize)as*mut u8,();
+(VolumeComponent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e66b0usize)as*mut u8,();
+(VolumeComponent)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumecomponent")]
-impl < __T : IVolumeComponent > IVolumeComponentMethods for __T { }
+#[cfg(feature="unity_engine-rendering-volumecomponent")]impl<__T:IVolumeComponent>IVolumeComponentMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-volumecomponent")]
-impl VolumeComponent { pub fn get_display_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_display_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_parameters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn override_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_all_overrides_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_all_overrides_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="unity_engine-rendering-volumecomponent")]impl VolumeComponent{pub fn get_display_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_display_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_parameters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_parameters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn override_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_all_overrides_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_all_overrides_to_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumecomponent")]
-impl VolumeComponent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VolumeComponent) , :: core :: stringify ! (new) ,)) ; < Self as IVolumeComponentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-volumecomponent")]impl VolumeComponent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VolumeComponent), ::core::stringify!(new),));
+ <Self as IVolumeComponentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponent")]

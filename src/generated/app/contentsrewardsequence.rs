@@ -4,37 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: irewardsequence :: { IIRewardSequence , IRewardSequence }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::irewardsequence::{IIRewardSequence,IRewardSequence}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/contentsrewardsequence/ContentsRewardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ContentsRewardSequence")] # [parent (crate :: app :: irewardsequence :: IRewardSequence)] pub struct ContentsRewardSequence {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/contentsrewardsequence/ContentsRewardSequence.md"))]#[::unity2::class(namespace="App",name="ContentsRewardSequence")]#[parent(crate::app::irewardsequence::IRewardSequence)]pub struct ContentsRewardSequence{}
 
 }
 
 #[cfg(feature = "app-contentsrewardsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-contentsrewardsequence")]
-impl ContentsRewardSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253d730usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-contentsrewardsequence")]impl ContentsRewardSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253d730usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-contentsrewardsequence")]
-pub trait IContentsRewardSequenceMethods : IContentsRewardSequence { # [doc = "`RewordAll()` overload"] fn reword_all (self ,) -> () { unsafe { let __receiver = < ContentsRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentsRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253d8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDesc()` overload"] fn get_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < ContentsRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentsRewardSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253dea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ContentsRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentsRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253e010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-contentsrewardsequence")]pub trait IContentsRewardSequenceMethods:IContentsRewardSequence{#[doc="`RewordAll()` overload"]fn reword_all(self,)->(){unsafe{let __receiver= <ContentsRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253d8d0usize)as*mut u8,();
+(ContentsRewardSequence)__receiver)}
+}
+#[doc="`GetDesc()` overload"]fn get_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <ContentsRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253dea0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(ContentsRewardSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ContentsRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253e010usize)as*mut u8,();
+(ContentsRewardSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-contentsrewardsequence")]
-impl < __T : IContentsRewardSequence > IContentsRewardSequenceMethods for __T { }
+#[cfg(feature="app-contentsrewardsequence")]impl<__T:IContentsRewardSequence>IContentsRewardSequenceMethods for __T{}
 
-#[cfg(feature = "app-contentsrewardsequence")]
-impl ContentsRewardSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentsRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reword_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentsRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentsRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentsRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-contentsrewardsequence")]impl ContentsRewardSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reword_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-contentsrewardsequence")]
-impl ContentsRewardSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ContentsRewardSequence) , :: core :: stringify ! (new) ,)) ; < Self as IContentsRewardSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-contentsrewardsequence")]impl ContentsRewardSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContentsRewardSequence), ::core::stringify!(new),));
+ <Self as IContentsRewardSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-contentsrewardsequence")]

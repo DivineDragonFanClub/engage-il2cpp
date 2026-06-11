@@ -4,62 +4,128 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/triggeredskilllistsetter/TriggeredSkillListSetter_ShowSkill.md"))] # [:: unity2 :: class (namespace = "App" , name = "TriggeredSkillListSetter.ShowSkill")] # [parent (crate :: system :: object :: Object)] pub struct TriggeredSkillListSetter_ShowSkill {
-# [offset (16)] # [rename (name = "m_Object")] pub m_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_Data")] pub m_data : crate :: app :: skilldata :: SkillData ,
-# [offset (32)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (40)] # [rename (name = "m_Ani")] pub m_ani : crate :: unity_engine :: animator :: Animator ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/triggeredskilllistsetter/TriggeredSkillListSetter_ShowSkill.md"))]#[::unity2::class(namespace="App",name="TriggeredSkillListSetter.ShowSkill")]#[parent(crate::system::object::Object)]pub struct TriggeredSkillListSetter_ShowSkill{#[offset(16)]#[rename(name="m_Object")]pub m_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Data")]pub m_data:crate::app::skilldata::SkillData, #[offset(32)]#[rename(name="m_Time")]pub m_time:f32, #[offset(40)]#[rename(name="m_Ani")]pub m_ani:crate::unity_engine::animator::Animator,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/triggeredskilllistsetter/TriggeredSkillListSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "TriggeredSkillListSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TriggeredSkillListSetter {
-# [offset (24)] # [rename (name = "m_ShowSkillList")] pub m_show_skill_list : :: unity2 :: Array < crate :: app :: triggeredskilllistsetter :: TriggeredSkillListSetter_ShowSkill > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/triggeredskilllistsetter/TriggeredSkillListSetter.md"))]#[::unity2::class(namespace="App",name="TriggeredSkillListSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TriggeredSkillListSetter{#[offset(24)]#[rename(name="m_ShowSkillList")]pub m_show_skill_list: ::unity2::Array<crate::app::triggeredskilllistsetter::TriggeredSkillListSetter_ShowSkill> ,}
 
 }
 
 #[cfg(feature = "app-triggeredskilllistsetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-triggeredskilllistsetter")]
-pub trait ITriggeredSkillListSetter_ShowSkillMethods : ITriggeredSkillListSetter_ShowSkill { # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"] fn ctor (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < TriggeredSkillListSetter_ShowSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter_ShowSkill , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Show(crate::app::skilldata::SkillData, f32)` overload"] fn show (self , data : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TriggeredSkillListSetter_ShowSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter_ShowSkill , crate :: app :: skilldata :: SkillData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < TriggeredSkillListSetter_ShowSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter_ShowSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3fa20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TriggeredSkillListSetter_ShowSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter_ShowSkill , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3fa60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::app::skilldata::SkillData)` overload"] fn equals (self , data : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> bool { unsafe { let __receiver = < TriggeredSkillListSetter_ShowSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter_ShowSkill , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3fbc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`IsEmpty()` overload"] fn is_empty (self ,) -> bool { unsafe { let __receiver = < TriggeredSkillListSetter_ShowSkill as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter_ShowSkill , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3fbd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-triggeredskilllistsetter")]
-impl < __T : ITriggeredSkillListSetter_ShowSkill > ITriggeredSkillListSetter_ShowSkillMethods for __T { }
-
-#[cfg(feature = "app-triggeredskilllistsetter")]
-impl TriggeredSkillListSetter_ShowSkill { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter_ShowSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter_ShowSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter_ShowSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter_ShowSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter_ShowSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter_ShowSkill as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-triggeredskilllistsetter")]
-impl TriggeredSkillListSetter_ShowSkill {
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (obj : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TriggeredSkillListSetter_ShowSkill) , :: core :: stringify ! (new) ,)) ; < Self as ITriggeredSkillListSetter_ShowSkillMethods > :: ctor (this , obj) ; this }
+#[cfg(feature="app-triggeredskilllistsetter")]pub trait ITriggeredSkillListSetter_ShowSkillMethods:ITriggeredSkillListSetter_ShowSkill{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TriggeredSkillListSetter_ShowSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f780usize)as*mut u8,();
+(TriggeredSkillListSetter_ShowSkill)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
+}
+#[doc="`Show(crate::app::skilldata::SkillData, f32)` overload"]fn show(self,data:impl::core::convert::Into<crate::app::skilldata::SkillData> ,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TriggeredSkillListSetter_ShowSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f7c0usize)as*mut u8,();
+(TriggeredSkillListSetter_ShowSkill)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(data),(f32)::core::convert::Into::into(time))}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <TriggeredSkillListSetter_ShowSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fa20usize)as*mut u8,();
+(TriggeredSkillListSetter_ShowSkill)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TriggeredSkillListSetter_ShowSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fa60usize)as*mut u8,();
+(TriggeredSkillListSetter_ShowSkill)__receiver)}
+}
+#[doc="`Equals(crate::app::skilldata::SkillData)` overload"]fn equals(self,data:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{let __receiver= <TriggeredSkillListSetter_ShowSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fbc0usize)as*mut u8,bool;
+(TriggeredSkillListSetter_ShowSkill)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(data))}
+}
+#[doc="`IsEmpty()` overload"]fn is_empty(self,)->bool{unsafe{let __receiver= <TriggeredSkillListSetter_ShowSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3fbd0usize)as*mut u8,bool;
+(TriggeredSkillListSetter_ShowSkill)__receiver)}
+}
 }
 
-#[cfg(feature = "app-triggeredskilllistsetter")]
-pub trait ITriggeredSkillListSetterMethods : ITriggeredSkillListSetter { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TriggeredSkillListSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TriggeredSkillListSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a3190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddShowSkill(crate::app::skilldata::SkillData, f32)` overload"] fn add_show_skill (self , skill_data : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData > , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TriggeredSkillListSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter , crate :: app :: skilldata :: SkillData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a3200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill_data) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`AddShowSkill(crate::app::skilldata::SkillData)` overload"] fn add_show_skill_2 (self , skill_data : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < TriggeredSkillListSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a32d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill_data) , :: core :: option :: Option :: None) } } } # [doc = "`PushShowSkill(crate::app::skilldata::SkillData)` overload"] fn push_show_skill (self , skill_data : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < TriggeredSkillListSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a32e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill_data) , :: core :: option :: Option :: None) } } } # [doc = "`PopShowSkill(crate::app::skilldata::SkillData)` overload"] fn pop_show_skill (self , skill_data : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < TriggeredSkillListSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a32f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill_data) , :: core :: option :: Option :: None) } } } # [doc = "`HideSkillDisplay()` overload"] fn hide_skill_display (self ,) -> () { unsafe { let __receiver = < TriggeredSkillListSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a3390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateList()` overload"] fn try_create_list (self ,) -> () { unsafe { let __receiver = < TriggeredSkillListSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a2ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TriggeredSkillListSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TriggeredSkillListSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a3410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-triggeredskilllistsetter")]impl<__T:ITriggeredSkillListSetter_ShowSkill>ITriggeredSkillListSetter_ShowSkillMethods for __T{}
 
-#[cfg(feature = "app-triggeredskilllistsetter")]
-impl < __T : ITriggeredSkillListSetter > ITriggeredSkillListSetterMethods for __T { }
+#[cfg(feature="app-triggeredskilllistsetter")]impl TriggeredSkillListSetter_ShowSkill{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-triggeredskilllistsetter")]
-impl TriggeredSkillListSetter { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_show_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_show_skill_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn push_show_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn pop_show_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn hide_skill_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn try_create_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TriggeredSkillListSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-triggeredskilllistsetter")]impl TriggeredSkillListSetter_ShowSkill{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(obj:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TriggeredSkillListSetter_ShowSkill), ::core::stringify!(new),));
+ <Self as ITriggeredSkillListSetter_ShowSkillMethods> ::ctor(this,obj);
+this}
+}
 
-#[cfg(feature = "app-triggeredskilllistsetter")]
-impl TriggeredSkillListSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TriggeredSkillListSetter) , :: core :: stringify ! (new) ,)) ; < Self as ITriggeredSkillListSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-triggeredskilllistsetter")]pub trait ITriggeredSkillListSetterMethods:ITriggeredSkillListSetter{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TriggeredSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a2fe0usize)as*mut u8,();
+(TriggeredSkillListSetter)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TriggeredSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a3190usize)as*mut u8,();
+(TriggeredSkillListSetter)__receiver)}
+}
+#[doc="`AddShowSkill(crate::app::skilldata::SkillData, f32)` overload"]fn add_show_skill(self,skill_data:impl::core::convert::Into<crate::app::skilldata::SkillData> ,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TriggeredSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a3200usize)as*mut u8,();
+(TriggeredSkillListSetter)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill_data),(f32)::core::convert::Into::into(time))}
+}
+#[doc="`AddShowSkill(crate::app::skilldata::SkillData)` overload"]fn add_show_skill_2(self,skill_data:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <TriggeredSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a32d0usize)as*mut u8,();
+(TriggeredSkillListSetter)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill_data))}
+}
+#[doc="`PushShowSkill(crate::app::skilldata::SkillData)` overload"]fn push_show_skill(self,skill_data:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <TriggeredSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a32e0usize)as*mut u8,();
+(TriggeredSkillListSetter)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill_data))}
+}
+#[doc="`PopShowSkill(crate::app::skilldata::SkillData)` overload"]fn pop_show_skill(self,skill_data:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <TriggeredSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a32f0usize)as*mut u8,();
+(TriggeredSkillListSetter)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill_data))}
+}
+#[doc="`HideSkillDisplay()` overload"]fn hide_skill_display(self,)->(){unsafe{let __receiver= <TriggeredSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a3390usize)as*mut u8,();
+(TriggeredSkillListSetter)__receiver)}
+}
+#[doc="`TryCreateList()` overload"]fn try_create_list(self,)->(){unsafe{let __receiver= <TriggeredSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a2ff0usize)as*mut u8,();
+(TriggeredSkillListSetter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TriggeredSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a3410usize)as*mut u8,();
+(TriggeredSkillListSetter)__receiver)}
+}
+}
+
+#[cfg(feature="app-triggeredskilllistsetter")]impl<__T:ITriggeredSkillListSetter>ITriggeredSkillListSetterMethods for __T{}
+
+#[cfg(feature="app-triggeredskilllistsetter")]impl TriggeredSkillListSetter{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_show_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_show_skill_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn push_show_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn pop_show_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn hide_skill_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn try_create_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-triggeredskilllistsetter")]impl TriggeredSkillListSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TriggeredSkillListSetter), ::core::stringify!(new),));
+ <Self as ITriggeredSkillListSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-triggeredskilllistsetter")]

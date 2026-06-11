@@ -4,513 +4,175 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehuman/MapSequenceHuman.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceHuman")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencehuman :: MapSequenceHuman >)] pub struct MapSequenceHuman {
-# [offset (120)] # [rename (name = "m_JobIntroUnit")] pub m_job_intro_unit : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_JobIntroKeyHelpType")] pub m_job_intro_key_help_type : crate :: app :: mapkeyhelp :: MapKeyHelp_Types ,
-# [offset (132)] # [rename (name = "m_ReturnLabel")] pub m_return_label : crate :: app :: mapsequencehuman :: MapSequenceHuman_Label ,
-# [offset (136)] # [rename (name = "m_OldUnitX")] pub m_old_unit_x : i32 ,
-# [offset (140)] # [rename (name = "m_OldUnitZ")] pub m_old_unit_z : i32 ,
-# [offset (144)] # [rename (name = "m_OldCursorX")] pub m_old_cursor_x : i32 ,
-# [offset (148)] # [rename (name = "m_OldCursorZ")] pub m_old_cursor_z : i32 ,
-# [offset (152)] # [rename (name = "m_OldPickupX")] pub m_old_pickup_x : i32 ,
-# [offset (156)] # [rename (name = "m_OldPickupZ")] pub m_old_pickup_z : i32 ,
-# [offset (160)] # [rename (name = "m_EngageX")] pub m_engage_x : i32 ,
-# [offset (164)] # [rename (name = "m_EngageZ")] pub m_engage_z : i32 ,
-# [offset (168)] # [rename (name = "m_EnterX")] pub m_enter_x : i32 ,
-# [offset (172)] # [rename (name = "m_EnterZ")] pub m_enter_z : i32 ,
-# [offset (176)] # [rename (name = "m_IsEnemyAttackRange")] pub m_is_enemy_attack_range : bool ,
-# [offset (177)] # [rename (name = "m_IsUpdateSupportSkill")] pub m_is_update_support_skill : bool ,
-# [offset (184)] # [rename (name = "m_UpdateSupportSkillUnit")] pub m_update_support_skill_unit : crate :: app :: unit :: Unit ,
-# [offset (192)] # [rename (name = "m_OperateMode")] pub m_operate_mode : crate :: app :: mapsequencehuman :: MapSequenceHuman_OperateMode ,
-# [static_field] # [rename (name = "PlayerMoveMask")] pub player_move_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
-# [static_field] # [rename (name = "EnemyMoveMask")] pub enemy_move_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
-# [static_field] # [rename (name = "FreeWeaponMask")] pub free_weapon_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
-# [static_field] # [rename (name = "PickWeaponMask")] pub pick_weapon_mask : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > ,
-# [static_field] # [rename (name = "WaitPickFreeCursor")] pub wait_pick_free_cursor : f32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceHuman_OperateMode{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceHuman_OperateMode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceHuman.OperateMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceHuman_OperateMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceHuman_OperateMode{pub fn none()->Self{Self{value:0}
+}
+pub fn direct()->Self{Self{value:1}
+}
+pub fn indirect()->Self{Self{value:2}
+}
+pub fn designate()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceHuman_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceHuman_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceHuman_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceHuman.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceHuman_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceHuman_Label{pub fn start_branch()->Self{Self{value:0}
+}
+pub fn free_cursor()->Self{Self{value:1}
+}
+pub fn pick_cursor()->Self{Self{value:2}
+}
+pub fn pick_cursor_resume()->Self{Self{value:3}
+}
+pub fn pick_cursor_tick()->Self{Self{value:4}
+}
+pub fn pick_cursor_wait()->Self{Self{value:5}
+}
+pub fn pick_free_cursor()->Self{Self{value:6}
+}
+pub fn pick_move_resume()->Self{Self{value:7}
+}
+pub fn pick_engage_start()->Self{Self{value:8}
+}
+pub fn pick_engage_cancel()->Self{Self{value:9}
+}
+pub fn system_menu()->Self{Self{value:10}
+}
+pub fn troop_list()->Self{Self{value:11}
+}
+pub fn rewind_menu()->Self{Self{value:12}
+}
+pub fn sortie_position_change()->Self{Self{value:13}
+}
+pub fn sortie_end_dialog()->Self{Self{value:14}
+}
+pub fn unit_move()->Self{Self{value:15}
+}
+pub fn unit_command()->Self{Self{value:16}
+}
+pub fn unit_sub_command()->Self{Self{value:17}
+}
+pub fn item_menu_attack()->Self{Self{value:18}
+}
+pub fn item_menu_engage_attack()->Self{Self{value:19}
+}
+pub fn item_menu_engage_charge()->Self{Self{value:20}
+}
+pub fn item_menu_engage_wait()->Self{Self{value:21}
+}
+pub fn item_menu_engage_rod()->Self{Self{value:22}
+}
+pub fn item_menu_cannon()->Self{Self{value:23}
+}
+pub fn item_menu_destroy()->Self{Self{value:24}
+}
+pub fn item_menu_rod()->Self{Self{value:25}
+}
+pub fn item_menu_item()->Self{Self{value:26}
+}
+pub fn item_menu_trade()->Self{Self{value:27}
+}
+pub fn item_menu_full_bullet()->Self{Self{value:28}
+}
+pub fn item_menu_enchant_item()->Self{Self{value:29}
+}
+pub fn item_menu_enchant_weapon()->Self{Self{value:30}
+}
+pub fn transporter_menu()->Self{Self{value:31}
+}
+pub fn target_select()->Self{Self{value:32}
+}
+pub fn warp_cursor()->Self{Self{value:33}
+}
+pub fn rewarp_cursor()->Self{Self{value:34}
+}
+pub fn creation_cursor()->Self{Self{value:35}
+}
+pub fn fire_cannon_cursor()->Self{Self{value:36}
+}
+pub fn full_bullet_cursor()->Self{Self{value:37}
+}
+pub fn talk()->Self{Self{value:38}
+}
+pub fn engage_start()->Self{Self{value:39}
+}
+pub fn engage_link()->Self{Self{value:40}
+}
+pub fn engage_rewarp()->Self{Self{value:41}
+}
+pub fn engage_rewarp_cancel()->Self{Self{value:42}
+}
+pub fn engage_summon_menu()->Self{Self{value:43}
+}
+pub fn engage_summon_back()->Self{Self{value:44}
+}
+pub fn god_change()->Self{Self{value:45}
+}
+pub fn mind()->Self{Self{value:46}
+}
+pub fn save_menu()->Self{Self{value:47}
+}
+pub fn suspend_menu()->Self{Self{value:48}
+}
+pub fn turn_end()->Self{Self{value:49}
+}
+pub fn job_intro()->Self{Self{value:50}
+}
+pub fn direct_attack()->Self{Self{value:51}
+}
+pub fn end()->Self{Self{value:52}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapSequenceHuman_Label  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman.md"))]#[::unity2::class(namespace="App",name="MapSequenceHuman")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencehuman::MapSequenceHuman>)]pub struct MapSequenceHuman{#[offset(120)]#[rename(name="m_JobIntroUnit")]pub m_job_intro_unit:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_JobIntroKeyHelpType")]pub m_job_intro_key_help_type:crate::app::mapkeyhelp::MapKeyHelp_Types, #[offset(132)]#[rename(name="m_ReturnLabel")]pub m_return_label:crate::app::mapsequencehuman::MapSequenceHuman_Label, #[offset(136)]#[rename(name="m_OldUnitX")]pub m_old_unit_x:i32, #[offset(140)]#[rename(name="m_OldUnitZ")]pub m_old_unit_z:i32, #[offset(144)]#[rename(name="m_OldCursorX")]pub m_old_cursor_x:i32, #[offset(148)]#[rename(name="m_OldCursorZ")]pub m_old_cursor_z:i32, #[offset(152)]#[rename(name="m_OldPickupX")]pub m_old_pickup_x:i32, #[offset(156)]#[rename(name="m_OldPickupZ")]pub m_old_pickup_z:i32, #[offset(160)]#[rename(name="m_EngageX")]pub m_engage_x:i32, #[offset(164)]#[rename(name="m_EngageZ")]pub m_engage_z:i32, #[offset(168)]#[rename(name="m_EnterX")]pub m_enter_x:i32, #[offset(172)]#[rename(name="m_EnterZ")]pub m_enter_z:i32, #[offset(176)]#[rename(name="m_IsEnemyAttackRange")]pub m_is_enemy_attack_range:bool, #[offset(177)]#[rename(name="m_IsUpdateSupportSkill")]pub m_is_update_support_skill:bool, #[offset(184)]#[rename(name="m_UpdateSupportSkillUnit")]pub m_update_support_skill_unit:crate::app::unit::Unit, #[offset(192)]#[rename(name="m_OperateMode")]pub m_operate_mode:crate::app::mapsequencehuman::MapSequenceHuman_OperateMode, #[static_field]#[rename(name="PlayerMoveMask")]pub player_move_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="EnemyMoveMask")]pub enemy_move_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="FreeWeaponMask")]pub free_weapon_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="PickWeaponMask")]pub pick_weapon_mask:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> , #[static_field]#[rename(name="WaitPickFreeCursor")]pub wait_pick_free_cursor:f32,}
 
-    const NAME: &'static str = "MapSequenceHuman.Label";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceHuman_NextMode{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceHuman_NextMode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceHuman.NextMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for MapSequenceHuman_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MapSequenceHuman_NextMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  MapSequenceHuman_Label  {
-    pub fn start_branch() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn free_cursor() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn pick_cursor() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn pick_cursor_resume() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn pick_cursor_tick() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn pick_cursor_wait() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn pick_free_cursor() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn pick_move_resume() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn pick_engage_start() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn pick_engage_cancel() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn system_menu() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn troop_list() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn rewind_menu() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn sortie_position_change() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn sortie_end_dialog() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn unit_move() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn unit_command() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn unit_sub_command() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn item_menu_attack() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn item_menu_engage_attack() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn item_menu_engage_charge() -> Self {
-        Self { value: 20 }
-
-    }
-
-
-    pub fn item_menu_engage_wait() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn item_menu_engage_rod() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn item_menu_cannon() -> Self {
-        Self { value: 23 }
-
-    }
-
-
-    pub fn item_menu_destroy() -> Self {
-        Self { value: 24 }
-
-    }
-
-
-    pub fn item_menu_rod() -> Self {
-        Self { value: 25 }
-
-    }
-
-
-    pub fn item_menu_item() -> Self {
-        Self { value: 26 }
-
-    }
-
-
-    pub fn item_menu_trade() -> Self {
-        Self { value: 27 }
-
-    }
-
-
-    pub fn item_menu_full_bullet() -> Self {
-        Self { value: 28 }
-
-    }
-
-
-    pub fn item_menu_enchant_item() -> Self {
-        Self { value: 29 }
-
-    }
-
-
-    pub fn item_menu_enchant_weapon() -> Self {
-        Self { value: 30 }
-
-    }
-
-
-    pub fn transporter_menu() -> Self {
-        Self { value: 31 }
-
-    }
-
-
-    pub fn target_select() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn warp_cursor() -> Self {
-        Self { value: 33 }
-
-    }
-
-
-    pub fn rewarp_cursor() -> Self {
-        Self { value: 34 }
-
-    }
-
-
-    pub fn creation_cursor() -> Self {
-        Self { value: 35 }
-
-    }
-
-
-    pub fn fire_cannon_cursor() -> Self {
-        Self { value: 36 }
-
-    }
-
-
-    pub fn full_bullet_cursor() -> Self {
-        Self { value: 37 }
-
-    }
-
-
-    pub fn talk() -> Self {
-        Self { value: 38 }
-
-    }
-
-
-    pub fn engage_start() -> Self {
-        Self { value: 39 }
-
-    }
-
-
-    pub fn engage_link() -> Self {
-        Self { value: 40 }
-
-    }
-
-
-    pub fn engage_rewarp() -> Self {
-        Self { value: 41 }
-
-    }
-
-
-    pub fn engage_rewarp_cancel() -> Self {
-        Self { value: 42 }
-
-    }
-
-
-    pub fn engage_summon_menu() -> Self {
-        Self { value: 43 }
-
-    }
-
-
-    pub fn engage_summon_back() -> Self {
-        Self { value: 44 }
-
-    }
-
-
-    pub fn god_change() -> Self {
-        Self { value: 45 }
-
-    }
-
-
-    pub fn mind() -> Self {
-        Self { value: 46 }
-
-    }
-
-
-    pub fn save_menu() -> Self {
-        Self { value: 47 }
-
-    }
-
-
-    pub fn suspend_menu() -> Self {
-        Self { value: 48 }
-
-    }
-
-
-    pub fn turn_end() -> Self {
-        Self { value: 49 }
-
-    }
-
-
-    pub fn job_intro() -> Self {
-        Self { value: 50 }
-
-    }
-
-
-    pub fn direct_attack() -> Self {
-        Self { value: 51 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 52 }
-
-    }
-
+impl MapSequenceHuman_NextMode{pub fn closest()->Self{Self{value:0}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceHuman_OperateMode  {
-    pub value: i32,
+pub fn patrol()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::ClassIdentity for MapSequenceHuman_OperateMode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceHuman.OperateMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn order()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::IlType for MapSequenceHuman_OperateMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceHuman_OperateMode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn direct() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn indirect() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn designate() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceHuman_NextMode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapSequenceHuman_NextMode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceHuman.NextMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSequenceHuman_NextMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceHuman_NextMode  {
-    pub fn closest() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn patrol() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn order() -> Self {
-        Self { value: 2 }
-
-    }
-
 }
 
 }
@@ -518,31 +180,879 @@ impl  MapSequenceHuman_NextMode  {
 #[cfg(feature = "app-mapsequencehuman-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencehuman")]
-impl MapSequenceHuman { # [doc = "`UpdateDeploy(crate::app::unit::Unit)` overload"] pub fn update_deploy (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2661fa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsMoveOut(crate::app::unit::Unit, i32, i32)` overload"] pub fn is_move_out (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26621f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitIndexFromImage(i32, i32)` overload"] pub fn get_unit_index_from_image (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2673da0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677770usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"] pub fn create_bind_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , is_resume : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (is_resume) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencehuman")]impl MapSequenceHuman{#[doc="`UpdateDeploy(crate::app::unit::Unit)` overload"]pub fn update_deploy(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2661fa0usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsMoveOut(crate::app::unit::Unit, i32, i32)` overload"]pub fn is_move_out(unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26621f0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetUnitIndexFromImage(i32, i32)` overload"]pub fn get_unit_index_from_image(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2673da0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2677770usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_resume:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2677780usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_resume))}
+}
+}
 
-#[cfg(feature = "app-mapsequencehuman")]
-pub trait IMapSequenceHumanMethods : IMapSequenceHuman { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265b450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265b600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265b760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265b8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetOperateMode()` overload"] fn get_operate_mode (self ,) -> crate :: app :: mapsequencehuman :: MapSequenceHuman_OperateMode { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsequencehuman :: MapSequenceHuman_OperateMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265b9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDefaultOperateMode()` overload"] fn get_default_operate_mode (self ,) -> crate :: app :: mapsequencehuman :: MapSequenceHuman_OperateMode { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsequencehuman :: MapSequenceHuman_OperateMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265b9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetOperateMode(crate::app::mapsequencehuman::MapSequenceHuman_OperateMode)` overload"] fn set_operate_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: mapsequencehuman :: MapSequenceHuman_OperateMode >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: mapsequencehuman :: MapSequenceHuman_OperateMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265baa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`SetEngagePos()` overload"] fn set_engage_pos (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265bb40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetEngagePos()` overload"] fn reset_engage_pos (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265bbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEngagePos(crate::app::unit::Unit)` overload"] fn is_engage_pos (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265bbf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetEnterPos(i32, i32)` overload"] fn set_enter_pos (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265bc90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetNextMode(::unity2::Il2CppString)` overload"] fn get_next_mode (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: mapsequencehuman :: MapSequenceHuman_NextMode { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsequencehuman :: MapSequenceHuman_NextMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265bca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetManualNextUnit(i32, i32, bool)` overload"] fn get_manual_next_unit (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , is_reverse : impl :: core :: convert :: Into < bool >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265bcd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (is_reverse) , :: core :: option :: Option :: None) } } } # [doc = "`GetAutoNextUnit(i32, i32)` overload"] fn get_auto_next_unit (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265c8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`StartBranch()` overload"] fn start_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265ca10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FreeCursorPrepare()` overload"] fn free_cursor_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265cf60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FreeCursorTick()` overload"] fn free_cursor_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265e4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FreeCursorDecide()` overload"] fn free_cursor_decide (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26600a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SystemMenuOpen()` overload"] fn system_menu_open (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2660590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SortieCursorDecide()` overload"] fn sortie_cursor_decide (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265f820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SortieCursorDecideTranspose()` overload"] fn sortie_cursor_decide_transpose (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2661320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SortieCursorCancel()` overload"] fn sortie_cursor_cancel (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265fe60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SortieCursorSortieEnd()` overload"] fn sortie_cursor_sortie_end (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26619e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SortiePositionChanged()` overload"] fn sortie_position_changed (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2661ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickCursorPrepare()` overload"] fn pick_cursor_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2661c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickCursorResumePrepare()` overload"] fn pick_cursor_resume_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26623e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickupTutorial()` overload"] fn pickup_tutorial (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2663320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickupEventBegin()` overload"] fn pickup_event_begin (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2663410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickupEvent()` overload"] fn pickup_event (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26636a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickupEventEnd()` overload"] fn pickup_event_end (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26637d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickCursorTick()` overload"] fn pick_cursor_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2663860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CommitMapPanelTargetForIndirect(crate::app::unit::Unit)` overload"] fn commit_map_panel_target_for_indirect (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26660d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSupportSkill()` overload"] fn update_support_skill (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2664c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSupportSkill(i32, i32)` overload"] fn update_support_skill_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2664a40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`CanShortCommand(crate::app::unit::Unit)` overload"] fn can_short_command (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2666470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CanShortCommandForChangeWeapon(crate::app::unit::Unit)` overload"] fn can_short_command_for_change_weapon (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26664e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`PickUnitTick(crate::app::mapsequencehuman::MapSequenceHuman_Label)` overload"] fn pick_unit_tick (self , label : impl :: core :: convert :: Into < crate :: app :: mapsequencehuman :: MapSequenceHuman_Label >) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: mapsequencehuman :: MapSequenceHuman_Label , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2665ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`PickCursorDecide()` overload"] fn pick_cursor_decide (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2664f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickCursorCancel()` overload"] fn pick_cursor_cancel (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26656c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickFreeCursorPrepare()` overload"] fn pick_free_cursor_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2667540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateScreenInfoForPickFreeCursor()` overload"] fn update_screen_info_for_pick_free_cursor (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2667b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateRoute(i32, i32)` overload"] fn update_route (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2662ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`PickFreeCursorTick()` overload"] fn pick_free_cursor_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26682c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickFreeCursorBrunch()` overload"] fn pick_free_cursor_brunch (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26692a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickFreeCursorCancel()` overload"] fn pick_free_cursor_cancel (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2668f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DesignateTargetUnit()` overload"] fn designate_target_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2666c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PickMoveResume()` overload"] fn pick_move_resume (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2669800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveUnit()` overload"] fn move_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2669940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitMovingUnit()` overload"] fn wait_moving_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2669a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostMoveUnit()` overload"] fn post_move_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2669b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WarpCursorPrepare()` overload"] fn warp_cursor_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2669bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WarpCursorTick()` overload"] fn warp_cursor_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266a3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCursorMindForWarp()` overload"] fn set_cursor_mind_for_warp (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2669ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WarpCursorDecide()` overload"] fn warp_cursor_decide (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266ae10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WarpCursorCancel()` overload"] fn warp_cursor_cancel (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266b4c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RewarpCursorPrepare()` overload"] fn rewarp_cursor_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266b860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateUnitRewarp()` overload"] fn update_unit_rewarp (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266bd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RewarpCursorTick()` overload"] fn rewarp_cursor_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266c2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCursorMindForRewarp()` overload"] fn set_cursor_mind_for_rewarp (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266bed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RewarpCursorDecide()` overload"] fn rewarp_cursor_decide (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266cc60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RewarpCursorCancel()` overload"] fn rewarp_cursor_cancel (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266d300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreationCursorPrepare()` overload"] fn creation_cursor_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266d7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreationCursorTick()` overload"] fn creation_cursor_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266e010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCursorMindForCreation()` overload"] fn set_cursor_mind_for_creation (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266dc60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreationCursorDecide()` overload"] fn creation_cursor_decide (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266e850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreationCursorCancel()` overload"] fn creation_cursor_cancel (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266ee30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FireCannonCursorPrepare()` overload"] fn fire_cannon_cursor_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266f160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FireCannonCursorTick()` overload"] fn fire_cannon_cursor_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266fd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCursorMindForFireCannon()` overload"] fn set_cursor_mind_for_fire_cannon (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266f990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FireCannonCursorDecide()` overload"] fn fire_cannon_cursor_decide (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26705f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsUseFireCannon(i32, i32)` overload"] fn is_use_fire_cannon (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2670ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`FireCannonCursorCancel()` overload"] fn fire_cannon_cursor_cancel (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2670ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TalkPrepare()` overload"] fn talk_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26710a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Talked()` overload"] fn talked (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2671190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateSystemMenu()` overload"] fn create_system_menu (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2671300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TargetEvent()` overload"] fn target_event (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2671370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitCommandPrepare()` overload"] fn unit_command_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2671410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitCommandPrepareEvent()` overload"] fn unit_command_prepare_event (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26717b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitCommandCancel()` overload"] fn unit_command_cancel (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2671850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AttackMenuPrepare()` overload"] fn attack_menu_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26720c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RodMenuPrepare()` overload"] fn rod_menu_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26721b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitMenuPrepare()` overload"] fn unit_menu_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ItemMenuPrepare()` overload"] fn item_menu_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26722c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnchantMenuPrepare()` overload"] fn enchant_menu_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindAttack()` overload"] fn create_bind_attack (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageAttack()` overload"] fn create_bind_engage_attack (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageCharge()` overload"] fn create_bind_engage_charge (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageWait()` overload"] fn create_bind_engage_wait (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageRewarp()` overload"] fn create_bind_engage_rewarp (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26727d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindEngageRod()` overload"] fn create_bind_engage_rod (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PreItemMenuTrade()` overload"] fn pre_item_menu_trade (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostItemMenuTrade()` overload"] fn post_item_menu_trade (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26729d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TransporterMenuInitialize()` overload"] fn transporter_menu_initialize (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TransporterMenu()` overload"] fn transporter_menu (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TransporterMenuFinalize()` overload"] fn transporter_menu_finalize (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetTarget()` overload"] fn reset_target (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26711a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostEngage()` overload"] fn post_engage (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdatePosition()` overload"] fn update_position (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GameEndBranch()` overload"] fn game_end_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2672f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MindEncBranch()` overload"] fn mind_enc_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26731e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AutoTurnEnd()` overload"] fn auto_turn_end (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26732d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GodOutAll()` overload"] fn god_out_all (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26735d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HumanTurnEnd()` overload"] fn human_turn_end (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26737d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`JobIntroDecide(i32, i32, crate::app::mapsequencehuman::MapSequenceHuman_Label)` overload"] fn job_intro_decide (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , label : impl :: core :: convert :: Into < crate :: app :: mapsequencehuman :: MapSequenceHuman_Label >) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , crate :: app :: mapsequencehuman :: MapSequenceHuman_Label , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265f6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`JobIntroDecide(crate::app::mapsequencehuman::MapSequenceHuman_Label)` overload"] fn job_intro_decide_2 (self , label : impl :: core :: convert :: Into < crate :: app :: mapsequencehuman :: MapSequenceHuman_Label >) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: mapsequencehuman :: MapSequenceHuman_Label , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2666840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`CreateJobIntro()` overload"] fn create_job_intro (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2673bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`JobIntroBranch()` overload"] fn job_intro_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2673c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`JobIntroKeyHelpRequest()` overload"] fn job_intro_key_help_request (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2673c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`JobIntroKeyHelpBack()` overload"] fn job_intro_key_help_back (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2673d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanFocusUnit(crate::app::unit::Unit, crate::app::force::Force_Type, crate::app::unit::Unit)` overload"] fn can_focus_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , skip_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , crate :: app :: force :: Force_Type , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26611b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (force_type) , :: core :: convert :: Into :: into (skip_unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetPickUnit(crate::app::unit::Unit)` overload"] fn get_pick_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265cc10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetFirstUnit(crate::app::force::Force_Type)` overload"] fn get_first_unit (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265cbc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`GetPatrolUnit(i32, i32, crate::app::force::Force_Type, bool, crate::app::unit::Unit)` overload"] fn get_patrol_unit (self , cx : impl :: core :: convert :: Into < i32 > , cz : impl :: core :: convert :: Into < i32 > , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , is_reverse : impl :: core :: convert :: Into < bool > , skip_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , crate :: app :: force :: Force_Type , bool , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265c2a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cx) , :: core :: convert :: Into :: into (cz) , :: core :: convert :: Into :: into (force_type) , :: core :: convert :: Into :: into (is_reverse) , :: core :: convert :: Into :: into (skip_unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsGetPatrolUnit(i32, i32, crate::app::unit::Unit, crate::app::force::Force_Type, crate::app::unit::Unit)` overload"] fn is_get_patrol_unit (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , skip_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , crate :: app :: unit :: Unit , crate :: app :: force :: Force_Type , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2673f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (force_type) , :: core :: convert :: Into :: into (skip_unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetClosestUnit(i32, i32, crate::app::force::Force_Type, bool, crate::app::unit::Unit)` overload"] fn get_closest_unit (self , cx : impl :: core :: convert :: Into < i32 > , cz : impl :: core :: convert :: Into < i32 > , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , is_reverse : impl :: core :: convert :: Into < bool > , skip_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , crate :: app :: force :: Force_Type , bool , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265bed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cx) , :: core :: convert :: Into :: into (cz) , :: core :: convert :: Into :: into (force_type) , :: core :: convert :: Into :: into (is_reverse) , :: core :: convert :: Into :: into (skip_unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetOrderUnit(i32, i32, crate::app::force::Force_Type, bool, crate::app::unit::Unit)` overload"] fn get_order_unit (self , cx : impl :: core :: convert :: Into < i32 > , cz : impl :: core :: convert :: Into < i32 > , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , is_reverse : impl :: core :: convert :: Into < bool > , skip_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , crate :: app :: force :: Force_Type , bool , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265c710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cx) , :: core :: convert :: Into :: into (cz) , :: core :: convert :: Into :: into (force_type) , :: core :: convert :: Into :: into (is_reverse) , :: core :: convert :: Into :: into (skip_unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateMoveImage(crate::app::unit::Unit, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"] fn update_move_image (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , weapon_flag : impl :: core :: convert :: Into < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2673fc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (weapon_flag) , :: core :: option :: Option :: None) } } } # [doc = "`FreeCursorSetMoveImage(crate::app::unit::Unit)` overload"] fn free_cursor_set_move_image (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2661080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UnitInfoTick()` overload"] fn unit_info_tick (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2660740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DangerOneTick()` overload"] fn danger_one_tick (self ,) -> bool { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2660aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MapNavigationTick()` overload"] fn map_navigation_tick (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2661090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowInfo()` overload"] fn show_info (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideInfo()` overload"] fn hide_info (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HidePanel()` overload"] fn hide_panel (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateInfo()` overload"] fn update_info (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowMinimap()` overload"] fn show_minimap (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26746f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideMinimap()` overload"] fn hide_minimap (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowDamageInfo()` overload"] fn show_damage_info (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideDamageInfo()` overload"] fn hide_damage_info (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x266d7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideInfoExceptUnitInfo()` overload"] fn hide_info_except_unit_info (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`JumpForRemove(crate::app::unit::Unit)` overload"] fn jump_for_remove (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`JumpForRemagic(crate::app::unit::Unit)` overload"] fn jump_for_remagic (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetActiveUnit(crate::app::unit::Unit, bool)` overload"] fn set_active_unit (self , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , is_pickup : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265dce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (is_pickup) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateUnitInfo(bool)` overload"] fn update_unit_info (self , is_update_key_help : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2663040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_update_key_help) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateUnitInfo(i32, i32, bool)` overload"] fn update_unit_info_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , is_update_key_help : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2664c20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (is_update_key_help) , :: core :: option :: Option :: None) } } } # [doc = "`UnitInfoInPickCursor(i32, i32)` overload"] fn unit_info_in_pick_cursor (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674af0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`HideUnitInfoCharaImage()` overload"] fn hide_unit_info_chara_image (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26697a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowUnitInfoCharaImage()` overload"] fn show_unit_info_chara_image (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26751c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnitInfoForPickFreeCursor()` overload"] fn unit_info_for_pick_free_cursor (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2667bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyHelpInFreeCursor(crate::app::unit::Unit)` overload"] fn key_help_in_free_cursor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674a40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetPickKeyHelpType(crate::app::unit::Unit, bool, bool)` overload"] fn get_pick_key_help_type (self , mind_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , is_detail : impl :: core :: convert :: Into < bool > , is_weapon_change : impl :: core :: convert :: Into < bool >) -> crate :: app :: mapkeyhelp :: MapKeyHelp_Types { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: unit :: Unit , bool , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapkeyhelp :: MapKeyHelp_Types = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2675220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mind_unit) , :: core :: convert :: Into :: into (is_detail) , :: core :: convert :: Into :: into (is_weapon_change) , :: core :: option :: Option :: None) } } } # [doc = "`KeyHelpInPickCursor()` overload"] fn key_help_in_pick_cursor (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2668010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyHelpInPickCursor(i32, i32)` overload"] fn key_help_in_pick_cursor_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2674db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`PickEngageBranch()` overload"] fn pick_engage_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2675310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyHelpHide()` overload"] fn key_help_hide (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2661960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTerrainInfo()` overload"] fn update_terrain_info (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265e240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTerrainInfo(i32, i32)` overload"] fn update_terrain_info_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2675080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateLeftTerrainInfo(i32, i32)` overload"] fn update_left_terrain_info (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2671710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`DirectAttackStart()` overload"] fn direct_attack_start (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2675450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DirectAttackWait()` overload"] fn direct_attack_wait (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26754e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DirectAttackDecide()` overload"] fn direct_attack_decide (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2675590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CursorSound()` overload"] fn cursor_sound (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265f630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EngageRewarpPrepare()` overload"] fn engage_rewarp_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26768f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EngageRewarpCancel()` overload"] fn engage_rewarp_cancel (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2676df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EngageBeforeEvent()` overload"] fn engage_before_event (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2676fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EngageAfterEvent()` overload"] fn engage_after_event (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MapEnd()` overload"] fn map_end (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265b8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Restart(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"] fn restart (self , target : impl :: core :: convert :: Into < crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26770f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`SaveAndSuspendMenuBefore()` overload"] fn save_and_suspend_menu_before (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveAndSuspendMenuAfter()` overload"] fn save_and_suspend_menu_after (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MindPrepare()` overload"] fn mind_prepare (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDamageForecast()` overload"] fn update_damage_forecast (self ,) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x265d590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_OldCursorX()` overload"] fn get_old_cursor_x (self ,) -> i32 { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_OldCursorZ()` overload"] fn get_old_cursor_z (self ,) -> i32 { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageX(i32)` overload"] fn set_engage_x (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageZ(i32)` overload"] fn set_engage_z (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSequenceHuman as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceHuman , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2677760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencehuman")]pub trait IMapSequenceHumanMethods:IMapSequenceHuman{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265b450usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265b600usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265b760usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265b8d0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`GetOperateMode()` overload"]fn get_operate_mode(self,)->crate::app::mapsequencehuman::MapSequenceHuman_OperateMode{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265b9e0usize)as*mut u8,crate::app::mapsequencehuman::MapSequenceHuman_OperateMode;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`GetDefaultOperateMode()` overload"]fn get_default_operate_mode(self,)->crate::app::mapsequencehuman::MapSequenceHuman_OperateMode{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265b9f0usize)as*mut u8,crate::app::mapsequencehuman::MapSequenceHuman_OperateMode;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SetOperateMode(crate::app::mapsequencehuman::MapSequenceHuman_OperateMode)` overload"]fn set_operate_mode(self,mode:impl::core::convert::Into<crate::app::mapsequencehuman::MapSequenceHuman_OperateMode>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265baa0usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(crate::app::mapsequencehuman::MapSequenceHuman_OperateMode)::core::convert::Into::into(mode))}
+}
+#[doc="`SetEngagePos()` overload"]fn set_engage_pos(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265bb40usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`ResetEngagePos()` overload"]fn reset_engage_pos(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265bbe0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`IsEngagePos(crate::app::unit::Unit)` overload"]fn is_engage_pos(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265bbf0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetEnterPos(i32, i32)` overload"]fn set_enter_pos(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265bc90usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetNextMode(::unity2::Il2CppString)` overload"]fn get_next_mode(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::mapsequencehuman::MapSequenceHuman_NextMode{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265bca0usize)as*mut u8,crate::app::mapsequencehuman::MapSequenceHuman_NextMode;
+(MapSequenceHuman)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetManualNextUnit(i32, i32, bool)` overload"]fn get_manual_next_unit(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,is_reverse:impl::core::convert::Into<bool>)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265bcd0usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(bool)::core::convert::Into::into(is_reverse))}
+}
+#[doc="`GetAutoNextUnit(i32, i32)` overload"]fn get_auto_next_unit(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265c8a0usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`StartBranch()` overload"]fn start_branch(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265ca10usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`FreeCursorPrepare()` overload"]fn free_cursor_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265cf60usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`FreeCursorTick()` overload"]fn free_cursor_tick(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265e4f0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`FreeCursorDecide()` overload"]fn free_cursor_decide(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26600a0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SystemMenuOpen()` overload"]fn system_menu_open(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2660590usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SortieCursorDecide()` overload"]fn sortie_cursor_decide(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265f820usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SortieCursorDecideTranspose()` overload"]fn sortie_cursor_decide_transpose(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2661320usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SortieCursorCancel()` overload"]fn sortie_cursor_cancel(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265fe60usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SortieCursorSortieEnd()` overload"]fn sortie_cursor_sortie_end(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26619e0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SortiePositionChanged()` overload"]fn sortie_position_changed(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2661ba0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickCursorPrepare()` overload"]fn pick_cursor_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2661c10usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickCursorResumePrepare()` overload"]fn pick_cursor_resume_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26623e0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickupTutorial()` overload"]fn pickup_tutorial(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2663320usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickupEventBegin()` overload"]fn pickup_event_begin(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2663410usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickupEvent()` overload"]fn pickup_event(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26636a0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickupEventEnd()` overload"]fn pickup_event_end(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26637d0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickCursorTick()` overload"]fn pick_cursor_tick(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2663860usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CommitMapPanelTargetForIndirect(crate::app::unit::Unit)` overload"]fn commit_map_panel_target_for_indirect(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26660d0usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdateSupportSkill()` overload"]fn update_support_skill(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2664c70usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UpdateSupportSkill(i32, i32)` overload"]fn update_support_skill_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2664a40usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`CanShortCommand(crate::app::unit::Unit)` overload"]fn can_short_command(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2666470usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CanShortCommandForChangeWeapon(crate::app::unit::Unit)` overload"]fn can_short_command_for_change_weapon(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26664e0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`PickUnitTick(crate::app::mapsequencehuman::MapSequenceHuman_Label)` overload"]fn pick_unit_tick(self,label:impl::core::convert::Into<crate::app::mapsequencehuman::MapSequenceHuman_Label>)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2665ad0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver,(crate::app::mapsequencehuman::MapSequenceHuman_Label)::core::convert::Into::into(label))}
+}
+#[doc="`PickCursorDecide()` overload"]fn pick_cursor_decide(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2664f20usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickCursorCancel()` overload"]fn pick_cursor_cancel(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26656c0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickFreeCursorPrepare()` overload"]fn pick_free_cursor_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2667540usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UpdateScreenInfoForPickFreeCursor()` overload"]fn update_screen_info_for_pick_free_cursor(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2667b90usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UpdateRoute(i32, i32)` overload"]fn update_route(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2662ab0usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`PickFreeCursorTick()` overload"]fn pick_free_cursor_tick(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26682c0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickFreeCursorBrunch()` overload"]fn pick_free_cursor_brunch(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26692a0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickFreeCursorCancel()` overload"]fn pick_free_cursor_cancel(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2668f00usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`DesignateTargetUnit()` overload"]fn designate_target_unit(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2666c80usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PickMoveResume()` overload"]fn pick_move_resume(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2669800usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`MoveUnit()` overload"]fn move_unit(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2669940usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`WaitMovingUnit()` overload"]fn wait_moving_unit(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2669a50usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PostMoveUnit()` overload"]fn post_move_unit(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2669b00usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`WarpCursorPrepare()` overload"]fn warp_cursor_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2669bd0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`WarpCursorTick()` overload"]fn warp_cursor_tick(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266a3c0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SetCursorMindForWarp()` overload"]fn set_cursor_mind_for_warp(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2669ff0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`WarpCursorDecide()` overload"]fn warp_cursor_decide(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266ae10usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`WarpCursorCancel()` overload"]fn warp_cursor_cancel(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266b4c0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`RewarpCursorPrepare()` overload"]fn rewarp_cursor_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266b860usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UpdateUnitRewarp()` overload"]fn update_unit_rewarp(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266bd40usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`RewarpCursorTick()` overload"]fn rewarp_cursor_tick(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266c2a0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SetCursorMindForRewarp()` overload"]fn set_cursor_mind_for_rewarp(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266bed0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`RewarpCursorDecide()` overload"]fn rewarp_cursor_decide(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266cc60usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`RewarpCursorCancel()` overload"]fn rewarp_cursor_cancel(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266d300usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreationCursorPrepare()` overload"]fn creation_cursor_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266d7f0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreationCursorTick()` overload"]fn creation_cursor_tick(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266e010usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SetCursorMindForCreation()` overload"]fn set_cursor_mind_for_creation(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266dc60usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreationCursorDecide()` overload"]fn creation_cursor_decide(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266e850usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreationCursorCancel()` overload"]fn creation_cursor_cancel(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266ee30usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`FireCannonCursorPrepare()` overload"]fn fire_cannon_cursor_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266f160usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`FireCannonCursorTick()` overload"]fn fire_cannon_cursor_tick(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266fd40usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SetCursorMindForFireCannon()` overload"]fn set_cursor_mind_for_fire_cannon(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266f990usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`FireCannonCursorDecide()` overload"]fn fire_cannon_cursor_decide(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26705f0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`IsUseFireCannon(i32, i32)` overload"]fn is_use_fire_cannon(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2670ed0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`FireCannonCursorCancel()` overload"]fn fire_cannon_cursor_cancel(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2670ae0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`TalkPrepare()` overload"]fn talk_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26710a0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`Talked()` overload"]fn talked(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2671190usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreateSystemMenu()` overload"]fn create_system_menu(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2671300usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`TargetEvent()` overload"]fn target_event(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2671370usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UnitCommandPrepare()` overload"]fn unit_command_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2671410usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UnitCommandPrepareEvent()` overload"]fn unit_command_prepare_event(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26717b0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UnitCommandCancel()` overload"]fn unit_command_cancel(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2671850usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`AttackMenuPrepare()` overload"]fn attack_menu_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26720c0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`RodMenuPrepare()` overload"]fn rod_menu_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26721b0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UnitMenuPrepare()` overload"]fn unit_menu_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672230usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`ItemMenuPrepare()` overload"]fn item_menu_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26722c0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`EnchantMenuPrepare()` overload"]fn enchant_menu_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672360usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreateBindAttack()` overload"]fn create_bind_attack(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672400usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreateBindEngageAttack()` overload"]fn create_bind_engage_attack(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672590usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreateBindEngageCharge()` overload"]fn create_bind_engage_charge(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672650usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreateBindEngageWait()` overload"]fn create_bind_engage_wait(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672710usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreateBindEngageRewarp()` overload"]fn create_bind_engage_rewarp(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26727d0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CreateBindEngageRod()` overload"]fn create_bind_engage_rod(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672890usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PreItemMenuTrade()` overload"]fn pre_item_menu_trade(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672950usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PostItemMenuTrade()` overload"]fn post_item_menu_trade(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26729d0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`TransporterMenuInitialize()` overload"]fn transporter_menu_initialize(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672b40usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`TransporterMenu()` overload"]fn transporter_menu(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672c80usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`TransporterMenuFinalize()` overload"]fn transporter_menu_finalize(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672c90usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`ResetTarget()` overload"]fn reset_target(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26711a0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`PostEngage()` overload"]fn post_engage(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672d80usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UpdatePosition()` overload"]fn update_position(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672f00usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`GameEndBranch()` overload"]fn game_end_branch(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2672f90usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`MindEncBranch()` overload"]fn mind_enc_branch(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26731e0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`AutoTurnEnd()` overload"]fn auto_turn_end(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26732d0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`GodOutAll()` overload"]fn god_out_all(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26735d0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`HumanTurnEnd()` overload"]fn human_turn_end(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26737d0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`JobIntroDecide(i32, i32, crate::app::mapsequencehuman::MapSequenceHuman_Label)` overload"]fn job_intro_decide(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,label:impl::core::convert::Into<crate::app::mapsequencehuman::MapSequenceHuman_Label>)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265f6b0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::mapsequencehuman::MapSequenceHuman_Label)::core::convert::Into::into(label))}
+}
+#[doc="`JobIntroDecide(crate::app::mapsequencehuman::MapSequenceHuman_Label)` overload"]fn job_intro_decide_2(self,label:impl::core::convert::Into<crate::app::mapsequencehuman::MapSequenceHuman_Label>)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2666840usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver,(crate::app::mapsequencehuman::MapSequenceHuman_Label)::core::convert::Into::into(label))}
+}
+#[doc="`CreateJobIntro()` overload"]fn create_job_intro(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2673bf0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`JobIntroBranch()` overload"]fn job_intro_branch(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2673c00usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`JobIntroKeyHelpRequest()` overload"]fn job_intro_key_help_request(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2673c70usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`JobIntroKeyHelpBack()` overload"]fn job_intro_key_help_back(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2673d10usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CanFocusUnit(crate::app::unit::Unit, crate::app::force::Force_Type, crate::app::unit::Unit)` overload"]fn can_focus_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,skip_unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26611b0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(crate::app::unit::Unit)::core::convert::Into::into(skip_unit))}
+}
+#[doc="`GetPickUnit(crate::app::unit::Unit)` overload"]fn get_pick_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265cc10usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetFirstUnit(crate::app::force::Force_Type)` overload"]fn get_first_unit(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265cbc0usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceHuman)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`GetPatrolUnit(i32, i32, crate::app::force::Force_Type, bool, crate::app::unit::Unit)` overload"]fn get_patrol_unit(self,cx:impl::core::convert::Into<i32> ,cz:impl::core::convert::Into<i32> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,is_reverse:impl::core::convert::Into<bool> ,skip_unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265c2a0usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(cx),(i32)::core::convert::Into::into(cz),(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(bool)::core::convert::Into::into(is_reverse),(crate::app::unit::Unit)::core::convert::Into::into(skip_unit))}
+}
+#[doc="`IsGetPatrolUnit(i32, i32, crate::app::unit::Unit, crate::app::force::Force_Type, crate::app::unit::Unit)` overload"]fn is_get_patrol_unit(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,skip_unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2673f50usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(crate::app::unit::Unit)::core::convert::Into::into(skip_unit))}
+}
+#[doc="`GetClosestUnit(i32, i32, crate::app::force::Force_Type, bool, crate::app::unit::Unit)` overload"]fn get_closest_unit(self,cx:impl::core::convert::Into<i32> ,cz:impl::core::convert::Into<i32> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,is_reverse:impl::core::convert::Into<bool> ,skip_unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265bed0usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(cx),(i32)::core::convert::Into::into(cz),(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(bool)::core::convert::Into::into(is_reverse),(crate::app::unit::Unit)::core::convert::Into::into(skip_unit))}
+}
+#[doc="`GetOrderUnit(i32, i32, crate::app::force::Force_Type, bool, crate::app::unit::Unit)` overload"]fn get_order_unit(self,cx:impl::core::convert::Into<i32> ,cz:impl::core::convert::Into<i32> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,is_reverse:impl::core::convert::Into<bool> ,skip_unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unit::Unit{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265c710usize)as*mut u8,crate::app::unit::Unit;
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(cx),(i32)::core::convert::Into::into(cz),(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(bool)::core::convert::Into::into(is_reverse),(crate::app::unit::Unit)::core::convert::Into::into(skip_unit))}
+}
+#[doc="`UpdateMoveImage(crate::app::unit::Unit, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]fn update_move_image(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,weapon_flag:impl::core::convert::Into<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> >)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2673fc0usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)::core::convert::Into::into(weapon_flag))}
+}
+#[doc="`FreeCursorSetMoveImage(crate::app::unit::Unit)` overload"]fn free_cursor_set_move_image(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2661080usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UnitInfoTick()` overload"]fn unit_info_tick(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2660740usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`DangerOneTick()` overload"]fn danger_one_tick(self,)->bool{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2660aa0usize)as*mut u8,bool;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`MapNavigationTick()` overload"]fn map_navigation_tick(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2661090usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`ShowInfo()` overload"]fn show_info(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674290usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`HideInfo()` overload"]fn hide_info(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674390usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`HidePanel()` overload"]fn hide_panel(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674580usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UpdateInfo()` overload"]fn update_info(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674690usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`ShowMinimap()` overload"]fn show_minimap(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26746f0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`HideMinimap()` overload"]fn hide_minimap(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674700usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`ShowDamageInfo()` overload"]fn show_damage_info(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674710usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`HideDamageInfo()` overload"]fn hide_damage_info(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x266d7e0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`HideInfoExceptUnitInfo()` overload"]fn hide_info_except_unit_info(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674720usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`JumpForRemove(crate::app::unit::Unit)` overload"]fn jump_for_remove(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674790usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`JumpForRemagic(crate::app::unit::Unit)` overload"]fn jump_for_remagic(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674920usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetActiveUnit(crate::app::unit::Unit, bool)` overload"]fn set_active_unit(self,target:impl::core::convert::Into<crate::app::unit::Unit> ,is_pickup:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265dce0usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(target),(bool)::core::convert::Into::into(is_pickup))}
+}
+#[doc="`UpdateUnitInfo(bool)` overload"]fn update_unit_info(self,is_update_key_help:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2663040usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(bool)::core::convert::Into::into(is_update_key_help))}
+}
+#[doc="`UpdateUnitInfo(i32, i32, bool)` overload"]fn update_unit_info_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,is_update_key_help:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2664c20usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(bool)::core::convert::Into::into(is_update_key_help))}
+}
+#[doc="`UnitInfoInPickCursor(i32, i32)` overload"]fn unit_info_in_pick_cursor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674af0usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`HideUnitInfoCharaImage()` overload"]fn hide_unit_info_chara_image(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26697a0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`ShowUnitInfoCharaImage()` overload"]fn show_unit_info_chara_image(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26751c0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UnitInfoForPickFreeCursor()` overload"]fn unit_info_for_pick_free_cursor(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2667bc0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`KeyHelpInFreeCursor(crate::app::unit::Unit)` overload"]fn key_help_in_free_cursor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674a40usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetPickKeyHelpType(crate::app::unit::Unit, bool, bool)` overload"]fn get_pick_key_help_type(self,mind_unit:impl::core::convert::Into<crate::app::unit::Unit> ,is_detail:impl::core::convert::Into<bool> ,is_weapon_change:impl::core::convert::Into<bool>)->crate::app::mapkeyhelp::MapKeyHelp_Types{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2675220usize)as*mut u8,crate::app::mapkeyhelp::MapKeyHelp_Types;
+(MapSequenceHuman)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(mind_unit),(bool)::core::convert::Into::into(is_detail),(bool)::core::convert::Into::into(is_weapon_change))}
+}
+#[doc="`KeyHelpInPickCursor()` overload"]fn key_help_in_pick_cursor(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2668010usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`KeyHelpInPickCursor(i32, i32)` overload"]fn key_help_in_pick_cursor_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2674db0usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`PickEngageBranch()` overload"]fn pick_engage_branch(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2675310usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`KeyHelpHide()` overload"]fn key_help_hide(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2661960usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UpdateTerrainInfo()` overload"]fn update_terrain_info(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265e240usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UpdateTerrainInfo(i32, i32)` overload"]fn update_terrain_info_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2675080usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`UpdateLeftTerrainInfo(i32, i32)` overload"]fn update_left_terrain_info(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2671710usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`DirectAttackStart()` overload"]fn direct_attack_start(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2675450usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`DirectAttackWait()` overload"]fn direct_attack_wait(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26754e0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`DirectAttackDecide()` overload"]fn direct_attack_decide(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2675590usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`CursorSound()` overload"]fn cursor_sound(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265f630usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`EngageRewarpPrepare()` overload"]fn engage_rewarp_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26768f0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`EngageRewarpCancel()` overload"]fn engage_rewarp_cancel(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2676df0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`EngageBeforeEvent()` overload"]fn engage_before_event(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2676fb0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`EngageAfterEvent()` overload"]fn engage_after_event(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2677050usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`MapEnd()` overload"]fn map_end(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265b8e0usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`Restart(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"]fn restart(self,target:impl::core::convert::Into<crate::app::gameuserrestartdata::GameUserRestartData_Targtes>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26770f0usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)::core::convert::Into::into(target))}
+}
+#[doc="`SaveAndSuspendMenuBefore()` overload"]fn save_and_suspend_menu_before(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2677200usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`SaveAndSuspendMenuAfter()` overload"]fn save_and_suspend_menu_after(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2677390usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`MindPrepare()` overload"]fn mind_prepare(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2677560usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`UpdateDamageForecast()` overload"]fn update_damage_forecast(self,)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x265d590usize)as*mut u8,();
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`get_OldCursorX()` overload"]fn get_old_cursor_x(self,)->i32{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2677730usize)as*mut u8,i32;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`get_OldCursorZ()` overload"]fn get_old_cursor_z(self,)->i32{unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2677740usize)as*mut u8,i32;
+(MapSequenceHuman)__receiver)}
+}
+#[doc="`set_EngageX(i32)` overload"]fn set_engage_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2677750usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`set_EngageZ(i32)` overload"]fn set_engage_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequenceHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2677760usize)as*mut u8,();
+(MapSequenceHuman)__receiver,(i32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-mapsequencehuman")]
-impl < __T : IMapSequenceHuman > IMapSequenceHumanMethods for __T { }
+#[cfg(feature="app-mapsequencehuman")]impl<__T:IMapSequenceHuman>IMapSequenceHumanMethods for __T{}
 
-#[cfg(feature = "app-mapsequencehuman")]
-impl MapSequenceHuman { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_operate_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_default_operate_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_operate_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_engage_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn reset_engage_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_engage_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_enter_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_next_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_manual_next_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_auto_next_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn start_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn free_cursor_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn free_cursor_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn free_cursor_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn system_menu_open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn sortie_cursor_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn sortie_cursor_decide_transpose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn sortie_cursor_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn sortie_cursor_sortie_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn sortie_position_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn pick_cursor_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn update_deploy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn is_move_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn pick_cursor_resume_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn pickup_tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn pickup_event_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn pickup_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn pickup_event_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn pick_cursor_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn commit_map_panel_target_for_indirect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn update_support_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn update_support_skill_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn can_short_command_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn can_short_command_for_change_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn pick_unit_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn pick_cursor_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn pick_cursor_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn pick_free_cursor_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn update_screen_info_for_pick_free_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn update_route_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn pick_free_cursor_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn pick_free_cursor_brunch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn pick_free_cursor_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn designate_target_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn pick_move_resume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn move_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn wait_moving_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn post_move_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn warp_cursor_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn warp_cursor_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn set_cursor_mind_for_warp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn warp_cursor_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn warp_cursor_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn rewarp_cursor_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn update_unit_rewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn rewarp_cursor_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn set_cursor_mind_for_rewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn rewarp_cursor_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn rewarp_cursor_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn creation_cursor_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn creation_cursor_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn set_cursor_mind_for_creation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn creation_cursor_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn creation_cursor_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn fire_cannon_cursor_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn fire_cannon_cursor_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn set_cursor_mind_for_fire_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn fire_cannon_cursor_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn is_use_fire_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn fire_cannon_cursor_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn talk_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn talked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn create_system_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn target_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn unit_command_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } pub fn unit_command_prepare_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [79] } pub fn unit_command_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [80] } pub fn attack_menu_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [81] } pub fn rod_menu_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [82] } pub fn unit_menu_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [83] } pub fn item_menu_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [84] } pub fn enchant_menu_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [85] } pub fn create_bind_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [86] } pub fn create_bind_engage_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [87] } pub fn create_bind_engage_charge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [88] } pub fn create_bind_engage_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [89] } pub fn create_bind_engage_rewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [90] } pub fn create_bind_engage_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [91] } pub fn pre_item_menu_trade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [92] } pub fn post_item_menu_trade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [93] } pub fn transporter_menu_initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [94] } pub fn transporter_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [95] } pub fn transporter_menu_finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [96] } pub fn reset_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [97] } pub fn post_engage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [98] } pub fn update_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [99] } pub fn game_end_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [100] } pub fn mind_enc_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [101] } pub fn auto_turn_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [102] } pub fn god_out_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [103] } pub fn human_turn_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [104] } pub fn job_intro_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [105] } pub fn job_intro_decide_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [106] } pub fn create_job_intro_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [107] } pub fn job_intro_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [108] } pub fn job_intro_key_help_request_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [109] } pub fn job_intro_key_help_back_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [110] } pub fn can_focus_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [111] } pub fn get_pick_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [112] } pub fn get_first_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [113] } pub fn get_patrol_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [114] } pub fn is_get_patrol_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [115] } pub fn get_closest_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [116] } pub fn get_order_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [117] } pub fn update_move_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [118] } pub fn free_cursor_set_move_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [119] } pub fn unit_info_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [120] } pub fn danger_one_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [121] } pub fn map_navigation_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [122] } pub fn show_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [123] } pub fn hide_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [124] } pub fn hide_panel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [125] } pub fn update_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [126] } pub fn show_minimap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [127] } pub fn hide_minimap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [128] } pub fn show_damage_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [129] } pub fn hide_damage_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [130] } pub fn hide_info_except_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [131] } pub fn jump_for_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [132] } pub fn jump_for_remagic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [133] } pub fn set_active_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [134] } pub fn update_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [135] } pub fn update_unit_info_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [136] } pub fn unit_info_in_pick_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [137] } pub fn hide_unit_info_chara_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [138] } pub fn show_unit_info_chara_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [139] } pub fn unit_info_for_pick_free_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [140] } pub fn key_help_in_free_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [141] } pub fn get_pick_key_help_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [142] } pub fn key_help_in_pick_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [143] } pub fn key_help_in_pick_cursor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [144] } pub fn pick_engage_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [145] } pub fn key_help_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [146] } pub fn update_terrain_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [147] } pub fn update_terrain_info_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [148] } pub fn update_left_terrain_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [149] } pub fn get_unit_index_from_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [150] } pub fn direct_attack_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [151] } pub fn direct_attack_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [152] } pub fn direct_attack_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [153] } pub fn cursor_sound_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [154] } pub fn engage_rewarp_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [155] } pub fn engage_rewarp_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [156] } pub fn engage_before_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [157] } pub fn engage_after_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [158] } pub fn map_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [159] } pub fn restart_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [160] } pub fn save_and_suspend_menu_before_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [161] } pub fn save_and_suspend_menu_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [162] } pub fn mind_prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [163] } pub fn update_damage_forecast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [164] } pub fn get_old_cursor_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [165] } pub fn get_old_cursor_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [166] } pub fn set_engage_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [167] } pub fn set_engage_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [168] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [169] } pub fn create_bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceHuman as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [170] } }
+#[cfg(feature="app-mapsequencehuman")]impl MapSequenceHuman{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_operate_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_default_operate_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_operate_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_engage_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn reset_engage_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_engage_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_enter_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_next_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_manual_next_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_auto_next_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn start_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn free_cursor_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn free_cursor_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn free_cursor_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn system_menu_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn sortie_cursor_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn sortie_cursor_decide_transpose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn sortie_cursor_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn sortie_cursor_sortie_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn sortie_position_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn pick_cursor_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn update_deploy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn is_move_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn pick_cursor_resume_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn pickup_tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn pickup_event_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn pickup_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn pickup_event_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn pick_cursor_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn commit_map_panel_target_for_indirect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn update_support_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn update_support_skill_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn can_short_command_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn can_short_command_for_change_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn pick_unit_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn pick_cursor_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn pick_cursor_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn pick_free_cursor_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn update_screen_info_for_pick_free_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn update_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn pick_free_cursor_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn pick_free_cursor_brunch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn pick_free_cursor_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn designate_target_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn pick_move_resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn move_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn wait_moving_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn post_move_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn warp_cursor_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn warp_cursor_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn set_cursor_mind_for_warp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn warp_cursor_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn warp_cursor_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn rewarp_cursor_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn update_unit_rewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn rewarp_cursor_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn set_cursor_mind_for_rewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn rewarp_cursor_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn rewarp_cursor_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn creation_cursor_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn creation_cursor_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn set_cursor_mind_for_creation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn creation_cursor_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn creation_cursor_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn fire_cannon_cursor_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn fire_cannon_cursor_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn set_cursor_mind_for_fire_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn fire_cannon_cursor_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn is_use_fire_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn fire_cannon_cursor_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn talk_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn talked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn create_system_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn target_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn unit_command_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn unit_command_prepare_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn unit_command_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn attack_menu_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn rod_menu_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+pub fn unit_menu_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
+pub fn item_menu_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
+pub fn enchant_menu_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[85]}
+pub fn create_bind_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
+pub fn create_bind_engage_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
+pub fn create_bind_engage_charge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
+pub fn create_bind_engage_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
+pub fn create_bind_engage_rewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
+pub fn create_bind_engage_rod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[91]}
+pub fn pre_item_menu_trade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[92]}
+pub fn post_item_menu_trade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[93]}
+pub fn transporter_menu_initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[94]}
+pub fn transporter_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[95]}
+pub fn transporter_menu_finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
+pub fn reset_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[97]}
+pub fn post_engage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[98]}
+pub fn update_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[99]}
+pub fn game_end_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[100]}
+pub fn mind_enc_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[101]}
+pub fn auto_turn_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[102]}
+pub fn god_out_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[103]}
+pub fn human_turn_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[104]}
+pub fn job_intro_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[105]}
+pub fn job_intro_decide_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[106]}
+pub fn create_job_intro_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[107]}
+pub fn job_intro_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[108]}
+pub fn job_intro_key_help_request_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[109]}
+pub fn job_intro_key_help_back_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[110]}
+pub fn can_focus_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[111]}
+pub fn get_pick_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[112]}
+pub fn get_first_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[113]}
+pub fn get_patrol_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[114]}
+pub fn is_get_patrol_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[115]}
+pub fn get_closest_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[116]}
+pub fn get_order_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[117]}
+pub fn update_move_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[118]}
+pub fn free_cursor_set_move_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[119]}
+pub fn unit_info_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[120]}
+pub fn danger_one_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[121]}
+pub fn map_navigation_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[122]}
+pub fn show_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[123]}
+pub fn hide_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[124]}
+pub fn hide_panel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[125]}
+pub fn update_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[126]}
+pub fn show_minimap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[127]}
+pub fn hide_minimap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[128]}
+pub fn show_damage_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[129]}
+pub fn hide_damage_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[130]}
+pub fn hide_info_except_unit_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[131]}
+pub fn jump_for_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[132]}
+pub fn jump_for_remagic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[133]}
+pub fn set_active_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[134]}
+pub fn update_unit_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[135]}
+pub fn update_unit_info_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[136]}
+pub fn unit_info_in_pick_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[137]}
+pub fn hide_unit_info_chara_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[138]}
+pub fn show_unit_info_chara_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[139]}
+pub fn unit_info_for_pick_free_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[140]}
+pub fn key_help_in_free_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[141]}
+pub fn get_pick_key_help_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[142]}
+pub fn key_help_in_pick_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[143]}
+pub fn key_help_in_pick_cursor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[144]}
+pub fn pick_engage_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[145]}
+pub fn key_help_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[146]}
+pub fn update_terrain_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[147]}
+pub fn update_terrain_info_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[148]}
+pub fn update_left_terrain_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[149]}
+pub fn get_unit_index_from_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[150]}
+pub fn direct_attack_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[151]}
+pub fn direct_attack_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[152]}
+pub fn direct_attack_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[153]}
+pub fn cursor_sound_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[154]}
+pub fn engage_rewarp_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[155]}
+pub fn engage_rewarp_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[156]}
+pub fn engage_before_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[157]}
+pub fn engage_after_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[158]}
+pub fn map_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[159]}
+pub fn restart_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[160]}
+pub fn save_and_suspend_menu_before_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[161]}
+pub fn save_and_suspend_menu_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[162]}
+pub fn mind_prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[163]}
+pub fn update_damage_forecast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[164]}
+pub fn get_old_cursor_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[165]}
+pub fn get_old_cursor_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[166]}
+pub fn set_engage_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[167]}
+pub fn set_engage_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[168]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[169]}
+pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[170]}
+}
 
-#[cfg(feature = "app-mapsequencehuman")]
-impl MapSequenceHuman {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceHuman) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceHumanMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencehuman")]impl MapSequenceHuman{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceHuman), ::core::stringify!(new),));
+ <Self as IMapSequenceHumanMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequencehuman")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequenceHuman_OperateMode;
+    pub use super::MapSequenceHuman_Label;
     pub use super::MapSequenceHuman;
     pub use super::IMapSequenceHuman;
     pub use super::IMapSequenceHumanMethods;
-    pub use super::MapSequenceHuman_Label;
-    pub use super::MapSequenceHuman_OperateMode;
     pub use super::MapSequenceHuman_NextMode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

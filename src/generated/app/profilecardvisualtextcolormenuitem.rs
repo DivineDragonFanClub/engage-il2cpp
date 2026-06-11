@@ -4,34 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: profilecardvisualbasemenuitem :: { IProfileCardVisualBaseMenuItem , ProfileCardVisualBaseMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::profilecardvisualbasemenuitem::{IProfileCardVisualBaseMenuItem,ProfileCardVisualBaseMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualtextcolormenuitem/ProfileCardVisualTextColorMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualTextColorMenuItem")] # [parent (crate :: app :: profilecardvisualbasemenuitem :: ProfileCardVisualBaseMenuItem)] pub struct ProfileCardVisualTextColorMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualtextcolormenuitem/ProfileCardVisualTextColorMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardVisualTextColorMenuItem")]#[parent(crate::app::profilecardvisualbasemenuitem::ProfileCardVisualBaseMenuItem)]pub struct ProfileCardVisualTextColorMenuItem{}
 
 }
 
 #[cfg(feature = "app-profilecardvisualtextcolormenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardvisualtextcolormenuitem")]
-pub trait IProfileCardVisualTextColorMenuItemMethods : IProfileCardVisualTextColorMenuItem { # [doc = "`get_m_TextColorData()` overload"] fn get_m_text_color_data (self ,) -> crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData { unsafe { let __receiver = < ProfileCardVisualTextColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextColorMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c071a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_TextColorData(crate::app::profilecardtextcolordata::ProfileCardTextColorData)` overload"] fn set_m_text_color_data (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData >) -> () { unsafe { let __receiver = < ProfileCardVisualTextColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextColorMenuItem , crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c071b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::profilecardtextcolordata::ProfileCardTextColorData, bool)` overload"] fn ctor (self , text_color_data : impl :: core :: convert :: Into < crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData > , initial_select : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardVisualTextColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextColorMenuItem , crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c05d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text_color_data) , :: core :: convert :: Into :: into (initial_select) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualTextColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextColorMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c071c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNewArrival()` overload"] fn is_new_arrival (self ,) -> bool { unsafe { let __receiver = < ProfileCardVisualTextColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextColorMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c07400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAlreadyRead()` overload"] fn set_already_read (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualTextColorMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualTextColorMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c074a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvisualtextcolormenuitem")]pub trait IProfileCardVisualTextColorMenuItemMethods:IProfileCardVisualTextColorMenuItem{#[doc="`get_m_TextColorData()` overload"]fn get_m_text_color_data(self,)->crate::app::profilecardtextcolordata::ProfileCardTextColorData{unsafe{let __receiver= <ProfileCardVisualTextColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c071a0usize)as*mut u8,crate::app::profilecardtextcolordata::ProfileCardTextColorData;
+(ProfileCardVisualTextColorMenuItem)__receiver)}
+}
+#[doc="`set_m_TextColorData(crate::app::profilecardtextcolordata::ProfileCardTextColorData)` overload"]fn set_m_text_color_data(self,value:impl::core::convert::Into<crate::app::profilecardtextcolordata::ProfileCardTextColorData>)->(){unsafe{let __receiver= <ProfileCardVisualTextColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c071b0usize)as*mut u8,();
+(ProfileCardVisualTextColorMenuItem)__receiver,(crate::app::profilecardtextcolordata::ProfileCardTextColorData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::profilecardtextcolordata::ProfileCardTextColorData, bool)` overload"]fn ctor(self,text_color_data:impl::core::convert::Into<crate::app::profilecardtextcolordata::ProfileCardTextColorData> ,initial_select:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardVisualTextColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c05d70usize)as*mut u8,();
+(ProfileCardVisualTextColorMenuItem)__receiver,(crate::app::profilecardtextcolordata::ProfileCardTextColorData)::core::convert::Into::into(text_color_data),(bool)::core::convert::Into::into(initial_select))}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualTextColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c071c0usize)as*mut u8,();
+(ProfileCardVisualTextColorMenuItem)__receiver)}
+}
+#[doc="`IsNewArrival()` overload"]fn is_new_arrival(self,)->bool{unsafe{let __receiver= <ProfileCardVisualTextColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c07400usize)as*mut u8,bool;
+(ProfileCardVisualTextColorMenuItem)__receiver)}
+}
+#[doc="`SetAlreadyRead()` overload"]fn set_already_read(self,)->(){unsafe{let __receiver= <ProfileCardVisualTextColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c074a0usize)as*mut u8,();
+(ProfileCardVisualTextColorMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardvisualtextcolormenuitem")]
-impl < __T : IProfileCardVisualTextColorMenuItem > IProfileCardVisualTextColorMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardvisualtextcolormenuitem")]impl<__T:IProfileCardVisualTextColorMenuItem>IProfileCardVisualTextColorMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardvisualtextcolormenuitem")]
-impl ProfileCardVisualTextColorMenuItem { pub fn get_m_text_color_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_text_color_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_new_arrival_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_already_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualTextColorMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-profilecardvisualtextcolormenuitem")]impl ProfileCardVisualTextColorMenuItem{pub fn get_m_text_color_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_text_color_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_new_arrival_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_already_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-profilecardvisualtextcolormenuitem")]
-impl ProfileCardVisualTextColorMenuItem {
-# [doc = "`.ctor(crate::app::profilecardtextcolordata::ProfileCardTextColorData, bool)` — overload selector"] pub fn new (text_color_data : crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData , initial_select : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualTextColorMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualTextColorMenuItemMethods > :: ctor (this , text_color_data , initial_select) ; this }
+#[cfg(feature="app-profilecardvisualtextcolormenuitem")]impl ProfileCardVisualTextColorMenuItem{#[doc="`.ctor(crate::app::profilecardtextcolordata::ProfileCardTextColorData, bool)` — overload selector"]pub fn new(text_color_data:crate::app::profilecardtextcolordata::ProfileCardTextColorData,initial_select:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVisualTextColorMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardVisualTextColorMenuItemMethods> ::ctor(this,text_color_data,initial_select);
+this}
 }
 
 #[cfg(feature = "app-profilecardvisualtextcolormenuitem")]

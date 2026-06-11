@@ -4,34 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: interpolator_1 :: { IInterpolator_1 , Interpolator_1 }
- ;
- use crate :: app :: interpolatortime :: { IInterpolatorTime , InterpolatorTime }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::interpolator_1::{IInterpolator_1,Interpolator_1}
+;
+use crate::app::interpolatortime::{IInterpolatorTime,InterpolatorTime}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorvector3/InterpolatorVector3.md"))] # [:: unity2 :: class (namespace = "App" , name = "InterpolatorVector3")] # [parent (crate :: app :: interpolator_1 :: Interpolator_1 < crate :: unity_engine :: vector3 :: Vector3 >)] pub struct InterpolatorVector3 {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interpolatorvector3/InterpolatorVector3.md"))]#[::unity2::class(namespace="App",name="InterpolatorVector3")]#[parent(crate::app::interpolator_1::Interpolator_1<crate::unity_engine::vector3::Vector3>)]pub struct InterpolatorVector3{}
 
 }
 
 #[cfg(feature = "app-interpolatorvector3-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-interpolatorvector3")]
-pub trait IInterpolatorVector3Methods : IInterpolatorVector3 { # [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: curve :: Curve_Type > , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InterpolatorVector3 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorVector3 , crate :: app :: curve :: Curve_Type , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2795590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < InterpolatorVector3 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorVector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2795600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEqual(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] fn is_equal (self , a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> bool { unsafe { let __receiver = < InterpolatorVector3 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorVector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27956d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-interpolatorvector3")]pub trait IInterpolatorVector3Methods:IInterpolatorVector3{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorVector3 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2795590usize)as*mut u8,();
+(InterpolatorVector3)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <InterpolatorVector3 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2795600usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(InterpolatorVector3)__receiver)}
+}
+#[doc="`IsEqual(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn is_equal(self,a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{let __receiver= <InterpolatorVector3 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27956d0usize)as*mut u8,bool;
+(InterpolatorVector3)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "app-interpolatorvector3")]
-impl < __T : IInterpolatorVector3 > IInterpolatorVector3Methods for __T { }
+#[cfg(feature="app-interpolatorvector3")]impl<__T:IInterpolatorVector3>IInterpolatorVector3Methods for __T{}
 
-#[cfg(feature = "app-interpolatorvector3")]
-impl InterpolatorVector3 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorVector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorVector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_equal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorVector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-interpolatorvector3")]impl InterpolatorVector3{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-interpolatorvector3")]
-impl InterpolatorVector3 {
-# [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"] pub fn new (r#type : crate :: app :: curve :: Curve_Type , num : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterpolatorVector3) , :: core :: stringify ! (new) ,)) ; < Self as IInterpolatorVector3Methods > :: ctor (this , r#type , num) ; this }
+#[cfg(feature="app-interpolatorvector3")]impl InterpolatorVector3{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]pub fn new(r#type:crate::app::curve::Curve_Type,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InterpolatorVector3), ::core::stringify!(new),));
+ <Self as IInterpolatorVector3Methods> ::ctor(this,r#type,num);
+this}
 }
 
 #[cfg(feature = "app-interpolatorvector3")]

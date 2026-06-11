@@ -4,85 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingpictureitem/FishingPictureItem_SpriteKind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FishingPictureItem_SpriteKind  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingpictureitem/FishingPictureItem.md"))]#[::unity2::class(namespace="App",name="FishingPictureItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct FishingPictureItem{#[static_field]#[rename(name="cTextureAtlasPath")]pub c_texture_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureRankLarge")]pub c_texture_rank_large: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureRankMiddle")]pub c_texture_rank_middle: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureRankSmall")]pub c_texture_rank_small: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureGyotakuLarge")]pub c_texture_gyotaku_large: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureGyotakuMiddle")]pub c_texture_gyotaku_middle: ::unity2::Il2CppString, #[static_field]#[rename(name="cTextureGyotakuSmall")]pub c_texture_gyotaku_small: ::unity2::Il2CppString, #[offset(104)]#[rename(name="cTextureGyotakuList")]pub c_texture_gyotaku_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(112)]#[rename(name="m_InfoWindow")]pub m_info_window:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="m_Gyotaku")]pub m_gyotaku:crate::unity_engine::transform::Transform, #[offset(128)]#[rename(name="m_FishData")]pub m_fish_data:crate::app::fishingfishdata::FishingFishData, #[offset(136)]#[rename(name="m_Sprites")]pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingpictureitem/FishingPictureItem_SpriteKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FishingPictureItem_SpriteKind{pub value:i32,}
+impl::unity2::ClassIdentity for FishingPictureItem_SpriteKind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="FishingPictureItem.SpriteKind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for FishingPictureItem_SpriteKind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FishingPictureItem.SpriteKind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for FishingPictureItem_SpriteKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for FishingPictureItem_SpriteKind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl FishingPictureItem_SpriteKind{pub fn size()->Self{Self{value:0}
 }
-
-
-impl  FishingPictureItem_SpriteKind  {
-    pub fn size() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn gyotaku() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn unknown() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn gyotaku()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpictureitem/FishingPictureItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingPictureItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct FishingPictureItem {
-# [static_field] # [rename (name = "cTextureAtlasPath")] pub c_texture_atlas_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cTextureRankLarge")] pub c_texture_rank_large : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cTextureRankMiddle")] pub c_texture_rank_middle : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cTextureRankSmall")] pub c_texture_rank_small : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cTextureGyotakuLarge")] pub c_texture_gyotaku_large : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cTextureGyotakuMiddle")] pub c_texture_gyotaku_middle : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cTextureGyotakuSmall")] pub c_texture_gyotaku_small : :: unity2 :: Il2CppString ,
-# [offset (104)] # [rename (name = "cTextureGyotakuList")] pub c_texture_gyotaku_list : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (112)] # [rename (name = "m_InfoWindow")] pub m_info_window : crate :: unity_engine :: transform :: Transform ,
-# [offset (120)] # [rename (name = "m_Gyotaku")] pub m_gyotaku : crate :: unity_engine :: transform :: Transform ,
-# [offset (128)] # [rename (name = "m_FishData")] pub m_fish_data : crate :: app :: fishingfishdata :: FishingFishData ,
-# [offset (136)] # [rename (name = "m_Sprites")] pub m_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
+pub fn unknown()->Self{Self{value:2}
+}
 }
 
 }
@@ -90,29 +40,96 @@ impl  FishingPictureItem_SpriteKind  {
 #[cfg(feature = "app-fishingpictureitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingpictureitem")]
-pub trait IFishingPictureItemMethods : IFishingPictureItem { # [doc = "`get_FishSize()` overload"] fn get_fish_size (self ,) -> i32 { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FishSize(i32)` overload"] fn set_fish_size (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsCrown()` overload"] fn get_is_crown (self ,) -> bool { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsCrown(bool)` overload"] fn set_is_crown (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsUnknown()` overload"] fn get_is_unknown (self ,) -> bool { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsUnknown(bool)` overload"] fn set_is_unknown (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::fishingfishdata::FishingFishData, crate::unity_engine::gameobject::GameObject)` overload"] fn ctor_2 (self , set_data : impl :: core :: convert :: Into < crate :: app :: fishingfishdata :: FishingFishData > , set_menu : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , crate :: app :: fishingfishdata :: FishingFishData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2602e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set_data) , :: core :: convert :: Into :: into (set_menu) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2605050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2605140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2605150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < FishingPictureItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingpictureitem")]pub trait IFishingPictureItemMethods:IFishingPictureItem{#[doc="`get_FishSize()` overload"]fn get_fish_size(self,)->i32{unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604d90usize)as*mut u8,i32;
+(FishingPictureItem)__receiver)}
+}
+#[doc="`set_FishSize(i32)` overload"]fn set_fish_size(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604da0usize)as*mut u8,();
+(FishingPictureItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsCrown()` overload"]fn get_is_crown(self,)->bool{unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604db0usize)as*mut u8,bool;
+(FishingPictureItem)__receiver)}
+}
+#[doc="`set_IsCrown(bool)` overload"]fn set_is_crown(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604dc0usize)as*mut u8,();
+(FishingPictureItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsUnknown()` overload"]fn get_is_unknown(self,)->bool{unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604dd0usize)as*mut u8,bool;
+(FishingPictureItem)__receiver)}
+}
+#[doc="`set_IsUnknown(bool)` overload"]fn set_is_unknown(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604de0usize)as*mut u8,();
+(FishingPictureItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604df0usize)as*mut u8,();
+(FishingPictureItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::fishingfishdata::FishingFishData, crate::unity_engine::gameobject::GameObject)` overload"]fn ctor_2(self,set_data:impl::core::convert::Into<crate::app::fishingfishdata::FishingFishData> ,set_menu:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2602e80usize)as*mut u8,();
+(FishingPictureItem)__receiver,(crate::app::fishingfishdata::FishingFishData)::core::convert::Into::into(set_data),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(set_menu))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2605050usize)as*mut u8, ::unity2::Il2CppString;
+(FishingPictureItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2605140usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(FishingPictureItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2605150usize)as*mut u8,();
+(FishingPictureItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606450usize)as*mut u8,();
+(FishingPictureItem)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <FishingPictureItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606460usize)as*mut u8,();
+(FishingPictureItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingpictureitem")]
-impl < __T : IFishingPictureItem > IFishingPictureItemMethods for __T { }
+#[cfg(feature="app-fishingpictureitem")]impl<__T:IFishingPictureItem>IFishingPictureItemMethods for __T{}
 
-#[cfg(feature = "app-fishingpictureitem")]
-impl FishingPictureItem { pub fn get_fish_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_fish_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_crown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_is_crown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_unknown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_is_unknown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-fishingpictureitem")]impl FishingPictureItem{pub fn get_fish_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_fish_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_crown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_crown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_unknown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_is_unknown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-fishingpictureitem")]
-impl FishingPictureItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingPictureItem) , :: core :: stringify ! (new) ,)) ; < Self as IFishingPictureItemMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::app::fishingfishdata::FishingFishData, crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new_2 (set_data : crate :: app :: fishingfishdata :: FishingFishData , set_menu : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingPictureItem) , :: core :: stringify ! (new_2) ,)) ; < Self as IFishingPictureItemMethods > :: ctor_2 (this , set_data , set_menu) ; this }
+#[cfg(feature="app-fishingpictureitem")]impl FishingPictureItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingPictureItem), ::core::stringify!(new),));
+ <Self as IFishingPictureItemMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::app::fishingfishdata::FishingFishData, crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new_2(set_data:crate::app::fishingfishdata::FishingFishData,set_menu:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingPictureItem), ::core::stringify!(new_2),));
+ <Self as IFishingPictureItemMethods> ::ctor_2(this,set_data,set_menu);
+this}
 }
 
 #[cfg(feature = "app-fishingpictureitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingPictureItem_SpriteKind;
     pub use super::FishingPictureItem;
     pub use super::IFishingPictureItem;
     pub use super::IFishingPictureItemMethods;
+    pub use super::FishingPictureItem_SpriteKind;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

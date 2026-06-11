@@ -4,38 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/confirmdialogitemfunc/ConfirmDialogItemFunc.md"))] # [:: unity2 :: class (namespace = "App" , name = "ConfirmDialogItemFunc")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct ConfirmDialogItemFunc {
-# [offset (112)] # [rename (name = "m_func")] pub m_func : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/confirmdialogitemfunc/ConfirmDialogItemFunc.md"))]#[::unity2::class(namespace="App",name="ConfirmDialogItemFunc")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ConfirmDialogItemFunc{#[offset(112)]#[rename(name="m_func")]pub m_func:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "app-confirmdialogitemfunc-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-confirmdialogitemfunc")]
-pub trait IConfirmDialogItemFuncMethods : IConfirmDialogItemFunc { # [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < ConfirmDialogItemFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfirmDialogItemFunc , :: unity2 :: Il2CppString , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253b260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ConfirmDialogItemFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfirmDialogItemFunc , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253b300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-confirmdialogitemfunc")]pub trait IConfirmDialogItemFuncMethods:IConfirmDialogItemFunc{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ConfirmDialogItemFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253b260usize)as*mut u8,();
+(ConfirmDialogItemFunc)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::action::Action)::core::convert::Into::into(func))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ConfirmDialogItemFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253b300usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ConfirmDialogItemFunc)__receiver)}
+}
+}
 
-#[cfg(feature = "app-confirmdialogitemfunc")]
-impl < __T : IConfirmDialogItemFunc > IConfirmDialogItemFuncMethods for __T { }
+#[cfg(feature="app-confirmdialogitemfunc")]impl<__T:IConfirmDialogItemFunc>IConfirmDialogItemFuncMethods for __T{}
 
-#[cfg(feature = "app-confirmdialogitemfunc")]
-impl ConfirmDialogItemFunc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfirmDialogItemFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfirmDialogItemFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-confirmdialogitemfunc")]impl ConfirmDialogItemFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-confirmdialogitemfunc")]
-impl ConfirmDialogItemFunc {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"] pub fn new (label : :: unity2 :: Il2CppString , func : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConfirmDialogItemFunc) , :: core :: stringify ! (new) ,)) ; < Self as IConfirmDialogItemFuncMethods > :: ctor (this , label , func) ; this }
+#[cfg(feature="app-confirmdialogitemfunc")]impl ConfirmDialogItemFunc{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new(label: ::unity2::Il2CppString,func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConfirmDialogItemFunc), ::core::stringify!(new),));
+ <Self as IConfirmDialogItemFuncMethods> ::ctor(this,label,func);
+this}
 }
 
 #[cfg(feature = "app-confirmdialogitemfunc")]

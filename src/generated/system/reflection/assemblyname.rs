@@ -4,48 +4,100 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyname/AssemblyName.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyName")] # [parent (crate :: system :: object :: Object)] pub struct AssemblyName {
-# [offset (16)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "codebase")] pub codebase : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "major")] pub major : i32 ,
-# [offset (36)] # [rename (name = "minor")] pub minor : i32 ,
-# [offset (40)] # [rename (name = "build")] pub build : i32 ,
-# [offset (44)] # [rename (name = "revision")] pub revision : i32 ,
-# [offset (56)] # [rename (name = "flags")] pub flags : crate :: system :: reflection :: assemblynameflags :: AssemblyNameFlags ,
-# [offset (64)] # [rename (name = "keypair")] pub keypair : crate :: system :: reflection :: strongnamekeypair :: StrongNameKeyPair ,
-# [offset (72)] # [rename (name = "publicKey")] pub public_key : :: unity2 :: Array < u8 > ,
-# [offset (80)] # [rename (name = "keyToken")] pub key_token : :: unity2 :: Array < u8 > ,
-# [offset (104)] # [rename (name = "processor_architecture")] pub processor_architecture : crate :: system :: reflection :: processorarchitecture :: ProcessorArchitecture ,
-# [offset (108)] # [rename (name = "contentType")] pub content_type : crate :: system :: reflection :: assemblycontenttype :: AssemblyContentType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblyname/AssemblyName.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyName")]#[parent(crate::system::object::Object)]pub struct AssemblyName{#[offset(16)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="codebase")]pub codebase: ::unity2::Il2CppString, #[offset(32)]#[rename(name="major")]pub major:i32, #[offset(36)]#[rename(name="minor")]pub minor:i32, #[offset(40)]#[rename(name="build")]pub build:i32, #[offset(44)]#[rename(name="revision")]pub revision:i32, #[offset(56)]#[rename(name="flags")]pub flags:crate::system::reflection::assemblynameflags::AssemblyNameFlags, #[offset(64)]#[rename(name="keypair")]pub keypair:crate::system::reflection::strongnamekeypair::StrongNameKeyPair, #[offset(72)]#[rename(name="publicKey")]pub public_key: ::unity2::Array<u8> , #[offset(80)]#[rename(name="keyToken")]pub key_token: ::unity2::Array<u8> , #[offset(104)]#[rename(name="processor_architecture")]pub processor_architecture:crate::system::reflection::processorarchitecture::ProcessorArchitecture, #[offset(108)]#[rename(name="contentType")]pub content_type:crate::system::reflection::assemblycontenttype::AssemblyContentType,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblyname-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblyname")]
-impl AssemblyName { # [doc = "`Create(crate::system::reflection::assembly::Assembly, bool)` overload"] pub fn create (assembly : impl :: core :: convert :: Into < crate :: system :: reflection :: assembly :: Assembly > , fill_codebase : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: assemblyname :: AssemblyName { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: assembly :: Assembly , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assemblyname :: AssemblyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34039d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (assembly) , :: core :: convert :: Into :: into (fill_codebase) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblyname")]impl AssemblyName{#[doc="`Create(crate::system::reflection::assembly::Assembly, bool)` overload"]pub fn create(assembly:impl::core::convert::Into<crate::system::reflection::assembly::Assembly> ,fill_codebase:impl::core::convert::Into<bool>)->crate::system::reflection::assemblyname::AssemblyName{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34039d0usize)as*mut u8,crate::system::reflection::assemblyname::AssemblyName;
+(crate::system::reflection::assembly::Assembly)::core::convert::Into::into(assembly),(bool)::core::convert::Into::into(fill_codebase))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblyname")]
-pub trait IAssemblyNameMethods : IAssemblyName { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , assembly_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (assembly_name) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3402990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Flags()` overload"] fn get_flags (self ,) -> crate :: system :: reflection :: assemblynameflags :: AssemblyNameFlags { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assemblynameflags :: AssemblyNameFlags = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34029b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FullName()` overload"] fn get_full_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34029c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3403050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPublicKeyToken()` overload"] fn get_public_key_token (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3403090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPublicKeyValid()` overload"] fn get_is_public_key_valid (self ,) -> bool { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34032f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InternalGetPublicKeyToken()` overload"] fn internal_get_public_key_token (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3402d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ComputePublicKeyToken()` overload"] fn compute_public_key_token (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34033e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone()` overload"] fn clone (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34037d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialization(crate::system::object::Object)` overload"] fn on_deserialization (self , sender : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < AssemblyName as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyName , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34038f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sender) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblyname")]pub trait IAssemblyNameMethods:IAssemblyName{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401d70usize)as*mut u8,();
+(AssemblyName)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,assembly_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401db0usize)as*mut u8,();
+(AssemblyName)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(assembly_name))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3402990usize)as*mut u8, ::unity2::Il2CppString;
+(AssemblyName)__receiver)}
+}
+#[doc="`get_Flags()` overload"]fn get_flags(self,)->crate::system::reflection::assemblynameflags::AssemblyNameFlags{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34029b0usize)as*mut u8,crate::system::reflection::assemblynameflags::AssemblyNameFlags;
+(AssemblyName)__receiver)}
+}
+#[doc="`get_FullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34029c0usize)as*mut u8, ::unity2::Il2CppString;
+(AssemblyName)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3403050usize)as*mut u8, ::unity2::Il2CppString;
+(AssemblyName)__receiver)}
+}
+#[doc="`GetPublicKeyToken()` overload"]fn get_public_key_token(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3403090usize)as*mut u8, ::unity2::Array<u8> ;
+(AssemblyName)__receiver)}
+}
+#[doc="`get_IsPublicKeyValid()` overload"]fn get_is_public_key_valid(self,)->bool{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34032f0usize)as*mut u8,bool;
+(AssemblyName)__receiver)}
+}
+#[doc="`InternalGetPublicKeyToken()` overload"]fn internal_get_public_key_token(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3402d50usize)as*mut u8, ::unity2::Array<u8> ;
+(AssemblyName)__receiver)}
+}
+#[doc="`ComputePublicKeyToken()` overload"]fn compute_public_key_token(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34033e0usize)as*mut u8, ::unity2::Array<u8> ;
+(AssemblyName)__receiver)}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34037d0usize)as*mut u8,crate::system::object::Object;
+(AssemblyName)__receiver)}
+}
+#[doc="`OnDeserialization(crate::system::object::Object)` overload"]fn on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34038f0usize)as*mut u8,();
+(AssemblyName)__receiver,(crate::system::object::Object)::core::convert::Into::into(sender))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblyname")]
-impl < __T : IAssemblyName > IAssemblyNameMethods for __T { }
+#[cfg(feature="system-reflection-assemblyname")]impl<__T:IAssemblyName>IAssemblyNameMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblyname")]
-impl AssemblyName { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_full_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_public_key_token_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_is_public_key_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn internal_get_public_key_token_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn compute_public_key_token_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn on_deserialization_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="system-reflection-assemblyname")]impl AssemblyName{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_full_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_public_key_token_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_is_public_key_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn internal_get_public_key_token_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn compute_public_key_token_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_deserialization_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "system-reflection-assemblyname")]
-impl AssemblyName {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyName) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyNameMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (assembly_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyName) , :: core :: stringify ! (new_2) ,)) ; < Self as IAssemblyNameMethods > :: ctor_2 (this , assembly_name) ; this }
+#[cfg(feature="system-reflection-assemblyname")]impl AssemblyName{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyName), ::core::stringify!(new),));
+ <Self as IAssemblyNameMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(assembly_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyName), ::core::stringify!(new_2),));
+ <Self as IAssemblyNameMethods> ::ctor_2(this,assembly_name);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblyname")]

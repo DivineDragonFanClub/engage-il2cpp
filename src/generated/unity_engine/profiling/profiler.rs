@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/profiler/Profiler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Profiling" , name = "Profiler")] # [parent (crate :: system :: object :: Object)] pub struct Profiler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/profiling/profiler/Profiler.md"))]#[::unity2::class(namespace="UnityEngine.Profiling",name="Profiler")]#[parent(crate::system::object::Object)]pub struct Profiler{}
 
 }
 
 #[cfg(feature = "unity_engine-profiling-profiler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-profiling-profiler")]
-impl Profiler { # [doc = "`GetRuntimeMemorySizeLong(crate::unity_engine::object_2::Object_2)` overload"] pub fn get_runtime_memory_size_long (o : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> i64 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8aa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (o) , :: core :: option :: Option :: None) } } } # [doc = "`GetMonoUsedSizeLong()` overload"] pub fn get_mono_used_size_long () -> i64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8af0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-profiling-profiler")]impl Profiler{#[doc="`GetRuntimeMemorySizeLong(crate::unity_engine::object_2::Object_2)` overload"]pub fn get_runtime_memory_size_long(o:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8aa0usize)as*mut u8,i64;
+(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(o))}
+}
+#[doc="`GetMonoUsedSizeLong()` overload"]pub fn get_mono_used_size_long()->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8af0usize)as*mut u8,i64;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-profiling-profiler")]
-impl Profiler { pub fn get_runtime_memory_size_long_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Profiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_mono_used_size_long_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Profiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-profiling-profiler")]impl Profiler{pub fn get_runtime_memory_size_long_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_mono_used_size_long_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-profiling-profiler")]
 #[doc(hidden)]

@@ -4,36 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akauxsendvalue/AkAuxSendValue.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAuxSendValue")] # [parent (crate :: system :: object :: Object)] pub struct AkAuxSendValue {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akauxsendvalue/AkAuxSendValue.md"))]#[::unity2::class(namespace="",name="AkAuxSendValue")]#[parent(crate::system::object::Object)]pub struct AkAuxSendValue{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akauxsendvalue-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akauxsendvalue")]
-impl AkAuxSendValue { # [doc = "`getCPtr(crate::root::akauxsendvalue::AkAuxSendValue)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akauxsendvalue :: AkAuxSendValue >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akauxsendvalue :: AkAuxSendValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd13a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeOf()` overload"] pub fn get_size_of () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1ad0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akauxsendvalue")]impl AkAuxSendValue{#[doc="`getCPtr(crate::root::akauxsendvalue::AkAuxSendValue)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akauxsendvalue::AkAuxSendValue>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd13a0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akauxsendvalue::AkAuxSendValue)::core::convert::Into::into(obj))}
+}
+#[doc="`GetSizeOf()` overload"]pub fn get_size_of()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1ad0usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "root-akauxsendvalue")]
-pub trait IAkAuxSendValueMethods : IAkAuxSendValue { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd0a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd14a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_listenerID(u64)` overload"] fn set_listener_id (self , value : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_listenerID()` overload"] fn get_listener_id (self ,) -> u64 { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd16b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_auxBusID(u32)` overload"] fn set_aux_bus_id (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_auxBusID()` overload"] fn get_aux_bus_id (self ,) -> u32 { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd17a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fControlValue(f32)` overload"] fn set_f_control_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fControlValue()` overload"] fn get_f_control_value (self ,) -> f32 { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Set(crate::unity_engine::gameobject::GameObject, u32, f32)` overload"] fn set (self , listener : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , id : impl :: core :: convert :: Into < u32 > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , crate :: unity_engine :: gameobject :: GameObject , u32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (listener) , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`IsSame(crate::unity_engine::gameobject::GameObject, u32)` overload"] fn is_same (self , listener : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , id : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { let __receiver = < AkAuxSendValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAuxSendValue , crate :: unity_engine :: gameobject :: GameObject , u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd19f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (listener) , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akauxsendvalue")]pub trait IAkAuxSendValueMethods:IAkAuxSendValue{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd0a90usize)as*mut u8,();
+(AkAuxSendValue)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1400usize)as*mut u8,();
+(AkAuxSendValue)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1430usize)as*mut u8,();
+(AkAuxSendValue)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd14a0usize)as*mut u8,();
+(AkAuxSendValue)__receiver)}
+}
+#[doc="`set_listenerID(u64)` overload"]fn set_listener_id(self,value:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1630usize)as*mut u8,();
+(AkAuxSendValue)__receiver,(u64)::core::convert::Into::into(value))}
+}
+#[doc="`get_listenerID()` overload"]fn get_listener_id(self,)->u64{unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd16b0usize)as*mut u8,u64;
+(AkAuxSendValue)__receiver)}
+}
+#[doc="`set_auxBusID(u32)` overload"]fn set_aux_bus_id(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1720usize)as*mut u8,();
+(AkAuxSendValue)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_auxBusID()` overload"]fn get_aux_bus_id(self,)->u32{unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd17a0usize)as*mut u8,u32;
+(AkAuxSendValue)__receiver)}
+}
+#[doc="`set_fControlValue(f32)` overload"]fn set_f_control_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1810usize)as*mut u8,();
+(AkAuxSendValue)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fControlValue()` overload"]fn get_f_control_value(self,)->f32{unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1890usize)as*mut u8,f32;
+(AkAuxSendValue)__receiver)}
+}
+#[doc="`Set(crate::unity_engine::gameobject::GameObject, u32, f32)` overload"]fn set(self,listener:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,id:impl::core::convert::Into<u32> ,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1900usize)as*mut u8,();
+(AkAuxSendValue)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(listener),(u32)::core::convert::Into::into(id),(f32)::core::convert::Into::into(value))}
+}
+#[doc="`IsSame(crate::unity_engine::gameobject::GameObject, u32)` overload"]fn is_same(self,listener:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,id:impl::core::convert::Into<u32>)->bool{unsafe{let __receiver= <AkAuxSendValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd19f0usize)as*mut u8,bool;
+(AkAuxSendValue)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(listener),(u32)::core::convert::Into::into(id))}
+}
+}
 
-#[cfg(feature = "root-akauxsendvalue")]
-impl < __T : IAkAuxSendValue > IAkAuxSendValueMethods for __T { }
+#[cfg(feature="root-akauxsendvalue")]impl<__T:IAkAuxSendValue>IAkAuxSendValueMethods for __T{}
 
-#[cfg(feature = "root-akauxsendvalue")]
-impl AkAuxSendValue { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_listener_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_listener_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_aux_bus_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_aux_bus_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_f_control_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_f_control_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_same_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_size_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAuxSendValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="root-akauxsendvalue")]impl AkAuxSendValue{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_listener_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_listener_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_aux_bus_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_aux_bus_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_f_control_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_f_control_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_same_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_size_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "root-akauxsendvalue")]
-impl AkAuxSendValue {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAuxSendValue) , :: core :: stringify ! (new) ,)) ; < Self as IAkAuxSendValueMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
+#[cfg(feature="root-akauxsendvalue")]impl AkAuxSendValue{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAuxSendValue), ::core::stringify!(new),));
+ <Self as IAkAuxSendValueMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
 }
 
 #[cfg(feature = "root-akauxsendvalue")]

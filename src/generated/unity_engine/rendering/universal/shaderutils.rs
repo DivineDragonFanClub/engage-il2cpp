@@ -4,25 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shaderutils/ShaderUtils.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ShaderUtils")] # [parent (crate :: system :: object :: Object)] pub struct ShaderUtils {
-# [static_field] # [rename (name = "s_ShaderPaths")] pub s_shader_paths : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/shaderutils/ShaderUtils.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ShaderUtils")]#[parent(crate::system::object::Object)]pub struct ShaderUtils{#[static_field]#[rename(name="s_ShaderPaths")]pub s_shader_paths: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderutils-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-shaderutils")]
-impl ShaderUtils { # [doc = "`GetShaderPath(crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID)` overload"] pub fn get_shader_path (id : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: shaderpathid :: ShaderPathID >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: shaderpathid :: ShaderPathID , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed7c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumFromPath(::unity2::Il2CppString)` overload"] pub fn get_enum_from_path (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: rendering :: universal :: shaderpathid :: ShaderPathID { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: shaderpathid :: ShaderPathID = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed7f80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`IsLWShader(crate::unity_engine::shader::Shader)` overload"] pub fn is_lw_shader (shader : impl :: core :: convert :: Into < crate :: unity_engine :: shader :: Shader >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: shader :: Shader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed80b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (shader) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8150usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-shaderutils")]impl ShaderUtils{#[doc="`GetShaderPath(crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID)` overload"]pub fn get_shader_path(id:impl::core::convert::Into<crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed7c50usize)as*mut u8, ::unity2::Il2CppString;
+(crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID)::core::convert::Into::into(id))}
+}
+#[doc="`GetEnumFromPath(::unity2::Il2CppString)` overload"]pub fn get_enum_from_path(path:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed7f80usize)as*mut u8,crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`IsLWShader(crate::unity_engine::shader::Shader)` overload"]pub fn is_lw_shader(shader:impl::core::convert::Into<crate::unity_engine::shader::Shader>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed80b0usize)as*mut u8,bool;
+(crate::unity_engine::shader::Shader)::core::convert::Into::into(shader))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8150usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-shaderutils")]
-impl ShaderUtils { pub fn get_shader_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_enum_from_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_lw_shader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-rendering-universal-shaderutils")]impl ShaderUtils{pub fn get_shader_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_enum_from_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_lw_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderutils")]
 #[doc(hidden)]

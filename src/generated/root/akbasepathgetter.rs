@@ -4,38 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbasepathgetter/AkBasePathGetter.md"))] # [:: unity2 :: class (namespace = "" , name = "AkBasePathGetter")] # [parent (crate :: system :: object :: Object)] pub struct AkBasePathGetter {
-# [static_field] # [rename (name = "DefaultBasePath")] pub default_base_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "LogWarnings_Internal")] pub log_warnings_internal : bool ,
-# [static_field] # [rename (name = "DecodedBankFolder")] pub decoded_bank_folder : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "DefaultPlatformName")] pub default_platform_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akbasepathgetter/AkBasePathGetter.md"))]#[::unity2::class(namespace="",name="AkBasePathGetter")]#[parent(crate::system::object::Object)]pub struct AkBasePathGetter{#[static_field]#[rename(name="DefaultBasePath")]pub default_base_path: ::unity2::Il2CppString, #[static_field]#[rename(name="LogWarnings_Internal")]pub log_warnings_internal:bool, #[static_field]#[rename(name="DecodedBankFolder")]pub decoded_bank_folder: ::unity2::Il2CppString, #[static_field]#[rename(name="DefaultPlatformName")]pub default_platform_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "root-akbasepathgetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akbasepathgetter")]
-impl AkBasePathGetter { # [doc = "`GetPlatformName()` overload"] pub fn get_platform_name () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd2fe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_LogWarnings()` overload"] pub fn get_log_warnings () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_LogWarnings(bool)` overload"] pub fn set_log_warnings (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd30f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetPlatformBasePath()` overload"] pub fn get_platform_base_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EvaluateGamePaths()` overload"] pub fn evaluate_game_paths () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_SoundBankBasePath()` overload"] pub fn get_sound_bank_base_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd38a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_SoundBankBasePath(::unity2::Il2CppString)` overload"] pub fn set_sound_bank_base_path (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3910usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PersistentDataPath()` overload"] pub fn get_persistent_data_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3990usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_PersistentDataPath(::unity2::Il2CppString)` overload"] pub fn set_persistent_data_path (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DecodedBankFullPath()` overload"] pub fn get_decoded_bank_full_path () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3a80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_DecodedBankFullPath(::unity2::Il2CppString)` overload"] pub fn set_decoded_bank_full_path (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3af0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3b80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akbasepathgetter")]impl AkBasePathGetter{#[doc="`GetPlatformName()` overload"]pub fn get_platform_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd2fe0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_LogWarnings()` overload"]pub fn get_log_warnings()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3080usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_LogWarnings(bool)` overload"]pub fn set_log_warnings(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd30f0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`GetPlatformBasePath()` overload"]pub fn get_platform_base_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3170usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`EvaluateGamePaths()` overload"]pub fn evaluate_game_paths()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3380usize)as*mut u8,();
+)}
+}
+#[doc="`get_SoundBankBasePath()` overload"]pub fn get_sound_bank_base_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd38a0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`set_SoundBankBasePath(::unity2::Il2CppString)` overload"]pub fn set_sound_bank_base_path(value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3910usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PersistentDataPath()` overload"]pub fn get_persistent_data_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3990usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`set_PersistentDataPath(::unity2::Il2CppString)` overload"]pub fn set_persistent_data_path(value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3a00usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_DecodedBankFullPath()` overload"]pub fn get_decoded_bank_full_path()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3a80usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`set_DecodedBankFullPath(::unity2::Il2CppString)` overload"]pub fn set_decoded_bank_full_path(value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3af0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3b80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-akbasepathgetter")]
-pub trait IAkBasePathGetterMethods : IAkBasePathGetter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkBasePathGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBasePathGetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd3b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akbasepathgetter")]pub trait IAkBasePathGetterMethods:IAkBasePathGetter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkBasePathGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd3b70usize)as*mut u8,();
+(AkBasePathGetter)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akbasepathgetter")]
-impl < __T : IAkBasePathGetter > IAkBasePathGetterMethods for __T { }
+#[cfg(feature="root-akbasepathgetter")]impl<__T:IAkBasePathGetter>IAkBasePathGetterMethods for __T{}
 
-#[cfg(feature = "root-akbasepathgetter")]
-impl AkBasePathGetter { pub fn get_platform_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_log_warnings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_log_warnings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_platform_base_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn evaluate_game_paths_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_sound_bank_base_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_sound_bank_base_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_persistent_data_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_persistent_data_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_decoded_bank_full_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_decoded_bank_full_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBasePathGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="root-akbasepathgetter")]impl AkBasePathGetter{pub fn get_platform_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_log_warnings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_log_warnings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_platform_base_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn evaluate_game_paths_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_sound_bank_base_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_sound_bank_base_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_persistent_data_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_persistent_data_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_decoded_bank_full_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_decoded_bank_full_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "root-akbasepathgetter")]
-impl AkBasePathGetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkBasePathGetter) , :: core :: stringify ! (new) ,)) ; < Self as IAkBasePathGetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akbasepathgetter")]impl AkBasePathGetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkBasePathGetter), ::core::stringify!(new),));
+ <Self as IAkBasePathGetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akbasepathgetter")]

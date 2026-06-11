@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nextexititem/NextExitItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "NextExitItem")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct NextExitItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nextexititem/NextExitItem.md"))]#[::unity2::class(namespace="App",name="NextExitItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct NextExitItem{}
 
 }
 
 #[cfg(feature = "app-nextexititem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-nextexititem")]
-pub trait INextExitItemMethods : INextExitItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < NextExitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NextExitItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f17a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < NextExitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NextExitItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f17ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NextExitItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NextExitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f17af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-nextexititem")]pub trait INextExitItemMethods:INextExitItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NextExitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f17a90usize)as*mut u8, ::unity2::Il2CppString;
+(NextExitItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <NextExitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f17ae0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(NextExitItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NextExitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f17af0usize)as*mut u8,();
+(NextExitItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-nextexititem")]
-impl < __T : INextExitItem > INextExitItemMethods for __T { }
+#[cfg(feature="app-nextexititem")]impl<__T:INextExitItem>INextExitItemMethods for __T{}
 
-#[cfg(feature = "app-nextexititem")]
-impl NextExitItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NextExitItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NextExitItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NextExitItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-nextexititem")]impl NextExitItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-nextexititem")]
-impl NextExitItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NextExitItem) , :: core :: stringify ! (new) ,)) ; < Self as INextExitItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-nextexititem")]impl NextExitItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NextExitItem), ::core::stringify!(new),));
+ <Self as INextExitItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-nextexititem")]

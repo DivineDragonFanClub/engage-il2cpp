@@ -4,42 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: app :: mainmenusequence :: { IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent , MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::app::mainmenusequence::{IMainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent,MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/difficultyselectmenuitemcontent/DifficultySelectMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "DifficultySelectMenuItemContent")] # [parent (crate :: app :: mainmenusequence :: MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)] pub struct DifficultySelectMenuItemContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/difficultyselectmenuitemcontent/DifficultySelectMenuItemContent.md"))]#[::unity2::class(namespace="App",name="DifficultySelectMenuItemContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_DifficultySelectMenuSequence_Menu_MenuItemContent)]pub struct DifficultySelectMenuItemContent{}
 
 }
 
 #[cfg(feature = "app-difficultyselectmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-difficultyselectmenuitemcontent")]
-pub trait IDifficultySelectMenuItemContentMethods : IDifficultySelectMenuItemContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DifficultySelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DifficultySelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-difficultyselectmenuitemcontent")]pub trait IDifficultySelectMenuItemContentMethods:IDifficultySelectMenuItemContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DifficultySelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cee100usize)as*mut u8,();
+(DifficultySelectMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-difficultyselectmenuitemcontent")]
-impl < __T : IDifficultySelectMenuItemContent > IDifficultySelectMenuItemContentMethods for __T { }
+#[cfg(feature="app-difficultyselectmenuitemcontent")]impl<__T:IDifficultySelectMenuItemContent>IDifficultySelectMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-difficultyselectmenuitemcontent")]
-impl DifficultySelectMenuItemContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DifficultySelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-difficultyselectmenuitemcontent")]impl DifficultySelectMenuItemContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-difficultyselectmenuitemcontent")]
-impl DifficultySelectMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DifficultySelectMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IDifficultySelectMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-difficultyselectmenuitemcontent")]impl DifficultySelectMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DifficultySelectMenuItemContent), ::core::stringify!(new),));
+ <Self as IDifficultySelectMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-difficultyselectmenuitemcontent")]

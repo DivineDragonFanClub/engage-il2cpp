@@ -4,43 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerfreecamera/CameraControllerFreeCamera.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerFreeCamera")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerFreeCamera {
-# [offset (168)] # [rename (name = "CameraPosFromChara")] pub camera_pos_from_chara : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (180)] # [rename (name = "LookDirection")] pub look_direction : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerfreecamera/CameraControllerFreeCamera.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerFreeCamera")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerFreeCamera{#[offset(168)]#[rename(name="CameraPosFromChara")]pub camera_pos_from_chara:crate::unity_engine::vector3::Vector3, #[offset(180)]#[rename(name="LookDirection")]pub look_direction:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "combat-cameracontrollerfreecamera-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollerfreecamera")]
-pub trait ICameraControllerFreeCameraMethods : ICameraControllerFreeCamera { # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerFreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerFreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b1490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerFreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerFreeCamera , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b1570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerFreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerFreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b15c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollerfreecamera")]pub trait ICameraControllerFreeCameraMethods:ICameraControllerFreeCamera{#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerFreeCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b1490usize)as*mut u8,();
+(CameraControllerFreeCamera)__receiver)}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerFreeCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b1570usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerFreeCamera)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerFreeCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b15c0usize)as*mut u8,();
+(CameraControllerFreeCamera)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameracontrollerfreecamera")]
-impl < __T : ICameraControllerFreeCamera > ICameraControllerFreeCameraMethods for __T { }
+#[cfg(feature="combat-cameracontrollerfreecamera")]impl<__T:ICameraControllerFreeCamera>ICameraControllerFreeCameraMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollerfreecamera")]
-impl CameraControllerFreeCamera { pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerFreeCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerFreeCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerFreeCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-cameracontrollerfreecamera")]impl CameraControllerFreeCamera{pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-cameracontrollerfreecamera")]
-impl CameraControllerFreeCamera {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerFreeCamera) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerFreeCameraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollerfreecamera")]impl CameraControllerFreeCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerFreeCamera), ::core::stringify!(new),));
+ <Self as ICameraControllerFreeCameraMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameracontrollerfreecamera")]

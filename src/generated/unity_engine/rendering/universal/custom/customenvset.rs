@@ -4,40 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customenvset/CustomEnvSet.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "CustomEnvSet")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CustomEnvSet {
-# [offset (24)] # [rename (name = "reflectionProbes")] pub reflection_probes : :: unity2 :: Array < crate :: unity_engine :: reflectionprobe :: ReflectionProbe > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/customenvset/CustomEnvSet.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="CustomEnvSet")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CustomEnvSet{#[offset(24)]#[rename(name="reflectionProbes")]pub reflection_probes: ::unity2::Array<crate::unity_engine::reflectionprobe::ReflectionProbe> ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customenvset-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customenvset")]
-pub trait ICustomEnvSetMethods : ICustomEnvSet { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < CustomEnvSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEnvSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < CustomEnvSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEnvSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CustomEnvSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEnvSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customenvset")]pub trait ICustomEnvSetMethods:ICustomEnvSet{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <CustomEnvSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a46930usize)as*mut u8,();
+(CustomEnvSet)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <CustomEnvSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a46b20usize)as*mut u8,();
+(CustomEnvSet)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomEnvSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a46c90usize)as*mut u8,();
+(CustomEnvSet)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customenvset")]
-impl < __T : ICustomEnvSet > ICustomEnvSetMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-customenvset")]impl<__T:ICustomEnvSet>ICustomEnvSetMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customenvset")]
-impl CustomEnvSet { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEnvSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEnvSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEnvSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customenvset")]impl CustomEnvSet{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customenvset")]
-impl CustomEnvSet {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomEnvSet) , :: core :: stringify ! (new) ,)) ; < Self as ICustomEnvSetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-customenvset")]impl CustomEnvSet{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomEnvSet), ::core::stringify!(new),));
+ <Self as ICustomEnvSetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customenvset")]

@@ -4,80 +4,75 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmaterialarray/HubMaterialArray_MaterialInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HubMaterialArray_MaterialInfo {
-    pub name: :: unity2 :: Il2CppString,
-    pub material: crate :: unity_engine :: material :: Material,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmaterialarray/HubMaterialArray_MaterialInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HubMaterialArray_MaterialInfo{pub name: ::unity2::Il2CppString,pub material:crate::unity_engine::material::Material,}
+impl::unity2::ClassIdentity for HubMaterialArray_MaterialInfo{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubMaterialArray.MaterialInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubMaterialArray_MaterialInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for HubMaterialArray_MaterialInfo {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubMaterialArray.MaterialInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for HubMaterialArray_MaterialInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialarray/HubMaterialArray.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMaterialArray")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubMaterialArray {
-# [offset (24)] # [rename (name = "m_objectTag")] pub m_object_tag : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_activeMaterial")] pub m_active_material : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_materials")] pub m_materials : :: unity2 :: Array < crate :: app :: hubmaterialarray :: HubMaterialArray_MaterialInfo > ,
-# [offset (48)] # [rename (name = "m_renderer")] pub m_renderer : crate :: unity_engine :: renderer :: Renderer ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmaterialarray/HubMaterialArray.md"))]#[::unity2::class(namespace="App",name="HubMaterialArray")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubMaterialArray{#[offset(24)]#[rename(name="m_objectTag")]pub m_object_tag: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_activeMaterial")]pub m_active_material: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_materials")]pub m_materials: ::unity2::Array<crate::app::hubmaterialarray::HubMaterialArray_MaterialInfo> , #[offset(48)]#[rename(name="m_renderer")]pub m_renderer:crate::unity_engine::renderer::Renderer,}
 
 }
 
 #[cfg(feature = "app-hubmaterialarray-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmaterialarray")]
-pub trait IHubMaterialArrayMethods : IHubMaterialArray { # [doc = "`ChangeMaterial(::unity2::Il2CppString)` overload"] fn change_material (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMaterialArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialArray , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b5ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubMaterialArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b6110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReplaceMaterial(crate::unity_engine::material::Material)` overload"] fn replace_material (self , material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { let __receiver = < HubMaterialArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialArray , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b5fa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (material) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubMaterialArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b6180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMaterialArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMaterialArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b6280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmaterialarray")]pub trait IHubMaterialArrayMethods:IHubMaterialArray{#[doc="`ChangeMaterial(::unity2::Il2CppString)` overload"]fn change_material(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMaterialArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b5ed0usize)as*mut u8,();
+(HubMaterialArray)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubMaterialArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b6110usize)as*mut u8,();
+(HubMaterialArray)__receiver)}
+}
+#[doc="`ReplaceMaterial(crate::unity_engine::material::Material)` overload"]fn replace_material(self,material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <HubMaterialArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b5fa0usize)as*mut u8,();
+(HubMaterialArray)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(material))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <HubMaterialArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b6180usize)as*mut u8,();
+(HubMaterialArray)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMaterialArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b6280usize)as*mut u8,();
+(HubMaterialArray)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmaterialarray")]
-impl < __T : IHubMaterialArray > IHubMaterialArrayMethods for __T { }
+#[cfg(feature="app-hubmaterialarray")]impl<__T:IHubMaterialArray>IHubMaterialArrayMethods for __T{}
 
-#[cfg(feature = "app-hubmaterialarray")]
-impl HubMaterialArray { pub fn change_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn replace_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMaterialArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-hubmaterialarray")]impl HubMaterialArray{pub fn change_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn replace_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-hubmaterialarray")]
-impl HubMaterialArray {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMaterialArray) , :: core :: stringify ! (new) ,)) ; < Self as IHubMaterialArrayMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmaterialarray")]impl HubMaterialArray{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMaterialArray), ::core::stringify!(new),));
+ <Self as IHubMaterialArrayMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmaterialarray")]

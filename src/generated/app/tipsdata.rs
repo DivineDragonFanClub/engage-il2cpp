@@ -4,133 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tipsdata/TipsData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TipsData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: tipsdata :: TipsData >)] pub struct TipsData {
-# [offset (92)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: tipsdata :: TipsData_Kinds ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData.md"))]#[::unity2::class(namespace="App",name="TipsData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::tipsdata::TipsData>)]pub struct TipsData{#[offset(92)]#[rename(name="m_Kind")]pub m_kind:crate::app::tipsdata::TipsData_Kinds,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData_Allows.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TipsData_Allows{pub value:i32,}
+impl::unity2::ClassIdentity for TipsData_Allows{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TipsData.Allows";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TipsData_Allows{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TipsData_Allows{pub fn map()->Self{Self{value:1}
+}
+pub fn hub()->Self{Self{value:2}
+}
+pub fn gmap()->Self{Self{value:4}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tipsdata/TipsData_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TipsData_Kinds  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TipsData_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for TipsData_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TipsData.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for TipsData_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TipsData.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for TipsData_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for TipsData_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl TipsData_Kinds{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  TipsData_Kinds  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn item() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn skill() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn item()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tipsdata/TipsData_Allows.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TipsData_Allows  {
-    pub value: i32,
+pub fn skill()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for TipsData_Allows  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TipsData.Allows";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TipsData_Allows  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TipsData_Allows  {
-    pub fn map() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn gmap() -> Self {
-        Self { value: 4 }
-
-    }
-
 }
 
 }
@@ -138,21 +62,133 @@ impl  TipsData_Allows  {
 #[cfg(feature = "app-tipsdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-tipsdata")]
-impl TipsData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ebf80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-tipsdata")]impl TipsData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-tipsdata")]
-pub trait ITipsDataMethods : ITipsData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Title()` overload"] fn get_title (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Title(::unity2::Il2CppString)` overload"] fn set_title (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Tips()` overload"] fn get_tips (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Tips(::unity2::Il2CppString)` overload"] fn set_tips (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OwnID()` overload"] fn get_own_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OwnID(::unity2::Il2CppString)` overload"] fn set_own_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IconInfoID()` overload"] fn get_icon_info_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IconInfoID(::unity2::Il2CppString)` overload"] fn set_icon_info_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Chapter()` overload"] fn get_chapter (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Chapter(::unity2::Il2CppString)` overload"] fn set_chapter (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Variable()` overload"] fn get_variable (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Variable(::unity2::Il2CppString)` overload"] fn set_variable (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Allow()` overload"] fn get_allow (self ,) -> crate :: app :: tipsdata :: TipsData_Allows { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> crate :: app :: tipsdata :: TipsData_Allows = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Allow(crate::app::tipsdata::TipsData_Allows)` overload"] fn set_allow (self , value : impl :: core :: convert :: Into < crate :: app :: tipsdata :: TipsData_Allows >) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , crate :: app :: tipsdata :: TipsData_Allows , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetKind()` overload"] fn get_kind (self ,) -> crate :: app :: tipsdata :: TipsData_Kinds { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> crate :: app :: tipsdata :: TipsData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTipsID()` overload"] fn get_tips_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRelease()` overload"] fn on_release (self ,) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCondition()` overload"] fn is_condition (self ,) -> bool { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ec820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TipsData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TipsData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21eca70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-tipsdata")]pub trait ITipsDataMethods:ITipsData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec030usize)as*mut u8, ::unity2::Il2CppString;
+(TipsData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec040usize)as*mut u8,();
+(TipsData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Title()` overload"]fn get_title(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec050usize)as*mut u8, ::unity2::Il2CppString;
+(TipsData)__receiver)}
+}
+#[doc="`set_Title(::unity2::Il2CppString)` overload"]fn set_title(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec060usize)as*mut u8,();
+(TipsData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Tips()` overload"]fn get_tips(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec070usize)as*mut u8, ::unity2::Il2CppString;
+(TipsData)__receiver)}
+}
+#[doc="`set_Tips(::unity2::Il2CppString)` overload"]fn set_tips(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec080usize)as*mut u8,();
+(TipsData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_OwnID()` overload"]fn get_own_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec090usize)as*mut u8, ::unity2::Il2CppString;
+(TipsData)__receiver)}
+}
+#[doc="`set_OwnID(::unity2::Il2CppString)` overload"]fn set_own_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec0a0usize)as*mut u8,();
+(TipsData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_IconInfoID()` overload"]fn get_icon_info_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec0b0usize)as*mut u8, ::unity2::Il2CppString;
+(TipsData)__receiver)}
+}
+#[doc="`set_IconInfoID(::unity2::Il2CppString)` overload"]fn set_icon_info_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec0c0usize)as*mut u8,();
+(TipsData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Chapter()` overload"]fn get_chapter(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec0d0usize)as*mut u8, ::unity2::Il2CppString;
+(TipsData)__receiver)}
+}
+#[doc="`set_Chapter(::unity2::Il2CppString)` overload"]fn set_chapter(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec0e0usize)as*mut u8,();
+(TipsData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Variable()` overload"]fn get_variable(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec0f0usize)as*mut u8, ::unity2::Il2CppString;
+(TipsData)__receiver)}
+}
+#[doc="`set_Variable(::unity2::Il2CppString)` overload"]fn set_variable(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec100usize)as*mut u8,();
+(TipsData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Allow()` overload"]fn get_allow(self,)->crate::app::tipsdata::TipsData_Allows{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec110usize)as*mut u8,crate::app::tipsdata::TipsData_Allows;
+(TipsData)__receiver)}
+}
+#[doc="`set_Allow(crate::app::tipsdata::TipsData_Allows)` overload"]fn set_allow(self,value:impl::core::convert::Into<crate::app::tipsdata::TipsData_Allows>)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec120usize)as*mut u8,();
+(TipsData)__receiver,(crate::app::tipsdata::TipsData_Allows)::core::convert::Into::into(value))}
+}
+#[doc="`GetKind()` overload"]fn get_kind(self,)->crate::app::tipsdata::TipsData_Kinds{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec130usize)as*mut u8,crate::app::tipsdata::TipsData_Kinds;
+(TipsData)__receiver)}
+}
+#[doc="`GetTipsID()` overload"]fn get_tips_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec640usize)as*mut u8, ::unity2::Il2CppString;
+(TipsData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec760usize)as*mut u8,();
+(TipsData)__receiver)}
+}
+#[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec810usize)as*mut u8,();
+(TipsData)__receiver)}
+}
+#[doc="`IsCondition()` overload"]fn is_condition(self,)->bool{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec820usize)as*mut u8,bool;
+(TipsData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21eca70usize)as*mut u8,();
+(TipsData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-tipsdata")]
-impl < __T : ITipsData > ITipsDataMethods for __T { }
+#[cfg(feature="app-tipsdata")]impl<__T:ITipsData>ITipsDataMethods for __T{}
 
-#[cfg(feature = "app-tipsdata")]
-impl TipsData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_tips_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_tips_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_own_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_own_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_icon_info_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_icon_info_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_variable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_variable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_allow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_allow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_tips_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn on_release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn is_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TipsData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } }
+#[cfg(feature="app-tipsdata")]impl TipsData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_tips_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_tips_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_own_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_own_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_icon_info_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_icon_info_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_variable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_variable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_allow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_allow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_tips_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn on_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn is_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
 
-#[cfg(feature = "app-tipsdata")]
-impl TipsData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TipsData) , :: core :: stringify ! (new) ,)) ; < Self as ITipsDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-tipsdata")]impl TipsData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TipsData), ::core::stringify!(new),));
+ <Self as ITipsDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-tipsdata")]
@@ -161,8 +197,8 @@ pub mod prelude {
     pub use super::TipsData;
     pub use super::ITipsData;
     pub use super::ITipsDataMethods;
-    pub use super::TipsData_Kinds;
     pub use super::TipsData_Allows;
+    pub use super::TipsData_Kinds;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

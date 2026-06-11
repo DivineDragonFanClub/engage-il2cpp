@@ -4,49 +4,168 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pokeinspector/PokeInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "PokeInspector")] # [parent (crate :: app :: mapinspector :: MapInspector)] pub struct PokeInspector {
-# [offset (48)] # [rename (name = "m_X")] pub m_x : i32 ,
-# [offset (52)] # [rename (name = "m_Z")] pub m_z : i32 ,
-# [offset (56)] # [rename (name = "m_W")] pub m_w : i32 ,
-# [offset (60)] # [rename (name = "m_H")] pub m_h : i32 ,
-# [offset (64)] # [rename (name = "m_MaxHp")] pub m_max_hp : i32 ,
-# [offset (68)] # [rename (name = "m_Person")] pub m_person : i32 ,
-# [offset (72)] # [rename (name = "m_HpLabel")] pub m_hp_label : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pokeinspector/PokeInspector.md"))]#[::unity2::class(namespace="App",name="PokeInspector")]#[parent(crate::app::mapinspector::MapInspector)]pub struct PokeInspector{#[offset(48)]#[rename(name="m_X")]pub m_x:i32, #[offset(52)]#[rename(name="m_Z")]pub m_z:i32, #[offset(56)]#[rename(name="m_W")]pub m_w:i32, #[offset(60)]#[rename(name="m_H")]pub m_h:i32, #[offset(64)]#[rename(name="m_MaxHp")]pub m_max_hp:i32, #[offset(68)]#[rename(name="m_Person")]pub m_person:i32, #[offset(72)]#[rename(name="m_HpLabel")]pub m_hp_label: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-pokeinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-pokeinspector")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PokeInspector_unity2_raw { use super :: * ; pub unsafe fn get_label (this : PokeInspector , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetLabel") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetLabel" , < PokeInspector as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_range (this : PokeInspector , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetRange") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetRange" , < PokeInspector as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="app-pokeinspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PokeInspector_unity2_raw{use super:: * ;
+pub unsafe fn get_label(this:PokeInspector,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetLabel").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetLabel", <PokeInspector as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(PokeInspector, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_range(this:PokeInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetRange").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetRange", <PokeInspector as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(PokeInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "app-pokeinspector")]
-pub trait IPokeInspectorMethods : IPokeInspector { # [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind)` overload"] fn ctor (self , kind : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector_Kind >) -> () { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , crate :: app :: mapinspector :: MapInspector_Kind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, i32, i32, i32, i32)` overload"] fn ctor_2 (self , kind : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector_Kind > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , w : impl :: core :: convert :: Into < i32 > , h : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , crate :: app :: mapinspector :: MapInspector_Kind , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28145a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor_3 (self , kind : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector_Kind > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , crate :: app :: mapinspector :: MapInspector_Kind , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`get_X()` overload"] fn get_x (self ,) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28147a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28147b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_X1()` overload"] fn get_x1 (self ,) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28147c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Z1()` overload"] fn get_z1 (self ,) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28147d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_X2()` overload"] fn get_x2 (self ,) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28147e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Z2()` overload"] fn get_z2 (self ,) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MaxHp()` overload"] fn get_max_hp (self ,) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Hp()` overload"] fn get_hp (self ,) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Hp(i32)` overload"] fn set_hp (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetLabel()` overload"] fn get_label (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PokeInspector_unity2_raw :: get_label (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetRange()` overload"] fn get_range (self ,) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PokeInspector_unity2_raw :: get_range (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetNearX(i32)` overload"] fn get_near_x (self , x : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814af0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`GetNearZ(i32)` overload"] fn get_near_z (self , z : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetDistance(i32, i32)` overload"] fn get_distance (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsSightOut(i32, i32)` overload"] fn is_sight_out (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsEanble(i32, i32)` overload"] fn is_eanble (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsEanble(i32, i32, i32)` overload"] fn is_eanble_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , person : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`SetPos(i32, i32, i32, i32)` overload"] fn set_pos (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , w : impl :: core :: convert :: Into < i32 > , h : impl :: core :: convert :: Into < i32 >) -> crate :: app :: pokeinspector :: PokeInspector { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: pokeinspector :: PokeInspector = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: option :: Option :: None) } } } # [doc = "`SetMaxHp(i32)` overload"] fn set_max_hp (self , max_hp : impl :: core :: convert :: Into < i32 >) -> crate :: app :: pokeinspector :: PokeInspector { unsafe { let __receiver = < PokeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PokeInspector , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: pokeinspector :: PokeInspector = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2815280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (max_hp) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-pokeinspector")]pub trait IPokeInspectorMethods:IPokeInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind>)->(){unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814590usize)as*mut u8,();
+(PokeInspector)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, i32, i32, i32, i32)` overload"]fn ctor_2(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,w:impl::core::convert::Into<i32> ,h:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28145a0usize)as*mut u8,();
+(PokeInspector)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(w),(i32)::core::convert::Into::into(h))}
+}
+#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor_3(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814600usize)as*mut u8,();
+(PokeInspector)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28147a0usize)as*mut u8,i32;
+(PokeInspector)__receiver)}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28147b0usize)as*mut u8,i32;
+(PokeInspector)__receiver)}
+}
+#[doc="`get_X1()` overload"]fn get_x1(self,)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28147c0usize)as*mut u8,i32;
+(PokeInspector)__receiver)}
+}
+#[doc="`get_Z1()` overload"]fn get_z1(self,)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28147d0usize)as*mut u8,i32;
+(PokeInspector)__receiver)}
+}
+#[doc="`get_X2()` overload"]fn get_x2(self,)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28147e0usize)as*mut u8,i32;
+(PokeInspector)__receiver)}
+}
+#[doc="`get_Z2()` overload"]fn get_z2(self,)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814800usize)as*mut u8,i32;
+(PokeInspector)__receiver)}
+}
+#[doc="`get_MaxHp()` overload"]fn get_max_hp(self,)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814820usize)as*mut u8,i32;
+(PokeInspector)__receiver)}
+}
+#[doc="`get_Hp()` overload"]fn get_hp(self,)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814830usize)as*mut u8,i32;
+(PokeInspector)__receiver)}
+}
+#[doc="`set_Hp(i32)` overload"]fn set_hp(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814920usize)as*mut u8,();
+(PokeInspector)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PokeInspector_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PokeInspector_unity2_raw::get_range(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetNearX(i32)` overload"]fn get_near_x(self,x:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814af0usize)as*mut u8,i32;
+(PokeInspector)__receiver,(i32)::core::convert::Into::into(x))}
+}
+#[doc="`GetNearZ(i32)` overload"]fn get_near_z(self,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814b80usize)as*mut u8,i32;
+(PokeInspector)__receiver,(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetDistance(i32, i32)` overload"]fn get_distance(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814c10usize)as*mut u8,i32;
+(PokeInspector)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsSightOut(i32, i32)` overload"]fn is_sight_out(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814d20usize)as*mut u8,bool;
+(PokeInspector)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsEanble(i32, i32)` overload"]fn is_eanble(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814f50usize)as*mut u8,bool;
+(PokeInspector)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsEanble(i32, i32, i32)` overload"]fn is_eanble_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,person:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2814f60usize)as*mut u8,bool;
+(PokeInspector)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(person))}
+}
+#[doc="`SetPos(i32, i32, i32, i32)` overload"]fn set_pos(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,w:impl::core::convert::Into<i32> ,h:impl::core::convert::Into<i32>)->crate::app::pokeinspector::PokeInspector{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815010usize)as*mut u8,crate::app::pokeinspector::PokeInspector;
+(PokeInspector)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(w),(i32)::core::convert::Into::into(h))}
+}
+#[doc="`SetMaxHp(i32)` overload"]fn set_max_hp(self,max_hp:impl::core::convert::Into<i32>)->crate::app::pokeinspector::PokeInspector{unsafe{let __receiver= <PokeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2815280usize)as*mut u8,crate::app::pokeinspector::PokeInspector;
+(PokeInspector)__receiver,(i32)::core::convert::Into::into(max_hp))}
+}
+}
 
-#[cfg(feature = "app-pokeinspector")]
-impl < __T : IPokeInspector > IPokeInspectorMethods for __T { }
+#[cfg(feature="app-pokeinspector")]impl<__T:IPokeInspector>IPokeInspectorMethods for __T{}
 
-#[cfg(feature = "app-pokeinspector")]
-impl PokeInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_x1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_z1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_x2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_z2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_max_hp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_hp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_hp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_near_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_near_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_sight_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_eanble_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_eanble_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_max_hp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PokeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-pokeinspector")]impl PokeInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_z1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_x2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_z2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_max_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_near_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_near_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_sight_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_eanble_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_eanble_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_max_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-pokeinspector")]
-impl PokeInspector {
-# [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind)` — overload selector"] pub fn new (kind : crate :: app :: mapinspector :: MapInspector_Kind) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PokeInspector) , :: core :: stringify ! (new) ,)) ; < Self as IPokeInspectorMethods > :: ctor (this , kind) ; this }
-
-# [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, i32, i32, i32, i32)` — overload selector"] pub fn new_2 (kind : crate :: app :: mapinspector :: MapInspector_Kind , x : i32 , z : i32 , w : i32 , h : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PokeInspector) , :: core :: stringify ! (new_2) ,)) ; < Self as IPokeInspectorMethods > :: ctor_2 (this , kind , x , z , w , h) ; this }
-
-# [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new_3 (kind : crate :: app :: mapinspector :: MapInspector_Kind , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PokeInspector) , :: core :: stringify ! (new_3) ,)) ; < Self as IPokeInspectorMethods > :: ctor_3 (this , kind , args) ; this }
+#[cfg(feature="app-pokeinspector")]impl PokeInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind)` — overload selector"]pub fn new(kind:crate::app::mapinspector::MapInspector_Kind)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PokeInspector), ::core::stringify!(new),));
+ <Self as IPokeInspectorMethods> ::ctor(this,kind);
+this}
+#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, i32, i32, i32, i32)` — overload selector"]pub fn new_2(kind:crate::app::mapinspector::MapInspector_Kind,x:i32,z:i32,w:i32,h:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PokeInspector), ::core::stringify!(new_2),));
+ <Self as IPokeInspectorMethods> ::ctor_2(this,kind,x,z,w,h);
+this}
+#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new_3(kind:crate::app::mapinspector::MapInspector_Kind,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PokeInspector), ::core::stringify!(new_3),));
+ <Self as IPokeInspectorMethods> ::ctor_3(this,kind,args);
+this}
 }
 
 #[cfg(feature = "app-pokeinspector")]

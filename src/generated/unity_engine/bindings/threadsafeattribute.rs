@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: bindings :: nativemethodattribute :: { INativeMethodAttribute , NativeMethodAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::bindings::nativemethodattribute::{INativeMethodAttribute,NativeMethodAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/threadsafeattribute/ThreadSafeAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "ThreadSafeAttribute")] # [parent (crate :: unity_engine :: bindings :: nativemethodattribute :: NativeMethodAttribute)] pub struct ThreadSafeAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/threadsafeattribute/ThreadSafeAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="ThreadSafeAttribute")]#[parent(crate::unity_engine::bindings::nativemethodattribute::NativeMethodAttribute)]pub struct ThreadSafeAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-threadsafeattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-threadsafeattribute")]
-pub trait IThreadSafeAttributeMethods : IThreadSafeAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ThreadSafeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ThreadSafeAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-threadsafeattribute")]pub trait IThreadSafeAttributeMethods:IThreadSafeAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ThreadSafeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38650usize)as*mut u8,();
+(ThreadSafeAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-threadsafeattribute")]
-impl < __T : IThreadSafeAttribute > IThreadSafeAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-threadsafeattribute")]impl<__T:IThreadSafeAttribute>IThreadSafeAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-threadsafeattribute")]
-impl ThreadSafeAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ThreadSafeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-bindings-threadsafeattribute")]impl ThreadSafeAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-bindings-threadsafeattribute")]
-impl ThreadSafeAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ThreadSafeAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IThreadSafeAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-bindings-threadsafeattribute")]impl ThreadSafeAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ThreadSafeAttribute), ::core::stringify!(new),));
+ <Self as IThreadSafeAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-threadsafeattribute")]

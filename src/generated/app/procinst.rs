@@ -4,116 +4,420 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procinst/ProcInst_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ProcInst_State  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procinst/ProcInst_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProcInst_State{pub value:i32,}
+impl::unity2::ClassIdentity for ProcInst_State{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ProcInst.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ProcInst_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ProcInst_State{pub fn dead()->Self{Self{value:1}
+}
+pub fn parent_bind()->Self{Self{value:2}
+}
+pub fn executed()->Self{Self{value:4}
+}
+pub fn r#continue()->Self{Self{value:8}
+}
+pub fn r#yield()->Self{Self{value:16}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for ProcInst_State  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProcInst.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ProcInst_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ProcInst_State  {
-    pub fn dead() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn parent_bind() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn executed() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn r#continue() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn r#yield() -> Self {
-        Self { value: 16 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procinst/ProcInst.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcInst")] # [parent (crate :: system :: object :: Object)] pub struct ProcInst {
-# [offset (16)] # [rename (name = "m_Descs")] pub m_descs : :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > ,
-# [offset (24)] # [rename (name = "m_DescIndex")] pub m_desc_index : i32 ,
-# [offset (32)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
-# [offset (48)] # [rename (name = "m_Super")] pub m_super : crate :: app :: procinst :: ProcInst ,
-# [offset (56)] # [rename (name = "m_Child")] pub m_child : crate :: app :: procinst :: ProcInst ,
-# [offset (64)] # [rename (name = "m_Prev")] pub m_prev : crate :: app :: procinst :: ProcInst ,
-# [offset (72)] # [rename (name = "m_Next")] pub m_next : crate :: app :: procinst :: ProcInst ,
-# [offset (80)] # [rename (name = "m_Persistent")] pub m_persistent : crate :: app :: procvoidmethod :: ProcVoidMethod ,
-# [offset (88)] # [rename (name = "m_State")] pub m_state : crate :: app :: procinst :: ProcInst_State ,
-# [offset (92)] # [rename (name = "m_Suspend")] pub m_suspend : i32 ,
-# [offset (96)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
-# [offset (100)] # [rename (name = "m_TickTime")] pub m_tick_time : f32 ,
-# [offset (104)] # [rename (name = "m_Stack")] pub m_stack : crate :: app :: rawvaluestack :: RawValueStack ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procinst/ProcInst.md"))]#[::unity2::class(namespace="App",name="ProcInst")]#[parent(crate::system::object::Object)]pub struct ProcInst{#[offset(16)]#[rename(name="m_Descs")]pub m_descs: ::unity2::Array<crate::app::procdesc::ProcDesc> , #[offset(24)]#[rename(name="m_DescIndex")]pub m_desc_index:i32, #[offset(32)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_HashCode")]pub m_hash_code:i32, #[offset(48)]#[rename(name="m_Super")]pub m_super:crate::app::procinst::ProcInst, #[offset(56)]#[rename(name="m_Child")]pub m_child:crate::app::procinst::ProcInst, #[offset(64)]#[rename(name="m_Prev")]pub m_prev:crate::app::procinst::ProcInst, #[offset(72)]#[rename(name="m_Next")]pub m_next:crate::app::procinst::ProcInst, #[offset(80)]#[rename(name="m_Persistent")]pub m_persistent:crate::app::procvoidmethod::ProcVoidMethod, #[offset(88)]#[rename(name="m_State")]pub m_state:crate::app::procinst::ProcInst_State, #[offset(92)]#[rename(name="m_Suspend")]pub m_suspend:i32, #[offset(96)]#[rename(name="m_WaitTime")]pub m_wait_time:f32, #[offset(100)]#[rename(name="m_TickTime")]pub m_tick_time:f32, #[offset(104)]#[rename(name="m_Stack")]pub m_stack:crate::app::rawvaluestack::RawValueStack,}
 
 }
 
 #[cfg(feature = "app-procinst-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procinst")]
-pub trait IProcInstMethods : IProcInst { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNoDesc()` overload"] fn get_no_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCoroutine()` overload"] fn get_coroutine (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateNoDesc(crate::app::procinst::ProcInst)` overload"] fn create_no_desc (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateCoroutine(crate::app::procinst::ProcInst)` overload"] fn create_coroutine (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindNoDesc(crate::app::procinst::ProcInst)` overload"] fn create_bind_no_desc (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCoroutine(crate::app::procinst::ProcInst)` overload"] fn create_bind_coroutine (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::procinst::ProcInst, ::unity2::Array<crate::app::procdesc::ProcDesc>, ::unity2::Il2CppString)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , descs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: procinst :: ProcInst , :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (descs) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Array<crate::app::procdesc::ProcDesc>, ::unity2::Il2CppString)` overload"] fn create_bind (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , descs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: procinst :: ProcInst , :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280a6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (descs) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`CreateRoot(::unity2::Il2CppString)` overload"] fn create_root (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2819dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`RecursiveTick()` overload"] fn recursive_tick (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281a060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RecursivePersistentTask()` overload"] fn recursive_persistent_task (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281a360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RecursiveRemove()` overload"] fn recursive_remove (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281a560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSuper()` overload"] fn get_super (self ,) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ead0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetChild()` overload"] fn get_child (self ,) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281eae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPrev()` overload"] fn get_prev (self ,) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281eaf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNext()` overload"] fn get_next (self ,) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281eb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLabel()` overload"] fn get_label (self ,) -> i32 { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281eb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetWaitTime()` overload"] fn get_wait_time (self ,) -> f32 { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281eb80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsWait()` overload"] fn is_wait (self ,) -> bool { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281eb90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsBind()` overload"] fn is_bind (self ,) -> bool { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDead()` overload"] fn is_dead (self ,) -> bool { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsParentBind()` overload"] fn is_parent_bind (self ,) -> bool { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281aab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsContinueExecute()` overload"] fn is_continue_execute (self ,) -> bool { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281db90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Delete()` overload"] fn delete (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281aa40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Next()` overload"] fn next (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NextImm()` overload"] fn next_imm (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281df70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Jump(i32)` overload"] fn jump (self , label : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e6f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Jump(crate::system::valuetype::ValueType)` overload"] fn jump_2 (self , label : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ec70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`TryJump(crate::system::valuetype::ValueType)` overload"] fn try_jump (self , label : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> bool { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ed60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`PushJump(i32)` overload"] fn push_jump (self , label : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`PushJump(crate::system::valuetype::ValueType)` overload"] fn push_jump_2 (self , label : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ef00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`PopJump()` overload"] fn pop_jump (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`JumpImm(i32)` overload"] fn jump_imm (self , label : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ef90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`JumpImm(crate::system::valuetype::ValueType)` overload"] fn jump_imm_2 (self , label : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`WaitTime(f32)` overload"] fn wait_time (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteChild()` overload"] fn delete_child (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Yield()` overload"] fn r#yield (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Assert()` overload"] fn assert (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindNext(bool)` overload"] fn find_next (self , is_first : impl :: core :: convert :: Into < bool >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281a7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_first) , :: core :: option :: Option :: None) } } } # [doc = "`get_TickTime()` overload"] fn get_tick_time (self ,) -> f32 { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TickTime(f32)` overload"] fn set_tick_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f1b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_HashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PersistentMethod()` overload"] fn get_persistent_method (self ,) -> crate :: app :: procvoidmethod :: ProcVoidMethod { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procvoidmethod :: ProcVoidMethod = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PersistentMethod(crate::app::procvoidmethod::ProcVoidMethod)` overload"] fn set_persistent_method (self , value : impl :: core :: convert :: Into < crate :: app :: procvoidmethod :: ProcVoidMethod >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: procvoidmethod :: ProcVoidMethod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f1f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Desc()` overload"] fn get_desc (self ,) -> crate :: app :: procdesc :: ProcDesc { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DescIndex()` overload"] fn get_desc_index (self ,) -> i32 { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DescType()` overload"] fn get_desc_type (self ,) -> crate :: app :: procdesc :: ProcDesc_Type { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateInternal(crate::app::procinst::ProcInst, ::unity2::Array<crate::app::procdesc::ProcDesc>, ::unity2::Il2CppString, bool)` overload"] fn create_internal (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , descs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_bind : impl :: core :: convert :: Into < bool >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: procinst :: ProcInst , :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e4d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (descs) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (is_bind) , :: core :: option :: Option :: None) } } } # [doc = "`CreateInternal(::unity2::Array<crate::app::procdesc::ProcDesc>, ::unity2::Il2CppString)` overload"] fn create_internal_2 (self , descs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procinst :: ProcInst { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e5d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (descs) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Connect(crate::app::procinst::ProcInst)` overload"] fn connect (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Disconnect()` overload"] fn disconnect (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281e9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Bind()` overload"] fn bind (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Unbind()` overload"] fn unbind (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MarkingDeath(bool)` overload"] fn marking_death (self , is_first : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281eba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_first) , :: core :: option :: Option :: None) } } } # [doc = "`get_CanWaitSkip()` overload"] fn get_can_wait_skip (self ,) -> bool { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnStart()` overload"] fn on_start (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCoroutine()` overload"] fn on_coroutine (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnPersistent()` overload"] fn on_persistent (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f3e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBind()` overload"] fn on_bind (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUnbind()` overload"] fn on_unbind (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSingletonCreate()` overload"] fn on_singleton_create (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSingletonDispose()` overload"] fn on_singleton_dispose (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDrawMonitor(crate::app::debugmonitor::DebugMonitor)` overload"] fn on_draw_monitor (self , monitor : impl :: core :: convert :: Into < crate :: app :: debugmonitor :: DebugMonitor >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: debugmonitor :: DebugMonitor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (monitor) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugLog()` overload"] fn get_debug_log (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Shutdown()` overload"] fn shutdown (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShutdownChild()` overload"] fn shutdown_child (self ,) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DrawMonitor(crate::app::debugmonitor::DebugMonitor)` overload"] fn draw_monitor (self , monitor : impl :: core :: convert :: Into < crate :: app :: debugmonitor :: DebugMonitor >) -> () { unsafe { let __receiver = < ProcInst as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcInst , crate :: app :: debugmonitor :: DebugMonitor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281f4e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (monitor) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procinst")]pub trait IProcInstMethods:IProcInst{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b9c0usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`GetNoDesc()` overload"]fn get_no_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e0c0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(ProcInst)__receiver)}
+}
+#[doc="`GetCoroutine()` overload"]fn get_coroutine(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e250usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(ProcInst)__receiver)}
+}
+#[doc="`CreateNoDesc(crate::app::procinst::ProcInst)` overload"]fn create_no_desc(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e400usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateCoroutine(crate::app::procinst::ProcInst)` overload"]fn create_coroutine(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e450usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindNoDesc(crate::app::procinst::ProcInst)` overload"]fn create_bind_no_desc(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e080usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateBindCoroutine(crate::app::procinst::ProcInst)` overload"]fn create_bind_coroutine(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e490usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Create(crate::app::procinst::ProcInst, ::unity2::Array<crate::app::procdesc::ProcDesc>, ::unity2::Il2CppString)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,descs:impl::core::convert::Into< ::unity2::Array<crate::app::procdesc::ProcDesc> > ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e440usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Array<crate::app::procdesc::ProcDesc>)::core::convert::Into::into(descs),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Array<crate::app::procdesc::ProcDesc>, ::unity2::Il2CppString)` overload"]fn create_bind(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,descs:impl::core::convert::Into< ::unity2::Array<crate::app::procdesc::ProcDesc> > ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280a6b0usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Array<crate::app::procdesc::ProcDesc>)::core::convert::Into::into(descs),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`CreateRoot(::unity2::Il2CppString)` overload"]fn create_root(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2819dc0usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`RecursiveTick()` overload"]fn recursive_tick(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281a060usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`RecursivePersistentTask()` overload"]fn recursive_persistent_task(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281a360usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`RecursiveRemove()` overload"]fn recursive_remove(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281a560usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`GetSuper()` overload"]fn get_super(self,)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281ead0usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver)}
+}
+#[doc="`GetChild()` overload"]fn get_child(self,)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281eae0usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver)}
+}
+#[doc="`GetPrev()` overload"]fn get_prev(self,)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281eaf0usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver)}
+}
+#[doc="`GetNext()` overload"]fn get_next(self,)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281eb00usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver)}
+}
+#[doc="`GetLabel()` overload"]fn get_label(self,)->i32{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281eb10usize)as*mut u8,i32;
+(ProcInst)__receiver)}
+}
+#[doc="`GetWaitTime()` overload"]fn get_wait_time(self,)->f32{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281eb80usize)as*mut u8,f32;
+(ProcInst)__receiver)}
+}
+#[doc="`IsWait()` overload"]fn is_wait(self,)->bool{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281eb90usize)as*mut u8,bool;
+(ProcInst)__receiver)}
+}
+#[doc="`IsBind()` overload"]fn is_bind(self,)->bool{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e6e0usize)as*mut u8,bool;
+(ProcInst)__receiver)}
+}
+#[doc="`IsDead()` overload"]fn is_dead(self,)->bool{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d1d0usize)as*mut u8,bool;
+(ProcInst)__receiver)}
+}
+#[doc="`IsParentBind()` overload"]fn is_parent_bind(self,)->bool{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281aab0usize)as*mut u8,bool;
+(ProcInst)__receiver)}
+}
+#[doc="`IsContinueExecute()` overload"]fn is_continue_execute(self,)->bool{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281db90usize)as*mut u8,bool;
+(ProcInst)__receiver)}
+}
+#[doc="`Delete()` overload"]fn delete(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281aa40usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`Next()` overload"]fn next(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d9a0usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`NextImm()` overload"]fn next_imm(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281df70usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`Jump(i32)` overload"]fn jump(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e6f0usize)as*mut u8,();
+(ProcInst)__receiver,(i32)::core::convert::Into::into(label))}
+}
+#[doc="`Jump(crate::system::valuetype::ValueType)` overload"]fn jump_2(self,label:impl::core::convert::Into<crate::system::valuetype::ValueType>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281ec70usize)as*mut u8,();
+(ProcInst)__receiver,(crate::system::valuetype::ValueType)::core::convert::Into::into(label))}
+}
+#[doc="`TryJump(crate::system::valuetype::ValueType)` overload"]fn try_jump(self,label:impl::core::convert::Into<crate::system::valuetype::ValueType>)->bool{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281ed60usize)as*mut u8,bool;
+(ProcInst)__receiver,(crate::system::valuetype::ValueType)::core::convert::Into::into(label))}
+}
+#[doc="`PushJump(i32)` overload"]fn push_jump(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e790usize)as*mut u8,();
+(ProcInst)__receiver,(i32)::core::convert::Into::into(label))}
+}
+#[doc="`PushJump(crate::system::valuetype::ValueType)` overload"]fn push_jump_2(self,label:impl::core::convert::Into<crate::system::valuetype::ValueType>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281ef00usize)as*mut u8,();
+(ProcInst)__receiver,(crate::system::valuetype::ValueType)::core::convert::Into::into(label))}
+}
+#[doc="`PopJump()` overload"]fn pop_jump(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e920usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`JumpImm(i32)` overload"]fn jump_imm(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281ef90usize)as*mut u8,();
+(ProcInst)__receiver,(i32)::core::convert::Into::into(label))}
+}
+#[doc="`JumpImm(crate::system::valuetype::ValueType)` overload"]fn jump_imm_2(self,label:impl::core::convert::Into<crate::system::valuetype::ValueType>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f040usize)as*mut u8,();
+(ProcInst)__receiver,(crate::system::valuetype::ValueType)::core::convert::Into::into(label))}
+}
+#[doc="`WaitTime(f32)` overload"]fn wait_time(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f140usize)as*mut u8,();
+(ProcInst)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`DeleteChild()` overload"]fn delete_child(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f150usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`Yield()` overload"]fn r#yield(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f170usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`Assert()` overload"]fn assert(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f180usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`FindNext(bool)` overload"]fn find_next(self,is_first:impl::core::convert::Into<bool>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281a7c0usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(bool)::core::convert::Into::into(is_first))}
+}
+#[doc="`get_TickTime()` overload"]fn get_tick_time(self,)->f32{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f1a0usize)as*mut u8,f32;
+(ProcInst)__receiver)}
+}
+#[doc="`set_TickTime(f32)` overload"]fn set_tick_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f1b0usize)as*mut u8,();
+(ProcInst)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f1c0usize)as*mut u8, ::unity2::Il2CppString;
+(ProcInst)__receiver)}
+}
+#[doc="`get_HashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f1d0usize)as*mut u8,i32;
+(ProcInst)__receiver)}
+}
+#[doc="`get_PersistentMethod()` overload"]fn get_persistent_method(self,)->crate::app::procvoidmethod::ProcVoidMethod{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f1e0usize)as*mut u8,crate::app::procvoidmethod::ProcVoidMethod;
+(ProcInst)__receiver)}
+}
+#[doc="`set_PersistentMethod(crate::app::procvoidmethod::ProcVoidMethod)` overload"]fn set_persistent_method(self,value:impl::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f1f0usize)as*mut u8,();
+(ProcInst)__receiver,(crate::app::procvoidmethod::ProcVoidMethod)::core::convert::Into::into(value))}
+}
+#[doc="`get_Desc()` overload"]fn get_desc(self,)->crate::app::procdesc::ProcDesc{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d960usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(ProcInst)__receiver)}
+}
+#[doc="`get_DescIndex()` overload"]fn get_desc_index(self,)->i32{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f200usize)as*mut u8,i32;
+(ProcInst)__receiver)}
+}
+#[doc="`get_DescType()` overload"]fn get_desc_type(self,)->crate::app::procdesc::ProcDesc_Type{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f210usize)as*mut u8,crate::app::procdesc::ProcDesc_Type;
+(ProcInst)__receiver)}
+}
+#[doc="`CreateInternal(crate::app::procinst::ProcInst, ::unity2::Array<crate::app::procdesc::ProcDesc>, ::unity2::Il2CppString, bool)` overload"]fn create_internal(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,descs:impl::core::convert::Into< ::unity2::Array<crate::app::procdesc::ProcDesc> > ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_bind:impl::core::convert::Into<bool>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e4d0usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Array<crate::app::procdesc::ProcDesc>)::core::convert::Into::into(descs),(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(is_bind))}
+}
+#[doc="`CreateInternal(::unity2::Array<crate::app::procdesc::ProcDesc>, ::unity2::Il2CppString)` overload"]fn create_internal_2(self,descs:impl::core::convert::Into< ::unity2::Array<crate::app::procdesc::ProcDesc> > ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e5d0usize)as*mut u8,crate::app::procinst::ProcInst;
+(ProcInst)__receiver,(::unity2::Array<crate::app::procdesc::ProcDesc>)::core::convert::Into::into(descs),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Connect(crate::app::procinst::ProcInst)` overload"]fn connect(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f250usize)as*mut u8,();
+(ProcInst)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Disconnect()` overload"]fn disconnect(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281e9f0usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`Bind()` overload"]fn bind(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f2d0usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`Unbind()` overload"]fn unbind(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f310usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`MarkingDeath(bool)` overload"]fn marking_death(self,is_first:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281eba0usize)as*mut u8,();
+(ProcInst)__receiver,(bool)::core::convert::Into::into(is_first))}
+}
+#[doc="`get_CanWaitSkip()` overload"]fn get_can_wait_skip(self,)->bool{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f330usize)as*mut u8,bool;
+(ProcInst)__receiver)}
+}
+#[doc="`OnStart()` overload"]fn on_start(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f340usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f350usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnCoroutine()` overload"]fn on_coroutine(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f360usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ProcInst)__receiver)}
+}
+#[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f3c0usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f3d0usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f3e0usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnBind()` overload"]fn on_bind(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f3f0usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnUnbind()` overload"]fn on_unbind(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f400usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnSingletonCreate()` overload"]fn on_singleton_create(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f410usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnSingletonDispose()` overload"]fn on_singleton_dispose(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f420usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f430usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`OnDrawMonitor(crate::app::debugmonitor::DebugMonitor)` overload"]fn on_draw_monitor(self,monitor:impl::core::convert::Into<crate::app::debugmonitor::DebugMonitor>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f440usize)as*mut u8,();
+(ProcInst)__receiver,(crate::app::debugmonitor::DebugMonitor)::core::convert::Into::into(monitor))}
+}
+#[doc="`GetDebugLog()` overload"]fn get_debug_log(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f450usize)as*mut u8, ::unity2::Il2CppString;
+(ProcInst)__receiver)}
+}
+#[doc="`Shutdown()` overload"]fn shutdown(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f460usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`ShutdownChild()` overload"]fn shutdown_child(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f4b0usize)as*mut u8,();
+(ProcInst)__receiver)}
+}
+#[doc="`DrawMonitor(crate::app::debugmonitor::DebugMonitor)` overload"]fn draw_monitor(self,monitor:impl::core::convert::Into<crate::app::debugmonitor::DebugMonitor>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281f4e0usize)as*mut u8,();
+(ProcInst)__receiver,(crate::app::debugmonitor::DebugMonitor)::core::convert::Into::into(monitor))}
+}
+}
 
-#[cfg(feature = "app-procinst")]
-impl < __T : IProcInst > IProcInstMethods for __T { }
+#[cfg(feature="app-procinst")]impl<__T:IProcInst>IProcInstMethods for __T{}
 
-#[cfg(feature = "app-procinst")]
-impl ProcInst { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_no_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_no_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_no_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn recursive_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn recursive_persistent_task_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn recursive_remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_super_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_child_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_prev_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_wait_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn is_dead_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn is_parent_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn is_continue_execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn next_imm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn jump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn jump_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn try_jump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn push_jump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn push_jump_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn pop_jump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn jump_imm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn jump_imm_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn wait_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn delete_child_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn yield_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn assert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn find_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_tick_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn set_tick_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_persistent_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn set_persistent_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn get_desc_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn get_desc_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn create_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn create_internal_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn disconnect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn unbind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn marking_death_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn get_can_wait_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn on_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn on_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn on_persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn on_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn on_unbind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn on_singleton_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn on_singleton_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn on_draw_monitor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn get_debug_log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn shutdown_child_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn draw_monitor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcInst as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } }
+#[cfg(feature="app-procinst")]impl ProcInst{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_no_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_no_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_no_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn recursive_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn recursive_persistent_task_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn recursive_remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_super_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_child_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_prev_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_wait_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn is_dead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_parent_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn is_continue_execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn next_imm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn jump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn jump_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn try_jump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn push_jump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn push_jump_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn pop_jump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn jump_imm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn jump_imm_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn wait_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn delete_child_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn yield_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn assert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn find_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_tick_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn set_tick_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_persistent_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn set_persistent_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn get_desc_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_desc_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn create_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn create_internal_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn disconnect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn unbind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn marking_death_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn get_can_wait_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn on_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn on_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn on_persistent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn on_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn on_unbind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn on_singleton_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn on_singleton_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn on_draw_monitor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn get_debug_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn shutdown_child_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn draw_monitor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+}
 
-#[cfg(feature = "app-procinst")]
-impl ProcInst {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcInst) , :: core :: stringify ! (new) ,)) ; < Self as IProcInstMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-procinst")]impl ProcInst{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcInst), ::core::stringify!(new),));
+ <Self as IProcInstMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-procinst")]

@@ -4,35 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphcontext/RenderGraphContext.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphContext")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphContext {
-# [offset (16)] # [rename (name = "renderContext")] pub render_context : crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext ,
-# [offset (24)] # [rename (name = "cmd")] pub cmd : crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer ,
-# [offset (32)] # [rename (name = "renderGraphPool")] pub render_graph_pool : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphobjectpool :: RenderGraphObjectPool ,
-# [offset (40)] # [rename (name = "defaultResources")] pub default_resources : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphdefaultresources :: RenderGraphDefaultResources ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphcontext/RenderGraphContext.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraphContext")]#[parent(crate::system::object::Object)]pub struct RenderGraphContext{#[offset(16)]#[rename(name="renderContext")]pub render_context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, #[offset(24)]#[rename(name="cmd")]pub cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer, #[offset(32)]#[rename(name="renderGraphPool")]pub render_graph_pool:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool, #[offset(40)]#[rename(name="defaultResources")]pub default_resources:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphdefaultresources::RenderGraphDefaultResources,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]
-pub trait IRenderGraphContextMethods : IRenderGraphContext { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderGraphContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b1950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]pub trait IRenderGraphContextMethods:IRenderGraphContext{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderGraphContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b1950usize)as*mut u8,();
+(RenderGraphContext)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]
-impl < __T : IRenderGraphContext > IRenderGraphContextMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]impl<__T:IRenderGraphContext>IRenderGraphContextMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]
-impl RenderGraphContext { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]impl RenderGraphContext{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]
-impl RenderGraphContext {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraphContext) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraphContextMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]impl RenderGraphContext{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RenderGraphContext), ::core::stringify!(new),));
+ <Self as IRenderGraphContextMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]

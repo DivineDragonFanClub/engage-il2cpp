@@ -4,42 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: app :: mainmenusequence :: { IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent , MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::app::mainmenusequence::{IMainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent,MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/modeselectmenucontent/ModeSelectMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ModeSelectMenuContent")] # [parent (crate :: app :: mainmenusequence :: MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)] pub struct ModeSelectMenuContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/modeselectmenucontent/ModeSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="ModeSelectMenuContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_GameModeSelectMenuSequence_Menu_MenuContent)]pub struct ModeSelectMenuContent{}
 
 }
 
 #[cfg(feature = "app-modeselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-modeselectmenucontent")]
-pub trait IModeSelectMenuContentMethods : IModeSelectMenuContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ModeSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ModeSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277c890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-modeselectmenucontent")]pub trait IModeSelectMenuContentMethods:IModeSelectMenuContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ModeSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277c890usize)as*mut u8,();
+(ModeSelectMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-modeselectmenucontent")]
-impl < __T : IModeSelectMenuContent > IModeSelectMenuContentMethods for __T { }
+#[cfg(feature="app-modeselectmenucontent")]impl<__T:IModeSelectMenuContent>IModeSelectMenuContentMethods for __T{}
 
-#[cfg(feature = "app-modeselectmenucontent")]
-impl ModeSelectMenuContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ModeSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-modeselectmenucontent")]impl ModeSelectMenuContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-modeselectmenucontent")]
-impl ModeSelectMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ModeSelectMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IModeSelectMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-modeselectmenucontent")]impl ModeSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ModeSelectMenuContent), ::core::stringify!(new),));
+ <Self as IModeSelectMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-modeselectmenucontent")]

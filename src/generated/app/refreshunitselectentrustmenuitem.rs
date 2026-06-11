@@ -4,34 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: refreshunitselectmenuitem :: { IRefreshUnitSelectMenuItem , RefreshUnitSelectMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::refreshunitselectmenuitem::{IRefreshUnitSelectMenuItem,RefreshUnitSelectMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectentrustmenuitem/RefreshUnitSelectEntrustMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSelectEntrustMenuItem")] # [parent (crate :: app :: refreshunitselectmenuitem :: RefreshUnitSelectMenuItem)] pub struct RefreshUnitSelectEntrustMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitselectentrustmenuitem/RefreshUnitSelectEntrustMenuItem.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSelectEntrustMenuItem")]#[parent(crate::app::refreshunitselectmenuitem::RefreshUnitSelectMenuItem)]pub struct RefreshUnitSelectEntrustMenuItem{}
 
 }
 
 #[cfg(feature = "app-refreshunitselectentrustmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refreshunitselectentrustmenuitem")]
-pub trait IRefreshUnitSelectEntrustMenuItemMethods : IRefreshUnitSelectEntrustMenuItem { # [doc = "`.ctor(bool, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler)` overload"] fn ctor (self , decided : impl :: core :: convert :: Into < bool > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefreshUnitSelectEntrustMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectEntrustMenuItem , bool , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_SelectEventHandler , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c0ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decided) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectEntrustMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectEntrustMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c0e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectEntrustMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectEntrustMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c12d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefreshUnitSelectEntrustMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectEntrustMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshunitselectentrustmenuitem")]pub trait IRefreshUnitSelectEntrustMenuItemMethods:IRefreshUnitSelectEntrustMenuItem{#[doc="`.ctor(bool, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler)` overload"]fn ctor(self,decided:impl::core::convert::Into<bool> ,select_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefreshUnitSelectEntrustMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c0ce0usize)as*mut u8,();
+(RefreshUnitSelectEntrustMenuItem)__receiver,(bool)::core::convert::Into::into(decided),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RefreshUnitSelectEntrustMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c0e50usize)as*mut u8,();
+(RefreshUnitSelectEntrustMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RefreshUnitSelectEntrustMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c12d0usize)as*mut u8,();
+(RefreshUnitSelectEntrustMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshUnitSelectEntrustMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1350usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefreshUnitSelectEntrustMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refreshunitselectentrustmenuitem")]
-impl < __T : IRefreshUnitSelectEntrustMenuItem > IRefreshUnitSelectEntrustMenuItemMethods for __T { }
+#[cfg(feature="app-refreshunitselectentrustmenuitem")]impl<__T:IRefreshUnitSelectEntrustMenuItem>IRefreshUnitSelectEntrustMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refreshunitselectentrustmenuitem")]
-impl RefreshUnitSelectEntrustMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectEntrustMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectEntrustMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectEntrustMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectEntrustMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-refreshunitselectentrustmenuitem")]impl RefreshUnitSelectEntrustMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-refreshunitselectentrustmenuitem")]
-impl RefreshUnitSelectEntrustMenuItem {
-# [doc = "`.ctor(bool, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler)` — overload selector"] pub fn new (decided : bool , select_event_handler : crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_SelectEventHandler , decide_event_handler : crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSelectEntrustMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSelectEntrustMenuItemMethods > :: ctor (this , decided , select_event_handler , decide_event_handler) ; this }
+#[cfg(feature="app-refreshunitselectentrustmenuitem")]impl RefreshUnitSelectEntrustMenuItem{#[doc="`.ctor(bool, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler)` — overload selector"]pub fn new(decided:bool,select_event_handler:crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler,decide_event_handler:crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSelectEntrustMenuItem), ::core::stringify!(new),));
+ <Self as IRefreshUnitSelectEntrustMenuItemMethods> ::ctor(this,decided,select_event_handler,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refreshunitselectentrustmenuitem")]

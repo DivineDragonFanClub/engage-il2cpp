@@ -4,32 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetlabelreference/AssetLabelReference.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets" , name = "AssetLabelReference")] # [parent (crate :: system :: object :: Object)] pub struct AssetLabelReference {
-# [offset (16)] # [rename (name = "m_LabelString")] pub m_label_string : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/assetlabelreference/AssetLabelReference.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AssetLabelReference")]#[parent(crate::system::object::Object)]pub struct AssetLabelReference{#[offset(16)]#[rename(name="m_LabelString")]pub m_label_string: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetlabelreference-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-assetlabelreference")]
-pub trait IAssetLabelReferenceMethods : IAssetLabelReference { # [doc = "`get_labelString()` overload"] fn get_label_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssetLabelReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetLabelReference , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db2170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_labelString(::unity2::Il2CppString)` overload"] fn set_label_string (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssetLabelReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetLabelReference , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db2180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RuntimeKey()` overload"] fn get_runtime_key (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < AssetLabelReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetLabelReference , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db2190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RuntimeKeyIsValid()` overload"] fn runtime_key_is_valid (self ,) -> bool { unsafe { let __receiver = < AssetLabelReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetLabelReference , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db2210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < AssetLabelReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetLabelReference , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db22a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssetLabelReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetLabelReference , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db22b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-assetlabelreference")]pub trait IAssetLabelReferenceMethods:IAssetLabelReference{#[doc="`get_labelString()` overload"]fn get_label_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2170usize)as*mut u8, ::unity2::Il2CppString;
+(AssetLabelReference)__receiver)}
+}
+#[doc="`set_labelString(::unity2::Il2CppString)` overload"]fn set_label_string(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2180usize)as*mut u8,();
+(AssetLabelReference)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_RuntimeKey()` overload"]fn get_runtime_key(self,)->crate::system::object::Object{unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2190usize)as*mut u8,crate::system::object::Object;
+(AssetLabelReference)__receiver)}
+}
+#[doc="`RuntimeKeyIsValid()` overload"]fn runtime_key_is_valid(self,)->bool{unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2210usize)as*mut u8,bool;
+(AssetLabelReference)__receiver)}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db22a0usize)as*mut u8,i32;
+(AssetLabelReference)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db22b0usize)as*mut u8,();
+(AssetLabelReference)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-assetlabelreference")]
-impl < __T : IAssetLabelReference > IAssetLabelReferenceMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-assetlabelreference")]impl<__T:IAssetLabelReference>IAssetLabelReferenceMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-assetlabelreference")]
-impl AssetLabelReference { pub fn get_label_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetLabelReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_label_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetLabelReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_runtime_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetLabelReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn runtime_key_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetLabelReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetLabelReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetLabelReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-addressable_assets-assetlabelreference")]impl AssetLabelReference{pub fn get_label_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_label_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_runtime_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn runtime_key_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-assetlabelreference")]
-impl AssetLabelReference {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetLabelReference) , :: core :: stringify ! (new) ,)) ; < Self as IAssetLabelReferenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-addressable_assets-assetlabelreference")]impl AssetLabelReference{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetLabelReference), ::core::stringify!(new),));
+ <Self as IAssetLabelReferenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetlabelreference")]

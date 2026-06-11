@@ -4,68 +4,26 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimage/MapImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImage")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapimage :: MapImage >)] pub struct MapImage {
-# [static_field] # [rename (name = "MaxWidthBit")] pub max_width_bit : i32 ,
-# [static_field] # [rename (name = "MaxHeightBit")] pub max_height_bit : i32 ,
-# [static_field] # [rename (name = "MaxWidth")] pub max_width : i32 ,
-# [static_field] # [rename (name = "MaxHeight")] pub max_height : i32 ,
-# [static_field] # [rename (name = "MaxSize")] pub max_size : i32 ,
-# [static_field] # [rename (name = "MaxOuter")] pub max_outer : i32 ,
-# [offset (32)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: mapimageunit :: MapImageUnit ,
-# [offset (48)] # [rename (name = "m_Terrain")] pub m_terrain : crate :: app :: mapimageterrain :: MapImageTerrain ,
-# [offset (56)] # [rename (name = "m_Cost")] pub m_cost : crate :: app :: mapimagecost :: MapImageCost ,
-# [offset (64)] # [rename (name = "m_Danger")] pub m_danger : crate :: app :: mapimagedanger :: MapImageDanger ,
-# [offset (72)] # [rename (name = "m_Talk")] pub m_talk : crate :: app :: mapimagetalk :: MapImageTalk ,
-# [offset (80)] # [rename (name = "m_Range")] pub m_range : crate :: app :: mapimagerange :: MapImageRange ,
-# [offset (88)] # [rename (name = "m_History")] pub m_history : crate :: app :: mapimagehistory :: MapImageHistory ,
-# [offset (96)] # [rename (name = "m_BackupTerrains")] pub m_backup_terrains : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapimage :: MapImage_BackupTerrain > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimage/MapImage.md"))]#[::unity2::class(namespace="App",name="MapImage")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapimage::MapImage>)]pub struct MapImage{#[static_field]#[rename(name="MaxWidthBit")]pub max_width_bit:i32, #[static_field]#[rename(name="MaxHeightBit")]pub max_height_bit:i32, #[static_field]#[rename(name="MaxWidth")]pub max_width:i32, #[static_field]#[rename(name="MaxHeight")]pub max_height:i32, #[static_field]#[rename(name="MaxSize")]pub max_size:i32, #[static_field]#[rename(name="MaxOuter")]pub max_outer:i32, #[offset(32)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Unit")]pub m_unit:crate::app::mapimageunit::MapImageUnit, #[offset(48)]#[rename(name="m_Terrain")]pub m_terrain:crate::app::mapimageterrain::MapImageTerrain, #[offset(56)]#[rename(name="m_Cost")]pub m_cost:crate::app::mapimagecost::MapImageCost, #[offset(64)]#[rename(name="m_Danger")]pub m_danger:crate::app::mapimagedanger::MapImageDanger, #[offset(72)]#[rename(name="m_Talk")]pub m_talk:crate::app::mapimagetalk::MapImageTalk, #[offset(80)]#[rename(name="m_Range")]pub m_range:crate::app::mapimagerange::MapImageRange, #[offset(88)]#[rename(name="m_History")]pub m_history:crate::app::mapimagehistory::MapImageHistory, #[offset(96)]#[rename(name="m_BackupTerrains")]pub m_backup_terrains:crate::system::collections::generic::list_1::List_1<crate::app::mapimage::MapImage_BackupTerrain> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimage/MapImage_BackupTerrain.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapImage_BackupTerrain{pub x:i32,pub z:i32,pub hash:i32,pub index:i32,}
+impl::unity2::ClassIdentity for MapImage_BackupTerrain{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapImage.BackupTerrain";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimage/MapImage_BackupTerrain.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapImage_BackupTerrain {
-    pub x: i32,
-    pub z: i32,
-    pub hash: i32,
-    pub index: i32,
-}
-
-
-impl ::unity2::ClassIdentity for MapImage_BackupTerrain {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapImage.BackupTerrain";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapImage_BackupTerrain {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MapImage_BackupTerrain{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -73,21 +31,288 @@ impl ::unity2::IlType for MapImage_BackupTerrain {
 #[cfg(feature = "app-mapimage-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapimage")]
-impl MapImage { # [doc = "`GetPutTerrain(::unity2::Il2CppString, bool)` overload"] pub fn get_put_terrain (tid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , nullable : impl :: core :: convert :: Into < bool >) -> crate :: app :: terraindata_2 :: TerrainData_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: terraindata_2 :: TerrainData_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de2240usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tid) , :: core :: convert :: Into :: into (nullable) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimage")]impl MapImage{#[doc="`GetPutTerrain(::unity2::Il2CppString, bool)` overload"]pub fn get_put_terrain(tid:impl::core::convert::Into< ::unity2::Il2CppString> ,nullable:impl::core::convert::Into<bool>)->crate::app::terraindata_2::TerrainData_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1de2240usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
+(::unity2::Il2CppString)::core::convert::Into::into(tid),(bool)::core::convert::Into::into(nullable))}
+}
+}
 
-#[cfg(feature = "app-mapimage")]
-pub trait IMapImageMethods : IMapImage { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de1fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::app::mapterrain::MapTerrain, bool)` overload"] fn setup (self , terrain : impl :: core :: convert :: Into < crate :: app :: mapterrain :: MapTerrain > , is_resume : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , crate :: app :: mapterrain :: MapTerrain , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de23a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (terrain) , :: core :: convert :: Into :: into (is_resume) , :: core :: option :: Option :: None) } } } # [doc = "`SetSize(i32, i32)` overload"] fn set_size (self , w : impl :: core :: convert :: Into < i32 > , h : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de2ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: option :: Option :: None) } } } # [doc = "`IsOutOfMap(i32, i32)` overload"] fn is_out_of_map (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de2be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsOutOfPlayArea(i32, i32)` overload"] fn is_out_of_play_area (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de2c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`CanTarget(i32, i32)` overload"] fn can_target (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de2c40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`CanTarget(i32, i32, crate::app::unit::Unit)` overload"] fn can_target_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , i32 , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de2d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CanTarget(i32, i32, bool)` overload"] fn can_target_3 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , is_consider_not_target : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de2f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (is_consider_not_target) , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`get_X()` overload"] fn get_x (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de38f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_W()` overload"] fn get_w (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_W(i32)` overload"] fn set_w (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_H()` overload"] fn get_h (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_H(i32)` overload"] fn set_h (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayAreaX()` overload"] fn get_play_area_x (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayAreaX(i32)` overload"] fn set_play_area_x (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayAreaZ()` overload"] fn get_play_area_z (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayAreaZ(i32)` overload"] fn set_play_area_z (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayAreaW()` overload"] fn get_play_area_w (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayAreaW(i32)` overload"] fn set_play_area_w (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de39a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayAreaH()` overload"] fn get_play_area_h (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de39b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayAreaH(i32)` overload"] fn set_play_area_h (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de39c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_X1()` overload"] fn get_x1 (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de39d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_X1(i32)` overload"] fn set_x1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de39e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Z1()` overload"] fn get_z1 (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de39f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Z1(i32)` overload"] fn set_z1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_X2()` overload"] fn get_x2 (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_X2(i32)` overload"] fn set_x2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Z2()` overload"] fn get_z2 (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Z2(i32)` overload"] fn set_z2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayAreaX1()` overload"] fn get_play_area_x1 (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayAreaX1(i32)` overload"] fn set_play_area_x1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayAreaZ1()` overload"] fn get_play_area_z1 (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayAreaZ1(i32)` overload"] fn set_play_area_z1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayAreaX2()` overload"] fn get_play_area_x2 (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayAreaX2(i32)` overload"] fn set_play_area_x2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayAreaZ2()` overload"] fn get_play_area_z2 (self ,) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayAreaZ2(i32)` overload"] fn set_play_area_z2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: mapimageunit :: MapImageUnit { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimageunit :: MapImageUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Terrain()` overload"] fn get_terrain (self ,) -> crate :: app :: mapimageterrain :: MapImageTerrain { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimageterrain :: MapImageTerrain = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Cost()` overload"] fn get_cost (self ,) -> crate :: app :: mapimagecost :: MapImageCost { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimagecost :: MapImageCost = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Danger()` overload"] fn get_danger (self ,) -> crate :: app :: mapimagedanger :: MapImageDanger { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimagedanger :: MapImageDanger = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Talk()` overload"] fn get_talk (self ,) -> crate :: app :: mapimagetalk :: MapImageTalk { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimagetalk :: MapImageTalk = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Range()` overload"] fn get_range (self ,) -> crate :: app :: mapimagerange :: MapImageRange { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimagerange :: MapImageRange = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_History()` overload"] fn get_history (self ,) -> crate :: app :: mapimagehistory :: MapImageHistory { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimagehistory :: MapImageHistory = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTargetUnit(i32, i32)` overload"] fn get_target_unit (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetTargetUnit(i32, i32, bool)` overload"] fn get_target_unit_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , allow_asphyxiation : impl :: core :: convert :: Into < bool >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (allow_asphyxiation) , :: core :: option :: Option :: None) } } } # [doc = "`ClampX(i32)` overload"] fn clamp_x (self , x : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`ClampZ(i32)` overload"] fn clamp_z (self , z : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < MapImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImage , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimage")]pub trait IMapImageMethods:IMapImage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de1fd0usize)as*mut u8,();
+(MapImage)__receiver)}
+}
+#[doc="`Setup(crate::app::mapterrain::MapTerrain, bool)` overload"]fn setup(self,terrain:impl::core::convert::Into<crate::app::mapterrain::MapTerrain> ,is_resume:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de23a0usize)as*mut u8,();
+(MapImage)__receiver,(crate::app::mapterrain::MapTerrain)::core::convert::Into::into(terrain),(bool)::core::convert::Into::into(is_resume))}
+}
+#[doc="`SetSize(i32, i32)` overload"]fn set_size(self,w:impl::core::convert::Into<i32> ,h:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de2ba0usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(w),(i32)::core::convert::Into::into(h))}
+}
+#[doc="`IsOutOfMap(i32, i32)` overload"]fn is_out_of_map(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de2be0usize)as*mut u8,bool;
+(MapImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsOutOfPlayArea(i32, i32)` overload"]fn is_out_of_play_area(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de2c10usize)as*mut u8,bool;
+(MapImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`CanTarget(i32, i32)` overload"]fn can_target(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de2c40usize)as*mut u8,bool;
+(MapImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`CanTarget(i32, i32, crate::app::unit::Unit)` overload"]fn can_target_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de2d60usize)as*mut u8,bool;
+(MapImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CanTarget(i32, i32, bool)` overload"]fn can_target_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,is_consider_not_target:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de2f30usize)as*mut u8,bool;
+(MapImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(bool)::core::convert::Into::into(is_consider_not_target))}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3050usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3060usize)as*mut u8,();
+(MapImage)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3570usize)as*mut u8,();
+(MapImage)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de38f0usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3900usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`get_W()` overload"]fn get_w(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3910usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_W(i32)` overload"]fn set_w(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3920usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_H()` overload"]fn get_h(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3930usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_H(i32)` overload"]fn set_h(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3940usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayAreaX()` overload"]fn get_play_area_x(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3950usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_PlayAreaX(i32)` overload"]fn set_play_area_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3960usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayAreaZ()` overload"]fn get_play_area_z(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3970usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_PlayAreaZ(i32)` overload"]fn set_play_area_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3980usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayAreaW()` overload"]fn get_play_area_w(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3990usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_PlayAreaW(i32)` overload"]fn set_play_area_w(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de39a0usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayAreaH()` overload"]fn get_play_area_h(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de39b0usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_PlayAreaH(i32)` overload"]fn set_play_area_h(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de39c0usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_X1()` overload"]fn get_x1(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de39d0usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_X1(i32)` overload"]fn set_x1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de39e0usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z1()` overload"]fn get_z1(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de39f0usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_Z1(i32)` overload"]fn set_z1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a00usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_X2()` overload"]fn get_x2(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a10usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_X2(i32)` overload"]fn set_x2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a20usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z2()` overload"]fn get_z2(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a30usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_Z2(i32)` overload"]fn set_z2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a40usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayAreaX1()` overload"]fn get_play_area_x1(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a50usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_PlayAreaX1(i32)` overload"]fn set_play_area_x1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a60usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayAreaZ1()` overload"]fn get_play_area_z1(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a70usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_PlayAreaZ1(i32)` overload"]fn set_play_area_z1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a80usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayAreaX2()` overload"]fn get_play_area_x2(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3a90usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_PlayAreaX2(i32)` overload"]fn set_play_area_x2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3aa0usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayAreaZ2()` overload"]fn get_play_area_z2(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3ab0usize)as*mut u8,i32;
+(MapImage)__receiver)}
+}
+#[doc="`set_PlayAreaZ2(i32)` overload"]fn set_play_area_z2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3ac0usize)as*mut u8,();
+(MapImage)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::mapimageunit::MapImageUnit{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3ad0usize)as*mut u8,crate::app::mapimageunit::MapImageUnit;
+(MapImage)__receiver)}
+}
+#[doc="`get_Terrain()` overload"]fn get_terrain(self,)->crate::app::mapimageterrain::MapImageTerrain{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3ae0usize)as*mut u8,crate::app::mapimageterrain::MapImageTerrain;
+(MapImage)__receiver)}
+}
+#[doc="`get_Cost()` overload"]fn get_cost(self,)->crate::app::mapimagecost::MapImageCost{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3af0usize)as*mut u8,crate::app::mapimagecost::MapImageCost;
+(MapImage)__receiver)}
+}
+#[doc="`get_Danger()` overload"]fn get_danger(self,)->crate::app::mapimagedanger::MapImageDanger{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3b00usize)as*mut u8,crate::app::mapimagedanger::MapImageDanger;
+(MapImage)__receiver)}
+}
+#[doc="`get_Talk()` overload"]fn get_talk(self,)->crate::app::mapimagetalk::MapImageTalk{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3b10usize)as*mut u8,crate::app::mapimagetalk::MapImageTalk;
+(MapImage)__receiver)}
+}
+#[doc="`get_Range()` overload"]fn get_range(self,)->crate::app::mapimagerange::MapImageRange{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3b20usize)as*mut u8,crate::app::mapimagerange::MapImageRange;
+(MapImage)__receiver)}
+}
+#[doc="`get_History()` overload"]fn get_history(self,)->crate::app::mapimagehistory::MapImageHistory{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3b30usize)as*mut u8,crate::app::mapimagehistory::MapImageHistory;
+(MapImage)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3b40usize)as*mut u8, ::unity2::Il2CppString;
+(MapImage)__receiver)}
+}
+#[doc="`GetTargetUnit(i32, i32)` overload"]fn get_target_unit(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::unit::Unit{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3b50usize)as*mut u8,crate::app::unit::Unit;
+(MapImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetTargetUnit(i32, i32, bool)` overload"]fn get_target_unit_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,allow_asphyxiation:impl::core::convert::Into<bool>)->crate::app::unit::Unit{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3c00usize)as*mut u8,crate::app::unit::Unit;
+(MapImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(bool)::core::convert::Into::into(allow_asphyxiation))}
+}
+#[doc="`ClampX(i32)` overload"]fn clamp_x(self,x:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3ce0usize)as*mut u8,i32;
+(MapImage)__receiver,(i32)::core::convert::Into::into(x))}
+}
+#[doc="`ClampZ(i32)` overload"]fn clamp_z(self,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3d00usize)as*mut u8,i32;
+(MapImage)__receiver,(i32)::core::convert::Into::into(z))}
+}
+}
 
-#[cfg(feature = "app-mapimage")]
-impl < __T : IMapImage > IMapImageMethods for __T { }
+#[cfg(feature="app-mapimage")]impl<__T:IMapImage>IMapImageMethods for __T{}
 
-#[cfg(feature = "app-mapimage")]
-impl MapImage { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_put_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_out_of_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_out_of_play_area_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn can_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn can_target_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn can_target_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_play_area_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_play_area_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_play_area_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_play_area_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_play_area_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_play_area_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_play_area_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_play_area_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_x1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_x1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_z1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_z1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_x2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_x2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_z2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn set_z2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_play_area_x1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn set_play_area_x1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_play_area_z1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn set_play_area_z1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_play_area_x2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn set_play_area_x2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_play_area_z2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn set_play_area_z2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn get_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_cost_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn get_danger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn get_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn get_history_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn get_target_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn get_target_unit_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn clamp_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn clamp_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } }
+#[cfg(feature="app-mapimage")]impl MapImage{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_put_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_out_of_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_out_of_play_area_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn can_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn can_target_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn can_target_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_play_area_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_play_area_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_play_area_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_play_area_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_play_area_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_play_area_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_play_area_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_play_area_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_z1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_z1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_x2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_x2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_z2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn set_z2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_play_area_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_play_area_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_play_area_z1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn set_play_area_z1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_play_area_x2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn set_play_area_x2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_play_area_z2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn set_play_area_z2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_danger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_history_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn get_target_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn get_target_unit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn clamp_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn clamp_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+}
 
-#[cfg(feature = "app-mapimage")]
-impl MapImage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImage) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapimage")]impl MapImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImage), ::core::stringify!(new),));
+ <Self as IMapImageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapimage")]

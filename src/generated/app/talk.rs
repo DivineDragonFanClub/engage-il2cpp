@@ -4,33 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk/Talk.md"))] # [:: unity2 :: class (namespace = "App" , name = "Talk")] # [parent (crate :: system :: object :: Object)] pub struct Talk {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk/Talk.md"))]#[::unity2::class(namespace="App",name="Talk")]#[parent(crate::system::object::Object)]pub struct Talk{}
 
 }
 
 #[cfg(feature = "app-talk-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk")]
-impl Talk { # [doc = "`StartBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, bool)` overload"] pub fn start_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_continuous_number : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b81f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (mid) , :: core :: convert :: Into :: into (is_continuous_number) , :: core :: option :: Option :: None) } } } # [doc = "`BeginContinue()` overload"] pub fn begin_continue () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8530usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EndContinue()` overload"] pub fn end_continue () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsFastForward()` overload"] pub fn is_fast_forward () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsPageTrigger()` overload"] pub fn is_page_trigger () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8990usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsAutoPlayMode()` overload"] pub fn is_auto_play_mode () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8bd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetPlayMode(crate::app::talk3_d::talksequence::TalkSequence_PlayMode)` overload"] pub fn set_play_mode (talk_play_mode : impl :: core :: convert :: Into < crate :: app :: talk3_d :: talksequence :: TalkSequence_PlayMode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: talk3_d :: talksequence :: TalkSequence_PlayMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (talk_play_mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetPlayingMid()` overload"] pub fn get_playing_mid () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8e10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk")]impl Talk{#[doc="`StartBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, bool)` overload"]pub fn start_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mid:impl::core::convert::Into< ::unity2::Il2CppString> ,is_continuous_number:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b81f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(::unity2::Il2CppString)::core::convert::Into::into(mid),(bool)::core::convert::Into::into(is_continuous_number))}
+}
+#[doc="`BeginContinue()` overload"]pub fn begin_continue()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8530usize)as*mut u8,();
+)}
+}
+#[doc="`EndContinue()` overload"]pub fn end_continue()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8650usize)as*mut u8,();
+)}
+}
+#[doc="`IsFastForward()` overload"]pub fn is_fast_forward()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8770usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsPageTrigger()` overload"]pub fn is_page_trigger()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8990usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsAutoPlayMode()` overload"]pub fn is_auto_play_mode()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8bd0usize)as*mut u8,bool;
+)}
+}
+#[doc="`SetPlayMode(crate::app::talk3_d::talksequence::TalkSequence_PlayMode)` overload"]pub fn set_play_mode(talk_play_mode:impl::core::convert::Into<crate::app::talk3_d::talksequence::TalkSequence_PlayMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8c50usize)as*mut u8,();
+(crate::app::talk3_d::talksequence::TalkSequence_PlayMode)::core::convert::Into::into(talk_play_mode))}
+}
+#[doc="`GetPlayingMid()` overload"]pub fn get_playing_mid()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b8e10usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+}
 
-#[cfg(feature = "app-talk")]
-pub trait ITalkMethods : ITalk { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Talk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Talk , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b8ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk")]pub trait ITalkMethods:ITalk{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Talk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b8ee0usize)as*mut u8,();
+(Talk)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk")]
-impl < __T : ITalk > ITalkMethods for __T { }
+#[cfg(feature="app-talk")]impl<__T:ITalk>ITalkMethods for __T{}
 
-#[cfg(feature = "app-talk")]
-impl Talk { pub fn start_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn begin_continue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn end_continue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_fast_forward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_page_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_auto_play_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_play_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_playing_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Talk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-talk")]impl Talk{pub fn start_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn begin_continue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn end_continue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_fast_forward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_page_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_auto_play_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_play_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_playing_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-talk")]
-impl Talk {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Talk) , :: core :: stringify ! (new) ,)) ; < Self as ITalkMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk")]impl Talk{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Talk), ::core::stringify!(new),));
+ <Self as ITalkMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk")]

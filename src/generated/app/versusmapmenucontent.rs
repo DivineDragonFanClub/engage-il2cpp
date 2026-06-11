@@ -4,50 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmapmenucontent/VersusMapMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusMapMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct VersusMapMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "SpriteAtlasPath")] pub sprite_atlas_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_HelpTitle")] pub m_help_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (240)] # [rename (name = "m_MapImage")] pub m_map_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (248)] # [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [offset (256)] # [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusmapmenucontent/VersusMapMenuContent.md"))]#[::unity2::class(namespace="App",name="VersusMapMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct VersusMapMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SpriteAtlasPath")]pub sprite_atlas_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_HelpTitle")]pub m_help_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_MapImage")]pub m_map_image:crate::unity_engine::ui::image::Image, #[offset(248)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(256)]#[rename(name="m_Sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite,}
 
 }
 
 #[cfg(feature = "app-versusmapmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusmapmenucontent")]
-impl VersusMapMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0190usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0270usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0340usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: versusmapmenucontent :: VersusMapMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: versusmapmenucontent :: VersusMapMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b03e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusmapmenucontent")]impl VersusMapMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b0190usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b0270usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b0340usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::versusmapmenucontent::VersusMapMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b03e0usize)as*mut u8,crate::app::versusmapmenucontent::VersusMapMenuContent;
+)}
+}
+}
 
-#[cfg(feature = "app-versusmapmenucontent")]
-pub trait IVersusMapMenuContentMethods : IVersusMapMenuContent { # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < VersusMapMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < VersusMapMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b06f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < VersusMapMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b04c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpTitle(::unity2::Il2CppString)` overload"] fn set_help_title (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusMapMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapMenuContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } } # [doc = "`SetMapSprite(::unity2::Il2CppString)` overload"] fn set_map_sprite (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusMapMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapMenuContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < VersusMapMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusMapMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMapMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b08b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusmapmenucontent")]pub trait IVersusMapMenuContentMethods:IVersusMapMenuContent{#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0680usize)as*mut u8,f32;
+(VersusMapMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b06f0usize)as*mut u8,f32;
+(VersusMapMenuContent)__receiver)}
+}
+#[doc="`initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b04c0usize)as*mut u8,();
+(VersusMapMenuContent)__receiver)}
+}
+#[doc="`SetHelpTitle(::unity2::Il2CppString)` overload"]fn set_help_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0760usize)as*mut u8,();
+(VersusMapMenuContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
+}
+#[doc="`SetMapSprite(::unity2::Il2CppString)` overload"]fn set_map_sprite(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0780usize)as*mut u8,();
+(VersusMapMenuContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0830usize)as*mut u8,();
+(VersusMapMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b08b0usize)as*mut u8,();
+(VersusMapMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusmapmenucontent")]
-impl < __T : IVersusMapMenuContent > IVersusMapMenuContentMethods for __T { }
+#[cfg(feature="app-versusmapmenucontent")]impl<__T:IVersusMapMenuContent>IVersusMapMenuContentMethods for __T{}
 
-#[cfg(feature = "app-versusmapmenucontent")]
-impl VersusMapMenuContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_help_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_map_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMapMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-versusmapmenucontent")]impl VersusMapMenuContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_help_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_map_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-versusmapmenucontent")]
-impl VersusMapMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusMapMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IVersusMapMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusmapmenucontent")]impl VersusMapMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusMapMenuContent), ::core::stringify!(new),));
+ <Self as IVersusMapMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusmapmenucontent")]

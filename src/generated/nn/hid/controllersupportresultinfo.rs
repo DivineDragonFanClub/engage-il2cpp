@@ -4,48 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/controllersupportresultinfo/ControllerSupportResultInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ControllerSupportResultInfo {
-    pub player_count: u8,
-    pub selected_id: crate :: nn :: hid :: npadid :: NpadId,
-    pub padding0: u8,
-    pub padding1: u8,
-    pub padding2: u8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/controllersupportresultinfo/ControllerSupportResultInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ControllerSupportResultInfo{pub player_count:u8,pub selected_id:crate::nn::hid::npadid::NpadId,pub padding0:u8,pub padding1:u8,pub padding2:u8,}
+impl::unity2::ClassIdentity for ControllerSupportResultInfo{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="ControllerSupportResultInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ControllerSupportResultInfo {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "ControllerSupportResultInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ControllerSupportResultInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ControllerSupportResultInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -53,11 +26,13 @@ impl ::unity2::IlType for ControllerSupportResultInfo {
 #[cfg(feature = "nn-hid-controllersupportresultinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-controllersupportresultinfo")]
-impl ControllerSupportResultInfo { # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut ControllerSupportResultInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253f5f0usize) as * mut u8) ; __inner (self as * mut ControllerSupportResultInfo , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-controllersupportresultinfo")]impl ControllerSupportResultInfo{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253f5f0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut ControllerSupportResultInfo)self as*mut ControllerSupportResultInfo)}
+}
+}
 
-#[cfg(feature = "nn-hid-controllersupportresultinfo")]
-impl ControllerSupportResultInfo { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ControllerSupportResultInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="nn-hid-controllersupportresultinfo")]impl ControllerSupportResultInfo{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "nn-hid-controllersupportresultinfo")]
 #[doc(hidden)]

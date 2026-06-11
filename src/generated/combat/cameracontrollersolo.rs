@@ -4,55 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollersolo/CameraControllerSolo.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerSolo")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerSolo {
-# [offset (168)] # [rename (name = "Distance")] pub distance : f32 ,
-# [offset (172)] # [rename (name = "TargetSide")] pub target_side : i32 ,
-# [offset (176)] # [rename (name = "FollowJoint")] pub follow_joint : crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint ,
-# [offset (180)] # [rename (name = "FollowVector")] pub follow_vector : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (192)] # [rename (name = "FollowVectorBigDragonLeg")] pub follow_vector_big_dragon_leg : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (204)] # [rename (name = "FollowVectorBigDragonFly")] pub follow_vector_big_dragon_fly : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (216)] # [rename (name = "LookAtJoint")] pub look_at_joint : crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint ,
-# [offset (220)] # [rename (name = "LookAtVector")] pub look_at_vector : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (232)] # [rename (name = "LookAtVectorBigDragonLeg")] pub look_at_vector_big_dragon_leg : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (244)] # [rename (name = "LookAtVectorBigDragonFly")] pub look_at_vector_big_dragon_fly : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (256)] # [rename (name = "LookCenterAndLookAt")] pub look_center_and_look_at : bool ,
-# [offset (257)] # [rename (name = "UnusableCheck")] pub unusable_check : bool ,
-# [offset (258)] # [rename (name = "m_IsCameraInverse")] pub m_is_camera_inverse : bool ,
-# [offset (259)] # [rename (name = "m_IsSideInverse")] pub m_is_side_inverse : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollersolo/CameraControllerSolo.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerSolo")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerSolo{#[offset(168)]#[rename(name="Distance")]pub distance:f32, #[offset(172)]#[rename(name="TargetSide")]pub target_side:i32, #[offset(176)]#[rename(name="FollowJoint")]pub follow_joint:crate::combat::camerapositiondata::CameraPositionData_TargetJoint, #[offset(180)]#[rename(name="FollowVector")]pub follow_vector:crate::unity_engine::vector3::Vector3, #[offset(192)]#[rename(name="FollowVectorBigDragonLeg")]pub follow_vector_big_dragon_leg:crate::unity_engine::vector3::Vector3, #[offset(204)]#[rename(name="FollowVectorBigDragonFly")]pub follow_vector_big_dragon_fly:crate::unity_engine::vector3::Vector3, #[offset(216)]#[rename(name="LookAtJoint")]pub look_at_joint:crate::combat::camerapositiondata::CameraPositionData_TargetJoint, #[offset(220)]#[rename(name="LookAtVector")]pub look_at_vector:crate::unity_engine::vector3::Vector3, #[offset(232)]#[rename(name="LookAtVectorBigDragonLeg")]pub look_at_vector_big_dragon_leg:crate::unity_engine::vector3::Vector3, #[offset(244)]#[rename(name="LookAtVectorBigDragonFly")]pub look_at_vector_big_dragon_fly:crate::unity_engine::vector3::Vector3, #[offset(256)]#[rename(name="LookCenterAndLookAt")]pub look_center_and_look_at:bool, #[offset(257)]#[rename(name="UnusableCheck")]pub unusable_check:bool, #[offset(258)]#[rename(name="m_IsCameraInverse")]pub m_is_camera_inverse:bool, #[offset(259)]#[rename(name="m_IsSideInverse")]pub m_is_side_inverse:bool,}
 
 }
 
 #[cfg(feature = "combat-cameracontrollersolo-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollersolo")]
-pub trait ICameraControllerSoloMethods : ICameraControllerSolo { # [doc = "`get_CameraTarget()` overload"] fn get_camera_target (self ,) -> i32 { unsafe { let __receiver = < CameraControllerSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerSolo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b3000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCombatVector(crate::unity_engine::vector3::Vector3)` overload"] fn get_combat_vector (self , vec : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraControllerSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerSolo , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b37c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (vec) , :: core :: option :: Option :: None) } } } # [doc = "`CheckUsable(bool)` overload"] fn check_usable (self , is_routine : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerSolo , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b38a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_routine) , :: core :: option :: Option :: None) } } } # [doc = "`SetInverse(bool, bool)` overload"] fn set_inverse (self , inv_side : impl :: core :: convert :: Into < bool > , inv_camera : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerSolo , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b3b70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inv_side) , :: core :: convert :: Into :: into (inv_camera) , :: core :: option :: Option :: None) } } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerSolo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b3bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deactivate()` overload"] fn deactivate (self ,) -> () { unsafe { let __receiver = < CameraControllerSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerSolo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b3bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerSolo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b3be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerSolo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerSolo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b3c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollersolo")]pub trait ICameraControllerSoloMethods:ICameraControllerSolo{#[doc="`get_CameraTarget()` overload"]fn get_camera_target(self,)->i32{unsafe{let __receiver= <CameraControllerSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b3000usize)as*mut u8,i32;
+(CameraControllerSolo)__receiver)}
+}
+#[doc="`GetCombatVector(crate::unity_engine::vector3::Vector3)` overload"]fn get_combat_vector(self,vec:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraControllerSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b37c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraControllerSolo)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(vec))}
+}
+#[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b38a0usize)as*mut u8,();
+(CameraControllerSolo)__receiver,(bool)::core::convert::Into::into(is_routine))}
+}
+#[doc="`SetInverse(bool, bool)` overload"]fn set_inverse(self,inv_side:impl::core::convert::Into<bool> ,inv_camera:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b3b70usize)as*mut u8,();
+(CameraControllerSolo)__receiver,(bool)::core::convert::Into::into(inv_side),(bool)::core::convert::Into::into(inv_camera))}
+}
+#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b3bc0usize)as*mut u8,();
+(CameraControllerSolo)__receiver)}
+}
+#[doc="`Deactivate()` overload"]fn deactivate(self,)->(){unsafe{let __receiver= <CameraControllerSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b3bd0usize)as*mut u8,();
+(CameraControllerSolo)__receiver)}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b3be0usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerSolo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerSolo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b3c80usize)as*mut u8,();
+(CameraControllerSolo)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameracontrollersolo")]
-impl < __T : ICameraControllerSolo > ICameraControllerSoloMethods for __T { }
+#[cfg(feature="combat-cameracontrollersolo")]impl<__T:ICameraControllerSolo>ICameraControllerSoloMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollersolo")]
-impl CameraControllerSolo { pub fn get_camera_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_combat_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn check_usable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_inverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn deactivate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerSolo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="combat-cameracontrollersolo")]impl CameraControllerSolo{pub fn get_camera_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_combat_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn check_usable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_inverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn deactivate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "combat-cameracontrollersolo")]
-impl CameraControllerSolo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerSolo) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerSoloMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollersolo")]impl CameraControllerSolo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerSolo), ::core::stringify!(new),));
+ <Self as ICameraControllerSoloMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameracontrollersolo")]

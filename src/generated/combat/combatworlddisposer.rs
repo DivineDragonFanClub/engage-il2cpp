@@ -4,25 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatworlddisposer/CombatWorldDisposer.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatWorldDisposer")] # [parent (crate :: system :: object :: Object)] pub struct CombatWorldDisposer {
-# [static_field] # [rename (name = "CompositeDisposable")] pub composite_disposable : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatworlddisposer/CombatWorldDisposer.md"))]#[::unity2::class(namespace="Combat",name="CombatWorldDisposer")]#[parent(crate::system::object::Object)]pub struct CombatWorldDisposer{#[static_field]#[rename(name="CompositeDisposable")]pub composite_disposable: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "combat-combatworlddisposer-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatworlddisposer")]
-impl CombatWorldDisposer { # [doc = "`Startup()` overload"] pub fn startup () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2934c10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292fbb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Shutdown()` overload"] pub fn shutdown () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2935070usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatworlddisposer")]impl CombatWorldDisposer{#[doc="`Startup()` overload"]pub fn startup()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2934c10usize)as*mut u8,();
+)}
+}
+#[doc="`Dispose()` overload"]pub fn dispose()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x292fbb0usize)as*mut u8,();
+)}
+}
+#[doc="`Shutdown()` overload"]pub fn shutdown()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2935070usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-combatworlddisposer")]
-impl CombatWorldDisposer { pub fn startup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatWorldDisposer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatWorldDisposer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatWorldDisposer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-combatworlddisposer")]impl CombatWorldDisposer{pub fn startup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "combat-combatworlddisposer")]
 #[doc(hidden)]

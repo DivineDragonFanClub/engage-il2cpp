@@ -4,42 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: statemachinebehaviour :: { IStateMachineBehaviour , StateMachineBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::statemachinebehaviour::{IStateMachineBehaviour,StateMachineBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapstatemachine/MapStateMachine.md"))] # [:: unity2 :: class (namespace = "" , name = "MapStateMachine")] # [parent (crate :: unity_engine :: statemachinebehaviour :: StateMachineBehaviour)] pub struct MapStateMachine {
-# [offset (24)] # [rename (name = "m_IsRandom")] pub m_is_random : bool ,
-# [static_field] # [rename (name = "s_HashIdles")] pub s_hash_idles : :: unity2 :: Array < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapstatemachine/MapStateMachine.md"))]#[::unity2::class(namespace="",name="MapStateMachine")]#[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]pub struct MapStateMachine{#[offset(24)]#[rename(name="m_IsRandom")]pub m_is_random:bool, #[static_field]#[rename(name="s_HashIdles")]pub s_hash_idles: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "root-mapstatemachine-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapstatemachine")]
-impl MapStateMachine { # [doc = "`IsPlaying(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo)` overload"] pub fn is_playing (animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`IsPlaying(crate::unity_engine::animator::Animator)` overload"] pub fn is_playing_2 (animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f518e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animator) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51a90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapstatemachine")]impl MapStateMachine{#[doc="`IsPlaying(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo)` overload"]pub fn is_playing(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f51780usize)as*mut u8,bool;
+(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(info))}
+}
+#[doc="`IsPlaying(crate::unity_engine::animator::Animator)` overload"]pub fn is_playing_2(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f518e0usize)as*mut u8,bool;
+(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f51a90usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-mapstatemachine")]
-pub trait IMapStateMachineMethods : IMapStateMachine { # [doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"] fn on_state_enter (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 > , controller : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable >) -> () { unsafe { let __receiver = < MapStateMachine as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapStateMachine , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: convert :: Into :: into (controller) , :: core :: option :: Option :: None) } } } # [doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_exit (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , animator_state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapStateMachine as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapStateMachine , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (animator_state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_update (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapStateMachine as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapStateMachine , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapStateMachine as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapStateMachine , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f51a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapstatemachine")]pub trait IMapStateMachineMethods:IMapStateMachine{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32> ,controller:impl::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>)->(){unsafe{let __receiver= <MapStateMachine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51600usize)as*mut u8,();
+(MapStateMachine)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index),(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)::core::convert::Into::into(controller))}
+}
+#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,animator_state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapStateMachine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51670usize)as*mut u8,();
+(MapStateMachine)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(animator_state_info),(i32)::core::convert::Into::into(layer_index))}
+}
+#[doc="`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_update(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapStateMachine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51680usize)as*mut u8,();
+(MapStateMachine)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapStateMachine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51a80usize)as*mut u8,();
+(MapStateMachine)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapstatemachine")]
-impl < __T : IMapStateMachine > IMapStateMachineMethods for __T { }
+#[cfg(feature="root-mapstatemachine")]impl<__T:IMapStateMachine>IMapStateMachineMethods for __T{}
 
-#[cfg(feature = "root-mapstatemachine")]
-impl MapStateMachine { pub fn on_state_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapStateMachine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_state_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapStateMachine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_state_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapStateMachine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapStateMachine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_playing_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapStateMachine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapStateMachine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapStateMachine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-mapstatemachine")]impl MapStateMachine{pub fn on_state_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_state_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_state_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_playing_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-mapstatemachine")]
-impl MapStateMachine {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapStateMachine) , :: core :: stringify ! (new) ,)) ; < Self as IMapStateMachineMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapstatemachine")]impl MapStateMachine{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapStateMachine), ::core::stringify!(new),));
+ <Self as IMapStateMachineMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapstatemachine")]

@@ -4,42 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: app :: mainmenusequence :: { IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent , MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::app::mainmenusequence::{IMainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent,MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/networkserviceselectmenucontent/NetworkServiceSelectMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "NetworkServiceSelectMenuContent")] # [parent (crate :: app :: mainmenusequence :: MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)] pub struct NetworkServiceSelectMenuContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/networkserviceselectmenucontent/NetworkServiceSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="NetworkServiceSelectMenuContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_NetworkServiceSelectMenuSequence_Menu_MenuContent)]pub struct NetworkServiceSelectMenuContent{}
 
 }
 
 #[cfg(feature = "app-networkserviceselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-networkserviceselectmenucontent")]
-pub trait INetworkServiceSelectMenuContentMethods : INetworkServiceSelectMenuContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NetworkServiceSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NetworkServiceSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f13dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-networkserviceselectmenucontent")]pub trait INetworkServiceSelectMenuContentMethods:INetworkServiceSelectMenuContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NetworkServiceSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f13dc0usize)as*mut u8,();
+(NetworkServiceSelectMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-networkserviceselectmenucontent")]
-impl < __T : INetworkServiceSelectMenuContent > INetworkServiceSelectMenuContentMethods for __T { }
+#[cfg(feature="app-networkserviceselectmenucontent")]impl<__T:INetworkServiceSelectMenuContent>INetworkServiceSelectMenuContentMethods for __T{}
 
-#[cfg(feature = "app-networkserviceselectmenucontent")]
-impl NetworkServiceSelectMenuContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NetworkServiceSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-networkserviceselectmenucontent")]impl NetworkServiceSelectMenuContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-networkserviceselectmenucontent")]
-impl NetworkServiceSelectMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NetworkServiceSelectMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as INetworkServiceSelectMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-networkserviceselectmenucontent")]impl NetworkServiceSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NetworkServiceSelectMenuContent), ::core::stringify!(new),));
+ <Self as INetworkServiceSelectMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-networkserviceselectmenucontent")]

@@ -4,102 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/samplewave/SampleWave_Temp.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SampleWave_Temp {
-    pub offset_u: f32,
-    pub offset_v: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/samplewave/SampleWave_Temp.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SampleWave_Temp{pub offset_u:f32,pub offset_v:f32,}
+impl::unity2::ClassIdentity for SampleWave_Temp{const NAMESPACE: &'static str="";
+const NAME: &'static str="SampleWave.Temp";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SampleWave_Temp{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for SampleWave_Temp {
-    const NAMESPACE: &'static str = "";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/samplewave/SampleWave.md"))]#[::unity2::class(namespace="",name="SampleWave")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SampleWave{#[offset(24)]#[rename(name="m_WaveTex")]pub m_wave_tex:crate::unity_engine::texture2d::Texture2D, #[offset(32)]#[rename(name="m_Colors")]pub m_colors: ::unity2::Array<crate::unity_engine::color::Color> , #[offset(40)]#[rename(name="m_Datas")]pub m_datas: ::unity2::Array<crate::root::samplewave::SampleWave_Data> , #[offset(48)]#[rename(name="m_Temps")]pub m_temps: ::unity2::Array<crate::root::samplewave::SampleWave_Temp> , #[static_field]#[rename(name="SIZE")]pub size:i32, #[offset(56)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(64)]#[rename(name="m_Ratio")]pub m_ratio:f32, #[offset(68)]#[rename(name="m_Scale")]pub m_scale:f32,}
 
-    const NAME: &'static str = "SampleWave.Temp";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/samplewave/SampleWave_Data.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SampleWave_Data{pub vector_u:f32,pub vector_v:f32,pub offset_u:f32,pub offset_v:f32,}
+impl::unity2::ClassIdentity for SampleWave_Data{const NAMESPACE: &'static str="";
+const NAME: &'static str="SampleWave.Data";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for SampleWave_Temp {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/samplewave/SampleWave.md"))] # [:: unity2 :: class (namespace = "" , name = "SampleWave")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct SampleWave {
-# [offset (24)] # [rename (name = "m_WaveTex")] pub m_wave_tex : crate :: unity_engine :: texture2d :: Texture2D ,
-# [offset (32)] # [rename (name = "m_Colors")] pub m_colors : :: unity2 :: Array < crate :: unity_engine :: color :: Color > ,
-# [offset (40)] # [rename (name = "m_Datas")] pub m_datas : :: unity2 :: Array < crate :: root :: samplewave :: SampleWave_Data > ,
-# [offset (48)] # [rename (name = "m_Temps")] pub m_temps : :: unity2 :: Array < crate :: root :: samplewave :: SampleWave_Temp > ,
-# [static_field] # [rename (name = "SIZE")] pub size : i32 ,
-# [offset (56)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (64)] # [rename (name = "m_Ratio")] pub m_ratio : f32 ,
-# [offset (68)] # [rename (name = "m_Scale")] pub m_scale : f32 ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/samplewave/SampleWave_Data.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SampleWave_Data {
-    pub vector_u: f32,
-    pub vector_v: f32,
-    pub offset_u: f32,
-    pub offset_v: f32,
-}
-
-
-impl ::unity2::ClassIdentity for SampleWave_Data {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "SampleWave.Data";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SampleWave_Data {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SampleWave_Data{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -107,18 +48,52 @@ impl ::unity2::IlType for SampleWave_Data {
 #[cfg(feature = "root-samplewave-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-samplewave")]
-pub trait ISampleWaveMethods : ISampleWave { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateWave()` overload"] fn update_wave (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetWave()` overload"] fn reset_wave (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateColor(crate::unity_engine::color::Color)` overload"] fn update_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMaterial()` overload"] fn create_material (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec40e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SampleWave as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SampleWave , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec46f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-samplewave")]pub trait ISampleWaveMethods:ISampleWave{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <SampleWave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3cd0usize)as*mut u8,();
+(SampleWave)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <SampleWave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec4280usize)as*mut u8,();
+(SampleWave)__receiver)}
+}
+#[doc="`UpdateWave()` overload"]fn update_wave(self,)->(){unsafe{let __receiver= <SampleWave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec4290usize)as*mut u8,();
+(SampleWave)__receiver)}
+}
+#[doc="`ResetWave()` overload"]fn reset_wave(self,)->(){unsafe{let __receiver= <SampleWave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3fb0usize)as*mut u8,();
+(SampleWave)__receiver)}
+}
+#[doc="`UpdateColor(crate::unity_engine::color::Color)` overload"]fn update_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <SampleWave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3e50usize)as*mut u8,();
+(SampleWave)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`CreateMaterial()` overload"]fn create_material(self,)->(){unsafe{let __receiver= <SampleWave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec40e0usize)as*mut u8,();
+(SampleWave)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SampleWave as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec46f0usize)as*mut u8,();
+(SampleWave)__receiver)}
+}
+}
 
-#[cfg(feature = "root-samplewave")]
-impl < __T : ISampleWave > ISampleWaveMethods for __T { }
+#[cfg(feature="root-samplewave")]impl<__T:ISampleWave>ISampleWaveMethods for __T{}
 
-#[cfg(feature = "root-samplewave")]
-impl SampleWave { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_wave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn reset_wave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SampleWave as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-samplewave")]impl SampleWave{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_wave_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_wave_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-samplewave")]
-impl SampleWave {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SampleWave) , :: core :: stringify ! (new) ,)) ; < Self as ISampleWaveMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-samplewave")]impl SampleWave{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SampleWave), ::core::stringify!(new),));
+ <Self as ISampleWaveMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-samplewave")]

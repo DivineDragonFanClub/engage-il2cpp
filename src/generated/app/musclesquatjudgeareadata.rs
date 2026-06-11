@@ -4,39 +4,121 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclesquatjudgeareadata/MuscleSquatJudgeAreaData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleSquatJudgeAreaData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: musclesquatjudgeareadata :: MuscleSquatJudgeAreaData >)] pub struct MuscleSquatJudgeAreaData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclesquatjudgeareadata/MuscleSquatJudgeAreaData.md"))]#[::unity2::class(namespace="App",name="MuscleSquatJudgeAreaData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData>)]pub struct MuscleSquatJudgeAreaData{}
 
 }
 
 #[cfg(feature = "app-musclesquatjudgeareadata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-musclesquatjudgeareadata")]
-impl MuscleSquatJudgeAreaData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcac90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclesquatjudgeareadata")]impl MuscleSquatJudgeAreaData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dcac90usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-musclesquatjudgeareadata")]
-pub trait IMuscleSquatJudgeAreaDataMethods : IMuscleSquatJudgeAreaData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcab30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcab40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BadFrameFirst()` overload"] fn get_bad_frame_first (self ,) -> f32 { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcab50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BadFrameFirst(f32)` overload"] fn set_bad_frame_first (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcab60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GoodFrameFirst()` overload"] fn get_good_frame_first (self ,) -> f32 { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcab70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GoodFrameFirst(f32)` overload"] fn set_good_frame_first (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcab80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PerfectFrameFirst()` overload"] fn get_perfect_frame_first (self ,) -> f32 { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcab90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PerfectFrameFirst(f32)` overload"] fn set_perfect_frame_first (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcaba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PerfectFrameLatter()` overload"] fn get_perfect_frame_latter (self ,) -> f32 { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcabb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PerfectFrameLatter(f32)` overload"] fn set_perfect_frame_latter (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcabc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GoodFrameLatter()` overload"] fn get_good_frame_latter (self ,) -> f32 { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcabd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GoodFrameLatter(f32)` overload"] fn set_good_frame_latter (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcabe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BadFrameLatter()` overload"] fn get_bad_frame_latter (self ,) -> f32 { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcabf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BadFrameLatter(f32)` overload"] fn set_bad_frame_latter (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcac00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcac10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MuscleSquatJudgeAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcad40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclesquatjudgeareadata")]pub trait IMuscleSquatJudgeAreaDataMethods:IMuscleSquatJudgeAreaData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcab30usize)as*mut u8, ::unity2::Il2CppString;
+(MuscleSquatJudgeAreaData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcab40usize)as*mut u8,();
+(MuscleSquatJudgeAreaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BadFrameFirst()` overload"]fn get_bad_frame_first(self,)->f32{unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcab50usize)as*mut u8,f32;
+(MuscleSquatJudgeAreaData)__receiver)}
+}
+#[doc="`set_BadFrameFirst(f32)` overload"]fn set_bad_frame_first(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcab60usize)as*mut u8,();
+(MuscleSquatJudgeAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_GoodFrameFirst()` overload"]fn get_good_frame_first(self,)->f32{unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcab70usize)as*mut u8,f32;
+(MuscleSquatJudgeAreaData)__receiver)}
+}
+#[doc="`set_GoodFrameFirst(f32)` overload"]fn set_good_frame_first(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcab80usize)as*mut u8,();
+(MuscleSquatJudgeAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PerfectFrameFirst()` overload"]fn get_perfect_frame_first(self,)->f32{unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcab90usize)as*mut u8,f32;
+(MuscleSquatJudgeAreaData)__receiver)}
+}
+#[doc="`set_PerfectFrameFirst(f32)` overload"]fn set_perfect_frame_first(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcaba0usize)as*mut u8,();
+(MuscleSquatJudgeAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PerfectFrameLatter()` overload"]fn get_perfect_frame_latter(self,)->f32{unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcabb0usize)as*mut u8,f32;
+(MuscleSquatJudgeAreaData)__receiver)}
+}
+#[doc="`set_PerfectFrameLatter(f32)` overload"]fn set_perfect_frame_latter(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcabc0usize)as*mut u8,();
+(MuscleSquatJudgeAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_GoodFrameLatter()` overload"]fn get_good_frame_latter(self,)->f32{unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcabd0usize)as*mut u8,f32;
+(MuscleSquatJudgeAreaData)__receiver)}
+}
+#[doc="`set_GoodFrameLatter(f32)` overload"]fn set_good_frame_latter(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcabe0usize)as*mut u8,();
+(MuscleSquatJudgeAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BadFrameLatter()` overload"]fn get_bad_frame_latter(self,)->f32{unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcabf0usize)as*mut u8,f32;
+(MuscleSquatJudgeAreaData)__receiver)}
+}
+#[doc="`set_BadFrameLatter(f32)` overload"]fn set_bad_frame_latter(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcac00usize)as*mut u8,();
+(MuscleSquatJudgeAreaData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcac10usize)as*mut u8,();
+(MuscleSquatJudgeAreaData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MuscleSquatJudgeAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcad40usize)as*mut u8,();
+(MuscleSquatJudgeAreaData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-musclesquatjudgeareadata")]
-impl < __T : IMuscleSquatJudgeAreaData > IMuscleSquatJudgeAreaDataMethods for __T { }
+#[cfg(feature="app-musclesquatjudgeareadata")]impl<__T:IMuscleSquatJudgeAreaData>IMuscleSquatJudgeAreaDataMethods for __T{}
 
-#[cfg(feature = "app-musclesquatjudgeareadata")]
-impl MuscleSquatJudgeAreaData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_bad_frame_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_bad_frame_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_good_frame_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_good_frame_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_perfect_frame_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_perfect_frame_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_perfect_frame_latter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_perfect_frame_latter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_good_frame_latter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_good_frame_latter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_bad_frame_latter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_bad_frame_latter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatJudgeAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-musclesquatjudgeareadata")]impl MuscleSquatJudgeAreaData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_bad_frame_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_bad_frame_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_good_frame_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_good_frame_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_perfect_frame_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_perfect_frame_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_perfect_frame_latter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_perfect_frame_latter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_good_frame_latter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_good_frame_latter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_bad_frame_latter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_bad_frame_latter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-musclesquatjudgeareadata")]
-impl MuscleSquatJudgeAreaData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MuscleSquatJudgeAreaData) , :: core :: stringify ! (new) ,)) ; < Self as IMuscleSquatJudgeAreaDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-musclesquatjudgeareadata")]impl MuscleSquatJudgeAreaData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MuscleSquatJudgeAreaData), ::core::stringify!(new),));
+ <Self as IMuscleSquatJudgeAreaDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-musclesquatjudgeareadata")]

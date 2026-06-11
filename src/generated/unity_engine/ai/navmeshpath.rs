@@ -4,36 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ai/navmeshpath/NavMeshPath.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AI" , name = "NavMeshPath")] # [parent (crate :: system :: object :: Object)] pub struct NavMeshPath {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_Corners")] pub m_corners : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmeshpath/NavMeshPath.md"))]#[::unity2::class(namespace="UnityEngine.AI",name="NavMeshPath")]#[parent(crate::system::object::Object)]pub struct NavMeshPath{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_Corners")]pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
 
 }
 
 #[cfg(feature = "unity_engine-ai-navmeshpath-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ai-navmeshpath")]
-impl NavMeshPath { # [doc = "`InitializeNavMeshPath()` overload"] pub fn initialize_nav_mesh_path () -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43fc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DestroyNavMeshPath(::unity2::IntPtr)` overload"] pub fn destroy_nav_mesh_path (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f440c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ai-navmeshpath")]impl NavMeshPath{#[doc="`InitializeNavMeshPath()` overload"]pub fn initialize_nav_mesh_path()-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f43fc0usize)as*mut u8, ::unity2::IntPtr;
+)}
+}
+#[doc="`DestroyNavMeshPath(::unity2::IntPtr)` overload"]pub fn destroy_nav_mesh_path(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f440c0usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-ai-navmeshpath")]
-pub trait INavMeshPathMethods : INavMeshPath { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NavMeshPath as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMeshPath , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < NavMeshPath as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMeshPath , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateCornersInternal()` overload"] fn calculate_corners_internal (self ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > { unsafe { let __receiver = < NavMeshPath as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMeshPath , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearCornersInternal()` overload"] fn clear_corners_internal (self ,) -> () { unsafe { let __receiver = < NavMeshPath as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMeshPath , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearCorners()` overload"] fn clear_corners (self ,) -> () { unsafe { let __receiver = < NavMeshPath as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMeshPath , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f434d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateCorners()` overload"] fn calculate_corners (self ,) -> () { unsafe { let __receiver = < NavMeshPath as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMeshPath , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f441b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_corners()` overload"] fn get_corners (self ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > { unsafe { let __receiver = < NavMeshPath as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMeshPath , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_status()` overload"] fn get_status (self ,) -> crate :: unity_engine :: ai :: navmeshpathstatus :: NavMeshPathStatus { unsafe { let __receiver = < NavMeshPath as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMeshPath , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ai :: navmeshpathstatus :: NavMeshPathStatus = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f442b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ai-navmeshpath")]pub trait INavMeshPathMethods:INavMeshPath{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f43f70usize)as*mut u8,();
+(NavMeshPath)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44000usize)as*mut u8,();
+(NavMeshPath)__receiver)}
+}
+#[doc="`CalculateCornersInternal()` overload"]fn calculate_corners_internal(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44110usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;
+(NavMeshPath)__receiver)}
+}
+#[doc="`ClearCornersInternal()` overload"]fn clear_corners_internal(self,)->(){unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44160usize)as*mut u8,();
+(NavMeshPath)__receiver)}
+}
+#[doc="`ClearCorners()` overload"]fn clear_corners(self,)->(){unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f434d0usize)as*mut u8,();
+(NavMeshPath)__receiver)}
+}
+#[doc="`CalculateCorners()` overload"]fn calculate_corners(self,)->(){unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f441b0usize)as*mut u8,();
+(NavMeshPath)__receiver)}
+}
+#[doc="`get_corners()` overload"]fn get_corners(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44230usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;
+(NavMeshPath)__receiver)}
+}
+#[doc="`get_status()` overload"]fn get_status(self,)->crate::unity_engine::ai::navmeshpathstatus::NavMeshPathStatus{unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f442b0usize)as*mut u8,crate::unity_engine::ai::navmeshpathstatus::NavMeshPathStatus;
+(NavMeshPath)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ai-navmeshpath")]
-impl < __T : INavMeshPath > INavMeshPathMethods for __T { }
+#[cfg(feature="unity_engine-ai-navmeshpath")]impl<__T:INavMeshPath>INavMeshPathMethods for __T{}
 
-#[cfg(feature = "unity_engine-ai-navmeshpath")]
-impl NavMeshPath { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn initialize_nav_mesh_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn destroy_nav_mesh_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calculate_corners_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn clear_corners_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn clear_corners_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calculate_corners_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_corners_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshPath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-ai-navmeshpath")]impl NavMeshPath{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn initialize_nav_mesh_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn destroy_nav_mesh_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calculate_corners_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clear_corners_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_corners_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calculate_corners_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_corners_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "unity_engine-ai-navmeshpath")]
-impl NavMeshPath {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NavMeshPath) , :: core :: stringify ! (new) ,)) ; < Self as INavMeshPathMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ai-navmeshpath")]impl NavMeshPath{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NavMeshPath), ::core::stringify!(new),));
+ <Self as INavMeshPathMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ai-navmeshpath")]

@@ -4,41 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: procwaitmessagebase :: { IProcWaitMessageBase , ProcWaitMessageBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::procwaitmessagebase::{IProcWaitMessageBase,ProcWaitMessageBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonwaitmessage/CommonWaitMessage.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonWaitMessage")] # [parent (crate :: app :: procwaitmessagebase :: ProcWaitMessageBase)] pub struct CommonWaitMessage {
-# [offset (120)] # [rename (name = "m_IsLoopSE")] pub m_is_loop_se : bool ,
-# [offset (121)] # [rename (name = "m_IsPlaySE")] pub m_is_play_se : bool ,
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: app :: commonwaitmessage :: CommonWaitMessage ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonwaitmessage/CommonWaitMessage.md"))]#[::unity2::class(namespace="App",name="CommonWaitMessage")]#[parent(crate::app::procwaitmessagebase::ProcWaitMessageBase)]pub struct CommonWaitMessage{#[offset(120)]#[rename(name="m_IsLoopSE")]pub m_is_loop_se:bool, #[offset(121)]#[rename(name="m_IsPlaySE")]pub m_is_play_se:bool, #[static_field]#[rename(name="s_Instance")]pub s_instance:crate::app::commonwaitmessage::CommonWaitMessage,}
 
 }
 
 #[cfg(feature = "app-commonwaitmessage-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commonwaitmessage")]
-impl CommonWaitMessage { # [doc = "`Open(::unity2::Il2CppString, bool, bool)` overload"] pub fn open (msg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_play_sound : impl :: core :: convert :: Into < bool > , is_hide_wait_anime : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536160usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (msg) , :: core :: convert :: Into :: into (is_play_sound) , :: core :: convert :: Into :: into (is_hide_wait_anime) , :: core :: option :: Option :: None) } } } # [doc = "`Close(bool)` overload"] pub fn close (is_success : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25364f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_success) , :: core :: option :: Option :: None) } } } # [doc = "`IsAlive()` overload"] pub fn is_alive () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536600usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonwaitmessage")]impl CommonWaitMessage{#[doc="`Open(::unity2::Il2CppString, bool, bool)` overload"]pub fn open(msg:impl::core::convert::Into< ::unity2::Il2CppString> ,is_play_sound:impl::core::convert::Into<bool> ,is_hide_wait_anime:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2536160usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(msg),(bool)::core::convert::Into::into(is_play_sound),(bool)::core::convert::Into::into(is_hide_wait_anime))}
+}
+#[doc="`Close(bool)` overload"]pub fn close(is_success:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25364f0usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_success))}
+}
+#[doc="`IsAlive()` overload"]pub fn is_alive()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2536600usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "app-commonwaitmessage")]
-pub trait ICommonWaitMessageMethods : ICommonWaitMessage { # [doc = "`.ctor(bool)` overload"] fn ctor (self , is_play_sound : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonWaitMessage , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_play_sound) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonWaitMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayLoopSE()` overload"] fn play_loop_se (self ,) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonWaitMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25366e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopLoopSE()` overload"] fn stop_loop_se (self ,) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonWaitMessage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25365e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayResultSE(bool)` overload"] fn play_result_se (self , is_success : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CommonWaitMessage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonWaitMessage , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25365f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_success) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonwaitmessage")]pub trait ICommonWaitMessageMethods:ICommonWaitMessage{#[doc="`.ctor(bool)` overload"]fn ctor(self,is_play_sound:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CommonWaitMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2536590usize)as*mut u8,();
+(CommonWaitMessage)__receiver,(bool)::core::convert::Into::into(is_play_sound))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <CommonWaitMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2536700usize)as*mut u8,();
+(CommonWaitMessage)__receiver)}
+}
+#[doc="`PlayLoopSE()` overload"]fn play_loop_se(self,)->(){unsafe{let __receiver= <CommonWaitMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25366e0usize)as*mut u8,();
+(CommonWaitMessage)__receiver)}
+}
+#[doc="`StopLoopSE()` overload"]fn stop_loop_se(self,)->(){unsafe{let __receiver= <CommonWaitMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25365e0usize)as*mut u8,();
+(CommonWaitMessage)__receiver)}
+}
+#[doc="`PlayResultSE(bool)` overload"]fn play_result_se(self,is_success:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CommonWaitMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25365f0usize)as*mut u8,();
+(CommonWaitMessage)__receiver,(bool)::core::convert::Into::into(is_success))}
+}
+}
 
-#[cfg(feature = "app-commonwaitmessage")]
-impl < __T : ICommonWaitMessage > ICommonWaitMessageMethods for __T { }
+#[cfg(feature="app-commonwaitmessage")]impl<__T:ICommonWaitMessage>ICommonWaitMessageMethods for __T{}
 
-#[cfg(feature = "app-commonwaitmessage")]
-impl CommonWaitMessage { pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn play_loop_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn stop_loop_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn play_result_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonWaitMessage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-commonwaitmessage")]impl CommonWaitMessage{pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn play_loop_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn stop_loop_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn play_result_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-commonwaitmessage")]
-impl CommonWaitMessage {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (is_play_sound : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonWaitMessage) , :: core :: stringify ! (new) ,)) ; < Self as ICommonWaitMessageMethods > :: ctor (this , is_play_sound) ; this }
+#[cfg(feature="app-commonwaitmessage")]impl CommonWaitMessage{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_play_sound:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonWaitMessage), ::core::stringify!(new),));
+ <Self as ICommonWaitMessageMethods> ::ctor(this,is_play_sound);
+this}
 }
 
 #[cfg(feature = "app-commonwaitmessage")]

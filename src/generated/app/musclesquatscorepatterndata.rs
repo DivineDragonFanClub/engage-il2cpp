@@ -4,39 +4,161 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclesquatscorepatterndata/MuscleSquatScorePatternData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleSquatScorePatternData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: musclesquatscorepatterndata :: MuscleSquatScorePatternData >)] pub struct MuscleSquatScorePatternData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclesquatscorepatterndata/MuscleSquatScorePatternData.md"))]#[::unity2::class(namespace="App",name="MuscleSquatScorePatternData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::musclesquatscorepatterndata::MuscleSquatScorePatternData>)]pub struct MuscleSquatScorePatternData{}
 
 }
 
 #[cfg(feature = "app-musclesquatscorepatterndata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-musclesquatscorepatterndata")]
-impl MuscleSquatScorePatternData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb310usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclesquatscorepatterndata")]impl MuscleSquatScorePatternData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb310usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-musclesquatscorepatterndata")]
-pub trait IMuscleSquatScorePatternDataMethods : IMuscleSquatScorePatternData { # [doc = "`get_TypeA_L()` overload"] fn get_type_a_l (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeA_L(i32)` overload"] fn set_type_a_l (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeA_R()` overload"] fn get_type_a_r (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeA_R(i32)` overload"] fn set_type_a_r (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeB_L()` overload"] fn get_type_b_l (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeB_L(i32)` overload"] fn set_type_b_l (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeB_R()` overload"] fn get_type_b_r (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeB_R(i32)` overload"] fn set_type_b_r (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb1a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeC_L()` overload"] fn get_type_c_l (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeC_L(i32)` overload"] fn set_type_c_l (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb1c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeC_R()` overload"] fn get_type_c_r (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeC_R(i32)` overload"] fn set_type_c_r (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb1e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeD_L()` overload"] fn get_type_d_l (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeD_L(i32)` overload"] fn set_type_d_l (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeD_R()` overload"] fn get_type_d_r (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeD_R(i32)` overload"] fn set_type_d_r (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeE_L()` overload"] fn get_type_e_l (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeE_L(i32)` overload"] fn set_type_e_l (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeE_R()` overload"] fn get_type_e_r (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeE_R(i32)` overload"] fn set_type_e_r (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Ensure()` overload"] fn get_ensure (self ,) -> i32 { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Ensure(i32)` overload"] fn set_ensure (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MuscleSquatScorePatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSquatScorePatternData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dcb3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclesquatscorepatterndata")]pub trait IMuscleSquatScorePatternDataMethods:IMuscleSquatScorePatternData{#[doc="`get_TypeA_L()` overload"]fn get_type_a_l(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb130usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeA_L(i32)` overload"]fn set_type_a_l(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb140usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TypeA_R()` overload"]fn get_type_a_r(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb150usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeA_R(i32)` overload"]fn set_type_a_r(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb160usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TypeB_L()` overload"]fn get_type_b_l(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb170usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeB_L(i32)` overload"]fn set_type_b_l(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb180usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TypeB_R()` overload"]fn get_type_b_r(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb190usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeB_R(i32)` overload"]fn set_type_b_r(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb1a0usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TypeC_L()` overload"]fn get_type_c_l(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb1b0usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeC_L(i32)` overload"]fn set_type_c_l(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb1c0usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TypeC_R()` overload"]fn get_type_c_r(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb1d0usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeC_R(i32)` overload"]fn set_type_c_r(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb1e0usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TypeD_L()` overload"]fn get_type_d_l(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb1f0usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeD_L(i32)` overload"]fn set_type_d_l(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb200usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TypeD_R()` overload"]fn get_type_d_r(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb210usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeD_R(i32)` overload"]fn set_type_d_r(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb220usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TypeE_L()` overload"]fn get_type_e_l(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb230usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeE_L(i32)` overload"]fn set_type_e_l(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb240usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TypeE_R()` overload"]fn get_type_e_r(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb250usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_TypeE_R(i32)` overload"]fn set_type_e_r(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb260usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Ensure()` overload"]fn get_ensure(self,)->i32{unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb270usize)as*mut u8,i32;
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`set_Ensure(i32)` overload"]fn set_ensure(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb280usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb290usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MuscleSquatScorePatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcb3c0usize)as*mut u8,();
+(MuscleSquatScorePatternData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-musclesquatscorepatterndata")]
-impl < __T : IMuscleSquatScorePatternData > IMuscleSquatScorePatternDataMethods for __T { }
+#[cfg(feature="app-musclesquatscorepatterndata")]impl<__T:IMuscleSquatScorePatternData>IMuscleSquatScorePatternDataMethods for __T{}
 
-#[cfg(feature = "app-musclesquatscorepatterndata")]
-impl MuscleSquatScorePatternData { pub fn get_type_a_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_type_a_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_type_a_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_type_a_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_type_b_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_type_b_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_type_b_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_type_b_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_type_c_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_type_c_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_type_c_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_type_c_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_type_d_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_type_d_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_type_d_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_type_d_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_type_e_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_type_e_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_type_e_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_type_e_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_ensure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_ensure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSquatScorePatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } }
+#[cfg(feature="app-musclesquatscorepatterndata")]impl MuscleSquatScorePatternData{pub fn get_type_a_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_type_a_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_type_a_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_type_a_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_type_b_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_type_b_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_type_b_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_type_b_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_type_c_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_type_c_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_type_c_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_type_c_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_type_d_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_type_d_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_type_d_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_type_d_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_type_e_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_type_e_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_type_e_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_type_e_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_ensure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_ensure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
 
-#[cfg(feature = "app-musclesquatscorepatterndata")]
-impl MuscleSquatScorePatternData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MuscleSquatScorePatternData) , :: core :: stringify ! (new) ,)) ; < Self as IMuscleSquatScorePatternDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-musclesquatscorepatterndata")]impl MuscleSquatScorePatternData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MuscleSquatScorePatternData), ::core::stringify!(new),));
+ <Self as IMuscleSquatScorePatternDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-musclesquatscorepatterndata")]

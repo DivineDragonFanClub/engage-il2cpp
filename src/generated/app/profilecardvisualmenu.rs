@@ -4,179 +4,206 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: gridmenu :: { GridMenu , IGridMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::gridmenu::{GridMenu,IGridMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardVisualMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualmenu/ProfileCardVisualMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardVisualMenu")]#[parent(crate::app::gridmenu::GridMenu)]pub struct ProfileCardVisualMenu{#[offset(216)]#[rename(name="CaptionMid")]pub caption_mid: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="m_MenuItemIndexNone")]pub m_menu_item_index_none:i32, #[offset(224)]#[rename(name="m_ProfileCardRoot")]pub m_profile_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(232)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(240)]#[rename(name="m_DecidedMenuItemIndex")]pub m_decided_menu_item_index:i32, #[offset(244)]#[rename(name="m_Category")]pub m_category:crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, #[offset(248)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(256)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, #[offset(264)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_DisposeEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualMenu.DisposeEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardVisualMenu_DisposeEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualmenu/ProfileCardVisualMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardVisualMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardVisualMenu_DecideEventHandler{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_Category.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ProfileCardVisualMenu_Category  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualmenu/ProfileCardVisualMenu_Category.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardVisualMenu_Category{pub value:i32,}
+impl::unity2::ClassIdentity for ProfileCardVisualMenu_Category{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ProfileCardVisualMenu.Category";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ProfileCardVisualMenu_Category{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ProfileCardVisualMenu_Category{pub fn bg()->Self{Self{value:0}
+}
+pub fn frame()->Self{Self{value:1}
+}
+pub fn text_deco()->Self{Self{value:2}
+}
+pub fn text_color()->Self{Self{value:3}
+}
+pub fn character_stamp()->Self{Self{value:4}
+}
+pub fn num()->Self{Self{value:5}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for ProfileCardVisualMenu_Category  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProfileCardVisualMenu.Category";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ProfileCardVisualMenu_Category  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ProfileCardVisualMenu_Category  {
-    pub fn bg() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn frame() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn text_deco() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn text_color() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn character_stamp() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualmenu/ProfileCardVisualMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualMenu")] # [parent (crate :: app :: gridmenu :: GridMenu)] pub struct ProfileCardVisualMenu {
-# [offset (216)] # [rename (name = "CaptionMid")] pub caption_mid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "m_MenuItemIndexNone")] pub m_menu_item_index_none : i32 ,
-# [offset (224)] # [rename (name = "m_ProfileCardRoot")] pub m_profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
-# [offset (232)] # [rename (name = "m_MyProfileCardTemp")] pub m_my_profile_card_temp : crate :: app :: profilecard :: ProfileCard ,
-# [offset (240)] # [rename (name = "m_DecidedMenuItemIndex")] pub m_decided_menu_item_index : i32 ,
-# [offset (244)] # [rename (name = "m_Category")] pub m_category : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category ,
-# [offset (248)] # [rename (name = "m_Selects")] pub m_selects : :: unity2 :: Array < crate :: app :: basicmenuselect :: BasicMenuSelect > ,
-# [offset (256)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler ,
-# [offset (264)] # [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualmenu/ProfileCardVisualMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardVisualMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardVisualMenu_DisposeEventHandler{}
 
 }
 
 #[cfg(feature = "app-profilecardvisualmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardvisualmenu")]
-pub trait IProfileCardVisualMenu_DecideEventHandlerMethods : IProfileCardVisualMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardVisualMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226e240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, ::unity2::Il2CppString)` overload"] fn invoke (self , category : impl :: core :: convert :: Into < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category > , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardVisualMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu_DecideEventHandler , crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226e260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (category) , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl < __T : IProfileCardVisualMenu_DecideEventHandler > IProfileCardVisualMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl ProfileCardVisualMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl ProfileCardVisualMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-profilecardvisualmenu")]impl ProfileCardVisualMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent> ,profile_card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,initial_category:impl::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler>)->crate::app::profilecardvisualmenu::ProfileCardVisualMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c04c20usize)as*mut u8,crate::app::profilecardvisualmenu::ProfileCardVisualMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent)::core::convert::Into::into(menu_content),(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(profile_card_root),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category)::core::convert::Into::into(initial_category),(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
+}
+#[doc="`CreateMenuItem(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, crate::app::profilecard::ProfileCard, *muti32)` overload"]pub fn create_menu_item(category:impl::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard>)->(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2c04d70usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category)::core::convert::Into::into(category),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(*mut i32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c06b10usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-profilecardvisualmenu")]
-pub trait IProfileCardVisualMenu_DisposeEventHandlerMethods : IProfileCardVisualMenu_DisposeEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardVisualMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu_DisposeEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226e580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226e5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl < __T : IProfileCardVisualMenu_DisposeEventHandler > IProfileCardVisualMenu_DisposeEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl ProfileCardVisualMenu_DisposeEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl ProfileCardVisualMenu_DisposeEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualMenu_DisposeEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualMenu_DisposeEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-profilecardvisualmenu")]pub trait IProfileCardVisualMenuMethods:IProfileCardVisualMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, i32, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::gridmenucontent::GridMenuContent> ,profile_card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,category:impl::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category> ,initial_decided_index:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler>)->(){unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c05930usize)as*mut u8,();
+(ProfileCardVisualMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::gridmenucontent::GridMenuContent)::core::convert::Into::into(menu_content),(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(profile_card_root),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category)::core::convert::Into::into(category),(i32)::core::convert::Into::into(initial_decided_index),(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
+}
+#[doc="`OnBuild(bool)` overload"]fn on_build(self,is_first_build:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c05f20usize)as*mut u8,();
+(ProfileCardVisualMenu)__receiver,(bool)::core::convert::Into::into(is_first_build))}
+}
+#[doc="`RebuildMenu()` overload"]fn rebuild_menu(self,)->(){unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c06060usize)as*mut u8,();
+(ProfileCardVisualMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c06220usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardVisualMenu)__receiver)}
+}
+#[doc="`GetSelect()` overload"]fn get_select(self,)->crate::app::basicmenuselect::BasicMenuSelect{unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c061b0usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
+(ProfileCardVisualMenu)__receiver)}
+}
+#[doc="`UpdateDecided(i32)` overload"]fn update_decided(self,menu_item_index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03600usize)as*mut u8,bool;
+(ProfileCardVisualMenu)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`UpdateDecidedRemovable(i32)` overload"]fn update_decided_removable(self,menu_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c065f0usize)as*mut u8,();
+(ProfileCardVisualMenu)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`UpdateProfileData(bool)` overload"]fn update_profile_data(self,remove:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c06270usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardVisualMenu)__receiver,(bool)::core::convert::Into::into(remove))}
+}
+#[doc="`UpdateContent()` overload"]fn update_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c05dc0usize)as*mut u8,();
+(ProfileCardVisualMenu)__receiver)}
+}
+#[doc="`UpdateCardRoot(i32)` overload"]fn update_card_root(self,menu_item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c031b0usize)as*mut u8,();
+(ProfileCardVisualMenu)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProfileCardVisualMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c06a30usize)as*mut u8,();
+(ProfileCardVisualMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl ProfileCardVisualMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_content : impl :: core :: convert :: Into < crate :: app :: profilecardvisualmenucontent :: ProfileCardVisualMenuContent > , profile_card_root : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot > , my_profile_card_temp : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard > , initial_category : impl :: core :: convert :: Into < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler >) -> crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardvisualmenucontent :: ProfileCardVisualMenuContent , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category , crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler , crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04c20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (profile_card_root) , :: core :: convert :: Into :: into (my_profile_card_temp) , :: core :: convert :: Into :: into (initial_category) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenuItem(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, crate::app::profilecard::ProfileCard, *muti32)` overload"] pub fn create_menu_item (category : impl :: core :: convert :: Into < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category > , my_profile_card_temp : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard >) -> (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category , crate :: app :: profilecard :: ProfileCard , * mut i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c04d70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (category) , :: core :: convert :: Into :: into (my_profile_card_temp) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c06b10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvisualmenu")]impl<__T:IProfileCardVisualMenu>IProfileCardVisualMenuMethods for __T{}
 
-#[cfg(feature = "app-profilecardvisualmenu")]
-pub trait IProfileCardVisualMenuMethods : IProfileCardVisualMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, i32, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: gridmenucontent :: GridMenuContent > , profile_card_root : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot > , my_profile_card_temp : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard > , category : impl :: core :: convert :: Into < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category > , initial_decided_index : impl :: core :: convert :: Into < i32 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler >) -> () { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: gridmenucontent :: GridMenuContent , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category , i32 , crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler , crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c05930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (profile_card_root) , :: core :: convert :: Into :: into (my_profile_card_temp) , :: core :: convert :: Into :: into (category) , :: core :: convert :: Into :: into (initial_decided_index) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild(bool)` overload"] fn on_build (self , is_first_build : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c05f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_first_build) , :: core :: option :: Option :: None) } } } # [doc = "`RebuildMenu()` overload"] fn rebuild_menu (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c06060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c06220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSelect()` overload"] fn get_select (self ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c061b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDecided(i32)` overload"] fn update_decided (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDecidedRemovable(i32)` overload"] fn update_decided_removable (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c065f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateProfileData(bool)` overload"] fn update_profile_data (self , remove : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c06270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (remove) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateContent()` overload"] fn update_content (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c05dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCardRoot(i32)` overload"] fn update_card_root (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c031b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c06a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvisualmenu")]impl ProfileCardVisualMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_decided_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_decided_removable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_profile_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn update_card_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl < __T : IProfileCardVisualMenu > IProfileCardVisualMenuMethods for __T { }
+#[cfg(feature="app-profilecardvisualmenu")]impl ProfileCardVisualMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, i32, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::gridmenucontent::GridMenuContent,profile_card_root:crate::app::profilecardroot::ProfileCardRoot,my_profile_card_temp:crate::app::profilecard::ProfileCard,category:crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,initial_decided_index:i32,decide_event_handler:crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,dispose_event_handler:crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVisualMenu), ::core::stringify!(new),));
+ <Self as IProfileCardVisualMenuMethods> ::ctor(this,menu_item_list,menu_content,profile_card_root,my_profile_card_temp,category,initial_decided_index,decide_event_handler,dispose_event_handler);
+this}
+}
 
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl ProfileCardVisualMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn rebuild_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_decided_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_decided_removable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_profile_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn update_card_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-profilecardvisualmenu")]pub trait IProfileCardVisualMenu_DecideEventHandlerMethods:IProfileCardVisualMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardVisualMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226e240usize)as*mut u8,();
+(ProfileCardVisualMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, ::unity2::Il2CppString)` overload"]fn invoke(self,category:impl::core::convert::Into<crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category> ,id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardVisualMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226e260usize)as*mut u8,();
+(ProfileCardVisualMenu_DecideEventHandler)__receiver,(crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category)::core::convert::Into::into(category),(::unity2::Il2CppString)::core::convert::Into::into(id))}
+}
+}
 
-#[cfg(feature = "app-profilecardvisualmenu")]
-impl ProfileCardVisualMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category, i32, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler, crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: gridmenucontent :: GridMenuContent , profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot , my_profile_card_temp : crate :: app :: profilecard :: ProfileCard , category : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_Category , initial_decided_index : i32 , decide_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler , dispose_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualMenu) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualMenuMethods > :: ctor (this , menu_item_list , menu_content , profile_card_root , my_profile_card_temp , category , initial_decided_index , decide_event_handler , dispose_event_handler) ; this }
+#[cfg(feature="app-profilecardvisualmenu")]impl<__T:IProfileCardVisualMenu_DecideEventHandler>IProfileCardVisualMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardvisualmenu")]impl ProfileCardVisualMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardvisualmenu")]impl ProfileCardVisualMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVisualMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardVisualMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-profilecardvisualmenu")]pub trait IProfileCardVisualMenu_DisposeEventHandlerMethods:IProfileCardVisualMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardVisualMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226e580usize)as*mut u8,();
+(ProfileCardVisualMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardVisualMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226e5a0usize)as*mut u8,();
+(ProfileCardVisualMenu_DisposeEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardvisualmenu")]impl<__T:IProfileCardVisualMenu_DisposeEventHandler>IProfileCardVisualMenu_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardvisualmenu")]impl ProfileCardVisualMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardvisualmenu")]impl ProfileCardVisualMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVisualMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardVisualMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-profilecardvisualmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardVisualMenu_DecideEventHandler;
-    pub use super::IProfileCardVisualMenu_DecideEventHandler;
-    pub use super::IProfileCardVisualMenu_DecideEventHandlerMethods;
-    pub use super::ProfileCardVisualMenu_DisposeEventHandler;
-    pub use super::IProfileCardVisualMenu_DisposeEventHandler;
-    pub use super::IProfileCardVisualMenu_DisposeEventHandlerMethods;
-    pub use super::ProfileCardVisualMenu_Category;
     pub use super::ProfileCardVisualMenu;
     pub use super::IProfileCardVisualMenu;
     pub use super::IProfileCardVisualMenuMethods;
+    pub use super::ProfileCardVisualMenu_DecideEventHandler;
+    pub use super::IProfileCardVisualMenu_DecideEventHandler;
+    pub use super::IProfileCardVisualMenu_DecideEventHandlerMethods;
+    pub use super::ProfileCardVisualMenu_Category;
+    pub use super::ProfileCardVisualMenu_DisposeEventHandler;
+    pub use super::IProfileCardVisualMenu_DisposeEventHandler;
+    pub use super::IProfileCardVisualMenu_DisposeEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::gridmenu::IGridMenu;
     pub use crate::app::procinst::IProcInst;

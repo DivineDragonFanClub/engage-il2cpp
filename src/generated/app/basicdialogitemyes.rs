@@ -4,36 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicdialogitemyes/BasicDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicDialogItemYes")] # [parent (crate :: app :: basicdialogitem :: BasicDialogItem)] pub struct BasicDialogItemYes {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicdialogitemyes/BasicDialogItemYes.md"))]#[::unity2::class(namespace="App",name="BasicDialogItemYes")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct BasicDialogItemYes{}
 
 }
 
 #[cfg(feature = "app-basicdialogitemyes-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-basicdialogitemyes")]
-pub trait IBasicDialogItemYesMethods : IBasicDialogItemYes { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BasicDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogItemYes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BasicDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogItemYes , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < BasicDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24564c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < BasicDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24564d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicdialogitemyes")]pub trait IBasicDialogItemYesMethods:IBasicDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2456340usize)as*mut u8,();
+(BasicDialogItemYes)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BasicDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2456430usize)as*mut u8,();
+(BasicDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <BasicDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24564c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(BasicDialogItemYes)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24564d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(BasicDialogItemYes)__receiver)}
+}
+}
 
-#[cfg(feature = "app-basicdialogitemyes")]
-impl < __T : IBasicDialogItemYes > IBasicDialogItemYesMethods for __T { }
+#[cfg(feature="app-basicdialogitemyes")]impl<__T:IBasicDialogItemYes>IBasicDialogItemYesMethods for __T{}
 
-#[cfg(feature = "app-basicdialogitemyes")]
-impl BasicDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-basicdialogitemyes")]impl BasicDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-basicdialogitemyes")]
-impl BasicDialogItemYes {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IBasicDialogItemYesMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicDialogItemYes) , :: core :: stringify ! (new_2) ,)) ; < Self as IBasicDialogItemYesMethods > :: ctor_2 (this , text) ; this }
+#[cfg(feature="app-basicdialogitemyes")]impl BasicDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicDialogItemYes), ::core::stringify!(new),));
+ <Self as IBasicDialogItemYesMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicDialogItemYes), ::core::stringify!(new_2),));
+ <Self as IBasicDialogItemYesMethods> ::ctor_2(this,text);
+this}
 }
 
 #[cfg(feature = "app-basicdialogitemyes")]

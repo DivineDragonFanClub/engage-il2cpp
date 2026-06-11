@@ -4,36 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/database/Database.md"))] # [:: unity2 :: class (namespace = "App" , name = "Database")] # [parent (crate :: system :: object :: Object)] pub struct Database {
-# [static_field] # [rename (name = "s_Types")] pub s_types : :: unity2 :: Array < :: unity2 :: SystemType > ,
-# [static_field] # [rename (name = "s_Completed")] pub s_completed : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/database/Database.md"))]#[::unity2::class(namespace="App",name="Database")]#[parent(crate::system::object::Object)]pub struct Database{#[static_field]#[rename(name="s_Types")]pub s_types: ::unity2::Array< ::unity2::SystemType> , #[static_field]#[rename(name="s_Completed")]pub s_completed:bool,}
 
 }
 
 #[cfg(feature = "app-database-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-database")]
-impl Database { # [doc = "`StaticFunc(::unity2::SystemType, ::unity2::Il2CppString)` overload"] pub fn static_func (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fec80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`StaticFunc(::unity2::Array<::unity2::SystemType>, ::unity2::Il2CppString)` overload"] pub fn static_func_2 (types : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: SystemType > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < :: unity2 :: SystemType > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fed80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (types) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fee50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Completed()` overload"] pub fn completed () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29feed0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsCompleted()` overload"] pub fn is_completed () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fef60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] pub fn unload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29fefd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetTypes()` overload"] pub fn get_types () -> :: unity2 :: Array < :: unity2 :: SystemType > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: SystemType > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ff0f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Reload(crate::app::procinst::ProcInst)` overload"] pub fn reload (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ff160usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] pub fn release () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ff170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ff1f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-database")]impl Database{#[doc="`StaticFunc(::unity2::SystemType, ::unity2::Il2CppString)` overload"]pub fn static_func(r#type:impl::core::convert::Into< ::unity2::SystemType> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fec80usize)as*mut u8,bool;
+(::unity2::SystemType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`StaticFunc(::unity2::Array<::unity2::SystemType>, ::unity2::Il2CppString)` overload"]pub fn static_func_2(types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fed80usize)as*mut u8,();
+(::unity2::Array< ::unity2::SystemType>)::core::convert::Into::into(types),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fee50usize)as*mut u8,();
+)}
+}
+#[doc="`Completed()` overload"]pub fn completed()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29feed0usize)as*mut u8,();
+)}
+}
+#[doc="`IsCompleted()` overload"]pub fn is_completed()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fef60usize)as*mut u8,bool;
+)}
+}
+#[doc="`Unload()` overload"]pub fn unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29fefd0usize)as*mut u8,();
+)}
+}
+#[doc="`GetTypes()` overload"]pub fn get_types()-> ::unity2::Array< ::unity2::SystemType>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29ff0f0usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
+)}
+}
+#[doc="`Reload(crate::app::procinst::ProcInst)` overload"]pub fn reload(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29ff160usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Release()` overload"]pub fn release()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29ff170usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29ff1f0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-database")]
-pub trait IDatabaseMethods : IDatabase { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Database as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Database , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ff1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-database")]pub trait IDatabaseMethods:IDatabase{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Database as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29ff1e0usize)as*mut u8,();
+(Database)__receiver)}
+}
+}
 
-#[cfg(feature = "app-database")]
-impl < __T : IDatabase > IDatabaseMethods for __T { }
+#[cfg(feature="app-database")]impl<__T:IDatabase>IDatabaseMethods for __T{}
 
-#[cfg(feature = "app-database")]
-impl Database { pub fn static_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn static_func_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_types_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Database as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-database")]impl Database{pub fn static_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn static_func_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_types_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-database")]
-impl Database {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Database) , :: core :: stringify ! (new) ,)) ; < Self as IDatabaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-database")]impl Database{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Database), ::core::stringify!(new),));
+ <Self as IDatabaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-database")]

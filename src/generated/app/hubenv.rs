@@ -4,73 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubenv/HubEnv.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubEnv")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubEnv {
-# [offset (24)] # [rename (name = "m_EnableEditMode")] pub m_enable_edit_mode : bool ,
-# [offset (28)] # [rename (name = "m_editTimezoneType")] pub m_edit_timezone_type : crate :: app :: hubutil :: HubUtil_TimezoneType ,
-# [offset (32)] # [rename (name = "m_EnableMorning")] pub m_enable_morning : bool ,
-# [offset (36)] # [rename (name = "m_MorningAmbientSkyColor")] pub m_morning_ambient_sky_color : crate :: unity_engine :: color :: Color ,
-# [offset (52)] # [rename (name = "m_MorningAmbientEquatorColor")] pub m_morning_ambient_equator_color : crate :: unity_engine :: color :: Color ,
-# [offset (68)] # [rename (name = "m_MorningAmbientGroundColor")] pub m_morning_ambient_ground_color : crate :: unity_engine :: color :: Color ,
-# [offset (84)] # [rename (name = "m_MorningFogColor")] pub m_morning_fog_color : crate :: unity_engine :: color :: Color ,
-# [offset (100)] # [rename (name = "m_MorningFogStart")] pub m_morning_fog_start : f32 ,
-# [offset (104)] # [rename (name = "m_MorningFogEnd")] pub m_morning_fog_end : f32 ,
-# [offset (108)] # [rename (name = "m_EnableDay")] pub m_enable_day : bool ,
-# [offset (112)] # [rename (name = "m_DayAmbientSkyColor")] pub m_day_ambient_sky_color : crate :: unity_engine :: color :: Color ,
-# [offset (128)] # [rename (name = "m_DayAmbientEquatorColor")] pub m_day_ambient_equator_color : crate :: unity_engine :: color :: Color ,
-# [offset (144)] # [rename (name = "m_DayAmbientGroundColor")] pub m_day_ambient_ground_color : crate :: unity_engine :: color :: Color ,
-# [offset (160)] # [rename (name = "m_DayFogColor")] pub m_day_fog_color : crate :: unity_engine :: color :: Color ,
-# [offset (176)] # [rename (name = "m_DayFogStart")] pub m_day_fog_start : f32 ,
-# [offset (180)] # [rename (name = "m_DayFogEnd")] pub m_day_fog_end : f32 ,
-# [offset (184)] # [rename (name = "m_EnableEvening")] pub m_enable_evening : bool ,
-# [offset (188)] # [rename (name = "m_EveningAmbientSkyColor")] pub m_evening_ambient_sky_color : crate :: unity_engine :: color :: Color ,
-# [offset (204)] # [rename (name = "m_EveningAmbientEquatorColor")] pub m_evening_ambient_equator_color : crate :: unity_engine :: color :: Color ,
-# [offset (220)] # [rename (name = "m_EveningAmbientGroundColor")] pub m_evening_ambient_ground_color : crate :: unity_engine :: color :: Color ,
-# [offset (236)] # [rename (name = "m_EveningFogColor")] pub m_evening_fog_color : crate :: unity_engine :: color :: Color ,
-# [offset (252)] # [rename (name = "m_EveningFogStart")] pub m_evening_fog_start : f32 ,
-# [offset (256)] # [rename (name = "m_EveningFogEnd")] pub m_evening_fog_end : f32 ,
-# [offset (260)] # [rename (name = "m_EnableNight")] pub m_enable_night : bool ,
-# [offset (264)] # [rename (name = "m_NightAmbientSkyColor")] pub m_night_ambient_sky_color : crate :: unity_engine :: color :: Color ,
-# [offset (280)] # [rename (name = "m_NightAmbientEquatorColor")] pub m_night_ambient_equator_color : crate :: unity_engine :: color :: Color ,
-# [offset (296)] # [rename (name = "m_NightAmbientGroundColor")] pub m_night_ambient_ground_color : crate :: unity_engine :: color :: Color ,
-# [offset (312)] # [rename (name = "m_NightFogColor")] pub m_night_fog_color : crate :: unity_engine :: color :: Color ,
-# [offset (328)] # [rename (name = "m_NightFogStart")] pub m_night_fog_start : f32 ,
-# [offset (332)] # [rename (name = "m_NightFogEnd")] pub m_night_fog_end : f32 ,
-# [offset (336)] # [rename (name = "baseTimezoneName")] pub base_timezone_name : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (344)] # [rename (name = "textureNames")] pub texture_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (352)] # [rename (name = "resourceHandles")] pub resource_handles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
-# [offset (360)] # [rename (name = "m_lightmapData")] pub m_lightmap_data : :: unity2 :: Array < crate :: unity_engine :: lightmapdata :: LightmapData > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubenv/HubEnv.md"))]#[::unity2::class(namespace="App",name="HubEnv")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubEnv{#[offset(24)]#[rename(name="m_EnableEditMode")]pub m_enable_edit_mode:bool, #[offset(28)]#[rename(name="m_editTimezoneType")]pub m_edit_timezone_type:crate::app::hubutil::HubUtil_TimezoneType, #[offset(32)]#[rename(name="m_EnableMorning")]pub m_enable_morning:bool, #[offset(36)]#[rename(name="m_MorningAmbientSkyColor")]pub m_morning_ambient_sky_color:crate::unity_engine::color::Color, #[offset(52)]#[rename(name="m_MorningAmbientEquatorColor")]pub m_morning_ambient_equator_color:crate::unity_engine::color::Color, #[offset(68)]#[rename(name="m_MorningAmbientGroundColor")]pub m_morning_ambient_ground_color:crate::unity_engine::color::Color, #[offset(84)]#[rename(name="m_MorningFogColor")]pub m_morning_fog_color:crate::unity_engine::color::Color, #[offset(100)]#[rename(name="m_MorningFogStart")]pub m_morning_fog_start:f32, #[offset(104)]#[rename(name="m_MorningFogEnd")]pub m_morning_fog_end:f32, #[offset(108)]#[rename(name="m_EnableDay")]pub m_enable_day:bool, #[offset(112)]#[rename(name="m_DayAmbientSkyColor")]pub m_day_ambient_sky_color:crate::unity_engine::color::Color, #[offset(128)]#[rename(name="m_DayAmbientEquatorColor")]pub m_day_ambient_equator_color:crate::unity_engine::color::Color, #[offset(144)]#[rename(name="m_DayAmbientGroundColor")]pub m_day_ambient_ground_color:crate::unity_engine::color::Color, #[offset(160)]#[rename(name="m_DayFogColor")]pub m_day_fog_color:crate::unity_engine::color::Color, #[offset(176)]#[rename(name="m_DayFogStart")]pub m_day_fog_start:f32, #[offset(180)]#[rename(name="m_DayFogEnd")]pub m_day_fog_end:f32, #[offset(184)]#[rename(name="m_EnableEvening")]pub m_enable_evening:bool, #[offset(188)]#[rename(name="m_EveningAmbientSkyColor")]pub m_evening_ambient_sky_color:crate::unity_engine::color::Color, #[offset(204)]#[rename(name="m_EveningAmbientEquatorColor")]pub m_evening_ambient_equator_color:crate::unity_engine::color::Color, #[offset(220)]#[rename(name="m_EveningAmbientGroundColor")]pub m_evening_ambient_ground_color:crate::unity_engine::color::Color, #[offset(236)]#[rename(name="m_EveningFogColor")]pub m_evening_fog_color:crate::unity_engine::color::Color, #[offset(252)]#[rename(name="m_EveningFogStart")]pub m_evening_fog_start:f32, #[offset(256)]#[rename(name="m_EveningFogEnd")]pub m_evening_fog_end:f32, #[offset(260)]#[rename(name="m_EnableNight")]pub m_enable_night:bool, #[offset(264)]#[rename(name="m_NightAmbientSkyColor")]pub m_night_ambient_sky_color:crate::unity_engine::color::Color, #[offset(280)]#[rename(name="m_NightAmbientEquatorColor")]pub m_night_ambient_equator_color:crate::unity_engine::color::Color, #[offset(296)]#[rename(name="m_NightAmbientGroundColor")]pub m_night_ambient_ground_color:crate::unity_engine::color::Color, #[offset(312)]#[rename(name="m_NightFogColor")]pub m_night_fog_color:crate::unity_engine::color::Color, #[offset(328)]#[rename(name="m_NightFogStart")]pub m_night_fog_start:f32, #[offset(332)]#[rename(name="m_NightFogEnd")]pub m_night_fog_end:f32, #[offset(336)]#[rename(name="baseTimezoneName")]pub base_timezone_name: ::unity2::Array< ::unity2::Il2CppString> , #[offset(344)]#[rename(name="textureNames")]pub texture_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(352)]#[rename(name="resourceHandles")]pub resource_handles:crate::system::collections::generic::list_1::List_1<crate::app::resourcehandle_2::ResourceHandle_2> , #[offset(360)]#[rename(name="m_lightmapData")]pub m_lightmap_data: ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData> ,}
 
 }
 
 #[cfg(feature = "app-hubenv-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubenv")]
-pub trait IHubEnvMethods : IHubEnv { # [doc = "`Load(::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType)` overload"] fn load (self , scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , timezone_type : impl :: core :: convert :: Into < crate :: app :: hubutil :: HubUtil_TimezoneType >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEnv , :: unity2 :: Il2CppString , crate :: app :: hubutil :: HubUtil_TimezoneType , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d89530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (scene_name) , :: core :: convert :: Into :: into (timezone_type) , :: core :: option :: Option :: None) } } } # [doc = "`Apply(crate::app::hubutil::HubUtil_TimezoneType)` overload"] fn apply (self , timezone_type : impl :: core :: convert :: Into < crate :: app :: hubutil :: HubUtil_TimezoneType >) -> () { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEnv , crate :: app :: hubutil :: HubUtil_TimezoneType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d895d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (timezone_type) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEnv , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d89e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEnv , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d89f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearResources()` overload"] fn clear_resources (self ,) -> () { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEnv , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d89e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubEnv as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEnv , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8a0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubenv")]pub trait IHubEnvMethods:IHubEnv{#[doc="`Load(::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType)` overload"]fn load(self,scene_name:impl::core::convert::Into< ::unity2::Il2CppString> ,timezone_type:impl::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <HubEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d89530usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(HubEnv)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(scene_name),(crate::app::hubutil::HubUtil_TimezoneType)::core::convert::Into::into(timezone_type))}
+}
+#[doc="`Apply(crate::app::hubutil::HubUtil_TimezoneType)` overload"]fn apply(self,timezone_type:impl::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>)->(){unsafe{let __receiver= <HubEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d895d0usize)as*mut u8,();
+(HubEnv)__receiver,(crate::app::hubutil::HubUtil_TimezoneType)::core::convert::Into::into(timezone_type))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <HubEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d89e50usize)as*mut u8,();
+(HubEnv)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <HubEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d89f90usize)as*mut u8,bool;
+(HubEnv)__receiver)}
+}
+#[doc="`ClearResources()` overload"]fn clear_resources(self,)->(){unsafe{let __receiver= <HubEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d89e60usize)as*mut u8,();
+(HubEnv)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubEnv as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8a0f0usize)as*mut u8,();
+(HubEnv)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubenv")]
-impl < __T : IHubEnv > IHubEnvMethods for __T { }
+#[cfg(feature="app-hubenv")]impl<__T:IHubEnv>IHubEnvMethods for __T{}
 
-#[cfg(feature = "app-hubenv")]
-impl HubEnv { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEnv as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn apply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEnv as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEnv as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEnv as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEnv as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEnv as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-hubenv")]impl HubEnv{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-hubenv")]
-impl HubEnv {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubEnv) , :: core :: stringify ! (new) ,)) ; < Self as IHubEnvMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubenv")]impl HubEnv{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubEnv), ::core::stringify!(new),));
+ <Self as IHubEnvMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubenv")]

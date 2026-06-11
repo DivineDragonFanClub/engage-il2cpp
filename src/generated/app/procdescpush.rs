@@ -4,34 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescpush/ProcDescPush.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescPush")] # [parent (crate :: app :: procdesc :: ProcDesc)] pub struct ProcDescPush {
-# [offset (20)] # [rename (name = "m_Label")] pub m_label : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescpush/ProcDescPush.md"))]#[::unity2::class(namespace="App",name="ProcDescPush")]#[parent(crate::app::procdesc::ProcDesc)]pub struct ProcDescPush{#[offset(20)]#[rename(name="m_Label")]pub m_label:i32,}
 
 }
 
 #[cfg(feature = "app-procdescpush-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescpush")]
-pub trait IProcDescPushMethods : IProcDescPush { # [doc = "`.ctor(i32)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProcDescPush as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescPush , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDescPush as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescPush , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281da70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } # [doc = "`get_Label()` overload"] fn get_label (self ,) -> i32 { unsafe { let __receiver = < ProcDescPush as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescPush , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281da80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescpush")]pub trait IProcDescPushMethods:IProcDescPush{#[doc="`.ctor(i32)` overload"]fn ctor(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProcDescPush as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281b040usize)as*mut u8,();
+(ProcDescPush)__receiver,(i32)::core::convert::Into::into(label))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescPush as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281da70usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(ProcDescPush)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+#[doc="`get_Label()` overload"]fn get_label(self,)->i32{unsafe{let __receiver= <ProcDescPush as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281da80usize)as*mut u8,i32;
+(ProcDescPush)__receiver)}
+}
+}
 
-#[cfg(feature = "app-procdescpush")]
-impl < __T : IProcDescPush > IProcDescPushMethods for __T { }
+#[cfg(feature="app-procdescpush")]impl<__T:IProcDescPush>IProcDescPushMethods for __T{}
 
-#[cfg(feature = "app-procdescpush")]
-impl ProcDescPush { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescPush as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescPush as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescPush as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-procdescpush")]impl ProcDescPush{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-procdescpush")]
-impl ProcDescPush {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (label : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescPush) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescPushMethods > :: ctor (this , label) ; this }
+#[cfg(feature="app-procdescpush")]impl ProcDescPush{#[doc="`.ctor(i32)` — overload selector"]pub fn new(label:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescPush), ::core::stringify!(new),));
+ <Self as IProcDescPushMethods> ::ctor(this,label);
+this}
 }
 
 #[cfg(feature = "app-procdescpush")]

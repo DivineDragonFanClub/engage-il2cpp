@@ -4,44 +4,169 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akexternalsourceinfo/AkExternalSourceInfo.md"))] # [:: unity2 :: class (namespace = "" , name = "AkExternalSourceInfo")] # [parent (crate :: system :: object :: Object)] pub struct AkExternalSourceInfo {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akexternalsourceinfo/AkExternalSourceInfo.md"))]#[::unity2::class(namespace="",name="AkExternalSourceInfo")]#[parent(crate::system::object::Object)]pub struct AkExternalSourceInfo{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akexternalsourceinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akexternalsourceinfo")]
-impl AkExternalSourceInfo { # [doc = "`getCPtr(crate::root::akexternalsourceinfo::AkExternalSourceInfo)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1ca00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeOf()` overload"] pub fn get_size_of () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d070usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akexternalsourceinfo")]impl AkExternalSourceInfo{#[doc="`getCPtr(crate::root::akexternalsourceinfo::AkExternalSourceInfo)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akexternalsourceinfo::AkExternalSourceInfo>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f1ca00usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akexternalsourceinfo::AkExternalSourceInfo)::core::convert::Into::into(obj))}
+}
+#[doc="`GetSizeOf()` overload"]pub fn get_size_of()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d070usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "root-akexternalsourceinfo")]
-pub trait IAkExternalSourceInfoMethods : IAkExternalSourceInfo { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1c9c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1ca60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1ca90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1cb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1cc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::IntPtr, u32, u32, u32)` overload"] fn ctor_3 (self , in_p_in_memory : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , in_ui_memory_size : impl :: core :: convert :: Into < u32 > , in_i_external_src_cookie : impl :: core :: convert :: Into < u32 > , in_id_codec : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: IntPtr , u32 , u32 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1cd20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_p_in_memory) , :: core :: convert :: Into :: into (in_ui_memory_size) , :: core :: convert :: Into :: into (in_i_external_src_cookie) , :: core :: convert :: Into :: into (in_id_codec) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, u32, u32)` overload"] fn ctor_4 (self , in_psz_file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , in_i_external_src_cookie : impl :: core :: convert :: Into < u32 > , in_id_codec : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: Il2CppString , u32 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1cde0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_psz_file_name) , :: core :: convert :: Into :: into (in_i_external_src_cookie) , :: core :: convert :: Into :: into (in_id_codec) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32, u32, u32)` overload"] fn ctor_5 (self , in_id_file : impl :: core :: convert :: Into < u32 > , in_i_external_src_cookie : impl :: core :: convert :: Into < u32 > , in_id_codec : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , u32 , u32 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1ce90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_id_file) , :: core :: convert :: Into :: into (in_i_external_src_cookie) , :: core :: convert :: Into :: into (in_id_codec) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1cf40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone(crate::root::akexternalsourceinfo::AkExternalSourceInfo)` overload"] fn clone (self , other : impl :: core :: convert :: Into < crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1cfb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`set_iExternalSrcCookie(u32)` overload"] fn set_i_external_src_cookie (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_iExternalSrcCookie()` overload"] fn get_i_external_src_cookie (self ,) -> u32 { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_idCodec(u32)` overload"] fn set_id_codec (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d1d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_idCodec()` overload"] fn get_id_codec (self ,) -> u32 { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_szFile(::unity2::Il2CppString)` overload"] fn set_sz_file (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d2c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_szFile()` overload"] fn get_sz_file (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pInMemory(::unity2::IntPtr)` overload"] fn set_p_in_memory (self , value : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d3f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pInMemory()` overload"] fn get_p_in_memory (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uiMemorySize(u32)` overload"] fn set_ui_memory_size (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d4e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uiMemorySize()` overload"] fn get_ui_memory_size (self ,) -> u32 { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_idFile(u32)` overload"] fn set_id_file (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d5d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_idFile()` overload"] fn get_id_file (self ,) -> u32 { unsafe { let __receiver = < AkExternalSourceInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akexternalsourceinfo")]pub trait IAkExternalSourceInfoMethods:IAkExternalSourceInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1c9c0usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1ca60usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1ca90usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1cb00usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1cc90usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver)}
+}
+#[doc="`.ctor(::unity2::IntPtr, u32, u32, u32)` overload"]fn ctor_3(self,in_p_in_memory:impl::core::convert::Into< ::unity2::IntPtr> ,in_ui_memory_size:impl::core::convert::Into<u32> ,in_i_external_src_cookie:impl::core::convert::Into<u32> ,in_id_codec:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1cd20usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(in_p_in_memory),(u32)::core::convert::Into::into(in_ui_memory_size),(u32)::core::convert::Into::into(in_i_external_src_cookie),(u32)::core::convert::Into::into(in_id_codec))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, u32, u32)` overload"]fn ctor_4(self,in_psz_file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,in_i_external_src_cookie:impl::core::convert::Into<u32> ,in_id_codec:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1cde0usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(in_psz_file_name),(u32)::core::convert::Into::into(in_i_external_src_cookie),(u32)::core::convert::Into::into(in_id_codec))}
+}
+#[doc="`.ctor(u32, u32, u32)` overload"]fn ctor_5(self,in_id_file:impl::core::convert::Into<u32> ,in_i_external_src_cookie:impl::core::convert::Into<u32> ,in_id_codec:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1ce90usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(u32)::core::convert::Into::into(in_id_file),(u32)::core::convert::Into::into(in_i_external_src_cookie),(u32)::core::convert::Into::into(in_id_codec))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1cf40usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver)}
+}
+#[doc="`Clone(crate::root::akexternalsourceinfo::AkExternalSourceInfo)` overload"]fn clone(self,other:impl::core::convert::Into<crate::root::akexternalsourceinfo::AkExternalSourceInfo>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1cfb0usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(crate::root::akexternalsourceinfo::AkExternalSourceInfo)::core::convert::Into::into(other))}
+}
+#[doc="`set_iExternalSrcCookie(u32)` overload"]fn set_i_external_src_cookie(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d0e0usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_iExternalSrcCookie()` overload"]fn get_i_external_src_cookie(self,)->u32{unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d160usize)as*mut u8,u32;
+(AkExternalSourceInfo)__receiver)}
+}
+#[doc="`set_idCodec(u32)` overload"]fn set_id_codec(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d1d0usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_idCodec()` overload"]fn get_id_codec(self,)->u32{unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d250usize)as*mut u8,u32;
+(AkExternalSourceInfo)__receiver)}
+}
+#[doc="`set_szFile(::unity2::Il2CppString)` overload"]fn set_sz_file(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d2c0usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_szFile()` overload"]fn get_sz_file(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d340usize)as*mut u8, ::unity2::Il2CppString;
+(AkExternalSourceInfo)__receiver)}
+}
+#[doc="`set_pInMemory(::unity2::IntPtr)` overload"]fn set_p_in_memory(self,value:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d3f0usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(value))}
+}
+#[doc="`get_pInMemory()` overload"]fn get_p_in_memory(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d470usize)as*mut u8, ::unity2::IntPtr;
+(AkExternalSourceInfo)__receiver)}
+}
+#[doc="`set_uiMemorySize(u32)` overload"]fn set_ui_memory_size(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d4e0usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uiMemorySize()` overload"]fn get_ui_memory_size(self,)->u32{unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d560usize)as*mut u8,u32;
+(AkExternalSourceInfo)__receiver)}
+}
+#[doc="`set_idFile(u32)` overload"]fn set_id_file(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d5d0usize)as*mut u8,();
+(AkExternalSourceInfo)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_idFile()` overload"]fn get_id_file(self,)->u32{unsafe{let __receiver= <AkExternalSourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d650usize)as*mut u8,u32;
+(AkExternalSourceInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akexternalsourceinfo")]
-impl < __T : IAkExternalSourceInfo > IAkExternalSourceInfoMethods for __T { }
+#[cfg(feature="root-akexternalsourceinfo")]impl<__T:IAkExternalSourceInfo>IAkExternalSourceInfoMethods for __T{}
 
-#[cfg(feature = "root-akexternalsourceinfo")]
-impl AkExternalSourceInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_size_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_i_external_src_cookie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_i_external_src_cookie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_id_codec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_id_codec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_sz_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_sz_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_p_in_memory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_p_in_memory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_ui_memory_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_ui_memory_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_id_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_id_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="root-akexternalsourceinfo")]impl AkExternalSourceInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_size_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_i_external_src_cookie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_i_external_src_cookie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_id_codec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_id_codec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_sz_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_sz_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_p_in_memory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_p_in_memory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_ui_memory_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_ui_memory_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_id_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_id_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "root-akexternalsourceinfo")]
-impl AkExternalSourceInfo {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkExternalSourceInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAkExternalSourceInfoMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkExternalSourceInfo) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkExternalSourceInfoMethods > :: ctor_2 (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::IntPtr, u32, u32, u32)` — overload selector"] pub fn new_3 (in_p_in_memory : :: unity2 :: IntPtr , in_ui_memory_size : u32 , in_i_external_src_cookie : u32 , in_id_codec : u32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkExternalSourceInfo) , :: core :: stringify ! (new_3) ,)) ; < Self as IAkExternalSourceInfoMethods > :: ctor_3 (this , in_p_in_memory , in_ui_memory_size , in_i_external_src_cookie , in_id_codec) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, u32, u32)` — overload selector"] pub fn new_4 (in_psz_file_name : :: unity2 :: Il2CppString , in_i_external_src_cookie : u32 , in_id_codec : u32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkExternalSourceInfo) , :: core :: stringify ! (new_4) ,)) ; < Self as IAkExternalSourceInfoMethods > :: ctor_4 (this , in_psz_file_name , in_i_external_src_cookie , in_id_codec) ; this }
-
-# [doc = "`.ctor(u32, u32, u32)` — overload selector"] pub fn new_5 (in_id_file : u32 , in_i_external_src_cookie : u32 , in_id_codec : u32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkExternalSourceInfo) , :: core :: stringify ! (new_5) ,)) ; < Self as IAkExternalSourceInfoMethods > :: ctor_5 (this , in_id_file , in_i_external_src_cookie , in_id_codec) ; this }
+#[cfg(feature="root-akexternalsourceinfo")]impl AkExternalSourceInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkExternalSourceInfo), ::core::stringify!(new),));
+ <Self as IAkExternalSourceInfoMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkExternalSourceInfo), ::core::stringify!(new_2),));
+ <Self as IAkExternalSourceInfoMethods> ::ctor_2(this,);
+this}
+#[doc="`.ctor(::unity2::IntPtr, u32, u32, u32)` — overload selector"]pub fn new_3(in_p_in_memory: ::unity2::IntPtr,in_ui_memory_size:u32,in_i_external_src_cookie:u32,in_id_codec:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkExternalSourceInfo), ::core::stringify!(new_3),));
+ <Self as IAkExternalSourceInfoMethods> ::ctor_3(this,in_p_in_memory,in_ui_memory_size,in_i_external_src_cookie,in_id_codec);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, u32, u32)` — overload selector"]pub fn new_4(in_psz_file_name: ::unity2::Il2CppString,in_i_external_src_cookie:u32,in_id_codec:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkExternalSourceInfo), ::core::stringify!(new_4),));
+ <Self as IAkExternalSourceInfoMethods> ::ctor_4(this,in_psz_file_name,in_i_external_src_cookie,in_id_codec);
+this}
+#[doc="`.ctor(u32, u32, u32)` — overload selector"]pub fn new_5(in_id_file:u32,in_i_external_src_cookie:u32,in_id_codec:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkExternalSourceInfo), ::core::stringify!(new_5),));
+ <Self as IAkExternalSourceInfoMethods> ::ctor_5(this,in_id_file,in_i_external_src_cookie,in_id_codec);
+this}
 }
 
 #[cfg(feature = "root-akexternalsourceinfo")]

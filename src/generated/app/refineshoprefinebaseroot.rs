@@ -4,89 +4,136 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot_ReturnEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopRefineBaseRoot.ReturnEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefineShopRefineBaseRoot_ReturnEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot.md"))]#[::unity2::class(namespace="App",name="RefineShopRefineBaseRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineShopRefineBaseRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_RefineShopRefineBaseMenuObject")]pub m_refine_shop_refine_base_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_WeaponModelObject")]pub m_weapon_model_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_ItemDetailInfoWindowObject")]pub m_item_detail_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_WeaponRotWaitTime")]pub m_weapon_rot_wait_time:f32, #[offset(52)]#[rename(name="m_WeaponRotSpeedAuto")]pub m_weapon_rot_speed_auto:f32, #[offset(56)]#[rename(name="m_WeaponRotSpeedMax")]pub m_weapon_rot_speed_max:f32, #[offset(60)]#[rename(name="m_WeaponRotStickSense")]pub m_weapon_rot_stick_sense:f32, #[offset(64)]#[rename(name="m_WeaponRotWaitTimeCount")]pub m_weapon_rot_wait_time_count:f32, #[offset(72)]#[rename(name="m_ReturnEventHandler")]pub m_return_event_handler:crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler, #[offset(80)]#[rename(name="m_RefineShopRefineBaseMenu")]pub m_refine_shop_refine_base_menu:crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu, #[offset(88)]#[rename(name="m_ItemMenuDetailSetter")]pub m_item_menu_detail_setter:crate::app::itemmenudetailsetter::ItemMenuDetailSetter, #[offset(96)]#[rename(name="m_ShopWeaponModelRenderer")]pub m_shop_weapon_model_renderer:crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, #[offset(104)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_OwnerItemIndex")]pub m_owner_item_index:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopRefineBaseRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineShopRefineBaseRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_RefineShopRefineBaseMenuObject")] pub m_refine_shop_refine_base_menu_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_WeaponModelObject")] pub m_weapon_model_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_ItemDetailInfoWindowObject")] pub m_item_detail_info_window_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_WeaponRotWaitTime")] pub m_weapon_rot_wait_time : f32 ,
-# [offset (52)] # [rename (name = "m_WeaponRotSpeedAuto")] pub m_weapon_rot_speed_auto : f32 ,
-# [offset (56)] # [rename (name = "m_WeaponRotSpeedMax")] pub m_weapon_rot_speed_max : f32 ,
-# [offset (60)] # [rename (name = "m_WeaponRotStickSense")] pub m_weapon_rot_stick_sense : f32 ,
-# [offset (64)] # [rename (name = "m_WeaponRotWaitTimeCount")] pub m_weapon_rot_wait_time_count : f32 ,
-# [offset (72)] # [rename (name = "m_ReturnEventHandler")] pub m_return_event_handler : crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler ,
-# [offset (80)] # [rename (name = "m_RefineShopRefineBaseMenu")] pub m_refine_shop_refine_base_menu : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu ,
-# [offset (88)] # [rename (name = "m_ItemMenuDetailSetter")] pub m_item_menu_detail_setter : crate :: app :: itemmenudetailsetter :: ItemMenuDetailSetter ,
-# [offset (96)] # [rename (name = "m_ShopWeaponModelRenderer")] pub m_shop_weapon_model_renderer : crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer ,
-# [offset (104)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (112)] # [rename (name = "m_OwnerItemIndex")] pub m_owner_item_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot_ReturnEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineShopRefineBaseRoot.ReturnEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineShopRefineBaseRoot_ReturnEventHandler{}
 
 }
 
 #[cfg(feature = "app-refineshoprefinebaseroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-pub trait IRefineShopRefineBaseRoot_ReturnEventHandlerMethods : IRefineShopRefineBaseRoot_ReturnEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot_ReturnEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afc720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu_Result > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , owner_item_index : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot_ReturnEventHandler , crate :: app :: basicmenu :: BasicMenu_Result , crate :: app :: unit :: Unit , i32 , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afc740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (owner_item_index) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-impl < __T : IRefineShopRefineBaseRoot_ReturnEventHandler > IRefineShopRefineBaseRoot_ReturnEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-impl RefineShopRefineBaseRoot_ReturnEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot_ReturnEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot_ReturnEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-impl RefineShopRefineBaseRoot_ReturnEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopRefineBaseRoot_ReturnEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopRefineBaseRoot_ReturnEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2968ea0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2968f40usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2968fc0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_item_index:impl::core::convert::Into<i32> ,default_item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,return_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler>)->crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2969040usize)as*mut u8,crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(default_item_kind),(crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
+}
 }
 
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-impl RefineShopRefineBaseRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2968ea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2968f40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2968fc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , default_item_index : impl :: core :: convert :: Into < i32 > , default_item_kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds > , return_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler >) -> crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unit :: Unit , i32 , crate :: app :: itemdata :: ItemData_Kinds , crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2969040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (default_unit) , :: core :: convert :: Into :: into (default_item_index) , :: core :: convert :: Into :: into (default_item_kind) , :: core :: convert :: Into :: into (return_event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshoprefinebaseroot")]pub trait IRefineShopRefineBaseRootMethods:IRefineShopRefineBaseRoot{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_item_index:impl::core::convert::Into<i32> ,default_item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,return_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler>)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2969210usize)as*mut u8,();
+(RefineShopRefineBaseRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(default_item_kind),(crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2969700usize)as*mut u8,();
+(RefineShopRefineBaseRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295f3c0usize)as*mut u8,();
+(RefineShopRefineBaseRoot)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2969800usize)as*mut u8,();
+(RefineShopRefineBaseRoot)__receiver)}
+}
+#[doc="`OnSelectMenuItem(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]fn on_select_menu_item(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2969a90usize)as*mut u8,();
+(RefineShopRefineBaseRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`OnDecideMenuItem(crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds)` overload"]fn on_decide_menu_item(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,owner_item_index:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2969d90usize)as*mut u8,();
+(RefineShopRefineBaseRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(owner_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`OnRequestCloseMenu()` overload"]fn on_request_close_menu(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2969e10usize)as*mut u8,();
+(RefineShopRefineBaseRoot)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2969e60usize)as*mut u8,();
+(RefineShopRefineBaseRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-pub trait IRefineShopRefineBaseRootMethods : IRefineShopRefineBaseRoot { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , default_item_index : impl :: core :: convert :: Into < i32 > , default_item_kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds > , return_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler >) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot , crate :: app :: procinst :: ProcInst , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unit :: Unit , i32 , crate :: app :: itemdata :: ItemData_Kinds , crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2969210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (default_unit) , :: core :: convert :: Into :: into (default_item_index) , :: core :: convert :: Into :: into (default_item_kind) , :: core :: convert :: Into :: into (return_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2969700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295f3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2969800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelectMenuItem(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"] fn on_select_menu_item (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot , crate :: app :: unit :: Unit , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2969a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecideMenuItem(crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds)` overload"] fn on_decide_menu_item (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , owner_item_index : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot , crate :: app :: unit :: Unit , i32 , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2969d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (owner_item_index) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`OnRequestCloseMenu()` overload"] fn on_request_close_menu (self ,) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2969e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < RefineShopRefineBaseRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineBaseRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2969e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshoprefinebaseroot")]impl<__T:IRefineShopRefineBaseRoot>IRefineShopRefineBaseRootMethods for __T{}
 
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-impl < __T : IRefineShopRefineBaseRoot > IRefineShopRefineBaseRootMethods for __T { }
+#[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_select_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_decide_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_request_close_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-impl RefineShopRefineBaseRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_select_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_decide_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_request_close_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineBaseRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopRefineBaseRoot), ::core::stringify!(new),));
+ <Self as IRefineShopRefineBaseRootMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-impl RefineShopRefineBaseRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopRefineBaseRoot) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopRefineBaseRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineshoprefinebaseroot")]pub trait IRefineShopRefineBaseRoot_ReturnEventHandlerMethods:IRefineShopRefineBaseRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afc720usize)as*mut u8,();
+(RefineShopRefineBaseRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::basicmenu::BasicMenu_Result> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,owner_item_index:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <RefineShopRefineBaseRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afc740usize)as*mut u8,();
+(RefineShopRefineBaseRoot_ReturnEventHandler)__receiver,(crate::app::basicmenu::BasicMenu_Result)::core::convert::Into::into(result),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(owner_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+}
+
+#[cfg(feature="app-refineshoprefinebaseroot")]impl<__T:IRefineShopRefineBaseRoot_ReturnEventHandler>IRefineShopRefineBaseRoot_ReturnEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot_ReturnEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refineshoprefinebaseroot")]impl RefineShopRefineBaseRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopRefineBaseRoot_ReturnEventHandler), ::core::stringify!(new),));
+ <Self as IRefineShopRefineBaseRoot_ReturnEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-refineshoprefinebaseroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineShopRefineBaseRoot_ReturnEventHandler;
-    pub use super::IRefineShopRefineBaseRoot_ReturnEventHandler;
-    pub use super::IRefineShopRefineBaseRoot_ReturnEventHandlerMethods;
     pub use super::RefineShopRefineBaseRoot;
     pub use super::IRefineShopRefineBaseRoot;
     pub use super::IRefineShopRefineBaseRootMethods;
+    pub use super::RefineShopRefineBaseRoot_ReturnEventHandler;
+    pub use super::IRefineShopRefineBaseRoot_ReturnEventHandler;
+    pub use super::IRefineShopRefineBaseRoot_ReturnEventHandlerMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

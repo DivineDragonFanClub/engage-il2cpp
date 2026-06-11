@@ -4,45 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappointerlocatorroot/MapPointerLocatorRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPointerLocatorRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapPointerLocatorRoot {
-# [offset (24)] # [rename (name = "m_Pointer")] pub m_pointer : crate :: unity_engine :: transform :: Transform ,
-# [offset (32)] # [rename (name = "m_Attack")] pub m_attack : crate :: unity_engine :: transform :: Transform ,
-# [offset (40)] # [rename (name = "m_Rod")] pub m_rod : crate :: unity_engine :: transform :: Transform ,
-# [offset (48)] # [rename (name = "m_Dance")] pub m_dance : crate :: unity_engine :: transform :: Transform ,
-# [offset (56)] # [rename (name = "m_Cannon")] pub m_cannon : crate :: unity_engine :: transform :: Transform ,
-# [offset (64)] # [rename (name = "m_Color")] pub m_color : crate :: root :: mapcursorcolor :: MapCursorColor ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappointerlocatorroot/MapPointerLocatorRoot.md"))]#[::unity2::class(namespace="",name="MapPointerLocatorRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapPointerLocatorRoot{#[offset(24)]#[rename(name="m_Pointer")]pub m_pointer:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="m_Attack")]pub m_attack:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="m_Rod")]pub m_rod:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="m_Dance")]pub m_dance:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="m_Cannon")]pub m_cannon:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="m_Color")]pub m_color:crate::root::mapcursorcolor::MapCursorColor,}
 
 }
 
 #[cfg(feature = "root-mappointerlocatorroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mappointerlocatorroot")]
-pub trait IMapPointerLocatorRootMethods : IMapPointerLocatorRoot { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapCursorColor()` overload"] fn get_map_cursor_color (self ,) -> () { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerLocatorRoot , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`get_Pointer()` overload"] fn get_pointer (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Attack()` overload"] fn get_attack (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Rod()` overload"] fn get_rod (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Dance()` overload"] fn get_dance (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a8b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Cannon()` overload"] fn get_cannon (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a8c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPointerLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mappointerlocatorroot")]pub trait IMapPointerLocatorRootMethods:IMapPointerLocatorRoot{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapPointerLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a790usize)as*mut u8,();
+(MapPointerLocatorRoot)__receiver)}
+}
+#[doc="`GetMapCursorColor()` overload"]fn get_map_cursor_color(self,)->(){unsafe{let __receiver= <MapPointerLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a800usize)as*mut u8,();
+(MapPointerLocatorRoot)__receiver)}
+}
+#[doc="`SetColor(crate::unity_engine::color::Color)` overload"]fn set_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapPointerLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a870usize)as*mut u8,();
+(MapPointerLocatorRoot)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`get_Pointer()` overload"]fn get_pointer(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <MapPointerLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a880usize)as*mut u8,crate::unity_engine::transform::Transform;
+(MapPointerLocatorRoot)__receiver)}
+}
+#[doc="`get_Attack()` overload"]fn get_attack(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <MapPointerLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a890usize)as*mut u8,crate::unity_engine::transform::Transform;
+(MapPointerLocatorRoot)__receiver)}
+}
+#[doc="`get_Rod()` overload"]fn get_rod(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <MapPointerLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a8a0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(MapPointerLocatorRoot)__receiver)}
+}
+#[doc="`get_Dance()` overload"]fn get_dance(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <MapPointerLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a8b0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(MapPointerLocatorRoot)__receiver)}
+}
+#[doc="`get_Cannon()` overload"]fn get_cannon(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <MapPointerLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a8c0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(MapPointerLocatorRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPointerLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a8d0usize)as*mut u8,();
+(MapPointerLocatorRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mappointerlocatorroot")]
-impl < __T : IMapPointerLocatorRoot > IMapPointerLocatorRootMethods for __T { }
+#[cfg(feature="root-mappointerlocatorroot")]impl<__T:IMapPointerLocatorRoot>IMapPointerLocatorRootMethods for __T{}
 
-#[cfg(feature = "root-mappointerlocatorroot")]
-impl MapPointerLocatorRoot { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_map_cursor_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_pointer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_dance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_cannon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="root-mappointerlocatorroot")]impl MapPointerLocatorRoot{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_map_cursor_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_pointer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_rod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_dance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_cannon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "root-mappointerlocatorroot")]
-impl MapPointerLocatorRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPointerLocatorRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapPointerLocatorRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mappointerlocatorroot")]impl MapPointerLocatorRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPointerLocatorRoot), ::core::stringify!(new),));
+ <Self as IMapPointerLocatorRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mappointerlocatorroot")]

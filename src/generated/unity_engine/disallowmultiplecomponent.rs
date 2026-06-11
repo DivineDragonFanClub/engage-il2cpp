@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/disallowmultiplecomponent/DisallowMultipleComponent.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "DisallowMultipleComponent")] pub struct DisallowMultipleComponent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/disallowmultiplecomponent/DisallowMultipleComponent.md"))]#[::unity2::class(namespace="UnityEngine",name="DisallowMultipleComponent")]pub struct DisallowMultipleComponent{}
 
 }
 
 #[cfg(feature = "unity_engine-disallowmultiplecomponent-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-disallowmultiplecomponent")]
-pub trait IDisallowMultipleComponentMethods : IDisallowMultipleComponent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DisallowMultipleComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DisallowMultipleComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-disallowmultiplecomponent")]pub trait IDisallowMultipleComponentMethods:IDisallowMultipleComponent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DisallowMultipleComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c2a0usize)as*mut u8,();
+(DisallowMultipleComponent)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-disallowmultiplecomponent")]
-impl < __T : IDisallowMultipleComponent > IDisallowMultipleComponentMethods for __T { }
+#[cfg(feature="unity_engine-disallowmultiplecomponent")]impl<__T:IDisallowMultipleComponent>IDisallowMultipleComponentMethods for __T{}
 
-#[cfg(feature = "unity_engine-disallowmultiplecomponent")]
-impl DisallowMultipleComponent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisallowMultipleComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-disallowmultiplecomponent")]impl DisallowMultipleComponent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-disallowmultiplecomponent")]
-impl DisallowMultipleComponent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisallowMultipleComponent) , :: core :: stringify ! (new) ,)) ; < Self as IDisallowMultipleComponentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-disallowmultiplecomponent")]impl DisallowMultipleComponent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisallowMultipleComponent), ::core::stringify!(new),));
+ <Self as IDisallowMultipleComponentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-disallowmultiplecomponent")]

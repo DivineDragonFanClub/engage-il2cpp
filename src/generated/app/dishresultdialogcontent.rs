@@ -4,49 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dishresultdialogcontent/DishResultDialogContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "DishResultDialogContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DishResultDialogContent {
-# [offset (24)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (32)] # [rename (name = "m_DishText")] pub m_dish_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_GradeTitle")] pub m_grade_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_GradeList")] pub m_grade_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (56)] # [rename (name = "m_CondText")] pub m_cond_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "m_EnhanceObjectList")] pub m_enhance_object_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (72)] # [rename (name = "m_NothingObject")] pub m_nothing_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_EnhanceBonus")] pub m_enhance_bonus : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_BonusObjectList")] pub m_bonus_object_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (96)] # [rename (name = "m_EveryoneText")] pub m_everyone_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dishresultdialogcontent/DishResultDialogContent.md"))]#[::unity2::class(namespace="App",name="DishResultDialogContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DishResultDialogContent{#[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_DishText")]pub m_dish_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_GradeTitle")]pub m_grade_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_GradeList")]pub m_grade_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(56)]#[rename(name="m_CondText")]pub m_cond_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_EnhanceObjectList")]pub m_enhance_object_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(72)]#[rename(name="m_NothingObject")]pub m_nothing_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_EnhanceBonus")]pub m_enhance_bonus:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_BonusObjectList")]pub m_bonus_object_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(96)]#[rename(name="m_EveryoneText")]pub m_everyone_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-dishresultdialogcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dishresultdialogcontent")]
-pub trait IDishResultDialogContentMethods : IDishResultDialogContent { # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf4b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf4f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf4c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf5040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf55f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf5650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDish(crate::app::dish::Dish)` overload"] fn set_dish (self , dish : impl :: core :: convert :: Into < crate :: app :: dish :: Dish >) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , crate :: app :: dish :: Dish , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf4540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dish) , :: core :: option :: Option :: None) } } } # [doc = "`SetGrade(crate::app::tastedata::TasteData)` overload"] fn set_grade (self , taste : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData >) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , crate :: app :: tastedata :: TasteData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf5750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (taste) , :: core :: option :: Option :: None) } } } # [doc = "`SetEnhance(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"] fn set_enhance (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf5a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetBonus(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"] fn set_bonus (self , r#type : impl :: core :: convert :: Into < crate :: app :: capabilitydefinition :: CapabilityDefinition_Type > , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , crate :: app :: capabilitydefinition :: CapabilityDefinition_Type , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf5ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishResultDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishResultDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf6130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dishresultdialogcontent")]pub trait IDishResultDialogContentMethods:IDishResultDialogContent{#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf4b30usize)as*mut u8,();
+(DishResultDialogContent)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf4f50usize)as*mut u8,();
+(DishResultDialogContent)__receiver)}
+}
+#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf4c20usize)as*mut u8,bool;
+(DishResultDialogContent)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf5040usize)as*mut u8,bool;
+(DishResultDialogContent)__receiver)}
+}
+#[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf55f0usize)as*mut u8,bool;
+(DishResultDialogContent)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf5650usize)as*mut u8,();
+(DishResultDialogContent)__receiver)}
+}
+#[doc="`SetDish(crate::app::dish::Dish)` overload"]fn set_dish(self,dish:impl::core::convert::Into<crate::app::dish::Dish>)->(){unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf4540usize)as*mut u8,();
+(DishResultDialogContent)__receiver,(crate::app::dish::Dish)::core::convert::Into::into(dish))}
+}
+#[doc="`SetGrade(crate::app::tastedata::TasteData)` overload"]fn set_grade(self,taste:impl::core::convert::Into<crate::app::tastedata::TasteData>)->(){unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf5750usize)as*mut u8,();
+(DishResultDialogContent)__receiver,(crate::app::tastedata::TasteData)::core::convert::Into::into(taste))}
+}
+#[doc="`SetEnhance(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"]fn set_enhance(self,r#type:impl::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type> ,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf5a80usize)as*mut u8,bool;
+(DishResultDialogContent)__receiver,(crate::app::capabilitydefinition::CapabilityDefinition_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`SetBonus(crate::app::capabilitydefinition::CapabilityDefinition_Type, i32, i32)` overload"]fn set_bonus(self,r#type:impl::core::convert::Into<crate::app::capabilitydefinition::CapabilityDefinition_Type> ,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf5ba0usize)as*mut u8,bool;
+(DishResultDialogContent)__receiver,(crate::app::capabilitydefinition::CapabilityDefinition_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishResultDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf6130usize)as*mut u8,();
+(DishResultDialogContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dishresultdialogcontent")]
-impl < __T : IDishResultDialogContent > IDishResultDialogContentMethods for __T { }
+#[cfg(feature="app-dishresultdialogcontent")]impl<__T:IDishResultDialogContent>IDishResultDialogContentMethods for __T{}
 
-#[cfg(feature = "app-dishresultdialogcontent")]
-impl DishResultDialogContent { pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_dish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_grade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishResultDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-dishresultdialogcontent")]impl DishResultDialogContent{pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_dish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_grade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-dishresultdialogcontent")]
-impl DishResultDialogContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishResultDialogContent) , :: core :: stringify ! (new) ,)) ; < Self as IDishResultDialogContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dishresultdialogcontent")]impl DishResultDialogContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishResultDialogContent), ::core::stringify!(new),));
+ <Self as IDishResultDialogContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dishresultdialogcontent")]

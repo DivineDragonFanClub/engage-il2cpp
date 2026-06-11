@@ -4,84 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/physicsmanager/PhysicsManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhysicsManager")] # [parent (crate :: system :: object :: Object)] pub struct PhysicsManager {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/physicsmanager/PhysicsManager_Scope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PhysicsManager_Scope {
-    pub m_enable: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/physicsmanager/PhysicsManager_Scope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct PhysicsManager_Scope{pub m_enable:bool,}
+impl::unity2::ClassIdentity for PhysicsManager_Scope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PhysicsManager.Scope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PhysicsManager_Scope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for PhysicsManager_Scope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PhysicsManager.Scope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for PhysicsManager_Scope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/physicsmanager/PhysicsManager.md"))]#[::unity2::class(namespace="App",name="PhysicsManager")]#[parent(crate::system::object::Object)]pub struct PhysicsManager{}
 
 }
 
 #[cfg(feature = "app-physicsmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-physicsmanager")]
-impl PhysicsManager { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b5e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetEnable(bool)` overload"] pub fn set_enable (enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b5f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnable()` overload"] pub fn is_enable () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b600usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-physicsmanager")]
-pub trait IPhysicsManagerMethods : IPhysicsManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhysicsManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhysicsManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-physicsmanager")]
-impl < __T : IPhysicsManager > IPhysicsManagerMethods for __T { }
-
-#[cfg(feature = "app-physicsmanager")]
-impl PhysicsManager { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhysicsManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhysicsManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhysicsManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhysicsManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-physicsmanager")]
-impl PhysicsManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhysicsManager) , :: core :: stringify ! (new) ,)) ; < Self as IPhysicsManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-physicsmanager")]impl PhysicsManager_Scope{#[doc="`.ctor(bool)` overload"]pub fn ctor(&mut self,enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2264bc0usize)as*mut u8,();
+(*mut PhysicsManager_Scope)self as*mut PhysicsManager_Scope,(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2264c00usize)as*mut u8,();
+(*mut PhysicsManager_Scope)self as*mut PhysicsManager_Scope)}
+}
 }
 
-#[cfg(feature = "app-physicsmanager")]
-impl PhysicsManager_Scope { # [doc = "`.ctor(bool)` overload"] pub fn ctor (& mut self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut PhysicsManager_Scope , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264bc0usize) as * mut u8) ; __inner (self as * mut PhysicsManager_Scope , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut PhysicsManager_Scope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264c00usize) as * mut u8) ; __inner (self as * mut PhysicsManager_Scope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-physicsmanager")]impl PhysicsManager_Scope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-physicsmanager")]
-impl PhysicsManager_Scope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhysicsManager_Scope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhysicsManager_Scope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-physicsmanager")]impl PhysicsManager{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280b5e0usize)as*mut u8,();
+)}
+}
+#[doc="`SetEnable(bool)` overload"]pub fn set_enable(enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280b5f0usize)as*mut u8,();
+(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`IsEnable()` overload"]pub fn is_enable()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280b600usize)as*mut u8,bool;
+)}
+}
+}
+
+#[cfg(feature="app-physicsmanager")]pub trait IPhysicsManagerMethods:IPhysicsManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhysicsManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b610usize)as*mut u8,();
+(PhysicsManager)__receiver)}
+}
+}
+
+#[cfg(feature="app-physicsmanager")]impl<__T:IPhysicsManager>IPhysicsManagerMethods for __T{}
+
+#[cfg(feature="app-physicsmanager")]impl PhysicsManager{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-physicsmanager")]impl PhysicsManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhysicsManager), ::core::stringify!(new),));
+ <Self as IPhysicsManagerMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature = "app-physicsmanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PhysicsManager_Scope;
     pub use super::PhysicsManager;
     pub use super::IPhysicsManager;
     pub use super::IPhysicsManagerMethods;
-    pub use super::PhysicsManager_Scope;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

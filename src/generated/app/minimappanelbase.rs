@@ -4,51 +4,138 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: graphic :: { Graphic , IGraphic }
- ;
- use crate :: unity_engine :: ui :: maskablegraphic :: { IMaskableGraphic , MaskableGraphic }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::graphic::{Graphic,IGraphic}
+;
+use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimappanelbase/MiniMapPanelBase.md"))] # [:: unity2 :: class (namespace = "App" , name = "MiniMapPanelBase")] # [parent (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic)] pub struct MiniMapPanelBase {
-# [offset (208)] # [rename (name = "m_Texture")] pub m_texture : crate :: unity_engine :: texture2d :: Texture2D ,
-# [offset (216)] # [rename (name = "m_CanvasRenderer")] pub m_canvas_renderer : crate :: unity_engine :: canvasrenderer :: CanvasRenderer ,
-# [offset (224)] # [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (232)] # [rename (name = "m_Materials")] pub m_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-# [offset (248)] # [rename (name = "m_IsAwaked")] pub m_is_awaked : bool ,
-# [offset (252)] # [rename (name = "m_CustomOffsetZ")] pub m_custom_offset_z : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimappanelbase/MiniMapPanelBase.md"))]#[::unity2::class(namespace="App",name="MiniMapPanelBase")]#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]pub struct MiniMapPanelBase{#[offset(208)]#[rename(name="m_Texture")]pub m_texture:crate::unity_engine::texture2d::Texture2D, #[offset(216)]#[rename(name="m_CanvasRenderer")]pub m_canvas_renderer:crate::unity_engine::canvasrenderer::CanvasRenderer, #[offset(224)]#[rename(name="m_Mesh")]pub m_mesh:crate::unity_engine::mesh::Mesh, #[offset(232)]#[rename(name="m_Materials")]pub m_materials: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(248)]#[rename(name="m_IsAwaked")]pub m_is_awaked:bool, #[offset(252)]#[rename(name="m_CustomOffsetZ")]pub m_custom_offset_z:i32,}
 
 }
 
 #[cfg(feature = "app-minimappanelbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-minimappanelbase")]
-pub trait IMiniMapPanelBaseMethods : IMiniMapPanelBase { # [doc = "`get_Texture()` overload"] fn get_texture (self ,) -> crate :: unity_engine :: texture2d :: Texture2D { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Texture(crate::unity_engine::texture2d::Texture2D)` overload"] fn set_texture (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D >) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CanvasRenderer()` overload"] fn get_canvas_renderer (self ,) -> crate :: unity_engine :: canvasrenderer :: CanvasRenderer { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: canvasrenderer :: CanvasRenderer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GridSize(f32)` overload"] fn set_grid_size (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GridSize()` overload"] fn get_grid_size (self ,) -> f32 { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OffsetZ(f32)` overload"] fn set_offset_z (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OffsetZ()` overload"] fn get_offset_z (self ,) -> f32 { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMaterials()` overload"] fn get_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSourceMaterials()` overload"] fn get_source_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapPanelMaterials()` overload"] fn get_map_panel_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapImage()` overload"] fn get_map_image (self ,) -> crate :: app :: mapimage :: MapImage { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapimage :: MapImage = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e47e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateGeometry()` overload"] fn update_geometry (self ,) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreatePanelMesh()` overload"] fn create_panel_mesh (self ,) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMeshToRenderer()` overload"] fn set_mesh_to_renderer (self ,) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e49a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateMapSize()` overload"] fn update_map_size (self ,) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e2a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MiniMapPanelBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e4bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-minimappanelbase")]pub trait IMiniMapPanelBaseMethods:IMiniMapPanelBase{#[doc="`get_Texture()` overload"]fn get_texture(self,)->crate::unity_engine::texture2d::Texture2D{unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4270usize)as*mut u8,crate::unity_engine::texture2d::Texture2D;
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`set_Texture(crate::unity_engine::texture2d::Texture2D)` overload"]fn set_texture(self,value:impl::core::convert::Into<crate::unity_engine::texture2d::Texture2D>)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4280usize)as*mut u8,();
+(MiniMapPanelBase)__receiver,(crate::unity_engine::texture2d::Texture2D)::core::convert::Into::into(value))}
+}
+#[doc="`get_CanvasRenderer()` overload"]fn get_canvas_renderer(self,)->crate::unity_engine::canvasrenderer::CanvasRenderer{unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4340usize)as*mut u8,crate::unity_engine::canvasrenderer::CanvasRenderer;
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`set_GridSize(f32)` overload"]fn set_grid_size(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4400usize)as*mut u8,();
+(MiniMapPanelBase)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_GridSize()` overload"]fn get_grid_size(self,)->f32{unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4410usize)as*mut u8,f32;
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`set_OffsetZ(f32)` overload"]fn set_offset_z(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4420usize)as*mut u8,();
+(MiniMapPanelBase)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_OffsetZ()` overload"]fn get_offset_z(self,)->f32{unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4430usize)as*mut u8,f32;
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4440usize)as*mut u8,();
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`GetMaterials()` overload"]fn get_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4650usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4660usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`GetMapPanelMaterials()` overload"]fn get_map_panel_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4720usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`GetMapImage()` overload"]fn get_map_image(self,)->crate::app::mapimage::MapImage{unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e47e0usize)as*mut u8,crate::app::mapimage::MapImage;
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4860usize)as*mut u8,();
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4880usize)as*mut u8,();
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4980usize)as*mut u8,();
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`CreatePanelMesh()` overload"]fn create_panel_mesh(self,)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4990usize)as*mut u8,();
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`SetMeshToRenderer()` overload"]fn set_mesh_to_renderer(self,)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e49a0usize)as*mut u8,();
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`UpdateMapSize()` overload"]fn update_map_size(self,)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e2a50usize)as*mut u8,();
+(MiniMapPanelBase)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MiniMapPanelBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4bd0usize)as*mut u8,();
+(MiniMapPanelBase)__receiver)}
+}
+}
 
-#[cfg(feature = "app-minimappanelbase")]
-impl < __T : IMiniMapPanelBase > IMiniMapPanelBaseMethods for __T { }
+#[cfg(feature="app-minimappanelbase")]impl<__T:IMiniMapPanelBase>IMiniMapPanelBaseMethods for __T{}
 
-#[cfg(feature = "app-minimappanelbase")]
-impl MiniMapPanelBase { pub fn get_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_canvas_renderer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_grid_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_grid_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_offset_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_offset_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_source_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_map_panel_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_map_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn update_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn create_panel_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_mesh_to_renderer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn update_map_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-minimappanelbase")]impl MiniMapPanelBase{pub fn get_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_canvas_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_grid_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_grid_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_offset_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_offset_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_source_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_map_panel_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_map_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn update_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn create_panel_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_mesh_to_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn update_map_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-minimappanelbase")]
-impl MiniMapPanelBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MiniMapPanelBase) , :: core :: stringify ! (new) ,)) ; < Self as IMiniMapPanelBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-minimappanelbase")]impl MiniMapPanelBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MiniMapPanelBase), ::core::stringify!(new),));
+ <Self as IMiniMapPanelBaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-minimappanelbase")]

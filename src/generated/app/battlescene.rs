@@ -4,348 +4,128 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: pool :: { IPool_Node , Pool_Node }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::pool::{IPool_Node,Pool_Node}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleScene")] # [parent (crate :: app :: pool :: Pool_Node)] pub struct BattleScene {
-# [offset (16)] # [rename (name = "m_List")] pub m_list : crate :: app :: battlescenelist :: BattleSceneList ,
-# [offset (24)] # [rename (name = "m_Side")] pub m_side : crate :: app :: battleside :: BattleSide_Type ,
-# [offset (28)] # [rename (name = "m_Target")] pub m_target : crate :: app :: battleside :: BattleSide_Type ,
-# [offset (32)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: battlescene :: BattleScene_Kind ,
-# [offset (36)] # [rename (name = "m_Skill")] pub m_skill : i32 ,
-# [offset (40)] # [rename (name = "m_Item")] pub m_item : i32 ,
-# [offset (44)] # [rename (name = "m_God")] pub m_god : i32 ,
-# [offset (48)] # [rename (name = "m_Index")] pub m_index : i32 ,
-# [offset (56)] # [rename (name = "m_Result")] pub m_result : crate :: app :: battlescene :: BattleScene_FieldResult ,
-# [offset (64)] # [rename (name = "m_Guardian")] pub m_guardian : crate :: app :: battleside :: BattleSide_Type ,
-# [offset (72)] # [rename (name = "m_Hps")] pub m_hps : crate :: app :: battleside :: BattleSide_ShortArray ,
-# [offset (80)] # [rename (name = "m_Engages")] pub m_engages : crate :: app :: battleside :: BattleSide_SbyteArray ,
-# [offset (88)] # [rename (name = "m_Damages")] pub m_damages : crate :: app :: battleside :: BattleSide_ShortArray ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene_FieldResult.md"))]#[::unity2::class(namespace="App",name="BattleScene.FieldResult")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::battlescene::BattleScene_Result>)]pub struct BattleScene_FieldResult{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleScene_Kind{pub value:i32,}
+impl::unity2::ClassIdentity for BattleScene_Kind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BattleScene.Kind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for BattleScene_Kind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl BattleScene_Kind{pub fn none()->Self{Self{value:0}
+}
+pub fn attack()->Self{Self{value:1}
+}
+pub fn rod()->Self{Self{value:2}
+}
+pub fn dance()->Self{Self{value:3}
+}
+pub fn skill()->Self{Self{value:4}
+}
+pub fn give_direct()->Self{Self{value:5}
+}
+pub fn give_delay()->Self{Self{value:6}
+}
+pub fn strip()->Self{Self{value:7}
+}
+pub fn equip()->Self{Self{value:8}
+}
+pub fn god()->Self{Self{value:9}
+}
+pub fn dead()->Self{Self{value:10}
+}
+pub fn engage_attack()->Self{Self{value:11}
+}
+pub fn separator()->Self{Self{value:12}
+}
+pub fn push_battle()->Self{Self{value:13}
+}
+pub fn push_order()->Self{Self{value:14}
+}
+pub fn push_action()->Self{Self{value:15}
+}
+pub fn push_attack()->Self{Self{value:16}
+}
+pub fn pop_attack()->Self{Self{value:17}
+}
+pub fn pop_action()->Self{Self{value:18}
+}
+pub fn pop_order()->Self{Self{value:19}
+}
+pub fn pop_battle()->Self{Self{value:20}
+}
+pub fn heal()->Self{Self{value:21}
+}
+pub fn num()->Self{Self{value:22}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene_FieldResult.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleScene.FieldResult")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlescene :: BattleScene_Result >)] pub struct BattleScene_FieldResult {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene.md"))]#[::unity2::class(namespace="App",name="BattleScene")]#[parent(crate::app::pool::Pool_Node)]pub struct BattleScene{#[offset(16)]#[rename(name="m_List")]pub m_list:crate::app::battlescenelist::BattleSceneList, #[offset(24)]#[rename(name="m_Side")]pub m_side:crate::app::battleside::BattleSide_Type, #[offset(28)]#[rename(name="m_Target")]pub m_target:crate::app::battleside::BattleSide_Type, #[offset(32)]#[rename(name="m_Kind")]pub m_kind:crate::app::battlescene::BattleScene_Kind, #[offset(36)]#[rename(name="m_Skill")]pub m_skill:i32, #[offset(40)]#[rename(name="m_Item")]pub m_item:i32, #[offset(44)]#[rename(name="m_God")]pub m_god:i32, #[offset(48)]#[rename(name="m_Index")]pub m_index:i32, #[offset(56)]#[rename(name="m_Result")]pub m_result:crate::app::battlescene::BattleScene_FieldResult, #[offset(64)]#[rename(name="m_Guardian")]pub m_guardian:crate::app::battleside::BattleSide_Type, #[offset(72)]#[rename(name="m_Hps")]pub m_hps:crate::app::battleside::BattleSide_ShortArray, #[offset(80)]#[rename(name="m_Engages")]pub m_engages:crate::app::battleside::BattleSide_SbyteArray, #[offset(88)]#[rename(name="m_Damages")]pub m_damages:crate::app::battleside::BattleSide_ShortArray,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Kind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct BattleScene_Kind  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlescene/BattleScene_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleScene_Result{pub value:i32,}
+impl::unity2::ClassIdentity for BattleScene_Result{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BattleScene.Result";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for BattleScene_Kind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleScene.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for BattleScene_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for BattleScene_Kind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl BattleScene_Result{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  BattleScene_Kind  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn rod() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn dance() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn skill() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn give_direct() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn give_delay() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn strip() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn equip() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn god() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn dead() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn engage_attack() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn separator() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn push_battle() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn push_order() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn push_action() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn push_attack() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn pop_attack() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn pop_action() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn pop_order() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn pop_battle() -> Self {
-        Self { value: 20 }
-
-    }
-
-
-    pub fn heal() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 22 }
-
-    }
-
+pub fn hit()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Result.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct BattleScene_Result  {
-    pub value: i32,
+pub fn critical()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for BattleScene_Result  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleScene.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn guard()->Self{Self{value:4}
 }
-
-
-impl  ::unity2::IlType for BattleScene_Result  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn suicide()->Self{Self{value:8}
 }
-
-
-impl  BattleScene_Result  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn hit() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn critical() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn guard() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn suicide() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn efficacy() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn r#break() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn blow() -> Self {
-        Self { value: 64 }
-
-    }
-
-
-    pub fn bounce() -> Self {
-        Self { value: 128 }
-
-    }
-
-
-    pub fn chain_attack() -> Self {
-        Self { value: 256 }
-
-    }
-
-
-    pub fn chain_guard() -> Self {
-        Self { value: 512 }
-
-    }
-
-
-    pub fn dual_guard() -> Self {
-        Self { value: 1024 }
-
-    }
-
-
-    pub fn engage_attack() -> Self {
-        Self { value: 2048 }
-
-    }
-
-
-    pub fn physical() -> Self {
-        Self { value: 4096 }
-
-    }
-
-
-    pub fn magic() -> Self {
-        Self { value: 8192 }
-
-    }
-
-
-    pub fn ignore() -> Self {
-        Self { value: 16384 }
-
-    }
-
+pub fn efficacy()->Self{Self{value:16}
+}
+pub fn r#break()->Self{Self{value:32}
+}
+pub fn blow()->Self{Self{value:64}
+}
+pub fn bounce()->Self{Self{value:128}
+}
+pub fn chain_attack()->Self{Self{value:256}
+}
+pub fn chain_guard()->Self{Self{value:512}
+}
+pub fn dual_guard()->Self{Self{value:1024}
+}
+pub fn engage_attack()->Self{Self{value:2048}
+}
+pub fn physical()->Self{Self{value:4096}
+}
+pub fn magic()->Self{Self{value:8192}
+}
+pub fn ignore()->Self{Self{value:16384}
+}
 }
 
 }
@@ -353,47 +133,253 @@ impl  BattleScene_Result  {
 #[cfg(feature = "app-battlescene-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battlescene")]
-pub trait IBattleSceneMethods : IBattleScene { # [doc = "`get_DebuggerDisplay()` overload"] fn get_debugger_display (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::app::battlescenelist::BattleSceneList, crate::app::battlescene::BattleScene_Kind, crate::app::battleside::BattleSide_Type, crate::app::battleside::BattleSide_Type, crate::app::battleinfo::BattleInfo, i32)` overload"] fn setup (self , list : impl :: core :: convert :: Into < crate :: app :: battlescenelist :: BattleSceneList > , kind : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_Kind > , current : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , target : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battlescenelist :: BattleSceneList , crate :: app :: battlescene :: BattleScene_Kind , crate :: app :: battleside :: BattleSide_Type , crate :: app :: battleside :: BattleSide_Type , crate :: app :: battleinfo :: BattleInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetKind()` overload"] fn get_kind (self ,) -> crate :: app :: battlescene :: BattleScene_Kind { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene_Kind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e906b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetIndex()` overload"] fn get_index (self ,) -> i32 { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e906c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResult()` overload"] fn get_result (self ,) -> crate :: app :: battlescene :: BattleScene_FieldResult { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene_FieldResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e906d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsResult(crate::app::battlescene::BattleScene_Result)` overload"] fn is_result (self , result : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_Result >) -> bool { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battlescene :: BattleScene_Result , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e906e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } # [doc = "`SetResult(crate::app::battlescene::BattleScene_Result)` overload"] fn set_result (self , result : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_Result >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battlescene :: BattleScene_Result , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } # [doc = "`SetKind(crate::app::battlescene::BattleScene_Kind)` overload"] fn set_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_Kind >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battlescene :: BattleScene_Kind , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e907c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetDamage(crate::app::battleside::BattleSide_Type)` overload"] fn get_damage (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> i32 { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e907d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`GetHeal(crate::app::battleside::BattleSide_Type)` overload"] fn get_heal (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> i32 { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`SetDamage(crate::app::battleside::BattleSide_Type, i32)` overload"] fn set_damage (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , damage : impl :: core :: convert :: Into < i32 >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleside :: BattleSide_Type , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (damage) , :: core :: option :: Option :: None) } } } # [doc = "`GetHp(crate::app::battleside::BattleSide_Type)` overload"] fn get_hp (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> i32 { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`AddHp(crate::app::battleside::BattleSide_Type, i32)` overload"] fn add_hp (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleside :: BattleSide_Type , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90b90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Commit(crate::app::battleinfo::BattleInfo)` overload"] fn commit (self , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo >) -> () { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleinfo :: BattleInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90c30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`GetEngageCount(crate::app::battleside::BattleSide_Type)` overload"] fn get_engage_count (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> i32 { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`GetClampDamage(crate::app::battleside::BattleSide_Type)` overload"] fn get_clamp_damage (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> i32 { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`SetSkill(i32)` overload"] fn set_skill (self , skill : impl :: core :: convert :: Into < i32 >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`SetSkill(crate::app::skilldata::SkillData)` overload"] fn set_skill_2 (self , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`SetSkill(::unity2::Il2CppString)` overload"] fn set_skill_3 (self , sid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sid) , :: core :: option :: Option :: None) } } } # [doc = "`GetSkill()` overload"] fn get_skill (self ,) -> crate :: app :: skilldata :: SkillData { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetItem(i32)` overload"] fn set_item (self , item : impl :: core :: convert :: Into < i32 >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`SetItem(crate::app::itemdata::ItemData)` overload"] fn set_item_2 (self , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`SetItem(::unity2::Il2CppString)` overload"] fn set_item_3 (self , iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } # [doc = "`GetItem()` overload"] fn get_item (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetGod(crate::app::goddata::GodData)` overload"] fn set_god (self , god : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> crate :: app :: battlescene :: BattleScene { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e911b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`GetGod()` overload"] fn get_god (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e911c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetShowSkill()` overload"] fn get_show_skill (self ,) -> crate :: app :: skilldata :: SkillData { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSkillNameForDebuggerDisplay()` overload"] fn get_skill_name_for_debugger_display (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e90270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Side()` overload"] fn get_side (self ,) -> crate :: app :: battleside :: BattleSide_Type { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleside :: BattleSide_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Target()` overload"] fn get_target (self ,) -> crate :: app :: battleside :: BattleSide_Type { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleside :: BattleSide_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Guardian()` overload"] fn get_guardian (self ,) -> crate :: app :: battleside :: BattleSide_Type { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleside :: BattleSide_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Guardian(crate::app::battleside::BattleSide_Type)` overload"] fn set_guardian (self , value : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> () { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: app :: battleside :: BattleSide_Type { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleside :: BattleSide_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Reverse()` overload"] fn get_reverse (self ,) -> crate :: app :: battleside :: BattleSide_Type { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleside :: BattleSide_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEntry(crate::app::battleside::BattleSide_Type)` overload"] fn is_entry (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> bool { unsafe { let __receiver = < BattleScene as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e91460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-battlescene")]
-impl < __T : IBattleScene > IBattleSceneMethods for __T { }
-
-#[cfg(feature = "app-battlescene")]
-impl BattleScene { pub fn get_debugger_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_heal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_hp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn add_hp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_engage_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_clamp_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_skill_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_skill_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_item_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_item_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_show_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_skill_name_for_debugger_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_guardian_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn set_guardian_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn get_reverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn is_entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } }
-
-#[cfg(feature = "app-battlescene")]
-impl BattleScene {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleScene) , :: core :: stringify ! (new) ,)) ; < Self as IBattleSceneMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-battlescene")]impl BattleScene_FieldResult{#[doc="`op_Implicit(crate::app::battlescene::BattleScene_FieldResult)` overload"]pub fn op_implicit(self_:impl::core::convert::Into<crate::app::battlescene::BattleScene_FieldResult>)->crate::app::battlescene::BattleScene_Result{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bbb00usize)as*mut u8,crate::app::battlescene::BattleScene_Result;
+(crate::app::battlescene::BattleScene_FieldResult)::core::convert::Into::into(self_))}
+}
 }
 
-#[cfg(feature = "app-battlescene")]
-impl BattleScene_FieldResult { # [doc = "`op_Implicit(crate::app::battlescene::BattleScene_FieldResult)` overload"] pub fn op_implicit (self_ : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_FieldResult >) -> crate :: app :: battlescene :: BattleScene_Result { unsafe { { let __inner : extern "C" fn (crate :: app :: battlescene :: BattleScene_FieldResult , :: unity2 :: OptionalMethod ,) -> crate :: app :: battlescene :: BattleScene_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bbb00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (self_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlescene")]pub trait IBattleScene_FieldResultMethods:IBattleScene_FieldResult{#[doc="`ToInt(crate::app::battlescene::BattleScene_Result)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::battlescene::BattleScene_Result>)->i32{unsafe{let __receiver= <BattleScene_FieldResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bbaf0usize)as*mut u8,i32;
+(BattleScene_FieldResult)__receiver,(crate::app::battlescene::BattleScene_Result)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleScene_FieldResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bbb10usize)as*mut u8,();
+(BattleScene_FieldResult)__receiver)}
+}
+}
 
-#[cfg(feature = "app-battlescene")]
-pub trait IBattleScene_FieldResultMethods : IBattleScene_FieldResult { # [doc = "`ToInt(crate::app::battlescene::BattleScene_Result)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene_Result >) -> i32 { unsafe { let __receiver = < BattleScene_FieldResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene_FieldResult , crate :: app :: battlescene :: BattleScene_Result , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bbaf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleScene_FieldResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleScene_FieldResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bbb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlescene")]impl<__T:IBattleScene_FieldResult>IBattleScene_FieldResultMethods for __T{}
 
-#[cfg(feature = "app-battlescene")]
-impl < __T : IBattleScene_FieldResult > IBattleScene_FieldResultMethods for __T { }
+#[cfg(feature="app-battlescene")]impl BattleScene_FieldResult{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-battlescene")]
-impl BattleScene_FieldResult { pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene_FieldResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene_FieldResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleScene_FieldResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-battlescene")]impl BattleScene_FieldResult{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleScene_FieldResult), ::core::stringify!(new),));
+ <Self as IBattleScene_FieldResultMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-battlescene")]
-impl BattleScene_FieldResult {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleScene_FieldResult) , :: core :: stringify ! (new) ,)) ; < Self as IBattleScene_FieldResultMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-battlescene")]pub trait IBattleSceneMethods:IBattleScene{#[doc="`get_DebuggerDisplay()` overload"]fn get_debugger_display(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f9b0usize)as*mut u8, ::unity2::Il2CppString;
+(BattleScene)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90320usize)as*mut u8,();
+(BattleScene)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90440usize)as*mut u8,();
+(BattleScene)__receiver)}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90530usize)as*mut u8,();
+(BattleScene)__receiver)}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90540usize)as*mut u8,();
+(BattleScene)__receiver)}
+}
+#[doc="`Setup(crate::app::battlescenelist::BattleSceneList, crate::app::battlescene::BattleScene_Kind, crate::app::battleside::BattleSide_Type, crate::app::battleside::BattleSide_Type, crate::app::battleinfo::BattleInfo, i32)` overload"]fn setup(self,list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList> ,kind:impl::core::convert::Into<crate::app::battlescene::BattleScene_Kind> ,current:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,target:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90550usize)as*mut u8,();
+(BattleScene)__receiver,(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(list),(crate::app::battlescene::BattleScene_Kind)::core::convert::Into::into(kind),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(current),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(target),(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetKind()` overload"]fn get_kind(self,)->crate::app::battlescene::BattleScene_Kind{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e906b0usize)as*mut u8,crate::app::battlescene::BattleScene_Kind;
+(BattleScene)__receiver)}
+}
+#[doc="`GetIndex()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e906c0usize)as*mut u8,i32;
+(BattleScene)__receiver)}
+}
+#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::battlescene::BattleScene_FieldResult{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e906d0usize)as*mut u8,crate::app::battlescene::BattleScene_FieldResult;
+(BattleScene)__receiver)}
+}
+#[doc="`IsResult(crate::app::battlescene::BattleScene_Result)` overload"]fn is_result(self,result:impl::core::convert::Into<crate::app::battlescene::BattleScene_Result>)->bool{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e906e0usize)as*mut u8,bool;
+(BattleScene)__receiver,(crate::app::battlescene::BattleScene_Result)::core::convert::Into::into(result))}
+}
+#[doc="`SetResult(crate::app::battlescene::BattleScene_Result)` overload"]fn set_result(self,result:impl::core::convert::Into<crate::app::battlescene::BattleScene_Result>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90750usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(crate::app::battlescene::BattleScene_Result)::core::convert::Into::into(result))}
+}
+#[doc="`SetKind(crate::app::battlescene::BattleScene_Kind)` overload"]fn set_kind(self,kind:impl::core::convert::Into<crate::app::battlescene::BattleScene_Kind>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e907c0usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(crate::app::battlescene::BattleScene_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetDamage(crate::app::battleside::BattleSide_Type)` overload"]fn get_damage(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->i32{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e907d0usize)as*mut u8,i32;
+(BattleScene)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+#[doc="`GetHeal(crate::app::battleside::BattleSide_Type)` overload"]fn get_heal(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->i32{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90930usize)as*mut u8,i32;
+(BattleScene)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+#[doc="`SetDamage(crate::app::battleside::BattleSide_Type, i32)` overload"]fn set_damage(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,damage:impl::core::convert::Into<i32>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90aa0usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side),(i32)::core::convert::Into::into(damage))}
+}
+#[doc="`GetHp(crate::app::battleside::BattleSide_Type)` overload"]fn get_hp(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->i32{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90b20usize)as*mut u8,i32;
+(BattleScene)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+#[doc="`AddHp(crate::app::battleside::BattleSide_Type, i32)` overload"]fn add_hp(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90b90usize)as*mut u8,();
+(BattleScene)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Commit(crate::app::battleinfo::BattleInfo)` overload"]fn commit(self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90c30usize)as*mut u8,();
+(BattleScene)__receiver,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
+}
+#[doc="`GetEngageCount(crate::app::battleside::BattleSide_Type)` overload"]fn get_engage_count(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->i32{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90da0usize)as*mut u8,i32;
+(BattleScene)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+#[doc="`GetClampDamage(crate::app::battleside::BattleSide_Type)` overload"]fn get_clamp_damage(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->i32{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90e10usize)as*mut u8,i32;
+(BattleScene)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+#[doc="`SetSkill(i32)` overload"]fn set_skill(self,skill:impl::core::convert::Into<i32>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90f10usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(i32)::core::convert::Into::into(skill))}
+}
+#[doc="`SetSkill(crate::app::skilldata::SkillData)` overload"]fn set_skill_2(self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90f20usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`SetSkill(::unity2::Il2CppString)` overload"]fn set_skill_3(self,sid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90f30usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(sid))}
+}
+#[doc="`GetSkill()` overload"]fn get_skill(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90fd0usize)as*mut u8,crate::app::skilldata::SkillData;
+(BattleScene)__receiver)}
+}
+#[doc="`SetItem(i32)` overload"]fn set_item(self,item:impl::core::convert::Into<i32>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91060usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(i32)::core::convert::Into::into(item))}
+}
+#[doc="`SetItem(crate::app::itemdata::ItemData)` overload"]fn set_item_2(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91070usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`SetItem(::unity2::Il2CppString)` overload"]fn set_item_3(self,iid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91080usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`GetItem()` overload"]fn get_item(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91120usize)as*mut u8,crate::app::itemdata::ItemData;
+(BattleScene)__receiver)}
+}
+#[doc="`SetGod(crate::app::goddata::GodData)` overload"]fn set_god(self,god:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::app::battlescene::BattleScene{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e911b0usize)as*mut u8,crate::app::battlescene::BattleScene;
+(BattleScene)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god))}
+}
+#[doc="`GetGod()` overload"]fn get_god(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e911c0usize)as*mut u8,crate::app::goddata::GodData;
+(BattleScene)__receiver)}
+}
+#[doc="`GetShowSkill()` overload"]fn get_show_skill(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91250usize)as*mut u8,crate::app::skilldata::SkillData;
+(BattleScene)__receiver)}
+}
+#[doc="`GetSkillNameForDebuggerDisplay()` overload"]fn get_skill_name_for_debugger_display(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e90270usize)as*mut u8, ::unity2::Il2CppString;
+(BattleScene)__receiver)}
+}
+#[doc="`get_Side()` overload"]fn get_side(self,)->crate::app::battleside::BattleSide_Type{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91310usize)as*mut u8,crate::app::battleside::BattleSide_Type;
+(BattleScene)__receiver)}
+}
+#[doc="`get_Target()` overload"]fn get_target(self,)->crate::app::battleside::BattleSide_Type{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91320usize)as*mut u8,crate::app::battleside::BattleSide_Type;
+(BattleScene)__receiver)}
+}
+#[doc="`get_Guardian()` overload"]fn get_guardian(self,)->crate::app::battleside::BattleSide_Type{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91330usize)as*mut u8,crate::app::battleside::BattleSide_Type;
+(BattleScene)__receiver)}
+}
+#[doc="`set_Guardian(crate::app::battleside::BattleSide_Type)` overload"]fn set_guardian(self,value:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->(){unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91340usize)as*mut u8,();
+(BattleScene)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::app::battleside::BattleSide_Type{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91350usize)as*mut u8,crate::app::battleside::BattleSide_Type;
+(BattleScene)__receiver)}
+}
+#[doc="`get_Reverse()` overload"]fn get_reverse(self,)->crate::app::battleside::BattleSide_Type{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91360usize)as*mut u8,crate::app::battleside::BattleSide_Type;
+(BattleScene)__receiver)}
+}
+#[doc="`IsEntry(crate::app::battleside::BattleSide_Type)` overload"]fn is_entry(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->bool{unsafe{let __receiver= <BattleScene as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e91460usize)as*mut u8,bool;
+(BattleScene)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+}
+
+#[cfg(feature="app-battlescene")]impl<__T:IBattleScene>IBattleSceneMethods for __T{}
+
+#[cfg(feature="app-battlescene")]impl BattleScene{pub fn get_debugger_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn add_hp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_engage_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_clamp_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_skill_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_skill_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_item_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_item_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_show_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_skill_name_for_debugger_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_guardian_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_guardian_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_reverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn is_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+}
+
+#[cfg(feature="app-battlescene")]impl BattleScene{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleScene), ::core::stringify!(new),));
+ <Self as IBattleSceneMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-battlescene")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleScene;
-    pub use super::IBattleScene;
-    pub use super::IBattleSceneMethods;
     pub use super::BattleScene_FieldResult;
     pub use super::IBattleScene_FieldResult;
     pub use super::IBattleScene_FieldResultMethods;
     pub use super::BattleScene_Kind;
+    pub use super::BattleScene;
+    pub use super::IBattleScene;
+    pub use super::IBattleSceneMethods;
     pub use super::BattleScene_Result;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;

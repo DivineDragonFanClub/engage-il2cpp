@@ -4,72 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapcinemachinecontroller/GmapCinemachineController.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapCinemachineController")] # [parent (crate :: system :: object :: Object)] pub struct GmapCinemachineController {
-# [offset (16)] # [rename (name = "m_Carrier")] pub m_carrier : crate :: unity_engine :: gameobject :: GameObject ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapcinemachinecontroller/GmapCinemachineController.md"))]#[::unity2::class(namespace="App",name="GmapCinemachineController")]#[parent(crate::system::object::Object)]pub struct GmapCinemachineController{#[offset(16)]#[rename(name="m_Carrier")]pub m_carrier:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapcinemachinecontroller/GmapCinemachineController_PointType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapCinemachineController_PointType{pub value:i32,}
+impl::unity2::ClassIdentity for GmapCinemachineController_PointType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapCinemachineController.PointType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapcinemachinecontroller/GmapCinemachineController_PointType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GmapCinemachineController_PointType  {
-    pub value: i32,
+impl::unity2::IlType for GmapCinemachineController_PointType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for GmapCinemachineController_PointType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapCinemachineController.PointType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl GmapCinemachineController_PointType{pub fn none()->Self{Self{value: -1}
 }
-
-
-impl  ::unity2::IlType for GmapCinemachineController_PointType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn start()->Self{Self{value:0}
 }
-
-
-impl  GmapCinemachineController_PointType  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn start() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn end()->Self{Self{value:1}
+}
 }
 
 }
@@ -77,18 +38,77 @@ impl  GmapCinemachineController_PointType  {
 #[cfg(feature = "app-gmapcinemachinecontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmapcinemachinecontroller")]
-pub trait IGmapCinemachineControllerMethods : IGmapCinemachineController { # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"] fn ctor (self , carrier : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (carrier) , :: core :: option :: Option :: None) } } } # [doc = "`SetPosition(crate::unity_engine::vector3::Vector3)` overload"] fn set_position (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25287a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`Move(f32)` overload"] fn r#move (self , speed : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } # [doc = "`Set(f32)` overload"] fn set (self , normalized_pos : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25288d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (normalized_pos) , :: core :: option :: Option :: None) } } } # [doc = "`IsMoveFinished(bool)` overload"] fn is_move_finished (self , is_forward : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_forward) , :: core :: option :: Option :: None) } } } # [doc = "`GetFinishedType()` overload"] fn get_finished_type (self ,) -> crate :: app :: gmapcinemachinecontroller :: GmapCinemachineController_PointType { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , :: unity2 :: OptionalMethod ,) -> crate :: app :: gmapcinemachinecontroller :: GmapCinemachineController_PointType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25289b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Enable()` overload"] fn enable (self ,) -> () { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Disable()` overload"] fn disable (self ,) -> () { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNormalizedPathPosition()` overload"] fn get_normalized_path_position (self ,) -> f32 { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PathPosition()` overload"] fn get_path_position (self ,) -> f32 { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25288a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PathPosition(f32)` overload"] fn set_path_position (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25288c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PathLength()` overload"] fn get_path_length (self ,) -> f32 { unsafe { let __receiver = < GmapCinemachineController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemachineController , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25288b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapcinemachinecontroller")]pub trait IGmapCinemachineControllerMethods:IGmapCinemachineController{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,carrier:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2528710usize)as*mut u8,();
+(GmapCinemachineController)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(carrier))}
+}
+#[doc="`SetPosition(crate::unity_engine::vector3::Vector3)` overload"]fn set_position(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25287a0usize)as*mut u8,();
+(GmapCinemachineController)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`Move(f32)` overload"]fn r#move(self,speed:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2528830usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(GmapCinemachineController)__receiver,(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`Set(f32)` overload"]fn set(self,normalized_pos:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25288d0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(GmapCinemachineController)__receiver,(f32)::core::convert::Into::into(normalized_pos))}
+}
+#[doc="`IsMoveFinished(bool)` overload"]fn is_move_finished(self,is_forward:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2528940usize)as*mut u8,bool;
+(GmapCinemachineController)__receiver,(bool)::core::convert::Into::into(is_forward))}
+}
+#[doc="`GetFinishedType()` overload"]fn get_finished_type(self,)->crate::app::gmapcinemachinecontroller::GmapCinemachineController_PointType{unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25289b0usize)as*mut u8,crate::app::gmapcinemachinecontroller::GmapCinemachineController_PointType;
+(GmapCinemachineController)__receiver)}
+}
+#[doc="`Enable()` overload"]fn enable(self,)->(){unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2528a00usize)as*mut u8,();
+(GmapCinemachineController)__receiver)}
+}
+#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2528a10usize)as*mut u8,();
+(GmapCinemachineController)__receiver)}
+}
+#[doc="`GetNormalizedPathPosition()` overload"]fn get_normalized_path_position(self,)->f32{unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2528a20usize)as*mut u8,f32;
+(GmapCinemachineController)__receiver)}
+}
+#[doc="`get_PathPosition()` overload"]fn get_path_position(self,)->f32{unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25288a0usize)as*mut u8,f32;
+(GmapCinemachineController)__receiver)}
+}
+#[doc="`set_PathPosition(f32)` overload"]fn set_path_position(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25288c0usize)as*mut u8,();
+(GmapCinemachineController)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PathLength()` overload"]fn get_path_length(self,)->f32{unsafe{let __receiver= <GmapCinemachineController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25288b0usize)as*mut u8,f32;
+(GmapCinemachineController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmapcinemachinecontroller")]
-impl < __T : IGmapCinemachineController > IGmapCinemachineControllerMethods for __T { }
+#[cfg(feature="app-gmapcinemachinecontroller")]impl<__T:IGmapCinemachineController>IGmapCinemachineControllerMethods for __T{}
 
-#[cfg(feature = "app-gmapcinemachinecontroller")]
-impl GmapCinemachineController { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_move_finished_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_finished_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_normalized_path_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_path_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_path_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_path_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemachineController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-gmapcinemachinecontroller")]impl GmapCinemachineController{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_move_finished_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_finished_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_normalized_path_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_path_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_path_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_path_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-gmapcinemachinecontroller")]
-impl GmapCinemachineController {
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (carrier : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapCinemachineController) , :: core :: stringify ! (new) ,)) ; < Self as IGmapCinemachineControllerMethods > :: ctor (this , carrier) ; this }
+#[cfg(feature="app-gmapcinemachinecontroller")]impl GmapCinemachineController{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(carrier:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapCinemachineController), ::core::stringify!(new),));
+ <Self as IGmapCinemachineControllerMethods> ::ctor(this,carrier);
+this}
 }
 
 #[cfg(feature = "app-gmapcinemachinecontroller")]

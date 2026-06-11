@@ -4,70 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotfoodeatsequence/MascotFoodEatSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MascotFoodEatSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))]#[::unity2::class(namespace="App",name="MascotFoodEatSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mascotfoodeatsequence::MascotFoodEatSequence>)]pub struct MascotFoodEatSequence{#[offset(120)]#[rename(name="m_foodStuffData")]pub m_food_stuff_data:crate::app::foodstuffdata::FoodstuffData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodeatsequence/MascotFoodEatSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MascotFoodEatSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MascotFoodEatSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MascotFoodEatSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MascotFoodEatSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MascotFoodEatSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MascotFoodEatSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MascotFoodEatSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MascotFoodEatSequence_Label{pub fn eat_food()->Self{Self{value:0}
 }
-
-
-impl  MascotFoodEatSequence_Label  {
-    pub fn eat_food() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn exit()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodeatsequence/MascotFoodEatSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotFoodEatSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mascotfoodeatsequence :: MascotFoodEatSequence >)] pub struct MascotFoodEatSequence {
-# [offset (120)] # [rename (name = "m_foodStuffData")] pub m_food_stuff_data : crate :: app :: foodstuffdata :: FoodstuffData ,
 }
 
 }
@@ -75,30 +40,77 @@ impl  MascotFoodEatSequence_Label  {
 #[cfg(feature = "app-mascotfoodeatsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mascotfoodeatsequence")]
-impl MascotFoodEatSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::foodstuffdata::FoodstuffData)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , foodstuff_data : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20371f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (foodstuff_data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotfoodeatsequence")]impl MascotFoodEatSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::foodstuffdata::FoodstuffData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,foodstuff_data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20371f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(foodstuff_data))}
+}
+}
 
-#[cfg(feature = "app-mascotfoodeatsequence")]
-pub trait IMascotFoodEatSequenceMethods : IMascotFoodEatSequence { # [doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"] fn ctor (self , foodstuff_data : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> () { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodEatSequence , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2035390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (foodstuff_data) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayerController()` overload"] fn get_player_controller (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2035430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Player()` overload"] fn get_player (self ,) -> crate :: app :: hubunitcontroller :: HubUnitController { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubunitcontroller :: HubUnitController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2035440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Mascot()` overload"] fn get_mascot (self ,) -> crate :: app :: hubmascotcontroller :: HubMascotController { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmascotcontroller :: HubMascotController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20354a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitEatFood()` overload"] fn init_eat_food (self ,) -> () { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2035540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EatFood()` overload"] fn eat_food (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2036160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExitEatFood()` overload"] fn exit_eat_food (self ,) -> () { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20361e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBond()` overload"] fn get_bond (self ,) -> () { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2036ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < MascotFoodEatSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodEatSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2036b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotfoodeatsequence")]pub trait IMascotFoodEatSequenceMethods:IMascotFoodEatSequence{#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData)` overload"]fn ctor(self,foodstuff_data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(){unsafe{let __receiver= <MascotFoodEatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2035390usize)as*mut u8,();
+(MascotFoodEatSequence)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(foodstuff_data))}
+}
+#[doc="`get_PlayerController()` overload"]fn get_player_controller(self,)->crate::app::hubplayercontroller::HubPlayerController{unsafe{let __receiver= <MascotFoodEatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2035430usize)as*mut u8,crate::app::hubplayercontroller::HubPlayerController;
+(MascotFoodEatSequence)__receiver)}
+}
+#[doc="`get_Player()` overload"]fn get_player(self,)->crate::app::hubunitcontroller::HubUnitController{unsafe{let __receiver= <MascotFoodEatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2035440usize)as*mut u8,crate::app::hubunitcontroller::HubUnitController;
+(MascotFoodEatSequence)__receiver)}
+}
+#[doc="`get_Mascot()` overload"]fn get_mascot(self,)->crate::app::hubmascotcontroller::HubMascotController{unsafe{let __receiver= <MascotFoodEatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20354a0usize)as*mut u8,crate::app::hubmascotcontroller::HubMascotController;
+(MascotFoodEatSequence)__receiver)}
+}
+#[doc="`InitEatFood()` overload"]fn init_eat_food(self,)->(){unsafe{let __receiver= <MascotFoodEatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2035540usize)as*mut u8,();
+(MascotFoodEatSequence)__receiver)}
+}
+#[doc="`EatFood()` overload"]fn eat_food(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MascotFoodEatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2036160usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(MascotFoodEatSequence)__receiver)}
+}
+#[doc="`ExitEatFood()` overload"]fn exit_eat_food(self,)->(){unsafe{let __receiver= <MascotFoodEatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20361e0usize)as*mut u8,();
+(MascotFoodEatSequence)__receiver)}
+}
+#[doc="`GetBond()` overload"]fn get_bond(self,)->(){unsafe{let __receiver= <MascotFoodEatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2036ab0usize)as*mut u8,();
+(MascotFoodEatSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <MascotFoodEatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2036b70usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(MascotFoodEatSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mascotfoodeatsequence")]
-impl < __T : IMascotFoodEatSequence > IMascotFoodEatSequenceMethods for __T { }
+#[cfg(feature="app-mascotfoodeatsequence")]impl<__T:IMascotFoodEatSequence>IMascotFoodEatSequenceMethods for __T{}
 
-#[cfg(feature = "app-mascotfoodeatsequence")]
-impl MascotFoodEatSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_player_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_mascot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn init_eat_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn eat_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn exit_eat_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodEatSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-mascotfoodeatsequence")]impl MascotFoodEatSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_player_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mascot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn init_eat_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn eat_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn exit_eat_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-mascotfoodeatsequence")]
-impl MascotFoodEatSequence {
-# [doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"] pub fn new (foodstuff_data : crate :: app :: foodstuffdata :: FoodstuffData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotFoodEatSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMascotFoodEatSequenceMethods > :: ctor (this , foodstuff_data) ; this }
+#[cfg(feature="app-mascotfoodeatsequence")]impl MascotFoodEatSequence{#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData)` — overload selector"]pub fn new(foodstuff_data:crate::app::foodstuffdata::FoodstuffData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotFoodEatSequence), ::core::stringify!(new),));
+ <Self as IMascotFoodEatSequenceMethods> ::ctor(this,foodstuff_data);
+this}
 }
 
 #[cfg(feature = "app-mascotfoodeatsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MascotFoodEatSequence_Label;
     pub use super::MascotFoodEatSequence;
     pub use super::IMascotFoodEatSequence;
     pub use super::IMascotFoodEatSequenceMethods;
+    pub use super::MascotFoodEatSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

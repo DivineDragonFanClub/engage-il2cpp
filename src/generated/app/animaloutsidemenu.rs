@@ -4,37 +4,123 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidemenu/AnimalOutsideMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalOutsideMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct AnimalOutsideMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animaloutsidemenu/AnimalOutsideMenu.md"))]#[::unity2::class(namespace="App",name="AnimalOutsideMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct AnimalOutsideMenu{}
 
 }
 
 #[cfg(feature = "app-animaloutsidemenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-animaloutsidemenu")]
-impl AnimalOutsideMenu { # [doc = "`Create(crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent)` overload"] pub fn create (menu_content : impl :: core :: convert :: Into < crate :: app :: animaloutsidemenucontent :: AnimalOutsideMenuContent >) -> crate :: app :: animaloutsidemenu :: AnimalOutsideMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: animaloutsidemenucontent :: AnimalOutsideMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: animaloutsidemenu :: AnimalOutsideMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96c00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenuList()` overload"] pub fn create_menu_list () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c98e80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animaloutsidemenu")]impl AnimalOutsideMenu{#[doc="`Create(crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent)` overload"]pub fn create(menu_content:impl::core::convert::Into<crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent>)->crate::app::animaloutsidemenu::AnimalOutsideMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c96c00usize)as*mut u8,crate::app::animaloutsidemenu::AnimalOutsideMenu;
+(crate::app::animaloutsidemenucontent::AnimalOutsideMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`CreateMenuList()` overload"]pub fn create_menu_list()->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c98e80usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+)}
+}
+}
 
-#[cfg(feature = "app-animaloutsidemenu")]
-pub trait IAnimalOutsideMenuMethods : IAnimalOutsideMenu { # [doc = "`get_IsSub()` overload"] fn get_is_sub (self ,) -> bool { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c98e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsSub(bool)` overload"] fn set_is_sub (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c98e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent >) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c98e70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`RebuildMenu()` overload"] fn rebuild_menu (self ,) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c990f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLastMenuBlank(bool)` overload"] fn set_last_menu_blank (self , is_last_menu_blank : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c95b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_last_menu_blank) , :: core :: option :: Option :: None) } } } # [doc = "`GetActiveIndex()` overload"] fn get_active_index (self ,) -> i32 { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLastIndex()` overload"] fn get_last_index (self ,) -> i32 { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c99170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLastIndex()` overload"] fn set_last_index (self ,) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c99230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetStartIndex()` overload"] fn set_start_index (self ,) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c99300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c99320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PublicBuild()` overload"] fn public_build (self ,) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c96c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PublicRebuild()` overload"] fn public_rebuild (self ,) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c94c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PublicUpdate()` overload"] fn public_update (self ,) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c98000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Suspend()` overload"] fn suspend (self ,) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Resume()` overload"] fn resume (self ,) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c97de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyRight(bool)` overload"] fn key_right (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AnimalOutsideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalOutsideMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c99370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animaloutsidemenu")]pub trait IAnimalOutsideMenuMethods:IAnimalOutsideMenu{#[doc="`get_IsSub()` overload"]fn get_is_sub(self,)->bool{unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c98e50usize)as*mut u8,bool;
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`set_IsSub(bool)` overload"]fn set_is_sub(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c98e60usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c98e70usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`RebuildMenu()` overload"]fn rebuild_menu(self,)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c990f0usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`SetLastMenuBlank(bool)` overload"]fn set_last_menu_blank(self,is_last_menu_blank:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c95b60usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver,(bool)::core::convert::Into::into(is_last_menu_blank))}
+}
+#[doc="`GetActiveIndex()` overload"]fn get_active_index(self,)->i32{unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c96050usize)as*mut u8,i32;
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`GetLastIndex()` overload"]fn get_last_index(self,)->i32{unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c99170usize)as*mut u8,i32;
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`SetLastIndex()` overload"]fn set_last_index(self,)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c99230usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`SetStartIndex()` overload"]fn set_start_index(self,)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c99300usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c99320usize)as*mut u8, ::unity2::Il2CppString;
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`PublicBuild()` overload"]fn public_build(self,)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c96c80usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`PublicRebuild()` overload"]fn public_rebuild(self,)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c94c60usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`PublicUpdate()` overload"]fn public_update(self,)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c98000usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`Suspend()` overload"]fn suspend(self,)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c97c90usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`Resume()` overload"]fn resume(self,)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c97de0usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver)}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimalOutsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c99370usize)as*mut u8,();
+(AnimalOutsideMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+}
 
-#[cfg(feature = "app-animaloutsidemenu")]
-impl < __T : IAnimalOutsideMenu > IAnimalOutsideMenuMethods for __T { }
+#[cfg(feature="app-animaloutsidemenu")]impl<__T:IAnimalOutsideMenu>IAnimalOutsideMenuMethods for __T{}
 
-#[cfg(feature = "app-animaloutsidemenu")]
-impl AnimalOutsideMenu { pub fn get_is_sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_menu_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn rebuild_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_last_menu_blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_active_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_last_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_last_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_start_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn public_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn public_rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn public_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn suspend_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn resume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn key_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalOutsideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="app-animaloutsidemenu")]impl AnimalOutsideMenu{pub fn get_is_sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_last_menu_blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_active_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_last_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_last_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_start_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn public_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn public_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn public_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn suspend_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "app-animaloutsidemenu")]
-impl AnimalOutsideMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalOutsideMenu) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalOutsideMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-animaloutsidemenu")]impl AnimalOutsideMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalOutsideMenu), ::core::stringify!(new),));
+ <Self as IAnimalOutsideMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-animaloutsidemenu")]

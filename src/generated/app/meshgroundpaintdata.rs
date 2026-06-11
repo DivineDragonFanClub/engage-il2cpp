@@ -4,34 +4,103 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/meshgroundpaintdata/MeshGroundPaintData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MeshGroundPaintData")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct MeshGroundPaintData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/meshgroundpaintdata/MeshGroundPaintData.md"))]#[::unity2::class(namespace="App",name="MeshGroundPaintData")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct MeshGroundPaintData{}
 
 }
 
 #[cfg(feature = "app-meshgroundpaintdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-meshgroundpaintdata")]
-pub trait IMeshGroundPaintDataMethods : IMeshGroundPaintData { # [doc = "`get_IsCustomSize()` overload"] fn get_is_custom_size (self ,) -> bool { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsCustomSize(bool)` overload"] fn set_is_custom_size (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Names()` overload"] fn get_names (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Names(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_names (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SplitCount()` overload"] fn get_split_count (self ,) -> crate :: unity_engine :: vector2int :: Vector2Int { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2int :: Vector2Int = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SplitCount(crate::unity_engine::vector2int::Vector2Int)` overload"] fn set_split_count (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2int :: Vector2Int >) -> () { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , crate :: unity_engine :: vector2int :: Vector2Int , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Size()` overload"] fn get_size (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Size(crate::unity_engine::vector2::Vector2)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Offset()` overload"] fn get_offset (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d24a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Offset(crate::unity_engine::vector2::Vector2)` overload"] fn set_offset (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d24b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IndexList()` overload"] fn get_index_list (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d24c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IndexList(::unity2::Array<i32>)` overload"] fn set_index_list (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> () { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d24d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetName(f32, f32)` overload"] fn get_name (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , f32 , f32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d24e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MeshGroundPaintData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshGroundPaintData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d25c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-meshgroundpaintdata")]pub trait IMeshGroundPaintDataMethods:IMeshGroundPaintData{#[doc="`get_IsCustomSize()` overload"]fn get_is_custom_size(self,)->bool{unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2420usize)as*mut u8,bool;
+(MeshGroundPaintData)__receiver)}
+}
+#[doc="`set_IsCustomSize(bool)` overload"]fn set_is_custom_size(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2430usize)as*mut u8,();
+(MeshGroundPaintData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Names()` overload"]fn get_names(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2440usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(MeshGroundPaintData)__receiver)}
+}
+#[doc="`set_Names(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_names(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2450usize)as*mut u8,();
+(MeshGroundPaintData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_SplitCount()` overload"]fn get_split_count(self,)->crate::unity_engine::vector2int::Vector2Int{unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2460usize)as*mut u8,crate::unity_engine::vector2int::Vector2Int;
+(MeshGroundPaintData)__receiver)}
+}
+#[doc="`set_SplitCount(crate::unity_engine::vector2int::Vector2Int)` overload"]fn set_split_count(self,value:impl::core::convert::Into<crate::unity_engine::vector2int::Vector2Int>)->(){unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2470usize)as*mut u8,();
+(MeshGroundPaintData)__receiver,(crate::unity_engine::vector2int::Vector2Int)::core::convert::Into::into(value))}
+}
+#[doc="`get_Size()` overload"]fn get_size(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2480usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(MeshGroundPaintData)__receiver)}
+}
+#[doc="`set_Size(crate::unity_engine::vector2::Vector2)` overload"]fn set_size(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d2490usize)as*mut u8,();
+(MeshGroundPaintData)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_Offset()` overload"]fn get_offset(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d24a0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(MeshGroundPaintData)__receiver)}
+}
+#[doc="`set_Offset(crate::unity_engine::vector2::Vector2)` overload"]fn set_offset(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d24b0usize)as*mut u8,();
+(MeshGroundPaintData)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_IndexList()` overload"]fn get_index_list(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d24c0usize)as*mut u8, ::unity2::Array<i32> ;
+(MeshGroundPaintData)__receiver)}
+}
+#[doc="`set_IndexList(::unity2::Array<i32>)` overload"]fn set_index_list(self,value:impl::core::convert::Into< ::unity2::Array<i32> >)->(){unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d24d0usize)as*mut u8,();
+(MeshGroundPaintData)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(value))}
+}
+#[doc="`GetName(f32, f32)` overload"]fn get_name(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d24e0usize)as*mut u8, ::unity2::Il2CppString;
+(MeshGroundPaintData)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MeshGroundPaintData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d25c0usize)as*mut u8,();
+(MeshGroundPaintData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-meshgroundpaintdata")]
-impl < __T : IMeshGroundPaintData > IMeshGroundPaintDataMethods for __T { }
+#[cfg(feature="app-meshgroundpaintdata")]impl<__T:IMeshGroundPaintData>IMeshGroundPaintDataMethods for __T{}
 
-#[cfg(feature = "app-meshgroundpaintdata")]
-impl MeshGroundPaintData { pub fn get_is_custom_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_custom_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_split_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_split_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_index_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_index_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGroundPaintData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-meshgroundpaintdata")]impl MeshGroundPaintData{pub fn get_is_custom_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_custom_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_split_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_split_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_index_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_index_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-meshgroundpaintdata")]
-impl MeshGroundPaintData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MeshGroundPaintData) , :: core :: stringify ! (new) ,)) ; < Self as IMeshGroundPaintDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-meshgroundpaintdata")]impl MeshGroundPaintData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MeshGroundPaintData), ::core::stringify!(new),));
+ <Self as IMeshGroundPaintDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-meshgroundpaintdata")]

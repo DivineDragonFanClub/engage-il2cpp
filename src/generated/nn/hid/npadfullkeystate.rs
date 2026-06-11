@@ -4,48 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/npadfullkeystate/NpadFullKeyState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct NpadFullKeyState {
-    pub sampling_number: i64,
-    pub buttons: crate :: nn :: hid :: npadbutton :: NpadButton,
-    pub analog_stick_l: crate :: nn :: hid :: analogstickstate :: AnalogStickState,
-    pub analog_stick_r: crate :: nn :: hid :: analogstickstate :: AnalogStickState,
-    pub attributes: crate :: nn :: hid :: npadattribute :: NpadAttribute,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/npadfullkeystate/NpadFullKeyState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NpadFullKeyState{pub sampling_number:i64,pub buttons:crate::nn::hid::npadbutton::NpadButton,pub analog_stick_l:crate::nn::hid::analogstickstate::AnalogStickState,pub analog_stick_r:crate::nn::hid::analogstickstate::AnalogStickState,pub attributes:crate::nn::hid::npadattribute::NpadAttribute,}
+impl::unity2::ClassIdentity for NpadFullKeyState{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="NpadFullKeyState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for NpadFullKeyState {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "NpadFullKeyState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for NpadFullKeyState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for NpadFullKeyState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -53,11 +26,13 @@ impl ::unity2::IlType for NpadFullKeyState {
 #[cfg(feature = "nn-hid-npadfullkeystate-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-npadfullkeystate")]
-impl NpadFullKeyState { # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut NpadFullKeyState , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1eb60usize) as * mut u8) ; __inner (self as * mut NpadFullKeyState , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-npadfullkeystate")]impl NpadFullKeyState{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1eb60usize)as*mut u8, ::unity2::Il2CppString;
+(*mut NpadFullKeyState)self as*mut NpadFullKeyState)}
+}
+}
 
-#[cfg(feature = "nn-hid-npadfullkeystate")]
-impl NpadFullKeyState { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NpadFullKeyState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="nn-hid-npadfullkeystate")]impl NpadFullKeyState{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "nn-hid-npadfullkeystate")]
 #[doc(hidden)]

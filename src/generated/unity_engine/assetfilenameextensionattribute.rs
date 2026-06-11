@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetfilenameextensionattribute/AssetFileNameExtensionAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AssetFileNameExtensionAttribute")] pub struct AssetFileNameExtensionAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/assetfilenameextensionattribute/AssetFileNameExtensionAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="AssetFileNameExtensionAttribute")]pub struct AssetFileNameExtensionAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-assetfilenameextensionattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-assetfilenameextensionattribute")]
-pub trait IAssetFileNameExtensionAttributeMethods : IAssetFileNameExtensionAttribute { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"] fn ctor (self , preferred_extension : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , other_extensions : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < AssetFileNameExtensionAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetFileNameExtensionAttribute , :: unity2 :: Il2CppString , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f37ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (preferred_extension) , :: core :: convert :: Into :: into (other_extensions) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-assetfilenameextensionattribute")]pub trait IAssetFileNameExtensionAttributeMethods:IAssetFileNameExtensionAttribute{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,preferred_extension:impl::core::convert::Into< ::unity2::Il2CppString> ,other_extensions:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <AssetFileNameExtensionAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37ab0usize)as*mut u8,();
+(AssetFileNameExtensionAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(preferred_extension),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(other_extensions))}
+}
+}
 
-#[cfg(feature = "unity_engine-assetfilenameextensionattribute")]
-impl < __T : IAssetFileNameExtensionAttribute > IAssetFileNameExtensionAttributeMethods for __T { }
+#[cfg(feature="unity_engine-assetfilenameextensionattribute")]impl<__T:IAssetFileNameExtensionAttribute>IAssetFileNameExtensionAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-assetfilenameextensionattribute")]
-impl AssetFileNameExtensionAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetFileNameExtensionAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-assetfilenameextensionattribute")]impl AssetFileNameExtensionAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-assetfilenameextensionattribute")]
-impl AssetFileNameExtensionAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"] pub fn new (preferred_extension : :: unity2 :: Il2CppString , other_extensions : :: unity2 :: Array < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetFileNameExtensionAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssetFileNameExtensionAttributeMethods > :: ctor (this , preferred_extension , other_extensions) ; this }
+#[cfg(feature="unity_engine-assetfilenameextensionattribute")]impl AssetFileNameExtensionAttribute{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new(preferred_extension: ::unity2::Il2CppString,other_extensions: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetFileNameExtensionAttribute), ::core::stringify!(new),));
+ <Self as IAssetFileNameExtensionAttributeMethods> ::ctor(this,preferred_extension,other_extensions);
+this}
 }
 
 #[cfg(feature = "unity_engine-assetfilenameextensionattribute")]

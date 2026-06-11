@@ -4,36 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/cacheinitializationdata/CacheInitializationData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Initialization" , name = "CacheInitializationData")] # [parent (crate :: system :: object :: Object)] pub struct CacheInitializationData {
-# [offset (16)] # [rename (name = "m_CompressionEnabled")] pub m_compression_enabled : bool ,
-# [offset (24)] # [rename (name = "m_CacheDirectoryOverride")] pub m_cache_directory_override : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_ExpirationDelay")] pub m_expiration_delay : i32 ,
-# [offset (36)] # [rename (name = "m_LimitCacheSize")] pub m_limit_cache_size : bool ,
-# [offset (40)] # [rename (name = "m_MaximumCacheSize")] pub m_maximum_cache_size : i64 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/initialization/cacheinitializationdata/CacheInitializationData.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Initialization",name="CacheInitializationData")]#[parent(crate::system::object::Object)]pub struct CacheInitializationData{#[offset(16)]#[rename(name="m_CompressionEnabled")]pub m_compression_enabled:bool, #[offset(24)]#[rename(name="m_CacheDirectoryOverride")]pub m_cache_directory_override: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_ExpirationDelay")]pub m_expiration_delay:i32, #[offset(36)]#[rename(name="m_LimitCacheSize")]pub m_limit_cache_size:bool, #[offset(40)]#[rename(name="m_MaximumCacheSize")]pub m_maximum_cache_size:i64,}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata")]
-pub trait ICacheInitializationDataMethods : ICacheInitializationData { # [doc = "`get_CompressionEnabled()` overload"] fn get_compression_enabled (self ,) -> bool { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CompressionEnabled(bool)` overload"] fn set_compression_enabled (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CacheDirectoryOverride()` overload"] fn get_cache_directory_override (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CacheDirectoryOverride(::unity2::Il2CppString)` overload"] fn set_cache_directory_override (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExpirationDelay()` overload"] fn get_expiration_delay (self ,) -> i32 { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExpirationDelay(i32)` overload"] fn set_expiration_delay (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LimitCacheSize()` overload"] fn get_limit_cache_size (self ,) -> bool { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LimitCacheSize(bool)` overload"] fn set_limit_cache_size (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db35a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MaximumCacheSize()` overload"] fn get_maximum_cache_size (self ,) -> i64 { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db35b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MaximumCacheSize(i64)` overload"] fn set_maximum_cache_size (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db35c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CacheInitializationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CacheInitializationData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db35d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitializationdata")]pub trait ICacheInitializationDataMethods:ICacheInitializationData{#[doc="`get_CompressionEnabled()` overload"]fn get_compression_enabled(self,)->bool{unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3530usize)as*mut u8,bool;
+(CacheInitializationData)__receiver)}
+}
+#[doc="`set_CompressionEnabled(bool)` overload"]fn set_compression_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3540usize)as*mut u8,();
+(CacheInitializationData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_CacheDirectoryOverride()` overload"]fn get_cache_directory_override(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3550usize)as*mut u8, ::unity2::Il2CppString;
+(CacheInitializationData)__receiver)}
+}
+#[doc="`set_CacheDirectoryOverride(::unity2::Il2CppString)` overload"]fn set_cache_directory_override(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3560usize)as*mut u8,();
+(CacheInitializationData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExpirationDelay()` overload"]fn get_expiration_delay(self,)->i32{unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3570usize)as*mut u8,i32;
+(CacheInitializationData)__receiver)}
+}
+#[doc="`set_ExpirationDelay(i32)` overload"]fn set_expiration_delay(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3580usize)as*mut u8,();
+(CacheInitializationData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_LimitCacheSize()` overload"]fn get_limit_cache_size(self,)->bool{unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3590usize)as*mut u8,bool;
+(CacheInitializationData)__receiver)}
+}
+#[doc="`set_LimitCacheSize(bool)` overload"]fn set_limit_cache_size(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db35a0usize)as*mut u8,();
+(CacheInitializationData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_MaximumCacheSize()` overload"]fn get_maximum_cache_size(self,)->i64{unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db35b0usize)as*mut u8,i64;
+(CacheInitializationData)__receiver)}
+}
+#[doc="`set_MaximumCacheSize(i64)` overload"]fn set_maximum_cache_size(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db35c0usize)as*mut u8,();
+(CacheInitializationData)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CacheInitializationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db35d0usize)as*mut u8,();
+(CacheInitializationData)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata")]
-impl < __T : ICacheInitializationData > ICacheInitializationDataMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitializationdata")]impl<__T:ICacheInitializationData>ICacheInitializationDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata")]
-impl CacheInitializationData { pub fn get_compression_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_compression_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_cache_directory_override_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_cache_directory_override_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_expiration_delay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_expiration_delay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_limit_cache_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_limit_cache_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_maximum_cache_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_maximum_cache_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CacheInitializationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitializationdata")]impl CacheInitializationData{pub fn get_compression_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_compression_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_cache_directory_override_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_cache_directory_override_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_expiration_delay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_expiration_delay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_limit_cache_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_limit_cache_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_maximum_cache_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_maximum_cache_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata")]
-impl CacheInitializationData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CacheInitializationData) , :: core :: stringify ! (new) ,)) ; < Self as ICacheInitializationDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-addressable_assets-initialization-cacheinitializationdata")]impl CacheInitializationData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CacheInitializationData), ::core::stringify!(new),));
+ <Self as ICacheInitializationDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata")]

@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/yoga/native/Native.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Yoga" , name = "Native")] # [parent (crate :: system :: object :: Object)] pub struct Native {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/yoga/native/Native.md"))]#[::unity2::class(namespace="UnityEngine.Yoga",name="Native")]#[parent(crate::system::object::Object)]pub struct Native{}
 
 }
 
 #[cfg(feature = "unity_engine-yoga-native-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-yoga-native")]
-impl Native { # [doc = "`YGNodeMeasureInvoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, ::unity2::IntPtr)` overload"] pub fn yg_node_measure_invoke (node : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yoganode :: YogaNode > , width : impl :: core :: convert :: Into < f32 > , width_mode : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode > , height : impl :: core :: convert :: Into < f32 > , height_mode : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: yoga :: yoganode :: YogaNode , f32 , crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , f32 , crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40080usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (width_mode) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (height_mode) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } } # [doc = "`YGNodeBaselineInvoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32, ::unity2::IntPtr)` overload"] pub fn yg_node_baseline_invoke (node : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yoganode :: YogaNode > , width : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: yoga :: yoganode :: YogaNode , f32 , f32 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f40170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-yoga-native")]impl Native{#[doc="`YGNodeMeasureInvoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, ::unity2::IntPtr)` overload"]pub fn yg_node_measure_invoke(node:impl::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode> ,width:impl::core::convert::Into<f32> ,width_mode:impl::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode> ,height:impl::core::convert::Into<f32> ,height_mode:impl::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode> ,return_value_address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40080usize)as*mut u8,();
+(crate::unity_engine::yoga::yoganode::YogaNode)::core::convert::Into::into(node),(f32)::core::convert::Into::into(width),(crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)::core::convert::Into::into(width_mode),(f32)::core::convert::Into::into(height),(crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)::core::convert::Into::into(height_mode),(::unity2::IntPtr)::core::convert::Into::into(return_value_address))}
+}
+#[doc="`YGNodeBaselineInvoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, f32, ::unity2::IntPtr)` overload"]pub fn yg_node_baseline_invoke(node:impl::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode> ,width:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32> ,return_value_address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f40170usize)as*mut u8,();
+(crate::unity_engine::yoga::yoganode::YogaNode)::core::convert::Into::into(node),(f32)::core::convert::Into::into(width),(f32)::core::convert::Into::into(height),(::unity2::IntPtr)::core::convert::Into::into(return_value_address))}
+}
+}
 
-#[cfg(feature = "unity_engine-yoga-native")]
-impl Native { pub fn yg_node_measure_invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Native as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn yg_node_baseline_invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Native as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-yoga-native")]impl Native{pub fn yg_node_measure_invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn yg_node_baseline_invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-yoga-native")]
 #[doc(hidden)]

@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdesctickbase :: { IProcDescTickBase , ProcDescTickBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdesctickbase::{IProcDescTickBase,ProcDescTickBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesctick/ProcDescTick.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescTick")] # [parent (crate :: app :: procdesctickbase :: ProcDescTickBase)] pub struct ProcDescTick {
-# [offset (24)] # [rename (name = "m_Function")] pub m_function : crate :: app :: procvoidfunction :: ProcVoidFunction ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesctick/ProcDescTick.md"))]#[::unity2::class(namespace="App",name="ProcDescTick")]#[parent(crate::app::procdesctickbase::ProcDescTickBase)]pub struct ProcDescTick{#[offset(24)]#[rename(name="m_Function")]pub m_function:crate::app::procvoidfunction::ProcVoidFunction,}
 
 }
 
 #[cfg(feature = "app-procdesctick-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdesctick")]
-pub trait IProcDescTickMethods : IProcDescTick { # [doc = "`.ctor(crate::app::procvoidfunction::ProcVoidFunction)` overload"] fn ctor (self , function : impl :: core :: convert :: Into < crate :: app :: procvoidfunction :: ProcVoidFunction >) -> () { unsafe { let __receiver = < ProcDescTick as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescTick , crate :: app :: procvoidfunction :: ProcVoidFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescTick as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescTick , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281db10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdesctick")]pub trait IProcDescTickMethods:IProcDescTick{#[doc="`.ctor(crate::app::procvoidfunction::ProcVoidFunction)` overload"]fn ctor(self,function:impl::core::convert::Into<crate::app::procvoidfunction::ProcVoidFunction>)->(){unsafe{let __receiver= <ProcDescTick as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281b5b0usize)as*mut u8,();
+(ProcDescTick)__receiver,(crate::app::procvoidfunction::ProcVoidFunction)::core::convert::Into::into(function))}
+}
+#[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescTick as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281db10usize)as*mut u8,();
+(ProcDescTick)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdesctick")]
-impl < __T : IProcDescTick > IProcDescTickMethods for __T { }
+#[cfg(feature="app-procdesctick")]impl<__T:IProcDescTick>IProcDescTickMethods for __T{}
 
-#[cfg(feature = "app-procdesctick")]
-impl ProcDescTick { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescTick as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescTick as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdesctick")]impl ProcDescTick{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdesctick")]
-impl ProcDescTick {
-# [doc = "`.ctor(crate::app::procvoidfunction::ProcVoidFunction)` — overload selector"] pub fn new (function : crate :: app :: procvoidfunction :: ProcVoidFunction) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescTick) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescTickMethods > :: ctor (this , function) ; this }
+#[cfg(feature="app-procdesctick")]impl ProcDescTick{#[doc="`.ctor(crate::app::procvoidfunction::ProcVoidFunction)` — overload selector"]pub fn new(function:crate::app::procvoidfunction::ProcVoidFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescTick), ::core::stringify!(new),));
+ <Self as IProcDescTickMethods> ::ctor(this,function);
+this}
 }
 
 #[cfg(feature = "app-procdesctick")]

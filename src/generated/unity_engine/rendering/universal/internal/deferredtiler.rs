@@ -4,131 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DeferredTiler {}
-
-
-impl ::unity2::ClassIdentity for DeferredTiler {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-    const NAME: &'static str = "DeferredTiler";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler_PrePunctualLight.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DeferredTiler_PrePunctualLight{}
+impl::unity2::ClassIdentity for DeferredTiler_PrePunctualLight{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Internal";
+const NAME: &'static str="DeferredTiler.PrePunctualLight";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DeferredTiler_PrePunctualLight{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::IlType for DeferredTiler {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DeferredTiler{}
+impl::unity2::ClassIdentity for DeferredTiler{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Internal";
+const NAME: &'static str="DeferredTiler";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DeferredTiler{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler_ClipResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DeferredTiler_ClipResult  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler_ClipResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DeferredTiler_ClipResult{pub value:i32,}
+impl::unity2::ClassIdentity for DeferredTiler_ClipResult{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Internal";
+const NAME: &'static str="DeferredTiler.ClipResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for DeferredTiler_ClipResult  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-    const NAME: &'static str = "DeferredTiler.ClipResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for DeferredTiler_ClipResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for DeferredTiler_ClipResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl DeferredTiler_ClipResult{pub fn unknown()->Self{Self{value:0}
 }
-
-
-impl  DeferredTiler_ClipResult  {
-    pub fn unknown() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn r#in() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn out() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn r#in()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredtiler/DeferredTiler_PrePunctualLight.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DeferredTiler_PrePunctualLight {}
-
-
-impl ::unity2::ClassIdentity for DeferredTiler_PrePunctualLight {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-    const NAME: &'static str = "DeferredTiler.PrePunctualLight";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn out()->Self{Self{value:2}
 }
-
-
-impl ::unity2::IlType for DeferredTiler_PrePunctualLight {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
 }
 
 }
@@ -136,21 +57,101 @@ impl ::unity2::IlType for DeferredTiler_PrePunctualLight {
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
-impl DeferredTiler { # [doc = "`SignedSq(f32)` overload"] pub fn signed_sq (f : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee6f20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`min2(f32, f32)` overload"] pub fn min2 (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee6f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`max2(f32, f32)` overload"] pub fn max2 (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee6f50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`max3(f32, f32, f32)` overload"] pub fn max3 (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 > , c : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee6f60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`_f32tof16(f32)` overload"] pub fn f32tof16 (x : impl :: core :: convert :: Into < f32 >) -> u32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee6f80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`Align(i32, i32)` overload"] pub fn align (s : impl :: core :: convert :: Into < i32 > , alignment : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee6ff0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: convert :: Into :: into (alignment) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-internal-deferredtiler")]impl DeferredTiler{#[doc="`SignedSq(f32)` overload"]pub fn signed_sq(f:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee6f20usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(f))}
+}
+#[doc="`min2(f32, f32)` overload"]pub fn min2(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee6f40usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`max2(f32, f32)` overload"]pub fn max2(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee6f50usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`max3(f32, f32, f32)` overload"]pub fn max3(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32> ,c:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee6f60usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b),(f32)::core::convert::Into::into(c))}
+}
+#[doc="`_f32tof16(f32)` overload"]pub fn f32tof16(x:impl::core::convert::Into<f32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee6f80usize)as*mut u8,u32;
+(f32)::core::convert::Into::into(x))}
+}
+#[doc="`Align(i32, i32)` overload"]pub fn align(s:impl::core::convert::Into<i32> ,alignment:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee6ff0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(s),(i32)::core::convert::Into::into(alignment))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
-impl DeferredTiler { # [doc = "`.ctor(i32, i32, i32, i32)` overload"] pub fn ctor (& mut self , tile_pixel_width : impl :: core :: convert :: Into < i32 > , tile_pixel_height : impl :: core :: convert :: Into < i32 > , avg_light_per_tile : impl :: core :: convert :: Into < i32 > , tiler_level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee45a0usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: convert :: Into :: into (tile_pixel_width) , :: core :: convert :: Into :: into (tile_pixel_height) , :: core :: convert :: Into :: into (avg_light_per_tile) , :: core :: convert :: Into :: into (tiler_level) , :: core :: option :: Option :: None) } } } # [doc = "`get_TilerLevel()` overload"] pub fn get_tiler_level (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee45f0usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: option :: Option :: None) } } } # [doc = "`get_TileXCount()` overload"] pub fn get_tile_x_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4600usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: option :: Option :: None) } } } # [doc = "`get_TileYCount()` overload"] pub fn get_tile_y_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4610usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: option :: Option :: None) } } } # [doc = "`get_TilePixelWidth()` overload"] pub fn get_tile_pixel_width (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4620usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: option :: Option :: None) } } } # [doc = "`get_TilePixelHeight()` overload"] pub fn get_tile_pixel_height (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4630usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: option :: Option :: None) } } } # [doc = "`get_TileHeaderSize()` overload"] pub fn get_tile_header_size (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4640usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: option :: Option :: None) } } } # [doc = "`get_MaxLightPerTile()` overload"] pub fn get_max_light_per_tile (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4650usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: option :: Option :: None) } } } # [doc = "`get_TileDataCapacity()` overload"] pub fn get_tile_data_capacity (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee46d0usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: option :: Option :: None) } } } # [doc = "`GetTileOffsetAndCount(i32, i32, *muti32, *muti32)` overload"] pub fn get_tile_offset_and_count (& mut self , i : impl :: core :: convert :: Into < i32 > , j : impl :: core :: convert :: Into < i32 >) -> (i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (* mut DeferredTiler , i32 , i32 , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4770usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (j) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetTileHeaderOffset(i32, i32)` overload"] pub fn get_tile_header_offset (& mut self , i : impl :: core :: convert :: Into < i32 > , j : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee47a0usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (j) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(i32)` overload"] pub fn setup (& mut self , tile_data_capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee47c0usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: convert :: Into :: into (tile_data_capacity) , :: core :: option :: Option :: None) } } } # [doc = "`OnCameraCleanup()` overload"] pub fn on_camera_cleanup (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee48f0usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: option :: Option :: None) } } } # [doc = "`PrecomputeTiles(crate::unity_engine::matrix4x4::Matrix4x4, bool, i32, i32)` overload"] pub fn precompute_tiles (& mut self , proj : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , is_orthographic : impl :: core :: convert :: Into < bool > , render_width : impl :: core :: convert :: Into < i32 > , render_height : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut DeferredTiler , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , bool , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4a10usize) as * mut u8) ; __inner (self as * mut DeferredTiler , :: core :: convert :: Into :: into (proj) , :: core :: convert :: Into :: into (is_orthographic) , :: core :: convert :: Into :: into (render_width) , :: core :: convert :: Into :: into (render_height) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-internal-deferredtiler")]impl DeferredTiler{#[doc="`.ctor(i32, i32, i32, i32)` overload"]pub fn ctor(&mut self,tile_pixel_width:impl::core::convert::Into<i32> ,tile_pixel_height:impl::core::convert::Into<i32> ,avg_light_per_tile:impl::core::convert::Into<i32> ,tiler_level:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee45a0usize)as*mut u8,();
+(*mut DeferredTiler)self as*mut DeferredTiler,(i32)::core::convert::Into::into(tile_pixel_width),(i32)::core::convert::Into::into(tile_pixel_height),(i32)::core::convert::Into::into(avg_light_per_tile),(i32)::core::convert::Into::into(tiler_level))}
+}
+#[doc="`get_TilerLevel()` overload"]pub fn get_tiler_level(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee45f0usize)as*mut u8,i32;
+(*mut DeferredTiler)self as*mut DeferredTiler)}
+}
+#[doc="`get_TileXCount()` overload"]pub fn get_tile_x_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4600usize)as*mut u8,i32;
+(*mut DeferredTiler)self as*mut DeferredTiler)}
+}
+#[doc="`get_TileYCount()` overload"]pub fn get_tile_y_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4610usize)as*mut u8,i32;
+(*mut DeferredTiler)self as*mut DeferredTiler)}
+}
+#[doc="`get_TilePixelWidth()` overload"]pub fn get_tile_pixel_width(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4620usize)as*mut u8,i32;
+(*mut DeferredTiler)self as*mut DeferredTiler)}
+}
+#[doc="`get_TilePixelHeight()` overload"]pub fn get_tile_pixel_height(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4630usize)as*mut u8,i32;
+(*mut DeferredTiler)self as*mut DeferredTiler)}
+}
+#[doc="`get_TileHeaderSize()` overload"]pub fn get_tile_header_size(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4640usize)as*mut u8,i32;
+(*mut DeferredTiler)self as*mut DeferredTiler)}
+}
+#[doc="`get_MaxLightPerTile()` overload"]pub fn get_max_light_per_tile(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4650usize)as*mut u8,i32;
+(*mut DeferredTiler)self as*mut DeferredTiler)}
+}
+#[doc="`get_TileDataCapacity()` overload"]pub fn get_tile_data_capacity(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee46d0usize)as*mut u8,i32;
+(*mut DeferredTiler)self as*mut DeferredTiler)}
+}
+#[doc="`GetTileOffsetAndCount(i32, i32, *muti32, *muti32)` overload"]pub fn get_tile_offset_and_count(&mut self,i:impl::core::convert::Into<i32> ,j:impl::core::convert::Into<i32>)->(i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4770usize)as*mut u8,();
+(*mut DeferredTiler)self as*mut DeferredTiler,(i32)::core::convert::Into::into(i),(i32)::core::convert::Into::into(j),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetTileHeaderOffset(i32, i32)` overload"]pub fn get_tile_header_offset(&mut self,i:impl::core::convert::Into<i32> ,j:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee47a0usize)as*mut u8,i32;
+(*mut DeferredTiler)self as*mut DeferredTiler,(i32)::core::convert::Into::into(i),(i32)::core::convert::Into::into(j))}
+}
+#[doc="`Setup(i32)` overload"]pub fn setup(&mut self,tile_data_capacity:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee47c0usize)as*mut u8,();
+(*mut DeferredTiler)self as*mut DeferredTiler,(i32)::core::convert::Into::into(tile_data_capacity))}
+}
+#[doc="`OnCameraCleanup()` overload"]pub fn on_camera_cleanup(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee48f0usize)as*mut u8,();
+(*mut DeferredTiler)self as*mut DeferredTiler)}
+}
+#[doc="`PrecomputeTiles(crate::unity_engine::matrix4x4::Matrix4x4, bool, i32, i32)` overload"]pub fn precompute_tiles(&mut self,proj:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4> ,is_orthographic:impl::core::convert::Into<bool> ,render_width:impl::core::convert::Into<i32> ,render_height:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4a10usize)as*mut u8,();
+(*mut DeferredTiler)self as*mut DeferredTiler,(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(proj),(bool)::core::convert::Into::into(is_orthographic),(i32)::core::convert::Into::into(render_width),(i32)::core::convert::Into::into(render_height))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
-impl DeferredTiler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_tiler_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_tile_x_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_tile_y_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_tile_pixel_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_tile_pixel_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_tile_header_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_max_light_per_tile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_tile_data_capacity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_tile_offset_and_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_tile_header_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_camera_cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn precompute_tiles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn signed_sq_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn min2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn max2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn max3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn f32tof16_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn align_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredTiler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } }
+#[cfg(feature="unity_engine-rendering-universal-internal-deferredtiler")]impl DeferredTiler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_tiler_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_tile_x_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_tile_y_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_tile_pixel_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_tile_pixel_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_tile_header_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_max_light_per_tile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_tile_data_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_tile_offset_and_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_tile_header_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_camera_cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn precompute_tiles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn signed_sq_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn min2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn max2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn max3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn f32tof16_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn align_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-deferredtiler")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DeferredTiler_PrePunctualLight;
     pub use super::DeferredTiler;
     pub use super::DeferredTiler_ClipResult;
-    pub use super::DeferredTiler_PrePunctualLight;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

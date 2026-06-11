@@ -4,34 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: struct_object :: basepiece :: { BasePiece , IBasePiece }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::struct_object::basepiece::{BasePiece,IBasePiece}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/struct_object/baseitem/BaseItem.md"))] # [:: unity2 :: class (namespace = "App.StructObject" , name = "BaseItem")] # [parent (crate :: app :: struct_object :: basepiece :: BasePiece)] pub struct BaseItem {
-# [offset (16)] # [rename (name = "_DictionaryKey")] pub dictionary_key_field : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/struct_object/baseitem/BaseItem.md"))]#[::unity2::class(namespace="App.StructObject",name="BaseItem")]#[parent(crate::app::struct_object::basepiece::BasePiece)]pub struct BaseItem{#[offset(16)]#[rename(name="_DictionaryKey")]pub dictionary_key_field: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-struct_object-baseitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-struct_object-baseitem")]
-pub trait IBaseItemMethods : IBaseItem { # [doc = "`get_DictionaryKey()` overload"] fn get_dictionary_key (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BaseItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DictionaryKey(::unity2::Il2CppString)` overload"] fn set_dictionary_key (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BaseItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BaseItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddPiece(crate::system::object::Object)` overload"] fn add_piece (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < BaseItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseItem , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BaseItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-struct_object-baseitem")]pub trait IBaseItemMethods:IBaseItem{#[doc="`get_DictionaryKey()` overload"]fn get_dictionary_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BaseItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452de0usize)as*mut u8, ::unity2::Il2CppString;
+(BaseItem)__receiver)}
+}
+#[doc="`set_DictionaryKey(::unity2::Il2CppString)` overload"]fn set_dictionary_key(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BaseItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452df0usize)as*mut u8,();
+(BaseItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BaseItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452e00usize)as*mut u8, ::unity2::Il2CppString;
+(BaseItem)__receiver)}
+}
+#[doc="`AddPiece(crate::system::object::Object)` overload"]fn add_piece(self,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <BaseItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452e50usize)as*mut u8,();
+(BaseItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BaseItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452e60usize)as*mut u8,();
+(BaseItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-struct_object-baseitem")]
-impl < __T : IBaseItem > IBaseItemMethods for __T { }
+#[cfg(feature="app-struct_object-baseitem")]impl<__T:IBaseItem>IBaseItemMethods for __T{}
 
-#[cfg(feature = "app-struct_object-baseitem")]
-impl BaseItem { pub fn get_dictionary_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_dictionary_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_piece_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-struct_object-baseitem")]impl BaseItem{pub fn get_dictionary_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_dictionary_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_piece_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-struct_object-baseitem")]
-impl BaseItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BaseItem) , :: core :: stringify ! (new) ,)) ; < Self as IBaseItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-struct_object-baseitem")]impl BaseItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BaseItem), ::core::stringify!(new),));
+ <Self as IBaseItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-struct_object-baseitem")]

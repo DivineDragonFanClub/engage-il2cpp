@@ -4,37 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecombatlocation :: { BaseCombatLocation , IBaseCombatLocation }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecombatlocation::{BaseCombatLocation,IBaseCombatLocation}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatlocationlastboss/CombatLocationLastBoss.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatLocationLastBoss")] # [parent (crate :: combat :: basecombatlocation :: BaseCombatLocation)] pub struct CombatLocationLastBoss {
-# [offset (137)] # [rename (name = "m_IsCrossCut")] pub m_is_cross_cut : bool ,
-# [offset (140)] # [rename (name = "m_BossCenter")] pub m_boss_center : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (152)] # [rename (name = "m_BossSize")] pub m_boss_size : f32 ,
-# [offset (156)] # [rename (name = "m_BattleDist")] pub m_battle_dist : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatlocationlastboss/CombatLocationLastBoss.md"))]#[::unity2::class(namespace="Combat",name="CombatLocationLastBoss")]#[parent(crate::combat::basecombatlocation::BaseCombatLocation)]pub struct CombatLocationLastBoss{#[offset(137)]#[rename(name="m_IsCrossCut")]pub m_is_cross_cut:bool, #[offset(140)]#[rename(name="m_BossCenter")]pub m_boss_center:crate::unity_engine::vector3::Vector3, #[offset(152)]#[rename(name="m_BossSize")]pub m_boss_size:f32, #[offset(156)]#[rename(name="m_BattleDist")]pub m_battle_dist:f32,}
 
 }
 
 #[cfg(feature = "combat-combatlocationlastboss-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatlocationlastboss")]
-pub trait ICombatLocationLastBossMethods : ICombatLocationLastBoss { # [doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` overload"] fn ctor (self , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> () { unsafe { let __receiver = < CombatLocationLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationLastBoss , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eb2210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } } # [doc = "`get_RoughPosCount()` overload"] fn get_rough_pos_count (self ,) -> i32 { unsafe { let __receiver = < CombatLocationLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationLastBoss , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eb2430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetRoughPos(i32)` overload"] fn set_rough_pos (self , try_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationLastBoss , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eb2440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (try_count) , :: core :: option :: Option :: None) } } } # [doc = "`SetRoughPosCrosscut(i32)` overload"] fn set_rough_pos_crosscut (self , try_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationLastBoss , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eb2520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (try_count) , :: core :: option :: Option :: None) } } } # [doc = "`SetRoughPosStandard(i32)` overload"] fn set_rough_pos_standard (self , try_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationLastBoss , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eb2530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (try_count) , :: core :: option :: Option :: None) } } } # [doc = "`get_PatternCount()` overload"] fn get_pattern_count (self ,) -> i32 { unsafe { let __receiver = < CombatLocationLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationLastBoss , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eb2780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetBattlePatern(i32)` overload"] fn set_battle_patern (self , pattern : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatLocationLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationLastBoss , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eb2790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pattern) , :: core :: option :: Option :: None) } } } # [doc = "`CalcLocation()` overload"] fn calc_location (self ,) -> () { unsafe { let __receiver = < CombatLocationLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatLocationLastBoss , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eb2a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatlocationlastboss")]pub trait ICombatLocationLastBossMethods:ICombatLocationLastBoss{#[doc="`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]fn ctor(self,record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->(){unsafe{let __receiver= <CombatLocationLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eb2210usize)as*mut u8,();
+(CombatLocationLastBoss)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
+}
+#[doc="`get_RoughPosCount()` overload"]fn get_rough_pos_count(self,)->i32{unsafe{let __receiver= <CombatLocationLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eb2430usize)as*mut u8,i32;
+(CombatLocationLastBoss)__receiver)}
+}
+#[doc="`SetRoughPos(i32)` overload"]fn set_rough_pos(self,try_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eb2440usize)as*mut u8,();
+(CombatLocationLastBoss)__receiver,(i32)::core::convert::Into::into(try_count))}
+}
+#[doc="`SetRoughPosCrosscut(i32)` overload"]fn set_rough_pos_crosscut(self,try_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eb2520usize)as*mut u8,();
+(CombatLocationLastBoss)__receiver,(i32)::core::convert::Into::into(try_count))}
+}
+#[doc="`SetRoughPosStandard(i32)` overload"]fn set_rough_pos_standard(self,try_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eb2530usize)as*mut u8,();
+(CombatLocationLastBoss)__receiver,(i32)::core::convert::Into::into(try_count))}
+}
+#[doc="`get_PatternCount()` overload"]fn get_pattern_count(self,)->i32{unsafe{let __receiver= <CombatLocationLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eb2780usize)as*mut u8,i32;
+(CombatLocationLastBoss)__receiver)}
+}
+#[doc="`SetBattlePatern(i32)` overload"]fn set_battle_patern(self,pattern:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eb2790usize)as*mut u8,();
+(CombatLocationLastBoss)__receiver,(i32)::core::convert::Into::into(pattern))}
+}
+#[doc="`CalcLocation()` overload"]fn calc_location(self,)->(){unsafe{let __receiver= <CombatLocationLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eb2a80usize)as*mut u8,();
+(CombatLocationLastBoss)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combatlocationlastboss")]
-impl < __T : ICombatLocationLastBoss > ICombatLocationLastBossMethods for __T { }
+#[cfg(feature="combat-combatlocationlastboss")]impl<__T:ICombatLocationLastBoss>ICombatLocationLastBossMethods for __T{}
 
-#[cfg(feature = "combat-combatlocationlastboss")]
-impl CombatLocationLastBoss { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_rough_pos_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_rough_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_rough_pos_crosscut_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_rough_pos_standard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_pattern_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_battle_patern_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatLocationLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="combat-combatlocationlastboss")]impl CombatLocationLastBoss{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_rough_pos_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_rough_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rough_pos_crosscut_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_rough_pos_standard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_pattern_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_battle_patern_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "combat-combatlocationlastboss")]
-impl CombatLocationLastBoss {
-# [doc = "`.ctor(crate::combat::combatrecord::CombatRecord)` — overload selector"] pub fn new (record : crate :: combat :: combatrecord :: CombatRecord) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatLocationLastBoss) , :: core :: stringify ! (new) ,)) ; < Self as ICombatLocationLastBossMethods > :: ctor (this , record) ; this }
+#[cfg(feature="combat-combatlocationlastboss")]impl CombatLocationLastBoss{#[doc="`.ctor(crate::combat::combatrecord::CombatRecord)` — overload selector"]pub fn new(record:crate::combat::combatrecord::CombatRecord)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatLocationLastBoss), ::core::stringify!(new),));
+ <Self as ICombatLocationLastBossMethods> ::ctor(this,record);
+this}
 }
 
 #[cfg(feature = "combat-combatlocationlastboss")]

@@ -4,113 +4,164 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: commonbattlesequence_1 :: { CommonBattleSequence_1 , ICommonBattleSequence_1 }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::commonbattlesequence_1::{CommonBattleSequence_1,ICommonBattleSequence_1}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceengagesummon/MapSequenceEngageSummon_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceEngageSummon_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceengagesummon/MapSequenceEngageSummon.md"))]#[::unity2::class(namespace="App",name="MapSequenceEngageSummon")]#[parent(crate::app::commonbattlesequence_1::CommonBattleSequence_1<crate::app::mapsequenceengagesummon::MapSequenceEngageSummon>)]pub struct MapSequenceEngageSummon{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceengagesummon/MapSequenceEngageSummon_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceEngageSummon_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceEngageSummon_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceEngageSummon.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MapSequenceEngageSummon_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceEngageSummon.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MapSequenceEngageSummon_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MapSequenceEngageSummon_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MapSequenceEngageSummon_Label{pub fn simple()->Self{Self{value:0}
 }
-
-
-impl  MapSequenceEngageSummon_Label  {
-    pub fn simple() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn detail() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn after() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn detail()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceengagesummon/MapSequenceEngageSummon.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceEngageSummon")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequenceengagesummon :: MapSequenceEngageSummon >)] pub struct MapSequenceEngageSummon {}
+pub fn after()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
+}
+}
 
 }
 
 #[cfg(feature = "app-mapsequenceengagesummon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequenceengagesummon")]
-impl MapSequenceEngageSummon { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cfe10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequenceengagesummon")]impl MapSequenceEngageSummon{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23cfe10usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-mapsequenceengagesummon")]
-pub trait IMapSequenceEngageSummonMethods : IMapSequenceEngageSummon { # [doc = "`get_Person()` overload"] fn get_person (self ,) -> crate :: app :: persondata :: PersonData { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Person(crate::app::persondata::PersonData)` overload"] fn set_person (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Rank()` overload"] fn get_rank (self ,) -> crate :: app :: persondata :: PersonData_Ranks { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData_Ranks = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Rank(crate::app::persondata::PersonData_Ranks)` overload"] fn set_rank (self , value : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData_Ranks >) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , crate :: app :: persondata :: PersonData_Ranks , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MindStart()` overload"] fn mind_start (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MindEnd()` overload"] fn mind_end (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BgmStart()` overload"] fn bgm_start (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BgmEnd()` overload"] fn bgm_end (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Calculate()` overload"] fn calculate (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SimpleSummon()` overload"] fn simple_summon (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cf940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CombatSummon()` overload"] fn combat_summon (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cfa40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cfa50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Grow()` overload"] fn grow (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cfbd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GodExp()` overload"] fn god_exp (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cfbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TrySkip()` overload"] fn try_skip (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cfc60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateTelop()` overload"] fn create_telop (self ,) -> () { unsafe { let __receiver = < MapSequenceEngageSummon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceEngageSummon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23cfd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequenceengagesummon")]pub trait IMapSequenceEngageSummonMethods:IMapSequenceEngageSummon{#[doc="`get_Person()` overload"]fn get_person(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf350usize)as*mut u8,crate::app::persondata::PersonData;
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`set_Person(crate::app::persondata::PersonData)` overload"]fn set_person(self,value:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf360usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(value))}
+}
+#[doc="`get_Rank()` overload"]fn get_rank(self,)->crate::app::persondata::PersonData_Ranks{unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf370usize)as*mut u8,crate::app::persondata::PersonData_Ranks;
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`set_Rank(crate::app::persondata::PersonData_Ranks)` overload"]fn set_rank(self,value:impl::core::convert::Into<crate::app::persondata::PersonData_Ranks>)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf380usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver,(crate::app::persondata::PersonData_Ranks)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf390usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`MindStart()` overload"]fn mind_start(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf3f0usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`MindEnd()` overload"]fn mind_end(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf4a0usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`BgmStart()` overload"]fn bgm_start(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf550usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`BgmEnd()` overload"]fn bgm_end(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf5b0usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`Calculate()` overload"]fn calculate(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf640usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf850usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`SimpleSummon()` overload"]fn simple_summon(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cf940usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`CombatSummon()` overload"]fn combat_summon(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cfa40usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cfa50usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`Grow()` overload"]fn grow(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cfbd0usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`GodExp()` overload"]fn god_exp(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cfbe0usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`TrySkip()` overload"]fn try_skip(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cfc60usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+#[doc="`CreateTelop()` overload"]fn create_telop(self,)->(){unsafe{let __receiver= <MapSequenceEngageSummon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23cfd30usize)as*mut u8,();
+(MapSequenceEngageSummon)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequenceengagesummon")]
-impl < __T : IMapSequenceEngageSummon > IMapSequenceEngageSummonMethods for __T { }
+#[cfg(feature="app-mapsequenceengagesummon")]impl<__T:IMapSequenceEngageSummon>IMapSequenceEngageSummonMethods for __T{}
 
-#[cfg(feature = "app-mapsequenceengagesummon")]
-impl MapSequenceEngageSummon { pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn mind_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn mind_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn bgm_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn bgm_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn simple_summon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn combat_summon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn grow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn god_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn try_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn create_telop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceEngageSummon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-mapsequenceengagesummon")]impl MapSequenceEngageSummon{pub fn get_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_rank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn mind_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn mind_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn bgm_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn bgm_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn simple_summon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn combat_summon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn grow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn god_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn try_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn create_telop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-mapsequenceengagesummon")]
-impl MapSequenceEngageSummon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceEngageSummon) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceEngageSummonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequenceengagesummon")]impl MapSequenceEngageSummon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceEngageSummon), ::core::stringify!(new),));
+ <Self as IMapSequenceEngageSummonMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequenceengagesummon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceEngageSummon_Label;
     pub use super::MapSequenceEngageSummon;
     pub use super::IMapSequenceEngageSummon;
     pub use super::IMapSequenceEngageSummonMethods;
+    pub use super::MapSequenceEngageSummon_Label;
     pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

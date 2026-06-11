@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: trackasset :: { ITrackAsset , TrackAsset }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomfadetrack/MyRoomFadeTrack.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomFadeTrack")] # [parent (crate :: unity_engine :: timeline :: trackasset :: TrackAsset)] pub struct MyRoomFadeTrack {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomfadetrack/MyRoomFadeTrack.md"))]#[::unity2::class(namespace="App",name="MyRoomFadeTrack")]#[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]pub struct MyRoomFadeTrack{}
 
 }
 
 #[cfg(feature = "app-myroomfadetrack-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomfadetrack")]
-pub trait IMyRoomFadeTrackMethods : IMyRoomFadeTrack { # [doc = "`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"] fn create_track_mixer (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , input_count : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < MyRoomFadeTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomFadeTrack , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2390330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (input_count) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomFadeTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomFadeTrack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2390830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomfadetrack")]pub trait IMyRoomFadeTrackMethods:IMyRoomFadeTrack{#[doc="`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn create_track_mixer(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <MyRoomFadeTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2390330usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(MyRoomFadeTrack)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(input_count))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomFadeTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2390830usize)as*mut u8,();
+(MyRoomFadeTrack)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomfadetrack")]
-impl < __T : IMyRoomFadeTrack > IMyRoomFadeTrackMethods for __T { }
+#[cfg(feature="app-myroomfadetrack")]impl<__T:IMyRoomFadeTrack>IMyRoomFadeTrackMethods for __T{}
 
-#[cfg(feature = "app-myroomfadetrack")]
-impl MyRoomFadeTrack { pub fn create_track_mixer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomFadeTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomFadeTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-myroomfadetrack")]impl MyRoomFadeTrack{pub fn create_track_mixer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-myroomfadetrack")]
-impl MyRoomFadeTrack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomFadeTrack) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomFadeTrackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomfadetrack")]impl MyRoomFadeTrack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomFadeTrack), ::core::stringify!(new),));
+ <Self as IMyRoomFadeTrackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomfadetrack")]

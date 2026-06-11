@@ -4,35 +4,75 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akvector/AkVector.md"))] # [:: unity2 :: class (namespace = "" , name = "AkVector")] # [parent (crate :: system :: object :: Object)] pub struct AkVector {
-# [offset (16)] # [rename (name = "Vector")] pub vector : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akvector/AkVector.md"))]#[::unity2::class(namespace="",name="AkVector")]#[parent(crate::system::object::Object)]pub struct AkVector{#[offset(16)]#[rename(name="Vector")]pub vector:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "root-akvector-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akvector")]
-impl AkVector { # [doc = "`op_Implicit(crate::root::akvector::AkVector)` overload"] pub fn op_implicit (vector : impl :: core :: convert :: Into < crate :: root :: akvector :: AkVector >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: root :: akvector :: AkVector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c320usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vector) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akvector")]impl AkVector{#[doc="`op_Implicit(crate::root::akvector::AkVector)` overload"]pub fn op_implicit(vector:impl::core::convert::Into<crate::root::akvector::AkVector>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c320usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::root::akvector::AkVector)::core::convert::Into::into(vector))}
+}
+}
 
-#[cfg(feature = "root-akvector")]
-pub trait IAkVectorMethods : IAkVector { # [doc = "`Zero()` overload"] fn zero (self ,) -> () { unsafe { let __receiver = < AkVector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_X(f32)` overload"] fn set_x (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkVector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVector , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c2c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_X()` overload"] fn get_x (self ,) -> f32 { unsafe { let __receiver = < AkVector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVector , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Y(f32)` overload"] fn set_y (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkVector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVector , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c2e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Y()` overload"] fn get_y (self ,) -> f32 { unsafe { let __receiver = < AkVector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVector , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Z(f32)` overload"] fn set_z (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkVector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVector , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> f32 { unsafe { let __receiver = < AkVector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVector , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkVector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkVector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akvector")]pub trait IAkVectorMethods:IAkVector{#[doc="`Zero()` overload"]fn zero(self,)->(){unsafe{let __receiver= <AkVector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c2b0usize)as*mut u8,();
+(AkVector)__receiver)}
+}
+#[doc="`set_X(f32)` overload"]fn set_x(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkVector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c2c0usize)as*mut u8,();
+(AkVector)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->f32{unsafe{let __receiver= <AkVector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c2d0usize)as*mut u8,f32;
+(AkVector)__receiver)}
+}
+#[doc="`set_Y(f32)` overload"]fn set_y(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkVector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c2e0usize)as*mut u8,();
+(AkVector)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Y()` overload"]fn get_y(self,)->f32{unsafe{let __receiver= <AkVector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c2f0usize)as*mut u8,f32;
+(AkVector)__receiver)}
+}
+#[doc="`set_Z(f32)` overload"]fn set_z(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkVector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c300usize)as*mut u8,();
+(AkVector)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->f32{unsafe{let __receiver= <AkVector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c310usize)as*mut u8,f32;
+(AkVector)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkVector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c330usize)as*mut u8,();
+(AkVector)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akvector")]
-impl < __T : IAkVector > IAkVectorMethods for __T { }
+#[cfg(feature="root-akvector")]impl<__T:IAkVector>IAkVectorMethods for __T{}
 
-#[cfg(feature = "root-akvector")]
-impl AkVector { pub fn zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkVector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="root-akvector")]impl AkVector{pub fn zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "root-akvector")]
-impl AkVector {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkVector) , :: core :: stringify ! (new) ,)) ; < Self as IAkVectorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akvector")]impl AkVector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkVector), ::core::stringify!(new),));
+ <Self as IAkVectorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akvector")]

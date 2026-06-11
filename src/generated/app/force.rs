@@ -4,162 +4,244 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/force/Force_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Force_Type  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/force/Force_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Force_Type{pub value:i32,}
+impl::unity2::ClassIdentity for Force_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Force.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Force_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Force_Type{pub fn player()->Self{Self{value:0}
+}
+pub fn enemy()->Self{Self{value:1}
+}
+pub fn ally()->Self{Self{value:2}
+}
+pub fn absent()->Self{Self{value:3}
+}
+pub fn dead()->Self{Self{value:4}
+}
+pub fn lost()->Self{Self{value:5}
+}
+pub fn temporary()->Self{Self{value:6}
+}
+pub fn empty()->Self{Self{value:7}
+}
+pub fn num()->Self{Self{value:8}
+}
+pub fn f1st()->Self{Self{value:0}
+}
+pub fn f2nd()->Self{Self{value:1}
+}
+pub fn f3rd()->Self{Self{value:2}
+}
+pub fn map_num()->Self{Self{value:3}
+}
+pub fn used_num()->Self{Self{value:7}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Force_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Force.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Force_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Force_Type  {
-    pub fn player() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn enemy() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn ally() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn absent() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn dead() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn lost() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn temporary() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn empty() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn f1st() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn f2nd() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn f3rd() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn map_num() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn used_num() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/force/Force.md"))] # [:: unity2 :: class (namespace = "App" , name = "Force")] # [parent (crate :: system :: object :: Object)] pub struct Force {
-# [offset (16)] # [rename (name = "m_Head")] pub m_head : crate :: app :: unit :: Unit ,
-# [offset (24)] # [rename (name = "m_Tail")] pub m_tail : crate :: app :: unit :: Unit ,
-# [offset (32)] # [rename (name = "m_Type")] pub m_type : crate :: app :: force :: Force_Type ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/force/Force.md"))]#[::unity2::class(namespace="App",name="Force")]#[parent(crate::system::object::Object)]pub struct Force{#[offset(16)]#[rename(name="m_Head")]pub m_head:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_Tail")]pub m_tail:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_Type")]pub m_type:crate::app::force::Force_Type,}
 
 }
 
 #[cfg(feature = "app-force-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-force")]
-impl Force { # [doc = "`Get(crate::app::force::Force_Type)` overload"] pub fn get (r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> crate :: app :: force :: Force { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitFromEmpty()` overload"] pub fn get_unit_from_empty () -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616210usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetColor(crate::app::force::Force_Type)` overload"] pub fn get_color (r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616230usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetName(crate::app::force::Force_Type)` overload"] pub fn get_name (r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26162e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetMask(crate::app::force::Force_Type)` overload"] pub fn get_mask (r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> u32 { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616c30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetMask(crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"] pub fn get_mask_2 (type1 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , type2 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> u32 { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616c40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (type1) , :: core :: convert :: Into :: into (type2) , :: core :: option :: Option :: None) } } } # [doc = "`GetMask(crate::app::force::Force_Type, crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"] pub fn get_mask_3 (type1 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , type2 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , type3 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> u32 { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , crate :: app :: force :: Force_Type , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616c60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (type1) , :: core :: convert :: Into :: into (type2) , :: core :: convert :: Into :: into (type3) , :: core :: option :: Option :: None) } } } # [doc = "`GetMask(crate::app::force::Force_Type, crate::app::force::Force_Type, crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"] pub fn get_mask_4 (type1 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , type2 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , type3 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , type4 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> u32 { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , crate :: app :: force :: Force_Type , crate :: app :: force :: Force_Type , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616c80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (type1) , :: core :: convert :: Into :: into (type2) , :: core :: convert :: Into :: into (type3) , :: core :: convert :: Into :: into (type4) , :: core :: option :: Option :: None) } } } # [doc = "`GetMaskOnUsed()` overload"] pub fn get_mask_on_used () -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616cb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMaskOnMap()` overload"] pub fn get_mask_on_map () -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616cc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMaskOnSortie()` overload"] pub fn get_mask_on_sortie () -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616cd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMaskOnChapterSave()` overload"] pub fn get_mask_on_chapter_save () -> u32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616ce0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMaskSameForce(crate::app::force::Force_Type)` overload"] pub fn get_mask_same_force (r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> u32 { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayer(crate::app::force::Force_Type)` overload"] pub fn is_player (r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616d10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`IsOnMap(crate::app::force::Force_Type)` overload"] pub fn is_on_map (r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616d30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`IsOnMap(crate::app::unit::Unit)` overload"] pub fn is_on_map_2 (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616d40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-force")]impl Force{#[doc="`Get(crate::app::force::Force_Type)` overload"]pub fn get(r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::app::force::Force{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616200usize)as*mut u8,crate::app::force::Force;
+(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetUnitFromEmpty()` overload"]pub fn get_unit_from_empty()->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616210usize)as*mut u8,crate::app::unit::Unit;
+)}
+}
+#[doc="`GetColor(crate::app::force::Force_Type)` overload"]pub fn get_color(r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616230usize)as*mut u8,crate::unity_engine::color::Color;
+(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetName(crate::app::force::Force_Type)` overload"]pub fn get_name(r#type:impl::core::convert::Into<crate::app::force::Force_Type>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26162e0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetMask(crate::app::force::Force_Type)` overload"]pub fn get_mask(r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616c30usize)as*mut u8,u32;
+(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetMask(crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"]pub fn get_mask_2(type1:impl::core::convert::Into<crate::app::force::Force_Type> ,type2:impl::core::convert::Into<crate::app::force::Force_Type>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616c40usize)as*mut u8,u32;
+(crate::app::force::Force_Type)::core::convert::Into::into(type1),(crate::app::force::Force_Type)::core::convert::Into::into(type2))}
+}
+#[doc="`GetMask(crate::app::force::Force_Type, crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"]pub fn get_mask_3(type1:impl::core::convert::Into<crate::app::force::Force_Type> ,type2:impl::core::convert::Into<crate::app::force::Force_Type> ,type3:impl::core::convert::Into<crate::app::force::Force_Type>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616c60usize)as*mut u8,u32;
+(crate::app::force::Force_Type)::core::convert::Into::into(type1),(crate::app::force::Force_Type)::core::convert::Into::into(type2),(crate::app::force::Force_Type)::core::convert::Into::into(type3))}
+}
+#[doc="`GetMask(crate::app::force::Force_Type, crate::app::force::Force_Type, crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"]pub fn get_mask_4(type1:impl::core::convert::Into<crate::app::force::Force_Type> ,type2:impl::core::convert::Into<crate::app::force::Force_Type> ,type3:impl::core::convert::Into<crate::app::force::Force_Type> ,type4:impl::core::convert::Into<crate::app::force::Force_Type>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616c80usize)as*mut u8,u32;
+(crate::app::force::Force_Type)::core::convert::Into::into(type1),(crate::app::force::Force_Type)::core::convert::Into::into(type2),(crate::app::force::Force_Type)::core::convert::Into::into(type3),(crate::app::force::Force_Type)::core::convert::Into::into(type4))}
+}
+#[doc="`GetMaskOnUsed()` overload"]pub fn get_mask_on_used()->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616cb0usize)as*mut u8,u32;
+)}
+}
+#[doc="`GetMaskOnMap()` overload"]pub fn get_mask_on_map()->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616cc0usize)as*mut u8,u32;
+)}
+}
+#[doc="`GetMaskOnSortie()` overload"]pub fn get_mask_on_sortie()->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616cd0usize)as*mut u8,u32;
+)}
+}
+#[doc="`GetMaskOnChapterSave()` overload"]pub fn get_mask_on_chapter_save()->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616ce0usize)as*mut u8,u32;
+)}
+}
+#[doc="`GetMaskSameForce(crate::app::force::Force_Type)` overload"]pub fn get_mask_same_force(r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616cf0usize)as*mut u8,u32;
+(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`IsPlayer(crate::app::force::Force_Type)` overload"]pub fn is_player(r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616d10usize)as*mut u8,bool;
+(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`IsOnMap(crate::app::force::Force_Type)` overload"]pub fn is_on_map(r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616d30usize)as*mut u8,bool;
+(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`IsOnMap(crate::app::unit::Unit)` overload"]pub fn is_on_map_2(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2616d40usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
 
-#[cfg(feature = "app-force")]
-pub trait IForceMethods : IForce { # [doc = "`Initialize(crate::app::force::Force_Type)` overload"] fn initialize (self , r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`JoinFirst(crate::app::unit::Unit)` overload"] fn join_first (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26163a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`JoinLast(crate::app::unit::Unit)` overload"] fn join_last (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Insert(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn insert (self , ins_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , prev_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26164b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ins_unit) , :: core :: convert :: Into :: into (prev_unit) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::app::unit::Unit)` overload"] fn remove (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26165e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Transfer(crate::app::force::Force_Type, bool)` overload"] fn transfer (self , r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , is_last : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: force :: Force_Type , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26166a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (is_last) , :: core :: option :: Option :: None) } } } # [doc = "`TransferForSortie(crate::app::force::Force_Type, bool)` overload"] fn transfer_for_sortie (self , r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , is_last : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: force :: Force_Type , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26166f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (is_last) , :: core :: option :: Option :: None) } } } # [doc = "`IsAllied(crate::app::force::Force_Type)` overload"] fn is_allied (self , r#type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> bool { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetCount()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26167f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetIndex(crate::app::unit::Unit)` overload"] fn get_index (self , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> i32 { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`GetHeroUnit()` overload"] fn get_hero_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitFromPerson(crate::app::persondata::PersonData)` overload"] fn get_unit_from_person (self , person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26168a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitFromPerson(::unity2::Il2CppString)` overload"] fn get_unit_from_person_2 (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitFromFace(crate::app::persondata::PersonData, bool)` overload"] fn get_unit_from_face (self , person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData > , consider_relay : impl :: core :: convert :: Into < bool >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: persondata :: PersonData , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (person) , :: core :: convert :: Into :: into (consider_relay) , :: core :: option :: Option :: None) } } } # [doc = "`get_First()` overload"] fn get_first (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_First(crate::app::unit::Unit)` overload"] fn set_first (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Last()` overload"] fn get_last (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Last(crate::app::unit::Unit)` overload"] fn set_last (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ForceType()` overload"] fn get_force_type (self ,) -> crate :: app :: force :: Force_Type { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ForceMask()` overload"] fn get_force_mask (self ,) -> u32 { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Force as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Force , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-force")]pub trait IForceMethods:IForce{#[doc="`Initialize(crate::app::force::Force_Type)` overload"]fn initialize(self,r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616360usize)as*mut u8,();
+(Force)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`JoinFirst(crate::app::unit::Unit)` overload"]fn join_first(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26163a0usize)as*mut u8,();
+(Force)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`JoinLast(crate::app::unit::Unit)` overload"]fn join_last(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616430usize)as*mut u8,();
+(Force)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Insert(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn insert(self,ins_unit:impl::core::convert::Into<crate::app::unit::Unit> ,prev_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26164b0usize)as*mut u8,();
+(Force)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(ins_unit),(crate::app::unit::Unit)::core::convert::Into::into(prev_unit))}
+}
+#[doc="`Remove(crate::app::unit::Unit)` overload"]fn remove(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26165e0usize)as*mut u8,();
+(Force)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Transfer(crate::app::force::Force_Type, bool)` overload"]fn transfer(self,r#type:impl::core::convert::Into<crate::app::force::Force_Type> ,is_last:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26166a0usize)as*mut u8,();
+(Force)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(r#type),(bool)::core::convert::Into::into(is_last))}
+}
+#[doc="`TransferForSortie(crate::app::force::Force_Type, bool)` overload"]fn transfer_for_sortie(self,r#type:impl::core::convert::Into<crate::app::force::Force_Type> ,is_last:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26166f0usize)as*mut u8,();
+(Force)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(r#type),(bool)::core::convert::Into::into(is_last))}
+}
+#[doc="`IsAllied(crate::app::force::Force_Type)` overload"]fn is_allied(self,r#type:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616740usize)as*mut u8,bool;
+(Force)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetCount()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26167f0usize)as*mut u8,i32;
+(Force)__receiver)}
+}
+#[doc="`GetIndex(crate::app::unit::Unit)` overload"]fn get_index(self,target:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616820usize)as*mut u8,i32;
+(Force)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`GetHeroUnit()` overload"]fn get_hero_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616860usize)as*mut u8,crate::app::unit::Unit;
+(Force)__receiver)}
+}
+#[doc="`GetUnitFromPerson(crate::app::persondata::PersonData)` overload"]fn get_unit_from_person(self,person:impl::core::convert::Into<crate::app::persondata::PersonData>)->crate::app::unit::Unit{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26168a0usize)as*mut u8,crate::app::unit::Unit;
+(Force)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`GetUnitFromPerson(::unity2::Il2CppString)` overload"]fn get_unit_from_person_2(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::unit::Unit{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616950usize)as*mut u8,crate::app::unit::Unit;
+(Force)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`GetUnitFromFace(crate::app::persondata::PersonData, bool)` overload"]fn get_unit_from_face(self,person:impl::core::convert::Into<crate::app::persondata::PersonData> ,consider_relay:impl::core::convert::Into<bool>)->crate::app::unit::Unit{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616a80usize)as*mut u8,crate::app::unit::Unit;
+(Force)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(person),(bool)::core::convert::Into::into(consider_relay))}
+}
+#[doc="`get_First()` overload"]fn get_first(self,)->crate::app::unit::Unit{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616bd0usize)as*mut u8,crate::app::unit::Unit;
+(Force)__receiver)}
+}
+#[doc="`set_First(crate::app::unit::Unit)` overload"]fn set_first(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616be0usize)as*mut u8,();
+(Force)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_Last()` overload"]fn get_last(self,)->crate::app::unit::Unit{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616bf0usize)as*mut u8,crate::app::unit::Unit;
+(Force)__receiver)}
+}
+#[doc="`set_Last(crate::app::unit::Unit)` overload"]fn set_last(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616c00usize)as*mut u8,();
+(Force)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_ForceType()` overload"]fn get_force_type(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616c10usize)as*mut u8,crate::app::force::Force_Type;
+(Force)__receiver)}
+}
+#[doc="`get_ForceMask()` overload"]fn get_force_mask(self,)->u32{unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616c20usize)as*mut u8,u32;
+(Force)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Force as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616d70usize)as*mut u8,();
+(Force)__receiver)}
+}
+}
 
-#[cfg(feature = "app-force")]
-impl < __T : IForce > IForceMethods for __T { }
+#[cfg(feature="app-force")]impl<__T:IForce>IForceMethods for __T{}
 
-#[cfg(feature = "app-force")]
-impl Force { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_unit_from_empty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn join_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn join_last_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn insert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn transfer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn transfer_for_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_allied_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_hero_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_unit_from_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_unit_from_person_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_unit_from_face_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_last_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_last_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_force_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_mask_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_mask_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_mask_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_mask_on_used_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_mask_on_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_mask_on_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_mask_on_chapter_save_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_mask_same_force_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn is_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn is_on_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn is_on_map_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Force as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } }
+#[cfg(feature="app-force")]impl Force{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_unit_from_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn join_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn join_last_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn insert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn transfer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn transfer_for_sortie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_allied_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_hero_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_unit_from_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_unit_from_person_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_unit_from_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_last_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_last_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_force_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_mask_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_mask_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_mask_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_mask_on_used_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_mask_on_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_mask_on_sortie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_mask_on_chapter_save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_mask_same_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn is_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn is_on_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn is_on_map_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+}
 
-#[cfg(feature = "app-force")]
-impl Force {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Force) , :: core :: stringify ! (new) ,)) ; < Self as IForceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-force")]impl Force{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Force), ::core::stringify!(new),));
+ <Self as IForceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-force")]

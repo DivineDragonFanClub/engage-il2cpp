@@ -4,23 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cameraraycasthelper/CameraRaycastHelper.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CameraRaycastHelper")] # [parent (crate :: system :: object :: Object)] pub struct CameraRaycastHelper {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cameraraycasthelper/CameraRaycastHelper.md"))]#[::unity2::class(namespace="UnityEngine",name="CameraRaycastHelper")]#[parent(crate::system::object::Object)]pub struct CameraRaycastHelper{}
 
 }
 
 #[cfg(feature = "unity_engine-cameraraycasthelper-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-cameraraycasthelper")]
-impl CameraRaycastHelper { # [doc = "`RaycastTry(crate::unity_engine::camera::Camera, crate::unity_engine::ray::Ray, f32, i32)` overload"] pub fn raycast_try (cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , ray : impl :: core :: convert :: Into < crate :: unity_engine :: ray :: Ray > , distance : impl :: core :: convert :: Into < f32 > , layer_mask : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: ray :: Ray , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f387c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cam) , :: core :: convert :: Into :: into (ray) , :: core :: convert :: Into :: into (distance) , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } } # [doc = "`RaycastTry2D(crate::unity_engine::camera::Camera, crate::unity_engine::ray::Ray, f32, i32)` overload"] pub fn raycast_try2_d (cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , ray : impl :: core :: convert :: Into < crate :: unity_engine :: ray :: Ray > , distance : impl :: core :: convert :: Into < f32 > , layer_mask : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: ray :: Ray , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f388a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cam) , :: core :: convert :: Into :: into (ray) , :: core :: convert :: Into :: into (distance) , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } } # [doc = "`RaycastTry_Injected(crate::unity_engine::camera::Camera, *mutcrate::unity_engine::ray::Ray, f32, i32)` overload"] pub fn raycast_try_injected (cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , distance : impl :: core :: convert :: Into < f32 > , layer_mask : impl :: core :: convert :: Into < i32 >) -> (crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: ray :: Ray) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: ray :: Ray > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , * mut crate :: unity_engine :: ray :: Ray , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cam) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (distance) , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`RaycastTry2D_Injected(crate::unity_engine::camera::Camera, *mutcrate::unity_engine::ray::Ray, f32, i32)` overload"] pub fn raycast_try2_d_injected (cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , distance : impl :: core :: convert :: Into < f32 > , layer_mask : impl :: core :: convert :: Into < i32 >) -> (crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: ray :: Ray) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: ray :: Ray > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , * mut crate :: unity_engine :: ray :: Ray , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38910usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cam) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (distance) , :: core :: convert :: Into :: into (layer_mask) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="unity_engine-cameraraycasthelper")]impl CameraRaycastHelper{#[doc="`RaycastTry(crate::unity_engine::camera::Camera, crate::unity_engine::ray::Ray, f32, i32)` overload"]pub fn raycast_try(cam:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,ray:impl::core::convert::Into<crate::unity_engine::ray::Ray> ,distance:impl::core::convert::Into<f32> ,layer_mask:impl::core::convert::Into<i32>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f387c0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(cam),(crate::unity_engine::ray::Ray)::core::convert::Into::into(ray),(f32)::core::convert::Into::into(distance),(i32)::core::convert::Into::into(layer_mask))}
+}
+#[doc="`RaycastTry2D(crate::unity_engine::camera::Camera, crate::unity_engine::ray::Ray, f32, i32)` overload"]pub fn raycast_try2_d(cam:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,ray:impl::core::convert::Into<crate::unity_engine::ray::Ray> ,distance:impl::core::convert::Into<f32> ,layer_mask:impl::core::convert::Into<i32>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f388a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(cam),(crate::unity_engine::ray::Ray)::core::convert::Into::into(ray),(f32)::core::convert::Into::into(distance),(i32)::core::convert::Into::into(layer_mask))}
+}
+#[doc="`RaycastTry_Injected(crate::unity_engine::camera::Camera, *mutcrate::unity_engine::ray::Ray, f32, i32)` overload"]pub fn raycast_try_injected(cam:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,distance:impl::core::convert::Into<f32> ,layer_mask:impl::core::convert::Into<i32>)->(crate::unity_engine::gameobject::GameObject,crate::unity_engine::ray::Ray){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::ray::Ray> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f38830usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(cam),(*mut crate::unity_engine::ray::Ray)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(distance),(i32)::core::convert::Into::into(layer_mask))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`RaycastTry2D_Injected(crate::unity_engine::camera::Camera, *mutcrate::unity_engine::ray::Ray, f32, i32)` overload"]pub fn raycast_try2_d_injected(cam:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,distance:impl::core::convert::Into<f32> ,layer_mask:impl::core::convert::Into<i32>)->(crate::unity_engine::gameobject::GameObject,crate::unity_engine::ray::Ray){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::ray::Ray> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f38910usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(cam),(*mut crate::unity_engine::ray::Ray)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(distance),(i32)::core::convert::Into::into(layer_mask))}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-cameraraycasthelper")]
-impl CameraRaycastHelper { pub fn raycast_try_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraRaycastHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn raycast_try2_d_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraRaycastHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn raycast_try_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraRaycastHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn raycast_try2_d_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraRaycastHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-cameraraycasthelper")]impl CameraRaycastHelper{pub fn raycast_try_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn raycast_try2_d_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn raycast_try_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn raycast_try2_d_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-cameraraycasthelper")]
 #[doc(hidden)]

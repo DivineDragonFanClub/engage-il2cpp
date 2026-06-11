@@ -4,45 +4,81 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridemenucontent/DragonRideMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct DragonRideMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridemenucontent/DragonRideMenuContent.md"))]#[::unity2::class(namespace="App",name="DragonRideMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct DragonRideMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-dragonridemenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonridemenucontent")]
-impl DragonRideMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad27a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad2840usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad28c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac4210usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::shoptopmenucontent::ShopTopMenuContent)` overload"] pub fn destroy (shop_title_bar : impl :: core :: convert :: Into < crate :: app :: shoptopmenucontent :: ShopTopMenuContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: shoptopmenucontent :: ShopTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad2940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (shop_title_bar) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridemenucontent")]impl DragonRideMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad27a0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad2840usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad28c0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ac4210usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`Destroy(crate::app::shoptopmenucontent::ShopTopMenuContent)` overload"]pub fn destroy(shop_title_bar:impl::core::convert::Into<crate::app::shoptopmenucontent::ShopTopMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad2940usize)as*mut u8,();
+(crate::app::shoptopmenucontent::ShopTopMenuContent)::core::convert::Into::into(shop_title_bar))}
+}
+}
 
-#[cfg(feature = "app-dragonridemenucontent")]
-pub trait IDragonRideMenuContentMethods : IDragonRideMenuContent { # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < DragonRideMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad29c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < DragonRideMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad29e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < DragonRideMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad2a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad2ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridemenucontent")]pub trait IDragonRideMenuContentMethods:IDragonRideMenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <DragonRideMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad29c0usize)as*mut u8,i32;
+(DragonRideMenuContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <DragonRideMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad29e0usize)as*mut u8,f32;
+(DragonRideMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <DragonRideMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad2a50usize)as*mut u8,f32;
+(DragonRideMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad2ac0usize)as*mut u8,();
+(DragonRideMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonridemenucontent")]
-impl < __T : IDragonRideMenuContent > IDragonRideMenuContentMethods for __T { }
+#[cfg(feature="app-dragonridemenucontent")]impl<__T:IDragonRideMenuContent>IDragonRideMenuContentMethods for __T{}
 
-#[cfg(feature = "app-dragonridemenucontent")]
-impl DragonRideMenuContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-dragonridemenucontent")]impl DragonRideMenuContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-dragonridemenucontent")]
-impl DragonRideMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonridemenucontent")]impl DragonRideMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideMenuContent), ::core::stringify!(new),));
+ <Self as IDragonRideMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonridemenucontent")]

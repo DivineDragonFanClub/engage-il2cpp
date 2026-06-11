@@ -4,47 +4,102 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfoiconlocatorroot/MapInfoIconLocatorRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "MapInfoIconLocatorRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapInfoIconLocatorRoot {
-# [offset (24)] # [rename (name = "m_CannonStock")] pub m_cannon_stock : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_Hp")] pub m_hp : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_ValueText")] pub m_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_Baloon")] pub m_baloon : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (56)] # [rename (name = "m_HpGauge")] pub m_hp_gauge : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "m_LocatorRoot")] pub m_locator_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_BaseScale")] pub m_base_scale : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (80)] # [rename (name = "m_Shell")] pub m_shell : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapinfoiconlocatorroot/MapInfoIconLocatorRoot.md"))]#[::unity2::class(namespace="",name="MapInfoIconLocatorRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapInfoIconLocatorRoot{#[offset(24)]#[rename(name="m_CannonStock")]pub m_cannon_stock:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Hp")]pub m_hp:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_Baloon")]pub m_baloon:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_HpGauge")]pub m_hp_gauge:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_LocatorRoot")]pub m_locator_root:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_BaseScale")]pub m_base_scale:crate::unity_engine::vector2::Vector2, #[offset(80)]#[rename(name="m_Shell")]pub m_shell:i32,}
 
 }
 
 #[cfg(feature = "root-mapinfoiconlocatorroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapinfoiconlocatorroot")]
-pub trait IMapInfoIconLocatorRootMethods : IMapInfoIconLocatorRoot { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20831a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetIcon(crate::app::mapinspector::MapInspector)` overload"] fn set_icon (self , inspector : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector >) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , crate :: app :: mapinspector :: MapInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2083230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inspector) , :: core :: option :: Option :: None) } } } # [doc = "`IsSetPosition()` overload"] fn is_set_position (self ,) -> bool { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2083590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSetParam()` overload"] fn is_set_param (self ,) -> bool { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2084510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetVisible()` overload"] fn set_visible (self ,) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20834f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsVisible()` overload"] fn is_visible (self ,) -> bool { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPosition(crate::app::mapinspector::MapInspector)` overload"] fn set_position (self , inspector : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector >) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , crate :: app :: mapinspector :: MapInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2083660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inspector) , :: core :: option :: Option :: None) } } } # [doc = "`SetScale(crate::app::mapinspector::MapInspector)` overload"] fn set_scale (self , inspector : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector >) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , crate :: app :: mapinspector :: MapInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20845e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inspector) , :: core :: option :: Option :: None) } } } # [doc = "`SetBaloonIcon(crate::app::mapinspector::MapInspector)` overload"] fn set_baloon_icon (self , inspector : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector >) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , crate :: app :: mapinspector :: MapInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20853c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inspector) , :: core :: option :: Option :: None) } } } # [doc = "`SetHpGauge(crate::app::mapinspector::MapInspector)` overload"] fn set_hp_gauge (self , inspector : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector >) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , crate :: app :: mapinspector :: MapInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20854a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inspector) , :: core :: option :: Option :: None) } } } # [doc = "`SetCannonStock(crate::app::mapinspector::MapInspector)` overload"] fn set_cannon_stock (self , inspector : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector >) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , crate :: app :: mapinspector :: MapInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inspector) , :: core :: option :: Option :: None) } } } # [doc = "`SetActive(crate::unity_engine::gameobject::GameObject, bool)` overload"] fn set_active (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapInfoIconLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapinfoiconlocatorroot")]pub trait IMapInfoIconLocatorRootMethods:IMapInfoIconLocatorRoot{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20831a0usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver)}
+}
+#[doc="`SetIcon(crate::app::mapinspector::MapInspector)` overload"]fn set_icon(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2083230usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`IsSetPosition()` overload"]fn is_set_position(self,)->bool{unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2083590usize)as*mut u8,bool;
+(MapInfoIconLocatorRoot)__receiver)}
+}
+#[doc="`IsSetParam()` overload"]fn is_set_param(self,)->bool{unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2084510usize)as*mut u8,bool;
+(MapInfoIconLocatorRoot)__receiver)}
+}
+#[doc="`SetVisible()` overload"]fn set_visible(self,)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20834f0usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver)}
+}
+#[doc="`IsVisible()` overload"]fn is_visible(self,)->bool{unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085690usize)as*mut u8,bool;
+(MapInfoIconLocatorRoot)__receiver)}
+}
+#[doc="`SetPosition(crate::app::mapinspector::MapInspector)` overload"]fn set_position(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2083660usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`SetScale(crate::app::mapinspector::MapInspector)` overload"]fn set_scale(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20845e0usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`SetBaloonIcon(crate::app::mapinspector::MapInspector)` overload"]fn set_baloon_icon(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20853c0usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`SetHpGauge(crate::app::mapinspector::MapInspector)` overload"]fn set_hp_gauge(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20854a0usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`SetCannonStock(crate::app::mapinspector::MapInspector)` overload"]fn set_cannon_stock(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085570usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`SetActive(crate::unity_engine::gameobject::GameObject, bool)` overload"]fn set_active(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085700usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj),(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInfoIconLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085750usize)as*mut u8,();
+(MapInfoIconLocatorRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapinfoiconlocatorroot")]
-impl < __T : IMapInfoIconLocatorRoot > IMapInfoIconLocatorRootMethods for __T { }
+#[cfg(feature="root-mapinfoiconlocatorroot")]impl<__T:IMapInfoIconLocatorRoot>IMapInfoIconLocatorRootMethods for __T{}
 
-#[cfg(feature = "root-mapinfoiconlocatorroot")]
-impl MapInfoIconLocatorRoot { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_set_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_baloon_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_hp_gauge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_cannon_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="root-mapinfoiconlocatorroot")]impl MapInfoIconLocatorRoot{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_set_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_baloon_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_hp_gauge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_cannon_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "root-mapinfoiconlocatorroot")]
-impl MapInfoIconLocatorRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoIconLocatorRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoIconLocatorRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapinfoiconlocatorroot")]impl MapInfoIconLocatorRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInfoIconLocatorRoot), ::core::stringify!(new),));
+ <Self as IMapInfoIconLocatorRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapinfoiconlocatorroot")]

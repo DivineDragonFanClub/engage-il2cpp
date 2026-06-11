@@ -4,34 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: interpolator_1 :: { IInterpolator_1 , Interpolator_1 }
- ;
- use crate :: app :: interpolatortime :: { IInterpolatorTime , InterpolatorTime }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::interpolator_1::{IInterpolator_1,Interpolator_1}
+;
+use crate::app::interpolatortime::{IInterpolatorTime,InterpolatorTime}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorfloat/InterpolatorFloat.md"))] # [:: unity2 :: class (namespace = "App" , name = "InterpolatorFloat")] # [parent (crate :: app :: interpolator_1 :: Interpolator_1 < f32 >)] pub struct InterpolatorFloat {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interpolatorfloat/InterpolatorFloat.md"))]#[::unity2::class(namespace="App",name="InterpolatorFloat")]#[parent(crate::app::interpolator_1::Interpolator_1<f32>)]pub struct InterpolatorFloat{}
 
 }
 
 #[cfg(feature = "app-interpolatorfloat-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-interpolatorfloat")]
-pub trait IInterpolatorFloatMethods : IInterpolatorFloat { # [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: curve :: Curve_Type > , num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < InterpolatorFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorFloat , crate :: app :: curve :: Curve_Type , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> f32 { unsafe { let __receiver = < InterpolatorFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorFloat , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEqual(f32, f32)` overload"] fn is_equal (self , a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < InterpolatorFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorFloat , f32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-interpolatorfloat")]pub trait IInterpolatorFloatMethods:IInterpolatorFloat{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794b50usize)as*mut u8,();
+(InterpolatorFloat)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <InterpolatorFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794bc0usize)as*mut u8,f32;
+(InterpolatorFloat)__receiver)}
+}
+#[doc="`IsEqual(f32, f32)` overload"]fn is_equal(self,a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <InterpolatorFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794bf0usize)as*mut u8,bool;
+(InterpolatorFloat)__receiver,(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "app-interpolatorfloat")]
-impl < __T : IInterpolatorFloat > IInterpolatorFloatMethods for __T { }
+#[cfg(feature="app-interpolatorfloat")]impl<__T:IInterpolatorFloat>IInterpolatorFloatMethods for __T{}
 
-#[cfg(feature = "app-interpolatorfloat")]
-impl InterpolatorFloat { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorFloat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorFloat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_equal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorFloat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-interpolatorfloat")]impl InterpolatorFloat{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-interpolatorfloat")]
-impl InterpolatorFloat {
-# [doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"] pub fn new (r#type : crate :: app :: curve :: Curve_Type , num : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterpolatorFloat) , :: core :: stringify ! (new) ,)) ; < Self as IInterpolatorFloatMethods > :: ctor (this , r#type , num) ; this }
+#[cfg(feature="app-interpolatorfloat")]impl InterpolatorFloat{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]pub fn new(r#type:crate::app::curve::Curve_Type,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InterpolatorFloat), ::core::stringify!(new),));
+ <Self as IInterpolatorFloatMethods> ::ctor(this,r#type,num);
+this}
 }
 
 #[cfg(feature = "app-interpolatorfloat")]

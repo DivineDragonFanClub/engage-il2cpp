@@ -4,50 +4,108 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/encounticon/EncountIcon.md"))] # [:: unity2 :: class (namespace = "" , name = "EncountIcon")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EncountIcon {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_IsVisible")] pub s_is_visible : bool ,
-# [offset (24)] # [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: app :: uniticon :: UnitIcon ,
-# [offset (32)] # [rename (name = "m_IsColliderHit")] pub m_is_collider_hit : bool ,
-# [offset (40)] # [rename (name = "m_GmapSpot")] pub m_gmap_spot : crate :: app :: gmapspot :: GmapSpot ,
-# [offset (48)] # [rename (name = "m_RectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (56)] # [rename (name = "m_ChildObjects")] pub m_child_objects : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (64)] # [rename (name = "m_Initialized")] pub m_initialized : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/encounticon/EncountIcon.md"))]#[::unity2::class(namespace="",name="EncountIcon")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EncountIcon{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_IsVisible")]pub s_is_visible:bool, #[offset(24)]#[rename(name="m_UnitIcon")]pub m_unit_icon:crate::app::uniticon::UnitIcon, #[offset(32)]#[rename(name="m_IsColliderHit")]pub m_is_collider_hit:bool, #[offset(40)]#[rename(name="m_GmapSpot")]pub m_gmap_spot:crate::app::gmapspot::GmapSpot, #[offset(48)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(56)]#[rename(name="m_ChildObjects")]pub m_child_objects:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(64)]#[rename(name="m_Initialized")]pub m_initialized:bool,}
 
 }
 
 #[cfg(feature = "root-encounticon-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-encounticon")]
-impl EncountIcon { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dcd10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dcdb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dce30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_RootObject()` overload"] pub fn get_root_object () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dceb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_RootObject(crate::unity_engine::gameobject::GameObject)` overload"] pub fn set_root_object (value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dcf00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Camera()` overload"] pub fn get_camera () -> crate :: app :: gmapcamera :: GmapCamera { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gmapcamera :: GmapCamera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dcf60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_Camera(crate::app::gmapcamera::GmapCamera)` overload"] pub fn set_camera (value : impl :: core :: convert :: Into < crate :: app :: gmapcamera :: GmapCamera >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapcamera :: GmapCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dcfb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::gmapspot::GmapSpot)` overload"] pub fn create (gmap_spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot >) -> crate :: root :: encounticon :: EncountIcon { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: root :: encounticon :: EncountIcon = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dd010usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gmap_spot) , :: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::root::encounticon::EncountIcon)` overload"] pub fn destroy (encount_icon : impl :: core :: convert :: Into < crate :: root :: encounticon :: EncountIcon >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: encounticon :: EncountIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dd3a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (encount_icon) , :: core :: option :: Option :: None) } } } # [doc = "`Show()` overload"] pub fn show () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dde60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] pub fn hide () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ddeb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-encounticon")]impl EncountIcon{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dcd10usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dcdb0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dce30usize)as*mut u8,();
+)}
+}
+#[doc="`get_RootObject()` overload"]pub fn get_root_object()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dceb0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`set_RootObject(crate::unity_engine::gameobject::GameObject)` overload"]pub fn set_root_object(value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dcf00usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_Camera()` overload"]pub fn get_camera()->crate::app::gmapcamera::GmapCamera{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dcf60usize)as*mut u8,crate::app::gmapcamera::GmapCamera;
+)}
+}
+#[doc="`set_Camera(crate::app::gmapcamera::GmapCamera)` overload"]pub fn set_camera(value:impl::core::convert::Into<crate::app::gmapcamera::GmapCamera>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dcfb0usize)as*mut u8,();
+(crate::app::gmapcamera::GmapCamera)::core::convert::Into::into(value))}
+}
+#[doc="`Create(crate::app::gmapspot::GmapSpot)` overload"]pub fn create(gmap_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot>)->crate::root::encounticon::EncountIcon{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dd010usize)as*mut u8,crate::root::encounticon::EncountIcon;
+(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(gmap_spot))}
+}
+#[doc="`Destroy(crate::root::encounticon::EncountIcon)` overload"]pub fn destroy(encount_icon:impl::core::convert::Into<crate::root::encounticon::EncountIcon>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dd3a0usize)as*mut u8,();
+(crate::root::encounticon::EncountIcon)::core::convert::Into::into(encount_icon))}
+}
+#[doc="`Show()` overload"]pub fn show()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dde60usize)as*mut u8,();
+)}
+}
+#[doc="`Hide()` overload"]pub fn hide()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ddeb0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-encounticon")]
-pub trait IEncountIconMethods : IEncountIcon { # [doc = "`Init(crate::app::gmapspot::GmapSpot)` overload"] fn init (self , gmap_spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot >) -> () { unsafe { let __receiver = < EncountIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountIcon , crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dd110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (gmap_spot) , :: core :: option :: Option :: None) } } } # [doc = "`SetIcon()` overload"] fn set_icon (self ,) -> () { unsafe { let __receiver = < EncountIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dd420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < EncountIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dd7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVisible()` overload"] fn update_visible (self ,) -> () { unsafe { let __receiver = < EncountIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ddca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EncountIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ddf00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-encounticon")]pub trait IEncountIconMethods:IEncountIcon{#[doc="`Init(crate::app::gmapspot::GmapSpot)` overload"]fn init(self,gmap_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot>)->(){unsafe{let __receiver= <EncountIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dd110usize)as*mut u8,();
+(EncountIcon)__receiver,(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(gmap_spot))}
+}
+#[doc="`SetIcon()` overload"]fn set_icon(self,)->(){unsafe{let __receiver= <EncountIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dd420usize)as*mut u8,();
+(EncountIcon)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <EncountIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dd7c0usize)as*mut u8,();
+(EncountIcon)__receiver)}
+}
+#[doc="`UpdateVisible()` overload"]fn update_visible(self,)->(){unsafe{let __receiver= <EncountIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ddca0usize)as*mut u8,();
+(EncountIcon)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EncountIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ddf00usize)as*mut u8,();
+(EncountIcon)__receiver)}
+}
+}
 
-#[cfg(feature = "root-encounticon")]
-impl < __T : IEncountIcon > IEncountIconMethods for __T { }
+#[cfg(feature="root-encounticon")]impl<__T:IEncountIcon>IEncountIconMethods for __T{}
 
-#[cfg(feature = "root-encounticon")]
-impl EncountIcon { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_root_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_root_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn update_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="root-encounticon")]impl EncountIcon{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_root_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_root_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "root-encounticon")]
-impl EncountIcon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EncountIcon) , :: core :: stringify ! (new) ,)) ; < Self as IEncountIconMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-encounticon")]impl EncountIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EncountIcon), ::core::stringify!(new),));
+ <Self as IEncountIconMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-encounticon")]

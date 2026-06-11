@@ -4,96 +4,155 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapminimap/MapMiniMap_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapMiniMap_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapminimap/MapMiniMap_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapMiniMap_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapMiniMap_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapMiniMap.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapMiniMap_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapMiniMap_Label{pub fn stay()->Self{Self{value:0}
+}
+pub fn measure()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapMiniMap_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapMiniMap.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapMiniMap_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapMiniMap_Label  {
-    pub fn stay() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn measure() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapminimap/MapMiniMap.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapMiniMap")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapminimap :: MapMiniMap >)] pub struct MapMiniMap {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (128)] # [rename (name = "m_MiniMapObject")] pub m_mini_map_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_ModeStack")] pub m_mode_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: minimapcontroller :: MiniMapController_Mode > ,
-# [offset (144)] # [rename (name = "m_MiniMapMode")] pub m_mini_map_mode : crate :: app :: minimapcontroller :: MiniMapController_Mode ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapminimap/MapMiniMap.md"))]#[::unity2::class(namespace="App",name="MapMiniMap")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapminimap::MapMiniMap>)]pub struct MapMiniMap{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(128)]#[rename(name="m_MiniMapObject")]pub m_mini_map_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_ModeStack")]pub m_mode_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::minimapcontroller::MiniMapController_Mode> , #[offset(144)]#[rename(name="m_MiniMapMode")]pub m_mini_map_mode:crate::app::minimapcontroller::MiniMapController_Mode,}
 
 }
 
 #[cfg(feature = "app-mapminimap-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapminimap")]
-impl MapMiniMap { # [doc = "`CreateAsync(crate::app::procinst::ProcInst)` overload"] pub fn create_async (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df5840usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] pub fn destroy () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df5b30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetMode(crate::app::minimapcontroller::MiniMapController_Mode)` overload"] pub fn set_mode (mode : impl :: core :: convert :: Into < crate :: app :: minimapcontroller :: MiniMapController_Mode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: minimapcontroller :: MiniMapController_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`SetModeHide()` overload"] pub fn set_mode_hide () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetModeShow()` overload"] pub fn set_mode_show () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df63a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetModeMenu()` overload"] pub fn set_mode_menu () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df63b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PushModeHide()` overload"] pub fn push_mode_hide () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df63c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PopMode()` overload"] pub fn pop_mode () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6520usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetDirty()` overload"] pub fn set_dirty () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df66d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsControl()` overload"] pub fn is_control () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df67c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapminimap")]impl MapMiniMap{#[doc="`CreateAsync(crate::app::procinst::ProcInst)` overload"]pub fn create_async(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df5840usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Destroy()` overload"]pub fn destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df5b30usize)as*mut u8,();
+)}
+}
+#[doc="`SetMode(crate::app::minimapcontroller::MiniMapController_Mode)` overload"]pub fn set_mode(mode:impl::core::convert::Into<crate::app::minimapcontroller::MiniMapController_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df6290usize)as*mut u8,();
+(crate::app::minimapcontroller::MiniMapController_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`SetModeHide()` overload"]pub fn set_mode_hide()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df6390usize)as*mut u8,();
+)}
+}
+#[doc="`SetModeShow()` overload"]pub fn set_mode_show()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df63a0usize)as*mut u8,();
+)}
+}
+#[doc="`SetModeMenu()` overload"]pub fn set_mode_menu()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df63b0usize)as*mut u8,();
+)}
+}
+#[doc="`PushModeHide()` overload"]pub fn push_mode_hide()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df63c0usize)as*mut u8,();
+)}
+}
+#[doc="`PopMode()` overload"]pub fn pop_mode()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df6520usize)as*mut u8,();
+)}
+}
+#[doc="`SetDirty()` overload"]pub fn set_dirty()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df66d0usize)as*mut u8,();
+)}
+}
+#[doc="`IsControl()` overload"]pub fn is_control()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df67c0usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "app-mapminimap")]
-pub trait IMapMiniMapMethods : IMapMiniMap { # [doc = "`IsCreating()` overload"] fn is_creating (self ,) -> bool { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df5b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df5bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df5d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateImpl()` overload"] fn create_impl (self ,) -> () { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df5e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitMiniMapObject()` overload"] fn init_mini_map_object (self ,) -> () { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df5f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetModeImpl(crate::app::minimapcontroller::MiniMapController_Mode)` overload"] fn set_mode_impl (self , mode : impl :: core :: convert :: Into < crate :: app :: minimapcontroller :: MiniMapController_Mode >) -> () { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , crate :: app :: minimapcontroller :: MiniMapController_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetModeImpl()` overload"] fn get_mode_impl (self ,) -> crate :: app :: minimapcontroller :: MiniMapController_Mode { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> crate :: app :: minimapcontroller :: MiniMapController_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df60e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PushModeImpl()` overload"] fn push_mode_impl (self ,) -> () { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df60f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PopModeImpl()` overload"] fn pop_mode_impl (self ,) -> () { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDirtyImpl()` overload"] fn set_dirty_impl (self ,) -> () { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMode()` overload"] fn get_mode (self ,) -> crate :: app :: minimapcontroller :: MiniMapController_Mode { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> crate :: app :: minimapcontroller :: MiniMapController_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df6650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapMiniMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapMiniMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df5a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapminimap")]pub trait IMapMiniMapMethods:IMapMiniMap{#[doc="`IsCreating()` overload"]fn is_creating(self,)->bool{unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df5b00usize)as*mut u8,bool;
+(MapMiniMap)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df5bf0usize)as*mut u8,();
+(MapMiniMap)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df5d30usize)as*mut u8,();
+(MapMiniMap)__receiver)}
+}
+#[doc="`CreateImpl()` overload"]fn create_impl(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df5e30usize)as*mut u8,();
+(MapMiniMap)__receiver)}
+}
+#[doc="`InitMiniMapObject()` overload"]fn init_mini_map_object(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df5f90usize)as*mut u8,();
+(MapMiniMap)__receiver)}
+}
+#[doc="`SetModeImpl(crate::app::minimapcontroller::MiniMapController_Mode)` overload"]fn set_mode_impl(self,mode:impl::core::convert::Into<crate::app::minimapcontroller::MiniMapController_Mode>)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6050usize)as*mut u8,();
+(MapMiniMap)__receiver,(crate::app::minimapcontroller::MiniMapController_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetModeImpl()` overload"]fn get_mode_impl(self,)->crate::app::minimapcontroller::MiniMapController_Mode{unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df60e0usize)as*mut u8,crate::app::minimapcontroller::MiniMapController_Mode;
+(MapMiniMap)__receiver)}
+}
+#[doc="`PushModeImpl()` overload"]fn push_mode_impl(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df60f0usize)as*mut u8,();
+(MapMiniMap)__receiver)}
+}
+#[doc="`PopModeImpl()` overload"]fn pop_mode_impl(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6150usize)as*mut u8,();
+(MapMiniMap)__receiver)}
+}
+#[doc="`SetDirtyImpl()` overload"]fn set_dirty_impl(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6210usize)as*mut u8,();
+(MapMiniMap)__receiver)}
+}
+#[doc="`GetMode()` overload"]fn get_mode(self,)->crate::app::minimapcontroller::MiniMapController_Mode{unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6650usize)as*mut u8,crate::app::minimapcontroller::MiniMapController_Mode;
+(MapMiniMap)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df5a10usize)as*mut u8,();
+(MapMiniMap)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapminimap")]
-impl < __T : IMapMiniMap > IMapMiniMapMethods for __T { }
+#[cfg(feature="app-mapminimap")]impl<__T:IMapMiniMap>IMapMiniMapMethods for __T{}
 
-#[cfg(feature = "app-mapminimap")]
-impl MapMiniMap { pub fn create_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_creating_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn init_mini_map_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_mode_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_mode_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn push_mode_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn pop_mode_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_dirty_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_mode_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_mode_show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_mode_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn push_mode_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn pop_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_control_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapMiniMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-mapminimap")]impl MapMiniMap{pub fn create_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_creating_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn init_mini_map_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_mode_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_mode_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn push_mode_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn pop_mode_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_dirty_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_mode_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_mode_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_mode_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn push_mode_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn pop_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_control_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-mapminimap")]
-impl MapMiniMap {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapMiniMap) , :: core :: stringify ! (new) ,)) ; < Self as IMapMiniMapMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapminimap")]impl MapMiniMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapMiniMap), ::core::stringify!(new),));
+ <Self as IMapMiniMapMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapminimap")]

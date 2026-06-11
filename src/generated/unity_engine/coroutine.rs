@@ -4,37 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: yieldinstruction :: { IYieldInstruction , YieldInstruction }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/coroutine/Coroutine.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Coroutine")] # [parent (crate :: unity_engine :: yieldinstruction :: YieldInstruction)] pub struct Coroutine {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/coroutine/Coroutine.md"))]#[::unity2::class(namespace="UnityEngine",name="Coroutine")]#[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]pub struct Coroutine{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-coroutine-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-coroutine")]
-impl Coroutine { # [doc = "`ReleaseCoroutine(::unity2::IntPtr)` overload"] pub fn release_coroutine (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c47540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-coroutine")]impl Coroutine{#[doc="`ReleaseCoroutine(::unity2::IntPtr)` overload"]pub fn release_coroutine(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c47540usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-coroutine")]
-pub trait ICoroutineMethods : ICoroutine { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Coroutine as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Coroutine , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c47490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < Coroutine as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Coroutine , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c474a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-coroutine")]pub trait ICoroutineMethods:ICoroutine{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c47490usize)as*mut u8,();
+(Coroutine)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c474a0usize)as*mut u8,();
+(Coroutine)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-coroutine")]
-impl < __T : ICoroutine > ICoroutineMethods for __T { }
+#[cfg(feature="unity_engine-coroutine")]impl<__T:ICoroutine>ICoroutineMethods for __T{}
 
-#[cfg(feature = "unity_engine-coroutine")]
-impl Coroutine { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Coroutine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Coroutine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn release_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Coroutine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-coroutine")]impl Coroutine{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn release_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-coroutine")]
-impl Coroutine {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Coroutine) , :: core :: stringify ! (new) ,)) ; < Self as ICoroutineMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-coroutine")]impl Coroutine{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Coroutine), ::core::stringify!(new),));
+ <Self as ICoroutineMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-coroutine")]

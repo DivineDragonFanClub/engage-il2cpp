@@ -4,183 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Dish_RelianceResult {
-    pub hero_unit_a: i32,
-    pub hero_unit_b: i32,
-    pub unit_a_unit_b: i32,
-    pub hero_unit_a_result: crate :: app :: dish :: Dish_RelianceResult_TryResult,
-    pub hero_unit_b_result: crate :: app :: dish :: Dish_RelianceResult_TryResult,
-    pub unit_a_unit_b_result: crate :: app :: dish :: Dish_RelianceResult_TryResult,
-    pub hero: crate :: app :: unit :: Unit,
-    pub unit_a: crate :: app :: unit :: Unit,
-    pub unit_b: crate :: app :: unit :: Unit,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dish/Dish_Liking.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Dish_Liking{pub value:i32,}
+impl::unity2::ClassIdentity for Dish_Liking{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Dish.Liking";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Dish_Liking{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Dish_Liking{pub fn none()->Self{Self{value: -1}
+}
+pub fn ok()->Self{Self{value:0}
+}
+pub fn like()->Self{Self{value:1}
+}
+pub fn dislike()->Self{Self{value:2}
+}
 }
 
 
-impl ::unity2::ClassIdentity for Dish_RelianceResult {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dish/Dish.md"))]#[::unity2::class(namespace="App",name="Dish")]#[parent(crate::system::object::Object)]pub struct Dish{#[offset(56)]#[rename(name="m_Func")]pub m_func:crate::app::tasteconditiondata::TasteConditionData_ConditionFunc, #[offset(64)]#[rename(name="m_MakeBentoIid")]pub m_make_bento_iid: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_FoodData")]pub m_food_data:crate::app::fooddata::FoodData,}
 
-    const NAME: &'static str = "Dish.RelianceResult";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dish/Dish_RelianceResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Dish_RelianceResult{pub hero_unit_a:i32,pub hero_unit_b:i32,pub unit_a_unit_b:i32,pub hero_unit_a_result:crate::app::dish::Dish_RelianceResult_TryResult,pub hero_unit_b_result:crate::app::dish::Dish_RelianceResult_TryResult,pub unit_a_unit_b_result:crate::app::dish::Dish_RelianceResult_TryResult,pub hero:crate::app::unit::Unit,pub unit_a:crate::app::unit::Unit,pub unit_b:crate::app::unit::Unit,}
+impl::unity2::ClassIdentity for Dish_RelianceResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Dish.RelianceResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Dish_RelianceResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::IlType for Dish_RelianceResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dish/Dish_RelianceResult_TryResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Dish_RelianceResult_TryResult{pub value:i32,}
+impl::unity2::ClassIdentity for Dish_RelianceResult_TryResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Dish.RelianceResult.TryResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult_TryResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Dish_RelianceResult_TryResult  {
-    pub value: i32,
+impl::unity2::IlType for Dish_RelianceResult_TryResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for Dish_RelianceResult_TryResult  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Dish.RelianceResult.TryResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl Dish_RelianceResult_TryResult{pub fn none()->Self{Self{value: -1}
 }
-
-
-impl  ::unity2::IlType for Dish_RelianceResult_TryResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn success()->Self{Self{value:0}
 }
-
-
-impl  Dish_RelianceResult_TryResult  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn success() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn faileur() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn not_exists() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn faileur()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dish/Dish.md"))] # [:: unity2 :: class (namespace = "App" , name = "Dish")] # [parent (crate :: system :: object :: Object)] pub struct Dish {
-# [offset (56)] # [rename (name = "m_Func")] pub m_func : crate :: app :: tasteconditiondata :: TasteConditionData_ConditionFunc ,
-# [offset (64)] # [rename (name = "m_MakeBentoIid")] pub m_make_bento_iid : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "m_FoodData")] pub m_food_data : crate :: app :: fooddata :: FoodData ,
+pub fn not_exists()->Self{Self{value:2}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_Liking.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Dish_Liking  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Dish_Liking  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Dish.Liking";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Dish_Liking  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Dish_Liking  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn ok() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn like() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn dislike() -> Self {
-        Self { value: 2 }
-
-    }
-
 }
 
 }
@@ -188,29 +71,138 @@ impl  Dish_Liking  {
 #[cfg(feature = "app-dish-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dish")]
-pub trait IDishMethods : IDish { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Enhance()` overload"] fn get_enhance (self ,) -> crate :: app :: unitenhancevalues :: UnitEnhanceValues { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitenhancevalues :: UnitEnhanceValues = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Enhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"] fn set_enhance (self , value : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues >) -> () { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: unitenhancevalues :: UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusEnhance()` overload"] fn get_bonus_enhance (self ,) -> crate :: app :: unitenhancevalues :: UnitEnhanceValues { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitenhancevalues :: UnitEnhanceValues = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusEnhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"] fn set_bonus_enhance (self , value : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues >) -> () { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: unitenhancevalues :: UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TotalBonusEnhance()` overload"] fn get_total_bonus_enhance (self ,) -> crate :: app :: unitenhancevalues :: UnitEnhanceValues { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitenhancevalues :: UnitEnhanceValues = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf12a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TotalBonusEnhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"] fn set_total_bonus_enhance (self , value : impl :: core :: convert :: Into < crate :: app :: unitenhancevalues :: UnitEnhanceValues >) -> () { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: unitenhancevalues :: UnitEnhanceValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf12b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RaiseReliance()` overload"] fn get_raise_reliance (self ,) -> bool { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf12c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RaiseReliance(bool)` overload"] fn set_raise_reliance (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf12d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Taste()` overload"] fn get_taste (self ,) -> crate :: app :: tastedata :: TasteData { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> crate :: app :: tastedata :: TasteData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf12e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Taste(crate::app::tastedata::TasteData)` overload"] fn set_taste (self , value : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData >) -> () { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: tastedata :: TasteData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf12f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::unit::Unit, crate::app::fooddata::FoodData, crate::app::tastedata::TasteData, bool)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , food_data : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData > , taste_data : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData > , raise_reliance : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: unit :: Unit , crate :: app :: fooddata :: FoodData , crate :: app :: tastedata :: TasteData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (food_data) , :: core :: convert :: Into :: into (taste_data) , :: core :: convert :: Into :: into (raise_reliance) , :: core :: option :: Option :: None) } } } # [doc = "`get_Food()` overload"] fn get_food (self ,) -> crate :: app :: fooddata :: FoodData { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> crate :: app :: fooddata :: FoodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFoodName()` overload"] fn get_food_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ApplyEnhance(crate::app::unit::Unit)` overload"] fn apply_enhance (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`ApplyReliance(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_ConversationType)` overload"] fn apply_reliance (self , hero_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_a : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_b : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , r#type : impl :: core :: convert :: Into < crate :: app :: cooking :: Cooking_ConversationType >) -> crate :: app :: dish :: Dish_RelianceResult { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: cooking :: Cooking_ConversationType , :: unity2 :: OptionalMethod ,) -> crate :: app :: dish :: Dish_RelianceResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hero_unit) , :: core :: convert :: Into :: into (unit_a) , :: core :: convert :: Into :: into (unit_b) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateRelianceRiseValue(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_ConversationType)` overload"] fn calculate_reliance_rise_value (self , unit_a : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_b : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , r#type : impl :: core :: convert :: Into < crate :: app :: cooking :: Cooking_ConversationType >) -> i32 { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: cooking :: Cooking_ConversationType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf2280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_a) , :: core :: convert :: Into :: into (unit_b) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`MakeBento()` overload"] fn make_bento (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf2500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetEnhance(crate::app::fooddata::FoodData, crate::app::tastedata::TasteData)` overload"] fn set_enhance_2 (self , food_data : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData > , taste_data : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData >) -> () { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: fooddata :: FoodData , crate :: app :: tastedata :: TasteData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf1410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food_data) , :: core :: convert :: Into :: into (taste_data) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateEnhance(crate::app::capabilitysbyte::CapabilitySbyte, crate::app::tastedata::TasteData)` overload"] fn calculate_enhance (self , enhance : impl :: core :: convert :: Into < crate :: app :: capabilitysbyte :: CapabilitySbyte > , taste_data : impl :: core :: convert :: Into < crate :: app :: tastedata :: TasteData >) -> crate :: app :: unitenhancevalues :: UnitEnhanceValues { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: capabilitysbyte :: CapabilitySbyte , crate :: app :: tastedata :: TasteData , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitenhancevalues :: UnitEnhanceValues = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf25e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enhance) , :: core :: convert :: Into :: into (taste_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetLiking(crate::app::unit::Unit)` overload"] fn get_liking (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: dish :: Dish_Liking { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: dish :: Dish_Liking = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf23c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetCondDescription()` overload"] fn get_cond_description (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Dish as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Dish , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf2c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dish")]pub trait IDishMethods:IDish{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1200usize)as*mut u8, ::unity2::Il2CppString;
+(Dish)__receiver)}
+}
+#[doc="`get_Enhance()` overload"]fn get_enhance(self,)->crate::app::unitenhancevalues::UnitEnhanceValues{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1260usize)as*mut u8,crate::app::unitenhancevalues::UnitEnhanceValues;
+(Dish)__receiver)}
+}
+#[doc="`set_Enhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]fn set_enhance(self,value:impl::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>)->(){unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1270usize)as*mut u8,();
+(Dish)__receiver,(crate::app::unitenhancevalues::UnitEnhanceValues)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusEnhance()` overload"]fn get_bonus_enhance(self,)->crate::app::unitenhancevalues::UnitEnhanceValues{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1280usize)as*mut u8,crate::app::unitenhancevalues::UnitEnhanceValues;
+(Dish)__receiver)}
+}
+#[doc="`set_BonusEnhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]fn set_bonus_enhance(self,value:impl::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>)->(){unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1290usize)as*mut u8,();
+(Dish)__receiver,(crate::app::unitenhancevalues::UnitEnhanceValues)::core::convert::Into::into(value))}
+}
+#[doc="`get_TotalBonusEnhance()` overload"]fn get_total_bonus_enhance(self,)->crate::app::unitenhancevalues::UnitEnhanceValues{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf12a0usize)as*mut u8,crate::app::unitenhancevalues::UnitEnhanceValues;
+(Dish)__receiver)}
+}
+#[doc="`set_TotalBonusEnhance(crate::app::unitenhancevalues::UnitEnhanceValues)` overload"]fn set_total_bonus_enhance(self,value:impl::core::convert::Into<crate::app::unitenhancevalues::UnitEnhanceValues>)->(){unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf12b0usize)as*mut u8,();
+(Dish)__receiver,(crate::app::unitenhancevalues::UnitEnhanceValues)::core::convert::Into::into(value))}
+}
+#[doc="`get_RaiseReliance()` overload"]fn get_raise_reliance(self,)->bool{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf12c0usize)as*mut u8,bool;
+(Dish)__receiver)}
+}
+#[doc="`set_RaiseReliance(bool)` overload"]fn set_raise_reliance(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf12d0usize)as*mut u8,();
+(Dish)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Taste()` overload"]fn get_taste(self,)->crate::app::tastedata::TasteData{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf12e0usize)as*mut u8,crate::app::tastedata::TasteData;
+(Dish)__receiver)}
+}
+#[doc="`set_Taste(crate::app::tastedata::TasteData)` overload"]fn set_taste(self,value:impl::core::convert::Into<crate::app::tastedata::TasteData>)->(){unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf12f0usize)as*mut u8,();
+(Dish)__receiver,(crate::app::tastedata::TasteData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::fooddata::FoodData, crate::app::tastedata::TasteData, bool)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,food_data:impl::core::convert::Into<crate::app::fooddata::FoodData> ,taste_data:impl::core::convert::Into<crate::app::tastedata::TasteData> ,raise_reliance:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1300usize)as*mut u8,();
+(Dish)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::fooddata::FoodData)::core::convert::Into::into(food_data),(crate::app::tastedata::TasteData)::core::convert::Into::into(taste_data),(bool)::core::convert::Into::into(raise_reliance))}
+}
+#[doc="`get_Food()` overload"]fn get_food(self,)->crate::app::fooddata::FoodData{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1dc0usize)as*mut u8,crate::app::fooddata::FoodData;
+(Dish)__receiver)}
+}
+#[doc="`GetFoodName()` overload"]fn get_food_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1250usize)as*mut u8, ::unity2::Il2CppString;
+(Dish)__receiver)}
+}
+#[doc="`ApplyEnhance(crate::app::unit::Unit)` overload"]fn apply_enhance(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1dd0usize)as*mut u8,();
+(Dish)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ApplyReliance(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_ConversationType)` overload"]fn apply_reliance(self,hero_unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_a:impl::core::convert::Into<crate::app::unit::Unit> ,unit_b:impl::core::convert::Into<crate::app::unit::Unit> ,r#type:impl::core::convert::Into<crate::app::cooking::Cooking_ConversationType>)->crate::app::dish::Dish_RelianceResult{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1e30usize)as*mut u8,crate::app::dish::Dish_RelianceResult;
+(Dish)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(hero_unit),(crate::app::unit::Unit)::core::convert::Into::into(unit_a),(crate::app::unit::Unit)::core::convert::Into::into(unit_b),(crate::app::cooking::Cooking_ConversationType)::core::convert::Into::into(r#type))}
+}
+#[doc="`CalculateRelianceRiseValue(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::cooking::Cooking_ConversationType)` overload"]fn calculate_reliance_rise_value(self,unit_a:impl::core::convert::Into<crate::app::unit::Unit> ,unit_b:impl::core::convert::Into<crate::app::unit::Unit> ,r#type:impl::core::convert::Into<crate::app::cooking::Cooking_ConversationType>)->i32{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf2280usize)as*mut u8,i32;
+(Dish)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_a),(crate::app::unit::Unit)::core::convert::Into::into(unit_b),(crate::app::cooking::Cooking_ConversationType)::core::convert::Into::into(r#type))}
+}
+#[doc="`MakeBento()` overload"]fn make_bento(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf2500usize)as*mut u8,crate::app::unititem::UnitItem;
+(Dish)__receiver)}
+}
+#[doc="`SetEnhance(crate::app::fooddata::FoodData, crate::app::tastedata::TasteData)` overload"]fn set_enhance_2(self,food_data:impl::core::convert::Into<crate::app::fooddata::FoodData> ,taste_data:impl::core::convert::Into<crate::app::tastedata::TasteData>)->(){unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf1410usize)as*mut u8,();
+(Dish)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food_data),(crate::app::tastedata::TasteData)::core::convert::Into::into(taste_data))}
+}
+#[doc="`CalculateEnhance(crate::app::capabilitysbyte::CapabilitySbyte, crate::app::tastedata::TasteData)` overload"]fn calculate_enhance(self,enhance:impl::core::convert::Into<crate::app::capabilitysbyte::CapabilitySbyte> ,taste_data:impl::core::convert::Into<crate::app::tastedata::TasteData>)->crate::app::unitenhancevalues::UnitEnhanceValues{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf25e0usize)as*mut u8,crate::app::unitenhancevalues::UnitEnhanceValues;
+(Dish)__receiver,(crate::app::capabilitysbyte::CapabilitySbyte)::core::convert::Into::into(enhance),(crate::app::tastedata::TasteData)::core::convert::Into::into(taste_data))}
+}
+#[doc="`GetLiking(crate::app::unit::Unit)` overload"]fn get_liking(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::dish::Dish_Liking{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf23c0usize)as*mut u8,crate::app::dish::Dish_Liking;
+(Dish)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetCondDescription()` overload"]fn get_cond_description(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Dish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf2c10usize)as*mut u8, ::unity2::Il2CppString;
+(Dish)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dish")]
-impl < __T : IDish > IDishMethods for __T { }
+#[cfg(feature="app-dish")]impl<__T:IDish>IDishMethods for __T{}
 
-#[cfg(feature = "app-dish")]
-impl Dish { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_bonus_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_bonus_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_total_bonus_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_total_bonus_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_raise_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_raise_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_taste_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_taste_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_food_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn apply_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn apply_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn calculate_reliance_rise_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn make_bento_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_enhance_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn calculate_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_liking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_cond_description_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Dish as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-dish")]impl Dish{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_bonus_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_bonus_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_total_bonus_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_total_bonus_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_raise_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_raise_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_taste_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_taste_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_food_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn apply_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn apply_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn calculate_reliance_rise_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn make_bento_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_enhance_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn calculate_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_liking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_cond_description_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-dish")]
-impl Dish {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::fooddata::FoodData, crate::app::tastedata::TasteData, bool)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , food_data : crate :: app :: fooddata :: FoodData , taste_data : crate :: app :: tastedata :: TasteData , raise_reliance : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Dish) , :: core :: stringify ! (new) ,)) ; < Self as IDishMethods > :: ctor (this , unit , food_data , taste_data , raise_reliance) ; this }
+#[cfg(feature="app-dish")]impl Dish{#[doc="`.ctor(crate::app::unit::Unit, crate::app::fooddata::FoodData, crate::app::tastedata::TasteData, bool)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,food_data:crate::app::fooddata::FoodData,taste_data:crate::app::tastedata::TasteData,raise_reliance:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Dish), ::core::stringify!(new),));
+ <Self as IDishMethods> ::ctor(this,unit,food_data,taste_data,raise_reliance);
+this}
 }
 
 #[cfg(feature = "app-dish")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Dish_RelianceResult;
-    pub use super::Dish_RelianceResult_TryResult;
+    pub use super::Dish_Liking;
     pub use super::Dish;
     pub use super::IDish;
     pub use super::IDishMethods;
-    pub use super::Dish_Liking;
+    pub use super::Dish_RelianceResult;
+    pub use super::Dish_RelianceResult_TryResult;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

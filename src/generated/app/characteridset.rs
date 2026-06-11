@@ -4,41 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/characteridset/CharacterIdSet.md"))] # [:: unity2 :: class (namespace = "App" , name = "CharacterIdSet")] # [parent (crate :: system :: object :: Object)] pub struct CharacterIdSet {
-# [offset (16)] # [rename (name = "Pid")] pub pid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "Jid")] pub jid : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "Sid")] pub sid : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "Iid")] pub iid : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "Position")] pub position : :: unity2 :: Array < i32 > ,
-# [offset (56)] # [rename (name = "Lv")] pub lv : i32 ,
-# [offset (60)] # [rename (name = "Hp")] pub hp : f32 ,
-# [offset (64)] # [rename (name = "Exp")] pub exp : i32 ,
-# [offset (68)] # [rename (name = "IsEngage")] pub is_engage : bool ,
-# [offset (69)] # [rename (name = "IsMale")] pub is_male : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/characteridset/CharacterIdSet.md"))]#[::unity2::class(namespace="App",name="CharacterIdSet")]#[parent(crate::system::object::Object)]pub struct CharacterIdSet{#[offset(16)]#[rename(name="Pid")]pub pid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Jid")]pub jid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="Sid")]pub sid: ::unity2::Il2CppString, #[offset(40)]#[rename(name="Iid")]pub iid: ::unity2::Il2CppString, #[offset(48)]#[rename(name="Position")]pub position: ::unity2::Array<i32> , #[offset(56)]#[rename(name="Lv")]pub lv:i32, #[offset(60)]#[rename(name="Hp")]pub hp:f32, #[offset(64)]#[rename(name="Exp")]pub exp:i32, #[offset(68)]#[rename(name="IsEngage")]pub is_engage:bool, #[offset(69)]#[rename(name="IsMale")]pub is_male:bool,}
 
 }
 
 #[cfg(feature = "app-characteridset-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-characteridset")]
-pub trait ICharacterIdSetMethods : ICharacterIdSet { # [doc = "`get_JobNameList()` overload"] fn get_job_name_list (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_JobNameList(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_job_name_list (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WeaponNameList()` overload"] fn get_weapon_name_list (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WeaponNameList(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_weapon_name_list (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e58a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SkillNameList()` overload"] fn get_skill_name_list (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e58b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SkillNameList(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_skill_name_list (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e58c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetHash()` overload"] fn get_hash (self ,) -> i32 { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e58d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Validate()` overload"] fn validate (self ,) -> () { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupJobAndWeaponList(bool)` overload"] fn setup_job_and_weapon_list (self , set_random : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set_random) , :: core :: option :: Option :: None) } } } # [doc = "`SetupWeaponList(bool)` overload"] fn setup_weapon_list (self , set_random : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set_random) , :: core :: option :: Option :: None) } } } # [doc = "`SetupSkillList(bool)` overload"] fn setup_skill_list (self , set_random : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e6680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set_random) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e6a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterIdSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIdSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e6b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-characteridset")]pub trait ICharacterIdSetMethods:ICharacterIdSet{#[doc="`get_JobNameList()` overload"]fn get_job_name_list(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5870usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(CharacterIdSet)__receiver)}
+}
+#[doc="`set_JobNameList(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_job_name_list(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5880usize)as*mut u8,();
+(CharacterIdSet)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_WeaponNameList()` overload"]fn get_weapon_name_list(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5890usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(CharacterIdSet)__receiver)}
+}
+#[doc="`set_WeaponNameList(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_weapon_name_list(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e58a0usize)as*mut u8,();
+(CharacterIdSet)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_SkillNameList()` overload"]fn get_skill_name_list(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e58b0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(CharacterIdSet)__receiver)}
+}
+#[doc="`set_SkillNameList(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_skill_name_list(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e58c0usize)as*mut u8,();
+(CharacterIdSet)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`GetHash()` overload"]fn get_hash(self,)->i32{unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e58d0usize)as*mut u8,i32;
+(CharacterIdSet)__receiver)}
+}
+#[doc="`Validate()` overload"]fn validate(self,)->(){unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5a70usize)as*mut u8,();
+(CharacterIdSet)__receiver)}
+}
+#[doc="`SetupJobAndWeaponList(bool)` overload"]fn setup_job_and_weapon_list(self,set_random:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5b10usize)as*mut u8,();
+(CharacterIdSet)__receiver,(bool)::core::convert::Into::into(set_random))}
+}
+#[doc="`SetupWeaponList(bool)` overload"]fn setup_weapon_list(self,set_random:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5eb0usize)as*mut u8,();
+(CharacterIdSet)__receiver,(bool)::core::convert::Into::into(set_random))}
+}
+#[doc="`SetupSkillList(bool)` overload"]fn setup_skill_list(self,set_random:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e6680usize)as*mut u8,();
+(CharacterIdSet)__receiver,(bool)::core::convert::Into::into(set_random))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e6a50usize)as*mut u8, ::unity2::Il2CppString;
+(CharacterIdSet)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterIdSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e6b10usize)as*mut u8,();
+(CharacterIdSet)__receiver)}
+}
+}
 
-#[cfg(feature = "app-characteridset")]
-impl < __T : ICharacterIdSet > ICharacterIdSetMethods for __T { }
+#[cfg(feature="app-characteridset")]impl<__T:ICharacterIdSet>ICharacterIdSetMethods for __T{}
 
-#[cfg(feature = "app-characteridset")]
-impl CharacterIdSet { pub fn get_job_name_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_job_name_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_weapon_name_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_weapon_name_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_skill_name_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_skill_name_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn setup_job_and_weapon_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn setup_weapon_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn setup_skill_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIdSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-characteridset")]impl CharacterIdSet{pub fn get_job_name_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_job_name_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_weapon_name_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_weapon_name_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_skill_name_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_skill_name_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn setup_job_and_weapon_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn setup_weapon_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn setup_skill_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-characteridset")]
-impl CharacterIdSet {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterIdSet) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterIdSetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-characteridset")]impl CharacterIdSet{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterIdSet), ::core::stringify!(new),));
+ <Self as ICharacterIdSetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-characteridset")]

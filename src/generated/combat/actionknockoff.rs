@@ -4,38 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: actiondisposerholder :: { ActionDisposerHolder , IActionDisposerHolder }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::actiondisposerholder::{ActionDisposerHolder,IActionDisposerHolder}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionknockoff/ActionKnockoff.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionKnockoff")] # [parent (crate :: combat :: actiondisposerholder :: ActionDisposerHolder)] pub struct ActionKnockoff {
-# [offset (48)] # [rename (name = "played")] pub played : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionknockoff/ActionKnockoff.md"))]#[::unity2::class(namespace="Combat",name="ActionKnockoff")]#[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]pub struct ActionKnockoff{#[offset(48)]#[rename(name="played")]pub played:bool,}
 
 }
 
 #[cfg(feature = "combat-actionknockoff-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionknockoff")]
-pub trait IActionKnockoffMethods : IActionKnockoff { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionKnockoff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionKnockoff , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc7e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , world_hit_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ActionKnockoff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionKnockoff , crate :: combat :: character :: Character , crate :: combat :: phase :: Phase , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc1790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (world_hit_time) , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionKnockoff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionKnockoff , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc7ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionknockoff")]pub trait IActionKnockoffMethods:IActionKnockoff{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionKnockoff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7e70usize)as*mut u8, ::unity2::Il2CppString;
+(ActionKnockoff)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,world_hit_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionKnockoff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc1790usize)as*mut u8,();
+(ActionKnockoff)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase),(f32)::core::convert::Into::into(world_hit_time))}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionKnockoff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7ec0usize)as*mut u8,();
+(ActionKnockoff)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actionknockoff")]
-impl < __T : IActionKnockoff > IActionKnockoffMethods for __T { }
+#[cfg(feature="combat-actionknockoff")]impl<__T:IActionKnockoff>IActionKnockoffMethods for __T{}
 
-#[cfg(feature = "combat-actionknockoff")]
-impl ActionKnockoff { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionKnockoff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionKnockoff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionKnockoff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-actionknockoff")]impl ActionKnockoff{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-actionknockoff")]
-impl ActionKnockoff {
-# [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , phase : crate :: combat :: phase :: Phase , world_hit_time : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionKnockoff) , :: core :: stringify ! (new) ,)) ; < Self as IActionKnockoffMethods > :: ctor (this , chr , phase , world_hit_time) ; this }
+#[cfg(feature="combat-actionknockoff")]impl ActionKnockoff{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` — overload selector"]pub fn new(chr:crate::combat::character::Character,phase:crate::combat::phase::Phase,world_hit_time:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionKnockoff), ::core::stringify!(new),));
+ <Self as IActionKnockoffMethods> ::ctor(this,chr,phase,world_hit_time);
+this}
 }
 
 #[cfg(feature = "combat-actionknockoff")]

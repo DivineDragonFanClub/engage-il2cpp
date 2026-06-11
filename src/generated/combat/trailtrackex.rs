@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/trailtrackex/TrailTrackEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "TrailTrackEx")] # [parent (crate :: system :: object :: Object)] pub struct TrailTrackEx {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/trailtrackex/TrailTrackEx.md"))]#[::unity2::class(namespace="Combat",name="TrailTrackEx")]#[parent(crate::system::object::Object)]pub struct TrailTrackEx{}
 
 }
 
 #[cfg(feature = "combat-trailtrackex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-trailtrackex")]
-impl TrailTrackEx { # [doc = "`IsNull(crate::combat::trailtrack::TrailTrack)` overload"] pub fn is_null (a : impl :: core :: convert :: Into < crate :: combat :: trailtrack :: TrailTrack >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: trailtrack :: TrailTrack , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a0280usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`IsNotNull(crate::combat::trailtrack::TrailTrack)` overload"] pub fn is_not_null (a : impl :: core :: convert :: Into < crate :: combat :: trailtrack :: TrailTrack >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: trailtrack :: TrailTrack , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a02b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-trailtrackex")]impl TrailTrackEx{#[doc="`IsNull(crate::combat::trailtrack::TrailTrack)` overload"]pub fn is_null(a:impl::core::convert::Into<crate::combat::trailtrack::TrailTrack>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a0280usize)as*mut u8,bool;
+(crate::combat::trailtrack::TrailTrack)::core::convert::Into::into(a))}
+}
+#[doc="`IsNotNull(crate::combat::trailtrack::TrailTrack)` overload"]pub fn is_not_null(a:impl::core::convert::Into<crate::combat::trailtrack::TrailTrack>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22a02b0usize)as*mut u8,bool;
+(crate::combat::trailtrack::TrailTrack)::core::convert::Into::into(a))}
+}
+}
 
-#[cfg(feature = "combat-trailtrackex")]
-impl TrailTrackEx { pub fn is_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailTrackEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_not_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailTrackEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-trailtrackex")]impl TrailTrackEx{pub fn is_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_not_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "combat-trailtrackex")]
 #[doc(hidden)]

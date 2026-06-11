@@ -4,32 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materiallistmenuitem/MaterialListMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MaterialListMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MaterialListMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenuitem/MaterialListMenuItem.md"))]#[::unity2::class(namespace="App",name="MaterialListMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MaterialListMenuItem{}
 
 }
 
 #[cfg(feature = "app-materiallistmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-materiallistmenuitem")]
-pub trait IMaterialListMenuItemMethods : IMaterialListMenuItem { # [doc = "`get_Item()` overload"] fn get_item (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < MaterialListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c90e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(crate::app::itemdata::ItemData)` overload"] fn set_item (self , value : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < MaterialListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuItem , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c90f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::itemdata::ItemData)` overload"] fn ctor (self , item_data : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < MaterialListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuItem , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c7990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item_data) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MaterialListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c9100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MaterialListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialListMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c9110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-materiallistmenuitem")]pub trait IMaterialListMenuItemMethods:IMaterialListMenuItem{#[doc="`get_Item()` overload"]fn get_item(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <MaterialListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c90e0usize)as*mut u8,crate::app::itemdata::ItemData;
+(MaterialListMenuItem)__receiver)}
+}
+#[doc="`set_Item(crate::app::itemdata::ItemData)` overload"]fn set_item(self,value:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <MaterialListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c90f0usize)as*mut u8,();
+(MaterialListMenuItem)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::itemdata::ItemData)` overload"]fn ctor(self,item_data:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <MaterialListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c7990usize)as*mut u8,();
+(MaterialListMenuItem)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(item_data))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MaterialListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9100usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MaterialListMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MaterialListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9110usize)as*mut u8,();
+(MaterialListMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-materiallistmenuitem")]
-impl < __T : IMaterialListMenuItem > IMaterialListMenuItemMethods for __T { }
+#[cfg(feature="app-materiallistmenuitem")]impl<__T:IMaterialListMenuItem>IMaterialListMenuItemMethods for __T{}
 
-#[cfg(feature = "app-materiallistmenuitem")]
-impl MaterialListMenuItem { pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-materiallistmenuitem")]impl MaterialListMenuItem{pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-materiallistmenuitem")]
-impl MaterialListMenuItem {
-# [doc = "`.ctor(crate::app::itemdata::ItemData)` — overload selector"] pub fn new (item_data : crate :: app :: itemdata :: ItemData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MaterialListMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMaterialListMenuItemMethods > :: ctor (this , item_data) ; this }
+#[cfg(feature="app-materiallistmenuitem")]impl MaterialListMenuItem{#[doc="`.ctor(crate::app::itemdata::ItemData)` — overload selector"]pub fn new(item_data:crate::app::itemdata::ItemData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialListMenuItem), ::core::stringify!(new),));
+ <Self as IMaterialListMenuItemMethods> ::ctor(this,item_data);
+this}
 }
 
 #[cfg(feature = "app-materiallistmenuitem")]

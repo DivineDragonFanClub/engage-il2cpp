@@ -4,34 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: capabilitybase_1 :: { CapabilityBase_1 , ICapabilityBase_1 }
- ;
- use crate :: app :: capabilitydefinition :: { CapabilityDefinition , ICapabilityDefinition }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::capabilitybase_1::{CapabilityBase_1,ICapabilityBase_1}
+;
+use crate::app::capabilitydefinition::{CapabilityDefinition,ICapabilityDefinition}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilityfloat/CapabilityFloat.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapabilityFloat")] # [parent (crate :: app :: capabilitybase_1 :: CapabilityBase_1 < f32 >)] pub struct CapabilityFloat {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capabilityfloat/CapabilityFloat.md"))]#[::unity2::class(namespace="App",name="CapabilityFloat")]#[parent(crate::app::capabilitybase_1::CapabilityBase_1<f32>)]pub struct CapabilityFloat{}
 
 }
 
 #[cfg(feature = "app-capabilityfloat-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-capabilityfloat")]
-pub trait ICapabilityFloatMethods : ICapabilityFloat { # [doc = "`.ctor(f32)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CapabilityFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityFloat , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bd910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Add(i32, f32)` overload"] fn add (self , i : impl :: core :: convert :: Into < i32 > , v : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CapabilityFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityFloat , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bd980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`IsZero()` overload"] fn is_zero (self ,) -> bool { unsafe { let __receiver = < CapabilityFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityFloat , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bda20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOne()` overload"] fn is_one (self ,) -> bool { unsafe { let __receiver = < CapabilityFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityFloat , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bdad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteToStream(crate::app::stream_2::Stream_2, f32)` overload"] fn write_to_stream (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , v : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CapabilityFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityFloat , crate :: app :: stream_2 :: Stream_2 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bdc10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`ReadFromStream(crate::app::stream_2::Stream_2)` overload"] fn read_from_stream (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> f32 { unsafe { let __receiver = < CapabilityFloat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityFloat , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bdc20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-capabilityfloat")]pub trait ICapabilityFloatMethods:ICapabilityFloat{#[doc="`.ctor(f32)` overload"]fn ctor(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bd910usize)as*mut u8,();
+(CapabilityFloat)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Add(i32, f32)` overload"]fn add(self,i:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bd980usize)as*mut u8,();
+(CapabilityFloat)__receiver,(i32)::core::convert::Into::into(i),(f32)::core::convert::Into::into(v))}
+}
+#[doc="`IsZero()` overload"]fn is_zero(self,)->bool{unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bda20usize)as*mut u8,bool;
+(CapabilityFloat)__receiver)}
+}
+#[doc="`IsOne()` overload"]fn is_one(self,)->bool{unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bdad0usize)as*mut u8,bool;
+(CapabilityFloat)__receiver)}
+}
+#[doc="`WriteToStream(crate::app::stream_2::Stream_2, f32)` overload"]fn write_to_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,v:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bdc10usize)as*mut u8,();
+(CapabilityFloat)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(f32)::core::convert::Into::into(v))}
+}
+#[doc="`ReadFromStream(crate::app::stream_2::Stream_2)` overload"]fn read_from_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->f32{unsafe{let __receiver= <CapabilityFloat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bdc20usize)as*mut u8,f32;
+(CapabilityFloat)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
 
-#[cfg(feature = "app-capabilityfloat")]
-impl < __T : ICapabilityFloat > ICapabilityFloatMethods for __T { }
+#[cfg(feature="app-capabilityfloat")]impl<__T:ICapabilityFloat>ICapabilityFloatMethods for __T{}
 
-#[cfg(feature = "app-capabilityfloat")]
-impl CapabilityFloat { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityFloat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityFloat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityFloat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_one_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityFloat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn write_to_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityFloat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn read_from_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityFloat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-capabilityfloat")]impl CapabilityFloat{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_one_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn write_to_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_from_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-capabilityfloat")]
-impl CapabilityFloat {
-# [doc = "`.ctor(f32)` — overload selector"] pub fn new (value : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CapabilityFloat) , :: core :: stringify ! (new) ,)) ; < Self as ICapabilityFloatMethods > :: ctor (this , value) ; this }
+#[cfg(feature="app-capabilityfloat")]impl CapabilityFloat{#[doc="`.ctor(f32)` — overload selector"]pub fn new(value:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CapabilityFloat), ::core::stringify!(new),));
+ <Self as ICapabilityFloatMethods> ::ctor(this,value);
+this}
 }
 
 #[cfg(feature = "app-capabilityfloat")]

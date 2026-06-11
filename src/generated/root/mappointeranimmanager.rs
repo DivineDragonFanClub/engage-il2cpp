@@ -4,40 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappointeranimmanager/MapPointerAnimManager.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPointerAnimManager")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapPointerAnimManager {
-# [offset (24)] # [rename (name = "m_Mark")] pub m_mark : crate :: unity_engine :: transform :: Transform ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappointeranimmanager/MapPointerAnimManager.md"))]#[::unity2::class(namespace="",name="MapPointerAnimManager")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapPointerAnimManager{#[offset(24)]#[rename(name="m_Mark")]pub m_mark:crate::unity_engine::transform::Transform,}
 
 }
 
 #[cfg(feature = "root-mappointeranimmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mappointeranimmanager")]
-pub trait IMapPointerAnimManagerMethods : IMapPointerAnimManager { # [doc = "`SetActiveState(bool)` overload"] fn set_active_state (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapPointerAnimManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerAnimManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a5e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`PlayAnim(::unity2::Il2CppString)` overload"] fn play_anim (self , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapPointerAnimManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerAnimManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPointerAnimManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPointerAnimManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235a780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mappointeranimmanager")]pub trait IMapPointerAnimManagerMethods:IMapPointerAnimManager{#[doc="`SetActiveState(bool)` overload"]fn set_active_state(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapPointerAnimManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a5e0usize)as*mut u8,();
+(MapPointerAnimManager)__receiver,(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`PlayAnim(::unity2::Il2CppString)` overload"]fn play_anim(self,label:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapPointerAnimManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a610usize)as*mut u8,();
+(MapPointerAnimManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPointerAnimManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235a780usize)as*mut u8,();
+(MapPointerAnimManager)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mappointeranimmanager")]
-impl < __T : IMapPointerAnimManager > IMapPointerAnimManagerMethods for __T { }
+#[cfg(feature="root-mappointeranimmanager")]impl<__T:IMapPointerAnimManager>IMapPointerAnimManagerMethods for __T{}
 
-#[cfg(feature = "root-mappointeranimmanager")]
-impl MapPointerAnimManager { pub fn set_active_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerAnimManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn play_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerAnimManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPointerAnimManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-mappointeranimmanager")]impl MapPointerAnimManager{pub fn set_active_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn play_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-mappointeranimmanager")]
-impl MapPointerAnimManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPointerAnimManager) , :: core :: stringify ! (new) ,)) ; < Self as IMapPointerAnimManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mappointeranimmanager")]impl MapPointerAnimManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPointerAnimManager), ::core::stringify!(new),));
+ <Self as IMapPointerAnimManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mappointeranimmanager")]

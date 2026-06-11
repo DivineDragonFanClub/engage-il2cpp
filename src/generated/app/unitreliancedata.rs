@@ -4,36 +4,124 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitreliancedata/UnitRelianceData.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitRelianceData")] # [parent (crate :: system :: object :: Object)] pub struct UnitRelianceData {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_RelianceExp")] pub m_reliance_exp : crate :: app :: relianceexpdata :: RelianceExpData ,
-# [offset (24)] # [rename (name = "m_Level")] pub m_level : crate :: app :: reliancedata :: RelianceData_Level ,
-# [offset (28)] # [rename (name = "m_Exp")] pub m_exp : i8 ,
-# [offset (29)] # [rename (name = "m_Score")] pub m_score : i8 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitreliancedata/UnitRelianceData.md"))]#[::unity2::class(namespace="App",name="UnitRelianceData")]#[parent(crate::system::object::Object)]pub struct UnitRelianceData{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_RelianceExp")]pub m_reliance_exp:crate::app::relianceexpdata::RelianceExpData, #[offset(24)]#[rename(name="m_Level")]pub m_level:crate::app::reliancedata::RelianceData_Level, #[offset(28)]#[rename(name="m_Exp")]pub m_exp:i8, #[offset(29)]#[rename(name="m_Score")]pub m_score:i8,}
 
 }
 
 #[cfg(feature = "app-unitreliancedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitreliancedata")]
-pub trait IUnitRelianceDataMethods : IUnitRelianceData { # [doc = "`.ctor(crate::app::relianceexpdata::RelianceExpData)` overload"] fn ctor (self , reliance_exp : impl :: core :: convert :: Into < crate :: app :: relianceexpdata :: RelianceExpData >) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , crate :: app :: relianceexpdata :: RelianceExpData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c59610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (reliance_exp) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetMapBegin()` overload"] fn reset_map_begin (self ,) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c597a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddExp(i32)` overload"] fn add_exp (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c59f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`AddScore(i32)` overload"] fn add_score (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5a5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CanLevelUp()` overload"] fn can_level_up (self ,) -> bool { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5a8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LevelUp()` overload"] fn level_up (self ,) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5aa20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLevelAPlus()` overload"] fn set_level_a_plus (self ,) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5af50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5b470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5bfc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> crate :: app :: reliancedata :: RelianceData_Level { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , :: unity2 :: OptionalMethod ,) -> crate :: app :: reliancedata :: RelianceData_Level = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Exp()` overload"] fn get_exp (self ,) -> i32 { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c4c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Exp(i32)` overload"] fn set_exp (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c4d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Score()` overload"] fn get_score (self ,) -> i32 { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Score(i32)` overload"] fn set_score (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetNextLevelExp(crate::app::reliancedata::RelianceData_Level)` overload"] fn get_next_level_exp (self , current_level : impl :: core :: convert :: Into < crate :: app :: reliancedata :: RelianceData_Level >) -> i32 { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , crate :: app :: reliancedata :: RelianceData_Level , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current_level) , :: core :: option :: Option :: None) } } } # [doc = "`GetClampExp()` overload"] fn get_clamp_exp (self ,) -> i32 { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClampExp(i32)` overload"] fn clamp_exp (self , new_exp : impl :: core :: convert :: Into < i32 >) -> i8 { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , i32 , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c3a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (new_exp) , :: core :: option :: Option :: None) } } } # [doc = "`ClampScore(i32)` overload"] fn clamp_score (self , new_score : impl :: core :: convert :: Into < i32 >) -> i8 { unsafe { let __receiver = < UnitRelianceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceData , i32 , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (new_score) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitreliancedata")]pub trait IUnitRelianceDataMethods:IUnitRelianceData{#[doc="`.ctor(crate::app::relianceexpdata::RelianceExpData)` overload"]fn ctor(self,reliance_exp:impl::core::convert::Into<crate::app::relianceexpdata::RelianceExpData>)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c59610usize)as*mut u8,();
+(UnitRelianceData)__receiver,(crate::app::relianceexpdata::RelianceExpData)::core::convert::Into::into(reliance_exp))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c390usize)as*mut u8,();
+(UnitRelianceData)__receiver)}
+}
+#[doc="`ResetMapBegin()` overload"]fn reset_map_begin(self,)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c597a0usize)as*mut u8,();
+(UnitRelianceData)__receiver)}
+}
+#[doc="`AddExp(i32)` overload"]fn add_exp(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c59f10usize)as*mut u8,();
+(UnitRelianceData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`AddScore(i32)` overload"]fn add_score(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5a5f0usize)as*mut u8,();
+(UnitRelianceData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`CanLevelUp()` overload"]fn can_level_up(self,)->bool{unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5a8a0usize)as*mut u8,bool;
+(UnitRelianceData)__receiver)}
+}
+#[doc="`LevelUp()` overload"]fn level_up(self,)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5aa20usize)as*mut u8,();
+(UnitRelianceData)__receiver)}
+}
+#[doc="`SetLevelAPlus()` overload"]fn set_level_a_plus(self,)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5af50usize)as*mut u8,();
+(UnitRelianceData)__receiver)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5b470usize)as*mut u8,();
+(UnitRelianceData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5bfc0usize)as*mut u8,();
+(UnitRelianceData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->crate::app::reliancedata::RelianceData_Level{unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c4b0usize)as*mut u8,crate::app::reliancedata::RelianceData_Level;
+(UnitRelianceData)__receiver)}
+}
+#[doc="`get_Exp()` overload"]fn get_exp(self,)->i32{unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c4c0usize)as*mut u8,i32;
+(UnitRelianceData)__receiver)}
+}
+#[doc="`set_Exp(i32)` overload"]fn set_exp(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c4d0usize)as*mut u8,();
+(UnitRelianceData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Score()` overload"]fn get_score(self,)->i32{unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c560usize)as*mut u8,i32;
+(UnitRelianceData)__receiver)}
+}
+#[doc="`set_Score(i32)` overload"]fn set_score(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c570usize)as*mut u8,();
+(UnitRelianceData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetNextLevelExp(crate::app::reliancedata::RelianceData_Level)` overload"]fn get_next_level_exp(self,current_level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level>)->i32{unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c450usize)as*mut u8,i32;
+(UnitRelianceData)__receiver,(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(current_level))}
+}
+#[doc="`GetClampExp()` overload"]fn get_clamp_exp(self,)->i32{unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c5b0usize)as*mut u8,i32;
+(UnitRelianceData)__receiver)}
+}
+#[doc="`ClampExp(i32)` overload"]fn clamp_exp(self,new_exp:impl::core::convert::Into<i32>)->i8{unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c3a0usize)as*mut u8,i8;
+(UnitRelianceData)__receiver,(i32)::core::convert::Into::into(new_exp))}
+}
+#[doc="`ClampScore(i32)` overload"]fn clamp_score(self,new_score:impl::core::convert::Into<i32>)->i8{unsafe{let __receiver= <UnitRelianceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c420usize)as*mut u8,i8;
+(UnitRelianceData)__receiver,(i32)::core::convert::Into::into(new_score))}
+}
+}
 
-#[cfg(feature = "app-unitreliancedata")]
-impl < __T : IUnitRelianceData > IUnitRelianceDataMethods for __T { }
+#[cfg(feature="app-unitreliancedata")]impl<__T:IUnitRelianceData>IUnitRelianceDataMethods for __T{}
 
-#[cfg(feature = "app-unitreliancedata")]
-impl UnitRelianceData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_map_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn can_level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_level_a_plus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_next_level_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_clamp_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn clamp_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn clamp_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-unitreliancedata")]impl UnitRelianceData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_map_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn can_level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_level_a_plus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_next_level_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_clamp_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn clamp_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn clamp_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-unitreliancedata")]
-impl UnitRelianceData {
-# [doc = "`.ctor(crate::app::relianceexpdata::RelianceExpData)` — overload selector"] pub fn new (reliance_exp : crate :: app :: relianceexpdata :: RelianceExpData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitRelianceData) , :: core :: stringify ! (new) ,)) ; < Self as IUnitRelianceDataMethods > :: ctor (this , reliance_exp) ; this }
+#[cfg(feature="app-unitreliancedata")]impl UnitRelianceData{#[doc="`.ctor(crate::app::relianceexpdata::RelianceExpData)` — overload selector"]pub fn new(reliance_exp:crate::app::relianceexpdata::RelianceExpData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitRelianceData), ::core::stringify!(new),));
+ <Self as IUnitRelianceDataMethods> ::ctor(this,reliance_exp);
+this}
 }
 
 #[cfg(feature = "app-unitreliancedata")]

@@ -4,230 +4,166 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatamenusequence/SaveDataMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveDataMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: savedatamenusequence :: SaveDataMenuSequence >)] pub struct SaveDataMenuSequence {
-# [offset (116)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode ,
-# [offset (120)] # [rename (name = "m_saveDataHeaderReader")] pub m_save_data_header_reader : crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedatamenusequence/SaveDataMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SaveDataMenuSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for SaveDataMenuSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SaveDataMenuSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SaveDataMenuSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SaveDataMenuSequence_Label{pub fn start()->Self{Self{value:0}
+}
+pub fn load_menu()->Self{Self{value:1}
+}
+pub fn save_menu_from_menu()->Self{Self{value:2}
+}
+pub fn save_menu_from_period()->Self{Self{value:3}
+}
+pub fn save_menu_from_ending()->Self{Self{value:4}
+}
+pub fn suspend_menu()->Self{Self{value:5}
+}
+pub fn copy_menu()->Self{Self{value:6}
+}
+pub fn delete_menu()->Self{Self{value:7}
+}
+pub fn end()->Self{Self{value:8}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SaveDataMenuSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedatamenusequence/SaveDataMenuSequence_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SaveDataMenuSequence_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for SaveDataMenuSequence_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SaveDataMenuSequence.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SaveDataMenuSequence_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SaveDataMenuSequence_Mode{pub fn load()->Self{Self{value:0}
+}
+pub fn save_from_menu()->Self{Self{value:1}
+}
+pub fn save_from_period()->Self{Self{value:2}
+}
+pub fn save_from_ending()->Self{Self{value:3}
+}
+pub fn suspend()->Self{Self{value:4}
+}
+pub fn copy()->Self{Self{value:5}
+}
+pub fn delete()->Self{Self{value:6}
+}
+pub fn end()->Self{Self{value:7}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SaveDataMenuSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SaveDataMenuSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SaveDataMenuSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SaveDataMenuSequence_Label  {
-    pub fn start() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn load_menu() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn save_menu_from_menu() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn save_menu_from_period() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn save_menu_from_ending() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn suspend_menu() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn copy_menu() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn delete_menu() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SaveDataMenuSequence_Mode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SaveDataMenuSequence_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SaveDataMenuSequence.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SaveDataMenuSequence_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SaveDataMenuSequence_Mode  {
-    pub fn load() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn save_from_menu() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn save_from_period() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn save_from_ending() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn suspend() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn copy() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn delete() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedatamenusequence/SaveDataMenuSequence.md"))]#[::unity2::class(namespace="App",name="SaveDataMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::savedatamenusequence::SaveDataMenuSequence>)]pub struct SaveDataMenuSequence{#[offset(116)]#[rename(name="m_Mode")]pub m_mode:crate::app::savedatamenusequence::SaveDataMenuSequence_Mode, #[offset(120)]#[rename(name="m_saveDataHeaderReader")]pub m_save_data_header_reader:crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,}
 
 }
 
 #[cfg(feature = "app-savedatamenusequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-savedatamenusequence")]
-impl SaveDataMenuSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mode : impl :: core :: convert :: Into < crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec8400usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-savedatamenusequence")]impl SaveDataMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mode:impl::core::convert::Into<crate::app::savedatamenusequence::SaveDataMenuSequence_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec8400usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)::core::convert::Into::into(mode))}
+}
+}
 
-#[cfg(feature = "app-savedatamenusequence")]
-pub trait ISaveDataMenuSequenceMethods : ISaveDataMenuSequence { # [doc = "`.ctor(crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)` overload"] fn ctor (self , mode : impl :: core :: convert :: Into < crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode >) -> () { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec6d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetMode()` overload"] fn get_mode (self ,) -> crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec6db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadHeader()` overload"] fn load_header (self ,) -> () { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec6dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingHeader()` overload"] fn is_loading_header (self ,) -> bool { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec6e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec6fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateLoadMenu()` overload"] fn create_load_menu (self ,) -> () { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec7070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateSaveMenu()` overload"] fn create_save_menu (self ,) -> () { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec70f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateSuspendMenu()` overload"] fn create_suspend_menu (self ,) -> () { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec7190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateCopyMenu()` overload"] fn create_copy_menu (self ,) -> () { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec7210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDeleteMenu()` overload"] fn create_delete_menu (self ,) -> () { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec7290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetProcDesc()` overload"] fn get_proc_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < SaveDataMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataMenuSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec7310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-savedatamenusequence")]pub trait ISaveDataMenuSequenceMethods:ISaveDataMenuSequence{#[doc="`.ctor(crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)` overload"]fn ctor(self,mode:impl::core::convert::Into<crate::app::savedatamenusequence::SaveDataMenuSequence_Mode>)->(){unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec6d20usize)as*mut u8,();
+(SaveDataMenuSequence)__receiver,(crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetMode()` overload"]fn get_mode(self,)->crate::app::savedatamenusequence::SaveDataMenuSequence_Mode{unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec6db0usize)as*mut u8,crate::app::savedatamenusequence::SaveDataMenuSequence_Mode;
+(SaveDataMenuSequence)__receiver)}
+}
+#[doc="`LoadHeader()` overload"]fn load_header(self,)->(){unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec6dc0usize)as*mut u8,();
+(SaveDataMenuSequence)__receiver)}
+}
+#[doc="`IsLoadingHeader()` overload"]fn is_loading_header(self,)->bool{unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec6e40usize)as*mut u8,bool;
+(SaveDataMenuSequence)__receiver)}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec6fa0usize)as*mut u8,();
+(SaveDataMenuSequence)__receiver)}
+}
+#[doc="`CreateLoadMenu()` overload"]fn create_load_menu(self,)->(){unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec7070usize)as*mut u8,();
+(SaveDataMenuSequence)__receiver)}
+}
+#[doc="`CreateSaveMenu()` overload"]fn create_save_menu(self,)->(){unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec70f0usize)as*mut u8,();
+(SaveDataMenuSequence)__receiver)}
+}
+#[doc="`CreateSuspendMenu()` overload"]fn create_suspend_menu(self,)->(){unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec7190usize)as*mut u8,();
+(SaveDataMenuSequence)__receiver)}
+}
+#[doc="`CreateCopyMenu()` overload"]fn create_copy_menu(self,)->(){unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec7210usize)as*mut u8,();
+(SaveDataMenuSequence)__receiver)}
+}
+#[doc="`CreateDeleteMenu()` overload"]fn create_delete_menu(self,)->(){unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec7290usize)as*mut u8,();
+(SaveDataMenuSequence)__receiver)}
+}
+#[doc="`GetProcDesc()` overload"]fn get_proc_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <SaveDataMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec7310usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(SaveDataMenuSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-savedatamenusequence")]
-impl < __T : ISaveDataMenuSequence > ISaveDataMenuSequenceMethods for __T { }
+#[cfg(feature="app-savedatamenusequence")]impl<__T:ISaveDataMenuSequence>ISaveDataMenuSequenceMethods for __T{}
 
-#[cfg(feature = "app-savedatamenusequence")]
-impl SaveDataMenuSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_load_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_save_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_suspend_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_copy_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_delete_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_proc_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-savedatamenusequence")]impl SaveDataMenuSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_load_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_save_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_suspend_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_copy_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_delete_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_proc_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-savedatamenusequence")]
-impl SaveDataMenuSequence {
-# [doc = "`.ctor(crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)` — overload selector"] pub fn new (mode : crate :: app :: savedatamenusequence :: SaveDataMenuSequence_Mode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SaveDataMenuSequence) , :: core :: stringify ! (new) ,)) ; < Self as ISaveDataMenuSequenceMethods > :: ctor (this , mode) ; this }
+#[cfg(feature="app-savedatamenusequence")]impl SaveDataMenuSequence{#[doc="`.ctor(crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)` — overload selector"]pub fn new(mode:crate::app::savedatamenusequence::SaveDataMenuSequence_Mode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SaveDataMenuSequence), ::core::stringify!(new),));
+ <Self as ISaveDataMenuSequenceMethods> ::ctor(this,mode);
+this}
 }
 
 #[cfg(feature = "app-savedatamenusequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SaveDataMenuSequence_Label;
+    pub use super::SaveDataMenuSequence_Mode;
     pub use super::SaveDataMenuSequence;
     pub use super::ISaveDataMenuSequence;
     pub use super::ISaveDataMenuSequenceMethods;
-    pub use super::SaveDataMenuSequence_Label;
-    pub use super::SaveDataMenuSequence_Mode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

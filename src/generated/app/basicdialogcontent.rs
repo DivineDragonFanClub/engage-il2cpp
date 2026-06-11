@@ -4,51 +4,122 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicdialogcontent/BasicDialogContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicDialogContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct BasicDialogContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_objText")] pub m_obj_text : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "m_objFrmContent")] pub m_obj_frm_content : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (248)] # [rename (name = "m_textW")] pub m_text_w : f32 ,
-# [offset (252)] # [rename (name = "m_textH")] pub m_text_h : f32 ,
-# [offset (256)] # [rename (name = "m_textSpacing")] pub m_text_spacing : f32 ,
-# [offset (260)] # [rename (name = "m_contentOriginX")] pub m_content_origin_x : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicdialogcontent/BasicDialogContent.md"))]#[::unity2::class(namespace="App",name="BasicDialogContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct BasicDialogContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_objText")]pub m_obj_text:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_objFrmContent")]pub m_obj_frm_content:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_textW")]pub m_text_w:f32, #[offset(252)]#[rename(name="m_textH")]pub m_text_h:f32, #[offset(256)]#[rename(name="m_textSpacing")]pub m_text_spacing:f32, #[offset(260)]#[rename(name="m_contentOriginX")]pub m_content_origin_x:f32,}
 
 }
 
 #[cfg(feature = "app-basicdialogcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-basicdialogcontent")]
-impl BasicDialogContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2455bd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: basicdialogcontent :: BasicDialogContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: basicdialogcontent :: BasicDialogContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454210usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCanvas()` overload"] pub fn get_canvas () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2455d60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2455ec0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicdialogcontent")]impl BasicDialogContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2455bd0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::basicdialogcontent::BasicDialogContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2454210usize)as*mut u8,crate::app::basicdialogcontent::BasicDialogContent;
+)}
+}
+#[doc="`GetCanvas()` overload"]pub fn get_canvas()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2455d60usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2455ec0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-basicdialogcontent")]
-pub trait IBasicDialogContentMethods : IBasicDialogContent { # [doc = "`SetText(::unity2::Il2CppString)` overload"] fn set_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`CalcTextW()` overload"] fn calc_text_w (self ,) -> f32 { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcTextH()` overload"] fn calc_text_h (self ,) -> f32 { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetShadowOff()` overload"] fn set_shadow_off (self ,) -> () { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetShadowPos(f32, f32)` overload"] fn set_shadow_pos (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453fe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`BuildWH()` overload"] fn build_wh (self ,) -> () { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosX(i32)` overload"] fn calc_cursor_moved_pos_x (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24549a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`InitObjReference()` overload"] fn init_obj_reference (self ,) -> () { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2454bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMenuItemContent()` overload"] fn build_menu_item_content (self ,) -> () { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2455460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BasicDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2455db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicdialogcontent")]pub trait IBasicDialogContentMethods:IBasicDialogContent{#[doc="`SetText(::unity2::Il2CppString)` overload"]fn set_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453da0usize)as*mut u8,();
+(BasicDialogContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`CalcTextW()` overload"]fn calc_text_w(self,)->f32{unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2454420usize)as*mut u8,f32;
+(BasicDialogContent)__receiver)}
+}
+#[doc="`CalcTextH()` overload"]fn calc_text_h(self,)->f32{unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2454490usize)as*mut u8,f32;
+(BasicDialogContent)__receiver)}
+}
+#[doc="`SetShadowOff()` overload"]fn set_shadow_off(self,)->(){unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453e80usize)as*mut u8,();
+(BasicDialogContent)__receiver)}
+}
+#[doc="`SetShadowPos(f32, f32)` overload"]fn set_shadow_pos(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453fe0usize)as*mut u8,();
+(BasicDialogContent)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`BuildWH()` overload"]fn build_wh(self,)->(){unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2454500usize)as*mut u8,();
+(BasicDialogContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2454800usize)as*mut u8,f32;
+(BasicDialogContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2454920usize)as*mut u8,f32;
+(BasicDialogContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2454940usize)as*mut u8,f32;
+(BasicDialogContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24549a0usize)as*mut u8,f32;
+(BasicDialogContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`InitObjReference()` overload"]fn init_obj_reference(self,)->(){unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2454bb0usize)as*mut u8,();
+(BasicDialogContent)__receiver)}
+}
+#[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2455460usize)as*mut u8,();
+(BasicDialogContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2455db0usize)as*mut u8,();
+(BasicDialogContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-basicdialogcontent")]
-impl < __T : IBasicDialogContent > IBasicDialogContentMethods for __T { }
+#[cfg(feature="app-basicdialogcontent")]impl<__T:IBasicDialogContent>IBasicDialogContentMethods for __T{}
 
-#[cfg(feature = "app-basicdialogcontent")]
-impl BasicDialogContent { pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_text_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calc_text_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_shadow_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_shadow_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn build_wh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn calc_cursor_moved_pos_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn init_obj_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-basicdialogcontent")]impl BasicDialogContent{pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_text_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_text_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_shadow_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_shadow_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_wh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn calc_cursor_moved_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn init_obj_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-basicdialogcontent")]
-impl BasicDialogContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicDialogContent) , :: core :: stringify ! (new) ,)) ; < Self as IBasicDialogContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-basicdialogcontent")]impl BasicDialogContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicDialogContent), ::core::stringify!(new),));
+ <Self as IBasicDialogContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-basicdialogcontent")]

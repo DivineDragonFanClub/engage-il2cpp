@@ -4,33 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardgamedatacommon/ProfileCardGameDataCommon.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardGameDataCommon")] # [parent (crate :: system :: object :: Object)] pub struct ProfileCardGameDataCommon {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardgamedatacommon/ProfileCardGameDataCommon.md"))]#[::unity2::class(namespace="App",name="ProfileCardGameDataCommon")]#[parent(crate::system::object::Object)]pub struct ProfileCardGameDataCommon{}
 
 }
 
 #[cfg(feature = "app-profilecardgamedatacommon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardgamedatacommon")]
-impl ProfileCardGameDataCommon { # [doc = "`IsSatisfiedCondition(crate::app::profilecardcondition::ProfileCardCondition, ::unity2::Il2CppString)` overload"] pub fn is_satisfied_condition (condition : impl :: core :: convert :: Into < crate :: app :: profilecardcondition :: ProfileCardCondition > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: profilecardcondition :: ProfileCardCondition , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230fa40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (condition) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } # [doc = "`IsSetLanguageEFIGS()` overload"] pub fn is_set_language_efigs () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230de80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsSetLanguageSpanish()` overload"] pub fn is_set_language_spanish () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231a630usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsSetLanguageKorean()` overload"] pub fn is_set_language_korean () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230df50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Compare(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn compare (lhs : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , rhs : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231a720usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardgamedatacommon")]impl ProfileCardGameDataCommon{#[doc="`IsSatisfiedCondition(crate::app::profilecardcondition::ProfileCardCondition, ::unity2::Il2CppString)` overload"]pub fn is_satisfied_condition(condition:impl::core::convert::Into<crate::app::profilecardcondition::ProfileCardCondition> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x230fa40usize)as*mut u8,bool;
+(crate::app::profilecardcondition::ProfileCardCondition)::core::convert::Into::into(condition),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+#[doc="`IsSetLanguageEFIGS()` overload"]pub fn is_set_language_efigs()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x230de80usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsSetLanguageSpanish()` overload"]pub fn is_set_language_spanish()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x231a630usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsSetLanguageKorean()` overload"]pub fn is_set_language_korean()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x230df50usize)as*mut u8,bool;
+)}
+}
+#[doc="`Compare(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn compare(lhs:impl::core::convert::Into< ::unity2::Il2CppString> ,rhs:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x231a720usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(lhs),(::unity2::Il2CppString)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "app-profilecardgamedatacommon")]
-pub trait IProfileCardGameDataCommonMethods : IProfileCardGameDataCommon { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardGameDataCommon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardGameDataCommon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x231aad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardgamedatacommon")]pub trait IProfileCardGameDataCommonMethods:IProfileCardGameDataCommon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardGameDataCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x231aad0usize)as*mut u8,();
+(ProfileCardGameDataCommon)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardgamedatacommon")]
-impl < __T : IProfileCardGameDataCommon > IProfileCardGameDataCommonMethods for __T { }
+#[cfg(feature="app-profilecardgamedatacommon")]impl<__T:IProfileCardGameDataCommon>IProfileCardGameDataCommonMethods for __T{}
 
-#[cfg(feature = "app-profilecardgamedatacommon")]
-impl ProfileCardGameDataCommon { pub fn is_satisfied_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_set_language_efigs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_set_language_spanish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_set_language_korean_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardGameDataCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-profilecardgamedatacommon")]impl ProfileCardGameDataCommon{pub fn is_satisfied_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_set_language_efigs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_set_language_spanish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_set_language_korean_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-profilecardgamedatacommon")]
-impl ProfileCardGameDataCommon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardGameDataCommon) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardGameDataCommonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardgamedatacommon")]impl ProfileCardGameDataCommon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardGameDataCommon), ::core::stringify!(new),));
+ <Self as IProfileCardGameDataCommonMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardgamedatacommon")]

@@ -4,44 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/lyn_skill_arrow_01_trail/Lyn_Skill_Arrow_01_Trail.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Lyn_Skill_Arrow_01_Trail")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct Lyn_Skill_Arrow_01_Trail {
-# [offset (24)] # [rename (name = "m_ParticleSystem")] pub m_particle_system : crate :: unity_engine :: particlesystem :: ParticleSystem ,
-# [offset (32)] # [rename (name = "m_Transform")] pub m_transform : crate :: unity_engine :: transform :: Transform ,
-# [offset (40)] # [rename (name = "m_LastPosition")] pub m_last_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (52)] # [rename (name = "m_Running")] pub m_running : bool ,
-# [offset (53)] # [rename (name = "m_CutChanged")] pub m_cut_changed : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/lyn_skill_arrow_01_trail/Lyn_Skill_Arrow_01_Trail.md"))]#[::unity2::class(namespace="Combat",name="Lyn_Skill_Arrow_01_Trail")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct Lyn_Skill_Arrow_01_Trail{#[offset(24)]#[rename(name="m_ParticleSystem")]pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem, #[offset(32)]#[rename(name="m_Transform")]pub m_transform:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="m_LastPosition")]pub m_last_position:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="m_Running")]pub m_running:bool, #[offset(53)]#[rename(name="m_CutChanged")]pub m_cut_changed:bool,}
 
 }
 
 #[cfg(feature = "combat-lyn_skill_arrow_01_trail-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-lyn_skill_arrow_01_trail")]
-pub trait ILyn_Skill_Arrow_01_TrailMethods : ILyn_Skill_Arrow_01_Trail { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < Lyn_Skill_Arrow_01_Trail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Lyn_Skill_Arrow_01_Trail , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf0c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Lyn_Skill_Arrow_01_Trail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Lyn_Skill_Arrow_01_Trail , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf0d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < Lyn_Skill_Arrow_01_Trail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Lyn_Skill_Arrow_01_Trail , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Lyn_Skill_Arrow_01_Trail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Lyn_Skill_Arrow_01_Trail , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-lyn_skill_arrow_01_trail")]pub trait ILyn_Skill_Arrow_01_TrailMethods:ILyn_Skill_Arrow_01_Trail{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <Lyn_Skill_Arrow_01_Trail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf0c80usize)as*mut u8,();
+(Lyn_Skill_Arrow_01_Trail)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Lyn_Skill_Arrow_01_Trail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf0d00usize)as*mut u8,();
+(Lyn_Skill_Arrow_01_Trail)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <Lyn_Skill_Arrow_01_Trail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1140usize)as*mut u8,();
+(Lyn_Skill_Arrow_01_Trail)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Lyn_Skill_Arrow_01_Trail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1200usize)as*mut u8,();
+(Lyn_Skill_Arrow_01_Trail)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-lyn_skill_arrow_01_trail")]
-impl < __T : ILyn_Skill_Arrow_01_Trail > ILyn_Skill_Arrow_01_TrailMethods for __T { }
+#[cfg(feature="combat-lyn_skill_arrow_01_trail")]impl<__T:ILyn_Skill_Arrow_01_Trail>ILyn_Skill_Arrow_01_TrailMethods for __T{}
 
-#[cfg(feature = "combat-lyn_skill_arrow_01_trail")]
-impl Lyn_Skill_Arrow_01_Trail { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lyn_Skill_Arrow_01_Trail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lyn_Skill_Arrow_01_Trail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lyn_Skill_Arrow_01_Trail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lyn_Skill_Arrow_01_Trail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-lyn_skill_arrow_01_trail")]impl Lyn_Skill_Arrow_01_Trail{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-lyn_skill_arrow_01_trail")]
-impl Lyn_Skill_Arrow_01_Trail {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Lyn_Skill_Arrow_01_Trail) , :: core :: stringify ! (new) ,)) ; < Self as ILyn_Skill_Arrow_01_TrailMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-lyn_skill_arrow_01_trail")]impl Lyn_Skill_Arrow_01_Trail{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Lyn_Skill_Arrow_01_Trail), ::core::stringify!(new),));
+ <Self as ILyn_Skill_Arrow_01_TrailMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-lyn_skill_arrow_01_trail")]

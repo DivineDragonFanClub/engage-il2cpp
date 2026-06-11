@@ -4,37 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiontalk/ActionTalk.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionTalk")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionTalk {
-# [offset (40)] # [rename (name = "isEnd")] pub is_end : bool ,
-# [offset (48)] # [rename (name = "calc")] pub calc : crate :: app :: battlecalculator :: BattleCalculator ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiontalk/ActionTalk.md"))]#[::unity2::class(namespace="Combat",name="ActionTalk")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionTalk{#[offset(40)]#[rename(name="isEnd")]pub is_end:bool, #[offset(48)]#[rename(name="calc")]pub calc:crate::app::battlecalculator::BattleCalculator,}
 
 }
 
 #[cfg(feature = "combat-actiontalk-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actiontalk")]
-pub trait IActionTalkMethods : IActionTalk { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTalk , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, crate::app::battlecalculator::BattleCalculator)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , calc : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator >) -> () { unsafe { let __receiver = < ActionTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTalk , crate :: combat :: character :: Character , crate :: app :: battlecalculator :: BattleCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (calc) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTalk , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc91b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTalk , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < ActionTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTalk , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiontalk")]pub trait IActionTalkMethods:IActionTalk{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9100usize)as*mut u8, ::unity2::Il2CppString;
+(ActionTalk)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, crate::app::battlecalculator::BattleCalculator)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,calc:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator>)->(){unsafe{let __receiver= <ActionTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9150usize)as*mut u8,();
+(ActionTalk)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calc))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc91b0usize)as*mut u8,();
+(ActionTalk)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9270usize)as*mut u8,();
+(ActionTalk)__receiver)}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9290usize)as*mut u8,();
+(ActionTalk)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actiontalk")]
-impl < __T : IActionTalk > IActionTalkMethods for __T { }
+#[cfg(feature="combat-actiontalk")]impl<__T:IActionTalk>IActionTalkMethods for __T{}
 
-#[cfg(feature = "combat-actiontalk")]
-impl ActionTalk { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-actiontalk")]impl ActionTalk{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-actiontalk")]
-impl ActionTalk {
-# [doc = "`.ctor(crate::combat::character::Character, crate::app::battlecalculator::BattleCalculator)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , calc : crate :: app :: battlecalculator :: BattleCalculator) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionTalk) , :: core :: stringify ! (new) ,)) ; < Self as IActionTalkMethods > :: ctor (this , chr , calc) ; this }
+#[cfg(feature="combat-actiontalk")]impl ActionTalk{#[doc="`.ctor(crate::combat::character::Character, crate::app::battlecalculator::BattleCalculator)` — overload selector"]pub fn new(chr:crate::combat::character::Character,calc:crate::app::battlecalculator::BattleCalculator)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionTalk), ::core::stringify!(new),));
+ <Self as IActionTalkMethods> ::ctor(this,chr,calc);
+this}
 }
 
 #[cfg(feature = "combat-actiontalk")]

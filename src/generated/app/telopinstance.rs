@@ -4,55 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/telopinstance/TelopInstance.md"))] # [:: unity2 :: class (namespace = "App" , name = "TelopInstance")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TelopInstance {
-# [offset (24)] # [rename (name = "m_IsKeyWait")] pub m_is_key_wait : bool ,
-# [offset (32)] # [rename (name = "m_StartSoundEvent")] pub m_start_sound_event : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_KeySoundEvent")] pub m_key_sound_event : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_SkipableTime")] pub m_skipable_time : f32 ,
-# [offset (52)] # [rename (name = "m_MvpWaitTime")] pub m_mvp_wait_time : f32 ,
-# [static_field] # [rename (name = "AnimeLayerMain")] pub anime_layer_main : i32 ,
-# [static_field] # [rename (name = "AnimeLayerLoopColor")] pub anime_layer_loop_color : i32 ,
-# [static_field] # [rename (name = "AnimeLayerLoopSRT")] pub anime_layer_loop_srt : i32 ,
-# [static_field] # [rename (name = "FadeTime")] pub fade_time : f32 ,
-# [offset (56)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (64)] # [rename (name = "m_CanvasGroup")] pub m_canvas_group : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
-# [offset (72)] # [rename (name = "m_FadeTime")] pub m_fade_time : f32 ,
-# [offset (76)] # [rename (name = "m_ElapsedTime")] pub m_elapsed_time : f32 ,
-# [offset (80)] # [rename (name = "m_MVPRoot")] pub m_mvp_root : crate :: root :: mvproot :: MVPRoot ,
-# [offset (88)] # [rename (name = "m_IsKeyLock")] pub m_is_key_lock : bool ,
-# [offset (89)] # [rename (name = "m_IsForcedPlayOut")] pub m_is_forced_play_out : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/telopinstance/TelopInstance.md"))]#[::unity2::class(namespace="App",name="TelopInstance")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TelopInstance{#[offset(24)]#[rename(name="m_IsKeyWait")]pub m_is_key_wait:bool, #[offset(32)]#[rename(name="m_StartSoundEvent")]pub m_start_sound_event: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_KeySoundEvent")]pub m_key_sound_event: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_SkipableTime")]pub m_skipable_time:f32, #[offset(52)]#[rename(name="m_MvpWaitTime")]pub m_mvp_wait_time:f32, #[static_field]#[rename(name="AnimeLayerMain")]pub anime_layer_main:i32, #[static_field]#[rename(name="AnimeLayerLoopColor")]pub anime_layer_loop_color:i32, #[static_field]#[rename(name="AnimeLayerLoopSRT")]pub anime_layer_loop_srt:i32, #[static_field]#[rename(name="FadeTime")]pub fade_time:f32, #[offset(56)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(64)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(72)]#[rename(name="m_FadeTime")]pub m_fade_time:f32, #[offset(76)]#[rename(name="m_ElapsedTime")]pub m_elapsed_time:f32, #[offset(80)]#[rename(name="m_MVPRoot")]pub m_mvp_root:crate::root::mvproot::MVPRoot, #[offset(88)]#[rename(name="m_IsKeyLock")]pub m_is_key_lock:bool, #[offset(89)]#[rename(name="m_IsForcedPlayOut")]pub m_is_forced_play_out:bool,}
 
 }
 
 #[cfg(feature = "app-telopinstance-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-telopinstance")]
-pub trait ITelopInstanceMethods : ITelopInstance { # [doc = "`SetKeyLock()` overload"] fn set_key_lock (self ,) -> () { unsafe { let __receiver = < TelopInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TelopInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayOut()` overload"] fn play_out (self ,) -> () { unsafe { let __receiver = < TelopInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TelopInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TelopInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TelopInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TelopInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TelopInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21df8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TelopInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TelopInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21dfe70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-telopinstance")]pub trait ITelopInstanceMethods:ITelopInstance{#[doc="`SetKeyLock()` overload"]fn set_key_lock(self,)->(){unsafe{let __receiver= <TelopInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df600usize)as*mut u8,();
+(TelopInstance)__receiver)}
+}
+#[doc="`PlayOut()` overload"]fn play_out(self,)->(){unsafe{let __receiver= <TelopInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df610usize)as*mut u8,();
+(TelopInstance)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TelopInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df620usize)as*mut u8,();
+(TelopInstance)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TelopInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21df8d0usize)as*mut u8,();
+(TelopInstance)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TelopInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21dfe70usize)as*mut u8,();
+(TelopInstance)__receiver)}
+}
+}
 
-#[cfg(feature = "app-telopinstance")]
-impl < __T : ITelopInstance > ITelopInstanceMethods for __T { }
+#[cfg(feature="app-telopinstance")]impl<__T:ITelopInstance>ITelopInstanceMethods for __T{}
 
-#[cfg(feature = "app-telopinstance")]
-impl TelopInstance { pub fn set_key_lock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TelopInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn play_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TelopInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TelopInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TelopInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TelopInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-telopinstance")]impl TelopInstance{pub fn set_key_lock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn play_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-telopinstance")]
-impl TelopInstance {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TelopInstance) , :: core :: stringify ! (new) ,)) ; < Self as ITelopInstanceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-telopinstance")]impl TelopInstance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TelopInstance), ::core::stringify!(new),));
+ <Self as ITelopInstanceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-telopinstance")]

@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/playables/textureplayableoutput/TexturePlayableOutput.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TexturePlayableOutput {
-    pub m_handle: crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/playables/textureplayableoutput/TexturePlayableOutput.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TexturePlayableOutput{pub m_handle:crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,}
+impl::unity2::ClassIdentity for TexturePlayableOutput{const NAMESPACE: &'static str="UnityEngine.Experimental.Playables";
+const NAME: &'static str="TexturePlayableOutput";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TexturePlayableOutput {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Playables";
-
-    const NAME: &'static str = "TexturePlayableOutput";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TexturePlayableOutput {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TexturePlayableOutput{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,11 +26,13 @@ impl ::unity2::IlType for TexturePlayableOutput {
 #[cfg(feature = "unity_engine-experimental-playables-textureplayableoutput-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-playables-textureplayableoutput")]
-impl TexturePlayableOutput { # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { unsafe { { let __inner : extern "C" fn (* mut TexturePlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378e750usize) as * mut u8) ; __inner (self as * mut TexturePlayableOutput , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-playables-textureplayableoutput")]impl TexturePlayableOutput{#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378e750usize)as*mut u8,crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle;
+(*mut TexturePlayableOutput)self as*mut TexturePlayableOutput)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-playables-textureplayableoutput")]
-impl TexturePlayableOutput { pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TexturePlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-experimental-playables-textureplayableoutput")]impl TexturePlayableOutput{pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-experimental-playables-textureplayableoutput")]
 #[doc(hidden)]

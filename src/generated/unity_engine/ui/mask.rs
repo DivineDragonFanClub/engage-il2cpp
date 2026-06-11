@@ -4,46 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/mask/Mask.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Mask")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct Mask {
-# [offset (24)] # [rename (name = "m_RectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (32)] # [rename (name = "m_ShowMaskGraphic")] pub m_show_mask_graphic : bool ,
-# [offset (40)] # [rename (name = "m_Graphic")] pub m_graphic : crate :: unity_engine :: ui :: graphic :: Graphic ,
-# [offset (48)] # [rename (name = "m_MaskMaterial")] pub m_mask_material : crate :: unity_engine :: material :: Material ,
-# [offset (56)] # [rename (name = "m_UnmaskMaterial")] pub m_unmask_material : crate :: unity_engine :: material :: Material ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/mask/Mask.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Mask")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct Mask{#[offset(24)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_ShowMaskGraphic")]pub m_show_mask_graphic:bool, #[offset(40)]#[rename(name="m_Graphic")]pub m_graphic:crate::unity_engine::ui::graphic::Graphic, #[offset(48)]#[rename(name="m_MaskMaterial")]pub m_mask_material:crate::unity_engine::material::Material, #[offset(56)]#[rename(name="m_UnmaskMaterial")]pub m_unmask_material:crate::unity_engine::material::Material,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-mask-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-mask")]
-pub trait IMaskMethods : IMask { # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3719f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_showMaskGraphic()` overload"] fn get_show_mask_graphic (self ,) -> bool { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3719f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_showMaskGraphic(bool)` overload"] fn set_show_mask_graphic (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3719f90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_graphic()` overload"] fn get_graphic (self ,) -> crate :: unity_engine :: ui :: graphic :: Graphic { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: graphic :: Graphic = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371a0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371a170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MaskEnabled()` overload"] fn mask_enabled (self ,) -> bool { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371a180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSiblingGraphicEnabledDisabled()` overload"] fn on_sibling_graphic_enabled_disabled (self ,) -> () { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371a270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371a280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371a820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"] fn is_raycast_location_valid (self , sp : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , event_camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371abe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sp) , :: core :: convert :: Into :: into (event_camera) , :: core :: option :: Option :: None) } } } # [doc = "`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"] fn get_modified_material (self , base_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> crate :: unity_engine :: material :: Material { unsafe { let __receiver = < Mask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mask , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371acf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (base_material) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-mask")]pub trait IMaskMethods:IMask{#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3719f00usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(Mask)__receiver)}
+}
+#[doc="`get_showMaskGraphic()` overload"]fn get_show_mask_graphic(self,)->bool{unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3719f80usize)as*mut u8,bool;
+(Mask)__receiver)}
+}
+#[doc="`set_showMaskGraphic(bool)` overload"]fn set_show_mask_graphic(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3719f90usize)as*mut u8,();
+(Mask)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_graphic()` overload"]fn get_graphic(self,)->crate::unity_engine::ui::graphic::Graphic{unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371a0f0usize)as*mut u8,crate::unity_engine::ui::graphic::Graphic;
+(Mask)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371a170usize)as*mut u8,();
+(Mask)__receiver)}
+}
+#[doc="`MaskEnabled()` overload"]fn mask_enabled(self,)->bool{unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371a180usize)as*mut u8,bool;
+(Mask)__receiver)}
+}
+#[doc="`OnSiblingGraphicEnabledDisabled()` overload"]fn on_sibling_graphic_enabled_disabled(self,)->(){unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371a270usize)as*mut u8,();
+(Mask)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371a280usize)as*mut u8,();
+(Mask)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371a820usize)as*mut u8,();
+(Mask)__receiver)}
+}
+#[doc="`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn is_raycast_location_valid(self,sp:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371abe0usize)as*mut u8,bool;
+(Mask)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(sp),(crate::unity_engine::camera::Camera)::core::convert::Into::into(event_camera))}
+}
+#[doc="`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]fn get_modified_material(self,base_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <Mask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371acf0usize)as*mut u8,crate::unity_engine::material::Material;
+(Mask)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(base_material))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-mask")]
-impl < __T : IMask > IMaskMethods for __T { }
+#[cfg(feature="unity_engine-ui-mask")]impl<__T:IMask>IMaskMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-mask")]
-impl Mask { pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_show_mask_graphic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_show_mask_graphic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_graphic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn mask_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_sibling_graphic_enabled_disabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_raycast_location_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_modified_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-ui-mask")]impl Mask{pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_show_mask_graphic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_show_mask_graphic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_graphic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn mask_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_sibling_graphic_enabled_disabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_raycast_location_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_modified_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "unity_engine-ui-mask")]
-impl Mask {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Mask) , :: core :: stringify ! (new) ,)) ; < Self as IMaskMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-mask")]impl Mask{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Mask), ::core::stringify!(new),));
+ <Self as IMaskMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-mask")]

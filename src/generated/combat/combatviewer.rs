@@ -4,45 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatviewer/CombatViewer.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatViewer")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CombatViewer {
-# [offset (24)] # [rename (name = "Settings")] pub settings : crate :: combat :: combatviewersettings :: CombatViewerSettings ,
-# [offset (32)] # [rename (name = "PlayAll")] pub play_all : bool ,
-# [offset (36)] # [rename (name = "PlayAllIdx")] pub play_all_idx : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatviewer/CombatViewer.md"))]#[::unity2::class(namespace="Combat",name="CombatViewer")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CombatViewer{#[offset(24)]#[rename(name="Settings")]pub settings:crate::combat::combatviewersettings::CombatViewerSettings, #[offset(32)]#[rename(name="PlayAll")]pub play_all:bool, #[offset(36)]#[rename(name="PlayAllIdx")]pub play_all_idx:i32,}
 
 }
 
 #[cfg(feature = "combat-combatviewer-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatviewer")]
-impl CombatViewer { # [doc = "`get_Instance()` overload"] pub fn get_instance () -> crate :: combat :: combatviewer :: CombatViewer { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: combatviewer :: CombatViewer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2933d20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_Instance(crate::combat::combatviewer::CombatViewer)` overload"] pub fn set_instance (value : impl :: core :: convert :: Into < crate :: combat :: combatviewer :: CombatViewer >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: combatviewer :: CombatViewer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2933d90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2933e30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatviewer")]impl CombatViewer{#[doc="`get_Instance()` overload"]pub fn get_instance()->crate::combat::combatviewer::CombatViewer{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2933d20usize)as*mut u8,crate::combat::combatviewer::CombatViewer;
+)}
+}
+#[doc="`set_Instance(crate::combat::combatviewer::CombatViewer)` overload"]pub fn set_instance(value:impl::core::convert::Into<crate::combat::combatviewer::CombatViewer>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2933d90usize)as*mut u8,();
+(crate::combat::combatviewer::CombatViewer)::core::convert::Into::into(value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2933e30usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-combatviewer")]
-pub trait ICombatViewerMethods : ICombatViewer { # [doc = "`Restart()` overload"] fn restart (self ,) -> () { unsafe { let __receiver = < CombatViewer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2933e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatViewer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2933e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatviewer")]pub trait ICombatViewerMethods:ICombatViewer{#[doc="`Restart()` overload"]fn restart(self,)->(){unsafe{let __receiver= <CombatViewer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2933e10usize)as*mut u8,();
+(CombatViewer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatViewer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2933e20usize)as*mut u8,();
+(CombatViewer)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combatviewer")]
-impl < __T : ICombatViewer > ICombatViewerMethods for __T { }
+#[cfg(feature="combat-combatviewer")]impl<__T:ICombatViewer>ICombatViewerMethods for __T{}
 
-#[cfg(feature = "combat-combatviewer")]
-impl CombatViewer { pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn restart_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-combatviewer")]impl CombatViewer{pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn restart_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-combatviewer")]
-impl CombatViewer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatViewer) , :: core :: stringify ! (new) ,)) ; < Self as ICombatViewerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combatviewer")]impl CombatViewer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatViewer), ::core::stringify!(new),));
+ <Self as ICombatViewerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-combatviewer")]

@@ -4,72 +4,158 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/display/Display_DisplaysUpdatedDelegate.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Display.DisplaysUpdatedDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Display_DisplaysUpdatedDelegate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/display/Display.md"))]#[::unity2::class(namespace="UnityEngine",name="Display")]#[parent(crate::system::object::Object)]pub struct Display{#[offset(16)]#[rename(name="nativeDisplay")]pub native_display: ::unity2::IntPtr, #[static_field]#[rename(name="displays")]pub displays: ::unity2::Array<crate::unity_engine::display::Display> , #[static_field]#[rename(name="_mainDisplay")]pub main_display:crate::unity_engine::display::Display, #[static_field]#[rename(name="onDisplaysUpdated")]pub on_displays_updated:crate::unity_engine::display::Display_DisplaysUpdatedDelegate,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/display/Display.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Display")] # [parent (crate :: system :: object :: Object)] pub struct Display {
-# [offset (16)] # [rename (name = "nativeDisplay")] pub native_display : :: unity2 :: IntPtr ,
-# [static_field] # [rename (name = "displays")] pub displays : :: unity2 :: Array < crate :: unity_engine :: display :: Display > ,
-# [static_field] # [rename (name = "_mainDisplay")] pub main_display : crate :: unity_engine :: display :: Display ,
-# [static_field] # [rename (name = "onDisplaysUpdated")] pub on_displays_updated : crate :: unity_engine :: display :: Display_DisplaysUpdatedDelegate ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/display/Display_DisplaysUpdatedDelegate.md"))]#[::unity2::class(namespace="UnityEngine",name="Display.DisplaysUpdatedDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Display_DisplaysUpdatedDelegate{}
 
 }
 
 #[cfg(feature = "unity_engine-display-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-display")]
-pub trait IDisplay_DisplaysUpdatedDelegateMethods : IDisplay_DisplaysUpdatedDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Display_DisplaysUpdatedDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Display_DisplaysUpdatedDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379c0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < Display_DisplaysUpdatedDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Display_DisplaysUpdatedDelegate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379c0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-display")]
-impl < __T : IDisplay_DisplaysUpdatedDelegate > IDisplay_DisplaysUpdatedDelegateMethods for __T { }
-
-#[cfg(feature = "unity_engine-display")]
-impl Display_DisplaysUpdatedDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display_DisplaysUpdatedDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display_DisplaysUpdatedDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "unity_engine-display")]
-impl Display_DisplaysUpdatedDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Display_DisplaysUpdatedDelegate) , :: core :: stringify ! (new) ,)) ; < Self as IDisplay_DisplaysUpdatedDelegateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-display")]impl Display{#[doc="`RelativeMouseAt(crate::unity_engine::vector3::Vector3)` overload"]pub fn relative_mouse_at(input_mouse_coordinates:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c790usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(input_mouse_coordinates))}
+}
+#[doc="`get_main()` overload"]pub fn get_main()->crate::unity_engine::display::Display{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c900usize)as*mut u8,crate::unity_engine::display::Display;
+)}
+}
+#[doc="`RecreateDisplayList(::unity2::Array<::unity2::IntPtr>)` overload"]pub fn recreate_display_list(native_display:impl::core::convert::Into< ::unity2::Array< ::unity2::IntPtr> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c970usize)as*mut u8,();
+(::unity2::Array< ::unity2::IntPtr>)::core::convert::Into::into(native_display))}
+}
+#[doc="`FireDisplaysUpdated()` overload"]pub fn fire_displays_updated()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4cb40usize)as*mut u8,();
+)}
+}
+#[doc="`GetSystemExtImpl(::unity2::IntPtr, *muti32, *muti32)` overload"]pub fn get_system_ext_impl(native_display:impl::core::convert::Into< ::unity2::IntPtr>)->(i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c590usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(native_display),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetRenderingExtImpl(::unity2::IntPtr, *muti32, *muti32)` overload"]pub fn get_rendering_ext_impl(native_display:impl::core::convert::Into< ::unity2::IntPtr>)->(i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c3d0usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(native_display),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`RelativeMouseAtImpl(i32, i32, *muti32, *muti32)` overload"]pub fn relative_mouse_at_impl(x:impl::core::convert::Into<i32> ,y:impl::core::convert::Into<i32>)->(i32,i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c890usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(y),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`RequiresSrgbBlitToBackbufferImpl(::unity2::IntPtr)` overload"]pub fn requires_srgb_blit_to_backbuffer_impl(native_display:impl::core::convert::Into< ::unity2::IntPtr>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c740usize)as*mut u8,bool;
+(::unity2::IntPtr)::core::convert::Into::into(native_display))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4cbf0usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "unity_engine-display")]
-impl Display { # [doc = "`RelativeMouseAt(crate::unity_engine::vector3::Vector3)` overload"] pub fn relative_mouse_at (input_mouse_coordinates : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (input_mouse_coordinates) , :: core :: option :: Option :: None) } } } # [doc = "`get_main()` overload"] pub fn get_main () -> crate :: unity_engine :: display :: Display { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: display :: Display = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c900usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RecreateDisplayList(::unity2::Array<::unity2::IntPtr>)` overload"] pub fn recreate_display_list (native_display : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: IntPtr > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < :: unity2 :: IntPtr > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (native_display) , :: core :: option :: Option :: None) } } } # [doc = "`FireDisplaysUpdated()` overload"] pub fn fire_displays_updated () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4cb40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetSystemExtImpl(::unity2::IntPtr, *muti32, *muti32)` overload"] pub fn get_system_ext_impl (native_display : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> (i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (:: unity2 :: IntPtr , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (native_display) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetRenderingExtImpl(::unity2::IntPtr, *muti32, *muti32)` overload"] pub fn get_rendering_ext_impl (native_display : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> (i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (:: unity2 :: IntPtr , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c3d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (native_display) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`RelativeMouseAtImpl(i32, i32, *muti32, *muti32)` overload"] pub fn relative_mouse_at_impl (x : impl :: core :: convert :: Into < i32 > , y : impl :: core :: convert :: Into < i32 >) -> (i32 , i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (i32 , i32 , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c890usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`RequiresSrgbBlitToBackbufferImpl(::unity2::IntPtr)` overload"] pub fn requires_srgb_blit_to_backbuffer_impl (native_display : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c740usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (native_display) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4cbf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-display")]pub trait IDisplayMethods:IDisplay{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Display as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c2b0usize)as*mut u8,();
+(Display)__receiver)}
+}
+#[doc="`.ctor(::unity2::IntPtr)` overload"]fn ctor_2(self,native_display:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Display as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c2f0usize)as*mut u8,();
+(Display)__receiver,(::unity2::IntPtr)::core::convert::Into::into(native_display))}
+}
+#[doc="`get_renderingWidth()` overload"]fn get_rendering_width(self,)->i32{unsafe{let __receiver= <Display as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c320usize)as*mut u8,i32;
+(Display)__receiver)}
+}
+#[doc="`get_renderingHeight()` overload"]fn get_rendering_height(self,)->i32{unsafe{let __receiver= <Display as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c430usize)as*mut u8,i32;
+(Display)__receiver)}
+}
+#[doc="`get_systemWidth()` overload"]fn get_system_width(self,)->i32{unsafe{let __receiver= <Display as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c4e0usize)as*mut u8,i32;
+(Display)__receiver)}
+}
+#[doc="`get_systemHeight()` overload"]fn get_system_height(self,)->i32{unsafe{let __receiver= <Display as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c5f0usize)as*mut u8,i32;
+(Display)__receiver)}
+}
+#[doc="`get_requiresSrgbBlitToBackbuffer()` overload"]fn get_requires_srgb_blit_to_backbuffer(self,)->bool{unsafe{let __receiver= <Display as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c6a0usize)as*mut u8,bool;
+(Display)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-display")]
-pub trait IDisplayMethods : IDisplay { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Display as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Display , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor_2 (self , native_display : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Display as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Display , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c2f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (native_display) , :: core :: option :: Option :: None) } } } # [doc = "`get_renderingWidth()` overload"] fn get_rendering_width (self ,) -> i32 { unsafe { let __receiver = < Display as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Display , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_renderingHeight()` overload"] fn get_rendering_height (self ,) -> i32 { unsafe { let __receiver = < Display as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Display , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_systemWidth()` overload"] fn get_system_width (self ,) -> i32 { unsafe { let __receiver = < Display as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Display , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_systemHeight()` overload"] fn get_system_height (self ,) -> i32 { unsafe { let __receiver = < Display as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Display , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_requiresSrgbBlitToBackbuffer()` overload"] fn get_requires_srgb_blit_to_backbuffer (self ,) -> bool { unsafe { let __receiver = < Display as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Display , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-display")]impl<__T:IDisplay>IDisplayMethods for __T{}
 
-#[cfg(feature = "unity_engine-display")]
-impl < __T : IDisplay > IDisplayMethods for __T { }
+#[cfg(feature="unity_engine-display")]impl Display{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_rendering_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_rendering_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_system_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_system_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_requires_srgb_blit_to_backbuffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn relative_mouse_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn recreate_display_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn fire_displays_updated_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_system_ext_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_rendering_ext_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn relative_mouse_at_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn requires_srgb_blit_to_backbuffer_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "unity_engine-display")]
-impl Display { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_rendering_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_rendering_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_system_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_system_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_requires_srgb_blit_to_backbuffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn relative_mouse_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn recreate_display_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn fire_displays_updated_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_system_ext_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_rendering_ext_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn relative_mouse_at_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn requires_srgb_blit_to_backbuffer_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Display as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="unity_engine-display")]impl Display{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Display), ::core::stringify!(new),));
+ <Self as IDisplayMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::IntPtr)` — overload selector"]pub fn new_2(native_display: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Display), ::core::stringify!(new_2),));
+ <Self as IDisplayMethods> ::ctor_2(this,native_display);
+this}
+}
 
-#[cfg(feature = "unity_engine-display")]
-impl Display {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Display) , :: core :: stringify ! (new) ,)) ; < Self as IDisplayMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-display")]pub trait IDisplay_DisplaysUpdatedDelegateMethods:IDisplay_DisplaysUpdatedDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Display_DisplaysUpdatedDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379c0a0usize)as*mut u8,();
+(Display_DisplaysUpdatedDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <Display_DisplaysUpdatedDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379c0c0usize)as*mut u8,();
+(Display_DisplaysUpdatedDelegate)__receiver)}
+}
+}
 
-# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new_2 (native_display : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Display) , :: core :: stringify ! (new_2) ,)) ; < Self as IDisplayMethods > :: ctor_2 (this , native_display) ; this }
+#[cfg(feature="unity_engine-display")]impl<__T:IDisplay_DisplaysUpdatedDelegate>IDisplay_DisplaysUpdatedDelegateMethods for __T{}
+
+#[cfg(feature="unity_engine-display")]impl Display_DisplaysUpdatedDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-display")]impl Display_DisplaysUpdatedDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Display_DisplaysUpdatedDelegate), ::core::stringify!(new),));
+ <Self as IDisplay_DisplaysUpdatedDelegateMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "unity_engine-display")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Display_DisplaysUpdatedDelegate;
-    pub use super::IDisplay_DisplaysUpdatedDelegate;
-    pub use super::IDisplay_DisplaysUpdatedDelegateMethods;
     pub use super::Display;
     pub use super::IDisplay;
     pub use super::IDisplayMethods;
+    pub use super::Display_DisplaysUpdatedDelegate;
+    pub use super::IDisplay_DisplaysUpdatedDelegate;
+    pub use super::IDisplay_DisplaysUpdatedDelegateMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

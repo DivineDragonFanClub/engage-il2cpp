@@ -4,42 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubcafecolor/HubCafeColor.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubCafeColor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubCafeColor {
-# [offset (24)] # [rename (name = "m_targets")] pub m_targets : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (32)] # [rename (name = "m_lods")] pub m_lods : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (40)] # [rename (name = "m_renderers")] pub m_renderers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: renderer :: Renderer > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubcafecolor/HubCafeColor.md"))]#[::unity2::class(namespace="App",name="HubCafeColor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubCafeColor{#[offset(24)]#[rename(name="m_targets")]pub m_targets:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(32)]#[rename(name="m_lods")]pub m_lods:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_renderers")]pub m_renderers:crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer> ,}
 
 }
 
 #[cfg(feature = "app-hubcafecolor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubcafecolor")]
-pub trait IHubCafeColorMethods : IHubCafeColor { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubCafeColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCafeColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d78900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubCafeColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCafeColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d78ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubCafeColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCafeColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d790a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubCafeColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubCafeColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d79290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubcafecolor")]pub trait IHubCafeColorMethods:IHubCafeColor{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubCafeColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d78900usize)as*mut u8,();
+(HubCafeColor)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubCafeColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d78ca0usize)as*mut u8,();
+(HubCafeColor)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <HubCafeColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d790a0usize)as*mut u8,();
+(HubCafeColor)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubCafeColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d79290usize)as*mut u8,();
+(HubCafeColor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubcafecolor")]
-impl < __T : IHubCafeColor > IHubCafeColorMethods for __T { }
+#[cfg(feature="app-hubcafecolor")]impl<__T:IHubCafeColor>IHubCafeColorMethods for __T{}
 
-#[cfg(feature = "app-hubcafecolor")]
-impl HubCafeColor { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCafeColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCafeColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCafeColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubCafeColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-hubcafecolor")]impl HubCafeColor{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-hubcafecolor")]
-impl HubCafeColor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubCafeColor) , :: core :: stringify ! (new) ,)) ; < Self as IHubCafeColorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubcafecolor")]impl HubCafeColor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubCafeColor), ::core::stringify!(new),));
+ <Self as IHubCafeColorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubcafecolor")]

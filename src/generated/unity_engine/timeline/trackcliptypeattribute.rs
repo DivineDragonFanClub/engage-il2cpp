@@ -4,33 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackcliptypeattribute/TrackClipTypeAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TrackClipTypeAttribute")] pub struct TrackClipTypeAttribute {
-# [offset (16)] # [rename (name = "inspectedType")] pub inspected_type : :: unity2 :: SystemType ,
-# [offset (24)] # [rename (name = "allowAutoCreate")] pub allow_auto_create : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/trackcliptypeattribute/TrackClipTypeAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TrackClipTypeAttribute")]pub struct TrackClipTypeAttribute{#[offset(16)]#[rename(name="inspectedType")]pub inspected_type: ::unity2::SystemType, #[offset(24)]#[rename(name="allowAutoCreate")]pub allow_auto_create:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-trackcliptypeattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
-pub trait ITrackClipTypeAttributeMethods : ITrackClipTypeAttribute { # [doc = "`.ctor(::unity2::SystemType)` overload"] fn ctor (self , clip_class : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> () { unsafe { let __receiver = < TrackClipTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrackClipTypeAttribute , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ea640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clip_class) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::SystemType, bool)` overload"] fn ctor_2 (self , clip_class : impl :: core :: convert :: Into < :: unity2 :: SystemType > , allow_auto_create : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TrackClipTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrackClipTypeAttribute , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35ea680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clip_class) , :: core :: convert :: Into :: into (allow_auto_create) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-trackcliptypeattribute")]pub trait ITrackClipTypeAttributeMethods:ITrackClipTypeAttribute{#[doc="`.ctor(::unity2::SystemType)` overload"]fn ctor(self,clip_class:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <TrackClipTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ea640usize)as*mut u8,();
+(TrackClipTypeAttribute)__receiver,(::unity2::SystemType)::core::convert::Into::into(clip_class))}
+}
+#[doc="`.ctor(::unity2::SystemType, bool)` overload"]fn ctor_2(self,clip_class:impl::core::convert::Into< ::unity2::SystemType> ,allow_auto_create:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TrackClipTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35ea680usize)as*mut u8,();
+(TrackClipTypeAttribute)__receiver,(::unity2::SystemType)::core::convert::Into::into(clip_class),(bool)::core::convert::Into::into(allow_auto_create))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
-impl < __T : ITrackClipTypeAttribute > ITrackClipTypeAttributeMethods for __T { }
+#[cfg(feature="unity_engine-timeline-trackcliptypeattribute")]impl<__T:ITrackClipTypeAttribute>ITrackClipTypeAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
-impl TrackClipTypeAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackClipTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrackClipTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-timeline-trackcliptypeattribute")]impl TrackClipTypeAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]
-impl TrackClipTypeAttribute {
-# [doc = "`.ctor(::unity2::SystemType)` — overload selector"] pub fn new (clip_class : :: unity2 :: SystemType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TrackClipTypeAttribute) , :: core :: stringify ! (new) ,)) ; < Self as ITrackClipTypeAttributeMethods > :: ctor (this , clip_class) ; this }
-
-# [doc = "`.ctor(::unity2::SystemType, bool)` — overload selector"] pub fn new_2 (clip_class : :: unity2 :: SystemType , allow_auto_create : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TrackClipTypeAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as ITrackClipTypeAttributeMethods > :: ctor_2 (this , clip_class , allow_auto_create) ; this }
+#[cfg(feature="unity_engine-timeline-trackcliptypeattribute")]impl TrackClipTypeAttribute{#[doc="`.ctor(::unity2::SystemType)` — overload selector"]pub fn new(clip_class: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TrackClipTypeAttribute), ::core::stringify!(new),));
+ <Self as ITrackClipTypeAttributeMethods> ::ctor(this,clip_class);
+this}
+#[doc="`.ctor(::unity2::SystemType, bool)` — overload selector"]pub fn new_2(clip_class: ::unity2::SystemType,allow_auto_create:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TrackClipTypeAttribute), ::core::stringify!(new_2),));
+ <Self as ITrackClipTypeAttributeMethods> ::ctor_2(this,clip_class,allow_auto_create);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-trackcliptypeattribute")]

@@ -4,43 +4,85 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_style/TMP_Style.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Style")] # [parent (crate :: system :: object :: Object)] pub struct TMP_Style {
-# [static_field] # [rename (name = "k_NormalStyle")] pub k_normal_style : crate :: tm_pro :: tmp_style :: TMP_Style ,
-# [offset (16)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
-# [offset (32)] # [rename (name = "m_OpeningDefinition")] pub m_opening_definition : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_ClosingDefinition")] pub m_closing_definition : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_OpeningTagArray")] pub m_opening_tag_array : :: unity2 :: Array < i32 > ,
-# [offset (56)] # [rename (name = "m_ClosingTagArray")] pub m_closing_tag_array : :: unity2 :: Array < i32 > ,
-# [offset (64)] # [rename (name = "m_OpeningTagUnicodeArray")] pub m_opening_tag_unicode_array : :: unity2 :: Array < u32 > ,
-# [offset (72)] # [rename (name = "m_ClosingTagUnicodeArray")] pub m_closing_tag_unicode_array : :: unity2 :: Array < u32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_style/TMP_Style.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Style")]#[parent(crate::system::object::Object)]pub struct TMP_Style{#[static_field]#[rename(name="k_NormalStyle")]pub k_normal_style:crate::tm_pro::tmp_style::TMP_Style, #[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_HashCode")]pub m_hash_code:i32, #[offset(32)]#[rename(name="m_OpeningDefinition")]pub m_opening_definition: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_ClosingDefinition")]pub m_closing_definition: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_OpeningTagArray")]pub m_opening_tag_array: ::unity2::Array<i32> , #[offset(56)]#[rename(name="m_ClosingTagArray")]pub m_closing_tag_array: ::unity2::Array<i32> , #[offset(64)]#[rename(name="m_OpeningTagUnicodeArray")]pub m_opening_tag_unicode_array: ::unity2::Array<u32> , #[offset(72)]#[rename(name="m_ClosingTagUnicodeArray")]pub m_closing_tag_unicode_array: ::unity2::Array<u32> ,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_style-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_style")]
-impl TMP_Style { # [doc = "`get_NormalStyle()` overload"] pub fn get_normal_style () -> crate :: tm_pro :: tmp_style :: TMP_Style { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_style :: TMP_Style = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282dcb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_style")]impl TMP_Style{#[doc="`get_NormalStyle()` overload"]pub fn get_normal_style()->crate::tm_pro::tmp_style::TMP_Style{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282dcb0usize)as*mut u8,crate::tm_pro::tmp_style::TMP_Style;
+)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_style")]
-pub trait ITMP_StyleMethods : ITMP_Style { # [doc = "`get_name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282de50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282de60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_hashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282deb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_hashCode(i32)` overload"] fn set_hash_code (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282dec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_styleOpeningDefinition()` overload"] fn get_style_opening_definition (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282dee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_styleClosingDefinition()` overload"] fn get_style_closing_definition (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282def0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_styleOpeningTagArray()` overload"] fn get_style_opening_tag_array (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282df00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_styleClosingTagArray()` overload"] fn get_style_closing_tag_array (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282df10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , style_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , style_opening_definition : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , style_closing_definition : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282dd80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (style_name) , :: core :: convert :: Into :: into (style_opening_definition) , :: core :: convert :: Into :: into (style_closing_definition) , :: core :: option :: Option :: None) } } } # [doc = "`RefreshStyle()` overload"] fn refresh_style (self ,) -> () { unsafe { let __receiver = < TMP_Style as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Style , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282df20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_style")]pub trait ITMP_StyleMethods:ITMP_Style{#[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282de50usize)as*mut u8, ::unity2::Il2CppString;
+(TMP_Style)__receiver)}
+}
+#[doc="`set_name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282de60usize)as*mut u8,();
+(TMP_Style)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_hashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282deb0usize)as*mut u8,i32;
+(TMP_Style)__receiver)}
+}
+#[doc="`set_hashCode(i32)` overload"]fn set_hash_code(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282dec0usize)as*mut u8,();
+(TMP_Style)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_styleOpeningDefinition()` overload"]fn get_style_opening_definition(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282dee0usize)as*mut u8, ::unity2::Il2CppString;
+(TMP_Style)__receiver)}
+}
+#[doc="`get_styleClosingDefinition()` overload"]fn get_style_closing_definition(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282def0usize)as*mut u8, ::unity2::Il2CppString;
+(TMP_Style)__receiver)}
+}
+#[doc="`get_styleOpeningTagArray()` overload"]fn get_style_opening_tag_array(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282df00usize)as*mut u8, ::unity2::Array<i32> ;
+(TMP_Style)__receiver)}
+}
+#[doc="`get_styleClosingTagArray()` overload"]fn get_style_closing_tag_array(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282df10usize)as*mut u8, ::unity2::Array<i32> ;
+(TMP_Style)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,style_name:impl::core::convert::Into< ::unity2::Il2CppString> ,style_opening_definition:impl::core::convert::Into< ::unity2::Il2CppString> ,style_closing_definition:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282dd80usize)as*mut u8,();
+(TMP_Style)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(style_name),(::unity2::Il2CppString)::core::convert::Into::into(style_opening_definition),(::unity2::Il2CppString)::core::convert::Into::into(style_closing_definition))}
+}
+#[doc="`RefreshStyle()` overload"]fn refresh_style(self,)->(){unsafe{let __receiver= <TMP_Style as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282df20usize)as*mut u8,();
+(TMP_Style)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_style")]
-impl < __T : ITMP_Style > ITMP_StyleMethods for __T { }
+#[cfg(feature="tm_pro-tmp_style")]impl<__T:ITMP_Style>ITMP_StyleMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_style")]
-impl TMP_Style { pub fn get_normal_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_style_opening_definition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_style_closing_definition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_style_opening_tag_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_style_closing_tag_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn refresh_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Style as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="tm_pro-tmp_style")]impl TMP_Style{pub fn get_normal_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_style_opening_definition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_style_closing_definition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_style_opening_tag_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_style_closing_tag_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn refresh_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "tm_pro-tmp_style")]
-impl TMP_Style {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (style_name : :: unity2 :: Il2CppString , style_opening_definition : :: unity2 :: Il2CppString , style_closing_definition : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Style) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_StyleMethods > :: ctor (this , style_name , style_opening_definition , style_closing_definition) ; this }
+#[cfg(feature="tm_pro-tmp_style")]impl TMP_Style{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(style_name: ::unity2::Il2CppString,style_opening_definition: ::unity2::Il2CppString,style_closing_definition: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Style), ::core::stringify!(new),));
+ <Self as ITMP_StyleMethods> ::ctor(this,style_name,style_opening_definition,style_closing_definition);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_style")]

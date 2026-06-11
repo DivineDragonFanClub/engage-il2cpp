@@ -4,148 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilitydefinition/CapabilityDefinition.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapabilityDefinition")] # [parent (crate :: system :: object :: Object)] pub struct CapabilityDefinition {
-# [static_field] # [rename (name = "Num")] pub num : i32 ,
-# [static_field] # [rename (name = "CcNum")] pub cc_num : i32 ,
-# [static_field] # [rename (name = "GrowNum")] pub grow_num : i32 ,
-# [static_field] # [rename (name = "Names")] pub names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "Helps")] pub helps : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capabilitydefinition/CapabilityDefinition.md"))]#[::unity2::class(namespace="App",name="CapabilityDefinition")]#[parent(crate::system::object::Object)]pub struct CapabilityDefinition{#[static_field]#[rename(name="Num")]pub num:i32, #[static_field]#[rename(name="CcNum")]pub cc_num:i32, #[static_field]#[rename(name="GrowNum")]pub grow_num:i32, #[static_field]#[rename(name="Names")]pub names: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="Helps")]pub helps: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capabilitydefinition/CapabilityDefinition_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CapabilityDefinition_Type{pub value:i32,}
+impl::unity2::ClassIdentity for CapabilityDefinition_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="CapabilityDefinition.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capabilitydefinition/CapabilityDefinition_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CapabilityDefinition_Type  {
-    pub value: i32,
+impl::unity2::IlType for CapabilityDefinition_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for CapabilityDefinition_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "CapabilityDefinition.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl CapabilityDefinition_Type{pub fn none()->Self{Self{value: -1}
 }
-
-
-impl  ::unity2::IlType for CapabilityDefinition_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn hp()->Self{Self{value:0}
 }
-
-
-impl  CapabilityDefinition_Type  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn hp() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn str() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn tech() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn quick() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn luck() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn def() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn magic() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn mdef() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn phys() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn sight() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn r#move() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn cc_num() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn grow_num() -> Self {
-        Self { value: 9 }
-
-    }
-
+pub fn str()->Self{Self{value:1}
+}
+pub fn tech()->Self{Self{value:2}
+}
+pub fn quick()->Self{Self{value:3}
+}
+pub fn luck()->Self{Self{value:4}
+}
+pub fn def()->Self{Self{value:5}
+}
+pub fn magic()->Self{Self{value:6}
+}
+pub fn mdef()->Self{Self{value:7}
+}
+pub fn phys()->Self{Self{value:8}
+}
+pub fn sight()->Self{Self{value:9}
+}
+pub fn r#move()->Self{Self{value:10}
+}
+pub fn num()->Self{Self{value:11}
+}
+pub fn cc_num()->Self{Self{value:8}
+}
+pub fn grow_num()->Self{Self{value:9}
+}
 }
 
 }
@@ -153,21 +62,36 @@ impl  CapabilityDefinition_Type  {
 #[cfg(feature = "app-capabilitydefinition-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-capabilitydefinition")]
-impl CapabilityDefinition { # [doc = "`GetName(i32)` overload"] pub fn get_name (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bced0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetHelp(i32)` overload"] pub fn get_help (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bcfa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bd080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-capabilitydefinition")]impl CapabilityDefinition{#[doc="`GetName(i32)` overload"]pub fn get_name(index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bced0usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetHelp(i32)` overload"]pub fn get_help(index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bcfa0usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25bd080usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-capabilitydefinition")]
-pub trait ICapabilityDefinitionMethods : ICapabilityDefinition { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CapabilityDefinition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityDefinition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25bd070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-capabilitydefinition")]pub trait ICapabilityDefinitionMethods:ICapabilityDefinition{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CapabilityDefinition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25bd070usize)as*mut u8,();
+(CapabilityDefinition)__receiver)}
+}
+}
 
-#[cfg(feature = "app-capabilitydefinition")]
-impl < __T : ICapabilityDefinition > ICapabilityDefinitionMethods for __T { }
+#[cfg(feature="app-capabilitydefinition")]impl<__T:ICapabilityDefinition>ICapabilityDefinitionMethods for __T{}
 
-#[cfg(feature = "app-capabilitydefinition")]
-impl CapabilityDefinition { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityDefinition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-capabilitydefinition")]impl CapabilityDefinition{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-capabilitydefinition")]
-impl CapabilityDefinition {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CapabilityDefinition) , :: core :: stringify ! (new) ,)) ; < Self as ICapabilityDefinitionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-capabilitydefinition")]impl CapabilityDefinition{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CapabilityDefinition), ::core::stringify!(new),));
+ <Self as ICapabilityDefinitionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-capabilitydefinition")]

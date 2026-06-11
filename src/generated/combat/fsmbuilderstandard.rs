@@ -4,38 +4,112 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: fsmbuilder :: { FSMBuilder , IFSMBuilder }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::fsmbuilder::{FSMBuilder,IFSMBuilder}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderstandard/FSMBuilderStandard.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FSMBuilderStandard")] # [parent (crate :: combat :: fsmbuilder :: FSMBuilder)] pub struct FSMBuilderStandard {
-# [offset (16)] # [rename (name = "chainSync")] pub chain_sync : :: unity2 :: Array < crate :: combat :: synctoken :: SyncToken > ,
-# [static_field] # [rename (name = "ChainAttackTime")] pub chain_attack_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fsmbuilderstandard/FSMBuilderStandard.md"))]#[::unity2::class(namespace="Combat",name="FSMBuilderStandard")]#[parent(crate::combat::fsmbuilder::FSMBuilder)]pub struct FSMBuilderStandard{#[offset(16)]#[rename(name="chainSync")]pub chain_sync: ::unity2::Array<crate::combat::synctoken::SyncToken> , #[static_field]#[rename(name="ChainAttackTime")]pub chain_attack_time:f32,}
 
 }
 
 #[cfg(feature = "combat-fsmbuilderstandard-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fsmbuilderstandard")]
-impl FSMBuilderStandard { # [doc = "`BuildEnd_BothAlive()` overload"] pub fn build_end_both_alive () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4b490usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`BuildEnd_PlayerKilled()` overload"] pub fn build_end_player_killed () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4b650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`BuildEnd_EnemyBossKilled()` overload"] pub fn build_end_enemy_boss_killed () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4bb30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`BuildEnd_EnemyKilled()` overload"] pub fn build_end_enemy_killed () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4b8f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`BuildStandardPhase(crate::combat::phase::Phase)` overload"] pub fn build_standard_phase (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4c340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } # [doc = "`Start_Training()` overload"] pub fn start_training () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4cb50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Start_Talk()` overload"] pub fn start_talk () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4cc60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Start_Default()` overload"] pub fn start_default () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4d170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AppendStartAnim(bool, f32)` overload"] pub fn append_start_anim (run_start : impl :: core :: convert :: Into < bool > , start_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (bool , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4dbc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (run_start) , :: core :: convert :: Into :: into (start_time) , :: core :: option :: Option :: None) } } } # [doc = "`AppendDragonStone()` overload"] pub fn append_dragon_stone () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4d7a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Start_WithDive()` overload"] pub fn start_with_dive () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4cef0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuilderstandard")]impl FSMBuilderStandard{#[doc="`BuildEnd_BothAlive()` overload"]pub fn build_end_both_alive()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4b490usize)as*mut u8,();
+)}
+}
+#[doc="`BuildEnd_PlayerKilled()` overload"]pub fn build_end_player_killed()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4b650usize)as*mut u8,();
+)}
+}
+#[doc="`BuildEnd_EnemyBossKilled()` overload"]pub fn build_end_enemy_boss_killed()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4bb30usize)as*mut u8,();
+)}
+}
+#[doc="`BuildEnd_EnemyKilled()` overload"]pub fn build_end_enemy_killed()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4b8f0usize)as*mut u8,();
+)}
+}
+#[doc="`BuildStandardPhase(crate::combat::phase::Phase)` overload"]pub fn build_standard_phase(phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4c340usize)as*mut u8,();
+(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+#[doc="`Start_Training()` overload"]pub fn start_training()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4cb50usize)as*mut u8,();
+)}
+}
+#[doc="`Start_Talk()` overload"]pub fn start_talk()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4cc60usize)as*mut u8,();
+)}
+}
+#[doc="`Start_Default()` overload"]pub fn start_default()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4d170usize)as*mut u8,();
+)}
+}
+#[doc="`AppendStartAnim(bool, f32)` overload"]pub fn append_start_anim(run_start:impl::core::convert::Into<bool> ,start_time:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4dbc0usize)as*mut u8,();
+(bool)::core::convert::Into::into(run_start),(f32)::core::convert::Into::into(start_time))}
+}
+#[doc="`AppendDragonStone()` overload"]pub fn append_dragon_stone()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4d7a0usize)as*mut u8,bool;
+)}
+}
+#[doc="`Start_WithDive()` overload"]pub fn start_with_dive()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4cef0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-fsmbuilderstandard")]
-pub trait IFSMBuilderStandardMethods : IFSMBuilderStandard { # [doc = "`BuildEnd()` overload"] fn build_end (self ,) -> () { unsafe { let __receiver = < FSMBuilderStandard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderStandard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4b120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMain()` overload"] fn build_main (self ,) -> () { unsafe { let __receiver = < FSMBuilderStandard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderStandard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d491b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildStart()` overload"] fn build_start (self ,) -> () { unsafe { let __receiver = < FSMBuilderStandard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderStandard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4c540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AllocChainSync()` overload"] fn alloc_chain_sync (self ,) -> () { unsafe { let __receiver = < FSMBuilderStandard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderStandard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4e0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildChainAttackPhase(crate::combat::phase::Phase, i32)` overload"] fn build_chain_attack_phase (self , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , chain_num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FSMBuilderStandard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderStandard , crate :: combat :: phase :: Phase , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4bb40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (chain_num) , :: core :: option :: Option :: None) } } } # [doc = "`BuildChainFSM(crate::combat::phase::Phase, crate::combat::character::Character, i32)` overload"] fn build_chain_fsm (self , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , chain : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , chain_num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FSMBuilderStandard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderStandard , crate :: combat :: phase :: Phase , crate :: combat :: character :: Character , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4e270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (chain) , :: core :: convert :: Into :: into (chain_num) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FSMBuilderStandard as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderStandard , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d478c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuilderstandard")]pub trait IFSMBuilderStandardMethods:IFSMBuilderStandard{#[doc="`BuildEnd()` overload"]fn build_end(self,)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4b120usize)as*mut u8,();
+(FSMBuilderStandard)__receiver)}
+}
+#[doc="`BuildMain()` overload"]fn build_main(self,)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d491b0usize)as*mut u8,();
+(FSMBuilderStandard)__receiver)}
+}
+#[doc="`BuildStart()` overload"]fn build_start(self,)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4c540usize)as*mut u8,();
+(FSMBuilderStandard)__receiver)}
+}
+#[doc="`AllocChainSync()` overload"]fn alloc_chain_sync(self,)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4e0f0usize)as*mut u8,();
+(FSMBuilderStandard)__receiver)}
+}
+#[doc="`BuildChainAttackPhase(crate::combat::phase::Phase, i32)` overload"]fn build_chain_attack_phase(self,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,chain_num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4bb40usize)as*mut u8,();
+(FSMBuilderStandard)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(phase),(i32)::core::convert::Into::into(chain_num))}
+}
+#[doc="`BuildChainFSM(crate::combat::phase::Phase, crate::combat::character::Character, i32)` overload"]fn build_chain_fsm(self,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,chain:impl::core::convert::Into<crate::combat::character::Character> ,chain_num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4e270usize)as*mut u8,();
+(FSMBuilderStandard)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(phase),(crate::combat::character::Character)::core::convert::Into::into(chain),(i32)::core::convert::Into::into(chain_num))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSMBuilderStandard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d478c0usize)as*mut u8,();
+(FSMBuilderStandard)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-fsmbuilderstandard")]
-impl < __T : IFSMBuilderStandard > IFSMBuilderStandardMethods for __T { }
+#[cfg(feature="combat-fsmbuilderstandard")]impl<__T:IFSMBuilderStandard>IFSMBuilderStandardMethods for __T{}
 
-#[cfg(feature = "combat-fsmbuilderstandard")]
-impl FSMBuilderStandard { pub fn build_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_end_both_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_end_player_killed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_end_enemy_boss_killed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_end_enemy_killed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn build_main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn build_standard_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn build_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn start_training_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn start_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn start_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn append_start_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn append_dragon_stone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn start_with_dive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn alloc_chain_sync_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn build_chain_attack_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn build_chain_fsm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderStandard as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="combat-fsmbuilderstandard")]impl FSMBuilderStandard{pub fn build_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_end_both_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_end_player_killed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_end_enemy_boss_killed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_end_enemy_killed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn build_standard_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn build_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn start_training_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn start_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn start_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn append_start_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn append_dragon_stone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn start_with_dive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn alloc_chain_sync_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn build_chain_attack_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn build_chain_fsm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "combat-fsmbuilderstandard")]
-impl FSMBuilderStandard {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FSMBuilderStandard) , :: core :: stringify ! (new) ,)) ; < Self as IFSMBuilderStandardMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-fsmbuilderstandard")]impl FSMBuilderStandard{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FSMBuilderStandard), ::core::stringify!(new),));
+ <Self as IFSMBuilderStandardMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-fsmbuilderstandard")]

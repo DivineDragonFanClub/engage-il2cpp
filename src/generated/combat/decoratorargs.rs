@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: decorator :: { Decorator , IDecorator }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::decorator::{Decorator,IDecorator}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/decoratorargs/DecoratorArgs.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "DecoratorArgs")] # [parent (crate :: combat :: decorator :: Decorator)] pub struct DecoratorArgs {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/decoratorargs/DecoratorArgs.md"))]#[::unity2::class(namespace="Combat",name="DecoratorArgs")]#[parent(crate::combat::decorator::Decorator)]pub struct DecoratorArgs{}
 
 }
 
 #[cfg(feature = "combat-decoratorargs-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-decoratorargs")]
-pub trait IDecoratorArgsMethods : IDecoratorArgs { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DecoratorArgs as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DecoratorArgs , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Set(crate::combat::phase::Phase)` overload"] fn set (self , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < DecoratorArgs as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DecoratorArgs , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea4c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DecoratorArgs as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DecoratorArgs , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-decoratorargs")]pub trait IDecoratorArgsMethods:IDecoratorArgs{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DecoratorArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea470usize)as*mut u8, ::unity2::Il2CppString;
+(DecoratorArgs)__receiver)}
+}
+#[doc="`Set(crate::combat::phase::Phase)` overload"]fn set(self,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <DecoratorArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea4c0usize)as*mut u8,();
+(DecoratorArgs)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DecoratorArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea500usize)as*mut u8,();
+(DecoratorArgs)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-decoratorargs")]
-impl < __T : IDecoratorArgs > IDecoratorArgsMethods for __T { }
+#[cfg(feature="combat-decoratorargs")]impl<__T:IDecoratorArgs>IDecoratorArgsMethods for __T{}
 
-#[cfg(feature = "combat-decoratorargs")]
-impl DecoratorArgs { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DecoratorArgs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DecoratorArgs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DecoratorArgs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-decoratorargs")]impl DecoratorArgs{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-decoratorargs")]
-impl DecoratorArgs {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DecoratorArgs) , :: core :: stringify ! (new) ,)) ; < Self as IDecoratorArgsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-decoratorargs")]impl DecoratorArgs{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DecoratorArgs), ::core::stringify!(new),));
+ <Self as IDecoratorArgsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-decoratorargs")]

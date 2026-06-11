@@ -4,43 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcamera/EventCamera.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventCamera")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EventCamera {
-# [offset (24)] # [rename (name = "m_ViewMode")] pub m_view_mode : crate :: app :: viewmode :: ViewMode_Mode ,
-# [offset (32)] # [rename (name = "m_MainCamera")] pub m_main_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (40)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (48)] # [rename (name = "m_Animation")] pub m_animation : crate :: root :: simpleanimation :: SimpleAnimation ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventcamera/EventCamera.md"))]#[::unity2::class(namespace="App",name="EventCamera")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventCamera{#[offset(24)]#[rename(name="m_ViewMode")]pub m_view_mode:crate::app::viewmode::ViewMode_Mode, #[offset(32)]#[rename(name="m_MainCamera")]pub m_main_camera:crate::unity_engine::camera::Camera, #[offset(40)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(48)]#[rename(name="m_Animation")]pub m_animation:crate::root::simpleanimation::SimpleAnimation,}
 
 }
 
 #[cfg(feature = "app-eventcamera-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-eventcamera")]
-pub trait IEventCameraMethods : IEventCamera { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < EventCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ebc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < EventCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ebcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < EventCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ebec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < EventCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ebfb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < EventCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ebfc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Play()` overload"] fn play (self ,) -> () { unsafe { let __receiver = < EventCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ec460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < EventCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ec410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ec4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eventcamera")]pub trait IEventCameraMethods:IEventCamera{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <EventCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ebc30usize)as*mut u8,();
+(EventCamera)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <EventCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ebcf0usize)as*mut u8,();
+(EventCamera)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <EventCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ebec0usize)as*mut u8,();
+(EventCamera)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <EventCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ebfb0usize)as*mut u8,();
+(EventCamera)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <EventCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ebfc0usize)as*mut u8,();
+(EventCamera)__receiver)}
+}
+#[doc="`Play()` overload"]fn play(self,)->(){unsafe{let __receiver= <EventCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ec460usize)as*mut u8,();
+(EventCamera)__receiver)}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <EventCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ec410usize)as*mut u8,();
+(EventCamera)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ec4b0usize)as*mut u8,();
+(EventCamera)__receiver)}
+}
+}
 
-#[cfg(feature = "app-eventcamera")]
-impl < __T : IEventCamera > IEventCameraMethods for __T { }
+#[cfg(feature="app-eventcamera")]impl<__T:IEventCamera>IEventCameraMethods for __T{}
 
-#[cfg(feature = "app-eventcamera")]
-impl EventCamera { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-eventcamera")]impl EventCamera{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-eventcamera")]
-impl EventCamera {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventCamera) , :: core :: stringify ! (new) ,)) ; < Self as IEventCameraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-eventcamera")]impl EventCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventCamera), ::core::stringify!(new),));
+ <Self as IEventCameraMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-eventcamera")]

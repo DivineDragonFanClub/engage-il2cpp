@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imeshmodifier/IMeshModifier.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IMeshModifier")] pub struct IMeshModifier {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/imeshmodifier/IMeshModifier.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="IMeshModifier")]pub struct IMeshModifier{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-imeshmodifier")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMeshModifier_unity2_raw { use super :: * ; pub unsafe fn modify_mesh (this : IMeshModifier , mesh : crate :: unity_engine :: mesh :: Mesh , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ModifyMesh") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ModifyMesh" , < IMeshModifier as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMeshModifier , crate :: unity_engine :: mesh :: Mesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , mesh , __mi) } pub unsafe fn modify_mesh_2 (this : IMeshModifier , verts : crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ModifyMesh") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ModifyMesh" , < IMeshModifier as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMeshModifier , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , verts , __mi) } }
+#[cfg(feature="unity_engine-ui-imeshmodifier")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMeshModifier_unity2_raw{use super:: * ;
+pub unsafe fn modify_mesh(this:IMeshModifier,mesh:crate::unity_engine::mesh::Mesh,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ModifyMesh").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ModifyMesh", <IMeshModifier as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMeshModifier,crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mesh,__mi)}
+pub unsafe fn modify_mesh_2(this:IMeshModifier,verts:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ModifyMesh").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ModifyMesh", <IMeshModifier as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMeshModifier,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,verts,__mi)}
+}
 
-#[cfg(feature = "unity_engine-ui-imeshmodifier")]
-pub trait IIMeshModifierMethods : IIMeshModifier { # [doc = "`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"] fn modify_mesh (self , mesh : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh >) -> () { unsafe { let __receiver = < IMeshModifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMeshModifier_unity2_raw :: modify_mesh (__receiver , :: core :: convert :: Into :: into (mesh) , :: core :: option :: Option :: None) } } # [doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn modify_mesh_2 (self , verts : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < IMeshModifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMeshModifier_unity2_raw :: modify_mesh_2 (__receiver , :: core :: convert :: Into :: into (verts) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-ui-imeshmodifier")]pub trait IIMeshModifierMethods:IIMeshModifier{#[doc="`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"]fn modify_mesh(self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <IMeshModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMeshModifier_unity2_raw::modify_mesh(__receiver, ::core::convert::Into::into(mesh), ::core::option::Option::None)}
+}
+#[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh_2(self,verts:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <IMeshModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMeshModifier_unity2_raw::modify_mesh_2(__receiver, ::core::convert::Into::into(verts), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-imeshmodifier")]
-impl < __T : IIMeshModifier > IIMeshModifierMethods for __T { }
+#[cfg(feature="unity_engine-ui-imeshmodifier")]impl<__T:IIMeshModifier>IIMeshModifierMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-imeshmodifier")]
-impl IMeshModifier { pub fn modify_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMeshModifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn modify_mesh_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMeshModifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-ui-imeshmodifier")]impl IMeshModifier{pub fn modify_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn modify_mesh_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-ui-imeshmodifier")]
 #[doc(hidden)]

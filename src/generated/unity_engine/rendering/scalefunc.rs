@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/scalefunc/ScaleFunc.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "ScaleFunc")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ScaleFunc {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/scalefunc/ScaleFunc.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ScaleFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ScaleFunc{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-scalefunc-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-scalefunc")]
-pub trait IScaleFuncMethods : IScaleFunc { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ScaleFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScaleFunc , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e0bb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::unity_engine::vector2int::Vector2Int)` overload"] fn invoke (self , size : impl :: core :: convert :: Into < crate :: unity_engine :: vector2int :: Vector2Int >) -> crate :: unity_engine :: vector2int :: Vector2Int { unsafe { let __receiver = < ScaleFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScaleFunc , crate :: unity_engine :: vector2int :: Vector2Int , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2int :: Vector2Int = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e0bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-scalefunc")]pub trait IScaleFuncMethods:IScaleFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ScaleFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e0bb0usize)as*mut u8,();
+(ScaleFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::vector2int::Vector2Int)` overload"]fn invoke(self,size:impl::core::convert::Into<crate::unity_engine::vector2int::Vector2Int>)->crate::unity_engine::vector2int::Vector2Int{unsafe{let __receiver= <ScaleFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e0bd0usize)as*mut u8,crate::unity_engine::vector2int::Vector2Int;
+(ScaleFunc)__receiver,(crate::unity_engine::vector2int::Vector2Int)::core::convert::Into::into(size))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-scalefunc")]
-impl < __T : IScaleFunc > IScaleFuncMethods for __T { }
+#[cfg(feature="unity_engine-rendering-scalefunc")]impl<__T:IScaleFunc>IScaleFuncMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-scalefunc")]
-impl ScaleFunc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScaleFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScaleFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-scalefunc")]impl ScaleFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-rendering-scalefunc")]
-impl ScaleFunc {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScaleFunc) , :: core :: stringify ! (new) ,)) ; < Self as IScaleFuncMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-rendering-scalefunc")]impl ScaleFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScaleFunc), ::core::stringify!(new),));
+ <Self as IScaleFuncMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-scalefunc")]

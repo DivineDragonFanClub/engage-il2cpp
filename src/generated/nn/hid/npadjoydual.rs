@@ -4,23 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/npadjoydual/NpadJoyDual.md"))] # [:: unity2 :: class (namespace = "nn.hid" , name = "NpadJoyDual")] # [parent (crate :: system :: object :: Object)] pub struct NpadJoyDual {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/npadjoydual/NpadJoyDual.md"))]#[::unity2::class(namespace="nn.hid",name="NpadJoyDual")]#[parent(crate::system::object::Object)]pub struct NpadJoyDual{}
 
 }
 
 #[cfg(feature = "nn-hid-npadjoydual-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-npadjoydual")]
-impl NpadJoyDual { # [doc = "`GetState(*mutcrate::nn::hid::npadjoydualstate::NpadJoyDualState, crate::nn::hid::npadid::NpadId)` overload"] pub fn get_state (npad_id : impl :: core :: convert :: Into < crate :: nn :: hid :: npadid :: NpadId >) -> crate :: nn :: hid :: npadjoydualstate :: NpadJoyDualState { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: nn :: hid :: npadjoydualstate :: NpadJoyDualState > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: nn :: hid :: npadjoydualstate :: NpadJoyDualState , crate :: nn :: hid :: npadid :: NpadId , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1f310usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (npad_id) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`GetState(*mutcrate::nn::hid::npadstate::NpadState, crate::nn::hid::npadid::NpadId)` overload"] pub fn get_state_2 (npad_id : impl :: core :: convert :: Into < crate :: nn :: hid :: npadid :: NpadId >) -> crate :: nn :: hid :: npadstate :: NpadState { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: nn :: hid :: npadstate :: NpadState > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: nn :: hid :: npadstate :: NpadState , crate :: nn :: hid :: npadid :: NpadId , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1de10usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (npad_id) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`GetStates(::unity2::Array<crate::nn::hid::npadjoydualstate::NpadJoyDualState>, i32, crate::nn::hid::npadid::NpadId)` overload"] pub fn get_states (p_out_values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: nn :: hid :: npadjoydualstate :: NpadJoyDualState > > , count : impl :: core :: convert :: Into < i32 > , npad_id : impl :: core :: convert :: Into < crate :: nn :: hid :: npadid :: NpadId >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: nn :: hid :: npadjoydualstate :: NpadJoyDualState > , i32 , crate :: nn :: hid :: npadid :: NpadId , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1f320usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (p_out_values) , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (npad_id) , :: core :: option :: Option :: None) } } } # [doc = "`GetStates(::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>, i32, crate::nn::hid::npadid::NpadId)` overload"] pub fn get_states_2 (p_out_values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: nn :: hid :: npadstatearrayitem :: NpadStateArrayItem > > , count : impl :: core :: convert :: Into < i32 > , npad_id : impl :: core :: convert :: Into < crate :: nn :: hid :: npadid :: NpadId >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: nn :: hid :: npadstatearrayitem :: NpadStateArrayItem > , i32 , crate :: nn :: hid :: npadid :: NpadId , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f1e520usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (p_out_values) , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (npad_id) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-npadjoydual")]impl NpadJoyDual{#[doc="`GetState(*mutcrate::nn::hid::npadjoydualstate::NpadJoyDualState, crate::nn::hid::npadid::NpadId)` overload"]pub fn get_state(npad_id:impl::core::convert::Into<crate::nn::hid::npadid::NpadId>)->crate::nn::hid::npadjoydualstate::NpadJoyDualState{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::nn::hid::npadjoydualstate::NpadJoyDualState> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1f310usize)as*mut u8,();
+(*mut crate::nn::hid::npadjoydualstate::NpadJoyDualState)__out_0.as_mut_ptr(),(crate::nn::hid::npadid::NpadId)::core::convert::Into::into(npad_id));
+__out_0.assume_init()}
+}
+#[doc="`GetState(*mutcrate::nn::hid::npadstate::NpadState, crate::nn::hid::npadid::NpadId)` overload"]pub fn get_state_2(npad_id:impl::core::convert::Into<crate::nn::hid::npadid::NpadId>)->crate::nn::hid::npadstate::NpadState{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::nn::hid::npadstate::NpadState> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f1de10usize)as*mut u8,();
+(*mut crate::nn::hid::npadstate::NpadState)__out_0.as_mut_ptr(),(crate::nn::hid::npadid::NpadId)::core::convert::Into::into(npad_id));
+__out_0.assume_init()}
+}
+#[doc="`GetStates(::unity2::Array<crate::nn::hid::npadjoydualstate::NpadJoyDualState>, i32, crate::nn::hid::npadid::NpadId)` overload"]pub fn get_states(p_out_values:impl::core::convert::Into< ::unity2::Array<crate::nn::hid::npadjoydualstate::NpadJoyDualState> > ,count:impl::core::convert::Into<i32> ,npad_id:impl::core::convert::Into<crate::nn::hid::npadid::NpadId>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1f320usize)as*mut u8,i32;
+(::unity2::Array<crate::nn::hid::npadjoydualstate::NpadJoyDualState>)::core::convert::Into::into(p_out_values),(i32)::core::convert::Into::into(count),(crate::nn::hid::npadid::NpadId)::core::convert::Into::into(npad_id))}
+}
+#[doc="`GetStates(::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>, i32, crate::nn::hid::npadid::NpadId)` overload"]pub fn get_states_2(p_out_values:impl::core::convert::Into< ::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem> > ,count:impl::core::convert::Into<i32> ,npad_id:impl::core::convert::Into<crate::nn::hid::npadid::NpadId>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1e520usize)as*mut u8,i32;
+(::unity2::Array<crate::nn::hid::npadstatearrayitem::NpadStateArrayItem>)::core::convert::Into::into(p_out_values),(i32)::core::convert::Into::into(count),(crate::nn::hid::npadid::NpadId)::core::convert::Into::into(npad_id))}
+}
+}
 
-#[cfg(feature = "nn-hid-npadjoydual")]
-impl NpadJoyDual { pub fn get_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NpadJoyDual as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_state_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NpadJoyDual as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_states_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NpadJoyDual as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_states_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NpadJoyDual as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="nn-hid-npadjoydual")]impl NpadJoyDual{pub fn get_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_state_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_states_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_states_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "nn-hid-npadjoydual")]
 #[doc(hidden)]

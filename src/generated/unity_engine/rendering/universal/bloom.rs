@@ -4,46 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: volumecomponent :: { IVolumeComponent , VolumeComponent }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::volumecomponent::{IVolumeComponent,VolumeComponent}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/bloom/Bloom.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "Bloom")] # [parent (crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent)] pub struct Bloom {
-# [offset (56)] # [rename (name = "threshold")] pub threshold : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
-# [offset (64)] # [rename (name = "intensity")] pub intensity : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
-# [offset (72)] # [rename (name = "scatter")] pub scatter : crate :: unity_engine :: rendering :: clampedfloatparameter :: ClampedFloatParameter ,
-# [offset (80)] # [rename (name = "clamp")] pub clamp : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
-# [offset (88)] # [rename (name = "tint")] pub tint : crate :: unity_engine :: rendering :: colorparameter :: ColorParameter ,
-# [offset (96)] # [rename (name = "highQualityFiltering")] pub high_quality_filtering : crate :: unity_engine :: rendering :: boolparameter :: BoolParameter ,
-# [offset (104)] # [rename (name = "skipIterations")] pub skip_iterations : crate :: unity_engine :: rendering :: clampedintparameter :: ClampedIntParameter ,
-# [offset (112)] # [rename (name = "dirtTexture")] pub dirt_texture : crate :: unity_engine :: rendering :: textureparameter :: TextureParameter ,
-# [offset (120)] # [rename (name = "dirtIntensity")] pub dirt_intensity : crate :: unity_engine :: rendering :: minfloatparameter :: MinFloatParameter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/bloom/Bloom.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="Bloom")]#[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]pub struct Bloom{#[offset(56)]#[rename(name="threshold")]pub threshold:crate::unity_engine::rendering::minfloatparameter::MinFloatParameter, #[offset(64)]#[rename(name="intensity")]pub intensity:crate::unity_engine::rendering::minfloatparameter::MinFloatParameter, #[offset(72)]#[rename(name="scatter")]pub scatter:crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter, #[offset(80)]#[rename(name="clamp")]pub clamp:crate::unity_engine::rendering::minfloatparameter::MinFloatParameter, #[offset(88)]#[rename(name="tint")]pub tint:crate::unity_engine::rendering::colorparameter::ColorParameter, #[offset(96)]#[rename(name="highQualityFiltering")]pub high_quality_filtering:crate::unity_engine::rendering::boolparameter::BoolParameter, #[offset(104)]#[rename(name="skipIterations")]pub skip_iterations:crate::unity_engine::rendering::clampedintparameter::ClampedIntParameter, #[offset(112)]#[rename(name="dirtTexture")]pub dirt_texture:crate::unity_engine::rendering::textureparameter::TextureParameter, #[offset(120)]#[rename(name="dirtIntensity")]pub dirt_intensity:crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-bloom")]
-pub trait IBloomMethods : IBloom { # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < Bloom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Bloom , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsTileCompatible()` overload"] fn is_tile_compatible (self ,) -> bool { unsafe { let __receiver = < Bloom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Bloom , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Bloom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Bloom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-bloom")]pub trait IBloomMethods:IBloom{#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <Bloom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d370usize)as*mut u8,bool;
+(Bloom)__receiver)}
+}
+#[doc="`IsTileCompatible()` overload"]fn is_tile_compatible(self,)->bool{unsafe{let __receiver= <Bloom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d3a0usize)as*mut u8,bool;
+(Bloom)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Bloom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d3b0usize)as*mut u8,();
+(Bloom)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-bloom")]
-impl < __T : IBloom > IBloomMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-bloom")]impl<__T:IBloom>IBloomMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-bloom")]
-impl Bloom { pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bloom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_tile_compatible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bloom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bloom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-universal-bloom")]impl Bloom{pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_tile_compatible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-bloom")]
-impl Bloom {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Bloom) , :: core :: stringify ! (new) ,)) ; < Self as IBloomMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-bloom")]impl Bloom{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Bloom), ::core::stringify!(new),));
+ <Self as IBloomMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-bloom")]

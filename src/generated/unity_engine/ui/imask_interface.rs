@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imask_interface/IMask_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IMask")] pub struct IMask_Interface {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/imask_interface/IMask_Interface.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="IMask")]pub struct IMask_Interface{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-imask_interface-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-imask_interface")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMask_Interface_unity2_raw { use super :: * ; pub unsafe fn enabled (this : IMask_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Enabled") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Enabled" , < IMask_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMask_Interface , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_rect_transform (this : IMask_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_rectTransform") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_rectTransform" , < IMask_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMask_Interface , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-ui-imask_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMask_Interface_unity2_raw{use super:: * ;
+pub unsafe fn enabled(this:IMask_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Enabled").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Enabled", <IMask_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMask_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_rect_transform(this:IMask_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_rectTransform").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_rectTransform", <IMask_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMask_Interface, ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-ui-imask_interface")]
-pub trait IIMask_InterfaceMethods : IIMask_Interface { # [doc = "`Enabled()` overload"] fn enabled (self ,) -> bool { unsafe { let __receiver = < IMask_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMask_Interface_unity2_raw :: enabled (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < IMask_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMask_Interface_unity2_raw :: get_rect_transform (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-ui-imask_interface")]pub trait IIMask_InterfaceMethods:IIMask_Interface{#[doc="`Enabled()` overload"]fn enabled(self,)->bool{unsafe{let __receiver= <IMask_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMask_Interface_unity2_raw::enabled(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <IMask_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMask_Interface_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-imask_interface")]
-impl < __T : IIMask_Interface > IIMask_InterfaceMethods for __T { }
+#[cfg(feature="unity_engine-ui-imask_interface")]impl<__T:IIMask_Interface>IIMask_InterfaceMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-imask_interface")]
-impl IMask_Interface { pub fn enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMask_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMask_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-ui-imask_interface")]impl IMask_Interface{pub fn enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-ui-imask_interface")]
 #[doc(hidden)]

@@ -4,84 +4,93 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fieldgrid/FieldGrid_PlayFieldRect.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FieldGrid_PlayFieldRect {
-    pub play_field: crate :: unity_engine :: rect :: Rect,
-    pub cell_size: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fieldgrid/FieldGrid_PlayFieldRect.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FieldGrid_PlayFieldRect{pub play_field:crate::unity_engine::rect::Rect,pub cell_size:f32,}
+impl::unity2::ClassIdentity for FieldGrid_PlayFieldRect{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="FieldGrid.PlayFieldRect";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for FieldGrid_PlayFieldRect{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for FieldGrid_PlayFieldRect {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "FieldGrid.PlayFieldRect";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for FieldGrid_PlayFieldRect {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fieldgrid/FieldGrid.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FieldGrid")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FieldGrid {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fieldgrid/FieldGrid.md"))]#[::unity2::class(namespace="Combat",name="FieldGrid")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FieldGrid{}
 
 }
 
 #[cfg(feature = "combat-fieldgrid-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fieldgrid")]
-impl FieldGrid_PlayFieldRect { # [doc = "`.ctor(crate::unity_engine::rect::Rect, f32)` overload"] pub fn ctor (& mut self , rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , size : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FieldGrid_PlayFieldRect , crate :: unity_engine :: rect :: Rect , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f150usize) as * mut u8) ; __inner (self as * mut FieldGrid_PlayFieldRect , :: core :: convert :: Into :: into (rect) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fieldgrid")]impl FieldGrid_PlayFieldRect{#[doc="`.ctor(crate::unity_engine::rect::Rect, f32)` overload"]pub fn ctor(&mut self,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,size:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f150usize)as*mut u8,();
+(*mut FieldGrid_PlayFieldRect)self as*mut FieldGrid_PlayFieldRect,(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(f32)::core::convert::Into::into(size))}
+}
+}
 
-#[cfg(feature = "combat-fieldgrid")]
-impl FieldGrid_PlayFieldRect { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldGrid_PlayFieldRect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-fieldgrid")]impl FieldGrid_PlayFieldRect{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "combat-fieldgrid")]
-impl FieldGrid { # [doc = "`FindGrid()` overload"] pub fn find_grid () -> crate :: combat :: fieldgrid :: FieldGrid { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: fieldgrid :: FieldGrid = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d56fb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_HasGrid()` overload"] pub fn get_has_grid () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d57030usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ToggleGrid()` overload"] pub fn toggle_grid () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d570f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`MakeGrid()` overload"] pub fn make_grid () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d57210usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetPlayFieldRect()` overload"] pub fn get_play_field_rect () -> crate :: combat :: fieldgrid :: FieldGrid_PlayFieldRect { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: fieldgrid :: FieldGrid_PlayFieldRect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d57450usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`MakeGridMesh(crate::combat::fieldgrid::FieldGrid_PlayFieldRect)` overload"] pub fn make_grid_mesh (field : impl :: core :: convert :: Into < crate :: combat :: fieldgrid :: FieldGrid_PlayFieldRect >) -> crate :: unity_engine :: mesh :: Mesh { unsafe { { let __inner : extern "C" fn (crate :: combat :: fieldgrid :: FieldGrid_PlayFieldRect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d575d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (field) , :: core :: option :: Option :: None) } } } # [doc = "`AddCoordinate(crate::unity_engine::gameobject::GameObject, crate::combat::fieldgrid::FieldGrid_PlayFieldRect)` overload"] pub fn add_coordinate (parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , field : impl :: core :: convert :: Into < crate :: combat :: fieldgrid :: FieldGrid_PlayFieldRect >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: combat :: fieldgrid :: FieldGrid_PlayFieldRect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d57a90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (field) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fieldgrid")]impl FieldGrid{#[doc="`FindGrid()` overload"]pub fn find_grid()->crate::combat::fieldgrid::FieldGrid{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d56fb0usize)as*mut u8,crate::combat::fieldgrid::FieldGrid;
+)}
+}
+#[doc="`get_HasGrid()` overload"]pub fn get_has_grid()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d57030usize)as*mut u8,bool;
+)}
+}
+#[doc="`ToggleGrid()` overload"]pub fn toggle_grid()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d570f0usize)as*mut u8,();
+)}
+}
+#[doc="`MakeGrid()` overload"]pub fn make_grid()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d57210usize)as*mut u8,();
+)}
+}
+#[doc="`GetPlayFieldRect()` overload"]pub fn get_play_field_rect()->crate::combat::fieldgrid::FieldGrid_PlayFieldRect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d57450usize)as*mut u8,crate::combat::fieldgrid::FieldGrid_PlayFieldRect;
+)}
+}
+#[doc="`MakeGridMesh(crate::combat::fieldgrid::FieldGrid_PlayFieldRect)` overload"]pub fn make_grid_mesh(field:impl::core::convert::Into<crate::combat::fieldgrid::FieldGrid_PlayFieldRect>)->crate::unity_engine::mesh::Mesh{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d575d0usize)as*mut u8,crate::unity_engine::mesh::Mesh;
+(crate::combat::fieldgrid::FieldGrid_PlayFieldRect)::core::convert::Into::into(field))}
+}
+#[doc="`AddCoordinate(crate::unity_engine::gameobject::GameObject, crate::combat::fieldgrid::FieldGrid_PlayFieldRect)` overload"]pub fn add_coordinate(parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,field:impl::core::convert::Into<crate::combat::fieldgrid::FieldGrid_PlayFieldRect>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d57a90usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent),(crate::combat::fieldgrid::FieldGrid_PlayFieldRect)::core::convert::Into::into(field))}
+}
+}
 
-#[cfg(feature = "combat-fieldgrid")]
-pub trait IFieldGridMethods : IFieldGrid { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FieldGrid as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FieldGrid , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d58b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fieldgrid")]pub trait IFieldGridMethods:IFieldGrid{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FieldGrid as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d58b50usize)as*mut u8,();
+(FieldGrid)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-fieldgrid")]
-impl < __T : IFieldGrid > IFieldGridMethods for __T { }
+#[cfg(feature="combat-fieldgrid")]impl<__T:IFieldGrid>IFieldGridMethods for __T{}
 
-#[cfg(feature = "combat-fieldgrid")]
-impl FieldGrid { pub fn find_grid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldGrid as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_has_grid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldGrid as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn toggle_grid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldGrid as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn make_grid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldGrid as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_play_field_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldGrid as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn make_grid_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldGrid as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_coordinate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldGrid as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FieldGrid as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="combat-fieldgrid")]impl FieldGrid{pub fn find_grid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_has_grid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn toggle_grid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn make_grid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_play_field_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn make_grid_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_coordinate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "combat-fieldgrid")]
-impl FieldGrid {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FieldGrid) , :: core :: stringify ! (new) ,)) ; < Self as IFieldGridMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-fieldgrid")]impl FieldGrid{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FieldGrid), ::core::stringify!(new),));
+ <Self as IFieldGridMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-fieldgrid")]

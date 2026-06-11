@@ -4,42 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: commonreliancetalksequence :: { CommonRelianceTalkSequence , ICommonRelianceTalkSequence }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::commonreliancetalksequence::{CommonRelianceTalkSequence,ICommonRelianceTalkSequence}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencereliancetalk/SortieSequenceRelianceTalk.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceRelianceTalk")] # [parent (crate :: app :: commonreliancetalksequence :: CommonRelianceTalkSequence)] pub struct SortieSequenceRelianceTalk {
-# [offset (128)] # [rename (name = "m_UnitA")] pub m_unit_a : crate :: app :: unit :: Unit ,
-# [offset (136)] # [rename (name = "m_AsciiNameA")] pub m_ascii_name_a : :: unity2 :: Il2CppString ,
-# [offset (144)] # [rename (name = "m_UnitB")] pub m_unit_b : crate :: app :: unit :: Unit ,
-# [offset (152)] # [rename (name = "m_AsciiNameB")] pub m_ascii_name_b : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequencereliancetalk/SortieSequenceRelianceTalk.md"))]#[::unity2::class(namespace="App",name="SortieSequenceRelianceTalk")]#[parent(crate::app::commonreliancetalksequence::CommonRelianceTalkSequence)]pub struct SortieSequenceRelianceTalk{#[offset(128)]#[rename(name="m_UnitA")]pub m_unit_a:crate::app::unit::Unit, #[offset(136)]#[rename(name="m_AsciiNameA")]pub m_ascii_name_a: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_UnitB")]pub m_unit_b:crate::app::unit::Unit, #[offset(152)]#[rename(name="m_AsciiNameB")]pub m_ascii_name_b: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-sortiesequencereliancetalk-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortiesequencereliancetalk")]
-impl SortieSequenceRelianceTalk { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit_a : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_b : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff0590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit_a) , :: core :: convert :: Into :: into (unit_b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequencereliancetalk")]impl SortieSequenceRelianceTalk{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit_a:impl::core::convert::Into<crate::app::unit::Unit> ,unit_b:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0590usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit_a),(crate::app::unit::Unit)::core::convert::Into::into(unit_b))}
+}
+}
 
-#[cfg(feature = "app-sortiesequencereliancetalk")]
-pub trait ISortieSequenceRelianceTalkMethods : ISortieSequenceRelianceTalk { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn ctor (self , unit_a : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_b : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SortieSequenceRelianceTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceRelianceTalk , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff0910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_a) , :: core :: convert :: Into :: into (unit_b) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMessFileName(bool)` overload"] fn create_mess_file_name (self , is_reverse : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieSequenceRelianceTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceRelianceTalk , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff09a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_reverse) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMessFileName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn create_mess_file_name_2 (self , ascii_name_a : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , ascii_name_b : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieSequenceRelianceTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceRelianceTalk , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff0a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ascii_name_a) , :: core :: convert :: Into :: into (ascii_name_b) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMid()` overload"] fn create_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieSequenceRelianceTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceRelianceTalk , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff0b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRelianceLevelText(crate::app::reliancedata::RelianceData_Level)` overload"] fn get_reliance_level_text (self , reliance_level : impl :: core :: convert :: Into < crate :: app :: reliancedata :: RelianceData_Level >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SortieSequenceRelianceTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceRelianceTalk , crate :: app :: reliancedata :: RelianceData_Level , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff0c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (reliance_level) , :: core :: option :: Option :: None) } } } # [doc = "`LevelUp()` overload"] fn level_up (self ,) -> () { unsafe { let __receiver = < SortieSequenceRelianceTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceRelianceTalk , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff0cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequencereliancetalk")]pub trait ISortieSequenceRelianceTalkMethods:ISortieSequenceRelianceTalk{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn ctor(self,unit_a:impl::core::convert::Into<crate::app::unit::Unit> ,unit_b:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0910usize)as*mut u8,();
+(SortieSequenceRelianceTalk)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_a),(crate::app::unit::Unit)::core::convert::Into::into(unit_b))}
+}
+#[doc="`CreateMessFileName(bool)` overload"]fn create_mess_file_name(self,is_reverse:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff09a0usize)as*mut u8, ::unity2::Il2CppString;
+(SortieSequenceRelianceTalk)__receiver,(bool)::core::convert::Into::into(is_reverse))}
+}
+#[doc="`CreateMessFileName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn create_mess_file_name_2(self,ascii_name_a:impl::core::convert::Into< ::unity2::Il2CppString> ,ascii_name_b:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0a80usize)as*mut u8, ::unity2::Il2CppString;
+(SortieSequenceRelianceTalk)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(ascii_name_a),(::unity2::Il2CppString)::core::convert::Into::into(ascii_name_b))}
+}
+#[doc="`CreateMid()` overload"]fn create_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0b00usize)as*mut u8, ::unity2::Il2CppString;
+(SortieSequenceRelianceTalk)__receiver)}
+}
+#[doc="`GetRelianceLevelText(crate::app::reliancedata::RelianceData_Level)` overload"]fn get_reliance_level_text(self,reliance_level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level>)-> ::unity2::Il2CppString{unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0c10usize)as*mut u8, ::unity2::Il2CppString;
+(SortieSequenceRelianceTalk)__receiver,(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(reliance_level))}
+}
+#[doc="`LevelUp()` overload"]fn level_up(self,)->(){unsafe{let __receiver= <SortieSequenceRelianceTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0cb0usize)as*mut u8,();
+(SortieSequenceRelianceTalk)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortiesequencereliancetalk")]
-impl < __T : ISortieSequenceRelianceTalk > ISortieSequenceRelianceTalkMethods for __T { }
+#[cfg(feature="app-sortiesequencereliancetalk")]impl<__T:ISortieSequenceRelianceTalk>ISortieSequenceRelianceTalkMethods for __T{}
 
-#[cfg(feature = "app-sortiesequencereliancetalk")]
-impl SortieSequenceRelianceTalk { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceRelianceTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceRelianceTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_mess_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceRelianceTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_mess_file_name_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceRelianceTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceRelianceTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_reliance_level_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceRelianceTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceRelianceTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-sortiesequencereliancetalk")]impl SortieSequenceRelianceTalk{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_mess_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_mess_file_name_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_reliance_level_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-sortiesequencereliancetalk")]
-impl SortieSequenceRelianceTalk {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"] pub fn new (unit_a : crate :: app :: unit :: Unit , unit_b : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSequenceRelianceTalk) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSequenceRelianceTalkMethods > :: ctor (this , unit_a , unit_b) ; this }
+#[cfg(feature="app-sortiesequencereliancetalk")]impl SortieSequenceRelianceTalk{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]pub fn new(unit_a:crate::app::unit::Unit,unit_b:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieSequenceRelianceTalk), ::core::stringify!(new),));
+ <Self as ISortieSequenceRelianceTalkMethods> ::ctor(this,unit_a,unit_b);
+this}
 }
 
 #[cfg(feature = "app-sortiesequencereliancetalk")]

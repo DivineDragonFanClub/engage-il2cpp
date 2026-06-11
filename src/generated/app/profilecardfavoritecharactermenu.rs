@@ -4,77 +4,136 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoritecharactermenu/ProfileCardFavoriteCharacterMenu_DisposeEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardFavoriteCharacterMenu.DisposeEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProfileCardFavoriteCharacterMenu_DisposeEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardfavoritecharactermenu/ProfileCardFavoriteCharacterMenu.md"))]#[::unity2::class(namespace="App",name="ProfileCardFavoriteCharacterMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ProfileCardFavoriteCharacterMenu{#[static_field]#[rename(name="m_MenuItemIndexNone")]pub m_menu_item_index_none:i32, #[static_field]#[rename(name="m_MenuItemIndexEmpty")]pub m_menu_item_index_empty:i32, #[offset(200)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler, #[offset(208)]#[rename(name="m_ProfileCardRoot")]pub m_profile_card_root:crate::app::profilecardroot::ProfileCardRoot, #[offset(216)]#[rename(name="m_MyProfileCardTemp")]pub m_my_profile_card_temp:crate::app::profilecard::ProfileCard, #[offset(224)]#[rename(name="m_DecidedMenuItemIndex")]pub m_decided_menu_item_index:i32, #[offset(228)]#[rename(name="m_Sorted")]pub m_sorted:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoritecharactermenu/ProfileCardFavoriteCharacterMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardFavoriteCharacterMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct ProfileCardFavoriteCharacterMenu {
-# [static_field] # [rename (name = "m_MenuItemIndexNone")] pub m_menu_item_index_none : i32 ,
-# [static_field] # [rename (name = "m_MenuItemIndexEmpty")] pub m_menu_item_index_empty : i32 ,
-# [offset (200)] # [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: profilecardfavoritecharactermenu :: ProfileCardFavoriteCharacterMenu_DisposeEventHandler ,
-# [offset (208)] # [rename (name = "m_ProfileCardRoot")] pub m_profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
-# [offset (216)] # [rename (name = "m_MyProfileCardTemp")] pub m_my_profile_card_temp : crate :: app :: profilecard :: ProfileCard ,
-# [offset (224)] # [rename (name = "m_DecidedMenuItemIndex")] pub m_decided_menu_item_index : i32 ,
-# [offset (228)] # [rename (name = "m_Sorted")] pub m_sorted : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardfavoritecharactermenu/ProfileCardFavoriteCharacterMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardFavoriteCharacterMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardFavoriteCharacterMenu_DisposeEventHandler{}
 
 }
 
 #[cfg(feature = "app-profilecardfavoritecharactermenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardfavoritecharactermenu")]
-pub trait IProfileCardFavoriteCharacterMenu_DisposeEventHandlerMethods : IProfileCardFavoriteCharacterMenu_DisposeEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu_DisposeEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22690c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22690e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-profilecardfavoritecharactermenu")]
-impl < __T : IProfileCardFavoriteCharacterMenu_DisposeEventHandler > IProfileCardFavoriteCharacterMenu_DisposeEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-profilecardfavoritecharactermenu")]
-impl ProfileCardFavoriteCharacterMenu_DisposeEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-profilecardfavoritecharactermenu")]
-impl ProfileCardFavoriteCharacterMenu_DisposeEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardFavoriteCharacterMenu_DisposeEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardFavoriteCharacterMenu_DisposeEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-profilecardfavoritecharactermenu")]impl ProfileCardFavoriteCharacterMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent> ,profile_card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler>)->crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23138e0usize)as*mut u8,crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent)::core::convert::Into::into(menu_content),(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(profile_card_root),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
+}
+#[doc="`CreateMenuItem(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData, bool, *muti32)` overload"]pub fn create_menu_item(initial_character:impl::core::convert::Into<crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData> ,sorting:impl::core::convert::Into<bool>)->(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2313a20usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData)::core::convert::Into::into(initial_character),(bool)::core::convert::Into::into(sorting),(*mut i32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2314af0usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-profilecardfavoritecharactermenu")]
-impl ProfileCardFavoriteCharacterMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_content : impl :: core :: convert :: Into < crate :: app :: profilecardtextlistmenucontent :: ProfileCardTextListMenuContent > , profile_card_root : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot > , my_profile_card_temp : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardfavoritecharactermenu :: ProfileCardFavoriteCharacterMenu_DisposeEventHandler >) -> crate :: app :: profilecardfavoritecharactermenu :: ProfileCardFavoriteCharacterMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilecardtextlistmenucontent :: ProfileCardTextListMenuContent , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , crate :: app :: profilecardfavoritecharactermenu :: ProfileCardFavoriteCharacterMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardfavoritecharactermenu :: ProfileCardFavoriteCharacterMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23138e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (profile_card_root) , :: core :: convert :: Into :: into (my_profile_card_temp) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenuItem(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData, bool, *muti32)` overload"] pub fn create_menu_item (initial_character : impl :: core :: convert :: Into < crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData > , sorting : impl :: core :: convert :: Into < bool >) -> (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData , bool , * mut i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2313a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (initial_character) , :: core :: convert :: Into :: into (sorting) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2314af0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardfavoritecharactermenu")]pub trait IProfileCardFavoriteCharacterMenuMethods:IProfileCardFavoriteCharacterMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,profile_card_root:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot> ,my_profile_card_temp:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,initial_decided_index:impl::core::convert::Into<i32> ,dispose_event_handler:impl::core::convert::Into<crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler>)->(){unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2313ed0usize)as*mut u8,();
+(ProfileCardFavoriteCharacterMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::profilecardroot::ProfileCardRoot)::core::convert::Into::into(profile_card_root),(crate::app::profilecard::ProfileCard)::core::convert::Into::into(my_profile_card_temp),(i32)::core::convert::Into::into(initial_decided_index),(crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
+}
+#[doc="`OnBuild(bool)` overload"]fn on_build(self,is_first_build:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23140c0usize)as*mut u8,();
+(ProfileCardFavoriteCharacterMenu)__receiver,(bool)::core::convert::Into::into(is_first_build))}
+}
+#[doc="`RebuildMenu()` overload"]fn rebuild_menu(self,)->(){unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2314170usize)as*mut u8,();
+(ProfileCardFavoriteCharacterMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23142f0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardFavoriteCharacterMenu)__receiver)}
+}
+#[doc="`UpdateCardRoot(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData)` overload"]fn update_card_root(self,character_data:impl::core::convert::Into<crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData>)->(){unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2314340usize)as*mut u8,();
+(ProfileCardFavoriteCharacterMenu)__receiver,(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData)::core::convert::Into::into(character_data))}
+}
+#[doc="`UpdateDecided(i32)` overload"]fn update_decided(self,menu_item_index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2314490usize)as*mut u8,bool;
+(ProfileCardFavoriteCharacterMenu)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2314800usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardFavoriteCharacterMenu)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2314810usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardFavoriteCharacterMenu)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2314a10usize)as*mut u8,();
+(ProfileCardFavoriteCharacterMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardfavoritecharactermenu")]
-pub trait IProfileCardFavoriteCharacterMenuMethods : IProfileCardFavoriteCharacterMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent > , profile_card_root : impl :: core :: convert :: Into < crate :: app :: profilecardroot :: ProfileCardRoot > , my_profile_card_temp : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard > , initial_decided_index : impl :: core :: convert :: Into < i32 > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardfavoritecharactermenu :: ProfileCardFavoriteCharacterMenu_DisposeEventHandler >) -> () { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , crate :: app :: profilecardroot :: ProfileCardRoot , crate :: app :: profilecard :: ProfileCard , i32 , crate :: app :: profilecardfavoritecharactermenu :: ProfileCardFavoriteCharacterMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2313ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (profile_card_root) , :: core :: convert :: Into :: into (my_profile_card_temp) , :: core :: convert :: Into :: into (initial_decided_index) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild(bool)` overload"] fn on_build (self , is_first_build : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23140c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_first_build) , :: core :: option :: Option :: None) } } } # [doc = "`RebuildMenu()` overload"] fn rebuild_menu (self ,) -> () { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2314170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23142f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCardRoot(crate::app::profilecardfavoritecharacterdata::ProfileCardFavoriteCharacterData)` overload"] fn update_card_root (self , character_data : impl :: core :: convert :: Into < crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData >) -> () { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu , crate :: app :: profilecardfavoritecharacterdata :: ProfileCardFavoriteCharacterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2314340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character_data) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDecided(i32)` overload"] fn update_decided (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2314490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2314800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2314810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < ProfileCardFavoriteCharacterMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteCharacterMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2314a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardfavoritecharactermenu")]impl<__T:IProfileCardFavoriteCharacterMenu>IProfileCardFavoriteCharacterMenuMethods for __T{}
 
-#[cfg(feature = "app-profilecardfavoritecharactermenu")]
-impl < __T : IProfileCardFavoriteCharacterMenu > IProfileCardFavoriteCharacterMenuMethods for __T { }
+#[cfg(feature="app-profilecardfavoritecharactermenu")]impl ProfileCardFavoriteCharacterMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_card_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_decided_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-profilecardfavoritecharactermenu")]
-impl ProfileCardFavoriteCharacterMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn rebuild_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_card_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_decided_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteCharacterMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-profilecardfavoritecharactermenu")]impl ProfileCardFavoriteCharacterMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,profile_card_root:crate::app::profilecardroot::ProfileCardRoot,my_profile_card_temp:crate::app::profilecard::ProfileCard,initial_decided_index:i32,dispose_event_handler:crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardFavoriteCharacterMenu), ::core::stringify!(new),));
+ <Self as IProfileCardFavoriteCharacterMenuMethods> ::ctor(this,menu_item_list,menu_content,profile_card_root,my_profile_card_temp,initial_decided_index,dispose_event_handler);
+this}
+}
 
-#[cfg(feature = "app-profilecardfavoritecharactermenu")]
-impl ProfileCardFavoriteCharacterMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::profilecardroot::ProfileCardRoot, crate::app::profilecard::ProfileCard, i32, crate::app::profilecardfavoritecharactermenu::ProfileCardFavoriteCharacterMenu_DisposeEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent , profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot , my_profile_card_temp : crate :: app :: profilecard :: ProfileCard , initial_decided_index : i32 , dispose_event_handler : crate :: app :: profilecardfavoritecharactermenu :: ProfileCardFavoriteCharacterMenu_DisposeEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardFavoriteCharacterMenu) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardFavoriteCharacterMenuMethods > :: ctor (this , menu_item_list , menu_content , profile_card_root , my_profile_card_temp , initial_decided_index , dispose_event_handler) ; this }
+#[cfg(feature="app-profilecardfavoritecharactermenu")]pub trait IProfileCardFavoriteCharacterMenu_DisposeEventHandlerMethods:IProfileCardFavoriteCharacterMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22690c0usize)as*mut u8,();
+(ProfileCardFavoriteCharacterMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardFavoriteCharacterMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22690e0usize)as*mut u8,();
+(ProfileCardFavoriteCharacterMenu_DisposeEventHandler)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardfavoritecharactermenu")]impl<__T:IProfileCardFavoriteCharacterMenu_DisposeEventHandler>IProfileCardFavoriteCharacterMenu_DisposeEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardfavoritecharactermenu")]impl ProfileCardFavoriteCharacterMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardfavoritecharactermenu")]impl ProfileCardFavoriteCharacterMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardFavoriteCharacterMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardFavoriteCharacterMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-profilecardfavoritecharactermenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardFavoriteCharacterMenu_DisposeEventHandler;
-    pub use super::IProfileCardFavoriteCharacterMenu_DisposeEventHandler;
-    pub use super::IProfileCardFavoriteCharacterMenu_DisposeEventHandlerMethods;
     pub use super::ProfileCardFavoriteCharacterMenu;
     pub use super::IProfileCardFavoriteCharacterMenu;
     pub use super::IProfileCardFavoriteCharacterMenuMethods;
+    pub use super::ProfileCardFavoriteCharacterMenu_DisposeEventHandler;
+    pub use super::IProfileCardFavoriteCharacterMenu_DisposeEventHandler;
+    pub use super::IProfileCardFavoriteCharacterMenu_DisposeEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

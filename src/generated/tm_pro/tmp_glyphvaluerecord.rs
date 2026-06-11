@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_glyphvaluerecord/TMP_GlyphValueRecord.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_GlyphValueRecord {
-    pub m_x_placement: f32,
-    pub m_y_placement: f32,
-    pub m_x_advance: f32,
-    pub m_y_advance: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_glyphvaluerecord/TMP_GlyphValueRecord.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_GlyphValueRecord{pub m_x_placement:f32,pub m_y_placement:f32,pub m_x_advance:f32,pub m_y_advance:f32,}
+impl::unity2::ClassIdentity for TMP_GlyphValueRecord{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_GlyphValueRecord";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TMP_GlyphValueRecord {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_GlyphValueRecord";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TMP_GlyphValueRecord {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TMP_GlyphValueRecord{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,14 +26,59 @@ impl ::unity2::IlType for TMP_GlyphValueRecord {
 #[cfg(feature = "tm_pro-tmp_glyphvaluerecord-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_glyphvaluerecord")]
-impl TMP_GlyphValueRecord { # [doc = "`op_Addition(crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord, crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)` overload"] pub fn op_addition (a : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord > , b : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord >) -> crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord , crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_glyphvaluerecord :: TMP_GlyphValueRecord = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a30b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_glyphvaluerecord")]impl TMP_GlyphValueRecord{#[doc="`op_Addition(crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord, crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)` overload"]pub fn op_addition(a:impl::core::convert::Into<crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord> ,b:impl::core::convert::Into<crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord>)->crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a30b0usize)as*mut u8,crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord;
+(crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)::core::convert::Into::into(a),(crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_glyphvaluerecord")]
-impl TMP_GlyphValueRecord { # [doc = "`get_xPlacement()` overload"] pub fn get_x_placement (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2ff0usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: option :: Option :: None) } } } # [doc = "`set_xPlacement(f32)` overload"] pub fn set_x_placement (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a3000usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_yPlacement()` overload"] pub fn get_y_placement (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a3010usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: option :: Option :: None) } } } # [doc = "`set_yPlacement(f32)` overload"] pub fn set_y_placement (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a3020usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_xAdvance()` overload"] pub fn get_x_advance (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a3030usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: option :: Option :: None) } } } # [doc = "`set_xAdvance(f32)` overload"] pub fn set_x_advance (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a3040usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_yAdvance()` overload"] pub fn get_y_advance (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a3050usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: option :: Option :: None) } } } # [doc = "`set_yAdvance(f32)` overload"] pub fn set_y_advance (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a3060usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32, f32, f32, f32)` overload"] pub fn ctor (& mut self , x_placement : impl :: core :: convert :: Into < f32 > , y_placement : impl :: core :: convert :: Into < f32 > , x_advance : impl :: core :: convert :: Into < f32 > , y_advance : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a3070usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: convert :: Into :: into (x_placement) , :: core :: convert :: Into :: into (y_placement) , :: core :: convert :: Into :: into (x_advance) , :: core :: convert :: Into :: into (y_advance) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"] pub fn ctor_2 (& mut self , value_record : impl :: core :: convert :: Into < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a3090usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: convert :: Into :: into (value_record) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)` overload"] pub fn ctor_3 (& mut self , value_record : impl :: core :: convert :: Into < crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord >) -> () { unsafe { { let __inner : extern "C" fn (* mut TMP_GlyphValueRecord , crate :: unity_engine :: text_core :: low_level :: glyphvaluerecord :: GlyphValueRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a2d00usize) as * mut u8) ; __inner (self as * mut TMP_GlyphValueRecord , :: core :: convert :: Into :: into (value_record) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_glyphvaluerecord")]impl TMP_GlyphValueRecord{#[doc="`get_xPlacement()` overload"]pub fn get_x_placement(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2ff0usize)as*mut u8,f32;
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord)}
+}
+#[doc="`set_xPlacement(f32)` overload"]pub fn set_x_placement(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a3000usize)as*mut u8,();
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_yPlacement()` overload"]pub fn get_y_placement(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a3010usize)as*mut u8,f32;
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord)}
+}
+#[doc="`set_yPlacement(f32)` overload"]pub fn set_y_placement(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a3020usize)as*mut u8,();
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_xAdvance()` overload"]pub fn get_x_advance(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a3030usize)as*mut u8,f32;
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord)}
+}
+#[doc="`set_xAdvance(f32)` overload"]pub fn set_x_advance(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a3040usize)as*mut u8,();
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_yAdvance()` overload"]pub fn get_y_advance(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a3050usize)as*mut u8,f32;
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord)}
+}
+#[doc="`set_yAdvance(f32)` overload"]pub fn set_y_advance(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a3060usize)as*mut u8,();
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(f32, f32, f32, f32)` overload"]pub fn ctor(&mut self,x_placement:impl::core::convert::Into<f32> ,y_placement:impl::core::convert::Into<f32> ,x_advance:impl::core::convert::Into<f32> ,y_advance:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a3070usize)as*mut u8,();
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord,(f32)::core::convert::Into::into(x_placement),(f32)::core::convert::Into::into(y_placement),(f32)::core::convert::Into::into(x_advance),(f32)::core::convert::Into::into(y_advance))}
+}
+#[doc="`.ctor(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]pub fn ctor_2(&mut self,value_record:impl::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a3090usize)as*mut u8,();
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord,(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)::core::convert::Into::into(value_record))}
+}
+#[doc="`.ctor(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)` overload"]pub fn ctor_3(&mut self,value_record:impl::core::convert::Into<crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2d00usize)as*mut u8,();
+(*mut TMP_GlyphValueRecord)self as*mut TMP_GlyphValueRecord,(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)::core::convert::Into::into(value_record))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_glyphvaluerecord")]
-impl TMP_GlyphValueRecord { pub fn get_x_placement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_x_placement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_y_placement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_y_placement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_x_advance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_x_advance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_y_advance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_y_advance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_addition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_GlyphValueRecord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="tm_pro-tmp_glyphvaluerecord")]impl TMP_GlyphValueRecord{pub fn get_x_placement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_x_placement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_y_placement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_y_placement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_x_advance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_x_advance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_y_advance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_y_advance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_addition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
 #[cfg(feature = "tm_pro-tmp_glyphvaluerecord")]
 #[doc(hidden)]

@@ -4,23 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playerprefs/PlayerPrefs.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "PlayerPrefs")] # [parent (crate :: system :: object :: Object)] pub struct PlayerPrefs {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playerprefs/PlayerPrefs.md"))]#[::unity2::class(namespace="UnityEngine",name="PlayerPrefs")]#[parent(crate::system::object::Object)]pub struct PlayerPrefs{}
 
 }
 
 #[cfg(feature = "unity_engine-playerprefs-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-playerprefs")]
-impl PlayerPrefs { # [doc = "`GetInt(::unity2::Il2CppString, i32)` overload"] pub fn get_int (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , default_value : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8910usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (default_value) , :: core :: option :: Option :: None) } } } # [doc = "`GetInt(::unity2::Il2CppString)` overload"] pub fn get_int_2 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`GetString(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_string (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , default_value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f89b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (default_value) , :: core :: option :: Option :: None) } } } # [doc = "`GetString(::unity2::Il2CppString)` overload"] pub fn get_string_2 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playerprefs")]impl PlayerPrefs{#[doc="`GetInt(::unity2::Il2CppString, i32)` overload"]pub fn get_int(key:impl::core::convert::Into< ::unity2::Il2CppString> ,default_value:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8910usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(key),(i32)::core::convert::Into::into(default_value))}
+}
+#[doc="`GetInt(::unity2::Il2CppString)` overload"]pub fn get_int_2(key:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8960usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(key))}
+}
+#[doc="`GetString(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn get_string(key:impl::core::convert::Into< ::unity2::Il2CppString> ,default_value:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f89b0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(key),(::unity2::Il2CppString)::core::convert::Into::into(default_value))}
+}
+#[doc="`GetString(::unity2::Il2CppString)` overload"]pub fn get_string_2(key:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8a00usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(key))}
+}
+}
 
-#[cfg(feature = "unity_engine-playerprefs")]
-impl PlayerPrefs { pub fn get_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerPrefs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_int_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerPrefs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerPrefs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_string_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerPrefs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-playerprefs")]impl PlayerPrefs{pub fn get_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_int_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_string_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-playerprefs")]
 #[doc(hidden)]

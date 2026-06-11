@@ -4,41 +4,171 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscleassistdata/MuscleAssistData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleAssistData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: muscleassistdata :: MuscleAssistData >)] pub struct MuscleAssistData {
-# [offset (88)] # [rename (name = "Param")] pub param : :: unity2 :: Array < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/muscleassistdata/MuscleAssistData.md"))]#[::unity2::class(namespace="App",name="MuscleAssistData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::muscleassistdata::MuscleAssistData>)]pub struct MuscleAssistData{#[offset(88)]#[rename(name="Param")]pub param: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "app-muscleassistdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-muscleassistdata")]
-impl MuscleAssistData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783340usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-muscleassistdata")]impl MuscleAssistData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2783340usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-muscleassistdata")]
-pub trait IMuscleAssistDataMethods : IMuscleAssistData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_00()` overload"] fn get_level_00 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_00(i32)` overload"] fn set_level_00 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_01()` overload"] fn get_level_01 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_01(i32)` overload"] fn set_level_01 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_02()` overload"] fn get_level_02 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_02(i32)` overload"] fn set_level_02 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_03()` overload"] fn get_level_03 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_03(i32)` overload"] fn set_level_03 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27831a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_04()` overload"] fn get_level_04 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27831b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_04(i32)` overload"] fn set_level_04 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27831c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_05()` overload"] fn get_level_05 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27831d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_05(i32)` overload"] fn set_level_05 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27831e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_06()` overload"] fn get_level_06 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27831f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_06(i32)` overload"] fn set_level_06 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_07()` overload"] fn get_level_07 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_07(i32)` overload"] fn set_level_07 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_08()` overload"] fn get_level_08 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_08(i32)` overload"] fn set_level_08 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_09()` overload"] fn get_level_09 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_09(i32)` overload"] fn set_level_09 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_10()` overload"] fn get_level_10 (self ,) -> i32 { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_10(i32)` overload"] fn set_level_10 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2783290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MuscleAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleAssistData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27833f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-muscleassistdata")]pub trait IMuscleAssistDataMethods:IMuscleAssistData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783110usize)as*mut u8, ::unity2::Il2CppString;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783120usize)as*mut u8,();
+(MuscleAssistData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_00()` overload"]fn get_level_00(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783130usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_00(i32)` overload"]fn set_level_00(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783140usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_01()` overload"]fn get_level_01(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783150usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_01(i32)` overload"]fn set_level_01(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783160usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_02()` overload"]fn get_level_02(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783170usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_02(i32)` overload"]fn set_level_02(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783180usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_03()` overload"]fn get_level_03(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783190usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_03(i32)` overload"]fn set_level_03(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27831a0usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_04()` overload"]fn get_level_04(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27831b0usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_04(i32)` overload"]fn set_level_04(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27831c0usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_05()` overload"]fn get_level_05(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27831d0usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_05(i32)` overload"]fn set_level_05(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27831e0usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_06()` overload"]fn get_level_06(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27831f0usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_06(i32)` overload"]fn set_level_06(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783200usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_07()` overload"]fn get_level_07(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783210usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_07(i32)` overload"]fn set_level_07(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783220usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_08()` overload"]fn get_level_08(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783230usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_08(i32)` overload"]fn set_level_08(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783240usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_09()` overload"]fn get_level_09(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783250usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_09(i32)` overload"]fn set_level_09(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783260usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_10()` overload"]fn get_level_10(self,)->i32{unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783270usize)as*mut u8,i32;
+(MuscleAssistData)__receiver)}
+}
+#[doc="`set_Level_10(i32)` overload"]fn set_level_10(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783280usize)as*mut u8,();
+(MuscleAssistData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2783290usize)as*mut u8,();
+(MuscleAssistData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MuscleAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27833f0usize)as*mut u8,();
+(MuscleAssistData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-muscleassistdata")]
-impl < __T : IMuscleAssistData > IMuscleAssistDataMethods for __T { }
+#[cfg(feature="app-muscleassistdata")]impl<__T:IMuscleAssistData>IMuscleAssistDataMethods for __T{}
 
-#[cfg(feature = "app-muscleassistdata")]
-impl MuscleAssistData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_level_00_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_level_00_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_level_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_level_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_level_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_level_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_level_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_level_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_level_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_level_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_level_05_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_level_05_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_level_06_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_level_06_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_level_07_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_level_07_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_level_08_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_level_08_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_level_09_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_level_09_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_level_10_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_level_10_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } }
+#[cfg(feature="app-muscleassistdata")]impl MuscleAssistData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_level_00_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_level_00_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_level_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_level_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_level_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_level_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_level_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_level_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_level_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_level_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_level_05_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_level_05_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_level_06_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_level_06_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_level_07_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_level_07_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_level_08_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_level_08_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_level_09_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_level_09_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_level_10_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_level_10_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+}
 
-#[cfg(feature = "app-muscleassistdata")]
-impl MuscleAssistData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MuscleAssistData) , :: core :: stringify ! (new) ,)) ; < Self as IMuscleAssistDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-muscleassistdata")]impl MuscleAssistData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MuscleAssistData), ::core::stringify!(new),));
+ <Self as IMuscleAssistDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-muscleassistdata")]

@@ -4,36 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxspawnerstate/VFXSpawnerState.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VFXSpawnerState")] # [parent (crate :: system :: object :: Object)] pub struct VFXSpawnerState {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_Owner")] pub m_owner : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vfx/vfxspawnerstate/VFXSpawnerState.md"))]#[::unity2::class(namespace="UnityEngine.VFX",name="VFXSpawnerState")]#[parent(crate::system::object::Object)]pub struct VFXSpawnerState{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_Owner")]pub m_owner:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnerstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
-impl VFXSpawnerState { # [doc = "`CreateSpawnerStateWrapper()` overload"] pub fn create_spawner_state_wrapper () -> crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxspawnerstate :: VFXSpawnerState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f448f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Internal_Destroy(::unity2::IntPtr)` overload"] pub fn internal_destroy (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44a60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-vfxspawnerstate")]impl VFXSpawnerState{#[doc="`CreateSpawnerStateWrapper()` overload"]pub fn create_spawner_state_wrapper()->crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f448f0usize)as*mut u8,crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState;
+)}
+}
+#[doc="`Internal_Destroy(::unity2::IntPtr)` overload"]pub fn internal_destroy(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f44a60usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
-pub trait IVFXSpawnerStateMethods : IVFXSpawnerState { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , owner : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXSpawnerState , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f448b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ptr) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } } # [doc = "`SetWrapValue(::unity2::IntPtr)` overload"] fn set_wrap_value (self , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXSpawnerState , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXSpawnerState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f449d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXSpawnerState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < VFXSpawnerState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VFXSpawnerState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-vfxspawnerstate")]pub trait IVFXSpawnerStateMethods:IVFXSpawnerState{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,ptr:impl::core::convert::Into< ::unity2::IntPtr> ,owner:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <VFXSpawnerState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f448b0usize)as*mut u8,();
+(VFXSpawnerState)__receiver,(::unity2::IntPtr)::core::convert::Into::into(ptr),(bool)::core::convert::Into::into(owner))}
+}
+#[doc="`SetWrapValue(::unity2::IntPtr)` overload"]fn set_wrap_value(self,ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VFXSpawnerState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44960usize)as*mut u8,();
+(VFXSpawnerState)__receiver,(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <VFXSpawnerState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f449d0usize)as*mut u8,();
+(VFXSpawnerState)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <VFXSpawnerState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44ab0usize)as*mut u8,();
+(VFXSpawnerState)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <VFXSpawnerState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44b90usize)as*mut u8,();
+(VFXSpawnerState)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
-impl < __T : IVFXSpawnerState > IVFXSpawnerStateMethods for __T { }
+#[cfg(feature="unity_engine-vfx-vfxspawnerstate")]impl<__T:IVFXSpawnerState>IVFXSpawnerStateMethods for __T{}
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
-impl VFXSpawnerState { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_spawner_state_wrapper_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_wrap_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn internal_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VFXSpawnerState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-vfx-vfxspawnerstate")]impl VFXSpawnerState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_spawner_state_wrapper_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_wrap_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn internal_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]
-impl VFXSpawnerState {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (ptr : :: unity2 :: IntPtr , owner : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VFXSpawnerState) , :: core :: stringify ! (new) ,)) ; < Self as IVFXSpawnerStateMethods > :: ctor (this , ptr , owner) ; this }
+#[cfg(feature="unity_engine-vfx-vfxspawnerstate")]impl VFXSpawnerState{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(ptr: ::unity2::IntPtr,owner:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VFXSpawnerState), ::core::stringify!(new),));
+ <Self as IVFXSpawnerStateMethods> ::ctor(this,ptr,owner);
+this}
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxspawnerstate")]

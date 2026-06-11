@@ -4,42 +4,141 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetpatterndata/DragonRideTargetPatternData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTargetPatternData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: dragonridetargetpatterndata :: DragonRideTargetPatternData >)] pub struct DragonRideTargetPatternData {
-# [static_field] # [rename (name = "cPatternWidthMax")] pub c_pattern_width_max : i32 ,
-# [static_field] # [rename (name = "cPatternHeightMax")] pub c_pattern_height_max : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridetargetpatterndata/DragonRideTargetPatternData.md"))]#[::unity2::class(namespace="App",name="DragonRideTargetPatternData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::dragonridetargetpatterndata::DragonRideTargetPatternData>)]pub struct DragonRideTargetPatternData{#[static_field]#[rename(name="cPatternWidthMax")]pub c_pattern_width_max:i32, #[static_field]#[rename(name="cPatternHeightMax")]pub c_pattern_height_max:i32,}
 
 }
 
 #[cfg(feature = "app-dragonridetargetpatterndata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonridetargetpatterndata")]
-impl DragonRideTargetPatternData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1ed0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridetargetpatterndata")]impl DragonRideTargetPatternData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d1ed0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-dragonridetargetpatterndata")]
-pub trait IDragonRideTargetPatternDataMethods : IDragonRideTargetPatternData { # [doc = "`get_Targets()` overload"] fn get_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Targets(::unity2::Array<i32>)` overload"] fn set_targets (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Target1()` overload"] fn get_target1 (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target1(i32)` overload"] fn set_target1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Target2()` overload"] fn get_target2 (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target2(i32)` overload"] fn set_target2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Target3()` overload"] fn get_target3 (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target3(i32)` overload"] fn set_target3 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Target4()` overload"] fn get_target4 (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target4(i32)` overload"] fn set_target4 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Target5()` overload"] fn get_target5 (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target5(i32)` overload"] fn set_target5 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Target6()` overload"] fn get_target6 (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target6(i32)` overload"] fn set_target6 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Target7()` overload"] fn get_target7 (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target7(i32)` overload"] fn set_target7 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Target8()` overload"] fn get_target8 (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target8(i32)` overload"] fn set_target8 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < DragonRideTargetPatternData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPatternData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridetargetpatterndata")]pub trait IDragonRideTargetPatternDataMethods:IDragonRideTargetPatternData{#[doc="`get_Targets()` overload"]fn get_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d00usize)as*mut u8, ::unity2::Array<i32> ;
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`set_Targets(::unity2::Array<i32>)` overload"]fn set_targets(self,value:impl::core::convert::Into< ::unity2::Array<i32> >)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d10usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Target1()` overload"]fn get_target1(self,)->i32{unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d20usize)as*mut u8,i32;
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`set_Target1(i32)` overload"]fn set_target1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d30usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Target2()` overload"]fn get_target2(self,)->i32{unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d40usize)as*mut u8,i32;
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`set_Target2(i32)` overload"]fn set_target2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d50usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Target3()` overload"]fn get_target3(self,)->i32{unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d60usize)as*mut u8,i32;
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`set_Target3(i32)` overload"]fn set_target3(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d70usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Target4()` overload"]fn get_target4(self,)->i32{unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d80usize)as*mut u8,i32;
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`set_Target4(i32)` overload"]fn set_target4(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1d90usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Target5()` overload"]fn get_target5(self,)->i32{unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1da0usize)as*mut u8,i32;
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`set_Target5(i32)` overload"]fn set_target5(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1db0usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Target6()` overload"]fn get_target6(self,)->i32{unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1dc0usize)as*mut u8,i32;
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`set_Target6(i32)` overload"]fn set_target6(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1dd0usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Target7()` overload"]fn get_target7(self,)->i32{unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1de0usize)as*mut u8,i32;
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`set_Target7(i32)` overload"]fn set_target7(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1df0usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Target8()` overload"]fn get_target8(self,)->i32{unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1e00usize)as*mut u8,i32;
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`set_Target8(i32)` overload"]fn set_target8(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1e10usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1e20usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <DragonRideTargetPatternData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1f80usize)as*mut u8,();
+(DragonRideTargetPatternData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonridetargetpatterndata")]
-impl < __T : IDragonRideTargetPatternData > IDragonRideTargetPatternDataMethods for __T { }
+#[cfg(feature="app-dragonridetargetpatterndata")]impl<__T:IDragonRideTargetPatternData>IDragonRideTargetPatternDataMethods for __T{}
 
-#[cfg(feature = "app-dragonridetargetpatterndata")]
-impl DragonRideTargetPatternData { pub fn get_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_target1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_target1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_target2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_target2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_target3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_target3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_target4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_target4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_target5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_target5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_target6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_target6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_target7_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_target7_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_target8_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_target8_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPatternData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="app-dragonridetargetpatterndata")]impl DragonRideTargetPatternData{pub fn get_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_target1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_target1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_target2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_target2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_target3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_target3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_target4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_target4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_target5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_target5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_target6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_target6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_target7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_target7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_target8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_target8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "app-dragonridetargetpatterndata")]
-impl DragonRideTargetPatternData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideTargetPatternData) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideTargetPatternDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonridetargetpatterndata")]impl DragonRideTargetPatternData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideTargetPatternData), ::core::stringify!(new),));
+ <Self as IDragonRideTargetPatternDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonridetargetpatterndata")]

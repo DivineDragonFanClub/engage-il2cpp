@@ -4,33 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/debugloghandler/DebugLogHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "DebugLogHandler")] # [parent (crate :: system :: object :: Object)] pub struct DebugLogHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/debugloghandler/DebugLogHandler.md"))]#[::unity2::class(namespace="UnityEngine",name="DebugLogHandler")]#[parent(crate::system::object::Object)]pub struct DebugLogHandler{}
 
 }
 
 #[cfg(feature = "unity_engine-debugloghandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-debugloghandler")]
-impl DebugLogHandler { # [doc = "`Internal_Log(crate::unity_engine::logtype::LogType, crate::unity_engine::logoption::LogOption, ::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"] pub fn internal_log (level : impl :: core :: convert :: Into < crate :: unity_engine :: logtype :: LogType > , options : impl :: core :: convert :: Into < crate :: unity_engine :: logoption :: LogOption > , msg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , obj : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: logtype :: LogType , crate :: unity_engine :: logoption :: LogOption , :: unity2 :: Il2CppString , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4bc80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (options) , :: core :: convert :: Into :: into (msg) , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-debugloghandler")]impl DebugLogHandler{#[doc="`Internal_Log(crate::unity_engine::logtype::LogType, crate::unity_engine::logoption::LogOption, ::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]pub fn internal_log(level:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,options:impl::core::convert::Into<crate::unity_engine::logoption::LogOption> ,msg:impl::core::convert::Into< ::unity2::Il2CppString> ,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4bc80usize)as*mut u8,();
+(crate::unity_engine::logtype::LogType)::core::convert::Into::into(level),(crate::unity_engine::logoption::LogOption)::core::convert::Into::into(options),(::unity2::Il2CppString)::core::convert::Into::into(msg),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "unity_engine-debugloghandler")]
-pub trait IDebugLogHandlerMethods : IDebugLogHandler { # [doc = "`LogFormat(crate::unity_engine::logtype::LogType, crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn log_format (self , log_type : impl :: core :: convert :: Into < crate :: unity_engine :: logtype :: LogType > , context : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 > , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < DebugLogHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugLogHandler , crate :: unity_engine :: logtype :: LogType , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4bd40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (log_type) , :: core :: convert :: Into :: into (context) , :: core :: convert :: Into :: into (format) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugLogHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugLogHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4bc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-debugloghandler")]pub trait IDebugLogHandlerMethods:IDebugLogHandler{#[doc="`LogFormat(crate::unity_engine::logtype::LogType, crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn log_format(self,log_type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,context:impl::core::convert::Into<crate::unity_engine::object_2::Object_2> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <DebugLogHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4bd40usize)as*mut u8,();
+(DebugLogHandler)__receiver,(crate::unity_engine::logtype::LogType)::core::convert::Into::into(log_type),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(context),(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugLogHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4bc70usize)as*mut u8,();
+(DebugLogHandler)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-debugloghandler")]
-impl < __T : IDebugLogHandler > IDebugLogHandlerMethods for __T { }
+#[cfg(feature="unity_engine-debugloghandler")]impl<__T:IDebugLogHandler>IDebugLogHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-debugloghandler")]
-impl DebugLogHandler { pub fn internal_log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugLogHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn log_format_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugLogHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugLogHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-debugloghandler")]impl DebugLogHandler{pub fn internal_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn log_format_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-debugloghandler")]
-impl DebugLogHandler {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugLogHandler) , :: core :: stringify ! (new) ,)) ; < Self as IDebugLogHandlerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-debugloghandler")]impl DebugLogHandler{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugLogHandler), ::core::stringify!(new),));
+ <Self as IDebugLogHandlerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-debugloghandler")]

@@ -4,37 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_stylesheet/TMP_StyleSheet.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_StyleSheet")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct TMP_StyleSheet {
-# [offset (24)] # [rename (name = "m_StyleList")] pub m_style_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_style :: TMP_Style > ,
-# [offset (32)] # [rename (name = "m_StyleLookupDictionary")] pub m_style_lookup_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: tm_pro :: tmp_style :: TMP_Style > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_stylesheet/TMP_StyleSheet.md"))]#[::unity2::class(namespace="TMPro",name="TMP_StyleSheet")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct TMP_StyleSheet{#[offset(24)]#[rename(name="m_StyleList")]pub m_style_list:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_style::TMP_Style> , #[offset(32)]#[rename(name="m_StyleLookupDictionary")]pub m_style_lookup_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::tm_pro::tmp_style::TMP_Style> ,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_stylesheet-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_stylesheet")]
-pub trait ITMP_StyleSheetMethods : ITMP_StyleSheet { # [doc = "`get_styles()` overload"] fn get_styles (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_style :: TMP_Style > { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_style :: TMP_Style > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282e140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282e150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetStyle(i32)` overload"] fn get_style (self , hash_code : impl :: core :: convert :: Into < i32 >) -> crate :: tm_pro :: tmp_style :: TMP_Style { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_StyleSheet , i32 , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_style :: TMP_Style = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282e450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hash_code) , :: core :: option :: Option :: None) } } } # [doc = "`GetStyle(::unity2::Il2CppString)` overload"] fn get_style_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: tm_pro :: tmp_style :: TMP_Style { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_style :: TMP_Style = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282e4e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`RefreshStyles()` overload"] fn refresh_styles (self ,) -> () { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282e5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadStyleDictionaryInternal()` overload"] fn load_style_dictionary_internal (self ,) -> () { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282e160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_StyleSheet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_StyleSheet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282e5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_stylesheet")]pub trait ITMP_StyleSheetMethods:ITMP_StyleSheet{#[doc="`get_styles()` overload"]fn get_styles(self,)->crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_style::TMP_Style>{unsafe{let __receiver= <TMP_StyleSheet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282e140usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_style::TMP_Style> ;
+(TMP_StyleSheet)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <TMP_StyleSheet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282e150usize)as*mut u8,();
+(TMP_StyleSheet)__receiver)}
+}
+#[doc="`GetStyle(i32)` overload"]fn get_style(self,hash_code:impl::core::convert::Into<i32>)->crate::tm_pro::tmp_style::TMP_Style{unsafe{let __receiver= <TMP_StyleSheet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282e450usize)as*mut u8,crate::tm_pro::tmp_style::TMP_Style;
+(TMP_StyleSheet)__receiver,(i32)::core::convert::Into::into(hash_code))}
+}
+#[doc="`GetStyle(::unity2::Il2CppString)` overload"]fn get_style_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::tm_pro::tmp_style::TMP_Style{unsafe{let __receiver= <TMP_StyleSheet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282e4e0usize)as*mut u8,crate::tm_pro::tmp_style::TMP_Style;
+(TMP_StyleSheet)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`RefreshStyles()` overload"]fn refresh_styles(self,)->(){unsafe{let __receiver= <TMP_StyleSheet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282e5b0usize)as*mut u8,();
+(TMP_StyleSheet)__receiver)}
+}
+#[doc="`LoadStyleDictionaryInternal()` overload"]fn load_style_dictionary_internal(self,)->(){unsafe{let __receiver= <TMP_StyleSheet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282e160usize)as*mut u8,();
+(TMP_StyleSheet)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_StyleSheet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282e5c0usize)as*mut u8,();
+(TMP_StyleSheet)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_stylesheet")]
-impl < __T : ITMP_StyleSheet > ITMP_StyleSheetMethods for __T { }
+#[cfg(feature="tm_pro-tmp_stylesheet")]impl<__T:ITMP_StyleSheet>ITMP_StyleSheetMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_stylesheet")]
-impl TMP_StyleSheet { pub fn get_styles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_style_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn refresh_styles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_style_dictionary_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_StyleSheet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="tm_pro-tmp_stylesheet")]impl TMP_StyleSheet{pub fn get_styles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_style_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn refresh_styles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_style_dictionary_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "tm_pro-tmp_stylesheet")]
-impl TMP_StyleSheet {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_StyleSheet) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_StyleSheetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_stylesheet")]impl TMP_StyleSheet{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_StyleSheet), ::core::stringify!(new),));
+ <Self as ITMP_StyleSheetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_stylesheet")]

@@ -4,31 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/supportschildtracksattribute/SupportsChildTracksAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "SupportsChildTracksAttribute")] pub struct SupportsChildTracksAttribute {
-# [offset (16)] # [rename (name = "childType")] pub child_type : :: unity2 :: SystemType ,
-# [offset (24)] # [rename (name = "levels")] pub levels : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/supportschildtracksattribute/SupportsChildTracksAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="SupportsChildTracksAttribute")]pub struct SupportsChildTracksAttribute{#[offset(16)]#[rename(name="childType")]pub child_type: ::unity2::SystemType, #[offset(24)]#[rename(name="levels")]pub levels:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-supportschildtracksattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-supportschildtracksattribute")]
-pub trait ISupportsChildTracksAttributeMethods : ISupportsChildTracksAttribute { # [doc = "`.ctor(::unity2::SystemType, i32)` overload"] fn ctor (self , child_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , levels : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SupportsChildTracksAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportsChildTracksAttribute , :: unity2 :: SystemType , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35db3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (child_type) , :: core :: convert :: Into :: into (levels) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-supportschildtracksattribute")]pub trait ISupportsChildTracksAttributeMethods:ISupportsChildTracksAttribute{#[doc="`.ctor(::unity2::SystemType, i32)` overload"]fn ctor(self,child_type:impl::core::convert::Into< ::unity2::SystemType> ,levels:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SupportsChildTracksAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35db3c0usize)as*mut u8,();
+(SupportsChildTracksAttribute)__receiver,(::unity2::SystemType)::core::convert::Into::into(child_type),(i32)::core::convert::Into::into(levels))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-supportschildtracksattribute")]
-impl < __T : ISupportsChildTracksAttribute > ISupportsChildTracksAttributeMethods for __T { }
+#[cfg(feature="unity_engine-timeline-supportschildtracksattribute")]impl<__T:ISupportsChildTracksAttribute>ISupportsChildTracksAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-supportschildtracksattribute")]
-impl SupportsChildTracksAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportsChildTracksAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-supportschildtracksattribute")]impl SupportsChildTracksAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-timeline-supportschildtracksattribute")]
-impl SupportsChildTracksAttribute {
-# [doc = "`.ctor(::unity2::SystemType, i32)` — overload selector"] pub fn new (child_type : :: unity2 :: SystemType , levels : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SupportsChildTracksAttribute) , :: core :: stringify ! (new) ,)) ; < Self as ISupportsChildTracksAttributeMethods > :: ctor (this , child_type , levels) ; this }
+#[cfg(feature="unity_engine-timeline-supportschildtracksattribute")]impl SupportsChildTracksAttribute{#[doc="`.ctor(::unity2::SystemType, i32)` — overload selector"]pub fn new(child_type: ::unity2::SystemType,levels:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SupportsChildTracksAttribute), ::core::stringify!(new),));
+ <Self as ISupportsChildTracksAttributeMethods> ::ctor(this,child_type,levels);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-supportschildtracksattribute")]

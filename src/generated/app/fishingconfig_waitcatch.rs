@@ -4,55 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_waitcatch/FishingConfig_WaitCatch.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingConfig_WaitCatch")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingConfig_WaitCatch {
-# [offset (24)] # [rename (name = "m_FishChangeAppearTime")] pub m_fish_change_appear_time : f32 ,
-# [offset (28)] # [rename (name = "m_FishChangePercentage")] pub m_fish_change_percentage : f32 ,
-# [offset (32)] # [rename (name = "m_FishFaintPercentage")] pub m_fish_faint_percentage : f32 ,
-# [offset (36)] # [rename (name = "m_FishFaintMaxCount")] pub m_fish_faint_max_count : i32 ,
-# [offset (40)] # [rename (name = "m_FishCatchingTimeMax")] pub m_fish_catching_time_max : f32 ,
-# [offset (44)] # [rename (name = "m_LureCameraDiff")] pub m_lure_camera_diff : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (56)] # [rename (name = "m_LureCameraRot")] pub m_lure_camera_rot : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (68)] # [rename (name = "m_AssistShowSec")] pub m_assist_show_sec : f32 ,
-# [offset (72)] # [rename (name = "m_FakeVibeTimeMult")] pub m_fake_vibe_time_mult : f32 ,
-# [offset (76)] # [rename (name = "m_CatchVibeTimeMult")] pub m_catch_vibe_time_mult : f32 ,
-# [offset (80)] # [rename (name = "m_CatchVibePower_Tiny")] pub m_catch_vibe_power_tiny : f32 ,
-# [offset (84)] # [rename (name = "m_CatchVibeTime_Tiny")] pub m_catch_vibe_time_tiny : f32 ,
-# [offset (88)] # [rename (name = "m_CatchVibePower_Middle")] pub m_catch_vibe_power_middle : f32 ,
-# [offset (92)] # [rename (name = "m_CatchVibeTime_Middle")] pub m_catch_vibe_time_middle : f32 ,
-# [offset (96)] # [rename (name = "m_CatchVibePower_Giant")] pub m_catch_vibe_power_giant : f32 ,
-# [offset (100)] # [rename (name = "m_CatchVibeTime_Giant")] pub m_catch_vibe_time_giant : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingconfig_waitcatch/FishingConfig_WaitCatch.md"))]#[::unity2::class(namespace="App",name="FishingConfig_WaitCatch")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FishingConfig_WaitCatch{#[offset(24)]#[rename(name="m_FishChangeAppearTime")]pub m_fish_change_appear_time:f32, #[offset(28)]#[rename(name="m_FishChangePercentage")]pub m_fish_change_percentage:f32, #[offset(32)]#[rename(name="m_FishFaintPercentage")]pub m_fish_faint_percentage:f32, #[offset(36)]#[rename(name="m_FishFaintMaxCount")]pub m_fish_faint_max_count:i32, #[offset(40)]#[rename(name="m_FishCatchingTimeMax")]pub m_fish_catching_time_max:f32, #[offset(44)]#[rename(name="m_LureCameraDiff")]pub m_lure_camera_diff:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="m_LureCameraRot")]pub m_lure_camera_rot:crate::unity_engine::vector3::Vector3, #[offset(68)]#[rename(name="m_AssistShowSec")]pub m_assist_show_sec:f32, #[offset(72)]#[rename(name="m_FakeVibeTimeMult")]pub m_fake_vibe_time_mult:f32, #[offset(76)]#[rename(name="m_CatchVibeTimeMult")]pub m_catch_vibe_time_mult:f32, #[offset(80)]#[rename(name="m_CatchVibePower_Tiny")]pub m_catch_vibe_power_tiny:f32, #[offset(84)]#[rename(name="m_CatchVibeTime_Tiny")]pub m_catch_vibe_time_tiny:f32, #[offset(88)]#[rename(name="m_CatchVibePower_Middle")]pub m_catch_vibe_power_middle:f32, #[offset(92)]#[rename(name="m_CatchVibeTime_Middle")]pub m_catch_vibe_time_middle:f32, #[offset(96)]#[rename(name="m_CatchVibePower_Giant")]pub m_catch_vibe_power_giant:f32, #[offset(100)]#[rename(name="m_CatchVibeTime_Giant")]pub m_catch_vibe_time_giant:f32,}
 
 }
 
 #[cfg(feature = "app-fishingconfig_waitcatch-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingconfig_waitcatch")]
-pub trait IFishingConfig_WaitCatchMethods : IFishingConfig_WaitCatch { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingConfig_WaitCatch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingConfig_WaitCatch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f01f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingconfig_waitcatch")]pub trait IFishingConfig_WaitCatchMethods:IFishingConfig_WaitCatch{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingConfig_WaitCatch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f01f0usize)as*mut u8,();
+(FishingConfig_WaitCatch)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingconfig_waitcatch")]
-impl < __T : IFishingConfig_WaitCatch > IFishingConfig_WaitCatchMethods for __T { }
+#[cfg(feature="app-fishingconfig_waitcatch")]impl<__T:IFishingConfig_WaitCatch>IFishingConfig_WaitCatchMethods for __T{}
 
-#[cfg(feature = "app-fishingconfig_waitcatch")]
-impl FishingConfig_WaitCatch { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingConfig_WaitCatch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-fishingconfig_waitcatch")]impl FishingConfig_WaitCatch{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-fishingconfig_waitcatch")]
-impl FishingConfig_WaitCatch {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingConfig_WaitCatch) , :: core :: stringify ! (new) ,)) ; < Self as IFishingConfig_WaitCatchMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingconfig_waitcatch")]impl FishingConfig_WaitCatch{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingConfig_WaitCatch), ::core::stringify!(new),));
+ <Self as IFishingConfig_WaitCatchMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingconfig_waitcatch")]

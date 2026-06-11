@@ -4,70 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatviewersettings/CombatViewerSettings_ViewerPhase.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatViewerSettings.ViewerPhase")] # [parent (crate :: system :: object :: Object)] pub struct CombatViewerSettings_ViewerPhase {
-# [offset (16)] # [rename (name = "s")] pub s : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatviewersettings/CombatViewerSettings_ViewerPhase.md"))]#[::unity2::class(namespace="Combat",name="CombatViewerSettings.ViewerPhase")]#[parent(crate::system::object::Object)]pub struct CombatViewerSettings_ViewerPhase{#[offset(16)]#[rename(name="s")]pub s: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatviewersettings/CombatViewerSettings.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatViewerSettings")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct CombatViewerSettings {
-# [offset (24)] # [rename (name = "ViewerPhaseArray")] pub viewer_phase_array : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: combatviewersettings :: CombatViewerSettings_ViewerPhase > ,
-# [offset (32)] # [rename (name = "EternalCombat")] pub eternal_combat : bool ,
-# [offset (33)] # [rename (name = "ForceCrosscut")] pub force_crosscut : bool ,
-# [offset (34)] # [rename (name = "ForceBulletCamera")] pub force_bullet_camera : bool ,
-# [offset (35)] # [rename (name = "EnemyIsBoss")] pub enemy_is_boss : bool ,
-# [offset (36)] # [rename (name = "StartCamera")] pub start_camera : crate :: combat :: cameraposition :: CameraPosition ,
-# [offset (40)] # [rename (name = "CameraStyle")] pub camera_style : crate :: combat :: camerasituationconverter :: CameraSituationConverter_CameraLocateStyle ,
-# [offset (44)] # [rename (name = "AttendanceEnemy")] pub attendance_enemy : bool ,
-# [offset (45)] # [rename (name = "AttendancePEmblem")] pub attendance_p_emblem : bool ,
-# [offset (46)] # [rename (name = "AttendanceEEmblem")] pub attendance_e_emblem : bool ,
-# [offset (48)] # [rename (name = "AttendancePChain")] pub attendance_p_chain : i32 ,
-# [offset (52)] # [rename (name = "AttendanceEChain")] pub attendance_e_chain : i32 ,
-# [offset (56)] # [rename (name = "MapDistance")] pub map_distance : i32 ,
-# [offset (60)] # [rename (name = "RepeatDemo")] pub repeat_demo : bool ,
-# [offset (61)] # [rename (name = "FakeDead")] pub fake_dead : bool ,
-# [offset (62)] # [rename (name = "SpeedUp")] pub speed_up : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatviewersettings/CombatViewerSettings.md"))]#[::unity2::class(namespace="Combat",name="CombatViewerSettings")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct CombatViewerSettings{#[offset(24)]#[rename(name="ViewerPhaseArray")]pub viewer_phase_array:crate::system::collections::generic::list_1::List_1<crate::combat::combatviewersettings::CombatViewerSettings_ViewerPhase> , #[offset(32)]#[rename(name="EternalCombat")]pub eternal_combat:bool, #[offset(33)]#[rename(name="ForceCrosscut")]pub force_crosscut:bool, #[offset(34)]#[rename(name="ForceBulletCamera")]pub force_bullet_camera:bool, #[offset(35)]#[rename(name="EnemyIsBoss")]pub enemy_is_boss:bool, #[offset(36)]#[rename(name="StartCamera")]pub start_camera:crate::combat::cameraposition::CameraPosition, #[offset(40)]#[rename(name="CameraStyle")]pub camera_style:crate::combat::camerasituationconverter::CameraSituationConverter_CameraLocateStyle, #[offset(44)]#[rename(name="AttendanceEnemy")]pub attendance_enemy:bool, #[offset(45)]#[rename(name="AttendancePEmblem")]pub attendance_p_emblem:bool, #[offset(46)]#[rename(name="AttendanceEEmblem")]pub attendance_e_emblem:bool, #[offset(48)]#[rename(name="AttendancePChain")]pub attendance_p_chain:i32, #[offset(52)]#[rename(name="AttendanceEChain")]pub attendance_e_chain:i32, #[offset(56)]#[rename(name="MapDistance")]pub map_distance:i32, #[offset(60)]#[rename(name="RepeatDemo")]pub repeat_demo:bool, #[offset(61)]#[rename(name="FakeDead")]pub fake_dead:bool, #[offset(62)]#[rename(name="SpeedUp")]pub speed_up:bool,}
 
 }
 
 #[cfg(feature = "combat-combatviewersettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatviewersettings")]
-pub trait ICombatViewerSettings_ViewerPhaseMethods : ICombatViewerSettings_ViewerPhase { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatViewerSettings_ViewerPhase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings_ViewerPhase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19caf40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsEnd()` overload"] fn get_is_end (self ,) -> bool { unsafe { let __receiver = < CombatViewerSettings_ViewerPhase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings_ViewerPhase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cb050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , i : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CombatViewerSettings_ViewerPhase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings_ViewerPhase , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cb1c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(i32, ::unity2::Il2CppString)` overload"] fn set_item (self , i : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CombatViewerSettings_ViewerPhase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings_ViewerPhase , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19cb200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "combat-combatviewersettings")]
-impl < __T : ICombatViewerSettings_ViewerPhase > ICombatViewerSettings_ViewerPhaseMethods for __T { }
-
-#[cfg(feature = "combat-combatviewersettings")]
-impl CombatViewerSettings_ViewerPhase { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings_ViewerPhase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings_ViewerPhase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings_ViewerPhase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings_ViewerPhase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "combat-combatviewersettings")]
-impl CombatViewerSettings_ViewerPhase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatViewerSettings_ViewerPhase) , :: core :: stringify ! (new) ,)) ; < Self as ICombatViewerSettings_ViewerPhaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combatviewersettings")]pub trait ICombatViewerSettings_ViewerPhaseMethods:ICombatViewerSettings_ViewerPhase{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatViewerSettings_ViewerPhase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19caf40usize)as*mut u8,();
+(CombatViewerSettings_ViewerPhase)__receiver)}
+}
+#[doc="`get_IsEnd()` overload"]fn get_is_end(self,)->bool{unsafe{let __receiver= <CombatViewerSettings_ViewerPhase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cb050usize)as*mut u8,bool;
+(CombatViewerSettings_ViewerPhase)__receiver)}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,i:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <CombatViewerSettings_ViewerPhase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cb1c0usize)as*mut u8, ::unity2::Il2CppString;
+(CombatViewerSettings_ViewerPhase)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`set_Item(i32, ::unity2::Il2CppString)` overload"]fn set_item(self,i:impl::core::convert::Into<i32> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CombatViewerSettings_ViewerPhase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cb200usize)as*mut u8,();
+(CombatViewerSettings_ViewerPhase)__receiver,(i32)::core::convert::Into::into(i),(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "combat-combatviewersettings")]
-pub trait ICombatViewerSettingsMethods : ICombatViewerSettings { # [doc = "`ClearPhaseArray()` overload"] fn clear_phase_array (self ,) -> () { unsafe { let __receiver = < CombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2933e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Random(i32)` overload"] fn random (self , maxside : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2933ec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (maxside) , :: core :: option :: Option :: None) } } } # [doc = "`Swap()` overload"] fn swap (self ,) -> () { unsafe { let __receiver = < CombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29344b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Duplicate()` overload"] fn duplicate (self ,) -> () { unsafe { let __receiver = < CombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2934600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReplaceDamageSide(::unity2::Array<::unity2::Il2CppString>)` overload"] fn replace_damage_side (self , alter : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < CombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2934930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (alter) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2934b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatviewersettings")]impl<__T:ICombatViewerSettings_ViewerPhase>ICombatViewerSettings_ViewerPhaseMethods for __T{}
 
-#[cfg(feature = "combat-combatviewersettings")]
-impl < __T : ICombatViewerSettings > ICombatViewerSettingsMethods for __T { }
+#[cfg(feature="combat-combatviewersettings")]impl CombatViewerSettings_ViewerPhase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-combatviewersettings")]
-impl CombatViewerSettings { pub fn clear_phase_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn swap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn duplicate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn replace_damage_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-combatviewersettings")]impl CombatViewerSettings_ViewerPhase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatViewerSettings_ViewerPhase), ::core::stringify!(new),));
+ <Self as ICombatViewerSettings_ViewerPhaseMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "combat-combatviewersettings")]
-impl CombatViewerSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatViewerSettings) , :: core :: stringify ! (new) ,)) ; < Self as ICombatViewerSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combatviewersettings")]pub trait ICombatViewerSettingsMethods:ICombatViewerSettings{#[doc="`ClearPhaseArray()` overload"]fn clear_phase_array(self,)->(){unsafe{let __receiver= <CombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2933e40usize)as*mut u8,();
+(CombatViewerSettings)__receiver)}
+}
+#[doc="`Random(i32)` overload"]fn random(self,maxside:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2933ec0usize)as*mut u8,();
+(CombatViewerSettings)__receiver,(i32)::core::convert::Into::into(maxside))}
+}
+#[doc="`Swap()` overload"]fn swap(self,)->(){unsafe{let __receiver= <CombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29344b0usize)as*mut u8,();
+(CombatViewerSettings)__receiver)}
+}
+#[doc="`Duplicate()` overload"]fn duplicate(self,)->(){unsafe{let __receiver= <CombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2934600usize)as*mut u8,();
+(CombatViewerSettings)__receiver)}
+}
+#[doc="`ReplaceDamageSide(::unity2::Array<::unity2::Il2CppString>)` overload"]fn replace_damage_side(self,alter:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <CombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2934930usize)as*mut u8,();
+(CombatViewerSettings)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(alter))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2934b30usize)as*mut u8,();
+(CombatViewerSettings)__receiver)}
+}
+}
+
+#[cfg(feature="combat-combatviewersettings")]impl<__T:ICombatViewerSettings>ICombatViewerSettingsMethods for __T{}
+
+#[cfg(feature="combat-combatviewersettings")]impl CombatViewerSettings{pub fn clear_phase_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn duplicate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn replace_damage_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="combat-combatviewersettings")]impl CombatViewerSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatViewerSettings), ::core::stringify!(new),));
+ <Self as ICombatViewerSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-combatviewersettings")]

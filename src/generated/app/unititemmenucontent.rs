@@ -4,42 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenucontent/UnitItemMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitItemMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct UnitItemMenuContent {
-# [offset (232)] # [rename (name = "m_UnitNameText")] pub m_unit_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititemmenucontent/UnitItemMenuContent.md"))]#[::unity2::class(namespace="App",name="UnitItemMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct UnitItemMenuContent{#[offset(232)]#[rename(name="m_UnitNameText")]pub m_unit_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-unititemmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unititemmenucontent")]
-pub trait IUnitItemMenuContentMethods : IUnitItemMenuContent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < UnitItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb98d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < UnitItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMenuItemContent()` overload"] fn build_menu_item_content (self ,) -> () { unsafe { let __receiver = < UnitItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < UnitItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitItemMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < UnitItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitItemMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fb9b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unititemmenucontent")]pub trait IUnitItemMenuContentMethods:IUnitItemMenuContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <UnitItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb98d0usize)as*mut u8,();
+(UnitItemMenuContent)__receiver)}
+}
+#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <UnitItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9900usize)as*mut u8,();
+(UnitItemMenuContent)__receiver)}
+}
+#[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <UnitItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9a40usize)as*mut u8,();
+(UnitItemMenuContent)__receiver)}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <UnitItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9a70usize)as*mut u8,i32;
+(UnitItemMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <UnitItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9a80usize)as*mut u8,f32;
+(UnitItemMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb9b90usize)as*mut u8,();
+(UnitItemMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unititemmenucontent")]
-impl < __T : IUnitItemMenuContent > IUnitItemMenuContentMethods for __T { }
+#[cfg(feature="app-unititemmenucontent")]impl<__T:IUnitItemMenuContent>IUnitItemMenuContentMethods for __T{}
 
-#[cfg(feature = "app-unititemmenucontent")]
-impl UnitItemMenuContent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-unititemmenucontent")]impl UnitItemMenuContent{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-unititemmenucontent")]
-impl UnitItemMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitItemMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IUnitItemMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unititemmenucontent")]impl UnitItemMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitItemMenuContent), ::core::stringify!(new),));
+ <Self as IUnitItemMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unititemmenucontent")]

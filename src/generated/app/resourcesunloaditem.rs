@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourcesunloaditem/ResourcesUnloadItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourcesUnloadItem")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct ResourcesUnloadItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourcesunloaditem/ResourcesUnloadItem.md"))]#[::unity2::class(namespace="App",name="ResourcesUnloadItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct ResourcesUnloadItem{}
 
 }
 
 #[cfg(feature = "app-resourcesunloaditem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-resourcesunloaditem")]
-pub trait IResourcesUnloadItemMethods : IResourcesUnloadItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ResourcesUnloadItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesUnloadItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20183f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < ResourcesUnloadItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesUnloadItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2018440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ResourcesUnloadItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesUnloadItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2018580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-resourcesunloaditem")]pub trait IResourcesUnloadItemMethods:IResourcesUnloadItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ResourcesUnloadItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20183f0usize)as*mut u8, ::unity2::Il2CppString;
+(ResourcesUnloadItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ResourcesUnloadItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2018440usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(ResourcesUnloadItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ResourcesUnloadItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2018580usize)as*mut u8,();
+(ResourcesUnloadItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-resourcesunloaditem")]
-impl < __T : IResourcesUnloadItem > IResourcesUnloadItemMethods for __T { }
+#[cfg(feature="app-resourcesunloaditem")]impl<__T:IResourcesUnloadItem>IResourcesUnloadItemMethods for __T{}
 
-#[cfg(feature = "app-resourcesunloaditem")]
-impl ResourcesUnloadItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesUnloadItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesUnloadItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesUnloadItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-resourcesunloaditem")]impl ResourcesUnloadItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-resourcesunloaditem")]
-impl ResourcesUnloadItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ResourcesUnloadItem) , :: core :: stringify ! (new) ,)) ; < Self as IResourcesUnloadItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-resourcesunloaditem")]impl ResourcesUnloadItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ResourcesUnloadItem), ::core::stringify!(new),));
+ <Self as IResourcesUnloadItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-resourcesunloaditem")]

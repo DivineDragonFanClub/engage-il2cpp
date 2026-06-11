@@ -4,208 +4,353 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_TaskKind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SaveData_Manager_TaskKind  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData_Manager.md"))]#[::unity2::class(namespace="App",name="SaveData.Manager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::savedata::SaveData_Manager>)]pub struct SaveData_Manager{#[offset(48)]#[rename(name="m_Tasks")]pub m_tasks:crate::system::collections::generic::queue_1::Queue_1<crate::app::savedata::SaveData_Manager_Task> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData_Manager_EventKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SaveData_Manager_EventKind{pub value:i32,}
+impl::unity2::ClassIdentity for SaveData_Manager_EventKind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SaveData.Manager.EventKind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SaveData_Manager_EventKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SaveData_Manager_EventKind{pub fn cleanup()->Self{Self{value:0}
+}
+pub fn task()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SaveData_Manager_TaskKind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SaveData.Manager.TaskKind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData_Manager_TaskKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SaveData_Manager_TaskKind{pub value:i32,}
+impl::unity2::ClassIdentity for SaveData_Manager_TaskKind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SaveData.Manager.TaskKind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SaveData_Manager_TaskKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SaveData_Manager_TaskKind{pub fn read()->Self{Self{value:0}
+}
+pub fn write()->Self{Self{value:1}
+}
+pub fn delete()->Self{Self{value:2}
+}
+pub fn commit()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::IlType for SaveData_Manager_TaskKind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData_Manager_Task.md"))]#[::unity2::class(namespace="App",name="SaveData.Manager.Task")]#[parent(crate::system::object::Object)]pub struct SaveData_Manager_Task{}
 
 
-impl  SaveData_Manager_TaskKind  {
-    pub fn read() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn write() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn delete() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn commit() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveData")] # [parent (crate :: system :: object :: Object)] pub struct SaveData {
-# [static_field] # [rename (name = "MountName")] pub mount_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "MountNameWithColon")] pub mount_name_with_colon : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_IsMounted")] pub s_is_mounted : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager_Task.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveData.Manager.Task")] # [parent (crate :: system :: object :: Object)] pub struct SaveData_Manager_Task {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_EventKind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SaveData_Manager_EventKind  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SaveData_Manager_EventKind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SaveData.Manager.EventKind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SaveData_Manager_EventKind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SaveData_Manager_EventKind  {
-    pub fn cleanup() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn task() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveData.Manager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: savedata :: SaveData_Manager >)] pub struct SaveData_Manager {
-# [offset (48)] # [rename (name = "m_Tasks")] pub m_tasks : crate :: system :: collections :: generic :: queue_1 :: Queue_1 < crate :: app :: savedata :: SaveData_Manager_Task > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedata/SaveData.md"))]#[::unity2::class(namespace="App",name="SaveData")]#[parent(crate::system::object::Object)]pub struct SaveData{#[static_field]#[rename(name="MountName")]pub mount_name: ::unity2::Il2CppString, #[static_field]#[rename(name="MountNameWithColon")]pub mount_name_with_colon: ::unity2::Il2CppString, #[static_field]#[rename(name="s_IsMounted")]pub s_is_mounted:bool,}
 
 }
 
 #[cfg(feature = "app-savedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-savedata")]
-impl SaveData { # [doc = "`Setup()` overload"] pub fn setup () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] pub fn cleanup () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4bc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PauseExitApp()` overload"] pub fn pause_exit_app () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4d40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ResumeExitApp()` overload"] pub fn resume_exit_app () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4d50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ReadAsync(::unity2::Il2CppString, i64, ::unity2::Array<u8>, i64)` overload"] pub fn read_async (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , offset : impl :: core :: convert :: Into < i64 > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , size : impl :: core :: convert :: Into < i64 >) -> crate :: app :: savedatareadhandle :: SaveDataReadHandle { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i64 , :: unity2 :: Array < u8 > , i64 , :: unity2 :: OptionalMethod ,) -> crate :: app :: savedatareadhandle :: SaveDataReadHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4e20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`WriteAsync(::unity2::Il2CppString, i64, ::unity2::Array<u8>, i64, bool)` overload"] pub fn write_async (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , offset : impl :: core :: convert :: Into < i64 > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , size : impl :: core :: convert :: Into < i64 > , is_enable_resize : impl :: core :: convert :: Into < bool >) -> crate :: app :: savedatahandle :: SaveDataHandle { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i64 , :: unity2 :: Array < u8 > , i64 , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: savedatahandle :: SaveDataHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec5030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (size) , :: core :: convert :: Into :: into (is_enable_resize) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteAsync(::unity2::Il2CppString)` overload"] pub fn delete_async (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: savedatahandle :: SaveDataHandle { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: savedatahandle :: SaveDataHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec5220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`Commit(::unity2::Il2CppString)` overload"] pub fn commit (mount_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec5330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mount_name) , :: core :: option :: Option :: None) } } } # [doc = "`CommitAsync(::unity2::Il2CppString)` overload"] pub fn commit_async (mount_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: savedatahandle :: SaveDataHandle { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: savedatahandle :: SaveDataHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec53c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mount_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsExist(::unity2::Il2CppString)` overload"] pub fn is_exist (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec54d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`GetFileSize(::unity2::Il2CppString)` overload"] pub fn get_file_size (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec5560usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`Dump(::unity2::Il2CppString)` overload"] pub fn dump (root_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec55f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root_path) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsMounted()` overload"] pub fn get_is_mounted () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec5680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec5700usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-savedata")]
-pub trait ISaveDataMethods : ISaveData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SaveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec56f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-savedata")]
-impl < __T : ISaveData > ISaveDataMethods for __T { }
-
-#[cfg(feature = "app-savedata")]
-impl SaveData { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn pause_exit_app_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn resume_exit_app_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn read_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn write_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn delete_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn commit_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_file_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_is_mounted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
-
-#[cfg(feature = "app-savedata")]
-impl SaveData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SaveData) , :: core :: stringify ! (new) ,)) ; < Self as ISaveDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-savedata")]impl SaveData_Manager{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d649d0usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-savedata")]
-pub trait ISaveData_Manager_TaskMethods : ISaveData_Manager_Task { # [doc = "`get_Kind()` overload"] fn get_kind (self ,) -> crate :: app :: savedata :: SaveData_Manager_TaskKind { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> crate :: app :: savedata :: SaveData_Manager_TaskKind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Kind(crate::app::savedata::SaveData_Manager_TaskKind)` overload"] fn set_kind (self , value : impl :: core :: convert :: Into < crate :: app :: savedata :: SaveData_Manager_TaskKind >) -> () { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , crate :: app :: savedata :: SaveData_Manager_TaskKind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecc20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Path()` overload"] fn get_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Path(::unity2::Il2CppString)` overload"] fn set_path (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecc40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Data()` overload"] fn get_data (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecc50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Data(::unity2::Array<u8>)` overload"] fn set_data (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecc60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Size()` overload"] fn get_size (self ,) -> i64 { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Size(i64)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecc80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Offset()` overload"] fn get_offset (self ,) -> i64 { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecc90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Offset(i64)` overload"] fn set_offset (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsEnableResize()` overload"] fn get_is_enable_resize (self ,) -> bool { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eccb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsEnableResize(bool)` overload"] fn set_is_enable_resize (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eccc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Handle()` overload"] fn get_handle (self ,) -> crate :: app :: savedatahandle :: SaveDataHandle { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> crate :: app :: savedatahandle :: SaveDataHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eccd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Handle(crate::app::savedatahandle::SaveDataHandle)` overload"] fn set_handle (self , value : impl :: core :: convert :: Into < crate :: app :: savedatahandle :: SaveDataHandle >) -> () { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , crate :: app :: savedatahandle :: SaveDataHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ecce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SaveData_Manager_Task as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eccf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-savedata")]
-impl < __T : ISaveData_Manager_Task > ISaveData_Manager_TaskMethods for __T { }
-
-#[cfg(feature = "app-savedata")]
-impl SaveData_Manager_Task { pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_enable_resize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_is_enable_resize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager_Task as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
-
-#[cfg(feature = "app-savedata")]
-impl SaveData_Manager_Task {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SaveData_Manager_Task) , :: core :: stringify ! (new) ,)) ; < Self as ISaveData_Manager_TaskMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-savedata")]pub trait ISaveData_ManagerMethods:ISaveData_Manager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62d50usize)as*mut u8,();
+(SaveData_Manager)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d62fc0usize)as*mut u8,();
+(SaveData_Manager)__receiver)}
+}
+#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63060usize)as*mut u8,();
+(SaveData_Manager)__receiver)}
+}
+#[doc="`RegisterTask(crate::app::savedata::SaveData_Manager_Task)` overload"]fn register_task(self,task:impl::core::convert::Into<crate::app::savedata::SaveData_Manager_Task>)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63170usize)as*mut u8,();
+(SaveData_Manager)__receiver,(crate::app::savedata::SaveData_Manager_Task)::core::convert::Into::into(task))}
+}
+#[doc="`Commit(::unity2::Il2CppString)` overload"]fn commit(self,mount_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63980usize)as*mut u8,();
+(SaveData_Manager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mount_name))}
+}
+#[doc="`IsExist(::unity2::Il2CppString)` overload"]fn is_exist(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63ac0usize)as*mut u8,bool;
+(SaveData_Manager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`GetFileSize(::unity2::Il2CppString)` overload"]fn get_file_size(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->i64{unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63ba0usize)as*mut u8,i64;
+(SaveData_Manager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`Dump(::unity2::Il2CppString)` overload"]fn dump(self,root_path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63cf0usize)as*mut u8,();
+(SaveData_Manager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(root_path))}
+}
+#[doc="`ThreadFunc()` overload"]fn thread_func(self,)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63e30usize)as*mut u8,();
+(SaveData_Manager)__receiver)}
+}
+#[doc="`Read(crate::app::savedata::SaveData_Manager_Task)` overload"]fn read(self,task:impl::core::convert::Into<crate::app::savedata::SaveData_Manager_Task>)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d64110usize)as*mut u8,();
+(SaveData_Manager)__receiver,(crate::app::savedata::SaveData_Manager_Task)::core::convert::Into::into(task))}
+}
+#[doc="`Write(crate::app::savedata::SaveData_Manager_Task)` overload"]fn write(self,task:impl::core::convert::Into<crate::app::savedata::SaveData_Manager_Task>)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d64210usize)as*mut u8,();
+(SaveData_Manager)__receiver,(crate::app::savedata::SaveData_Manager_Task)::core::convert::Into::into(task))}
+}
+#[doc="`Delete(crate::app::savedata::SaveData_Manager_Task)` overload"]fn delete(self,task:impl::core::convert::Into<crate::app::savedata::SaveData_Manager_Task>)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d64270usize)as*mut u8,();
+(SaveData_Manager)__receiver,(crate::app::savedata::SaveData_Manager_Task)::core::convert::Into::into(task))}
+}
+#[doc="`Commit(crate::app::savedata::SaveData_Manager_Task)` overload"]fn commit_2(self,task:impl::core::convert::Into<crate::app::savedata::SaveData_Manager_Task>)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d642c0usize)as*mut u8,();
+(SaveData_Manager)__receiver,(crate::app::savedata::SaveData_Manager_Task)::core::convert::Into::into(task))}
+}
+#[doc="`CommitNX(::unity2::Il2CppString)` overload"]fn commit_nx(self,mount_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63a20usize)as*mut u8,();
+(SaveData_Manager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mount_name))}
+}
+#[doc="`IsExistNX(::unity2::Il2CppString)` overload"]fn is_exist_nx(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63ad0usize)as*mut u8,bool;
+(SaveData_Manager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`GetFileSizeNX(::unity2::Il2CppString)` overload"]fn get_file_size_nx(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->i64{unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63bb0usize)as*mut u8,i64;
+(SaveData_Manager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`DumpNX(::unity2::Il2CppString)` overload"]fn dump_nx(self,root_path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d63d90usize)as*mut u8,();
+(SaveData_Manager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(root_path))}
+}
+#[doc="`Backslash2Slash(::unity2::Il2CppString)` overload"]fn backslash2_slash(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <SaveData_Manager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d643b0usize)as*mut u8, ::unity2::Il2CppString;
+(SaveData_Manager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
 }
 
-#[cfg(feature = "app-savedata")]
-impl SaveData_Manager { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d649d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-savedata")]impl<__T:ISaveData_Manager>ISaveData_ManagerMethods for __T{}
 
-#[cfg(feature = "app-savedata")]
-pub trait ISaveData_ManagerMethods : ISaveData_Manager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d62d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d62fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RegisterTask(crate::app::savedata::SaveData_Manager_Task)` overload"] fn register_task (self , task : impl :: core :: convert :: Into < crate :: app :: savedata :: SaveData_Manager_Task >) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , crate :: app :: savedata :: SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (task) , :: core :: option :: Option :: None) } } } # [doc = "`Commit(::unity2::Il2CppString)` overload"] fn commit (self , mount_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mount_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsExist(::unity2::Il2CppString)` overload"] fn is_exist (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`GetFileSize(::unity2::Il2CppString)` overload"] fn get_file_size (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i64 { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`Dump(::unity2::Il2CppString)` overload"] fn dump (self , root_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (root_path) , :: core :: option :: Option :: None) } } } # [doc = "`ThreadFunc()` overload"] fn thread_func (self ,) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read(crate::app::savedata::SaveData_Manager_Task)` overload"] fn read (self , task : impl :: core :: convert :: Into < crate :: app :: savedata :: SaveData_Manager_Task >) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , crate :: app :: savedata :: SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d64110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (task) , :: core :: option :: Option :: None) } } } # [doc = "`Write(crate::app::savedata::SaveData_Manager_Task)` overload"] fn write (self , task : impl :: core :: convert :: Into < crate :: app :: savedata :: SaveData_Manager_Task >) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , crate :: app :: savedata :: SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d64210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (task) , :: core :: option :: Option :: None) } } } # [doc = "`Delete(crate::app::savedata::SaveData_Manager_Task)` overload"] fn delete (self , task : impl :: core :: convert :: Into < crate :: app :: savedata :: SaveData_Manager_Task >) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , crate :: app :: savedata :: SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d64270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (task) , :: core :: option :: Option :: None) } } } # [doc = "`Commit(crate::app::savedata::SaveData_Manager_Task)` overload"] fn commit_2 (self , task : impl :: core :: convert :: Into < crate :: app :: savedata :: SaveData_Manager_Task >) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , crate :: app :: savedata :: SaveData_Manager_Task , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d642c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (task) , :: core :: option :: Option :: None) } } } # [doc = "`CommitNX(::unity2::Il2CppString)` overload"] fn commit_nx (self , mount_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63a20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mount_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsExistNX(::unity2::Il2CppString)` overload"] fn is_exist_nx (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`GetFileSizeNX(::unity2::Il2CppString)` overload"] fn get_file_size_nx (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i64 { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63bb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`DumpNX(::unity2::Il2CppString)` overload"] fn dump_nx (self , root_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d63d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (root_path) , :: core :: option :: Option :: None) } } } # [doc = "`Backslash2Slash(::unity2::Il2CppString)` overload"] fn backslash2_slash (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SaveData_Manager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveData_Manager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d643b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-savedata")]impl SaveData_Manager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn register_task_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_file_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn thread_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn commit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn commit_nx_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_exist_nx_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_file_size_nx_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn dump_nx_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn backslash2_slash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
 
-#[cfg(feature = "app-savedata")]
-impl < __T : ISaveData_Manager > ISaveData_ManagerMethods for __T { }
+#[cfg(feature="app-savedata")]impl SaveData_Manager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SaveData_Manager), ::core::stringify!(new),));
+ <Self as ISaveData_ManagerMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-savedata")]
-impl SaveData_Manager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn register_task_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_file_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn thread_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn commit_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn commit_nx_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_exist_nx_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_file_size_nx_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn dump_nx_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn backslash2_slash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveData_Manager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } }
+#[cfg(feature="app-savedata")]pub trait ISaveData_Manager_TaskMethods:ISaveData_Manager_Task{#[doc="`get_Kind()` overload"]fn get_kind(self,)->crate::app::savedata::SaveData_Manager_TaskKind{unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecc10usize)as*mut u8,crate::app::savedata::SaveData_Manager_TaskKind;
+(SaveData_Manager_Task)__receiver)}
+}
+#[doc="`set_Kind(crate::app::savedata::SaveData_Manager_TaskKind)` overload"]fn set_kind(self,value:impl::core::convert::Into<crate::app::savedata::SaveData_Manager_TaskKind>)->(){unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecc20usize)as*mut u8,();
+(SaveData_Manager_Task)__receiver,(crate::app::savedata::SaveData_Manager_TaskKind)::core::convert::Into::into(value))}
+}
+#[doc="`get_Path()` overload"]fn get_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecc30usize)as*mut u8, ::unity2::Il2CppString;
+(SaveData_Manager_Task)__receiver)}
+}
+#[doc="`set_Path(::unity2::Il2CppString)` overload"]fn set_path(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecc40usize)as*mut u8,();
+(SaveData_Manager_Task)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecc50usize)as*mut u8, ::unity2::Array<u8> ;
+(SaveData_Manager_Task)__receiver)}
+}
+#[doc="`set_Data(::unity2::Array<u8>)` overload"]fn set_data(self,value:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecc60usize)as*mut u8,();
+(SaveData_Manager_Task)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Size()` overload"]fn get_size(self,)->i64{unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecc70usize)as*mut u8,i64;
+(SaveData_Manager_Task)__receiver)}
+}
+#[doc="`set_Size(i64)` overload"]fn set_size(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecc80usize)as*mut u8,();
+(SaveData_Manager_Task)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`get_Offset()` overload"]fn get_offset(self,)->i64{unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecc90usize)as*mut u8,i64;
+(SaveData_Manager_Task)__receiver)}
+}
+#[doc="`set_Offset(i64)` overload"]fn set_offset(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecca0usize)as*mut u8,();
+(SaveData_Manager_Task)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsEnableResize()` overload"]fn get_is_enable_resize(self,)->bool{unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eccb0usize)as*mut u8,bool;
+(SaveData_Manager_Task)__receiver)}
+}
+#[doc="`set_IsEnableResize(bool)` overload"]fn set_is_enable_resize(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eccc0usize)as*mut u8,();
+(SaveData_Manager_Task)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Handle()` overload"]fn get_handle(self,)->crate::app::savedatahandle::SaveDataHandle{unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eccd0usize)as*mut u8,crate::app::savedatahandle::SaveDataHandle;
+(SaveData_Manager_Task)__receiver)}
+}
+#[doc="`set_Handle(crate::app::savedatahandle::SaveDataHandle)` overload"]fn set_handle(self,value:impl::core::convert::Into<crate::app::savedatahandle::SaveDataHandle>)->(){unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ecce0usize)as*mut u8,();
+(SaveData_Manager_Task)__receiver,(crate::app::savedatahandle::SaveDataHandle)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SaveData_Manager_Task as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eccf0usize)as*mut u8,();
+(SaveData_Manager_Task)__receiver)}
+}
+}
 
-#[cfg(feature = "app-savedata")]
-impl SaveData_Manager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SaveData_Manager) , :: core :: stringify ! (new) ,)) ; < Self as ISaveData_ManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-savedata")]impl<__T:ISaveData_Manager_Task>ISaveData_Manager_TaskMethods for __T{}
+
+#[cfg(feature="app-savedata")]impl SaveData_Manager_Task{pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_enable_resize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_is_enable_resize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-savedata")]impl SaveData_Manager_Task{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SaveData_Manager_Task), ::core::stringify!(new),));
+ <Self as ISaveData_Manager_TaskMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-savedata")]impl SaveData{#[doc="`Setup()` overload"]pub fn setup()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec4950usize)as*mut u8,();
+)}
+}
+#[doc="`Cleanup()` overload"]pub fn cleanup()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec4bc0usize)as*mut u8,();
+)}
+}
+#[doc="`PauseExitApp()` overload"]pub fn pause_exit_app()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec4d40usize)as*mut u8,();
+)}
+}
+#[doc="`ResumeExitApp()` overload"]pub fn resume_exit_app()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec4d50usize)as*mut u8,();
+)}
+}
+#[doc="`ReadAsync(::unity2::Il2CppString, i64, ::unity2::Array<u8>, i64)` overload"]pub fn read_async(path:impl::core::convert::Into< ::unity2::Il2CppString> ,offset:impl::core::convert::Into<i64> ,data:impl::core::convert::Into< ::unity2::Array<u8> > ,size:impl::core::convert::Into<i64>)->crate::app::savedatareadhandle::SaveDataReadHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec4e20usize)as*mut u8,crate::app::savedatareadhandle::SaveDataReadHandle;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(i64)::core::convert::Into::into(offset),(::unity2::Array<u8>)::core::convert::Into::into(data),(i64)::core::convert::Into::into(size))}
+}
+#[doc="`WriteAsync(::unity2::Il2CppString, i64, ::unity2::Array<u8>, i64, bool)` overload"]pub fn write_async(path:impl::core::convert::Into< ::unity2::Il2CppString> ,offset:impl::core::convert::Into<i64> ,data:impl::core::convert::Into< ::unity2::Array<u8> > ,size:impl::core::convert::Into<i64> ,is_enable_resize:impl::core::convert::Into<bool>)->crate::app::savedatahandle::SaveDataHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec5030usize)as*mut u8,crate::app::savedatahandle::SaveDataHandle;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(i64)::core::convert::Into::into(offset),(::unity2::Array<u8>)::core::convert::Into::into(data),(i64)::core::convert::Into::into(size),(bool)::core::convert::Into::into(is_enable_resize))}
+}
+#[doc="`DeleteAsync(::unity2::Il2CppString)` overload"]pub fn delete_async(path:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::savedatahandle::SaveDataHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec5220usize)as*mut u8,crate::app::savedatahandle::SaveDataHandle;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`Commit(::unity2::Il2CppString)` overload"]pub fn commit(mount_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec5330usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(mount_name))}
+}
+#[doc="`CommitAsync(::unity2::Il2CppString)` overload"]pub fn commit_async(mount_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::savedatahandle::SaveDataHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec53c0usize)as*mut u8,crate::app::savedatahandle::SaveDataHandle;
+(::unity2::Il2CppString)::core::convert::Into::into(mount_name))}
+}
+#[doc="`IsExist(::unity2::Il2CppString)` overload"]pub fn is_exist(path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec54d0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`GetFileSize(::unity2::Il2CppString)` overload"]pub fn get_file_size(path:impl::core::convert::Into< ::unity2::Il2CppString>)->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec5560usize)as*mut u8,i64;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`Dump(::unity2::Il2CppString)` overload"]pub fn dump(root_path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec55f0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(root_path))}
+}
+#[doc="`get_IsMounted()` overload"]pub fn get_is_mounted()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec5680usize)as*mut u8,bool;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec5700usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-savedata")]pub trait ISaveDataMethods:ISaveData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SaveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec56f0usize)as*mut u8,();
+(SaveData)__receiver)}
+}
+}
+
+#[cfg(feature="app-savedata")]impl<__T:ISaveData>ISaveDataMethods for __T{}
+
+#[cfg(feature="app-savedata")]impl SaveData{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn pause_exit_app_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn resume_exit_app_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn write_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn delete_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn commit_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_file_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_is_mounted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="app-savedata")]impl SaveData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SaveData), ::core::stringify!(new),));
+ <Self as ISaveDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-savedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SaveData_Manager_TaskKind;
-    pub use super::SaveData;
-    pub use super::ISaveData;
-    pub use super::ISaveDataMethods;
-    pub use super::SaveData_Manager_Task;
-    pub use super::ISaveData_Manager_Task;
-    pub use super::ISaveData_Manager_TaskMethods;
-    pub use super::SaveData_Manager_EventKind;
     pub use super::SaveData_Manager;
     pub use super::ISaveData_Manager;
     pub use super::ISaveData_ManagerMethods;
+    pub use super::SaveData_Manager_EventKind;
+    pub use super::SaveData_Manager_TaskKind;
+    pub use super::SaveData_Manager_Task;
+    pub use super::ISaveData_Manager_Task;
+    pub use super::ISaveData_Manager_TaskMethods;
+    pub use super::SaveData;
+    pub use super::ISaveData;
+    pub use super::ISaveDataMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

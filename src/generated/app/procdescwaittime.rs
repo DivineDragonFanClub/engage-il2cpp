@@ -4,34 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescwaittime/ProcDescWaitTime.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescWaitTime")] # [parent (crate :: app :: procdesc :: ProcDesc)] pub struct ProcDescWaitTime {
-# [offset (20)] # [rename (name = "m_Time")] pub m_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescwaittime/ProcDescWaitTime.md"))]#[::unity2::class(namespace="App",name="ProcDescWaitTime")]#[parent(crate::app::procdesc::ProcDesc)]pub struct ProcDescWaitTime{#[offset(20)]#[rename(name="m_Time")]pub m_time:f32,}
 
 }
 
 #[cfg(feature = "app-procdescwaittime-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescwaittime")]
-pub trait IProcDescWaitTimeMethods : IProcDescWaitTime { # [doc = "`.ctor(f32)` overload"] fn ctor (self , second : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ProcDescWaitTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescWaitTime , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (second) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDescWaitTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescWaitTime , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281dc90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescwaittime")]pub trait IProcDescWaitTimeMethods:IProcDescWaitTime{#[doc="`.ctor(f32)` overload"]fn ctor(self,second:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ProcDescWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281b830usize)as*mut u8,();
+(ProcDescWaitTime)__receiver,(f32)::core::convert::Into::into(second))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281dc90usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(ProcDescWaitTime)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdescwaittime")]
-impl < __T : IProcDescWaitTime > IProcDescWaitTimeMethods for __T { }
+#[cfg(feature="app-procdescwaittime")]impl<__T:IProcDescWaitTime>IProcDescWaitTimeMethods for __T{}
 
-#[cfg(feature = "app-procdescwaittime")]
-impl ProcDescWaitTime { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescWaitTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescWaitTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdescwaittime")]impl ProcDescWaitTime{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdescwaittime")]
-impl ProcDescWaitTime {
-# [doc = "`.ctor(f32)` — overload selector"] pub fn new (second : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescWaitTime) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescWaitTimeMethods > :: ctor (this , second) ; this }
+#[cfg(feature="app-procdescwaittime")]impl ProcDescWaitTime{#[doc="`.ctor(f32)` — overload selector"]pub fn new(second:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescWaitTime), ::core::stringify!(new),));
+ <Self as IProcDescWaitTimeMethods> ::ctor(this,second);
+this}
 }
 
 #[cfg(feature = "app-procdescwaittime")]

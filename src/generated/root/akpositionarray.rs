@@ -4,75 +4,83 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akpositionarray/AkPositionArray_FloatInt32Union.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AkPositionArray_FloatInt32Union {
-    pub f: f32,
-    pub i: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akpositionarray/AkPositionArray_FloatInt32Union.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AkPositionArray_FloatInt32Union{pub f:f32,pub i:i32,}
+impl::unity2::ClassIdentity for AkPositionArray_FloatInt32Union{const NAMESPACE: &'static str="";
+const NAME: &'static str="AkPositionArray.FloatInt32Union";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AkPositionArray_FloatInt32Union{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for AkPositionArray_FloatInt32Union {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "AkPositionArray.FloatInt32Union";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AkPositionArray_FloatInt32Union {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akpositionarray/AkPositionArray.md"))] # [:: unity2 :: class (namespace = "" , name = "AkPositionArray")] # [parent (crate :: system :: object :: Object)] pub struct AkPositionArray {
-# [offset (16)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_Current")] pub m_current : :: unity2 :: IntPtr ,
-# [offset (32)] # [rename (name = "m_MaxCount")] pub m_max_count : u32 ,
-# [static_field] # [rename (name = "FloatToInt")] pub float_to_int : crate :: root :: akpositionarray :: AkPositionArray_FloatInt32Union ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akpositionarray/AkPositionArray.md"))]#[::unity2::class(namespace="",name="AkPositionArray")]#[parent(crate::system::object::Object)]pub struct AkPositionArray{#[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_Current")]pub m_current: ::unity2::IntPtr, #[offset(32)]#[rename(name="m_MaxCount")]pub m_max_count:u32, #[static_field]#[rename(name="FloatToInt")]pub float_to_int:crate::root::akpositionarray::AkPositionArray_FloatInt32Union,}
 
 }
 
 #[cfg(feature = "root-akpositionarray-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akpositionarray")]
-impl AkPositionArray { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2e380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akpositionarray")]impl AkPositionArray{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f2e380usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-akpositionarray")]
-pub trait IAkPositionArrayMethods : IAkPositionArray { # [doc = "`.ctor(u32)` overload"] fn ctor (self , in_count : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkPositionArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPositionArray , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2ddb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_count) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> u32 { unsafe { let __receiver = < AkPositionArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPositionArray , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2de40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Count(u32)` overload"] fn set_count (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkPositionArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPositionArray , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2de50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkPositionArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPositionArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2de60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkPositionArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPositionArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2df00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < AkPositionArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPositionArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2dfe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] fn add (self , in_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , in_forward : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , in_top : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < AkPositionArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPositionArray , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2dff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_pos) , :: core :: convert :: Into :: into (in_forward) , :: core :: convert :: Into :: into (in_top) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akpositionarray")]pub trait IAkPositionArrayMethods:IAkPositionArray{#[doc="`.ctor(u32)` overload"]fn ctor(self,in_count:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2ddb0usize)as*mut u8,();
+(AkPositionArray)__receiver,(u32)::core::convert::Into::into(in_count))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->u32{unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2de40usize)as*mut u8,u32;
+(AkPositionArray)__receiver)}
+}
+#[doc="`set_Count(u32)` overload"]fn set_count(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2de50usize)as*mut u8,();
+(AkPositionArray)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2de60usize)as*mut u8,();
+(AkPositionArray)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2df00usize)as*mut u8,();
+(AkPositionArray)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2dfe0usize)as*mut u8,();
+(AkPositionArray)__receiver)}
+}
+#[doc="`Add(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn add(self,in_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,in_forward:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,in_top:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2dff0usize)as*mut u8,();
+(AkPositionArray)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_forward),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_top))}
+}
+}
 
-#[cfg(feature = "root-akpositionarray")]
-impl < __T : IAkPositionArray > IAkPositionArrayMethods for __T { }
+#[cfg(feature="root-akpositionarray")]impl<__T:IAkPositionArray>IAkPositionArrayMethods for __T{}
 
-#[cfg(feature = "root-akpositionarray")]
-impl AkPositionArray { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPositionArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPositionArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPositionArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPositionArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPositionArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPositionArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPositionArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPositionArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="root-akpositionarray")]impl AkPositionArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "root-akpositionarray")]
-impl AkPositionArray {
-# [doc = "`.ctor(u32)` — overload selector"] pub fn new (in_count : u32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkPositionArray) , :: core :: stringify ! (new) ,)) ; < Self as IAkPositionArrayMethods > :: ctor (this , in_count) ; this }
+#[cfg(feature="root-akpositionarray")]impl AkPositionArray{#[doc="`.ctor(u32)` — overload selector"]pub fn new(in_count:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkPositionArray), ::core::stringify!(new),));
+ <Self as IAkPositionArrayMethods> ::ctor(this,in_count);
+this}
 }
 
 #[cfg(feature = "root-akpositionarray")]

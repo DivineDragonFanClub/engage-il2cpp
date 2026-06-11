@@ -4,41 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmascot/HubMascot.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMascot")] # [parent (crate :: system :: object :: Object)] pub struct HubMascot {
-# [static_field] # [rename (name = "MascotObject")] pub mascot_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [static_field] # [rename (name = "m_CurrentCharacter")] pub m_current_character : crate :: combat :: character :: Character ,
-# [static_field] # [rename (name = "m_LoadingCharacter")] pub m_loading_character : crate :: combat :: character :: Character ,
-# [static_field] # [rename (name = "m_ParentTransform")] pub m_parent_transform : crate :: unity_engine :: transform :: Transform ,
-# [static_field] # [rename (name = "m_PlayerTransform")] pub m_player_transform : crate :: unity_engine :: transform :: Transform ,
-# [static_field] # [rename (name = "m_Position")] pub m_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [static_field] # [rename (name = "m_Rotation")] pub m_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascot/HubMascot.md"))]#[::unity2::class(namespace="App",name="HubMascot")]#[parent(crate::system::object::Object)]pub struct HubMascot{#[static_field]#[rename(name="MascotObject")]pub mascot_object:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="m_CurrentCharacter")]pub m_current_character:crate::combat::character::Character, #[static_field]#[rename(name="m_LoadingCharacter")]pub m_loading_character:crate::combat::character::Character, #[static_field]#[rename(name="m_ParentTransform")]pub m_parent_transform:crate::unity_engine::transform::Transform, #[static_field]#[rename(name="m_PlayerTransform")]pub m_player_transform:crate::unity_engine::transform::Transform, #[static_field]#[rename(name="m_Position")]pub m_position:crate::unity_engine::vector3::Vector3, #[static_field]#[rename(name="m_Rotation")]pub m_rotation:crate::unity_engine::quaternion::Quaternion,}
 
 }
 
 #[cfg(feature = "app-hubmascot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmascot")]
-impl HubMascot { # [doc = "`Start(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"] pub fn start (parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , player : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1c30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (player) , :: core :: option :: Option :: None) } } } # [doc = "`Load(bool)` overload"] pub fn load (request_follow_enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (request_follow_enable) , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] pub fn end () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b26a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] pub fn stop () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b28c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Restart()` overload"] pub fn restart () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b29a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EnablePlayerFollow()` overload"] pub fn enable_player_follow () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2aa0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DisablePlayerFollow()` overload"] pub fn disable_player_follow () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2b80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ChangeMascotColor()` overload"] pub fn change_mascot_color () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2c60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2ea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmascot")]impl HubMascot{#[doc="`Start(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"]pub fn start(parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,player:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b1c30usize)as*mut u8,();
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(crate::unity_engine::transform::Transform)::core::convert::Into::into(player))}
+}
+#[doc="`Load(bool)` overload"]pub fn load(request_follow_enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b2120usize)as*mut u8,();
+(bool)::core::convert::Into::into(request_follow_enable))}
+}
+#[doc="`End()` overload"]pub fn end()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b26a0usize)as*mut u8,();
+)}
+}
+#[doc="`Stop()` overload"]pub fn stop()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b28c0usize)as*mut u8,();
+)}
+}
+#[doc="`Restart()` overload"]pub fn restart()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b29a0usize)as*mut u8,();
+)}
+}
+#[doc="`EnablePlayerFollow()` overload"]pub fn enable_player_follow()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b2aa0usize)as*mut u8,();
+)}
+}
+#[doc="`DisablePlayerFollow()` overload"]pub fn disable_player_follow()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b2b80usize)as*mut u8,();
+)}
+}
+#[doc="`ChangeMascotColor()` overload"]pub fn change_mascot_color()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b2c60usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b2ea0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubmascot")]
-pub trait IHubMascotMethods : IHubMascot { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMascot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMascot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b2e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmascot")]pub trait IHubMascotMethods:IHubMascot{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMascot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b2e90usize)as*mut u8,();
+(HubMascot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmascot")]
-impl < __T : IHubMascot > IHubMascotMethods for __T { }
+#[cfg(feature="app-hubmascot")]impl<__T:IHubMascot>IHubMascotMethods for __T{}
 
-#[cfg(feature = "app-hubmascot")]
-impl HubMascot { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn restart_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn enable_player_follow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn disable_player_follow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn change_mascot_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMascot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-hubmascot")]impl HubMascot{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn restart_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn enable_player_follow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn disable_player_follow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn change_mascot_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-hubmascot")]
-impl HubMascot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMascot) , :: core :: stringify ! (new) ,)) ; < Self as IHubMascotMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmascot")]impl HubMascot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMascot), ::core::stringify!(new),));
+ <Self as IHubMascotMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmascot")]

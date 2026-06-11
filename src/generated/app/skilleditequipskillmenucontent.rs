@@ -4,43 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditequipskillmenucontent/SkillEditEquipSkillMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillEditEquipSkillMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct SkillEditEquipSkillMenuContent {
-# [offset (232)] # [rename (name = "m_UnitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (240)] # [rename (name = "m_SkillNgObj")] pub m_skill_ng_obj : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilleditequipskillmenucontent/SkillEditEquipSkillMenuContent.md"))]#[::unity2::class(namespace="App",name="SkillEditEquipSkillMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct SkillEditEquipSkillMenuContent{#[offset(232)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_SkillNgObj")]pub m_skill_ng_obj:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-skilleditequipskillmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-skilleditequipskillmenucontent")]
-pub trait ISkillEditEquipSkillMenuContentMethods : ISkillEditEquipSkillMenuContent { # [doc = "`CalcCursorMovedPosX(i32)` overload"] fn calc_cursor_moved_pos_x (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < SkillEditEquipSkillMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249ad20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < SkillEditEquipSkillMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249adb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitName(crate::app::unit::Unit)` overload"] fn set_unit_name (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SkillEditEquipSkillMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillMenuContent , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2499e90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetSkillNgActive(bool)` overload"] fn set_skill_ng_active (self , is_active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SkillEditEquipSkillMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249abf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_active) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillEditEquipSkillMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditEquipSkillMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249ae40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-skilleditequipskillmenucontent")]pub trait ISkillEditEquipSkillMenuContentMethods:ISkillEditEquipSkillMenuContent{#[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249ad20usize)as*mut u8,f32;
+(SkillEditEquipSkillMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249adb0usize)as*mut u8,f32;
+(SkillEditEquipSkillMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`SetUnitName(crate::app::unit::Unit)` overload"]fn set_unit_name(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2499e90usize)as*mut u8,();
+(SkillEditEquipSkillMenuContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetSkillNgActive(bool)` overload"]fn set_skill_ng_active(self,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249abf0usize)as*mut u8,();
+(SkillEditEquipSkillMenuContent)__receiver,(bool)::core::convert::Into::into(is_active))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillEditEquipSkillMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249ae40usize)as*mut u8,();
+(SkillEditEquipSkillMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-skilleditequipskillmenucontent")]
-impl < __T : ISkillEditEquipSkillMenuContent > ISkillEditEquipSkillMenuContentMethods for __T { }
+#[cfg(feature="app-skilleditequipskillmenucontent")]impl<__T:ISkillEditEquipSkillMenuContent>ISkillEditEquipSkillMenuContentMethods for __T{}
 
-#[cfg(feature = "app-skilleditequipskillmenucontent")]
-impl SkillEditEquipSkillMenuContent { pub fn calc_cursor_moved_pos_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_unit_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_skill_ng_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditEquipSkillMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-skilleditequipskillmenucontent")]impl SkillEditEquipSkillMenuContent{pub fn calc_cursor_moved_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_unit_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_skill_ng_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-skilleditequipskillmenucontent")]
-impl SkillEditEquipSkillMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillEditEquipSkillMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as ISkillEditEquipSkillMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-skilleditequipskillmenucontent")]impl SkillEditEquipSkillMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillEditEquipSkillMenuContent), ::core::stringify!(new),));
+ <Self as ISkillEditEquipSkillMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-skilleditequipskillmenucontent")]

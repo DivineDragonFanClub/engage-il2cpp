@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/setupcoroutine/SetupCoroutine.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SetupCoroutine")] # [parent (crate :: system :: object :: Object)] pub struct SetupCoroutine {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/setupcoroutine/SetupCoroutine.md"))]#[::unity2::class(namespace="UnityEngine",name="SetupCoroutine")]#[parent(crate::system::object::Object)]pub struct SetupCoroutine{}
 
 }
 
 #[cfg(feature = "unity_engine-setupcoroutine-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-setupcoroutine")]
-impl SetupCoroutine { # [doc = "`InvokeMoveNext(crate::system::collections::ienumerator::IEnumerator, ::unity2::IntPtr)` overload"] pub fn invoke_move_next (enumerator : impl :: core :: convert :: Into < crate :: system :: collections :: ienumerator :: IEnumerator > , return_value_address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: ienumerator :: IEnumerator , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (enumerator) , :: core :: convert :: Into :: into (return_value_address) , :: core :: option :: Option :: None) } } } # [doc = "`InvokeMember(crate::system::object::Object, ::unity2::Il2CppString, crate::system::object::Object)` overload"] pub fn invoke_member (behaviour : impl :: core :: convert :: Into < crate :: system :: object :: Object > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , variable : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , :: unity2 :: Il2CppString , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (behaviour) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (variable) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-setupcoroutine")]impl SetupCoroutine{#[doc="`InvokeMoveNext(crate::system::collections::ienumerator::IEnumerator, ::unity2::IntPtr)` overload"]pub fn invoke_move_next(enumerator:impl::core::convert::Into<crate::system::collections::ienumerator::IEnumerator> ,return_value_address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e830usize)as*mut u8,();
+(crate::system::collections::ienumerator::IEnumerator)::core::convert::Into::into(enumerator),(::unity2::IntPtr)::core::convert::Into::into(return_value_address))}
+}
+#[doc="`InvokeMember(crate::system::object::Object, ::unity2::Il2CppString, crate::system::object::Object)` overload"]pub fn invoke_member(behaviour:impl::core::convert::Into<crate::system::object::Object> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,variable:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e970usize)as*mut u8,crate::system::object::Object;
+(crate::system::object::Object)::core::convert::Into::into(behaviour),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::object::Object)::core::convert::Into::into(variable))}
+}
+}
 
-#[cfg(feature = "unity_engine-setupcoroutine")]
-impl SetupCoroutine { pub fn invoke_move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SetupCoroutine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_member_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SetupCoroutine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-setupcoroutine")]impl SetupCoroutine{pub fn invoke_move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_member_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-setupcoroutine")]
 #[doc(hidden)]

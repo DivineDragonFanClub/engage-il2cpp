@@ -4,46 +4,88 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapselectroot/RelayMapSelectRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayMapSelectRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RelayMapSelectRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_MapHelpObject")] pub m_map_help_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_MapMenu")] pub m_map_menu : crate :: app :: relaymapmenu :: RelayMapMenu ,
-# [offset (40)] # [rename (name = "m_WdwMapHelp")] pub m_wdw_map_help : crate :: app :: relaywdwmaphelp :: RelayWdwMapHelp ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapselectroot/RelayMapSelectRoot.md"))]#[::unity2::class(namespace="App",name="RelayMapSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RelayMapSelectRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MapHelpObject")]pub m_map_help_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_MapMenu")]pub m_map_menu:crate::app::relaymapmenu::RelayMapMenu, #[offset(40)]#[rename(name="m_WdwMapHelp")]pub m_wdw_map_help:crate::app::relaywdwmaphelp::RelayWdwMapHelp,}
 
 }
 
 #[cfg(feature = "app-relaymapselectroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relaymapselectroot")]
-impl RelayMapSelectRoot { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: relaymapselectroot :: RelayMapSelectRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: relaymapselectroot :: RelayMapSelectRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ffe580usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CheckExistEnableItem()` overload"] pub fn check_exist_enable_item () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ffe770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CanSelectNewRelayMap(crate::app::chapterdata::ChapterData)` overload"] pub fn can_select_new_relay_map (chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ffe120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ffec80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ffed20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ffefb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relaymapselectroot")]impl RelayMapSelectRoot{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::relaymapselectroot::RelayMapSelectRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe580usize)as*mut u8,crate::app::relaymapselectroot::RelayMapSelectRoot;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CheckExistEnableItem()` overload"]pub fn check_exist_enable_item()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe770usize)as*mut u8,bool;
+)}
+}
+#[doc="`CanSelectNewRelayMap(crate::app::chapterdata::ChapterData)` overload"]pub fn can_select_new_relay_map(chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe120usize)as*mut u8,bool;
+(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffec80usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffed20usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffefb0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-relaymapselectroot")]
-pub trait IRelayMapSelectRootMethods : IRelayMapSelectRoot { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayMapSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fff250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::procinst::ProcInst)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < RelayMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayMapSelectRoot , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ffea90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelectMenuItem(crate::app::relaydata::RelayData)` overload"] fn on_select_menu_item (self , relay_data : impl :: core :: convert :: Into < crate :: app :: relaydata :: RelayData >) -> () { unsafe { let __receiver = < RelayMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayMapSelectRoot , crate :: app :: relaydata :: RelayData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fff260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (relay_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecideMenuItem()` overload"] fn on_decide_menu_item (self ,) -> () { unsafe { let __receiver = < RelayMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayMapSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fff310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRequestCloseMenu()` overload"] fn on_request_close_menu (self ,) -> () { unsafe { let __receiver = < RelayMapSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayMapSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fff330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relaymapselectroot")]pub trait IRelayMapSelectRootMethods:IRelayMapSelectRoot{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayMapSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fff250usize)as*mut u8,();
+(RelayMapSelectRoot)__receiver)}
+}
+#[doc="`Create(crate::app::procinst::ProcInst)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <RelayMapSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffea90usize)as*mut u8,();
+(RelayMapSelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`OnSelectMenuItem(crate::app::relaydata::RelayData)` overload"]fn on_select_menu_item(self,relay_data:impl::core::convert::Into<crate::app::relaydata::RelayData>)->(){unsafe{let __receiver= <RelayMapSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fff260usize)as*mut u8,();
+(RelayMapSelectRoot)__receiver,(crate::app::relaydata::RelayData)::core::convert::Into::into(relay_data))}
+}
+#[doc="`OnDecideMenuItem()` overload"]fn on_decide_menu_item(self,)->(){unsafe{let __receiver= <RelayMapSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fff310usize)as*mut u8,();
+(RelayMapSelectRoot)__receiver)}
+}
+#[doc="`OnRequestCloseMenu()` overload"]fn on_request_close_menu(self,)->(){unsafe{let __receiver= <RelayMapSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fff330usize)as*mut u8,();
+(RelayMapSelectRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relaymapselectroot")]
-impl < __T : IRelayMapSelectRoot > IRelayMapSelectRootMethods for __T { }
+#[cfg(feature="app-relaymapselectroot")]impl<__T:IRelayMapSelectRoot>IRelayMapSelectRootMethods for __T{}
 
-#[cfg(feature = "app-relaymapselectroot")]
-impl RelayMapSelectRoot { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn check_exist_enable_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn can_select_new_relay_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_select_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_decide_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_request_close_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayMapSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-relaymapselectroot")]impl RelayMapSelectRoot{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn check_exist_enable_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn can_select_new_relay_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_select_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_decide_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_request_close_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-relaymapselectroot")]
-impl RelayMapSelectRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayMapSelectRoot) , :: core :: stringify ! (new) ,)) ; < Self as IRelayMapSelectRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relaymapselectroot")]impl RelayMapSelectRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayMapSelectRoot), ::core::stringify!(new),));
+ <Self as IRelayMapSelectRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relaymapselectroot")]

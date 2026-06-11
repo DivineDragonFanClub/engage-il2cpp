@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/utility/Utility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Switch" , name = "Utility")] # [parent (crate :: system :: object :: Object)] pub struct Utility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/utility/Utility.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Utility")]#[parent(crate::system::object::Object)]pub struct Utility{}
 
 }
 
 #[cfg(feature = "unity_engine-switch-utility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-switch-utility")]
-impl Utility { # [doc = "`GetAllocatableNativeMemoryLong()` overload"] pub fn get_allocatable_native_memory_long () -> i64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f41d50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-switch-utility")]impl Utility{#[doc="`GetAllocatableNativeMemoryLong()` overload"]pub fn get_allocatable_native_memory_long()->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f41d50usize)as*mut u8,i64;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-switch-utility")]
-impl Utility { pub fn get_allocatable_native_memory_long_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Utility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-switch-utility")]impl Utility{pub fn get_allocatable_native_memory_long_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-switch-utility")]
 #[doc(hidden)]

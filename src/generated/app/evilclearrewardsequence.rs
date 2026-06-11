@@ -4,39 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: irewardsequence :: { IIRewardSequence , IRewardSequence }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::irewardsequence::{IIRewardSequence,IRewardSequence}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/evilclearrewardsequence/EvilClearRewardSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "EvilClearRewardSequence")] # [parent (crate :: app :: irewardsequence :: IRewardSequence)] pub struct EvilClearRewardSequence {
-# [static_field] # [rename (name = "FlagName")] pub flag_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/evilclearrewardsequence/EvilClearRewardSequence.md"))]#[::unity2::class(namespace="App",name="EvilClearRewardSequence")]#[parent(crate::app::irewardsequence::IRewardSequence)]pub struct EvilClearRewardSequence{#[static_field]#[rename(name="FlagName")]pub flag_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-evilclearrewardsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-evilclearrewardsequence")]
-impl EvilClearRewardSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CanGet()` overload"] pub fn can_get () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4860usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-evilclearrewardsequence")]impl EvilClearRewardSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e4790usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CanGet()` overload"]pub fn can_get()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e4860usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "app-evilclearrewardsequence")]
-pub trait IEvilClearRewardSequenceMethods : IEvilClearRewardSequence { # [doc = "`Reword()` overload"] fn reword (self ,) -> () { unsafe { let __receiver = < EvilClearRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EvilClearRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDesc()` overload"] fn get_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < EvilClearRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EvilClearRewardSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EvilClearRewardSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EvilClearRewardSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-evilclearrewardsequence")]pub trait IEvilClearRewardSequenceMethods:IEvilClearRewardSequence{#[doc="`Reword()` overload"]fn reword(self,)->(){unsafe{let __receiver= <EvilClearRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e4a50usize)as*mut u8,();
+(EvilClearRewardSequence)__receiver)}
+}
+#[doc="`GetDesc()` overload"]fn get_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <EvilClearRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e4ac0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(EvilClearRewardSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EvilClearRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e4c30usize)as*mut u8,();
+(EvilClearRewardSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-evilclearrewardsequence")]
-impl < __T : IEvilClearRewardSequence > IEvilClearRewardSequenceMethods for __T { }
+#[cfg(feature="app-evilclearrewardsequence")]impl<__T:IEvilClearRewardSequence>IEvilClearRewardSequenceMethods for __T{}
 
-#[cfg(feature = "app-evilclearrewardsequence")]
-impl EvilClearRewardSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvilClearRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn can_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvilClearRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvilClearRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvilClearRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvilClearRewardSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-evilclearrewardsequence")]impl EvilClearRewardSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn can_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reword_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-evilclearrewardsequence")]
-impl EvilClearRewardSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EvilClearRewardSequence) , :: core :: stringify ! (new) ,)) ; < Self as IEvilClearRewardSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-evilclearrewardsequence")]impl EvilClearRewardSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EvilClearRewardSequence), ::core::stringify!(new),));
+ <Self as IEvilClearRewardSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-evilclearrewardsequence")]

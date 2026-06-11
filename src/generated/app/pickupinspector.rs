@@ -4,36 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: personinspector :: { IPersonInspector , PersonInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::personinspector::{IPersonInspector,PersonInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/pickupinspector/PickupInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "PickupInspector")] # [parent (crate :: app :: personinspector :: PersonInspector)] pub struct PickupInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pickupinspector/PickupInspector.md"))]#[::unity2::class(namespace="App",name="PickupInspector")]#[parent(crate::app::personinspector::PersonInspector)]pub struct PickupInspector{}
 
 }
 
 #[cfg(feature = "app-pickupinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-pickupinspector")]
-pub trait IPickupInspectorMethods : IPickupInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < PickupInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PickupInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280b770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-pickupinspector")]pub trait IPickupInspectorMethods:IPickupInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <PickupInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x280b770usize)as*mut u8,();
+(PickupInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+}
 
-#[cfg(feature = "app-pickupinspector")]
-impl < __T : IPickupInspector > IPickupInspectorMethods for __T { }
+#[cfg(feature="app-pickupinspector")]impl<__T:IPickupInspector>IPickupInspectorMethods for __T{}
 
-#[cfg(feature = "app-pickupinspector")]
-impl PickupInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PickupInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-pickupinspector")]impl PickupInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-pickupinspector")]
-impl PickupInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PickupInspector) , :: core :: stringify ! (new) ,)) ; < Self as IPickupInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-pickupinspector")]impl PickupInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PickupInspector), ::core::stringify!(new),));
+ <Self as IPickupInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-pickupinspector")]

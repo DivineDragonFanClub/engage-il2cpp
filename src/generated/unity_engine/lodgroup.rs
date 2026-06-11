@@ -4,37 +4,154 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/lodgroup/LODGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "LODGroup")] # [parent (crate :: unity_engine :: component :: Component)] pub struct LODGroup {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/lodgroup/LODGroup.md"))]#[::unity2::class(namespace="UnityEngine",name="LODGroup")]#[parent(crate::unity_engine::component::Component)]pub struct LODGroup{}
 
 }
 
 #[cfg(feature = "unity_engine-lodgroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-lodgroup")]
-impl LODGroup { # [doc = "`get_crossFadeAnimationDuration()` overload"] pub fn get_cross_fade_animation_duration () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52e20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_crossFadeAnimationDuration(f32)` overload"] pub fn set_cross_fade_animation_duration (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52e60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-lodgroup")]impl LODGroup{#[doc="`get_crossFadeAnimationDuration()` overload"]pub fn get_cross_fade_animation_duration()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52e20usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_crossFadeAnimationDuration(f32)` overload"]pub fn set_cross_fade_animation_duration(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52e60usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-lodgroup")]
-pub trait ILODGroupMethods : ILODGroup { # [doc = "`get_localReferencePoint()` overload"] fn get_local_reference_point (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_localReferencePoint(crate::unity_engine::vector3::Vector3)` overload"] fn set_local_reference_point (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_size()` overload"] fn get_size (self ,) -> f32 { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c529c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_size(f32)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_lodCount()` overload"] fn get_lod_count (self ,) -> i32 { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_fadeMode()` overload"] fn get_fade_mode (self ,) -> crate :: unity_engine :: lodfademode :: LODFadeMode { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lodfademode :: LODFadeMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fadeMode(crate::unity_engine::lodfademode::LODFadeMode)` overload"] fn set_fade_mode (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: lodfademode :: LODFadeMode >) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , crate :: unity_engine :: lodfademode :: LODFadeMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52b00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_animateCrossFading()` overload"] fn get_animate_cross_fading (self ,) -> bool { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_animateCrossFading(bool)` overload"] fn set_animate_cross_fading (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_enabled()` overload"] fn get_enabled (self ,) -> bool { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_enabled(bool)` overload"] fn set_enabled (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52c40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`RecalculateBounds()` overload"] fn recalculate_bounds (self ,) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLODs()` overload"] fn get_lo_ds (self ,) -> :: unity2 :: Array < crate :: unity_engine :: lod :: LOD > { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: lod :: LOD > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLODS(::unity2::Array<crate::unity_engine::lod::LOD>)` overload"] fn set_lods (self , lods : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: lod :: LOD > >) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: Array < crate :: unity_engine :: lod :: LOD > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (lods) , :: core :: option :: Option :: None) } } } # [doc = "`SetLODs(::unity2::Array<crate::unity_engine::lod::LOD>)` overload"] fn set_lo_ds (self , lods : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: lod :: LOD > >) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: Array < crate :: unity_engine :: lod :: LOD > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (lods) , :: core :: option :: Option :: None) } } } # [doc = "`ForceLOD(i32)` overload"] fn force_lod (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`get_worldReferencePoint()` overload"] fn get_world_reference_point (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LODGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_localReferencePoint_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_local_reference_point_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (LODGroup , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c528c0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`set_localReferencePoint_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn set_local_reference_point_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (LODGroup , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52970usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`get_worldReferencePoint_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_world_reference_point_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < LODGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (LODGroup , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c52f10usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-lodgroup")]pub trait ILODGroupMethods:ILODGroup{#[doc="`get_localReferencePoint()` overload"]fn get_local_reference_point(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52860usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(LODGroup)__receiver)}
+}
+#[doc="`set_localReferencePoint(crate::unity_engine::vector3::Vector3)` overload"]fn set_local_reference_point(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52910usize)as*mut u8,();
+(LODGroup)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_size()` overload"]fn get_size(self,)->f32{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c529c0usize)as*mut u8,f32;
+(LODGroup)__receiver)}
+}
+#[doc="`set_size(f32)` overload"]fn set_size(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52a10usize)as*mut u8,();
+(LODGroup)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_lodCount()` overload"]fn get_lod_count(self,)->i32{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52a60usize)as*mut u8,i32;
+(LODGroup)__receiver)}
+}
+#[doc="`get_fadeMode()` overload"]fn get_fade_mode(self,)->crate::unity_engine::lodfademode::LODFadeMode{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52ab0usize)as*mut u8,crate::unity_engine::lodfademode::LODFadeMode;
+(LODGroup)__receiver)}
+}
+#[doc="`set_fadeMode(crate::unity_engine::lodfademode::LODFadeMode)` overload"]fn set_fade_mode(self,value:impl::core::convert::Into<crate::unity_engine::lodfademode::LODFadeMode>)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52b00usize)as*mut u8,();
+(LODGroup)__receiver,(crate::unity_engine::lodfademode::LODFadeMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_animateCrossFading()` overload"]fn get_animate_cross_fading(self,)->bool{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52b50usize)as*mut u8,bool;
+(LODGroup)__receiver)}
+}
+#[doc="`set_animateCrossFading(bool)` overload"]fn set_animate_cross_fading(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52ba0usize)as*mut u8,();
+(LODGroup)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_enabled()` overload"]fn get_enabled(self,)->bool{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52bf0usize)as*mut u8,bool;
+(LODGroup)__receiver)}
+}
+#[doc="`set_enabled(bool)` overload"]fn set_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52c40usize)as*mut u8,();
+(LODGroup)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`RecalculateBounds()` overload"]fn recalculate_bounds(self,)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52c90usize)as*mut u8,();
+(LODGroup)__receiver)}
+}
+#[doc="`GetLODs()` overload"]fn get_lo_ds(self,)-> ::unity2::Array<crate::unity_engine::lod::LOD>{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52ce0usize)as*mut u8, ::unity2::Array<crate::unity_engine::lod::LOD> ;
+(LODGroup)__receiver)}
+}
+#[doc="`SetLODS(::unity2::Array<crate::unity_engine::lod::LOD>)` overload"]fn set_lods(self,lods:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::lod::LOD> >)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52d30usize)as*mut u8,();
+(LODGroup)__receiver,(::unity2::Array<crate::unity_engine::lod::LOD>)::core::convert::Into::into(lods))}
+}
+#[doc="`SetLODs(::unity2::Array<crate::unity_engine::lod::LOD>)` overload"]fn set_lo_ds(self,lods:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::lod::LOD> >)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52d80usize)as*mut u8,();
+(LODGroup)__receiver,(::unity2::Array<crate::unity_engine::lod::LOD>)::core::convert::Into::into(lods))}
+}
+#[doc="`ForceLOD(i32)` overload"]fn force_lod(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52dd0usize)as*mut u8,();
+(LODGroup)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_worldReferencePoint()` overload"]fn get_world_reference_point(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52eb0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(LODGroup)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52f60usize)as*mut u8,();
+(LODGroup)__receiver)}
+}
+#[doc="`get_localReferencePoint_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn get_local_reference_point_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c528c0usize)as*mut u8,();
+(LODGroup)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`set_localReferencePoint_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn set_local_reference_point_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52970usize)as*mut u8,();
+(LODGroup)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`get_worldReferencePoint_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn get_world_reference_point_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <LODGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c52f10usize)as*mut u8,();
+(LODGroup)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-lodgroup")]
-impl < __T : ILODGroup > ILODGroupMethods for __T { }
+#[cfg(feature="unity_engine-lodgroup")]impl<__T:ILODGroup>ILODGroupMethods for __T{}
 
-#[cfg(feature = "unity_engine-lodgroup")]
-impl LODGroup { pub fn get_local_reference_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_local_reference_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_lod_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_fade_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_fade_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_animate_cross_fading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_animate_cross_fading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn recalculate_bounds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_lo_ds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_lods_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_lo_ds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn force_lod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_cross_fade_animation_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_cross_fade_animation_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_world_reference_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_local_reference_point_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_local_reference_point_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_world_reference_point_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LODGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
+#[cfg(feature="unity_engine-lodgroup")]impl LODGroup{pub fn get_local_reference_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_local_reference_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_lod_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_fade_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_fade_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_animate_cross_fading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_animate_cross_fading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn recalculate_bounds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_lo_ds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_lods_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_lo_ds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn force_lod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_cross_fade_animation_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_cross_fade_animation_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_world_reference_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_local_reference_point_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_local_reference_point_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_world_reference_point_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
 
-#[cfg(feature = "unity_engine-lodgroup")]
-impl LODGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LODGroup) , :: core :: stringify ! (new) ,)) ; < Self as ILODGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-lodgroup")]impl LODGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LODGroup), ::core::stringify!(new),));
+ <Self as ILODGroupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-lodgroup")]

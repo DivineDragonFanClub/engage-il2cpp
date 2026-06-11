@@ -4,103 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialreplacer/MaterialReplacer.md"))] # [:: unity2 :: class (namespace = "" , name = "MaterialReplacer")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MaterialReplacer {
-# [offset (24)] # [rename (name = "m_MaterialBmap")] pub m_material_bmap : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "m_MaterialCombat")] pub m_material_combat : crate :: unity_engine :: material :: Material ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/materialreplacer/MaterialReplacer_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MaterialReplacer_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for MaterialReplacer_Mode{const NAMESPACE: &'static str="";
+const NAME: &'static str="MaterialReplacer.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MaterialReplacer_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MaterialReplacer_Mode{pub fn bmap()->Self{Self{value:0}
+}
+pub fn combat()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/materialreplacer/MaterialReplacer_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MaterialReplacer_Mode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MaterialReplacer_Mode  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MaterialReplacer.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MaterialReplacer_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MaterialReplacer_Mode  {
-    pub fn bmap() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn combat() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/materialreplacer/MaterialReplacer.md"))]#[::unity2::class(namespace="",name="MaterialReplacer")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MaterialReplacer{#[offset(24)]#[rename(name="m_MaterialBmap")]pub m_material_bmap:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="m_MaterialCombat")]pub m_material_combat:crate::unity_engine::material::Material,}
 
 }
 
 #[cfg(feature = "root-materialreplacer-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-materialreplacer")]
-pub trait IMaterialReplacerMethods : IMaterialReplacer { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MaterialReplacer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialReplacer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MaterialReplacer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialReplacer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateMaterial(crate::root::materialreplacer::MaterialReplacer_Mode)` overload"] fn update_material (self , mode : impl :: core :: convert :: Into < crate :: root :: materialreplacer :: MaterialReplacer_Mode >) -> () { unsafe { let __receiver = < MaterialReplacer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialReplacer , crate :: root :: materialreplacer :: MaterialReplacer_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MaterialReplacer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialReplacer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ca760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-materialreplacer")]pub trait IMaterialReplacerMethods:IMaterialReplacer{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MaterialReplacer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca660usize)as*mut u8,();
+(MaterialReplacer)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MaterialReplacer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca670usize)as*mut u8,();
+(MaterialReplacer)__receiver)}
+}
+#[doc="`UpdateMaterial(crate::root::materialreplacer::MaterialReplacer_Mode)` overload"]fn update_material(self,mode:impl::core::convert::Into<crate::root::materialreplacer::MaterialReplacer_Mode>)->(){unsafe{let __receiver= <MaterialReplacer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca680usize)as*mut u8,();
+(MaterialReplacer)__receiver,(crate::root::materialreplacer::MaterialReplacer_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaterialReplacer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca760usize)as*mut u8,();
+(MaterialReplacer)__receiver)}
+}
+}
 
-#[cfg(feature = "root-materialreplacer")]
-impl < __T : IMaterialReplacer > IMaterialReplacerMethods for __T { }
+#[cfg(feature="root-materialreplacer")]impl<__T:IMaterialReplacer>IMaterialReplacerMethods for __T{}
 
-#[cfg(feature = "root-materialreplacer")]
-impl MaterialReplacer { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialReplacer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialReplacer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialReplacer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialReplacer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-materialreplacer")]impl MaterialReplacer{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "root-materialreplacer")]
-impl MaterialReplacer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MaterialReplacer) , :: core :: stringify ! (new) ,)) ; < Self as IMaterialReplacerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-materialreplacer")]impl MaterialReplacer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialReplacer), ::core::stringify!(new),));
+ <Self as IMaterialReplacerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-materialreplacer")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MaterialReplacer_Mode;
     pub use super::MaterialReplacer;
     pub use super::IMaterialReplacer;
     pub use super::IMaterialReplacerMethods;
-    pub use super::MaterialReplacer_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

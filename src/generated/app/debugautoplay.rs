@@ -4,33 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugautoplay/DebugAutoPlay.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugAutoPlay")] # [parent (crate :: system :: object :: Object)] pub struct DebugAutoPlay {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugautoplay/DebugAutoPlay.md"))]#[::unity2::class(namespace="App",name="DebugAutoPlay")]#[parent(crate::system::object::Object)]pub struct DebugAutoPlay{}
 
 }
 
 #[cfg(feature = "app-debugautoplay-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debugautoplay")]
-impl DebugAutoPlay { # [doc = "`SetEnable(bool)` overload"] pub fn set_enable (enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a028f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnable()` overload"] pub fn is_enable () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a02900usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsSkip()` overload"] pub fn is_skip () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a02910usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsMonitor()` overload"] pub fn is_monitor () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a02920usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] pub fn update () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a02930usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] pub fn get_name () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a02940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugautoplay")]impl DebugAutoPlay{#[doc="`SetEnable(bool)` overload"]pub fn set_enable(enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a028f0usize)as*mut u8,();
+(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`IsEnable()` overload"]pub fn is_enable()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a02900usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsSkip()` overload"]pub fn is_skip()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a02910usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsMonitor()` overload"]pub fn is_monitor()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a02920usize)as*mut u8,bool;
+)}
+}
+#[doc="`Update()` overload"]pub fn update()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a02930usize)as*mut u8,();
+)}
+}
+#[doc="`GetName()` overload"]pub fn get_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a02940usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+}
 
-#[cfg(feature = "app-debugautoplay")]
-pub trait IDebugAutoPlayMethods : IDebugAutoPlay { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugAutoPlay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugAutoPlay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a02950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugautoplay")]pub trait IDebugAutoPlayMethods:IDebugAutoPlay{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugAutoPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a02950usize)as*mut u8,();
+(DebugAutoPlay)__receiver)}
+}
+}
 
-#[cfg(feature = "app-debugautoplay")]
-impl < __T : IDebugAutoPlay > IDebugAutoPlayMethods for __T { }
+#[cfg(feature="app-debugautoplay")]impl<__T:IDebugAutoPlay>IDebugAutoPlayMethods for __T{}
 
-#[cfg(feature = "app-debugautoplay")]
-impl DebugAutoPlay { pub fn set_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugAutoPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugAutoPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugAutoPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_monitor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugAutoPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugAutoPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugAutoPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugAutoPlay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-debugautoplay")]impl DebugAutoPlay{pub fn set_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_monitor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-debugautoplay")]
-impl DebugAutoPlay {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugAutoPlay) , :: core :: stringify ! (new) ,)) ; < Self as IDebugAutoPlayMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debugautoplay")]impl DebugAutoPlay{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugAutoPlay), ::core::stringify!(new),));
+ <Self as IDebugAutoPlayMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debugautoplay")]

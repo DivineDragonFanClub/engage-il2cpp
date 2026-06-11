@@ -4,40 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/railendmarkerreciever/RailEndMarkerReciever.md"))] # [:: unity2 :: class (namespace = "App" , name = "RailEndMarkerReciever")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RailEndMarkerReciever {
-# [offset (24)] # [rename (name = "m_CameraComponent")] pub m_camera_component : crate :: app :: dragonridecamera :: DragonRideCamera ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/railendmarkerreciever/RailEndMarkerReciever.md"))]#[::unity2::class(namespace="App",name="RailEndMarkerReciever")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RailEndMarkerReciever{#[offset(24)]#[rename(name="m_CameraComponent")]pub m_camera_component:crate::app::dragonridecamera::DragonRideCamera,}
 
 }
 
 #[cfg(feature = "app-railendmarkerreciever-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-railendmarkerreciever")]
-pub trait IRailEndMarkerRecieverMethods : IRailEndMarkerReciever { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RailEndMarkerReciever as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RailEndMarkerReciever , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2373e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < RailEndMarkerReciever as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RailEndMarkerReciever , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2373e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < RailEndMarkerReciever as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RailEndMarkerReciever , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2373ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"] fn on_notify (self , origin : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , notification : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: inotification :: INotification > , context : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < RailEndMarkerReciever as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RailEndMarkerReciever , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: inotification :: INotification , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2373eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (origin) , :: core :: convert :: Into :: into (notification) , :: core :: convert :: Into :: into (context) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RailEndMarkerReciever as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RailEndMarkerReciever , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-railendmarkerreciever")]pub trait IRailEndMarkerRecieverMethods:IRailEndMarkerReciever{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RailEndMarkerReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2373e80usize)as*mut u8,();
+(RailEndMarkerReciever)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <RailEndMarkerReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2373e90usize)as*mut u8,();
+(RailEndMarkerReciever)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <RailEndMarkerReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2373ea0usize)as*mut u8,();
+(RailEndMarkerReciever)__receiver)}
+}
+#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <RailEndMarkerReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2373eb0usize)as*mut u8,();
+(RailEndMarkerReciever)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(origin),(crate::unity_engine::playables::inotification::INotification)::core::convert::Into::into(notification),(crate::system::object::Object)::core::convert::Into::into(context))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RailEndMarkerReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2374020usize)as*mut u8,();
+(RailEndMarkerReciever)__receiver)}
+}
+}
 
-#[cfg(feature = "app-railendmarkerreciever")]
-impl < __T : IRailEndMarkerReciever > IRailEndMarkerRecieverMethods for __T { }
+#[cfg(feature="app-railendmarkerreciever")]impl<__T:IRailEndMarkerReciever>IRailEndMarkerRecieverMethods for __T{}
 
-#[cfg(feature = "app-railendmarkerreciever")]
-impl RailEndMarkerReciever { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RailEndMarkerReciever as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RailEndMarkerReciever as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RailEndMarkerReciever as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_notify_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RailEndMarkerReciever as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RailEndMarkerReciever as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-railendmarkerreciever")]impl RailEndMarkerReciever{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_notify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-railendmarkerreciever")]
-impl RailEndMarkerReciever {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RailEndMarkerReciever) , :: core :: stringify ! (new) ,)) ; < Self as IRailEndMarkerRecieverMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-railendmarkerreciever")]impl RailEndMarkerReciever{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RailEndMarkerReciever), ::core::stringify!(new),));
+ <Self as IRailEndMarkerRecieverMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-railendmarkerreciever")]

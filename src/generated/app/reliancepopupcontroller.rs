@@ -4,53 +4,103 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/reliancepopupcontroller/ReliancePopUpController.md"))] # [:: unity2 :: class (namespace = "App" , name = "ReliancePopUpController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ReliancePopUpController {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (32)] # [rename (name = "m_UnitIcon0")] pub m_unit_icon0 : crate :: app :: uniticon :: UnitIcon ,
-# [offset (40)] # [rename (name = "m_UnitIcon1")] pub m_unit_icon1 : crate :: app :: uniticon :: UnitIcon ,
-# [offset (48)] # [rename (name = "m_Heart0")] pub m_heart0 : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_Heart1")] pub m_heart1 : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_WdwReliance")] pub m_wdw_reliance : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_WdwTalk")] pub m_wdw_talk : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_TextReliance")] pub m_text_reliance : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_TextTalk")] pub m_text_talk : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_TalkIcon")] pub m_talk_icon : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/reliancepopupcontroller/ReliancePopUpController.md"))]#[::unity2::class(namespace="App",name="ReliancePopUpController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ReliancePopUpController{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_UnitIcon0")]pub m_unit_icon0:crate::app::uniticon::UnitIcon, #[offset(40)]#[rename(name="m_UnitIcon1")]pub m_unit_icon1:crate::app::uniticon::UnitIcon, #[offset(48)]#[rename(name="m_Heart0")]pub m_heart0:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_Heart1")]pub m_heart1:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_WdwReliance")]pub m_wdw_reliance:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_WdwTalk")]pub m_wdw_talk:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_TextReliance")]pub m_text_reliance:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_TextTalk")]pub m_text_talk:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_TalkIcon")]pub m_talk_icon:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-reliancepopupcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-reliancepopupcontroller")]
-impl ReliancePopUpController { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010bc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010c60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoaded()` overload"] pub fn is_loaded () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010ce0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010db0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: reliancepopupcontroller :: ReliancePopUpController { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: reliancepopupcontroller :: ReliancePopUpController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010e30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::reliancepopupcontroller::ReliancePopUpController)` overload"] pub fn destroy (content : impl :: core :: convert :: Into < crate :: app :: reliancepopupcontroller :: ReliancePopUpController >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: reliancepopupcontroller :: ReliancePopUpController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010ee0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-reliancepopupcontroller")]impl ReliancePopUpController{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2010bc0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2010c60usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsLoaded()` overload"]pub fn is_loaded()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2010ce0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2010db0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::reliancepopupcontroller::ReliancePopUpController{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2010e30usize)as*mut u8,crate::app::reliancepopupcontroller::ReliancePopUpController;
+)}
+}
+#[doc="`Destroy(crate::app::reliancepopupcontroller::ReliancePopUpController)` overload"]pub fn destroy(content:impl::core::convert::Into<crate::app::reliancepopupcontroller::ReliancePopUpController>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2010ee0usize)as*mut u8,();
+(crate::app::reliancepopupcontroller::ReliancePopUpController)::core::convert::Into::into(content))}
+}
+}
 
-#[cfg(feature = "app-reliancepopupcontroller")]
-pub trait IReliancePopUpControllerMethods : IReliancePopUpController { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < ReliancePopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReliancePopUpController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < ReliancePopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReliancePopUpController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayingAnim()` overload"] fn is_playing_anim (self ,) -> bool { unsafe { let __receiver = < ReliancePopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReliancePopUpController , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PopUp(crate::app::unit::Unit, crate::app::unit::Unit, i32)` overload"] fn pop_up (self , unit_l : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_r : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ReliancePopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReliancePopUpController , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_l) , :: core :: convert :: Into :: into (unit_r) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < ReliancePopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReliancePopUpController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2011770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ActiveReliance()` overload"] fn active_reliance (self ,) -> () { unsafe { let __receiver = < ReliancePopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReliancePopUpController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20116b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ActiveTalk()` overload"] fn active_talk (self ,) -> () { unsafe { let __receiver = < ReliancePopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReliancePopUpController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20115d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReliancePopUpController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReliancePopUpController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20117f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-reliancepopupcontroller")]pub trait IReliancePopUpControllerMethods:IReliancePopUpController{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <ReliancePopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010f60usize)as*mut u8,();
+(ReliancePopUpController)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <ReliancePopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2011260usize)as*mut u8,();
+(ReliancePopUpController)__receiver)}
+}
+#[doc="`IsPlayingAnim()` overload"]fn is_playing_anim(self,)->bool{unsafe{let __receiver= <ReliancePopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2011360usize)as*mut u8,bool;
+(ReliancePopUpController)__receiver)}
+}
+#[doc="`PopUp(crate::app::unit::Unit, crate::app::unit::Unit, i32)` overload"]fn pop_up(self,unit_l:impl::core::convert::Into<crate::app::unit::Unit> ,unit_r:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ReliancePopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2011380usize)as*mut u8,();
+(ReliancePopUpController)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_l),(crate::app::unit::Unit)::core::convert::Into::into(unit_r),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <ReliancePopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2011770usize)as*mut u8,();
+(ReliancePopUpController)__receiver)}
+}
+#[doc="`ActiveReliance()` overload"]fn active_reliance(self,)->(){unsafe{let __receiver= <ReliancePopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20116b0usize)as*mut u8,();
+(ReliancePopUpController)__receiver)}
+}
+#[doc="`ActiveTalk()` overload"]fn active_talk(self,)->(){unsafe{let __receiver= <ReliancePopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20115d0usize)as*mut u8,();
+(ReliancePopUpController)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ReliancePopUpController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20117f0usize)as*mut u8,();
+(ReliancePopUpController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-reliancepopupcontroller")]
-impl < __T : IReliancePopUpController > IReliancePopUpControllerMethods for __T { }
+#[cfg(feature="app-reliancepopupcontroller")]impl<__T:IReliancePopUpController>IReliancePopUpControllerMethods for __T{}
 
-#[cfg(feature = "app-reliancepopupcontroller")]
-impl ReliancePopUpController { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_playing_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn pop_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn active_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn active_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReliancePopUpController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-reliancepopupcontroller")]impl ReliancePopUpController{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_playing_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn pop_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn active_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn active_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-reliancepopupcontroller")]
-impl ReliancePopUpController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReliancePopUpController) , :: core :: stringify ! (new) ,)) ; < Self as IReliancePopUpControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-reliancepopupcontroller")]impl ReliancePopUpController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReliancePopUpController), ::core::stringify!(new),));
+ <Self as IReliancePopUpControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-reliancepopupcontroller")]

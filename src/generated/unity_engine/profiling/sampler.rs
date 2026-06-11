@@ -4,36 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/sampler/Sampler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Profiling" , name = "Sampler")] # [parent (crate :: system :: object :: Object)] pub struct Sampler {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [static_field] # [rename (name = "s_InvalidSampler")] pub s_invalid_sampler : crate :: unity_engine :: profiling :: sampler :: Sampler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/profiling/sampler/Sampler.md"))]#[::unity2::class(namespace="UnityEngine.Profiling",name="Sampler")]#[parent(crate::system::object::Object)]pub struct Sampler{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[static_field]#[rename(name="s_InvalidSampler")]pub s_invalid_sampler:crate::unity_engine::profiling::sampler::Sampler,}
 
 }
 
 #[cfg(feature = "unity_engine-profiling-sampler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-profiling-sampler")]
-impl Sampler { # [doc = "`GetRecorderInternal(::unity2::IntPtr)` overload"] pub fn get_recorder_internal (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89ad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89b20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-profiling-sampler")]impl Sampler{#[doc="`GetRecorderInternal(::unity2::IntPtr)` overload"]pub fn get_recorder_internal(ptr:impl::core::convert::Into< ::unity2::IntPtr>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89ad0usize)as*mut u8, ::unity2::IntPtr;
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89b20usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-profiling-sampler")]
-pub trait ISamplerMethods : ISampler { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Sampler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Sampler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_isValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < Sampler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Sampler , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRecorder()` overload"] fn get_recorder (self ,) -> crate :: unity_engine :: profiling :: recorder :: Recorder { unsafe { let __receiver = < Sampler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Sampler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: profiling :: recorder :: Recorder = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f899c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-profiling-sampler")]pub trait ISamplerMethods:ISampler{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Sampler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f89960usize)as*mut u8,();
+(Sampler)__receiver)}
+}
+#[doc="`get_isValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <Sampler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f89970usize)as*mut u8,bool;
+(Sampler)__receiver)}
+}
+#[doc="`GetRecorder()` overload"]fn get_recorder(self,)->crate::unity_engine::profiling::recorder::Recorder{unsafe{let __receiver= <Sampler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f899c0usize)as*mut u8,crate::unity_engine::profiling::recorder::Recorder;
+(Sampler)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-profiling-sampler")]
-impl < __T : ISampler > ISamplerMethods for __T { }
+#[cfg(feature="unity_engine-profiling-sampler")]impl<__T:ISampler>ISamplerMethods for __T{}
 
-#[cfg(feature = "unity_engine-profiling-sampler")]
-impl Sampler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_recorder_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_recorder_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Sampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-profiling-sampler")]impl Sampler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_recorder_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_recorder_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-profiling-sampler")]
-impl Sampler {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Sampler) , :: core :: stringify ! (new) ,)) ; < Self as ISamplerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-profiling-sampler")]impl Sampler{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Sampler), ::core::stringify!(new),));
+ <Self as ISamplerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-profiling-sampler")]

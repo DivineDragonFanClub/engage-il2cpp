@@ -4,32 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomcaptionbehaviour/MyRoomCaptionBehaviour.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomCaptionBehaviour")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct MyRoomCaptionBehaviour {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomcaptionbehaviour/MyRoomCaptionBehaviour.md"))]#[::unity2::class(namespace="App",name="MyRoomCaptionBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct MyRoomCaptionBehaviour{}
 
 }
 
 #[cfg(feature = "app-myroomcaptionbehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomcaptionbehaviour")]
-pub trait IMyRoomCaptionBehaviourMethods : IMyRoomCaptionBehaviour { # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < MyRoomCaptionBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomCaptionBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomCaptionBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomCaptionBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomcaptionbehaviour")]pub trait IMyRoomCaptionBehaviourMethods:IMyRoomCaptionBehaviour{#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <MyRoomCaptionBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c430usize)as*mut u8,();
+(MyRoomCaptionBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomCaptionBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c730usize)as*mut u8,();
+(MyRoomCaptionBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomcaptionbehaviour")]
-impl < __T : IMyRoomCaptionBehaviour > IMyRoomCaptionBehaviourMethods for __T { }
+#[cfg(feature="app-myroomcaptionbehaviour")]impl<__T:IMyRoomCaptionBehaviour>IMyRoomCaptionBehaviourMethods for __T{}
 
-#[cfg(feature = "app-myroomcaptionbehaviour")]
-impl MyRoomCaptionBehaviour { pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomCaptionBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomCaptionBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-myroomcaptionbehaviour")]impl MyRoomCaptionBehaviour{pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-myroomcaptionbehaviour")]
-impl MyRoomCaptionBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomCaptionBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomCaptionBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomcaptionbehaviour")]impl MyRoomCaptionBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomCaptionBehaviour), ::core::stringify!(new),));
+ <Self as IMyRoomCaptionBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomcaptionbehaviour")]

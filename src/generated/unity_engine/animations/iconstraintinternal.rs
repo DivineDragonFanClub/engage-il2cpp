@@ -4,10 +4,10 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animations/iconstraintinternal/IConstraintInternal.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Animations" , name = "IConstraintInternal")] pub struct IConstraintInternal {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animations/iconstraintinternal/IConstraintInternal.md"))]#[::unity2::class(namespace="UnityEngine.Animations",name="IConstraintInternal")]pub struct IConstraintInternal{}
 
 }
 

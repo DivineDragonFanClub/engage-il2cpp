@@ -4,36 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versususerglobaldata/VersusUserGlobalData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusUserGlobalData")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: versususerglobaldata :: VersusUserGlobalData >)] pub struct VersusUserGlobalData {
-# [static_field] # [rename (name = "ReportedListNum")] pub reported_list_num : i32 ,
-# [offset (32)] # [rename (name = "m_ReportedList")] pub m_reported_list : crate :: system :: collections :: generic :: list_1 :: List_1 < u64 > ,
-# [offset (40)] # [rename (name = "m_ReservedId")] pub m_reserved_id : u64 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versususerglobaldata/VersusUserGlobalData.md"))]#[::unity2::class(namespace="App",name="VersusUserGlobalData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::versususerglobaldata::VersusUserGlobalData>)]pub struct VersusUserGlobalData{#[static_field]#[rename(name="ReportedListNum")]pub reported_list_num:i32, #[offset(32)]#[rename(name="m_ReportedList")]pub m_reported_list:crate::system::collections::generic::list_1::List_1<u64> , #[offset(40)]#[rename(name="m_ReservedId")]pub m_reserved_id:u64,}
 
 }
 
 #[cfg(feature = "app-versususerglobaldata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versususerglobaldata")]
-pub trait IVersusUserGlobalDataMethods : IVersusUserGlobalData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bbff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddReportedIDReserve(u64)` overload"] fn add_reported_id_reserve (self , id : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`ContainsReportedList(u64)` overload"] fn contains_reported_list (self , id : impl :: core :: convert :: Into < u64 >) -> bool { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , u64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddReportedID(u64)` overload"] fn add_reported_id (self , id : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc1e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`Dump()` overload"] fn dump (self ,) -> () { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc2c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc4c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc4d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`Log(::unity2::Il2CppString)` overload"] fn log (self , mess : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusUserGlobalData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUserGlobalData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mess) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versususerglobaldata")]pub trait IVersusUserGlobalDataMethods:IVersusUserGlobalData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bbff0usize)as*mut u8,();
+(VersusUserGlobalData)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc100usize)as*mut u8,();
+(VersusUserGlobalData)__receiver)}
+}
+#[doc="`AddReportedIDReserve(u64)` overload"]fn add_reported_id_reserve(self,id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc160usize)as*mut u8,();
+(VersusUserGlobalData)__receiver,(u64)::core::convert::Into::into(id))}
+}
+#[doc="`ContainsReportedList(u64)` overload"]fn contains_reported_list(self,id:impl::core::convert::Into<u64>)->bool{unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc170usize)as*mut u8,bool;
+(VersusUserGlobalData)__receiver,(u64)::core::convert::Into::into(id))}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc1d0usize)as*mut u8,();
+(VersusUserGlobalData)__receiver)}
+}
+#[doc="`AddReportedID(u64)` overload"]fn add_reported_id(self,id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc1e0usize)as*mut u8,();
+(VersusUserGlobalData)__receiver,(u64)::core::convert::Into::into(id))}
+}
+#[doc="`Dump()` overload"]fn dump(self,)->(){unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc2c0usize)as*mut u8,();
+(VersusUserGlobalData)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc4c0usize)as*mut u8,i32;
+(VersusUserGlobalData)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc4d0usize)as*mut u8,();
+(VersusUserGlobalData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc590usize)as*mut u8,();
+(VersusUserGlobalData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`Log(::unity2::Il2CppString)` overload"]fn log(self,mess:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bc760usize)as*mut u8,();
+(VersusUserGlobalData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mess))}
+}
+}
 
-#[cfg(feature = "app-versususerglobaldata")]
-impl < __T : IVersusUserGlobalData > IVersusUserGlobalDataMethods for __T { }
+#[cfg(feature="app-versususerglobaldata")]impl<__T:IVersusUserGlobalData>IVersusUserGlobalDataMethods for __T{}
 
-#[cfg(feature = "app-versususerglobaldata")]
-impl VersusUserGlobalData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_reported_id_reserve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn contains_reported_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_reported_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUserGlobalData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-versususerglobaldata")]impl VersusUserGlobalData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_reported_id_reserve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn contains_reported_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_reported_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-versususerglobaldata")]
-impl VersusUserGlobalData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusUserGlobalData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusUserGlobalDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versususerglobaldata")]impl VersusUserGlobalData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusUserGlobalData), ::core::stringify!(new),));
+ <Self as IVersusUserGlobalDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versususerglobaldata")]

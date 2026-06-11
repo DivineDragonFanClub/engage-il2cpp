@@ -4,32 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdeschalt/ProcDescHalt.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescHalt")] # [parent (crate :: app :: procdesc :: ProcDesc)] pub struct ProcDescHalt {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdeschalt/ProcDescHalt.md"))]#[::unity2::class(namespace="App",name="ProcDescHalt")]#[parent(crate::app::procdesc::ProcDesc)]pub struct ProcDescHalt{}
 
 }
 
 #[cfg(feature = "app-procdeschalt-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdeschalt")]
-pub trait IProcDescHaltMethods : IProcDescHalt { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProcDescHalt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescHalt , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ad60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDescHalt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescHalt , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d1f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdeschalt")]pub trait IProcDescHaltMethods:IProcDescHalt{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProcDescHalt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281ad60usize)as*mut u8,();
+(ProcDescHalt)__receiver)}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescHalt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d1f0usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(ProcDescHalt)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdeschalt")]
-impl < __T : IProcDescHalt > IProcDescHaltMethods for __T { }
+#[cfg(feature="app-procdeschalt")]impl<__T:IProcDescHalt>IProcDescHaltMethods for __T{}
 
-#[cfg(feature = "app-procdeschalt")]
-impl ProcDescHalt { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescHalt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescHalt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdeschalt")]impl ProcDescHalt{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdeschalt")]
-impl ProcDescHalt {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescHalt) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescHaltMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-procdeschalt")]impl ProcDescHalt{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescHalt), ::core::stringify!(new),));
+ <Self as IProcDescHaltMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-procdeschalt")]

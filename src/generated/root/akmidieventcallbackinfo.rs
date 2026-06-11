@@ -4,41 +4,139 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akcallbackinfo :: { AkCallbackInfo , IAkCallbackInfo }
- ;
- use crate :: root :: akeventcallbackinfo :: { AkEventCallbackInfo , IAkEventCallbackInfo }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akcallbackinfo::{AkCallbackInfo,IAkCallbackInfo}
+;
+use crate::root::akeventcallbackinfo::{AkEventCallbackInfo,IAkEventCallbackInfo}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidieventcallbackinfo/AkMIDIEventCallbackInfo.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIEventCallbackInfo")] # [parent (crate :: root :: akeventcallbackinfo :: AkEventCallbackInfo)] pub struct AkMIDIEventCallbackInfo {
-# [offset (40)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidieventcallbackinfo/AkMIDIEventCallbackInfo.md"))]#[::unity2::class(namespace="",name="AkMIDIEventCallbackInfo")]#[parent(crate::root::akeventcallbackinfo::AkEventCallbackInfo)]pub struct AkMIDIEventCallbackInfo{#[offset(40)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "root-akmidieventcallbackinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akmidieventcallbackinfo")]
-impl AkMIDIEventCallbackInfo { # [doc = "`getCPtr(crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidieventcallbackinfo :: AkMIDIEventCallbackInfo >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidieventcallbackinfo :: AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24d70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmidieventcallbackinfo")]impl AkMIDIEventCallbackInfo{#[doc="`getCPtr(crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f24d70usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidieventcallbackinfo::AkMIDIEventCallbackInfo)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akmidieventcallbackinfo")]
-pub trait IAkMIDIEventCallbackInfoMethods : IAkMIDIEventCallbackInfo { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24c90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byChan()` overload"] fn get_by_chan (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byParam1()` overload"] fn get_by_param1 (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f251a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byParam2()` overload"] fn get_by_param2 (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byType()` overload"] fn get_by_type (self ,) -> crate :: root :: akmidieventtypes :: AkMIDIEventTypes { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidieventtypes :: AkMIDIEventTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byOnOffNote()` overload"] fn get_by_on_off_note (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f252f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byVelocity()` overload"] fn get_by_velocity (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byCc()` overload"] fn get_by_cc (self ,) -> crate :: root :: akmidicctypes :: AkMIDICcTypes { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidicctypes :: AkMIDICcTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f253d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byCcValue()` overload"] fn get_by_cc_value (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byValueLsb()` overload"] fn get_by_value_lsb (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f254b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byValueMsb()` overload"] fn get_by_value_msb (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byAftertouchNote()` overload"] fn get_by_aftertouch_note (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byNoteAftertouchValue()` overload"] fn get_by_note_aftertouch_value (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byChanAftertouchValue()` overload"] fn get_by_chan_aftertouch_value (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_byProgramNum()` overload"] fn get_by_program_num (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f256e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIEventCallbackInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEventCallbackInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f25750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmidieventcallbackinfo")]pub trait IAkMIDIEventCallbackInfoMethods:IAkMIDIEventCallbackInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24c90usize)as*mut u8,();
+(AkMIDIEventCallbackInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24dd0usize)as*mut u8,();
+(AkMIDIEventCallbackInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24eb0usize)as*mut u8,();
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24fa0usize)as*mut u8,();
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byChan()` overload"]fn get_by_chan(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25130usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byParam1()` overload"]fn get_by_param1(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f251a0usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byParam2()` overload"]fn get_by_param2(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25210usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byType()` overload"]fn get_by_type(self,)->crate::root::akmidieventtypes::AkMIDIEventTypes{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25280usize)as*mut u8,crate::root::akmidieventtypes::AkMIDIEventTypes;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byOnOffNote()` overload"]fn get_by_on_off_note(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f252f0usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byVelocity()` overload"]fn get_by_velocity(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25360usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byCc()` overload"]fn get_by_cc(self,)->crate::root::akmidicctypes::AkMIDICcTypes{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f253d0usize)as*mut u8,crate::root::akmidicctypes::AkMIDICcTypes;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byCcValue()` overload"]fn get_by_cc_value(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25440usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byValueLsb()` overload"]fn get_by_value_lsb(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f254b0usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byValueMsb()` overload"]fn get_by_value_msb(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25520usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byAftertouchNote()` overload"]fn get_by_aftertouch_note(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25590usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byNoteAftertouchValue()` overload"]fn get_by_note_aftertouch_value(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25600usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byChanAftertouchValue()` overload"]fn get_by_chan_aftertouch_value(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25670usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`get_byProgramNum()` overload"]fn get_by_program_num(self,)->u8{unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f256e0usize)as*mut u8,u8;
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIEventCallbackInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f25750usize)as*mut u8,();
+(AkMIDIEventCallbackInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akmidieventcallbackinfo")]
-impl < __T : IAkMIDIEventCallbackInfo > IAkMIDIEventCallbackInfoMethods for __T { }
+#[cfg(feature="root-akmidieventcallbackinfo")]impl<__T:IAkMIDIEventCallbackInfo>IAkMIDIEventCallbackInfoMethods for __T{}
 
-#[cfg(feature = "root-akmidieventcallbackinfo")]
-impl AkMIDIEventCallbackInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_by_chan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_by_param1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_by_param2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_by_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_by_on_off_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_by_velocity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_by_cc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_by_cc_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_by_value_lsb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_by_value_msb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_by_aftertouch_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_by_note_aftertouch_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_by_chan_aftertouch_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_by_program_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEventCallbackInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
+#[cfg(feature="root-akmidieventcallbackinfo")]impl AkMIDIEventCallbackInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_by_chan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_by_param1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_by_param2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_by_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_by_on_off_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_by_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_by_cc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_by_cc_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_by_value_lsb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_by_value_msb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_by_aftertouch_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_by_note_aftertouch_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_by_chan_aftertouch_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_by_program_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
 
-#[cfg(feature = "root-akmidieventcallbackinfo")]
-impl AkMIDIEventCallbackInfo {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEventCallbackInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIEventCallbackInfoMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEventCallbackInfo) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIEventCallbackInfoMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidieventcallbackinfo")]impl AkMIDIEventCallbackInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEventCallbackInfo), ::core::stringify!(new),));
+ <Self as IAkMIDIEventCallbackInfoMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEventCallbackInfo), ::core::stringify!(new_2),));
+ <Self as IAkMIDIEventCallbackInfoMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akmidieventcallbackinfo")]

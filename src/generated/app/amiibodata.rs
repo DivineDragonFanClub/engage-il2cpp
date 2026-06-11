@@ -4,39 +4,111 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibodata/AmiiboData.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: amiibodata :: AmiiboData >)] pub struct AmiiboData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibodata/AmiiboData.md"))]#[::unity2::class(namespace="App",name="AmiiboData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::amiibodata::AmiiboData>)]pub struct AmiiboData{}
 
 }
 
 #[cfg(feature = "app-amiibodata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-amiibodata")]
-impl AmiiboData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32c00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiibodata")]impl AmiiboData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d32c00usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-amiibodata")]
-pub trait IAmiiboDataMethods : IAmiiboData { # [doc = "`get_NumberingID()` overload"] fn get_numbering_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NumberingID(::unity2::Il2CppString)` overload"] fn set_numbering_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IIDs()` overload"] fn get_ii_ds (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IIDs(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_ii_ds (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AID()` overload"] fn get_aid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AID(::unity2::Il2CppString)` overload"] fn set_aid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BGM()` overload"] fn get_bgm (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BGM(::unity2::Il2CppString)` overload"] fn set_bgm (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TicketNum()` overload"] fn get_ticket_num (self ,) -> i32 { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TicketNum(i32)` overload"] fn set_ticket_num (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32d40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_KizunaNum()` overload"] fn get_kizuna_num (self ,) -> i32 { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_KizunaNum(i32)` overload"] fn set_kizuna_num (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AmiiboData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d32d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiibodata")]pub trait IAmiiboDataMethods:IAmiiboData{#[doc="`get_NumberingID()` overload"]fn get_numbering_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32cb0usize)as*mut u8, ::unity2::Il2CppString;
+(AmiiboData)__receiver)}
+}
+#[doc="`set_NumberingID(::unity2::Il2CppString)` overload"]fn set_numbering_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32cc0usize)as*mut u8,();
+(AmiiboData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_IIDs()` overload"]fn get_ii_ds(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32cd0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(AmiiboData)__receiver)}
+}
+#[doc="`set_IIDs(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_ii_ds(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32ce0usize)as*mut u8,();
+(AmiiboData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_AID()` overload"]fn get_aid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32cf0usize)as*mut u8, ::unity2::Il2CppString;
+(AmiiboData)__receiver)}
+}
+#[doc="`set_AID(::unity2::Il2CppString)` overload"]fn set_aid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32d00usize)as*mut u8,();
+(AmiiboData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BGM()` overload"]fn get_bgm(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32d10usize)as*mut u8, ::unity2::Il2CppString;
+(AmiiboData)__receiver)}
+}
+#[doc="`set_BGM(::unity2::Il2CppString)` overload"]fn set_bgm(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32d20usize)as*mut u8,();
+(AmiiboData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_TicketNum()` overload"]fn get_ticket_num(self,)->i32{unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32d30usize)as*mut u8,i32;
+(AmiiboData)__receiver)}
+}
+#[doc="`set_TicketNum(i32)` overload"]fn set_ticket_num(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32d40usize)as*mut u8,();
+(AmiiboData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_KizunaNum()` overload"]fn get_kizuna_num(self,)->i32{unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32d50usize)as*mut u8,i32;
+(AmiiboData)__receiver)}
+}
+#[doc="`set_KizunaNum(i32)` overload"]fn set_kizuna_num(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32d60usize)as*mut u8,();
+(AmiiboData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32d70usize)as*mut u8, ::unity2::Il2CppString;
+(AmiiboData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d32d80usize)as*mut u8,();
+(AmiiboData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-amiibodata")]
-impl < __T : IAmiiboData > IAmiiboDataMethods for __T { }
+#[cfg(feature="app-amiibodata")]impl<__T:IAmiiboData>IAmiiboDataMethods for __T{}
 
-#[cfg(feature = "app-amiibodata")]
-impl AmiiboData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_numbering_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_numbering_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_ii_ds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_ii_ds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_ticket_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_ticket_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_kizuna_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_kizuna_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-amiibodata")]impl AmiiboData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_numbering_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_numbering_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_ii_ds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_ii_ds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_ticket_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_ticket_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_kizuna_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_kizuna_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-amiibodata")]
-impl AmiiboData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AmiiboData) , :: core :: stringify ! (new) ,)) ; < Self as IAmiiboDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-amiibodata")]impl AmiiboData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AmiiboData), ::core::stringify!(new),));
+ <Self as IAmiiboDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-amiibodata")]

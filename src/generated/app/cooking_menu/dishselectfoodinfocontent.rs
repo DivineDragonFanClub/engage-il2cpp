@@ -4,119 +4,135 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_UnitObject.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectFoodInfoContent.UnitObject")] # [parent (crate :: system :: object :: Object)] pub struct DishSelectFoodInfoContent_UnitObject {
-# [offset (16)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (24)] # [rename (name = "m_LikeObject")] pub m_like_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_DislikeObject")] pub m_dislike_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_NormalObject")] pub m_normal_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_UnitObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectFoodInfoContent.UnitObject")]#[parent(crate::system::object::Object)]pub struct DishSelectFoodInfoContent_UnitObject{#[offset(16)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_LikeObject")]pub m_like_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_DislikeObject")]pub m_dislike_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_NormalObject")]pub m_normal_object:crate::unity_engine::gameobject::GameObject,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectFoodInfoContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DishSelectFoodInfoContent {
-# [offset (24)] # [rename (name = "m_FoodName")] pub m_food_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_FoodMessage")] pub m_food_message : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_DifficultyIcon")] pub m_difficulty_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_DifficultyText")] pub m_difficulty_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_EnhanceAtkObject")] pub m_enhance_atk_object : crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_EnhanceObject ,
-# [offset (64)] # [rename (name = "m_EnhanceMagObject")] pub m_enhance_mag_object : crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_EnhanceObject ,
-# [offset (72)] # [rename (name = "m_EnhanceSpdObject")] pub m_enhance_spd_object : crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_EnhanceObject ,
-# [offset (80)] # [rename (name = "m_EnhanceDefObject")] pub m_enhance_def_object : crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_EnhanceObject ,
-# [offset (88)] # [rename (name = "m_EnhanceResObject")] pub m_enhance_res_object : crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_EnhanceObject ,
-# [offset (96)] # [rename (name = "m_FoodstuffList")] pub m_foodstuff_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_FoodstuffObject > ,
-# [offset (104)] # [rename (name = "m_UnitObjectList")] pub m_unit_object_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_UnitObject > ,
-# [offset (112)] # [rename (name = "m_Cook")] pub m_cook : crate :: app :: cookdata :: CookData ,
-# [offset (120)] # [rename (name = "m_SelectedUnitCookList")] pub m_selected_unit_cook_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cookdata :: CookData > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectFoodInfoContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DishSelectFoodInfoContent{#[offset(24)]#[rename(name="m_FoodName")]pub m_food_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_FoodMessage")]pub m_food_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_DifficultyIcon")]pub m_difficulty_icon:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_DifficultyText")]pub m_difficulty_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_EnhanceAtkObject")]pub m_enhance_atk_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(64)]#[rename(name="m_EnhanceMagObject")]pub m_enhance_mag_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(72)]#[rename(name="m_EnhanceSpdObject")]pub m_enhance_spd_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(80)]#[rename(name="m_EnhanceDefObject")]pub m_enhance_def_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(88)]#[rename(name="m_EnhanceResObject")]pub m_enhance_res_object:crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, #[offset(96)]#[rename(name="m_FoodstuffList")]pub m_foodstuff_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_FoodstuffObject> , #[offset(104)]#[rename(name="m_UnitObjectList")]pub m_unit_object_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_UnitObject> , #[offset(112)]#[rename(name="m_Cook")]pub m_cook:crate::app::cookdata::CookData, #[offset(120)]#[rename(name="m_SelectedUnitCookList")]pub m_selected_unit_cook_list:crate::system::collections::generic::list_1::List_1<crate::app::cookdata::CookData> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_EnhanceObject.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectFoodInfoContent.EnhanceObject")] # [parent (crate :: system :: object :: Object)] pub struct DishSelectFoodInfoContent_EnhanceObject {
-# [offset (16)] # [rename (name = "m_Value")] pub m_value : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_Nothing")] pub m_nothing : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_ValueText")] pub m_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_FoodstuffObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectFoodInfoContent.FoodstuffObject")]#[parent(crate::system::object::Object)]pub struct DishSelectFoodInfoContent_FoodstuffObject{#[offset(16)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_IconImage")]pub m_icon_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_NumText")]pub m_num_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_CountMessText")]pub m_count_mess_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_FoodstuffObject.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectFoodInfoContent.FoodstuffObject")] # [parent (crate :: system :: object :: Object)] pub struct DishSelectFoodInfoContent_FoodstuffObject {
-# [offset (16)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_IconImage")] pub m_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_NumText")] pub m_num_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_CountMessText")] pub m_count_mess_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_EnhanceObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectFoodInfoContent.EnhanceObject")]#[parent(crate::system::object::Object)]pub struct DishSelectFoodInfoContent_EnhanceObject{#[offset(16)]#[rename(name="m_Value")]pub m_value:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Nothing")]pub m_nothing:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-pub trait IDishSelectFoodInfoContent_UnitObjectMethods : IDishSelectFoodInfoContent_UnitObject { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent_UnitObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent_UnitObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd24b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl < __T : IDishSelectFoodInfoContent_UnitObject > IDishSelectFoodInfoContent_UnitObjectMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_UnitObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent_UnitObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_UnitObject {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectFoodInfoContent_UnitObject) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectFoodInfoContent_UnitObjectMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]pub trait IDishSelectFoodInfoContent_UnitObjectMethods:IDishSelectFoodInfoContent_UnitObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishSelectFoodInfoContent_UnitObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd24b0usize)as*mut u8,();
+(DishSelectFoodInfoContent_UnitObject)__receiver)}
+}
 }
 
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-pub trait IDishSelectFoodInfoContentMethods : IDishSelectFoodInfoContent { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf6400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetFood(crate::app::fooddata::FoodData, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"] fn set_food (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData > , selected_unit_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > >) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent , crate :: app :: fooddata :: FoodData , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf67f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: convert :: Into :: into (selected_unit_list) , :: core :: option :: Option :: None) } } } # [doc = "`SetDifficulty(crate::app::fooddata::FoodData)` overload"] fn set_difficulty (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData >) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf6c40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: option :: Option :: None) } } } # [doc = "`SetEnhance(crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, i32)` overload"] fn set_enhance (self , enhance_object : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_EnhanceObject > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent , crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_EnhanceObject , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf6db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enhance_object) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetFoodstuffs(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_foodstuffs (self , fids : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf6ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fids) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnit(crate::app::fooddata::FoodData, crate::app::cookdata::CookData, crate::app::unit::Unit, crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_UnitObject)` overload"] fn set_unit (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData > , cook : impl :: core :: convert :: Into < crate :: app :: cookdata :: CookData > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_object : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_UnitObject >) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent , crate :: app :: fooddata :: FoodData , crate :: app :: cookdata :: CookData , crate :: app :: unit :: Unit , crate :: app :: cooking_menu :: dishselectfoodinfocontent :: DishSelectFoodInfoContent_UnitObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf7260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: convert :: Into :: into (cook) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (unit_object) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf73e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl<__T:IDishSelectFoodInfoContent_UnitObject>IDishSelectFoodInfoContent_UnitObjectMethods for __T{}
 
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl < __T : IDishSelectFoodInfoContent > IDishSelectFoodInfoContentMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_difficulty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_enhance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_foodstuffs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectFoodInfoContent) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectFoodInfoContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_UnitObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-pub trait IDishSelectFoodInfoContent_EnhanceObjectMethods : IDishSelectFoodInfoContent_EnhanceObject { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent_EnhanceObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent_EnhanceObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd2490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl < __T : IDishSelectFoodInfoContent_EnhanceObject > IDishSelectFoodInfoContent_EnhanceObjectMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_EnhanceObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent_EnhanceObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_EnhanceObject {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectFoodInfoContent_EnhanceObject) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectFoodInfoContent_EnhanceObjectMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_UnitObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectFoodInfoContent_UnitObject), ::core::stringify!(new),));
+ <Self as IDishSelectFoodInfoContent_UnitObjectMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-pub trait IDishSelectFoodInfoContent_FoodstuffObjectMethods : IDishSelectFoodInfoContent_FoodstuffObject { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishSelectFoodInfoContent_FoodstuffObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectFoodInfoContent_FoodstuffObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd24a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]pub trait IDishSelectFoodInfoContentMethods:IDishSelectFoodInfoContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <DishSelectFoodInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf6400usize)as*mut u8,();
+(DishSelectFoodInfoContent)__receiver)}
+}
+#[doc="`SetFood(crate::app::fooddata::FoodData, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]fn set_food(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData> ,selected_unit_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> >)->(){unsafe{let __receiver= <DishSelectFoodInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf67f0usize)as*mut u8,();
+(DishSelectFoodInfoContent)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(selected_unit_list))}
+}
+#[doc="`SetDifficulty(crate::app::fooddata::FoodData)` overload"]fn set_difficulty(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData>)->(){unsafe{let __receiver= <DishSelectFoodInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf6c40usize)as*mut u8,();
+(DishSelectFoodInfoContent)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food))}
+}
+#[doc="`SetEnhance(crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject, i32)` overload"]fn set_enhance(self,enhance_object:impl::core::convert::Into<crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DishSelectFoodInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf6db0usize)as*mut u8,();
+(DishSelectFoodInfoContent)__receiver,(crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_EnhanceObject)::core::convert::Into::into(enhance_object),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`SetFoodstuffs(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_foodstuffs(self,fids:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <DishSelectFoodInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf6ff0usize)as*mut u8,();
+(DishSelectFoodInfoContent)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(fids))}
+}
+#[doc="`SetUnit(crate::app::fooddata::FoodData, crate::app::cookdata::CookData, crate::app::unit::Unit, crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_UnitObject)` overload"]fn set_unit(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData> ,cook:impl::core::convert::Into<crate::app::cookdata::CookData> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_object:impl::core::convert::Into<crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_UnitObject>)->(){unsafe{let __receiver= <DishSelectFoodInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf7260usize)as*mut u8,();
+(DishSelectFoodInfoContent)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food),(crate::app::cookdata::CookData)::core::convert::Into::into(cook),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::cooking_menu::dishselectfoodinfocontent::DishSelectFoodInfoContent_UnitObject)::core::convert::Into::into(unit_object))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishSelectFoodInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf73e0usize)as*mut u8,();
+(DishSelectFoodInfoContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl < __T : IDishSelectFoodInfoContent_FoodstuffObject > IDishSelectFoodInfoContent_FoodstuffObjectMethods for __T { }
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl<__T:IDishSelectFoodInfoContent>IDishSelectFoodInfoContentMethods for __T{}
 
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_FoodstuffObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectFoodInfoContent_FoodstuffObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_difficulty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_enhance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_foodstuffs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_FoodstuffObject {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectFoodInfoContent_FoodstuffObject) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectFoodInfoContent_FoodstuffObjectMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectFoodInfoContent), ::core::stringify!(new),));
+ <Self as IDishSelectFoodInfoContentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]pub trait IDishSelectFoodInfoContent_FoodstuffObjectMethods:IDishSelectFoodInfoContent_FoodstuffObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishSelectFoodInfoContent_FoodstuffObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd24a0usize)as*mut u8,();
+(DishSelectFoodInfoContent_FoodstuffObject)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl<__T:IDishSelectFoodInfoContent_FoodstuffObject>IDishSelectFoodInfoContent_FoodstuffObjectMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_FoodstuffObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_FoodstuffObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectFoodInfoContent_FoodstuffObject), ::core::stringify!(new),));
+ <Self as IDishSelectFoodInfoContent_FoodstuffObjectMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]pub trait IDishSelectFoodInfoContent_EnhanceObjectMethods:IDishSelectFoodInfoContent_EnhanceObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishSelectFoodInfoContent_EnhanceObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd2490usize)as*mut u8,();
+(DishSelectFoodInfoContent_EnhanceObject)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl<__T:IDishSelectFoodInfoContent_EnhanceObject>IDishSelectFoodInfoContent_EnhanceObjectMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_EnhanceObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectfoodinfocontent")]impl DishSelectFoodInfoContent_EnhanceObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectFoodInfoContent_EnhanceObject), ::core::stringify!(new),));
+ <Self as IDishSelectFoodInfoContent_EnhanceObjectMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
@@ -128,12 +144,12 @@ pub mod prelude {
     pub use super::DishSelectFoodInfoContent;
     pub use super::IDishSelectFoodInfoContent;
     pub use super::IDishSelectFoodInfoContentMethods;
-    pub use super::DishSelectFoodInfoContent_EnhanceObject;
-    pub use super::IDishSelectFoodInfoContent_EnhanceObject;
-    pub use super::IDishSelectFoodInfoContent_EnhanceObjectMethods;
     pub use super::DishSelectFoodInfoContent_FoodstuffObject;
     pub use super::IDishSelectFoodInfoContent_FoodstuffObject;
     pub use super::IDishSelectFoodInfoContent_FoodstuffObjectMethods;
+    pub use super::DishSelectFoodInfoContent_EnhanceObject;
+    pub use super::IDishSelectFoodInfoContent_EnhanceObject;
+    pub use super::IDishSelectFoodInfoContent_EnhanceObjectMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

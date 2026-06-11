@@ -4,33 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringexecute/SynthesisRingExecute.md"))] # [:: unity2 :: class (namespace = "App" , name = "SynthesisRingExecute")] # [parent (crate :: system :: object :: Object)] pub struct SynthesisRingExecute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/synthesisringexecute/SynthesisRingExecute.md"))]#[::unity2::class(namespace="App",name="SynthesisRingExecute")]#[parent(crate::system::object::Object)]pub struct SynthesisRingExecute{}
 
 }
 
 #[cfg(feature = "app-synthesisringexecute-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-synthesisringexecute")]
-impl SynthesisRingExecute { # [doc = "`Do(::unity2::Il2CppString, i32, i32)` overload"] pub fn r#do (base_ring_rnid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , count_base_ring : impl :: core :: convert :: Into < i32 > , count_piece_of_bonds : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b2ae0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (base_ring_rnid) , :: core :: convert :: Into :: into (count_base_ring) , :: core :: convert :: Into :: into (count_piece_of_bonds) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-synthesisringexecute")]impl SynthesisRingExecute{#[doc="`Do(::unity2::Il2CppString, i32, i32)` overload"]pub fn r#do(base_ring_rnid:impl::core::convert::Into< ::unity2::Il2CppString> ,count_base_ring:impl::core::convert::Into<i32> ,count_piece_of_bonds:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b2ae0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(base_ring_rnid),(i32)::core::convert::Into::into(count_base_ring),(i32)::core::convert::Into::into(count_piece_of_bonds))}
+}
+}
 
-#[cfg(feature = "app-synthesisringexecute")]
-pub trait ISynthesisRingExecuteMethods : ISynthesisRingExecute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SynthesisRingExecute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SynthesisRingExecute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b2d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-synthesisringexecute")]pub trait ISynthesisRingExecuteMethods:ISynthesisRingExecute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SynthesisRingExecute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b2d10usize)as*mut u8,();
+(SynthesisRingExecute)__receiver)}
+}
+}
 
-#[cfg(feature = "app-synthesisringexecute")]
-impl < __T : ISynthesisRingExecute > ISynthesisRingExecuteMethods for __T { }
+#[cfg(feature="app-synthesisringexecute")]impl<__T:ISynthesisRingExecute>ISynthesisRingExecuteMethods for __T{}
 
-#[cfg(feature = "app-synthesisringexecute")]
-impl SynthesisRingExecute { pub fn do_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingExecute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SynthesisRingExecute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-synthesisringexecute")]impl SynthesisRingExecute{pub fn do_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-synthesisringexecute")]
-impl SynthesisRingExecute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SynthesisRingExecute) , :: core :: stringify ! (new) ,)) ; < Self as ISynthesisRingExecuteMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-synthesisringexecute")]impl SynthesisRingExecute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SynthesisRingExecute), ::core::stringify!(new),));
+ <Self as ISynthesisRingExecuteMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-synthesisringexecute")]

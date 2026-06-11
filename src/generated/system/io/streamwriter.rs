@@ -4,50 +4,121 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: textwriter :: { ITextWriter , TextWriter }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::textwriter::{ITextWriter,TextWriter}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamwriter/StreamWriter.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "StreamWriter")] # [parent (crate :: system :: io :: textwriter :: TextWriter)] pub struct StreamWriter {
-# [static_field] # [rename (name = "Null")] pub null : crate :: system :: io :: streamwriter :: StreamWriter ,
-# [offset (40)] # [rename (name = "stream")] pub stream : crate :: system :: io :: stream :: Stream ,
-# [offset (64)] # [rename (name = "byteBuffer")] pub byte_buffer : :: unity2 :: Array < u8 > ,
-# [offset (72)] # [rename (name = "charBuffer")] pub char_buffer : :: unity2 :: Array < u16 > ,
-# [offset (80)] # [rename (name = "charPos")] pub char_pos : i32 ,
-# [offset (84)] # [rename (name = "charLen")] pub char_len : i32 ,
-# [offset (88)] # [rename (name = "autoFlush")] pub auto_flush_field : bool ,
-# [offset (89)] # [rename (name = "haveWrittenPreamble")] pub have_written_preamble : bool ,
-# [offset (90)] # [rename (name = "closable")] pub closable : bool ,
-# [static_field] # [rename (name = "_UTF8NoBOM")] pub utf8_no_bom : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/streamwriter/StreamWriter.md"))]#[::unity2::class(namespace="System.IO",name="StreamWriter")]#[parent(crate::system::io::textwriter::TextWriter)]pub struct StreamWriter{#[static_field]#[rename(name="Null")]pub null:crate::system::io::streamwriter::StreamWriter, #[offset(40)]#[rename(name="stream")]pub stream:crate::system::io::stream::Stream, #[offset(64)]#[rename(name="byteBuffer")]pub byte_buffer: ::unity2::Array<u8> , #[offset(72)]#[rename(name="charBuffer")]pub char_buffer: ::unity2::Array<u16> , #[offset(80)]#[rename(name="charPos")]pub char_pos:i32, #[offset(84)]#[rename(name="charLen")]pub char_len:i32, #[offset(88)]#[rename(name="autoFlush")]pub auto_flush_field:bool, #[offset(89)]#[rename(name="haveWrittenPreamble")]pub have_written_preamble:bool, #[offset(90)]#[rename(name="closable")]pub closable:bool, #[static_field]#[rename(name="_UTF8NoBOM")]pub utf8_no_bom: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "system-io-streamwriter-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-streamwriter")]
-impl StreamWriter { # [doc = "`CreateFile(::unity2::Il2CppString, bool, bool)` overload"] pub fn create_file (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , append : impl :: core :: convert :: Into < bool > , check_host : impl :: core :: convert :: Into < bool >) -> crate :: system :: io :: stream :: Stream { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: io :: stream :: Stream = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377e650usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (append) , :: core :: convert :: Into :: into (check_host) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377f1b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-streamwriter")]impl StreamWriter{#[doc="`CreateFile(::unity2::Il2CppString, bool, bool)` overload"]pub fn create_file(path:impl::core::convert::Into< ::unity2::Il2CppString> ,append:impl::core::convert::Into<bool> ,check_host:impl::core::convert::Into<bool>)->crate::system::io::stream::Stream{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x377e650usize)as*mut u8,crate::system::io::stream::Stream;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(bool)::core::convert::Into::into(append),(bool)::core::convert::Into::into(check_host))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x377f1b0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-io-streamwriter")]
-pub trait IStreamWriterMethods : IStreamWriter { # [doc = "`CheckAsyncTaskInProgress()` overload"] fn check_async_task_in_progress (self ,) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377ddc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377df70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream)` overload"] fn ctor_2 (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377dfe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_3 (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377e390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377e750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377e7d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`Flush()` overload"] fn flush (self ,) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377eae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Flush(bool, bool)` overload"] fn flush_2 (self , flush_stream : impl :: core :: convert :: Into < bool > , flush_encoder : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377e990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (flush_stream) , :: core :: convert :: Into :: into (flush_encoder) , :: core :: option :: Option :: None) } } } # [doc = "`set_AutoFlush(bool)` overload"] fn set_auto_flush (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377eb10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LeaveOpen()` overload"] fn get_leave_open (self ,) -> bool { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377e980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Write(u16)` overload"] fn write (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377eb80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u16>)` overload"] fn write_2 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > >) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , :: unity2 :: Array < u16 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377ec20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u16>, i32, i32)` overload"] fn write_3 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377ed00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Il2CppString)` overload"] fn write_4 (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StreamWriter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StreamWriter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x377ef20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-streamwriter")]pub trait IStreamWriterMethods:IStreamWriter{#[doc="`CheckAsyncTaskInProgress()` overload"]fn check_async_task_in_progress(self,)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377ddc0usize)as*mut u8,();
+(StreamWriter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377df70usize)as*mut u8,();
+(StreamWriter)__receiver)}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream)` overload"]fn ctor_2(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377dfe0usize)as*mut u8,();
+(StreamWriter)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_3(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377e390usize)as*mut u8,();
+(StreamWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377e750usize)as*mut u8,();
+(StreamWriter)__receiver)}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377e7d0usize)as*mut u8,();
+(StreamWriter)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377eae0usize)as*mut u8,();
+(StreamWriter)__receiver)}
+}
+#[doc="`Flush(bool, bool)` overload"]fn flush_2(self,flush_stream:impl::core::convert::Into<bool> ,flush_encoder:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377e990usize)as*mut u8,();
+(StreamWriter)__receiver,(bool)::core::convert::Into::into(flush_stream),(bool)::core::convert::Into::into(flush_encoder))}
+}
+#[doc="`set_AutoFlush(bool)` overload"]fn set_auto_flush(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377eb10usize)as*mut u8,();
+(StreamWriter)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_LeaveOpen()` overload"]fn get_leave_open(self,)->bool{unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377e980usize)as*mut u8,bool;
+(StreamWriter)__receiver)}
+}
+#[doc="`Write(u16)` overload"]fn write(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377eb80usize)as*mut u8,();
+(StreamWriter)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`Write(::unity2::Array<u16>)` overload"]fn write_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377ec20usize)as*mut u8,();
+(StreamWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer))}
+}
+#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write_3(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377ed00usize)as*mut u8,();
+(StreamWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x377ef20usize)as*mut u8,();
+(StreamWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "system-io-streamwriter")]
-impl < __T : IStreamWriter > IStreamWriterMethods for __T { }
+#[cfg(feature="system-io-streamwriter")]impl<__T:IStreamWriter>IStreamWriterMethods for __T{}
 
-#[cfg(feature = "system-io-streamwriter")]
-impl StreamWriter { pub fn check_async_task_in_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn flush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn flush_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_auto_flush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_leave_open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn write_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn write_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn write_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StreamWriter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="system-io-streamwriter")]impl StreamWriter{pub fn check_async_task_in_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn flush_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_auto_flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_leave_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn write_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn write_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "system-io-streamwriter")]
-impl StreamWriter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StreamWriter) , :: core :: stringify ! (new) ,)) ; < Self as IStreamWriterMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::system::io::stream::Stream)` — overload selector"] pub fn new_2 (stream : crate :: system :: io :: stream :: Stream) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StreamWriter) , :: core :: stringify ! (new_2) ,)) ; < Self as IStreamWriterMethods > :: ctor_2 (this , stream) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_3 (path : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StreamWriter) , :: core :: stringify ! (new_3) ,)) ; < Self as IStreamWriterMethods > :: ctor_3 (this , path) ; this }
+#[cfg(feature="system-io-streamwriter")]impl StreamWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StreamWriter), ::core::stringify!(new),));
+ <Self as IStreamWriterMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream)` — overload selector"]pub fn new_2(stream:crate::system::io::stream::Stream)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StreamWriter), ::core::stringify!(new_2),));
+ <Self as IStreamWriterMethods> ::ctor_2(this,stream);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_3(path: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StreamWriter), ::core::stringify!(new_3),));
+ <Self as IStreamWriterMethods> ::ctor_3(this,path);
+this}
 }
 
 #[cfg(feature = "system-io-streamwriter")]

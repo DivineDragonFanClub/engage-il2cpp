@@ -4,37 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: deco_rod :: { Deco_Rod , IDeco_Rod }
- ;
- use crate :: combat :: decorator :: { Decorator , IDecorator }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::deco_rod::{Deco_Rod,IDeco_Rod}
+;
+use crate::combat::decorator::{Decorator,IDecorator}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_rodblock/Deco_RodBlock.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Deco_RodBlock")] # [parent (crate :: combat :: deco_rod :: Deco_Rod)] pub struct Deco_RodBlock {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/deco_rodblock/Deco_RodBlock.md"))]#[::unity2::class(namespace="Combat",name="Deco_RodBlock")]#[parent(crate::combat::deco_rod::Deco_Rod)]pub struct Deco_RodBlock{}
 
 }
 
 #[cfg(feature = "combat-deco_rodblock-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-deco_rodblock")]
-impl Deco_RodBlock { # [doc = "`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"] pub fn is_available (that : impl :: core :: convert :: Into < crate :: combat :: decoratorargs :: DecoratorArgs >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: decoratorargs :: DecoratorArgs , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7db0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (that) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-deco_rodblock")]impl Deco_RodBlock{#[doc="`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"]pub fn is_available(that:impl::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7db0usize)as*mut u8,bool;
+(crate::combat::decoratorargs::DecoratorArgs)::core::convert::Into::into(that))}
+}
+}
 
-#[cfg(feature = "combat-deco_rodblock")]
-pub trait IDeco_RodBlockMethods : IDeco_RodBlock { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Deco_RodBlock as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_RodBlock , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < Deco_RodBlock as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_RodBlock , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Deco_RodBlock as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Deco_RodBlock , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-deco_rodblock")]pub trait IDeco_RodBlockMethods:IDeco_RodBlock{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Deco_RodBlock as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7d60usize)as*mut u8, ::unity2::Il2CppString;
+(Deco_RodBlock)__receiver)}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <Deco_RodBlock as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7e70usize)as*mut u8,();
+(Deco_RodBlock)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Deco_RodBlock as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7f70usize)as*mut u8,();
+(Deco_RodBlock)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-deco_rodblock")]
-impl < __T : IDeco_RodBlock > IDeco_RodBlockMethods for __T { }
+#[cfg(feature="combat-deco_rodblock")]impl<__T:IDeco_RodBlock>IDeco_RodBlockMethods for __T{}
 
-#[cfg(feature = "combat-deco_rodblock")]
-impl Deco_RodBlock { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_RodBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_RodBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_RodBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Deco_RodBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-deco_rodblock")]impl Deco_RodBlock{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-deco_rodblock")]
-impl Deco_RodBlock {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Deco_RodBlock) , :: core :: stringify ! (new) ,)) ; < Self as IDeco_RodBlockMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-deco_rodblock")]impl Deco_RodBlock{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Deco_RodBlock), ::core::stringify!(new),));
+ <Self as IDeco_RodBlockMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-deco_rodblock")]

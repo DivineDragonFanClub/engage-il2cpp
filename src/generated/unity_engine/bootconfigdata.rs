@@ -4,35 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bootconfigdata/BootConfigData.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "BootConfigData")] # [parent (crate :: system :: object :: Object)] pub struct BootConfigData {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bootconfigdata/BootConfigData.md"))]#[::unity2::class(namespace="UnityEngine",name="BootConfigData")]#[parent(crate::system::object::Object)]pub struct BootConfigData{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-bootconfigdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bootconfigdata")]
-impl BootConfigData { # [doc = "`WrapBootConfigData(::unity2::IntPtr)` overload"] pub fn wrap_boot_config_data (native_handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: unity_engine :: bootconfigdata :: BootConfigData { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bootconfigdata :: BootConfigData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38130usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (native_handle) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bootconfigdata")]impl BootConfigData{#[doc="`WrapBootConfigData(::unity2::IntPtr)` overload"]pub fn wrap_boot_config_data(native_handle:impl::core::convert::Into< ::unity2::IntPtr>)->crate::unity_engine::bootconfigdata::BootConfigData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38130usize)as*mut u8,crate::unity_engine::bootconfigdata::BootConfigData;
+(::unity2::IntPtr)::core::convert::Into::into(native_handle))}
+}
+}
 
-#[cfg(feature = "unity_engine-bootconfigdata")]
-pub trait IBootConfigDataMethods : IBootConfigData { # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor (self , native_handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BootConfigData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BootConfigData , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c381a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (native_handle) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bootconfigdata")]pub trait IBootConfigDataMethods:IBootConfigData{#[doc="`.ctor(::unity2::IntPtr)` overload"]fn ctor(self,native_handle:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BootConfigData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c381a0usize)as*mut u8,();
+(BootConfigData)__receiver,(::unity2::IntPtr)::core::convert::Into::into(native_handle))}
+}
+}
 
-#[cfg(feature = "unity_engine-bootconfigdata")]
-impl < __T : IBootConfigData > IBootConfigDataMethods for __T { }
+#[cfg(feature="unity_engine-bootconfigdata")]impl<__T:IBootConfigData>IBootConfigDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-bootconfigdata")]
-impl BootConfigData { pub fn wrap_boot_config_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BootConfigData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BootConfigData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-bootconfigdata")]impl BootConfigData{pub fn wrap_boot_config_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-bootconfigdata")]
-impl BootConfigData {
-# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new (native_handle : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BootConfigData) , :: core :: stringify ! (new) ,)) ; < Self as IBootConfigDataMethods > :: ctor (this , native_handle) ; this }
+#[cfg(feature="unity_engine-bootconfigdata")]impl BootConfigData{#[doc="`.ctor(::unity2::IntPtr)` — overload selector"]pub fn new(native_handle: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BootConfigData), ::core::stringify!(new),));
+ <Self as IBootConfigDataMethods> ::ctor(this,native_handle);
+this}
 }
 
 #[cfg(feature = "unity_engine-bootconfigdata")]

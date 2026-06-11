@@ -4,30 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/meshcombine/MeshCombine.md"))] # [:: unity2 :: class (namespace = "" , name = "MeshCombine")] # [parent (crate :: system :: object :: Object)] pub struct MeshCombine {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/meshcombine/MeshCombine.md"))]#[::unity2::class(namespace="",name="MeshCombine")]#[parent(crate::system::object::Object)]pub struct MeshCombine{}
 
 }
 
 #[cfg(feature = "root-meshcombine-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-meshcombine")]
-pub trait IMeshCombineMethods : IMeshCombine { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MeshCombine as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeshCombine , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d1e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-meshcombine")]pub trait IMeshCombineMethods:IMeshCombine{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MeshCombine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d1e10usize)as*mut u8,();
+(MeshCombine)__receiver)}
+}
+}
 
-#[cfg(feature = "root-meshcombine")]
-impl < __T : IMeshCombine > IMeshCombineMethods for __T { }
+#[cfg(feature="root-meshcombine")]impl<__T:IMeshCombine>IMeshCombineMethods for __T{}
 
-#[cfg(feature = "root-meshcombine")]
-impl MeshCombine { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshCombine as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-meshcombine")]impl MeshCombine{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-meshcombine")]
-impl MeshCombine {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MeshCombine) , :: core :: stringify ! (new) ,)) ; < Self as IMeshCombineMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-meshcombine")]impl MeshCombine{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MeshCombine), ::core::stringify!(new),));
+ <Self as IMeshCombineMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-meshcombine")]

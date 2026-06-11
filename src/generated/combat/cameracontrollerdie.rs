@@ -4,58 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerdie/CameraControllerDie.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerDie")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerDie {
-# [offset (168)] # [rename (name = "HeightFixer")] pub height_fixer : f32 ,
-# [offset (172)] # [rename (name = "LookDownMax")] pub look_down_max : f32 ,
-# [offset (176)] # [rename (name = "Distance")] pub distance : f32 ,
-# [offset (180)] # [rename (name = "BaseDegree")] pub base_degree : f32 ,
-# [offset (184)] # [rename (name = "StartCameraDownTime")] pub start_camera_down_time : f32 ,
-# [offset (188)] # [rename (name = "StartRotateTime")] pub start_rotate_time : f32 ,
-# [offset (192)] # [rename (name = "m_IsBeforeDead")] pub m_is_before_dead : bool ,
-# [offset (196)] # [rename (name = "m_Degree")] pub m_degree : f32 ,
-# [offset (200)] # [rename (name = "m_DeadTime")] pub m_dead_time : f32 ,
-# [offset (204)] # [rename (name = "m_DeadHeight")] pub m_dead_height : f32 ,
-# [offset (208)] # [rename (name = "m_IsEnemy")] pub m_is_enemy : bool ,
-# [offset (209)] # [rename (name = "m_IsInverse")] pub m_is_inverse : bool ,
-# [offset (210)] # [rename (name = "m_IsStandingDie")] pub m_is_standing_die : bool ,
-# [offset (212)] # [rename (name = "m_LookDown")] pub m_look_down : f32 ,
-# [offset (216)] # [rename (name = "m_IsEngageAtk")] pub m_is_engage_atk : bool ,
-# [offset (220)] # [rename (name = "LookDownTime")] pub look_down_time : f32 ,
-# [offset (224)] # [rename (name = "m_ForwardVec")] pub m_forward_vec : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerdie/CameraControllerDie.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerDie")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerDie{#[offset(168)]#[rename(name="HeightFixer")]pub height_fixer:f32, #[offset(172)]#[rename(name="LookDownMax")]pub look_down_max:f32, #[offset(176)]#[rename(name="Distance")]pub distance:f32, #[offset(180)]#[rename(name="BaseDegree")]pub base_degree:f32, #[offset(184)]#[rename(name="StartCameraDownTime")]pub start_camera_down_time:f32, #[offset(188)]#[rename(name="StartRotateTime")]pub start_rotate_time:f32, #[offset(192)]#[rename(name="m_IsBeforeDead")]pub m_is_before_dead:bool, #[offset(196)]#[rename(name="m_Degree")]pub m_degree:f32, #[offset(200)]#[rename(name="m_DeadTime")]pub m_dead_time:f32, #[offset(204)]#[rename(name="m_DeadHeight")]pub m_dead_height:f32, #[offset(208)]#[rename(name="m_IsEnemy")]pub m_is_enemy:bool, #[offset(209)]#[rename(name="m_IsInverse")]pub m_is_inverse:bool, #[offset(210)]#[rename(name="m_IsStandingDie")]pub m_is_standing_die:bool, #[offset(212)]#[rename(name="m_LookDown")]pub m_look_down:f32, #[offset(216)]#[rename(name="m_IsEngageAtk")]pub m_is_engage_atk:bool, #[offset(220)]#[rename(name="LookDownTime")]pub look_down_time:f32, #[offset(224)]#[rename(name="m_ForwardVec")]pub m_forward_vec:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "combat-cameracontrollerdie-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollerdie")]
-pub trait ICameraControllerDieMethods : ICameraControllerDie { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CameraControllerDie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerDie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b0780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetInverse(bool, bool)` overload"] fn set_inverse (self , inv_side : impl :: core :: convert :: Into < bool > , inv_camera : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerDie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerDie , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b0b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inv_side) , :: core :: convert :: Into :: into (inv_camera) , :: core :: option :: Option :: None) } } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerDie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerDie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b0b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerDie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerDie , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b0cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerDie as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerDie , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b0d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollerdie")]pub trait ICameraControllerDieMethods:ICameraControllerDie{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CameraControllerDie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b0780usize)as*mut u8,();
+(CameraControllerDie)__receiver)}
+}
+#[doc="`SetInverse(bool, bool)` overload"]fn set_inverse(self,inv_side:impl::core::convert::Into<bool> ,inv_camera:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerDie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b0b50usize)as*mut u8,();
+(CameraControllerDie)__receiver,(bool)::core::convert::Into::into(inv_side),(bool)::core::convert::Into::into(inv_camera))}
+}
+#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerDie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b0b70usize)as*mut u8,();
+(CameraControllerDie)__receiver)}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerDie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b0cf0usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerDie)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerDie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b0d90usize)as*mut u8,();
+(CameraControllerDie)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameracontrollerdie")]
-impl < __T : ICameraControllerDie > ICameraControllerDieMethods for __T { }
+#[cfg(feature="combat-cameracontrollerdie")]impl<__T:ICameraControllerDie>ICameraControllerDieMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollerdie")]
-impl CameraControllerDie { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerDie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_inverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerDie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerDie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerDie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerDie as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="combat-cameracontrollerdie")]impl CameraControllerDie{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_inverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "combat-cameracontrollerdie")]
-impl CameraControllerDie {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerDie) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerDieMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollerdie")]impl CameraControllerDie{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerDie), ::core::stringify!(new),));
+ <Self as ICameraControllerDieMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameracontrollerdie")]

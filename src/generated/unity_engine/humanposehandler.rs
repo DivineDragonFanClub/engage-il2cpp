@@ -4,35 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/humanposehandler/HumanPoseHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "HumanPoseHandler")] # [parent (crate :: system :: object :: Object)] pub struct HumanPoseHandler {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/humanposehandler/HumanPoseHandler.md"))]#[::unity2::class(namespace="UnityEngine",name="HumanPoseHandler")]#[parent(crate::system::object::Object)]pub struct HumanPoseHandler{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-humanposehandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-humanposehandler")]
-impl HumanPoseHandler { # [doc = "`Internal_CreateFromRoot(crate::unity_engine::avatar::Avatar, crate::unity_engine::transform::Transform)` overload"] pub fn internal_create_from_root (avatar : impl :: core :: convert :: Into < crate :: unity_engine :: avatar :: Avatar > , root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: avatar :: Avatar , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb9420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (avatar) , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_Destroy(::unity2::IntPtr)` overload"] pub fn internal_destroy (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb9470usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-humanposehandler")]impl HumanPoseHandler{#[doc="`Internal_CreateFromRoot(crate::unity_engine::avatar::Avatar, crate::unity_engine::transform::Transform)` overload"]pub fn internal_create_from_root(avatar:impl::core::convert::Into<crate::unity_engine::avatar::Avatar> ,root:impl::core::convert::Into<crate::unity_engine::transform::Transform>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb9420usize)as*mut u8, ::unity2::IntPtr;
+(crate::unity_engine::avatar::Avatar)::core::convert::Into::into(avatar),(crate::unity_engine::transform::Transform)::core::convert::Into::into(root))}
+}
+#[doc="`Internal_Destroy(::unity2::IntPtr)` overload"]pub fn internal_destroy(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb9470usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-humanposehandler")]
-pub trait IHumanPoseHandlerMethods : IHumanPoseHandler { # [doc = "`GetHumanPose(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, ::unity2::Array<f32>)` overload"] fn get_human_pose (self , muscles : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: quaternion :: Quaternion) { unsafe { let __receiver = < HumanPoseHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: quaternion :: Quaternion > :: uninit () ; { let __inner : extern "C" fn (HumanPoseHandler , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: quaternion :: Quaternion , :: unity2 :: Array < f32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb94c0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (muscles) , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < HumanPoseHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HumanPoseHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb9530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::avatar::Avatar, crate::unity_engine::transform::Transform)` overload"] fn ctor (self , avatar : impl :: core :: convert :: Into < crate :: unity_engine :: avatar :: Avatar > , root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < HumanPoseHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HumanPoseHandler , crate :: unity_engine :: avatar :: Avatar , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb95f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (avatar) , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`GetHumanPose(*mutcrate::unity_engine::humanpose::HumanPose)` overload"] fn get_human_pose_2 (self ,) -> crate :: unity_engine :: humanpose :: HumanPose { unsafe { let __receiver = < HumanPoseHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: humanpose :: HumanPose > :: uninit () ; { let __inner : extern "C" fn (HumanPoseHandler , * mut crate :: unity_engine :: humanpose :: HumanPose , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb9810usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-humanposehandler")]pub trait IHumanPoseHandlerMethods:IHumanPoseHandler{#[doc="`GetHumanPose(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, ::unity2::Array<f32>)` overload"]fn get_human_pose(self,muscles:impl::core::convert::Into< ::unity2::Array<f32> >)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::quaternion::Quaternion){unsafe{let __receiver= <HumanPoseHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::quaternion::Quaternion> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb94c0usize)as*mut u8,();
+(HumanPoseHandler)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::quaternion::Quaternion)__out_1.as_mut_ptr(),(::unity2::Array<f32>)::core::convert::Into::into(muscles));
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <HumanPoseHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb9530usize)as*mut u8,();
+(HumanPoseHandler)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::avatar::Avatar, crate::unity_engine::transform::Transform)` overload"]fn ctor(self,avatar:impl::core::convert::Into<crate::unity_engine::avatar::Avatar> ,root:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <HumanPoseHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb95f0usize)as*mut u8,();
+(HumanPoseHandler)__receiver,(crate::unity_engine::avatar::Avatar)::core::convert::Into::into(avatar),(crate::unity_engine::transform::Transform)::core::convert::Into::into(root))}
+}
+#[doc="`GetHumanPose(*mutcrate::unity_engine::humanpose::HumanPose)` overload"]fn get_human_pose_2(self,)->crate::unity_engine::humanpose::HumanPose{unsafe{let __receiver= <HumanPoseHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::humanpose::HumanPose> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb9810usize)as*mut u8,();
+(HumanPoseHandler)__receiver,(*mut crate::unity_engine::humanpose::HumanPose)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-humanposehandler")]
-impl < __T : IHumanPoseHandler > IHumanPoseHandlerMethods for __T { }
+#[cfg(feature="unity_engine-humanposehandler")]impl<__T:IHumanPoseHandler>IHumanPoseHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-humanposehandler")]
-impl HumanPoseHandler { pub fn internal_create_from_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanPoseHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn internal_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanPoseHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_human_pose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanPoseHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanPoseHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanPoseHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_human_pose_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanPoseHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-humanposehandler")]impl HumanPoseHandler{pub fn internal_create_from_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn internal_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_human_pose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_human_pose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-humanposehandler")]
-impl HumanPoseHandler {
-# [doc = "`.ctor(crate::unity_engine::avatar::Avatar, crate::unity_engine::transform::Transform)` — overload selector"] pub fn new (avatar : crate :: unity_engine :: avatar :: Avatar , root : crate :: unity_engine :: transform :: Transform) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HumanPoseHandler) , :: core :: stringify ! (new) ,)) ; < Self as IHumanPoseHandlerMethods > :: ctor (this , avatar , root) ; this }
+#[cfg(feature="unity_engine-humanposehandler")]impl HumanPoseHandler{#[doc="`.ctor(crate::unity_engine::avatar::Avatar, crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(avatar:crate::unity_engine::avatar::Avatar,root:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HumanPoseHandler), ::core::stringify!(new),));
+ <Self as IHumanPoseHandlerMethods> ::ctor(this,avatar,root);
+this}
 }
 
 #[cfg(feature = "unity_engine-humanposehandler")]

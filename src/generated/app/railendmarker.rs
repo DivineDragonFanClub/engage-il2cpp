@@ -4,36 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: marker :: { IMarker , Marker }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::marker::{IMarker,Marker}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/railendmarker/RailEndMarker.md"))] # [:: unity2 :: class (namespace = "App" , name = "RailEndMarker")] # [parent (crate :: unity_engine :: timeline :: marker :: Marker)] pub struct RailEndMarker {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/railendmarker/RailEndMarker.md"))]#[::unity2::class(namespace="App",name="RailEndMarker")]#[parent(crate::unity_engine::timeline::marker::Marker)]pub struct RailEndMarker{}
 
 }
 
 #[cfg(feature = "app-railendmarker-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-railendmarker")]
-pub trait IRailEndMarkerMethods : IRailEndMarker { # [doc = "`get_id()` overload"] fn get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < RailEndMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RailEndMarker , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2373e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RailEndMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RailEndMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2373e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-railendmarker")]pub trait IRailEndMarkerMethods:IRailEndMarker{#[doc="`get_id()` overload"]fn get_id(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <RailEndMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2373e00usize)as*mut u8,crate::unity_engine::propertyname::PropertyName;
+(RailEndMarker)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RailEndMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2373e60usize)as*mut u8,();
+(RailEndMarker)__receiver)}
+}
+}
 
-#[cfg(feature = "app-railendmarker")]
-impl < __T : IRailEndMarker > IRailEndMarkerMethods for __T { }
+#[cfg(feature="app-railendmarker")]impl<__T:IRailEndMarker>IRailEndMarkerMethods for __T{}
 
-#[cfg(feature = "app-railendmarker")]
-impl RailEndMarker { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RailEndMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RailEndMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-railendmarker")]impl RailEndMarker{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-railendmarker")]
-impl RailEndMarker {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RailEndMarker) , :: core :: stringify ! (new) ,)) ; < Self as IRailEndMarkerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-railendmarker")]impl RailEndMarker{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RailEndMarker), ::core::stringify!(new),));
+ <Self as IRailEndMarkerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-railendmarker")]

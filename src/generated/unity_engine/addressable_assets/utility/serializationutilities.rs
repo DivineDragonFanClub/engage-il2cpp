@@ -4,119 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities_ObjectType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SerializationUtilities_ObjectType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.Utility",name="SerializationUtilities")]#[parent(crate::system::object::Object)]pub struct SerializationUtilities{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities_ObjectType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SerializationUtilities_ObjectType{pub value:i32,}
+impl::unity2::ClassIdentity for SerializationUtilities_ObjectType{const NAMESPACE: &'static str="UnityEngine.AddressableAssets.Utility";
+const NAME: &'static str="SerializationUtilities.ObjectType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for SerializationUtilities_ObjectType  {
-    const NAMESPACE: &'static str = "UnityEngine.AddressableAssets.Utility";
-
-    const NAME: &'static str = "SerializationUtilities.ObjectType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for SerializationUtilities_ObjectType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for SerializationUtilities_ObjectType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl SerializationUtilities_ObjectType{pub fn ascii_string()->Self{Self{value:0}
 }
-
-
-impl  SerializationUtilities_ObjectType  {
-    pub fn ascii_string() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn unicode_string() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn u_int16() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn u_int32() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn int32() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn hash128() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn r#type() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn json_object() -> Self {
-        Self { value: 7 }
-
-    }
-
+pub fn unicode_string()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.Utility" , name = "SerializationUtilities")] # [parent (crate :: system :: object :: Object)] pub struct SerializationUtilities {}
+pub fn u_int16()->Self{Self{value:2}
+}
+pub fn u_int32()->Self{Self{value:3}
+}
+pub fn int32()->Self{Self{value:4}
+}
+pub fn hash128()->Self{Self{value:5}
+}
+pub fn r#type()->Self{Self{value:6}
+}
+pub fn json_object()->Self{Self{value:7}
+}
+}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
-impl SerializationUtilities { # [doc = "`ReadInt32FromByteArray(::unity2::Array<u8>, i32)` overload"] pub fn read_int32_from_byte_array (data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db4990usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (offset) , :: core :: option :: Option :: None) } } } # [doc = "`WriteInt32ToByteArray(::unity2::Array<u8>, i32, i32)` overload"] pub fn write_int32_to_byte_array (data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , val : impl :: core :: convert :: Into < i32 > , offset : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbd3c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (val) , :: core :: convert :: Into :: into (offset) , :: core :: option :: Option :: None) } } } # [doc = "`ReadObjectFromByteArray(::unity2::Array<u8>, i32)` overload"] pub fn read_object_from_byte_array (key_data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , data_index : impl :: core :: convert :: Into < i32 >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db4a10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key_data) , :: core :: convert :: Into :: into (data_index) , :: core :: option :: Option :: None) } } } # [doc = "`WriteObjectToByteList(crate::system::object::Object, crate::system::collections::generic::list_1::List_1<u8>)` overload"] pub fn write_object_to_byte_list (obj : impl :: core :: convert :: Into < crate :: system :: object :: Object > , buffer : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < u8 > >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: system :: object :: Object , crate :: system :: collections :: generic :: list_1 :: List_1 < u8 > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbeb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (buffer) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-utility-serializationutilities")]impl SerializationUtilities{#[doc="`ReadInt32FromByteArray(::unity2::Array<u8>, i32)` overload"]pub fn read_int32_from_byte_array(data:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db4990usize)as*mut u8,i32;
+(::unity2::Array<u8>)::core::convert::Into::into(data),(i32)::core::convert::Into::into(offset))}
+}
+#[doc="`WriteInt32ToByteArray(::unity2::Array<u8>, i32, i32)` overload"]pub fn write_int32_to_byte_array(data:impl::core::convert::Into< ::unity2::Array<u8> > ,val:impl::core::convert::Into<i32> ,offset:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dbd3c0usize)as*mut u8,i32;
+(::unity2::Array<u8>)::core::convert::Into::into(data),(i32)::core::convert::Into::into(val),(i32)::core::convert::Into::into(offset))}
+}
+#[doc="`ReadObjectFromByteArray(::unity2::Array<u8>, i32)` overload"]pub fn read_object_from_byte_array(key_data:impl::core::convert::Into< ::unity2::Array<u8> > ,data_index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2db4a10usize)as*mut u8,crate::system::object::Object;
+(::unity2::Array<u8>)::core::convert::Into::into(key_data),(i32)::core::convert::Into::into(data_index))}
+}
+#[doc="`WriteObjectToByteList(crate::system::object::Object, crate::system::collections::generic::list_1::List_1<u8>)` overload"]pub fn write_object_to_byte_list(obj:impl::core::convert::Into<crate::system::object::Object> ,buffer:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<u8> >)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbeb0usize)as*mut u8,i32;
+(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::collections::generic::list_1::List_1<u8>)::core::convert::Into::into(buffer))}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
-impl SerializationUtilities { pub fn read_int32_from_byte_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SerializationUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn write_int32_to_byte_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SerializationUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn read_object_from_byte_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SerializationUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn write_object_to_byte_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SerializationUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-addressable_assets-utility-serializationutilities")]impl SerializationUtilities{pub fn read_int32_from_byte_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn write_int32_to_byte_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn read_object_from_byte_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn write_object_to_byte_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SerializationUtilities_ObjectType;
     pub use super::SerializationUtilities;
     pub use super::ISerializationUtilities;
+    pub use super::SerializationUtilities_ObjectType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -4,74 +4,122 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangecountmenuitem/RefineShopExchangeCountMenuItem_SelectEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopExchangeCountMenuItem.SelectEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefineShopExchangeCountMenuItem_SelectEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangecountmenuitem/RefineShopExchangeCountMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeCountMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineShopExchangeCountMenuItem_SelectEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangecountmenuitem/RefineShopExchangeCountMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopExchangeCountMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefineShopExchangeCountMenuItem {
-# [offset (100)] # [rename (name = "m_AttributeEnable")] pub m_attribute_enable : bool ,
-# [offset (104)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_SelectEventHandler ,
-# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangecountmenuitem/RefineShopExchangeCountMenuItem_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeCountMenuItem.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineShopExchangeCountMenuItem_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangecountmenuitem/RefineShopExchangeCountMenuItem_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopExchangeCountMenuItem.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefineShopExchangeCountMenuItem_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangecountmenuitem/RefineShopExchangeCountMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeCountMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefineShopExchangeCountMenuItem{#[offset(100)]#[rename(name="m_AttributeEnable")]pub m_attribute_enable:bool, #[offset(104)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler, #[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-refineshopexchangecountmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-pub trait IRefineShopExchangeCountMenuItem_SelectEventHandlerMethods : IRefineShopExchangeCountMenuItem_SelectEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuItem_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem_SelectEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afabf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuItem_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem_SelectEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afac10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-impl < __T : IRefineShopExchangeCountMenuItem_SelectEventHandler > IRefineShopExchangeCountMenuItem_SelectEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-impl RefineShopExchangeCountMenuItem_SelectEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-impl RefineShopExchangeCountMenuItem_SelectEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopExchangeCountMenuItem_SelectEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopExchangeCountMenuItem_SelectEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refineshopexchangecountmenuitem")]pub trait IRefineShopExchangeCountMenuItem_SelectEventHandlerMethods:IRefineShopExchangeCountMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afabf0usize)as*mut u8,();
+(RefineShopExchangeCountMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afac10usize)as*mut u8,();
+(RefineShopExchangeCountMenuItem_SelectEventHandler)__receiver)}
+}
 }
 
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-pub trait IRefineShopExchangeCountMenuItemMethods : IRefineShopExchangeCountMenuItem { # [doc = "`.ctor(crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler, crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler)` overload"] fn ctor (self , select_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem , crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_SelectEventHandler , crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295f700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineShopExchangeCountMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29615a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RefineShopExchangeCountMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2961620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2961640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetColor()` overload"] fn set_color (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2961650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAttributeEnable(bool)` overload"] fn set_attribute_enable (self , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295fce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineShopExchangeCountMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2961750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopexchangecountmenuitem")]impl<__T:IRefineShopExchangeCountMenuItem_SelectEventHandler>IRefineShopExchangeCountMenuItem_SelectEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-impl < __T : IRefineShopExchangeCountMenuItem > IRefineShopExchangeCountMenuItemMethods for __T { }
-
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-impl RefineShopExchangeCountMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_attribute_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-impl RefineShopExchangeCountMenuItem {
-# [doc = "`.ctor(crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler, crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler)` — overload selector"] pub fn new (select_event_handler : crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_SelectEventHandler , decide_event_handler : crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopExchangeCountMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopExchangeCountMenuItemMethods > :: ctor (this , select_event_handler , decide_event_handler) ; this }
+#[cfg(feature="app-refineshopexchangecountmenuitem")]impl RefineShopExchangeCountMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-pub trait IRefineShopExchangeCountMenuItem_DecideEventHandlerMethods : IRefineShopExchangeCountMenuItem_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuItem_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afa8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(i32, i32, i32)` overload"] fn invoke (self , source_count : impl :: core :: convert :: Into < i32 > , target_count : impl :: core :: convert :: Into < i32 > , target_overflow : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RefineShopExchangeCountMenuItem_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeCountMenuItem_DecideEventHandler , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1afa8c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (source_count) , :: core :: convert :: Into :: into (target_count) , :: core :: convert :: Into :: into (target_overflow) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopexchangecountmenuitem")]impl RefineShopExchangeCountMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopExchangeCountMenuItem_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IRefineShopExchangeCountMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-impl < __T : IRefineShopExchangeCountMenuItem_DecideEventHandler > IRefineShopExchangeCountMenuItem_DecideEventHandlerMethods for __T { }
+#[cfg(feature="app-refineshopexchangecountmenuitem")]pub trait IRefineShopExchangeCountMenuItem_DecideEventHandlerMethods:IRefineShopExchangeCountMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afa8a0usize)as*mut u8,();
+(RefineShopExchangeCountMenuItem_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, i32, i32)` overload"]fn invoke(self,source_count:impl::core::convert::Into<i32> ,target_count:impl::core::convert::Into<i32> ,target_overflow:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afa8c0usize)as*mut u8,();
+(RefineShopExchangeCountMenuItem_DecideEventHandler)__receiver,(i32)::core::convert::Into::into(source_count),(i32)::core::convert::Into::into(target_count),(i32)::core::convert::Into::into(target_overflow))}
+}
+}
 
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-impl RefineShopExchangeCountMenuItem_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeCountMenuItem_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-refineshopexchangecountmenuitem")]impl<__T:IRefineShopExchangeCountMenuItem_DecideEventHandler>IRefineShopExchangeCountMenuItem_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-refineshopexchangecountmenuitem")]
-impl RefineShopExchangeCountMenuItem_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopExchangeCountMenuItem_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopExchangeCountMenuItem_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refineshopexchangecountmenuitem")]impl RefineShopExchangeCountMenuItem_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refineshopexchangecountmenuitem")]impl RefineShopExchangeCountMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopExchangeCountMenuItem_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRefineShopExchangeCountMenuItem_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-refineshopexchangecountmenuitem")]pub trait IRefineShopExchangeCountMenuItemMethods:IRefineShopExchangeCountMenuItem{#[doc="`.ctor(crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler, crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler)` overload"]fn ctor(self,select_event_handler:impl::core::convert::Into<crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295f700usize)as*mut u8,();
+(RefineShopExchangeCountMenuItem)__receiver,(crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineShopExchangeCountMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29615a0usize)as*mut u8, ::unity2::Il2CppString;
+(RefineShopExchangeCountMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefineShopExchangeCountMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2961620usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RefineShopExchangeCountMenuItem)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2961640usize)as*mut u8,();
+(RefineShopExchangeCountMenuItem)__receiver)}
+}
+#[doc="`SetColor()` overload"]fn set_color(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2961650usize)as*mut u8,();
+(RefineShopExchangeCountMenuItem)__receiver)}
+}
+#[doc="`SetAttributeEnable(bool)` overload"]fn set_attribute_enable(self,enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295fce0usize)as*mut u8,();
+(RefineShopExchangeCountMenuItem)__receiver,(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopExchangeCountMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2961750usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineShopExchangeCountMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineshopexchangecountmenuitem")]impl<__T:IRefineShopExchangeCountMenuItem>IRefineShopExchangeCountMenuItemMethods for __T{}
+
+#[cfg(feature="app-refineshopexchangecountmenuitem")]impl RefineShopExchangeCountMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_attribute_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-refineshopexchangecountmenuitem")]impl RefineShopExchangeCountMenuItem{#[doc="`.ctor(crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler, crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler)` — overload selector"]pub fn new(select_event_handler:crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler,decide_event_handler:crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopExchangeCountMenuItem), ::core::stringify!(new),));
+ <Self as IRefineShopExchangeCountMenuItemMethods> ::ctor(this,select_event_handler,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refineshopexchangecountmenuitem")]
@@ -80,12 +128,12 @@ pub mod prelude {
     pub use super::RefineShopExchangeCountMenuItem_SelectEventHandler;
     pub use super::IRefineShopExchangeCountMenuItem_SelectEventHandler;
     pub use super::IRefineShopExchangeCountMenuItem_SelectEventHandlerMethods;
-    pub use super::RefineShopExchangeCountMenuItem;
-    pub use super::IRefineShopExchangeCountMenuItem;
-    pub use super::IRefineShopExchangeCountMenuItemMethods;
     pub use super::RefineShopExchangeCountMenuItem_DecideEventHandler;
     pub use super::IRefineShopExchangeCountMenuItem_DecideEventHandler;
     pub use super::IRefineShopExchangeCountMenuItem_DecideEventHandlerMethods;
+    pub use super::RefineShopExchangeCountMenuItem;
+    pub use super::IRefineShopExchangeCountMenuItem;
+    pub use super::IRefineShopExchangeCountMenuItemMethods;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

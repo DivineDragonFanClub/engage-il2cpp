@@ -4,36 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionsync/ActionSync.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionSync")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionSync {
-# [offset (40)] # [rename (name = "m_SyncToken")] pub m_sync_token : crate :: combat :: synctoken :: SyncToken ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionsync/ActionSync.md"))]#[::unity2::class(namespace="Combat",name="ActionSync")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionSync{#[offset(40)]#[rename(name="m_SyncToken")]pub m_sync_token:crate::combat::synctoken::SyncToken,}
 
 }
 
 #[cfg(feature = "combat-actionsync-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionsync")]
-pub trait IActionSyncMethods : IActionSync { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionSync as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionSync , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc8fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, crate::combat::synctoken::SyncToken)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , sync_token : impl :: core :: convert :: Into < crate :: combat :: synctoken :: SyncToken >) -> () { unsafe { let __receiver = < ActionSync as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionSync , crate :: combat :: character :: Character , crate :: combat :: synctoken :: SyncToken , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (sync_token) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionSync as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionSync , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionSync as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionSync , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc90c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionsync")]pub trait IActionSyncMethods:IActionSync{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionSync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc8fb0usize)as*mut u8, ::unity2::Il2CppString;
+(ActionSync)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, crate::combat::synctoken::SyncToken)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,sync_token:impl::core::convert::Into<crate::combat::synctoken::SyncToken>)->(){unsafe{let __receiver= <ActionSync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9000usize)as*mut u8,();
+(ActionSync)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::synctoken::SyncToken)::core::convert::Into::into(sync_token))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionSync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9070usize)as*mut u8,();
+(ActionSync)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionSync as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc90c0usize)as*mut u8,();
+(ActionSync)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actionsync")]
-impl < __T : IActionSync > IActionSyncMethods for __T { }
+#[cfg(feature="combat-actionsync")]impl<__T:IActionSync>IActionSyncMethods for __T{}
 
-#[cfg(feature = "combat-actionsync")]
-impl ActionSync { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionSync as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionSync as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionSync as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionSync as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-actionsync")]impl ActionSync{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-actionsync")]
-impl ActionSync {
-# [doc = "`.ctor(crate::combat::character::Character, crate::combat::synctoken::SyncToken)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , sync_token : crate :: combat :: synctoken :: SyncToken) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionSync) , :: core :: stringify ! (new) ,)) ; < Self as IActionSyncMethods > :: ctor (this , chr , sync_token) ; this }
+#[cfg(feature="combat-actionsync")]impl ActionSync{#[doc="`.ctor(crate::combat::character::Character, crate::combat::synctoken::SyncToken)` — overload selector"]pub fn new(chr:crate::combat::character::Character,sync_token:crate::combat::synctoken::SyncToken)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionSync), ::core::stringify!(new),));
+ <Self as IActionSyncMethods> ::ctor(this,chr,sync_token);
+this}
 }
 
 #[cfg(feature = "combat-actionsync")]

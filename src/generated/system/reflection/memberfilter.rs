@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/memberfilter/MemberFilter.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MemberFilter")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MemberFilter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/memberfilter/MemberFilter.md"))]#[::unity2::class(namespace="System.Reflection",name="MemberFilter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MemberFilter{}
 
 }
 
 #[cfg(feature = "system-reflection-memberfilter-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-memberfilter")]
-pub trait IMemberFilterMethods : IMemberFilter { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < MemberFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MemberFilter , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336f080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::system::reflection::memberinfo::MemberInfo, crate::system::object::Object)` overload"] fn invoke (self , m : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo > , filter_criteria : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < MemberFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MemberFilter , crate :: system :: reflection :: memberinfo :: MemberInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336f0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (m) , :: core :: convert :: Into :: into (filter_criteria) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-memberfilter")]pub trait IMemberFilterMethods:IMemberFilter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MemberFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336f080usize)as*mut u8,();
+(MemberFilter)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::reflection::memberinfo::MemberInfo, crate::system::object::Object)` overload"]fn invoke(self,m:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo> ,filter_criteria:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <MemberFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336f0a0usize)as*mut u8,bool;
+(MemberFilter)__receiver,(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(m),(crate::system::object::Object)::core::convert::Into::into(filter_criteria))}
+}
+}
 
-#[cfg(feature = "system-reflection-memberfilter")]
-impl < __T : IMemberFilter > IMemberFilterMethods for __T { }
+#[cfg(feature="system-reflection-memberfilter")]impl<__T:IMemberFilter>IMemberFilterMethods for __T{}
 
-#[cfg(feature = "system-reflection-memberfilter")]
-impl MemberFilter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberFilter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberFilter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-reflection-memberfilter")]impl MemberFilter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "system-reflection-memberfilter")]
-impl MemberFilter {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MemberFilter) , :: core :: stringify ! (new) ,)) ; < Self as IMemberFilterMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-reflection-memberfilter")]impl MemberFilter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MemberFilter), ::core::stringify!(new),));
+ <Self as IMemberFilterMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "system-reflection-memberfilter")]

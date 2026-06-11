@@ -4,34 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomfadecolor/MyRoomFadeColor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomFadeColor")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct MyRoomFadeColor {
-# [offset (16)] # [rename (name = "color")] pub color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomfadecolor/MyRoomFadeColor.md"))]#[::unity2::class(namespace="App",name="MyRoomFadeColor")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct MyRoomFadeColor{#[offset(16)]#[rename(name="color")]pub color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-myroomfadecolor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomfadecolor")]
-pub trait IMyRoomFadeColorMethods : IMyRoomFadeColor { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomFadeColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomFadeColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2390050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomfadecolor")]pub trait IMyRoomFadeColorMethods:IMyRoomFadeColor{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomFadeColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2390050usize)as*mut u8,();
+(MyRoomFadeColor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomfadecolor")]
-impl < __T : IMyRoomFadeColor > IMyRoomFadeColorMethods for __T { }
+#[cfg(feature="app-myroomfadecolor")]impl<__T:IMyRoomFadeColor>IMyRoomFadeColorMethods for __T{}
 
-#[cfg(feature = "app-myroomfadecolor")]
-impl MyRoomFadeColor { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomFadeColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-myroomfadecolor")]impl MyRoomFadeColor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-myroomfadecolor")]
-impl MyRoomFadeColor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomFadeColor) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomFadeColorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomfadecolor")]impl MyRoomFadeColor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomFadeColor), ::core::stringify!(new),));
+ <Self as IMyRoomFadeColorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomfadecolor")]

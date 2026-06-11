@@ -4,76 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrsettings/XRSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRSettings")] # [parent (crate :: system :: object :: Object)] pub struct XRSettings {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrsettings/XRSettings.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="XRSettings")]#[parent(crate::system::object::Object)]pub struct XRSettings{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrsettings/XRSettings_StereoRenderingMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct XRSettings_StereoRenderingMode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrsettings/XRSettings_StereoRenderingMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct XRSettings_StereoRenderingMode{pub value:i32,}
+impl::unity2::ClassIdentity for XRSettings_StereoRenderingMode{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRSettings.StereoRenderingMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for XRSettings_StereoRenderingMode  {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "XRSettings.StereoRenderingMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for XRSettings_StereoRenderingMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for XRSettings_StereoRenderingMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl XRSettings_StereoRenderingMode{pub fn multi_pass()->Self{Self{value:0}
 }
-
-
-impl  XRSettings_StereoRenderingMode  {
-    pub fn multi_pass() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn single_pass() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn single_pass_instanced() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn single_pass_multiview() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn single_pass()->Self{Self{value:1}
+}
+pub fn single_pass_instanced()->Self{Self{value:2}
+}
+pub fn single_pass_multiview()->Self{Self{value:3}
+}
 }
 
 }
@@ -81,11 +40,63 @@ impl  XRSettings_StereoRenderingMode  {
 #[cfg(feature = "unity_engine-xr-xrsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-xrsettings")]
-impl XRSettings { # [doc = "`get_enabled()` overload"] pub fn get_enabled () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46610usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_isDeviceActive()` overload"] pub fn get_is_device_active () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_eyeTextureResolutionScale()` overload"] pub fn get_eye_texture_resolution_scale () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46690usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_eyeTextureResolutionScale(f32)` overload"] pub fn set_eye_texture_resolution_scale (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f466d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_eyeTextureWidth()` overload"] pub fn get_eye_texture_width () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46720usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_eyeTextureHeight()` overload"] pub fn get_eye_texture_height () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46760usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_eyeTextureDesc()` overload"] pub fn get_eye_texture_desc () -> crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f467a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_renderViewportScale()` overload"] pub fn get_render_viewport_scale () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46870usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_renderViewportScaleInternal()` overload"] pub fn get_render_viewport_scale_internal () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f468b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_loadedDeviceName()` overload"] pub fn get_loaded_device_name () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f468f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_supportedDevices()` overload"] pub fn get_supported_devices () -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46930usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_stereoRenderingMode()` overload"] pub fn get_stereo_rendering_mode () -> crate :: unity_engine :: xr :: xrsettings :: XRSettings_StereoRenderingMode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: xrsettings :: XRSettings_StereoRenderingMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46970usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_eyeTextureDesc_Injected(*mutcrate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"] pub fn get_eye_texture_desc_injected () -> crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46820usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-xr-xrsettings")]impl XRSettings{#[doc="`get_enabled()` overload"]pub fn get_enabled()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46610usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_isDeviceActive()` overload"]pub fn get_is_device_active()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46650usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_eyeTextureResolutionScale()` overload"]pub fn get_eye_texture_resolution_scale()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46690usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_eyeTextureResolutionScale(f32)` overload"]pub fn set_eye_texture_resolution_scale(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f466d0usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_eyeTextureWidth()` overload"]pub fn get_eye_texture_width()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46720usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_eyeTextureHeight()` overload"]pub fn get_eye_texture_height()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46760usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_eyeTextureDesc()` overload"]pub fn get_eye_texture_desc()->crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f467a0usize)as*mut u8,crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor;
+)}
+}
+#[doc="`get_renderViewportScale()` overload"]pub fn get_render_viewport_scale()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46870usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_renderViewportScaleInternal()` overload"]pub fn get_render_viewport_scale_internal()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f468b0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_loadedDeviceName()` overload"]pub fn get_loaded_device_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f468f0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_supportedDevices()` overload"]pub fn get_supported_devices()-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46930usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`get_stereoRenderingMode()` overload"]pub fn get_stereo_rendering_mode()->crate::unity_engine::xr::xrsettings::XRSettings_StereoRenderingMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46970usize)as*mut u8,crate::unity_engine::xr::xrsettings::XRSettings_StereoRenderingMode;
+)}
+}
+#[doc="`get_eyeTextureDesc_Injected(*mutcrate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]pub fn get_eye_texture_desc_injected()->crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f46820usize)as*mut u8,();
+(*mut crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrsettings")]
-impl XRSettings { pub fn get_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_device_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_eye_texture_resolution_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_eye_texture_resolution_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_eye_texture_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_eye_texture_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_eye_texture_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_render_viewport_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_render_viewport_scale_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_loaded_device_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_supported_devices_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_stereo_rendering_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_eye_texture_desc_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="unity_engine-xr-xrsettings")]impl XRSettings{pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_device_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_eye_texture_resolution_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_eye_texture_resolution_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_eye_texture_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_eye_texture_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_eye_texture_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_render_viewport_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_render_viewport_scale_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_loaded_device_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_supported_devices_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_stereo_rendering_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_eye_texture_desc_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
 #[cfg(feature = "unity_engine-xr-xrsettings")]
 #[doc(hidden)]

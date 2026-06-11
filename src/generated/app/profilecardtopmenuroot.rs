@@ -4,48 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtopmenuroot/ProfileCardTopMenuRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardTopMenuRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ProfileCardTopMenuRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_ProfileCardTopMenuContent")] pub m_profile_card_top_menu_content : crate :: app :: profilecardtopmenucontent :: ProfileCardTopMenuContent ,
-# [offset (32)] # [rename (name = "m_InfoWindowAnimator")] pub m_info_window_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_InfoWindowCaptionText")] pub m_info_window_caption_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_InfoWindowDescriptionText")] pub m_info_window_description_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_InfoWindowWarningText")] pub m_info_window_warning_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtopmenuroot/ProfileCardTopMenuRoot.md"))]#[::unity2::class(namespace="App",name="ProfileCardTopMenuRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ProfileCardTopMenuRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_ProfileCardTopMenuContent")]pub m_profile_card_top_menu_content:crate::app::profilecardtopmenucontent::ProfileCardTopMenuContent, #[offset(32)]#[rename(name="m_InfoWindowAnimator")]pub m_info_window_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_InfoWindowCaptionText")]pub m_info_window_caption_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_InfoWindowDescriptionText")]pub m_info_window_description_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_InfoWindowWarningText")]pub m_info_window_warning_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-profilecardtopmenuroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardtopmenuroot")]
-impl ProfileCardTopMenuRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c004d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00570usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c005f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateRoot()` overload"] pub fn create_root () -> crate :: app :: profilecardtopmenuroot :: ProfileCardTopMenuRoot { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtopmenuroot :: ProfileCardTopMenuRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bffae0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardtopmenuroot")]impl ProfileCardTopMenuRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c004d0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c00570usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c005f0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateRoot()` overload"]pub fn create_root()->crate::app::profilecardtopmenuroot::ProfileCardTopMenuRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bffae0usize)as*mut u8,crate::app::profilecardtopmenuroot::ProfileCardTopMenuRoot;
+)}
+}
+}
 
-#[cfg(feature = "app-profilecardtopmenuroot")]
-pub trait IProfileCardTopMenuRootMethods : IProfileCardTopMenuRoot { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetProfileCardTopMenuContent()` overload"] fn get_profile_card_top_menu_content (self ,) -> crate :: app :: profilecardtopmenucontent :: ProfileCardTopMenuContent { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtopmenucontent :: ProfileCardTopMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateInfoWindow(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn update_info_window (self , caption_mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , description_mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , warning_mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bffd90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (caption_mid) , :: core :: convert :: Into :: into (description_mid) , :: core :: convert :: Into :: into (warning_mid) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < ProfileCardTopMenuRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTopMenuRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardtopmenuroot")]pub trait IProfileCardTopMenuRootMethods:IProfileCardTopMenuRoot{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardTopMenuRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c00670usize)as*mut u8,();
+(ProfileCardTopMenuRoot)__receiver)}
+}
+#[doc="`GetProfileCardTopMenuContent()` overload"]fn get_profile_card_top_menu_content(self,)->crate::app::profilecardtopmenucontent::ProfileCardTopMenuContent{unsafe{let __receiver= <ProfileCardTopMenuRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c00680usize)as*mut u8,crate::app::profilecardtopmenucontent::ProfileCardTopMenuContent;
+(ProfileCardTopMenuRoot)__receiver)}
+}
+#[doc="`UpdateInfoWindow(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn update_info_window(self,caption_mid:impl::core::convert::Into< ::unity2::Il2CppString> ,description_mid:impl::core::convert::Into< ::unity2::Il2CppString> ,warning_mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardTopMenuRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bffd90usize)as*mut u8,();
+(ProfileCardTopMenuRoot)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(caption_mid),(::unity2::Il2CppString)::core::convert::Into::into(description_mid),(::unity2::Il2CppString)::core::convert::Into::into(warning_mid))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <ProfileCardTopMenuRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c00040usize)as*mut u8,();
+(ProfileCardTopMenuRoot)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <ProfileCardTopMenuRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c00270usize)as*mut u8,();
+(ProfileCardTopMenuRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardtopmenuroot")]
-impl < __T : IProfileCardTopMenuRoot > IProfileCardTopMenuRootMethods for __T { }
+#[cfg(feature="app-profilecardtopmenuroot")]impl<__T:IProfileCardTopMenuRoot>IProfileCardTopMenuRootMethods for __T{}
 
-#[cfg(feature = "app-profilecardtopmenuroot")]
-impl ProfileCardTopMenuRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_profile_card_top_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_info_window_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTopMenuRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-profilecardtopmenuroot")]impl ProfileCardTopMenuRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_profile_card_top_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_info_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-profilecardtopmenuroot")]
-impl ProfileCardTopMenuRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardTopMenuRoot) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardTopMenuRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardtopmenuroot")]impl ProfileCardTopMenuRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardTopMenuRoot), ::core::stringify!(new),));
+ <Self as IProfileCardTopMenuRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardtopmenuroot")]

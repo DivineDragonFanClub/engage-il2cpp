@@ -4,43 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapunitcommandmenuitemcontent/MapUnitCommandMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapUnitCommandMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct MapUnitCommandMenuItemContent {
-# [offset (72)] # [rename (name = "m_Title")] pub m_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_Help")] pub m_help : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapunitcommandmenuitemcontent/MapUnitCommandMenuItemContent.md"))]#[::unity2::class(namespace="App",name="MapUnitCommandMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MapUnitCommandMenuItemContent{#[offset(72)]#[rename(name="m_Title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_Help")]pub m_help:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-mapunitcommandmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapunitcommandmenuitemcontent")]
-pub trait IMapUnitCommandMenuItemContentMethods : IMapUnitCommandMenuItemContent { # [doc = "`FindGameObject(::unity2::Il2CppString)` overload"] fn find_game_object (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < MapUnitCommandMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitCommandMenuItemContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202d7e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`SetupObjects()` overload"] fn setup_objects (self ,) -> () { unsafe { let __receiver = < MapUnitCommandMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitCommandMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202d8b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < MapUnitCommandMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitCommandMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202da60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < MapUnitCommandMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitCommandMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202da90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpText(::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"] fn set_help_text (self , help : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , c : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapUnitCommandMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitCommandMenuItemContent , :: unity2 :: Il2CppString , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202db20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (help) , :: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpTextAlpha(f32)` overload"] fn set_help_text_alpha (self , alpha : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapUnitCommandMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitCommandMenuItemContent , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202dba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (alpha) , :: core :: option :: Option :: None) } } } # [doc = "`GetTextMeshProComponent()` overload"] fn get_text_mesh_pro_component (self ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI { unsafe { let __receiver = < MapUnitCommandMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitCommandMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202dbf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapUnitCommandMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitCommandMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202dc00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapunitcommandmenuitemcontent")]pub trait IMapUnitCommandMenuItemContentMethods:IMapUnitCommandMenuItemContent{#[doc="`FindGameObject(::unity2::Il2CppString)` overload"]fn find_game_object(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202d7e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(MapUnitCommandMenuItemContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`SetupObjects()` overload"]fn setup_objects(self,)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202d8b0usize)as*mut u8,();
+(MapUnitCommandMenuItemContent)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202da60usize)as*mut u8,();
+(MapUnitCommandMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202da90usize)as*mut u8,();
+(MapUnitCommandMenuItemContent)__receiver)}
+}
+#[doc="`SetHelpText(::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]fn set_help_text(self,help:impl::core::convert::Into< ::unity2::Il2CppString> ,c:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202db20usize)as*mut u8,();
+(MapUnitCommandMenuItemContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(help),(crate::unity_engine::color::Color)::core::convert::Into::into(c))}
+}
+#[doc="`SetHelpTextAlpha(f32)` overload"]fn set_help_text_alpha(self,alpha:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202dba0usize)as*mut u8,();
+(MapUnitCommandMenuItemContent)__receiver,(f32)::core::convert::Into::into(alpha))}
+}
+#[doc="`GetTextMeshProComponent()` overload"]fn get_text_mesh_pro_component(self,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202dbf0usize)as*mut u8,crate::tm_pro::textmeshprougui::TextMeshProUGUI;
+(MapUnitCommandMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202dc00usize)as*mut u8,();
+(MapUnitCommandMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapunitcommandmenuitemcontent")]
-impl < __T : IMapUnitCommandMenuItemContent > IMapUnitCommandMenuItemContentMethods for __T { }
+#[cfg(feature="app-mapunitcommandmenuitemcontent")]impl<__T:IMapUnitCommandMenuItemContent>IMapUnitCommandMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-mapunitcommandmenuitemcontent")]
-impl MapUnitCommandMenuItemContent { pub fn find_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitCommandMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitCommandMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitCommandMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitCommandMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitCommandMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_help_text_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitCommandMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_text_mesh_pro_component_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitCommandMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitCommandMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-mapunitcommandmenuitemcontent")]impl MapUnitCommandMenuItemContent{pub fn find_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_help_text_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_text_mesh_pro_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-mapunitcommandmenuitemcontent")]
-impl MapUnitCommandMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapUnitCommandMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IMapUnitCommandMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapunitcommandmenuitemcontent")]impl MapUnitCommandMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapUnitCommandMenuItemContent), ::core::stringify!(new),));
+ <Self as IMapUnitCommandMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapunitcommandmenuitemcontent")]

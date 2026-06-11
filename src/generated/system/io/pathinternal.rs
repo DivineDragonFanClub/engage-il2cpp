@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/pathinternal/PathInternal.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "PathInternal")] # [parent (crate :: system :: object :: Object)] pub struct PathInternal {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/pathinternal/PathInternal.md"))]#[::unity2::class(namespace="System.IO",name="PathInternal")]#[parent(crate::system::object::Object)]pub struct PathInternal{}
 
 }
 
 #[cfg(feature = "system-io-pathinternal-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-pathinternal")]
-impl PathInternal { # [doc = "`IsPartiallyQualified(::unity2::Il2CppString)` overload"] pub fn is_partially_qualified (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x376a0e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`HasIllegalCharacters(::unity2::Il2CppString, bool)` overload"] pub fn has_illegal_characters (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , check_additional : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3769d90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (check_additional) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-pathinternal")]impl PathInternal{#[doc="`IsPartiallyQualified(::unity2::Il2CppString)` overload"]pub fn is_partially_qualified(path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x376a0e0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`HasIllegalCharacters(::unity2::Il2CppString, bool)` overload"]pub fn has_illegal_characters(path:impl::core::convert::Into< ::unity2::Il2CppString> ,check_additional:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3769d90usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(bool)::core::convert::Into::into(check_additional))}
+}
+}
 
-#[cfg(feature = "system-io-pathinternal")]
-impl PathInternal { pub fn is_partially_qualified_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PathInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn has_illegal_characters_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PathInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-io-pathinternal")]impl PathInternal{pub fn is_partially_qualified_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn has_illegal_characters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "system-io-pathinternal")]
 #[doc(hidden)]

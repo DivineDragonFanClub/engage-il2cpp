@@ -4,28 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/nativewritableselfattribute/NativeWritableSelfAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "NativeWritableSelfAttribute")] pub struct NativeWritableSelfAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/nativewritableselfattribute/NativeWritableSelfAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="NativeWritableSelfAttribute")]pub struct NativeWritableSelfAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-nativewritableselfattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-nativewritableselfattribute")]
-pub trait INativeWritableSelfAttributeMethods : INativeWritableSelfAttribute { # [doc = "`set_WritableSelf(bool)` overload"] fn set_writable_self (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NativeWritableSelfAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeWritableSelfAttribute , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NativeWritableSelfAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeWritableSelfAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]pub trait INativeWritableSelfAttributeMethods:INativeWritableSelfAttribute{#[doc="`set_WritableSelf(bool)` overload"]fn set_writable_self(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NativeWritableSelfAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38470usize)as*mut u8,();
+(NativeWritableSelfAttribute)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NativeWritableSelfAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38480usize)as*mut u8,();
+(NativeWritableSelfAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativewritableselfattribute")]
-impl < __T : INativeWritableSelfAttribute > INativeWritableSelfAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]impl<__T:INativeWritableSelfAttribute>INativeWritableSelfAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-nativewritableselfattribute")]
-impl NativeWritableSelfAttribute { pub fn set_writable_self_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeWritableSelfAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeWritableSelfAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]impl NativeWritableSelfAttribute{pub fn set_writable_self_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativewritableselfattribute")]
-impl NativeWritableSelfAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativeWritableSelfAttribute) , :: core :: stringify ! (new) ,)) ; < Self as INativeWritableSelfAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-bindings-nativewritableselfattribute")]impl NativeWritableSelfAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativeWritableSelfAttribute), ::core::stringify!(new),));
+ <Self as INativeWritableSelfAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-nativewritableselfattribute")]

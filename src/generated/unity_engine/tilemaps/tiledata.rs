@@ -4,49 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tiledata/TileData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TileData {
-    pub m_sprite: crate :: unity_engine :: sprite :: Sprite,
-    pub m_color: crate :: unity_engine :: color :: Color,
-    pub m_transform: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub m_game_object: crate :: unity_engine :: gameobject :: GameObject,
-    pub m_flags: crate :: unity_engine :: tilemaps :: tileflags :: TileFlags,
-    pub m_collider_type: crate :: unity_engine :: tilemaps :: tile :: Tile_ColliderType,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tilemaps/tiledata/TileData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TileData{pub m_sprite:crate::unity_engine::sprite::Sprite,pub m_color:crate::unity_engine::color::Color,pub m_transform:crate::unity_engine::matrix4x4::Matrix4x4,pub m_game_object:crate::unity_engine::gameobject::GameObject,pub m_flags:crate::unity_engine::tilemaps::tileflags::TileFlags,pub m_collider_type:crate::unity_engine::tilemaps::tile::Tile_ColliderType,}
+impl::unity2::ClassIdentity for TileData{const NAMESPACE: &'static str="UnityEngine.Tilemaps";
+const NAME: &'static str="TileData";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TileData {
-    const NAMESPACE: &'static str = "UnityEngine.Tilemaps";
-
-    const NAME: &'static str = "TileData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TileData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TileData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -54,11 +26,33 @@ impl ::unity2::IlType for TileData {
 #[cfg(feature = "unity_engine-tilemaps-tiledata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-tilemaps-tiledata")]
-impl TileData { # [doc = "`set_sprite(crate::unity_engine::sprite::Sprite)` overload"] pub fn set_sprite (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { { let __inner : extern "C" fn (* mut TileData , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42cc0usize) as * mut u8) ; __inner (self as * mut TileData , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_color(crate::unity_engine::color::Color)` overload"] pub fn set_color (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { { let __inner : extern "C" fn (* mut TileData , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42cd0usize) as * mut u8) ; __inner (self as * mut TileData , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_transform(crate::unity_engine::matrix4x4::Matrix4x4)` overload"] pub fn set_transform (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TileData , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42cf0usize) as * mut u8) ; __inner (self as * mut TileData , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"] pub fn set_game_object (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (* mut TileData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42d10usize) as * mut u8) ; __inner (self as * mut TileData , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_flags(crate::unity_engine::tilemaps::tileflags::TileFlags)` overload"] pub fn set_flags (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: tilemaps :: tileflags :: TileFlags >) -> () { unsafe { { let __inner : extern "C" fn (* mut TileData , crate :: unity_engine :: tilemaps :: tileflags :: TileFlags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42d20usize) as * mut u8) ; __inner (self as * mut TileData , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_colliderType(crate::unity_engine::tilemaps::tile::Tile_ColliderType)` overload"] pub fn set_collider_type (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: tilemaps :: tile :: Tile_ColliderType >) -> () { unsafe { { let __inner : extern "C" fn (* mut TileData , crate :: unity_engine :: tilemaps :: tile :: Tile_ColliderType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f42d30usize) as * mut u8) ; __inner (self as * mut TileData , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-tilemaps-tiledata")]impl TileData{#[doc="`set_sprite(crate::unity_engine::sprite::Sprite)` overload"]pub fn set_sprite(&mut self,value:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f42cc0usize)as*mut u8,();
+(*mut TileData)self as*mut TileData,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(value))}
+}
+#[doc="`set_color(crate::unity_engine::color::Color)` overload"]pub fn set_color(&mut self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f42cd0usize)as*mut u8,();
+(*mut TileData)self as*mut TileData,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`set_transform(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]pub fn set_transform(&mut self,value:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f42cf0usize)as*mut u8,();
+(*mut TileData)self as*mut TileData,(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(value))}
+}
+#[doc="`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"]pub fn set_game_object(&mut self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f42d10usize)as*mut u8,();
+(*mut TileData)self as*mut TileData,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`set_flags(crate::unity_engine::tilemaps::tileflags::TileFlags)` overload"]pub fn set_flags(&mut self,value:impl::core::convert::Into<crate::unity_engine::tilemaps::tileflags::TileFlags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f42d20usize)as*mut u8,();
+(*mut TileData)self as*mut TileData,(crate::unity_engine::tilemaps::tileflags::TileFlags)::core::convert::Into::into(value))}
+}
+#[doc="`set_colliderType(crate::unity_engine::tilemaps::tile::Tile_ColliderType)` overload"]pub fn set_collider_type(&mut self,value:impl::core::convert::Into<crate::unity_engine::tilemaps::tile::Tile_ColliderType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f42d30usize)as*mut u8,();
+(*mut TileData)self as*mut TileData,(crate::unity_engine::tilemaps::tile::Tile_ColliderType)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-tilemaps-tiledata")]
-impl TileData { pub fn set_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_collider_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-tilemaps-tiledata")]impl TileData{pub fn set_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_collider_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-tilemaps-tiledata")]
 #[doc(hidden)]

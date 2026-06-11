@@ -4,130 +4,141 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardstampdata/ProfileCardStampData_Categories.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ProfileCardStampData_Categories  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampdata/ProfileCardStampData_Categories.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardStampData_Categories{pub value:i32,}
+impl::unity2::ClassIdentity for ProfileCardStampData_Categories{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ProfileCardStampData.Categories";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ProfileCardStampData_Categories{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ProfileCardStampData_Categories{pub fn unit()->Self{Self{value:0}
+}
+pub fn god_unit()->Self{Self{value:1}
+}
+pub fn weapon()->Self{Self{value:2}
+}
+pub fn god_weapon()->Self{Self{value:3}
+}
+pub fn rod_and_item()->Self{Self{value:4}
+}
+pub fn system()->Self{Self{value:5}
+}
+pub fn others()->Self{Self{value:6}
+}
+pub fn num()->Self{Self{value:7}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for ProfileCardStampData_Categories  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProfileCardStampData.Categories";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ProfileCardStampData_Categories  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ProfileCardStampData_Categories  {
-    pub fn unit() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn god_unit() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn weapon() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn god_weapon() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn rod_and_item() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn system() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn others() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampdata/ProfileCardStampData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardstampdata :: ProfileCardStampData >)] pub struct ProfileCardStampData {
-# [static_field] # [rename (name = "CategoryMid")] pub category_mid : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampdata/ProfileCardStampData.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardstampdata::ProfileCardStampData>)]pub struct ProfileCardStampData{#[static_field]#[rename(name="CategoryMid")]pub category_mid: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-profilecardstampdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardstampdata")]
-impl ProfileCardStampData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCategoryMid(crate::app::profilecardstampdata::ProfileCardStampData_Categories)` overload"] pub fn get_category_mid (category : impl :: core :: convert :: Into < crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1230usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (category) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1370usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardstampdata")]impl ProfileCardStampData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1170usize)as*mut u8,();
+)}
+}
+#[doc="`GetCategoryMid(crate::app::profilecardstampdata::ProfileCardStampData_Categories)` overload"]pub fn get_category_mid(category:impl::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData_Categories>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1230usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::profilecardstampdata::ProfileCardStampData_Categories)::core::convert::Into::into(category))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1370usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-profilecardstampdata")]
-pub trait IProfileCardStampDataMethods : IProfileCardStampData { # [doc = "`get_Id()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf10d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Id(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf10e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Image()` overload"] fn get_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf10f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Image(::unity2::Il2CppString)` overload"] fn set_image (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Category()` overload"] fn get_category (self ,) -> crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Category(crate::app::profilecardstampdata::ProfileCardStampData_Categories)` overload"] fn set_category (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories >) -> () { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , crate :: app :: profilecardstampdata :: ProfileCardStampData_Categories , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Condition()` overload"] fn get_condition (self ,) -> crate :: app :: profilecardcondition :: ProfileCardCondition { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardcondition :: ProfileCardCondition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Condition(crate::app::profilecardcondition::ProfileCardCondition)` overload"] fn set_condition (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardcondition :: ProfileCardCondition >) -> () { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , crate :: app :: profilecardcondition :: ProfileCardCondition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg()` overload"] fn get_arg (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg(::unity2::Il2CppString)` overload"] fn set_arg (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardStampData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf12f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardstampdata")]pub trait IProfileCardStampDataMethods:IProfileCardStampData{#[doc="`get_Id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf10d0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardStampData)__receiver)}
+}
+#[doc="`set_Id(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf10e0usize)as*mut u8,();
+(ProfileCardStampData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Image()` overload"]fn get_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf10f0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardStampData)__receiver)}
+}
+#[doc="`set_Image(::unity2::Il2CppString)` overload"]fn set_image(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1100usize)as*mut u8,();
+(ProfileCardStampData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Category()` overload"]fn get_category(self,)->crate::app::profilecardstampdata::ProfileCardStampData_Categories{unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1110usize)as*mut u8,crate::app::profilecardstampdata::ProfileCardStampData_Categories;
+(ProfileCardStampData)__receiver)}
+}
+#[doc="`set_Category(crate::app::profilecardstampdata::ProfileCardStampData_Categories)` overload"]fn set_category(self,value:impl::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData_Categories>)->(){unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1120usize)as*mut u8,();
+(ProfileCardStampData)__receiver,(crate::app::profilecardstampdata::ProfileCardStampData_Categories)::core::convert::Into::into(value))}
+}
+#[doc="`get_Condition()` overload"]fn get_condition(self,)->crate::app::profilecardcondition::ProfileCardCondition{unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1130usize)as*mut u8,crate::app::profilecardcondition::ProfileCardCondition;
+(ProfileCardStampData)__receiver)}
+}
+#[doc="`set_Condition(crate::app::profilecardcondition::ProfileCardCondition)` overload"]fn set_condition(self,value:impl::core::convert::Into<crate::app::profilecardcondition::ProfileCardCondition>)->(){unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1140usize)as*mut u8,();
+(ProfileCardStampData)__receiver,(crate::app::profilecardcondition::ProfileCardCondition)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg()` overload"]fn get_arg(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1150usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardStampData)__receiver)}
+}
+#[doc="`set_Arg(::unity2::Il2CppString)` overload"]fn set_arg(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1160usize)as*mut u8,();
+(ProfileCardStampData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1220usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardStampData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf12f0usize)as*mut u8,();
+(ProfileCardStampData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardstampdata")]
-impl < __T : IProfileCardStampData > IProfileCardStampDataMethods for __T { }
+#[cfg(feature="app-profilecardstampdata")]impl<__T:IProfileCardStampData>IProfileCardStampDataMethods for __T{}
 
-#[cfg(feature = "app-profilecardstampdata")]
-impl ProfileCardStampData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_category_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-profilecardstampdata")]impl ProfileCardStampData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_category_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-profilecardstampdata")]
-impl ProfileCardStampData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampData) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardstampdata")]impl ProfileCardStampData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampData), ::core::stringify!(new),));
+ <Self as IProfileCardStampDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardstampdata")]

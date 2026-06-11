@@ -4,48 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: magicsub :: { IMagicSub , MagicSub }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::magicsub::{IMagicSub,MagicSub}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicsublinear/MagicSubLinear.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "MagicSubLinear")] # [parent (crate :: combat :: magicsub :: MagicSub)] pub struct MagicSubLinear {
-# [offset (80)] # [rename (name = "m_TargetNode")] pub m_target_node : crate :: unity_engine :: transform :: Transform ,
-# [offset (88)] # [rename (name = "m_StartPos")] pub m_start_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (100)] # [rename (name = "m_EndPos")] pub m_end_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (112)] # [rename (name = "m_Forward")] pub m_forward : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (124)] # [rename (name = "m_Distance")] pub m_distance : f32 ,
-# [offset (128)] # [rename (name = "m_FlyingTime")] pub m_flying_time : f32 ,
-# [offset (132)] # [rename (name = "m_Elapsed")] pub m_elapsed : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/magicsublinear/MagicSubLinear.md"))]#[::unity2::class(namespace="Combat",name="MagicSubLinear")]#[parent(crate::combat::magicsub::MagicSub)]pub struct MagicSubLinear{#[offset(80)]#[rename(name="m_TargetNode")]pub m_target_node:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="m_StartPos")]pub m_start_pos:crate::unity_engine::vector3::Vector3, #[offset(100)]#[rename(name="m_EndPos")]pub m_end_pos:crate::unity_engine::vector3::Vector3, #[offset(112)]#[rename(name="m_Forward")]pub m_forward:crate::unity_engine::vector3::Vector3, #[offset(124)]#[rename(name="m_Distance")]pub m_distance:f32, #[offset(128)]#[rename(name="m_FlyingTime")]pub m_flying_time:f32, #[offset(132)]#[rename(name="m_Elapsed")]pub m_elapsed:f32,}
 
 }
 
 #[cfg(feature = "combat-magicsublinear-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-magicsublinear")]
-pub trait IMagicSubLinearMethods : IMagicSubLinear { # [doc = "`Setup(crate::combat::character::Character, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"] fn setup (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < MagicSubLinear as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (MagicSubLinear , crate :: combat :: character :: Character , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf6530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MagicSubLinear as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSubLinear , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf66f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MagicSubLinear as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicSubLinear , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf6870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-magicsublinear")]pub trait IMagicSubLinearMethods:IMagicSubLinear{#[doc="`Setup(crate::combat::character::Character, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]fn setup(self,chr:impl::core::convert::Into<crate::combat::character::Character>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let __receiver= <MagicSubLinear as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf6530usize)as*mut u8,();
+(MagicSubLinear)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MagicSubLinear as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf66f0usize)as*mut u8,();
+(MagicSubLinear)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MagicSubLinear as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf6870usize)as*mut u8,();
+(MagicSubLinear)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-magicsublinear")]
-impl < __T : IMagicSubLinear > IMagicSubLinearMethods for __T { }
+#[cfg(feature="combat-magicsublinear")]impl<__T:IMagicSubLinear>IMagicSubLinearMethods for __T{}
 
-#[cfg(feature = "combat-magicsublinear")]
-impl MagicSubLinear { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSubLinear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSubLinear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicSubLinear as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-magicsublinear")]impl MagicSubLinear{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-magicsublinear")]
-impl MagicSubLinear {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MagicSubLinear) , :: core :: stringify ! (new) ,)) ; < Self as IMagicSubLinearMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-magicsublinear")]impl MagicSubLinear{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MagicSubLinear), ::core::stringify!(new),));
+ <Self as IMagicSubLinearMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-magicsublinear")]

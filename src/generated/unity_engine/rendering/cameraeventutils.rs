@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/cameraeventutils/CameraEventUtils.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "CameraEventUtils")] # [parent (crate :: system :: object :: Object)] pub struct CameraEventUtils {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/cameraeventutils/CameraEventUtils.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="CameraEventUtils")]#[parent(crate::system::object::Object)]pub struct CameraEventUtils{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraeventutils-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-cameraeventutils")]
-impl CameraEventUtils { # [doc = "`IsValid(crate::unity_engine::rendering::cameraevent::CameraEvent)` overload"] pub fn is_valid (value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: cameraevent :: CameraEvent >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: cameraevent :: CameraEvent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c3eb60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-cameraeventutils")]impl CameraEventUtils{#[doc="`IsValid(crate::unity_engine::rendering::cameraevent::CameraEvent)` overload"]pub fn is_valid(value:impl::core::convert::Into<crate::unity_engine::rendering::cameraevent::CameraEvent>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c3eb60usize)as*mut u8,bool;
+(crate::unity_engine::rendering::cameraevent::CameraEvent)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-cameraeventutils")]
-impl CameraEventUtils { pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraEventUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-cameraeventutils")]impl CameraEventUtils{pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-rendering-cameraeventutils")]
 #[doc(hidden)]

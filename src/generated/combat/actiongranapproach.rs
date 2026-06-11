@@ -4,43 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: actiondisposerholder :: { ActionDisposerHolder , IActionDisposerHolder }
- ;
- use crate :: combat :: actiongranbase :: { ActionGranBase , IActionGranBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::actiondisposerholder::{ActionDisposerHolder,IActionDisposerHolder}
+;
+use crate::combat::actiongranbase::{ActionGranBase,IActionGranBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranapproach/ActionGranApproach.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionGranApproach")] # [parent (crate :: combat :: actiongranbase :: ActionGranBase)] pub struct ActionGranApproach {
-# [offset (64)] # [rename (name = "m_WorldArrivalTime")] pub m_world_arrival_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiongranapproach/ActionGranApproach.md"))]#[::unity2::class(namespace="Combat",name="ActionGranApproach")]#[parent(crate::combat::actiongranbase::ActionGranBase)]pub struct ActionGranApproach{#[offset(64)]#[rename(name="m_WorldArrivalTime")]pub m_world_arrival_time:f32,}
 
 }
 
 #[cfg(feature = "combat-actiongranapproach-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actiongranapproach")]
-impl ActionGranApproach { # [doc = "`IsAvailable(crate::combat::character::Character, f32)` overload"] pub fn is_available (chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , world_arrival_t_ime : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc56b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (world_arrival_t_ime) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiongranapproach")]impl ActionGranApproach{#[doc="`IsAvailable(crate::combat::character::Character, f32)` overload"]pub fn is_available(chr:impl::core::convert::Into<crate::combat::character::Character> ,world_arrival_t_ime:impl::core::convert::Into<f32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc56b0usize)as*mut u8,bool;
+(crate::combat::character::Character)::core::convert::Into::into(chr),(f32)::core::convert::Into::into(world_arrival_t_ime))}
+}
+}
 
-#[cfg(feature = "combat-actiongranapproach")]
-pub trait IActionGranApproachMethods : IActionGranApproach { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionGranApproach as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranApproach , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, f32)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , world_arrival_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ActionGranApproach as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranApproach , crate :: combat :: character :: Character , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (world_arrival_time) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionGranApproach as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranApproach , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < ActionGranApproach as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranApproach , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiongranapproach")]pub trait IActionGranApproachMethods:IActionGranApproach{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionGranApproach as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5660usize)as*mut u8, ::unity2::Il2CppString;
+(ActionGranApproach)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,world_arrival_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionGranApproach as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5990usize)as*mut u8,();
+(ActionGranApproach)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(f32)::core::convert::Into::into(world_arrival_time))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionGranApproach as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5a00usize)as*mut u8,();
+(ActionGranApproach)__receiver)}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionGranApproach as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5cd0usize)as*mut u8,();
+(ActionGranApproach)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actiongranapproach")]
-impl < __T : IActionGranApproach > IActionGranApproachMethods for __T { }
+#[cfg(feature="combat-actiongranapproach")]impl<__T:IActionGranApproach>IActionGranApproachMethods for __T{}
 
-#[cfg(feature = "combat-actiongranapproach")]
-impl ActionGranApproach { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranApproach as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranApproach as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranApproach as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranApproach as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranApproach as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-actiongranapproach")]impl ActionGranApproach{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-actiongranapproach")]
-impl ActionGranApproach {
-# [doc = "`.ctor(crate::combat::character::Character, f32)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , world_arrival_time : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionGranApproach) , :: core :: stringify ! (new) ,)) ; < Self as IActionGranApproachMethods > :: ctor (this , chr , world_arrival_time) ; this }
+#[cfg(feature="combat-actiongranapproach")]impl ActionGranApproach{#[doc="`.ctor(crate::combat::character::Character, f32)` — overload selector"]pub fn new(chr:crate::combat::character::Character,world_arrival_time:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionGranApproach), ::core::stringify!(new),));
+ <Self as IActionGranApproachMethods> ::ctor(this,chr,world_arrival_time);
+this}
 }
 
 #[cfg(feature = "combat-actiongranapproach")]

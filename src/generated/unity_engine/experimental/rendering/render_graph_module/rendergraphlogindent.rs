@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphlogindent/RenderGraphLogIndent.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RenderGraphLogIndent {
-    pub m_indentation: i32,
-    pub m_logger: crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphlogger :: RenderGraphLogger,
-    pub m_disposed: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphlogindent/RenderGraphLogIndent.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderGraphLogIndent{pub m_indentation:i32,pub m_logger:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphlogger::RenderGraphLogger,pub m_disposed:bool,}
+impl::unity2::ClassIdentity for RenderGraphLogIndent{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
+const NAME: &'static str="RenderGraphLogIndent";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RenderGraphLogIndent {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
-    const NAME: &'static str = "RenderGraphLogIndent";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RenderGraphLogIndent {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RenderGraphLogIndent{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,11 +26,21 @@ impl ::unity2::IlType for RenderGraphLogIndent {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogindent-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogindent")]
-impl RenderGraphLogIndent { # [doc = "`.ctor(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphlogger::RenderGraphLogger, i32)` overload"] pub fn ctor (& mut self , logger : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphlogger :: RenderGraphLogger > , indentation : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderGraphLogIndent , crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphlogger :: RenderGraphLogger , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b8580usize) as * mut u8) ; __inner (self as * mut RenderGraphLogIndent , :: core :: convert :: Into :: into (logger) , :: core :: convert :: Into :: into (indentation) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderGraphLogIndent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b8c10usize) as * mut u8) ; __inner (self as * mut RenderGraphLogIndent , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] pub fn dispose_2 (& mut self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderGraphLogIndent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b9ed0usize) as * mut u8) ; __inner (self as * mut RenderGraphLogIndent , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphlogindent")]impl RenderGraphLogIndent{#[doc="`.ctor(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphlogger::RenderGraphLogger, i32)` overload"]pub fn ctor(&mut self,logger:impl::core::convert::Into<crate::unity_engine::experimental::rendering::render_graph_module::rendergraphlogger::RenderGraphLogger> ,indentation:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30b8580usize)as*mut u8,();
+(*mut RenderGraphLogIndent)self as*mut RenderGraphLogIndent,(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphlogger::RenderGraphLogger)::core::convert::Into::into(logger),(i32)::core::convert::Into::into(indentation))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30b8c10usize)as*mut u8,();
+(*mut RenderGraphLogIndent)self as*mut RenderGraphLogIndent)}
+}
+#[doc="`Dispose(bool)` overload"]pub fn dispose_2(&mut self,disposing:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30b9ed0usize)as*mut u8,();
+(*mut RenderGraphLogIndent)self as*mut RenderGraphLogIndent,(bool)::core::convert::Into::into(disposing))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogindent")]
-impl RenderGraphLogIndent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphLogIndent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphLogIndent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphLogIndent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphlogindent")]impl RenderGraphLogIndent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogindent")]
 #[doc(hidden)]

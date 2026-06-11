@@ -4,23 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/signalargsreaderwriter_attackrange/SignalArgsReaderWriter_AttackRange.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "SignalArgsReaderWriter_AttackRange")] # [parent (crate :: system :: object :: Object)] pub struct SignalArgsReaderWriter_AttackRange {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/signalargsreaderwriter_attackrange/SignalArgsReaderWriter_AttackRange.md"))]#[::unity2::class(namespace="Combat",name="SignalArgsReaderWriter_AttackRange")]#[parent(crate::system::object::Object)]pub struct SignalArgsReaderWriter_AttackRange{}
 
 }
 
 #[cfg(feature = "combat-signalargsreaderwriter_attackrange-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-signalargsreaderwriter_attackrange")]
-impl SignalArgsReaderWriter_AttackRange { # [doc = "`AttackFarRange(crate::unity_engine::animationevent::AnimationEvent)` overload"] pub fn attack_far_range (ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247ceb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`AttackFarRange(crate::unity_engine::animationevent::AnimationEvent, f32)` overload"] pub fn attack_far_range_2 (ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animationevent :: AnimationEvent , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247ced0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ev) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`AttackNearRange(crate::unity_engine::animationevent::AnimationEvent)` overload"] pub fn attack_near_range (ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cee0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-signalargsreaderwriter_attackrange")]impl SignalArgsReaderWriter_AttackRange{#[doc="`AttackFarRange(crate::unity_engine::animationevent::AnimationEvent)` overload"]pub fn attack_far_range(ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247ceb0usize)as*mut u8,f32;
+(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`AttackFarRange(crate::unity_engine::animationevent::AnimationEvent, f32)` overload"]pub fn attack_far_range_2(ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent> ,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247ced0usize)as*mut u8,();
+(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev),(f32)::core::convert::Into::into(value))}
+}
+#[doc="`AttackNearRange(crate::unity_engine::animationevent::AnimationEvent)` overload"]pub fn attack_near_range(ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cee0usize)as*mut u8,f32;
+(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+}
 
-#[cfg(feature = "combat-signalargsreaderwriter_attackrange")]
-impl SignalArgsReaderWriter_AttackRange { pub fn attack_far_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalArgsReaderWriter_AttackRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn attack_far_range_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalArgsReaderWriter_AttackRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn attack_near_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalArgsReaderWriter_AttackRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-signalargsreaderwriter_attackrange")]impl SignalArgsReaderWriter_AttackRange{pub fn attack_far_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn attack_far_range_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn attack_near_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "combat-signalargsreaderwriter_attackrange")]
 #[doc(hidden)]

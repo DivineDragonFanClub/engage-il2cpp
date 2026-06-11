@@ -4,25 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/cameratypeutility/CameraTypeUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "CameraTypeUtility")] # [parent (crate :: system :: object :: Object)] pub struct CameraTypeUtility {
-# [static_field] # [rename (name = "s_CameraTypeNames")] pub s_camera_type_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/cameratypeutility/CameraTypeUtility.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="CameraTypeUtility")]#[parent(crate::system::object::Object)]pub struct CameraTypeUtility{#[static_field]#[rename(name="s_CameraTypeNames")]pub s_camera_type_names: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-cameratypeutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-cameratypeutility")]
-impl CameraTypeUtility { # [doc = "`GetName(crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType)` overload"] pub fn get_name (r#type : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3dcf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3ddc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-cameratypeutility")]impl CameraTypeUtility{#[doc="`GetName(crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType)` overload"]pub fn get_name(r#type:impl::core::convert::Into<crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3dcf0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType)::core::convert::Into::into(r#type))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3ddc0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-cameratypeutility")]
-impl CameraTypeUtility { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraTypeUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraTypeUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-universal-cameratypeutility")]impl CameraTypeUtility{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-cameratypeutility")]
 #[doc(hidden)]

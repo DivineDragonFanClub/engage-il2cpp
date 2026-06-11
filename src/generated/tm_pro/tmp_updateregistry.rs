@@ -4,39 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_updateregistry/TMP_UpdateRegistry.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_UpdateRegistry")] # [parent (crate :: system :: object :: Object)] pub struct TMP_UpdateRegistry {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: tm_pro :: tmp_updateregistry :: TMP_UpdateRegistry ,
-# [offset (16)] # [rename (name = "m_LayoutRebuildQueue")] pub m_layout_rebuild_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement > ,
-# [offset (24)] # [rename (name = "m_LayoutQueueLookup")] pub m_layout_queue_lookup : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > ,
-# [offset (32)] # [rename (name = "m_GraphicRebuildQueue")] pub m_graphic_rebuild_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement > ,
-# [offset (40)] # [rename (name = "m_GraphicQueueLookup")] pub m_graphic_queue_lookup : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_updateregistry/TMP_UpdateRegistry.md"))]#[::unity2::class(namespace="TMPro",name="TMP_UpdateRegistry")]#[parent(crate::system::object::Object)]pub struct TMP_UpdateRegistry{#[static_field]#[rename(name="s_Instance")]pub s_instance:crate::tm_pro::tmp_updateregistry::TMP_UpdateRegistry, #[offset(16)]#[rename(name="m_LayoutRebuildQueue")]pub m_layout_rebuild_queue:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::icanvaselement::ICanvasElement> , #[offset(24)]#[rename(name="m_LayoutQueueLookup")]pub m_layout_queue_lookup:crate::system::collections::generic::hashset_1::HashSet_1<i32> , #[offset(32)]#[rename(name="m_GraphicRebuildQueue")]pub m_graphic_rebuild_queue:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::icanvaselement::ICanvasElement> , #[offset(40)]#[rename(name="m_GraphicQueueLookup")]pub m_graphic_queue_lookup:crate::system::collections::generic::hashset_1::HashSet_1<i32> ,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_updateregistry-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_updateregistry")]
-impl TMP_UpdateRegistry { # [doc = "`get_instance()` overload"] pub fn get_instance () -> crate :: tm_pro :: tmp_updateregistry :: TMP_UpdateRegistry { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_updateregistry :: TMP_UpdateRegistry = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e67b00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"] pub fn register_canvas_element_for_layout_rebuild (element : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e67d20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (element) , :: core :: option :: Option :: None) } } } # [doc = "`RegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"] pub fn register_canvas_element_for_graphic_rebuild (element : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e67ed0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (element) , :: core :: option :: Option :: None) } } } # [doc = "`UnRegisterCanvasElementForRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"] pub fn un_register_canvas_element_for_rebuild (element : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e68460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (element) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_updateregistry")]impl TMP_UpdateRegistry{#[doc="`get_instance()` overload"]pub fn get_instance()->crate::tm_pro::tmp_updateregistry::TMP_UpdateRegistry{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e67b00usize)as*mut u8,crate::tm_pro::tmp_updateregistry::TMP_UpdateRegistry;
+)}
+}
+#[doc="`RegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]pub fn register_canvas_element_for_layout_rebuild(element:impl::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e67d20usize)as*mut u8,();
+(crate::unity_engine::ui::icanvaselement::ICanvasElement)::core::convert::Into::into(element))}
+}
+#[doc="`RegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]pub fn register_canvas_element_for_graphic_rebuild(element:impl::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e67ed0usize)as*mut u8,();
+(crate::unity_engine::ui::icanvaselement::ICanvasElement)::core::convert::Into::into(element))}
+}
+#[doc="`UnRegisterCanvasElementForRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]pub fn un_register_canvas_element_for_rebuild(element:impl::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e68460usize)as*mut u8,();
+(crate::unity_engine::ui::icanvaselement::ICanvasElement)::core::convert::Into::into(element))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_updateregistry")]
-pub trait ITMP_UpdateRegistryMethods : ITMP_UpdateRegistry { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_UpdateRegistry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_UpdateRegistry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e67ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InternalRegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"] fn internal_register_canvas_element_for_layout_rebuild (self , element : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement >) -> bool { unsafe { let __receiver = < TMP_UpdateRegistry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_UpdateRegistry , crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e67db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (element) , :: core :: option :: Option :: None) } } } # [doc = "`InternalRegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"] fn internal_register_canvas_element_for_graphic_rebuild (self , element : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement >) -> bool { unsafe { let __receiver = < TMP_UpdateRegistry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_UpdateRegistry , crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e67f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (element) , :: core :: option :: Option :: None) } } } # [doc = "`PerformUpdateForCanvasRendererObjects()` overload"] fn perform_update_for_canvas_renderer_objects (self ,) -> () { unsafe { let __receiver = < TMP_UpdateRegistry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_UpdateRegistry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e68080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PerformUpdateForMeshRendererObjects()` overload"] fn perform_update_for_mesh_renderer_objects (self ,) -> () { unsafe { let __receiver = < TMP_UpdateRegistry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_UpdateRegistry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e683e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InternalUnRegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"] fn internal_un_register_canvas_element_for_layout_rebuild (self , element : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement >) -> () { unsafe { let __receiver = < TMP_UpdateRegistry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_UpdateRegistry , crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e68590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (element) , :: core :: option :: Option :: None) } } } # [doc = "`InternalUnRegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"] fn internal_un_register_canvas_element_for_graphic_rebuild (self , element : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement >) -> () { unsafe { let __receiver = < TMP_UpdateRegistry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_UpdateRegistry , crate :: unity_engine :: ui :: icanvaselement :: ICanvasElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e686e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (element) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_updateregistry")]pub trait ITMP_UpdateRegistryMethods:ITMP_UpdateRegistry{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_UpdateRegistry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e67ba0usize)as*mut u8,();
+(TMP_UpdateRegistry)__receiver)}
+}
+#[doc="`InternalRegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]fn internal_register_canvas_element_for_layout_rebuild(self,element:impl::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>)->bool{unsafe{let __receiver= <TMP_UpdateRegistry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e67db0usize)as*mut u8,bool;
+(TMP_UpdateRegistry)__receiver,(crate::unity_engine::ui::icanvaselement::ICanvasElement)::core::convert::Into::into(element))}
+}
+#[doc="`InternalRegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]fn internal_register_canvas_element_for_graphic_rebuild(self,element:impl::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>)->bool{unsafe{let __receiver= <TMP_UpdateRegistry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e67f60usize)as*mut u8,bool;
+(TMP_UpdateRegistry)__receiver,(crate::unity_engine::ui::icanvaselement::ICanvasElement)::core::convert::Into::into(element))}
+}
+#[doc="`PerformUpdateForCanvasRendererObjects()` overload"]fn perform_update_for_canvas_renderer_objects(self,)->(){unsafe{let __receiver= <TMP_UpdateRegistry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e68080usize)as*mut u8,();
+(TMP_UpdateRegistry)__receiver)}
+}
+#[doc="`PerformUpdateForMeshRendererObjects()` overload"]fn perform_update_for_mesh_renderer_objects(self,)->(){unsafe{let __receiver= <TMP_UpdateRegistry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e683e0usize)as*mut u8,();
+(TMP_UpdateRegistry)__receiver)}
+}
+#[doc="`InternalUnRegisterCanvasElementForLayoutRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]fn internal_un_register_canvas_element_for_layout_rebuild(self,element:impl::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>)->(){unsafe{let __receiver= <TMP_UpdateRegistry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e68590usize)as*mut u8,();
+(TMP_UpdateRegistry)__receiver,(crate::unity_engine::ui::icanvaselement::ICanvasElement)::core::convert::Into::into(element))}
+}
+#[doc="`InternalUnRegisterCanvasElementForGraphicRebuild(crate::unity_engine::ui::icanvaselement::ICanvasElement)` overload"]fn internal_un_register_canvas_element_for_graphic_rebuild(self,element:impl::core::convert::Into<crate::unity_engine::ui::icanvaselement::ICanvasElement>)->(){unsafe{let __receiver= <TMP_UpdateRegistry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e686e0usize)as*mut u8,();
+(TMP_UpdateRegistry)__receiver,(crate::unity_engine::ui::icanvaselement::ICanvasElement)::core::convert::Into::into(element))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_updateregistry")]
-impl < __T : ITMP_UpdateRegistry > ITMP_UpdateRegistryMethods for __T { }
+#[cfg(feature="tm_pro-tmp_updateregistry")]impl<__T:ITMP_UpdateRegistry>ITMP_UpdateRegistryMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_updateregistry")]
-impl TMP_UpdateRegistry { pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn register_canvas_element_for_layout_rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn internal_register_canvas_element_for_layout_rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn register_canvas_element_for_graphic_rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn internal_register_canvas_element_for_graphic_rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn perform_update_for_canvas_renderer_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn perform_update_for_mesh_renderer_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn un_register_canvas_element_for_rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn internal_un_register_canvas_element_for_layout_rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn internal_un_register_canvas_element_for_graphic_rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_UpdateRegistry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="tm_pro-tmp_updateregistry")]impl TMP_UpdateRegistry{pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn register_canvas_element_for_layout_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn internal_register_canvas_element_for_layout_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn register_canvas_element_for_graphic_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn internal_register_canvas_element_for_graphic_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn perform_update_for_canvas_renderer_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn perform_update_for_mesh_renderer_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn un_register_canvas_element_for_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn internal_un_register_canvas_element_for_layout_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn internal_un_register_canvas_element_for_graphic_rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "tm_pro-tmp_updateregistry")]
-impl TMP_UpdateRegistry {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_UpdateRegistry) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_UpdateRegistryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_updateregistry")]impl TMP_UpdateRegistry{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_UpdateRegistry), ::core::stringify!(new),));
+ <Self as ITMP_UpdateRegistryMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_updateregistry")]

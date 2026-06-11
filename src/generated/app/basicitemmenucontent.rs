@@ -4,47 +4,108 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicitemmenucontent/BasicItemMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicItemMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct BasicItemMenuContent {
-# [offset (232)] # [rename (name = "m_wdwItemHelp")] pub m_wdw_item_help : crate :: unity_engine :: gameobject :: GameObject ,
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (240)] # [rename (name = "m_IsPerformanceOnly")] pub m_is_performance_only : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicitemmenucontent/BasicItemMenuContent.md"))]#[::unity2::class(namespace="App",name="BasicItemMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct BasicItemMenuContent{#[offset(232)]#[rename(name="m_wdwItemHelp")]pub m_wdw_item_help:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(240)]#[rename(name="m_IsPerformanceOnly")]pub m_is_performance_only:bool,}
 
 }
 
 #[cfg(feature = "app-basicitemmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-basicitemmenucontent")]
-impl BasicItemMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456c10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: basicitemmenucontent :: BasicItemMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: basicitemmenucontent :: BasicItemMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456d10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456e80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicitemmenucontent")]impl BasicItemMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2456c10usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::basicitemmenucontent::BasicItemMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2456d10usize)as*mut u8,crate::app::basicitemmenucontent::BasicItemMenuContent;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2456e80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-basicitemmenucontent")]
-pub trait IBasicItemMenuContentMethods : IBasicItemMenuContent { # [doc = "`SetMenuTitle(::unity2::Il2CppString)` overload"] fn set_menu_title (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24564e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeIsPerformanceOnly()` overload"] fn change_is_performance_only (self ,) -> () { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24565b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDetail(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"] fn set_detail (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , selected_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , crate :: app :: unit :: Unit , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24565c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (selected_item) , :: core :: option :: Option :: None) } } } # [doc = "`SetEnchantMode(bool)` overload"] fn set_enchant_mode (self , is_enchant : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24566d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_enchant) , :: core :: option :: Option :: None) } } } # [doc = "`GetSubItemMenuRect()` overload"] fn get_sub_item_menu_rect (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BasicItemMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2456dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicitemmenucontent")]pub trait IBasicItemMenuContentMethods:IBasicItemMenuContent{#[doc="`SetMenuTitle(::unity2::Il2CppString)` overload"]fn set_menu_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24564e0usize)as*mut u8,();
+(BasicItemMenuContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
+}
+#[doc="`ChangeIsPerformanceOnly()` overload"]fn change_is_performance_only(self,)->(){unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24565b0usize)as*mut u8,();
+(BasicItemMenuContent)__receiver)}
+}
+#[doc="`SetDetail(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]fn set_detail(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,selected_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24565c0usize)as*mut u8,();
+(BasicItemMenuContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unititem::UnitItem)::core::convert::Into::into(selected_item))}
+}
+#[doc="`SetEnchantMode(bool)` overload"]fn set_enchant_mode(self,is_enchant:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24566d0usize)as*mut u8,();
+(BasicItemMenuContent)__receiver,(bool)::core::convert::Into::into(is_enchant))}
+}
+#[doc="`GetSubItemMenuRect()` overload"]fn get_sub_item_menu_rect(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2456750usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(BasicItemMenuContent)__receiver)}
+}
+#[doc="`SetColor(crate::unity_engine::color::Color)` overload"]fn set_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2456800usize)as*mut u8,();
+(BasicItemMenuContent)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2456a50usize)as*mut u8,i32;
+(BasicItemMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2456a60usize)as*mut u8,f32;
+(BasicItemMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2456b40usize)as*mut u8,f32;
+(BasicItemMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2456ba0usize)as*mut u8,f32;
+(BasicItemMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2456dd0usize)as*mut u8,();
+(BasicItemMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-basicitemmenucontent")]
-impl < __T : IBasicItemMenuContent > IBasicItemMenuContentMethods for __T { }
+#[cfg(feature="app-basicitemmenucontent")]impl<__T:IBasicItemMenuContent>IBasicItemMenuContentMethods for __T{}
 
-#[cfg(feature = "app-basicitemmenucontent")]
-impl BasicItemMenuContent { pub fn set_menu_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn change_is_performance_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_detail_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_enchant_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_sub_item_menu_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-basicitemmenucontent")]impl BasicItemMenuContent{pub fn set_menu_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn change_is_performance_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_detail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_enchant_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_sub_item_menu_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-basicitemmenucontent")]
-impl BasicItemMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicItemMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IBasicItemMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-basicitemmenucontent")]impl BasicItemMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicItemMenuContent), ::core::stringify!(new),));
+ <Self as IBasicItemMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-basicitemmenucontent")]

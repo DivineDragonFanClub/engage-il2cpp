@@ -4,247 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesc/ProcDesc.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDesc")] # [parent (crate :: system :: object :: Object)] pub struct ProcDesc {
-# [offset (16)] # [rename (name = "m_Type")] pub m_type : crate :: app :: procdesc :: ProcDesc_Type ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesc/ProcDesc_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProcDesc_Result{pub value:i32,}
+impl::unity2::ClassIdentity for ProcDesc_Result{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ProcDesc.Result";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ProcDesc_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ProcDesc_Result{pub fn end()->Self{Self{value:0}
+}
+pub fn keep()->Self{Self{value:1}
+}
+pub fn next()->Self{Self{value:2}
+}
+pub fn next_imm()->Self{Self{value:3}
+}
+pub fn called_next()->Self{Self{value:4}
+}
+pub fn called_next_imm()->Self{Self{value:5}
+}
+pub fn jump()->Self{Self{value:6}
+}
+pub fn push()->Self{Self{value:7}
+}
+pub fn pop()->Self{Self{value:8}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesc/ProcDesc_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ProcDesc_Type  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesc/ProcDesc.md"))]#[::unity2::class(namespace="App",name="ProcDesc")]#[parent(crate::system::object::Object)]pub struct ProcDesc{#[offset(16)]#[rename(name="m_Type")]pub m_type:crate::app::procdesc::ProcDesc_Type,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesc/ProcDesc_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProcDesc_Type{pub value:i32,}
+impl::unity2::ClassIdentity for ProcDesc_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ProcDesc.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for ProcDesc_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProcDesc.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for ProcDesc_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for ProcDesc_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl ProcDesc_Type{pub fn end()->Self{Self{value:0}
 }
-
-
-impl  ProcDesc_Type  {
-    pub fn end() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn halt() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn jump() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn label() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn push() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn pop() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn persistent() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn wait_time() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn wait_frame() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn r#yield() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn call() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn tick() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn args() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn wait_func() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn jump_func() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn user() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 16 }
-
-    }
-
+pub fn halt()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesc/ProcDesc_Result.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ProcDesc_Result  {
-    pub value: i32,
+pub fn jump()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for ProcDesc_Result  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProcDesc.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn label()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::IlType for ProcDesc_Result  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn push()->Self{Self{value:4}
 }
-
-
-impl  ProcDesc_Result  {
-    pub fn end() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn keep() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn next() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn next_imm() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn called_next() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn called_next_imm() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn jump() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn push() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn pop() -> Self {
-        Self { value: 8 }
-
-    }
-
+pub fn pop()->Self{Self{value:5}
+}
+pub fn persistent()->Self{Self{value:6}
+}
+pub fn wait_time()->Self{Self{value:7}
+}
+pub fn wait_frame()->Self{Self{value:8}
+}
+pub fn r#yield()->Self{Self{value:9}
+}
+pub fn call()->Self{Self{value:10}
+}
+pub fn tick()->Self{Self{value:11}
+}
+pub fn args()->Self{Self{value:12}
+}
+pub fn wait_func()->Self{Self{value:13}
+}
+pub fn jump_func()->Self{Self{value:14}
+}
+pub fn user()->Self{Self{value:15}
+}
+pub fn max()->Self{Self{value:16}
+}
 }
 
 }
@@ -252,28 +96,52 @@ impl  ProcDesc_Result  {
 #[cfg(feature = "app-procdesc-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdesc")]
-pub trait IProcDescMethods : IProcDesc { # [doc = "`.ctor(crate::app::procdesc::ProcDesc_Type)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: procdesc :: ProcDesc_Type >) -> () { unsafe { let __receiver = < ProcDesc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDesc , crate :: app :: procdesc :: ProcDesc_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281cd20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDesc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDesc , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281cd50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } # [doc = "`get_DescType()` overload"] fn get_desc_type (self ,) -> crate :: app :: procdesc :: ProcDesc_Type { unsafe { let __receiver = < ProcDesc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDesc , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281cd60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Label()` overload"] fn get_label (self ,) -> i32 { unsafe { let __receiver = < ProcDesc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDesc , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281cd70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Persistent()` overload"] fn get_persistent (self ,) -> crate :: app :: procvoidmethod :: ProcVoidMethod { unsafe { let __receiver = < ProcDesc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDesc , :: unity2 :: OptionalMethod ,) -> crate :: app :: procvoidmethod :: ProcVoidMethod = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281cd80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdesc")]pub trait IProcDescMethods:IProcDesc{#[doc="`.ctor(crate::app::procdesc::ProcDesc_Type)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::procdesc::ProcDesc_Type>)->(){unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd20usize)as*mut u8,();
+(ProcDesc)__receiver,(crate::app::procdesc::ProcDesc_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd50usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(ProcDesc)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+#[doc="`get_DescType()` overload"]fn get_desc_type(self,)->crate::app::procdesc::ProcDesc_Type{unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd60usize)as*mut u8,crate::app::procdesc::ProcDesc_Type;
+(ProcDesc)__receiver)}
+}
+#[doc="`get_Label()` overload"]fn get_label(self,)->i32{unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd70usize)as*mut u8,i32;
+(ProcDesc)__receiver)}
+}
+#[doc="`get_Persistent()` overload"]fn get_persistent(self,)->crate::app::procvoidmethod::ProcVoidMethod{unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd80usize)as*mut u8,crate::app::procvoidmethod::ProcVoidMethod;
+(ProcDesc)__receiver)}
+}
+}
 
-#[cfg(feature = "app-procdesc")]
-impl < __T : IProcDesc > IProcDescMethods for __T { }
+#[cfg(feature="app-procdesc")]impl<__T:IProcDesc>IProcDescMethods for __T{}
 
-#[cfg(feature = "app-procdesc")]
-impl ProcDesc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_desc_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-procdesc")]impl ProcDesc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_desc_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_persistent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-procdesc")]
-impl ProcDesc {
-# [doc = "`.ctor(crate::app::procdesc::ProcDesc_Type)` — overload selector"] pub fn new (r#type : crate :: app :: procdesc :: ProcDesc_Type) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDesc) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescMethods > :: ctor (this , r#type) ; this }
+#[cfg(feature="app-procdesc")]impl ProcDesc{#[doc="`.ctor(crate::app::procdesc::ProcDesc_Type)` — overload selector"]pub fn new(r#type:crate::app::procdesc::ProcDesc_Type)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDesc), ::core::stringify!(new),));
+ <Self as IProcDescMethods> ::ctor(this,r#type);
+this}
 }
 
 #[cfg(feature = "app-procdesc")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProcDesc_Result;
     pub use super::ProcDesc;
     pub use super::IProcDesc;
     pub use super::IProcDescMethods;
     pub use super::ProcDesc_Type;
-    pub use super::ProcDesc_Result;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

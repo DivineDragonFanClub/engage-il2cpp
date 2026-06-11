@@ -4,34 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapimagecore_1 :: { IMapImageCore_1 , MapImageCore_1 }
- ;
- use crate :: app :: mapimageindex :: { IMapImageIndex , MapImageIndex }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapimagecore_1::{IMapImageCore_1,MapImageCore_1}
+;
+use crate::app::mapimageindex::{IMapImageIndex,MapImageIndex}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagecoresbyte/MapImageCoreSbyte.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageCoreSbyte")] # [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < i8 >)] pub struct MapImageCoreSbyte {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagecoresbyte/MapImageCoreSbyte.md"))]#[::unity2::class(namespace="App",name="MapImageCoreSbyte")]#[parent(crate::app::mapimagecore_1::MapImageCore_1<i8>)]pub struct MapImageCoreSbyte{}
 
 }
 
 #[cfg(feature = "app-mapimagecoresbyte-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapimagecoresbyte")]
-pub trait IMapImageCoreSbyteMethods : IMapImageCoreSbyte { # [doc = "`Add(i32, i8)` overload"] fn add (self , index : impl :: core :: convert :: Into < i32 > , v : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < MapImageCoreSbyte as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreSbyte , i32 , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205f950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`GetMin()` overload"] fn get_min (self ,) -> i32 { unsafe { let __receiver = < MapImageCoreSbyte as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreSbyte , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205f990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMax()` overload"] fn get_max (self ,) -> i32 { unsafe { let __receiver = < MapImageCoreSbyte as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreSbyte , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205f9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageCoreSbyte as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreSbyte , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205fa50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagecoresbyte")]pub trait IMapImageCoreSbyteMethods:IMapImageCoreSbyte{#[doc="`Add(i32, i8)` overload"]fn add(self,index:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <MapImageCoreSbyte as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205f950usize)as*mut u8,();
+(MapImageCoreSbyte)__receiver,(i32)::core::convert::Into::into(index),(i8)::core::convert::Into::into(v))}
+}
+#[doc="`GetMin()` overload"]fn get_min(self,)->i32{unsafe{let __receiver= <MapImageCoreSbyte as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205f990usize)as*mut u8,i32;
+(MapImageCoreSbyte)__receiver)}
+}
+#[doc="`GetMax()` overload"]fn get_max(self,)->i32{unsafe{let __receiver= <MapImageCoreSbyte as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205f9f0usize)as*mut u8,i32;
+(MapImageCoreSbyte)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageCoreSbyte as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205fa50usize)as*mut u8,();
+(MapImageCoreSbyte)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapimagecoresbyte")]
-impl < __T : IMapImageCoreSbyte > IMapImageCoreSbyteMethods for __T { }
+#[cfg(feature="app-mapimagecoresbyte")]impl<__T:IMapImageCoreSbyte>IMapImageCoreSbyteMethods for __T{}
 
-#[cfg(feature = "app-mapimagecoresbyte")]
-impl MapImageCoreSbyte { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreSbyte as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreSbyte as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreSbyte as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreSbyte as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-mapimagecoresbyte")]impl MapImageCoreSbyte{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-mapimagecoresbyte")]
-impl MapImageCoreSbyte {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageCoreSbyte) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageCoreSbyteMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapimagecoresbyte")]impl MapImageCoreSbyte{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImageCoreSbyte), ::core::stringify!(new),));
+ <Self as IMapImageCoreSbyteMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapimagecoresbyte")]

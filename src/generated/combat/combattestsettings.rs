@@ -4,38 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combattestsettings/CombatTestSettings.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatTestSettings")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CombatTestSettings {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combattestsettings/CombatTestSettings.md"))]#[::unity2::class(namespace="Combat",name="CombatTestSettings")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CombatTestSettings{}
 
 }
 
 #[cfg(feature = "combat-combattestsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combattestsettings")]
-pub trait ICombatTestSettingsMethods : ICombatTestSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatTestSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatTestSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29332f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combattestsettings")]pub trait ICombatTestSettingsMethods:ICombatTestSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatTestSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29332f0usize)as*mut u8,();
+(CombatTestSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combattestsettings")]
-impl < __T : ICombatTestSettings > ICombatTestSettingsMethods for __T { }
+#[cfg(feature="combat-combattestsettings")]impl<__T:ICombatTestSettings>ICombatTestSettingsMethods for __T{}
 
-#[cfg(feature = "combat-combattestsettings")]
-impl CombatTestSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatTestSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-combattestsettings")]impl CombatTestSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "combat-combattestsettings")]
-impl CombatTestSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatTestSettings) , :: core :: stringify ! (new) ,)) ; < Self as ICombatTestSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combattestsettings")]impl CombatTestSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatTestSettings), ::core::stringify!(new),));
+ <Self as ICombatTestSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-combattestsettings")]

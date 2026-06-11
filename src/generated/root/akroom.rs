@@ -4,105 +4,219 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::aktriggerhandler::{AkTriggerHandler,IAkTriggerHandler}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroom/AkRoom_PriorityList.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRoom.PriorityList")] # [parent (crate :: system :: object :: Object)] pub struct AkRoom_PriorityList {
-# [static_field] # [rename (name = "s_compareByPriority")] pub s_compare_by_priority : crate :: root :: akroom :: AkRoom_PriorityList_CompareByPriority ,
-# [offset (16)] # [rename (name = "rooms")] pub rooms : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akroom :: AkRoom > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akroom/AkRoom.md"))]#[::unity2::class(namespace="",name="AkRoom")]#[parent(crate::root::aktriggerhandler::AkTriggerHandler)]pub struct AkRoom{#[static_field]#[rename(name="INVALID_ROOM_ID")]pub invalid_room_id:u64, #[offset(44)]#[rename(name="priority")]pub priority:i32, #[offset(56)]#[rename(name="reverbLevel")]pub reverb_level:f32, #[offset(60)]#[rename(name="wallOcclusion")]pub wall_occlusion:f32, #[offset(72)]#[rename(name="roomToneAuxSend")]pub room_tone_aux_send:f32, #[offset(80)]#[rename(name="roomAwareObjectsEntered")]pub room_aware_objects_entered:crate::system::collections::generic::list_1::List_1<crate::root::akroomawareobject::AkRoomAwareObject> , #[offset(88)]#[rename(name="roomAwareObjectsDetectedWhileDisabled")]pub room_aware_objects_detected_while_disabled:crate::system::collections::generic::list_1::List_1<crate::root::akroomawareobject::AkRoomAwareObject> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroom/AkRoom_PriorityList_CompareByPriority.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRoom.PriorityList.CompareByPriority")] # [parent (crate :: system :: object :: Object)] pub struct AkRoom_PriorityList_CompareByPriority {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akroom/AkRoom_PriorityList.md"))]#[::unity2::class(namespace="",name="AkRoom.PriorityList")]#[parent(crate::system::object::Object)]pub struct AkRoom_PriorityList{#[static_field]#[rename(name="s_compareByPriority")]pub s_compare_by_priority:crate::root::akroom::AkRoom_PriorityList_CompareByPriority, #[offset(16)]#[rename(name="rooms")]pub rooms:crate::system::collections::generic::list_1::List_1<crate::root::akroom::AkRoom> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroom/AkRoom.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRoom")] # [parent (crate :: root :: aktriggerhandler :: AkTriggerHandler)] pub struct AkRoom {
-# [static_field] # [rename (name = "INVALID_ROOM_ID")] pub invalid_room_id : u64 ,
-# [offset (44)] # [rename (name = "priority")] pub priority : i32 ,
-# [offset (56)] # [rename (name = "reverbLevel")] pub reverb_level : f32 ,
-# [offset (60)] # [rename (name = "wallOcclusion")] pub wall_occlusion : f32 ,
-# [offset (72)] # [rename (name = "roomToneAuxSend")] pub room_tone_aux_send : f32 ,
-# [offset (80)] # [rename (name = "roomAwareObjectsEntered")] pub room_aware_objects_entered : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akroomawareobject :: AkRoomAwareObject > ,
-# [offset (88)] # [rename (name = "roomAwareObjectsDetectedWhileDisabled")] pub room_aware_objects_detected_while_disabled : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akroomawareobject :: AkRoomAwareObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akroom/AkRoom_PriorityList_CompareByPriority.md"))]#[::unity2::class(namespace="",name="AkRoom.PriorityList.CompareByPriority")]#[parent(crate::system::object::Object)]pub struct AkRoom_PriorityList_CompareByPriority{}
 
 }
 
 #[cfg(feature = "root-akroom-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akroom")]
-impl AkRoom_PriorityList { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba17d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akroom")]
-pub trait IAkRoom_PriorityListMethods : IAkRoom_PriorityList { # [doc = "`GetHighestPriorityActiveAndEnabledRoomID()` overload"] fn get_highest_priority_active_and_enabled_room_id (self ,) -> u64 { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba11b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHighestPriorityActiveAndEnabledRoom()` overload"] fn get_highest_priority_active_and_enabled_room (self ,) -> crate :: root :: akroom :: AkRoom { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , :: unity2 :: OptionalMethod ,) -> crate :: root :: akroom :: AkRoom = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba1290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba1370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba13c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::root::akroom::AkRoom)` overload"] fn add (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba1420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::root::akroom::AkRoom)` overload"] fn remove (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba15b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`Contains(crate::root::akroom::AkRoom)` overload"] fn contains (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> bool { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba1610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`BinarySearch(crate::root::akroom::AkRoom)` overload"] fn binary_search (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> i32 { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba14b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: root :: akroom :: AkRoom { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , i32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akroom :: AkRoom = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba16d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRoom_PriorityList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba1740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akroom")]
-impl < __T : IAkRoom_PriorityList > IAkRoom_PriorityListMethods for __T { }
-
-#[cfg(feature = "root-akroom")]
-impl AkRoom_PriorityList { pub fn get_highest_priority_active_and_enabled_room_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_highest_priority_active_and_enabled_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn binary_search_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
-
-#[cfg(feature = "root-akroom")]
-impl AkRoom_PriorityList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoom_PriorityList) , :: core :: stringify ! (new) ,)) ; < Self as IAkRoom_PriorityListMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akroom")]impl AkRoom{#[doc="`GetAkRoomID(crate::root::akroom::AkRoom)` overload"]pub fn get_ak_room_id(room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f31fb0usize)as*mut u8,u64;
+(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`get_RoomCount()` overload"]pub fn get_room_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f32150usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_RoomCount(i32)` overload"]pub fn set_room_count(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f321c0usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f33d80usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "root-akroom")]
-pub trait IAkRoom_PriorityList_CompareByPriorityMethods : IAkRoom_PriorityList_CompareByPriority { # [doc = "`Compare(crate::root::akroom::AkRoom, crate::root::akroom::AkRoom)` overload"] fn compare (self , a : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom > , b : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> i32 { unsafe { let __receiver = < AkRoom_PriorityList_CompareByPriority as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList_CompareByPriority , crate :: root :: akroom :: AkRoom , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b317c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRoom_PriorityList_CompareByPriority as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom_PriorityList_CompareByPriority , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b31870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akroom")]
-impl < __T : IAkRoom_PriorityList_CompareByPriority > IAkRoom_PriorityList_CompareByPriorityMethods for __T { }
-
-#[cfg(feature = "root-akroom")]
-impl AkRoom_PriorityList_CompareByPriority { pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList_CompareByPriority as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom_PriorityList_CompareByPriority as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "root-akroom")]
-impl AkRoom_PriorityList_CompareByPriority {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoom_PriorityList_CompareByPriority) , :: core :: stringify ! (new) ,)) ; < Self as IAkRoom_PriorityList_CompareByPriorityMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akroom")]pub trait IAkRoomMethods:IAkRoom{#[doc="`TryEnter(crate::root::akroomawareobject::AkRoomAwareObject)` overload"]fn try_enter(self,room_aware_object:impl::core::convert::Into<crate::root::akroomawareobject::AkRoomAwareObject>)->bool{unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32230usize)as*mut u8,bool;
+(AkRoom)__receiver,(crate::root::akroomawareobject::AkRoomAwareObject)::core::convert::Into::into(room_aware_object))}
+}
+#[doc="`Exit(crate::root::akroomawareobject::AkRoomAwareObject)` overload"]fn exit(self,room_aware_object:impl::core::convert::Into<crate::root::akroomawareobject::AkRoomAwareObject>)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32370usize)as*mut u8,();
+(AkRoom)__receiver,(crate::root::akroomawareobject::AkRoomAwareObject)::core::convert::Into::into(room_aware_object))}
+}
+#[doc="`GetID()` overload"]fn get_id(self,)->u64{unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f320d0usize)as*mut u8,u64;
+(AkRoom)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32440usize)as*mut u8,();
+(AkRoom)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f33310usize)as*mut u8,();
+(AkRoom)__receiver)}
+}
+#[doc="`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_enter(self,in_other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f33720usize)as*mut u8,();
+(AkRoom)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(in_other))}
+}
+#[doc="`OnTriggerExit(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_exit(self,in_other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f33910usize)as*mut u8,();
+(AkRoom)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(in_other))}
+}
+#[doc="`PostRoomTone()` overload"]fn post_room_tone(self,)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f33b00usize)as*mut u8,();
+(AkRoom)__receiver)}
+}
+#[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f33c00usize)as*mut u8,();
+(AkRoom)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f33c10usize)as*mut u8,();
+(AkRoom)__receiver)}
+}
 }
 
-#[cfg(feature = "root-akroom")]
-impl AkRoom { # [doc = "`GetAkRoomID(crate::root::akroom::AkRoom)` overload"] pub fn get_ak_room_id (room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> u64 { unsafe { { let __inner : extern "C" fn (crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31fb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`get_RoomCount()` overload"] pub fn get_room_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32150usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_RoomCount(i32)` overload"] pub fn set_room_count (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f321c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f33d80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akroom")]impl<__T:IAkRoom>IAkRoomMethods for __T{}
 
-#[cfg(feature = "root-akroom")]
-pub trait IAkRoomMethods : IAkRoom { # [doc = "`TryEnter(crate::root::akroomawareobject::AkRoomAwareObject)` overload"] fn try_enter (self , room_aware_object : impl :: core :: convert :: Into < crate :: root :: akroomawareobject :: AkRoomAwareObject >) -> bool { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , crate :: root :: akroomawareobject :: AkRoomAwareObject , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room_aware_object) , :: core :: option :: Option :: None) } } } # [doc = "`Exit(crate::root::akroomawareobject::AkRoomAwareObject)` overload"] fn exit (self , room_aware_object : impl :: core :: convert :: Into < crate :: root :: akroomawareobject :: AkRoomAwareObject >) -> () { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , crate :: root :: akroomawareobject :: AkRoomAwareObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room_aware_object) , :: core :: option :: Option :: None) } } } # [doc = "`GetID()` overload"] fn get_id (self ,) -> u64 { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f320d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f32440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f33310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_enter (self , in_other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f33720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_other) , :: core :: option :: Option :: None) } } } # [doc = "`OnTriggerExit(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_exit (self , in_other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f33910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_other) , :: core :: option :: Option :: None) } } } # [doc = "`PostRoomTone()` overload"] fn post_room_tone (self ,) -> () { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f33b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f33c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f33c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akroom")]impl AkRoom{pub fn get_ak_room_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_room_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_room_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_trigger_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_trigger_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn post_room_tone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn handle_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "root-akroom")]
-impl < __T : IAkRoom > IAkRoomMethods for __T { }
+#[cfg(feature="root-akroom")]impl AkRoom{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRoom), ::core::stringify!(new),));
+ <Self as IAkRoomMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "root-akroom")]
-impl AkRoom { pub fn get_ak_room_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_room_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_room_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_trigger_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_trigger_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn post_room_tone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="root-akroom")]impl AkRoom_PriorityList{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba17d0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-akroom")]
-impl AkRoom {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoom) , :: core :: stringify ! (new) ,)) ; < Self as IAkRoomMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akroom")]pub trait IAkRoom_PriorityListMethods:IAkRoom_PriorityList{#[doc="`GetHighestPriorityActiveAndEnabledRoomID()` overload"]fn get_highest_priority_active_and_enabled_room_id(self,)->u64{unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba11b0usize)as*mut u8,u64;
+(AkRoom_PriorityList)__receiver)}
+}
+#[doc="`GetHighestPriorityActiveAndEnabledRoom()` overload"]fn get_highest_priority_active_and_enabled_room(self,)->crate::root::akroom::AkRoom{unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1290usize)as*mut u8,crate::root::akroom::AkRoom;
+(AkRoom_PriorityList)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1370usize)as*mut u8,i32;
+(AkRoom_PriorityList)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba13c0usize)as*mut u8,();
+(AkRoom_PriorityList)__receiver)}
+}
+#[doc="`Add(crate::root::akroom::AkRoom)` overload"]fn add(self,room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->(){unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1420usize)as*mut u8,();
+(AkRoom_PriorityList)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`Remove(crate::root::akroom::AkRoom)` overload"]fn remove(self,room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->(){unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba15b0usize)as*mut u8,();
+(AkRoom_PriorityList)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`Contains(crate::root::akroom::AkRoom)` overload"]fn contains(self,room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->bool{unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1610usize)as*mut u8,bool;
+(AkRoom_PriorityList)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`BinarySearch(crate::root::akroom::AkRoom)` overload"]fn binary_search(self,room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->i32{unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba14b0usize)as*mut u8,i32;
+(AkRoom_PriorityList)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::root::akroom::AkRoom{unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba16d0usize)as*mut u8,crate::root::akroom::AkRoom;
+(AkRoom_PriorityList)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRoom_PriorityList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1740usize)as*mut u8,();
+(AkRoom_PriorityList)__receiver)}
+}
+}
+
+#[cfg(feature="root-akroom")]impl<__T:IAkRoom_PriorityList>IAkRoom_PriorityListMethods for __T{}
+
+#[cfg(feature="root-akroom")]impl AkRoom_PriorityList{pub fn get_highest_priority_active_and_enabled_room_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_highest_priority_active_and_enabled_room_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn binary_search_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="root-akroom")]impl AkRoom_PriorityList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRoom_PriorityList), ::core::stringify!(new),));
+ <Self as IAkRoom_PriorityListMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-akroom")]pub trait IAkRoom_PriorityList_CompareByPriorityMethods:IAkRoom_PriorityList_CompareByPriority{#[doc="`Compare(crate::root::akroom::AkRoom, crate::root::akroom::AkRoom)` overload"]fn compare(self,a:impl::core::convert::Into<crate::root::akroom::AkRoom> ,b:impl::core::convert::Into<crate::root::akroom::AkRoom>)->i32{unsafe{let __receiver= <AkRoom_PriorityList_CompareByPriority as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b317c0usize)as*mut u8,i32;
+(AkRoom_PriorityList_CompareByPriority)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(a),(crate::root::akroom::AkRoom)::core::convert::Into::into(b))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRoom_PriorityList_CompareByPriority as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31870usize)as*mut u8,();
+(AkRoom_PriorityList_CompareByPriority)__receiver)}
+}
+}
+
+#[cfg(feature="root-akroom")]impl<__T:IAkRoom_PriorityList_CompareByPriority>IAkRoom_PriorityList_CompareByPriorityMethods for __T{}
+
+#[cfg(feature="root-akroom")]impl AkRoom_PriorityList_CompareByPriority{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-akroom")]impl AkRoom_PriorityList_CompareByPriority{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRoom_PriorityList_CompareByPriority), ::core::stringify!(new),));
+ <Self as IAkRoom_PriorityList_CompareByPriorityMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akroom")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkRoom;
+    pub use super::IAkRoom;
+    pub use super::IAkRoomMethods;
     pub use super::AkRoom_PriorityList;
     pub use super::IAkRoom_PriorityList;
     pub use super::IAkRoom_PriorityListMethods;
     pub use super::AkRoom_PriorityList_CompareByPriority;
     pub use super::IAkRoom_PriorityList_CompareByPriority;
     pub use super::IAkRoom_PriorityList_CompareByPriorityMethods;
-    pub use super::AkRoom;
-    pub use super::IAkRoom;
-    pub use super::IAkRoomMethods;
     pub use crate::root::aktriggerhandler::IAkTriggerHandler;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

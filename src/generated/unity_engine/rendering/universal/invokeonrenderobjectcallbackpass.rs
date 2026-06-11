@@ -4,32 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/invokeonrenderobjectcallbackpass/InvokeOnRenderObjectCallbackPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "InvokeOnRenderObjectCallbackPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct InvokeOnRenderObjectCallbackPass {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/invokeonrenderobjectcallbackpass/InvokeOnRenderObjectCallbackPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="InvokeOnRenderObjectCallbackPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct InvokeOnRenderObjectCallbackPass{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-invokeonrenderobjectcallbackpass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]
-pub trait IInvokeOnRenderObjectCallbackPassMethods : IInvokeOnRenderObjectCallbackPass { # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent >) -> () { unsafe { let __receiver = < InvokeOnRenderObjectCallbackPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvokeOnRenderObjectCallbackPass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2eedb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < InvokeOnRenderObjectCallbackPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (InvokeOnRenderObjectCallbackPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef1770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]pub trait IInvokeOnRenderObjectCallbackPassMethods:IInvokeOnRenderObjectCallbackPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>)->(){unsafe{let __receiver= <InvokeOnRenderObjectCallbackPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2eedb60usize)as*mut u8,();
+(InvokeOnRenderObjectCallbackPass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt))}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <InvokeOnRenderObjectCallbackPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef1770usize)as*mut u8,();
+(InvokeOnRenderObjectCallbackPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]
-impl < __T : IInvokeOnRenderObjectCallbackPass > IInvokeOnRenderObjectCallbackPassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]impl<__T:IInvokeOnRenderObjectCallbackPass>IInvokeOnRenderObjectCallbackPassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]
-impl InvokeOnRenderObjectCallbackPass { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvokeOnRenderObjectCallbackPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvokeOnRenderObjectCallbackPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]impl InvokeOnRenderObjectCallbackPass{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]
-impl InvokeOnRenderObjectCallbackPass {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvokeOnRenderObjectCallbackPass) , :: core :: stringify ! (new) ,)) ; < Self as IInvokeOnRenderObjectCallbackPassMethods > :: ctor (this , evt) ; this }
+#[cfg(feature="unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]impl InvokeOnRenderObjectCallbackPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` — overload selector"]pub fn new(evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvokeOnRenderObjectCallbackPass), ::core::stringify!(new),));
+ <Self as IInvokeOnRenderObjectCallbackPassMethods> ::ctor(this,evt);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-invokeonrenderobjectcallbackpass")]

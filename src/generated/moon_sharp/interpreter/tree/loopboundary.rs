@@ -4,33 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/loopboundary/LoopBoundary.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Tree" , name = "LoopBoundary")] # [parent (crate :: system :: object :: Object)] pub struct LoopBoundary {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/loopboundary/LoopBoundary.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Tree",name="LoopBoundary")]#[parent(crate::system::object::Object)]pub struct LoopBoundary{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-loopboundary-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-tree-loopboundary")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LoopBoundary_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compile_break { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoopBoundary as :: unity2 :: ClassIdentity > :: class () , "CompileBreak" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoopBoundary as :: unity2 :: ClassIdentity > :: NAME , "CompileBreak" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_boundary { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoopBoundary as :: unity2 :: ClassIdentity > :: class () , "IsBoundary" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoopBoundary as :: unity2 :: ClassIdentity > :: NAME , "IsBoundary" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LoopBoundary as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LoopBoundary as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-tree-loopboundary")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LoopBoundary_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile_break{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LoopBoundary as::unity2::ClassIdentity> ::class(),"CompileBreak",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LoopBoundary as::unity2::ClassIdentity> ::NAME,"CompileBreak",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_boundary{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LoopBoundary as::unity2::ClassIdentity> ::class(),"IsBoundary",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LoopBoundary as::unity2::ClassIdentity> ::NAME,"IsBoundary",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LoopBoundary as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LoopBoundary as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-loopboundary")]
-pub trait ILoopBoundaryMethods : ILoopBoundary { # [doc = "`CompileBreak(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"] fn compile_break (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode >) -> () { unsafe { let __receiver = < LoopBoundary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LoopBoundary , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LoopBoundary_unity2_raw :: __lookup_compile_break :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: option :: Option :: None) } } } # [doc = "`IsBoundary()` overload"] fn is_boundary (self ,) -> bool { unsafe { let __receiver = < LoopBoundary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LoopBoundary , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__LoopBoundary_unity2_raw :: __lookup_is_boundary :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LoopBoundary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LoopBoundary , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LoopBoundary_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-tree-loopboundary")]pub trait ILoopBoundaryMethods:ILoopBoundary{#[doc="`CompileBreak(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile_break(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <LoopBoundary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LoopBoundary_unity2_raw::__lookup_compile_break::get_method_info().method_ptr,();
+(LoopBoundary)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc))}
+}
+#[doc="`IsBoundary()` overload"]fn is_boundary(self,)->bool{unsafe{let __receiver= <LoopBoundary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LoopBoundary_unity2_raw::__lookup_is_boundary::get_method_info().method_ptr,bool;
+(LoopBoundary)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LoopBoundary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LoopBoundary_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(LoopBoundary)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-loopboundary")]
-impl < __T : ILoopBoundary > ILoopBoundaryMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-tree-loopboundary")]impl<__T:ILoopBoundary>ILoopBoundaryMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-loopboundary")]
-impl LoopBoundary { pub fn compile_break_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoopBoundary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_boundary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoopBoundary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoopBoundary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="moon_sharp-interpreter-tree-loopboundary")]impl LoopBoundary{pub fn compile_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_boundary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-loopboundary")]
-impl LoopBoundary {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LoopBoundary) , :: core :: stringify ! (new) ,)) ; < Self as ILoopBoundaryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-tree-loopboundary")]impl LoopBoundary{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LoopBoundary), ::core::stringify!(new),));
+ <Self as ILoopBoundaryMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-loopboundary")]

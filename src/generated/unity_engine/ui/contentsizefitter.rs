@@ -4,104 +4,126 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter_FitMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ContentSizeFitter_FitMode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/contentsizefitter/ContentSizeFitter_FitMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ContentSizeFitter_FitMode{pub value:i32,}
+impl::unity2::ClassIdentity for ContentSizeFitter_FitMode{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="ContentSizeFitter.FitMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ContentSizeFitter_FitMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ContentSizeFitter_FitMode{pub fn unconstrained()->Self{Self{value:0}
+}
+pub fn min_size()->Self{Self{value:1}
+}
+pub fn preferred_size()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for ContentSizeFitter_FitMode  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "ContentSizeFitter.FitMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ContentSizeFitter_FitMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ContentSizeFitter_FitMode  {
-    pub fn unconstrained() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn min_size() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn preferred_size() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ContentSizeFitter")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct ContentSizeFitter {
-# [offset (24)] # [rename (name = "m_HorizontalFit")] pub m_horizontal_fit : crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode ,
-# [offset (28)] # [rename (name = "m_VerticalFit")] pub m_vertical_fit : crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode ,
-# [offset (32)] # [rename (name = "m_Rect")] pub m_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (40)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ContentSizeFitter")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct ContentSizeFitter{#[offset(24)]#[rename(name="m_HorizontalFit")]pub m_horizontal_fit:crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode, #[offset(28)]#[rename(name="m_VerticalFit")]pub m_vertical_fit:crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode, #[offset(32)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-contentsizefitter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-contentsizefitter")]
-pub trait IContentSizeFitterMethods : IContentSizeFitter { # [doc = "`get_horizontalFit()` overload"] fn get_horizontal_fit (self ,) -> crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_horizontalFit(crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode)` overload"] fn set_horizontal_fit (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode >) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_verticalFit()` overload"] fn get_vertical_fit (self ,) -> crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fc50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_verticalFit(crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode)` overload"] fn set_vertical_fit (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode >) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , crate :: unity_engine :: ui :: contentsizefitter :: ContentSizeFitter_FitMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fc60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fe00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fe10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317feb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRectTransformDimensionsChange()` overload"] fn on_rect_transform_dimensions_change (self ,) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317ff40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HandleSelfFittingAlongAxis(i32)` overload"] fn handle_self_fitting_along_axis (self , axis : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317ffd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (axis) , :: core :: option :: Option :: None) } } } # [doc = "`SetLayoutHorizontal()` overload"] fn set_layout_horizontal (self ,) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31800a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLayoutVertical()` overload"] fn set_layout_vertical (self ,) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31800d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDirty()` overload"] fn set_dirty (self ,) -> () { unsafe { let __receiver = < ContentSizeFitter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContentSizeFitter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fbc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-contentsizefitter")]pub trait IContentSizeFitterMethods:IContentSizeFitter{#[doc="`get_horizontalFit()` overload"]fn get_horizontal_fit(self,)->crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode{unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317fad0usize)as*mut u8,crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode;
+(ContentSizeFitter)__receiver)}
+}
+#[doc="`set_horizontalFit(crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode)` overload"]fn set_horizontal_fit(self,value:impl::core::convert::Into<crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode>)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317fae0usize)as*mut u8,();
+(ContentSizeFitter)__receiver,(crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_verticalFit()` overload"]fn get_vertical_fit(self,)->crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode{unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317fc50usize)as*mut u8,crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode;
+(ContentSizeFitter)__receiver)}
+}
+#[doc="`set_verticalFit(crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode)` overload"]fn set_vertical_fit(self,value:impl::core::convert::Into<crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode>)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317fc60usize)as*mut u8,();
+(ContentSizeFitter)__receiver,(crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317fd40usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(ContentSizeFitter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317fe00usize)as*mut u8,();
+(ContentSizeFitter)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317fe10usize)as*mut u8,();
+(ContentSizeFitter)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317feb0usize)as*mut u8,();
+(ContentSizeFitter)__receiver)}
+}
+#[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317ff40usize)as*mut u8,();
+(ContentSizeFitter)__receiver)}
+}
+#[doc="`HandleSelfFittingAlongAxis(i32)` overload"]fn handle_self_fitting_along_axis(self,axis:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317ffd0usize)as*mut u8,();
+(ContentSizeFitter)__receiver,(i32)::core::convert::Into::into(axis))}
+}
+#[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31800a0usize)as*mut u8,();
+(ContentSizeFitter)__receiver)}
+}
+#[doc="`SetLayoutVertical()` overload"]fn set_layout_vertical(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31800d0usize)as*mut u8,();
+(ContentSizeFitter)__receiver)}
+}
+#[doc="`SetDirty()` overload"]fn set_dirty(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317fbc0usize)as*mut u8,();
+(ContentSizeFitter)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-contentsizefitter")]
-impl < __T : IContentSizeFitter > IContentSizeFitterMethods for __T { }
+#[cfg(feature="unity_engine-ui-contentsizefitter")]impl<__T:IContentSizeFitter>IContentSizeFitterMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-contentsizefitter")]
-impl ContentSizeFitter { pub fn get_horizontal_fit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_horizontal_fit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_vertical_fit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_vertical_fit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_rect_transform_dimensions_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn handle_self_fitting_along_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_layout_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_layout_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContentSizeFitter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="unity_engine-ui-contentsizefitter")]impl ContentSizeFitter{pub fn get_horizontal_fit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_horizontal_fit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_vertical_fit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_vertical_fit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_rect_transform_dimensions_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn handle_self_fitting_along_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_layout_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_layout_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "unity_engine-ui-contentsizefitter")]
-impl ContentSizeFitter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ContentSizeFitter) , :: core :: stringify ! (new) ,)) ; < Self as IContentSizeFitterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-contentsizefitter")]impl ContentSizeFitter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContentSizeFitter), ::core::stringify!(new),));
+ <Self as IContentSizeFitterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-contentsizefitter")]

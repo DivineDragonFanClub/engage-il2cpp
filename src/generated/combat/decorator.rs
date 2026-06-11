@@ -4,35 +4,158 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/decorator/Decorator.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Decorator")] # [parent (crate :: system :: object :: Object)] pub struct Decorator {
-# [offset (16)] # [rename (name = "m_Side")] pub m_side : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/decorator/Decorator.md"))]#[::unity2::class(namespace="Combat",name="Decorator")]#[parent(crate::system::object::Object)]pub struct Decorator{#[offset(16)]#[rename(name="m_Side")]pub m_side:i32,}
 
 }
 
 #[cfg(feature = "combat-decorator-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-decorator")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Decorator_unity2_raw { use super :: * ; pub unsafe fn get_name (this : Decorator , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Name") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Name" , < Decorator as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="combat-decorator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Decorator_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:Decorator,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Name").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Name", <Decorator as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(Decorator, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "combat-decorator")]
-pub trait IDecoratorMethods : IDecorator { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __Decorator_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_m_Phase()` overload"] fn get_m_phase (self ,) -> crate :: combat :: phase :: Phase { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> crate :: combat :: phase :: Phase = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Phase(crate::combat::phase::Phase)` overload"] fn set_m_phase (self , value : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_Chrs()` overload"] fn get_m_chrs (self ,) -> :: unity2 :: Array < crate :: combat :: character :: Character > { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: combat :: character :: Character > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce9810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_m_Master()` overload"] fn get_m_master (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_m_Enemy()` overload"] fn get_m_enemy (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce8450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_m_Grandew()` overload"] fn get_m_grandew (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_m_EnemyGrandew()` overload"] fn get_m_enemy_grandew (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UseOnArrivalTimePredicted()` overload"] fn use_on_arrival_time_predicted (self ,) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce9360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UseOnHitTimePredicted()` overload"] fn use_on_hit_time_predicted (self ,) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea0a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UseOnEnemyDamage()` overload"] fn use_on_enemy_damage (self ,) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UseOnBackwardCancel(crate::combat::character::Character)` overload"] fn use_on_backward_cancel (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnterAttack()` overload"] fn on_enter_attack (self ,) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnArrivalTimePredicted_(f32)` overload"] fn on_arrival_time_predicted (self , world_arrival_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea3b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (world_arrival_time) , :: core :: option :: Option :: None) } } } # [doc = "`OnHitTimePredicted_(f32, crate::combat::weaponstyle::WeaponStyle)` overload"] fn on_hit_time_predicted (self , world_hit_time : impl :: core :: convert :: Into < f32 > , weapon_style : impl :: core :: convert :: Into < crate :: combat :: weaponstyle :: WeaponStyle >) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , f32 , crate :: combat :: weaponstyle :: WeaponStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (world_hit_time) , :: core :: convert :: Into :: into (weapon_style) , :: core :: option :: Option :: None) } } } # [doc = "`OnShoot(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn on_shoot (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea3d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`OnMissPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn on_miss_passed (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea3e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`OnHitPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn on_hit_passed (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea3f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn on_enemy_damage (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`OnBackwardCancel_()` overload"] fn on_backward_cancel (self ,) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Decorator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce7d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-decorator")]pub trait IDecoratorMethods:IDecorator{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__Decorator_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_m_Phase()` overload"]fn get_m_phase(self,)->crate::combat::phase::Phase{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea020usize)as*mut u8,crate::combat::phase::Phase;
+(Decorator)__receiver)}
+}
+#[doc="`set_m_Phase(crate::combat::phase::Phase)` overload"]fn set_m_phase(self,value:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea030usize)as*mut u8,();
+(Decorator)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_Chrs()` overload"]fn get_m_chrs(self,)-> ::unity2::Array<crate::combat::character::Character>{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce9810usize)as*mut u8, ::unity2::Array<crate::combat::character::Character> ;
+(Decorator)__receiver)}
+}
+#[doc="`get_m_Master()` overload"]fn get_m_master(self,)->crate::combat::character::Character{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7e20usize)as*mut u8,crate::combat::character::Character;
+(Decorator)__receiver)}
+}
+#[doc="`get_m_Enemy()` overload"]fn get_m_enemy(self,)->crate::combat::character::Character{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8450usize)as*mut u8,crate::combat::character::Character;
+(Decorator)__receiver)}
+}
+#[doc="`get_m_Grandew()` overload"]fn get_m_grandew(self,)->crate::combat::character::Character{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea040usize)as*mut u8,crate::combat::character::Character;
+(Decorator)__receiver)}
+}
+#[doc="`get_m_EnemyGrandew()` overload"]fn get_m_enemy_grandew(self,)->crate::combat::character::Character{unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea050usize)as*mut u8,crate::combat::character::Character;
+(Decorator)__receiver)}
+}
+#[doc="`UseOnArrivalTimePredicted()` overload"]fn use_on_arrival_time_predicted(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce9360usize)as*mut u8,();
+(Decorator)__receiver)}
+}
+#[doc="`UseOnHitTimePredicted()` overload"]fn use_on_hit_time_predicted(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea0a0usize)as*mut u8,();
+(Decorator)__receiver)}
+}
+#[doc="`UseOnEnemyDamage()` overload"]fn use_on_enemy_damage(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7bd0usize)as*mut u8,();
+(Decorator)__receiver)}
+}
+#[doc="`UseOnBackwardCancel(crate::combat::character::Character)` overload"]fn use_on_backward_cancel(self,chr:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea220usize)as*mut u8,();
+(Decorator)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea370usize)as*mut u8,();
+(Decorator)__receiver)}
+}
+#[doc="`OnEnterAttack()` overload"]fn on_enter_attack(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea380usize)as*mut u8,();
+(Decorator)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea390usize)as*mut u8,();
+(Decorator)__receiver)}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea3a0usize)as*mut u8,();
+(Decorator)__receiver)}
+}
+#[doc="`OnArrivalTimePredicted_(f32)` overload"]fn on_arrival_time_predicted(self,world_arrival_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea3b0usize)as*mut u8,();
+(Decorator)__receiver,(f32)::core::convert::Into::into(world_arrival_time))}
+}
+#[doc="`OnHitTimePredicted_(f32, crate::combat::weaponstyle::WeaponStyle)` overload"]fn on_hit_time_predicted(self,world_hit_time:impl::core::convert::Into<f32> ,weapon_style:impl::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea3c0usize)as*mut u8,();
+(Decorator)__receiver,(f32)::core::convert::Into::into(world_hit_time),(crate::combat::weaponstyle::WeaponStyle)::core::convert::Into::into(weapon_style))}
+}
+#[doc="`OnShoot(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_shoot(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea3d0usize)as*mut u8,();
+(Decorator)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`OnMissPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_miss_passed(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea3e0usize)as*mut u8,();
+(Decorator)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`OnHitPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_hit_passed(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea3f0usize)as*mut u8,();
+(Decorator)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_enemy_damage(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea400usize)as*mut u8,();
+(Decorator)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`OnBackwardCancel_()` overload"]fn on_backward_cancel(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea410usize)as*mut u8,();
+(Decorator)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Decorator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce7d50usize)as*mut u8,();
+(Decorator)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-decorator")]
-impl < __T : IDecorator > IDecoratorMethods for __T { }
+#[cfg(feature="combat-decorator")]impl<__T:IDecorator>IDecoratorMethods for __T{}
 
-#[cfg(feature = "combat-decorator")]
-impl Decorator { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_m_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_m_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_m_chrs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_m_master_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_m_enemy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_m_grandew_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_m_enemy_grandew_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn use_on_arrival_time_predicted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn use_on_hit_time_predicted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn use_on_enemy_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn use_on_backward_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_enter_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn on_arrival_time_predicted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn on_hit_time_predicted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn on_shoot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn on_miss_passed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn on_hit_passed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn on_enemy_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn on_backward_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } }
+#[cfg(feature="combat-decorator")]impl Decorator{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_m_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_m_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_m_chrs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_m_master_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_m_enemy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_m_grandew_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_m_enemy_grandew_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn use_on_arrival_time_predicted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn use_on_hit_time_predicted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn use_on_enemy_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn use_on_backward_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_enter_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_arrival_time_predicted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_hit_time_predicted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_shoot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn on_miss_passed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn on_hit_passed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn on_enemy_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn on_backward_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
 
-#[cfg(feature = "combat-decorator")]
-impl Decorator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Decorator) , :: core :: stringify ! (new) ,)) ; < Self as IDecoratorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-decorator")]impl Decorator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Decorator), ::core::stringify!(new),));
+ <Self as IDecoratorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-decorator")]

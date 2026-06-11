@@ -4,67 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/playableoutput/PlayableOutput.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PlayableOutput {
-    pub m_handle: crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/playableoutput/PlayableOutput.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct PlayableOutput{pub m_handle:crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,}
+impl::unity2::ClassIdentity for PlayableOutput{const NAMESPACE: &'static str="UnityEngine.Playables";
+const NAME: &'static str="PlayableOutput";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for PlayableOutput {
-    const NAMESPACE: &'static str = "UnityEngine.Playables";
-
-    const NAME: &'static str = "PlayableOutput";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for PlayableOutput{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for PlayableOutput {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl PlayableOutput{#[inline]pub fn m_null_playable_output()->crate::unity_engine::playables::playableoutput::PlayableOutput{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayableOutput");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_m_null_playable_output(value:crate::unity_engine::playables::playableoutput::PlayableOutput){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayableOutput");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl PlayableOutput {
-    #[inline]
-    pub fn m_null_playable_output() -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayableOutput");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_m_null_playable_output(value: crate :: unity_engine :: playables :: playableoutput :: PlayableOutput) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayableOutput");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -72,14 +34,51 @@ impl PlayableOutput {
 #[cfg(feature = "unity_engine-playables-playableoutput-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-playables-playableoutput")]
-impl PlayableOutput { # [doc = "`get_Null()` overload"] pub fn get_null () -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutput :: PlayableOutput = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1f40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f4e40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-playableoutput")]impl PlayableOutput{#[doc="`get_Null()` overload"]pub fn get_null()->crate::unity_engine::playables::playableoutput::PlayableOutput{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1f40usize)as*mut u8,crate::unity_engine::playables::playableoutput::PlayableOutput;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f4e40usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-playableoutput")]
-impl PlayableOutput { # [doc = "`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle >) -> () { unsafe { { let __inner : extern "C" fn (* mut PlayableOutput , crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f4ca0usize) as * mut u8) ; __inner (self as * mut PlayableOutput , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle { unsafe { { let __inner : extern "C" fn (* mut PlayableOutput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playableoutputhandle :: PlayableOutputHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f4cb0usize) as * mut u8) ; __inner (self as * mut PlayableOutput , :: core :: option :: Option :: None) } } } pub fn is_playable_output_of_type < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (& mut self ,) -> bool { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< PlayableOutput as :: unity2 :: ClassIdentity > :: class () , "IsPlayableOutputOfType" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayableOutput as :: unity2 :: ClassIdentity > :: NAME , "IsPlayableOutputOfType" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (* mut PlayableOutput , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (self as * mut PlayableOutput , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`Equals(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableoutput :: PlayableOutput >) -> bool { unsafe { { let __inner : extern "C" fn (* mut PlayableOutput , crate :: unity_engine :: playables :: playableoutput :: PlayableOutput , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f4cc0usize) as * mut u8) ; __inner (self as * mut PlayableOutput , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-playableoutput")]impl PlayableOutput{#[doc="`.ctor(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f4ca0usize)as*mut u8,();
+(*mut PlayableOutput)self as*mut PlayableOutput,(crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f4cb0usize)as*mut u8,crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle;
+(*mut PlayableOutput)self as*mut PlayableOutput)}
+}
+pub fn is_playable_output_of_type<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(&mut self,)->bool{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<PlayableOutput as::unity2::ClassIdentity> ::class(),"IsPlayableOutputOfType",0,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <PlayableOutput as::unity2::ClassIdentity> ::NAME,"IsPlayableOutputOfType",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(*mut PlayableOutput, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(self as*mut PlayableOutput, ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`Equals(crate::unity_engine::playables::playableoutput::PlayableOutput)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::playables::playableoutput::PlayableOutput>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f4cc0usize)as*mut u8,bool;
+(*mut PlayableOutput)self as*mut PlayableOutput,(crate::unity_engine::playables::playableoutput::PlayableOutput)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-playableoutput")]
-impl PlayableOutput { pub fn get_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableOutput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-playables-playableoutput")]impl PlayableOutput{pub fn get_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-playables-playableoutput")]
 #[doc(hidden)]

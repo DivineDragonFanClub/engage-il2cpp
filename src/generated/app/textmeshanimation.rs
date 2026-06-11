@@ -4,215 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation.md"))] # [:: unity2 :: class (namespace = "App" , name = "TextMeshAnimation")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TextMeshAnimation {
-# [offset (24)] # [rename (name = "Params")] pub params : :: unity2 :: Array < crate :: app :: textmeshanimation :: TextMeshAnimation_AnimationParams > ,
-# [offset (32)] # [rename (name = "m_TextComponent")] pub m_text_component : crate :: tm_pro :: tmp_text :: TMP_Text ,
-# [offset (40)] # [rename (name = "m_IsAnimation")] pub m_is_animation : bool ,
-# [offset (41)] # [rename (name = "m_IsFirstFrame")] pub m_is_first_frame : bool ,
-# [offset (44)] # [rename (name = "m_NowAnimationIndex")] pub m_now_animation_index : i32 ,
-# [offset (48)] # [rename (name = "m_NowTime")] pub m_now_time : f32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))]#[::unity2::class(namespace="App",name="TextMeshAnimation.AnimationParams")]#[parent(crate::system::object::Object)]pub struct TextMeshAnimation_AnimationParams{#[offset(16)]#[rename(name="OffsetCurveX")]pub offset_curve_x:crate::unity_engine::animationcurve::AnimationCurve, #[offset(24)]#[rename(name="OffsetCurveY")]pub offset_curve_y:crate::unity_engine::animationcurve::AnimationCurve, #[offset(32)]#[rename(name="RotationCurve")]pub rotation_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(40)]#[rename(name="ScaleCurveX")]pub scale_curve_x:crate::unity_engine::animationcurve::AnimationCurve, #[offset(48)]#[rename(name="ScaleCurveY")]pub scale_curve_y:crate::unity_engine::animationcurve::AnimationCurve, #[offset(56)]#[rename(name="RedCurve")]pub red_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(64)]#[rename(name="GreenCurve")]pub green_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(72)]#[rename(name="BlueCurve")]pub blue_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(80)]#[rename(name="AlphaCurve")]pub alpha_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(88)]#[rename(name="m_PivotType")]pub m_pivot_type:crate::app::textmeshanimation::TextMeshAnimation_PivotType, #[offset(92)]#[rename(name="m_DelayTime")]pub m_delay_time:f32, #[offset(96)]#[rename(name="m_DelayTimeType")]pub m_delay_time_type:crate::app::textmeshanimation::TextMeshAnimation_DelayTimeType, #[offset(100)]#[rename(name="m_EndType")]pub m_end_type:crate::app::textmeshanimation::TextMeshAnimation_EndType, #[offset(104)]#[rename(name="m_StartFromRight")]pub m_start_from_right:bool, #[offset(108)]#[rename(name="m_MaxIntervalTime")]pub m_max_interval_time:f32, #[offset(112)]#[rename(name="m_EndTime")]pub m_end_time:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TextMeshAnimation_PivotType{pub value:i32,}
+impl::unity2::ClassIdentity for TextMeshAnimation_PivotType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TextMeshAnimation.PivotType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TextMeshAnimation_PivotType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TextMeshAnimation_PivotType{pub fn center()->Self{Self{value:0}
+}
+pub fn base_line()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_EndType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TextMeshAnimation_EndType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/textmeshanimation/TextMeshAnimation.md"))]#[::unity2::class(namespace="App",name="TextMeshAnimation")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TextMeshAnimation{#[offset(24)]#[rename(name="Params")]pub params: ::unity2::Array<crate::app::textmeshanimation::TextMeshAnimation_AnimationParams> , #[offset(32)]#[rename(name="m_TextComponent")]pub m_text_component:crate::tm_pro::tmp_text::TMP_Text, #[offset(40)]#[rename(name="m_IsAnimation")]pub m_is_animation:bool, #[offset(41)]#[rename(name="m_IsFirstFrame")]pub m_is_first_frame:bool, #[offset(44)]#[rename(name="m_NowAnimationIndex")]pub m_now_animation_index:i32, #[offset(48)]#[rename(name="m_NowTime")]pub m_now_time:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TextMeshAnimation_DelayTimeType{pub value:i32,}
+impl::unity2::ClassIdentity for TextMeshAnimation_DelayTimeType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TextMeshAnimation.DelayTimeType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TextMeshAnimation_DelayTimeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TextMeshAnimation_DelayTimeType{pub fn interval()->Self{Self{value:0}
+}
+pub fn total()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for TextMeshAnimation_EndType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TextMeshAnimation.EndType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/textmeshanimation/TextMeshAnimation_EndType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TextMeshAnimation_EndType{pub value:i32,}
+impl::unity2::ClassIdentity for TextMeshAnimation_EndType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TextMeshAnimation.EndType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for TextMeshAnimation_EndType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TextMeshAnimation_EndType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  TextMeshAnimation_EndType  {
-    pub fn r#loop() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn to_next() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn wait() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn hide() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn delete() -> Self {
-        Self { value: 4 }
-
-    }
-
+impl TextMeshAnimation_EndType{pub fn r#loop()->Self{Self{value:0}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_DelayTimeType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TextMeshAnimation_DelayTimeType  {
-    pub value: i32,
+pub fn to_next()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::ClassIdentity for TextMeshAnimation_DelayTimeType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TextMeshAnimation.DelayTimeType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn wait()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::IlType for TextMeshAnimation_DelayTimeType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn hide()->Self{Self{value:3}
 }
-
-
-impl  TextMeshAnimation_DelayTimeType  {
-    pub fn interval() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn total() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn delete()->Self{Self{value:4}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textmeshanimation/TextMeshAnimation_PivotType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TextMeshAnimation_PivotType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TextMeshAnimation_PivotType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TextMeshAnimation.PivotType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TextMeshAnimation_PivotType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TextMeshAnimation_PivotType  {
-    pub fn center() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn base_line() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))] # [:: unity2 :: class (namespace = "App" , name = "TextMeshAnimation.AnimationParams")] # [parent (crate :: system :: object :: Object)] pub struct TextMeshAnimation_AnimationParams {
-# [offset (16)] # [rename (name = "OffsetCurveX")] pub offset_curve_x : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (24)] # [rename (name = "OffsetCurveY")] pub offset_curve_y : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (32)] # [rename (name = "RotationCurve")] pub rotation_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (40)] # [rename (name = "ScaleCurveX")] pub scale_curve_x : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (48)] # [rename (name = "ScaleCurveY")] pub scale_curve_y : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (56)] # [rename (name = "RedCurve")] pub red_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (64)] # [rename (name = "GreenCurve")] pub green_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (72)] # [rename (name = "BlueCurve")] pub blue_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (80)] # [rename (name = "AlphaCurve")] pub alpha_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (88)] # [rename (name = "m_PivotType")] pub m_pivot_type : crate :: app :: textmeshanimation :: TextMeshAnimation_PivotType ,
-# [offset (92)] # [rename (name = "m_DelayTime")] pub m_delay_time : f32 ,
-# [offset (96)] # [rename (name = "m_DelayTimeType")] pub m_delay_time_type : crate :: app :: textmeshanimation :: TextMeshAnimation_DelayTimeType ,
-# [offset (100)] # [rename (name = "m_EndType")] pub m_end_type : crate :: app :: textmeshanimation :: TextMeshAnimation_EndType ,
-# [offset (104)] # [rename (name = "m_StartFromRight")] pub m_start_from_right : bool ,
-# [offset (108)] # [rename (name = "m_MaxIntervalTime")] pub m_max_interval_time : f32 ,
-# [offset (112)] # [rename (name = "m_EndTime")] pub m_end_time : f32 ,
 }
 
 }
@@ -220,49 +85,150 @@ impl  TextMeshAnimation_PivotType  {
 #[cfg(feature = "app-textmeshanimation-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-textmeshanimation")]
-impl TextMeshAnimation { # [doc = "`SetAsUnscaledInChildren(crate::unity_engine::transform::Transform, bool)` overload"] pub fn set_as_unscaled_in_children (root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , v : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9e10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-textmeshanimation")]
-pub trait ITextMeshAnimationMethods : ITextMeshAnimation { # [doc = "`get_isUnscaledDeltaTime()` overload"] fn get_is_unscaled_delta_time (self ,) -> bool { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_isUnscaledDeltaTime(bool)` overload"] fn set_is_unscaled_delta_time (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8fa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AnimationText()` overload"] fn animation_text (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e91f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetText(::unity2::Il2CppString)` overload"] fn set_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9bb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`Restart()` overload"] fn restart (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartAnimation()` overload"] fn start_animation (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Skip()` overload"] fn skip (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartAnimation(i32)` overload"] fn start_animation_2 (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9cb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`ToNextAnimation()` overload"] fn to_next_animation (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e9ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-textmeshanimation")]
-impl < __T : ITextMeshAnimation > ITextMeshAnimationMethods for __T { }
-
-#[cfg(feature = "app-textmeshanimation")]
-impl TextMeshAnimation { pub fn get_is_unscaled_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_unscaled_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn animation_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn restart_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn start_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn start_animation_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn to_next_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_as_unscaled_in_children_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
-
-#[cfg(feature = "app-textmeshanimation")]
-impl TextMeshAnimation {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextMeshAnimation) , :: core :: stringify ! (new) ,)) ; < Self as ITextMeshAnimationMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-textmeshanimation")]pub trait ITextMeshAnimation_AnimationParamsMethods:ITextMeshAnimation_AnimationParams{#[doc="`GetDelayTime(i32)` overload"]fn get_delay_time(self,character_count:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <TextMeshAnimation_AnimationParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22044c0usize)as*mut u8,f32;
+(TextMeshAnimation_AnimationParams)__receiver,(i32)::core::convert::Into::into(character_count))}
+}
+#[doc="`CalcEndTime()` overload"]fn calc_end_time(self,)->(){unsafe{let __receiver= <TextMeshAnimation_AnimationParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22044f0usize)as*mut u8,();
+(TextMeshAnimation_AnimationParams)__receiver)}
+}
+#[doc="`IsEnd(f32)` overload"]fn is_end(self,time:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <TextMeshAnimation_AnimationParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2204820usize)as*mut u8,bool;
+(TextMeshAnimation_AnimationParams)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`SetWrapMode(crate::unity_engine::wrapmode::WrapMode)` overload"]fn set_wrap_mode(self,mode:impl::core::convert::Into<crate::unity_engine::wrapmode::WrapMode>)->(){unsafe{let __receiver= <TextMeshAnimation_AnimationParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2204830usize)as*mut u8,();
+(TextMeshAnimation_AnimationParams)__receiver,(crate::unity_engine::wrapmode::WrapMode)::core::convert::Into::into(mode))}
+}
+#[doc="`ExpandAnimation(f32)` overload"]fn expand_animation(self,ratio:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TextMeshAnimation_AnimationParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2204970usize)as*mut u8,();
+(TextMeshAnimation_AnimationParams)__receiver,(f32)::core::convert::Into::into(ratio))}
+}
+#[doc="`get_EndTime()` overload"]fn get_end_time(self,)->f32{unsafe{let __receiver= <TextMeshAnimation_AnimationParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2204ac0usize)as*mut u8,f32;
+(TextMeshAnimation_AnimationParams)__receiver)}
+}
+#[doc="`GetAnimationList()` overload"]fn get_animation_list(self,)-> ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>{unsafe{let __receiver= <TextMeshAnimation_AnimationParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22045b0usize)as*mut u8, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ;
+(TextMeshAnimation_AnimationParams)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextMeshAnimation_AnimationParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2204ad0usize)as*mut u8,();
+(TextMeshAnimation_AnimationParams)__receiver)}
+}
 }
 
-#[cfg(feature = "app-textmeshanimation")]
-pub trait ITextMeshAnimation_AnimationParamsMethods : ITextMeshAnimation_AnimationParams { # [doc = "`GetDelayTime(i32)` overload"] fn get_delay_time (self , character_count : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < TextMeshAnimation_AnimationParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation_AnimationParams , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22044c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character_count) , :: core :: option :: Option :: None) } } } # [doc = "`CalcEndTime()` overload"] fn calc_end_time (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation_AnimationParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation_AnimationParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22044f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEnd(f32)` overload"] fn is_end (self , time : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < TextMeshAnimation_AnimationParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation_AnimationParams , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2204820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`SetWrapMode(crate::unity_engine::wrapmode::WrapMode)` overload"] fn set_wrap_mode (self , mode : impl :: core :: convert :: Into < crate :: unity_engine :: wrapmode :: WrapMode >) -> () { unsafe { let __receiver = < TextMeshAnimation_AnimationParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation_AnimationParams , crate :: unity_engine :: wrapmode :: WrapMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2204830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`ExpandAnimation(f32)` overload"] fn expand_animation (self , ratio : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TextMeshAnimation_AnimationParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation_AnimationParams , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2204970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`get_EndTime()` overload"] fn get_end_time (self ,) -> f32 { unsafe { let __receiver = < TextMeshAnimation_AnimationParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation_AnimationParams , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2204ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAnimationList()` overload"] fn get_animation_list (self ,) -> :: unity2 :: Array < crate :: unity_engine :: animationcurve :: AnimationCurve > { unsafe { let __receiver = < TextMeshAnimation_AnimationParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation_AnimationParams , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: animationcurve :: AnimationCurve > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22045b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TextMeshAnimation_AnimationParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMeshAnimation_AnimationParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2204ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-textmeshanimation")]impl<__T:ITextMeshAnimation_AnimationParams>ITextMeshAnimation_AnimationParamsMethods for __T{}
 
-#[cfg(feature = "app-textmeshanimation")]
-impl < __T : ITextMeshAnimation_AnimationParams > ITextMeshAnimation_AnimationParamsMethods for __T { }
+#[cfg(feature="app-textmeshanimation")]impl TextMeshAnimation_AnimationParams{pub fn get_delay_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_end_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_wrap_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn expand_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_end_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_animation_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-textmeshanimation")]
-impl TextMeshAnimation_AnimationParams { pub fn get_delay_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation_AnimationParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_end_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation_AnimationParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation_AnimationParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_wrap_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation_AnimationParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn expand_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation_AnimationParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_end_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation_AnimationParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_animation_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation_AnimationParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMeshAnimation_AnimationParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-textmeshanimation")]impl TextMeshAnimation_AnimationParams{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextMeshAnimation_AnimationParams), ::core::stringify!(new),));
+ <Self as ITextMeshAnimation_AnimationParamsMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-textmeshanimation")]
-impl TextMeshAnimation_AnimationParams {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextMeshAnimation_AnimationParams) , :: core :: stringify ! (new) ,)) ; < Self as ITextMeshAnimation_AnimationParamsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-textmeshanimation")]impl TextMeshAnimation{#[doc="`SetAsUnscaledInChildren(crate::unity_engine::transform::Transform, bool)` overload"]pub fn set_as_unscaled_in_children(root:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,v:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e9e10usize)as*mut u8,();
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(root),(bool)::core::convert::Into::into(v))}
+}
+}
+
+#[cfg(feature="app-textmeshanimation")]pub trait ITextMeshAnimationMethods:ITextMeshAnimation{#[doc="`get_isUnscaledDeltaTime()` overload"]fn get_is_unscaled_delta_time(self,)->bool{unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8f90usize)as*mut u8,bool;
+(TextMeshAnimation)__receiver)}
+}
+#[doc="`set_isUnscaledDeltaTime(bool)` overload"]fn set_is_unscaled_delta_time(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8fa0usize)as*mut u8,();
+(TextMeshAnimation)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8fb0usize)as*mut u8,();
+(TextMeshAnimation)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e9120usize)as*mut u8,();
+(TextMeshAnimation)__receiver)}
+}
+#[doc="`AnimationText()` overload"]fn animation_text(self,)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e91f0usize)as*mut u8,();
+(TextMeshAnimation)__receiver)}
+}
+#[doc="`SetText(::unity2::Il2CppString)` overload"]fn set_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e9bb0usize)as*mut u8,();
+(TextMeshAnimation)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`Restart()` overload"]fn restart(self,)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e9c60usize)as*mut u8,();
+(TextMeshAnimation)__receiver)}
+}
+#[doc="`StartAnimation()` overload"]fn start_animation(self,)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e9ca0usize)as*mut u8,();
+(TextMeshAnimation)__receiver)}
+}
+#[doc="`Skip()` overload"]fn skip(self,)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e9d90usize)as*mut u8,();
+(TextMeshAnimation)__receiver)}
+}
+#[doc="`StartAnimation(i32)` overload"]fn start_animation_2(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e9cb0usize)as*mut u8,();
+(TextMeshAnimation)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`ToNextAnimation()` overload"]fn to_next_animation(self,)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e9b90usize)as*mut u8,();
+(TextMeshAnimation)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextMeshAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e9ec0usize)as*mut u8,();
+(TextMeshAnimation)__receiver)}
+}
+}
+
+#[cfg(feature="app-textmeshanimation")]impl<__T:ITextMeshAnimation>ITextMeshAnimationMethods for __T{}
+
+#[cfg(feature="app-textmeshanimation")]impl TextMeshAnimation{pub fn get_is_unscaled_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_unscaled_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn animation_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn restart_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn start_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn start_animation_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn to_next_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_as_unscaled_in_children_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-textmeshanimation")]impl TextMeshAnimation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextMeshAnimation), ::core::stringify!(new),));
+ <Self as ITextMeshAnimationMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-textmeshanimation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TextMeshAnimation;
-    pub use super::ITextMeshAnimation;
-    pub use super::ITextMeshAnimationMethods;
-    pub use super::TextMeshAnimation_EndType;
-    pub use super::TextMeshAnimation_DelayTimeType;
-    pub use super::TextMeshAnimation_PivotType;
     pub use super::TextMeshAnimation_AnimationParams;
     pub use super::ITextMeshAnimation_AnimationParams;
     pub use super::ITextMeshAnimation_AnimationParamsMethods;
+    pub use super::TextMeshAnimation_PivotType;
+    pub use super::TextMeshAnimation;
+    pub use super::ITextMeshAnimation;
+    pub use super::ITextMeshAnimationMethods;
+    pub use super::TextMeshAnimation_DelayTimeType;
+    pub use super::TextMeshAnimation_EndType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

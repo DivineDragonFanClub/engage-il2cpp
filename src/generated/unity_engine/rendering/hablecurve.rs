@@ -4,119 +4,205 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Uniforms.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "HableCurve.Uniforms")] # [parent (crate :: system :: object :: Object)] pub struct HableCurve_Uniforms {
-# [offset (16)] # [rename (name = "parent")] pub parent : crate :: unity_engine :: rendering :: hablecurve :: HableCurve ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/hablecurve/HableCurve_Uniforms.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="HableCurve.Uniforms")]#[parent(crate::system::object::Object)]pub struct HableCurve_Uniforms{#[offset(16)]#[rename(name="parent")]pub parent:crate::unity_engine::rendering::hablecurve::HableCurve,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/hablecurve/HableCurve_DirectParams.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HableCurve_DirectParams{pub x0:f32,pub y0:f32,pub x1:f32,pub y1:f32,pub w:f32,pub overshoot_x:f32,pub overshoot_y:f32,pub gamma:f32,}
+impl::unity2::ClassIdentity for HableCurve_DirectParams{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="HableCurve.DirectParams";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HableCurve_DirectParams{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "HableCurve")] # [parent (crate :: system :: object :: Object)] pub struct HableCurve {
-# [offset (32)] # [rename (name = "segments")] pub segments : :: unity2 :: Array < crate :: unity_engine :: rendering :: hablecurve :: HableCurve_Segment > ,
-# [offset (40)] # [rename (name = "uniforms")] pub uniforms : crate :: unity_engine :: rendering :: hablecurve :: HableCurve_Uniforms ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/hablecurve/HableCurve_Segment.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="HableCurve.Segment")]#[parent(crate::system::object::Object)]pub struct HableCurve_Segment{#[offset(16)]#[rename(name="offsetX")]pub offset_x:f32, #[offset(20)]#[rename(name="offsetY")]pub offset_y:f32, #[offset(24)]#[rename(name="scaleX")]pub scale_x:f32, #[offset(28)]#[rename(name="scaleY")]pub scale_y:f32, #[offset(32)]#[rename(name="lnA")]pub ln_a:f32, #[offset(36)]#[rename(name="B")]pub b:f32,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/hablecurve/HableCurve_DirectParams.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HableCurve_DirectParams {
-    pub x0: f32,
-    pub y0: f32,
-    pub x1: f32,
-    pub y1: f32,
-    pub w: f32,
-    pub overshoot_x: f32,
-    pub overshoot_y: f32,
-    pub gamma: f32,
-}
-
-
-impl ::unity2::ClassIdentity for HableCurve_DirectParams {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "HableCurve.DirectParams";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for HableCurve_DirectParams {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Segment.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "HableCurve.Segment")] # [parent (crate :: system :: object :: Object)] pub struct HableCurve_Segment {
-# [offset (16)] # [rename (name = "offsetX")] pub offset_x : f32 ,
-# [offset (20)] # [rename (name = "offsetY")] pub offset_y : f32 ,
-# [offset (24)] # [rename (name = "scaleX")] pub scale_x : f32 ,
-# [offset (28)] # [rename (name = "scaleY")] pub scale_y : f32 ,
-# [offset (32)] # [rename (name = "lnA")] pub ln_a : f32 ,
-# [offset (36)] # [rename (name = "B")] pub b : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/hablecurve/HableCurve.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="HableCurve")]#[parent(crate::system::object::Object)]pub struct HableCurve{#[offset(32)]#[rename(name="segments")]pub segments: ::unity2::Array<crate::unity_engine::rendering::hablecurve::HableCurve_Segment> , #[offset(40)]#[rename(name="uniforms")]pub uniforms:crate::unity_engine::rendering::hablecurve::HableCurve_Uniforms,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-hablecurve-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-pub trait IHableCurve_UniformsMethods : IHableCurve_Uniforms { # [doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` overload"] fn ctor (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: hablecurve :: HableCurve >) -> () { unsafe { let __receiver = < HableCurve_Uniforms as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Uniforms , crate :: unity_engine :: rendering :: hablecurve :: HableCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`get_curve()` overload"] fn get_curve (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < HableCurve_Uniforms as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Uniforms , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_toeSegmentA()` overload"] fn get_toe_segment_a (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < HableCurve_Uniforms as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Uniforms , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_toeSegmentB()` overload"] fn get_toe_segment_b (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < HableCurve_Uniforms as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Uniforms , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_midSegmentA()` overload"] fn get_mid_segment_a (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < HableCurve_Uniforms as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Uniforms , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_midSegmentB()` overload"] fn get_mid_segment_b (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < HableCurve_Uniforms as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Uniforms , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_shoSegmentA()` overload"] fn get_sho_segment_a (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < HableCurve_Uniforms as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Uniforms , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_shoSegmentB()` overload"] fn get_sho_segment_b (self ,) -> crate :: unity_engine :: vector4 :: Vector4 { unsafe { let __receiver = < HableCurve_Uniforms as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Uniforms , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector4 :: Vector4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl < __T : IHableCurve_Uniforms > IHableCurve_UniformsMethods for __T { }
-
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve_Uniforms { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Uniforms as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_curve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Uniforms as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_toe_segment_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Uniforms as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_toe_segment_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Uniforms as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_mid_segment_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Uniforms as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_mid_segment_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Uniforms as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_sho_segment_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Uniforms as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_sho_segment_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Uniforms as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve_Uniforms {
-# [doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` — overload selector"] pub fn new (parent : crate :: unity_engine :: rendering :: hablecurve :: HableCurve) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HableCurve_Uniforms) , :: core :: stringify ! (new) ,)) ; < Self as IHableCurve_UniformsMethods > :: ctor (this , parent) ; this }
+#[cfg(feature="unity_engine-rendering-hablecurve")]pub trait IHableCurve_UniformsMethods:IHableCurve_Uniforms{#[doc="`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` overload"]fn ctor(self,parent:impl::core::convert::Into<crate::unity_engine::rendering::hablecurve::HableCurve>)->(){unsafe{let __receiver= <HableCurve_Uniforms as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed580usize)as*mut u8,();
+(HableCurve_Uniforms)__receiver,(crate::unity_engine::rendering::hablecurve::HableCurve)::core::convert::Into::into(parent))}
+}
+#[doc="`get_curve()` overload"]fn get_curve(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <HableCurve_Uniforms as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed5c0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(HableCurve_Uniforms)__receiver)}
+}
+#[doc="`get_toeSegmentA()` overload"]fn get_toe_segment_a(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <HableCurve_Uniforms as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed600usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(HableCurve_Uniforms)__receiver)}
+}
+#[doc="`get_toeSegmentB()` overload"]fn get_toe_segment_b(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <HableCurve_Uniforms as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed660usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(HableCurve_Uniforms)__receiver)}
+}
+#[doc="`get_midSegmentA()` overload"]fn get_mid_segment_a(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <HableCurve_Uniforms as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed6c0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(HableCurve_Uniforms)__receiver)}
+}
+#[doc="`get_midSegmentB()` overload"]fn get_mid_segment_b(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <HableCurve_Uniforms as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed720usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(HableCurve_Uniforms)__receiver)}
+}
+#[doc="`get_shoSegmentA()` overload"]fn get_sho_segment_a(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <HableCurve_Uniforms as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed780usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(HableCurve_Uniforms)__receiver)}
+}
+#[doc="`get_shoSegmentB()` overload"]fn get_sho_segment_b(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <HableCurve_Uniforms as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed7e0usize)as*mut u8,crate::unity_engine::vector4::Vector4;
+(HableCurve_Uniforms)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-pub trait IHableCurveMethods : IHableCurve { # [doc = "`get_whitePoint()` overload"] fn get_white_point (self ,) -> f32 { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_whitePoint(f32)` overload"] fn set_white_point (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_inverseWhitePoint()` overload"] fn get_inverse_white_point (self ,) -> f32 { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_inverseWhitePoint(f32)` overload"] fn set_inverse_white_point (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_x0()` overload"] fn get_x0 (self ,) -> f32 { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_x0(f32)` overload"] fn set_x0 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_x1()` overload"] fn get_x1 (self ,) -> f32 { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_x1(f32)` overload"] fn set_x1 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa6d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Eval(f32)` overload"] fn eval (self , x : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa8b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`Init(f32, f32, f32, f32, f32, f32)` overload"] fn init (self , toe_strength : impl :: core :: convert :: Into < f32 > , toe_length : impl :: core :: convert :: Into < f32 > , shoulder_strength : impl :: core :: convert :: Into < f32 > , shoulder_length : impl :: core :: convert :: Into < f32 > , shoulder_angle : impl :: core :: convert :: Into < f32 > , gamma : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , f32 , f32 , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (toe_strength) , :: core :: convert :: Into :: into (toe_length) , :: core :: convert :: Into :: into (shoulder_strength) , :: core :: convert :: Into :: into (shoulder_length) , :: core :: convert :: Into :: into (shoulder_angle) , :: core :: convert :: Into :: into (gamma) , :: core :: option :: Option :: None) } } } # [doc = "`InitSegments(crate::unity_engine::rendering::hablecurve::HableCurve_DirectParams)` overload"] fn init_segments (self , src_params : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: hablecurve :: HableCurve_DirectParams >) -> () { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , crate :: unity_engine :: rendering :: hablecurve :: HableCurve_DirectParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aaa80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (src_params) , :: core :: option :: Option :: None) } } } # [doc = "`SolveAB(*mutf32, *mutf32, f32, f32, f32)` overload"] fn solve_ab (self , x0 : impl :: core :: convert :: Into < f32 > , y0 : impl :: core :: convert :: Into < f32 > , m : impl :: core :: convert :: Into < f32 >) -> (f32 , f32) { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; { let __inner : extern "C" fn (HableCurve , * mut f32 , * mut f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aae10usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (x0) , :: core :: convert :: Into :: into (y0) , :: core :: convert :: Into :: into (m) , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`AsSlopeIntercept(*mutf32, *mutf32, f32, f32, f32, f32)` overload"] fn as_slope_intercept (self , x0 : impl :: core :: convert :: Into < f32 > , x1 : impl :: core :: convert :: Into < f32 > , y0 : impl :: core :: convert :: Into < f32 > , y1 : impl :: core :: convert :: Into < f32 >) -> (f32 , f32) { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; { let __inner : extern "C" fn (HableCurve , * mut f32 , * mut f32 , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aada0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (x0) , :: core :: convert :: Into :: into (x1) , :: core :: convert :: Into :: into (y0) , :: core :: convert :: Into :: into (y1) , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`EvalDerivativeLinearGamma(f32, f32, f32, f32)` overload"] fn eval_derivative_linear_gamma (self , m : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 > , g : impl :: core :: convert :: Into < f32 > , x : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < HableCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aadd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (m) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (g) , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl<__T:IHableCurve_Uniforms>IHableCurve_UniformsMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl < __T : IHableCurve > IHableCurveMethods for __T { }
-
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve { pub fn get_white_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_white_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_inverse_white_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_inverse_white_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_x0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_x0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_x1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_x1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn eval_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn init_segments_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn solve_ab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn as_slope_intercept_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn eval_derivative_linear_gamma_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
-
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HableCurve) , :: core :: stringify ! (new) ,)) ; < Self as IHableCurveMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve_Uniforms{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_curve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_toe_segment_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_toe_segment_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_mid_segment_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_mid_segment_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_sho_segment_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_sho_segment_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-pub trait IHableCurve_SegmentMethods : IHableCurve_Segment { # [doc = "`Eval(f32)` overload"] fn eval (self , x : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < HableCurve_Segment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Segment , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HableCurve_Segment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HableCurve_Segment , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33ed570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve_Uniforms{#[doc="`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` — overload selector"]pub fn new(parent:crate::unity_engine::rendering::hablecurve::HableCurve)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HableCurve_Uniforms), ::core::stringify!(new),));
+ <Self as IHableCurve_UniformsMethods> ::ctor(this,parent);
+this}
+}
 
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl < __T : IHableCurve_Segment > IHableCurve_SegmentMethods for __T { }
+#[cfg(feature="unity_engine-rendering-hablecurve")]pub trait IHableCurve_SegmentMethods:IHableCurve_Segment{#[doc="`Eval(f32)` overload"]fn eval(self,x:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <HableCurve_Segment as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed500usize)as*mut u8,f32;
+(HableCurve_Segment)__receiver,(f32)::core::convert::Into::into(x))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HableCurve_Segment as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33ed570usize)as*mut u8,();
+(HableCurve_Segment)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve_Segment { pub fn eval_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Segment as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HableCurve_Segment as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl<__T:IHableCurve_Segment>IHableCurve_SegmentMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve_Segment {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HableCurve_Segment) , :: core :: stringify ! (new) ,)) ; < Self as IHableCurve_SegmentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve_Segment{pub fn eval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve_Segment{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HableCurve_Segment), ::core::stringify!(new),));
+ <Self as IHableCurve_SegmentMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-rendering-hablecurve")]pub trait IHableCurveMethods:IHableCurve{#[doc="`get_whitePoint()` overload"]fn get_white_point(self,)->f32{unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa660usize)as*mut u8,f32;
+(HableCurve)__receiver)}
+}
+#[doc="`set_whitePoint(f32)` overload"]fn set_white_point(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa670usize)as*mut u8,();
+(HableCurve)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_inverseWhitePoint()` overload"]fn get_inverse_white_point(self,)->f32{unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa680usize)as*mut u8,f32;
+(HableCurve)__receiver)}
+}
+#[doc="`set_inverseWhitePoint(f32)` overload"]fn set_inverse_white_point(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa690usize)as*mut u8,();
+(HableCurve)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_x0()` overload"]fn get_x0(self,)->f32{unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa6a0usize)as*mut u8,f32;
+(HableCurve)__receiver)}
+}
+#[doc="`set_x0(f32)` overload"]fn set_x0(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa6b0usize)as*mut u8,();
+(HableCurve)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_x1()` overload"]fn get_x1(self,)->f32{unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa6c0usize)as*mut u8,f32;
+(HableCurve)__receiver)}
+}
+#[doc="`set_x1(f32)` overload"]fn set_x1(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa6d0usize)as*mut u8,();
+(HableCurve)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa6e0usize)as*mut u8,();
+(HableCurve)__receiver)}
+}
+#[doc="`Eval(f32)` overload"]fn eval(self,x:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa8b0usize)as*mut u8,f32;
+(HableCurve)__receiver,(f32)::core::convert::Into::into(x))}
+}
+#[doc="`Init(f32, f32, f32, f32, f32, f32)` overload"]fn init(self,toe_strength:impl::core::convert::Into<f32> ,toe_length:impl::core::convert::Into<f32> ,shoulder_strength:impl::core::convert::Into<f32> ,shoulder_length:impl::core::convert::Into<f32> ,shoulder_angle:impl::core::convert::Into<f32> ,gamma:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa920usize)as*mut u8,();
+(HableCurve)__receiver,(f32)::core::convert::Into::into(toe_strength),(f32)::core::convert::Into::into(toe_length),(f32)::core::convert::Into::into(shoulder_strength),(f32)::core::convert::Into::into(shoulder_length),(f32)::core::convert::Into::into(shoulder_angle),(f32)::core::convert::Into::into(gamma))}
+}
+#[doc="`InitSegments(crate::unity_engine::rendering::hablecurve::HableCurve_DirectParams)` overload"]fn init_segments(self,src_params:impl::core::convert::Into<crate::unity_engine::rendering::hablecurve::HableCurve_DirectParams>)->(){unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aaa80usize)as*mut u8,();
+(HableCurve)__receiver,(crate::unity_engine::rendering::hablecurve::HableCurve_DirectParams)::core::convert::Into::into(src_params))}
+}
+#[doc="`SolveAB(*mutf32, *mutf32, f32, f32, f32)` overload"]fn solve_ab(self,x0:impl::core::convert::Into<f32> ,y0:impl::core::convert::Into<f32> ,m:impl::core::convert::Into<f32>)->(f32,f32){unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <f32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aae10usize)as*mut u8,();
+(HableCurve)__receiver,(*mut f32)__out_0.as_mut_ptr(),(*mut f32)__out_1.as_mut_ptr(),(f32)::core::convert::Into::into(x0),(f32)::core::convert::Into::into(y0),(f32)::core::convert::Into::into(m));
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`AsSlopeIntercept(*mutf32, *mutf32, f32, f32, f32, f32)` overload"]fn as_slope_intercept(self,x0:impl::core::convert::Into<f32> ,x1:impl::core::convert::Into<f32> ,y0:impl::core::convert::Into<f32> ,y1:impl::core::convert::Into<f32>)->(f32,f32){unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <f32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aada0usize)as*mut u8,();
+(HableCurve)__receiver,(*mut f32)__out_0.as_mut_ptr(),(*mut f32)__out_1.as_mut_ptr(),(f32)::core::convert::Into::into(x0),(f32)::core::convert::Into::into(x1),(f32)::core::convert::Into::into(y0),(f32)::core::convert::Into::into(y1));
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`EvalDerivativeLinearGamma(f32, f32, f32, f32)` overload"]fn eval_derivative_linear_gamma(self,m:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32> ,g:impl::core::convert::Into<f32> ,x:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <HableCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aadd0usize)as*mut u8,f32;
+(HableCurve)__receiver,(f32)::core::convert::Into::into(m),(f32)::core::convert::Into::into(b),(f32)::core::convert::Into::into(g),(f32)::core::convert::Into::into(x))}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl<__T:IHableCurve>IHableCurveMethods for __T{}
+
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve{pub fn get_white_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_white_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_inverse_white_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_inverse_white_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_x0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_x0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn eval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn init_segments_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn solve_ab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn as_slope_intercept_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn eval_derivative_linear_gamma_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="unity_engine-rendering-hablecurve")]impl HableCurve{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HableCurve), ::core::stringify!(new),));
+ <Self as IHableCurveMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-hablecurve")]
@@ -125,13 +211,13 @@ pub mod prelude {
     pub use super::HableCurve_Uniforms;
     pub use super::IHableCurve_Uniforms;
     pub use super::IHableCurve_UniformsMethods;
-    pub use super::HableCurve;
-    pub use super::IHableCurve;
-    pub use super::IHableCurveMethods;
     pub use super::HableCurve_DirectParams;
     pub use super::HableCurve_Segment;
     pub use super::IHableCurve_Segment;
     pub use super::IHableCurve_SegmentMethods;
+    pub use super::HableCurve;
+    pub use super::IHableCurve;
+    pub use super::IHableCurveMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

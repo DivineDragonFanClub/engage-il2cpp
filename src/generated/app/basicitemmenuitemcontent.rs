@@ -4,48 +4,109 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicitemmenuitemcontent/BasicItemMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicItemMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct BasicItemMenuItemContent {
-# [offset (72)] # [rename (name = "m_ItemFrame")] pub m_item_frame : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_Text")] pub m_text : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_Count")] pub m_count : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_Efficacy")] pub m_efficacy : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (104)] # [rename (name = "m_UnitIcon")] pub m_unit_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (112)] # [rename (name = "m_FixedCursor")] pub m_fixed_cursor : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (120)] # [rename (name = "m_FixedCursorFrame")] pub m_fixed_cursor_frame : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicitemmenuitemcontent/BasicItemMenuItemContent.md"))]#[::unity2::class(namespace="App",name="BasicItemMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct BasicItemMenuItemContent{#[offset(72)]#[rename(name="m_ItemFrame")]pub m_item_frame:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_Text")]pub m_text:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_Count")]pub m_count:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_Efficacy")]pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(104)]#[rename(name="m_UnitIcon")]pub m_unit_icon:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_FixedCursor")]pub m_fixed_cursor:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_FixedCursorFrame")]pub m_fixed_cursor_frame:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-basicitemmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-basicitemmenuitemcontent")]
-pub trait IBasicItemMenuItemContentMethods : IBasicItemMenuItemContent { # [doc = "`FindGameObject(::unity2::Il2CppString)` overload"] fn find_game_object (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2458670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`SetupObjects()` overload"] fn setup_objects (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2458740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Blank()` overload"] fn blank (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2458bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2458f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2459030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildText(crate::app::unititem::UnitItem)` overload"] fn build_text_2 (self , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24590d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`SetColorEngageItem()` overload"] fn set_color_engage_item (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2459da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245a310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTextComponent()` overload"] fn get_text_component (self ,) -> crate :: unity_engine :: ui :: text :: Text { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: text :: Text = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245ab40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTextMeshProComponent()` overload"] fn get_text_mesh_pro_component (self ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245ac50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetIconColor(crate::unity_engine::color::Color)` overload"] fn set_icon_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245ad60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`ShowFixedCursor()` overload"] fn show_fixed_cursor (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245ae70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideFixedCursor()` overload"] fn hide_fixed_cursor (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245ae80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245ae90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicitemmenuitemcontent")]pub trait IBasicItemMenuItemContentMethods:IBasicItemMenuItemContent{#[doc="`FindGameObject(::unity2::Il2CppString)` overload"]fn find_game_object(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2458670usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(BasicItemMenuItemContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`SetupObjects()` overload"]fn setup_objects(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2458740usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver)}
+}
+#[doc="`Blank()` overload"]fn blank(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2458bc0usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2458f30usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2459030usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver)}
+}
+#[doc="`BuildText(crate::app::unititem::UnitItem)` overload"]fn build_text_2(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24590d0usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`SetColorEngageItem()` overload"]fn set_color_engage_item(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2459da0usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245a310usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver)}
+}
+#[doc="`GetTextComponent()` overload"]fn get_text_component(self,)->crate::unity_engine::ui::text::Text{unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245ab40usize)as*mut u8,crate::unity_engine::ui::text::Text;
+(BasicItemMenuItemContent)__receiver)}
+}
+#[doc="`GetTextMeshProComponent()` overload"]fn get_text_mesh_pro_component(self,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245ac50usize)as*mut u8,crate::tm_pro::textmeshprougui::TextMeshProUGUI;
+(BasicItemMenuItemContent)__receiver)}
+}
+#[doc="`SetIconColor(crate::unity_engine::color::Color)` overload"]fn set_icon_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245ad60usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`ShowFixedCursor()` overload"]fn show_fixed_cursor(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245ae70usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver)}
+}
+#[doc="`HideFixedCursor()` overload"]fn hide_fixed_cursor(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245ae80usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245ae90usize)as*mut u8,();
+(BasicItemMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-basicitemmenuitemcontent")]
-impl < __T : IBasicItemMenuItemContent > IBasicItemMenuItemContentMethods for __T { }
+#[cfg(feature="app-basicitemmenuitemcontent")]impl<__T:IBasicItemMenuItemContent>IBasicItemMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-basicitemmenuitemcontent")]
-impl BasicItemMenuItemContent { pub fn find_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn build_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_color_engage_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_text_component_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_text_mesh_pro_component_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_icon_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn show_fixed_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn hide_fixed_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-basicitemmenuitemcontent")]impl BasicItemMenuItemContent{pub fn find_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_text_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_color_engage_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_text_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_text_mesh_pro_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_icon_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn show_fixed_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn hide_fixed_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-basicitemmenuitemcontent")]
-impl BasicItemMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicItemMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IBasicItemMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-basicitemmenuitemcontent")]impl BasicItemMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicItemMenuItemContent), ::core::stringify!(new),));
+ <Self as IBasicItemMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-basicitemmenuitemcontent")]

@@ -4,36 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aisimulatorbase/AISimulatorBase.md"))] # [:: unity2 :: class (namespace = "App" , name = "AISimulatorBase")] # [parent (crate :: system :: object :: Object)] pub struct AISimulatorBase {
-# [offset (16)] # [rename (name = "m_Offense")] pub m_offense : crate :: app :: unit :: Unit ,
-# [offset (24)] # [rename (name = "m_OffenseIndex")] pub m_offense_index : i32 ,
-# [offset (32)] # [rename (name = "m_Defense")] pub m_defense : crate :: app :: unit :: Unit ,
-# [offset (40)] # [rename (name = "m_BattleInfo")] pub m_battle_info : crate :: app :: battleinfo :: BattleInfo ,
-# [offset (48)] # [rename (name = "m_Score")] pub m_score : u32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aisimulatorbase/AISimulatorBase.md"))]#[::unity2::class(namespace="App",name="AISimulatorBase")]#[parent(crate::system::object::Object)]pub struct AISimulatorBase{#[offset(16)]#[rename(name="m_Offense")]pub m_offense:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_OffenseIndex")]pub m_offense_index:i32, #[offset(32)]#[rename(name="m_Defense")]pub m_defense:crate::app::unit::Unit, #[offset(40)]#[rename(name="m_BattleInfo")]pub m_battle_info:crate::app::battleinfo::BattleInfo, #[offset(48)]#[rename(name="m_Score")]pub m_score:u32,}
 
 }
 
 #[cfg(feature = "app-aisimulatorbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-aisimulatorbase")]
-pub trait IAISimulatorBaseMethods : IAISimulatorBase { # [doc = "`get_Score()` overload"] fn get_score (self ,) -> u32 { unsafe { let __receiver = < AISimulatorBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AISimulatorBase , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x193a5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AISimulatorBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AISimulatorBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19275d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aisimulatorbase")]pub trait IAISimulatorBaseMethods:IAISimulatorBase{#[doc="`get_Score()` overload"]fn get_score(self,)->u32{unsafe{let __receiver= <AISimulatorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x193a5e0usize)as*mut u8,u32;
+(AISimulatorBase)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AISimulatorBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19275d0usize)as*mut u8,();
+(AISimulatorBase)__receiver)}
+}
+}
 
-#[cfg(feature = "app-aisimulatorbase")]
-impl < __T : IAISimulatorBase > IAISimulatorBaseMethods for __T { }
+#[cfg(feature="app-aisimulatorbase")]impl<__T:IAISimulatorBase>IAISimulatorBaseMethods for __T{}
 
-#[cfg(feature = "app-aisimulatorbase")]
-impl AISimulatorBase { pub fn get_score_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AISimulatorBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AISimulatorBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-aisimulatorbase")]impl AISimulatorBase{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-aisimulatorbase")]
-impl AISimulatorBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AISimulatorBase) , :: core :: stringify ! (new) ,)) ; < Self as IAISimulatorBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aisimulatorbase")]impl AISimulatorBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AISimulatorBase), ::core::stringify!(new),));
+ <Self as IAISimulatorBaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-aisimulatorbase")]

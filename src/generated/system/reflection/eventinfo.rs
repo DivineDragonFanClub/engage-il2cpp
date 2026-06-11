@@ -4,72 +4,163 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/eventinfo/EventInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "EventInfo")] # [parent (crate :: system :: reflection :: memberinfo :: MemberInfo)] pub struct EventInfo {
-# [offset (16)] # [rename (name = "cached_add_event")] pub cached_add_event : crate :: system :: reflection :: eventinfo :: EventInfo_AddEventAdapter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/eventinfo/EventInfo_AddEventAdapter.md"))]#[::unity2::class(namespace="System.Reflection",name="EventInfo.AddEventAdapter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventInfo_AddEventAdapter{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/eventinfo/EventInfo_AddEventAdapter.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "EventInfo.AddEventAdapter")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct EventInfo_AddEventAdapter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/eventinfo/EventInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="EventInfo")]#[parent(crate::system::reflection::memberinfo::MemberInfo)]pub struct EventInfo{#[offset(16)]#[rename(name="cached_add_event")]pub cached_add_event:crate::system::reflection::eventinfo::EventInfo_AddEventAdapter,}
 
 }
 
 #[cfg(feature = "system-reflection-eventinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-eventinfo")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __EventInfo_unity2_raw { use super :: * ; pub unsafe fn get_attributes (this : EventInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: eventattributes :: EventAttributes { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Attributes") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Attributes" , < EventInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (EventInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: eventattributes :: EventAttributes = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_add_method (this : EventInfo , non_public : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetAddMethod") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetAddMethod" , < EventInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (EventInfo , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , non_public , __mi) } pub unsafe fn get_raise_method (this : EventInfo , non_public : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetRaiseMethod") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetRaiseMethod" , < EventInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (EventInfo , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , non_public , __mi) } pub unsafe fn get_remove_method (this : EventInfo , non_public : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetRemoveMethod") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetRemoveMethod" , < EventInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (EventInfo , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , non_public , __mi) } }
-
-#[cfg(feature = "system-reflection-eventinfo")]
-impl EventInfo { # [doc = "`op_Equality(crate::system::reflection::eventinfo::EventInfo, crate::system::reflection::eventinfo::EventInfo)` overload"] pub fn op_equality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: eventinfo :: EventInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: eventinfo :: EventInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: eventinfo :: EventInfo , crate :: system :: reflection :: eventinfo :: EventInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad33f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::system::reflection::eventinfo::EventInfo, crate::system::reflection::eventinfo::EventInfo)` overload"] pub fn op_inequality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: eventinfo :: EventInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: eventinfo :: EventInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: eventinfo :: EventInfo , crate :: system :: reflection :: eventinfo :: EventInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad3430usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`internal_from_handle_type(::unity2::IntPtr, ::unity2::IntPtr)` overload"] pub fn internal_from_handle_type (event_handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , type_handle : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: system :: reflection :: eventinfo :: EventInfo { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: eventinfo :: EventInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad3490usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (event_handle) , :: core :: convert :: Into :: into (type_handle) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-reflection-eventinfo")]
-pub trait IEventInfoMethods : IEventInfo { # [doc = "`get_Attributes()` overload"] fn get_attributes (self ,) -> crate :: system :: reflection :: eventattributes :: EventAttributes { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventInfo_unity2_raw :: get_attributes (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_EventHandlerType()` overload"] fn get_event_handler_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad3310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSpecialName()` overload"] fn get_is_special_name (self ,) -> bool { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad3380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MemberType()` overload"] fn get_member_type (self ,) -> crate :: system :: reflection :: membertypes :: MemberTypes { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: membertypes :: MemberTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad33b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad33c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAddMethod(bool)` overload"] fn get_add_method (self , non_public : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventInfo_unity2_raw :: get_add_method (__receiver , :: core :: convert :: Into :: into (non_public) , :: core :: option :: Option :: None) } } # [doc = "`GetRaiseMethod(bool)` overload"] fn get_raise_method (self , non_public : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventInfo_unity2_raw :: get_raise_method (__receiver , :: core :: convert :: Into :: into (non_public) , :: core :: option :: Option :: None) } } # [doc = "`GetRemoveMethod(bool)` overload"] fn get_remove_method (self , non_public : impl :: core :: convert :: Into < bool >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __EventInfo_unity2_raw :: get_remove_method (__receiver , :: core :: convert :: Into :: into (non_public) , :: core :: option :: Option :: None) } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad33d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < EventInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad33e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-reflection-eventinfo")]
-impl < __T : IEventInfo > IEventInfoMethods for __T { }
-
-#[cfg(feature = "system-reflection-eventinfo")]
-impl EventInfo { pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_event_handler_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_special_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_member_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_add_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_raise_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_remove_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn internal_from_handle_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
-
-#[cfg(feature = "system-reflection-eventinfo")]
-impl EventInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventInfo) , :: core :: stringify ! (new) ,)) ; < Self as IEventInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-eventinfo")]pub trait IEventInfo_AddEventAdapterMethods:IEventInfo_AddEventAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventInfo_AddEventAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d5b40usize)as*mut u8,();
+(EventInfo_AddEventAdapter)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::delegate::Delegate)` overload"]fn invoke(self,target_0:impl::core::convert::Into<crate::system::object::Object> ,dele:impl::core::convert::Into<crate::system::delegate::Delegate>)->(){unsafe{let __receiver= <EventInfo_AddEventAdapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d5b60usize)as*mut u8,();
+(EventInfo_AddEventAdapter)__receiver,(crate::system::object::Object)::core::convert::Into::into(target_0),(crate::system::delegate::Delegate)::core::convert::Into::into(dele))}
+}
 }
 
-#[cfg(feature = "system-reflection-eventinfo")]
-pub trait IEventInfo_AddEventAdapterMethods : IEventInfo_AddEventAdapter { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < EventInfo_AddEventAdapter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventInfo_AddEventAdapter , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d5b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::system::object::Object, crate::system::delegate::Delegate)` overload"] fn invoke (self , target_0 : impl :: core :: convert :: Into < crate :: system :: object :: Object > , dele : impl :: core :: convert :: Into < crate :: system :: delegate :: Delegate >) -> () { unsafe { let __receiver = < EventInfo_AddEventAdapter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventInfo_AddEventAdapter , crate :: system :: object :: Object , crate :: system :: delegate :: Delegate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d5b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target_0) , :: core :: convert :: Into :: into (dele) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-eventinfo")]impl<__T:IEventInfo_AddEventAdapter>IEventInfo_AddEventAdapterMethods for __T{}
 
-#[cfg(feature = "system-reflection-eventinfo")]
-impl < __T : IEventInfo_AddEventAdapter > IEventInfo_AddEventAdapterMethods for __T { }
+#[cfg(feature="system-reflection-eventinfo")]impl EventInfo_AddEventAdapter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "system-reflection-eventinfo")]
-impl EventInfo_AddEventAdapter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo_AddEventAdapter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventInfo_AddEventAdapter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-reflection-eventinfo")]impl EventInfo_AddEventAdapter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventInfo_AddEventAdapter), ::core::stringify!(new),));
+ <Self as IEventInfo_AddEventAdapterMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "system-reflection-eventinfo")]
-impl EventInfo_AddEventAdapter {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventInfo_AddEventAdapter) , :: core :: stringify ! (new) ,)) ; < Self as IEventInfo_AddEventAdapterMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-reflection-eventinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_attributes(this:EventInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::eventattributes::EventAttributes{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Attributes").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Attributes", <EventInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(EventInfo, ::unity2::OptionalMethod,)->crate::system::reflection::eventattributes::EventAttributes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_add_method(this:EventInfo,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetAddMethod").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetAddMethod", <EventInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(EventInfo,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,non_public,__mi)}
+pub unsafe fn get_raise_method(this:EventInfo,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetRaiseMethod").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetRaiseMethod", <EventInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(EventInfo,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,non_public,__mi)}
+pub unsafe fn get_remove_method(this:EventInfo,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetRemoveMethod").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetRemoveMethod", <EventInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(EventInfo,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,non_public,__mi)}
+}
+
+#[cfg(feature="system-reflection-eventinfo")]impl EventInfo{#[doc="`op_Equality(crate::system::reflection::eventinfo::EventInfo, crate::system::reflection::eventinfo::EventInfo)` overload"]pub fn op_equality(left:impl::core::convert::Into<crate::system::reflection::eventinfo::EventInfo> ,right:impl::core::convert::Into<crate::system::reflection::eventinfo::EventInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ad33f0usize)as*mut u8,bool;
+(crate::system::reflection::eventinfo::EventInfo)::core::convert::Into::into(left),(crate::system::reflection::eventinfo::EventInfo)::core::convert::Into::into(right))}
+}
+#[doc="`op_Inequality(crate::system::reflection::eventinfo::EventInfo, crate::system::reflection::eventinfo::EventInfo)` overload"]pub fn op_inequality(left:impl::core::convert::Into<crate::system::reflection::eventinfo::EventInfo> ,right:impl::core::convert::Into<crate::system::reflection::eventinfo::EventInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ad3430usize)as*mut u8,bool;
+(crate::system::reflection::eventinfo::EventInfo)::core::convert::Into::into(left),(crate::system::reflection::eventinfo::EventInfo)::core::convert::Into::into(right))}
+}
+#[doc="`internal_from_handle_type(::unity2::IntPtr, ::unity2::IntPtr)` overload"]pub fn internal_from_handle_type(event_handle:impl::core::convert::Into< ::unity2::IntPtr> ,type_handle:impl::core::convert::Into< ::unity2::IntPtr>)->crate::system::reflection::eventinfo::EventInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ad3490usize)as*mut u8,crate::system::reflection::eventinfo::EventInfo;
+(::unity2::IntPtr)::core::convert::Into::into(event_handle),(::unity2::IntPtr)::core::convert::Into::into(type_handle))}
+}
+}
+
+#[cfg(feature="system-reflection-eventinfo")]pub trait IEventInfoMethods:IEventInfo{#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::eventattributes::EventAttributes{unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventInfo_unity2_raw::get_attributes(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_EventHandlerType()` overload"]fn get_event_handler_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad3310usize)as*mut u8, ::unity2::SystemType;
+(EventInfo)__receiver)}
+}
+#[doc="`get_IsSpecialName()` overload"]fn get_is_special_name(self,)->bool{unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad3380usize)as*mut u8,bool;
+(EventInfo)__receiver)}
+}
+#[doc="`get_MemberType()` overload"]fn get_member_type(self,)->crate::system::reflection::membertypes::MemberTypes{unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad33b0usize)as*mut u8,crate::system::reflection::membertypes::MemberTypes;
+(EventInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad33c0usize)as*mut u8,();
+(EventInfo)__receiver)}
+}
+#[doc="`GetAddMethod(bool)` overload"]fn get_add_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventInfo_unity2_raw::get_add_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
+}
+#[doc="`GetRaiseMethod(bool)` overload"]fn get_raise_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventInfo_unity2_raw::get_raise_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
+}
+#[doc="`GetRemoveMethod(bool)` overload"]fn get_remove_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventInfo_unity2_raw::get_remove_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad33d0usize)as*mut u8,bool;
+(EventInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <EventInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad33e0usize)as*mut u8,i32;
+(EventInfo)__receiver)}
+}
+}
+
+#[cfg(feature="system-reflection-eventinfo")]impl<__T:IEventInfo>IEventInfoMethods for __T{}
+
+#[cfg(feature="system-reflection-eventinfo")]impl EventInfo{pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_event_handler_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_special_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_member_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_add_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_raise_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_remove_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn internal_from_handle_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="system-reflection-eventinfo")]impl EventInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventInfo), ::core::stringify!(new),));
+ <Self as IEventInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-eventinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventInfo;
-    pub use super::IEventInfo;
-    pub use super::IEventInfoMethods;
     pub use super::EventInfo_AddEventAdapter;
     pub use super::IEventInfo_AddEventAdapter;
     pub use super::IEventInfo_AddEventAdapterMethods;
+    pub use super::EventInfo;
+    pub use super::IEventInfo;
+    pub use super::IEventInfoMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

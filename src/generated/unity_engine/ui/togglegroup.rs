@@ -4,43 +4,109 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/togglegroup/ToggleGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ToggleGroup")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct ToggleGroup {
-# [offset (24)] # [rename (name = "m_AllowSwitchOff")] pub m_allow_switch_off : bool ,
-# [offset (32)] # [rename (name = "m_Toggles")] pub m_toggles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: toggle :: Toggle > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/togglegroup/ToggleGroup.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ToggleGroup")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct ToggleGroup{#[offset(24)]#[rename(name="m_AllowSwitchOff")]pub m_allow_switch_off:bool, #[offset(32)]#[rename(name="m_Toggles")]pub m_toggles:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::toggle::Toggle> ,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-togglegroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-togglegroup")]
-pub trait IToggleGroupMethods : IToggleGroup { # [doc = "`get_allowSwitchOff()` overload"] fn get_allow_switch_off (self ,) -> bool { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c090f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_allowSwitchOff(bool)` overload"] fn set_allow_switch_off (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c091b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c091d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ValidateToggleIsInGroup(crate::unity_engine::ui::toggle::Toggle)` overload"] fn validate_toggle_is_in_group (self , toggle : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: toggle :: Toggle >) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , crate :: unity_engine :: ui :: toggle :: Toggle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c091f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (toggle) , :: core :: option :: Option :: None) } } } # [doc = "`NotifyToggleOn(crate::unity_engine::ui::toggle::Toggle, bool)` overload"] fn notify_toggle_on (self , toggle : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: toggle :: Toggle > , send_callback : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , crate :: unity_engine :: ui :: toggle :: Toggle , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c08b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (toggle) , :: core :: convert :: Into :: into (send_callback) , :: core :: option :: Option :: None) } } } # [doc = "`UnregisterToggle(crate::unity_engine::ui::toggle::Toggle)` overload"] fn unregister_toggle (self , toggle : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: toggle :: Toggle >) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , crate :: unity_engine :: ui :: toggle :: Toggle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c08a20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (toggle) , :: core :: option :: Option :: None) } } } # [doc = "`RegisterToggle(crate::unity_engine::ui::toggle::Toggle)` overload"] fn register_toggle (self , toggle : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: toggle :: Toggle >) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , crate :: unity_engine :: ui :: toggle :: Toggle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c08ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (toggle) , :: core :: option :: Option :: None) } } } # [doc = "`EnsureValidState()` overload"] fn ensure_valid_state (self ,) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c08250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AnyTogglesOn()` overload"] fn any_toggles_on (self ,) -> bool { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c08d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ActiveToggles()` overload"] fn active_toggles (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: ui :: toggle :: Toggle > { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: ui :: toggle :: Toggle > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFirstActiveToggle()` overload"] fn get_first_active_toggle (self ,) -> crate :: unity_engine :: ui :: toggle :: Toggle { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: toggle :: Toggle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAllTogglesOff(bool)` overload"] fn set_all_toggles_off (self , send_callback : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ToggleGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ToggleGroup , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (send_callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-togglegroup")]pub trait IToggleGroupMethods:IToggleGroup{#[doc="`get_allowSwitchOff()` overload"]fn get_allow_switch_off(self,)->bool{unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c090f0usize)as*mut u8,bool;
+(ToggleGroup)__receiver)}
+}
+#[doc="`set_allowSwitchOff(bool)` overload"]fn set_allow_switch_off(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09100usize)as*mut u8,();
+(ToggleGroup)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09110usize)as*mut u8,();
+(ToggleGroup)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c091b0usize)as*mut u8,();
+(ToggleGroup)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c091d0usize)as*mut u8,();
+(ToggleGroup)__receiver)}
+}
+#[doc="`ValidateToggleIsInGroup(crate::unity_engine::ui::toggle::Toggle)` overload"]fn validate_toggle_is_in_group(self,toggle:impl::core::convert::Into<crate::unity_engine::ui::toggle::Toggle>)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c091f0usize)as*mut u8,();
+(ToggleGroup)__receiver,(crate::unity_engine::ui::toggle::Toggle)::core::convert::Into::into(toggle))}
+}
+#[doc="`NotifyToggleOn(crate::unity_engine::ui::toggle::Toggle, bool)` overload"]fn notify_toggle_on(self,toggle:impl::core::convert::Into<crate::unity_engine::ui::toggle::Toggle> ,send_callback:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08b60usize)as*mut u8,();
+(ToggleGroup)__receiver,(crate::unity_engine::ui::toggle::Toggle)::core::convert::Into::into(toggle),(bool)::core::convert::Into::into(send_callback))}
+}
+#[doc="`UnregisterToggle(crate::unity_engine::ui::toggle::Toggle)` overload"]fn unregister_toggle(self,toggle:impl::core::convert::Into<crate::unity_engine::ui::toggle::Toggle>)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08a20usize)as*mut u8,();
+(ToggleGroup)__receiver,(crate::unity_engine::ui::toggle::Toggle)::core::convert::Into::into(toggle))}
+}
+#[doc="`RegisterToggle(crate::unity_engine::ui::toggle::Toggle)` overload"]fn register_toggle(self,toggle:impl::core::convert::Into<crate::unity_engine::ui::toggle::Toggle>)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08ac0usize)as*mut u8,();
+(ToggleGroup)__receiver,(crate::unity_engine::ui::toggle::Toggle)::core::convert::Into::into(toggle))}
+}
+#[doc="`EnsureValidState()` overload"]fn ensure_valid_state(self,)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08250usize)as*mut u8,();
+(ToggleGroup)__receiver)}
+}
+#[doc="`AnyTogglesOn()` overload"]fn any_toggles_on(self,)->bool{unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08d60usize)as*mut u8,bool;
+(ToggleGroup)__receiver)}
+}
+#[doc="`ActiveToggles()` overload"]fn active_toggles(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::ui::toggle::Toggle>{unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09340usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::ui::toggle::Toggle> ;
+(ToggleGroup)__receiver)}
+}
+#[doc="`GetFirstActiveToggle()` overload"]fn get_first_active_toggle(self,)->crate::unity_engine::ui::toggle::Toggle{unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09470usize)as*mut u8,crate::unity_engine::ui::toggle::Toggle;
+(ToggleGroup)__receiver)}
+}
+#[doc="`SetAllTogglesOff(bool)` overload"]fn set_all_toggles_off(self,send_callback:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ToggleGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09510usize)as*mut u8,();
+(ToggleGroup)__receiver,(bool)::core::convert::Into::into(send_callback))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-togglegroup")]
-impl < __T : IToggleGroup > IToggleGroupMethods for __T { }
+#[cfg(feature="unity_engine-ui-togglegroup")]impl<__T:IToggleGroup>IToggleGroupMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-togglegroup")]
-impl ToggleGroup { pub fn get_allow_switch_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_allow_switch_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn validate_toggle_is_in_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn notify_toggle_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn unregister_toggle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn register_toggle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ensure_valid_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn any_toggles_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn active_toggles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_first_active_toggle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_all_toggles_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ToggleGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="unity_engine-ui-togglegroup")]impl ToggleGroup{pub fn get_allow_switch_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_allow_switch_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn validate_toggle_is_in_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn notify_toggle_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn unregister_toggle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn register_toggle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ensure_valid_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn any_toggles_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn active_toggles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_first_active_toggle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_all_toggles_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "unity_engine-ui-togglegroup")]
-impl ToggleGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ToggleGroup) , :: core :: stringify ! (new) ,)) ; < Self as IToggleGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-togglegroup")]impl ToggleGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ToggleGroup), ::core::stringify!(new),));
+ <Self as IToggleGroupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-togglegroup")]

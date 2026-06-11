@@ -4,33 +4,227 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/scriptloadingcontext/ScriptLoadingContext.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Execution" , name = "ScriptLoadingContext")] # [parent (crate :: system :: object :: Object)] pub struct ScriptLoadingContext {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/execution/scriptloadingcontext/ScriptLoadingContext.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Execution",name="ScriptLoadingContext")]#[parent(crate::system::object::Object)]pub struct ScriptLoadingContext{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScriptLoadingContext_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_script { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "get_Script" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "get_Script" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_script { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "set_Script" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "set_Script" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_scope { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "get_Scope" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "get_Scope" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_scope { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: buildtimescope :: BuildTimeScope as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "set_Scope" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "set_Scope" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_source { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "get_Source" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "get_Source" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_source { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "set_Source" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "set_Source" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_anonymous { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "get_Anonymous" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "get_Anonymous" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_anonymous { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "set_Anonymous" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "set_Anonymous" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_dynamic_expression { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "get_IsDynamicExpression" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "get_IsDynamicExpression" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_dynamic_expression { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "set_IsDynamicExpression" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "set_IsDynamicExpression" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_lexer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "get_Lexer" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "get_Lexer" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_lexer { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: lexer :: Lexer as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , "set_Lexer" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , "set_Lexer" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-scriptloadingcontext")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptLoadingContext_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_script{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"get_Script",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"get_Script",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_script{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"set_Script",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"set_Script",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_scope{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"get_Scope",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"get_Scope",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_scope{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"set_Scope",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"set_Scope",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_source{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"get_Source",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"get_Source",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_source{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"set_Source",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"set_Source",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_anonymous{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"get_Anonymous",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"get_Anonymous",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_anonymous{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"set_Anonymous",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"set_Anonymous",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_is_dynamic_expression{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"get_IsDynamicExpression",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"get_IsDynamicExpression",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_is_dynamic_expression{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"set_IsDynamicExpression",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"set_IsDynamicExpression",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_lexer{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"get_Lexer",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"get_Lexer",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_lexer{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::lexer::Lexer as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),"set_Lexer",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,"set_Lexer",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptLoadingContext as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptLoadingContext as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]
-pub trait IScriptLoadingContextMethods : IScriptLoadingContext { # [doc = "`get_Script()` overload"] fn get_script (self ,) -> crate :: moon_sharp :: interpreter :: script :: Script { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: script :: Script = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_get_script :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Script(crate::moon_sharp::interpreter::script::Script)` overload"] fn set_script (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script >) -> () { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , crate :: moon_sharp :: interpreter :: script :: Script , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_set_script :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Scope()` overload"] fn get_scope (self ,) -> crate :: moon_sharp :: interpreter :: execution :: buildtimescope :: BuildTimeScope { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: buildtimescope :: BuildTimeScope = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_get_scope :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Scope(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope)` overload"] fn set_scope (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: buildtimescope :: BuildTimeScope >) -> () { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , crate :: moon_sharp :: interpreter :: execution :: buildtimescope :: BuildTimeScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_set_scope :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Source()` overload"] fn get_source (self ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_get_source :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Source(crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode)` overload"] fn set_source (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode >) -> () { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , crate :: moon_sharp :: interpreter :: debugging :: sourcecode :: SourceCode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_set_source :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Anonymous()` overload"] fn get_anonymous (self ,) -> bool { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_get_anonymous :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Anonymous(bool)` overload"] fn set_anonymous (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_set_anonymous :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDynamicExpression()` overload"] fn get_is_dynamic_expression (self ,) -> bool { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_get_is_dynamic_expression :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsDynamicExpression(bool)` overload"] fn set_is_dynamic_expression (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_set_is_dynamic_expression :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Lexer()` overload"] fn get_lexer (self ,) -> crate :: moon_sharp :: interpreter :: tree :: lexer :: Lexer { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tree :: lexer :: Lexer = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_get_lexer :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Lexer(crate::moon_sharp::interpreter::tree::lexer::Lexer)` overload"] fn set_lexer (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: lexer :: Lexer >) -> () { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , crate :: moon_sharp :: interpreter :: tree :: lexer :: Lexer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_set_lexer :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script)` overload"] fn ctor (self , s : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script >) -> () { unsafe { let __receiver = < ScriptLoadingContext as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptLoadingContext , crate :: moon_sharp :: interpreter :: script :: Script , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__ScriptLoadingContext_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-scriptloadingcontext")]pub trait IScriptLoadingContextMethods:IScriptLoadingContext{#[doc="`get_Script()` overload"]fn get_script(self,)->crate::moon_sharp::interpreter::script::Script{unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_get_script::get_method_info().method_ptr,crate::moon_sharp::interpreter::script::Script;
+(ScriptLoadingContext)__receiver)}
+}
+#[doc="`set_Script(crate::moon_sharp::interpreter::script::Script)` overload"]fn set_script(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script>)->(){unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_set_script::get_method_info().method_ptr,();
+(ScriptLoadingContext)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(value))}
+}
+#[doc="`get_Scope()` overload"]fn get_scope(self,)->crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope{unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_get_scope::get_method_info().method_ptr,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope;
+(ScriptLoadingContext)__receiver)}
+}
+#[doc="`set_Scope(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope)` overload"]fn set_scope(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope>)->(){unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_set_scope::get_method_info().method_ptr,();
+(ScriptLoadingContext)__receiver,(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope)::core::convert::Into::into(value))}
+}
+#[doc="`get_Source()` overload"]fn get_source(self,)->crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode{unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_get_source::get_method_info().method_ptr,crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode;
+(ScriptLoadingContext)__receiver)}
+}
+#[doc="`set_Source(crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode)` overload"]fn set_source(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode>)->(){unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_set_source::get_method_info().method_ptr,();
+(ScriptLoadingContext)__receiver,(crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode)::core::convert::Into::into(value))}
+}
+#[doc="`get_Anonymous()` overload"]fn get_anonymous(self,)->bool{unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_get_anonymous::get_method_info().method_ptr,bool;
+(ScriptLoadingContext)__receiver)}
+}
+#[doc="`set_Anonymous(bool)` overload"]fn set_anonymous(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_set_anonymous::get_method_info().method_ptr,();
+(ScriptLoadingContext)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsDynamicExpression()` overload"]fn get_is_dynamic_expression(self,)->bool{unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_get_is_dynamic_expression::get_method_info().method_ptr,bool;
+(ScriptLoadingContext)__receiver)}
+}
+#[doc="`set_IsDynamicExpression(bool)` overload"]fn set_is_dynamic_expression(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_set_is_dynamic_expression::get_method_info().method_ptr,();
+(ScriptLoadingContext)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Lexer()` overload"]fn get_lexer(self,)->crate::moon_sharp::interpreter::tree::lexer::Lexer{unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_get_lexer::get_method_info().method_ptr,crate::moon_sharp::interpreter::tree::lexer::Lexer;
+(ScriptLoadingContext)__receiver)}
+}
+#[doc="`set_Lexer(crate::moon_sharp::interpreter::tree::lexer::Lexer)` overload"]fn set_lexer(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::lexer::Lexer>)->(){unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_set_lexer::get_method_info().method_ptr,();
+(ScriptLoadingContext)__receiver,(crate::moon_sharp::interpreter::tree::lexer::Lexer)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script)` overload"]fn ctor(self,s:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script>)->(){unsafe{let __receiver= <ScriptLoadingContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__ScriptLoadingContext_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(ScriptLoadingContext)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(s))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]
-impl < __T : IScriptLoadingContext > IScriptLoadingContextMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-execution-scriptloadingcontext")]impl<__T:IScriptLoadingContext>IScriptLoadingContextMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]
-impl ScriptLoadingContext { pub fn get_script_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_script_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_scope_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_scope_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_source_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_source_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_anonymous_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_anonymous_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_is_dynamic_expression_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_is_dynamic_expression_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_lexer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_lexer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptLoadingContext as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="moon_sharp-interpreter-execution-scriptloadingcontext")]impl ScriptLoadingContext{pub fn get_script_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_script_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_source_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_source_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_anonymous_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_anonymous_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_is_dynamic_expression_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_is_dynamic_expression_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_lexer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_lexer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]
-impl ScriptLoadingContext {
-# [doc = "`.ctor(crate::moon_sharp::interpreter::script::Script)` — overload selector"] pub fn new (s : crate :: moon_sharp :: interpreter :: script :: Script) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScriptLoadingContext) , :: core :: stringify ! (new) ,)) ; < Self as IScriptLoadingContextMethods > :: ctor (this , s) ; this }
+#[cfg(feature="moon_sharp-interpreter-execution-scriptloadingcontext")]impl ScriptLoadingContext{#[doc="`.ctor(crate::moon_sharp::interpreter::script::Script)` — overload selector"]pub fn new(s:crate::moon_sharp::interpreter::script::Script)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptLoadingContext), ::core::stringify!(new),));
+ <Self as IScriptLoadingContextMethods> ::ctor(this,s);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]

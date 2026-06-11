@@ -4,45 +4,81 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistselectmenucontent/FriendListSelectMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "FriendListSelectMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct FriendListSelectMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistselectmenucontent/FriendListSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="FriendListSelectMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct FriendListSelectMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-friendlistselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-friendlistselectmenucontent")]
-impl FriendListSelectMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226feb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ff50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ffd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: friendlistselectmenucontent :: FriendListSelectMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: friendlistselectmenucontent :: FriendListSelectMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226fc40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)` overload"] pub fn destroy (content : impl :: core :: convert :: Into < crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2270050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-friendlistselectmenucontent")]impl FriendListSelectMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226feb0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226ff50usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226ffd0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::friendlistselectmenucontent::FriendListSelectMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226fc40usize)as*mut u8,crate::app::friendlistselectmenucontent::FriendListSelectMenuContent;
+)}
+}
+#[doc="`Destroy(crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)` overload"]pub fn destroy(content:impl::core::convert::Into<crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2270050usize)as*mut u8,();
+(crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)::core::convert::Into::into(content))}
+}
+}
 
-#[cfg(feature = "app-friendlistselectmenucontent")]
-pub trait IFriendListSelectMenuContentMethods : IFriendListSelectMenuContent { # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < FriendListSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226fdf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < FriendListSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListSelectMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22700d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < FriendListSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListSelectMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2270140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FriendListSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22701b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-friendlistselectmenucontent")]pub trait IFriendListSelectMenuContentMethods:IFriendListSelectMenuContent{#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <FriendListSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226fdf0usize)as*mut u8,f32;
+(FriendListSelectMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <FriendListSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22700d0usize)as*mut u8,f32;
+(FriendListSelectMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <FriendListSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2270140usize)as*mut u8,f32;
+(FriendListSelectMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FriendListSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22701b0usize)as*mut u8,();
+(FriendListSelectMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-friendlistselectmenucontent")]
-impl < __T : IFriendListSelectMenuContent > IFriendListSelectMenuContentMethods for __T { }
+#[cfg(feature="app-friendlistselectmenucontent")]impl<__T:IFriendListSelectMenuContent>IFriendListSelectMenuContentMethods for __T{}
 
-#[cfg(feature = "app-friendlistselectmenucontent")]
-impl FriendListSelectMenuContent { pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-friendlistselectmenucontent")]impl FriendListSelectMenuContent{pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-friendlistselectmenucontent")]
-impl FriendListSelectMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FriendListSelectMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IFriendListSelectMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-friendlistselectmenucontent")]impl FriendListSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FriendListSelectMenuContent), ::core::stringify!(new),));
+ <Self as IFriendListSelectMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-friendlistselectmenucontent")]

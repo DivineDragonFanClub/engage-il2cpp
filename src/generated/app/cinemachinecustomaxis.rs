@@ -4,45 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cinemachinecustomaxis/CinemachineCustomAxis.md"))] # [:: unity2 :: class (namespace = "App" , name = "CinemachineCustomAxis")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CinemachineCustomAxis {
-# [offset (24)] # [rename (name = "xInversion")] pub x_inversion : bool ,
-# [offset (25)] # [rename (name = "yInversion")] pub y_inversion : bool ,
-# [offset (40)] # [rename (name = "Fov_Top")] pub fov_top : f32 ,
-# [offset (44)] # [rename (name = "Fov_Middle")] pub fov_middle : f32 ,
-# [offset (48)] # [rename (name = "Fov_Bottom")] pub fov_bottom : f32 ,
-# [offset (52)] # [rename (name = "Allowance")] pub allowance : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cinemachinecustomaxis/CinemachineCustomAxis.md"))]#[::unity2::class(namespace="App",name="CinemachineCustomAxis")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CinemachineCustomAxis{#[offset(24)]#[rename(name="xInversion")]pub x_inversion:bool, #[offset(25)]#[rename(name="yInversion")]pub y_inversion:bool, #[offset(40)]#[rename(name="Fov_Top")]pub fov_top:f32, #[offset(44)]#[rename(name="Fov_Middle")]pub fov_middle:f32, #[offset(48)]#[rename(name="Fov_Bottom")]pub fov_bottom:f32, #[offset(52)]#[rename(name="Allowance")]pub allowance:f32,}
 
 }
 
 #[cfg(feature = "app-cinemachinecustomaxis-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cinemachinecustomaxis")]
-pub trait ICinemachineCustomAxisMethods : ICinemachineCustomAxis { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CinemachineCustomAxis as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineCustomAxis , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea10f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAxisCustom(::unity2::Il2CppString)` overload"] fn get_axis_custom (self , axis_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { let __receiver = < CinemachineCustomAxis as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineCustomAxis , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea11b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (axis_name) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < CinemachineCustomAxis as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineCustomAxis , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea1940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineCustomAxis as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineCustomAxis , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea1a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cinemachinecustomaxis")]pub trait ICinemachineCustomAxisMethods:ICinemachineCustomAxis{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CinemachineCustomAxis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea10f0usize)as*mut u8,();
+(CinemachineCustomAxis)__receiver)}
+}
+#[doc="`GetAxisCustom(::unity2::Il2CppString)` overload"]fn get_axis_custom(self,axis_name:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <CinemachineCustomAxis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea11b0usize)as*mut u8,f32;
+(CinemachineCustomAxis)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(axis_name))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <CinemachineCustomAxis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea1940usize)as*mut u8,();
+(CinemachineCustomAxis)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CinemachineCustomAxis as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea1a60usize)as*mut u8,();
+(CinemachineCustomAxis)__receiver)}
+}
+}
 
-#[cfg(feature = "app-cinemachinecustomaxis")]
-impl < __T : ICinemachineCustomAxis > ICinemachineCustomAxisMethods for __T { }
+#[cfg(feature="app-cinemachinecustomaxis")]impl<__T:ICinemachineCustomAxis>ICinemachineCustomAxisMethods for __T{}
 
-#[cfg(feature = "app-cinemachinecustomaxis")]
-impl CinemachineCustomAxis { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineCustomAxis as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_axis_custom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineCustomAxis as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineCustomAxis as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineCustomAxis as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-cinemachinecustomaxis")]impl CinemachineCustomAxis{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_axis_custom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-cinemachinecustomaxis")]
-impl CinemachineCustomAxis {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineCustomAxis) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineCustomAxisMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cinemachinecustomaxis")]impl CinemachineCustomAxis{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CinemachineCustomAxis), ::core::stringify!(new),));
+ <Self as ICinemachineCustomAxisMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-cinemachinecustomaxis")]

@@ -4,194 +4,75 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: procscenesequence_1 :: { IProcSceneSequence_1 , ProcSceneSequence_1 }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::procscenesequence_1::{IProcSceneSequence_1,ProcSceneSequence_1}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubAccessoryRoom_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom.md"))]#[::unity2::class(namespace="App",name="HubAccessoryRoom")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubaccessoryroom::HubAccessoryRoom>)]pub struct HubAccessoryRoom{#[offset(136)]#[rename(name="_DisableList")]pub disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(152)]#[rename(name="m_Shop")]pub m_shop:crate::app::hubaccessoryroom::HubAccessoryRoom_Shop, #[offset(168)]#[rename(name="m_LastResultHash")]pub m_last_result_hash:i32, #[offset(176)]#[rename(name="m_Character")]pub m_character:crate::combat::character::Character, #[offset(184)]#[rename(name="m_LoadingAppearance")]pub m_loading_appearance:crate::combat::characterappearance::CharacterAppearance, #[offset(192)]#[rename(name="m_LoadingChara")]pub m_loading_chara:crate::combat::character::Character, #[offset(200)]#[rename(name="m_LastPID")]pub m_last_pid: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubAccessoryRoom_Shop{pub value:i32,}
+impl::unity2::ClassIdentity for HubAccessoryRoom_Shop{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubAccessoryRoom.Shop";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubAccessoryRoom_Shop{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubAccessoryRoom_Shop{pub fn hub()->Self{Self{value:0}
+}
+pub fn amiibo()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for HubAccessoryRoom_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubAccessoryRoom.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubAccessoryRoom_Label{pub value:i32,}
+impl::unity2::ClassIdentity for HubAccessoryRoom_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubAccessoryRoom.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubAccessoryRoom_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubAccessoryRoom_Label{pub fn none()->Self{Self{value:0}
+}
+pub fn init()->Self{Self{value:1}
+}
+pub fn main()->Self{Self{value:2}
+}
+pub fn exit()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::IlType for HubAccessoryRoom_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubAccessoryRoom_ViewMode{pub value:i32,}
+impl::unity2::ClassIdentity for HubAccessoryRoom_ViewMode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubAccessoryRoom.ViewMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  HubAccessoryRoom_Label  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn init() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn main() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 3 }
-
-    }
-
+impl::unity2::IlType for HubAccessoryRoom_ViewMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubAccessoryRoom_ViewMode  {
-    pub value: i32,
+impl HubAccessoryRoom_ViewMode{pub fn unit_select()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::ClassIdentity for HubAccessoryRoom_ViewMode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubAccessoryRoom.ViewMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn accessory_select()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for HubAccessoryRoom_ViewMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn preview()->Self{Self{value:2}
 }
-
-
-impl  HubAccessoryRoom_ViewMode  {
-    pub fn unit_select() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn accessory_select() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn preview() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroom/HubAccessoryRoom.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessoryRoom")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)] pub struct HubAccessoryRoom {
-# [offset (136)] # [rename (name = "_DisableList")] pub disable_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (152)] # [rename (name = "m_Shop")] pub m_shop : crate :: app :: hubaccessoryroom :: HubAccessoryRoom_Shop ,
-# [offset (168)] # [rename (name = "m_LastResultHash")] pub m_last_result_hash : i32 ,
-# [offset (176)] # [rename (name = "m_Character")] pub m_character : crate :: combat :: character :: Character ,
-# [offset (184)] # [rename (name = "m_LoadingAppearance")] pub m_loading_appearance : crate :: combat :: characterappearance :: CharacterAppearance ,
-# [offset (192)] # [rename (name = "m_LoadingChara")] pub m_loading_chara : crate :: combat :: character :: Character ,
-# [offset (200)] # [rename (name = "m_LastPID")] pub m_last_pid : :: unity2 :: Il2CppString ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubAccessoryRoom_Shop  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for HubAccessoryRoom_Shop  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubAccessoryRoom.Shop";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubAccessoryRoom_Shop  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubAccessoryRoom_Shop  {
-    pub fn hub() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn amiibo() -> Self {
-        Self { value: 1 }
-
-    }
-
 }
 
 }
@@ -199,32 +80,132 @@ impl  HubAccessoryRoom_Shop  {
 #[cfg(feature = "app-hubaccessoryroom-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubaccessoryroom")]
-impl HubAccessoryRoom { # [doc = "`SetUnit(crate::app::unit::Unit, crate::app::accessorydata::AccessoryData, bool, bool)` overload"] pub fn set_unit (base_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , accessory_data : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , is_delay_load : impl :: core :: convert :: Into < bool > , is_amiibo : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: accessorydata :: AccessoryData , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21737a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (base_unit) , :: core :: convert :: Into :: into (accessory_data) , :: core :: convert :: Into :: into (is_delay_load) , :: core :: convert :: Into :: into (is_amiibo) , :: core :: option :: Option :: None) } } } # [doc = "`SetViewMode(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"] pub fn set_view_mode (position : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2173c70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , shop : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroom :: HubAccessoryRoom_Shop >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: hubaccessoryroom :: HubAccessoryRoom_Shop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174d70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (shop) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubaccessoryroom")]impl HubAccessoryRoom{#[doc="`SetUnit(crate::app::unit::Unit, crate::app::accessorydata::AccessoryData, bool, bool)` overload"]pub fn set_unit(base_unit:impl::core::convert::Into<crate::app::unit::Unit> ,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,is_delay_load:impl::core::convert::Into<bool> ,is_amiibo:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21737a0usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(base_unit),(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data),(bool)::core::convert::Into::into(is_delay_load),(bool)::core::convert::Into::into(is_amiibo))}
+}
+#[doc="`SetViewMode(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"]pub fn set_view_mode(position:impl::core::convert::Into<crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2173c70usize)as*mut u8,();
+(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)::core::convert::Into::into(position))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop:impl::core::convert::Into<crate::app::hubaccessoryroom::HubAccessoryRoom_Shop>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2174d70usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)::core::convert::Into::into(shop))}
+}
+}
 
-#[cfg(feature = "app-hubaccessoryroom")]
-pub trait IHubAccessoryRoomMethods : IHubAccessoryRoom { # [doc = "`get_SceneName()` overload"] fn get_scene_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2173740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReturnSceneName()` overload"] fn get_return_scene_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2173790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` overload"] fn ctor (self , shop : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroom :: HubAccessoryRoom_Shop >) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , crate :: app :: hubaccessoryroom :: HubAccessoryRoom_Shop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2173d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (shop) , :: core :: option :: Option :: None) } } } # [doc = "`AdditiveScene()` overload"] fn additive_scene (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2173e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenTitle()` overload"] fn open_title (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21741f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnAdditiveScene()` overload"] fn un_additive_scene (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21743f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExitOther()` overload"] fn exit_other (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21747e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExitAfter()` overload"] fn exit_after (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCharacterLoading()` overload"] fn is_character_loading (self ,) -> bool { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Main()` overload"] fn main (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CameraPos()` overload"] fn get_camera_pos (self ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CameraPos(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera)` overload"] fn set_camera_pos (self , value : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera >) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174a40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`LoadCharacter(crate::combat::characterappearance::CharacterAppearance, ::unity2::Il2CppString)` overload"] fn load_character (self , appearance : impl :: core :: convert :: Into < crate :: combat :: characterappearance :: CharacterAppearance > , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , crate :: combat :: characterappearance :: CharacterAppearance , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174bc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (appearance) , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`DestroyCurrentChar()` overload"] fn destroy_current_char (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetViewModeCore(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"] fn set_view_mode_core (self , mode : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode >) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2173d40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoom as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2174d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubaccessoryroom")]pub trait IHubAccessoryRoomMethods:IHubAccessoryRoom{#[doc="`get_SceneName()` overload"]fn get_scene_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2173740usize)as*mut u8, ::unity2::Il2CppString;
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`get_ReturnSceneName()` overload"]fn get_return_scene_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2173790usize)as*mut u8, ::unity2::Il2CppString;
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`.ctor(crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` overload"]fn ctor(self,shop:impl::core::convert::Into<crate::app::hubaccessoryroom::HubAccessoryRoom_Shop>)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2173d50usize)as*mut u8,();
+(HubAccessoryRoom)__receiver,(crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)::core::convert::Into::into(shop))}
+}
+#[doc="`AdditiveScene()` overload"]fn additive_scene(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2173e30usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`OpenTitle()` overload"]fn open_title(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174010usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21741f0usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`UnAdditiveScene()` overload"]fn un_additive_scene(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174380usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21743f0usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`ExitOther()` overload"]fn exit_other(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21747e0usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`ExitAfter()` overload"]fn exit_after(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174880usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`IsCharacterLoading()` overload"]fn is_character_loading(self,)->bool{unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174910usize)as*mut u8,bool;
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`Main()` overload"]fn main(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174a10usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`get_CameraPos()` overload"]fn get_camera_pos(self,)->crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera{unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174a30usize)as*mut u8,crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera;
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`set_CameraPos(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera)` overload"]fn set_camera_pos(self,value:impl::core::convert::Into<crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera>)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174a40usize)as*mut u8,();
+(HubAccessoryRoom)__receiver,(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera)::core::convert::Into::into(value))}
+}
+#[doc="`LoadCharacter(crate::combat::characterappearance::CharacterAppearance, ::unity2::Il2CppString)` overload"]fn load_character(self,appearance:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance> ,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174bc0usize)as*mut u8,();
+(HubAccessoryRoom)__receiver,(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(appearance),(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`DestroyCurrentChar()` overload"]fn destroy_current_char(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174a50usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+#[doc="`SetViewModeCore(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"]fn set_view_mode_core(self,mode:impl::core::convert::Into<crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode>)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2173d40usize)as*mut u8,();
+(HubAccessoryRoom)__receiver,(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)::core::convert::Into::into(mode))}
+}
+#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <HubAccessoryRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2174d00usize)as*mut u8,();
+(HubAccessoryRoom)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubaccessoryroom")]
-impl < __T : IHubAccessoryRoom > IHubAccessoryRoomMethods for __T { }
+#[cfg(feature="app-hubaccessoryroom")]impl<__T:IHubAccessoryRoom>IHubAccessoryRoomMethods for __T{}
 
-#[cfg(feature = "app-hubaccessoryroom")]
-impl HubAccessoryRoom { pub fn get_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_return_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_view_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn additive_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn un_additive_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn exit_other_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn exit_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_character_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_camera_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_camera_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn load_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn destroy_current_char_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_view_mode_core_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-hubaccessoryroom")]impl HubAccessoryRoom{pub fn get_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_return_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_view_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn additive_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn un_additive_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn exit_other_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn exit_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_character_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_camera_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_camera_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn load_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn destroy_current_char_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_view_mode_core_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-hubaccessoryroom")]
-impl HubAccessoryRoom {
-# [doc = "`.ctor(crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` — overload selector"] pub fn new (shop : crate :: app :: hubaccessoryroom :: HubAccessoryRoom_Shop) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubAccessoryRoom) , :: core :: stringify ! (new) ,)) ; < Self as IHubAccessoryRoomMethods > :: ctor (this , shop) ; this }
+#[cfg(feature="app-hubaccessoryroom")]impl HubAccessoryRoom{#[doc="`.ctor(crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)` — overload selector"]pub fn new(shop:crate::app::hubaccessoryroom::HubAccessoryRoom_Shop)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubAccessoryRoom), ::core::stringify!(new),));
+ <Self as IHubAccessoryRoomMethods> ::ctor(this,shop);
+this}
 }
 
 #[cfg(feature = "app-hubaccessoryroom")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubAccessoryRoom_Label;
-    pub use super::HubAccessoryRoom_ViewMode;
     pub use super::HubAccessoryRoom;
     pub use super::IHubAccessoryRoom;
     pub use super::IHubAccessoryRoomMethods;
     pub use super::HubAccessoryRoom_Shop;
+    pub use super::HubAccessoryRoom_Label;
+    pub use super::HubAccessoryRoom_ViewMode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

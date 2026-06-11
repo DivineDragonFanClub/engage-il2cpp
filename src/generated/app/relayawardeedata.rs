@@ -4,40 +4,114 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawardeedata/RelayAwardeeData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayAwardeeData")] # [parent (crate :: system :: object :: Object)] pub struct RelayAwardeeData {
-# [static_field] # [rename (name = "Version")] pub version : u16 ,
-# [offset (16)] # [rename (name = "m_Edit")] pub m_edit : crate :: app :: unitedit :: UnitEdit ,
-# [offset (24)] # [rename (name = "m_Person")] pub m_person : crate :: app :: persondata :: PersonData ,
-# [offset (32)] # [rename (name = "m_Job")] pub m_job : crate :: app :: jobdata :: JobData ,
-# [offset (40)] # [rename (name = "m_God")] pub m_god : crate :: app :: goddata :: GodData ,
-# [offset (48)] # [rename (name = "m_RecordValue")] pub m_record_value : i32 ,
-# [offset (52)] # [rename (name = "m_RelayPlayerIndex")] pub m_relay_player_index : u8 ,
-# [offset (53)] # [rename (name = "m_IsMorph")] pub m_is_morph : bool ,
-# [offset (56)] # [rename (name = "m_Item")] pub m_item : crate :: app :: itemdata :: ItemData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayawardeedata/RelayAwardeeData.md"))]#[::unity2::class(namespace="App",name="RelayAwardeeData")]#[parent(crate::system::object::Object)]pub struct RelayAwardeeData{#[static_field]#[rename(name="Version")]pub version:u16, #[offset(16)]#[rename(name="m_Edit")]pub m_edit:crate::app::unitedit::UnitEdit, #[offset(24)]#[rename(name="m_Person")]pub m_person:crate::app::persondata::PersonData, #[offset(32)]#[rename(name="m_Job")]pub m_job:crate::app::jobdata::JobData, #[offset(40)]#[rename(name="m_God")]pub m_god:crate::app::goddata::GodData, #[offset(48)]#[rename(name="m_RecordValue")]pub m_record_value:i32, #[offset(52)]#[rename(name="m_RelayPlayerIndex")]pub m_relay_player_index:u8, #[offset(53)]#[rename(name="m_IsMorph")]pub m_is_morph:bool, #[offset(56)]#[rename(name="m_Item")]pub m_item:crate::app::itemdata::ItemData,}
 
 }
 
 #[cfg(feature = "app-relayawardeedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayawardeedata")]
-pub trait IRelayAwardeeDataMethods : IRelayAwardeeData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Register(crate::app::unit::Unit, i32, crate::app::itemdata::ItemData)` overload"] fn register (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , record_value : impl :: core :: convert :: Into < i32 > , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , crate :: app :: unit :: Unit , i32 , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cc820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (record_value) , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Register(crate::app::relayleavingunitdata::RelayLeavingUnitData, i32, crate::app::itemdata::ItemData)` overload"] fn register_2 (self , leaving_unit_data : impl :: core :: convert :: Into < crate :: app :: relayleavingunitdata :: RelayLeavingUnitData > , record_value : impl :: core :: convert :: Into < i32 > , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , crate :: app :: relayleavingunitdata :: RelayLeavingUnitData , i32 , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22cca30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (leaving_unit_data) , :: core :: convert :: Into :: into (record_value) , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsFemale()` overload"] fn is_female (self ,) -> bool { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGodName()` overload"] fn get_god_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d03b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`get_Edit()` overload"] fn get_edit (self ,) -> crate :: app :: unitedit :: UnitEdit { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitedit :: UnitEdit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Person()` overload"] fn get_person (self ,) -> crate :: app :: persondata :: PersonData { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Job()` overload"] fn get_job (self ,) -> crate :: app :: jobdata :: JobData { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobdata :: JobData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_God()` overload"] fn get_god (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RecordValue()` overload"] fn get_record_value (self ,) -> i32 { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RelayPlayerIndex()` overload"] fn get_relay_player_index (self ,) -> u8 { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsMorth()` overload"] fn get_is_morth (self ,) -> bool { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item()` overload"] fn get_item (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < RelayAwardeeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayAwardeeData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayawardeedata")]pub trait IRelayAwardeeDataMethods:IRelayAwardeeData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc740usize)as*mut u8,();
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`Register(crate::app::unit::Unit, i32, crate::app::itemdata::ItemData)` overload"]fn register(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,record_value:impl::core::convert::Into<i32> ,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cc820usize)as*mut u8,();
+(RelayAwardeeData)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(record_value),(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`Register(crate::app::relayleavingunitdata::RelayLeavingUnitData, i32, crate::app::itemdata::ItemData)` overload"]fn register_2(self,leaving_unit_data:impl::core::convert::Into<crate::app::relayleavingunitdata::RelayLeavingUnitData> ,record_value:impl::core::convert::Into<i32> ,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22cca30usize)as*mut u8,();
+(RelayAwardeeData)__receiver,(crate::app::relayleavingunitdata::RelayLeavingUnitData)::core::convert::Into::into(leaving_unit_data),(i32)::core::convert::Into::into(record_value),(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0210usize)as*mut u8,();
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0280usize)as*mut u8, ::unity2::Il2CppString;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`IsFemale()` overload"]fn is_female(self,)->bool{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0320usize)as*mut u8,bool;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`GetGodName()` overload"]fn get_god_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d03b0usize)as*mut u8, ::unity2::Il2CppString;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0430usize)as*mut u8,();
+(RelayAwardeeData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0540usize)as*mut u8,();
+(RelayAwardeeData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`get_Edit()` overload"]fn get_edit(self,)->crate::app::unitedit::UnitEdit{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0af0usize)as*mut u8,crate::app::unitedit::UnitEdit;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`get_Person()` overload"]fn get_person(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0b00usize)as*mut u8,crate::app::persondata::PersonData;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`get_Job()` overload"]fn get_job(self,)->crate::app::jobdata::JobData{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0b10usize)as*mut u8,crate::app::jobdata::JobData;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`get_God()` overload"]fn get_god(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0b20usize)as*mut u8,crate::app::goddata::GodData;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`get_RecordValue()` overload"]fn get_record_value(self,)->i32{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0b30usize)as*mut u8,i32;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`get_RelayPlayerIndex()` overload"]fn get_relay_player_index(self,)->u8{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0b40usize)as*mut u8,u8;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`get_IsMorth()` overload"]fn get_is_morth(self,)->bool{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0b50usize)as*mut u8,bool;
+(RelayAwardeeData)__receiver)}
+}
+#[doc="`get_Item()` overload"]fn get_item(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <RelayAwardeeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0b60usize)as*mut u8,crate::app::itemdata::ItemData;
+(RelayAwardeeData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayawardeedata")]
-impl < __T : IRelayAwardeeData > IRelayAwardeeDataMethods for __T { }
+#[cfg(feature="app-relayawardeedata")]impl<__T:IRelayAwardeeData>IRelayAwardeeDataMethods for __T{}
 
-#[cfg(feature = "app-relayawardeedata")]
-impl RelayAwardeeData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn register_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn register_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_female_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_god_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_record_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_relay_player_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_is_morth_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayAwardeeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-relayawardeedata")]impl RelayAwardeeData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn register_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn register_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_female_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_god_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_edit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_record_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_relay_player_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_is_morth_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-relayawardeedata")]
-impl RelayAwardeeData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayAwardeeData) , :: core :: stringify ! (new) ,)) ; < Self as IRelayAwardeeDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayawardeedata")]impl RelayAwardeeData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayAwardeeData), ::core::stringify!(new),));
+ <Self as IRelayAwardeeDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayawardeedata")]

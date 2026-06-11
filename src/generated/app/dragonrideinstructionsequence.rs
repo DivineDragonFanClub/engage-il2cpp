@@ -4,75 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DragonRideInstructionSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence.md"))]#[::unity2::class(namespace="App",name="DragonRideInstructionSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct DragonRideInstructionSequence{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_InstractionObject")]pub m_instraction_object:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DragonRideInstructionSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for DragonRideInstructionSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DragonRideInstructionSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for DragonRideInstructionSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DragonRideInstructionSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for DragonRideInstructionSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for DragonRideInstructionSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl DragonRideInstructionSequence_Label{pub fn load()->Self{Self{value:0}
 }
-
-
-impl  DragonRideInstructionSequence_Label  {
-    pub fn load() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn tick_main() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn tick_main()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideinstructionsequence/DragonRideInstructionSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideInstructionSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct DragonRideInstructionSequence {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_InstractionObject")] pub m_instraction_object : crate :: unity_engine :: gameobject :: GameObject ,
+pub fn end()->Self{Self{value:2}
+}
 }
 
 }
@@ -80,30 +40,85 @@ impl  DragonRideInstructionSequence_Label  {
 #[cfg(feature = "app-dragonrideinstructionsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonrideinstructionsequence")]
-impl DragonRideInstructionSequence { # [doc = "`ToggleOperation(crate::unity_engine::gameobject::GameObject)` overload"] pub fn toggle_operation (obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad2640usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateOperationObject(crate::unity_engine::gameobject::GameObject)` overload"] pub fn update_operation_object (obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad1f00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac48f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonrideinstructionsequence")]impl DragonRideInstructionSequence{#[doc="`ToggleOperation(crate::unity_engine::gameobject::GameObject)` overload"]pub fn toggle_operation(obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad2640usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
+}
+#[doc="`UpdateOperationObject(crate::unity_engine::gameobject::GameObject)` overload"]pub fn update_operation_object(obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad1f00usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ac48f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-dragonrideinstructionsequence")]
-pub trait IDragonRideInstructionSequenceMethods : IDragonRideInstructionSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideInstructionSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideInstructionSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad1c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < DragonRideInstructionSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideInstructionSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad1c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResource()` overload"] fn unload_resource (self ,) -> () { unsafe { let __receiver = < DragonRideInstructionSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideInstructionSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad1d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsResourceLoading()` overload"] fn is_resource_loading (self ,) -> bool { unsafe { let __receiver = < DragonRideInstructionSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideInstructionSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad1dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < DragonRideInstructionSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideInstructionSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad1e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < DragonRideInstructionSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideInstructionSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad2250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayOpenSE()` overload"] fn play_open_se (self ,) -> () { unsafe { let __receiver = < DragonRideInstructionSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideInstructionSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad22c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayCloseSE()` overload"] fn play_close_se (self ,) -> () { unsafe { let __receiver = < DragonRideInstructionSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideInstructionSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad2340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickInstruction()` overload"] fn tick_instruction (self ,) -> () { unsafe { let __receiver = < DragonRideInstructionSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideInstructionSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad23c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonrideinstructionsequence")]pub trait IDragonRideInstructionSequenceMethods:IDragonRideInstructionSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideInstructionSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad1c40usize)as*mut u8,();
+(DragonRideInstructionSequence)__receiver)}
+}
+#[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <DragonRideInstructionSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad1c50usize)as*mut u8,();
+(DragonRideInstructionSequence)__receiver)}
+}
+#[doc="`UnloadResource()` overload"]fn unload_resource(self,)->(){unsafe{let __receiver= <DragonRideInstructionSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad1d00usize)as*mut u8,();
+(DragonRideInstructionSequence)__receiver)}
+}
+#[doc="`IsResourceLoading()` overload"]fn is_resource_loading(self,)->bool{unsafe{let __receiver= <DragonRideInstructionSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad1dd0usize)as*mut u8,bool;
+(DragonRideInstructionSequence)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <DragonRideInstructionSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad1e50usize)as*mut u8,();
+(DragonRideInstructionSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <DragonRideInstructionSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad2250usize)as*mut u8,();
+(DragonRideInstructionSequence)__receiver)}
+}
+#[doc="`PlayOpenSE()` overload"]fn play_open_se(self,)->(){unsafe{let __receiver= <DragonRideInstructionSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad22c0usize)as*mut u8,();
+(DragonRideInstructionSequence)__receiver)}
+}
+#[doc="`PlayCloseSE()` overload"]fn play_close_se(self,)->(){unsafe{let __receiver= <DragonRideInstructionSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad2340usize)as*mut u8,();
+(DragonRideInstructionSequence)__receiver)}
+}
+#[doc="`TickInstruction()` overload"]fn tick_instruction(self,)->(){unsafe{let __receiver= <DragonRideInstructionSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad23c0usize)as*mut u8,();
+(DragonRideInstructionSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonrideinstructionsequence")]
-impl < __T : IDragonRideInstructionSequence > IDragonRideInstructionSequenceMethods for __T { }
+#[cfg(feature="app-dragonrideinstructionsequence")]impl<__T:IDragonRideInstructionSequence>IDragonRideInstructionSequenceMethods for __T{}
 
-#[cfg(feature = "app-dragonrideinstructionsequence")]
-impl DragonRideInstructionSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_resource_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn play_open_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn play_close_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn tick_instruction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn toggle_operation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_operation_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideInstructionSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-dragonrideinstructionsequence")]impl DragonRideInstructionSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_resource_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn play_open_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn play_close_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn tick_instruction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn toggle_operation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_operation_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-dragonrideinstructionsequence")]
-impl DragonRideInstructionSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideInstructionSequence) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideInstructionSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonrideinstructionsequence")]impl DragonRideInstructionSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideInstructionSequence), ::core::stringify!(new),));
+ <Self as IDragonRideInstructionSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonrideinstructionsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideInstructionSequence_Label;
     pub use super::DragonRideInstructionSequence;
     pub use super::IDragonRideInstructionSequence;
     pub use super::IDragonRideInstructionSequenceMethods;
+    pub use super::DragonRideInstructionSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

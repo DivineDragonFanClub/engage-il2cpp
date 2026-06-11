@@ -4,127 +4,281 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/classchange/ClassChange_ChangeJobData_ProofTypes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ClassChange_ChangeJobData_ProofTypes  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchange/ClassChange_ChangeJobData.md"))]#[::unity2::class(namespace="App",name="ClassChange.ChangeJobData")]#[parent(crate::system::object::Object)]pub struct ClassChange_ChangeJobData{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchange/ClassChange.md"))]#[::unity2::class(namespace="App",name="ClassChange")]#[parent(crate::system::object::Object)]pub struct ClassChange{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchange/ClassChange_ChangeJobData_ProofTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ClassChange_ChangeJobData_ProofTypes{pub value:i32,}
+impl::unity2::ClassIdentity for ClassChange_ChangeJobData_ProofTypes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ClassChange.ChangeJobData.ProofTypes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for ClassChange_ChangeJobData_ProofTypes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ClassChange.ChangeJobData.ProofTypes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for ClassChange_ChangeJobData_ProofTypes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for ClassChange_ChangeJobData_ProofTypes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl ClassChange_ChangeJobData_ProofTypes{pub fn master()->Self{Self{value:0}
 }
-
-
-impl  ClassChange_ChangeJobData_ProofTypes  {
-    pub fn master() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn change() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn enchant() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn gunner() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn change()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange_ChangeJobData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ClassChange.ChangeJobData")] # [parent (crate :: system :: object :: Object)] pub struct ClassChange_ChangeJobData {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange.md"))] # [:: unity2 :: class (namespace = "App" , name = "ClassChange")] # [parent (crate :: system :: object :: Object)] pub struct ClassChange {}
+pub fn enchant()->Self{Self{value:2}
+}
+pub fn gunner()->Self{Self{value:3}
+}
+}
 
 }
 
 #[cfg(feature = "app-classchange-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-classchange")]
-pub trait IClassChange_ChangeJobDataMethods : IClassChange_ChangeJobData { # [doc = "`.ctor(crate::app::jobdata::JobData, crate::app::weaponmask::WeaponMask)` overload"] fn ctor (self , job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData > , weapon_mask : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: jobdata :: JobData , crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c62b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (job) , :: core :: convert :: Into :: into (weapon_mask) , :: core :: option :: Option :: None) } } } # [doc = "`get_Job()` overload"] fn get_job (self ,) -> crate :: app :: jobdata :: JobData { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobdata :: JobData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c63f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Job(crate::app::jobdata::JobData)` overload"] fn set_job (self , value : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: jobdata :: JobData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_JobWeaponMask()` overload"] fn get_job_weapon_mask (self ,) -> crate :: app :: weaponmask :: WeaponMask { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_JobWeaponMask(crate::app::weaponmask::WeaponMask)` overload"] fn set_job_weapon_mask (self , value : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OriginalJobWeaponMask()` overload"] fn get_original_job_weapon_mask (self ,) -> crate :: app :: weaponmask :: WeaponMask { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OriginalJobWeaponMask(crate::app::weaponmask::WeaponMask)` overload"] fn set_original_job_weapon_mask (self , value : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ProofType()` overload"] fn get_proof_type (self ,) -> crate :: app :: classchange :: ClassChange_ChangeJobData_ProofTypes { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: classchange :: ClassChange_ChangeJobData_ProofTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ProofType(crate::app::classchange::ClassChange_ChangeJobData_ProofTypes)` overload"] fn set_proof_type (self , value : impl :: core :: convert :: Into < crate :: app :: classchange :: ClassChange_ChangeJobData_ProofTypes >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: classchange :: ClassChange_ChangeJobData_ProofTypes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CostLevel()` overload"] fn get_cost_level (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CostLevel(::unity2::Il2CppString)` overload"] fn set_cost_level (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsEnoughLevel()` overload"] fn get_is_enough_level (self ,) -> bool { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsEnoughLevel(bool)` overload"] fn set_is_enough_level (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c64a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CostWeaponMask()` overload"] fn get_cost_weapon_mask (self ,) -> crate :: app :: weaponmask :: WeaponMask { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c64b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CostWeaponMask(crate::app::weaponmask::WeaponMask)` overload"] fn set_cost_weapon_mask (self , value : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c64c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EquippableWeaponMask()` overload"] fn get_equippable_weapon_mask (self ,) -> crate :: app :: weaponmask :: WeaponMask { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c64d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EquippableWeaponMask(crate::app::weaponmask::WeaponMask)` overload"] fn set_equippable_weapon_mask (self , value : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c64e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsEnoughItem()` overload"] fn get_is_enough_item (self ,) -> bool { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c64f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsEnoughItem(bool)` overload"] fn set_is_enough_item (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsGender()` overload"] fn get_is_gender (self ,) -> bool { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsGender(bool)` overload"] fn set_is_gender (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsDefaultJob()` overload"] fn get_is_default_job (self ,) -> bool { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsDefaultJob(bool)` overload"] fn set_is_default_job (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExItem1()` overload"] fn get_ex_item1 (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExItem1(crate::app::itemdata::ItemData)` overload"] fn set_ex_item1 (self , value : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExItem2()` overload"] fn get_ex_item2 (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExItem2(crate::app::itemdata::ItemData)` overload"] fn set_ex_item2 (self , value : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDispWeaponLevel(crate::app::itemdata::ItemData_Kinds, crate::app::unit::Unit, *mutbool)` overload"] fn get_disp_weapon_level (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> (:: unity2 :: Il2CppString , bool) { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: itemdata :: ItemData_Kinds , crate :: app :: unit :: Unit , * mut bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (unit) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetProof()` overload"] fn get_proof (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c66b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CCCheck(crate::app::unit::Unit)` overload"] fn cc_check (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < ClassChange_ChangeJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange_ChangeJobData , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-classchange")]
-impl < __T : IClassChange_ChangeJobData > IClassChange_ChangeJobDataMethods for __T { }
-
-#[cfg(feature = "app-classchange")]
-impl ClassChange_ChangeJobData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_job_weapon_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_job_weapon_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_original_job_weapon_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_original_job_weapon_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_proof_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_proof_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_cost_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_cost_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_is_enough_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_is_enough_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_cost_weapon_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_cost_weapon_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_equippable_weapon_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_equippable_weapon_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_is_enough_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_is_enough_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_is_gender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_is_gender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_is_default_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_is_default_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_ex_item1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_ex_item1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_ex_item2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_ex_item2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_disp_weapon_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_proof_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn cc_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange_ChangeJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } }
-
-#[cfg(feature = "app-classchange")]
-impl ClassChange_ChangeJobData {
-# [doc = "`.ctor(crate::app::jobdata::JobData, crate::app::weaponmask::WeaponMask)` — overload selector"] pub fn new (job : crate :: app :: jobdata :: JobData , weapon_mask : crate :: app :: weaponmask :: WeaponMask) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClassChange_ChangeJobData) , :: core :: stringify ! (new) ,)) ; < Self as IClassChange_ChangeJobDataMethods > :: ctor (this , job , weapon_mask) ; this }
+#[cfg(feature="app-classchange")]pub trait IClassChange_ChangeJobDataMethods:IClassChange_ChangeJobData{#[doc="`.ctor(crate::app::jobdata::JobData, crate::app::weaponmask::WeaponMask)` overload"]fn ctor(self,job:impl::core::convert::Into<crate::app::jobdata::JobData> ,weapon_mask:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c62b0usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(crate::app::jobdata::JobData)::core::convert::Into::into(job),(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(weapon_mask))}
+}
+#[doc="`get_Job()` overload"]fn get_job(self,)->crate::app::jobdata::JobData{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c63f0usize)as*mut u8,crate::app::jobdata::JobData;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_Job(crate::app::jobdata::JobData)` overload"]fn set_job(self,value:impl::core::convert::Into<crate::app::jobdata::JobData>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6400usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(crate::app::jobdata::JobData)::core::convert::Into::into(value))}
+}
+#[doc="`get_JobWeaponMask()` overload"]fn get_job_weapon_mask(self,)->crate::app::weaponmask::WeaponMask{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6410usize)as*mut u8,crate::app::weaponmask::WeaponMask;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_JobWeaponMask(crate::app::weaponmask::WeaponMask)` overload"]fn set_job_weapon_mask(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6420usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_OriginalJobWeaponMask()` overload"]fn get_original_job_weapon_mask(self,)->crate::app::weaponmask::WeaponMask{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6430usize)as*mut u8,crate::app::weaponmask::WeaponMask;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_OriginalJobWeaponMask(crate::app::weaponmask::WeaponMask)` overload"]fn set_original_job_weapon_mask(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6440usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_ProofType()` overload"]fn get_proof_type(self,)->crate::app::classchange::ClassChange_ChangeJobData_ProofTypes{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6450usize)as*mut u8,crate::app::classchange::ClassChange_ChangeJobData_ProofTypes;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_ProofType(crate::app::classchange::ClassChange_ChangeJobData_ProofTypes)` overload"]fn set_proof_type(self,value:impl::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData_ProofTypes>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6460usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(crate::app::classchange::ClassChange_ChangeJobData_ProofTypes)::core::convert::Into::into(value))}
+}
+#[doc="`get_CostLevel()` overload"]fn get_cost_level(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6470usize)as*mut u8, ::unity2::Il2CppString;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_CostLevel(::unity2::Il2CppString)` overload"]fn set_cost_level(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6480usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsEnoughLevel()` overload"]fn get_is_enough_level(self,)->bool{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6490usize)as*mut u8,bool;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_IsEnoughLevel(bool)` overload"]fn set_is_enough_level(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c64a0usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_CostWeaponMask()` overload"]fn get_cost_weapon_mask(self,)->crate::app::weaponmask::WeaponMask{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c64b0usize)as*mut u8,crate::app::weaponmask::WeaponMask;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_CostWeaponMask(crate::app::weaponmask::WeaponMask)` overload"]fn set_cost_weapon_mask(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c64c0usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_EquippableWeaponMask()` overload"]fn get_equippable_weapon_mask(self,)->crate::app::weaponmask::WeaponMask{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c64d0usize)as*mut u8,crate::app::weaponmask::WeaponMask;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_EquippableWeaponMask(crate::app::weaponmask::WeaponMask)` overload"]fn set_equippable_weapon_mask(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c64e0usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsEnoughItem()` overload"]fn get_is_enough_item(self,)->bool{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c64f0usize)as*mut u8,bool;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_IsEnoughItem(bool)` overload"]fn set_is_enough_item(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6500usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsGender()` overload"]fn get_is_gender(self,)->bool{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6510usize)as*mut u8,bool;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_IsGender(bool)` overload"]fn set_is_gender(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6520usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsDefaultJob()` overload"]fn get_is_default_job(self,)->bool{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6530usize)as*mut u8,bool;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_IsDefaultJob(bool)` overload"]fn set_is_default_job(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6540usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExItem1()` overload"]fn get_ex_item1(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6550usize)as*mut u8,crate::app::itemdata::ItemData;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_ExItem1(crate::app::itemdata::ItemData)` overload"]fn set_ex_item1(self,value:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6560usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExItem2()` overload"]fn get_ex_item2(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6570usize)as*mut u8,crate::app::itemdata::ItemData;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`set_ExItem2(crate::app::itemdata::ItemData)` overload"]fn set_ex_item2(self,value:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6580usize)as*mut u8,();
+(ClassChange_ChangeJobData)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(value))}
+}
+#[doc="`GetDispWeaponLevel(crate::app::itemdata::ItemData_Kinds, crate::app::unit::Unit, *mutbool)` overload"]fn get_disp_weapon_level(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(::unity2::Il2CppString,bool){unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x19c6590usize)as*mut u8, ::unity2::Il2CppString;
+(ClassChange_ChangeJobData)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind),(crate::app::unit::Unit)::core::convert::Into::into(unit),(*mut bool)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetProof()` overload"]fn get_proof(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c66b0usize)as*mut u8,crate::app::itemdata::ItemData;
+(ClassChange_ChangeJobData)__receiver)}
+}
+#[doc="`CCCheck(crate::app::unit::Unit)` overload"]fn cc_check(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <ClassChange_ChangeJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6700usize)as*mut u8,bool;
+(ClassChange_ChangeJobData)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
 }
 
-#[cfg(feature = "app-classchange")]
-impl ClassChange { # [doc = "`GetSelectJobList(crate::app::jobdata::JobData)` overload"] pub fn get_select_job_list (job_data : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: classchange :: ClassChange_ChangeJobData > { unsafe { { let __inner : extern "C" fn (crate :: app :: jobdata :: JobData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: classchange :: ClassChange_ChangeJobData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea1be0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (job_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetJobListAll()` overload"] pub fn get_job_list_all () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: classchange :: ClassChange_ChangeJobData > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: classchange :: ClassChange_ChangeJobData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea2050usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetJobList(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"] pub fn get_job_list (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea2310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`GetJobListByMaster(crate::app::unit::Unit)` overload"] pub fn get_job_list_by_master (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea24a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetJobListByChange(crate::app::unit::Unit)` overload"] pub fn get_job_list_by_change (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea2540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`AddToListForMaster(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)` overload"] pub fn add_to_list_for_master (job_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , high_jobs : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > , crate :: app :: unit :: Unit , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea25e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (job_list) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (high_jobs) , :: core :: option :: Option :: None) } } } # [doc = "`AddToListForChange(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit)` overload"] pub fn add_to_list_for_change (job_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea2710usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (job_list) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`AddToList(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::app::jobdata::JobData, bool, bool)` overload"] pub fn add_to_list (job_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData > , include_current_job : impl :: core :: convert :: Into < bool > , ignore_aptitude_check : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > , crate :: app :: unit :: Unit , crate :: app :: jobdata :: JobData , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea2c70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (job_list) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (job) , :: core :: convert :: Into :: into (include_current_job) , :: core :: convert :: Into :: into (ignore_aptitude_check) , :: core :: option :: Option :: None) } } } # [doc = "`GetRelationalJobs(crate::app::jobdata::JobData)` overload"] pub fn get_relational_jobs (job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > { unsafe { { let __inner : extern "C" fn (crate :: app :: jobdata :: JobData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea2f10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (job) , :: core :: option :: Option :: None) } } } # [doc = "`IsExists(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::jobdata::JobData)` overload"] pub fn is_exists (job_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > > , target_job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: jobdata :: JobData > , crate :: app :: jobdata :: JobData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea3030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (job_list) , :: core :: convert :: Into :: into (target_job) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-classchange")]impl<__T:IClassChange_ChangeJobData>IClassChange_ChangeJobDataMethods for __T{}
 
-#[cfg(feature = "app-classchange")]
-pub trait IClassChangeMethods : IClassChange { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ClassChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea30f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-classchange")]impl ClassChange_ChangeJobData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_job_weapon_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_job_weapon_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_original_job_weapon_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_original_job_weapon_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_proof_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_proof_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_cost_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_cost_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_is_enough_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_is_enough_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_cost_weapon_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_cost_weapon_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_equippable_weapon_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_equippable_weapon_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_is_enough_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_is_enough_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_is_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_is_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_is_default_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_is_default_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_ex_item1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_ex_item1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_ex_item2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_ex_item2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_disp_weapon_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_proof_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn cc_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+}
 
-#[cfg(feature = "app-classchange")]
-impl < __T : IClassChange > IClassChangeMethods for __T { }
+#[cfg(feature="app-classchange")]impl ClassChange_ChangeJobData{#[doc="`.ctor(crate::app::jobdata::JobData, crate::app::weaponmask::WeaponMask)` — overload selector"]pub fn new(job:crate::app::jobdata::JobData,weapon_mask:crate::app::weaponmask::WeaponMask)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ClassChange_ChangeJobData), ::core::stringify!(new),));
+ <Self as IClassChange_ChangeJobDataMethods> ::ctor(this,job,weapon_mask);
+this}
+}
 
-#[cfg(feature = "app-classchange")]
-impl ClassChange { pub fn get_select_job_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_job_list_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_job_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_job_list_by_master_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_job_list_by_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_to_list_for_master_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_to_list_for_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn add_to_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_relational_jobs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-classchange")]impl ClassChange{#[doc="`GetSelectJobList(crate::app::jobdata::JobData)` overload"]pub fn get_select_job_list(job_data:impl::core::convert::Into<crate::app::jobdata::JobData>)->crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea1be0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData> ;
+(crate::app::jobdata::JobData)::core::convert::Into::into(job_data))}
+}
+#[doc="`GetJobListAll()` overload"]pub fn get_job_list_all()->crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea2050usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::classchange::ClassChange_ChangeJobData> ;
+)}
+}
+#[doc="`GetJobList(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]pub fn get_job_list(unit:impl::core::convert::Into<crate::app::unit::Unit> ,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea2310usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> ;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`GetJobListByMaster(crate::app::unit::Unit)` overload"]pub fn get_job_list_by_master(unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea24a0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> ;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetJobListByChange(crate::app::unit::Unit)` overload"]pub fn get_job_list_by_change(unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea2540usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> ;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`AddToListForMaster(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)` overload"]pub fn add_to_list_for_master(job_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> > ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,high_jobs:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea25e0usize)as*mut u8,();
+(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)::core::convert::Into::into(job_list),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)::core::convert::Into::into(high_jobs))}
+}
+#[doc="`AddToListForChange(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit)` overload"]pub fn add_to_list_for_change(job_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> > ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea2710usize)as*mut u8,();
+(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)::core::convert::Into::into(job_list),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`AddToList(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::app::jobdata::JobData, bool, bool)` overload"]pub fn add_to_list(job_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> > ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,job:impl::core::convert::Into<crate::app::jobdata::JobData> ,include_current_job:impl::core::convert::Into<bool> ,ignore_aptitude_check:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea2c70usize)as*mut u8,();
+(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)::core::convert::Into::into(job_list),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::jobdata::JobData)::core::convert::Into::into(job),(bool)::core::convert::Into::into(include_current_job),(bool)::core::convert::Into::into(ignore_aptitude_check))}
+}
+#[doc="`GetRelationalJobs(crate::app::jobdata::JobData)` overload"]pub fn get_relational_jobs(job:impl::core::convert::Into<crate::app::jobdata::JobData>)->crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea2f10usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> ;
+(crate::app::jobdata::JobData)::core::convert::Into::into(job))}
+}
+#[doc="`IsExists(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::jobdata::JobData)` overload"]pub fn is_exists(job_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData> > ,target_job:impl::core::convert::Into<crate::app::jobdata::JobData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea3030usize)as*mut u8,bool;
+(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)::core::convert::Into::into(job_list),(crate::app::jobdata::JobData)::core::convert::Into::into(target_job))}
+}
+}
 
-#[cfg(feature = "app-classchange")]
-impl ClassChange {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClassChange) , :: core :: stringify ! (new) ,)) ; < Self as IClassChangeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-classchange")]pub trait IClassChangeMethods:IClassChange{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ClassChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea30f0usize)as*mut u8,();
+(ClassChange)__receiver)}
+}
+}
+
+#[cfg(feature="app-classchange")]impl<__T:IClassChange>IClassChangeMethods for __T{}
+
+#[cfg(feature="app-classchange")]impl ClassChange{pub fn get_select_job_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_job_list_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_job_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_job_list_by_master_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_job_list_by_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_to_list_for_master_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_to_list_for_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_to_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_relational_jobs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-classchange")]impl ClassChange{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ClassChange), ::core::stringify!(new),));
+ <Self as IClassChangeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-classchange")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ClassChange_ChangeJobData_ProofTypes;
     pub use super::ClassChange_ChangeJobData;
     pub use super::IClassChange_ChangeJobData;
     pub use super::IClassChange_ChangeJobDataMethods;
     pub use super::ClassChange;
     pub use super::IClassChange;
     pub use super::IClassChangeMethods;
+    pub use super::ClassChange_ChangeJobData_ProofTypes;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -4,97 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photoappearcontent/PhotoAppearContent_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PhotoAppearContent_State  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photoappearcontent/PhotoAppearContent.md"))]#[::unity2::class(namespace="App",name="PhotoAppearContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct PhotoAppearContent{#[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_Progress")]pub m_progress:f32, #[offset(48)]#[rename(name="m_MaterialInst")]pub m_material_inst:crate::unity_engine::material::Material, #[offset(56)]#[rename(name="m_State")]pub m_state:crate::app::photoappearcontent::PhotoAppearContent_State, #[offset(60)]#[rename(name="m_NextState")]pub m_next_state:crate::app::photoappearcontent::PhotoAppearContent_State,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photoappearcontent/PhotoAppearContent_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PhotoAppearContent_State{pub value:i32,}
+impl::unity2::ClassIdentity for PhotoAppearContent_State{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PhotoAppearContent.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for PhotoAppearContent_State  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PhotoAppearContent.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for PhotoAppearContent_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for PhotoAppearContent_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl PhotoAppearContent_State{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  PhotoAppearContent_State  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn flash() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn appear() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn scaling() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn flash()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photoappearcontent/PhotoAppearContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotoAppearContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PhotoAppearContent {
-# [offset (24)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_Progress")] pub m_progress : f32 ,
-# [offset (48)] # [rename (name = "m_MaterialInst")] pub m_material_inst : crate :: unity_engine :: material :: Material ,
-# [offset (56)] # [rename (name = "m_State")] pub m_state : crate :: app :: photoappearcontent :: PhotoAppearContent_State ,
-# [offset (60)] # [rename (name = "m_NextState")] pub m_next_state : crate :: app :: photoappearcontent :: PhotoAppearContent_State ,
+pub fn appear()->Self{Self{value:2}
+}
+pub fn scaling()->Self{Self{value:3}
+}
+pub fn end()->Self{Self{value:4}
+}
 }
 
 }
@@ -102,30 +50,102 @@ impl  PhotoAppearContent_State  {
 #[cfg(feature = "app-photoappearcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photoappearcontent")]
-impl PhotoAppearContent { # [doc = "`TryPlayAnime(crate::unity_engine::animator::Animator, ::unity2::Il2CppString)` overload"] pub fn try_play_anime (animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animator :: Animator , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687750usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photoappearcontent")]impl PhotoAppearContent{#[doc="`TryPlayAnime(crate::unity_engine::animator::Animator, ::unity2::Il2CppString)` overload"]pub fn try_play_anime(animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2687750usize)as*mut u8,();
+(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(::unity2::Il2CppString)::core::convert::Into::into(state_name))}
+}
+}
 
-#[cfg(feature = "app-photoappearcontent")]
-pub trait IPhotoAppearContentMethods : IPhotoAppearContent { # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26870d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26872a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickFlash()` overload"] fn tick_flash (self ,) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickAppear()` overload"] fn tick_appear (self ,) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickScaling()` overload"] fn tick_scaling (self ,) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26876c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartEffect(crate::unity_engine::sprite::Sprite)` overload"] fn start_effect (self , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } } # [doc = "`ResetEffect()` overload"] fn reset_effect (self ,) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Skip()` overload"] fn skip (self ,) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsAppear()` overload"] fn get_is_appear (self ,) -> bool { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsEnd()` overload"] fn get_is_end (self ,) -> bool { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TrySkipAnime(crate::unity_engine::animator::Animator, ::unity2::Il2CppString)` overload"] fn try_skip_anime (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , crate :: unity_engine :: animator :: Animator , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687a20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsEndAnime(crate::unity_engine::animator::Animator)` overload"] fn is_end_anime (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> bool { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotoAppearContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotoAppearContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2687a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photoappearcontent")]pub trait IPhotoAppearContentMethods:IPhotoAppearContent{#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26870d0usize)as*mut u8,();
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687150usize)as*mut u8,();
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26872a0usize)as*mut u8,();
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`TickFlash()` overload"]fn tick_flash(self,)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687540usize)as*mut u8,();
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`TickAppear()` overload"]fn tick_appear(self,)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687600usize)as*mut u8,();
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`TickScaling()` overload"]fn tick_scaling(self,)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26876c0usize)as*mut u8,();
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`StartEffect(crate::unity_engine::sprite::Sprite)` overload"]fn start_effect(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687880usize)as*mut u8,();
+(PhotoAppearContent)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`ResetEffect()` overload"]fn reset_effect(self,)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687930usize)as*mut u8,();
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`Skip()` overload"]fn skip(self,)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687990usize)as*mut u8,();
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`get_IsAppear()` overload"]fn get_is_appear(self,)->bool{unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687a40usize)as*mut u8,bool;
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`get_IsEnd()` overload"]fn get_is_end(self,)->bool{unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687a50usize)as*mut u8,bool;
+(PhotoAppearContent)__receiver)}
+}
+#[doc="`TrySkipAnime(crate::unity_engine::animator::Animator, ::unity2::Il2CppString)` overload"]fn try_skip_anime(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687a20usize)as*mut u8,();
+(PhotoAppearContent)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(::unity2::Il2CppString)::core::convert::Into::into(state_name))}
+}
+#[doc="`IsEndAnime(crate::unity_engine::animator::Animator)` overload"]fn is_end_anime(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->bool{unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687800usize)as*mut u8,bool;
+(PhotoAppearContent)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotoAppearContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2687a60usize)as*mut u8,();
+(PhotoAppearContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photoappearcontent")]
-impl < __T : IPhotoAppearContent > IPhotoAppearContentMethods for __T { }
+#[cfg(feature="app-photoappearcontent")]impl<__T:IPhotoAppearContent>IPhotoAppearContentMethods for __T{}
 
-#[cfg(feature = "app-photoappearcontent")]
-impl PhotoAppearContent { pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn tick_flash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn tick_appear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn tick_scaling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reset_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_is_appear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn try_play_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn try_skip_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_end_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotoAppearContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-photoappearcontent")]impl PhotoAppearContent{pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_flash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn tick_appear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn tick_scaling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reset_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_is_appear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn try_play_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn try_skip_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_end_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-photoappearcontent")]
-impl PhotoAppearContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotoAppearContent) , :: core :: stringify ! (new) ,)) ; < Self as IPhotoAppearContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photoappearcontent")]impl PhotoAppearContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotoAppearContent), ::core::stringify!(new),));
+ <Self as IPhotoAppearContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-photoappearcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PhotoAppearContent_State;
     pub use super::PhotoAppearContent;
     pub use super::IPhotoAppearContent;
     pub use super::IPhotoAppearContentMethods;
+    pub use super::PhotoAppearContent_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

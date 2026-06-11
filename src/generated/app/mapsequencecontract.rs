@@ -4,107 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: commonbattlesequence_1 :: { CommonBattleSequence_1 , ICommonBattleSequence_1 }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::commonbattlesequence_1::{CommonBattleSequence_1,ICommonBattleSequence_1}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecontract/MapSequenceContract_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceContract_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecontract/MapSequenceContract.md"))]#[::unity2::class(namespace="App",name="MapSequenceContract")]#[parent(crate::app::commonbattlesequence_1::CommonBattleSequence_1<crate::app::mapsequencecontract::MapSequenceContract>)]pub struct MapSequenceContract{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecontract/MapSequenceContract_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceContract_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceContract_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceContract.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MapSequenceContract_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceContract.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MapSequenceContract_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MapSequenceContract_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MapSequenceContract_Label{pub fn simple()->Self{Self{value:0}
 }
-
-
-impl  MapSequenceContract_Label  {
-    pub fn simple() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn skip() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn after() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn skip()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecontract/MapSequenceContract.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceContract")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencecontract :: MapSequenceContract >)] pub struct MapSequenceContract {}
+pub fn after()->Self{Self{value:2}
+}
+}
 
 }
 
 #[cfg(feature = "app-mapsequencecontract-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencecontract")]
-impl MapSequenceContract { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c6fe0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencecontract")]impl MapSequenceContract{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23c6fe0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-mapsequencecontract")]
-pub trait IMapSequenceContractMethods : IMapSequenceContract { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceContract as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceContract , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c6940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Calculate()` overload"] fn calculate (self ,) -> () { unsafe { let __receiver = < MapSequenceContract as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceContract , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c69a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < MapSequenceContract as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceContract , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c6b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SimpleDance()` overload"] fn simple_dance (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < MapSequenceContract as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceContract , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c6c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < MapSequenceContract as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceContract , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c6c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Grow()` overload"] fn grow (self ,) -> () { unsafe { let __receiver = < MapSequenceContract as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceContract , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c6f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GodExp()` overload"] fn god_exp (self ,) -> () { unsafe { let __receiver = < MapSequenceContract as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceContract , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c6f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencecontract")]pub trait IMapSequenceContractMethods:IMapSequenceContract{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceContract as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c6940usize)as*mut u8,();
+(MapSequenceContract)__receiver)}
+}
+#[doc="`Calculate()` overload"]fn calculate(self,)->(){unsafe{let __receiver= <MapSequenceContract as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c69a0usize)as*mut u8,();
+(MapSequenceContract)__receiver)}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <MapSequenceContract as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c6b40usize)as*mut u8,();
+(MapSequenceContract)__receiver)}
+}
+#[doc="`SimpleDance()` overload"]fn simple_dance(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceContract as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c6c00usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(MapSequenceContract)__receiver)}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <MapSequenceContract as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c6c80usize)as*mut u8,();
+(MapSequenceContract)__receiver)}
+}
+#[doc="`Grow()` overload"]fn grow(self,)->(){unsafe{let __receiver= <MapSequenceContract as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c6f50usize)as*mut u8,();
+(MapSequenceContract)__receiver)}
+}
+#[doc="`GodExp()` overload"]fn god_exp(self,)->(){unsafe{let __receiver= <MapSequenceContract as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c6f60usize)as*mut u8,();
+(MapSequenceContract)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencecontract")]
-impl < __T : IMapSequenceContract > IMapSequenceContractMethods for __T { }
+#[cfg(feature="app-mapsequencecontract")]impl<__T:IMapSequenceContract>IMapSequenceContractMethods for __T{}
 
-#[cfg(feature = "app-mapsequencecontract")]
-impl MapSequenceContract { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceContract as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceContract as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceContract as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn simple_dance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceContract as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceContract as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn grow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceContract as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn god_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceContract as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceContract as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-mapsequencecontract")]impl MapSequenceContract{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn simple_dance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn grow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn god_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-mapsequencecontract")]
-impl MapSequenceContract {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceContract) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceContractMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencecontract")]impl MapSequenceContract{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceContract), ::core::stringify!(new),));
+ <Self as IMapSequenceContractMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequencecontract")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceContract_Label;
     pub use super::MapSequenceContract;
     pub use super::IMapSequenceContract;
     pub use super::IMapSequenceContractMethods;
+    pub use super::MapSequenceContract_Label;
     pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

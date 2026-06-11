@@ -4,38 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventreceiver/MyRoomEventReceiver.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomEventReceiver")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MyRoomEventReceiver {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeventreceiver/MyRoomEventReceiver.md"))]#[::unity2::class(namespace="App",name="MyRoomEventReceiver")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MyRoomEventReceiver{}
 
 }
 
 #[cfg(feature = "app-myroomeventreceiver-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomeventreceiver")]
-pub trait IMyRoomEventReceiverMethods : IMyRoomEventReceiver { # [doc = "`get_AdjustedTime()` overload"] fn get_adjusted_time (self ,) -> f64 { unsafe { let __receiver = < MyRoomEventReceiver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventReceiver , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238ee40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"] fn on_notify (self , origin : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , notification : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: inotification :: INotification > , context : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < MyRoomEventReceiver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventReceiver , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: inotification :: INotification , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238ef40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (origin) , :: core :: convert :: Into :: into (notification) , :: core :: convert :: Into :: into (context) , :: core :: option :: Option :: None) } } } # [doc = "`OnNotifyEffectMarker(crate::app::myroomeffectmarker::MyRoomEffectMarker)` overload"] fn on_notify_effect_marker (self , effect_marker : impl :: core :: convert :: Into < crate :: app :: myroomeffectmarker :: MyRoomEffectMarker >) -> () { unsafe { let __receiver = < MyRoomEventReceiver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventReceiver , crate :: app :: myroomeffectmarker :: MyRoomEffectMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238f0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (effect_marker) , :: core :: option :: Option :: None) } } } # [doc = "`OnNotifySEMarker(crate::app::myroomsemarker::MyRoomSEMarker)` overload"] fn on_notify_se_marker (self , se_marker : impl :: core :: convert :: Into < crate :: app :: myroomsemarker :: MyRoomSEMarker >) -> () { unsafe { let __receiver = < MyRoomEventReceiver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventReceiver , crate :: app :: myroomsemarker :: MyRoomSEMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238f2e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (se_marker) , :: core :: option :: Option :: None) } } } # [doc = "`OnNotifyCameraMarker(crate::app::myroomcameramarker::MyRoomCameraMarker)` overload"] fn on_notify_camera_marker (self , camera_marker : impl :: core :: convert :: Into < crate :: app :: myroomcameramarker :: MyRoomCameraMarker >) -> () { unsafe { let __receiver = < MyRoomEventReceiver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventReceiver , crate :: app :: myroomcameramarker :: MyRoomCameraMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238f3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera_marker) , :: core :: option :: Option :: None) } } } # [doc = "`OnNotifyLookingCameraMarker(crate::app::myroomlookingcameramarker::MyRoomLookingCameraMarker)` overload"] fn on_notify_looking_camera_marker (self , looking_camera_marker : impl :: core :: convert :: Into < crate :: app :: myroomlookingcameramarker :: MyRoomLookingCameraMarker >) -> () { unsafe { let __receiver = < MyRoomEventReceiver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventReceiver , crate :: app :: myroomlookingcameramarker :: MyRoomLookingCameraMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238f860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (looking_camera_marker) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomEventReceiver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventReceiver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238fa80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomeventreceiver")]pub trait IMyRoomEventReceiverMethods:IMyRoomEventReceiver{#[doc="`get_AdjustedTime()` overload"]fn get_adjusted_time(self,)->f64{unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238ee40usize)as*mut u8,f64;
+(MyRoomEventReceiver)__receiver)}
+}
+#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238ef40usize)as*mut u8,();
+(MyRoomEventReceiver)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(origin),(crate::unity_engine::playables::inotification::INotification)::core::convert::Into::into(notification),(crate::system::object::Object)::core::convert::Into::into(context))}
+}
+#[doc="`OnNotifyEffectMarker(crate::app::myroomeffectmarker::MyRoomEffectMarker)` overload"]fn on_notify_effect_marker(self,effect_marker:impl::core::convert::Into<crate::app::myroomeffectmarker::MyRoomEffectMarker>)->(){unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238f0a0usize)as*mut u8,();
+(MyRoomEventReceiver)__receiver,(crate::app::myroomeffectmarker::MyRoomEffectMarker)::core::convert::Into::into(effect_marker))}
+}
+#[doc="`OnNotifySEMarker(crate::app::myroomsemarker::MyRoomSEMarker)` overload"]fn on_notify_se_marker(self,se_marker:impl::core::convert::Into<crate::app::myroomsemarker::MyRoomSEMarker>)->(){unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238f2e0usize)as*mut u8,();
+(MyRoomEventReceiver)__receiver,(crate::app::myroomsemarker::MyRoomSEMarker)::core::convert::Into::into(se_marker))}
+}
+#[doc="`OnNotifyCameraMarker(crate::app::myroomcameramarker::MyRoomCameraMarker)` overload"]fn on_notify_camera_marker(self,camera_marker:impl::core::convert::Into<crate::app::myroomcameramarker::MyRoomCameraMarker>)->(){unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238f3c0usize)as*mut u8,();
+(MyRoomEventReceiver)__receiver,(crate::app::myroomcameramarker::MyRoomCameraMarker)::core::convert::Into::into(camera_marker))}
+}
+#[doc="`OnNotifyLookingCameraMarker(crate::app::myroomlookingcameramarker::MyRoomLookingCameraMarker)` overload"]fn on_notify_looking_camera_marker(self,looking_camera_marker:impl::core::convert::Into<crate::app::myroomlookingcameramarker::MyRoomLookingCameraMarker>)->(){unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238f860usize)as*mut u8,();
+(MyRoomEventReceiver)__receiver,(crate::app::myroomlookingcameramarker::MyRoomLookingCameraMarker)::core::convert::Into::into(looking_camera_marker))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238fa80usize)as*mut u8,();
+(MyRoomEventReceiver)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomeventreceiver")]
-impl < __T : IMyRoomEventReceiver > IMyRoomEventReceiverMethods for __T { }
+#[cfg(feature="app-myroomeventreceiver")]impl<__T:IMyRoomEventReceiver>IMyRoomEventReceiverMethods for __T{}
 
-#[cfg(feature = "app-myroomeventreceiver")]
-impl MyRoomEventReceiver { pub fn get_adjusted_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventReceiver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_notify_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventReceiver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_notify_effect_marker_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventReceiver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_notify_se_marker_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventReceiver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_notify_camera_marker_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventReceiver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_notify_looking_camera_marker_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventReceiver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventReceiver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-myroomeventreceiver")]impl MyRoomEventReceiver{pub fn get_adjusted_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_notify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_notify_effect_marker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_notify_se_marker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_notify_camera_marker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_notify_looking_camera_marker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-myroomeventreceiver")]
-impl MyRoomEventReceiver {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomEventReceiver) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomEventReceiverMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomeventreceiver")]impl MyRoomEventReceiver{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomEventReceiver), ::core::stringify!(new),));
+ <Self as IMyRoomEventReceiverMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomeventreceiver")]

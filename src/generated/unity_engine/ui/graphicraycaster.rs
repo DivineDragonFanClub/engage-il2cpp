@@ -4,96 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: baseraycaster :: { BaseRaycaster , IBaseRaycaster }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::baseraycaster::{BaseRaycaster,IBaseRaycaster}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "GraphicRaycaster")] # [parent (crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster)] pub struct GraphicRaycaster {
-# [static_field] # [rename (name = "kNoEventMaskSet")] pub k_no_event_mask_set : i32 ,
-# [offset (32)] # [rename (name = "m_IgnoreReversedGraphics")] pub m_ignore_reversed_graphics : bool ,
-# [offset (36)] # [rename (name = "m_BlockingObjects")] pub m_blocking_objects : crate :: unity_engine :: ui :: graphicraycaster :: GraphicRaycaster_BlockingObjects ,
-# [offset (40)] # [rename (name = "m_BlockingMask")] pub m_blocking_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [offset (48)] # [rename (name = "m_Canvas")] pub m_canvas : crate :: unity_engine :: canvas :: Canvas ,
-# [offset (56)] # [rename (name = "m_RaycastResults")] pub m_raycast_results : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: graphic :: Graphic > ,
-# [static_field] # [rename (name = "s_SortedGraphics")] pub s_sorted_graphics : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: graphic :: Graphic > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/graphicraycaster/GraphicRaycaster.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="GraphicRaycaster")]#[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]pub struct GraphicRaycaster{#[static_field]#[rename(name="kNoEventMaskSet")]pub k_no_event_mask_set:i32, #[offset(32)]#[rename(name="m_IgnoreReversedGraphics")]pub m_ignore_reversed_graphics:bool, #[offset(36)]#[rename(name="m_BlockingObjects")]pub m_blocking_objects:crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects, #[offset(40)]#[rename(name="m_BlockingMask")]pub m_blocking_mask:crate::unity_engine::layermask::LayerMask, #[offset(48)]#[rename(name="m_Canvas")]pub m_canvas:crate::unity_engine::canvas::Canvas, #[offset(56)]#[rename(name="m_RaycastResults")]pub m_raycast_results:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic> , #[static_field]#[rename(name="s_SortedGraphics")]pub s_sorted_graphics:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/graphicraycaster/GraphicRaycaster_BlockingObjects.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GraphicRaycaster_BlockingObjects{pub value:i32,}
+impl::unity2::ClassIdentity for GraphicRaycaster_BlockingObjects{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="GraphicRaycaster.BlockingObjects";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster_BlockingObjects.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GraphicRaycaster_BlockingObjects  {
-    pub value: i32,
+impl::unity2::IlType for GraphicRaycaster_BlockingObjects{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for GraphicRaycaster_BlockingObjects  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "GraphicRaycaster.BlockingObjects";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl GraphicRaycaster_BlockingObjects{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for GraphicRaycaster_BlockingObjects  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn two_d()->Self{Self{value:1}
 }
-
-
-impl  GraphicRaycaster_BlockingObjects  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn two_d() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn three_d() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn all() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn three_d()->Self{Self{value:2}
+}
+pub fn all()->Self{Self{value:3}
+}
 }
 
 }
@@ -101,21 +52,87 @@ impl  GraphicRaycaster_BlockingObjects  {
 #[cfg(feature = "unity_engine-ui-graphicraycaster-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-graphicraycaster")]
-impl GraphicRaycaster { # [doc = "`Raycast(crate::unity_engine::canvas::Canvas, crate::unity_engine::camera::Camera, crate::unity_engine::vector2::Vector2, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>)` overload"] pub fn raycast_2 (canvas : impl :: core :: convert :: Into < crate :: unity_engine :: canvas :: Canvas > , event_camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera > , pointer_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , found_graphics : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: ui :: graphic :: Graphic > > , results : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: graphic :: Graphic > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: canvas :: Canvas , crate :: unity_engine :: camera :: Camera , crate :: unity_engine :: vector2 :: Vector2 , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: ui :: graphic :: Graphic > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: graphic :: Graphic > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31913e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (canvas) , :: core :: convert :: Into :: into (event_camera) , :: core :: convert :: Into :: into (pointer_position) , :: core :: convert :: Into :: into (found_graphics) , :: core :: convert :: Into :: into (results) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3191a90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-graphicraycaster")]impl GraphicRaycaster{#[doc="`Raycast(crate::unity_engine::canvas::Canvas, crate::unity_engine::camera::Camera, crate::unity_engine::vector2::Vector2, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic>, crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>)` overload"]pub fn raycast_2(canvas:impl::core::convert::Into<crate::unity_engine::canvas::Canvas> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,pointer_position:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,found_graphics:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic> > ,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31913e0usize)as*mut u8,();
+(crate::unity_engine::canvas::Canvas)::core::convert::Into::into(canvas),(crate::unity_engine::camera::Camera)::core::convert::Into::into(event_camera),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pointer_position),(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::ui::graphic::Graphic>)::core::convert::Into::into(found_graphics),(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::graphic::Graphic>)::core::convert::Into::into(results))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3191a90usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-graphicraycaster")]
-pub trait IGraphicRaycasterMethods : IGraphicRaycaster { # [doc = "`get_sortOrderPriority()` overload"] fn get_sort_order_priority (self ,) -> i32 { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31904b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_renderOrderPriority()` overload"] fn get_render_order_priority (self ,) -> i32 { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31905c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ignoreReversedGraphics()` overload"] fn get_ignore_reversed_graphics (self ,) -> bool { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3190610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ignoreReversedGraphics(bool)` overload"] fn set_ignore_reversed_graphics (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3190620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_blockingObjects()` overload"] fn get_blocking_objects (self ,) -> crate :: unity_engine :: ui :: graphicraycaster :: GraphicRaycaster_BlockingObjects { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: graphicraycaster :: GraphicRaycaster_BlockingObjects = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3190630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_blockingObjects(crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects)` overload"] fn set_blocking_objects (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: graphicraycaster :: GraphicRaycaster_BlockingObjects >) -> () { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , crate :: unity_engine :: ui :: graphicraycaster :: GraphicRaycaster_BlockingObjects , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3190640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_blockingMask()` overload"] fn get_blocking_mask (self ,) -> crate :: unity_engine :: layermask :: LayerMask { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3190650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_blockingMask(crate::unity_engine::layermask::LayerMask)` overload"] fn set_blocking_mask (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3190660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3190670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_canvas()` overload"] fn get_canvas (self ,) -> crate :: unity_engine :: canvas :: Canvas { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: canvas :: Canvas = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3190500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"] fn raycast (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > , result_append_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > >) -> () { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3190720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: convert :: Into :: into (result_append_list) , :: core :: option :: Option :: None) } } } # [doc = "`get_eventCamera()` overload"] fn get_event_camera (self ,) -> crate :: unity_engine :: camera :: Camera { unsafe { let __receiver = < GraphicRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GraphicRaycaster , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31919b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-graphicraycaster")]pub trait IGraphicRaycasterMethods:IGraphicRaycaster{#[doc="`get_sortOrderPriority()` overload"]fn get_sort_order_priority(self,)->i32{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31904b0usize)as*mut u8,i32;
+(GraphicRaycaster)__receiver)}
+}
+#[doc="`get_renderOrderPriority()` overload"]fn get_render_order_priority(self,)->i32{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31905c0usize)as*mut u8,i32;
+(GraphicRaycaster)__receiver)}
+}
+#[doc="`get_ignoreReversedGraphics()` overload"]fn get_ignore_reversed_graphics(self,)->bool{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3190610usize)as*mut u8,bool;
+(GraphicRaycaster)__receiver)}
+}
+#[doc="`set_ignoreReversedGraphics(bool)` overload"]fn set_ignore_reversed_graphics(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3190620usize)as*mut u8,();
+(GraphicRaycaster)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_blockingObjects()` overload"]fn get_blocking_objects(self,)->crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3190630usize)as*mut u8,crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects;
+(GraphicRaycaster)__receiver)}
+}
+#[doc="`set_blockingObjects(crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects)` overload"]fn set_blocking_objects(self,value:impl::core::convert::Into<crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects>)->(){unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3190640usize)as*mut u8,();
+(GraphicRaycaster)__receiver,(crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects)::core::convert::Into::into(value))}
+}
+#[doc="`get_blockingMask()` overload"]fn get_blocking_mask(self,)->crate::unity_engine::layermask::LayerMask{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3190650usize)as*mut u8,crate::unity_engine::layermask::LayerMask;
+(GraphicRaycaster)__receiver)}
+}
+#[doc="`set_blockingMask(crate::unity_engine::layermask::LayerMask)` overload"]fn set_blocking_mask(self,value:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->(){unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3190660usize)as*mut u8,();
+(GraphicRaycaster)__receiver,(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3190670usize)as*mut u8,();
+(GraphicRaycaster)__receiver)}
+}
+#[doc="`get_canvas()` overload"]fn get_canvas(self,)->crate::unity_engine::canvas::Canvas{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3190500usize)as*mut u8,crate::unity_engine::canvas::Canvas;
+(GraphicRaycaster)__receiver)}
+}
+#[doc="`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]fn raycast(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,result_append_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> >)->(){unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3190720usize)as*mut u8,();
+(GraphicRaycaster)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data),(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)::core::convert::Into::into(result_append_list))}
+}
+#[doc="`get_eventCamera()` overload"]fn get_event_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <GraphicRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31919b0usize)as*mut u8,crate::unity_engine::camera::Camera;
+(GraphicRaycaster)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-graphicraycaster")]
-impl < __T : IGraphicRaycaster > IGraphicRaycasterMethods for __T { }
+#[cfg(feature="unity_engine-ui-graphicraycaster")]impl<__T:IGraphicRaycaster>IGraphicRaycasterMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-graphicraycaster")]
-impl GraphicRaycaster { pub fn get_sort_order_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_render_order_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_ignore_reversed_graphics_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_ignore_reversed_graphics_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_blocking_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_blocking_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_blocking_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_blocking_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn raycast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_event_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn raycast_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GraphicRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="unity_engine-ui-graphicraycaster")]impl GraphicRaycaster{pub fn get_sort_order_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_render_order_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_ignore_reversed_graphics_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_ignore_reversed_graphics_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_blocking_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_blocking_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_blocking_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_blocking_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_event_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn raycast_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "unity_engine-ui-graphicraycaster")]
-impl GraphicRaycaster {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GraphicRaycaster) , :: core :: stringify ! (new) ,)) ; < Self as IGraphicRaycasterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-graphicraycaster")]impl GraphicRaycaster{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GraphicRaycaster), ::core::stringify!(new),));
+ <Self as IGraphicRaycasterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-graphicraycaster")]

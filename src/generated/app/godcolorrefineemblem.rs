@@ -4,58 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonscriptableobject_1 :: { ISingletonScriptableObject_1 , SingletonScriptableObject_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonscriptableobject_1::{ISingletonScriptableObject_1,SingletonScriptableObject_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godcolorrefineemblem/GodColorRefineEmblem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodColorRefineEmblem")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: godcolorrefineemblem :: GodColorRefineEmblem >)] pub struct GodColorRefineEmblem {
-# [offset (24)] # [rename (name = "マルス")] pub マルス : crate :: unity_engine :: color :: Color ,
-# [offset (40)] # [rename (name = "シグルド")] pub シグルド : crate :: unity_engine :: color :: Color ,
-# [offset (56)] # [rename (name = "セリカ")] pub セリカ : crate :: unity_engine :: color :: Color ,
-# [offset (72)] # [rename (name = "ミカヤ")] pub ミカヤ : crate :: unity_engine :: color :: Color ,
-# [offset (88)] # [rename (name = "ロイ")] pub ロイ : crate :: unity_engine :: color :: Color ,
-# [offset (104)] # [rename (name = "リーフ")] pub リーフ : crate :: unity_engine :: color :: Color ,
-# [offset (120)] # [rename (name = "ルキナ")] pub ルキナ : crate :: unity_engine :: color :: Color ,
-# [offset (136)] # [rename (name = "リン")] pub リン : crate :: unity_engine :: color :: Color ,
-# [offset (152)] # [rename (name = "アイク")] pub アイク : crate :: unity_engine :: color :: Color ,
-# [offset (168)] # [rename (name = "ベレト")] pub ベレト : crate :: unity_engine :: color :: Color ,
-# [offset (184)] # [rename (name = "カムイ")] pub カムイ : crate :: unity_engine :: color :: Color ,
-# [offset (200)] # [rename (name = "エイリーク")] pub エイリーク : crate :: unity_engine :: color :: Color ,
-# [offset (216)] # [rename (name = "エフラム")] pub エフラム : crate :: unity_engine :: color :: Color ,
-# [offset (232)] # [rename (name = "リュール")] pub リュール : crate :: unity_engine :: color :: Color ,
-# [offset (248)] # [rename (name = "God15")] pub god15 : crate :: unity_engine :: color :: Color ,
-# [offset (264)] # [rename (name = "God16")] pub god16 : crate :: unity_engine :: color :: Color ,
-# [offset (280)] # [rename (name = "God17")] pub god17 : crate :: unity_engine :: color :: Color ,
-# [offset (296)] # [rename (name = "God18")] pub god18 : crate :: unity_engine :: color :: Color ,
-# [offset (312)] # [rename (name = "God19")] pub god19 : crate :: unity_engine :: color :: Color ,
-# [offset (328)] # [rename (name = "God20")] pub god20 : crate :: unity_engine :: color :: Color ,
-# [offset (344)] # [rename (name = "God21")] pub god21 : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godcolorrefineemblem/GodColorRefineEmblem.md"))]#[::unity2::class(namespace="App",name="GodColorRefineEmblem")]#[parent(crate::app::singletonscriptableobject_1::SingletonScriptableObject_1<crate::app::godcolorrefineemblem::GodColorRefineEmblem>)]pub struct GodColorRefineEmblem{#[offset(24)]#[rename(name="マルス")]pub マルス:crate::unity_engine::color::Color, #[offset(40)]#[rename(name="シグルド")]pub シグルド:crate::unity_engine::color::Color, #[offset(56)]#[rename(name="セリカ")]pub セリカ:crate::unity_engine::color::Color, #[offset(72)]#[rename(name="ミカヤ")]pub ミカヤ:crate::unity_engine::color::Color, #[offset(88)]#[rename(name="ロイ")]pub ロイ:crate::unity_engine::color::Color, #[offset(104)]#[rename(name="リーフ")]pub リーフ:crate::unity_engine::color::Color, #[offset(120)]#[rename(name="ルキナ")]pub ルキナ:crate::unity_engine::color::Color, #[offset(136)]#[rename(name="リン")]pub リン:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="アイク")]pub アイク:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="ベレト")]pub ベレト:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="カムイ")]pub カムイ:crate::unity_engine::color::Color, #[offset(200)]#[rename(name="エイリーク")]pub エイリーク:crate::unity_engine::color::Color, #[offset(216)]#[rename(name="エフラム")]pub エフラム:crate::unity_engine::color::Color, #[offset(232)]#[rename(name="リュール")]pub リュール:crate::unity_engine::color::Color, #[offset(248)]#[rename(name="God15")]pub god15:crate::unity_engine::color::Color, #[offset(264)]#[rename(name="God16")]pub god16:crate::unity_engine::color::Color, #[offset(280)]#[rename(name="God17")]pub god17:crate::unity_engine::color::Color, #[offset(296)]#[rename(name="God18")]pub god18:crate::unity_engine::color::Color, #[offset(312)]#[rename(name="God19")]pub god19:crate::unity_engine::color::Color, #[offset(328)]#[rename(name="God20")]pub god20:crate::unity_engine::color::Color, #[offset(344)]#[rename(name="God21")]pub god21:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-godcolorrefineemblem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godcolorrefineemblem")]
-pub trait IGodColorRefineEmblemMethods : IGodColorRefineEmblem { # [doc = "`GetColor(crate::app::goddata::GodData)` overload"] fn get_color (self , god : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < GodColorRefineEmblem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodColorRefineEmblem , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b51bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodColorRefineEmblem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodColorRefineEmblem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b522d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godcolorrefineemblem")]pub trait IGodColorRefineEmblemMethods:IGodColorRefineEmblem{#[doc="`GetColor(crate::app::goddata::GodData)` overload"]fn get_color(self,god:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::unity_engine::color::Color{unsafe{let __receiver= <GodColorRefineEmblem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b51bf0usize)as*mut u8,crate::unity_engine::color::Color;
+(GodColorRefineEmblem)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodColorRefineEmblem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b522d0usize)as*mut u8,();
+(GodColorRefineEmblem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godcolorrefineemblem")]
-impl < __T : IGodColorRefineEmblem > IGodColorRefineEmblemMethods for __T { }
+#[cfg(feature="app-godcolorrefineemblem")]impl<__T:IGodColorRefineEmblem>IGodColorRefineEmblemMethods for __T{}
 
-#[cfg(feature = "app-godcolorrefineemblem")]
-impl GodColorRefineEmblem { pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodColorRefineEmblem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodColorRefineEmblem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-godcolorrefineemblem")]impl GodColorRefineEmblem{pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-godcolorrefineemblem")]
-impl GodColorRefineEmblem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodColorRefineEmblem) , :: core :: stringify ! (new) ,)) ; < Self as IGodColorRefineEmblemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godcolorrefineemblem")]impl GodColorRefineEmblem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodColorRefineEmblem), ::core::stringify!(new),));
+ <Self as IGodColorRefineEmblemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godcolorrefineemblem")]

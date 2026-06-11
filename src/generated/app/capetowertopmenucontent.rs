@@ -4,40 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenucontent/CapeTowerTopMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapeTowerTopMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct CapeTowerTopMenuContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capetowertopmenucontent/CapeTowerTopMenuContent.md"))]#[::unity2::class(namespace="App",name="CapeTowerTopMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct CapeTowerTopMenuContent{}
 
 }
 
 #[cfg(feature = "app-capetowertopmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-capetowertopmenucontent")]
-pub trait ICapeTowerTopMenuContentMethods : ICapeTowerTopMenuContent { # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < CapeTowerTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c0a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < CapeTowerTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerTopMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c0b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < CapeTowerTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerTopMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c0bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < CapeTowerTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerTopMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c0c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CapeTowerTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapeTowerTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c0cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-capetowertopmenucontent")]pub trait ICapeTowerTopMenuContentMethods:ICapeTowerTopMenuContent{#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <CapeTowerTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c0a80usize)as*mut u8,();
+(CapeTowerTopMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <CapeTowerTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c0b10usize)as*mut u8,f32;
+(CapeTowerTopMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <CapeTowerTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c0bd0usize)as*mut u8,f32;
+(CapeTowerTopMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <CapeTowerTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c0c40usize)as*mut u8,f32;
+(CapeTowerTopMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CapeTowerTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c0cb0usize)as*mut u8,();
+(CapeTowerTopMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-capetowertopmenucontent")]
-impl < __T : ICapeTowerTopMenuContent > ICapeTowerTopMenuContentMethods for __T { }
+#[cfg(feature="app-capetowertopmenucontent")]impl<__T:ICapeTowerTopMenuContent>ICapeTowerTopMenuContentMethods for __T{}
 
-#[cfg(feature = "app-capetowertopmenucontent")]
-impl CapeTowerTopMenuContent { pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapeTowerTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-capetowertopmenucontent")]impl CapeTowerTopMenuContent{pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-capetowertopmenucontent")]
-impl CapeTowerTopMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CapeTowerTopMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as ICapeTowerTopMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-capetowertopmenucontent")]impl CapeTowerTopMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CapeTowerTopMenuContent), ::core::stringify!(new),));
+ <Self as ICapeTowerTopMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-capetowertopmenucontent")]

@@ -4,33 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_fontfeaturetable/TMP_FontFeatureTable.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_FontFeatureTable")] # [parent (crate :: system :: object :: Object)] pub struct TMP_FontFeatureTable {
-# [offset (16)] # [rename (name = "m_GlyphPairAdjustmentRecords")] pub m_glyph_pair_adjustment_records : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_glyphpairadjustmentrecord :: TMP_GlyphPairAdjustmentRecord > ,
-# [offset (24)] # [rename (name = "m_GlyphPairAdjustmentRecordLookupDictionary")] pub m_glyph_pair_adjustment_record_lookup_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: tm_pro :: tmp_glyphpairadjustmentrecord :: TMP_GlyphPairAdjustmentRecord > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_fontfeaturetable/TMP_FontFeatureTable.md"))]#[::unity2::class(namespace="TMPro",name="TMP_FontFeatureTable")]#[parent(crate::system::object::Object)]pub struct TMP_FontFeatureTable{#[offset(16)]#[rename(name="m_GlyphPairAdjustmentRecords")]pub m_glyph_pair_adjustment_records:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord> , #[offset(24)]#[rename(name="m_GlyphPairAdjustmentRecordLookupDictionary")]pub m_glyph_pair_adjustment_record_lookup_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord> ,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_fontfeaturetable-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
-pub trait ITMP_FontFeatureTableMethods : ITMP_FontFeatureTable { # [doc = "`get_glyphPairAdjustmentRecords()` overload"] fn get_glyph_pair_adjustment_records (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_glyphpairadjustmentrecord :: TMP_GlyphPairAdjustmentRecord > { unsafe { let __receiver = < TMP_FontFeatureTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_FontFeatureTable , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_glyphpairadjustmentrecord :: TMP_GlyphPairAdjustmentRecord > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a20d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_glyphPairAdjustmentRecords(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord>)` overload"] fn set_glyph_pair_adjustment_records (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_glyphpairadjustmentrecord :: TMP_GlyphPairAdjustmentRecord > >) -> () { unsafe { let __receiver = < TMP_FontFeatureTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_FontFeatureTable , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_glyphpairadjustmentrecord :: TMP_GlyphPairAdjustmentRecord > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a20e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_FontFeatureTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_FontFeatureTable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a20f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SortGlyphPairAdjustmentRecords()` overload"] fn sort_glyph_pair_adjustment_records (self ,) -> () { unsafe { let __receiver = < TMP_FontFeatureTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_FontFeatureTable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a21d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_fontfeaturetable")]pub trait ITMP_FontFeatureTableMethods:ITMP_FontFeatureTable{#[doc="`get_glyphPairAdjustmentRecords()` overload"]fn get_glyph_pair_adjustment_records(self,)->crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord>{unsafe{let __receiver= <TMP_FontFeatureTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33a20d0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord> ;
+(TMP_FontFeatureTable)__receiver)}
+}
+#[doc="`set_glyphPairAdjustmentRecords(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord>)` overload"]fn set_glyph_pair_adjustment_records(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord> >)->(){unsafe{let __receiver= <TMP_FontFeatureTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33a20e0usize)as*mut u8,();
+(TMP_FontFeatureTable)__receiver,(crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord>)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_FontFeatureTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33a20f0usize)as*mut u8,();
+(TMP_FontFeatureTable)__receiver)}
+}
+#[doc="`SortGlyphPairAdjustmentRecords()` overload"]fn sort_glyph_pair_adjustment_records(self,)->(){unsafe{let __receiver= <TMP_FontFeatureTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33a21d0usize)as*mut u8,();
+(TMP_FontFeatureTable)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
-impl < __T : ITMP_FontFeatureTable > ITMP_FontFeatureTableMethods for __T { }
+#[cfg(feature="tm_pro-tmp_fontfeaturetable")]impl<__T:ITMP_FontFeatureTable>ITMP_FontFeatureTableMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
-impl TMP_FontFeatureTable { pub fn get_glyph_pair_adjustment_records_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_FontFeatureTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_glyph_pair_adjustment_records_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_FontFeatureTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_FontFeatureTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn sort_glyph_pair_adjustment_records_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_FontFeatureTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="tm_pro-tmp_fontfeaturetable")]impl TMP_FontFeatureTable{pub fn get_glyph_pair_adjustment_records_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_glyph_pair_adjustment_records_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn sort_glyph_pair_adjustment_records_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
-impl TMP_FontFeatureTable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_FontFeatureTable) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_FontFeatureTableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_fontfeaturetable")]impl TMP_FontFeatureTable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_FontFeatureTable), ::core::stringify!(new),));
+ <Self as ITMP_FontFeatureTableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_fontfeaturetable")]

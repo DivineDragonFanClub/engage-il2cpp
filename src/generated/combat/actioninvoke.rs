@@ -4,34 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actioninvoke/ActionInvoke.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionInvoke")] # [parent (crate :: combat :: state :: State)] pub struct ActionInvoke {
-# [offset (24)] # [rename (name = "m_Func")] pub m_func : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actioninvoke/ActionInvoke.md"))]#[::unity2::class(namespace="Combat",name="ActionInvoke")]#[parent(crate::combat::state::State)]pub struct ActionInvoke{#[offset(24)]#[rename(name="m_Func")]pub m_func:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "combat-actioninvoke-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actioninvoke")]
-pub trait IActionInvokeMethods : IActionInvoke { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionInvoke as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionInvoke , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc7da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::action::Action)` overload"] fn ctor (self , func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < ActionInvoke as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionInvoke , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc7df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionInvoke as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionInvoke , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc7e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actioninvoke")]pub trait IActionInvokeMethods:IActionInvoke{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionInvoke as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7da0usize)as*mut u8, ::unity2::Il2CppString;
+(ActionInvoke)__receiver)}
+}
+#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <ActionInvoke as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7df0usize)as*mut u8,();
+(ActionInvoke)__receiver,(crate::system::action::Action)::core::convert::Into::into(func))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionInvoke as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7e30usize)as*mut u8,();
+(ActionInvoke)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actioninvoke")]
-impl < __T : IActionInvoke > IActionInvokeMethods for __T { }
+#[cfg(feature="combat-actioninvoke")]impl<__T:IActionInvoke>IActionInvokeMethods for __T{}
 
-#[cfg(feature = "combat-actioninvoke")]
-impl ActionInvoke { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionInvoke as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionInvoke as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionInvoke as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-actioninvoke")]impl ActionInvoke{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-actioninvoke")]
-impl ActionInvoke {
-# [doc = "`.ctor(crate::system::action::Action)` — overload selector"] pub fn new (func : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionInvoke) , :: core :: stringify ! (new) ,)) ; < Self as IActionInvokeMethods > :: ctor (this , func) ; this }
+#[cfg(feature="combat-actioninvoke")]impl ActionInvoke{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionInvoke), ::core::stringify!(new),));
+ <Self as IActionInvokeMethods> ::ctor(this,func);
+this}
 }
 
 #[cfg(feature = "combat-actioninvoke")]

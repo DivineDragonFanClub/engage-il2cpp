@@ -4,94 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/synctoken/SyncToken_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SyncToken_State  {
-    pub value: u8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/synctoken/SyncToken_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SyncToken_State{pub value:u8,}
+impl::unity2::ClassIdentity for SyncToken_State{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="SyncToken.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SyncToken_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SyncToken_State{pub fn none()->Self{Self{value:0}
+}
+pub fn waiting()->Self{Self{value:1}
+}
+pub fn reached()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SyncToken_State  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "SyncToken.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SyncToken_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SyncToken_State  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn waiting() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn reached() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/synctoken/SyncToken.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "SyncToken")] # [parent (crate :: system :: object :: Object)] pub struct SyncToken {
-# [offset (16)] # [rename (name = "state")] pub state : :: unity2 :: Array < crate :: combat :: synctoken :: SyncToken_State > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/synctoken/SyncToken.md"))]#[::unity2::class(namespace="Combat",name="SyncToken")]#[parent(crate::system::object::Object)]pub struct SyncToken{#[offset(16)]#[rename(name="state")]pub state: ::unity2::Array<crate::combat::synctoken::SyncToken_State> ,}
 
 }
 
 #[cfg(feature = "combat-synctoken-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-synctoken")]
-impl SyncToken { # [doc = "`ChrToIndex(crate::combat::character::Character)` overload"] pub fn chr_to_index (chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b0f70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } } # [doc = "`IndexToChr(crate::combat::combatworld::CombatWorld, i32)` overload"] pub fn index_to_chr (world : impl :: core :: convert :: Into < crate :: combat :: combatworld :: CombatWorld > , i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: combat :: combatworld :: CombatWorld , i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b11d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (world) , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-synctoken")]impl SyncToken{#[doc="`ChrToIndex(crate::combat::character::Character)` overload"]pub fn chr_to_index(chara:impl::core::convert::Into<crate::combat::character::Character>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b0f70usize)as*mut u8,i32;
+(crate::combat::character::Character)::core::convert::Into::into(chara))}
+}
+#[doc="`IndexToChr(crate::combat::combatworld::CombatWorld, i32)` overload"]pub fn index_to_chr(world:impl::core::convert::Into<crate::combat::combatworld::CombatWorld> ,i:impl::core::convert::Into<i32>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b11d0usize)as*mut u8,crate::combat::character::Character;
+(crate::combat::combatworld::CombatWorld)::core::convert::Into::into(world),(i32)::core::convert::Into::into(i))}
+}
+}
 
-#[cfg(feature = "combat-synctoken")]
-pub trait ISyncTokenMethods : ISyncToken { # [doc = "`Join(crate::combat::character::Character)` overload"] fn join (self , chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyncToken , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b0ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } } # [doc = "`Join(i32)` overload"] fn join_2 (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyncToken , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b0fc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Reach(crate::combat::character::Character)` overload"] fn reach (self , chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyncToken , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b1000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } } # [doc = "`IsArrivedEveryone()` overload"] fn is_arrived_everyone (self ,) -> bool { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyncToken , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b1080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SyncToken as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SyncToken , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b12f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-synctoken")]pub trait ISyncTokenMethods:ISyncToken{#[doc="`Join(crate::combat::character::Character)` overload"]fn join(self,chara:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <SyncToken as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b0ef0usize)as*mut u8,();
+(SyncToken)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chara))}
+}
+#[doc="`Join(i32)` overload"]fn join_2(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SyncToken as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b0fc0usize)as*mut u8,();
+(SyncToken)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Reach(crate::combat::character::Character)` overload"]fn reach(self,chara:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <SyncToken as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b1000usize)as*mut u8,();
+(SyncToken)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chara))}
+}
+#[doc="`IsArrivedEveryone()` overload"]fn is_arrived_everyone(self,)->bool{unsafe{let __receiver= <SyncToken as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b1080usize)as*mut u8,bool;
+(SyncToken)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SyncToken as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b12f0usize)as*mut u8,();
+(SyncToken)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-synctoken")]
-impl < __T : ISyncToken > ISyncTokenMethods for __T { }
+#[cfg(feature="combat-synctoken")]impl<__T:ISyncToken>ISyncTokenMethods for __T{}
 
-#[cfg(feature = "combat-synctoken")]
-impl SyncToken { pub fn join_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyncToken as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn join_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyncToken as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyncToken as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_arrived_everyone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyncToken as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn chr_to_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyncToken as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn index_to_chr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyncToken as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SyncToken as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="combat-synctoken")]impl SyncToken{pub fn join_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn join_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_arrived_everyone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn chr_to_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn index_to_chr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "combat-synctoken")]
-impl SyncToken {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SyncToken) , :: core :: stringify ! (new) ,)) ; < Self as ISyncTokenMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-synctoken")]impl SyncToken{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SyncToken), ::core::stringify!(new),));
+ <Self as ISyncTokenMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-synctoken")]

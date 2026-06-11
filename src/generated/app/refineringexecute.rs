@@ -4,35 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringexecute/RefineRingExecute.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingExecute")] # [parent (crate :: system :: object :: Object)] pub struct RefineRingExecute {
-# [static_field] # [rename (name = "m_RefineRingTimesMax")] pub m_refine_ring_times_max : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringexecute/RefineRingExecute.md"))]#[::unity2::class(namespace="App",name="RefineRingExecute")]#[parent(crate::system::object::Object)]pub struct RefineRingExecute{#[static_field]#[rename(name="m_RefineRingTimesMax")]pub m_refine_ring_times_max:i32,}
 
 }
 
 #[cfg(feature = "app-refineringexecute-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineringexecute")]
-impl RefineRingExecute { # [doc = "`Do(crate::app::goddata::GodData, i32, *mutcrate::system::collections::generic::list_1::List_1<bool>)` overload"] pub fn r#do (god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData > , times : impl :: core :: convert :: Into < i32 >) -> (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unitring :: UnitRing > , crate :: system :: collections :: generic :: list_1 :: List_1 < bool >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < bool > > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: app :: goddata :: GodData , i32 , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < bool > , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unitring :: UnitRing > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2952990usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god_data) , :: core :: convert :: Into :: into (times) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`AddAchieve(crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>)` overload"] pub fn add_achieve (unit_ring_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unitring :: UnitRing > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unitring :: UnitRing > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29539d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit_ring_list) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2953b80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringexecute")]impl RefineRingExecute{#[doc="`Do(crate::app::goddata::GodData, i32, *mutcrate::system::collections::generic::list_1::List_1<bool>)` overload"]pub fn r#do(god_data:impl::core::convert::Into<crate::app::goddata::GodData> ,times:impl::core::convert::Into<i32>)->(crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing> ,crate::system::collections::generic::list_1::List_1<bool>){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<bool> > ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2952990usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing> ;
+(crate::app::goddata::GodData)::core::convert::Into::into(god_data),(i32)::core::convert::Into::into(times),(*mut crate::system::collections::generic::list_1::List_1<bool>)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`AddAchieve(crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>)` overload"]pub fn add_achieve(unit_ring_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29539d0usize)as*mut u8,();
+(crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>)::core::convert::Into::into(unit_ring_list))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2953b80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-refineringexecute")]
-pub trait IRefineRingExecuteMethods : IRefineRingExecute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingExecute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingExecute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2953b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringexecute")]pub trait IRefineRingExecuteMethods:IRefineRingExecute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingExecute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2953b70usize)as*mut u8,();
+(RefineRingExecute)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineringexecute")]
-impl < __T : IRefineRingExecute > IRefineRingExecuteMethods for __T { }
+#[cfg(feature="app-refineringexecute")]impl<__T:IRefineRingExecute>IRefineRingExecuteMethods for __T{}
 
-#[cfg(feature = "app-refineringexecute")]
-impl RefineRingExecute { pub fn do_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingExecute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_achieve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingExecute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingExecute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingExecute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-refineringexecute")]impl RefineRingExecute{pub fn do_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_achieve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-refineringexecute")]
-impl RefineRingExecute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingExecute) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingExecuteMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineringexecute")]impl RefineRingExecute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingExecute), ::core::stringify!(new),));
+ <Self as IRefineRingExecuteMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineringexecute")]

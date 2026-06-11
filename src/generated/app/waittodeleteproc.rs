@@ -4,37 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/waittodeleteproc/WaitToDeleteProc.md"))] # [:: unity2 :: class (namespace = "App" , name = "WaitToDeleteProc")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct WaitToDeleteProc {
-# [offset (112)] # [rename (name = "m_WaitedProcInst")] pub m_waited_proc_inst : crate :: app :: procinst :: ProcInst ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/waittodeleteproc/WaitToDeleteProc.md"))]#[::unity2::class(namespace="App",name="WaitToDeleteProc")]#[parent(crate::app::procinst::ProcInst)]pub struct WaitToDeleteProc{#[offset(112)]#[rename(name="m_WaitedProcInst")]pub m_waited_proc_inst:crate::app::procinst::ProcInst,}
 
 }
 
 #[cfg(feature = "app-waittodeleteproc-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-waittodeleteproc")]
-impl WaitToDeleteProc { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::procinst::ProcInst)` overload"] pub fn create_bind (waited_proc_inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (waited_proc_inst) , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-waittodeleteproc")]impl WaitToDeleteProc{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::procinst::ProcInst)` overload"]pub fn create_bind(waited_proc_inst:impl::core::convert::Into<crate::app::procinst::ProcInst> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c4790usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(waited_proc_inst),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-waittodeleteproc")]
-pub trait IWaitToDeleteProcMethods : IWaitToDeleteProc { # [doc = "`.ctor(crate::app::procinst::ProcInst)` overload"] fn ctor (self , waited_proc_inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < WaitToDeleteProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaitToDeleteProc , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (waited_proc_inst) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < WaitToDeleteProc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaitToDeleteProc , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-waittodeleteproc")]pub trait IWaitToDeleteProcMethods:IWaitToDeleteProc{#[doc="`.ctor(crate::app::procinst::ProcInst)` overload"]fn ctor(self,waited_proc_inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <WaitToDeleteProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c4830usize)as*mut u8,();
+(WaitToDeleteProc)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(waited_proc_inst))}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <WaitToDeleteProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c4870usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(WaitToDeleteProc)__receiver)}
+}
+}
 
-#[cfg(feature = "app-waittodeleteproc")]
-impl < __T : IWaitToDeleteProc > IWaitToDeleteProcMethods for __T { }
+#[cfg(feature="app-waittodeleteproc")]impl<__T:IWaitToDeleteProc>IWaitToDeleteProcMethods for __T{}
 
-#[cfg(feature = "app-waittodeleteproc")]
-impl WaitToDeleteProc { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaitToDeleteProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaitToDeleteProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaitToDeleteProc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-waittodeleteproc")]impl WaitToDeleteProc{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-waittodeleteproc")]
-impl WaitToDeleteProc {
-# [doc = "`.ctor(crate::app::procinst::ProcInst)` — overload selector"] pub fn new (waited_proc_inst : crate :: app :: procinst :: ProcInst) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WaitToDeleteProc) , :: core :: stringify ! (new) ,)) ; < Self as IWaitToDeleteProcMethods > :: ctor (this , waited_proc_inst) ; this }
+#[cfg(feature="app-waittodeleteproc")]impl WaitToDeleteProc{#[doc="`.ctor(crate::app::procinst::ProcInst)` — overload selector"]pub fn new(waited_proc_inst:crate::app::procinst::ProcInst)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WaitToDeleteProc), ::core::stringify!(new),));
+ <Self as IWaitToDeleteProcMethods> ::ctor(this,waited_proc_inst);
+this}
 }
 
 #[cfg(feature = "app-waittodeleteproc")]

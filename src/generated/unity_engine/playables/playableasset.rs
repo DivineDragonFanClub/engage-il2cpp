@@ -4,40 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/playableasset/PlayableAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Playables" , name = "PlayableAsset")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct PlayableAsset {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/playableasset/PlayableAsset.md"))]#[::unity2::class(namespace="UnityEngine.Playables",name="PlayableAsset")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct PlayableAsset{}
 
 }
 
 #[cfg(feature = "unity_engine-playables-playableasset-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-playables-playableasset")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __PlayableAsset_unity2_raw { use super :: * ; pub unsafe fn create_playable (this : PlayableAsset , graph : crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , owner : crate :: unity_engine :: gameobject :: GameObject , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CreatePlayable") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CreatePlayable" , < PlayableAsset as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (PlayableAsset , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , graph , owner , __mi) } }
+#[cfg(feature="unity_engine-playables-playableasset")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PlayableAsset_unity2_raw{use super:: * ;
+pub unsafe fn create_playable(this:PlayableAsset,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreatePlayable").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CreatePlayable", <PlayableAsset as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(PlayableAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,owner,__mi)}
+}
 
-#[cfg(feature = "unity_engine-playables-playableasset")]
-impl PlayableAsset { # [doc = "`Internal_CreatePlayable(crate::unity_engine::playables::playableasset::PlayableAsset, crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, ::unity2::IntPtr)` overload"] pub fn internal_create_playable (asset : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableasset :: PlayableAsset > , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playableasset :: PlayableAsset , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1b60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset) , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_GetPlayableAssetDuration(crate::unity_engine::playables::playableasset::PlayableAsset, ::unity2::IntPtr)` overload"] pub fn internal_get_playable_asset_duration (asset : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playableasset :: PlayableAsset > , ptr_to_double : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playableasset :: PlayableAsset , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1d60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset) , :: core :: convert :: Into :: into (ptr_to_double) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-playableasset")]impl PlayableAsset{#[doc="`Internal_CreatePlayable(crate::unity_engine::playables::playableasset::PlayableAsset, crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, ::unity2::IntPtr)` overload"]pub fn internal_create_playable(asset:impl::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset> ,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1b60usize)as*mut u8,();
+(crate::unity_engine::playables::playableasset::PlayableAsset)::core::convert::Into::into(asset),(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+#[doc="`Internal_GetPlayableAssetDuration(crate::unity_engine::playables::playableasset::PlayableAsset, ::unity2::IntPtr)` overload"]pub fn internal_get_playable_asset_duration(asset:impl::core::convert::Into<crate::unity_engine::playables::playableasset::PlayableAsset> ,ptr_to_double:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1d60usize)as*mut u8,();
+(crate::unity_engine::playables::playableasset::PlayableAsset)::core::convert::Into::into(asset),(::unity2::IntPtr)::core::convert::Into::into(ptr_to_double))}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-playableasset")]
-pub trait IPlayableAssetMethods : IPlayableAsset { # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"] fn create_playable (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , owner : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < PlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __PlayableAsset_unity2_raw :: create_playable (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } # [doc = "`get_duration()` overload"] fn get_duration (self ,) -> f64 { unsafe { let __receiver = < PlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayableAsset , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_outputs()` overload"] fn get_outputs (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > { unsafe { let __receiver = < PlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayableAsset , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: playables :: playablebinding :: PlayableBinding > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayableAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayableAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-playableasset")]pub trait IPlayableAssetMethods:IPlayableAsset{#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <PlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PlayableAsset_unity2_raw::create_playable(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(owner), ::core::option::Option::None)}
+}
+#[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <PlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f1a80usize)as*mut u8,f64;
+(PlayableAsset)__receiver)}
+}
+#[doc="`get_outputs()` overload"]fn get_outputs(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{unsafe{let __receiver= <PlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f1af0usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> ;
+(PlayableAsset)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayableAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f1d90usize)as*mut u8,();
+(PlayableAsset)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-playableasset")]
-impl < __T : IPlayableAsset > IPlayableAssetMethods for __T { }
+#[cfg(feature="unity_engine-playables-playableasset")]impl<__T:IPlayableAsset>IPlayableAssetMethods for __T{}
 
-#[cfg(feature = "unity_engine-playables-playableasset")]
-impl PlayableAsset { pub fn create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_outputs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn internal_create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn internal_get_playable_asset_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayableAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-playables-playableasset")]impl PlayableAsset{pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_outputs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn internal_create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn internal_get_playable_asset_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-playables-playableasset")]
-impl PlayableAsset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayableAsset) , :: core :: stringify ! (new) ,)) ; < Self as IPlayableAssetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-playables-playableasset")]impl PlayableAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayableAsset), ::core::stringify!(new),));
+ <Self as IPlayableAssetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-playables-playableasset")]

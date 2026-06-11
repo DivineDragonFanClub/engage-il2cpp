@@ -4,78 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiontransform/ActionTransform.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionTransform")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionTransform {
-# [offset (40)] # [rename (name = "m_DoPlayer")] pub m_do_player : bool ,
-# [offset (41)] # [rename (name = "m_DoEnemy")] pub m_do_enemy : bool ,
-# [offset (44)] # [rename (name = "m_State")] pub m_state : crate :: combat :: actiontransform :: ActionTransform_State ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiontransform/ActionTransform.md"))]#[::unity2::class(namespace="Combat",name="ActionTransform")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionTransform{#[offset(40)]#[rename(name="m_DoPlayer")]pub m_do_player:bool, #[offset(41)]#[rename(name="m_DoEnemy")]pub m_do_enemy:bool, #[offset(44)]#[rename(name="m_State")]pub m_state:crate::combat::actiontransform::ActionTransform_State,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiontransform/ActionTransform_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ActionTransform_State{pub value:i32,}
+impl::unity2::ClassIdentity for ActionTransform_State{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="ActionTransform.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiontransform/ActionTransform_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ActionTransform_State  {
-    pub value: i32,
+impl::unity2::IlType for ActionTransform_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for ActionTransform_State  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "ActionTransform.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl ActionTransform_State{pub fn begin()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for ActionTransform_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn transform()->Self{Self{value:1}
 }
-
-
-impl  ActionTransform_State  {
-    pub fn begin() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn transform() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn finish() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn finish()->Self{Self{value:2}
+}
 }
 
 }
@@ -83,18 +42,42 @@ impl  ActionTransform_State  {
 #[cfg(feature = "combat-actiontransform-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actiontransform")]
-pub trait IActionTransformMethods : IActionTransform { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionTransform as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTransform , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc92d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(bool, bool)` overload"] fn ctor (self , do_player : impl :: core :: convert :: Into < bool > , do_enemy : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ActionTransform as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTransform , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (do_player) , :: core :: convert :: Into :: into (do_enemy) , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionTransform as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTransform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < ActionTransform as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTransform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Transform()` overload"] fn transform (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ActionTransform as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionTransform , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc95d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiontransform")]pub trait IActionTransformMethods:IActionTransform{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc92d0usize)as*mut u8, ::unity2::Il2CppString;
+(ActionTransform)__receiver)}
+}
+#[doc="`.ctor(bool, bool)` overload"]fn ctor(self,do_player:impl::core::convert::Into<bool> ,do_enemy:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9320usize)as*mut u8,();
+(ActionTransform)__receiver,(bool)::core::convert::Into::into(do_player),(bool)::core::convert::Into::into(do_enemy))}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9410usize)as*mut u8,();
+(ActionTransform)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9510usize)as*mut u8,();
+(ActionTransform)__receiver)}
+}
+#[doc="`Transform()` overload"]fn transform(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc95d0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ActionTransform)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actiontransform")]
-impl < __T : IActionTransform > IActionTransformMethods for __T { }
+#[cfg(feature="combat-actiontransform")]impl<__T:IActionTransform>IActionTransformMethods for __T{}
 
-#[cfg(feature = "combat-actiontransform")]
-impl ActionTransform { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTransform as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTransform as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTransform as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTransform as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionTransform as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-actiontransform")]impl ActionTransform{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-actiontransform")]
-impl ActionTransform {
-# [doc = "`.ctor(bool, bool)` — overload selector"] pub fn new (do_player : bool , do_enemy : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionTransform) , :: core :: stringify ! (new) ,)) ; < Self as IActionTransformMethods > :: ctor (this , do_player , do_enemy) ; this }
+#[cfg(feature="combat-actiontransform")]impl ActionTransform{#[doc="`.ctor(bool, bool)` — overload selector"]pub fn new(do_player:bool,do_enemy:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionTransform), ::core::stringify!(new),));
+ <Self as IActionTransformMethods> ::ctor(this,do_player,do_enemy);
+this}
 }
 
 #[cfg(feature = "combat-actiontransform")]

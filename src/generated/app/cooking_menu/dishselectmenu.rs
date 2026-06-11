@@ -4,163 +4,296 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuItem.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectMenu.DishSelectMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct DishSelectMenu_DishSelectMenuItem {
-# [offset (104)] # [rename (name = "m_Food")] pub m_food : crate :: app :: fooddata :: FoodData ,
-# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler ,
-# [offset (120)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuItem.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenu.DishSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct DishSelectMenu_DishSelectMenuItem{#[offset(104)]#[rename(name="m_Food")]pub m_food:crate::app::fooddata::FoodData, #[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, #[offset(120)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_SelectEventHandler.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectMenu.SelectEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct DishSelectMenu_SelectEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenu/DishSelectMenu_CancelEventHandler.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenu.CancelEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DishSelectMenu_CancelEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct DishSelectMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DishSelectMenu_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_CancelEventHandler.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectMenu.CancelEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct DishSelectMenu_CancelEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishMenuCompare.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenu.DishMenuCompare")]#[parent(crate::system::object::Object)]pub struct DishSelectMenu_DishMenuCompare{#[offset(16)]#[rename(name="m_IsRecommended")]pub m_is_recommended:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct DishSelectMenu {
-# [static_field] # [rename (name = "s_Content")] pub s_content : crate :: app :: cooking_menu :: dishselectmenucontent :: DishSelectMenuContent ,
-# [static_field] # [rename (name = "s_SelectUnitList")] pub s_select_unit_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [static_field] # [rename (name = "s_DecideEventHandler")] pub s_decide_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler ,
-# [offset (200)] # [rename (name = "m_MenuSelectList")] pub m_menu_select_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuselect :: BasicMenuSelect > ,
-# [offset (208)] # [rename (name = "m_CancelEventHandler")] pub m_cancel_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler ,
-# [static_field] # [rename (name = "s_SelectedUnitCookList")] pub s_selected_unit_cook_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cookdata :: CookData > ,
-# [static_field] # [rename (name = "s_IsFirstSelect")] pub s_is_first_select : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuManager.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenu.DishSelectMenuManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuManager>)]pub struct DishSelectMenu_DishSelectMenuManager{#[offset(32)]#[rename(name="m_Select")]pub m_select:crate::app::basicmenuselect::BasicMenuSelect,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuManager.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectMenu.DishSelectMenuManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuManager >)] pub struct DishSelectMenu_DishSelectMenuManager {
-# [offset (32)] # [rename (name = "m_Select")] pub m_select : crate :: app :: basicmenuselect :: BasicMenuSelect ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenu/DishSelectMenu.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct DishSelectMenu{#[static_field]#[rename(name="s_Content")]pub s_content:crate::app::cooking_menu::dishselectmenucontent::DishSelectMenuContent, #[static_field]#[rename(name="s_SelectUnitList")]pub s_select_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[static_field]#[rename(name="s_DecideEventHandler")]pub s_decide_event_handler:crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, #[offset(200)]#[rename(name="m_MenuSelectList")]pub m_menu_select_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(208)]#[rename(name="m_CancelEventHandler")]pub m_cancel_event_handler:crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler, #[static_field]#[rename(name="s_SelectedUnitCookList")]pub s_selected_unit_cook_list:crate::system::collections::generic::list_1::List_1<crate::app::cookdata::CookData> , #[static_field]#[rename(name="s_IsFirstSelect")]pub s_is_first_select:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishMenuCompare.md"))] # [:: unity2 :: class (namespace = "App.CookingMenu" , name = "DishSelectMenu.DishMenuCompare")] # [parent (crate :: system :: object :: Object)] pub struct DishSelectMenu_DishMenuCompare {
-# [offset (16)] # [rename (name = "m_IsRecommended")] pub m_is_recommended : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenu/DishSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DishSelectMenu_SelectEventHandler{}
 
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_DishSelectMenuItemMethods : IDishSelectMenu_DishSelectMenuItem { # [doc = "`.ctor(crate::app::fooddata::FoodData, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)` overload"] fn ctor (self , food_data : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler >) -> () { unsafe { let __receiver = < DishSelectMenu_DishSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishSelectMenuItem , crate :: app :: fooddata :: FoodData , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd27b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food_data) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < DishSelectMenu_DishSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < DishSelectMenu_DishSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd33a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < DishSelectMenu_DishSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFood()` overload"] fn get_food (self ,) -> crate :: app :: fooddata :: FoodData { unsafe { let __receiver = < DishSelectMenu_DishSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: fooddata :: FoodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl < __T : IDishSelectMenu_DishSelectMenuItem > IDishSelectMenu_DishSelectMenuItemMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishSelectMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishSelectMenuItem {
-# [doc = "`.ctor(crate::app::fooddata::FoodData, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)` — overload selector"] pub fn new (food_data : crate :: app :: fooddata :: FoodData , decide_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler , select_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_SelectEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectMenu_DishSelectMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectMenu_DishSelectMenuItemMethods > :: ctor (this , food_data , decide_event_handler , select_event_handler) ; this }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]pub trait IDishSelectMenu_DishSelectMenuItemMethods:IDishSelectMenu_DishSelectMenuItem{#[doc="`.ctor(crate::app::fooddata::FoodData, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)` overload"]fn ctor(self,food_data:impl::core::convert::Into<crate::app::fooddata::FoodData> ,decide_event_handler:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler> ,select_event_handler:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler>)->(){unsafe{let __receiver= <DishSelectMenu_DishSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd27b0usize)as*mut u8,();
+(DishSelectMenu_DishSelectMenuItem)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food_data),(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DishSelectMenu_DishSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3360usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(DishSelectMenu_DishSelectMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <DishSelectMenu_DishSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd33a0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(DishSelectMenu_DishSelectMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <DishSelectMenu_DishSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3510usize)as*mut u8,();
+(DishSelectMenu_DishSelectMenuItem)__receiver)}
+}
+#[doc="`GetFood()` overload"]fn get_food(self,)->crate::app::fooddata::FoodData{unsafe{let __receiver= <DishSelectMenu_DishSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3a70usize)as*mut u8,crate::app::fooddata::FoodData;
+(DishSelectMenu_DishSelectMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_SelectEventHandlerMethods : IDishSelectMenu_SelectEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < DishSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_SelectEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd2790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::fooddata::FoodData)` overload"] fn invoke (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData >) -> () { unsafe { let __receiver = < DishSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_SelectEventHandler , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd36d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl<__T:IDishSelectMenu_DishSelectMenuItem>IDishSelectMenu_DishSelectMenuItemMethods for __T{}
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl < __T : IDishSelectMenu_SelectEventHandler > IDishSelectMenu_SelectEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_SelectEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_SelectEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectMenu_SelectEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectMenu_SelectEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_DishSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_DecideEventHandlerMethods : IDishSelectMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < DishSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd2a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::fooddata::FoodData)` overload"] fn invoke (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData >) -> () { unsafe { let __receiver = < DishSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DecideEventHandler , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd2ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl < __T : IDishSelectMenu_DecideEventHandler > IDishSelectMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_DishSelectMenuItem{#[doc="`.ctor(crate::app::fooddata::FoodData, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)` — overload selector"]pub fn new(food_data:crate::app::fooddata::FoodData,decide_event_handler:crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler,select_event_handler:crate::app::cooking_menu::dishselectmenu::DishSelectMenu_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectMenu_DishSelectMenuItem), ::core::stringify!(new),));
+ <Self as IDishSelectMenu_DishSelectMenuItemMethods> ::ctor(this,food_data,decide_event_handler,select_event_handler);
+this}
 }
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_CancelEventHandlerMethods : IDishSelectMenu_CancelEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < DishSelectMenu_CancelEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_CancelEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd2820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < DishSelectMenu_CancelEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_CancelEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd2840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl < __T : IDishSelectMenu_CancelEventHandler > IDishSelectMenu_CancelEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_CancelEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_CancelEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_CancelEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_CancelEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectMenu_CancelEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectMenu_CancelEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]pub trait IDishSelectMenu_CancelEventHandlerMethods:IDishSelectMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DishSelectMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd2820usize)as*mut u8,();
+(DishSelectMenu_CancelEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <DishSelectMenu_CancelEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd2840usize)as*mut u8,();
+(DishSelectMenu_CancelEventHandler)__receiver)}
+}
 }
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , all_content : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishallmenucontent :: DishAllMenuContent > , selected_unit_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler > , cancel_event_handler : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: cooking_menu :: dishallmenucontent :: DishAllMenuContent , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DecideEventHandler , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf76f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (all_content) , :: core :: convert :: Into :: into (selected_unit_list) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (cancel_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenuItemList()` overload"] pub fn create_menu_item_list () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf79f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf8740usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl<__T:IDishSelectMenu_CancelEventHandler>IDishSelectMenu_CancelEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenuMethods : IDishSelectMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , cancel_event_handler : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler >) -> () { unsafe { let __receiver = < DishSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf7470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (cancel_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DishSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf76a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupMenuSkill()` overload"] fn setup_menu_skill (self ,) -> () { unsafe { let __receiver = < DishSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf7e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDisplayIndex()` overload"] fn update_display_index (self ,) -> () { unsafe { let __receiver = < DishSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf7f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < DishSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf7f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < DishSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf8030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyLeft(bool)` overload"] fn key_left (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DishSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf8070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyRight(bool)` overload"] fn key_right (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DishSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf8360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < DishSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cf8670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl < __T : IDishSelectMenu > IDishSelectMenuMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_menu_item_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn setup_menu_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_display_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn key_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn key_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , cancel_event_handler : crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_CancelEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectMenu) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectMenuMethods > :: ctor (this , menu_item_list , cancel_event_handler) ; this }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_CancelEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_DishSelectMenuManagerMethods : IDishSelectMenu_DishSelectMenuManager { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < DishSelectMenu_DishSelectMenuManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishSelectMenuManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Save(crate::app::cooking_menu::dishselectmenu::DishSelectMenu)` overload"] fn save (self , menu : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu >) -> () { unsafe { let __receiver = < DishSelectMenu_DishSelectMenuManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishSelectMenuManager , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3b00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: option :: Option :: None) } } } # [doc = "`Restore(crate::app::cooking_menu::dishselectmenu::DishSelectMenu)` overload"] fn restore (self , menu : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu >) -> () { unsafe { let __receiver = < DishSelectMenu_DishSelectMenuManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishSelectMenuManager , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DishSelectMenu_DishSelectMenuManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishSelectMenuManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl < __T : IDishSelectMenu_DishSelectMenuManager > IDishSelectMenu_DishSelectMenuManagerMethods for __T { }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishSelectMenuManager { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishSelectMenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn save_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishSelectMenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn restore_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishSelectMenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishSelectMenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishSelectMenuManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectMenu_DishSelectMenuManager) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectMenu_DishSelectMenuManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_CancelEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectMenu_CancelEventHandler), ::core::stringify!(new),));
+ <Self as IDishSelectMenu_CancelEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-pub trait IDishSelectMenu_DishMenuCompareMethods : IDishSelectMenu_DishMenuCompare { # [doc = "`.ctor(bool)` overload"] fn ctor (self , is_recommended : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DishSelectMenu_DishMenuCompare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishMenuCompare , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd2e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_recommended) , :: core :: option :: Option :: None) } } } # [doc = "`CompareBothLike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"] fn compare_both_like (self , x : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem > , y : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem >) -> i32 { unsafe { let __receiver = < DishSelectMenu_DishMenuCompare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishMenuCompare , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`CompareDifficulty(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"] fn compare_difficulty (self , x : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem > , y : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem >) -> i32 { unsafe { let __receiver = < DishSelectMenu_DishMenuCompare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishMenuCompare , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`CompareDislike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"] fn compare_dislike (self , x : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem > , y : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem >) -> i32 { unsafe { let __receiver = < DishSelectMenu_DishMenuCompare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishMenuCompare , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd31d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`CompareIndex(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"] fn compare_index (self , x : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem > , y : impl :: core :: convert :: Into < crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem >) -> i32 { unsafe { let __receiver = < DishSelectMenu_DishMenuCompare as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DishSelectMenu_DishMenuCompare , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem , crate :: app :: cooking_menu :: dishselectmenu :: DishSelectMenu_DishSelectMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd3340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]pub trait IDishSelectMenu_DecideEventHandlerMethods:IDishSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DishSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd2a90usize)as*mut u8,();
+(DishSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::fooddata::FoodData)` overload"]fn invoke(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData>)->(){unsafe{let __receiver= <DishSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd2ab0usize)as*mut u8,();
+(DishSelectMenu_DecideEventHandler)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food))}
+}
+}
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl < __T : IDishSelectMenu_DishMenuCompare > IDishSelectMenu_DishMenuCompareMethods for __T { }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl<__T:IDishSelectMenu_DecideEventHandler>IDishSelectMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishMenuCompare { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishMenuCompare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn compare_both_like_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishMenuCompare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn compare_difficulty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishMenuCompare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn compare_dislike_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishMenuCompare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn compare_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DishSelectMenu_DishMenuCompare as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishMenuCompare {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (is_recommended : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DishSelectMenu_DishMenuCompare) , :: core :: stringify ! (new) ,)) ; < Self as IDishSelectMenu_DishMenuCompareMethods > :: ctor (this , is_recommended) ; this }
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IDishSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]pub trait IDishSelectMenu_DishMenuCompareMethods:IDishSelectMenu_DishMenuCompare{#[doc="`.ctor(bool)` overload"]fn ctor(self,is_recommended:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DishSelectMenu_DishMenuCompare as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd2e50usize)as*mut u8,();
+(DishSelectMenu_DishMenuCompare)__receiver,(bool)::core::convert::Into::into(is_recommended))}
+}
+#[doc="`CompareBothLike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]fn compare_both_like(self,x:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem> ,y:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem>)->i32{unsafe{let __receiver= <DishSelectMenu_DishMenuCompare as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3000usize)as*mut u8,i32;
+(DishSelectMenu_DishMenuCompare)__receiver,(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)::core::convert::Into::into(x),(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)::core::convert::Into::into(y))}
+}
+#[doc="`CompareDifficulty(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]fn compare_difficulty(self,x:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem> ,y:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem>)->i32{unsafe{let __receiver= <DishSelectMenu_DishMenuCompare as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3170usize)as*mut u8,i32;
+(DishSelectMenu_DishMenuCompare)__receiver,(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)::core::convert::Into::into(x),(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)::core::convert::Into::into(y))}
+}
+#[doc="`CompareDislike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]fn compare_dislike(self,x:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem> ,y:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem>)->i32{unsafe{let __receiver= <DishSelectMenu_DishMenuCompare as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd31d0usize)as*mut u8,i32;
+(DishSelectMenu_DishMenuCompare)__receiver,(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)::core::convert::Into::into(x),(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)::core::convert::Into::into(y))}
+}
+#[doc="`CompareIndex(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]fn compare_index(self,x:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem> ,y:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem>)->i32{unsafe{let __receiver= <DishSelectMenu_DishMenuCompare as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3340usize)as*mut u8,i32;
+(DishSelectMenu_DishMenuCompare)__receiver,(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)::core::convert::Into::into(x),(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)::core::convert::Into::into(y))}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl<__T:IDishSelectMenu_DishMenuCompare>IDishSelectMenu_DishMenuCompareMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_DishMenuCompare{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn compare_both_like_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn compare_difficulty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn compare_dislike_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn compare_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_DishMenuCompare{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_recommended:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectMenu_DishMenuCompare), ::core::stringify!(new),));
+ <Self as IDishSelectMenu_DishMenuCompareMethods> ::ctor(this,is_recommended);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]pub trait IDishSelectMenu_DishSelectMenuManagerMethods:IDishSelectMenu_DishSelectMenuManager{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <DishSelectMenu_DishSelectMenuManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3a80usize)as*mut u8,();
+(DishSelectMenu_DishSelectMenuManager)__receiver)}
+}
+#[doc="`Save(crate::app::cooking_menu::dishselectmenu::DishSelectMenu)` overload"]fn save(self,menu:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu>)->(){unsafe{let __receiver= <DishSelectMenu_DishSelectMenuManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3b00usize)as*mut u8,();
+(DishSelectMenu_DishSelectMenuManager)__receiver,(crate::app::cooking_menu::dishselectmenu::DishSelectMenu)::core::convert::Into::into(menu))}
+}
+#[doc="`Restore(crate::app::cooking_menu::dishselectmenu::DishSelectMenu)` overload"]fn restore(self,menu:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu>)->(){unsafe{let __receiver= <DishSelectMenu_DishSelectMenuManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3a30usize)as*mut u8,();
+(DishSelectMenu_DishSelectMenuManager)__receiver,(crate::app::cooking_menu::dishselectmenu::DishSelectMenu)::core::convert::Into::into(menu))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DishSelectMenu_DishSelectMenuManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3b20usize)as*mut u8,();
+(DishSelectMenu_DishSelectMenuManager)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl<__T:IDishSelectMenu_DishSelectMenuManager>IDishSelectMenu_DishSelectMenuManagerMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_DishSelectMenuManager{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn restore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_DishSelectMenuManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectMenu_DishSelectMenuManager), ::core::stringify!(new),));
+ <Self as IDishSelectMenu_DishSelectMenuManagerMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,all_content:impl::core::convert::Into<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent> ,selected_unit_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> > ,decide_event_handler:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler> ,cancel_event_handler:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cf76f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent)::core::convert::Into::into(all_content),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(selected_unit_list),(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)::core::convert::Into::into(cancel_event_handler))}
+}
+#[doc="`CreateMenuItemList()` overload"]pub fn create_menu_item_list()->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cf79f0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cf8740usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]pub trait IDishSelectMenuMethods:IDishSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,cancel_event_handler:impl::core::convert::Into<crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler>)->(){unsafe{let __receiver= <DishSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf7470usize)as*mut u8,();
+(DishSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)::core::convert::Into::into(cancel_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DishSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf76a0usize)as*mut u8, ::unity2::Il2CppString;
+(DishSelectMenu)__receiver)}
+}
+#[doc="`SetupMenuSkill()` overload"]fn setup_menu_skill(self,)->(){unsafe{let __receiver= <DishSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf7e40usize)as*mut u8,();
+(DishSelectMenu)__receiver)}
+}
+#[doc="`UpdateDisplayIndex()` overload"]fn update_display_index(self,)->(){unsafe{let __receiver= <DishSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf7f60usize)as*mut u8,();
+(DishSelectMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DishSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf7f80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(DishSelectMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DishSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf8030usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(DishSelectMenu)__receiver)}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DishSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf8070usize)as*mut u8,();
+(DishSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DishSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf8360usize)as*mut u8,();
+(DishSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <DishSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf8670usize)as*mut u8,();
+(DishSelectMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl<__T:IDishSelectMenu>IDishSelectMenuMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_menu_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn setup_menu_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_display_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,cancel_event_handler:crate::app::cooking_menu::dishselectmenu::DishSelectMenu_CancelEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectMenu), ::core::stringify!(new),));
+ <Self as IDishSelectMenuMethods> ::ctor(this,menu_item_list,cancel_event_handler);
+this}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]pub trait IDishSelectMenu_SelectEventHandlerMethods:IDishSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DishSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd2790usize)as*mut u8,();
+(DishSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::fooddata::FoodData)` overload"]fn invoke(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData>)->(){unsafe{let __receiver= <DishSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd36d0usize)as*mut u8,();
+(DishSelectMenu_SelectEventHandler)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food))}
+}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl<__T:IDishSelectMenu_SelectEventHandler>IDishSelectMenu_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-cooking_menu-dishselectmenu")]impl DishSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DishSelectMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IDishSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectmenu")]
@@ -169,24 +302,24 @@ pub mod prelude {
     pub use super::DishSelectMenu_DishSelectMenuItem;
     pub use super::IDishSelectMenu_DishSelectMenuItem;
     pub use super::IDishSelectMenu_DishSelectMenuItemMethods;
-    pub use super::DishSelectMenu_SelectEventHandler;
-    pub use super::IDishSelectMenu_SelectEventHandler;
-    pub use super::IDishSelectMenu_SelectEventHandlerMethods;
-    pub use super::DishSelectMenu_DecideEventHandler;
-    pub use super::IDishSelectMenu_DecideEventHandler;
-    pub use super::IDishSelectMenu_DecideEventHandlerMethods;
     pub use super::DishSelectMenu_CancelEventHandler;
     pub use super::IDishSelectMenu_CancelEventHandler;
     pub use super::IDishSelectMenu_CancelEventHandlerMethods;
-    pub use super::DishSelectMenu;
-    pub use super::IDishSelectMenu;
-    pub use super::IDishSelectMenuMethods;
-    pub use super::DishSelectMenu_DishSelectMenuManager;
-    pub use super::IDishSelectMenu_DishSelectMenuManager;
-    pub use super::IDishSelectMenu_DishSelectMenuManagerMethods;
+    pub use super::DishSelectMenu_DecideEventHandler;
+    pub use super::IDishSelectMenu_DecideEventHandler;
+    pub use super::IDishSelectMenu_DecideEventHandlerMethods;
     pub use super::DishSelectMenu_DishMenuCompare;
     pub use super::IDishSelectMenu_DishMenuCompare;
     pub use super::IDishSelectMenu_DishMenuCompareMethods;
+    pub use super::DishSelectMenu_DishSelectMenuManager;
+    pub use super::IDishSelectMenu_DishSelectMenuManager;
+    pub use super::IDishSelectMenu_DishSelectMenuManagerMethods;
+    pub use super::DishSelectMenu;
+    pub use super::IDishSelectMenu;
+    pub use super::IDishSelectMenuMethods;
+    pub use super::DishSelectMenu_SelectEventHandler;
+    pub use super::IDishSelectMenu_SelectEventHandler;
+    pub use super::IDishSelectMenu_SelectEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

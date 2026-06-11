@@ -4,291 +4,293 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Sequence.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameSkip_Sequence  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSkip_Status{pub value:i32,}
+impl::unity2::ClassIdentity for GameSkip_Status{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSkip.Status";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSkip_Status{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSkip_Status{pub fn disable()->Self{Self{value:1}
+}
+pub fn trigger()->Self{Self{value:2}
+}
+pub fn escape()->Self{Self{value:4}
+}
+pub fn short_skipable()->Self{Self{value:8}
+}
+pub fn short_skipping()->Self{Self{value:16}
+}
+pub fn trigger_ai()->Self{Self{value:32}
+}
+pub fn disable_ai_skip()->Self{Self{value:64}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for GameSkip_Sequence  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_ProcSuspend.md"))]#[::unity2::class(namespace="App",name="GameSkip.ProcSuspend")]#[parent(crate::app::procinst::ProcInst)]pub struct GameSkip_ProcSuspend{}
 
-    const NAME: &'static str = "GameSkip.Sequence";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip.md"))]#[::unity2::class(namespace="App",name="GameSkip")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameskip::GameSkip>)]pub struct GameSkip{#[offset(28)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::gameskip::GameSkip_Sequence, #[offset(32)]#[rename(name="m_Status")]pub m_status:crate::app::gameskip::GameSkip_Status, #[offset(40)]#[rename(name="m_Statck")]pub m_statck:crate::system::collections::generic::stack_1::Stack_1<crate::app::gameskip::GameSkip_Status> ,}
 
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSkip_Result{pub value:i32,}
+impl::unity2::ClassIdentity for GameSkip_Result{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSkip.Result";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSkip_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSkip_Result{pub fn none()->Self{Self{value:0}
+}
+pub fn short_skip()->Self{Self{value:1}
+}
+pub fn long_skip()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::IlType for GameSkip_Sequence  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_Sequence.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSkip_Sequence{pub value:i32,}
+impl::unity2::ClassIdentity for GameSkip_Sequence{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSkip.Sequence";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSkip_Sequence{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSkip_Sequence{pub fn tick()->Self{Self{value:0}
+}
+pub fn fade_out()->Self{Self{value:1}
+}
+pub fn executed()->Self{Self{value:2}
+}
+pub fn fade_in()->Self{Self{value:3}
+}
 }
 
 
-impl  GameSkip_Sequence  {
-    pub fn tick() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn fade_out() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn executed() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn fade_in() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Status.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameSkip_Status  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameSkip_Status  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameSkip.Status";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameSkip_Status  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameSkip_Status  {
-    pub fn disable() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn trigger() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn escape() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn short_skipable() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn short_skipping() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn trigger_ai() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn disable_ai_skip() -> Self {
-        Self { value: 64 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSkip")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameskip :: GameSkip >)] pub struct GameSkip {
-# [offset (28)] # [rename (name = "m_Sequence")] pub m_sequence : crate :: app :: gameskip :: GameSkip_Sequence ,
-# [offset (32)] # [rename (name = "m_Status")] pub m_status : crate :: app :: gameskip :: GameSkip_Status ,
-# [offset (40)] # [rename (name = "m_Statck")] pub m_statck : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: gameskip :: GameSkip_Status > ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip_ProcSuspend.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSkip.ProcSuspend")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GameSkip_ProcSuspend {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameskip/GameSkip_Result.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameSkip_Result  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GameSkip_Result  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameSkip.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GameSkip_Result  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameSkip_Result  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn short_skip() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn long_skip() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameskip/GameSkip_ProcWaitTime.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSkip.ProcWaitTime")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GameSkip_ProcWaitTime {
-# [offset (112)] # [rename (name = "m_WaitTime")] pub m_wait_time : f32 ,
-# [offset (116)] # [rename (name = "m_DeltaTime")] pub m_delta_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_ProcWaitTime.md"))]#[::unity2::class(namespace="App",name="GameSkip.ProcWaitTime")]#[parent(crate::app::procinst::ProcInst)]pub struct GameSkip_ProcWaitTime{#[offset(112)]#[rename(name="m_WaitTime")]pub m_wait_time:f32, #[offset(116)]#[rename(name="m_DeltaTime")]pub m_delta_time:f32,}
 
 }
 
 #[cfg(feature = "app-gameskip-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gameskip")]
-impl GameSkip { # [doc = "`DebugSkip()` overload"] pub fn debug_skip () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22863b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Trigger()` overload"] pub fn trigger () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22863c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Escape()` overload"] pub fn escape () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286470usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Enable()` overload"] pub fn enable () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286620usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Disable()` overload"] pub fn disable () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227dec0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EnableShortSkip()` overload"] pub fn enable_short_skip () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22866d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DisableShortSkip()` overload"] pub fn disable_short_skip () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286780usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsSkip()` overload"] pub fn is_skip () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286520usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsDisable()` overload"] pub fn is_disable () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286830usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsWait()` overload"] pub fn is_wait () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22868f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsBlackOut()` overload"] pub fn is_black_out () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22869c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsBlackOrFadeOut()` overload"] pub fn is_black_or_fade_out () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286ac0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsFadeIn()` overload"] pub fn is_fade_in () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286b50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PushState()` overload"] pub fn push_state () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227ddd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PopState()` overload"] pub fn pop_state () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227e080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PushDisableAISkip()` overload"] pub fn push_disable_ai_skip () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286c20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PopDisableAISkip()` overload"] pub fn pop_disable_ai_skip () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286cf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TriggerAI()` overload"] pub fn trigger_ai () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286da0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`WaitTime(crate::app::procinst::ProcInst, f32)` overload"] pub fn wait_time (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286e80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`PWaitTime(f32)` overload"] pub fn p_wait_time (time : impl :: core :: convert :: Into < f32 >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286f10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`SuspendBind(crate::app::procinst::ProcInst)` overload"] pub fn suspend_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2287000usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gameskip")]
-pub trait IGameSkipMethods : IGameSkip { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcSkipInput()` overload"] fn calc_skip_input (self ,) -> crate :: app :: gameskip :: GameSkip_Result { unsafe { let __receiver = < GameSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip , :: unity2 :: OptionalMethod ,) -> crate :: app :: gameskip :: GameSkip_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TstStatus(crate::app::gameskip::GameSkip_Status)` overload"] fn tst_status (self , status : impl :: core :: convert :: Into < crate :: app :: gameskip :: GameSkip_Status >) -> bool { unsafe { let __receiver = < GameSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip , crate :: app :: gameskip :: GameSkip_Status , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (status) , :: core :: option :: Option :: None) } } } # [doc = "`SetStatus(crate::app::gameskip::GameSkip_Status)` overload"] fn set_status (self , status : impl :: core :: convert :: Into < crate :: app :: gameskip :: GameSkip_Status >) -> () { unsafe { let __receiver = < GameSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip , crate :: app :: gameskip :: GameSkip_Status , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (status) , :: core :: option :: Option :: None) } } } # [doc = "`ClearStatus(crate::app::gameskip::GameSkip_Status)` overload"] fn clear_status (self , status : impl :: core :: convert :: Into < crate :: app :: gameskip :: GameSkip_Status >) -> () { unsafe { let __receiver = < GameSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip , crate :: app :: gameskip :: GameSkip_Status , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (status) , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < GameSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2286180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gameskip")]
-impl < __T : IGameSkip > IGameSkipMethods for __T { }
-
-#[cfg(feature = "app-gameskip")]
-impl GameSkip { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_skip_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn tst_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn debug_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn escape_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn enable_short_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn disable_short_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_black_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_black_or_fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn push_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn pop_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn push_disable_ai_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn pop_disable_ai_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn trigger_ai_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn wait_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn p_wait_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn suspend_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } }
-
-#[cfg(feature = "app-gameskip")]
-impl GameSkip {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSkip) , :: core :: stringify ! (new) ,)) ; < Self as IGameSkipMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gameskip")]pub trait IGameSkip_ProcSuspendMethods:IGameSkip_ProcSuspend{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GameSkip_ProcSuspend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d940usize)as*mut u8,();
+(GameSkip_ProcSuspend)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <GameSkip_ProcSuspend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d960usize)as*mut u8,();
+(GameSkip_ProcSuspend)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <GameSkip_ProcSuspend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d970usize)as*mut u8,();
+(GameSkip_ProcSuspend)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameSkip_ProcSuspend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d980usize)as*mut u8,();
+(GameSkip_ProcSuspend)__receiver)}
+}
 }
 
-#[cfg(feature = "app-gameskip")]
-pub trait IGameSkip_ProcSuspendMethods : IGameSkip_ProcSuspend { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcSuspend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip_ProcSuspend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gameskip")]impl<__T:IGameSkip_ProcSuspend>IGameSkip_ProcSuspendMethods for __T{}
 
-#[cfg(feature = "app-gameskip")]
-impl < __T : IGameSkip_ProcSuspend > IGameSkip_ProcSuspendMethods for __T { }
-
-#[cfg(feature = "app-gameskip")]
-impl GameSkip_ProcSuspend { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip_ProcSuspend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-gameskip")]
-impl GameSkip_ProcSuspend {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSkip_ProcSuspend) , :: core :: stringify ! (new) ,)) ; < Self as IGameSkip_ProcSuspendMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gameskip")]impl GameSkip_ProcSuspend{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-gameskip")]
-pub trait IGameSkip_ProcWaitTimeMethods : IGameSkip_ProcWaitTime { # [doc = "`.ctor(f32)` overload"] fn ctor (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GameSkip_ProcWaitTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip_ProcWaitTime , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < GameSkip_ProcWaitTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSkip_ProcWaitTime , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gameskip")]impl GameSkip_ProcSuspend{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSkip_ProcSuspend), ::core::stringify!(new),));
+ <Self as IGameSkip_ProcSuspendMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-gameskip")]
-impl < __T : IGameSkip_ProcWaitTime > IGameSkip_ProcWaitTimeMethods for __T { }
+#[cfg(feature="app-gameskip")]impl GameSkip{#[doc="`DebugSkip()` overload"]pub fn debug_skip()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22863b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`Trigger()` overload"]pub fn trigger()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22863c0usize)as*mut u8,();
+)}
+}
+#[doc="`Escape()` overload"]pub fn escape()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286470usize)as*mut u8,();
+)}
+}
+#[doc="`Enable()` overload"]pub fn enable()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286620usize)as*mut u8,();
+)}
+}
+#[doc="`Disable()` overload"]pub fn disable()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x227dec0usize)as*mut u8,();
+)}
+}
+#[doc="`EnableShortSkip()` overload"]pub fn enable_short_skip()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22866d0usize)as*mut u8,();
+)}
+}
+#[doc="`DisableShortSkip()` overload"]pub fn disable_short_skip()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286780usize)as*mut u8,();
+)}
+}
+#[doc="`IsSkip()` overload"]pub fn is_skip()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286520usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsDisable()` overload"]pub fn is_disable()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286830usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsWait()` overload"]pub fn is_wait()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22868f0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsBlackOut()` overload"]pub fn is_black_out()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22869c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsBlackOrFadeOut()` overload"]pub fn is_black_or_fade_out()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286ac0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsFadeIn()` overload"]pub fn is_fade_in()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286b50usize)as*mut u8,bool;
+)}
+}
+#[doc="`PushState()` overload"]pub fn push_state()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x227ddd0usize)as*mut u8,();
+)}
+}
+#[doc="`PopState()` overload"]pub fn pop_state()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x227e080usize)as*mut u8,();
+)}
+}
+#[doc="`PushDisableAISkip()` overload"]pub fn push_disable_ai_skip()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286c20usize)as*mut u8,();
+)}
+}
+#[doc="`PopDisableAISkip()` overload"]pub fn pop_disable_ai_skip()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286cf0usize)as*mut u8,();
+)}
+}
+#[doc="`TriggerAI()` overload"]pub fn trigger_ai()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286da0usize)as*mut u8,();
+)}
+}
+#[doc="`WaitTime(crate::app::procinst::ProcInst, f32)` overload"]pub fn wait_time(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,time:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286e80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(f32)::core::convert::Into::into(time))}
+}
+#[doc="`PWaitTime(f32)` overload"]pub fn p_wait_time(time:impl::core::convert::Into<f32>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2286f10usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(f32)::core::convert::Into::into(time))}
+}
+#[doc="`SuspendBind(crate::app::procinst::ProcInst)` overload"]pub fn suspend_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2287000usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-gameskip")]
-impl GameSkip_ProcWaitTime { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip_ProcWaitTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSkip_ProcWaitTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-gameskip")]pub trait IGameSkipMethods:IGameSkip{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2285f10usize)as*mut u8,();
+(GameSkip)__receiver)}
+}
+#[doc="`CalcSkipInput()` overload"]fn calc_skip_input(self,)->crate::app::gameskip::GameSkip_Result{unsafe{let __receiver= <GameSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2285ff0usize)as*mut u8,crate::app::gameskip::GameSkip_Result;
+(GameSkip)__receiver)}
+}
+#[doc="`TstStatus(crate::app::gameskip::GameSkip_Status)` overload"]fn tst_status(self,status:impl::core::convert::Into<crate::app::gameskip::GameSkip_Status>)->bool{unsafe{let __receiver= <GameSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2286150usize)as*mut u8,bool;
+(GameSkip)__receiver,(crate::app::gameskip::GameSkip_Status)::core::convert::Into::into(status))}
+}
+#[doc="`SetStatus(crate::app::gameskip::GameSkip_Status)` overload"]fn set_status(self,status:impl::core::convert::Into<crate::app::gameskip::GameSkip_Status>)->(){unsafe{let __receiver= <GameSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2286160usize)as*mut u8,();
+(GameSkip)__receiver,(crate::app::gameskip::GameSkip_Status)::core::convert::Into::into(status))}
+}
+#[doc="`ClearStatus(crate::app::gameskip::GameSkip_Status)` overload"]fn clear_status(self,status:impl::core::convert::Into<crate::app::gameskip::GameSkip_Status>)->(){unsafe{let __receiver= <GameSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2286170usize)as*mut u8,();
+(GameSkip)__receiver,(crate::app::gameskip::GameSkip_Status)::core::convert::Into::into(status))}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <GameSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2286180usize)as*mut u8,();
+(GameSkip)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gameskip")]
-impl GameSkip_ProcWaitTime {
-# [doc = "`.ctor(f32)` — overload selector"] pub fn new (time : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSkip_ProcWaitTime) , :: core :: stringify ! (new) ,)) ; < Self as IGameSkip_ProcWaitTimeMethods > :: ctor (this , time) ; this }
+#[cfg(feature="app-gameskip")]impl<__T:IGameSkip>IGameSkipMethods for __T{}
+
+#[cfg(feature="app-gameskip")]impl GameSkip{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_skip_input_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tst_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn debug_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn escape_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn enable_short_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn disable_short_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_black_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_black_or_fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn push_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn pop_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn push_disable_ai_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn pop_disable_ai_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn trigger_ai_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn wait_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn p_wait_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn suspend_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+}
+
+#[cfg(feature="app-gameskip")]impl GameSkip{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSkip), ::core::stringify!(new),));
+ <Self as IGameSkipMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gameskip")]pub trait IGameSkip_ProcWaitTimeMethods:IGameSkip_ProcWaitTime{#[doc="`.ctor(f32)` overload"]fn ctor(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameSkip_ProcWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d990usize)as*mut u8,();
+(GameSkip_ProcWaitTime)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <GameSkip_ProcWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d9d0usize)as*mut u8,();
+(GameSkip_ProcWaitTime)__receiver)}
+}
+}
+
+#[cfg(feature="app-gameskip")]impl<__T:IGameSkip_ProcWaitTime>IGameSkip_ProcWaitTimeMethods for __T{}
+
+#[cfg(feature="app-gameskip")]impl GameSkip_ProcWaitTime{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gameskip")]impl GameSkip_ProcWaitTime{#[doc="`.ctor(f32)` — overload selector"]pub fn new(time:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSkip_ProcWaitTime), ::core::stringify!(new),));
+ <Self as IGameSkip_ProcWaitTimeMethods> ::ctor(this,time);
+this}
 }
 
 #[cfg(feature = "app-gameskip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameSkip_Sequence;
     pub use super::GameSkip_Status;
-    pub use super::GameSkip;
-    pub use super::IGameSkip;
-    pub use super::IGameSkipMethods;
     pub use super::GameSkip_ProcSuspend;
     pub use super::IGameSkip_ProcSuspend;
     pub use super::IGameSkip_ProcSuspendMethods;
+    pub use super::GameSkip;
+    pub use super::IGameSkip;
+    pub use super::IGameSkipMethods;
     pub use super::GameSkip_Result;
+    pub use super::GameSkip_Sequence;
     pub use super::GameSkip_ProcWaitTime;
     pub use super::IGameSkip_ProcWaitTime;
     pub use super::IGameSkip_ProcWaitTimeMethods;

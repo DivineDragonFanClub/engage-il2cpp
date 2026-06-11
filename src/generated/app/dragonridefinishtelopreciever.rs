@@ -4,40 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridefinishtelopreciever/DragonRideFinishtelopReciever.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideFinishtelopReciever")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideFinishtelopReciever {
-# [offset (24)] # [rename (name = "m_CameraComponent")] pub m_camera_component : crate :: app :: dragonridecamera :: DragonRideCamera ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridefinishtelopreciever/DragonRideFinishtelopReciever.md"))]#[::unity2::class(namespace="App",name="DragonRideFinishtelopReciever")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DragonRideFinishtelopReciever{#[offset(24)]#[rename(name="m_CameraComponent")]pub m_camera_component:crate::app::dragonridecamera::DragonRideCamera,}
 
 }
 
 #[cfg(feature = "app-dragonridefinishtelopreciever-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonridefinishtelopreciever")]
-pub trait IDragonRideFinishtelopRecieverMethods : IDragonRideFinishtelopReciever { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < DragonRideFinishtelopReciever as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideFinishtelopReciever , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac6070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < DragonRideFinishtelopReciever as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideFinishtelopReciever , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac6080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"] fn on_notify (self , origin : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , notification : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: inotification :: INotification > , context : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < DragonRideFinishtelopReciever as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideFinishtelopReciever , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: inotification :: INotification , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac6090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (origin) , :: core :: convert :: Into :: into (notification) , :: core :: convert :: Into :: into (context) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideFinishtelopReciever as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideFinishtelopReciever , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac6060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridefinishtelopreciever")]pub trait IDragonRideFinishtelopRecieverMethods:IDragonRideFinishtelopReciever{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <DragonRideFinishtelopReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac6070usize)as*mut u8,();
+(DragonRideFinishtelopReciever)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <DragonRideFinishtelopReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac6080usize)as*mut u8,();
+(DragonRideFinishtelopReciever)__receiver)}
+}
+#[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <DragonRideFinishtelopReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac6090usize)as*mut u8,();
+(DragonRideFinishtelopReciever)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(origin),(crate::unity_engine::playables::inotification::INotification)::core::convert::Into::into(notification),(crate::system::object::Object)::core::convert::Into::into(context))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideFinishtelopReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac6060usize)as*mut u8,();
+(DragonRideFinishtelopReciever)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonridefinishtelopreciever")]
-impl < __T : IDragonRideFinishtelopReciever > IDragonRideFinishtelopRecieverMethods for __T { }
+#[cfg(feature="app-dragonridefinishtelopreciever")]impl<__T:IDragonRideFinishtelopReciever>IDragonRideFinishtelopRecieverMethods for __T{}
 
-#[cfg(feature = "app-dragonridefinishtelopreciever")]
-impl DragonRideFinishtelopReciever { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideFinishtelopReciever as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideFinishtelopReciever as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_notify_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideFinishtelopReciever as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideFinishtelopReciever as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-dragonridefinishtelopreciever")]impl DragonRideFinishtelopReciever{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_notify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-dragonridefinishtelopreciever")]
-impl DragonRideFinishtelopReciever {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideFinishtelopReciever) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideFinishtelopRecieverMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonridefinishtelopreciever")]impl DragonRideFinishtelopReciever{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideFinishtelopReciever), ::core::stringify!(new),));
+ <Self as IDragonRideFinishtelopRecieverMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonridefinishtelopreciever")]

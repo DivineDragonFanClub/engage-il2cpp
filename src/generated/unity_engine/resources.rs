@@ -4,23 +4,129 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resources/Resources.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Resources")] # [parent (crate :: system :: object :: Object)] pub struct Resources {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resources/Resources.md"))]#[::unity2::class(namespace="UnityEngine",name="Resources")]#[parent(crate::system::object::Object)]pub struct Resources{}
 
 }
 
 #[cfg(feature = "unity_engine-resources-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resources")]
-impl Resources { pub fn convert_objects < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (raw_objects : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > >) -> :: unity2 :: Array < M0 > { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Resources as :: unity2 :: ClassIdentity > :: class () , "ConvertObjects" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Resources as :: unity2 :: ClassIdentity > :: NAME , "ConvertObjects" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (raw_objects) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`FindObjectsOfTypeAll(::unity2::SystemType)` overload"] pub fn find_objects_of_type_all (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89070usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } pub fn load < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Resources as :: unity2 :: ClassIdentity > :: class () , "Load" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Resources as :: unity2 :: ClassIdentity > :: NAME , "Load" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`Load(::unity2::Il2CppString, ::unity2::SystemType)` overload"] pub fn load_2 (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , system_type_instance : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f88fd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (system_type_instance) , :: core :: option :: Option :: None) } } } # [doc = "`LoadAsync(::unity2::Il2CppString, ::unity2::SystemType)` overload"] pub fn load_async (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: unity_engine :: resourcerequest :: ResourceRequest { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resourcerequest :: ResourceRequest = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`LoadAll(::unity2::Il2CppString, ::unity2::SystemType)` overload"] pub fn load_all (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , system_type_instance : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89280usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (system_type_instance) , :: core :: option :: Option :: None) } } } pub fn load_all_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Array < M0 > { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Resources as :: unity2 :: ClassIdentity > :: class () , "LoadAll" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Resources as :: unity2 :: ClassIdentity > :: NAME , "LoadAll" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < M0 > = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetBuiltinResource(::unity2::SystemType, ::unity2::Il2CppString)` overload"] pub fn get_builtin_resource (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89300usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } pub fn get_builtin_resource_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Resources as :: unity2 :: ClassIdentity > :: class () , "GetBuiltinResource" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Resources as :: unity2 :: ClassIdentity > :: NAME , "GetBuiltinResource" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`UnloadAsset(crate::unity_engine::object_2::Object_2)` overload"] pub fn unload_asset (asset_to_unload : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89350usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset_to_unload) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadUnusedAssets()` overload"] pub fn unload_unused_assets () -> crate :: unity_engine :: asyncoperation :: AsyncOperation { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asyncoperation :: AsyncOperation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f893d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resources")]impl Resources{pub fn convert_objects<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(raw_objects:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::object_2::Object_2> >)-> ::unity2::Array<M0>{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Resources as::unity2::ClassIdentity> ::class(),"ConvertObjects",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Resources as::unity2::ClassIdentity> ::NAME,"ConvertObjects",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::Array<crate::unity_engine::object_2::Object_2> , ::unity2::OptionalMethod,)-> ::unity2::Array<M0> = ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(raw_objects), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`FindObjectsOfTypeAll(::unity2::SystemType)` overload"]pub fn find_objects_of_type_all(r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89070usize)as*mut u8, ::unity2::Array<crate::unity_engine::object_2::Object_2> ;
+(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+pub fn load<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(path:impl::core::convert::Into< ::unity2::Il2CppString>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Resources as::unity2::ClassIdentity> ::class(),"Load",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Resources as::unity2::ClassIdentity> ::NAME,"Load",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(path), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`Load(::unity2::Il2CppString, ::unity2::SystemType)` overload"]pub fn load_2(path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::object_2::Object_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f88fd0usize)as*mut u8,crate::unity_engine::object_2::Object_2;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::SystemType)::core::convert::Into::into(system_type_instance))}
+}
+#[doc="`LoadAsync(::unity2::Il2CppString, ::unity2::SystemType)` overload"]pub fn load_async(path:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::resourcerequest::ResourceRequest{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89200usize)as*mut u8,crate::unity_engine::resourcerequest::ResourceRequest;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+#[doc="`LoadAll(::unity2::Il2CppString, ::unity2::SystemType)` overload"]pub fn load_all(path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89280usize)as*mut u8, ::unity2::Array<crate::unity_engine::object_2::Object_2> ;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::SystemType)::core::convert::Into::into(system_type_instance))}
+}
+pub fn load_all_2<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array<M0>{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Resources as::unity2::ClassIdentity> ::class(),"LoadAll",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Resources as::unity2::ClassIdentity> ::NAME,"LoadAll",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Array<M0> = ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(path), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`GetBuiltinResource(::unity2::SystemType, ::unity2::Il2CppString)` overload"]pub fn get_builtin_resource(r#type:impl::core::convert::Into< ::unity2::SystemType> ,path:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::object_2::Object_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89300usize)as*mut u8,crate::unity_engine::object_2::Object_2;
+(::unity2::SystemType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+pub fn get_builtin_resource_2<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(path:impl::core::convert::Into< ::unity2::Il2CppString>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Resources as::unity2::ClassIdentity> ::class(),"GetBuiltinResource",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Resources as::unity2::ClassIdentity> ::NAME,"GetBuiltinResource",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::Il2CppString, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(path), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`UnloadAsset(crate::unity_engine::object_2::Object_2)` overload"]pub fn unload_asset(asset_to_unload:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89350usize)as*mut u8,();
+(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(asset_to_unload))}
+}
+#[doc="`UnloadUnusedAssets()` overload"]pub fn unload_unused_assets()->crate::unity_engine::asyncoperation::AsyncOperation{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f893d0usize)as*mut u8,crate::unity_engine::asyncoperation::AsyncOperation;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-resources")]
-impl Resources { pub fn find_objects_of_type_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Resources as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Resources as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Resources as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Resources as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_builtin_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Resources as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn unload_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Resources as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn unload_unused_assets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Resources as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-resources")]impl Resources{pub fn find_objects_of_type_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_builtin_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn unload_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn unload_unused_assets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "unity_engine-resources")]
 #[doc(hidden)]

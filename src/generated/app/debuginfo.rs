@@ -4,41 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonscriptableobject_1 :: { ISingletonScriptableObject_1 , SingletonScriptableObject_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonscriptableobject_1::{ISingletonScriptableObject_1,SingletonScriptableObject_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuginfo/DebugInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugInfo")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: debuginfo :: DebugInfo >)] pub struct DebugInfo {
-# [offset (24)] # [rename (name = "SkipWarnings")] pub skip_warnings : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debuginfo/DebugInfo.md"))]#[::unity2::class(namespace="App",name="DebugInfo")]#[parent(crate::app::singletonscriptableobject_1::SingletonScriptableObject_1<crate::app::debuginfo::DebugInfo>)]pub struct DebugInfo{#[offset(24)]#[rename(name="SkipWarnings")]pub skip_warnings: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-debuginfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debuginfo")]
-impl DebugInfo { # [doc = "`IsSkip(::unity2::Il2CppString)` overload"] pub fn is_skip (log_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04a50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (log_text) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debuginfo")]impl DebugInfo{#[doc="`IsSkip(::unity2::Il2CppString)` overload"]pub fn is_skip(log_text:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04a50usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(log_text))}
+}
+}
 
-#[cfg(feature = "app-debuginfo")]
-pub trait IDebugInfoMethods : IDebugInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debuginfo")]pub trait IDebugInfoMethods:IDebugInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04ba0usize)as*mut u8,();
+(DebugInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "app-debuginfo")]
-impl < __T : IDebugInfo > IDebugInfoMethods for __T { }
+#[cfg(feature="app-debuginfo")]impl<__T:IDebugInfo>IDebugInfoMethods for __T{}
 
-#[cfg(feature = "app-debuginfo")]
-impl DebugInfo { pub fn is_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-debuginfo")]impl DebugInfo{pub fn is_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-debuginfo")]
-impl DebugInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugInfo) , :: core :: stringify ! (new) ,)) ; < Self as IDebugInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debuginfo")]impl DebugInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugInfo), ::core::stringify!(new),));
+ <Self as IDebugInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debuginfo")]

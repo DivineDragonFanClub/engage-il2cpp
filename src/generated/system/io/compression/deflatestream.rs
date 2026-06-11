@@ -4,84 +4,202 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: io :: stream :: { IStream , Stream }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::io::stream::{IStream,Stream}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md"))] # [:: unity2 :: class (namespace = "System.IO.Compression" , name = "DeflateStream.ReadMethod")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct DeflateStream_ReadMethod {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream.ReadMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStream_ReadMethod{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_WriteMethod.md"))] # [:: unity2 :: class (namespace = "System.IO.Compression" , name = "DeflateStream.WriteMethod")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct DeflateStream_WriteMethod {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream")]#[parent(crate::system::io::stream::Stream)]pub struct DeflateStream{#[offset(40)]#[rename(name="base_stream")]pub base_stream:crate::system::io::stream::Stream, #[offset(48)]#[rename(name="mode")]pub mode:crate::system::io::compression::compressionmode::CompressionMode, #[offset(52)]#[rename(name="leaveOpen")]pub leave_open:bool, #[offset(53)]#[rename(name="disposed")]pub disposed:bool, #[offset(56)]#[rename(name="native")]pub native:crate::system::io::compression::deflatestreamnative::DeflateStreamNative,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream.md"))] # [:: unity2 :: class (namespace = "System.IO.Compression" , name = "DeflateStream")] # [parent (crate :: system :: io :: stream :: Stream)] pub struct DeflateStream {
-# [offset (40)] # [rename (name = "base_stream")] pub base_stream : crate :: system :: io :: stream :: Stream ,
-# [offset (48)] # [rename (name = "mode")] pub mode : crate :: system :: io :: compression :: compressionmode :: CompressionMode ,
-# [offset (52)] # [rename (name = "leaveOpen")] pub leave_open : bool ,
-# [offset (53)] # [rename (name = "disposed")] pub disposed : bool ,
-# [offset (56)] # [rename (name = "native")] pub native : crate :: system :: io :: compression :: deflatestreamnative :: DeflateStreamNative ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/compression/deflatestream/DeflateStream_WriteMethod.md"))]#[::unity2::class(namespace="System.IO.Compression",name="DeflateStream.WriteMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DeflateStream_WriteMethod{}
 
 }
 
 #[cfg(feature = "system-io-compression-deflatestream-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-compression-deflatestream")]
-pub trait IDeflateStream_ReadMethodMethods : IDeflateStream_ReadMethod { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < DeflateStream_ReadMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream_ReadMethod , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a7f340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Array<u8>, i32, i32)` overload"] fn invoke (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < DeflateStream_ReadMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream_ReadMethod , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a7f360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl < __T : IDeflateStream_ReadMethod > IDeflateStream_ReadMethodMethods for __T { }
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl DeflateStream_ReadMethod { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream_ReadMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream_ReadMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl DeflateStream_ReadMethod {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DeflateStream_ReadMethod) , :: core :: stringify ! (new) ,)) ; < Self as IDeflateStream_ReadMethodMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStream_ReadMethodMethods:IDeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f340usize)as*mut u8,();
+(DeflateStream_ReadMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DeflateStream_ReadMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f360usize)as*mut u8,i32;
+(DeflateStream_ReadMethod)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
 }
 
-#[cfg(feature = "system-io-compression-deflatestream")]
-pub trait IDeflateStream_WriteMethodMethods : IDeflateStream_WriteMethod { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < DeflateStream_WriteMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream_WriteMethod , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a7f7e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Array<u8>, i32, i32)` overload"] fn invoke (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DeflateStream_WriteMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream_WriteMethod , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a7f800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-compression-deflatestream")]impl<__T:IDeflateStream_ReadMethod>IDeflateStream_ReadMethodMethods for __T{}
 
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl < __T : IDeflateStream_WriteMethod > IDeflateStream_WriteMethodMethods for __T { }
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl DeflateStream_WriteMethod { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream_WriteMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream_WriteMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl DeflateStream_WriteMethod {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DeflateStream_WriteMethod) , :: core :: stringify ! (new) ,)) ; < Self as IDeflateStream_WriteMethodMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "system-io-compression-deflatestream")]
-pub trait IDeflateStreamMethods : IDeflateStream { # [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` overload"] fn ctor (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , mode : impl :: core :: convert :: Into < crate :: system :: io :: compression :: compressionmode :: CompressionMode >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , crate :: system :: io :: stream :: Stream , crate :: system :: io :: compression :: compressionmode :: CompressionMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3558330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool, i32)` overload"] fn ctor_2 (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , mode : impl :: core :: convert :: Into < crate :: system :: io :: compression :: compressionmode :: CompressionMode > , leave_open : impl :: core :: convert :: Into < bool > , windows_bits : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , crate :: system :: io :: stream :: Stream , crate :: system :: io :: compression :: compressionmode :: CompressionMode , bool , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35584e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (leave_open) , :: core :: convert :: Into :: into (windows_bits) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool, bool)` overload"] fn ctor_3 (self , compressed_stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , mode : impl :: core :: convert :: Into < crate :: system :: io :: compression :: compressionmode :: CompressionMode > , leave_open : impl :: core :: convert :: Into < bool > , gzip : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , crate :: system :: io :: stream :: Stream , crate :: system :: io :: compression :: compressionmode :: CompressionMode , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3558340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (compressed_stream) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (leave_open) , :: core :: convert :: Into :: into (gzip) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool, i32)` overload"] fn ctor_4 (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , compression_level : impl :: core :: convert :: Into < crate :: system :: io :: compression :: compressionlevel :: CompressionLevel > , leave_open : impl :: core :: convert :: Into < bool > , windows_bits : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , crate :: system :: io :: stream :: Stream , crate :: system :: io :: compression :: compressionlevel :: CompressionLevel , bool , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35586b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (compression_level) , :: core :: convert :: Into :: into (leave_open) , :: core :: convert :: Into :: into (windows_bits) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool, bool)` overload"] fn ctor_5 (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream > , compression_level : impl :: core :: convert :: Into < crate :: system :: io :: compression :: compressionlevel :: CompressionLevel > , leave_open : impl :: core :: convert :: Into < bool > , gzip : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , crate :: system :: io :: stream :: Stream , crate :: system :: io :: compression :: compressionlevel :: CompressionLevel , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35586c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (compression_level) , :: core :: convert :: Into :: into (leave_open) , :: core :: convert :: Into :: into (gzip) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35586d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`ReadInternal(::unity2::Array<u8>, i32, i32)` overload"] fn read_internal (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3558840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u8>, i32, i32)` overload"] fn read (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3558960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`WriteInternal(::unity2::Array<u8>, i32, i32)` overload"] fn write_internal (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3558b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u8>, i32, i32)` overload"] fn write (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3558c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Flush()` overload"] fn flush (self ,) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3558e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"] fn seek (self , offset : impl :: core :: convert :: Into < i64 > , origin : impl :: core :: convert :: Into < crate :: system :: io :: seekorigin :: SeekOrigin >) -> i64 { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , i64 , crate :: system :: io :: seekorigin :: SeekOrigin , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3559710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (origin) , :: core :: option :: Option :: None) } } } # [doc = "`SetLength(i64)` overload"] fn set_length (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3559750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CanRead()` overload"] fn get_can_read (self ,) -> bool { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3559790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanSeek()` overload"] fn get_can_seek (self ,) -> bool { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35597c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanWrite()` overload"] fn get_can_write (self ,) -> bool { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35597d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Length()` overload"] fn get_length (self ,) -> i64 { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3559800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Position()` overload"] fn get_position (self ,) -> i64 { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3559840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Position(i64)` overload"] fn set_position (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < DeflateStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeflateStream , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3559880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_ReadMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream_ReadMethod), ::core::stringify!(new),));
+ <Self as IDeflateStream_ReadMethodMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl < __T : IDeflateStream > IDeflateStreamMethods for __T { }
+#[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStreamMethods:IDeflateStream{#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` overload"]fn ctor(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,mode:impl::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3558330usize)as*mut u8,();
+(DeflateStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(crate::system::io::compression::compressionmode::CompressionMode)::core::convert::Into::into(mode))}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool, i32)` overload"]fn ctor_2(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,mode:impl::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode> ,leave_open:impl::core::convert::Into<bool> ,windows_bits:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35584e0usize)as*mut u8,();
+(DeflateStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(crate::system::io::compression::compressionmode::CompressionMode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(leave_open),(i32)::core::convert::Into::into(windows_bits))}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool, bool)` overload"]fn ctor_3(self,compressed_stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,mode:impl::core::convert::Into<crate::system::io::compression::compressionmode::CompressionMode> ,leave_open:impl::core::convert::Into<bool> ,gzip:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3558340usize)as*mut u8,();
+(DeflateStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(compressed_stream),(crate::system::io::compression::compressionmode::CompressionMode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(leave_open),(bool)::core::convert::Into::into(gzip))}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool, i32)` overload"]fn ctor_4(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,compression_level:impl::core::convert::Into<crate::system::io::compression::compressionlevel::CompressionLevel> ,leave_open:impl::core::convert::Into<bool> ,windows_bits:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35586b0usize)as*mut u8,();
+(DeflateStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(crate::system::io::compression::compressionlevel::CompressionLevel)::core::convert::Into::into(compression_level),(bool)::core::convert::Into::into(leave_open),(i32)::core::convert::Into::into(windows_bits))}
+}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool, bool)` overload"]fn ctor_5(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream> ,compression_level:impl::core::convert::Into<crate::system::io::compression::compressionlevel::CompressionLevel> ,leave_open:impl::core::convert::Into<bool> ,gzip:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35586c0usize)as*mut u8,();
+(DeflateStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(crate::system::io::compression::compressionlevel::CompressionLevel)::core::convert::Into::into(compression_level),(bool)::core::convert::Into::into(leave_open),(bool)::core::convert::Into::into(gzip))}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35586d0usize)as*mut u8,();
+(DeflateStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`ReadInternal(::unity2::Array<u8>, i32, i32)` overload"]fn read_internal(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3558840usize)as*mut u8,i32;
+(DeflateStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3558960usize)as*mut u8,i32;
+(DeflateStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`WriteInternal(::unity2::Array<u8>, i32, i32)` overload"]fn write_internal(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3558b50usize)as*mut u8,();
+(DeflateStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3558c50usize)as*mut u8,();
+(DeflateStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3558e40usize)as*mut u8,();
+(DeflateStream)__receiver)}
+}
+#[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3559710usize)as*mut u8,i64;
+(DeflateStream)__receiver,(i64)::core::convert::Into::into(offset),(crate::system::io::seekorigin::SeekOrigin)::core::convert::Into::into(origin))}
+}
+#[doc="`SetLength(i64)` overload"]fn set_length(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3559750usize)as*mut u8,();
+(DeflateStream)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3559790usize)as*mut u8,bool;
+(DeflateStream)__receiver)}
+}
+#[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35597c0usize)as*mut u8,bool;
+(DeflateStream)__receiver)}
+}
+#[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35597d0usize)as*mut u8,bool;
+(DeflateStream)__receiver)}
+}
+#[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3559800usize)as*mut u8,i64;
+(DeflateStream)__receiver)}
+}
+#[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3559840usize)as*mut u8,i64;
+(DeflateStream)__receiver)}
+}
+#[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <DeflateStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3559880usize)as*mut u8,();
+(DeflateStream)__receiver,(i64)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl DeflateStream { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn read_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn write_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn flush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_can_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_can_seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_can_write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeflateStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
+#[cfg(feature="system-io-compression-deflatestream")]impl<__T:IDeflateStream>IDeflateStreamMethods for __T{}
 
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl DeflateStream {
-# [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` — overload selector"] pub fn new (stream : crate :: system :: io :: stream :: Stream , mode : crate :: system :: io :: compression :: compressionmode :: CompressionMode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DeflateStream) , :: core :: stringify ! (new) ,)) ; < Self as IDeflateStreamMethods > :: ctor (this , stream , mode) ; this }
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn read_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn write_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_can_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_can_seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_can_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
 
-# [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool, i32)` — overload selector"] pub fn new_2 (stream : crate :: system :: io :: stream :: Stream , mode : crate :: system :: io :: compression :: compressionmode :: CompressionMode , leave_open : bool , windows_bits : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DeflateStream) , :: core :: stringify ! (new_2) ,)) ; < Self as IDeflateStreamMethods > :: ctor_2 (this , stream , mode , leave_open , windows_bits) ; this }
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream{#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode)` — overload selector"]pub fn new(stream:crate::system::io::stream::Stream,mode:crate::system::io::compression::compressionmode::CompressionMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream), ::core::stringify!(new),));
+ <Self as IDeflateStreamMethods> ::ctor(this,stream,mode);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool, i32)` — overload selector"]pub fn new_2(stream:crate::system::io::stream::Stream,mode:crate::system::io::compression::compressionmode::CompressionMode,leave_open:bool,windows_bits:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream), ::core::stringify!(new_2),));
+ <Self as IDeflateStreamMethods> ::ctor_2(this,stream,mode,leave_open,windows_bits);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool, bool)` — overload selector"]pub fn new_3(compressed_stream:crate::system::io::stream::Stream,mode:crate::system::io::compression::compressionmode::CompressionMode,leave_open:bool,gzip:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream), ::core::stringify!(new_3),));
+ <Self as IDeflateStreamMethods> ::ctor_3(this,compressed_stream,mode,leave_open,gzip);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool, i32)` — overload selector"]pub fn new_4(stream:crate::system::io::stream::Stream,compression_level:crate::system::io::compression::compressionlevel::CompressionLevel,leave_open:bool,windows_bits:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream), ::core::stringify!(new_4),));
+ <Self as IDeflateStreamMethods> ::ctor_4(this,stream,compression_level,leave_open,windows_bits);
+this}
+#[doc="`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool, bool)` — overload selector"]pub fn new_5(stream:crate::system::io::stream::Stream,compression_level:crate::system::io::compression::compressionlevel::CompressionLevel,leave_open:bool,gzip:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream), ::core::stringify!(new_5),));
+ <Self as IDeflateStreamMethods> ::ctor_5(this,stream,compression_level,leave_open,gzip);
+this}
+}
 
-# [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionmode::CompressionMode, bool, bool)` — overload selector"] pub fn new_3 (compressed_stream : crate :: system :: io :: stream :: Stream , mode : crate :: system :: io :: compression :: compressionmode :: CompressionMode , leave_open : bool , gzip : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DeflateStream) , :: core :: stringify ! (new_3) ,)) ; < Self as IDeflateStreamMethods > :: ctor_3 (this , compressed_stream , mode , leave_open , gzip) ; this }
+#[cfg(feature="system-io-compression-deflatestream")]pub trait IDeflateStream_WriteMethodMethods:IDeflateStream_WriteMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DeflateStream_WriteMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f7e0usize)as*mut u8,();
+(DeflateStream_WriteMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DeflateStream_WriteMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a7f800usize)as*mut u8,();
+(DeflateStream_WriteMethod)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+}
 
-# [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool, i32)` — overload selector"] pub fn new_4 (stream : crate :: system :: io :: stream :: Stream , compression_level : crate :: system :: io :: compression :: compressionlevel :: CompressionLevel , leave_open : bool , windows_bits : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DeflateStream) , :: core :: stringify ! (new_4) ,)) ; < Self as IDeflateStreamMethods > :: ctor_4 (this , stream , compression_level , leave_open , windows_bits) ; this }
+#[cfg(feature="system-io-compression-deflatestream")]impl<__T:IDeflateStream_WriteMethod>IDeflateStream_WriteMethodMethods for __T{}
 
-# [doc = "`.ctor(crate::system::io::stream::Stream, crate::system::io::compression::compressionlevel::CompressionLevel, bool, bool)` — overload selector"] pub fn new_5 (stream : crate :: system :: io :: stream :: Stream , compression_level : crate :: system :: io :: compression :: compressionlevel :: CompressionLevel , leave_open : bool , gzip : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DeflateStream) , :: core :: stringify ! (new_5) ,)) ; < Self as IDeflateStreamMethods > :: ctor_5 (this , stream , compression_level , leave_open , gzip) ; this }
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_WriteMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-io-compression-deflatestream")]impl DeflateStream_WriteMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeflateStream_WriteMethod), ::core::stringify!(new),));
+ <Self as IDeflateStream_WriteMethodMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "system-io-compression-deflatestream")]
@@ -90,12 +208,12 @@ pub mod prelude {
     pub use super::DeflateStream_ReadMethod;
     pub use super::IDeflateStream_ReadMethod;
     pub use super::IDeflateStream_ReadMethodMethods;
-    pub use super::DeflateStream_WriteMethod;
-    pub use super::IDeflateStream_WriteMethod;
-    pub use super::IDeflateStream_WriteMethodMethods;
     pub use super::DeflateStream;
     pub use super::IDeflateStream;
     pub use super::IDeflateStreamMethods;
+    pub use super::DeflateStream_WriteMethod;
+    pub use super::IDeflateStream_WriteMethod;
+    pub use super::IDeflateStream_WriteMethodMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::io::stream::IStream;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

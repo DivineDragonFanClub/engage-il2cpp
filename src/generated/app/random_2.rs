@@ -4,103 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/random_2/Random_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "Random")] # [parent (crate :: system :: object :: Object)] pub struct Random_2 {
-# [static_field] # [rename (name = "s_Rand")] pub s_rand : :: unity2 :: Array < crate :: app :: random_2 :: Random_2 > ,
-# [offset (16)] # [rename (name = "m_Seed")] pub m_seed : crate :: app :: randomseed :: RandomSeed ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/random_2/Random_2.md"))]#[::unity2::class(namespace="App",name="Random")]#[parent(crate::system::object::Object)]pub struct Random_2{#[static_field]#[rename(name="s_Rand")]pub s_rand: ::unity2::Array<crate::app::random_2::Random_2> , #[offset(16)]#[rename(name="m_Seed")]pub m_seed:crate::app::randomseed::RandomSeed,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/random_2/Random_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Random_Type{pub value:i32,}
+impl::unity2::ClassIdentity for Random_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Random.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/random_2/Random_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Random_Type  {
-    pub value: i32,
+impl::unity2::IlType for Random_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for Random_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Random.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl Random_Type{pub fn system()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for Random_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn game()->Self{Self{value:1}
 }
-
-
-impl  Random_Type  {
-    pub fn system() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn game() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn spot() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn hub_item() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn kill_bonus() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn combat() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 7 }
-
-    }
-
+pub fn spot()->Self{Self{value:2}
+}
+pub fn hub()->Self{Self{value:3}
+}
+pub fn hub_item()->Self{Self{value:4}
+}
+pub fn kill_bonus()->Self{Self{value:5}
+}
+pub fn combat()->Self{Self{value:6}
+}
+pub fn num()->Self{Self{value:7}
+}
 }
 
 }
@@ -108,23 +48,192 @@ impl  Random_Type  {
 #[cfg(feature = "app-random_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-random_2")]
-impl Random_2 { # [doc = "`InitializeAll()` overload"] pub fn initialize_all () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374040usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`InitializeAll(u32)` overload"] pub fn initialize_all_2 (v : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374a90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`GetInstance(crate::app::random_2::Random_Type)` overload"] pub fn get_instance (r#type : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_Type >) -> crate :: app :: random_2 :: Random_2 { unsafe { { let __inner : extern "C" fn (crate :: app :: random_2 :: Random_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374be0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`IsSave(crate::app::random_2::Random_Type)` overload"] pub fn is_save (r#type : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_Type >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: random_2 :: Random_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374c60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`get_System()` overload"] pub fn get_system () -> crate :: app :: random_2 :: Random_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23746e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Game()` overload"] pub fn get_game () -> crate :: app :: random_2 :: Random_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374c70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Spot()` overload"] pub fn get_spot () -> crate :: app :: random_2 :: Random_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374ce0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Hub()` overload"] pub fn get_hub () -> crate :: app :: random_2 :: Random_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374d50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_HubItem()` overload"] pub fn get_hub_item () -> crate :: app :: random_2 :: Random_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374dc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_KillBonus()` overload"] pub fn get_kill_bonus () -> crate :: app :: random_2 :: Random_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374e30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Combat()` overload"] pub fn get_combat () -> crate :: app :: random_2 :: Random_2 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374ea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] pub fn serialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] pub fn deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375a90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-random_2")]impl Random_2{#[doc="`InitializeAll()` overload"]pub fn initialize_all()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374040usize)as*mut u8,();
+)}
+}
+#[doc="`InitializeAll(u32)` overload"]pub fn initialize_all_2(v:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374a90usize)as*mut u8,();
+(u32)::core::convert::Into::into(v))}
+}
+#[doc="`GetInstance(crate::app::random_2::Random_Type)` overload"]pub fn get_instance(r#type:impl::core::convert::Into<crate::app::random_2::Random_Type>)->crate::app::random_2::Random_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374be0usize)as*mut u8,crate::app::random_2::Random_2;
+(crate::app::random_2::Random_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`IsSave(crate::app::random_2::Random_Type)` overload"]pub fn is_save(r#type:impl::core::convert::Into<crate::app::random_2::Random_Type>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374c60usize)as*mut u8,bool;
+(crate::app::random_2::Random_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`get_System()` overload"]pub fn get_system()->crate::app::random_2::Random_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23746e0usize)as*mut u8,crate::app::random_2::Random_2;
+)}
+}
+#[doc="`get_Game()` overload"]pub fn get_game()->crate::app::random_2::Random_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374c70usize)as*mut u8,crate::app::random_2::Random_2;
+)}
+}
+#[doc="`get_Spot()` overload"]pub fn get_spot()->crate::app::random_2::Random_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374ce0usize)as*mut u8,crate::app::random_2::Random_2;
+)}
+}
+#[doc="`get_Hub()` overload"]pub fn get_hub()->crate::app::random_2::Random_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374d50usize)as*mut u8,crate::app::random_2::Random_2;
+)}
+}
+#[doc="`get_HubItem()` overload"]pub fn get_hub_item()->crate::app::random_2::Random_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374dc0usize)as*mut u8,crate::app::random_2::Random_2;
+)}
+}
+#[doc="`get_KillBonus()` overload"]pub fn get_kill_bonus()->crate::app::random_2::Random_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374e30usize)as*mut u8,crate::app::random_2::Random_2;
+)}
+}
+#[doc="`get_Combat()` overload"]pub fn get_combat()->crate::app::random_2::Random_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374ea0usize)as*mut u8,crate::app::random_2::Random_2;
+)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2375660usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2375a90usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
 
-#[cfg(feature = "app-random_2")]
-pub trait IRandom_2Methods : IRandom_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23746b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32)` overload"] fn ctor_2 (self , seed : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (seed) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize(u32)` overload"] fn initialize_2 (self , v : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`Peek()` overload"] fn peek (self ,) -> i32 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Spin(i32)` overload"] fn spin (self , count : impl :: core :: convert :: Into < i32 >) -> crate :: app :: random_2 :: Random_2 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: random_2 :: Random_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`GetValue()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23748d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetF01()` overload"] fn get_f01 (self ,) -> f32 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23750f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetValue(i32)` overload"] fn get_value_2 (self , num : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`GetMinMax(i32, i32)` overload"] fn get_min_max (self , min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23751b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`GetMinMax(f32, f32)` overload"] fn get_min_max_2 (self , min : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23751f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`GetMaxMin(i32, i32)` overload"] fn get_max_min (self , min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`get_insideUnitSphere()` overload"] fn get_inside_unit_sphere (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_insideUnitCircle()` overload"] fn get_inside_unit_circle (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsProbability100(f32)` overload"] fn is_probability100 (self , percent : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23754b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (percent) , :: core :: option :: Option :: None) } } } fn shuffle < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Random_2 as :: unity2 :: ClassIdentity > :: class () , "Shuffle" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Random_2 as :: unity2 :: ClassIdentity > :: NAME , "Shuffle" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (Random_2 , crate :: system :: collections :: generic :: list_1 :: List_1 < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (list) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetIndex(::unity2::Array<i32>)` overload"] fn get_index (self , ratio_table : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> i32 { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ratio_table) , :: core :: option :: Option :: None) } } } # [doc = "`get_Seed()` overload"] fn get_seed (self ,) -> crate :: app :: randomseed :: RandomSeed { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: OptionalMethod ,) -> crate :: app :: randomseed :: RandomSeed = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Seed(crate::app::randomseed::RandomSeed)` overload"] fn set_seed (self , value : impl :: core :: convert :: Into < crate :: app :: randomseed :: RandomSeed >) -> () { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , crate :: app :: randomseed :: RandomSeed , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Dump()` overload"] fn dump (self ,) -> () { unsafe { let __receiver = < Random_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Random_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-random_2")]pub trait IRandom_2Methods:IRandom_2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23746b0usize)as*mut u8,();
+(Random_2)__receiver)}
+}
+#[doc="`.ctor(u32)` overload"]fn ctor_2(self,seed:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2374f10usize)as*mut u8,();
+(Random_2)__receiver,(u32)::core::convert::Into::into(seed))}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2374750usize)as*mut u8,();
+(Random_2)__receiver)}
+}
+#[doc="`Initialize(u32)` overload"]fn initialize_2(self,v:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2374900usize)as*mut u8,();
+(Random_2)__receiver,(u32)::core::convert::Into::into(v))}
+}
+#[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375040usize)as*mut u8,i32;
+(Random_2)__receiver)}
+}
+#[doc="`Spin(i32)` overload"]fn spin(self,count:impl::core::convert::Into<i32>)->crate::app::random_2::Random_2{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375080usize)as*mut u8,crate::app::random_2::Random_2;
+(Random_2)__receiver,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`GetValue()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23748d0usize)as*mut u8,i32;
+(Random_2)__receiver)}
+}
+#[doc="`GetF01()` overload"]fn get_f01(self,)->f32{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23750f0usize)as*mut u8,f32;
+(Random_2)__receiver)}
+}
+#[doc="`GetValue(i32)` overload"]fn get_value_2(self,num:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375170usize)as*mut u8,i32;
+(Random_2)__receiver,(i32)::core::convert::Into::into(num))}
+}
+#[doc="`GetMinMax(i32, i32)` overload"]fn get_min_max(self,min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23751b0usize)as*mut u8,i32;
+(Random_2)__receiver,(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max))}
+}
+#[doc="`GetMinMax(f32, f32)` overload"]fn get_min_max_2(self,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23751f0usize)as*mut u8,f32;
+(Random_2)__receiver,(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max))}
+}
+#[doc="`GetMaxMin(i32, i32)` overload"]fn get_max_min(self,min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375240usize)as*mut u8,i32;
+(Random_2)__receiver,(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max))}
+}
+#[doc="`get_insideUnitSphere()` overload"]fn get_inside_unit_sphere(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375290usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(Random_2)__receiver)}
+}
+#[doc="`get_insideUnitCircle()` overload"]fn get_inside_unit_circle(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375400usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(Random_2)__receiver)}
+}
+#[doc="`IsProbability100(f32)` overload"]fn is_probability100(self,percent:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23754b0usize)as*mut u8,bool;
+(Random_2)__receiver,(f32)::core::convert::Into::into(percent))}
+}
+fn shuffle<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Random_2 as::unity2::ClassIdentity> ::class(),"Shuffle",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Random_2 as::unity2::ClassIdentity> ::NAME,"Shuffle",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(Random_2,crate::system::collections::generic::list_1::List_1<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::convert::Into::into(list), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`GetIndex(::unity2::Array<i32>)` overload"]fn get_index(self,ratio_table:impl::core::convert::Into< ::unity2::Array<i32> >)->i32{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375520usize)as*mut u8,i32;
+(Random_2)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(ratio_table))}
+}
+#[doc="`get_Seed()` overload"]fn get_seed(self,)->crate::app::randomseed::RandomSeed{unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375630usize)as*mut u8,crate::app::randomseed::RandomSeed;
+(Random_2)__receiver)}
+}
+#[doc="`set_Seed(crate::app::randomseed::RandomSeed)` overload"]fn set_seed(self,value:impl::core::convert::Into<crate::app::randomseed::RandomSeed>)->(){unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375640usize)as*mut u8,();
+(Random_2)__receiver,(crate::app::randomseed::RandomSeed)::core::convert::Into::into(value))}
+}
+#[doc="`Dump()` overload"]fn dump(self,)->(){unsafe{let __receiver= <Random_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2375650usize)as*mut u8,();
+(Random_2)__receiver)}
+}
+}
 
-#[cfg(feature = "app-random_2")]
-impl < __T : IRandom_2 > IRandom_2Methods for __T { }
+#[cfg(feature="app-random_2")]impl<__T:IRandom_2>IRandom_2Methods for __T{}
 
-#[cfg(feature = "app-random_2")]
-impl Random_2 { pub fn initialize_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn initialize_all_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_save_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_system_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_game_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_spot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_hub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_hub_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_kill_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_combat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn initialize_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn peek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn spin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_f01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_value_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_min_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_min_max_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_max_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_inside_unit_sphere_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_inside_unit_circle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn is_probability100_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_seed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_seed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } }
+#[cfg(feature="app-random_2")]impl Random_2{pub fn initialize_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_all_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_system_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_game_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_spot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_hub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_hub_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_kill_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_combat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn initialize_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn spin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_f01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_value_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_min_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_min_max_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_max_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_inside_unit_sphere_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_inside_unit_circle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn is_probability100_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_seed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_seed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+}
 
-#[cfg(feature = "app-random_2")]
-impl Random_2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Random_2) , :: core :: stringify ! (new) ,)) ; < Self as IRandom_2Methods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(u32)` — overload selector"] pub fn new_2 (seed : u32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Random_2) , :: core :: stringify ! (new_2) ,)) ; < Self as IRandom_2Methods > :: ctor_2 (this , seed) ; this }
+#[cfg(feature="app-random_2")]impl Random_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Random_2), ::core::stringify!(new),));
+ <Self as IRandom_2Methods> ::ctor(this,);
+this}
+#[doc="`.ctor(u32)` — overload selector"]pub fn new_2(seed:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Random_2), ::core::stringify!(new_2),));
+ <Self as IRandom_2Methods> ::ctor_2(this,seed);
+this}
 }
 
 #[cfg(feature = "app-random_2")]

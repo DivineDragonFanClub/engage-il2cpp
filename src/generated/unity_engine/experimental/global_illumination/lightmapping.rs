@@ -4,56 +4,75 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.GlobalIllumination" , name = "Lightmapping")] # [parent (crate :: system :: object :: Object)] pub struct Lightmapping {
-# [static_field] # [rename (name = "s_DefaultDelegate")] pub s_default_delegate : crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate ,
-# [static_field] # [rename (name = "s_RequestLightsDelegate")] pub s_request_lights_delegate : crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping_RequestLightsDelegate.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.GlobalIllumination",name="Lightmapping.RequestLightsDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Lightmapping_RequestLightsDelegate{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping_RequestLightsDelegate.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.GlobalIllumination" , name = "Lightmapping.RequestLightsDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct Lightmapping_RequestLightsDelegate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.GlobalIllumination",name="Lightmapping")]#[parent(crate::system::object::Object)]pub struct Lightmapping{#[static_field]#[rename(name="s_DefaultDelegate")]pub s_default_delegate:crate::unity_engine::experimental::global_illumination::lightmapping::Lightmapping_RequestLightsDelegate, #[static_field]#[rename(name="s_RequestLightsDelegate")]pub s_request_lights_delegate:crate::unity_engine::experimental::global_illumination::lightmapping::Lightmapping_RequestLightsDelegate,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
-impl Lightmapping { # [doc = "`SetDelegate(crate::unity_engine::experimental::global_illumination::lightmapping::Lightmapping_RequestLightsDelegate)` overload"] pub fn set_delegate (del : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c57cb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (del) , :: core :: option :: Option :: None) } } } # [doc = "`GetDelegate()` overload"] pub fn get_delegate () -> crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c57d60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ResetDelegate()` overload"] pub fn reset_delegate () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c57dd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RequestLights(::unity2::Array<crate::unity_engine::light::Light>, ::unity2::IntPtr, i32)` overload"] pub fn request_lights (lights : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: light :: Light > > , out_lights_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , out_lights_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: light :: Light > , :: unity2 :: IntPtr , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c57e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lights) , :: core :: convert :: Into :: into (out_lights_ptr) , :: core :: convert :: Into :: into (out_lights_count) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c57f10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-global_illumination-lightmapping")]pub trait ILightmapping_RequestLightsDelegateMethods:ILightmapping_RequestLightsDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Lightmapping_RequestLightsDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379c670usize)as*mut u8,();
+(Lightmapping_RequestLightsDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
-impl Lightmapping { pub fn set_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lightmapping as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lightmapping as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lightmapping as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn request_lights_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lightmapping as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lightmapping as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-experimental-global_illumination-lightmapping")]impl<__T:ILightmapping_RequestLightsDelegate>ILightmapping_RequestLightsDelegateMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
-pub trait ILightmapping_RequestLightsDelegateMethods : ILightmapping_RequestLightsDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Lightmapping_RequestLightsDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Lightmapping_RequestLightsDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379c670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-global_illumination-lightmapping")]impl Lightmapping_RequestLightsDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
-impl < __T : ILightmapping_RequestLightsDelegate > ILightmapping_RequestLightsDelegateMethods for __T { }
+#[cfg(feature="unity_engine-experimental-global_illumination-lightmapping")]impl Lightmapping_RequestLightsDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Lightmapping_RequestLightsDelegate), ::core::stringify!(new),));
+ <Self as ILightmapping_RequestLightsDelegateMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
-impl Lightmapping_RequestLightsDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Lightmapping_RequestLightsDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-experimental-global_illumination-lightmapping")]impl Lightmapping{#[doc="`SetDelegate(crate::unity_engine::experimental::global_illumination::lightmapping::Lightmapping_RequestLightsDelegate)` overload"]pub fn set_delegate(del:impl::core::convert::Into<crate::unity_engine::experimental::global_illumination::lightmapping::Lightmapping_RequestLightsDelegate>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c57cb0usize)as*mut u8,();
+(crate::unity_engine::experimental::global_illumination::lightmapping::Lightmapping_RequestLightsDelegate)::core::convert::Into::into(del))}
+}
+#[doc="`GetDelegate()` overload"]pub fn get_delegate()->crate::unity_engine::experimental::global_illumination::lightmapping::Lightmapping_RequestLightsDelegate{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c57d60usize)as*mut u8,crate::unity_engine::experimental::global_illumination::lightmapping::Lightmapping_RequestLightsDelegate;
+)}
+}
+#[doc="`ResetDelegate()` overload"]pub fn reset_delegate()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c57dd0usize)as*mut u8,();
+)}
+}
+#[doc="`RequestLights(::unity2::Array<crate::unity_engine::light::Light>, ::unity2::IntPtr, i32)` overload"]pub fn request_lights(lights:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::light::Light> > ,out_lights_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,out_lights_count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c57e40usize)as*mut u8,();
+(::unity2::Array<crate::unity_engine::light::Light>)::core::convert::Into::into(lights),(::unity2::IntPtr)::core::convert::Into::into(out_lights_ptr),(i32)::core::convert::Into::into(out_lights_count))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c57f10usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
-impl Lightmapping_RequestLightsDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Lightmapping_RequestLightsDelegate) , :: core :: stringify ! (new) ,)) ; < Self as ILightmapping_RequestLightsDelegateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-experimental-global_illumination-lightmapping")]impl Lightmapping{pub fn set_delegate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_delegate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_delegate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn request_lights_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
 #[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Lightmapping;
-    pub use super::ILightmapping;
     pub use super::Lightmapping_RequestLightsDelegate;
     pub use super::ILightmapping_RequestLightsDelegate;
     pub use super::ILightmapping_RequestLightsDelegateMethods;
+    pub use super::Lightmapping;
+    pub use super::ILightmapping;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

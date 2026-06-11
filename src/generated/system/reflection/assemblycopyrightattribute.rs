@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblycopyrightattribute/AssemblyCopyrightAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyCopyrightAttribute")] pub struct AssemblyCopyrightAttribute {
-# [offset (16)] # [rename (name = "m_copyright")] pub m_copyright : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblycopyrightattribute/AssemblyCopyrightAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyCopyrightAttribute")]pub struct AssemblyCopyrightAttribute{#[offset(16)]#[rename(name="m_copyright")]pub m_copyright: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblycopyrightattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblycopyrightattribute")]
-pub trait IAssemblyCopyrightAttributeMethods : IAssemblyCopyrightAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , copyright : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyCopyrightAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyCopyrightAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (copyright) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblycopyrightattribute")]pub trait IAssemblyCopyrightAttributeMethods:IAssemblyCopyrightAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,copyright:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyCopyrightAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401b20usize)as*mut u8,();
+(AssemblyCopyrightAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(copyright))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblycopyrightattribute")]
-impl < __T : IAssemblyCopyrightAttribute > IAssemblyCopyrightAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblycopyrightattribute")]impl<__T:IAssemblyCopyrightAttribute>IAssemblyCopyrightAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblycopyrightattribute")]
-impl AssemblyCopyrightAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyCopyrightAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblycopyrightattribute")]impl AssemblyCopyrightAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblycopyrightattribute")]
-impl AssemblyCopyrightAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (copyright : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyCopyrightAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyCopyrightAttributeMethods > :: ctor (this , copyright) ; this }
+#[cfg(feature="system-reflection-assemblycopyrightattribute")]impl AssemblyCopyrightAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(copyright: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyCopyrightAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyCopyrightAttributeMethods> ::ctor(this,copyright);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblycopyrightattribute")]

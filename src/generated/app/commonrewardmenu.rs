@@ -4,43 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardmenu/CommonRewardMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRewardMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct CommonRewardMenu {
-# [offset (196)] # [rename (name = "m_IsGaugeAllEnd")] pub m_is_gauge_all_end : bool ,
-# [offset (200)] # [rename (name = "m_AddLevelUpUnitList")] pub m_add_level_up_unit_list : crate :: system :: action_2 :: Action_2 < crate :: app :: unit :: Unit , i32 > ,
-# [offset (208)] # [rename (name = "m_WaitTimeStart")] pub m_wait_time_start : f32 ,
-# [offset (212)] # [rename (name = "m_WaitTimeEnd")] pub m_wait_time_end : f32 ,
-# [offset (216)] # [rename (name = "m_ShowIndex")] pub m_show_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardmenu/CommonRewardMenu.md"))]#[::unity2::class(namespace="App",name="CommonRewardMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct CommonRewardMenu{#[offset(196)]#[rename(name="m_IsGaugeAllEnd")]pub m_is_gauge_all_end:bool, #[offset(200)]#[rename(name="m_AddLevelUpUnitList")]pub m_add_level_up_unit_list:crate::system::action_2::Action_2<crate::app::unit::Unit,i32> , #[offset(208)]#[rename(name="m_WaitTimeStart")]pub m_wait_time_start:f32, #[offset(212)]#[rename(name="m_WaitTimeEnd")]pub m_wait_time_end:f32, #[offset(216)]#[rename(name="m_ShowIndex")]pub m_show_index:i32,}
 
 }
 
 #[cfg(feature = "app-commonrewardmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commonrewardmenu")]
-impl CommonRewardMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , reward_exp_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unit :: Unit , i32 > > , add_level_up_unit_list : impl :: core :: convert :: Into < crate :: system :: action_2 :: Action_2 < crate :: app :: unit :: Unit , i32 > >) -> crate :: app :: commonrewardmenu :: CommonRewardMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: unit :: Unit , i32 > , crate :: system :: action_2 :: Action_2 < crate :: app :: unit :: Unit , i32 > , :: unity2 :: OptionalMethod ,) -> crate :: app :: commonrewardmenu :: CommonRewardMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25311a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (reward_exp_list) , :: core :: convert :: Into :: into (add_level_up_unit_list) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewardmenu")]impl CommonRewardMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,reward_exp_list:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> > ,add_level_up_unit_list:impl::core::convert::Into<crate::system::action_2::Action_2<crate::app::unit::Unit,i32> >)->crate::app::commonrewardmenu::CommonRewardMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25311a0usize)as*mut u8,crate::app::commonrewardmenu::CommonRewardMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>)::core::convert::Into::into(reward_exp_list),(crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)::core::convert::Into::into(add_level_up_unit_list))}
+}
+}
 
-#[cfg(feature = "app-commonrewardmenu")]
-pub trait ICommonRewardMenuMethods : ICommonRewardMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent > , add_level_up_unit_list : impl :: core :: convert :: Into < crate :: system :: action_2 :: Action_2 < crate :: app :: unit :: Unit , i32 > >) -> () { unsafe { let __receiver = < CommonRewardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , crate :: system :: action_2 :: Action_2 < crate :: app :: unit :: Unit , i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2531580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (add_level_up_unit_list) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CommonRewardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2531660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < CommonRewardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25316b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < CommonRewardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < CommonRewardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveUp(bool)` overload"] fn move_up (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CommonRewardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25323b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`MoveDown(bool)` overload"] fn move_down (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CommonRewardMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25323d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewardmenu")]pub trait ICommonRewardMenuMethods:ICommonRewardMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,add_level_up_unit_list:impl::core::convert::Into<crate::system::action_2::Action_2<crate::app::unit::Unit,i32> >)->(){unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2531580usize)as*mut u8,();
+(CommonRewardMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)::core::convert::Into::into(add_level_up_unit_list))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2531660usize)as*mut u8, ::unity2::Il2CppString;
+(CommonRewardMenu)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25316b0usize)as*mut u8,();
+(CommonRewardMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532370usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(CommonRewardMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532390usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(CommonRewardMenu)__receiver)}
+}
+#[doc="`MoveUp(bool)` overload"]fn move_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25323b0usize)as*mut u8,();
+(CommonRewardMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`MoveDown(bool)` overload"]fn move_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25323d0usize)as*mut u8,();
+(CommonRewardMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+}
 
-#[cfg(feature = "app-commonrewardmenu")]
-impl < __T : ICommonRewardMenu > ICommonRewardMenuMethods for __T { }
+#[cfg(feature="app-commonrewardmenu")]impl<__T:ICommonRewardMenu>ICommonRewardMenuMethods for __T{}
 
-#[cfg(feature = "app-commonrewardmenu")]
-impl CommonRewardMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn move_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn move_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-commonrewardmenu")]impl CommonRewardMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn move_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn move_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-commonrewardmenu")]
-impl CommonRewardMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent , add_level_up_unit_list : crate :: system :: action_2 :: Action_2 < crate :: app :: unit :: Unit , i32 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRewardMenu) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRewardMenuMethods > :: ctor (this , menu_item_list , menu_content , add_level_up_unit_list) ; this }
+#[cfg(feature="app-commonrewardmenu")]impl CommonRewardMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,add_level_up_unit_list:crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRewardMenu), ::core::stringify!(new),));
+ <Self as ICommonRewardMenuMethods> ::ctor(this,menu_item_list,menu_content,add_level_up_unit_list);
+this}
 }
 
 #[cfg(feature = "app-commonrewardmenu")]

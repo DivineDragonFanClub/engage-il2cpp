@@ -4,23 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/api_updating/apiupdaterruntimehelpers/APIUpdaterRuntimeHelpers.md"))] # [:: unity2 :: class (namespace = "UnityEngine._Scripting.APIUpdating" , name = "APIUpdaterRuntimeHelpers")] # [parent (crate :: system :: object :: Object)] pub struct APIUpdaterRuntimeHelpers {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scripting/api_updating/apiupdaterruntimehelpers/APIUpdaterRuntimeHelpers.md"))]#[::unity2::class(namespace="UnityEngine._Scripting.APIUpdating",name="APIUpdaterRuntimeHelpers")]#[parent(crate::system::object::Object)]pub struct APIUpdaterRuntimeHelpers{}
 
 }
 
 #[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]
-impl APIUpdaterRuntimeHelpers { # [doc = "`GetMovedFromAttributeDataForType(::unity2::SystemType, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn get_moved_from_attribute_data_for_type (source_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: SystemType , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c343d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source_type) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`GetObsoleteTypeRedirection(::unity2::SystemType, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn get_obsolete_type_redirection (source_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: SystemType , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c34560usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source_type) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } }
+#[cfg(feature="unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]impl APIUpdaterRuntimeHelpers{#[doc="`GetMovedFromAttributeDataForType(::unity2::SystemType, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]pub fn get_moved_from_attribute_data_for_type(source_type:impl::core::convert::Into< ::unity2::SystemType>)->(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2c343d0usize)as*mut u8,bool;
+(::unity2::SystemType)::core::convert::Into::into(source_type),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_1.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_2.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+#[doc="`GetObsoleteTypeRedirection(::unity2::SystemType, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]pub fn get_obsolete_type_redirection(source_type:impl::core::convert::Into< ::unity2::SystemType>)->(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2c34560usize)as*mut u8,bool;
+(::unity2::SystemType)::core::convert::Into::into(source_type),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_1.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_2.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]
-impl APIUpdaterRuntimeHelpers { pub fn get_moved_from_attribute_data_for_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < APIUpdaterRuntimeHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_obsolete_type_redirection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < APIUpdaterRuntimeHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]impl APIUpdaterRuntimeHelpers{pub fn get_moved_from_attribute_data_for_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_obsolete_type_redirection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]
 #[doc(hidden)]

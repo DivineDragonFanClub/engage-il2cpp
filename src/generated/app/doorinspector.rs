@@ -4,36 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: pokeinspector :: { IPokeInspector , PokeInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::pokeinspector::{IPokeInspector,PokeInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/doorinspector/DoorInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "DoorInspector")] # [parent (crate :: app :: pokeinspector :: PokeInspector)] pub struct DoorInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/doorinspector/DoorInspector.md"))]#[::unity2::class(namespace="App",name="DoorInspector")]#[parent(crate::app::pokeinspector::PokeInspector)]pub struct DoorInspector{}
 
 }
 
 #[cfg(feature = "app-doorinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-doorinspector")]
-pub trait IDoorInspectorMethods : IDoorInspector { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DoorInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DoorInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfc220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLabel()` overload"] fn get_label (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DoorInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DoorInspector , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfc230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRange()` overload"] fn get_range (self ,) -> i32 { unsafe { let __receiver = < DoorInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DoorInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfc280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Color()` overload"] fn get_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < DoorInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DoorInspector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfc290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanBreakable(crate::app::force::Force_Type)` overload"] fn can_breakable (self , force : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> bool { unsafe { let __receiver = < DoorInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DoorInspector , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfc2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force) , :: core :: option :: Option :: None) } } } # [doc = "`PreCall(crate::app::procinst::ProcInst)` overload"] fn pre_call (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < DoorInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DoorInspector , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfc9b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-doorinspector")]pub trait IDoorInspectorMethods:IDoorInspector{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc220usize)as*mut u8,();
+(DoorInspector)__receiver)}
+}
+#[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc230usize)as*mut u8, ::unity2::Il2CppString;
+(DoorInspector)__receiver)}
+}
+#[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc280usize)as*mut u8,i32;
+(DoorInspector)__receiver)}
+}
+#[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc290usize)as*mut u8,crate::unity_engine::color::Color;
+(DoorInspector)__receiver)}
+}
+#[doc="`CanBreakable(crate::app::force::Force_Type)` overload"]fn can_breakable(self,force:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc2d0usize)as*mut u8,bool;
+(DoorInspector)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force))}
+}
+#[doc="`PreCall(crate::app::procinst::ProcInst)` overload"]fn pre_call(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc9b0usize)as*mut u8,();
+(DoorInspector)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-doorinspector")]
-impl < __T : IDoorInspector > IDoorInspectorMethods for __T { }
+#[cfg(feature="app-doorinspector")]impl<__T:IDoorInspector>IDoorInspectorMethods for __T{}
 
-#[cfg(feature = "app-doorinspector")]
-impl DoorInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DoorInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DoorInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DoorInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DoorInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn can_breakable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DoorInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn pre_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DoorInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-doorinspector")]impl DoorInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn can_breakable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn pre_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-doorinspector")]
-impl DoorInspector {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DoorInspector) , :: core :: stringify ! (new) ,)) ; < Self as IDoorInspectorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-doorinspector")]impl DoorInspector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DoorInspector), ::core::stringify!(new),));
+ <Self as IDoorInspectorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-doorinspector")]

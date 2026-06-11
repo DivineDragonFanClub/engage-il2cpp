@@ -4,30 +4,28 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/searchresulthandler_1/SearchResultHandler_1.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "SearchResultHandler`1")] # [parent (crate :: system :: object :: Object)] pub struct SearchResultHandler_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/searchresulthandler_1/SearchResultHandler_1.md"))]#[::unity2::class(namespace="System.IO",name="SearchResultHandler`1")]#[parent(crate::system::object::Object)]pub struct SearchResultHandler_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "system-io-searchresulthandler_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-searchresulthandler_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > SearchResultHandler_1 < T0 > {
-# [doc = "`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"] # [method (name = "IsResultIncluded" , args = 1 , abstract_dispatch)] pub fn is_result_included (self , result : crate :: system :: io :: searchresult :: SearchResult) -> bool ;
-
-# [doc = "`CreateObject(crate::system::io::searchresult::SearchResult)` overload"] # [method (name = "CreateObject" , args = 1 , abstract_dispatch)] pub fn create_object (self , result : crate :: system :: io :: searchresult :: SearchResult) -> T0 ;
-
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
+#[cfg(feature="system-io-searchresulthandler_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>SearchResultHandler_1<T0>{#[doc="`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"]#[method(name="IsResultIncluded",args=1,abstract_dispatch)]pub fn is_result_included(self,result:crate::system::io::searchresult::SearchResult)->bool;
+ #[doc="`CreateObject(crate::system::io::searchresult::SearchResult)` overload"]#[method(name="CreateObject",args=1,abstract_dispatch)]pub fn create_object(self,result:crate::system::io::searchresult::SearchResult)->T0;
+ #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
 }
 
-#[cfg(feature = "system-io-searchresulthandler_1")]
-impl < T0 : :: unity2 :: ClassIdentity > SearchResultHandler_1 < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SearchResultHandler_1) , :: core :: stringify ! (new) ,)) ; < Self as ISearchResultHandler_1Methods < T0 > > :: ctor (this ,) ; this }
+#[cfg(feature="system-io-searchresulthandler_1")]impl<T0: ::unity2::ClassIdentity>SearchResultHandler_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SearchResultHandler_1), ::core::stringify!(new),));
+ <Self as ISearchResultHandler_1Methods<T0> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-io-searchresulthandler_1")]

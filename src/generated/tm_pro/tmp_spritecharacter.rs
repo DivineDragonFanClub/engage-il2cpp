@@ -4,41 +4,81 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: tm_pro :: tmp_textelement :: { ITMP_TextElement , TMP_TextElement }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::tm_pro::tmp_textelement::{ITMP_TextElement,TMP_TextElement}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_spritecharacter/TMP_SpriteCharacter.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_SpriteCharacter")] # [parent (crate :: tm_pro :: tmp_textelement :: TMP_TextElement)] pub struct TMP_SpriteCharacter {
-# [offset (48)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_spritecharacter/TMP_SpriteCharacter.md"))]#[::unity2::class(namespace="TMPro",name="TMP_SpriteCharacter")]#[parent(crate::tm_pro::tmp_textelement::TMP_TextElement)]pub struct TMP_SpriteCharacter{#[offset(48)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_HashCode")]pub m_hash_code:i32,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_spritecharacter-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_spritecharacter")]
-pub trait ITMP_SpriteCharacterMethods : ITMP_SpriteCharacter { # [doc = "`get_name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TMP_SpriteCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteCharacter , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282d990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TMP_SpriteCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteCharacter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282d800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_hashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < TMP_SpriteCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteCharacter , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282d9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_SpriteCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteCharacter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282d7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32, crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)` overload"] fn ctor_2 (self , unicode : impl :: core :: convert :: Into < u32 > , glyph : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_spriteglyph :: TMP_SpriteGlyph >) -> () { unsafe { let __receiver = < TMP_SpriteCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteCharacter , u32 , crate :: tm_pro :: tmp_spriteglyph :: TMP_SpriteGlyph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282d9b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unicode) , :: core :: convert :: Into :: into (glyph) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)` overload"] fn ctor_3 (self , unicode : impl :: core :: convert :: Into < u32 > , sprite_asset : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset > , glyph : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_spriteglyph :: TMP_SpriteGlyph >) -> () { unsafe { let __receiver = < TMP_SpriteCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteCharacter , u32 , crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset , crate :: tm_pro :: tmp_spriteglyph :: TMP_SpriteGlyph , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282da20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unicode) , :: core :: convert :: Into :: into (sprite_asset) , :: core :: convert :: Into :: into (glyph) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u32, u32)` overload"] fn ctor_4 (self , unicode : impl :: core :: convert :: Into < u32 > , glyph_index : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < TMP_SpriteCharacter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SpriteCharacter , u32 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282daa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unicode) , :: core :: convert :: Into :: into (glyph_index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_spritecharacter")]pub trait ITMP_SpriteCharacterMethods:ITMP_SpriteCharacter{#[doc="`get_name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TMP_SpriteCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282d990usize)as*mut u8, ::unity2::Il2CppString;
+(TMP_SpriteCharacter)__receiver)}
+}
+#[doc="`set_name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TMP_SpriteCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282d800usize)as*mut u8,();
+(TMP_SpriteCharacter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_hashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <TMP_SpriteCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282d9a0usize)as*mut u8,i32;
+(TMP_SpriteCharacter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_SpriteCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282d7d0usize)as*mut u8,();
+(TMP_SpriteCharacter)__receiver)}
+}
+#[doc="`.ctor(u32, crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)` overload"]fn ctor_2(self,unicode:impl::core::convert::Into<u32> ,glyph:impl::core::convert::Into<crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph>)->(){unsafe{let __receiver= <TMP_SpriteCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282d9b0usize)as*mut u8,();
+(TMP_SpriteCharacter)__receiver,(u32)::core::convert::Into::into(unicode),(crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)::core::convert::Into::into(glyph))}
+}
+#[doc="`.ctor(u32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)` overload"]fn ctor_3(self,unicode:impl::core::convert::Into<u32> ,sprite_asset:impl::core::convert::Into<crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset> ,glyph:impl::core::convert::Into<crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph>)->(){unsafe{let __receiver= <TMP_SpriteCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282da20usize)as*mut u8,();
+(TMP_SpriteCharacter)__receiver,(u32)::core::convert::Into::into(unicode),(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)::core::convert::Into::into(sprite_asset),(crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)::core::convert::Into::into(glyph))}
+}
+#[doc="`.ctor(u32, u32)` overload"]fn ctor_4(self,unicode:impl::core::convert::Into<u32> ,glyph_index:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <TMP_SpriteCharacter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282daa0usize)as*mut u8,();
+(TMP_SpriteCharacter)__receiver,(u32)::core::convert::Into::into(unicode),(u32)::core::convert::Into::into(glyph_index))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_spritecharacter")]
-impl < __T : ITMP_SpriteCharacter > ITMP_SpriteCharacterMethods for __T { }
+#[cfg(feature="tm_pro-tmp_spritecharacter")]impl<__T:ITMP_SpriteCharacter>ITMP_SpriteCharacterMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_spritecharacter")]
-impl TMP_SpriteCharacter { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteCharacter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteCharacter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteCharacter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteCharacter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteCharacter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteCharacter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SpriteCharacter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="tm_pro-tmp_spritecharacter")]impl TMP_SpriteCharacter{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "tm_pro-tmp_spritecharacter")]
-impl TMP_SpriteCharacter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SpriteCharacter) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_SpriteCharacterMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(u32, crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)` — overload selector"] pub fn new_2 (unicode : u32 , glyph : crate :: tm_pro :: tmp_spriteglyph :: TMP_SpriteGlyph) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SpriteCharacter) , :: core :: stringify ! (new_2) ,)) ; < Self as ITMP_SpriteCharacterMethods > :: ctor_2 (this , unicode , glyph) ; this }
-
-# [doc = "`.ctor(u32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)` — overload selector"] pub fn new_3 (unicode : u32 , sprite_asset : crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset , glyph : crate :: tm_pro :: tmp_spriteglyph :: TMP_SpriteGlyph) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SpriteCharacter) , :: core :: stringify ! (new_3) ,)) ; < Self as ITMP_SpriteCharacterMethods > :: ctor_3 (this , unicode , sprite_asset , glyph) ; this }
-
-# [doc = "`.ctor(u32, u32)` — overload selector"] pub fn new_4 (unicode : u32 , glyph_index : u32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SpriteCharacter) , :: core :: stringify ! (new_4) ,)) ; < Self as ITMP_SpriteCharacterMethods > :: ctor_4 (this , unicode , glyph_index) ; this }
+#[cfg(feature="tm_pro-tmp_spritecharacter")]impl TMP_SpriteCharacter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_SpriteCharacter), ::core::stringify!(new),));
+ <Self as ITMP_SpriteCharacterMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(u32, crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)` — overload selector"]pub fn new_2(unicode:u32,glyph:crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_SpriteCharacter), ::core::stringify!(new_2),));
+ <Self as ITMP_SpriteCharacterMethods> ::ctor_2(this,unicode,glyph);
+this}
+#[doc="`.ctor(u32, crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)` — overload selector"]pub fn new_3(unicode:u32,sprite_asset:crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,glyph:crate::tm_pro::tmp_spriteglyph::TMP_SpriteGlyph)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_SpriteCharacter), ::core::stringify!(new_3),));
+ <Self as ITMP_SpriteCharacterMethods> ::ctor_3(this,unicode,sprite_asset,glyph);
+this}
+#[doc="`.ctor(u32, u32)` — overload selector"]pub fn new_4(unicode:u32,glyph_index:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_SpriteCharacter), ::core::stringify!(new_4),));
+ <Self as ITMP_SpriteCharacterMethods> ::ctor_4(this,unicode,glyph_index);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_spritecharacter")]

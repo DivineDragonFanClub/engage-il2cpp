@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapimagecorebit :: { IMapImageCoreBit , MapImageCoreBit }
- ;
- use crate :: app :: mapimagesightcore :: { IMapImageSightCore , MapImageSightCore }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
+;
+use crate::app::mapimagesightcore::{IMapImageSightCore,MapImageSightCore}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagesight/MapImageSight.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageSight")] # [parent (crate :: app :: mapimagesightcore :: MapImageSightCore)] pub struct MapImageSight {
-# [offset (24)] # [rename (name = "m_ForceType")] pub m_force_type : crate :: app :: force :: Force_Type ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagesight/MapImageSight.md"))]#[::unity2::class(namespace="App",name="MapImageSight")]#[parent(crate::app::mapimagesightcore::MapImageSightCore)]pub struct MapImageSight{#[offset(24)]#[rename(name="m_ForceType")]pub m_force_type:crate::app::force::Force_Type,}
 
 }
 
 #[cfg(feature = "app-mapimagesight-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapimagesight")]
-pub trait IMapImageSightMethods : IMapImageSight { # [doc = "`.ctor(crate::app::force::Force_Type)` overload"] fn ctor (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < MapImageSight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageSight , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2061ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapImageSight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageSight , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2061bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagesight")]pub trait IMapImageSightMethods:IMapImageSight{#[doc="`.ctor(crate::app::force::Force_Type)` overload"]fn ctor(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapImageSight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2061ab0usize)as*mut u8,();
+(MapImageSight)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapImageSight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2061bf0usize)as*mut u8,();
+(MapImageSight)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapimagesight")]
-impl < __T : IMapImageSight > IMapImageSightMethods for __T { }
+#[cfg(feature="app-mapimagesight")]impl<__T:IMapImageSight>IMapImageSightMethods for __T{}
 
-#[cfg(feature = "app-mapimagesight")]
-impl MapImageSight { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageSight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageSight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-mapimagesight")]impl MapImageSight{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-mapimagesight")]
-impl MapImageSight {
-# [doc = "`.ctor(crate::app::force::Force_Type)` — overload selector"] pub fn new (force_type : crate :: app :: force :: Force_Type) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageSight) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageSightMethods > :: ctor (this , force_type) ; this }
+#[cfg(feature="app-mapimagesight")]impl MapImageSight{#[doc="`.ctor(crate::app::force::Force_Type)` — overload selector"]pub fn new(force_type:crate::app::force::Force_Type)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImageSight), ::core::stringify!(new),));
+ <Self as IMapImageSightMethods> ::ctor(this,force_type);
+this}
 }
 
 #[cfg(feature = "app-mapimagesight")]

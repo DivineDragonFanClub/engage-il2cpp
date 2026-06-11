@@ -4,36 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: statemachinebehaviour :: { IStateMachineBehaviour , StateMachineBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::statemachinebehaviour::{IStateMachineBehaviour,StateMachineBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/profilecardstampcursorpush/ProfileCardStampCursorPush.md"))] # [:: unity2 :: class (namespace = "" , name = "ProfileCardStampCursorPush")] # [parent (crate :: unity_engine :: statemachinebehaviour :: StateMachineBehaviour)] pub struct ProfileCardStampCursorPush {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/profilecardstampcursorpush/ProfileCardStampCursorPush.md"))]#[::unity2::class(namespace="",name="ProfileCardStampCursorPush")]#[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]pub struct ProfileCardStampCursorPush{}
 
 }
 
 #[cfg(feature = "root-profilecardstampcursorpush-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-profilecardstampcursorpush")]
-pub trait IProfileCardStampCursorPushMethods : IProfileCardStampCursorPush { # [doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_enter (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProfileCardStampCursorPush as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampCursorPush , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardStampCursorPush as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampCursorPush , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf10c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-profilecardstampcursorpush")]pub trait IProfileCardStampCursorPushMethods:IProfileCardStampCursorPush{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardStampCursorPush as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1060usize)as*mut u8,();
+(ProfileCardStampCursorPush)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardStampCursorPush as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf10c0usize)as*mut u8,();
+(ProfileCardStampCursorPush)__receiver)}
+}
+}
 
-#[cfg(feature = "root-profilecardstampcursorpush")]
-impl < __T : IProfileCardStampCursorPush > IProfileCardStampCursorPushMethods for __T { }
+#[cfg(feature="root-profilecardstampcursorpush")]impl<__T:IProfileCardStampCursorPush>IProfileCardStampCursorPushMethods for __T{}
 
-#[cfg(feature = "root-profilecardstampcursorpush")]
-impl ProfileCardStampCursorPush { pub fn on_state_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampCursorPush as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampCursorPush as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-profilecardstampcursorpush")]impl ProfileCardStampCursorPush{pub fn on_state_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-profilecardstampcursorpush")]
-impl ProfileCardStampCursorPush {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampCursorPush) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampCursorPushMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-profilecardstampcursorpush")]impl ProfileCardStampCursorPush{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampCursorPush), ::core::stringify!(new),));
+ <Self as IProfileCardStampCursorPushMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-profilecardstampcursorpush")]

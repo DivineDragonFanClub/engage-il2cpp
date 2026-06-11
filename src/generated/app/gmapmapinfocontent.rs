@@ -4,116 +4,181 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmapinfocontent/GmapMapInfoContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMapInfoContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GmapMapInfoContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "SpriteAtlasPath")] pub sprite_atlas_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_SpriteAtlas")] pub m_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [offset (32)] # [rename (name = "m_MapInfoAnim")] pub m_map_info_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_MapInfoImage")] pub m_map_info_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (48)] # [rename (name = "m_MapInfoChapterObj")] pub m_map_info_chapter_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_MapInfoTitle")] pub m_map_info_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "m_MapInfoIconExpObj")] pub m_map_info_icon_exp_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_MapInfoIconCoinObj")] pub m_map_info_icon_coin_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_MapInfoIconEncountObj")] pub m_map_info_icon_encount_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_MapInfoMessageRootObj")] pub m_map_info_message_root_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_MapInfoMessageStoryObj")] pub m_map_info_message_story_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_MapInfoMessageEncountObj")] pub m_map_info_message_encount_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (112)] # [rename (name = "m_MapInfoLvRootObj")] pub m_map_info_lv_root_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (120)] # [rename (name = "m_MapInfoLvObj")] pub m_map_info_lv_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_MapInfoCountryName")] pub m_map_info_country_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (136)] # [rename (name = "m_MapInfoCountryLv")] pub m_map_info_country_lv : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (144)] # [rename (name = "m_ItemMaterialList")] pub m_item_material_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (152)] # [rename (name = "m_ItemFoodList")] pub m_item_food_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (160)] # [rename (name = "m_ItemAnimalList")] pub m_item_animal_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (168)] # [rename (name = "m_ItemInfoMaterialList")] pub m_item_info_material_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gmapmapinfocontent :: GmapMapInfoContent_ItemInfo > ,
-# [offset (176)] # [rename (name = "m_ItemInfoFoodList")] pub m_item_info_food_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gmapmapinfocontent :: GmapMapInfoContent_ItemInfo > ,
-# [offset (184)] # [rename (name = "m_ItemInfoAnimalList")] pub m_item_info_animal_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gmapmapinfocontent :: GmapMapInfoContent_ItemInfo > ,
-# [offset (192)] # [rename (name = "m_MapInfoSprite")] pub m_map_info_sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (200)] # [rename (name = "m_EncountInfo")] pub m_encount_info : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (208)] # [rename (name = "m_EncountInfoAnim")] pub m_encount_info_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (216)] # [rename (name = "m_MainTitle")] pub m_main_title : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (224)] # [rename (name = "m_GodTitle")] pub m_god_title : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (232)] # [rename (name = "m_EvilTitle")] pub m_evil_title : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "m_MainValue")] pub m_main_value : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (248)] # [rename (name = "m_GodValue")] pub m_god_value : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (256)] # [rename (name = "m_EvilValue")] pub m_evil_value : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (264)] # [rename (name = "m_MainNormal")] pub m_main_normal : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_MainGoldRare")] pub m_main_gold_rare : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (280)] # [rename (name = "m_MainExpRare")] pub m_main_exp_rare : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (288)] # [rename (name = "m_GodNormal")] pub m_god_normal : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (296)] # [rename (name = "m_GodGoldRare")] pub m_god_gold_rare : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (304)] # [rename (name = "m_GodExpRare")] pub m_god_exp_rare : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (312)] # [rename (name = "m_EvilNormal")] pub m_evil_normal : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (320)] # [rename (name = "m_EvilGoldRare")] pub m_evil_gold_rare : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (328)] # [rename (name = "m_EvilExpRare")] pub m_evil_exp_rare : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmapinfocontent/GmapMapInfoContent_ItemInfo.md"))]#[::unity2::class(namespace="App",name="GmapMapInfoContent.ItemInfo")]#[parent(crate::system::object::Object)]pub struct GmapMapInfoContent_ItemInfo{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_Name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_Sub")]pub m_sub:crate::unity_engine::gameobject::GameObject,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmapinfocontent/GmapMapInfoContent_ItemInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMapInfoContent.ItemInfo")] # [parent (crate :: system :: object :: Object)] pub struct GmapMapInfoContent_ItemInfo {
-# [offset (16)] # [rename (name = "m_Root")] pub m_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_Icon")] pub m_icon : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_Name")] pub m_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_Sub")] pub m_sub : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmapinfocontent/GmapMapInfoContent.md"))]#[::unity2::class(namespace="App",name="GmapMapInfoContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapMapInfoContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SpriteAtlasPath")]pub sprite_atlas_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(32)]#[rename(name="m_MapInfoAnim")]pub m_map_info_anim:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_MapInfoImage")]pub m_map_info_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_MapInfoChapterObj")]pub m_map_info_chapter_obj:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_MapInfoTitle")]pub m_map_info_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="m_MapInfoIconExpObj")]pub m_map_info_icon_exp_obj:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_MapInfoIconCoinObj")]pub m_map_info_icon_coin_obj:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_MapInfoIconEncountObj")]pub m_map_info_icon_encount_obj:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_MapInfoMessageRootObj")]pub m_map_info_message_root_obj:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_MapInfoMessageStoryObj")]pub m_map_info_message_story_obj:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_MapInfoMessageEncountObj")]pub m_map_info_message_encount_obj:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_MapInfoLvRootObj")]pub m_map_info_lv_root_obj:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_MapInfoLvObj")]pub m_map_info_lv_obj:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_MapInfoCountryName")]pub m_map_info_country_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(136)]#[rename(name="m_MapInfoCountryLv")]pub m_map_info_country_lv:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_ItemMaterialList")]pub m_item_material_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(152)]#[rename(name="m_ItemFoodList")]pub m_item_food_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(160)]#[rename(name="m_ItemAnimalList")]pub m_item_animal_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(168)]#[rename(name="m_ItemInfoMaterialList")]pub m_item_info_material_list:crate::system::collections::generic::list_1::List_1<crate::app::gmapmapinfocontent::GmapMapInfoContent_ItemInfo> , #[offset(176)]#[rename(name="m_ItemInfoFoodList")]pub m_item_info_food_list:crate::system::collections::generic::list_1::List_1<crate::app::gmapmapinfocontent::GmapMapInfoContent_ItemInfo> , #[offset(184)]#[rename(name="m_ItemInfoAnimalList")]pub m_item_info_animal_list:crate::system::collections::generic::list_1::List_1<crate::app::gmapmapinfocontent::GmapMapInfoContent_ItemInfo> , #[offset(192)]#[rename(name="m_MapInfoSprite")]pub m_map_info_sprite:crate::unity_engine::sprite::Sprite, #[offset(200)]#[rename(name="m_EncountInfo")]pub m_encount_info:crate::unity_engine::gameobject::GameObject, #[offset(208)]#[rename(name="m_EncountInfoAnim")]pub m_encount_info_anim:crate::unity_engine::animator::Animator, #[offset(216)]#[rename(name="m_MainTitle")]pub m_main_title:crate::unity_engine::gameobject::GameObject, #[offset(224)]#[rename(name="m_GodTitle")]pub m_god_title:crate::unity_engine::gameobject::GameObject, #[offset(232)]#[rename(name="m_EvilTitle")]pub m_evil_title:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_MainValue")]pub m_main_value:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_GodValue")]pub m_god_value:crate::unity_engine::gameobject::GameObject, #[offset(256)]#[rename(name="m_EvilValue")]pub m_evil_value:crate::unity_engine::gameobject::GameObject, #[offset(264)]#[rename(name="m_MainNormal")]pub m_main_normal:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_MainGoldRare")]pub m_main_gold_rare:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_MainExpRare")]pub m_main_exp_rare:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_GodNormal")]pub m_god_normal:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_GodGoldRare")]pub m_god_gold_rare:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_GodExpRare")]pub m_god_exp_rare:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(312)]#[rename(name="m_EvilNormal")]pub m_evil_normal:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(320)]#[rename(name="m_EvilGoldRare")]pub m_evil_gold_rare:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(328)]#[rename(name="m_EvilExpRare")]pub m_evil_exp_rare:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-gmapmapinfocontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmapmapinfocontent")]
-impl GmapMapInfoContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2529960usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2529a40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2529b10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: gmapmapinfocontent :: GmapMapInfoContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gmapmapinfocontent :: GmapMapInfoContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2529bb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::gmapmapinfocontent::GmapMapInfoContent)` overload"] pub fn destroy (content : impl :: core :: convert :: Into < crate :: app :: gmapmapinfocontent :: GmapMapInfoContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapmapinfocontent :: GmapMapInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252a0e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gmapmapinfocontent")]
-pub trait IGmapMapInfoContentMethods : IGmapMapInfoContent { # [doc = "`initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2529cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenMapMini()` overload"] fn open_map_mini (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252a170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenMapDetails()` overload"] fn open_map_details (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252a3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252a640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUpEncountInfo()` overload"] fn set_up_encount_info (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252a6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenEncountInfo()` overload"] fn open_encount_info (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252a2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseEncountInfo()` overload"] fn close_encount_info (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252a560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMapInfo(crate::app::gmapspot::GmapSpot)` overload"] fn set_map_info (self , gmap_spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot >) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252aac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (gmap_spot) , :: core :: option :: Option :: None) } } } # [doc = "`SetItem(::unity2::Il2CppString, crate::app::hubnationdata::HubNationData, bool, bool)` overload"] fn set_item (self , prefixless_cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , nation_data : impl :: core :: convert :: Into < crate :: app :: hubnationdata :: HubNationData > , iscomplete : impl :: core :: convert :: Into < bool > , is_unknown : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , :: unity2 :: Il2CppString , crate :: app :: hubnationdata :: HubNationData , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252b9f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (prefixless_cid) , :: core :: convert :: Into :: into (nation_data) , :: core :: convert :: Into :: into (iscomplete) , :: core :: convert :: Into :: into (is_unknown) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252ce20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gmapmapinfocontent")]
-impl < __T : IGmapMapInfoContent > IGmapMapInfoContentMethods for __T { }
-
-#[cfg(feature = "app-gmapmapinfocontent")]
-impl GmapMapInfoContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_map_mini_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn open_map_details_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_up_encount_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn open_encount_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn close_encount_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_map_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
-
-#[cfg(feature = "app-gmapmapinfocontent")]
-impl GmapMapInfoContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMapInfoContent) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMapInfoContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gmapmapinfocontent")]pub trait IGmapMapInfoContent_ItemInfoMethods:IGmapMapInfoContent_ItemInfo{#[doc="`SetupObj(crate::unity_engine::gameobject::GameObject)` overload"]fn setup_obj(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <GmapMapInfoContent_ItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccc320usize)as*mut u8,();
+(GmapMapInfoContent_ItemInfo)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <GmapMapInfoContent_ItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccc5a0usize)as*mut u8,();
+(GmapMapInfoContent_ItemInfo)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <GmapMapInfoContent_ItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccc620usize)as*mut u8,();
+(GmapMapInfoContent_ItemInfo)__receiver)}
+}
+#[doc="`SetName(::unity2::Il2CppString)` overload"]fn set_name(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GmapMapInfoContent_ItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccc6a0usize)as*mut u8,();
+(GmapMapInfoContent_ItemInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`SetIcon(::unity2::Il2CppString)` overload"]fn set_icon(self,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GmapMapInfoContent_ItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccc720usize)as*mut u8,();
+(GmapMapInfoContent_ItemInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`SetSubHide()` overload"]fn set_sub_hide(self,)->(){unsafe{let __receiver= <GmapMapInfoContent_ItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccc850usize)as*mut u8,();
+(GmapMapInfoContent_ItemInfo)__receiver)}
+}
+#[doc="`SetArrow()` overload"]fn set_arrow(self,)->(){unsafe{let __receiver= <GmapMapInfoContent_ItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccc930usize)as*mut u8,();
+(GmapMapInfoContent_ItemInfo)__receiver)}
+}
+#[doc="`SetIsCapture(bool, bool)` overload"]fn set_is_capture(self,is_capture:impl::core::convert::Into<bool> ,is_contains_lv1:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapMapInfoContent_ItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ccca10usize)as*mut u8,();
+(GmapMapInfoContent_ItemInfo)__receiver,(bool)::core::convert::Into::into(is_capture),(bool)::core::convert::Into::into(is_contains_lv1))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMapInfoContent_ItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cccd00usize)as*mut u8,();
+(GmapMapInfoContent_ItemInfo)__receiver)}
+}
 }
 
-#[cfg(feature = "app-gmapmapinfocontent")]
-pub trait IGmapMapInfoContent_ItemInfoMethods : IGmapMapInfoContent_ItemInfo { # [doc = "`SetupObj(crate::unity_engine::gameobject::GameObject)` overload"] fn setup_obj (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < GmapMapInfoContent_ItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent_ItemInfo , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ccc320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent_ItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent_ItemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ccc5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent_ItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent_ItemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ccc620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetName(::unity2::Il2CppString)` overload"] fn set_name (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GmapMapInfoContent_ItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent_ItemInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ccc6a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`SetIcon(::unity2::Il2CppString)` overload"] fn set_icon (self , icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GmapMapInfoContent_ItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent_ItemInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ccc720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } } # [doc = "`SetSubHide()` overload"] fn set_sub_hide (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent_ItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent_ItemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ccc850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetArrow()` overload"] fn set_arrow (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent_ItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent_ItemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ccc930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetIsCapture(bool, bool)` overload"] fn set_is_capture (self , is_capture : impl :: core :: convert :: Into < bool > , is_contains_lv1 : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GmapMapInfoContent_ItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent_ItemInfo , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ccca10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_capture) , :: core :: convert :: Into :: into (is_contains_lv1) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapMapInfoContent_ItemInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMapInfoContent_ItemInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cccd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapmapinfocontent")]impl<__T:IGmapMapInfoContent_ItemInfo>IGmapMapInfoContent_ItemInfoMethods for __T{}
 
-#[cfg(feature = "app-gmapmapinfocontent")]
-impl < __T : IGmapMapInfoContent_ItemInfo > IGmapMapInfoContent_ItemInfoMethods for __T { }
+#[cfg(feature="app-gmapmapinfocontent")]impl GmapMapInfoContent_ItemInfo{pub fn setup_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_sub_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_arrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_is_capture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-gmapmapinfocontent")]
-impl GmapMapInfoContent_ItemInfo { pub fn setup_obj_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent_ItemInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent_ItemInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent_ItemInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent_ItemInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent_ItemInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_sub_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent_ItemInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent_ItemInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_is_capture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent_ItemInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMapInfoContent_ItemInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-gmapmapinfocontent")]impl GmapMapInfoContent_ItemInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMapInfoContent_ItemInfo), ::core::stringify!(new),));
+ <Self as IGmapMapInfoContent_ItemInfoMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-gmapmapinfocontent")]
-impl GmapMapInfoContent_ItemInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMapInfoContent_ItemInfo) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMapInfoContent_ItemInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gmapmapinfocontent")]impl GmapMapInfoContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2529960usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2529a40usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2529b10usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::gmapmapinfocontent::GmapMapInfoContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2529bb0usize)as*mut u8,crate::app::gmapmapinfocontent::GmapMapInfoContent;
+)}
+}
+#[doc="`Destroy(crate::app::gmapmapinfocontent::GmapMapInfoContent)` overload"]pub fn destroy(content:impl::core::convert::Into<crate::app::gmapmapinfocontent::GmapMapInfoContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x252a0e0usize)as*mut u8,();
+(crate::app::gmapmapinfocontent::GmapMapInfoContent)::core::convert::Into::into(content))}
+}
+}
+
+#[cfg(feature="app-gmapmapinfocontent")]pub trait IGmapMapInfoContentMethods:IGmapMapInfoContent{#[doc="`initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2529cd0usize)as*mut u8,();
+(GmapMapInfoContent)__receiver)}
+}
+#[doc="`OpenMapMini()` overload"]fn open_map_mini(self,)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252a170usize)as*mut u8,();
+(GmapMapInfoContent)__receiver)}
+}
+#[doc="`OpenMapDetails()` overload"]fn open_map_details(self,)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252a3d0usize)as*mut u8,();
+(GmapMapInfoContent)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252a640usize)as*mut u8,();
+(GmapMapInfoContent)__receiver)}
+}
+#[doc="`SetUpEncountInfo()` overload"]fn set_up_encount_info(self,)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252a6b0usize)as*mut u8,();
+(GmapMapInfoContent)__receiver)}
+}
+#[doc="`OpenEncountInfo()` overload"]fn open_encount_info(self,)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252a2f0usize)as*mut u8,();
+(GmapMapInfoContent)__receiver)}
+}
+#[doc="`CloseEncountInfo()` overload"]fn close_encount_info(self,)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252a560usize)as*mut u8,();
+(GmapMapInfoContent)__receiver)}
+}
+#[doc="`SetMapInfo(crate::app::gmapspot::GmapSpot)` overload"]fn set_map_info(self,gmap_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot>)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252aac0usize)as*mut u8,();
+(GmapMapInfoContent)__receiver,(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(gmap_spot))}
+}
+#[doc="`SetItem(::unity2::Il2CppString, crate::app::hubnationdata::HubNationData, bool, bool)` overload"]fn set_item(self,prefixless_cid:impl::core::convert::Into< ::unity2::Il2CppString> ,nation_data:impl::core::convert::Into<crate::app::hubnationdata::HubNationData> ,iscomplete:impl::core::convert::Into<bool> ,is_unknown:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252b9f0usize)as*mut u8,();
+(GmapMapInfoContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(prefixless_cid),(crate::app::hubnationdata::HubNationData)::core::convert::Into::into(nation_data),(bool)::core::convert::Into::into(iscomplete),(bool)::core::convert::Into::into(is_unknown))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapMapInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252ce20usize)as*mut u8,();
+(GmapMapInfoContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-gmapmapinfocontent")]impl<__T:IGmapMapInfoContent>IGmapMapInfoContentMethods for __T{}
+
+#[cfg(feature="app-gmapmapinfocontent")]impl GmapMapInfoContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_map_mini_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn open_map_details_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_up_encount_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn open_encount_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn close_encount_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_map_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-gmapmapinfocontent")]impl GmapMapInfoContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMapInfoContent), ::core::stringify!(new),));
+ <Self as IGmapMapInfoContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gmapmapinfocontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapMapInfoContent;
-    pub use super::IGmapMapInfoContent;
-    pub use super::IGmapMapInfoContentMethods;
     pub use super::GmapMapInfoContent_ItemInfo;
     pub use super::IGmapMapInfoContent_ItemInfo;
     pub use super::IGmapMapInfoContent_ItemInfoMethods;
+    pub use super::GmapMapInfoContent;
+    pub use super::IGmapMapInfoContent;
+    pub use super::IGmapMapInfoContentMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

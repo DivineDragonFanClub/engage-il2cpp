@@ -4,39 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procbattlecallback/ProcBattleCallback.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcBattleCallback")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProcBattleCallback {
-# [offset (112)] # [rename (name = "m_Calculator")] pub m_calculator : crate :: app :: battlecalculator :: BattleCalculator ,
-# [offset (120)] # [rename (name = "m_Completed")] pub m_completed : crate :: system :: action :: Action ,
-# [offset (128)] # [rename (name = "m_Skipable")] pub m_skipable : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procbattlecallback/ProcBattleCallback.md"))]#[::unity2::class(namespace="App",name="ProcBattleCallback")]#[parent(crate::app::procinst::ProcInst)]pub struct ProcBattleCallback{#[offset(112)]#[rename(name="m_Calculator")]pub m_calculator:crate::app::battlecalculator::BattleCalculator, #[offset(120)]#[rename(name="m_Completed")]pub m_completed:crate::system::action::Action, #[offset(128)]#[rename(name="m_Skipable")]pub m_skipable:bool,}
 
 }
 
 #[cfg(feature = "app-procbattlecallback-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procbattlecallback")]
-impl ProcBattleCallback { # [doc = "`GetCurrent(crate::app::procinst::ProcInst)` overload"] pub fn get_current (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c630usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procbattlecallback")]impl ProcBattleCallback{#[doc="`GetCurrent(crate::app::procinst::ProcInst)` overload"]pub fn get_current(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c630usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-procbattlecallback")]
-pub trait IProcBattleCallbackMethods : IProcBattleCallback { # [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::system::action::Action, bool)` overload"] fn ctor (self , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , completed : impl :: core :: convert :: Into < crate :: system :: action :: Action > , skipable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProcBattleCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcBattleCallback , crate :: app :: battlecalculator :: BattleCalculator , crate :: system :: action :: Action , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (completed) , :: core :: convert :: Into :: into (skipable) , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < ProcBattleCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcBattleCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < ProcBattleCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcBattleCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procbattlecallback")]pub trait IProcBattleCallbackMethods:IProcBattleCallback{#[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, crate::system::action::Action, bool)` overload"]fn ctor(self,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,completed:impl::core::convert::Into<crate::system::action::Action> ,skipable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProcBattleCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281c550usize)as*mut u8,();
+(ProcBattleCallback)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::system::action::Action)::core::convert::Into::into(completed),(bool)::core::convert::Into::into(skipable))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <ProcBattleCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281c5b0usize)as*mut u8,();
+(ProcBattleCallback)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProcBattleCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281c5e0usize)as*mut u8,();
+(ProcBattleCallback)__receiver)}
+}
+}
 
-#[cfg(feature = "app-procbattlecallback")]
-impl < __T : IProcBattleCallback > IProcBattleCallbackMethods for __T { }
+#[cfg(feature="app-procbattlecallback")]impl<__T:IProcBattleCallback>IProcBattleCallbackMethods for __T{}
 
-#[cfg(feature = "app-procbattlecallback")]
-impl ProcBattleCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcBattleCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcBattleCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcBattleCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcBattleCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-procbattlecallback")]impl ProcBattleCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-procbattlecallback")]
-impl ProcBattleCallback {
-# [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, crate::system::action::Action, bool)` — overload selector"] pub fn new (calculator : crate :: app :: battlecalculator :: BattleCalculator , completed : crate :: system :: action :: Action , skipable : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcBattleCallback) , :: core :: stringify ! (new) ,)) ; < Self as IProcBattleCallbackMethods > :: ctor (this , calculator , completed , skipable) ; this }
+#[cfg(feature="app-procbattlecallback")]impl ProcBattleCallback{#[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, crate::system::action::Action, bool)` — overload selector"]pub fn new(calculator:crate::app::battlecalculator::BattleCalculator,completed:crate::system::action::Action,skipable:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcBattleCallback), ::core::stringify!(new),));
+ <Self as IProcBattleCallbackMethods> ::ctor(this,calculator,completed,skipable);
+this}
 }
 
 #[cfg(feature = "app-procbattlecallback")]

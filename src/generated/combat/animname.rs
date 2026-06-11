@@ -4,100 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animname/AnimName.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AnimName")] # [parent (crate :: system :: object :: Object)] pub struct AnimName {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/animname/AnimName.md"))]#[::unity2::class(namespace="Combat",name="AnimName")]#[parent(crate::system::object::Object)]pub struct AnimName{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/animname/AnimName_Race.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AnimName_Race  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/animname/AnimName_Race.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimName_Race{pub value:i32,}
+impl::unity2::ClassIdentity for AnimName_Race{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="AnimName.Race";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for AnimName_Race  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "AnimName.Race";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for AnimName_Race{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for AnimName_Race  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl AnimName_Race{pub fn unknown()->Self{Self{value:0}
 }
-
-
-impl  AnimName_Race  {
-    pub fn unknown() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn human() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn horse() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn wolf() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn dragon() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn pegasus() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn griffon() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn dragonic() -> Self {
-        Self { value: 7 }
-
-    }
-
+pub fn human()->Self{Self{value:1}
+}
+pub fn horse()->Self{Self{value:2}
+}
+pub fn wolf()->Self{Self{value:3}
+}
+pub fn dragon()->Self{Self{value:4}
+}
+pub fn pegasus()->Self{Self{value:5}
+}
+pub fn griffon()->Self{Self{value:6}
+}
+pub fn dragonic()->Self{Self{value:7}
+}
 }
 
 }
@@ -105,11 +48,77 @@ impl  AnimName_Race  {
 #[cfg(feature = "combat-animname-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-animname")]
-impl AnimName { # [doc = "`GetRace(crate::combat::character::Character)` overload"] pub fn get_race (c : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> crate :: combat :: animname :: AnimName_Race { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> crate :: combat :: animname :: AnimName_Race = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e920usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`GetRace(crate::combat::charactergamestatus::CharacterGameStatus)` overload"] pub fn get_race_2 (gs : impl :: core :: convert :: Into < crate :: combat :: charactergamestatus :: CharacterGameStatus >) -> crate :: combat :: animname :: AnimName_Race { unsafe { { let __inner : extern "C" fn (crate :: combat :: charactergamestatus :: CharacterGameStatus , :: unity2 :: OptionalMethod ,) -> crate :: combat :: animname :: AnimName_Race = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8eaa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gs) , :: core :: option :: Option :: None) } } } # [doc = "`GetRace(::unity2::Il2CppString)` overload"] pub fn get_race_3 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: animname :: AnimName_Race { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: animname :: AnimName_Race = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8eb20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsHeavy(::unity2::Il2CppString)` overload"] pub fn is_heavy (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8ecc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsRidingHuman(::unity2::Il2CppString)` overload"] pub fn is_riding_human (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8ed20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsVehicle(::unity2::Il2CppString)` overload"] pub fn is_vehicle (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8edf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`ToRideName(::unity2::Il2CppString)` overload"] pub fn to_ride_name (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8eec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsUnknown(crate::combat::animname::AnimName_Race)` overload"] pub fn is_unknown (race : impl :: core :: convert :: Into < crate :: combat :: animname :: AnimName_Race >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: animname :: AnimName_Race , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f010usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (race) , :: core :: option :: Option :: None) } } } # [doc = "`IsUnknown(::unity2::Il2CppString)` overload"] pub fn is_unknown_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f020usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsHuman(crate::combat::animname::AnimName_Race)` overload"] pub fn is_human (race : impl :: core :: convert :: Into < crate :: combat :: animname :: AnimName_Race >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: animname :: AnimName_Race , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (race) , :: core :: option :: Option :: None) } } } # [doc = "`IsHuman(::unity2::Il2CppString)` overload"] pub fn is_human_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsRide(crate::combat::animname::AnimName_Race)` overload"] pub fn is_ride (race : impl :: core :: convert :: Into < crate :: combat :: animname :: AnimName_Race >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: animname :: AnimName_Race , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f090usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (race) , :: core :: option :: Option :: None) } } } # [doc = "`IsRide(::unity2::Il2CppString)` overload"] pub fn is_ride_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8edb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Is4Legged(crate::combat::animname::AnimName_Race)` overload"] pub fn is4_legged (race : impl :: core :: convert :: Into < crate :: combat :: animname :: AnimName_Race >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: animname :: AnimName_Race , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f0c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (race) , :: core :: option :: Option :: None) } } } # [doc = "`Is4Legged(::unity2::Il2CppString)` overload"] pub fn is4_legged_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f0e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsFlying(crate::combat::animname::AnimName_Race)` overload"] pub fn is_flying (race : impl :: core :: convert :: Into < crate :: combat :: animname :: AnimName_Race >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: animname :: AnimName_Race , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f110usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (race) , :: core :: option :: Option :: None) } } } # [doc = "`IsFlying(::unity2::Il2CppString)` overload"] pub fn is_flying_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-animname")]impl AnimName{#[doc="`GetRace(crate::combat::character::Character)` overload"]pub fn get_race(c:impl::core::convert::Into<crate::combat::character::Character>)->crate::combat::animname::AnimName_Race{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e920usize)as*mut u8,crate::combat::animname::AnimName_Race;
+(crate::combat::character::Character)::core::convert::Into::into(c))}
+}
+#[doc="`GetRace(crate::combat::charactergamestatus::CharacterGameStatus)` overload"]pub fn get_race_2(gs:impl::core::convert::Into<crate::combat::charactergamestatus::CharacterGameStatus>)->crate::combat::animname::AnimName_Race{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8eaa0usize)as*mut u8,crate::combat::animname::AnimName_Race;
+(crate::combat::charactergamestatus::CharacterGameStatus)::core::convert::Into::into(gs))}
+}
+#[doc="`GetRace(::unity2::Il2CppString)` overload"]pub fn get_race_3(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::animname::AnimName_Race{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8eb20usize)as*mut u8,crate::combat::animname::AnimName_Race;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsHeavy(::unity2::Il2CppString)` overload"]pub fn is_heavy(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8ecc0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsRidingHuman(::unity2::Il2CppString)` overload"]pub fn is_riding_human(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8ed20usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsVehicle(::unity2::Il2CppString)` overload"]pub fn is_vehicle(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8edf0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`ToRideName(::unity2::Il2CppString)` overload"]pub fn to_ride_name(name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8eec0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsUnknown(crate::combat::animname::AnimName_Race)` overload"]pub fn is_unknown(race:impl::core::convert::Into<crate::combat::animname::AnimName_Race>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f010usize)as*mut u8,bool;
+(crate::combat::animname::AnimName_Race)::core::convert::Into::into(race))}
+}
+#[doc="`IsUnknown(::unity2::Il2CppString)` overload"]pub fn is_unknown_2(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f020usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsHuman(crate::combat::animname::AnimName_Race)` overload"]pub fn is_human(race:impl::core::convert::Into<crate::combat::animname::AnimName_Race>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f040usize)as*mut u8,bool;
+(crate::combat::animname::AnimName_Race)::core::convert::Into::into(race))}
+}
+#[doc="`IsHuman(::unity2::Il2CppString)` overload"]pub fn is_human_2(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f060usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsRide(crate::combat::animname::AnimName_Race)` overload"]pub fn is_ride(race:impl::core::convert::Into<crate::combat::animname::AnimName_Race>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f090usize)as*mut u8,bool;
+(crate::combat::animname::AnimName_Race)::core::convert::Into::into(race))}
+}
+#[doc="`IsRide(::unity2::Il2CppString)` overload"]pub fn is_ride_2(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8edb0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Is4Legged(crate::combat::animname::AnimName_Race)` overload"]pub fn is4_legged(race:impl::core::convert::Into<crate::combat::animname::AnimName_Race>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f0c0usize)as*mut u8,bool;
+(crate::combat::animname::AnimName_Race)::core::convert::Into::into(race))}
+}
+#[doc="`Is4Legged(::unity2::Il2CppString)` overload"]pub fn is4_legged_2(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f0e0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsFlying(crate::combat::animname::AnimName_Race)` overload"]pub fn is_flying(race:impl::core::convert::Into<crate::combat::animname::AnimName_Race>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f110usize)as*mut u8,bool;
+(crate::combat::animname::AnimName_Race)::core::convert::Into::into(race))}
+}
+#[doc="`IsFlying(::unity2::Il2CppString)` overload"]pub fn is_flying_2(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f120usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "combat-animname")]
-impl AnimName { pub fn get_race_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_race_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_race_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_heavy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_riding_human_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_vehicle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn to_ride_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_unknown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_unknown_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_human_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_human_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_ride_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_ride_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is4_legged_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is4_legged_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_flying_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_flying_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="combat-animname")]impl AnimName{pub fn get_race_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_race_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_race_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_heavy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_riding_human_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_vehicle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn to_ride_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_unknown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_unknown_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_human_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_human_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_ride_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_ride_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is4_legged_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is4_legged_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_flying_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_flying_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
 #[cfg(feature = "combat-animname")]
 #[doc(hidden)]

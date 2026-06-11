@@ -4,74 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls_Resources.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_DefaultControls_Resources {
-    pub standard: crate :: unity_engine :: sprite :: Sprite,
-    pub background: crate :: unity_engine :: sprite :: Sprite,
-    pub input_field: crate :: unity_engine :: sprite :: Sprite,
-    pub knob: crate :: unity_engine :: sprite :: Sprite,
-    pub checkmark: crate :: unity_engine :: sprite :: Sprite,
-    pub dropdown: crate :: unity_engine :: sprite :: Sprite,
-    pub mask: crate :: unity_engine :: sprite :: Sprite,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls_Resources.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_DefaultControls_Resources{pub standard:crate::unity_engine::sprite::Sprite,pub background:crate::unity_engine::sprite::Sprite,pub input_field:crate::unity_engine::sprite::Sprite,pub knob:crate::unity_engine::sprite::Sprite,pub checkmark:crate::unity_engine::sprite::Sprite,pub dropdown:crate::unity_engine::sprite::Sprite,pub mask:crate::unity_engine::sprite::Sprite,}
+impl::unity2::ClassIdentity for TMP_DefaultControls_Resources{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_DefaultControls.Resources";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TMP_DefaultControls_Resources{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for TMP_DefaultControls_Resources {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_DefaultControls.Resources";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TMP_DefaultControls_Resources {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_DefaultControls")] # [parent (crate :: system :: object :: Object)] pub struct TMP_DefaultControls {
-# [static_field] # [rename (name = "kWidth")] pub k_width : f32 ,
-# [static_field] # [rename (name = "kThickHeight")] pub k_thick_height : f32 ,
-# [static_field] # [rename (name = "kThinHeight")] pub k_thin_height : f32 ,
-# [static_field] # [rename (name = "s_TextElementSize")] pub s_text_element_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [static_field] # [rename (name = "s_ThickElementSize")] pub s_thick_element_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [static_field] # [rename (name = "s_ThinElementSize")] pub s_thin_element_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [static_field] # [rename (name = "s_DefaultSelectableColor")] pub s_default_selectable_color : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "s_TextColor")] pub s_text_color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls.md"))]#[::unity2::class(namespace="TMPro",name="TMP_DefaultControls")]#[parent(crate::system::object::Object)]pub struct TMP_DefaultControls{#[static_field]#[rename(name="kWidth")]pub k_width:f32, #[static_field]#[rename(name="kThickHeight")]pub k_thick_height:f32, #[static_field]#[rename(name="kThinHeight")]pub k_thin_height:f32, #[static_field]#[rename(name="s_TextElementSize")]pub s_text_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_ThickElementSize")]pub s_thick_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_ThinElementSize")]pub s_thin_element_size:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="s_DefaultSelectableColor")]pub s_default_selectable_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="s_TextColor")]pub s_text_color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_defaultcontrols-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_defaultcontrols")]
-impl TMP_DefaultControls { # [doc = "`CreateUIElementRoot(::unity2::Il2CppString, crate::unity_engine::vector2::Vector2)` overload"] pub fn create_ui_element_root (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , size : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d91700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`CreateUIObject(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"] pub fn create_ui_object (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d917b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`SetDefaultTextValues(crate::tm_pro::tmp_text::TMP_Text)` overload"] pub fn set_default_text_values (lbl : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_text :: TMP_Text >) -> () { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_text :: TMP_Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d91980usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lbl) , :: core :: option :: Option :: None) } } } # [doc = "`SetDefaultColorTransitionValues(crate::unity_engine::ui::selectable::Selectable)` overload"] pub fn set_default_color_transition_values (slider : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: selectable :: Selectable >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: selectable :: Selectable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d91a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (slider) , :: core :: option :: Option :: None) } } } # [doc = "`SetParentAndAlign(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"] pub fn set_parent_and_align (child : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d91880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (child) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`SetLayerRecursively(crate::unity_engine::gameobject::GameObject, i32)` overload"] pub fn set_layer_recursively (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d91ab0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`CreateScrollbar(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"] pub fn create_scrollbar (resources : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d91ba0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (resources) , :: core :: option :: Option :: None) } } } # [doc = "`CreateButton(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"] pub fn create_button (resources : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d91ef0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (resources) , :: core :: option :: Option :: None) } } } # [doc = "`CreateText(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"] pub fn create_text (resources : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d92280usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (resources) , :: core :: option :: Option :: None) } } } # [doc = "`CreateInputField(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"] pub fn create_input_field (resources : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d923b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (resources) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDropdown(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"] pub fn create_dropdown (resources : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_defaultcontrols :: TMP_DefaultControls_Resources , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d92a30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (resources) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d93ac0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_defaultcontrols")]impl TMP_DefaultControls{#[doc="`CreateUIElementRoot(::unity2::Il2CppString, crate::unity_engine::vector2::Vector2)` overload"]pub fn create_ui_element_root(name:impl::core::convert::Into< ::unity2::Il2CppString> ,size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d91700usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(size))}
+}
+#[doc="`CreateUIObject(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_ui_object(name:impl::core::convert::Into< ::unity2::Il2CppString> ,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d917b0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent))}
+}
+#[doc="`SetDefaultTextValues(crate::tm_pro::tmp_text::TMP_Text)` overload"]pub fn set_default_text_values(lbl:impl::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d91980usize)as*mut u8,();
+(crate::tm_pro::tmp_text::TMP_Text)::core::convert::Into::into(lbl))}
+}
+#[doc="`SetDefaultColorTransitionValues(crate::unity_engine::ui::selectable::Selectable)` overload"]pub fn set_default_color_transition_values(slider:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d91a20usize)as*mut u8,();
+(crate::unity_engine::ui::selectable::Selectable)::core::convert::Into::into(slider))}
+}
+#[doc="`SetParentAndAlign(crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]pub fn set_parent_and_align(child:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d91880usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(child),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent))}
+}
+#[doc="`SetLayerRecursively(crate::unity_engine::gameobject::GameObject, i32)` overload"]pub fn set_layer_recursively(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,layer:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d91ab0usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`CreateScrollbar(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]pub fn create_scrollbar(resources:impl::core::convert::Into<crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d91ba0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)::core::convert::Into::into(resources))}
+}
+#[doc="`CreateButton(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]pub fn create_button(resources:impl::core::convert::Into<crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d91ef0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)::core::convert::Into::into(resources))}
+}
+#[doc="`CreateText(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]pub fn create_text(resources:impl::core::convert::Into<crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d92280usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)::core::convert::Into::into(resources))}
+}
+#[doc="`CreateInputField(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]pub fn create_input_field(resources:impl::core::convert::Into<crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d923b0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)::core::convert::Into::into(resources))}
+}
+#[doc="`CreateDropdown(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)` overload"]pub fn create_dropdown(resources:impl::core::convert::Into<crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d92a30usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::tm_pro::tmp_defaultcontrols::TMP_DefaultControls_Resources)::core::convert::Into::into(resources))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d93ac0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_defaultcontrols")]
-impl TMP_DefaultControls { pub fn create_ui_element_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_ui_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_default_text_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_default_color_transition_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_parent_and_align_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_layer_recursively_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_scrollbar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_input_field_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_dropdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_DefaultControls as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="tm_pro-tmp_defaultcontrols")]impl TMP_DefaultControls{pub fn create_ui_element_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_ui_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_default_text_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_default_color_transition_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_parent_and_align_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_layer_recursively_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_scrollbar_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_input_field_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_dropdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
 #[cfg(feature = "tm_pro-tmp_defaultcontrols")]
 #[doc(hidden)]

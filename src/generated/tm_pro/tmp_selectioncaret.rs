@@ -4,44 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: graphic :: { Graphic , IGraphic }
- ;
- use crate :: unity_engine :: ui :: maskablegraphic :: { IMaskableGraphic , MaskableGraphic }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::graphic::{Graphic,IGraphic}
+;
+use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_selectioncaret/TMP_SelectionCaret.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_SelectionCaret")] # [parent (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic)] pub struct TMP_SelectionCaret {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_selectioncaret/TMP_SelectionCaret.md"))]#[::unity2::class(namespace="TMPro",name="TMP_SelectionCaret")]#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]pub struct TMP_SelectionCaret{}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_selectioncaret")]
-pub trait ITMP_SelectionCaretMethods : ITMP_SelectionCaret { # [doc = "`Cull(crate::unity_engine::rect::Rect, bool)` overload"] fn cull (self , clip_rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , valid_rect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TMP_SelectionCaret as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SelectionCaret , crate :: unity_engine :: rect :: Rect , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a7f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (clip_rect) , :: core :: convert :: Into :: into (valid_rect) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateGeometry()` overload"] fn update_geometry (self ,) -> () { unsafe { let __receiver = < TMP_SelectionCaret as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SelectionCaret , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_SelectionCaret as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_SelectionCaret , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_selectioncaret")]pub trait ITMP_SelectionCaretMethods:ITMP_SelectionCaret{#[doc="`Cull(crate::unity_engine::rect::Rect, bool)` overload"]fn cull(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282a7f0usize)as*mut u8,();
+(TMP_SelectionCaret)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(clip_rect),(bool)::core::convert::Into::into(valid_rect))}
+}
+#[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282a8d0usize)as*mut u8,();
+(TMP_SelectionCaret)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282a8e0usize)as*mut u8,();
+(TMP_SelectionCaret)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_selectioncaret")]
-impl < __T : ITMP_SelectionCaret > ITMP_SelectionCaretMethods for __T { }
+#[cfg(feature="tm_pro-tmp_selectioncaret")]impl<__T:ITMP_SelectionCaret>ITMP_SelectionCaretMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_selectioncaret")]
-impl TMP_SelectionCaret { pub fn cull_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SelectionCaret as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SelectionCaret as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_SelectionCaret as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="tm_pro-tmp_selectioncaret")]impl TMP_SelectionCaret{pub fn cull_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "tm_pro-tmp_selectioncaret")]
-impl TMP_SelectionCaret {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_SelectionCaret) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_SelectionCaretMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_selectioncaret")]impl TMP_SelectionCaret{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_SelectionCaret), ::core::stringify!(new),));
+ <Self as ITMP_SelectionCaretMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_selectioncaret")]

@@ -4,46 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingeventfader/FishingEventFader.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingEventFader")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingEventFader {
-# [offset (24)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-# [offset (40)] # [rename (name = "m_Layer")] pub m_layer : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (56)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
-# [offset (60)] # [rename (name = "m_FinishTime")] pub m_finish_time : f32 ,
-# [offset (64)] # [rename (name = "IsFadeIn")] pub is_fade_in : bool ,
-# [offset (72)] # [rename (name = "m_FadeTimeList")] pub m_fade_time_list : :: unity2 :: Array < f32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingeventfader/FishingEventFader.md"))]#[::unity2::class(namespace="App",name="FishingEventFader")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FishingEventFader{#[offset(24)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(40)]#[rename(name="m_Layer")]pub m_layer:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_Timer")]pub m_timer:f32, #[offset(60)]#[rename(name="m_FinishTime")]pub m_finish_time:f32, #[offset(64)]#[rename(name="IsFadeIn")]pub is_fade_in:bool, #[offset(72)]#[rename(name="m_FadeTimeList")]pub m_fade_time_list: ::unity2::Array<f32> ,}
 
 }
 
 #[cfg(feature = "app-fishingeventfader-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingeventfader")]
-pub trait IFishingEventFaderMethods : IFishingEventFader { # [doc = "`get_IsRun()` overload"] fn get_is_run (self ,) -> bool { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f1a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsRun(bool)` overload"] fn set_is_run (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f1aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f1ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f1cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FadeIn(crate::app::fishing::fadetype::FadeType)` overload"] fn fade_in (self , r#type : impl :: core :: convert :: Into < crate :: app :: fishing :: fadetype :: FadeType >) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , crate :: app :: fishing :: fadetype :: FadeType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f1da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`FadeOut(crate::app::fishing::fadetype::FadeType)` overload"] fn fade_out (self , r#type : impl :: core :: convert :: Into < crate :: app :: fishing :: fadetype :: FadeType >) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , crate :: app :: fishing :: fadetype :: FadeType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f1e00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , set : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f1e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set) , :: core :: option :: Option :: None) } } } # [doc = "`GetFadeTime(crate::app::fishing::fadetype::FadeType)` overload"] fn get_fade_time (self , r#type : impl :: core :: convert :: Into < crate :: app :: fishing :: fadetype :: FadeType >) -> f32 { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , crate :: app :: fishing :: fadetype :: FadeType , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f1e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f1ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26f2030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingeventfader")]pub trait IFishingEventFaderMethods:IFishingEventFader{#[doc="`get_IsRun()` overload"]fn get_is_run(self,)->bool{unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f1a90usize)as*mut u8,bool;
+(FishingEventFader)__receiver)}
+}
+#[doc="`set_IsRun(bool)` overload"]fn set_is_run(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f1aa0usize)as*mut u8,();
+(FishingEventFader)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f1ab0usize)as*mut u8,();
+(FishingEventFader)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f1cf0usize)as*mut u8,();
+(FishingEventFader)__receiver)}
+}
+#[doc="`FadeIn(crate::app::fishing::fadetype::FadeType)` overload"]fn fade_in(self,r#type:impl::core::convert::Into<crate::app::fishing::fadetype::FadeType>)->(){unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f1da0usize)as*mut u8,();
+(FishingEventFader)__receiver,(crate::app::fishing::fadetype::FadeType)::core::convert::Into::into(r#type))}
+}
+#[doc="`FadeOut(crate::app::fishing::fadetype::FadeType)` overload"]fn fade_out(self,r#type:impl::core::convert::Into<crate::app::fishing::fadetype::FadeType>)->(){unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f1e00usize)as*mut u8,();
+(FishingEventFader)__receiver,(crate::app::fishing::fadetype::FadeType)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetColor(crate::unity_engine::color::Color)` overload"]fn set_color(self,set:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f1e60usize)as*mut u8,();
+(FishingEventFader)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(set))}
+}
+#[doc="`GetFadeTime(crate::app::fishing::fadetype::FadeType)` overload"]fn get_fade_time(self,r#type:impl::core::convert::Into<crate::app::fishing::fadetype::FadeType>)->f32{unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f1e80usize)as*mut u8,f32;
+(FishingEventFader)__receiver,(crate::app::fishing::fadetype::FadeType)::core::convert::Into::into(r#type))}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f1ec0usize)as*mut u8,();
+(FishingEventFader)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26f2030usize)as*mut u8,();
+(FishingEventFader)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingeventfader")]
-impl < __T : IFishingEventFader > IFishingEventFaderMethods for __T { }
+#[cfg(feature="app-fishingeventfader")]impl<__T:IFishingEventFader>IFishingEventFaderMethods for __T{}
 
-#[cfg(feature = "app-fishingeventfader")]
-impl FishingEventFader { pub fn get_is_run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_fade_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-fishingeventfader")]impl FishingEventFader{pub fn get_is_run_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_run_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_fade_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-fishingeventfader")]
-impl FishingEventFader {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingEventFader) , :: core :: stringify ! (new) ,)) ; < Self as IFishingEventFaderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingeventfader")]impl FishingEventFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingEventFader), ::core::stringify!(new),));
+ <Self as IFishingEventFaderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingeventfader")]

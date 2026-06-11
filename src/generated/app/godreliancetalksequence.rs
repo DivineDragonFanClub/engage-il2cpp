@@ -4,43 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: commonreliancetalksequence :: { CommonRelianceTalkSequence , ICommonRelianceTalkSequence }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::commonreliancetalksequence::{CommonRelianceTalkSequence,ICommonRelianceTalkSequence}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godreliancetalksequence/GodRelianceTalkSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodRelianceTalkSequence")] # [parent (crate :: app :: commonreliancetalksequence :: CommonRelianceTalkSequence)] pub struct GodRelianceTalkSequence {
-# [offset (128)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (136)] # [rename (name = "m_UnitAsciiName")] pub m_unit_ascii_name : :: unity2 :: Il2CppString ,
-# [offset (144)] # [rename (name = "m_God")] pub m_god : crate :: app :: godunit :: GodUnit ,
-# [offset (152)] # [rename (name = "m_GodAsciiName")] pub m_god_ascii_name : :: unity2 :: Il2CppString ,
-# [offset (160)] # [rename (name = "m_RelianceLevel")] pub m_reliance_level : crate :: app :: goddata :: GodData_RelianceLevel ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godreliancetalksequence/GodRelianceTalkSequence.md"))]#[::unity2::class(namespace="App",name="GodRelianceTalkSequence")]#[parent(crate::app::commonreliancetalksequence::CommonRelianceTalkSequence)]pub struct GodRelianceTalkSequence{#[offset(128)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(136)]#[rename(name="m_UnitAsciiName")]pub m_unit_ascii_name: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_God")]pub m_god:crate::app::godunit::GodUnit, #[offset(152)]#[rename(name="m_GodAsciiName")]pub m_god_ascii_name: ::unity2::Il2CppString, #[offset(160)]#[rename(name="m_RelianceLevel")]pub m_reliance_level:crate::app::goddata::GodData_RelianceLevel,}
 
 }
 
 #[cfg(feature = "app-godreliancetalksequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godreliancetalksequence")]
-impl GodRelianceTalkSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2336010usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godreliancetalksequence")]impl GodRelianceTalkSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2336010usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+}
 
-#[cfg(feature = "app-godreliancetalksequence")]
-pub trait IGodRelianceTalkSequenceMethods : IGodRelianceTalkSequence { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < GodRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceTalkSequence , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23360b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMessFileName(bool)` overload"] fn create_mess_file_name (self , is_reverse : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceTalkSequence , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2336290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_reverse) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMessFileName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn create_mess_file_name_2 (self , ascii_name_a : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , ascii_name_b : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceTalkSequence , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2336370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ascii_name_a) , :: core :: convert :: Into :: into (ascii_name_b) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMid()` overload"] fn create_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23363f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRelianceLevelText(crate::app::goddata::GodData_RelianceLevel)` overload"] fn get_reliance_level_text (self , reliance_level : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData_RelianceLevel >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GodRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceTalkSequence , crate :: app :: goddata :: GodData_RelianceLevel , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23364e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (reliance_level) , :: core :: option :: Option :: None) } } } # [doc = "`LevelUp()` overload"] fn level_up (self ,) -> () { unsafe { let __receiver = < GodRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2336580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godreliancetalksequence")]pub trait IGodRelianceTalkSequenceMethods:IGodRelianceTalkSequence{#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <GodRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23360b0usize)as*mut u8,();
+(GodRelianceTalkSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`CreateMessFileName(bool)` overload"]fn create_mess_file_name(self,is_reverse:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2336290usize)as*mut u8, ::unity2::Il2CppString;
+(GodRelianceTalkSequence)__receiver,(bool)::core::convert::Into::into(is_reverse))}
+}
+#[doc="`CreateMessFileName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn create_mess_file_name_2(self,ascii_name_a:impl::core::convert::Into< ::unity2::Il2CppString> ,ascii_name_b:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2336370usize)as*mut u8, ::unity2::Il2CppString;
+(GodRelianceTalkSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(ascii_name_a),(::unity2::Il2CppString)::core::convert::Into::into(ascii_name_b))}
+}
+#[doc="`CreateMid()` overload"]fn create_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23363f0usize)as*mut u8, ::unity2::Il2CppString;
+(GodRelianceTalkSequence)__receiver)}
+}
+#[doc="`GetRelianceLevelText(crate::app::goddata::GodData_RelianceLevel)` overload"]fn get_reliance_level_text(self,reliance_level:impl::core::convert::Into<crate::app::goddata::GodData_RelianceLevel>)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23364e0usize)as*mut u8, ::unity2::Il2CppString;
+(GodRelianceTalkSequence)__receiver,(crate::app::goddata::GodData_RelianceLevel)::core::convert::Into::into(reliance_level))}
+}
+#[doc="`LevelUp()` overload"]fn level_up(self,)->(){unsafe{let __receiver= <GodRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2336580usize)as*mut u8,();
+(GodRelianceTalkSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godreliancetalksequence")]
-impl < __T : IGodRelianceTalkSequence > IGodRelianceTalkSequenceMethods for __T { }
+#[cfg(feature="app-godreliancetalksequence")]impl<__T:IGodRelianceTalkSequence>IGodRelianceTalkSequenceMethods for __T{}
 
-#[cfg(feature = "app-godreliancetalksequence")]
-impl GodRelianceTalkSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_mess_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_mess_file_name_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_reliance_level_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-godreliancetalksequence")]impl GodRelianceTalkSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_mess_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_mess_file_name_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_reliance_level_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-godreliancetalksequence")]
-impl GodRelianceTalkSequence {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , god : crate :: app :: godunit :: GodUnit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodRelianceTalkSequence) , :: core :: stringify ! (new) ,)) ; < Self as IGodRelianceTalkSequenceMethods > :: ctor (this , unit , god) ; this }
+#[cfg(feature="app-godreliancetalksequence")]impl GodRelianceTalkSequence{#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,god:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRelianceTalkSequence), ::core::stringify!(new),));
+ <Self as IGodRelianceTalkSequenceMethods> ::ctor(this,unit,god);
+this}
 }
 
 #[cfg(feature = "app-godreliancetalksequence")]

@@ -4,45 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/materialinstance/MaterialInstance.md"))] # [:: unity2 :: class (namespace = "" , name = "MaterialInstance")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MaterialInstance {
-# [offset (24)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "m_MainTexture")] pub m_main_texture : crate :: unity_engine :: texture2d :: Texture2D ,
-# [offset (40)] # [rename (name = "m_NormalMap")] pub m_normal_map : crate :: unity_engine :: texture2d :: Texture2D ,
-# [offset (48)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-# [offset (64)] # [rename (name = "m_Clone")] pub m_clone : crate :: unity_engine :: material :: Material ,
-# [offset (72)] # [rename (name = "m_Original")] pub m_original : crate :: unity_engine :: material :: Material ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/materialinstance/MaterialInstance.md"))]#[::unity2::class(namespace="",name="MaterialInstance")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MaterialInstance{#[offset(24)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="m_MainTexture")]pub m_main_texture:crate::unity_engine::texture2d::Texture2D, #[offset(40)]#[rename(name="m_NormalMap")]pub m_normal_map:crate::unity_engine::texture2d::Texture2D, #[offset(48)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(64)]#[rename(name="m_Clone")]pub m_clone:crate::unity_engine::material::Material, #[offset(72)]#[rename(name="m_Original")]pub m_original:crate::unity_engine::material::Material,}
 
 }
 
 #[cfg(feature = "root-materialinstance-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-materialinstance")]
-pub trait IMaterialInstanceMethods : IMaterialInstance { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MaterialInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c6db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MaterialInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c7180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < MaterialInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c7190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateInstance()` overload"] fn create_instance (self ,) -> () { unsafe { let __receiver = < MaterialInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c6de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateMaterial()` overload"] fn update_material (self ,) -> () { unsafe { let __receiver = < MaterialInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c7070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reload()` overload"] fn reload (self ,) -> () { unsafe { let __receiver = < MaterialInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c71c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MaterialInstance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaterialInstance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c7200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-materialinstance")]pub trait IMaterialInstanceMethods:IMaterialInstance{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MaterialInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c6db0usize)as*mut u8,();
+(MaterialInstance)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MaterialInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c7180usize)as*mut u8,();
+(MaterialInstance)__receiver)}
+}
+#[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <MaterialInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c7190usize)as*mut u8,();
+(MaterialInstance)__receiver)}
+}
+#[doc="`CreateInstance()` overload"]fn create_instance(self,)->(){unsafe{let __receiver= <MaterialInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c6de0usize)as*mut u8,();
+(MaterialInstance)__receiver)}
+}
+#[doc="`UpdateMaterial()` overload"]fn update_material(self,)->(){unsafe{let __receiver= <MaterialInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c7070usize)as*mut u8,();
+(MaterialInstance)__receiver)}
+}
+#[doc="`Reload()` overload"]fn reload(self,)->(){unsafe{let __receiver= <MaterialInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c71c0usize)as*mut u8,();
+(MaterialInstance)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaterialInstance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c7200usize)as*mut u8,();
+(MaterialInstance)__receiver)}
+}
+}
 
-#[cfg(feature = "root-materialinstance")]
-impl < __T : IMaterialInstance > IMaterialInstanceMethods for __T { }
+#[cfg(feature="root-materialinstance")]impl<__T:IMaterialInstance>IMaterialInstanceMethods for __T{}
 
-#[cfg(feature = "root-materialinstance")]
-impl MaterialInstance { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn reload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaterialInstance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-materialinstance")]impl MaterialInstance{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn reload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-materialinstance")]
-impl MaterialInstance {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MaterialInstance) , :: core :: stringify ! (new) ,)) ; < Self as IMaterialInstanceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-materialinstance")]impl MaterialInstance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialInstance), ::core::stringify!(new),));
+ <Self as IMaterialInstanceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-materialinstance")]

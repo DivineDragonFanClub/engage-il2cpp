@@ -4,33 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponcommon/RefineGodWeaponCommon.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponCommon")] # [parent (crate :: system :: object :: Object)] pub struct RefineGodWeaponCommon {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponcommon/RefineGodWeaponCommon.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponCommon")]#[parent(crate::system::object::Object)]pub struct RefineGodWeaponCommon{}
 
 }
 
 #[cfg(feature = "app-refinegodweaponcommon-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refinegodweaponcommon")]
-impl RefineGodWeaponCommon { # [doc = "`GetCapacity(crate::app::godunit::GodUnit)` overload"] pub fn get_capacity (god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237fb00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god_unit) , :: core :: option :: Option :: None) } } } # [doc = "`HasEfficacySkills(crate::app::itemdata::ItemData)` overload"] pub fn has_efficacy_skills (item_data : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237fbc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item_data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refinegodweaponcommon")]impl RefineGodWeaponCommon{#[doc="`GetCapacity(crate::app::godunit::GodUnit)` overload"]pub fn get_capacity(god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x237fb00usize)as*mut u8,i32;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
+}
+#[doc="`HasEfficacySkills(crate::app::itemdata::ItemData)` overload"]pub fn has_efficacy_skills(item_data:impl::core::convert::Into<crate::app::itemdata::ItemData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x237fbc0usize)as*mut u8,bool;
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item_data))}
+}
+}
 
-#[cfg(feature = "app-refinegodweaponcommon")]
-pub trait IRefineGodWeaponCommonMethods : IRefineGodWeaponCommon { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponCommon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponCommon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237fd20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refinegodweaponcommon")]pub trait IRefineGodWeaponCommonMethods:IRefineGodWeaponCommon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineGodWeaponCommon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x237fd20usize)as*mut u8,();
+(RefineGodWeaponCommon)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refinegodweaponcommon")]
-impl < __T : IRefineGodWeaponCommon > IRefineGodWeaponCommonMethods for __T { }
+#[cfg(feature="app-refinegodweaponcommon")]impl<__T:IRefineGodWeaponCommon>IRefineGodWeaponCommonMethods for __T{}
 
-#[cfg(feature = "app-refinegodweaponcommon")]
-impl RefineGodWeaponCommon { pub fn get_capacity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn has_efficacy_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponCommon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-refinegodweaponcommon")]impl RefineGodWeaponCommon{pub fn get_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn has_efficacy_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-refinegodweaponcommon")]
-impl RefineGodWeaponCommon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineGodWeaponCommon) , :: core :: stringify ! (new) ,)) ; < Self as IRefineGodWeaponCommonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refinegodweaponcommon")]impl RefineGodWeaponCommon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineGodWeaponCommon), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponCommonMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refinegodweaponcommon")]

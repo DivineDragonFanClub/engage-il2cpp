@@ -4,67 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/playable/Playable.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Playable {
-    pub m_handle: crate :: unity_engine :: playables :: playablehandle :: PlayableHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/playable/Playable.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Playable{pub m_handle:crate::unity_engine::playables::playablehandle::PlayableHandle,}
+impl::unity2::ClassIdentity for Playable{const NAMESPACE: &'static str="UnityEngine.Playables";
+const NAME: &'static str="Playable";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Playable {
-    const NAMESPACE: &'static str = "UnityEngine.Playables";
-
-    const NAME: &'static str = "Playable";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for Playable{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for Playable {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl Playable{#[inline]pub fn m_null_playable()->crate::unity_engine::playables::playable::Playable{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayable");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_m_null_playable(value:crate::unity_engine::playables::playable::Playable){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayable");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl Playable {
-    #[inline]
-    pub fn m_null_playable() -> crate :: unity_engine :: playables :: playable :: Playable {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_m_null_playable(value: crate :: unity_engine :: playables :: playable :: Playable) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -72,14 +34,39 @@ impl Playable {
 #[cfg(feature = "unity_engine-playables-playable-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-playables-playable")]
-impl Playable { # [doc = "`get_Null()` overload"] pub fn get_null () -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1580usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, i32)` overload"] pub fn create (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , input_count : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f15f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (input_count) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-playable")]impl Playable{#[doc="`get_Null()` overload"]pub fn get_null()->crate::unity_engine::playables::playable::Playable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1580usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+)}
+}
+#[doc="`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, i32)` overload"]pub fn create(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f15f0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(i32)::core::convert::Into::into(input_count))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1940usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-playable")]
-impl Playable { # [doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle >) -> () { unsafe { { let __inner : extern "C" fn (* mut Playable , crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1700usize) as * mut u8) ; __inner (self as * mut Playable , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { { let __inner : extern "C" fn (* mut Playable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1710usize) as * mut u8) ; __inner (self as * mut Playable , :: core :: option :: Option :: None) } } } # [doc = "`GetPlayableType()` overload"] pub fn get_playable_type (& mut self ,) -> :: unity2 :: SystemType { unsafe { { let __inner : extern "C" fn (* mut Playable , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1720usize) as * mut u8) ; __inner (self as * mut Playable , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::playables::playable::Playable)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Playable , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1860usize) as * mut u8) ; __inner (self as * mut Playable , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-playables-playable")]impl Playable{#[doc="`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1700usize)as*mut u8,();
+(*mut Playable)self as*mut Playable,(crate::unity_engine::playables::playablehandle::PlayableHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playablehandle::PlayableHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1710usize)as*mut u8,crate::unity_engine::playables::playablehandle::PlayableHandle;
+(*mut Playable)self as*mut Playable)}
+}
+#[doc="`GetPlayableType()` overload"]pub fn get_playable_type(&mut self,)-> ::unity2::SystemType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1720usize)as*mut u8, ::unity2::SystemType;
+(*mut Playable)self as*mut Playable)}
+}
+#[doc="`Equals(crate::unity_engine::playables::playable::Playable)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1860usize)as*mut u8,bool;
+(*mut Playable)self as*mut Playable,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-playables-playable")]
-impl Playable { pub fn get_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Playable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Playable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Playable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Playable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_playable_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Playable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Playable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Playable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-playables-playable")]impl Playable{pub fn get_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_playable_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-playables-playable")]
 #[doc(hidden)]

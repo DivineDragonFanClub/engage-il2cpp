@@ -4,28 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/computeshader/ComputeShader.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ComputeShader")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct ComputeShader {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/computeshader/ComputeShader.md"))]#[::unity2::class(namespace="UnityEngine",name="ComputeShader")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct ComputeShader{}
 
 }
 
 #[cfg(feature = "unity_engine-computeshader-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-computeshader")]
-pub trait IComputeShaderMethods : IComputeShader { # [doc = "`FindKernel(::unity2::Il2CppString)` overload"] fn find_kernel (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < ComputeShader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ComputeShader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c47190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`EnableKeyword(::unity2::Il2CppString)` overload"] fn enable_keyword (self , keyword : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ComputeShader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ComputeShader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c471e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (keyword) , :: core :: option :: Option :: None) } } } # [doc = "`DisableKeyword(::unity2::Il2CppString)` overload"] fn disable_keyword (self , keyword : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ComputeShader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ComputeShader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c47230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (keyword) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-computeshader")]pub trait IComputeShaderMethods:IComputeShader{#[doc="`FindKernel(::unity2::Il2CppString)` overload"]fn find_kernel(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <ComputeShader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c47190usize)as*mut u8,i32;
+(ComputeShader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`EnableKeyword(::unity2::Il2CppString)` overload"]fn enable_keyword(self,keyword:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ComputeShader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c471e0usize)as*mut u8,();
+(ComputeShader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(keyword))}
+}
+#[doc="`DisableKeyword(::unity2::Il2CppString)` overload"]fn disable_keyword(self,keyword:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ComputeShader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c47230usize)as*mut u8,();
+(ComputeShader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(keyword))}
+}
+}
 
-#[cfg(feature = "unity_engine-computeshader")]
-impl < __T : IComputeShader > IComputeShaderMethods for __T { }
+#[cfg(feature="unity_engine-computeshader")]impl<__T:IComputeShader>IComputeShaderMethods for __T{}
 
-#[cfg(feature = "unity_engine-computeshader")]
-impl ComputeShader { pub fn find_kernel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeShader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn enable_keyword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeShader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn disable_keyword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeShader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-computeshader")]impl ComputeShader{pub fn find_kernel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn enable_keyword_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn disable_keyword_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-computeshader")]
 #[doc(hidden)]

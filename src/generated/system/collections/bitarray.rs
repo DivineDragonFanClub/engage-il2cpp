@@ -4,79 +4,167 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/bitarray/BitArray_BitArrayEnumeratorSimple.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "BitArray.BitArrayEnumeratorSimple")] # [parent (crate :: system :: object :: Object)] pub struct BitArray_BitArrayEnumeratorSimple {
-# [offset (16)] # [rename (name = "bitarray")] pub bitarray : crate :: system :: collections :: bitarray :: BitArray ,
-# [offset (24)] # [rename (name = "index")] pub index : i32 ,
-# [offset (28)] # [rename (name = "version")] pub version : i32 ,
-# [offset (32)] # [rename (name = "currentElement")] pub current_element : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/bitarray/BitArray.md"))]#[::unity2::class(namespace="System.Collections",name="BitArray")]#[parent(crate::system::object::Object)]pub struct BitArray{#[static_field]#[rename(name="BitsPerInt32")]pub bits_per_int32:i32, #[static_field]#[rename(name="BytesPerInt32")]pub bytes_per_int32:i32, #[static_field]#[rename(name="BitsPerByte")]pub bits_per_byte:i32, #[offset(16)]#[rename(name="m_array")]pub m_array: ::unity2::Array<i32> , #[offset(24)]#[rename(name="m_length")]pub m_length:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance, #[static_field]#[rename(name="_ShrinkThreshold")]pub shrink_threshold:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/bitarray/BitArray.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "BitArray")] # [parent (crate :: system :: object :: Object)] pub struct BitArray {
-# [static_field] # [rename (name = "BitsPerInt32")] pub bits_per_int32 : i32 ,
-# [static_field] # [rename (name = "BytesPerInt32")] pub bytes_per_int32 : i32 ,
-# [static_field] # [rename (name = "BitsPerByte")] pub bits_per_byte : i32 ,
-# [offset (16)] # [rename (name = "m_array")] pub m_array : :: unity2 :: Array < i32 > ,
-# [offset (24)] # [rename (name = "m_length")] pub m_length : i32 ,
-# [offset (28)] # [rename (name = "_version")] pub version : i32 ,
-# [offset (32)] # [rename (name = "_syncRoot")] pub sync_root : :: unity2 :: IlInstance ,
-# [static_field] # [rename (name = "_ShrinkThreshold")] pub shrink_threshold : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/bitarray/BitArray_BitArrayEnumeratorSimple.md"))]#[::unity2::class(namespace="System.Collections",name="BitArray.BitArrayEnumeratorSimple")]#[parent(crate::system::object::Object)]pub struct BitArray_BitArrayEnumeratorSimple{#[offset(16)]#[rename(name="bitarray")]pub bitarray:crate::system::collections::bitarray::BitArray, #[offset(24)]#[rename(name="index")]pub index:i32, #[offset(28)]#[rename(name="version")]pub version:i32, #[offset(32)]#[rename(name="currentElement")]pub current_element:bool,}
 
 }
 
 #[cfg(feature = "system-collections-bitarray-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-bitarray")]
-pub trait IBitArray_BitArrayEnumeratorSimpleMethods : IBitArray_BitArrayEnumeratorSimple { # [doc = "`.ctor(crate::system::collections::bitarray::BitArray)` overload"] fn ctor (self , bitarray : impl :: core :: convert :: Into < crate :: system :: collections :: bitarray :: BitArray >) -> () { unsafe { let __receiver = < BitArray_BitArrayEnumeratorSimple as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray_BitArrayEnumeratorSimple , crate :: system :: collections :: bitarray :: BitArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d0b70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bitarray) , :: core :: option :: Option :: None) } } } # [doc = "`Clone()` overload"] fn clone (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < BitArray_BitArrayEnumeratorSimple as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray_BitArrayEnumeratorSimple , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d0bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] fn move_next (self ,) -> bool { unsafe { let __receiver = < BitArray_BitArrayEnumeratorSimple as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray_BitArrayEnumeratorSimple , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d0bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < BitArray_BitArrayEnumeratorSimple as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray_BitArrayEnumeratorSimple , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d0ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < BitArray_BitArrayEnumeratorSimple as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray_BitArrayEnumeratorSimple , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34d0d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-bitarray")]
-impl < __T : IBitArray_BitArrayEnumeratorSimple > IBitArray_BitArrayEnumeratorSimpleMethods for __T { }
-
-#[cfg(feature = "system-collections-bitarray")]
-impl BitArray_BitArrayEnumeratorSimple { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray_BitArrayEnumeratorSimple as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray_BitArrayEnumeratorSimple as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray_BitArrayEnumeratorSimple as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray_BitArrayEnumeratorSimple as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray_BitArrayEnumeratorSimple as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "system-collections-bitarray")]
-impl BitArray_BitArrayEnumeratorSimple {
-# [doc = "`.ctor(crate::system::collections::bitarray::BitArray)` — overload selector"] pub fn new (bitarray : crate :: system :: collections :: bitarray :: BitArray) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitArray_BitArrayEnumeratorSimple) , :: core :: stringify ! (new) ,)) ; < Self as IBitArray_BitArrayEnumeratorSimpleMethods > :: ctor (this , bitarray) ; this }
+#[cfg(feature="system-collections-bitarray")]impl BitArray{#[doc="`GetArrayLength(i32, i32)` overload"]pub fn get_array_length(n:impl::core::convert::Into<i32> ,div:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3390d90usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(n),(i32)::core::convert::Into::into(div))}
+}
 }
 
-#[cfg(feature = "system-collections-bitarray")]
-impl BitArray { # [doc = "`GetArrayLength(i32, i32)` overload"] pub fn get_array_length (n : impl :: core :: convert :: Into < i32 > , div : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390d90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (n) , :: core :: convert :: Into :: into (div) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-bitarray")]pub trait IBitArrayMethods:IBitArray{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390c20usize)as*mut u8,();
+(BitArray)__receiver)}
+}
+#[doc="`.ctor(i32, bool)` overload"]fn ctor_2(self,length:impl::core::convert::Into<i32> ,default_value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390c30usize)as*mut u8,();
+(BitArray)__receiver,(i32)::core::convert::Into::into(length),(bool)::core::convert::Into::into(default_value))}
+}
+#[doc="`.ctor(::unity2::Array<i32>)` overload"]fn ctor_3(self,values:impl::core::convert::Into< ::unity2::Array<i32> >)->(){unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390db0usize)as*mut u8,();
+(BitArray)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(values))}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390f60usize)as*mut u8,bool;
+(BitArray)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Get(i32)` overload"]fn get(self,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3390f70usize)as*mut u8,bool;
+(BitArray)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Set(i32, bool)` overload"]fn set(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3391030usize)as*mut u8,();
+(BitArray)__receiver,(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(value))}
+}
+#[doc="`SetAll(bool)` overload"]fn set_all(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3391110usize)as*mut u8,();
+(BitArray)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Length()` overload"]fn get_length(self,)->i32{unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3391190usize)as*mut u8,i32;
+(BitArray)__receiver)}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33911a0usize)as*mut u8,();
+(BitArray)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3391540usize)as*mut u8,i32;
+(BitArray)__receiver)}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3391550usize)as*mut u8,crate::system::object::Object;
+(BitArray)__receiver)}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33915d0usize)as*mut u8,crate::system::object::Object;
+(BitArray)__receiver)}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3391660usize)as*mut u8,bool;
+(BitArray)__receiver)}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <BitArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3391670usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(BitArray)__receiver)}
+}
+}
 
-#[cfg(feature = "system-collections-bitarray")]
-pub trait IBitArrayMethods : IBitArray { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, bool)` overload"] fn ctor_2 (self , length : impl :: core :: convert :: Into < i32 > , default_value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390c30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (length) , :: core :: convert :: Into :: into (default_value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<i32>)` overload"] fn ctor_3 (self , values : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> () { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Get(i32)` overload"] fn get (self , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3390f70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Set(i32, bool)` overload"] fn set (self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3391030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetAll(bool)` overload"] fn set_all (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3391110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Length()` overload"] fn get_length (self ,) -> i32 { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3391190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(::unity2::IlInstance, i32)` overload"] fn copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33911a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3391540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone()` overload"] fn clone (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3391550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SyncRoot()` overload"] fn get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33915d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSynchronized()` overload"] fn get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3391660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < BitArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitArray , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3391670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-bitarray")]impl<__T:IBitArray>IBitArrayMethods for __T{}
 
-#[cfg(feature = "system-collections-bitarray")]
-impl < __T : IBitArray > IBitArrayMethods for __T { }
+#[cfg(feature="system-collections-bitarray")]impl BitArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_array_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "system-collections-bitarray")]
-impl BitArray { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_array_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="system-collections-bitarray")]impl BitArray{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitArray), ::core::stringify!(new),));
+ <Self as IBitArrayMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(i32, bool)` — overload selector"]pub fn new_2(length:i32,default_value:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitArray), ::core::stringify!(new_2),));
+ <Self as IBitArrayMethods> ::ctor_2(this,length,default_value);
+this}
+#[doc="`.ctor(::unity2::Array<i32>)` — overload selector"]pub fn new_3(values: ::unity2::Array<i32>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitArray), ::core::stringify!(new_3),));
+ <Self as IBitArrayMethods> ::ctor_3(this,values);
+this}
+}
 
-#[cfg(feature = "system-collections-bitarray")]
-impl BitArray {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitArray) , :: core :: stringify ! (new) ,)) ; < Self as IBitArrayMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-bitarray")]pub trait IBitArray_BitArrayEnumeratorSimpleMethods:IBitArray_BitArrayEnumeratorSimple{#[doc="`.ctor(crate::system::collections::bitarray::BitArray)` overload"]fn ctor(self,bitarray:impl::core::convert::Into<crate::system::collections::bitarray::BitArray>)->(){unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0b70usize)as*mut u8,();
+(BitArray_BitArrayEnumeratorSimple)__receiver,(crate::system::collections::bitarray::BitArray)::core::convert::Into::into(bitarray))}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0bc0usize)as*mut u8,crate::system::object::Object;
+(BitArray_BitArrayEnumeratorSimple)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0bd0usize)as*mut u8,bool;
+(BitArray_BitArrayEnumeratorSimple)__receiver)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0ca0usize)as*mut u8,crate::system::object::Object;
+(BitArray_BitArrayEnumeratorSimple)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <BitArray_BitArrayEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d0d80usize)as*mut u8,();
+(BitArray_BitArrayEnumeratorSimple)__receiver)}
+}
+}
 
-# [doc = "`.ctor(i32, bool)` — overload selector"] pub fn new_2 (length : i32 , default_value : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitArray) , :: core :: stringify ! (new_2) ,)) ; < Self as IBitArrayMethods > :: ctor_2 (this , length , default_value) ; this }
+#[cfg(feature="system-collections-bitarray")]impl<__T:IBitArray_BitArrayEnumeratorSimple>IBitArray_BitArrayEnumeratorSimpleMethods for __T{}
 
-# [doc = "`.ctor(::unity2::Array<i32>)` — overload selector"] pub fn new_3 (values : :: unity2 :: Array < i32 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitArray) , :: core :: stringify ! (new_3) ,)) ; < Self as IBitArrayMethods > :: ctor_3 (this , values) ; this }
+#[cfg(feature="system-collections-bitarray")]impl BitArray_BitArrayEnumeratorSimple{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="system-collections-bitarray")]impl BitArray_BitArrayEnumeratorSimple{#[doc="`.ctor(crate::system::collections::bitarray::BitArray)` — overload selector"]pub fn new(bitarray:crate::system::collections::bitarray::BitArray)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitArray_BitArrayEnumeratorSimple), ::core::stringify!(new),));
+ <Self as IBitArray_BitArrayEnumeratorSimpleMethods> ::ctor(this,bitarray);
+this}
 }
 
 #[cfg(feature = "system-collections-bitarray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BitArray_BitArrayEnumeratorSimple;
-    pub use super::IBitArray_BitArrayEnumeratorSimple;
-    pub use super::IBitArray_BitArrayEnumeratorSimpleMethods;
     pub use super::BitArray;
     pub use super::IBitArray;
     pub use super::IBitArrayMethods;
+    pub use super::BitArray_BitArrayEnumeratorSimple;
+    pub use super::IBitArray_BitArrayEnumeratorSimple;
+    pub use super::IBitArray_BitArrayEnumeratorSimpleMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

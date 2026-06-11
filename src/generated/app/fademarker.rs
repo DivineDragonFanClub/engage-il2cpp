@@ -4,39 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: marker :: { IMarker , Marker }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::marker::{IMarker,Marker}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fademarker/FadeMarker.md"))] # [:: unity2 :: class (namespace = "App" , name = "FadeMarker")] # [parent (crate :: unity_engine :: timeline :: marker :: Marker)] pub struct FadeMarker {
-# [offset (40)] # [rename (name = "isFadeOut")] pub is_fade_out : bool ,
-# [offset (44)] # [rename (name = "FadeSpeedType")] pub fade_speed_type : crate :: app :: dragon_ride :: fadetype_2 :: FadeType_2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fademarker/FadeMarker.md"))]#[::unity2::class(namespace="App",name="FadeMarker")]#[parent(crate::unity_engine::timeline::marker::Marker)]pub struct FadeMarker{#[offset(40)]#[rename(name="isFadeOut")]pub is_fade_out:bool, #[offset(44)]#[rename(name="FadeSpeedType")]pub fade_speed_type:crate::app::dragon_ride::fadetype_2::FadeType_2,}
 
 }
 
 #[cfg(feature = "app-fademarker-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fademarker")]
-pub trait IFadeMarkerMethods : IFadeMarker { # [doc = "`get_id()` overload"] fn get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < FadeMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FadeMarker , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d53e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FadeMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FadeMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d53ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fademarker")]pub trait IFadeMarkerMethods:IFadeMarker{#[doc="`get_id()` overload"]fn get_id(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <FadeMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d53e90usize)as*mut u8,crate::unity_engine::propertyname::PropertyName;
+(FadeMarker)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FadeMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d53ef0usize)as*mut u8,();
+(FadeMarker)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fademarker")]
-impl < __T : IFadeMarker > IFadeMarkerMethods for __T { }
+#[cfg(feature="app-fademarker")]impl<__T:IFadeMarker>IFadeMarkerMethods for __T{}
 
-#[cfg(feature = "app-fademarker")]
-impl FadeMarker { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FadeMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FadeMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-fademarker")]impl FadeMarker{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-fademarker")]
-impl FadeMarker {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FadeMarker) , :: core :: stringify ! (new) ,)) ; < Self as IFadeMarkerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fademarker")]impl FadeMarker{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FadeMarker), ::core::stringify!(new),));
+ <Self as IFadeMarkerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fademarker")]

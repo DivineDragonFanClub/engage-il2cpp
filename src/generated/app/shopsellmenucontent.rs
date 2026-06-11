@@ -4,66 +4,120 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenucontent/ShopSellMenuContent_KindIcon.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopSellMenuContent.KindIcon")] # [parent (crate :: system :: object :: Object)] pub struct ShopSellMenuContent_KindIcon {
-# [offset (16)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (24)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: itemdata :: ItemData_Kinds ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellmenucontent/ShopSellMenuContent_KindIcon.md"))]#[::unity2::class(namespace="App",name="ShopSellMenuContent.KindIcon")]#[parent(crate::system::object::Object)]pub struct ShopSellMenuContent_KindIcon{#[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellmenucontent/ShopSellMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopSellMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct ShopSellMenuContent {
-# [offset (232)] # [rename (name = "m_KindIcon")] pub m_kind_icon : :: unity2 :: Array < crate :: app :: shopsellmenucontent :: ShopSellMenuContent_KindIcon > ,
-# [offset (240)] # [rename (name = "m_ColumnTitleItemText")] pub m_column_title_item_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_ColumnTitleUsableCountText")] pub m_column_title_usable_count_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (256)] # [rename (name = "m_ColumnTitlePriceText")] pub m_column_title_price_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (264)] # [rename (name = "m_ContentObject")] pub m_content_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellmenucontent/ShopSellMenuContent.md"))]#[::unity2::class(namespace="App",name="ShopSellMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct ShopSellMenuContent{#[offset(232)]#[rename(name="m_KindIcon")]pub m_kind_icon: ::unity2::Array<crate::app::shopsellmenucontent::ShopSellMenuContent_KindIcon> , #[offset(240)]#[rename(name="m_ColumnTitleItemText")]pub m_column_title_item_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_ColumnTitleUsableCountText")]pub m_column_title_usable_count_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_ColumnTitlePriceText")]pub m_column_title_price_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_ContentObject")]pub m_content_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-shopsellmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-shopsellmenucontent")]
-pub trait IShopSellMenuContent_KindIconMethods : IShopSellMenuContent_KindIcon { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShopSellMenuContent_KindIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent_KindIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d6bec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-shopsellmenucontent")]
-impl < __T : IShopSellMenuContent_KindIcon > IShopSellMenuContent_KindIconMethods for __T { }
-
-#[cfg(feature = "app-shopsellmenucontent")]
-impl ShopSellMenuContent_KindIcon { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent_KindIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-shopsellmenucontent")]
-impl ShopSellMenuContent_KindIcon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopSellMenuContent_KindIcon) , :: core :: stringify ! (new) ,)) ; < Self as IShopSellMenuContent_KindIconMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-shopsellmenucontent")]pub trait IShopSellMenuContent_KindIconMethods:IShopSellMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSellMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6bec0usize)as*mut u8,();
+(ShopSellMenuContent_KindIcon)__receiver)}
+}
 }
 
-#[cfg(feature = "app-shopsellmenucontent")]
-pub trait IShopSellMenuContentMethods : IShopSellMenuContent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b51f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b5410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b54b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`SetKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn set_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> () { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b38b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`SetToPrevKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn set_to_prev_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b4510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`SetToNextKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn set_to_next_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b48d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetFirstKind()` overload"] fn get_first_kind (self ,) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b3eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLastKind()` overload"] fn get_last_kind (self ,) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b3ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsFirstKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn is_first_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> bool { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b44d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`IsLastKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn is_last_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> bool { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b4880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetKindCount()` overload"] fn get_kind_count (self ,) -> i32 { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b3a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShopSellMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b55a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopsellmenucontent")]impl<__T:IShopSellMenuContent_KindIcon>IShopSellMenuContent_KindIconMethods for __T{}
 
-#[cfg(feature = "app-shopsellmenucontent")]
-impl < __T : IShopSellMenuContent > IShopSellMenuContentMethods for __T { }
+#[cfg(feature="app-shopsellmenucontent")]impl ShopSellMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-shopsellmenucontent")]
-impl ShopSellMenuContent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_to_prev_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_to_next_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_first_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_last_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_first_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_last_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_kind_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-shopsellmenucontent")]impl ShopSellMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopSellMenuContent_KindIcon), ::core::stringify!(new),));
+ <Self as IShopSellMenuContent_KindIconMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-shopsellmenucontent")]
-impl ShopSellMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopSellMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IShopSellMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-shopsellmenucontent")]pub trait IShopSellMenuContentMethods:IShopSellMenuContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b51f0usize)as*mut u8,();
+(ShopSellMenuContent)__receiver)}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b5410usize)as*mut u8,i32;
+(ShopSellMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b54b0usize)as*mut u8,f32;
+(ShopSellMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`SetKind(crate::app::itemdata::ItemData_Kinds)` overload"]fn set_kind(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b38b0usize)as*mut u8,();
+(ShopSellMenuContent)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`SetToPrevKind(crate::app::itemdata::ItemData_Kinds)` overload"]fn set_to_prev_kind(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b4510usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(ShopSellMenuContent)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`SetToNextKind(crate::app::itemdata::ItemData_Kinds)` overload"]fn set_to_next_kind(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b48d0usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(ShopSellMenuContent)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`GetFirstKind()` overload"]fn get_first_kind(self,)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b3eb0usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(ShopSellMenuContent)__receiver)}
+}
+#[doc="`GetLastKind()` overload"]fn get_last_kind(self,)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b3ee0usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(ShopSellMenuContent)__receiver)}
+}
+#[doc="`IsFirstKind(crate::app::itemdata::ItemData_Kinds)` overload"]fn is_first_kind(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->bool{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b44d0usize)as*mut u8,bool;
+(ShopSellMenuContent)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`IsLastKind(crate::app::itemdata::ItemData_Kinds)` overload"]fn is_last_kind(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->bool{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b4880usize)as*mut u8,bool;
+(ShopSellMenuContent)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`GetKindCount()` overload"]fn get_kind_count(self,)->i32{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b3a30usize)as*mut u8,i32;
+(ShopSellMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b55a0usize)as*mut u8,();
+(ShopSellMenuContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-shopsellmenucontent")]impl<__T:IShopSellMenuContent>IShopSellMenuContentMethods for __T{}
+
+#[cfg(feature="app-shopsellmenucontent")]impl ShopSellMenuContent{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_to_prev_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_to_next_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_first_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_last_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_first_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_last_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_kind_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-shopsellmenucontent")]impl ShopSellMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopSellMenuContent), ::core::stringify!(new),));
+ <Self as IShopSellMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-shopsellmenucontent")]

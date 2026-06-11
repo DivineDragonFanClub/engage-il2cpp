@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/enumflagsattribute/EnumFlagsAttribute.md"))] # [:: unity2 :: class (namespace = "" , name = "EnumFlagsAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct EnumFlagsAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/enumflagsattribute/EnumFlagsAttribute.md"))]#[::unity2::class(namespace="",name="EnumFlagsAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct EnumFlagsAttribute{}
 
 }
 
 #[cfg(feature = "root-enumflagsattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-enumflagsattribute")]
-pub trait IEnumFlagsAttributeMethods : IEnumFlagsAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EnumFlagsAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EnumFlagsAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eaee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-enumflagsattribute")]pub trait IEnumFlagsAttributeMethods:IEnumFlagsAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EnumFlagsAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eaee0usize)as*mut u8,();
+(EnumFlagsAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "root-enumflagsattribute")]
-impl < __T : IEnumFlagsAttribute > IEnumFlagsAttributeMethods for __T { }
+#[cfg(feature="root-enumflagsattribute")]impl<__T:IEnumFlagsAttribute>IEnumFlagsAttributeMethods for __T{}
 
-#[cfg(feature = "root-enumflagsattribute")]
-impl EnumFlagsAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EnumFlagsAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-enumflagsattribute")]impl EnumFlagsAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-enumflagsattribute")]
-impl EnumFlagsAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EnumFlagsAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IEnumFlagsAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-enumflagsattribute")]impl EnumFlagsAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EnumFlagsAttribute), ::core::stringify!(new),));
+ <Self as IEnumFlagsAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-enumflagsattribute")]

@@ -4,23 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/screen/Screen.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Screen")] # [parent (crate :: system :: object :: Object)] pub struct Screen {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/screen/Screen.md"))]#[::unity2::class(namespace="UnityEngine",name="Screen")]#[parent(crate::system::object::Object)]pub struct Screen{}
 
 }
 
 #[cfg(feature = "unity_engine-screen-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-screen")]
-impl Screen { # [doc = "`get_width()` overload"] pub fn get_width () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b920usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_height()` overload"] pub fn get_height () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b960usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_dpi()` overload"] pub fn get_dpi () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b9a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_fullScreenMode()` overload"] pub fn get_full_screen_mode () -> crate :: unity_engine :: fullscreenmode :: FullScreenMode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: fullscreenmode :: FullScreenMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8b9e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-screen")]impl Screen{#[doc="`get_width()` overload"]pub fn get_width()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b920usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_height()` overload"]pub fn get_height()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b960usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_dpi()` overload"]pub fn get_dpi()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b9a0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_fullScreenMode()` overload"]pub fn get_full_screen_mode()->crate::unity_engine::fullscreenmode::FullScreenMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8b9e0usize)as*mut u8,crate::unity_engine::fullscreenmode::FullScreenMode;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-screen")]
-impl Screen { pub fn get_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Screen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Screen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_dpi_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Screen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_full_screen_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Screen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-screen")]impl Screen{pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_dpi_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_full_screen_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-screen")]
 #[doc(hidden)]

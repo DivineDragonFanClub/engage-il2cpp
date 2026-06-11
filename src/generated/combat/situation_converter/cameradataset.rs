@@ -4,30 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/cameradataset/CameraDataSet.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "CameraDataSet")] # [parent (crate :: system :: object :: Object)] pub struct CameraDataSet {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/cameradataset/CameraDataSet.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="CameraDataSet")]#[parent(crate::system::object::Object)]pub struct CameraDataSet{}
 
 }
 
 #[cfg(feature = "combat-situation_converter-cameradataset-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-situation_converter-cameradataset")]
-pub trait ICameraDataSetMethods : ICameraDataSet { # [doc = "`get_Record()` overload"] fn get_record (self ,) -> crate :: combat :: combatrecord :: CombatRecord { unsafe { let __receiver = < CameraDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraDataSet , :: unity2 :: OptionalMethod ,) -> crate :: combat :: combatrecord :: CombatRecord = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b7020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Switch()` overload"] fn get_switch (self ,) -> crate :: combat :: cameraswitch :: CameraSwitch { unsafe { let __receiver = < CameraDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraDataSet , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraswitch :: CameraSwitch = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b7030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PosData()` overload"] fn get_pos_data (self ,) -> crate :: combat :: camerapositiondata :: CameraPositionData { unsafe { let __receiver = < CameraDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraDataSet , :: unity2 :: OptionalMethod ,) -> crate :: combat :: camerapositiondata :: CameraPositionData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b7040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::combatrecord::CombatRecord, crate::combat::cameraswitch::CameraSwitch, crate::combat::camerapositiondata::CameraPositionData)` overload"] fn ctor (self , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord > , swt : impl :: core :: convert :: Into < crate :: combat :: cameraswitch :: CameraSwitch > , pos_data : impl :: core :: convert :: Into < crate :: combat :: camerapositiondata :: CameraPositionData >) -> () { unsafe { let __receiver = < CameraDataSet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraDataSet , crate :: combat :: combatrecord :: CombatRecord , crate :: combat :: cameraswitch :: CameraSwitch , crate :: combat :: camerapositiondata :: CameraPositionData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b7050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (record) , :: core :: convert :: Into :: into (swt) , :: core :: convert :: Into :: into (pos_data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-situation_converter-cameradataset")]pub trait ICameraDataSetMethods:ICameraDataSet{#[doc="`get_Record()` overload"]fn get_record(self,)->crate::combat::combatrecord::CombatRecord{unsafe{let __receiver= <CameraDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b7020usize)as*mut u8,crate::combat::combatrecord::CombatRecord;
+(CameraDataSet)__receiver)}
+}
+#[doc="`get_Switch()` overload"]fn get_switch(self,)->crate::combat::cameraswitch::CameraSwitch{unsafe{let __receiver= <CameraDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b7030usize)as*mut u8,crate::combat::cameraswitch::CameraSwitch;
+(CameraDataSet)__receiver)}
+}
+#[doc="`get_PosData()` overload"]fn get_pos_data(self,)->crate::combat::camerapositiondata::CameraPositionData{unsafe{let __receiver= <CameraDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b7040usize)as*mut u8,crate::combat::camerapositiondata::CameraPositionData;
+(CameraDataSet)__receiver)}
+}
+#[doc="`.ctor(crate::combat::combatrecord::CombatRecord, crate::combat::cameraswitch::CameraSwitch, crate::combat::camerapositiondata::CameraPositionData)` overload"]fn ctor(self,record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord> ,swt:impl::core::convert::Into<crate::combat::cameraswitch::CameraSwitch> ,pos_data:impl::core::convert::Into<crate::combat::camerapositiondata::CameraPositionData>)->(){unsafe{let __receiver= <CameraDataSet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b7050usize)as*mut u8,();
+(CameraDataSet)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record),(crate::combat::cameraswitch::CameraSwitch)::core::convert::Into::into(swt),(crate::combat::camerapositiondata::CameraPositionData)::core::convert::Into::into(pos_data))}
+}
+}
 
-#[cfg(feature = "combat-situation_converter-cameradataset")]
-impl < __T : ICameraDataSet > ICameraDataSetMethods for __T { }
+#[cfg(feature="combat-situation_converter-cameradataset")]impl<__T:ICameraDataSet>ICameraDataSetMethods for __T{}
 
-#[cfg(feature = "combat-situation_converter-cameradataset")]
-impl CameraDataSet { pub fn get_record_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_switch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_pos_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraDataSet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-situation_converter-cameradataset")]impl CameraDataSet{pub fn get_record_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_switch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_pos_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-situation_converter-cameradataset")]
-impl CameraDataSet {
-# [doc = "`.ctor(crate::combat::combatrecord::CombatRecord, crate::combat::cameraswitch::CameraSwitch, crate::combat::camerapositiondata::CameraPositionData)` — overload selector"] pub fn new (record : crate :: combat :: combatrecord :: CombatRecord , swt : crate :: combat :: cameraswitch :: CameraSwitch , pos_data : crate :: combat :: camerapositiondata :: CameraPositionData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraDataSet) , :: core :: stringify ! (new) ,)) ; < Self as ICameraDataSetMethods > :: ctor (this , record , swt , pos_data) ; this }
+#[cfg(feature="combat-situation_converter-cameradataset")]impl CameraDataSet{#[doc="`.ctor(crate::combat::combatrecord::CombatRecord, crate::combat::cameraswitch::CameraSwitch, crate::combat::camerapositiondata::CameraPositionData)` — overload selector"]pub fn new(record:crate::combat::combatrecord::CombatRecord,swt:crate::combat::cameraswitch::CameraSwitch,pos_data:crate::combat::camerapositiondata::CameraPositionData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraDataSet), ::core::stringify!(new),));
+ <Self as ICameraDataSetMethods> ::ctor(this,record,swt,pos_data);
+this}
 }
 
 #[cfg(feature = "combat-situation_converter-cameradataset")]

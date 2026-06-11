@@ -4,12 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/idictionarydebugview_2/IDictionaryDebugView_2.md"))] # [:: unity2 :: class (namespace = "System.Collections.Concurrent" , name = "IDictionaryDebugView`2")] # [parent (crate :: system :: object :: Object)] pub struct IDictionaryDebugView_2 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/concurrent/idictionarydebugview_2/IDictionaryDebugView_2.md"))]#[::unity2::class(namespace="System.Collections.Concurrent",name="IDictionaryDebugView`2")]#[parent(crate::system::object::Object)]pub struct IDictionaryDebugView_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
 
 }
 

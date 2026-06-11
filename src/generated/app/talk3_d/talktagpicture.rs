@@ -4,37 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: talk3_d :: talktag :: { ITalkTag , TalkTag }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::talk3_d::talktag::{ITalkTag,TalkTag}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagpicture/TalkTagPicture.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkTagPicture")] # [parent (crate :: app :: talk3_d :: talktag :: TalkTag)] pub struct TalkTagPicture {
-# [offset (16)] # [rename (name = "m_TagID")] pub m_tag_id : crate :: app :: mess :: Mess_TagID_Picture ,
-# [offset (20)] # [rename (name = "m_PictureIndex")] pub m_picture_index : i32 ,
-# [offset (24)] # [rename (name = "m_TextureName")] pub m_texture_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_AnimName")] pub m_anim_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagpicture/TalkTagPicture.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagPicture")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagPicture{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::mess::Mess_TagID_Picture, #[offset(20)]#[rename(name="m_PictureIndex")]pub m_picture_index:i32, #[offset(24)]#[rename(name="m_TextureName")]pub m_texture_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_AnimName")]pub m_anim_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-talk3_d-talktagpicture-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talktagpicture")]
-pub trait ITalkTagPictureMethods : ITalkTagPicture { # [doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"] fn initialize (self , talk_ptr : impl :: core :: convert :: Into < crate :: app :: talk3_d :: talkptr :: TalkPtr >) -> () { unsafe { let __receiver = < TalkTagPicture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagPicture , crate :: app :: talk3_d :: talkptr :: TalkPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21daff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (talk_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Execute()` overload"] fn execute (self ,) -> () { unsafe { let __receiver = < TalkTagPicture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagPicture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21db0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResult()` overload"] fn get_result (self ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result { unsafe { let __receiver = < TalkTagPicture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagPicture , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21db2c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkTagPicture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagPicture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21da8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talktagpicture")]pub trait ITalkTagPictureMethods:ITalkTagPicture{#[doc="`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]fn initialize(self,talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->(){unsafe{let __receiver= <TalkTagPicture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21daff0usize)as*mut u8,();
+(TalkTagPicture)__receiver,(crate::app::talk3_d::talkptr::TalkPtr)::core::convert::Into::into(talk_ptr))}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagPicture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21db0b0usize)as*mut u8,();
+(TalkTagPicture)__receiver)}
+}
+#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagPicture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21db2c0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
+(TalkTagPicture)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagPicture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21da8a0usize)as*mut u8,();
+(TalkTagPicture)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talktagpicture")]
-impl < __T : ITalkTagPicture > ITalkTagPictureMethods for __T { }
+#[cfg(feature="app-talk3_d-talktagpicture")]impl<__T:ITalkTagPicture>ITalkTagPictureMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talktagpicture")]
-impl TalkTagPicture { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagPicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagPicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagPicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagPicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-talk3_d-talktagpicture")]impl TalkTagPicture{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-talk3_d-talktagpicture")]
-impl TalkTagPicture {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkTagPicture) , :: core :: stringify ! (new) ,)) ; < Self as ITalkTagPictureMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talktagpicture")]impl TalkTagPicture{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkTagPicture), ::core::stringify!(new),));
+ <Self as ITalkTagPictureMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talktagpicture")]

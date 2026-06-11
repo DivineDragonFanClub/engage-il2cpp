@@ -4,40 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_textelement_legacy/TMP_TextElement_Legacy.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_TextElement_Legacy")] # [parent (crate :: system :: object :: Object)] pub struct TMP_TextElement_Legacy {
-# [offset (16)] # [rename (name = "id")] pub id : i32 ,
-# [offset (20)] # [rename (name = "x")] pub x : f32 ,
-# [offset (24)] # [rename (name = "y")] pub y : f32 ,
-# [offset (28)] # [rename (name = "width")] pub width : f32 ,
-# [offset (32)] # [rename (name = "height")] pub height : f32 ,
-# [offset (36)] # [rename (name = "xOffset")] pub x_offset : f32 ,
-# [offset (40)] # [rename (name = "yOffset")] pub y_offset : f32 ,
-# [offset (44)] # [rename (name = "xAdvance")] pub x_advance : f32 ,
-# [offset (48)] # [rename (name = "scale")] pub scale : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_textelement_legacy/TMP_TextElement_Legacy.md"))]#[::unity2::class(namespace="TMPro",name="TMP_TextElement_Legacy")]#[parent(crate::system::object::Object)]pub struct TMP_TextElement_Legacy{#[offset(16)]#[rename(name="id")]pub id:i32, #[offset(20)]#[rename(name="x")]pub x:f32, #[offset(24)]#[rename(name="y")]pub y:f32, #[offset(28)]#[rename(name="width")]pub width:f32, #[offset(32)]#[rename(name="height")]pub height:f32, #[offset(36)]#[rename(name="xOffset")]pub x_offset:f32, #[offset(40)]#[rename(name="yOffset")]pub y_offset:f32, #[offset(44)]#[rename(name="xAdvance")]pub x_advance:f32, #[offset(48)]#[rename(name="scale")]pub scale:f32,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_textelement_legacy-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_textelement_legacy")]
-pub trait ITMP_TextElement_LegacyMethods : ITMP_TextElement_Legacy { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_TextElement_Legacy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_TextElement_Legacy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e60900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_textelement_legacy")]pub trait ITMP_TextElement_LegacyMethods:ITMP_TextElement_Legacy{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_TextElement_Legacy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e60900usize)as*mut u8,();
+(TMP_TextElement_Legacy)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_textelement_legacy")]
-impl < __T : ITMP_TextElement_Legacy > ITMP_TextElement_LegacyMethods for __T { }
+#[cfg(feature="tm_pro-tmp_textelement_legacy")]impl<__T:ITMP_TextElement_Legacy>ITMP_TextElement_LegacyMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_textelement_legacy")]
-impl TMP_TextElement_Legacy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextElement_Legacy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="tm_pro-tmp_textelement_legacy")]impl TMP_TextElement_Legacy{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "tm_pro-tmp_textelement_legacy")]
-impl TMP_TextElement_Legacy {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_TextElement_Legacy) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_TextElement_LegacyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_textelement_legacy")]impl TMP_TextElement_Legacy{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_TextElement_Legacy), ::core::stringify!(new),));
+ <Self as ITMP_TextElement_LegacyMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_textelement_legacy")]

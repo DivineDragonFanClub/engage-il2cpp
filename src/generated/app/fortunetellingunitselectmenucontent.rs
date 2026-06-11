@@ -4,45 +4,81 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingunitselectmenucontent/FortuneTellingUnitSelectMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "FortuneTellingUnitSelectMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct FortuneTellingUnitSelectMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingunitselectmenucontent/FortuneTellingUnitSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="FortuneTellingUnitSelectMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct FortuneTellingUnitSelectMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-fortunetellingunitselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fortunetellingunitselectmenucontent")]
-impl FortuneTellingUnitSelectMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261a170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261abc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261a820usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261a900usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)` overload"] pub fn destroy (content : impl :: core :: convert :: Into < crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261ac40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fortunetellingunitselectmenucontent")]impl FortuneTellingUnitSelectMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261a170usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261abc0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261a820usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261a900usize)as*mut u8,crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent;
+)}
+}
+#[doc="`Destroy(crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)` overload"]pub fn destroy(content:impl::core::convert::Into<crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261ac40usize)as*mut u8,();
+(crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)::core::convert::Into::into(content))}
+}
+}
 
-#[cfg(feature = "app-fortunetellingunitselectmenucontent")]
-pub trait IFortuneTellingUnitSelectMenuContentMethods : IFortuneTellingUnitSelectMenuContent { # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < FortuneTellingUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261ab00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < FortuneTellingUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261acc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < FortuneTellingUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261ad30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FortuneTellingUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261ada0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fortunetellingunitselectmenucontent")]pub trait IFortuneTellingUnitSelectMenuContentMethods:IFortuneTellingUnitSelectMenuContent{#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <FortuneTellingUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261ab00usize)as*mut u8,f32;
+(FortuneTellingUnitSelectMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <FortuneTellingUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261acc0usize)as*mut u8,f32;
+(FortuneTellingUnitSelectMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <FortuneTellingUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261ad30usize)as*mut u8,f32;
+(FortuneTellingUnitSelectMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261ada0usize)as*mut u8,();
+(FortuneTellingUnitSelectMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fortunetellingunitselectmenucontent")]
-impl < __T : IFortuneTellingUnitSelectMenuContent > IFortuneTellingUnitSelectMenuContentMethods for __T { }
+#[cfg(feature="app-fortunetellingunitselectmenucontent")]impl<__T:IFortuneTellingUnitSelectMenuContent>IFortuneTellingUnitSelectMenuContentMethods for __T{}
 
-#[cfg(feature = "app-fortunetellingunitselectmenucontent")]
-impl FortuneTellingUnitSelectMenuContent { pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-fortunetellingunitselectmenucontent")]impl FortuneTellingUnitSelectMenuContent{pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-fortunetellingunitselectmenucontent")]
-impl FortuneTellingUnitSelectMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FortuneTellingUnitSelectMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IFortuneTellingUnitSelectMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fortunetellingunitselectmenucontent")]impl FortuneTellingUnitSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FortuneTellingUnitSelectMenuContent), ::core::stringify!(new),));
+ <Self as IFortuneTellingUnitSelectMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fortunetellingunitselectmenucontent")]

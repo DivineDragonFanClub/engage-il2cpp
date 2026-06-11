@@ -4,40 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: helpitembase :: { HelpItemBase , IHelpItemBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::helpitembase::{HelpItemBase,IHelpItemBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemjob/HelpItemJob.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemJob")] # [parent (crate :: app :: helpitembase :: HelpItemBase)] pub struct HelpItemJob {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpitemjob/HelpItemJob.md"))]#[::unity2::class(namespace="App",name="HelpItemJob")]#[parent(crate::app::helpitembase::HelpItemBase)]pub struct HelpItemJob{}
 
 }
 
 #[cfg(feature = "app-helpitemjob-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpitemjob")]
-pub trait IHelpItemJobMethods : IHelpItemJob { # [doc = "`get_HelpItemType()` overload"] fn get_help_item_type (self ,) -> crate :: app :: helpmanager :: HelpManager_HelpItemType { unsafe { let __receiver = < HelpItemJob as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemJob , :: unity2 :: OptionalMethod ,) -> crate :: app :: helpmanager :: HelpManager_HelpItemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < HelpItemJob as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemJob , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"] fn set_contents (self , setter : impl :: core :: convert :: Into < crate :: app :: helpparamsetter :: HelpParamSetter >) -> () { unsafe { let __receiver = < HelpItemJob as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemJob , crate :: app :: helpparamsetter :: HelpParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemJob as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemJob , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpitemjob")]pub trait IHelpItemJobMethods:IHelpItemJob{#[doc="`get_HelpItemType()` overload"]fn get_help_item_type(self,)->crate::app::helpmanager::HelpManager_HelpItemType{unsafe{let __receiver= <HelpItemJob as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d7a0usize)as*mut u8,crate::app::helpmanager::HelpManager_HelpItemType;
+(HelpItemJob)__receiver)}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemJob as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d7b0usize)as*mut u8,bool;
+(HelpItemJob)__receiver)}
+}
+#[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemJob as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d8a0usize)as*mut u8,();
+(HelpItemJob)__receiver,(crate::app::helpparamsetter::HelpParamSetter)::core::convert::Into::into(setter))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemJob as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d940usize)as*mut u8,();
+(HelpItemJob)__receiver)}
+}
+}
 
-#[cfg(feature = "app-helpitemjob")]
-impl < __T : IHelpItemJob > IHelpItemJobMethods for __T { }
+#[cfg(feature="app-helpitemjob")]impl<__T:IHelpItemJob>IHelpItemJobMethods for __T{}
 
-#[cfg(feature = "app-helpitemjob")]
-impl HelpItemJob { pub fn get_help_item_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemJob as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemJob as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemJob as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemJob as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-helpitemjob")]impl HelpItemJob{pub fn get_help_item_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-helpitemjob")]
-impl HelpItemJob {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemJob) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemJobMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpitemjob")]impl HelpItemJob{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpItemJob), ::core::stringify!(new),));
+ <Self as IHelpItemJobMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpitemjob")]

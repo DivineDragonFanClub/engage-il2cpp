@@ -4,35 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuitem/ProfileCardAlbumListMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardAlbumListMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ProfileCardAlbumListMenuItem {
-# [offset (104)] # [rename (name = "m_Profile")] pub m_profile : crate :: app :: profilecard :: ProfileCard ,
-# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbumlistmenuitem/ProfileCardAlbumListMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumListMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardAlbumListMenuItem{#[offset(104)]#[rename(name="m_Profile")]pub m_profile:crate::app::profilecard::ProfileCard, #[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-profilecardalbumlistmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardalbumlistmenuitem")]
-pub trait IProfileCardAlbumListMenuItemMethods : IProfileCardAlbumListMenuItem { # [doc = "`.ctor(crate::app::profilecard::ProfileCard, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)` overload"] fn ctor (self , profile : impl :: core :: convert :: Into < crate :: app :: profilecard :: ProfileCard > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < ProfileCardAlbumListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItem , crate :: app :: profilecard :: ProfileCard , crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (profile) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < ProfileCardAlbumListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ProfileCardAlbumListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardAlbumListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlusCall()` overload"] fn plus_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardAlbumListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23087a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardalbumlistmenuitem")]pub trait IProfileCardAlbumListMenuItemMethods:IProfileCardAlbumListMenuItem{#[doc="`.ctor(crate::app::profilecard::ProfileCard, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)` overload"]fn ctor(self,profile:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308620usize)as*mut u8,();
+(ProfileCardAlbumListMenuItem)__receiver,(crate::app::profilecard::ProfileCard)::core::convert::Into::into(profile),(crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308690usize)as*mut u8,();
+(ProfileCardAlbumListMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308730usize)as*mut u8,();
+(ProfileCardAlbumListMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308740usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardAlbumListMenuItem)__receiver)}
+}
+#[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23087a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardAlbumListMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardalbumlistmenuitem")]
-impl < __T : IProfileCardAlbumListMenuItem > IProfileCardAlbumListMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardalbumlistmenuitem")]impl<__T:IProfileCardAlbumListMenuItem>IProfileCardAlbumListMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardalbumlistmenuitem")]
-impl ProfileCardAlbumListMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn plus_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-profilecardalbumlistmenuitem")]impl ProfileCardAlbumListMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn plus_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-profilecardalbumlistmenuitem")]
-impl ProfileCardAlbumListMenuItem {
-# [doc = "`.ctor(crate::app::profilecard::ProfileCard, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)` — overload selector"] pub fn new (profile : crate :: app :: profilecard :: ProfileCard , decide_event_handler : crate :: app :: profilecardalbumlistmenu :: ProfileCardAlbumListMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardAlbumListMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardAlbumListMenuItemMethods > :: ctor (this , profile , decide_event_handler) ; this }
+#[cfg(feature="app-profilecardalbumlistmenuitem")]impl ProfileCardAlbumListMenuItem{#[doc="`.ctor(crate::app::profilecard::ProfileCard, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)` — overload selector"]pub fn new(profile:crate::app::profilecard::ProfileCard,decide_event_handler:crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardAlbumListMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardAlbumListMenuItemMethods> ::ctor(this,profile,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-profilecardalbumlistmenuitem")]

@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/vibrationdeviceinfo/VibrationDeviceInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VibrationDeviceInfo {
-    pub device_type: crate :: nn :: hid :: vibrationdevicetype :: VibrationDeviceType,
-    pub position: crate :: nn :: hid :: vibrationdeviceposition :: VibrationDevicePosition,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibrationdeviceinfo/VibrationDeviceInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VibrationDeviceInfo{pub device_type:crate::nn::hid::vibrationdevicetype::VibrationDeviceType,pub position:crate::nn::hid::vibrationdeviceposition::VibrationDevicePosition,}
+impl::unity2::ClassIdentity for VibrationDeviceInfo{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="VibrationDeviceInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for VibrationDeviceInfo {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "VibrationDeviceInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for VibrationDeviceInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for VibrationDeviceInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,13 @@ impl ::unity2::IlType for VibrationDeviceInfo {
 #[cfg(feature = "nn-hid-vibrationdeviceinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-vibrationdeviceinfo")]
-impl VibrationDeviceInfo { # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut VibrationDeviceInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf7b0usize) as * mut u8) ; __inner (self as * mut VibrationDeviceInfo , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-vibrationdeviceinfo")]impl VibrationDeviceInfo{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bf7b0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut VibrationDeviceInfo)self as*mut VibrationDeviceInfo)}
+}
+}
 
-#[cfg(feature = "nn-hid-vibrationdeviceinfo")]
-impl VibrationDeviceInfo { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationDeviceInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="nn-hid-vibrationdeviceinfo")]impl VibrationDeviceInfo{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "nn-hid-vibrationdeviceinfo")]
 #[doc(hidden)]

@@ -4,218 +4,330 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSaveDataUtil")] # [parent (crate :: system :: object :: Object)] pub struct GameSaveDataUtil {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResultWithHeader.md"))]#[::unity2::class(namespace="App",name="GameSaveDataUtil.ProcessResultWithHeader")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GameSaveDataUtil_ProcessResultWithHeader{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll_Data.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSaveDataUtil.ProcDeleteAll.Data")] # [parent (crate :: system :: object :: Object)] pub struct GameSaveDataUtil_ProcDeleteAll_Data {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResult.md"))]#[::unity2::class(namespace="App",name="GameSaveDataUtil.ProcessResult")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GameSaveDataUtil_ProcessResult{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcProcess.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSaveDataUtil.ProcProcess")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GameSaveDataUtil_ProcProcess {
-# [offset (112)] # [rename (name = "m_SaveData")] pub m_save_data : crate :: app :: gamesavedata :: GameSaveData ,
-# [offset (120)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes ,
-# [offset (128)] # [rename (name = "m_ResultCallback")] pub m_result_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult ,
-# [offset (136)] # [rename (name = "m_ResultHeaderCallback")] pub m_result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedatautil/GameSaveDataUtil_ProcProcess.md"))]#[::unity2::class(namespace="App",name="GameSaveDataUtil.ProcProcess")]#[parent(crate::app::procinst::ProcInst)]pub struct GameSaveDataUtil_ProcProcess{#[offset(112)]#[rename(name="m_SaveData")]pub m_save_data:crate::app::gamesavedata::GameSaveData, #[offset(120)]#[rename(name="m_Mode")]pub m_mode:crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, #[offset(128)]#[rename(name="m_ResultCallback")]pub m_result_callback:crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult, #[offset(136)]#[rename(name="m_ResultHeaderCallback")]pub m_result_header_callback:crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedatautil/GameSaveDataUtil_ProcProcess_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSaveDataUtil_ProcProcess_Modes{pub value:i32,}
+impl::unity2::ClassIdentity for GameSaveDataUtil_ProcProcess_Modes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSaveDataUtil.ProcProcess.Modes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSaveDataUtil_ProcProcess_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSaveDataUtil_ProcProcess_Modes{pub fn read()->Self{Self{value:0}
+}
+pub fn write()->Self{Self{value:1}
+}
+pub fn delete()->Self{Self{value:2}
+}
+pub fn copy()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedatautil/GameSaveDataUtil_ProcProcess_Modes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameSaveDataUtil_ProcProcess_Modes  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll.md"))]#[::unity2::class(namespace="App",name="GameSaveDataUtil.ProcDeleteAll")]#[parent(crate::app::procinst::ProcInst)]pub struct GameSaveDataUtil_ProcDeleteAll{#[offset(112)]#[rename(name="m_Data")]pub m_data:crate::system::collections::generic::list_1::List_1<crate::app::gamesavedatautil::GameSaveDataUtil_ProcDeleteAll_Data> ,}
 
 
-impl  ::unity2::ClassIdentity for GameSaveDataUtil_ProcProcess_Modes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameSaveDataUtil.ProcProcess.Modes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedatautil/GameSaveDataUtil.md"))]#[::unity2::class(namespace="App",name="GameSaveDataUtil")]#[parent(crate::system::object::Object)]pub struct GameSaveDataUtil{}
 
 
-impl  ::unity2::IlType for GameSaveDataUtil_ProcProcess_Modes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GameSaveDataUtil_ProcProcess_Modes  {
-    pub fn read() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn write() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn delete() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn copy() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResult.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSaveDataUtil.ProcessResult")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct GameSaveDataUtil_ProcessResult {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSaveDataUtil.ProcDeleteAll")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct GameSaveDataUtil_ProcDeleteAll {
-# [offset (112)] # [rename (name = "m_Data")] pub m_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcDeleteAll_Data > ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedatautil/GameSaveDataUtil_ProcessResultWithHeader.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSaveDataUtil.ProcessResultWithHeader")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct GameSaveDataUtil_ProcessResultWithHeader {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesavedatautil/GameSaveDataUtil_ProcDeleteAll_Data.md"))]#[::unity2::class(namespace="App",name="GameSaveDataUtil.ProcDeleteAll.Data")]#[parent(crate::system::object::Object)]pub struct GameSaveDataUtil_ProcDeleteAll_Data{}
 
 }
 
 #[cfg(feature = "app-gamesavedatautil-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil { # [doc = "`IsExist(crate::app::gamesavedata::GameSaveData_Types)` overload"] pub fn is_exist (r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: gamesavedata :: GameSaveData_Types , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22852f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`IsExist(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"] pub fn is_exist_2 (r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: gamesavedata :: GameSaveData_Types , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsExist(::unity2::Il2CppString)` overload"] pub fn is_exist_3 (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285520usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`ReadHeader(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"] pub fn read_header (r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , header : impl :: core :: convert :: Into < crate :: app :: gamesavedataheader :: GameSaveDataHeader >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedataheader :: GameSaveDataHeader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (header) , :: core :: option :: Option :: None) } } } # [doc = "`Read(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"] pub fn read (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , result_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285730usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (result_callback) , :: core :: option :: Option :: None) } } } # [doc = "`ReadGlobal(crate::app::procinst::ProcInst)` overload"] pub fn read_global (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Write(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"] pub fn write (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , result_header_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285890usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (result_header_callback) , :: core :: option :: Option :: None) } } } # [doc = "`Delete(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"] pub fn delete (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , result_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22858a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (result_callback) , :: core :: option :: Option :: None) } } } # [doc = "`CommitTemporary(crate::app::procinst::ProcInst)` overload"] pub fn commit_temporary (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22859f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteAll(crate::app::procinst::ProcInst)` overload"] pub fn delete_all (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Copy(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"] pub fn copy (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , from_type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , from_index : impl :: core :: convert :: Into < i32 > , result_header_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285c60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (from_type) , :: core :: convert :: Into :: into (from_index) , :: core :: convert :: Into :: into (result_header_callback) , :: core :: option :: Option :: None) } } } # [doc = "`TryNotifyNormalizeContentsOccurred(crate::app::procinst::ProcInst)` overload"] pub fn try_notify_normalize_contents_occurred (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2285dd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil { pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_exist_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_exist_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn read_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn read_global_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn commit_temporary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn delete_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn copy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn try_notify_normalize_contents_occurred_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-pub trait IGameSaveDataUtil_ProcDeleteAll_DataMethods : IGameSaveDataUtil_ProcDeleteAll_Data { # [doc = "`get_Handle()` overload"] fn get_handle (self ,) -> crate :: app :: savedatahandle :: SaveDataHandle { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll_Data , :: unity2 :: OptionalMethod ,) -> crate :: app :: savedatahandle :: SaveDataHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3a920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Handle(crate::app::savedatahandle::SaveDataHandle)` overload"] fn set_handle (self , value : impl :: core :: convert :: Into < crate :: app :: savedatahandle :: SaveDataHandle >) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll_Data , crate :: app :: savedatahandle :: SaveDataHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3a930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll_Data , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3a940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl < __T : IGameSaveDataUtil_ProcDeleteAll_Data > IGameSaveDataUtil_ProcDeleteAll_DataMethods for __T { }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcDeleteAll_Data { pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcDeleteAll_Data {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSaveDataUtil_ProcDeleteAll_Data) , :: core :: stringify ! (new) ,)) ; < Self as IGameSaveDataUtil_ProcDeleteAll_DataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gamesavedatautil")]pub trait IGameSaveDataUtil_ProcessResultWithHeaderMethods:IGameSaveDataUtil_ProcessResultWithHeader{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcessResultWithHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d870usize)as*mut u8,();
+(GameSaveDataUtil_ProcessResultWithHeader)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]fn invoke(self,is_success:impl::core::convert::Into<bool> ,header:impl::core::convert::Into<crate::app::gamesavedataheader::GameSaveDataHeader>)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcessResultWithHeader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d560usize)as*mut u8,();
+(GameSaveDataUtil_ProcessResultWithHeader)__receiver,(bool)::core::convert::Into::into(is_success),(crate::app::gamesavedataheader::GameSaveDataHeader)::core::convert::Into::into(header))}
+}
 }
 
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcProcess { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , mode : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes > , result_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6cc20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (result_callback) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindWrite(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"] pub fn create_bind_write (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , result_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6cf90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (result_callback) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCopy(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"] pub fn create_bind_copy (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , from_type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , from_index : impl :: core :: convert :: Into < i32 > , result_header_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d0f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (from_type) , :: core :: convert :: Into :: into (from_index) , :: core :: convert :: Into :: into (result_header_callback) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindCommon(crate::app::procinst::ProcInst, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess)` overload"] pub fn create_bind_common (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , p : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6cd90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gamesavedatautil")]impl<__T:IGameSaveDataUtil_ProcessResultWithHeader>IGameSaveDataUtil_ProcessResultWithHeaderMethods for __T{}
 
-#[cfg(feature = "app-gamesavedatautil")]
-pub trait IGameSaveDataUtil_ProcProcessMethods : IGameSaveDataUtil_ProcProcess { # [doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , mode : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes > , result_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult >) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcProcess as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcProcess , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6ccc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (result_callback) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"] fn ctor_2 (self , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , result_header_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader >) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcProcess as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcProcess , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (result_header_callback) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"] fn ctor_3 (self , r#type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , index : impl :: core :: convert :: Into < i32 > , from_type : impl :: core :: convert :: Into < crate :: app :: gamesavedata :: GameSaveData_Types > , from_index : impl :: core :: convert :: Into < i32 > , result_header_callback : impl :: core :: convert :: Into < crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader >) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcProcess as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcProcess , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedata :: GameSaveData_Types , i32 , crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (from_type) , :: core :: convert :: Into :: into (from_index) , :: core :: convert :: Into :: into (result_header_callback) , :: core :: option :: Option :: None) } } } # [doc = "`Exec()` overload"] fn exec (self ,) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcProcess as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcProcess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Result()` overload"] fn result (self ,) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcProcess as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcProcess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl < __T : IGameSaveDataUtil_ProcProcess > IGameSaveDataUtil_ProcProcessMethods for __T { }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcProcess { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcProcess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcProcess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_copy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcProcess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_common_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcProcess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcProcess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcProcess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcProcess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn exec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcProcess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcProcess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcProcess {
-# [doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` — overload selector"] pub fn new (r#type : crate :: app :: gamesavedata :: GameSaveData_Types , index : i32 , mode : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcProcess_Modes , result_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResult) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSaveDataUtil_ProcProcess) , :: core :: stringify ! (new) ,)) ; < Self as IGameSaveDataUtil_ProcProcessMethods > :: ctor (this , r#type , index , mode , result_callback) ; this }
-
-# [doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` — overload selector"] pub fn new_2 (r#type : crate :: app :: gamesavedata :: GameSaveData_Types , index : i32 , result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSaveDataUtil_ProcProcess) , :: core :: stringify ! (new_2) ,)) ; < Self as IGameSaveDataUtil_ProcProcessMethods > :: ctor_2 (this , r#type , index , result_header_callback) ; this }
-
-# [doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` — overload selector"] pub fn new_3 (r#type : crate :: app :: gamesavedata :: GameSaveData_Types , index : i32 , from_type : crate :: app :: gamesavedata :: GameSaveData_Types , from_index : i32 , result_header_callback : crate :: app :: gamesavedatautil :: GameSaveDataUtil_ProcessResultWithHeader) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSaveDataUtil_ProcProcess) , :: core :: stringify ! (new_3) ,)) ; < Self as IGameSaveDataUtil_ProcProcessMethods > :: ctor_3 (this , r#type , index , from_type , from_index , result_header_callback) ; this }
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcessResultWithHeader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-gamesavedatautil")]
-pub trait IGameSaveDataUtil_ProcessResultMethods : IGameSaveDataUtil_ProcessResult { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcessResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcessResult , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d7a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(bool)` overload"] fn invoke (self , is_success : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcessResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcessResult , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_success) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl < __T : IGameSaveDataUtil_ProcessResult > IGameSaveDataUtil_ProcessResultMethods for __T { }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcessResult { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcessResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcessResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcessResult {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSaveDataUtil_ProcessResult) , :: core :: stringify ! (new) ,)) ; < Self as IGameSaveDataUtil_ProcessResultMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcessResultWithHeader{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveDataUtil_ProcessResultWithHeader), ::core::stringify!(new),));
+ <Self as IGameSaveDataUtil_ProcessResultWithHeaderMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcDeleteAll { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6c2f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-pub trait IGameSaveDataUtil_ProcDeleteAllMethods : IGameSaveDataUtil_ProcDeleteAll { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6c770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PauseExitApp()` overload"] fn pause_exit_app (self ,) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6c800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResumeExitApp()` overload"] fn resume_exit_app (self ,) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6c870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteAll()` overload"] fn delete_all (self ,) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6c8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRunning()` overload"] fn is_running (self ,) -> bool { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6cab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteGlobal()` overload"] fn write_global (self ,) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6cb70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Result()` overload"] fn result (self ,) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcDeleteAll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6cc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl < __T : IGameSaveDataUtil_ProcDeleteAll > IGameSaveDataUtil_ProcDeleteAllMethods for __T { }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcDeleteAll { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn pause_exit_app_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn resume_exit_app_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn delete_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_running_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn write_global_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcDeleteAll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcDeleteAll {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSaveDataUtil_ProcDeleteAll) , :: core :: stringify ! (new) ,)) ; < Self as IGameSaveDataUtil_ProcDeleteAllMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gamesavedatautil")]pub trait IGameSaveDataUtil_ProcessResultMethods:IGameSaveDataUtil_ProcessResult{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcessResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d7a0usize)as*mut u8,();
+(GameSaveDataUtil_ProcessResult)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool)` overload"]fn invoke(self,is_success:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcessResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d330usize)as*mut u8,();
+(GameSaveDataUtil_ProcessResult)__receiver,(bool)::core::convert::Into::into(is_success))}
+}
 }
 
-#[cfg(feature = "app-gamesavedatautil")]
-pub trait IGameSaveDataUtil_ProcessResultWithHeaderMethods : IGameSaveDataUtil_ProcessResultWithHeader { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcessResultWithHeader , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(bool, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"] fn invoke (self , is_success : impl :: core :: convert :: Into < bool > , header : impl :: core :: convert :: Into < crate :: app :: gamesavedataheader :: GameSaveDataHeader >) -> () { unsafe { let __receiver = < GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSaveDataUtil_ProcessResultWithHeader , bool , crate :: app :: gamesavedataheader :: GameSaveDataHeader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e6d560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_success) , :: core :: convert :: Into :: into (header) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gamesavedatautil")]impl<__T:IGameSaveDataUtil_ProcessResult>IGameSaveDataUtil_ProcessResultMethods for __T{}
 
-#[cfg(feature = "app-gamesavedatautil")]
-impl < __T : IGameSaveDataUtil_ProcessResultWithHeader > IGameSaveDataUtil_ProcessResultWithHeaderMethods for __T { }
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcessResult{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcessResultWithHeader { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSaveDataUtil_ProcessResultWithHeader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcessResult{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveDataUtil_ProcessResult), ::core::stringify!(new),));
+ <Self as IGameSaveDataUtil_ProcessResultMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-gamesavedatautil")]
-impl GameSaveDataUtil_ProcessResultWithHeader {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSaveDataUtil_ProcessResultWithHeader) , :: core :: stringify ! (new) ,)) ; < Self as IGameSaveDataUtil_ProcessResultWithHeaderMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcProcess{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,mode:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes> ,result_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e6cc20usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes)::core::convert::Into::into(mode),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)::core::convert::Into::into(result_callback))}
+}
+#[doc="`CreateBindWrite(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]pub fn create_bind_write(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,result_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e6cf90usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)::core::convert::Into::into(result_callback))}
+}
+#[doc="`CreateBindCopy(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]pub fn create_bind_copy(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,from_type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,from_index:impl::core::convert::Into<i32> ,result_header_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d0f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(from_type),(i32)::core::convert::Into::into(from_index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)::core::convert::Into::into(result_header_callback))}
+}
+#[doc="`CreateBindCommon(crate::app::procinst::ProcInst, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess)` overload"]pub fn create_bind_common(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,p:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e6cd90usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess)::core::convert::Into::into(p))}
+}
+}
+
+#[cfg(feature="app-gamesavedatautil")]pub trait IGameSaveDataUtil_ProcProcessMethods:IGameSaveDataUtil_ProcProcess{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,mode:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes> ,result_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult>)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcProcess as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ccc0usize)as*mut u8,();
+(GameSaveDataUtil_ProcProcess)__receiver,(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes)::core::convert::Into::into(mode),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)::core::convert::Into::into(result_callback))}
+}
+#[doc="`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]fn ctor_2(self,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,result_header_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader>)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcProcess as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d020usize)as*mut u8,();
+(GameSaveDataUtil_ProcProcess)__receiver,(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)::core::convert::Into::into(result_header_callback))}
+}
+#[doc="`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]fn ctor_3(self,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,from_type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,from_index:impl::core::convert::Into<i32> ,result_header_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader>)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcProcess as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d190usize)as*mut u8,();
+(GameSaveDataUtil_ProcProcess)__receiver,(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(from_type),(i32)::core::convert::Into::into(from_index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)::core::convert::Into::into(result_header_callback))}
+}
+#[doc="`Exec()` overload"]fn exec(self,)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcProcess as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d280usize)as*mut u8,();
+(GameSaveDataUtil_ProcProcess)__receiver)}
+}
+#[doc="`Result()` overload"]fn result(self,)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcProcess as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d2e0usize)as*mut u8,();
+(GameSaveDataUtil_ProcProcess)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamesavedatautil")]impl<__T:IGameSaveDataUtil_ProcProcess>IGameSaveDataUtil_ProcProcessMethods for __T{}
+
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcProcess{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_copy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn exec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcProcess{#[doc="`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` — overload selector"]pub fn new(r#type:crate::app::gamesavedata::GameSaveData_Types,index:i32,mode:crate::app::gamesavedatautil::GameSaveDataUtil_ProcProcess_Modes,result_callback:crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveDataUtil_ProcProcess), ::core::stringify!(new),));
+ <Self as IGameSaveDataUtil_ProcProcessMethods> ::ctor(this,r#type,index,mode,result_callback);
+this}
+#[doc="`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` — overload selector"]pub fn new_2(r#type:crate::app::gamesavedata::GameSaveData_Types,index:i32,result_header_callback:crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveDataUtil_ProcProcess), ::core::stringify!(new_2),));
+ <Self as IGameSaveDataUtil_ProcProcessMethods> ::ctor_2(this,r#type,index,result_header_callback);
+this}
+#[doc="`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` — overload selector"]pub fn new_3(r#type:crate::app::gamesavedata::GameSaveData_Types,index:i32,from_type:crate::app::gamesavedata::GameSaveData_Types,from_index:i32,result_header_callback:crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveDataUtil_ProcProcess), ::core::stringify!(new_3),));
+ <Self as IGameSaveDataUtil_ProcProcessMethods> ::ctor_3(this,r#type,index,from_type,from_index,result_header_callback);
+this}
+}
+
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcDeleteAll{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e6c2f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-gamesavedatautil")]pub trait IGameSaveDataUtil_ProcDeleteAllMethods:IGameSaveDataUtil_ProcDeleteAll{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6c770usize)as*mut u8,();
+(GameSaveDataUtil_ProcDeleteAll)__receiver)}
+}
+#[doc="`PauseExitApp()` overload"]fn pause_exit_app(self,)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6c800usize)as*mut u8,();
+(GameSaveDataUtil_ProcDeleteAll)__receiver)}
+}
+#[doc="`ResumeExitApp()` overload"]fn resume_exit_app(self,)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6c870usize)as*mut u8,();
+(GameSaveDataUtil_ProcDeleteAll)__receiver)}
+}
+#[doc="`DeleteAll()` overload"]fn delete_all(self,)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6c8e0usize)as*mut u8,();
+(GameSaveDataUtil_ProcDeleteAll)__receiver)}
+}
+#[doc="`IsRunning()` overload"]fn is_running(self,)->bool{unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6cab0usize)as*mut u8,bool;
+(GameSaveDataUtil_ProcDeleteAll)__receiver)}
+}
+#[doc="`WriteGlobal()` overload"]fn write_global(self,)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6cb70usize)as*mut u8,();
+(GameSaveDataUtil_ProcDeleteAll)__receiver)}
+}
+#[doc="`Result()` overload"]fn result(self,)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6cc10usize)as*mut u8,();
+(GameSaveDataUtil_ProcDeleteAll)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamesavedatautil")]impl<__T:IGameSaveDataUtil_ProcDeleteAll>IGameSaveDataUtil_ProcDeleteAllMethods for __T{}
+
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcDeleteAll{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn pause_exit_app_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn resume_exit_app_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn delete_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn write_global_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcDeleteAll{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveDataUtil_ProcDeleteAll), ::core::stringify!(new),));
+ <Self as IGameSaveDataUtil_ProcDeleteAllMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil{#[doc="`IsExist(crate::app::gamesavedata::GameSaveData_Types)` overload"]pub fn is_exist(r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22852f0usize)as*mut u8,bool;
+(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type))}
+}
+#[doc="`IsExist(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]pub fn is_exist_2(r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2285460usize)as*mut u8,bool;
+(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsExist(::unity2::Il2CppString)` overload"]pub fn is_exist_3(path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2285520usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`ReadHeader(crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]pub fn read_header(r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,header:impl::core::convert::Into<crate::app::gamesavedataheader::GameSaveDataHeader>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2285590usize)as*mut u8,bool;
+(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedataheader::GameSaveDataHeader)::core::convert::Into::into(header))}
+}
+#[doc="`Read(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"]pub fn read(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,result_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2285730usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)::core::convert::Into::into(result_callback))}
+}
+#[doc="`ReadGlobal(crate::app::procinst::ProcInst)` overload"]pub fn read_global(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2285880usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Write(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]pub fn write(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,result_header_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2285890usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)::core::convert::Into::into(result_header_callback))}
+}
+#[doc="`Delete(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)` overload"]pub fn delete(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,result_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22858a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResult)::core::convert::Into::into(result_callback))}
+}
+#[doc="`CommitTemporary(crate::app::procinst::ProcInst)` overload"]pub fn commit_temporary(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22859f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`DeleteAll(crate::app::procinst::ProcInst)` overload"]pub fn delete_all(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2285c50usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Copy(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedata::GameSaveData_Types, i32, crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)` overload"]pub fn copy(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,r#type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,index:impl::core::convert::Into<i32> ,from_type:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types> ,from_index:impl::core::convert::Into<i32> ,result_header_callback:impl::core::convert::Into<crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2285c60usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index),(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(from_type),(i32)::core::convert::Into::into(from_index),(crate::app::gamesavedatautil::GameSaveDataUtil_ProcessResultWithHeader)::core::convert::Into::into(result_header_callback))}
+}
+#[doc="`TryNotifyNormalizeContentsOccurred(crate::app::procinst::ProcInst)` overload"]pub fn try_notify_normalize_contents_occurred(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2285dd0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil{pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_exist_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_exist_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn read_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_global_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn commit_temporary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn delete_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn copy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn try_notify_normalize_contents_occurred_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-gamesavedatautil")]pub trait IGameSaveDataUtil_ProcDeleteAll_DataMethods:IGameSaveDataUtil_ProcDeleteAll_Data{#[doc="`get_Handle()` overload"]fn get_handle(self,)->crate::app::savedatahandle::SaveDataHandle{unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3a920usize)as*mut u8,crate::app::savedatahandle::SaveDataHandle;
+(GameSaveDataUtil_ProcDeleteAll_Data)__receiver)}
+}
+#[doc="`set_Handle(crate::app::savedatahandle::SaveDataHandle)` overload"]fn set_handle(self,value:impl::core::convert::Into<crate::app::savedatahandle::SaveDataHandle>)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3a930usize)as*mut u8,();
+(GameSaveDataUtil_ProcDeleteAll_Data)__receiver,(crate::app::savedatahandle::SaveDataHandle)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameSaveDataUtil_ProcDeleteAll_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3a940usize)as*mut u8,();
+(GameSaveDataUtil_ProcDeleteAll_Data)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamesavedatautil")]impl<__T:IGameSaveDataUtil_ProcDeleteAll_Data>IGameSaveDataUtil_ProcDeleteAll_DataMethods for __T{}
+
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcDeleteAll_Data{pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-gamesavedatautil")]impl GameSaveDataUtil_ProcDeleteAll_Data{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSaveDataUtil_ProcDeleteAll_Data), ::core::stringify!(new),));
+ <Self as IGameSaveDataUtil_ProcDeleteAll_DataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gamesavedatautil")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GameSaveDataUtil_ProcessResultWithHeader;
+    pub use super::IGameSaveDataUtil_ProcessResultWithHeader;
+    pub use super::IGameSaveDataUtil_ProcessResultWithHeaderMethods;
+    pub use super::GameSaveDataUtil_ProcessResult;
+    pub use super::IGameSaveDataUtil_ProcessResult;
+    pub use super::IGameSaveDataUtil_ProcessResultMethods;
+    pub use super::GameSaveDataUtil_ProcProcess;
+    pub use super::IGameSaveDataUtil_ProcProcess;
+    pub use super::IGameSaveDataUtil_ProcProcessMethods;
+    pub use super::GameSaveDataUtil_ProcProcess_Modes;
+    pub use super::GameSaveDataUtil_ProcDeleteAll;
+    pub use super::IGameSaveDataUtil_ProcDeleteAll;
+    pub use super::IGameSaveDataUtil_ProcDeleteAllMethods;
     pub use super::GameSaveDataUtil;
     pub use super::IGameSaveDataUtil;
     pub use super::GameSaveDataUtil_ProcDeleteAll_Data;
     pub use super::IGameSaveDataUtil_ProcDeleteAll_Data;
     pub use super::IGameSaveDataUtil_ProcDeleteAll_DataMethods;
-    pub use super::GameSaveDataUtil_ProcProcess;
-    pub use super::IGameSaveDataUtil_ProcProcess;
-    pub use super::IGameSaveDataUtil_ProcProcessMethods;
-    pub use super::GameSaveDataUtil_ProcProcess_Modes;
-    pub use super::GameSaveDataUtil_ProcessResult;
-    pub use super::IGameSaveDataUtil_ProcessResult;
-    pub use super::IGameSaveDataUtil_ProcessResultMethods;
-    pub use super::GameSaveDataUtil_ProcDeleteAll;
-    pub use super::IGameSaveDataUtil_ProcDeleteAll;
-    pub use super::IGameSaveDataUtil_ProcDeleteAllMethods;
-    pub use super::GameSaveDataUtil_ProcessResultWithHeader;
-    pub use super::IGameSaveDataUtil_ProcessResultWithHeader;
-    pub use super::IGameSaveDataUtil_ProcessResultWithHeaderMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

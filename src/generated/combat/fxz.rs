@@ -4,68 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxz/FXZ.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FXZ {
-    pub x: f32,
-    pub z: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fxz/FXZ.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FXZ{pub x:f32,pub z:f32,}
+impl::unity2::ClassIdentity for FXZ{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="FXZ";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for FXZ {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "FXZ";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for FXZ{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for FXZ {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl FXZ{#[inline]pub fn zero()->crate::combat::fxz::FXZ{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Zero");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_zero(value:crate::combat::fxz::FXZ){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Zero");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl FXZ {
-    #[inline]
-    pub fn zero() -> crate :: combat :: fxz :: FXZ {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Zero");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_zero(value: crate :: combat :: fxz :: FXZ) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Zero");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -73,14 +34,186 @@ impl FXZ {
 #[cfg(feature = "combat-fxz-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fxz")]
-impl FXZ { # [doc = "`op_Equality(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn op_equality (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ea80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn op_inequality (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4eab0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Addition(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn op_addition (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4eb50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_UnaryNegation(crate::combat::fxz::FXZ)` overload"] pub fn op_unary_negation (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4eb60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`op_Subtraction(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn op_subtraction (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4eb70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(crate::combat::fxz::FXZ, f32)` overload"] pub fn op_multiply (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , scale : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4eb80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (scale) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(f32, crate::combat::fxz::FXZ)` overload"] pub fn op_multiply_2 (scale : impl :: core :: convert :: Into < f32 > , a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (f32 , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4eb90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scale) , :: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`op_Division(crate::combat::fxz::FXZ, f32)` overload"] pub fn op_division (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , scale : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4eba0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (scale) , :: core :: option :: Option :: None) } } } # [doc = "`op_Addition(*mutcrate::unity_engine::vector3::Vector3, crate::combat::fxz::FXZ)` overload"] pub fn op_addition_2 (xz : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ebc0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (xz) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`op_Subtraction(*mutcrate::unity_engine::vector3::Vector3, crate::combat::fxz::FXZ)` overload"] pub fn op_subtraction_2 (xz : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ebe0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (xz) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`op_Implicit(crate::combat::fxz::FXZ)` overload"] pub fn op_implicit (v : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ec00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(*mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn op_implicit_2 () -> (crate :: combat :: fxz :: FXZ , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ec20usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`op_Implicit(crate::unity_engine::vector2::Vector2)` overload"] pub fn op_implicit_3 (v : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ec30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`Distance(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn distance (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f000usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`SqrDistance(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn sqr_distance (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f0b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`AtoB(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn ato_b (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`ToRight(crate::combat::fxz::FXZ)` overload"] pub fn to_right (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f2b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`get_insideUnitCircle()` overload"] pub fn get_inside_unit_circle () -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f2c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Dot(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn dot (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Cross(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn cross (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f350usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Rotate(crate::combat::fxz::FXZ, f32)` overload"] pub fn rotate (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , rad : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f360usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (rad) , :: core :: option :: Option :: None) } } } # [doc = "`PerpendicularDot(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn perpendicular_dot (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f3c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`RadAB(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn rad_ab (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f450usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Angle360(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"] pub fn angle360 (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f690usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Slerp(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32)` overload"] pub fn slerp (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , t : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`Lerp(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32)` overload"] pub fn lerp (a : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , b : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ > , t : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , crate :: combat :: fxz :: FXZ , f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f900usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f920usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fxz")]impl FXZ{#[doc="`op_Equality(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn op_equality(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ea80usize)as*mut u8,bool;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`op_Inequality(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn op_inequality(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4eab0usize)as*mut u8,bool;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`op_Addition(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn op_addition(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4eb50usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`op_UnaryNegation(crate::combat::fxz::FXZ)` overload"]pub fn op_unary_negation(a:impl::core::convert::Into<crate::combat::fxz::FXZ>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4eb60usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a))}
+}
+#[doc="`op_Subtraction(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn op_subtraction(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4eb70usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`op_Multiply(crate::combat::fxz::FXZ, f32)` overload"]pub fn op_multiply(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,scale:impl::core::convert::Into<f32>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4eb80usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(f32)::core::convert::Into::into(scale))}
+}
+#[doc="`op_Multiply(f32, crate::combat::fxz::FXZ)` overload"]pub fn op_multiply_2(scale:impl::core::convert::Into<f32> ,a:impl::core::convert::Into<crate::combat::fxz::FXZ>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4eb90usize)as*mut u8,crate::combat::fxz::FXZ;
+(f32)::core::convert::Into::into(scale),(crate::combat::fxz::FXZ)::core::convert::Into::into(a))}
+}
+#[doc="`op_Division(crate::combat::fxz::FXZ, f32)` overload"]pub fn op_division(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,scale:impl::core::convert::Into<f32>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4eba0usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(f32)::core::convert::Into::into(scale))}
+}
+#[doc="`op_Addition(*mutcrate::unity_engine::vector3::Vector3, crate::combat::fxz::FXZ)` overload"]pub fn op_addition_2(xz:impl::core::convert::Into<crate::combat::fxz::FXZ>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ebc0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(crate::combat::fxz::FXZ)::core::convert::Into::into(xz))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`op_Subtraction(*mutcrate::unity_engine::vector3::Vector3, crate::combat::fxz::FXZ)` overload"]pub fn op_subtraction_2(xz:impl::core::convert::Into<crate::combat::fxz::FXZ>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ebe0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(crate::combat::fxz::FXZ)::core::convert::Into::into(xz))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`op_Implicit(crate::combat::fxz::FXZ)` overload"]pub fn op_implicit(v:impl::core::convert::Into<crate::combat::fxz::FXZ>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ec00usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(v))}
+}
+#[doc="`op_Implicit(*mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn op_implicit_2()->(crate::combat::fxz::FXZ,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ec20usize)as*mut u8,crate::combat::fxz::FXZ;
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`op_Implicit(crate::unity_engine::vector2::Vector2)` overload"]pub fn op_implicit_3(v:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ec30usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v))}
+}
+#[doc="`Distance(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn distance(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f000usize)as*mut u8,f32;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`SqrDistance(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn sqr_distance(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f0b0usize)as*mut u8,f32;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`AtoB(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn ato_b(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f140usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`ToRight(crate::combat::fxz::FXZ)` overload"]pub fn to_right(a:impl::core::convert::Into<crate::combat::fxz::FXZ>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f2b0usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a))}
+}
+#[doc="`get_insideUnitCircle()` overload"]pub fn get_inside_unit_circle()->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f2c0usize)as*mut u8,crate::combat::fxz::FXZ;
+)}
+}
+#[doc="`Dot(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn dot(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f340usize)as*mut u8,f32;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`Cross(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn cross(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f350usize)as*mut u8,f32;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`Rotate(crate::combat::fxz::FXZ, f32)` overload"]pub fn rotate(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,rad:impl::core::convert::Into<f32>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f360usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(f32)::core::convert::Into::into(rad))}
+}
+#[doc="`PerpendicularDot(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn perpendicular_dot(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f3c0usize)as*mut u8,f32;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`RadAB(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn rad_ab(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f450usize)as*mut u8,f32;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`Angle360(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ)` overload"]pub fn angle360(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f690usize)as*mut u8,f32;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b))}
+}
+#[doc="`Slerp(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32)` overload"]pub fn slerp(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ> ,t:impl::core::convert::Into<f32>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f780usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`Lerp(crate::combat::fxz::FXZ, crate::combat::fxz::FXZ, f32)` overload"]pub fn lerp(a:impl::core::convert::Into<crate::combat::fxz::FXZ> ,b:impl::core::convert::Into<crate::combat::fxz::FXZ> ,t:impl::core::convert::Into<f32>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f900usize)as*mut u8,crate::combat::fxz::FXZ;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(a),(crate::combat::fxz::FXZ)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f920usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-fxz")]
-impl FXZ { # [doc = "`.ctor(f32, f32)` overload"] pub fn ctor (& mut self , x : impl :: core :: convert :: Into < f32 > , z : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FXZ , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ea30usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::fxz::FXZ)` overload"] pub fn ctor_2 (& mut self , rhs : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> () { unsafe { { let __inner : extern "C" fn (* mut FXZ , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ea40usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::vector2::Vector2)` overload"] pub fn ctor_3 (& mut self , v : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FXZ , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ea50usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(*mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn ctor_4 (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (* mut FXZ , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ea60usize) as * mut u8) ; __inner (self as * mut FXZ , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut FXZ , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ec40usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut FXZ , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ed30usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut FXZ , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ed70usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: option :: Option :: None) } } } # [doc = "`get_isZero()` overload"] pub fn get_is_zero (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut FXZ , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ee20usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: option :: Option :: None) } } } # [doc = "`get_isNotZero()` overload"] pub fn get_is_not_zero (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut FXZ , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4eeb0usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: option :: Option :: None) } } } # [doc = "`get_isNaN()` overload"] pub fn get_is_na_n (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut FXZ , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4ef40usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: option :: Option :: None) } } } # [doc = "`get_magnitude()` overload"] pub fn get_magnitude (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4efb0usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: option :: Option :: None) } } } # [doc = "`get_sqrMagnitude()` overload"] pub fn get_sqr_magnitude (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4efe0usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: option :: Option :: None) } } } # [doc = "`Normalize()` overload"] pub fn normalize (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut FXZ , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f600usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: option :: Option :: None) } } } # [doc = "`get_normalized()` overload"] pub fn get_normalized (& mut self ,) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (* mut FXZ , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d4f220usize) as * mut u8) ; __inner (self as * mut FXZ , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fxz")]impl FXZ{#[doc="`.ctor(f32, f32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<f32> ,z:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ea30usize)as*mut u8,();
+(*mut FXZ)self as*mut FXZ,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(z))}
+}
+#[doc="`.ctor(crate::combat::fxz::FXZ)` overload"]pub fn ctor_2(&mut self,rhs:impl::core::convert::Into<crate::combat::fxz::FXZ>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ea40usize)as*mut u8,();
+(*mut FXZ)self as*mut FXZ,(crate::combat::fxz::FXZ)::core::convert::Into::into(rhs))}
+}
+#[doc="`.ctor(crate::unity_engine::vector2::Vector2)` overload"]pub fn ctor_3(&mut self,v:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ea50usize)as*mut u8,();
+(*mut FXZ)self as*mut FXZ,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v))}
+}
+#[doc="`.ctor(*mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn ctor_4(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ea60usize)as*mut u8,();
+(*mut FXZ)self as*mut FXZ,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ec40usize)as*mut u8,bool;
+(*mut FXZ)self as*mut FXZ,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ed30usize)as*mut u8,i32;
+(*mut FXZ)self as*mut FXZ)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ed70usize)as*mut u8, ::unity2::Il2CppString;
+(*mut FXZ)self as*mut FXZ)}
+}
+#[doc="`get_isZero()` overload"]pub fn get_is_zero(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ee20usize)as*mut u8,bool;
+(*mut FXZ)self as*mut FXZ)}
+}
+#[doc="`get_isNotZero()` overload"]pub fn get_is_not_zero(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4eeb0usize)as*mut u8,bool;
+(*mut FXZ)self as*mut FXZ)}
+}
+#[doc="`get_isNaN()` overload"]pub fn get_is_na_n(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4ef40usize)as*mut u8,bool;
+(*mut FXZ)self as*mut FXZ)}
+}
+#[doc="`get_magnitude()` overload"]pub fn get_magnitude(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4efb0usize)as*mut u8,f32;
+(*mut FXZ)self as*mut FXZ)}
+}
+#[doc="`get_sqrMagnitude()` overload"]pub fn get_sqr_magnitude(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4efe0usize)as*mut u8,f32;
+(*mut FXZ)self as*mut FXZ)}
+}
+#[doc="`Normalize()` overload"]pub fn normalize(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f600usize)as*mut u8,();
+(*mut FXZ)self as*mut FXZ)}
+}
+#[doc="`get_normalized()` overload"]pub fn get_normalized(&mut self,)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d4f220usize)as*mut u8,crate::combat::fxz::FXZ;
+(*mut FXZ)self as*mut FXZ)}
+}
+}
 
-#[cfg(feature = "combat-fxz")]
-impl FXZ { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn op_addition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn op_unary_negation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn op_subtraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn op_multiply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn op_multiply_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_division_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn op_addition_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn op_subtraction_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn op_implicit_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn op_implicit_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_is_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_is_not_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_is_na_n_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_sqr_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn sqr_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn ato_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn to_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_inside_unit_circle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn dot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn cross_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn perpendicular_dot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn rad_ab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn angle360_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn slerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn lerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn normalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_normalized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FXZ as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } }
+#[cfg(feature="combat-fxz")]impl FXZ{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn op_addition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn op_unary_negation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn op_subtraction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn op_multiply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn op_multiply_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_division_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn op_addition_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn op_subtraction_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn op_implicit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn op_implicit_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_is_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_is_not_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_is_na_n_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_sqr_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn sqr_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn ato_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn to_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_inside_unit_circle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn dot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn cross_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn rotate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn perpendicular_dot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn rad_ab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn angle360_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn slerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn lerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn normalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_normalized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+}
 
 #[cfg(feature = "combat-fxz")]
 #[doc(hidden)]

@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/inputdevice/InputDevice.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct InputDevice {
-    pub m_device_id: u64,
-    pub m_initialized: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/inputdevice/InputDevice.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct InputDevice{pub m_device_id:u64,pub m_initialized:bool,}
+impl::unity2::ClassIdentity for InputDevice{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="InputDevice";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for InputDevice {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "InputDevice";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for InputDevice {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for InputDevice{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,29 @@ impl ::unity2::IlType for InputDevice {
 #[cfg(feature = "unity_engine-xr-inputdevice-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-inputdevice")]
-impl InputDevice { # [doc = "`.ctor(u64)` overload"] pub fn ctor (& mut self , device_id : impl :: core :: convert :: Into < u64 >) -> () { unsafe { { let __inner : extern "C" fn (* mut InputDevice , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e630usize) as * mut u8) ; __inner (self as * mut InputDevice , :: core :: convert :: Into :: into (device_id) , :: core :: option :: Option :: None) } } } # [doc = "`get_deviceId()` overload"] pub fn get_device_id (& mut self ,) -> u64 { unsafe { { let __inner : extern "C" fn (* mut InputDevice , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e640usize) as * mut u8) ; __inner (self as * mut InputDevice , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut InputDevice , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e660usize) as * mut u8) ; __inner (self as * mut InputDevice , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::xr::inputdevice::InputDevice)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: inputdevice :: InputDevice >) -> bool { unsafe { { let __inner : extern "C" fn (* mut InputDevice , crate :: unity_engine :: xr :: inputdevice :: InputDevice , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e710usize) as * mut u8) ; __inner (self as * mut InputDevice , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut InputDevice , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1e740usize) as * mut u8) ; __inner (self as * mut InputDevice , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-inputdevice")]impl InputDevice{#[doc="`.ctor(u64)` overload"]pub fn ctor(&mut self,device_id:impl::core::convert::Into<u64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e630usize)as*mut u8,();
+(*mut InputDevice)self as*mut InputDevice,(u64)::core::convert::Into::into(device_id))}
+}
+#[doc="`get_deviceId()` overload"]pub fn get_device_id(&mut self,)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e640usize)as*mut u8,u64;
+(*mut InputDevice)self as*mut InputDevice)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e660usize)as*mut u8,bool;
+(*mut InputDevice)self as*mut InputDevice,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::xr::inputdevice::InputDevice)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::xr::inputdevice::InputDevice>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e710usize)as*mut u8,bool;
+(*mut InputDevice)self as*mut InputDevice,(crate::unity_engine::xr::inputdevice::InputDevice)::core::convert::Into::into(other))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1e740usize)as*mut u8,i32;
+(*mut InputDevice)self as*mut InputDevice)}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-inputdevice")]
-impl InputDevice { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputDevice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_device_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputDevice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputDevice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputDevice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InputDevice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-xr-inputdevice")]impl InputDevice{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_device_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-xr-inputdevice")]
 #[doc(hidden)]

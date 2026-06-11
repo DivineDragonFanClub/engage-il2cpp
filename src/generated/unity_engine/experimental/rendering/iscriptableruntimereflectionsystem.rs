@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/iscriptableruntimereflectionsystem/IScriptableRuntimeReflectionSystem.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering" , name = "IScriptableRuntimeReflectionSystem")] pub struct IScriptableRuntimeReflectionSystem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/iscriptableruntimereflectionsystem/IScriptableRuntimeReflectionSystem.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering",name="IScriptableRuntimeReflectionSystem")]pub struct IScriptableRuntimeReflectionSystem{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IScriptableRuntimeReflectionSystem_unity2_raw { use super :: * ; pub unsafe fn tick_realtime_probes (this : IScriptableRuntimeReflectionSystem , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("TickRealtimeProbes") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "TickRealtimeProbes" , < IScriptableRuntimeReflectionSystem as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IScriptableRuntimeReflectionSystem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IScriptableRuntimeReflectionSystem_unity2_raw{use super:: * ;
+pub unsafe fn tick_realtime_probes(this:IScriptableRuntimeReflectionSystem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("TickRealtimeProbes").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","TickRealtimeProbes", <IScriptableRuntimeReflectionSystem as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IScriptableRuntimeReflectionSystem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
-pub trait IIScriptableRuntimeReflectionSystemMethods : IIScriptableRuntimeReflectionSystem { # [doc = "`TickRealtimeProbes()` overload"] fn tick_realtime_probes (self ,) -> bool { unsafe { let __receiver = < IScriptableRuntimeReflectionSystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IScriptableRuntimeReflectionSystem_unity2_raw :: tick_realtime_probes (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]pub trait IIScriptableRuntimeReflectionSystemMethods:IIScriptableRuntimeReflectionSystem{#[doc="`TickRealtimeProbes()` overload"]fn tick_realtime_probes(self,)->bool{unsafe{let __receiver= <IScriptableRuntimeReflectionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IScriptableRuntimeReflectionSystem_unity2_raw::tick_realtime_probes(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
-impl < __T : IIScriptableRuntimeReflectionSystem > IIScriptableRuntimeReflectionSystemMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]impl<__T:IIScriptableRuntimeReflectionSystem>IIScriptableRuntimeReflectionSystemMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
-impl IScriptableRuntimeReflectionSystem { pub fn tick_realtime_probes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IScriptableRuntimeReflectionSystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]impl IScriptableRuntimeReflectionSystem{pub fn tick_realtime_probes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
 #[doc(hidden)]

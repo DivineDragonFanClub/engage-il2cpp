@@ -4,25 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/commandbufferpool/CommandBufferPool.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "CommandBufferPool")] # [parent (crate :: system :: object :: Object)] pub struct CommandBufferPool {
-# [static_field] # [rename (name = "s_BufferPool")] pub s_buffer_pool : crate :: unity_engine :: rendering :: objectpool_1_2 :: ObjectPool_1_2 < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/commandbufferpool/CommandBufferPool.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="CommandBufferPool")]#[parent(crate::system::object::Object)]pub struct CommandBufferPool{#[static_field]#[rename(name="s_BufferPool")]pub s_buffer_pool:crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-commandbufferpool-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-commandbufferpool")]
-impl CommandBufferPool { # [doc = "`Get()` overload"] pub fn get () -> crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530670usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString)` overload"] pub fn get_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530720usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Release(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"] pub fn release (buffer : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35307c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (buffer) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530850usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-commandbufferpool")]impl CommandBufferPool{#[doc="`Get()` overload"]pub fn get()->crate::unity_engine::rendering::commandbuffer::CommandBuffer{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530670usize)as*mut u8,crate::unity_engine::rendering::commandbuffer::CommandBuffer;
+)}
+}
+#[doc="`Get(::unity2::Il2CppString)` overload"]pub fn get_2(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::rendering::commandbuffer::CommandBuffer{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530720usize)as*mut u8,crate::unity_engine::rendering::commandbuffer::CommandBuffer;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Release(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]pub fn release(buffer:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35307c0usize)as*mut u8,();
+(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(buffer))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530850usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-commandbufferpool")]
-impl CommandBufferPool { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommandBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommandBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommandBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommandBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-rendering-commandbufferpool")]impl CommandBufferPool{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-rendering-commandbufferpool")]
 #[doc(hidden)]

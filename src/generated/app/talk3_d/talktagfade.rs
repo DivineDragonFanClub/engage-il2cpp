@@ -4,71 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: talk3_d :: talktag :: { ITalkTag , TalkTag }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::talk3_d::talktag::{ITalkTag,TalkTag}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagfade/TalkTagFade.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkTagFade")] # [parent (crate :: app :: talk3_d :: talktag :: TalkTag)] pub struct TalkTagFade {
-# [static_field] # [rename (name = "m_Colors")] pub m_colors : :: unity2 :: Array < crate :: unity_engine :: color :: Color > ,
-# [offset (16)] # [rename (name = "m_TagID")] pub m_tag_id : crate :: app :: talk3_d :: talktagfade :: TalkTagFade_TagID ,
-# [offset (20)] # [rename (name = "m_Sec")] pub m_sec : f32 ,
-# [offset (24)] # [rename (name = "m_ColorIndex")] pub m_color_index : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagfade/TalkTagFade.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagFade")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagFade{#[static_field]#[rename(name="m_Colors")]pub m_colors: ::unity2::Array<crate::unity_engine::color::Color> , #[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagfade::TalkTagFade_TagID, #[offset(20)]#[rename(name="m_Sec")]pub m_sec:f32, #[offset(24)]#[rename(name="m_ColorIndex")]pub m_color_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagfade/TalkTagFade_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagFade_TagID{pub value:i32,}
+impl::unity2::ClassIdentity for TalkTagFade_TagID{const NAMESPACE: &'static str="App.Talk3D";
+const NAME: &'static str="TalkTagFade.TagID";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagfade/TalkTagFade_TagID.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TalkTagFade_TagID  {
-    pub value: i32,
+impl::unity2::IlType for TalkTagFade_TagID{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for TalkTagFade_TagID  {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "TalkTagFade.TagID";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl TalkTagFade_TagID{pub fn r#in()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for TalkTagFade_TagID  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn out()->Self{Self{value:1}
 }
-
-
-impl  TalkTagFade_TagID  {
-    pub fn r#in() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn out() -> Self {
-        Self { value: 1 }
-
-    }
-
 }
 
 }
@@ -76,21 +38,43 @@ impl  TalkTagFade_TagID  {
 #[cfg(feature = "app-talk3_d-talktagfade-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talktagfade")]
-impl TalkTagFade { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d9500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talktagfade")]impl TalkTagFade{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d9500usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talktagfade")]
-pub trait ITalkTagFadeMethods : ITalkTagFade { # [doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"] fn initialize (self , talk_ptr : impl :: core :: convert :: Into < crate :: app :: talk3_d :: talkptr :: TalkPtr >) -> () { unsafe { let __receiver = < TalkTagFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagFade , crate :: app :: talk3_d :: talkptr :: TalkPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d92e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (talk_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Execute()` overload"] fn execute (self ,) -> () { unsafe { let __receiver = < TalkTagFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagFade , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d9370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResult()` overload"] fn get_result (self ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result { unsafe { let __receiver = < TalkTagFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagFade , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d94e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkTagFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagFade , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d94f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talktagfade")]pub trait ITalkTagFadeMethods:ITalkTagFade{#[doc="`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]fn initialize(self,talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->(){unsafe{let __receiver= <TalkTagFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d92e0usize)as*mut u8,();
+(TalkTagFade)__receiver,(crate::app::talk3_d::talkptr::TalkPtr)::core::convert::Into::into(talk_ptr))}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9370usize)as*mut u8,();
+(TalkTagFade)__receiver)}
+}
+#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d94e0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
+(TalkTagFade)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d94f0usize)as*mut u8,();
+(TalkTagFade)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talktagfade")]
-impl < __T : ITalkTagFade > ITalkTagFadeMethods for __T { }
+#[cfg(feature="app-talk3_d-talktagfade")]impl<__T:ITalkTagFade>ITalkTagFadeMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talktagfade")]
-impl TalkTagFade { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagFade as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagFade as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagFade as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagFade as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagFade as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-talk3_d-talktagfade")]impl TalkTagFade{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-talk3_d-talktagfade")]
-impl TalkTagFade {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkTagFade) , :: core :: stringify ! (new) ,)) ; < Self as ITalkTagFadeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talktagfade")]impl TalkTagFade{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkTagFade), ::core::stringify!(new),));
+ <Self as ITalkTagFadeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talktagfade")]

@@ -4,14 +4,14 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: module :: { IModule , Module }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::module::{IModule,Module}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/modulebuilder/ModuleBuilder.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "ModuleBuilder")] # [parent (crate :: system :: reflection :: module :: Module)] pub struct ModuleBuilder {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/emit/modulebuilder/ModuleBuilder.md"))]#[::unity2::class(namespace="System.Reflection.Emit",name="ModuleBuilder")]#[parent(crate::system::reflection::module::Module)]pub struct ModuleBuilder{}
 
 }
 

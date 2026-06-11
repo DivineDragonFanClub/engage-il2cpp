@@ -4,36 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: { AsyncOperationBase_1 , IAsyncOperationBase_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1,IAsyncOperationBase_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/updatecatalogsoperation/UpdateCatalogsOperation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets" , name = "UpdateCatalogsOperation")] # [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > >)] pub struct UpdateCatalogsOperation {
-# [offset (136)] # [rename (name = "m_Addressables")] pub m_addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl ,
-# [offset (144)] # [rename (name = "m_LocatorInfos")] pub m_locator_infos : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl_ResourceLocatorInfo > ,
-# [offset (152)] # [rename (name = "m_DepOp")] pub m_dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/updatecatalogsoperation/UpdateCatalogsOperation.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="UpdateCatalogsOperation")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> >)]pub struct UpdateCatalogsOperation{#[offset(136)]#[rename(name="m_Addressables")]pub m_addressables:crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, #[offset(144)]#[rename(name="m_LocatorInfos")]pub m_locator_infos:crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo> , #[offset(152)]#[rename(name="m_DepOp")]pub m_dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-updatecatalogsoperation-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-updatecatalogsoperation")]
-pub trait IUpdateCatalogsOperationMethods : IUpdateCatalogsOperation { # [doc = "`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"] fn ctor (self , aa : impl :: core :: convert :: Into < crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl >) -> () { unsafe { let __receiver = < UpdateCatalogsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UpdateCatalogsOperation , crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db04e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (aa) , :: core :: option :: Option :: None) } } } # [doc = "`Start(crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>)` overload"] fn start (self , catalog_ids : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > > { unsafe { let __receiver = < UpdateCatalogsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UpdateCatalogsOperation , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db0550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (catalog_ids) , :: core :: option :: Option :: None) } } } # [doc = "`InvokeWaitForCompletion()` overload"] fn invoke_wait_for_completion (self ,) -> bool { unsafe { let __receiver = < UpdateCatalogsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UpdateCatalogsOperation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbd450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < UpdateCatalogsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UpdateCatalogsOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbd5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"] fn get_dependencies (self , dependencies : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >) -> () { unsafe { let __receiver = < UpdateCatalogsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UpdateCatalogsOperation , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbd620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dependencies) , :: core :: option :: Option :: None) } } } # [doc = "`Execute()` overload"] fn execute (self ,) -> () { unsafe { let __receiver = < UpdateCatalogsOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UpdateCatalogsOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbd6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-updatecatalogsoperation")]pub trait IUpdateCatalogsOperationMethods:IUpdateCatalogsOperation{#[doc="`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"]fn ctor(self,aa:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>)->(){unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db04e0usize)as*mut u8,();
+(UpdateCatalogsOperation)__receiver,(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(aa))}
+}
+#[doc="`Start(crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>)` overload"]fn start(self,catalog_ids:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString> >)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> >{unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db0550usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> > ;
+(UpdateCatalogsOperation)__receiver,(crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString>)::core::convert::Into::into(catalog_ids))}
+}
+#[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbd450usize)as*mut u8,bool;
+(UpdateCatalogsOperation)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbd5a0usize)as*mut u8,();
+(UpdateCatalogsOperation)__receiver)}
+}
+#[doc="`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]fn get_dependencies(self,dependencies:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)->(){unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbd620usize)as*mut u8,();
+(UpdateCatalogsOperation)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)::core::convert::Into::into(dependencies))}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <UpdateCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbd6e0usize)as*mut u8,();
+(UpdateCatalogsOperation)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-updatecatalogsoperation")]
-impl < __T : IUpdateCatalogsOperation > IUpdateCatalogsOperationMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-updatecatalogsoperation")]impl<__T:IUpdateCatalogsOperation>IUpdateCatalogsOperationMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-updatecatalogsoperation")]
-impl UpdateCatalogsOperation { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UpdateCatalogsOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UpdateCatalogsOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn invoke_wait_for_completion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UpdateCatalogsOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UpdateCatalogsOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_dependencies_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UpdateCatalogsOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UpdateCatalogsOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-addressable_assets-updatecatalogsoperation")]impl UpdateCatalogsOperation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn invoke_wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-updatecatalogsoperation")]
-impl UpdateCatalogsOperation {
-# [doc = "`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` — overload selector"] pub fn new (aa : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UpdateCatalogsOperation) , :: core :: stringify ! (new) ,)) ; < Self as IUpdateCatalogsOperationMethods > :: ctor (this , aa) ; this }
+#[cfg(feature="unity_engine-addressable_assets-updatecatalogsoperation")]impl UpdateCatalogsOperation{#[doc="`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` — overload selector"]pub fn new(aa:crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UpdateCatalogsOperation), ::core::stringify!(new),));
+ <Self as IUpdateCatalogsOperationMethods> ::ctor(this,aa);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-updatecatalogsoperation")]

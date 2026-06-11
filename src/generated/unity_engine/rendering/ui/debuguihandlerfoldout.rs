@@ -4,47 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: { DebugUIHandlerWidget , IDebugUIHandlerWidget }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWidget,IDebugUIHandlerWidget}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerfoldout/DebugUIHandlerFoldout.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerFoldout")] # [parent (crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget)] pub struct DebugUIHandlerFoldout {
-# [offset (88)] # [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
-# [offset (96)] # [rename (name = "valueToggle")] pub value_toggle : crate :: unity_engine :: rendering :: ui :: uifoldout :: UIFoldout ,
-# [offset (104)] # [rename (name = "m_Field")] pub m_field : crate :: unity_engine :: rendering :: debugui :: DebugUI_Foldout ,
-# [offset (112)] # [rename (name = "m_Container")] pub m_container : crate :: unity_engine :: rendering :: ui :: debuguihandlercontainer :: DebugUIHandlerContainer ,
-# [static_field] # [rename (name = "xDecal")] pub x_decal : f32 ,
-# [static_field] # [rename (name = "xDecalInit")] pub x_decal_init : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguihandlerfoldout/DebugUIHandlerFoldout.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIHandlerFoldout")]#[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]pub struct DebugUIHandlerFoldout{#[offset(88)]#[rename(name="nameLabel")]pub name_label:crate::unity_engine::ui::text::Text, #[offset(96)]#[rename(name="valueToggle")]pub value_toggle:crate::unity_engine::rendering::ui::uifoldout::UIFoldout, #[offset(104)]#[rename(name="m_Field")]pub m_field:crate::unity_engine::rendering::debugui::DebugUI_Foldout, #[offset(112)]#[rename(name="m_Container")]pub m_container:crate::unity_engine::rendering::ui::debuguihandlercontainer::DebugUIHandlerContainer, #[static_field]#[rename(name="xDecal")]pub x_decal:f32, #[static_field]#[rename(name="xDecalInit")]pub x_decal_init:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfoldout-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfoldout")]
-pub trait IDebugUIHandlerFoldoutMethods : IDebugUIHandlerFoldout { # [doc = "`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"] fn set_widget (self , widget : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget >) -> () { unsafe { let __receiver = < DebugUIHandlerFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFoldout , crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a3090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (widget) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn on_selection (self , from_next : impl :: core :: convert :: Into < bool > , previous : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> bool { unsafe { let __receiver = < DebugUIHandlerFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFoldout , bool , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a3430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from_next) , :: core :: convert :: Into :: into (previous) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselection()` overload"] fn on_deselection (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a3510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnIncrement(bool)` overload"] fn on_increment (self , fast : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFoldout , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a3530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fast) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecrement(bool)` overload"] fn on_decrement (self , fast : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFoldout , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a3550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fast) , :: core :: option :: Option :: None) } } } # [doc = "`OnAction()` overload"] fn on_action (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a3570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateValue()` overload"] fn update_value (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a3410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Next()` overload"] fn next (self ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFoldout , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a35a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a37b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerfoldout")]pub trait IDebugUIHandlerFoldoutMethods:IDebugUIHandlerFoldout{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3090usize)as*mut u8,();
+(DebugUIHandlerFoldout)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Widget)::core::convert::Into::into(widget))}
+}
+#[doc="`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn on_selection(self,from_next:impl::core::convert::Into<bool> ,previous:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3430usize)as*mut u8,bool;
+(DebugUIHandlerFoldout)__receiver,(bool)::core::convert::Into::into(from_next),(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(previous))}
+}
+#[doc="`OnDeselection()` overload"]fn on_deselection(self,)->(){unsafe{let __receiver= <DebugUIHandlerFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3510usize)as*mut u8,();
+(DebugUIHandlerFoldout)__receiver)}
+}
+#[doc="`OnIncrement(bool)` overload"]fn on_increment(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3530usize)as*mut u8,();
+(DebugUIHandlerFoldout)__receiver,(bool)::core::convert::Into::into(fast))}
+}
+#[doc="`OnDecrement(bool)` overload"]fn on_decrement(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3550usize)as*mut u8,();
+(DebugUIHandlerFoldout)__receiver,(bool)::core::convert::Into::into(fast))}
+}
+#[doc="`OnAction()` overload"]fn on_action(self,)->(){unsafe{let __receiver= <DebugUIHandlerFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3570usize)as*mut u8,();
+(DebugUIHandlerFoldout)__receiver)}
+}
+#[doc="`UpdateValue()` overload"]fn update_value(self,)->(){unsafe{let __receiver= <DebugUIHandlerFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3410usize)as*mut u8,();
+(DebugUIHandlerFoldout)__receiver)}
+}
+#[doc="`Next()` overload"]fn next(self,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{unsafe{let __receiver= <DebugUIHandlerFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a35a0usize)as*mut u8,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+(DebugUIHandlerFoldout)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a37b0usize)as*mut u8,();
+(DebugUIHandlerFoldout)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfoldout")]
-impl < __T : IDebugUIHandlerFoldout > IDebugUIHandlerFoldoutMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerfoldout")]impl<__T:IDebugUIHandlerFoldout>IDebugUIHandlerFoldoutMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfoldout")]
-impl DebugUIHandlerFoldout { pub fn set_widget_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_deselection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_increment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_decrement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerfoldout")]impl DebugUIHandlerFoldout{pub fn set_widget_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_deselection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_increment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_decrement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfoldout")]
-impl DebugUIHandlerFoldout {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerFoldout) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerFoldoutMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerfoldout")]impl DebugUIHandlerFoldout{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIHandlerFoldout), ::core::stringify!(new),));
+ <Self as IDebugUIHandlerFoldoutMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfoldout")]

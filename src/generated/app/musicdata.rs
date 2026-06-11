@@ -4,39 +4,154 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musicdata/MusicData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MusicData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: musicdata :: MusicData >)] pub struct MusicData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musicdata/MusicData.md"))]#[::unity2::class(namespace="App",name="MusicData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::musicdata::MusicData>)]pub struct MusicData{}
 
 }
 
 #[cfg(feature = "app-musicdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-musicdata")]
-impl MusicData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`FindData(::unity2::Il2CppString)` overload"] pub fn find_data (change_event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: musicdata :: MusicData { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: musicdata :: MusicData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (change_event_name) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetFromGodData(crate::app::goddata::GodData)` overload"] pub fn try_get_from_god_data (god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> crate :: app :: musicdata :: MusicData { unsafe { { let __inner : extern "C" fn (crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: musicdata :: MusicData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musicdata")]impl MusicData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x238bea0usize)as*mut u8,();
+)}
+}
+#[doc="`FindData(::unity2::Il2CppString)` overload"]pub fn find_data(change_event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::musicdata::MusicData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x238c120usize)as*mut u8,crate::app::musicdata::MusicData;
+(::unity2::Il2CppString)::core::convert::Into::into(change_event_name))}
+}
+#[doc="`TryGetFromGodData(crate::app::goddata::GodData)` overload"]pub fn try_get_from_god_data(god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::app::musicdata::MusicData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x238c220usize)as*mut u8,crate::app::musicdata::MusicData;
+(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+}
 
-#[cfg(feature = "app-musicdata")]
-pub trait IMusicDataMethods : IMusicData { # [doc = "`get_EventName()` overload"] fn get_event_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bf50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EventName(::unity2::Il2CppString)` overload"] fn set_event_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bf60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bf70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bf80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Help()` overload"] fn get_help (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bf90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Help(::unity2::Il2CppString)` overload"] fn set_help (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bfa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Condition()` overload"] fn get_condition (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bfb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Condition(::unity2::Il2CppString)` overload"] fn set_condition (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bfc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Amiibo()` overload"] fn get_amiibo (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Amiibo(::unity2::Il2CppString)` overload"] fn set_amiibo (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bfe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ChangeEventName()` overload"] fn get_change_event_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238bff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ChangeEventName(::unity2::Il2CppString)` overload"] fn set_change_event_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsChange()` overload"] fn get_is_change (self ,) -> bool { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsChange(bool)` overload"] fn set_is_change (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Gid()` overload"] fn get_gid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Gid(::unity2::Il2CppString)` overload"] fn set_gid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GodData()` overload"] fn get_god_data (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GodData(crate::app::goddata::GodData)` overload"] fn set_god_data (self , value : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnCompleted()` overload"] fn on_completed (self ,) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MusicData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusicData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musicdata")]pub trait IMusicDataMethods:IMusicData{#[doc="`get_EventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bf50usize)as*mut u8, ::unity2::Il2CppString;
+(MusicData)__receiver)}
+}
+#[doc="`set_EventName(::unity2::Il2CppString)` overload"]fn set_event_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bf60usize)as*mut u8,();
+(MusicData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bf70usize)as*mut u8, ::unity2::Il2CppString;
+(MusicData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bf80usize)as*mut u8,();
+(MusicData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Help()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bf90usize)as*mut u8, ::unity2::Il2CppString;
+(MusicData)__receiver)}
+}
+#[doc="`set_Help(::unity2::Il2CppString)` overload"]fn set_help(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bfa0usize)as*mut u8,();
+(MusicData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Condition()` overload"]fn get_condition(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bfb0usize)as*mut u8, ::unity2::Il2CppString;
+(MusicData)__receiver)}
+}
+#[doc="`set_Condition(::unity2::Il2CppString)` overload"]fn set_condition(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bfc0usize)as*mut u8,();
+(MusicData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Amiibo()` overload"]fn get_amiibo(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bfd0usize)as*mut u8, ::unity2::Il2CppString;
+(MusicData)__receiver)}
+}
+#[doc="`set_Amiibo(::unity2::Il2CppString)` overload"]fn set_amiibo(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bfe0usize)as*mut u8,();
+(MusicData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ChangeEventName()` overload"]fn get_change_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238bff0usize)as*mut u8, ::unity2::Il2CppString;
+(MusicData)__receiver)}
+}
+#[doc="`set_ChangeEventName(::unity2::Il2CppString)` overload"]fn set_change_event_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c000usize)as*mut u8,();
+(MusicData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsChange()` overload"]fn get_is_change(self,)->bool{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c010usize)as*mut u8,bool;
+(MusicData)__receiver)}
+}
+#[doc="`set_IsChange(bool)` overload"]fn set_is_change(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c020usize)as*mut u8,();
+(MusicData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Gid()` overload"]fn get_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c030usize)as*mut u8, ::unity2::Il2CppString;
+(MusicData)__receiver)}
+}
+#[doc="`set_Gid(::unity2::Il2CppString)` overload"]fn set_gid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c040usize)as*mut u8,();
+(MusicData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_GodData()` overload"]fn get_god_data(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c050usize)as*mut u8,crate::app::goddata::GodData;
+(MusicData)__receiver)}
+}
+#[doc="`set_GodData(crate::app::goddata::GodData)` overload"]fn set_god_data(self,value:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c060usize)as*mut u8,();
+(MusicData)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(value))}
+}
+#[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c070usize)as*mut u8,();
+(MusicData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c110usize)as*mut u8, ::unity2::Il2CppString;
+(MusicData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MusicData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c330usize)as*mut u8,();
+(MusicData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-musicdata")]
-impl < __T : IMusicData > IMusicDataMethods for __T { }
+#[cfg(feature="app-musicdata")]impl<__T:IMusicData>IMusicDataMethods for __T{}
 
-#[cfg(feature = "app-musicdata")]
-impl MusicData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_amiibo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_amiibo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_change_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_change_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_is_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_is_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn on_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn find_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn try_get_from_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusicData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="app-musicdata")]impl MusicData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_amiibo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_amiibo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_change_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_change_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_is_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_is_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn find_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn try_get_from_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "app-musicdata")]
-impl MusicData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MusicData) , :: core :: stringify ! (new) ,)) ; < Self as IMusicDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-musicdata")]impl MusicData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MusicData), ::core::stringify!(new),));
+ <Self as IMusicDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-musicdata")]

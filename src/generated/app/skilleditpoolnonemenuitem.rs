@@ -4,34 +4,83 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: basicskillmenuitem :: { BasicSkillMenuItem , IBasicSkillMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::basicskillmenuitem::{BasicSkillMenuItem,IBasicSkillMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilleditpoolnonemenuitem/SkillEditPoolNoneMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillEditPoolNoneMenuItem")] # [parent (crate :: app :: basicskillmenuitem :: BasicSkillMenuItem)] pub struct SkillEditPoolNoneMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilleditpoolnonemenuitem/SkillEditPoolNoneMenuItem.md"))]#[::unity2::class(namespace="App",name="SkillEditPoolNoneMenuItem")]#[parent(crate::app::basicskillmenuitem::BasicSkillMenuItem)]pub struct SkillEditPoolNoneMenuItem{}
 
 }
 
 #[cfg(feature = "app-skilleditpoolnonemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-skilleditpoolnonemenuitem")]
-pub trait ISkillEditPoolNoneMenuItemMethods : ISkillEditPoolNoneMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249db30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249db40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249db70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249dbf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249dde0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249e7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HoldSelection()` overload"] fn hold_selection (self ,) -> () { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249e8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSkill()` overload"] fn get_skill (self ,) -> crate :: app :: skilldata :: SkillData { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: skilldata :: SkillData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249e990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsActiveSkillIcon()` overload"] fn is_active_skill_icon (self ,) -> bool { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249e9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSubText()` overload"] fn get_sub_text (self ,) -> crate :: app :: basicskillmenuitemcontent :: BasicSkillMenuItemContent_SubText { unsafe { let __receiver = < SkillEditPoolNoneMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillEditPoolNoneMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicskillmenuitemcontent :: BasicSkillMenuItemContent_SubText = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x249e9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-skilleditpoolnonemenuitem")]pub trait ISkillEditPoolNoneMenuItemMethods:ISkillEditPoolNoneMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249db30usize)as*mut u8,();
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249db40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249db70usize)as*mut u8, ::unity2::Il2CppString;
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249dbf0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249dde0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249e7e0usize)as*mut u8,();
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+#[doc="`HoldSelection()` overload"]fn hold_selection(self,)->(){unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249e8e0usize)as*mut u8,();
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+#[doc="`GetSkill()` overload"]fn get_skill(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249e990usize)as*mut u8,crate::app::skilldata::SkillData;
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+#[doc="`IsActiveSkillIcon()` overload"]fn is_active_skill_icon(self,)->bool{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249e9a0usize)as*mut u8,bool;
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+#[doc="`GetSubText()` overload"]fn get_sub_text(self,)->crate::app::basicskillmenuitemcontent::BasicSkillMenuItemContent_SubText{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x249e9b0usize)as*mut u8,crate::app::basicskillmenuitemcontent::BasicSkillMenuItemContent_SubText;
+(SkillEditPoolNoneMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-skilleditpoolnonemenuitem")]
-impl < __T : ISkillEditPoolNoneMenuItem > ISkillEditPoolNoneMenuItemMethods for __T { }
+#[cfg(feature="app-skilleditpoolnonemenuitem")]impl<__T:ISkillEditPoolNoneMenuItem>ISkillEditPoolNoneMenuItemMethods for __T{}
 
-#[cfg(feature = "app-skilleditpoolnonemenuitem")]
-impl SkillEditPoolNoneMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn hold_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_active_skill_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_sub_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillEditPoolNoneMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-skilleditpoolnonemenuitem")]impl SkillEditPoolNoneMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn hold_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_active_skill_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_sub_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-skilleditpoolnonemenuitem")]
-impl SkillEditPoolNoneMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillEditPoolNoneMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ISkillEditPoolNoneMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-skilleditpoolnonemenuitem")]impl SkillEditPoolNoneMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillEditPoolNoneMenuItem), ::core::stringify!(new),));
+ <Self as ISkillEditPoolNoneMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-skilleditpoolnonemenuitem")]

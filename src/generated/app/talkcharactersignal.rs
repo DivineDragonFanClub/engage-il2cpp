@@ -4,45 +4,112 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talkcharactersignal/TalkCharacterSignal.md"))] # [:: unity2 :: class (namespace = "App" , name = "TalkCharacterSignal")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TalkCharacterSignal {
-# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [static_field] # [rename (name = "FootStepLabel")] pub foot_step_label : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "HubLabel")] pub hub_label : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talkcharactersignal/TalkCharacterSignal.md"))]#[::unity2::class(namespace="App",name="TalkCharacterSignal")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TalkCharacterSignal{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[static_field]#[rename(name="FootStepLabel")]pub foot_step_label: ::unity2::Il2CppString, #[static_field]#[rename(name="HubLabel")]pub hub_label: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-talkcharactersignal-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talkcharactersignal")]
-impl TalkCharacterSignal { # [doc = "`SetEnable(crate::unity_engine::gameobject::GameObject, bool)` overload"] pub fn set_enable (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be8b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be9b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talkcharactersignal")]impl TalkCharacterSignal{#[doc="`SetEnable(crate::unity_engine::gameobject::GameObject, bool)` overload"]pub fn set_enable(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,enabled:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20be8b0usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20be9b0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-talkcharactersignal")]
-pub trait ITalkCharacterSignalMethods : ITalkCharacterSignal { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be0e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPlayer()` overload"] fn get_is_player (self ,) -> bool { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsPlayer(bool)` overload"] fn set_is_player (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be1b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`左足接地()` overload"] fn 左足接地 (self ,) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`右足接地()` overload"] fn 右足接地 (self ,) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`羽ばたき()` overload"] fn 羽ばたき (self ,) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`音汎用(::unity2::Il2CppString)` overload"] fn 音汎用 (self , str_param : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (str_param) , :: core :: option :: Option :: None) } } } # [doc = "`音ボイス()` overload"] fn 音ボイス (self ,) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`武器軌跡始()` overload"] fn 武器軌跡始 (self ,) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`武器軌跡終()` overload"] fn 武器軌跡終 (self ,) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`パーティクル(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn パーティクル (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkCharacterSignal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterSignal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talkcharactersignal")]pub trait ITalkCharacterSignalMethods:ITalkCharacterSignal{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be0e0usize)as*mut u8,crate::combat::character::Character;
+(TalkCharacterSignal)__receiver)}
+}
+#[doc="`get_IsPlayer()` overload"]fn get_is_player(self,)->bool{unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be1a0usize)as*mut u8,bool;
+(TalkCharacterSignal)__receiver)}
+}
+#[doc="`set_IsPlayer(bool)` overload"]fn set_is_player(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be1b0usize)as*mut u8,();
+(TalkCharacterSignal)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be1c0usize)as*mut u8,();
+(TalkCharacterSignal)__receiver)}
+}
+#[doc="`左足接地()` overload"]fn 左足接地(self,)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be4a0usize)as*mut u8,();
+(TalkCharacterSignal)__receiver)}
+}
+#[doc="`右足接地()` overload"]fn 右足接地(self,)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be5f0usize)as*mut u8,();
+(TalkCharacterSignal)__receiver)}
+}
+#[doc="`羽ばたき()` overload"]fn 羽ばたき(self,)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be740usize)as*mut u8,();
+(TalkCharacterSignal)__receiver)}
+}
+#[doc="`音汎用(::unity2::Il2CppString)` overload"]fn 音汎用(self,str_param:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be750usize)as*mut u8,();
+(TalkCharacterSignal)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str_param))}
+}
+#[doc="`音ボイス()` overload"]fn 音ボイス(self,)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be830usize)as*mut u8,();
+(TalkCharacterSignal)__receiver)}
+}
+#[doc="`武器軌跡始()` overload"]fn 武器軌跡始(self,)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be840usize)as*mut u8,();
+(TalkCharacterSignal)__receiver)}
+}
+#[doc="`武器軌跡終()` overload"]fn 武器軌跡終(self,)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be850usize)as*mut u8,();
+(TalkCharacterSignal)__receiver)}
+}
+#[doc="`パーティクル(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn パーティクル(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be860usize)as*mut u8,();
+(TalkCharacterSignal)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkCharacterSignal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be930usize)as*mut u8,();
+(TalkCharacterSignal)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talkcharactersignal")]
-impl < __T : ITalkCharacterSignal > ITalkCharacterSignalMethods for __T { }
+#[cfg(feature="app-talkcharactersignal")]impl<__T:ITalkCharacterSignal>ITalkCharacterSignalMethods for __T{}
 
-#[cfg(feature = "app-talkcharactersignal")]
-impl TalkCharacterSignal { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_is_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn 左足接地_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn 右足接地_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn 羽ばたき_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn 音汎用_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn 音ボイス_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn 武器軌跡始_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn 武器軌跡終_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn パーティクル_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterSignal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-talkcharactersignal")]impl TalkCharacterSignal{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_is_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn 左足接地_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn 右足接地_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn 羽ばたき_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn 音汎用_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn 音ボイス_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn 武器軌跡始_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn 武器軌跡終_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn パーティクル_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-talkcharactersignal")]
-impl TalkCharacterSignal {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkCharacterSignal) , :: core :: stringify ! (new) ,)) ; < Self as ITalkCharacterSignalMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talkcharactersignal")]impl TalkCharacterSignal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkCharacterSignal), ::core::stringify!(new),));
+ <Self as ITalkCharacterSignalMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talkcharactersignal")]

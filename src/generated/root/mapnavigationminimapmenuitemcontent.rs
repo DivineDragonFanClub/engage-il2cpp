@@ -4,42 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationminimapmenuitemcontent/MapNavigationMiniMapMenuItemContent.md"))] # [:: unity2 :: class (namespace = "" , name = "MapNavigationMiniMapMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct MapNavigationMiniMapMenuItemContent {
-# [offset (72)] # [rename (name = "m_MiniMapText")] pub m_mini_map_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapnavigationminimapmenuitemcontent/MapNavigationMiniMapMenuItemContent.md"))]#[::unity2::class(namespace="",name="MapNavigationMiniMapMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct MapNavigationMiniMapMenuItemContent{#[offset(72)]#[rename(name="m_MiniMapText")]pub m_mini_map_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "root-mapnavigationminimapmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapnavigationminimapmenuitemcontent")]
-pub trait IMapNavigationMiniMapMenuItemContentMethods : IMapNavigationMiniMapMenuItemContent { # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < MapNavigationMiniMapMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df74f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapNavigationMiniMapMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationMiniMapMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df75e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapnavigationminimapmenuitemcontent")]pub trait IMapNavigationMiniMapMenuItemContentMethods:IMapNavigationMiniMapMenuItemContent{#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MapNavigationMiniMapMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df74f0usize)as*mut u8,();
+(MapNavigationMiniMapMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapNavigationMiniMapMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df75e0usize)as*mut u8,();
+(MapNavigationMiniMapMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapnavigationminimapmenuitemcontent")]
-impl < __T : IMapNavigationMiniMapMenuItemContent > IMapNavigationMiniMapMenuItemContentMethods for __T { }
+#[cfg(feature="root-mapnavigationminimapmenuitemcontent")]impl<__T:IMapNavigationMiniMapMenuItemContent>IMapNavigationMiniMapMenuItemContentMethods for __T{}
 
-#[cfg(feature = "root-mapnavigationminimapmenuitemcontent")]
-impl MapNavigationMiniMapMenuItemContent { pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationMiniMapMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-mapnavigationminimapmenuitemcontent")]impl MapNavigationMiniMapMenuItemContent{pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-mapnavigationminimapmenuitemcontent")]
-impl MapNavigationMiniMapMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapNavigationMiniMapMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IMapNavigationMiniMapMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapnavigationminimapmenuitemcontent")]impl MapNavigationMiniMapMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapNavigationMiniMapMenuItemContent), ::core::stringify!(new),));
+ <Self as IMapNavigationMiniMapMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapnavigationminimapmenuitemcontent")]

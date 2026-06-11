@@ -4,36 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/facethumbnail/FaceThumbnail.md"))] # [:: unity2 :: class (namespace = "App" , name = "FaceThumbnail")] # [parent (crate :: system :: object :: Object)] pub struct FaceThumbnail {
-# [static_field] # [rename (name = "Path")] pub path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_FaceThumb")] pub s_face_thumb : crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/facethumbnail/FaceThumbnail.md"))]#[::unity2::class(namespace="App",name="FaceThumbnail")]#[parent(crate::system::object::Object)]pub struct FaceThumbnail{#[static_field]#[rename(name="Path")]pub path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_FaceThumb")]pub s_face_thumb:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,}
 
 }
 
 #[cfg(feature = "app-facethumbnail-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-facethumbnail")]
-impl FaceThumbnail { # [doc = "`LoadAsync()` overload"] pub fn load_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d51b00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] pub fn unload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d51bf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Get(crate::app::unit::Unit)` overload"] pub fn get (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d51cb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Get(crate::app::persondata::PersonData)` overload"] pub fn get_2 (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d52090usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`Get(crate::app::goddata::GodData)` overload"] pub fn get_3 (god : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d52270usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`GetPath(crate::app::goddata::GodData)` overload"] pub fn get_path (god : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d52340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`GetDLCGodPath(::unity2::Il2CppString)` overload"] pub fn get_dlc_god_path (god_ascii_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d525c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god_ascii_name) , :: core :: option :: Option :: None) } } } # [doc = "`Get(crate::app::ringdata::RingData)` overload"] pub fn get_4 (ring : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d52620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ring) , :: core :: option :: Option :: None) } } } # [doc = "`GetPath(crate::app::unit::Unit)` overload"] pub fn get_path_2 (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d51d80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetPath(crate::app::persondata::PersonData)` overload"] pub fn get_path_3 (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d521d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d526f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-facethumbnail")]impl FaceThumbnail{#[doc="`LoadAsync()` overload"]pub fn load_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d51b00usize)as*mut u8,();
+)}
+}
+#[doc="`Unload()` overload"]pub fn unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d51bf0usize)as*mut u8,();
+)}
+}
+#[doc="`Get(crate::app::unit::Unit)` overload"]pub fn get(unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d51cb0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Get(crate::app::persondata::PersonData)` overload"]pub fn get_2(person:impl::core::convert::Into<crate::app::persondata::PersonData>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d52090usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`Get(crate::app::goddata::GodData)` overload"]pub fn get_3(god:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d52270usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(crate::app::goddata::GodData)::core::convert::Into::into(god))}
+}
+#[doc="`GetPath(crate::app::goddata::GodData)` overload"]pub fn get_path(god:impl::core::convert::Into<crate::app::goddata::GodData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d52340usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::goddata::GodData)::core::convert::Into::into(god))}
+}
+#[doc="`GetDLCGodPath(::unity2::Il2CppString)` overload"]pub fn get_dlc_god_path(god_ascii_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d525c0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(god_ascii_name))}
+}
+#[doc="`Get(crate::app::ringdata::RingData)` overload"]pub fn get_4(ring:impl::core::convert::Into<crate::app::ringdata::RingData>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d52620usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(crate::app::ringdata::RingData)::core::convert::Into::into(ring))}
+}
+#[doc="`GetPath(crate::app::unit::Unit)` overload"]pub fn get_path_2(unit:impl::core::convert::Into<crate::app::unit::Unit>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d51d80usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetPath(crate::app::persondata::PersonData)` overload"]pub fn get_path_3(person:impl::core::convert::Into<crate::app::persondata::PersonData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d521d0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d526f0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-facethumbnail")]
-pub trait IFaceThumbnailMethods : IFaceThumbnail { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FaceThumbnail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FaceThumbnail , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d526e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-facethumbnail")]pub trait IFaceThumbnailMethods:IFaceThumbnail{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FaceThumbnail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d526e0usize)as*mut u8,();
+(FaceThumbnail)__receiver)}
+}
+}
 
-#[cfg(feature = "app-facethumbnail")]
-impl < __T : IFaceThumbnail > IFaceThumbnailMethods for __T { }
+#[cfg(feature="app-facethumbnail")]impl<__T:IFaceThumbnail>IFaceThumbnailMethods for __T{}
 
-#[cfg(feature = "app-facethumbnail")]
-impl FaceThumbnail { pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_dlc_god_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_path_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_path_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FaceThumbnail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-facethumbnail")]impl FaceThumbnail{pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_dlc_god_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_path_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_path_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-facethumbnail")]
-impl FaceThumbnail {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FaceThumbnail) , :: core :: stringify ! (new) ,)) ; < Self as IFaceThumbnailMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-facethumbnail")]impl FaceThumbnail{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FaceThumbnail), ::core::stringify!(new),));
+ <Self as IFaceThumbnailMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-facethumbnail")]

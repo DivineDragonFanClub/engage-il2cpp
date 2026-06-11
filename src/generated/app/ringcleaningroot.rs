@@ -4,43 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningroot/RingCleaningRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingCleaningRoot {
-# [offset (24)] # [rename (name = "m_ConditionIcon")] pub m_condition_icon : crate :: app :: ringcleaningconditionicon :: RingCleaningConditionIcon ,
-# [offset (32)] # [rename (name = "m_GaugeController")] pub m_gauge_controller : crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController ,
-# [offset (40)] # [rename (name = "m_Cloth")] pub m_cloth : crate :: app :: ringcleaningcloth :: RingCleaningCloth ,
-# [offset (48)] # [rename (name = "m_Ring")] pub m_ring : crate :: app :: ringcleaningringcontroller :: RingCleaningRingController ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningroot/RingCleaningRoot.md"))]#[::unity2::class(namespace="App",name="RingCleaningRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingCleaningRoot{#[offset(24)]#[rename(name="m_ConditionIcon")]pub m_condition_icon:crate::app::ringcleaningconditionicon::RingCleaningConditionIcon, #[offset(32)]#[rename(name="m_GaugeController")]pub m_gauge_controller:crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController, #[offset(40)]#[rename(name="m_Cloth")]pub m_cloth:crate::app::ringcleaningcloth::RingCleaningCloth, #[offset(48)]#[rename(name="m_Ring")]pub m_ring:crate::app::ringcleaningringcontroller::RingCleaningRingController,}
 
 }
 
 #[cfg(feature = "app-ringcleaningroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringcleaningroot")]
-pub trait IRingCleaningRootMethods : IRingCleaningRoot { # [doc = "`get_GaugeController()` overload"] fn get_gauge_controller (self ,) -> crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaninggaugecontroller :: RingCleaningGaugeController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2419360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ConditionIcon()` overload"] fn get_condition_icon (self ,) -> crate :: app :: ringcleaningconditionicon :: RingCleaningConditionIcon { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningconditionicon :: RingCleaningConditionIcon = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2419370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::ringcleaningringcontroller::RingCleaningRingController)` overload"] fn init (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , ring_controller : impl :: core :: convert :: Into < crate :: app :: ringcleaningringcontroller :: RingCleaningRingController >) -> () { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningRoot , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , crate :: app :: ringcleaningringcontroller :: RingCleaningRingController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2419380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (ring_controller) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDirty(i32)` overload"] fn update_dirty (self , new_dirty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningRoot , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24193f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (new_dirty) , :: core :: option :: Option :: None) } } } # [doc = "`IsFinishCleaning()` overload"] fn is_finish_cleaning (self ,) -> bool { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2419480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTextureDirty(i32)` overload"] fn get_texture_dirty (self , dirty : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningRoot , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24190e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dirty) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2419490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningroot")]pub trait IRingCleaningRootMethods:IRingCleaningRoot{#[doc="`get_GaugeController()` overload"]fn get_gauge_controller(self,)->crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController{unsafe{let __receiver= <RingCleaningRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2419360usize)as*mut u8,crate::app::ringcleaninggaugecontroller::RingCleaningGaugeController;
+(RingCleaningRoot)__receiver)}
+}
+#[doc="`get_ConditionIcon()` overload"]fn get_condition_icon(self,)->crate::app::ringcleaningconditionicon::RingCleaningConditionIcon{unsafe{let __receiver= <RingCleaningRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2419370usize)as*mut u8,crate::app::ringcleaningconditionicon::RingCleaningConditionIcon;
+(RingCleaningRoot)__receiver)}
+}
+#[doc="`Init(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::ringcleaningringcontroller::RingCleaningRingController)` overload"]fn init(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,ring_controller:impl::core::convert::Into<crate::app::ringcleaningringcontroller::RingCleaningRingController>)->(){unsafe{let __receiver= <RingCleaningRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2419380usize)as*mut u8,();
+(RingCleaningRoot)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::ringcleaningringcontroller::RingCleaningRingController)::core::convert::Into::into(ring_controller))}
+}
+#[doc="`UpdateDirty(i32)` overload"]fn update_dirty(self,new_dirty:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RingCleaningRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24193f0usize)as*mut u8,();
+(RingCleaningRoot)__receiver,(i32)::core::convert::Into::into(new_dirty))}
+}
+#[doc="`IsFinishCleaning()` overload"]fn is_finish_cleaning(self,)->bool{unsafe{let __receiver= <RingCleaningRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2419480usize)as*mut u8,bool;
+(RingCleaningRoot)__receiver)}
+}
+#[doc="`GetTextureDirty(i32)` overload"]fn get_texture_dirty(self,dirty:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RingCleaningRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24190e0usize)as*mut u8,f32;
+(RingCleaningRoot)__receiver,(i32)::core::convert::Into::into(dirty))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingCleaningRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2419490usize)as*mut u8,();
+(RingCleaningRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningroot")]
-impl < __T : IRingCleaningRoot > IRingCleaningRootMethods for __T { }
+#[cfg(feature="app-ringcleaningroot")]impl<__T:IRingCleaningRoot>IRingCleaningRootMethods for __T{}
 
-#[cfg(feature = "app-ringcleaningroot")]
-impl RingCleaningRoot { pub fn get_gauge_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_condition_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_finish_cleaning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_texture_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-ringcleaningroot")]impl RingCleaningRoot{pub fn get_gauge_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_condition_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_finish_cleaning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_texture_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-ringcleaningroot")]
-impl RingCleaningRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningRoot) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringcleaningroot")]impl RingCleaningRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningRoot), ::core::stringify!(new),));
+ <Self as IRingCleaningRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringcleaningroot")]

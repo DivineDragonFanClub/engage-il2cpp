@@ -4,100 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DebugSaveDataPathMenu_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DebugSaveDataPathMenu_Label{pub value:i32,}
+impl::unity2::ClassIdentity for DebugSaveDataPathMenu_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DebugSaveDataPathMenu.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DebugSaveDataPathMenu_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl DebugSaveDataPathMenu_Label{pub fn path_menu()->Self{Self{value:0}
+}
+pub fn confirm_reload()->Self{Self{value:1}
+}
+pub fn prepare_reload()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for DebugSaveDataPathMenu_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DebugSaveDataPathMenu.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for DebugSaveDataPathMenu_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  DebugSaveDataPathMenu_Label  {
-    pub fn path_menu() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn confirm_reload() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn prepare_reload() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugSaveDataPathMenu")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct DebugSaveDataPathMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu.md"))]#[::unity2::class(namespace="App",name="DebugSaveDataPathMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct DebugSaveDataPathMenu{}
 
 }
 
 #[cfg(feature = "app-debugsavedatapathmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debugsavedatapathmenu")]
-impl DebugSaveDataPathMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a10120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugsavedatapathmenu")]impl DebugSaveDataPathMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a10120usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-debugsavedatapathmenu")]
-pub trait IDebugSaveDataPathMenuMethods : IDebugSaveDataPathMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugSaveDataPathMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugSaveDataPathMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a10130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugsavedatapathmenu")]pub trait IDebugSaveDataPathMenuMethods:IDebugSaveDataPathMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugSaveDataPathMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a10130usize)as*mut u8,();
+(DebugSaveDataPathMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-debugsavedatapathmenu")]
-impl < __T : IDebugSaveDataPathMenu > IDebugSaveDataPathMenuMethods for __T { }
+#[cfg(feature="app-debugsavedatapathmenu")]impl<__T:IDebugSaveDataPathMenu>IDebugSaveDataPathMenuMethods for __T{}
 
-#[cfg(feature = "app-debugsavedatapathmenu")]
-impl DebugSaveDataPathMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugSaveDataPathMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugSaveDataPathMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-debugsavedatapathmenu")]impl DebugSaveDataPathMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-debugsavedatapathmenu")]
-impl DebugSaveDataPathMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugSaveDataPathMenu) , :: core :: stringify ! (new) ,)) ; < Self as IDebugSaveDataPathMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debugsavedatapathmenu")]impl DebugSaveDataPathMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugSaveDataPathMenu), ::core::stringify!(new),));
+ <Self as IDebugSaveDataPathMenuMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debugsavedatapathmenu")]

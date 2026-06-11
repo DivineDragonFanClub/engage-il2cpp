@@ -4,39 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procbattlecallback :: { IProcBattleCallback , ProcBattleCallback }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procbattlecallback::{IProcBattleCallback,ProcBattleCallback}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlegrow/BattleGrow.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleGrow")] # [parent (crate :: app :: procbattlecallback :: ProcBattleCallback)] pub struct BattleGrow {
-# [offset (129)] # [rename (name = "m_IsTalk")] pub m_is_talk : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlegrow/BattleGrow.md"))]#[::unity2::class(namespace="App",name="BattleGrow")]#[parent(crate::app::procbattlecallback::ProcBattleCallback)]pub struct BattleGrow{#[offset(129)]#[rename(name="m_IsTalk")]pub m_is_talk:bool,}
 
 }
 
 #[cfg(feature = "app-battlegrow-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battlegrow")]
-impl BattleGrow { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, f32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , wait_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: battlecalculator :: BattleCalculator , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e77310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (wait_time) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, bool, f32)` overload"] pub fn create_bind_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , is_talk : impl :: core :: convert :: Into < bool > , wait_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: battlecalculator :: BattleCalculator , bool , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e773f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (is_talk) , :: core :: convert :: Into :: into (wait_time) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn create_bind_3 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , side : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e77600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlegrow")]impl BattleGrow{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, f32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,wait_time:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e77310usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(f32)::core::convert::Into::into(wait_time))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, bool, f32)` overload"]pub fn create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,is_talk:impl::core::convert::Into<bool> ,wait_time:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e773f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(bool)::core::convert::Into::into(is_talk),(f32)::core::convert::Into::into(wait_time))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn create_bind_3(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e77600usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+}
+}
 
-#[cfg(feature = "app-battlegrow")]
-pub trait IBattleGrowMethods : IBattleGrow { # [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, bool)` overload"] fn ctor (self , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , is_talk : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BattleGrow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleGrow , crate :: app :: battlecalculator :: BattleCalculator , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e76f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (is_talk) , :: core :: option :: Option :: None) } } } # [doc = "`GainExp()` overload"] fn gain_exp (self ,) -> () { unsafe { let __receiver = < BattleGrow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleGrow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e76f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlegrow")]pub trait IBattleGrowMethods:IBattleGrow{#[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, bool)` overload"]fn ctor(self,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,is_talk:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BattleGrow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e76f50usize)as*mut u8,();
+(BattleGrow)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(bool)::core::convert::Into::into(is_talk))}
+}
+#[doc="`GainExp()` overload"]fn gain_exp(self,)->(){unsafe{let __receiver= <BattleGrow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e76f90usize)as*mut u8,();
+(BattleGrow)__receiver)}
+}
+}
 
-#[cfg(feature = "app-battlegrow")]
-impl < __T : IBattleGrow > IBattleGrowMethods for __T { }
+#[cfg(feature="app-battlegrow")]impl<__T:IBattleGrow>IBattleGrowMethods for __T{}
 
-#[cfg(feature = "app-battlegrow")]
-impl BattleGrow { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleGrow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn gain_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleGrow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleGrow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleGrow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleGrow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-battlegrow")]impl BattleGrow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn gain_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-battlegrow")]
-impl BattleGrow {
-# [doc = "`.ctor(crate::app::battlecalculator::BattleCalculator, bool)` — overload selector"] pub fn new (calculator : crate :: app :: battlecalculator :: BattleCalculator , is_talk : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleGrow) , :: core :: stringify ! (new) ,)) ; < Self as IBattleGrowMethods > :: ctor (this , calculator , is_talk) ; this }
+#[cfg(feature="app-battlegrow")]impl BattleGrow{#[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, bool)` — overload selector"]pub fn new(calculator:crate::app::battlecalculator::BattleCalculator,is_talk:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleGrow), ::core::stringify!(new),));
+ <Self as IBattleGrowMethods> ::ctor(this,calculator,is_talk);
+this}
 }
 
 #[cfg(feature = "app-battlegrow")]

@@ -4,39 +4,143 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemrefinedata/ItemRefineData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemRefineData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: itemrefinedata :: ItemRefineData >)] pub struct ItemRefineData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemrefinedata/ItemRefineData.md"))]#[::unity2::class(namespace="App",name="ItemRefineData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::itemrefinedata::ItemRefineData>)]pub struct ItemRefineData{}
 
 }
 
 #[cfg(feature = "app-itemrefinedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-itemrefinedata")]
-impl ItemRefineData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049840usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGetFromIid(::unity2::Il2CppString)` overload"] pub fn try_get_from_iid (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemrefinedata :: ItemRefineData > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemrefinedata :: ItemRefineData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20498f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetFromItem(crate::app::itemdata::ItemData)` overload"] pub fn try_get_from_item (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemrefinedata :: ItemRefineData > { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemrefinedata :: ItemRefineData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049a60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Iid2Rid(::unity2::Il2CppString)` overload"] pub fn iid2_rid (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20499e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemrefinedata")]impl ItemRefineData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2049840usize)as*mut u8,();
+)}
+}
+#[doc="`TryGetFromIid(::unity2::Il2CppString)` overload"]pub fn try_get_from_iid(iid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20498f0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData> ;
+(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`TryGetFromItem(crate::app::itemdata::ItemData)` overload"]pub fn try_get_from_item(item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2049a60usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemrefinedata::ItemRefineData> ;
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`Iid2Rid(::unity2::Il2CppString)` overload"]pub fn iid2_rid(iid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20499e0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+}
 
-#[cfg(feature = "app-itemrefinedata")]
-pub trait IItemRefineDataMethods : IItemRefineData { # [doc = "`get_Iron()` overload"] fn get_iron (self ,) -> u16 { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iron(u16)` overload"] fn set_iron (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Steel()` overload"] fn get_steel (self ,) -> u16 { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Steel(u16)` overload"] fn set_steel (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Silver()` overload"] fn get_silver (self ,) -> u16 { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Silver(u16)` overload"] fn set_silver (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049bc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Price()` overload"] fn get_price (self ,) -> u16 { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Price(u16)` overload"] fn set_price (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Power()` overload"] fn get_power (self ,) -> i8 { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Power(i8)` overload"] fn set_power (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Weight()` overload"] fn get_weight (self ,) -> i8 { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Weight(i8)` overload"] fn set_weight (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049c20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Hit()` overload"] fn get_hit (self ,) -> i8 { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Hit(i8)` overload"] fn set_hit (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049c40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Critical()` overload"] fn get_critical (self ,) -> i8 { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Critical(i8)` overload"] fn set_critical (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049c60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ItemRefineData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemRefineData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2049d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemrefinedata")]pub trait IItemRefineDataMethods:IItemRefineData{#[doc="`get_Iron()` overload"]fn get_iron(self,)->u16{unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049b70usize)as*mut u8,u16;
+(ItemRefineData)__receiver)}
+}
+#[doc="`set_Iron(u16)` overload"]fn set_iron(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049b80usize)as*mut u8,();
+(ItemRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_Steel()` overload"]fn get_steel(self,)->u16{unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049b90usize)as*mut u8,u16;
+(ItemRefineData)__receiver)}
+}
+#[doc="`set_Steel(u16)` overload"]fn set_steel(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049ba0usize)as*mut u8,();
+(ItemRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_Silver()` overload"]fn get_silver(self,)->u16{unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049bb0usize)as*mut u8,u16;
+(ItemRefineData)__receiver)}
+}
+#[doc="`set_Silver(u16)` overload"]fn set_silver(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049bc0usize)as*mut u8,();
+(ItemRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_Price()` overload"]fn get_price(self,)->u16{unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049bd0usize)as*mut u8,u16;
+(ItemRefineData)__receiver)}
+}
+#[doc="`set_Price(u16)` overload"]fn set_price(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049be0usize)as*mut u8,();
+(ItemRefineData)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_Power()` overload"]fn get_power(self,)->i8{unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049bf0usize)as*mut u8,i8;
+(ItemRefineData)__receiver)}
+}
+#[doc="`set_Power(i8)` overload"]fn set_power(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049c00usize)as*mut u8,();
+(ItemRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Weight()` overload"]fn get_weight(self,)->i8{unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049c10usize)as*mut u8,i8;
+(ItemRefineData)__receiver)}
+}
+#[doc="`set_Weight(i8)` overload"]fn set_weight(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049c20usize)as*mut u8,();
+(ItemRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Hit()` overload"]fn get_hit(self,)->i8{unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049c30usize)as*mut u8,i8;
+(ItemRefineData)__receiver)}
+}
+#[doc="`set_Hit(i8)` overload"]fn set_hit(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049c40usize)as*mut u8,();
+(ItemRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Critical()` overload"]fn get_critical(self,)->i8{unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049c50usize)as*mut u8,i8;
+(ItemRefineData)__receiver)}
+}
+#[doc="`set_Critical(i8)` overload"]fn set_critical(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049c60usize)as*mut u8,();
+(ItemRefineData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049c70usize)as*mut u8, ::unity2::Il2CppString;
+(ItemRefineData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemRefineData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2049d00usize)as*mut u8,();
+(ItemRefineData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-itemrefinedata")]
-impl < __T : IItemRefineData > IItemRefineDataMethods for __T { }
+#[cfg(feature="app-itemrefinedata")]impl<__T:IItemRefineData>IItemRefineDataMethods for __T{}
 
-#[cfg(feature = "app-itemrefinedata")]
-impl ItemRefineData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn try_get_from_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_get_from_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn iid2_rid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_price_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_price_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_power_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_power_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemRefineData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-itemrefinedata")]impl ItemRefineData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn try_get_from_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_get_from_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn iid2_rid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_price_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_price_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_power_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_power_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "app-itemrefinedata")]
-impl ItemRefineData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemRefineData) , :: core :: stringify ! (new) ,)) ; < Self as IItemRefineDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-itemrefinedata")]impl ItemRefineData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemRefineData), ::core::stringify!(new),));
+ <Self as IItemRefineDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-itemrefinedata")]

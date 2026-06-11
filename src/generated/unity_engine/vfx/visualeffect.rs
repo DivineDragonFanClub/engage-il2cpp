@@ -4,38 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/visualeffect/VisualEffect.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VisualEffect")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct VisualEffect {
-# [offset (24)] # [rename (name = "m_cachedEventAttribute")] pub m_cached_event_attribute : crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute ,
-# [offset (32)] # [rename (name = "outputEventReceived")] pub output_event_received : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: vfx :: vfxoutputeventargs :: VFXOutputEventArgs > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vfx/visualeffect/VisualEffect.md"))]#[::unity2::class(namespace="UnityEngine.VFX",name="VisualEffect")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct VisualEffect{#[offset(24)]#[rename(name="m_cachedEventAttribute")]pub m_cached_event_attribute:crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute, #[offset(32)]#[rename(name="outputEventReceived")]pub output_event_received:crate::system::action_1::Action_1<crate::unity_engine::vfx::vfxoutputeventargs::VFXOutputEventArgs> ,}
 
 }
 
 #[cfg(feature = "unity_engine-vfx-visualeffect-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-vfx-visualeffect")]
-impl VisualEffect { # [doc = "`InvokeGetCachedEventAttributeForOutputEvent_Internal(crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"] pub fn invoke_get_cached_event_attribute_for_output_event_internal (source : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect >) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44da0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } } # [doc = "`InvokeOutputEventReceived_Internal(crate::unity_engine::vfx::visualeffect::VisualEffect, i32)` overload"] pub fn invoke_output_event_received_internal (source : impl :: core :: convert :: Into < crate :: unity_engine :: vfx :: visualeffect :: VisualEffect > , event_name_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vfx :: visualeffect :: VisualEffect , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44e10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source) , :: core :: convert :: Into :: into (event_name_id) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-visualeffect")]impl VisualEffect{#[doc="`InvokeGetCachedEventAttributeForOutputEvent_Internal(crate::unity_engine::vfx::visualeffect::VisualEffect)` overload"]pub fn invoke_get_cached_event_attribute_for_output_event_internal(source:impl::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect>)->crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f44da0usize)as*mut u8,crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute;
+(crate::unity_engine::vfx::visualeffect::VisualEffect)::core::convert::Into::into(source))}
+}
+#[doc="`InvokeOutputEventReceived_Internal(crate::unity_engine::vfx::visualeffect::VisualEffect, i32)` overload"]pub fn invoke_output_event_received_internal(source:impl::core::convert::Into<crate::unity_engine::vfx::visualeffect::VisualEffect> ,event_name_id:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f44e10usize)as*mut u8,();
+(crate::unity_engine::vfx::visualeffect::VisualEffect)::core::convert::Into::into(source),(i32)::core::convert::Into::into(event_name_id))}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-visualeffect")]
-pub trait IVisualEffectMethods : IVisualEffect { # [doc = "`get_visualEffectAsset()` overload"] fn get_visual_effect_asset (self ,) -> crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset { unsafe { let __receiver = < VisualEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VisualEffect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: visualeffectasset :: VisualEffectAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateVFXEventAttribute()` overload"] fn create_vfx_event_attribute (self ,) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute { unsafe { let __receiver = < VisualEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VisualEffect , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vfx :: vfxeventattribute :: VFXEventAttribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-visualeffect")]pub trait IVisualEffectMethods:IVisualEffect{#[doc="`get_visualEffectAsset()` overload"]fn get_visual_effect_asset(self,)->crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset{unsafe{let __receiver= <VisualEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44c70usize)as*mut u8,crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset;
+(VisualEffect)__receiver)}
+}
+#[doc="`CreateVFXEventAttribute()` overload"]fn create_vfx_event_attribute(self,)->crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute{unsafe{let __receiver= <VisualEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44cc0usize)as*mut u8,crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute;
+(VisualEffect)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-visualeffect")]
-impl < __T : IVisualEffect > IVisualEffectMethods for __T { }
+#[cfg(feature="unity_engine-vfx-visualeffect")]impl<__T:IVisualEffect>IVisualEffectMethods for __T{}
 
-#[cfg(feature = "unity_engine-vfx-visualeffect")]
-impl VisualEffect { pub fn get_visual_effect_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisualEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_vfx_event_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisualEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn invoke_get_cached_event_attribute_for_output_event_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisualEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn invoke_output_event_received_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisualEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-vfx-visualeffect")]impl VisualEffect{pub fn get_visual_effect_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_vfx_event_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn invoke_get_cached_event_attribute_for_output_event_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn invoke_output_event_received_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-vfx-visualeffect")]
 #[doc(hidden)]

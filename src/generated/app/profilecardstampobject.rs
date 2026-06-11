@@ -4,44 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampobject/ProfileCardStampObject.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampObject")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ProfileCardStampObject {
-# [offset (24)] # [rename (name = "m_RectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (32)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_FrameObject")] pub m_frame_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_InitialSize")] pub m_initial_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (56)] # [rename (name = "m_Scale")] pub m_scale : crate :: unity_engine :: vector2 :: Vector2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampobject/ProfileCardStampObject.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampObject")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ProfileCardStampObject{#[offset(24)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_FrameObject")]pub m_frame_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_InitialSize")]pub m_initial_size:crate::unity_engine::vector2::Vector2, #[offset(56)]#[rename(name="m_Scale")]pub m_scale:crate::unity_engine::vector2::Vector2,}
 
 }
 
 #[cfg(feature = "app-profilecardstampobject-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardstampobject")]
-pub trait IProfileCardStampObjectMethods : IProfileCardStampObject { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ProfileCardStampObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfb570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < ProfileCardStampObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfb5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetScale(crate::unity_engine::vector2::Vector2)` overload"] fn set_scale (self , scale : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < ProfileCardStampObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampObject , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfb640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (scale) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardStampObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfb700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardstampobject")]pub trait IProfileCardStampObjectMethods:IProfileCardStampObject{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ProfileCardStampObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfb570usize)as*mut u8,();
+(ProfileCardStampObject)__receiver)}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <ProfileCardStampObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfb5a0usize)as*mut u8,();
+(ProfileCardStampObject)__receiver)}
+}
+#[doc="`SetScale(crate::unity_engine::vector2::Vector2)` overload"]fn set_scale(self,scale:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <ProfileCardStampObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfb640usize)as*mut u8,();
+(ProfileCardStampObject)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(scale))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardStampObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfb700usize)as*mut u8,();
+(ProfileCardStampObject)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardstampobject")]
-impl < __T : IProfileCardStampObject > IProfileCardStampObjectMethods for __T { }
+#[cfg(feature="app-profilecardstampobject")]impl<__T:IProfileCardStampObject>IProfileCardStampObjectMethods for __T{}
 
-#[cfg(feature = "app-profilecardstampobject")]
-impl ProfileCardStampObject { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-profilecardstampobject")]impl ProfileCardStampObject{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-profilecardstampobject")]
-impl ProfileCardStampObject {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampObject) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampObjectMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardstampobject")]impl ProfileCardStampObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampObject), ::core::stringify!(new),));
+ <Self as IProfileCardStampObjectMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardstampobject")]

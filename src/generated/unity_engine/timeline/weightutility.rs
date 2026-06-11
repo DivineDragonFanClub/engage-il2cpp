@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/weightutility/WeightUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "WeightUtility")] # [parent (crate :: system :: object :: Object)] pub struct WeightUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/weightutility/WeightUtility.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="WeightUtility")]#[parent(crate::system::object::Object)]pub struct WeightUtility{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-weightutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-weightutility")]
-impl WeightUtility { # [doc = "`NormalizeMixer(crate::unity_engine::playables::playable::Playable)` overload"] pub fn normalize_mixer (mixer : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35cfb50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mixer) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-weightutility")]impl WeightUtility{#[doc="`NormalizeMixer(crate::unity_engine::playables::playable::Playable)` overload"]pub fn normalize_mixer(mixer:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35cfb50usize)as*mut u8,f32;
+(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(mixer))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-weightutility")]
-impl WeightUtility { pub fn normalize_mixer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeightUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-weightutility")]impl WeightUtility{pub fn normalize_mixer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-timeline-weightutility")]
 #[doc(hidden)]

@@ -4,35 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopbasicmenuitem/TutorialListTopBasicMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListTopBasicMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct TutorialListTopBasicMenuItem {
-# [offset (100)] # [rename (name = "m_IsGetAllTutorial")] pub m_is_get_all_tutorial : bool ,
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallisttopbasicmenuitem/TutorialListTopBasicMenuItem.md"))]#[::unity2::class(namespace="",name="TutorialListTopBasicMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct TutorialListTopBasicMenuItem{#[offset(100)]#[rename(name="m_IsGetAllTutorial")]pub m_is_get_all_tutorial:bool, #[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "root-tutoriallisttopbasicmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
-pub trait ITutorialListTopBasicMenuItemMethods : ITutorialListTopBasicMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TutorialListTopBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListTopBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-tutoriallisttopbasicmenuitem")]pub trait ITutorialListTopBasicMenuItemMethods:ITutorialListTopBasicMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TutorialListTopBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3ac0usize)as*mut u8,();
+(TutorialListTopBasicMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
-impl < __T : ITutorialListTopBasicMenuItem > ITutorialListTopBasicMenuItemMethods for __T { }
+#[cfg(feature="root-tutoriallisttopbasicmenuitem")]impl<__T:ITutorialListTopBasicMenuItem>ITutorialListTopBasicMenuItemMethods for __T{}
 
-#[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
-impl TutorialListTopBasicMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-tutoriallisttopbasicmenuitem")]impl TutorialListTopBasicMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-tutoriallisttopbasicmenuitem")]
-impl TutorialListTopBasicMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TutorialListTopBasicMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as ITutorialListTopBasicMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-tutoriallisttopbasicmenuitem")]impl TutorialListTopBasicMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TutorialListTopBasicMenuItem), ::core::stringify!(new),));
+ <Self as ITutorialListTopBasicMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-tutoriallisttopbasicmenuitem")]

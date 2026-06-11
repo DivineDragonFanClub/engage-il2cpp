@@ -4,34 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescjump/ProcDescJump.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescJump")] # [parent (crate :: app :: procdesc :: ProcDesc)] pub struct ProcDescJump {
-# [offset (20)] # [rename (name = "m_Label")] pub m_label : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescjump/ProcDescJump.md"))]#[::unity2::class(namespace="App",name="ProcDescJump")]#[parent(crate::app::procdesc::ProcDesc)]pub struct ProcDescJump{#[offset(20)]#[rename(name="m_Label")]pub m_label:i32,}
 
 }
 
 #[cfg(feature = "app-procdescjump-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescjump")]
-pub trait IProcDescJumpMethods : IProcDescJump { # [doc = "`.ctor(i32)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProcDescJump as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescJump , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ae00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDescJump as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescJump , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } # [doc = "`get_Label()` overload"] fn get_label (self ,) -> i32 { unsafe { let __receiver = < ProcDescJump as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescJump , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescjump")]pub trait IProcDescJumpMethods:IProcDescJump{#[doc="`.ctor(i32)` overload"]fn ctor(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProcDescJump as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281ae00usize)as*mut u8,();
+(ProcDescJump)__receiver,(i32)::core::convert::Into::into(label))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescJump as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d200usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(ProcDescJump)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+#[doc="`get_Label()` overload"]fn get_label(self,)->i32{unsafe{let __receiver= <ProcDescJump as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d210usize)as*mut u8,i32;
+(ProcDescJump)__receiver)}
+}
+}
 
-#[cfg(feature = "app-procdescjump")]
-impl < __T : IProcDescJump > IProcDescJumpMethods for __T { }
+#[cfg(feature="app-procdescjump")]impl<__T:IProcDescJump>IProcDescJumpMethods for __T{}
 
-#[cfg(feature = "app-procdescjump")]
-impl ProcDescJump { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescJump as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescJump as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescJump as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-procdescjump")]impl ProcDescJump{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-procdescjump")]
-impl ProcDescJump {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (label : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescJump) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescJumpMethods > :: ctor (this , label) ; this }
+#[cfg(feature="app-procdescjump")]impl ProcDescJump{#[doc="`.ctor(i32)` — overload selector"]pub fn new(label:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescJump), ::core::stringify!(new),));
+ <Self as IProcDescJumpMethods> ::ctor(this,label);
+this}
 }
 
 #[cfg(feature = "app-procdescjump")]

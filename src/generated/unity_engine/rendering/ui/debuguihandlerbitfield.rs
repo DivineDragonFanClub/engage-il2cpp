@@ -4,46 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: { DebugUIHandlerWidget , IDebugUIHandlerWidget }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWidget,IDebugUIHandlerWidget}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerbitfield/DebugUIHandlerBitField.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerBitField")] # [parent (crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget)] pub struct DebugUIHandlerBitField {
-# [offset (88)] # [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
-# [offset (96)] # [rename (name = "valueToggle")] pub value_toggle : crate :: unity_engine :: rendering :: ui :: uifoldout :: UIFoldout ,
-# [offset (104)] # [rename (name = "toggles")] pub toggles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: ui :: debuguihandlerindirecttoggle :: DebugUIHandlerIndirectToggle > ,
-# [offset (112)] # [rename (name = "m_Field")] pub m_field : crate :: unity_engine :: rendering :: debugui :: DebugUI_BitField ,
-# [offset (120)] # [rename (name = "m_Container")] pub m_container : crate :: unity_engine :: rendering :: ui :: debuguihandlercontainer :: DebugUIHandlerContainer ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguihandlerbitfield/DebugUIHandlerBitField.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIHandlerBitField")]#[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]pub struct DebugUIHandlerBitField{#[offset(88)]#[rename(name="nameLabel")]pub name_label:crate::unity_engine::ui::text::Text, #[offset(96)]#[rename(name="valueToggle")]pub value_toggle:crate::unity_engine::rendering::ui::uifoldout::UIFoldout, #[offset(104)]#[rename(name="toggles")]pub toggles:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguihandlerindirecttoggle::DebugUIHandlerIndirectToggle> , #[offset(112)]#[rename(name="m_Field")]pub m_field:crate::unity_engine::rendering::debugui::DebugUI_BitField, #[offset(120)]#[rename(name="m_Container")]pub m_container:crate::unity_engine::rendering::ui::debuguihandlercontainer::DebugUIHandlerContainer,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerbitfield-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerbitfield")]
-pub trait IDebugUIHandlerBitFieldMethods : IDebugUIHandlerBitField { # [doc = "`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"] fn set_widget (self , widget : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget >) -> () { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353b830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (widget) , :: core :: option :: Option :: None) } } } # [doc = "`GetValue(i32)` overload"] fn get_value (self , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353bbd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SetValue(i32, bool)` overload"] fn set_value (self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353bc90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn on_selection (self , from_next : impl :: core :: convert :: Into < bool > , previous : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> bool { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , bool , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353bf00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from_next) , :: core :: convert :: Into :: into (previous) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselection()` overload"] fn on_deselection (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnIncrement(bool)` overload"] fn on_increment (self , fast : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fast) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecrement(bool)` overload"] fn on_decrement (self , fast : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fast) , :: core :: option :: Option :: None) } } } # [doc = "`OnAction()` overload"] fn on_action (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Next()` overload"] fn next (self ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerBitField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerBitField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerbitfield")]pub trait IDebugUIHandlerBitFieldMethods:IDebugUIHandlerBitField{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353b830usize)as*mut u8,();
+(DebugUIHandlerBitField)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Widget)::core::convert::Into::into(widget))}
+}
+#[doc="`GetValue(i32)` overload"]fn get_value(self,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353bbd0usize)as*mut u8,bool;
+(DebugUIHandlerBitField)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SetValue(i32, bool)` overload"]fn set_value(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353bc90usize)as*mut u8,();
+(DebugUIHandlerBitField)__receiver,(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(value))}
+}
+#[doc="`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn on_selection(self,from_next:impl::core::convert::Into<bool> ,previous:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353bf00usize)as*mut u8,bool;
+(DebugUIHandlerBitField)__receiver,(bool)::core::convert::Into::into(from_next),(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(previous))}
+}
+#[doc="`OnDeselection()` overload"]fn on_deselection(self,)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c240usize)as*mut u8,();
+(DebugUIHandlerBitField)__receiver)}
+}
+#[doc="`OnIncrement(bool)` overload"]fn on_increment(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c260usize)as*mut u8,();
+(DebugUIHandlerBitField)__receiver,(bool)::core::convert::Into::into(fast))}
+}
+#[doc="`OnDecrement(bool)` overload"]fn on_decrement(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c270usize)as*mut u8,();
+(DebugUIHandlerBitField)__receiver,(bool)::core::convert::Into::into(fast))}
+}
+#[doc="`OnAction()` overload"]fn on_action(self,)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c280usize)as*mut u8,();
+(DebugUIHandlerBitField)__receiver)}
+}
+#[doc="`Next()` overload"]fn next(self,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c2a0usize)as*mut u8,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+(DebugUIHandlerBitField)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerBitField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c460usize)as*mut u8,();
+(DebugUIHandlerBitField)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerbitfield")]
-impl < __T : IDebugUIHandlerBitField > IDebugUIHandlerBitFieldMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerbitfield")]impl<__T:IDebugUIHandlerBitField>IDebugUIHandlerBitFieldMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerbitfield")]
-impl DebugUIHandlerBitField { pub fn set_widget_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_deselection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_increment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_decrement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerBitField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerbitfield")]impl DebugUIHandlerBitField{pub fn set_widget_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_deselection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_increment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_decrement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerbitfield")]
-impl DebugUIHandlerBitField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerBitField) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerBitFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerbitfield")]impl DebugUIHandlerBitField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIHandlerBitField), ::core::stringify!(new),));
+ <Self as IDebugUIHandlerBitFieldMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerbitfield")]

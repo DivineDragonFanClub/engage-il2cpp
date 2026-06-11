@@ -4,38 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonreliancetalksequence/CommonRelianceTalkSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRelianceTalkSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct CommonRelianceTalkSequence {
-# [offset (112)] # [rename (name = "m_MessFileName")] pub m_mess_file_name : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_IsLoadedMessFile")] pub m_is_loaded_mess_file : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonreliancetalksequence/CommonRelianceTalkSequence.md"))]#[::unity2::class(namespace="App",name="CommonRelianceTalkSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct CommonRelianceTalkSequence{#[offset(112)]#[rename(name="m_MessFileName")]pub m_mess_file_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_IsLoadedMessFile")]pub m_is_loaded_mess_file:bool,}
 
 }
 
 #[cfg(feature = "app-commonreliancetalksequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commonreliancetalksequence")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CommonRelianceTalkSequence_unity2_raw { use super :: * ; pub unsafe fn create_mess_file_name (this : CommonRelianceTalkSequence , is_reverse : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CreateMessFileName") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CreateMessFileName" , < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (CommonRelianceTalkSequence , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , is_reverse , __mi) } pub unsafe fn create_mid (this : CommonRelianceTalkSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CreateMid") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CreateMid" , < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn level_up (this : CommonRelianceTalkSequence , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("LevelUp") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "LevelUp" , < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="app-commonreliancetalksequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CommonRelianceTalkSequence_unity2_raw{use super:: * ;
+pub unsafe fn create_mess_file_name(this:CommonRelianceTalkSequence,is_reverse:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreateMessFileName").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CreateMessFileName", <CommonRelianceTalkSequence as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(CommonRelianceTalkSequence,bool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_reverse,__mi)}
+pub unsafe fn create_mid(this:CommonRelianceTalkSequence,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreateMid").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CreateMid", <CommonRelianceTalkSequence as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(CommonRelianceTalkSequence, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn level_up(this:CommonRelianceTalkSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("LevelUp").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","LevelUp", <CommonRelianceTalkSequence as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(CommonRelianceTalkSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "app-commonreliancetalksequence")]
-pub trait ICommonRelianceTalkSequenceMethods : ICommonRelianceTalkSequence { # [doc = "`CreateDescs()` overload"] fn create_descs (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252fcc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252fcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252fd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252fe60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252feb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateMessFileName(bool)` overload"] fn create_mess_file_name (self , is_reverse : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonRelianceTalkSequence_unity2_raw :: create_mess_file_name (__receiver , :: core :: convert :: Into :: into (is_reverse) , :: core :: option :: Option :: None) } } # [doc = "`CreateMid()` overload"] fn create_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonRelianceTalkSequence_unity2_raw :: create_mid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`LevelUp()` overload"] fn level_up (self ,) -> () { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CommonRelianceTalkSequence_unity2_raw :: level_up (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_MessFileName()` overload"] fn get_mess_file_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252ff30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLoadedMessFile()` overload"] fn get_is_loaded_mess_file (self ,) -> bool { unsafe { let __receiver = < CommonRelianceTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRelianceTalkSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252ff40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonreliancetalksequence")]pub trait ICommonRelianceTalkSequenceMethods:ICommonRelianceTalkSequence{#[doc="`CreateDescs()` overload"]fn create_descs(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f9f0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(CommonRelianceTalkSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252fcc0usize)as*mut u8,();
+(CommonRelianceTalkSequence)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252fcf0usize)as*mut u8,();
+(CommonRelianceTalkSequence)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252fd00usize)as*mut u8,();
+(CommonRelianceTalkSequence)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252fe60usize)as*mut u8,();
+(CommonRelianceTalkSequence)__receiver)}
+}
+#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252feb0usize)as*mut u8,();
+(CommonRelianceTalkSequence)__receiver)}
+}
+#[doc="`CreateMessFileName(bool)` overload"]fn create_mess_file_name(self,is_reverse:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__CommonRelianceTalkSequence_unity2_raw::create_mess_file_name(__receiver, ::core::convert::Into::into(is_reverse), ::core::option::Option::None)}
+}
+#[doc="`CreateMid()` overload"]fn create_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__CommonRelianceTalkSequence_unity2_raw::create_mid(__receiver, ::core::option::Option::None)}
+}
+#[doc="`LevelUp()` overload"]fn level_up(self,)->(){unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__CommonRelianceTalkSequence_unity2_raw::level_up(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_MessFileName()` overload"]fn get_mess_file_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252ff30usize)as*mut u8, ::unity2::Il2CppString;
+(CommonRelianceTalkSequence)__receiver)}
+}
+#[doc="`get_IsLoadedMessFile()` overload"]fn get_is_loaded_mess_file(self,)->bool{unsafe{let __receiver= <CommonRelianceTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252ff40usize)as*mut u8,bool;
+(CommonRelianceTalkSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-commonreliancetalksequence")]
-impl < __T : ICommonRelianceTalkSequence > ICommonRelianceTalkSequenceMethods for __T { }
+#[cfg(feature="app-commonreliancetalksequence")]impl<__T:ICommonRelianceTalkSequence>ICommonRelianceTalkSequenceMethods for __T{}
 
-#[cfg(feature = "app-commonreliancetalksequence")]
-impl CommonRelianceTalkSequence { pub fn create_descs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_mess_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn level_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_mess_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_loaded_mess_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRelianceTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-commonreliancetalksequence")]impl CommonRelianceTalkSequence{pub fn create_descs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_mess_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn level_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_mess_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_loaded_mess_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-commonreliancetalksequence")]
-impl CommonRelianceTalkSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRelianceTalkSequence) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRelianceTalkSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-commonreliancetalksequence")]impl CommonRelianceTalkSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRelianceTalkSequence), ::core::stringify!(new),));
+ <Self as ICommonRelianceTalkSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-commonreliancetalksequence")]

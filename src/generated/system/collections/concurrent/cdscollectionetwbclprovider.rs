@@ -4,33 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/cdscollectionetwbclprovider/CDSCollectionETWBCLProvider.md"))] # [:: unity2 :: class (namespace = "System.Collections.Concurrent" , name = "CDSCollectionETWBCLProvider")] pub struct CDSCollectionETWBCLProvider {
-# [static_field] # [rename (name = "Log")] pub log : crate :: system :: collections :: concurrent :: cdscollectionetwbclprovider :: CDSCollectionETWBCLProvider ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/concurrent/cdscollectionetwbclprovider/CDSCollectionETWBCLProvider.md"))]#[::unity2::class(namespace="System.Collections.Concurrent",name="CDSCollectionETWBCLProvider")]pub struct CDSCollectionETWBCLProvider{#[static_field]#[rename(name="Log")]pub log:crate::system::collections::concurrent::cdscollectionetwbclprovider::CDSCollectionETWBCLProvider,}
 
 }
 
 #[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
-impl CDSCollectionETWBCLProvider { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3399d10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-concurrent-cdscollectionetwbclprovider")]impl CDSCollectionETWBCLProvider{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3399d10usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
-pub trait ICDSCollectionETWBCLProviderMethods : ICDSCollectionETWBCLProvider { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CDSCollectionETWBCLProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CDSCollectionETWBCLProvider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3399c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ConcurrentDictionary_AcquiringAllLocks(i32)` overload"] fn concurrent_dictionary_acquiring_all_locks (self , num_of_buckets : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CDSCollectionETWBCLProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CDSCollectionETWBCLProvider , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3399d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (num_of_buckets) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-concurrent-cdscollectionetwbclprovider")]pub trait ICDSCollectionETWBCLProviderMethods:ICDSCollectionETWBCLProvider{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CDSCollectionETWBCLProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3399c90usize)as*mut u8,();
+(CDSCollectionETWBCLProvider)__receiver)}
+}
+#[doc="`ConcurrentDictionary_AcquiringAllLocks(i32)` overload"]fn concurrent_dictionary_acquiring_all_locks(self,num_of_buckets:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CDSCollectionETWBCLProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3399d00usize)as*mut u8,();
+(CDSCollectionETWBCLProvider)__receiver,(i32)::core::convert::Into::into(num_of_buckets))}
+}
+}
 
-#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
-impl < __T : ICDSCollectionETWBCLProvider > ICDSCollectionETWBCLProviderMethods for __T { }
+#[cfg(feature="system-collections-concurrent-cdscollectionetwbclprovider")]impl<__T:ICDSCollectionETWBCLProvider>ICDSCollectionETWBCLProviderMethods for __T{}
 
-#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
-impl CDSCollectionETWBCLProvider { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CDSCollectionETWBCLProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn concurrent_dictionary_acquiring_all_locks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CDSCollectionETWBCLProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CDSCollectionETWBCLProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-collections-concurrent-cdscollectionetwbclprovider")]impl CDSCollectionETWBCLProvider{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn concurrent_dictionary_acquiring_all_locks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]
-impl CDSCollectionETWBCLProvider {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CDSCollectionETWBCLProvider) , :: core :: stringify ! (new) ,)) ; < Self as ICDSCollectionETWBCLProviderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-concurrent-cdscollectionetwbclprovider")]impl CDSCollectionETWBCLProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CDSCollectionETWBCLProvider), ::core::stringify!(new),));
+ <Self as ICDSCollectionETWBCLProviderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-concurrent-cdscollectionetwbclprovider")]

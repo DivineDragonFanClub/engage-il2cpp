@@ -4,41 +4,171 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingassistdata/FishingAssistData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingAssistData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingassistdata :: FishingAssistData >)] pub struct FishingAssistData {
-# [offset (88)] # [rename (name = "Param")] pub param : :: unity2 :: Array < f32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingassistdata/FishingAssistData.md"))]#[::unity2::class(namespace="App",name="FishingAssistData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::fishingassistdata::FishingAssistData>)]pub struct FishingAssistData{#[offset(88)]#[rename(name="Param")]pub param: ::unity2::Array<f32> ,}
 
 }
 
 #[cfg(feature = "app-fishingassistdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingassistdata")]
-impl FishingAssistData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec810usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingassistdata")]impl FishingAssistData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ec810usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-fishingassistdata")]
-pub trait IFishingAssistDataMethods : IFishingAssistData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_00()` overload"] fn get_level_00 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_00(f32)` overload"] fn set_level_00 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_01()` overload"] fn get_level_01 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_01(f32)` overload"] fn set_level_01 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_02()` overload"] fn get_level_02 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_02(f32)` overload"] fn set_level_02 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_03()` overload"] fn get_level_03 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_03(f32)` overload"] fn set_level_03 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_04()` overload"] fn get_level_04 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_04(f32)` overload"] fn set_level_04 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_05()` overload"] fn get_level_05 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_05(f32)` overload"] fn set_level_05 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_06()` overload"] fn get_level_06 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_06(f32)` overload"] fn set_level_06 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec6d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_07()` overload"] fn get_level_07 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_07(f32)` overload"] fn set_level_07 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec6f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_08()` overload"] fn get_level_08 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_08(f32)` overload"] fn set_level_08 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_09()` overload"] fn get_level_09 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_09(f32)` overload"] fn set_level_09 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level_10()` overload"] fn get_level_10 (self ,) -> f32 { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level_10(f32)` overload"] fn set_level_10 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < FishingAssistData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingAssistData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ec8c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingassistdata")]pub trait IFishingAssistDataMethods:IFishingAssistData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec5e0usize)as*mut u8, ::unity2::Il2CppString;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec5f0usize)as*mut u8,();
+(FishingAssistData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_00()` overload"]fn get_level_00(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec600usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_00(f32)` overload"]fn set_level_00(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec610usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_01()` overload"]fn get_level_01(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec620usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_01(f32)` overload"]fn set_level_01(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec630usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_02()` overload"]fn get_level_02(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec640usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_02(f32)` overload"]fn set_level_02(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec650usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_03()` overload"]fn get_level_03(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec660usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_03(f32)` overload"]fn set_level_03(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec670usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_04()` overload"]fn get_level_04(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec680usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_04(f32)` overload"]fn set_level_04(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec690usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_05()` overload"]fn get_level_05(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec6a0usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_05(f32)` overload"]fn set_level_05(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec6b0usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_06()` overload"]fn get_level_06(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec6c0usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_06(f32)` overload"]fn set_level_06(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec6d0usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_07()` overload"]fn get_level_07(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec6e0usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_07(f32)` overload"]fn set_level_07(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec6f0usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_08()` overload"]fn get_level_08(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec700usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_08(f32)` overload"]fn set_level_08(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec710usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_09()` overload"]fn get_level_09(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec720usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_09(f32)` overload"]fn set_level_09(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec730usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level_10()` overload"]fn get_level_10(self,)->f32{unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec740usize)as*mut u8,f32;
+(FishingAssistData)__receiver)}
+}
+#[doc="`set_Level_10(f32)` overload"]fn set_level_10(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec750usize)as*mut u8,();
+(FishingAssistData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec760usize)as*mut u8,();
+(FishingAssistData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <FishingAssistData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec8c0usize)as*mut u8,();
+(FishingAssistData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingassistdata")]
-impl < __T : IFishingAssistData > IFishingAssistDataMethods for __T { }
+#[cfg(feature="app-fishingassistdata")]impl<__T:IFishingAssistData>IFishingAssistDataMethods for __T{}
 
-#[cfg(feature = "app-fishingassistdata")]
-impl FishingAssistData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_level_00_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_level_00_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_level_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_level_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_level_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_level_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_level_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_level_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_level_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_level_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_level_05_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_level_05_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_level_06_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_level_06_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_level_07_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_level_07_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_level_08_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_level_08_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_level_09_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_level_09_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_level_10_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_level_10_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingAssistData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } }
+#[cfg(feature="app-fishingassistdata")]impl FishingAssistData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_level_00_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_level_00_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_level_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_level_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_level_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_level_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_level_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_level_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_level_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_level_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_level_05_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_level_05_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_level_06_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_level_06_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_level_07_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_level_07_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_level_08_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_level_08_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_level_09_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_level_09_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_level_10_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_level_10_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+}
 
-#[cfg(feature = "app-fishingassistdata")]
-impl FishingAssistData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingAssistData) , :: core :: stringify ! (new) ,)) ; < Self as IFishingAssistDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingassistdata")]impl FishingAssistData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingAssistData), ::core::stringify!(new),));
+ <Self as IFishingAssistDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingassistdata")]

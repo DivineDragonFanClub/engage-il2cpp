@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dialogitemconfirmcancel/DialogItemConfirmCancel.md"))] # [:: unity2 :: class (namespace = "App" , name = "DialogItemConfirmCancel")] # [parent (crate :: app :: basicdialogitem :: BasicDialogItem)] pub struct DialogItemConfirmCancel {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dialogitemconfirmcancel/DialogItemConfirmCancel.md"))]#[::unity2::class(namespace="App",name="DialogItemConfirmCancel")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct DialogItemConfirmCancel{}
 
 }
 
 #[cfg(feature = "app-dialogitemconfirmcancel-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dialogitemconfirmcancel")]
-pub trait IDialogItemConfirmCancelMethods : IDialogItemConfirmCancel { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DialogItemConfirmCancel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DialogItemConfirmCancel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cec750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dialogitemconfirmcancel")]pub trait IDialogItemConfirmCancelMethods:IDialogItemConfirmCancel{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DialogItemConfirmCancel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cec750usize)as*mut u8,();
+(DialogItemConfirmCancel)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dialogitemconfirmcancel")]
-impl < __T : IDialogItemConfirmCancel > IDialogItemConfirmCancelMethods for __T { }
+#[cfg(feature="app-dialogitemconfirmcancel")]impl<__T:IDialogItemConfirmCancel>IDialogItemConfirmCancelMethods for __T{}
 
-#[cfg(feature = "app-dialogitemconfirmcancel")]
-impl DialogItemConfirmCancel { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DialogItemConfirmCancel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-dialogitemconfirmcancel")]impl DialogItemConfirmCancel{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-dialogitemconfirmcancel")]
-impl DialogItemConfirmCancel {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DialogItemConfirmCancel) , :: core :: stringify ! (new) ,)) ; < Self as IDialogItemConfirmCancelMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dialogitemconfirmcancel")]impl DialogItemConfirmCancel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DialogItemConfirmCancel), ::core::stringify!(new),));
+ <Self as IDialogItemConfirmCancelMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dialogitemconfirmcancel")]

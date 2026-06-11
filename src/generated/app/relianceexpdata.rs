@@ -4,39 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relianceexpdata/RelianceExpData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelianceExpData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relianceexpdata :: RelianceExpData >)] pub struct RelianceExpData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relianceexpdata/RelianceExpData.md"))]#[::unity2::class(namespace="App",name="RelianceExpData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::relianceexpdata::RelianceExpData>)]pub struct RelianceExpData{}
 
 }
 
 #[cfg(feature = "app-relianceexpdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relianceexpdata")]
-impl RelianceExpData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010a00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relianceexpdata")]impl RelianceExpData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2010a00usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-relianceexpdata")]
-pub trait IRelianceExpDataMethods : IRelianceExpData { # [doc = "`get_Rexid()` overload"] fn get_rexid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Rexid(::unity2::Il2CppString)` overload"] fn set_rexid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExpC()` overload"] fn get_exp_c (self ,) -> u8 { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExpC(u8)` overload"] fn set_exp_c (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExpB()` overload"] fn get_exp_b (self ,) -> u8 { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExpB(u8)` overload"] fn set_exp_b (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010b00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExpA()` overload"] fn get_exp_a (self ,) -> u8 { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExpA(u8)` overload"] fn set_exp_a (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelianceExpData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelianceExpData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2010b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relianceexpdata")]pub trait IRelianceExpDataMethods:IRelianceExpData{#[doc="`get_Rexid()` overload"]fn get_rexid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010ab0usize)as*mut u8, ::unity2::Il2CppString;
+(RelianceExpData)__receiver)}
+}
+#[doc="`set_Rexid(::unity2::Il2CppString)` overload"]fn set_rexid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010ac0usize)as*mut u8,();
+(RelianceExpData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExpC()` overload"]fn get_exp_c(self,)->u8{unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010ad0usize)as*mut u8,u8;
+(RelianceExpData)__receiver)}
+}
+#[doc="`set_ExpC(u8)` overload"]fn set_exp_c(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010ae0usize)as*mut u8,();
+(RelianceExpData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExpB()` overload"]fn get_exp_b(self,)->u8{unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010af0usize)as*mut u8,u8;
+(RelianceExpData)__receiver)}
+}
+#[doc="`set_ExpB(u8)` overload"]fn set_exp_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010b00usize)as*mut u8,();
+(RelianceExpData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExpA()` overload"]fn get_exp_a(self,)->u8{unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010b10usize)as*mut u8,u8;
+(RelianceExpData)__receiver)}
+}
+#[doc="`set_ExpA(u8)` overload"]fn set_exp_a(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010b20usize)as*mut u8,();
+(RelianceExpData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010b30usize)as*mut u8, ::unity2::Il2CppString;
+(RelianceExpData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelianceExpData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2010b40usize)as*mut u8,();
+(RelianceExpData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relianceexpdata")]
-impl < __T : IRelianceExpData > IRelianceExpDataMethods for __T { }
+#[cfg(feature="app-relianceexpdata")]impl<__T:IRelianceExpData>IRelianceExpDataMethods for __T{}
 
-#[cfg(feature = "app-relianceexpdata")]
-impl RelianceExpData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_rexid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_rexid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_exp_c_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_exp_c_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_exp_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_exp_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_exp_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_exp_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelianceExpData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-relianceexpdata")]impl RelianceExpData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_rexid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_rexid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_exp_c_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_exp_c_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_exp_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_exp_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_exp_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_exp_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-relianceexpdata")]
-impl RelianceExpData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelianceExpData) , :: core :: stringify ! (new) ,)) ; < Self as IRelianceExpDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relianceexpdata")]impl RelianceExpData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelianceExpData), ::core::stringify!(new),));
+ <Self as IRelianceExpDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relianceexpdata")]

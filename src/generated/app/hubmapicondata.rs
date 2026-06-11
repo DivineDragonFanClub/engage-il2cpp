@@ -4,39 +4,95 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmapicondata/HubMapIconData.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMapIconData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: hubmapicondata :: HubMapIconData >)] pub struct HubMapIconData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmapicondata/HubMapIconData.md"))]#[::unity2::class(namespace="App",name="HubMapIconData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::hubmapicondata::HubMapIconData>)]pub struct HubMapIconData{}
 
 }
 
 #[cfg(feature = "app-hubmapicondata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmapicondata")]
-impl HubMapIconData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1970usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGetByIconName(::unity2::Il2CppString)` overload"] pub fn try_get_by_icon_name (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: hubmapicondata :: HubMapIconData { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubmapicondata :: HubMapIconData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1ab0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmapicondata")]impl HubMapIconData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b1970usize)as*mut u8,();
+)}
+}
+#[doc="`TryGetByIconName(::unity2::Il2CppString)` overload"]pub fn try_get_by_icon_name(icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::hubmapicondata::HubMapIconData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b1ab0usize)as*mut u8,crate::app::hubmapicondata::HubMapIconData;
+(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+}
 
-#[cfg(feature = "app-hubmapicondata")]
-pub trait IHubMapIconDataMethods : IHubMapIconData { # [doc = "`get_DisposName()` overload"] fn get_dispos_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DisposName(::unity2::Il2CppString)` overload"] fn set_dispos_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IconName()` overload"] fn get_icon_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IconName(::unity2::Il2CppString)` overload"] fn set_icon_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LargeScale()` overload"] fn get_large_scale (self ,) -> f32 { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LargeScale(f32)` overload"] fn set_large_scale (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SmallScale()` overload"] fn get_small_scale (self ,) -> f32 { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SmallScale(f32)` overload"] fn set_small_scale (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMapIconData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMapIconData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b1bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmapicondata")]pub trait IHubMapIconDataMethods:IHubMapIconData{#[doc="`get_DisposName()` overload"]fn get_dispos_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1a20usize)as*mut u8, ::unity2::Il2CppString;
+(HubMapIconData)__receiver)}
+}
+#[doc="`set_DisposName(::unity2::Il2CppString)` overload"]fn set_dispos_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1a30usize)as*mut u8,();
+(HubMapIconData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_IconName()` overload"]fn get_icon_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1a40usize)as*mut u8, ::unity2::Il2CppString;
+(HubMapIconData)__receiver)}
+}
+#[doc="`set_IconName(::unity2::Il2CppString)` overload"]fn set_icon_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1a50usize)as*mut u8,();
+(HubMapIconData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LargeScale()` overload"]fn get_large_scale(self,)->f32{unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1a60usize)as*mut u8,f32;
+(HubMapIconData)__receiver)}
+}
+#[doc="`set_LargeScale(f32)` overload"]fn set_large_scale(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1a70usize)as*mut u8,();
+(HubMapIconData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SmallScale()` overload"]fn get_small_scale(self,)->f32{unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1a80usize)as*mut u8,f32;
+(HubMapIconData)__receiver)}
+}
+#[doc="`set_SmallScale(f32)` overload"]fn set_small_scale(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1a90usize)as*mut u8,();
+(HubMapIconData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1aa0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMapIconData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMapIconData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b1bb0usize)as*mut u8,();
+(HubMapIconData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmapicondata")]
-impl < __T : IHubMapIconData > IHubMapIconDataMethods for __T { }
+#[cfg(feature="app-hubmapicondata")]impl<__T:IHubMapIconData>IHubMapIconDataMethods for __T{}
 
-#[cfg(feature = "app-hubmapicondata")]
-impl HubMapIconData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_dispos_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_dispos_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_large_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_large_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_small_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_small_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn try_get_by_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMapIconData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-hubmapicondata")]impl HubMapIconData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_dispos_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_dispos_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_large_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_large_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_small_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_small_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_get_by_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-hubmapicondata")]
-impl HubMapIconData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMapIconData) , :: core :: stringify ! (new) ,)) ; < Self as IHubMapIconDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmapicondata")]impl HubMapIconData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMapIconData), ::core::stringify!(new),));
+ <Self as IHubMapIconDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmapicondata")]

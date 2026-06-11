@@ -4,35 +4,78 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resourcesapi/ResourcesAPI.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ResourcesAPI")] # [parent (crate :: system :: object :: Object)] pub struct ResourcesAPI {
-# [static_field] # [rename (name = "s_DefaultAPI")] pub s_default_api : crate :: unity_engine :: resourcesapi :: ResourcesAPI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resourcesapi/ResourcesAPI.md"))]#[::unity2::class(namespace="UnityEngine",name="ResourcesAPI")]#[parent(crate::system::object::Object)]pub struct ResourcesAPI{#[static_field]#[rename(name="s_DefaultAPI")]pub s_default_api:crate::unity_engine::resourcesapi::ResourcesAPI,}
 
 }
 
 #[cfg(feature = "unity_engine-resourcesapi-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resourcesapi")]
-impl ResourcesAPI { # [doc = "`get_ActiveAPI()` overload"] pub fn get_active_api () -> crate :: unity_engine :: resourcesapi :: ResourcesAPI { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resourcesapi :: ResourcesAPI = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f890f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_overrideAPI()` overload"] pub fn get_override_api () -> crate :: unity_engine :: resourcesapi :: ResourcesAPI { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resourcesapi :: ResourcesAPI = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89410usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89880usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resourcesapi")]impl ResourcesAPI{#[doc="`get_ActiveAPI()` overload"]pub fn get_active_api()->crate::unity_engine::resourcesapi::ResourcesAPI{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f890f0usize)as*mut u8,crate::unity_engine::resourcesapi::ResourcesAPI;
+)}
+}
+#[doc="`get_overrideAPI()` overload"]pub fn get_override_api()->crate::unity_engine::resourcesapi::ResourcesAPI{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89410usize)as*mut u8,crate::unity_engine::resourcesapi::ResourcesAPI;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89880usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-resourcesapi")]
-pub trait IResourcesAPIMethods : IResourcesAPI { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ResourcesAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesAPI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindObjectsOfTypeAll(::unity2::SystemType)` overload"] fn find_objects_of_type_all (self , system_type_instance : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > { unsafe { let __receiver = < ResourcesAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesAPI , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (system_type_instance) , :: core :: option :: Option :: None) } } } # [doc = "`FindShaderByName(::unity2::Il2CppString)` overload"] fn find_shader_by_name (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: shader :: Shader { unsafe { let __receiver = < ResourcesAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesAPI , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: shader :: Shader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Il2CppString, ::unity2::SystemType)` overload"] fn load (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , system_type_instance : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: unity_engine :: object_2 :: Object_2 { unsafe { let __receiver = < ResourcesAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesAPI , :: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: object_2 :: Object_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f895d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (system_type_instance) , :: core :: option :: Option :: None) } } } # [doc = "`LoadAll(::unity2::Il2CppString, ::unity2::SystemType)` overload"] fn load_all (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , system_type_instance : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > { unsafe { let __receiver = < ResourcesAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesAPI , :: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: object_2 :: Object_2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (system_type_instance) , :: core :: option :: Option :: None) } } } # [doc = "`LoadAsync(::unity2::Il2CppString, ::unity2::SystemType)` overload"] fn load_async (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , system_type_instance : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: unity_engine :: resourcerequest :: ResourceRequest { unsafe { let __receiver = < ResourcesAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesAPI , :: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resourcerequest :: ResourceRequest = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (system_type_instance) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadAsset(crate::unity_engine::object_2::Object_2)` overload"] fn unload_asset (self , asset_to_unload : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { let __receiver = < ResourcesAPI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourcesAPI , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f897e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (asset_to_unload) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resourcesapi")]pub trait IResourcesAPIMethods:IResourcesAPI{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f89480usize)as*mut u8,();
+(ResourcesAPI)__receiver)}
+}
+#[doc="`FindObjectsOfTypeAll(::unity2::SystemType)` overload"]fn find_objects_of_type_all(self,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f89490usize)as*mut u8, ::unity2::Array<crate::unity_engine::object_2::Object_2> ;
+(ResourcesAPI)__receiver,(::unity2::SystemType)::core::convert::Into::into(system_type_instance))}
+}
+#[doc="`FindShaderByName(::unity2::Il2CppString)` overload"]fn find_shader_by_name(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::shader::Shader{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f89530usize)as*mut u8,crate::unity_engine::shader::Shader;
+(ResourcesAPI)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Load(::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn load(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f895d0usize)as*mut u8,crate::unity_engine::object_2::Object_2;
+(ResourcesAPI)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::SystemType)::core::convert::Into::into(system_type_instance))}
+}
+#[doc="`LoadAll(::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn load_all(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f89670usize)as*mut u8, ::unity2::Array<crate::unity_engine::object_2::Object_2> ;
+(ResourcesAPI)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::SystemType)::core::convert::Into::into(system_type_instance))}
+}
+#[doc="`LoadAsync(::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn load_async(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::resourcerequest::ResourceRequest{unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f89710usize)as*mut u8,crate::unity_engine::resourcerequest::ResourceRequest;
+(ResourcesAPI)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::SystemType)::core::convert::Into::into(system_type_instance))}
+}
+#[doc="`UnloadAsset(crate::unity_engine::object_2::Object_2)` overload"]fn unload_asset(self,asset_to_unload:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{let __receiver= <ResourcesAPI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f897e0usize)as*mut u8,();
+(ResourcesAPI)__receiver,(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(asset_to_unload))}
+}
+}
 
-#[cfg(feature = "unity_engine-resourcesapi")]
-impl < __T : IResourcesAPI > IResourcesAPIMethods for __T { }
+#[cfg(feature="unity_engine-resourcesapi")]impl<__T:IResourcesAPI>IResourcesAPIMethods for __T{}
 
-#[cfg(feature = "unity_engine-resourcesapi")]
-impl ResourcesAPI { pub fn get_active_api_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_override_api_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn find_objects_of_type_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn find_shader_by_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn load_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn unload_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourcesAPI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-resourcesapi")]impl ResourcesAPI{pub fn get_active_api_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_override_api_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn find_objects_of_type_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn find_shader_by_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn load_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn unload_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "unity_engine-resourcesapi")]
-impl ResourcesAPI {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ResourcesAPI) , :: core :: stringify ! (new) ,)) ; < Self as IResourcesAPIMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-resourcesapi")]impl ResourcesAPI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ResourcesAPI), ::core::stringify!(new),));
+ <Self as IResourcesAPIMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-resourcesapi")]

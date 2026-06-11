@@ -4,38 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terraineditor/TerrainEditor.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainEditor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TerrainEditor {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terraineditor/TerrainEditor.md"))]#[::unity2::class(namespace="App",name="TerrainEditor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TerrainEditor{}
 
 }
 
 #[cfg(feature = "app-terraineditor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-terraineditor")]
-pub trait ITerrainEditorMethods : ITerrainEditor { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainEditor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainEditor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e3cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-terraineditor")]pub trait ITerrainEditorMethods:ITerrainEditor{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainEditor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3cc0usize)as*mut u8,();
+(TerrainEditor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-terraineditor")]
-impl < __T : ITerrainEditor > ITerrainEditorMethods for __T { }
+#[cfg(feature="app-terraineditor")]impl<__T:ITerrainEditor>ITerrainEditorMethods for __T{}
 
-#[cfg(feature = "app-terraineditor")]
-impl TerrainEditor { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainEditor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-terraineditor")]impl TerrainEditor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-terraineditor")]
-impl TerrainEditor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainEditor) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainEditorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-terraineditor")]impl TerrainEditor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainEditor), ::core::stringify!(new),));
+ <Self as ITerrainEditorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-terraineditor")]

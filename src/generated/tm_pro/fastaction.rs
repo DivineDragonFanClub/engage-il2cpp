@@ -4,33 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/fastaction/FastAction.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "FastAction")] # [parent (crate :: system :: object :: Object)] pub struct FastAction {
-# [offset (16)] # [rename (name = "delegates")] pub delegates : crate :: system :: collections :: generic :: linkedlist_1 :: LinkedList_1 < crate :: system :: action :: Action > ,
-# [offset (24)] # [rename (name = "lookup")] pub lookup : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: system :: action :: Action , crate :: system :: collections :: generic :: linkedlistnode_1 :: LinkedListNode_1 < crate :: system :: action :: Action > > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/fastaction/FastAction.md"))]#[::unity2::class(namespace="TMPro",name="FastAction")]#[parent(crate::system::object::Object)]pub struct FastAction{#[offset(16)]#[rename(name="delegates")]pub delegates:crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::system::action::Action> , #[offset(24)]#[rename(name="lookup")]pub lookup:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::system::action::Action,crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<crate::system::action::Action> > ,}
 
 }
 
 #[cfg(feature = "tm_pro-fastaction-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-fastaction")]
-pub trait IFastActionMethods : IFastAction { # [doc = "`Add(crate::system::action::Action)` overload"] fn add (self , rhs : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < FastAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FastAction , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8ba30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::system::action::Action)` overload"] fn remove (self , rhs : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < FastAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FastAction , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8baf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`Call()` overload"] fn call (self ,) -> () { unsafe { let __receiver = < FastAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FastAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8bbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FastAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FastAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8bc40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-fastaction")]pub trait IFastActionMethods:IFastAction{#[doc="`Add(crate::system::action::Action)` overload"]fn add(self,rhs:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <FastAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8ba30usize)as*mut u8,();
+(FastAction)__receiver,(crate::system::action::Action)::core::convert::Into::into(rhs))}
+}
+#[doc="`Remove(crate::system::action::Action)` overload"]fn remove(self,rhs:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <FastAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8baf0usize)as*mut u8,();
+(FastAction)__receiver,(crate::system::action::Action)::core::convert::Into::into(rhs))}
+}
+#[doc="`Call()` overload"]fn call(self,)->(){unsafe{let __receiver= <FastAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8bbb0usize)as*mut u8,();
+(FastAction)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FastAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8bc40usize)as*mut u8,();
+(FastAction)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-fastaction")]
-impl < __T : IFastAction > IFastActionMethods for __T { }
+#[cfg(feature="tm_pro-fastaction")]impl<__T:IFastAction>IFastActionMethods for __T{}
 
-#[cfg(feature = "tm_pro-fastaction")]
-impl FastAction { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FastAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FastAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FastAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FastAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="tm_pro-fastaction")]impl FastAction{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "tm_pro-fastaction")]
-impl FastAction {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FastAction) , :: core :: stringify ! (new) ,)) ; < Self as IFastActionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-fastaction")]impl FastAction{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FastAction), ::core::stringify!(new),));
+ <Self as IFastActionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-fastaction")]

@@ -4,35 +4,55 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescwaitfunc/ProcDescWaitFunc.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescWaitFunc")] # [parent (crate :: app :: procdesc :: ProcDesc)] pub struct ProcDescWaitFunc {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescwaitfunc/ProcDescWaitFunc.md"))]#[::unity2::class(namespace="App",name="ProcDescWaitFunc")]#[parent(crate::app::procdesc::ProcDesc)]pub struct ProcDescWaitFunc{}
 
 }
 
 #[cfg(feature = "app-procdescwaitfunc-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescwaitfunc")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProcDescWaitFunc_unity2_raw { use super :: * ; pub unsafe fn is_wait (this : ProcDescWaitFunc , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IsWait") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IsWait" , < ProcDescWaitFunc as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ProcDescWaitFunc , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , inst , __mi) } }
+#[cfg(feature="app-procdescwaitfunc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescWaitFunc_unity2_raw{use super:: * ;
+pub unsafe fn is_wait(this:ProcDescWaitFunc,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsWait").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsWait", <ProcDescWaitFunc as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ProcDescWaitFunc,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+}
 
-#[cfg(feature = "app-procdescwaitfunc")]
-pub trait IProcDescWaitFuncMethods : IProcDescWaitFunc { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProcDescWaitFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescWaitFunc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281da00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsWait(crate::app::procinst::ProcInst)` overload"] fn is_wait (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < ProcDescWaitFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescWaitFunc_unity2_raw :: is_wait (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDescWaitFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescWaitFunc , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281dc60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescwaitfunc")]pub trait IProcDescWaitFuncMethods:IProcDescWaitFunc{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProcDescWaitFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281da00usize)as*mut u8,();
+(ProcDescWaitFunc)__receiver)}
+}
+#[doc="`IsWait(crate::app::procinst::ProcInst)` overload"]fn is_wait(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <ProcDescWaitFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ProcDescWaitFunc_unity2_raw::is_wait(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescWaitFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281dc60usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(ProcDescWaitFunc)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdescwaitfunc")]
-impl < __T : IProcDescWaitFunc > IProcDescWaitFuncMethods for __T { }
+#[cfg(feature="app-procdescwaitfunc")]impl<__T:IProcDescWaitFunc>IProcDescWaitFuncMethods for __T{}
 
-#[cfg(feature = "app-procdescwaitfunc")]
-impl ProcDescWaitFunc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescWaitFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_wait_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescWaitFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescWaitFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-procdescwaitfunc")]impl ProcDescWaitFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_wait_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-procdescwaitfunc")]
-impl ProcDescWaitFunc {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescWaitFunc) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescWaitFuncMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-procdescwaitfunc")]impl ProcDescWaitFunc{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescWaitFunc), ::core::stringify!(new),));
+ <Self as IProcDescWaitFuncMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-procdescwaitfunc")]

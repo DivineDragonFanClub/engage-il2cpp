@@ -4,37 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/methodbody/MethodBody.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MethodBody")] # [parent (crate :: system :: object :: Object)] pub struct MethodBody {
-# [offset (16)] # [rename (name = "clauses")] pub clauses : :: unity2 :: Array < crate :: system :: reflection :: exceptionhandlingclause :: ExceptionHandlingClause > ,
-# [offset (24)] # [rename (name = "locals")] pub locals : :: unity2 :: Array < crate :: system :: reflection :: localvariableinfo :: LocalVariableInfo > ,
-# [offset (32)] # [rename (name = "il")] pub il : :: unity2 :: Array < u8 > ,
-# [offset (40)] # [rename (name = "init_locals")] pub init_locals : bool ,
-# [offset (44)] # [rename (name = "sig_token")] pub sig_token : i32 ,
-# [offset (48)] # [rename (name = "max_stack")] pub max_stack : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/methodbody/MethodBody.md"))]#[::unity2::class(namespace="System.Reflection",name="MethodBody")]#[parent(crate::system::object::Object)]pub struct MethodBody{#[offset(16)]#[rename(name="clauses")]pub clauses: ::unity2::Array<crate::system::reflection::exceptionhandlingclause::ExceptionHandlingClause> , #[offset(24)]#[rename(name="locals")]pub locals: ::unity2::Array<crate::system::reflection::localvariableinfo::LocalVariableInfo> , #[offset(32)]#[rename(name="il")]pub il: ::unity2::Array<u8> , #[offset(40)]#[rename(name="init_locals")]pub init_locals:bool, #[offset(44)]#[rename(name="sig_token")]pub sig_token:i32, #[offset(48)]#[rename(name="max_stack")]pub max_stack:i32,}
 
 }
 
 #[cfg(feature = "system-reflection-methodbody-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-methodbody")]
-pub trait IMethodBodyMethods : IMethodBody { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MethodBody as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodBody , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3375780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-methodbody")]pub trait IMethodBodyMethods:IMethodBody{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MethodBody as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3375780usize)as*mut u8,();
+(MethodBody)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-methodbody")]
-impl < __T : IMethodBody > IMethodBodyMethods for __T { }
+#[cfg(feature="system-reflection-methodbody")]impl<__T:IMethodBody>IMethodBodyMethods for __T{}
 
-#[cfg(feature = "system-reflection-methodbody")]
-impl MethodBody { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodBody as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-methodbody")]impl MethodBody{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-methodbody")]
-impl MethodBody {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MethodBody) , :: core :: stringify ! (new) ,)) ; < Self as IMethodBodyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-methodbody")]impl MethodBody{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MethodBody), ::core::stringify!(new),));
+ <Self as IMethodBodyMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-methodbody")]

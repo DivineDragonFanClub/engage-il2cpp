@@ -4,37 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: filecommon :: { FileCommon , IFileCommon }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::filecommon::{FileCommon,IFileCommon}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filedata/FileData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileData")] # [parent (crate :: app :: filecommon :: FileCommon)] pub struct FileData {
-# [offset (16)] # [rename (name = "m_State")] pub m_state : crate :: app :: filecommon :: FileCommon_State ,
-# [offset (24)] # [rename (name = "m_Path")] pub m_path : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_Data")] pub m_data : :: unity2 :: Array < u8 > ,
-# [offset (40)] # [rename (name = "m_Refer")] pub m_refer : crate :: app :: bindholder :: BindHolder ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/filedata/FileData.md"))]#[::unity2::class(namespace="App",name="FileData")]#[parent(crate::app::filecommon::FileCommon)]pub struct FileData{#[offset(16)]#[rename(name="m_State")]pub m_state:crate::app::filecommon::FileCommon_State, #[offset(24)]#[rename(name="m_Path")]pub m_path: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Data")]pub m_data: ::unity2::Array<u8> , #[offset(40)]#[rename(name="m_Refer")]pub m_refer:crate::app::bindholder::BindHolder,}
 
 }
 
 #[cfg(feature = "app-filedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-filedata")]
-pub trait IFileDataMethods : IFileData { # [doc = "`GetPath()` overload"] fn get_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetData()` overload"] fn get_data (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSize()` overload"] fn get_size (self ,) -> i32 { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dump(i32)` overload"] fn dump (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCrc32()` overload"] fn get_crc32 (self ,) -> u32 { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e8d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < FileData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26e9040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-filedata")]pub trait IFileDataMethods:IFileData{#[doc="`GetPath()` overload"]fn get_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8a10usize)as*mut u8, ::unity2::Il2CppString;
+(FileData)__receiver)}
+}
+#[doc="`GetData()` overload"]fn get_data(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8a20usize)as*mut u8, ::unity2::Array<u8> ;
+(FileData)__receiver)}
+}
+#[doc="`GetSize()` overload"]fn get_size(self,)->i32{unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8a30usize)as*mut u8,i32;
+(FileData)__receiver)}
+}
+#[doc="`Dump(i32)` overload"]fn dump(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8a50usize)as*mut u8,();
+(FileData)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8d80usize)as*mut u8,();
+(FileData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8de0usize)as*mut u8,();
+(FileData)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8e90usize)as*mut u8,();
+(FileData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8f30usize)as*mut u8,();
+(FileData)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8f40usize)as*mut u8,();
+(FileData)__receiver)}
+}
+#[doc="`GetCrc32()` overload"]fn get_crc32(self,)->u32{unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e8d10usize)as*mut u8,u32;
+(FileData)__receiver)}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <FileData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26e9040usize)as*mut u8,bool;
+(FileData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-filedata")]
-impl < __T : IFileData > IFileDataMethods for __T { }
+#[cfg(feature="app-filedata")]impl<__T:IFileData>IFileDataMethods for __T{}
 
-#[cfg(feature = "app-filedata")]
-impl FileData { pub fn get_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_crc32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-filedata")]impl FileData{pub fn get_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_crc32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-filedata")]
-impl FileData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileData) , :: core :: stringify ! (new) ,)) ; < Self as IFileDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-filedata")]impl FileData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileData), ::core::stringify!(new),));
+ <Self as IFileDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-filedata")]

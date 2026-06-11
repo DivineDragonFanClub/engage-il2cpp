@@ -4,46 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtextlistmenuitemcontent/ProfileCardTextListMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardTextListMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct ProfileCardTextListMenuItemContent {
-# [offset (72)] # [rename (name = "m_Text")] pub m_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_FixedCursorObject")] pub m_fixed_cursor_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_FixedCursorImage")] pub m_fixed_cursor_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (96)] # [rename (name = "m_FixedCursorFrameImage")] pub m_fixed_cursor_frame_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (104)] # [rename (name = "m_NewIconObject")] pub m_new_icon_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtextlistmenuitemcontent/ProfileCardTextListMenuItemContent.md"))]#[::unity2::class(namespace="App",name="ProfileCardTextListMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct ProfileCardTextListMenuItemContent{#[offset(72)]#[rename(name="m_Text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_FixedCursorObject")]pub m_fixed_cursor_object:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_FixedCursorImage")]pub m_fixed_cursor_image:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_FixedCursorFrameImage")]pub m_fixed_cursor_frame_image:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_NewIconObject")]pub m_new_icon_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-profilecardtextlistmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardtextlistmenuitemcontent")]
-pub trait IProfileCardTextListMenuItemContentMethods : IProfileCardTextListMenuItemContent { # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < ProfileCardTextListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfcdd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < ProfileCardTextListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfd3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetFixedCursorActive(bool)` overload"] fn set_fixed_cursor_active (self , active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardTextListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextListMenuItemContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfd4d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (active) , :: core :: option :: Option :: None) } } } # [doc = "`SetNewIconActive(bool)` overload"] fn set_new_icon_active (self , active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardTextListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextListMenuItemContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfd580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (active) , :: core :: option :: Option :: None) } } } # [doc = "`SynchronizeNewIconAnimationTime()` overload"] fn synchronize_new_icon_animation_time (self ,) -> () { unsafe { let __receiver = < ProfileCardTextListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfd020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardTextListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfd630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardtextlistmenuitemcontent")]pub trait IProfileCardTextListMenuItemContentMethods:IProfileCardTextListMenuItemContent{#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <ProfileCardTextListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfcdd0usize)as*mut u8,();
+(ProfileCardTextListMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <ProfileCardTextListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfd3d0usize)as*mut u8,();
+(ProfileCardTextListMenuItemContent)__receiver)}
+}
+#[doc="`SetFixedCursorActive(bool)` overload"]fn set_fixed_cursor_active(self,active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardTextListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfd4d0usize)as*mut u8,();
+(ProfileCardTextListMenuItemContent)__receiver,(bool)::core::convert::Into::into(active))}
+}
+#[doc="`SetNewIconActive(bool)` overload"]fn set_new_icon_active(self,active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardTextListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfd580usize)as*mut u8,();
+(ProfileCardTextListMenuItemContent)__receiver,(bool)::core::convert::Into::into(active))}
+}
+#[doc="`SynchronizeNewIconAnimationTime()` overload"]fn synchronize_new_icon_animation_time(self,)->(){unsafe{let __receiver= <ProfileCardTextListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfd020usize)as*mut u8,();
+(ProfileCardTextListMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardTextListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfd630usize)as*mut u8,();
+(ProfileCardTextListMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardtextlistmenuitemcontent")]
-impl < __T : IProfileCardTextListMenuItemContent > IProfileCardTextListMenuItemContentMethods for __T { }
+#[cfg(feature="app-profilecardtextlistmenuitemcontent")]impl<__T:IProfileCardTextListMenuItemContent>IProfileCardTextListMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-profilecardtextlistmenuitemcontent")]
-impl ProfileCardTextListMenuItemContent { pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_fixed_cursor_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_new_icon_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn synchronize_new_icon_animation_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-profilecardtextlistmenuitemcontent")]impl ProfileCardTextListMenuItemContent{pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_fixed_cursor_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_new_icon_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn synchronize_new_icon_animation_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-profilecardtextlistmenuitemcontent")]
-impl ProfileCardTextListMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardTextListMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardTextListMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardtextlistmenuitemcontent")]impl ProfileCardTextListMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardTextListMenuItemContent), ::core::stringify!(new),));
+ <Self as IProfileCardTextListMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardtextlistmenuitemcontent")]

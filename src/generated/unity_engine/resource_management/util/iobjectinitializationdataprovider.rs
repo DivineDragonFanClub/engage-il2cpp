@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/iobjectinitializationdataprovider/IObjectInitializationDataProvider.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "IObjectInitializationDataProvider")] pub struct IObjectInitializationDataProvider {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/iobjectinitializationdataprovider/IObjectInitializationDataProvider.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Util",name="IObjectInitializationDataProvider")]pub struct IObjectInitializationDataProvider{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IObjectInitializationDataProvider_unity2_raw { use super :: * ; pub unsafe fn get_name (this : IObjectInitializationDataProvider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Name") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Name" , < IObjectInitializationDataProvider as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IObjectInitializationDataProvider , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn create_object_initialization_data (this : IObjectInitializationDataProvider , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CreateObjectInitializationData") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CreateObjectInitializationData" , < IObjectInitializationDataProvider as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IObjectInitializationDataProvider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IObjectInitializationDataProvider_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:IObjectInitializationDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Name").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Name", <IObjectInitializationDataProvider as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IObjectInitializationDataProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_object_initialization_data(this:IObjectInitializationDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreateObjectInitializationData").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CreateObjectInitializationData", <IObjectInitializationDataProvider as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IObjectInitializationDataProvider, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]
-pub trait IIObjectInitializationDataProviderMethods : IIObjectInitializationDataProvider { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IObjectInitializationDataProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IObjectInitializationDataProvider_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CreateObjectInitializationData()` overload"] fn create_object_initialization_data (self ,) -> crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData { unsafe { let __receiver = < IObjectInitializationDataProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IObjectInitializationDataProvider_unity2_raw :: create_object_initialization_data (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]pub trait IIObjectInitializationDataProviderMethods:IIObjectInitializationDataProvider{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IObjectInitializationDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IObjectInitializationDataProvider_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`CreateObjectInitializationData()` overload"]fn create_object_initialization_data(self,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData{unsafe{let __receiver= <IObjectInitializationDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IObjectInitializationDataProvider_unity2_raw::create_object_initialization_data(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]
-impl < __T : IIObjectInitializationDataProvider > IIObjectInitializationDataProviderMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]impl<__T:IIObjectInitializationDataProvider>IIObjectInitializationDataProviderMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]
-impl IObjectInitializationDataProvider { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IObjectInitializationDataProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_object_initialization_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IObjectInitializationDataProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]impl IObjectInitializationDataProvider{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_object_initialization_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-util-iobjectinitializationdataprovider")]
 #[doc(hidden)]

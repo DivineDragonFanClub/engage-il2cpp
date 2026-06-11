@@ -4,50 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/sortingsettings/SortingSettings.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SortingSettings {
-    pub m_world_to_camera_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub m_camera_position: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_custom_axis: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_criteria: crate :: unity_engine :: rendering :: sortingcriteria :: SortingCriteria,
-    pub m_distance_metric: crate :: unity_engine :: rendering :: distancemetric :: DistanceMetric,
-    pub m_previous_vp_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub m_non_jittered_vp_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/sortingsettings/SortingSettings.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SortingSettings{pub m_world_to_camera_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub m_camera_position:crate::unity_engine::vector3::Vector3,pub m_custom_axis:crate::unity_engine::vector3::Vector3,pub m_criteria:crate::unity_engine::rendering::sortingcriteria::SortingCriteria,pub m_distance_metric:crate::unity_engine::rendering::distancemetric::DistanceMetric,pub m_previous_vp_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub m_non_jittered_vp_matrix:crate::unity_engine::matrix4x4::Matrix4x4,}
+impl::unity2::ClassIdentity for SortingSettings{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="SortingSettings";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for SortingSettings {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "SortingSettings";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SortingSettings {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SortingSettings{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -55,11 +26,41 @@ impl ::unity2::IlType for SortingSettings {
 #[cfg(feature = "unity_engine-rendering-sortingsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-sortingsettings")]
-impl SortingSettings { # [doc = "`.ctor(crate::unity_engine::camera::Camera)` overload"] pub fn ctor (& mut self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { { let __inner : extern "C" fn (* mut SortingSettings , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f948c0usize) as * mut u8) ; __inner (self as * mut SortingSettings , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`set_customAxis(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_custom_axis (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut SortingSettings , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94970usize) as * mut u8) ; __inner (self as * mut SortingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_criteria()` overload"] pub fn get_criteria (& mut self ,) -> crate :: unity_engine :: rendering :: sortingcriteria :: SortingCriteria { unsafe { { let __inner : extern "C" fn (* mut SortingSettings , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: sortingcriteria :: SortingCriteria = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94960usize) as * mut u8) ; __inner (self as * mut SortingSettings , :: core :: option :: Option :: None) } } } # [doc = "`set_criteria(crate::unity_engine::rendering::sortingcriteria::SortingCriteria)` overload"] pub fn set_criteria (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sortingcriteria :: SortingCriteria >) -> () { unsafe { { let __inner : extern "C" fn (* mut SortingSettings , crate :: unity_engine :: rendering :: sortingcriteria :: SortingCriteria , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94980usize) as * mut u8) ; __inner (self as * mut SortingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_distanceMetric(crate::unity_engine::rendering::distancemetric::DistanceMetric)` overload"] pub fn set_distance_metric (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: distancemetric :: DistanceMetric >) -> () { unsafe { { let __inner : extern "C" fn (* mut SortingSettings , crate :: unity_engine :: rendering :: distancemetric :: DistanceMetric , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94990usize) as * mut u8) ; __inner (self as * mut SortingSettings , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::sortingsettings::SortingSettings)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings >) -> bool { unsafe { { let __inner : extern "C" fn (* mut SortingSettings , crate :: unity_engine :: rendering :: sortingsettings :: SortingSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f949a0usize) as * mut u8) ; __inner (self as * mut SortingSettings , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut SortingSettings , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94af0usize) as * mut u8) ; __inner (self as * mut SortingSettings , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SortingSettings , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94b90usize) as * mut u8) ; __inner (self as * mut SortingSettings , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-sortingsettings")]impl SortingSettings{#[doc="`.ctor(crate::unity_engine::camera::Camera)` overload"]pub fn ctor(&mut self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f948c0usize)as*mut u8,();
+(*mut SortingSettings)self as*mut SortingSettings,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`set_customAxis(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_custom_axis(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94970usize)as*mut u8,();
+(*mut SortingSettings)self as*mut SortingSettings,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_criteria()` overload"]pub fn get_criteria(&mut self,)->crate::unity_engine::rendering::sortingcriteria::SortingCriteria{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94960usize)as*mut u8,crate::unity_engine::rendering::sortingcriteria::SortingCriteria;
+(*mut SortingSettings)self as*mut SortingSettings)}
+}
+#[doc="`set_criteria(crate::unity_engine::rendering::sortingcriteria::SortingCriteria)` overload"]pub fn set_criteria(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::sortingcriteria::SortingCriteria>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94980usize)as*mut u8,();
+(*mut SortingSettings)self as*mut SortingSettings,(crate::unity_engine::rendering::sortingcriteria::SortingCriteria)::core::convert::Into::into(value))}
+}
+#[doc="`set_distanceMetric(crate::unity_engine::rendering::distancemetric::DistanceMetric)` overload"]pub fn set_distance_metric(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::distancemetric::DistanceMetric>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94990usize)as*mut u8,();
+(*mut SortingSettings)self as*mut SortingSettings,(crate::unity_engine::rendering::distancemetric::DistanceMetric)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::sortingsettings::SortingSettings)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::sortingsettings::SortingSettings>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f949a0usize)as*mut u8,bool;
+(*mut SortingSettings)self as*mut SortingSettings,(crate::unity_engine::rendering::sortingsettings::SortingSettings)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94af0usize)as*mut u8,bool;
+(*mut SortingSettings)self as*mut SortingSettings,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94b90usize)as*mut u8,i32;
+(*mut SortingSettings)self as*mut SortingSettings)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-sortingsettings")]
-impl SortingSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_custom_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_criteria_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_criteria_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_distance_metric_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortingSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-rendering-sortingsettings")]impl SortingSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_custom_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_criteria_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_criteria_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_distance_metric_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-rendering-sortingsettings")]
 #[doc(hidden)]

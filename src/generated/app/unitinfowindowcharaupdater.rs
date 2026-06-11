@@ -4,96 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInfoWindowCharaUpdater")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct UnitInfoWindowCharaUpdater {
-# [offset (24)] # [rename (name = "m_IsRequestToPlayBody")] pub m_is_request_to_play_body : bool ,
-# [offset (25)] # [rename (name = "m_IsRequestToPlayFace")] pub m_is_request_to_play_face : bool ,
-# [offset (28)] # [rename (name = "m_BodyAnimHash")] pub m_body_anim_hash : i32 ,
-# [offset (32)] # [rename (name = "m_BodyAnimTransitionDuration")] pub m_body_anim_transition_duration : f32 ,
-# [offset (36)] # [rename (name = "m_FaceAnimHash")] pub m_face_anim_hash : i32 ,
-# [offset (40)] # [rename (name = "m_IsRequestToSetParam")] pub m_is_request_to_set_param : bool ,
-# [offset (44)] # [rename (name = "m_BodyParamHash")] pub m_body_param_hash : i32 ,
-# [offset (48)] # [rename (name = "m_BodyParamValue")] pub m_body_param_value : bool ,
-# [offset (49)] # [rename (name = "m_IsRequestToWeapon")] pub m_is_request_to_weapon : bool ,
-# [offset (56)] # [rename (name = "m_RequestWeapon")] pub m_request_weapon : crate :: app :: itemdata :: ItemData ,
-# [offset (64)] # [rename (name = "m_AnimeChangeWaitCount")] pub m_anime_change_wait_count : i32 ,
-# [offset (72)] # [rename (name = "m_CameraObject")] pub m_camera_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_CharaImageSimple")] pub m_chara_image_simple : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_DefaultZoomCameraLocalHeight")] pub m_default_zoom_camera_local_height : f32 ,
-# [offset (96)] # [rename (name = "m_HeadLookAtObj")] pub m_head_look_at_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_IsRequestToOffset")] pub m_is_request_to_offset : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md"))]#[::unity2::class(namespace="App",name="UnitInfoWindowCharaUpdater")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitInfoWindowCharaUpdater{#[offset(24)]#[rename(name="m_IsRequestToPlayBody")]pub m_is_request_to_play_body:bool, #[offset(25)]#[rename(name="m_IsRequestToPlayFace")]pub m_is_request_to_play_face:bool, #[offset(28)]#[rename(name="m_BodyAnimHash")]pub m_body_anim_hash:i32, #[offset(32)]#[rename(name="m_BodyAnimTransitionDuration")]pub m_body_anim_transition_duration:f32, #[offset(36)]#[rename(name="m_FaceAnimHash")]pub m_face_anim_hash:i32, #[offset(40)]#[rename(name="m_IsRequestToSetParam")]pub m_is_request_to_set_param:bool, #[offset(44)]#[rename(name="m_BodyParamHash")]pub m_body_param_hash:i32, #[offset(48)]#[rename(name="m_BodyParamValue")]pub m_body_param_value:bool, #[offset(49)]#[rename(name="m_IsRequestToWeapon")]pub m_is_request_to_weapon:bool, #[offset(56)]#[rename(name="m_RequestWeapon")]pub m_request_weapon:crate::app::itemdata::ItemData, #[offset(64)]#[rename(name="m_AnimeChangeWaitCount")]pub m_anime_change_wait_count:i32, #[offset(72)]#[rename(name="m_CameraObject")]pub m_camera_object:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_CharaImageSimple")]pub m_chara_image_simple:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_DefaultZoomCameraLocalHeight")]pub m_default_zoom_camera_local_height:f32, #[offset(96)]#[rename(name="m_HeadLookAtObj")]pub m_head_look_at_obj:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_IsRequestToOffset")]pub m_is_request_to_offset:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater_StatusScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct UnitInfoWindowCharaUpdater_StatusScope{pub m_character:crate::combat::character::Character,pub m_play_hash:i32,}
+impl::unity2::ClassIdentity for UnitInfoWindowCharaUpdater_StatusScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitInfoWindowCharaUpdater.StatusScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater_StatusScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct UnitInfoWindowCharaUpdater_StatusScope {
-    pub m_character: crate :: combat :: character :: Character,
-    pub m_play_hash: i32,
+impl::unity2::IlType for UnitInfoWindowCharaUpdater_StatusScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::ClassIdentity for UnitInfoWindowCharaUpdater_StatusScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoWindowCharaUpdater.StatusScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl UnitInfoWindowCharaUpdater_StatusScope{#[inline]pub fn status_hash()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"StatusHash");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_status_hash(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"StatusHash");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl ::unity2::IlType for UnitInfoWindowCharaUpdater_StatusScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl UnitInfoWindowCharaUpdater_StatusScope {
-    #[inline]
-    pub fn status_hash() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "StatusHash");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_status_hash(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "StatusHash");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -101,28 +45,121 @@ impl UnitInfoWindowCharaUpdater_StatusScope {
 #[cfg(feature = "app-unitinfowindowcharaupdater-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-pub trait IUnitInfoWindowCharaUpdaterMethods : IUnitInfoWindowCharaUpdater { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1facf60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryUpdateOffset(crate::combat::character::Character)` overload"] fn try_update_offset (self , chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> bool { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fad020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fad380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsBodyAnimEnd()` overload"] fn is_body_anim_end (self ,) -> bool { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa8310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TrySameBodyAnimHash(i32)` overload"] fn try_same_body_anim_hash (self , anim_hash : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa8300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (anim_hash) , :: core :: option :: Option :: None) } } } # [doc = "`RequestToPlayBody(i32, f32)` overload"] fn request_to_play_body (self , body_anim_hash : impl :: core :: convert :: Into < i32 > , transition_duration : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , i32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa84a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_anim_hash) , :: core :: convert :: Into :: into (transition_duration) , :: core :: option :: Option :: None) } } } # [doc = "`PlayBodyForced()` overload"] fn play_body_forced (self ,) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa9050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RequestToPlayFace(i32, bool)` overload"] fn request_to_play_face (self , face_anim_hash : impl :: core :: convert :: Into < i32 > , is_forced : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa9a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (face_anim_hash) , :: core :: convert :: Into :: into (is_forced) , :: core :: option :: Option :: None) } } } # [doc = "`RequestToShowWeapon(crate::app::itemdata::ItemData)` overload"] fn request_to_show_weapon (self , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1faaf00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`RequestToSetParam(i32, bool)` overload"] fn request_to_set_param (self , body_param_hash : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa9a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_param_hash) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetCameraObject(crate::unity_engine::gameobject::GameObject)` overload"] fn set_camera_object (self , camera_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fac1d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera_object) , :: core :: option :: Option :: None) } } } # [doc = "`SetCharaImage(crate::unity_engine::ui::image::Image)` overload"] fn set_chara_image (self , image_simple : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: image :: Image >) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , crate :: unity_engine :: ui :: image :: Image , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fad680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (image_simple) , :: core :: option :: Option :: None) } } } # [doc = "`TrySetCameraAdjustY()` overload"] fn try_set_camera_adjust_y (self ,) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fac140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetAnimeRequest()` overload"] fn reset_anime_request (self ,) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fad690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowImages()` overload"] fn show_images (self ,) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fa9cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideImages()` overload"] fn hide_images (self ,) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fab400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitInfoWindowCharaUpdater as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfoWindowCharaUpdater , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fad6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-impl < __T : IUnitInfoWindowCharaUpdater > IUnitInfoWindowCharaUpdaterMethods for __T { }
-
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-impl UnitInfoWindowCharaUpdater { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn try_update_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_body_anim_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn try_same_body_anim_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn request_to_play_body_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn play_body_forced_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn request_to_play_face_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn request_to_show_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn request_to_set_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_camera_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_chara_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn try_set_camera_adjust_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn reset_anime_request_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn show_images_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn hide_images_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
-
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-impl UnitInfoWindowCharaUpdater {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInfoWindowCharaUpdater) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInfoWindowCharaUpdaterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitinfowindowcharaupdater")]pub trait IUnitInfoWindowCharaUpdaterMethods:IUnitInfoWindowCharaUpdater{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1facf60usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver)}
+}
+#[doc="`TryUpdateOffset(crate::combat::character::Character)` overload"]fn try_update_offset(self,chara:impl::core::convert::Into<crate::combat::character::Character>)->bool{unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fad020usize)as*mut u8,bool;
+(UnitInfoWindowCharaUpdater)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chara))}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fad380usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver)}
+}
+#[doc="`IsBodyAnimEnd()` overload"]fn is_body_anim_end(self,)->bool{unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa8310usize)as*mut u8,bool;
+(UnitInfoWindowCharaUpdater)__receiver)}
+}
+#[doc="`TrySameBodyAnimHash(i32)` overload"]fn try_same_body_anim_hash(self,anim_hash:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa8300usize)as*mut u8,bool;
+(UnitInfoWindowCharaUpdater)__receiver,(i32)::core::convert::Into::into(anim_hash))}
+}
+#[doc="`RequestToPlayBody(i32, f32)` overload"]fn request_to_play_body(self,body_anim_hash:impl::core::convert::Into<i32> ,transition_duration:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa84a0usize)as*mut u8,bool;
+(UnitInfoWindowCharaUpdater)__receiver,(i32)::core::convert::Into::into(body_anim_hash),(f32)::core::convert::Into::into(transition_duration))}
+}
+#[doc="`PlayBodyForced()` overload"]fn play_body_forced(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa9050usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver)}
+}
+#[doc="`RequestToPlayFace(i32, bool)` overload"]fn request_to_play_face(self,face_anim_hash:impl::core::convert::Into<i32> ,is_forced:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa9a70usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver,(i32)::core::convert::Into::into(face_anim_hash),(bool)::core::convert::Into::into(is_forced))}
+}
+#[doc="`RequestToShowWeapon(crate::app::itemdata::ItemData)` overload"]fn request_to_show_weapon(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1faaf00usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`RequestToSetParam(i32, bool)` overload"]fn request_to_set_param(self,body_param_hash:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa9a50usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver,(i32)::core::convert::Into::into(body_param_hash),(bool)::core::convert::Into::into(value))}
+}
+#[doc="`SetCameraObject(crate::unity_engine::gameobject::GameObject)` overload"]fn set_camera_object(self,camera_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fac1d0usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(camera_object))}
+}
+#[doc="`SetCharaImage(crate::unity_engine::ui::image::Image)` overload"]fn set_chara_image(self,image_simple:impl::core::convert::Into<crate::unity_engine::ui::image::Image>)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fad680usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver,(crate::unity_engine::ui::image::Image)::core::convert::Into::into(image_simple))}
+}
+#[doc="`TrySetCameraAdjustY()` overload"]fn try_set_camera_adjust_y(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fac140usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver)}
+}
+#[doc="`ResetAnimeRequest()` overload"]fn reset_anime_request(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fad690usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver)}
+}
+#[doc="`ShowImages()` overload"]fn show_images(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fa9cb0usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver)}
+}
+#[doc="`HideImages()` overload"]fn hide_images(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fab400usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfoWindowCharaUpdater as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fad6c0usize)as*mut u8,();
+(UnitInfoWindowCharaUpdater)__receiver)}
+}
 }
 
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-impl UnitInfoWindowCharaUpdater_StatusScope { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b52aa0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitinfowindowcharaupdater")]impl<__T:IUnitInfoWindowCharaUpdater>IUnitInfoWindowCharaUpdaterMethods for __T{}
 
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-impl UnitInfoWindowCharaUpdater_StatusScope { # [doc = "`.ctor(crate::combat::character::Character)` overload"] pub fn ctor (& mut self , chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { { let __inner : extern "C" fn (* mut UnitInfoWindowCharaUpdater_StatusScope , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b528f0usize) as * mut u8) ; __inner (self as * mut UnitInfoWindowCharaUpdater_StatusScope , :: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut UnitInfoWindowCharaUpdater_StatusScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b529e0usize) as * mut u8) ; __inner (self as * mut UnitInfoWindowCharaUpdater_StatusScope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn try_update_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_body_anim_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn try_same_body_anim_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn request_to_play_body_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn play_body_forced_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn request_to_play_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn request_to_show_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn request_to_set_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_camera_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_chara_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn try_set_camera_adjust_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn reset_anime_request_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn show_images_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn hide_images_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-impl UnitInfoWindowCharaUpdater_StatusScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater_StatusScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater_StatusScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfoWindowCharaUpdater_StatusScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInfoWindowCharaUpdater), ::core::stringify!(new),));
+ <Self as IUnitInfoWindowCharaUpdaterMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater_StatusScope{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b52aa0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater_StatusScope{#[doc="`.ctor(crate::combat::character::Character)` overload"]pub fn ctor(&mut self,chara:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b528f0usize)as*mut u8,();
+(*mut UnitInfoWindowCharaUpdater_StatusScope)self as*mut UnitInfoWindowCharaUpdater_StatusScope,(crate::combat::character::Character)::core::convert::Into::into(chara))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b529e0usize)as*mut u8,();
+(*mut UnitInfoWindowCharaUpdater_StatusScope)self as*mut UnitInfoWindowCharaUpdater_StatusScope)}
+}
+}
+
+#[cfg(feature="app-unitinfowindowcharaupdater")]impl UnitInfoWindowCharaUpdater_StatusScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "app-unitinfowindowcharaupdater")]
 #[doc(hidden)]

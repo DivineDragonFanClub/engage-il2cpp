@@ -4,14 +4,14 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/failedtoloadscriptobject/FailedToLoadScriptObject.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "FailedToLoadScriptObject")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct FailedToLoadScriptObject {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/failedtoloadscriptobject/FailedToLoadScriptObject.md"))]#[::unity2::class(namespace="UnityEngine",name="FailedToLoadScriptObject")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct FailedToLoadScriptObject{}
 
 }
 

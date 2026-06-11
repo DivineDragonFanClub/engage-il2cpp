@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdesccallbase :: { IProcDescCallBase , ProcDescCallBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdesccallbase::{IProcDescCallBase,ProcDescCallBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmcall/ProcDescMCall.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescMCall")] # [parent (crate :: app :: procdesccallbase :: ProcDescCallBase)] pub struct ProcDescMCall {
-# [offset (24)] # [rename (name = "m_Method")] pub m_method : crate :: app :: procvoidmethod :: ProcVoidMethod ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescmcall/ProcDescMCall.md"))]#[::unity2::class(namespace="App",name="ProcDescMCall")]#[parent(crate::app::procdesccallbase::ProcDescCallBase)]pub struct ProcDescMCall{#[offset(24)]#[rename(name="m_Method")]pub m_method:crate::app::procvoidmethod::ProcVoidMethod,}
 
 }
 
 #[cfg(feature = "app-procdescmcall-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescmcall")]
-pub trait IProcDescMCallMethods : IProcDescMCall { # [doc = "`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` overload"] fn ctor (self , method : impl :: core :: convert :: Into < crate :: app :: procvoidmethod :: ProcVoidMethod >) -> () { unsafe { let __receiver = < ProcDescMCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescMCall , crate :: app :: procvoidmethod :: ProcVoidMethod , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescMCall as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescMCall , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescmcall")]pub trait IProcDescMCallMethods:IProcDescMCall{#[doc="`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` overload"]fn ctor(self,method:impl::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>)->(){unsafe{let __receiver= <ProcDescMCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281b310usize)as*mut u8,();
+(ProcDescMCall)__receiver,(crate::app::procvoidmethod::ProcVoidMethod)::core::convert::Into::into(method))}
+}
+#[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescMCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d350usize)as*mut u8,();
+(ProcDescMCall)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdescmcall")]
-impl < __T : IProcDescMCall > IProcDescMCallMethods for __T { }
+#[cfg(feature="app-procdescmcall")]impl<__T:IProcDescMCall>IProcDescMCallMethods for __T{}
 
-#[cfg(feature = "app-procdescmcall")]
-impl ProcDescMCall { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescMCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescMCall as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdescmcall")]impl ProcDescMCall{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdescmcall")]
-impl ProcDescMCall {
-# [doc = "`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` — overload selector"] pub fn new (method : crate :: app :: procvoidmethod :: ProcVoidMethod) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescMCall) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescMCallMethods > :: ctor (this , method) ; this }
+#[cfg(feature="app-procdescmcall")]impl ProcDescMCall{#[doc="`.ctor(crate::app::procvoidmethod::ProcVoidMethod)` — overload selector"]pub fn new(method:crate::app::procvoidmethod::ProcVoidMethod)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescMCall), ::core::stringify!(new),));
+ <Self as IProcDescMCallMethods> ::ctor(this,method);
+this}
 }
 
 #[cfg(feature = "app-procdescmcall")]

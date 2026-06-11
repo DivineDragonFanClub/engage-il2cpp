@@ -4,48 +4,111 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomunitselectmenucontent/GodRoomUnitSelectMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodRoomUnitSelectMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct GodRoomUnitSelectMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_statusWindow")] pub m_status_window : crate :: app :: shopunitselectstatus :: ShopUnitSelectStatus ,
-# [offset (240)] # [rename (name = "m_godInfo")] pub m_god_info : crate :: app :: godroomgodinfosetter :: GodRoomGodInfoSetter ,
-# [offset (248)] # [rename (name = "m_GodListActive")] pub m_god_list_active : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godunit :: GodUnit > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroomunitselectmenucontent/GodRoomUnitSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="GodRoomUnitSelectMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct GodRoomUnitSelectMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_statusWindow")]pub m_status_window:crate::app::shopunitselectstatus::ShopUnitSelectStatus, #[offset(240)]#[rename(name="m_godInfo")]pub m_god_info:crate::app::godroomgodinfosetter::GodRoomGodInfoSetter, #[offset(248)]#[rename(name="m_GodListActive")]pub m_god_list_active:crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit> ,}
 
 }
 
 #[cfg(feature = "app-godroomunitselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godroomunitselectmenucontent")]
-impl GodRoomUnitSelectMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233cf00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233cfa0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233d020usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: godroomunitselectmenucontent :: GodRoomUnitSelectMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: godroomunitselectmenucontent :: GodRoomUnitSelectMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233c2c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::godroomunitselectmenucontent::GodRoomUnitSelectMenuContent)` overload"] pub fn destroy (content : impl :: core :: convert :: Into < crate :: app :: godroomunitselectmenucontent :: GodRoomUnitSelectMenuContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: godroomunitselectmenucontent :: GodRoomUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233d0a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godroomunitselectmenucontent")]impl GodRoomUnitSelectMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233cf00usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233cfa0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233d020usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::godroomunitselectmenucontent::GodRoomUnitSelectMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233c2c0usize)as*mut u8,crate::app::godroomunitselectmenucontent::GodRoomUnitSelectMenuContent;
+)}
+}
+#[doc="`Destroy(crate::app::godroomunitselectmenucontent::GodRoomUnitSelectMenuContent)` overload"]pub fn destroy(content:impl::core::convert::Into<crate::app::godroomunitselectmenucontent::GodRoomUnitSelectMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233d0a0usize)as*mut u8,();
+(crate::app::godroomunitselectmenucontent::GodRoomUnitSelectMenuContent)::core::convert::Into::into(content))}
+}
+}
 
-#[cfg(feature = "app-godroomunitselectmenucontent")]
-pub trait IGodRoomUnitSelectMenuContentMethods : IGodRoomUnitSelectMenuContent { # [doc = "`GetGodListActive()` overload"] fn get_god_list_active (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godunit :: GodUnit > { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: godunit :: GodUnit > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233ce30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233ce40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233d120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233d190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenStatus()` overload"] fn open_status (self ,) -> () { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233c850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseStatus()` overload"] fn close_status (self ,) -> () { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233cd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitStatus(crate::app::unit::Unit)` overload"] fn set_unit_status (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233cac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`OnHelp(crate::app::procinst::ProcInst)` overload"] fn on_help (self , parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233c6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateGodInfo(crate::app::unit::Unit)` overload"] fn update_god_info (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233cb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodRoomUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x233d200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godroomunitselectmenucontent")]pub trait IGodRoomUnitSelectMenuContentMethods:IGodRoomUnitSelectMenuContent{#[doc="`GetGodListActive()` overload"]fn get_god_list_active(self,)->crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>{unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233ce30usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit> ;
+(GodRoomUnitSelectMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233ce40usize)as*mut u8,f32;
+(GodRoomUnitSelectMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233d120usize)as*mut u8,f32;
+(GodRoomUnitSelectMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233d190usize)as*mut u8,f32;
+(GodRoomUnitSelectMenuContent)__receiver)}
+}
+#[doc="`OpenStatus()` overload"]fn open_status(self,)->(){unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233c850usize)as*mut u8,();
+(GodRoomUnitSelectMenuContent)__receiver)}
+}
+#[doc="`CloseStatus()` overload"]fn close_status(self,)->(){unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233cd30usize)as*mut u8,();
+(GodRoomUnitSelectMenuContent)__receiver)}
+}
+#[doc="`SetUnitStatus(crate::app::unit::Unit)` overload"]fn set_unit_status(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233cac0usize)as*mut u8,();
+(GodRoomUnitSelectMenuContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`OnHelp(crate::app::procinst::ProcInst)` overload"]fn on_help(self,parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233c6b0usize)as*mut u8,();
+(GodRoomUnitSelectMenuContent)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
+}
+#[doc="`UpdateGodInfo(crate::app::unit::Unit)` overload"]fn update_god_info(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233cb60usize)as*mut u8,();
+(GodRoomUnitSelectMenuContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodRoomUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x233d200usize)as*mut u8,();
+(GodRoomUnitSelectMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godroomunitselectmenucontent")]
-impl < __T : IGodRoomUnitSelectMenuContent > IGodRoomUnitSelectMenuContentMethods for __T { }
+#[cfg(feature="app-godroomunitselectmenucontent")]impl<__T:IGodRoomUnitSelectMenuContent>IGodRoomUnitSelectMenuContentMethods for __T{}
 
-#[cfg(feature = "app-godroomunitselectmenucontent")]
-impl GodRoomUnitSelectMenuContent { pub fn get_god_list_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn open_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn close_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_unit_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn update_god_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-godroomunitselectmenucontent")]impl GodRoomUnitSelectMenuContent{pub fn get_god_list_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn open_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn close_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_unit_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn update_god_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-godroomunitselectmenucontent")]
-impl GodRoomUnitSelectMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodRoomUnitSelectMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IGodRoomUnitSelectMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godroomunitselectmenucontent")]impl GodRoomUnitSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRoomUnitSelectMenuContent), ::core::stringify!(new),));
+ <Self as IGodRoomUnitSelectMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godroomunitselectmenucontent")]

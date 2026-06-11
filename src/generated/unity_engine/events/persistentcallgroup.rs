@@ -4,32 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/persistentcallgroup/PersistentCallGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Events" , name = "PersistentCallGroup")] # [parent (crate :: system :: object :: Object)] pub struct PersistentCallGroup {
-# [offset (16)] # [rename (name = "m_Calls")] pub m_calls : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: events :: persistentcall :: PersistentCall > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/events/persistentcallgroup/PersistentCallGroup.md"))]#[::unity2::class(namespace="UnityEngine.Events",name="PersistentCallGroup")]#[parent(crate::system::object::Object)]pub struct PersistentCallGroup{#[offset(16)]#[rename(name="m_Calls")]pub m_calls:crate::system::collections::generic::list_1::List_1<crate::unity_engine::events::persistentcall::PersistentCall> ,}
 
 }
 
 #[cfg(feature = "unity_engine-events-persistentcallgroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-events-persistentcallgroup")]
-pub trait IPersistentCallGroupMethods : IPersistentCallGroup { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PersistentCallGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCallGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize(crate::unity_engine::events::invokablecalllist::InvokableCallList, crate::unity_engine::events::unityeventbase::UnityEventBase)` overload"] fn initialize (self , invokable_list : impl :: core :: convert :: Into < crate :: unity_engine :: events :: invokablecalllist :: InvokableCallList > , unity_event_base : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityeventbase :: UnityEventBase >) -> () { unsafe { let __receiver = < PersistentCallGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersistentCallGroup , crate :: unity_engine :: events :: invokablecalllist :: InvokableCallList , crate :: unity_engine :: events :: unityeventbase :: UnityEventBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (invokable_list) , :: core :: convert :: Into :: into (unity_event_base) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-events-persistentcallgroup")]pub trait IPersistentCallGroupMethods:IPersistentCallGroup{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PersistentCallGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f0f70usize)as*mut u8,();
+(PersistentCallGroup)__receiver)}
+}
+#[doc="`Initialize(crate::unity_engine::events::invokablecalllist::InvokableCallList, crate::unity_engine::events::unityeventbase::UnityEventBase)` overload"]fn initialize(self,invokable_list:impl::core::convert::Into<crate::unity_engine::events::invokablecalllist::InvokableCallList> ,unity_event_base:impl::core::convert::Into<crate::unity_engine::events::unityeventbase::UnityEventBase>)->(){unsafe{let __receiver= <PersistentCallGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f1000usize)as*mut u8,();
+(PersistentCallGroup)__receiver,(crate::unity_engine::events::invokablecalllist::InvokableCallList)::core::convert::Into::into(invokable_list),(crate::unity_engine::events::unityeventbase::UnityEventBase)::core::convert::Into::into(unity_event_base))}
+}
+}
 
-#[cfg(feature = "unity_engine-events-persistentcallgroup")]
-impl < __T : IPersistentCallGroup > IPersistentCallGroupMethods for __T { }
+#[cfg(feature="unity_engine-events-persistentcallgroup")]impl<__T:IPersistentCallGroup>IPersistentCallGroupMethods for __T{}
 
-#[cfg(feature = "unity_engine-events-persistentcallgroup")]
-impl PersistentCallGroup { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCallGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersistentCallGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-events-persistentcallgroup")]impl PersistentCallGroup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-events-persistentcallgroup")]
-impl PersistentCallGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PersistentCallGroup) , :: core :: stringify ! (new) ,)) ; < Self as IPersistentCallGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-events-persistentcallgroup")]impl PersistentCallGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PersistentCallGroup), ::core::stringify!(new),));
+ <Self as IPersistentCallGroupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-events-persistentcallgroup")]

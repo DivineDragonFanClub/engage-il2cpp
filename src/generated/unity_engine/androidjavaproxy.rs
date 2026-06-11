@@ -4,40 +4,75 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavaproxy/AndroidJavaProxy.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AndroidJavaProxy")] # [parent (crate :: system :: object :: Object)] pub struct AndroidJavaProxy {
-# [offset (16)] # [rename (name = "javaInterface")] pub java_interface : crate :: unity_engine :: androidjavaclass :: AndroidJavaClass ,
-# [offset (24)] # [rename (name = "proxyObject")] pub proxy_object : :: unity2 :: IntPtr ,
-# [static_field] # [rename (name = "s_JavaLangSystemClass")] pub s_java_lang_system_class : crate :: unity_engine :: globaljavaobjectref :: GlobalJavaObjectRef ,
-# [static_field] # [rename (name = "s_HashCodeMethodID")] pub s_hash_code_method_id : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/androidjavaproxy/AndroidJavaProxy.md"))]#[::unity2::class(namespace="UnityEngine",name="AndroidJavaProxy")]#[parent(crate::system::object::Object)]pub struct AndroidJavaProxy{#[offset(16)]#[rename(name="javaInterface")]pub java_interface:crate::unity_engine::androidjavaclass::AndroidJavaClass, #[offset(24)]#[rename(name="proxyObject")]pub proxy_object: ::unity2::IntPtr, #[static_field]#[rename(name="s_JavaLangSystemClass")]pub s_java_lang_system_class:crate::unity_engine::globaljavaobjectref::GlobalJavaObjectRef, #[static_field]#[rename(name="s_HashCodeMethodID")]pub s_hash_code_method_id: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-androidjavaproxy-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-androidjavaproxy")]
-impl AndroidJavaProxy { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f14b30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-androidjavaproxy")]impl AndroidJavaProxy{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f14b30usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-androidjavaproxy")]
-pub trait IAndroidJavaProxyMethods : IAndroidJavaProxy { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , java_interface : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f129b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (java_interface) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::androidjavaclass::AndroidJavaClass)` overload"] fn ctor_2 (self , java_interface : impl :: core :: convert :: Into < crate :: unity_engine :: androidjavaclass :: AndroidJavaClass >) -> () { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaProxy , crate :: unity_engine :: androidjavaclass :: AndroidJavaClass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f12ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (java_interface) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f12b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn invoke (self , method_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f12bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (method_name) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>)` overload"] fn invoke_2 (self , method_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , java_args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: androidjavaobject :: AndroidJavaObject > >) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: unity_engine :: androidjavaobject :: AndroidJavaObject > , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f14060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (method_name) , :: core :: convert :: Into :: into (java_args) , :: core :: option :: Option :: None) } } } # [doc = "`GetProxyObject()` overload"] fn get_proxy_object (self ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: androidjavaobject :: AndroidJavaObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f14ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRawProxy()` overload"] fn get_raw_proxy (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AndroidJavaProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaProxy , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f13e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-androidjavaproxy")]pub trait IAndroidJavaProxyMethods:IAndroidJavaProxy{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,java_interface:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f129b0usize)as*mut u8,();
+(AndroidJavaProxy)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(java_interface))}
+}
+#[doc="`.ctor(crate::unity_engine::androidjavaclass::AndroidJavaClass)` overload"]fn ctor_2(self,java_interface:impl::core::convert::Into<crate::unity_engine::androidjavaclass::AndroidJavaClass>)->(){unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12ab0usize)as*mut u8,();
+(AndroidJavaProxy)__receiver,(crate::unity_engine::androidjavaclass::AndroidJavaClass)::core::convert::Into::into(java_interface))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12b20usize)as*mut u8,();
+(AndroidJavaProxy)__receiver)}
+}
+#[doc="`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,method_name:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::unity_engine::androidjavaobject::AndroidJavaObject{unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12bf0usize)as*mut u8,crate::unity_engine::androidjavaobject::AndroidJavaObject;
+(AndroidJavaProxy)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(method_name),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>)` overload"]fn invoke_2(self,method_name:impl::core::convert::Into< ::unity2::Il2CppString> ,java_args:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject> >)->crate::unity_engine::androidjavaobject::AndroidJavaObject{unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f14060usize)as*mut u8,crate::unity_engine::androidjavaobject::AndroidJavaObject;
+(AndroidJavaProxy)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(method_name),(::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>)::core::convert::Into::into(java_args))}
+}
+#[doc="`GetProxyObject()` overload"]fn get_proxy_object(self,)->crate::unity_engine::androidjavaobject::AndroidJavaObject{unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f14ab0usize)as*mut u8,crate::unity_engine::androidjavaobject::AndroidJavaObject;
+(AndroidJavaProxy)__receiver)}
+}
+#[doc="`GetRawProxy()` overload"]fn get_raw_proxy(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f13e20usize)as*mut u8, ::unity2::IntPtr;
+(AndroidJavaProxy)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-androidjavaproxy")]
-impl < __T : IAndroidJavaProxy > IAndroidJavaProxyMethods for __T { }
+#[cfg(feature="unity_engine-androidjavaproxy")]impl<__T:IAndroidJavaProxy>IAndroidJavaProxyMethods for __T{}
 
-#[cfg(feature = "unity_engine-androidjavaproxy")]
-impl AndroidJavaProxy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn invoke_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_proxy_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_raw_proxy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaProxy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-androidjavaproxy")]impl AndroidJavaProxy{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn invoke_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_proxy_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_raw_proxy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-androidjavaproxy")]
-impl AndroidJavaProxy {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (java_interface : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AndroidJavaProxy) , :: core :: stringify ! (new) ,)) ; < Self as IAndroidJavaProxyMethods > :: ctor (this , java_interface) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::androidjavaclass::AndroidJavaClass)` — overload selector"] pub fn new_2 (java_interface : crate :: unity_engine :: androidjavaclass :: AndroidJavaClass) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AndroidJavaProxy) , :: core :: stringify ! (new_2) ,)) ; < Self as IAndroidJavaProxyMethods > :: ctor_2 (this , java_interface) ; this }
+#[cfg(feature="unity_engine-androidjavaproxy")]impl AndroidJavaProxy{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(java_interface: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AndroidJavaProxy), ::core::stringify!(new),));
+ <Self as IAndroidJavaProxyMethods> ::ctor(this,java_interface);
+this}
+#[doc="`.ctor(crate::unity_engine::androidjavaclass::AndroidJavaClass)` — overload selector"]pub fn new_2(java_interface:crate::unity_engine::androidjavaclass::AndroidJavaClass)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AndroidJavaProxy), ::core::stringify!(new_2),));
+ <Self as IAndroidJavaProxyMethods> ::ctor_2(this,java_interface);
+this}
 }
 
 #[cfg(feature = "unity_engine-androidjavaproxy")]

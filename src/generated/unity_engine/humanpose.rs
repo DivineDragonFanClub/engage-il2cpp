@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/humanpose/HumanPose.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HumanPose {
-    pub body_position: crate :: unity_engine :: vector3 :: Vector3,
-    pub body_rotation: crate :: unity_engine :: quaternion :: Quaternion,
-    pub muscles: :: unity2 :: Array < f32 >,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/humanpose/HumanPose.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HumanPose{pub body_position:crate::unity_engine::vector3::Vector3,pub body_rotation:crate::unity_engine::quaternion::Quaternion,pub muscles: ::unity2::Array<f32>,}
+impl::unity2::ClassIdentity for HumanPose{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="HumanPose";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for HumanPose {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "HumanPose";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for HumanPose {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for HumanPose{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,11 +26,13 @@ impl ::unity2::IlType for HumanPose {
 #[cfg(feature = "unity_engine-humanpose-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-humanpose")]
-impl HumanPose { # [doc = "`Init()` overload"] pub fn init (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut HumanPose , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb9280usize) as * mut u8) ; __inner (self as * mut HumanPose , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-humanpose")]impl HumanPose{#[doc="`Init()` overload"]pub fn init(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb9280usize)as*mut u8,();
+(*mut HumanPose)self as*mut HumanPose)}
+}
+}
 
-#[cfg(feature = "unity_engine-humanpose")]
-impl HumanPose { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HumanPose as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-humanpose")]impl HumanPose{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-humanpose")]
 #[doc(hidden)]

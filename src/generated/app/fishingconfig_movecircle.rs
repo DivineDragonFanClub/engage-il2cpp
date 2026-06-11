@@ -4,48 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_movecircle/FishingConfig_MoveCircle.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingConfig_MoveCircle")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingConfig_MoveCircle {
-# [offset (24)] # [rename (name = "m_CameraRotateSpeed")] pub m_camera_rotate_speed : f32 ,
-# [offset (28)] # [rename (name = "m_DistanceMoveSpeed")] pub m_distance_move_speed : f32 ,
-# [offset (32)] # [rename (name = "m_RotateMinimum")] pub m_rotate_minimum : f32 ,
-# [offset (36)] # [rename (name = "m_RotateMax")] pub m_rotate_max : f32 ,
-# [offset (40)] # [rename (name = "m_DistanceMinimum")] pub m_distance_minimum : f32 ,
-# [offset (44)] # [rename (name = "m_DistanceMax")] pub m_distance_max : f32 ,
-# [offset (48)] # [rename (name = "m_RipplesInterval")] pub m_ripples_interval : f32 ,
-# [offset (56)] # [rename (name = "m_RipplesPosList")] pub m_ripples_pos_list : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (64)] # [rename (name = "m_RipplesRandomRange")] pub m_ripples_random_range : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingconfig_movecircle/FishingConfig_MoveCircle.md"))]#[::unity2::class(namespace="App",name="FishingConfig_MoveCircle")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FishingConfig_MoveCircle{#[offset(24)]#[rename(name="m_CameraRotateSpeed")]pub m_camera_rotate_speed:f32, #[offset(28)]#[rename(name="m_DistanceMoveSpeed")]pub m_distance_move_speed:f32, #[offset(32)]#[rename(name="m_RotateMinimum")]pub m_rotate_minimum:f32, #[offset(36)]#[rename(name="m_RotateMax")]pub m_rotate_max:f32, #[offset(40)]#[rename(name="m_DistanceMinimum")]pub m_distance_minimum:f32, #[offset(44)]#[rename(name="m_DistanceMax")]pub m_distance_max:f32, #[offset(48)]#[rename(name="m_RipplesInterval")]pub m_ripples_interval:f32, #[offset(56)]#[rename(name="m_RipplesPosList")]pub m_ripples_pos_list: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(64)]#[rename(name="m_RipplesRandomRange")]pub m_ripples_random_range:f32,}
 
 }
 
 #[cfg(feature = "app-fishingconfig_movecircle-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingconfig_movecircle")]
-pub trait IFishingConfig_MoveCircleMethods : IFishingConfig_MoveCircle { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingConfig_MoveCircle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingConfig_MoveCircle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26efeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingconfig_movecircle")]pub trait IFishingConfig_MoveCircleMethods:IFishingConfig_MoveCircle{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingConfig_MoveCircle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26efeb0usize)as*mut u8,();
+(FishingConfig_MoveCircle)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingconfig_movecircle")]
-impl < __T : IFishingConfig_MoveCircle > IFishingConfig_MoveCircleMethods for __T { }
+#[cfg(feature="app-fishingconfig_movecircle")]impl<__T:IFishingConfig_MoveCircle>IFishingConfig_MoveCircleMethods for __T{}
 
-#[cfg(feature = "app-fishingconfig_movecircle")]
-impl FishingConfig_MoveCircle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingConfig_MoveCircle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-fishingconfig_movecircle")]impl FishingConfig_MoveCircle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-fishingconfig_movecircle")]
-impl FishingConfig_MoveCircle {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingConfig_MoveCircle) , :: core :: stringify ! (new) ,)) ; < Self as IFishingConfig_MoveCircleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingconfig_movecircle")]impl FishingConfig_MoveCircle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingConfig_MoveCircle), ::core::stringify!(new),));
+ <Self as IFishingConfig_MoveCircleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingconfig_movecircle")]

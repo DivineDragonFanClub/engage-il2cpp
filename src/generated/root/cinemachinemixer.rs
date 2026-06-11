@@ -4,57 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinemixer/CinemachineMixer.md"))] # [:: unity2 :: class (namespace = "" , name = "CinemachineMixer")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct CinemachineMixer {
-# [static_field] # [rename (name = "GetMasterPlayableDirector")] pub get_master_playable_director : crate :: root :: cinemachinemixer :: CinemachineMixer_MasterDirectorDelegate ,
-# [offset (24)] # [rename (name = "mBrainOverrideId")] pub m_brain_override_id : i32 ,
-# [offset (28)] # [rename (name = "mPreviewPlay")] pub m_preview_play : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/cinemachinemixer/CinemachineMixer.md"))]#[::unity2::class(namespace="",name="CinemachineMixer")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct CinemachineMixer{#[static_field]#[rename(name="GetMasterPlayableDirector")]pub get_master_playable_director:crate::root::cinemachinemixer::CinemachineMixer_MasterDirectorDelegate, #[offset(24)]#[rename(name="mBrainOverrideId")]pub m_brain_override_id:i32, #[offset(28)]#[rename(name="mPreviewPlay")]pub m_preview_play:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachinemixer/CinemachineMixer_MasterDirectorDelegate.md"))] # [:: unity2 :: class (namespace = "" , name = "CinemachineMixer.MasterDirectorDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct CinemachineMixer_MasterDirectorDelegate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/cinemachinemixer/CinemachineMixer_MasterDirectorDelegate.md"))]#[::unity2::class(namespace="",name="CinemachineMixer.MasterDirectorDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct CinemachineMixer_MasterDirectorDelegate{}
 
 }
 
 #[cfg(feature = "root-cinemachinemixer-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-cinemachinemixer")]
-pub trait ICinemachineMixerMethods : ICinemachineMixer { # [doc = "`OnPlayableDestroy(crate::unity_engine::playables::playable::Playable)` overload"] fn on_playable_destroy (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable >) -> () { unsafe { let __receiver = < CinemachineMixer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineMixer , crate :: unity_engine :: playables :: playable :: Playable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3887450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } } # [doc = "`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"] fn prepare_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < CinemachineMixer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineMixer , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x38874f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < CinemachineMixer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineMixer , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3887500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetDeltaTime(f32)` overload"] fn get_delta_time (self , delta_time : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < CinemachineMixer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineMixer , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3887c80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (delta_time) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineMixer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineMixer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3887d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-cinemachinemixer")]
-impl < __T : ICinemachineMixer > ICinemachineMixerMethods for __T { }
-
-#[cfg(feature = "root-cinemachinemixer")]
-impl CinemachineMixer { pub fn on_playable_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineMixer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn prepare_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineMixer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineMixer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_delta_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineMixer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineMixer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "root-cinemachinemixer")]
-impl CinemachineMixer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineMixer) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineMixerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-cinemachinemixer")]pub trait ICinemachineMixerMethods:ICinemachineMixer{#[doc="`OnPlayableDestroy(crate::unity_engine::playables::playable::Playable)` overload"]fn on_playable_destroy(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <CinemachineMixer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3887450usize)as*mut u8,();
+(CinemachineMixer)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+}
+#[doc="`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn prepare_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <CinemachineMixer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x38874f0usize)as*mut u8,();
+(CinemachineMixer)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+}
+#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CinemachineMixer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3887500usize)as*mut u8,();
+(CinemachineMixer)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+}
+#[doc="`GetDeltaTime(f32)` overload"]fn get_delta_time(self,delta_time:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <CinemachineMixer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3887c80usize)as*mut u8,f32;
+(CinemachineMixer)__receiver,(f32)::core::convert::Into::into(delta_time))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CinemachineMixer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3887d90usize)as*mut u8,();
+(CinemachineMixer)__receiver)}
+}
 }
 
-#[cfg(feature = "root-cinemachinemixer")]
-pub trait ICinemachineMixer_MasterDirectorDelegateMethods : ICinemachineMixer_MasterDirectorDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < CinemachineMixer_MasterDirectorDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineMixer_MasterDirectorDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3312760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> crate :: unity_engine :: playables :: playabledirector :: PlayableDirector { unsafe { let __receiver = < CinemachineMixer_MasterDirectorDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineMixer_MasterDirectorDelegate , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playabledirector :: PlayableDirector = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3312780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-cinemachinemixer")]impl<__T:ICinemachineMixer>ICinemachineMixerMethods for __T{}
 
-#[cfg(feature = "root-cinemachinemixer")]
-impl < __T : ICinemachineMixer_MasterDirectorDelegate > ICinemachineMixer_MasterDirectorDelegateMethods for __T { }
+#[cfg(feature="root-cinemachinemixer")]impl CinemachineMixer{pub fn on_playable_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn prepare_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-cinemachinemixer")]
-impl CinemachineMixer_MasterDirectorDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineMixer_MasterDirectorDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineMixer_MasterDirectorDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-cinemachinemixer")]impl CinemachineMixer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CinemachineMixer), ::core::stringify!(new),));
+ <Self as ICinemachineMixerMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "root-cinemachinemixer")]
-impl CinemachineMixer_MasterDirectorDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineMixer_MasterDirectorDelegate) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineMixer_MasterDirectorDelegateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-cinemachinemixer")]pub trait ICinemachineMixer_MasterDirectorDelegateMethods:ICinemachineMixer_MasterDirectorDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <CinemachineMixer_MasterDirectorDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3312760usize)as*mut u8,();
+(CinemachineMixer_MasterDirectorDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->crate::unity_engine::playables::playabledirector::PlayableDirector{unsafe{let __receiver= <CinemachineMixer_MasterDirectorDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3312780usize)as*mut u8,crate::unity_engine::playables::playabledirector::PlayableDirector;
+(CinemachineMixer_MasterDirectorDelegate)__receiver)}
+}
+}
+
+#[cfg(feature="root-cinemachinemixer")]impl<__T:ICinemachineMixer_MasterDirectorDelegate>ICinemachineMixer_MasterDirectorDelegateMethods for __T{}
+
+#[cfg(feature="root-cinemachinemixer")]impl CinemachineMixer_MasterDirectorDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-cinemachinemixer")]impl CinemachineMixer_MasterDirectorDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CinemachineMixer_MasterDirectorDelegate), ::core::stringify!(new),));
+ <Self as ICinemachineMixer_MasterDirectorDelegateMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "root-cinemachinemixer")]

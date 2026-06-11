@@ -4,32 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: savedatahandle :: { ISaveDataHandle , SaveDataHandle }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::savedatahandle::{ISaveDataHandle,SaveDataHandle}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedatareadhandle/SaveDataReadHandle.md"))] # [:: unity2 :: class (namespace = "App" , name = "SaveDataReadHandle")] # [parent (crate :: app :: savedatahandle :: SaveDataHandle)] pub struct SaveDataReadHandle {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/savedatareadhandle/SaveDataReadHandle.md"))]#[::unity2::class(namespace="App",name="SaveDataReadHandle")]#[parent(crate::app::savedatahandle::SaveDataHandle)]pub struct SaveDataReadHandle{}
 
 }
 
 #[cfg(feature = "app-savedatareadhandle-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-savedatareadhandle")]
-pub trait ISaveDataReadHandleMethods : ISaveDataReadHandle { # [doc = "`get_Data()` overload"] fn get_data (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < SaveDataReadHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataReadHandle , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec84f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Data(::unity2::Array<u8>)` overload"] fn set_data (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < SaveDataReadHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataReadHandle , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec8500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReadSize()` overload"] fn get_read_size (self ,) -> i64 { unsafe { let __receiver = < SaveDataReadHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataReadHandle , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec8510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ReadSize(i64)` overload"] fn set_read_size (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < SaveDataReadHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataReadHandle , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec8520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SaveDataReadHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SaveDataReadHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec4f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-savedatareadhandle")]pub trait ISaveDataReadHandleMethods:ISaveDataReadHandle{#[doc="`get_Data()` overload"]fn get_data(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <SaveDataReadHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec84f0usize)as*mut u8, ::unity2::Array<u8> ;
+(SaveDataReadHandle)__receiver)}
+}
+#[doc="`set_Data(::unity2::Array<u8>)` overload"]fn set_data(self,value:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <SaveDataReadHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec8500usize)as*mut u8,();
+(SaveDataReadHandle)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(value))}
+}
+#[doc="`get_ReadSize()` overload"]fn get_read_size(self,)->i64{unsafe{let __receiver= <SaveDataReadHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec8510usize)as*mut u8,i64;
+(SaveDataReadHandle)__receiver)}
+}
+#[doc="`set_ReadSize(i64)` overload"]fn set_read_size(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <SaveDataReadHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec8520usize)as*mut u8,();
+(SaveDataReadHandle)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SaveDataReadHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec4f60usize)as*mut u8,();
+(SaveDataReadHandle)__receiver)}
+}
+}
 
-#[cfg(feature = "app-savedatareadhandle")]
-impl < __T : ISaveDataReadHandle > ISaveDataReadHandleMethods for __T { }
+#[cfg(feature="app-savedatareadhandle")]impl<__T:ISaveDataReadHandle>ISaveDataReadHandleMethods for __T{}
 
-#[cfg(feature = "app-savedatareadhandle")]
-impl SaveDataReadHandle { pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataReadHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataReadHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_read_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataReadHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_read_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataReadHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SaveDataReadHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-savedatareadhandle")]impl SaveDataReadHandle{pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_read_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_read_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-savedatareadhandle")]
-impl SaveDataReadHandle {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SaveDataReadHandle) , :: core :: stringify ! (new) ,)) ; < Self as ISaveDataReadHandleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-savedatareadhandle")]impl SaveDataReadHandle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SaveDataReadHandle), ::core::stringify!(new),));
+ <Self as ISaveDataReadHandleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-savedatareadhandle")]

@@ -4,54 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: gamemessagecontent :: { GameMessageContent , IGameMessageContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::gamemessagecontent::{GameMessageContent,IGameMessageContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayshowdatadialogcontent/RelayShowDataDialogContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayShowDataDialogContent")] # [parent (crate :: app :: gamemessagecontent :: GameMessageContent)] pub struct RelayShowDataDialogContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "m_MapHelp")] pub m_map_help : crate :: app :: relaywdwmaphelp :: RelayWdwMapHelp ,
-# [offset (80)] # [rename (name = "m_PlayerList")] pub m_player_list : crate :: app :: relaywdwplayerlist :: RelayWdwPlayerList ,
-# [offset (88)] # [rename (name = "m_Play")] pub m_play : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (96)] # [rename (name = "m_StampRoot")] pub m_stamp_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (104)] # [rename (name = "m_PlayStamp")] pub m_play_stamp : crate :: app :: relaymessagemenuitemcontent :: RelayMessageMenuItemContent ,
-# [offset (112)] # [rename (name = "m_PlayEnd")] pub m_play_end : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (120)] # [rename (name = "m_PlayEndWin")] pub m_play_end_win : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_PlayEndLose")] pub m_play_end_lose : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_TakeOverTitle")] pub m_take_over_title : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayshowdatadialogcontent/RelayShowDataDialogContent.md"))]#[::unity2::class(namespace="App",name="RelayShowDataDialogContent")]#[parent(crate::app::gamemessagecontent::GameMessageContent)]pub struct RelayShowDataDialogContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_MapHelp")]pub m_map_help:crate::app::relaywdwmaphelp::RelayWdwMapHelp, #[offset(80)]#[rename(name="m_PlayerList")]pub m_player_list:crate::app::relaywdwplayerlist::RelayWdwPlayerList, #[offset(88)]#[rename(name="m_Play")]pub m_play:crate::unity_engine::gameobject::GameObject, #[offset(96)]#[rename(name="m_StampRoot")]pub m_stamp_root:crate::unity_engine::gameobject::GameObject, #[offset(104)]#[rename(name="m_PlayStamp")]pub m_play_stamp:crate::app::relaymessagemenuitemcontent::RelayMessageMenuItemContent, #[offset(112)]#[rename(name="m_PlayEnd")]pub m_play_end:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_PlayEndWin")]pub m_play_end_win:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_PlayEndLose")]pub m_play_end_lose:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_TakeOverTitle")]pub m_take_over_title:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-relayshowdatadialogcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayshowdatadialogcontent")]
-impl RelayShowDataDialogContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200a260usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200a300usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200a380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)` overload"] pub fn create (meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , mode : impl :: core :: convert :: Into < crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode >) -> crate :: app :: relayshowdatadialogcontent :: RelayShowDataDialogContent { unsafe { { let __inner : extern "C" fn (crate :: app :: relayservermetadata :: RelayServerMetaData , crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , :: unity2 :: OptionalMethod ,) -> crate :: app :: relayshowdatadialogcontent :: RelayShowDataDialogContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200a110usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayshowdatadialogcontent")]impl RelayShowDataDialogContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200a260usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200a300usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200a380usize)as*mut u8,();
+)}
+}
+#[doc="`Create(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)` overload"]pub fn create(meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,mode:impl::core::convert::Into<crate::app::relayshowdatadialog::RelayShowDataDialog_Mode>)->crate::app::relayshowdatadialogcontent::RelayShowDataDialogContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x200a110usize)as*mut u8,crate::app::relayshowdatadialogcontent::RelayShowDataDialogContent;
+(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)::core::convert::Into::into(mode))}
+}
+}
 
-#[cfg(feature = "app-relayshowdatadialogcontent")]
-pub trait IRelayShowDataDialogContentMethods : IRelayShowDataDialogContent { # [doc = "`Setup(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)` overload"] fn setup (self , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData > , mode : impl :: core :: convert :: Into < crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode >) -> () { unsafe { let __receiver = < RelayShowDataDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayShowDataDialogContent , crate :: app :: relayservermetadata :: RelayServerMetaData , crate :: app :: relayshowdatadialog :: RelayShowDataDialog_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200a400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayShowDataDialogContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayShowDataDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200aa10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayshowdatadialogcontent")]pub trait IRelayShowDataDialogContentMethods:IRelayShowDataDialogContent{#[doc="`Setup(crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)` overload"]fn setup(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData> ,mode:impl::core::convert::Into<crate::app::relayshowdatadialog::RelayShowDataDialog_Mode>)->(){unsafe{let __receiver= <RelayShowDataDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200a400usize)as*mut u8,();
+(RelayShowDataDialogContent)__receiver,(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data),(crate::app::relayshowdatadialog::RelayShowDataDialog_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayShowDataDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200aa10usize)as*mut u8,();
+(RelayShowDataDialogContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayshowdatadialogcontent")]
-impl < __T : IRelayShowDataDialogContent > IRelayShowDataDialogContentMethods for __T { }
+#[cfg(feature="app-relayshowdatadialogcontent")]impl<__T:IRelayShowDataDialogContent>IRelayShowDataDialogContentMethods for __T{}
 
-#[cfg(feature = "app-relayshowdatadialogcontent")]
-impl RelayShowDataDialogContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayShowDataDialogContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-relayshowdatadialogcontent")]impl RelayShowDataDialogContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-relayshowdatadialogcontent")]
-impl RelayShowDataDialogContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayShowDataDialogContent) , :: core :: stringify ! (new) ,)) ; < Self as IRelayShowDataDialogContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayshowdatadialogcontent")]impl RelayShowDataDialogContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayShowDataDialogContent), ::core::stringify!(new),));
+ <Self as IRelayShowDataDialogContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayshowdatadialogcontent")]

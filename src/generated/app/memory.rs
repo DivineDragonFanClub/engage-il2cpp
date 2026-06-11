@@ -4,36 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/memory/Memory.md"))] # [:: unity2 :: class (namespace = "App" , name = "Memory")] # [parent (crate :: system :: object :: Object)] pub struct Memory {
-# [static_field] # [rename (name = "Max")] pub max : i32 ,
-# [static_field] # [rename (name = "s_Fill")] pub s_fill : :: unity2 :: Array < u8 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/memory/Memory.md"))]#[::unity2::class(namespace="App",name="Memory")]#[parent(crate::system::object::Object)]pub struct Memory{#[static_field]#[rename(name="Max")]pub max:i32, #[static_field]#[rename(name="s_Fill")]pub s_fill: ::unity2::Array<u8> ,}
 
 }
 
 #[cfg(feature = "app-memory-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-memory")]
-impl Memory { # [doc = "`Initialized()` overload"] pub fn initialized () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25cc150usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Clear(::unity2::Array<u8>)` overload"] pub fn clear (values : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25cc280usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`Clear(::unity2::Array<u8>, i32, i32)` overload"] pub fn clear_2 (values : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25cc290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Fill(::unity2::Array<u8>)` overload"] pub fn fill (values : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25cc2a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`Fill(::unity2::Array<u8>, i32, i32)` overload"] pub fn fill_2 (values : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25cc320usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25cc3d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-memory")]impl Memory{#[doc="`Initialized()` overload"]pub fn initialized()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25cc150usize)as*mut u8,();
+)}
+}
+#[doc="`Clear(::unity2::Array<u8>)` overload"]pub fn clear(values:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25cc280usize)as*mut u8,();
+(::unity2::Array<u8>)::core::convert::Into::into(values))}
+}
+#[doc="`Clear(::unity2::Array<u8>, i32, i32)` overload"]pub fn clear_2(values:impl::core::convert::Into< ::unity2::Array<u8> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25cc290usize)as*mut u8,();
+(::unity2::Array<u8>)::core::convert::Into::into(values),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Fill(::unity2::Array<u8>)` overload"]pub fn fill(values:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25cc2a0usize)as*mut u8,();
+(::unity2::Array<u8>)::core::convert::Into::into(values))}
+}
+#[doc="`Fill(::unity2::Array<u8>, i32, i32)` overload"]pub fn fill_2(values:impl::core::convert::Into< ::unity2::Array<u8> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25cc320usize)as*mut u8,();
+(::unity2::Array<u8>)::core::convert::Into::into(values),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25cc3d0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-memory")]
-pub trait IMemoryMethods : IMemory { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Memory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Memory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25cc3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-memory")]pub trait IMemoryMethods:IMemory{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Memory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc3c0usize)as*mut u8,();
+(Memory)__receiver)}
+}
+}
 
-#[cfg(feature = "app-memory")]
-impl < __T : IMemory > IMemoryMethods for __T { }
+#[cfg(feature="app-memory")]impl<__T:IMemory>IMemoryMethods for __T{}
 
-#[cfg(feature = "app-memory")]
-impl Memory { pub fn initialized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Memory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Memory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Memory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn fill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Memory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn fill_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Memory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Memory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Memory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-memory")]impl Memory{pub fn initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn fill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn fill_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-memory")]
-impl Memory {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Memory) , :: core :: stringify ! (new) ,)) ; < Self as IMemoryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-memory")]impl Memory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Memory), ::core::stringify!(new),));
+ <Self as IMemoryMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-memory")]

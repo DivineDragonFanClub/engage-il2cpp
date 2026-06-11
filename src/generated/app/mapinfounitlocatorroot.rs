@@ -4,871 +4,283 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinfobase :: { IMapInfoBase , MapInfoBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinfobase::{IMapInfoBase,MapInfoBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_TextMeshProKind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoUnitLocatorRoot_TextMeshProKind  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_CanvasGroupKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoUnitLocatorRoot_CanvasGroupKind{pub value:i32,}
+impl::unity2::ClassIdentity for MapInfoUnitLocatorRoot_CanvasGroupKind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapInfoUnitLocatorRoot.CanvasGroupKind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapInfoUnitLocatorRoot_CanvasGroupKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapInfoUnitLocatorRoot_CanvasGroupKind{pub fn frm1()->Self{Self{value:0}
+}
+pub fn frm2()->Self{Self{value:1}
+}
+pub fn info0()->Self{Self{value:2}
+}
+pub fn info1()->Self{Self{value:3}
+}
+pub fn info2()->Self{Self{value:4}
+}
+pub fn info3()->Self{Self{value:5}
+}
+pub fn info4()->Self{Self{value:6}
+}
+pub fn info5()->Self{Self{value:7}
+}
+pub fn info6()->Self{Self{value:8}
+}
+pub fn num()->Self{Self{value:9}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_TextMeshProKind  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot.md"))]#[::unity2::class(namespace="App",name="MapInfoUnitLocatorRoot")]#[parent(crate::app::mapinfobase::MapInfoBase)]pub struct MapInfoUnitLocatorRoot{#[offset(32)]#[rename(name="m_BattleType")]pub m_battle_type:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_PhysAtkTitle")]pub m_phys_atk_title:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_PhysAtkValue1")]pub m_phys_atk_value1:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_PhysAtkValue2")]pub m_phys_atk_value2:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_PhysAtkValue3")]pub m_phys_atk_value3:crate::unity_engine::ui::image::Image, #[offset(72)]#[rename(name="m_PhysAtkValueEmpty")]pub m_phys_atk_value_empty:crate::unity_engine::ui::image::Image, #[offset(80)]#[rename(name="m_DefTitle")]pub m_def_title:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_DefValue1")]pub m_def_value1:crate::unity_engine::ui::image::Image, #[offset(96)]#[rename(name="m_DefValue2")]pub m_def_value2:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_DefValue3")]pub m_def_value3:crate::unity_engine::ui::image::Image, #[offset(112)]#[rename(name="m_DefValueEmpty")]pub m_def_value_empty:crate::unity_engine::ui::image::Image, #[offset(120)]#[rename(name="m_MagAtkTitle")]pub m_mag_atk_title:crate::unity_engine::ui::image::Image, #[offset(128)]#[rename(name="m_MagAtkValue1")]pub m_mag_atk_value1:crate::unity_engine::ui::image::Image, #[offset(136)]#[rename(name="m_MagAtkValue2")]pub m_mag_atk_value2:crate::unity_engine::ui::image::Image, #[offset(144)]#[rename(name="m_MagAtkValue3")]pub m_mag_atk_value3:crate::unity_engine::ui::image::Image, #[offset(152)]#[rename(name="m_MagAtkValueEmpty")]pub m_mag_atk_value_empty:crate::unity_engine::ui::image::Image, #[offset(160)]#[rename(name="m_ResTitle")]pub m_res_title:crate::unity_engine::ui::image::Image, #[offset(168)]#[rename(name="m_ResValue1")]pub m_res_value1:crate::unity_engine::ui::image::Image, #[offset(176)]#[rename(name="m_ResValue2")]pub m_res_value2:crate::unity_engine::ui::image::Image, #[offset(184)]#[rename(name="m_ResValue3")]pub m_res_value3:crate::unity_engine::ui::image::Image, #[offset(192)]#[rename(name="m_ResValueEmpty")]pub m_res_value_empty:crate::unity_engine::ui::image::Image, #[offset(200)]#[rename(name="m_HitTitle")]pub m_hit_title:crate::unity_engine::ui::image::Image, #[offset(208)]#[rename(name="m_HitValue1")]pub m_hit_value1:crate::unity_engine::ui::image::Image, #[offset(216)]#[rename(name="m_HitValue2")]pub m_hit_value2:crate::unity_engine::ui::image::Image, #[offset(224)]#[rename(name="m_HitValue3")]pub m_hit_value3:crate::unity_engine::ui::image::Image, #[offset(232)]#[rename(name="m_HitValueEmpty")]pub m_hit_value_empty:crate::unity_engine::ui::image::Image, #[offset(240)]#[rename(name="m_AvoTitle")]pub m_avo_title:crate::unity_engine::ui::image::Image, #[offset(248)]#[rename(name="m_AvoValue1")]pub m_avo_value1:crate::unity_engine::ui::image::Image, #[offset(256)]#[rename(name="m_AvoValue2")]pub m_avo_value2:crate::unity_engine::ui::image::Image, #[offset(264)]#[rename(name="m_AvoValue3")]pub m_avo_value3:crate::unity_engine::ui::image::Image, #[offset(272)]#[rename(name="m_AvoValueEmpty")]pub m_avo_value_empty:crate::unity_engine::ui::image::Image, #[offset(280)]#[rename(name="m_CritTitle")]pub m_crit_title:crate::unity_engine::ui::image::Image, #[offset(288)]#[rename(name="m_CritValue1")]pub m_crit_value1:crate::unity_engine::ui::image::Image, #[offset(296)]#[rename(name="m_CritValue2")]pub m_crit_value2:crate::unity_engine::ui::image::Image, #[offset(304)]#[rename(name="m_CritValue3")]pub m_crit_value3:crate::unity_engine::ui::image::Image, #[offset(312)]#[rename(name="m_CritValueEmpty")]pub m_crit_value_empty:crate::unity_engine::ui::image::Image, #[offset(320)]#[rename(name="m_CritAvoTitle")]pub m_crit_avo_title:crate::unity_engine::ui::image::Image, #[offset(328)]#[rename(name="m_CritAvoValue1")]pub m_crit_avo_value1:crate::unity_engine::ui::image::Image, #[offset(336)]#[rename(name="m_CritAvoValue2")]pub m_crit_avo_value2:crate::unity_engine::ui::image::Image, #[offset(344)]#[rename(name="m_CritAvoValue3")]pub m_crit_avo_value3:crate::unity_engine::ui::image::Image, #[offset(352)]#[rename(name="m_CritAvoValueEmpty")]pub m_crit_avo_value_empty:crate::unity_engine::ui::image::Image, #[offset(360)]#[rename(name="m_SkillTitle")]pub m_skill_title:crate::unity_engine::ui::image::Image, #[offset(368)]#[rename(name="m_SkillValue1")]pub m_skill_value1:crate::unity_engine::ui::image::Image, #[offset(376)]#[rename(name="m_SkillValue2")]pub m_skill_value2:crate::unity_engine::ui::image::Image, #[offset(384)]#[rename(name="m_SkillValue3")]pub m_skill_value3:crate::unity_engine::ui::image::Image, #[offset(392)]#[rename(name="m_SkillValueEmpty")]pub m_skill_value_empty:crate::unity_engine::ui::image::Image, #[offset(400)]#[rename(name="m_SpdTitle")]pub m_spd_title:crate::unity_engine::ui::image::Image, #[offset(408)]#[rename(name="m_SpdValue1")]pub m_spd_value1:crate::unity_engine::ui::image::Image, #[offset(416)]#[rename(name="m_SpdValue2")]pub m_spd_value2:crate::unity_engine::ui::image::Image, #[offset(424)]#[rename(name="m_SpdValue3")]pub m_spd_value3:crate::unity_engine::ui::image::Image, #[offset(432)]#[rename(name="m_SpdValueEmpty")]pub m_spd_value_empty:crate::unity_engine::ui::image::Image, #[offset(440)]#[rename(name="m_MoveTitle")]pub m_move_title:crate::unity_engine::ui::image::Image, #[offset(448)]#[rename(name="m_MoveValue1")]pub m_move_value1:crate::unity_engine::ui::image::Image, #[offset(456)]#[rename(name="m_MoveValue2")]pub m_move_value2:crate::unity_engine::ui::image::Image, #[offset(464)]#[rename(name="m_MoveValue3")]pub m_move_value3:crate::unity_engine::ui::image::Image, #[offset(472)]#[rename(name="m_MoveValueEmpty")]pub m_move_value_empty:crate::unity_engine::ui::image::Image, #[offset(480)]#[rename(name="m_PhysTitle")]pub m_phys_title:crate::unity_engine::ui::image::Image, #[offset(488)]#[rename(name="m_PhysValue1")]pub m_phys_value1:crate::unity_engine::ui::image::Image, #[offset(496)]#[rename(name="m_PhysValue2")]pub m_phys_value2:crate::unity_engine::ui::image::Image, #[offset(504)]#[rename(name="m_PhysValue3")]pub m_phys_value3:crate::unity_engine::ui::image::Image, #[offset(512)]#[rename(name="m_PhysValueEmpty")]pub m_phys_value_empty:crate::unity_engine::ui::image::Image, #[offset(520)]#[rename(name="m_LocatorRoot")]pub m_locator_root:crate::unity_engine::gameobject::GameObject, #[offset(528)]#[rename(name="m_TotalInfo")]pub m_total_info:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(536)]#[rename(name="m_PartInfo")]pub m_part_info: ::unity2::Array<crate::unity_engine::canvasgroup::CanvasGroup> , #[offset(544)]#[rename(name="m_Images")]pub m_images: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(552)]#[rename(name="m_PageAlpha")]pub m_page_alpha: ::unity2::Array<f32> , #[offset(560)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(561)]#[rename(name="m_IsDirtyAlpha")]pub m_is_dirty_alpha:bool,}
 
-    const NAME: &'static str = "MapInfoUnitLocatorRoot.TextMeshProKind";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_ImageKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoUnitLocatorRoot_ImageKind{pub value:i32,}
+impl::unity2::ClassIdentity for MapInfoUnitLocatorRoot_ImageKind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapInfoUnitLocatorRoot.ImageKind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapInfoUnitLocatorRoot_ImageKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapInfoUnitLocatorRoot_ImageKind{pub fn battle_type()->Self{Self{value:0}
+}
+pub fn phys_atk_title()->Self{Self{value:1}
+}
+pub fn phys_atk_value()->Self{Self{value:2}
+}
+pub fn phys_atk_value1()->Self{Self{value:2}
+}
+pub fn phys_atk_value2()->Self{Self{value:3}
+}
+pub fn phys_atk_value3()->Self{Self{value:4}
+}
+pub fn phys_atk_value_empty()->Self{Self{value:5}
+}
+pub fn def_title()->Self{Self{value:6}
+}
+pub fn def_value()->Self{Self{value:7}
+}
+pub fn def_value1()->Self{Self{value:7}
+}
+pub fn def_value2()->Self{Self{value:8}
+}
+pub fn def_value3()->Self{Self{value:9}
+}
+pub fn def_value_empty()->Self{Self{value:10}
+}
+pub fn mag_atk_title()->Self{Self{value:11}
+}
+pub fn mag_atk_value()->Self{Self{value:12}
+}
+pub fn mag_atk_value1()->Self{Self{value:12}
+}
+pub fn mag_atk_value2()->Self{Self{value:13}
+}
+pub fn mag_atk_value3()->Self{Self{value:14}
+}
+pub fn mag_atk_value_empty()->Self{Self{value:15}
+}
+pub fn res_title()->Self{Self{value:16}
+}
+pub fn res_value()->Self{Self{value:17}
+}
+pub fn res_value1()->Self{Self{value:17}
+}
+pub fn res_value2()->Self{Self{value:18}
+}
+pub fn res_value3()->Self{Self{value:19}
+}
+pub fn res_value_empty()->Self{Self{value:20}
+}
+pub fn hit_title()->Self{Self{value:21}
+}
+pub fn hit_value()->Self{Self{value:22}
+}
+pub fn hit_value1()->Self{Self{value:22}
+}
+pub fn hit_value2()->Self{Self{value:23}
+}
+pub fn hit_value3()->Self{Self{value:24}
+}
+pub fn hit_value_empty()->Self{Self{value:25}
+}
+pub fn hit_value_infinity()->Self{Self{value:26}
+}
+pub fn avo_title()->Self{Self{value:27}
+}
+pub fn avo_value()->Self{Self{value:28}
+}
+pub fn avo_value1()->Self{Self{value:28}
+}
+pub fn avo_value2()->Self{Self{value:29}
+}
+pub fn avo_value3()->Self{Self{value:30}
+}
+pub fn avo_value_empty()->Self{Self{value:31}
+}
+pub fn crit_title()->Self{Self{value:32}
+}
+pub fn crit_value()->Self{Self{value:33}
+}
+pub fn crit_value1()->Self{Self{value:33}
+}
+pub fn crit_value2()->Self{Self{value:34}
+}
+pub fn crit_value3()->Self{Self{value:35}
+}
+pub fn crit_value_empty()->Self{Self{value:36}
+}
+pub fn crit_avo_title()->Self{Self{value:37}
+}
+pub fn crit_avo_value()->Self{Self{value:38}
+}
+pub fn crit_avo_value1()->Self{Self{value:38}
+}
+pub fn crit_avo_value2()->Self{Self{value:39}
+}
+pub fn crit_avo_value3()->Self{Self{value:40}
+}
+pub fn crit_avo_value_empty()->Self{Self{value:41}
+}
+pub fn skill_title()->Self{Self{value:42}
+}
+pub fn skill_value()->Self{Self{value:43}
+}
+pub fn skill_value1()->Self{Self{value:43}
+}
+pub fn skill_value2()->Self{Self{value:44}
+}
+pub fn skill_value3()->Self{Self{value:45}
+}
+pub fn skill_value_empty()->Self{Self{value:46}
+}
+pub fn spd_title()->Self{Self{value:47}
+}
+pub fn spd_value()->Self{Self{value:48}
+}
+pub fn spd_value1()->Self{Self{value:48}
+}
+pub fn spd_value2()->Self{Self{value:49}
+}
+pub fn spd_value3()->Self{Self{value:50}
+}
+pub fn spd_value_empty()->Self{Self{value:51}
+}
+pub fn move_title()->Self{Self{value:52}
+}
+pub fn move_value()->Self{Self{value:53}
+}
+pub fn move_value1()->Self{Self{value:53}
+}
+pub fn move_value2()->Self{Self{value:54}
+}
+pub fn move_value3()->Self{Self{value:55}
+}
+pub fn move_value_empty()->Self{Self{value:56}
+}
+pub fn phys_title()->Self{Self{value:57}
+}
+pub fn phys_value()->Self{Self{value:58}
+}
+pub fn phys_value1()->Self{Self{value:58}
+}
+pub fn phys_value2()->Self{Self{value:59}
+}
+pub fn phys_value3()->Self{Self{value:60}
+}
+pub fn phys_value_empty()->Self{Self{value:61}
+}
+pub fn num()->Self{Self{value:62}
+}
 }
 
 
-impl  ::unity2::IlType for MapInfoUnitLocatorRoot_TextMeshProKind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_TextMeshProKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoUnitLocatorRoot_TextMeshProKind{pub value:i32,}
+impl::unity2::ClassIdentity for MapInfoUnitLocatorRoot_TextMeshProKind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapInfoUnitLocatorRoot.TextMeshProKind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  MapInfoUnitLocatorRoot_TextMeshProKind  {
-    pub fn battle_type() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn phys_atk_title() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn phys_atk_value() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn def_title() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn def_value() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn mag_atk_title() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn mag_atk_value() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn res_title() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn res_value() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn hit_title() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn hit_value() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn avo_title() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn avo_value() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn crit_title() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn crit_value() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn crit_avo_title() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn crit_avo_value() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn skill_title() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn skill_value() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn spd_title() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn spd_value() -> Self {
-        Self { value: 20 }
-
-    }
-
-
-    pub fn move_title() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn move_value() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn phys_title() -> Self {
-        Self { value: 23 }
-
-    }
-
-
-    pub fn phys_value() -> Self {
-        Self { value: 24 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 25 }
-
-    }
-
+impl::unity2::IlType for MapInfoUnitLocatorRoot_TextMeshProKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapInfoUnitLocatorRoot")] # [parent (crate :: app :: mapinfobase :: MapInfoBase)] pub struct MapInfoUnitLocatorRoot {
-# [offset (32)] # [rename (name = "m_BattleType")] pub m_battle_type : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_PhysAtkTitle")] pub m_phys_atk_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (48)] # [rename (name = "m_PhysAtkValue1")] pub m_phys_atk_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (56)] # [rename (name = "m_PhysAtkValue2")] pub m_phys_atk_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "m_PhysAtkValue3")] pub m_phys_atk_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (72)] # [rename (name = "m_PhysAtkValueEmpty")] pub m_phys_atk_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (80)] # [rename (name = "m_DefTitle")] pub m_def_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_DefValue1")] pub m_def_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (96)] # [rename (name = "m_DefValue2")] pub m_def_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (104)] # [rename (name = "m_DefValue3")] pub m_def_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (112)] # [rename (name = "m_DefValueEmpty")] pub m_def_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (120)] # [rename (name = "m_MagAtkTitle")] pub m_mag_atk_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (128)] # [rename (name = "m_MagAtkValue1")] pub m_mag_atk_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (136)] # [rename (name = "m_MagAtkValue2")] pub m_mag_atk_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (144)] # [rename (name = "m_MagAtkValue3")] pub m_mag_atk_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (152)] # [rename (name = "m_MagAtkValueEmpty")] pub m_mag_atk_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (160)] # [rename (name = "m_ResTitle")] pub m_res_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (168)] # [rename (name = "m_ResValue1")] pub m_res_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (176)] # [rename (name = "m_ResValue2")] pub m_res_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (184)] # [rename (name = "m_ResValue3")] pub m_res_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (192)] # [rename (name = "m_ResValueEmpty")] pub m_res_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (200)] # [rename (name = "m_HitTitle")] pub m_hit_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (208)] # [rename (name = "m_HitValue1")] pub m_hit_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (216)] # [rename (name = "m_HitValue2")] pub m_hit_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (224)] # [rename (name = "m_HitValue3")] pub m_hit_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (232)] # [rename (name = "m_HitValueEmpty")] pub m_hit_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (240)] # [rename (name = "m_AvoTitle")] pub m_avo_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (248)] # [rename (name = "m_AvoValue1")] pub m_avo_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (256)] # [rename (name = "m_AvoValue2")] pub m_avo_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (264)] # [rename (name = "m_AvoValue3")] pub m_avo_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (272)] # [rename (name = "m_AvoValueEmpty")] pub m_avo_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (280)] # [rename (name = "m_CritTitle")] pub m_crit_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (288)] # [rename (name = "m_CritValue1")] pub m_crit_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (296)] # [rename (name = "m_CritValue2")] pub m_crit_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (304)] # [rename (name = "m_CritValue3")] pub m_crit_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (312)] # [rename (name = "m_CritValueEmpty")] pub m_crit_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (320)] # [rename (name = "m_CritAvoTitle")] pub m_crit_avo_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (328)] # [rename (name = "m_CritAvoValue1")] pub m_crit_avo_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (336)] # [rename (name = "m_CritAvoValue2")] pub m_crit_avo_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (344)] # [rename (name = "m_CritAvoValue3")] pub m_crit_avo_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (352)] # [rename (name = "m_CritAvoValueEmpty")] pub m_crit_avo_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (360)] # [rename (name = "m_SkillTitle")] pub m_skill_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (368)] # [rename (name = "m_SkillValue1")] pub m_skill_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (376)] # [rename (name = "m_SkillValue2")] pub m_skill_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (384)] # [rename (name = "m_SkillValue3")] pub m_skill_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (392)] # [rename (name = "m_SkillValueEmpty")] pub m_skill_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (400)] # [rename (name = "m_SpdTitle")] pub m_spd_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (408)] # [rename (name = "m_SpdValue1")] pub m_spd_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (416)] # [rename (name = "m_SpdValue2")] pub m_spd_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (424)] # [rename (name = "m_SpdValue3")] pub m_spd_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (432)] # [rename (name = "m_SpdValueEmpty")] pub m_spd_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (440)] # [rename (name = "m_MoveTitle")] pub m_move_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (448)] # [rename (name = "m_MoveValue1")] pub m_move_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (456)] # [rename (name = "m_MoveValue2")] pub m_move_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (464)] # [rename (name = "m_MoveValue3")] pub m_move_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (472)] # [rename (name = "m_MoveValueEmpty")] pub m_move_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (480)] # [rename (name = "m_PhysTitle")] pub m_phys_title : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (488)] # [rename (name = "m_PhysValue1")] pub m_phys_value1 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (496)] # [rename (name = "m_PhysValue2")] pub m_phys_value2 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (504)] # [rename (name = "m_PhysValue3")] pub m_phys_value3 : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (512)] # [rename (name = "m_PhysValueEmpty")] pub m_phys_value_empty : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (520)] # [rename (name = "m_LocatorRoot")] pub m_locator_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (528)] # [rename (name = "m_TotalInfo")] pub m_total_info : crate :: unity_engine :: canvasgroup :: CanvasGroup ,
-# [offset (536)] # [rename (name = "m_PartInfo")] pub m_part_info : :: unity2 :: Array < crate :: unity_engine :: canvasgroup :: CanvasGroup > ,
-# [offset (544)] # [rename (name = "m_Images")] pub m_images : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [offset (552)] # [rename (name = "m_PageAlpha")] pub m_page_alpha : :: unity2 :: Array < f32 > ,
-# [offset (560)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
-# [offset (561)] # [rename (name = "m_IsDirtyAlpha")] pub m_is_dirty_alpha : bool ,
+impl MapInfoUnitLocatorRoot_TextMeshProKind{pub fn battle_type()->Self{Self{value:0}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_ImageKind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoUnitLocatorRoot_ImageKind  {
-    pub value: i32,
+pub fn phys_atk_title()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_ImageKind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapInfoUnitLocatorRoot.ImageKind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn phys_atk_value()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::IlType for MapInfoUnitLocatorRoot_ImageKind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn def_title()->Self{Self{value:3}
 }
-
-
-impl  MapInfoUnitLocatorRoot_ImageKind  {
-    pub fn battle_type() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn phys_atk_title() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn phys_atk_value() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn phys_atk_value1() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn phys_atk_value2() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn phys_atk_value3() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn phys_atk_value_empty() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn def_title() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn def_value() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn def_value1() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn def_value2() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn def_value3() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn def_value_empty() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn mag_atk_title() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn mag_atk_value() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn mag_atk_value1() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn mag_atk_value2() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn mag_atk_value3() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn mag_atk_value_empty() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn res_title() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn res_value() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn res_value1() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn res_value2() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn res_value3() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn res_value_empty() -> Self {
-        Self { value: 20 }
-
-    }
-
-
-    pub fn hit_title() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn hit_value() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn hit_value1() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn hit_value2() -> Self {
-        Self { value: 23 }
-
-    }
-
-
-    pub fn hit_value3() -> Self {
-        Self { value: 24 }
-
-    }
-
-
-    pub fn hit_value_empty() -> Self {
-        Self { value: 25 }
-
-    }
-
-
-    pub fn hit_value_infinity() -> Self {
-        Self { value: 26 }
-
-    }
-
-
-    pub fn avo_title() -> Self {
-        Self { value: 27 }
-
-    }
-
-
-    pub fn avo_value() -> Self {
-        Self { value: 28 }
-
-    }
-
-
-    pub fn avo_value1() -> Self {
-        Self { value: 28 }
-
-    }
-
-
-    pub fn avo_value2() -> Self {
-        Self { value: 29 }
-
-    }
-
-
-    pub fn avo_value3() -> Self {
-        Self { value: 30 }
-
-    }
-
-
-    pub fn avo_value_empty() -> Self {
-        Self { value: 31 }
-
-    }
-
-
-    pub fn crit_title() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn crit_value() -> Self {
-        Self { value: 33 }
-
-    }
-
-
-    pub fn crit_value1() -> Self {
-        Self { value: 33 }
-
-    }
-
-
-    pub fn crit_value2() -> Self {
-        Self { value: 34 }
-
-    }
-
-
-    pub fn crit_value3() -> Self {
-        Self { value: 35 }
-
-    }
-
-
-    pub fn crit_value_empty() -> Self {
-        Self { value: 36 }
-
-    }
-
-
-    pub fn crit_avo_title() -> Self {
-        Self { value: 37 }
-
-    }
-
-
-    pub fn crit_avo_value() -> Self {
-        Self { value: 38 }
-
-    }
-
-
-    pub fn crit_avo_value1() -> Self {
-        Self { value: 38 }
-
-    }
-
-
-    pub fn crit_avo_value2() -> Self {
-        Self { value: 39 }
-
-    }
-
-
-    pub fn crit_avo_value3() -> Self {
-        Self { value: 40 }
-
-    }
-
-
-    pub fn crit_avo_value_empty() -> Self {
-        Self { value: 41 }
-
-    }
-
-
-    pub fn skill_title() -> Self {
-        Self { value: 42 }
-
-    }
-
-
-    pub fn skill_value() -> Self {
-        Self { value: 43 }
-
-    }
-
-
-    pub fn skill_value1() -> Self {
-        Self { value: 43 }
-
-    }
-
-
-    pub fn skill_value2() -> Self {
-        Self { value: 44 }
-
-    }
-
-
-    pub fn skill_value3() -> Self {
-        Self { value: 45 }
-
-    }
-
-
-    pub fn skill_value_empty() -> Self {
-        Self { value: 46 }
-
-    }
-
-
-    pub fn spd_title() -> Self {
-        Self { value: 47 }
-
-    }
-
-
-    pub fn spd_value() -> Self {
-        Self { value: 48 }
-
-    }
-
-
-    pub fn spd_value1() -> Self {
-        Self { value: 48 }
-
-    }
-
-
-    pub fn spd_value2() -> Self {
-        Self { value: 49 }
-
-    }
-
-
-    pub fn spd_value3() -> Self {
-        Self { value: 50 }
-
-    }
-
-
-    pub fn spd_value_empty() -> Self {
-        Self { value: 51 }
-
-    }
-
-
-    pub fn move_title() -> Self {
-        Self { value: 52 }
-
-    }
-
-
-    pub fn move_value() -> Self {
-        Self { value: 53 }
-
-    }
-
-
-    pub fn move_value1() -> Self {
-        Self { value: 53 }
-
-    }
-
-
-    pub fn move_value2() -> Self {
-        Self { value: 54 }
-
-    }
-
-
-    pub fn move_value3() -> Self {
-        Self { value: 55 }
-
-    }
-
-
-    pub fn move_value_empty() -> Self {
-        Self { value: 56 }
-
-    }
-
-
-    pub fn phys_title() -> Self {
-        Self { value: 57 }
-
-    }
-
-
-    pub fn phys_value() -> Self {
-        Self { value: 58 }
-
-    }
-
-
-    pub fn phys_value1() -> Self {
-        Self { value: 58 }
-
-    }
-
-
-    pub fn phys_value2() -> Self {
-        Self { value: 59 }
-
-    }
-
-
-    pub fn phys_value3() -> Self {
-        Self { value: 60 }
-
-    }
-
-
-    pub fn phys_value_empty() -> Self {
-        Self { value: 61 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 62 }
-
-    }
-
+pub fn def_value()->Self{Self{value:4}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounitlocatorroot/MapInfoUnitLocatorRoot_CanvasGroupKind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoUnitLocatorRoot_CanvasGroupKind  {
-    pub value: i32,
+pub fn mag_atk_title()->Self{Self{value:5}
 }
-
-
-impl  ::unity2::ClassIdentity for MapInfoUnitLocatorRoot_CanvasGroupKind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapInfoUnitLocatorRoot.CanvasGroupKind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn mag_atk_value()->Self{Self{value:6}
 }
-
-
-impl  ::unity2::IlType for MapInfoUnitLocatorRoot_CanvasGroupKind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn res_title()->Self{Self{value:7}
 }
-
-
-impl  MapInfoUnitLocatorRoot_CanvasGroupKind  {
-    pub fn frm1() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn frm2() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn info0() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn info1() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn info2() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn info3() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn info4() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn info5() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn info6() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 9 }
-
-    }
-
+pub fn res_value()->Self{Self{value:8}
+}
+pub fn hit_title()->Self{Self{value:9}
+}
+pub fn hit_value()->Self{Self{value:10}
+}
+pub fn avo_title()->Self{Self{value:11}
+}
+pub fn avo_value()->Self{Self{value:12}
+}
+pub fn crit_title()->Self{Self{value:13}
+}
+pub fn crit_value()->Self{Self{value:14}
+}
+pub fn crit_avo_title()->Self{Self{value:15}
+}
+pub fn crit_avo_value()->Self{Self{value:16}
+}
+pub fn skill_title()->Self{Self{value:17}
+}
+pub fn skill_value()->Self{Self{value:18}
+}
+pub fn spd_title()->Self{Self{value:19}
+}
+pub fn spd_value()->Self{Self{value:20}
+}
+pub fn move_title()->Self{Self{value:21}
+}
+pub fn move_value()->Self{Self{value:22}
+}
+pub fn phys_title()->Self{Self{value:23}
+}
+pub fn phys_value()->Self{Self{value:24}
+}
+pub fn num()->Self{Self{value:25}
+}
 }
 
 }
@@ -876,32 +288,172 @@ impl  MapInfoUnitLocatorRoot_CanvasGroupKind  {
 #[cfg(feature = "app-mapinfounitlocatorroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapinfounitlocatorroot")]
-impl MapInfoUnitLocatorRoot { # [doc = "`IsUpdateAlpha(*mutf32, bool)` overload"] pub fn is_update_alpha (enable : impl :: core :: convert :: Into < bool >) -> (bool , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut f32 , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208ad10usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="app-mapinfounitlocatorroot")]impl MapInfoUnitLocatorRoot{#[doc="`IsUpdateAlpha(*mutf32, bool)` overload"]pub fn is_update_alpha(enable:impl::core::convert::Into<bool>)->(bool,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x208ad10usize)as*mut u8,bool;
+(*mut f32)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(enable))}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "app-mapinfounitlocatorroot")]
-pub trait IMapInfoUnitLocatorRootMethods : IMapInfoUnitLocatorRoot { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2088320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPartInfo()` overload"] fn get_part_info (self ,) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2088480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitPartInfoAlpha()` overload"] fn init_part_info_alpha (self ,) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20887d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetImage()` overload"] fn get_image (self ,) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2088860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitPageAlpha()` overload"] fn init_page_alpha (self ,) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2089760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdatePosition(crate::app::unit::Unit)` overload"] fn update_position (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20860d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateParam(crate::app::unit::Unit)` overload"] fn update_param (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateActive()` overload"] fn update_active (self ,) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208aa50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsVisible(crate::app::unit::Unit)` overload"] fn is_visible (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2089830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetAlphaTotalInfo(bool)` overload"] fn set_alpha_total_info (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20899a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`SetAlphaPartInfo()` overload"] fn set_alpha_part_info (self ,) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2089ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAlphaInfo(crate::app::gameconfig::GameConfig_UnitInfoType, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_CanvasGroupKind, bool)` overload"] fn set_alpha_info (self , page : impl :: core :: convert :: Into < crate :: app :: gameconfig :: GameConfig_UnitInfoType > , index : impl :: core :: convert :: Into < crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_CanvasGroupKind > , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: gameconfig :: GameConfig_UnitInfoType , crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_CanvasGroupKind , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208ab10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (page) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfo(crate::app::unit::Unit)` overload"] fn set_unit_info (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2089b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfoValue(i32, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind, bool, bool)` overload"] fn set_unit_info_value (self , value : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_ImageKind > , is_withhold : impl :: core :: convert :: Into < bool > , is_sure_hit : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , i32 , crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_ImageKind , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208c3f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (is_withhold) , :: core :: convert :: Into :: into (is_sure_hit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfo0(crate::app::unit::Unit)` overload"] fn set_unit_info0 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208ae20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfo1(crate::app::unit::Unit)` overload"] fn set_unit_info1 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208b160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfo2(crate::app::unit::Unit)` overload"] fn set_unit_info2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208b2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfo3(crate::app::unit::Unit)` overload"] fn set_unit_info3 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208b440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfo4(crate::app::unit::Unit)` overload"] fn set_unit_info4 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208b610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfo5(crate::app::unit::Unit)` overload"] fn set_unit_info5 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208b770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfo6(crate::app::unit::Unit)` overload"] fn set_unit_info6 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208ba00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetLanguageLabel(::unity2::Il2CppString)` overload"] fn get_language_label (self , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208ca60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`GetTitleName(crate::app::unit::Unit, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_TextMeshProKind)` overload"] fn get_title_name (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , kind : impl :: core :: convert :: Into < crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_TextMeshProKind >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_TextMeshProKind , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208cb80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetTitleSprite(crate::app::unit::Unit, crate::app::mapinfounit::MapInfoUnit_SpriteKind)` overload"] fn get_title_sprite (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , kind : impl :: core :: convert :: Into < crate :: app :: mapinfounit :: MapInfoUnit_SpriteKind >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , crate :: app :: mapinfounit :: MapInfoUnit_SpriteKind , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208c830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`SetAttackValue(crate::app::unit::Unit, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind)` overload"] fn set_attack_value (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , kind : impl :: core :: convert :: Into < crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_ImageKind >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , crate :: app :: unit :: Unit , crate :: app :: mapinfounitlocatorroot :: MapInfoUnitLocatorRoot_ImageKind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208c990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`set_IsUpdate(bool)` overload"] fn set_is_update (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208cd70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapInfoUnitLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoUnitLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208cd80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapinfounitlocatorroot")]pub trait IMapInfoUnitLocatorRootMethods:IMapInfoUnitLocatorRoot{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2088320usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver)}
+}
+#[doc="`GetPartInfo()` overload"]fn get_part_info(self,)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2088480usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver)}
+}
+#[doc="`InitPartInfoAlpha()` overload"]fn init_part_info_alpha(self,)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20887d0usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver)}
+}
+#[doc="`GetImage()` overload"]fn get_image(self,)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2088860usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver)}
+}
+#[doc="`InitPageAlpha()` overload"]fn init_page_alpha(self,)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2089760usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver)}
+}
+#[doc="`UpdatePosition(crate::app::unit::Unit)` overload"]fn update_position(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20860d0usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdateParam(crate::app::unit::Unit)` overload"]fn update_param(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086120usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdateActive()` overload"]fn update_active(self,)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208aa50usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver)}
+}
+#[doc="`IsVisible(crate::app::unit::Unit)` overload"]fn is_visible(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2089830usize)as*mut u8,bool;
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetAlphaTotalInfo(bool)` overload"]fn set_alpha_total_info(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20899a0usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`SetAlphaPartInfo()` overload"]fn set_alpha_part_info(self,)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2089ca0usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver)}
+}
+#[doc="`SetAlphaInfo(crate::app::gameconfig::GameConfig_UnitInfoType, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_CanvasGroupKind, bool)` overload"]fn set_alpha_info(self,page:impl::core::convert::Into<crate::app::gameconfig::GameConfig_UnitInfoType> ,index:impl::core::convert::Into<crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_CanvasGroupKind> ,enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208ab10usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::gameconfig::GameConfig_UnitInfoType)::core::convert::Into::into(page),(crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_CanvasGroupKind)::core::convert::Into::into(index),(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`SetUnitInfo(crate::app::unit::Unit)` overload"]fn set_unit_info(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2089b80usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetUnitInfoValue(i32, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind, bool, bool)` overload"]fn set_unit_info_value(self,value:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind> ,is_withhold:impl::core::convert::Into<bool> ,is_sure_hit:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208c3f0usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(i32)::core::convert::Into::into(value),(crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind)::core::convert::Into::into(kind),(bool)::core::convert::Into::into(is_withhold),(bool)::core::convert::Into::into(is_sure_hit))}
+}
+#[doc="`SetUnitInfo0(crate::app::unit::Unit)` overload"]fn set_unit_info0(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208ae20usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetUnitInfo1(crate::app::unit::Unit)` overload"]fn set_unit_info1(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208b160usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetUnitInfo2(crate::app::unit::Unit)` overload"]fn set_unit_info2(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208b2d0usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetUnitInfo3(crate::app::unit::Unit)` overload"]fn set_unit_info3(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208b440usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetUnitInfo4(crate::app::unit::Unit)` overload"]fn set_unit_info4(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208b610usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetUnitInfo5(crate::app::unit::Unit)` overload"]fn set_unit_info5(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208b770usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetUnitInfo6(crate::app::unit::Unit)` overload"]fn set_unit_info6(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208ba00usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetLanguageLabel(::unity2::Il2CppString)` overload"]fn get_language_label(self,label:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208ca60usize)as*mut u8, ::unity2::Il2CppString;
+(MapInfoUnitLocatorRoot)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`GetTitleName(crate::app::unit::Unit, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_TextMeshProKind)` overload"]fn get_title_name(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,kind:impl::core::convert::Into<crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_TextMeshProKind>)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208cb80usize)as*mut u8, ::unity2::Il2CppString;
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_TextMeshProKind)::core::convert::Into::into(kind))}
+}
+#[doc="`GetTitleSprite(crate::app::unit::Unit, crate::app::mapinfounit::MapInfoUnit_SpriteKind)` overload"]fn get_title_sprite(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,kind:impl::core::convert::Into<crate::app::mapinfounit::MapInfoUnit_SpriteKind>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208c830usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::mapinfounit::MapInfoUnit_SpriteKind)::core::convert::Into::into(kind))}
+}
+#[doc="`SetAttackValue(crate::app::unit::Unit, crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind)` overload"]fn set_attack_value(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,kind:impl::core::convert::Into<crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208c990usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::mapinfounitlocatorroot::MapInfoUnitLocatorRoot_ImageKind)::core::convert::Into::into(kind))}
+}
+#[doc="`set_IsUpdate(bool)` overload"]fn set_is_update(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208cd70usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInfoUnitLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208cd80usize)as*mut u8,();
+(MapInfoUnitLocatorRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapinfounitlocatorroot")]
-impl < __T : IMapInfoUnitLocatorRoot > IMapInfoUnitLocatorRootMethods for __T { }
+#[cfg(feature="app-mapinfounitlocatorroot")]impl<__T:IMapInfoUnitLocatorRoot>IMapInfoUnitLocatorRootMethods for __T{}
 
-#[cfg(feature = "app-mapinfounitlocatorroot")]
-impl MapInfoUnitLocatorRoot { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_part_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_part_info_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn init_page_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_alpha_total_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_alpha_part_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_alpha_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_update_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_unit_info_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_unit_info0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_unit_info1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_unit_info2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_unit_info3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_unit_info4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_unit_info5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_unit_info6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_language_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_title_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_title_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_attack_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_is_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoUnitLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } }
+#[cfg(feature="app-mapinfounitlocatorroot")]impl MapInfoUnitLocatorRoot{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_part_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_part_info_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn init_page_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_alpha_total_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_alpha_part_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_alpha_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_update_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_unit_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_unit_info_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_unit_info0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_unit_info1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_unit_info2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_unit_info3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_unit_info4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_unit_info5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_unit_info6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_language_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_title_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_title_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_attack_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_is_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+}
 
-#[cfg(feature = "app-mapinfounitlocatorroot")]
-impl MapInfoUnitLocatorRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoUnitLocatorRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoUnitLocatorRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapinfounitlocatorroot")]impl MapInfoUnitLocatorRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInfoUnitLocatorRoot), ::core::stringify!(new),));
+ <Self as IMapInfoUnitLocatorRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapinfounitlocatorroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapInfoUnitLocatorRoot_TextMeshProKind;
+    pub use super::MapInfoUnitLocatorRoot_CanvasGroupKind;
     pub use super::MapInfoUnitLocatorRoot;
     pub use super::IMapInfoUnitLocatorRoot;
     pub use super::IMapInfoUnitLocatorRootMethods;
     pub use super::MapInfoUnitLocatorRoot_ImageKind;
-    pub use super::MapInfoUnitLocatorRoot_CanvasGroupKind;
+    pub use super::MapInfoUnitLocatorRoot_TextMeshProKind;
     pub use crate::app::mapinfobase::IMapInfoBase;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

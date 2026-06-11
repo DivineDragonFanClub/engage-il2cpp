@@ -4,67 +4,116 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustunitdata/SortieEntrustUnitData.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieEntrustUnitData")] # [parent (crate :: system :: object :: Object)] pub struct SortieEntrustUnitData {
-# [offset (16)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (24)] # [rename (name = "m_UnitItems")] pub m_unit_items : :: unity2 :: Array < crate :: app :: unititem :: UnitItem > ,
-# [offset (32)] # [rename (name = "m_Count")] pub m_count : i32 ,
-# [offset (36)] # [rename (name = "m_Progress")] pub m_progress : crate :: app :: sortieentrustprogress :: SortieEntrustProgress ,
-# [offset (40)] # [rename (name = "m_SortedWeaponKind")] pub m_sorted_weapon_kind : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData_WeaponKindExp > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustunitdata/SortieEntrustUnitData_WeaponKindExp.md"))]#[::unity2::class(namespace="App",name="SortieEntrustUnitData.WeaponKindExp")]#[parent(crate::system::object::Object)]pub struct SortieEntrustUnitData_WeaponKindExp{#[offset(16)]#[rename(name="m_ItemKind")]pub m_item_kind:crate::app::itemdata::ItemData_Kinds, #[offset(20)]#[rename(name="m_Exp")]pub m_exp:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustunitdata/SortieEntrustUnitData_WeaponKindExp.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieEntrustUnitData.WeaponKindExp")] # [parent (crate :: system :: object :: Object)] pub struct SortieEntrustUnitData_WeaponKindExp {
-# [offset (16)] # [rename (name = "m_ItemKind")] pub m_item_kind : crate :: app :: itemdata :: ItemData_Kinds ,
-# [offset (20)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustunitdata/SortieEntrustUnitData.md"))]#[::unity2::class(namespace="App",name="SortieEntrustUnitData")]#[parent(crate::system::object::Object)]pub struct SortieEntrustUnitData{#[offset(16)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_UnitItems")]pub m_unit_items: ::unity2::Array<crate::app::unititem::UnitItem> , #[offset(32)]#[rename(name="m_Count")]pub m_count:i32, #[offset(36)]#[rename(name="m_Progress")]pub m_progress:crate::app::sortieentrustprogress::SortieEntrustProgress, #[offset(40)]#[rename(name="m_SortedWeaponKind")]pub m_sorted_weapon_kind:crate::system::collections::generic::list_1::List_1<crate::app::sortieentrustunitdata::SortieEntrustUnitData_WeaponKindExp> ,}
 
 }
 
 #[cfg(feature = "app-sortieentrustunitdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortieentrustunitdata")]
-pub trait ISortieEntrustUnitDataMethods : ISortieEntrustUnitData { # [doc = "`.ctor(crate::app::unit::Unit)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SortieEntrustUnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe72f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::unititem::UnitItem)` overload"] fn add (self , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < SortieEntrustUnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`NextProgress()` overload"] fn next_progress (self ,) -> () { unsafe { let __receiver = < SortieEntrustUnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndProgress()` overload"] fn end_progress (self ,) -> () { unsafe { let __receiver = < SortieEntrustUnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSortedWeaponKind(i32)` overload"] fn get_sorted_weapon_kind (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < SortieEntrustUnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe61d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < SortieEntrustUnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_UnitItems()` overload"] fn get_unit_items (self ,) -> :: unity2 :: Array < crate :: app :: unititem :: UnitItem > { unsafe { let __receiver = < SortieEntrustUnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: unititem :: UnitItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < SortieEntrustUnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Progress()` overload"] fn get_progress (self ,) -> crate :: app :: sortieentrustprogress :: SortieEntrustProgress { unsafe { let __receiver = < SortieEntrustUnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieentrustprogress :: SortieEntrustProgress = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-sortieentrustunitdata")]
-impl < __T : ISortieEntrustUnitData > ISortieEntrustUnitDataMethods for __T { }
-
-#[cfg(feature = "app-sortieentrustunitdata")]
-impl SortieEntrustUnitData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn next_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn end_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_sorted_weapon_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_unit_items_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "app-sortieentrustunitdata")]
-impl SortieEntrustUnitData {
-# [doc = "`.ctor(crate::app::unit::Unit)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieEntrustUnitData) , :: core :: stringify ! (new) ,)) ; < Self as ISortieEntrustUnitDataMethods > :: ctor (this , unit) ; this }
+#[cfg(feature="app-sortieentrustunitdata")]pub trait ISortieEntrustUnitData_WeaponKindExpMethods:ISortieEntrustUnitData_WeaponKindExp{#[doc="`.ctor(crate::app::itemdata::ItemData_Kinds, i32)` overload"]fn ctor(self,item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,exp:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortieEntrustUnitData_WeaponKindExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d752c0usize)as*mut u8,();
+(SortieEntrustUnitData_WeaponKindExp)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(item_kind),(i32)::core::convert::Into::into(exp))}
+}
+#[doc="`get_ItemKind()` overload"]fn get_item_kind(self,)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <SortieEntrustUnitData_WeaponKindExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d75300usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(SortieEntrustUnitData_WeaponKindExp)__receiver)}
+}
+#[doc="`get_Exp()` overload"]fn get_exp(self,)->i32{unsafe{let __receiver= <SortieEntrustUnitData_WeaponKindExp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d75310usize)as*mut u8,i32;
+(SortieEntrustUnitData_WeaponKindExp)__receiver)}
+}
 }
 
-#[cfg(feature = "app-sortieentrustunitdata")]
-pub trait ISortieEntrustUnitData_WeaponKindExpMethods : ISortieEntrustUnitData_WeaponKindExp { # [doc = "`.ctor(crate::app::itemdata::ItemData_Kinds, i32)` overload"] fn ctor (self , item_kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds > , exp : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SortieEntrustUnitData_WeaponKindExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData_WeaponKindExp , crate :: app :: itemdata :: ItemData_Kinds , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d752c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item_kind) , :: core :: convert :: Into :: into (exp) , :: core :: option :: Option :: None) } } } # [doc = "`get_ItemKind()` overload"] fn get_item_kind (self ,) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < SortieEntrustUnitData_WeaponKindExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData_WeaponKindExp , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d75300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Exp()` overload"] fn get_exp (self ,) -> i32 { unsafe { let __receiver = < SortieEntrustUnitData_WeaponKindExp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitData_WeaponKindExp , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d75310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortieentrustunitdata")]impl<__T:ISortieEntrustUnitData_WeaponKindExp>ISortieEntrustUnitData_WeaponKindExpMethods for __T{}
 
-#[cfg(feature = "app-sortieentrustunitdata")]
-impl < __T : ISortieEntrustUnitData_WeaponKindExp > ISortieEntrustUnitData_WeaponKindExpMethods for __T { }
+#[cfg(feature="app-sortieentrustunitdata")]impl SortieEntrustUnitData_WeaponKindExp{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-sortieentrustunitdata")]
-impl SortieEntrustUnitData_WeaponKindExp { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData_WeaponKindExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData_WeaponKindExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitData_WeaponKindExp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-sortieentrustunitdata")]impl SortieEntrustUnitData_WeaponKindExp{#[doc="`.ctor(crate::app::itemdata::ItemData_Kinds, i32)` — overload selector"]pub fn new(item_kind:crate::app::itemdata::ItemData_Kinds,exp:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieEntrustUnitData_WeaponKindExp), ::core::stringify!(new),));
+ <Self as ISortieEntrustUnitData_WeaponKindExpMethods> ::ctor(this,item_kind,exp);
+this}
+}
 
-#[cfg(feature = "app-sortieentrustunitdata")]
-impl SortieEntrustUnitData_WeaponKindExp {
-# [doc = "`.ctor(crate::app::itemdata::ItemData_Kinds, i32)` — overload selector"] pub fn new (item_kind : crate :: app :: itemdata :: ItemData_Kinds , exp : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieEntrustUnitData_WeaponKindExp) , :: core :: stringify ! (new) ,)) ; < Self as ISortieEntrustUnitData_WeaponKindExpMethods > :: ctor (this , item_kind , exp) ; this }
+#[cfg(feature="app-sortieentrustunitdata")]pub trait ISortieEntrustUnitDataMethods:ISortieEntrustUnitData{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <SortieEntrustUnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe72f0usize)as*mut u8,();
+(SortieEntrustUnitData)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Add(crate::app::unititem::UnitItem)` overload"]fn add(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <SortieEntrustUnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7a70usize)as*mut u8,();
+(SortieEntrustUnitData)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`NextProgress()` overload"]fn next_progress(self,)->(){unsafe{let __receiver= <SortieEntrustUnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7c00usize)as*mut u8,();
+(SortieEntrustUnitData)__receiver)}
+}
+#[doc="`EndProgress()` overload"]fn end_progress(self,)->(){unsafe{let __receiver= <SortieEntrustUnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7c20usize)as*mut u8,();
+(SortieEntrustUnitData)__receiver)}
+}
+#[doc="`GetSortedWeaponKind(i32)` overload"]fn get_sorted_weapon_kind(self,index:impl::core::convert::Into<i32>)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <SortieEntrustUnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe61d0usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(SortieEntrustUnitData)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <SortieEntrustUnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7c30usize)as*mut u8,crate::app::unit::Unit;
+(SortieEntrustUnitData)__receiver)}
+}
+#[doc="`get_UnitItems()` overload"]fn get_unit_items(self,)-> ::unity2::Array<crate::app::unititem::UnitItem>{unsafe{let __receiver= <SortieEntrustUnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7c40usize)as*mut u8, ::unity2::Array<crate::app::unititem::UnitItem> ;
+(SortieEntrustUnitData)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <SortieEntrustUnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7c50usize)as*mut u8,i32;
+(SortieEntrustUnitData)__receiver)}
+}
+#[doc="`get_Progress()` overload"]fn get_progress(self,)->crate::app::sortieentrustprogress::SortieEntrustProgress{unsafe{let __receiver= <SortieEntrustUnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7c60usize)as*mut u8,crate::app::sortieentrustprogress::SortieEntrustProgress;
+(SortieEntrustUnitData)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortieentrustunitdata")]impl<__T:ISortieEntrustUnitData>ISortieEntrustUnitDataMethods for __T{}
+
+#[cfg(feature="app-sortieentrustunitdata")]impl SortieEntrustUnitData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn next_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn end_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_sorted_weapon_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_unit_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-sortieentrustunitdata")]impl SortieEntrustUnitData{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieEntrustUnitData), ::core::stringify!(new),));
+ <Self as ISortieEntrustUnitDataMethods> ::ctor(this,unit);
+this}
 }
 
 #[cfg(feature = "app-sortieentrustunitdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieEntrustUnitData;
-    pub use super::ISortieEntrustUnitData;
-    pub use super::ISortieEntrustUnitDataMethods;
     pub use super::SortieEntrustUnitData_WeaponKindExp;
     pub use super::ISortieEntrustUnitData_WeaponKindExp;
     pub use super::ISortieEntrustUnitData_WeaponKindExpMethods;
+    pub use super::SortieEntrustUnitData;
+    pub use super::ISortieEntrustUnitData;
+    pub use super::ISortieEntrustUnitDataMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

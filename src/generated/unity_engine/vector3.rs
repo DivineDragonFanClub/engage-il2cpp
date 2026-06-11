@@ -4,278 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/vector3/Vector3.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Vector3 {
-    pub x: f32,
-    pub y: f32,
-    pub z: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vector3/Vector3.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Vector3{pub x:f32,pub y:f32,pub z:f32,}
+impl::unity2::ClassIdentity for Vector3{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Vector3";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Vector3 {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Vector3";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for Vector3{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for Vector3 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl Vector3{#[inline]pub fn k_epsilon()->f32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kEpsilon");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_k_epsilon(value:f32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kEpsilon");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl Vector3 {
-    #[inline]
-    pub fn k_epsilon() -> f32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kEpsilon");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_k_epsilon(value: f32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kEpsilon");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn k_epsilon_normal_sqrt() -> f32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kEpsilonNormalSqrt");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_k_epsilon_normal_sqrt(value: f32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kEpsilonNormalSqrt");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn zero_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "zeroVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_zero_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "zeroVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn one_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "oneVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_one_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "oneVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn up_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "upVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_up_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "upVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn down_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "downVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_down_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "downVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn left_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "leftVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_left_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "leftVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn right_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "rightVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_right_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "rightVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn forward_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "forwardVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_forward_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "forwardVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn back_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "backVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_back_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "backVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn positive_infinity_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "positiveInfinityVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_positive_infinity_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "positiveInfinityVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn negative_infinity_vector() -> crate :: unity_engine :: vector3 :: Vector3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "negativeInfinityVector");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_negative_infinity_vector(value: crate :: unity_engine :: vector3 :: Vector3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "negativeInfinityVector");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn k_epsilon_normal_sqrt()->f32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kEpsilonNormalSqrt");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_k_epsilon_normal_sqrt(value:f32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kEpsilonNormalSqrt");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn zero_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"zeroVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_zero_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"zeroVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn one_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"oneVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_one_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"oneVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn up_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"upVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_up_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"upVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn down_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"downVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_down_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"downVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn left_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"leftVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_left_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"leftVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn right_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"rightVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_right_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"rightVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn forward_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"forwardVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_forward_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"forwardVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn back_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"backVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_back_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"backVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn positive_infinity_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"positiveInfinityVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_positive_infinity_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"positiveInfinityVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn negative_infinity_vector()->crate::unity_engine::vector3::Vector3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"negativeInfinityVector");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_negative_infinity_vector(value:crate::unity_engine::vector3::Vector3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"negativeInfinityVector");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -283,14 +111,255 @@ impl Vector3 {
 #[cfg(feature = "unity_engine-vector3-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-vector3")]
-impl Vector3 { # [doc = "`Slerp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn slerp (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797490usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`OrthoNormalize2(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn ortho_normalize2 () -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797580usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`OrthoNormalize(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn ortho_normalize () -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37975d0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`RotateTowards(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32)` overload"] pub fn rotate_towards (current : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , target : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , max_radians_delta : impl :: core :: convert :: Into < f32 > , max_magnitude_delta : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (max_radians_delta) , :: core :: convert :: Into :: into (max_magnitude_delta) , :: core :: option :: Option :: None) } } } # [doc = "`Lerp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn lerp (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797720usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`LerpUnclamped(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn lerp_unclamped (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37977a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`MoveTowards(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn move_towards (current : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , target : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , max_distance_delta : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37977d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (max_distance_delta) , :: core :: option :: Option :: None) } } } # [doc = "`SmoothDamp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32)` overload"] pub fn smooth_damp (current : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , target : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , smooth_time : impl :: core :: convert :: Into < f32 >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797930usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (smooth_time) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`SmoothDamp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32, f32, f32)` overload"] pub fn smooth_damp_2 (current : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , target : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , smooth_time : impl :: core :: convert :: Into < f32 > , max_speed : impl :: core :: convert :: Into < f32 > , delta_time : impl :: core :: convert :: Into < f32 >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37979e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (smooth_time) , :: core :: convert :: Into :: into (max_speed) , :: core :: convert :: Into :: into (delta_time) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`Scale(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn scale (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797dd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Cross(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn cross (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797de0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`Reflect(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn reflect (in_direction : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , in_normal : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797f50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_direction) , :: core :: convert :: Into :: into (in_normal) , :: core :: option :: Option :: None) } } } # [doc = "`Normalize(crate::unity_engine::vector3::Vector3)` overload"] pub fn normalize (value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797f90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Dot(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn dot (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`Project(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn project (vector : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , on_normal : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798240usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vector) , :: core :: convert :: Into :: into (on_normal) , :: core :: option :: Option :: None) } } } # [doc = "`ProjectOnPlane(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn project_on_plane (vector : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , plane_normal : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vector) , :: core :: convert :: Into :: into (plane_normal) , :: core :: option :: Option :: None) } } } # [doc = "`Angle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn angle (from : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , to : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (from) , :: core :: convert :: Into :: into (to) , :: core :: option :: Option :: None) } } } # [doc = "`SignedAngle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn signed_angle (from : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , to : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , axis : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (from) , :: core :: convert :: Into :: into (to) , :: core :: convert :: Into :: into (axis) , :: core :: option :: Option :: None) } } } # [doc = "`Distance(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn distance (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798650usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`ClampMagnitude(crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn clamp_magnitude (vector : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , max_length : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798720usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vector) , :: core :: convert :: Into :: into (max_length) , :: core :: option :: Option :: None) } } } # [doc = "`Magnitude(crate::unity_engine::vector3::Vector3)` overload"] pub fn magnitude (vector : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vector) , :: core :: option :: Option :: None) } } } # [doc = "`SqrMagnitude(crate::unity_engine::vector3::Vector3)` overload"] pub fn sqr_magnitude (vector : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (vector) , :: core :: option :: Option :: None) } } } # [doc = "`Min(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn min (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798990usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`Max(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn max (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798a10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`get_zero()` overload"] pub fn get_zero () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37980a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_one()` overload"] pub fn get_one () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798a90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_forward()` overload"] pub fn get_forward () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3790560usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_back()` overload"] pub fn get_back () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798ae0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_up()` overload"] pub fn get_up () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3790380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_down()` overload"] pub fn get_down () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798b30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_left()` overload"] pub fn get_left () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798b80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_right()` overload"] pub fn get_right () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37901a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`op_Addition(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn op_addition (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Subtraction(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn op_subtraction (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798be0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_UnaryNegation(crate::unity_engine::vector3::Vector3)` overload"] pub fn op_unary_negation (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798bf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn op_multiply (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , d : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798c00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (d) , :: core :: option :: Option :: None) } } } # [doc = "`op_Multiply(f32, crate::unity_engine::vector3::Vector3)` overload"] pub fn op_multiply_2 (d : impl :: core :: convert :: Into < f32 > , a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (f32 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798c10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (d) , :: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`op_Division(crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn op_division (a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , d : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798c30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (d) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798c40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798c80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798f00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Slerp_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32, *mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn slerp_injected (t : impl :: core :: convert :: Into < f32 >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , f32 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797510usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (t) , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`RotateTowards_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32, f32, *mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn rotate_towards_injected (max_radians_delta : impl :: core :: convert :: Into < f32 > , max_magnitude_delta : impl :: core :: convert :: Into < f32 >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , f32 , f32 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37976b0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (max_radians_delta) , :: core :: convert :: Into :: into (max_magnitude_delta) , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } }
+#[cfg(feature="unity_engine-vector3")]impl Vector3{#[doc="`Slerp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn slerp(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797490usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`OrthoNormalize2(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn ortho_normalize2()->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3797580usize)as*mut u8,();
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`OrthoNormalize(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn ortho_normalize()->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37975d0usize)as*mut u8,();
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`RotateTowards(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32)` overload"]pub fn rotate_towards(current:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,target:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,max_radians_delta:impl::core::convert::Into<f32> ,max_magnitude_delta:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797620usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(current),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target),(f32)::core::convert::Into::into(max_radians_delta),(f32)::core::convert::Into::into(max_magnitude_delta))}
+}
+#[doc="`Lerp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn lerp(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797720usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`LerpUnclamped(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn lerp_unclamped(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37977a0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`MoveTowards(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn move_towards(current:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,target:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,max_distance_delta:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37977d0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(current),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target),(f32)::core::convert::Into::into(max_distance_delta))}
+}
+#[doc="`SmoothDamp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32)` overload"]pub fn smooth_damp(current:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,target:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,smooth_time:impl::core::convert::Into<f32>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3797930usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(current),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target),(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(smooth_time))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SmoothDamp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32, f32, f32)` overload"]pub fn smooth_damp_2(current:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,target:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,smooth_time:impl::core::convert::Into<f32> ,max_speed:impl::core::convert::Into<f32> ,delta_time:impl::core::convert::Into<f32>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x37979e0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(current),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target),(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(smooth_time),(f32)::core::convert::Into::into(max_speed),(f32)::core::convert::Into::into(delta_time))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`Scale(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn scale(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797dd0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b))}
+}
+#[doc="`Cross(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn cross(lhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797de0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(lhs),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(rhs))}
+}
+#[doc="`Reflect(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn reflect(in_direction:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,in_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797f50usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_direction),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_normal))}
+}
+#[doc="`Normalize(crate::unity_engine::vector3::Vector3)` overload"]pub fn normalize(value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797f90usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`Dot(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn dot(lhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798220usize)as*mut u8,f32;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(lhs),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(rhs))}
+}
+#[doc="`Project(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn project(vector:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,on_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798240usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(vector),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(on_normal))}
+}
+#[doc="`ProjectOnPlane(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn project_on_plane(vector:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,plane_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798340usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(vector),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(plane_normal))}
+}
+#[doc="`Angle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn angle(from:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,to:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798420usize)as*mut u8,f32;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(from),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(to))}
+}
+#[doc="`SignedAngle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn signed_angle(from:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,to:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,axis:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798590usize)as*mut u8,f32;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(from),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(to),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(axis))}
+}
+#[doc="`Distance(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn distance(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798650usize)as*mut u8,f32;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b))}
+}
+#[doc="`ClampMagnitude(crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn clamp_magnitude(vector:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,max_length:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798720usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(vector),(f32)::core::convert::Into::into(max_length))}
+}
+#[doc="`Magnitude(crate::unity_engine::vector3::Vector3)` overload"]pub fn magnitude(vector:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798800usize)as*mut u8,f32;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(vector))}
+}
+#[doc="`SqrMagnitude(crate::unity_engine::vector3::Vector3)` overload"]pub fn sqr_magnitude(vector:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798970usize)as*mut u8,f32;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(vector))}
+}
+#[doc="`Min(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn min(lhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798990usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(lhs),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(rhs))}
+}
+#[doc="`Max(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn max(lhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798a10usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(lhs),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(rhs))}
+}
+#[doc="`get_zero()` overload"]pub fn get_zero()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37980a0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`get_one()` overload"]pub fn get_one()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798a90usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`get_forward()` overload"]pub fn get_forward()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3790560usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`get_back()` overload"]pub fn get_back()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798ae0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`get_up()` overload"]pub fn get_up()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3790380usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`get_down()` overload"]pub fn get_down()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798b30usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`get_left()` overload"]pub fn get_left()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798b80usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`get_right()` overload"]pub fn get_right()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37901a0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`op_Addition(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn op_addition(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798bd0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b))}
+}
+#[doc="`op_Subtraction(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn op_subtraction(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798be0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b))}
+}
+#[doc="`op_UnaryNegation(crate::unity_engine::vector3::Vector3)` overload"]pub fn op_unary_negation(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798bf0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a))}
+}
+#[doc="`op_Multiply(crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn op_multiply(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,d:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798c00usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(f32)::core::convert::Into::into(d))}
+}
+#[doc="`op_Multiply(f32, crate::unity_engine::vector3::Vector3)` overload"]pub fn op_multiply_2(d:impl::core::convert::Into<f32> ,a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798c10usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(f32)::core::convert::Into::into(d),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a))}
+}
+#[doc="`op_Division(crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn op_division(a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,d:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798c30usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(f32)::core::convert::Into::into(d))}
+}
+#[doc="`op_Equality(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798c40usize)as*mut u8,bool;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(lhs),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rhs:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798c80usize)as*mut u8,bool;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(lhs),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(rhs))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798f00usize)as*mut u8,();
+)}
+}
+#[doc="`Slerp_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32, *mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn slerp_injected(t:impl::core::convert::Into<f32>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3797510usize)as*mut u8,();
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr(),(f32)::core::convert::Into::into(t),(*mut crate::unity_engine::vector3::Vector3)__out_2.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+#[doc="`RotateTowards_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, f32, f32, *mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn rotate_towards_injected(max_radians_delta:impl::core::convert::Into<f32> ,max_magnitude_delta:impl::core::convert::Into<f32>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37976b0usize)as*mut u8,();
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr(),(f32)::core::convert::Into::into(max_radians_delta),(f32)::core::convert::Into::into(max_magnitude_delta),(*mut crate::unity_engine::vector3::Vector3)__out_2.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-vector3")]
-impl Vector3 { # [doc = "`get_Item(i32)` overload"] pub fn get_item (& mut self , index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Vector3 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797c60usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(i32, f32)` overload"] pub fn set_item (& mut self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Vector3 , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797d00usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32, f32, f32)` overload"] pub fn ctor (& mut self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , z : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Vector3 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797da0usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32, f32)` overload"] pub fn ctor_2 (& mut self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Vector3 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797db0usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`Set(f32, f32, f32)` overload"] pub fn set (& mut self , new_x : impl :: core :: convert :: Into < f32 > , new_y : impl :: core :: convert :: Into < f32 > , new_z : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Vector3 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797dc0usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: convert :: Into :: into (new_x) , :: core :: convert :: Into :: into (new_y) , :: core :: convert :: Into :: into (new_z) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Vector3 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797e10usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Vector3 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797e70usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::vector3::Vector3)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3797f20usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Normalize()` overload"] pub fn normalize_2 (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37980f0usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: option :: Option :: None) } } } # [doc = "`get_normalized()` overload"] pub fn get_normalized (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798210usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: option :: Option :: None) } } } # [doc = "`get_magnitude()` overload"] pub fn get_magnitude (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37988b0usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: option :: Option :: None) } } } # [doc = "`get_sqrMagnitude()` overload"] pub fn get_sqr_magnitude (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798570usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Vector3 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3798cc0usize) as * mut u8) ; __inner (self as * mut Vector3 , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vector3")]impl Vector3{#[doc="`get_Item(i32)` overload"]pub fn get_item(&mut self,index:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797c60usize)as*mut u8,f32;
+(*mut Vector3)self as*mut Vector3,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`set_Item(i32, f32)` overload"]pub fn set_item(&mut self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797d00usize)as*mut u8,();
+(*mut Vector3)self as*mut Vector3,(i32)::core::convert::Into::into(index),(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(f32, f32, f32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,z:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797da0usize)as*mut u8,();
+(*mut Vector3)self as*mut Vector3,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(z))}
+}
+#[doc="`.ctor(f32, f32)` overload"]pub fn ctor_2(&mut self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797db0usize)as*mut u8,();
+(*mut Vector3)self as*mut Vector3,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`Set(f32, f32, f32)` overload"]pub fn set(&mut self,new_x:impl::core::convert::Into<f32> ,new_y:impl::core::convert::Into<f32> ,new_z:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797dc0usize)as*mut u8,();
+(*mut Vector3)self as*mut Vector3,(f32)::core::convert::Into::into(new_x),(f32)::core::convert::Into::into(new_y),(f32)::core::convert::Into::into(new_z))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797e10usize)as*mut u8,i32;
+(*mut Vector3)self as*mut Vector3)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797e70usize)as*mut u8,bool;
+(*mut Vector3)self as*mut Vector3,(crate::system::object::Object)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::unity_engine::vector3::Vector3)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3797f20usize)as*mut u8,bool;
+(*mut Vector3)self as*mut Vector3,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(other))}
+}
+#[doc="`Normalize()` overload"]pub fn normalize_2(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37980f0usize)as*mut u8,();
+(*mut Vector3)self as*mut Vector3)}
+}
+#[doc="`get_normalized()` overload"]pub fn get_normalized(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798210usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut Vector3)self as*mut Vector3)}
+}
+#[doc="`get_magnitude()` overload"]pub fn get_magnitude(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37988b0usize)as*mut u8,f32;
+(*mut Vector3)self as*mut Vector3)}
+}
+#[doc="`get_sqrMagnitude()` overload"]pub fn get_sqr_magnitude(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798570usize)as*mut u8,f32;
+(*mut Vector3)self as*mut Vector3)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3798cc0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Vector3)self as*mut Vector3)}
+}
+}
 
-#[cfg(feature = "unity_engine-vector3")]
-impl Vector3 { pub fn slerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ortho_normalize2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ortho_normalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn rotate_towards_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn lerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn lerp_unclamped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn move_towards_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn smooth_damp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn smooth_damp_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cross_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn reflect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn normalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn normalize_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_normalized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn dot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn project_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn project_on_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn signed_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn clamp_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn sqr_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_sqr_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn get_one_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_forward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_back_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn get_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn get_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn op_addition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn op_subtraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn op_unary_negation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn op_multiply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn op_multiply_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn op_division_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn slerp_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn rotate_towards_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } }
+#[cfg(feature="unity_engine-vector3")]impl Vector3{pub fn slerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ortho_normalize2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ortho_normalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn rotate_towards_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn lerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn lerp_unclamped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn move_towards_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn smooth_damp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn smooth_damp_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cross_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn reflect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn normalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn normalize_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_normalized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn dot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn project_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn project_on_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn signed_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn clamp_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn sqr_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_sqr_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_one_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_forward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_back_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn op_addition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn op_subtraction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn op_unary_negation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn op_multiply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn op_multiply_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn op_division_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn slerp_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn rotate_towards_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+}
 
 #[cfg(feature = "unity_engine-vector3")]
 #[doc(hidden)]

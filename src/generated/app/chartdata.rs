@@ -4,69 +4,228 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartdata/ChartData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChartData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: chartdata :: ChartData >)] pub struct ChartData {
-# [static_field] # [rename (name = "ITEM_COUNT")] pub item_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartdata/ChartData_Item.md"))]#[::unity2::class(namespace="App",name="ChartData.Item")]#[parent(crate::system::object::Object)]pub struct ChartData_Item{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartdata/ChartData_Item.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChartData.Item")] # [parent (crate :: system :: object :: Object)] pub struct ChartData_Item {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartdata/ChartData.md"))]#[::unity2::class(namespace="App",name="ChartData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::chartdata::ChartData>)]pub struct ChartData{#[static_field]#[rename(name="ITEM_COUNT")]pub item_count:i32,}
 
 }
 
 #[cfg(feature = "app-chartdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-chartdata")]
-impl ChartData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9fc00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-chartdata")]
-pub trait IChartDataMethods : IChartData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9fcb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Chapter()` overload"] fn get_chapter (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ff70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Chapter(::unity2::Il2CppString)` overload"] fn set_chapter (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ff80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Pid()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ff90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Pid(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ffa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LevelN()` overload"] fn get_level_n (self ,) -> u8 { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ffb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LevelN(u8)` overload"] fn set_level_n (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ffc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LevelH()` overload"] fn get_level_h (self ,) -> u8 { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ffd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LevelH(u8)` overload"] fn set_level_h (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9ffe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LevelL()` overload"] fn get_level_l (self ,) -> u8 { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e9fff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LevelL(u8)` overload"] fn set_level_l (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Jid()` overload"] fn get_jid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Jid(::unity2::Il2CppString)` overload"] fn set_jid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Items()` overload"] fn get_items (self ,) -> :: unity2 :: Array < crate :: app :: chartdata :: ChartData_Item > { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: chartdata :: ChartData_Item > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Items(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"] fn set_items (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: chartdata :: ChartData_Item > >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: Array < crate :: app :: chartdata :: ChartData_Item > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item1()` overload"] fn get_item1 (self ,) -> crate :: app :: chartdata :: ChartData_Item { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> crate :: app :: chartdata :: ChartData_Item = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item1(crate::app::chartdata::ChartData_Item)` overload"] fn set_item1 (self , value : impl :: core :: convert :: Into < crate :: app :: chartdata :: ChartData_Item >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , crate :: app :: chartdata :: ChartData_Item , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item2()` overload"] fn get_item2 (self ,) -> crate :: app :: chartdata :: ChartData_Item { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> crate :: app :: chartdata :: ChartData_Item = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item2(crate::app::chartdata::ChartData_Item)` overload"] fn set_item2 (self , value : impl :: core :: convert :: Into < crate :: app :: chartdata :: ChartData_Item >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , crate :: app :: chartdata :: ChartData_Item , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item3()` overload"] fn get_item3 (self ,) -> crate :: app :: chartdata :: ChartData_Item { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> crate :: app :: chartdata :: ChartData_Item = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item3(crate::app::chartdata::ChartData_Item)` overload"] fn set_item3 (self , value : impl :: core :: convert :: Into < crate :: app :: chartdata :: ChartData_Item >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , crate :: app :: chartdata :: ChartData_Item , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea00a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item4()` overload"] fn get_item4 (self ,) -> crate :: app :: chartdata :: ChartData_Item { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> crate :: app :: chartdata :: ChartData_Item = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea00b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item4(crate::app::chartdata::ChartData_Item)` overload"] fn set_item4 (self , value : impl :: core :: convert :: Into < crate :: app :: chartdata :: ChartData_Item >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , crate :: app :: chartdata :: ChartData_Item , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea00c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item5()` overload"] fn get_item5 (self ,) -> crate :: app :: chartdata :: ChartData_Item { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> crate :: app :: chartdata :: ChartData_Item = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea00d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Item5(crate::app::chartdata::ChartData_Item)` overload"] fn set_item5 (self , value : impl :: core :: convert :: Into < crate :: app :: chartdata :: ChartData_Item >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , crate :: app :: chartdata :: ChartData_Item , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea00e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GodId()` overload"] fn get_god_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea00f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GodId(::unity2::Il2CppString)` overload"] fn set_god_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetLevel(crate::app::difficulty::Difficulty)` overload"] fn get_level (self , difficulty : impl :: core :: convert :: Into < crate :: app :: difficulty :: Difficulty >) -> i32 { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , crate :: app :: difficulty :: Difficulty , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (difficulty) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ChartData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-chartdata")]
-impl < __T : IChartData > IChartDataMethods for __T { }
-
-#[cfg(feature = "app-chartdata")]
-impl ChartData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_level_n_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_level_n_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_level_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_level_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_level_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_level_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_items_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_items_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_item1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_item1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_item2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_item2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_item3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_item3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_item4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_item4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_item5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_item5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_god_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_god_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } }
-
-#[cfg(feature = "app-chartdata")]
-impl ChartData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChartData) , :: core :: stringify ! (new) ,)) ; < Self as IChartDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-chartdata")]pub trait IChartData_ItemMethods:IChartData_Item{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61b0usize)as*mut u8, ::unity2::Il2CppString;
+(ChartData_Item)__receiver)}
+}
+#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ChartData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61c0usize)as*mut u8,();
+(ChartData_Item)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ChartData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61d0usize)as*mut u8,();
+(ChartData_Item)__receiver)}
+}
 }
 
-#[cfg(feature = "app-chartdata")]
-pub trait IChartData_ItemMethods : IChartData_Item { # [doc = "`get_Iid()` overload"] fn get_iid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ChartData_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData_Item , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c61b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iid(::unity2::Il2CppString)` overload"] fn set_iid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ChartData_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData_Item , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c61c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ChartData_Item as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartData_Item , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c61d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-chartdata")]impl<__T:IChartData_Item>IChartData_ItemMethods for __T{}
 
-#[cfg(feature = "app-chartdata")]
-impl < __T : IChartData_Item > IChartData_ItemMethods for __T { }
+#[cfg(feature="app-chartdata")]impl ChartData_Item{pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-chartdata")]
-impl ChartData_Item { pub fn get_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData_Item as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData_Item as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartData_Item as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-chartdata")]impl ChartData_Item{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChartData_Item), ::core::stringify!(new),));
+ <Self as IChartData_ItemMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-chartdata")]
-impl ChartData_Item {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChartData_Item) , :: core :: stringify ! (new) ,)) ; < Self as IChartData_ItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-chartdata")]impl ChartData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e9fc00usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-chartdata")]pub trait IChartDataMethods:IChartData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9fcb0usize)as*mut u8,();
+(ChartData)__receiver)}
+}
+#[doc="`get_Chapter()` overload"]fn get_chapter(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ff70usize)as*mut u8, ::unity2::Il2CppString;
+(ChartData)__receiver)}
+}
+#[doc="`set_Chapter(::unity2::Il2CppString)` overload"]fn set_chapter(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ff80usize)as*mut u8,();
+(ChartData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Pid()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ff90usize)as*mut u8, ::unity2::Il2CppString;
+(ChartData)__receiver)}
+}
+#[doc="`set_Pid(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ffa0usize)as*mut u8,();
+(ChartData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LevelN()` overload"]fn get_level_n(self,)->u8{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ffb0usize)as*mut u8,u8;
+(ChartData)__receiver)}
+}
+#[doc="`set_LevelN(u8)` overload"]fn set_level_n(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ffc0usize)as*mut u8,();
+(ChartData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_LevelH()` overload"]fn get_level_h(self,)->u8{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ffd0usize)as*mut u8,u8;
+(ChartData)__receiver)}
+}
+#[doc="`set_LevelH(u8)` overload"]fn set_level_h(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9ffe0usize)as*mut u8,();
+(ChartData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_LevelL()` overload"]fn get_level_l(self,)->u8{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e9fff0usize)as*mut u8,u8;
+(ChartData)__receiver)}
+}
+#[doc="`set_LevelL(u8)` overload"]fn set_level_l(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0000usize)as*mut u8,();
+(ChartData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Jid()` overload"]fn get_jid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0010usize)as*mut u8, ::unity2::Il2CppString;
+(ChartData)__receiver)}
+}
+#[doc="`set_Jid(::unity2::Il2CppString)` overload"]fn set_jid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0020usize)as*mut u8,();
+(ChartData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Items()` overload"]fn get_items(self,)-> ::unity2::Array<crate::app::chartdata::ChartData_Item>{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0030usize)as*mut u8, ::unity2::Array<crate::app::chartdata::ChartData_Item> ;
+(ChartData)__receiver)}
+}
+#[doc="`set_Items(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"]fn set_items(self,value:impl::core::convert::Into< ::unity2::Array<crate::app::chartdata::ChartData_Item> >)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0040usize)as*mut u8,();
+(ChartData)__receiver,(::unity2::Array<crate::app::chartdata::ChartData_Item>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item1()` overload"]fn get_item1(self,)->crate::app::chartdata::ChartData_Item{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0050usize)as*mut u8,crate::app::chartdata::ChartData_Item;
+(ChartData)__receiver)}
+}
+#[doc="`set_Item1(crate::app::chartdata::ChartData_Item)` overload"]fn set_item1(self,value:impl::core::convert::Into<crate::app::chartdata::ChartData_Item>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0060usize)as*mut u8,();
+(ChartData)__receiver,(crate::app::chartdata::ChartData_Item)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item2()` overload"]fn get_item2(self,)->crate::app::chartdata::ChartData_Item{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0070usize)as*mut u8,crate::app::chartdata::ChartData_Item;
+(ChartData)__receiver)}
+}
+#[doc="`set_Item2(crate::app::chartdata::ChartData_Item)` overload"]fn set_item2(self,value:impl::core::convert::Into<crate::app::chartdata::ChartData_Item>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0080usize)as*mut u8,();
+(ChartData)__receiver,(crate::app::chartdata::ChartData_Item)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item3()` overload"]fn get_item3(self,)->crate::app::chartdata::ChartData_Item{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0090usize)as*mut u8,crate::app::chartdata::ChartData_Item;
+(ChartData)__receiver)}
+}
+#[doc="`set_Item3(crate::app::chartdata::ChartData_Item)` overload"]fn set_item3(self,value:impl::core::convert::Into<crate::app::chartdata::ChartData_Item>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea00a0usize)as*mut u8,();
+(ChartData)__receiver,(crate::app::chartdata::ChartData_Item)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item4()` overload"]fn get_item4(self,)->crate::app::chartdata::ChartData_Item{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea00b0usize)as*mut u8,crate::app::chartdata::ChartData_Item;
+(ChartData)__receiver)}
+}
+#[doc="`set_Item4(crate::app::chartdata::ChartData_Item)` overload"]fn set_item4(self,value:impl::core::convert::Into<crate::app::chartdata::ChartData_Item>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea00c0usize)as*mut u8,();
+(ChartData)__receiver,(crate::app::chartdata::ChartData_Item)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item5()` overload"]fn get_item5(self,)->crate::app::chartdata::ChartData_Item{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea00d0usize)as*mut u8,crate::app::chartdata::ChartData_Item;
+(ChartData)__receiver)}
+}
+#[doc="`set_Item5(crate::app::chartdata::ChartData_Item)` overload"]fn set_item5(self,value:impl::core::convert::Into<crate::app::chartdata::ChartData_Item>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea00e0usize)as*mut u8,();
+(ChartData)__receiver,(crate::app::chartdata::ChartData_Item)::core::convert::Into::into(value))}
+}
+#[doc="`get_GodId()` overload"]fn get_god_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea00f0usize)as*mut u8, ::unity2::Il2CppString;
+(ChartData)__receiver)}
+}
+#[doc="`set_GodId(::unity2::Il2CppString)` overload"]fn set_god_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0100usize)as*mut u8,();
+(ChartData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetLevel(crate::app::difficulty::Difficulty)` overload"]fn get_level(self,difficulty:impl::core::convert::Into<crate::app::difficulty::Difficulty>)->i32{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0110usize)as*mut u8,i32;
+(ChartData)__receiver,(crate::app::difficulty::Difficulty)::core::convert::Into::into(difficulty))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0210usize)as*mut u8, ::unity2::Il2CppString;
+(ChartData)__receiver)}
+}
+}
+
+#[cfg(feature="app-chartdata")]impl<__T:IChartData>IChartDataMethods for __T{}
+
+#[cfg(feature="app-chartdata")]impl ChartData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_level_n_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_level_n_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_level_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_level_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_level_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_level_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_items_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_item1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_item1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_item2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_item2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_item3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_item3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_item4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_item4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_item5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_item5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_god_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_god_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+}
+
+#[cfg(feature="app-chartdata")]impl ChartData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChartData), ::core::stringify!(new),));
+ <Self as IChartDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-chartdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ChartData;
-    pub use super::IChartData;
-    pub use super::IChartDataMethods;
     pub use super::ChartData_Item;
     pub use super::IChartData_Item;
     pub use super::IChartData_ItemMethods;
+    pub use super::ChartData;
+    pub use super::IChartData;
+    pub use super::IChartDataMethods;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

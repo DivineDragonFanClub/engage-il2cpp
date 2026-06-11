@@ -4,39 +4,111 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumeparameter/VolumeParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "VolumeParameter")] # [parent (crate :: system :: object :: Object)] pub struct VolumeParameter {
-# [static_field] # [rename (name = "k_DebuggerDisplay")] pub k_debugger_display : :: unity2 :: Il2CppString ,
-# [offset (16)] # [rename (name = "m_OverrideState")] pub m_override_state : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/volumeparameter/VolumeParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="VolumeParameter")]#[parent(crate::system::object::Object)]pub struct VolumeParameter{#[static_field]#[rename(name="k_DebuggerDisplay")]pub k_debugger_display: ::unity2::Il2CppString, #[offset(16)]#[rename(name="m_OverrideState")]pub m_override_state:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-volumeparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-volumeparameter")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __VolumeParameter_unity2_raw { use super :: * ; pub unsafe fn interp (this : VolumeParameter , from : crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter , to : crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter , t : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Interp") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Interp" , < VolumeParameter as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (VolumeParameter , crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter , crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , from , to , t , __mi) } pub unsafe fn set_value (this : VolumeParameter , parameter : crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("SetValue") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "SetValue" , < VolumeParameter as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (VolumeParameter , crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , parameter , __mi) } }
+#[cfg(feature="unity_engine-rendering-volumeparameter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VolumeParameter_unity2_raw{use super:: * ;
+pub unsafe fn interp(this:VolumeParameter,from:crate::unity_engine::rendering::volumeparameter::VolumeParameter,to:crate::unity_engine::rendering::volumeparameter::VolumeParameter,t:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Interp").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Interp", <VolumeParameter as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(VolumeParameter,crate::unity_engine::rendering::volumeparameter::VolumeParameter,crate::unity_engine::rendering::volumeparameter::VolumeParameter,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,from,to,t,__mi)}
+pub unsafe fn set_value(this:VolumeParameter,parameter:crate::unity_engine::rendering::volumeparameter::VolumeParameter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetValue").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","SetValue", <VolumeParameter as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(VolumeParameter,crate::unity_engine::rendering::volumeparameter::VolumeParameter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,parameter,__mi)}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumeparameter")]
-impl VolumeParameter { # [doc = "`IsObjectParameter(::unity2::SystemType)` overload"] pub fn is_object_parameter (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e63b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-volumeparameter")]impl VolumeParameter{#[doc="`IsObjectParameter(::unity2::SystemType)` overload"]pub fn is_object_parameter(r#type:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e63b0usize)as*mut u8,bool;
+(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumeparameter")]
-pub trait IVolumeParameterMethods : IVolumeParameter { # [doc = "`get_overrideState()` overload"] fn get_override_state (self ,) -> bool { unsafe { let __receiver = < VolumeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeParameter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e8920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_overrideState(bool)` overload"] fn set_override_state (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < VolumeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeParameter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e8930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Interp(crate::unity_engine::rendering::volumeparameter::VolumeParameter, crate::unity_engine::rendering::volumeparameter::VolumeParameter, f32)` overload"] fn interp (self , from : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter > , to : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter > , t : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < VolumeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VolumeParameter_unity2_raw :: interp (__receiver , :: core :: convert :: Into :: into (from) , :: core :: convert :: Into :: into (to) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } fn get_value < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< VolumeParameter as :: unity2 :: ClassIdentity > :: class () , "GetValue" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VolumeParameter as :: unity2 :: ClassIdentity > :: NAME , "GetValue" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < VolumeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (VolumeParameter , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`SetValue(crate::unity_engine::rendering::volumeparameter::VolumeParameter)` overload"] fn set_value (self , parameter : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: volumeparameter :: VolumeParameter >) -> () { unsafe { let __receiver = < VolumeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __VolumeParameter_unity2_raw :: set_value (__receiver , :: core :: convert :: Into :: into (parameter) , :: core :: option :: Option :: None) } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < VolumeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e8940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < VolumeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e8950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < VolumeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e8960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VolumeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e8970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-volumeparameter")]pub trait IVolumeParameterMethods:IVolumeParameter{#[doc="`get_overrideState()` overload"]fn get_override_state(self,)->bool{unsafe{let __receiver= <VolumeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e8920usize)as*mut u8,bool;
+(VolumeParameter)__receiver)}
+}
+#[doc="`set_overrideState(bool)` overload"]fn set_override_state(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <VolumeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e8930usize)as*mut u8,();
+(VolumeParameter)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Interp(crate::unity_engine::rendering::volumeparameter::VolumeParameter, crate::unity_engine::rendering::volumeparameter::VolumeParameter, f32)` overload"]fn interp(self,from:impl::core::convert::Into<crate::unity_engine::rendering::volumeparameter::VolumeParameter> ,to:impl::core::convert::Into<crate::unity_engine::rendering::volumeparameter::VolumeParameter> ,t:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VolumeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__VolumeParameter_unity2_raw::interp(__receiver, ::core::convert::Into::into(from), ::core::convert::Into::into(to), ::core::convert::Into::into(t), ::core::option::Option::None)}
+}
+fn get_value<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<VolumeParameter as::unity2::ClassIdentity> ::class(),"GetValue",0,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <VolumeParameter as::unity2::ClassIdentity> ::NAME,"GetValue",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <VolumeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(VolumeParameter, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`SetValue(crate::unity_engine::rendering::volumeparameter::VolumeParameter)` overload"]fn set_value(self,parameter:impl::core::convert::Into<crate::unity_engine::rendering::volumeparameter::VolumeParameter>)->(){unsafe{let __receiver= <VolumeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__VolumeParameter_unity2_raw::set_value(__receiver, ::core::convert::Into::into(parameter), ::core::option::Option::None)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <VolumeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e8940usize)as*mut u8,();
+(VolumeParameter)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <VolumeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e8950usize)as*mut u8,();
+(VolumeParameter)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <VolumeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e8960usize)as*mut u8,();
+(VolumeParameter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VolumeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e8970usize)as*mut u8,();
+(VolumeParameter)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumeparameter")]
-impl < __T : IVolumeParameter > IVolumeParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-volumeparameter")]impl<__T:IVolumeParameter>IVolumeParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-volumeparameter")]
-impl VolumeParameter { pub fn get_override_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_override_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn interp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_object_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-rendering-volumeparameter")]impl VolumeParameter{pub fn get_override_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_override_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn interp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_object_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumeparameter")]
-impl VolumeParameter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VolumeParameter) , :: core :: stringify ! (new) ,)) ; < Self as IVolumeParameterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-volumeparameter")]impl VolumeParameter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VolumeParameter), ::core::stringify!(new),));
+ <Self as IVolumeParameterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-volumeparameter")]

@@ -4,101 +4,116 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardDeleteOverLimitSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ProfileCardDeleteOverLimitSequence {
-# [offset (112)] # [rename (name = "m_ProfileList")] pub m_profile_list : crate :: app :: profilelist :: ProfileList ,
-# [offset (120)] # [rename (name = "m_AlbumRoot")] pub m_album_root : crate :: app :: profilecardalbumroot :: ProfileCardAlbumRoot ,
-# [offset (128)] # [rename (name = "m_IsFadeOut")] pub m_is_fade_out : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardDeleteOverLimitSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for ProfileCardDeleteOverLimitSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ProfileCardDeleteOverLimitSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ProfileCardDeleteOverLimitSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ProfileCardDeleteOverLimitSequence_Label{pub fn list_menu()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ProfileCardDeleteOverLimitSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for ProfileCardDeleteOverLimitSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProfileCardDeleteOverLimitSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ProfileCardDeleteOverLimitSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ProfileCardDeleteOverLimitSequence_Label  {
-    pub fn list_menu() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecarddeleteoverlimitsequence/ProfileCardDeleteOverLimitSequence.md"))]#[::unity2::class(namespace="App",name="ProfileCardDeleteOverLimitSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ProfileCardDeleteOverLimitSequence{#[offset(112)]#[rename(name="m_ProfileList")]pub m_profile_list:crate::app::profilelist::ProfileList, #[offset(120)]#[rename(name="m_AlbumRoot")]pub m_album_root:crate::app::profilecardalbumroot::ProfileCardAlbumRoot, #[offset(128)]#[rename(name="m_IsFadeOut")]pub m_is_fade_out:bool,}
 
 }
 
 #[cfg(feature = "app-profilecarddeleteoverlimitsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecarddeleteoverlimitsequence")]
-impl ProfileCardDeleteOverLimitSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::profilelist::ProfileList)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , list : impl :: core :: convert :: Into < crate :: app :: profilelist :: ProfileList >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: profilelist :: ProfileList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2312ce0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecarddeleteoverlimitsequence")]impl ProfileCardDeleteOverLimitSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::profilelist::ProfileList)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,list:impl::core::convert::Into<crate::app::profilelist::ProfileList>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2312ce0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::profilelist::ProfileList)::core::convert::Into::into(list))}
+}
+}
 
-#[cfg(feature = "app-profilecarddeleteoverlimitsequence")]
-pub trait IProfileCardDeleteOverLimitSequenceMethods : IProfileCardDeleteOverLimitSequence { # [doc = "`.ctor(crate::app::profilelist::ProfileList)` overload"] fn ctor (self , list : impl :: core :: convert :: Into < crate :: app :: profilelist :: ProfileList >) -> () { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , crate :: app :: profilelist :: ProfileList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23122b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23122f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23123d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReleaseResources()` overload"] fn release_resources (self ,) -> () { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23124c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetFade()` overload"] fn set_fade (self ,) -> () { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2312590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RestoreFade()` overload"] fn restore_fade (self ,) -> () { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2312640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MessageAtFirst()` overload"] fn message_at_first (self ,) -> () { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23126c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2312750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenList()` overload"] fn open_list (self ,) -> () { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2312780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < ProfileCardDeleteOverLimitSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardDeleteOverLimitSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2312b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecarddeleteoverlimitsequence")]pub trait IProfileCardDeleteOverLimitSequenceMethods:IProfileCardDeleteOverLimitSequence{#[doc="`.ctor(crate::app::profilelist::ProfileList)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::app::profilelist::ProfileList>)->(){unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23122b0usize)as*mut u8,();
+(ProfileCardDeleteOverLimitSequence)__receiver,(crate::app::profilelist::ProfileList)::core::convert::Into::into(list))}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23122f0usize)as*mut u8,();
+(ProfileCardDeleteOverLimitSequence)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23123d0usize)as*mut u8,bool;
+(ProfileCardDeleteOverLimitSequence)__receiver)}
+}
+#[doc="`ReleaseResources()` overload"]fn release_resources(self,)->(){unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23124c0usize)as*mut u8,();
+(ProfileCardDeleteOverLimitSequence)__receiver)}
+}
+#[doc="`SetFade()` overload"]fn set_fade(self,)->(){unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2312590usize)as*mut u8,();
+(ProfileCardDeleteOverLimitSequence)__receiver)}
+}
+#[doc="`RestoreFade()` overload"]fn restore_fade(self,)->(){unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2312640usize)as*mut u8,();
+(ProfileCardDeleteOverLimitSequence)__receiver)}
+}
+#[doc="`MessageAtFirst()` overload"]fn message_at_first(self,)->(){unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23126c0usize)as*mut u8,();
+(ProfileCardDeleteOverLimitSequence)__receiver)}
+}
+#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2312750usize)as*mut u8,();
+(ProfileCardDeleteOverLimitSequence)__receiver)}
+}
+#[doc="`OpenList()` overload"]fn open_list(self,)->(){unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2312780usize)as*mut u8,();
+(ProfileCardDeleteOverLimitSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <ProfileCardDeleteOverLimitSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2312b70usize)as*mut u8,();
+(ProfileCardDeleteOverLimitSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecarddeleteoverlimitsequence")]
-impl < __T : IProfileCardDeleteOverLimitSequence > IProfileCardDeleteOverLimitSequenceMethods for __T { }
+#[cfg(feature="app-profilecarddeleteoverlimitsequence")]impl<__T:IProfileCardDeleteOverLimitSequence>IProfileCardDeleteOverLimitSequenceMethods for __T{}
 
-#[cfg(feature = "app-profilecarddeleteoverlimitsequence")]
-impl ProfileCardDeleteOverLimitSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn release_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_fade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn restore_fade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn message_at_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn open_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardDeleteOverLimitSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-profilecarddeleteoverlimitsequence")]impl ProfileCardDeleteOverLimitSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn release_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_fade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn restore_fade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn message_at_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn open_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-profilecarddeleteoverlimitsequence")]
-impl ProfileCardDeleteOverLimitSequence {
-# [doc = "`.ctor(crate::app::profilelist::ProfileList)` — overload selector"] pub fn new (list : crate :: app :: profilelist :: ProfileList) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardDeleteOverLimitSequence) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardDeleteOverLimitSequenceMethods > :: ctor (this , list) ; this }
+#[cfg(feature="app-profilecarddeleteoverlimitsequence")]impl ProfileCardDeleteOverLimitSequence{#[doc="`.ctor(crate::app::profilelist::ProfileList)` — overload selector"]pub fn new(list:crate::app::profilelist::ProfileList)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardDeleteOverLimitSequence), ::core::stringify!(new),));
+ <Self as IProfileCardDeleteOverLimitSequenceMethods> ::ctor(this,list);
+this}
 }
 
 #[cfg(feature = "app-profilecarddeleteoverlimitsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardDeleteOverLimitSequence_Label;
     pub use super::ProfileCardDeleteOverLimitSequence;
     pub use super::IProfileCardDeleteOverLimitSequence;
     pub use super::IProfileCardDeleteOverLimitSequenceMethods;
-    pub use super::ProfileCardDeleteOverLimitSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

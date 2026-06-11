@@ -4,59 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akdragdroptriggerhandler :: { AkDragDropTriggerHandler , IAkDragDropTriggerHandler }
- ;
- use crate :: root :: akevent :: { AkEvent , IAkEvent }
- ;
- use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akdragdroptriggerhandler::{AkDragDropTriggerHandler,IAkDragDropTriggerHandler}
+;
+use crate::root::akevent::{AkEvent,IAkEvent}
+;
+use crate::root::aktriggerhandler::{AkTriggerHandler,IAkTriggerHandler}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akambient/AkAmbient.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAmbient")] # [parent (crate :: root :: akevent :: AkEvent)] pub struct AkAmbient {
-# [static_field] # [rename (name = "multiPosEventTree")] pub multi_pos_event_tree : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: root :: akmultiposevent :: AkMultiPosEvent > ,
-# [offset (136)] # [rename (name = "MultiPositionType")] pub multi_position_type : crate :: root :: akmultipositiontype :: AkMultiPositionType ,
-# [offset (140)] # [rename (name = "multiPositionTypeLabel")] pub multi_position_type_label : crate :: root :: multipositiontypelabel :: MultiPositionTypeLabel ,
-# [offset (144)] # [rename (name = "LargeModePositions")] pub large_mode_positions : :: unity2 :: Array < crate :: root :: akambientlargemodepositioner :: AkAmbientLargeModePositioner > ,
-# [static_field] # [rename (name = "EmitterPosCountMax")] pub emitter_pos_count_max : u32 ,
-# [offset (152)] # [rename (name = "EmitterPosArray")] pub emitter_pos_array : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (160)] # [rename (name = "EmitterFowardArray")] pub emitter_foward_array : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (168)] # [rename (name = "EmitterUpArray")] pub emitter_up_array : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (176)] # [rename (name = "PositionArray")] pub position_array : crate :: root :: akpositionarray :: AkPositionArray ,
-# [offset (184)] # [rename (name = "ValidPositionList")] pub valid_position_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akambientlargemodepositioner :: AkAmbientLargeModePositioner > ,
-# [offset (192)] # [rename (name = "multiPositionArray")] pub multi_position_array : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector3 :: Vector3 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akambient/AkAmbient.md"))]#[::unity2::class(namespace="",name="AkAmbient")]#[parent(crate::root::akevent::AkEvent)]pub struct AkAmbient{#[static_field]#[rename(name="multiPosEventTree")]pub multi_pos_event_tree:crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::root::akmultiposevent::AkMultiPosEvent> , #[offset(136)]#[rename(name="MultiPositionType")]pub multi_position_type:crate::root::akmultipositiontype::AkMultiPositionType, #[offset(140)]#[rename(name="multiPositionTypeLabel")]pub multi_position_type_label:crate::root::multipositiontypelabel::MultiPositionTypeLabel, #[offset(144)]#[rename(name="LargeModePositions")]pub large_mode_positions: ::unity2::Array<crate::root::akambientlargemodepositioner::AkAmbientLargeModePositioner> , #[static_field]#[rename(name="EmitterPosCountMax")]pub emitter_pos_count_max:u32, #[offset(152)]#[rename(name="EmitterPosArray")]pub emitter_pos_array: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(160)]#[rename(name="EmitterFowardArray")]pub emitter_foward_array: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(168)]#[rename(name="EmitterUpArray")]pub emitter_up_array: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(176)]#[rename(name="PositionArray")]pub position_array:crate::root::akpositionarray::AkPositionArray, #[offset(184)]#[rename(name="ValidPositionList")]pub valid_position_list:crate::system::collections::generic::list_1::List_1<crate::root::akambientlargemodepositioner::AkAmbientLargeModePositioner> , #[offset(192)]#[rename(name="multiPositionArray")]pub multi_position_array:crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3> ,}
 
 }
 
 #[cfg(feature = "root-akambient-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akambient")]
-impl AkAmbient { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcd950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akambient")]impl AkAmbient{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcd950usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-akambient")]
-pub trait IAkAmbientMethods : IAkAmbient { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbient , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcc210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbient , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcc6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbient , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bccb40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbient , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bccd30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } } # [doc = "`OnDrawGizmosSelected()` overload"] fn on_draw_gizmos_selected (self ,) -> () { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbient , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bccf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbient , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bccfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcLenearPoints(crate::unity_engine::vector3::Vector3, *muti32, *mut::unity2::Array<crate::unity_engine::vector3::Vector3>, *mut::unity2::Array<crate::unity_engine::vector3::Vector3>, *mut::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"] fn calc_lenear_points (self , input_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> (bool , i32 , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 >) { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > :: uninit () ; let __ret = { { let __inner : extern "C" fn (AkAmbient , crate :: unity_engine :: vector3 :: Vector3 , * mut i32 , * mut :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , * mut :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , * mut :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcd1e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (input_pos) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init ()) } } # [doc = "`BuildMultiDirectionArray(crate::root::akmultiposevent::AkMultiPosEvent)` overload"] fn build_multi_direction_array (self , event_pos_list : impl :: core :: convert :: Into < crate :: root :: akmultiposevent :: AkMultiPosEvent >) -> crate :: root :: akpositionarray :: AkPositionArray { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbient , crate :: root :: akmultiposevent :: AkMultiPosEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akpositionarray :: AkPositionArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcc4e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_pos_list) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAkPositionArray()` overload"] fn build_ak_position_array (self ,) -> crate :: root :: akpositionarray :: AkPositionArray { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbient , :: unity2 :: OptionalMethod ,) -> crate :: root :: akpositionarray :: AkPositionArray = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcc850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkAmbient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbient , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcd7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akambient")]pub trait IAkAmbientMethods:IAkAmbient{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcc210usize)as*mut u8,();
+(AkAmbient)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcc6a0usize)as*mut u8,();
+(AkAmbient)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bccb40usize)as*mut u8,();
+(AkAmbient)__receiver)}
+}
+#[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bccd30usize)as*mut u8,();
+(AkAmbient)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+}
+#[doc="`OnDrawGizmosSelected()` overload"]fn on_draw_gizmos_selected(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bccf30usize)as*mut u8,();
+(AkAmbient)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bccfa0usize)as*mut u8,();
+(AkAmbient)__receiver)}
+}
+#[doc="`CalcLenearPoints(crate::unity_engine::vector3::Vector3, *muti32, *mut::unity2::Array<crate::unity_engine::vector3::Vector3>, *mut::unity2::Array<crate::unity_engine::vector3::Vector3>, *mut::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]fn calc_lenear_points(self,input_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(bool,i32, ::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::vector3::Vector3>){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::vector3::Vector3> > ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::vector3::Vector3> > ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::vector3::Vector3> > ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2bcd1e0usize)as*mut u8,bool;
+(AkAmbient)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(input_pos),(*mut i32)__out_0.as_mut_ptr(),(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>)__out_1.as_mut_ptr(),(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>)__out_2.as_mut_ptr(),(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>)__out_3.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
+}
+#[doc="`BuildMultiDirectionArray(crate::root::akmultiposevent::AkMultiPosEvent)` overload"]fn build_multi_direction_array(self,event_pos_list:impl::core::convert::Into<crate::root::akmultiposevent::AkMultiPosEvent>)->crate::root::akpositionarray::AkPositionArray{unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcc4e0usize)as*mut u8,crate::root::akpositionarray::AkPositionArray;
+(AkAmbient)__receiver,(crate::root::akmultiposevent::AkMultiPosEvent)::core::convert::Into::into(event_pos_list))}
+}
+#[doc="`BuildAkPositionArray()` overload"]fn build_ak_position_array(self,)->crate::root::akpositionarray::AkPositionArray{unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcc850usize)as*mut u8,crate::root::akpositionarray::AkPositionArray;
+(AkAmbient)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcd7c0usize)as*mut u8,();
+(AkAmbient)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akambient")]
-impl < __T : IAkAmbient > IAkAmbientMethods for __T { }
+#[cfg(feature="root-akambient")]impl<__T:IAkAmbient>IAkAmbientMethods for __T{}
 
-#[cfg(feature = "root-akambient")]
-impl AkAmbient { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_draw_gizmos_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_lenear_points_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn build_multi_direction_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn build_ak_position_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="root-akambient")]impl AkAmbient{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn handle_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_draw_gizmos_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_lenear_points_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn build_multi_direction_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn build_ak_position_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "root-akambient")]
-impl AkAmbient {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAmbient) , :: core :: stringify ! (new) ,)) ; < Self as IAkAmbientMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akambient")]impl AkAmbient{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAmbient), ::core::stringify!(new),));
+ <Self as IAkAmbientMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akambient")]

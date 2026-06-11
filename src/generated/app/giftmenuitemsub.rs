@@ -4,36 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/giftmenuitemsub/GiftMenuItemSub.md"))] # [:: unity2 :: class (namespace = "App" , name = "GiftMenuItemSub")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct GiftMenuItemSub {
-# [offset (104)] # [rename (name = "m_Item")] pub m_item : crate :: app :: itemdata :: ItemData ,
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_Value")] pub m_value : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/giftmenuitemsub/GiftMenuItemSub.md"))]#[::unity2::class(namespace="App",name="GiftMenuItemSub")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct GiftMenuItemSub{#[offset(104)]#[rename(name="m_Item")]pub m_item:crate::app::itemdata::ItemData, #[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_Value")]pub m_value:i32,}
 
 }
 
 #[cfg(feature = "app-giftmenuitemsub-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-giftmenuitemsub")]
-pub trait IGiftMenuItemSubMethods : IGiftMenuItemSub { # [doc = "`get_IsActive()` overload"] fn get_is_active (self ,) -> bool { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2525570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsActive(bool)` overload"] fn set_is_active (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2525580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsActiveSelect()` overload"] fn get_is_active_select (self ,) -> bool { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2525590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsActiveSelect(bool)` overload"] fn set_is_active_select (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25255a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::itemdata::ItemData, crate::app::unit::Unit)` overload"] fn ctor (self , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , crate :: app :: itemdata :: ItemData , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2525210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25255b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCountText()` overload"] fn get_count_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2524930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2525630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2525640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2525720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < GiftMenuItemSub as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftMenuItemSub , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2525810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-giftmenuitemsub")]pub trait IGiftMenuItemSubMethods:IGiftMenuItemSub{#[doc="`get_IsActive()` overload"]fn get_is_active(self,)->bool{unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2525570usize)as*mut u8,bool;
+(GiftMenuItemSub)__receiver)}
+}
+#[doc="`set_IsActive(bool)` overload"]fn set_is_active(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2525580usize)as*mut u8,();
+(GiftMenuItemSub)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsActiveSelect()` overload"]fn get_is_active_select(self,)->bool{unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2525590usize)as*mut u8,bool;
+(GiftMenuItemSub)__receiver)}
+}
+#[doc="`set_IsActiveSelect(bool)` overload"]fn set_is_active_select(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25255a0usize)as*mut u8,();
+(GiftMenuItemSub)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::itemdata::ItemData, crate::app::unit::Unit)` overload"]fn ctor(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2525210usize)as*mut u8,();
+(GiftMenuItemSub)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(item),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25255b0usize)as*mut u8, ::unity2::Il2CppString;
+(GiftMenuItemSub)__receiver)}
+}
+#[doc="`GetCountText()` overload"]fn get_count_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2524930usize)as*mut u8, ::unity2::Il2CppString;
+(GiftMenuItemSub)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2525630usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(GiftMenuItemSub)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2525640usize)as*mut u8,();
+(GiftMenuItemSub)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2525720usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GiftMenuItemSub)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <GiftMenuItemSub as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2525810usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(GiftMenuItemSub)__receiver)}
+}
+}
 
-#[cfg(feature = "app-giftmenuitemsub")]
-impl < __T : IGiftMenuItemSub > IGiftMenuItemSubMethods for __T { }
+#[cfg(feature="app-giftmenuitemsub")]impl<__T:IGiftMenuItemSub>IGiftMenuItemSubMethods for __T{}
 
-#[cfg(feature = "app-giftmenuitemsub")]
-impl GiftMenuItemSub { pub fn get_is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_active_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_is_active_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_count_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftMenuItemSub as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-giftmenuitemsub")]impl GiftMenuItemSub{pub fn get_is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_active_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_active_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_count_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-giftmenuitemsub")]
-impl GiftMenuItemSub {
-# [doc = "`.ctor(crate::app::itemdata::ItemData, crate::app::unit::Unit)` — overload selector"] pub fn new (item : crate :: app :: itemdata :: ItemData , unit : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GiftMenuItemSub) , :: core :: stringify ! (new) ,)) ; < Self as IGiftMenuItemSubMethods > :: ctor (this , item , unit) ; this }
+#[cfg(feature="app-giftmenuitemsub")]impl GiftMenuItemSub{#[doc="`.ctor(crate::app::itemdata::ItemData, crate::app::unit::Unit)` — overload selector"]pub fn new(item:crate::app::itemdata::ItemData,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GiftMenuItemSub), ::core::stringify!(new),));
+ <Self as IGiftMenuItemSubMethods> ::ctor(this,item,unit);
+this}
 }
 
 #[cfg(feature = "app-giftmenuitemsub")]

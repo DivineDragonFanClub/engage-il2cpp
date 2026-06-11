@@ -4,94 +4,146 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu_MenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectAreaMenu.MenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct PhotographSelectAreaMenu_MenuItem {
-# [offset (104)] # [rename (name = "m_AreaData")] pub m_area_data : crate :: app :: photographspotdata :: PhotographSpotData ,
-# [offset (112)] # [rename (name = "m_SelectHandler")] pub m_select_handler : crate :: app :: photographselectareamenu :: PhotographSelectAreaMenu_SelectHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectareamenu/PhotographSelectAreaMenu.md"))]#[::unity2::class(namespace="App",name="PhotographSelectAreaMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct PhotographSelectAreaMenu{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu_SelectHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectAreaMenu.SelectHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct PhotographSelectAreaMenu_SelectHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectareamenu/PhotographSelectAreaMenu_MenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographSelectAreaMenu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct PhotographSelectAreaMenu_MenuItem{#[offset(104)]#[rename(name="m_AreaData")]pub m_area_data:crate::app::photographspotdata::PhotographSpotData, #[offset(112)]#[rename(name="m_SelectHandler")]pub m_select_handler:crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectAreaMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct PhotographSelectAreaMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectareamenu/PhotographSelectAreaMenu_SelectHandler.md"))]#[::unity2::class(namespace="App",name="PhotographSelectAreaMenu.SelectHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographSelectAreaMenu_SelectHandler{}
 
 }
 
 #[cfg(feature = "app-photographselectareamenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographselectareamenu")]
-pub trait IPhotographSelectAreaMenu_MenuItemMethods : IPhotographSelectAreaMenu_MenuItem { # [doc = "`get_AreaData()` overload"] fn get_area_data (self ,) -> crate :: app :: photographspotdata :: PhotographSpotData { unsafe { let __receiver = < PhotographSelectAreaMenu_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu_MenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographspotdata :: PhotographSpotData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2263b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::photographspotdata::PhotographSpotData, crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)` overload"] fn ctor (self , area_data : impl :: core :: convert :: Into < crate :: app :: photographspotdata :: PhotographSpotData > , select_handler : impl :: core :: convert :: Into < crate :: app :: photographselectareamenu :: PhotographSelectAreaMenu_SelectHandler >) -> () { unsafe { let __receiver = < PhotographSelectAreaMenu_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu_MenuItem , crate :: app :: photographspotdata :: PhotographSpotData , crate :: app :: photographselectareamenu :: PhotographSelectAreaMenu_SelectHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2263af0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (area_data) , :: core :: convert :: Into :: into (select_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographSelectAreaMenu_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu_MenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2263b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < PhotographSelectAreaMenu_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu_MenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2263bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectAreaMenu_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu_MenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2263f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectAreaMenu_MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu_MenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-photographselectareamenu")]
-impl < __T : IPhotographSelectAreaMenu_MenuItem > IPhotographSelectAreaMenu_MenuItemMethods for __T { }
-
-#[cfg(feature = "app-photographselectareamenu")]
-impl PhotographSelectAreaMenu_MenuItem { pub fn get_area_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu_MenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu_MenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu_MenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu_MenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu_MenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu_MenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-photographselectareamenu")]
-impl PhotographSelectAreaMenu_MenuItem {
-# [doc = "`.ctor(crate::app::photographspotdata::PhotographSpotData, crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)` — overload selector"] pub fn new (area_data : crate :: app :: photographspotdata :: PhotographSpotData , select_handler : crate :: app :: photographselectareamenu :: PhotographSelectAreaMenu_SelectHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectAreaMenu_MenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectAreaMenu_MenuItemMethods > :: ctor (this , area_data , select_handler) ; this }
+#[cfg(feature="app-photographselectareamenu")]impl PhotographSelectAreaMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,select_handler:impl::core::convert::Into<crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2694aa0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)::core::convert::Into::into(select_handler))}
+}
 }
 
-#[cfg(feature = "app-photographselectareamenu")]
-pub trait IPhotographSelectAreaMenu_SelectHandlerMethods : IPhotographSelectAreaMenu_SelectHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < PhotographSelectAreaMenu_SelectHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu_SelectHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2264080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::photographspotdata::PhotographSpotData)` overload"] fn invoke (self , area_data : impl :: core :: convert :: Into < crate :: app :: photographspotdata :: PhotographSpotData >) -> () { unsafe { let __receiver = < PhotographSelectAreaMenu_SelectHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu_SelectHandler , crate :: app :: photographspotdata :: PhotographSpotData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2263c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (area_data) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-photographselectareamenu")]
-impl < __T : IPhotographSelectAreaMenu_SelectHandler > IPhotographSelectAreaMenu_SelectHandlerMethods for __T { }
-
-#[cfg(feature = "app-photographselectareamenu")]
-impl PhotographSelectAreaMenu_SelectHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu_SelectHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu_SelectHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-photographselectareamenu")]
-impl PhotographSelectAreaMenu_SelectHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectAreaMenu_SelectHandler) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectAreaMenu_SelectHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-photographselectareamenu")]pub trait IPhotographSelectAreaMenuMethods:IPhotographSelectAreaMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <PhotographSelectAreaMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694cc0usize)as*mut u8,();
+(PhotographSelectAreaMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <PhotographSelectAreaMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694cd0usize)as*mut u8,();
+(PhotographSelectAreaMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSelectAreaMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694cf0usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographSelectAreaMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-photographselectareamenu")]
-impl PhotographSelectAreaMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent > , select_handler : impl :: core :: convert :: Into < crate :: app :: photographselectareamenu :: PhotographSelectAreaMenu_SelectHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: basicmenucontent :: BasicMenuContent , crate :: app :: photographselectareamenu :: PhotographSelectAreaMenu_SelectHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694aa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (select_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectareamenu")]impl<__T:IPhotographSelectAreaMenu>IPhotographSelectAreaMenuMethods for __T{}
 
-#[cfg(feature = "app-photographselectareamenu")]
-pub trait IPhotographSelectAreaMenuMethods : IPhotographSelectAreaMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent >) -> () { unsafe { let __receiver = < PhotographSelectAreaMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < PhotographSelectAreaMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographSelectAreaMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectareamenu")]impl PhotographSelectAreaMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-photographselectareamenu")]
-impl < __T : IPhotographSelectAreaMenu > IPhotographSelectAreaMenuMethods for __T { }
+#[cfg(feature="app-photographselectareamenu")]impl PhotographSelectAreaMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectAreaMenu), ::core::stringify!(new),));
+ <Self as IPhotographSelectAreaMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
 
-#[cfg(feature = "app-photographselectareamenu")]
-impl PhotographSelectAreaMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-photographselectareamenu")]pub trait IPhotographSelectAreaMenu_MenuItemMethods:IPhotographSelectAreaMenu_MenuItem{#[doc="`get_AreaData()` overload"]fn get_area_data(self,)->crate::app::photographspotdata::PhotographSpotData{unsafe{let __receiver= <PhotographSelectAreaMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2263b40usize)as*mut u8,crate::app::photographspotdata::PhotographSpotData;
+(PhotographSelectAreaMenu_MenuItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::photographspotdata::PhotographSpotData, crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)` overload"]fn ctor(self,area_data:impl::core::convert::Into<crate::app::photographspotdata::PhotographSpotData> ,select_handler:impl::core::convert::Into<crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler>)->(){unsafe{let __receiver= <PhotographSelectAreaMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2263af0usize)as*mut u8,();
+(PhotographSelectAreaMenu_MenuItem)__receiver,(crate::app::photographspotdata::PhotographSpotData)::core::convert::Into::into(area_data),(crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)::core::convert::Into::into(select_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSelectAreaMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2263b50usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographSelectAreaMenu_MenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <PhotographSelectAreaMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2263bd0usize)as*mut u8,();
+(PhotographSelectAreaMenu_MenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectAreaMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2263f60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectAreaMenu_MenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectAreaMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2264000usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectAreaMenu_MenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographselectareamenu")]
-impl PhotographSelectAreaMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectAreaMenu) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectAreaMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-photographselectareamenu")]impl<__T:IPhotographSelectAreaMenu_MenuItem>IPhotographSelectAreaMenu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-photographselectareamenu")]impl PhotographSelectAreaMenu_MenuItem{pub fn get_area_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-photographselectareamenu")]impl PhotographSelectAreaMenu_MenuItem{#[doc="`.ctor(crate::app::photographspotdata::PhotographSpotData, crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)` — overload selector"]pub fn new(area_data:crate::app::photographspotdata::PhotographSpotData,select_handler:crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectAreaMenu_MenuItem), ::core::stringify!(new),));
+ <Self as IPhotographSelectAreaMenu_MenuItemMethods> ::ctor(this,area_data,select_handler);
+this}
+}
+
+#[cfg(feature="app-photographselectareamenu")]pub trait IPhotographSelectAreaMenu_SelectHandlerMethods:IPhotographSelectAreaMenu_SelectHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographSelectAreaMenu_SelectHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2264080usize)as*mut u8,();
+(PhotographSelectAreaMenu_SelectHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::photographspotdata::PhotographSpotData)` overload"]fn invoke(self,area_data:impl::core::convert::Into<crate::app::photographspotdata::PhotographSpotData>)->(){unsafe{let __receiver= <PhotographSelectAreaMenu_SelectHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2263c00usize)as*mut u8,();
+(PhotographSelectAreaMenu_SelectHandler)__receiver,(crate::app::photographspotdata::PhotographSpotData)::core::convert::Into::into(area_data))}
+}
+}
+
+#[cfg(feature="app-photographselectareamenu")]impl<__T:IPhotographSelectAreaMenu_SelectHandler>IPhotographSelectAreaMenu_SelectHandlerMethods for __T{}
+
+#[cfg(feature="app-photographselectareamenu")]impl PhotographSelectAreaMenu_SelectHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-photographselectareamenu")]impl PhotographSelectAreaMenu_SelectHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectAreaMenu_SelectHandler), ::core::stringify!(new),));
+ <Self as IPhotographSelectAreaMenu_SelectHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-photographselectareamenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PhotographSelectAreaMenu;
+    pub use super::IPhotographSelectAreaMenu;
+    pub use super::IPhotographSelectAreaMenuMethods;
     pub use super::PhotographSelectAreaMenu_MenuItem;
     pub use super::IPhotographSelectAreaMenu_MenuItem;
     pub use super::IPhotographSelectAreaMenu_MenuItemMethods;
     pub use super::PhotographSelectAreaMenu_SelectHandler;
     pub use super::IPhotographSelectAreaMenu_SelectHandler;
     pub use super::IPhotographSelectAreaMenu_SelectHandlerMethods;
-    pub use super::PhotographSelectAreaMenu;
-    pub use super::IPhotographSelectAreaMenu;
-    pub use super::IPhotographSelectAreaMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdescjumpfunc :: { IProcDescJumpFunc , ProcDescJumpFunc }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdescjumpfunc::{IProcDescJumpFunc,ProcDescJumpFunc}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmjumpfalse/ProcDescMJumpFalse.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescMJumpFalse")] # [parent (crate :: app :: procdescjumpfunc :: ProcDescJumpFunc)] pub struct ProcDescMJumpFalse {
-# [offset (24)] # [rename (name = "m_Method")] pub m_method : crate :: app :: procboolmethod :: ProcBoolMethod ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescmjumpfalse/ProcDescMJumpFalse.md"))]#[::unity2::class(namespace="App",name="ProcDescMJumpFalse")]#[parent(crate::app::procdescjumpfunc::ProcDescJumpFunc)]pub struct ProcDescMJumpFalse{#[offset(24)]#[rename(name="m_Method")]pub m_method:crate::app::procboolmethod::ProcBoolMethod,}
 
 }
 
 #[cfg(feature = "app-procdescmjumpfalse-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescmjumpfalse")]
-pub trait IProcDescMJumpFalseMethods : IProcDescMJumpFalse { # [doc = "`.ctor(crate::app::procboolmethod::ProcBoolMethod, i32)` overload"] fn ctor (self , method : impl :: core :: convert :: Into < crate :: app :: procboolmethod :: ProcBoolMethod > , label : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProcDescMJumpFalse as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescMJumpFalse , crate :: app :: procboolmethod :: ProcBoolMethod , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281bf20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (method) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`IsJump(crate::app::procinst::ProcInst)` overload"] fn is_jump (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < ProcDescMJumpFalse as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescMJumpFalse , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescmjumpfalse")]pub trait IProcDescMJumpFalseMethods:IProcDescMJumpFalse{#[doc="`.ctor(crate::app::procboolmethod::ProcBoolMethod, i32)` overload"]fn ctor(self,method:impl::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod> ,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProcDescMJumpFalse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281bf20usize)as*mut u8,();
+(ProcDescMJumpFalse)__receiver,(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(method),(i32)::core::convert::Into::into(label))}
+}
+#[doc="`IsJump(crate::app::procinst::ProcInst)` overload"]fn is_jump(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <ProcDescMJumpFalse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d570usize)as*mut u8,bool;
+(ProcDescMJumpFalse)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdescmjumpfalse")]
-impl < __T : IProcDescMJumpFalse > IProcDescMJumpFalseMethods for __T { }
+#[cfg(feature="app-procdescmjumpfalse")]impl<__T:IProcDescMJumpFalse>IProcDescMJumpFalseMethods for __T{}
 
-#[cfg(feature = "app-procdescmjumpfalse")]
-impl ProcDescMJumpFalse { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescMJumpFalse as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_jump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescMJumpFalse as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdescmjumpfalse")]impl ProcDescMJumpFalse{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_jump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdescmjumpfalse")]
-impl ProcDescMJumpFalse {
-# [doc = "`.ctor(crate::app::procboolmethod::ProcBoolMethod, i32)` — overload selector"] pub fn new (method : crate :: app :: procboolmethod :: ProcBoolMethod , label : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescMJumpFalse) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescMJumpFalseMethods > :: ctor (this , method , label) ; this }
+#[cfg(feature="app-procdescmjumpfalse")]impl ProcDescMJumpFalse{#[doc="`.ctor(crate::app::procboolmethod::ProcBoolMethod, i32)` — overload selector"]pub fn new(method:crate::app::procboolmethod::ProcBoolMethod,label:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescMJumpFalse), ::core::stringify!(new),));
+ <Self as IProcDescMJumpFalseMethods> ::ctor(this,method,label);
+this}
 }
 
 #[cfg(feature = "app-procdescmjumpfalse")]

@@ -4,47 +4,24 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/spookyhash/SpookyHash_U.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SpookyHash_U {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/spookyhash/SpookyHash.md"))]#[::unity2::class(namespace="UnityEngine",name="SpookyHash")]#[parent(crate::system::object::Object)]pub struct SpookyHash{#[static_field]#[rename(name="AllowUnalignedRead")]pub allow_unaligned_read:bool,}
 
 
-impl ::unity2::ClassIdentity for SpookyHash_U {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "SpookyHash.U";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/spookyhash/SpookyHash_U.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SpookyHash_U{}
+impl::unity2::ClassIdentity for SpookyHash_U{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="SpookyHash.U";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for SpookyHash_U {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spookyhash/SpookyHash.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SpookyHash")] # [parent (crate :: system :: object :: Object)] pub struct SpookyHash {
-# [static_field] # [rename (name = "AllowUnalignedRead")] pub allow_unaligned_read : bool ,
+impl::unity2::IlType for SpookyHash_U{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,18 +29,65 @@ impl ::unity2::IlType for SpookyHash_U {
 #[cfg(feature = "unity_engine-spookyhash-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-spookyhash")]
-impl SpookyHash { # [doc = "`AttemptDetectAllowUnalignedRead()` overload"] pub fn attempt_detect_allow_unaligned_read () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f954f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EndPartial(*mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64)` overload"] pub fn end_partial () -> (u64 , u64 , u64 , u64 , u64 , u64 , u64 , u64 , u64 , u64 , u64 , u64) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_4 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_5 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_6 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_7 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_8 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_9 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_10 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_11 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; { let __inner : extern "C" fn (* mut u64 , * mut u64 , * mut u64 , * mut u64 , * mut u64 , * mut u64 , * mut u64 , * mut u64 , * mut u64 , * mut u64 , * mut u64 , * mut u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f96570usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , __out_4 . as_mut_ptr () , __out_5 . as_mut_ptr () , __out_6 . as_mut_ptr () , __out_7 . as_mut_ptr () , __out_8 . as_mut_ptr () , __out_9 . as_mut_ptr () , __out_10 . as_mut_ptr () , __out_11 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init () , __out_4 . assume_init () , __out_5 . assume_init () , __out_6 . assume_init () , __out_7 . assume_init () , __out_8 . assume_init () , __out_9 . assume_init () , __out_10 . assume_init () , __out_11 . assume_init ()) } } # [doc = "`Rot64(*mutu64, i32)` overload"] pub fn rot64 (k : impl :: core :: convert :: Into < i32 >) -> u64 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; { let __inner : extern "C" fn (* mut u64 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f96810usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (k) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`ShortMix(*mutu64, *mutu64, *mutu64, *mutu64)` overload"] pub fn short_mix () -> (u64 , u64 , u64 , u64) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; { let __inner : extern "C" fn (* mut u64 , * mut u64 , * mut u64 , * mut u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f96830usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init ()) } } # [doc = "`ShortEnd(*mutu64, *mutu64, *mutu64, *mutu64)` overload"] pub fn short_end () -> (u64 , u64 , u64 , u64) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; { let __inner : extern "C" fn (* mut u64 , * mut u64 , * mut u64 , * mut u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f96a60usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f96c70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-spookyhash")]impl SpookyHash{#[doc="`AttemptDetectAllowUnalignedRead()` overload"]pub fn attempt_detect_allow_unaligned_read()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f954f0usize)as*mut u8,bool;
+)}
+}
+#[doc="`EndPartial(*mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64, *mutu64)` overload"]pub fn end_partial()->(u64,u64,u64,u64,u64,u64,u64,u64,u64,u64,u64,u64){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_4= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_5= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_6= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_7= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_8= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_9= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_10= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_11= ::core::mem::MaybeUninit:: <u64> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f96570usize)as*mut u8,();
+(*mut u64)__out_0.as_mut_ptr(),(*mut u64)__out_1.as_mut_ptr(),(*mut u64)__out_2.as_mut_ptr(),(*mut u64)__out_3.as_mut_ptr(),(*mut u64)__out_4.as_mut_ptr(),(*mut u64)__out_5.as_mut_ptr(),(*mut u64)__out_6.as_mut_ptr(),(*mut u64)__out_7.as_mut_ptr(),(*mut u64)__out_8.as_mut_ptr(),(*mut u64)__out_9.as_mut_ptr(),(*mut u64)__out_10.as_mut_ptr(),(*mut u64)__out_11.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init(),__out_4.assume_init(),__out_5.assume_init(),__out_6.assume_init(),__out_7.assume_init(),__out_8.assume_init(),__out_9.assume_init(),__out_10.assume_init(),__out_11.assume_init())}
+}
+#[doc="`Rot64(*mutu64, i32)` overload"]pub fn rot64(k:impl::core::convert::Into<i32>)->u64{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u64> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f96810usize)as*mut u8,();
+(*mut u64)__out_0.as_mut_ptr(),(i32)::core::convert::Into::into(k));
+__out_0.assume_init()}
+}
+#[doc="`ShortMix(*mutu64, *mutu64, *mutu64, *mutu64)` overload"]pub fn short_mix()->(u64,u64,u64,u64){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <u64> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f96830usize)as*mut u8,();
+(*mut u64)__out_0.as_mut_ptr(),(*mut u64)__out_1.as_mut_ptr(),(*mut u64)__out_2.as_mut_ptr(),(*mut u64)__out_3.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
+}
+#[doc="`ShortEnd(*mutu64, *mutu64, *mutu64, *mutu64)` overload"]pub fn short_end()->(u64,u64,u64,u64){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <u64> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f96a60usize)as*mut u8,();
+(*mut u64)__out_0.as_mut_ptr(),(*mut u64)__out_1.as_mut_ptr(),(*mut u64)__out_2.as_mut_ptr(),(*mut u64)__out_3.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f96c70usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-spookyhash")]
-impl SpookyHash { pub fn attempt_detect_allow_unaligned_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpookyHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn end_partial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpookyHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn rot64_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpookyHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn short_mix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpookyHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn short_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpookyHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpookyHash as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-spookyhash")]impl SpookyHash{pub fn attempt_detect_allow_unaligned_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn end_partial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn rot64_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn short_mix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn short_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "unity_engine-spookyhash")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SpookyHash_U;
     pub use super::SpookyHash;
     pub use super::ISpookyHash;
+    pub use super::SpookyHash_U;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

@@ -4,243 +4,302 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographDisposInfo")] # [parent (crate :: system :: object :: Object)] pub struct PhotographDisposInfo {
-# [static_field] # [rename (name = "s_FruitsPath")] pub s_fruits_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_WaterCanPath")] pub s_water_can_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_BrushPath")] pub s_brush_path : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "m_IsVisible")] pub m_is_visible : bool ,
-# [offset (72)] # [rename (name = "m_Locator")] pub m_locator : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_LookTarget")] pub m_look_target : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_PauseGroupNameList")] pub m_pause_group_name_list : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (96)] # [rename (name = "m_AnimeControllerDic")] pub m_anime_controller_dic : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController > ,
-# [offset (104)] # [rename (name = "m_Flag")] pub m_flag : crate :: app :: photographdisposinfo :: PhotographDisposInfo_FlagField ,
-# [offset (112)] # [rename (name = "m_IsLoadingCharacter")] pub m_is_loading_character : bool ,
-# [offset (120)] # [rename (name = "m_CharacterIdList")] pub m_character_id_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (128)] # [rename (name = "m_CurrentCharacterId")] pub m_current_character_id : :: unity2 :: Il2CppString ,
-# [offset (136)] # [rename (name = "m_CharacterType")] pub m_character_type : crate :: app :: photographdisposinfo :: PhotographDisposInfo_CharacterType ,
-# [offset (144)] # [rename (name = "m_CharacterCmp")] pub m_character_cmp : crate :: combat :: character :: Character ,
-# [offset (152)] # [rename (name = "m_IsLookAtCamera")] pub m_is_look_at_camera : bool ,
-# [offset (156)] # [rename (name = "m_LookAtRate")] pub m_look_at_rate : f32 ,
-# [offset (176)] # [rename (name = "m_PauseDataList")] pub m_pause_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: photographpausedata :: PhotographPauseData > ,
-# [offset (184)] # [rename (name = "m_CurrentPauseData")] pub m_current_pause_data : crate :: app :: photographpausedata :: PhotographPauseData ,
-# [offset (192)] # [rename (name = "m_HoldItem")] pub m_hold_item : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (200)] # [rename (name = "m_HoldWeapon")] pub m_hold_weapon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (208)] # [rename (name = "m_HoldWeaponData")] pub m_hold_weapon_data : crate :: app :: itemdata :: ItemData ,
-# [offset (216)] # [rename (name = "m_HoldWeaponPath")] pub m_hold_weapon_path : :: unity2 :: Il2CppString ,
-# [offset (224)] # [rename (name = "m_IsLoadingWeapon")] pub m_is_loading_weapon : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]#[::unity2::class(namespace="App",name="PhotographDisposInfo.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>)]pub struct PhotographDisposInfo_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PhotographDisposInfo_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for PhotographDisposInfo_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PhotographDisposInfo.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PhotographDisposInfo_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PhotographDisposInfo_Flags{pub fn training()->Self{Self{value:1}
+}
+pub fn pool_side()->Self{Self{value:2}
+}
+pub fn in_pool()->Self{Self{value:4}
+}
+pub fn can_dispos_god()->Self{Self{value:8}
+}
+pub fn mascot()->Self{Self{value:16}
+}
+pub fn sitting()->Self{Self{value:32}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_CharacterType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PhotographDisposInfo_CharacterType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographdisposinfo/PhotographDisposInfo_CharacterType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PhotographDisposInfo_CharacterType{pub value:i32,}
+impl::unity2::ClassIdentity for PhotographDisposInfo_CharacterType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="PhotographDisposInfo.CharacterType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PhotographDisposInfo_CharacterType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PhotographDisposInfo_CharacterType{pub fn none()->Self{Self{value:0}
+}
+pub fn unit_m()->Self{Self{value:1}
+}
+pub fn unit_f()->Self{Self{value:2}
+}
+pub fn god_m()->Self{Self{value:3}
+}
+pub fn god_f()->Self{Self{value:4}
+}
+pub fn mascot()->Self{Self{value:5}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for PhotographDisposInfo_CharacterType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PhotographDisposInfo.CharacterType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for PhotographDisposInfo_CharacterType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  PhotographDisposInfo_CharacterType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn unit_m() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn unit_f() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn god_m() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn god_f() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn mascot() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographDisposInfo.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)] pub struct PhotographDisposInfo_FlagField {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PhotographDisposInfo_Flags  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for PhotographDisposInfo_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PhotographDisposInfo.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for PhotographDisposInfo_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  PhotographDisposInfo_Flags  {
-    pub fn training() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn pool_side() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn in_pool() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn can_dispos_god() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn mascot() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn sitting() -> Self {
-        Self { value: 32 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographdisposinfo/PhotographDisposInfo.md"))]#[::unity2::class(namespace="App",name="PhotographDisposInfo")]#[parent(crate::system::object::Object)]pub struct PhotographDisposInfo{#[static_field]#[rename(name="s_FruitsPath")]pub s_fruits_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_WaterCanPath")]pub s_water_can_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_BrushPath")]pub s_brush_path: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_IsVisible")]pub m_is_visible:bool, #[offset(72)]#[rename(name="m_Locator")]pub m_locator:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_LookTarget")]pub m_look_target:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_PauseGroupNameList")]pub m_pause_group_name_list: ::unity2::Array< ::unity2::Il2CppString> , #[offset(96)]#[rename(name="m_AnimeControllerDic")]pub m_anime_controller_dic:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController> , #[offset(104)]#[rename(name="m_Flag")]pub m_flag:crate::app::photographdisposinfo::PhotographDisposInfo_FlagField, #[offset(112)]#[rename(name="m_IsLoadingCharacter")]pub m_is_loading_character:bool, #[offset(120)]#[rename(name="m_CharacterIdList")]pub m_character_id_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(128)]#[rename(name="m_CurrentCharacterId")]pub m_current_character_id: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_CharacterType")]pub m_character_type:crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType, #[offset(144)]#[rename(name="m_CharacterCmp")]pub m_character_cmp:crate::combat::character::Character, #[offset(152)]#[rename(name="m_IsLookAtCamera")]pub m_is_look_at_camera:bool, #[offset(156)]#[rename(name="m_LookAtRate")]pub m_look_at_rate:f32, #[offset(176)]#[rename(name="m_PauseDataList")]pub m_pause_data_list:crate::system::collections::generic::list_1::List_1<crate::app::photographpausedata::PhotographPauseData> , #[offset(184)]#[rename(name="m_CurrentPauseData")]pub m_current_pause_data:crate::app::photographpausedata::PhotographPauseData, #[offset(192)]#[rename(name="m_HoldItem")]pub m_hold_item:crate::unity_engine::gameobject::GameObject, #[offset(200)]#[rename(name="m_HoldWeapon")]pub m_hold_weapon:crate::unity_engine::gameobject::GameObject, #[offset(208)]#[rename(name="m_HoldWeaponData")]pub m_hold_weapon_data:crate::app::itemdata::ItemData, #[offset(216)]#[rename(name="m_HoldWeaponPath")]pub m_hold_weapon_path: ::unity2::Il2CppString, #[offset(224)]#[rename(name="m_IsLoadingWeapon")]pub m_is_loading_weapon:bool,}
 
 }
 
 #[cfg(feature = "app-photographdisposinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographdisposinfo")]
-impl PhotographDisposInfo { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268e4d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-photographdisposinfo")]
-pub trait IPhotographDisposInfoMethods : IPhotographDisposInfo { # [doc = "`get_PauseGroupNameList()` overload"] fn get_pause_group_name_list (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2689fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: photographdisposinfo :: PhotographDisposInfo_FlagField { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographdisposinfo :: PhotographDisposInfo_FlagField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2689ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLoading()` overload"] fn get_is_loading (self ,) -> bool { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CharacterIdList()` overload"] fn get_character_id_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CurrentCharacterId()` overload"] fn get_current_character_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CurrentCharacterId(::unity2::Il2CppString)` overload"] fn set_current_character_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CharaType()` overload"] fn get_chara_type (self ,) -> crate :: app :: photographdisposinfo :: PhotographDisposInfo_CharacterType { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographdisposinfo :: PhotographDisposInfo_CharacterType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PauseDataList()` overload"] fn get_pause_data_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: photographpausedata :: PhotographPauseData > { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: photographpausedata :: PhotographPauseData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CurrentPauseData()` overload"] fn get_current_pause_data (self ,) -> crate :: app :: photographpausedata :: PhotographPauseData { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographpausedata :: PhotographPauseData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLookAtCamera()` overload"] fn get_is_look_at_camera (self ,) -> bool { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsLookAtCamera(bool)` overload"] fn set_is_look_at_camera (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_LookAtRate(f32)` overload"] fn set_look_at_rate (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BodyAccDataList()` overload"] fn get_body_acc_data_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: accessorydata :: AccessoryData > { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: accessorydata :: AccessoryData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BodyAccDataList(crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>)` overload"] fn set_body_acc_data_list (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: accessorydata :: AccessoryData > >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: accessorydata :: AccessoryData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BodyAccData()` overload"] fn get_body_acc_data (self ,) -> crate :: app :: accessorydata :: AccessoryData { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BodyAccData(crate::app::accessorydata::AccessoryData)` overload"] fn set_body_acc_data (self , value : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FaceAccDataList()` overload"] fn get_face_acc_data_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: accessorydata :: AccessoryData > { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: accessorydata :: AccessoryData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FaceAccDataList(crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>)` overload"] fn set_face_acc_data_list (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: accessorydata :: AccessoryData > >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: accessorydata :: AccessoryData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FaceAccData()` overload"] fn get_face_acc_data (self ,) -> crate :: app :: accessorydata :: AccessoryData { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FaceAccData(crate::app::accessorydata::AccessoryData)` overload"] fn set_face_acc_data (self , value : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WeaponDataList()` overload"] fn get_weapon_data_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WeaponDataList(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"] fn set_weapon_data_list (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemdata :: ItemData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WeaponData()` overload"] fn get_weapon_data (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WeaponData(crate::app::itemdata::ItemData)` overload"] fn set_weapon_data (self , value : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_IsVisible(bool)` overload"] fn set_is_visible (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Female()` overload"] fn get_female (self ,) -> crate :: app :: accessoryshoputility :: AccessoryShopUtility_Female { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessoryshoputility :: AccessoryShopUtility_Female = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::photographspotdata::PhotographSpotData, i32, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>)` overload"] fn ctor (self , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , select_spot : impl :: core :: convert :: Into < crate :: app :: photographspotdata :: PhotographSpotData > , locator_no : impl :: core :: convert :: Into < i32 > , anime_controller_dic : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController > >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: photographspotdata :: PhotographSpotData , i32 , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268a270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator) , :: core :: convert :: Into :: into (select_spot) , :: core :: convert :: Into :: into (locator_no) , :: core :: convert :: Into :: into (anime_controller_dic) , :: core :: option :: Option :: None) } } } # [doc = "`GetRandomPause(::unity2::Il2CppString)` overload"] fn get_random_pause (self , chara_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: photographpausedata :: PhotographPauseData { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: photographpausedata :: PhotographPauseData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268ae40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chara_id) , :: core :: option :: Option :: None) } } } # [doc = "`SetUpCharacter(::unity2::Il2CppString, crate::app::photographpausedata::PhotographPauseData, crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData, crate::app::itemdata::ItemData, bool)` overload"] fn set_up_character (self , character_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pause_data : impl :: core :: convert :: Into < crate :: app :: photographpausedata :: PhotographPauseData > , body_acc : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , face_acc : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , weapon_data : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , is_random : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: Il2CppString , crate :: app :: photographpausedata :: PhotographPauseData , crate :: app :: accessorydata :: AccessoryData , crate :: app :: accessorydata :: AccessoryData , crate :: app :: itemdata :: ItemData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268b200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character_id) , :: core :: convert :: Into :: into (pause_data) , :: core :: convert :: Into :: into (body_acc) , :: core :: convert :: Into :: into (face_acc) , :: core :: convert :: Into :: into (weapon_data) , :: core :: convert :: Into :: into (is_random) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateLook()` overload"] fn update_look (self ,) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268d760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitCharacter(::unity2::Il2CppString, crate::app::photographpausedata::PhotographPauseData, crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData, crate::app::itemdata::ItemData, bool)` overload"] fn init_character (self , character_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pause_data : impl :: core :: convert :: Into < crate :: app :: photographpausedata :: PhotographPauseData > , body_acc : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , face_acc : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , weapon_data : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , is_random : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: Il2CppString , crate :: app :: photographpausedata :: PhotographPauseData , crate :: app :: accessorydata :: AccessoryData , crate :: app :: accessorydata :: AccessoryData , crate :: app :: itemdata :: ItemData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268ba00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character_id) , :: core :: convert :: Into :: into (pause_data) , :: core :: convert :: Into :: into (body_acc) , :: core :: convert :: Into :: into (face_acc) , :: core :: convert :: Into :: into (weapon_data) , :: core :: convert :: Into :: into (is_random) , :: core :: option :: Option :: None) } } } # [doc = "`SetUpPause()` overload"] fn set_up_pause (self ,) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268ce70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupWeapon()` overload"] fn setup_weapon (self ,) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268d530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyWeapon()` overload"] fn destroy_weapon (self ,) -> () { unsafe { let __receiver = < PhotographDisposInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x268e3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-photographdisposinfo")]
-impl < __T : IPhotographDisposInfo > IPhotographDisposInfoMethods for __T { }
-
-#[cfg(feature = "app-photographdisposinfo")]
-impl PhotographDisposInfo { pub fn get_pause_group_name_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_character_id_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_current_character_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_current_character_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_chara_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_pause_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_current_pause_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_is_look_at_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_is_look_at_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_look_at_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_body_acc_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_body_acc_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_body_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_body_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_face_acc_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_face_acc_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_face_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_face_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_weapon_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_weapon_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_weapon_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_weapon_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_female_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_random_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_up_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn update_look_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn init_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_up_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn setup_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn destroy_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } }
-
-#[cfg(feature = "app-photographdisposinfo")]
-impl PhotographDisposInfo {
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::photographspotdata::PhotographSpotData, i32, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>)` — overload selector"] pub fn new (locator : crate :: unity_engine :: gameobject :: GameObject , select_spot : crate :: app :: photographspotdata :: PhotographSpotData , locator_no : i32 , anime_controller_dic : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographDisposInfo) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographDisposInfoMethods > :: ctor (this , locator , select_spot , locator_no , anime_controller_dic) ; this }
+#[cfg(feature="app-photographdisposinfo")]pub trait IPhotographDisposInfo_FlagFieldMethods:IPhotographDisposInfo_FlagField{#[doc="`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::photographdisposinfo::PhotographDisposInfo_Flags>)->i32{unsafe{let __receiver= <PhotographDisposInfo_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2261d30usize)as*mut u8,i32;
+(PhotographDisposInfo_FlagField)__receiver,(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographDisposInfo_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2261d40usize)as*mut u8,();
+(PhotographDisposInfo_FlagField)__receiver)}
+}
 }
 
-#[cfg(feature = "app-photographdisposinfo")]
-pub trait IPhotographDisposInfo_FlagFieldMethods : IPhotographDisposInfo_FlagField { # [doc = "`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >) -> i32 { unsafe { let __receiver = < PhotographDisposInfo_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo_FlagField , crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2261d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographDisposInfo_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographDisposInfo_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2261d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographdisposinfo")]impl<__T:IPhotographDisposInfo_FlagField>IPhotographDisposInfo_FlagFieldMethods for __T{}
 
-#[cfg(feature = "app-photographdisposinfo")]
-impl < __T : IPhotographDisposInfo_FlagField > IPhotographDisposInfo_FlagFieldMethods for __T { }
+#[cfg(feature="app-photographdisposinfo")]impl PhotographDisposInfo_FlagField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-photographdisposinfo")]
-impl PhotographDisposInfo_FlagField { pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographDisposInfo_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-photographdisposinfo")]impl PhotographDisposInfo_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographDisposInfo_FlagField), ::core::stringify!(new),));
+ <Self as IPhotographDisposInfo_FlagFieldMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-photographdisposinfo")]
-impl PhotographDisposInfo_FlagField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographDisposInfo_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographDisposInfo_FlagFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographdisposinfo")]impl PhotographDisposInfo{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x268e4d0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-photographdisposinfo")]pub trait IPhotographDisposInfoMethods:IPhotographDisposInfo{#[doc="`get_PauseGroupNameList()` overload"]fn get_pause_group_name_list(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2689fe0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::photographdisposinfo::PhotographDisposInfo_FlagField{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2689ff0usize)as*mut u8,crate::app::photographdisposinfo::PhotographDisposInfo_FlagField;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`get_IsLoading()` overload"]fn get_is_loading(self,)->bool{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a000usize)as*mut u8,bool;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`get_CharacterIdList()` overload"]fn get_character_id_list(self,)->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a020usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`get_CurrentCharacterId()` overload"]fn get_current_character_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a030usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`set_CurrentCharacterId(::unity2::Il2CppString)` overload"]fn set_current_character_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a040usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_CharaType()` overload"]fn get_chara_type(self,)->crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a050usize)as*mut u8,crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`get_PauseDataList()` overload"]fn get_pause_data_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::photographpausedata::PhotographPauseData>{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a060usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::photographpausedata::PhotographPauseData> ;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`get_CurrentPauseData()` overload"]fn get_current_pause_data(self,)->crate::app::photographpausedata::PhotographPauseData{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a070usize)as*mut u8,crate::app::photographpausedata::PhotographPauseData;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`get_IsLookAtCamera()` overload"]fn get_is_look_at_camera(self,)->bool{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a080usize)as*mut u8,bool;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`set_IsLookAtCamera(bool)` overload"]fn set_is_look_at_camera(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a090usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`set_LookAtRate(f32)` overload"]fn set_look_at_rate(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a0a0usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BodyAccDataList()` overload"]fn get_body_acc_data_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a0b0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> ;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`set_BodyAccDataList(crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>)` overload"]fn set_body_acc_data_list(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> >)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a0c0usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_BodyAccData()` overload"]fn get_body_acc_data(self,)->crate::app::accessorydata::AccessoryData{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a0d0usize)as*mut u8,crate::app::accessorydata::AccessoryData;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`set_BodyAccData(crate::app::accessorydata::AccessoryData)` overload"]fn set_body_acc_data(self,value:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a0e0usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(value))}
+}
+#[doc="`get_FaceAccDataList()` overload"]fn get_face_acc_data_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a0f0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> ;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`set_FaceAccDataList(crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>)` overload"]fn set_face_acc_data_list(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData> >)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a100usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_FaceAccData()` overload"]fn get_face_acc_data(self,)->crate::app::accessorydata::AccessoryData{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a110usize)as*mut u8,crate::app::accessorydata::AccessoryData;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`set_FaceAccData(crate::app::accessorydata::AccessoryData)` overload"]fn set_face_acc_data(self,value:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a120usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(value))}
+}
+#[doc="`get_WeaponDataList()` overload"]fn get_weapon_data_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a130usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> ;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`set_WeaponDataList(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]fn set_weapon_data_list(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> >)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a140usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_WeaponData()` overload"]fn get_weapon_data(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a150usize)as*mut u8,crate::app::itemdata::ItemData;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`set_WeaponData(crate::app::itemdata::ItemData)` overload"]fn set_weapon_data(self,value:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a160usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(value))}
+}
+#[doc="`set_IsVisible(bool)` overload"]fn set_is_visible(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a170usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Female()` overload"]fn get_female(self,)->crate::app::accessoryshoputility::AccessoryShopUtility_Female{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a240usize)as*mut u8,crate::app::accessoryshoputility::AccessoryShopUtility_Female;
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::photographspotdata::PhotographSpotData, i32, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>)` overload"]fn ctor(self,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,select_spot:impl::core::convert::Into<crate::app::photographspotdata::PhotographSpotData> ,locator_no:impl::core::convert::Into<i32> ,anime_controller_dic:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController> >)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268a270usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator),(crate::app::photographspotdata::PhotographSpotData)::core::convert::Into::into(select_spot),(i32)::core::convert::Into::into(locator_no),(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>)::core::convert::Into::into(anime_controller_dic))}
+}
+#[doc="`GetRandomPause(::unity2::Il2CppString)` overload"]fn get_random_pause(self,chara_id:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::photographpausedata::PhotographPauseData{unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268ae40usize)as*mut u8,crate::app::photographpausedata::PhotographPauseData;
+(PhotographDisposInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(chara_id))}
+}
+#[doc="`SetUpCharacter(::unity2::Il2CppString, crate::app::photographpausedata::PhotographPauseData, crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData, crate::app::itemdata::ItemData, bool)` overload"]fn set_up_character(self,character_id:impl::core::convert::Into< ::unity2::Il2CppString> ,pause_data:impl::core::convert::Into<crate::app::photographpausedata::PhotographPauseData> ,body_acc:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,face_acc:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,weapon_data:impl::core::convert::Into<crate::app::itemdata::ItemData> ,is_random:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268b200usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(character_id),(crate::app::photographpausedata::PhotographPauseData)::core::convert::Into::into(pause_data),(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(body_acc),(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(face_acc),(crate::app::itemdata::ItemData)::core::convert::Into::into(weapon_data),(bool)::core::convert::Into::into(is_random))}
+}
+#[doc="`UpdateLook()` overload"]fn update_look(self,)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268d760usize)as*mut u8,();
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`InitCharacter(::unity2::Il2CppString, crate::app::photographpausedata::PhotographPauseData, crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData, crate::app::itemdata::ItemData, bool)` overload"]fn init_character(self,character_id:impl::core::convert::Into< ::unity2::Il2CppString> ,pause_data:impl::core::convert::Into<crate::app::photographpausedata::PhotographPauseData> ,body_acc:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,face_acc:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,weapon_data:impl::core::convert::Into<crate::app::itemdata::ItemData> ,is_random:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268ba00usize)as*mut u8,();
+(PhotographDisposInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(character_id),(crate::app::photographpausedata::PhotographPauseData)::core::convert::Into::into(pause_data),(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(body_acc),(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(face_acc),(crate::app::itemdata::ItemData)::core::convert::Into::into(weapon_data),(bool)::core::convert::Into::into(is_random))}
+}
+#[doc="`SetUpPause()` overload"]fn set_up_pause(self,)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268ce70usize)as*mut u8,();
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`SetupWeapon()` overload"]fn setup_weapon(self,)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268d530usize)as*mut u8,();
+(PhotographDisposInfo)__receiver)}
+}
+#[doc="`DestroyWeapon()` overload"]fn destroy_weapon(self,)->(){unsafe{let __receiver= <PhotographDisposInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x268e3d0usize)as*mut u8,();
+(PhotographDisposInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-photographdisposinfo")]impl<__T:IPhotographDisposInfo>IPhotographDisposInfoMethods for __T{}
+
+#[cfg(feature="app-photographdisposinfo")]impl PhotographDisposInfo{pub fn get_pause_group_name_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_character_id_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_current_character_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_current_character_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_chara_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_pause_data_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_current_pause_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_is_look_at_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_is_look_at_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_look_at_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_body_acc_data_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_body_acc_data_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_body_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_body_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_face_acc_data_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_face_acc_data_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_face_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_face_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_weapon_data_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_weapon_data_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_weapon_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_weapon_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_female_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_random_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_up_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn update_look_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn init_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_up_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn setup_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn destroy_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+}
+
+#[cfg(feature="app-photographdisposinfo")]impl PhotographDisposInfo{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::photographspotdata::PhotographSpotData, i32, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>)` — overload selector"]pub fn new(locator:crate::unity_engine::gameobject::GameObject,select_spot:crate::app::photographspotdata::PhotographSpotData,locator_no:i32,anime_controller_dic:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographDisposInfo), ::core::stringify!(new),));
+ <Self as IPhotographDisposInfoMethods> ::ctor(this,locator,select_spot,locator_no,anime_controller_dic);
+this}
 }
 
 #[cfg(feature = "app-photographdisposinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PhotographDisposInfo;
-    pub use super::IPhotographDisposInfo;
-    pub use super::IPhotographDisposInfoMethods;
-    pub use super::PhotographDisposInfo_CharacterType;
     pub use super::PhotographDisposInfo_FlagField;
     pub use super::IPhotographDisposInfo_FlagField;
     pub use super::IPhotographDisposInfo_FlagFieldMethods;
     pub use super::PhotographDisposInfo_Flags;
+    pub use super::PhotographDisposInfo_CharacterType;
+    pub use super::PhotographDisposInfo;
+    pub use super::IPhotographDisposInfo;
+    pub use super::IPhotographDisposInfoMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

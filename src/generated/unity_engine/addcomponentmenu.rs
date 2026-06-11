@@ -4,33 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addcomponentmenu/AddComponentMenu.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AddComponentMenu")] pub struct AddComponentMenu {
-# [offset (16)] # [rename (name = "m_AddComponentMenu")] pub m_add_component_menu : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Ordering")] pub m_ordering : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addcomponentmenu/AddComponentMenu.md"))]#[::unity2::class(namespace="UnityEngine",name="AddComponentMenu")]pub struct AddComponentMenu{#[offset(16)]#[rename(name="m_AddComponentMenu")]pub m_add_component_menu: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Ordering")]pub m_ordering:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-addcomponentmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addcomponentmenu")]
-pub trait IAddComponentMenuMethods : IAddComponentMenu { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , menu_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AddComponentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AddComponentMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c34870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, i32)` overload"] fn ctor_2 (self , menu_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , order : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AddComponentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AddComponentMenu , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c348b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_name) , :: core :: convert :: Into :: into (order) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addcomponentmenu")]pub trait IAddComponentMenuMethods:IAddComponentMenu{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,menu_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AddComponentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c34870usize)as*mut u8,();
+(AddComponentMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(menu_name))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, i32)` overload"]fn ctor_2(self,menu_name:impl::core::convert::Into< ::unity2::Il2CppString> ,order:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AddComponentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c348b0usize)as*mut u8,();
+(AddComponentMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(menu_name),(i32)::core::convert::Into::into(order))}
+}
+}
 
-#[cfg(feature = "unity_engine-addcomponentmenu")]
-impl < __T : IAddComponentMenu > IAddComponentMenuMethods for __T { }
+#[cfg(feature="unity_engine-addcomponentmenu")]impl<__T:IAddComponentMenu>IAddComponentMenuMethods for __T{}
 
-#[cfg(feature = "unity_engine-addcomponentmenu")]
-impl AddComponentMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddComponentMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AddComponentMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-addcomponentmenu")]impl AddComponentMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-addcomponentmenu")]
-impl AddComponentMenu {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (menu_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AddComponentMenu) , :: core :: stringify ! (new) ,)) ; < Self as IAddComponentMenuMethods > :: ctor (this , menu_name) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, i32)` — overload selector"] pub fn new_2 (menu_name : :: unity2 :: Il2CppString , order : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AddComponentMenu) , :: core :: stringify ! (new_2) ,)) ; < Self as IAddComponentMenuMethods > :: ctor_2 (this , menu_name , order) ; this }
+#[cfg(feature="unity_engine-addcomponentmenu")]impl AddComponentMenu{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(menu_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AddComponentMenu), ::core::stringify!(new),));
+ <Self as IAddComponentMenuMethods> ::ctor(this,menu_name);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, i32)` — overload selector"]pub fn new_2(menu_name: ::unity2::Il2CppString,order:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AddComponentMenu), ::core::stringify!(new_2),));
+ <Self as IAddComponentMenuMethods> ::ctor_2(this,menu_name,order);
+this}
 }
 
 #[cfg(feature = "unity_engine-addcomponentmenu")]

@@ -4,50 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardmenucontent/CommonRewardMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRewardMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct CommonRewardMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_GaugeSpeedDefault")] pub m_gauge_speed_default : i32 ,
-# [offset (236)] # [rename (name = "m_GaugeSpeedSkip")] pub m_gauge_speed_skip : i32 ,
-# [offset (240)] # [rename (name = "m_ScrollStart")] pub m_scroll_start : i32 ,
-# [offset (244)] # [rename (name = "m_WaitTimeStart")] pub m_wait_time_start : f32 ,
-# [offset (248)] # [rename (name = "m_WaitTimeEnd")] pub m_wait_time_end : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardmenucontent/CommonRewardMenuContent.md"))]#[::unity2::class(namespace="App",name="CommonRewardMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct CommonRewardMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_GaugeSpeedDefault")]pub m_gauge_speed_default:i32, #[offset(236)]#[rename(name="m_GaugeSpeedSkip")]pub m_gauge_speed_skip:i32, #[offset(240)]#[rename(name="m_ScrollStart")]pub m_scroll_start:i32, #[offset(244)]#[rename(name="m_WaitTimeStart")]pub m_wait_time_start:f32, #[offset(248)]#[rename(name="m_WaitTimeEnd")]pub m_wait_time_end:f32,}
 
 }
 
 #[cfg(feature = "app-commonrewardmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commonrewardmenucontent")]
-impl CommonRewardMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532460usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532580usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: commonrewardmenucontent :: CommonRewardMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: commonrewardmenucontent :: CommonRewardMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25314d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewardmenucontent")]impl CommonRewardMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2532460usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2532500usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2532580usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::commonrewardmenucontent::CommonRewardMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25314d0usize)as*mut u8,crate::app::commonrewardmenucontent::CommonRewardMenuContent;
+)}
+}
+}
 
-#[cfg(feature = "app-commonrewardmenucontent")]
-pub trait ICommonRewardMenuContentMethods : ICommonRewardMenuContent { # [doc = "`get_GaugeSpeedDefault()` overload"] fn get_gauge_speed_default (self ,) -> i32 { unsafe { let __receiver = < CommonRewardMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_GaugeSpeedSkip()` overload"] fn get_gauge_speed_skip (self ,) -> i32 { unsafe { let __receiver = < CommonRewardMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ScrollStart()` overload"] fn get_scroll_start (self ,) -> i32 { unsafe { let __receiver = < CommonRewardMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_WaitTimeStart()` overload"] fn get_wait_time_start (self ,) -> f32 { unsafe { let __receiver = < CommonRewardMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_WaitTimeEnd()` overload"] fn get_wait_time_end (self ,) -> f32 { unsafe { let __receiver = < CommonRewardMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < CommonRewardMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CommonRewardMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25326e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewardmenucontent")]pub trait ICommonRewardMenuContentMethods:ICommonRewardMenuContent{#[doc="`get_GaugeSpeedDefault()` overload"]fn get_gauge_speed_default(self,)->i32{unsafe{let __receiver= <CommonRewardMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532410usize)as*mut u8,i32;
+(CommonRewardMenuContent)__receiver)}
+}
+#[doc="`get_GaugeSpeedSkip()` overload"]fn get_gauge_speed_skip(self,)->i32{unsafe{let __receiver= <CommonRewardMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532420usize)as*mut u8,i32;
+(CommonRewardMenuContent)__receiver)}
+}
+#[doc="`get_ScrollStart()` overload"]fn get_scroll_start(self,)->i32{unsafe{let __receiver= <CommonRewardMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532430usize)as*mut u8,i32;
+(CommonRewardMenuContent)__receiver)}
+}
+#[doc="`get_WaitTimeStart()` overload"]fn get_wait_time_start(self,)->f32{unsafe{let __receiver= <CommonRewardMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532440usize)as*mut u8,f32;
+(CommonRewardMenuContent)__receiver)}
+}
+#[doc="`get_WaitTimeEnd()` overload"]fn get_wait_time_end(self,)->f32{unsafe{let __receiver= <CommonRewardMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532450usize)as*mut u8,f32;
+(CommonRewardMenuContent)__receiver)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <CommonRewardMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532600usize)as*mut u8,();
+(CommonRewardMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CommonRewardMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25326e0usize)as*mut u8,();
+(CommonRewardMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-commonrewardmenucontent")]
-impl < __T : ICommonRewardMenuContent > ICommonRewardMenuContentMethods for __T { }
+#[cfg(feature="app-commonrewardmenucontent")]impl<__T:ICommonRewardMenuContent>ICommonRewardMenuContentMethods for __T{}
 
-#[cfg(feature = "app-commonrewardmenucontent")]
-impl CommonRewardMenuContent { pub fn get_gauge_speed_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_gauge_speed_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_scroll_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_wait_time_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_wait_time_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-commonrewardmenucontent")]impl CommonRewardMenuContent{pub fn get_gauge_speed_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_gauge_speed_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_scroll_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_wait_time_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_wait_time_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-commonrewardmenucontent")]
-impl CommonRewardMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRewardMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRewardMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-commonrewardmenucontent")]impl CommonRewardMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRewardMenuContent), ::core::stringify!(new),));
+ <Self as ICommonRewardMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-commonrewardmenucontent")]

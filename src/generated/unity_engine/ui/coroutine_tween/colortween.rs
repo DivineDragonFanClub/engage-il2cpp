@@ -4,148 +4,141 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: events :: unityevent_1 :: { IUnityEvent_1 , UnityEvent_1 }
- ;
- use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::events::unityevent_1::{IUnityEvent_1,UnityEvent_1}
+;
+use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ColorTween {
-    pub m_target: crate :: unity_engine :: ui :: coroutine_tween :: colortween :: ColorTween_ColorTweenCallback,
-    pub m_start_color: crate :: unity_engine :: color :: Color,
-    pub m_target_color: crate :: unity_engine :: color :: Color,
-    pub m_tween_mode: crate :: unity_engine :: ui :: coroutine_tween :: colortween :: ColorTween_ColorTweenMode,
-    pub m_duration: f32,
-    pub m_ignore_time_scale: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/colortween/ColorTween.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ColorTween{pub m_target:crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenCallback,pub m_start_color:crate::unity_engine::color::Color,pub m_target_color:crate::unity_engine::color::Color,pub m_tween_mode:crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode,pub m_duration:f32,pub m_ignore_time_scale:bool,}
+impl::unity2::ClassIdentity for ColorTween{const NAMESPACE: &'static str="UnityEngine.UI.CoroutineTween";
+const NAME: &'static str="ColorTween";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ColorTween{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for ColorTween {
-    const NAMESPACE: &'static str = "UnityEngine.UI.CoroutineTween";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI.CoroutineTween",name="ColorTween.ColorTweenCallback")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::color::Color>)]pub struct ColorTween_ColorTweenCallback{}
 
-    const NAME: &'static str = "ColorTween";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ColorTween_ColorTweenMode{pub value:i32,}
+impl::unity2::ClassIdentity for ColorTween_ColorTweenMode{const NAMESPACE: &'static str="UnityEngine.UI.CoroutineTween";
+const NAME: &'static str="ColorTween.ColorTweenMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for ColorTween {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ColorTween_ColorTweenMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ColorTween_ColorTweenMode  {
-    pub value: i32,
+impl ColorTween_ColorTweenMode{pub fn all()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::ClassIdentity for ColorTween_ColorTweenMode  {
-    const NAMESPACE: &'static str = "UnityEngine.UI.CoroutineTween";
-
-    const NAME: &'static str = "ColorTween.ColorTweenMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn rgb()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for ColorTween_ColorTweenMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn alpha()->Self{Self{value:2}
 }
-
-
-impl  ColorTween_ColorTweenMode  {
-    pub fn all() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn rgb() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn alpha() -> Self {
-        Self { value: 2 }
-
-    }
-
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI.CoroutineTween" , name = "ColorTween.ColorTweenCallback")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)] pub struct ColorTween_ColorTweenCallback {}
 
 }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-colortween-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
-impl ColorTween { # [doc = "`get_startColor()` overload"] pub fn get_start_color (& mut self ,) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (* mut ColorTween , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f880usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: option :: Option :: None) } } } # [doc = "`set_startColor(crate::unity_engine::color::Color)` overload"] pub fn set_start_color (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { { let __inner : extern "C" fn (* mut ColorTween , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f890usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_targetColor()` overload"] pub fn get_target_color (& mut self ,) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (* mut ColorTween , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f8b0usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: option :: Option :: None) } } } # [doc = "`set_targetColor(crate::unity_engine::color::Color)` overload"] pub fn set_target_color (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { { let __inner : extern "C" fn (* mut ColorTween , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f8c0usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_tweenMode()` overload"] pub fn get_tween_mode (& mut self ,) -> crate :: unity_engine :: ui :: coroutine_tween :: colortween :: ColorTween_ColorTweenMode { unsafe { { let __inner : extern "C" fn (* mut ColorTween , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: coroutine_tween :: colortween :: ColorTween_ColorTweenMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f8e0usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: option :: Option :: None) } } } # [doc = "`set_tweenMode(crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode)` overload"] pub fn set_tween_mode (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: coroutine_tween :: colortween :: ColorTween_ColorTweenMode >) -> () { unsafe { { let __inner : extern "C" fn (* mut ColorTween , crate :: unity_engine :: ui :: coroutine_tween :: colortween :: ColorTween_ColorTweenMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f8f0usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_duration()` overload"] pub fn get_duration (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut ColorTween , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f900usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: option :: Option :: None) } } } # [doc = "`set_duration(f32)` overload"] pub fn set_duration (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ColorTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f910usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ignoreTimeScale()` overload"] pub fn get_ignore_time_scale (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut ColorTween , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f920usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: option :: Option :: None) } } } # [doc = "`set_ignoreTimeScale(bool)` overload"] pub fn set_ignore_time_scale (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut ColorTween , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f930usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`TweenValue(f32)` overload"] pub fn tween_value (& mut self , float_percentage : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ColorTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317f940usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: convert :: Into :: into (float_percentage) , :: core :: option :: Option :: None) } } } # [doc = "`AddOnChangedCallback(crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::color::Color>)` overload"] pub fn add_on_changed_callback (& mut self , callback : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < crate :: unity_engine :: color :: Color > >) -> () { unsafe { { let __inner : extern "C" fn (* mut ColorTween , crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < crate :: unity_engine :: color :: Color > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fa10usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`GetIgnoreTimescale()` overload"] pub fn get_ignore_timescale (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut ColorTween , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fab0usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: option :: Option :: None) } } } # [doc = "`ValidTarget()` overload"] pub fn valid_target (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut ColorTween , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317fa00usize) as * mut u8) ; __inner (self as * mut ColorTween , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-coroutine_tween-colortween")]impl ColorTween{#[doc="`get_startColor()` overload"]pub fn get_start_color(&mut self,)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f880usize)as*mut u8,crate::unity_engine::color::Color;
+(*mut ColorTween)self as*mut ColorTween)}
+}
+#[doc="`set_startColor(crate::unity_engine::color::Color)` overload"]pub fn set_start_color(&mut self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f890usize)as*mut u8,();
+(*mut ColorTween)self as*mut ColorTween,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`get_targetColor()` overload"]pub fn get_target_color(&mut self,)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f8b0usize)as*mut u8,crate::unity_engine::color::Color;
+(*mut ColorTween)self as*mut ColorTween)}
+}
+#[doc="`set_targetColor(crate::unity_engine::color::Color)` overload"]pub fn set_target_color(&mut self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f8c0usize)as*mut u8,();
+(*mut ColorTween)self as*mut ColorTween,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`get_tweenMode()` overload"]pub fn get_tween_mode(&mut self,)->crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f8e0usize)as*mut u8,crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode;
+(*mut ColorTween)self as*mut ColorTween)}
+}
+#[doc="`set_tweenMode(crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode)` overload"]pub fn set_tween_mode(&mut self,value:impl::core::convert::Into<crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f8f0usize)as*mut u8,();
+(*mut ColorTween)self as*mut ColorTween,(crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_duration()` overload"]pub fn get_duration(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f900usize)as*mut u8,f32;
+(*mut ColorTween)self as*mut ColorTween)}
+}
+#[doc="`set_duration(f32)` overload"]pub fn set_duration(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f910usize)as*mut u8,();
+(*mut ColorTween)self as*mut ColorTween,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ignoreTimeScale()` overload"]pub fn get_ignore_time_scale(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f920usize)as*mut u8,bool;
+(*mut ColorTween)self as*mut ColorTween)}
+}
+#[doc="`set_ignoreTimeScale(bool)` overload"]pub fn set_ignore_time_scale(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f930usize)as*mut u8,();
+(*mut ColorTween)self as*mut ColorTween,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`TweenValue(f32)` overload"]pub fn tween_value(&mut self,float_percentage:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317f940usize)as*mut u8,();
+(*mut ColorTween)self as*mut ColorTween,(f32)::core::convert::Into::into(float_percentage))}
+}
+#[doc="`AddOnChangedCallback(crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::color::Color>)` overload"]pub fn add_on_changed_callback(&mut self,callback:impl::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::color::Color> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317fa10usize)as*mut u8,();
+(*mut ColorTween)self as*mut ColorTween,(crate::unity_engine::events::unityaction_1::UnityAction_1<crate::unity_engine::color::Color>)::core::convert::Into::into(callback))}
+}
+#[doc="`GetIgnoreTimescale()` overload"]pub fn get_ignore_timescale(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317fab0usize)as*mut u8,bool;
+(*mut ColorTween)self as*mut ColorTween)}
+}
+#[doc="`ValidTarget()` overload"]pub fn valid_target(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x317fa00usize)as*mut u8,bool;
+(*mut ColorTween)self as*mut ColorTween)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
-impl ColorTween { pub fn get_start_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_start_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_target_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_target_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_tween_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_tween_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_ignore_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_ignore_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn tween_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_on_changed_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_ignore_timescale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn valid_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="unity_engine-ui-coroutine_tween-colortween")]impl ColorTween{pub fn get_start_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_start_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_target_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_target_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_tween_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_tween_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_ignore_time_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_ignore_time_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn tween_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_on_changed_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_ignore_timescale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn valid_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
-pub trait IColorTween_ColorTweenCallbackMethods : IColorTween_ColorTweenCallback { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ColorTween_ColorTweenCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorTween_ColorTweenCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0be50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-coroutine_tween-colortween")]pub trait IColorTween_ColorTweenCallbackMethods:IColorTween_ColorTweenCallback{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ColorTween_ColorTweenCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0be50usize)as*mut u8,();
+(ColorTween_ColorTweenCallback)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
-impl < __T : IColorTween_ColorTweenCallback > IColorTween_ColorTweenCallbackMethods for __T { }
+#[cfg(feature="unity_engine-ui-coroutine_tween-colortween")]impl<__T:IColorTween_ColorTweenCallback>IColorTween_ColorTweenCallbackMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
-impl ColorTween_ColorTweenCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorTween_ColorTweenCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-ui-coroutine_tween-colortween")]impl ColorTween_ColorTweenCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
-impl ColorTween_ColorTweenCallback {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ColorTween_ColorTweenCallback) , :: core :: stringify ! (new) ,)) ; < Self as IColorTween_ColorTweenCallbackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-coroutine_tween-colortween")]impl ColorTween_ColorTweenCallback{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ColorTween_ColorTweenCallback), ::core::stringify!(new),));
+ <Self as IColorTween_ColorTweenCallbackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ColorTween;
-    pub use super::ColorTween_ColorTweenMode;
     pub use super::ColorTween_ColorTweenCallback;
     pub use super::IColorTween_ColorTweenCallback;
     pub use super::IColorTween_ColorTweenCallbackMethods;
+    pub use super::ColorTween_ColorTweenMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

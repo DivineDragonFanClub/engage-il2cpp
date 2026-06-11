@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/cursor/Cursor.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Cursor")] # [parent (crate :: system :: object :: Object)] pub struct Cursor {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cursor/Cursor.md"))]#[::unity2::class(namespace="UnityEngine",name="Cursor")]#[parent(crate::system::object::Object)]pub struct Cursor{}
 
 }
 
 #[cfg(feature = "unity_engine-cursor-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-cursor")]
-impl Cursor { # [doc = "`get_lockState()` overload"] pub fn get_lock_state () -> crate :: unity_engine :: cursorlockmode :: CursorLockMode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: cursorlockmode :: CursorLockMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c49fd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-cursor")]impl Cursor{#[doc="`get_lockState()` overload"]pub fn get_lock_state()->crate::unity_engine::cursorlockmode::CursorLockMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c49fd0usize)as*mut u8,crate::unity_engine::cursorlockmode::CursorLockMode;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-cursor")]
-impl Cursor { pub fn get_lock_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Cursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-cursor")]impl Cursor{pub fn get_lock_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-cursor")]
 #[doc(hidden)]

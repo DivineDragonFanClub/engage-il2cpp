@@ -4,38 +4,114 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akacousticsurface/AkAcousticSurface.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAcousticSurface")] # [parent (crate :: system :: object :: Object)] pub struct AkAcousticSurface {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akacousticsurface/AkAcousticSurface.md"))]#[::unity2::class(namespace="",name="AkAcousticSurface")]#[parent(crate::system::object::Object)]pub struct AkAcousticSurface{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akacousticsurface-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akacousticsurface")]
-impl AkAcousticSurface { # [doc = "`getCPtr(crate::root::akacousticsurface::AkAcousticSurface)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akacousticsurface :: AkAcousticSurface >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akacousticsurface :: AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcb760usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeOf()` overload"] pub fn get_size_of () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcbe70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akacousticsurface")]impl AkAcousticSurface{#[doc="`getCPtr(crate::root::akacousticsurface::AkAcousticSurface)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akacousticsurface::AkAcousticSurface>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb760usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akacousticsurface::AkAcousticSurface)::core::convert::Into::into(obj))}
+}
+#[doc="`GetSizeOf()` overload"]pub fn get_size_of()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbe70usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "root-akacousticsurface")]
-pub trait IAkAcousticSurfaceMethods : IAkAcousticSurface { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcb720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcb7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcb7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcb860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcb9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_textureID(u32)` overload"] fn set_texture_id (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcba80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_textureID()` overload"] fn get_texture_id (self ,) -> u32 { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcbb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_occlusion(f32)` overload"] fn set_occlusion (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcbb70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_occlusion()` overload"] fn get_occlusion (self ,) -> f32 { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcbbf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_strName(::unity2::Il2CppString)` overload"] fn set_str_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcbc60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_strName()` overload"] fn get_str_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcbce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcbd90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteName()` overload"] fn delete_name (self ,) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcbe00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone(crate::root::akacousticsurface::AkAcousticSurface)` overload"] fn clone (self , other : impl :: core :: convert :: Into < crate :: root :: akacousticsurface :: AkAcousticSurface >) -> () { unsafe { let __receiver = < AkAcousticSurface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAcousticSurface , crate :: root :: akacousticsurface :: AkAcousticSurface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcbee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akacousticsurface")]pub trait IAkAcousticSurfaceMethods:IAkAcousticSurface{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb720usize)as*mut u8,();
+(AkAcousticSurface)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb7c0usize)as*mut u8,();
+(AkAcousticSurface)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb7f0usize)as*mut u8,();
+(AkAcousticSurface)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb860usize)as*mut u8,();
+(AkAcousticSurface)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcb9f0usize)as*mut u8,();
+(AkAcousticSurface)__receiver)}
+}
+#[doc="`set_textureID(u32)` overload"]fn set_texture_id(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcba80usize)as*mut u8,();
+(AkAcousticSurface)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_textureID()` overload"]fn get_texture_id(self,)->u32{unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbb00usize)as*mut u8,u32;
+(AkAcousticSurface)__receiver)}
+}
+#[doc="`set_occlusion(f32)` overload"]fn set_occlusion(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbb70usize)as*mut u8,();
+(AkAcousticSurface)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_occlusion()` overload"]fn get_occlusion(self,)->f32{unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbbf0usize)as*mut u8,f32;
+(AkAcousticSurface)__receiver)}
+}
+#[doc="`set_strName(::unity2::Il2CppString)` overload"]fn set_str_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbc60usize)as*mut u8,();
+(AkAcousticSurface)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_strName()` overload"]fn get_str_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbce0usize)as*mut u8, ::unity2::Il2CppString;
+(AkAcousticSurface)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbd90usize)as*mut u8,();
+(AkAcousticSurface)__receiver)}
+}
+#[doc="`DeleteName()` overload"]fn delete_name(self,)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbe00usize)as*mut u8,();
+(AkAcousticSurface)__receiver)}
+}
+#[doc="`Clone(crate::root::akacousticsurface::AkAcousticSurface)` overload"]fn clone(self,other:impl::core::convert::Into<crate::root::akacousticsurface::AkAcousticSurface>)->(){unsafe{let __receiver= <AkAcousticSurface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbee0usize)as*mut u8,();
+(AkAcousticSurface)__receiver,(crate::root::akacousticsurface::AkAcousticSurface)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "root-akacousticsurface")]
-impl < __T : IAkAcousticSurface > IAkAcousticSurfaceMethods for __T { }
+#[cfg(feature="root-akacousticsurface")]impl<__T:IAkAcousticSurface>IAkAcousticSurfaceMethods for __T{}
 
-#[cfg(feature = "root-akacousticsurface")]
-impl AkAcousticSurface { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_texture_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_texture_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_occlusion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_occlusion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_str_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_str_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn delete_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_size_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAcousticSurface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="root-akacousticsurface")]impl AkAcousticSurface{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_texture_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_texture_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_occlusion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_occlusion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_str_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_str_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn delete_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_size_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "root-akacousticsurface")]
-impl AkAcousticSurface {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAcousticSurface) , :: core :: stringify ! (new) ,)) ; < Self as IAkAcousticSurfaceMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAcousticSurface) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkAcousticSurfaceMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akacousticsurface")]impl AkAcousticSurface{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAcousticSurface), ::core::stringify!(new),));
+ <Self as IAkAcousticSurfaceMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAcousticSurface), ::core::stringify!(new_2),));
+ <Self as IAkAcousticSurfaceMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akacousticsurface")]

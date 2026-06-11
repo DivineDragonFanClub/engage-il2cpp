@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: parameterinfo :: { IParameterInfo , ParameterInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::parameterinfo::{IParameterInfo,ParameterInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimeparameterinfo/RuntimeParameterInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "RuntimeParameterInfo")] # [parent (crate :: system :: reflection :: parameterinfo :: ParameterInfo)] pub struct RuntimeParameterInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/runtimeparameterinfo/RuntimeParameterInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="RuntimeParameterInfo")]#[parent(crate::system::reflection::parameterinfo::ParameterInfo)]pub struct RuntimeParameterInfo{}
 
 }
 
 #[cfg(feature = "system-reflection-runtimeparameterinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-runtimeparameterinfo")]
-pub trait IRuntimeParameterInfoMethods : IRuntimeParameterInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeParameterInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd61c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-runtimeparameterinfo")]pub trait IRuntimeParameterInfoMethods:IRuntimeParameterInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd61c0usize)as*mut u8,();
+(RuntimeParameterInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-runtimeparameterinfo")]
-impl < __T : IRuntimeParameterInfo > IRuntimeParameterInfoMethods for __T { }
+#[cfg(feature="system-reflection-runtimeparameterinfo")]impl<__T:IRuntimeParameterInfo>IRuntimeParameterInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-runtimeparameterinfo")]
-impl RuntimeParameterInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-runtimeparameterinfo")]impl RuntimeParameterInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-runtimeparameterinfo")]
-impl RuntimeParameterInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeParameterInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeParameterInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-runtimeparameterinfo")]impl RuntimeParameterInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeParameterInfo), ::core::stringify!(new),));
+ <Self as IRuntimeParameterInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-runtimeparameterinfo")]

@@ -4,495 +4,1152 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: mapbasicmenu :: { IMapBasicMenu , MapBasicMenu }
- ;
- use crate :: app :: mapbasicmenuitem :: { IMapBasicMenuItem , MapBasicMenuItem }
- ;
- use crate :: app :: minimapbasicmenu :: { IMiniMapBasicMenu , MiniMapBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::mapbasicmenu::{IMapBasicMenu,MapBasicMenu}
+;
+use crate::app::mapbasicmenuitem::{IMapBasicMenuItem,MapBasicMenuItem}
+;
+use crate::app::minimapbasicmenu::{IMiniMapBasicMenu,MiniMapBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubFriendMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MapSystemMenu_SubFriendMenu {
-# [static_field] # [rename (name = "m_parentMenu")] pub m_parent_menu : crate :: app :: mapsystemmenu :: MapSystemMenu ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_TurnItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.TurnItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_TurnItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_ConfigItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubSystemMenu.ConfigItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SubSystemMenu_ConfigItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_RingListItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubFriendMenu.RingListItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SubFriendMenu_RingListItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_ResetItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubSystemMenu.ResetItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SubSystemMenu_ResetItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_TemporarySaveItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.TemporarySaveItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_TemporarySaveItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_UnitListItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.UnitListItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_UnitListItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_RewindMenuItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.RewindMenuItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_RewindMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_TurnItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.TurnItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_TurnItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_FriendMenuItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.FriendMenuItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_FriendMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_TemporarySaveItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.TemporarySaveItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_TemporarySaveItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_OrderItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.OrderItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_OrderItem{#[offset(104)]#[rename(name="m_SortieTopMenuContent")]pub m_sortie_top_menu_content:crate::app::sortietopmenucontent::SortieTopMenuContent,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_KizunaItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubFriendMenu.KizunaItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SubFriendMenu_KizunaItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubSystemMenu.RestartItem.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Target")]pub m_target:crate::app::gameuserrestartdata::GameUserRestartData_Targtes,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_SurrenderItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubSystemMenu.SurrenderItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SubSystemMenu_SurrenderItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubFriendMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MapSystemMenu_SubFriendMenu{#[static_field]#[rename(name="m_parentMenu")]pub m_parent_menu:crate::app::mapsystemmenu::MapSystemMenu,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubSystemMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MapSystemMenu_SubSystemMenu {
-# [static_field] # [rename (name = "m_parentMenu")] pub m_parent_menu : crate :: app :: mapsystemmenu :: MapSystemMenu ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_RelianceItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubFriendMenu.RelianceItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SubFriendMenu_RelianceItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_TutorialItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubSystemMenu.TutorialItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SubSystemMenu_TutorialItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_RestartItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubSystemMenu.RestartItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SubSystemMenu_RestartItem{#[offset(100)]#[rename(name="m_Target")]pub m_target:crate::app::gameuserrestartdata::GameUserRestartData_Targtes,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_RestartItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubSystemMenu.RestartItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SubSystemMenu_RestartItem {
-# [offset (100)] # [rename (name = "m_Target")] pub m_target : crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_NotebookItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubFriendMenu.NotebookItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SubFriendMenu_NotebookItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_FriendMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.FriendMenuItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_FriendMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_KizunaItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubFriendMenu.KizunaItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SubFriendMenu_KizunaItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_OrderItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.OrderItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_OrderItem {
-# [offset (104)] # [rename (name = "m_SortieTopMenuContent")] pub m_sortie_top_menu_content : crate :: app :: sortietopmenucontent :: SortieTopMenuContent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_SurrenderItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubSystemMenu.SurrenderItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SubSystemMenu_SurrenderItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_RingListItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubFriendMenu.RingListItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SubFriendMenu_RingListItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_ConfigItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubSystemMenu.ConfigItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SubSystemMenu_ConfigItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_NotebookItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubFriendMenu.NotebookItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SubFriendMenu_NotebookItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_MapSystemMenuItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.MapSystemMenuItem")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct MapSystemMenu_MapSystemMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubSystemMenu.SurrenderItem.ConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_ResetItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubSystemMenu.ResetItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SubSystemMenu_ResetItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_RewindMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.RewindMenuItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_RewindMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SystemMenuItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SystemMenuItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SystemMenuItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SystemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SystemMenuItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SystemMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_UnitListItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.UnitListItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_UnitListItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_MapSystemMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.MapSystemMenuItem")] # [parent (crate :: app :: mapbasicmenuitem :: MapBasicMenuItem)] pub struct MapSystemMenu_MapSystemMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubSystemMenu.SurrenderItem.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubSystemMenu.RestartItem.ConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes {
-# [offset (112)] # [rename (name = "m_Target")] pub m_target : crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubSystemMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MapSystemMenu_SubSystemMenu{#[static_field]#[rename(name="m_parentMenu")]pub m_parent_menu:crate::app::mapsystemmenu::MapSystemMenu,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu")] # [parent (crate :: app :: minimapbasicmenu :: MiniMapBasicMenu)] pub struct MapSystemMenu {
-# [static_field] # [rename (name = "m_Select")] pub m_select : crate :: app :: basicmenuselect :: BasicMenuSelect ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu")]#[parent(crate::app::minimapbasicmenu::MiniMapBasicMenu)]pub struct MapSystemMenu{#[static_field]#[rename(name="m_Select")]pub m_select:crate::app::basicmenuselect::BasicMenuSelect,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_RelianceItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSystemMenu.SubFriendMenu.RelianceItem")] # [parent (crate :: app :: mapsystemmenu :: MapSystemMenu_MapSystemMenuItem)] pub struct MapSystemMenu_SubFriendMenu_RelianceItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_TutorialItem.md"))]#[::unity2::class(namespace="App",name="MapSystemMenu.SubSystemMenu.TutorialItem")]#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]pub struct MapSystemMenu_SubSystemMenu_TutorialItem{}
 
 }
 
 #[cfg(feature = "app-mapsystemmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3f800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubFriendMenuMethods : IMapSystemMenu_SubFriendMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent >) -> () { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e403e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubFriendMenu > IMapSystemMenu_SubFriendMenuMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubFriendMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubFriendMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_TurnItemMethods:IMapSystemMenu_TurnItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_TurnItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41290usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_TurnItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_TurnItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e412e0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_TurnItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_TurnItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41360usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_TurnItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_TurnItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e413e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_TurnItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_TurnItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e413f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_TurnItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_TurnItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e414e0usize)as*mut u8,();
+(MapSystemMenu_TurnItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubSystemMenu_ConfigItemMethods : IMapSystemMenu_SubSystemMenu_ConfigItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b726d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b727d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ConfigItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b727e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_TurnItem>IMapSystemMenu_TurnItemMethods for __T{}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubSystemMenu_ConfigItem > IMapSystemMenu_SubSystemMenu_ConfigItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_ConfigItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ConfigItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_ConfigItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubSystemMenu_ConfigItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubSystemMenu_ConfigItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_TurnItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubSystemMenu_ResetItemMethods : IMapSystemMenu_SubSystemMenu_ResetItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b727f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b728c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_ResetItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubSystemMenu_ResetItem > IMapSystemMenu_SubSystemMenu_ResetItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_ResetItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_ResetItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_ResetItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubSystemMenu_ResetItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubSystemMenu_ResetItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_TurnItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_TurnItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_TurnItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_UnitListItemMethods : IMapSystemMenu_UnitListItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_UnitListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_UnitListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e414f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_UnitListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_UnitListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e41540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_UnitListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_UnitListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e415c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_UnitListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_UnitListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e41640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_UnitListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_UnitListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e417b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_UnitListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_UnitListItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e418e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_UnitListItem > IMapSystemMenu_UnitListItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_UnitListItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_UnitListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_UnitListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_UnitListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_UnitListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_UnitListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_UnitListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_UnitListItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_UnitListItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_UnitListItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubFriendMenu_RingListItemMethods:IMapSystemMenu_SubFriendMenu_RingListItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b723f0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72440usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b724c0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72540usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72550usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72580usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b725e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubFriendMenu_RingListItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RingListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b725f0usize)as*mut u8,();
+(MapSystemMenu_SubFriendMenu_RingListItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_TurnItemMethods : IMapSystemMenu_TurnItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_TurnItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TurnItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e41290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_TurnItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TurnItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e412e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_TurnItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TurnItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e41360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_TurnItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TurnItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e413e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_TurnItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TurnItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e413f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_TurnItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TurnItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e414e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubFriendMenu_RingListItem>IMapSystemMenu_SubFriendMenu_RingListItemMethods for __T{}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_TurnItem > IMapSystemMenu_TurnItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_TurnItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TurnItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TurnItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TurnItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TurnItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TurnItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TurnItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_TurnItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_TurnItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_TurnItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu_RingListItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_TemporarySaveItemMethods : IMapSystemMenu_TemporarySaveItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_TemporarySaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TemporarySaveItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_TemporarySaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TemporarySaveItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_TemporarySaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TemporarySaveItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_TemporarySaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TemporarySaveItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_TemporarySaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TemporarySaveItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e411d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_TemporarySaveItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_TemporarySaveItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e41280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_TemporarySaveItem > IMapSystemMenu_TemporarySaveItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_TemporarySaveItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TemporarySaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TemporarySaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TemporarySaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TemporarySaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TemporarySaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_TemporarySaveItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_TemporarySaveItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_TemporarySaveItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_TemporarySaveItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu_RingListItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubFriendMenu_RingListItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubFriendMenu_RingListItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubFriendMenu_KizunaItemMethods : IMapSystemMenu_SubFriendMenu_KizunaItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b716d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b717a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b719f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_KizunaItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubFriendMenu_KizunaItem > IMapSystemMenu_SubFriendMenu_KizunaItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_KizunaItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_KizunaItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_KizunaItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubFriendMenu_KizunaItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubFriendMenu_KizunaItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_TemporarySaveItemMethods:IMapSystemMenu_TemporarySaveItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_TemporarySaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40c10usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_TemporarySaveItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_TemporarySaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40c60usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_TemporarySaveItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_TemporarySaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40df0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_TemporarySaveItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_TemporarySaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40f80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_TemporarySaveItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_TemporarySaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e411d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_TemporarySaveItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_TemporarySaveItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41280usize)as*mut u8,();
+(MapSystemMenu_TemporarySaveItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubSystemMenu_SurrenderItemMethods : IMapSystemMenu_SubSystemMenu_SurrenderItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b730c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b731a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b731b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b731c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b73360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b73370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_TemporarySaveItem>IMapSystemMenu_TemporarySaveItemMethods for __T{}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubSystemMenu_SurrenderItem > IMapSystemMenu_SubSystemMenu_SurrenderItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_SurrenderItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_SurrenderItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubSystemMenu_SurrenderItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubSystemMenu_SurrenderItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_TemporarySaveItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu { # [doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu > , parent_menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e404b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (parent_menu_item) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubSystemMenuMethods : IMapSystemMenu_SubSystemMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: sortiesubmenucontent :: SortieSubMenuContent >) -> () { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: sortiesubmenucontent :: SortieSubMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e408e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubSystemMenu > IMapSystemMenu_SubSystemMenuMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: sortiesubmenucontent :: SortieSubMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubSystemMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubSystemMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_TemporarySaveItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_TemporarySaveItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_TemporarySaveItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubSystemMenu_TutorialItemMethods : IMapSystemMenu_SubSystemMenu_TutorialItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b73380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b733d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b73450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b734d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b734e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b734f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b73550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_TutorialItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b73560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubSystemMenu_TutorialItem > IMapSystemMenu_SubSystemMenu_TutorialItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_TutorialItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_TutorialItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_TutorialItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubSystemMenu_TutorialItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubSystemMenu_TutorialItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_RewindMenuItemMethods:IMapSystemMenu_RewindMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_RewindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e400d0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_RewindMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_RewindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40120usize)as*mut u8,();
+(MapSystemMenu_RewindMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_RewindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40130usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_RewindMenuItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_RewindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e401b0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_RewindMenuItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_RewindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40230usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_RewindMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_RewindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e402a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_RewindMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubSystemMenu_RestartItemMethods : IMapSystemMenu_SubSystemMenu_RestartItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"] fn ctor (self , target : impl :: core :: convert :: Into < crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes >) -> () { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem , crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72af0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_RewindMenuItem>IMapSystemMenu_RewindMenuItemMethods for __T{}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubSystemMenu_RestartItem > IMapSystemMenu_SubSystemMenu_RestartItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_RestartItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_RestartItem {
-# [doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` — overload selector"] pub fn new (target : crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubSystemMenu_RestartItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubSystemMenu_RestartItemMethods > :: ctor (this , target) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_RewindMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_FriendMenuItemMethods : IMapSystemMenu_FriendMenuItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_FriendMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_FriendMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3f350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_FriendMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_FriendMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3f3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_FriendMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_FriendMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3f420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_FriendMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_FriendMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3f4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_FriendMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_FriendMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3f690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_FriendMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_FriendMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3fac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_FriendMenuItem > IMapSystemMenu_FriendMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_FriendMenuItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_FriendMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_FriendMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_FriendMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_FriendMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_FriendMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_FriendMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_FriendMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_FriendMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_FriendMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_RewindMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_RewindMenuItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_RewindMenuItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_OrderItemMethods : IMapSystemMenu_OrderItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_OrderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_OrderItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3fd20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` overload"] fn ctor (self , sortie_top_menu_content : impl :: core :: convert :: Into < crate :: app :: sortietopmenucontent :: SortieTopMenuContent >) -> () { unsafe { let __receiver = < MapSystemMenu_OrderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_OrderItem , crate :: app :: sortietopmenucontent :: SortieTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3fd70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sortie_top_menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_OrderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_OrderItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3fdb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_OrderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_OrderItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3fe30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_OrderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_OrderItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3feb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_OrderItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_OrderItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3ff80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_OrderItem > IMapSystemMenu_OrderItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_OrderItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_OrderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_OrderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_OrderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_OrderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_OrderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_OrderItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_OrderItem {
-# [doc = "`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` — overload selector"] pub fn new (sortie_top_menu_content : crate :: app :: sortietopmenucontent :: SortieTopMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_OrderItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_OrderItemMethods > :: ctor (this , sortie_top_menu_content) ; this }
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_FriendMenuItemMethods:IMapSystemMenu_FriendMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3f350usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_FriendMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3f3a0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_FriendMenuItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3f420usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_FriendMenuItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3f4a0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_FriendMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3f690usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_FriendMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_FriendMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3fac0usize)as*mut u8,();
+(MapSystemMenu_FriendMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubFriendMenu_RingListItemMethods : IMapSystemMenu_SubFriendMenu_RingListItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b723f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b724c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b725e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RingListItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b725f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_FriendMenuItem>IMapSystemMenu_FriendMenuItemMethods for __T{}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubFriendMenu_RingListItem > IMapSystemMenu_SubFriendMenu_RingListItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_RingListItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RingListItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_RingListItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubFriendMenu_RingListItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubFriendMenu_RingListItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_FriendMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubFriendMenu_NotebookItemMethods : IMapSystemMenu_SubFriendMenu_NotebookItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_NotebookItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubFriendMenu_NotebookItem > IMapSystemMenu_SubFriendMenu_NotebookItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_NotebookItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_NotebookItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_NotebookItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubFriendMenu_NotebookItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubFriendMenu_NotebookItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_FriendMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_FriendMenuItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_FriendMenuItemMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods : IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2307710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2307720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes > IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods > :: ctor (this , text) ; this }
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_OrderItemMethods:IMapSystemMenu_OrderItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_OrderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3fd20usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_OrderItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` overload"]fn ctor(self,sortie_top_menu_content:impl::core::convert::Into<crate::app::sortietopmenucontent::SortieTopMenuContent>)->(){unsafe{let __receiver= <MapSystemMenu_OrderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3fd70usize)as*mut u8,();
+(MapSystemMenu_OrderItem)__receiver,(crate::app::sortietopmenucontent::SortieTopMenuContent)::core::convert::Into::into(sortie_top_menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_OrderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3fdb0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_OrderItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_OrderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3fe30usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_OrderItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_OrderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3feb0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_OrderItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_OrderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3ff80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_OrderItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_RewindMenuItemMethods : IMapSystemMenu_RewindMenuItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_RewindMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_RewindMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e400d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_RewindMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_RewindMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_RewindMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_RewindMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_RewindMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_RewindMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e401b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_RewindMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_RewindMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_RewindMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_RewindMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e402a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_OrderItem>IMapSystemMenu_OrderItemMethods for __T{}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_RewindMenuItem > IMapSystemMenu_RewindMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_RewindMenuItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_RewindMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_RewindMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_RewindMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_RewindMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_RewindMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_RewindMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_RewindMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_RewindMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_RewindMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_OrderItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SystemMenuItemMethods : IMapSystemMenu_SystemMenuItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SystemMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SystemMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e409a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SystemMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SystemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SystemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_SystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SystemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e40c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SystemMenuItem > IMapSystemMenu_SystemMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SystemMenuItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SystemMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SystemMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SystemMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_OrderItem{#[doc="`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` — overload selector"]pub fn new(sortie_top_menu_content:crate::app::sortietopmenucontent::SortieTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_OrderItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_OrderItemMethods> ::ctor(this,sortie_top_menu_content);
+this}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_MapSystemMenuItemMethods : IMapSystemMenu_MapSystemMenuItem { # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_MapSystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_MapSystemMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3fae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_MapSystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_MapSystemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3faf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_MapSystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_MapSystemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3fc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HelpOn()` overload"] fn help_on (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_MapSystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_MapSystemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3fb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_MapSystemMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_MapSystemMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3fad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_MapSystemMenuItem > IMapSystemMenu_MapSystemMenuItemMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_MapSystemMenuItem { pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_MapSystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_MapSystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_MapSystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn help_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_MapSystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_MapSystemMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_MapSystemMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_MapSystemMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_MapSystemMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods:IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes{#[doc="`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"]fn ctor(self,target:impl::core::convert::Into<crate::app::gameuserrestartdata::GameUserRestartData_Targtes>)->(){unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23075e0usize)as*mut u8,();
+(MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes)__receiver,(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)::core::convert::Into::into(target))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2307680usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods : IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes { # [doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"] fn ctor (self , target : impl :: core :: convert :: Into < crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes >) -> () { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes , crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23075e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2307680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes>IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods for __T{}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes > IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes {
-# [doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` — overload selector"] pub fn new (target : crate :: app :: gameuserrestartdata :: GameUserRestartData_Targtes) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods > :: ctor (this , target) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu { # [doc = "`ResetSelect()` overload"] pub fn reset_select () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f52180usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetRewindAttribute()` overload"] pub fn get_rewind_attribute () -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f52230usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f52490usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f52860usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenuMethods : IMapSystemMenu { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f52130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortietopmenucontent::SortieTopMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , sortie_top_menu_content : impl :: core :: convert :: Into < crate :: app :: sortietopmenucontent :: SortieTopMenuContent >) -> () { unsafe { let __receiver = < MapSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: sortietopmenucontent :: SortieTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f52390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (sortie_top_menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f523c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < MapSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f52410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HelpOn()` overload"] fn help_on (self ,) -> () { unsafe { let __receiver = < MapSystemMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f527c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu > IMapSystemMenuMethods for __T { }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_rewind_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn help_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortietopmenucontent::SortieTopMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , sortie_top_menu_content : crate :: app :: sortietopmenucontent :: SortieTopMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenuMethods > :: ctor (this , menu_item_list , sortie_top_menu_content) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes{#[doc="`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` — overload selector"]pub fn new(target:crate::app::gameuserrestartdata::GameUserRestartData_Targtes)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods> ::ctor(this,target);
+this}
 }
 
-#[cfg(feature = "app-mapsystemmenu")]
-pub trait IMapSystemMenu_SubFriendMenu_RelianceItemMethods : IMapSystemMenu_SubFriendMenu_RelianceItem { # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b71f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHelpText()` overload"] fn get_help_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapAttribute()` overload"] fn get_map_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b72250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b723d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSystemMenu_SubFriendMenu_RelianceItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b723e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3f800usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl < __T : IMapSystemMenu_SubFriendMenu_RelianceItem > IMapSystemMenu_SubFriendMenu_RelianceItemMethods for __T { }
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubFriendMenuMethods:IMapSystemMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <MapSystemMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40380usize)as*mut u8,();
+(MapSystemMenu_SubFriendMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40390usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e403e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubFriendMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_RelianceItem { pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSystemMenu_SubFriendMenu_RelianceItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubFriendMenu>IMapSystemMenu_SubFriendMenuMethods for __T{}
 
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_RelianceItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSystemMenu_SubFriendMenu_RelianceItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapSystemMenu_SubFriendMenu_RelianceItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubFriendMenu), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubFriendMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubFriendMenu_RelianceItemMethods:IMapSystemMenu_SubFriendMenu_RelianceItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71f30usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71f80usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72000usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72080usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72090usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72250usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b723d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_RelianceItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b723e0usize)as*mut u8,();
+(MapSystemMenu_SubFriendMenu_RelianceItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubFriendMenu_RelianceItem>IMapSystemMenu_SubFriendMenu_RelianceItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu_RelianceItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu_RelianceItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubFriendMenu_RelianceItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubFriendMenu_RelianceItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubSystemMenu_RestartItemMethods:IMapSystemMenu_SubSystemMenu_RestartItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72aa0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_RestartItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"]fn ctor(self,target:impl::core::convert::Into<crate::app::gameuserrestartdata::GameUserRestartData_Targtes>)->(){unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72af0usize)as*mut u8,();
+(MapSystemMenu_SubSystemMenu_RestartItem)__receiver,(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)::core::convert::Into::into(target))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72b20usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_RestartItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72be0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_RestartItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72ca0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_RestartItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72cb0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_RestartItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72de0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_RestartItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_RestartItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72f80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_RestartItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubSystemMenu_RestartItem>IMapSystemMenu_SubSystemMenu_RestartItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_RestartItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_RestartItem{#[doc="`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` — overload selector"]pub fn new(target:crate::app::gameuserrestartdata::GameUserRestartData_Targtes)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubSystemMenu_RestartItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubSystemMenu_RestartItemMethods> ::ctor(this,target);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubFriendMenu_NotebookItemMethods:IMapSystemMenu_SubFriendMenu_NotebookItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71b90usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71be0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71c60usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71ce0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71cf0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71eb0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71f10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_NotebookItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71f20usize)as*mut u8,();
+(MapSystemMenu_SubFriendMenu_NotebookItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubFriendMenu_NotebookItem>IMapSystemMenu_SubFriendMenu_NotebookItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu_NotebookItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu_NotebookItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubFriendMenu_NotebookItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubFriendMenu_NotebookItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubFriendMenu_KizunaItemMethods:IMapSystemMenu_SubFriendMenu_KizunaItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b716d0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71720usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b717a0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71820usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71830usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b719f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71b70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_SubFriendMenu_KizunaItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71b80usize)as*mut u8,();
+(MapSystemMenu_SubFriendMenu_KizunaItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubFriendMenu_KizunaItem>IMapSystemMenu_SubFriendMenu_KizunaItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu_KizunaItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubFriendMenu_KizunaItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubFriendMenu_KizunaItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubFriendMenu_KizunaItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubSystemMenu_SurrenderItemMethods:IMapSystemMenu_SubSystemMenu_SurrenderItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72f90usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_SurrenderItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72fe0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_SurrenderItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b730c0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_SurrenderItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b731a0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_SurrenderItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b731b0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_SurrenderItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b731c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_SurrenderItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73360usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_SurrenderItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73370usize)as*mut u8,();
+(MapSystemMenu_SubSystemMenu_SurrenderItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubSystemMenu_SurrenderItem>IMapSystemMenu_SubSystemMenu_SurrenderItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_SurrenderItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_SurrenderItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubSystemMenu_SurrenderItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubSystemMenu_SurrenderItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubSystemMenu_ConfigItemMethods:IMapSystemMenu_SubSystemMenu_ConfigItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72600usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72650usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b726d0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72750usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72760usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72770usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b727d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ConfigItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b727e0usize)as*mut u8,();
+(MapSystemMenu_SubSystemMenu_ConfigItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubSystemMenu_ConfigItem>IMapSystemMenu_SubSystemMenu_ConfigItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_ConfigItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_ConfigItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubSystemMenu_ConfigItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubSystemMenu_ConfigItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_MapSystemMenuItemMethods:IMapSystemMenu_MapSystemMenuItem{#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_MapSystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3fae0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_MapSystemMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapSystemMenu_MapSystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3faf0usize)as*mut u8,();
+(MapSystemMenu_MapSystemMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <MapSystemMenu_MapSystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3fc10usize)as*mut u8,();
+(MapSystemMenu_MapSystemMenuItem)__receiver)}
+}
+#[doc="`HelpOn()` overload"]fn help_on(self,)->(){unsafe{let __receiver= <MapSystemMenu_MapSystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3fb20usize)as*mut u8,();
+(MapSystemMenu_MapSystemMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_MapSystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3fad0usize)as*mut u8,();
+(MapSystemMenu_MapSystemMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_MapSystemMenuItem>IMapSystemMenu_MapSystemMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_MapSystemMenuItem{pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn help_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_MapSystemMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_MapSystemMenuItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_MapSystemMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubSystemMenu_ResetItemMethods:IMapSystemMenu_SubSystemMenu_ResetItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b727f0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72840usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b728c0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72940usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72950usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72a30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72a80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_ResetItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b72a90usize)as*mut u8,();
+(MapSystemMenu_SubSystemMenu_ResetItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubSystemMenu_ResetItem>IMapSystemMenu_SubSystemMenu_ResetItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_ResetItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_ResetItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubSystemMenu_ResetItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubSystemMenu_ResetItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SystemMenuItemMethods:IMapSystemMenu_SystemMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40950usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SystemMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e409a0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SystemMenuItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40a20usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SystemMenuItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40aa0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SystemMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40ab0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SystemMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_SystemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40c00usize)as*mut u8,();
+(MapSystemMenu_SystemMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SystemMenuItem>IMapSystemMenu_SystemMenuItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SystemMenuItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SystemMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SystemMenuItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SystemMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_UnitListItemMethods:IMapSystemMenu_UnitListItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_UnitListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e414f0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_UnitListItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_UnitListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41540usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_UnitListItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_UnitListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e415c0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_UnitListItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_UnitListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e41640usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_UnitListItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_UnitListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e417b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_UnitListItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_UnitListItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e418e0usize)as*mut u8,();
+(MapSystemMenu_UnitListItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_UnitListItem>IMapSystemMenu_UnitListItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_UnitListItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_UnitListItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_UnitListItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_UnitListItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods:IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2307710usize)as*mut u8,();
+(MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2307720usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes>IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods> ::ctor(this,text);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu{#[doc="`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::basicmenu::BasicMenu> ,parent_menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e404b0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(super_),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(parent_menu_item))}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubSystemMenuMethods:IMapSystemMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::sortiesubmenucontent::SortieSubMenuContent>)->(){unsafe{let __receiver= <MapSystemMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40450usize)as*mut u8,();
+(MapSystemMenu_SubSystemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortiesubmenucontent::SortieSubMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e40460usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e408e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubSystemMenu>IMapSystemMenu_SubSystemMenuMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::sortiesubmenucontent::SortieSubMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubSystemMenu), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubSystemMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu{#[doc="`ResetSelect()` overload"]pub fn reset_select()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f52180usize)as*mut u8,();
+)}
+}
+#[doc="`GetRewindAttribute()` overload"]pub fn get_rewind_attribute()->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f52230usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f52490usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f52860usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenuMethods:IMapSystemMenu{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f52130usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortietopmenucontent::SortieTopMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,sortie_top_menu_content:impl::core::convert::Into<crate::app::sortietopmenucontent::SortieTopMenuContent>)->(){unsafe{let __receiver= <MapSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f52390usize)as*mut u8,();
+(MapSystemMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::sortietopmenucontent::SortieTopMenuContent)::core::convert::Into::into(sortie_top_menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f523c0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MapSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f52410usize)as*mut u8,();
+(MapSystemMenu)__receiver)}
+}
+#[doc="`HelpOn()` overload"]fn help_on(self,)->(){unsafe{let __receiver= <MapSystemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f527c0usize)as*mut u8,();
+(MapSystemMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu>IMapSystemMenuMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_rewind_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn help_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortietopmenucontent::SortieTopMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,sortie_top_menu_content:crate::app::sortietopmenucontent::SortieTopMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu), ::core::stringify!(new),));
+ <Self as IMapSystemMenuMethods> ::ctor(this,menu_item_list,sortie_top_menu_content);
+this}
+}
+
+#[cfg(feature="app-mapsystemmenu")]pub trait IMapSystemMenu_SubSystemMenu_TutorialItemMethods:IMapSystemMenu_SubSystemMenu_TutorialItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73380usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b733d0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73450usize)as*mut u8, ::unity2::Il2CppString;
+(MapSystemMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b734d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b734e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapSystemMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b734f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73550usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapSystemMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSystemMenu_SubSystemMenu_TutorialItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b73560usize)as*mut u8,();
+(MapSystemMenu_SubSystemMenu_TutorialItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl<__T:IMapSystemMenu_SubSystemMenu_TutorialItem>IMapSystemMenu_SubSystemMenu_TutorialItemMethods for __T{}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_TutorialItem{pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mapsystemmenu")]impl MapSystemMenu_SubSystemMenu_TutorialItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSystemMenu_SubSystemMenu_TutorialItem), ::core::stringify!(new),));
+ <Self as IMapSystemMenu_SubSystemMenu_TutorialItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsystemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSystemMenu_SubFriendMenu;
-    pub use super::IMapSystemMenu_SubFriendMenu;
-    pub use super::IMapSystemMenu_SubFriendMenuMethods;
-    pub use super::MapSystemMenu_SubSystemMenu_ConfigItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_ConfigItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_ConfigItemMethods;
-    pub use super::MapSystemMenu_SubSystemMenu_ResetItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_ResetItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_ResetItemMethods;
-    pub use super::MapSystemMenu_UnitListItem;
-    pub use super::IMapSystemMenu_UnitListItem;
-    pub use super::IMapSystemMenu_UnitListItemMethods;
     pub use super::MapSystemMenu_TurnItem;
     pub use super::IMapSystemMenu_TurnItem;
     pub use super::IMapSystemMenu_TurnItemMethods;
+    pub use super::MapSystemMenu_SubFriendMenu_RingListItem;
+    pub use super::IMapSystemMenu_SubFriendMenu_RingListItem;
+    pub use super::IMapSystemMenu_SubFriendMenu_RingListItemMethods;
     pub use super::MapSystemMenu_TemporarySaveItem;
     pub use super::IMapSystemMenu_TemporarySaveItem;
     pub use super::IMapSystemMenu_TemporarySaveItemMethods;
-    pub use super::MapSystemMenu_SubFriendMenu_KizunaItem;
-    pub use super::IMapSystemMenu_SubFriendMenu_KizunaItem;
-    pub use super::IMapSystemMenu_SubFriendMenu_KizunaItemMethods;
-    pub use super::MapSystemMenu_SubSystemMenu_SurrenderItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_SurrenderItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_SurrenderItemMethods;
-    pub use super::MapSystemMenu_SubSystemMenu;
-    pub use super::IMapSystemMenu_SubSystemMenu;
-    pub use super::IMapSystemMenu_SubSystemMenuMethods;
-    pub use super::MapSystemMenu_SubSystemMenu_TutorialItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_TutorialItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_TutorialItemMethods;
-    pub use super::MapSystemMenu_SubSystemMenu_RestartItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_RestartItem;
-    pub use super::IMapSystemMenu_SubSystemMenu_RestartItemMethods;
+    pub use super::MapSystemMenu_RewindMenuItem;
+    pub use super::IMapSystemMenu_RewindMenuItem;
+    pub use super::IMapSystemMenu_RewindMenuItemMethods;
     pub use super::MapSystemMenu_FriendMenuItem;
     pub use super::IMapSystemMenu_FriendMenuItem;
     pub use super::IMapSystemMenu_FriendMenuItemMethods;
     pub use super::MapSystemMenu_OrderItem;
     pub use super::IMapSystemMenu_OrderItem;
     pub use super::IMapSystemMenu_OrderItemMethods;
-    pub use super::MapSystemMenu_SubFriendMenu_RingListItem;
-    pub use super::IMapSystemMenu_SubFriendMenu_RingListItem;
-    pub use super::IMapSystemMenu_SubFriendMenu_RingListItemMethods;
-    pub use super::MapSystemMenu_SubFriendMenu_NotebookItem;
-    pub use super::IMapSystemMenu_SubFriendMenu_NotebookItem;
-    pub use super::IMapSystemMenu_SubFriendMenu_NotebookItemMethods;
-    pub use super::MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes;
-    pub use super::IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes;
-    pub use super::IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods;
-    pub use super::MapSystemMenu_RewindMenuItem;
-    pub use super::IMapSystemMenu_RewindMenuItem;
-    pub use super::IMapSystemMenu_RewindMenuItemMethods;
-    pub use super::MapSystemMenu_SystemMenuItem;
-    pub use super::IMapSystemMenu_SystemMenuItem;
-    pub use super::IMapSystemMenu_SystemMenuItemMethods;
-    pub use super::MapSystemMenu_MapSystemMenuItem;
-    pub use super::IMapSystemMenu_MapSystemMenuItem;
-    pub use super::IMapSystemMenu_MapSystemMenuItemMethods;
     pub use super::MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes;
     pub use super::IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes;
     pub use super::IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods;
-    pub use super::MapSystemMenu;
-    pub use super::IMapSystemMenu;
-    pub use super::IMapSystemMenuMethods;
+    pub use super::MapSystemMenu_SubFriendMenu;
+    pub use super::IMapSystemMenu_SubFriendMenu;
+    pub use super::IMapSystemMenu_SubFriendMenuMethods;
     pub use super::MapSystemMenu_SubFriendMenu_RelianceItem;
     pub use super::IMapSystemMenu_SubFriendMenu_RelianceItem;
     pub use super::IMapSystemMenu_SubFriendMenu_RelianceItemMethods;
+    pub use super::MapSystemMenu_SubSystemMenu_RestartItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_RestartItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_RestartItemMethods;
+    pub use super::MapSystemMenu_SubFriendMenu_NotebookItem;
+    pub use super::IMapSystemMenu_SubFriendMenu_NotebookItem;
+    pub use super::IMapSystemMenu_SubFriendMenu_NotebookItemMethods;
+    pub use super::MapSystemMenu_SubFriendMenu_KizunaItem;
+    pub use super::IMapSystemMenu_SubFriendMenu_KizunaItem;
+    pub use super::IMapSystemMenu_SubFriendMenu_KizunaItemMethods;
+    pub use super::MapSystemMenu_SubSystemMenu_SurrenderItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_SurrenderItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_SurrenderItemMethods;
+    pub use super::MapSystemMenu_SubSystemMenu_ConfigItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_ConfigItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_ConfigItemMethods;
+    pub use super::MapSystemMenu_MapSystemMenuItem;
+    pub use super::IMapSystemMenu_MapSystemMenuItem;
+    pub use super::IMapSystemMenu_MapSystemMenuItemMethods;
+    pub use super::MapSystemMenu_SubSystemMenu_ResetItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_ResetItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_ResetItemMethods;
+    pub use super::MapSystemMenu_SystemMenuItem;
+    pub use super::IMapSystemMenu_SystemMenuItem;
+    pub use super::IMapSystemMenu_SystemMenuItemMethods;
+    pub use super::MapSystemMenu_UnitListItem;
+    pub use super::IMapSystemMenu_UnitListItem;
+    pub use super::IMapSystemMenu_UnitListItemMethods;
+    pub use super::MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes;
+    pub use super::IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes;
+    pub use super::IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods;
+    pub use super::MapSystemMenu_SubSystemMenu;
+    pub use super::IMapSystemMenu_SubSystemMenu;
+    pub use super::IMapSystemMenu_SubSystemMenuMethods;
+    pub use super::MapSystemMenu;
+    pub use super::IMapSystemMenu;
+    pub use super::IMapSystemMenuMethods;
+    pub use super::MapSystemMenu_SubSystemMenu_TutorialItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_TutorialItem;
+    pub use super::IMapSystemMenu_SubSystemMenu_TutorialItemMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenu::IBasicMenu;

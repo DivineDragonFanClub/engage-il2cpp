@@ -4,40 +4,127 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: linknode_1 :: { ILinkNode_1 , LinkNode_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::linknode_1::{ILinkNode_1,LinkNode_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitring/UnitRing.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitRing")] # [parent (crate :: app :: linknode_1 :: LinkNode_1 < crate :: app :: unitring :: UnitRing >)] pub struct UnitRing {
-# [static_field] # [rename (name = "MaxStockCount")] pub max_stock_count : i32 ,
-# [offset (32)] # [rename (name = "m_Data")] pub m_data : crate :: app :: ringdata :: RingData ,
-# [offset (40)] # [rename (name = "m_Owner")] pub m_owner : crate :: app :: unit :: Unit ,
-# [offset (48)] # [rename (name = "m_StockCount")] pub m_stock_count : u8 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitring/UnitRing.md"))]#[::unity2::class(namespace="App",name="UnitRing")]#[parent(crate::app::linknode_1::LinkNode_1<crate::app::unitring::UnitRing>)]pub struct UnitRing{#[static_field]#[rename(name="MaxStockCount")]pub max_stock_count:i32, #[offset(32)]#[rename(name="m_Data")]pub m_data:crate::app::ringdata::RingData, #[offset(40)]#[rename(name="m_Owner")]pub m_owner:crate::app::unit::Unit, #[offset(48)]#[rename(name="m_StockCount")]pub m_stock_count:u8,}
 
 }
 
 #[cfg(feature = "app-unitring-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitring")]
-impl UnitRing { # [doc = "`IsSingleStockOnly(crate::app::ringdata::RingData, crate::app::unit::Unit)` overload"] pub fn is_single_stock_only_2 (data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData > , owner : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: ringdata :: RingData , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c840usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitring")]impl UnitRing{#[doc="`IsSingleStockOnly(crate::app::ringdata::RingData, crate::app::unit::Unit)` overload"]pub fn is_single_stock_only_2(data:impl::core::convert::Into<crate::app::ringdata::RingData> ,owner:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c840usize)as*mut u8,bool;
+(crate::app::ringdata::RingData)::core::convert::Into::into(data),(crate::app::unit::Unit)::core::convert::Into::into(owner))}
+}
+}
 
-#[cfg(feature = "app-unitring")]
-pub trait IUnitRingMethods : IUnitRing { # [doc = "`Build(::unity2::Il2CppString, crate::app::unit::Unit, i32)` overload"] fn build (self , rnid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , owner : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , stock_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: Il2CppString , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c6e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rnid) , :: core :: convert :: Into :: into (owner) , :: core :: convert :: Into :: into (stock_count) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFullName()` overload"] fn get_full_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangeOwner(crate::app::unit::Unit)` overload"] fn change_owner (self , owner : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } } # [doc = "`SetStockCount(i32)` overload"] fn set_stock_count (self , stock_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c8b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stock_count) , :: core :: option :: Option :: None) } } } # [doc = "`AddStockCount(i32)` overload"] fn add_stock_count (self , stock_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stock_count) , :: core :: option :: Option :: None) } } } # [doc = "`get_SortKey()` overload"] fn get_sort_key (self ,) -> i32 { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSingleStockOnly()` overload"] fn is_single_stock_only (self ,) -> bool { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Data()` overload"] fn get_data (self ,) -> crate :: app :: ringdata :: RingData { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringdata :: RingData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Owner()` overload"] fn get_owner (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_StockCount()` overload"] fn get_stock_count (self ,) -> i32 { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Rnid()` overload"] fn get_rnid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c9d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5ca40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5cb80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitRing as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5cb90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitring")]pub trait IUnitRingMethods:IUnitRing{#[doc="`Build(::unity2::Il2CppString, crate::app::unit::Unit, i32)` overload"]fn build(self,rnid:impl::core::convert::Into< ::unity2::Il2CppString> ,owner:impl::core::convert::Into<crate::app::unit::Unit> ,stock_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c6e0usize)as*mut u8,();
+(UnitRing)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(rnid),(crate::app::unit::Unit)::core::convert::Into::into(owner),(i32)::core::convert::Into::into(stock_count))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c860usize)as*mut u8, ::unity2::Il2CppString;
+(UnitRing)__receiver)}
+}
+#[doc="`GetFullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c870usize)as*mut u8, ::unity2::Il2CppString;
+(UnitRing)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c880usize)as*mut u8, ::unity2::Il2CppString;
+(UnitRing)__receiver)}
+}
+#[doc="`ChangeOwner(crate::app::unit::Unit)` overload"]fn change_owner(self,owner:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c890usize)as*mut u8,();
+(UnitRing)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(owner))}
+}
+#[doc="`SetStockCount(i32)` overload"]fn set_stock_count(self,stock_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c8b0usize)as*mut u8,();
+(UnitRing)__receiver,(i32)::core::convert::Into::into(stock_count))}
+}
+#[doc="`AddStockCount(i32)` overload"]fn add_stock_count(self,stock_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c920usize)as*mut u8,();
+(UnitRing)__receiver,(i32)::core::convert::Into::into(stock_count))}
+}
+#[doc="`get_SortKey()` overload"]fn get_sort_key(self,)->i32{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c970usize)as*mut u8,i32;
+(UnitRing)__receiver)}
+}
+#[doc="`IsSingleStockOnly()` overload"]fn is_single_stock_only(self,)->bool{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c900usize)as*mut u8,bool;
+(UnitRing)__receiver)}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::ringdata::RingData{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c990usize)as*mut u8,crate::app::ringdata::RingData;
+(UnitRing)__receiver)}
+}
+#[doc="`get_Owner()` overload"]fn get_owner(self,)->crate::app::unit::Unit{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c9a0usize)as*mut u8,crate::app::unit::Unit;
+(UnitRing)__receiver)}
+}
+#[doc="`get_StockCount()` overload"]fn get_stock_count(self,)->i32{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c9b0usize)as*mut u8,i32;
+(UnitRing)__receiver)}
+}
+#[doc="`get_Rnid()` overload"]fn get_rnid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c9c0usize)as*mut u8, ::unity2::Il2CppString;
+(UnitRing)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c9d0usize)as*mut u8,();
+(UnitRing)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5ca40usize)as*mut u8,();
+(UnitRing)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5cb80usize)as*mut u8,bool;
+(UnitRing)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c800usize)as*mut u8,();
+(UnitRing)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitRing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5cb90usize)as*mut u8,();
+(UnitRing)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitring")]
-impl < __T : IUnitRing > IUnitRingMethods for __T { }
+#[cfg(feature="app-unitring")]impl<__T:IUnitRing>IUnitRingMethods for __T{}
 
-#[cfg(feature = "app-unitring")]
-impl UnitRing { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_full_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn change_owner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_stock_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_stock_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_sort_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_single_stock_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_single_stock_only_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_owner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_stock_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_rnid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRing as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-unitring")]impl UnitRing{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_full_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn change_owner_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_stock_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_stock_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_sort_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_single_stock_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_single_stock_only_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_owner_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_stock_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_rnid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-unitring")]
-impl UnitRing {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitRing) , :: core :: stringify ! (new) ,)) ; < Self as IUnitRingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitring")]impl UnitRing{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitRing), ::core::stringify!(new),));
+ <Self as IUnitRingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitring")]

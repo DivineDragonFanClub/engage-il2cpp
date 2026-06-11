@@ -4,32 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akbasearray_1 :: { AkBaseArray_1 , IAkBaseArray_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akbasearray_1::{AkBaseArray_1,IAkBaseArray_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akobstructionocclusionvaluesarray/AkObstructionOcclusionValuesArray.md"))] # [:: unity2 :: class (namespace = "" , name = "AkObstructionOcclusionValuesArray")] # [parent (crate :: root :: akbasearray_1 :: AkBaseArray_1 < crate :: root :: akobstructionocclusionvalues :: AkObstructionOcclusionValues >)] pub struct AkObstructionOcclusionValuesArray {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akobstructionocclusionvaluesarray/AkObstructionOcclusionValuesArray.md"))]#[::unity2::class(namespace="",name="AkObstructionOcclusionValuesArray")]#[parent(crate::root::akbasearray_1::AkBaseArray_1<crate::root::akobstructionocclusionvalues::AkObstructionOcclusionValues>)]pub struct AkObstructionOcclusionValuesArray{}
 
 }
 
 #[cfg(feature = "root-akobstructionocclusionvaluesarray-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akobstructionocclusionvaluesarray")]
-pub trait IAkObstructionOcclusionValuesArrayMethods : IAkObstructionOcclusionValuesArray { # [doc = "`.ctor(i32)` overload"] fn ctor (self , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkObstructionOcclusionValuesArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkObstructionOcclusionValuesArray , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2a730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`get_StructureSize()` overload"] fn get_structure_size (self ,) -> i32 { unsafe { let __receiver = < AkObstructionOcclusionValuesArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkObstructionOcclusionValuesArray , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2a790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"] fn default_construct_at_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkObstructionOcclusionValuesArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkObstructionOcclusionValuesArray , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2a800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (address) , :: core :: option :: Option :: None) } } } # [doc = "`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"] fn create_new_reference_from_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: root :: akobstructionocclusionvalues :: AkObstructionOcclusionValues { unsafe { let __receiver = < AkObstructionOcclusionValuesArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkObstructionOcclusionValuesArray , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: root :: akobstructionocclusionvalues :: AkObstructionOcclusionValues = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2a870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (address) , :: core :: option :: Option :: None) } } } # [doc = "`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akobstructionocclusionvalues::AkObstructionOcclusionValues)` overload"] fn clone_into_reference_from_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , other : impl :: core :: convert :: Into < crate :: root :: akobstructionocclusionvalues :: AkObstructionOcclusionValues >) -> () { unsafe { let __receiver = < AkObstructionOcclusionValuesArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkObstructionOcclusionValuesArray , :: unity2 :: IntPtr , crate :: root :: akobstructionocclusionvalues :: AkObstructionOcclusionValues , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2a8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (address) , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akobstructionocclusionvaluesarray")]pub trait IAkObstructionOcclusionValuesArrayMethods:IAkObstructionOcclusionValuesArray{#[doc="`.ctor(i32)` overload"]fn ctor(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkObstructionOcclusionValuesArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2a730usize)as*mut u8,();
+(AkObstructionOcclusionValuesArray)__receiver,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`get_StructureSize()` overload"]fn get_structure_size(self,)->i32{unsafe{let __receiver= <AkObstructionOcclusionValuesArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2a790usize)as*mut u8,i32;
+(AkObstructionOcclusionValuesArray)__receiver)}
+}
+#[doc="`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"]fn default_construct_at_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkObstructionOcclusionValuesArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2a800usize)as*mut u8,();
+(AkObstructionOcclusionValuesArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+}
+#[doc="`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]fn create_new_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->crate::root::akobstructionocclusionvalues::AkObstructionOcclusionValues{unsafe{let __receiver= <AkObstructionOcclusionValuesArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2a870usize)as*mut u8,crate::root::akobstructionocclusionvalues::AkObstructionOcclusionValues;
+(AkObstructionOcclusionValuesArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+}
+#[doc="`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akobstructionocclusionvalues::AkObstructionOcclusionValues)` overload"]fn clone_into_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr> ,other:impl::core::convert::Into<crate::root::akobstructionocclusionvalues::AkObstructionOcclusionValues>)->(){unsafe{let __receiver= <AkObstructionOcclusionValuesArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2a8e0usize)as*mut u8,();
+(AkObstructionOcclusionValuesArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address),(crate::root::akobstructionocclusionvalues::AkObstructionOcclusionValues)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "root-akobstructionocclusionvaluesarray")]
-impl < __T : IAkObstructionOcclusionValuesArray > IAkObstructionOcclusionValuesArrayMethods for __T { }
+#[cfg(feature="root-akobstructionocclusionvaluesarray")]impl<__T:IAkObstructionOcclusionValuesArray>IAkObstructionOcclusionValuesArrayMethods for __T{}
 
-#[cfg(feature = "root-akobstructionocclusionvaluesarray")]
-impl AkObstructionOcclusionValuesArray { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkObstructionOcclusionValuesArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_structure_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkObstructionOcclusionValuesArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn default_construct_at_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkObstructionOcclusionValuesArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_new_reference_from_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkObstructionOcclusionValuesArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clone_into_reference_from_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkObstructionOcclusionValuesArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-akobstructionocclusionvaluesarray")]impl AkObstructionOcclusionValuesArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_structure_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn default_construct_at_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_new_reference_from_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clone_into_reference_from_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-akobstructionocclusionvaluesarray")]
-impl AkObstructionOcclusionValuesArray {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (count : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkObstructionOcclusionValuesArray) , :: core :: stringify ! (new) ,)) ; < Self as IAkObstructionOcclusionValuesArrayMethods > :: ctor (this , count) ; this }
+#[cfg(feature="root-akobstructionocclusionvaluesarray")]impl AkObstructionOcclusionValuesArray{#[doc="`.ctor(i32)` — overload selector"]pub fn new(count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkObstructionOcclusionValuesArray), ::core::stringify!(new),));
+ <Self as IAkObstructionOcclusionValuesArrayMethods> ::ctor(this,count);
+this}
 }
 
 #[cfg(feature = "root-akobstructionocclusionvaluesarray")]

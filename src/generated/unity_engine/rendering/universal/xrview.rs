@@ -4,48 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/xrview/XRView.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct XRView {
-    pub proj_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub view_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
-    pub viewport: crate :: unity_engine :: rect :: Rect,
-    pub occlusion_mesh: crate :: unity_engine :: mesh :: Mesh,
-    pub texture_array_slice: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/xrview/XRView.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRView{pub proj_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub view_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub viewport:crate::unity_engine::rect::Rect,pub occlusion_mesh:crate::unity_engine::mesh::Mesh,pub texture_array_slice:i32,}
+impl::unity2::ClassIdentity for XRView{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
+const NAME: &'static str="XRView";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for XRView {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "XRView";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for XRView {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for XRView{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -53,11 +26,17 @@ impl ::unity2::IlType for XRView {
 #[cfg(feature = "unity_engine-rendering-universal-xrview-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-xrview")]
-impl XRView { # [doc = "`.ctor(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::rect::Rect, i32)` overload"] pub fn ctor (& mut self , proj : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , view : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > , vp : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , dst_slice : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut XRView , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , crate :: unity_engine :: rect :: Rect , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb2ab0usize) as * mut u8) ; __inner (self as * mut XRView , :: core :: convert :: Into :: into (proj) , :: core :: convert :: Into :: into (view) , :: core :: convert :: Into :: into (vp) , :: core :: convert :: Into :: into (dst_slice) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"] pub fn ctor_2 (& mut self , render_pass : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass > , render_parameter : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter >) -> () { unsafe { { let __inner : extern "C" fn (* mut XRView , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderPass , crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb27d0usize) as * mut u8) ; __inner (self as * mut XRView , :: core :: convert :: Into :: into (render_pass) , :: core :: convert :: Into :: into (render_parameter) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-xrview")]impl XRView{#[doc="`.ctor(crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::matrix4x4::Matrix4x4, crate::unity_engine::rect::Rect, i32)` overload"]pub fn ctor(&mut self,proj:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4> ,view:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4> ,vp:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,dst_slice:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb2ab0usize)as*mut u8,();
+(*mut XRView)self as*mut XRView,(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(proj),(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(view),(crate::unity_engine::rect::Rect)::core::convert::Into::into(vp),(i32)::core::convert::Into::into(dst_slice))}
+}
+#[doc="`.ctor(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass, crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)` overload"]pub fn ctor_2(&mut self,render_pass:impl::core::convert::Into<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass> ,render_parameter:impl::core::convert::Into<crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb27d0usize)as*mut u8,();
+(*mut XRView)self as*mut XRView,(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass)::core::convert::Into::into(render_pass),(crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderParameter)::core::convert::Into::into(render_parameter))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-xrview")]
-impl XRView { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRView as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRView as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-universal-xrview")]impl XRView{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-xrview")]
 #[doc(hidden)]

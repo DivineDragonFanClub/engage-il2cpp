@@ -4,83 +4,141 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingunitselectmenu/FortuneTellingUnitSelectMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "FortuneTellingUnitSelectMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct FortuneTellingUnitSelectMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingunitselectmenu/FortuneTellingUnitSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="FortuneTellingUnitSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FortuneTellingUnitSelectMenu_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingunitselectmenu/FortuneTellingUnitSelectMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "FortuneTellingUnitSelectMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct FortuneTellingUnitSelectMenu {
-# [static_field] # [rename (name = "ForceMask")] pub force_mask : u32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingunitselectmenu/FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="FortuneTellingUnitSelectMenu.FortuneTellingUnitSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem{#[offset(104)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_bSelect")]pub m_b_select:bool, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingunitselectmenu/FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "FortuneTellingUnitSelectMenu.FortuneTellingUnitSelectMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem {
-# [offset (104)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (112)] # [rename (name = "m_bSelect")] pub m_b_select : bool ,
-# [offset (120)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: fortunetellingunitselectmenu :: FortuneTellingUnitSelectMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingunitselectmenu/FortuneTellingUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="FortuneTellingUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct FortuneTellingUnitSelectMenu{#[static_field]#[rename(name="ForceMask")]pub force_mask:u32,}
 
 }
 
 #[cfg(feature = "app-fortunetellingunitselectmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-pub trait IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods : IFortuneTellingUnitSelectMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < FortuneTellingUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e64190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::unit::Unit)` overload"] fn invoke (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < FortuneTellingUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu_DecideEventHandler , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e641b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl < __T : IFortuneTellingUnitSelectMenu_DecideEventHandler > IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl FortuneTellingUnitSelectMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl FortuneTellingUnitSelectMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FortuneTellingUnitSelectMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-fortunetellingunitselectmenu")]pub trait IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods:IFortuneTellingUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64190usize)as*mut u8,();
+(FortuneTellingUnitSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e641b0usize)as*mut u8,();
+(FortuneTellingUnitSelectMenu_DecideEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
 }
 
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl FortuneTellingUnitSelectMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: fortunetellingunitselectmenu :: FortuneTellingUnitSelectMenu_DecideEventHandler > , select_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: fortunetellingunitselectmenu :: FortuneTellingUnitSelectMenu_DecideEventHandler , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261a470usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (select_unit) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261aab0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl<__T:IFortuneTellingUnitSelectMenu_DecideEventHandler>IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-pub trait IFortuneTellingUnitSelectMenuMethods : IFortuneTellingUnitSelectMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent >) -> () { unsafe { let __receiver = < FortuneTellingUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261a9b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FortuneTellingUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261a9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < FortuneTellingUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261aa10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEndUnitNum()` overload"] fn get_end_unit_num (self ,) -> i32 { unsafe { let __receiver = < FortuneTellingUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261aa20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl < __T : IFortuneTellingUnitSelectMenu > IFortuneTellingUnitSelectMenuMethods for __T { }
-
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl FortuneTellingUnitSelectMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_end_unit_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl FortuneTellingUnitSelectMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FortuneTellingUnitSelectMenu) , :: core :: stringify ! (new) ,)) ; < Self as IFortuneTellingUnitSelectMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl FortuneTellingUnitSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-pub trait IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods : IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: fortunetellingunitselectmenu :: FortuneTellingUnitSelectMenu_DecideEventHandler > , select_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem , crate :: app :: unit :: Unit , crate :: app :: fortunetellingunitselectmenu :: FortuneTellingUnitSelectMenu_DecideEventHandler , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e64550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (select_unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e645c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e645d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e645f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e64640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e64670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl FortuneTellingUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FortuneTellingUnitSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl < __T : IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem > IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods for __T { }
+#[cfg(feature="app-fortunetellingunitselectmenu")]pub trait IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods:IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,decide_event_handler:impl::core::convert::Into<crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64550usize)as*mut u8,();
+(FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e645c0usize)as*mut u8, ::unity2::Il2CppString;
+(FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e645d0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e645f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64640usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64670usize)as*mut u8,crate::app::unit::Unit;
+(FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl<__T:IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem>IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods for __T{}
 
-#[cfg(feature = "app-fortunetellingunitselectmenu")]
-impl FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , decide_event_handler : crate :: app :: fortunetellingunitselectmenu :: FortuneTellingUnitSelectMenu_DecideEventHandler , select_unit : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods > :: ctor (this , unit , decide_event_handler , select_unit) ; this }
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,decide_event_handler:crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler,select_unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem), ::core::stringify!(new),));
+ <Self as IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods> ::ctor(this,unit,decide_event_handler,select_unit);
+this}
+}
+
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl FortuneTellingUnitSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,decide_event_handler:impl::core::convert::Into<crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261a470usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261aab0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-fortunetellingunitselectmenu")]pub trait IFortuneTellingUnitSelectMenuMethods:IFortuneTellingUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent>)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261a9b0usize)as*mut u8,();
+(FortuneTellingUnitSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FortuneTellingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261a9c0usize)as*mut u8, ::unity2::Il2CppString;
+(FortuneTellingUnitSelectMenu)__receiver)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261aa10usize)as*mut u8,();
+(FortuneTellingUnitSelectMenu)__receiver)}
+}
+#[doc="`GetEndUnitNum()` overload"]fn get_end_unit_num(self,)->i32{unsafe{let __receiver= <FortuneTellingUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261aa20usize)as*mut u8,i32;
+(FortuneTellingUnitSelectMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl<__T:IFortuneTellingUnitSelectMenu>IFortuneTellingUnitSelectMenuMethods for __T{}
+
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl FortuneTellingUnitSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_end_unit_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-fortunetellingunitselectmenu")]impl FortuneTellingUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::fortunetellingunitselectmenucontent::FortuneTellingUnitSelectMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FortuneTellingUnitSelectMenu), ::core::stringify!(new),));
+ <Self as IFortuneTellingUnitSelectMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-fortunetellingunitselectmenu")]
@@ -89,12 +147,12 @@ pub mod prelude {
     pub use super::FortuneTellingUnitSelectMenu_DecideEventHandler;
     pub use super::IFortuneTellingUnitSelectMenu_DecideEventHandler;
     pub use super::IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods;
-    pub use super::FortuneTellingUnitSelectMenu;
-    pub use super::IFortuneTellingUnitSelectMenu;
-    pub use super::IFortuneTellingUnitSelectMenuMethods;
     pub use super::FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem;
     pub use super::IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem;
     pub use super::IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods;
+    pub use super::FortuneTellingUnitSelectMenu;
+    pub use super::IFortuneTellingUnitSelectMenu;
+    pub use super::IFortuneTellingUnitSelectMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

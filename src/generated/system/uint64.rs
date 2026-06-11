@@ -4,86 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/uint64/UInt64.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct UInt64 {
-    pub m_value: u64,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/uint64/UInt64.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct UInt64{pub m_value:u64,}
+impl::unity2::ClassIdentity for UInt64{const NAMESPACE: &'static str="System";
+const NAME: &'static str="UInt64";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for UInt64 {
-    const NAMESPACE: &'static str = "System";
-
-    const NAME: &'static str = "UInt64";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for UInt64{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for UInt64 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl UInt64{#[inline]pub fn max_value()->u64{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MaxValue");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_max_value(value:u64){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MaxValue");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl UInt64 {
-    #[inline]
-    pub fn max_value() -> u64 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MaxValue");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_max_value(value: u64) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MaxValue");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn min_value() -> u64 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MinValue");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_min_value(value: u64) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MinValue");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn min_value()->u64{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MinValue");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_min_value(value:u64){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MinValue");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -91,14 +41,43 @@ impl UInt64 {
 #[cfg(feature = "system-uint64-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-uint64")]
-impl UInt64 { # [doc = "`Parse(::unity2::Il2CppString)` overload"] pub fn parse (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> u64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35694d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-uint64")]impl UInt64{#[doc="`Parse(::unity2::Il2CppString)` overload"]pub fn parse(s:impl::core::convert::Into< ::unity2::Il2CppString>)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35694d0usize)as*mut u8,u64;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+}
 
-#[cfg(feature = "system-uint64")]
-impl UInt64 { # [doc = "`CompareTo(crate::system::object::Object)` overload"] pub fn compare_to (& mut self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut UInt64 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569200usize) as * mut u8) ; __inner (self as * mut UInt64 , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CompareTo(u64)` overload"] pub fn compare_to_2 (& mut self , value : impl :: core :: convert :: Into < u64 >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut UInt64 , u64 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569300usize) as * mut u8) ; __inner (self as * mut UInt64 , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut UInt64 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569320usize) as * mut u8) ; __inner (self as * mut UInt64 , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(u64)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < u64 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut UInt64 , u64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35693b0usize) as * mut u8) ; __inner (self as * mut UInt64 , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut UInt64 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35693c0usize) as * mut u8) ; __inner (self as * mut UInt64 , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut UInt64 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35693d0usize) as * mut u8) ; __inner (self as * mut UInt64 , :: core :: option :: Option :: None) } } } # [doc = "`ToString(::unity2::Il2CppString)` overload"] pub fn to_string_2 (& mut self , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut UInt64 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3569450usize) as * mut u8) ; __inner (self as * mut UInt64 , :: core :: convert :: Into :: into (format) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-uint64")]impl UInt64{#[doc="`CompareTo(crate::system::object::Object)` overload"]pub fn compare_to(&mut self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569200usize)as*mut u8,i32;
+(*mut UInt64)self as*mut UInt64,(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`CompareTo(u64)` overload"]pub fn compare_to_2(&mut self,value:impl::core::convert::Into<u64>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569300usize)as*mut u8,i32;
+(*mut UInt64)self as*mut UInt64,(u64)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569320usize)as*mut u8,bool;
+(*mut UInt64)self as*mut UInt64,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(u64)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<u64>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35693b0usize)as*mut u8,bool;
+(*mut UInt64)self as*mut UInt64,(u64)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35693c0usize)as*mut u8,i32;
+(*mut UInt64)self as*mut UInt64)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35693d0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut UInt64)self as*mut UInt64)}
+}
+#[doc="`ToString(::unity2::Il2CppString)` overload"]pub fn to_string_2(&mut self,format:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3569450usize)as*mut u8, ::unity2::Il2CppString;
+(*mut UInt64)self as*mut UInt64,(::unity2::Il2CppString)::core::convert::Into::into(format))}
+}
+}
 
-#[cfg(feature = "system-uint64")]
-impl UInt64 { pub fn compare_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UInt64 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn compare_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UInt64 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UInt64 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UInt64 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UInt64 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UInt64 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn to_string_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UInt64 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UInt64 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="system-uint64")]impl UInt64{pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn compare_to_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn to_string_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn parse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
 #[cfg(feature = "system-uint64")]
 #[doc(hidden)]

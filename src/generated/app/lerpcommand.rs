@@ -4,32 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/lerpcommand/LerpCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "LerpCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct LerpCommand {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/lerpcommand/LerpCommand.md"))]#[::unity2::class(namespace="App",name="LerpCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct LerpCommand{}
 
 }
 
 #[cfg(feature = "app-lerpcommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-lerpcommand")]
-pub trait ILerpCommandMethods : ILerpCommand { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < LerpCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LerpCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ArgNum()` overload"] fn get_arg_num (self ,) -> i32 { unsafe { let __receiver = < LerpCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LerpCommand , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"] fn func (self , args : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > >) -> f32 { unsafe { let __receiver = < LerpCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LerpCommand , crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0e70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LerpCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LerpCommand , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-lerpcommand")]pub trait ILerpCommandMethods:ILerpCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LerpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0e10usize)as*mut u8, ::unity2::Il2CppString;
+(LerpCommand)__receiver)}
+}
+#[doc="`get_ArgNum()` overload"]fn get_arg_num(self,)->i32{unsafe{let __receiver= <LerpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0e60usize)as*mut u8,i32;
+(LerpCommand)__receiver)}
+}
+#[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <LerpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0e70usize)as*mut u8,f32;
+(LerpCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LerpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0f40usize)as*mut u8,();
+(LerpCommand)__receiver)}
+}
+}
 
-#[cfg(feature = "app-lerpcommand")]
-impl < __T : ILerpCommand > ILerpCommandMethods for __T { }
+#[cfg(feature="app-lerpcommand")]impl<__T:ILerpCommand>ILerpCommandMethods for __T{}
 
-#[cfg(feature = "app-lerpcommand")]
-impl LerpCommand { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LerpCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_arg_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LerpCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LerpCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LerpCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-lerpcommand")]impl LerpCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_arg_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-lerpcommand")]
-impl LerpCommand {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LerpCommand) , :: core :: stringify ! (new) ,)) ; < Self as ILerpCommandMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-lerpcommand")]impl LerpCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LerpCommand), ::core::stringify!(new),));
+ <Self as ILerpCommandMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-lerpcommand")]

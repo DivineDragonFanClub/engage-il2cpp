@@ -4,26 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/u2d/spriteatlasmanager/SpriteAtlasManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.U2D" , name = "SpriteAtlasManager")] # [parent (crate :: system :: object :: Object)] pub struct SpriteAtlasManager {
-# [static_field] # [rename (name = "atlasRequested")] pub atlas_requested : crate :: system :: action_2 :: Action_2 < :: unity2 :: Il2CppString , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > > ,
-# [static_field] # [rename (name = "atlasRegistered")] pub atlas_registered : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/u2d/spriteatlasmanager/SpriteAtlasManager.md"))]#[::unity2::class(namespace="UnityEngine.U2D",name="SpriteAtlasManager")]#[parent(crate::system::object::Object)]pub struct SpriteAtlasManager{#[static_field]#[rename(name="atlasRequested")]pub atlas_requested:crate::system::action_2::Action_2< ::unity2::Il2CppString,crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> > , #[static_field]#[rename(name="atlasRegistered")]pub atlas_registered:crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> ,}
 
 }
 
 #[cfg(feature = "unity_engine-u2d-spriteatlasmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-u2d-spriteatlasmanager")]
-impl SpriteAtlasManager { # [doc = "`RequestAtlas(::unity2::Il2CppString)` overload"] pub fn request_atlas (tag : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f98fe0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tag) , :: core :: option :: Option :: None) } } } # [doc = "`add_atlasRegistered(crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)` overload"] pub fn add_atlas_registered (value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f99120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_atlasRegistered(crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)` overload"] pub fn remove_atlas_registered (value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f99220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`PostRegisteredAtlas(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"] pub fn post_registered_atlas (sprite_atlas : impl :: core :: convert :: Into < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f99320usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite_atlas) , :: core :: option :: Option :: None) } } } # [doc = "`Register(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"] pub fn register (sprite_atlas : impl :: core :: convert :: Into < crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f993d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite_atlas) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f99420usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-u2d-spriteatlasmanager")]impl SpriteAtlasManager{#[doc="`RequestAtlas(::unity2::Il2CppString)` overload"]pub fn request_atlas(tag:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f98fe0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(tag))}
+}
+#[doc="`add_atlasRegistered(crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)` overload"]pub fn add_atlas_registered(value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f99120usize)as*mut u8,();
+(crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)::core::convert::Into::into(value))}
+}
+#[doc="`remove_atlasRegistered(crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)` overload"]pub fn remove_atlas_registered(value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f99220usize)as*mut u8,();
+(crate::system::action_1::Action_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)::core::convert::Into::into(value))}
+}
+#[doc="`PostRegisteredAtlas(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]pub fn post_registered_atlas(sprite_atlas:impl::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f99320usize)as*mut u8,();
+(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)::core::convert::Into::into(sprite_atlas))}
+}
+#[doc="`Register(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]pub fn register(sprite_atlas:impl::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f993d0usize)as*mut u8,();
+(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)::core::convert::Into::into(sprite_atlas))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f99420usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-u2d-spriteatlasmanager")]
-impl SpriteAtlasManager { pub fn request_atlas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_atlas_registered_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn remove_atlas_registered_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn post_registered_atlas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn register_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteAtlasManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-u2d-spriteatlasmanager")]impl SpriteAtlasManager{pub fn request_atlas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_atlas_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_atlas_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn post_registered_atlas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn register_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-u2d-spriteatlasmanager")]
 #[doc(hidden)]

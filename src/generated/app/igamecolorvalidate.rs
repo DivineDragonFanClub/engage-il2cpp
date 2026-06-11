@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/igamecolorvalidate/IGameColorValidate.md"))] # [:: unity2 :: class (namespace = "App" , name = "IGameColorValidate")] pub struct IGameColorValidate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/igamecolorvalidate/IGameColorValidate.md"))]#[::unity2::class(namespace="App",name="IGameColorValidate")]pub struct IGameColorValidate{}
 
 }
 
 #[cfg(feature = "app-igamecolorvalidate-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-igamecolorvalidate")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IGameColorValidate_unity2_raw { use super :: * ; pub unsafe fn on_game_color_validate (this : IGameColorValidate , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnGameColorValidate") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnGameColorValidate" , < IGameColorValidate as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IGameColorValidate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="app-igamecolorvalidate")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IGameColorValidate_unity2_raw{use super:: * ;
+pub unsafe fn on_game_color_validate(this:IGameColorValidate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnGameColorValidate").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnGameColorValidate", <IGameColorValidate as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IGameColorValidate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "app-igamecolorvalidate")]
-pub trait IIGameColorValidateMethods : IIGameColorValidate { # [doc = "`OnGameColorValidate()` overload"] fn on_game_color_validate (self ,) -> () { unsafe { let __receiver = < IGameColorValidate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IGameColorValidate_unity2_raw :: on_game_color_validate (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="app-igamecolorvalidate")]pub trait IIGameColorValidateMethods:IIGameColorValidate{#[doc="`OnGameColorValidate()` overload"]fn on_game_color_validate(self,)->(){unsafe{let __receiver= <IGameColorValidate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IGameColorValidate_unity2_raw::on_game_color_validate(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "app-igamecolorvalidate")]
-impl < __T : IIGameColorValidate > IIGameColorValidateMethods for __T { }
+#[cfg(feature="app-igamecolorvalidate")]impl<__T:IIGameColorValidate>IIGameColorValidateMethods for __T{}
 
-#[cfg(feature = "app-igamecolorvalidate")]
-impl IGameColorValidate { pub fn on_game_color_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IGameColorValidate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-igamecolorvalidate")]impl IGameColorValidate{pub fn on_game_color_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "app-igamecolorvalidate")]
 #[doc(hidden)]

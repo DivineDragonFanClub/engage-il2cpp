@@ -4,250 +4,230 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSelectionUnitManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager >)] pub struct SortieSelectionUnitManager {
-# [offset (28)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes ,
-# [offset (32)] # [rename (name = "m_InventoryMode")] pub m_inventory_mode : crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes ,
-# [offset (40)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (48)] # [rename (name = "m_MenuSelect")] pub m_menu_select : crate :: app :: basicmenuselect :: BasicMenuSelect ,
-# [offset (56)] # [rename (name = "m_statusUpdate")] pub m_status_update : bool ,
-# [offset (60)] # [rename (name = "m_openItemSubMenu")] pub m_open_item_sub_menu : crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu ,
-# [offset (64)] # [rename (name = "m_menuBg")] pub m_menu_bg : crate :: unity_engine :: gameobject :: GameObject ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSelectionUnitManager_Modes{pub value:i32,}
+impl::unity2::ClassIdentity for SortieSelectionUnitManager_Modes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieSelectionUnitManager.Modes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SortieSelectionUnitManager_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SortieSelectionUnitManager_Modes{pub fn sortie()->Self{Self{value:0}
+}
+pub fn inventory()->Self{Self{value:1}
+}
+pub fn ring_select()->Self{Self{value:2}
+}
+pub fn skill_inherite()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_InventoryModes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieSelectionUnitManager_InventoryModes  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_InventoryModes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSelectionUnitManager_InventoryModes{pub value:i32,}
+impl::unity2::ClassIdentity for SortieSelectionUnitManager_InventoryModes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieSelectionUnitManager.InventoryModes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SortieSelectionUnitManager_InventoryModes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SortieSelectionUnitManager_InventoryModes{pub fn none()->Self{Self{value:0}
+}
+pub fn inventory()->Self{Self{value:1}
+}
+pub fn trade()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SortieSelectionUnitManager_InventoryModes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSelectionUnitManager.InventoryModes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_UnitSelectSubMenu.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSelectionUnitManager_UnitSelectSubMenu{pub value:i32,}
+impl::unity2::ClassIdentity for SortieSelectionUnitManager_UnitSelectSubMenu{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieSelectionUnitManager.UnitSelectSubMenu";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SortieSelectionUnitManager_UnitSelectSubMenu{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SortieSelectionUnitManager_UnitSelectSubMenu{pub fn inventory()->Self{Self{value:0}
+}
+pub fn trade()->Self{Self{value:1}
+}
+pub fn entrust()->Self{Self{value:2}
+}
+pub fn store_all()->Self{Self{value:3}
+}
+pub fn skill()->Self{Self{value:4}
+}
+pub fn class_change()->Self{Self{value:5}
+}
+pub fn none()->Self{Self{value:6}
+}
 }
 
 
-impl  ::unity2::IlType for SortieSelectionUnitManager_InventoryModes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SortieSelectionUnitManager_InventoryModes  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn inventory() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn trade() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_UnitSelectSubMenu.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieSelectionUnitManager_UnitSelectSubMenu  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SortieSelectionUnitManager_UnitSelectSubMenu  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSelectionUnitManager.UnitSelectSubMenu";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SortieSelectionUnitManager_UnitSelectSubMenu  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SortieSelectionUnitManager_UnitSelectSubMenu  {
-    pub fn inventory() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn trade() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn entrust() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn store_all() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn skill() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn class_change() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn none() -> Self {
-        Self { value: 6 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieselectionunitmanager/SortieSelectionUnitManager_Modes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieSelectionUnitManager_Modes  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for SortieSelectionUnitManager_Modes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSelectionUnitManager.Modes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SortieSelectionUnitManager_Modes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SortieSelectionUnitManager_Modes  {
-    pub fn sortie() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn inventory() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn ring_select() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn skill_inherite() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieselectionunitmanager/SortieSelectionUnitManager.md"))]#[::unity2::class(namespace="App",name="SortieSelectionUnitManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager>)]pub struct SortieSelectionUnitManager{#[offset(28)]#[rename(name="m_Mode")]pub m_mode:crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes, #[offset(32)]#[rename(name="m_InventoryMode")]pub m_inventory_mode:crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes, #[offset(40)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(48)]#[rename(name="m_MenuSelect")]pub m_menu_select:crate::app::basicmenuselect::BasicMenuSelect, #[offset(56)]#[rename(name="m_statusUpdate")]pub m_status_update:bool, #[offset(60)]#[rename(name="m_openItemSubMenu")]pub m_open_item_sub_menu:crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu, #[offset(64)]#[rename(name="m_menuBg")]pub m_menu_bg:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-sortieselectionunitmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortieselectionunitmanager")]
-pub trait ISortieSelectionUnitManagerMethods : ISortieSelectionUnitManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsModeSortie()` overload"] fn is_mode_sortie (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsModeInventory()` overload"] fn is_mode_inventory (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsModeRingSelect()` overload"] fn is_mode_ring_select (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsInventoryModeNone()` overload"] fn is_inventory_mode_none (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsInventoryModeInventory()` overload"] fn is_inventory_mode_inventory (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsInventoryModeTrade()` overload"] fn is_inventory_mode_trade (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetInventoryMode()` overload"] fn reset_inventory_mode (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BgOn()` overload"] fn bg_on (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BgOff()` overload"] fn bg_off (self ,) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Mode()` overload"] fn get_mode (self ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Mode(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes)` overload"] fn set_mode (self , value : impl :: core :: convert :: Into < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_Modes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_InventoryMode()` overload"] fn get_inventory_mode (self ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_InventoryMode(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes)` overload"] fn set_inventory_mode (self , value : impl :: core :: convert :: Into < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_InventoryModes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Unit(crate::app::unit::Unit)` overload"] fn set_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MenuSelect()` overload"] fn get_menu_select (self ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_StatusForceUpdate()` overload"] fn get_status_force_update (self ,) -> bool { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_StatusForceUpdate(bool)` overload"] fn set_status_force_update (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_OpenSubMenu()` overload"] fn get_open_sub_menu (self ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OpenSubMenu(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu)` overload"] fn set_open_sub_menu (self , value : impl :: core :: convert :: Into < crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , crate :: app :: sortieselectionunitmanager :: SortieSelectionUnitManager_UnitSelectSubMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MenuBg()` overload"] fn get_menu_bg (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MenuBg(crate::unity_engine::gameobject::GameObject)` overload"] fn set_menu_bg (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < SortieSelectionUnitManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSelectionUnitManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe8e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortieselectionunitmanager")]pub trait ISortieSelectionUnitManagerMethods:ISortieSelectionUnitManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8ad0usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8bc0usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`IsModeSortie()` overload"]fn is_mode_sortie(self,)->bool{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8c00usize)as*mut u8,bool;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`IsModeInventory()` overload"]fn is_mode_inventory(self,)->bool{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8c10usize)as*mut u8,bool;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`IsModeRingSelect()` overload"]fn is_mode_ring_select(self,)->bool{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8c20usize)as*mut u8,bool;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`IsInventoryModeNone()` overload"]fn is_inventory_mode_none(self,)->bool{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8c30usize)as*mut u8,bool;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`IsInventoryModeInventory()` overload"]fn is_inventory_mode_inventory(self,)->bool{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8c40usize)as*mut u8,bool;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`IsInventoryModeTrade()` overload"]fn is_inventory_mode_trade(self,)->bool{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8c50usize)as*mut u8,bool;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`ResetInventoryMode()` overload"]fn reset_inventory_mode(self,)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8c60usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`BgOn()` overload"]fn bg_on(self,)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8c70usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`BgOff()` overload"]fn bg_off(self,)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8cf0usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`get_Mode()` overload"]fn get_mode(self,)->crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8d70usize)as*mut u8,crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`set_Mode(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes)` overload"]fn set_mode(self,value:impl::core::convert::Into<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes>)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8d80usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver,(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_Modes)::core::convert::Into::into(value))}
+}
+#[doc="`get_InventoryMode()` overload"]fn get_inventory_mode(self,)->crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8d90usize)as*mut u8,crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`set_InventoryMode(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes)` overload"]fn set_inventory_mode(self,value:impl::core::convert::Into<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes>)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8da0usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver,(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_InventoryModes)::core::convert::Into::into(value))}
+}
+#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8db0usize)as*mut u8,crate::app::unit::Unit;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]fn set_unit(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8dc0usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_MenuSelect()` overload"]fn get_menu_select(self,)->crate::app::basicmenuselect::BasicMenuSelect{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8dd0usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`get_StatusForceUpdate()` overload"]fn get_status_force_update(self,)->bool{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8de0usize)as*mut u8,bool;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`set_StatusForceUpdate(bool)` overload"]fn set_status_force_update(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8df0usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_OpenSubMenu()` overload"]fn get_open_sub_menu(self,)->crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8e00usize)as*mut u8,crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`set_OpenSubMenu(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu)` overload"]fn set_open_sub_menu(self,value:impl::core::convert::Into<crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu>)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8e10usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver,(crate::app::sortieselectionunitmanager::SortieSelectionUnitManager_UnitSelectSubMenu)::core::convert::Into::into(value))}
+}
+#[doc="`get_MenuBg()` overload"]fn get_menu_bg(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8e20usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(SortieSelectionUnitManager)__receiver)}
+}
+#[doc="`set_MenuBg(crate::unity_engine::gameobject::GameObject)` overload"]fn set_menu_bg(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SortieSelectionUnitManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe8e30usize)as*mut u8,();
+(SortieSelectionUnitManager)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-sortieselectionunitmanager")]
-impl < __T : ISortieSelectionUnitManager > ISortieSelectionUnitManagerMethods for __T { }
+#[cfg(feature="app-sortieselectionunitmanager")]impl<__T:ISortieSelectionUnitManager>ISortieSelectionUnitManagerMethods for __T{}
 
-#[cfg(feature = "app-sortieselectionunitmanager")]
-impl SortieSelectionUnitManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_mode_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_mode_inventory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_mode_ring_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_inventory_mode_none_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_inventory_mode_inventory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_inventory_mode_trade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn reset_inventory_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn bg_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn bg_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_inventory_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_inventory_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_menu_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_status_force_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_status_force_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_open_sub_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_open_sub_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_menu_bg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_menu_bg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSelectionUnitManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="app-sortieselectionunitmanager")]impl SortieSelectionUnitManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_mode_sortie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_mode_inventory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_mode_ring_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_inventory_mode_none_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_inventory_mode_inventory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_inventory_mode_trade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn reset_inventory_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn bg_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn bg_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_inventory_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_inventory_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_menu_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_status_force_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_status_force_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_open_sub_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_open_sub_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_menu_bg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_menu_bg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "app-sortieselectionunitmanager")]
-impl SortieSelectionUnitManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSelectionUnitManager) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSelectionUnitManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortieselectionunitmanager")]impl SortieSelectionUnitManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieSelectionUnitManager), ::core::stringify!(new),));
+ <Self as ISortieSelectionUnitManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortieselectionunitmanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SortieSelectionUnitManager_Modes;
+    pub use super::SortieSelectionUnitManager_InventoryModes;
+    pub use super::SortieSelectionUnitManager_UnitSelectSubMenu;
     pub use super::SortieSelectionUnitManager;
     pub use super::ISortieSelectionUnitManager;
     pub use super::ISortieSelectionUnitManagerMethods;
-    pub use super::SortieSelectionUnitManager_InventoryModes;
-    pub use super::SortieSelectionUnitManager_UnitSelectSubMenu;
-    pub use super::SortieSelectionUnitManager_Modes;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

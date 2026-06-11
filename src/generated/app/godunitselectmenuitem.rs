@@ -4,43 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenuitem/GodUnitSelectMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodUnitSelectMenuItem")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct GodUnitSelectMenuItem {
-# [offset (72)] # [rename (name = "m_Setter")] pub m_setter : crate :: app :: unitmenuitemsetter :: UnitMenuItemSetter ,
-# [offset (80)] # [rename (name = "m_MenuContent")] pub m_menu_content : crate :: app :: godunitselectmenucontent :: GodUnitSelectMenuContent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godunitselectmenuitem/GodUnitSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="GodUnitSelectMenuItem")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct GodUnitSelectMenuItem{#[offset(72)]#[rename(name="m_Setter")]pub m_setter:crate::app::unitmenuitemsetter::UnitMenuItemSetter, #[offset(80)]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,}
 
 }
 
 #[cfg(feature = "app-godunitselectmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godunitselectmenuitem")]
-pub trait IGodUnitSelectMenuItemMethods : IGodUnitSelectMenuItem { # [doc = "`GetTextMeshProComponent()` overload"] fn get_text_mesh_pro_component (self ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI { unsafe { let __receiver = < GodUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < GodUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitSelectMenuItem , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`SetFace(crate::app::goddata::GodData, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn set_face (self , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < GodUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitSelectMenuItem , crate :: app :: goddata :: GodData , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_data) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < GodUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodUnitSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodUnitSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2347f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godunitselectmenuitem")]pub trait IGodUnitSelectMenuItemMethods:IGodUnitSelectMenuItem{#[doc="`GetTextMeshProComponent()` overload"]fn get_text_mesh_pro_component(self,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{unsafe{let __receiver= <GodUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347700usize)as*mut u8,crate::tm_pro::textmeshprougui::TextMeshProUGUI;
+(GodUnitSelectMenuItem)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <GodUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347720usize)as*mut u8,();
+(GodUnitSelectMenuItem)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`SetFace(crate::app::goddata::GodData, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn set_face(self,god_data:impl::core::convert::Into<crate::app::goddata::GodData> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <GodUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347cc0usize)as*mut u8,();
+(GodUnitSelectMenuItem)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god_data),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <GodUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347f20usize)as*mut u8,();
+(GodUnitSelectMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodUnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2347f70usize)as*mut u8,();
+(GodUnitSelectMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godunitselectmenuitem")]
-impl < __T : IGodUnitSelectMenuItem > IGodUnitSelectMenuItemMethods for __T { }
+#[cfg(feature="app-godunitselectmenuitem")]impl<__T:IGodUnitSelectMenuItem>IGodUnitSelectMenuItemMethods for __T{}
 
-#[cfg(feature = "app-godunitselectmenuitem")]
-impl GodUnitSelectMenuItem { pub fn get_text_mesh_pro_component_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_face_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodUnitSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-godunitselectmenuitem")]impl GodUnitSelectMenuItem{pub fn get_text_mesh_pro_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-godunitselectmenuitem")]
-impl GodUnitSelectMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodUnitSelectMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IGodUnitSelectMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godunitselectmenuitem")]impl GodUnitSelectMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodUnitSelectMenuItem), ::core::stringify!(new),));
+ <Self as IGodUnitSelectMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godunitselectmenuitem")]

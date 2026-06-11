@@ -4,84 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/scriptablecullingparameters/ScriptableCullingParameters.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ScriptableCullingParameters {}
-
-
-impl ::unity2::ClassIdentity for ScriptableCullingParameters {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "ScriptableCullingParameters";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/scriptablecullingparameters/ScriptableCullingParameters.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ScriptableCullingParameters{}
+impl::unity2::ClassIdentity for ScriptableCullingParameters{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="ScriptableCullingParameters";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for ScriptableCullingParameters {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ScriptableCullingParameters{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ScriptableCullingParameters {
-    #[inline]
-    pub fn maximum_culling_plane_count() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "maximumCullingPlaneCount");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_maximum_culling_plane_count(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "maximumCullingPlaneCount");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn layer_count() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "layerCount");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_layer_count(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "layerCount");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl ScriptableCullingParameters{#[inline]pub fn maximum_culling_plane_count()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"maximumCullingPlaneCount");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_maximum_culling_plane_count(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"maximumCullingPlaneCount");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn layer_count()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"layerCount");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_layer_count(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"layerCount");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -89,14 +41,71 @@ impl ScriptableCullingParameters {
 #[cfg(feature = "unity_engine-rendering-scriptablecullingparameters-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-scriptablecullingparameters")]
-impl ScriptableCullingParameters { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8c680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-scriptablecullingparameters")]impl ScriptableCullingParameters{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8c680usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-scriptablecullingparameters")]
-impl ScriptableCullingParameters { # [doc = "`set_maximumVisibleLights(i32)` overload"] pub fn set_maximum_visible_lights (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bdd0usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_cullingPlaneCount()` overload"] pub fn get_culling_plane_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bde0usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: option :: Option :: None) } } } # [doc = "`set_isOrthographic(bool)` overload"] pub fn set_is_orthographic (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bdf0usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_shadowDistance(f32)` overload"] pub fn set_shadow_distance (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8be70usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_cullingOptions()` overload"] pub fn get_culling_options (& mut self ,) -> crate :: unity_engine :: rendering :: cullingoptions :: CullingOptions { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: cullingoptions :: CullingOptions = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8be80usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: option :: Option :: None) } } } # [doc = "`set_cullingOptions(crate::unity_engine::rendering::cullingoptions::CullingOptions)` overload"] pub fn set_culling_options (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: cullingoptions :: CullingOptions >) -> () { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , crate :: unity_engine :: rendering :: cullingoptions :: CullingOptions , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8be90usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_stereoViewMatrix(crate::unity_engine::matrix4x4::Matrix4x4)` overload"] pub fn set_stereo_view_matrix (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bea0usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_stereoProjectionMatrix()` overload"] pub fn get_stereo_projection_matrix (& mut self ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: matrix4x4 :: Matrix4x4 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bec0usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: option :: Option :: None) } } } # [doc = "`set_stereoProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4)` overload"] pub fn set_stereo_projection_matrix (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: matrix4x4 :: Matrix4x4 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , crate :: unity_engine :: matrix4x4 :: Matrix4x4 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bef0usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetLayerCullingDistance(i32)` overload"] pub fn get_layer_culling_distance (& mut self , layer_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bf10usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetCullingPlane(i32)` overload"] pub fn get_culling_plane (& mut self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: plane :: Plane { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: plane :: Plane = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8bff0usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters >) -> bool { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8c0e0usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8c490usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ScriptableCullingParameters , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8c530usize) as * mut u8) ; __inner (self as * mut ScriptableCullingParameters , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-scriptablecullingparameters")]impl ScriptableCullingParameters{#[doc="`set_maximumVisibleLights(i32)` overload"]pub fn set_maximum_visible_lights(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bdd0usize)as*mut u8,();
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_cullingPlaneCount()` overload"]pub fn get_culling_plane_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bde0usize)as*mut u8,i32;
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters)}
+}
+#[doc="`set_isOrthographic(bool)` overload"]pub fn set_is_orthographic(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bdf0usize)as*mut u8,();
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`set_shadowDistance(f32)` overload"]pub fn set_shadow_distance(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8be70usize)as*mut u8,();
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_cullingOptions()` overload"]pub fn get_culling_options(&mut self,)->crate::unity_engine::rendering::cullingoptions::CullingOptions{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8be80usize)as*mut u8,crate::unity_engine::rendering::cullingoptions::CullingOptions;
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters)}
+}
+#[doc="`set_cullingOptions(crate::unity_engine::rendering::cullingoptions::CullingOptions)` overload"]pub fn set_culling_options(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::cullingoptions::CullingOptions>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8be90usize)as*mut u8,();
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(crate::unity_engine::rendering::cullingoptions::CullingOptions)::core::convert::Into::into(value))}
+}
+#[doc="`set_stereoViewMatrix(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]pub fn set_stereo_view_matrix(&mut self,value:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bea0usize)as*mut u8,();
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(value))}
+}
+#[doc="`get_stereoProjectionMatrix()` overload"]pub fn get_stereo_projection_matrix(&mut self,)->crate::unity_engine::matrix4x4::Matrix4x4{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bec0usize)as*mut u8,crate::unity_engine::matrix4x4::Matrix4x4;
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters)}
+}
+#[doc="`set_stereoProjectionMatrix(crate::unity_engine::matrix4x4::Matrix4x4)` overload"]pub fn set_stereo_projection_matrix(&mut self,value:impl::core::convert::Into<crate::unity_engine::matrix4x4::Matrix4x4>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bef0usize)as*mut u8,();
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(crate::unity_engine::matrix4x4::Matrix4x4)::core::convert::Into::into(value))}
+}
+#[doc="`GetLayerCullingDistance(i32)` overload"]pub fn get_layer_culling_distance(&mut self,layer_index:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bf10usize)as*mut u8,f32;
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(i32)::core::convert::Into::into(layer_index))}
+}
+#[doc="`GetCullingPlane(i32)` overload"]pub fn get_culling_plane(&mut self,index:impl::core::convert::Into<i32>)->crate::unity_engine::plane::Plane{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8bff0usize)as*mut u8,crate::unity_engine::plane::Plane;
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8c0e0usize)as*mut u8,bool;
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8c490usize)as*mut u8,bool;
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8c530usize)as*mut u8,i32;
+(*mut ScriptableCullingParameters)self as*mut ScriptableCullingParameters)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-scriptablecullingparameters")]
-impl ScriptableCullingParameters { pub fn set_maximum_visible_lights_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_culling_plane_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_is_orthographic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_shadow_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_culling_options_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_culling_options_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_stereo_view_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_stereo_projection_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_stereo_projection_matrix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_layer_culling_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_culling_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableCullingParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="unity_engine-rendering-scriptablecullingparameters")]impl ScriptableCullingParameters{pub fn set_maximum_visible_lights_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_culling_plane_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_is_orthographic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_shadow_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_culling_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_culling_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_stereo_view_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_stereo_projection_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_stereo_projection_matrix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_layer_culling_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_culling_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
 #[cfg(feature = "unity_engine-rendering-scriptablecullingparameters")]
 #[doc(hidden)]

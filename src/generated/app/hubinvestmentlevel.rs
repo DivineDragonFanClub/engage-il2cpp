@@ -4,39 +4,206 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubinvestmentlevel/HubInvestmentLevel.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubInvestmentLevel")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentlevel :: HubInvestmentLevel >)] pub struct HubInvestmentLevel {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubinvestmentlevel/HubInvestmentLevel.md"))]#[::unity2::class(namespace="App",name="HubInvestmentLevel")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::hubinvestmentlevel::HubInvestmentLevel>)]pub struct HubInvestmentLevel{}
 
 }
 
 #[cfg(feature = "app-hubinvestmentlevel-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubinvestmentlevel")]
-impl HubInvestmentLevel { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aae10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentlevel")]impl HubInvestmentLevel{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28aae10usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentlevel")]
-pub trait IHubInvestmentLevelMethods : IHubInvestmentLevel { # [doc = "`get_Cost()` overload"] fn get_cost (self ,) -> i32 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Cost(i32)` overload"] fn set_cost (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusName()` overload"] fn get_bonus_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusName(::unity2::Il2CppString)` overload"] fn set_bonus_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusItem()` overload"] fn get_bonus_item (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusItem(::unity2::Il2CppString)` overload"] fn set_bonus_item (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusFood()` overload"] fn get_bonus_food (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusFood(::unity2::Il2CppString)` overload"] fn set_bonus_food (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusAnimal()` overload"] fn get_bonus_animal (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusAnimal(::unity2::Il2CppString)` overload"] fn set_bonus_animal (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusAccessoryAid()` overload"] fn get_bonus_accessory_aid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusAccessoryAid(::unity2::Il2CppString)` overload"] fn set_bonus_accessory_aid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusIron()` overload"] fn get_bonus_iron (self ,) -> i32 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusIron(i32)` overload"] fn set_bonus_iron (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaf90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusSteel()` overload"] fn get_bonus_steel (self ,) -> i32 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aafa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusSteel(i32)` overload"] fn set_bonus_steel (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aafb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusSilver()` overload"] fn get_bonus_silver (self ,) -> i32 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aafc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusSilver(i32)` overload"] fn set_bonus_silver (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aafd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BonusPieceOfBond()` overload"] fn get_bonus_piece_of_bond (self ,) -> i32 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aafe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BonusPieceOfBond(i32)` overload"] fn set_bonus_piece_of_bond (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aaff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GoldEnemyRate()` overload"] fn get_gold_enemy_rate (self ,) -> i8 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GoldEnemyRate(i8)` overload"] fn set_gold_enemy_rate (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ExpEnemyRate()` overload"] fn get_exp_enemy_rate (self ,) -> i8 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ExpEnemyRate(i8)` overload"] fn set_exp_enemy_rate (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Iron()` overload"] fn get_iron (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iron(u8)` overload"] fn set_iron (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Steel()` overload"] fn get_steel (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Steel(u8)` overload"] fn set_steel (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Silver()` overload"] fn get_silver (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Silver(u8)` overload"] fn set_silver (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PieceOfBond()` overload"] fn get_piece_of_bond (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab0a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PieceOfBond(u8)` overload"] fn set_piece_of_bond (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab0b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubInvestmentLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentLevel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentlevel")]pub trait IHubInvestmentLevelMethods:IHubInvestmentLevel{#[doc="`get_Cost()` overload"]fn get_cost(self,)->i32{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaec0usize)as*mut u8,i32;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_Cost(i32)` overload"]fn set_cost(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaed0usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusName()` overload"]fn get_bonus_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaee0usize)as*mut u8, ::unity2::Il2CppString;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_BonusName(::unity2::Il2CppString)` overload"]fn set_bonus_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaef0usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusItem()` overload"]fn get_bonus_item(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf00usize)as*mut u8, ::unity2::Il2CppString;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_BonusItem(::unity2::Il2CppString)` overload"]fn set_bonus_item(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf10usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusFood()` overload"]fn get_bonus_food(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf20usize)as*mut u8, ::unity2::Il2CppString;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_BonusFood(::unity2::Il2CppString)` overload"]fn set_bonus_food(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf30usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusAnimal()` overload"]fn get_bonus_animal(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf40usize)as*mut u8, ::unity2::Il2CppString;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_BonusAnimal(::unity2::Il2CppString)` overload"]fn set_bonus_animal(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf50usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusAccessoryAid()` overload"]fn get_bonus_accessory_aid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf60usize)as*mut u8, ::unity2::Il2CppString;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_BonusAccessoryAid(::unity2::Il2CppString)` overload"]fn set_bonus_accessory_aid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf70usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusIron()` overload"]fn get_bonus_iron(self,)->i32{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf80usize)as*mut u8,i32;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_BonusIron(i32)` overload"]fn set_bonus_iron(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaf90usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusSteel()` overload"]fn get_bonus_steel(self,)->i32{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aafa0usize)as*mut u8,i32;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_BonusSteel(i32)` overload"]fn set_bonus_steel(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aafb0usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusSilver()` overload"]fn get_bonus_silver(self,)->i32{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aafc0usize)as*mut u8,i32;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_BonusSilver(i32)` overload"]fn set_bonus_silver(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aafd0usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BonusPieceOfBond()` overload"]fn get_bonus_piece_of_bond(self,)->i32{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aafe0usize)as*mut u8,i32;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_BonusPieceOfBond(i32)` overload"]fn set_bonus_piece_of_bond(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aaff0usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_GoldEnemyRate()` overload"]fn get_gold_enemy_rate(self,)->i8{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab000usize)as*mut u8,i8;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_GoldEnemyRate(i8)` overload"]fn set_gold_enemy_rate(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab010usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ExpEnemyRate()` overload"]fn get_exp_enemy_rate(self,)->i8{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab020usize)as*mut u8,i8;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_ExpEnemyRate(i8)` overload"]fn set_exp_enemy_rate(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab030usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Iron()` overload"]fn get_iron(self,)->u8{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab040usize)as*mut u8,u8;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_Iron(u8)` overload"]fn set_iron(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab050usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Steel()` overload"]fn get_steel(self,)->u8{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab060usize)as*mut u8,u8;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_Steel(u8)` overload"]fn set_steel(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab070usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Silver()` overload"]fn get_silver(self,)->u8{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab080usize)as*mut u8,u8;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_Silver(u8)` overload"]fn set_silver(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab090usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_PieceOfBond()` overload"]fn get_piece_of_bond(self,)->u8{unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab0a0usize)as*mut u8,u8;
+(HubInvestmentLevel)__receiver)}
+}
+#[doc="`set_PieceOfBond(u8)` overload"]fn set_piece_of_bond(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab0b0usize)as*mut u8,();
+(HubInvestmentLevel)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubInvestmentLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab0c0usize)as*mut u8,();
+(HubInvestmentLevel)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentlevel")]
-impl < __T : IHubInvestmentLevel > IHubInvestmentLevelMethods for __T { }
+#[cfg(feature="app-hubinvestmentlevel")]impl<__T:IHubInvestmentLevel>IHubInvestmentLevelMethods for __T{}
 
-#[cfg(feature = "app-hubinvestmentlevel")]
-impl HubInvestmentLevel { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_cost_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_cost_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_bonus_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_bonus_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_bonus_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_bonus_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_bonus_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_bonus_food_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_bonus_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_bonus_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_bonus_accessory_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_bonus_accessory_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_bonus_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_bonus_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_bonus_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_bonus_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_bonus_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_bonus_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_bonus_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_bonus_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_gold_enemy_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_gold_enemy_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_exp_enemy_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_exp_enemy_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_iron_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_steel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn set_silver_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn set_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } }
+#[cfg(feature="app-hubinvestmentlevel")]impl HubInvestmentLevel{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_bonus_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_bonus_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_bonus_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_bonus_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_bonus_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_bonus_food_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_bonus_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_bonus_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_bonus_accessory_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_bonus_accessory_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_bonus_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_bonus_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_bonus_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_bonus_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_bonus_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_bonus_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_bonus_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_bonus_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_gold_enemy_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_gold_enemy_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_exp_enemy_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_exp_enemy_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_iron_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_steel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_silver_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn set_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+}
 
-#[cfg(feature = "app-hubinvestmentlevel")]
-impl HubInvestmentLevel {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubInvestmentLevel) , :: core :: stringify ! (new) ,)) ; < Self as IHubInvestmentLevelMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubinvestmentlevel")]impl HubInvestmentLevel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubInvestmentLevel), ::core::stringify!(new),));
+ <Self as IHubInvestmentLevelMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubinvestmentlevel")]

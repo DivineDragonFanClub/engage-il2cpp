@@ -4,32 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenuitem/PhotographEditDisposMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographEditDisposMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct PhotographEditDisposMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographeditdisposmenuitem/PhotographEditDisposMenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographEditDisposMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct PhotographEditDisposMenuItem{}
 
 }
 
 #[cfg(feature = "app-photographeditdisposmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographeditdisposmenuitem")]
-pub trait IPhotographEditDisposMenuItemMethods : IPhotographEditDisposMenuItem { # [doc = "`SetCharacterId(::unity2::Il2CppString)` overload"] fn set_character_id (self , character_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < PhotographEditDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographEditDisposMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2691680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character_id) , :: core :: option :: Option :: None) } } } # [doc = "`SetBodyAccData(crate::app::accessorydata::AccessoryData, crate::app::accessoryshoputility::AccessoryShopUtility_Female)` overload"] fn set_body_acc_data (self , body_acc : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , gender : impl :: core :: convert :: Into < crate :: app :: accessoryshoputility :: AccessoryShopUtility_Female >) -> () { unsafe { let __receiver = < PhotographEditDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographEditDisposMenuItem , crate :: app :: accessorydata :: AccessoryData , crate :: app :: accessoryshoputility :: AccessoryShopUtility_Female , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2691840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_acc) , :: core :: convert :: Into :: into (gender) , :: core :: option :: Option :: None) } } } # [doc = "`SetFaceAccData(crate::app::accessorydata::AccessoryData)` overload"] fn set_face_acc_data (self , face_acc : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < PhotographEditDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographEditDisposMenuItem , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2691950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (face_acc) , :: core :: option :: Option :: None) } } } # [doc = "`SetPauseData(crate::app::photographpausedata::PhotographPauseData)` overload"] fn set_pause_data (self , pause : impl :: core :: convert :: Into < crate :: app :: photographpausedata :: PhotographPauseData >) -> () { unsafe { let __receiver = < PhotographEditDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographEditDisposMenuItem , crate :: app :: photographpausedata :: PhotographPauseData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2691a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pause) , :: core :: option :: Option :: None) } } } # [doc = "`SetWeaponData(crate::app::itemdata::ItemData)` overload"] fn set_weapon_data (self , weapon_data : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < PhotographEditDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographEditDisposMenuItem , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2691cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (weapon_data) , :: core :: option :: Option :: None) } } } # [doc = "`SetMascotColor(i32)` overload"] fn set_mascot_color (self , color_idx : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PhotographEditDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographEditDisposMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2691b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color_idx) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateColor()` overload"] fn update_color (self ,) -> () { unsafe { let __receiver = < PhotographEditDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographEditDisposMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2693700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographEditDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographEditDisposMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2690f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographeditdisposmenuitem")]pub trait IPhotographEditDisposMenuItemMethods:IPhotographEditDisposMenuItem{#[doc="`SetCharacterId(::unity2::Il2CppString)` overload"]fn set_character_id(self,character_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PhotographEditDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2691680usize)as*mut u8,();
+(PhotographEditDisposMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(character_id))}
+}
+#[doc="`SetBodyAccData(crate::app::accessorydata::AccessoryData, crate::app::accessoryshoputility::AccessoryShopUtility_Female)` overload"]fn set_body_acc_data(self,body_acc:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,gender:impl::core::convert::Into<crate::app::accessoryshoputility::AccessoryShopUtility_Female>)->(){unsafe{let __receiver= <PhotographEditDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2691840usize)as*mut u8,();
+(PhotographEditDisposMenuItem)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(body_acc),(crate::app::accessoryshoputility::AccessoryShopUtility_Female)::core::convert::Into::into(gender))}
+}
+#[doc="`SetFaceAccData(crate::app::accessorydata::AccessoryData)` overload"]fn set_face_acc_data(self,face_acc:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <PhotographEditDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2691950usize)as*mut u8,();
+(PhotographEditDisposMenuItem)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(face_acc))}
+}
+#[doc="`SetPauseData(crate::app::photographpausedata::PhotographPauseData)` overload"]fn set_pause_data(self,pause:impl::core::convert::Into<crate::app::photographpausedata::PhotographPauseData>)->(){unsafe{let __receiver= <PhotographEditDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2691a90usize)as*mut u8,();
+(PhotographEditDisposMenuItem)__receiver,(crate::app::photographpausedata::PhotographPauseData)::core::convert::Into::into(pause))}
+}
+#[doc="`SetWeaponData(crate::app::itemdata::ItemData)` overload"]fn set_weapon_data(self,weapon_data:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <PhotographEditDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2691cc0usize)as*mut u8,();
+(PhotographEditDisposMenuItem)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(weapon_data))}
+}
+#[doc="`SetMascotColor(i32)` overload"]fn set_mascot_color(self,color_idx:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PhotographEditDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2691b60usize)as*mut u8,();
+(PhotographEditDisposMenuItem)__receiver,(i32)::core::convert::Into::into(color_idx))}
+}
+#[doc="`UpdateColor()` overload"]fn update_color(self,)->(){unsafe{let __receiver= <PhotographEditDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2693700usize)as*mut u8,();
+(PhotographEditDisposMenuItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographEditDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2690f20usize)as*mut u8,();
+(PhotographEditDisposMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographeditdisposmenuitem")]
-impl < __T : IPhotographEditDisposMenuItem > IPhotographEditDisposMenuItemMethods for __T { }
+#[cfg(feature="app-photographeditdisposmenuitem")]impl<__T:IPhotographEditDisposMenuItem>IPhotographEditDisposMenuItemMethods for __T{}
 
-#[cfg(feature = "app-photographeditdisposmenuitem")]
-impl PhotographEditDisposMenuItem { pub fn set_character_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographEditDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_body_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographEditDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_face_acc_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographEditDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_pause_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographEditDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_weapon_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographEditDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_mascot_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographEditDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographEditDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographEditDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-photographeditdisposmenuitem")]impl PhotographEditDisposMenuItem{pub fn set_character_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_body_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_face_acc_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_pause_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_weapon_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_mascot_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-photographeditdisposmenuitem")]
-impl PhotographEditDisposMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographEditDisposMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographEditDisposMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographeditdisposmenuitem")]impl PhotographEditDisposMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographEditDisposMenuItem), ::core::stringify!(new),));
+ <Self as IPhotographEditDisposMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-photographeditdisposmenuitem")]

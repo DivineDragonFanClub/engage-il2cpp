@@ -4,39 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/sceneviewdepthcopypass/SceneViewDepthCopyPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "SceneViewDepthCopyPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct SceneViewDepthCopyPass {
-# [offset (160)] # [rename (name = "m_CopyDepthMaterial")] pub m_copy_depth_material : crate :: unity_engine :: material :: Material ,
-# [static_field] # [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/sceneviewdepthcopypass/SceneViewDepthCopyPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="SceneViewDepthCopyPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct SceneViewDepthCopyPass{#[offset(160)]#[rename(name="m_CopyDepthMaterial")]pub m_copy_depth_material:crate::unity_engine::material::Material, #[static_field]#[rename(name="m_ProfilerTag")]pub m_profiler_tag: ::unity2::Il2CppString, #[static_field]#[rename(name="m_ProfilingSampler")]pub m_profiling_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-sceneviewdepthcopypass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-sceneviewdepthcopypass")]
-impl SceneViewDepthCopyPass { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ece580usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-sceneviewdepthcopypass")]impl SceneViewDepthCopyPass{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ece580usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-sceneviewdepthcopypass")]
-pub trait ISceneViewDepthCopyPassMethods : ISceneViewDepthCopyPass { # [doc = "`get_source()` overload"] fn get_source (self ,) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle { unsafe { let __receiver = < SceneViewDepthCopyPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SceneViewDepthCopyPass , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ecda40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_source(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"] fn set_source (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle >) -> () { unsafe { let __receiver = < SceneViewDepthCopyPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SceneViewDepthCopyPass , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ecda60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent > , copy_depth_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { let __receiver = < SceneViewDepthCopyPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SceneViewDepthCopyPass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ecda80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: convert :: Into :: into (copy_depth_material) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"] fn setup (self , source : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle >) -> () { unsafe { let __receiver = < SceneViewDepthCopyPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SceneViewDepthCopyPass , crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ecdfa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < SceneViewDepthCopyPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (SceneViewDepthCopyPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ecdfc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-rendering-universal-sceneviewdepthcopypass")]pub trait ISceneViewDepthCopyPassMethods:ISceneViewDepthCopyPass{#[doc="`get_source()` overload"]fn get_source(self,)->crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle{unsafe{let __receiver= <SceneViewDepthCopyPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ecda40usize)as*mut u8,crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
+(SceneViewDepthCopyPass)__receiver)}
+}
+#[doc="`set_source(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]fn set_source(self,value:impl::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)->(){unsafe{let __receiver= <SceneViewDepthCopyPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ecda60usize)as*mut u8,();
+(SceneViewDepthCopyPass)__receiver,(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent> ,copy_depth_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <SceneViewDepthCopyPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ecda80usize)as*mut u8,();
+(SceneViewDepthCopyPass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt),(crate::unity_engine::material::Material)::core::convert::Into::into(copy_depth_material))}
+}
+#[doc="`Setup(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]fn setup(self,source:impl::core::convert::Into<crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle>)->(){unsafe{let __receiver= <SceneViewDepthCopyPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ecdfa0usize)as*mut u8,();
+(SceneViewDepthCopyPass)__receiver,(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)::core::convert::Into::into(source))}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <SceneViewDepthCopyPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ecdfc0usize)as*mut u8,();
+(SceneViewDepthCopyPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-sceneviewdepthcopypass")]
-impl < __T : ISceneViewDepthCopyPass > ISceneViewDepthCopyPassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-sceneviewdepthcopypass")]impl<__T:ISceneViewDepthCopyPass>ISceneViewDepthCopyPassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-sceneviewdepthcopypass")]
-impl SceneViewDepthCopyPass { pub fn get_source_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneViewDepthCopyPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_source_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneViewDepthCopyPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneViewDepthCopyPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneViewDepthCopyPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneViewDepthCopyPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SceneViewDepthCopyPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-rendering-universal-sceneviewdepthcopypass")]impl SceneViewDepthCopyPass{pub fn get_source_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_source_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-sceneviewdepthcopypass")]
-impl SceneViewDepthCopyPass {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , copy_depth_material : crate :: unity_engine :: material :: Material) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SceneViewDepthCopyPass) , :: core :: stringify ! (new) ,)) ; < Self as ISceneViewDepthCopyPassMethods > :: ctor (this , evt , copy_depth_material) ; this }
+#[cfg(feature="unity_engine-rendering-universal-sceneviewdepthcopypass")]impl SceneViewDepthCopyPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::material::Material)` — overload selector"]pub fn new(evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,copy_depth_material:crate::unity_engine::material::Material)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SceneViewDepthCopyPass), ::core::stringify!(new),));
+ <Self as ISceneViewDepthCopyPassMethods> ::ctor(this,evt,copy_depth_material);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-sceneviewdepthcopypass")]

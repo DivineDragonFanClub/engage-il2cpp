@@ -4,32 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtitlemenuitem/ProfileCardTitleMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardTitleMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ProfileCardTitleMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtitlemenuitem/ProfileCardTitleMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardTitleMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardTitleMenuItem{}
 
 }
 
 #[cfg(feature = "app-profilecardtitlemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardtitlemenuitem")]
-pub trait IProfileCardTitleMenuItemMethods : IProfileCardTitleMenuItem { # [doc = "`get_m_TitleData()` overload"] fn get_m_title_data (self ,) -> crate :: app :: profilecardtitledata :: ProfileCardTitleData { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardtitledata :: ProfileCardTitleData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_TitleData(crate::app::profilecardtitledata::ProfileCardTitleData)` overload"] fn set_m_title_data (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardtitledata :: ProfileCardTitleData >) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , crate :: app :: profilecardtitledata :: ProfileCardTitleData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_Decided()` overload"] fn get_m_decided (self ,) -> bool { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Decided(bool)` overload"] fn set_m_decided (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::profilecardtitledata::ProfileCardTitleData, bool)` overload"] fn ctor (self , title_data : impl :: core :: convert :: Into < crate :: app :: profilecardtitledata :: ProfileCardTitleData > , initial_select : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , crate :: app :: profilecardtitledata :: ProfileCardTitleData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfdea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (title_data) , :: core :: convert :: Into :: into (initial_select) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetInitialColor()` overload"] fn set_initial_color (self ,) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateFixedCursor()` overload"] fn update_fixed_cursor (self ,) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateNewIcon()` overload"] fn update_new_icon (self ,) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDecided(bool)` overload"] fn set_decided (self , decided : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfed80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decided) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCursorMoveEnd()` overload"] fn on_cursor_move_end (self ,) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardTitleMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTitleMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bff7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardtitlemenuitem")]pub trait IProfileCardTitleMenuItemMethods:IProfileCardTitleMenuItem{#[doc="`get_m_TitleData()` overload"]fn get_m_title_data(self,)->crate::app::profilecardtitledata::ProfileCardTitleData{unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff0b0usize)as*mut u8,crate::app::profilecardtitledata::ProfileCardTitleData;
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`set_m_TitleData(crate::app::profilecardtitledata::ProfileCardTitleData)` overload"]fn set_m_title_data(self,value:impl::core::convert::Into<crate::app::profilecardtitledata::ProfileCardTitleData>)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff0c0usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver,(crate::app::profilecardtitledata::ProfileCardTitleData)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_Decided()` overload"]fn get_m_decided(self,)->bool{unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff0d0usize)as*mut u8,bool;
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`set_m_Decided(bool)` overload"]fn set_m_decided(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff0e0usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::profilecardtitledata::ProfileCardTitleData, bool)` overload"]fn ctor(self,title_data:impl::core::convert::Into<crate::app::profilecardtitledata::ProfileCardTitleData> ,initial_select:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfdea0usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver,(crate::app::profilecardtitledata::ProfileCardTitleData)::core::convert::Into::into(title_data),(bool)::core::convert::Into::into(initial_select))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff0f0usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff100usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff150usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`UpdateFixedCursor()` overload"]fn update_fixed_cursor(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff2b0usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`UpdateNewIcon()` overload"]fn update_new_icon(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff410usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`SetDecided(bool)` overload"]fn set_decided(self,decided:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfed80usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver,(bool)::core::convert::Into::into(decided))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff620usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff730usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff780usize)as*mut u8,();
+(ProfileCardTitleMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardTitleMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bff7b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardTitleMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardtitlemenuitem")]
-impl < __T : IProfileCardTitleMenuItem > IProfileCardTitleMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardtitlemenuitem")]impl<__T:IProfileCardTitleMenuItem>IProfileCardTitleMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardtitlemenuitem")]
-impl ProfileCardTitleMenuItem { pub fn get_m_title_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_title_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_m_decided_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_m_decided_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_initial_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_fixed_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_new_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_decided_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_cursor_move_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTitleMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-profilecardtitlemenuitem")]impl ProfileCardTitleMenuItem{pub fn get_m_title_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_title_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_decided_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_decided_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_initial_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_fixed_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_new_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_decided_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-profilecardtitlemenuitem")]
-impl ProfileCardTitleMenuItem {
-# [doc = "`.ctor(crate::app::profilecardtitledata::ProfileCardTitleData, bool)` — overload selector"] pub fn new (title_data : crate :: app :: profilecardtitledata :: ProfileCardTitleData , initial_select : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardTitleMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardTitleMenuItemMethods > :: ctor (this , title_data , initial_select) ; this }
+#[cfg(feature="app-profilecardtitlemenuitem")]impl ProfileCardTitleMenuItem{#[doc="`.ctor(crate::app::profilecardtitledata::ProfileCardTitleData, bool)` — overload selector"]pub fn new(title_data:crate::app::profilecardtitledata::ProfileCardTitleData,initial_select:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardTitleMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardTitleMenuItemMethods> ::ctor(this,title_data,initial_select);
+this}
 }
 
 #[cfg(feature = "app-profilecardtitlemenuitem")]

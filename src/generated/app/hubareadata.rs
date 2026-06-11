@@ -4,39 +4,131 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubareadata/HubAreaData.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAreaData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: hubareadata :: HubAreaData >)] pub struct HubAreaData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubareadata/HubAreaData.md"))]#[::unity2::class(namespace="App",name="HubAreaData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::hubareadata::HubAreaData>)]pub struct HubAreaData{}
 
 }
 
 #[cfg(feature = "app-hubareadata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubareadata")]
-impl HubAreaData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76890usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubareadata")]impl HubAreaData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d76890usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubareadata")]
-pub trait IHubAreaDataMethods : IHubAreaData { # [doc = "`get_AID()` overload"] fn get_aid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AID(::unity2::Il2CppString)` overload"] fn set_aid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MID()` overload"] fn get_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MID(::unity2::Il2CppString)` overload"] fn set_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ConditionCID()` overload"] fn get_condition_cid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ConditionCID(::unity2::Il2CppString)` overload"] fn set_condition_cid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SceneName()` overload"] fn get_scene_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d769a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SceneName(::unity2::Il2CppString)` overload"] fn set_scene_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d769b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LocatorName()` overload"] fn get_locator_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d769c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LocatorName(::unity2::Il2CppString)` overload"] fn set_locator_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d769d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MID_H()` overload"] fn get_mid_h (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d769e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MID_H(::unity2::Il2CppString)` overload"] fn set_mid_h (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d769f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MapPointNo()` overload"] fn get_map_point_no (self ,) -> u8 { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MapPointNo(u8)` overload"] fn set_map_point_no (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FacilityAidList()` overload"] fn get_facility_aid_list (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FacilityAidList(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_facility_aid_list (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubAreaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubareadata")]pub trait IHubAreaDataMethods:IHubAreaData{#[doc="`get_AID()` overload"]fn get_aid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76940usize)as*mut u8, ::unity2::Il2CppString;
+(HubAreaData)__receiver)}
+}
+#[doc="`set_AID(::unity2::Il2CppString)` overload"]fn set_aid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76950usize)as*mut u8,();
+(HubAreaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_MID()` overload"]fn get_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76960usize)as*mut u8, ::unity2::Il2CppString;
+(HubAreaData)__receiver)}
+}
+#[doc="`set_MID(::unity2::Il2CppString)` overload"]fn set_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76970usize)as*mut u8,();
+(HubAreaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ConditionCID()` overload"]fn get_condition_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76980usize)as*mut u8, ::unity2::Il2CppString;
+(HubAreaData)__receiver)}
+}
+#[doc="`set_ConditionCID(::unity2::Il2CppString)` overload"]fn set_condition_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76990usize)as*mut u8,();
+(HubAreaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SceneName()` overload"]fn get_scene_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d769a0usize)as*mut u8, ::unity2::Il2CppString;
+(HubAreaData)__receiver)}
+}
+#[doc="`set_SceneName(::unity2::Il2CppString)` overload"]fn set_scene_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d769b0usize)as*mut u8,();
+(HubAreaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LocatorName()` overload"]fn get_locator_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d769c0usize)as*mut u8, ::unity2::Il2CppString;
+(HubAreaData)__receiver)}
+}
+#[doc="`set_LocatorName(::unity2::Il2CppString)` overload"]fn set_locator_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d769d0usize)as*mut u8,();
+(HubAreaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_MID_H()` overload"]fn get_mid_h(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d769e0usize)as*mut u8, ::unity2::Il2CppString;
+(HubAreaData)__receiver)}
+}
+#[doc="`set_MID_H(::unity2::Il2CppString)` overload"]fn set_mid_h(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d769f0usize)as*mut u8,();
+(HubAreaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_MapPointNo()` overload"]fn get_map_point_no(self,)->u8{unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76a00usize)as*mut u8,u8;
+(HubAreaData)__receiver)}
+}
+#[doc="`set_MapPointNo(u8)` overload"]fn set_map_point_no(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76a10usize)as*mut u8,();
+(HubAreaData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_FacilityAidList()` overload"]fn get_facility_aid_list(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76a20usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(HubAreaData)__receiver)}
+}
+#[doc="`set_FacilityAidList(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_facility_aid_list(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76a30usize)as*mut u8,();
+(HubAreaData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76a40usize)as*mut u8, ::unity2::Il2CppString;
+(HubAreaData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubAreaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76a50usize)as*mut u8,();
+(HubAreaData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubareadata")]
-impl < __T : IHubAreaData > IHubAreaDataMethods for __T { }
+#[cfg(feature="app-hubareadata")]impl<__T:IHubAreaData>IHubAreaDataMethods for __T{}
 
-#[cfg(feature = "app-hubareadata")]
-impl HubAreaData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_condition_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_condition_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_locator_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_locator_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_mid_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_mid_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_map_point_no_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_map_point_no_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_facility_aid_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_facility_aid_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAreaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-hubareadata")]impl HubAreaData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_condition_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_condition_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_locator_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_locator_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_mid_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_mid_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_map_point_no_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_map_point_no_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_facility_aid_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_facility_aid_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-hubareadata")]
-impl HubAreaData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubAreaData) , :: core :: stringify ! (new) ,)) ; < Self as IHubAreaDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubareadata")]impl HubAreaData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubAreaData), ::core::stringify!(new),));
+ <Self as IHubAreaDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubareadata")]

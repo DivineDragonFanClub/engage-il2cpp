@@ -4,84 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/rendererlist/RendererList.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RendererList {}
-
-
-impl ::unity2::ClassIdentity for RendererList {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering";
-
-    const NAME: &'static str = "RendererList";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/rendererlist/RendererList.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RendererList{}
+impl::unity2::ClassIdentity for RendererList{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering";
+const NAME: &'static str="RendererList";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for RendererList {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RendererList{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl RendererList {
-    #[inline]
-    pub fn s_empty_name() -> crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_EmptyName");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_empty_name(value: crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_EmptyName");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn null_renderer_list() -> crate :: unity_engine :: experimental :: rendering :: rendererlist :: RendererList {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "nullRendererList");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_null_renderer_list(value: crate :: unity_engine :: experimental :: rendering :: rendererlist :: RendererList) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "nullRendererList");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl RendererList{#[inline]pub fn s_empty_name()->crate::unity_engine::rendering::shadertagid::ShaderTagId{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_EmptyName");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_empty_name(value:crate::unity_engine::rendering::shadertagid::ShaderTagId){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_EmptyName");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn null_renderer_list()->crate::unity_engine::experimental::rendering::rendererlist::RendererList{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"nullRendererList");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_null_renderer_list(value:crate::unity_engine::experimental::rendering::rendererlist::RendererList){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"nullRendererList");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -89,14 +41,30 @@ impl RendererList {
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlist-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
-impl RendererList { # [doc = "`Create(*mutcrate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc)` overload"] pub fn create () -> (crate :: unity_engine :: experimental :: rendering :: rendererlist :: RendererList , crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: rendererlistdesc :: RendererListDesc , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: rendererlist :: RendererList = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33dfa10usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e05d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-rendererlist")]impl RendererList{#[doc="`Create(*mutcrate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc)` overload"]pub fn create()->(crate::unity_engine::experimental::rendering::rendererlist::RendererList,crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x33dfa10usize)as*mut u8,crate::unity_engine::experimental::rendering::rendererlist::RendererList;
+(*mut crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e05d0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
-impl RendererList { # [doc = "`get_isValid()` overload"] pub fn get_is_valid (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut RendererList , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e04c0usize) as * mut u8) ; __inner (self as * mut RendererList , :: core :: option :: Option :: None) } } } # [doc = "`set_isValid(bool)` overload"] pub fn set_is_valid (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut RendererList , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e04d0usize) as * mut u8) ; __inner (self as * mut RendererList , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-rendererlist")]impl RendererList{#[doc="`get_isValid()` overload"]pub fn get_is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e04c0usize)as*mut u8,bool;
+(*mut RendererList)self as*mut RendererList)}
+}
+#[doc="`set_isValid(bool)` overload"]pub fn set_is_valid(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e04d0usize)as*mut u8,();
+(*mut RendererList)self as*mut RendererList,(bool)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
-impl RendererList { pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RendererList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RendererList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RendererList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RendererList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-experimental-rendering-rendererlist")]impl RendererList{pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
 #[doc(hidden)]

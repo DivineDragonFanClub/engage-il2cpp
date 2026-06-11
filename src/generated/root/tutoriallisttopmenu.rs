@@ -4,161 +4,147 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListTopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct TutorialListTopMenu {
-# [offset (200)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallisttopmenu/TutorialListTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="",name="TutorialListTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct TutorialListTopMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallisttopmenu/TutorialListTopMenu_SelectCategoryType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialListTopMenu_SelectCategoryType{pub value:i32,}
+impl::unity2::ClassIdentity for TutorialListTopMenu_SelectCategoryType{const NAMESPACE: &'static str="";
+const NAME: &'static str="TutorialListTopMenu.SelectCategoryType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TutorialListTopMenu_SelectCategoryType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TutorialListTopMenu_SelectCategoryType{pub fn pick_up()->Self{Self{value:0}
+}
+pub fn battle()->Self{Self{value:1}
+}
+pub fn god()->Self{Self{value:2}
+}
+pub fn kizuna_gmap()->Self{Self{value:3}
+}
+pub fn hub()->Self{Self{value:4}
+}
+pub fn challenge()->Self{Self{value:5}
+}
+pub fn none()->Self{Self{value:6}
+}
+pub fn end()->Self{Self{value:7}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/tutoriallisttopmenu/TutorialListTopMenu_SelectCategoryType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TutorialListTopMenu_SelectCategoryType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TutorialListTopMenu_SelectCategoryType  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "TutorialListTopMenu.SelectCategoryType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TutorialListTopMenu_SelectCategoryType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TutorialListTopMenu_SelectCategoryType  {
-    pub fn pick_up() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn battle() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn god() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn kizuna_gmap() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn challenge() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn none() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 7 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/tutoriallisttopmenu/TutorialListTopMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "" , name = "TutorialListTopMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct TutorialListTopMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallisttopmenu/TutorialListTopMenu.md"))]#[::unity2::class(namespace="",name="TutorialListTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct TutorialListTopMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "root-tutoriallisttopmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-tutoriallisttopmenu")]
-impl TutorialListTopMenu { # [doc = "`GetTutorialDataType(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)` overload"] pub fn get_tutorial_data_type (select : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType >) -> crate :: app :: tutorialdata :: TutorialData_Types { unsafe { { let __inner : extern "C" fn (crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType , :: unity2 :: OptionalMethod ,) -> crate :: app :: tutorialdata :: TutorialData_Types = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b0160usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (select) , :: core :: option :: Option :: None) } } } # [doc = "`GetTutorialCategoryTitleName(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)` overload"] pub fn get_tutorial_category_title_name (select : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22af5b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (select) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, *mutcrate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>, crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType, bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , select_category : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > , is_get_all_tutorial : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler >) -> (crate :: unity_engine :: gameobject :: GameObject , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType , bool , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b20d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (select_category) , :: core :: convert :: Into :: into (is_get_all_tutorial) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`AddMenuItemList(*mutcrate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenuitem::BasicMenuItem, crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType, *mutcrate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>, crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType, bool, *muti32)` overload"] pub fn add_menu_item_list (menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem > , category_type : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > , select_category : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > , is_get_all_tutorial : impl :: core :: convert :: Into < bool >) -> (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenuitem :: BasicMenuItem , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType > , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType , bool , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3bb0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (menu_item) , :: core :: convert :: Into :: into (category_type) , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (select_category) , :: core :: convert :: Into :: into (is_get_all_tutorial) , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } }
-
-#[cfg(feature = "root-tutoriallisttopmenu")]
-pub trait ITutorialListTopMenuMethods : ITutorialListTopMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::tutoriallisttopmenucontent::TutorialListTopMenuContent, i32, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenucontent :: TutorialListTopMenuContent > , index : impl :: core :: convert :: Into < i32 > , decide_event_handler : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < TutorialListTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListTopMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: root :: tutoriallisttopmenucontent :: TutorialListTopMenuContent , i32 , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TutorialListTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListTopMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < TutorialListTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListTopMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-tutoriallisttopmenu")]
-impl < __T : ITutorialListTopMenu > ITutorialListTopMenuMethods for __T { }
-
-#[cfg(feature = "root-tutoriallisttopmenu")]
-impl TutorialListTopMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_tutorial_data_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_tutorial_category_title_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_menu_item_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "root-tutoriallisttopmenu")]
-impl TutorialListTopMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::tutoriallisttopmenucontent::TutorialListTopMenuContent, i32, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: root :: tutoriallisttopmenucontent :: TutorialListTopMenuContent , index : i32 , decide_event_handler : crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TutorialListTopMenu) , :: core :: stringify ! (new) ,)) ; < Self as ITutorialListTopMenuMethods > :: ctor (this , menu_item_list , menu_content , index , decide_event_handler) ; this }
+#[cfg(feature="root-tutoriallisttopmenu")]pub trait ITutorialListTopMenu_DecideEventHandlerMethods:ITutorialListTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TutorialListTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b420c0usize)as*mut u8,();
+(TutorialListTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>)->(){unsafe{let __receiver= <TutorialListTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b420e0usize)as*mut u8,();
+(TutorialListTopMenu_DecideEventHandler)__receiver,(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)::core::convert::Into::into(result))}
+}
 }
 
-#[cfg(feature = "root-tutoriallisttopmenu")]
-pub trait ITutorialListTopMenu_DecideEventHandlerMethods : ITutorialListTopMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < TutorialListTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListTopMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b420c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType >) -> () { unsafe { let __receiver = < TutorialListTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TutorialListTopMenu_DecideEventHandler , crate :: root :: tutoriallisttopmenu :: TutorialListTopMenu_SelectCategoryType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b420e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-tutoriallisttopmenu")]impl<__T:ITutorialListTopMenu_DecideEventHandler>ITutorialListTopMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "root-tutoriallisttopmenu")]
-impl < __T : ITutorialListTopMenu_DecideEventHandler > ITutorialListTopMenu_DecideEventHandlerMethods for __T { }
+#[cfg(feature="root-tutoriallisttopmenu")]impl TutorialListTopMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-tutoriallisttopmenu")]
-impl TutorialListTopMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TutorialListTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-tutoriallisttopmenu")]impl TutorialListTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TutorialListTopMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as ITutorialListTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "root-tutoriallisttopmenu")]
-impl TutorialListTopMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TutorialListTopMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as ITutorialListTopMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-tutoriallisttopmenu")]impl TutorialListTopMenu{#[doc="`GetTutorialDataType(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)` overload"]pub fn get_tutorial_data_type(select:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>)->crate::app::tutorialdata::TutorialData_Types{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b0160usize)as*mut u8,crate::app::tutorialdata::TutorialData_Types;
+(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)::core::convert::Into::into(select))}
+}
+#[doc="`GetTutorialCategoryTitleName(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)` overload"]pub fn get_tutorial_category_title_name(select:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22af5b0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)::core::convert::Into::into(select))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, *mutcrate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>, crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType, bool, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,select_category:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType> ,is_get_all_tutorial:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler>)->(crate::unity_engine::gameobject::GameObject,crate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType> > ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x22b20d0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(*mut crate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>)__out_0.as_mut_ptr(),(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)::core::convert::Into::into(select_category),(bool)::core::convert::Into::into(is_get_all_tutorial),(crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`AddMenuItemList(*mutcrate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenuitem::BasicMenuItem, crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType, *mutcrate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>, crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType, bool, *muti32)` overload"]pub fn add_menu_item_list(menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem> ,category_type:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType> ,select_category:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType> ,is_get_all_tutorial:impl::core::convert::Into<bool>)->(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,crate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType> ,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType> > ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3bb0usize)as*mut u8,();
+(*mut crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)__out_0.as_mut_ptr(),(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item),(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)::core::convert::Into::into(category_type),(*mut crate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType>)__out_1.as_mut_ptr(),(crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType)::core::convert::Into::into(select_category),(bool)::core::convert::Into::into(is_get_all_tutorial),(*mut i32)__out_2.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+}
+
+#[cfg(feature="root-tutoriallisttopmenu")]pub trait ITutorialListTopMenuMethods:ITutorialListTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::tutoriallisttopmenucontent::TutorialListTopMenuContent, i32, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::root::tutoriallisttopmenucontent::TutorialListTopMenuContent> ,index:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <TutorialListTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3ad0usize)as*mut u8,();
+(TutorialListTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::root::tutoriallisttopmenucontent::TutorialListTopMenuContent)::core::convert::Into::into(menu_content),(i32)::core::convert::Into::into(index),(crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TutorialListTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3b30usize)as*mut u8, ::unity2::Il2CppString;
+(TutorialListTopMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <TutorialListTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3b80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(TutorialListTopMenu)__receiver)}
+}
+}
+
+#[cfg(feature="root-tutoriallisttopmenu")]impl<__T:ITutorialListTopMenu>ITutorialListTopMenuMethods for __T{}
+
+#[cfg(feature="root-tutoriallisttopmenu")]impl TutorialListTopMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_tutorial_data_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_tutorial_category_title_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_menu_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="root-tutoriallisttopmenu")]impl TutorialListTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::tutoriallisttopmenucontent::TutorialListTopMenuContent, i32, crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::root::tutoriallisttopmenucontent::TutorialListTopMenuContent,index:i32,decide_event_handler:crate::root::tutoriallisttopmenu::TutorialListTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TutorialListTopMenu), ::core::stringify!(new),));
+ <Self as ITutorialListTopMenuMethods> ::ctor(this,menu_item_list,menu_content,index,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "root-tutoriallisttopmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TutorialListTopMenu;
-    pub use super::ITutorialListTopMenu;
-    pub use super::ITutorialListTopMenuMethods;
-    pub use super::TutorialListTopMenu_SelectCategoryType;
     pub use super::TutorialListTopMenu_DecideEventHandler;
     pub use super::ITutorialListTopMenu_DecideEventHandler;
     pub use super::ITutorialListTopMenu_DecideEventHandlerMethods;
+    pub use super::TutorialListTopMenu_SelectCategoryType;
+    pub use super::TutorialListTopMenu;
+    pub use super::ITutorialListTopMenu;
+    pub use super::ITutorialListTopMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

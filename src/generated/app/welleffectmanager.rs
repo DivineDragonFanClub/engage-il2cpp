@@ -4,41 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welleffectmanager/WellEffectManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellEffectManager")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WellEffectManager {
-# [offset (24)] # [rename (name = "m_WellEffect")] pub m_well_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_IsFadeout")] pub m_is_fadeout : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/welleffectmanager/WellEffectManager.md"))]#[::unity2::class(namespace="App",name="WellEffectManager")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct WellEffectManager{#[offset(24)]#[rename(name="m_WellEffect")]pub m_well_effect:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_IsFadeout")]pub m_is_fadeout:bool,}
 
 }
 
 #[cfg(feature = "app-welleffectmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-welleffectmanager")]
-pub trait IWellEffectManagerMethods : IWellEffectManager { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < WellEffectManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellEffectManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d4330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < WellEffectManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellEffectManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d4510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < WellEffectManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellEffectManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d45b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateEffect()` overload"] fn try_create_effect (self ,) -> () { unsafe { let __receiver = < WellEffectManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellEffectManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d4340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryFadeOutEffect()` overload"] fn try_fade_out_effect (self ,) -> () { unsafe { let __receiver = < WellEffectManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellEffectManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d4680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyEffect()` overload"] fn destroy_effect (self ,) -> () { unsafe { let __receiver = < WellEffectManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellEffectManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d45c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WellEffectManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellEffectManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d47c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-welleffectmanager")]pub trait IWellEffectManagerMethods:IWellEffectManager{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <WellEffectManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d4330usize)as*mut u8,();
+(WellEffectManager)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <WellEffectManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d4510usize)as*mut u8,();
+(WellEffectManager)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <WellEffectManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d45b0usize)as*mut u8,();
+(WellEffectManager)__receiver)}
+}
+#[doc="`TryCreateEffect()` overload"]fn try_create_effect(self,)->(){unsafe{let __receiver= <WellEffectManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d4340usize)as*mut u8,();
+(WellEffectManager)__receiver)}
+}
+#[doc="`TryFadeOutEffect()` overload"]fn try_fade_out_effect(self,)->(){unsafe{let __receiver= <WellEffectManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d4680usize)as*mut u8,();
+(WellEffectManager)__receiver)}
+}
+#[doc="`DestroyEffect()` overload"]fn destroy_effect(self,)->(){unsafe{let __receiver= <WellEffectManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d45c0usize)as*mut u8,();
+(WellEffectManager)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WellEffectManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d47c0usize)as*mut u8,();
+(WellEffectManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-welleffectmanager")]
-impl < __T : IWellEffectManager > IWellEffectManagerMethods for __T { }
+#[cfg(feature="app-welleffectmanager")]impl<__T:IWellEffectManager>IWellEffectManagerMethods for __T{}
 
-#[cfg(feature = "app-welleffectmanager")]
-impl WellEffectManager { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellEffectManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellEffectManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellEffectManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_create_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellEffectManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn try_fade_out_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellEffectManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn destroy_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellEffectManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellEffectManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-welleffectmanager")]impl WellEffectManager{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_create_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn try_fade_out_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-welleffectmanager")]
-impl WellEffectManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellEffectManager) , :: core :: stringify ! (new) ,)) ; < Self as IWellEffectManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-welleffectmanager")]impl WellEffectManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellEffectManager), ::core::stringify!(new),));
+ <Self as IWellEffectManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-welleffectmanager")]

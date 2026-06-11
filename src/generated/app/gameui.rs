@@ -4,166 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameui/GameUI_Priority.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameUI_Priority  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameui/GameUI.md"))]#[::unity2::class(namespace="App",name="GameUI")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::gameui::GameUI>)]pub struct GameUI{#[static_field]#[rename(name="UnknownName")]pub unknown_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameui/GameUI_Priority.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameUI_Priority{pub value:i32,}
+impl::unity2::ClassIdentity for GameUI_Priority{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameUI.Priority";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for GameUI_Priority  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameUI.Priority";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for GameUI_Priority{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for GameUI_Priority  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl GameUI_Priority{pub fn map_unit()->Self{Self{value: -200}
 }
-
-
-impl  GameUI_Priority  {
-    pub fn map_unit() -> Self {
-        Self { value: -200 }
-
-    }
-
-
-    pub fn map_ui() -> Self {
-        Self { value: -100 }
-
-    }
-
-
-    pub fn unit_info() -> Self {
-        Self { value: -50 }
-
-    }
-
-
-    pub fn default() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn level_up() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn terrain_info() -> Self {
-        Self { value: 50 }
-
-    }
-
-
-    pub fn basic_menu() -> Self {
-        Self { value: 500 }
-
-    }
-
-
-    pub fn title_bar() -> Self {
-        Self { value: 600 }
-
-    }
-
-
-    pub fn tutorial() -> Self {
-        Self { value: 700 }
-
-    }
-
-
-    pub fn help() -> Self {
-        Self { value: 800 }
-
-    }
-
-
-    pub fn telop() -> Self {
-        Self { value: 1000 }
-
-    }
-
-
-    pub fn movie() -> Self {
-        Self { value: 1050 }
-
-    }
-
-
-    pub fn achieve() -> Self {
-        Self { value: 1100 }
-
-    }
-
-
-    pub fn talk_ui() -> Self {
-        Self { value: 1100 }
-
-    }
-
-
-    pub fn fade() -> Self {
-        Self { value: 1200 }
-
-    }
-
-
-    pub fn dialog() -> Self {
-        Self { value: 1500 }
-
-    }
-
-
-    pub fn debug() -> Self {
-        Self { value: 2000 }
-
-    }
-
+pub fn map_ui()->Self{Self{value: -100}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameui/GameUI.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUI")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: gameui :: GameUI >)] pub struct GameUI {
-# [static_field] # [rename (name = "UnknownName")] pub unknown_name : :: unity2 :: Il2CppString ,
+pub fn unit_info()->Self{Self{value: -50}
+}
+pub fn default()->Self{Self{value:0}
+}
+pub fn level_up()->Self{Self{value:10}
+}
+pub fn terrain_info()->Self{Self{value:50}
+}
+pub fn basic_menu()->Self{Self{value:500}
+}
+pub fn title_bar()->Self{Self{value:600}
+}
+pub fn tutorial()->Self{Self{value:700}
+}
+pub fn help()->Self{Self{value:800}
+}
+pub fn telop()->Self{Self{value:1000}
+}
+pub fn movie()->Self{Self{value:1050}
+}
+pub fn achieve()->Self{Self{value:1100}
+}
+pub fn talk_ui()->Self{Self{value:1100}
+}
+pub fn fade()->Self{Self{value:1200}
+}
+pub fn dialog()->Self{Self{value:1500}
+}
+pub fn debug()->Self{Self{value:2000}
+}
 }
 
 }
@@ -171,30 +76,53 @@ impl  GameUI_Priority  {
 #[cfg(feature = "app-gameui-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gameui")]
-impl GameUI { # [doc = "`GetRoot()` overload"] pub fn get_root () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250df40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCanvas(crate::app::gameui::GameUI_Priority)` overload"] pub fn get_canvas (priority : impl :: core :: convert :: Into < crate :: app :: gameui :: GameUI_Priority >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: app :: gameui :: GameUI_Priority , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250dfc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (priority) , :: core :: option :: Option :: None) } } } # [doc = "`GetCanvas(::unity2::Il2CppString, crate::app::gameui::GameUI_Priority)` overload"] pub fn get_canvas_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , priority : impl :: core :: convert :: Into < crate :: app :: gameui :: GameUI_Priority >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: gameui :: GameUI_Priority , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250e1d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (priority) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateCanvas(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::app::gameui::GameUI_Priority)` overload"] pub fn try_create_canvas (parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , priority : impl :: core :: convert :: Into < crate :: app :: gameui :: GameUI_Priority >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Il2CppString , crate :: app :: gameui :: GameUI_Priority , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250e080usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (priority) , :: core :: option :: Option :: None) } } } # [doc = "`TrySetSortOrder(crate::unity_engine::gameobject::GameObject, crate::app::gameui::GameUI_Priority)` overload"] pub fn try_set_sort_order (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , priority : impl :: core :: convert :: Into < crate :: app :: gameui :: GameUI_Priority >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: app :: gameui :: GameUI_Priority , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250e300usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (priority) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gameui")]impl GameUI{#[doc="`GetRoot()` overload"]pub fn get_root()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250df40usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`GetCanvas(crate::app::gameui::GameUI_Priority)` overload"]pub fn get_canvas(priority:impl::core::convert::Into<crate::app::gameui::GameUI_Priority>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250dfc0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::app::gameui::GameUI_Priority)::core::convert::Into::into(priority))}
+}
+#[doc="`GetCanvas(::unity2::Il2CppString, crate::app::gameui::GameUI_Priority)` overload"]pub fn get_canvas_2(name:impl::core::convert::Into< ::unity2::Il2CppString> ,priority:impl::core::convert::Into<crate::app::gameui::GameUI_Priority>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250e1d0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::gameui::GameUI_Priority)::core::convert::Into::into(priority))}
+}
+#[doc="`TryCreateCanvas(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, crate::app::gameui::GameUI_Priority)` overload"]pub fn try_create_canvas(parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,priority:impl::core::convert::Into<crate::app::gameui::GameUI_Priority>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250e080usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::gameui::GameUI_Priority)::core::convert::Into::into(priority))}
+}
+#[doc="`TrySetSortOrder(crate::unity_engine::gameobject::GameObject, crate::app::gameui::GameUI_Priority)` overload"]pub fn try_set_sort_order(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,priority:impl::core::convert::Into<crate::app::gameui::GameUI_Priority>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250e300usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(crate::app::gameui::GameUI_Priority)::core::convert::Into::into(priority))}
+}
+}
 
-#[cfg(feature = "app-gameui")]
-pub trait IGameUIMethods : IGameUI { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250e380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gameui")]pub trait IGameUIMethods:IGameUI{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250e380usize)as*mut u8,();
+(GameUI)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gameui")]
-impl < __T : IGameUI > IGameUIMethods for __T { }
+#[cfg(feature="app-gameui")]impl<__T:IGameUI>IGameUIMethods for __T{}
 
-#[cfg(feature = "app-gameui")]
-impl GameUI { pub fn get_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_canvas_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_create_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn try_set_sort_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-gameui")]impl GameUI{pub fn get_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_canvas_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_create_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn try_set_sort_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-gameui")]
-impl GameUI {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameUI) , :: core :: stringify ! (new) ,)) ; < Self as IGameUIMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gameui")]impl GameUI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUI), ::core::stringify!(new),));
+ <Self as IGameUIMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gameui")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameUI_Priority;
     pub use super::GameUI;
     pub use super::IGameUI;
     pub use super::IGameUIMethods;
+    pub use super::GameUI_Priority;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

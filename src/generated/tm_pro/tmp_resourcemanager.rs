@@ -4,38 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_resourcemanager/TMP_ResourceManager.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_ResourceManager")] # [parent (crate :: system :: object :: Object)] pub struct TMP_ResourceManager {
-# [static_field] # [rename (name = "s_instance")] pub s_instance : crate :: tm_pro :: tmp_resourcemanager :: TMP_ResourceManager ,
-# [static_field] # [rename (name = "s_TextSettings")] pub s_text_settings : crate :: tm_pro :: tmp_settings :: TMP_Settings ,
-# [static_field] # [rename (name = "s_FontAssetReferences")] pub s_font_asset_references : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > ,
-# [static_field] # [rename (name = "s_FontAssetReferenceLookup")] pub s_font_asset_reference_lookup : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_resourcemanager/TMP_ResourceManager.md"))]#[::unity2::class(namespace="TMPro",name="TMP_ResourceManager")]#[parent(crate::system::object::Object)]pub struct TMP_ResourceManager{#[static_field]#[rename(name="s_instance")]pub s_instance:crate::tm_pro::tmp_resourcemanager::TMP_ResourceManager, #[static_field]#[rename(name="s_TextSettings")]pub s_text_settings:crate::tm_pro::tmp_settings::TMP_Settings, #[static_field]#[rename(name="s_FontAssetReferences")]pub s_font_asset_references:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_fontasset::TMP_FontAsset> , #[static_field]#[rename(name="s_FontAssetReferenceLookup")]pub s_font_asset_reference_lookup:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::tm_pro::tmp_fontasset::TMP_FontAsset> ,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_resourcemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_resourcemanager")]
-impl TMP_ResourceManager { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a0d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetTextSettings()` overload"] pub fn get_text_settings () -> crate :: tm_pro :: tmp_settings :: TMP_Settings { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_settings :: TMP_Settings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a200usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddFontAsset(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"] pub fn add_font_asset (font_asset : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset >) -> () { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (font_asset) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetFontAsset(i32, *mutcrate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"] pub fn try_get_font_asset (hashcode : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > :: uninit () ; let __ret = { { let __inner : extern "C" fn (i32 , * mut crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (hashcode) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`RebuildFontAssetCache(i32)` overload"] pub fn rebuild_font_asset_cache (instance_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a510usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (instance_id) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_resourcemanager")]impl TMP_ResourceManager{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282a0d0usize)as*mut u8,();
+)}
+}
+#[doc="`GetTextSettings()` overload"]pub fn get_text_settings()->crate::tm_pro::tmp_settings::TMP_Settings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282a200usize)as*mut u8,crate::tm_pro::tmp_settings::TMP_Settings;
+)}
+}
+#[doc="`AddFontAsset(crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]pub fn add_font_asset(font_asset:impl::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282a340usize)as*mut u8,();
+(crate::tm_pro::tmp_fontasset::TMP_FontAsset)::core::convert::Into::into(font_asset))}
+}
+#[doc="`TryGetFontAsset(i32, *mutcrate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]pub fn try_get_font_asset(hashcode:impl::core::convert::Into<i32>)->(bool,crate::tm_pro::tmp_fontasset::TMP_FontAsset){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::tm_pro::tmp_fontasset::TMP_FontAsset> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x282a460usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(hashcode),(*mut crate::tm_pro::tmp_fontasset::TMP_FontAsset)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`RebuildFontAssetCache(i32)` overload"]pub fn rebuild_font_asset_cache(instance_id:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x282a510usize)as*mut u8,();
+(i32)::core::convert::Into::into(instance_id))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_resourcemanager")]
-pub trait ITMP_ResourceManagerMethods : ITMP_ResourceManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_ResourceManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_ResourceManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282a1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_resourcemanager")]pub trait ITMP_ResourceManagerMethods:ITMP_ResourceManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_ResourceManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282a1f0usize)as*mut u8,();
+(TMP_ResourceManager)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_resourcemanager")]
-impl < __T : ITMP_ResourceManager > ITMP_ResourceManagerMethods for __T { }
+#[cfg(feature="tm_pro-tmp_resourcemanager")]impl<__T:ITMP_ResourceManager>ITMP_ResourceManagerMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_resourcemanager")]
-impl TMP_ResourceManager { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ResourceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_text_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ResourceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_font_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ResourceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_get_font_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ResourceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn rebuild_font_asset_cache_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ResourceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_ResourceManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="tm_pro-tmp_resourcemanager")]impl TMP_ResourceManager{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_text_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_font_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_get_font_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn rebuild_font_asset_cache_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "tm_pro-tmp_resourcemanager")]
-impl TMP_ResourceManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_ResourceManager) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_ResourceManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_resourcemanager")]impl TMP_ResourceManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_ResourceManager), ::core::stringify!(new),));
+ <Self as ITMP_ResourceManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_resourcemanager")]

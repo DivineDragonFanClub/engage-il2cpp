@@ -4,32 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/abstracteventdata/AbstractEventData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "AbstractEventData")] # [parent (crate :: system :: object :: Object)] pub struct AbstractEventData {
-# [offset (16)] # [rename (name = "m_Used")] pub m_used : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/abstracteventdata/AbstractEventData.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="AbstractEventData")]#[parent(crate::system::object::Object)]pub struct AbstractEventData{#[offset(16)]#[rename(name="m_Used")]pub m_used:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-abstracteventdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-abstracteventdata")]
-pub trait IAbstractEventDataMethods : IAbstractEventData { # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < AbstractEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AbstractEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31793c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Use()` overload"] fn r#use (self ,) -> () { unsafe { let __receiver = < AbstractEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AbstractEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31793d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_used()` overload"] fn get_used (self ,) -> bool { unsafe { let __receiver = < AbstractEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AbstractEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31793e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AbstractEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AbstractEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31793f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-abstracteventdata")]pub trait IAbstractEventDataMethods:IAbstractEventData{#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <AbstractEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31793c0usize)as*mut u8,();
+(AbstractEventData)__receiver)}
+}
+#[doc="`Use()` overload"]fn r#use(self,)->(){unsafe{let __receiver= <AbstractEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31793d0usize)as*mut u8,();
+(AbstractEventData)__receiver)}
+}
+#[doc="`get_used()` overload"]fn get_used(self,)->bool{unsafe{let __receiver= <AbstractEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31793e0usize)as*mut u8,bool;
+(AbstractEventData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AbstractEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31793f0usize)as*mut u8,();
+(AbstractEventData)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-abstracteventdata")]
-impl < __T : IAbstractEventData > IAbstractEventDataMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-abstracteventdata")]impl<__T:IAbstractEventData>IAbstractEventDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-abstracteventdata")]
-impl AbstractEventData { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AbstractEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn use_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AbstractEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_used_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AbstractEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AbstractEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-event_systems-abstracteventdata")]impl AbstractEventData{pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn use_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_used_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-abstracteventdata")]
-impl AbstractEventData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AbstractEventData) , :: core :: stringify ! (new) ,)) ; < Self as IAbstractEventDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-abstracteventdata")]impl AbstractEventData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AbstractEventData), ::core::stringify!(new),));
+ <Self as IAbstractEventDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-abstracteventdata")]

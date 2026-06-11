@@ -4,37 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugparams/RenderGraphDebugParams.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphDebugParams")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphDebugParams {
-# [offset (16)] # [rename (name = "clearRenderTargetsAtCreation")] pub clear_render_targets_at_creation : bool ,
-# [offset (17)] # [rename (name = "clearRenderTargetsAtRelease")] pub clear_render_targets_at_release : bool ,
-# [offset (18)] # [rename (name = "disablePassCulling")] pub disable_pass_culling : bool ,
-# [offset (19)] # [rename (name = "immediateMode")] pub immediate_mode : bool ,
-# [offset (20)] # [rename (name = "logFrameInformation")] pub log_frame_information : bool ,
-# [offset (21)] # [rename (name = "logResources")] pub log_resources : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugparams/RenderGraphDebugParams.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraphDebugParams")]#[parent(crate::system::object::Object)]pub struct RenderGraphDebugParams{#[offset(16)]#[rename(name="clearRenderTargetsAtCreation")]pub clear_render_targets_at_creation:bool, #[offset(17)]#[rename(name="clearRenderTargetsAtRelease")]pub clear_render_targets_at_release:bool, #[offset(18)]#[rename(name="disablePassCulling")]pub disable_pass_culling:bool, #[offset(19)]#[rename(name="immediateMode")]pub immediate_mode:bool, #[offset(20)]#[rename(name="logFrameInformation")]pub log_frame_information:bool, #[offset(21)]#[rename(name="logResources")]pub log_resources:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
-pub trait IRenderGraphDebugParamsMethods : IRenderGraphDebugParams { # [doc = "`RegisterDebug(::unity2::Il2CppString)` overload"] fn register_debug (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RenderGraphDebugParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphDebugParams , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b1a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`UnRegisterDebug(::unity2::Il2CppString)` overload"] fn un_register_debug (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RenderGraphDebugParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphDebugParams , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b2100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderGraphDebugParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphDebugParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b1770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]pub trait IRenderGraphDebugParamsMethods:IRenderGraphDebugParams{#[doc="`RegisterDebug(::unity2::Il2CppString)` overload"]fn register_debug(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RenderGraphDebugParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b1a30usize)as*mut u8,();
+(RenderGraphDebugParams)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`UnRegisterDebug(::unity2::Il2CppString)` overload"]fn un_register_debug(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RenderGraphDebugParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b2100usize)as*mut u8,();
+(RenderGraphDebugParams)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderGraphDebugParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b1770usize)as*mut u8,();
+(RenderGraphDebugParams)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
-impl < __T : IRenderGraphDebugParams > IRenderGraphDebugParamsMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]impl<__T:IRenderGraphDebugParams>IRenderGraphDebugParamsMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
-impl RenderGraphDebugParams { pub fn register_debug_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphDebugParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn un_register_debug_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphDebugParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphDebugParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]impl RenderGraphDebugParams{pub fn register_debug_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn un_register_debug_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]
-impl RenderGraphDebugParams {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraphDebugParams) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraphDebugParamsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]impl RenderGraphDebugParams{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RenderGraphDebugParams), ::core::stringify!(new),));
+ <Self as IRenderGraphDebugParamsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphdebugparams")]

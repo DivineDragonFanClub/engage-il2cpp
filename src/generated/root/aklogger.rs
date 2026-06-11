@@ -4,68 +4,111 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aklogger/AkLogger.md"))] # [:: unity2 :: class (namespace = "" , name = "AkLogger")] # [parent (crate :: system :: object :: Object)] pub struct AkLogger {
-# [static_field] # [rename (name = "ms_Instance")] pub ms_instance : crate :: root :: aklogger :: AkLogger ,
-# [offset (16)] # [rename (name = "errorLoggerDelegate")] pub error_logger_delegate : crate :: root :: aklogger :: AkLogger_ErrorLoggerInteropDelegate ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aklogger/AkLogger_ErrorLoggerInteropDelegate.md"))]#[::unity2::class(namespace="",name="AkLogger.ErrorLoggerInteropDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkLogger_ErrorLoggerInteropDelegate{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aklogger/AkLogger_ErrorLoggerInteropDelegate.md"))] # [:: unity2 :: class (namespace = "" , name = "AkLogger.ErrorLoggerInteropDelegate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AkLogger_ErrorLoggerInteropDelegate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aklogger/AkLogger.md"))]#[::unity2::class(namespace="",name="AkLogger")]#[parent(crate::system::object::Object)]pub struct AkLogger{#[static_field]#[rename(name="ms_Instance")]pub ms_instance:crate::root::aklogger::AkLogger, #[offset(16)]#[rename(name="errorLoggerDelegate")]pub error_logger_delegate:crate::root::aklogger::AkLogger_ErrorLoggerInteropDelegate,}
 
 }
 
 #[cfg(feature = "root-aklogger-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aklogger")]
-impl AkLogger { # [doc = "`get_Instance()` overload"] pub fn get_instance () -> crate :: root :: aklogger :: AkLogger { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: root :: aklogger :: AkLogger = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f22ee0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`WwiseInternalLogError(::unity2::Il2CppString)` overload"] pub fn wwise_internal_log_error (message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f22c90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`Message(::unity2::Il2CppString)` overload"] pub fn message (message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f230b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`Warning(::unity2::Il2CppString)` overload"] pub fn warning (message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f231a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`Error(::unity2::Il2CppString)` overload"] pub fn error (message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-aklogger")]
-pub trait IAkLoggerMethods : IAkLogger { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkLogger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f22d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkLogger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f22f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < AkLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkLogger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f230a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-aklogger")]
-impl < __T : IAkLogger > IAkLoggerMethods for __T { }
-
-#[cfg(feature = "root-aklogger")]
-impl AkLogger { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn wwise_internal_log_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn warning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "root-aklogger")]
-impl AkLogger {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkLogger) , :: core :: stringify ! (new) ,)) ; < Self as IAkLoggerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-aklogger")]pub trait IAkLogger_ErrorLoggerInteropDelegateMethods:IAkLogger_ErrorLoggerInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkLogger_ErrorLoggerInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e7f0usize)as*mut u8,();
+(AkLogger_ErrorLoggerInteropDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkLogger_ErrorLoggerInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e810usize)as*mut u8,();
+(AkLogger_ErrorLoggerInteropDelegate)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
 }
 
-#[cfg(feature = "root-aklogger")]
-pub trait IAkLogger_ErrorLoggerInteropDelegateMethods : IAkLogger_ErrorLoggerInteropDelegate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkLogger_ErrorLoggerInteropDelegate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9e7f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Il2CppString)` overload"] fn invoke (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkLogger_ErrorLoggerInteropDelegate , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9e810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aklogger")]impl<__T:IAkLogger_ErrorLoggerInteropDelegate>IAkLogger_ErrorLoggerInteropDelegateMethods for __T{}
 
-#[cfg(feature = "root-aklogger")]
-impl < __T : IAkLogger_ErrorLoggerInteropDelegate > IAkLogger_ErrorLoggerInteropDelegateMethods for __T { }
+#[cfg(feature="root-aklogger")]impl AkLogger_ErrorLoggerInteropDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-aklogger")]
-impl AkLogger_ErrorLoggerInteropDelegate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkLogger_ErrorLoggerInteropDelegate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-aklogger")]impl AkLogger_ErrorLoggerInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkLogger_ErrorLoggerInteropDelegate), ::core::stringify!(new),));
+ <Self as IAkLogger_ErrorLoggerInteropDelegateMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "root-aklogger")]
-impl AkLogger_ErrorLoggerInteropDelegate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkLogger_ErrorLoggerInteropDelegate) , :: core :: stringify ! (new) ,)) ; < Self as IAkLogger_ErrorLoggerInteropDelegateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-aklogger")]impl AkLogger{#[doc="`get_Instance()` overload"]pub fn get_instance()->crate::root::aklogger::AkLogger{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f22ee0usize)as*mut u8,crate::root::aklogger::AkLogger;
+)}
+}
+#[doc="`WwiseInternalLogError(::unity2::Il2CppString)` overload"]pub fn wwise_internal_log_error(message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f22c90usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`Message(::unity2::Il2CppString)` overload"]pub fn message(message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f230b0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`Warning(::unity2::Il2CppString)` overload"]pub fn warning(message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f231a0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`Error(::unity2::Il2CppString)` overload"]pub fn error(message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f23290usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f23380usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="root-aklogger")]pub trait IAkLoggerMethods:IAkLogger{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f22d80usize)as*mut u8,();
+(AkLogger)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f22f50usize)as*mut u8,();
+(AkLogger)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <AkLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f230a0usize)as*mut u8,();
+(AkLogger)__receiver)}
+}
+}
+
+#[cfg(feature="root-aklogger")]impl<__T:IAkLogger>IAkLoggerMethods for __T{}
+
+#[cfg(feature="root-aklogger")]impl AkLogger{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn wwise_internal_log_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn warning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="root-aklogger")]impl AkLogger{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkLogger), ::core::stringify!(new),));
+ <Self as IAkLoggerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-aklogger")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkLogger;
-    pub use super::IAkLogger;
-    pub use super::IAkLoggerMethods;
     pub use super::AkLogger_ErrorLoggerInteropDelegate;
     pub use super::IAkLogger_ErrorLoggerInteropDelegate;
     pub use super::IAkLogger_ErrorLoggerInteropDelegateMethods;
+    pub use super::AkLogger;
+    pub use super::IAkLogger;
+    pub use super::IAkLoggerMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

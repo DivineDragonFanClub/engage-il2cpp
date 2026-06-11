@@ -4,35 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menumanager/MenuManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "MenuManager")] # [parent (crate :: system :: object :: Object)] pub struct MenuManager {
-# [static_field] # [rename (name = "m_menuList")] pub m_menu_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenu :: BasicMenu > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/menumanager/MenuManager.md"))]#[::unity2::class(namespace="App",name="MenuManager")]#[parent(crate::system::object::Object)]pub struct MenuManager{#[static_field]#[rename(name="m_menuList")]pub m_menu_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenu::BasicMenu> ,}
 
 }
 
 #[cfg(feature = "app-menumanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-menumanager")]
-impl MenuManager { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d0950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PostLoadPrefabAsnc()` overload"] pub fn post_load_prefab_asnc () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d0b30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddMenu(crate::app::basicmenu::BasicMenu)` overload"] pub fn add_menu (menu : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d0b40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (menu) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveMenu(crate::app::basicmenu::BasicMenu)` overload"] pub fn remove_menu (menu : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: basicmenu :: BasicMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d0bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (menu) , :: core :: option :: Option :: None) } } } # [doc = "`CloseAll()` overload"] pub fn close_all () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d0c60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DeleteAll()` overload"] pub fn delete_all () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d0da0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DebugLog_List()` overload"] pub fn debug_log_list () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d0e70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d1010usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-menumanager")]impl MenuManager{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d0950usize)as*mut u8,();
+)}
+}
+#[doc="`PostLoadPrefabAsnc()` overload"]pub fn post_load_prefab_asnc()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d0b30usize)as*mut u8,();
+)}
+}
+#[doc="`AddMenu(crate::app::basicmenu::BasicMenu)` overload"]pub fn add_menu(menu:impl::core::convert::Into<crate::app::basicmenu::BasicMenu>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d0b40usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(menu))}
+}
+#[doc="`RemoveMenu(crate::app::basicmenu::BasicMenu)` overload"]pub fn remove_menu(menu:impl::core::convert::Into<crate::app::basicmenu::BasicMenu>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d0bd0usize)as*mut u8,();
+(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(menu))}
+}
+#[doc="`CloseAll()` overload"]pub fn close_all()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d0c60usize)as*mut u8,();
+)}
+}
+#[doc="`DeleteAll()` overload"]pub fn delete_all()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d0da0usize)as*mut u8,();
+)}
+}
+#[doc="`DebugLog_List()` overload"]pub fn debug_log_list()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d0e70usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d1010usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-menumanager")]
-pub trait IMenuManagerMethods : IMenuManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MenuManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MenuManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d1000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-menumanager")]pub trait IMenuManagerMethods:IMenuManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MenuManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25d1000usize)as*mut u8,();
+(MenuManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-menumanager")]
-impl < __T : IMenuManager > IMenuManagerMethods for __T { }
+#[cfg(feature="app-menumanager")]impl<__T:IMenuManager>IMenuManagerMethods for __T{}
 
-#[cfg(feature = "app-menumanager")]
-impl MenuManager { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn post_load_prefab_asnc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn remove_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn close_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn delete_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn debug_log_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-menumanager")]impl MenuManager{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn post_load_prefab_asnc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn remove_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn close_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn delete_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn debug_log_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-menumanager")]
-impl MenuManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MenuManager) , :: core :: stringify ! (new) ,)) ; < Self as IMenuManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-menumanager")]impl MenuManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MenuManager), ::core::stringify!(new),));
+ <Self as IMenuManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-menumanager")]

@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblydefaultaliasattribute/AssemblyDefaultAliasAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyDefaultAliasAttribute")] pub struct AssemblyDefaultAliasAttribute {
-# [offset (16)] # [rename (name = "m_defaultAlias")] pub m_default_alias : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblydefaultaliasattribute/AssemblyDefaultAliasAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyDefaultAliasAttribute")]pub struct AssemblyDefaultAliasAttribute{#[offset(16)]#[rename(name="m_defaultAlias")]pub m_default_alias: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblydefaultaliasattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblydefaultaliasattribute")]
-pub trait IAssemblyDefaultAliasAttributeMethods : IAssemblyDefaultAliasAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , default_alias : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyDefaultAliasAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyDefaultAliasAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (default_alias) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblydefaultaliasattribute")]pub trait IAssemblyDefaultAliasAttributeMethods:IAssemblyDefaultAliasAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,default_alias:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyDefaultAliasAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401b60usize)as*mut u8,();
+(AssemblyDefaultAliasAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(default_alias))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblydefaultaliasattribute")]
-impl < __T : IAssemblyDefaultAliasAttribute > IAssemblyDefaultAliasAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblydefaultaliasattribute")]impl<__T:IAssemblyDefaultAliasAttribute>IAssemblyDefaultAliasAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblydefaultaliasattribute")]
-impl AssemblyDefaultAliasAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyDefaultAliasAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblydefaultaliasattribute")]impl AssemblyDefaultAliasAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblydefaultaliasattribute")]
-impl AssemblyDefaultAliasAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (default_alias : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyDefaultAliasAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyDefaultAliasAttributeMethods > :: ctor (this , default_alias) ; this }
+#[cfg(feature="system-reflection-assemblydefaultaliasattribute")]impl AssemblyDefaultAliasAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(default_alias: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyDefaultAliasAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyDefaultAliasAttributeMethods> ::ctor(this,default_alias);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblydefaultaliasattribute")]

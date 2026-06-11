@@ -4,23 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/vibrationfile_2/VibrationFile_2.md"))] # [:: unity2 :: class (namespace = "nn.hid" , name = "VibrationFile")] # [parent (crate :: system :: object :: Object)] pub struct VibrationFile_2 {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibrationfile_2/VibrationFile_2.md"))]#[::unity2::class(namespace="nn.hid",name="VibrationFile")]#[parent(crate::system::object::Object)]pub struct VibrationFile_2{}
 
 }
 
 #[cfg(feature = "nn-hid-vibrationfile_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-vibrationfile_2")]
-impl VibrationFile_2 { # [doc = "`RetrieveValue(*mutcrate::nn::hid::vibrationvalue::VibrationValue, i32, *mutcrate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext)` overload"] pub fn retrieve_value (position : impl :: core :: convert :: Into < i32 >) -> (crate :: nn :: hid :: vibrationvalue :: VibrationValue , crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: nn :: hid :: vibrationvalue :: VibrationValue > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: nn :: hid :: vibrationvalue :: VibrationValue , i32 , * mut crate :: nn :: hid :: vibrationfileparsercontext :: VibrationFileParserContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bfac0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (position) , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Generate(*muti64, ::unity2::Array<u8>, i64, crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo, ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)` overload"] pub fn generate (out_buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , buffer_size : impl :: core :: convert :: Into < i64 > , info : impl :: core :: convert :: Into < crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo > , p_values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > >) -> i64 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i64 > :: uninit () ; { let __inner : extern "C" fn (* mut i64 , :: unity2 :: Array < u8 > , i64 , crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo , :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bfad0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (out_buffer) , :: core :: convert :: Into :: into (buffer_size) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (p_values) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Generate(*muti64, ::unity2::Array<u8>, crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo, ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)` overload"] pub fn generate_2 (out_buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , info : impl :: core :: convert :: Into < crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo > , p_values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > >) -> i64 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i64 > :: uninit () ; { let __inner : extern "C" fn (* mut i64 , :: unity2 :: Array < u8 > , crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo , :: unity2 :: Array < crate :: nn :: hid :: vibrationvalue :: VibrationValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bfb20usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (out_buffer) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (p_values) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`CalculateSize(crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo)` overload"] pub fn calculate_size (info : impl :: core :: convert :: Into < crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo >) -> i64 { unsafe { { let __inner : extern "C" fn (crate :: nn :: hid :: vibrationvaluearrayinfo :: VibrationValueArrayInfo , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bfb80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-vibrationfile_2")]impl VibrationFile_2{#[doc="`RetrieveValue(*mutcrate::nn::hid::vibrationvalue::VibrationValue, i32, *mutcrate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext)` overload"]pub fn retrieve_value(position:impl::core::convert::Into<i32>)->(crate::nn::hid::vibrationvalue::VibrationValue,crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::nn::hid::vibrationvalue::VibrationValue> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bfac0usize)as*mut u8,();
+(*mut crate::nn::hid::vibrationvalue::VibrationValue)__out_0.as_mut_ptr(),(i32)::core::convert::Into::into(position),(*mut crate::nn::hid::vibrationfileparsercontext::VibrationFileParserContext)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Generate(*muti64, ::unity2::Array<u8>, i64, crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo, ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)` overload"]pub fn generate(out_buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,buffer_size:impl::core::convert::Into<i64> ,info:impl::core::convert::Into<crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo> ,p_values:impl::core::convert::Into< ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue> >)->i64{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i64> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bfad0usize)as*mut u8,();
+(*mut i64)__out_0.as_mut_ptr(),(::unity2::Array<u8>)::core::convert::Into::into(out_buffer),(i64)::core::convert::Into::into(buffer_size),(crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo)::core::convert::Into::into(info),(::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)::core::convert::Into::into(p_values));
+__out_0.assume_init()}
+}
+#[doc="`Generate(*muti64, ::unity2::Array<u8>, crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo, ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)` overload"]pub fn generate_2(out_buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,info:impl::core::convert::Into<crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo> ,p_values:impl::core::convert::Into< ::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue> >)->i64{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i64> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bfb20usize)as*mut u8,();
+(*mut i64)__out_0.as_mut_ptr(),(::unity2::Array<u8>)::core::convert::Into::into(out_buffer),(crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo)::core::convert::Into::into(info),(::unity2::Array<crate::nn::hid::vibrationvalue::VibrationValue>)::core::convert::Into::into(p_values));
+__out_0.assume_init()}
+}
+#[doc="`CalculateSize(crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo)` overload"]pub fn calculate_size(info:impl::core::convert::Into<crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo>)->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bfb80usize)as*mut u8,i64;
+(crate::nn::hid::vibrationvaluearrayinfo::VibrationValueArrayInfo)::core::convert::Into::into(info))}
+}
+}
 
-#[cfg(feature = "nn-hid-vibrationfile_2")]
-impl VibrationFile_2 { pub fn retrieve_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFile_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn generate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFile_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn generate_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFile_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calculate_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFile_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="nn-hid-vibrationfile_2")]impl VibrationFile_2{pub fn retrieve_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn generate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn generate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calculate_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "nn-hid-vibrationfile_2")]
 #[doc(hidden)]

@@ -4,23 +4,27 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/trex/TREx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "TREx")] # [parent (crate :: system :: object :: Object)] pub struct TREx {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/trex/TREx.md"))]#[::unity2::class(namespace="Combat",name="TREx")]#[parent(crate::system::object::Object)]pub struct TREx{}
 
 }
 
 #[cfg(feature = "combat-trex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-trex")]
-impl TREx { # [doc = "`SetTR(crate::unity_engine::transform::Transform, *mutcrate::combat::tr::TR)` overload"] pub fn set_tr (t : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: combat :: tr :: TR { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: combat :: tr :: TR > :: uninit () ; { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , * mut crate :: combat :: tr :: TR , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20b7be0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (t) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="combat-trex")]impl TREx{#[doc="`SetTR(crate::unity_engine::transform::Transform, *mutcrate::combat::tr::TR)` overload"]pub fn set_tr(t:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::combat::tr::TR{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::combat::tr::TR> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7be0usize)as*mut u8,();
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(t),(*mut crate::combat::tr::TR)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "combat-trex")]
-impl TREx { pub fn set_tr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TREx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-trex")]impl TREx{pub fn set_tr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-trex")]
 #[doc(hidden)]

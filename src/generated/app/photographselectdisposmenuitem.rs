@@ -4,35 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectdisposmenuitem/PhotographSelectDisposMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectDisposMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct PhotographSelectDisposMenuItem {
-# [offset (104)] # [rename (name = "m_CharacterID")] pub m_character_id : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_IsMascotArea")] pub m_is_mascot_area : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenuitem/PhotographSelectDisposMenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct PhotographSelectDisposMenuItem{#[offset(104)]#[rename(name="m_CharacterID")]pub m_character_id: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_IsMascotArea")]pub m_is_mascot_area:bool,}
 
 }
 
 #[cfg(feature = "app-photographselectdisposmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographselectdisposmenuitem")]
-pub trait IPhotographSelectDisposMenuItemMethods : IPhotographSelectDisposMenuItem { # [doc = "`get_CharacterID()` overload"] fn get_character_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PhotographSelectDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectDisposMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26983e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsMascotArea()` overload"] fn get_is_mascot_area (self ,) -> bool { unsafe { let __receiver = < PhotographSelectDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectDisposMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26983f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, bool)` overload"] fn ctor (self , character_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_mascot_area : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographSelectDisposMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectDisposMenuItem , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2697bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character_id) , :: core :: convert :: Into :: into (is_mascot_area) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectdisposmenuitem")]pub trait IPhotographSelectDisposMenuItemMethods:IPhotographSelectDisposMenuItem{#[doc="`get_CharacterID()` overload"]fn get_character_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSelectDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26983e0usize)as*mut u8, ::unity2::Il2CppString;
+(PhotographSelectDisposMenuItem)__receiver)}
+}
+#[doc="`get_IsMascotArea()` overload"]fn get_is_mascot_area(self,)->bool{unsafe{let __receiver= <PhotographSelectDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26983f0usize)as*mut u8,bool;
+(PhotographSelectDisposMenuItem)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor(self,character_id:impl::core::convert::Into< ::unity2::Il2CppString> ,is_mascot_area:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectDisposMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2697bf0usize)as*mut u8,();
+(PhotographSelectDisposMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(character_id),(bool)::core::convert::Into::into(is_mascot_area))}
+}
+}
 
-#[cfg(feature = "app-photographselectdisposmenuitem")]
-impl < __T : IPhotographSelectDisposMenuItem > IPhotographSelectDisposMenuItemMethods for __T { }
+#[cfg(feature="app-photographselectdisposmenuitem")]impl<__T:IPhotographSelectDisposMenuItem>IPhotographSelectDisposMenuItemMethods for __T{}
 
-#[cfg(feature = "app-photographselectdisposmenuitem")]
-impl PhotographSelectDisposMenuItem { pub fn get_character_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_mascot_area_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectDisposMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-photographselectdisposmenuitem")]impl PhotographSelectDisposMenuItem{pub fn get_character_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_mascot_area_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-photographselectdisposmenuitem")]
-impl PhotographSelectDisposMenuItem {
-# [doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"] pub fn new (character_id : :: unity2 :: Il2CppString , is_mascot_area : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectDisposMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectDisposMenuItemMethods > :: ctor (this , character_id , is_mascot_area) ; this }
+#[cfg(feature="app-photographselectdisposmenuitem")]impl PhotographSelectDisposMenuItem{#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new(character_id: ::unity2::Il2CppString,is_mascot_area:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectDisposMenuItem), ::core::stringify!(new),));
+ <Self as IPhotographSelectDisposMenuItemMethods> ::ctor(this,character_id,is_mascot_area);
+this}
 }
 
 #[cfg(feature = "app-photographselectdisposmenuitem")]

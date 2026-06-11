@@ -4,87 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: actiondisposerholder :: { ActionDisposerHolder , IActionDisposerHolder }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::actiondisposerholder::{ActionDisposerHolder,IActionDisposerHolder}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiongranbase/ActionGranBase_MoveAct.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ActionGranBase_MoveAct  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiongranbase/ActionGranBase.md"))]#[::unity2::class(namespace="Combat",name="ActionGranBase")]#[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]pub struct ActionGranBase{#[static_field]#[rename(name="AttackLineBehind")]pub attack_line_behind:f32, #[static_field]#[rename(name="DamageLineBehind")]pub damage_line_behind:f32, #[static_field]#[rename(name="BackstepDistance")]pub backstep_distance:f32, #[offset(56)]#[rename(name="warpedGoal")]pub warped_goal:crate::combat::fxz::FXZ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiongranbase/ActionGranBase_MoveAct.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ActionGranBase_MoveAct{pub value:i32,}
+impl::unity2::ClassIdentity for ActionGranBase_MoveAct{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="ActionGranBase.MoveAct";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for ActionGranBase_MoveAct  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "ActionGranBase.MoveAct";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for ActionGranBase_MoveAct{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for ActionGranBase_MoveAct  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl ActionGranBase_MoveAct{pub fn waiting()->Self{Self{value:0}
 }
-
-
-impl  ActionGranBase_MoveAct  {
-    pub fn waiting() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn running() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn backstep() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn warp() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn running()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranbase/ActionGranBase.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionGranBase")] # [parent (crate :: combat :: actiondisposerholder :: ActionDisposerHolder)] pub struct ActionGranBase {
-# [static_field] # [rename (name = "AttackLineBehind")] pub attack_line_behind : f32 ,
-# [static_field] # [rename (name = "DamageLineBehind")] pub damage_line_behind : f32 ,
-# [static_field] # [rename (name = "BackstepDistance")] pub backstep_distance : f32 ,
-# [offset (56)] # [rename (name = "warpedGoal")] pub warped_goal : crate :: combat :: fxz :: FXZ ,
+pub fn backstep()->Self{Self{value:2}
+}
+pub fn warp()->Self{Self{value:3}
+}
 }
 
 }
@@ -92,30 +46,106 @@ impl  ActionGranBase_MoveAct  {
 #[cfg(feature = "combat-actiongranbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actiongranbase")]
-impl ActionGranBase { # [doc = "`MasterIsFarAndGrandewIsNear(crate::combat::character::Character)` overload"] pub fn master_is_far_and_grandew_is_near (ghr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ghr) , :: core :: option :: Option :: None) } } } # [doc = "`isskyland()` overload"] pub fn isskyland () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc6580usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CalcAttackTR(crate::combat::character::Character)` overload"] pub fn calc_attack_tr (ghr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> crate :: combat :: tr :: TR { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5890usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ghr) , :: core :: option :: Option :: None) } } } # [doc = "`CalcAttackNNTR(crate::combat::character::Character)` overload"] pub fn calc_attack_nntr (ghr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> crate :: combat :: tr :: TR { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc6b20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ghr) , :: core :: option :: Option :: None) } } } # [doc = "`CalcAttackNFTR(crate::combat::character::Character)` overload"] pub fn calc_attack_nftr (ghr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> crate :: combat :: tr :: TR { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc6950usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ghr) , :: core :: option :: Option :: None) } } } # [doc = "`CalcAttackFFTR(crate::combat::character::Character)` overload"] pub fn calc_attack_fftr (ghr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> crate :: combat :: tr :: TR { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc6790usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ghr) , :: core :: option :: Option :: None) } } } # [doc = "`CalcDamageTR(crate::combat::character::Character)` overload"] pub fn calc_damage_tr (ghr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> crate :: combat :: tr :: TR { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> crate :: combat :: tr :: TR = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc60e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ghr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiongranbase")]impl ActionGranBase{#[doc="`MasterIsFarAndGrandewIsNear(crate::combat::character::Character)` overload"]pub fn master_is_far_and_grandew_is_near(ghr:impl::core::convert::Into<crate::combat::character::Character>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5830usize)as*mut u8,bool;
+(crate::combat::character::Character)::core::convert::Into::into(ghr))}
+}
+#[doc="`isskyland()` overload"]pub fn isskyland()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6580usize)as*mut u8,bool;
+)}
+}
+#[doc="`CalcAttackTR(crate::combat::character::Character)` overload"]pub fn calc_attack_tr(ghr:impl::core::convert::Into<crate::combat::character::Character>)->crate::combat::tr::TR{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5890usize)as*mut u8,crate::combat::tr::TR;
+(crate::combat::character::Character)::core::convert::Into::into(ghr))}
+}
+#[doc="`CalcAttackNNTR(crate::combat::character::Character)` overload"]pub fn calc_attack_nntr(ghr:impl::core::convert::Into<crate::combat::character::Character>)->crate::combat::tr::TR{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6b20usize)as*mut u8,crate::combat::tr::TR;
+(crate::combat::character::Character)::core::convert::Into::into(ghr))}
+}
+#[doc="`CalcAttackNFTR(crate::combat::character::Character)` overload"]pub fn calc_attack_nftr(ghr:impl::core::convert::Into<crate::combat::character::Character>)->crate::combat::tr::TR{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6950usize)as*mut u8,crate::combat::tr::TR;
+(crate::combat::character::Character)::core::convert::Into::into(ghr))}
+}
+#[doc="`CalcAttackFFTR(crate::combat::character::Character)` overload"]pub fn calc_attack_fftr(ghr:impl::core::convert::Into<crate::combat::character::Character>)->crate::combat::tr::TR{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6790usize)as*mut u8,crate::combat::tr::TR;
+(crate::combat::character::Character)::core::convert::Into::into(ghr))}
+}
+#[doc="`CalcDamageTR(crate::combat::character::Character)` overload"]pub fn calc_damage_tr(ghr:impl::core::convert::Into<crate::combat::character::Character>)->crate::combat::tr::TR{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc60e0usize)as*mut u8,crate::combat::tr::TR;
+(crate::combat::character::Character)::core::convert::Into::into(ghr))}
+}
+}
 
-#[cfg(feature = "combat-actiongranbase")]
-pub trait IActionGranBaseMethods : IActionGranBase { # [doc = "`get_IsSkyLandCombat()` overload"] fn get_is_sky_land_combat (self ,) -> bool { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc6570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character)` overload"] fn ctor (self , ghr : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc59d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ghr) , :: core :: option :: Option :: None) } } } # [doc = "`get_moveAct()` overload"] fn get_move_act (self ,) -> crate :: combat :: actiongranbase :: ActionGranBase_MoveAct { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , :: unity2 :: OptionalMethod ,) -> crate :: combat :: actiongranbase :: ActionGranBase_MoveAct = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc66c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_moveAct(crate::combat::actiongranbase::ActionGranBase_MoveAct)` overload"] fn set_move_act (self , value : impl :: core :: convert :: Into < crate :: combat :: actiongranbase :: ActionGranBase_MoveAct >) -> () { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , crate :: combat :: actiongranbase :: ActionGranBase_MoveAct , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc66d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`MoveTo(crate::combat::fxz::FXZ)` overload"] fn move_to (self , goal : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc6260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (goal) , :: core :: option :: Option :: None) } } } # [doc = "`RunTo(crate::combat::fxz::FXZ)` overload"] fn run_to (self , goal : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (goal) , :: core :: option :: Option :: None) } } } # [doc = "`Warp(crate::combat::fxz::FXZ)` overload"] fn warp (self , goal : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> f32 { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc66e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (goal) , :: core :: option :: Option :: None) } } } # [doc = "`MoveEnd()` overload"] fn move_end (self ,) -> () { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc5ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEvasionHash()` overload"] fn get_evasion_hash (self ,) -> i32 { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc6750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AdjustGroundLevel(i32)` overload"] fn adjust_ground_level (self , side : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ActionGranBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionGranBase , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc6d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiongranbase")]pub trait IActionGranBaseMethods:IActionGranBase{#[doc="`get_IsSkyLandCombat()` overload"]fn get_is_sky_land_combat(self,)->bool{unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6570usize)as*mut u8,bool;
+(ActionGranBase)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character)` overload"]fn ctor(self,ghr:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc59d0usize)as*mut u8,();
+(ActionGranBase)__receiver,(crate::combat::character::Character)::core::convert::Into::into(ghr))}
+}
+#[doc="`get_moveAct()` overload"]fn get_move_act(self,)->crate::combat::actiongranbase::ActionGranBase_MoveAct{unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc66c0usize)as*mut u8,crate::combat::actiongranbase::ActionGranBase_MoveAct;
+(ActionGranBase)__receiver)}
+}
+#[doc="`set_moveAct(crate::combat::actiongranbase::ActionGranBase_MoveAct)` overload"]fn set_move_act(self,value:impl::core::convert::Into<crate::combat::actiongranbase::ActionGranBase_MoveAct>)->(){unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc66d0usize)as*mut u8,();
+(ActionGranBase)__receiver,(crate::combat::actiongranbase::ActionGranBase_MoveAct)::core::convert::Into::into(value))}
+}
+#[doc="`MoveTo(crate::combat::fxz::FXZ)` overload"]fn move_to(self,goal:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6260usize)as*mut u8,f32;
+(ActionGranBase)__receiver,(crate::combat::fxz::FXZ)::core::convert::Into::into(goal))}
+}
+#[doc="`RunTo(crate::combat::fxz::FXZ)` overload"]fn run_to(self,goal:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5b80usize)as*mut u8,f32;
+(ActionGranBase)__receiver,(crate::combat::fxz::FXZ)::core::convert::Into::into(goal))}
+}
+#[doc="`Warp(crate::combat::fxz::FXZ)` overload"]fn warp(self,goal:impl::core::convert::Into<crate::combat::fxz::FXZ>)->f32{unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc66e0usize)as*mut u8,f32;
+(ActionGranBase)__receiver,(crate::combat::fxz::FXZ)::core::convert::Into::into(goal))}
+}
+#[doc="`MoveEnd()` overload"]fn move_end(self,)->(){unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5ce0usize)as*mut u8,();
+(ActionGranBase)__receiver)}
+}
+#[doc="`GetEvasionHash()` overload"]fn get_evasion_hash(self,)->i32{unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6750usize)as*mut u8,i32;
+(ActionGranBase)__receiver)}
+}
+#[doc="`AdjustGroundLevel(i32)` overload"]fn adjust_ground_level(self,side:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ActionGranBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6d70usize)as*mut u8,();
+(ActionGranBase)__receiver,(i32)::core::convert::Into::into(side))}
+}
+}
 
-#[cfg(feature = "combat-actiongranbase")]
-impl < __T : IActionGranBase > IActionGranBaseMethods for __T { }
+#[cfg(feature="combat-actiongranbase")]impl<__T:IActionGranBase>IActionGranBaseMethods for __T{}
 
-#[cfg(feature = "combat-actiongranbase")]
-impl ActionGranBase { pub fn get_is_sky_land_combat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn master_is_far_and_grandew_is_near_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn isskyland_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_move_act_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_move_act_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn move_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn run_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn warp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn move_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_evasion_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn calc_attack_tr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn calc_attack_nntr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn calc_attack_nftr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn calc_attack_fftr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn calc_damage_tr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn adjust_ground_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionGranBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="combat-actiongranbase")]impl ActionGranBase{pub fn get_is_sky_land_combat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn master_is_far_and_grandew_is_near_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn isskyland_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_move_act_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_move_act_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn move_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn run_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn warp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_evasion_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn calc_attack_tr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn calc_attack_nntr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn calc_attack_nftr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn calc_attack_fftr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn calc_damage_tr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn adjust_ground_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "combat-actiongranbase")]
-impl ActionGranBase {
-# [doc = "`.ctor(crate::combat::character::Character)` — overload selector"] pub fn new (ghr : crate :: combat :: character :: Character) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionGranBase) , :: core :: stringify ! (new) ,)) ; < Self as IActionGranBaseMethods > :: ctor (this , ghr) ; this }
+#[cfg(feature="combat-actiongranbase")]impl ActionGranBase{#[doc="`.ctor(crate::combat::character::Character)` — overload selector"]pub fn new(ghr:crate::combat::character::Character)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionGranBase), ::core::stringify!(new),));
+ <Self as IActionGranBaseMethods> ::ctor(this,ghr);
+this}
 }
 
 #[cfg(feature = "combat-actiongranbase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionGranBase_MoveAct;
     pub use super::ActionGranBase;
     pub use super::IActionGranBase;
     pub use super::IActionGranBaseMethods;
+    pub use super::ActionGranBase_MoveAct;
     pub use crate::combat::actionbase::IActionBase;
     pub use crate::combat::actiondisposerholder::IActionDisposerHolder;
     pub use crate::combat::state::IState;

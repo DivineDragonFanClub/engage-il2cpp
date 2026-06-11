@@ -4,38 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatinput/CombatInput.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatInput")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CombatInput {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatinput/CombatInput.md"))]#[::unity2::class(namespace="Combat",name="CombatInput")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CombatInput{}
 
 }
 
 #[cfg(feature = "combat-combatinput-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatinput")]
-pub trait ICombatInputMethods : ICombatInput { # [doc = "`get_IsEnabled()` overload"] fn get_is_enabled (self ,) -> bool { unsafe { let __receiver = < CombatInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatInput , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ead630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CameraPan()` overload"] fn get_camera_pan (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < CombatInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatInput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ead660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CameraPan(crate::unity_engine::vector2::Vector2)` overload"] fn set_camera_pan (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < CombatInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatInput , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ead670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CameraTruck()` overload"] fn get_camera_truck (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < CombatInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatInput , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ead680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CameraTruck(crate::unity_engine::vector2::Vector2)` overload"] fn set_camera_truck (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < CombatInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatInput , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ead690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_KeepAForDebug()` overload"] fn get_keep_a_for_debug (self ,) -> bool { unsafe { let __receiver = < CombatInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatInput , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ead6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_KeepAForDebug(bool)` overload"] fn set_keep_a_for_debug (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CombatInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatInput , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ead6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < CombatInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatInput , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ead6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatInput as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatInput , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1eadc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatinput")]pub trait ICombatInputMethods:ICombatInput{#[doc="`get_IsEnabled()` overload"]fn get_is_enabled(self,)->bool{unsafe{let __receiver= <CombatInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ead630usize)as*mut u8,bool;
+(CombatInput)__receiver)}
+}
+#[doc="`get_CameraPan()` overload"]fn get_camera_pan(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <CombatInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ead660usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(CombatInput)__receiver)}
+}
+#[doc="`set_CameraPan(crate::unity_engine::vector2::Vector2)` overload"]fn set_camera_pan(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <CombatInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ead670usize)as*mut u8,();
+(CombatInput)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_CameraTruck()` overload"]fn get_camera_truck(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <CombatInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ead680usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(CombatInput)__receiver)}
+}
+#[doc="`set_CameraTruck(crate::unity_engine::vector2::Vector2)` overload"]fn set_camera_truck(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <CombatInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ead690usize)as*mut u8,();
+(CombatInput)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_KeepAForDebug()` overload"]fn get_keep_a_for_debug(self,)->bool{unsafe{let __receiver= <CombatInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ead6a0usize)as*mut u8,bool;
+(CombatInput)__receiver)}
+}
+#[doc="`set_KeepAForDebug(bool)` overload"]fn set_keep_a_for_debug(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CombatInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ead6b0usize)as*mut u8,();
+(CombatInput)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <CombatInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ead6c0usize)as*mut u8,();
+(CombatInput)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1eadc80usize)as*mut u8,();
+(CombatInput)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combatinput")]
-impl < __T : ICombatInput > ICombatInputMethods for __T { }
+#[cfg(feature="combat-combatinput")]impl<__T:ICombatInput>ICombatInputMethods for __T{}
 
-#[cfg(feature = "combat-combatinput")]
-impl CombatInput { pub fn get_is_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatInput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_camera_pan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatInput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_camera_pan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatInput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_camera_truck_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatInput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_camera_truck_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatInput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_keep_a_for_debug_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatInput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_keep_a_for_debug_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatInput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatInput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatInput as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="combat-combatinput")]impl CombatInput{pub fn get_is_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_camera_pan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_camera_pan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_camera_truck_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_camera_truck_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_keep_a_for_debug_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_keep_a_for_debug_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "combat-combatinput")]
-impl CombatInput {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatInput) , :: core :: stringify ! (new) ,)) ; < Self as ICombatInputMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combatinput")]impl CombatInput{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatInput), ::core::stringify!(new),));
+ <Self as ICombatInputMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-combatinput")]

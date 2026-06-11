@@ -4,44 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignmentmember/MapTerrainInfoAlignmentMember.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapTerrainInfoAlignmentMember")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapTerrainInfoAlignmentMember {
-# [offset (24)] # [rename (name = "m_Left")] pub m_left : f32 ,
-# [offset (28)] # [rename (name = "m_Right")] pub m_right : f32 ,
-# [offset (32)] # [rename (name = "m_Top")] pub m_top : f32 ,
-# [offset (36)] # [rename (name = "m_Bottom")] pub m_bottom : f32 ,
-# [offset (40)] # [rename (name = "m_Spacing")] pub m_spacing : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterraininfoalignmentmember/MapTerrainInfoAlignmentMember.md"))]#[::unity2::class(namespace="App",name="MapTerrainInfoAlignmentMember")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapTerrainInfoAlignmentMember{#[offset(24)]#[rename(name="m_Left")]pub m_left:f32, #[offset(28)]#[rename(name="m_Right")]pub m_right:f32, #[offset(32)]#[rename(name="m_Top")]pub m_top:f32, #[offset(36)]#[rename(name="m_Bottom")]pub m_bottom:f32, #[offset(40)]#[rename(name="m_Spacing")]pub m_spacing:f32,}
 
 }
 
 #[cfg(feature = "app-mapterraininfoalignmentmember-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapterraininfoalignmentmember")]
-pub trait IMapTerrainInfoAlignmentMemberMethods : IMapTerrainInfoAlignmentMember { # [doc = "`GetLeft()` overload"] fn get_left (self ,) -> f32 { unsafe { let __receiver = < MapTerrainInfoAlignmentMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrainInfoAlignmentMember , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ed40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRight()` overload"] fn get_right (self ,) -> f32 { unsafe { let __receiver = < MapTerrainInfoAlignmentMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrainInfoAlignmentMember , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ed50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTop()` overload"] fn get_top (self ,) -> f32 { unsafe { let __receiver = < MapTerrainInfoAlignmentMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrainInfoAlignmentMember , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ed60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBottom()` overload"] fn get_bottom (self ,) -> f32 { unsafe { let __receiver = < MapTerrainInfoAlignmentMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrainInfoAlignmentMember , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ed70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSpacing()` overload"] fn get_spacing (self ,) -> f32 { unsafe { let __receiver = < MapTerrainInfoAlignmentMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrainInfoAlignmentMember , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ed80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapTerrainInfoAlignmentMember as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapTerrainInfoAlignmentMember , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ed90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapterraininfoalignmentmember")]pub trait IMapTerrainInfoAlignmentMemberMethods:IMapTerrainInfoAlignmentMember{#[doc="`GetLeft()` overload"]fn get_left(self,)->f32{unsafe{let __receiver= <MapTerrainInfoAlignmentMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ed40usize)as*mut u8,f32;
+(MapTerrainInfoAlignmentMember)__receiver)}
+}
+#[doc="`GetRight()` overload"]fn get_right(self,)->f32{unsafe{let __receiver= <MapTerrainInfoAlignmentMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ed50usize)as*mut u8,f32;
+(MapTerrainInfoAlignmentMember)__receiver)}
+}
+#[doc="`GetTop()` overload"]fn get_top(self,)->f32{unsafe{let __receiver= <MapTerrainInfoAlignmentMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ed60usize)as*mut u8,f32;
+(MapTerrainInfoAlignmentMember)__receiver)}
+}
+#[doc="`GetBottom()` overload"]fn get_bottom(self,)->f32{unsafe{let __receiver= <MapTerrainInfoAlignmentMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ed70usize)as*mut u8,f32;
+(MapTerrainInfoAlignmentMember)__receiver)}
+}
+#[doc="`GetSpacing()` overload"]fn get_spacing(self,)->f32{unsafe{let __receiver= <MapTerrainInfoAlignmentMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ed80usize)as*mut u8,f32;
+(MapTerrainInfoAlignmentMember)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapTerrainInfoAlignmentMember as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ed90usize)as*mut u8,();
+(MapTerrainInfoAlignmentMember)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapterraininfoalignmentmember")]
-impl < __T : IMapTerrainInfoAlignmentMember > IMapTerrainInfoAlignmentMemberMethods for __T { }
+#[cfg(feature="app-mapterraininfoalignmentmember")]impl<__T:IMapTerrainInfoAlignmentMember>IMapTerrainInfoAlignmentMemberMethods for __T{}
 
-#[cfg(feature = "app-mapterraininfoalignmentmember")]
-impl MapTerrainInfoAlignmentMember { pub fn get_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrainInfoAlignmentMember as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrainInfoAlignmentMember as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrainInfoAlignmentMember as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_bottom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrainInfoAlignmentMember as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_spacing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrainInfoAlignmentMember as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapTerrainInfoAlignmentMember as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-mapterraininfoalignmentmember")]impl MapTerrainInfoAlignmentMember{pub fn get_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_bottom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_spacing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-mapterraininfoalignmentmember")]
-impl MapTerrainInfoAlignmentMember {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapTerrainInfoAlignmentMember) , :: core :: stringify ! (new) ,)) ; < Self as IMapTerrainInfoAlignmentMemberMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapterraininfoalignmentmember")]impl MapTerrainInfoAlignmentMember{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapTerrainInfoAlignmentMember), ::core::stringify!(new),));
+ <Self as IMapTerrainInfoAlignmentMemberMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapterraininfoalignmentmember")]

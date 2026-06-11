@@ -4,37 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountdatamanager/EncountDataManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "EncountDataManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: encountdatamanager :: EncountDataManager >)] pub struct EncountDataManager {
-# [static_field] # [rename (name = "isLoadEncountJobData")] pub is_load_encount_job_data : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountdatamanager/EncountDataManager.md"))]#[::unity2::class(namespace="App",name="EncountDataManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::encountdatamanager::EncountDataManager>)]pub struct EncountDataManager{#[static_field]#[rename(name="isLoadEncountJobData")]pub is_load_encount_job_data:bool,}
 
 }
 
 #[cfg(feature = "app-encountdatamanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-encountdatamanager")]
-impl EncountDataManager { # [doc = "`ReductDispos(crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData>)` overload"] pub fn reduct_dispos (encount_unit_data_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: encountunitdata :: EncountUnitData > >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: encountunitdata :: EncountUnitData > { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: encountunitdata :: EncountUnitData > , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: encountunitdata :: EncountUnitData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (encount_unit_data_list) , :: core :: option :: Option :: None) } } } # [doc = "`GetReductRate()` overload"] pub fn get_reduct_rate () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc540usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGetRareMoneyItem(crate::app::difficulty::Difficulty, i32)` overload"] pub fn try_get_rare_money_item (difficulty : impl :: core :: convert :: Into < crate :: app :: difficulty :: Difficulty > , nation_level : impl :: core :: convert :: Into < i32 >) -> crate :: app :: itemdata :: ItemData { unsafe { { let __inner : extern "C" fn (crate :: app :: difficulty :: Difficulty , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc580usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (difficulty) , :: core :: convert :: Into :: into (nation_level) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc8c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-encountdatamanager")]impl EncountDataManager{#[doc="`ReductDispos(crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData>)` overload"]pub fn reduct_dispos(encount_unit_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData> >)->crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dc250usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData> ;
+(crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData>)::core::convert::Into::into(encount_unit_data_list))}
+}
+#[doc="`GetReductRate()` overload"]pub fn get_reduct_rate()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dc540usize)as*mut u8,f32;
+)}
+}
+#[doc="`TryGetRareMoneyItem(crate::app::difficulty::Difficulty, i32)` overload"]pub fn try_get_rare_money_item(difficulty:impl::core::convert::Into<crate::app::difficulty::Difficulty> ,nation_level:impl::core::convert::Into<i32>)->crate::app::itemdata::ItemData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dc580usize)as*mut u8,crate::app::itemdata::ItemData;
+(crate::app::difficulty::Difficulty)::core::convert::Into::into(difficulty),(i32)::core::convert::Into::into(nation_level))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dc8c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-encountdatamanager")]
-pub trait IEncountDataManagerMethods : IEncountDataManager { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < EncountDataManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountDataManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dab60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < EncountDataManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountDataManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22daf00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetWeapons(i32, crate::app::weaponmask::WeaponMask)` overload"] fn get_weapons (self , rank : impl :: core :: convert :: Into < i32 > , weapon_mask : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask >) -> :: unity2 :: Array < crate :: app :: itemdata :: ItemData > { unsafe { let __receiver = < EncountDataManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountDataManager , i32 , crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: itemdata :: ItemData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22db0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rank) , :: core :: convert :: Into :: into (weapon_mask) , :: core :: option :: Option :: None) } } } # [doc = "`GetNormalWeapon(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"] fn get_normal_weapon (self , rank : impl :: core :: convert :: Into < i32 > , kinds : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > >) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < EncountDataManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountDataManager , i32 , :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22db200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rank) , :: core :: convert :: Into :: into (kinds) , :: core :: option :: Option :: None) } } } # [doc = "`GetAppendWeaponList(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"] fn get_append_weapon_list (self , rank : impl :: core :: convert :: Into < i32 > , kinds : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > >) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < EncountDataManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountDataManager , i32 , :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22db810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rank) , :: core :: convert :: Into :: into (kinds) , :: core :: option :: Option :: None) } } } # [doc = "`GetNormalWeaponArrayList(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"] fn get_normal_weapon_array_list (self , rank : impl :: core :: convert :: Into < i32 > , kinds : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > >) -> crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: encountweaponcategorydata :: EncountWeaponCategoryData > { unsafe { let __receiver = < EncountDataManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountDataManager , i32 , :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > , :: unity2 :: OptionalMethod ,) -> crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: encountweaponcategorydata :: EncountWeaponCategoryData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dbd40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rank) , :: core :: convert :: Into :: into (kinds) , :: core :: option :: Option :: None) } } } # [doc = "`GetData(i32)` overload"] fn get_data (self , rank : impl :: core :: convert :: Into < i32 >) -> crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: encountequipdata :: EncountEquipData > { unsafe { let __receiver = < EncountDataManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountDataManager , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: encountequipdata :: EncountEquipData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dbf60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rank) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EncountDataManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountDataManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-encountdatamanager")]pub trait IEncountDataManagerMethods:IEncountDataManager{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dab60usize)as*mut u8,();
+(EncountDataManager)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22daf00usize)as*mut u8,();
+(EncountDataManager)__receiver)}
+}
+#[doc="`GetWeapons(i32, crate::app::weaponmask::WeaponMask)` overload"]fn get_weapons(self,rank:impl::core::convert::Into<i32> ,weapon_mask:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)-> ::unity2::Array<crate::app::itemdata::ItemData>{unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22db0c0usize)as*mut u8, ::unity2::Array<crate::app::itemdata::ItemData> ;
+(EncountDataManager)__receiver,(i32)::core::convert::Into::into(rank),(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(weapon_mask))}
+}
+#[doc="`GetNormalWeapon(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]fn get_normal_weapon(self,rank:impl::core::convert::Into<i32> ,kinds:impl::core::convert::Into< ::unity2::Array<crate::app::itemdata::ItemData_Kinds> >)->crate::app::itemdata::ItemData{unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22db200usize)as*mut u8,crate::app::itemdata::ItemData;
+(EncountDataManager)__receiver,(i32)::core::convert::Into::into(rank),(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)::core::convert::Into::into(kinds))}
+}
+#[doc="`GetAppendWeaponList(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]fn get_append_weapon_list(self,rank:impl::core::convert::Into<i32> ,kinds:impl::core::convert::Into< ::unity2::Array<crate::app::itemdata::ItemData_Kinds> >)->crate::app::itemdata::ItemData{unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22db810usize)as*mut u8,crate::app::itemdata::ItemData;
+(EncountDataManager)__receiver,(i32)::core::convert::Into::into(rank),(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)::core::convert::Into::into(kinds))}
+}
+#[doc="`GetNormalWeaponArrayList(i32, ::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]fn get_normal_weapon_array_list(self,rank:impl::core::convert::Into<i32> ,kinds:impl::core::convert::Into< ::unity2::Array<crate::app::itemdata::ItemData_Kinds> >)->crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::encountweaponcategorydata::EncountWeaponCategoryData>{unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dbd40usize)as*mut u8,crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::encountweaponcategorydata::EncountWeaponCategoryData> ;
+(EncountDataManager)__receiver,(i32)::core::convert::Into::into(rank),(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)::core::convert::Into::into(kinds))}
+}
+#[doc="`GetData(i32)` overload"]fn get_data(self,rank:impl::core::convert::Into<i32>)->crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::encountequipdata::EncountEquipData>{unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dbf60usize)as*mut u8,crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::encountequipdata::EncountEquipData> ;
+(EncountDataManager)__receiver,(i32)::core::convert::Into::into(rank))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dc840usize)as*mut u8,();
+(EncountDataManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-encountdatamanager")]
-impl < __T : IEncountDataManager > IEncountDataManagerMethods for __T { }
+#[cfg(feature="app-encountdatamanager")]impl<__T:IEncountDataManager>IEncountDataManagerMethods for __T{}
 
-#[cfg(feature = "app-encountdatamanager")]
-impl EncountDataManager { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_weapons_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_normal_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_append_weapon_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_normal_weapon_array_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reduct_dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_reduct_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn try_get_rare_money_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountDataManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-encountdatamanager")]impl EncountDataManager{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_weapons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_normal_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_append_weapon_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_normal_weapon_array_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reduct_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_reduct_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn try_get_rare_money_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-encountdatamanager")]
-impl EncountDataManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EncountDataManager) , :: core :: stringify ! (new) ,)) ; < Self as IEncountDataManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-encountdatamanager")]impl EncountDataManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EncountDataManager), ::core::stringify!(new),));
+ <Self as IEncountDataManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-encountdatamanager")]

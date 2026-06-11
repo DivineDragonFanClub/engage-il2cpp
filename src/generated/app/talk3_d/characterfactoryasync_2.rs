@@ -4,109 +4,151 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_UnitStatusScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CharacterFactoryAsync_UnitStatusScope {
-    pub m_unit: crate :: app :: unit :: Unit,
-    pub m_value: i64,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_onLoad.md"))]#[::unity2::class(namespace="App.Talk3D",name="CharacterFactoryAsync.onLoad")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct CharacterFactoryAsync_onLoad{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_UnitStatusScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CharacterFactoryAsync_UnitStatusScope{pub m_unit:crate::app::unit::Unit,pub m_value:i64,}
+impl::unity2::ClassIdentity for CharacterFactoryAsync_UnitStatusScope{const NAMESPACE: &'static str="App.Talk3D";
+const NAME: &'static str="CharacterFactoryAsync.UnitStatusScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CharacterFactoryAsync_UnitStatusScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for CharacterFactoryAsync_UnitStatusScope {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "CharacterFactoryAsync.UnitStatusScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for CharacterFactoryAsync_UnitStatusScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_2.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "CharacterFactoryAsync")] # [parent (crate :: system :: object :: Object)] pub struct CharacterFactoryAsync_2 {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_onLoad.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "CharacterFactoryAsync.onLoad")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct CharacterFactoryAsync_onLoad {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_2.md"))]#[::unity2::class(namespace="App.Talk3D",name="CharacterFactoryAsync")]#[parent(crate::system::object::Object)]pub struct CharacterFactoryAsync_2{}
 
 }
 
 #[cfg(feature = "app-talk3_d-characterfactoryasync_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl CharacterFactoryAsync_UnitStatusScope { # [doc = "`.ctor(crate::app::unit::Unit)` overload"] pub fn ctor (& mut self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (* mut CharacterFactoryAsync_UnitStatusScope , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c1a50usize) as * mut u8) ; __inner (self as * mut CharacterFactoryAsync_UnitStatusScope , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut CharacterFactoryAsync_UnitStatusScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c1a90usize) as * mut u8) ; __inner (self as * mut CharacterFactoryAsync_UnitStatusScope , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl CharacterFactoryAsync_UnitStatusScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_UnitStatusScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_UnitStatusScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl CharacterFactoryAsync_2 { # [doc = "`CreateForTalk(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"] pub fn create_for_talk (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pid_for_create : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , use_talk_controller : impl :: core :: convert :: Into < bool >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27dd650usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (pid_for_create) , :: core :: convert :: Into :: into (locator) , :: core :: convert :: Into :: into (use_talk_controller) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForTalk(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject, bool)` overload"] pub fn create_for_talk_2 (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , use_talk_controller : impl :: core :: convert :: Into < bool >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ddb20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (locator) , :: core :: convert :: Into :: into (use_talk_controller) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForTalk(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject, bool)` overload"] pub fn create_for_talk_3 (god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , use_talk_controller : impl :: core :: convert :: Into < bool >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ddd70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (locator) , :: core :: convert :: Into :: into (use_talk_controller) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForUnitInfo(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"] pub fn create_for_unit_info (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27dde40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForUnitInfo(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject)` overload"] pub fn create_for_unit_info_2 (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ddea0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForUnitHub(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"] pub fn create_for_unit_hub (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ddfd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForUnitRelay(crate::unity_engine::gameobject::GameObject, crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::unitedit::UnitEdit)` overload"] pub fn create_for_unit_relay (locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData > , job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData > , edit : impl :: core :: convert :: Into < crate :: app :: unitedit :: UnitEdit >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: app :: persondata :: PersonData , crate :: app :: jobdata :: JobData , crate :: app :: unitedit :: UnitEdit , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27de030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (locator) , :: core :: convert :: Into :: into (person) , :: core :: convert :: Into :: into (job) , :: core :: convert :: Into :: into (edit) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForRingCleaning(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"] pub fn create_for_ring_cleaning (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27de080usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForRingCleaning(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject)` overload"] pub fn create_for_ring_cleaning_2 (god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27de0e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`CreateCommon(crate::app::assettable::AssetTable_Result, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool, bool, bool)` overload"] pub fn create_common (result : impl :: core :: convert :: Into < crate :: app :: assettable :: AssetTable_Result > , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , use_talk_controller : impl :: core :: convert :: Into < bool > , invisible : impl :: core :: convert :: Into < bool > , is_engage : impl :: core :: convert :: Into < bool >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: app :: assettable :: AssetTable_Result , :: unity2 :: Il2CppString , crate :: unity_engine :: gameobject :: GameObject , bool , bool , bool , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27dd7b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (result) , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (locator) , :: core :: convert :: Into :: into (use_talk_controller) , :: core :: convert :: Into :: into (invisible) , :: core :: convert :: Into :: into (is_engage) , :: core :: option :: Option :: None) } } } # [doc = "`SetupLookAt(crate::combat::character::Character, crate::unity_engine::gameobject::GameObject)` overload"] pub fn setup_look_at (chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27de270usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chara) , :: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`Delete(crate::unity_engine::gameobject::GameObject)` overload"] pub fn delete (locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27de660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-pub trait ICharacterFactoryAsync_2Methods : ICharacterFactoryAsync_2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterFactoryAsync_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterFactoryAsync_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27de800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl < __T : ICharacterFactoryAsync_2 > ICharacterFactoryAsync_2Methods for __T { }
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl CharacterFactoryAsync_2 { pub fn create_for_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_for_talk_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_for_talk_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_for_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_for_unit_info_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_for_unit_hub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_for_unit_relay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_for_ring_cleaning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_for_ring_cleaning_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_common_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn setup_look_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl CharacterFactoryAsync_2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterFactoryAsync_2) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterFactoryAsync_2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]pub trait ICharacterFactoryAsync_onLoadMethods:ICharacterFactoryAsync_onLoad{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <CharacterFactoryAsync_onLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c1aa0usize)as*mut u8,();
+(CharacterFactoryAsync_onLoad)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::combat::character::Character)` overload"]fn invoke(self,chara:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <CharacterFactoryAsync_onLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c1ac0usize)as*mut u8,();
+(CharacterFactoryAsync_onLoad)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chara))}
+}
 }
 
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-pub trait ICharacterFactoryAsync_onLoadMethods : ICharacterFactoryAsync_onLoad { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < CharacterFactoryAsync_onLoad as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterFactoryAsync_onLoad , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c1aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::combat::character::Character)` overload"] fn invoke (self , chara : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < CharacterFactoryAsync_onLoad as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterFactoryAsync_onLoad , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c1ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chara) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]impl<__T:ICharacterFactoryAsync_onLoad>ICharacterFactoryAsync_onLoadMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl < __T : ICharacterFactoryAsync_onLoad > ICharacterFactoryAsync_onLoadMethods for __T { }
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]impl CharacterFactoryAsync_onLoad{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl CharacterFactoryAsync_onLoad { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_onLoad as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync_onLoad as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]impl CharacterFactoryAsync_onLoad{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterFactoryAsync_onLoad), ::core::stringify!(new),));
+ <Self as ICharacterFactoryAsync_onLoadMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl CharacterFactoryAsync_onLoad {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterFactoryAsync_onLoad) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterFactoryAsync_onLoadMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]impl CharacterFactoryAsync_UnitStatusScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19c1a50usize)as*mut u8,();
+(*mut CharacterFactoryAsync_UnitStatusScope)self as*mut CharacterFactoryAsync_UnitStatusScope,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19c1a90usize)as*mut u8,();
+(*mut CharacterFactoryAsync_UnitStatusScope)self as*mut CharacterFactoryAsync_UnitStatusScope)}
+}
+}
+
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]impl CharacterFactoryAsync_UnitStatusScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]impl CharacterFactoryAsync_2{#[doc="`CreateForTalk(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]pub fn create_for_talk(pid:impl::core::convert::Into< ::unity2::Il2CppString> ,pid_for_create:impl::core::convert::Into< ::unity2::Il2CppString> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,use_talk_controller:impl::core::convert::Into<bool>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27dd650usize)as*mut u8,crate::combat::character::Character;
+(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(pid_for_create),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator),(bool)::core::convert::Into::into(use_talk_controller))}
+}
+#[doc="`CreateForTalk(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject, bool)` overload"]pub fn create_for_talk_2(unit:impl::core::convert::Into<crate::app::unit::Unit> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,use_talk_controller:impl::core::convert::Into<bool>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ddb20usize)as*mut u8,crate::combat::character::Character;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator),(bool)::core::convert::Into::into(use_talk_controller))}
+}
+#[doc="`CreateForTalk(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject, bool)` overload"]pub fn create_for_talk_3(god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,use_talk_controller:impl::core::convert::Into<bool>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ddd70usize)as*mut u8,crate::combat::character::Character;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator),(bool)::core::convert::Into::into(use_talk_controller))}
+}
+#[doc="`CreateForUnitInfo(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_for_unit_info(unit:impl::core::convert::Into<crate::app::unit::Unit> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27dde40usize)as*mut u8,crate::combat::character::Character;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator))}
+}
+#[doc="`CreateForUnitInfo(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_for_unit_info_2(god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ddea0usize)as*mut u8,crate::combat::character::Character;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator))}
+}
+#[doc="`CreateForUnitHub(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_for_unit_hub(unit:impl::core::convert::Into<crate::app::unit::Unit> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ddfd0usize)as*mut u8,crate::combat::character::Character;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator))}
+}
+#[doc="`CreateForUnitRelay(crate::unity_engine::gameobject::GameObject, crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::unitedit::UnitEdit)` overload"]pub fn create_for_unit_relay(locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,person:impl::core::convert::Into<crate::app::persondata::PersonData> ,job:impl::core::convert::Into<crate::app::jobdata::JobData> ,edit:impl::core::convert::Into<crate::app::unitedit::UnitEdit>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27de030usize)as*mut u8,crate::combat::character::Character;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator),(crate::app::persondata::PersonData)::core::convert::Into::into(person),(crate::app::jobdata::JobData)::core::convert::Into::into(job),(crate::app::unitedit::UnitEdit)::core::convert::Into::into(edit))}
+}
+#[doc="`CreateForRingCleaning(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_for_ring_cleaning(unit:impl::core::convert::Into<crate::app::unit::Unit> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27de080usize)as*mut u8,crate::combat::character::Character;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator))}
+}
+#[doc="`CreateForRingCleaning(crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_for_ring_cleaning_2(god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27de0e0usize)as*mut u8,crate::combat::character::Character;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator))}
+}
+#[doc="`CreateCommon(crate::app::assettable::AssetTable_Result, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool, bool, bool)` overload"]pub fn create_common(result:impl::core::convert::Into<crate::app::assettable::AssetTable_Result> ,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,use_talk_controller:impl::core::convert::Into<bool> ,invisible:impl::core::convert::Into<bool> ,is_engage:impl::core::convert::Into<bool>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27dd7b0usize)as*mut u8,crate::combat::character::Character;
+(crate::app::assettable::AssetTable_Result)::core::convert::Into::into(result),(::unity2::Il2CppString)::core::convert::Into::into(pid),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator),(bool)::core::convert::Into::into(use_talk_controller),(bool)::core::convert::Into::into(invisible),(bool)::core::convert::Into::into(is_engage))}
+}
+#[doc="`SetupLookAt(crate::combat::character::Character, crate::unity_engine::gameobject::GameObject)` overload"]pub fn setup_look_at(chara:impl::core::convert::Into<crate::combat::character::Character> ,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27de270usize)as*mut u8,();
+(crate::combat::character::Character)::core::convert::Into::into(chara),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator))}
+}
+#[doc="`Delete(crate::unity_engine::gameobject::GameObject)` overload"]pub fn delete(locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27de660usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator))}
+}
+}
+
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]pub trait ICharacterFactoryAsync_2Methods:ICharacterFactoryAsync_2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterFactoryAsync_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27de800usize)as*mut u8,();
+(CharacterFactoryAsync_2)__receiver)}
+}
+}
+
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]impl<__T:ICharacterFactoryAsync_2>ICharacterFactoryAsync_2Methods for __T{}
+
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]impl CharacterFactoryAsync_2{pub fn create_for_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_for_talk_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_for_talk_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_for_unit_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_for_unit_info_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_for_unit_hub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_for_unit_relay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_for_ring_cleaning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_for_ring_cleaning_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn setup_look_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-talk3_d-characterfactoryasync_2")]impl CharacterFactoryAsync_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterFactoryAsync_2), ::core::stringify!(new),));
+ <Self as ICharacterFactoryAsync_2Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CharacterFactoryAsync_onLoad;
+    pub use super::ICharacterFactoryAsync_onLoad;
+    pub use super::ICharacterFactoryAsync_onLoadMethods;
     pub use super::CharacterFactoryAsync_UnitStatusScope;
     pub use super::CharacterFactoryAsync_2;
     pub use super::ICharacterFactoryAsync_2;
     pub use super::ICharacterFactoryAsync_2Methods;
-    pub use super::CharacterFactoryAsync_onLoad;
-    pub use super::ICharacterFactoryAsync_onLoad;
-    pub use super::ICharacterFactoryAsync_onLoadMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

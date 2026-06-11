@@ -4,40 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akambientlargemodepositioner :: { AkAmbientLargeModePositioner , IAkAmbientLargeModePositioner }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akambientlargemodepositioner::{AkAmbientLargeModePositioner,IAkAmbientLargeModePositioner}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akambientlargemodepositioner_bridge/AkAmbientLargeModePositioner_Bridge.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAmbientLargeModePositioner_Bridge")] # [parent (crate :: root :: akambientlargemodepositioner :: AkAmbientLargeModePositioner)] pub struct AkAmbientLargeModePositioner_Bridge {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akambientlargemodepositioner_bridge/AkAmbientLargeModePositioner_Bridge.md"))]#[::unity2::class(namespace="",name="AkAmbientLargeModePositioner_Bridge")]#[parent(crate::root::akambientlargemodepositioner::AkAmbientLargeModePositioner)]pub struct AkAmbientLargeModePositioner_Bridge{}
 
 }
 
 #[cfg(feature = "root-akambientlargemodepositioner_bridge-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akambientlargemodepositioner_bridge")]
-pub trait IAkAmbientLargeModePositioner_BridgeMethods : IAkAmbientLargeModePositioner_Bridge { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkAmbientLargeModePositioner_Bridge as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAmbientLargeModePositioner_Bridge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcda10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akambientlargemodepositioner_bridge")]pub trait IAkAmbientLargeModePositioner_BridgeMethods:IAkAmbientLargeModePositioner_Bridge{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkAmbientLargeModePositioner_Bridge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcda10usize)as*mut u8,();
+(AkAmbientLargeModePositioner_Bridge)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akambientlargemodepositioner_bridge")]
-impl < __T : IAkAmbientLargeModePositioner_Bridge > IAkAmbientLargeModePositioner_BridgeMethods for __T { }
+#[cfg(feature="root-akambientlargemodepositioner_bridge")]impl<__T:IAkAmbientLargeModePositioner_Bridge>IAkAmbientLargeModePositioner_BridgeMethods for __T{}
 
-#[cfg(feature = "root-akambientlargemodepositioner_bridge")]
-impl AkAmbientLargeModePositioner_Bridge { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAmbientLargeModePositioner_Bridge as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akambientlargemodepositioner_bridge")]impl AkAmbientLargeModePositioner_Bridge{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akambientlargemodepositioner_bridge")]
-impl AkAmbientLargeModePositioner_Bridge {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAmbientLargeModePositioner_Bridge) , :: core :: stringify ! (new) ,)) ; < Self as IAkAmbientLargeModePositioner_BridgeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akambientlargemodepositioner_bridge")]impl AkAmbientLargeModePositioner_Bridge{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAmbientLargeModePositioner_Bridge), ::core::stringify!(new),));
+ <Self as IAkAmbientLargeModePositioner_BridgeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akambientlargemodepositioner_bridge")]

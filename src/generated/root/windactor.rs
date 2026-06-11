@@ -4,140 +4,159 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor.md"))] # [:: unity2 :: class (namespace = "" , name = "WindActor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WindActor {
-# [offset (24)] # [rename (name = "m_Kind")] pub m_kind : crate :: root :: windactor :: WindActor_Kind ,
-# [offset (28)] # [rename (name = "m_Power")] pub m_power : f32 ,
-# [offset (32)] # [rename (name = "m_Radius")] pub m_radius : f32 ,
-# [offset (36)] # [rename (name = "m_Life")] pub m_life : f32 ,
-# [offset (40)] # [rename (name = "m_Speed")] pub m_speed : f32 ,
-# [offset (44)] # [rename (name = "m_Angle")] pub m_angle : f32 ,
-# [offset (48)] # [rename (name = "m_Range")] pub m_range : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (56)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (64)] # [rename (name = "m_Funcs")] pub m_funcs : :: unity2 :: Array < crate :: root :: windactor :: WindActor_Func > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/windactor/WindActor_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WindActor_Kind{pub value:i32,}
+impl::unity2::ClassIdentity for WindActor_Kind{const NAMESPACE: &'static str="";
+const NAME: &'static str="WindActor.Kind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for WindActor_Kind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl WindActor_Kind{pub fn none()->Self{Self{value:0}
+}
+pub fn directional()->Self{Self{value:1}
+}
+pub fn sphere()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/windactor/WindActor_Kind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct WindActor_Kind  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/windactor/WindActor.md"))]#[::unity2::class(namespace="",name="WindActor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct WindActor{#[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::root::windactor::WindActor_Kind, #[offset(28)]#[rename(name="m_Power")]pub m_power:f32, #[offset(32)]#[rename(name="m_Radius")]pub m_radius:f32, #[offset(36)]#[rename(name="m_Life")]pub m_life:f32, #[offset(40)]#[rename(name="m_Speed")]pub m_speed:f32, #[offset(44)]#[rename(name="m_Angle")]pub m_angle:f32, #[offset(48)]#[rename(name="m_Range")]pub m_range:crate::unity_engine::vector2::Vector2, #[offset(56)]#[rename(name="m_Time")]pub m_time:f32, #[offset(64)]#[rename(name="m_Funcs")]pub m_funcs: ::unity2::Array<crate::root::windactor::WindActor_Func> ,}
 
 
-impl  ::unity2::ClassIdentity for WindActor_Kind  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "WindActor.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for WindActor_Kind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  WindActor_Kind  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn directional() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn sphere() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/windactor/WindActor_Func.md"))] # [:: unity2 :: class (namespace = "" , name = "WindActor.Func")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct WindActor_Func {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/windactor/WindActor_Func.md"))]#[::unity2::class(namespace="",name="WindActor.Func")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct WindActor_Func{}
 
 }
 
 #[cfg(feature = "root-windactor-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-windactor")]
-impl WindActor { # [doc = "`DrawWind(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"] pub fn draw_wind (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , dir : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293edf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (dir) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-windactor")]
-pub trait IWindActorMethods : IWindActor { # [doc = "`FuncNone(crate::unity_engine::vector3::Vector3)` overload"] fn func_none (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`FuncDirectional(crate::unity_engine::vector3::Vector3)` overload"] fn func_directional (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`FuncSphere(crate::unity_engine::vector3::Vector3)` overload"] fn func_sphere (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293e970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293eb40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293eb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Calculate(crate::unity_engine::vector3::Vector3)` overload"] fn calculate (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293ec60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`OnDrawGizmos()` overload"] fn on_draw_gizmos (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293eca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WindActor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293f2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-windactor")]
-impl < __T : IWindActor > IWindActorMethods for __T { }
-
-#[cfg(feature = "root-windactor")]
-impl WindActor { pub fn func_none_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn func_directional_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn func_sphere_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_draw_gizmos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn draw_wind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
-
-#[cfg(feature = "root-windactor")]
-impl WindActor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WindActor) , :: core :: stringify ! (new) ,)) ; < Self as IWindActorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-windactor")]impl WindActor{#[doc="`DrawWind(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]pub fn draw_wind(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,dir:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x293edf0usize)as*mut u8,();
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(dir),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
 }
 
-#[cfg(feature = "root-windactor")]
-pub trait IWindActor_FuncMethods : IWindActor_Func { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < WindActor_Func as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor_Func , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2dcf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::unity_engine::vector3::Vector3)` overload"] fn invoke (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WindActor_Func as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WindActor_Func , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b2dd10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-windactor")]pub trait IWindActorMethods:IWindActor{#[doc="`FuncNone(crate::unity_engine::vector3::Vector3)` overload"]fn func_none(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e5f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(WindActor)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`FuncDirectional(crate::unity_engine::vector3::Vector3)` overload"]fn func_directional(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e600usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(WindActor)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`FuncSphere(crate::unity_engine::vector3::Vector3)` overload"]fn func_sphere(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e7b0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(WindActor)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293e970usize)as*mut u8,();
+(WindActor)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293eb40usize)as*mut u8,();
+(WindActor)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293eb50usize)as*mut u8,();
+(WindActor)__receiver)}
+}
+#[doc="`Calculate(crate::unity_engine::vector3::Vector3)` overload"]fn calculate(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293ec60usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(WindActor)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`OnDrawGizmos()` overload"]fn on_draw_gizmos(self,)->(){unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293eca0usize)as*mut u8,();
+(WindActor)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f070usize)as*mut u8,();
+(WindActor)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f1a0usize)as*mut u8,();
+(WindActor)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WindActor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293f2d0usize)as*mut u8,();
+(WindActor)__receiver)}
+}
+}
 
-#[cfg(feature = "root-windactor")]
-impl < __T : IWindActor_Func > IWindActor_FuncMethods for __T { }
+#[cfg(feature="root-windactor")]impl<__T:IWindActor>IWindActorMethods for __T{}
 
-#[cfg(feature = "root-windactor")]
-impl WindActor_Func { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor_Func as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WindActor_Func as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-windactor")]impl WindActor{pub fn func_none_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn func_directional_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn func_sphere_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn draw_wind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "root-windactor")]
-impl WindActor_Func {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WindActor_Func) , :: core :: stringify ! (new) ,)) ; < Self as IWindActor_FuncMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="root-windactor")]impl WindActor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WindActor), ::core::stringify!(new),));
+ <Self as IWindActorMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-windactor")]pub trait IWindActor_FuncMethods:IWindActor_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WindActor_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2dcf0usize)as*mut u8,();
+(WindActor_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::vector3::Vector3)` overload"]fn invoke(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <WindActor_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2dd10usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(WindActor_Func)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+}
+
+#[cfg(feature="root-windactor")]impl<__T:IWindActor_Func>IWindActor_FuncMethods for __T{}
+
+#[cfg(feature="root-windactor")]impl WindActor_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-windactor")]impl WindActor_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WindActor_Func), ::core::stringify!(new),));
+ <Self as IWindActor_FuncMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "root-windactor")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::WindActor_Kind;
     pub use super::WindActor;
     pub use super::IWindActor;
     pub use super::IWindActorMethods;
-    pub use super::WindActor_Kind;
     pub use super::WindActor_Func;
     pub use super::IWindActor_Func;
     pub use super::IWindActor_FuncMethods;

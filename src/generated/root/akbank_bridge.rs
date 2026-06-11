@@ -4,42 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akbank :: { AkBank , IAkBank }
- ;
- use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akbank::{AkBank,IAkBank}
+;
+use crate::root::aktriggerhandler::{AkTriggerHandler,IAkTriggerHandler}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbank_bridge/AkBank_Bridge.md"))] # [:: unity2 :: class (namespace = "" , name = "AkBank_Bridge")] # [parent (crate :: root :: akbank :: AkBank)] pub struct AkBank_Bridge {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akbank_bridge/AkBank_Bridge.md"))]#[::unity2::class(namespace="",name="AkBank_Bridge")]#[parent(crate::root::akbank::AkBank)]pub struct AkBank_Bridge{}
 
 }
 
 #[cfg(feature = "root-akbank_bridge-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akbank_bridge")]
-pub trait IAkBank_BridgeMethods : IAkBank_Bridge { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AkBank_Bridge as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank_Bridge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd2f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkBank_Bridge as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank_Bridge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd2fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akbank_bridge")]pub trait IAkBank_BridgeMethods:IAkBank_Bridge{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkBank_Bridge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd2f40usize)as*mut u8,();
+(AkBank_Bridge)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkBank_Bridge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd2fd0usize)as*mut u8,();
+(AkBank_Bridge)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akbank_bridge")]
-impl < __T : IAkBank_Bridge > IAkBank_BridgeMethods for __T { }
+#[cfg(feature="root-akbank_bridge")]impl<__T:IAkBank_Bridge>IAkBank_BridgeMethods for __T{}
 
-#[cfg(feature = "root-akbank_bridge")]
-impl AkBank_Bridge { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank_Bridge as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank_Bridge as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-akbank_bridge")]impl AkBank_Bridge{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-akbank_bridge")]
-impl AkBank_Bridge {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkBank_Bridge) , :: core :: stringify ! (new) ,)) ; < Self as IAkBank_BridgeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akbank_bridge")]impl AkBank_Bridge{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkBank_Bridge), ::core::stringify!(new),));
+ <Self as IAkBank_BridgeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akbank_bridge")]

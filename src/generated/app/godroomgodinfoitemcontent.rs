@@ -4,44 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomgodinfoitemcontent/GodRoomGodInfoItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodRoomGodInfoItemContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GodRoomGodInfoItemContent {
-# [offset (24)] # [rename (name = "m_GodName")] pub m_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_Level")] pub m_level : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_LevelTitle")] pub m_level_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_LevelGauge")] pub m_level_gauge : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_LevelGaugeImage")] pub m_level_gauge_image : crate :: unity_engine :: ui :: image :: Image ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godroomgodinfoitemcontent/GodRoomGodInfoItemContent.md"))]#[::unity2::class(namespace="App",name="GodRoomGodInfoItemContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GodRoomGodInfoItemContent{#[offset(24)]#[rename(name="m_GodName")]pub m_god_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Level")]pub m_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_LevelTitle")]pub m_level_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_LevelGauge")]pub m_level_gauge:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_LevelGaugeImage")]pub m_level_gauge_image:crate::unity_engine::ui::image::Image,}
 
 }
 
 #[cfg(feature = "app-godroomgodinfoitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godroomgodinfoitemcontent")]
-pub trait IGodRoomGodInfoItemContentMethods : IGodRoomGodInfoItemContent { # [doc = "`SetData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"] fn set_data (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < GodRoomGodInfoItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomGodInfoItemContent , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2336590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodRoomGodInfoItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodRoomGodInfoItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23369b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godroomgodinfoitemcontent")]pub trait IGodRoomGodInfoItemContentMethods:IGodRoomGodInfoItemContent{#[doc="`SetData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn set_data(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <GodRoomGodInfoItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2336590usize)as*mut u8,();
+(GodRoomGodInfoItemContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodRoomGodInfoItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23369b0usize)as*mut u8,();
+(GodRoomGodInfoItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godroomgodinfoitemcontent")]
-impl < __T : IGodRoomGodInfoItemContent > IGodRoomGodInfoItemContentMethods for __T { }
+#[cfg(feature="app-godroomgodinfoitemcontent")]impl<__T:IGodRoomGodInfoItemContent>IGodRoomGodInfoItemContentMethods for __T{}
 
-#[cfg(feature = "app-godroomgodinfoitemcontent")]
-impl GodRoomGodInfoItemContent { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomGodInfoItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodRoomGodInfoItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-godroomgodinfoitemcontent")]impl GodRoomGodInfoItemContent{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-godroomgodinfoitemcontent")]
-impl GodRoomGodInfoItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodRoomGodInfoItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IGodRoomGodInfoItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godroomgodinfoitemcontent")]impl GodRoomGodInfoItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodRoomGodInfoItemContent), ::core::stringify!(new),));
+ <Self as IGodRoomGodInfoItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godroomgodinfoitemcontent")]

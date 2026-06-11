@@ -4,67 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animatorcontrollerplayable/AnimatorControllerPlayable.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AnimatorControllerPlayable {
-    pub m_handle: crate :: unity_engine :: playables :: playablehandle :: PlayableHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animations/animatorcontrollerplayable/AnimatorControllerPlayable.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AnimatorControllerPlayable{pub m_handle:crate::unity_engine::playables::playablehandle::PlayableHandle,}
+impl::unity2::ClassIdentity for AnimatorControllerPlayable{const NAMESPACE: &'static str="UnityEngine.Animations";
+const NAME: &'static str="AnimatorControllerPlayable";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for AnimatorControllerPlayable {
-    const NAMESPACE: &'static str = "UnityEngine.Animations";
-
-    const NAME: &'static str = "AnimatorControllerPlayable";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for AnimatorControllerPlayable{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for AnimatorControllerPlayable {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl AnimatorControllerPlayable{#[inline]pub fn m_null_playable()->crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayable");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_m_null_playable(value:crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayable");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl AnimatorControllerPlayable {
-    #[inline]
-    pub fn m_null_playable() -> crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_m_null_playable(value: crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -72,14 +34,41 @@ impl AnimatorControllerPlayable {
 #[cfg(feature = "unity_engine-animations-animatorcontrollerplayable-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
-impl AnimatorControllerPlayable { # [doc = "`SetFloatString(*mutcrate::unity_engine::playables::playablehandle::PlayableHandle, ::unity2::Il2CppString, f32)` overload"] pub fn set_float_string (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb71f0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb7250usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animations-animatorcontrollerplayable")]impl AnimatorControllerPlayable{#[doc="`SetFloatString(*mutcrate::unity_engine::playables::playablehandle::PlayableHandle, ::unity2::Il2CppString, f32)` overload"]pub fn set_float_string(name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32>)->crate::unity_engine::playables::playablehandle::PlayableHandle{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::playables::playablehandle::PlayableHandle> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb71f0usize)as*mut u8,();
+(*mut crate::unity_engine::playables::playablehandle::PlayableHandle)__out_0.as_mut_ptr(),(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb7250usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
-impl AnimatorControllerPlayable { # [doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle >) -> () { unsafe { { let __inner : extern "C" fn (* mut AnimatorControllerPlayable , crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb6f00usize) as * mut u8) ; __inner (self as * mut AnimatorControllerPlayable , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { { let __inner : extern "C" fn (* mut AnimatorControllerPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb70a0usize) as * mut u8) ; __inner (self as * mut AnimatorControllerPlayable , :: core :: option :: Option :: None) } } } # [doc = "`SetHandle(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"] pub fn set_handle (& mut self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle >) -> () { unsafe { { let __inner : extern "C" fn (* mut AnimatorControllerPlayable , crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb6f90usize) as * mut u8) ; __inner (self as * mut AnimatorControllerPlayable , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable >) -> bool { unsafe { { let __inner : extern "C" fn (* mut AnimatorControllerPlayable , crate :: unity_engine :: animations :: animatorcontrollerplayable :: AnimatorControllerPlayable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb70b0usize) as * mut u8) ; __inner (self as * mut AnimatorControllerPlayable , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`SetFloat(::unity2::Il2CppString, f32)` overload"] pub fn set_float (& mut self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut AnimatorControllerPlayable , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb7140usize) as * mut u8) ; __inner (self as * mut AnimatorControllerPlayable , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animations-animatorcontrollerplayable")]impl AnimatorControllerPlayable{#[doc="`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb6f00usize)as*mut u8,();
+(*mut AnimatorControllerPlayable)self as*mut AnimatorControllerPlayable,(crate::unity_engine::playables::playablehandle::PlayableHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playablehandle::PlayableHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb70a0usize)as*mut u8,crate::unity_engine::playables::playablehandle::PlayableHandle;
+(*mut AnimatorControllerPlayable)self as*mut AnimatorControllerPlayable)}
+}
+#[doc="`SetHandle(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]pub fn set_handle(&mut self,handle:impl::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb6f90usize)as*mut u8,();
+(*mut AnimatorControllerPlayable)self as*mut AnimatorControllerPlayable,(crate::unity_engine::playables::playablehandle::PlayableHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`Equals(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb70b0usize)as*mut u8,bool;
+(*mut AnimatorControllerPlayable)self as*mut AnimatorControllerPlayable,(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)::core::convert::Into::into(other))}
+}
+#[doc="`SetFloat(::unity2::Il2CppString, f32)` overload"]pub fn set_float(&mut self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb7140usize)as*mut u8,();
+(*mut AnimatorControllerPlayable)self as*mut AnimatorControllerPlayable,(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
-impl AnimatorControllerPlayable { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_float_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorControllerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-animations-animatorcontrollerplayable")]impl AnimatorControllerPlayable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_float_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-animations-animatorcontrollerplayable")]
 #[doc(hidden)]

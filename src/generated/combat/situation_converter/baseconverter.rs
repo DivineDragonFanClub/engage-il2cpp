@@ -4,33 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/baseconverter/BaseConverter.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "BaseConverter")] # [parent (crate :: system :: object :: Object)] pub struct BaseConverter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/baseconverter/BaseConverter.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="BaseConverter")]#[parent(crate::system::object::Object)]pub struct BaseConverter{}
 
 }
 
 #[cfg(feature = "combat-situation_converter-baseconverter-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-situation_converter-baseconverter")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BaseConverter_unity2_raw { use super :: * ; pub unsafe fn convert (this : BaseConverter , style : crate :: combat :: camerasituation :: CameraSituation , arg : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Convert") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Convert" , < BaseConverter as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseConverter , crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , style , arg , __mi) } }
+#[cfg(feature="combat-situation_converter-baseconverter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseConverter_unity2_raw{use super:: * ;
+pub unsafe fn convert(this:BaseConverter,style:crate::combat::camerasituation::CameraSituation,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Convert").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Convert", <BaseConverter as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseConverter,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,style,arg,__mi)}
+}
 
-#[cfg(feature = "combat-situation_converter-baseconverter")]
-pub trait IBaseConverterMethods : IBaseConverter { # [doc = "`get_DataSet()` overload"] fn get_data_set (self ,) -> crate :: combat :: situation_converter :: cameradataset :: CameraDataSet { unsafe { let __receiver = < BaseConverter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseConverter , :: unity2 :: OptionalMethod ,) -> crate :: combat :: situation_converter :: cameradataset :: CameraDataSet = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24526c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < BaseConverter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseConverter , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24526d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"] fn convert (self , style : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < BaseConverter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseConverter_unity2_raw :: convert (__receiver , :: core :: convert :: Into :: into (style) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } # [doc = "`get_IsFirstAttack()` overload"] fn get_is_first_attack (self ,) -> bool { unsafe { let __receiver = < BaseConverter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseConverter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPlayerAttack()` overload"] fn get_is_player_attack (self ,) -> bool { unsafe { let __receiver = < BaseConverter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseConverter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NameToPosition(::unity2::Il2CppString)` overload"] fn name_to_position (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < BaseConverter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseConverter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-situation_converter-baseconverter")]pub trait IBaseConverterMethods:IBaseConverter{#[doc="`get_DataSet()` overload"]fn get_data_set(self,)->crate::combat::situation_converter::cameradataset::CameraDataSet{unsafe{let __receiver= <BaseConverter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24526c0usize)as*mut u8,crate::combat::situation_converter::cameradataset::CameraDataSet;
+(BaseConverter)__receiver)}
+}
+#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <BaseConverter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24526d0usize)as*mut u8,();
+(BaseConverter)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
+}
+#[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,style:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <BaseConverter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseConverter_unity2_raw::convert(__receiver, ::core::convert::Into::into(style), ::core::convert::Into::into(arg), ::core::option::Option::None)}
+}
+#[doc="`get_IsFirstAttack()` overload"]fn get_is_first_attack(self,)->bool{unsafe{let __receiver= <BaseConverter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452710usize)as*mut u8,bool;
+(BaseConverter)__receiver)}
+}
+#[doc="`get_IsPlayerAttack()` overload"]fn get_is_player_attack(self,)->bool{unsafe{let __receiver= <BaseConverter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452740usize)as*mut u8,bool;
+(BaseConverter)__receiver)}
+}
+#[doc="`NameToPosition(::unity2::Il2CppString)` overload"]fn name_to_position(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <BaseConverter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452770usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(BaseConverter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "combat-situation_converter-baseconverter")]
-impl < __T : IBaseConverter > IBaseConverterMethods for __T { }
+#[cfg(feature="combat-situation_converter-baseconverter")]impl<__T:IBaseConverter>IBaseConverterMethods for __T{}
 
-#[cfg(feature = "combat-situation_converter-baseconverter")]
-impl BaseConverter { pub fn get_data_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseConverter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseConverter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn convert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseConverter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_is_first_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseConverter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_player_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseConverter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn name_to_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseConverter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-situation_converter-baseconverter")]impl BaseConverter{pub fn get_data_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_first_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_player_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn name_to_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-situation_converter-baseconverter")]
-impl BaseConverter {
-# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BaseConverter) , :: core :: stringify ! (new) ,)) ; < Self as IBaseConverterMethods > :: ctor (this , data) ; this }
+#[cfg(feature="combat-situation_converter-baseconverter")]impl BaseConverter{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BaseConverter), ::core::stringify!(new),));
+ <Self as IBaseConverterMethods> ::ctor(this,data);
+this}
 }
 
 #[cfg(feature = "combat-situation_converter-baseconverter")]

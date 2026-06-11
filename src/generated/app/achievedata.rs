@@ -4,1109 +4,381 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Categories.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AchieveData_Categories  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievedata/AchieveData.md"))]#[::unity2::class(namespace="App",name="AchieveData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::achievedata::AchieveData>)]pub struct AchieveData{#[offset(96)]#[rename(name="m_FlagName")]pub m_flag_name: ::unity2::Il2CppString, #[static_field]#[rename(name="s_KindDictionary")]pub s_kind_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::system::collections::generic::list_1::List_1<crate::app::achievedata::AchieveData> > , #[static_field]#[rename(name="s_ShowQueue")]pub s_show_queue:crate::system::collections::generic::queue_1::Queue_1<crate::app::achievedata::AchieveData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievedata/AchieveData_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AchieveData_Status{pub value:i32,}
+impl::unity2::ClassIdentity for AchieveData_Status{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AchieveData.Status";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AchieveData_Status{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AchieveData_Status{pub fn none()->Self{Self{value:0}
+}
+pub fn cleared()->Self{Self{value:1}
+}
+pub fn showed()->Self{Self{value:2}
+}
+pub fn completed()->Self{Self{value:3}
+}
+pub fn num()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for AchieveData_Categories  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AchieveData.Categories";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievedata/AchieveData_Categories.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AchieveData_Categories{pub value:i32,}
+impl::unity2::ClassIdentity for AchieveData_Categories{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AchieveData.Categories";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AchieveData_Categories{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AchieveData_Categories{pub fn unit()->Self{Self{value:0}
+}
+pub fn battle()->Self{Self{value:1}
+}
+pub fn solanel()->Self{Self{value:2}
+}
+pub fn shop()->Self{Self{value:3}
+}
+pub fn system()->Self{Self{value:4}
+}
+pub fn play_report()->Self{Self{value:5}
+}
+pub fn num()->Self{Self{value:5}
+}
 }
 
 
-impl  ::unity2::IlType for AchieveData_Categories  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievedata/AchieveData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AchieveData_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for AchieveData_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AchieveData.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AchieveData_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AchieveData_Kinds{pub fn 無し()->Self{Self{value:0}
+}
+pub fn 章クリア()->Self{Self{value:1}
+}
+pub fn 外伝クリア()->Self{Self{value:2}
+}
+pub fn 戦闘回数()->Self{Self{value:3}
+}
+pub fn 杖回数()->Self{Self{value:4}
+}
+pub fn 支援会話()->Self{Self{value:5}
+}
+pub fn 支援会話ｂ()->Self{Self{value:6}
+}
+pub fn 支援会話ａ()->Self{Self{value:7}
+}
+pub fn 支援会話ｓ()->Self{Self{value:8}
+}
+pub fn 一般兵撃破()->Self{Self{value:9}
+}
+pub fn 異形兵撃破()->Self{Self{value:10}
+}
+pub fn 蛮族撃破()->Self{Self{value:11}
+}
+pub fn プレイ時間()->Self{Self{value:12}
+}
+pub fn 遭遇戦()->Self{Self{value:13}
+}
+pub fn 共に進軍()->Self{Self{value:14}
+}
+pub fn 必殺技()->Self{Self{value:15}
+}
+pub fn エンゲージ()->Self{Self{value:16}
+}
+pub fn エンゲージ技()->Self{Self{value:17}
+}
+pub fn 攻撃回避()->Self{Self{value:18}
+}
+pub fn チェインガード()->Self{Self{value:19}
+}
+pub fn チェインアタック()->Self{Self{value:20}
+}
+pub fn チェイン人数()->Self{Self{value:21}
+}
+pub fn ブレイク()->Self{Self{value:22}
+}
+pub fn スマッシュ()->Self{Self{value:23}
+}
+pub fn ミニゲーム()->Self{Self{value:24}
+}
+pub fn 指輪精製()->Self{Self{value:25}
+}
+pub fn 指輪合成()->Self{Self{value:26}
+}
+pub fn 指輪獲得ｃ()->Self{Self{value:27}
+}
+pub fn 指輪獲得ｂ()->Self{Self{value:28}
+}
+pub fn 指輪獲得ａ()->Self{Self{value:29}
+}
+pub fn 指輪獲得ｓ()->Self{Self{value:30}
+}
+pub fn 指輪磨き()->Self{Self{value:31}
+}
+pub fn フィレネ投資()->Self{Self{value:32}
+}
+pub fn ブロディア投資()->Self{Self{value:33}
+}
+pub fn イルシオン投資()->Self{Self{value:34}
+}
+pub fn ソルム投資()->Self{Self{value:35}
+}
+pub fn 投資完了()->Self{Self{value:36}
+}
+pub fn 投資合計()->Self{Self{value:37}
+}
+pub fn 料理製作()->Self{Self{value:38}
+}
+pub fn 料理ｇ()->Self{Self{value:39}
+}
+pub fn 料理ｆ()->Self{Self{value:40}
+}
+pub fn 料理ｅ()->Self{Self{value:41}
+}
+pub fn 料理ｄ()->Self{Self{value:42}
+}
+pub fn 料理ｃ()->Self{Self{value:43}
+}
+pub fn 料理ｂ()->Self{Self{value:44}
+}
+pub fn 料理ａ()->Self{Self{value:45}
+}
+pub fn 料理ｓ()->Self{Self{value:46}
+}
+pub fn 料理ｓｓ()->Self{Self{value:47}
+}
+pub fn 寝る()->Self{Self{value:48}
+}
+pub fn 起床ｃ()->Self{Self{value:49}
+}
+pub fn 起床ｂ()->Self{Self{value:50}
+}
+pub fn 起床ａ()->Self{Self{value:51}
+}
+pub fn 起床ｓ()->Self{Self{value:52}
+}
+pub fn 仲間バトル()->Self{Self{value:53}
+}
+pub fn 仲間バトル勝利()->Self{Self{value:54}
+}
+pub fn 紋章士バトル()->Self{Self{value:55}
+}
+pub fn 紋章士バトル勝利()->Self{Self{value:56}
+}
+pub fn 武器購入()->Self{Self{value:57}
+}
+pub fn 武器剣購入()->Self{Self{value:58}
+}
+pub fn 武器槍購入()->Self{Self{value:59}
+}
+pub fn 武器斧購入()->Self{Self{value:60}
+}
+pub fn 武器弓購入()->Self{Self{value:61}
+}
+pub fn 武器短剣購入()->Self{Self{value:62}
+}
+pub fn 武器魔法購入()->Self{Self{value:63}
+}
+pub fn 武器拳購入()->Self{Self{value:64}
+}
+pub fn 武器売却()->Self{Self{value:65}
+}
+pub fn 道具購入()->Self{Self{value:66}
+}
+pub fn 道具売却()->Self{Self{value:67}
+}
+pub fn 杖購入()->Self{Self{value:68}
+}
+pub fn アクセサリ購入()->Self{Self{value:69}
+}
+pub fn 着せ替え()->Self{Self{value:70}
+}
+pub fn 錬成()->Self{Self{value:71}
+}
+pub fn 錬成剣()->Self{Self{value:72}
+}
+pub fn 錬成槍()->Self{Self{value:73}
+}
+pub fn 錬成斧()->Self{Self{value:74}
+}
+pub fn 錬成弓()->Self{Self{value:75}
+}
+pub fn 錬成短剣()->Self{Self{value:76}
+}
+pub fn 錬成魔法()->Self{Self{value:77}
+}
+pub fn 錬成拳()->Self{Self{value:78}
+}
+pub fn 紋章を刻む()->Self{Self{value:79}
+}
+pub fn 通信対戦()->Self{Self{value:80}
+}
+pub fn 通信対戦勝利()->Self{Self{value:81}
+}
+pub fn リレーバトル()->Self{Self{value:82}
+}
+pub fn リレーバトル勝利()->Self{Self{value:83}
+}
+pub fn 連戦１()->Self{Self{value:84}
+}
+pub fn 連戦２()->Self{Self{value:85}
+}
+pub fn 連戦３()->Self{Self{value:86}
+}
+pub fn 連戦４()->Self{Self{value:87}
+}
+pub fn 連戦５()->Self{Self{value:88}
+}
+pub fn 連戦６()->Self{Self{value:89}
+}
+pub fn pクラスチェンジ()->Self{Self{value:90}
+}
+pub fn p腕立て伏せノーマル()->Self{Self{value:91}
+}
+pub fn p腕立て伏せハード()->Self{Self{value:92}
+}
+pub fn p腕立て伏せエキスパート()->Self{Self{value:93}
+}
+pub fn p腕立て伏せマッスル()->Self{Self{value:94}
+}
+pub fn p腹筋ノーマル()->Self{Self{value:95}
+}
+pub fn p腹筋ハード()->Self{Self{value:96}
+}
+pub fn p腹筋エキスパート()->Self{Self{value:97}
+}
+pub fn p腹筋マッスル()->Self{Self{value:98}
+}
+pub fn pスクワットノーマル()->Self{Self{value:99}
+}
+pub fn pスクワットハード()->Self{Self{value:100}
+}
+pub fn pスクワットエキスパート()->Self{Self{value:101}
+}
+pub fn pスクワットマッスル()->Self{Self{value:102}
+}
+pub fn pドラゴンシューターノーマル()->Self{Self{value:103}
+}
+pub fn pドラゴンシューターハード()->Self{Self{value:104}
+}
+pub fn pドラゴンシューターエキスパート()->Self{Self{value:105}
+}
+pub fn p釣り小魚用竿回数()->Self{Self{value:106}
+}
+pub fn p釣り頑丈竿回数()->Self{Self{value:107}
+}
+pub fn p釣り万能竿回数()->Self{Self{value:108}
+}
+pub fn p指輪磨き紋章士別()->Self{Self{value:109}
+}
+pub fn p連戦１挑戦数()->Self{Self{value:110}
+}
+pub fn p連戦２挑戦数()->Self{Self{value:111}
+}
+pub fn p連戦３挑戦数()->Self{Self{value:112}
+}
+pub fn p連戦４挑戦数()->Self{Self{value:113}
+}
+pub fn p連戦５挑戦数()->Self{Self{value:114}
+}
+pub fn p連戦６挑戦数()->Self{Self{value:115}
+}
+pub fn p連戦１クリア数()->Self{Self{value:116}
+}
+pub fn p連戦２クリア数()->Self{Self{value:117}
+}
+pub fn p連戦３クリア数()->Self{Self{value:118}
+}
+pub fn p連戦４クリア数()->Self{Self{value:119}
+}
+pub fn p連戦５クリア数()->Self{Self{value:120}
+}
+pub fn p連戦６クリア数()->Self{Self{value:121}
+}
+pub fn pリレーバトル１開始数()->Self{Self{value:122}
+}
+pub fn pリレーバトル２開始数()->Self{Self{value:123}
+}
+pub fn pリレーバトル３開始数()->Self{Self{value:124}
+}
+pub fn pリレーバトル４開始数()->Self{Self{value:125}
+}
+pub fn pリレーバトル５開始数()->Self{Self{value:126}
+}
+pub fn pリレーバトル６開始数()->Self{Self{value:127}
+}
+pub fn pリレーバトル引き継ぎ数()->Self{Self{value:128}
+}
+pub fn p対戦お手軽総数()->Self{Self{value:129}
+}
+pub fn p対戦お手軽勝利数()->Self{Self{value:130}
+}
+pub fn p対戦お手軽失敗数()->Self{Self{value:131}
+}
+pub fn p対戦本格総数()->Self{Self{value:132}
+}
+pub fn p対戦本格勝利数()->Self{Self{value:133}
+}
+pub fn p対戦本格失敗数()->Self{Self{value:134}
+}
+pub fn p対戦本格防御勝利数()->Self{Self{value:135}
+}
+pub fn p対戦本格防御失敗数()->Self{Self{value:136}
+}
+pub fn num()->Self{Self{value:137}
+}
 }
 
 
-impl  AchieveData_Categories  {
-    pub fn unit() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn battle() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn solanel() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn shop() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn system() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn play_report() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 5 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievedata/AchieveData_ArgType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AchieveData_ArgType{pub value:i32,}
+impl::unity2::ClassIdentity for AchieveData_ArgType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AchieveData.ArgType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievedata/AchieveData.md"))] # [:: unity2 :: class (namespace = "App" , name = "AchieveData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: achievedata :: AchieveData >)] pub struct AchieveData {
-# [offset (96)] # [rename (name = "m_FlagName")] pub m_flag_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_KindDictionary")] pub s_kind_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: achievedata :: AchieveData > > ,
-# [static_field] # [rename (name = "s_ShowQueue")] pub s_show_queue : crate :: system :: collections :: generic :: queue_1 :: Queue_1 < crate :: app :: achievedata :: AchieveData > ,
+impl::unity2::IlType for AchieveData_ArgType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AchieveData_Kinds  {
-    pub value: i32,
+impl AchieveData_ArgType{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::ClassIdentity for AchieveData_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AchieveData.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn message()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for AchieveData_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn chapter()->Self{Self{value:2}
 }
-
-
-impl  AchieveData_Kinds  {
-    pub fn 無し() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn 章クリア() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn 外伝クリア() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn 戦闘回数() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn 杖回数() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn 支援会話() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn 支援会話ｂ() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn 支援会話ａ() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn 支援会話ｓ() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn 一般兵撃破() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn 異形兵撃破() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn 蛮族撃破() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn プレイ時間() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn 遭遇戦() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn 共に進軍() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn 必殺技() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn エンゲージ() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn エンゲージ技() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn 攻撃回避() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn チェインガード() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn チェインアタック() -> Self {
-        Self { value: 20 }
-
-    }
-
-
-    pub fn チェイン人数() -> Self {
-        Self { value: 21 }
-
-    }
-
-
-    pub fn ブレイク() -> Self {
-        Self { value: 22 }
-
-    }
-
-
-    pub fn スマッシュ() -> Self {
-        Self { value: 23 }
-
-    }
-
-
-    pub fn ミニゲーム() -> Self {
-        Self { value: 24 }
-
-    }
-
-
-    pub fn 指輪精製() -> Self {
-        Self { value: 25 }
-
-    }
-
-
-    pub fn 指輪合成() -> Self {
-        Self { value: 26 }
-
-    }
-
-
-    pub fn 指輪獲得ｃ() -> Self {
-        Self { value: 27 }
-
-    }
-
-
-    pub fn 指輪獲得ｂ() -> Self {
-        Self { value: 28 }
-
-    }
-
-
-    pub fn 指輪獲得ａ() -> Self {
-        Self { value: 29 }
-
-    }
-
-
-    pub fn 指輪獲得ｓ() -> Self {
-        Self { value: 30 }
-
-    }
-
-
-    pub fn 指輪磨き() -> Self {
-        Self { value: 31 }
-
-    }
-
-
-    pub fn フィレネ投資() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn ブロディア投資() -> Self {
-        Self { value: 33 }
-
-    }
-
-
-    pub fn イルシオン投資() -> Self {
-        Self { value: 34 }
-
-    }
-
-
-    pub fn ソルム投資() -> Self {
-        Self { value: 35 }
-
-    }
-
-
-    pub fn 投資完了() -> Self {
-        Self { value: 36 }
-
-    }
-
-
-    pub fn 投資合計() -> Self {
-        Self { value: 37 }
-
-    }
-
-
-    pub fn 料理製作() -> Self {
-        Self { value: 38 }
-
-    }
-
-
-    pub fn 料理ｇ() -> Self {
-        Self { value: 39 }
-
-    }
-
-
-    pub fn 料理ｆ() -> Self {
-        Self { value: 40 }
-
-    }
-
-
-    pub fn 料理ｅ() -> Self {
-        Self { value: 41 }
-
-    }
-
-
-    pub fn 料理ｄ() -> Self {
-        Self { value: 42 }
-
-    }
-
-
-    pub fn 料理ｃ() -> Self {
-        Self { value: 43 }
-
-    }
-
-
-    pub fn 料理ｂ() -> Self {
-        Self { value: 44 }
-
-    }
-
-
-    pub fn 料理ａ() -> Self {
-        Self { value: 45 }
-
-    }
-
-
-    pub fn 料理ｓ() -> Self {
-        Self { value: 46 }
-
-    }
-
-
-    pub fn 料理ｓｓ() -> Self {
-        Self { value: 47 }
-
-    }
-
-
-    pub fn 寝る() -> Self {
-        Self { value: 48 }
-
-    }
-
-
-    pub fn 起床ｃ() -> Self {
-        Self { value: 49 }
-
-    }
-
-
-    pub fn 起床ｂ() -> Self {
-        Self { value: 50 }
-
-    }
-
-
-    pub fn 起床ａ() -> Self {
-        Self { value: 51 }
-
-    }
-
-
-    pub fn 起床ｓ() -> Self {
-        Self { value: 52 }
-
-    }
-
-
-    pub fn 仲間バトル() -> Self {
-        Self { value: 53 }
-
-    }
-
-
-    pub fn 仲間バトル勝利() -> Self {
-        Self { value: 54 }
-
-    }
-
-
-    pub fn 紋章士バトル() -> Self {
-        Self { value: 55 }
-
-    }
-
-
-    pub fn 紋章士バトル勝利() -> Self {
-        Self { value: 56 }
-
-    }
-
-
-    pub fn 武器購入() -> Self {
-        Self { value: 57 }
-
-    }
-
-
-    pub fn 武器剣購入() -> Self {
-        Self { value: 58 }
-
-    }
-
-
-    pub fn 武器槍購入() -> Self {
-        Self { value: 59 }
-
-    }
-
-
-    pub fn 武器斧購入() -> Self {
-        Self { value: 60 }
-
-    }
-
-
-    pub fn 武器弓購入() -> Self {
-        Self { value: 61 }
-
-    }
-
-
-    pub fn 武器短剣購入() -> Self {
-        Self { value: 62 }
-
-    }
-
-
-    pub fn 武器魔法購入() -> Self {
-        Self { value: 63 }
-
-    }
-
-
-    pub fn 武器拳購入() -> Self {
-        Self { value: 64 }
-
-    }
-
-
-    pub fn 武器売却() -> Self {
-        Self { value: 65 }
-
-    }
-
-
-    pub fn 道具購入() -> Self {
-        Self { value: 66 }
-
-    }
-
-
-    pub fn 道具売却() -> Self {
-        Self { value: 67 }
-
-    }
-
-
-    pub fn 杖購入() -> Self {
-        Self { value: 68 }
-
-    }
-
-
-    pub fn アクセサリ購入() -> Self {
-        Self { value: 69 }
-
-    }
-
-
-    pub fn 着せ替え() -> Self {
-        Self { value: 70 }
-
-    }
-
-
-    pub fn 錬成() -> Self {
-        Self { value: 71 }
-
-    }
-
-
-    pub fn 錬成剣() -> Self {
-        Self { value: 72 }
-
-    }
-
-
-    pub fn 錬成槍() -> Self {
-        Self { value: 73 }
-
-    }
-
-
-    pub fn 錬成斧() -> Self {
-        Self { value: 74 }
-
-    }
-
-
-    pub fn 錬成弓() -> Self {
-        Self { value: 75 }
-
-    }
-
-
-    pub fn 錬成短剣() -> Self {
-        Self { value: 76 }
-
-    }
-
-
-    pub fn 錬成魔法() -> Self {
-        Self { value: 77 }
-
-    }
-
-
-    pub fn 錬成拳() -> Self {
-        Self { value: 78 }
-
-    }
-
-
-    pub fn 紋章を刻む() -> Self {
-        Self { value: 79 }
-
-    }
-
-
-    pub fn 通信対戦() -> Self {
-        Self { value: 80 }
-
-    }
-
-
-    pub fn 通信対戦勝利() -> Self {
-        Self { value: 81 }
-
-    }
-
-
-    pub fn リレーバトル() -> Self {
-        Self { value: 82 }
-
-    }
-
-
-    pub fn リレーバトル勝利() -> Self {
-        Self { value: 83 }
-
-    }
-
-
-    pub fn 連戦１() -> Self {
-        Self { value: 84 }
-
-    }
-
-
-    pub fn 連戦２() -> Self {
-        Self { value: 85 }
-
-    }
-
-
-    pub fn 連戦３() -> Self {
-        Self { value: 86 }
-
-    }
-
-
-    pub fn 連戦４() -> Self {
-        Self { value: 87 }
-
-    }
-
-
-    pub fn 連戦５() -> Self {
-        Self { value: 88 }
-
-    }
-
-
-    pub fn 連戦６() -> Self {
-        Self { value: 89 }
-
-    }
-
-
-    pub fn pクラスチェンジ() -> Self {
-        Self { value: 90 }
-
-    }
-
-
-    pub fn p腕立て伏せノーマル() -> Self {
-        Self { value: 91 }
-
-    }
-
-
-    pub fn p腕立て伏せハード() -> Self {
-        Self { value: 92 }
-
-    }
-
-
-    pub fn p腕立て伏せエキスパート() -> Self {
-        Self { value: 93 }
-
-    }
-
-
-    pub fn p腕立て伏せマッスル() -> Self {
-        Self { value: 94 }
-
-    }
-
-
-    pub fn p腹筋ノーマル() -> Self {
-        Self { value: 95 }
-
-    }
-
-
-    pub fn p腹筋ハード() -> Self {
-        Self { value: 96 }
-
-    }
-
-
-    pub fn p腹筋エキスパート() -> Self {
-        Self { value: 97 }
-
-    }
-
-
-    pub fn p腹筋マッスル() -> Self {
-        Self { value: 98 }
-
-    }
-
-
-    pub fn pスクワットノーマル() -> Self {
-        Self { value: 99 }
-
-    }
-
-
-    pub fn pスクワットハード() -> Self {
-        Self { value: 100 }
-
-    }
-
-
-    pub fn pスクワットエキスパート() -> Self {
-        Self { value: 101 }
-
-    }
-
-
-    pub fn pスクワットマッスル() -> Self {
-        Self { value: 102 }
-
-    }
-
-
-    pub fn pドラゴンシューターノーマル() -> Self {
-        Self { value: 103 }
-
-    }
-
-
-    pub fn pドラゴンシューターハード() -> Self {
-        Self { value: 104 }
-
-    }
-
-
-    pub fn pドラゴンシューターエキスパート() -> Self {
-        Self { value: 105 }
-
-    }
-
-
-    pub fn p釣り小魚用竿回数() -> Self {
-        Self { value: 106 }
-
-    }
-
-
-    pub fn p釣り頑丈竿回数() -> Self {
-        Self { value: 107 }
-
-    }
-
-
-    pub fn p釣り万能竿回数() -> Self {
-        Self { value: 108 }
-
-    }
-
-
-    pub fn p指輪磨き紋章士別() -> Self {
-        Self { value: 109 }
-
-    }
-
-
-    pub fn p連戦１挑戦数() -> Self {
-        Self { value: 110 }
-
-    }
-
-
-    pub fn p連戦２挑戦数() -> Self {
-        Self { value: 111 }
-
-    }
-
-
-    pub fn p連戦３挑戦数() -> Self {
-        Self { value: 112 }
-
-    }
-
-
-    pub fn p連戦４挑戦数() -> Self {
-        Self { value: 113 }
-
-    }
-
-
-    pub fn p連戦５挑戦数() -> Self {
-        Self { value: 114 }
-
-    }
-
-
-    pub fn p連戦６挑戦数() -> Self {
-        Self { value: 115 }
-
-    }
-
-
-    pub fn p連戦１クリア数() -> Self {
-        Self { value: 116 }
-
-    }
-
-
-    pub fn p連戦２クリア数() -> Self {
-        Self { value: 117 }
-
-    }
-
-
-    pub fn p連戦３クリア数() -> Self {
-        Self { value: 118 }
-
-    }
-
-
-    pub fn p連戦４クリア数() -> Self {
-        Self { value: 119 }
-
-    }
-
-
-    pub fn p連戦５クリア数() -> Self {
-        Self { value: 120 }
-
-    }
-
-
-    pub fn p連戦６クリア数() -> Self {
-        Self { value: 121 }
-
-    }
-
-
-    pub fn pリレーバトル１開始数() -> Self {
-        Self { value: 122 }
-
-    }
-
-
-    pub fn pリレーバトル２開始数() -> Self {
-        Self { value: 123 }
-
-    }
-
-
-    pub fn pリレーバトル３開始数() -> Self {
-        Self { value: 124 }
-
-    }
-
-
-    pub fn pリレーバトル４開始数() -> Self {
-        Self { value: 125 }
-
-    }
-
-
-    pub fn pリレーバトル５開始数() -> Self {
-        Self { value: 126 }
-
-    }
-
-
-    pub fn pリレーバトル６開始数() -> Self {
-        Self { value: 127 }
-
-    }
-
-
-    pub fn pリレーバトル引き継ぎ数() -> Self {
-        Self { value: 128 }
-
-    }
-
-
-    pub fn p対戦お手軽総数() -> Self {
-        Self { value: 129 }
-
-    }
-
-
-    pub fn p対戦お手軽勝利数() -> Self {
-        Self { value: 130 }
-
-    }
-
-
-    pub fn p対戦お手軽失敗数() -> Self {
-        Self { value: 131 }
-
-    }
-
-
-    pub fn p対戦本格総数() -> Self {
-        Self { value: 132 }
-
-    }
-
-
-    pub fn p対戦本格勝利数() -> Self {
-        Self { value: 133 }
-
-    }
-
-
-    pub fn p対戦本格失敗数() -> Self {
-        Self { value: 134 }
-
-    }
-
-
-    pub fn p対戦本格防御勝利数() -> Self {
-        Self { value: 135 }
-
-    }
-
-
-    pub fn p対戦本格防御失敗数() -> Self {
-        Self { value: 136 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 137 }
-
-    }
-
+pub fn chapter_side()->Self{Self{value:3}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_ArgType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AchieveData_ArgType  {
-    pub value: i32,
+pub fn person()->Self{Self{value:4}
 }
-
-
-impl  ::unity2::ClassIdentity for AchieveData_ArgType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AchieveData.ArgType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn num()->Self{Self{value:5}
 }
-
-
-impl  ::unity2::IlType for AchieveData_ArgType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AchieveData_ArgType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn message() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn chapter() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn chapter_side() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn person() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievedata/AchieveData_Status.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AchieveData_Status  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for AchieveData_Status  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AchieveData.Status";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AchieveData_Status  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AchieveData_Status  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn cleared() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn showed() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn completed() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 4 }
-
-    }
-
 }
 
 }
@@ -1114,33 +386,723 @@ impl  AchieveData_Status  {
 #[cfg(feature = "app-achievedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-achievedata")]
-impl AchieveData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6930usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsGrouping(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn is_grouping (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c69e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`IsCount(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn is_count (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c7930usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetFlagName(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn get_flag_name (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c7880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetFlagName(crate::app::achievedata::AchieveData_Kinds, ::unity2::Il2CppString)` overload"] pub fn get_flag_name_2 (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds > , footer : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c84d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (footer) , :: core :: option :: Option :: None) } } } # [doc = "`GetFlagName(::unity2::Il2CppString)` overload"] pub fn get_flag_name_3 (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c8550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetKindCount(::unity2::Il2CppString)` overload"] pub fn get_kind_count (kind : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c87c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`SetClearReliance(crate::app::persondata::PersonData)` overload"] pub fn set_clear_reliance (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c8910usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountRelianceB()` overload"] pub fn add_count_reliance_b () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c8cb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountRelianceA()` overload"] pub fn add_count_reliance_a () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c91d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountRelianceS()` overload"] pub fn add_count_reliance_s () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9230usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountSortie(crate::app::persondata::PersonData)` overload"] pub fn add_count_sortie (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountEncount()` overload"] pub fn add_count_encount () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBattle()` overload"] pub fn add_count_battle () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c99b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountDefeat(crate::app::persondata::PersonData)` overload"] pub fn add_count_defeat (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9a10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountRod()` overload"] pub fn add_count_rod () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9b00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCritical()` overload"] pub fn add_count_critical () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9b60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountEngage()` overload"] pub fn add_count_engage () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9bc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountEngageAttack()` overload"] pub fn add_count_engage_attack () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9c20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountAvoidance()` overload"] pub fn add_count_avoidance () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9c80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountChainGuard()` overload"] pub fn add_count_chain_guard () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9ce0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountChainAttack()` overload"] pub fn add_count_chain_attack () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9d40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetValueChainUnit(i32)` overload"] pub fn set_value_chain_unit (unit_num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9da0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit_num) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountBreak()` overload"] pub fn add_count_break () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca2d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountSmash()` overload"] pub fn add_count_smash () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca330usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountMiniGame()` overload"] pub fn add_count_mini_game () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountRingForm(i32)` overload"] pub fn add_count_ring_form (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca3f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountRingMix()` overload"] pub fn add_count_ring_mix () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca460usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBondsRingC(i32)` overload"] pub fn add_count_bonds_ring_c (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca4c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountBondsRingB(i32)` overload"] pub fn add_count_bonds_ring_b (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountBondsRingA(i32)` overload"] pub fn add_count_bonds_ring_a (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca5a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountBondsRingS(i32)` overload"] pub fn add_count_bonds_ring_s (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca610usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountRingCleaning()` overload"] pub fn add_count_ring_cleaning () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetValueInvestmentFilene(i32)` overload"] pub fn set_value_investment_filene (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca6e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`SetValueInvestmentBrodia(i32)` overload"] pub fn set_value_investment_brodia (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca750usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`SetValueInvestmentIrcion(i32)` overload"] pub fn set_value_investment_ircion (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca7c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`SetValueInvestmentSolum(i32)` overload"] pub fn set_value_investment_solum (level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`SetClearInvestmentAll()` overload"] pub fn set_clear_investment_all () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ca8a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountInvestmentMoney(i32)` overload"] pub fn add_count_investment_money (money : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27caa80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (money) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountCookAll()` overload"] pub fn add_count_cook_all () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27caaf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCookG()` overload"] pub fn add_count_cook_g () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cab50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCookF()` overload"] pub fn add_count_cook_f () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cabb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCookE()` overload"] pub fn add_count_cook_e () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cac10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCookD()` overload"] pub fn add_count_cook_d () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cac70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCookC()` overload"] pub fn add_count_cook_c () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cacd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCookB()` overload"] pub fn add_count_cook_b () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cad30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCookA()` overload"] pub fn add_count_cook_a () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cad90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCookS()` overload"] pub fn add_count_cook_s () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cadf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountCookSS()` overload"] pub fn add_count_cook_ss () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cae50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountSleep()` overload"] pub fn add_count_sleep () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27caeb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountWakeUpC()` overload"] pub fn add_count_wake_up_c () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27caf10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountWakeUpB()` overload"] pub fn add_count_wake_up_b () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27caf70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountWakeUpA()` overload"] pub fn add_count_wake_up_a () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cafd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountWakeUpS()` overload"] pub fn add_count_wake_up_s () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb030usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountUnitBattle()` overload"] pub fn add_count_unit_battle () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb090usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountUnitBattleWin()` overload"] pub fn add_count_unit_battle_win () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb0f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountGodBattle()` overload"] pub fn add_count_god_battle () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb150usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountGodBattleWin()` overload"] pub fn add_count_god_battle_win () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb1b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyWeapon()` overload"] pub fn add_count_buy_weapon () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb210usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBuySword()` overload"] pub fn add_count_buy_sword () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb270usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyLance()` overload"] pub fn add_count_buy_lance () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb2d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyAxe()` overload"] pub fn add_count_buy_axe () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb330usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyBow()` overload"] pub fn add_count_buy_bow () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyKnife()` overload"] pub fn add_count_buy_knife () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb3f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyMagic()` overload"] pub fn add_count_buy_magic () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb450usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyFist()` overload"] pub fn add_count_buy_fist () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb4b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountSellWeapon(i32)` overload"] pub fn add_count_sell_weapon (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb510usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyItem()` overload"] pub fn add_count_buy_item () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb580usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountSellItem(i32)` overload"] pub fn add_count_sell_item (add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb5e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyRod()` overload"] pub fn add_count_buy_rod () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountBuyAccessories()` overload"] pub fn add_count_buy_accessories () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb6b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountChangeAccessories()` overload"] pub fn add_count_change_accessories () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb710usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountForging()` overload"] pub fn add_count_forging () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountForgingSword()` overload"] pub fn add_count_forging_sword () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb7d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountForgingLance()` overload"] pub fn add_count_forging_lance () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb830usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountForgingAxe()` overload"] pub fn add_count_forging_axe () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb890usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountForgingBow()` overload"] pub fn add_count_forging_bow () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb8f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountForgingKnife()` overload"] pub fn add_count_forging_knife () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountForgingMagic()` overload"] pub fn add_count_forging_magic () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cb9b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountForgingFist()` overload"] pub fn add_count_forging_fist () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cba10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountEngrave()` overload"] pub fn add_count_engrave () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cba70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetValuePlayTime(f32)` overload"] pub fn set_value_play_time (time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cbad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`SetClearChapter(crate::app::chapterdata::ChapterData)` overload"] pub fn set_clear_chapter (chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cbb80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } # [doc = "`AddCountNetMatch()` overload"] pub fn add_count_net_match () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc050usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountNetMatchWin()` overload"] pub fn add_count_net_match_win () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc0b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountRelayBattle()` overload"] pub fn add_count_relay_battle () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc110usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddCountRelayBattleWin()` overload"] pub fn add_count_relay_battle_win () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetChallengeRank(i32, i32)` overload"] pub fn set_challenge_rank (route : impl :: core :: convert :: Into < i32 > , level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc1d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (route) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountClassChange()` overload"] pub fn play_report_add_count_class_change () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc340usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountPushUpsNormal()` overload"] pub fn play_report_add_count_push_ups_normal () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc3a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountPushUpsHard()` overload"] pub fn play_report_add_count_push_ups_hard () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc400usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountPushUpsExpert()` overload"] pub fn play_report_add_count_push_ups_expert () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc460usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountPushUpsMuscle()` overload"] pub fn play_report_add_count_push_ups_muscle () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc4c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountAdsNormal()` overload"] pub fn play_report_add_count_ads_normal () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc520usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountAdsHard()` overload"] pub fn play_report_add_count_ads_hard () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc580usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountAdsExpert()` overload"] pub fn play_report_add_count_ads_expert () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc5e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountAdsMuscle()` overload"] pub fn play_report_add_count_ads_muscle () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc640usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountSquatNormal()` overload"] pub fn play_report_add_count_squat_normal () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc6a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountSquatHard()` overload"] pub fn play_report_add_count_squat_hard () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc700usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountSquatExpert()` overload"] pub fn play_report_add_count_squat_expert () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc760usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountSquatMuscle()` overload"] pub fn play_report_add_count_squat_muscle () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc7c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountDragonRideNormal()` overload"] pub fn play_report_add_count_dragon_ride_normal () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc820usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountDragonRideHard()` overload"] pub fn play_report_add_count_dragon_ride_hard () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc880usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountDragonRideExpert()` overload"] pub fn play_report_add_count_dragon_ride_expert () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc8e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountFishingRodSmoll()` overload"] pub fn play_report_add_count_fishing_rod_smoll () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountFishingRodNormal()` overload"] pub fn play_report_add_count_fishing_rod_normal () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cc9a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountFishingRodAllPurpose()` overload"] pub fn play_report_add_count_fishing_rod_all_purpose () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cca00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountCleaningFormGod(::unity2::Il2CppString)` overload"] pub fn play_report_add_count_cleaning_form_god (gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cca60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountChallenge(i32)` overload"] pub fn play_report_add_count_challenge (route : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ccd70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (route) , :: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountChallengeClear(i32)` overload"] pub fn play_report_add_count_challenge_clear (route : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ccf10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (route) , :: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountRelayBattle(i32)` overload"] pub fn play_report_add_count_relay_battle (route : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd0b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (route) , :: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountRelayBattleInherit()` overload"] pub fn play_report_add_count_relay_battle_inherit () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd250usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountVersusCasual()` overload"] pub fn play_report_add_count_versus_casual () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd2b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountVersusCasualWin()` overload"] pub fn play_report_add_count_versus_casual_win () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd310usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountVersusCasualLose()` overload"] pub fn play_report_add_count_versus_casual_lose () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd370usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountVersusRanked()` overload"] pub fn play_report_add_count_versus_ranked () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd3d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountVersusRankedWin()` overload"] pub fn play_report_add_count_versus_ranked_win () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd430usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountVersusRankedLose()` overload"] pub fn play_report_add_count_versus_ranked_lose () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd490usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountVersusRankedDefenseWin()` overload"] pub fn play_report_add_count_versus_ranked_defense_win () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd4f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportAddCountVersusRankedDefenseLose()` overload"] pub fn play_report_add_count_versus_ranked_defense_lose () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd550usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayReportGetCount(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn play_report_get_count (kinds : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd5b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kinds) , :: core :: option :: Option :: None) } } } # [doc = "`PlayReportGetCountCleaningFormGod(::unity2::Il2CppString)` overload"] pub fn play_report_get_count_cleaning_form_god (gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd860usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } } # [doc = "`TrySetCleard(crate::app::achievedata::AchieveData)` overload"] pub fn try_set_cleard (data : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c8bc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`IsProhibited()` overload"] pub fn is_prohibited () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9810usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsValid(::unity2::Il2CppString)` overload"] pub fn is_valid (flag_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd750usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (flag_name) , :: core :: option :: Option :: None) } } } # [doc = "`AddCount(crate::app::achievedata::AchieveData_Kinds, i32)` overload"] pub fn add_count (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds > , add_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c8d10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (add_value) , :: core :: option :: Option :: None) } } } # [doc = "`CommitValue(crate::app::achievedata::AchieveData_Kinds, i32)` overload"] pub fn commit_value (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c9e10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetKindList(crate::app::achievedata::AchieveData_Kinds)` overload"] pub fn get_kind_list (kind : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: achievedata :: AchieveData > { unsafe { { let __inner : extern "C" fn (crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: achievedata :: AchieveData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c8420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateShowQueue()` overload"] pub fn update_show_queue () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cd9e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ClearShowQueue()` overload"] pub fn clear_show_queue () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cdbe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DequeueShowData()` overload"] pub fn dequeue_show_data () -> crate :: app :: achievedata :: AchieveData { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cdcc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cde30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-achievedata")]impl AchieveData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c6930usize)as*mut u8,();
+)}
+}
+#[doc="`IsGrouping(crate::app::achievedata::AchieveData_Kinds)` overload"]pub fn is_grouping(kind:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c69e0usize)as*mut u8,bool;
+(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`IsCount(crate::app::achievedata::AchieveData_Kinds)` overload"]pub fn is_count(kind:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c6a00usize)as*mut u8,bool;
+(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`RegistGlobalFlags()` overload"]pub fn regist_global_flags()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c7930usize)as*mut u8,();
+)}
+}
+#[doc="`GetFlagName(crate::app::achievedata::AchieveData_Kinds)` overload"]pub fn get_flag_name(kind:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c7880usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`GetFlagName(crate::app::achievedata::AchieveData_Kinds, ::unity2::Il2CppString)` overload"]pub fn get_flag_name_2(kind:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds> ,footer:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c84d0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(kind),(::unity2::Il2CppString)::core::convert::Into::into(footer))}
+}
+#[doc="`GetFlagName(::unity2::Il2CppString)` overload"]pub fn get_flag_name_3(kind:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c8550usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(kind))}
+}
+#[doc="`GetKindCount(::unity2::Il2CppString)` overload"]pub fn get_kind_count(kind:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c87c0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(kind))}
+}
+#[doc="`SetClearReliance(crate::app::persondata::PersonData)` overload"]pub fn set_clear_reliance(person:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c8910usize)as*mut u8,();
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`AddCountRelianceB()` overload"]pub fn add_count_reliance_b()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c8cb0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountRelianceA()` overload"]pub fn add_count_reliance_a()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c91d0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountRelianceS()` overload"]pub fn add_count_reliance_s()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9230usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountSortie(crate::app::persondata::PersonData)` overload"]pub fn add_count_sortie(person:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9290usize)as*mut u8,();
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`AddCountEncount()` overload"]pub fn add_count_encount()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9950usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBattle()` overload"]pub fn add_count_battle()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c99b0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountDefeat(crate::app::persondata::PersonData)` overload"]pub fn add_count_defeat(person:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9a10usize)as*mut u8,();
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`AddCountRod()` overload"]pub fn add_count_rod()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9b00usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCritical()` overload"]pub fn add_count_critical()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9b60usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountEngage()` overload"]pub fn add_count_engage()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9bc0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountEngageAttack()` overload"]pub fn add_count_engage_attack()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9c20usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountAvoidance()` overload"]pub fn add_count_avoidance()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9c80usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountChainGuard()` overload"]pub fn add_count_chain_guard()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9ce0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountChainAttack()` overload"]pub fn add_count_chain_attack()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9d40usize)as*mut u8,();
+)}
+}
+#[doc="`SetValueChainUnit(i32)` overload"]pub fn set_value_chain_unit(unit_num:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9da0usize)as*mut u8,();
+(i32)::core::convert::Into::into(unit_num))}
+}
+#[doc="`AddCountBreak()` overload"]pub fn add_count_break()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca2d0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountSmash()` overload"]pub fn add_count_smash()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca330usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountMiniGame()` overload"]pub fn add_count_mini_game()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca390usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountRingForm(i32)` overload"]pub fn add_count_ring_form(add_value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca3f0usize)as*mut u8,();
+(i32)::core::convert::Into::into(add_value))}
+}
+#[doc="`AddCountRingMix()` overload"]pub fn add_count_ring_mix()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca460usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBondsRingC(i32)` overload"]pub fn add_count_bonds_ring_c(add_value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca4c0usize)as*mut u8,();
+(i32)::core::convert::Into::into(add_value))}
+}
+#[doc="`AddCountBondsRingB(i32)` overload"]pub fn add_count_bonds_ring_b(add_value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca530usize)as*mut u8,();
+(i32)::core::convert::Into::into(add_value))}
+}
+#[doc="`AddCountBondsRingA(i32)` overload"]pub fn add_count_bonds_ring_a(add_value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca5a0usize)as*mut u8,();
+(i32)::core::convert::Into::into(add_value))}
+}
+#[doc="`AddCountBondsRingS(i32)` overload"]pub fn add_count_bonds_ring_s(add_value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca610usize)as*mut u8,();
+(i32)::core::convert::Into::into(add_value))}
+}
+#[doc="`AddCountRingCleaning()` overload"]pub fn add_count_ring_cleaning()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca680usize)as*mut u8,();
+)}
+}
+#[doc="`SetValueInvestmentFilene(i32)` overload"]pub fn set_value_investment_filene(level:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca6e0usize)as*mut u8,();
+(i32)::core::convert::Into::into(level))}
+}
+#[doc="`SetValueInvestmentBrodia(i32)` overload"]pub fn set_value_investment_brodia(level:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca750usize)as*mut u8,();
+(i32)::core::convert::Into::into(level))}
+}
+#[doc="`SetValueInvestmentIrcion(i32)` overload"]pub fn set_value_investment_ircion(level:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca7c0usize)as*mut u8,();
+(i32)::core::convert::Into::into(level))}
+}
+#[doc="`SetValueInvestmentSolum(i32)` overload"]pub fn set_value_investment_solum(level:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca830usize)as*mut u8,();
+(i32)::core::convert::Into::into(level))}
+}
+#[doc="`SetClearInvestmentAll()` overload"]pub fn set_clear_investment_all()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ca8a0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountInvestmentMoney(i32)` overload"]pub fn add_count_investment_money(money:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27caa80usize)as*mut u8,();
+(i32)::core::convert::Into::into(money))}
+}
+#[doc="`AddCountCookAll()` overload"]pub fn add_count_cook_all()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27caaf0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCookG()` overload"]pub fn add_count_cook_g()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cab50usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCookF()` overload"]pub fn add_count_cook_f()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cabb0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCookE()` overload"]pub fn add_count_cook_e()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cac10usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCookD()` overload"]pub fn add_count_cook_d()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cac70usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCookC()` overload"]pub fn add_count_cook_c()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cacd0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCookB()` overload"]pub fn add_count_cook_b()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cad30usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCookA()` overload"]pub fn add_count_cook_a()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cad90usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCookS()` overload"]pub fn add_count_cook_s()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cadf0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountCookSS()` overload"]pub fn add_count_cook_ss()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cae50usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountSleep()` overload"]pub fn add_count_sleep()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27caeb0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountWakeUpC()` overload"]pub fn add_count_wake_up_c()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27caf10usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountWakeUpB()` overload"]pub fn add_count_wake_up_b()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27caf70usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountWakeUpA()` overload"]pub fn add_count_wake_up_a()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cafd0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountWakeUpS()` overload"]pub fn add_count_wake_up_s()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb030usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountUnitBattle()` overload"]pub fn add_count_unit_battle()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb090usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountUnitBattleWin()` overload"]pub fn add_count_unit_battle_win()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb0f0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountGodBattle()` overload"]pub fn add_count_god_battle()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb150usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountGodBattleWin()` overload"]pub fn add_count_god_battle_win()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb1b0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBuyWeapon()` overload"]pub fn add_count_buy_weapon()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb210usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBuySword()` overload"]pub fn add_count_buy_sword()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb270usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBuyLance()` overload"]pub fn add_count_buy_lance()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb2d0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBuyAxe()` overload"]pub fn add_count_buy_axe()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb330usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBuyBow()` overload"]pub fn add_count_buy_bow()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb390usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBuyKnife()` overload"]pub fn add_count_buy_knife()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb3f0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBuyMagic()` overload"]pub fn add_count_buy_magic()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb450usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBuyFist()` overload"]pub fn add_count_buy_fist()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb4b0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountSellWeapon(i32)` overload"]pub fn add_count_sell_weapon(add_value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb510usize)as*mut u8,();
+(i32)::core::convert::Into::into(add_value))}
+}
+#[doc="`AddCountBuyItem()` overload"]pub fn add_count_buy_item()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb580usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountSellItem(i32)` overload"]pub fn add_count_sell_item(add_value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb5e0usize)as*mut u8,();
+(i32)::core::convert::Into::into(add_value))}
+}
+#[doc="`AddCountBuyRod()` overload"]pub fn add_count_buy_rod()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb650usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountBuyAccessories()` overload"]pub fn add_count_buy_accessories()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb6b0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountChangeAccessories()` overload"]pub fn add_count_change_accessories()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb710usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountForging()` overload"]pub fn add_count_forging()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb770usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountForgingSword()` overload"]pub fn add_count_forging_sword()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb7d0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountForgingLance()` overload"]pub fn add_count_forging_lance()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb830usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountForgingAxe()` overload"]pub fn add_count_forging_axe()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb890usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountForgingBow()` overload"]pub fn add_count_forging_bow()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb8f0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountForgingKnife()` overload"]pub fn add_count_forging_knife()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb950usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountForgingMagic()` overload"]pub fn add_count_forging_magic()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cb9b0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountForgingFist()` overload"]pub fn add_count_forging_fist()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cba10usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountEngrave()` overload"]pub fn add_count_engrave()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cba70usize)as*mut u8,();
+)}
+}
+#[doc="`SetValuePlayTime(f32)` overload"]pub fn set_value_play_time(time:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cbad0usize)as*mut u8,();
+(f32)::core::convert::Into::into(time))}
+}
+#[doc="`SetClearChapter(crate::app::chapterdata::ChapterData)` overload"]pub fn set_clear_chapter(chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cbb80usize)as*mut u8,();
+(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+#[doc="`AddCountNetMatch()` overload"]pub fn add_count_net_match()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc050usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountNetMatchWin()` overload"]pub fn add_count_net_match_win()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc0b0usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountRelayBattle()` overload"]pub fn add_count_relay_battle()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc110usize)as*mut u8,();
+)}
+}
+#[doc="`AddCountRelayBattleWin()` overload"]pub fn add_count_relay_battle_win()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc170usize)as*mut u8,();
+)}
+}
+#[doc="`SetChallengeRank(i32, i32)` overload"]pub fn set_challenge_rank(route:impl::core::convert::Into<i32> ,level:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc1d0usize)as*mut u8,();
+(i32)::core::convert::Into::into(route),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`PlayReportAddCountClassChange()` overload"]pub fn play_report_add_count_class_change()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc340usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountPushUpsNormal()` overload"]pub fn play_report_add_count_push_ups_normal()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc3a0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountPushUpsHard()` overload"]pub fn play_report_add_count_push_ups_hard()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc400usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountPushUpsExpert()` overload"]pub fn play_report_add_count_push_ups_expert()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc460usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountPushUpsMuscle()` overload"]pub fn play_report_add_count_push_ups_muscle()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc4c0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountAdsNormal()` overload"]pub fn play_report_add_count_ads_normal()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc520usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountAdsHard()` overload"]pub fn play_report_add_count_ads_hard()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc580usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountAdsExpert()` overload"]pub fn play_report_add_count_ads_expert()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc5e0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountAdsMuscle()` overload"]pub fn play_report_add_count_ads_muscle()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc640usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountSquatNormal()` overload"]pub fn play_report_add_count_squat_normal()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc6a0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountSquatHard()` overload"]pub fn play_report_add_count_squat_hard()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc700usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountSquatExpert()` overload"]pub fn play_report_add_count_squat_expert()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc760usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountSquatMuscle()` overload"]pub fn play_report_add_count_squat_muscle()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc7c0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountDragonRideNormal()` overload"]pub fn play_report_add_count_dragon_ride_normal()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc820usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountDragonRideHard()` overload"]pub fn play_report_add_count_dragon_ride_hard()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc880usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountDragonRideExpert()` overload"]pub fn play_report_add_count_dragon_ride_expert()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc8e0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountFishingRodSmoll()` overload"]pub fn play_report_add_count_fishing_rod_smoll()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc940usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountFishingRodNormal()` overload"]pub fn play_report_add_count_fishing_rod_normal()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cc9a0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountFishingRodAllPurpose()` overload"]pub fn play_report_add_count_fishing_rod_all_purpose()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cca00usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountCleaningFormGod(::unity2::Il2CppString)` overload"]pub fn play_report_add_count_cleaning_form_god(gid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cca60usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`PlayReportAddCountChallenge(i32)` overload"]pub fn play_report_add_count_challenge(route:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ccd70usize)as*mut u8,();
+(i32)::core::convert::Into::into(route))}
+}
+#[doc="`PlayReportAddCountChallengeClear(i32)` overload"]pub fn play_report_add_count_challenge_clear(route:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ccf10usize)as*mut u8,();
+(i32)::core::convert::Into::into(route))}
+}
+#[doc="`PlayReportAddCountRelayBattle(i32)` overload"]pub fn play_report_add_count_relay_battle(route:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd0b0usize)as*mut u8,();
+(i32)::core::convert::Into::into(route))}
+}
+#[doc="`PlayReportAddCountRelayBattleInherit()` overload"]pub fn play_report_add_count_relay_battle_inherit()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd250usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountVersusCasual()` overload"]pub fn play_report_add_count_versus_casual()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd2b0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountVersusCasualWin()` overload"]pub fn play_report_add_count_versus_casual_win()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd310usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountVersusCasualLose()` overload"]pub fn play_report_add_count_versus_casual_lose()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd370usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountVersusRanked()` overload"]pub fn play_report_add_count_versus_ranked()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd3d0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountVersusRankedWin()` overload"]pub fn play_report_add_count_versus_ranked_win()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd430usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountVersusRankedLose()` overload"]pub fn play_report_add_count_versus_ranked_lose()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd490usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountVersusRankedDefenseWin()` overload"]pub fn play_report_add_count_versus_ranked_defense_win()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd4f0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportAddCountVersusRankedDefenseLose()` overload"]pub fn play_report_add_count_versus_ranked_defense_lose()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd550usize)as*mut u8,();
+)}
+}
+#[doc="`PlayReportGetCount(crate::app::achievedata::AchieveData_Kinds)` overload"]pub fn play_report_get_count(kinds:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd5b0usize)as*mut u8,i32;
+(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(kinds))}
+}
+#[doc="`PlayReportGetCountCleaningFormGod(::unity2::Il2CppString)` overload"]pub fn play_report_get_count_cleaning_form_god(gid:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd860usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`TrySetCleard(crate::app::achievedata::AchieveData)` overload"]pub fn try_set_cleard(data:impl::core::convert::Into<crate::app::achievedata::AchieveData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c8bc0usize)as*mut u8,bool;
+(crate::app::achievedata::AchieveData)::core::convert::Into::into(data))}
+}
+#[doc="`IsProhibited()` overload"]pub fn is_prohibited()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9810usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsValid(::unity2::Il2CppString)` overload"]pub fn is_valid(flag_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd750usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(flag_name))}
+}
+#[doc="`AddCount(crate::app::achievedata::AchieveData_Kinds, i32)` overload"]pub fn add_count(kind:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds> ,add_value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c8d10usize)as*mut u8,();
+(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(kind),(i32)::core::convert::Into::into(add_value))}
+}
+#[doc="`CommitValue(crate::app::achievedata::AchieveData_Kinds, i32)` overload"]pub fn commit_value(kind:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds> ,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c9e10usize)as*mut u8,();
+(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(kind),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetKindList(crate::app::achievedata::AchieveData_Kinds)` overload"]pub fn get_kind_list(kind:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>)->crate::system::collections::generic::list_1::List_1<crate::app::achievedata::AchieveData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c8420usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::achievedata::AchieveData> ;
+(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`UpdateShowQueue()` overload"]pub fn update_show_queue()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cd9e0usize)as*mut u8,();
+)}
+}
+#[doc="`ClearShowQueue()` overload"]pub fn clear_show_queue()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cdbe0usize)as*mut u8,();
+)}
+}
+#[doc="`DequeueShowData()` overload"]pub fn dequeue_show_data()->crate::app::achievedata::AchieveData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cdcc0usize)as*mut u8,crate::app::achievedata::AchieveData;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27cde30usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-achievedata")]
-pub trait IAchieveDataMethods : IAchieveData { # [doc = "`get_Aid()` overload"] fn get_aid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Aid(::unity2::Il2CppString)` overload"] fn set_aid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Category()` overload"] fn get_category (self ,) -> crate :: app :: achievedata :: AchieveData_Categories { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Categories = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Category(crate::app::achievedata::AchieveData_Categories)` overload"] fn set_category (self , value : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Categories >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , crate :: app :: achievedata :: AchieveData_Categories , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Kind()` overload"] fn get_kind (self ,) -> crate :: app :: achievedata :: AchieveData_Kinds { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Kind(crate::app::achievedata::AchieveData_Kinds)` overload"] fn set_kind (self , value : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Kinds >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , crate :: app :: achievedata :: AchieveData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Count(i32)` overload"] fn set_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg()` overload"] fn get_arg (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg(::unity2::Il2CppString)` overload"] fn set_arg (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6b00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CountUnit()` overload"] fn get_count_unit (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CountUnit(::unity2::Il2CppString)` overload"] fn set_count_unit (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_KizunaReward()` overload"] fn get_kizuna_reward (self ,) -> i32 { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_KizunaReward(i32)` overload"] fn set_kizuna_reward (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Chapter()` overload"] fn get_chapter (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Chapter(::unity2::Il2CppString)` overload"] fn set_chapter (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetArgType()` overload"] fn get_arg_type (self ,) -> crate :: app :: achievedata :: AchieveData_ArgType { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_ArgType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPerson()` overload"] fn get_person (self ,) -> crate :: app :: persondata :: PersonData { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGod()` overload"] fn get_god (self ,) -> crate :: app :: goddata :: GodData { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c6f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetStatus()` overload"] fn get_status (self ,) -> crate :: app :: achievedata :: AchieveData_Status { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> crate :: app :: achievedata :: AchieveData_Status = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c7380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCleared()` overload"] fn set_cleared (self ,) -> bool { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c7460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetShowed()` overload"] fn set_showed (self ,) -> bool { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c7680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetComplete()` overload"] fn set_complete (self ,) -> bool { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c76d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCanGet()` overload"] fn is_can_get (self ,) -> bool { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c7720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetStatus(crate::app::achievedata::AchieveData_Status)` overload"] fn set_status (self , status : impl :: core :: convert :: Into < crate :: app :: achievedata :: AchieveData_Status >) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , crate :: app :: achievedata :: AchieveData_Status , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c74b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (status) , :: core :: option :: Option :: None) } } } # [doc = "`GetValue()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c7760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCountCurrent(::unity2::Il2CppString)` overload"] fn get_count_current (self , footer : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c85b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (footer) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AchieveData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchieveData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cddb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-achievedata")]pub trait IAchieveDataMethods:IAchieveData{#[doc="`get_Aid()` overload"]fn get_aid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6a50usize)as*mut u8, ::unity2::Il2CppString;
+(AchieveData)__receiver)}
+}
+#[doc="`set_Aid(::unity2::Il2CppString)` overload"]fn set_aid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6a60usize)as*mut u8,();
+(AchieveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6a70usize)as*mut u8, ::unity2::Il2CppString;
+(AchieveData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6a80usize)as*mut u8,();
+(AchieveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Category()` overload"]fn get_category(self,)->crate::app::achievedata::AchieveData_Categories{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6a90usize)as*mut u8,crate::app::achievedata::AchieveData_Categories;
+(AchieveData)__receiver)}
+}
+#[doc="`set_Category(crate::app::achievedata::AchieveData_Categories)` overload"]fn set_category(self,value:impl::core::convert::Into<crate::app::achievedata::AchieveData_Categories>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6aa0usize)as*mut u8,();
+(AchieveData)__receiver,(crate::app::achievedata::AchieveData_Categories)::core::convert::Into::into(value))}
+}
+#[doc="`get_Kind()` overload"]fn get_kind(self,)->crate::app::achievedata::AchieveData_Kinds{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6ab0usize)as*mut u8,crate::app::achievedata::AchieveData_Kinds;
+(AchieveData)__receiver)}
+}
+#[doc="`set_Kind(crate::app::achievedata::AchieveData_Kinds)` overload"]fn set_kind(self,value:impl::core::convert::Into<crate::app::achievedata::AchieveData_Kinds>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6ac0usize)as*mut u8,();
+(AchieveData)__receiver,(crate::app::achievedata::AchieveData_Kinds)::core::convert::Into::into(value))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6ad0usize)as*mut u8,i32;
+(AchieveData)__receiver)}
+}
+#[doc="`set_Count(i32)` overload"]fn set_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6ae0usize)as*mut u8,();
+(AchieveData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg()` overload"]fn get_arg(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6af0usize)as*mut u8, ::unity2::Il2CppString;
+(AchieveData)__receiver)}
+}
+#[doc="`set_Arg(::unity2::Il2CppString)` overload"]fn set_arg(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6b00usize)as*mut u8,();
+(AchieveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_CountUnit()` overload"]fn get_count_unit(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6b10usize)as*mut u8, ::unity2::Il2CppString;
+(AchieveData)__receiver)}
+}
+#[doc="`set_CountUnit(::unity2::Il2CppString)` overload"]fn set_count_unit(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6b20usize)as*mut u8,();
+(AchieveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_KizunaReward()` overload"]fn get_kizuna_reward(self,)->i32{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6b30usize)as*mut u8,i32;
+(AchieveData)__receiver)}
+}
+#[doc="`set_KizunaReward(i32)` overload"]fn set_kizuna_reward(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6b40usize)as*mut u8,();
+(AchieveData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Chapter()` overload"]fn get_chapter(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6b50usize)as*mut u8, ::unity2::Il2CppString;
+(AchieveData)__receiver)}
+}
+#[doc="`set_Chapter(::unity2::Il2CppString)` overload"]fn set_chapter(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6b60usize)as*mut u8,();
+(AchieveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6b70usize)as*mut u8,();
+(AchieveData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6bf0usize)as*mut u8, ::unity2::Il2CppString;
+(AchieveData)__receiver)}
+}
+#[doc="`GetArgType()` overload"]fn get_arg_type(self,)->crate::app::achievedata::AchieveData_ArgType{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6c00usize)as*mut u8,crate::app::achievedata::AchieveData_ArgType;
+(AchieveData)__receiver)}
+}
+#[doc="`GetPerson()` overload"]fn get_person(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6e50usize)as*mut u8,crate::app::persondata::PersonData;
+(AchieveData)__receiver)}
+}
+#[doc="`GetGod()` overload"]fn get_god(self,)->crate::app::goddata::GodData{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c6f00usize)as*mut u8,crate::app::goddata::GodData;
+(AchieveData)__receiver)}
+}
+#[doc="`GetStatus()` overload"]fn get_status(self,)->crate::app::achievedata::AchieveData_Status{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c7380usize)as*mut u8,crate::app::achievedata::AchieveData_Status;
+(AchieveData)__receiver)}
+}
+#[doc="`SetCleared()` overload"]fn set_cleared(self,)->bool{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c7460usize)as*mut u8,bool;
+(AchieveData)__receiver)}
+}
+#[doc="`SetShowed()` overload"]fn set_showed(self,)->bool{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c7680usize)as*mut u8,bool;
+(AchieveData)__receiver)}
+}
+#[doc="`SetComplete()` overload"]fn set_complete(self,)->bool{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c76d0usize)as*mut u8,bool;
+(AchieveData)__receiver)}
+}
+#[doc="`IsCanGet()` overload"]fn is_can_get(self,)->bool{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c7720usize)as*mut u8,bool;
+(AchieveData)__receiver)}
+}
+#[doc="`SetStatus(crate::app::achievedata::AchieveData_Status)` overload"]fn set_status(self,status:impl::core::convert::Into<crate::app::achievedata::AchieveData_Status>)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c74b0usize)as*mut u8,();
+(AchieveData)__receiver,(crate::app::achievedata::AchieveData_Status)::core::convert::Into::into(status))}
+}
+#[doc="`GetValue()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c7760usize)as*mut u8,i32;
+(AchieveData)__receiver)}
+}
+#[doc="`GetCountCurrent(::unity2::Il2CppString)` overload"]fn get_count_current(self,footer:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c85b0usize)as*mut u8,i32;
+(AchieveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(footer))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AchieveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27cddb0usize)as*mut u8,();
+(AchieveData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-achievedata")]
-impl < __T : IAchieveData > IAchieveDataMethods for __T { }
+#[cfg(feature="app-achievedata")]impl<__T:IAchieveData>IAchieveDataMethods for __T{}
 
-#[cfg(feature = "app-achievedata")]
-impl AchieveData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_grouping_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_count_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_count_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_kizuna_reward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_kizuna_reward_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_arg_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_cleared_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn set_showed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn is_can_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn set_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_flag_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn get_flag_name_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_flag_name_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_count_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_kind_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn set_clear_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn add_count_reliance_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn add_count_reliance_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn add_count_reliance_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn add_count_sortie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn add_count_encount_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn add_count_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn add_count_defeat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn add_count_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn add_count_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn add_count_engage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn add_count_engage_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn add_count_avoidance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn add_count_chain_guard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn add_count_chain_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn set_value_chain_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn add_count_break_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn add_count_smash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn add_count_mini_game_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn add_count_ring_form_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn add_count_ring_mix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn add_count_bonds_ring_c_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn add_count_bonds_ring_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn add_count_bonds_ring_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn add_count_bonds_ring_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn add_count_ring_cleaning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn set_value_investment_filene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn set_value_investment_brodia_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn set_value_investment_ircion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn set_value_investment_solum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn set_clear_investment_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn add_count_investment_money_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn add_count_cook_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn add_count_cook_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn add_count_cook_f_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn add_count_cook_e_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn add_count_cook_d_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn add_count_cook_c_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } pub fn add_count_cook_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [79] } pub fn add_count_cook_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [80] } pub fn add_count_cook_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [81] } pub fn add_count_cook_ss_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [82] } pub fn add_count_sleep_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [83] } pub fn add_count_wake_up_c_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [84] } pub fn add_count_wake_up_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [85] } pub fn add_count_wake_up_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [86] } pub fn add_count_wake_up_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [87] } pub fn add_count_unit_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [88] } pub fn add_count_unit_battle_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [89] } pub fn add_count_god_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [90] } pub fn add_count_god_battle_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [91] } pub fn add_count_buy_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [92] } pub fn add_count_buy_sword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [93] } pub fn add_count_buy_lance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [94] } pub fn add_count_buy_axe_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [95] } pub fn add_count_buy_bow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [96] } pub fn add_count_buy_knife_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [97] } pub fn add_count_buy_magic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [98] } pub fn add_count_buy_fist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [99] } pub fn add_count_sell_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [100] } pub fn add_count_buy_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [101] } pub fn add_count_sell_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [102] } pub fn add_count_buy_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [103] } pub fn add_count_buy_accessories_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [104] } pub fn add_count_change_accessories_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [105] } pub fn add_count_forging_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [106] } pub fn add_count_forging_sword_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [107] } pub fn add_count_forging_lance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [108] } pub fn add_count_forging_axe_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [109] } pub fn add_count_forging_bow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [110] } pub fn add_count_forging_knife_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [111] } pub fn add_count_forging_magic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [112] } pub fn add_count_forging_fist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [113] } pub fn add_count_engrave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [114] } pub fn set_value_play_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [115] } pub fn set_clear_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [116] } pub fn add_count_net_match_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [117] } pub fn add_count_net_match_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [118] } pub fn add_count_relay_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [119] } pub fn add_count_relay_battle_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [120] } pub fn set_challenge_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [121] } pub fn play_report_add_count_class_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [122] } pub fn play_report_add_count_push_ups_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [123] } pub fn play_report_add_count_push_ups_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [124] } pub fn play_report_add_count_push_ups_expert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [125] } pub fn play_report_add_count_push_ups_muscle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [126] } pub fn play_report_add_count_ads_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [127] } pub fn play_report_add_count_ads_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [128] } pub fn play_report_add_count_ads_expert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [129] } pub fn play_report_add_count_ads_muscle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [130] } pub fn play_report_add_count_squat_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [131] } pub fn play_report_add_count_squat_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [132] } pub fn play_report_add_count_squat_expert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [133] } pub fn play_report_add_count_squat_muscle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [134] } pub fn play_report_add_count_dragon_ride_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [135] } pub fn play_report_add_count_dragon_ride_hard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [136] } pub fn play_report_add_count_dragon_ride_expert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [137] } pub fn play_report_add_count_fishing_rod_smoll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [138] } pub fn play_report_add_count_fishing_rod_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [139] } pub fn play_report_add_count_fishing_rod_all_purpose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [140] } pub fn play_report_add_count_cleaning_form_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [141] } pub fn play_report_add_count_challenge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [142] } pub fn play_report_add_count_challenge_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [143] } pub fn play_report_add_count_relay_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [144] } pub fn play_report_add_count_relay_battle_inherit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [145] } pub fn play_report_add_count_versus_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [146] } pub fn play_report_add_count_versus_casual_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [147] } pub fn play_report_add_count_versus_casual_lose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [148] } pub fn play_report_add_count_versus_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [149] } pub fn play_report_add_count_versus_ranked_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [150] } pub fn play_report_add_count_versus_ranked_lose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [151] } pub fn play_report_add_count_versus_ranked_defense_win_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [152] } pub fn play_report_add_count_versus_ranked_defense_lose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [153] } pub fn play_report_get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [154] } pub fn play_report_get_count_cleaning_form_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [155] } pub fn try_set_cleard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [156] } pub fn is_prohibited_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [157] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [158] } pub fn add_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [159] } pub fn commit_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [160] } pub fn get_kind_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [161] } pub fn update_show_queue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [162] } pub fn clear_show_queue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [163] } pub fn dequeue_show_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [164] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [165] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchieveData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [166] } }
+#[cfg(feature="app-achievedata")]impl AchieveData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_grouping_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_count_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_count_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_kizuna_reward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_kizuna_reward_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_arg_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_cleared_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_showed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn is_can_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn set_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn regist_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_flag_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_flag_name_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_flag_name_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_count_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_kind_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn set_clear_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn add_count_reliance_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn add_count_reliance_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn add_count_reliance_s_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn add_count_sortie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn add_count_encount_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn add_count_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn add_count_defeat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn add_count_rod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn add_count_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn add_count_engage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn add_count_engage_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn add_count_avoidance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn add_count_chain_guard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn add_count_chain_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn set_value_chain_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn add_count_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn add_count_smash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn add_count_mini_game_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn add_count_ring_form_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn add_count_ring_mix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn add_count_bonds_ring_c_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn add_count_bonds_ring_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn add_count_bonds_ring_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn add_count_bonds_ring_s_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn add_count_ring_cleaning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn set_value_investment_filene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn set_value_investment_brodia_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn set_value_investment_ircion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn set_value_investment_solum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn set_clear_investment_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn add_count_investment_money_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn add_count_cook_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn add_count_cook_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn add_count_cook_f_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn add_count_cook_e_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn add_count_cook_d_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn add_count_cook_c_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn add_count_cook_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn add_count_cook_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn add_count_cook_s_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn add_count_cook_ss_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+pub fn add_count_sleep_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
+pub fn add_count_wake_up_c_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
+pub fn add_count_wake_up_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[85]}
+pub fn add_count_wake_up_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
+pub fn add_count_wake_up_s_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
+pub fn add_count_unit_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
+pub fn add_count_unit_battle_win_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
+pub fn add_count_god_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
+pub fn add_count_god_battle_win_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[91]}
+pub fn add_count_buy_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[92]}
+pub fn add_count_buy_sword_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[93]}
+pub fn add_count_buy_lance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[94]}
+pub fn add_count_buy_axe_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[95]}
+pub fn add_count_buy_bow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
+pub fn add_count_buy_knife_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[97]}
+pub fn add_count_buy_magic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[98]}
+pub fn add_count_buy_fist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[99]}
+pub fn add_count_sell_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[100]}
+pub fn add_count_buy_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[101]}
+pub fn add_count_sell_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[102]}
+pub fn add_count_buy_rod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[103]}
+pub fn add_count_buy_accessories_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[104]}
+pub fn add_count_change_accessories_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[105]}
+pub fn add_count_forging_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[106]}
+pub fn add_count_forging_sword_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[107]}
+pub fn add_count_forging_lance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[108]}
+pub fn add_count_forging_axe_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[109]}
+pub fn add_count_forging_bow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[110]}
+pub fn add_count_forging_knife_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[111]}
+pub fn add_count_forging_magic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[112]}
+pub fn add_count_forging_fist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[113]}
+pub fn add_count_engrave_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[114]}
+pub fn set_value_play_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[115]}
+pub fn set_clear_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[116]}
+pub fn add_count_net_match_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[117]}
+pub fn add_count_net_match_win_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[118]}
+pub fn add_count_relay_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[119]}
+pub fn add_count_relay_battle_win_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[120]}
+pub fn set_challenge_rank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[121]}
+pub fn play_report_add_count_class_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[122]}
+pub fn play_report_add_count_push_ups_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[123]}
+pub fn play_report_add_count_push_ups_hard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[124]}
+pub fn play_report_add_count_push_ups_expert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[125]}
+pub fn play_report_add_count_push_ups_muscle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[126]}
+pub fn play_report_add_count_ads_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[127]}
+pub fn play_report_add_count_ads_hard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[128]}
+pub fn play_report_add_count_ads_expert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[129]}
+pub fn play_report_add_count_ads_muscle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[130]}
+pub fn play_report_add_count_squat_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[131]}
+pub fn play_report_add_count_squat_hard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[132]}
+pub fn play_report_add_count_squat_expert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[133]}
+pub fn play_report_add_count_squat_muscle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[134]}
+pub fn play_report_add_count_dragon_ride_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[135]}
+pub fn play_report_add_count_dragon_ride_hard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[136]}
+pub fn play_report_add_count_dragon_ride_expert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[137]}
+pub fn play_report_add_count_fishing_rod_smoll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[138]}
+pub fn play_report_add_count_fishing_rod_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[139]}
+pub fn play_report_add_count_fishing_rod_all_purpose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[140]}
+pub fn play_report_add_count_cleaning_form_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[141]}
+pub fn play_report_add_count_challenge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[142]}
+pub fn play_report_add_count_challenge_clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[143]}
+pub fn play_report_add_count_relay_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[144]}
+pub fn play_report_add_count_relay_battle_inherit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[145]}
+pub fn play_report_add_count_versus_casual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[146]}
+pub fn play_report_add_count_versus_casual_win_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[147]}
+pub fn play_report_add_count_versus_casual_lose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[148]}
+pub fn play_report_add_count_versus_ranked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[149]}
+pub fn play_report_add_count_versus_ranked_win_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[150]}
+pub fn play_report_add_count_versus_ranked_lose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[151]}
+pub fn play_report_add_count_versus_ranked_defense_win_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[152]}
+pub fn play_report_add_count_versus_ranked_defense_lose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[153]}
+pub fn play_report_get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[154]}
+pub fn play_report_get_count_cleaning_form_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[155]}
+pub fn try_set_cleard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[156]}
+pub fn is_prohibited_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[157]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[158]}
+pub fn add_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[159]}
+pub fn commit_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[160]}
+pub fn get_kind_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[161]}
+pub fn update_show_queue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[162]}
+pub fn clear_show_queue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[163]}
+pub fn dequeue_show_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[164]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[165]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[166]}
+}
 
-#[cfg(feature = "app-achievedata")]
-impl AchieveData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AchieveData) , :: core :: stringify ! (new) ,)) ; < Self as IAchieveDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-achievedata")]impl AchieveData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AchieveData), ::core::stringify!(new),));
+ <Self as IAchieveDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-achievedata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AchieveData_Categories;
     pub use super::AchieveData;
     pub use super::IAchieveData;
     pub use super::IAchieveDataMethods;
+    pub use super::AchieveData_Status;
+    pub use super::AchieveData_Categories;
     pub use super::AchieveData_Kinds;
     pub use super::AchieveData_ArgType;
-    pub use super::AchieveData_Status;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

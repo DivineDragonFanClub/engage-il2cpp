@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/watereditor/WaterEditor.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "WaterEditor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WaterEditor {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/water/watereditor/WaterEditor.md"))]#[::unity2::class(namespace="App.Water",name="WaterEditor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct WaterEditor{}
 
 }
 
 #[cfg(feature = "app-water-watereditor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-water-watereditor")]
-pub trait IWaterEditorMethods : IWaterEditor { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < WaterEditor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterEditor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WaterEditor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterEditor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-water-watereditor")]pub trait IWaterEditorMethods:IWaterEditor{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <WaterEditor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c4b50usize)as*mut u8,();
+(WaterEditor)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WaterEditor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c4e50usize)as*mut u8,();
+(WaterEditor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-water-watereditor")]
-impl < __T : IWaterEditor > IWaterEditorMethods for __T { }
+#[cfg(feature="app-water-watereditor")]impl<__T:IWaterEditor>IWaterEditorMethods for __T{}
 
-#[cfg(feature = "app-water-watereditor")]
-impl WaterEditor { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterEditor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterEditor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-water-watereditor")]impl WaterEditor{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-water-watereditor")]
-impl WaterEditor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WaterEditor) , :: core :: stringify ! (new) ,)) ; < Self as IWaterEditorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-water-watereditor")]impl WaterEditor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WaterEditor), ::core::stringify!(new),));
+ <Self as IWaterEditorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-water-watereditor")]

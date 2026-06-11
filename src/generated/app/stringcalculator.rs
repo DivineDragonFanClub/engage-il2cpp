@@ -4,40 +4,102 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorutil :: { CalculatorUtil , ICalculatorUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorutil::{CalculatorUtil,ICalculatorUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/stringcalculator/StringCalculator.md"))] # [:: unity2 :: class (namespace = "App" , name = "StringCalculator")] # [parent (crate :: app :: calculatorutil :: CalculatorUtil)] pub struct StringCalculator {
-# [offset (16)] # [rename (name = "m_Entitys")] pub m_entitys : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: calculatorutil :: CalculatorUtil_Entity > ,
-# [offset (24)] # [rename (name = "m_Polishs")] pub m_polishs : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/stringcalculator/StringCalculator.md"))]#[::unity2::class(namespace="App",name="StringCalculator")]#[parent(crate::app::calculatorutil::CalculatorUtil)]pub struct StringCalculator{#[offset(16)]#[rename(name="m_Entitys")]pub m_entitys:crate::system::collections::generic::list_1::List_1<crate::app::calculatorutil::CalculatorUtil_Entity> , #[offset(24)]#[rename(name="m_Polishs")]pub m_polishs:crate::system::collections::generic::list_1::List_1<i32> ,}
 
 }
 
 #[cfg(feature = "app-stringcalculator-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-stringcalculator")]
-impl StringCalculator { # [doc = "`TrimString(::unity2::Il2CppString)` overload"] pub fn trim_string (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250a290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-stringcalculator")]impl StringCalculator{#[doc="`TrimString(::unity2::Il2CppString)` overload"]pub fn trim_string(name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250a290usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "app-stringcalculator")]
-pub trait IStringCalculatorMethods : IStringCalculator { # [doc = "`get_Entitys()` overload"] fn get_entitys (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: calculatorutil :: CalculatorUtil_Entity > { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: calculatorutil :: CalculatorUtil_Entity > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2509730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Polishs()` overload"] fn get_polishs (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2509740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2509750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2509870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetLastType()` overload"] fn get_last_type (self ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250a150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: calculatorutil :: CalculatorUtil_Entity { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: calculatorutil :: CalculatorUtil_Entity = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250a1d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250a240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup(::unity2::Il2CppString)` overload"] fn setup (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25099a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250a4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcReversePolish()` overload"] fn calc_reverse_polish (self ,) -> () { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250a430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcReversePolish(i32)` overload"] fn calc_reverse_polish_2 (self , index : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250a550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < StringCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StringCalculator , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250a840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-stringcalculator")]pub trait IStringCalculatorMethods:IStringCalculator{#[doc="`get_Entitys()` overload"]fn get_entitys(self,)->crate::system::collections::generic::list_1::List_1<crate::app::calculatorutil::CalculatorUtil_Entity>{unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2509730usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::calculatorutil::CalculatorUtil_Entity> ;
+(StringCalculator)__receiver)}
+}
+#[doc="`get_Polishs()` overload"]fn get_polishs(self,)->crate::system::collections::generic::list_1::List_1<i32>{unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2509740usize)as*mut u8,crate::system::collections::generic::list_1::List_1<i32> ;
+(StringCalculator)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2509750usize)as*mut u8,();
+(StringCalculator)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2509870usize)as*mut u8,();
+(StringCalculator)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetLastType()` overload"]fn get_last_type(self,)->crate::app::calculatorutil::CalculatorUtil_Type{unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250a150usize)as*mut u8,crate::app::calculatorutil::CalculatorUtil_Type;
+(StringCalculator)__receiver)}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::app::calculatorutil::CalculatorUtil_Entity{unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250a1d0usize)as*mut u8,crate::app::calculatorutil::CalculatorUtil_Entity;
+(StringCalculator)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250a240usize)as*mut u8,i32;
+(StringCalculator)__receiver)}
+}
+#[doc="`Setup(::unity2::Il2CppString)` overload"]fn setup(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25099a0usize)as*mut u8,();
+(StringCalculator)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250a4d0usize)as*mut u8,();
+(StringCalculator)__receiver)}
+}
+#[doc="`CalcReversePolish()` overload"]fn calc_reverse_polish(self,)->(){unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250a430usize)as*mut u8,();
+(StringCalculator)__receiver)}
+}
+#[doc="`CalcReversePolish(i32)` overload"]fn calc_reverse_polish_2(self,index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250a550usize)as*mut u8,i32;
+(StringCalculator)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250a840usize)as*mut u8, ::unity2::Il2CppString;
+(StringCalculator)__receiver)}
+}
+}
 
-#[cfg(feature = "app-stringcalculator")]
-impl < __T : IStringCalculator > IStringCalculatorMethods for __T { }
+#[cfg(feature="app-stringcalculator")]impl<__T:IStringCalculator>IStringCalculatorMethods for __T{}
 
-#[cfg(feature = "app-stringcalculator")]
-impl StringCalculator { pub fn get_entitys_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_polishs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_last_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn trim_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn calc_reverse_polish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn calc_reverse_polish_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StringCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-stringcalculator")]impl StringCalculator{pub fn get_entitys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_polishs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_last_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn trim_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn calc_reverse_polish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn calc_reverse_polish_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-stringcalculator")]
-impl StringCalculator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StringCalculator) , :: core :: stringify ! (new) ,)) ; < Self as IStringCalculatorMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StringCalculator) , :: core :: stringify ! (new_2) ,)) ; < Self as IStringCalculatorMethods > :: ctor_2 (this , name) ; this }
+#[cfg(feature="app-stringcalculator")]impl StringCalculator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StringCalculator), ::core::stringify!(new),));
+ <Self as IStringCalculatorMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StringCalculator), ::core::stringify!(new_2),));
+ <Self as IStringCalculatorMethods> ::ctor_2(this,name);
+this}
 }
 
 #[cfg(feature = "app-stringcalculator")]

@@ -4,44 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/blinkmonobehaviour/BlinkMonoBehaviour.md"))] # [:: unity2 :: class (namespace = "" , name = "BlinkMonoBehaviour")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct BlinkMonoBehaviour {
-# [offset (24)] # [rename (name = "m_Counter")] pub m_counter : i32 ,
-# [offset (28)] # [rename (name = "m_Enabled")] pub m_enabled : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/blinkmonobehaviour/BlinkMonoBehaviour.md"))]#[::unity2::class(namespace="",name="BlinkMonoBehaviour")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct BlinkMonoBehaviour{#[offset(24)]#[rename(name="m_Counter")]pub m_counter:i32, #[offset(28)]#[rename(name="m_Enabled")]pub m_enabled:bool,}
 
 }
 
 #[cfg(feature = "root-blinkmonobehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-blinkmonobehaviour")]
-impl BlinkMonoBehaviour { # [doc = "`TryCreate(crate::unity_engine::gameobject::GameObject)` overload"] pub fn try_create (game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29896f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (game_object) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-blinkmonobehaviour")]impl BlinkMonoBehaviour{#[doc="`TryCreate(crate::unity_engine::gameobject::GameObject)` overload"]pub fn try_create(game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29896f0usize)as*mut u8,bool;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+}
 
-#[cfg(feature = "root-blinkmonobehaviour")]
-pub trait IBlinkMonoBehaviourMethods : IBlinkMonoBehaviour { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < BlinkMonoBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BlinkMonoBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29894b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < BlinkMonoBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BlinkMonoBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2989560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetVisible(bool)` overload"] fn set_visible (self , enabled : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BlinkMonoBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BlinkMonoBehaviour , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2989620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enabled) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BlinkMonoBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BlinkMonoBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2989840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-blinkmonobehaviour")]pub trait IBlinkMonoBehaviourMethods:IBlinkMonoBehaviour{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <BlinkMonoBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29894b0usize)as*mut u8,();
+(BlinkMonoBehaviour)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <BlinkMonoBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2989560usize)as*mut u8,();
+(BlinkMonoBehaviour)__receiver)}
+}
+#[doc="`SetVisible(bool)` overload"]fn set_visible(self,enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BlinkMonoBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2989620usize)as*mut u8,();
+(BlinkMonoBehaviour)__receiver,(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BlinkMonoBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2989840usize)as*mut u8,();
+(BlinkMonoBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "root-blinkmonobehaviour")]
-impl < __T : IBlinkMonoBehaviour > IBlinkMonoBehaviourMethods for __T { }
+#[cfg(feature="root-blinkmonobehaviour")]impl<__T:IBlinkMonoBehaviour>IBlinkMonoBehaviourMethods for __T{}
 
-#[cfg(feature = "root-blinkmonobehaviour")]
-impl BlinkMonoBehaviour { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BlinkMonoBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BlinkMonoBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BlinkMonoBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BlinkMonoBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BlinkMonoBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-blinkmonobehaviour")]impl BlinkMonoBehaviour{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-blinkmonobehaviour")]
-impl BlinkMonoBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BlinkMonoBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IBlinkMonoBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-blinkmonobehaviour")]impl BlinkMonoBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BlinkMonoBehaviour), ::core::stringify!(new),));
+ <Self as IBlinkMonoBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-blinkmonobehaviour")]

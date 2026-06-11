@@ -4,501 +4,981 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_GodRelianceMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.GodRelianceMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_GodRelianceMenu {
-# [offset (104)] # [rename (name = "m_access")] pub m_access : crate :: app :: hubaccess :: HubAccess ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_SelectListMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.SelectListMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct HubPlayTalkAfter_SelectListMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_ReplacePerson.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.ReplacePerson")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalkAfter_ReplacePerson{#[offset(112)]#[rename(name="m_LoadingCharacterCount")]pub m_loading_character_count:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_MuscleMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.MuscleMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_MuscleMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FortuneTellingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FortuneTellingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FortuneTellingMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FishingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FishingMenu{#[offset(104)]#[rename(name="m_FishingTopMenu")]pub m_fishing_top_menu:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_PlayCount")]pub m_play_count:i32, #[offset(116)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(120)]#[rename(name="m_gyotakuSprite")]pub m_gyotaku_sprite:crate::unity_engine::sprite::Sprite,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FleaMarketMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FleaMarketMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FleaMarketMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingPictureBookMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.FishingPictureBookMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_FishingPictureBookMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_GodRelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.GodRelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_GodRelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RelianceMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RelianceMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_RelianceMenu{#[offset(104)]#[rename(name="m_access")]pub m_access:crate::app::hubaccess::HubAccess, #[offset(112)]#[rename(name="m_relianceLevelUp")]pub m_reliance_level_up:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_YesItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.YesItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubPlayTalkAfter_RingMenu_YesItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_NoItem.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu.NoItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubPlayTalkAfter_RingMenu_NoItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubPlayTalkAfter_Label{pub value:i32,}
+impl::unity2::ClassIdentity for HubPlayTalkAfter_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubPlayTalkAfter.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubPlayTalkAfter_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubPlayTalkAfter_Label{pub fn init()->Self{Self{value:0}
+}
+pub fn select_menu()->Self{Self{value:1}
+}
+pub fn select_gift()->Self{Self{value:2}
+}
+pub fn reaction_gift()->Self{Self{value:3}
+}
+pub fn reliance()->Self{Self{value:4}
+}
+pub fn cooking()->Self{Self{value:5}
+}
+pub fn fishing()->Self{Self{value:6}
+}
+pub fn fishing_picture_book()->Self{Self{value:7}
+}
+pub fn dragon_ride()->Self{Self{value:8}
+}
+pub fn muscle()->Self{Self{value:9}
+}
+pub fn flea_market()->Self{Self{value:10}
+}
+pub fn fortune_telling()->Self{Self{value:11}
+}
+pub fn end()->Self{Self{value:12}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_DragonRideMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.DragonRideMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_DragonRideMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_CookingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.CookingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_CookingMenu{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FortuneTellingMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.FortuneTellingMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_FortuneTellingMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.RingMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_RingMenu{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_CookingMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.CookingMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_CookingMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_TalkGiftMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.TalkGiftMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_TalkGiftMenu{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_NoItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.RingMenu.NoItem")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct HubPlayTalkAfter_RingMenu_NoItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::hubplaytalkafter::HubPlayTalkAfter>)]pub struct HubPlayTalkAfter{#[static_field]#[rename(name="cMenuPartsPath")]pub c_menu_parts_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cFishingTextureAtlasPath")]pub c_fishing_texture_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="MuscleMainPID")]pub muscle_main_pid: ::unity2::Il2CppString, #[static_field]#[rename(name="FleaMarketMainPID")]pub flea_market_main_pid: ::unity2::Il2CppString, #[static_field]#[rename(name="FishingMainPID")]pub fishing_main_pid: ::unity2::Il2CppString, #[static_field]#[rename(name="DragonRideMainPID")]pub dragon_ride_main_pid: ::unity2::Il2CppString, #[offset(192)]#[rename(name="m_ReliancePopUp")]pub m_reliance_pop_up:crate::app::reliancepopupcontroller::ReliancePopUpController,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaytalkafter/HubPlayTalkAfter_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubPlayTalkAfter_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for HubPlayTalkAfter_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubPlayTalkAfter.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubPlayTalkAfter_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubPlayTalkAfter_Label  {
-    pub fn init() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn select_menu() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn select_gift() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn reaction_gift() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn reliance() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn cooking() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn fishing() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn fishing_picture_book() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn dragon_ride() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn muscle() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn flea_market() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn fortune_telling() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 12 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_ReplacePerson.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.ReplacePerson")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubPlayTalkAfter_ReplacePerson {
-# [offset (112)] # [rename (name = "m_LoadingCharacterCount")] pub m_loading_character_count : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingPictureBookMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.FishingPictureBookMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_FishingPictureBookMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_TalkGiftMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.TalkGiftMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_TalkGiftMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RelianceMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.RelianceMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_RelianceMenu {
-# [offset (104)] # [rename (name = "m_access")] pub m_access : crate :: app :: hubaccess :: HubAccess ,
-# [offset (112)] # [rename (name = "m_relianceLevelUp")] pub m_reliance_level_up : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_MuscleMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.MuscleMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_MuscleMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_YesItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.RingMenu.YesItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct HubPlayTalkAfter_RingMenu_YesItem {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubplaytalkafter :: HubPlayTalkAfter >)] pub struct HubPlayTalkAfter {
-# [static_field] # [rename (name = "cMenuPartsPath")] pub c_menu_parts_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cFishingTextureAtlasPath")] pub c_fishing_texture_atlas_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "MuscleMainPID")] pub muscle_main_pid : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FleaMarketMainPID")] pub flea_market_main_pid : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FishingMainPID")] pub fishing_main_pid : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "DragonRideMainPID")] pub dragon_ride_main_pid : :: unity2 :: Il2CppString ,
-# [offset (192)] # [rename (name = "m_ReliancePopUp")] pub m_reliance_pop_up : crate :: app :: reliancepopupcontroller :: ReliancePopUpController ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.RingMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_RingMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_SelectListMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.SelectListMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct HubPlayTalkAfter_SelectListMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FleaMarketMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.FleaMarketMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_FleaMarketMenu {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubPlayTalkAfter.FishingMenu")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct HubPlayTalkAfter_FishingMenu {
-# [offset (104)] # [rename (name = "m_FishingTopMenu")] pub m_fishing_top_menu : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (112)] # [rename (name = "m_PlayCount")] pub m_play_count : i32 ,
-# [offset (116)] # [rename (name = "m_IsEnable")] pub m_is_enable : bool ,
-# [offset (120)] # [rename (name = "m_gyotakuSprite")] pub m_gyotaku_sprite : crate :: unity_engine :: sprite :: Sprite ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalkafter/HubPlayTalkAfter_DragonRideMenu.md"))]#[::unity2::class(namespace="App",name="HubPlayTalkAfter.DragonRideMenu")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct HubPlayTalkAfter_DragonRideMenu{}
 
 }
 
 #[cfg(feature = "app-hubplaytalkafter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_GodRelianceMenuMethods : IHubPlayTalkAfter_GodRelianceMenu { # [doc = "`.ctor(crate::app::hubaccess::HubAccess)` overload"] fn ctor (self , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_GodRelianceMenu , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4fc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_GodRelianceMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_GodRelianceMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae50a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_GodRelianceMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_GodRelianceMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_GodRelianceMenu > IHubPlayTalkAfter_GodRelianceMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_GodRelianceMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_GodRelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_GodRelianceMenu {
-# [doc = "`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"] pub fn new (access : crate :: app :: hubaccess :: HubAccess) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_GodRelianceMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_GodRelianceMenuMethods > :: ctor (this , access) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`get_CurrentMenuSelect()` overload"]pub fn get_current_menu_select()->crate::app::basicmenuselect::BasicMenuSelect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7e80usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7f80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8620usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_DragonRideMenuMethods : IHubPlayTalkAfter_DragonRideMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_DragonRideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_DragonRideMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae2f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_DragonRideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_DragonRideMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae2f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_DragonRideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_DragonRideMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae2fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_DragonRideMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_DragonRideMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae2fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_DragonRideMenu > IHubPlayTalkAfter_DragonRideMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_DragonRideMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_DragonRideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_DragonRideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_DragonRideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_DragonRideMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_DragonRideMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_DragonRideMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_DragonRideMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_SelectListMenuMethods:IHubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7ef0usize)as*mut u8,();
+(HubPlayTalkAfter_SelectListMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_SelectListMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7f30usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_SelectListMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_FortuneTellingMenuMethods : IHubPlayTalkAfter_FortuneTellingMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_FortuneTellingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FortuneTellingMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_FortuneTellingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FortuneTellingMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_FortuneTellingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FortuneTellingMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_FortuneTellingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FortuneTellingMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_SelectListMenu>IHubPlayTalkAfter_SelectListMenuMethods for __T{}
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_FortuneTellingMenu > IHubPlayTalkAfter_FortuneTellingMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FortuneTellingMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FortuneTellingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FortuneTellingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FortuneTellingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FortuneTellingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FortuneTellingMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_FortuneTellingMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_FortuneTellingMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{pub fn get_current_menu_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_CookingMenuMethods : IHubPlayTalkAfter_CookingMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_CookingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_CookingMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae2c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_CookingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_CookingMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae2c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_CookingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_CookingMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae2cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_CookingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_CookingMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae2db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_CookingMenu > IHubPlayTalkAfter_CookingMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_CookingMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_CookingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_CookingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_CookingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_CookingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_CookingMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_CookingMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_CookingMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_SelectListMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,super_:crate::app::procinst::ProcInst)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_SelectListMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_SelectListMenuMethods> ::ctor(this,menu_item_list,super_);
+this}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_RingMenu_NoItemMethods : IHubPlayTalkAfter_RingMenu_NoItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_RingMenu_NoItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RingMenu_NoItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b65690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_RingMenu_NoItem > IHubPlayTalkAfter_RingMenu_NoItemMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RingMenu_NoItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RingMenu_NoItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RingMenu_NoItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_RingMenu_NoItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_RingMenu_NoItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_ReplacePerson{#[doc="`ChangePersonBind(crate::app::procinst::ProcInst)` overload"]pub fn change_person_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae6700usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`ResetPersonBind(crate::app::procinst::ProcInst)` overload"]pub fn reset_person_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae6d50usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`ChangePersonBindNoFade(crate::app::procinst::ProcInst)` overload"]pub fn change_person_bind_no_fade(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae72b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`ResetPersonBindNoFade(crate::app::procinst::ProcInst)` overload"]pub fn reset_person_bind_no_fade(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae77f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_ReplacePerson { # [doc = "`ChangePersonBind(crate::app::procinst::ProcInst)` overload"] pub fn change_person_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae6700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`ResetPersonBind(crate::app::procinst::ProcInst)` overload"] pub fn reset_person_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae6d50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`ChangePersonBindNoFade(crate::app::procinst::ProcInst)` overload"] pub fn change_person_bind_no_fade (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae72b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`ResetPersonBindNoFade(crate::app::procinst::ProcInst)` overload"] pub fn reset_person_bind_no_fade (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae77f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_ReplacePersonMethods : IHubPlayTalkAfter_ReplacePerson { # [doc = "`IsChangePerson()` overload"] fn is_change_person (self ,) -> bool { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupUnit(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"] fn setup_unit (self , locator : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator) , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`ResetUnit(::unity2::Il2CppString)` overload"] fn reset_unit (self , locator_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5b70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PrepareChangePerson()` overload"] fn prepare_change_person (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangePerson()` overload"] fn change_person (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangePersonAfter()` overload"] fn change_person_after (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae61f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CallPersonVoice()` overload"] fn call_person_voice (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae62d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetPerson()` overload"] fn reset_person (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae6440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_ReplacePerson as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_ReplacePerson , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae6d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_ReplacePerson > IHubPlayTalkAfter_ReplacePersonMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_ReplacePerson { pub fn is_change_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn prepare_change_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn change_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn change_person_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn call_person_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn reset_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn change_person_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn reset_person_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn change_person_bind_no_fade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn reset_person_bind_no_fade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_ReplacePerson as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_ReplacePerson {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_ReplacePerson) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_ReplacePersonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_ReplacePersonMethods:IHubPlayTalkAfter_ReplacePerson{#[doc="`IsChangePerson()` overload"]fn is_change_person(self,)->bool{unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5810usize)as*mut u8,bool;
+(HubPlayTalkAfter_ReplacePerson)__receiver)}
+}
+#[doc="`SetupUnit(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn setup_unit(self,locator:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5890usize)as*mut u8,();
+(HubPlayTalkAfter_ReplacePerson)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(locator),(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`ResetUnit(::unity2::Il2CppString)` overload"]fn reset_unit(self,locator_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5b70usize)as*mut u8,();
+(HubPlayTalkAfter_ReplacePerson)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(locator_name))}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5c10usize)as*mut u8,bool;
+(HubPlayTalkAfter_ReplacePerson)__receiver)}
+}
+#[doc="`PrepareChangePerson()` overload"]fn prepare_change_person(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5c20usize)as*mut u8,();
+(HubPlayTalkAfter_ReplacePerson)__receiver)}
+}
+#[doc="`ChangePerson()` overload"]fn change_person(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5fe0usize)as*mut u8,();
+(HubPlayTalkAfter_ReplacePerson)__receiver)}
+}
+#[doc="`ChangePersonAfter()` overload"]fn change_person_after(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae61f0usize)as*mut u8,();
+(HubPlayTalkAfter_ReplacePerson)__receiver)}
+}
+#[doc="`CallPersonVoice()` overload"]fn call_person_voice(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae62d0usize)as*mut u8,();
+(HubPlayTalkAfter_ReplacePerson)__receiver)}
+}
+#[doc="`ResetPerson()` overload"]fn reset_person(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae6440usize)as*mut u8,();
+(HubPlayTalkAfter_ReplacePerson)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_ReplacePerson as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae6d40usize)as*mut u8,();
+(HubPlayTalkAfter_ReplacePerson)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_FishingPictureBookMenuMethods : IHubPlayTalkAfter_FishingPictureBookMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_FishingPictureBookMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingPictureBookMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_FishingPictureBookMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingPictureBookMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae49a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_FishingPictureBookMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingPictureBookMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_FishingPictureBookMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingPictureBookMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_ReplacePerson>IHubPlayTalkAfter_ReplacePersonMethods for __T{}
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_FishingPictureBookMenu > IHubPlayTalkAfter_FishingPictureBookMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FishingPictureBookMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingPictureBookMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingPictureBookMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingPictureBookMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingPictureBookMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FishingPictureBookMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_FishingPictureBookMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_FishingPictureBookMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_ReplacePerson{pub fn is_change_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn prepare_change_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn change_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn change_person_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn call_person_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn reset_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn change_person_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn reset_person_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn change_person_bind_no_fade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn reset_person_bind_no_fade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_TalkGiftMenuMethods : IHubPlayTalkAfter_TalkGiftMenu { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_TalkGiftMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_TalkGiftMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae86a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_TalkGiftMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_TalkGiftMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae8720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_TalkGiftMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_TalkGiftMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae8750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_TalkGiftMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_TalkGiftMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae8610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_TalkGiftMenu > IHubPlayTalkAfter_TalkGiftMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_TalkGiftMenu { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_TalkGiftMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_TalkGiftMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_TalkGiftMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_TalkGiftMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_TalkGiftMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_TalkGiftMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_TalkGiftMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_ReplacePerson{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_ReplacePerson), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_ReplacePersonMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_RelianceMenuMethods : IHubPlayTalkAfter_RelianceMenu { # [doc = "`.ctor(crate::app::hubaccess::HubAccess, bool)` overload"] fn ctor (self , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess > , reliance_level_up : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubPlayTalkAfter_RelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RelianceMenu , crate :: app :: hubaccess :: HubAccess , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (access) , :: core :: convert :: Into :: into (reliance_level_up) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_RelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RelianceMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_RelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RelianceMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_RelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RelianceMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_RelianceMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RelianceMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae56a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_RelianceMenu > IHubPlayTalkAfter_RelianceMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RelianceMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RelianceMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RelianceMenu {
-# [doc = "`.ctor(crate::app::hubaccess::HubAccess, bool)` — overload selector"] pub fn new (access : crate :: app :: hubaccess :: HubAccess , reliance_level_up : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_RelianceMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_RelianceMenuMethods > :: ctor (this , access , reliance_level_up) ; this }
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_MuscleMenuMethods:IHubPlayTalkAfter_MuscleMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_MuscleMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae52e0usize)as*mut u8,();
+(HubPlayTalkAfter_MuscleMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_MuscleMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae52f0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_MuscleMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_MuscleMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5370usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_MuscleMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_MuscleMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5380usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_MuscleMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_MuscleMenuMethods : IHubPlayTalkAfter_MuscleMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_MuscleMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_MuscleMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae52e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_MuscleMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_MuscleMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae52f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_MuscleMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_MuscleMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_MuscleMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_MuscleMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae5380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_MuscleMenu>IHubPlayTalkAfter_MuscleMenuMethods for __T{}
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_MuscleMenu > IHubPlayTalkAfter_MuscleMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_MuscleMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_MuscleMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_MuscleMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_MuscleMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_MuscleMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_MuscleMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_MuscleMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_MuscleMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_MuscleMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_RingMenu_YesItemMethods : IHubPlayTalkAfter_RingMenu_YesItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_RingMenu_YesItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RingMenu_YesItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b65720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_RingMenu_YesItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RingMenu_YesItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b657b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_RingMenu_YesItem > IHubPlayTalkAfter_RingMenu_YesItemMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RingMenu_YesItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RingMenu_YesItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RingMenu_YesItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RingMenu_YesItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_RingMenu_YesItem) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_RingMenu_YesItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_MuscleMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_MuscleMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_MuscleMenuMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter { # [doc = "`get_IsExistGift()` overload"] pub fn get_is_exist_gift () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23dfd80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23da380usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfterMethods : IHubPlayTalkAfter { # [doc = "`get_CurrentPersonLocator()` overload"] fn get_current_person_locator (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23dfea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CurrentPersonLocator(crate::unity_engine::gameobject::GameObject)` overload"] fn set_current_person_locator (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23dfeb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ChangeUnit()` overload"] fn get_change_unit (self ,) -> crate :: app :: hubunitcontroller :: HubUnitController { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubunitcontroller :: HubUnitController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23dfec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ChangeUnit(crate::app::hubunitcontroller::HubUnitController)` overload"] fn set_change_unit (self , value : impl :: core :: convert :: Into < crate :: app :: hubunitcontroller :: HubUnitController >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , crate :: app :: hubunitcontroller :: HubUnitController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23dfed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`EndExercise()` overload"] fn end_exercise (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23dfee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Access()` overload"] fn get_access (self ,) -> crate :: app :: hubaccess :: HubAccess { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccess :: HubAccess = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Access(crate::app::hubaccess::HubAccess)` overload"] fn set_access (self , value : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CanAdd()` overload"] fn get_can_add (self ,) -> bool { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CanAdd(bool)` overload"] fn set_can_add (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value(i32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TargetUnit()` overload"] fn get_target_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TargetUnit(crate::app::unit::Unit)` overload"] fn set_target_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> crate :: app :: reliancedata :: RelianceData_Level { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> crate :: app :: reliancedata :: RelianceData_Level = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level(crate::app::reliancedata::RelianceData_Level)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < crate :: app :: reliancedata :: RelianceData_Level >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , crate :: app :: reliancedata :: RelianceData_Level , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Other()` overload"] fn get_other (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e00a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Other(::unity2::Il2CppString)` overload"] fn set_other (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e00b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ChangePersonPID()` overload"] fn get_change_person_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e00c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ChangePersonPID(::unity2::Il2CppString)` overload"] fn set_change_person_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e00d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsChangePerson()` overload"] fn get_is_change_person (self ,) -> bool { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e00e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsChangePerson(bool)` overload"] fn set_is_change_person (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e00f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PrevGodLevel()` overload"] fn get_prev_god_level (self ,) -> i32 { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PrevGodLevel(i32)` overload"] fn set_prev_god_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::hubaccess::HubAccess)` overload"] fn ctor (self , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetGodUnit(::unity2::Il2CppString)` overload"] fn try_get_god_unit (self , gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: godunit :: GodUnit { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e01f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindSelectMenu()` overload"] fn create_bind_select_menu (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindSelectGift()` overload"] fn create_bind_select_gift (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGiftMessage()` overload"] fn get_gift_message (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartReactionGift()` overload"] fn start_reaction_gift (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndReactionGift()` overload"] fn end_reaction_gift (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e06a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExitPhase1()` overload"] fn exit_phase1 (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExitPhase2()` overload"] fn exit_phase2 (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartReliance()` overload"] fn start_reliance (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e0ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MainReliance()` overload"] fn main_reliance (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e1100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExitReliance()` overload"] fn exit_reliance (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e1620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAchive(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::reliancedata::RelianceData_Level)` overload"] fn update_achive (self , a : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , b : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , level : impl :: core :: convert :: Into < crate :: app :: reliancedata :: RelianceData_Level >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: reliancedata :: RelianceData_Level , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e16e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`LevelUpReliance()` overload"] fn level_up_reliance (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e1850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndReliance()` overload"] fn end_reliance (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e1d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndRelianceAfter()` overload"] fn end_reliance_after (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e1fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartReliance_God(::unity2::Il2CppString)` overload"] fn start_reliance_god (self , gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e1190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } } # [doc = "`StartReliance_Unit(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn start_reliance_unit (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , other : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e13b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`StartDragonRide()` overload"] fn start_dragon_ride (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e21a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateFleaMarket()` overload"] fn create_flea_market (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e21b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateFortuneTelling()` overload"] fn create_fortune_telling (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23e2220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter > IHubPlayTalkAfterMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter { pub fn get_is_exist_gift_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_current_person_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_current_person_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_change_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_change_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn end_exercise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_can_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_can_add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_target_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_target_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_other_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_other_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_change_person_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_change_person_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_is_change_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_is_change_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_prev_god_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_prev_god_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn try_get_god_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn create_bind_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn create_bind_select_gift_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_gift_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn start_reaction_gift_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn end_reaction_gift_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn exit_phase1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn exit_phase2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn start_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn main_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn exit_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn update_achive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn level_up_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn end_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn end_reliance_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn start_reliance_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn start_reliance_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn start_dragon_ride_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn create_flea_market_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn create_fortune_telling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter {
-# [doc = "`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"] pub fn new (access : crate :: app :: hubaccess :: HubAccess) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfterMethods > :: ctor (this , access) ; this }
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FortuneTellingMenuMethods:IHubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4dc0usize)as*mut u8,();
+(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4dd0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4e50usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FortuneTellingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4e60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_FortuneTellingMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_RingMenuMethods : IHubPlayTalkAfter_RingMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_RingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RingMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae7c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_RingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RingMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae7c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_RingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RingMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae7cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_RingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RingMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae7d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_RingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_RingMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae7d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FortuneTellingMenu>IHubPlayTalkAfter_FortuneTellingMenuMethods for __T{}
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_RingMenu > IHubPlayTalkAfter_RingMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RingMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_RingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RingMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_RingMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_RingMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_SelectListMenu { # [doc = "`get_CurrentMenuSelect()` overload"] pub fn get_current_menu_select () -> crate :: app :: basicmenuselect :: BasicMenuSelect { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuselect :: BasicMenuSelect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae7e80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae7f80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae8620usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_SelectListMenuMethods : IHubPlayTalkAfter_SelectListMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < HubPlayTalkAfter_SelectListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_SelectListMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae7ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_SelectListMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_SelectListMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae7f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_SelectListMenu > IHubPlayTalkAfter_SelectListMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_SelectListMenu { pub fn get_current_menu_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_SelectListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_SelectListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_SelectListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_SelectListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_SelectListMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_SelectListMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , super_ : crate :: app :: procinst :: ProcInst) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_SelectListMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_SelectListMenuMethods > :: ctor (this , menu_item_list , super_) ; this }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FortuneTellingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FortuneTellingMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FortuneTellingMenuMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_FleaMarketMenuMethods : IHubPlayTalkAfter_FleaMarketMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_FleaMarketMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FleaMarketMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_FleaMarketMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FleaMarketMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_FleaMarketMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FleaMarketMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_FleaMarketMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FleaMarketMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_FleaMarketMenu > IHubPlayTalkAfter_FleaMarketMenuMethods for __T { }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FleaMarketMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FleaMarketMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FleaMarketMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FleaMarketMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FleaMarketMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FleaMarketMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_FleaMarketMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_FleaMarketMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FishingMenuMethods:IHubPlayTalkAfter_FishingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae3170usize)as*mut u8,();
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae3180usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae3200usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae46e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4880usize)as*mut u8,();
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae48c0usize)as*mut u8,();
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4900usize)as*mut u8,();
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`IsEnableFishing()` overload"]fn is_enable_fishing(self,)->bool{unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae3f30usize)as*mut u8,bool;
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
+#[doc="`SetTargetFish()` overload"]fn set_target_fish(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4030usize)as*mut u8,();
+(HubPlayTalkAfter_FishingMenu)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubplaytalkafter")]
-pub trait IHubPlayTalkAfter_FishingMenuMethods : IHubPlayTalkAfter_FishingMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_FishingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae3170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubPlayTalkAfter_FishingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae3180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < HubPlayTalkAfter_FishingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae3200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < HubPlayTalkAfter_FishingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae46e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_FishingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_FishingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae48c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_FishingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEnableFishing()` overload"] fn is_enable_fishing (self ,) -> bool { unsafe { let __receiver = < HubPlayTalkAfter_FishingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae3f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTargetFish()` overload"] fn set_target_fish (self ,) -> () { unsafe { let __receiver = < HubPlayTalkAfter_FishingMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubPlayTalkAfter_FishingMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ae4030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FishingMenu>IHubPlayTalkAfter_FishingMenuMethods for __T{}
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl < __T : IHubPlayTalkAfter_FishingMenu > IHubPlayTalkAfter_FishingMenuMethods for __T { }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_enable_fishing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_target_fish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FishingMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_enable_fishing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_target_fish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubPlayTalkAfter_FishingMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FishingMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FishingMenuMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FishingMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubPlayTalkAfter_FishingMenu) , :: core :: stringify ! (new) ,)) ; < Self as IHubPlayTalkAfter_FishingMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FleaMarketMenuMethods:IHubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4b90usize)as*mut u8,();
+(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4ba0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4c20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FleaMarketMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4c30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_FleaMarketMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FleaMarketMenu>IHubPlayTalkAfter_FleaMarketMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FleaMarketMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FleaMarketMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FleaMarketMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_FishingPictureBookMenuMethods:IHubPlayTalkAfter_FishingPictureBookMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4990usize)as*mut u8,();
+(HubPlayTalkAfter_FishingPictureBookMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae49a0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_FishingPictureBookMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4a20usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_FishingPictureBookMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_FishingPictureBookMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4a30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_FishingPictureBookMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_FishingPictureBookMenu>IHubPlayTalkAfter_FishingPictureBookMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingPictureBookMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_FishingPictureBookMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_FishingPictureBookMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_FishingPictureBookMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_GodRelianceMenuMethods:IHubPlayTalkAfter_GodRelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae4fc0usize)as*mut u8,();
+(HubPlayTalkAfter_GodRelianceMenu)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5000usize)as*mut u8,();
+(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae50a0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5120usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_GodRelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5150usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_GodRelianceMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_GodRelianceMenu>IHubPlayTalkAfter_GodRelianceMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_GodRelianceMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_GodRelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_GodRelianceMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_GodRelianceMenuMethods> ::ctor(this,access);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RelianceMenuMethods:IHubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess> ,reliance_level_up:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5510usize)as*mut u8,();
+(HubPlayTalkAfter_RelianceMenu)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access),(bool)::core::convert::Into::into(reliance_level_up))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5560usize)as*mut u8,();
+(HubPlayTalkAfter_RelianceMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5600usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_RelianceMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae5680usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_RelianceMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RelianceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae56a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_RelianceMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RelianceMenu>IHubPlayTalkAfter_RelianceMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RelianceMenu{#[doc="`.ctor(crate::app::hubaccess::HubAccess, bool)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess,reliance_level_up:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RelianceMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RelianceMenuMethods> ::ctor(this,access,reliance_level_up);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenu_YesItemMethods:IHubPlayTalkAfter_RingMenu_YesItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65720usize)as*mut u8,();
+(HubPlayTalkAfter_RingMenu_YesItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_YesItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b657b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_RingMenu_YesItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu_YesItem>IHubPlayTalkAfter_RingMenu_YesItemMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_YesItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_YesItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu_YesItem), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RingMenu_YesItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenu_NoItemMethods:IHubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu_NoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b65690usize)as*mut u8,();
+(HubPlayTalkAfter_RingMenu_NoItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu_NoItem>IHubPlayTalkAfter_RingMenu_NoItemMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu_NoItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu_NoItem), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RingMenu_NoItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_CookingMenuMethods:IHubPlayTalkAfter_CookingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2c20usize)as*mut u8,();
+(HubPlayTalkAfter_CookingMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2c30usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_CookingMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2cb0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_CookingMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_CookingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2db0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_CookingMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_CookingMenu>IHubPlayTalkAfter_CookingMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_CookingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_CookingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_CookingMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_CookingMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_RingMenuMethods:IHubPlayTalkAfter_RingMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7c10usize)as*mut u8,();
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7c20usize)as*mut u8,();
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7cc0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7d40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_RingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae7d50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_RingMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_RingMenu>IHubPlayTalkAfter_RingMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_RingMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_RingMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_RingMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_TalkGiftMenuMethods:IHubPlayTalkAfter_TalkGiftMenu{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae86a0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_TalkGiftMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8720usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_TalkGiftMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8750usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_TalkGiftMenu)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_TalkGiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae8610usize)as*mut u8,();
+(HubPlayTalkAfter_TalkGiftMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_TalkGiftMenu>IHubPlayTalkAfter_TalkGiftMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_TalkGiftMenu{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_TalkGiftMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_TalkGiftMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_TalkGiftMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter{#[doc="`get_IsExistGift()` overload"]pub fn get_is_exist_gift()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23dfd80usize)as*mut u8,bool;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23da380usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfterMethods:IHubPlayTalkAfter{#[doc="`get_CurrentPersonLocator()` overload"]fn get_current_person_locator(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23dfea0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_CurrentPersonLocator(crate::unity_engine::gameobject::GameObject)` overload"]fn set_current_person_locator(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23dfeb0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_ChangeUnit()` overload"]fn get_change_unit(self,)->crate::app::hubunitcontroller::HubUnitController{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23dfec0usize)as*mut u8,crate::app::hubunitcontroller::HubUnitController;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_ChangeUnit(crate::app::hubunitcontroller::HubUnitController)` overload"]fn set_change_unit(self,value:impl::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23dfed0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(crate::app::hubunitcontroller::HubUnitController)::core::convert::Into::into(value))}
+}
+#[doc="`EndExercise()` overload"]fn end_exercise(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23dfee0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`get_Access()` overload"]fn get_access(self,)->crate::app::hubaccess::HubAccess{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0000usize)as*mut u8,crate::app::hubaccess::HubAccess;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_Access(crate::app::hubaccess::HubAccess)` overload"]fn set_access(self,value:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0010usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(value))}
+}
+#[doc="`get_CanAdd()` overload"]fn get_can_add(self,)->bool{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0020usize)as*mut u8,bool;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_CanAdd(bool)` overload"]fn set_can_add(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0030usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0040usize)as*mut u8,i32;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_Value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0050usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TargetUnit()` overload"]fn get_target_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0060usize)as*mut u8,crate::app::unit::Unit;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_TargetUnit(crate::app::unit::Unit)` overload"]fn set_target_unit(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0070usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->crate::app::reliancedata::RelianceData_Level{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0080usize)as*mut u8,crate::app::reliancedata::RelianceData_Level;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_Level(crate::app::reliancedata::RelianceData_Level)` overload"]fn set_level(self,value:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0090usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(value))}
+}
+#[doc="`get_Other()` overload"]fn get_other(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e00a0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_Other(::unity2::Il2CppString)` overload"]fn set_other(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e00b0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ChangePersonPID()` overload"]fn get_change_person_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e00c0usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_ChangePersonPID(::unity2::Il2CppString)` overload"]fn set_change_person_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e00d0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsChangePerson()` overload"]fn get_is_change_person(self,)->bool{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e00e0usize)as*mut u8,bool;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_IsChangePerson(bool)` overload"]fn set_is_change_person(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e00f0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_PrevGodLevel()` overload"]fn get_prev_god_level(self,)->i32{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0100usize)as*mut u8,i32;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`set_PrevGodLevel(i32)` overload"]fn set_prev_god_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0110usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::hubaccess::HubAccess)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0120usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+}
+#[doc="`TryGetGodUnit(::unity2::Il2CppString)` overload"]fn try_get_god_unit(self,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::godunit::GodUnit{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e01f0usize)as*mut u8,crate::app::godunit::GodUnit;
+(HubPlayTalkAfter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`CreateBindSelectMenu()` overload"]fn create_bind_select_menu(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0280usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`CreateBindSelectGift()` overload"]fn create_bind_select_gift(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0300usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`GetGiftMessage()` overload"]fn get_gift_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0390usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`StartReactionGift()` overload"]fn start_reaction_gift(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0590usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`EndReactionGift()` overload"]fn end_reaction_gift(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e06a0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0750usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`ExitPhase1()` overload"]fn exit_phase1(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0ac0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`ExitPhase2()` overload"]fn exit_phase2(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0b40usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`StartReliance()` overload"]fn start_reliance(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e0ec0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`MainReliance()` overload"]fn main_reliance(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e1100usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`ExitReliance()` overload"]fn exit_reliance(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e1620usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`UpdateAchive(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::reliancedata::RelianceData_Level)` overload"]fn update_achive(self,a:impl::core::convert::Into<crate::app::unit::Unit> ,b:impl::core::convert::Into<crate::app::unit::Unit> ,level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e16e0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(a),(crate::app::unit::Unit)::core::convert::Into::into(b),(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(level))}
+}
+#[doc="`LevelUpReliance()` overload"]fn level_up_reliance(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e1850usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`EndReliance()` overload"]fn end_reliance(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e1d00usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`EndRelianceAfter()` overload"]fn end_reliance_after(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e1fd0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`StartReliance_God(::unity2::Il2CppString)` overload"]fn start_reliance_god(self,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e1190usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`StartReliance_Unit(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn start_reliance_unit(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,other:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e13b0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(other))}
+}
+#[doc="`StartDragonRide()` overload"]fn start_dragon_ride(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e21a0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`CreateFleaMarket()` overload"]fn create_flea_market(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e21b0usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+#[doc="`CreateFortuneTelling()` overload"]fn create_fortune_telling(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23e2220usize)as*mut u8,();
+(HubPlayTalkAfter)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter>IHubPlayTalkAfterMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter{pub fn get_is_exist_gift_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_person_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_current_person_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_change_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_change_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn end_exercise_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_can_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_can_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_target_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_target_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_other_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_other_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_change_person_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_change_person_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_is_change_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_is_change_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_prev_god_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_prev_god_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn try_get_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn create_bind_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn create_bind_select_gift_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_gift_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn start_reaction_gift_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn end_reaction_gift_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn exit_phase1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn exit_phase2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn start_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn main_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn exit_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn update_achive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn level_up_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn end_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn end_reliance_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn start_reliance_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn start_reliance_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn start_dragon_ride_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn create_flea_market_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn create_fortune_telling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfterMethods> ::ctor(this,access);
+this}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]pub trait IHubPlayTalkAfter_DragonRideMenuMethods:IHubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2f40usize)as*mut u8,();
+(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2f50usize)as*mut u8, ::unity2::Il2CppString;
+(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2fd0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubPlayTalkAfter_DragonRideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2fe0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(HubPlayTalkAfter_DragonRideMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl<__T:IHubPlayTalkAfter_DragonRideMenu>IHubPlayTalkAfter_DragonRideMenuMethods for __T{}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-hubplaytalkafter")]impl HubPlayTalkAfter_DragonRideMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalkAfter_DragonRideMenu), ::core::stringify!(new),));
+ <Self as IHubPlayTalkAfter_DragonRideMenuMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubplaytalkafter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubPlayTalkAfter_GodRelianceMenu;
-    pub use super::IHubPlayTalkAfter_GodRelianceMenu;
-    pub use super::IHubPlayTalkAfter_GodRelianceMenuMethods;
-    pub use super::HubPlayTalkAfter_DragonRideMenu;
-    pub use super::IHubPlayTalkAfter_DragonRideMenu;
-    pub use super::IHubPlayTalkAfter_DragonRideMenuMethods;
+    pub use super::HubPlayTalkAfter_SelectListMenu;
+    pub use super::IHubPlayTalkAfter_SelectListMenu;
+    pub use super::IHubPlayTalkAfter_SelectListMenuMethods;
+    pub use super::HubPlayTalkAfter_ReplacePerson;
+    pub use super::IHubPlayTalkAfter_ReplacePerson;
+    pub use super::IHubPlayTalkAfter_ReplacePersonMethods;
+    pub use super::HubPlayTalkAfter_MuscleMenu;
+    pub use super::IHubPlayTalkAfter_MuscleMenu;
+    pub use super::IHubPlayTalkAfter_MuscleMenuMethods;
     pub use super::HubPlayTalkAfter_FortuneTellingMenu;
     pub use super::IHubPlayTalkAfter_FortuneTellingMenu;
     pub use super::IHubPlayTalkAfter_FortuneTellingMenuMethods;
-    pub use super::HubPlayTalkAfter_CookingMenu;
-    pub use super::IHubPlayTalkAfter_CookingMenu;
-    pub use super::IHubPlayTalkAfter_CookingMenuMethods;
+    pub use super::HubPlayTalkAfter_FishingMenu;
+    pub use super::IHubPlayTalkAfter_FishingMenu;
+    pub use super::IHubPlayTalkAfter_FishingMenuMethods;
+    pub use super::HubPlayTalkAfter_FleaMarketMenu;
+    pub use super::IHubPlayTalkAfter_FleaMarketMenu;
+    pub use super::IHubPlayTalkAfter_FleaMarketMenuMethods;
+    pub use super::HubPlayTalkAfter_FishingPictureBookMenu;
+    pub use super::IHubPlayTalkAfter_FishingPictureBookMenu;
+    pub use super::IHubPlayTalkAfter_FishingPictureBookMenuMethods;
+    pub use super::HubPlayTalkAfter_GodRelianceMenu;
+    pub use super::IHubPlayTalkAfter_GodRelianceMenu;
+    pub use super::IHubPlayTalkAfter_GodRelianceMenuMethods;
+    pub use super::HubPlayTalkAfter_RelianceMenu;
+    pub use super::IHubPlayTalkAfter_RelianceMenu;
+    pub use super::IHubPlayTalkAfter_RelianceMenuMethods;
+    pub use super::HubPlayTalkAfter_RingMenu_YesItem;
+    pub use super::IHubPlayTalkAfter_RingMenu_YesItem;
+    pub use super::IHubPlayTalkAfter_RingMenu_YesItemMethods;
     pub use super::HubPlayTalkAfter_RingMenu_NoItem;
     pub use super::IHubPlayTalkAfter_RingMenu_NoItem;
     pub use super::IHubPlayTalkAfter_RingMenu_NoItemMethods;
     pub use super::HubPlayTalkAfter_Label;
-    pub use super::HubPlayTalkAfter_ReplacePerson;
-    pub use super::IHubPlayTalkAfter_ReplacePerson;
-    pub use super::IHubPlayTalkAfter_ReplacePersonMethods;
-    pub use super::HubPlayTalkAfter_FishingPictureBookMenu;
-    pub use super::IHubPlayTalkAfter_FishingPictureBookMenu;
-    pub use super::IHubPlayTalkAfter_FishingPictureBookMenuMethods;
-    pub use super::HubPlayTalkAfter_TalkGiftMenu;
-    pub use super::IHubPlayTalkAfter_TalkGiftMenu;
-    pub use super::IHubPlayTalkAfter_TalkGiftMenuMethods;
-    pub use super::HubPlayTalkAfter_RelianceMenu;
-    pub use super::IHubPlayTalkAfter_RelianceMenu;
-    pub use super::IHubPlayTalkAfter_RelianceMenuMethods;
-    pub use super::HubPlayTalkAfter_MuscleMenu;
-    pub use super::IHubPlayTalkAfter_MuscleMenu;
-    pub use super::IHubPlayTalkAfter_MuscleMenuMethods;
-    pub use super::HubPlayTalkAfter_RingMenu_YesItem;
-    pub use super::IHubPlayTalkAfter_RingMenu_YesItem;
-    pub use super::IHubPlayTalkAfter_RingMenu_YesItemMethods;
-    pub use super::HubPlayTalkAfter;
-    pub use super::IHubPlayTalkAfter;
-    pub use super::IHubPlayTalkAfterMethods;
+    pub use super::HubPlayTalkAfter_CookingMenu;
+    pub use super::IHubPlayTalkAfter_CookingMenu;
+    pub use super::IHubPlayTalkAfter_CookingMenuMethods;
     pub use super::HubPlayTalkAfter_RingMenu;
     pub use super::IHubPlayTalkAfter_RingMenu;
     pub use super::IHubPlayTalkAfter_RingMenuMethods;
-    pub use super::HubPlayTalkAfter_SelectListMenu;
-    pub use super::IHubPlayTalkAfter_SelectListMenu;
-    pub use super::IHubPlayTalkAfter_SelectListMenuMethods;
-    pub use super::HubPlayTalkAfter_FleaMarketMenu;
-    pub use super::IHubPlayTalkAfter_FleaMarketMenu;
-    pub use super::IHubPlayTalkAfter_FleaMarketMenuMethods;
-    pub use super::HubPlayTalkAfter_FishingMenu;
-    pub use super::IHubPlayTalkAfter_FishingMenu;
-    pub use super::IHubPlayTalkAfter_FishingMenuMethods;
+    pub use super::HubPlayTalkAfter_TalkGiftMenu;
+    pub use super::IHubPlayTalkAfter_TalkGiftMenu;
+    pub use super::IHubPlayTalkAfter_TalkGiftMenuMethods;
+    pub use super::HubPlayTalkAfter;
+    pub use super::IHubPlayTalkAfter;
+    pub use super::IHubPlayTalkAfterMethods;
+    pub use super::HubPlayTalkAfter_DragonRideMenu;
+    pub use super::IHubPlayTalkAfter_DragonRideMenu;
+    pub use super::IHubPlayTalkAfter_DragonRideMenuMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

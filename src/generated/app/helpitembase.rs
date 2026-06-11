@@ -4,50 +4,122 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitembase/HelpItemBase.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemBase")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HelpItemBase {
-# [offset (24)] # [rename (name = "m_isTempGod")] pub m_is_temp_god : bool ,
-# [offset (32)] # [rename (name = "m_tempGod")] pub m_temp_god : crate :: app :: godunit :: GodUnit ,
-# [offset (40)] # [rename (name = "m_isTempRing")] pub m_is_temp_ring : bool ,
-# [offset (48)] # [rename (name = "m_tempRing")] pub m_temp_ring : crate :: app :: unitring :: UnitRing ,
-# [offset (56)] # [rename (name = "m_isTempUnit")] pub m_is_temp_unit : bool ,
-# [offset (64)] # [rename (name = "m_tempUnit")] pub m_temp_unit : crate :: app :: unit :: Unit ,
-# [offset (72)] # [rename (name = "m_startItemPriority")] pub m_start_item_priority : i32 ,
-# [offset (76)] # [rename (name = "m_HelpItemType")] pub m_help_item_type : crate :: app :: helpmanager :: HelpManager_HelpItemType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpitembase/HelpItemBase.md"))]#[::unity2::class(namespace="App",name="HelpItemBase")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HelpItemBase{#[offset(24)]#[rename(name="m_isTempGod")]pub m_is_temp_god:bool, #[offset(32)]#[rename(name="m_tempGod")]pub m_temp_god:crate::app::godunit::GodUnit, #[offset(40)]#[rename(name="m_isTempRing")]pub m_is_temp_ring:bool, #[offset(48)]#[rename(name="m_tempRing")]pub m_temp_ring:crate::app::unitring::UnitRing, #[offset(56)]#[rename(name="m_isTempUnit")]pub m_is_temp_unit:bool, #[offset(64)]#[rename(name="m_tempUnit")]pub m_temp_unit:crate::app::unit::Unit, #[offset(72)]#[rename(name="m_startItemPriority")]pub m_start_item_priority:i32, #[offset(76)]#[rename(name="m_HelpItemType")]pub m_help_item_type:crate::app::helpmanager::HelpManager_HelpItemType,}
 
 }
 
 #[cfg(feature = "app-helpitembase-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpitembase")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __HelpItemBase_unity2_raw { use super :: * ; pub unsafe fn set_contents (this : HelpItemBase , setter : crate :: app :: helpparamsetter :: HelpParamSetter , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("SetContents") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "SetContents" , < HelpItemBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (HelpItemBase , crate :: app :: helpparamsetter :: HelpParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , setter , __mi) } pub unsafe fn is_valid (this : HelpItemBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IsValid") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IsValid" , < HelpItemBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="app-helpitembase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HelpItemBase_unity2_raw{use super:: * ;
+pub unsafe fn set_contents(this:HelpItemBase,setter:crate::app::helpparamsetter::HelpParamSetter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetContents").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","SetContents", <HelpItemBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(HelpItemBase,crate::app::helpparamsetter::HelpParamSetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,setter,__mi)}
+pub unsafe fn is_valid(this:HelpItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsValid").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsValid", <HelpItemBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(HelpItemBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "app-helpitembase")]
-pub trait IHelpItemBaseMethods : IHelpItemBase { # [doc = "`get_StartItemPriority()` overload"] fn get_start_item_priority (self ,) -> i32 { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297bf60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_HelpItemType()` overload"] fn get_help_item_type (self ,) -> crate :: app :: helpmanager :: HelpManager_HelpItemType { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> crate :: app :: helpmanager :: HelpManager_HelpItemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297bf70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_StartItemConstPriority()` overload"] fn get_start_item_const_priority (self ,) -> i32 { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297bf80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"] fn set_contents (self , setter : impl :: core :: convert :: Into < crate :: app :: helpparamsetter :: HelpParamSetter >) -> () { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpItemBase_unity2_raw :: set_contents (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __HelpItemBase_unity2_raw :: is_valid (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_CurrentUnit()` overload"] fn get_current_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297bf90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTempGod(bool, crate::app::godunit::GodUnit)` overload"] fn set_temp_god (self , is_temp_god : impl :: core :: convert :: Into < bool > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , bool , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_temp_god) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`IsTempGod()` overload"] fn is_temp_god (self ,) -> bool { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTempGod()` overload"] fn get_temp_god (self ,) -> crate :: app :: godunit :: GodUnit { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTempRing(bool, crate::app::unitring::UnitRing)` overload"] fn set_temp_ring (self , is_temp_ring : impl :: core :: convert :: Into < bool > , ring : impl :: core :: convert :: Into < crate :: app :: unitring :: UnitRing >) -> () { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , bool , crate :: app :: unitring :: UnitRing , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_temp_ring) , :: core :: convert :: Into :: into (ring) , :: core :: option :: Option :: None) } } } # [doc = "`IsTempRing()` overload"] fn is_temp_ring (self ,) -> bool { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTempRing()` overload"] fn get_temp_ring (self ,) -> crate :: app :: unitring :: UnitRing { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitring :: UnitRing = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTempUnit(bool, crate::app::unit::Unit)` overload"] fn set_temp_unit (self , is_temp_unit : impl :: core :: convert :: Into < bool > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , bool , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_temp_unit) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297c0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpitembase")]pub trait IHelpItemBaseMethods:IHelpItemBase{#[doc="`get_StartItemPriority()` overload"]fn get_start_item_priority(self,)->i32{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297bf60usize)as*mut u8,i32;
+(HelpItemBase)__receiver)}
+}
+#[doc="`get_HelpItemType()` overload"]fn get_help_item_type(self,)->crate::app::helpmanager::HelpManager_HelpItemType{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297bf70usize)as*mut u8,crate::app::helpmanager::HelpManager_HelpItemType;
+(HelpItemBase)__receiver)}
+}
+#[doc="`get_StartItemConstPriority()` overload"]fn get_start_item_const_priority(self,)->i32{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297bf80usize)as*mut u8,i32;
+(HelpItemBase)__receiver)}
+}
+#[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HelpItemBase_unity2_raw::set_contents(__receiver, ::core::convert::Into::into(setter), ::core::option::Option::None)}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HelpItemBase_unity2_raw::is_valid(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_CurrentUnit()` overload"]fn get_current_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297bf90usize)as*mut u8,crate::app::unit::Unit;
+(HelpItemBase)__receiver)}
+}
+#[doc="`SetTempGod(bool, crate::app::godunit::GodUnit)` overload"]fn set_temp_god(self,is_temp_god:impl::core::convert::Into<bool> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c010usize)as*mut u8,();
+(HelpItemBase)__receiver,(bool)::core::convert::Into::into(is_temp_god),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`IsTempGod()` overload"]fn is_temp_god(self,)->bool{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c030usize)as*mut u8,bool;
+(HelpItemBase)__receiver)}
+}
+#[doc="`GetTempGod()` overload"]fn get_temp_god(self,)->crate::app::godunit::GodUnit{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c040usize)as*mut u8,crate::app::godunit::GodUnit;
+(HelpItemBase)__receiver)}
+}
+#[doc="`SetTempRing(bool, crate::app::unitring::UnitRing)` overload"]fn set_temp_ring(self,is_temp_ring:impl::core::convert::Into<bool> ,ring:impl::core::convert::Into<crate::app::unitring::UnitRing>)->(){unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c050usize)as*mut u8,();
+(HelpItemBase)__receiver,(bool)::core::convert::Into::into(is_temp_ring),(crate::app::unitring::UnitRing)::core::convert::Into::into(ring))}
+}
+#[doc="`IsTempRing()` overload"]fn is_temp_ring(self,)->bool{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c070usize)as*mut u8,bool;
+(HelpItemBase)__receiver)}
+}
+#[doc="`GetTempRing()` overload"]fn get_temp_ring(self,)->crate::app::unitring::UnitRing{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c080usize)as*mut u8,crate::app::unitring::UnitRing;
+(HelpItemBase)__receiver)}
+}
+#[doc="`SetTempUnit(bool, crate::app::unit::Unit)` overload"]fn set_temp_unit(self,is_temp_unit:impl::core::convert::Into<bool> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c090usize)as*mut u8,();
+(HelpItemBase)__receiver,(bool)::core::convert::Into::into(is_temp_unit),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297c0b0usize)as*mut u8,();
+(HelpItemBase)__receiver)}
+}
+}
 
-#[cfg(feature = "app-helpitembase")]
-impl < __T : IHelpItemBase > IHelpItemBaseMethods for __T { }
+#[cfg(feature="app-helpitembase")]impl<__T:IHelpItemBase>IHelpItemBaseMethods for __T{}
 
-#[cfg(feature = "app-helpitembase")]
-impl HelpItemBase { pub fn get_start_item_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_help_item_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_start_item_const_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_current_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_temp_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_temp_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_temp_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_temp_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_temp_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_temp_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_temp_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-helpitembase")]impl HelpItemBase{pub fn get_start_item_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_help_item_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_start_item_const_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_current_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_temp_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_temp_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_temp_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_temp_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_temp_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_temp_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_temp_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-helpitembase")]
-impl HelpItemBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemBase) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpitembase")]impl HelpItemBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpItemBase), ::core::stringify!(new),));
+ <Self as IHelpItemBaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpitembase")]

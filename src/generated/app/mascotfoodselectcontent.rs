@@ -4,50 +4,96 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfoodselectcontent/MascotFoodSelectContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotFoodSelectContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct MascotFoodSelectContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "UIName")] pub ui_name : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_Food")] pub m_food : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "m_FoodCount")] pub m_food_count : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (248)] # [rename (name = "m_FoodHelp")] pub m_food_help : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (256)] # [rename (name = "m_HelpRoot")] pub m_help_root : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfoodselectcontent/MascotFoodSelectContent.md"))]#[::unity2::class(namespace="App",name="MascotFoodSelectContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct MascotFoodSelectContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="UIName")]pub ui_name: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_Food")]pub m_food:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_FoodCount")]pub m_food_count:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_FoodHelp")]pub m_food_help:crate::unity_engine::gameobject::GameObject, #[offset(256)]#[rename(name="m_HelpRoot")]pub m_help_root:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-mascotfoodselectcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mascotfoodselectcontent")]
-impl MascotFoodSelectContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20372e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2037380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2037400usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: mascotfoodselectcontent :: MascotFoodSelectContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mascotfoodselectcontent :: MascotFoodSelectContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2037480usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] pub fn destroy () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2037550usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotfoodselectcontent")]impl MascotFoodSelectContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20372e0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2037380usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2037400usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::mascotfoodselectcontent::MascotFoodSelectContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2037480usize)as*mut u8,crate::app::mascotfoodselectcontent::MascotFoodSelectContent;
+)}
+}
+#[doc="`Destroy()` overload"]pub fn destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2037550usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mascotfoodselectcontent")]
-pub trait IMascotFoodSelectContentMethods : IMascotFoodSelectContent { # [doc = "`SetHelpText(::unity2::Il2CppString)` overload"] fn set_help_text (self , help : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MascotFoodSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodSelectContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20375e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (help) , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < MascotFoodSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodSelectContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2037700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < MascotFoodSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodSelectContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20377c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < MascotFoodSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodSelectContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20377d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < MascotFoodSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodSelectContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2037840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MascotFoodSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodSelectContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20378b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotFoodSelectContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodSelectContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2037af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotfoodselectcontent")]pub trait IMascotFoodSelectContentMethods:IMascotFoodSelectContent{#[doc="`SetHelpText(::unity2::Il2CppString)` overload"]fn set_help_text(self,help:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MascotFoodSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20375e0usize)as*mut u8,();
+(MascotFoodSelectContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(help))}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MascotFoodSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2037700usize)as*mut u8,f32;
+(MascotFoodSelectContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <MascotFoodSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20377c0usize)as*mut u8,i32;
+(MascotFoodSelectContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <MascotFoodSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20377d0usize)as*mut u8,f32;
+(MascotFoodSelectContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <MascotFoodSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2037840usize)as*mut u8,f32;
+(MascotFoodSelectContent)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MascotFoodSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20378b0usize)as*mut u8,();
+(MascotFoodSelectContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MascotFoodSelectContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2037af0usize)as*mut u8,();
+(MascotFoodSelectContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mascotfoodselectcontent")]
-impl < __T : IMascotFoodSelectContent > IMascotFoodSelectContentMethods for __T { }
+#[cfg(feature="app-mascotfoodselectcontent")]impl<__T:IMascotFoodSelectContent>IMascotFoodSelectContentMethods for __T{}
 
-#[cfg(feature = "app-mascotfoodselectcontent")]
-impl MascotFoodSelectContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodSelectContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-mascotfoodselectcontent")]impl MascotFoodSelectContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-mascotfoodselectcontent")]
-impl MascotFoodSelectContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotFoodSelectContent) , :: core :: stringify ! (new) ,)) ; < Self as IMascotFoodSelectContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mascotfoodselectcontent")]impl MascotFoodSelectContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotFoodSelectContent), ::core::stringify!(new),));
+ <Self as IMascotFoodSelectContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mascotfoodselectcontent")]

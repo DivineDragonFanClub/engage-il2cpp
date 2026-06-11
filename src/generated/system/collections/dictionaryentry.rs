@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/dictionaryentry/DictionaryEntry.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DictionaryEntry {
-    pub key: :: unity2 :: IlInstance,
-    pub value: :: unity2 :: IlInstance,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/dictionaryentry/DictionaryEntry.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DictionaryEntry{pub key: ::unity2::IlInstance,pub value: ::unity2::IlInstance,}
+impl::unity2::ClassIdentity for DictionaryEntry{const NAMESPACE: &'static str="System.Collections";
+const NAME: &'static str="DictionaryEntry";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for DictionaryEntry {
-    const NAMESPACE: &'static str = "System.Collections";
-
-    const NAME: &'static str = "DictionaryEntry";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for DictionaryEntry {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for DictionaryEntry{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,21 @@ impl ::unity2::IlType for DictionaryEntry {
 #[cfg(feature = "system-collections-dictionaryentry-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-dictionaryentry")]
-impl DictionaryEntry { # [doc = "`.ctor(crate::system::object::Object, crate::system::object::Object)` overload"] pub fn ctor (& mut self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (* mut DictionaryEntry , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x363c650usize) as * mut u8) ; __inner (self as * mut DictionaryEntry , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Key()` overload"] pub fn get_key (& mut self ,) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (* mut DictionaryEntry , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x363c690usize) as * mut u8) ; __inner (self as * mut DictionaryEntry , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] pub fn get_value (& mut self ,) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (* mut DictionaryEntry , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x363c6a0usize) as * mut u8) ; __inner (self as * mut DictionaryEntry , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-dictionaryentry")]impl DictionaryEntry{#[doc="`.ctor(crate::system::object::Object, crate::system::object::Object)` overload"]pub fn ctor(&mut self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x363c650usize)as*mut u8,();
+(*mut DictionaryEntry)self as*mut DictionaryEntry,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`get_Key()` overload"]pub fn get_key(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x363c690usize)as*mut u8,crate::system::object::Object;
+(*mut DictionaryEntry)self as*mut DictionaryEntry)}
+}
+#[doc="`get_Value()` overload"]pub fn get_value(&mut self,)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x363c6a0usize)as*mut u8,crate::system::object::Object;
+(*mut DictionaryEntry)self as*mut DictionaryEntry)}
+}
+}
 
-#[cfg(feature = "system-collections-dictionaryentry")]
-impl DictionaryEntry { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DictionaryEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DictionaryEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DictionaryEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-collections-dictionaryentry")]impl DictionaryEntry{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "system-collections-dictionaryentry")]
 #[doc(hidden)]

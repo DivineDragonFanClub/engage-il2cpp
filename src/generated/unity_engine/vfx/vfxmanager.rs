@@ -4,12 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/vfxmanager/VFXManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VFXManager")] # [parent (crate :: system :: object :: Object)] pub struct VFXManager {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vfx/vfxmanager/VFXManager.md"))]#[::unity2::class(namespace="UnityEngine.VFX",name="VFXManager")]#[parent(crate::system::object::Object)]pub struct VFXManager{}
 
 }
 

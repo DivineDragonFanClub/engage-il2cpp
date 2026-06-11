@@ -4,34 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: refinegodweaponparammenuitem :: { IRefineGodWeaponParamMenuItem , RefineGodWeaponParamMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::refinegodweaponparammenuitem::{IRefineGodWeaponParamMenuItem,RefineGodWeaponParamMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparamemptymenuitem/RefineGodWeaponParamEmptyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineGodWeaponParamEmptyMenuItem")] # [parent (crate :: app :: refinegodweaponparammenuitem :: RefineGodWeaponParamMenuItem)] pub struct RefineGodWeaponParamEmptyMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponparamemptymenuitem/RefineGodWeaponParamEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponParamEmptyMenuItem")]#[parent(crate::app::refinegodweaponparammenuitem::RefineGodWeaponParamMenuItem)]pub struct RefineGodWeaponParamEmptyMenuItem{}
 
 }
 
 #[cfg(feature = "app-refinegodweaponparamemptymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refinegodweaponparamemptymenuitem")]
-pub trait IRefineGodWeaponParamEmptyMenuItemMethods : IRefineGodWeaponParamEmptyMenuItem { # [doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)` overload"] fn ctor (self , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , god_weapon : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_SelectEventHandler > , request_close_event_handler : impl :: core :: convert :: Into < crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_RequestCloseEventHandler >) -> () { unsafe { let __receiver = < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponParamEmptyMenuItem , crate :: app :: godunit :: GodUnit , crate :: app :: itemdata :: ItemData , crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_SelectEventHandler , crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_RequestCloseEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x237fd30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_unit) , :: core :: convert :: Into :: into (god_weapon) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (request_close_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponParamEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23800e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponParamEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23800f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponParamEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2380140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineGodWeaponParamEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23802e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refinegodweaponparamemptymenuitem")]pub trait IRefineGodWeaponParamEmptyMenuItemMethods:IRefineGodWeaponParamEmptyMenuItem{#[doc="`.ctor(crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)` overload"]fn ctor(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,god_weapon:impl::core::convert::Into<crate::app::itemdata::ItemData> ,select_event_handler:impl::core::convert::Into<crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler>)->(){unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x237fd30usize)as*mut u8,();
+(RefineGodWeaponParamEmptyMenuItem)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit),(crate::app::itemdata::ItemData)::core::convert::Into::into(god_weapon),(crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23800e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RefineGodWeaponParamEmptyMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23800f0usize)as*mut u8, ::unity2::Il2CppString;
+(RefineGodWeaponParamEmptyMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2380140usize)as*mut u8,();
+(RefineGodWeaponParamEmptyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23802e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineGodWeaponParamEmptyMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refinegodweaponparamemptymenuitem")]
-impl < __T : IRefineGodWeaponParamEmptyMenuItem > IRefineGodWeaponParamEmptyMenuItemMethods for __T { }
+#[cfg(feature="app-refinegodweaponparamemptymenuitem")]impl<__T:IRefineGodWeaponParamEmptyMenuItem>IRefineGodWeaponParamEmptyMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refinegodweaponparamemptymenuitem")]
-impl RefineGodWeaponParamEmptyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineGodWeaponParamEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-refinegodweaponparamemptymenuitem")]impl RefineGodWeaponParamEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-refinegodweaponparamemptymenuitem")]
-impl RefineGodWeaponParamEmptyMenuItem {
-# [doc = "`.ctor(crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)` — overload selector"] pub fn new (god_unit : crate :: app :: godunit :: GodUnit , god_weapon : crate :: app :: itemdata :: ItemData , select_event_handler : crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_SelectEventHandler , request_close_event_handler : crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_RequestCloseEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineGodWeaponParamEmptyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineGodWeaponParamEmptyMenuItemMethods > :: ctor (this , god_unit , god_weapon , select_event_handler , request_close_event_handler) ; this }
+#[cfg(feature="app-refinegodweaponparamemptymenuitem")]impl RefineGodWeaponParamEmptyMenuItem{#[doc="`.ctor(crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)` — overload selector"]pub fn new(god_unit:crate::app::godunit::GodUnit,god_weapon:crate::app::itemdata::ItemData,select_event_handler:crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler,request_close_event_handler:crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineGodWeaponParamEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponParamEmptyMenuItemMethods> ::ctor(this,god_unit,god_weapon,select_event_handler,request_close_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refinegodweaponparamemptymenuitem")]

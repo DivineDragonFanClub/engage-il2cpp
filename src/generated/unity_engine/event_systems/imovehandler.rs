@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/imovehandler/IMoveHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IMoveHandler")] pub struct IMoveHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/imovehandler/IMoveHandler.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="IMoveHandler")]pub struct IMoveHandler{}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-imovehandler")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMoveHandler_unity2_raw { use super :: * ; pub unsafe fn on_move (this : IMoveHandler , event_data : crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnMove") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnMove" , < IMoveHandler as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMoveHandler , crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , event_data , __mi) } }
+#[cfg(feature="unity_engine-event_systems-imovehandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMoveHandler_unity2_raw{use super:: * ;
+pub unsafe fn on_move(this:IMoveHandler,event_data:crate::unity_engine::event_systems::axiseventdata::AxisEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnMove").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnMove", <IMoveHandler as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMoveHandler,crate::unity_engine::event_systems::axiseventdata::AxisEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+}
 
-#[cfg(feature = "unity_engine-event_systems-imovehandler")]
-pub trait IIMoveHandlerMethods : IIMoveHandler { # [doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"] fn on_move (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData >) -> () { unsafe { let __receiver = < IMoveHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMoveHandler_unity2_raw :: on_move (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-event_systems-imovehandler")]pub trait IIMoveHandlerMethods:IIMoveHandler{#[doc="`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]fn on_move(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>)->(){unsafe{let __receiver= <IMoveHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMoveHandler_unity2_raw::on_move(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-imovehandler")]
-impl < __T : IIMoveHandler > IIMoveHandlerMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-imovehandler")]impl<__T:IIMoveHandler>IIMoveHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-imovehandler")]
-impl IMoveHandler { pub fn on_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMoveHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-event_systems-imovehandler")]impl IMoveHandler{pub fn on_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-event_systems-imovehandler")]
 #[doc(hidden)]

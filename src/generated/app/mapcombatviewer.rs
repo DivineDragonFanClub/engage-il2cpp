@@ -4,38 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcombatviewer/MapCombatViewer.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCombatViewer")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapCombatViewer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcombatviewer/MapCombatViewer.md"))]#[::unity2::class(namespace="App",name="MapCombatViewer")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapCombatViewer{}
 
 }
 
 #[cfg(feature = "app-mapcombatviewer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapcombatviewer")]
-pub trait IMapCombatViewerMethods : IMapCombatViewer { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCombatViewer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a6830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapcombatviewer")]pub trait IMapCombatViewerMethods:IMapCombatViewer{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCombatViewer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a6830usize)as*mut u8,();
+(MapCombatViewer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapcombatviewer")]
-impl < __T : IMapCombatViewer > IMapCombatViewerMethods for __T { }
+#[cfg(feature="app-mapcombatviewer")]impl<__T:IMapCombatViewer>IMapCombatViewerMethods for __T{}
 
-#[cfg(feature = "app-mapcombatviewer")]
-impl MapCombatViewer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-mapcombatviewer")]impl MapCombatViewer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-mapcombatviewer")]
-impl MapCombatViewer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCombatViewer) , :: core :: stringify ! (new) ,)) ; < Self as IMapCombatViewerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapcombatviewer")]impl MapCombatViewer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCombatViewer), ::core::stringify!(new),));
+ <Self as IMapCombatViewerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapcombatviewer")]

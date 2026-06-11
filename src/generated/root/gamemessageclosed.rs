@@ -4,36 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: statemachinebehaviour :: { IStateMachineBehaviour , StateMachineBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::statemachinebehaviour::{IStateMachineBehaviour,StateMachineBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/gamemessageclosed/GameMessageClosed.md"))] # [:: unity2 :: class (namespace = "" , name = "GameMessageClosed")] # [parent (crate :: unity_engine :: statemachinebehaviour :: StateMachineBehaviour)] pub struct GameMessageClosed {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/gamemessageclosed/GameMessageClosed.md"))]#[::unity2::class(namespace="",name="GameMessageClosed")]#[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]pub struct GameMessageClosed{}
 
 }
 
 #[cfg(feature = "root-gamemessageclosed-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-gamemessageclosed")]
-pub trait IGameMessageClosedMethods : IGameMessageClosed { # [doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_enter (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameMessageClosed as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageClosed , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x227ff60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"] fn on_state_exit (self , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , state_info : impl :: core :: convert :: Into < crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo > , layer_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameMessageClosed as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageClosed , crate :: unity_engine :: animator :: Animator , crate :: unity_engine :: animatorstateinfo :: AnimatorStateInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (state_info) , :: core :: convert :: Into :: into (layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameMessageClosed as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameMessageClosed , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22800e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-gamemessageclosed")]pub trait IGameMessageClosedMethods:IGameMessageClosed{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameMessageClosed as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x227ff60usize)as*mut u8,();
+(GameMessageClosed)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+}
+#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameMessageClosed as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280020usize)as*mut u8,();
+(GameMessageClosed)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameMessageClosed as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22800e0usize)as*mut u8,();
+(GameMessageClosed)__receiver)}
+}
+}
 
-#[cfg(feature = "root-gamemessageclosed")]
-impl < __T : IGameMessageClosed > IGameMessageClosedMethods for __T { }
+#[cfg(feature="root-gamemessageclosed")]impl<__T:IGameMessageClosed>IGameMessageClosedMethods for __T{}
 
-#[cfg(feature = "root-gamemessageclosed")]
-impl GameMessageClosed { pub fn on_state_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageClosed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_state_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageClosed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameMessageClosed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-gamemessageclosed")]impl GameMessageClosed{pub fn on_state_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_state_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-gamemessageclosed")]
-impl GameMessageClosed {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameMessageClosed) , :: core :: stringify ! (new) ,)) ; < Self as IGameMessageClosedMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-gamemessageclosed")]impl GameMessageClosed{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameMessageClosed), ::core::stringify!(new),));
+ <Self as IGameMessageClosedMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-gamemessageclosed")]

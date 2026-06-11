@@ -4,40 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ranking/Ranking.md"))] # [:: unity2 :: class (namespace = "App" , name = "Ranking")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ranking :: Ranking >)] pub struct Ranking {
-# [static_field] # [rename (name = "MaxPersonCount")] pub max_person_count : i32 ,
-# [static_field] # [rename (name = "MaxGodCount")] pub max_god_count : i32 ,
-# [static_field] # [rename (name = "MaxRankingCount")] pub max_ranking_count : i32 ,
-# [offset (32)] # [rename (name = "m_RankingData")] pub m_ranking_data : :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ranking/Ranking.md"))]#[::unity2::class(namespace="App",name="Ranking")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::ranking::Ranking>)]pub struct Ranking{#[static_field]#[rename(name="MaxPersonCount")]pub max_person_count:i32, #[static_field]#[rename(name="MaxGodCount")]pub max_god_count:i32, #[static_field]#[rename(name="MaxRankingCount")]pub max_ranking_count:i32, #[offset(32)]#[rename(name="m_RankingData")]pub m_ranking_data: ::unity2::Array<crate::app::nexranking::NexRanking_Data> ,}
 
 }
 
 #[cfg(feature = "app-ranking-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ranking")]
-impl Ranking { # [doc = "`GetPersonDataByNetRankingIndex(i32)` overload"] pub fn get_person_data_by_net_ranking_index (net_ranking_index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: persondata :: PersonData { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2377380usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (net_ranking_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetGodDataByNetRankingIndex(i32)` overload"] pub fn get_god_data_by_net_ranking_index (net_ranking_index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: goddata :: GodData { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: goddata :: GodData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23774b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (net_ranking_index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ranking")]impl Ranking{#[doc="`GetPersonDataByNetRankingIndex(i32)` overload"]pub fn get_person_data_by_net_ranking_index(net_ranking_index:impl::core::convert::Into<i32>)->crate::app::persondata::PersonData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2377380usize)as*mut u8,crate::app::persondata::PersonData;
+(i32)::core::convert::Into::into(net_ranking_index))}
+}
+#[doc="`GetGodDataByNetRankingIndex(i32)` overload"]pub fn get_god_data_by_net_ranking_index(net_ranking_index:impl::core::convert::Into<i32>)->crate::app::goddata::GodData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23774b0usize)as*mut u8,crate::app::goddata::GodData;
+(i32)::core::convert::Into::into(net_ranking_index))}
+}
+}
 
-#[cfg(feature = "app-ranking")]
-pub trait IRankingMethods : IRanking { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < Ranking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ranking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2377120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < Ranking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ranking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2377190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] fn download (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Ranking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ranking , crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23771a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"] fn upload (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pairs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > >) -> () { unsafe { let __receiver = < Ranking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ranking , crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23772d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (pairs) , :: core :: option :: Option :: None) } } } # [doc = "`GetRankingData()` overload"] fn get_ranking_data (self ,) -> :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > { unsafe { let __receiver = < Ranking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ranking , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: nexranking :: NexRanking_Data > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2377370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Ranking as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Ranking , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23775e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ranking")]pub trait IRankingMethods:IRanking{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <Ranking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2377120usize)as*mut u8,();
+(Ranking)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <Ranking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2377190usize)as*mut u8,();
+(Ranking)__receiver)}
+}
+#[doc="`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]fn download(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Ranking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23771a0usize)as*mut u8,();
+(Ranking)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]fn upload(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,pairs:impl::core::convert::Into< ::unity2::Array<crate::app::nexranking::NexRanking_Data> >)->(){unsafe{let __receiver= <Ranking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23772d0usize)as*mut u8,();
+(Ranking)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(cid),(::unity2::Array<crate::app::nexranking::NexRanking_Data>)::core::convert::Into::into(pairs))}
+}
+#[doc="`GetRankingData()` overload"]fn get_ranking_data(self,)-> ::unity2::Array<crate::app::nexranking::NexRanking_Data>{unsafe{let __receiver= <Ranking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2377370usize)as*mut u8, ::unity2::Array<crate::app::nexranking::NexRanking_Data> ;
+(Ranking)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Ranking as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23775e0usize)as*mut u8,();
+(Ranking)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ranking")]
-impl < __T : IRanking > IRankingMethods for __T { }
+#[cfg(feature="app-ranking")]impl<__T:IRanking>IRankingMethods for __T{}
 
-#[cfg(feature = "app-ranking")]
-impl Ranking { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ranking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ranking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn download_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ranking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn upload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ranking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_ranking_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ranking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_person_data_by_net_ranking_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ranking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_god_data_by_net_ranking_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ranking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Ranking as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-ranking")]impl Ranking{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_ranking_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_person_data_by_net_ranking_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_god_data_by_net_ranking_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-ranking")]
-impl Ranking {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Ranking) , :: core :: stringify ! (new) ,)) ; < Self as IRankingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ranking")]impl Ranking{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ranking), ::core::stringify!(new),));
+ <Self as IRankingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ranking")]

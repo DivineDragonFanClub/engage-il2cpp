@@ -4,42 +4,197 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/token/Token.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Tree" , name = "Token")] # [parent (crate :: system :: object :: Object)] pub struct Token {
-# [offset (16)] # [rename (name = "SourceId")] pub source_id : i32 ,
-# [offset (20)] # [rename (name = "FromCol")] pub from_col : i32 ,
-# [offset (24)] # [rename (name = "ToCol")] pub to_col : i32 ,
-# [offset (28)] # [rename (name = "FromLine")] pub from_line : i32 ,
-# [offset (32)] # [rename (name = "ToLine")] pub to_line : i32 ,
-# [offset (36)] # [rename (name = "PrevCol")] pub prev_col : i32 ,
-# [offset (40)] # [rename (name = "PrevLine")] pub prev_line : i32 ,
-# [offset (44)] # [rename (name = "Type")] pub r#type : crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/token/Token.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Tree",name="Token")]#[parent(crate::system::object::Object)]pub struct Token{#[offset(16)]#[rename(name="SourceId")]pub source_id:i32, #[offset(20)]#[rename(name="FromCol")]pub from_col:i32, #[offset(24)]#[rename(name="ToCol")]pub to_col:i32, #[offset(28)]#[rename(name="FromLine")]pub from_line:i32, #[offset(32)]#[rename(name="ToLine")]pub to_line:i32, #[offset(36)]#[rename(name="PrevCol")]pub prev_col:i32, #[offset(40)]#[rename(name="PrevLine")]pub prev_line:i32, #[offset(44)]#[rename(name="Type")]pub r#type:crate::moon_sharp::interpreter::tree::tokentype::TokenType,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-token-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-tree-token")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __Token_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "get_Text" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "get_Text" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_text { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "set_Text" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "set_Text" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 8 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_number_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "GetNumberValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "GetNumberValue" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_end_of_block { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "IsEndOfBlock" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "IsEndOfBlock" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_unary_operator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "IsUnaryOperator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "IsUnaryOperator" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_binary_operator { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "IsBinaryOperator" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "IsBinaryOperator" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_source_ref { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "GetSourceRef" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "GetSourceRef" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_source_ref_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "GetSourceRef" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "GetSourceRef" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_source_ref_up_to { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< Token as :: unity2 :: ClassIdentity > :: class () , "GetSourceRefUpTo" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Token as :: unity2 :: ClassIdentity > :: NAME , "GetSourceRefUpTo" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-tree-token")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Token_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_text{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"get_Text",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"get_Text",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_text{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"set_Text",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"set_Text",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::tokentype::TokenType as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),".ctor",8,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"ToString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_number_value{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"GetNumberValue",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"GetNumberValue",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_end_of_block{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"IsEndOfBlock",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"IsEndOfBlock",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_unary_operator{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"IsUnaryOperator",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"IsUnaryOperator",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_binary_operator{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"IsBinaryOperator",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"IsBinaryOperator",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_source_ref{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"GetSourceRef",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"GetSourceRef",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_source_ref_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::token::Token as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"GetSourceRef",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"GetSourceRef",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_source_ref_up_to{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::token::Token as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<Token as::unity2::ClassIdentity> ::class(),"GetSourceRefUpTo",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Token as::unity2::ClassIdentity> ::NAME,"GetSourceRefUpTo",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-token")]
-pub trait ITokenMethods : IToken { # [doc = "`get_Text()` overload"] fn get_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_get_text :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Text(::unity2::Il2CppString)` overload"] fn set_text (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_set_text :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32, i32, i32, i32, i32, i32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType > , source_id : impl :: core :: convert :: Into < i32 > , from_line : impl :: core :: convert :: Into < i32 > , from_col : impl :: core :: convert :: Into < i32 > , to_line : impl :: core :: convert :: Into < i32 > , to_col : impl :: core :: convert :: Into < i32 > , prev_line : impl :: core :: convert :: Into < i32 > , prev_col : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType , i32 , i32 , i32 , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (source_id) , :: core :: convert :: Into :: into (from_line) , :: core :: convert :: Into :: into (from_col) , :: core :: convert :: Into :: into (to_line) , :: core :: convert :: Into :: into (to_col) , :: core :: convert :: Into :: into (prev_line) , :: core :: convert :: Into :: into (prev_col) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_to_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNumberValue()` overload"] fn get_number_value (self ,) -> f64 { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_get_number_value :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEndOfBlock()` overload"] fn is_end_of_block (self ,) -> bool { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_is_end_of_block :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsUnaryOperator()` overload"] fn is_unary_operator (self ,) -> bool { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_is_unary_operator :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsBinaryOperator()` overload"] fn is_binary_operator (self ,) -> bool { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_is_binary_operator :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSourceRef(bool)` overload"] fn get_source_ref (self , is_step_stop : impl :: core :: convert :: Into < bool >) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_get_source_ref :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (is_step_stop) , :: core :: option :: Option :: None) } } } # [doc = "`GetSourceRef(crate::moon_sharp::interpreter::tree::token::Token, bool)` overload"] fn get_source_ref_2 (self , to : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token > , is_step_stop : impl :: core :: convert :: Into < bool >) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , crate :: moon_sharp :: interpreter :: tree :: token :: Token , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_get_source_ref_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (to) , :: core :: convert :: Into :: into (is_step_stop) , :: core :: option :: Option :: None) } } } # [doc = "`GetSourceRefUpTo(crate::moon_sharp::interpreter::tree::token::Token, bool)` overload"] fn get_source_ref_up_to (self , to : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token > , is_step_stop : impl :: core :: convert :: Into < bool >) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef { unsafe { let __receiver = < Token as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Token , crate :: moon_sharp :: interpreter :: tree :: token :: Token , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef = :: core :: mem :: transmute (__Token_unity2_raw :: __lookup_get_source_ref_up_to :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (to) , :: core :: convert :: Into :: into (is_step_stop) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-tree-token")]pub trait ITokenMethods:IToken{#[doc="`get_Text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_get_text::get_method_info().method_ptr, ::unity2::Il2CppString;
+(Token)__receiver)}
+}
+#[doc="`set_Text(::unity2::Il2CppString)` overload"]fn set_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_set_text::get_method_info().method_ptr,();
+(Token)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32, i32, i32, i32, i32, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::tokentype::TokenType> ,source_id:impl::core::convert::Into<i32> ,from_line:impl::core::convert::Into<i32> ,from_col:impl::core::convert::Into<i32> ,to_line:impl::core::convert::Into<i32> ,to_col:impl::core::convert::Into<i32> ,prev_line:impl::core::convert::Into<i32> ,prev_col:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(Token)__receiver,(crate::moon_sharp::interpreter::tree::tokentype::TokenType)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(source_id),(i32)::core::convert::Into::into(from_line),(i32)::core::convert::Into::into(from_col),(i32)::core::convert::Into::into(to_line),(i32)::core::convert::Into::into(to_col),(i32)::core::convert::Into::into(prev_line),(i32)::core::convert::Into::into(prev_col))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(Token)__receiver)}
+}
+#[doc="`GetNumberValue()` overload"]fn get_number_value(self,)->f64{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_get_number_value::get_method_info().method_ptr,f64;
+(Token)__receiver)}
+}
+#[doc="`IsEndOfBlock()` overload"]fn is_end_of_block(self,)->bool{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_is_end_of_block::get_method_info().method_ptr,bool;
+(Token)__receiver)}
+}
+#[doc="`IsUnaryOperator()` overload"]fn is_unary_operator(self,)->bool{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_is_unary_operator::get_method_info().method_ptr,bool;
+(Token)__receiver)}
+}
+#[doc="`IsBinaryOperator()` overload"]fn is_binary_operator(self,)->bool{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_is_binary_operator::get_method_info().method_ptr,bool;
+(Token)__receiver)}
+}
+#[doc="`GetSourceRef(bool)` overload"]fn get_source_ref(self,is_step_stop:impl::core::convert::Into<bool>)->crate::moon_sharp::interpreter::debugging::sourceref::SourceRef{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_get_source_ref::get_method_info().method_ptr,crate::moon_sharp::interpreter::debugging::sourceref::SourceRef;
+(Token)__receiver,(bool)::core::convert::Into::into(is_step_stop))}
+}
+#[doc="`GetSourceRef(crate::moon_sharp::interpreter::tree::token::Token, bool)` overload"]fn get_source_ref_2(self,to:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token> ,is_step_stop:impl::core::convert::Into<bool>)->crate::moon_sharp::interpreter::debugging::sourceref::SourceRef{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_get_source_ref_2::get_method_info().method_ptr,crate::moon_sharp::interpreter::debugging::sourceref::SourceRef;
+(Token)__receiver,(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(to),(bool)::core::convert::Into::into(is_step_stop))}
+}
+#[doc="`GetSourceRefUpTo(crate::moon_sharp::interpreter::tree::token::Token, bool)` overload"]fn get_source_ref_up_to(self,to:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token> ,is_step_stop:impl::core::convert::Into<bool>)->crate::moon_sharp::interpreter::debugging::sourceref::SourceRef{unsafe{let __receiver= <Token as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__Token_unity2_raw::__lookup_get_source_ref_up_to::get_method_info().method_ptr,crate::moon_sharp::interpreter::debugging::sourceref::SourceRef;
+(Token)__receiver,(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(to),(bool)::core::convert::Into::into(is_step_stop))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-token")]
-impl < __T : IToken > ITokenMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-tree-token")]impl<__T:IToken>ITokenMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-token")]
-impl Token { pub fn get_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_number_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_end_of_block_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_unary_operator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_binary_operator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_source_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_source_ref_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_source_ref_up_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Token as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="moon_sharp-interpreter-tree-token")]impl Token{pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_number_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_end_of_block_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_unary_operator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_binary_operator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_source_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_source_ref_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_source_ref_up_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-token")]
-impl Token {
-# [doc = "`.ctor(crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32, i32, i32, i32, i32, i32)` — overload selector"] pub fn new (r#type : crate :: moon_sharp :: interpreter :: tree :: tokentype :: TokenType , source_id : i32 , from_line : i32 , from_col : i32 , to_line : i32 , to_col : i32 , prev_line : i32 , prev_col : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Token) , :: core :: stringify ! (new) ,)) ; < Self as ITokenMethods > :: ctor (this , r#type , source_id , from_line , from_col , to_line , to_col , prev_line , prev_col) ; this }
+#[cfg(feature="moon_sharp-interpreter-tree-token")]impl Token{#[doc="`.ctor(crate::moon_sharp::interpreter::tree::tokentype::TokenType, i32, i32, i32, i32, i32, i32, i32)` — overload selector"]pub fn new(r#type:crate::moon_sharp::interpreter::tree::tokentype::TokenType,source_id:i32,from_line:i32,from_col:i32,to_line:i32,to_col:i32,prev_line:i32,prev_col:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Token), ::core::stringify!(new),));
+ <Self as ITokenMethods> ::ctor(this,r#type,source_id,from_line,from_col,to_line,to_col,prev_line,prev_col);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-token")]

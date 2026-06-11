@@ -4,117 +4,208 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectmenu/RefreshUnitSelectMenu_DisposeEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSelectMenu.DisposeEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSelectMenu_DisposeEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitselectmenu/RefreshUnitSelectMenu_DisposeEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSelectMenu.DisposeEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSelectMenu_DisposeEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectmenu/RefreshUnitSelectMenu_SelectEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSelectMenu.SelectEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSelectMenu_SelectEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitselectmenu/RefreshUnitSelectMenu_CloseEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSelectMenu.CloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSelectMenu_CloseEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectmenu/RefreshUnitSelectMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSelectMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSelectMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitselectmenu/RefreshUnitSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSelectMenu_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectmenu/RefreshUnitSelectMenu_CloseEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSelectMenu.CloseEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct RefreshUnitSelectMenu_CloseEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitselectmenu/RefreshUnitSelectMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSelectMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSelectMenu_SelectEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectmenu/RefreshUnitSelectMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSelectMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct RefreshUnitSelectMenu {
-# [static_field] # [rename (name = "m_MenuItemIndexNone")] pub m_menu_item_index_none : i32 ,
-# [static_field] # [rename (name = "m_MenuItemIndexEmpty")] pub m_menu_item_index_empty : i32 ,
-# [offset (196)] # [rename (name = "m_DecidedMenuItemIndex")] pub m_decided_menu_item_index : i32 ,
-# [offset (200)] # [rename (name = "m_UnselectableUnit")] pub m_unselectable_unit : crate :: app :: unit :: Unit ,
-# [offset (208)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler ,
-# [offset (216)] # [rename (name = "m_CloseEventHandler")] pub m_close_event_handler : crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_CloseEventHandler ,
-# [offset (224)] # [rename (name = "m_DisposeEventHandler")] pub m_dispose_event_handler : crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DisposeEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitselectmenu/RefreshUnitSelectMenu.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefreshUnitSelectMenu{#[static_field]#[rename(name="m_MenuItemIndexNone")]pub m_menu_item_index_none:i32, #[static_field]#[rename(name="m_MenuItemIndexEmpty")]pub m_menu_item_index_empty:i32, #[offset(196)]#[rename(name="m_DecidedMenuItemIndex")]pub m_decided_menu_item_index:i32, #[offset(200)]#[rename(name="m_UnselectableUnit")]pub m_unselectable_unit:crate::app::unit::Unit, #[offset(208)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler, #[offset(216)]#[rename(name="m_CloseEventHandler")]pub m_close_event_handler:crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler, #[offset(224)]#[rename(name="m_DisposeEventHandler")]pub m_dispose_event_handler:crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler,}
 
 }
 
 #[cfg(feature = "app-refreshunitselectmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-pub trait IRefreshUnitSelectMenu_DisposeEventHandlerMethods : IRefreshUnitSelectMenu_DisposeEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu_DisposeEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b01980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu_DisposeEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b019a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl < __T : IRefreshUnitSelectMenu_DisposeEventHandler > IRefreshUnitSelectMenu_DisposeEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu_DisposeEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu_DisposeEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu_DisposeEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSelectMenu_DisposeEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSelectMenu_DisposeEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refreshunitselectmenu")]pub trait IRefreshUnitSelectMenu_DisposeEventHandlerMethods:IRefreshUnitSelectMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSelectMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b01980usize)as*mut u8,();
+(RefreshUnitSelectMenu_DisposeEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefreshUnitSelectMenu_DisposeEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b019a0usize)as*mut u8,();
+(RefreshUnitSelectMenu_DisposeEventHandler)__receiver)}
+}
 }
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-pub trait IRefreshUnitSelectMenu_SelectEventHandlerMethods : IRefreshUnitSelectMenu_SelectEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu_SelectEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b01bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::unit::Unit, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn invoke (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , caption_mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , message_mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu_SelectEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu_SelectEventHandler , crate :: app :: unit :: Unit , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b01c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (caption_mid) , :: core :: convert :: Into :: into (message_mid) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshunitselectmenu")]impl<__T:IRefreshUnitSelectMenu_DisposeEventHandler>IRefreshUnitSelectMenu_DisposeEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl < __T : IRefreshUnitSelectMenu_SelectEventHandler > IRefreshUnitSelectMenu_SelectEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu_SelectEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu_SelectEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu_SelectEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSelectMenu_SelectEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSelectMenu_SelectEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu_DisposeEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-pub trait IRefreshUnitSelectMenu_DecideEventHandlerMethods : IRefreshUnitSelectMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b014e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::unit::Unit, bool, i32)` overload"] fn invoke (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , selected_entrust : impl :: core :: convert :: Into < bool > , scroll_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu_DecideEventHandler , crate :: app :: unit :: Unit , bool , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b01500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (selected_entrust) , :: core :: convert :: Into :: into (scroll_index) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl < __T : IRefreshUnitSelectMenu_DecideEventHandler > IRefreshUnitSelectMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSelectMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSelectMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu_DisposeEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSelectMenu_DisposeEventHandler), ::core::stringify!(new),));
+ <Self as IRefreshUnitSelectMenu_DisposeEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-pub trait IRefreshUnitSelectMenu_CloseEventHandlerMethods : IRefreshUnitSelectMenu_CloseEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu_CloseEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b01270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu_CloseEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu_CloseEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b01290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl < __T : IRefreshUnitSelectMenu_CloseEventHandler > IRefreshUnitSelectMenu_CloseEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu_CloseEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu_CloseEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu_CloseEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSelectMenu_CloseEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSelectMenu_CloseEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-refreshunitselectmenu")]pub trait IRefreshUnitSelectMenu_CloseEventHandlerMethods:IRefreshUnitSelectMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSelectMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b01270usize)as*mut u8,();
+(RefreshUnitSelectMenu_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefreshUnitSelectMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b01290usize)as*mut u8,();
+(RefreshUnitSelectMenu_CloseEventHandler)__receiver)}
+}
 }
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent, crate::app::unit::Unit, crate::app::unit::Unit, bool, i32, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_content : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenucontent :: RefreshUnitSelectMenuContent > , initial_selected_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unselectable_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , selected_entrust : impl :: core :: convert :: Into < bool > , initial_scroll_index : impl :: core :: convert :: Into < i32 > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler > , close_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_CloseEventHandler > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DisposeEventHandler >) -> crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: refreshunitselectmenucontent :: RefreshUnitSelectMenuContent , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , bool , i32 , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_SelectEventHandler , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_CloseEventHandler , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bfb60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (initial_selected_unit) , :: core :: convert :: Into :: into (unselectable_unit) , :: core :: convert :: Into :: into (selected_entrust) , :: core :: convert :: Into :: into (initial_scroll_index) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (close_event_handler) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenuItem(crate::app::unit::Unit, crate::app::unit::Unit, bool, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler, *muti32)` overload"] pub fn create_menu_item (initial_selected_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unselectable_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , selected_entrust : impl :: core :: convert :: Into < bool > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler >) -> (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , bool , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_SelectEventHandler , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler , * mut i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1510usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (initial_selected_unit) , :: core :: convert :: Into :: into (unselectable_unit) , :: core :: convert :: Into :: into (selected_entrust) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c2110usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshunitselectmenu")]impl<__T:IRefreshUnitSelectMenu_CloseEventHandler>IRefreshUnitSelectMenu_CloseEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-pub trait IRefreshUnitSelectMenuMethods : IRefreshUnitSelectMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent, i32, crate::app::unit::Unit, i32, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenucontent :: RefreshUnitSelectMenuContent > , initial_select_index : impl :: core :: convert :: Into < i32 > , unselectable_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , initial_scroll_index : impl :: core :: convert :: Into < i32 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler > , close_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_CloseEventHandler > , dispose_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DisposeEventHandler >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: refreshunitselectmenucontent :: RefreshUnitSelectMenuContent , i32 , crate :: app :: unit :: Unit , i32 , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_CloseEventHandler , crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DisposeEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (initial_select_index) , :: core :: convert :: Into :: into (unselectable_unit) , :: core :: convert :: Into :: into (initial_scroll_index) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (close_event_handler) , :: core :: convert :: Into :: into (dispose_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild(bool)` overload"] fn on_build (self , is_first_build : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_first_build) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AdjustScrollIndex()` overload"] fn adjust_scroll_index (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnselectableUnit()` overload"] fn get_unselectable_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDecidedMenuItem(i32)` overload"] fn set_decided_menu_item (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CancelSetDecidedMenuItem()` overload"] fn cancel_set_decided_menu_item (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c2010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c2030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl < __T : IRefreshUnitSelectMenu > IRefreshUnitSelectMenuMethods for __T { }
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSelectMenu_CloseEventHandler), ::core::stringify!(new),));
+ <Self as IRefreshUnitSelectMenu_CloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn adjust_scroll_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_unselectable_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_decided_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cancel_set_decided_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-refreshunitselectmenu")]pub trait IRefreshUnitSelectMenu_DecideEventHandlerMethods:IRefreshUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b014e0usize)as*mut u8,();
+(RefreshUnitSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit, bool, i32)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,selected_entrust:impl::core::convert::Into<bool> ,scroll_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RefreshUnitSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b01500usize)as*mut u8,();
+(RefreshUnitSelectMenu_DecideEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(selected_entrust),(i32)::core::convert::Into::into(scroll_index))}
+}
+}
 
-#[cfg(feature = "app-refreshunitselectmenu")]
-impl RefreshUnitSelectMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent, i32, crate::app::unit::Unit, i32, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: refreshunitselectmenucontent :: RefreshUnitSelectMenuContent , initial_select_index : i32 , unselectable_unit : crate :: app :: unit :: Unit , initial_scroll_index : i32 , decide_event_handler : crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DecideEventHandler , close_event_handler : crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_CloseEventHandler , dispose_event_handler : crate :: app :: refreshunitselectmenu :: RefreshUnitSelectMenu_DisposeEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSelectMenu) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSelectMenuMethods > :: ctor (this , menu_item_list , menu_content , initial_select_index , unselectable_unit , initial_scroll_index , decide_event_handler , close_event_handler , dispose_event_handler) ; this }
+#[cfg(feature="app-refreshunitselectmenu")]impl<__T:IRefreshUnitSelectMenu_DecideEventHandler>IRefreshUnitSelectMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSelectMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRefreshUnitSelectMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-refreshunitselectmenu")]pub trait IRefreshUnitSelectMenu_SelectEventHandlerMethods:IRefreshUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b01bf0usize)as*mut u8,();
+(RefreshUnitSelectMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,caption_mid:impl::core::convert::Into< ::unity2::Il2CppString> ,message_mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RefreshUnitSelectMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b01c10usize)as*mut u8,();
+(RefreshUnitSelectMenu_SelectEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(::unity2::Il2CppString)::core::convert::Into::into(caption_mid),(::unity2::Il2CppString)::core::convert::Into::into(message_mid))}
+}
+}
+
+#[cfg(feature="app-refreshunitselectmenu")]impl<__T:IRefreshUnitSelectMenu_SelectEventHandler>IRefreshUnitSelectMenu_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSelectMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IRefreshUnitSelectMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent, crate::app::unit::Unit, crate::app::unit::Unit, bool, i32, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent> ,initial_selected_unit:impl::core::convert::Into<crate::app::unit::Unit> ,unselectable_unit:impl::core::convert::Into<crate::app::unit::Unit> ,selected_entrust:impl::core::convert::Into<bool> ,initial_scroll_index:impl::core::convert::Into<i32> ,select_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler> ,close_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler> ,dispose_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler>)->crate::app::refreshunitselectmenu::RefreshUnitSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22bfb60usize)as*mut u8,crate::app::refreshunitselectmenu::RefreshUnitSelectMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent)::core::convert::Into::into(menu_content),(crate::app::unit::Unit)::core::convert::Into::into(initial_selected_unit),(crate::app::unit::Unit)::core::convert::Into::into(unselectable_unit),(bool)::core::convert::Into::into(selected_entrust),(i32)::core::convert::Into::into(initial_scroll_index),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler)::core::convert::Into::into(close_event_handler),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
+}
+#[doc="`CreateMenuItem(crate::app::unit::Unit, crate::app::unit::Unit, bool, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler, *muti32)` overload"]pub fn create_menu_item(initial_selected_unit:impl::core::convert::Into<crate::app::unit::Unit> ,unselectable_unit:impl::core::convert::Into<crate::app::unit::Unit> ,selected_entrust:impl::core::convert::Into<bool> ,select_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler>)->(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x22c1510usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+(crate::app::unit::Unit)::core::convert::Into::into(initial_selected_unit),(crate::app::unit::Unit)::core::convert::Into::into(unselectable_unit),(bool)::core::convert::Into::into(selected_entrust),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(*mut i32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22c2110usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-refreshunitselectmenu")]pub trait IRefreshUnitSelectMenuMethods:IRefreshUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent, i32, crate::app::unit::Unit, i32, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent> ,initial_select_index:impl::core::convert::Into<i32> ,unselectable_unit:impl::core::convert::Into<crate::app::unit::Unit> ,initial_scroll_index:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler> ,close_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler> ,dispose_event_handler:impl::core::convert::Into<crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler>)->(){unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1820usize)as*mut u8,();
+(RefreshUnitSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent)::core::convert::Into::into(menu_content),(i32)::core::convert::Into::into(initial_select_index),(crate::app::unit::Unit)::core::convert::Into::into(unselectable_unit),(i32)::core::convert::Into::into(initial_scroll_index),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler)::core::convert::Into::into(close_event_handler),(crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler)::core::convert::Into::into(dispose_event_handler))}
+}
+#[doc="`OnBuild(bool)` overload"]fn on_build(self,is_first_build:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1980usize)as*mut u8,();
+(RefreshUnitSelectMenu)__receiver,(bool)::core::convert::Into::into(is_first_build))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1aa0usize)as*mut u8, ::unity2::Il2CppString;
+(RefreshUnitSelectMenu)__receiver)}
+}
+#[doc="`AdjustScrollIndex()` overload"]fn adjust_scroll_index(self,)->(){unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1af0usize)as*mut u8,();
+(RefreshUnitSelectMenu)__receiver)}
+}
+#[doc="`GetUnselectableUnit()` overload"]fn get_unselectable_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1b30usize)as*mut u8,crate::app::unit::Unit;
+(RefreshUnitSelectMenu)__receiver)}
+}
+#[doc="`SetDecidedMenuItem(i32)` overload"]fn set_decided_menu_item(self,menu_item_index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1b40usize)as*mut u8,bool;
+(RefreshUnitSelectMenu)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CancelSetDecidedMenuItem()` overload"]fn cancel_set_decided_menu_item(self,)->(){unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1e20usize)as*mut u8,();
+(RefreshUnitSelectMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1fd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefreshUnitSelectMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c2010usize)as*mut u8,();
+(RefreshUnitSelectMenu)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RefreshUnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c2030usize)as*mut u8,();
+(RefreshUnitSelectMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-refreshunitselectmenu")]impl<__T:IRefreshUnitSelectMenu>IRefreshUnitSelectMenuMethods for __T{}
+
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn adjust_scroll_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_unselectable_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_decided_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cancel_set_decided_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-refreshunitselectmenu")]impl RefreshUnitSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent, i32, crate::app::unit::Unit, i32, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler, crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent,initial_select_index:i32,unselectable_unit:crate::app::unit::Unit,initial_scroll_index:i32,decide_event_handler:crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DecideEventHandler,close_event_handler:crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_CloseEventHandler,dispose_event_handler:crate::app::refreshunitselectmenu::RefreshUnitSelectMenu_DisposeEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSelectMenu), ::core::stringify!(new),));
+ <Self as IRefreshUnitSelectMenuMethods> ::ctor(this,menu_item_list,menu_content,initial_select_index,unselectable_unit,initial_scroll_index,decide_event_handler,close_event_handler,dispose_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refreshunitselectmenu")]
@@ -123,15 +214,15 @@ pub mod prelude {
     pub use super::RefreshUnitSelectMenu_DisposeEventHandler;
     pub use super::IRefreshUnitSelectMenu_DisposeEventHandler;
     pub use super::IRefreshUnitSelectMenu_DisposeEventHandlerMethods;
-    pub use super::RefreshUnitSelectMenu_SelectEventHandler;
-    pub use super::IRefreshUnitSelectMenu_SelectEventHandler;
-    pub use super::IRefreshUnitSelectMenu_SelectEventHandlerMethods;
-    pub use super::RefreshUnitSelectMenu_DecideEventHandler;
-    pub use super::IRefreshUnitSelectMenu_DecideEventHandler;
-    pub use super::IRefreshUnitSelectMenu_DecideEventHandlerMethods;
     pub use super::RefreshUnitSelectMenu_CloseEventHandler;
     pub use super::IRefreshUnitSelectMenu_CloseEventHandler;
     pub use super::IRefreshUnitSelectMenu_CloseEventHandlerMethods;
+    pub use super::RefreshUnitSelectMenu_DecideEventHandler;
+    pub use super::IRefreshUnitSelectMenu_DecideEventHandler;
+    pub use super::IRefreshUnitSelectMenu_DecideEventHandlerMethods;
+    pub use super::RefreshUnitSelectMenu_SelectEventHandler;
+    pub use super::IRefreshUnitSelectMenu_SelectEventHandler;
+    pub use super::IRefreshUnitSelectMenu_SelectEventHandlerMethods;
     pub use super::RefreshUnitSelectMenu;
     pub use super::IRefreshUnitSelectMenu;
     pub use super::IRefreshUnitSelectMenuMethods;

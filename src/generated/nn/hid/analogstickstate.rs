@@ -4,68 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/analogstickstate/AnalogStickState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AnalogStickState {
-    pub x: i32,
-    pub y: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/analogstickstate/AnalogStickState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AnalogStickState{pub x:i32,pub y:i32,}
+impl::unity2::ClassIdentity for AnalogStickState{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="AnalogStickState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for AnalogStickState {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "AnalogStickState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for AnalogStickState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for AnalogStickState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl AnalogStickState{#[inline]pub fn max()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Max");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_max(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Max");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl AnalogStickState {
-    #[inline]
-    pub fn max() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Max");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_max(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Max");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -73,11 +34,25 @@ impl AnalogStickState {
 #[cfg(feature = "nn-hid-analogstickstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-analogstickstate")]
-impl AnalogStickState { # [doc = "`get_fx()` overload"] pub fn get_fx (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut AnalogStickState , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d790usize) as * mut u8) ; __inner (self as * mut AnalogStickState , :: core :: option :: Option :: None) } } } # [doc = "`get_fy()` overload"] pub fn get_fy (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut AnalogStickState , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d7b0usize) as * mut u8) ; __inner (self as * mut AnalogStickState , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut AnalogStickState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d7d0usize) as * mut u8) ; __inner (self as * mut AnalogStickState , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut AnalogStickState , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d7e0usize) as * mut u8) ; __inner (self as * mut AnalogStickState , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-analogstickstate")]impl AnalogStickState{#[doc="`get_fx()` overload"]pub fn get_fx(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d790usize)as*mut u8,f32;
+(*mut AnalogStickState)self as*mut AnalogStickState)}
+}
+#[doc="`get_fy()` overload"]pub fn get_fy(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d7b0usize)as*mut u8,f32;
+(*mut AnalogStickState)self as*mut AnalogStickState)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d7d0usize)as*mut u8,();
+(*mut AnalogStickState)self as*mut AnalogStickState)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d7e0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut AnalogStickState)self as*mut AnalogStickState)}
+}
+}
 
-#[cfg(feature = "nn-hid-analogstickstate")]
-impl AnalogStickState { pub fn get_fx_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnalogStickState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_fy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnalogStickState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnalogStickState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnalogStickState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="nn-hid-analogstickstate")]impl AnalogStickState{pub fn get_fx_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_fy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "nn-hid-analogstickstate")]
 #[doc(hidden)]

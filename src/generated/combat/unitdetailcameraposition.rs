@@ -4,90 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "UnitDetailCameraPosition")] # [parent (crate :: system :: object :: Object)] pub struct UnitDetailCameraPosition {
-# [offset (16)] # [rename (name = "Target")] pub target : crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint ,
-# [offset (20)] # [rename (name = "Distance")] pub distance : f32 ,
-# [offset (24)] # [rename (name = "LookatHeightFix")] pub lookat_height_fix : f32 ,
-# [offset (28)] # [rename (name = "FollowHeightFix")] pub follow_height_fix : f32 ,
-# [offset (32)] # [rename (name = "CameraFov")] pub camera_fov : f32 ,
-# [offset (36)] # [rename (name = "SideSlipSize")] pub side_slip_size : f32 ,
-# [offset (40)] # [rename (name = "Center")] pub center : crate :: combat :: unitdetailcameraposition :: UnitDetailCameraPosition_CenterType ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/unitdetailcameraposition/UnitDetailCameraPosition.md"))]#[::unity2::class(namespace="Combat",name="UnitDetailCameraPosition")]#[parent(crate::system::object::Object)]pub struct UnitDetailCameraPosition{#[offset(16)]#[rename(name="Target")]pub target:crate::combat::camerapositiondata::CameraPositionData_TargetJoint, #[offset(20)]#[rename(name="Distance")]pub distance:f32, #[offset(24)]#[rename(name="LookatHeightFix")]pub lookat_height_fix:f32, #[offset(28)]#[rename(name="FollowHeightFix")]pub follow_height_fix:f32, #[offset(32)]#[rename(name="CameraFov")]pub camera_fov:f32, #[offset(36)]#[rename(name="SideSlipSize")]pub side_slip_size:f32, #[offset(40)]#[rename(name="Center")]pub center:crate::combat::unitdetailcameraposition::UnitDetailCameraPosition_CenterType,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/unitdetailcameraposition/UnitDetailCameraPosition_CenterType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitDetailCameraPosition_CenterType{pub value:i32,}
+impl::unity2::ClassIdentity for UnitDetailCameraPosition_CenterType{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="UnitDetailCameraPosition.CenterType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition_CenterType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct UnitDetailCameraPosition_CenterType  {
-    pub value: i32,
+impl::unity2::IlType for UnitDetailCameraPosition_CenterType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for UnitDetailCameraPosition_CenterType  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "UnitDetailCameraPosition.CenterType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl UnitDetailCameraPosition_CenterType{pub fn master_only()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for UnitDetailCameraPosition_CenterType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn emblem_height()->Self{Self{value:1}
 }
-
-
-impl  UnitDetailCameraPosition_CenterType  {
-    pub fn master_only() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn emblem_height() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn emblem_center() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn midpoint() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn master_target() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn emblem_center()->Self{Self{value:2}
+}
+pub fn midpoint()->Self{Self{value:3}
+}
+pub fn master_target()->Self{Self{value:4}
+}
 }
 
 }
@@ -95,18 +42,22 @@ impl  UnitDetailCameraPosition_CenterType  {
 #[cfg(feature = "combat-unitdetailcameraposition-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-unitdetailcameraposition")]
-pub trait IUnitDetailCameraPositionMethods : IUnitDetailCameraPosition { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitDetailCameraPosition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitDetailCameraPosition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f73a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-unitdetailcameraposition")]pub trait IUnitDetailCameraPositionMethods:IUnitDetailCameraPosition{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitDetailCameraPosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f73a30usize)as*mut u8,();
+(UnitDetailCameraPosition)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-unitdetailcameraposition")]
-impl < __T : IUnitDetailCameraPosition > IUnitDetailCameraPositionMethods for __T { }
+#[cfg(feature="combat-unitdetailcameraposition")]impl<__T:IUnitDetailCameraPosition>IUnitDetailCameraPositionMethods for __T{}
 
-#[cfg(feature = "combat-unitdetailcameraposition")]
-impl UnitDetailCameraPosition { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitDetailCameraPosition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-unitdetailcameraposition")]impl UnitDetailCameraPosition{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "combat-unitdetailcameraposition")]
-impl UnitDetailCameraPosition {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitDetailCameraPosition) , :: core :: stringify ! (new) ,)) ; < Self as IUnitDetailCameraPositionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-unitdetailcameraposition")]impl UnitDetailCameraPosition{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitDetailCameraPosition), ::core::stringify!(new),));
+ <Self as IUnitDetailCameraPositionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-unitdetailcameraposition")]

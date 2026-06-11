@@ -4,33 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusutil/VersusUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusUtil")] # [parent (crate :: system :: object :: Object)] pub struct VersusUtil {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusutil/VersusUtil.md"))]#[::unity2::class(namespace="App",name="VersusUtil")]#[parent(crate::system::object::Object)]pub struct VersusUtil{}
 
 }
 
 #[cfg(feature = "app-versusutil-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusutil")]
-impl VersusUtil { # [doc = "`AddEncountCounter()` overload"] pub fn add_encount_counter () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddAchieveCount()` overload"] pub fn add_achieve_count () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc810usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddPlayReportStartCount()` overload"] pub fn add_play_report_start_count () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bc900usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddPlayReportResultCount()` overload"] pub fn add_play_report_result_count () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bca20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddPlayReportResultCountDefense(crate::app::versus::Versus_MapResult)` overload"] pub fn add_play_report_result_count_defense (result : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_MapResult >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: versus :: Versus_MapResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bcba0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } # [doc = "`AddProfilePlayCount()` overload"] pub fn add_profile_play_count () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bcc70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusutil")]impl VersusUtil{#[doc="`AddEncountCounter()` overload"]pub fn add_encount_counter()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bc770usize)as*mut u8,();
+)}
+}
+#[doc="`AddAchieveCount()` overload"]pub fn add_achieve_count()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bc810usize)as*mut u8,();
+)}
+}
+#[doc="`AddPlayReportStartCount()` overload"]pub fn add_play_report_start_count()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bc900usize)as*mut u8,();
+)}
+}
+#[doc="`AddPlayReportResultCount()` overload"]pub fn add_play_report_result_count()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bca20usize)as*mut u8,();
+)}
+}
+#[doc="`AddPlayReportResultCountDefense(crate::app::versus::Versus_MapResult)` overload"]pub fn add_play_report_result_count_defense(result:impl::core::convert::Into<crate::app::versus::Versus_MapResult>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bcba0usize)as*mut u8,();
+(crate::app::versus::Versus_MapResult)::core::convert::Into::into(result))}
+}
+#[doc="`AddProfilePlayCount()` overload"]pub fn add_profile_play_count()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bcc70usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-versusutil")]
-pub trait IVersusUtilMethods : IVersusUtil { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusUtil as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusUtil , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bcd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusutil")]pub trait IVersusUtilMethods:IVersusUtil{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusUtil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bcd00usize)as*mut u8,();
+(VersusUtil)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusutil")]
-impl < __T : IVersusUtil > IVersusUtilMethods for __T { }
+#[cfg(feature="app-versusutil")]impl<__T:IVersusUtil>IVersusUtilMethods for __T{}
 
-#[cfg(feature = "app-versusutil")]
-impl VersusUtil { pub fn add_encount_counter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_achieve_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_play_report_start_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_play_report_result_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_play_report_result_count_defense_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_profile_play_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-versusutil")]impl VersusUtil{pub fn add_encount_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_achieve_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_play_report_start_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_play_report_result_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_play_report_result_count_defense_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_profile_play_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-versusutil")]
-impl VersusUtil {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusUtil) , :: core :: stringify ! (new) ,)) ; < Self as IVersusUtilMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusutil")]impl VersusUtil{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusUtil), ::core::stringify!(new),));
+ <Self as IVersusUtilMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusutil")]

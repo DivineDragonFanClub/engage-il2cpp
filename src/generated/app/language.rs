@@ -4,190 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language_Voices.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Language_Voices  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/language/Language_Voices.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Language_Voices{pub value:i32,}
+impl::unity2::ClassIdentity for Language_Voices{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Language.Voices";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Language_Voices{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Language_Voices{pub fn japanese()->Self{Self{value:0}
+}
+pub fn english()->Self{Self{value:1}
+}
+pub fn max()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Language_Voices  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/language/Language.md"))]#[::unity2::class(namespace="App",name="Language")]#[parent(crate::system::object::Object)]pub struct Language{#[static_field]#[rename(name="s_Lang")]pub s_lang:crate::app::language::Language_Langs, #[static_field]#[rename(name="s_Voice")]pub s_voice:crate::app::language::Language_Voices, #[static_field]#[rename(name="s_LangChanged")]pub s_lang_changed:crate::system::action::Action, #[static_field]#[rename(name="s_CultureInfo")]pub s_culture_info: ::unity2::IlInstance,}
 
-    const NAME: &'static str = "Language.Voices";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/language/Language_Langs.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Language_Langs{pub value:i32,}
+impl::unity2::ClassIdentity for Language_Langs{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Language.Langs";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for Language_Voices  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Language_Langs{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  Language_Voices  {
-    pub fn japanese() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn english() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 2 }
-
-    }
-
+impl Language_Langs{pub fn jp_japanese()->Self{Self{value:0}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/language/Language.md"))] # [:: unity2 :: class (namespace = "App" , name = "Language")] # [parent (crate :: system :: object :: Object)] pub struct Language {
-# [static_field] # [rename (name = "s_Lang")] pub s_lang : crate :: app :: language :: Language_Langs ,
-# [static_field] # [rename (name = "s_Voice")] pub s_voice : crate :: app :: language :: Language_Voices ,
-# [static_field] # [rename (name = "s_LangChanged")] pub s_lang_changed : crate :: system :: action :: Action ,
-# [static_field] # [rename (name = "s_CultureInfo")] pub s_culture_info : :: unity2 :: IlInstance ,
+pub fn us_english()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language_Langs.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Language_Langs  {
-    pub value: i32,
+pub fn us_french()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for Language_Langs  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Language.Langs";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn us_spanish()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::IlType for Language_Langs  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn eu_english()->Self{Self{value:4}
 }
-
-
-impl  Language_Langs  {
-    pub fn jp_japanese() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn us_english() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn us_french() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn us_spanish() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn eu_english() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn eu_french() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn eu_spanish() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn eu_german() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn eu_italian() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn cn_traditional() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn cn_simplified() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn kr_korean() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 12 }
-
-    }
-
+pub fn eu_french()->Self{Self{value:5}
+}
+pub fn eu_spanish()->Self{Self{value:6}
+}
+pub fn eu_german()->Self{Self{value:7}
+}
+pub fn eu_italian()->Self{Self{value:8}
+}
+pub fn cn_traditional()->Self{Self{value:9}
+}
+pub fn cn_simplified()->Self{Self{value:10}
+}
+pub fn kr_korean()->Self{Self{value:11}
+}
+pub fn max()->Self{Self{value:12}
+}
 }
 
 }
@@ -195,21 +76,96 @@ impl  Language_Langs  {
 #[cfg(feature = "app-language-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-language")]
-impl Language { # [doc = "`add_s_LangChanged(crate::system::action::Action)` overload"] pub fn add_s_lang_changed (value : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_s_LangChanged(crate::system::action::Action)` overload"] pub fn remove_s_lang_changed (value : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb390usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdb490usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetLangAndVoiceFirst(crate::app::language::Language_Langs, crate::app::language::Language_Voices)` overload"] pub fn set_lang_and_voice_first (lang : impl :: core :: convert :: Into < crate :: app :: language :: Language_Langs > , voice : impl :: core :: convert :: Into < crate :: app :: language :: Language_Voices >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: language :: Language_Langs , crate :: app :: language :: Language_Voices , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdbac0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lang) , :: core :: convert :: Into :: into (voice) , :: core :: option :: Option :: None) } } } # [doc = "`GetLang()` overload"] pub fn get_lang () -> crate :: app :: language :: Language_Langs { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: language :: Language_Langs = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdbc80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`add_LangChanged(crate::system::action::Action)` overload"] pub fn add_lang_changed (value : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdbcf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_LangChanged(crate::system::action::Action)` overload"] pub fn remove_lang_changed (value : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdbd60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetSortKey(crate::app::language::Language_Langs, crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"] pub fn get_sort_key (lang : impl :: core :: convert :: Into < crate :: app :: language :: Language_Langs > , font : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: language :: Language_Langs , crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdbdd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lang) , :: core :: convert :: Into :: into (font) , :: core :: option :: Option :: None) } } } # [doc = "`SetLang(crate::app::language::Language_Langs)` overload"] pub fn set_lang (lang : impl :: core :: convert :: Into < crate :: app :: language :: Language_Langs >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: language :: Language_Langs , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdbbf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lang) , :: core :: option :: Option :: None) } } } # [doc = "`GetVoice()` overload"] pub fn get_voice () -> crate :: app :: language :: Language_Voices { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: language :: Language_Voices = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc2b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetVoice(crate::app::language::Language_Voices)` overload"] pub fn set_voice (voice : impl :: core :: convert :: Into < crate :: app :: language :: Language_Voices >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: language :: Language_Voices , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc320usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (voice) , :: core :: option :: Option :: None) } } } # [doc = "`ReflectSetting()` overload"] pub fn reflect_setting () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SaveSetting(crate::app::procinst::ProcInst)` overload"] pub fn save_setting (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc580usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`GetLangName(crate::app::language::Language_Langs)` overload"] pub fn get_lang_name (lang : impl :: core :: convert :: Into < crate :: app :: language :: Language_Langs >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: language :: Language_Langs , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc5a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lang) , :: core :: option :: Option :: None) } } } # [doc = "`GetVoiceName(crate::app::language::Language_Voices)` overload"] pub fn get_voice_name (voice : impl :: core :: convert :: Into < crate :: app :: language :: Language_Voices >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: language :: Language_Voices , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc6f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (voice) , :: core :: option :: Option :: None) } } } # [doc = "`IsTalkLayout2Lines(crate::app::language::Language_Langs)` overload"] pub fn is_talk_layout2_lines (lang : impl :: core :: convert :: Into < crate :: app :: language :: Language_Langs >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: language :: Language_Langs , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc7c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lang) , :: core :: option :: Option :: None) } } } # [doc = "`GetLangDesired()` overload"] pub fn get_lang_desired () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc7d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc990usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-language")]impl Language{#[doc="`add_s_LangChanged(crate::system::action::Action)` overload"]pub fn add_s_lang_changed(value:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb290usize)as*mut u8,();
+(crate::system::action::Action)::core::convert::Into::into(value))}
+}
+#[doc="`remove_s_LangChanged(crate::system::action::Action)` overload"]pub fn remove_s_lang_changed(value:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb390usize)as*mut u8,();
+(crate::system::action::Action)::core::convert::Into::into(value))}
+}
+#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb490usize)as*mut u8,();
+)}
+}
+#[doc="`SetLangAndVoiceFirst(crate::app::language::Language_Langs, crate::app::language::Language_Voices)` overload"]pub fn set_lang_and_voice_first(lang:impl::core::convert::Into<crate::app::language::Language_Langs> ,voice:impl::core::convert::Into<crate::app::language::Language_Voices>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdbac0usize)as*mut u8,();
+(crate::app::language::Language_Langs)::core::convert::Into::into(lang),(crate::app::language::Language_Voices)::core::convert::Into::into(voice))}
+}
+#[doc="`GetLang()` overload"]pub fn get_lang()->crate::app::language::Language_Langs{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdbc80usize)as*mut u8,crate::app::language::Language_Langs;
+)}
+}
+#[doc="`add_LangChanged(crate::system::action::Action)` overload"]pub fn add_lang_changed(value:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdbcf0usize)as*mut u8,();
+(crate::system::action::Action)::core::convert::Into::into(value))}
+}
+#[doc="`remove_LangChanged(crate::system::action::Action)` overload"]pub fn remove_lang_changed(value:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdbd60usize)as*mut u8,();
+(crate::system::action::Action)::core::convert::Into::into(value))}
+}
+#[doc="`GetSortKey(crate::app::language::Language_Langs, crate::tm_pro::tmp_fontasset::TMP_FontAsset)` overload"]pub fn get_sort_key(lang:impl::core::convert::Into<crate::app::language::Language_Langs> ,font:impl::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdbdd0usize)as*mut u8,i32;
+(crate::app::language::Language_Langs)::core::convert::Into::into(lang),(crate::tm_pro::tmp_fontasset::TMP_FontAsset)::core::convert::Into::into(font))}
+}
+#[doc="`SetLang(crate::app::language::Language_Langs)` overload"]pub fn set_lang(lang:impl::core::convert::Into<crate::app::language::Language_Langs>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdbbf0usize)as*mut u8,();
+(crate::app::language::Language_Langs)::core::convert::Into::into(lang))}
+}
+#[doc="`GetVoice()` overload"]pub fn get_voice()->crate::app::language::Language_Voices{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc2b0usize)as*mut u8,crate::app::language::Language_Voices;
+)}
+}
+#[doc="`SetVoice(crate::app::language::Language_Voices)` overload"]pub fn set_voice(voice:impl::core::convert::Into<crate::app::language::Language_Voices>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc320usize)as*mut u8,();
+(crate::app::language::Language_Voices)::core::convert::Into::into(voice))}
+}
+#[doc="`ReflectSetting()` overload"]pub fn reflect_setting()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc390usize)as*mut u8,();
+)}
+}
+#[doc="`SaveSetting(crate::app::procinst::ProcInst)` overload"]pub fn save_setting(parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc580usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
+}
+#[doc="`GetLangName(crate::app::language::Language_Langs)` overload"]pub fn get_lang_name(lang:impl::core::convert::Into<crate::app::language::Language_Langs>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc5a0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::language::Language_Langs)::core::convert::Into::into(lang))}
+}
+#[doc="`GetVoiceName(crate::app::language::Language_Voices)` overload"]pub fn get_voice_name(voice:impl::core::convert::Into<crate::app::language::Language_Voices>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc6f0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::language::Language_Voices)::core::convert::Into::into(voice))}
+}
+#[doc="`IsTalkLayout2Lines(crate::app::language::Language_Langs)` overload"]pub fn is_talk_layout2_lines(lang:impl::core::convert::Into<crate::app::language::Language_Langs>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc7c0usize)as*mut u8,bool;
+(crate::app::language::Language_Langs)::core::convert::Into::into(lang))}
+}
+#[doc="`GetLangDesired()` overload"]pub fn get_lang_desired()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc7d0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc990usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-language")]
-pub trait ILanguageMethods : ILanguage { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Language as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Language , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-language")]pub trait ILanguageMethods:ILanguage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Language as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc980usize)as*mut u8,();
+(Language)__receiver)}
+}
+}
 
-#[cfg(feature = "app-language")]
-impl < __T : ILanguage > ILanguageMethods for __T { }
+#[cfg(feature="app-language")]impl<__T:ILanguage>ILanguageMethods for __T{}
 
-#[cfg(feature = "app-language")]
-impl Language { pub fn add_s_lang_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn remove_s_lang_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_lang_and_voice_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_lang_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_lang_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn remove_lang_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_sort_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_lang_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn reflect_setting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn save_setting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_lang_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_voice_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_talk_layout2_lines_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_lang_desired_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Language as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="app-language")]impl Language{pub fn add_s_lang_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn remove_s_lang_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_lang_and_voice_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_lang_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_lang_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn remove_lang_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_sort_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_lang_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn reflect_setting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn save_setting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_lang_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_voice_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_talk_layout2_lines_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_lang_desired_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "app-language")]
-impl Language {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Language) , :: core :: stringify ! (new) ,)) ; < Self as ILanguageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-language")]impl Language{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Language), ::core::stringify!(new),));
+ <Self as ILanguageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-language")]

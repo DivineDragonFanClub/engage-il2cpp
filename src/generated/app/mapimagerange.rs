@@ -4,52 +4,24 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimagerange/MapImageRange_Pos.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapImageRange_Pos {
-    pub x: u8,
-    pub z: u8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagerange/MapImageRange.md"))]#[::unity2::class(namespace="App",name="MapImageRange")]#[parent(crate::system::object::Object)]pub struct MapImageRange{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Image")]pub m_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(24)]#[rename(name="m_Poss")]pub m_poss:crate::system::collections::generic::list_1::List_1<crate::app::mapimagerange::MapImageRange_Pos> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagerange/MapImageRange_Pos.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapImageRange_Pos{pub x:u8,pub z:u8,}
+impl::unity2::ClassIdentity for MapImageRange_Pos{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapImageRange.Pos";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for MapImageRange_Pos {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapImageRange.Pos";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapImageRange_Pos {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagerange/MapImageRange.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageRange")] # [parent (crate :: system :: object :: Object)] pub struct MapImageRange {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_Image")] pub m_image : crate :: app :: mapimagecorebit :: MapImageCoreBit ,
-# [offset (24)] # [rename (name = "m_Poss")] pub m_poss : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapimagerange :: MapImageRange_Pos > ,
+impl::unity2::IlType for MapImageRange_Pos{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -57,33 +29,94 @@ impl ::unity2::IlType for MapImageRange_Pos {
 #[cfg(feature = "app-mapimagerange-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapimagerange")]
-impl MapImageRange_Pos { # [doc = "`.ctor(i32, i32)` overload"] pub fn ctor (& mut self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapImageRange_Pos , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x217ca70usize) as * mut u8) ; __inner (self as * mut MapImageRange_Pos , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagerange")]pub trait IMapImageRangeMethods:IMapImageRange{#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2061000usize)as*mut u8,();
+(MapImageRange)__receiver)}
+}
+#[doc="`Add(i32, i32)` overload"]fn add(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2061070usize)as*mut u8,();
+(MapImageRange)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Delete(i32, i32)` overload"]fn delete(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2061140usize)as*mut u8,();
+(MapImageRange)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Get(i32, i32)` overload"]fn get(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20612a0usize)as*mut u8,bool;
+(MapImageRange)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20612e0usize)as*mut u8,i32;
+(MapImageRange)__receiver)}
+}
+#[doc="`GetX(i32)` overload"]fn get_x(self,i:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2061330usize)as*mut u8,i32;
+(MapImageRange)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`GetZ(i32)` overload"]fn get_z(self,i:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20613a0usize)as*mut u8,i32;
+(MapImageRange)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`Sort()` overload"]fn sort(self,)->(){unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2061410usize)as*mut u8,();
+(MapImageRange)__receiver)}
+}
+#[doc="`OpenFan(i32, i32, i32, i32, i32)` overload"]fn open_fan(self,start_x:impl::core::convert::Into<i32> ,start_z:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32> ,angle:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2061540usize)as*mut u8,();
+(MapImageRange)__receiver,(i32)::core::convert::Into::into(start_x),(i32)::core::convert::Into::into(start_z),(i32)::core::convert::Into::into(target_x),(i32)::core::convert::Into::into(target_z),(i32)::core::convert::Into::into(angle))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20616d0usize)as*mut u8,();
+(MapImageRange)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20617e0usize)as*mut u8,();
+(MapImageRange)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageRange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20619e0usize)as*mut u8,();
+(MapImageRange)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapimagerange")]
-impl MapImageRange_Pos { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange_Pos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-mapimagerange")]impl<__T:IMapImageRange>IMapImageRangeMethods for __T{}
 
-#[cfg(feature = "app-mapimagerange")]
-pub trait IMapImageRangeMethods : IMapImageRange { # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2061000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(i32, i32)` overload"] fn add (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2061070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Delete(i32, i32)` overload"] fn delete (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2061140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Get(i32, i32)` overload"] fn get (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20612a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20612e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetX(i32)` overload"] fn get_x (self , i : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2061330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`GetZ(i32)` overload"] fn get_z (self , i : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20613a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`Sort()` overload"] fn sort (self ,) -> () { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2061410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenFan(i32, i32, i32, i32, i32)` overload"] fn open_fan (self , start_x : impl :: core :: convert :: Into < i32 > , start_z : impl :: core :: convert :: Into < i32 > , target_x : impl :: core :: convert :: Into < i32 > , target_z : impl :: core :: convert :: Into < i32 > , angle : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , i32 , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2061540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (start_x) , :: core :: convert :: Into :: into (start_z) , :: core :: convert :: Into :: into (target_x) , :: core :: convert :: Into :: into (target_z) , :: core :: convert :: Into :: into (angle) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20616d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20617e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageRange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20619e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagerange")]impl MapImageRange{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn sort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn open_fan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-mapimagerange")]
-impl < __T : IMapImageRange > IMapImageRangeMethods for __T { }
+#[cfg(feature="app-mapimagerange")]impl MapImageRange{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImageRange), ::core::stringify!(new),));
+ <Self as IMapImageRangeMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mapimagerange")]
-impl MapImageRange { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn sort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn open_fan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-mapimagerange")]impl MapImageRange_Pos{#[doc="`.ctor(i32, i32)` overload"]pub fn ctor(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x217ca70usize)as*mut u8,();
+(*mut MapImageRange_Pos)self as*mut MapImageRange_Pos,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+}
 
-#[cfg(feature = "app-mapimagerange")]
-impl MapImageRange {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageRange) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageRangeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapimagerange")]impl MapImageRange_Pos{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature = "app-mapimagerange")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapImageRange_Pos;
     pub use super::MapImageRange;
     pub use super::IMapImageRange;
     pub use super::IMapImageRangeMethods;
+    pub use super::MapImageRange_Pos;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

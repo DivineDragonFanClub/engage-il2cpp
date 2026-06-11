@@ -4,43 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlerecordsequence/BattleRecordSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleRecordSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: battlerecordsequence :: BattleRecordSequence >)] pub struct BattleRecordSequence {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_BgmHeader")] pub m_bgm_header : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (136)] # [rename (name = "m_Setter")] pub m_setter : crate :: app :: battlerecordsetter :: BattleRecordSetter ,
-# [offset (144)] # [rename (name = "m_IsSkipped")] pub m_is_skipped : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlerecordsequence/BattleRecordSequence.md"))]#[::unity2::class(namespace="App",name="BattleRecordSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::battlerecordsequence::BattleRecordSequence>)]pub struct BattleRecordSequence{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_BgmHeader")]pub m_bgm_header: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(136)]#[rename(name="m_Setter")]pub m_setter:crate::app::battlerecordsetter::BattleRecordSetter, #[offset(144)]#[rename(name="m_IsSkipped")]pub m_is_skipped:bool,}
 
 }
 
 #[cfg(feature = "app-battlerecordsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battlerecordsequence")]
-impl BattleRecordSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , bgm_header : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8e7d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (bgm_header) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlerecordsequence")]impl BattleRecordSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,bgm_header:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8e7d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(bgm_header))}
+}
+}
 
-#[cfg(feature = "app-battlerecordsequence")]
-pub trait IBattleRecordSequenceMethods : IBattleRecordSequence { # [doc = "`LoadScene()` overload"] fn load_scene (self ,) -> () { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8ee70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitLoad()` overload"] fn wait_load (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8ef70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8eff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FadeOut()` overload"] fn fade_out (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleRecordSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8edf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlerecordsequence")]pub trait IBattleRecordSequenceMethods:IBattleRecordSequence{#[doc="`LoadScene()` overload"]fn load_scene(self,)->(){unsafe{let __receiver= <BattleRecordSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8ee70usize)as*mut u8,();
+(BattleRecordSequence)__receiver)}
+}
+#[doc="`WaitLoad()` overload"]fn wait_load(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <BattleRecordSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8ef70usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(BattleRecordSequence)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <BattleRecordSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8eff0usize)as*mut u8,();
+(BattleRecordSequence)__receiver)}
+}
+#[doc="`Unload()` overload"]fn unload(self,)->(){unsafe{let __receiver= <BattleRecordSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f560usize)as*mut u8,();
+(BattleRecordSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <BattleRecordSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f620usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(BattleRecordSequence)__receiver)}
+}
+#[doc="`FadeOut()` overload"]fn fade_out(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <BattleRecordSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f6a0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(BattleRecordSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleRecordSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8edf0usize)as*mut u8,();
+(BattleRecordSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-battlerecordsequence")]
-impl < __T : IBattleRecordSequence > IBattleRecordSequenceMethods for __T { }
+#[cfg(feature="app-battlerecordsequence")]impl<__T:IBattleRecordSequence>IBattleRecordSequenceMethods for __T{}
 
-#[cfg(feature = "app-battlerecordsequence")]
-impl BattleRecordSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn wait_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-battlerecordsequence")]impl BattleRecordSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn wait_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-battlerecordsequence")]
-impl BattleRecordSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleRecordSequence) , :: core :: stringify ! (new) ,)) ; < Self as IBattleRecordSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-battlerecordsequence")]impl BattleRecordSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleRecordSequence), ::core::stringify!(new),));
+ <Self as IBattleRecordSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-battlerecordsequence")]

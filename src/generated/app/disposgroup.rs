@@ -4,41 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposgroup/DisposGroup.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisposGroup")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DisposGroup {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposgroup/DisposGroup.md"))]#[::unity2::class(namespace="App",name="DisposGroup")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DisposGroup{}
 
 }
 
 #[cfg(feature = "app-disposgroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-disposgroup")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DisposGroup_unity2_raw { use super :: * ; pub unsafe fn create_actor (this : DisposGroup , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CreateActor") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CreateActor" , < DisposGroup as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (DisposGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="app-disposgroup")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DisposGroup_unity2_raw{use super:: * ;
+pub unsafe fn create_actor(this:DisposGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreateActor").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CreateActor", <DisposGroup as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(DisposGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "app-disposgroup")]
-pub trait IDisposGroupMethods : IDisposGroup { # [doc = "`CreateActor()` overload"] fn create_actor (self ,) -> () { unsafe { let __receiver = < DisposGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __DisposGroup_unity2_raw :: create_actor (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DisposGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DisposGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cfbd10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-disposgroup")]pub trait IDisposGroupMethods:IDisposGroup{#[doc="`CreateActor()` overload"]fn create_actor(self,)->(){unsafe{let __receiver= <DisposGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DisposGroup_unity2_raw::create_actor(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DisposGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfbd10usize)as*mut u8,();
+(DisposGroup)__receiver)}
+}
+}
 
-#[cfg(feature = "app-disposgroup")]
-impl < __T : IDisposGroup > IDisposGroupMethods for __T { }
+#[cfg(feature="app-disposgroup")]impl<__T:IDisposGroup>IDisposGroupMethods for __T{}
 
-#[cfg(feature = "app-disposgroup")]
-impl DisposGroup { pub fn create_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisposGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisposGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-disposgroup")]impl DisposGroup{pub fn create_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-disposgroup")]
-impl DisposGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisposGroup) , :: core :: stringify ! (new) ,)) ; < Self as IDisposGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-disposgroup")]impl DisposGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisposGroup), ::core::stringify!(new),));
+ <Self as IDisposGroupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-disposgroup")]

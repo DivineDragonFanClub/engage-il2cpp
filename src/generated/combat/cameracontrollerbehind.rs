@@ -4,56 +4,104 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbehind/CameraControllerBehind.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerBehind")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerBehind {
-# [offset (168)] # [rename (name = "Distance")] pub distance : f32 ,
-# [offset (172)] # [rename (name = "CameraHeight")] pub camera_height : f32 ,
-# [offset (176)] # [rename (name = "CameraLookUp")] pub camera_look_up : f32 ,
-# [offset (180)] # [rename (name = "DistanceRate")] pub distance_rate : f32 ,
-# [offset (184)] # [rename (name = "SidePlayer")] pub side_player : bool ,
-# [offset (188)] # [rename (name = "NearUnitSize")] pub near_unit_size : f32 ,
-# [offset (192)] # [rename (name = "FarUnitSize")] pub far_unit_size : f32 ,
-# [offset (196)] # [rename (name = "CameraUpThreshold")] pub camera_up_threshold : f32 ,
-# [offset (200)] # [rename (name = "m_BaseDegree")] pub m_base_degree : f32 ,
-# [offset (204)] # [rename (name = "m_LastDegree")] pub m_last_degree : f32 ,
-# [offset (208)] # [rename (name = "m_LastLookHeight")] pub m_last_look_height : f32 ,
-# [offset (212)] # [rename (name = "m_DoCameraLookUp")] pub m_do_camera_look_up : bool ,
-# [offset (213)] # [rename (name = "isValid")] pub is_valid : bool ,
-# [offset (214)] # [rename (name = "m_IsInverse")] pub m_is_inverse : bool ,
-# [offset (215)] # [rename (name = "m_IsSideRev")] pub m_is_side_rev : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerbehind/CameraControllerBehind.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerBehind")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerBehind{#[offset(168)]#[rename(name="Distance")]pub distance:f32, #[offset(172)]#[rename(name="CameraHeight")]pub camera_height:f32, #[offset(176)]#[rename(name="CameraLookUp")]pub camera_look_up:f32, #[offset(180)]#[rename(name="DistanceRate")]pub distance_rate:f32, #[offset(184)]#[rename(name="SidePlayer")]pub side_player:bool, #[offset(188)]#[rename(name="NearUnitSize")]pub near_unit_size:f32, #[offset(192)]#[rename(name="FarUnitSize")]pub far_unit_size:f32, #[offset(196)]#[rename(name="CameraUpThreshold")]pub camera_up_threshold:f32, #[offset(200)]#[rename(name="m_BaseDegree")]pub m_base_degree:f32, #[offset(204)]#[rename(name="m_LastDegree")]pub m_last_degree:f32, #[offset(208)]#[rename(name="m_LastLookHeight")]pub m_last_look_height:f32, #[offset(212)]#[rename(name="m_DoCameraLookUp")]pub m_do_camera_look_up:bool, #[offset(213)]#[rename(name="isValid")]pub is_valid:bool, #[offset(214)]#[rename(name="m_IsInverse")]pub m_is_inverse:bool, #[offset(215)]#[rename(name="m_IsSideRev")]pub m_is_side_rev:bool,}
 
 }
 
 #[cfg(feature = "combat-cameracontrollerbehind-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollerbehind")]
-pub trait ICameraControllerBehindMethods : ICameraControllerBehind { # [doc = "`get_WidthOnCamera()` overload"] fn get_width_on_camera (self ,) -> f32 { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WidthOnCamera(f32)` overload"] fn set_width_on_camera (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NearSide()` overload"] fn get_near_side (self ,) -> i32 { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initilize()` overload"] fn initilize (self ,) -> () { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckUsable(bool)` overload"] fn check_usable (self , is_routine : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996f80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_routine) , :: core :: option :: Option :: None) } } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Stabilize()` overload"] fn stabilize (self ,) -> () { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetInverse(bool, bool)` overload"] fn set_inverse (self , inv_side : impl :: core :: convert :: Into < bool > , inv_camera : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inv_side) , :: core :: convert :: Into :: into (inv_camera) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDive()` overload"] fn is_dive (self ,) -> bool { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDragon()` overload"] fn is_dragon (self ,) -> bool { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerBehind as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehind , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollerbehind")]pub trait ICameraControllerBehindMethods:ICameraControllerBehind{#[doc="`get_WidthOnCamera()` overload"]fn get_width_on_camera(self,)->f32{unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996330usize)as*mut u8,f32;
+(CameraControllerBehind)__receiver)}
+}
+#[doc="`set_WidthOnCamera(f32)` overload"]fn set_width_on_camera(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996340usize)as*mut u8,();
+(CameraControllerBehind)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_NearSide()` overload"]fn get_near_side(self,)->i32{unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996350usize)as*mut u8,i32;
+(CameraControllerBehind)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996370usize)as*mut u8,();
+(CameraControllerBehind)__receiver)}
+}
+#[doc="`Initilize()` overload"]fn initilize(self,)->(){unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996440usize)as*mut u8,();
+(CameraControllerBehind)__receiver)}
+}
+#[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996f80usize)as*mut u8,();
+(CameraControllerBehind)__receiver,(bool)::core::convert::Into::into(is_routine))}
+}
+#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997050usize)as*mut u8,();
+(CameraControllerBehind)__receiver)}
+}
+#[doc="`Stabilize()` overload"]fn stabilize(self,)->(){unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997060usize)as*mut u8,();
+(CameraControllerBehind)__receiver)}
+}
+#[doc="`SetInverse(bool, bool)` overload"]fn set_inverse(self,inv_side:impl::core::convert::Into<bool> ,inv_camera:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997210usize)as*mut u8,();
+(CameraControllerBehind)__receiver,(bool)::core::convert::Into::into(inv_side),(bool)::core::convert::Into::into(inv_camera))}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997310usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerBehind)__receiver)}
+}
+#[doc="`IsDive()` overload"]fn is_dive(self,)->bool{unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996e20usize)as*mut u8,bool;
+(CameraControllerBehind)__receiver)}
+}
+#[doc="`IsDragon()` overload"]fn is_dragon(self,)->bool{unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996ec0usize)as*mut u8,bool;
+(CameraControllerBehind)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerBehind as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997380usize)as*mut u8,();
+(CameraControllerBehind)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameracontrollerbehind")]
-impl < __T : ICameraControllerBehind > ICameraControllerBehindMethods for __T { }
+#[cfg(feature="combat-cameracontrollerbehind")]impl<__T:ICameraControllerBehind>ICameraControllerBehindMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollerbehind")]
-impl CameraControllerBehind { pub fn get_width_on_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_width_on_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_near_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn initilize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn check_usable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn stabilize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_inverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_dive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_dragon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehind as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="combat-cameracontrollerbehind")]impl CameraControllerBehind{pub fn get_width_on_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_width_on_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_near_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn initilize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn check_usable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn stabilize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_inverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_dive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_dragon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "combat-cameracontrollerbehind")]
-impl CameraControllerBehind {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerBehind) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerBehindMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollerbehind")]impl CameraControllerBehind{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerBehind), ::core::stringify!(new),));
+ <Self as ICameraControllerBehindMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameracontrollerbehind")]

@@ -4,46 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubeffectcatalog/HubEffectCatalog.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubEffectCatalog")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: hubeffectcatalog :: HubEffectCatalog >)] pub struct HubEffectCatalog {
-# [offset (32)] # [rename (name = "EffectPrefab")] pub effect_prefab : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (40)] # [rename (name = "m_HashTable")] pub m_hash_table : :: unity2 :: Array < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubeffectcatalog/HubEffectCatalog.md"))]#[::unity2::class(namespace="App",name="HubEffectCatalog")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::hubeffectcatalog::HubEffectCatalog>)]pub struct HubEffectCatalog{#[offset(32)]#[rename(name="EffectPrefab")]pub effect_prefab: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_HashTable")]pub m_hash_table: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "app-hubeffectcatalog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubeffectcatalog")]
-impl HubEffectCatalog { # [doc = "`Contains(::unity2::Il2CppString)` overload"] pub fn contains (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d88f10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Create(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"] pub fn create (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d890a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"] pub fn create_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d89220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn create_3 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , dir : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d89300usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubeffectcatalog")]impl HubEffectCatalog{#[doc="`Contains(::unity2::Il2CppString)` overload"]pub fn contains(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d88f10usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Create(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]pub fn create(name:impl::core::convert::Into< ::unity2::Il2CppString> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d890a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent))}
+}
+#[doc="`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]pub fn create_2(name:impl::core::convert::Into< ::unity2::Il2CppString> ,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d89220usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn create_3(name:impl::core::convert::Into< ::unity2::Il2CppString> ,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,dir:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d89300usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(dir))}
+}
+}
 
-#[cfg(feature = "app-hubeffectcatalog")]
-pub trait IHubEffectCatalogMethods : IHubEffectCatalog { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubEffectCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEffectCatalog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d88d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubEffectCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEffectCatalog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d89430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubeffectcatalog")]pub trait IHubEffectCatalogMethods:IHubEffectCatalog{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubEffectCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d88d90usize)as*mut u8,();
+(HubEffectCatalog)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubEffectCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d89430usize)as*mut u8,();
+(HubEffectCatalog)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubeffectcatalog")]
-impl < __T : IHubEffectCatalog > IHubEffectCatalogMethods for __T { }
+#[cfg(feature="app-hubeffectcatalog")]impl<__T:IHubEffectCatalog>IHubEffectCatalogMethods for __T{}
 
-#[cfg(feature = "app-hubeffectcatalog")]
-impl HubEffectCatalog { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-hubeffectcatalog")]impl HubEffectCatalog{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-hubeffectcatalog")]
-impl HubEffectCatalog {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubEffectCatalog) , :: core :: stringify ! (new) ,)) ; < Self as IHubEffectCatalogMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubeffectcatalog")]impl HubEffectCatalog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubEffectCatalog), ::core::stringify!(new),));
+ <Self as IHubEffectCatalogMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubeffectcatalog")]

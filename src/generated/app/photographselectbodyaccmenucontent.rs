@@ -4,43 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectbodyaccmenucontent/PhotographSelectBodyAccMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectBodyAccMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct PhotographSelectBodyAccMenuContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectbodyaccmenucontent/PhotographSelectBodyAccMenuContent.md"))]#[::unity2::class(namespace="App",name="PhotographSelectBodyAccMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct PhotographSelectBodyAccMenuContent{}
 
 }
 
 #[cfg(feature = "app-photographselectbodyaccmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographselectbodyaccmenucontent")]
-impl PhotographSelectBodyAccMenuContent { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographdisposmanager::PhotographDisposManager)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , all_menu_content : impl :: core :: convert :: Into < crate :: app :: photographallmenucontent :: PhotographAllMenuContent > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: photographallmenucontent :: PhotographAllMenuContent , crate :: app :: photographdisposmanager :: PhotographDisposManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2696180usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (all_menu_content) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectbodyaccmenucontent")]impl PhotographSelectBodyAccMenuContent{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,all_menu_content:impl::core::convert::Into<crate::app::photographallmenucontent::PhotographAllMenuContent> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2696180usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::photographallmenucontent::PhotographAllMenuContent)::core::convert::Into::into(all_menu_content),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager))}
+}
+}
 
-#[cfg(feature = "app-photographselectbodyaccmenucontent")]
-pub trait IPhotographSelectBodyAccMenuContentMethods : IPhotographSelectBodyAccMenuContent { # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < PhotographSelectBodyAccMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectBodyAccMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26962e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < PhotographSelectBodyAccMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectBodyAccMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2696350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosX(i32)` overload"] fn calc_cursor_moved_pos_x (self , menu_item_idx : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < PhotographSelectBodyAccMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectBodyAccMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26963c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_idx) , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_idx : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < PhotographSelectBodyAccMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectBodyAccMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2696460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_idx) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographSelectBodyAccMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectBodyAccMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2696500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectbodyaccmenucontent")]pub trait IPhotographSelectBodyAccMenuContentMethods:IPhotographSelectBodyAccMenuContent{#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <PhotographSelectBodyAccMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26962e0usize)as*mut u8,f32;
+(PhotographSelectBodyAccMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <PhotographSelectBodyAccMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2696350usize)as*mut u8,f32;
+(PhotographSelectBodyAccMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_idx:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <PhotographSelectBodyAccMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26963c0usize)as*mut u8,f32;
+(PhotographSelectBodyAccMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_idx))}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_idx:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <PhotographSelectBodyAccMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2696460usize)as*mut u8,f32;
+(PhotographSelectBodyAccMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_idx))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographSelectBodyAccMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2696500usize)as*mut u8,();
+(PhotographSelectBodyAccMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographselectbodyaccmenucontent")]
-impl < __T : IPhotographSelectBodyAccMenuContent > IPhotographSelectBodyAccMenuContentMethods for __T { }
+#[cfg(feature="app-photographselectbodyaccmenucontent")]impl<__T:IPhotographSelectBodyAccMenuContent>IPhotographSelectBodyAccMenuContentMethods for __T{}
 
-#[cfg(feature = "app-photographselectbodyaccmenucontent")]
-impl PhotographSelectBodyAccMenuContent { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectBodyAccMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectBodyAccMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectBodyAccMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calc_cursor_moved_pos_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectBodyAccMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectBodyAccMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectBodyAccMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-photographselectbodyaccmenucontent")]impl PhotographSelectBodyAccMenuContent{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_cursor_moved_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-photographselectbodyaccmenucontent")]
-impl PhotographSelectBodyAccMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectBodyAccMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectBodyAccMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographselectbodyaccmenucontent")]impl PhotographSelectBodyAccMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectBodyAccMenuContent), ::core::stringify!(new),));
+ <Self as IPhotographSelectBodyAccMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-photographselectbodyaccmenucontent")]

@@ -4,50 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenucontent/AchievementMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "AchievementMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct AchievementMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_activeIconColor")] pub m_active_icon_color : crate :: unity_engine :: color :: Color ,
-# [offset (248)] # [rename (name = "m_inactiveIconColor")] pub m_inactive_icon_color : crate :: unity_engine :: color :: Color ,
-# [offset (264)] # [rename (name = "m_categoryValue")] pub m_category_value : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI > ,
-# [offset (272)] # [rename (name = "m_totalValue")] pub m_total_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (280)] # [rename (name = "m_categoryIcon")] pub m_category_icon : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievementmenucontent/AchievementMenuContent.md"))]#[::unity2::class(namespace="App",name="AchievementMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct AchievementMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_activeIconColor")]pub m_active_icon_color:crate::unity_engine::color::Color, #[offset(248)]#[rename(name="m_inactiveIconColor")]pub m_inactive_icon_color:crate::unity_engine::color::Color, #[offset(264)]#[rename(name="m_categoryValue")]pub m_category_value:crate::system::collections::generic::list_1::List_1<crate::tm_pro::textmeshprougui::TextMeshProUGUI> , #[offset(272)]#[rename(name="m_totalValue")]pub m_total_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_categoryIcon")]pub m_category_icon:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-achievementmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-achievementmenucontent")]
-impl AchievementMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d06d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d0770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d07f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: achievementmenucontent :: AchievementMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: achievementmenucontent :: AchievementMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ce120usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-achievementmenucontent")]impl AchievementMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d06d0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d0770usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d07f0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::achievementmenucontent::AchievementMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27ce120usize)as*mut u8,crate::app::achievementmenucontent::AchievementMenuContent;
+)}
+}
+}
 
-#[cfg(feature = "app-achievementmenucontent")]
-pub trait IAchievementMenuContentMethods : IAchievementMenuContent { # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < AchievementMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d0530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < AchievementMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d05f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < AchievementMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d0660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < AchievementMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ce500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCategoryIconNum()` overload"] fn get_category_icon_num (self ,) -> i32 { unsafe { let __receiver = < AchievementMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ce910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCategoryIconActive(i32, bool)` overload"] fn set_category_icon_active (self , index : impl :: core :: convert :: Into < i32 > , is_active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AchievementMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenuContent , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27cec90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (is_active) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AchievementMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AchievementMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d0870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-achievementmenucontent")]pub trait IAchievementMenuContentMethods:IAchievementMenuContent{#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <AchievementMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d0530usize)as*mut u8,f32;
+(AchievementMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <AchievementMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d05f0usize)as*mut u8,f32;
+(AchievementMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <AchievementMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d0660usize)as*mut u8,f32;
+(AchievementMenuContent)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <AchievementMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ce500usize)as*mut u8,();
+(AchievementMenuContent)__receiver)}
+}
+#[doc="`GetCategoryIconNum()` overload"]fn get_category_icon_num(self,)->i32{unsafe{let __receiver= <AchievementMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ce910usize)as*mut u8,i32;
+(AchievementMenuContent)__receiver)}
+}
+#[doc="`SetCategoryIconActive(i32, bool)` overload"]fn set_category_icon_active(self,index:impl::core::convert::Into<i32> ,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AchievementMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27cec90usize)as*mut u8,();
+(AchievementMenuContent)__receiver,(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(is_active))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AchievementMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d0870usize)as*mut u8,();
+(AchievementMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-achievementmenucontent")]
-impl < __T : IAchievementMenuContent > IAchievementMenuContentMethods for __T { }
+#[cfg(feature="app-achievementmenucontent")]impl<__T:IAchievementMenuContent>IAchievementMenuContentMethods for __T{}
 
-#[cfg(feature = "app-achievementmenucontent")]
-impl AchievementMenuContent { pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_category_icon_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_category_icon_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AchievementMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-achievementmenucontent")]impl AchievementMenuContent{pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_category_icon_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_category_icon_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-achievementmenucontent")]
-impl AchievementMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AchievementMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IAchievementMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-achievementmenucontent")]impl AchievementMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AchievementMenuContent), ::core::stringify!(new),));
+ <Self as IAchievementMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-achievementmenucontent")]

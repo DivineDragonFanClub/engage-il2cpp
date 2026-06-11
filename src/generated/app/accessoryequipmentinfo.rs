@@ -4,45 +4,93 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryequipmentinfo/AccessoryEquipmentInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryEquipmentInfo")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AccessoryEquipmentInfo {
-# [offset (24)] # [rename (name = "m_ContentObject")] pub m_content_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_CursorObject")] pub m_cursor_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_MenuItemList")] pub m_menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryequipmentinfo/AccessoryEquipmentInfo.md"))]#[::unity2::class(namespace="App",name="AccessoryEquipmentInfo")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AccessoryEquipmentInfo{#[offset(24)]#[rename(name="m_ContentObject")]pub m_content_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_CursorObject")]pub m_cursor_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_MenuItemList")]pub m_menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,}
 
 }
 
 #[cfg(feature = "app-accessoryequipmentinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessoryequipmentinfo")]
-impl AccessoryEquipmentInfo { # [doc = "`Create()` overload"] pub fn create () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b6310usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryequipmentinfo")]impl AccessoryEquipmentInfo{#[doc="`Create()` overload"]pub fn create()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b6310usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-accessoryequipmentinfo")]
-pub trait IAccessoryEquipmentInfoMethods : IAccessoryEquipmentInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b6320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b6330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b6430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::unit::Unit)` overload"] fn build (self , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b6530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (default_unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetData(crate::app::unit::Unit)` overload"] fn set_data (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b6ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetItemContentMax()` overload"] fn get_item_content_max (self ,) -> i32 { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b68e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowCursor()` overload"] fn show_cursor (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b73a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowCursor(crate::app::accessorydata::AccessoryData)` overload"] fn show_cursor_2 (self , accessory_data : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b7450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (accessory_data) , :: core :: option :: Option :: None) } } } # [doc = "`ShowCursor(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn show_cursor_3 (self , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b7810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`HideCursor()` overload"] fn hide_cursor (self ,) -> () { unsafe { let __receiver = < AccessoryEquipmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryEquipmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b7ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryequipmentinfo")]pub trait IAccessoryEquipmentInfoMethods:IAccessoryEquipmentInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b6320usize)as*mut u8,();
+(AccessoryEquipmentInfo)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b6330usize)as*mut u8,();
+(AccessoryEquipmentInfo)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b6430usize)as*mut u8,();
+(AccessoryEquipmentInfo)__receiver)}
+}
+#[doc="`Build(crate::app::unit::Unit)` overload"]fn build(self,default_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b6530usize)as*mut u8,();
+(AccessoryEquipmentInfo)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(default_unit))}
+}
+#[doc="`SetData(crate::app::unit::Unit)` overload"]fn set_data(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b6ab0usize)as*mut u8,();
+(AccessoryEquipmentInfo)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetItemContentMax()` overload"]fn get_item_content_max(self,)->i32{unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b68e0usize)as*mut u8,i32;
+(AccessoryEquipmentInfo)__receiver)}
+}
+#[doc="`ShowCursor()` overload"]fn show_cursor(self,)->(){unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b73a0usize)as*mut u8,();
+(AccessoryEquipmentInfo)__receiver)}
+}
+#[doc="`ShowCursor(crate::app::accessorydata::AccessoryData)` overload"]fn show_cursor_2(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b7450usize)as*mut u8,();
+(AccessoryEquipmentInfo)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data))}
+}
+#[doc="`ShowCursor(crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn show_cursor_3(self,kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->(){unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b7810usize)as*mut u8,();
+(AccessoryEquipmentInfo)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`HideCursor()` overload"]fn hide_cursor(self,)->(){unsafe{let __receiver= <AccessoryEquipmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b7ae0usize)as*mut u8,();
+(AccessoryEquipmentInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "app-accessoryequipmentinfo")]
-impl < __T : IAccessoryEquipmentInfo > IAccessoryEquipmentInfoMethods for __T { }
+#[cfg(feature="app-accessoryequipmentinfo")]impl<__T:IAccessoryEquipmentInfo>IAccessoryEquipmentInfoMethods for __T{}
 
-#[cfg(feature = "app-accessoryequipmentinfo")]
-impl AccessoryEquipmentInfo { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn show_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn show_cursor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn show_cursor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn hide_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryEquipmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-accessoryequipmentinfo")]impl AccessoryEquipmentInfo{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn show_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn show_cursor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn show_cursor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn hide_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-accessoryequipmentinfo")]
-impl AccessoryEquipmentInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryEquipmentInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryEquipmentInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessoryequipmentinfo")]impl AccessoryEquipmentInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryEquipmentInfo), ::core::stringify!(new),));
+ <Self as IAccessoryEquipmentInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-accessoryequipmentinfo")]

@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/combinecallback/CombineCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet" , name = "CombineCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct CombineCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/combinecallback/CombineCallback.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="CombineCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct CombineCallback{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]
-pub trait ICombineCallbackMethods : ICombineCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < CombineCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombineCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a40b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, ::unity2::Array<crate::system::object::Object>, ::unity2::Array<f32>)` overload"] fn invoke (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > , data : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > > , weights : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > >) -> crate :: system :: object :: Object { unsafe { let __receiver = < CombineCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombineCallback , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: Array < f32 > , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a40b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (position) , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (weights) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]pub trait ICombineCallbackMethods:ICombineCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <CombineCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a40b60usize)as*mut u8,();
+(CombineCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, ::unity2::Array<crate::system::object::Object>, ::unity2::Array<f32>)` overload"]fn invoke(self,position:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3> ,data:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> > ,weights:impl::core::convert::Into< ::unity2::Array<f32> >)->crate::system::object::Object{unsafe{let __receiver= <CombineCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a40b80usize)as*mut u8,crate::system::object::Object;
+(CombineCallback)__receiver,(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)::core::convert::Into::into(position),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(data),(::unity2::Array<f32>)::core::convert::Into::into(weights))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]
-impl < __T : ICombineCallback > ICombineCallbackMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]impl<__T:ICombineCallback>ICombineCallbackMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]
-impl CombineCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombineCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombineCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]impl CombineCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]
-impl CombineCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombineCallback) , :: core :: stringify ! (new) ,)) ; < Self as ICombineCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]impl CombineCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombineCallback), ::core::stringify!(new),));
+ <Self as ICombineCallbackMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-combinecallback")]

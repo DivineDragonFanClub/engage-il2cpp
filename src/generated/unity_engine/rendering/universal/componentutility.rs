@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/componentutility/ComponentUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ComponentUtility")] # [parent (crate :: system :: object :: Object)] pub struct ComponentUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/componentutility/ComponentUtility.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ComponentUtility")]#[parent(crate::system::object::Object)]pub struct ComponentUtility{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-componentutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-componentutility")]
-impl ComponentUtility { # [doc = "`IsUniversalCamera(crate::unity_engine::camera::Camera)` overload"] pub fn is_universal_camera (camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a40f10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`IsUniversalLight(crate::unity_engine::light::Light)` overload"] pub fn is_universal_light (light : impl :: core :: convert :: Into < crate :: unity_engine :: light :: Light >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: light :: Light , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a40fb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (light) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-componentutility")]impl ComponentUtility{#[doc="`IsUniversalCamera(crate::unity_engine::camera::Camera)` overload"]pub fn is_universal_camera(camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a40f10usize)as*mut u8,bool;
+(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`IsUniversalLight(crate::unity_engine::light::Light)` overload"]pub fn is_universal_light(light:impl::core::convert::Into<crate::unity_engine::light::Light>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a40fb0usize)as*mut u8,bool;
+(crate::unity_engine::light::Light)::core::convert::Into::into(light))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-componentutility")]
-impl ComponentUtility { pub fn is_universal_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComponentUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_universal_light_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComponentUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-universal-componentutility")]impl ComponentUtility{pub fn is_universal_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_universal_light_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-componentutility")]
 #[doc(hidden)]

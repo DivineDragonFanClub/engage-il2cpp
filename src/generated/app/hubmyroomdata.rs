@@ -4,39 +4,136 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmyroomdata/HubMyRoomData.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMyRoomData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: hubmyroomdata :: HubMyRoomData >)] pub struct HubMyRoomData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmyroomdata/HubMyRoomData.md"))]#[::unity2::class(namespace="App",name="HubMyRoomData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::hubmyroomdata::HubMyRoomData>)]pub struct HubMyRoomData{}
 
 }
 
 #[cfg(feature = "app-hubmyroomdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmyroomdata")]
-impl HubMyRoomData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4700usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmyroomdata")]impl HubMyRoomData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d4700usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubmyroomdata")]
-pub trait IHubMyRoomDataMethods : IHubMyRoomData { # [doc = "`get_PID()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d45e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PID(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d45f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_C1()` overload"] fn get_c1 (self ,) -> i32 { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_C1(i32)` overload"] fn set_c1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_C2()` overload"] fn get_c2 (self ,) -> i32 { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_C2(i32)` overload"] fn set_c2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_B1()` overload"] fn get_b1 (self ,) -> i32 { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_B1(i32)` overload"] fn set_b1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_B2()` overload"] fn get_b2 (self ,) -> i32 { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_B2(i32)` overload"] fn set_b2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_A1()` overload"] fn get_a1 (self ,) -> i32 { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_A1(i32)` overload"] fn set_a1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_A2()` overload"] fn get_a2 (self ,) -> i32 { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d46a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_A2(i32)` overload"] fn set_a2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d46b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_S1()` overload"] fn get_s1 (self ,) -> i32 { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d46c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_S1(i32)` overload"] fn set_s1 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d46d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_S2()` overload"] fn get_s2 (self ,) -> i32 { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d46e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_S2(i32)` overload"] fn set_s2 (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d46f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMyRoomData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMyRoomData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d47b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmyroomdata")]pub trait IHubMyRoomDataMethods:IHubMyRoomData{#[doc="`get_PID()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d45e0usize)as*mut u8, ::unity2::Il2CppString;
+(HubMyRoomData)__receiver)}
+}
+#[doc="`set_PID(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d45f0usize)as*mut u8,();
+(HubMyRoomData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_C1()` overload"]fn get_c1(self,)->i32{unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4600usize)as*mut u8,i32;
+(HubMyRoomData)__receiver)}
+}
+#[doc="`set_C1(i32)` overload"]fn set_c1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4610usize)as*mut u8,();
+(HubMyRoomData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_C2()` overload"]fn get_c2(self,)->i32{unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4620usize)as*mut u8,i32;
+(HubMyRoomData)__receiver)}
+}
+#[doc="`set_C2(i32)` overload"]fn set_c2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4630usize)as*mut u8,();
+(HubMyRoomData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_B1()` overload"]fn get_b1(self,)->i32{unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4640usize)as*mut u8,i32;
+(HubMyRoomData)__receiver)}
+}
+#[doc="`set_B1(i32)` overload"]fn set_b1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4650usize)as*mut u8,();
+(HubMyRoomData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_B2()` overload"]fn get_b2(self,)->i32{unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4660usize)as*mut u8,i32;
+(HubMyRoomData)__receiver)}
+}
+#[doc="`set_B2(i32)` overload"]fn set_b2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4670usize)as*mut u8,();
+(HubMyRoomData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_A1()` overload"]fn get_a1(self,)->i32{unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4680usize)as*mut u8,i32;
+(HubMyRoomData)__receiver)}
+}
+#[doc="`set_A1(i32)` overload"]fn set_a1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4690usize)as*mut u8,();
+(HubMyRoomData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_A2()` overload"]fn get_a2(self,)->i32{unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d46a0usize)as*mut u8,i32;
+(HubMyRoomData)__receiver)}
+}
+#[doc="`set_A2(i32)` overload"]fn set_a2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d46b0usize)as*mut u8,();
+(HubMyRoomData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_S1()` overload"]fn get_s1(self,)->i32{unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d46c0usize)as*mut u8,i32;
+(HubMyRoomData)__receiver)}
+}
+#[doc="`set_S1(i32)` overload"]fn set_s1(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d46d0usize)as*mut u8,();
+(HubMyRoomData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_S2()` overload"]fn get_s2(self,)->i32{unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d46e0usize)as*mut u8,i32;
+(HubMyRoomData)__receiver)}
+}
+#[doc="`set_S2(i32)` overload"]fn set_s2(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d46f0usize)as*mut u8,();
+(HubMyRoomData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMyRoomData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d47b0usize)as*mut u8,();
+(HubMyRoomData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmyroomdata")]
-impl < __T : IHubMyRoomData > IHubMyRoomDataMethods for __T { }
+#[cfg(feature="app-hubmyroomdata")]impl<__T:IHubMyRoomData>IHubMyRoomDataMethods for __T{}
 
-#[cfg(feature = "app-hubmyroomdata")]
-impl HubMyRoomData { pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_c1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_c1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_c2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_c2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_b1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_b1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_b2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_b2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_a1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_a1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_a2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_a2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_s1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_s1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_s2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_s2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMyRoomData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
+#[cfg(feature="app-hubmyroomdata")]impl HubMyRoomData{pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_c1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_c1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_c2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_c2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_b1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_b1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_b2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_b2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_a1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_a1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_a2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_a2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_s1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_s1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_s2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_s2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
 
-#[cfg(feature = "app-hubmyroomdata")]
-impl HubMyRoomData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMyRoomData) , :: core :: stringify ! (new) ,)) ; < Self as IHubMyRoomDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmyroomdata")]impl HubMyRoomData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMyRoomData), ::core::stringify!(new),));
+ <Self as IHubMyRoomDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmyroomdata")]

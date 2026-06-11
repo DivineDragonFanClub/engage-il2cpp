@@ -4,42 +4,253 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/symbolref/SymbolRef.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "SymbolRef")] # [parent (crate :: system :: object :: Object)] pub struct SymbolRef {
-# [static_field] # [rename (name = "s_DefaultEnv")] pub s_default_env : crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef ,
-# [offset (16)] # [rename (name = "i_Type")] pub i_type : crate :: moon_sharp :: interpreter :: symbolreftype :: SymbolRefType ,
-# [offset (24)] # [rename (name = "i_Env")] pub i_env : crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef ,
-# [offset (32)] # [rename (name = "i_Index")] pub i_index : i32 ,
-# [offset (40)] # [rename (name = "i_Name")] pub i_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/symbolref/SymbolRef.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="SymbolRef")]#[parent(crate::system::object::Object)]pub struct SymbolRef{#[static_field]#[rename(name="s_DefaultEnv")]pub s_default_env:crate::moon_sharp::interpreter::symbolref::SymbolRef, #[offset(16)]#[rename(name="i_Type")]pub i_type:crate::moon_sharp::interpreter::symbolreftype::SymbolRefType, #[offset(24)]#[rename(name="i_Env")]pub i_env:crate::moon_sharp::interpreter::symbolref::SymbolRef, #[offset(32)]#[rename(name="i_Index")]pub i_index:i32, #[offset(40)]#[rename(name="i_Name")]pub i_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-symbolref-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-symbolref")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __SymbolRef_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "get_Type" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "get_Type" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_index { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "get_Index" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "get_Index" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_environment { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "get_Environment" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "get_Environment" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_default_env { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "get_DefaultEnv" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "get_DefaultEnv" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_global { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "Global" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "Global" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_local { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "Local" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "Local" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_upvalue { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "Upvalue" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "Upvalue" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_binary { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: binarywriter :: BinaryWriter as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "WriteBinary" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "WriteBinary" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_binary { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: binaryreader :: BinaryReader as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "ReadBinary" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "ReadBinary" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_binary_env { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: binarywriter :: BinaryWriter as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef , i32 > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "WriteBinaryEnv" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "WriteBinaryEnv" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_binary_env { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: binaryreader :: BinaryReader as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , "ReadBinaryEnv" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , "ReadBinaryEnv" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< SymbolRef as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SymbolRef as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-symbolref")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SymbolRef_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_type{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"get_Type",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"get_Type",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_index{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"get_Index",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"get_Index",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"get_Name",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"get_Name",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_environment{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"get_Environment",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"get_Environment",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_default_env{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"get_DefaultEnv",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"get_DefaultEnv",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_global{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::symbolref::SymbolRef as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"Global",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"Global",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_local{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"Local",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"Local",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_upvalue{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"Upvalue",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"Upvalue",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"ToString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_write_binary{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::io::binarywriter::BinaryWriter as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"WriteBinary",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"WriteBinary",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read_binary{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::io::binaryreader::BinaryReader as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"ReadBinary",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"ReadBinary",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_write_binary_env{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::io::binarywriter::BinaryWriter as::unity2::IlType> ::il_type(), <crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef,i32>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"WriteBinaryEnv",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"WriteBinaryEnv",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read_binary_env{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::io::binaryreader::BinaryReader as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),"ReadBinaryEnv",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,"ReadBinaryEnv",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_cctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SymbolRef as::unity2::ClassIdentity> ::class(),".cctor",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SymbolRef as::unity2::ClassIdentity> ::NAME,".cctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-symbolref")]
-impl SymbolRef { # [doc = "`get_DefaultEnv()` overload"] pub fn get_default_env () -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_get_default_env :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Global(::unity2::Il2CppString, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"] pub fn global (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , env_symbol : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef >) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_global :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (env_symbol) , :: core :: option :: Option :: None) } } } # [doc = "`Local(::unity2::Il2CppString, i32)` overload"] pub fn local (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_local :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Upvalue(::unity2::Il2CppString, i32)` overload"] pub fn upvalue (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_upvalue :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`ReadBinary(crate::system::io::binaryreader::BinaryReader)` overload"] pub fn read_binary (br : impl :: core :: convert :: Into < crate :: system :: io :: binaryreader :: BinaryReader >) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef { unsafe { { let __inner : extern "C" fn (crate :: system :: io :: binaryreader :: BinaryReader , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_read_binary :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (br) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_cctor :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-symbolref")]impl SymbolRef{#[doc="`get_DefaultEnv()` overload"]pub fn get_default_env()->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_get_default_env::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolref::SymbolRef;
+)}
+}
+#[doc="`Global(::unity2::Il2CppString, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]pub fn global(name:impl::core::convert::Into< ::unity2::Il2CppString> ,env_symbol:impl::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_global::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolref::SymbolRef;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::moon_sharp::interpreter::symbolref::SymbolRef)::core::convert::Into::into(env_symbol))}
+}
+#[doc="`Local(::unity2::Il2CppString, i32)` overload"]pub fn local(name:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_local::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolref::SymbolRef;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Upvalue(::unity2::Il2CppString, i32)` overload"]pub fn upvalue(name:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_upvalue::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolref::SymbolRef;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`ReadBinary(crate::system::io::binaryreader::BinaryReader)` overload"]pub fn read_binary(br:impl::core::convert::Into<crate::system::io::binaryreader::BinaryReader>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_read_binary::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolref::SymbolRef;
+(crate::system::io::binaryreader::BinaryReader)::core::convert::Into::into(br))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_cctor::get_method_info().method_ptr,();
+)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-symbolref")]
-pub trait ISymbolRefMethods : ISymbolRef { # [doc = "`get_Type()` overload"] fn get_type (self ,) -> crate :: moon_sharp :: interpreter :: symbolreftype :: SymbolRefType { unsafe { let __receiver = < SymbolRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SymbolRef , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolreftype :: SymbolRefType = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_get_type :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Index()` overload"] fn get_index (self ,) -> i32 { unsafe { let __receiver = < SymbolRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SymbolRef , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_get_index :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SymbolRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SymbolRef , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_get_name :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Environment()` overload"] fn get_environment (self ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef { unsafe { let __receiver = < SymbolRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SymbolRef , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_get_environment :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SymbolRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SymbolRef , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_to_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteBinary(crate::system::io::binarywriter::BinaryWriter)` overload"] fn write_binary (self , bw : impl :: core :: convert :: Into < crate :: system :: io :: binarywriter :: BinaryWriter >) -> () { unsafe { let __receiver = < SymbolRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SymbolRef , crate :: system :: io :: binarywriter :: BinaryWriter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_write_binary :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (bw) , :: core :: option :: Option :: None) } } } # [doc = "`WriteBinaryEnv(crate::system::io::binarywriter::BinaryWriter, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef,i32>)` overload"] fn write_binary_env (self , bw : impl :: core :: convert :: Into < crate :: system :: io :: binarywriter :: BinaryWriter > , symbol_map : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef , i32 > >) -> () { unsafe { let __receiver = < SymbolRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SymbolRef , crate :: system :: io :: binarywriter :: BinaryWriter , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef , i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_write_binary_env :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (bw) , :: core :: convert :: Into :: into (symbol_map) , :: core :: option :: Option :: None) } } } # [doc = "`ReadBinaryEnv(crate::system::io::binaryreader::BinaryReader, ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>)` overload"] fn read_binary_env (self , br : impl :: core :: convert :: Into < crate :: system :: io :: binaryreader :: BinaryReader > , symbol_refs : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > >) -> () { unsafe { let __receiver = < SymbolRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SymbolRef , crate :: system :: io :: binaryreader :: BinaryReader , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_read_binary_env :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (br) , :: core :: convert :: Into :: into (symbol_refs) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SymbolRef as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SymbolRef , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__SymbolRef_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-symbolref")]pub trait ISymbolRefMethods:ISymbolRef{#[doc="`get_Type()` overload"]fn get_type(self,)->crate::moon_sharp::interpreter::symbolreftype::SymbolRefType{unsafe{let __receiver= <SymbolRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_get_type::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolreftype::SymbolRefType;
+(SymbolRef)__receiver)}
+}
+#[doc="`get_Index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <SymbolRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_get_index::get_method_info().method_ptr,i32;
+(SymbolRef)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SymbolRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_get_name::get_method_info().method_ptr, ::unity2::Il2CppString;
+(SymbolRef)__receiver)}
+}
+#[doc="`get_Environment()` overload"]fn get_environment(self,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{let __receiver= <SymbolRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_get_environment::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolref::SymbolRef;
+(SymbolRef)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SymbolRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(SymbolRef)__receiver)}
+}
+#[doc="`WriteBinary(crate::system::io::binarywriter::BinaryWriter)` overload"]fn write_binary(self,bw:impl::core::convert::Into<crate::system::io::binarywriter::BinaryWriter>)->(){unsafe{let __receiver= <SymbolRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_write_binary::get_method_info().method_ptr,();
+(SymbolRef)__receiver,(crate::system::io::binarywriter::BinaryWriter)::core::convert::Into::into(bw))}
+}
+#[doc="`WriteBinaryEnv(crate::system::io::binarywriter::BinaryWriter, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef,i32>)` overload"]fn write_binary_env(self,bw:impl::core::convert::Into<crate::system::io::binarywriter::BinaryWriter> ,symbol_map:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef,i32> >)->(){unsafe{let __receiver= <SymbolRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_write_binary_env::get_method_info().method_ptr,();
+(SymbolRef)__receiver,(crate::system::io::binarywriter::BinaryWriter)::core::convert::Into::into(bw),(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::moon_sharp::interpreter::symbolref::SymbolRef,i32>)::core::convert::Into::into(symbol_map))}
+}
+#[doc="`ReadBinaryEnv(crate::system::io::binaryreader::BinaryReader, ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>)` overload"]fn read_binary_env(self,br:impl::core::convert::Into<crate::system::io::binaryreader::BinaryReader> ,symbol_refs:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef> >)->(){unsafe{let __receiver= <SymbolRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_read_binary_env::get_method_info().method_ptr,();
+(SymbolRef)__receiver,(crate::system::io::binaryreader::BinaryReader)::core::convert::Into::into(br),(::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>)::core::convert::Into::into(symbol_refs))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SymbolRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SymbolRef_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(SymbolRef)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-symbolref")]
-impl < __T : ISymbolRef > ISymbolRefMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-symbolref")]impl<__T:ISymbolRef>ISymbolRefMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-symbolref")]
-impl SymbolRef { pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_environment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_default_env_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn global_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn local_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn upvalue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn write_binary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn read_binary_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn write_binary_env_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn read_binary_env_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SymbolRef as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="moon_sharp-interpreter-symbolref")]impl SymbolRef{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_environment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_default_env_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn global_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn local_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn upvalue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn write_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn read_binary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn write_binary_env_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn read_binary_env_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-symbolref")]
-impl SymbolRef {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SymbolRef) , :: core :: stringify ! (new) ,)) ; < Self as ISymbolRefMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-symbolref")]impl SymbolRef{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SymbolRef), ::core::stringify!(new),));
+ <Self as ISymbolRefMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-symbolref")]

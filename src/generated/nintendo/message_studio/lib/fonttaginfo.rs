@@ -4,30 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/fonttaginfo/FontTagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "FontTagInfo")] # [parent (crate :: system :: object :: Object)] pub struct FontTagInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/fonttaginfo/FontTagInfo.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="FontTagInfo")]#[parent(crate::system::object::Object)]pub struct FontTagInfo{}
 
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
-pub trait IFontTagInfoMethods : IFontTagInfo { # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FontTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26106a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FontTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26106b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Index()` overload"] fn get_index (self ,) -> u16 { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FontTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26106c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Index(u16)` overload"] fn set_index (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FontTagInfo , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26106d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor (self , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < FontTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FontTagInfo , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26106e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nintendo-message_studio-lib-fonttaginfo")]pub trait IFontTagInfoMethods:IFontTagInfo{#[doc="`get_Tag()` overload"]fn get_tag(self,)->u16{unsafe{let __receiver= <FontTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26106a0usize)as*mut u8,u16;
+(FontTagInfo)__receiver)}
+}
+#[doc="`get_TagGroup()` overload"]fn get_tag_group(self,)->u16{unsafe{let __receiver= <FontTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26106b0usize)as*mut u8,u16;
+(FontTagInfo)__receiver)}
+}
+#[doc="`get_Index()` overload"]fn get_index(self,)->u16{unsafe{let __receiver= <FontTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26106c0usize)as*mut u8,u16;
+(FontTagInfo)__receiver)}
+}
+#[doc="`set_Index(u16)` overload"]fn set_index(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <FontTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26106d0usize)as*mut u8,();
+(FontTagInfo)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,param:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <FontTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26106e0usize)as*mut u8,();
+(FontTagInfo)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(param))}
+}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
-impl < __T : IFontTagInfo > IFontTagInfoMethods for __T { }
+#[cfg(feature="nintendo-message_studio-lib-fonttaginfo")]impl<__T:IFontTagInfo>IFontTagInfoMethods for __T{}
 
-#[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
-impl FontTagInfo { pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FontTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="nintendo-message_studio-lib-fonttaginfo")]impl FontTagInfo{pub fn get_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_tag_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]
-impl FontTagInfo {
-# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new (param : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FontTagInfo) , :: core :: stringify ! (new) ,)) ; < Self as IFontTagInfoMethods > :: ctor (this , param) ; this }
+#[cfg(feature="nintendo-message_studio-lib-fonttaginfo")]impl FontTagInfo{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(param: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FontTagInfo), ::core::stringify!(new),));
+ <Self as IFontTagInfoMethods> ::ctor(this,param);
+this}
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo")]

@@ -4,43 +4,132 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccesscursor/HubAccessCursor.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessCursor")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubAccessCursor {
-# [offset (56)] # [rename (name = "m_propetyToID")] pub m_propety_to_id : i32 ,
-# [offset (64)] # [rename (name = "m_renderer")] pub m_renderer : :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > ,
-# [offset (72)] # [rename (name = "m_materials")] pub m_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-# [offset (80)] # [rename (name = "m_alpha")] pub m_alpha : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccesscursor/HubAccessCursor.md"))]#[::unity2::class(namespace="App",name="HubAccessCursor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubAccessCursor{#[offset(56)]#[rename(name="m_propetyToID")]pub m_propety_to_id:i32, #[offset(64)]#[rename(name="m_renderer")]pub m_renderer: ::unity2::Array<crate::unity_engine::renderer::Renderer> , #[offset(72)]#[rename(name="m_materials")]pub m_materials: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(80)]#[rename(name="m_alpha")]pub m_alpha:f32,}
 
 }
 
 #[cfg(feature = "app-hubaccesscursor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubaccesscursor")]
-pub trait IHubAccessCursorMethods : IHubAccessCursor { # [doc = "`get_TargetAccess()` overload"] fn get_target_access (self ,) -> crate :: app :: hubaccess :: HubAccess { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccess :: HubAccess = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bcd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TargetAccess(crate::app::hubaccess::HubAccess)` overload"] fn set_target_access (self , value : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CharaFader()` overload"] fn get_chara_fader (self ,) -> crate :: root :: iron19characterfader :: Iron19CharacterFader { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> crate :: root :: iron19characterfader :: Iron19CharacterFader = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bcf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CharaFader(crate::root::iron19characterfader::Iron19CharacterFader)` overload"] fn set_chara_fader (self , value : impl :: core :: convert :: Into < crate :: root :: iron19characterfader :: Iron19CharacterFader >) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , crate :: root :: iron19characterfader :: Iron19CharacterFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bd00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FadeDistance()` overload"] fn get_fade_distance (self ,) -> f32 { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bd10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FadeDistance(f32)` overload"] fn set_fade_distance (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bd20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayerController()` overload"] fn get_player_controller (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayerController(crate::app::hubplayercontroller::HubPlayerController)` overload"] fn set_player_controller (self , value : impl :: core :: convert :: Into < crate :: app :: hubplayercontroller :: HubPlayerController >) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , crate :: app :: hubplayercontroller :: HubPlayerController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bd40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bd50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216bfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsFade()` overload"] fn is_fade (self ,) -> bool { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216c240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsInRange()` overload"] fn is_in_range (self ,) -> bool { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216c600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOutRange()` overload"] fn is_out_range (self ,) -> bool { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216c680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsFadeAlpha()` overload"] fn is_fade_alpha (self ,) -> bool { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216c720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsActiveAccess()` overload"] fn is_active_access (self ,) -> bool { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216c560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216c7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAlpha(f32)` overload"] fn update_alpha (self , gain : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216c450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (gain) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216c8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubAccessCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216c9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubaccesscursor")]pub trait IHubAccessCursorMethods:IHubAccessCursor{#[doc="`get_TargetAccess()` overload"]fn get_target_access(self,)->crate::app::hubaccess::HubAccess{unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bcd0usize)as*mut u8,crate::app::hubaccess::HubAccess;
+(HubAccessCursor)__receiver)}
+}
+#[doc="`set_TargetAccess(crate::app::hubaccess::HubAccess)` overload"]fn set_target_access(self,value:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bce0usize)as*mut u8,();
+(HubAccessCursor)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(value))}
+}
+#[doc="`get_CharaFader()` overload"]fn get_chara_fader(self,)->crate::root::iron19characterfader::Iron19CharacterFader{unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bcf0usize)as*mut u8,crate::root::iron19characterfader::Iron19CharacterFader;
+(HubAccessCursor)__receiver)}
+}
+#[doc="`set_CharaFader(crate::root::iron19characterfader::Iron19CharacterFader)` overload"]fn set_chara_fader(self,value:impl::core::convert::Into<crate::root::iron19characterfader::Iron19CharacterFader>)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bd00usize)as*mut u8,();
+(HubAccessCursor)__receiver,(crate::root::iron19characterfader::Iron19CharacterFader)::core::convert::Into::into(value))}
+}
+#[doc="`get_FadeDistance()` overload"]fn get_fade_distance(self,)->f32{unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bd10usize)as*mut u8,f32;
+(HubAccessCursor)__receiver)}
+}
+#[doc="`set_FadeDistance(f32)` overload"]fn set_fade_distance(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bd20usize)as*mut u8,();
+(HubAccessCursor)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlayerController()` overload"]fn get_player_controller(self,)->crate::app::hubplayercontroller::HubPlayerController{unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bd30usize)as*mut u8,crate::app::hubplayercontroller::HubPlayerController;
+(HubAccessCursor)__receiver)}
+}
+#[doc="`set_PlayerController(crate::app::hubplayercontroller::HubPlayerController)` overload"]fn set_player_controller(self,value:impl::core::convert::Into<crate::app::hubplayercontroller::HubPlayerController>)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bd40usize)as*mut u8,();
+(HubAccessCursor)__receiver,(crate::app::hubplayercontroller::HubPlayerController)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bd50usize)as*mut u8,();
+(HubAccessCursor)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216bfd0usize)as*mut u8,();
+(HubAccessCursor)__receiver)}
+}
+#[doc="`IsFade()` overload"]fn is_fade(self,)->bool{unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216c240usize)as*mut u8,bool;
+(HubAccessCursor)__receiver)}
+}
+#[doc="`IsInRange()` overload"]fn is_in_range(self,)->bool{unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216c600usize)as*mut u8,bool;
+(HubAccessCursor)__receiver)}
+}
+#[doc="`IsOutRange()` overload"]fn is_out_range(self,)->bool{unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216c680usize)as*mut u8,bool;
+(HubAccessCursor)__receiver)}
+}
+#[doc="`IsFadeAlpha()` overload"]fn is_fade_alpha(self,)->bool{unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216c720usize)as*mut u8,bool;
+(HubAccessCursor)__receiver)}
+}
+#[doc="`IsActiveAccess()` overload"]fn is_active_access(self,)->bool{unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216c560usize)as*mut u8,bool;
+(HubAccessCursor)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216c7d0usize)as*mut u8,();
+(HubAccessCursor)__receiver)}
+}
+#[doc="`UpdateAlpha(f32)` overload"]fn update_alpha(self,gain:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216c450usize)as*mut u8,();
+(HubAccessCursor)__receiver,(f32)::core::convert::Into::into(gain))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216c8d0usize)as*mut u8,();
+(HubAccessCursor)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubAccessCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216c9a0usize)as*mut u8,();
+(HubAccessCursor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubaccesscursor")]
-impl < __T : IHubAccessCursor > IHubAccessCursorMethods for __T { }
+#[cfg(feature="app-hubaccesscursor")]impl<__T:IHubAccessCursor>IHubAccessCursorMethods for __T{}
 
-#[cfg(feature = "app-hubaccesscursor")]
-impl HubAccessCursor { pub fn get_target_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_target_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_chara_fader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_chara_fader_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_fade_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_fade_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_player_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_player_controller_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_fade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_in_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_out_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_fade_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_active_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn update_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-hubaccesscursor")]impl HubAccessCursor{pub fn get_target_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_target_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_chara_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_chara_fader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_fade_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_fade_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_player_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_player_controller_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_fade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_in_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_out_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_fade_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_active_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn update_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-hubaccesscursor")]
-impl HubAccessCursor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubAccessCursor) , :: core :: stringify ! (new) ,)) ; < Self as IHubAccessCursorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubaccesscursor")]impl HubAccessCursor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubAccessCursor), ::core::stringify!(new),));
+ <Self as IHubAccessCursorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubaccesscursor")]

@@ -4,88 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_PooledObject.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ObjectPool_1_PooledObject<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
-
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ObjectPool_1_PooledObject<T0> {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "ObjectPool`1.PooledObject";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-            .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-            .expect("generic instantiation")
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_PooledObject.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ObjectPool_1_PooledObject<T0>{pub _phantom: ::core::marker::PhantomData<(T0,)>}
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ObjectPool_1_PooledObject<T0>{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="ObjectPool`1.PooledObject";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME).make_generic(&[<T0 as::unity2::ClassIdentity>::class()]).expect("generic instantiation")}
+)}
+}
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ObjectPool_1_PooledObject<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ObjectPool_1_PooledObject<T0> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_2.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "ObjectPool`1")] # [parent (crate :: system :: object :: Object)] pub struct ObjectPool_1_2 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_Stack")] pub m_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < T0 > ,
-# [rename (name = "m_ActionOnGet")] pub m_action_on_get : crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < T0 > ,
-# [rename (name = "m_ActionOnRelease")] pub m_action_on_release : crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < T0 > ,
-# [rename (name = "m_CollectionCheck")] pub m_collection_check : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_2.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ObjectPool`1")]#[parent(crate::system::object::Object)]pub struct ObjectPool_1_2<T0: ::unity2::ClassIdentity>{#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::stack_1::Stack_1<T0> , #[rename(name="m_ActionOnGet")]pub m_action_on_get:crate::unity_engine::events::unityaction_1::UnityAction_1<T0> , #[rename(name="m_ActionOnRelease")]pub m_action_on_release:crate::unity_engine::events::unityaction_1::UnityAction_1<T0> , #[rename(name="m_CollectionCheck")]pub m_collection_check:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-objectpool_1_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
-# [:: unity2 :: methods (value)] impl < T0 : :: unity2 :: ClassIdentity > ObjectPool_1_PooledObject < T0 > {
-# [doc = "`.ctor(T0, crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , value : T0 , pool : crate :: unity_engine :: rendering :: objectpool_1_2 :: ObjectPool_1_2 < T0 >) -> () ;
-
-# [doc = "`System.IDisposable.Dispose()` overload"] # [method (name = "System.IDisposable.Dispose" , args = 0)] pub fn system_i_disposable_dispose (self ,) -> () ;
+#[cfg(feature="unity_engine-rendering-objectpool_1_2")]#[::unity2::methods(value)]impl<T0: ::unity2::ClassIdentity>ObjectPool_1_PooledObject<T0>{#[doc="`.ctor(T0, crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,value:T0,pool:crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>)->();
+ #[doc="`System.IDisposable.Dispose()` overload"]#[method(name="System.IDisposable.Dispose",args=0)]pub fn system_i_disposable_dispose(self,)->();
 }
 
-#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ObjectPool_1_2 < T0 > {
-# [doc = "`get_countAll()` overload"] # [method (name = "get_countAll" , args = 0)] pub fn get_count_all (self ,) -> i32 ;
-
-# [doc = "`set_countAll(i32)` overload"] # [method (name = "set_countAll" , args = 1)] pub fn set_count_all (self , value : i32) -> () ;
-
-# [doc = "`get_countActive()` overload"] # [method (name = "get_countActive" , args = 0)] pub fn get_count_active (self ,) -> i32 ;
-
-# [doc = "`get_countInactive()` overload"] # [method (name = "get_countInactive" , args = 0)] pub fn get_count_inactive (self ,) -> i32 ;
-
-# [doc = "`.ctor(crate::unity_engine::events::unityaction_1::UnityAction_1<T0>, crate::unity_engine::events::unityaction_1::UnityAction_1<T0>, bool)` overload"] # [method (name = ".ctor" , args = 3)] pub fn ctor (self , action_on_get : crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < T0 > , action_on_release : crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < T0 > , collection_check : bool) -> () ;
-
-# [doc = "`Get()` overload"] # [method (name = "Get" , args = 0)] pub fn get (self ,) -> T0 ;
-
-# [doc = "`Get(*mutT0)` overload"] # [method (name = "Get" , args = 1)] pub fn get_2 (self , v : * mut T0) -> crate :: unity_engine :: rendering :: objectpool_1_2 :: ObjectPool_1_PooledObject < T0 > ;
-
-# [doc = "`Release(T0)` overload"] # [method (name = "Release" , args = 1)] pub fn release (self , element : T0) -> () ;
+#[cfg(feature="unity_engine-rendering-objectpool_1_2")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>ObjectPool_1_2<T0>{#[doc="`get_countAll()` overload"]#[method(name="get_countAll",args=0)]pub fn get_count_all(self,)->i32;
+ #[doc="`set_countAll(i32)` overload"]#[method(name="set_countAll",args=1)]pub fn set_count_all(self,value:i32)->();
+ #[doc="`get_countActive()` overload"]#[method(name="get_countActive",args=0)]pub fn get_count_active(self,)->i32;
+ #[doc="`get_countInactive()` overload"]#[method(name="get_countInactive",args=0)]pub fn get_count_inactive(self,)->i32;
+ #[doc="`.ctor(crate::unity_engine::events::unityaction_1::UnityAction_1<T0>, crate::unity_engine::events::unityaction_1::UnityAction_1<T0>, bool)` overload"]#[method(name=".ctor",args=3)]pub fn ctor(self,action_on_get:crate::unity_engine::events::unityaction_1::UnityAction_1<T0> ,action_on_release:crate::unity_engine::events::unityaction_1::UnityAction_1<T0> ,collection_check:bool)->();
+ #[doc="`Get()` overload"]#[method(name="Get",args=0)]pub fn get(self,)->T0;
+ #[doc="`Get(*mutT0)` overload"]#[method(name="Get",args=1)]pub fn get_2(self,v: *mut T0)->crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<T0> ;
+ #[doc="`Release(T0)` overload"]#[method(name="Release",args=1)]pub fn release(self,element:T0)->();
 }
 
-#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
-impl < T0 : :: unity2 :: ClassIdentity > ObjectPool_1_2 < T0 > {
-# [doc = "`.ctor(crate::unity_engine::events::unityaction_1::UnityAction_1<T0>, crate::unity_engine::events::unityaction_1::UnityAction_1<T0>, bool)` — overload selector"] pub fn new (action_on_get : crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < T0 > , action_on_release : crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < T0 > , collection_check : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ObjectPool_1_2) , :: core :: stringify ! (new) ,)) ; < Self as IObjectPool_1_2Methods < T0 > > :: ctor (this , action_on_get , action_on_release , collection_check) ; this }
+#[cfg(feature="unity_engine-rendering-objectpool_1_2")]impl<T0: ::unity2::ClassIdentity>ObjectPool_1_2<T0>{#[doc="`.ctor(crate::unity_engine::events::unityaction_1::UnityAction_1<T0>, crate::unity_engine::events::unityaction_1::UnityAction_1<T0>, bool)` — overload selector"]pub fn new(action_on_get:crate::unity_engine::events::unityaction_1::UnityAction_1<T0> ,action_on_release:crate::unity_engine::events::unityaction_1::UnityAction_1<T0> ,collection_check:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ObjectPool_1_2), ::core::stringify!(new),));
+ <Self as IObjectPool_1_2Methods<T0> > ::ctor(this,action_on_get,action_on_release,collection_check);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-objectpool_1_2")]

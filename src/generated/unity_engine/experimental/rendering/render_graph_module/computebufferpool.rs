@@ -4,32 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcepool_1 :: { IRenderGraphResourcePool_1 , RenderGraphResourcePool_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::{IRenderGraphResourcePool_1,RenderGraphResourcePool_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/computebufferpool/ComputeBufferPool.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "ComputeBufferPool")] # [parent (crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcepool_1 :: RenderGraphResourcePool_1 < crate :: unity_engine :: computebuffer :: ComputeBuffer >)] pub struct ComputeBufferPool {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/computebufferpool/ComputeBufferPool.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="ComputeBufferPool")]#[parent(crate::unity_engine::experimental::rendering::render_graph_module::rendergraphresourcepool_1::RenderGraphResourcePool_1<crate::unity_engine::computebuffer::ComputeBuffer>)]pub struct ComputeBufferPool{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool")]
-pub trait IComputeBufferPoolMethods : IComputeBufferPool { # [doc = "`ReleaseInternalResource(crate::unity_engine::computebuffer::ComputeBuffer)` overload"] fn release_internal_resource (self , res : impl :: core :: convert :: Into < crate :: unity_engine :: computebuffer :: ComputeBuffer >) -> () { unsafe { let __receiver = < ComputeBufferPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ComputeBufferPool , crate :: unity_engine :: computebuffer :: ComputeBuffer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530bc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (res) , :: core :: option :: Option :: None) } } } # [doc = "`GetResourceName(crate::unity_engine::computebuffer::ComputeBuffer)` overload"] fn get_resource_name (self , res : impl :: core :: convert :: Into < crate :: unity_engine :: computebuffer :: ComputeBuffer >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ComputeBufferPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ComputeBufferPool , crate :: unity_engine :: computebuffer :: ComputeBuffer , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (res) , :: core :: option :: Option :: None) } } } # [doc = "`GetResourceSize(crate::unity_engine::computebuffer::ComputeBuffer)` overload"] fn get_resource_size (self , res : impl :: core :: convert :: Into < crate :: unity_engine :: computebuffer :: ComputeBuffer >) -> i64 { unsafe { let __receiver = < ComputeBufferPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ComputeBufferPool , crate :: unity_engine :: computebuffer :: ComputeBuffer , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530c20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (res) , :: core :: option :: Option :: None) } } } # [doc = "`GetResourceTypeName()` overload"] fn get_resource_type_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ComputeBufferPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ComputeBufferPool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PurgeUnusedResources(i32)` overload"] fn purge_unused_resources (self , current_frame_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ComputeBufferPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ComputeBufferPool , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530cb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current_frame_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ComputeBufferPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ComputeBufferPool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferpool")]pub trait IComputeBufferPoolMethods:IComputeBufferPool{#[doc="`ReleaseInternalResource(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]fn release_internal_resource(self,res:impl::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>)->(){unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3530bc0usize)as*mut u8,();
+(ComputeBufferPool)__receiver,(crate::unity_engine::computebuffer::ComputeBuffer)::core::convert::Into::into(res))}
+}
+#[doc="`GetResourceName(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]fn get_resource_name(self,res:impl::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>)-> ::unity2::Il2CppString{unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3530bd0usize)as*mut u8, ::unity2::Il2CppString;
+(ComputeBufferPool)__receiver,(crate::unity_engine::computebuffer::ComputeBuffer)::core::convert::Into::into(res))}
+}
+#[doc="`GetResourceSize(crate::unity_engine::computebuffer::ComputeBuffer)` overload"]fn get_resource_size(self,res:impl::core::convert::Into<crate::unity_engine::computebuffer::ComputeBuffer>)->i64{unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3530c20usize)as*mut u8,i64;
+(ComputeBufferPool)__receiver,(crate::unity_engine::computebuffer::ComputeBuffer)::core::convert::Into::into(res))}
+}
+#[doc="`GetResourceTypeName()` overload"]fn get_resource_type_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3530c60usize)as*mut u8, ::unity2::Il2CppString;
+(ComputeBufferPool)__receiver)}
+}
+#[doc="`PurgeUnusedResources(i32)` overload"]fn purge_unused_resources(self,current_frame_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3530cb0usize)as*mut u8,();
+(ComputeBufferPool)__receiver,(i32)::core::convert::Into::into(current_frame_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ComputeBufferPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3530f10usize)as*mut u8,();
+(ComputeBufferPool)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool")]
-impl < __T : IComputeBufferPool > IComputeBufferPoolMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferpool")]impl<__T:IComputeBufferPool>IComputeBufferPoolMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool")]
-impl ComputeBufferPool { pub fn release_internal_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_resource_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_resource_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_resource_type_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn purge_unused_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferpool")]impl ComputeBufferPool{pub fn release_internal_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_resource_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_resource_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_resource_type_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn purge_unused_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool")]
-impl ComputeBufferPool {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ComputeBufferPool) , :: core :: stringify ! (new) ,)) ; < Self as IComputeBufferPoolMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferpool")]impl ComputeBufferPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ComputeBufferPool), ::core::stringify!(new),));
+ <Self as IComputeBufferPoolMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferpool")]

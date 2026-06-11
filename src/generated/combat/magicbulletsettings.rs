@@ -4,39 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/magicbulletsettings/MagicBulletSettings.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "MagicBulletSettings")] # [parent (crate :: system :: object :: Object)] pub struct MagicBulletSettings {
-# [offset (16)] # [rename (name = "HomeNodeName")] pub home_node_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "TargetNodeName")] pub target_node_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "DecayFrame")] pub decay_frame : f32 ,
-# [offset (36)] # [rename (name = "ArrivalType")] pub arrival_type : crate :: combat :: magicarrivaltype :: MagicArrivalType ,
-# [offset (40)] # [rename (name = "MoveSpeed")] pub move_speed : f32 ,
-# [offset (44)] # [rename (name = "EaseType")] pub ease_type : crate :: app :: curve :: Curve_Type ,
-# [offset (48)] # [rename (name = "EasePower")] pub ease_power : i32 ,
-# [offset (52)] # [rename (name = "ConstantArrivalFrame")] pub constant_arrival_frame : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/magicbulletsettings/MagicBulletSettings.md"))]#[::unity2::class(namespace="Combat",name="MagicBulletSettings")]#[parent(crate::system::object::Object)]pub struct MagicBulletSettings{#[offset(16)]#[rename(name="HomeNodeName")]pub home_node_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="TargetNodeName")]pub target_node_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="DecayFrame")]pub decay_frame:f32, #[offset(36)]#[rename(name="ArrivalType")]pub arrival_type:crate::combat::magicarrivaltype::MagicArrivalType, #[offset(40)]#[rename(name="MoveSpeed")]pub move_speed:f32, #[offset(44)]#[rename(name="EaseType")]pub ease_type:crate::app::curve::Curve_Type, #[offset(48)]#[rename(name="EasePower")]pub ease_power:i32, #[offset(52)]#[rename(name="ConstantArrivalFrame")]pub constant_arrival_frame:f32,}
 
 }
 
 #[cfg(feature = "combat-magicbulletsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-magicbulletsettings")]
-pub trait IMagicBulletSettingsMethods : IMagicBulletSettings { # [doc = "`get_DecayTime()` overload"] fn get_decay_time (self ,) -> f32 { unsafe { let __receiver = < MagicBulletSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicBulletSettings , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf2e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcFlyingTime(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] fn calc_flying_time (self , start_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , end_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { let __receiver = < MagicBulletSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicBulletSettings , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf1d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (start_pos) , :: core :: convert :: Into :: into (end_pos) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MagicBulletSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MagicBulletSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf2c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-magicbulletsettings")]pub trait IMagicBulletSettingsMethods:IMagicBulletSettings{#[doc="`get_DecayTime()` overload"]fn get_decay_time(self,)->f32{unsafe{let __receiver= <MagicBulletSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf2e20usize)as*mut u8,f32;
+(MagicBulletSettings)__receiver)}
+}
+#[doc="`CalcFlyingTime(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn calc_flying_time(self,start_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,end_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{let __receiver= <MagicBulletSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1d20usize)as*mut u8,f32;
+(MagicBulletSettings)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(start_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(end_pos))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MagicBulletSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf2c00usize)as*mut u8,();
+(MagicBulletSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-magicbulletsettings")]
-impl < __T : IMagicBulletSettings > IMagicBulletSettingsMethods for __T { }
+#[cfg(feature="combat-magicbulletsettings")]impl<__T:IMagicBulletSettings>IMagicBulletSettingsMethods for __T{}
 
-#[cfg(feature = "combat-magicbulletsettings")]
-impl MagicBulletSettings { pub fn get_decay_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicBulletSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_flying_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicBulletSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MagicBulletSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-magicbulletsettings")]impl MagicBulletSettings{pub fn get_decay_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_flying_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-magicbulletsettings")]
-impl MagicBulletSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MagicBulletSettings) , :: core :: stringify ! (new) ,)) ; < Self as IMagicBulletSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-magicbulletsettings")]impl MagicBulletSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MagicBulletSettings), ::core::stringify!(new),));
+ <Self as IMagicBulletSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-magicbulletsettings")]

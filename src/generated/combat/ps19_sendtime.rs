@@ -4,44 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/ps19_sendtime/PS19_SendTime.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PS19_SendTime")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct PS19_SendTime {
-# [offset (24)] # [rename (name = "m_UniformNameID")] pub m_uniform_name_id : i32 ,
-# [offset (32)] # [rename (name = "m_Chr")] pub m_chr : crate :: combat :: character :: Character ,
-# [offset (40)] # [rename (name = "m_Now")] pub m_now : f32 ,
-# [offset (44)] # [rename (name = "m_EndTime")] pub m_end_time : f32 ,
-# [offset (48)] # [rename (name = "PS19List")] pub ps19_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: material :: Material > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/ps19_sendtime/PS19_SendTime.md"))]#[::unity2::class(namespace="Combat",name="PS19_SendTime")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct PS19_SendTime{#[offset(24)]#[rename(name="m_UniformNameID")]pub m_uniform_name_id:i32, #[offset(32)]#[rename(name="m_Chr")]pub m_chr:crate::combat::character::Character, #[offset(40)]#[rename(name="m_Now")]pub m_now:f32, #[offset(44)]#[rename(name="m_EndTime")]pub m_end_time:f32, #[offset(48)]#[rename(name="PS19List")]pub ps19_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material> ,}
 
 }
 
 #[cfg(feature = "combat-ps19_sendtime-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-ps19_sendtime")]
-pub trait IPS19_SendTimeMethods : IPS19_SendTime { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < PS19_SendTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PS19_SendTime , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f220f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < PS19_SendTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PS19_SendTime , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f22150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Begin(f32)` overload"] fn begin (self , time_to_end : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PS19_SendTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PS19_SendTime , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f222f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time_to_end) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < PS19_SendTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PS19_SendTime , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f22540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PS19_SendTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PS19_SendTime , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f22740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-ps19_sendtime")]pub trait IPS19_SendTimeMethods:IPS19_SendTime{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <PS19_SendTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f220f0usize)as*mut u8,();
+(PS19_SendTime)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <PS19_SendTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f22150usize)as*mut u8,();
+(PS19_SendTime)__receiver)}
+}
+#[doc="`Begin(f32)` overload"]fn begin(self,time_to_end:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PS19_SendTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f222f0usize)as*mut u8,();
+(PS19_SendTime)__receiver,(f32)::core::convert::Into::into(time_to_end))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <PS19_SendTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f22540usize)as*mut u8,();
+(PS19_SendTime)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PS19_SendTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f22740usize)as*mut u8,();
+(PS19_SendTime)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-ps19_sendtime")]
-impl < __T : IPS19_SendTime > IPS19_SendTimeMethods for __T { }
+#[cfg(feature="combat-ps19_sendtime")]impl<__T:IPS19_SendTime>IPS19_SendTimeMethods for __T{}
 
-#[cfg(feature = "combat-ps19_sendtime")]
-impl PS19_SendTime { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PS19_SendTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PS19_SendTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PS19_SendTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PS19_SendTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PS19_SendTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-ps19_sendtime")]impl PS19_SendTime{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-ps19_sendtime")]
-impl PS19_SendTime {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PS19_SendTime) , :: core :: stringify ! (new) ,)) ; < Self as IPS19_SendTimeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-ps19_sendtime")]impl PS19_SendTime{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PS19_SendTime), ::core::stringify!(new),));
+ <Self as IPS19_SendTimeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-ps19_sendtime")]

@@ -4,33 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishing/config/fixcameraconfig/FixCameraConfig.md"))] # [:: unity2 :: class (namespace = "App.Fishing.Config" , name = "FixCameraConfig")] # [parent (crate :: system :: object :: Object)] pub struct FixCameraConfig {
-# [offset (16)] # [rename (name = "Pos")] pub pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (28)] # [rename (name = "Rot")] pub rot : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishing/config/fixcameraconfig/FixCameraConfig.md"))]#[::unity2::class(namespace="App.Fishing.Config",name="FixCameraConfig")]#[parent(crate::system::object::Object)]pub struct FixCameraConfig{#[offset(16)]#[rename(name="Pos")]pub pos:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="Rot")]pub rot:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "app-fishing-config-fixcameraconfig-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishing-config-fixcameraconfig")]
-pub trait IFixCameraConfigMethods : IFixCameraConfig { # [doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] fn ctor (self , set_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , set_rot : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < FixCameraConfig as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FixCameraConfig , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x260bf10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set_pos) , :: core :: convert :: Into :: into (set_rot) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishing-config-fixcameraconfig")]pub trait IFixCameraConfigMethods:IFixCameraConfig{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn ctor(self,set_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,set_rot:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <FixCameraConfig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x260bf10usize)as*mut u8,();
+(FixCameraConfig)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(set_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(set_rot))}
+}
+}
 
-#[cfg(feature = "app-fishing-config-fixcameraconfig")]
-impl < __T : IFixCameraConfig > IFixCameraConfigMethods for __T { }
+#[cfg(feature="app-fishing-config-fixcameraconfig")]impl<__T:IFixCameraConfig>IFixCameraConfigMethods for __T{}
 
-#[cfg(feature = "app-fishing-config-fixcameraconfig")]
-impl FixCameraConfig { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FixCameraConfig as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-fishing-config-fixcameraconfig")]impl FixCameraConfig{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-fishing-config-fixcameraconfig")]
-impl FixCameraConfig {
-# [doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` — overload selector"] pub fn new (set_pos : crate :: unity_engine :: vector3 :: Vector3 , set_rot : crate :: unity_engine :: vector3 :: Vector3) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FixCameraConfig) , :: core :: stringify ! (new) ,)) ; < Self as IFixCameraConfigMethods > :: ctor (this , set_pos , set_rot) ; this }
+#[cfg(feature="app-fishing-config-fixcameraconfig")]impl FixCameraConfig{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` — overload selector"]pub fn new(set_pos:crate::unity_engine::vector3::Vector3,set_rot:crate::unity_engine::vector3::Vector3)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FixCameraConfig), ::core::stringify!(new),));
+ <Self as IFixCameraConfigMethods> ::ctor(this,set_pos,set_rot);
+this}
 }
 
 #[cfg(feature = "app-fishing-config-fixcameraconfig")]

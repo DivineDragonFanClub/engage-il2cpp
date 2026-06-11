@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: mapnavigationstatusbasicmenuitem :: { IMapNavigationStatusBasicMenuItem , MapNavigationStatusBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::mapnavigationstatusbasicmenuitem::{IMapNavigationStatusBasicMenuItem,MapNavigationStatusBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/unitinfo1menuitem/UnitInfo1MenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "UnitInfo1MenuItem")] # [parent (crate :: root :: mapnavigationstatusbasicmenuitem :: MapNavigationStatusBasicMenuItem)] pub struct UnitInfo1MenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/unitinfo1menuitem/UnitInfo1MenuItem.md"))]#[::unity2::class(namespace="",name="UnitInfo1MenuItem")]#[parent(crate::root::mapnavigationstatusbasicmenuitem::MapNavigationStatusBasicMenuItem)]pub struct UnitInfo1MenuItem{}
 
 }
 
 #[cfg(feature = "root-unitinfo1menuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-unitinfo1menuitem")]
-pub trait IUnitInfo1MenuItemMethods : IUnitInfo1MenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitInfo1MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfo1MenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8b160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < UnitInfo1MenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInfo1MenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f8b200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-unitinfo1menuitem")]pub trait IUnitInfo1MenuItemMethods:IUnitInfo1MenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfo1MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8b160usize)as*mut u8,();
+(UnitInfo1MenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <UnitInfo1MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8b200usize)as*mut u8,();
+(UnitInfo1MenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-unitinfo1menuitem")]
-impl < __T : IUnitInfo1MenuItem > IUnitInfo1MenuItemMethods for __T { }
+#[cfg(feature="root-unitinfo1menuitem")]impl<__T:IUnitInfo1MenuItem>IUnitInfo1MenuItemMethods for __T{}
 
-#[cfg(feature = "root-unitinfo1menuitem")]
-impl UnitInfo1MenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfo1MenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInfo1MenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-unitinfo1menuitem")]impl UnitInfo1MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-unitinfo1menuitem")]
-impl UnitInfo1MenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInfo1MenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInfo1MenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-unitinfo1menuitem")]impl UnitInfo1MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInfo1MenuItem), ::core::stringify!(new),));
+ <Self as IUnitInfo1MenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-unitinfo1menuitem")]

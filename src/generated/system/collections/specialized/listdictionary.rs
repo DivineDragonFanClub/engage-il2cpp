@@ -4,132 +4,281 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "ListDictionary.NodeKeyValueCollection.NodeKeyValueEnumerator")] # [parent (crate :: system :: object :: Object)] pub struct ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator {
-# [offset (16)] # [rename (name = "list")] pub list : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary ,
-# [offset (24)] # [rename (name = "current")] pub current : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary_DictionaryNode ,
-# [offset (32)] # [rename (name = "version")] pub version : i32 ,
-# [offset (36)] # [rename (name = "isKeys")] pub is_keys : bool ,
-# [offset (37)] # [rename (name = "start")] pub start : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/listdictionary/ListDictionary.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="ListDictionary")]#[parent(crate::system::object::Object)]pub struct ListDictionary{#[offset(16)]#[rename(name="head")]pub head:crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode, #[offset(24)]#[rename(name="version")]pub version:i32, #[offset(28)]#[rename(name="count")]pub count:i32, #[offset(32)]#[rename(name="comparer")]pub comparer:crate::system::collections::icomparer_interface::IComparer_Interface, #[offset(40)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeEnumerator.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "ListDictionary.NodeEnumerator")] # [parent (crate :: system :: object :: Object)] pub struct ListDictionary_NodeEnumerator {
-# [offset (16)] # [rename (name = "list")] pub list : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary ,
-# [offset (24)] # [rename (name = "current")] pub current : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary_DictionaryNode ,
-# [offset (32)] # [rename (name = "version")] pub version : i32 ,
-# [offset (36)] # [rename (name = "start")] pub start : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/listdictionary/ListDictionary_NodeEnumerator.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="ListDictionary.NodeEnumerator")]#[parent(crate::system::object::Object)]pub struct ListDictionary_NodeEnumerator{#[offset(16)]#[rename(name="list")]pub list:crate::system::collections::specialized::listdictionary::ListDictionary, #[offset(24)]#[rename(name="current")]pub current:crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode, #[offset(32)]#[rename(name="version")]pub version:i32, #[offset(36)]#[rename(name="start")]pub start:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_DictionaryNode.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "ListDictionary.DictionaryNode")] # [parent (crate :: system :: object :: Object)] pub struct ListDictionary_DictionaryNode {
-# [offset (16)] # [rename (name = "key")] pub key : :: unity2 :: IlInstance ,
-# [offset (24)] # [rename (name = "value")] pub value : :: unity2 :: IlInstance ,
-# [offset (32)] # [rename (name = "next")] pub next : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary_DictionaryNode ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/listdictionary/ListDictionary_DictionaryNode.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="ListDictionary.DictionaryNode")]#[parent(crate::system::object::Object)]pub struct ListDictionary_DictionaryNode{#[offset(16)]#[rename(name="key")]pub key: ::unity2::IlInstance, #[offset(24)]#[rename(name="value")]pub value: ::unity2::IlInstance, #[offset(32)]#[rename(name="next")]pub next:crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeKeyValueCollection.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "ListDictionary.NodeKeyValueCollection")] # [parent (crate :: system :: object :: Object)] pub struct ListDictionary_NodeKeyValueCollection {
-# [offset (16)] # [rename (name = "list")] pub list : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary ,
-# [offset (24)] # [rename (name = "isKeys")] pub is_keys : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/listdictionary/ListDictionary_NodeKeyValueCollection.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="ListDictionary.NodeKeyValueCollection")]#[parent(crate::system::object::Object)]pub struct ListDictionary_NodeKeyValueCollection{#[offset(16)]#[rename(name="list")]pub list:crate::system::collections::specialized::listdictionary::ListDictionary, #[offset(24)]#[rename(name="isKeys")]pub is_keys:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary.md"))] # [:: unity2 :: class (namespace = "System.Collections.Specialized" , name = "ListDictionary")] # [parent (crate :: system :: object :: Object)] pub struct ListDictionary {
-# [offset (16)] # [rename (name = "head")] pub head : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary_DictionaryNode ,
-# [offset (24)] # [rename (name = "version")] pub version : i32 ,
-# [offset (28)] # [rename (name = "count")] pub count : i32 ,
-# [offset (32)] # [rename (name = "comparer")] pub comparer : crate :: system :: collections :: icomparer_interface :: IComparer_Interface ,
-# [offset (40)] # [rename (name = "_syncRoot")] pub sync_root : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/listdictionary/ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="ListDictionary.NodeKeyValueCollection.NodeKeyValueEnumerator")]#[parent(crate::system::object::Object)]pub struct ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator{#[offset(16)]#[rename(name="list")]pub list:crate::system::collections::specialized::listdictionary::ListDictionary, #[offset(24)]#[rename(name="current")]pub current:crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode, #[offset(32)]#[rename(name="version")]pub version:i32, #[offset(36)]#[rename(name="isKeys")]pub is_keys:bool, #[offset(37)]#[rename(name="start")]pub start:bool,}
 
 }
 
 #[cfg(feature = "system-collections-specialized-listdictionary-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-pub trait IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods : IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator { # [doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` overload"] fn ctor (self , list : impl :: core :: convert :: Into < crate :: system :: collections :: specialized :: listdictionary :: ListDictionary > , is_keys : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator , crate :: system :: collections :: specialized :: listdictionary :: ListDictionary , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ebebb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (is_keys) , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ebec20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] fn move_next (self ,) -> bool { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ebecb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ebed80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl < __T : IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator > IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods for __T { }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator {
-# [doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` — overload selector"] pub fn new (list : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary , is_keys : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator) , :: core :: stringify ! (new) ,)) ; < Self as IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods > :: ctor (this , list , is_keys) ; this }
+#[cfg(feature="system-collections-specialized-listdictionary")]pub trait IListDictionaryMethods:IListDictionary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347d720usize)as*mut u8,();
+(ListDictionary)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface)` overload"]fn ctor_2(self,comparer:impl::core::convert::Into<crate::system::collections::icomparer_interface::IComparer_Interface>)->(){unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347c590usize)as*mut u8,();
+(ListDictionary)__receiver,(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer))}
+}
+#[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347c8c0usize)as*mut u8,crate::system::object::Object;
+(ListDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347c5d0usize)as*mut u8,();
+(ListDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347d730usize)as*mut u8,i32;
+(ListDictionary)__receiver)}
+}
+#[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347d740usize)as*mut u8,crate::system::collections::icollection::ICollection;
+(ListDictionary)__receiver)}
+}
+#[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347d7b0usize)as*mut u8,bool;
+(ListDictionary)__receiver)}
+}
+#[doc="`get_IsFixedSize()` overload"]fn get_is_fixed_size(self,)->bool{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347d7c0usize)as*mut u8,bool;
+(ListDictionary)__receiver)}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347d7d0usize)as*mut u8,bool;
+(ListDictionary)__receiver)}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347d7e0usize)as*mut u8,crate::system::object::Object;
+(ListDictionary)__receiver)}
+}
+#[doc="`get_Values()` overload"]fn get_values(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347d870usize)as*mut u8,crate::system::collections::icollection::ICollection;
+(ListDictionary)__receiver)}
+}
+#[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347d8e0usize)as*mut u8,();
+(ListDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347db10usize)as*mut u8,bool;
+(ListDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347dc80usize)as*mut u8,();
+(ListDictionary)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347de40usize)as*mut u8,crate::system::collections::idictionaryenumerator::IDictionaryEnumerator;
+(ListDictionary)__receiver)}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347deb0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ListDictionary)__receiver)}
+}
+#[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ListDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x347df20usize)as*mut u8,();
+(ListDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+}
 }
 
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-pub trait IListDictionary_NodeEnumeratorMethods : IListDictionary_NodeEnumerator { # [doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` overload"] fn ctor (self , list : impl :: core :: convert :: Into < crate :: system :: collections :: specialized :: listdictionary :: ListDictionary >) -> () { unsafe { let __receiver = < ListDictionary_NodeEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeEnumerator , crate :: system :: collections :: specialized :: listdictionary :: ListDictionary , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a83260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ListDictionary_NodeEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a832c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Entry()` overload"] fn get_entry (self ,) -> crate :: system :: collections :: dictionaryentry :: DictionaryEntry { unsafe { let __receiver = < ListDictionary_NodeEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: dictionaryentry :: DictionaryEntry = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a83330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Key()` overload"] fn get_key (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ListDictionary_NodeEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a833c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ListDictionary_NodeEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a83440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] fn move_next (self ,) -> bool { unsafe { let __receiver = < ListDictionary_NodeEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a834c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < ListDictionary_NodeEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a83590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-specialized-listdictionary")]impl<__T:IListDictionary>IListDictionaryMethods for __T{}
 
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl < __T : IListDictionary_NodeEnumerator > IListDictionary_NodeEnumeratorMethods for __T { }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeEnumerator { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeEnumerator {
-# [doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` — overload selector"] pub fn new (list : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ListDictionary_NodeEnumerator) , :: core :: stringify ! (new) ,)) ; < Self as IListDictionary_NodeEnumeratorMethods > :: ctor (this , list) ; this }
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_is_fixed_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
 }
 
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-pub trait IListDictionary_DictionaryNodeMethods : IListDictionary_DictionaryNode { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ListDictionary_DictionaryNode as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_DictionaryNode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a83250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl < __T : IListDictionary_DictionaryNode > IListDictionary_DictionaryNodeMethods for __T { }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_DictionaryNode { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_DictionaryNode as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_DictionaryNode {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ListDictionary_DictionaryNode) , :: core :: stringify ! (new) ,)) ; < Self as IListDictionary_DictionaryNodeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ListDictionary), ::core::stringify!(new),));
+ <Self as IListDictionaryMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface)` — overload selector"]pub fn new_2(comparer:crate::system::collections::icomparer_interface::IComparer_Interface)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ListDictionary), ::core::stringify!(new_2),));
+ <Self as IListDictionaryMethods> ::ctor_2(this,comparer);
+this}
 }
 
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-pub trait IListDictionary_NodeKeyValueCollectionMethods : IListDictionary_NodeKeyValueCollection { # [doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` overload"] fn ctor (self , list : impl :: core :: convert :: Into < crate :: system :: collections :: specialized :: listdictionary :: ListDictionary > , is_keys : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection , crate :: system :: collections :: specialized :: listdictionary :: ListDictionary , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a83620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (is_keys) , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"] fn system_collections_i_collection_copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a83670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.get_Count()` overload"] fn system_collections_i_collection_get_count (self ,) -> i32 { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a837a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"] fn system_collections_i_collection_get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a837d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.ICollection.get_SyncRoot()` overload"] fn system_collections_i_collection_get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a837e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ListDictionary_NodeKeyValueCollection as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary_NodeKeyValueCollection , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a837f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl < __T : IListDictionary_NodeKeyValueCollection > IListDictionary_NodeKeyValueCollectionMethods for __T { }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeKeyValueCollection { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn system_collections_i_collection_copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn system_collections_i_collection_get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn system_collections_i_collection_get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn system_collections_i_collection_get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary_NodeKeyValueCollection as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeKeyValueCollection {
-# [doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` — overload selector"] pub fn new (list : crate :: system :: collections :: specialized :: listdictionary :: ListDictionary , is_keys : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ListDictionary_NodeKeyValueCollection) , :: core :: stringify ! (new) ,)) ; < Self as IListDictionary_NodeKeyValueCollectionMethods > :: ctor (this , list , is_keys) ; this }
+#[cfg(feature="system-collections-specialized-listdictionary")]pub trait IListDictionary_NodeEnumeratorMethods:IListDictionary_NodeEnumerator{#[doc="`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::system::collections::specialized::listdictionary::ListDictionary>)->(){unsafe{let __receiver= <ListDictionary_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a83260usize)as*mut u8,();
+(ListDictionary_NodeEnumerator)__receiver,(crate::system::collections::specialized::listdictionary::ListDictionary)::core::convert::Into::into(list))}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <ListDictionary_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a832c0usize)as*mut u8,crate::system::object::Object;
+(ListDictionary_NodeEnumerator)__receiver)}
+}
+#[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <ListDictionary_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a83330usize)as*mut u8,crate::system::collections::dictionaryentry::DictionaryEntry;
+(ListDictionary_NodeEnumerator)__receiver)}
+}
+#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <ListDictionary_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a833c0usize)as*mut u8,crate::system::object::Object;
+(ListDictionary_NodeEnumerator)__receiver)}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <ListDictionary_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a83440usize)as*mut u8,crate::system::object::Object;
+(ListDictionary_NodeEnumerator)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <ListDictionary_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a834c0usize)as*mut u8,bool;
+(ListDictionary_NodeEnumerator)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <ListDictionary_NodeEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a83590usize)as*mut u8,();
+(ListDictionary_NodeEnumerator)__receiver)}
+}
 }
 
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-pub trait IListDictionaryMethods : IListDictionary { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347d720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface)` overload"] fn ctor_2 (self , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: icomparer_interface :: IComparer_Interface >) -> () { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , crate :: system :: collections :: icomparer_interface :: IComparer_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347c590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(crate::system::object::Object)` overload"] fn get_item (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: object :: Object { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347c8c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"] fn set_item (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347c5d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347d730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Keys()` overload"] fn get_keys (self ,) -> crate :: system :: collections :: icollection :: ICollection { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icollection :: ICollection = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347d740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsReadOnly()` overload"] fn get_is_read_only (self ,) -> bool { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347d7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFixedSize()` overload"] fn get_is_fixed_size (self ,) -> bool { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347d7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSynchronized()` overload"] fn get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347d7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SyncRoot()` overload"] fn get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347d7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Values()` overload"] fn get_values (self ,) -> crate :: system :: collections :: icollection :: ICollection { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: icollection :: ICollection = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347d870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::system::object::Object, crate::system::object::Object)` overload"] fn add (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347d8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Contains(crate::system::object::Object)` overload"] fn contains (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347db10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(::unity2::IlInstance, i32)` overload"] fn copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347dc80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: idictionaryenumerator :: IDictionaryEnumerator { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: idictionaryenumerator :: IDictionaryEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347de40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] fn system_collections_i_enumerable_get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347deb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::system::object::Object)` overload"] fn remove (self , key : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < ListDictionary as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ListDictionary , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x347df20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-specialized-listdictionary")]impl<__T:IListDictionary_NodeEnumerator>IListDictionary_NodeEnumeratorMethods for __T{}
 
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl < __T : IListDictionary > IListDictionaryMethods for __T { }
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary_NodeEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_keys_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_is_fixed_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ListDictionary as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary_NodeEnumerator{#[doc="`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` — overload selector"]pub fn new(list:crate::system::collections::specialized::listdictionary::ListDictionary)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ListDictionary_NodeEnumerator), ::core::stringify!(new),));
+ <Self as IListDictionary_NodeEnumeratorMethods> ::ctor(this,list);
+this}
+}
 
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ListDictionary) , :: core :: stringify ! (new) ,)) ; < Self as IListDictionaryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-specialized-listdictionary")]pub trait IListDictionary_DictionaryNodeMethods:IListDictionary_DictionaryNode{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ListDictionary_DictionaryNode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a83250usize)as*mut u8,();
+(ListDictionary_DictionaryNode)__receiver)}
+}
+}
 
-# [doc = "`.ctor(crate::system::collections::icomparer_interface::IComparer_Interface)` — overload selector"] pub fn new_2 (comparer : crate :: system :: collections :: icomparer_interface :: IComparer_Interface) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ListDictionary) , :: core :: stringify ! (new_2) ,)) ; < Self as IListDictionaryMethods > :: ctor_2 (this , comparer) ; this }
+#[cfg(feature="system-collections-specialized-listdictionary")]impl<__T:IListDictionary_DictionaryNode>IListDictionary_DictionaryNodeMethods for __T{}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary_DictionaryNode{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary_DictionaryNode{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ListDictionary_DictionaryNode), ::core::stringify!(new),));
+ <Self as IListDictionary_DictionaryNodeMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]pub trait IListDictionary_NodeKeyValueCollectionMethods:IListDictionary_NodeKeyValueCollection{#[doc="`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::system::collections::specialized::listdictionary::ListDictionary> ,is_keys:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a83620usize)as*mut u8,();
+(ListDictionary_NodeKeyValueCollection)__receiver,(crate::system::collections::specialized::listdictionary::ListDictionary)::core::convert::Into::into(list),(bool)::core::convert::Into::into(is_keys))}
+}
+#[doc="`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]fn system_collections_i_collection_copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a83670usize)as*mut u8,();
+(ListDictionary_NodeKeyValueCollection)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`System.Collections.ICollection.get_Count()` overload"]fn system_collections_i_collection_get_count(self,)->i32{unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a837a0usize)as*mut u8,i32;
+(ListDictionary_NodeKeyValueCollection)__receiver)}
+}
+#[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a837d0usize)as*mut u8,bool;
+(ListDictionary_NodeKeyValueCollection)__receiver)}
+}
+#[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a837e0usize)as*mut u8,crate::system::object::Object;
+(ListDictionary_NodeKeyValueCollection)__receiver)}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a837f0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ListDictionary_NodeKeyValueCollection)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]impl<__T:IListDictionary_NodeKeyValueCollection>IListDictionary_NodeKeyValueCollectionMethods for __T{}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary_NodeKeyValueCollection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn system_collections_i_collection_copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn system_collections_i_collection_get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn system_collections_i_collection_get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn system_collections_i_collection_get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary_NodeKeyValueCollection{#[doc="`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` — overload selector"]pub fn new(list:crate::system::collections::specialized::listdictionary::ListDictionary,is_keys:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ListDictionary_NodeKeyValueCollection), ::core::stringify!(new),));
+ <Self as IListDictionary_NodeKeyValueCollectionMethods> ::ctor(this,list,is_keys);
+this}
+}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]pub trait IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods:IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator{#[doc="`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::system::collections::specialized::listdictionary::ListDictionary> ,is_keys:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebebb0usize)as*mut u8,();
+(ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator)__receiver,(crate::system::collections::specialized::listdictionary::ListDictionary)::core::convert::Into::into(list),(bool)::core::convert::Into::into(is_keys))}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebec20usize)as*mut u8,crate::system::object::Object;
+(ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebecb0usize)as*mut u8,bool;
+(ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebed80usize)as*mut u8,();
+(ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]impl<__T:IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator>IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods for __T{}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="system-collections-specialized-listdictionary")]impl ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator{#[doc="`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` — overload selector"]pub fn new(list:crate::system::collections::specialized::listdictionary::ListDictionary,is_keys:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator), ::core::stringify!(new),));
+ <Self as IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods> ::ctor(this,list,is_keys);
+this}
 }
 
 #[cfg(feature = "system-collections-specialized-listdictionary")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator;
-    pub use super::IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator;
-    pub use super::IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods;
+    pub use super::ListDictionary;
+    pub use super::IListDictionary;
+    pub use super::IListDictionaryMethods;
     pub use super::ListDictionary_NodeEnumerator;
     pub use super::IListDictionary_NodeEnumerator;
     pub use super::IListDictionary_NodeEnumeratorMethods;
@@ -139,9 +288,9 @@ pub mod prelude {
     pub use super::ListDictionary_NodeKeyValueCollection;
     pub use super::IListDictionary_NodeKeyValueCollection;
     pub use super::IListDictionary_NodeKeyValueCollectionMethods;
-    pub use super::ListDictionary;
-    pub use super::IListDictionary;
-    pub use super::IListDictionaryMethods;
+    pub use super::ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator;
+    pub use super::IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator;
+    pub use super::IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

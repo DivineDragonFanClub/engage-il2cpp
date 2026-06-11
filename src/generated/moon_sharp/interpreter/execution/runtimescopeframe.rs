@@ -4,33 +4,137 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/runtimescopeframe/RuntimeScopeFrame.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Execution" , name = "RuntimeScopeFrame")] # [parent (crate :: system :: object :: Object)] pub struct RuntimeScopeFrame {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/execution/runtimescopeframe/RuntimeScopeFrame.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Execution",name="RuntimeScopeFrame")]#[parent(crate::system::object::Object)]pub struct RuntimeScopeFrame{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RuntimeScopeFrame_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_debug_symbols { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () , "get_DebugSymbols" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: NAME , "get_DebugSymbols" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_debug_symbols { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () , "set_DebugSymbols" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: NAME , "set_DebugSymbols" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () , "get_Count" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: NAME , "get_Count" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_to_first_block { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () , "get_ToFirstBlock" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: NAME , "get_ToFirstBlock" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_to_first_block { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () , "set_ToFirstBlock" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: NAME , "set_ToFirstBlock" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-runtimescopeframe")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeScopeFrame_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_debug_symbols{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<RuntimeScopeFrame as::unity2::ClassIdentity> ::class(),"get_DebugSymbols",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RuntimeScopeFrame as::unity2::ClassIdentity> ::NAME,"get_DebugSymbols",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_debug_symbols{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::symbolref::SymbolRef>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<RuntimeScopeFrame as::unity2::ClassIdentity> ::class(),"set_DebugSymbols",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RuntimeScopeFrame as::unity2::ClassIdentity> ::NAME,"set_DebugSymbols",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_count{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<RuntimeScopeFrame as::unity2::ClassIdentity> ::class(),"get_Count",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RuntimeScopeFrame as::unity2::ClassIdentity> ::NAME,"get_Count",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_to_first_block{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<RuntimeScopeFrame as::unity2::ClassIdentity> ::class(),"get_ToFirstBlock",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RuntimeScopeFrame as::unity2::ClassIdentity> ::NAME,"get_ToFirstBlock",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_to_first_block{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<RuntimeScopeFrame as::unity2::ClassIdentity> ::class(),"set_ToFirstBlock",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RuntimeScopeFrame as::unity2::ClassIdentity> ::NAME,"set_ToFirstBlock",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<RuntimeScopeFrame as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RuntimeScopeFrame as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<RuntimeScopeFrame as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <RuntimeScopeFrame as::unity2::ClassIdentity> ::NAME,"ToString",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe")]
-pub trait IRuntimeScopeFrameMethods : IRuntimeScopeFrame { # [doc = "`get_DebugSymbols()` overload"] fn get_debug_symbols (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > { unsafe { let __receiver = < RuntimeScopeFrame as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeScopeFrame , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > = :: core :: mem :: transmute (__RuntimeScopeFrame_unity2_raw :: __lookup_get_debug_symbols :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DebugSymbols(crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::symbolref::SymbolRef>)` overload"] fn set_debug_symbols (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > >) -> () { unsafe { let __receiver = < RuntimeScopeFrame as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeScopeFrame , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__RuntimeScopeFrame_unity2_raw :: __lookup_set_debug_symbols :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < RuntimeScopeFrame as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeScopeFrame , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__RuntimeScopeFrame_unity2_raw :: __lookup_get_count :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ToFirstBlock()` overload"] fn get_to_first_block (self ,) -> i32 { unsafe { let __receiver = < RuntimeScopeFrame as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeScopeFrame , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__RuntimeScopeFrame_unity2_raw :: __lookup_get_to_first_block :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ToFirstBlock(i32)` overload"] fn set_to_first_block (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RuntimeScopeFrame as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeScopeFrame , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__RuntimeScopeFrame_unity2_raw :: __lookup_set_to_first_block :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeScopeFrame as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeScopeFrame , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__RuntimeScopeFrame_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RuntimeScopeFrame as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeScopeFrame , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__RuntimeScopeFrame_unity2_raw :: __lookup_to_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-runtimescopeframe")]pub trait IRuntimeScopeFrameMethods:IRuntimeScopeFrame{#[doc="`get_DebugSymbols()` overload"]fn get_debug_symbols(self,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::symbolref::SymbolRef>{unsafe{let __receiver= <RuntimeScopeFrame as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__RuntimeScopeFrame_unity2_raw::__lookup_get_debug_symbols::get_method_info().method_ptr,crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::symbolref::SymbolRef> ;
+(RuntimeScopeFrame)__receiver)}
+}
+#[doc="`set_DebugSymbols(crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::symbolref::SymbolRef>)` overload"]fn set_debug_symbols(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::symbolref::SymbolRef> >)->(){unsafe{let __receiver= <RuntimeScopeFrame as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__RuntimeScopeFrame_unity2_raw::__lookup_set_debug_symbols::get_method_info().method_ptr,();
+(RuntimeScopeFrame)__receiver,(crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::symbolref::SymbolRef>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <RuntimeScopeFrame as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__RuntimeScopeFrame_unity2_raw::__lookup_get_count::get_method_info().method_ptr,i32;
+(RuntimeScopeFrame)__receiver)}
+}
+#[doc="`get_ToFirstBlock()` overload"]fn get_to_first_block(self,)->i32{unsafe{let __receiver= <RuntimeScopeFrame as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__RuntimeScopeFrame_unity2_raw::__lookup_get_to_first_block::get_method_info().method_ptr,i32;
+(RuntimeScopeFrame)__receiver)}
+}
+#[doc="`set_ToFirstBlock(i32)` overload"]fn set_to_first_block(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RuntimeScopeFrame as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__RuntimeScopeFrame_unity2_raw::__lookup_set_to_first_block::get_method_info().method_ptr,();
+(RuntimeScopeFrame)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeScopeFrame as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__RuntimeScopeFrame_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(RuntimeScopeFrame)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeScopeFrame as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__RuntimeScopeFrame_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(RuntimeScopeFrame)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe")]
-impl < __T : IRuntimeScopeFrame > IRuntimeScopeFrameMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-execution-runtimescopeframe")]impl<__T:IRuntimeScopeFrame>IRuntimeScopeFrameMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe")]
-impl RuntimeScopeFrame { pub fn get_debug_symbols_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_debug_symbols_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_to_first_block_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_to_first_block_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeScopeFrame as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="moon_sharp-interpreter-execution-runtimescopeframe")]impl RuntimeScopeFrame{pub fn get_debug_symbols_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_debug_symbols_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_to_first_block_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_to_first_block_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe")]
-impl RuntimeScopeFrame {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeScopeFrame) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeScopeFrameMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-execution-runtimescopeframe")]impl RuntimeScopeFrame{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeScopeFrame), ::core::stringify!(new),));
+ <Self as IRuntimeScopeFrameMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeframe")]

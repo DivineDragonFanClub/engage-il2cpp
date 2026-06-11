@@ -4,32 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphlogger/RenderGraphLogger.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule" , name = "RenderGraphLogger")] # [parent (crate :: system :: object :: Object)] pub struct RenderGraphLogger {
-# [offset (24)] # [rename (name = "m_CurrentIndentation")] pub m_current_indentation : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/rendergraphlogger/RenderGraphLogger.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.RenderGraphModule",name="RenderGraphLogger")]#[parent(crate::system::object::Object)]pub struct RenderGraphLogger{#[offset(24)]#[rename(name="m_CurrentIndentation")]pub m_current_indentation:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogger-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]
-pub trait IRenderGraphLoggerMethods : IRenderGraphLogger { # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < RenderGraphLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphLogger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b2780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IncrementIndentation(i32)` overload"] fn increment_indentation (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RenderGraphLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphLogger , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b9e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`DecrementIndentation(i32)` overload"] fn decrement_indentation (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RenderGraphLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphLogger , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b9f80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`LogLine(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn log_line (self , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < RenderGraphLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphLogger , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b60d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (format) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`GetLog()` overload"] fn get_log (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RenderGraphLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphLogger , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b4170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RenderGraphLogger as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RenderGraphLogger , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30b1780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]pub trait IRenderGraphLoggerMethods:IRenderGraphLogger{#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <RenderGraphLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b2780usize)as*mut u8,();
+(RenderGraphLogger)__receiver)}
+}
+#[doc="`IncrementIndentation(i32)` overload"]fn increment_indentation(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RenderGraphLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b9e50usize)as*mut u8,();
+(RenderGraphLogger)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`DecrementIndentation(i32)` overload"]fn decrement_indentation(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RenderGraphLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b9f80usize)as*mut u8,();
+(RenderGraphLogger)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`LogLine(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn log_line(self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <RenderGraphLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b60d0usize)as*mut u8,();
+(RenderGraphLogger)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`GetLog()` overload"]fn get_log(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RenderGraphLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b4170usize)as*mut u8, ::unity2::Il2CppString;
+(RenderGraphLogger)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderGraphLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30b1780usize)as*mut u8,();
+(RenderGraphLogger)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]
-impl < __T : IRenderGraphLogger > IRenderGraphLoggerMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]impl<__T:IRenderGraphLogger>IRenderGraphLoggerMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]
-impl RenderGraphLogger { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn increment_indentation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn decrement_indentation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn log_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderGraphLogger as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]impl RenderGraphLogger{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn increment_indentation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn decrement_indentation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn log_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]
-impl RenderGraphLogger {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RenderGraphLogger) , :: core :: stringify ! (new) ,)) ; < Self as IRenderGraphLoggerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]impl RenderGraphLogger{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RenderGraphLogger), ::core::stringify!(new),));
+ <Self as IRenderGraphLoggerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphlogger")]

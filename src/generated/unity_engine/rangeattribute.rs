@@ -4,35 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rangeattribute/RangeAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "RangeAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct RangeAttribute {
-# [offset (16)] # [rename (name = "min")] pub min : f32 ,
-# [offset (20)] # [rename (name = "max")] pub max : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rangeattribute/RangeAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="RangeAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct RangeAttribute{#[offset(16)]#[rename(name="min")]pub min:f32, #[offset(20)]#[rename(name="max")]pub max:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-rangeattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rangeattribute")]
-pub trait IRangeAttributeMethods : IRangeAttribute { # [doc = "`.ctor(f32, f32)` overload"] fn ctor (self , min : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < RangeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RangeAttribute , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rangeattribute")]pub trait IRangeAttributeMethods:IRangeAttribute{#[doc="`.ctor(f32, f32)` overload"]fn ctor(self,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <RangeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f79e30usize)as*mut u8,();
+(RangeAttribute)__receiver,(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max))}
+}
+}
 
-#[cfg(feature = "unity_engine-rangeattribute")]
-impl < __T : IRangeAttribute > IRangeAttributeMethods for __T { }
+#[cfg(feature="unity_engine-rangeattribute")]impl<__T:IRangeAttribute>IRangeAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-rangeattribute")]
-impl RangeAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RangeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rangeattribute")]impl RangeAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rangeattribute")]
-impl RangeAttribute {
-# [doc = "`.ctor(f32, f32)` — overload selector"] pub fn new (min : f32 , max : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RangeAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IRangeAttributeMethods > :: ctor (this , min , max) ; this }
+#[cfg(feature="unity_engine-rangeattribute")]impl RangeAttribute{#[doc="`.ctor(f32, f32)` — overload selector"]pub fn new(min:f32,max:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RangeAttribute), ::core::stringify!(new),));
+ <Self as IRangeAttributeMethods> ::ctor(this,min,max);
+this}
 }
 
 #[cfg(feature = "unity_engine-rangeattribute")]

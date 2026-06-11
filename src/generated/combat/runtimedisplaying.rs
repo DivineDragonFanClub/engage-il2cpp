@@ -4,40 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/runtimedisplaying/RuntimeDisplaying.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "RuntimeDisplaying")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RuntimeDisplaying {
-# [offset (24)] # [rename (name = "assetTable")] pub asset_table : crate :: combat :: assettabledemo :: AssetTableDemo ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/runtimedisplaying/RuntimeDisplaying.md"))]#[::unity2::class(namespace="Combat",name="RuntimeDisplaying")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RuntimeDisplaying{#[offset(24)]#[rename(name="assetTable")]pub asset_table:crate::combat::assettabledemo::AssetTableDemo,}
 
 }
 
 #[cfg(feature = "combat-runtimedisplaying-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-runtimedisplaying")]
-pub trait IRuntimeDisplayingMethods : IRuntimeDisplaying { # [doc = "`OnGUI()` overload"] fn on_gui (self ,) -> () { unsafe { let __receiver = < RuntimeDisplaying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeDisplaying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec38c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MakeContents()` overload"] fn make_contents (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RuntimeDisplaying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeDisplaying , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeDisplaying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeDisplaying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-runtimedisplaying")]pub trait IRuntimeDisplayingMethods:IRuntimeDisplaying{#[doc="`OnGUI()` overload"]fn on_gui(self,)->(){unsafe{let __receiver= <RuntimeDisplaying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec38c0usize)as*mut u8,();
+(RuntimeDisplaying)__receiver)}
+}
+#[doc="`MakeContents()` overload"]fn make_contents(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeDisplaying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3a20usize)as*mut u8, ::unity2::Il2CppString;
+(RuntimeDisplaying)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeDisplaying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3c50usize)as*mut u8,();
+(RuntimeDisplaying)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-runtimedisplaying")]
-impl < __T : IRuntimeDisplaying > IRuntimeDisplayingMethods for __T { }
+#[cfg(feature="combat-runtimedisplaying")]impl<__T:IRuntimeDisplaying>IRuntimeDisplayingMethods for __T{}
 
-#[cfg(feature = "combat-runtimedisplaying")]
-impl RuntimeDisplaying { pub fn on_gui_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeDisplaying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn make_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeDisplaying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeDisplaying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-runtimedisplaying")]impl RuntimeDisplaying{pub fn on_gui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn make_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-runtimedisplaying")]
-impl RuntimeDisplaying {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeDisplaying) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeDisplayingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-runtimedisplaying")]impl RuntimeDisplaying{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeDisplaying), ::core::stringify!(new),));
+ <Self as IRuntimeDisplayingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-runtimedisplaying")]

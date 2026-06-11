@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdesccallbase :: { IProcDescCallBase , ProcDescCallBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdesccallbase::{IProcDescCallBase,ProcDescCallBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesclog/ProcDescLog.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescLog")] # [parent (crate :: app :: procdesccallbase :: ProcDescCallBase)] pub struct ProcDescLog {
-# [offset (24)] # [rename (name = "m_Log")] pub m_log : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesclog/ProcDescLog.md"))]#[::unity2::class(namespace="App",name="ProcDescLog")]#[parent(crate::app::procdesccallbase::ProcDescCallBase)]pub struct ProcDescLog{#[offset(24)]#[rename(name="m_Log")]pub m_log: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-procdesclog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdesclog")]
-pub trait IProcDescLogMethods : IProcDescLog { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , log : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProcDescLog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescLog , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c2b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (log) , :: core :: option :: Option :: None) } } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescLog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescLog , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d2e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdesclog")]pub trait IProcDescLogMethods:IProcDescLog{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,log:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProcDescLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281c2b0usize)as*mut u8,();
+(ProcDescLog)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(log))}
+}
+#[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescLog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d2e0usize)as*mut u8,();
+(ProcDescLog)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdesclog")]
-impl < __T : IProcDescLog > IProcDescLogMethods for __T { }
+#[cfg(feature="app-procdesclog")]impl<__T:IProcDescLog>IProcDescLogMethods for __T{}
 
-#[cfg(feature = "app-procdesclog")]
-impl ProcDescLog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescLog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescLog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdesclog")]impl ProcDescLog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdesclog")]
-impl ProcDescLog {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (log : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescLog) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescLogMethods > :: ctor (this , log) ; this }
+#[cfg(feature="app-procdesclog")]impl ProcDescLog{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(log: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescLog), ::core::stringify!(new),));
+ <Self as IProcDescLogMethods> ::ctor(this,log);
+this}
 }
 
 #[cfg(feature = "app-procdesclog")]

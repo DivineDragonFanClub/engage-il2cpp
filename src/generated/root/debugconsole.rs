@@ -4,44 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/debugconsole/DebugConsole.md"))] # [:: unity2 :: class (namespace = "" , name = "DebugConsole")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DebugConsole {
-# [static_field] # [rename (name = "WindowDepth")] pub window_depth : i32 ,
-# [static_field] # [rename (name = "WindowColor")] pub window_color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/debugconsole/DebugConsole.md"))]#[::unity2::class(namespace="",name="DebugConsole")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DebugConsole{#[static_field]#[rename(name="WindowDepth")]pub window_depth:i32, #[static_field]#[rename(name="WindowColor")]pub window_color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "root-debugconsole-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-debugconsole")]
-impl DebugConsole { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a03450usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-debugconsole")]impl DebugConsole{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a03450usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-debugconsole")]
-pub trait IDebugConsoleMethods : IDebugConsole { # [doc = "`OnGUI()` overload"] fn on_gui (self ,) -> () { unsafe { let __receiver = < DebugConsole as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugConsole , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a029f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugConsole as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugConsole , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a03440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-debugconsole")]pub trait IDebugConsoleMethods:IDebugConsole{#[doc="`OnGUI()` overload"]fn on_gui(self,)->(){unsafe{let __receiver= <DebugConsole as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a029f0usize)as*mut u8,();
+(DebugConsole)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugConsole as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a03440usize)as*mut u8,();
+(DebugConsole)__receiver)}
+}
+}
 
-#[cfg(feature = "root-debugconsole")]
-impl < __T : IDebugConsole > IDebugConsoleMethods for __T { }
+#[cfg(feature="root-debugconsole")]impl<__T:IDebugConsole>IDebugConsoleMethods for __T{}
 
-#[cfg(feature = "root-debugconsole")]
-impl DebugConsole { pub fn on_gui_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugConsole as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugConsole as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugConsole as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-debugconsole")]impl DebugConsole{pub fn on_gui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-debugconsole")]
-impl DebugConsole {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugConsole) , :: core :: stringify ! (new) ,)) ; < Self as IDebugConsoleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-debugconsole")]impl DebugConsole{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugConsole), ::core::stringify!(new),));
+ <Self as IDebugConsoleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-debugconsole")]

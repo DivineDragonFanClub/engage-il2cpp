@@ -4,44 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuitemcontent/ProfileCardAlbumListMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardAlbumListMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct ProfileCardAlbumListMenuItemContent {
-# [offset (72)] # [rename (name = "m_Title")] pub m_title : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_BackImage")] pub m_back_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_IsInitialized")] pub m_is_initialized : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbumlistmenuitemcontent/ProfileCardAlbumListMenuItemContent.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumListMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct ProfileCardAlbumListMenuItemContent{#[offset(72)]#[rename(name="m_Title")]pub m_title:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_BackImage")]pub m_back_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_IsInitialized")]pub m_is_initialized:bool,}
 
 }
 
 #[cfg(feature = "app-profilecardalbumlistmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardalbumlistmenuitemcontent")]
-pub trait IProfileCardAlbumListMenuItemContentMethods : IProfileCardAlbumListMenuItemContent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ProfileCardAlbumListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetGameObjects()` overload"] fn set_game_objects (self ,) -> () { unsafe { let __receiver = < ProfileCardAlbumListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < ProfileCardAlbumListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`Disable()` overload"] fn disable (self ,) -> () { unsafe { let __receiver = < ProfileCardAlbumListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetActiveChildren(bool)` overload"] fn set_active_children (self , is_active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardAlbumListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItemContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_active) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardAlbumListMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardAlbumListMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2308c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardalbumlistmenuitemcontent")]pub trait IProfileCardAlbumListMenuItemContentMethods:IProfileCardAlbumListMenuItemContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308840usize)as*mut u8,();
+(ProfileCardAlbumListMenuItemContent)__receiver)}
+}
+#[doc="`SetGameObjects()` overload"]fn set_game_objects(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308870usize)as*mut u8,();
+(ProfileCardAlbumListMenuItemContent)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308a30usize)as*mut u8,();
+(ProfileCardAlbumListMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308b80usize)as*mut u8,();
+(ProfileCardAlbumListMenuItemContent)__receiver)}
+}
+#[doc="`SetActiveChildren(bool)` overload"]fn set_active_children(self,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308ad0usize)as*mut u8,();
+(ProfileCardAlbumListMenuItemContent)__receiver,(bool)::core::convert::Into::into(is_active))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2308c10usize)as*mut u8,();
+(ProfileCardAlbumListMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardalbumlistmenuitemcontent")]
-impl < __T : IProfileCardAlbumListMenuItemContent > IProfileCardAlbumListMenuItemContentMethods for __T { }
+#[cfg(feature="app-profilecardalbumlistmenuitemcontent")]impl<__T:IProfileCardAlbumListMenuItemContent>IProfileCardAlbumListMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-profilecardalbumlistmenuitemcontent")]
-impl ProfileCardAlbumListMenuItemContent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_game_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_active_children_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardAlbumListMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-profilecardalbumlistmenuitemcontent")]impl ProfileCardAlbumListMenuItemContent{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_game_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_active_children_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-profilecardalbumlistmenuitemcontent")]
-impl ProfileCardAlbumListMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardAlbumListMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardAlbumListMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardalbumlistmenuitemcontent")]impl ProfileCardAlbumListMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardAlbumListMenuItemContent), ::core::stringify!(new),));
+ <Self as IProfileCardAlbumListMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardalbumlistmenuitemcontent")]

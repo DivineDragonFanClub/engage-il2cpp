@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/propertyattribute/PropertyAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "PropertyAttribute")] pub struct PropertyAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/propertyattribute/PropertyAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="PropertyAttribute")]pub struct PropertyAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-propertyattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-propertyattribute")]
-pub trait IPropertyAttributeMethods : IPropertyAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PropertyAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PropertyAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ecf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-propertyattribute")]pub trait IPropertyAttributeMethods:IPropertyAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PropertyAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32ecf30usize)as*mut u8,();
+(PropertyAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-propertyattribute")]
-impl < __T : IPropertyAttribute > IPropertyAttributeMethods for __T { }
+#[cfg(feature="unity_engine-propertyattribute")]impl<__T:IPropertyAttribute>IPropertyAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-propertyattribute")]
-impl PropertyAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-propertyattribute")]impl PropertyAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-propertyattribute")]
-impl PropertyAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PropertyAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IPropertyAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-propertyattribute")]impl PropertyAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PropertyAttribute), ::core::stringify!(new),));
+ <Self as IPropertyAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-propertyattribute")]

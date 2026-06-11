@@ -4,46 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/effectcatalog/EffectCatalog.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "EffectCatalog")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: combat :: effectcatalog :: EffectCatalog >)] pub struct EffectCatalog {
-# [offset (32)] # [rename (name = "EffectPrefab")] pub effect_prefab : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (40)] # [rename (name = "m_HashTable")] pub m_hash_table : :: unity2 :: Array < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/effectcatalog/EffectCatalog.md"))]#[::unity2::class(namespace="Combat",name="EffectCatalog")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::combat::effectcatalog::EffectCatalog>)]pub struct EffectCatalog{#[offset(32)]#[rename(name="EffectPrefab")]pub effect_prefab: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_HashTable")]pub m_hash_table: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "combat-effectcatalog-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-effectcatalog")]
-impl EffectCatalog { # [doc = "`Create(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"] pub fn create (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d6ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"] pub fn create_2 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7300usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn create_3 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , dir : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d73e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`Create(::unity2::Il2CppString, crate::combat::tr::TR)` overload"] pub fn create_4 (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , tr : impl :: core :: convert :: Into < crate :: combat :: tr :: TR >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: combat :: tr :: TR , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7510usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (tr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-effectcatalog")]impl EffectCatalog{#[doc="`Create(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]pub fn create(name:impl::core::convert::Into< ::unity2::Il2CppString> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d6ec0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent))}
+}
+#[doc="`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]pub fn create_2(name:impl::core::convert::Into< ::unity2::Il2CppString> ,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7300usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`Create(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn create_3(name:impl::core::convert::Into< ::unity2::Il2CppString> ,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,dir:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d73e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(dir))}
+}
+#[doc="`Create(::unity2::Il2CppString, crate::combat::tr::TR)` overload"]pub fn create_4(name:impl::core::convert::Into< ::unity2::Il2CppString> ,tr:impl::core::convert::Into<crate::combat::tr::TR>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7510usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::combat::tr::TR)::core::convert::Into::into(tr))}
+}
+}
 
-#[cfg(feature = "combat-effectcatalog")]
-pub trait IEffectCatalogMethods : IEffectCatalog { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < EffectCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectCatalog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d6d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectCatalog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d75d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-effectcatalog")]pub trait IEffectCatalogMethods:IEffectCatalog{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <EffectCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d6d40usize)as*mut u8,();
+(EffectCatalog)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d75d0usize)as*mut u8,();
+(EffectCatalog)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-effectcatalog")]
-impl < __T : IEffectCatalog > IEffectCatalogMethods for __T { }
+#[cfg(feature="combat-effectcatalog")]impl<__T:IEffectCatalog>IEffectCatalogMethods for __T{}
 
-#[cfg(feature = "combat-effectcatalog")]
-impl EffectCatalog { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-effectcatalog")]impl EffectCatalog{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-effectcatalog")]
-impl EffectCatalog {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectCatalog) , :: core :: stringify ! (new) ,)) ; < Self as IEffectCatalogMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-effectcatalog")]impl EffectCatalog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EffectCatalog), ::core::stringify!(new),));
+ <Self as IEffectCatalogMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-effectcatalog")]

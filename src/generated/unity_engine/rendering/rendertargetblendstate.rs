@@ -4,51 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rendertargetblendstate/RenderTargetBlendState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RenderTargetBlendState {
-    pub m_write_mask: u8,
-    pub m_source_color_blend_mode: u8,
-    pub m_destination_color_blend_mode: u8,
-    pub m_source_alpha_blend_mode: u8,
-    pub m_destination_alpha_blend_mode: u8,
-    pub m_color_blend_operation: u8,
-    pub m_alpha_blend_operation: u8,
-    pub m_padding: u8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/rendertargetblendstate/RenderTargetBlendState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderTargetBlendState{pub m_write_mask:u8,pub m_source_color_blend_mode:u8,pub m_destination_color_blend_mode:u8,pub m_source_alpha_blend_mode:u8,pub m_destination_alpha_blend_mode:u8,pub m_color_blend_operation:u8,pub m_alpha_blend_operation:u8,pub m_padding:u8,}
+impl::unity2::ClassIdentity for RenderTargetBlendState{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="RenderTargetBlendState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RenderTargetBlendState {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "RenderTargetBlendState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RenderTargetBlendState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RenderTargetBlendState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -56,14 +26,31 @@ impl ::unity2::IlType for RenderTargetBlendState {
 #[cfg(feature = "unity_engine-rendering-rendertargetblendstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-rendertargetblendstate")]
-impl RenderTargetBlendState { # [doc = "`get_defaultValue()` overload"] pub fn get_default_value () -> crate :: unity_engine :: rendering :: rendertargetblendstate :: RenderTargetBlendState { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: rendertargetblendstate :: RenderTargetBlendState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83bf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-rendertargetblendstate")]impl RenderTargetBlendState{#[doc="`get_defaultValue()` overload"]pub fn get_default_value()->crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83bf0usize)as*mut u8,crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-rendertargetblendstate")]
-impl RenderTargetBlendState { # [doc = "`.ctor(crate::unity_engine::rendering::colorwritemask::ColorWriteMask, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendop::BlendOp, crate::unity_engine::rendering::blendop::BlendOp)` overload"] pub fn ctor (& mut self , write_mask : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: colorwritemask :: ColorWriteMask > , source_color_blend_mode : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: blendmode :: BlendMode > , destination_color_blend_mode : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: blendmode :: BlendMode > , source_alpha_blend_mode : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: blendmode :: BlendMode > , destination_alpha_blend_mode : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: blendmode :: BlendMode > , color_blend_operation : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: blendop :: BlendOp > , alpha_blend_operation : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: blendop :: BlendOp >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderTargetBlendState , crate :: unity_engine :: rendering :: colorwritemask :: ColorWriteMask , crate :: unity_engine :: rendering :: blendmode :: BlendMode , crate :: unity_engine :: rendering :: blendmode :: BlendMode , crate :: unity_engine :: rendering :: blendmode :: BlendMode , crate :: unity_engine :: rendering :: blendmode :: BlendMode , crate :: unity_engine :: rendering :: blendop :: BlendOp , crate :: unity_engine :: rendering :: blendop :: BlendOp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83c00usize) as * mut u8) ; __inner (self as * mut RenderTargetBlendState , :: core :: convert :: Into :: into (write_mask) , :: core :: convert :: Into :: into (source_color_blend_mode) , :: core :: convert :: Into :: into (destination_color_blend_mode) , :: core :: convert :: Into :: into (source_alpha_blend_mode) , :: core :: convert :: Into :: into (destination_alpha_blend_mode) , :: core :: convert :: Into :: into (color_blend_operation) , :: core :: convert :: Into :: into (alpha_blend_operation) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: rendertargetblendstate :: RenderTargetBlendState >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RenderTargetBlendState , crate :: unity_engine :: rendering :: rendertargetblendstate :: RenderTargetBlendState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83c30usize) as * mut u8) ; __inner (self as * mut RenderTargetBlendState , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RenderTargetBlendState , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83cb0usize) as * mut u8) ; __inner (self as * mut RenderTargetBlendState , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RenderTargetBlendState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83da0usize) as * mut u8) ; __inner (self as * mut RenderTargetBlendState , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-rendertargetblendstate")]impl RenderTargetBlendState{#[doc="`.ctor(crate::unity_engine::rendering::colorwritemask::ColorWriteMask, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendmode::BlendMode, crate::unity_engine::rendering::blendop::BlendOp, crate::unity_engine::rendering::blendop::BlendOp)` overload"]pub fn ctor(&mut self,write_mask:impl::core::convert::Into<crate::unity_engine::rendering::colorwritemask::ColorWriteMask> ,source_color_blend_mode:impl::core::convert::Into<crate::unity_engine::rendering::blendmode::BlendMode> ,destination_color_blend_mode:impl::core::convert::Into<crate::unity_engine::rendering::blendmode::BlendMode> ,source_alpha_blend_mode:impl::core::convert::Into<crate::unity_engine::rendering::blendmode::BlendMode> ,destination_alpha_blend_mode:impl::core::convert::Into<crate::unity_engine::rendering::blendmode::BlendMode> ,color_blend_operation:impl::core::convert::Into<crate::unity_engine::rendering::blendop::BlendOp> ,alpha_blend_operation:impl::core::convert::Into<crate::unity_engine::rendering::blendop::BlendOp>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83c00usize)as*mut u8,();
+(*mut RenderTargetBlendState)self as*mut RenderTargetBlendState,(crate::unity_engine::rendering::colorwritemask::ColorWriteMask)::core::convert::Into::into(write_mask),(crate::unity_engine::rendering::blendmode::BlendMode)::core::convert::Into::into(source_color_blend_mode),(crate::unity_engine::rendering::blendmode::BlendMode)::core::convert::Into::into(destination_color_blend_mode),(crate::unity_engine::rendering::blendmode::BlendMode)::core::convert::Into::into(source_alpha_blend_mode),(crate::unity_engine::rendering::blendmode::BlendMode)::core::convert::Into::into(destination_alpha_blend_mode),(crate::unity_engine::rendering::blendop::BlendOp)::core::convert::Into::into(color_blend_operation),(crate::unity_engine::rendering::blendop::BlendOp)::core::convert::Into::into(alpha_blend_operation))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83c30usize)as*mut u8,bool;
+(*mut RenderTargetBlendState)self as*mut RenderTargetBlendState,(crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83cb0usize)as*mut u8,bool;
+(*mut RenderTargetBlendState)self as*mut RenderTargetBlendState,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83da0usize)as*mut u8,i32;
+(*mut RenderTargetBlendState)self as*mut RenderTargetBlendState)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-rendertargetblendstate")]
-impl RenderTargetBlendState { pub fn get_default_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetBlendState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetBlendState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetBlendState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetBlendState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderTargetBlendState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-rendertargetblendstate")]impl RenderTargetBlendState{pub fn get_default_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-rendering-rendertargetblendstate")]
 #[doc(hidden)]

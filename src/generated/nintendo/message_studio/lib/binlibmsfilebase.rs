@@ -4,36 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/binlibmsfilebase/BinLibmsFileBase.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "BinLibmsFileBase")] # [parent (crate :: system :: object :: Object)] pub struct BinLibmsFileBase {
-# [offset (16)] # [rename (name = "m_ResourceFilePtr")] pub m_resource_file_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_FileObjectPtr")] pub m_file_object_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/binlibmsfilebase/BinLibmsFileBase.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="BinLibmsFileBase")]#[parent(crate::system::object::Object)]pub struct BinLibmsFileBase{#[offset(16)]#[rename(name="m_ResourceFilePtr")]pub m_resource_file_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_FileObjectPtr")]pub m_file_object_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase-types")]
 pub use __types::*;
 
-#[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BinLibmsFileBase_unity2_raw { use super :: * ; pub unsafe fn init_object (this : BinLibmsFileBase , resource_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("InitObject") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "InitObject" , < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BinLibmsFileBase , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , resource_ptr , __mi) } pub unsafe fn close_object (this : BinLibmsFileBase , object_ptr : :: unity2 :: IntPtr , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CloseObject") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CloseObject" , < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BinLibmsFileBase , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , object_ptr , __mi) } }
+#[cfg(feature="nintendo-message_studio-lib-binlibmsfilebase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BinLibmsFileBase_unity2_raw{use super:: * ;
+pub unsafe fn init_object(this:BinLibmsFileBase,resource_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::IntPtr{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("InitObject").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","InitObject", <BinLibmsFileBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BinLibmsFileBase, ::unity2::IntPtr, ::unity2::OptionalMethod,)-> ::unity2::IntPtr= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,resource_ptr,__mi)}
+pub unsafe fn close_object(this:BinLibmsFileBase,object_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CloseObject").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CloseObject", <BinLibmsFileBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BinLibmsFileBase, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,object_ptr,__mi)}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]
-pub trait IBinLibmsFileBaseMethods : IBinLibmsFileBase { # [doc = "`get_FileObjectPtr()` overload"] fn get_file_object_ptr (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < BinLibmsFileBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinLibmsFileBase , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e963e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFileLoaded()` overload"] fn get_is_file_loaded (self ,) -> bool { unsafe { let __receiver = < BinLibmsFileBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinLibmsFileBase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e963f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Array<u8>)` overload"] fn load (self , bytes : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < BinLibmsFileBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinLibmsFileBase , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e96440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bytes) , :: core :: option :: Option :: None) } } } # [doc = "`Free()` overload"] fn free (self ,) -> () { unsafe { let __receiver = < BinLibmsFileBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinLibmsFileBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e96520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < BinLibmsFileBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinLibmsFileBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e965e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < BinLibmsFileBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinLibmsFileBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e96650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitObject(::unity2::IntPtr)` overload"] fn init_object (self , resource_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> :: unity2 :: IntPtr { unsafe { let __receiver = < BinLibmsFileBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BinLibmsFileBase_unity2_raw :: init_object (__receiver , :: core :: convert :: Into :: into (resource_ptr) , :: core :: option :: Option :: None) } } # [doc = "`CloseObject(::unity2::IntPtr)` overload"] fn close_object (self , object_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BinLibmsFileBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BinLibmsFileBase_unity2_raw :: close_object (__receiver , :: core :: convert :: Into :: into (object_ptr) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BinLibmsFileBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinLibmsFileBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e96390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nintendo-message_studio-lib-binlibmsfilebase")]pub trait IBinLibmsFileBaseMethods:IBinLibmsFileBase{#[doc="`get_FileObjectPtr()` overload"]fn get_file_object_ptr(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e963e0usize)as*mut u8, ::unity2::IntPtr;
+(BinLibmsFileBase)__receiver)}
+}
+#[doc="`get_IsFileLoaded()` overload"]fn get_is_file_loaded(self,)->bool{unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e963f0usize)as*mut u8,bool;
+(BinLibmsFileBase)__receiver)}
+}
+#[doc="`Load(::unity2::Array<u8>)` overload"]fn load(self,bytes:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e96440usize)as*mut u8,();
+(BinLibmsFileBase)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(bytes))}
+}
+#[doc="`Free()` overload"]fn free(self,)->(){unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e96520usize)as*mut u8,();
+(BinLibmsFileBase)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e965e0usize)as*mut u8,();
+(BinLibmsFileBase)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e96650usize)as*mut u8,();
+(BinLibmsFileBase)__receiver)}
+}
+#[doc="`InitObject(::unity2::IntPtr)` overload"]fn init_object(self,resource_ptr:impl::core::convert::Into< ::unity2::IntPtr>)-> ::unity2::IntPtr{unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BinLibmsFileBase_unity2_raw::init_object(__receiver, ::core::convert::Into::into(resource_ptr), ::core::option::Option::None)}
+}
+#[doc="`CloseObject(::unity2::IntPtr)` overload"]fn close_object(self,object_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BinLibmsFileBase_unity2_raw::close_object(__receiver, ::core::convert::Into::into(object_ptr), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e96390usize)as*mut u8,();
+(BinLibmsFileBase)__receiver)}
+}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]
-impl < __T : IBinLibmsFileBase > IBinLibmsFileBaseMethods for __T { }
+#[cfg(feature="nintendo-message_studio-lib-binlibmsfilebase")]impl<__T:IBinLibmsFileBase>IBinLibmsFileBaseMethods for __T{}
 
-#[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]
-impl BinLibmsFileBase { pub fn get_file_object_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_file_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn free_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn init_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn close_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinLibmsFileBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="nintendo-message_studio-lib-binlibmsfilebase")]impl BinLibmsFileBase{pub fn get_file_object_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_file_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn free_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn init_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]
-impl BinLibmsFileBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BinLibmsFileBase) , :: core :: stringify ! (new) ,)) ; < Self as IBinLibmsFileBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="nintendo-message_studio-lib-binlibmsfilebase")]impl BinLibmsFileBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BinLibmsFileBase), ::core::stringify!(new),));
+ <Self as IBinLibmsFileBaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-binlibmsfilebase")]

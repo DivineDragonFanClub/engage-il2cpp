@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/shaderkeyword/ShaderKeyword.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ShaderKeyword {
-    pub m_keyword_index: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/shaderkeyword/ShaderKeyword.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ShaderKeyword{pub m_keyword_index:i32,}
+impl::unity2::ClassIdentity for ShaderKeyword{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="ShaderKeyword";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ShaderKeyword {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "ShaderKeyword";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ShaderKeyword {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ShaderKeyword{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,19 @@ impl ::unity2::IlType for ShaderKeyword {
 #[cfg(feature = "unity_engine-rendering-shaderkeyword-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-shaderkeyword")]
-impl ShaderKeyword { # [doc = "`GetGlobalKeywordIndex(::unity2::Il2CppString)` overload"] pub fn get_global_keyword_index (keyword : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f92dc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (keyword) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-shaderkeyword")]impl ShaderKeyword{#[doc="`GetGlobalKeywordIndex(::unity2::Il2CppString)` overload"]pub fn get_global_keyword_index(keyword:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f92dc0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(keyword))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-shaderkeyword")]
-impl ShaderKeyword { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] pub fn ctor (& mut self , keyword_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut ShaderKeyword , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f92e10usize) as * mut u8) ; __inner (self as * mut ShaderKeyword , :: core :: convert :: Into :: into (keyword_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-shaderkeyword")]impl ShaderKeyword{#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,keyword_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f92e10usize)as*mut u8,();
+(*mut ShaderKeyword)self as*mut ShaderKeyword,(::unity2::Il2CppString)::core::convert::Into::into(keyword_name))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-shaderkeyword")]
-impl ShaderKeyword { pub fn get_global_keyword_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderKeyword as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderKeyword as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-shaderkeyword")]impl ShaderKeyword{pub fn get_global_keyword_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-rendering-shaderkeyword")]
 #[doc(hidden)]

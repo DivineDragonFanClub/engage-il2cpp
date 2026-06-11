@@ -4,32 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/unityaction_2/UnityAction_2.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Events" , name = "UnityAction`2")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct UnityAction_2 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/events/unityaction_2/UnityAction_2.md"))]#[::unity2::class(namespace="UnityEngine.Events",name="UnityAction`2")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct UnityAction_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "unity_engine-events-unityaction_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-events-unityaction_2")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > UnityAction_2 < T0 , T1 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(T0, T1)` overload"] # [method (name = "Invoke" , args = 2)] pub fn invoke (self , arg0 : T0 , arg1 : T1) -> () ;
+#[cfg(feature="unity_engine-events-unityaction_2")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>UnityAction_2<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(T0, T1)` overload"]#[method(name="Invoke",args=2)]pub fn invoke(self,arg0:T0,arg1:T1)->();
 }
 
-#[cfg(feature = "unity_engine-events-unityaction_2")]
-impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > UnityAction_2 < T0 , T1 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnityAction_2) , :: core :: stringify ! (new) ,)) ; < Self as IUnityAction_2Methods < T0 , T1 > > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-events-unityaction_2")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>UnityAction_2<T0,T1>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnityAction_2), ::core::stringify!(new),));
+ <Self as IUnityAction_2Methods<T0,T1> > ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "unity_engine-events-unityaction_2")]

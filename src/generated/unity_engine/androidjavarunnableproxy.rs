@@ -4,34 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: androidjavaproxy :: { AndroidJavaProxy , IAndroidJavaProxy }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::androidjavaproxy::{AndroidJavaProxy,IAndroidJavaProxy}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavarunnableproxy/AndroidJavaRunnableProxy.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AndroidJavaRunnableProxy")] # [parent (crate :: unity_engine :: androidjavaproxy :: AndroidJavaProxy)] pub struct AndroidJavaRunnableProxy {
-# [offset (32)] # [rename (name = "mRunnable")] pub m_runnable : crate :: unity_engine :: androidjavarunnable :: AndroidJavaRunnable ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/androidjavarunnableproxy/AndroidJavaRunnableProxy.md"))]#[::unity2::class(namespace="UnityEngine",name="AndroidJavaRunnableProxy")]#[parent(crate::unity_engine::androidjavaproxy::AndroidJavaProxy)]pub struct AndroidJavaRunnableProxy{#[offset(32)]#[rename(name="mRunnable")]pub m_runnable:crate::unity_engine::androidjavarunnable::AndroidJavaRunnable,}
 
 }
 
 #[cfg(feature = "unity_engine-androidjavarunnableproxy-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-androidjavarunnableproxy")]
-pub trait IAndroidJavaRunnableProxyMethods : IAndroidJavaRunnableProxy { # [doc = "`.ctor(crate::unity_engine::androidjavarunnable::AndroidJavaRunnable)` overload"] fn ctor (self , runnable : impl :: core :: convert :: Into < crate :: unity_engine :: androidjavarunnable :: AndroidJavaRunnable >) -> () { unsafe { let __receiver = < AndroidJavaRunnableProxy as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AndroidJavaRunnableProxy , crate :: unity_engine :: androidjavarunnable :: AndroidJavaRunnable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f14f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (runnable) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-androidjavarunnableproxy")]pub trait IAndroidJavaRunnableProxyMethods:IAndroidJavaRunnableProxy{#[doc="`.ctor(crate::unity_engine::androidjavarunnable::AndroidJavaRunnable)` overload"]fn ctor(self,runnable:impl::core::convert::Into<crate::unity_engine::androidjavarunnable::AndroidJavaRunnable>)->(){unsafe{let __receiver= <AndroidJavaRunnableProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f14f10usize)as*mut u8,();
+(AndroidJavaRunnableProxy)__receiver,(crate::unity_engine::androidjavarunnable::AndroidJavaRunnable)::core::convert::Into::into(runnable))}
+}
+}
 
-#[cfg(feature = "unity_engine-androidjavarunnableproxy")]
-impl < __T : IAndroidJavaRunnableProxy > IAndroidJavaRunnableProxyMethods for __T { }
+#[cfg(feature="unity_engine-androidjavarunnableproxy")]impl<__T:IAndroidJavaRunnableProxy>IAndroidJavaRunnableProxyMethods for __T{}
 
-#[cfg(feature = "unity_engine-androidjavarunnableproxy")]
-impl AndroidJavaRunnableProxy { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AndroidJavaRunnableProxy as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-androidjavarunnableproxy")]impl AndroidJavaRunnableProxy{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-androidjavarunnableproxy")]
-impl AndroidJavaRunnableProxy {
-# [doc = "`.ctor(crate::unity_engine::androidjavarunnable::AndroidJavaRunnable)` — overload selector"] pub fn new (runnable : crate :: unity_engine :: androidjavarunnable :: AndroidJavaRunnable) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AndroidJavaRunnableProxy) , :: core :: stringify ! (new) ,)) ; < Self as IAndroidJavaRunnableProxyMethods > :: ctor (this , runnable) ; this }
+#[cfg(feature="unity_engine-androidjavarunnableproxy")]impl AndroidJavaRunnableProxy{#[doc="`.ctor(crate::unity_engine::androidjavarunnable::AndroidJavaRunnable)` — overload selector"]pub fn new(runnable:crate::unity_engine::androidjavarunnable::AndroidJavaRunnable)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AndroidJavaRunnableProxy), ::core::stringify!(new),));
+ <Self as IAndroidJavaRunnableProxyMethods> ::ctor(this,runnable);
+this}
 }
 
 #[cfg(feature = "unity_engine-androidjavarunnableproxy")]

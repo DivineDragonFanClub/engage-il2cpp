@@ -4,33 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akgameobjpositionoffsetdata/AkGameObjPositionOffsetData.md"))] # [:: unity2 :: class (namespace = "" , name = "AkGameObjPositionOffsetData")] # [parent (crate :: system :: object :: Object)] pub struct AkGameObjPositionOffsetData {
-# [offset (16)] # [rename (name = "KeepMe")] pub keep_me : bool ,
-# [offset (20)] # [rename (name = "positionOffset")] pub position_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akgameobjpositionoffsetdata/AkGameObjPositionOffsetData.md"))]#[::unity2::class(namespace="",name="AkGameObjPositionOffsetData")]#[parent(crate::system::object::Object)]pub struct AkGameObjPositionOffsetData{#[offset(16)]#[rename(name="KeepMe")]pub keep_me:bool, #[offset(20)]#[rename(name="positionOffset")]pub position_offset:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "root-akgameobjpositionoffsetdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akgameobjpositionoffsetdata")]
-pub trait IAkGameObjPositionOffsetDataMethods : IAkGameObjPositionOffsetData { # [doc = "`.ctor(bool)` overload"] fn ctor (self , i_really_want_to_be_constructed : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkGameObjPositionOffsetData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkGameObjPositionOffsetData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1f6d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i_really_want_to_be_constructed) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akgameobjpositionoffsetdata")]pub trait IAkGameObjPositionOffsetDataMethods:IAkGameObjPositionOffsetData{#[doc="`.ctor(bool)` overload"]fn ctor(self,i_really_want_to_be_constructed:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkGameObjPositionOffsetData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f6d0usize)as*mut u8,();
+(AkGameObjPositionOffsetData)__receiver,(bool)::core::convert::Into::into(i_really_want_to_be_constructed))}
+}
+}
 
-#[cfg(feature = "root-akgameobjpositionoffsetdata")]
-impl < __T : IAkGameObjPositionOffsetData > IAkGameObjPositionOffsetDataMethods for __T { }
+#[cfg(feature="root-akgameobjpositionoffsetdata")]impl<__T:IAkGameObjPositionOffsetData>IAkGameObjPositionOffsetDataMethods for __T{}
 
-#[cfg(feature = "root-akgameobjpositionoffsetdata")]
-impl AkGameObjPositionOffsetData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkGameObjPositionOffsetData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akgameobjpositionoffsetdata")]impl AkGameObjPositionOffsetData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akgameobjpositionoffsetdata")]
-impl AkGameObjPositionOffsetData {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (i_really_want_to_be_constructed : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkGameObjPositionOffsetData) , :: core :: stringify ! (new) ,)) ; < Self as IAkGameObjPositionOffsetDataMethods > :: ctor (this , i_really_want_to_be_constructed) ; this }
+#[cfg(feature="root-akgameobjpositionoffsetdata")]impl AkGameObjPositionOffsetData{#[doc="`.ctor(bool)` — overload selector"]pub fn new(i_really_want_to_be_constructed:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkGameObjPositionOffsetData), ::core::stringify!(new),));
+ <Self as IAkGameObjPositionOffsetDataMethods> ::ctor(this,i_really_want_to_be_constructed);
+this}
 }
 
 #[cfg(feature = "root-akgameobjpositionoffsetdata")]

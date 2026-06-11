@@ -4,57 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonrewardmenuitemcontent/CommonRewardMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "CommonRewardMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct CommonRewardMenuItemContent {
-# [offset (72)] # [rename (name = "m_ImageFace")] pub m_image_face : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (80)] # [rename (name = "m_UnitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (88)] # [rename (name = "m_LevelValue")] pub m_level_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (96)] # [rename (name = "m_ExpValue")] pub m_exp_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (104)] # [rename (name = "m_ExpAddValue")] pub m_exp_add_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (112)] # [rename (name = "m_ObjGauge")] pub m_obj_gauge : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (120)] # [rename (name = "m_ObjExpValue")] pub m_obj_exp_value : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (128)] # [rename (name = "m_ObjExpMax")] pub m_obj_exp_max : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_ImageGauge")] pub m_image_gauge : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (144)] # [rename (name = "m_GaugeMaxColor")] pub m_gauge_max_color : crate :: unity_engine :: material :: Material ,
-# [offset (152)] # [rename (name = "m_AnimLevelUp")] pub m_anim_level_up : crate :: unity_engine :: animator :: Animator ,
-# [offset (160)] # [rename (name = "m_AnimAddValue")] pub m_anim_add_value : crate :: unity_engine :: animator :: Animator ,
-# [offset (168)] # [rename (name = "m_ImageArrow")] pub m_image_arrow : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (176)] # [rename (name = "m_StockExp")] pub m_stock_exp : i32 ,
-# [offset (184)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (192)] # [rename (name = "m_IsPlaySoundExp")] pub m_is_play_sound_exp : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardmenuitemcontent/CommonRewardMenuItemContent.md"))]#[::unity2::class(namespace="App",name="CommonRewardMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct CommonRewardMenuItemContent{#[offset(72)]#[rename(name="m_ImageFace")]pub m_image_face:crate::unity_engine::ui::image::Image, #[offset(80)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(88)]#[rename(name="m_LevelValue")]pub m_level_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_ExpValue")]pub m_exp_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(104)]#[rename(name="m_ExpAddValue")]pub m_exp_add_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(112)]#[rename(name="m_ObjGauge")]pub m_obj_gauge:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_ObjExpValue")]pub m_obj_exp_value:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_ObjExpMax")]pub m_obj_exp_max:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_ImageGauge")]pub m_image_gauge:crate::unity_engine::ui::image::Image, #[offset(144)]#[rename(name="m_GaugeMaxColor")]pub m_gauge_max_color:crate::unity_engine::material::Material, #[offset(152)]#[rename(name="m_AnimLevelUp")]pub m_anim_level_up:crate::unity_engine::animator::Animator, #[offset(160)]#[rename(name="m_AnimAddValue")]pub m_anim_add_value:crate::unity_engine::animator::Animator, #[offset(168)]#[rename(name="m_ImageArrow")]pub m_image_arrow:crate::unity_engine::ui::image::Image, #[offset(176)]#[rename(name="m_StockExp")]pub m_stock_exp:i32, #[offset(184)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(192)]#[rename(name="m_IsPlaySoundExp")]pub m_is_play_sound_exp:bool,}
 
 }
 
 #[cfg(feature = "app-commonrewardmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-commonrewardmenuitemcontent")]
-pub trait ICommonRewardMenuItemContentMethods : ICommonRewardMenuItemContent { # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25327e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`BuildTextColor()` overload"] fn build_text_color (self ,) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartGauge()` overload"] fn start_gauge (self ,) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2531b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateGauge(i32)` overload"] fn update_gauge (self , speed : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuItemContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2531ea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } # [doc = "`IsGaugeEnd()` overload"] fn is_gauge_end (self ,) -> bool { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuItemContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2531c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CommonRewardMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CommonRewardMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2532f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-commonrewardmenuitemcontent")]pub trait ICommonRewardMenuItemContentMethods:ICommonRewardMenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <CommonRewardMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25327e0usize)as*mut u8,();
+(CommonRewardMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildTextColor()` overload"]fn build_text_color(self,)->(){unsafe{let __receiver= <CommonRewardMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532e60usize)as*mut u8,();
+(CommonRewardMenuItemContent)__receiver)}
+}
+#[doc="`StartGauge()` overload"]fn start_gauge(self,)->(){unsafe{let __receiver= <CommonRewardMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2531b40usize)as*mut u8,();
+(CommonRewardMenuItemContent)__receiver)}
+}
+#[doc="`UpdateGauge(i32)` overload"]fn update_gauge(self,speed:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CommonRewardMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2531ea0usize)as*mut u8,();
+(CommonRewardMenuItemContent)__receiver,(i32)::core::convert::Into::into(speed))}
+}
+#[doc="`IsGaugeEnd()` overload"]fn is_gauge_end(self,)->bool{unsafe{let __receiver= <CommonRewardMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2531c60usize)as*mut u8,bool;
+(CommonRewardMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CommonRewardMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2532f30usize)as*mut u8,();
+(CommonRewardMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-commonrewardmenuitemcontent")]
-impl < __T : ICommonRewardMenuItemContent > ICommonRewardMenuItemContentMethods for __T { }
+#[cfg(feature="app-commonrewardmenuitemcontent")]impl<__T:ICommonRewardMenuItemContent>ICommonRewardMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-commonrewardmenuitemcontent")]
-impl CommonRewardMenuItemContent { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_gauge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_gauge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_gauge_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CommonRewardMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-commonrewardmenuitemcontent")]impl CommonRewardMenuItemContent{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_gauge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_gauge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_gauge_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-commonrewardmenuitemcontent")]
-impl CommonRewardMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CommonRewardMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as ICommonRewardMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-commonrewardmenuitemcontent")]impl CommonRewardMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRewardMenuItemContent), ::core::stringify!(new),));
+ <Self as ICommonRewardMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-commonrewardmenuitemcontent")]

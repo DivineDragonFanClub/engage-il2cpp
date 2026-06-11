@@ -4,34 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/minattribute/MinAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "MinAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct MinAttribute {
-# [offset (16)] # [rename (name = "min")] pub min : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/minattribute/MinAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="MinAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct MinAttribute{#[offset(16)]#[rename(name="min")]pub min:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-minattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-minattribute")]
-pub trait IMinAttributeMethods : IMinAttribute { # [doc = "`.ctor(f32)` overload"] fn ctor (self , min : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MinAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MinAttribute , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32ecef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (min) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-minattribute")]pub trait IMinAttributeMethods:IMinAttribute{#[doc="`.ctor(f32)` overload"]fn ctor(self,min:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MinAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32ecef0usize)as*mut u8,();
+(MinAttribute)__receiver,(f32)::core::convert::Into::into(min))}
+}
+}
 
-#[cfg(feature = "unity_engine-minattribute")]
-impl < __T : IMinAttribute > IMinAttributeMethods for __T { }
+#[cfg(feature="unity_engine-minattribute")]impl<__T:IMinAttribute>IMinAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-minattribute")]
-impl MinAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MinAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-minattribute")]impl MinAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-minattribute")]
-impl MinAttribute {
-# [doc = "`.ctor(f32)` — overload selector"] pub fn new (min : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MinAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IMinAttributeMethods > :: ctor (this , min) ; this }
+#[cfg(feature="unity_engine-minattribute")]impl MinAttribute{#[doc="`.ctor(f32)` — overload selector"]pub fn new(min:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MinAttribute), ::core::stringify!(new),));
+ <Self as IMinAttributeMethods> ::ctor(this,min);
+this}
 }
 
 #[cfg(feature = "unity_engine-minattribute")]

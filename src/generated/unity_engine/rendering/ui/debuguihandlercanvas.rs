@@ -4,47 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlercanvas/DebugUIHandlerCanvas.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerCanvas")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DebugUIHandlerCanvas {
-# [offset (24)] # [rename (name = "m_DebugTreeState")] pub m_debug_tree_state : i32 ,
-# [offset (32)] # [rename (name = "m_PrefabsMap")] pub m_prefabs_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: SystemType , crate :: unity_engine :: transform :: Transform > ,
-# [offset (40)] # [rename (name = "panelPrefab")] pub panel_prefab : crate :: unity_engine :: transform :: Transform ,
-# [offset (48)] # [rename (name = "prefabs")] pub prefabs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: ui :: debuguiprefabbundle :: DebugUIPrefabBundle > ,
-# [offset (56)] # [rename (name = "m_UIPanels")] pub m_ui_panels : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: ui :: debuguihandlerpanel :: DebugUIHandlerPanel > ,
-# [offset (64)] # [rename (name = "m_SelectedPanel")] pub m_selected_panel : i32 ,
-# [offset (72)] # [rename (name = "m_SelectedWidget")] pub m_selected_widget : crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget ,
-# [offset (80)] # [rename (name = "m_CurrentQueryPath")] pub m_current_query_path : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguihandlercanvas/DebugUIHandlerCanvas.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIHandlerCanvas")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DebugUIHandlerCanvas{#[offset(24)]#[rename(name="m_DebugTreeState")]pub m_debug_tree_state:i32, #[offset(32)]#[rename(name="m_PrefabsMap")]pub m_prefabs_map:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::SystemType,crate::unity_engine::transform::Transform> , #[offset(40)]#[rename(name="panelPrefab")]pub panel_prefab:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="prefabs")]pub prefabs:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguiprefabbundle::DebugUIPrefabBundle> , #[offset(56)]#[rename(name="m_UIPanels")]pub m_ui_panels:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguihandlerpanel::DebugUIHandlerPanel> , #[offset(64)]#[rename(name="m_SelectedPanel")]pub m_selected_panel:i32, #[offset(72)]#[rename(name="m_SelectedWidget")]pub m_selected_widget:crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, #[offset(80)]#[rename(name="m_CurrentQueryPath")]pub m_current_query_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercanvas-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercanvas")]
-pub trait IDebugUIHandlerCanvasMethods : IDebugUIHandlerCanvas { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetAllHierarchy()` overload"] fn reset_all_hierarchy (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3538840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Rebuild()` overload"] fn rebuild (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353cfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Traverse(crate::unity_engine::rendering::debugui::DebugUI_IContainer, crate::unity_engine::transform::Transform, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn traverse (self , container : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugui :: DebugUI_IContainer > , parent_transform : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , parent_ui_handler : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , crate :: unity_engine :: rendering :: debugui :: DebugUI_IContainer , crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353d7e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (container) , :: core :: convert :: Into :: into (parent_transform) , :: core :: convert :: Into :: into (parent_ui_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetWidgetFromPath(::unity2::Il2CppString)` overload"] fn get_widget_from_path (self , query_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353dfc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (query_path) , :: core :: option :: Option :: None) } } } # [doc = "`ActivatePanel(i32, bool)` overload"] fn activate_panel (self , index : impl :: core :: convert :: Into < i32 > , try_and_keep_selection : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353dc90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (try_and_keep_selection) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeSelection(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, bool)` overload"] fn change_selection (self , widget : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget > , from_next : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3538ee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (widget) , :: core :: convert :: Into :: into (from_next) , :: core :: option :: Option :: None) } } } # [doc = "`SelectPreviousItem()` overload"] fn select_previous_item (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353e220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SelectNextItem()` overload"] fn select_next_item (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353e140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangeSelectionValue(f32)` overload"] fn change_selection_value (self , multiplier : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353e300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (multiplier) , :: core :: option :: Option :: None) } } } # [doc = "`ActivateSelection()` overload"] fn activate_selection (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353e480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HandleInput()` overload"] fn handle_input (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerCanvas as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerCanvas , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353e520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlercanvas")]pub trait IDebugUIHandlerCanvasMethods:IDebugUIHandlerCanvas{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c590usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c7d0usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver)}
+}
+#[doc="`ResetAllHierarchy()` overload"]fn reset_all_hierarchy(self,)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3538840usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver)}
+}
+#[doc="`Rebuild()` overload"]fn rebuild(self,)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353cfa0usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver)}
+}
+#[doc="`Traverse(crate::unity_engine::rendering::debugui::DebugUI_IContainer, crate::unity_engine::transform::Transform, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn traverse(self,container:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_IContainer> ,parent_transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,parent_ui_handler:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353d7e0usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_IContainer)::core::convert::Into::into(container),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent_transform),(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(parent_ui_handler))}
+}
+#[doc="`GetWidgetFromPath(::unity2::Il2CppString)` overload"]fn get_widget_from_path(self,query_path:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353dfc0usize)as*mut u8,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+(DebugUIHandlerCanvas)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(query_path))}
+}
+#[doc="`ActivatePanel(i32, bool)` overload"]fn activate_panel(self,index:impl::core::convert::Into<i32> ,try_and_keep_selection:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353dc90usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver,(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(try_and_keep_selection))}
+}
+#[doc="`ChangeSelection(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, bool)` overload"]fn change_selection(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget> ,from_next:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3538ee0usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver,(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(widget),(bool)::core::convert::Into::into(from_next))}
+}
+#[doc="`SelectPreviousItem()` overload"]fn select_previous_item(self,)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353e220usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver)}
+}
+#[doc="`SelectNextItem()` overload"]fn select_next_item(self,)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353e140usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver)}
+}
+#[doc="`ChangeSelectionValue(f32)` overload"]fn change_selection_value(self,multiplier:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353e300usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver,(f32)::core::convert::Into::into(multiplier))}
+}
+#[doc="`ActivateSelection()` overload"]fn activate_selection(self,)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353e480usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver)}
+}
+#[doc="`HandleInput()` overload"]fn handle_input(self,)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c990usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerCanvas as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353e520usize)as*mut u8,();
+(DebugUIHandlerCanvas)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercanvas")]
-impl < __T : IDebugUIHandlerCanvas > IDebugUIHandlerCanvasMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlercanvas")]impl<__T:IDebugUIHandlerCanvas>IDebugUIHandlerCanvasMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercanvas")]
-impl DebugUIHandlerCanvas { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_all_hierarchy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn traverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_widget_from_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn activate_panel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn change_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn select_previous_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn select_next_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn change_selection_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn activate_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn handle_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerCanvas as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlercanvas")]impl DebugUIHandlerCanvas{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_all_hierarchy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn traverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_widget_from_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn activate_panel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn change_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn select_previous_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn select_next_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn change_selection_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn activate_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn handle_input_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercanvas")]
-impl DebugUIHandlerCanvas {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerCanvas) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerCanvasMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlercanvas")]impl DebugUIHandlerCanvas{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIHandlerCanvas), ::core::stringify!(new),));
+ <Self as IDebugUIHandlerCanvasMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercanvas")]

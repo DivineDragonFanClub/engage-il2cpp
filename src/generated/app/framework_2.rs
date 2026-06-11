@@ -4,55 +4,184 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/framework_2/Framework_2.md"))] # [:: unity2 :: class (namespace = "App" , name = "Framework")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: framework_2 :: Framework_2 >)] pub struct Framework_2 {
-# [static_field] # [rename (name = "s_PauseCount")] pub s_pause_count : i32 ,
-# [static_field] # [rename (name = "s_TotalMemory")] pub s_total_memory : i64 ,
-# [static_field] # [rename (name = "s_GCCount")] pub s_gc_count : i32 ,
-# [static_field] # [rename (name = "s_GCBind")] pub s_gc_bind : crate :: app :: bindholder :: BindHolder ,
-# [static_field] # [rename (name = "s_DestoryObjects")] pub s_destory_objects : crate :: system :: collections :: generic :: queue_1 :: Queue_1 < crate :: unity_engine :: object_2 :: Object_2 > ,
-# [static_field] # [rename (name = "s_LockDestroy")] pub s_lock_destroy : :: unity2 :: IlInstance ,
-# [static_field] # [rename (name = "s_MainThread")] pub s_main_thread : :: unity2 :: IlInstance ,
-# [static_field] # [rename (name = "LoadingPriority_Default")] pub loading_priority_default : crate :: unity_engine :: threadpriority :: ThreadPriority ,
-# [static_field] # [rename (name = "LoadingPriority_Loading")] pub loading_priority_loading : crate :: unity_engine :: threadpriority :: ThreadPriority ,
-# [static_field] # [rename (name = "AsyncUploadTimeSlice_Default")] pub async_upload_time_slice_default : i32 ,
-# [static_field] # [rename (name = "AsyncUploadTimeSlice_Loading")] pub async_upload_time_slice_loading : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/framework_2/Framework_2.md"))]#[::unity2::class(namespace="App",name="Framework")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::framework_2::Framework_2>)]pub struct Framework_2{#[static_field]#[rename(name="s_PauseCount")]pub s_pause_count:i32, #[static_field]#[rename(name="s_TotalMemory")]pub s_total_memory:i64, #[static_field]#[rename(name="s_GCCount")]pub s_gc_count:i32, #[static_field]#[rename(name="s_GCBind")]pub s_gc_bind:crate::app::bindholder::BindHolder, #[static_field]#[rename(name="s_DestoryObjects")]pub s_destory_objects:crate::system::collections::generic::queue_1::Queue_1<crate::unity_engine::object_2::Object_2> , #[static_field]#[rename(name="s_LockDestroy")]pub s_lock_destroy: ::unity2::IlInstance, #[static_field]#[rename(name="s_MainThread")]pub s_main_thread: ::unity2::IlInstance, #[static_field]#[rename(name="LoadingPriority_Default")]pub loading_priority_default:crate::unity_engine::threadpriority::ThreadPriority, #[static_field]#[rename(name="LoadingPriority_Loading")]pub loading_priority_loading:crate::unity_engine::threadpriority::ThreadPriority, #[static_field]#[rename(name="AsyncUploadTimeSlice_Default")]pub async_upload_time_slice_default:i32, #[static_field]#[rename(name="AsyncUploadTimeSlice_Loading")]pub async_upload_time_slice_loading:i32,}
 
 }
 
 #[cfg(feature = "app-framework_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-framework_2")]
-impl Framework_2 { # [doc = "`IsBoostMode()` overload"] pub fn is_boost_mode () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261afc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`OnBeforeSceneLoadRuntimeMethod()` overload"] pub fn on_before_scene_load_runtime_method () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261afe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`OnAfterSceneLoadRuntimeMethod()` overload"] pub fn on_after_scene_load_runtime_method () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261b110usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`OnRuntimeMethodLoad()` overload"] pub fn on_runtime_method_load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261b1e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UpdateResolution()` overload"] pub fn update_resolution () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261b280usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`NotificationMessageReceived(crate::unity_engine::switch::notification::Notification_Message)` overload"] pub fn notification_message_received (message : impl :: core :: convert :: Into < crate :: unity_engine :: switch :: notification :: Notification_Message >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: switch :: notification :: Notification_Message , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261b290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`ResetSetting()` overload"] pub fn reset_setting () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261b3c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`InitTotalMemory()` overload"] pub fn init_total_memory () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261b0a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetTotalMemory()` overload"] pub fn get_total_memory () -> i64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261b4f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetAllocatableMemory()` overload"] pub fn get_allocatable_memory () -> i64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261b560usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CpuBoostOn()` overload"] pub fn cpu_boost_on () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261bcd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CpuBoostOff()` overload"] pub fn cpu_boost_off () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261bd00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CpuBoostOnForLoading()` overload"] pub fn cpu_boost_on_for_loading () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261bd30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CpuBoostOffForLoading()` overload"] pub fn cpu_boost_off_for_loading () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261bde0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsPausing()` overload"] pub fn is_pausing () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c280usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Shoutdown()` overload"] pub fn shoutdown () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c290usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GCBegin()` overload"] pub fn gc_begin () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c2a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GCEnd()` overload"] pub fn gc_end () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c2b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GCCollect()` overload"] pub fn gc_collect () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c2c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GCCollectLow()` overload"] pub fn gc_collect_low () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GCCommit()` overload"] pub fn gc_commit () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c370usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GCBind()` overload"] pub fn gc_bind () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c420usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GCUnbind()` overload"] pub fn gc_unbind () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CollectCoroutine(f32)` overload"] pub fn collect_coroutine (time : impl :: core :: convert :: Into < f32 >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c5f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`AddDestroy(crate::unity_engine::object_2::Object_2)` overload"] pub fn add_destroy (obj : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDestroy()` overload"] pub fn update_destroy () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c040usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c910usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-framework_2")]impl Framework_2{#[doc="`IsBoostMode()` overload"]pub fn is_boost_mode()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261afc0usize)as*mut u8,bool;
+)}
+}
+#[doc="`OnBeforeSceneLoadRuntimeMethod()` overload"]pub fn on_before_scene_load_runtime_method()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261afe0usize)as*mut u8,();
+)}
+}
+#[doc="`OnAfterSceneLoadRuntimeMethod()` overload"]pub fn on_after_scene_load_runtime_method()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261b110usize)as*mut u8,();
+)}
+}
+#[doc="`OnRuntimeMethodLoad()` overload"]pub fn on_runtime_method_load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261b1e0usize)as*mut u8,();
+)}
+}
+#[doc="`UpdateResolution()` overload"]pub fn update_resolution()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261b280usize)as*mut u8,();
+)}
+}
+#[doc="`NotificationMessageReceived(crate::unity_engine::switch::notification::Notification_Message)` overload"]pub fn notification_message_received(message:impl::core::convert::Into<crate::unity_engine::switch::notification::Notification_Message>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261b290usize)as*mut u8,();
+(crate::unity_engine::switch::notification::Notification_Message)::core::convert::Into::into(message))}
+}
+#[doc="`ResetSetting()` overload"]pub fn reset_setting()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261b3c0usize)as*mut u8,();
+)}
+}
+#[doc="`InitTotalMemory()` overload"]pub fn init_total_memory()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261b0a0usize)as*mut u8,();
+)}
+}
+#[doc="`GetTotalMemory()` overload"]pub fn get_total_memory()->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261b4f0usize)as*mut u8,i64;
+)}
+}
+#[doc="`GetAllocatableMemory()` overload"]pub fn get_allocatable_memory()->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261b560usize)as*mut u8,i64;
+)}
+}
+#[doc="`CpuBoostOn()` overload"]pub fn cpu_boost_on()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261bcd0usize)as*mut u8,();
+)}
+}
+#[doc="`CpuBoostOff()` overload"]pub fn cpu_boost_off()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261bd00usize)as*mut u8,();
+)}
+}
+#[doc="`CpuBoostOnForLoading()` overload"]pub fn cpu_boost_on_for_loading()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261bd30usize)as*mut u8,();
+)}
+}
+#[doc="`CpuBoostOffForLoading()` overload"]pub fn cpu_boost_off_for_loading()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261bde0usize)as*mut u8,();
+)}
+}
+#[doc="`IsPausing()` overload"]pub fn is_pausing()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c280usize)as*mut u8,bool;
+)}
+}
+#[doc="`Shoutdown()` overload"]pub fn shoutdown()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c290usize)as*mut u8,();
+)}
+}
+#[doc="`GCBegin()` overload"]pub fn gc_begin()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c2a0usize)as*mut u8,();
+)}
+}
+#[doc="`GCEnd()` overload"]pub fn gc_end()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c2b0usize)as*mut u8,();
+)}
+}
+#[doc="`GCCollect()` overload"]pub fn gc_collect()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c2c0usize)as*mut u8,();
+)}
+}
+#[doc="`GCCollectLow()` overload"]pub fn gc_collect_low()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c380usize)as*mut u8,();
+)}
+}
+#[doc="`GCCommit()` overload"]pub fn gc_commit()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c370usize)as*mut u8,();
+)}
+}
+#[doc="`GCBind()` overload"]pub fn gc_bind()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c420usize)as*mut u8,();
+)}
+}
+#[doc="`GCUnbind()` overload"]pub fn gc_unbind()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c500usize)as*mut u8,();
+)}
+}
+#[doc="`CollectCoroutine(f32)` overload"]pub fn collect_coroutine(time:impl::core::convert::Into<f32>)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c5f0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(f32)::core::convert::Into::into(time))}
+}
+#[doc="`AddDestroy(crate::unity_engine::object_2::Object_2)` overload"]pub fn add_destroy(obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c660usize)as*mut u8,();
+(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))}
+}
+#[doc="`UpdateDestroy()` overload"]pub fn update_destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c040usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x261c910usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-framework_2")]
-pub trait IFramework_2Methods : IFramework_2 { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < Framework_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Framework_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261b570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < Framework_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Framework_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261bb70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < Framework_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Framework_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261bc50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdatePause()` overload"] fn update_pause (self ,) -> () { unsafe { let __receiver = < Framework_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Framework_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261bcc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < Framework_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Framework_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261be90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < Framework_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Framework_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261bfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Framework_2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Framework_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261c890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-framework_2")]pub trait IFramework_2Methods:IFramework_2{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <Framework_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261b570usize)as*mut u8,();
+(Framework_2)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <Framework_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261bb70usize)as*mut u8,();
+(Framework_2)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <Framework_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261bc50usize)as*mut u8,();
+(Framework_2)__receiver)}
+}
+#[doc="`UpdatePause()` overload"]fn update_pause(self,)->(){unsafe{let __receiver= <Framework_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261bcc0usize)as*mut u8,();
+(Framework_2)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <Framework_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261be90usize)as*mut u8,();
+(Framework_2)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <Framework_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261bfd0usize)as*mut u8,();
+(Framework_2)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Framework_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261c890usize)as*mut u8,();
+(Framework_2)__receiver)}
+}
+}
 
-#[cfg(feature = "app-framework_2")]
-impl < __T : IFramework_2 > IFramework_2Methods for __T { }
+#[cfg(feature="app-framework_2")]impl<__T:IFramework_2>IFramework_2Methods for __T{}
 
-#[cfg(feature = "app-framework_2")]
-impl Framework_2 { pub fn is_boost_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_before_scene_load_runtime_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_after_scene_load_runtime_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_runtime_method_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_resolution_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn notification_message_received_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn reset_setting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_total_memory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_total_memory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_allocatable_memory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn update_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cpu_boost_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cpu_boost_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn cpu_boost_on_for_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn cpu_boost_off_for_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_pausing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn shoutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn gc_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn gc_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn gc_collect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn gc_collect_low_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn gc_commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn gc_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn gc_unbind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn collect_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn add_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn update_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Framework_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } }
+#[cfg(feature="app-framework_2")]impl Framework_2{pub fn is_boost_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_before_scene_load_runtime_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_after_scene_load_runtime_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_runtime_method_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_resolution_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn notification_message_received_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_setting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_total_memory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_total_memory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_allocatable_memory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn update_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cpu_boost_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cpu_boost_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn cpu_boost_on_for_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn cpu_boost_off_for_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_pausing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn shoutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn gc_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn gc_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn gc_collect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn gc_collect_low_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn gc_commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn gc_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn gc_unbind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn collect_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn add_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn update_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+}
 
-#[cfg(feature = "app-framework_2")]
-impl Framework_2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Framework_2) , :: core :: stringify ! (new) ,)) ; < Self as IFramework_2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="app-framework_2")]impl Framework_2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Framework_2), ::core::stringify!(new),));
+ <Self as IFramework_2Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-framework_2")]

@@ -4,77 +4,110 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringresult1window/RefineRingResult1Window.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingResult1Window")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineRingResult1Window {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_CharacterImageRootAnimator")] pub m_character_image_root_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (32)] # [rename (name = "m_RingParamRootAnimator")] pub m_ring_param_root_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_NewAnimator")] pub m_new_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (48)] # [rename (name = "m_CharacterImage")] pub m_character_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (56)] # [rename (name = "m_FrameImage")] pub m_frame_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "m_NewObject")] pub m_new_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_NewText")] pub m_new_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_RingIconImage")] pub m_ring_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_CharacterNameText")] pub m_character_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (96)] # [rename (name = "m_RingParams")] pub m_ring_params : :: unity2 :: Array < crate :: app :: refineringresult1window :: RefineRingResult1Window_RingParam > ,
-# [offset (104)] # [rename (name = "m_SkillRootObject")] pub m_skill_root_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (112)] # [rename (name = "m_SkillIconImage")] pub m_skill_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (120)] # [rename (name = "m_SkillNameText")] pub m_skill_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (128)] # [rename (name = "m_SkillHelpText")] pub m_skill_help_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringresult1window/RefineRingResult1Window.md"))]#[::unity2::class(namespace="App",name="RefineRingResult1Window")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineRingResult1Window{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_CharacterImageRootAnimator")]pub m_character_image_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_RingParamRootAnimator")]pub m_ring_param_root_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_NewAnimator")]pub m_new_animator:crate::unity_engine::animator::Animator, #[offset(48)]#[rename(name="m_CharacterImage")]pub m_character_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_NewObject")]pub m_new_object:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_NewText")]pub m_new_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_RingIconImage")]pub m_ring_icon_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_CharacterNameText")]pub m_character_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_RingParams")]pub m_ring_params: ::unity2::Array<crate::app::refineringresult1window::RefineRingResult1Window_RingParam> , #[offset(104)]#[rename(name="m_SkillRootObject")]pub m_skill_root_object:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(120)]#[rename(name="m_SkillNameText")]pub m_skill_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_SkillHelpText")]pub m_skill_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringresult1window/RefineRingResult1Window_RingParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingResult1Window.RingParam")] # [parent (crate :: system :: object :: Object)] pub struct RefineRingResult1Window_RingParam {
-# [offset (16)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (24)] # [rename (name = "m_ValueText")] pub m_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringresult1window/RefineRingResult1Window_RingParam.md"))]#[::unity2::class(namespace="App",name="RefineRingResult1Window.RingParam")]#[parent(crate::system::object::Object)]pub struct RefineRingResult1Window_RingParam{#[offset(16)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-refineringresult1window-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineringresult1window")]
-impl RefineRingResult1Window { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955aa0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955b60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955c00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: refineringresult1window :: RefineRingResult1Window { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: refineringresult1window :: RefineRingResult1Window = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955ca0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2956c90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineringresult1window")]
-pub trait IRefineRingResult1WindowMethods : IRefineRingResult1Window { # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RefineRingResult1Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult1Window , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingResult1Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult1Window , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < RefineRingResult1Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult1Window , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < RefineRingResult1Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult1Window , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2956030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < RefineRingResult1Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult1Window , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2956180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetData(crate::app::ringdata::RingData, bool)` overload"] fn set_data (self , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData > , is_new : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefineRingResult1Window as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult1Window , crate :: app :: ringdata :: RingData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2956300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring_data) , :: core :: convert :: Into :: into (is_new) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineringresult1window")]
-impl < __T : IRefineRingResult1Window > IRefineRingResult1WindowMethods for __T { }
-
-#[cfg(feature = "app-refineringresult1window")]
-impl RefineRingResult1Window { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
-
-#[cfg(feature = "app-refineringresult1window")]
-impl RefineRingResult1Window {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingResult1Window) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingResult1WindowMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2955aa0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2955b60usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2955c00usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::refineringresult1window::RefineRingResult1Window{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2955ca0usize)as*mut u8,crate::app::refineringresult1window::RefineRingResult1Window;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2956c90usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-refineringresult1window")]
-pub trait IRefineRingResult1Window_RingParamMethods : IRefineRingResult1Window_RingParam { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingResult1Window_RingParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult1Window_RingParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af8880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringresult1window")]pub trait IRefineRingResult1WindowMethods:IRefineRingResult1Window{#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RefineRingResult1Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2955e20usize)as*mut u8,();
+(RefineRingResult1Window)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingResult1Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2955ea0usize)as*mut u8,();
+(RefineRingResult1Window)__receiver)}
+}
+#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <RefineRingResult1Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2955eb0usize)as*mut u8,bool;
+(RefineRingResult1Window)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RefineRingResult1Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2956030usize)as*mut u8,();
+(RefineRingResult1Window)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <RefineRingResult1Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2956180usize)as*mut u8,bool;
+(RefineRingResult1Window)__receiver)}
+}
+#[doc="`SetData(crate::app::ringdata::RingData, bool)` overload"]fn set_data(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData> ,is_new:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineRingResult1Window as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2956300usize)as*mut u8,();
+(RefineRingResult1Window)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data),(bool)::core::convert::Into::into(is_new))}
+}
+}
 
-#[cfg(feature = "app-refineringresult1window")]
-impl < __T : IRefineRingResult1Window_RingParam > IRefineRingResult1Window_RingParamMethods for __T { }
+#[cfg(feature="app-refineringresult1window")]impl<__T:IRefineRingResult1Window>IRefineRingResult1WindowMethods for __T{}
 
-#[cfg(feature = "app-refineringresult1window")]
-impl RefineRingResult1Window_RingParam { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult1Window_RingParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-refineringresult1window")]
-impl RefineRingResult1Window_RingParam {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingResult1Window_RingParam) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingResult1Window_RingParamMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingResult1Window), ::core::stringify!(new),));
+ <Self as IRefineRingResult1WindowMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-refineringresult1window")]pub trait IRefineRingResult1Window_RingParamMethods:IRefineRingResult1Window_RingParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingResult1Window_RingParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8880usize)as*mut u8,();
+(RefineRingResult1Window_RingParam)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineringresult1window")]impl<__T:IRefineRingResult1Window_RingParam>IRefineRingResult1Window_RingParamMethods for __T{}
+
+#[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window_RingParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window_RingParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingResult1Window_RingParam), ::core::stringify!(new),));
+ <Self as IRefineRingResult1Window_RingParamMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineringresult1window")]

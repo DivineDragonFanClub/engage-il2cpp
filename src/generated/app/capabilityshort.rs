@@ -4,37 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: capabilitybase_1 :: { CapabilityBase_1 , ICapabilityBase_1 }
- ;
- use crate :: app :: capabilitydefinition :: { CapabilityDefinition , ICapabilityDefinition }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::capabilitybase_1::{CapabilityBase_1,ICapabilityBase_1}
+;
+use crate::app::capabilitydefinition::{CapabilityDefinition,ICapabilityDefinition}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilityshort/CapabilityShort.md"))] # [:: unity2 :: class (namespace = "App" , name = "CapabilityShort")] # [parent (crate :: app :: capabilitybase_1 :: CapabilityBase_1 < i16 >)] pub struct CapabilityShort {
-# [static_field] # [rename (name = "Min")] pub min : i32 ,
-# [static_field] # [rename (name = "Max")] pub max : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/capabilityshort/CapabilityShort.md"))]#[::unity2::class(namespace="App",name="CapabilityShort")]#[parent(crate::app::capabilitybase_1::CapabilityBase_1<i16>)]pub struct CapabilityShort{#[static_field]#[rename(name="Min")]pub min:i32, #[static_field]#[rename(name="Max")]pub max:i32,}
 
 }
 
 #[cfg(feature = "app-capabilityshort-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-capabilityshort")]
-pub trait ICapabilityShortMethods : ICapabilityShort { # [doc = "`.ctor(i16)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityShort , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25be160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Add(i32, i16)` overload"] fn add (self , i : impl :: core :: convert :: Into < i32 > , v : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityShort , i32 , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25be1c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`IsZero()` overload"] fn is_zero (self ,) -> bool { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityShort , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25be260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteToStream(crate::app::stream_2::Stream_2, i16)` overload"] fn write_to_stream (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , v : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityShort , crate :: app :: stream_2 :: Stream_2 , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25be320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`ReadFromStream(crate::app::stream_2::Stream_2)` overload"] fn read_from_stream (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> i16 { unsafe { let __receiver = < CapabilityShort as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CapabilityShort , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> i16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25be330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-capabilityshort")]pub trait ICapabilityShortMethods:ICapabilityShort{#[doc="`.ctor(i16)` overload"]fn ctor(self,value:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <CapabilityShort as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25be160usize)as*mut u8,();
+(CapabilityShort)__receiver,(i16)::core::convert::Into::into(value))}
+}
+#[doc="`Add(i32, i16)` overload"]fn add(self,i:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <CapabilityShort as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25be1c0usize)as*mut u8,();
+(CapabilityShort)__receiver,(i32)::core::convert::Into::into(i),(i16)::core::convert::Into::into(v))}
+}
+#[doc="`IsZero()` overload"]fn is_zero(self,)->bool{unsafe{let __receiver= <CapabilityShort as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25be260usize)as*mut u8,bool;
+(CapabilityShort)__receiver)}
+}
+#[doc="`WriteToStream(crate::app::stream_2::Stream_2, i16)` overload"]fn write_to_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,v:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <CapabilityShort as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25be320usize)as*mut u8,();
+(CapabilityShort)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i16)::core::convert::Into::into(v))}
+}
+#[doc="`ReadFromStream(crate::app::stream_2::Stream_2)` overload"]fn read_from_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->i16{unsafe{let __receiver= <CapabilityShort as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25be330usize)as*mut u8,i16;
+(CapabilityShort)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
 
-#[cfg(feature = "app-capabilityshort")]
-impl < __T : ICapabilityShort > ICapabilityShortMethods for __T { }
+#[cfg(feature="app-capabilityshort")]impl<__T:ICapabilityShort>ICapabilityShortMethods for __T{}
 
-#[cfg(feature = "app-capabilityshort")]
-impl CapabilityShort { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityShort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityShort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityShort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn write_to_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityShort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn read_from_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CapabilityShort as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-capabilityshort")]impl CapabilityShort{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn write_to_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_from_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-capabilityshort")]
-impl CapabilityShort {
-# [doc = "`.ctor(i16)` — overload selector"] pub fn new (value : i16) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CapabilityShort) , :: core :: stringify ! (new) ,)) ; < Self as ICapabilityShortMethods > :: ctor (this , value) ; this }
+#[cfg(feature="app-capabilityshort")]impl CapabilityShort{#[doc="`.ctor(i16)` — overload selector"]pub fn new(value:i16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CapabilityShort), ::core::stringify!(new),));
+ <Self as ICapabilityShortMethods> ::ctor(this,value);
+this}
 }
 
 #[cfg(feature = "app-capabilityshort")]

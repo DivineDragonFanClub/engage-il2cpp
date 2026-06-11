@@ -4,138 +4,215 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "FoodstuffData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: foodstuffdata :: FoodstuffData_Flags >)] pub struct FoodstuffData_FlagField {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/foodstuffdata/FoodstuffData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FoodstuffData_Flags  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FoodstuffData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for FoodstuffData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="FoodstuffData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for FoodstuffData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl FoodstuffData_Flags{pub fn is_category()->Self{Self{value:1}
+}
+pub fn add_to_anything()->Self{Self{value:2}
+}
+pub fn not_affect()->Self{Self{value:4}
+}
+pub fn raise_reliance()->Self{Self{value:8}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for FoodstuffData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FoodstuffData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData_FlagField.md"))]#[::unity2::class(namespace="App",name="FoodstuffData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::foodstuffdata::FoodstuffData_Flags>)]pub struct FoodstuffData_FlagField{}
 
 
-impl  ::unity2::IlType for FoodstuffData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  FoodstuffData_Flags  {
-    pub fn is_category() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn add_to_anything() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn not_affect() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn raise_reliance() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FoodstuffData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: foodstuffdata :: FoodstuffData >)] pub struct FoodstuffData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData.md"))]#[::unity2::class(namespace="App",name="FoodstuffData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::foodstuffdata::FoodstuffData>)]pub struct FoodstuffData{}
 
 }
 
 #[cfg(feature = "app-foodstuffdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-foodstuffdata")]
-pub trait IFoodstuffData_FlagFieldMethods : IFoodstuffData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < FoodstuffData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e62df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData_Flags >) -> () { unsafe { let __receiver = < FoodstuffData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData_FlagField , crate :: app :: foodstuffdata :: FoodstuffData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e62e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`ToInt(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData_Flags >) -> i32 { unsafe { let __receiver = < FoodstuffData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData_FlagField , crate :: app :: foodstuffdata :: FoodstuffData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e62eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-foodstuffdata")]
-impl < __T : IFoodstuffData_FlagField > IFoodstuffData_FlagFieldMethods for __T { }
-
-#[cfg(feature = "app-foodstuffdata")]
-impl FoodstuffData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-foodstuffdata")]
-impl FoodstuffData_FlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FoodstuffData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IFoodstuffData_FlagFieldMethods > :: ctor (this , f) ; this }
-
-# [doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: foodstuffdata :: FoodstuffData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FoodstuffData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IFoodstuffData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
+#[cfg(feature="app-foodstuffdata")]pub trait IFoodstuffData_FlagFieldMethods:IFoodstuffData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62df0usize)as*mut u8,();
+(FoodstuffData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData_Flags>)->(){unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62e50usize)as*mut u8,();
+(FoodstuffData_FlagField)__receiver,(crate::app::foodstuffdata::FoodstuffData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData_Flags>)->i32{unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62eb0usize)as*mut u8,i32;
+(FoodstuffData_FlagField)__receiver,(crate::app::foodstuffdata::FoodstuffData_Flags)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-foodstuffdata")]
-impl FoodstuffData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610be0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCategoryFoodstuffs(::unity2::Il2CppString)` overload"] pub fn get_category_foodstuffs (iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2611340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-foodstuffdata")]impl<__T:IFoodstuffData_FlagField>IFoodstuffData_FlagFieldMethods for __T{}
 
-#[cfg(feature = "app-foodstuffdata")]
-pub trait IFoodstuffDataMethods : IFoodstuffData { # [doc = "`get_Iid()` overload"] fn get_iid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iid(::unity2::Il2CppString)` overload"] fn set_iid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: foodstuffdata :: FoodstuffData_FlagField { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> crate :: app :: foodstuffdata :: FoodstuffData_FlagField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::foodstuffdata::FoodstuffData_FlagField)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData_FlagField >) -> () { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , crate :: app :: foodstuffdata :: FoodstuffData_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Category()` overload"] fn get_category (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Category(::unity2::Il2CppString)` overload"] fn set_category (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCategory()` overload"] fn is_category (self ,) -> bool { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanAddToAnything()` overload"] fn can_add_to_anything (self ,) -> bool { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNotAffect()` overload"] fn is_not_affect (self ,) -> bool { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRaiseReliance()` overload"] fn is_raise_reliance (self ,) -> bool { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRare()` overload"] fn is_rare (self ,) -> bool { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetIconName()` overload"] fn get_icon_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2610f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddInventory()` overload"] fn add_inventory (self ,) -> () { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2611030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SubInventory()` overload"] fn sub_inventory (self ,) -> () { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26110c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCountInventory()` overload"] fn get_count_inventory (self ,) -> i32 { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2611170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FoodstuffData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26115a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-foodstuffdata")]impl FoodstuffData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-foodstuffdata")]
-impl < __T : IFoodstuffData > IFoodstuffDataMethods for __T { }
+#[cfg(feature="app-foodstuffdata")]impl FoodstuffData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FoodstuffData_FlagField), ::core::stringify!(new),));
+ <Self as IFoodstuffData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` — overload selector"]pub fn new_2(f:crate::app::foodstuffdata::FoodstuffData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FoodstuffData_FlagField), ::core::stringify!(new_2),));
+ <Self as IFoodstuffData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
 
-#[cfg(feature = "app-foodstuffdata")]
-impl FoodstuffData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn can_add_to_anything_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_not_affect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_raise_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_rare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_icon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn add_inventory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn sub_inventory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_count_inventory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_category_foodstuffs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-foodstuffdata")]impl FoodstuffData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2610be0usize)as*mut u8,();
+)}
+}
+#[doc="`GetCategoryFoodstuffs(::unity2::Il2CppString)` overload"]pub fn get_category_foodstuffs(iid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2611340usize)as*mut u8, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> ;
+(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+}
 
-#[cfg(feature = "app-foodstuffdata")]
-impl FoodstuffData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FoodstuffData) , :: core :: stringify ! (new) ,)) ; < Self as IFoodstuffDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-foodstuffdata")]pub trait IFoodstuffDataMethods:IFoodstuffData{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610c90usize)as*mut u8, ::unity2::Il2CppString;
+(FoodstuffData)__receiver)}
+}
+#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610ca0usize)as*mut u8,();
+(FoodstuffData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610cb0usize)as*mut u8, ::unity2::Il2CppString;
+(FoodstuffData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610cc0usize)as*mut u8,();
+(FoodstuffData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::foodstuffdata::FoodstuffData_FlagField{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610cd0usize)as*mut u8,crate::app::foodstuffdata::FoodstuffData_FlagField;
+(FoodstuffData)__receiver)}
+}
+#[doc="`set_Flag(crate::app::foodstuffdata::FoodstuffData_FlagField)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData_FlagField>)->(){unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610ce0usize)as*mut u8,();
+(FoodstuffData)__receiver,(crate::app::foodstuffdata::FoodstuffData_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`get_Category()` overload"]fn get_category(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610cf0usize)as*mut u8, ::unity2::Il2CppString;
+(FoodstuffData)__receiver)}
+}
+#[doc="`set_Category(::unity2::Il2CppString)` overload"]fn set_category(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610d00usize)as*mut u8,();
+(FoodstuffData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610d10usize)as*mut u8, ::unity2::Il2CppString;
+(FoodstuffData)__receiver)}
+}
+#[doc="`IsCategory()` overload"]fn is_category(self,)->bool{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610d90usize)as*mut u8,bool;
+(FoodstuffData)__receiver)}
+}
+#[doc="`CanAddToAnything()` overload"]fn can_add_to_anything(self,)->bool{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610df0usize)as*mut u8,bool;
+(FoodstuffData)__receiver)}
+}
+#[doc="`IsNotAffect()` overload"]fn is_not_affect(self,)->bool{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610e50usize)as*mut u8,bool;
+(FoodstuffData)__receiver)}
+}
+#[doc="`IsRaiseReliance()` overload"]fn is_raise_reliance(self,)->bool{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610eb0usize)as*mut u8,bool;
+(FoodstuffData)__receiver)}
+}
+#[doc="`IsRare()` overload"]fn is_rare(self,)->bool{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610f10usize)as*mut u8,bool;
+(FoodstuffData)__receiver)}
+}
+#[doc="`GetIconName()` overload"]fn get_icon_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2610f80usize)as*mut u8, ::unity2::Il2CppString;
+(FoodstuffData)__receiver)}
+}
+#[doc="`AddInventory()` overload"]fn add_inventory(self,)->(){unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2611030usize)as*mut u8,();
+(FoodstuffData)__receiver)}
+}
+#[doc="`SubInventory()` overload"]fn sub_inventory(self,)->(){unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26110c0usize)as*mut u8,();
+(FoodstuffData)__receiver)}
+}
+#[doc="`GetCountInventory()` overload"]fn get_count_inventory(self,)->i32{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2611170usize)as*mut u8,i32;
+(FoodstuffData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26115a0usize)as*mut u8,();
+(FoodstuffData)__receiver)}
+}
+}
+
+#[cfg(feature="app-foodstuffdata")]impl<__T:IFoodstuffData>IFoodstuffDataMethods for __T{}
+
+#[cfg(feature="app-foodstuffdata")]impl FoodstuffData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn can_add_to_anything_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_not_affect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_raise_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_rare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_icon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn add_inventory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn sub_inventory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_count_inventory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_category_foodstuffs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="app-foodstuffdata")]impl FoodstuffData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FoodstuffData), ::core::stringify!(new),));
+ <Self as IFoodstuffDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-foodstuffdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::FoodstuffData_Flags;
     pub use super::FoodstuffData_FlagField;
     pub use super::IFoodstuffData_FlagField;
     pub use super::IFoodstuffData_FlagFieldMethods;
-    pub use super::FoodstuffData_Flags;
     pub use super::FoodstuffData;
     pub use super::IFoodstuffData;
     pub use super::IFoodstuffDataMethods;

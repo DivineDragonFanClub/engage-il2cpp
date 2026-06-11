@@ -4,85 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_CursorTop.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotColorChangeMenu.CursorTop")] # [parent (crate :: system :: object :: Object)] pub struct MascotColorChangeMenu_CursorTop {
-# [offset (16)] # [rename (name = "XCount")] pub x_count : i32 ,
-# [offset (20)] # [rename (name = "YCount")] pub y_count : i32 ,
-# [offset (24)] # [rename (name = "MoveFrame")] pub move_frame : f32 ,
-# [offset (32)] # [rename (name = "m_cursorTop")] pub m_cursor_top : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (56)] # [rename (name = "m_moveTick")] pub m_move_tick : f32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotcolorchangemenu/MascotColorChangeMenu.md"))]#[::unity2::class(namespace="App",name="MascotColorChangeMenu")]#[parent(crate::app::procinst::ProcInst)]pub struct MascotColorChangeMenu{#[offset(128)]#[rename(name="m_result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(136)]#[rename(name="m_RootAnim")]pub m_root_anim:crate::unity_engine::animator::Animator, #[offset(144)]#[rename(name="m_cursor")]pub m_cursor:crate::app::mascotcolorchangemenu::MascotColorChangeMenu_CursorTop,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotcolorchangemenu/MascotColorChangeMenu_CursorTop.md"))]#[::unity2::class(namespace="App",name="MascotColorChangeMenu.CursorTop")]#[parent(crate::system::object::Object)]pub struct MascotColorChangeMenu_CursorTop{#[offset(16)]#[rename(name="XCount")]pub x_count:i32, #[offset(20)]#[rename(name="YCount")]pub y_count:i32, #[offset(24)]#[rename(name="MoveFrame")]pub move_frame:f32, #[offset(32)]#[rename(name="m_cursorTop")]pub m_cursor_top:crate::unity_engine::recttransform::RectTransform, #[offset(56)]#[rename(name="m_moveTick")]pub m_move_tick:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotcolorchangemenu/MascotColorChangeMenu_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MascotColorChangeMenu_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MascotColorChangeMenu_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MascotColorChangeMenu.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MascotColorChangeMenu_Label  {
-    pub value: i32,
+impl::unity2::IlType for MascotColorChangeMenu_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for MascotColorChangeMenu_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MascotColorChangeMenu.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl MascotColorChangeMenu_Label{pub fn init()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for MascotColorChangeMenu_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn main()->Self{Self{value:1}
 }
-
-
-impl  MascotColorChangeMenu_Label  {
-    pub fn init() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn main() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn exit()->Self{Self{value:2}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotColorChangeMenu")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MascotColorChangeMenu {
-# [offset (128)] # [rename (name = "m_result")] pub m_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (136)] # [rename (name = "m_RootAnim")] pub m_root_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (144)] # [rename (name = "m_cursor")] pub m_cursor : crate :: app :: mascotcolorchangemenu :: MascotColorChangeMenu_CursorTop ,
 }
 
 }
@@ -90,47 +43,208 @@ impl  MascotColorChangeMenu_Label  {
 #[cfg(feature = "app-mascotcolorchangemenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mascotcolorchangemenu")]
-pub trait IMascotColorChangeMenu_CursorTopMethods : IMascotColorChangeMenu_CursorTop { # [doc = "`get_SelectIndexX()` overload"] fn get_select_index_x (self ,) -> i32 { unsafe { let __receiver = < MascotColorChangeMenu_CursorTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu_CursorTop , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e53350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SelectIndexY()` overload"] fn get_select_index_y (self ,) -> i32 { unsafe { let __receiver = < MascotColorChangeMenu_CursorTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu_CursorTop , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e53360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"] fn ctor (self , transform : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform >) -> () { unsafe { let __receiver = < MascotColorChangeMenu_CursorTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu_CursorTop , crate :: unity_engine :: recttransform :: RectTransform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e53370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (transform) , :: core :: option :: Option :: None) } } } # [doc = "`SetIndexInstant(i32)` overload"] fn set_index_instant (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MascotColorChangeMenu_CursorTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu_CursorTop , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e53440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`MoveCursor(i32, i32, bool)` overload"] fn move_cursor (self , move_x : impl :: core :: convert :: Into < i32 > , move_y : impl :: core :: convert :: Into < i32 > , is_trigger : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < MascotColorChangeMenu_CursorTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu_CursorTop , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e535a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (move_x) , :: core :: convert :: Into :: into (move_y) , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu_CursorTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu_CursorTop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e53640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPosition(f32, f32)` overload"] fn set_position (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MascotColorChangeMenu_CursorTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu_CursorTop , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e53550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`GetPositionX(i32)` overload"] fn get_position_x (self , select_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < MascotColorChangeMenu_CursorTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu_CursorTop , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e534f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (select_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetPositionY(i32)` overload"] fn get_position_y (self , select_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < MascotColorChangeMenu_CursorTop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu_CursorTop , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e53520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (select_index) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mascotcolorchangemenu")]
-impl < __T : IMascotColorChangeMenu_CursorTop > IMascotColorChangeMenu_CursorTopMethods for __T { }
-
-#[cfg(feature = "app-mascotcolorchangemenu")]
-impl MascotColorChangeMenu_CursorTop { pub fn get_select_index_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu_CursorTop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_select_index_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu_CursorTop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu_CursorTop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_index_instant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu_CursorTop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn move_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu_CursorTop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu_CursorTop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu_CursorTop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_position_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu_CursorTop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_position_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu_CursorTop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "app-mascotcolorchangemenu")]
-impl MascotColorChangeMenu_CursorTop {
-# [doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` — overload selector"] pub fn new (transform : crate :: unity_engine :: recttransform :: RectTransform) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotColorChangeMenu_CursorTop) , :: core :: stringify ! (new) ,)) ; < Self as IMascotColorChangeMenu_CursorTopMethods > :: ctor (this , transform) ; this }
+#[cfg(feature="app-mascotcolorchangemenu")]impl MascotColorChangeMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2034a00usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-mascotcolorchangemenu")]
-impl MascotColorChangeMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotcolorchangemenu")]pub trait IMascotColorChangeMenuMethods:IMascotColorChangeMenu{#[doc="`get_Content()` overload"]fn get_content(self,)->crate::app::mascotcolorchangecontent::MascotColorChangeContent{unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2032030usize)as*mut u8,crate::app::mascotcolorchangecontent::MascotColorChangeContent;
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`set_Content(crate::app::mascotcolorchangecontent::MascotColorChangeContent)` overload"]fn set_content(self,value:impl::core::convert::Into<crate::app::mascotcolorchangecontent::MascotColorChangeContent>)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2032040usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver,(crate::app::mascotcolorchangecontent::MascotColorChangeContent)::core::convert::Into::into(value))}
+}
+#[doc="`get_ColorPalette()` overload"]fn get_color_palette(self,)->crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent>{unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2032050usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent> ;
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`set_ColorPalette(crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent>)` overload"]fn set_color_palette(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent> >)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2032060usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent>)::core::convert::Into::into(value))}
+}
+#[doc="`SetSelectColor()` overload"]fn set_select_color(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2032070usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`SetRadioCheckColorPalette()` overload"]fn set_radio_check_color_palette(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20321e0usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2032400usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`Main()` overload"]fn main(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2032a80usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034200usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20342b0usize)as*mut u8,bool;
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034360usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2033dc0usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2033e10usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2033e60usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2033eb0usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2033f00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2033f80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`PlayCursorSE()` overload"]fn play_cursor_se(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034180usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`PlayDecideSE()` overload"]fn play_decide_se(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034000usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`PlayDecideBigSE()` overload"]fn play_decide_big_se(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034080usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`PlayCancelSE()` overload"]fn play_cancel_se(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034100usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034530usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(MascotColorChangeMenu)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2034af0usize)as*mut u8,();
+(MascotColorChangeMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mascotcolorchangemenu")]
-pub trait IMascotColorChangeMenuMethods : IMascotColorChangeMenu { # [doc = "`get_Content()` overload"] fn get_content (self ,) -> crate :: app :: mascotcolorchangecontent :: MascotColorChangeContent { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: mascotcolorchangecontent :: MascotColorChangeContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2032030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Content(crate::app::mascotcolorchangecontent::MascotColorChangeContent)` overload"] fn set_content (self , value : impl :: core :: convert :: Into < crate :: app :: mascotcolorchangecontent :: MascotColorChangeContent >) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , crate :: app :: mascotcolorchangecontent :: MascotColorChangeContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2032040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ColorPalette()` overload"] fn get_color_palette (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mascotcolorchangeitemcontent :: MascotColorChangeItemContent > { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mascotcolorchangeitemcontent :: MascotColorChangeItemContent > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2032050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ColorPalette(crate::system::collections::generic::list_1::List_1<crate::app::mascotcolorchangeitemcontent::MascotColorChangeItemContent>)` overload"] fn set_color_palette (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mascotcolorchangeitemcontent :: MascotColorChangeItemContent > >) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mascotcolorchangeitemcontent :: MascotColorChangeItemContent > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2032060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetSelectColor()` overload"] fn set_select_color (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2032070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetRadioCheckColorPalette()` overload"] fn set_radio_check_color_palette (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20321e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2032400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Main()` overload"] fn main (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2032a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20342b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyUp(bool)` overload"] fn key_up (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2033dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyDown(bool)` overload"] fn key_down (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2033e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyLeft(bool)` overload"] fn key_left (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2033e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyRight(bool)` overload"] fn key_right (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2033eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2033f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2033f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayCursorSE()` overload"] fn play_cursor_se (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayDecideSE()` overload"] fn play_decide_se (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayDecideBigSE()` overload"] fn play_decide_big_se (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayCancelSE()` overload"] fn play_cancel_se (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotColorChangeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotColorChangeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2034af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotcolorchangemenu")]impl<__T:IMascotColorChangeMenu>IMascotColorChangeMenuMethods for __T{}
 
-#[cfg(feature = "app-mascotcolorchangemenu")]
-impl < __T : IMascotColorChangeMenu > IMascotColorChangeMenuMethods for __T { }
+#[cfg(feature="app-mascotcolorchangemenu")]impl MascotColorChangeMenu{pub fn get_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_color_palette_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_color_palette_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_select_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_radio_check_color_palette_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn key_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn key_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn play_cursor_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn play_decide_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn play_decide_big_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn play_cancel_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "app-mascotcolorchangemenu")]
-impl MascotColorChangeMenu { pub fn get_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_color_palette_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_color_palette_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_select_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_radio_check_color_palette_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn key_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn key_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn key_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn key_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn play_cursor_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn play_decide_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn play_decide_big_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn play_cancel_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotColorChangeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="app-mascotcolorchangemenu")]impl MascotColorChangeMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotColorChangeMenu), ::core::stringify!(new),));
+ <Self as IMascotColorChangeMenuMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mascotcolorchangemenu")]
-impl MascotColorChangeMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotColorChangeMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMascotColorChangeMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mascotcolorchangemenu")]pub trait IMascotColorChangeMenu_CursorTopMethods:IMascotColorChangeMenu_CursorTop{#[doc="`get_SelectIndexX()` overload"]fn get_select_index_x(self,)->i32{unsafe{let __receiver= <MascotColorChangeMenu_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e53350usize)as*mut u8,i32;
+(MascotColorChangeMenu_CursorTop)__receiver)}
+}
+#[doc="`get_SelectIndexY()` overload"]fn get_select_index_y(self,)->i32{unsafe{let __receiver= <MascotColorChangeMenu_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e53360usize)as*mut u8,i32;
+(MascotColorChangeMenu_CursorTop)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"]fn ctor(self,transform:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <MascotColorChangeMenu_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e53370usize)as*mut u8,();
+(MascotColorChangeMenu_CursorTop)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(transform))}
+}
+#[doc="`SetIndexInstant(i32)` overload"]fn set_index_instant(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MascotColorChangeMenu_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e53440usize)as*mut u8,();
+(MascotColorChangeMenu_CursorTop)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`MoveCursor(i32, i32, bool)` overload"]fn move_cursor(self,move_x:impl::core::convert::Into<i32> ,move_y:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MascotColorChangeMenu_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e535a0usize)as*mut u8,bool;
+(MascotColorChangeMenu_CursorTop)__receiver,(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_y),(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MascotColorChangeMenu_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e53640usize)as*mut u8,();
+(MascotColorChangeMenu_CursorTop)__receiver)}
+}
+#[doc="`SetPosition(f32, f32)` overload"]fn set_position(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MascotColorChangeMenu_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e53550usize)as*mut u8,();
+(MascotColorChangeMenu_CursorTop)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`GetPositionX(i32)` overload"]fn get_position_x(self,select_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MascotColorChangeMenu_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e534f0usize)as*mut u8,f32;
+(MascotColorChangeMenu_CursorTop)__receiver,(i32)::core::convert::Into::into(select_index))}
+}
+#[doc="`GetPositionY(i32)` overload"]fn get_position_y(self,select_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MascotColorChangeMenu_CursorTop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e53520usize)as*mut u8,f32;
+(MascotColorChangeMenu_CursorTop)__receiver,(i32)::core::convert::Into::into(select_index))}
+}
+}
+
+#[cfg(feature="app-mascotcolorchangemenu")]impl<__T:IMascotColorChangeMenu_CursorTop>IMascotColorChangeMenu_CursorTopMethods for __T{}
+
+#[cfg(feature="app-mascotcolorchangemenu")]impl MascotColorChangeMenu_CursorTop{pub fn get_select_index_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_select_index_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_index_instant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn move_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_position_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_position_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-mascotcolorchangemenu")]impl MascotColorChangeMenu_CursorTop{#[doc="`.ctor(crate::unity_engine::recttransform::RectTransform)` — overload selector"]pub fn new(transform:crate::unity_engine::recttransform::RectTransform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotColorChangeMenu_CursorTop), ::core::stringify!(new),));
+ <Self as IMascotColorChangeMenu_CursorTopMethods> ::ctor(this,transform);
+this}
 }
 
 #[cfg(feature = "app-mascotcolorchangemenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MascotColorChangeMenu;
+    pub use super::IMascotColorChangeMenu;
+    pub use super::IMascotColorChangeMenuMethods;
     pub use super::MascotColorChangeMenu_CursorTop;
     pub use super::IMascotColorChangeMenu_CursorTop;
     pub use super::IMascotColorChangeMenu_CursorTopMethods;
     pub use super::MascotColorChangeMenu_Label;
-    pub use super::MascotColorChangeMenu;
-    pub use super::IMascotColorChangeMenu;
-    pub use super::IMascotColorChangeMenuMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

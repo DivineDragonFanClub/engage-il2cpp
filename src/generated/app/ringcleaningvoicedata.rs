@@ -4,255 +4,194 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningVoiceData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData >)] pub struct RingCleaningVoiceData {
-# [static_field] # [rename (name = "EventNames")] pub event_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningvoicedata/RingCleaningVoiceData_VoiceLabel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningVoiceData_VoiceLabel{pub value:i32,}
+impl::unity2::ClassIdentity for RingCleaningVoiceData_VoiceLabel{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingCleaningVoiceData.VoiceLabel";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingCleaningVoiceData_VoiceLabel{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingCleaningVoiceData_VoiceLabel{pub fn touch01()->Self{Self{value:0}
+}
+pub fn touch02()->Self{Self{value:1}
+}
+pub fn touch03()->Self{Self{value:2}
+}
+pub fn touch04()->Self{Self{value:3}
+}
+pub fn touch05()->Self{Self{value:4}
+}
+pub fn touch06()->Self{Self{value:5}
+}
+pub fn touch07()->Self{Self{value:6}
+}
+pub fn touch08()->Self{Self{value:7}
+}
+pub fn touch09()->Self{Self{value:8}
+}
+pub fn touch10()->Self{Self{value:9}
+}
+pub fn dirt01()->Self{Self{value:10}
+}
+pub fn dirt02()->Self{Self{value:11}
+}
+pub fn dirt03()->Self{Self{value:12}
+}
+pub fn thank01()->Self{Self{value:13}
+}
+pub fn thank02()->Self{Self{value:14}
+}
+pub fn thank03()->Self{Self{value:15}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_Situation.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RingCleaningVoiceData_Situation  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningvoicedata/RingCleaningVoiceData_Situation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningVoiceData_Situation{pub value:i32,}
+impl::unity2::ClassIdentity for RingCleaningVoiceData_Situation{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingCleaningVoiceData.Situation";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingCleaningVoiceData_Situation{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingCleaningVoiceData_Situation{pub fn start()->Self{Self{value:0}
+}
+pub fn clean_strongly_not_dirty()->Self{Self{value:1}
+}
+pub fn clean_dirty()->Self{Self{value:2}
+}
+pub fn clean_strongly_diry()->Self{Self{value:3}
+}
+pub fn finish()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for RingCleaningVoiceData_Situation  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingCleaningVoiceData.Situation";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RingCleaningVoiceData_Situation  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RingCleaningVoiceData_Situation  {
-    pub fn start() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn clean_strongly_not_dirty() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn clean_dirty() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn clean_strongly_diry() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn finish() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_VoiceLabel.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RingCleaningVoiceData_VoiceLabel  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RingCleaningVoiceData_VoiceLabel  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingCleaningVoiceData.VoiceLabel";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RingCleaningVoiceData_VoiceLabel  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RingCleaningVoiceData_VoiceLabel  {
-    pub fn touch01() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn touch02() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn touch03() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn touch04() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn touch05() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn touch06() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn touch07() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn touch08() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn touch09() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn touch10() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn dirt01() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn dirt02() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn dirt03() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn thank01() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn thank02() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn thank03() -> Self {
-        Self { value: 15 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))]#[::unity2::class(namespace="App",name="RingCleaningVoiceData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::ringcleaningvoicedata::RingCleaningVoiceData>)]pub struct RingCleaningVoiceData{#[static_field]#[rename(name="EventNames")]pub event_names: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-ringcleaningvoicedata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringcleaningvoicedata")]
-impl RingCleaningVoiceData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422810usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetRandomVoiceEvent(crate::app::godunit::GodUnit, crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation, bool)` overload"] pub fn get_random_voice_event (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , situation : impl :: core :: convert :: Into < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation > , is_finish : impl :: core :: convert :: Into < bool >) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422c80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (situation) , :: core :: convert :: Into :: into (is_finish) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24235c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningvoicedata")]impl RingCleaningVoiceData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422810usize)as*mut u8,();
+)}
+}
+#[doc="`GetRandomVoiceEvent(crate::app::godunit::GodUnit, crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation, bool)` overload"]pub fn get_random_voice_event(god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,situation:impl::core::convert::Into<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation> ,is_finish:impl::core::convert::Into<bool>)->crate::app::ringcleaningvoicedata::RingCleaningVoiceData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422c80usize)as*mut u8,crate::app::ringcleaningvoicedata::RingCleaningVoiceData;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)::core::convert::Into::into(situation),(bool)::core::convert::Into::into(is_finish))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24235c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningvoicedata")]
-pub trait IRingCleaningVoiceDataMethods : IRingCleaningVoiceData { # [doc = "`get_Label()` overload"] fn get_label (self ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Label(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel)` overload"] fn set_label (self , value : impl :: core :: convert :: Into < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_VoiceLabel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PlaySituation()` overload"] fn get_play_situation (self ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlaySituation(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)` overload"] fn set_play_situation (self , value : impl :: core :: convert :: Into < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData_Situation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24233a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPlayCompleted()` overload"] fn get_is_play_completed (self ,) -> bool { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24233b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsPlayCompleted(bool)` overload"] fn set_is_play_completed (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24233c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_UnitFaceAnim()` overload"] fn get_unit_face_anim (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24233d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_UnitFaceAnim(::unity2::Il2CppString)` overload"] fn set_unit_face_anim (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24233e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GodFaceAnim()` overload"] fn get_god_face_anim (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24233f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GodFaceAnim(::unity2::Il2CppString)` overload"] fn set_god_face_anim (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEventName()` overload"] fn get_event_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24234a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningVoiceData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningVoiceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningvoicedata")]pub trait IRingCleaningVoiceDataMethods:IRingCleaningVoiceData{#[doc="`get_Label()` overload"]fn get_label(self,)->crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel{unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423370usize)as*mut u8,crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel;
+(RingCleaningVoiceData)__receiver)}
+}
+#[doc="`set_Label(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel)` overload"]fn set_label(self,value:impl::core::convert::Into<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel>)->(){unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423380usize)as*mut u8,();
+(RingCleaningVoiceData)__receiver,(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_VoiceLabel)::core::convert::Into::into(value))}
+}
+#[doc="`get_PlaySituation()` overload"]fn get_play_situation(self,)->crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation{unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423390usize)as*mut u8,crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation;
+(RingCleaningVoiceData)__receiver)}
+}
+#[doc="`set_PlaySituation(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)` overload"]fn set_play_situation(self,value:impl::core::convert::Into<crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation>)->(){unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24233a0usize)as*mut u8,();
+(RingCleaningVoiceData)__receiver,(crate::app::ringcleaningvoicedata::RingCleaningVoiceData_Situation)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsPlayCompleted()` overload"]fn get_is_play_completed(self,)->bool{unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24233b0usize)as*mut u8,bool;
+(RingCleaningVoiceData)__receiver)}
+}
+#[doc="`set_IsPlayCompleted(bool)` overload"]fn set_is_play_completed(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24233c0usize)as*mut u8,();
+(RingCleaningVoiceData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_UnitFaceAnim()` overload"]fn get_unit_face_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24233d0usize)as*mut u8, ::unity2::Il2CppString;
+(RingCleaningVoiceData)__receiver)}
+}
+#[doc="`set_UnitFaceAnim(::unity2::Il2CppString)` overload"]fn set_unit_face_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24233e0usize)as*mut u8,();
+(RingCleaningVoiceData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_GodFaceAnim()` overload"]fn get_god_face_anim(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24233f0usize)as*mut u8, ::unity2::Il2CppString;
+(RingCleaningVoiceData)__receiver)}
+}
+#[doc="`set_GodFaceAnim(::unity2::Il2CppString)` overload"]fn set_god_face_anim(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423400usize)as*mut u8,();
+(RingCleaningVoiceData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423410usize)as*mut u8, ::unity2::Il2CppString;
+(RingCleaningVoiceData)__receiver)}
+}
+#[doc="`GetEventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24234a0usize)as*mut u8, ::unity2::Il2CppString;
+(RingCleaningVoiceData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingCleaningVoiceData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423540usize)as*mut u8,();
+(RingCleaningVoiceData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningvoicedata")]
-impl < __T : IRingCleaningVoiceData > IRingCleaningVoiceDataMethods for __T { }
+#[cfg(feature="app-ringcleaningvoicedata")]impl<__T:IRingCleaningVoiceData>IRingCleaningVoiceDataMethods for __T{}
 
-#[cfg(feature = "app-ringcleaningvoicedata")]
-impl RingCleaningVoiceData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_play_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_play_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_play_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_is_play_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_unit_face_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_unit_face_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_god_face_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_god_face_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_random_voice_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningVoiceData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-ringcleaningvoicedata")]impl RingCleaningVoiceData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_play_situation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_play_situation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_play_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_is_play_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_unit_face_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_unit_face_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_god_face_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_god_face_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_random_voice_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-ringcleaningvoicedata")]
-impl RingCleaningVoiceData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningVoiceData) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningVoiceDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringcleaningvoicedata")]impl RingCleaningVoiceData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningVoiceData), ::core::stringify!(new),));
+ <Self as IRingCleaningVoiceDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringcleaningvoicedata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::RingCleaningVoiceData_VoiceLabel;
+    pub use super::RingCleaningVoiceData_Situation;
     pub use super::RingCleaningVoiceData;
     pub use super::IRingCleaningVoiceData;
     pub use super::IRingCleaningVoiceDataMethods;
-    pub use super::RingCleaningVoiceData_Situation;
-    pub use super::RingCleaningVoiceData_VoiceLabel;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

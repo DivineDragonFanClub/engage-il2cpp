@@ -4,48 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlerecordsetter/BattleRecordSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleRecordSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct BattleRecordSetter {
-# [offset (24)] # [rename (name = "InfoTitle")] pub info_title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "Records")] pub records : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "RecordPrefab")] pub record_prefab : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (52)] # [rename (name = "m_ScrollTime")] pub m_scroll_time : f32 ,
-# [offset (56)] # [rename (name = "m_StartPos")] pub m_start_pos : f32 ,
-# [offset (60)] # [rename (name = "m_RecordLength")] pub m_record_length : f32 ,
-# [offset (64)] # [rename (name = "m_ScrolledTime")] pub m_scrolled_time : f32 ,
-# [offset (72)] # [rename (name = "m_RecordList")] pub m_record_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: recttransform :: RectTransform > ,
-# [offset (80)] # [rename (name = "m_StartTime")] pub m_start_time : f64 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlerecordsetter/BattleRecordSetter.md"))]#[::unity2::class(namespace="App",name="BattleRecordSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct BattleRecordSetter{#[offset(24)]#[rename(name="InfoTitle")]pub info_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="Records")]pub records:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="RecordPrefab")]pub record_prefab:crate::unity_engine::gameobject::GameObject, #[offset(52)]#[rename(name="m_ScrollTime")]pub m_scroll_time:f32, #[offset(56)]#[rename(name="m_StartPos")]pub m_start_pos:f32, #[offset(60)]#[rename(name="m_RecordLength")]pub m_record_length:f32, #[offset(64)]#[rename(name="m_ScrolledTime")]pub m_scrolled_time:f32, #[offset(72)]#[rename(name="m_RecordList")]pub m_record_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::recttransform::RectTransform> , #[offset(80)]#[rename(name="m_StartTime")]pub m_start_time:f64,}
 
 }
 
 #[cfg(feature = "app-battlerecordsetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battlerecordsetter")]
-pub trait IBattleRecordSetterMethods : IBattleRecordSetter { # [doc = "`get_ScrollTimePattern()` overload"] fn get_scroll_time_pattern (self ,) -> i32 { unsafe { let __receiver = < BattleRecordSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSetter , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ScrollTimePattern(i32)` overload"] fn set_scroll_time_pattern (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BattleRecordSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSetter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFinished()` overload"] fn get_is_finished (self ,) -> bool { unsafe { let __receiver = < BattleRecordSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSetter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < BattleRecordSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < BattleRecordSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleRecordSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8f9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlerecordsetter")]pub trait IBattleRecordSetterMethods:IBattleRecordSetter{#[doc="`get_ScrollTimePattern()` overload"]fn get_scroll_time_pattern(self,)->i32{unsafe{let __receiver= <BattleRecordSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f720usize)as*mut u8,i32;
+(BattleRecordSetter)__receiver)}
+}
+#[doc="`set_ScrollTimePattern(i32)` overload"]fn set_scroll_time_pattern(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BattleRecordSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f730usize)as*mut u8,();
+(BattleRecordSetter)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsFinished()` overload"]fn get_is_finished(self,)->bool{unsafe{let __receiver= <BattleRecordSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f740usize)as*mut u8,bool;
+(BattleRecordSetter)__receiver)}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <BattleRecordSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f150usize)as*mut u8,();
+(BattleRecordSetter)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <BattleRecordSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f760usize)as*mut u8,();
+(BattleRecordSetter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleRecordSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8f9a0usize)as*mut u8,();
+(BattleRecordSetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-battlerecordsetter")]
-impl < __T : IBattleRecordSetter > IBattleRecordSetterMethods for __T { }
+#[cfg(feature="app-battlerecordsetter")]impl<__T:IBattleRecordSetter>IBattleRecordSetterMethods for __T{}
 
-#[cfg(feature = "app-battlerecordsetter")]
-impl BattleRecordSetter { pub fn get_scroll_time_pattern_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_scroll_time_pattern_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_finished_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-battlerecordsetter")]impl BattleRecordSetter{pub fn get_scroll_time_pattern_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_scroll_time_pattern_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_finished_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-battlerecordsetter")]
-impl BattleRecordSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleRecordSetter) , :: core :: stringify ! (new) ,)) ; < Self as IBattleRecordSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-battlerecordsetter")]impl BattleRecordSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleRecordSetter), ::core::stringify!(new),));
+ <Self as IBattleRecordSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-battlerecordsetter")]

@@ -4,90 +4,170 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuyroot/AccessoryShopBuyRoot_ReturnEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopBuyRoot.ReturnEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AccessoryShopBuyRoot_ReturnEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyroot/AccessoryShopBuyRoot.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AccessoryShopBuyRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MenuObject")]pub m_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_UnitNameObject")]pub m_unit_name_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_EquipmentInfoWindowObject")]pub m_equipment_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_DetailInfoWindowObject")]pub m_detail_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_KeyHelpAllObject")]pub m_key_help_all_object:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_KeyHelpAllAnimator")]pub m_key_help_all_animator:crate::unity_engine::animator::Animator, #[offset(80)]#[rename(name="m_WatchingModeKeyHelpController")]pub m_watching_mode_key_help_controller:crate::app::keyhelpcontroller::KeyHelpController, #[offset(88)]#[rename(name="m_AccessoryShopBuyRootProc")]pub m_accessory_shop_buy_root_proc:crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc, #[offset(96)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(104)]#[rename(name="m_AccessoryShopBuyMenu")]pub m_accessory_shop_buy_menu:crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu, #[offset(112)]#[rename(name="m_AccessoryEquipmentInfoWindow")]pub m_accessory_equipment_info_window:crate::app::accessoryequipmentinfo::AccessoryEquipmentInfo, #[offset(120)]#[rename(name="m_AccessoryDetailInfoWindow")]pub m_accessory_detail_info_window:crate::app::accessorydetailinfowindow::AccessoryDetailInfoWindow, #[offset(128)]#[rename(name="m_ReturnEventHandler")]pub m_return_event_handler:crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler, #[offset(136)]#[rename(name="m_AccessoryData")]pub m_accessory_data:crate::app::accessorydata::AccessoryData,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuyroot/AccessoryShopBuyRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopBuyRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AccessoryShopBuyRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_MenuObject")] pub m_menu_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_UnitNameObject")] pub m_unit_name_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_UnitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_EquipmentInfoWindowObject")] pub m_equipment_info_window_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_DetailInfoWindowObject")] pub m_detail_info_window_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_KeyHelpAllObject")] pub m_key_help_all_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_KeyHelpAllAnimator")] pub m_key_help_all_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (80)] # [rename (name = "m_WatchingModeKeyHelpController")] pub m_watching_mode_key_help_controller : crate :: app :: keyhelpcontroller :: KeyHelpController ,
-# [offset (88)] # [rename (name = "m_AccessoryShopBuyRootProc")] pub m_accessory_shop_buy_root_proc : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc ,
-# [offset (96)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (104)] # [rename (name = "m_AccessoryShopBuyMenu")] pub m_accessory_shop_buy_menu : crate :: app :: accessoryshopbuymenu :: AccessoryShopBuyMenu ,
-# [offset (112)] # [rename (name = "m_AccessoryEquipmentInfoWindow")] pub m_accessory_equipment_info_window : crate :: app :: accessoryequipmentinfo :: AccessoryEquipmentInfo ,
-# [offset (120)] # [rename (name = "m_AccessoryDetailInfoWindow")] pub m_accessory_detail_info_window : crate :: app :: accessorydetailinfowindow :: AccessoryDetailInfoWindow ,
-# [offset (128)] # [rename (name = "m_ReturnEventHandler")] pub m_return_event_handler : crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot_ReturnEventHandler ,
-# [offset (136)] # [rename (name = "m_AccessoryData")] pub m_accessory_data : crate :: app :: accessorydata :: AccessoryData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuyroot/AccessoryShopBuyRoot_ReturnEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyRoot.ReturnEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyRoot_ReturnEventHandler{}
 
 }
 
 #[cfg(feature = "app-accessoryshopbuyroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessoryshopbuyroot")]
-pub trait IAccessoryShopBuyRoot_ReturnEventHandlerMethods : IAccessoryShopBuyRoot_ReturnEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot_ReturnEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2903280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::unit::Unit)` overload"] fn invoke (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot_ReturnEventHandler , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29032a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-accessoryshopbuyroot")]
-impl < __T : IAccessoryShopBuyRoot_ReturnEventHandler > IAccessoryShopBuyRoot_ReturnEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-accessoryshopbuyroot")]
-impl AccessoryShopBuyRoot_ReturnEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot_ReturnEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot_ReturnEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-accessoryshopbuyroot")]
-impl AccessoryShopBuyRoot_ReturnEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopBuyRoot_ReturnEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopBuyRoot_ReturnEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-accessoryshopbuyroot")]impl AccessoryShopBuyRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27bcc50usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27bccf0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27bcd70usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,return_event_handler:impl::core::convert::Into<crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler>)->crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27bcdf0usize)as*mut u8,crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
+}
+#[doc="`Destroy(crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot)` overload"]pub fn destroy(root:impl::core::convert::Into<crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27bd800usize)as*mut u8,();
+(crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot)::core::convert::Into::into(root))}
+}
 }
 
-#[cfg(feature = "app-accessoryshopbuyroot")]
-impl AccessoryShopBuyRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bcc50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bccf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bcd70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , return_event_handler : impl :: core :: convert :: Into < crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot_ReturnEventHandler >) -> crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bcdf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (return_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot)` overload"] pub fn destroy (root : impl :: core :: convert :: Into < crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bd800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopbuyroot")]pub trait IAccessoryShopBuyRootMethods:IAccessoryShopBuyRoot{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,return_event_handler:impl::core::convert::Into<crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler>)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bcf90usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bd880usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver)}
+}
+#[doc="`OnSelectMenuItem(crate::app::accessorydata::AccessoryData)` overload"]fn on_select_menu_item(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bd890usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data))}
+}
+#[doc="`OnDecideMenuItem(crate::app::accessorydata::AccessoryData)` overload"]fn on_decide_menu_item(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bd9d0usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data))}
+}
+#[doc="`OnDisposeConfirmDialog()` overload"]fn on_dispose_confirm_dialog(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bdaf0usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver)}
+}
+#[doc="`OnBuy()` overload"]fn on_buy(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bdb10usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver)}
+}
+#[doc="`OnChangeUnitToPrev()` overload"]fn on_change_unit_to_prev(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bdca0usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver)}
+}
+#[doc="`OnChangeUnitToNext()` overload"]fn on_change_unit_to_next(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bde40usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver)}
+}
+#[doc="`OnChangeKind(crate::app::accessorydata::AccessoryData)` overload"]fn on_change_kind(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27bdfe0usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data))}
+}
+#[doc="`OnStartWatching()` overload"]fn on_start_watching(self,)->bool{unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27be080usize)as*mut u8,bool;
+(AccessoryShopBuyRoot)__receiver)}
+}
+#[doc="`OnEndWatching()` overload"]fn on_end_watching(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27be300usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver)}
+}
+#[doc="`OnShowUI()` overload"]fn on_show_ui(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27be690usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver)}
+}
+#[doc="`OnHideUI()` overload"]fn on_hide_ui(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27be800usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver)}
+}
+#[doc="`OnRequestCloseMenu()` overload"]fn on_request_close_menu(self,)->(){unsafe{let __receiver= <AccessoryShopBuyRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27be970usize)as*mut u8,();
+(AccessoryShopBuyRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-accessoryshopbuyroot")]
-pub trait IAccessoryShopBuyRootMethods : IAccessoryShopBuyRoot { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot_ReturnEventHandler)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , return_event_handler : impl :: core :: convert :: Into < crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot_ReturnEventHandler >) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: accessoryshopbuyroot :: AccessoryShopBuyRoot_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bcf90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (return_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bd880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelectMenuItem(crate::app::accessorydata::AccessoryData)` overload"] fn on_select_menu_item (self , accessory_data : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bd890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (accessory_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecideMenuItem(crate::app::accessorydata::AccessoryData)` overload"] fn on_decide_menu_item (self , accessory_data : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bd9d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (accessory_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDisposeConfirmDialog()` overload"] fn on_dispose_confirm_dialog (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bdaf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuy()` overload"] fn on_buy (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bdb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnChangeUnitToPrev()` overload"] fn on_change_unit_to_prev (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bdca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnChangeUnitToNext()` overload"] fn on_change_unit_to_next (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bde40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnChangeKind(crate::app::accessorydata::AccessoryData)` overload"] fn on_change_kind (self , accessory_data : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27bdfe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (accessory_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnStartWatching()` overload"] fn on_start_watching (self ,) -> bool { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27be080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEndWatching()` overload"] fn on_end_watching (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27be300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnShowUI()` overload"] fn on_show_ui (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27be690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnHideUI()` overload"] fn on_hide_ui (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27be800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRequestCloseMenu()` overload"] fn on_request_close_menu (self ,) -> () { unsafe { let __receiver = < AccessoryShopBuyRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopBuyRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27be970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopbuyroot")]impl<__T:IAccessoryShopBuyRoot>IAccessoryShopBuyRootMethods for __T{}
 
-#[cfg(feature = "app-accessoryshopbuyroot")]
-impl < __T : IAccessoryShopBuyRoot > IAccessoryShopBuyRootMethods for __T { }
+#[cfg(feature="app-accessoryshopbuyroot")]impl AccessoryShopBuyRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_select_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_decide_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_dispose_confirm_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_buy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn on_change_unit_to_prev_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_change_unit_to_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_change_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_start_watching_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn on_end_watching_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn on_show_ui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_hide_ui_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_request_close_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-accessoryshopbuyroot")]
-impl AccessoryShopBuyRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_select_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_decide_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_dispose_confirm_dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_buy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn on_change_unit_to_prev_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_change_unit_to_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn on_change_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_start_watching_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn on_end_watching_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn on_show_ui_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn on_hide_ui_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn on_request_close_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopBuyRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-accessoryshopbuyroot")]impl AccessoryShopBuyRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyRoot), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyRootMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-accessoryshopbuyroot")]
-impl AccessoryShopBuyRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopBuyRoot) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopBuyRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessoryshopbuyroot")]pub trait IAccessoryShopBuyRoot_ReturnEventHandlerMethods:IAccessoryShopBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2903280usize)as*mut u8,();
+(AccessoryShopBuyRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AccessoryShopBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29032a0usize)as*mut u8,();
+(AccessoryShopBuyRoot_ReturnEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-accessoryshopbuyroot")]impl<__T:IAccessoryShopBuyRoot_ReturnEventHandler>IAccessoryShopBuyRoot_ReturnEventHandlerMethods for __T{}
+
+#[cfg(feature="app-accessoryshopbuyroot")]impl AccessoryShopBuyRoot_ReturnEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopbuyroot")]impl AccessoryShopBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyRoot_ReturnEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyRoot_ReturnEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-accessoryshopbuyroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryShopBuyRoot_ReturnEventHandler;
-    pub use super::IAccessoryShopBuyRoot_ReturnEventHandler;
-    pub use super::IAccessoryShopBuyRoot_ReturnEventHandlerMethods;
     pub use super::AccessoryShopBuyRoot;
     pub use super::IAccessoryShopBuyRoot;
     pub use super::IAccessoryShopBuyRootMethods;
+    pub use super::AccessoryShopBuyRoot_ReturnEventHandler;
+    pub use super::IAccessoryShopBuyRoot_ReturnEventHandler;
+    pub use super::IAccessoryShopBuyRoot_ReturnEventHandlerMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -4,36 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionwaittime/ActionWaitTime.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionWaitTime")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionWaitTime {
-# [offset (40)] # [rename (name = "m_Seconds")] pub m_seconds : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionwaittime/ActionWaitTime.md"))]#[::unity2::class(namespace="Combat",name="ActionWaitTime")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionWaitTime{#[offset(40)]#[rename(name="m_Seconds")]pub m_seconds:f32,}
 
 }
 
 #[cfg(feature = "combat-actionwaittime-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionwaittime")]
-pub trait IActionWaitTimeMethods : IActionWaitTime { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionWaitTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionWaitTime , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, f32)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , seconds : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ActionWaitTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionWaitTime , crate :: combat :: character :: Character , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9c20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (seconds) , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionWaitTime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionWaitTime , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionwaittime")]pub trait IActionWaitTimeMethods:IActionWaitTime{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9bd0usize)as*mut u8, ::unity2::Il2CppString;
+(ActionWaitTime)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,seconds:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9c20usize)as*mut u8,();
+(ActionWaitTime)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(f32)::core::convert::Into::into(seconds))}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9c90usize)as*mut u8,();
+(ActionWaitTime)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actionwaittime")]
-impl < __T : IActionWaitTime > IActionWaitTimeMethods for __T { }
+#[cfg(feature="combat-actionwaittime")]impl<__T:IActionWaitTime>IActionWaitTimeMethods for __T{}
 
-#[cfg(feature = "combat-actionwaittime")]
-impl ActionWaitTime { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionWaitTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionWaitTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionWaitTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-actionwaittime")]impl ActionWaitTime{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-actionwaittime")]
-impl ActionWaitTime {
-# [doc = "`.ctor(crate::combat::character::Character, f32)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , seconds : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionWaitTime) , :: core :: stringify ! (new) ,)) ; < Self as IActionWaitTimeMethods > :: ctor (this , chr , seconds) ; this }
+#[cfg(feature="combat-actionwaittime")]impl ActionWaitTime{#[doc="`.ctor(crate::combat::character::Character, f32)` — overload selector"]pub fn new(chr:crate::combat::character::Character,seconds:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionWaitTime), ::core::stringify!(new),));
+ <Self as IActionWaitTimeMethods> ::ctor(this,chr,seconds);
+this}
 }
 
 #[cfg(feature = "combat-actionwaittime")]

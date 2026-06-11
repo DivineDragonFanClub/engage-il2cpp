@@ -4,48 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/instantiationparameters/InstantiationParameters.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct InstantiationParameters {
-    pub m_position: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_rotation: crate :: unity_engine :: quaternion :: Quaternion,
-    pub m_parent: crate :: unity_engine :: transform :: Transform,
-    pub m_instantiate_in_world_position: bool,
-    pub m_set_position_rotation: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/instantiationparameters/InstantiationParameters.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct InstantiationParameters{pub m_position:crate::unity_engine::vector3::Vector3,pub m_rotation:crate::unity_engine::quaternion::Quaternion,pub m_parent:crate::unity_engine::transform::Transform,pub m_instantiate_in_world_position:bool,pub m_set_position_rotation:bool,}
+impl::unity2::ClassIdentity for InstantiationParameters{const NAMESPACE: &'static str="UnityEngine.ResourceManagement.ResourceProviders";
+const NAME: &'static str="InstantiationParameters";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for InstantiationParameters {
-    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.ResourceProviders";
-
-    const NAME: &'static str = "InstantiationParameters";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for InstantiationParameters {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for InstantiationParameters{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -53,14 +26,130 @@ impl ::unity2::IlType for InstantiationParameters {
 #[cfg(feature = "unity_engine-resource_management-resource_providers-instantiationparameters-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-instantiationparameters")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InstantiationParameters_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InstantiationParameters as :: unity2 :: ClassIdentity > :: class () , "get_Position" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InstantiationParameters as :: unity2 :: ClassIdentity > :: NAME , "get_Position" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_rotation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InstantiationParameters as :: unity2 :: ClassIdentity > :: class () , "get_Rotation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InstantiationParameters as :: unity2 :: ClassIdentity > :: NAME , "get_Rotation" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_parent { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InstantiationParameters as :: unity2 :: ClassIdentity > :: class () , "get_Parent" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InstantiationParameters as :: unity2 :: ClassIdentity > :: NAME , "get_Parent" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_instantiate_in_world_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InstantiationParameters as :: unity2 :: ClassIdentity > :: class () , "get_InstantiateInWorldPosition" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InstantiationParameters as :: unity2 :: ClassIdentity > :: NAME , "get_InstantiateInWorldPosition" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_set_position_rotation { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InstantiationParameters as :: unity2 :: ClassIdentity > :: class () , "get_SetPositionRotation" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InstantiationParameters as :: unity2 :: ClassIdentity > :: NAME , "get_SetPositionRotation" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InstantiationParameters as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InstantiationParameters as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: vector3 :: Vector3 as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: quaternion :: Quaternion as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: transform :: Transform as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InstantiationParameters as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InstantiationParameters as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-instantiationparameters")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InstantiationParameters_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_position{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InstantiationParameters as::unity2::ClassIdentity> ::class(),"get_Position",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InstantiationParameters as::unity2::ClassIdentity> ::NAME,"get_Position",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_rotation{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InstantiationParameters as::unity2::ClassIdentity> ::class(),"get_Rotation",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InstantiationParameters as::unity2::ClassIdentity> ::NAME,"get_Rotation",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_parent{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InstantiationParameters as::unity2::ClassIdentity> ::class(),"get_Parent",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InstantiationParameters as::unity2::ClassIdentity> ::NAME,"get_Parent",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_instantiate_in_world_position{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InstantiationParameters as::unity2::ClassIdentity> ::class(),"get_InstantiateInWorldPosition",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InstantiationParameters as::unity2::ClassIdentity> ::NAME,"get_InstantiateInWorldPosition",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_set_position_rotation{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<InstantiationParameters as::unity2::ClassIdentity> ::class(),"get_SetPositionRotation",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InstantiationParameters as::unity2::ClassIdentity> ::NAME,"get_SetPositionRotation",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::transform::Transform as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InstantiationParameters as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InstantiationParameters as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::vector3::Vector3 as::unity2::IlType> ::il_type(), <crate::unity_engine::quaternion::Quaternion as::unity2::IlType> ::il_type(), <crate::unity_engine::transform::Transform as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InstantiationParameters as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InstantiationParameters as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-instantiationparameters")]
-impl InstantiationParameters { # [doc = "`get_Position()` overload"] pub fn get_position (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut InstantiationParameters , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__InstantiationParameters_unity2_raw :: __lookup_get_position :: get_method_info () . method_ptr)) ; __inner (self as * mut InstantiationParameters , :: core :: option :: Option :: None) } } } # [doc = "`get_Rotation()` overload"] pub fn get_rotation (& mut self ,) -> crate :: unity_engine :: quaternion :: Quaternion { unsafe { { let __inner : extern "C" fn (* mut InstantiationParameters , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: quaternion :: Quaternion = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__InstantiationParameters_unity2_raw :: __lookup_get_rotation :: get_method_info () . method_ptr)) ; __inner (self as * mut InstantiationParameters , :: core :: option :: Option :: None) } } } # [doc = "`get_Parent()` overload"] pub fn get_parent (& mut self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { { let __inner : extern "C" fn (* mut InstantiationParameters , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__InstantiationParameters_unity2_raw :: __lookup_get_parent :: get_method_info () . method_ptr)) ; __inner (self as * mut InstantiationParameters , :: core :: option :: Option :: None) } } } # [doc = "`get_InstantiateInWorldPosition()` overload"] pub fn get_instantiate_in_world_position (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut InstantiationParameters , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__InstantiationParameters_unity2_raw :: __lookup_get_instantiate_in_world_position :: get_method_info () . method_ptr)) ; __inner (self as * mut InstantiationParameters , :: core :: option :: Option :: None) } } } # [doc = "`get_SetPositionRotation()` overload"] pub fn get_set_position_rotation (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut InstantiationParameters , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__InstantiationParameters_unity2_raw :: __lookup_get_set_position_rotation :: get_method_info () . method_ptr)) ; __inner (self as * mut InstantiationParameters , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::transform::Transform, bool)` overload"] pub fn ctor (& mut self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , instantiate_in_world_space : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut InstantiationParameters , crate :: unity_engine :: transform :: Transform , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__InstantiationParameters_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr)) ; __inner (self as * mut InstantiationParameters , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (instantiate_in_world_space) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::transform::Transform)` overload"] pub fn ctor_2 (& mut self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rotation : impl :: core :: convert :: Into < crate :: unity_engine :: quaternion :: Quaternion > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { { let __inner : extern "C" fn (* mut InstantiationParameters , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: quaternion :: Quaternion , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (:: unity2 :: callable_ptr (__InstantiationParameters_unity2_raw :: __lookup_ctor_2 :: get_method_info () . method_ptr)) ; __inner (self as * mut InstantiationParameters , :: core :: convert :: Into :: into (position) , :: core :: convert :: Into :: into (rotation) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } pub fn instantiate < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (& mut self , source : impl :: core :: convert :: Into < M0 >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< InstantiationParameters as :: unity2 :: ClassIdentity > :: class () , "Instantiate" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InstantiationParameters as :: unity2 :: ClassIdentity > :: NAME , "Instantiate" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (* mut InstantiationParameters , M0 , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (self as * mut InstantiationParameters , :: core :: convert :: Into :: into (source) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-instantiationparameters")]impl InstantiationParameters{#[doc="`get_Position()` overload"]pub fn get_position(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__InstantiationParameters_unity2_raw::__lookup_get_position::get_method_info().method_ptr),crate::unity_engine::vector3::Vector3;
+(*mut InstantiationParameters)self as*mut InstantiationParameters)}
+}
+#[doc="`get_Rotation()` overload"]pub fn get_rotation(&mut self,)->crate::unity_engine::quaternion::Quaternion{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__InstantiationParameters_unity2_raw::__lookup_get_rotation::get_method_info().method_ptr),crate::unity_engine::quaternion::Quaternion;
+(*mut InstantiationParameters)self as*mut InstantiationParameters)}
+}
+#[doc="`get_Parent()` overload"]pub fn get_parent(&mut self,)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__InstantiationParameters_unity2_raw::__lookup_get_parent::get_method_info().method_ptr),crate::unity_engine::transform::Transform;
+(*mut InstantiationParameters)self as*mut InstantiationParameters)}
+}
+#[doc="`get_InstantiateInWorldPosition()` overload"]pub fn get_instantiate_in_world_position(&mut self,)->bool{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__InstantiationParameters_unity2_raw::__lookup_get_instantiate_in_world_position::get_method_info().method_ptr),bool;
+(*mut InstantiationParameters)self as*mut InstantiationParameters)}
+}
+#[doc="`get_SetPositionRotation()` overload"]pub fn get_set_position_rotation(&mut self,)->bool{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__InstantiationParameters_unity2_raw::__lookup_get_set_position_rotation::get_method_info().method_ptr),bool;
+(*mut InstantiationParameters)self as*mut InstantiationParameters)}
+}
+#[doc="`.ctor(crate::unity_engine::transform::Transform, bool)` overload"]pub fn ctor(&mut self,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,instantiate_in_world_space:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__InstantiationParameters_unity2_raw::__lookup_ctor::get_method_info().method_ptr),();
+(*mut InstantiationParameters)self as*mut InstantiationParameters,(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(bool)::core::convert::Into::into(instantiate_in_world_space))}
+}
+#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::transform::Transform)` overload"]pub fn ctor_2(&mut self,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__InstantiationParameters_unity2_raw::__lookup_ctor_2::get_method_info().method_ptr),();
+(*mut InstantiationParameters)self as*mut InstantiationParameters,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(rotation),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent))}
+}
+pub fn instantiate<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(&mut self,source:impl::core::convert::Into<M0>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<InstantiationParameters as::unity2::ClassIdentity> ::class(),"Instantiate",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InstantiationParameters as::unity2::ClassIdentity> ::NAME,"Instantiate",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(*mut InstantiationParameters,M0, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(self as*mut InstantiationParameters, ::core::convert::Into::into(source), ::core::option::Option::Some(__mi_opaque),)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-resource_providers-instantiationparameters")]
-impl InstantiationParameters { pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstantiationParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstantiationParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_parent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstantiationParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_instantiate_in_world_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstantiationParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_set_position_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstantiationParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstantiationParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstantiationParameters as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-resource_management-resource_providers-instantiationparameters")]impl InstantiationParameters{pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_parent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_instantiate_in_world_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_set_position_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-instantiationparameters")]
 #[doc(hidden)]

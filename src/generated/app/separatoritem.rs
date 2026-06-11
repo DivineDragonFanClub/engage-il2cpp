@@ -4,37 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/separatoritem/SeparatorItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "SeparatorItem")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct SeparatorItem {
-# [static_field] # [rename (name = "BackColor")] pub back_color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/separatoritem/SeparatorItem.md"))]#[::unity2::class(namespace="App",name="SeparatorItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct SeparatorItem{#[static_field]#[rename(name="BackColor")]pub back_color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-separatoritem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-separatoritem")]
-impl SeparatorItem { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21a6e50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-separatoritem")]impl SeparatorItem{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21a6e50usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-separatoritem")]
-pub trait ISeparatorItemMethods : ISeparatorItem { # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SeparatorItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SeparatorItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21a6da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHeight()` overload"] fn get_height (self ,) -> f32 { unsafe { let __receiver = < SeparatorItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SeparatorItem , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21a6db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBackColor()` overload"] fn get_back_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < SeparatorItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SeparatorItem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21a6dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSelectable()` overload"] fn is_selectable (self ,) -> bool { unsafe { let __receiver = < SeparatorItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SeparatorItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21a6e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SeparatorItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SeparatorItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21a6e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-separatoritem")]pub trait ISeparatorItemMethods:ISeparatorItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SeparatorItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21a6da0usize)as*mut u8, ::unity2::Il2CppString;
+(SeparatorItem)__receiver)}
+}
+#[doc="`GetHeight()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <SeparatorItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21a6db0usize)as*mut u8,f32;
+(SeparatorItem)__receiver)}
+}
+#[doc="`GetBackColor()` overload"]fn get_back_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <SeparatorItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21a6dc0usize)as*mut u8,crate::unity_engine::color::Color;
+(SeparatorItem)__receiver)}
+}
+#[doc="`IsSelectable()` overload"]fn is_selectable(self,)->bool{unsafe{let __receiver= <SeparatorItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21a6e30usize)as*mut u8,bool;
+(SeparatorItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SeparatorItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21a6e40usize)as*mut u8,();
+(SeparatorItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-separatoritem")]
-impl < __T : ISeparatorItem > ISeparatorItemMethods for __T { }
+#[cfg(feature="app-separatoritem")]impl<__T:ISeparatorItem>ISeparatorItemMethods for __T{}
 
-#[cfg(feature = "app-separatoritem")]
-impl SeparatorItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SeparatorItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SeparatorItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_back_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SeparatorItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_selectable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SeparatorItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SeparatorItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SeparatorItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-separatoritem")]impl SeparatorItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_back_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_selectable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-separatoritem")]
-impl SeparatorItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SeparatorItem) , :: core :: stringify ! (new) ,)) ; < Self as ISeparatorItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-separatoritem")]impl SeparatorItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SeparatorItem), ::core::stringify!(new),));
+ <Self as ISeparatorItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-separatoritem")]

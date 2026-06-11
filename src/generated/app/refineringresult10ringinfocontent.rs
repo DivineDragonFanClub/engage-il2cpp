@@ -4,68 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringresult10ringinfocontent/RefineRingResult10RingInfoContent_RingParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingResult10RingInfoContent.RingParam")] # [parent (crate :: system :: object :: Object)] pub struct RefineRingResult10RingInfoContent_RingParam {
-# [offset (16)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (24)] # [rename (name = "m_ValueText")] pub m_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringresult10ringinfocontent/RefineRingResult10RingInfoContent_RingParam.md"))]#[::unity2::class(namespace="App",name="RefineRingResult10RingInfoContent.RingParam")]#[parent(crate::system::object::Object)]pub struct RefineRingResult10RingInfoContent_RingParam{#[offset(16)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringresult10ringinfocontent/RefineRingResult10RingInfoContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingResult10RingInfoContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineRingResult10RingInfoContent {
-# [offset (24)] # [rename (name = "m_CharacterImage")] pub m_character_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_FrameImage")] pub m_frame_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_NewObject")] pub m_new_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_NewText")] pub m_new_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_RingIconImage")] pub m_ring_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "m_CharacterNameText")] pub m_character_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "m_RingParams")] pub m_ring_params : :: unity2 :: Array < crate :: app :: refineringresult10ringinfocontent :: RefineRingResult10RingInfoContent_RingParam > ,
-# [offset (80)] # [rename (name = "m_SkillIconImage")] pub m_skill_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (88)] # [rename (name = "m_SkillNameText")] pub m_skill_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringresult10ringinfocontent/RefineRingResult10RingInfoContent.md"))]#[::unity2::class(namespace="App",name="RefineRingResult10RingInfoContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineRingResult10RingInfoContent{#[offset(24)]#[rename(name="m_CharacterImage")]pub m_character_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_NewObject")]pub m_new_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_NewText")]pub m_new_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_RingIconImage")]pub m_ring_icon_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_CharacterNameText")]pub m_character_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_RingParams")]pub m_ring_params: ::unity2::Array<crate::app::refineringresult10ringinfocontent::RefineRingResult10RingInfoContent_RingParam> , #[offset(80)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_SkillNameText")]pub m_skill_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-refineringresult10ringinfocontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineringresult10ringinfocontent")]
-pub trait IRefineRingResult10RingInfoContent_RingParamMethods : IRefineRingResult10RingInfoContent_RingParam { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingResult10RingInfoContent_RingParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult10RingInfoContent_RingParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1af8870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-refineringresult10ringinfocontent")]
-impl < __T : IRefineRingResult10RingInfoContent_RingParam > IRefineRingResult10RingInfoContent_RingParamMethods for __T { }
-
-#[cfg(feature = "app-refineringresult10ringinfocontent")]
-impl RefineRingResult10RingInfoContent_RingParam { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10RingInfoContent_RingParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-refineringresult10ringinfocontent")]
-impl RefineRingResult10RingInfoContent_RingParam {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingResult10RingInfoContent_RingParam) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingResult10RingInfoContent_RingParamMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineringresult10ringinfocontent")]pub trait IRefineRingResult10RingInfoContent_RingParamMethods:IRefineRingResult10RingInfoContent_RingParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingResult10RingInfoContent_RingParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8870usize)as*mut u8,();
+(RefineRingResult10RingInfoContent_RingParam)__receiver)}
+}
 }
 
-#[cfg(feature = "app-refineringresult10ringinfocontent")]
-pub trait IRefineRingResult10RingInfoContentMethods : IRefineRingResult10RingInfoContent { # [doc = "`SetData(crate::app::ringdata::RingData, bool)` overload"] fn set_data (self , ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData > , is_new : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefineRingResult10RingInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult10RingInfoContent , crate :: app :: ringdata :: RingData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2954a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ring_data) , :: core :: convert :: Into :: into (is_new) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineRingResult10RingInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingResult10RingInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2955290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringresult10ringinfocontent")]impl<__T:IRefineRingResult10RingInfoContent_RingParam>IRefineRingResult10RingInfoContent_RingParamMethods for __T{}
 
-#[cfg(feature = "app-refineringresult10ringinfocontent")]
-impl < __T : IRefineRingResult10RingInfoContent > IRefineRingResult10RingInfoContentMethods for __T { }
+#[cfg(feature="app-refineringresult10ringinfocontent")]impl RefineRingResult10RingInfoContent_RingParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-refineringresult10ringinfocontent")]
-impl RefineRingResult10RingInfoContent { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10RingInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingResult10RingInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-refineringresult10ringinfocontent")]impl RefineRingResult10RingInfoContent_RingParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingResult10RingInfoContent_RingParam), ::core::stringify!(new),));
+ <Self as IRefineRingResult10RingInfoContent_RingParamMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-refineringresult10ringinfocontent")]
-impl RefineRingResult10RingInfoContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingResult10RingInfoContent) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingResult10RingInfoContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineringresult10ringinfocontent")]pub trait IRefineRingResult10RingInfoContentMethods:IRefineRingResult10RingInfoContent{#[doc="`SetData(crate::app::ringdata::RingData, bool)` overload"]fn set_data(self,ring_data:impl::core::convert::Into<crate::app::ringdata::RingData> ,is_new:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineRingResult10RingInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2954a10usize)as*mut u8,();
+(RefineRingResult10RingInfoContent)__receiver,(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data),(bool)::core::convert::Into::into(is_new))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingResult10RingInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2955290usize)as*mut u8,();
+(RefineRingResult10RingInfoContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineringresult10ringinfocontent")]impl<__T:IRefineRingResult10RingInfoContent>IRefineRingResult10RingInfoContentMethods for __T{}
+
+#[cfg(feature="app-refineringresult10ringinfocontent")]impl RefineRingResult10RingInfoContent{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refineringresult10ringinfocontent")]impl RefineRingResult10RingInfoContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingResult10RingInfoContent), ::core::stringify!(new),));
+ <Self as IRefineRingResult10RingInfoContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineringresult10ringinfocontent")]

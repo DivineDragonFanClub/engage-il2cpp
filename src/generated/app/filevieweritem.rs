@@ -4,111 +4,178 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: app :: stringitem :: { IStringItem , StringItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::app::stringitem::{IStringItem,StringItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_PathItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileViewerItem.PathItem")] # [parent (crate :: app :: stringitem :: StringItem)] pub struct FileViewerItem_PathItem {
-# [offset (48)] # [rename (name = "m_Path")] pub m_path : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "m_Func")] pub m_func : crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/filevieweritem/FileViewerItem_DirectoryItem.md"))]#[::unity2::class(namespace="App",name="FileViewerItem.DirectoryItem")]#[parent(crate::app::filevieweritem::FileViewerItem_PathItem)]pub struct FileViewerItem_DirectoryItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_FileItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileViewerItem.FileItem")] # [parent (crate :: app :: filevieweritem :: FileViewerItem_PathItem)] pub struct FileViewerItem_FileItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/filevieweritem/FileViewerItem.md"))]#[::unity2::class(namespace="App",name="FileViewerItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct FileViewerItem{#[offset(32)]#[rename(name="m_Path")]pub m_path: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Func")]pub m_func:crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem_DirectoryItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileViewerItem.DirectoryItem")] # [parent (crate :: app :: filevieweritem :: FileViewerItem_PathItem)] pub struct FileViewerItem_DirectoryItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/filevieweritem/FileViewerItem_FileItem.md"))]#[::unity2::class(namespace="App",name="FileViewerItem.FileItem")]#[parent(crate::app::filevieweritem::FileViewerItem_PathItem)]pub struct FileViewerItem_FileItem{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/filevieweritem/FileViewerItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "FileViewerItem")] # [parent (crate :: app :: menuitem :: MenuItem)] pub struct FileViewerItem {
-# [offset (32)] # [rename (name = "m_Path")] pub m_path : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_Func")] pub m_func : crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/filevieweritem/FileViewerItem_PathItem.md"))]#[::unity2::class(namespace="App",name="FileViewerItem.PathItem")]#[parent(crate::app::stringitem::StringItem)]pub struct FileViewerItem_PathItem{#[offset(48)]#[rename(name="m_Path")]pub m_path: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_Func")]pub m_func:crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> ,}
 
 }
 
 #[cfg(feature = "app-filevieweritem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-filevieweritem")]
-pub trait IFileViewerItem_PathItemMethods : IFileViewerItem_PathItem { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"] fn ctor (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , func : impl :: core :: convert :: Into < crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > >) -> () { unsafe { let __receiver = < FileViewerItem_PathItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_PathItem , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`GetFullPath()` overload"] fn get_full_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileViewerItem_PathItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_PathItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFunc()` overload"] fn get_func (self ,) -> crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > { unsafe { let __receiver = < FileViewerItem_PathItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_PathItem , :: unity2 :: OptionalMethod ,) -> crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5fa50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DoFunc()` overload"] fn do_func (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < FileViewerItem_PathItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_PathItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-filevieweritem")]
-impl < __T : IFileViewerItem_PathItem > IFileViewerItem_PathItemMethods for __T { }
-
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_PathItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_PathItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_full_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_PathItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_PathItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn do_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_PathItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_PathItem {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"] pub fn new (path : :: unity2 :: Il2CppString , name : :: unity2 :: Il2CppString , func : crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileViewerItem_PathItem) , :: core :: stringify ! (new) ,)) ; < Self as IFileViewerItem_PathItemMethods > :: ctor (this , path , name , func) ; this }
+#[cfg(feature="app-filevieweritem")]pub trait IFileViewerItem_DirectoryItemMethods:IFileViewerItem_DirectoryItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> >)->(){unsafe{let __receiver= <FileViewerItem_DirectoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f5a0usize)as*mut u8,();
+(FileViewerItem_DirectoryItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)::core::convert::Into::into(func))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileViewerItem_DirectoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f660usize)as*mut u8, ::unity2::Il2CppString;
+(FileViewerItem_DirectoryItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FileViewerItem_DirectoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f700usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(FileViewerItem_DirectoryItem)__receiver)}
+}
+#[doc="`GetFontColor()` overload"]fn get_font_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <FileViewerItem_DirectoryItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f800usize)as*mut u8,crate::unity_engine::color::Color;
+(FileViewerItem_DirectoryItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-filevieweritem")]
-pub trait IFileViewerItem_FileItemMethods : IFileViewerItem_FileItem { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"] fn ctor (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , func : impl :: core :: convert :: Into < crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > >) -> () { unsafe { let __receiver = < FileViewerItem_FileItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_FileItem , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < FileViewerItem_FileItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_FileItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < FileViewerItem_FileItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_FileItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-filevieweritem")]impl<__T:IFileViewerItem_DirectoryItem>IFileViewerItem_DirectoryItemMethods for __T{}
 
-#[cfg(feature = "app-filevieweritem")]
-impl < __T : IFileViewerItem_FileItem > IFileViewerItem_FileItemMethods for __T { }
-
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_FileItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_FileItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_FileItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_FileItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_FileItem {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"] pub fn new (path : :: unity2 :: Il2CppString , name : :: unity2 :: Il2CppString , func : crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileViewerItem_FileItem) , :: core :: stringify ! (new) ,)) ; < Self as IFileViewerItem_FileItemMethods > :: ctor (this , path , name , func) ; this }
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem_DirectoryItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_font_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-filevieweritem")]
-pub trait IFileViewerItem_DirectoryItemMethods : IFileViewerItem_DirectoryItem { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"] fn ctor (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , func : impl :: core :: convert :: Into < crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > >) -> () { unsafe { let __receiver = < FileViewerItem_DirectoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_DirectoryItem , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f5a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileViewerItem_DirectoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_DirectoryItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < FileViewerItem_DirectoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_DirectoryItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFontColor()` overload"] fn get_font_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < FileViewerItem_DirectoryItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem_DirectoryItem , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e5f800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-filevieweritem")]
-impl < __T : IFileViewerItem_DirectoryItem > IFileViewerItem_DirectoryItemMethods for __T { }
-
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_DirectoryItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_DirectoryItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_DirectoryItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_DirectoryItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_font_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem_DirectoryItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem_DirectoryItem {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"] pub fn new (path : :: unity2 :: Il2CppString , name : :: unity2 :: Il2CppString , func : crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileViewerItem_DirectoryItem) , :: core :: stringify ! (new) ,)) ; < Self as IFileViewerItem_DirectoryItemMethods > :: ctor (this , path , name , func) ; this }
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem_DirectoryItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]pub fn new(path: ::unity2::Il2CppString,name: ::unity2::Il2CppString,func:crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileViewerItem_DirectoryItem), ::core::stringify!(new),));
+ <Self as IFileViewerItem_DirectoryItemMethods> ::ctor(this,path,name,func);
+this}
 }
 
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem { # [doc = "`DefaultFunc(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString)` overload"] pub fn default_func (menu : impl :: core :: convert :: Into < crate :: app :: debugmenu :: DebugMenu > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { { let __inner : extern "C" fn (crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ea730usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (menu) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenu(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"] pub fn create_menu (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , func : impl :: core :: convert :: Into < crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ea3d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem{#[doc="`DefaultFunc(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString)` overload"]pub fn default_func(menu:impl::core::convert::Into<crate::app::debugmenu::DebugMenu> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::menuitem::MenuItem_Result{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ea730usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(crate::app::debugmenu::DebugMenu)::core::convert::Into::into(menu),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`CreateMenu(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]pub fn create_menu(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,path:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ea3d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(path),(crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)::core::convert::Into::into(func))}
+}
+}
 
-#[cfg(feature = "app-filevieweritem")]
-pub trait IFileViewerItemMethods : IFileViewerItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"] fn ctor (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , func : impl :: core :: convert :: Into < crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > >) -> () { unsafe { let __receiver = < FileViewerItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem , :: unity2 :: Il2CppString , crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ea250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FileViewerItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ea350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: menuitem :: MenuItem_Result { unsafe { let __receiver = < FileViewerItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FileViewerItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: menuitem :: MenuItem_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26ea3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-filevieweritem")]pub trait IFileViewerItemMethods:IFileViewerItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> >)->(){unsafe{let __receiver= <FileViewerItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ea250usize)as*mut u8,();
+(FileViewerItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)::core::convert::Into::into(func))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileViewerItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ea350usize)as*mut u8, ::unity2::Il2CppString;
+(FileViewerItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FileViewerItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26ea3a0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(FileViewerItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-filevieweritem")]
-impl < __T : IFileViewerItem > IFileViewerItemMethods for __T { }
+#[cfg(feature="app-filevieweritem")]impl<__T:IFileViewerItem>IFileViewerItemMethods for __T{}
 
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn default_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FileViewerItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn default_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-filevieweritem")]
-impl FileViewerItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"] pub fn new (path : :: unity2 :: Il2CppString , func : crate :: system :: func_3 :: Func_3 < crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_Result >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FileViewerItem) , :: core :: stringify ! (new) ,)) ; < Self as IFileViewerItemMethods > :: ctor (this , path , func) ; this }
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem{#[doc="`.ctor(::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]pub fn new(path: ::unity2::Il2CppString,func:crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileViewerItem), ::core::stringify!(new),));
+ <Self as IFileViewerItemMethods> ::ctor(this,path,func);
+this}
+}
+
+#[cfg(feature="app-filevieweritem")]pub trait IFileViewerItem_FileItemMethods:IFileViewerItem_FileItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> >)->(){unsafe{let __receiver= <FileViewerItem_FileItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f840usize)as*mut u8,();
+(FileViewerItem_FileItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)::core::convert::Into::into(func))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FileViewerItem_FileItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f8a0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(FileViewerItem_FileItem)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FileViewerItem_FileItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f9c0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(FileViewerItem_FileItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-filevieweritem")]impl<__T:IFileViewerItem_FileItem>IFileViewerItem_FileItemMethods for __T{}
+
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem_FileItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem_FileItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]pub fn new(path: ::unity2::Il2CppString,name: ::unity2::Il2CppString,func:crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileViewerItem_FileItem), ::core::stringify!(new),));
+ <Self as IFileViewerItem_FileItemMethods> ::ctor(this,path,name,func);
+this}
+}
+
+#[cfg(feature="app-filevieweritem")]pub trait IFileViewerItem_PathItemMethods:IFileViewerItem_PathItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> >)->(){unsafe{let __receiver= <FileViewerItem_PathItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f600usize)as*mut u8,();
+(FileViewerItem_PathItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)::core::convert::Into::into(func))}
+}
+#[doc="`GetFullPath()` overload"]fn get_full_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileViewerItem_PathItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f740usize)as*mut u8, ::unity2::Il2CppString;
+(FileViewerItem_PathItem)__receiver)}
+}
+#[doc="`GetFunc()` overload"]fn get_func(self,)->crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>{unsafe{let __receiver= <FileViewerItem_PathItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5fa50usize)as*mut u8,crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result> ;
+(FileViewerItem_PathItem)__receiver)}
+}
+#[doc="`DoFunc()` overload"]fn do_func(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FileViewerItem_PathItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f930usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
+(FileViewerItem_PathItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-filevieweritem")]impl<__T:IFileViewerItem_PathItem>IFileViewerItem_PathItemMethods for __T{}
+
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem_PathItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_full_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn do_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-filevieweritem")]impl FileViewerItem_PathItem{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu,::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)` — overload selector"]pub fn new(path: ::unity2::Il2CppString,name: ::unity2::Il2CppString,func:crate::system::func_3::Func_3<crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString,crate::app::menuitem::MenuItem_Result>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileViewerItem_PathItem), ::core::stringify!(new),));
+ <Self as IFileViewerItem_PathItemMethods> ::ctor(this,path,name,func);
+this}
 }
 
 #[cfg(feature = "app-filevieweritem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FileViewerItem_PathItem;
-    pub use super::IFileViewerItem_PathItem;
-    pub use super::IFileViewerItem_PathItemMethods;
-    pub use super::FileViewerItem_FileItem;
-    pub use super::IFileViewerItem_FileItem;
-    pub use super::IFileViewerItem_FileItemMethods;
     pub use super::FileViewerItem_DirectoryItem;
     pub use super::IFileViewerItem_DirectoryItem;
     pub use super::IFileViewerItem_DirectoryItemMethods;
     pub use super::FileViewerItem;
     pub use super::IFileViewerItem;
     pub use super::IFileViewerItemMethods;
+    pub use super::FileViewerItem_FileItem;
+    pub use super::IFileViewerItem_FileItem;
+    pub use super::IFileViewerItem_FileItemMethods;
+    pub use super::FileViewerItem_PathItem;
+    pub use super::IFileViewerItem_PathItem;
+    pub use super::IFileViewerItem_PathItemMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::app::stringitem::IStringItem;
     pub use crate::system::object::IObject;

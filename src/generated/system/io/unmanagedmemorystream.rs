@@ -4,39 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: stream :: { IStream , Stream }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::stream::{IStream,Stream}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/unmanagedmemorystream/UnmanagedMemoryStream.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "UnmanagedMemoryStream")] # [parent (crate :: system :: io :: stream :: Stream)] pub struct UnmanagedMemoryStream {
-# [offset (56)] # [rename (name = "_length")] pub length_field : i64 ,
-# [offset (64)] # [rename (name = "_capacity")] pub capacity : i64 ,
-# [offset (72)] # [rename (name = "_position")] pub position_field : i64 ,
-# [offset (80)] # [rename (name = "_offset")] pub offset : i64 ,
-# [offset (88)] # [rename (name = "_access")] pub access : crate :: system :: io :: fileaccess :: FileAccess ,
-# [offset (92)] # [rename (name = "_isOpen")] pub is_open : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/unmanagedmemorystream/UnmanagedMemoryStream.md"))]#[::unity2::class(namespace="System.IO",name="UnmanagedMemoryStream")]#[parent(crate::system::io::stream::Stream)]pub struct UnmanagedMemoryStream{#[offset(56)]#[rename(name="_length")]pub length_field:i64, #[offset(64)]#[rename(name="_capacity")]pub capacity:i64, #[offset(72)]#[rename(name="_position")]pub position_field:i64, #[offset(80)]#[rename(name="_offset")]pub offset:i64, #[offset(88)]#[rename(name="_access")]pub access:crate::system::io::fileaccess::FileAccess, #[offset(92)]#[rename(name="_isOpen")]pub is_open:bool,}
 
 }
 
 #[cfg(feature = "system-io-unmanagedmemorystream-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-unmanagedmemorystream")]
-pub trait IUnmanagedMemoryStreamMethods : IUnmanagedMemoryStream { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3352450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanRead()` overload"] fn get_can_read (self ,) -> bool { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3352860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanSeek()` overload"] fn get_can_seek (self ,) -> bool { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3352880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanWrite()` overload"] fn get_can_write (self ,) -> bool { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3352890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33528b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`Flush()` overload"] fn flush (self ,) -> () { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33528d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Length()` overload"] fn get_length (self ,) -> i64 { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33528f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Position()` overload"] fn get_position (self ,) -> i64 { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3352930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Position(i64)` overload"] fn set_position (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3352970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u8>, i32, i32)` overload"] fn read (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3352b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`ReadByte()` overload"] fn read_byte (self ,) -> i32 { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33531b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"] fn seek (self , offset : impl :: core :: convert :: Into < i64 > , loc : impl :: core :: convert :: Into < crate :: system :: io :: seekorigin :: SeekOrigin >) -> i64 { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , i64 , crate :: system :: io :: seekorigin :: SeekOrigin , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3353320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (loc) , :: core :: option :: Option :: None) } } } # [doc = "`SetLength(i64)` overload"] fn set_length (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3353460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u8>, i32, i32)` overload"] fn write (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3353630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`WriteByte(u8)` overload"] fn write_byte (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < UnmanagedMemoryStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnmanagedMemoryStream , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3353d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-unmanagedmemorystream")]pub trait IUnmanagedMemoryStreamMethods:IUnmanagedMemoryStream{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3352450usize)as*mut u8,();
+(UnmanagedMemoryStream)__receiver)}
+}
+#[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3352860usize)as*mut u8,bool;
+(UnmanagedMemoryStream)__receiver)}
+}
+#[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3352880usize)as*mut u8,bool;
+(UnmanagedMemoryStream)__receiver)}
+}
+#[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3352890usize)as*mut u8,bool;
+(UnmanagedMemoryStream)__receiver)}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33528b0usize)as*mut u8,();
+(UnmanagedMemoryStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33528d0usize)as*mut u8,();
+(UnmanagedMemoryStream)__receiver)}
+}
+#[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33528f0usize)as*mut u8,i64;
+(UnmanagedMemoryStream)__receiver)}
+}
+#[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3352930usize)as*mut u8,i64;
+(UnmanagedMemoryStream)__receiver)}
+}
+#[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3352970usize)as*mut u8,();
+(UnmanagedMemoryStream)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3352b20usize)as*mut u8,i32;
+(UnmanagedMemoryStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33531b0usize)as*mut u8,i32;
+(UnmanagedMemoryStream)__receiver)}
+}
+#[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,loc:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3353320usize)as*mut u8,i64;
+(UnmanagedMemoryStream)__receiver,(i64)::core::convert::Into::into(offset),(crate::system::io::seekorigin::SeekOrigin)::core::convert::Into::into(loc))}
+}
+#[doc="`SetLength(i64)` overload"]fn set_length(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3353460usize)as*mut u8,();
+(UnmanagedMemoryStream)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3353630usize)as*mut u8,();
+(UnmanagedMemoryStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`WriteByte(u8)` overload"]fn write_byte(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <UnmanagedMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3353d20usize)as*mut u8,();
+(UnmanagedMemoryStream)__receiver,(u8)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "system-io-unmanagedmemorystream")]
-impl < __T : IUnmanagedMemoryStream > IUnmanagedMemoryStreamMethods for __T { }
+#[cfg(feature="system-io-unmanagedmemorystream")]impl<__T:IUnmanagedMemoryStream>IUnmanagedMemoryStreamMethods for __T{}
 
-#[cfg(feature = "system-io-unmanagedmemorystream")]
-impl UnmanagedMemoryStream { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_can_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_can_seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_can_write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn flush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn read_byte_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn write_byte_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnmanagedMemoryStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="system-io-unmanagedmemorystream")]impl UnmanagedMemoryStream{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_can_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_can_seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_can_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn read_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn write_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "system-io-unmanagedmemorystream")]
-impl UnmanagedMemoryStream {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnmanagedMemoryStream) , :: core :: stringify ! (new) ,)) ; < Self as IUnmanagedMemoryStreamMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-io-unmanagedmemorystream")]impl UnmanagedMemoryStream{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnmanagedMemoryStream), ::core::stringify!(new),));
+ <Self as IUnmanagedMemoryStreamMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-io-unmanagedmemorystream")]

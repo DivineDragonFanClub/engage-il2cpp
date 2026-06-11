@@ -4,36 +4,55 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: pokeinspector :: { IPokeInspector , PokeInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::pokeinspector::{IPokeInspector,PokeInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/escapeinspector/EscapeInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "EscapeInspector")] # [parent (crate :: app :: pokeinspector :: PokeInspector)] pub struct EscapeInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/escapeinspector/EscapeInspector.md"))]#[::unity2::class(namespace="App",name="EscapeInspector")]#[parent(crate::app::pokeinspector::PokeInspector)]pub struct EscapeInspector{}
 
 }
 
 #[cfg(feature = "app-escapeinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-escapeinspector")]
-pub trait IEscapeInspectorMethods : IEscapeInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < EscapeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EscapeInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eb1e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`GetLabel()` overload"] fn get_label (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EscapeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EscapeInspector , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eb1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRange()` overload"] fn get_range (self ,) -> i32 { unsafe { let __receiver = < EscapeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EscapeInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eb240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Color()` overload"] fn get_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < EscapeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EscapeInspector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eb250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-escapeinspector")]pub trait IEscapeInspectorMethods:IEscapeInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EscapeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eb1e0usize)as*mut u8,();
+(EscapeInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EscapeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eb1f0usize)as*mut u8, ::unity2::Il2CppString;
+(EscapeInspector)__receiver)}
+}
+#[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <EscapeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eb240usize)as*mut u8,i32;
+(EscapeInspector)__receiver)}
+}
+#[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <EscapeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eb250usize)as*mut u8,crate::unity_engine::color::Color;
+(EscapeInspector)__receiver)}
+}
+}
 
-#[cfg(feature = "app-escapeinspector")]
-impl < __T : IEscapeInspector > IEscapeInspectorMethods for __T { }
+#[cfg(feature="app-escapeinspector")]impl<__T:IEscapeInspector>IEscapeInspectorMethods for __T{}
 
-#[cfg(feature = "app-escapeinspector")]
-impl EscapeInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EscapeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EscapeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EscapeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EscapeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-escapeinspector")]impl EscapeInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-escapeinspector")]
-impl EscapeInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EscapeInspector) , :: core :: stringify ! (new) ,)) ; < Self as IEscapeInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-escapeinspector")]impl EscapeInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EscapeInspector), ::core::stringify!(new),));
+ <Self as IEscapeInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-escapeinspector")]

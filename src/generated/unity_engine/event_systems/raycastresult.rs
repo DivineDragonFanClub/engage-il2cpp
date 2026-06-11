@@ -4,54 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/raycastresult/RaycastResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RaycastResult {
-    pub m_game_object: crate :: unity_engine :: gameobject :: GameObject,
-    pub module: crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster,
-    pub distance: f32,
-    pub index: f32,
-    pub depth: i32,
-    pub sorting_layer: i32,
-    pub sorting_order: i32,
-    pub world_position: crate :: unity_engine :: vector3 :: Vector3,
-    pub world_normal: crate :: unity_engine :: vector3 :: Vector3,
-    pub screen_position: crate :: unity_engine :: vector2 :: Vector2,
-    pub display_index: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/raycastresult/RaycastResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RaycastResult{pub m_game_object:crate::unity_engine::gameobject::GameObject,pub module:crate::unity_engine::event_systems::baseraycaster::BaseRaycaster,pub distance:f32,pub index:f32,pub depth:i32,pub sorting_layer:i32,pub sorting_order:i32,pub world_position:crate::unity_engine::vector3::Vector3,pub world_normal:crate::unity_engine::vector3::Vector3,pub screen_position:crate::unity_engine::vector2::Vector2,pub display_index:i32,}
+impl::unity2::ClassIdentity for RaycastResult{const NAMESPACE: &'static str="UnityEngine.EventSystems";
+const NAME: &'static str="RaycastResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RaycastResult {
-    const NAMESPACE: &'static str = "UnityEngine.EventSystems";
-
-    const NAME: &'static str = "RaycastResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RaycastResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RaycastResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -59,11 +26,29 @@ impl ::unity2::IlType for RaycastResult {
 #[cfg(feature = "unity_engine-event_systems-raycastresult-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-raycastresult")]
-impl RaycastResult { # [doc = "`get_gameObject()` overload"] pub fn get_game_object (& mut self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (* mut RaycastResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37222c0usize) as * mut u8) ; __inner (self as * mut RaycastResult , :: core :: option :: Option :: None) } } } # [doc = "`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"] pub fn set_game_object (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (* mut RaycastResult , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37222d0usize) as * mut u8) ; __inner (self as * mut RaycastResult , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_isValid()` overload"] pub fn get_is_valid (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut RaycastResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37222e0usize) as * mut u8) ; __inner (self as * mut RaycastResult , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut RaycastResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37223a0usize) as * mut u8) ; __inner (self as * mut RaycastResult , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut RaycastResult , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371fa90usize) as * mut u8) ; __inner (self as * mut RaycastResult , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-raycastresult")]impl RaycastResult{#[doc="`get_gameObject()` overload"]pub fn get_game_object(&mut self,)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37222c0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(*mut RaycastResult)self as*mut RaycastResult)}
+}
+#[doc="`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"]pub fn set_game_object(&mut self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37222d0usize)as*mut u8,();
+(*mut RaycastResult)self as*mut RaycastResult,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_isValid()` overload"]pub fn get_is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37222e0usize)as*mut u8,bool;
+(*mut RaycastResult)self as*mut RaycastResult)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37223a0usize)as*mut u8,();
+(*mut RaycastResult)self as*mut RaycastResult)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371fa90usize)as*mut u8, ::unity2::Il2CppString;
+(*mut RaycastResult)self as*mut RaycastResult)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-raycastresult")]
-impl RaycastResult { pub fn get_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-event_systems-raycastresult")]impl RaycastResult{pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-event_systems-raycastresult")]
 #[doc(hidden)]

@@ -4,44 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/trailvertexsupplier/TrailVertexSupplier.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "TrailVertexSupplier")] # [parent (crate :: system :: object :: Object)] pub struct TrailVertexSupplier {
-# [static_field] # [rename (name = "NumElements")] pub num_elements : i32 ,
-# [static_field] # [rename (name = "MaxBufferingDuration")] pub max_buffering_duration : f32 ,
-# [static_field] # [rename (name = "DecayRate")] pub decay_rate : f32 ,
-# [offset (16)] # [rename (name = "CP")] pub cp : crate :: combat :: character :: Character ,
-# [offset (24)] # [rename (name = "m_Track")] pub m_track : crate :: combat :: trailtrack :: TrailTrack ,
-# [offset (32)] # [rename (name = "m_ClipLength")] pub m_clip_length : f32 ,
-# [offset (40)] # [rename (name = "m_Vertices")] pub m_vertices : :: unity2 :: Array < crate :: combat :: trailvertex :: TrailVertex > ,
-# [offset (52)] # [rename (name = "m_DeltaAlpha")] pub m_delta_alpha : f32 ,
-# [offset (56)] # [rename (name = "m_WeaponRootOffset")] pub m_weapon_root_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (68)] # [rename (name = "m_WeaponTipOffset")] pub m_weapon_tip_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (80)] # [rename (name = "m_HandIndex")] pub m_hand_index : i32 ,
-# [offset (88)] # [rename (name = "m_HandTransform")] pub m_hand_transform : crate :: unity_engine :: transform :: Transform ,
-# [offset (96)] # [rename (name = "m_ElapsedTime")] pub m_elapsed_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/trailvertexsupplier/TrailVertexSupplier.md"))]#[::unity2::class(namespace="Combat",name="TrailVertexSupplier")]#[parent(crate::system::object::Object)]pub struct TrailVertexSupplier{#[static_field]#[rename(name="NumElements")]pub num_elements:i32, #[static_field]#[rename(name="MaxBufferingDuration")]pub max_buffering_duration:f32, #[static_field]#[rename(name="DecayRate")]pub decay_rate:f32, #[offset(16)]#[rename(name="CP")]pub cp:crate::combat::character::Character, #[offset(24)]#[rename(name="m_Track")]pub m_track:crate::combat::trailtrack::TrailTrack, #[offset(32)]#[rename(name="m_ClipLength")]pub m_clip_length:f32, #[offset(40)]#[rename(name="m_Vertices")]pub m_vertices: ::unity2::Array<crate::combat::trailvertex::TrailVertex> , #[offset(52)]#[rename(name="m_DeltaAlpha")]pub m_delta_alpha:f32, #[offset(56)]#[rename(name="m_WeaponRootOffset")]pub m_weapon_root_offset:crate::unity_engine::vector3::Vector3, #[offset(68)]#[rename(name="m_WeaponTipOffset")]pub m_weapon_tip_offset:crate::unity_engine::vector3::Vector3, #[offset(80)]#[rename(name="m_HandIndex")]pub m_hand_index:i32, #[offset(88)]#[rename(name="m_HandTransform")]pub m_hand_transform:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="m_ElapsedTime")]pub m_elapsed_time:f32,}
 
 }
 
 #[cfg(feature = "combat-trailvertexsupplier-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-trailvertexsupplier")]
-pub trait ITrailVertexSupplierMethods : ITrailVertexSupplier { # [doc = "`get_Alpha()` overload"] fn get_alpha (self ,) -> f32 { unsafe { let __receiver = < TrailVertexSupplier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailVertexSupplier , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a0310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Alpha(f32)` overload"] fn set_alpha (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TrailVertexSupplier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailVertexSupplier , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a0320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < TrailVertexSupplier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailVertexSupplier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, i32)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , hand : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TrailVertexSupplier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailVertexSupplier , crate :: combat :: character :: Character , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a0330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (hand) , :: core :: option :: Option :: None) } } } # [doc = "`SetupWeaponLengthOffset()` overload"] fn setup_weapon_length_offset (self ,) -> () { unsafe { let __receiver = < TrailVertexSupplier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailVertexSupplier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a05d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update(f32, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"] fn update (self , dt : impl :: core :: convert :: Into < f32 >) -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let __receiver = < TrailVertexSupplier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (TrailVertexSupplier , f32 , * mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dt) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`SendToMesh(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"] fn send_to_mesh (self , pos_r : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > , pos_t : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > >) -> () { unsafe { let __receiver = < TrailVertexSupplier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailVertexSupplier , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229eba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos_r) , :: core :: convert :: Into :: into (pos_t) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-trailvertexsupplier")]pub trait ITrailVertexSupplierMethods:ITrailVertexSupplier{#[doc="`get_Alpha()` overload"]fn get_alpha(self,)->f32{unsafe{let __receiver= <TrailVertexSupplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a0310usize)as*mut u8,f32;
+(TrailVertexSupplier)__receiver)}
+}
+#[doc="`set_Alpha(f32)` overload"]fn set_alpha(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TrailVertexSupplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a0320usize)as*mut u8,();
+(TrailVertexSupplier)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <TrailVertexSupplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e680usize)as*mut u8,();
+(TrailVertexSupplier)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, i32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,hand:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TrailVertexSupplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a0330usize)as*mut u8,();
+(TrailVertexSupplier)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(i32)::core::convert::Into::into(hand))}
+}
+#[doc="`SetupWeaponLengthOffset()` overload"]fn setup_weapon_length_offset(self,)->(){unsafe{let __receiver= <TrailVertexSupplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a05d0usize)as*mut u8,();
+(TrailVertexSupplier)__receiver)}
+}
+#[doc="`Update(f32, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]fn update(self,dt:impl::core::convert::Into<f32>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let __receiver= <TrailVertexSupplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e7b0usize)as*mut u8,();
+(TrailVertexSupplier)__receiver,(f32)::core::convert::Into::into(dt),(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`SendToMesh(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]fn send_to_mesh(self,pos_r:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,pos_t:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> >)->(){unsafe{let __receiver= <TrailVertexSupplier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229eba0usize)as*mut u8,();
+(TrailVertexSupplier)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(pos_r),(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(pos_t))}
+}
+}
 
-#[cfg(feature = "combat-trailvertexsupplier")]
-impl < __T : ITrailVertexSupplier > ITrailVertexSupplierMethods for __T { }
+#[cfg(feature="combat-trailvertexsupplier")]impl<__T:ITrailVertexSupplier>ITrailVertexSupplierMethods for __T{}
 
-#[cfg(feature = "combat-trailvertexsupplier")]
-impl TrailVertexSupplier { pub fn get_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailVertexSupplier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailVertexSupplier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailVertexSupplier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailVertexSupplier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn setup_weapon_length_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailVertexSupplier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailVertexSupplier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn send_to_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailVertexSupplier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="combat-trailvertexsupplier")]impl TrailVertexSupplier{pub fn get_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn setup_weapon_length_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn send_to_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "combat-trailvertexsupplier")]
-impl TrailVertexSupplier {
-# [doc = "`.ctor(crate::combat::character::Character, i32)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , hand : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TrailVertexSupplier) , :: core :: stringify ! (new) ,)) ; < Self as ITrailVertexSupplierMethods > :: ctor (this , chr , hand) ; this }
+#[cfg(feature="combat-trailvertexsupplier")]impl TrailVertexSupplier{#[doc="`.ctor(crate::combat::character::Character, i32)` — overload selector"]pub fn new(chr:crate::combat::character::Character,hand:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TrailVertexSupplier), ::core::stringify!(new),));
+ <Self as ITrailVertexSupplierMethods> ::ctor(this,chr,hand);
+this}
 }
 
 #[cfg(feature = "combat-trailvertexsupplier")]

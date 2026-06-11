@@ -4,42 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: mapbasicmenu :: { IMapBasicMenu , MapBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::mapbasicmenu::{IMapBasicMenu,MapBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapunitsubcommandmenu/MapUnitSubCommandMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapUnitSubCommandMenu")] # [parent (crate :: app :: mapbasicmenu :: MapBasicMenu)] pub struct MapUnitSubCommandMenu {
-# [static_field] # [rename (name = "s_SelectIndex")] pub s_select_index : i32 ,
-# [offset (200)] # [rename (name = "m_MapUnitCommandMenuContent")] pub m_map_unit_command_menu_content : crate :: app :: mapunitcommandmenucontent :: MapUnitCommandMenuContent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapunitsubcommandmenu/MapUnitSubCommandMenu.md"))]#[::unity2::class(namespace="App",name="MapUnitSubCommandMenu")]#[parent(crate::app::mapbasicmenu::MapBasicMenu)]pub struct MapUnitSubCommandMenu{#[static_field]#[rename(name="s_SelectIndex")]pub s_select_index:i32, #[offset(200)]#[rename(name="m_MapUnitCommandMenuContent")]pub m_map_unit_command_menu_content:crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent,}
 
 }
 
 #[cfg(feature = "app-mapunitsubcommandmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapunitsubcommandmenu")]
-impl MapUnitSubCommandMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202e6b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`ResetSelectIndex()` overload"] pub fn reset_select_index () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202eb90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202ec00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapunitsubcommandmenu")]impl MapUnitSubCommandMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202e6b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`ResetSelectIndex()` overload"]pub fn reset_select_index()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202eb90usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202ec00usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mapunitsubcommandmenu")]
-pub trait IMapUnitSubCommandMenuMethods : IMapUnitSubCommandMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: mapunitcommandmenucontent :: MapUnitCommandMenuContent >) -> () { unsafe { let __receiver = < MapUnitSubCommandMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitSubCommandMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: mapunitcommandmenucontent :: MapUnitCommandMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202e490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`get_FlagID()` overload"] fn get_flag_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapUnitSubCommandMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitSubCommandMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202e4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapUnitSubCommandMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitSubCommandMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202e520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapUnitSubCommandMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitSubCommandMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202e570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapUnitSubCommandMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitSubCommandMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202e5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < MapUnitSubCommandMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUnitSubCommandMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x202e680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapunitsubcommandmenu")]pub trait IMapUnitSubCommandMenuMethods:IMapUnitSubCommandMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent>)->(){unsafe{let __receiver= <MapUnitSubCommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202e490usize)as*mut u8,();
+(MapUnitSubCommandMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapUnitSubCommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202e4d0usize)as*mut u8, ::unity2::Il2CppString;
+(MapUnitSubCommandMenu)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapUnitSubCommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202e520usize)as*mut u8, ::unity2::Il2CppString;
+(MapUnitSubCommandMenu)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapUnitSubCommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202e570usize)as*mut u8,();
+(MapUnitSubCommandMenu)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapUnitSubCommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202e5f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapUnitSubCommandMenu)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MapUnitSubCommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202e680usize)as*mut u8,();
+(MapUnitSubCommandMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapunitsubcommandmenu")]
-impl < __T : IMapUnitSubCommandMenu > IMapUnitSubCommandMenuMethods for __T { }
+#[cfg(feature="app-mapunitsubcommandmenu")]impl<__T:IMapUnitSubCommandMenu>IMapUnitSubCommandMenuMethods for __T{}
 
-#[cfg(feature = "app-mapunitsubcommandmenu")]
-impl MapUnitSubCommandMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitSubCommandMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_flag_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitSubCommandMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitSubCommandMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitSubCommandMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitSubCommandMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitSubCommandMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitSubCommandMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reset_select_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitSubCommandMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUnitSubCommandMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-mapunitsubcommandmenu")]impl MapUnitSubCommandMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reset_select_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-mapunitsubcommandmenu")]
-impl MapUnitSubCommandMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: mapunitcommandmenucontent :: MapUnitCommandMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapUnitSubCommandMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapUnitSubCommandMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-mapunitsubcommandmenu")]impl MapUnitSubCommandMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapUnitSubCommandMenu), ::core::stringify!(new),));
+ <Self as IMapUnitSubCommandMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-mapunitsubcommandmenu")]

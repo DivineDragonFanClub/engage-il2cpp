@@ -4,64 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/freecamera/FreeCamera.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "FreeCamera")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FreeCamera {
-# [offset (24)] # [rename (name = "m_LookSpeedController")] pub m_look_speed_controller : f32 ,
-# [offset (28)] # [rename (name = "m_LookSpeedMouse")] pub m_look_speed_mouse : f32 ,
-# [offset (32)] # [rename (name = "m_MoveSpeed")] pub m_move_speed : f32 ,
-# [offset (36)] # [rename (name = "m_MoveSpeedIncrement")] pub m_move_speed_increment : f32 ,
-# [offset (40)] # [rename (name = "m_Turbo")] pub m_turbo : f32 ,
-# [static_field] # [rename (name = "kMouseX")] pub k_mouse_x : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kMouseY")] pub k_mouse_y : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kRightStickX")] pub k_right_stick_x : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kRightStickY")] pub k_right_stick_y : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kVertical")] pub k_vertical : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kHorizontal")] pub k_horizontal : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kYAxis")] pub k_y_axis : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "kSpeedAxis")] pub k_speed_axis : :: unity2 :: Il2CppString ,
-# [offset (44)] # [rename (name = "inputRotateAxisX")] pub input_rotate_axis_x : f32 ,
-# [offset (48)] # [rename (name = "inputRotateAxisY")] pub input_rotate_axis_y : f32 ,
-# [offset (52)] # [rename (name = "inputChangeSpeed")] pub input_change_speed : f32 ,
-# [offset (56)] # [rename (name = "inputVertical")] pub input_vertical : f32 ,
-# [offset (60)] # [rename (name = "inputHorizontal")] pub input_horizontal : f32 ,
-# [offset (64)] # [rename (name = "inputYAxis")] pub input_y_axis : f32 ,
-# [offset (68)] # [rename (name = "leftShiftBoost")] pub left_shift_boost : bool ,
-# [offset (69)] # [rename (name = "leftShift")] pub left_shift : bool ,
-# [offset (70)] # [rename (name = "fire1")] pub fire1 : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/freecamera/FreeCamera.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="FreeCamera")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FreeCamera{#[offset(24)]#[rename(name="m_LookSpeedController")]pub m_look_speed_controller:f32, #[offset(28)]#[rename(name="m_LookSpeedMouse")]pub m_look_speed_mouse:f32, #[offset(32)]#[rename(name="m_MoveSpeed")]pub m_move_speed:f32, #[offset(36)]#[rename(name="m_MoveSpeedIncrement")]pub m_move_speed_increment:f32, #[offset(40)]#[rename(name="m_Turbo")]pub m_turbo:f32, #[static_field]#[rename(name="kMouseX")]pub k_mouse_x: ::unity2::Il2CppString, #[static_field]#[rename(name="kMouseY")]pub k_mouse_y: ::unity2::Il2CppString, #[static_field]#[rename(name="kRightStickX")]pub k_right_stick_x: ::unity2::Il2CppString, #[static_field]#[rename(name="kRightStickY")]pub k_right_stick_y: ::unity2::Il2CppString, #[static_field]#[rename(name="kVertical")]pub k_vertical: ::unity2::Il2CppString, #[static_field]#[rename(name="kHorizontal")]pub k_horizontal: ::unity2::Il2CppString, #[static_field]#[rename(name="kYAxis")]pub k_y_axis: ::unity2::Il2CppString, #[static_field]#[rename(name="kSpeedAxis")]pub k_speed_axis: ::unity2::Il2CppString, #[offset(44)]#[rename(name="inputRotateAxisX")]pub input_rotate_axis_x:f32, #[offset(48)]#[rename(name="inputRotateAxisY")]pub input_rotate_axis_y:f32, #[offset(52)]#[rename(name="inputChangeSpeed")]pub input_change_speed:f32, #[offset(56)]#[rename(name="inputVertical")]pub input_vertical:f32, #[offset(60)]#[rename(name="inputHorizontal")]pub input_horizontal:f32, #[offset(64)]#[rename(name="inputYAxis")]pub input_y_axis:f32, #[offset(68)]#[rename(name="leftShiftBoost")]pub left_shift_boost:bool, #[offset(69)]#[rename(name="leftShift")]pub left_shift:bool, #[offset(70)]#[rename(name="fire1")]pub fire1:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-freecamera-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-freecamera")]
-impl FreeCamera { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa3a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-freecamera")]impl FreeCamera{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30aa3a0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-freecamera")]
-pub trait IFreeCameraMethods : IFreeCamera { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a9df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RegisterInputs()` overload"] fn register_inputs (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a9e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateInputs()` overload"] fn update_inputs (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a9e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FreeCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FreeCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-freecamera")]pub trait IFreeCameraMethods:IFreeCamera{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <FreeCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a9df0usize)as*mut u8,();
+(FreeCamera)__receiver)}
+}
+#[doc="`RegisterInputs()` overload"]fn register_inputs(self,)->(){unsafe{let __receiver= <FreeCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a9e00usize)as*mut u8,();
+(FreeCamera)__receiver)}
+}
+#[doc="`UpdateInputs()` overload"]fn update_inputs(self,)->(){unsafe{let __receiver= <FreeCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a9e10usize)as*mut u8,();
+(FreeCamera)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <FreeCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa010usize)as*mut u8,();
+(FreeCamera)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FreeCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30aa370usize)as*mut u8,();
+(FreeCamera)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-freecamera")]
-impl < __T : IFreeCamera > IFreeCameraMethods for __T { }
+#[cfg(feature="unity_engine-rendering-freecamera")]impl<__T:IFreeCamera>IFreeCameraMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-freecamera")]
-impl FreeCamera { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FreeCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn register_inputs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FreeCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_inputs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FreeCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FreeCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FreeCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FreeCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-rendering-freecamera")]impl FreeCamera{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn register_inputs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_inputs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-rendering-freecamera")]
-impl FreeCamera {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FreeCamera) , :: core :: stringify ! (new) ,)) ; < Self as IFreeCameraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-freecamera")]impl FreeCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FreeCamera), ::core::stringify!(new),));
+ <Self as IFreeCameraMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-freecamera")]

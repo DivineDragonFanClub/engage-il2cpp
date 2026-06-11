@@ -4,42 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: aktriggerbase :: { AkTriggerBase , IAkTriggerBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::aktriggerbase::{AkTriggerBase,IAkTriggerBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggercollisionenter/AkTriggerCollisionEnter.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTriggerCollisionEnter")] # [parent (crate :: root :: aktriggerbase :: AkTriggerBase)] pub struct AkTriggerCollisionEnter {
-# [offset (32)] # [rename (name = "triggerObject")] pub trigger_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktriggercollisionenter/AkTriggerCollisionEnter.md"))]#[::unity2::class(namespace="",name="AkTriggerCollisionEnter")]#[parent(crate::root::aktriggerbase::AkTriggerBase)]pub struct AkTriggerCollisionEnter{#[offset(32)]#[rename(name="triggerObject")]pub trigger_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "root-aktriggercollisionenter-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aktriggercollisionenter")]
-pub trait IAkTriggerCollisionEnterMethods : IAkTriggerCollisionEnter { # [doc = "`OnCollisionEnter(crate::unity_engine::collision::Collision)` overload"] fn on_collision_enter (self , in_other : impl :: core :: convert :: Into < crate :: unity_engine :: collision :: Collision >) -> () { unsafe { let __receiver = < AkTriggerCollisionEnter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerCollisionEnter , crate :: unity_engine :: collision :: Collision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2aaf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_other) , :: core :: option :: Option :: None) } } } # [doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_enter (self , in_other : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < AkTriggerCollisionEnter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerCollisionEnter , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2abf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkTriggerCollisionEnter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerCollisionEnter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2acf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktriggercollisionenter")]pub trait IAkTriggerCollisionEnterMethods:IAkTriggerCollisionEnter{#[doc="`OnCollisionEnter(crate::unity_engine::collision::Collision)` overload"]fn on_collision_enter(self,in_other:impl::core::convert::Into<crate::unity_engine::collision::Collision>)->(){unsafe{let __receiver= <AkTriggerCollisionEnter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2aaf0usize)as*mut u8,();
+(AkTriggerCollisionEnter)__receiver,(crate::unity_engine::collision::Collision)::core::convert::Into::into(in_other))}
+}
+#[doc="`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_enter(self,in_other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <AkTriggerCollisionEnter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2abf0usize)as*mut u8,();
+(AkTriggerCollisionEnter)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(in_other))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkTriggerCollisionEnter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2acf0usize)as*mut u8,();
+(AkTriggerCollisionEnter)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aktriggercollisionenter")]
-impl < __T : IAkTriggerCollisionEnter > IAkTriggerCollisionEnterMethods for __T { }
+#[cfg(feature="root-aktriggercollisionenter")]impl<__T:IAkTriggerCollisionEnter>IAkTriggerCollisionEnterMethods for __T{}
 
-#[cfg(feature = "root-aktriggercollisionenter")]
-impl AkTriggerCollisionEnter { pub fn on_collision_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerCollisionEnter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_trigger_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerCollisionEnter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerCollisionEnter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-aktriggercollisionenter")]impl AkTriggerCollisionEnter{pub fn on_collision_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_trigger_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-aktriggercollisionenter")]
-impl AkTriggerCollisionEnter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTriggerCollisionEnter) , :: core :: stringify ! (new) ,)) ; < Self as IAkTriggerCollisionEnterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-aktriggercollisionenter")]impl AkTriggerCollisionEnter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTriggerCollisionEnter), ::core::stringify!(new),));
+ <Self as IAkTriggerCollisionEnterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-aktriggercollisionenter")]

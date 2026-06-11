@@ -4,34 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: parameterinfo :: { IParameterInfo , ParameterInfo }
- ;
- use crate :: system :: reflection :: runtimeparameterinfo :: { IRuntimeParameterInfo , RuntimeParameterInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::parameterinfo::{IParameterInfo,ParameterInfo}
+;
+use crate::system::reflection::runtimeparameterinfo::{IRuntimeParameterInfo,RuntimeParameterInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoparameterinfo/MonoParameterInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MonoParameterInfo")] # [parent (crate :: system :: reflection :: runtimeparameterinfo :: RuntimeParameterInfo)] pub struct MonoParameterInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoparameterinfo/MonoParameterInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoParameterInfo")]#[parent(crate::system::reflection::runtimeparameterinfo::RuntimeParameterInfo)]pub struct MonoParameterInfo{}
 
 }
 
 #[cfg(feature = "system-reflection-monoparameterinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-monoparameterinfo")]
-pub trait IMonoParameterInfoMethods : IMonoParameterInfo { # [doc = "`.ctor(crate::system::reflection::parameterinfo::ParameterInfo, crate::system::reflection::memberinfo::MemberInfo)` overload"] fn ctor (self , pinfo : impl :: core :: convert :: Into < crate :: system :: reflection :: parameterinfo :: ParameterInfo > , member : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo >) -> () { unsafe { let __receiver = < MonoParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoParameterInfo , crate :: system :: reflection :: parameterinfo :: ParameterInfo , crate :: system :: reflection :: memberinfo :: MemberInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pinfo) , :: core :: convert :: Into :: into (member) , :: core :: option :: Option :: None) } } } # [doc = "`get_DefaultValue()` overload"] fn get_default_value (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < MonoParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoParameterInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < MonoParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoParameterInfo , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33836d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < MonoParameterInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoParameterInfo , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3383750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-monoparameterinfo")]pub trait IMonoParameterInfoMethods:IMonoParameterInfo{#[doc="`.ctor(crate::system::reflection::parameterinfo::ParameterInfo, crate::system::reflection::memberinfo::MemberInfo)` overload"]fn ctor(self,pinfo:impl::core::convert::Into<crate::system::reflection::parameterinfo::ParameterInfo> ,member:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>)->(){unsafe{let __receiver= <MonoParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383390usize)as*mut u8,();
+(MonoParameterInfo)__receiver,(crate::system::reflection::parameterinfo::ParameterInfo)::core::convert::Into::into(pinfo),(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(member))}
+}
+#[doc="`get_DefaultValue()` overload"]fn get_default_value(self,)->crate::system::object::Object{unsafe{let __receiver= <MonoParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383450usize)as*mut u8,crate::system::object::Object;
+(MonoParameterInfo)__receiver)}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33836d0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(MonoParameterInfo)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MonoParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3383750usize)as*mut u8,bool;
+(MonoParameterInfo)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+}
 
-#[cfg(feature = "system-reflection-monoparameterinfo")]
-impl < __T : IMonoParameterInfo > IMonoParameterInfoMethods for __T { }
+#[cfg(feature="system-reflection-monoparameterinfo")]impl<__T:IMonoParameterInfo>IMonoParameterInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-monoparameterinfo")]
-impl MonoParameterInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_default_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoParameterInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-reflection-monoparameterinfo")]impl MonoParameterInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_default_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "system-reflection-monoparameterinfo")]
-impl MonoParameterInfo {
-# [doc = "`.ctor(crate::system::reflection::parameterinfo::ParameterInfo, crate::system::reflection::memberinfo::MemberInfo)` — overload selector"] pub fn new (pinfo : crate :: system :: reflection :: parameterinfo :: ParameterInfo , member : crate :: system :: reflection :: memberinfo :: MemberInfo) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MonoParameterInfo) , :: core :: stringify ! (new) ,)) ; < Self as IMonoParameterInfoMethods > :: ctor (this , pinfo , member) ; this }
+#[cfg(feature="system-reflection-monoparameterinfo")]impl MonoParameterInfo{#[doc="`.ctor(crate::system::reflection::parameterinfo::ParameterInfo, crate::system::reflection::memberinfo::MemberInfo)` — overload selector"]pub fn new(pinfo:crate::system::reflection::parameterinfo::ParameterInfo,member:crate::system::reflection::memberinfo::MemberInfo)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MonoParameterInfo), ::core::stringify!(new),));
+ <Self as IMonoParameterInfoMethods> ::ctor(this,pinfo,member);
+this}
 }
 
 #[cfg(feature = "system-reflection-monoparameterinfo")]

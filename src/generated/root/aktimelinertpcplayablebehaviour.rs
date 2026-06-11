@@ -4,34 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktimelinertpcplayablebehaviour/AkTimelineRtpcPlayableBehaviour.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTimelineRtpcPlayableBehaviour")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct AkTimelineRtpcPlayableBehaviour {
-# [offset (16)] # [rename (name = "value")] pub value : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktimelinertpcplayablebehaviour/AkTimelineRtpcPlayableBehaviour.md"))]#[::unity2::class(namespace="",name="AkTimelineRtpcPlayableBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct AkTimelineRtpcPlayableBehaviour{#[offset(16)]#[rename(name="value")]pub value:f32,}
 
 }
 
 #[cfg(feature = "root-aktimelinertpcplayablebehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aktimelinertpcplayablebehaviour")]
-pub trait IAkTimelineRtpcPlayableBehaviourMethods : IAkTimelineRtpcPlayableBehaviour { # [doc = "`set_setGlobally(bool)` overload"] fn set_set_globally (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkTimelineRtpcPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTimelineRtpcPlayableBehaviour , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d28e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_setGlobally()` overload"] fn get_set_globally (self ,) -> bool { unsafe { let __receiver = < AkTimelineRtpcPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTimelineRtpcPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d28e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"] fn set_game_object (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkTimelineRtpcPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTimelineRtpcPlayableBehaviour , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d28e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_gameObject()` overload"] fn get_game_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < AkTimelineRtpcPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTimelineRtpcPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d28e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , frame_data : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < AkTimelineRtpcPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTimelineRtpcPlayableBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d28e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (frame_data) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkTimelineRtpcPlayableBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTimelineRtpcPlayableBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d28de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktimelinertpcplayablebehaviour")]pub trait IAkTimelineRtpcPlayableBehaviourMethods:IAkTimelineRtpcPlayableBehaviour{#[doc="`set_setGlobally(bool)` overload"]fn set_set_globally(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkTimelineRtpcPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28e10usize)as*mut u8,();
+(AkTimelineRtpcPlayableBehaviour)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_setGlobally()` overload"]fn get_set_globally(self,)->bool{unsafe{let __receiver= <AkTimelineRtpcPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28e20usize)as*mut u8,bool;
+(AkTimelineRtpcPlayableBehaviour)__receiver)}
+}
+#[doc="`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"]fn set_game_object(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkTimelineRtpcPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28e30usize)as*mut u8,();
+(AkTimelineRtpcPlayableBehaviour)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_gameObject()` overload"]fn get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <AkTimelineRtpcPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28e40usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(AkTimelineRtpcPlayableBehaviour)__receiver)}
+}
+#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,frame_data:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AkTimelineRtpcPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28e50usize)as*mut u8,();
+(AkTimelineRtpcPlayableBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(frame_data),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkTimelineRtpcPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28de0usize)as*mut u8,();
+(AkTimelineRtpcPlayableBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aktimelinertpcplayablebehaviour")]
-impl < __T : IAkTimelineRtpcPlayableBehaviour > IAkTimelineRtpcPlayableBehaviourMethods for __T { }
+#[cfg(feature="root-aktimelinertpcplayablebehaviour")]impl<__T:IAkTimelineRtpcPlayableBehaviour>IAkTimelineRtpcPlayableBehaviourMethods for __T{}
 
-#[cfg(feature = "root-aktimelinertpcplayablebehaviour")]
-impl AkTimelineRtpcPlayableBehaviour { pub fn set_set_globally_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTimelineRtpcPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_set_globally_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTimelineRtpcPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTimelineRtpcPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTimelineRtpcPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTimelineRtpcPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTimelineRtpcPlayableBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="root-aktimelinertpcplayablebehaviour")]impl AkTimelineRtpcPlayableBehaviour{pub fn set_set_globally_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_set_globally_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "root-aktimelinertpcplayablebehaviour")]
-impl AkTimelineRtpcPlayableBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTimelineRtpcPlayableBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IAkTimelineRtpcPlayableBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-aktimelinertpcplayablebehaviour")]impl AkTimelineRtpcPlayableBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTimelineRtpcPlayableBehaviour), ::core::stringify!(new),));
+ <Self as IAkTimelineRtpcPlayableBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-aktimelinertpcplayablebehaviour")]

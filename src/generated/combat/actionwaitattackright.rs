@@ -4,34 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionwaitattackright/ActionWaitAttackRight.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionWaitAttackRight")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionWaitAttackRight {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionwaitattackright/ActionWaitAttackRight.md"))]#[::unity2::class(namespace="Combat",name="ActionWaitAttackRight")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionWaitAttackRight{}
 
 }
 
 #[cfg(feature = "combat-actionwaitattackright-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionwaitattackright")]
-pub trait IActionWaitAttackRightMethods : IActionWaitAttackRight { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionWaitAttackRight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionWaitAttackRight , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < ActionWaitAttackRight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionWaitAttackRight , crate :: combat :: character :: Character , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc97e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionWaitAttackRight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionWaitAttackRight , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionWaitAttackRight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionWaitAttackRight , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc98a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < ActionWaitAttackRight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionWaitAttackRight , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionwaitattackright")]pub trait IActionWaitAttackRightMethods:IActionWaitAttackRight{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionWaitAttackRight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9790usize)as*mut u8, ::unity2::Il2CppString;
+(ActionWaitAttackRight)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <ActionWaitAttackRight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc97e0usize)as*mut u8,();
+(ActionWaitAttackRight)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionWaitAttackRight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9830usize)as*mut u8,();
+(ActionWaitAttackRight)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionWaitAttackRight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc98a0usize)as*mut u8,();
+(ActionWaitAttackRight)__receiver)}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionWaitAttackRight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9900usize)as*mut u8,();
+(ActionWaitAttackRight)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actionwaitattackright")]
-impl < __T : IActionWaitAttackRight > IActionWaitAttackRightMethods for __T { }
+#[cfg(feature="combat-actionwaitattackright")]impl<__T:IActionWaitAttackRight>IActionWaitAttackRightMethods for __T{}
 
-#[cfg(feature = "combat-actionwaitattackright")]
-impl ActionWaitAttackRight { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionWaitAttackRight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionWaitAttackRight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionWaitAttackRight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionWaitAttackRight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionWaitAttackRight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-actionwaitattackright")]impl ActionWaitAttackRight{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-actionwaitattackright")]
-impl ActionWaitAttackRight {
-# [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , phase : crate :: combat :: phase :: Phase) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionWaitAttackRight) , :: core :: stringify ! (new) ,)) ; < Self as IActionWaitAttackRightMethods > :: ctor (this , chr , phase) ; this }
+#[cfg(feature="combat-actionwaitattackright")]impl ActionWaitAttackRight{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"]pub fn new(chr:crate::combat::character::Character,phase:crate::combat::phase::Phase)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionWaitAttackRight), ::core::stringify!(new),));
+ <Self as IActionWaitAttackRightMethods> ::ctor(this,chr,phase);
+this}
 }
 
 #[cfg(feature = "combat-actionwaitattackright")]

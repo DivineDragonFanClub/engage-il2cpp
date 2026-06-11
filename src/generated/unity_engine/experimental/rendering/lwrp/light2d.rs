@@ -4,30 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/lwrp/light2d/Light2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.LWRP" , name = "Light2D")] # [parent (crate :: system :: object :: Object)] pub struct Light2D {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/lwrp/light2d/Light2D.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.LWRP",name="Light2D")]#[parent(crate::system::object::Object)]pub struct Light2D{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-lwrp-light2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-lwrp-light2d")]
-pub trait ILight2DMethods : ILight2D { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Light2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Light2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef1c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-lwrp-light2d")]pub trait ILight2DMethods:ILight2D{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Light2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef1c10usize)as*mut u8,();
+(Light2D)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-lwrp-light2d")]
-impl < __T : ILight2D > ILight2DMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-lwrp-light2d")]impl<__T:ILight2D>ILight2DMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-lwrp-light2d")]
-impl Light2D { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-experimental-rendering-lwrp-light2d")]impl Light2D{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-lwrp-light2d")]
-impl Light2D {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Light2D) , :: core :: stringify ! (new) ,)) ; < Self as ILight2DMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-lwrp-light2d")]impl Light2D{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Light2D), ::core::stringify!(new),));
+ <Self as ILight2DMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-lwrp-light2d")]

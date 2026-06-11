@@ -4,38 +4,108 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/identifier/Identifier.md"))] # [:: unity2 :: class (namespace = "App" , name = "Identifier")] # [parent (crate :: system :: object :: Object)] pub struct Identifier {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_UserId0")] pub m_user_id0 : u64 ,
-# [offset (24)] # [rename (name = "m_UserId1")] pub m_user_id1 : u64 ,
-# [offset (32)] # [rename (name = "m_MakeTime")] pub m_make_time : u64 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/identifier/Identifier.md"))]#[::unity2::class(namespace="App",name="Identifier")]#[parent(crate::system::object::Object)]pub struct Identifier{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_UserId0")]pub m_user_id0:u64, #[offset(24)]#[rename(name="m_UserId1")]pub m_user_id1:u64, #[offset(32)]#[rename(name="m_MakeTime")]pub m_make_time:u64,}
 
 }
 
 #[cfg(feature = "app-identifier-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-identifier")]
-impl Identifier { # [doc = "`DummyDeserialize(crate::app::stream_2::Stream_2)` overload"] pub fn dummy_deserialize (stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290da50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::app::identifier::Identifier, crate::app::identifier::Identifier)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: app :: identifier :: Identifier > , rhs : impl :: core :: convert :: Into < crate :: app :: identifier :: Identifier >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: identifier :: Identifier , crate :: app :: identifier :: Identifier , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290dd40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::app::identifier::Identifier, crate::app::identifier::Identifier)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: app :: identifier :: Identifier > , rhs : impl :: core :: convert :: Into < crate :: app :: identifier :: Identifier >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: identifier :: Identifier , crate :: app :: identifier :: Identifier , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290dda0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-identifier")]impl Identifier{#[doc="`DummyDeserialize(crate::app::stream_2::Stream_2)` overload"]pub fn dummy_deserialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x290da50usize)as*mut u8,();
+(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`op_Equality(crate::app::identifier::Identifier, crate::app::identifier::Identifier)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::app::identifier::Identifier> ,rhs:impl::core::convert::Into<crate::app::identifier::Identifier>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x290dd40usize)as*mut u8,bool;
+(crate::app::identifier::Identifier)::core::convert::Into::into(lhs),(crate::app::identifier::Identifier)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::app::identifier::Identifier, crate::app::identifier::Identifier)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::app::identifier::Identifier> ,rhs:impl::core::convert::Into<crate::app::identifier::Identifier>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x290dda0usize)as*mut u8,bool;
+(crate::app::identifier::Identifier)::core::convert::Into::into(lhs),(crate::app::identifier::Identifier)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "app-identifier")]
-pub trait IIdentifierMethods : IIdentifier { # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290d480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::random_2::Random_2)` overload"] fn create_2 (self , random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 >) -> () { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , crate :: app :: random_2 :: Random_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290d540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (random) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290d770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopyFrom(crate::app::identifier::Identifier)` overload"] fn copy_from (self , src : impl :: core :: convert :: Into < crate :: app :: identifier :: Identifier >) -> () { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , crate :: app :: identifier :: Identifier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290d780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (src) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290d7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290d7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290d820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290dc50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290dd20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MakeUserId(u32, u32)` overload"] fn make_user_id (self , v0 : impl :: core :: convert :: Into < u32 > , v1 : impl :: core :: convert :: Into < u32 >) -> u64 { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , u32 , u32 , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290de00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (v0) , :: core :: convert :: Into :: into (v1) , :: core :: option :: Option :: None) } } } # [doc = "`MakeUserId(crate::app::random_2::Random_2)` overload"] fn make_user_id_2 (self , random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 >) -> u64 { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , crate :: app :: random_2 :: Random_2 , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290d5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (random) , :: core :: option :: Option :: None) } } } # [doc = "`MakeMakeTime(crate::app::random_2::Random_2)` overload"] fn make_make_time (self , random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 >) -> u64 { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , crate :: app :: random_2 :: Random_2 , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290d650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (random) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Identifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Identifier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x290de10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-identifier")]pub trait IIdentifierMethods:IIdentifier{#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290d480usize)as*mut u8,();
+(Identifier)__receiver)}
+}
+#[doc="`Create(crate::app::random_2::Random_2)` overload"]fn create_2(self,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->(){unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290d540usize)as*mut u8,();
+(Identifier)__receiver,(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290d770usize)as*mut u8,();
+(Identifier)__receiver)}
+}
+#[doc="`CopyFrom(crate::app::identifier::Identifier)` overload"]fn copy_from(self,src:impl::core::convert::Into<crate::app::identifier::Identifier>)->(){unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290d780usize)as*mut u8,();
+(Identifier)__receiver,(crate::app::identifier::Identifier)::core::convert::Into::into(src))}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290d7a0usize)as*mut u8,bool;
+(Identifier)__receiver)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290d7c0usize)as*mut u8,();
+(Identifier)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290d820usize)as*mut u8,();
+(Identifier)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290dc50usize)as*mut u8,bool;
+(Identifier)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290dd20usize)as*mut u8,i32;
+(Identifier)__receiver)}
+}
+#[doc="`MakeUserId(u32, u32)` overload"]fn make_user_id(self,v0:impl::core::convert::Into<u32> ,v1:impl::core::convert::Into<u32>)->u64{unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290de00usize)as*mut u8,u64;
+(Identifier)__receiver,(u32)::core::convert::Into::into(v0),(u32)::core::convert::Into::into(v1))}
+}
+#[doc="`MakeUserId(crate::app::random_2::Random_2)` overload"]fn make_user_id_2(self,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->u64{unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290d5f0usize)as*mut u8,u64;
+(Identifier)__receiver,(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
+}
+#[doc="`MakeMakeTime(crate::app::random_2::Random_2)` overload"]fn make_make_time(self,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->u64{unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290d650usize)as*mut u8,u64;
+(Identifier)__receiver,(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290de10usize)as*mut u8,();
+(Identifier)__receiver)}
+}
+}
 
-#[cfg(feature = "app-identifier")]
-impl < __T : IIdentifier > IIdentifierMethods for __T { }
+#[cfg(feature="app-identifier")]impl<__T:IIdentifier>IIdentifierMethods for __T{}
 
-#[cfg(feature = "app-identifier")]
-impl Identifier { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn dummy_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn make_user_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn make_user_id_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn make_make_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Identifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-identifier")]impl Identifier{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn dummy_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn make_user_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn make_user_id_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn make_make_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-identifier")]
-impl Identifier {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Identifier) , :: core :: stringify ! (new) ,)) ; < Self as IIdentifierMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-identifier")]impl Identifier{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Identifier), ::core::stringify!(new),));
+ <Self as IIdentifierMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-identifier")]

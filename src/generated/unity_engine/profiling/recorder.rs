@@ -4,38 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/recorder/Recorder.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Profiling" , name = "Recorder")] # [parent (crate :: system :: object :: Object)] pub struct Recorder {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [static_field] # [rename (name = "s_InvalidRecorder")] pub s_invalid_recorder : crate :: unity_engine :: profiling :: recorder :: Recorder ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/profiling/recorder/Recorder.md"))]#[::unity2::class(namespace="UnityEngine.Profiling",name="Recorder")]#[parent(crate::system::object::Object)]pub struct Recorder{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[static_field]#[rename(name="s_InvalidRecorder")]pub s_invalid_recorder:crate::unity_engine::profiling::recorder::Recorder,}
 
 }
 
 #[cfg(feature = "unity_engine-profiling-recorder-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-profiling-recorder")]
-impl Recorder { # [doc = "`DisposeNative(::unity2::IntPtr)` overload"] pub fn dispose_native (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7ac60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-profiling-recorder")]impl Recorder{#[doc="`DisposeNative(::unity2::IntPtr)` overload"]pub fn dispose_native(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a620usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7ac60usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-profiling-recorder")]
-pub trait IRecorderMethods : IRecorder { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor_2 (self , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a4f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_isValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_enabled()` overload"] fn get_enabled (self ,) -> bool { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_enabled(bool)` overload"] fn set_enabled (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnabled()` overload"] fn is_enabled (self ,) -> bool { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_elapsedNanoseconds()` overload"] fn get_elapsed_nanoseconds (self ,) -> i64 { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_gpuElapsedNanoseconds()` overload"] fn get_gpu_elapsed_nanoseconds (self ,) -> i64 { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7a990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_sampleBlockCount()` overload"] fn get_sample_block_count (self ,) -> i32 { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7aa80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_gpuSampleBlockCount()` overload"] fn get_gpu_sample_block_count (self ,) -> i32 { unsafe { let __receiver = < Recorder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Recorder , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f7ab70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-profiling-recorder")]pub trait IRecorderMethods:IRecorder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a4e0usize)as*mut u8,();
+(Recorder)__receiver)}
+}
+#[doc="`.ctor(::unity2::IntPtr)` overload"]fn ctor_2(self,ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a4f0usize)as*mut u8,();
+(Recorder)__receiver,(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a520usize)as*mut u8,();
+(Recorder)__receiver)}
+}
+#[doc="`get_isValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a670usize)as*mut u8,bool;
+(Recorder)__receiver)}
+}
+#[doc="`get_enabled()` overload"]fn get_enabled(self,)->bool{unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a6c0usize)as*mut u8,bool;
+(Recorder)__receiver)}
+}
+#[doc="`set_enabled(bool)` overload"]fn set_enabled(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a7b0usize)as*mut u8,();
+(Recorder)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`IsEnabled()` overload"]fn is_enabled(self,)->bool{unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a760usize)as*mut u8,bool;
+(Recorder)__receiver)}
+}
+#[doc="`get_elapsedNanoseconds()` overload"]fn get_elapsed_nanoseconds(self,)->i64{unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a8a0usize)as*mut u8,i64;
+(Recorder)__receiver)}
+}
+#[doc="`get_gpuElapsedNanoseconds()` overload"]fn get_gpu_elapsed_nanoseconds(self,)->i64{unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7a990usize)as*mut u8,i64;
+(Recorder)__receiver)}
+}
+#[doc="`get_sampleBlockCount()` overload"]fn get_sample_block_count(self,)->i32{unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7aa80usize)as*mut u8,i32;
+(Recorder)__receiver)}
+}
+#[doc="`get_gpuSampleBlockCount()` overload"]fn get_gpu_sample_block_count(self,)->i32{unsafe{let __receiver= <Recorder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7ab70usize)as*mut u8,i32;
+(Recorder)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-profiling-recorder")]
-impl < __T : IRecorder > IRecorderMethods for __T { }
+#[cfg(feature="unity_engine-profiling-recorder")]impl<__T:IRecorder>IRecorderMethods for __T{}
 
-#[cfg(feature = "unity_engine-profiling-recorder")]
-impl Recorder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_native_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_elapsed_nanoseconds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_gpu_elapsed_nanoseconds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_sample_block_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_gpu_sample_block_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Recorder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="unity_engine-profiling-recorder")]impl Recorder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_native_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_elapsed_nanoseconds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_gpu_elapsed_nanoseconds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_sample_block_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_gpu_sample_block_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "unity_engine-profiling-recorder")]
-impl Recorder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Recorder) , :: core :: stringify ! (new) ,)) ; < Self as IRecorderMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new_2 (ptr : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Recorder) , :: core :: stringify ! (new_2) ,)) ; < Self as IRecorderMethods > :: ctor_2 (this , ptr) ; this }
+#[cfg(feature="unity_engine-profiling-recorder")]impl Recorder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Recorder), ::core::stringify!(new),));
+ <Self as IRecorderMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::IntPtr)` — overload selector"]pub fn new_2(ptr: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Recorder), ::core::stringify!(new_2),));
+ <Self as IRecorderMethods> ::ctor_2(this,ptr);
+this}
 }
 
 #[cfg(feature = "unity_engine-profiling-recorder")]

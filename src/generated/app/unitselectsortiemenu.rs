@@ -4,39 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: gridmenu :: { GridMenu , IGridMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::gridmenu::{GridMenu,IGridMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsortiemenu/UnitSelectSortieMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitSelectSortieMenu")] # [parent (crate :: app :: gridmenu :: GridMenu)] pub struct UnitSelectSortieMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitselectsortiemenu/UnitSelectSortieMenu.md"))]#[::unity2::class(namespace="App",name="UnitSelectSortieMenu")]#[parent(crate::app::gridmenu::GridMenu)]pub struct UnitSelectSortieMenu{}
 
 }
 
 #[cfg(feature = "app-unitselectsortiemenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitselectsortiemenu")]
-impl UnitSelectSortieMenu { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)` overload"] pub fn create (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , menu_content : impl :: core :: convert :: Into < crate :: app :: unitselectsortiemenucontent :: UnitSelectSortieMenuContent >) -> crate :: app :: unitselectsortiemenu :: UnitSelectSortieMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitselectsortiemenucontent :: UnitSelectSortieMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitselectsortiemenu :: UnitSelectSortieMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c61d70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitselectsortiemenu")]impl UnitSelectSortieMenu{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent>)->crate::app::unitselectsortiemenu::UnitSelectSortieMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c61d70usize)as*mut u8,crate::app::unitselectsortiemenu::UnitSelectSortieMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)::core::convert::Into::into(menu_content))}
+}
+}
 
-#[cfg(feature = "app-unitselectsortiemenu")]
-pub trait IUnitSelectSortieMenuMethods : IUnitSelectSortieMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: unitselectsortiemenucontent :: UnitSelectSortieMenuContent >) -> () { unsafe { let __receiver = < UnitSelectSortieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitSelectSortieMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: unitselectsortiemenucontent :: UnitSelectSortieMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c61e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnitSelectSortieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitSelectSortieMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c61e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < UnitSelectSortieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitSelectSortieMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c61ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSelectIndexFromUnit(crate::app::unit::Unit)` overload"] fn set_select_index_from_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitSelectSortieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitSelectSortieMenu , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c620b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetRootGameObject()` overload"] fn get_root_game_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < UnitSelectSortieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitSelectSortieMenu , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c620f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitselectsortiemenu")]pub trait IUnitSelectSortieMenuMethods:IUnitSelectSortieMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent>)->(){unsafe{let __receiver= <UnitSelectSortieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c61e40usize)as*mut u8,();
+(UnitSelectSortieMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitSelectSortieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c61e50usize)as*mut u8, ::unity2::Il2CppString;
+(UnitSelectSortieMenu)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectSortieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c61ea0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(UnitSelectSortieMenu)__receiver)}
+}
+#[doc="`SetSelectIndexFromUnit(crate::app::unit::Unit)` overload"]fn set_select_index_from_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitSelectSortieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c620b0usize)as*mut u8,();
+(UnitSelectSortieMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetRootGameObject()` overload"]fn get_root_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <UnitSelectSortieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c620f0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(UnitSelectSortieMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitselectsortiemenu")]
-impl < __T : IUnitSelectSortieMenu > IUnitSelectSortieMenuMethods for __T { }
+#[cfg(feature="app-unitselectsortiemenu")]impl<__T:IUnitSelectSortieMenu>IUnitSelectSortieMenuMethods for __T{}
 
-#[cfg(feature = "app-unitselectsortiemenu")]
-impl UnitSelectSortieMenu { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitSelectSortieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitSelectSortieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitSelectSortieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitSelectSortieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_select_index_from_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitSelectSortieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_root_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitSelectSortieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-unitselectsortiemenu")]impl UnitSelectSortieMenu{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_select_index_from_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_root_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-unitselectsortiemenu")]
-impl UnitSelectSortieMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: unitselectsortiemenucontent :: UnitSelectSortieMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitSelectSortieMenu) , :: core :: stringify ! (new) ,)) ; < Self as IUnitSelectSortieMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-unitselectsortiemenu")]impl UnitSelectSortieMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::unitselectsortiemenucontent::UnitSelectSortieMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectSortieMenu), ::core::stringify!(new),));
+ <Self as IUnitSelectSortieMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-unitselectsortiemenu")]

@@ -4,34 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/groupitemscope/GroupItemScope.md"))] # [:: unity2 :: class (namespace = "App" , name = "GroupItemScope")] # [parent (crate :: system :: object :: Object)] pub struct GroupItemScope {
-# [offset (16)] # [rename (name = "m_Menu")] pub m_menu : crate :: app :: debugmenu :: DebugMenu ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/groupitemscope/GroupItemScope.md"))]#[::unity2::class(namespace="App",name="GroupItemScope")]#[parent(crate::system::object::Object)]pub struct GroupItemScope{#[offset(16)]#[rename(name="m_Menu")]pub m_menu:crate::app::debugmenu::DebugMenu,}
 
 }
 
 #[cfg(feature = "app-groupitemscope-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-groupitemscope")]
-pub trait IGroupItemScopeMethods : IGroupItemScope { # [doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"] fn ctor (self , menu : impl :: core :: convert :: Into < crate :: app :: debugmenu :: DebugMenu > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: menuitem :: MenuItem_State >) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupItemScope , crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"] fn ctor_2 (self , menu : impl :: core :: convert :: Into < crate :: app :: debugmenu :: DebugMenu > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , english : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: menuitem :: MenuItem_State >) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupItemScope , crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29783a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (english) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"] fn setup (self , menu : impl :: core :: convert :: Into < crate :: app :: debugmenu :: DebugMenu > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , english : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: menuitem :: MenuItem_State >) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupItemScope , crate :: app :: debugmenu :: DebugMenu , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: menuitem :: MenuItem_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29782e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (english) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupItemScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < GroupItemScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GroupItemScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2978550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-groupitemscope")]pub trait IGroupItemScopeMethods:IGroupItemScope{#[doc="`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]fn ctor(self,menu:impl::core::convert::Into<crate::app::debugmenu::DebugMenu> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,state:impl::core::convert::Into<crate::app::menuitem::MenuItem_State>)->(){unsafe{let __receiver= <GroupItemScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978220usize)as*mut u8,();
+(GroupItemScope)__receiver,(crate::app::debugmenu::DebugMenu)::core::convert::Into::into(menu),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::menuitem::MenuItem_State)::core::convert::Into::into(state))}
+}
+#[doc="`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]fn ctor_2(self,menu:impl::core::convert::Into<crate::app::debugmenu::DebugMenu> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,english:impl::core::convert::Into< ::unity2::Il2CppString> ,state:impl::core::convert::Into<crate::app::menuitem::MenuItem_State>)->(){unsafe{let __receiver= <GroupItemScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29783a0usize)as*mut u8,();
+(GroupItemScope)__receiver,(crate::app::debugmenu::DebugMenu)::core::convert::Into::into(menu),(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(english),(crate::app::menuitem::MenuItem_State)::core::convert::Into::into(state))}
+}
+#[doc="`Setup(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` overload"]fn setup(self,menu:impl::core::convert::Into<crate::app::debugmenu::DebugMenu> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,english:impl::core::convert::Into< ::unity2::Il2CppString> ,state:impl::core::convert::Into<crate::app::menuitem::MenuItem_State>)->(){unsafe{let __receiver= <GroupItemScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29782e0usize)as*mut u8,();
+(GroupItemScope)__receiver,(crate::app::debugmenu::DebugMenu)::core::convert::Into::into(menu),(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(english),(crate::app::menuitem::MenuItem_State)::core::convert::Into::into(state))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <GroupItemScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978470usize)as*mut u8,();
+(GroupItemScope)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <GroupItemScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2978550usize)as*mut u8,();
+(GroupItemScope)__receiver)}
+}
+}
 
-#[cfg(feature = "app-groupitemscope")]
-impl < __T : IGroupItemScope > IGroupItemScopeMethods for __T { }
+#[cfg(feature="app-groupitemscope")]impl<__T:IGroupItemScope>IGroupItemScopeMethods for __T{}
 
-#[cfg(feature = "app-groupitemscope")]
-impl GroupItemScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupItemScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupItemScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupItemScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupItemScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GroupItemScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-groupitemscope")]impl GroupItemScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-groupitemscope")]
-impl GroupItemScope {
-# [doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"] pub fn new (menu : crate :: app :: debugmenu :: DebugMenu , name : :: unity2 :: Il2CppString , state : crate :: app :: menuitem :: MenuItem_State) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GroupItemScope) , :: core :: stringify ! (new) ,)) ; < Self as IGroupItemScopeMethods > :: ctor (this , menu , name , state) ; this }
-
-# [doc = "`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"] pub fn new_2 (menu : crate :: app :: debugmenu :: DebugMenu , name : :: unity2 :: Il2CppString , english : :: unity2 :: Il2CppString , state : crate :: app :: menuitem :: MenuItem_State) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GroupItemScope) , :: core :: stringify ! (new_2) ,)) ; < Self as IGroupItemScopeMethods > :: ctor_2 (this , menu , name , english , state) ; this }
+#[cfg(feature="app-groupitemscope")]impl GroupItemScope{#[doc="`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"]pub fn new(menu:crate::app::debugmenu::DebugMenu,name: ::unity2::Il2CppString,state:crate::app::menuitem::MenuItem_State)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GroupItemScope), ::core::stringify!(new),));
+ <Self as IGroupItemScopeMethods> ::ctor(this,menu,name,state);
+this}
+#[doc="`.ctor(crate::app::debugmenu::DebugMenu, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::menuitem::MenuItem_State)` — overload selector"]pub fn new_2(menu:crate::app::debugmenu::DebugMenu,name: ::unity2::Il2CppString,english: ::unity2::Il2CppString,state:crate::app::menuitem::MenuItem_State)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GroupItemScope), ::core::stringify!(new_2),));
+ <Self as IGroupItemScopeMethods> ::ctor_2(this,menu,name,english,state);
+this}
 }
 
 #[cfg(feature = "app-groupitemscope")]

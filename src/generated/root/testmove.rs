@@ -4,41 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testmove/TestMove.md"))] # [:: unity2 :: class (namespace = "" , name = "TestMove")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TestMove {
-# [offset (24)] # [rename (name = "m_Target")] pub m_target : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_Speed")] pub m_speed : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testmove/TestMove.md"))]#[::unity2::class(namespace="",name="TestMove")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TestMove{#[offset(24)]#[rename(name="m_Target")]pub m_target:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Speed")]pub m_speed:f32,}
 
 }
 
 #[cfg(feature = "root-testmove-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-testmove")]
-pub trait ITestMoveMethods : ITestMove { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TestMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCollision(crate::unity_engine::vector3::Vector3)` overload"] fn get_collision (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < TestMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestMove , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7a20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`GetHeight(crate::unity_engine::vector3::Vector3)` overload"] fn get_height (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { let __receiver = < TestMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestMove , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TestMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TestMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-testmove")]pub trait ITestMoveMethods:ITestMove{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TestMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7a10usize)as*mut u8,();
+(TestMove)__receiver)}
+}
+#[doc="`GetCollision(crate::unity_engine::vector3::Vector3)` overload"]fn get_collision(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <TestMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7a20usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(TestMove)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`GetHeight(crate::unity_engine::vector3::Vector3)` overload"]fn get_height(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{let __receiver= <TestMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7c00usize)as*mut u8,f32;
+(TestMove)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TestMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7d80usize)as*mut u8,();
+(TestMove)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TestMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8020usize)as*mut u8,();
+(TestMove)__receiver)}
+}
+}
 
-#[cfg(feature = "root-testmove")]
-impl < __T : ITestMove > ITestMoveMethods for __T { }
+#[cfg(feature="root-testmove")]impl<__T:ITestMove>ITestMoveMethods for __T{}
 
-#[cfg(feature = "root-testmove")]
-impl TestMove { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_collision_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="root-testmove")]impl TestMove{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_collision_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "root-testmove")]
-impl TestMove {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TestMove) , :: core :: stringify ! (new) ,)) ; < Self as ITestMoveMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-testmove")]impl TestMove{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TestMove), ::core::stringify!(new),));
+ <Self as ITestMoveMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-testmove")]

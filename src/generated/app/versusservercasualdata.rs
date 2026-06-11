@@ -4,56 +4,152 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: versusserverdata :: { IVersusServerData , VersusServerData }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::versusserverdata::{IVersusServerData,VersusServerData}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualdata/VersusServerCasualData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusServerCasualData")] # [parent (crate :: app :: versusserverdata :: VersusServerData)] pub struct VersusServerCasualData {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusservercasualdata/VersusServerCasualData.md"))]#[::unity2::class(namespace="App",name="VersusServerCasualData")]#[parent(crate::app::versusserverdata::VersusServerData)]pub struct VersusServerCasualData{#[static_field]#[rename(name="Version")]pub version:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualdata/VersusServerCasualData_GodBondBackup.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusServerCasualData.GodBondBackup")] # [parent (crate :: system :: object :: Object)] pub struct VersusServerCasualData_GodBondBackup {
-# [static_field] # [rename (name = "BufferSize")] pub buffer_size : i32 ,
-# [offset (16)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
-# [offset (24)] # [rename (name = "m_Stream")] pub m_stream : crate :: app :: stream_2 :: Stream_2 ,
-# [offset (32)] # [rename (name = "m_BondsDict")] pub m_bonds_dict : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusservercasualdata/VersusServerCasualData_GodBondBackup.md"))]#[::unity2::class(namespace="App",name="VersusServerCasualData.GodBondBackup")]#[parent(crate::system::object::Object)]pub struct VersusServerCasualData_GodBondBackup{#[static_field]#[rename(name="BufferSize")]pub buffer_size:i32, #[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::Array<u8> , #[offset(24)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(32)]#[rename(name="m_BondsDict")]pub m_bonds_dict:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> ,}
 
 }
 
 #[cfg(feature = "app-versusservercasualdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusservercasualdata")]
-pub trait IVersusServerCasualDataMethods : IVersusServerCasualData { # [doc = "`get_UnitList()` overload"] fn get_unit_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b49c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_m_GodDict()` overload"] fn get_m_god_dict (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: godunit :: GodUnit > { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: godunit :: GodUnit > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b49d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryGetPairGodUnit(crate::app::unit::Unit)` overload"] fn try_get_pair_god_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: godunit :: GodUnit { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b4ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b4b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SerializeInit()` overload"] fn serialize_init (self ,) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteHeader(crate::app::stream_2::Stream_2)` overload"] fn write_header (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b4d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`WriteUnit(crate::app::stream_2::Stream_2)` overload"] fn write_unit (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b4dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`WriteUnitInit(crate::app::stream_2::Stream_2)` overload"] fn write_unit_init (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b54c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`WriteUnit(crate::app::stream_2::Stream_2, crate::app::unit::Unit)` overload"] fn write_unit_2 (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: app :: stream_2 :: Stream_2 , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b5a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`WriteBonds(crate::app::stream_2::Stream_2)` overload"] fn write_bonds (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b5200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> bool { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b5c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadHeader(crate::app::stream_2::Stream_2)` overload"] fn read_header (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b5ee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`ReadUnit(crate::app::stream_2::Stream_2)` overload"] fn read_unit (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b5f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`SaveGodBond()` overload"] fn save_god_bond (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b6e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadGodBond(crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"] fn load_god_bond (self , bond_dict : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b7060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bond_dict) , :: core :: option :: Option :: None) } } } # [doc = "`ReadBonds(crate::app::stream_2::Stream_2)` overload"] fn read_bonds (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < VersusServerCasualData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b69d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versusservercasualdata")]
-impl < __T : IVersusServerCasualData > IVersusServerCasualDataMethods for __T { }
-
-#[cfg(feature = "app-versusservercasualdata")]
-impl VersusServerCasualData { pub fn get_unit_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_m_god_dict_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_get_pair_god_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn serialize_init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn write_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn write_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn write_unit_init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn write_unit_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn write_bonds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn read_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn read_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn save_god_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn load_god_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn read_bonds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
-
-#[cfg(feature = "app-versusservercasualdata")]
-impl VersusServerCasualData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusServerCasualData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusServerCasualDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusservercasualdata")]pub trait IVersusServerCasualDataMethods:IVersusServerCasualData{#[doc="`get_UnitList()` overload"]fn get_unit_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>{unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b49c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ;
+(VersusServerCasualData)__receiver)}
+}
+#[doc="`get_m_GodDict()` overload"]fn get_m_god_dict(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::godunit::GodUnit>{unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b49d0usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::godunit::GodUnit> ;
+(VersusServerCasualData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a6470usize)as*mut u8,();
+(VersusServerCasualData)__receiver)}
+}
+#[doc="`TryGetPairGodUnit(crate::app::unit::Unit)` overload"]fn try_get_pair_god_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::godunit::GodUnit{unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b4ab0usize)as*mut u8,crate::app::godunit::GodUnit;
+(VersusServerCasualData)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b4b70usize)as*mut u8,();
+(VersusServerCasualData)__receiver)}
+}
+#[doc="`SerializeInit()` overload"]fn serialize_init(self,)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7130usize)as*mut u8,();
+(VersusServerCasualData)__receiver)}
+}
+#[doc="`WriteHeader(crate::app::stream_2::Stream_2)` overload"]fn write_header(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b4d80usize)as*mut u8,();
+(VersusServerCasualData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`WriteUnit(crate::app::stream_2::Stream_2)` overload"]fn write_unit(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b4dc0usize)as*mut u8,();
+(VersusServerCasualData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`WriteUnitInit(crate::app::stream_2::Stream_2)` overload"]fn write_unit_init(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b54c0usize)as*mut u8,();
+(VersusServerCasualData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`WriteUnit(crate::app::stream_2::Stream_2, crate::app::unit::Unit)` overload"]fn write_unit_2(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b5a60usize)as*mut u8,();
+(VersusServerCasualData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WriteBonds(crate::app::stream_2::Stream_2)` overload"]fn write_bonds(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b5200usize)as*mut u8,();
+(VersusServerCasualData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b5c40usize)as*mut u8,bool;
+(VersusServerCasualData)__receiver)}
+}
+#[doc="`ReadHeader(crate::app::stream_2::Stream_2)` overload"]fn read_header(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b5ee0usize)as*mut u8,();
+(VersusServerCasualData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`ReadUnit(crate::app::stream_2::Stream_2)` overload"]fn read_unit(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b5f20usize)as*mut u8,();
+(VersusServerCasualData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`SaveGodBond()` overload"]fn save_god_bond(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString>{unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b6e00usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> ;
+(VersusServerCasualData)__receiver)}
+}
+#[doc="`LoadGodBond(crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::Il2CppString>)` overload"]fn load_god_bond(self,bond_dict:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b7060usize)as*mut u8,();
+(VersusServerCasualData)__receiver,(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString>)::core::convert::Into::into(bond_dict))}
+}
+#[doc="`ReadBonds(crate::app::stream_2::Stream_2)` overload"]fn read_bonds(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b69d0usize)as*mut u8,();
+(VersusServerCasualData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
 }
 
-#[cfg(feature = "app-versusservercasualdata")]
-pub trait IVersusServerCasualData_GodBondBackupMethods : IVersusServerCasualData_GodBondBackup { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusServerCasualData_GodBondBackup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData_GodBondBackup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < VersusServerCasualData_GodBondBackup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData_GodBondBackup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b28390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Save()` overload"] fn save (self ,) -> () { unsafe { let __receiver = < VersusServerCasualData_GodBondBackup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData_GodBondBackup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b283f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Restore()` overload"] fn restore (self ,) -> () { unsafe { let __receiver = < VersusServerCasualData_GodBondBackup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualData_GodBondBackup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b284f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusservercasualdata")]impl<__T:IVersusServerCasualData>IVersusServerCasualDataMethods for __T{}
 
-#[cfg(feature = "app-versusservercasualdata")]
-impl < __T : IVersusServerCasualData_GodBondBackup > IVersusServerCasualData_GodBondBackupMethods for __T { }
+#[cfg(feature="app-versusservercasualdata")]impl VersusServerCasualData{pub fn get_unit_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_m_god_dict_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_get_pair_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn serialize_init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn write_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn write_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn write_unit_init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn write_unit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn write_bonds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn read_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn read_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn save_god_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn load_god_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn read_bonds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-versusservercasualdata")]
-impl VersusServerCasualData_GodBondBackup { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData_GodBondBackup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData_GodBondBackup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn save_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData_GodBondBackup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn restore_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualData_GodBondBackup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-versusservercasualdata")]impl VersusServerCasualData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusServerCasualData), ::core::stringify!(new),));
+ <Self as IVersusServerCasualDataMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-versusservercasualdata")]
-impl VersusServerCasualData_GodBondBackup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusServerCasualData_GodBondBackup) , :: core :: stringify ! (new) ,)) ; < Self as IVersusServerCasualData_GodBondBackupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusservercasualdata")]pub trait IVersusServerCasualData_GodBondBackupMethods:IVersusServerCasualData_GodBondBackup{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b28240usize)as*mut u8,();
+(VersusServerCasualData_GodBondBackup)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b28390usize)as*mut u8,();
+(VersusServerCasualData_GodBondBackup)__receiver)}
+}
+#[doc="`Save()` overload"]fn save(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b283f0usize)as*mut u8,();
+(VersusServerCasualData_GodBondBackup)__receiver)}
+}
+#[doc="`Restore()` overload"]fn restore(self,)->(){unsafe{let __receiver= <VersusServerCasualData_GodBondBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b284f0usize)as*mut u8,();
+(VersusServerCasualData_GodBondBackup)__receiver)}
+}
+}
+
+#[cfg(feature="app-versusservercasualdata")]impl<__T:IVersusServerCasualData_GodBondBackup>IVersusServerCasualData_GodBondBackupMethods for __T{}
+
+#[cfg(feature="app-versusservercasualdata")]impl VersusServerCasualData_GodBondBackup{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn restore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-versusservercasualdata")]impl VersusServerCasualData_GodBondBackup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusServerCasualData_GodBondBackup), ::core::stringify!(new),));
+ <Self as IVersusServerCasualData_GodBondBackupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusservercasualdata")]

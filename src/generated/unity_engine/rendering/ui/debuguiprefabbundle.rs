@@ -4,33 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguiprefabbundle/DebugUIPrefabBundle.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIPrefabBundle")] # [parent (crate :: system :: object :: Object)] pub struct DebugUIPrefabBundle {
-# [offset (16)] # [rename (name = "type")] pub r#type : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "prefab")] pub prefab : crate :: unity_engine :: recttransform :: RectTransform ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguiprefabbundle/DebugUIPrefabBundle.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIPrefabBundle")]#[parent(crate::system::object::Object)]pub struct DebugUIPrefabBundle{#[offset(16)]#[rename(name="type")]pub r#type: ::unity2::Il2CppString, #[offset(24)]#[rename(name="prefab")]pub prefab:crate::unity_engine::recttransform::RectTransform,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
-pub trait IDebugUIPrefabBundleMethods : IDebugUIPrefabBundle { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIPrefabBundle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIPrefabBundle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a8fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguiprefabbundle")]pub trait IDebugUIPrefabBundleMethods:IDebugUIPrefabBundle{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIPrefabBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a8fc0usize)as*mut u8,();
+(DebugUIPrefabBundle)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
-impl < __T : IDebugUIPrefabBundle > IDebugUIPrefabBundleMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguiprefabbundle")]impl<__T:IDebugUIPrefabBundle>IDebugUIPrefabBundleMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
-impl DebugUIPrefabBundle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIPrefabBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguiprefabbundle")]impl DebugUIPrefabBundle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]
-impl DebugUIPrefabBundle {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIPrefabBundle) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIPrefabBundleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguiprefabbundle")]impl DebugUIPrefabBundle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIPrefabBundle), ::core::stringify!(new),));
+ <Self as IDebugUIPrefabBundleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguiprefabbundle")]

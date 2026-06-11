@@ -4,45 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterproportion/CharacterProportion.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterProportion")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterProportion {
-# [offset (24)] # [rename (name = "ProportionParameters")] pub proportion_parameters : crate :: combat :: proportionparameters :: ProportionParameters ,
-# [offset (32)] # [rename (name = "shadowScaleAll")] pub shadow_scale_all : f32 ,
-# [offset (36)] # [rename (name = "shadowScaleLegs")] pub shadow_scale_legs : f32 ,
-# [offset (40)] # [rename (name = "shadowScaleFeet")] pub shadow_scale_feet : f32 ,
-# [offset (48)] # [rename (name = "_chrJoint")] pub chr_joint : crate :: combat :: characterjoint :: CharacterJoint ,
-# [offset (56)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterproportion/CharacterProportion.md"))]#[::unity2::class(namespace="Combat",name="CharacterProportion")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterProportion{#[offset(24)]#[rename(name="ProportionParameters")]pub proportion_parameters:crate::combat::proportionparameters::ProportionParameters, #[offset(32)]#[rename(name="shadowScaleAll")]pub shadow_scale_all:f32, #[offset(36)]#[rename(name="shadowScaleLegs")]pub shadow_scale_legs:f32, #[offset(40)]#[rename(name="shadowScaleFeet")]pub shadow_scale_feet:f32, #[offset(48)]#[rename(name="_chrJoint")]pub chr_joint:crate::combat::characterjoint::CharacterJoint, #[offset(56)]#[rename(name="_cp")]pub cp:crate::combat::character::Character,}
 
 }
 
 #[cfg(feature = "combat-characterproportion-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterproportion")]
-pub trait ICharacterProportionMethods : ICharacterProportion { # [doc = "`isShadowScaleOne()` overload"] fn is_shadow_scale_one (self ,) -> bool { unsafe { let __receiver = < CharacterProportion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterProportion , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e7da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CharacterJoint()` overload"] fn get_character_joint (self ,) -> crate :: combat :: characterjoint :: CharacterJoint { unsafe { let __receiver = < CharacterProportion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterProportion , :: unity2 :: OptionalMethod ,) -> crate :: combat :: characterjoint :: CharacterJoint = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e7de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterProportion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterProportion , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e7ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CharacterProportion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterProportion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e7f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < CharacterProportion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterProportion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e80e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Swap()` overload"] fn swap (self ,) -> () { unsafe { let __receiver = < CharacterProportion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterProportion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e81a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < CharacterProportion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterProportion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e8270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CommitChanges()` overload"] fn commit_changes (self ,) -> () { unsafe { let __receiver = < CharacterProportion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterProportion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e8310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterProportion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterProportion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e83b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterproportion")]pub trait ICharacterProportionMethods:ICharacterProportion{#[doc="`isShadowScaleOne()` overload"]fn is_shadow_scale_one(self,)->bool{unsafe{let __receiver= <CharacterProportion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e7da0usize)as*mut u8,bool;
+(CharacterProportion)__receiver)}
+}
+#[doc="`get_CharacterJoint()` overload"]fn get_character_joint(self,)->crate::combat::characterjoint::CharacterJoint{unsafe{let __receiver= <CharacterProportion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e7de0usize)as*mut u8,crate::combat::characterjoint::CharacterJoint;
+(CharacterProportion)__receiver)}
+}
+#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterProportion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e7ea0usize)as*mut u8,crate::combat::character::Character;
+(CharacterProportion)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CharacterProportion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e7f60usize)as*mut u8,();
+(CharacterProportion)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <CharacterProportion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e80e0usize)as*mut u8,();
+(CharacterProportion)__receiver)}
+}
+#[doc="`Swap()` overload"]fn swap(self,)->(){unsafe{let __receiver= <CharacterProportion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e81a0usize)as*mut u8,();
+(CharacterProportion)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <CharacterProportion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e8270usize)as*mut u8,();
+(CharacterProportion)__receiver)}
+}
+#[doc="`CommitChanges()` overload"]fn commit_changes(self,)->(){unsafe{let __receiver= <CharacterProportion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e8310usize)as*mut u8,();
+(CharacterProportion)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterProportion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e83b0usize)as*mut u8,();
+(CharacterProportion)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterproportion")]
-impl < __T : ICharacterProportion > ICharacterProportionMethods for __T { }
+#[cfg(feature="combat-characterproportion")]impl<__T:ICharacterProportion>ICharacterProportionMethods for __T{}
 
-#[cfg(feature = "combat-characterproportion")]
-impl CharacterProportion { pub fn is_shadow_scale_one_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterProportion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_character_joint_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterProportion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterProportion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterProportion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterProportion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn swap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterProportion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterProportion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn commit_changes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterProportion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterProportion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="combat-characterproportion")]impl CharacterProportion{pub fn is_shadow_scale_one_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_character_joint_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn commit_changes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "combat-characterproportion")]
-impl CharacterProportion {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterProportion) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterProportionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterproportion")]impl CharacterProportion{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterProportion), ::core::stringify!(new),));
+ <Self as ICharacterProportionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterproportion")]

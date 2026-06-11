@@ -4,23 +4,85 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/bitarrayutilities/BitArrayUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "BitArrayUtilities")] # [parent (crate :: system :: object :: Object)] pub struct BitArrayUtilities {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/bitarrayutilities/BitArrayUtilities.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="BitArrayUtilities")]#[parent(crate::system::object::Object)]pub struct BitArrayUtilities{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-bitarrayutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-bitarrayutilities")]
-impl BitArrayUtilities { # [doc = "`Get8(u32, u8)` overload"] pub fn get8 (index : impl :: core :: convert :: Into < u32 > , data : impl :: core :: convert :: Into < u8 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , u8 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352d460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Get16(u32, u16)` overload"] pub fn get16 (index : impl :: core :: convert :: Into < u32 > , data : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b670usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Get32(u32, u32)` overload"] pub fn get32 (index : impl :: core :: convert :: Into < u32 > , data : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352c900usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Get64(u32, u64)` overload"] pub fn get64 (index : impl :: core :: convert :: Into < u32 > , data : impl :: core :: convert :: Into < u64 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , u64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352cf10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Get128(u32, u64, u64)` overload"] pub fn get128 (index : impl :: core :: convert :: Into < u32 > , data1 : impl :: core :: convert :: Into < u64 > , data2 : impl :: core :: convert :: Into < u64 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , u64 , u64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352af80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (data1) , :: core :: convert :: Into :: into (data2) , :: core :: option :: Option :: None) } } } # [doc = "`Get256(u32, u64, u64, u64, u64)` overload"] pub fn get256 (index : impl :: core :: convert :: Into < u32 > , data1 : impl :: core :: convert :: Into < u64 > , data2 : impl :: core :: convert :: Into < u64 > , data3 : impl :: core :: convert :: Into < u64 > , data4 : impl :: core :: convert :: Into < u64 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , u64 , u64 , u64 , u64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352bea0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (data1) , :: core :: convert :: Into :: into (data2) , :: core :: convert :: Into :: into (data3) , :: core :: convert :: Into :: into (data4) , :: core :: option :: Option :: None) } } } # [doc = "`Set8(u32, *mutu8, bool)` overload"] pub fn set8 (index : impl :: core :: convert :: Into < u32 > , value : impl :: core :: convert :: Into < bool >) -> u8 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u8 > :: uninit () ; { let __inner : extern "C" fn (u32 , * mut u8 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352d4a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Set16(u32, *mutu16, bool)` overload"] pub fn set16 (index : impl :: core :: convert :: Into < u32 > , value : impl :: core :: convert :: Into < bool >) -> u16 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u16 > :: uninit () ; { let __inner : extern "C" fn (u32 , * mut u16 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352b6b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Set32(u32, *mutu32, bool)` overload"] pub fn set32 (index : impl :: core :: convert :: Into < u32 > , value : impl :: core :: convert :: Into < bool >) -> u32 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u32 > :: uninit () ; { let __inner : extern "C" fn (u32 , * mut u32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352c940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Set64(u32, *mutu64, bool)` overload"] pub fn set64 (index : impl :: core :: convert :: Into < u32 > , value : impl :: core :: convert :: Into < bool >) -> u64 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; { let __inner : extern "C" fn (u32 , * mut u64 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352cf50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Set128(u32, *mutu64, *mutu64, bool)` overload"] pub fn set128 (index : impl :: core :: convert :: Into < u32 > , value : impl :: core :: convert :: Into < bool >) -> (u64 , u64) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; { let __inner : extern "C" fn (u32 , * mut u64 , * mut u64 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352afd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Set256(u32, *mutu64, *mutu64, *mutu64, *mutu64, bool)` overload"] pub fn set256 (index : impl :: core :: convert :: Into < u32 > , value : impl :: core :: convert :: Into < bool >) -> (u64 , u64 , u64 , u64) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; { let __inner : extern "C" fn (u32 , * mut u64 , * mut u64 , * mut u64 , * mut u64 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352bf90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init ()) } } }
+#[cfg(feature="unity_engine-rendering-bitarrayutilities")]impl BitArrayUtilities{#[doc="`Get8(u32, u8)` overload"]pub fn get8(index:impl::core::convert::Into<u32> ,data:impl::core::convert::Into<u8>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352d460usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(index),(u8)::core::convert::Into::into(data))}
+}
+#[doc="`Get16(u32, u16)` overload"]pub fn get16(index:impl::core::convert::Into<u32> ,data:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352b670usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(index),(u16)::core::convert::Into::into(data))}
+}
+#[doc="`Get32(u32, u32)` overload"]pub fn get32(index:impl::core::convert::Into<u32> ,data:impl::core::convert::Into<u32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352c900usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(index),(u32)::core::convert::Into::into(data))}
+}
+#[doc="`Get64(u32, u64)` overload"]pub fn get64(index:impl::core::convert::Into<u32> ,data:impl::core::convert::Into<u64>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352cf10usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(index),(u64)::core::convert::Into::into(data))}
+}
+#[doc="`Get128(u32, u64, u64)` overload"]pub fn get128(index:impl::core::convert::Into<u32> ,data1:impl::core::convert::Into<u64> ,data2:impl::core::convert::Into<u64>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352af80usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(index),(u64)::core::convert::Into::into(data1),(u64)::core::convert::Into::into(data2))}
+}
+#[doc="`Get256(u32, u64, u64, u64, u64)` overload"]pub fn get256(index:impl::core::convert::Into<u32> ,data1:impl::core::convert::Into<u64> ,data2:impl::core::convert::Into<u64> ,data3:impl::core::convert::Into<u64> ,data4:impl::core::convert::Into<u64>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x352bea0usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(index),(u64)::core::convert::Into::into(data1),(u64)::core::convert::Into::into(data2),(u64)::core::convert::Into::into(data3),(u64)::core::convert::Into::into(data4))}
+}
+#[doc="`Set8(u32, *mutu8, bool)` overload"]pub fn set8(index:impl::core::convert::Into<u32> ,value:impl::core::convert::Into<bool>)->u8{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u8> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352d4a0usize)as*mut u8,();
+(u32)::core::convert::Into::into(index),(*mut u8)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`Set16(u32, *mutu16, bool)` overload"]pub fn set16(index:impl::core::convert::Into<u32> ,value:impl::core::convert::Into<bool>)->u16{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u16> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352b6b0usize)as*mut u8,();
+(u32)::core::convert::Into::into(index),(*mut u16)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`Set32(u32, *mutu32, bool)` overload"]pub fn set32(index:impl::core::convert::Into<u32> ,value:impl::core::convert::Into<bool>)->u32{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352c940usize)as*mut u8,();
+(u32)::core::convert::Into::into(index),(*mut u32)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`Set64(u32, *mutu64, bool)` overload"]pub fn set64(index:impl::core::convert::Into<u32> ,value:impl::core::convert::Into<bool>)->u64{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u64> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352cf50usize)as*mut u8,();
+(u32)::core::convert::Into::into(index),(*mut u64)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`Set128(u32, *mutu64, *mutu64, bool)` overload"]pub fn set128(index:impl::core::convert::Into<u32> ,value:impl::core::convert::Into<bool>)->(u64,u64){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u64> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352afd0usize)as*mut u8,();
+(u32)::core::convert::Into::into(index),(*mut u64)__out_0.as_mut_ptr(),(*mut u64)__out_1.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Set256(u32, *mutu64, *mutu64, *mutu64, *mutu64, bool)` overload"]pub fn set256(index:impl::core::convert::Into<u32> ,value:impl::core::convert::Into<bool>)->(u64,u64,u64,u64){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <u64> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352bf90usize)as*mut u8,();
+(u32)::core::convert::Into::into(index),(*mut u64)__out_0.as_mut_ptr(),(*mut u64)__out_1.as_mut_ptr(),(*mut u64)__out_2.as_mut_ptr(),(*mut u64)__out_3.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-bitarrayutilities")]
-impl BitArrayUtilities { pub fn get8_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get16_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get64_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get128_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get256_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set8_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set16_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set64_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set128_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set256_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArrayUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="unity_engine-rendering-bitarrayutilities")]impl BitArrayUtilities{pub fn get8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get16_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get64_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get128_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get256_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set8_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set16_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set64_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set128_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set256_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
 #[cfg(feature = "unity_engine-rendering-bitarrayutilities")]
 #[doc(hidden)]

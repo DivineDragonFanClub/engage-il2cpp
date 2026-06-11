@@ -4,33 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/caseinsensitivehashcodeprovider/CaseInsensitiveHashCodeProvider.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "CaseInsensitiveHashCodeProvider")] # [parent (crate :: system :: object :: Object)] pub struct CaseInsensitiveHashCodeProvider {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/caseinsensitivehashcodeprovider/CaseInsensitiveHashCodeProvider.md"))]#[::unity2::class(namespace="System.Collections",name="CaseInsensitiveHashCodeProvider")]#[parent(crate::system::object::Object)]pub struct CaseInsensitiveHashCodeProvider{}
 
 }
 
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
-impl CaseInsensitiveHashCodeProvider { # [doc = "`get_Default()` overload"] pub fn get_default () -> crate :: system :: collections :: caseinsensitivehashcodeprovider :: CaseInsensitiveHashCodeProvider { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: caseinsensitivehashcodeprovider :: CaseInsensitiveHashCodeProvider = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a1330usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]impl CaseInsensitiveHashCodeProvider{#[doc="`get_Default()` overload"]pub fn get_default()->crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a1330usize)as*mut u8,crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider;
+)}
+}
+}
 
-#[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
-pub trait ICaseInsensitiveHashCodeProviderMethods : ICaseInsensitiveHashCodeProvider { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CaseInsensitiveHashCodeProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CaseInsensitiveHashCodeProvider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a1210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode(crate::system::object::Object)` overload"] fn get_hash_code (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < CaseInsensitiveHashCodeProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CaseInsensitiveHashCodeProvider , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a13c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]pub trait ICaseInsensitiveHashCodeProviderMethods:ICaseInsensitiveHashCodeProvider{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CaseInsensitiveHashCodeProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33a1210usize)as*mut u8,();
+(CaseInsensitiveHashCodeProvider)__receiver)}
+}
+#[doc="`GetHashCode(crate::system::object::Object)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <CaseInsensitiveHashCodeProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33a13c0usize)as*mut u8,i32;
+(CaseInsensitiveHashCodeProvider)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
-impl < __T : ICaseInsensitiveHashCodeProvider > ICaseInsensitiveHashCodeProviderMethods for __T { }
+#[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]impl<__T:ICaseInsensitiveHashCodeProvider>ICaseInsensitiveHashCodeProviderMethods for __T{}
 
-#[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
-impl CaseInsensitiveHashCodeProvider { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CaseInsensitiveHashCodeProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CaseInsensitiveHashCodeProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CaseInsensitiveHashCodeProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]impl CaseInsensitiveHashCodeProvider{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]
-impl CaseInsensitiveHashCodeProvider {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CaseInsensitiveHashCodeProvider) , :: core :: stringify ! (new) ,)) ; < Self as ICaseInsensitiveHashCodeProviderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]impl CaseInsensitiveHashCodeProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CaseInsensitiveHashCodeProvider), ::core::stringify!(new),));
+ <Self as ICaseInsensitiveHashCodeProviderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider")]

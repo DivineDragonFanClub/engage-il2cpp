@@ -4,53 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrnodestate/XRNodeState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct XRNodeState {
-    pub m_type: crate :: unity_engine :: xr :: xrnode :: XRNode,
-    pub m_available_fields: crate :: unity_engine :: xr :: availabletrackingdata :: AvailableTrackingData,
-    pub m_position: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_rotation: crate :: unity_engine :: quaternion :: Quaternion,
-    pub m_velocity: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_angular_velocity: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_acceleration: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_angular_acceleration: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_tracked: i32,
-    pub m_unique_id: u64,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrnodestate/XRNodeState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct XRNodeState{pub m_type:crate::unity_engine::xr::xrnode::XRNode,pub m_available_fields:crate::unity_engine::xr::availabletrackingdata::AvailableTrackingData,pub m_position:crate::unity_engine::vector3::Vector3,pub m_rotation:crate::unity_engine::quaternion::Quaternion,pub m_velocity:crate::unity_engine::vector3::Vector3,pub m_angular_velocity:crate::unity_engine::vector3::Vector3,pub m_acceleration:crate::unity_engine::vector3::Vector3,pub m_angular_acceleration:crate::unity_engine::vector3::Vector3,pub m_tracked:i32,pub m_unique_id:u64,}
+impl::unity2::ClassIdentity for XRNodeState{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="XRNodeState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for XRNodeState {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "XRNodeState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for XRNodeState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for XRNodeState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -58,11 +26,21 @@ impl ::unity2::IlType for XRNodeState {
 #[cfg(feature = "unity_engine-xr-xrnodestate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-xrnodestate")]
-impl XRNodeState { # [doc = "`set_uniqueID(u64)` overload"] pub fn set_unique_id (& mut self , value : impl :: core :: convert :: Into < u64 >) -> () { unsafe { { let __inner : extern "C" fn (* mut XRNodeState , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ec40usize) as * mut u8) ; __inner (self as * mut XRNodeState , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_nodeType(crate::unity_engine::xr::xrnode::XRNode)` overload"] pub fn set_node_type (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: xrnode :: XRNode >) -> () { unsafe { { let __inner : extern "C" fn (* mut XRNodeState , crate :: unity_engine :: xr :: xrnode :: XRNode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ec50usize) as * mut u8) ; __inner (self as * mut XRNodeState , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_tracked(bool)` overload"] pub fn set_tracked (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut XRNodeState , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ec60usize) as * mut u8) ; __inner (self as * mut XRNodeState , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-xrnodestate")]impl XRNodeState{#[doc="`set_uniqueID(u64)` overload"]pub fn set_unique_id(&mut self,value:impl::core::convert::Into<u64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ec40usize)as*mut u8,();
+(*mut XRNodeState)self as*mut XRNodeState,(u64)::core::convert::Into::into(value))}
+}
+#[doc="`set_nodeType(crate::unity_engine::xr::xrnode::XRNode)` overload"]pub fn set_node_type(&mut self,value:impl::core::convert::Into<crate::unity_engine::xr::xrnode::XRNode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ec50usize)as*mut u8,();
+(*mut XRNodeState)self as*mut XRNodeState,(crate::unity_engine::xr::xrnode::XRNode)::core::convert::Into::into(value))}
+}
+#[doc="`set_tracked(bool)` overload"]pub fn set_tracked(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ec60usize)as*mut u8,();
+(*mut XRNodeState)self as*mut XRNodeState,(bool)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrnodestate")]
-impl XRNodeState { pub fn set_unique_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRNodeState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_node_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRNodeState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_tracked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRNodeState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-xr-xrnodestate")]impl XRNodeState{pub fn set_unique_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_node_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_tracked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-xr-xrnodestate")]
 #[doc(hidden)]

@@ -4,86 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/int32/Int32.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Int32 {
-    pub m_value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/int32/Int32.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Int32{pub m_value:i32,}
+impl::unity2::ClassIdentity for Int32{const NAMESPACE: &'static str="System";
+const NAME: &'static str="Int32";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Int32 {
-    const NAMESPACE: &'static str = "System";
-
-    const NAME: &'static str = "Int32";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for Int32{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for Int32 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl Int32{#[inline]pub fn max_value()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MaxValue");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_max_value(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MaxValue");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl Int32 {
-    #[inline]
-    pub fn max_value() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MaxValue");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_max_value(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MaxValue");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn min_value() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MinValue");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_min_value(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MinValue");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn min_value()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MinValue");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_min_value(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MinValue");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -91,14 +41,50 @@ impl Int32 {
 #[cfg(feature = "system-int32-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-int32")]
-impl Int32 { # [doc = "`Parse(::unity2::Il2CppString)` overload"] pub fn parse (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3260420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`TryParse(::unity2::Il2CppString, *muti32)` overload"] pub fn try_parse (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3260550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="system-int32")]impl Int32{#[doc="`Parse(::unity2::Il2CppString)` overload"]pub fn parse(s:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3260420usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`TryParse(::unity2::Il2CppString, *muti32)` overload"]pub fn try_parse(s:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3260550usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s),(*mut i32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "system-int32")]
-impl Int32 { # [doc = "`CompareTo(crate::system::object::Object)` overload"] pub fn compare_to (& mut self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Int32 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3260150usize) as * mut u8) ; __inner (self as * mut Int32 , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CompareTo(i32)` overload"] pub fn compare_to_2 (& mut self , value : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Int32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3260250usize) as * mut u8) ; __inner (self as * mut Int32 , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Int32 , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3260270usize) as * mut u8) ; __inner (self as * mut Int32 , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(i32)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Int32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3260300usize) as * mut u8) ; __inner (self as * mut Int32 , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Int32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3260310usize) as * mut u8) ; __inner (self as * mut Int32 , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Int32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3260320usize) as * mut u8) ; __inner (self as * mut Int32 , :: core :: option :: Option :: None) } } } # [doc = "`ToString(::unity2::Il2CppString)` overload"] pub fn to_string_2 (& mut self , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Int32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3260360usize) as * mut u8) ; __inner (self as * mut Int32 , :: core :: convert :: Into :: into (format) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-int32")]impl Int32{#[doc="`CompareTo(crate::system::object::Object)` overload"]pub fn compare_to(&mut self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3260150usize)as*mut u8,i32;
+(*mut Int32)self as*mut Int32,(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`CompareTo(i32)` overload"]pub fn compare_to_2(&mut self,value:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3260250usize)as*mut u8,i32;
+(*mut Int32)self as*mut Int32,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3260270usize)as*mut u8,bool;
+(*mut Int32)self as*mut Int32,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(i32)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3260300usize)as*mut u8,bool;
+(*mut Int32)self as*mut Int32,(i32)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3260310usize)as*mut u8,i32;
+(*mut Int32)self as*mut Int32)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3260320usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Int32)self as*mut Int32)}
+}
+#[doc="`ToString(::unity2::Il2CppString)` overload"]pub fn to_string_2(&mut self,format:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3260360usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Int32)self as*mut Int32,(::unity2::Il2CppString)::core::convert::Into::into(format))}
+}
+}
 
-#[cfg(feature = "system-int32")]
-impl Int32 { pub fn compare_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Int32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn compare_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Int32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Int32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Int32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Int32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Int32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn to_string_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Int32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Int32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn try_parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Int32 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="system-int32")]impl Int32{pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn compare_to_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn to_string_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn parse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_parse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
 #[cfg(feature = "system-int32")]
 #[doc(hidden)]

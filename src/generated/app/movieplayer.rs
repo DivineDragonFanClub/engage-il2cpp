@@ -4,36 +4,146 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: movieplayerbase :: { IMoviePlayerBase , MoviePlayerBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::movieplayerbase::{IMoviePlayerBase,MoviePlayerBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayer/MoviePlayer.md"))] # [:: unity2 :: class (namespace = "App" , name = "MoviePlayer")] # [parent (crate :: app :: movieplayerbase :: MoviePlayerBase)] pub struct MoviePlayer {
-# [offset (128)] # [rename (name = "m_VideoPlayer")] pub m_video_player : crate :: unity_engine :: video :: videoplayer :: VideoPlayer ,
-# [offset (136)] # [rename (name = "m_IsSoundEventEnable")] pub m_is_sound_event_enable : bool ,
-# [offset (137)] # [rename (name = "m_triggerStop")] pub m_trigger_stop : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/movieplayer/MoviePlayer.md"))]#[::unity2::class(namespace="App",name="MoviePlayer")]#[parent(crate::app::movieplayerbase::MoviePlayerBase)]pub struct MoviePlayer{#[offset(128)]#[rename(name="m_VideoPlayer")]pub m_video_player:crate::unity_engine::video::videoplayer::VideoPlayer, #[offset(136)]#[rename(name="m_IsSoundEventEnable")]pub m_is_sound_event_enable:bool, #[offset(137)]#[rename(name="m_triggerStop")]pub m_trigger_stop:bool,}
 
 }
 
 #[cfg(feature = "app-movieplayer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-movieplayer")]
-pub trait IMoviePlayerMethods : IMoviePlayer { # [doc = "`.ctor(::unity2::Il2CppString, bool)` overload"] fn ctor (self , movie_file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_movie_file_name_direct : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277d820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (movie_file_name) , :: core :: convert :: Into :: into (is_movie_file_name_direct) , :: core :: option :: Option :: None) } } } # [doc = "`ErrorCallback(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString)` overload"] fn error_callback (self , player : impl :: core :: convert :: Into < crate :: unity_engine :: video :: videoplayer :: VideoPlayer > , mess : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , crate :: unity_engine :: video :: videoplayer :: VideoPlayer , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277d8b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (player) , :: core :: convert :: Into :: into (mess) , :: core :: option :: Option :: None) } } } # [doc = "`LoopPointReached(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"] fn loop_point_reached (self , player : impl :: core :: convert :: Into < crate :: unity_engine :: video :: videoplayer :: VideoPlayer >) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , crate :: unity_engine :: video :: videoplayer :: VideoPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277d8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (player) , :: core :: option :: Option :: None) } } } # [doc = "`FrameReady(crate::unity_engine::video::videoplayer::VideoPlayer, i64)` overload"] fn frame_ready (self , player : impl :: core :: convert :: Into < crate :: unity_engine :: video :: videoplayer :: VideoPlayer > , frame_idx : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , crate :: unity_engine :: video :: videoplayer :: VideoPlayer , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277d900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (player) , :: core :: convert :: Into :: into (frame_idx) , :: core :: option :: Option :: None) } } } # [doc = "`SetupAfterLoadScene()` overload"] fn setup_after_load_scene (self ,) -> bool { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277d920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupByMovieCanvasPrefab(crate::unity_engine::gameobject::GameObject)` overload"] fn setup_by_movie_canvas_prefab (self , canvas_prefab : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> bool { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277db40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (canvas_prefab) , :: core :: option :: Option :: None) } } } # [doc = "`SetMovieFilePathToVideoPlayer()` overload"] fn set_movie_file_path_to_video_player (self ,) -> bool { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277dc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnableSoundEvent()` overload"] fn enable_sound_event (self ,) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277dee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisableSoundEvent()` overload"] fn disable_sound_event (self ,) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277def0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsTruePlayEnd()` overload"] fn is_true_play_end (self ,) -> bool { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277df00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetScreenObjectName()` overload"] fn get_screen_object_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277df40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPaused()` overload"] fn is_paused (self ,) -> bool { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277df90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlaying()` overload"] fn is_playing (self ,) -> bool { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayEnd()` overload"] fn is_play_end (self ,) -> bool { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMovieLength()` overload"] fn get_movie_length (self ,) -> f32 { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPlayingPosition()` overload"] fn get_playing_position (self ,) -> f32 { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Prepare()` overload"] fn prepare (self ,) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPrepared()` overload"] fn is_prepared (self ,) -> bool { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Play()` overload"] fn play (self ,) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SuspendOn()` overload"] fn suspend_on (self ,) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277e9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SuspendOff()` overload"] fn suspend_off (self ,) -> () { unsafe { let __receiver = < MoviePlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MoviePlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277ea00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-movieplayer")]pub trait IMoviePlayerMethods:IMoviePlayer{#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor(self,movie_file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_movie_file_name_direct:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277d820usize)as*mut u8,();
+(MoviePlayer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(movie_file_name),(bool)::core::convert::Into::into(is_movie_file_name_direct))}
+}
+#[doc="`ErrorCallback(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString)` overload"]fn error_callback(self,player:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer> ,mess:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277d8b0usize)as*mut u8,();
+(MoviePlayer)__receiver,(crate::unity_engine::video::videoplayer::VideoPlayer)::core::convert::Into::into(player),(::unity2::Il2CppString)::core::convert::Into::into(mess))}
+}
+#[doc="`LoopPointReached(crate::unity_engine::video::videoplayer::VideoPlayer)` overload"]fn loop_point_reached(self,player:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer>)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277d8e0usize)as*mut u8,();
+(MoviePlayer)__receiver,(crate::unity_engine::video::videoplayer::VideoPlayer)::core::convert::Into::into(player))}
+}
+#[doc="`FrameReady(crate::unity_engine::video::videoplayer::VideoPlayer, i64)` overload"]fn frame_ready(self,player:impl::core::convert::Into<crate::unity_engine::video::videoplayer::VideoPlayer> ,frame_idx:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277d900usize)as*mut u8,();
+(MoviePlayer)__receiver,(crate::unity_engine::video::videoplayer::VideoPlayer)::core::convert::Into::into(player),(i64)::core::convert::Into::into(frame_idx))}
+}
+#[doc="`SetupAfterLoadScene()` overload"]fn setup_after_load_scene(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277d920usize)as*mut u8,bool;
+(MoviePlayer)__receiver)}
+}
+#[doc="`SetupByMovieCanvasPrefab(crate::unity_engine::gameobject::GameObject)` overload"]fn setup_by_movie_canvas_prefab(self,canvas_prefab:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277db40usize)as*mut u8,bool;
+(MoviePlayer)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(canvas_prefab))}
+}
+#[doc="`SetMovieFilePathToVideoPlayer()` overload"]fn set_movie_file_path_to_video_player(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277dc80usize)as*mut u8,bool;
+(MoviePlayer)__receiver)}
+}
+#[doc="`EnableSoundEvent()` overload"]fn enable_sound_event(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277dee0usize)as*mut u8,();
+(MoviePlayer)__receiver)}
+}
+#[doc="`DisableSoundEvent()` overload"]fn disable_sound_event(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277def0usize)as*mut u8,();
+(MoviePlayer)__receiver)}
+}
+#[doc="`IsTruePlayEnd()` overload"]fn is_true_play_end(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277df00usize)as*mut u8,bool;
+(MoviePlayer)__receiver)}
+}
+#[doc="`GetScreenObjectName()` overload"]fn get_screen_object_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277df40usize)as*mut u8, ::unity2::Il2CppString;
+(MoviePlayer)__receiver)}
+}
+#[doc="`IsPaused()` overload"]fn is_paused(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277df90usize)as*mut u8,bool;
+(MoviePlayer)__receiver)}
+}
+#[doc="`IsPlaying()` overload"]fn is_playing(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e030usize)as*mut u8,bool;
+(MoviePlayer)__receiver)}
+}
+#[doc="`IsPlayEnd()` overload"]fn is_play_end(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e0d0usize)as*mut u8,bool;
+(MoviePlayer)__receiver)}
+}
+#[doc="`GetMovieLength()` overload"]fn get_movie_length(self,)->f32{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e130usize)as*mut u8,f32;
+(MoviePlayer)__receiver)}
+}
+#[doc="`GetPlayingPosition()` overload"]fn get_playing_position(self,)->f32{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e1f0usize)as*mut u8,f32;
+(MoviePlayer)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e2b0usize)as*mut u8,();
+(MoviePlayer)__receiver)}
+}
+#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e810usize)as*mut u8,();
+(MoviePlayer)__receiver)}
+}
+#[doc="`IsPrepared()` overload"]fn is_prepared(self,)->bool{unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e830usize)as*mut u8,bool;
+(MoviePlayer)__receiver)}
+}
+#[doc="`Play()` overload"]fn play(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e8d0usize)as*mut u8,();
+(MoviePlayer)__receiver)}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e920usize)as*mut u8,();
+(MoviePlayer)__receiver)}
+}
+#[doc="`SuspendOn()` overload"]fn suspend_on(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277e9f0usize)as*mut u8,();
+(MoviePlayer)__receiver)}
+}
+#[doc="`SuspendOff()` overload"]fn suspend_off(self,)->(){unsafe{let __receiver= <MoviePlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277ea00usize)as*mut u8,();
+(MoviePlayer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-movieplayer")]
-impl < __T : IMoviePlayer > IMoviePlayerMethods for __T { }
+#[cfg(feature="app-movieplayer")]impl<__T:IMoviePlayer>IMoviePlayerMethods for __T{}
 
-#[cfg(feature = "app-movieplayer")]
-impl MoviePlayer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn error_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn loop_point_reached_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn frame_ready_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn setup_after_load_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn setup_by_movie_canvas_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_movie_file_path_to_video_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn enable_sound_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn disable_sound_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_true_play_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_screen_object_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_paused_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_play_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_movie_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_playing_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_prepared_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn suspend_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn suspend_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MoviePlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
+#[cfg(feature="app-movieplayer")]impl MoviePlayer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn error_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn loop_point_reached_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn frame_ready_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn setup_after_load_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn setup_by_movie_canvas_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_movie_file_path_to_video_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn enable_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn disable_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_true_play_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_screen_object_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_paused_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_play_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_movie_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_playing_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_prepared_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn suspend_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn suspend_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
 
-#[cfg(feature = "app-movieplayer")]
-impl MoviePlayer {
-# [doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"] pub fn new (movie_file_name : :: unity2 :: Il2CppString , is_movie_file_name_direct : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MoviePlayer) , :: core :: stringify ! (new) ,)) ; < Self as IMoviePlayerMethods > :: ctor (this , movie_file_name , is_movie_file_name_direct) ; this }
+#[cfg(feature="app-movieplayer")]impl MoviePlayer{#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new(movie_file_name: ::unity2::Il2CppString,is_movie_file_name_direct:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MoviePlayer), ::core::stringify!(new),));
+ <Self as IMoviePlayerMethods> ::ctor(this,movie_file_name,is_movie_file_name_direct);
+this}
 }
 
 #[cfg(feature = "app-movieplayer")]

@@ -4,45 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/consolemanager/ConsoleManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "ConsoleManager")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: consolemanager :: ConsoleManager >)] pub struct ConsoleManager {
-# [offset (120)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [static_field] # [rename (name = "s_ScaleX")] pub s_scale_x : f32 ,
-# [static_field] # [rename (name = "s_ScaleY")] pub s_scale_y : f32 ,
-# [static_field] # [rename (name = "s_Orient")] pub s_orient : f32 ,
-# [static_field] # [rename (name = "s_LockObject")] pub s_lock_object : :: unity2 :: IlInstance ,
-# [static_field] # [rename (name = "s_Logs")] pub s_logs : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "s_ShowLog")] pub s_show_log : crate :: app :: gameparam :: GameParam_Holder ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/consolemanager/ConsoleManager.md"))]#[::unity2::class(namespace="App",name="ConsoleManager")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::consolemanager::ConsoleManager>)]pub struct ConsoleManager{#[offset(120)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="s_ScaleX")]pub s_scale_x:f32, #[static_field]#[rename(name="s_ScaleY")]pub s_scale_y:f32, #[static_field]#[rename(name="s_Orient")]pub s_orient:f32, #[static_field]#[rename(name="s_LockObject")]pub s_lock_object: ::unity2::IlInstance, #[static_field]#[rename(name="s_Logs")]pub s_logs:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_ShowLog")]pub s_show_log:crate::app::gameparam::GameParam_Holder,}
 
 }
 
 #[cfg(feature = "app-consolemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-consolemanager")]
-impl ConsoleManager { # [doc = "`get_ScaleX()` overload"] pub fn get_scale_x () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253b670usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_ScaleY()` overload"] pub fn get_scale_y () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253b6e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Orient()` overload"] pub fn get_orient () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253b750usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Logs()` overload"] pub fn get_logs () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253b7c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Print(::unity2::Il2CppString)` overload"] pub fn print (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253c590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253c5a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] pub fn open () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253c6f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] pub fn close () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253ca20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsButton()` overload"] pub fn is_button () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253c220usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsTrigger()` overload"] pub fn is_trigger () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253c0a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`OnLogMessage(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"] pub fn on_log_message (log_text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , stack_trace : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: logtype :: LogType >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: unity_engine :: logtype :: LogType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253caa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (log_text) , :: core :: convert :: Into :: into (stack_trace) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253cab0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253cac0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-consolemanager")]impl ConsoleManager{#[doc="`get_ScaleX()` overload"]pub fn get_scale_x()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253b670usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_ScaleY()` overload"]pub fn get_scale_y()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253b6e0usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_Orient()` overload"]pub fn get_orient()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253b750usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_Logs()` overload"]pub fn get_logs()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253b7c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`Print(::unity2::Il2CppString)` overload"]pub fn print(str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253c590usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`Clear()` overload"]pub fn clear()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253c5a0usize)as*mut u8,();
+)}
+}
+#[doc="`Open()` overload"]pub fn open()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253c6f0usize)as*mut u8,();
+)}
+}
+#[doc="`Close()` overload"]pub fn close()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253ca20usize)as*mut u8,();
+)}
+}
+#[doc="`IsButton()` overload"]pub fn is_button()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253c220usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsTrigger()` overload"]pub fn is_trigger()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253c0a0usize)as*mut u8,bool;
+)}
+}
+#[doc="`OnLogMessage(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::logtype::LogType)` overload"]pub fn on_log_message(log_text:impl::core::convert::Into< ::unity2::Il2CppString> ,stack_trace:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into<crate::unity_engine::logtype::LogType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253caa0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(log_text),(::unity2::Il2CppString)::core::convert::Into::into(stack_trace),(crate::unity_engine::logtype::LogType)::core::convert::Into::into(r#type))}
+}
+#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253cab0usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253cac0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-consolemanager")]
-pub trait IConsoleManagerMethods : IConsoleManager { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < ConsoleManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConsoleManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253b830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < ConsoleManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConsoleManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253b8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < ConsoleManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConsoleManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253b940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ConsoleManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConsoleManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253c9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-consolemanager")]pub trait IConsoleManagerMethods:IConsoleManager{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <ConsoleManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253b830usize)as*mut u8,();
+(ConsoleManager)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ConsoleManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253b8d0usize)as*mut u8,();
+(ConsoleManager)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <ConsoleManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253b940usize)as*mut u8,();
+(ConsoleManager)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ConsoleManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253c9a0usize)as*mut u8,();
+(ConsoleManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-consolemanager")]
-impl < __T : IConsoleManager > IConsoleManagerMethods for __T { }
+#[cfg(feature="app-consolemanager")]impl<__T:IConsoleManager>IConsoleManagerMethods for __T{}
 
-#[cfg(feature = "app-consolemanager")]
-impl ConsoleManager { pub fn get_scale_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_scale_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_orient_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_logs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn print_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn on_log_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConsoleManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-consolemanager")]impl ConsoleManager{pub fn get_scale_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_scale_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_orient_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_logs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn print_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_log_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-consolemanager")]
-impl ConsoleManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConsoleManager) , :: core :: stringify ! (new) ,)) ; < Self as IConsoleManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-consolemanager")]impl ConsoleManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConsoleManager), ::core::stringify!(new),));
+ <Self as IConsoleManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-consolemanager")]

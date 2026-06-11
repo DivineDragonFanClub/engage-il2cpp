@@ -4,39 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubinvestmentbonusfood/HubInvestmentBonusFood.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubInvestmentBonusFood")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentbonusfood :: HubInvestmentBonusFood >)] pub struct HubInvestmentBonusFood {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubinvestmentbonusfood/HubInvestmentBonusFood.md"))]#[::unity2::class(namespace="App",name="HubInvestmentBonusFood")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::hubinvestmentbonusfood::HubInvestmentBonusFood>)]pub struct HubInvestmentBonusFood{}
 
 }
 
 #[cfg(feature = "app-hubinvestmentbonusfood-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubinvestmentbonusfood")]
-impl HubInvestmentBonusFood { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa8e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentbonusfood")]impl HubInvestmentBonusFood{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28aa8e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentbonusfood")]
-pub trait IHubInvestmentBonusFoodMethods : IHubInvestmentBonusFood { # [doc = "`get_Foodstuff()` overload"] fn get_foodstuff (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusFood , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Foodstuff(::unity2::Il2CppString)` overload"] fn set_foodstuff (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusFood , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa9a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Num()` overload"] fn get_num (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusFood , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Num(u8)` overload"] fn set_num (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusFood , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa9c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubInvestmentBonusFood as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusFood , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentbonusfood")]pub trait IHubInvestmentBonusFoodMethods:IHubInvestmentBonusFood{#[doc="`get_Foodstuff()` overload"]fn get_foodstuff(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubInvestmentBonusFood as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa990usize)as*mut u8, ::unity2::Il2CppString;
+(HubInvestmentBonusFood)__receiver)}
+}
+#[doc="`set_Foodstuff(::unity2::Il2CppString)` overload"]fn set_foodstuff(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubInvestmentBonusFood as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa9a0usize)as*mut u8,();
+(HubInvestmentBonusFood)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Num()` overload"]fn get_num(self,)->u8{unsafe{let __receiver= <HubInvestmentBonusFood as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa9b0usize)as*mut u8,u8;
+(HubInvestmentBonusFood)__receiver)}
+}
+#[doc="`set_Num(u8)` overload"]fn set_num(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentBonusFood as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa9c0usize)as*mut u8,();
+(HubInvestmentBonusFood)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubInvestmentBonusFood as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa9d0usize)as*mut u8,();
+(HubInvestmentBonusFood)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentbonusfood")]
-impl < __T : IHubInvestmentBonusFood > IHubInvestmentBonusFoodMethods for __T { }
+#[cfg(feature="app-hubinvestmentbonusfood")]impl<__T:IHubInvestmentBonusFood>IHubInvestmentBonusFoodMethods for __T{}
 
-#[cfg(feature = "app-hubinvestmentbonusfood")]
-impl HubInvestmentBonusFood { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_foodstuff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_foodstuff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusFood as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-hubinvestmentbonusfood")]impl HubInvestmentBonusFood{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_foodstuff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_foodstuff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-hubinvestmentbonusfood")]
-impl HubInvestmentBonusFood {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubInvestmentBonusFood) , :: core :: stringify ! (new) ,)) ; < Self as IHubInvestmentBonusFoodMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubinvestmentbonusfood")]impl HubInvestmentBonusFood{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubInvestmentBonusFood), ::core::stringify!(new),));
+ <Self as IHubInvestmentBonusFoodMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubinvestmentbonusfood")]

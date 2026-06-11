@@ -4,39 +4,121 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akbaseplatformsettings :: { AkBasePlatformSettings , IAkBasePlatformSettings }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akbaseplatformsettings::{AkBasePlatformSettings,IAkBasePlatformSettings}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommonplatformsettings/AkCommonPlatformSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommonPlatformSettings")] # [parent (crate :: root :: akbaseplatformsettings :: AkBasePlatformSettings)] pub struct AkCommonPlatformSettings {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommonplatformsettings/AkCommonPlatformSettings.md"))]#[::unity2::class(namespace="",name="AkCommonPlatformSettings")]#[parent(crate::root::akbaseplatformsettings::AkBasePlatformSettings)]pub struct AkCommonPlatformSettings{}
 
 }
 
 #[cfg(feature = "root-akcommonplatformsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akcommonplatformsettings")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __AkCommonPlatformSettings_unity2_raw { use super :: * ; pub unsafe fn get_user_settings (this : AkCommonPlatformSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonusersettings :: AkCommonUserSettings { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetUserSettings") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetUserSettings" , < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonusersettings :: AkCommonUserSettings = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_advanced_settings (this : AkCommonPlatformSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetAdvancedSettings") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetAdvancedSettings" , < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_comms_settings (this : AkCommonPlatformSettings , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommoncommsettings :: AkCommonCommSettings { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetCommsSettings") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetCommsSettings" , < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommoncommsettings :: AkCommonCommSettings = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="root-akcommonplatformsettings")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkCommonPlatformSettings_unity2_raw{use super:: * ;
+pub unsafe fn get_user_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akcommonusersettings::AkCommonUserSettings{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetUserSettings").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetUserSettings", <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommonusersettings::AkCommonUserSettings= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_advanced_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetAdvancedSettings").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetAdvancedSettings", <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_comms_settings(this:AkCommonPlatformSettings,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akcommoncommsettings::AkCommonCommSettings{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetCommsSettings").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetCommsSettings", <AkCommonPlatformSettings as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(AkCommonPlatformSettings, ::unity2::OptionalMethod,)->crate::root::akcommoncommsettings::AkCommonCommSettings= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "root-akcommonplatformsettings")]
-pub trait IAkCommonPlatformSettingsMethods : IAkCommonPlatformSettings { # [doc = "`GetUserSettings()` overload"] fn get_user_settings (self ,) -> crate :: root :: akcommonusersettings :: AkCommonUserSettings { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonPlatformSettings_unity2_raw :: get_user_settings (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetAdvancedSettings()` overload"] fn get_advanced_settings (self ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonPlatformSettings_unity2_raw :: get_advanced_settings (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCommsSettings()` overload"] fn get_comms_settings (self ,) -> crate :: root :: akcommoncommsettings :: AkCommonCommSettings { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __AkCommonPlatformSettings_unity2_raw :: get_comms_settings (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_AkInitializationSettings()` overload"] fn get_ak_initialization_settings (self ,) -> crate :: root :: akinitializationsettings :: AkInitializationSettings { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akinitializationsettings :: AkInitializationSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f12dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_AkSpatialAudioInitSettings()` overload"] fn get_ak_spatial_audio_init_settings (self ,) -> crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akspatialaudioinitsettings :: AkSpatialAudioInitSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CallbackManagerInitializationSettings()` overload"] fn get_callback_manager_initialization_settings (self ,) -> crate :: root :: akcallbackmanager :: AkCallbackManager_InitializationSettings { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcallbackmanager :: AkCallbackManager_InitializationSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_InitialLanguage()` overload"] fn get_initial_language (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SoundBankPersistentDataPath()` overload"] fn get_sound_bank_persistent_data_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RenderDuringFocusLoss()` overload"] fn get_render_during_focus_loss (self ,) -> bool { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SoundbankPath()` overload"] fn get_soundbank_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_UseAsyncOpen()` overload"] fn get_use_async_open (self ,) -> bool { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_AkCommunicationSettings()` overload"] fn get_ak_communication_settings (self ,) -> crate :: root :: akcommunicationsettings :: AkCommunicationSettings { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommunicationsettings :: AkCommunicationSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkCommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f14e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcommonplatformsettings")]pub trait IAkCommonPlatformSettingsMethods:IAkCommonPlatformSettings{#[doc="`GetUserSettings()` overload"]fn get_user_settings(self,)->crate::root::akcommonusersettings::AkCommonUserSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AkCommonPlatformSettings_unity2_raw::get_user_settings(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetAdvancedSettings()` overload"]fn get_advanced_settings(self,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AkCommonPlatformSettings_unity2_raw::get_advanced_settings(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetCommsSettings()` overload"]fn get_comms_settings(self,)->crate::root::akcommoncommsettings::AkCommonCommSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AkCommonPlatformSettings_unity2_raw::get_comms_settings(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_AkInitializationSettings()` overload"]fn get_ak_initialization_settings(self,)->crate::root::akinitializationsettings::AkInitializationSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12dc0usize)as*mut u8,crate::root::akinitializationsettings::AkInitializationSettings;
+(AkCommonPlatformSettings)__receiver)}
+}
+#[doc="`get_AkSpatialAudioInitSettings()` overload"]fn get_ak_spatial_audio_init_settings(self,)->crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14bc0usize)as*mut u8,crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings;
+(AkCommonPlatformSettings)__receiver)}
+}
+#[doc="`get_CallbackManagerInitializationSettings()` overload"]fn get_callback_manager_initialization_settings(self,)->crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14c40usize)as*mut u8,crate::root::akcallbackmanager::AkCallbackManager_InitializationSettings;
+(AkCommonPlatformSettings)__receiver)}
+}
+#[doc="`get_InitialLanguage()` overload"]fn get_initial_language(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14cc0usize)as*mut u8, ::unity2::Il2CppString;
+(AkCommonPlatformSettings)__receiver)}
+}
+#[doc="`get_SoundBankPersistentDataPath()` overload"]fn get_sound_bank_persistent_data_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14cf0usize)as*mut u8, ::unity2::Il2CppString;
+(AkCommonPlatformSettings)__receiver)}
+}
+#[doc="`get_RenderDuringFocusLoss()` overload"]fn get_render_during_focus_loss(self,)->bool{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14d20usize)as*mut u8,bool;
+(AkCommonPlatformSettings)__receiver)}
+}
+#[doc="`get_SoundbankPath()` overload"]fn get_soundbank_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14d50usize)as*mut u8, ::unity2::Il2CppString;
+(AkCommonPlatformSettings)__receiver)}
+}
+#[doc="`get_UseAsyncOpen()` overload"]fn get_use_async_open(self,)->bool{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14d80usize)as*mut u8,bool;
+(AkCommonPlatformSettings)__receiver)}
+}
+#[doc="`get_AkCommunicationSettings()` overload"]fn get_ak_communication_settings(self,)->crate::root::akcommunicationsettings::AkCommunicationSettings{unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14db0usize)as*mut u8,crate::root::akcommunicationsettings::AkCommunicationSettings;
+(AkCommonPlatformSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f14e00usize)as*mut u8,();
+(AkCommonPlatformSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akcommonplatformsettings")]
-impl < __T : IAkCommonPlatformSettings > IAkCommonPlatformSettingsMethods for __T { }
+#[cfg(feature="root-akcommonplatformsettings")]impl<__T:IAkCommonPlatformSettings>IAkCommonPlatformSettingsMethods for __T{}
 
-#[cfg(feature = "root-akcommonplatformsettings")]
-impl AkCommonPlatformSettings { pub fn get_user_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_advanced_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_comms_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_ak_initialization_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_ak_spatial_audio_init_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_callback_manager_initialization_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_initial_language_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_sound_bank_persistent_data_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_render_during_focus_loss_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_soundbank_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_use_async_open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_ak_communication_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="root-akcommonplatformsettings")]impl AkCommonPlatformSettings{pub fn get_user_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_advanced_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_comms_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_ak_initialization_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_ak_spatial_audio_init_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_callback_manager_initialization_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_initial_language_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_sound_bank_persistent_data_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_render_during_focus_loss_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_soundbank_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_use_async_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_ak_communication_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "root-akcommonplatformsettings")]
-impl AkCommonPlatformSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCommonPlatformSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkCommonPlatformSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akcommonplatformsettings")]impl AkCommonPlatformSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCommonPlatformSettings), ::core::stringify!(new),));
+ <Self as IAkCommonPlatformSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akcommonplatformsettings")]

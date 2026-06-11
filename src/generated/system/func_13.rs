@@ -4,32 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/func_13/Func_13.md"))] # [:: unity2 :: class (namespace = "System" , name = "Func`13")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct Func_13 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity , T4 : :: unity2 :: ClassIdentity , T5 : :: unity2 :: ClassIdentity , T6 : :: unity2 :: ClassIdentity , T7 : :: unity2 :: ClassIdentity , T8 : :: unity2 :: ClassIdentity , T9 : :: unity2 :: ClassIdentity , T10 : :: unity2 :: ClassIdentity , T11 : :: unity2 :: ClassIdentity , T12 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/func_13/Func_13.md"))]#[::unity2::class(namespace="System",name="Func`13")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct Func_13<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity,T2: ::unity2::ClassIdentity,T3: ::unity2::ClassIdentity,T4: ::unity2::ClassIdentity,T5: ::unity2::ClassIdentity,T6: ::unity2::ClassIdentity,T7: ::unity2::ClassIdentity,T8: ::unity2::ClassIdentity,T9: ::unity2::ClassIdentity,T10: ::unity2::ClassIdentity,T11: ::unity2::ClassIdentity,T12: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "system-func_13-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-func_13")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity , T4 : :: unity2 :: ClassIdentity , T5 : :: unity2 :: ClassIdentity , T6 : :: unity2 :: ClassIdentity , T7 : :: unity2 :: ClassIdentity , T8 : :: unity2 :: ClassIdentity , T9 : :: unity2 :: ClassIdentity , T10 : :: unity2 :: ClassIdentity , T11 : :: unity2 :: ClassIdentity , T12 : :: unity2 :: ClassIdentity > Func_13 < T0 , T1 , T2 , T3 , T4 , T5 , T6 , T7 , T8 , T9 , T10 , T11 , T12 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11)` overload"] # [method (name = "Invoke" , args = 12)] pub fn invoke (self , arg1 : T0 , arg2 : T1 , arg3 : T2 , arg4 : T3 , arg5 : T4 , arg6 : T5 , arg7 : T6 , arg8 : T7 , arg9 : T8 , arg10 : T9 , arg11 : T10 , arg12 : T11) -> T12 ;
+#[cfg(feature="system-func_13")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity,T2: ::unity2::ClassIdentity,T3: ::unity2::ClassIdentity,T4: ::unity2::ClassIdentity,T5: ::unity2::ClassIdentity,T6: ::unity2::ClassIdentity,T7: ::unity2::ClassIdentity,T8: ::unity2::ClassIdentity,T9: ::unity2::ClassIdentity,T10: ::unity2::ClassIdentity,T11: ::unity2::ClassIdentity,T12: ::unity2::ClassIdentity>Func_13<T0,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(T0, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11)` overload"]#[method(name="Invoke",args=12)]pub fn invoke(self,arg1:T0,arg2:T1,arg3:T2,arg4:T3,arg5:T4,arg6:T5,arg7:T6,arg8:T7,arg9:T8,arg10:T9,arg11:T10,arg12:T11)->T12;
 }
 
-#[cfg(feature = "system-func_13")]
-impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity , T2 : :: unity2 :: ClassIdentity , T3 : :: unity2 :: ClassIdentity , T4 : :: unity2 :: ClassIdentity , T5 : :: unity2 :: ClassIdentity , T6 : :: unity2 :: ClassIdentity , T7 : :: unity2 :: ClassIdentity , T8 : :: unity2 :: ClassIdentity , T9 : :: unity2 :: ClassIdentity , T10 : :: unity2 :: ClassIdentity , T11 : :: unity2 :: ClassIdentity , T12 : :: unity2 :: ClassIdentity > Func_13 < T0 , T1 , T2 , T3 , T4 , T5 , T6 , T7 , T8 , T9 , T10 , T11 , T12 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Func_13) , :: core :: stringify ! (new) ,)) ; < Self as IFunc_13Methods < T0 , T1 , T2 , T3 , T4 , T5 , T6 , T7 , T8 , T9 , T10 , T11 , T12 > > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-func_13")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity,T2: ::unity2::ClassIdentity,T3: ::unity2::ClassIdentity,T4: ::unity2::ClassIdentity,T5: ::unity2::ClassIdentity,T6: ::unity2::ClassIdentity,T7: ::unity2::ClassIdentity,T8: ::unity2::ClassIdentity,T9: ::unity2::ClassIdentity,T10: ::unity2::ClassIdentity,T11: ::unity2::ClassIdentity,T12: ::unity2::ClassIdentity>Func_13<T0,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Func_13), ::core::stringify!(new),));
+ <Self as IFunc_13Methods<T0,T1,T2,T3,T4,T5,T6,T7,T8,T9,T10,T11,T12> > ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "system-func_13")]

@@ -4,36 +4,114 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmaputil/GmapUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapUtil")] # [parent (crate :: system :: object :: Object)] pub struct GmapUtil {
-# [static_field] # [rename (name = "RareGoldKey")] pub rare_gold_key : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "RareExpKey")] pub rare_exp_key : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmaputil/GmapUtil.md"))]#[::unity2::class(namespace="App",name="GmapUtil")]#[parent(crate::system::object::Object)]pub struct GmapUtil{#[static_field]#[rename(name="RareGoldKey")]pub rare_gold_key: ::unity2::Il2CppString, #[static_field]#[rename(name="RareExpKey")]pub rare_exp_key: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-gmaputil-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmaputil")]
-impl GmapUtil { # [doc = "`get_SortiableCount()` overload"] pub fn get_sortiable_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4a330usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_SortiableCount(i32)` overload"] pub fn set_sortiable_count (value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4a3a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetEncountRank(crate::app::gmapspot::GmapSpot)` overload"] pub fn get_encount_rank (gmap_spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b46ca0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gmap_spot) , :: core :: option :: Option :: None) } } } # [doc = "`GetSortieNum(crate::app::gmapspot::GmapSpot)` overload"] pub fn get_sortie_num (gmap_spot : impl :: core :: convert :: Into < crate :: app :: gmapspot :: GmapSpot >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapspot :: GmapSpot , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4a410usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (gmap_spot) , :: core :: option :: Option :: None) } } } # [doc = "`CalcEncountRank(i32, bool)` overload"] pub fn calc_encount_rank (sortie_count : impl :: core :: convert :: Into < i32 > , is_dlc_mode : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4a6e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sortie_count) , :: core :: convert :: Into :: into (is_dlc_mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetAverageLevel(crate::app::difficulty::Difficulty, i32)` overload"] pub fn get_average_level (difficulty : impl :: core :: convert :: Into < crate :: app :: difficulty :: Difficulty > , sortie_count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: difficulty :: Difficulty , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4afa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (difficulty) , :: core :: convert :: Into :: into (sortie_count) , :: core :: option :: Option :: None) } } } # [doc = "`GetVandreLevel(*mutcrate::app::unit::Unit)` overload"] pub fn get_vandre_level () -> (i32 , crate :: app :: unit :: Unit) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: unit :: Unit > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4ae70usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`ReductDispos(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"] pub fn reduct_dispos (dispos_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: disposdata :: DisposData > >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: disposdata :: DisposData > { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: disposdata :: DisposData > , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: disposdata :: DisposData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4b040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dispos_list) , :: core :: option :: Option :: None) } } } # [doc = "`GetEquipableWeapons(crate::app::jobdata::JobData, *mutcrate::app::weaponmask::WeaponMask)` overload"] pub fn get_equipable_weapons (job : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData >) -> (:: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > , crate :: app :: weaponmask :: WeaponMask) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: weaponmask :: WeaponMask > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: app :: jobdata :: JobData , * mut crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4b300usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (job) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetDownLevelWeapon(crate::app::itemdata::ItemData, crate::app::weaponlevel::WeaponLevel_Kind)` overload"] pub fn get_down_level_weapon (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , level : impl :: core :: convert :: Into < crate :: app :: weaponlevel :: WeaponLevel_Kind >) -> crate :: app :: itemdata :: ItemData { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , crate :: app :: weaponlevel :: WeaponLevel_Kind , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4b9d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`RegistRareDisposCount()` overload"] pub fn regist_rare_dispos_count () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b40ef0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetRareExpDisposCount()` overload"] pub fn get_rare_exp_dispos_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4be40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetRareGoldDisposCount()` overload"] pub fn get_rare_gold_dispos_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4bff0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`WeaponMaskToArray(crate::app::weaponmask::WeaponMask)` overload"] pub fn weapon_mask_to_array (mask : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask >) -> :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > { unsafe { { let __inner : extern "C" fn (crate :: app :: weaponmask :: WeaponMask , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4b7c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mask) , :: core :: option :: Option :: None) } } } # [doc = "`WeaponArrayToMask(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"] pub fn weapon_array_to_mask (kinds : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > >) -> crate :: app :: weaponmask :: WeaponMask { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponmask :: WeaponMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4b640usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kinds) , :: core :: option :: Option :: None) } } } # [doc = "`IsAppearGradlon()` overload"] pub fn is_appear_gradlon () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4c1a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UpdateVisibleGradlon()` overload"] pub fn update_visible_gradlon () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b3c520usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4c320usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmaputil")]impl GmapUtil{#[doc="`get_SortiableCount()` overload"]pub fn get_sortiable_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4a330usize)as*mut u8,i32;
+)}
+}
+#[doc="`set_SortiableCount(i32)` overload"]pub fn set_sortiable_count(value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4a3a0usize)as*mut u8,();
+(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetEncountRank(crate::app::gmapspot::GmapSpot)` overload"]pub fn get_encount_rank(gmap_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b46ca0usize)as*mut u8,i32;
+(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(gmap_spot))}
+}
+#[doc="`GetSortieNum(crate::app::gmapspot::GmapSpot)` overload"]pub fn get_sortie_num(gmap_spot:impl::core::convert::Into<crate::app::gmapspot::GmapSpot>)->crate::system::collections::generic::list_1::List_1<i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4a410usize)as*mut u8,crate::system::collections::generic::list_1::List_1<i32> ;
+(crate::app::gmapspot::GmapSpot)::core::convert::Into::into(gmap_spot))}
+}
+#[doc="`CalcEncountRank(i32, bool)` overload"]pub fn calc_encount_rank(sortie_count:impl::core::convert::Into<i32> ,is_dlc_mode:impl::core::convert::Into<bool>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4a6e0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(sortie_count),(bool)::core::convert::Into::into(is_dlc_mode))}
+}
+#[doc="`GetAverageLevel(crate::app::difficulty::Difficulty, i32)` overload"]pub fn get_average_level(difficulty:impl::core::convert::Into<crate::app::difficulty::Difficulty> ,sortie_count:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4afa0usize)as*mut u8,i32;
+(crate::app::difficulty::Difficulty)::core::convert::Into::into(difficulty),(i32)::core::convert::Into::into(sortie_count))}
+}
+#[doc="`GetVandreLevel(*mutcrate::app::unit::Unit)` overload"]pub fn get_vandre_level()->(i32,crate::app::unit::Unit){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::unit::Unit> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2b4ae70usize)as*mut u8,i32;
+(*mut crate::app::unit::Unit)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`ReductDispos(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]pub fn reduct_dispos(dispos_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> >)->crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4b040usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData> ;
+(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)::core::convert::Into::into(dispos_list))}
+}
+#[doc="`GetEquipableWeapons(crate::app::jobdata::JobData, *mutcrate::app::weaponmask::WeaponMask)` overload"]pub fn get_equipable_weapons(job:impl::core::convert::Into<crate::app::jobdata::JobData>)->(::unity2::Array<crate::app::itemdata::ItemData_Kinds> ,crate::app::weaponmask::WeaponMask){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::weaponmask::WeaponMask> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2b4b300usize)as*mut u8, ::unity2::Array<crate::app::itemdata::ItemData_Kinds> ;
+(crate::app::jobdata::JobData)::core::convert::Into::into(job),(*mut crate::app::weaponmask::WeaponMask)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetDownLevelWeapon(crate::app::itemdata::ItemData, crate::app::weaponlevel::WeaponLevel_Kind)` overload"]pub fn get_down_level_weapon(item:impl::core::convert::Into<crate::app::itemdata::ItemData> ,level:impl::core::convert::Into<crate::app::weaponlevel::WeaponLevel_Kind>)->crate::app::itemdata::ItemData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4b9d0usize)as*mut u8,crate::app::itemdata::ItemData;
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item),(crate::app::weaponlevel::WeaponLevel_Kind)::core::convert::Into::into(level))}
+}
+#[doc="`RegistRareDisposCount()` overload"]pub fn regist_rare_dispos_count()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b40ef0usize)as*mut u8,();
+)}
+}
+#[doc="`GetRareExpDisposCount()` overload"]pub fn get_rare_exp_dispos_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4be40usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetRareGoldDisposCount()` overload"]pub fn get_rare_gold_dispos_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4bff0usize)as*mut u8,i32;
+)}
+}
+#[doc="`WeaponMaskToArray(crate::app::weaponmask::WeaponMask)` overload"]pub fn weapon_mask_to_array(mask:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)-> ::unity2::Array<crate::app::itemdata::ItemData_Kinds>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4b7c0usize)as*mut u8, ::unity2::Array<crate::app::itemdata::ItemData_Kinds> ;
+(crate::app::weaponmask::WeaponMask)::core::convert::Into::into(mask))}
+}
+#[doc="`WeaponArrayToMask(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]pub fn weapon_array_to_mask(kinds:impl::core::convert::Into< ::unity2::Array<crate::app::itemdata::ItemData_Kinds> >)->crate::app::weaponmask::WeaponMask{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4b640usize)as*mut u8,crate::app::weaponmask::WeaponMask;
+(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)::core::convert::Into::into(kinds))}
+}
+#[doc="`IsAppearGradlon()` overload"]pub fn is_appear_gradlon()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4c1a0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UpdateVisibleGradlon()` overload"]pub fn update_visible_gradlon()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b3c520usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b4c320usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-gmaputil")]
-pub trait IGmapUtilMethods : IGmapUtil { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapUtil as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapUtil , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b4c310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmaputil")]pub trait IGmapUtilMethods:IGmapUtil{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapUtil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b4c310usize)as*mut u8,();
+(GmapUtil)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmaputil")]
-impl < __T : IGmapUtil > IGmapUtilMethods for __T { }
+#[cfg(feature="app-gmaputil")]impl<__T:IGmapUtil>IGmapUtilMethods for __T{}
 
-#[cfg(feature = "app-gmaputil")]
-impl GmapUtil { pub fn get_sortiable_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_sortiable_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_encount_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_sortie_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_encount_rank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_average_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_vandre_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reduct_dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_equipable_weapons_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_down_level_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn regist_rare_dispos_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_rare_exp_dispos_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_rare_gold_dispos_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn weapon_mask_to_array_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn weapon_array_to_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_appear_gradlon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn update_visible_gradlon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-gmaputil")]impl GmapUtil{pub fn get_sortiable_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_sortiable_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_encount_rank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_sortie_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_encount_rank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_average_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_vandre_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reduct_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_equipable_weapons_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_down_level_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn regist_rare_dispos_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_rare_exp_dispos_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_rare_gold_dispos_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn weapon_mask_to_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn weapon_array_to_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_appear_gradlon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn update_visible_gradlon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-gmaputil")]
-impl GmapUtil {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapUtil) , :: core :: stringify ! (new) ,)) ; < Self as IGmapUtilMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gmaputil")]impl GmapUtil{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapUtil), ::core::stringify!(new),));
+ <Self as IGmapUtilMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gmaputil")]

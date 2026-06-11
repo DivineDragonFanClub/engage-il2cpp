@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nintendo/message_studio/lib/lmsflowjump/LMSFlowJump.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LMSFlowJump {
-    pub next_node_index: u16,
-    pub file_index: u16,
-    pub reserved: :: unity2 :: Array < u16 >,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/lmsflowjump/LMSFlowJump.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LMSFlowJump{pub next_node_index:u16,pub file_index:u16,pub reserved: ::unity2::Array<u16>,}
+impl::unity2::ClassIdentity for LMSFlowJump{const NAMESPACE: &'static str="Nintendo.MessageStudio.Lib";
+const NAME: &'static str="LMSFlowJump";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for LMSFlowJump {
-    const NAMESPACE: &'static str = "Nintendo.MessageStudio.Lib";
-
-    const NAME: &'static str = "LMSFlowJump";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for LMSFlowJump {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for LMSFlowJump{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }

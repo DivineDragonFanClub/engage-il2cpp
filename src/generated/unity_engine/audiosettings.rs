@@ -4,55 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audiosettings/AudioSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AudioSettings")] # [parent (crate :: system :: object :: Object)] pub struct AudioSettings {
-# [static_field] # [rename (name = "OnAudioConfigurationChanged")] pub on_audio_configuration_changed : crate :: unity_engine :: audiosettings :: AudioSettings_AudioConfigurationChangeHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/audiosettings/AudioSettings_AudioConfigurationChangeHandler.md"))]#[::unity2::class(namespace="UnityEngine",name="AudioSettings.AudioConfigurationChangeHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AudioSettings_AudioConfigurationChangeHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audiosettings/AudioSettings_AudioConfigurationChangeHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AudioSettings.AudioConfigurationChangeHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AudioSettings_AudioConfigurationChangeHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/audiosettings/AudioSettings.md"))]#[::unity2::class(namespace="UnityEngine",name="AudioSettings")]#[parent(crate::system::object::Object)]pub struct AudioSettings{#[static_field]#[rename(name="OnAudioConfigurationChanged")]pub on_audio_configuration_changed:crate::unity_engine::audiosettings::AudioSettings_AudioConfigurationChangeHandler,}
 
 }
 
 #[cfg(feature = "unity_engine-audiosettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-audiosettings")]
-impl AudioSettings { # [doc = "`InvokeOnAudioConfigurationChanged(bool)` overload"] pub fn invoke_on_audio_configuration_changed (device_was_changed : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3f150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (device_was_changed) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-audiosettings")]pub trait IAudioSettings_AudioConfigurationChangeHandlerMethods:IAudioSettings_AudioConfigurationChangeHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AudioSettings_AudioConfigurationChangeHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f5f0usize)as*mut u8,();
+(AudioSettings_AudioConfigurationChangeHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool)` overload"]fn invoke(self,device_was_changed:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AudioSettings_AudioConfigurationChangeHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f1c0usize)as*mut u8,();
+(AudioSettings_AudioConfigurationChangeHandler)__receiver,(bool)::core::convert::Into::into(device_was_changed))}
+}
+}
 
-#[cfg(feature = "unity_engine-audiosettings")]
-impl AudioSettings { pub fn invoke_on_audio_configuration_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-audiosettings")]impl<__T:IAudioSettings_AudioConfigurationChangeHandler>IAudioSettings_AudioConfigurationChangeHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-audiosettings")]
-pub trait IAudioSettings_AudioConfigurationChangeHandlerMethods : IAudioSettings_AudioConfigurationChangeHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AudioSettings_AudioConfigurationChangeHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudioSettings_AudioConfigurationChangeHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3f5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(bool)` overload"] fn invoke (self , device_was_changed : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AudioSettings_AudioConfigurationChangeHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudioSettings_AudioConfigurationChangeHandler , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3f1c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (device_was_changed) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-audiosettings")]impl AudioSettings_AudioConfigurationChangeHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-audiosettings")]
-impl < __T : IAudioSettings_AudioConfigurationChangeHandler > IAudioSettings_AudioConfigurationChangeHandlerMethods for __T { }
+#[cfg(feature="unity_engine-audiosettings")]impl AudioSettings_AudioConfigurationChangeHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AudioSettings_AudioConfigurationChangeHandler), ::core::stringify!(new),));
+ <Self as IAudioSettings_AudioConfigurationChangeHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "unity_engine-audiosettings")]
-impl AudioSettings_AudioConfigurationChangeHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioSettings_AudioConfigurationChangeHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioSettings_AudioConfigurationChangeHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-audiosettings")]impl AudioSettings{#[doc="`InvokeOnAudioConfigurationChanged(bool)` overload"]pub fn invoke_on_audio_configuration_changed(device_was_changed:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f150usize)as*mut u8,();
+(bool)::core::convert::Into::into(device_was_changed))}
+}
+}
 
-#[cfg(feature = "unity_engine-audiosettings")]
-impl AudioSettings_AudioConfigurationChangeHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AudioSettings_AudioConfigurationChangeHandler) , :: core :: stringify ! (new) ,)) ; < Self as IAudioSettings_AudioConfigurationChangeHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-audiosettings")]impl AudioSettings{pub fn invoke_on_audio_configuration_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature = "unity_engine-audiosettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AudioSettings;
-    pub use super::IAudioSettings;
     pub use super::AudioSettings_AudioConfigurationChangeHandler;
     pub use super::IAudioSettings_AudioConfigurationChangeHandler;
     pub use super::IAudioSettings_AudioConfigurationChangeHandlerMethods;
+    pub use super::AudioSettings;
+    pub use super::IAudioSettings;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

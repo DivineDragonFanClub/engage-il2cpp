@@ -4,88 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomreliancesequence/MyRoomRelianceSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MyRoomRelianceSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesequence/MyRoomRelianceSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomreliancesequence::MyRoomRelianceSequence>)]pub struct MyRoomRelianceSequence{#[offset(144)]#[rename(name="m_mainContent")]pub m_main_content:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesequence/MyRoomRelianceSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomRelianceSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MyRoomRelianceSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MyRoomRelianceSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MyRoomRelianceSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MyRoomRelianceSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MyRoomRelianceSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MyRoomRelianceSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MyRoomRelianceSequence_Label{pub fn entry()->Self{Self{value:0}
 }
-
-
-impl  MyRoomRelianceSequence_Label  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn unit_select() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn second_unit_select() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn reliance() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn unit_select()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesequence/MyRoomRelianceSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomRelianceSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomreliancesequence :: MyRoomRelianceSequence >)] pub struct MyRoomRelianceSequence {
-# [offset (144)] # [rename (name = "m_mainContent")] pub m_main_content : crate :: unity_engine :: gameobject :: GameObject ,
+pub fn second_unit_select()->Self{Self{value:2}
+}
+pub fn reliance()->Self{Self{value:3}
+}
+pub fn end()->Self{Self{value:4}
+}
 }
 
 }
@@ -93,30 +46,112 @@ impl  MyRoomRelianceSequence_Label  {
 #[cfg(feature = "app-myroomreliancesequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomreliancesequence")]
-impl MyRoomRelianceSequence { # [doc = "`get_IsGodReliance()` overload"] pub fn get_is_god_reliance () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396050usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsGodReliance(bool)` overload"] pub fn set_is_god_reliance (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23960c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLevelUpOnly()` overload"] pub fn get_is_level_up_only () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsLevelUpOnly(bool)` overload"] pub fn set_is_level_up_only (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23961b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2397090usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomreliancesequence")]impl MyRoomRelianceSequence{#[doc="`get_IsGodReliance()` overload"]pub fn get_is_god_reliance()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2396050usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsGodReliance(bool)` overload"]pub fn set_is_god_reliance(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23960c0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsLevelUpOnly()` overload"]pub fn get_is_level_up_only()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2396140usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsLevelUpOnly(bool)` overload"]pub fn set_is_level_up_only(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23961b0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2396290usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2397090usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-myroomreliancesequence")]
-pub trait IMyRoomRelianceSequenceMethods : IMyRoomRelianceSequence { # [doc = "`get_Content()` overload"] fn get_content (self ,) -> crate :: app :: myroomrelianceselectcontent :: MyRoomRelianceSelectContent { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: myroomrelianceselectcontent :: MyRoomRelianceSelectContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Content(crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent)` overload"] fn set_content (self , value : impl :: core :: convert :: Into < crate :: app :: myroomrelianceselectcontent :: MyRoomRelianceSelectContent >) -> () { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , crate :: app :: myroomrelianceselectcontent :: MyRoomRelianceSelectContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SubContent()` overload"] fn get_sub_content (self ,) -> crate :: app :: myroomreliancesubselectcontent :: MyRoomRelianceSubSelectContent { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: myroomreliancesubselectcontent :: MyRoomRelianceSubSelectContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SubContent(crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` overload"] fn set_sub_content (self , value : impl :: core :: convert :: Into < crate :: app :: myroomreliancesubselectcontent :: MyRoomRelianceSubSelectContent >) -> () { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , crate :: app :: myroomreliancesubselectcontent :: MyRoomRelianceSubSelectContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Root()` overload"] fn get_root (self ,) -> crate :: app :: myroomrelianceselectroot :: MyRoomRelianceSelectRoot { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: myroomrelianceselectroot :: MyRoomRelianceSelectRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Root(crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot)` overload"] fn set_root (self , value : impl :: core :: convert :: Into < crate :: app :: myroomrelianceselectroot :: MyRoomRelianceSelectRoot >) -> () { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , crate :: app :: myroomrelianceselectroot :: MyRoomRelianceSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CreateUnitSelectMenu()` overload"] fn create_unit_select_menu (self ,) -> () { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23968a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Entry()` overload"] fn entry (self ,) -> () { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23963f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomRelianceSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomRelianceSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2396370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomreliancesequence")]pub trait IMyRoomRelianceSequenceMethods:IMyRoomRelianceSequence{#[doc="`get_Content()` overload"]fn get_content(self,)->crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent{unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396230usize)as*mut u8,crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent;
+(MyRoomRelianceSequence)__receiver)}
+}
+#[doc="`set_Content(crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent)` overload"]fn set_content(self,value:impl::core::convert::Into<crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent>)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396240usize)as*mut u8,();
+(MyRoomRelianceSequence)__receiver,(crate::app::myroomrelianceselectcontent::MyRoomRelianceSelectContent)::core::convert::Into::into(value))}
+}
+#[doc="`get_SubContent()` overload"]fn get_sub_content(self,)->crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent{unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396250usize)as*mut u8,crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent;
+(MyRoomRelianceSequence)__receiver)}
+}
+#[doc="`set_SubContent(crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` overload"]fn set_sub_content(self,value:impl::core::convert::Into<crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent>)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396260usize)as*mut u8,();
+(MyRoomRelianceSequence)__receiver,(crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)::core::convert::Into::into(value))}
+}
+#[doc="`get_Root()` overload"]fn get_root(self,)->crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot{unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396270usize)as*mut u8,crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot;
+(MyRoomRelianceSequence)__receiver)}
+}
+#[doc="`set_Root(crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot)` overload"]fn set_root(self,value:impl::core::convert::Into<crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot>)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396280usize)as*mut u8,();
+(MyRoomRelianceSequence)__receiver,(crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot)::core::convert::Into::into(value))}
+}
+#[doc="`CreateUnitSelectMenu()` overload"]fn create_unit_select_menu(self,)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23968a0usize)as*mut u8,();
+(MyRoomRelianceSequence)__receiver)}
+}
+#[doc="`Entry()` overload"]fn entry(self,)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396920usize)as*mut u8,();
+(MyRoomRelianceSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396d40usize)as*mut u8,();
+(MyRoomRelianceSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23963f0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(MyRoomRelianceSequence)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396ff0usize)as*mut u8,();
+(MyRoomRelianceSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2396370usize)as*mut u8,();
+(MyRoomRelianceSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomreliancesequence")]
-impl < __T : IMyRoomRelianceSequence > IMyRoomRelianceSequenceMethods for __T { }
+#[cfg(feature="app-myroomreliancesequence")]impl<__T:IMyRoomRelianceSequence>IMyRoomRelianceSequenceMethods for __T{}
 
-#[cfg(feature = "app-myroomreliancesequence")]
-impl MyRoomRelianceSequence { pub fn get_is_god_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_god_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_level_up_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_is_level_up_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_sub_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_sub_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_unit_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomRelianceSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="app-myroomreliancesequence")]impl MyRoomRelianceSequence{pub fn get_is_god_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_god_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_level_up_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_level_up_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_sub_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_sub_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_unit_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "app-myroomreliancesequence")]
-impl MyRoomRelianceSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomRelianceSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomRelianceSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomreliancesequence")]impl MyRoomRelianceSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomRelianceSequence), ::core::stringify!(new),));
+ <Self as IMyRoomRelianceSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomreliancesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomRelianceSequence_Label;
     pub use super::MyRoomRelianceSequence;
     pub use super::IMyRoomRelianceSequence;
     pub use super::IMyRoomRelianceSequenceMethods;
+    pub use super::MyRoomRelianceSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

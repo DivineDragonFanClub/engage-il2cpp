@@ -4,35 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/objectequalitycomparer/ObjectEqualityComparer.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "ObjectEqualityComparer")] # [parent (crate :: system :: object :: Object)] pub struct ObjectEqualityComparer {
-# [static_field] # [rename (name = "Default")] pub default : crate :: system :: collections :: generic :: objectequalitycomparer :: ObjectEqualityComparer ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/objectequalitycomparer/ObjectEqualityComparer.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="ObjectEqualityComparer")]#[parent(crate::system::object::Object)]pub struct ObjectEqualityComparer{#[static_field]#[rename(name="Default")]pub default:crate::system::collections::generic::objectequalitycomparer::ObjectEqualityComparer,}
 
 }
 
 #[cfg(feature = "system-collections-generic-objectequalitycomparer-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
-impl ObjectEqualityComparer { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37df840usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-objectequalitycomparer")]impl ObjectEqualityComparer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37df840usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
-pub trait IObjectEqualityComparerMethods : IObjectEqualityComparer { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ObjectEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ObjectEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37df7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEqualityComparer.GetHashCode(crate::system::object::Object)` overload"] fn system_collections_i_equality_comparer_get_hash_code (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < ObjectEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ObjectEqualityComparer , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37df7f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEqualityComparer.Equals(crate::system::object::Object, crate::system::object::Object)` overload"] fn system_collections_i_equality_comparer_equals (self , x : impl :: core :: convert :: Into < crate :: system :: object :: Object > , y : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < ObjectEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ObjectEqualityComparer , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37df810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-objectequalitycomparer")]pub trait IObjectEqualityComparerMethods:IObjectEqualityComparer{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ObjectEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37df7e0usize)as*mut u8,();
+(ObjectEqualityComparer)__receiver)}
+}
+#[doc="`System.Collections.IEqualityComparer.GetHashCode(crate::system::object::Object)` overload"]fn system_collections_i_equality_comparer_get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <ObjectEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37df7f0usize)as*mut u8,i32;
+(ObjectEqualityComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`System.Collections.IEqualityComparer.Equals(crate::system::object::Object, crate::system::object::Object)` overload"]fn system_collections_i_equality_comparer_equals(self,x:impl::core::convert::Into<crate::system::object::Object> ,y:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <ObjectEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37df810usize)as*mut u8,bool;
+(ObjectEqualityComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(x),(crate::system::object::Object)::core::convert::Into::into(y))}
+}
+}
 
-#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
-impl < __T : IObjectEqualityComparer > IObjectEqualityComparerMethods for __T { }
+#[cfg(feature="system-collections-generic-objectequalitycomparer")]impl<__T:IObjectEqualityComparer>IObjectEqualityComparerMethods for __T{}
 
-#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
-impl ObjectEqualityComparer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn system_collections_i_equality_comparer_get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn system_collections_i_equality_comparer_equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ObjectEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-collections-generic-objectequalitycomparer")]impl ObjectEqualityComparer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn system_collections_i_equality_comparer_get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn system_collections_i_equality_comparer_equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "system-collections-generic-objectequalitycomparer")]
-impl ObjectEqualityComparer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ObjectEqualityComparer) , :: core :: stringify ! (new) ,)) ; < Self as IObjectEqualityComparerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-generic-objectequalitycomparer")]impl ObjectEqualityComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ObjectEqualityComparer), ::core::stringify!(new),));
+ <Self as IObjectEqualityComparerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-generic-objectequalitycomparer")]

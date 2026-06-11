@@ -4,104 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: situation_converter :: baseconverter :: { BaseConverter , IBaseConverter }
- ;
- use crate :: combat :: situation_converter :: converterwithut :: { ConverterWithUt , IConverterWithUt }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::situation_converter::baseconverter::{BaseConverter,IBaseConverter}
+;
+use crate::combat::situation_converter::converterwithut::{ConverterWithUt,IConverterWithUt}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertbrawl/ConvertBrawl.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertBrawl")] # [parent (crate :: combat :: situation_converter :: converterwithut :: ConverterWithUt)] pub struct ConvertBrawl {
-# [offset (44)] # [rename (name = "m_State")] pub m_state : crate :: combat :: situation_converter :: convertbrawl :: ConvertBrawl_State ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertbrawl/ConvertBrawl_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ConvertBrawl_State{pub value:i32,}
+impl::unity2::ClassIdentity for ConvertBrawl_State{const NAMESPACE: &'static str="Combat.SituationConverter";
+const NAME: &'static str="ConvertBrawl.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ConvertBrawl_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ConvertBrawl_State{pub fn none()->Self{Self{value:0}
+}
+pub fn autoから初撃()->Self{Self{value:1}
+}
+pub fn behindから初撃()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertbrawl/ConvertBrawl_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ConvertBrawl_State  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for ConvertBrawl_State  {
-    const NAMESPACE: &'static str = "Combat.SituationConverter";
-
-    const NAME: &'static str = "ConvertBrawl.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ConvertBrawl_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ConvertBrawl_State  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn autoから初撃() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn behindから初撃() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertbrawl/ConvertBrawl.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertBrawl")]#[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]pub struct ConvertBrawl{#[offset(44)]#[rename(name="m_State")]pub m_state:crate::combat::situation_converter::convertbrawl::ConvertBrawl_State,}
 
 }
 
 #[cfg(feature = "combat-situation_converter-convertbrawl-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-situation_converter-convertbrawl")]
-pub trait IConvertBrawlMethods : IConvertBrawl { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertBrawl , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253f6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`OnBegin()` overload"] fn on_begin (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertBrawl , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253f6d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnApproach()` overload"] fn on_approach (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertBrawl , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253fa30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnAttack()` overload"] fn on_attack (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertBrawl , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253fb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDamage()` overload"] fn on_damage (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertBrawl , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253fc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUnusable()` overload"] fn on_unusable (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertBrawl as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertBrawl , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253fc20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-situation_converter-convertbrawl")]pub trait IConvertBrawlMethods:IConvertBrawl{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253f6b0usize)as*mut u8,();
+(ConvertBrawl)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
+}
+#[doc="`OnBegin()` overload"]fn on_begin(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253f6d0usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertBrawl)__receiver)}
+}
+#[doc="`OnApproach()` overload"]fn on_approach(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253fa30usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertBrawl)__receiver)}
+}
+#[doc="`OnAttack()` overload"]fn on_attack(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253fb20usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertBrawl)__receiver)}
+}
+#[doc="`OnDamage()` overload"]fn on_damage(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253fc10usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertBrawl)__receiver)}
+}
+#[doc="`OnUnusable()` overload"]fn on_unusable(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertBrawl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x253fc20usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertBrawl)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-situation_converter-convertbrawl")]
-impl < __T : IConvertBrawl > IConvertBrawlMethods for __T { }
+#[cfg(feature="combat-situation_converter-convertbrawl")]impl<__T:IConvertBrawl>IConvertBrawlMethods for __T{}
 
-#[cfg(feature = "combat-situation_converter-convertbrawl")]
-impl ConvertBrawl { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertBrawl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertBrawl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_approach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertBrawl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertBrawl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertBrawl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_unusable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertBrawl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-situation_converter-convertbrawl")]impl ConvertBrawl{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_approach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_unusable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-situation_converter-convertbrawl")]
-impl ConvertBrawl {
-# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConvertBrawl) , :: core :: stringify ! (new) ,)) ; < Self as IConvertBrawlMethods > :: ctor (this , data) ; this }
+#[cfg(feature="combat-situation_converter-convertbrawl")]impl ConvertBrawl{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConvertBrawl), ::core::stringify!(new),));
+ <Self as IConvertBrawlMethods> ::ctor(this,data);
+this}
 }
 
 #[cfg(feature = "combat-situation_converter-convertbrawl")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ConvertBrawl_State;
     pub use super::ConvertBrawl;
     pub use super::IConvertBrawl;
     pub use super::IConvertBrawlMethods;
-    pub use super::ConvertBrawl_State;
     pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
     pub use crate::combat::situation_converter::converterwithut::IConverterWithUt;
     pub use crate::system::object::IObject;

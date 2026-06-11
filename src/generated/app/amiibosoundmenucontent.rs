@@ -4,47 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundmenucontent/AmiiboSoundMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboSoundMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct AmiiboSoundMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_help")] pub m_help : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "m_helpRoot")] pub m_help_root : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibosoundmenucontent/AmiiboSoundMenuContent.md"))]#[::unity2::class(namespace="App",name="AmiiboSoundMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct AmiiboSoundMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_help")]pub m_help:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_helpRoot")]pub m_help_root:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-amiibosoundmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-amiibosoundmenucontent")]
-impl AmiiboSoundMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89820usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c898c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89940usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: amiibosoundmenucontent :: AmiiboSoundMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: amiibosoundmenucontent :: AmiiboSoundMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c88950usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::amiibosoundmenucontent::AmiiboSoundMenuContent)` overload"] pub fn destroy (menu_content : impl :: core :: convert :: Into < crate :: app :: amiibosoundmenucontent :: AmiiboSoundMenuContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: amiibosoundmenucontent :: AmiiboSoundMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c899c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiibosoundmenucontent")]impl AmiiboSoundMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c89820usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c898c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c89940usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::amiibosoundmenucontent::AmiiboSoundMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c88950usize)as*mut u8,crate::app::amiibosoundmenucontent::AmiiboSoundMenuContent;
+)}
+}
+#[doc="`Destroy(crate::app::amiibosoundmenucontent::AmiiboSoundMenuContent)` overload"]pub fn destroy(menu_content:impl::core::convert::Into<crate::app::amiibosoundmenucontent::AmiiboSoundMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c899c0usize)as*mut u8,();
+(crate::app::amiibosoundmenucontent::AmiiboSoundMenuContent)::core::convert::Into::into(menu_content))}
+}
+}
 
-#[cfg(feature = "app-amiibosoundmenucontent")]
-pub trait IAmiiboSoundMenuContentMethods : IAmiiboSoundMenuContent { # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < AmiiboSoundMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboSoundMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < AmiiboSoundMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboSoundMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < AmiiboSoundMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboSoundMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < AmiiboSoundMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboSoundMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpText(::unity2::Il2CppString)` overload"] fn set_help_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AmiiboSoundMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboSoundMenuContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c896a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < AmiiboSoundMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboSoundMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89b40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AmiiboSoundMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboSoundMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTicketStock()` overload"] fn update_ticket_stock (self ,) -> () { unsafe { let __receiver = < AmiiboSoundMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboSoundMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AmiiboSoundMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboSoundMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c89d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiibosoundmenucontent")]pub trait IAmiiboSoundMenuContentMethods:IAmiiboSoundMenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <AmiiboSoundMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89a40usize)as*mut u8,i32;
+(AmiiboSoundMenuContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <AmiiboSoundMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89a50usize)as*mut u8,f32;
+(AmiiboSoundMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <AmiiboSoundMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89ac0usize)as*mut u8,f32;
+(AmiiboSoundMenuContent)__receiver)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <AmiiboSoundMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89b30usize)as*mut u8,();
+(AmiiboSoundMenuContent)__receiver)}
+}
+#[doc="`SetHelpText(::unity2::Il2CppString)` overload"]fn set_help_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AmiiboSoundMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c896a0usize)as*mut u8,();
+(AmiiboSoundMenuContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <AmiiboSoundMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89b40usize)as*mut u8,f32;
+(AmiiboSoundMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <AmiiboSoundMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89c00usize)as*mut u8,();
+(AmiiboSoundMenuContent)__receiver)}
+}
+#[doc="`UpdateTicketStock()` overload"]fn update_ticket_stock(self,)->(){unsafe{let __receiver= <AmiiboSoundMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89370usize)as*mut u8,();
+(AmiiboSoundMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboSoundMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89d50usize)as*mut u8,();
+(AmiiboSoundMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-amiibosoundmenucontent")]
-impl < __T : IAmiiboSoundMenuContent > IAmiiboSoundMenuContentMethods for __T { }
+#[cfg(feature="app-amiibosoundmenucontent")]impl<__T:IAmiiboSoundMenuContent>IAmiiboSoundMenuContentMethods for __T{}
 
-#[cfg(feature = "app-amiibosoundmenucontent")]
-impl AmiiboSoundMenuContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn update_ticket_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboSoundMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-amiibosoundmenucontent")]impl AmiiboSoundMenuContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_ticket_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-amiibosoundmenucontent")]
-impl AmiiboSoundMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AmiiboSoundMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IAmiiboSoundMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-amiibosoundmenucontent")]impl AmiiboSoundMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AmiiboSoundMenuContent), ::core::stringify!(new),));
+ <Self as IAmiiboSoundMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-amiibosoundmenucontent")]

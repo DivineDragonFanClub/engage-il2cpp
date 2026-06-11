@@ -4,46 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengravegodmenuitemcontent/RefineShopEngraveGodMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveGodMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct RefineShopEngraveGodMenuItemContent {
-# [offset (72)] # [rename (name = "m_GodSymbolImage")] pub m_god_symbol_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (80)] # [rename (name = "m_GodWordText")] pub m_god_word_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (88)] # [rename (name = "m_GodUnitIcon")] pub m_god_unit_icon : crate :: app :: uniticon :: UnitIcon ,
-# [offset (96)] # [rename (name = "m_BondsIconObject")] pub m_bonds_icon_object : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (104)] # [rename (name = "m_BondsValueText")] pub m_bonds_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopengravegodmenuitemcontent/RefineShopEngraveGodMenuItemContent.md"))]#[::unity2::class(namespace="App",name="RefineShopEngraveGodMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct RefineShopEngraveGodMenuItemContent{#[offset(72)]#[rename(name="m_GodSymbolImage")]pub m_god_symbol_image:crate::unity_engine::ui::image::Image, #[offset(80)]#[rename(name="m_GodWordText")]pub m_god_word_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(88)]#[rename(name="m_GodUnitIcon")]pub m_god_unit_icon:crate::app::uniticon::UnitIcon, #[offset(96)]#[rename(name="m_BondsIconObject")]pub m_bonds_icon_object:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_BondsValueText")]pub m_bonds_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-refineshopengravegodmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopengravegodmenuitemcontent")]
-pub trait IRefineShopEngraveGodMenuItemContentMethods : IRefineShopEngraveGodMenuItemContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveGodMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295bd20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveGodMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295bd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveGodMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveGodMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295c140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopengravegodmenuitemcontent")]pub trait IRefineShopEngraveGodMenuItemContentMethods:IRefineShopEngraveGodMenuItemContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopEngraveGodMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295bd20usize)as*mut u8,();
+(RefineShopEngraveGodMenuItemContent)__receiver)}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <RefineShopEngraveGodMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295bd30usize)as*mut u8,();
+(RefineShopEngraveGodMenuItemContent)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <RefineShopEngraveGodMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295c140usize)as*mut u8,();
+(RefineShopEngraveGodMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopengravegodmenuitemcontent")]
-impl < __T : IRefineShopEngraveGodMenuItemContent > IRefineShopEngraveGodMenuItemContentMethods for __T { }
+#[cfg(feature="app-refineshopengravegodmenuitemcontent")]impl<__T:IRefineShopEngraveGodMenuItemContent>IRefineShopEngraveGodMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-refineshopengravegodmenuitemcontent")]
-impl RefineShopEngraveGodMenuItemContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveGodMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveGodMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveGodMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-refineshopengravegodmenuitemcontent")]impl RefineShopEngraveGodMenuItemContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-refineshopengravegodmenuitemcontent")]
-impl RefineShopEngraveGodMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveGodMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveGodMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineshopengravegodmenuitemcontent")]impl RefineShopEngraveGodMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopEngraveGodMenuItemContent), ::core::stringify!(new),));
+ <Self as IRefineShopEngraveGodMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineshopengravegodmenuitemcontent")]

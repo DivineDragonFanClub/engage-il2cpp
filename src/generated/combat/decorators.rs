@@ -4,35 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: collections :: generic :: list_1 :: { IList_1 , List_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::collections::generic::list_1::{IList_1,List_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/decorators/Decorators.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Decorators")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: decorator :: Decorator >)] pub struct Decorators {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/decorators/Decorators.md"))]#[::unity2::class(namespace="Combat",name="Decorators")]#[parent(crate::system::collections::generic::list_1::List_1<crate::combat::decorator::Decorator>)]pub struct Decorators{}
 
 }
 
 #[cfg(feature = "combat-decorators-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-decorators")]
-impl Decorators { # [doc = "`op_Implicit(crate::combat::decorators::Decorators)` overload"] pub fn op_implicit (a : impl :: core :: convert :: Into < crate :: combat :: decorators :: Decorators >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: decorators :: Decorators , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea8e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-decorators")]impl Decorators{#[doc="`op_Implicit(crate::combat::decorators::Decorators)` overload"]pub fn op_implicit(a:impl::core::convert::Into<crate::combat::decorators::Decorators>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cea8e0usize)as*mut u8,bool;
+(crate::combat::decorators::Decorators)::core::convert::Into::into(a))}
+}
+}
 
-#[cfg(feature = "combat-decorators")]
-pub trait IDecoratorsMethods : IDecorators { # [doc = "`get_DebuggerDisplay()` overload"] fn get_debugger_display (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Decorators as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorators , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cea8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Decorators as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Decorators , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceab10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-decorators")]pub trait IDecoratorsMethods:IDecorators{#[doc="`get_DebuggerDisplay()` overload"]fn get_debugger_display(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Decorators as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cea8f0usize)as*mut u8, ::unity2::Il2CppString;
+(Decorators)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Decorators as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceab10usize)as*mut u8,();
+(Decorators)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-decorators")]
-impl < __T : IDecorators > IDecoratorsMethods for __T { }
+#[cfg(feature="combat-decorators")]impl<__T:IDecorators>IDecoratorsMethods for __T{}
 
-#[cfg(feature = "combat-decorators")]
-impl Decorators { pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorators as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_debugger_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorators as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Decorators as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-decorators")]impl Decorators{pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_debugger_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-decorators")]
-impl Decorators {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Decorators) , :: core :: stringify ! (new) ,)) ; < Self as IDecoratorsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-decorators")]impl Decorators{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Decorators), ::core::stringify!(new),));
+ <Self as IDecoratorsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-decorators")]

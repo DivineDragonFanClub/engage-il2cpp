@@ -4,35 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/report/Report.md"))] # [:: unity2 :: class (namespace = "App" , name = "Report")] # [parent (crate :: system :: object :: Object)] pub struct Report {
-# [static_field] # [rename (name = "Header")] pub header : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/report/Report.md"))]#[::unity2::class(namespace="App",name="Report")]#[parent(crate::system::object::Object)]pub struct Report{#[static_field]#[rename(name="Header")]pub header: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-report-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-report")]
-impl Report { # [doc = "`MapStart()` overload"] pub fn map_start () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013370usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`MapComplete()` overload"] pub fn map_complete () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013380usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Kizuna()` overload"] pub fn kizuna () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`AddBoughtItem(crate::app::itemdata::ItemData)` overload"] pub fn add_bought_item (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20133a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`AddRefineItem(crate::app::itemdata::ItemData, i32)` overload"] pub fn add_refine_item (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , level : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20133b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`AddEvolveItem(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"] pub fn add_evolve_item (prev : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , next : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20133c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: option :: Option :: None) } } } # [doc = "`AddUseItem(crate::app::itemdata::ItemData)` overload"] pub fn add_use_item (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20133d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`AddPickupItem(crate::app::itemdata::ItemData)` overload"] pub fn add_pickup_item (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20133e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`AddTalk(crate::app::persondata::PersonData)` overload"] pub fn add_talk (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20133f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`AddEquipSkillPool(crate::app::unit::Unit, crate::app::godunit::GodUnit, ::unity2::Il2CppString)` overload"] pub fn add_equip_skill_pool (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , skill_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013400usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (skill_name) , :: core :: option :: Option :: None) } } } # [doc = "`AddEngageFull(crate::app::unit::Unit)` overload"] pub fn add_engage_full (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013410usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`AddEngageStart(crate::app::unit::Unit)` overload"] pub fn add_engage_start (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`AddEngageAttack(crate::app::unit::Unit)` overload"] pub fn add_engage_attack (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013430usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`ClearRepoart()` overload"] pub fn clear_repoart () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013440usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-report")]impl Report{#[doc="`MapStart()` overload"]pub fn map_start()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013370usize)as*mut u8,();
+)}
+}
+#[doc="`MapComplete()` overload"]pub fn map_complete()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013380usize)as*mut u8,();
+)}
+}
+#[doc="`Kizuna()` overload"]pub fn kizuna()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013390usize)as*mut u8,();
+)}
+}
+#[doc="`AddBoughtItem(crate::app::itemdata::ItemData)` overload"]pub fn add_bought_item(item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20133a0usize)as*mut u8,();
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`AddRefineItem(crate::app::itemdata::ItemData, i32)` overload"]pub fn add_refine_item(item:impl::core::convert::Into<crate::app::itemdata::ItemData> ,level:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20133b0usize)as*mut u8,();
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item),(i32)::core::convert::Into::into(level))}
+}
+#[doc="`AddEvolveItem(crate::app::itemdata::ItemData, crate::app::itemdata::ItemData)` overload"]pub fn add_evolve_item(prev:impl::core::convert::Into<crate::app::itemdata::ItemData> ,next:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20133c0usize)as*mut u8,();
+(crate::app::itemdata::ItemData)::core::convert::Into::into(prev),(crate::app::itemdata::ItemData)::core::convert::Into::into(next))}
+}
+#[doc="`AddUseItem(crate::app::itemdata::ItemData)` overload"]pub fn add_use_item(item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20133d0usize)as*mut u8,();
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`AddPickupItem(crate::app::itemdata::ItemData)` overload"]pub fn add_pickup_item(item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20133e0usize)as*mut u8,();
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`AddTalk(crate::app::persondata::PersonData)` overload"]pub fn add_talk(person:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20133f0usize)as*mut u8,();
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`AddEquipSkillPool(crate::app::unit::Unit, crate::app::godunit::GodUnit, ::unity2::Il2CppString)` overload"]pub fn add_equip_skill_pool(unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,skill_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013400usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(::unity2::Il2CppString)::core::convert::Into::into(skill_name))}
+}
+#[doc="`AddEngageFull(crate::app::unit::Unit)` overload"]pub fn add_engage_full(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013410usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`AddEngageStart(crate::app::unit::Unit)` overload"]pub fn add_engage_start(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013420usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`AddEngageAttack(crate::app::unit::Unit)` overload"]pub fn add_engage_attack(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013430usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ClearRepoart()` overload"]pub fn clear_repoart()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013440usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-report")]
-pub trait IReportMethods : IReport { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Report as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Report , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-report")]pub trait IReportMethods:IReport{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Report as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2013450usize)as*mut u8,();
+(Report)__receiver)}
+}
+}
 
-#[cfg(feature = "app-report")]
-impl < __T : IReport > IReportMethods for __T { }
+#[cfg(feature="app-report")]impl<__T:IReport>IReportMethods for __T{}
 
-#[cfg(feature = "app-report")]
-impl Report { pub fn map_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn map_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn kizuna_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_bought_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_refine_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_evolve_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_use_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn add_pickup_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_equip_skill_pool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn add_engage_full_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_engage_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn add_engage_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn clear_repoart_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Report as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-report")]impl Report{pub fn map_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn map_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn kizuna_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_bought_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_refine_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_evolve_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_use_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_pickup_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_equip_skill_pool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_engage_full_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_engage_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn add_engage_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn clear_repoart_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-report")]
-impl Report {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Report) , :: core :: stringify ! (new) ,)) ; < Self as IReportMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-report")]impl Report{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Report), ::core::stringify!(new),));
+ <Self as IReportMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-report")]

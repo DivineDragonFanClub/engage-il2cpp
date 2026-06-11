@@ -4,34 +4,78 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
- use crate :: system :: reflection :: propertyinfo :: { IPropertyInfo , PropertyInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
+use crate::system::reflection::propertyinfo::{IPropertyInfo,PropertyInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimepropertyinfo/RuntimePropertyInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "RuntimePropertyInfo")] # [parent (crate :: system :: reflection :: propertyinfo :: PropertyInfo)] pub struct RuntimePropertyInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/runtimepropertyinfo/RuntimePropertyInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="RuntimePropertyInfo")]#[parent(crate::system::reflection::propertyinfo::PropertyInfo)]pub struct RuntimePropertyInfo{}
 
 }
 
 #[cfg(feature = "system-reflection-runtimepropertyinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-runtimepropertyinfo")]
-pub trait IRuntimePropertyInfoMethods : IRuntimePropertyInfo { # [doc = "`get_BindingFlags()` overload"] fn get_binding_flags (self ,) -> crate :: system :: reflection :: bindingflags :: BindingFlags { unsafe { let __receiver = < RuntimePropertyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimePropertyInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: bindingflags :: BindingFlags = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd6320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Module()` overload"] fn get_module (self ,) -> crate :: system :: reflection :: module :: Module { unsafe { let __receiver = < RuntimePropertyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimePropertyInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: module :: Module = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd6330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDeclaringTypeInternal()` overload"] fn get_declaring_type_internal (self ,) -> crate :: system :: runtimetype :: RuntimeType { unsafe { let __receiver = < RuntimePropertyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimePropertyInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: runtimetype :: RuntimeType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd6450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReflectedTypeInternal()` overload"] fn get_reflected_type_internal (self ,) -> crate :: system :: runtimetype :: RuntimeType { unsafe { let __receiver = < RuntimePropertyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimePropertyInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: runtimetype :: RuntimeType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd64e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRuntimeModule()` overload"] fn get_runtime_module (self ,) -> crate :: system :: reflection :: runtimemodule :: RuntimeModule { unsafe { let __receiver = < RuntimePropertyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimePropertyInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: runtimemodule :: RuntimeModule = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd63c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RuntimePropertyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimePropertyInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd6570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FormatNameAndSig(bool)` overload"] fn format_name_and_sig (self , serialization : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RuntimePropertyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimePropertyInfo , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd6580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (serialization) , :: core :: option :: Option :: None) } } } # [doc = "`SerializationToString()` overload"] fn serialization_to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RuntimePropertyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimePropertyInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd6830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimePropertyInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimePropertyInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2fd6840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-runtimepropertyinfo")]pub trait IRuntimePropertyInfoMethods:IRuntimePropertyInfo{#[doc="`get_BindingFlags()` overload"]fn get_binding_flags(self,)->crate::system::reflection::bindingflags::BindingFlags{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6320usize)as*mut u8,crate::system::reflection::bindingflags::BindingFlags;
+(RuntimePropertyInfo)__receiver)}
+}
+#[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6330usize)as*mut u8,crate::system::reflection::module::Module;
+(RuntimePropertyInfo)__receiver)}
+}
+#[doc="`GetDeclaringTypeInternal()` overload"]fn get_declaring_type_internal(self,)->crate::system::runtimetype::RuntimeType{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6450usize)as*mut u8,crate::system::runtimetype::RuntimeType;
+(RuntimePropertyInfo)__receiver)}
+}
+#[doc="`get_ReflectedTypeInternal()` overload"]fn get_reflected_type_internal(self,)->crate::system::runtimetype::RuntimeType{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd64e0usize)as*mut u8,crate::system::runtimetype::RuntimeType;
+(RuntimePropertyInfo)__receiver)}
+}
+#[doc="`GetRuntimeModule()` overload"]fn get_runtime_module(self,)->crate::system::reflection::runtimemodule::RuntimeModule{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd63c0usize)as*mut u8,crate::system::reflection::runtimemodule::RuntimeModule;
+(RuntimePropertyInfo)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6570usize)as*mut u8, ::unity2::Il2CppString;
+(RuntimePropertyInfo)__receiver)}
+}
+#[doc="`FormatNameAndSig(bool)` overload"]fn format_name_and_sig(self,serialization:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6580usize)as*mut u8, ::unity2::Il2CppString;
+(RuntimePropertyInfo)__receiver,(bool)::core::convert::Into::into(serialization))}
+}
+#[doc="`SerializationToString()` overload"]fn serialization_to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6830usize)as*mut u8, ::unity2::Il2CppString;
+(RuntimePropertyInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6840usize)as*mut u8,();
+(RuntimePropertyInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-runtimepropertyinfo")]
-impl < __T : IRuntimePropertyInfo > IRuntimePropertyInfoMethods for __T { }
+#[cfg(feature="system-reflection-runtimepropertyinfo")]impl<__T:IRuntimePropertyInfo>IRuntimePropertyInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-runtimepropertyinfo")]
-impl RuntimePropertyInfo { pub fn get_binding_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimePropertyInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimePropertyInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_declaring_type_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimePropertyInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_reflected_type_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimePropertyInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_runtime_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimePropertyInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimePropertyInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn format_name_and_sig_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimePropertyInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn serialization_to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimePropertyInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimePropertyInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="system-reflection-runtimepropertyinfo")]impl RuntimePropertyInfo{pub fn get_binding_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_declaring_type_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_reflected_type_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_runtime_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn format_name_and_sig_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn serialization_to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "system-reflection-runtimepropertyinfo")]
-impl RuntimePropertyInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimePropertyInfo) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimePropertyInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-runtimepropertyinfo")]impl RuntimePropertyInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimePropertyInfo), ::core::stringify!(new),));
+ <Self as IRuntimePropertyInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-runtimepropertyinfo")]

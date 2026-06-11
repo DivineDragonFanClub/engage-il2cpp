@@ -4,48 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfowindow/MapBattleInfoWindow.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapBattleInfoWindow")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapbattleinfowindow :: MapBattleInfoWindow >)] pub struct MapBattleInfoWindow {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "LeftSideObjName")] pub left_side_obj_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "RightSideObjName")] pub right_side_obj_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "BattleSequenceObjName")] pub battle_sequence_obj_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (40)] # [rename (name = "m_IsValid")] pub m_is_valid : bool ,
-# [offset (48)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_BattleInfoL")] pub m_battle_info_l : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_BattleInfoR")] pub m_battle_info_r : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "m_Singles")] pub m_singles : :: unity2 :: Array < crate :: app :: mapbattleinfowindowsingle :: MapBattleInfoWindowSingle > ,
-# [offset (80)] # [rename (name = "m_BattleSequence")] pub m_battle_sequence : crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence ,
-# [offset (88)] # [rename (name = "m_SupportInfos")] pub m_support_infos : :: unity2 :: Array < crate :: app :: supportinfo :: SupportInfo > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbattleinfowindow/MapBattleInfoWindow.md"))]#[::unity2::class(namespace="App",name="MapBattleInfoWindow")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapbattleinfowindow::MapBattleInfoWindow>)]pub struct MapBattleInfoWindow{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="LeftSideObjName")]pub left_side_obj_name: ::unity2::Il2CppString, #[static_field]#[rename(name="RightSideObjName")]pub right_side_obj_name: ::unity2::Il2CppString, #[static_field]#[rename(name="BattleSequenceObjName")]pub battle_sequence_obj_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(40)]#[rename(name="m_IsValid")]pub m_is_valid:bool, #[offset(48)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_BattleInfoL")]pub m_battle_info_l:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_BattleInfoR")]pub m_battle_info_r:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_Singles")]pub m_singles: ::unity2::Array<crate::app::mapbattleinfowindowsingle::MapBattleInfoWindowSingle> , #[offset(80)]#[rename(name="m_BattleSequence")]pub m_battle_sequence:crate::app::mapbattleinfosequence::MapBattleInfoSequence, #[offset(88)]#[rename(name="m_SupportInfos")]pub m_support_infos: ::unity2::Array<crate::app::supportinfo::SupportInfo> ,}
 
 }
 
 #[cfg(feature = "app-mapbattleinfowindow-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapbattleinfowindow")]
-impl MapBattleInfoWindow { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2999280usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapbattleinfowindow")]impl MapBattleInfoWindow{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2999280usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mapbattleinfowindow")]
-pub trait IMapBattleInfoWindowMethods : IMapBattleInfoWindow { # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetBattleInfo(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList)` overload"] fn set_battle_info (self , info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo > , scene_list : impl :: core :: convert :: Into < crate :: app :: battlescenelist :: BattleSceneList >) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , crate :: app :: battleinfo :: BattleInfo , crate :: app :: battlescenelist :: BattleSceneList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997f80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (scene_list) , :: core :: option :: Option :: None) } } } # [doc = "`SetWeaponChangeVisible(bool)` overload"] fn set_weapon_change_visible (self , is_visible : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2998310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_visible) , :: core :: option :: Option :: None) } } } # [doc = "`SetEngageCommandVisible(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn set_engage_command_visible (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29983d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2998230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deactivate()` overload"] fn deactivate (self ,) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29984f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsActive()` overload"] fn is_active (self ,) -> bool { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29985a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2998650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29987b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateObjects()` overload"] fn create_objects (self ,) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2998a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyObjects()` overload"] fn destroy_objects (self ,) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29987c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_BattleInfoL()` overload"] fn get_battle_info_l (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29991e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_BattleInfoR()` overload"] fn get_battle_info_r (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29991f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapBattleInfoWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2999200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapbattleinfowindow")]pub trait IMapBattleInfoWindowMethods:IMapBattleInfoWindow{#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997f50usize)as*mut u8,bool;
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`SetBattleInfo(crate::app::battleinfo::BattleInfo, crate::app::battlescenelist::BattleSceneList)` overload"]fn set_battle_info(self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,scene_list:impl::core::convert::Into<crate::app::battlescenelist::BattleSceneList>)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997f80usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battlescenelist::BattleSceneList)::core::convert::Into::into(scene_list))}
+}
+#[doc="`SetWeaponChangeVisible(bool)` overload"]fn set_weapon_change_visible(self,is_visible:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2998310usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver,(bool)::core::convert::Into::into(is_visible))}
+}
+#[doc="`SetEngageCommandVisible(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn set_engage_command_visible(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29983d0usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2998230usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`Deactivate()` overload"]fn deactivate(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29984f0usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29985a0usize)as*mut u8,bool;
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2998650usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29987b0usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`CreateObjects()` overload"]fn create_objects(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2998a00usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`DestroyObjects()` overload"]fn destroy_objects(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29987c0usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`get_BattleInfoL()` overload"]fn get_battle_info_l(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29991e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`get_BattleInfoR()` overload"]fn get_battle_info_r(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29991f0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(MapBattleInfoWindow)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2999200usize)as*mut u8,();
+(MapBattleInfoWindow)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapbattleinfowindow")]
-impl < __T : IMapBattleInfoWindow > IMapBattleInfoWindowMethods for __T { }
+#[cfg(feature="app-mapbattleinfowindow")]impl<__T:IMapBattleInfoWindow>IMapBattleInfoWindowMethods for __T{}
 
-#[cfg(feature = "app-mapbattleinfowindow")]
-impl MapBattleInfoWindow { pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_battle_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_weapon_change_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_engage_command_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn deactivate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn destroy_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_battle_info_l_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_battle_info_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-mapbattleinfowindow")]impl MapBattleInfoWindow{pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_battle_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_weapon_change_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_engage_command_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn deactivate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn destroy_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_battle_info_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_battle_info_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-mapbattleinfowindow")]
-impl MapBattleInfoWindow {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapBattleInfoWindow) , :: core :: stringify ! (new) ,)) ; < Self as IMapBattleInfoWindowMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapbattleinfowindow")]impl MapBattleInfoWindow{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapBattleInfoWindow), ::core::stringify!(new),));
+ <Self as IMapBattleInfoWindowMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapbattleinfowindow")]

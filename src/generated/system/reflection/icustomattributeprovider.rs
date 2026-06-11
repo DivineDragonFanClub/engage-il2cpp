@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/icustomattributeprovider/ICustomAttributeProvider.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "ICustomAttributeProvider")] pub struct ICustomAttributeProvider {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/icustomattributeprovider/ICustomAttributeProvider.md"))]#[::unity2::class(namespace="System.Reflection",name="ICustomAttributeProvider")]pub struct ICustomAttributeProvider{}
 
 }
 
 #[cfg(feature = "system-reflection-icustomattributeprovider-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-icustomattributeprovider")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ICustomAttributeProvider_unity2_raw { use super :: * ; pub unsafe fn get_custom_attributes (this : ICustomAttributeProvider , attribute_type : :: unity2 :: SystemType , inherit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetCustomAttributes") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetCustomAttributes" , < ICustomAttributeProvider as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ICustomAttributeProvider , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , attribute_type , inherit , __mi) } pub unsafe fn is_defined (this : ICustomAttributeProvider , attribute_type : :: unity2 :: SystemType , inherit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IsDefined") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IsDefined" , < ICustomAttributeProvider as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ICustomAttributeProvider , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , attribute_type , inherit , __mi) } }
+#[cfg(feature="system-reflection-icustomattributeprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ICustomAttributeProvider_unity2_raw{use super:: * ;
+pub unsafe fn get_custom_attributes(this:ICustomAttributeProvider,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetCustomAttributes").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetCustomAttributes", <ICustomAttributeProvider as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ICustomAttributeProvider, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+pub unsafe fn is_defined(this:ICustomAttributeProvider,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsDefined").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsDefined", <ICustomAttributeProvider as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ICustomAttributeProvider, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+}
 
-#[cfg(feature = "system-reflection-icustomattributeprovider")]
-pub trait IICustomAttributeProviderMethods : IICustomAttributeProvider { # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < ICustomAttributeProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICustomAttributeProvider_unity2_raw :: get_custom_attributes (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < ICustomAttributeProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICustomAttributeProvider_unity2_raw :: is_defined (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="system-reflection-icustomattributeprovider")]pub trait IICustomAttributeProviderMethods:IICustomAttributeProvider{#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <ICustomAttributeProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ICustomAttributeProvider_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <ICustomAttributeProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ICustomAttributeProvider_unity2_raw::is_defined(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "system-reflection-icustomattributeprovider")]
-impl < __T : IICustomAttributeProvider > IICustomAttributeProviderMethods for __T { }
+#[cfg(feature="system-reflection-icustomattributeprovider")]impl<__T:IICustomAttributeProvider>IICustomAttributeProviderMethods for __T{}
 
-#[cfg(feature = "system-reflection-icustomattributeprovider")]
-impl ICustomAttributeProvider { pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ICustomAttributeProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ICustomAttributeProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-reflection-icustomattributeprovider")]impl ICustomAttributeProvider{pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "system-reflection-icustomattributeprovider")]
 #[doc(hidden)]

@@ -4,64 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityqueue_1/PriorityQueue_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet" , name = "PriorityQueue`1")] # [parent (crate :: system :: object :: Object)] pub struct PriorityQueue_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "_leq")] pub leq : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: priorityheap_1 :: PriorityHeap_1_LessOrEqual < T0 > ,
-# [rename (name = "_heap")] pub heap : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: priorityheap_1 :: PriorityHeap_1 < T0 > ,
-# [rename (name = "_keys")] pub keys : :: unity2 :: Array < T0 > ,
-# [rename (name = "_order")] pub order : :: unity2 :: Array < i32 > ,
-# [rename (name = "_size")] pub size : i32 ,
-# [rename (name = "_max")] pub max : i32 ,
-# [rename (name = "_initialized")] pub initialized : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityqueue_1/PriorityQueue_1.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="PriorityQueue`1")]#[parent(crate::system::object::Object)]pub struct PriorityQueue_1<T0: ::unity2::ClassIdentity>{#[rename(name="_leq")]pub leq:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::priorityheap_1::PriorityHeap_1_LessOrEqual<T0> , #[rename(name="_heap")]pub heap:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::priorityheap_1::PriorityHeap_1<T0> , #[rename(name="_keys")]pub keys: ::unity2::Array<T0> , #[rename(name="_order")]pub order: ::unity2::Array<i32> , #[rename(name="_size")]pub size:i32, #[rename(name="_max")]pub max:i32, #[rename(name="_initialized")]pub initialized:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityqueue_1/PriorityQueue_1_StackItem.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet" , name = "PriorityQueue`1.StackItem")] # [parent (crate :: system :: object :: Object)] pub struct PriorityQueue_1_StackItem < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "p")] pub p : i32 ,
-# [rename (name = "r")] pub r : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityqueue_1/PriorityQueue_1_StackItem.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="PriorityQueue`1.StackItem")]#[parent(crate::system::object::Object)]pub struct PriorityQueue_1_StackItem<T0: ::unity2::ClassIdentity>{#[rename(name="p")]pub p:i32, #[rename(name="r")]pub r:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > PriorityQueue_1 < T0 > {
-# [doc = "`get_Empty()` overload"] # [method (name = "get_Empty" , args = 0)] pub fn get_empty (self ,) -> bool ;
-
-# [doc = "`.ctor(i32, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::priorityheap_1::PriorityHeap_1_LessOrEqual<T0>)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , initial_size : i32 , leq : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: priorityheap_1 :: PriorityHeap_1_LessOrEqual < T0 >) -> () ;
-
-# [doc = "`Swap(*muti32, *muti32)` overload"] # [method (name = "Swap" , args = 2)] pub fn swap (a : * mut i32 , b : * mut i32) -> () ;
-
-# [doc = "`Init()` overload"] # [method (name = "Init" , args = 0)] pub fn init (self ,) -> () ;
-
-# [doc = "`Insert(T0)` overload"] # [method (name = "Insert" , args = 1)] pub fn insert (self , value : T0) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: pqhandle :: PQHandle ;
-
-# [doc = "`ExtractMin()` overload"] # [method (name = "ExtractMin" , args = 0)] pub fn extract_min (self ,) -> T0 ;
-
-# [doc = "`Minimum()` overload"] # [method (name = "Minimum" , args = 0)] pub fn minimum (self ,) -> T0 ;
-
-# [doc = "`Remove(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::pqhandle::PQHandle)` overload"] # [method (name = "Remove" , args = 1)] pub fn remove (self , handle : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: pqhandle :: PQHandle) -> () ;
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>PriorityQueue_1<T0>{#[doc="`get_Empty()` overload"]#[method(name="get_Empty",args=0)]pub fn get_empty(self,)->bool;
+ #[doc="`.ctor(i32, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::priorityheap_1::PriorityHeap_1_LessOrEqual<T0>)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,initial_size:i32,leq:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::priorityheap_1::PriorityHeap_1_LessOrEqual<T0>)->();
+ #[doc="`Swap(*muti32, *muti32)` overload"]#[method(name="Swap",args=2)]pub fn swap(a: *mut i32,b: *mut i32)->();
+ #[doc="`Init()` overload"]#[method(name="Init",args=0)]pub fn init(self,)->();
+ #[doc="`Insert(T0)` overload"]#[method(name="Insert",args=1)]pub fn insert(self,value:T0)->crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::pqhandle::PQHandle;
+ #[doc="`ExtractMin()` overload"]#[method(name="ExtractMin",args=0)]pub fn extract_min(self,)->T0;
+ #[doc="`Minimum()` overload"]#[method(name="Minimum",args=0)]pub fn minimum(self,)->T0;
+ #[doc="`Remove(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::pqhandle::PQHandle)` overload"]#[method(name="Remove",args=1)]pub fn remove(self,handle:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::pqhandle::PQHandle)->();
 }
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]
-impl < T0 : :: unity2 :: ClassIdentity > PriorityQueue_1 < T0 > {
-# [doc = "`.ctor(i32, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::priorityheap_1::PriorityHeap_1_LessOrEqual<T0>)` — overload selector"] pub fn new (initial_size : i32 , leq : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: priorityheap_1 :: PriorityHeap_1_LessOrEqual < T0 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PriorityQueue_1) , :: core :: stringify ! (new) ,)) ; < Self as IPriorityQueue_1Methods < T0 > > :: ctor (this , initial_size , leq) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]impl<T0: ::unity2::ClassIdentity>PriorityQueue_1<T0>{#[doc="`.ctor(i32, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::priorityheap_1::PriorityHeap_1_LessOrEqual<T0>)` — overload selector"]pub fn new(initial_size:i32,leq:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::priorityheap_1::PriorityHeap_1_LessOrEqual<T0>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PriorityQueue_1), ::core::stringify!(new),));
+ <Self as IPriorityQueue_1Methods<T0> > ::ctor(this,initial_size,leq);
+this}
 }
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > PriorityQueue_1_StackItem < T0 > {
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>PriorityQueue_1_StackItem<T0>{#[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
 }
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]
-impl < T0 : :: unity2 :: ClassIdentity > PriorityQueue_1_StackItem < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PriorityQueue_1_StackItem) , :: core :: stringify ! (new) ,)) ; < Self as IPriorityQueue_1_StackItemMethods < T0 > > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]impl<T0: ::unity2::ClassIdentity>PriorityQueue_1_StackItem<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PriorityQueue_1_StackItem), ::core::stringify!(new),));
+ <Self as IPriorityQueue_1_StackItemMethods<T0> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]

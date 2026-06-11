@@ -4,47 +4,85 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusmyinfocontent/VersusMyInfoContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusMyInfoContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct VersusMyInfoContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_MyIdAnim")] pub m_my_id_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (32)] # [rename (name = "m_MyRankAnim")] pub m_my_rank_anim : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_MyIdText")] pub m_my_id_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_MyRankText")] pub m_my_rank_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusmyinfocontent/VersusMyInfoContent.md"))]#[::unity2::class(namespace="App",name="VersusMyInfoContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct VersusMyInfoContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MyIdAnim")]pub m_my_id_anim:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_MyRankAnim")]pub m_my_rank_anim:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_MyIdText")]pub m_my_id_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_MyRankText")]pub m_my_rank_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-versusmyinfocontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusmyinfocontent")]
-impl VersusMyInfoContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0920usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b09c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0a40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: versusmyinfocontent :: VersusMyInfoContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: versusmyinfocontent :: VersusMyInfoContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0ac0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusmyinfocontent")]impl VersusMyInfoContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b0920usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b09c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b0a40usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::versusmyinfocontent::VersusMyInfoContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b0ac0usize)as*mut u8,crate::app::versusmyinfocontent::VersusMyInfoContent;
+)}
+}
+}
 
-#[cfg(feature = "app-versusmyinfocontent")]
-pub trait IVersusMyInfoContentMethods : IVersusMyInfoContent { # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < VersusMyInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMyInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < VersusMyInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMyInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayOut()` overload"] fn play_out (self ,) -> () { unsafe { let __receiver = < VersusMyInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMyInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayInCasual(::unity2::Il2CppString)` overload"] fn play_in_casual (self , my_id_casual : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusMyInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMyInfoContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b0f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (my_id_casual) , :: core :: option :: Option :: None) } } } # [doc = "`PlayInRanked(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn play_in_ranked (self , my_id_ranked : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , my_rank : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusMyInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMyInfoContent , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (my_id_ranked) , :: core :: convert :: Into :: into (my_rank) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusMyInfoContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusMyInfoContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusmyinfocontent")]pub trait IVersusMyInfoContentMethods:IVersusMyInfoContent{#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <VersusMyInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0de0usize)as*mut u8,();
+(VersusMyInfoContent)__receiver)}
+}
+#[doc="`initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <VersusMyInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0ba0usize)as*mut u8,();
+(VersusMyInfoContent)__receiver)}
+}
+#[doc="`PlayOut()` overload"]fn play_out(self,)->(){unsafe{let __receiver= <VersusMyInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0e60usize)as*mut u8,();
+(VersusMyInfoContent)__receiver)}
+}
+#[doc="`PlayInCasual(::unity2::Il2CppString)` overload"]fn play_in_casual(self,my_id_casual:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusMyInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0f10usize)as*mut u8,();
+(VersusMyInfoContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(my_id_casual))}
+}
+#[doc="`PlayInRanked(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn play_in_ranked(self,my_id_ranked:impl::core::convert::Into< ::unity2::Il2CppString> ,my_rank:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusMyInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1010usize)as*mut u8,();
+(VersusMyInfoContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(my_id_ranked),(::unity2::Il2CppString)::core::convert::Into::into(my_rank))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusMyInfoContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1140usize)as*mut u8,();
+(VersusMyInfoContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusmyinfocontent")]
-impl < __T : IVersusMyInfoContent > IVersusMyInfoContentMethods for __T { }
+#[cfg(feature="app-versusmyinfocontent")]impl<__T:IVersusMyInfoContent>IVersusMyInfoContentMethods for __T{}
 
-#[cfg(feature = "app-versusmyinfocontent")]
-impl VersusMyInfoContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn play_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn play_in_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn play_in_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusMyInfoContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-versusmyinfocontent")]impl VersusMyInfoContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn play_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn play_in_casual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn play_in_ranked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-versusmyinfocontent")]
-impl VersusMyInfoContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusMyInfoContent) , :: core :: stringify ! (new) ,)) ; < Self as IVersusMyInfoContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusmyinfocontent")]impl VersusMyInfoContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusMyInfoContent), ::core::stringify!(new),));
+ <Self as IVersusMyInfoContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusmyinfocontent")]

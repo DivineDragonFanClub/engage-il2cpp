@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/yoga/measurefunction/MeasureFunction.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Yoga" , name = "MeasureFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MeasureFunction {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/yoga/measurefunction/MeasureFunction.md"))]#[::unity2::class(namespace="UnityEngine.Yoga",name="MeasureFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MeasureFunction{}
 
 }
 
 #[cfg(feature = "unity_engine-yoga-measurefunction-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-yoga-measurefunction")]
-pub trait IMeasureFunctionMethods : IMeasureFunction { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < MeasureFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeasureFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3fb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)` overload"] fn invoke (self , node : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yoganode :: YogaNode > , width : impl :: core :: convert :: Into < f32 > , width_mode : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode > , height : impl :: core :: convert :: Into < f32 > , height_mode : impl :: core :: convert :: Into < crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode >) -> crate :: unity_engine :: yoga :: yogasize :: YogaSize { unsafe { let __receiver = < MeasureFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MeasureFunction , crate :: unity_engine :: yoga :: yoganode :: YogaNode , f32 , crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , f32 , crate :: unity_engine :: yoga :: yogameasuremode :: YogaMeasureMode , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: yoga :: yogasize :: YogaSize = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3fb80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (node) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (width_mode) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (height_mode) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-yoga-measurefunction")]pub trait IMeasureFunctionMethods:IMeasureFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MeasureFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3fb60usize)as*mut u8,();
+(MeasureFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::yoga::yoganode::YogaNode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode, f32, crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)` overload"]fn invoke(self,node:impl::core::convert::Into<crate::unity_engine::yoga::yoganode::YogaNode> ,width:impl::core::convert::Into<f32> ,width_mode:impl::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode> ,height:impl::core::convert::Into<f32> ,height_mode:impl::core::convert::Into<crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode>)->crate::unity_engine::yoga::yogasize::YogaSize{unsafe{let __receiver= <MeasureFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3fb80usize)as*mut u8,crate::unity_engine::yoga::yogasize::YogaSize;
+(MeasureFunction)__receiver,(crate::unity_engine::yoga::yoganode::YogaNode)::core::convert::Into::into(node),(f32)::core::convert::Into::into(width),(crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)::core::convert::Into::into(width_mode),(f32)::core::convert::Into::into(height),(crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode)::core::convert::Into::into(height_mode))}
+}
+}
 
-#[cfg(feature = "unity_engine-yoga-measurefunction")]
-impl < __T : IMeasureFunction > IMeasureFunctionMethods for __T { }
+#[cfg(feature="unity_engine-yoga-measurefunction")]impl<__T:IMeasureFunction>IMeasureFunctionMethods for __T{}
 
-#[cfg(feature = "unity_engine-yoga-measurefunction")]
-impl MeasureFunction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeasureFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeasureFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-yoga-measurefunction")]impl MeasureFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-yoga-measurefunction")]
-impl MeasureFunction {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MeasureFunction) , :: core :: stringify ! (new) ,)) ; < Self as IMeasureFunctionMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-yoga-measurefunction")]impl MeasureFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MeasureFunction), ::core::stringify!(new),));
+ <Self as IMeasureFunctionMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "unity_engine-yoga-measurefunction")]

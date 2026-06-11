@@ -4,36 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: situation_converter :: baseconverter :: { BaseConverter , IBaseConverter }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::situation_converter::baseconverter::{BaseConverter,IBaseConverter}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertengageattack/ConvertEngageAttack.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertEngageAttack")] # [parent (crate :: combat :: situation_converter :: baseconverter :: BaseConverter)] pub struct ConvertEngageAttack {
-# [offset (24)] # [rename (name = "m_IsFirstEnterApproach")] pub m_is_first_enter_approach : bool ,
-# [offset (25)] # [rename (name = "m_BeforeSpace")] pub m_before_space : bool ,
-# [offset (26)] # [rename (name = "m_IsStartGTSP")] pub m_is_start_gtsp : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertengageattack/ConvertEngageAttack.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertEngageAttack")]#[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]pub struct ConvertEngageAttack{#[offset(24)]#[rename(name="m_IsFirstEnterApproach")]pub m_is_first_enter_approach:bool, #[offset(25)]#[rename(name="m_BeforeSpace")]pub m_before_space:bool, #[offset(26)]#[rename(name="m_IsStartGTSP")]pub m_is_start_gtsp:bool,}
 
 }
 
 #[cfg(feature = "combat-situation_converter-convertengageattack-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-situation_converter-convertengageattack")]
-pub trait IConvertEngageAttackMethods : IConvertEngageAttack { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertEngageAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertEngageAttack , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2541210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"] fn convert (self , situation : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertEngageAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertEngageAttack , crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2541220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (situation) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } # [doc = "`CheckEnemy(crate::combat::cameraposition::CameraPosition, bool, bool)` overload"] fn check_enemy (self , cam_pos : impl :: core :: convert :: Into < crate :: combat :: cameraposition :: CameraPosition > , inv_side : impl :: core :: convert :: Into < bool > , inv_cam : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ConvertEngageAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertEngageAttack , crate :: combat :: cameraposition :: CameraPosition , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25417f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cam_pos) , :: core :: convert :: Into :: into (inv_side) , :: core :: convert :: Into :: into (inv_cam) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-situation_converter-convertengageattack")]pub trait IConvertEngageAttackMethods:IConvertEngageAttack{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertEngageAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2541210usize)as*mut u8,();
+(ConvertEngageAttack)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
+}
+#[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,situation:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertEngageAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2541220usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertEngageAttack)__receiver,(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(situation),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+#[doc="`CheckEnemy(crate::combat::cameraposition::CameraPosition, bool, bool)` overload"]fn check_enemy(self,cam_pos:impl::core::convert::Into<crate::combat::cameraposition::CameraPosition> ,inv_side:impl::core::convert::Into<bool> ,inv_cam:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ConvertEngageAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25417f0usize)as*mut u8,();
+(ConvertEngageAttack)__receiver,(crate::combat::cameraposition::CameraPosition)::core::convert::Into::into(cam_pos),(bool)::core::convert::Into::into(inv_side),(bool)::core::convert::Into::into(inv_cam))}
+}
+}
 
-#[cfg(feature = "combat-situation_converter-convertengageattack")]
-impl < __T : IConvertEngageAttack > IConvertEngageAttackMethods for __T { }
+#[cfg(feature="combat-situation_converter-convertengageattack")]impl<__T:IConvertEngageAttack>IConvertEngageAttackMethods for __T{}
 
-#[cfg(feature = "combat-situation_converter-convertengageattack")]
-impl ConvertEngageAttack { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertEngageAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn convert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertEngageAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn check_enemy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertEngageAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-situation_converter-convertengageattack")]impl ConvertEngageAttack{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn check_enemy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-situation_converter-convertengageattack")]
-impl ConvertEngageAttack {
-# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConvertEngageAttack) , :: core :: stringify ! (new) ,)) ; < Self as IConvertEngageAttackMethods > :: ctor (this , data) ; this }
+#[cfg(feature="combat-situation_converter-convertengageattack")]impl ConvertEngageAttack{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConvertEngageAttack), ::core::stringify!(new),));
+ <Self as IConvertEngageAttackMethods> ::ctor(this,data);
+this}
 }
 
 #[cfg(feature = "combat-situation_converter-convertengageattack")]

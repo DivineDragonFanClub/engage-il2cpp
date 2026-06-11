@@ -4,39 +4,121 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubinvestmentanimal/HubInvestmentAnimal.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubInvestmentAnimal")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentanimal :: HubInvestmentAnimal >)] pub struct HubInvestmentAnimal {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubinvestmentanimal/HubInvestmentAnimal.md"))]#[::unity2::class(namespace="App",name="HubInvestmentAnimal")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::hubinvestmentanimal::HubInvestmentAnimal>)]pub struct HubInvestmentAnimal{}
 
 }
 
 #[cfg(feature = "app-hubinvestmentanimal-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubinvestmentanimal")]
-impl HubInvestmentAnimal { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentanimal")]impl HubInvestmentAnimal{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28aa500usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentanimal")]
-pub trait IHubInvestmentAnimalMethods : IHubInvestmentAnimal { # [doc = "`get_ANID()` overload"] fn get_anid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ANID(::unity2::Il2CppString)` overload"] fn set_anid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa5c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AppearRateLv1()` overload"] fn get_appear_rate_lv1 (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa5d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AppearRateLv1(u8)` overload"] fn set_appear_rate_lv1 (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa5e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AppearRateLv2()` overload"] fn get_appear_rate_lv2 (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AppearRateLv2(u8)` overload"] fn set_appear_rate_lv2 (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AppearRateLv3()` overload"] fn get_appear_rate_lv3 (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AppearRateLv3(u8)` overload"] fn set_appear_rate_lv3 (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AppearRateLv4()` overload"] fn get_appear_rate_lv4 (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AppearRateLv4(u8)` overload"] fn set_appear_rate_lv4 (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AppearRateLv5()` overload"] fn get_appear_rate_lv5 (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AppearRateLv5(u8)` overload"] fn set_appear_rate_lv5 (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CaptureLevel()` overload"] fn get_capture_level (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CaptureLevel(u8)` overload"] fn set_capture_level (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetAppearRate(i32)` overload"] fn get_appear_rate (self , level : impl :: core :: convert :: Into < i32 >) -> u8 { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , i32 , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubInvestmentAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentAnimal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentanimal")]pub trait IHubInvestmentAnimalMethods:IHubInvestmentAnimal{#[doc="`get_ANID()` overload"]fn get_anid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa5b0usize)as*mut u8, ::unity2::Il2CppString;
+(HubInvestmentAnimal)__receiver)}
+}
+#[doc="`set_ANID(::unity2::Il2CppString)` overload"]fn set_anid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa5c0usize)as*mut u8,();
+(HubInvestmentAnimal)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_AppearRateLv1()` overload"]fn get_appear_rate_lv1(self,)->u8{unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa5d0usize)as*mut u8,u8;
+(HubInvestmentAnimal)__receiver)}
+}
+#[doc="`set_AppearRateLv1(u8)` overload"]fn set_appear_rate_lv1(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa5e0usize)as*mut u8,();
+(HubInvestmentAnimal)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_AppearRateLv2()` overload"]fn get_appear_rate_lv2(self,)->u8{unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa5f0usize)as*mut u8,u8;
+(HubInvestmentAnimal)__receiver)}
+}
+#[doc="`set_AppearRateLv2(u8)` overload"]fn set_appear_rate_lv2(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa600usize)as*mut u8,();
+(HubInvestmentAnimal)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_AppearRateLv3()` overload"]fn get_appear_rate_lv3(self,)->u8{unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa610usize)as*mut u8,u8;
+(HubInvestmentAnimal)__receiver)}
+}
+#[doc="`set_AppearRateLv3(u8)` overload"]fn set_appear_rate_lv3(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa620usize)as*mut u8,();
+(HubInvestmentAnimal)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_AppearRateLv4()` overload"]fn get_appear_rate_lv4(self,)->u8{unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa630usize)as*mut u8,u8;
+(HubInvestmentAnimal)__receiver)}
+}
+#[doc="`set_AppearRateLv4(u8)` overload"]fn set_appear_rate_lv4(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa640usize)as*mut u8,();
+(HubInvestmentAnimal)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_AppearRateLv5()` overload"]fn get_appear_rate_lv5(self,)->u8{unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa650usize)as*mut u8,u8;
+(HubInvestmentAnimal)__receiver)}
+}
+#[doc="`set_AppearRateLv5(u8)` overload"]fn set_appear_rate_lv5(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa660usize)as*mut u8,();
+(HubInvestmentAnimal)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_CaptureLevel()` overload"]fn get_capture_level(self,)->u8{unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa670usize)as*mut u8,u8;
+(HubInvestmentAnimal)__receiver)}
+}
+#[doc="`set_CaptureLevel(u8)` overload"]fn set_capture_level(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa680usize)as*mut u8,();
+(HubInvestmentAnimal)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`GetAppearRate(i32)` overload"]fn get_appear_rate(self,level:impl::core::convert::Into<i32>)->u8{unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa690usize)as*mut u8,u8;
+(HubInvestmentAnimal)__receiver,(i32)::core::convert::Into::into(level))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubInvestmentAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa6f0usize)as*mut u8,();
+(HubInvestmentAnimal)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentanimal")]
-impl < __T : IHubInvestmentAnimal > IHubInvestmentAnimalMethods for __T { }
+#[cfg(feature="app-hubinvestmentanimal")]impl<__T:IHubInvestmentAnimal>IHubInvestmentAnimalMethods for __T{}
 
-#[cfg(feature = "app-hubinvestmentanimal")]
-impl HubInvestmentAnimal { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_anid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_anid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_appear_rate_lv1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_appear_rate_lv1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_appear_rate_lv2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_appear_rate_lv2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_appear_rate_lv3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_appear_rate_lv3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_appear_rate_lv4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_appear_rate_lv4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_appear_rate_lv5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_appear_rate_lv5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_capture_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_capture_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_appear_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-hubinvestmentanimal")]impl HubInvestmentAnimal{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_anid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_anid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_appear_rate_lv1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_appear_rate_lv1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_appear_rate_lv2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_appear_rate_lv2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_appear_rate_lv3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_appear_rate_lv3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_appear_rate_lv4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_appear_rate_lv4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_appear_rate_lv5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_appear_rate_lv5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_capture_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_capture_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_appear_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-hubinvestmentanimal")]
-impl HubInvestmentAnimal {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubInvestmentAnimal) , :: core :: stringify ! (new) ,)) ; < Self as IHubInvestmentAnimalMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubinvestmentanimal")]impl HubInvestmentAnimal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubInvestmentAnimal), ::core::stringify!(new),));
+ <Self as IHubInvestmentAnimalMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubinvestmentanimal")]

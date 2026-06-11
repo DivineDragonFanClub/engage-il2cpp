@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resolution/Resolution.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Resolution {
-    pub m_width: i32,
-    pub m_height: i32,
-    pub m_refresh_rate: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resolution/Resolution.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Resolution{pub m_width:i32,pub m_height:i32,pub m_refresh_rate:i32,}
+impl::unity2::ClassIdentity for Resolution{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Resolution";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Resolution {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Resolution";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Resolution {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Resolution{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,11 +26,13 @@ impl ::unity2::IlType for Resolution {
 #[cfg(feature = "unity_engine-resolution-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resolution")]
-impl Resolution { # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Resolution , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f88db0usize) as * mut u8) ; __inner (self as * mut Resolution , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resolution")]impl Resolution{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f88db0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Resolution)self as*mut Resolution)}
+}
+}
 
-#[cfg(feature = "unity_engine-resolution")]
-impl Resolution { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Resolution as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-resolution")]impl Resolution{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-resolution")]
 #[doc(hidden)]

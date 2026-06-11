@@ -4,96 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapinfoevent/MapInfoEvent_MeshIndex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoEvent_MeshIndex  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapinfoevent/MapInfoEvent.md"))]#[::unity2::class(namespace="",name="MapInfoEvent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapInfoEvent{#[offset(24)]#[rename(name="m_Mesh")]pub m_mesh:crate::app::map::Map_CellMesh, #[offset(32)]#[rename(name="m_Materials")]pub m_materials: ::unity2::Array<crate::unity_engine::material::Material> , #[static_field]#[rename(name="COLOR_DARK")]pub color_dark:crate::unity_engine::color::Color, #[static_field]#[rename(name="COLOR_VTX0")]pub color_vtx0:crate::unity_engine::color::Color, #[static_field]#[rename(name="COLOR_VTX1")]pub color_vtx1:crate::unity_engine::color::Color, #[static_field]#[rename(name="COLOR_VTX2")]pub color_vtx2:crate::unity_engine::color::Color, #[static_field]#[rename(name="COLOR_VTX3")]pub color_vtx3:crate::unity_engine::color::Color, #[static_field]#[rename(name="UV_ZERO")]pub uv_zero:crate::unity_engine::vector2::Vector2, #[offset(40)]#[rename(name="m_SubMeshCount")]pub m_sub_mesh_count:i32, #[offset(44)]#[rename(name="m_VisitColor")]pub m_visit_color:crate::unity_engine::color::Color, #[offset(60)]#[rename(name="m_EscapeColor")]pub m_escape_color:crate::unity_engine::color::Color, #[offset(76)]#[rename(name="m_BreakdownEnemyColor")]pub m_breakdown_enemy_color:crate::unity_engine::color::Color, #[offset(96)]#[rename(name="m_ScrollCurve")]pub m_scroll_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(104)]#[rename(name="m_AlphaCurve")]pub m_alpha_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(112)]#[rename(name="m_SpeedPropertyID")]pub m_speed_property_id:i32, #[offset(116)]#[rename(name="m_AlphaPropertyID")]pub m_alpha_property_id:i32, #[offset(120)]#[rename(name="m_Time")]pub m_time:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapinfoevent/MapInfoEvent_MeshIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoEvent_MeshIndex{pub value:i32,}
+impl::unity2::ClassIdentity for MapInfoEvent_MeshIndex{const NAMESPACE: &'static str="";
+const NAME: &'static str="MapInfoEvent.MeshIndex";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MapInfoEvent_MeshIndex  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapInfoEvent.MeshIndex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MapInfoEvent_MeshIndex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MapInfoEvent_MeshIndex  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MapInfoEvent_MeshIndex{pub fn debug()->Self{Self{value:0}
 }
-
-
-impl  MapInfoEvent_MeshIndex  {
-    pub fn debug() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn event() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn event()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfoevent/MapInfoEvent.md"))] # [:: unity2 :: class (namespace = "" , name = "MapInfoEvent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapInfoEvent {
-# [offset (24)] # [rename (name = "m_Mesh")] pub m_mesh : crate :: app :: map :: Map_CellMesh ,
-# [offset (32)] # [rename (name = "m_Materials")] pub m_materials : :: unity2 :: Array < crate :: unity_engine :: material :: Material > ,
-# [static_field] # [rename (name = "COLOR_DARK")] pub color_dark : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "COLOR_VTX0")] pub color_vtx0 : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "COLOR_VTX1")] pub color_vtx1 : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "COLOR_VTX2")] pub color_vtx2 : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "COLOR_VTX3")] pub color_vtx3 : crate :: unity_engine :: color :: Color ,
-# [static_field] # [rename (name = "UV_ZERO")] pub uv_zero : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (40)] # [rename (name = "m_SubMeshCount")] pub m_sub_mesh_count : i32 ,
-# [offset (44)] # [rename (name = "m_VisitColor")] pub m_visit_color : crate :: unity_engine :: color :: Color ,
-# [offset (60)] # [rename (name = "m_EscapeColor")] pub m_escape_color : crate :: unity_engine :: color :: Color ,
-# [offset (76)] # [rename (name = "m_BreakdownEnemyColor")] pub m_breakdown_enemy_color : crate :: unity_engine :: color :: Color ,
-# [offset (96)] # [rename (name = "m_ScrollCurve")] pub m_scroll_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (104)] # [rename (name = "m_AlphaCurve")] pub m_alpha_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (112)] # [rename (name = "m_SpeedPropertyID")] pub m_speed_property_id : i32 ,
-# [offset (116)] # [rename (name = "m_AlphaPropertyID")] pub m_alpha_property_id : i32 ,
-# [offset (120)] # [rename (name = "m_Time")] pub m_time : f32 ,
+pub fn num()->Self{Self{value:2}
+}
 }
 
 }
@@ -101,30 +46,82 @@ impl  MapInfoEvent_MeshIndex  {
 #[cfg(feature = "root-mapinfoevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapinfoevent")]
-impl MapInfoEvent { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2076030usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapinfoevent")]impl MapInfoEvent{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2076030usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-mapinfoevent")]
-pub trait IMapInfoEventMethods : IMapInfoEvent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2072d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Draw(i32, i32, crate::unity_engine::color::Color)` overload"] fn draw (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , i32 , i32 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2072e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`Draw(i32, i32, crate::unity_engine::color::Color, i32)` overload"] fn draw_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , i32 , i32 , crate :: unity_engine :: color :: Color , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2073790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Draw(i32, i32, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"] fn draw_3 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , i32 , i32 , crate :: unity_engine :: color :: Color , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2073f90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`Draw(crate::app::mapinspector::MapInspector, crate::unity_engine::color::Color)` overload"] fn draw_4 (self , inspector : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , crate :: app :: mapinspector :: MapInspector , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2074790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inspector) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`DrawEventVertex(crate::app::mapinspector::MapInspector)` overload"] fn draw_event_vertex (self , inspector : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector >) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , crate :: app :: mapinspector :: MapInspector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20753c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inspector) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2075d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateEventVertex()` overload"] fn update_event_vertex (self ,) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2075de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateScrollAnimation()` overload"] fn update_scroll_animation (self ,) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2075ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapInfoEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2076020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapinfoevent")]pub trait IMapInfoEventMethods:IMapInfoEvent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2072d30usize)as*mut u8,();
+(MapInfoEvent)__receiver)}
+}
+#[doc="`Draw(i32, i32, crate::unity_engine::color::Color)` overload"]fn draw(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2072e50usize)as*mut u8,();
+(MapInfoEvent)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`Draw(i32, i32, crate::unity_engine::color::Color, i32)` overload"]fn draw_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2073790usize)as*mut u8,();
+(MapInfoEvent)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Draw(i32, i32, crate::unity_engine::color::Color, ::unity2::Il2CppString)` overload"]fn draw_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2073f90usize)as*mut u8,();
+(MapInfoEvent)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`Draw(crate::app::mapinspector::MapInspector, crate::unity_engine::color::Color)` overload"]fn draw_4(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2074790usize)as*mut u8,();
+(MapInfoEvent)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`DrawEventVertex(crate::app::mapinspector::MapInspector)` overload"]fn draw_event_vertex(self,inspector:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20753c0usize)as*mut u8,();
+(MapInfoEvent)__receiver,(crate::app::mapinspector::MapInspector)::core::convert::Into::into(inspector))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2075d80usize)as*mut u8,();
+(MapInfoEvent)__receiver)}
+}
+#[doc="`UpdateEventVertex()` overload"]fn update_event_vertex(self,)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2075de0usize)as*mut u8,();
+(MapInfoEvent)__receiver)}
+}
+#[doc="`UpdateScrollAnimation()` overload"]fn update_scroll_animation(self,)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2075ef0usize)as*mut u8,();
+(MapInfoEvent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInfoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2076020usize)as*mut u8,();
+(MapInfoEvent)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapinfoevent")]
-impl < __T : IMapInfoEvent > IMapInfoEventMethods for __T { }
+#[cfg(feature="root-mapinfoevent")]impl<__T:IMapInfoEvent>IMapInfoEventMethods for __T{}
 
-#[cfg(feature = "root-mapinfoevent")]
-impl MapInfoEvent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn draw_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn draw_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn draw_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn draw_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn draw_event_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_event_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_scroll_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="root-mapinfoevent")]impl MapInfoEvent{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn draw_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn draw_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn draw_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn draw_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn draw_event_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_event_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_scroll_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "root-mapinfoevent")]
-impl MapInfoEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoEvent) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapinfoevent")]impl MapInfoEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInfoEvent), ::core::stringify!(new),));
+ <Self as IMapInfoEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapinfoevent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapInfoEvent_MeshIndex;
     pub use super::MapInfoEvent;
     pub use super::IMapInfoEvent;
     pub use super::IMapInfoEventMethods;
+    pub use super::MapInfoEvent_MeshIndex;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

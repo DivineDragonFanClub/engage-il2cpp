@@ -4,40 +4,120 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akplaylistitem/AkPlaylistItem.md"))] # [:: unity2 :: class (namespace = "" , name = "AkPlaylistItem")] # [parent (crate :: system :: object :: Object)] pub struct AkPlaylistItem {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akplaylistitem/AkPlaylistItem.md"))]#[::unity2::class(namespace="",name="AkPlaylistItem")]#[parent(crate::system::object::Object)]pub struct AkPlaylistItem{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akplaylistitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akplaylistitem")]
-impl AkPlaylistItem { # [doc = "`getCPtr(crate::root::akplaylistitem::AkPlaylistItem)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akplaylistitem :: AkPlaylistItem >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akplaylistitem :: AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f22700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akplaylistitem")]impl AkPlaylistItem{#[doc="`getCPtr(crate::root::akplaylistitem::AkPlaylistItem)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f22700usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akplaylistitem::AkPlaylistItem)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akplaylistitem")]
-pub trait IAkPlaylistItemMethods : IAkPlaylistItem { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f22830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2d4e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2d510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2d580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2d710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::root::akplaylistitem::AkPlaylistItem)` overload"] fn ctor_3 (self , in_r_copy : impl :: core :: convert :: Into < crate :: root :: akplaylistitem :: AkPlaylistItem >) -> () { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , crate :: root :: akplaylistitem :: AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2d7a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_r_copy) , :: core :: option :: Option :: None) } } } # [doc = "`Assign(crate::root::akplaylistitem::AkPlaylistItem)` overload"] fn assign (self , in_r_copy : impl :: core :: convert :: Into < crate :: root :: akplaylistitem :: AkPlaylistItem >) -> crate :: root :: akplaylistitem :: AkPlaylistItem { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , crate :: root :: akplaylistitem :: AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> crate :: root :: akplaylistitem :: AkPlaylistItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2d880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_r_copy) , :: core :: option :: Option :: None) } } } # [doc = "`IsEqualTo(crate::root::akplaylistitem::AkPlaylistItem)` overload"] fn is_equal_to (self , in_r_copy : impl :: core :: convert :: Into < crate :: root :: akplaylistitem :: AkPlaylistItem >) -> bool { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , crate :: root :: akplaylistitem :: AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2d980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_r_copy) , :: core :: option :: Option :: None) } } } # [doc = "`SetExternalSources(u32, crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray)` overload"] fn set_external_sources (self , in_n_external_src : impl :: core :: convert :: Into < u32 > , in_p_external_src : impl :: core :: convert :: Into < crate :: root :: akexternalsourceinfoarray :: AkExternalSourceInfoArray >) -> crate :: root :: akresult :: AKRESULT { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , u32 , crate :: root :: akexternalsourceinfoarray :: AkExternalSourceInfoArray , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2da40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_n_external_src) , :: core :: convert :: Into :: into (in_p_external_src) , :: core :: option :: Option :: None) } } } # [doc = "`set_audioNodeID(u32)` overload"] fn set_audio_node_id (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2dae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_audioNodeID()` overload"] fn get_audio_node_id (self ,) -> u32 { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2db60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_msDelay(i32)` overload"] fn set_ms_delay (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2dbd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_msDelay()` overload"] fn get_ms_delay (self ,) -> i32 { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2dc50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pCustomInfo(::unity2::IntPtr)` overload"] fn set_p_custom_info (self , value : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2dcc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pCustomInfo()` overload"] fn get_p_custom_info (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AkPlaylistItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkPlaylistItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f2dd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akplaylistitem")]pub trait IAkPlaylistItemMethods:IAkPlaylistItem{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f22830usize)as*mut u8,();
+(AkPlaylistItem)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2d4e0usize)as*mut u8,();
+(AkPlaylistItem)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2d510usize)as*mut u8,();
+(AkPlaylistItem)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2d580usize)as*mut u8,();
+(AkPlaylistItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2d710usize)as*mut u8,();
+(AkPlaylistItem)__receiver)}
+}
+#[doc="`.ctor(crate::root::akplaylistitem::AkPlaylistItem)` overload"]fn ctor_3(self,in_r_copy:impl::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>)->(){unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2d7a0usize)as*mut u8,();
+(AkPlaylistItem)__receiver,(crate::root::akplaylistitem::AkPlaylistItem)::core::convert::Into::into(in_r_copy))}
+}
+#[doc="`Assign(crate::root::akplaylistitem::AkPlaylistItem)` overload"]fn assign(self,in_r_copy:impl::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>)->crate::root::akplaylistitem::AkPlaylistItem{unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2d880usize)as*mut u8,crate::root::akplaylistitem::AkPlaylistItem;
+(AkPlaylistItem)__receiver,(crate::root::akplaylistitem::AkPlaylistItem)::core::convert::Into::into(in_r_copy))}
+}
+#[doc="`IsEqualTo(crate::root::akplaylistitem::AkPlaylistItem)` overload"]fn is_equal_to(self,in_r_copy:impl::core::convert::Into<crate::root::akplaylistitem::AkPlaylistItem>)->bool{unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2d980usize)as*mut u8,bool;
+(AkPlaylistItem)__receiver,(crate::root::akplaylistitem::AkPlaylistItem)::core::convert::Into::into(in_r_copy))}
+}
+#[doc="`SetExternalSources(u32, crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray)` overload"]fn set_external_sources(self,in_n_external_src:impl::core::convert::Into<u32> ,in_p_external_src:impl::core::convert::Into<crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray>)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2da40usize)as*mut u8,crate::root::akresult::AKRESULT;
+(AkPlaylistItem)__receiver,(u32)::core::convert::Into::into(in_n_external_src),(crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray)::core::convert::Into::into(in_p_external_src))}
+}
+#[doc="`set_audioNodeID(u32)` overload"]fn set_audio_node_id(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2dae0usize)as*mut u8,();
+(AkPlaylistItem)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_audioNodeID()` overload"]fn get_audio_node_id(self,)->u32{unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2db60usize)as*mut u8,u32;
+(AkPlaylistItem)__receiver)}
+}
+#[doc="`set_msDelay(i32)` overload"]fn set_ms_delay(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2dbd0usize)as*mut u8,();
+(AkPlaylistItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_msDelay()` overload"]fn get_ms_delay(self,)->i32{unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2dc50usize)as*mut u8,i32;
+(AkPlaylistItem)__receiver)}
+}
+#[doc="`set_pCustomInfo(::unity2::IntPtr)` overload"]fn set_p_custom_info(self,value:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2dcc0usize)as*mut u8,();
+(AkPlaylistItem)__receiver,(::unity2::IntPtr)::core::convert::Into::into(value))}
+}
+#[doc="`get_pCustomInfo()` overload"]fn get_p_custom_info(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AkPlaylistItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2dd40usize)as*mut u8, ::unity2::IntPtr;
+(AkPlaylistItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akplaylistitem")]
-impl < __T : IAkPlaylistItem > IAkPlaylistItemMethods for __T { }
+#[cfg(feature="root-akplaylistitem")]impl<__T:IAkPlaylistItem>IAkPlaylistItemMethods for __T{}
 
-#[cfg(feature = "root-akplaylistitem")]
-impl AkPlaylistItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn assign_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_equal_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_external_sources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_audio_node_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_audio_node_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_ms_delay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_ms_delay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_p_custom_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_p_custom_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkPlaylistItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="root-akplaylistitem")]impl AkPlaylistItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn assign_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_equal_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_external_sources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_audio_node_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_audio_node_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_ms_delay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_ms_delay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_p_custom_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_p_custom_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "root-akplaylistitem")]
-impl AkPlaylistItem {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkPlaylistItem) , :: core :: stringify ! (new) ,)) ; < Self as IAkPlaylistItemMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkPlaylistItem) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkPlaylistItemMethods > :: ctor_2 (this ,) ; this }
-
-# [doc = "`.ctor(crate::root::akplaylistitem::AkPlaylistItem)` — overload selector"] pub fn new_3 (in_r_copy : crate :: root :: akplaylistitem :: AkPlaylistItem) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkPlaylistItem) , :: core :: stringify ! (new_3) ,)) ; < Self as IAkPlaylistItemMethods > :: ctor_3 (this , in_r_copy) ; this }
+#[cfg(feature="root-akplaylistitem")]impl AkPlaylistItem{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkPlaylistItem), ::core::stringify!(new),));
+ <Self as IAkPlaylistItemMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkPlaylistItem), ::core::stringify!(new_2),));
+ <Self as IAkPlaylistItemMethods> ::ctor_2(this,);
+this}
+#[doc="`.ctor(crate::root::akplaylistitem::AkPlaylistItem)` — overload selector"]pub fn new_3(in_r_copy:crate::root::akplaylistitem::AkPlaylistItem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkPlaylistItem), ::core::stringify!(new_3),));
+ <Self as IAkPlaylistItemMethods> ::ctor_3(this,in_r_copy);
+this}
 }
 
 #[cfg(feature = "root-akplaylistitem")]

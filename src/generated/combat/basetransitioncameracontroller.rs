@@ -4,45 +4,142 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/basetransitioncameracontroller/BaseTransitionCameraController.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "BaseTransitionCameraController")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct BaseTransitionCameraController {
-# [offset (172)] # [rename (name = "ProgressTime")] pub progress_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/basetransitioncameracontroller/BaseTransitionCameraController.md"))]#[::unity2::class(namespace="Combat",name="BaseTransitionCameraController")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct BaseTransitionCameraController{#[offset(172)]#[rename(name="ProgressTime")]pub progress_time:f32,}
 
 }
 
 #[cfg(feature = "combat-basetransitioncameracontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-basetransitioncameracontroller")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BaseTransitionCameraController_unity2_raw { use super :: * ; pub unsafe fn get_transition_time_start (this : BaseTransitionCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_TransitionTimeStart") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_TransitionTimeStart" , < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseTransitionCameraController , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_transition_time_return (this : BaseTransitionCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_TransitionTimeReturn") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_TransitionTimeReturn" , < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseTransitionCameraController , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn start_transition (this : BaseTransitionCameraController , next_cam : crate :: combat :: basecameracontroller :: BaseCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("StartTransition") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "StartTransition" , < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseTransitionCameraController , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , next_cam , __mi) } pub unsafe fn change_taget (this : BaseTransitionCameraController , next_cam : crate :: combat :: basecameracontroller :: BaseCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ChangeTaget") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ChangeTaget" , < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseTransitionCameraController , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , next_cam , __mi) } pub unsafe fn return_transition (this : BaseTransitionCameraController , next_cam : crate :: combat :: basecameracontroller :: BaseCameraController , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ReturnTransition") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ReturnTransition" , < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseTransitionCameraController , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , next_cam , __mi) } }
+#[cfg(feature="combat-basetransitioncameracontroller")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseTransitionCameraController_unity2_raw{use super:: * ;
+pub unsafe fn get_transition_time_start(this:BaseTransitionCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_TransitionTimeStart").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_TransitionTimeStart", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseTransitionCameraController, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_transition_time_return(this:BaseTransitionCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_TransitionTimeReturn").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_TransitionTimeReturn", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseTransitionCameraController, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn start_transition(this:BaseTransitionCameraController,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("StartTransition").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","StartTransition", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseTransitionCameraController,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,next_cam,__mi)}
+pub unsafe fn change_taget(this:BaseTransitionCameraController,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ChangeTaget").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ChangeTaget", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseTransitionCameraController,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,next_cam,__mi)}
+pub unsafe fn return_transition(this:BaseTransitionCameraController,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ReturnTransition").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ReturnTransition", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseTransitionCameraController,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,next_cam,__mi)}
+}
 
-#[cfg(feature = "combat-basetransitioncameracontroller")]
-pub trait IBaseTransitionCameraControllerMethods : IBaseTransitionCameraController { # [doc = "`get_Phase()` overload"] fn get_phase (self ,) -> crate :: combat :: transitonphase :: TransitonPhase { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseTransitionCameraController , :: unity2 :: OptionalMethod ,) -> crate :: combat :: transitonphase :: TransitonPhase = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Phase(crate::combat::transitonphase::TransitonPhase)` overload"] fn set_phase (self , value : impl :: core :: convert :: Into < crate :: combat :: transitonphase :: TransitonPhase >) -> () { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseTransitionCameraController , crate :: combat :: transitonphase :: TransitonPhase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TransitionTimeStart()` overload"] fn get_transition_time_start (self ,) -> f32 { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseTransitionCameraController_unity2_raw :: get_transition_time_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_TransitionTimeReturn()` overload"] fn get_transition_time_return (self ,) -> f32 { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseTransitionCameraController_unity2_raw :: get_transition_time_return (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Progress()` overload"] fn get_progress (self ,) -> f32 { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseTransitionCameraController , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Progress(f32)` overload"] fn set_progress (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseTransitionCameraController , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TargetCamera()` overload"] fn get_target_camera (self ,) -> crate :: combat :: basecameracontroller :: BaseCameraController { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseTransitionCameraController , :: unity2 :: OptionalMethod ,) -> crate :: combat :: basecameracontroller :: BaseCameraController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TargetCamera(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn set_target_camera (self , value : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseTransitionCameraController , crate :: combat :: basecameracontroller :: BaseCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452fe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SourceCamera()` overload"] fn get_source_camera (self ,) -> crate :: unity_engine :: camera :: Camera { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseTransitionCameraController , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2452ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SourceCamera(crate::unity_engine::camera::Camera)` overload"] fn set_source_camera (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseTransitionCameraController , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`StartTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn start_transition (self , next_cam : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseTransitionCameraController_unity2_raw :: start_transition (__receiver , :: core :: convert :: Into :: into (next_cam) , :: core :: option :: Option :: None) } } # [doc = "`ChangeTaget(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn change_taget (self , next_cam : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseTransitionCameraController_unity2_raw :: change_taget (__receiver , :: core :: convert :: Into :: into (next_cam) , :: core :: option :: Option :: None) } } # [doc = "`ReturnTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"] fn return_transition (self , next_cam : impl :: core :: convert :: Into < crate :: combat :: basecameracontroller :: BaseCameraController >) -> () { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseTransitionCameraController_unity2_raw :: return_transition (__receiver , :: core :: convert :: Into :: into (next_cam) , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BaseTransitionCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseTransitionCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2453010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-basetransitioncameracontroller")]pub trait IBaseTransitionCameraControllerMethods:IBaseTransitionCameraController{#[doc="`get_Phase()` overload"]fn get_phase(self,)->crate::combat::transitonphase::TransitonPhase{unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452ea0usize)as*mut u8,crate::combat::transitonphase::TransitonPhase;
+(BaseTransitionCameraController)__receiver)}
+}
+#[doc="`set_Phase(crate::combat::transitonphase::TransitonPhase)` overload"]fn set_phase(self,value:impl::core::convert::Into<crate::combat::transitonphase::TransitonPhase>)->(){unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452eb0usize)as*mut u8,();
+(BaseTransitionCameraController)__receiver,(crate::combat::transitonphase::TransitonPhase)::core::convert::Into::into(value))}
+}
+#[doc="`get_TransitionTimeStart()` overload"]fn get_transition_time_start(self,)->f32{unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseTransitionCameraController_unity2_raw::get_transition_time_start(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_TransitionTimeReturn()` overload"]fn get_transition_time_return(self,)->f32{unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseTransitionCameraController_unity2_raw::get_transition_time_return(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Progress()` overload"]fn get_progress(self,)->f32{unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452ec0usize)as*mut u8,f32;
+(BaseTransitionCameraController)__receiver)}
+}
+#[doc="`set_Progress(f32)` overload"]fn set_progress(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452f50usize)as*mut u8,();
+(BaseTransitionCameraController)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TargetCamera()` overload"]fn get_target_camera(self,)->crate::combat::basecameracontroller::BaseCameraController{unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452fd0usize)as*mut u8,crate::combat::basecameracontroller::BaseCameraController;
+(BaseTransitionCameraController)__receiver)}
+}
+#[doc="`set_TargetCamera(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn set_target_camera(self,value:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452fe0usize)as*mut u8,();
+(BaseTransitionCameraController)__receiver,(crate::combat::basecameracontroller::BaseCameraController)::core::convert::Into::into(value))}
+}
+#[doc="`get_SourceCamera()` overload"]fn get_source_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2452ff0usize)as*mut u8,crate::unity_engine::camera::Camera;
+(BaseTransitionCameraController)__receiver)}
+}
+#[doc="`set_SourceCamera(crate::unity_engine::camera::Camera)` overload"]fn set_source_camera(self,value:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453000usize)as*mut u8,();
+(BaseTransitionCameraController)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(value))}
+}
+#[doc="`StartTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn start_transition(self,next_cam:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseTransitionCameraController_unity2_raw::start_transition(__receiver, ::core::convert::Into::into(next_cam), ::core::option::Option::None)}
+}
+#[doc="`ChangeTaget(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn change_taget(self,next_cam:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseTransitionCameraController_unity2_raw::change_taget(__receiver, ::core::convert::Into::into(next_cam), ::core::option::Option::None)}
+}
+#[doc="`ReturnTransition(crate::combat::basecameracontroller::BaseCameraController)` overload"]fn return_transition(self,next_cam:impl::core::convert::Into<crate::combat::basecameracontroller::BaseCameraController>)->(){unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseTransitionCameraController_unity2_raw::return_transition(__receiver, ::core::convert::Into::into(next_cam), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BaseTransitionCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2453010usize)as*mut u8,();
+(BaseTransitionCameraController)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-basetransitioncameracontroller")]
-impl < __T : IBaseTransitionCameraController > IBaseTransitionCameraControllerMethods for __T { }
+#[cfg(feature="combat-basetransitioncameracontroller")]impl<__T:IBaseTransitionCameraController>IBaseTransitionCameraControllerMethods for __T{}
 
-#[cfg(feature = "combat-basetransitioncameracontroller")]
-impl BaseTransitionCameraController { pub fn get_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_transition_time_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_transition_time_return_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_target_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_target_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_source_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_source_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn start_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn change_taget_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn return_transition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseTransitionCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="combat-basetransitioncameracontroller")]impl BaseTransitionCameraController{pub fn get_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_transition_time_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_transition_time_return_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_target_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_target_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_source_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_source_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn start_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn change_taget_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn return_transition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "combat-basetransitioncameracontroller")]
-impl BaseTransitionCameraController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BaseTransitionCameraController) , :: core :: stringify ! (new) ,)) ; < Self as IBaseTransitionCameraControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-basetransitioncameracontroller")]impl BaseTransitionCameraController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BaseTransitionCameraController), ::core::stringify!(new),));
+ <Self as IBaseTransitionCameraControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-basetransitioncameracontroller")]

@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/propertyname/PropertyName.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct PropertyName {
-    pub id: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/propertyname/PropertyName.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct PropertyName{pub id:i32,}
+impl::unity2::ClassIdentity for PropertyName{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="PropertyName";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for PropertyName {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "PropertyName";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for PropertyName {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for PropertyName{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,39 @@ impl ::unity2::IlType for PropertyName {
 #[cfg(feature = "unity_engine-propertyname-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-propertyname")]
-impl PropertyName { # [doc = "`op_Equality(crate::unity_engine::propertyname::PropertyName, crate::unity_engine::propertyname::PropertyName)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: propertyname :: PropertyName > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: propertyname :: PropertyName >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: propertyname :: PropertyName , crate :: unity_engine :: propertyname :: PropertyName , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8d70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-propertyname")]impl PropertyName{#[doc="`op_Equality(crate::unity_engine::propertyname::PropertyName, crate::unity_engine::propertyname::PropertyName)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::unity_engine::propertyname::PropertyName> ,rhs:impl::core::convert::Into<crate::unity_engine::propertyname::PropertyName>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8d70usize)as*mut u8,bool;
+(crate::unity_engine::propertyname::PropertyName)::core::convert::Into::into(lhs),(crate::unity_engine::propertyname::PropertyName)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "unity_engine-propertyname")]
-impl PropertyName { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] pub fn ctor (& mut self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut PropertyName , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8ca0usize) as * mut u8) ; __inner (self as * mut PropertyName , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::propertyname::PropertyName)` overload"] pub fn ctor_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: propertyname :: PropertyName >) -> () { unsafe { { let __inner : extern "C" fn (* mut PropertyName , crate :: unity_engine :: propertyname :: PropertyName , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8d60usize) as * mut u8) ; __inner (self as * mut PropertyName , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut PropertyName , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8d80usize) as * mut u8) ; __inner (self as * mut PropertyName , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut PropertyName , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8d90usize) as * mut u8) ; __inner (self as * mut PropertyName , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::propertyname::PropertyName)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: propertyname :: PropertyName >) -> bool { unsafe { { let __inner : extern "C" fn (* mut PropertyName , crate :: unity_engine :: propertyname :: PropertyName , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8e20usize) as * mut u8) ; __inner (self as * mut PropertyName , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut PropertyName , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8e30usize) as * mut u8) ; __inner (self as * mut PropertyName , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-propertyname")]impl PropertyName{#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8ca0usize)as*mut u8,();
+(*mut PropertyName)self as*mut PropertyName,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.ctor(crate::unity_engine::propertyname::PropertyName)` overload"]pub fn ctor_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::propertyname::PropertyName>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8d60usize)as*mut u8,();
+(*mut PropertyName)self as*mut PropertyName,(crate::unity_engine::propertyname::PropertyName)::core::convert::Into::into(other))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8d80usize)as*mut u8,i32;
+(*mut PropertyName)self as*mut PropertyName)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8d90usize)as*mut u8,bool;
+(*mut PropertyName)self as*mut PropertyName,(crate::system::object::Object)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::unity_engine::propertyname::PropertyName)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::propertyname::PropertyName>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8e20usize)as*mut u8,bool;
+(*mut PropertyName)self as*mut PropertyName,(crate::unity_engine::propertyname::PropertyName)::core::convert::Into::into(other))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f8e30usize)as*mut u8, ::unity2::Il2CppString;
+(*mut PropertyName)self as*mut PropertyName)}
+}
+}
 
-#[cfg(feature = "unity_engine-propertyname")]
-impl PropertyName { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PropertyName as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-propertyname")]impl PropertyName{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-propertyname")]
 #[doc(hidden)]

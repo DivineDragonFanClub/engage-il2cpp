@@ -4,40 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/particlebugfixcomponent/ParticleBugfixComponent.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ParticleBugfixComponent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ParticleBugfixComponent {
-# [offset (24)] # [rename (name = "targetNode")] pub target_node : crate :: unity_engine :: transform :: Transform ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/particlebugfixcomponent/ParticleBugfixComponent.md"))]#[::unity2::class(namespace="Combat",name="ParticleBugfixComponent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ParticleBugfixComponent{#[offset(24)]#[rename(name="targetNode")]pub target_node:crate::unity_engine::transform::Transform,}
 
 }
 
 #[cfg(feature = "combat-particlebugfixcomponent-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-particlebugfixcomponent")]
-pub trait IParticleBugfixComponentMethods : IParticleBugfixComponent { # [doc = "`Wakeup(crate::unity_engine::transform::Transform)` overload"] fn wakeup (self , node : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < ParticleBugfixComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParticleBugfixComponent , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f250d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (node) , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < ParticleBugfixComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParticleBugfixComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f250e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ParticleBugfixComponent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParticleBugfixComponent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-particlebugfixcomponent")]pub trait IParticleBugfixComponentMethods:IParticleBugfixComponent{#[doc="`Wakeup(crate::unity_engine::transform::Transform)` overload"]fn wakeup(self,node:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <ParticleBugfixComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f250d0usize)as*mut u8,();
+(ParticleBugfixComponent)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(node))}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <ParticleBugfixComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f250e0usize)as*mut u8,();
+(ParticleBugfixComponent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ParticleBugfixComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25200usize)as*mut u8,();
+(ParticleBugfixComponent)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-particlebugfixcomponent")]
-impl < __T : IParticleBugfixComponent > IParticleBugfixComponentMethods for __T { }
+#[cfg(feature="combat-particlebugfixcomponent")]impl<__T:IParticleBugfixComponent>IParticleBugfixComponentMethods for __T{}
 
-#[cfg(feature = "combat-particlebugfixcomponent")]
-impl ParticleBugfixComponent { pub fn wakeup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParticleBugfixComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParticleBugfixComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParticleBugfixComponent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-particlebugfixcomponent")]impl ParticleBugfixComponent{pub fn wakeup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-particlebugfixcomponent")]
-impl ParticleBugfixComponent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ParticleBugfixComponent) , :: core :: stringify ! (new) ,)) ; < Self as IParticleBugfixComponentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-particlebugfixcomponent")]impl ParticleBugfixComponent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ParticleBugfixComponent), ::core::stringify!(new),));
+ <Self as IParticleBugfixComponentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-particlebugfixcomponent")]

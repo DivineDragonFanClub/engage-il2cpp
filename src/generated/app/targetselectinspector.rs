@@ -4,36 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: personinspector :: { IPersonInspector , PersonInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::personinspector::{IPersonInspector,PersonInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/targetselectinspector/TargetSelectInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "TargetSelectInspector")] # [parent (crate :: app :: personinspector :: PersonInspector)] pub struct TargetSelectInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/targetselectinspector/TargetSelectInspector.md"))]#[::unity2::class(namespace="App",name="TargetSelectInspector")]#[parent(crate::app::personinspector::PersonInspector)]pub struct TargetSelectInspector{}
 
 }
 
 #[cfg(feature = "app-targetselectinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-targetselectinspector")]
-pub trait ITargetSelectInspectorMethods : ITargetSelectInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < TargetSelectInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TargetSelectInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ddfa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-targetselectinspector")]pub trait ITargetSelectInspectorMethods:ITargetSelectInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <TargetSelectInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ddfa0usize)as*mut u8,();
+(TargetSelectInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+}
 
-#[cfg(feature = "app-targetselectinspector")]
-impl < __T : ITargetSelectInspector > ITargetSelectInspectorMethods for __T { }
+#[cfg(feature="app-targetselectinspector")]impl<__T:ITargetSelectInspector>ITargetSelectInspectorMethods for __T{}
 
-#[cfg(feature = "app-targetselectinspector")]
-impl TargetSelectInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TargetSelectInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-targetselectinspector")]impl TargetSelectInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-targetselectinspector")]
-impl TargetSelectInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TargetSelectInspector) , :: core :: stringify ! (new) ,)) ; < Self as ITargetSelectInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-targetselectinspector")]impl TargetSelectInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TargetSelectInspector), ::core::stringify!(new),));
+ <Self as ITargetSelectInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-targetselectinspector")]

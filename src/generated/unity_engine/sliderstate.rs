@@ -4,34 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sliderstate/SliderState.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SliderState")] # [parent (crate :: system :: object :: Object)] pub struct SliderState {
-# [offset (16)] # [rename (name = "dragStartPos")] pub drag_start_pos : f32 ,
-# [offset (20)] # [rename (name = "dragStartValue")] pub drag_start_value : f32 ,
-# [offset (24)] # [rename (name = "isDragging")] pub is_dragging : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/sliderstate/SliderState.md"))]#[::unity2::class(namespace="UnityEngine",name="SliderState")]#[parent(crate::system::object::Object)]pub struct SliderState{#[offset(16)]#[rename(name="dragStartPos")]pub drag_start_pos:f32, #[offset(20)]#[rename(name="dragStartValue")]pub drag_start_value:f32, #[offset(24)]#[rename(name="isDragging")]pub is_dragging:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-sliderstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-sliderstate")]
-pub trait ISliderStateMethods : ISliderState { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SliderState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SliderState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c53b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-sliderstate")]pub trait ISliderStateMethods:ISliderState{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SliderState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c53b80usize)as*mut u8,();
+(SliderState)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-sliderstate")]
-impl < __T : ISliderState > ISliderStateMethods for __T { }
+#[cfg(feature="unity_engine-sliderstate")]impl<__T:ISliderState>ISliderStateMethods for __T{}
 
-#[cfg(feature = "unity_engine-sliderstate")]
-impl SliderState { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SliderState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-sliderstate")]impl SliderState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-sliderstate")]
-impl SliderState {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SliderState) , :: core :: stringify ! (new) ,)) ; < Self as ISliderStateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-sliderstate")]impl SliderState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SliderState), ::core::stringify!(new),));
+ <Self as ISliderStateMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-sliderstate")]

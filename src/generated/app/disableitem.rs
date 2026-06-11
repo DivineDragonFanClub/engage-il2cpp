@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: menuitem :: { IMenuItem , MenuItem }
- ;
- use crate :: app :: stringitem :: { IStringItem , StringItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::menuitem::{IMenuItem,MenuItem}
+;
+use crate::app::stringitem::{IStringItem,StringItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disableitem/DisableItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "DisableItem")] # [parent (crate :: app :: stringitem :: StringItem)] pub struct DisableItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disableitem/DisableItem.md"))]#[::unity2::class(namespace="App",name="DisableItem")]#[parent(crate::app::stringitem::StringItem)]pub struct DisableItem{}
 
 }
 
 #[cfg(feature = "app-disableitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-disableitem")]
-pub trait IDisableItemMethods : IDisableItem { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DisableItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DisableItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceea30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnable()` overload"] fn is_enable (self ,) -> bool { unsafe { let __receiver = < DisableItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DisableItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceea40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-disableitem")]pub trait IDisableItemMethods:IDisableItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DisableItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceea30usize)as*mut u8,();
+(DisableItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <DisableItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceea40usize)as*mut u8,bool;
+(DisableItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-disableitem")]
-impl < __T : IDisableItem > IDisableItemMethods for __T { }
+#[cfg(feature="app-disableitem")]impl<__T:IDisableItem>IDisableItemMethods for __T{}
 
-#[cfg(feature = "app-disableitem")]
-impl DisableItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisableItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DisableItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-disableitem")]impl DisableItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-disableitem")]
-impl DisableItem {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DisableItem) , :: core :: stringify ! (new) ,)) ; < Self as IDisableItemMethods > :: ctor (this , name) ; this }
+#[cfg(feature="app-disableitem")]impl DisableItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisableItem), ::core::stringify!(new),));
+ <Self as IDisableItemMethods> ::ctor(this,name);
+this}
 }
 
 #[cfg(feature = "app-disableitem")]

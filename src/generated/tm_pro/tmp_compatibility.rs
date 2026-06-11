@@ -4,130 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_compatibility/TMP_Compatibility_AnchorPositions.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TMP_Compatibility_AnchorPositions  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_compatibility/TMP_Compatibility_AnchorPositions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_Compatibility_AnchorPositions{pub value:i32,}
+impl::unity2::ClassIdentity for TMP_Compatibility_AnchorPositions{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_Compatibility.AnchorPositions";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TMP_Compatibility_AnchorPositions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TMP_Compatibility_AnchorPositions{pub fn top_left()->Self{Self{value:0}
+}
+pub fn top()->Self{Self{value:1}
+}
+pub fn top_right()->Self{Self{value:2}
+}
+pub fn left()->Self{Self{value:3}
+}
+pub fn center()->Self{Self{value:4}
+}
+pub fn right()->Self{Self{value:5}
+}
+pub fn bottom_left()->Self{Self{value:6}
+}
+pub fn bottom()->Self{Self{value:7}
+}
+pub fn bottom_right()->Self{Self{value:8}
+}
+pub fn base_line()->Self{Self{value:9}
+}
+pub fn none()->Self{Self{value:10}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for TMP_Compatibility_AnchorPositions  {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_Compatibility.AnchorPositions";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TMP_Compatibility_AnchorPositions  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TMP_Compatibility_AnchorPositions  {
-    pub fn top_left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn top_right() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn center() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn bottom_left() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn bottom() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn bottom_right() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn base_line() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn none() -> Self {
-        Self { value: 10 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Compatibility")] # [parent (crate :: system :: object :: Object)] pub struct TMP_Compatibility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Compatibility")]#[parent(crate::system::object::Object)]pub struct TMP_Compatibility{}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_compatibility-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_compatibility")]
-impl TMP_Compatibility { # [doc = "`ConvertTextAlignmentEnumValues(crate::tm_pro::textalignmentoptions::TextAlignmentOptions)` overload"] pub fn convert_text_alignment_enum_values (old_value : impl :: core :: convert :: Into < crate :: tm_pro :: textalignmentoptions :: TextAlignmentOptions >) -> crate :: tm_pro :: textalignmentoptions :: TextAlignmentOptions { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: textalignmentoptions :: TextAlignmentOptions , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textalignmentoptions :: TextAlignmentOptions = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d916d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (old_value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_compatibility")]impl TMP_Compatibility{#[doc="`ConvertTextAlignmentEnumValues(crate::tm_pro::textalignmentoptions::TextAlignmentOptions)` overload"]pub fn convert_text_alignment_enum_values(old_value:impl::core::convert::Into<crate::tm_pro::textalignmentoptions::TextAlignmentOptions>)->crate::tm_pro::textalignmentoptions::TextAlignmentOptions{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d916d0usize)as*mut u8,crate::tm_pro::textalignmentoptions::TextAlignmentOptions;
+(crate::tm_pro::textalignmentoptions::TextAlignmentOptions)::core::convert::Into::into(old_value))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_compatibility")]
-impl TMP_Compatibility { pub fn convert_text_alignment_enum_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Compatibility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="tm_pro-tmp_compatibility")]impl TMP_Compatibility{pub fn convert_text_alignment_enum_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "tm_pro-tmp_compatibility")]
 #[doc(hidden)]

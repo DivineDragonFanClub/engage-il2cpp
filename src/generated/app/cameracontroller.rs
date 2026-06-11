@@ -4,49 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cameracontroller/CameraController.md"))] # [:: unity2 :: class (namespace = "App" , name = "CameraController")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: cameracontroller :: CameraController >)] pub struct CameraController {
-# [offset (32)] # [rename (name = "m_Hash")] pub m_hash : i32 ,
-# [offset (36)] # [rename (name = "m_Original")] pub m_original : crate :: app :: cameraparameter :: CameraParameter ,
-# [offset (64)] # [rename (name = "m_Operation")] pub m_operation : crate :: app :: cameraparameter :: CameraParameter ,
-# [offset (92)] # [rename (name = "m_Updated")] pub m_updated : bool ,
-# [offset (96)] # [rename (name = "m_NearClipPlane")] pub m_near_clip_plane : f32 ,
-# [offset (100)] # [rename (name = "m_FarClipPlane")] pub m_far_clip_plane : f32 ,
-# [offset (104)] # [rename (name = "m_MouseX")] pub m_mouse_x : f32 ,
-# [offset (108)] # [rename (name = "m_MouseY")] pub m_mouse_y : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cameracontroller/CameraController.md"))]#[::unity2::class(namespace="App",name="CameraController")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::cameracontroller::CameraController>)]pub struct CameraController{#[offset(32)]#[rename(name="m_Hash")]pub m_hash:i32, #[offset(36)]#[rename(name="m_Original")]pub m_original:crate::app::cameraparameter::CameraParameter, #[offset(64)]#[rename(name="m_Operation")]pub m_operation:crate::app::cameraparameter::CameraParameter, #[offset(92)]#[rename(name="m_Updated")]pub m_updated:bool, #[offset(96)]#[rename(name="m_NearClipPlane")]pub m_near_clip_plane:f32, #[offset(100)]#[rename(name="m_FarClipPlane")]pub m_far_clip_plane:f32, #[offset(104)]#[rename(name="m_MouseX")]pub m_mouse_x:f32, #[offset(108)]#[rename(name="m_MouseY")]pub m_mouse_y:f32,}
 
 }
 
 #[cfg(feature = "app-cameracontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-cameracontroller")]
-pub trait ICameraControllerMethods : ICameraController { # [doc = "`get_NearClipPlane()` overload"] fn get_near_clip_plane (self ,) -> f32 { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NearClipPlane(f32)` overload"] fn set_near_clip_plane (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FarClipPlane()` overload"] fn get_far_clip_plane (self ,) -> f32 { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FarClipPlane(f32)` overload"] fn set_far_clip_plane (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryChange(crate::unity_engine::camera::Camera)` overload"] fn try_change (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994c90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`TryInitialize(crate::unity_engine::camera::Camera)` overload"] fn try_initialize (self , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2994e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2995a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-cameracontroller")]pub trait ICameraControllerMethods:ICameraController{#[doc="`get_NearClipPlane()` overload"]fn get_near_clip_plane(self,)->f32{unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994b20usize)as*mut u8,f32;
+(CameraController)__receiver)}
+}
+#[doc="`set_NearClipPlane(f32)` overload"]fn set_near_clip_plane(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994b30usize)as*mut u8,();
+(CameraController)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_FarClipPlane()` overload"]fn get_far_clip_plane(self,)->f32{unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994b40usize)as*mut u8,f32;
+(CameraController)__receiver)}
+}
+#[doc="`set_FarClipPlane(f32)` overload"]fn set_far_clip_plane(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994b50usize)as*mut u8,();
+(CameraController)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994b60usize)as*mut u8,();
+(CameraController)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994b70usize)as*mut u8,();
+(CameraController)__receiver)}
+}
+#[doc="`TryChange(crate::unity_engine::camera::Camera)` overload"]fn try_change(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994c90usize)as*mut u8,bool;
+(CameraController)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`TryInitialize(crate::unity_engine::camera::Camera)` overload"]fn try_initialize(self,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994df0usize)as*mut u8,bool;
+(CameraController)__receiver,(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2994e50usize)as*mut u8,();
+(CameraController)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2995a10usize)as*mut u8,();
+(CameraController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-cameracontroller")]
-impl < __T : ICameraController > ICameraControllerMethods for __T { }
+#[cfg(feature="app-cameracontroller")]impl<__T:ICameraController>ICameraControllerMethods for __T{}
 
-#[cfg(feature = "app-cameracontroller")]
-impl CameraController { pub fn get_near_clip_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_near_clip_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_far_clip_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_far_clip_plane_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn try_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn try_initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-cameracontroller")]impl CameraController{pub fn get_near_clip_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_near_clip_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_far_clip_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_far_clip_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn try_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn try_initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-cameracontroller")]
-impl CameraController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraController) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-cameracontroller")]impl CameraController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraController), ::core::stringify!(new),));
+ <Self as ICameraControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-cameracontroller")]

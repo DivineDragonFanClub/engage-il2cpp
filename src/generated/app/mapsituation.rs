@@ -4,328 +4,608 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Status.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSituation_Status  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSituation_Status{pub value:i32,}
+impl::unity2::ClassIdentity for MapSituation_Status{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSituation.Status";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSituation_Status{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSituation_Status{pub fn win_rule_breakdown()->Self{Self{value:1}
+}
+pub fn win_rule_destroy_boss()->Self{Self{value:2}
+}
+pub fn sequence_replay_cancel()->Self{Self{value:134217728}
+}
+pub fn sequence_opening()->Self{Self{value:268435456}
+}
+pub fn sequence_ai_entrust_cancel()->Self{Self{value:536870912}
+}
+pub fn sequence_ai()->Self{Self{value:1073741824}
+}
+pub fn sequence_mind()->Self{Self{value: -2147483648}
+}
+pub fn win_rule_mask()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapSituation_Status  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation.md"))]#[::unity2::class(namespace="App",name="MapSituation")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapsituation::MapSituation>)]pub struct MapSituation{#[static_field]#[rename(name="TurnMax")]pub turn_max:i32, #[offset(32)]#[rename(name="m_Status")]pub m_status:crate::app::mapsituation::MapSituation_StatusField, #[offset(40)]#[rename(name="m_Players")]pub m_players: ::unity2::Array<crate::app::mapsituation::MapSituation_Player> , #[offset(48)]#[rename(name="m_Groups")]pub m_groups: ::unity2::Array<crate::app::force::Force_Type> , #[offset(56)]#[rename(name="m_CurrentForceType")]pub m_current_force_type:crate::app::force::Force_Type, #[offset(60)]#[rename(name="m_HumanForceType")]pub m_human_force_type:crate::app::force::Force_Type, #[offset(64)]#[rename(name="m_ForceCursors")]pub m_force_cursors: ::unity2::Array<crate::app::mapsituation::MapSituation_ForceCursor> , #[offset(72)]#[rename(name="m_Turn")]pub m_turn:i32, #[offset(76)]#[rename(name="m_SubPhase")]pub m_sub_phase:crate::app::mapsituation::MapSituation_SubPhases, #[offset(80)]#[rename(name="m_WinRuleEnemyNumLessThanOrEqualTo")]pub m_win_rule_enemy_num_less_than_or_equal_to:i32, #[offset(84)]#[rename(name="m_WinRuleLimitTurn")]pub m_win_rule_limit_turn:i32, #[offset(88)]#[rename(name="m_WinLoseResult")]pub m_win_lose_result:crate::app::winloserule::WinLoseRule, #[offset(92)]#[rename(name="m_Entrust")]pub m_entrust:crate::app::unitentrust::UnitEntrust_Type, #[offset(96)]#[rename(name="m_WinRuleMID")]pub m_win_rule_mid: ::unity2::Il2CppString, #[offset(104)]#[rename(name="m_WinRuleMIDArg")]pub m_win_rule_mid_arg: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_LoseRuleMID")]pub m_lose_rule_mid: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_LoseRuleMIDArg")]pub m_lose_rule_mid_arg: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_AverageLevel")]pub m_average_level:i32,}
 
-    const NAME: &'static str = "MapSituation.Status";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_Player.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSituation_Player{pub value:i32,}
+impl::unity2::ClassIdentity for MapSituation_Player{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSituation.Player";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSituation_Player{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSituation_Player{pub fn none()->Self{Self{value:0}
+}
+pub fn human()->Self{Self{value:1}
+}
+pub fn ai()->Self{Self{value:2}
+}
+pub fn link()->Self{Self{value:3}
+}
+pub fn replay()->Self{Self{value:4}
+}
+pub fn num()->Self{Self{value:5}
+}
 }
 
 
-impl  ::unity2::IlType for MapSituation_Status  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_StatusField.md"))]#[::unity2::class(namespace="App",name="MapSituation.StatusField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::mapsituation::MapSituation_Status>)]pub struct MapSituation_StatusField{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_SubPhases.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSituation_SubPhases{pub value:i32,}
+impl::unity2::ClassIdentity for MapSituation_SubPhases{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSituation.SubPhases";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSituation_SubPhases{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSituation_SubPhases{pub fn normal()->Self{Self{value:0}
+}
+pub fn charm_confusion()->Self{Self{value:1}
+}
+pub fn num()->Self{Self{value:2}
+}
 }
 
 
-impl  MapSituation_Status  {
-    pub fn win_rule_breakdown() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn win_rule_destroy_boss() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn sequence_replay_cancel() -> Self {
-        Self { value: 134217728 }
-
-    }
-
-
-    pub fn sequence_opening() -> Self {
-        Self { value: 268435456 }
-
-    }
-
-
-    pub fn sequence_ai_entrust_cancel() -> Self {
-        Self { value: 536870912 }
-
-    }
-
-
-    pub fn sequence_ai() -> Self {
-        Self { value: 1073741824 }
-
-    }
-
-
-    pub fn sequence_mind() -> Self {
-        Self { value: -2147483648 }
-
-    }
-
-
-    pub fn win_rule_mask() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_SubPhases.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSituation_SubPhases  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapSituation_SubPhases  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSituation.SubPhases";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSituation_SubPhases  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSituation_SubPhases  {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn charm_confusion() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSituation")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsituation :: MapSituation >)] pub struct MapSituation {
-# [static_field] # [rename (name = "TurnMax")] pub turn_max : i32 ,
-# [offset (32)] # [rename (name = "m_Status")] pub m_status : crate :: app :: mapsituation :: MapSituation_StatusField ,
-# [offset (40)] # [rename (name = "m_Players")] pub m_players : :: unity2 :: Array < crate :: app :: mapsituation :: MapSituation_Player > ,
-# [offset (48)] # [rename (name = "m_Groups")] pub m_groups : :: unity2 :: Array < crate :: app :: force :: Force_Type > ,
-# [offset (56)] # [rename (name = "m_CurrentForceType")] pub m_current_force_type : crate :: app :: force :: Force_Type ,
-# [offset (60)] # [rename (name = "m_HumanForceType")] pub m_human_force_type : crate :: app :: force :: Force_Type ,
-# [offset (64)] # [rename (name = "m_ForceCursors")] pub m_force_cursors : :: unity2 :: Array < crate :: app :: mapsituation :: MapSituation_ForceCursor > ,
-# [offset (72)] # [rename (name = "m_Turn")] pub m_turn : i32 ,
-# [offset (76)] # [rename (name = "m_SubPhase")] pub m_sub_phase : crate :: app :: mapsituation :: MapSituation_SubPhases ,
-# [offset (80)] # [rename (name = "m_WinRuleEnemyNumLessThanOrEqualTo")] pub m_win_rule_enemy_num_less_than_or_equal_to : i32 ,
-# [offset (84)] # [rename (name = "m_WinRuleLimitTurn")] pub m_win_rule_limit_turn : i32 ,
-# [offset (88)] # [rename (name = "m_WinLoseResult")] pub m_win_lose_result : crate :: app :: winloserule :: WinLoseRule ,
-# [offset (92)] # [rename (name = "m_Entrust")] pub m_entrust : crate :: app :: unitentrust :: UnitEntrust_Type ,
-# [offset (96)] # [rename (name = "m_WinRuleMID")] pub m_win_rule_mid : :: unity2 :: Il2CppString ,
-# [offset (104)] # [rename (name = "m_WinRuleMIDArg")] pub m_win_rule_mid_arg : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_LoseRuleMID")] pub m_lose_rule_mid : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_LoseRuleMIDArg")] pub m_lose_rule_mid_arg : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_AverageLevel")] pub m_average_level : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_StatusField.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSituation.StatusField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsituation :: MapSituation_Status >)] pub struct MapSituation_StatusField {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_ForceCursor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSituation.ForceCursor")] # [parent (crate :: system :: object :: Object)] pub struct MapSituation_ForceCursor {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Player.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSituation_Player  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapSituation_Player  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSituation.Player";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSituation_Player  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSituation_Player  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn human() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn ai() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn link() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn replay() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsituation/MapSituation_ForceCursor.md"))]#[::unity2::class(namespace="App",name="MapSituation.ForceCursor")]#[parent(crate::system::object::Object)]pub struct MapSituation_ForceCursor{}
 
 }
 
 #[cfg(feature = "app-mapsituation-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation { # [doc = "`GetWinRuleString()` overload"] pub fn get_win_rule_string () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d8a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetLoseRuleString()` overload"] pub fn get_lose_rule_string () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4db30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsHeroLose()` overload"] pub fn is_hero_lose () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4dd10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetHeroUnitForLoseRuleString()` overload"] pub fn get_hero_unit_for_lose_rule_string () -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4de00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsituation")]
-pub trait IMapSituationMethods : IMapSituation { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetStatus()` overload"] fn get_status (self ,) -> crate :: app :: mapsituation :: MapSituation_StatusField { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsituation :: MapSituation_StatusField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetStatus(crate::app::mapsituation::MapSituation_Status)` overload"] fn set_status (self , status : impl :: core :: convert :: Into < crate :: app :: mapsituation :: MapSituation_Status >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: mapsituation :: MapSituation_Status , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f30850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (status) , :: core :: option :: Option :: None) } } } # [doc = "`ClearStatus(crate::app::mapsituation::MapSituation_Status)` overload"] fn clear_status (self , status : impl :: core :: convert :: Into < crate :: app :: mapsituation :: MapSituation_Status >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: mapsituation :: MapSituation_Status , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (status) , :: core :: option :: Option :: None) } } } # [doc = "`CheckStatus(crate::app::mapsituation::MapSituation_Status)` overload"] fn check_status (self , status : impl :: core :: convert :: Into < crate :: app :: mapsituation :: MapSituation_Status >) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: mapsituation :: MapSituation_Status , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f308c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (status) , :: core :: option :: Option :: None) } } } # [doc = "`NotStatus(crate::app::mapsituation::MapSituation_Status)` overload"] fn not_status (self , status : impl :: core :: convert :: Into < crate :: app :: mapsituation :: MapSituation_Status >) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: mapsituation :: MapSituation_Status , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f307e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (status) , :: core :: option :: Option :: None) } } } # [doc = "`SetPlayer(crate::app::force::Force_Type, crate::app::mapsituation::MapSituation_Player)` overload"] fn set_player (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , player : impl :: core :: convert :: Into < crate :: app :: mapsituation :: MapSituation_Player >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , crate :: app :: mapsituation :: MapSituation_Player , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: convert :: Into :: into (player) , :: core :: option :: Option :: None) } } } # [doc = "`GetPlayer(crate::app::force::Force_Type)` overload"] fn get_player (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> crate :: app :: mapsituation :: MapSituation_Player { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsituation :: MapSituation_Player = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`SetGroup(crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"] fn set_group (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , group : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: convert :: Into :: into (group) , :: core :: option :: Option :: None) } } } # [doc = "`GetGroup(crate::app::force::Force_Type)` overload"] fn get_group (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> crate :: app :: force :: Force_Type { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48e70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`IsAllide(crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"] fn is_allide (self , force1 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , force2 : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48ec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force1) , :: core :: convert :: Into :: into (force2) , :: core :: option :: Option :: None) } } } # [doc = "`GetCurrentPlayer()` overload"] fn get_current_player (self ,) -> crate :: app :: mapsituation :: MapSituation_Player { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsituation :: MapSituation_Player = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCurrentForce()` overload"] fn get_current_force (self ,) -> crate :: app :: force :: Force { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsHumanPlayer(crate::app::force::Force_Type)` overload"] fn is_human_player (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f48fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`IsHumanPlayer()` overload"] fn is_human_player_2 (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetForceCursor(crate::app::force::Force_Type)` overload"] fn get_force_cursor (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> crate :: app :: mapsituation :: MapSituation_ForceCursor { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsituation :: MapSituation_ForceCursor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`NextSubPhase()` overload"] fn next_sub_phase (self ,) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f490b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetSubPhase()` overload"] fn reset_sub_phase (self ,) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f490d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCasual()` overload"] fn is_casual (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f490e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPhoenix()` overload"] fn is_phoenix (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2eeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsVersus()` overload"] fn is_versus (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRelay()` overload"] fn is_relay (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsChallenge()` overload"] fn is_challenge (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsTrial()` overload"] fn is_trial (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f492d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsResurrect()` overload"] fn is_resurrect (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRecordKill(crate::app::force::Force_Type)` overload"] fn is_record_kill (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`IsRecordDead(crate::app::force::Force_Type)` overload"] fn is_record_dead (self , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f497b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`IsShowOrder()` overload"] fn is_show_order (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanOrder()` overload"] fn can_order (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f499f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsShowEscape()` overload"] fn is_show_escape (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanEscape()` overload"] fn can_escape (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanExistenceDie()` overload"] fn can_existence_die (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsShowTurn()` overload"] fn is_show_turn (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsComplete()` overload"] fn is_complete (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2e930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsGameOver()` overload"] fn is_game_over (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f306e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRelayUnsettled()` overload"] fn is_relay_unsettled (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEntrustAI()` overload"] fn is_entrust_ai (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNotReturnMap()` overload"] fn is_not_return_map (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCancelOperation()` overload"] fn is_cancel_operation (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsErrorOperation()` overload"] fn is_error_operation (self ,) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMessageWaitFrame()` overload"] fn get_message_wait_frame (self ,) -> i32 { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TurnEnd()` overload"] fn turn_end (self ,) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f49cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TurnNext()` overload"] fn turn_next (self ,) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4a850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GameEndCheck()` overload"] fn game_end_check (self ,) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4a900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoseUnitDead(crate::app::unit::Unit)` overload"] fn is_lose_unit_dead (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4bfd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GameEndCheckUnitDead(crate::app::unit::Unit)` overload"] fn game_end_check_unit_dead (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4c280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetComplete(crate::app::winloserule::WinLoseRule)` overload"] fn set_complete (self , result : impl :: core :: convert :: Into < crate :: app :: winloserule :: WinLoseRule >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: winloserule :: WinLoseRule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4a570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } # [doc = "`SetGameOver(crate::app::winloserule::WinLoseRule)` overload"] fn set_game_over (self , result : impl :: core :: convert :: Into < crate :: app :: winloserule :: WinLoseRule >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: winloserule :: WinLoseRule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4a290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: option :: Option :: None) } } } # [doc = "`SetRelayUnsettled()` overload"] fn set_relay_unsettled (self ,) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4a0a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4c360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4c370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4c650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`get_CurrentForceType()` overload"] fn get_current_force_type (self ,) -> crate :: app :: force :: Force_Type { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CurrentForceType(crate::app::force::Force_Type)` overload"] fn set_current_force_type (self , value : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HumanForceType()` overload"] fn get_human_force_type (self ,) -> crate :: app :: force :: Force_Type { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_HumanForceType(crate::app::force::Force_Type)` overload"] fn set_human_force_type (self , value : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HeroForceType()` overload"] fn get_hero_force_type (self ,) -> crate :: app :: force :: Force_Type { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Turn()` overload"] fn get_turn (self ,) -> i32 { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Turn(i32)` overload"] fn set_turn (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SubPhase()` overload"] fn get_sub_phase (self ,) -> crate :: app :: mapsituation :: MapSituation_SubPhases { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapsituation :: MapSituation_SubPhases = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_WinRuleEnemyNumLessThanOrEqualTo()` overload"] fn get_win_rule_enemy_num_less_than_or_equal_to (self ,) -> i32 { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WinRuleEnemyNumLessThanOrEqualTo(i32)` overload"] fn set_win_rule_enemy_num_less_than_or_equal_to (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d7a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WinRuleLimitTurn()` overload"] fn get_win_rule_limit_turn (self ,) -> i32 { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WinRuleLimitTurn(i32)` overload"] fn set_win_rule_limit_turn (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WinLoseResult()` overload"] fn get_win_lose_result (self ,) -> crate :: app :: winloserule :: WinLoseRule { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> crate :: app :: winloserule :: WinLoseRule = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Entrust()` overload"] fn get_entrust (self ,) -> crate :: app :: unitentrust :: UnitEntrust_Type { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitentrust :: UnitEntrust_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Entrust(crate::app::unitentrust::UnitEntrust_Type)` overload"] fn set_entrust (self , value : impl :: core :: convert :: Into < crate :: app :: unitentrust :: UnitEntrust_Type >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , crate :: app :: unitentrust :: UnitEntrust_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d7f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WinRuleMID()` overload"] fn get_win_rule_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WinRuleMID(::unity2::Il2CppString)` overload"] fn set_win_rule_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WinRuleMIDArg()` overload"] fn get_win_rule_mid_arg (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WinRuleMIDArg(::unity2::Il2CppString)` overload"] fn set_win_rule_mid_arg (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LoseRuleMID()` overload"] fn get_lose_rule_mid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LoseRuleMID(::unity2::Il2CppString)` overload"] fn set_lose_rule_mid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LoseRuleMIDArg()` overload"] fn get_lose_rule_mid_arg (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LoseRuleMIDArg(::unity2::Il2CppString)` overload"] fn set_lose_rule_mid_arg (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AverageLevel()` overload"] fn get_average_level (self ,) -> i32 { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AverageLevel(i32)` overload"] fn set_average_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSituation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f4d890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsituation")]
-impl < __T : IMapSituation > IMapSituationMethods for __T { }
-
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn check_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn not_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_allide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_current_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_current_force_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_human_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_human_player_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_force_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn next_sub_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn reset_sub_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_phoenix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_versus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn is_relay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn is_challenge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn is_trial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn is_resurrect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn is_record_kill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn is_record_dead_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn is_show_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn can_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn is_show_escape_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn can_escape_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn can_existence_die_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn is_show_turn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn is_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn is_game_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn is_relay_unsettled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn is_entrust_ai_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn is_not_return_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn is_cancel_operation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn is_error_operation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_message_wait_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn turn_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn turn_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn game_end_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn is_lose_unit_dead_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn game_end_check_unit_dead_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn set_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn set_game_over_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn set_relay_unsettled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn get_current_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn set_current_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn get_human_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn set_human_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn get_hero_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn get_turn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn set_turn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn get_sub_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn get_win_rule_enemy_num_less_than_or_equal_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn set_win_rule_enemy_num_less_than_or_equal_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn get_win_rule_limit_turn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn set_win_rule_limit_turn_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn get_win_lose_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn get_entrust_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn set_entrust_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn get_win_rule_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn set_win_rule_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn get_win_rule_mid_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn set_win_rule_mid_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn get_lose_rule_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn set_lose_rule_mid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn get_lose_rule_mid_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn set_lose_rule_mid_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn get_average_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn set_average_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn get_win_rule_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } pub fn get_lose_rule_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [79] } pub fn is_hero_lose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [80] } pub fn get_hero_unit_for_lose_rule_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [81] } }
-
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSituation) , :: core :: stringify ! (new) ,)) ; < Self as IMapSituationMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsituation")]impl MapSituation{#[doc="`GetWinRuleString()` overload"]pub fn get_win_rule_string()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d8a0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`GetLoseRuleString()` overload"]pub fn get_lose_rule_string()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f4db30usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`IsHeroLose()` overload"]pub fn is_hero_lose()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f4dd10usize)as*mut u8,bool;
+)}
+}
+#[doc="`GetHeroUnitForLoseRuleString()` overload"]pub fn get_hero_unit_for_lose_rule_string()->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f4de00usize)as*mut u8,crate::app::unit::Unit;
+)}
+}
 }
 
-#[cfg(feature = "app-mapsituation")]
-pub trait IMapSituation_StatusFieldMethods : IMapSituation_StatusField { # [doc = "`ToInt(crate::app::mapsituation::MapSituation_Status)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: mapsituation :: MapSituation_Status >) -> i32 { unsafe { let __receiver = < MapSituation_StatusField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation_StatusField , crate :: app :: mapsituation :: MapSituation_Status , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3bcd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSituation_StatusField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation_StatusField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3bce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapsituation")]
-impl < __T : IMapSituation_StatusField > IMapSituation_StatusFieldMethods for __T { }
-
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation_StatusField { pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation_StatusField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation_StatusField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation_StatusField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSituation_StatusField) , :: core :: stringify ! (new) ,)) ; < Self as IMapSituation_StatusFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsituation")]pub trait IMapSituationMethods:IMapSituation{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48a90usize)as*mut u8,();
+(MapSituation)__receiver)}
+}
+#[doc="`GetStatus()` overload"]fn get_status(self,)->crate::app::mapsituation::MapSituation_StatusField{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48d90usize)as*mut u8,crate::app::mapsituation::MapSituation_StatusField;
+(MapSituation)__receiver)}
+}
+#[doc="`SetStatus(crate::app::mapsituation::MapSituation_Status)` overload"]fn set_status(self,status:impl::core::convert::Into<crate::app::mapsituation::MapSituation_Status>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f30850usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::mapsituation::MapSituation_Status)::core::convert::Into::into(status))}
+}
+#[doc="`ClearStatus(crate::app::mapsituation::MapSituation_Status)` overload"]fn clear_status(self,status:impl::core::convert::Into<crate::app::mapsituation::MapSituation_Status>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f870usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::mapsituation::MapSituation_Status)::core::convert::Into::into(status))}
+}
+#[doc="`CheckStatus(crate::app::mapsituation::MapSituation_Status)` overload"]fn check_status(self,status:impl::core::convert::Into<crate::app::mapsituation::MapSituation_Status>)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f308c0usize)as*mut u8,bool;
+(MapSituation)__receiver,(crate::app::mapsituation::MapSituation_Status)::core::convert::Into::into(status))}
+}
+#[doc="`NotStatus(crate::app::mapsituation::MapSituation_Status)` overload"]fn not_status(self,status:impl::core::convert::Into<crate::app::mapsituation::MapSituation_Status>)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f307e0usize)as*mut u8,bool;
+(MapSituation)__receiver,(crate::app::mapsituation::MapSituation_Status)::core::convert::Into::into(status))}
+}
+#[doc="`SetPlayer(crate::app::force::Force_Type, crate::app::mapsituation::MapSituation_Player)` overload"]fn set_player(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,player:impl::core::convert::Into<crate::app::mapsituation::MapSituation_Player>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48da0usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(crate::app::mapsituation::MapSituation_Player)::core::convert::Into::into(player))}
+}
+#[doc="`GetPlayer(crate::app::force::Force_Type)` overload"]fn get_player(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::app::mapsituation::MapSituation_Player{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48de0usize)as*mut u8,crate::app::mapsituation::MapSituation_Player;
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`SetGroup(crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"]fn set_group(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,group:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48e30usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(crate::app::force::Force_Type)::core::convert::Into::into(group))}
+}
+#[doc="`GetGroup(crate::app::force::Force_Type)` overload"]fn get_group(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::app::force::Force_Type{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48e70usize)as*mut u8,crate::app::force::Force_Type;
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`IsAllide(crate::app::force::Force_Type, crate::app::force::Force_Type)` overload"]fn is_allide(self,force1:impl::core::convert::Into<crate::app::force::Force_Type> ,force2:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48ec0usize)as*mut u8,bool;
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force1),(crate::app::force::Force_Type)::core::convert::Into::into(force2))}
+}
+#[doc="`GetCurrentPlayer()` overload"]fn get_current_player(self,)->crate::app::mapsituation::MapSituation_Player{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48f50usize)as*mut u8,crate::app::mapsituation::MapSituation_Player;
+(MapSituation)__receiver)}
+}
+#[doc="`GetCurrentForce()` overload"]fn get_current_force(self,)->crate::app::force::Force{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48fa0usize)as*mut u8,crate::app::force::Force;
+(MapSituation)__receiver)}
+}
+#[doc="`IsHumanPlayer(crate::app::force::Force_Type)` overload"]fn is_human_player(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f48fb0usize)as*mut u8,bool;
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`IsHumanPlayer()` overload"]fn is_human_player_2(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49000usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`GetForceCursor(crate::app::force::Force_Type)` overload"]fn get_force_cursor(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->crate::app::mapsituation::MapSituation_ForceCursor{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49060usize)as*mut u8,crate::app::mapsituation::MapSituation_ForceCursor;
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`NextSubPhase()` overload"]fn next_sub_phase(self,)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f490b0usize)as*mut u8,();
+(MapSituation)__receiver)}
+}
+#[doc="`ResetSubPhase()` overload"]fn reset_sub_phase(self,)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f490d0usize)as*mut u8,();
+(MapSituation)__receiver)}
+}
+#[doc="`IsCasual()` overload"]fn is_casual(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f490e0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsPhoenix()` overload"]fn is_phoenix(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2eeb0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsVersus()` overload"]fn is_versus(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49160usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsRelay()` overload"]fn is_relay(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49210usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsChallenge()` overload"]fn is_challenge(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49220usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsTrial()` overload"]fn is_trial(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f492d0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsResurrect()` overload"]fn is_resurrect(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49430usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsRecordKill(crate::app::force::Force_Type)` overload"]fn is_record_kill(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49740usize)as*mut u8,bool;
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`IsRecordDead(crate::app::force::Force_Type)` overload"]fn is_record_dead(self,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f497b0usize)as*mut u8,bool;
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`IsShowOrder()` overload"]fn is_show_order(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49820usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`CanOrder()` overload"]fn can_order(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f499f0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsShowEscape()` overload"]fn is_show_escape(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49a00usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`CanEscape()` overload"]fn can_escape(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49a20usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`CanExistenceDie()` overload"]fn can_existence_die(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49a40usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsShowTurn()` overload"]fn is_show_turn(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49a50usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsComplete()` overload"]fn is_complete(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2e930usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsGameOver()` overload"]fn is_game_over(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f306e0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsRelayUnsettled()` overload"]fn is_relay_unsettled(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49af0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsEntrustAI()` overload"]fn is_entrust_ai(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49bf0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsNotReturnMap()` overload"]fn is_not_return_map(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49cb0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsCancelOperation()` overload"]fn is_cancel_operation(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49cc0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`IsErrorOperation()` overload"]fn is_error_operation(self,)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49cd0usize)as*mut u8,bool;
+(MapSituation)__receiver)}
+}
+#[doc="`GetMessageWaitFrame()` overload"]fn get_message_wait_frame(self,)->i32{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49ce0usize)as*mut u8,i32;
+(MapSituation)__receiver)}
+}
+#[doc="`TurnEnd()` overload"]fn turn_end(self,)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f49cf0usize)as*mut u8,();
+(MapSituation)__receiver)}
+}
+#[doc="`TurnNext()` overload"]fn turn_next(self,)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4a850usize)as*mut u8,();
+(MapSituation)__receiver)}
+}
+#[doc="`GameEndCheck()` overload"]fn game_end_check(self,)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4a900usize)as*mut u8,();
+(MapSituation)__receiver)}
+}
+#[doc="`IsLoseUnitDead(crate::app::unit::Unit)` overload"]fn is_lose_unit_dead(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4bfd0usize)as*mut u8,bool;
+(MapSituation)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GameEndCheckUnitDead(crate::app::unit::Unit)` overload"]fn game_end_check_unit_dead(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4c280usize)as*mut u8,bool;
+(MapSituation)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetComplete(crate::app::winloserule::WinLoseRule)` overload"]fn set_complete(self,result:impl::core::convert::Into<crate::app::winloserule::WinLoseRule>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4a570usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::winloserule::WinLoseRule)::core::convert::Into::into(result))}
+}
+#[doc="`SetGameOver(crate::app::winloserule::WinLoseRule)` overload"]fn set_game_over(self,result:impl::core::convert::Into<crate::app::winloserule::WinLoseRule>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4a290usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::winloserule::WinLoseRule)::core::convert::Into::into(result))}
+}
+#[doc="`SetRelayUnsettled()` overload"]fn set_relay_unsettled(self,)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4a0a0usize)as*mut u8,();
+(MapSituation)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4c360usize)as*mut u8,i32;
+(MapSituation)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4c370usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4c650usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`get_CurrentForceType()` overload"]fn get_current_force_type(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d710usize)as*mut u8,crate::app::force::Force_Type;
+(MapSituation)__receiver)}
+}
+#[doc="`set_CurrentForceType(crate::app::force::Force_Type)` overload"]fn set_current_force_type(self,value:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d720usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_HumanForceType()` overload"]fn get_human_force_type(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d730usize)as*mut u8,crate::app::force::Force_Type;
+(MapSituation)__receiver)}
+}
+#[doc="`set_HumanForceType(crate::app::force::Force_Type)` overload"]fn set_human_force_type(self,value:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d740usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_HeroForceType()` overload"]fn get_hero_force_type(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d750usize)as*mut u8,crate::app::force::Force_Type;
+(MapSituation)__receiver)}
+}
+#[doc="`get_Turn()` overload"]fn get_turn(self,)->i32{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d760usize)as*mut u8,i32;
+(MapSituation)__receiver)}
+}
+#[doc="`set_Turn(i32)` overload"]fn set_turn(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d770usize)as*mut u8,();
+(MapSituation)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SubPhase()` overload"]fn get_sub_phase(self,)->crate::app::mapsituation::MapSituation_SubPhases{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d780usize)as*mut u8,crate::app::mapsituation::MapSituation_SubPhases;
+(MapSituation)__receiver)}
+}
+#[doc="`get_WinRuleEnemyNumLessThanOrEqualTo()` overload"]fn get_win_rule_enemy_num_less_than_or_equal_to(self,)->i32{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d790usize)as*mut u8,i32;
+(MapSituation)__receiver)}
+}
+#[doc="`set_WinRuleEnemyNumLessThanOrEqualTo(i32)` overload"]fn set_win_rule_enemy_num_less_than_or_equal_to(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d7a0usize)as*mut u8,();
+(MapSituation)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_WinRuleLimitTurn()` overload"]fn get_win_rule_limit_turn(self,)->i32{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d7b0usize)as*mut u8,i32;
+(MapSituation)__receiver)}
+}
+#[doc="`set_WinRuleLimitTurn(i32)` overload"]fn set_win_rule_limit_turn(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d7c0usize)as*mut u8,();
+(MapSituation)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_WinLoseResult()` overload"]fn get_win_lose_result(self,)->crate::app::winloserule::WinLoseRule{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d7d0usize)as*mut u8,crate::app::winloserule::WinLoseRule;
+(MapSituation)__receiver)}
+}
+#[doc="`get_Entrust()` overload"]fn get_entrust(self,)->crate::app::unitentrust::UnitEntrust_Type{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d7e0usize)as*mut u8,crate::app::unitentrust::UnitEntrust_Type;
+(MapSituation)__receiver)}
+}
+#[doc="`set_Entrust(crate::app::unitentrust::UnitEntrust_Type)` overload"]fn set_entrust(self,value:impl::core::convert::Into<crate::app::unitentrust::UnitEntrust_Type>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d7f0usize)as*mut u8,();
+(MapSituation)__receiver,(crate::app::unitentrust::UnitEntrust_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_WinRuleMID()` overload"]fn get_win_rule_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d800usize)as*mut u8, ::unity2::Il2CppString;
+(MapSituation)__receiver)}
+}
+#[doc="`set_WinRuleMID(::unity2::Il2CppString)` overload"]fn set_win_rule_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d810usize)as*mut u8,();
+(MapSituation)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_WinRuleMIDArg()` overload"]fn get_win_rule_mid_arg(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d820usize)as*mut u8, ::unity2::Il2CppString;
+(MapSituation)__receiver)}
+}
+#[doc="`set_WinRuleMIDArg(::unity2::Il2CppString)` overload"]fn set_win_rule_mid_arg(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d830usize)as*mut u8,();
+(MapSituation)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LoseRuleMID()` overload"]fn get_lose_rule_mid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d840usize)as*mut u8, ::unity2::Il2CppString;
+(MapSituation)__receiver)}
+}
+#[doc="`set_LoseRuleMID(::unity2::Il2CppString)` overload"]fn set_lose_rule_mid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d850usize)as*mut u8,();
+(MapSituation)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_LoseRuleMIDArg()` overload"]fn get_lose_rule_mid_arg(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d860usize)as*mut u8, ::unity2::Il2CppString;
+(MapSituation)__receiver)}
+}
+#[doc="`set_LoseRuleMIDArg(::unity2::Il2CppString)` overload"]fn set_lose_rule_mid_arg(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d870usize)as*mut u8,();
+(MapSituation)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_AverageLevel()` overload"]fn get_average_level(self,)->i32{unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d880usize)as*mut u8,i32;
+(MapSituation)__receiver)}
+}
+#[doc="`set_AverageLevel(i32)` overload"]fn set_average_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f4d890usize)as*mut u8,();
+(MapSituation)__receiver,(i32)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-mapsituation")]
-pub trait IMapSituation_ForceCursorMethods : IMapSituation_ForceCursor { # [doc = "`Set(i32, i32)` overload"] fn set (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSituation_ForceCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation_ForceCursor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3bc60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < MapSituation_ForceCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation_ForceCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3bc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_X()` overload"] fn get_x (self ,) -> i32 { unsafe { let __receiver = < MapSituation_ForceCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation_ForceCursor , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3bc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_X(i32)` overload"] fn set_x (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSituation_ForceCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation_ForceCursor , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3bc90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> i32 { unsafe { let __receiver = < MapSituation_ForceCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation_ForceCursor , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3bca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Z(i32)` overload"] fn set_z (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapSituation_ForceCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation_ForceCursor , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3bcb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSituation_ForceCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSituation_ForceCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e3bcc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsituation")]impl<__T:IMapSituation>IMapSituationMethods for __T{}
 
-#[cfg(feature = "app-mapsituation")]
-impl < __T : IMapSituation_ForceCursor > IMapSituation_ForceCursorMethods for __T { }
+#[cfg(feature="app-mapsituation")]impl MapSituation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn check_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn not_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_allide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_current_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_current_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_human_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_human_player_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_force_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn next_sub_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn reset_sub_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_casual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_phoenix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_versus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn is_relay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_challenge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn is_trial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn is_resurrect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn is_record_kill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn is_record_dead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn is_show_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn can_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn is_show_escape_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn can_escape_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn can_existence_die_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn is_show_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn is_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn is_game_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn is_relay_unsettled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn is_entrust_ai_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn is_not_return_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn is_cancel_operation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn is_error_operation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_message_wait_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn turn_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn turn_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn game_end_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn is_lose_unit_dead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn game_end_check_unit_dead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn set_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn set_game_over_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn set_relay_unsettled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn get_current_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn set_current_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn get_human_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn set_human_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn get_hero_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn get_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn set_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn get_sub_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn get_win_rule_enemy_num_less_than_or_equal_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn set_win_rule_enemy_num_less_than_or_equal_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn get_win_rule_limit_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn set_win_rule_limit_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn get_win_lose_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn get_entrust_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn set_entrust_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn get_win_rule_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn set_win_rule_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn get_win_rule_mid_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn set_win_rule_mid_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn get_lose_rule_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn set_lose_rule_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn get_lose_rule_mid_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn set_lose_rule_mid_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn get_average_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn set_average_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn get_win_rule_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn get_lose_rule_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn is_hero_lose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn get_hero_unit_for_lose_rule_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+}
 
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation_ForceCursor { pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation_ForceCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation_ForceCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation_ForceCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation_ForceCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation_ForceCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation_ForceCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSituation_ForceCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-mapsituation")]impl MapSituation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSituation), ::core::stringify!(new),));
+ <Self as IMapSituationMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation_ForceCursor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSituation_ForceCursor) , :: core :: stringify ! (new) ,)) ; < Self as IMapSituation_ForceCursorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsituation")]pub trait IMapSituation_StatusFieldMethods:IMapSituation_StatusField{#[doc="`ToInt(crate::app::mapsituation::MapSituation_Status)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::mapsituation::MapSituation_Status>)->i32{unsafe{let __receiver= <MapSituation_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bcd0usize)as*mut u8,i32;
+(MapSituation_StatusField)__receiver,(crate::app::mapsituation::MapSituation_Status)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSituation_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bce0usize)as*mut u8,();
+(MapSituation_StatusField)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsituation")]impl<__T:IMapSituation_StatusField>IMapSituation_StatusFieldMethods for __T{}
+
+#[cfg(feature="app-mapsituation")]impl MapSituation_StatusField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapsituation")]impl MapSituation_StatusField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSituation_StatusField), ::core::stringify!(new),));
+ <Self as IMapSituation_StatusFieldMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsituation")]pub trait IMapSituation_ForceCursorMethods:IMapSituation_ForceCursor{#[doc="`Set(i32, i32)` overload"]fn set(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc60usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc70usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver)}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc80usize)as*mut u8,i32;
+(MapSituation_ForceCursor)__receiver)}
+}
+#[doc="`set_X(i32)` overload"]fn set_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc90usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bca0usize)as*mut u8,i32;
+(MapSituation_ForceCursor)__receiver)}
+}
+#[doc="`set_Z(i32)` overload"]fn set_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bcb0usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSituation_ForceCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bcc0usize)as*mut u8,();
+(MapSituation_ForceCursor)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsituation")]impl<__T:IMapSituation_ForceCursor>IMapSituation_ForceCursorMethods for __T{}
+
+#[cfg(feature="app-mapsituation")]impl MapSituation_ForceCursor{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mapsituation")]impl MapSituation_ForceCursor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSituation_ForceCursor), ::core::stringify!(new),));
+ <Self as IMapSituation_ForceCursorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsituation")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapSituation_Status;
-    pub use super::MapSituation_SubPhases;
     pub use super::MapSituation;
     pub use super::IMapSituation;
     pub use super::IMapSituationMethods;
+    pub use super::MapSituation_Player;
     pub use super::MapSituation_StatusField;
     pub use super::IMapSituation_StatusField;
     pub use super::IMapSituation_StatusFieldMethods;
+    pub use super::MapSituation_SubPhases;
     pub use super::MapSituation_ForceCursor;
     pub use super::IMapSituation_ForceCursor;
     pub use super::IMapSituation_ForceCursorMethods;
-    pub use super::MapSituation_Player;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

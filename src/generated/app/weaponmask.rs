@@ -4,150 +4,145 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponmask/WeaponMask_Flag.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct WeaponMask_Flag  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponmask/WeaponMask.md"))]#[::unity2::class(namespace="App",name="WeaponMask")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::weaponmask::WeaponMask_Flag>)]pub struct WeaponMask{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponmask/WeaponMask_Flag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WeaponMask_Flag{pub value:i32,}
+impl::unity2::ClassIdentity for WeaponMask_Flag{const NAMESPACE: &'static str="App";
+const NAME: &'static str="WeaponMask.Flag";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for WeaponMask_Flag  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "WeaponMask.Flag";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for WeaponMask_Flag{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for WeaponMask_Flag  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl WeaponMask_Flag{pub fn none()->Self{Self{value:1}
 }
-
-
-impl  WeaponMask_Flag  {
-    pub fn none() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn sword() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn lance() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn axe() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn bow() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn dagger() -> Self {
-        Self { value: 32 }
-
-    }
-
-
-    pub fn magic() -> Self {
-        Self { value: 64 }
-
-    }
-
-
-    pub fn rod() -> Self {
-        Self { value: 128 }
-
-    }
-
-
-    pub fn fist() -> Self {
-        Self { value: 256 }
-
-    }
-
-
-    pub fn special() -> Self {
-        Self { value: 512 }
-
-    }
-
+pub fn sword()->Self{Self{value:2}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponmask/WeaponMask.md"))] # [:: unity2 :: class (namespace = "App" , name = "WeaponMask")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: weaponmask :: WeaponMask_Flag >)] pub struct WeaponMask {}
+pub fn lance()->Self{Self{value:4}
+}
+pub fn axe()->Self{Self{value:8}
+}
+pub fn bow()->Self{Self{value:16}
+}
+pub fn dagger()->Self{Self{value:32}
+}
+pub fn magic()->Self{Self{value:64}
+}
+pub fn rod()->Self{Self{value:128}
+}
+pub fn fist()->Self{Self{value:256}
+}
+pub fn special()->Self{Self{value:512}
+}
+}
 
 }
 
 #[cfg(feature = "app-weaponmask-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-weaponmask")]
-pub trait IWeaponMaskMethods : IWeaponMask { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::weaponmask::WeaponMask_Flag)` overload"] fn ctor_3 (self , f : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask_Flag >) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , crate :: app :: weaponmask :: WeaponMask_Flag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`ToInt(crate::app::weaponmask::WeaponMask_Flag)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: weaponmask :: WeaponMask_Flag >) -> i32 { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , crate :: app :: weaponmask :: WeaponMask_Flag , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Test(crate::app::itemdata::ItemData)` overload"] fn test (self , item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> bool { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Test(crate::app::itemdata::ItemData_Kinds)` overload"] fn test_2 (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> bool { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`Set(crate::app::itemdata::ItemData_Kinds)` overload"] fn set (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`Clear(crate::app::itemdata::ItemData_Kinds)` overload"] fn clear (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> () { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca1a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`CanEquipFromKind(crate::app::itemdata::ItemData_Kinds)` overload"] fn can_equip_from_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> bool { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca1c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`get_Exist()` overload"] fn get_exist (self ,) -> bool { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRandomForArena()` overload"] fn get_random_for_arena (self ,) -> crate :: app :: itemdata :: ItemData_Kinds { unsafe { let __receiver = < WeaponMask as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponMask , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ca1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-weaponmask")]pub trait IWeaponMaskMethods:IWeaponMask{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca020usize)as*mut u8,();
+(WeaponMask)__receiver)}
+}
+#[doc="`.ctor(i32)` overload"]fn ctor_2(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca080usize)as*mut u8,();
+(WeaponMask)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::weaponmask::WeaponMask_Flag)` overload"]fn ctor_3(self,f:impl::core::convert::Into<crate::app::weaponmask::WeaponMask_Flag>)->(){unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca0e0usize)as*mut u8,();
+(WeaponMask)__receiver,(crate::app::weaponmask::WeaponMask_Flag)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::weaponmask::WeaponMask_Flag)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask_Flag>)->i32{unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca140usize)as*mut u8,i32;
+(WeaponMask)__receiver,(crate::app::weaponmask::WeaponMask_Flag)::core::convert::Into::into(value))}
+}
+#[doc="`Test(crate::app::itemdata::ItemData)` overload"]fn test(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->bool{unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca150usize)as*mut u8,bool;
+(WeaponMask)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`Test(crate::app::itemdata::ItemData_Kinds)` overload"]fn test_2(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->bool{unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca170usize)as*mut u8,bool;
+(WeaponMask)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`Set(crate::app::itemdata::ItemData_Kinds)` overload"]fn set(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca180usize)as*mut u8,();
+(WeaponMask)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`Clear(crate::app::itemdata::ItemData_Kinds)` overload"]fn clear(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca1a0usize)as*mut u8,();
+(WeaponMask)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`CanEquipFromKind(crate::app::itemdata::ItemData_Kinds)` overload"]fn can_equip_from_kind(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->bool{unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca1c0usize)as*mut u8,bool;
+(WeaponMask)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`get_Exist()` overload"]fn get_exist(self,)->bool{unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca1d0usize)as*mut u8,bool;
+(WeaponMask)__receiver)}
+}
+#[doc="`GetRandomForArena()` overload"]fn get_random_for_arena(self,)->crate::app::itemdata::ItemData_Kinds{unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca1e0usize)as*mut u8,crate::app::itemdata::ItemData_Kinds;
+(WeaponMask)__receiver)}
+}
+}
 
-#[cfg(feature = "app-weaponmask")]
-impl < __T : IWeaponMask > IWeaponMaskMethods for __T { }
+#[cfg(feature="app-weaponmask")]impl<__T:IWeaponMask>IWeaponMaskMethods for __T{}
 
-#[cfg(feature = "app-weaponmask")]
-impl WeaponMask { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn test_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn can_equip_from_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_random_for_arena_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-weaponmask")]impl WeaponMask{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn test_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn can_equip_from_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_random_for_arena_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-weaponmask")]
-impl WeaponMask {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponMask) , :: core :: stringify ! (new) ,)) ; < Self as IWeaponMaskMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new_2 (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponMask) , :: core :: stringify ! (new_2) ,)) ; < Self as IWeaponMaskMethods > :: ctor_2 (this , f) ; this }
-
-# [doc = "`.ctor(crate::app::weaponmask::WeaponMask_Flag)` — overload selector"] pub fn new_3 (f : crate :: app :: weaponmask :: WeaponMask_Flag) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponMask) , :: core :: stringify ! (new_3) ,)) ; < Self as IWeaponMaskMethods > :: ctor_3 (this , f) ; this }
+#[cfg(feature="app-weaponmask")]impl WeaponMask{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponMask), ::core::stringify!(new),));
+ <Self as IWeaponMaskMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(i32)` — overload selector"]pub fn new_2(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponMask), ::core::stringify!(new_2),));
+ <Self as IWeaponMaskMethods> ::ctor_2(this,f);
+this}
+#[doc="`.ctor(crate::app::weaponmask::WeaponMask_Flag)` — overload selector"]pub fn new_3(f:crate::app::weaponmask::WeaponMask_Flag)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponMask), ::core::stringify!(new_3),));
+ <Self as IWeaponMaskMethods> ::ctor_3(this,f);
+this}
 }
 
 #[cfg(feature = "app-weaponmask")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WeaponMask_Flag;
     pub use super::WeaponMask;
     pub use super::IWeaponMask;
     pub use super::IWeaponMaskMethods;
+    pub use super::WeaponMask_Flag;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

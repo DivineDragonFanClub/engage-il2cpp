@@ -4,37 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: hubweaponshopsequence :: { HubWeaponShopSequence , IHubWeaponShopSequence }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::hubweaponshopsequence::{HubWeaponShopSequence,IHubWeaponShopSequence}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceweaponshop/SortieSequenceWeaponShop.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceWeaponShop")] # [parent (crate :: app :: hubweaponshopsequence :: HubWeaponShopSequence)] pub struct SortieSequenceWeaponShop {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceweaponshop/SortieSequenceWeaponShop.md"))]#[::unity2::class(namespace="App",name="SortieSequenceWeaponShop")]#[parent(crate::app::hubweaponshopsequence::HubWeaponShopSequence)]pub struct SortieSequenceWeaponShop{}
 
 }
 
 #[cfg(feature = "app-sortiesequenceweaponshop-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortiesequenceweaponshop")]
-impl SortieSequenceWeaponShop { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ea600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequenceweaponshop")]impl SortieSequenceWeaponShop{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ea600usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-sortiesequenceweaponshop")]
-pub trait ISortieSequenceWeaponShopMethods : ISortieSequenceWeaponShop { # [doc = "`CreateWeaponShopTopMenu()` overload"] fn create_weapon_shop_top_menu (self ,) -> () { unsafe { let __receiver = < SortieSequenceWeaponShop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceWeaponShop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ea690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateWeaponShopBuyMenu()` overload"] fn create_weapon_shop_buy_menu (self ,) -> () { unsafe { let __receiver = < SortieSequenceWeaponShop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceWeaponShop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ea8c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < SortieSequenceWeaponShop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceWeaponShop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24eaa90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieSequenceWeaponShop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceWeaponShop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ea680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequenceweaponshop")]pub trait ISortieSequenceWeaponShopMethods:ISortieSequenceWeaponShop{#[doc="`CreateWeaponShopTopMenu()` overload"]fn create_weapon_shop_top_menu(self,)->(){unsafe{let __receiver= <SortieSequenceWeaponShop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ea690usize)as*mut u8,();
+(SortieSequenceWeaponShop)__receiver)}
+}
+#[doc="`CreateWeaponShopBuyMenu()` overload"]fn create_weapon_shop_buy_menu(self,)->(){unsafe{let __receiver= <SortieSequenceWeaponShop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ea8c0usize)as*mut u8,();
+(SortieSequenceWeaponShop)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <SortieSequenceWeaponShop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24eaa90usize)as*mut u8,();
+(SortieSequenceWeaponShop)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieSequenceWeaponShop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ea680usize)as*mut u8,();
+(SortieSequenceWeaponShop)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortiesequenceweaponshop")]
-impl < __T : ISortieSequenceWeaponShop > ISortieSequenceWeaponShopMethods for __T { }
+#[cfg(feature="app-sortiesequenceweaponshop")]impl<__T:ISortieSequenceWeaponShop>ISortieSequenceWeaponShopMethods for __T{}
 
-#[cfg(feature = "app-sortiesequenceweaponshop")]
-impl SortieSequenceWeaponShop { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceWeaponShop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_weapon_shop_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceWeaponShop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_weapon_shop_buy_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceWeaponShop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceWeaponShop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceWeaponShop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-sortiesequenceweaponshop")]impl SortieSequenceWeaponShop{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_weapon_shop_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_weapon_shop_buy_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-sortiesequenceweaponshop")]
-impl SortieSequenceWeaponShop {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSequenceWeaponShop) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSequenceWeaponShopMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortiesequenceweaponshop")]impl SortieSequenceWeaponShop{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieSequenceWeaponShop), ::core::stringify!(new),));
+ <Self as ISortieSequenceWeaponShopMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortiesequenceweaponshop")]

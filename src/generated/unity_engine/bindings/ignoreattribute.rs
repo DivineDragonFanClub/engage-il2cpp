@@ -4,28 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/ignoreattribute/IgnoreAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "IgnoreAttribute")] pub struct IgnoreAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/ignoreattribute/IgnoreAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="IgnoreAttribute")]pub struct IgnoreAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-ignoreattribute")]
-pub trait IIgnoreAttributeMethods : IIgnoreAttribute { # [doc = "`set_DoesNotContributeToSize(bool)` overload"] fn set_does_not_contribute_to_size (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < IgnoreAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IgnoreAttribute , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f37c20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < IgnoreAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IgnoreAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f37c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-ignoreattribute")]pub trait IIgnoreAttributeMethods:IIgnoreAttribute{#[doc="`set_DoesNotContributeToSize(bool)` overload"]fn set_does_not_contribute_to_size(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IgnoreAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37c20usize)as*mut u8,();
+(IgnoreAttribute)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IgnoreAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37c30usize)as*mut u8,();
+(IgnoreAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-ignoreattribute")]
-impl < __T : IIgnoreAttribute > IIgnoreAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-ignoreattribute")]impl<__T:IIgnoreAttribute>IIgnoreAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-ignoreattribute")]
-impl IgnoreAttribute { pub fn set_does_not_contribute_to_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IgnoreAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IgnoreAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-bindings-ignoreattribute")]impl IgnoreAttribute{pub fn set_does_not_contribute_to_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-bindings-ignoreattribute")]
-impl IgnoreAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IgnoreAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IIgnoreAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-bindings-ignoreattribute")]impl IgnoreAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IgnoreAttribute), ::core::stringify!(new),));
+ <Self as IIgnoreAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-ignoreattribute")]

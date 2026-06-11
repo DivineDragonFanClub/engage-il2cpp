@@ -4,39 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubinvestmentbonusanimal/HubInvestmentBonusAnimal.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubInvestmentBonusAnimal")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentbonusanimal :: HubInvestmentBonusAnimal >)] pub struct HubInvestmentBonusAnimal {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubinvestmentbonusanimal/HubInvestmentBonusAnimal.md"))]#[::unity2::class(namespace="App",name="HubInvestmentBonusAnimal")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::hubinvestmentbonusanimal::HubInvestmentBonusAnimal>)]pub struct HubInvestmentBonusAnimal{}
 
 }
 
 #[cfg(feature = "app-hubinvestmentbonusanimal-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubinvestmentbonusanimal")]
-impl HubInvestmentBonusAnimal { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentbonusanimal")]impl HubInvestmentBonusAnimal{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28aa770usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentbonusanimal")]
-pub trait IHubInvestmentBonusAnimalMethods : IHubInvestmentBonusAnimal { # [doc = "`get_AnimalId()` overload"] fn get_animal_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubInvestmentBonusAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusAnimal , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AnimalId(::unity2::Il2CppString)` overload"] fn set_animal_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubInvestmentBonusAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusAnimal , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Num()` overload"] fn get_num (self ,) -> u8 { unsafe { let __receiver = < HubInvestmentBonusAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusAnimal , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Num(u8)` overload"] fn set_num (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < HubInvestmentBonusAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusAnimal , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubInvestmentBonusAnimal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubInvestmentBonusAnimal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aa860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubinvestmentbonusanimal")]pub trait IHubInvestmentBonusAnimalMethods:IHubInvestmentBonusAnimal{#[doc="`get_AnimalId()` overload"]fn get_animal_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubInvestmentBonusAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa820usize)as*mut u8, ::unity2::Il2CppString;
+(HubInvestmentBonusAnimal)__receiver)}
+}
+#[doc="`set_AnimalId(::unity2::Il2CppString)` overload"]fn set_animal_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubInvestmentBonusAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa830usize)as*mut u8,();
+(HubInvestmentBonusAnimal)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Num()` overload"]fn get_num(self,)->u8{unsafe{let __receiver= <HubInvestmentBonusAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa840usize)as*mut u8,u8;
+(HubInvestmentBonusAnimal)__receiver)}
+}
+#[doc="`set_Num(u8)` overload"]fn set_num(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <HubInvestmentBonusAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa850usize)as*mut u8,();
+(HubInvestmentBonusAnimal)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubInvestmentBonusAnimal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aa860usize)as*mut u8,();
+(HubInvestmentBonusAnimal)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubinvestmentbonusanimal")]
-impl < __T : IHubInvestmentBonusAnimal > IHubInvestmentBonusAnimalMethods for __T { }
+#[cfg(feature="app-hubinvestmentbonusanimal")]impl<__T:IHubInvestmentBonusAnimal>IHubInvestmentBonusAnimalMethods for __T{}
 
-#[cfg(feature = "app-hubinvestmentbonusanimal")]
-impl HubInvestmentBonusAnimal { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_animal_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_animal_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubInvestmentBonusAnimal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-hubinvestmentbonusanimal")]impl HubInvestmentBonusAnimal{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_animal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_animal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-hubinvestmentbonusanimal")]
-impl HubInvestmentBonusAnimal {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubInvestmentBonusAnimal) , :: core :: stringify ! (new) ,)) ; < Self as IHubInvestmentBonusAnimalMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubinvestmentbonusanimal")]impl HubInvestmentBonusAnimal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubInvestmentBonusAnimal), ::core::stringify!(new),));
+ <Self as IHubInvestmentBonusAnimalMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubinvestmentbonusanimal")]

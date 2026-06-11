@@ -4,33 +4,302 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/watchitem/WatchItem.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Debugging" , name = "WatchItem")] # [parent (crate :: system :: object :: Object)] pub struct WatchItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/debugging/watchitem/WatchItem.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Debugging",name="WatchItem")]#[parent(crate::system::object::Object)]pub struct WatchItem{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-watchitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-debugging-watchitem")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __WatchItem_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_address { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "get_Address" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "get_Address" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_address { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "set_Address" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "set_Address" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_base_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "get_BasePtr" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "get_BasePtr" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_base_ptr { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "set_BasePtr" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "set_BasePtr" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_ret_address { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "get_RetAddress" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "get_RetAddress" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_ret_address { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "set_RetAddress" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "set_RetAddress" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "get_Name" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "get_Name" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "set_Name" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "set_Name" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "get_Value" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "get_Value" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "set_Value" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "set_Value" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_l_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "get_LValue" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "get_LValue" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_l_value { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "set_LValue" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "set_LValue" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_is_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "get_IsError" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "get_IsError" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_is_error { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "set_IsError" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "set_IsError" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "get_Location" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "get_Location" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "set_Location" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "set_Location" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< WatchItem as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < WatchItem as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-debugging-watchitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WatchItem_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_address{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"get_Address",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"get_Address",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_address{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"set_Address",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"set_Address",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_base_ptr{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"get_BasePtr",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"get_BasePtr",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_base_ptr{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"set_BasePtr",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"set_BasePtr",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_ret_address{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"get_RetAddress",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"get_RetAddress",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_ret_address{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"set_RetAddress",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"set_RetAddress",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"get_Name",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"get_Name",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"set_Name",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"set_Name",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_value{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"get_Value",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"get_Value",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_value{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"set_Value",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"set_Value",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_l_value{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"get_LValue",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"get_LValue",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_l_value{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::symbolref::SymbolRef as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"set_LValue",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"set_LValue",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_is_error{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"get_IsError",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"get_IsError",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_is_error{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"set_IsError",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"set_IsError",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_location{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"get_Location",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"get_Location",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_location{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"set_Location",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"set_Location",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,"ToString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<WatchItem as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <WatchItem as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-debugging-watchitem")]
-pub trait IWatchItemMethods : IWatchItem { # [doc = "`get_Address()` overload"] fn get_address (self ,) -> i32 { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_get_address :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Address(i32)` overload"] fn set_address (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_set_address :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BasePtr()` overload"] fn get_base_ptr (self ,) -> i32 { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_get_base_ptr :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BasePtr(i32)` overload"] fn set_base_ptr (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_set_base_ptr :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RetAddress()` overload"] fn get_ret_address (self ,) -> i32 { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_get_ret_address :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RetAddress(i32)` overload"] fn set_ret_address (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_set_ret_address :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_get_name :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_set_name :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_get_value :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_set_value :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LValue()` overload"] fn get_l_value (self ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_get_l_value :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LValue(crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"] fn set_l_value (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef >) -> () { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_set_l_value :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsError()` overload"] fn get_is_error (self ,) -> bool { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_get_is_error :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsError(bool)` overload"] fn set_is_error (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_set_is_error :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Location()` overload"] fn get_location (self ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_get_location :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Location(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"] fn set_location (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef >) -> () { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_set_location :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_to_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WatchItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WatchItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__WatchItem_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-debugging-watchitem")]pub trait IWatchItemMethods:IWatchItem{#[doc="`get_Address()` overload"]fn get_address(self,)->i32{unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_get_address::get_method_info().method_ptr,i32;
+(WatchItem)__receiver)}
+}
+#[doc="`set_Address(i32)` overload"]fn set_address(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_set_address::get_method_info().method_ptr,();
+(WatchItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BasePtr()` overload"]fn get_base_ptr(self,)->i32{unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_get_base_ptr::get_method_info().method_ptr,i32;
+(WatchItem)__receiver)}
+}
+#[doc="`set_BasePtr(i32)` overload"]fn set_base_ptr(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_set_base_ptr::get_method_info().method_ptr,();
+(WatchItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_RetAddress()` overload"]fn get_ret_address(self,)->i32{unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_get_ret_address::get_method_info().method_ptr,i32;
+(WatchItem)__receiver)}
+}
+#[doc="`set_RetAddress(i32)` overload"]fn set_ret_address(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_set_ret_address::get_method_info().method_ptr,();
+(WatchItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_get_name::get_method_info().method_ptr, ::unity2::Il2CppString;
+(WatchItem)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_set_name::get_method_info().method_ptr,();
+(WatchItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_get_value::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(WatchItem)__receiver)}
+}
+#[doc="`set_Value(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_set_value::get_method_info().method_ptr,();
+(WatchItem)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+}
+#[doc="`get_LValue()` overload"]fn get_l_value(self,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_get_l_value::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolref::SymbolRef;
+(WatchItem)__receiver)}
+}
+#[doc="`set_LValue(crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]fn set_l_value(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>)->(){unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_set_l_value::get_method_info().method_ptr,();
+(WatchItem)__receiver,(crate::moon_sharp::interpreter::symbolref::SymbolRef)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsError()` overload"]fn get_is_error(self,)->bool{unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_get_is_error::get_method_info().method_ptr,bool;
+(WatchItem)__receiver)}
+}
+#[doc="`set_IsError(bool)` overload"]fn set_is_error(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_set_is_error::get_method_info().method_ptr,();
+(WatchItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Location()` overload"]fn get_location(self,)->crate::moon_sharp::interpreter::debugging::sourceref::SourceRef{unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_get_location::get_method_info().method_ptr,crate::moon_sharp::interpreter::debugging::sourceref::SourceRef;
+(WatchItem)__receiver)}
+}
+#[doc="`set_Location(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]fn set_location(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>)->(){unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_set_location::get_method_info().method_ptr,();
+(WatchItem)__receiver,(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)::core::convert::Into::into(value))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(WatchItem)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WatchItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__WatchItem_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(WatchItem)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-debugging-watchitem")]
-impl < __T : IWatchItem > IWatchItemMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-debugging-watchitem")]impl<__T:IWatchItem>IWatchItemMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-debugging-watchitem")]
-impl WatchItem { pub fn get_address_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_address_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_base_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_base_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_ret_address_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_ret_address_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_l_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_l_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_is_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_is_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WatchItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="moon_sharp-interpreter-debugging-watchitem")]impl WatchItem{pub fn get_address_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_address_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_base_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_base_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_ret_address_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_ret_address_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_l_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_l_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_is_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_is_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-debugging-watchitem")]
-impl WatchItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WatchItem) , :: core :: stringify ! (new) ,)) ; < Self as IWatchItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-debugging-watchitem")]impl WatchItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WatchItem), ::core::stringify!(new),));
+ <Self as IWatchItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-debugging-watchitem")]

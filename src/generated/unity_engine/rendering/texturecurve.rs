@@ -4,46 +4,122 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/texturecurve/TextureCurve.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "TextureCurve")] # [parent (crate :: system :: object :: Object)] pub struct TextureCurve {
-# [static_field] # [rename (name = "k_Precision")] pub k_precision : i32 ,
-# [static_field] # [rename (name = "k_Step")] pub k_step : f32 ,
-# [offset (20)] # [rename (name = "m_Loop")] pub m_loop : bool ,
-# [offset (24)] # [rename (name = "m_ZeroValue")] pub m_zero_value : f32 ,
-# [offset (28)] # [rename (name = "m_Range")] pub m_range : f32 ,
-# [offset (32)] # [rename (name = "m_Curve")] pub m_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (40)] # [rename (name = "m_LoopingCurve")] pub m_looping_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (48)] # [rename (name = "m_Texture")] pub m_texture : crate :: unity_engine :: texture2d :: Texture2D ,
-# [offset (56)] # [rename (name = "m_IsCurveDirty")] pub m_is_curve_dirty : bool ,
-# [offset (57)] # [rename (name = "m_IsTextureDirty")] pub m_is_texture_dirty : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/texturecurve/TextureCurve.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="TextureCurve")]#[parent(crate::system::object::Object)]pub struct TextureCurve{#[static_field]#[rename(name="k_Precision")]pub k_precision:i32, #[static_field]#[rename(name="k_Step")]pub k_step:f32, #[offset(20)]#[rename(name="m_Loop")]pub m_loop:bool, #[offset(24)]#[rename(name="m_ZeroValue")]pub m_zero_value:f32, #[offset(28)]#[rename(name="m_Range")]pub m_range:f32, #[offset(32)]#[rename(name="m_Curve")]pub m_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(40)]#[rename(name="m_LoopingCurve")]pub m_looping_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(48)]#[rename(name="m_Texture")]pub m_texture:crate::unity_engine::texture2d::Texture2D, #[offset(56)]#[rename(name="m_IsCurveDirty")]pub m_is_curve_dirty:bool, #[offset(57)]#[rename(name="m_IsTextureDirty")]pub m_is_texture_dirty:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-texturecurve-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-texturecurve")]
-impl TextureCurve { # [doc = "`GetTextureFormat()` overload"] pub fn get_texture_format () -> crate :: unity_engine :: textureformat :: TextureFormat { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: textureformat :: TextureFormat = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e14a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-texturecurve")]impl TextureCurve{#[doc="`GetTextureFormat()` overload"]pub fn get_texture_format()->crate::unity_engine::textureformat::TextureFormat{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e14a0usize)as*mut u8,crate::unity_engine::textureformat::TextureFormat;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-texturecurve")]
-pub trait ITextureCurveMethods : ITextureCurve { # [doc = "`get_length()` overload"] fn get_length (self ,) -> i32 { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_length(i32)` overload"] fn set_length (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: keyframe :: Keyframe { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: keyframe :: Keyframe = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` overload"] fn ctor (self , base_curve : impl :: core :: convert :: Into < crate :: unity_engine :: animationcurve :: AnimationCurve > , zero_value : impl :: core :: convert :: Into < f32 > , r#loop : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; { let __inner : extern "C" fn (TextureCurve , crate :: unity_engine :: animationcurve :: AnimationCurve , f32 , bool , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e12b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (base_curve) , :: core :: convert :: Into :: into (zero_value) , :: core :: convert :: Into :: into (r#loop) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`.ctor(::unity2::Array<crate::unity_engine::keyframe::Keyframe>, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` overload"] fn ctor_2 (self , keys : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: keyframe :: Keyframe > > , zero_value : impl :: core :: convert :: Into < f32 > , r#loop : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; { let __inner : extern "C" fn (TextureCurve , :: unity2 :: Array < crate :: unity_engine :: keyframe :: Keyframe > , f32 , bool , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (keys) , :: core :: convert :: Into :: into (zero_value) , :: core :: convert :: Into :: into (r#loop) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e13f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDirty()` overload"] fn set_dirty (self ,) -> () { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTexture()` overload"] fn get_texture (self ,) -> crate :: unity_engine :: texture2d :: Texture2D { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Evaluate(f32)` overload"] fn evaluate (self , time : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`AddKey(f32, f32)` overload"] fn add_key (self , time : impl :: core :: convert :: Into < f32 > , value : impl :: core :: convert :: Into < f32 >) -> i32 { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , f32 , f32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`MoveKey(i32, *mutcrate::unity_engine::keyframe::Keyframe)` overload"] fn move_key (self , index : impl :: core :: convert :: Into < i32 >) -> (i32 , crate :: unity_engine :: keyframe :: Keyframe) { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: keyframe :: Keyframe > :: uninit () ; let __ret = { { let __inner : extern "C" fn (TextureCurve , i32 , * mut crate :: unity_engine :: keyframe :: Keyframe , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`RemoveKey(i32)` overload"] fn remove_key (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e19e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SmoothTangents(i32, f32)` overload"] fn smooth_tangents (self , index : impl :: core :: convert :: Into < i32 > , weight : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TextureCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextureCurve , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e1a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (weight) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-texturecurve")]pub trait ITextureCurveMethods:ITextureCurve{#[doc="`get_length()` overload"]fn get_length(self,)->i32{unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1240usize)as*mut u8,i32;
+(TextureCurve)__receiver)}
+}
+#[doc="`set_length(i32)` overload"]fn set_length(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1250usize)as*mut u8,();
+(TextureCurve)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::keyframe::Keyframe{unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1260usize)as*mut u8,crate::unity_engine::keyframe::Keyframe;
+(TextureCurve)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` overload"]fn ctor(self,base_curve:impl::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve> ,zero_value:impl::core::convert::Into<f32> ,r#loop:impl::core::convert::Into<bool>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e12b0usize)as*mut u8,();
+(TextureCurve)__receiver,(crate::unity_engine::animationcurve::AnimationCurve)::core::convert::Into::into(base_curve),(f32)::core::convert::Into::into(zero_value),(bool)::core::convert::Into::into(r#loop),(*mut crate::unity_engine::vector2::Vector2)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`.ctor(::unity2::Array<crate::unity_engine::keyframe::Keyframe>, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` overload"]fn ctor_2(self,keys:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::keyframe::Keyframe> > ,zero_value:impl::core::convert::Into<f32> ,r#loop:impl::core::convert::Into<bool>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1310usize)as*mut u8,();
+(TextureCurve)__receiver,(::unity2::Array<crate::unity_engine::keyframe::Keyframe>)::core::convert::Into::into(keys),(f32)::core::convert::Into::into(zero_value),(bool)::core::convert::Into::into(r#loop),(*mut crate::unity_engine::vector2::Vector2)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e13f0usize)as*mut u8,();
+(TextureCurve)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1400usize)as*mut u8,();
+(TextureCurve)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1410usize)as*mut u8,();
+(TextureCurve)__receiver)}
+}
+#[doc="`SetDirty()` overload"]fn set_dirty(self,)->(){unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1490usize)as*mut u8,();
+(TextureCurve)__receiver)}
+}
+#[doc="`GetTexture()` overload"]fn get_texture(self,)->crate::unity_engine::texture2d::Texture2D{unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1500usize)as*mut u8,crate::unity_engine::texture2d::Texture2D;
+(TextureCurve)__receiver)}
+}
+#[doc="`Evaluate(f32)` overload"]fn evaluate(self,time:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1710usize)as*mut u8,f32;
+(TextureCurve)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`AddKey(f32, f32)` overload"]fn add_key(self,time:impl::core::convert::Into<f32> ,value:impl::core::convert::Into<f32>)->i32{unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1930usize)as*mut u8,i32;
+(TextureCurve)__receiver,(f32)::core::convert::Into::into(time),(f32)::core::convert::Into::into(value))}
+}
+#[doc="`MoveKey(i32, *mutcrate::unity_engine::keyframe::Keyframe)` overload"]fn move_key(self,index:impl::core::convert::Into<i32>)->(i32,crate::unity_engine::keyframe::Keyframe){unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::keyframe::Keyframe> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x33e1980usize)as*mut u8,i32;
+(TextureCurve)__receiver,(i32)::core::convert::Into::into(index),(*mut crate::unity_engine::keyframe::Keyframe)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`RemoveKey(i32)` overload"]fn remove_key(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e19e0usize)as*mut u8,();
+(TextureCurve)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SmoothTangents(i32, f32)` overload"]fn smooth_tangents(self,index:impl::core::convert::Into<i32> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TextureCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e1a10usize)as*mut u8,();
+(TextureCurve)__receiver,(i32)::core::convert::Into::into(index),(f32)::core::convert::Into::into(weight))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-texturecurve")]
-impl < __T : ITextureCurve > ITextureCurveMethods for __T { }
+#[cfg(feature="unity_engine-rendering-texturecurve")]impl<__T:ITextureCurve>ITextureCurveMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-texturecurve")]
-impl TextureCurve { pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_texture_format_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn evaluate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn add_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn move_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn remove_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn smooth_tangents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextureCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="unity_engine-rendering-texturecurve")]impl TextureCurve{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_texture_format_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn evaluate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn add_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn move_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn remove_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn smooth_tangents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "unity_engine-rendering-texturecurve")]
-impl TextureCurve {
-# [doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` — overload selector"] pub fn new (base_curve : crate :: unity_engine :: animationcurve :: AnimationCurve , zero_value : f32 , r#loop : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextureCurve) , :: core :: stringify ! (new) ,)) ; < Self as ITextureCurveMethods > :: ctor (this , base_curve , zero_value , r#loop) ; this }
-
-# [doc = "`.ctor(::unity2::Array<crate::unity_engine::keyframe::Keyframe>, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` — overload selector"] pub fn new_2 (keys : :: unity2 :: Array < crate :: unity_engine :: keyframe :: Keyframe > , zero_value : f32 , r#loop : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TextureCurve) , :: core :: stringify ! (new_2) ,)) ; < Self as ITextureCurveMethods > :: ctor_2 (this , keys , zero_value , r#loop) ; this }
+#[cfg(feature="unity_engine-rendering-texturecurve")]impl TextureCurve{#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` — overload selector"]pub fn new(base_curve:crate::unity_engine::animationcurve::AnimationCurve,zero_value:f32,r#loop:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextureCurve), ::core::stringify!(new),));
+ <Self as ITextureCurveMethods> ::ctor(this,base_curve,zero_value,r#loop);
+this}
+#[doc="`.ctor(::unity2::Array<crate::unity_engine::keyframe::Keyframe>, f32, bool, *mutcrate::unity_engine::vector2::Vector2)` — overload selector"]pub fn new_2(keys: ::unity2::Array<crate::unity_engine::keyframe::Keyframe> ,zero_value:f32,r#loop:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TextureCurve), ::core::stringify!(new_2),));
+ <Self as ITextureCurveMethods> ::ctor_2(this,keys,zero_value,r#loop);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-texturecurve")]

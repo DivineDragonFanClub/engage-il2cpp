@@ -4,55 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: minimappanelbase :: { IMiniMapPanelBase , MiniMapPanelBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: graphic :: { Graphic , IGraphic }
- ;
- use crate :: unity_engine :: ui :: maskablegraphic :: { IMaskableGraphic , MaskableGraphic }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::minimappanelbase::{IMiniMapPanelBase,MiniMapPanelBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::graphic::{Graphic,IGraphic}
+;
+use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimappaneldangerrenderer/MiniMapPanelDangerRenderer.md"))] # [:: unity2 :: class (namespace = "App" , name = "MiniMapPanelDangerRenderer")] # [parent (crate :: app :: minimappanelbase :: MiniMapPanelBase)] pub struct MiniMapPanelDangerRenderer {
-# [offset (256)] # [rename (name = "m_RodDanger_0")] pub m_rod_danger_0 : crate :: unity_engine :: material :: Material ,
-# [offset (264)] # [rename (name = "m_RodDanger_1")] pub m_rod_danger_1 : crate :: unity_engine :: material :: Material ,
-# [offset (272)] # [rename (name = "m_RodDanger_2")] pub m_rod_danger_2 : crate :: unity_engine :: material :: Material ,
-# [offset (280)] # [rename (name = "m_RodDanger_3")] pub m_rod_danger_3 : crate :: unity_engine :: material :: Material ,
-# [offset (288)] # [rename (name = "m_AttackDanger_0")] pub m_attack_danger_0 : crate :: unity_engine :: material :: Material ,
-# [offset (296)] # [rename (name = "m_AttackDanger_1")] pub m_attack_danger_1 : crate :: unity_engine :: material :: Material ,
-# [offset (304)] # [rename (name = "m_AttackDanger_2")] pub m_attack_danger_2 : crate :: unity_engine :: material :: Material ,
-# [offset (312)] # [rename (name = "m_AttackDanger_3")] pub m_attack_danger_3 : crate :: unity_engine :: material :: Material ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimappaneldangerrenderer/MiniMapPanelDangerRenderer.md"))]#[::unity2::class(namespace="App",name="MiniMapPanelDangerRenderer")]#[parent(crate::app::minimappanelbase::MiniMapPanelBase)]pub struct MiniMapPanelDangerRenderer{#[offset(256)]#[rename(name="m_RodDanger_0")]pub m_rod_danger_0:crate::unity_engine::material::Material, #[offset(264)]#[rename(name="m_RodDanger_1")]pub m_rod_danger_1:crate::unity_engine::material::Material, #[offset(272)]#[rename(name="m_RodDanger_2")]pub m_rod_danger_2:crate::unity_engine::material::Material, #[offset(280)]#[rename(name="m_RodDanger_3")]pub m_rod_danger_3:crate::unity_engine::material::Material, #[offset(288)]#[rename(name="m_AttackDanger_0")]pub m_attack_danger_0:crate::unity_engine::material::Material, #[offset(296)]#[rename(name="m_AttackDanger_1")]pub m_attack_danger_1:crate::unity_engine::material::Material, #[offset(304)]#[rename(name="m_AttackDanger_2")]pub m_attack_danger_2:crate::unity_engine::material::Material, #[offset(312)]#[rename(name="m_AttackDanger_3")]pub m_attack_danger_3:crate::unity_engine::material::Material,}
 
 }
 
 #[cfg(feature = "app-minimappaneldangerrenderer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-minimappaneldangerrenderer")]
-pub trait IMiniMapPanelDangerRendererMethods : IMiniMapPanelDangerRenderer { # [doc = "`GetSourceMaterials()` overload"] fn get_source_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MiniMapPanelDangerRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelDangerRenderer , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2778bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapPanelMaterials()` overload"] fn get_map_panel_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MiniMapPanelDangerRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelDangerRenderer , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2778df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreatePanelMesh()` overload"] fn create_panel_mesh (self ,) -> () { unsafe { let __receiver = < MiniMapPanelDangerRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelDangerRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2778e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreatePanelDangerMesh()` overload"] fn create_panel_danger_mesh (self ,) -> () { unsafe { let __receiver = < MiniMapPanelDangerRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelDangerRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2778e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MiniMapPanelDangerRenderer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapPanelDangerRenderer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2778fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-minimappaneldangerrenderer")]pub trait IMiniMapPanelDangerRendererMethods:IMiniMapPanelDangerRenderer{#[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MiniMapPanelDangerRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2778bb0usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(MiniMapPanelDangerRenderer)__receiver)}
+}
+#[doc="`GetMapPanelMaterials()` overload"]fn get_map_panel_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MiniMapPanelDangerRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2778df0usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(MiniMapPanelDangerRenderer)__receiver)}
+}
+#[doc="`CreatePanelMesh()` overload"]fn create_panel_mesh(self,)->(){unsafe{let __receiver= <MiniMapPanelDangerRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2778e80usize)as*mut u8,();
+(MiniMapPanelDangerRenderer)__receiver)}
+}
+#[doc="`CreatePanelDangerMesh()` overload"]fn create_panel_danger_mesh(self,)->(){unsafe{let __receiver= <MiniMapPanelDangerRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2778e90usize)as*mut u8,();
+(MiniMapPanelDangerRenderer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MiniMapPanelDangerRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2778fd0usize)as*mut u8,();
+(MiniMapPanelDangerRenderer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-minimappaneldangerrenderer")]
-impl < __T : IMiniMapPanelDangerRenderer > IMiniMapPanelDangerRendererMethods for __T { }
+#[cfg(feature="app-minimappaneldangerrenderer")]impl<__T:IMiniMapPanelDangerRenderer>IMiniMapPanelDangerRendererMethods for __T{}
 
-#[cfg(feature = "app-minimappaneldangerrenderer")]
-impl MiniMapPanelDangerRenderer { pub fn get_source_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelDangerRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_map_panel_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelDangerRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_panel_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelDangerRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_panel_danger_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelDangerRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapPanelDangerRenderer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-minimappaneldangerrenderer")]impl MiniMapPanelDangerRenderer{pub fn get_source_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_map_panel_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_panel_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_panel_danger_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-minimappaneldangerrenderer")]
-impl MiniMapPanelDangerRenderer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MiniMapPanelDangerRenderer) , :: core :: stringify ! (new) ,)) ; < Self as IMiniMapPanelDangerRendererMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-minimappaneldangerrenderer")]impl MiniMapPanelDangerRenderer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MiniMapPanelDangerRenderer), ::core::stringify!(new),));
+ <Self as IMiniMapPanelDangerRendererMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-minimappaneldangerrenderer")]

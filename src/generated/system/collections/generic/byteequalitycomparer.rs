@@ -4,32 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: collections :: generic :: equalitycomparer_1 :: { EqualityComparer_1 , IEqualityComparer_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::collections::generic::equalitycomparer_1::{EqualityComparer_1,IEqualityComparer_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/byteequalitycomparer/ByteEqualityComparer.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "ByteEqualityComparer")] # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < u8 >)] pub struct ByteEqualityComparer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/byteequalitycomparer/ByteEqualityComparer.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="ByteEqualityComparer")]#[parent(crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1<u8>)]pub struct ByteEqualityComparer{}
 
 }
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-byteequalitycomparer")]
-pub trait IByteEqualityComparerMethods : IByteEqualityComparer { # [doc = "`Equals(u8, u8)` overload"] fn equals (self , x : impl :: core :: convert :: Into < u8 > , y : impl :: core :: convert :: Into < u8 >) -> bool { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ByteEqualityComparer , u8 , u8 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3395df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode(u8)` overload"] fn get_hash_code (self , b : impl :: core :: convert :: Into < u8 >) -> i32 { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ByteEqualityComparer , u8 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3395e00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`IndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"] fn index_of (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , value : impl :: core :: convert :: Into < u8 > , start_index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ByteEqualityComparer , :: unity2 :: Array < u8 > , u8 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3395e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (start_index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`LastIndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"] fn last_index_of (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , value : impl :: core :: convert :: Into < u8 > , start_index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ByteEqualityComparer , :: unity2 :: Array < u8 > , u8 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3395f90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (start_index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals_2 (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ByteEqualityComparer , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3396000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code_2 (self ,) -> i32 { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ByteEqualityComparer , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3396090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ByteEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ByteEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33960c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-byteequalitycomparer")]pub trait IByteEqualityComparerMethods:IByteEqualityComparer{#[doc="`Equals(u8, u8)` overload"]fn equals(self,x:impl::core::convert::Into<u8> ,y:impl::core::convert::Into<u8>)->bool{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3395df0usize)as*mut u8,bool;
+(ByteEqualityComparer)__receiver,(u8)::core::convert::Into::into(x),(u8)::core::convert::Into::into(y))}
+}
+#[doc="`GetHashCode(u8)` overload"]fn get_hash_code(self,b:impl::core::convert::Into<u8>)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3395e00usize)as*mut u8,i32;
+(ByteEqualityComparer)__receiver,(u8)::core::convert::Into::into(b))}
+}
+#[doc="`IndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"]fn index_of(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,value:impl::core::convert::Into<u8> ,start_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3395e10usize)as*mut u8,i32;
+(ByteEqualityComparer)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(u8)::core::convert::Into::into(value),(i32)::core::convert::Into::into(start_index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`LastIndexOf(::unity2::Array<u8>, u8, i32, i32)` overload"]fn last_index_of(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,value:impl::core::convert::Into<u8> ,start_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3395f90usize)as*mut u8,i32;
+(ByteEqualityComparer)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(u8)::core::convert::Into::into(value),(i32)::core::convert::Into::into(start_index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals_2(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3396000usize)as*mut u8,bool;
+(ByteEqualityComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code_2(self,)->i32{unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3396090usize)as*mut u8,i32;
+(ByteEqualityComparer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ByteEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33960c0usize)as*mut u8,();
+(ByteEqualityComparer)__receiver)}
+}
+}
 
-#[cfg(feature = "system-collections-generic-byteequalitycomparer")]
-impl < __T : IByteEqualityComparer > IByteEqualityComparerMethods for __T { }
+#[cfg(feature="system-collections-generic-byteequalitycomparer")]impl<__T:IByteEqualityComparer>IByteEqualityComparerMethods for __T{}
 
-#[cfg(feature = "system-collections-generic-byteequalitycomparer")]
-impl ByteEqualityComparer { pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn last_index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_hash_code_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ByteEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="system-collections-generic-byteequalitycomparer")]impl ByteEqualityComparer{pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn last_index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_hash_code_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "system-collections-generic-byteequalitycomparer")]
-impl ByteEqualityComparer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ByteEqualityComparer) , :: core :: stringify ! (new) ,)) ; < Self as IByteEqualityComparerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-generic-byteequalitycomparer")]impl ByteEqualityComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ByteEqualityComparer), ::core::stringify!(new),));
+ <Self as IByteEqualityComparerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-generic-byteequalitycomparer")]

@@ -4,58 +4,125 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: { IShadowCasterGroup2D , ShadowCasterGroup2D }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::{IShadowCasterGroup2D,ShadowCasterGroup2D}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/shadowcaster2d/ShadowCaster2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "ShadowCaster2D")] # [parent (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D)] pub struct ShadowCaster2D {
-# [offset (40)] # [rename (name = "m_HasRenderer")] pub m_has_renderer : bool ,
-# [offset (41)] # [rename (name = "m_UseRendererSilhouette")] pub m_use_renderer_silhouette : bool ,
-# [offset (42)] # [rename (name = "m_CastsShadows")] pub m_casts_shadows : bool ,
-# [offset (43)] # [rename (name = "m_SelfShadows")] pub m_self_shadows : bool ,
-# [offset (48)] # [rename (name = "m_ApplyToSortingLayers")] pub m_apply_to_sorting_layers : :: unity2 :: Array < i32 > ,
-# [offset (56)] # [rename (name = "m_ShapePath")] pub m_shape_path : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (64)] # [rename (name = "m_ShapePathHash")] pub m_shape_path_hash : i32 ,
-# [offset (72)] # [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
-# [offset (80)] # [rename (name = "m_InstanceId")] pub m_instance_id : i32 ,
-# [offset (88)] # [rename (name = "m_ShadowCasterGroup")] pub m_shadow_caster_group : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D ,
-# [offset (96)] # [rename (name = "m_PreviousShadowCasterGroup")] pub m_previous_shadow_caster_group : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D ,
-# [offset (104)] # [rename (name = "m_PreviousShadowGroup")] pub m_previous_shadow_group : i32 ,
-# [offset (108)] # [rename (name = "m_PreviousCastsShadows")] pub m_previous_casts_shadows : bool ,
-# [offset (112)] # [rename (name = "m_PreviousPathHash")] pub m_previous_path_hash : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/shadowcaster2d/ShadowCaster2D.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="ShadowCaster2D")]#[parent(crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D)]pub struct ShadowCaster2D{#[offset(40)]#[rename(name="m_HasRenderer")]pub m_has_renderer:bool, #[offset(41)]#[rename(name="m_UseRendererSilhouette")]pub m_use_renderer_silhouette:bool, #[offset(42)]#[rename(name="m_CastsShadows")]pub m_casts_shadows:bool, #[offset(43)]#[rename(name="m_SelfShadows")]pub m_self_shadows:bool, #[offset(48)]#[rename(name="m_ApplyToSortingLayers")]pub m_apply_to_sorting_layers: ::unity2::Array<i32> , #[offset(56)]#[rename(name="m_ShapePath")]pub m_shape_path: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(64)]#[rename(name="m_ShapePathHash")]pub m_shape_path_hash:i32, #[offset(72)]#[rename(name="m_Mesh")]pub m_mesh:crate::unity_engine::mesh::Mesh, #[offset(80)]#[rename(name="m_InstanceId")]pub m_instance_id:i32, #[offset(88)]#[rename(name="m_ShadowCasterGroup")]pub m_shadow_caster_group:crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D, #[offset(96)]#[rename(name="m_PreviousShadowCasterGroup")]pub m_previous_shadow_caster_group:crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D, #[offset(104)]#[rename(name="m_PreviousShadowGroup")]pub m_previous_shadow_group:i32, #[offset(108)]#[rename(name="m_PreviousCastsShadows")]pub m_previous_casts_shadows:bool, #[offset(112)]#[rename(name="m_PreviousPathHash")]pub m_previous_path_hash:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]
-impl ShadowCaster2D { # [doc = "`SetDefaultSortingLayers()` overload"] pub fn set_default_sorting_layers () -> :: unity2 :: Array < i32 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-shadowcaster2d")]impl ShadowCaster2D{#[doc="`SetDefaultSortingLayers()` overload"]pub fn set_default_sorting_layers()-> ::unity2::Array<i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8680usize)as*mut u8, ::unity2::Array<i32> ;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]
-pub trait IShadowCaster2DMethods : IShadowCaster2D { # [doc = "`get_mesh()` overload"] fn get_mesh (self ,) -> crate :: unity_engine :: mesh :: Mesh { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed85d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_shapePath()` overload"] fn get_shape_path (self ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed85e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_shapePathHash()` overload"] fn get_shape_path_hash (self ,) -> i32 { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed85f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_shapePathHash(i32)` overload"] fn set_shape_path_hash (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_useRendererSilhouette(bool)` overload"] fn set_use_renderer_silhouette (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_useRendererSilhouette()` overload"] fn get_use_renderer_silhouette (self ,) -> bool { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_selfShadows(bool)` overload"] fn set_self_shadows (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_selfShadows()` overload"] fn get_self_shadows (self ,) -> bool { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_castsShadows(bool)` overload"] fn set_casts_shadows (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_castsShadows()` overload"] fn get_casts_shadows (self ,) -> bool { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsShadowedLayer(i32)` overload"] fn is_shadowed_layer (self , layer : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed87c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed8b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed95e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed97c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShadowCaster2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShadowCaster2D , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed9fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-shadowcaster2d")]pub trait IShadowCaster2DMethods:IShadowCaster2D{#[doc="`get_mesh()` overload"]fn get_mesh(self,)->crate::unity_engine::mesh::Mesh{unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed85d0usize)as*mut u8,crate::unity_engine::mesh::Mesh;
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`get_shapePath()` overload"]fn get_shape_path(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed85e0usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`get_shapePathHash()` overload"]fn get_shape_path_hash(self,)->i32{unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed85f0usize)as*mut u8,i32;
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`set_shapePathHash(i32)` overload"]fn set_shape_path_hash(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8600usize)as*mut u8,();
+(ShadowCaster2D)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`set_useRendererSilhouette(bool)` overload"]fn set_use_renderer_silhouette(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8610usize)as*mut u8,();
+(ShadowCaster2D)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_useRendererSilhouette()` overload"]fn get_use_renderer_silhouette(self,)->bool{unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8620usize)as*mut u8,bool;
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`set_selfShadows(bool)` overload"]fn set_self_shadows(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8640usize)as*mut u8,();
+(ShadowCaster2D)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_selfShadows()` overload"]fn get_self_shadows(self,)->bool{unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8650usize)as*mut u8,bool;
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`set_castsShadows(bool)` overload"]fn set_casts_shadows(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8660usize)as*mut u8,();
+(ShadowCaster2D)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_castsShadows()` overload"]fn get_casts_shadows(self,)->bool{unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8670usize)as*mut u8,bool;
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`IsShadowedLayer(i32)` overload"]fn is_shadowed_layer(self,layer:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8750usize)as*mut u8,bool;
+(ShadowCaster2D)__receiver,(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed87c0usize)as*mut u8,();
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8b00usize)as*mut u8,();
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed95e0usize)as*mut u8,();
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed97c0usize)as*mut u8,();
+(ShadowCaster2D)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShadowCaster2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed9fe0usize)as*mut u8,();
+(ShadowCaster2D)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]
-impl < __T : IShadowCaster2D > IShadowCaster2DMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-universal-shadowcaster2d")]impl<__T:IShadowCaster2D>IShadowCaster2DMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]
-impl ShadowCaster2D { pub fn get_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_shape_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_shape_path_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_shape_path_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_use_renderer_silhouette_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_use_renderer_silhouette_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_self_shadows_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_self_shadows_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_casts_shadows_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_casts_shadows_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_default_sorting_layers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_shadowed_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShadowCaster2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-shadowcaster2d")]impl ShadowCaster2D{pub fn get_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_shape_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_shape_path_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_shape_path_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_use_renderer_silhouette_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_use_renderer_silhouette_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_self_shadows_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_self_shadows_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_casts_shadows_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_casts_shadows_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_default_sorting_layers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_shadowed_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]
-impl ShadowCaster2D {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShadowCaster2D) , :: core :: stringify ! (new) ,)) ; < Self as IShadowCaster2DMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-universal-shadowcaster2d")]impl ShadowCaster2D{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShadowCaster2D), ::core::stringify!(new),));
+ <Self as IShadowCaster2DMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]

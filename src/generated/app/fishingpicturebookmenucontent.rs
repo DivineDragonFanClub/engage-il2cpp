@@ -4,45 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpicturebookmenucontent/FishingPictureBookMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingPictureBookMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct FishingPictureBookMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingpicturebookmenucontent/FishingPictureBookMenuContent.md"))]#[::unity2::class(namespace="App",name="FishingPictureBookMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct FishingPictureBookMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-fishingpicturebookmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingpicturebookmenucontent")]
-impl FishingPictureBookMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2603600usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26036a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2603720usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2602df0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::shoptopmenucontent::ShopTopMenuContent)` overload"] pub fn destroy (shop_title_bar : impl :: core :: convert :: Into < crate :: app :: shoptopmenucontent :: ShopTopMenuContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: shoptopmenucontent :: ShopTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26038c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (shop_title_bar) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingpicturebookmenucontent")]impl FishingPictureBookMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2603600usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26036a0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2603720usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2602df0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`Destroy(crate::app::shoptopmenucontent::ShopTopMenuContent)` overload"]pub fn destroy(shop_title_bar:impl::core::convert::Into<crate::app::shoptopmenucontent::ShopTopMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26038c0usize)as*mut u8,();
+(crate::app::shoptopmenucontent::ShopTopMenuContent)::core::convert::Into::into(shop_title_bar))}
+}
+}
 
-#[cfg(feature = "app-fishingpicturebookmenucontent")]
-pub trait IFishingPictureBookMenuContentMethods : IFishingPictureBookMenuContent { # [doc = "`IsOpening()` overload"] fn is_opening (self ,) -> bool { unsafe { let __receiver = < FishingPictureBookMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookMenuContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26033f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosing()` overload"] fn is_closing (self ,) -> bool { unsafe { let __receiver = < FishingPictureBookMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookMenuContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26034a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsClosed()` overload"] fn is_closed (self ,) -> bool { unsafe { let __receiver = < FishingPictureBookMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookMenuContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2603550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < FishingPictureBookMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26037a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < FishingPictureBookMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26037d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < FishingPictureBookMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2603940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < FishingPictureBookMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2603960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < FishingPictureBookMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26039d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingPictureBookMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2603a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingpicturebookmenucontent")]pub trait IFishingPictureBookMenuContentMethods:IFishingPictureBookMenuContent{#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <FishingPictureBookMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26033f0usize)as*mut u8,bool;
+(FishingPictureBookMenuContent)__receiver)}
+}
+#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <FishingPictureBookMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26034a0usize)as*mut u8,bool;
+(FishingPictureBookMenuContent)__receiver)}
+}
+#[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <FishingPictureBookMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2603550usize)as*mut u8,bool;
+(FishingPictureBookMenuContent)__receiver)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <FishingPictureBookMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26037a0usize)as*mut u8,();
+(FishingPictureBookMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <FishingPictureBookMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26037d0usize)as*mut u8,f32;
+(FishingPictureBookMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <FishingPictureBookMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2603940usize)as*mut u8,i32;
+(FishingPictureBookMenuContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <FishingPictureBookMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2603960usize)as*mut u8,f32;
+(FishingPictureBookMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <FishingPictureBookMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26039d0usize)as*mut u8,f32;
+(FishingPictureBookMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingPictureBookMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2603a40usize)as*mut u8,();
+(FishingPictureBookMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingpicturebookmenucontent")]
-impl < __T : IFishingPictureBookMenuContent > IFishingPictureBookMenuContentMethods for __T { }
+#[cfg(feature="app-fishingpicturebookmenucontent")]impl<__T:IFishingPictureBookMenuContent>IFishingPictureBookMenuContentMethods for __T{}
 
-#[cfg(feature = "app-fishingpicturebookmenucontent")]
-impl FishingPictureBookMenuContent { pub fn is_opening_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_closing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-fishingpicturebookmenucontent")]impl FishingPictureBookMenuContent{pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-fishingpicturebookmenucontent")]
-impl FishingPictureBookMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingPictureBookMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IFishingPictureBookMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingpicturebookmenucontent")]impl FishingPictureBookMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingPictureBookMenuContent), ::core::stringify!(new),));
+ <Self as IFishingPictureBookMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingpicturebookmenucontent")]

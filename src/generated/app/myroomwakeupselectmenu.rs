@@ -4,42 +4,98 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenu/MyRoomWakeupSelectMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomWakeupSelectMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MyRoomWakeupSelectMenu {
-# [offset (196)] # [rename (name = "IsRankPhase")] pub is_rank_phase : bool ,
-# [offset (200)] # [rename (name = "m_MenuSelectList")] pub m_menu_select_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuselect :: BasicMenuSelect > ,
-# [offset (208)] # [rename (name = "m_OldLevel")] pub m_old_level : crate :: app :: reliancedata :: RelianceData_Level ,
-# [offset (212)] # [rename (name = "m_OldPattern")] pub m_old_pattern : crate :: app :: gamesound :: GameSound_WakeupVoicePattern ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomwakeupselectmenu/MyRoomWakeupSelectMenu.md"))]#[::unity2::class(namespace="App",name="MyRoomWakeupSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomWakeupSelectMenu{#[offset(196)]#[rename(name="IsRankPhase")]pub is_rank_phase:bool, #[offset(200)]#[rename(name="m_MenuSelectList")]pub m_menu_select_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(208)]#[rename(name="m_OldLevel")]pub m_old_level:crate::app::reliancedata::RelianceData_Level, #[offset(212)]#[rename(name="m_OldPattern")]pub m_old_pattern:crate::app::gamesound::GameSound_WakeupVoicePattern,}
 
 }
 
 #[cfg(feature = "app-myroomwakeupselectmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomwakeupselectmenu")]
-impl MyRoomWakeupSelectMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, i32, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , select : impl :: core :: convert :: Into < i32 > , scroll : impl :: core :: convert :: Into < i32 >) -> crate :: app :: myroomwakeupselectmenu :: MyRoomWakeupSelectMenu { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: myroomwakeupselectmenu :: MyRoomWakeupSelectMenu = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a35a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (select) , :: core :: convert :: Into :: into (scroll) , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenuList()` overload"] pub fn create_menu_list () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a36e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomwakeupselectmenu")]impl MyRoomWakeupSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,select:impl::core::convert::Into<i32> ,scroll:impl::core::convert::Into<i32>)->crate::app::myroomwakeupselectmenu::MyRoomWakeupSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a35a0usize)as*mut u8,crate::app::myroomwakeupselectmenu::MyRoomWakeupSelectMenu;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(select),(i32)::core::convert::Into::into(scroll))}
+}
+#[doc="`CreateMenuList()` overload"]pub fn create_menu_list()->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23a36e0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+)}
+}
+}
 
-#[cfg(feature = "app-myroomwakeupselectmenu")]
-pub trait IMyRoomWakeupSelectMenuMethods : IMyRoomWakeupSelectMenu { # [doc = "`CreateDefaultDesc()` overload"] fn create_default_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a3df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: myroomwakeupselectmenucontent :: MyRoomWakeupSelectMenuContent >) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: myroomwakeupselectmenucontent :: MyRoomWakeupSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a3a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a4470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetOldLevelAndPattern(crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"] fn set_old_level_and_pattern (self , level : impl :: core :: convert :: Into < crate :: app :: reliancedata :: RelianceData_Level > , pattern : impl :: core :: convert :: Into < crate :: app :: gamesound :: GameSound_WakeupVoicePattern >) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , crate :: app :: reliancedata :: RelianceData_Level , crate :: app :: gamesound :: GameSound_WakeupVoicePattern , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a44c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (level) , :: core :: convert :: Into :: into (pattern) , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a44d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyUp(bool)` overload"] fn key_up (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a4680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyDown(bool)` overload"] fn key_down (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a4740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyLeft(bool)` overload"] fn key_left (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a4800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyRight(bool)` overload"] fn key_right (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a48b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a4960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MyRoomWakeupSelectMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomWakeupSelectMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a52d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomwakeupselectmenu")]pub trait IMyRoomWakeupSelectMenuMethods:IMyRoomWakeupSelectMenu{#[doc="`CreateDefaultDesc()` overload"]fn create_default_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a3df0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(MyRoomWakeupSelectMenu)__receiver)}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent>)->(){unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a3a80usize)as*mut u8,();
+(MyRoomWakeupSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a4470usize)as*mut u8, ::unity2::Il2CppString;
+(MyRoomWakeupSelectMenu)__receiver)}
+}
+#[doc="`SetOldLevelAndPattern(crate::app::reliancedata::RelianceData_Level, crate::app::gamesound::GameSound_WakeupVoicePattern)` overload"]fn set_old_level_and_pattern(self,level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level> ,pattern:impl::core::convert::Into<crate::app::gamesound::GameSound_WakeupVoicePattern>)->(){unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a44c0usize)as*mut u8,();
+(MyRoomWakeupSelectMenu)__receiver,(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(level),(crate::app::gamesound::GameSound_WakeupVoicePattern)::core::convert::Into::into(pattern))}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a44d0usize)as*mut u8,();
+(MyRoomWakeupSelectMenu)__receiver)}
+}
+#[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a4680usize)as*mut u8,();
+(MyRoomWakeupSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a4740usize)as*mut u8,();
+(MyRoomWakeupSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a4800usize)as*mut u8,();
+(MyRoomWakeupSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a48b0usize)as*mut u8,();
+(MyRoomWakeupSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a4960usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MyRoomWakeupSelectMenu)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MyRoomWakeupSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a52d0usize)as*mut u8,();
+(MyRoomWakeupSelectMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomwakeupselectmenu")]
-impl < __T : IMyRoomWakeupSelectMenu > IMyRoomWakeupSelectMenuMethods for __T { }
+#[cfg(feature="app-myroomwakeupselectmenu")]impl<__T:IMyRoomWakeupSelectMenu>IMyRoomWakeupSelectMenuMethods for __T{}
 
-#[cfg(feature = "app-myroomwakeupselectmenu")]
-impl MyRoomWakeupSelectMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_default_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_menu_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_old_level_and_pattern_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn key_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn key_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn key_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn key_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomWakeupSelectMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-myroomwakeupselectmenu")]impl MyRoomWakeupSelectMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_default_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_menu_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_old_level_and_pattern_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn key_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn key_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-myroomwakeupselectmenu")]
-impl MyRoomWakeupSelectMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: myroomwakeupselectmenucontent :: MyRoomWakeupSelectMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomWakeupSelectMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomWakeupSelectMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-myroomwakeupselectmenu")]impl MyRoomWakeupSelectMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomWakeupSelectMenu), ::core::stringify!(new),));
+ <Self as IMyRoomWakeupSelectMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-myroomwakeupselectmenu")]

@@ -4,37 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
+;
+use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/floatrangeparameter/FloatRangeParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "FloatRangeParameter")] # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: vector2 :: Vector2 >)] pub struct FloatRangeParameter {
-# [offset (28)] # [rename (name = "min")] pub min : f32 ,
-# [offset (32)] # [rename (name = "max")] pub max : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/floatrangeparameter/FloatRangeParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="FloatRangeParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::vector2::Vector2>)]pub struct FloatRangeParameter{#[offset(28)]#[rename(name="min")]pub min:f32, #[offset(32)]#[rename(name="max")]pub max:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-floatrangeparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
-pub trait IFloatRangeParameterMethods : IFloatRangeParameter { # [doc = "`get_value()` overload"] fn get_value (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < FloatRangeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FloatRangeParameter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a9cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_value(crate::unity_engine::vector2::Vector2)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < FloatRangeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FloatRangeParameter , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a9ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::vector2::Vector2, f32, f32, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , min : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < FloatRangeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FloatRangeParameter , crate :: unity_engine :: vector2 :: Vector2 , f32 , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a9d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } # [doc = "`Interp(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"] fn interp (self , from : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , to : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , t : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FloatRangeParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FloatRangeParameter , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a9dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from) , :: core :: convert :: Into :: into (to) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-floatrangeparameter")]pub trait IFloatRangeParameterMethods:IFloatRangeParameter{#[doc="`get_value()` overload"]fn get_value(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a9cd0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(FloatRangeParameter)__receiver)}
+}
+#[doc="`set_value(crate::unity_engine::vector2::Vector2)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a9ce0usize)as*mut u8,();
+(FloatRangeParameter)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::vector2::Vector2, f32, f32, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a9d30usize)as*mut u8,();
+(FloatRangeParameter)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value),(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max),(bool)::core::convert::Into::into(override_state))}
+}
+#[doc="`Interp(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]fn interp(self,from:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,to:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,t:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a9dc0usize)as*mut u8,();
+(FloatRangeParameter)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(from),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(to),(f32)::core::convert::Into::into(t))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
-impl < __T : IFloatRangeParameter > IFloatRangeParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-floatrangeparameter")]impl<__T:IFloatRangeParameter>IFloatRangeParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
-impl FloatRangeParameter { pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatRangeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatRangeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatRangeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn interp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatRangeParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-rendering-floatrangeparameter")]impl FloatRangeParameter{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn interp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-rendering-floatrangeparameter")]
-impl FloatRangeParameter {
-# [doc = "`.ctor(crate::unity_engine::vector2::Vector2, f32, f32, bool)` — overload selector"] pub fn new (value : crate :: unity_engine :: vector2 :: Vector2 , min : f32 , max : f32 , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FloatRangeParameter) , :: core :: stringify ! (new) ,)) ; < Self as IFloatRangeParameterMethods > :: ctor (this , value , min , max , override_state) ; this }
+#[cfg(feature="unity_engine-rendering-floatrangeparameter")]impl FloatRangeParameter{#[doc="`.ctor(crate::unity_engine::vector2::Vector2, f32, f32, bool)` — overload selector"]pub fn new(value:crate::unity_engine::vector2::Vector2,min:f32,max:f32,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FloatRangeParameter), ::core::stringify!(new),));
+ <Self as IFloatRangeParameterMethods> ::ctor(this,value,min,max,override_state);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-floatrangeparameter")]

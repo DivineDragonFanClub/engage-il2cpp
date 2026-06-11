@@ -4,42 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/meshgenerationresult/MeshGenerationResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MeshGenerationResult {}
-
-
-impl ::unity2::ClassIdentity for MeshGenerationResult {
-    const NAMESPACE: &'static str = "UnityEngine.XR";
-
-    const NAME: &'static str = "MeshGenerationResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/meshgenerationresult/MeshGenerationResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MeshGenerationResult{}
+impl::unity2::ClassIdentity for MeshGenerationResult{const NAMESPACE: &'static str="UnityEngine.XR";
+const NAME: &'static str="MeshGenerationResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for MeshGenerationResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MeshGenerationResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -47,11 +26,41 @@ impl ::unity2::IlType for MeshGenerationResult {
 #[cfg(feature = "unity_engine-xr-meshgenerationresult-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-meshgenerationresult")]
-impl MeshGenerationResult { # [doc = "`get_MeshId()` overload"] pub fn get_mesh_id (& mut self ,) -> crate :: unity_engine :: xr :: meshid :: MeshId { unsafe { { let __inner : extern "C" fn (* mut MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshid :: MeshId = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ed10usize) as * mut u8) ; __inner (self as * mut MeshGenerationResult , :: core :: option :: Option :: None) } } } # [doc = "`get_Mesh()` overload"] pub fn get_mesh (& mut self ,) -> crate :: unity_engine :: mesh :: Mesh { unsafe { { let __inner : extern "C" fn (* mut MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: mesh :: Mesh = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ed20usize) as * mut u8) ; __inner (self as * mut MeshGenerationResult , :: core :: option :: Option :: None) } } } # [doc = "`get_MeshCollider()` overload"] pub fn get_mesh_collider (& mut self ,) -> crate :: unity_engine :: meshcollider :: MeshCollider { unsafe { { let __inner : extern "C" fn (* mut MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: meshcollider :: MeshCollider = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ed30usize) as * mut u8) ; __inner (self as * mut MeshGenerationResult , :: core :: option :: Option :: None) } } } # [doc = "`get_Status()` overload"] pub fn get_status (& mut self ,) -> crate :: unity_engine :: xr :: meshgenerationstatus :: MeshGenerationStatus { unsafe { { let __inner : extern "C" fn (* mut MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshgenerationstatus :: MeshGenerationStatus = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ed40usize) as * mut u8) ; __inner (self as * mut MeshGenerationResult , :: core :: option :: Option :: None) } } } # [doc = "`get_Attributes()` overload"] pub fn get_attributes (& mut self ,) -> crate :: unity_engine :: xr :: meshvertexattributes :: MeshVertexAttributes { unsafe { { let __inner : extern "C" fn (* mut MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: xr :: meshvertexattributes :: MeshVertexAttributes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ed50usize) as * mut u8) ; __inner (self as * mut MeshGenerationResult , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut MeshGenerationResult , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ed60usize) as * mut u8) ; __inner (self as * mut MeshGenerationResult , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult >) -> bool { unsafe { { let __inner : extern "C" fn (* mut MeshGenerationResult , crate :: unity_engine :: xr :: meshgenerationresult :: MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ee10usize) as * mut u8) ; __inner (self as * mut MeshGenerationResult , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut MeshGenerationResult , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1efd0usize) as * mut u8) ; __inner (self as * mut MeshGenerationResult , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-meshgenerationresult")]impl MeshGenerationResult{#[doc="`get_MeshId()` overload"]pub fn get_mesh_id(&mut self,)->crate::unity_engine::xr::meshid::MeshId{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ed10usize)as*mut u8,crate::unity_engine::xr::meshid::MeshId;
+(*mut MeshGenerationResult)self as*mut MeshGenerationResult)}
+}
+#[doc="`get_Mesh()` overload"]pub fn get_mesh(&mut self,)->crate::unity_engine::mesh::Mesh{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ed20usize)as*mut u8,crate::unity_engine::mesh::Mesh;
+(*mut MeshGenerationResult)self as*mut MeshGenerationResult)}
+}
+#[doc="`get_MeshCollider()` overload"]pub fn get_mesh_collider(&mut self,)->crate::unity_engine::meshcollider::MeshCollider{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ed30usize)as*mut u8,crate::unity_engine::meshcollider::MeshCollider;
+(*mut MeshGenerationResult)self as*mut MeshGenerationResult)}
+}
+#[doc="`get_Status()` overload"]pub fn get_status(&mut self,)->crate::unity_engine::xr::meshgenerationstatus::MeshGenerationStatus{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ed40usize)as*mut u8,crate::unity_engine::xr::meshgenerationstatus::MeshGenerationStatus;
+(*mut MeshGenerationResult)self as*mut MeshGenerationResult)}
+}
+#[doc="`get_Attributes()` overload"]pub fn get_attributes(&mut self,)->crate::unity_engine::xr::meshvertexattributes::MeshVertexAttributes{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ed50usize)as*mut u8,crate::unity_engine::xr::meshvertexattributes::MeshVertexAttributes;
+(*mut MeshGenerationResult)self as*mut MeshGenerationResult)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ed60usize)as*mut u8,bool;
+(*mut MeshGenerationResult)self as*mut MeshGenerationResult,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ee10usize)as*mut u8,bool;
+(*mut MeshGenerationResult)self as*mut MeshGenerationResult,(crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult)::core::convert::Into::into(other))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f1efd0usize)as*mut u8,i32;
+(*mut MeshGenerationResult)self as*mut MeshGenerationResult)}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-meshgenerationresult")]
-impl MeshGenerationResult { pub fn get_mesh_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_mesh_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MeshGenerationResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-xr-meshgenerationresult")]impl MeshGenerationResult{pub fn get_mesh_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_mesh_collider_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-xr-meshgenerationresult")]
 #[doc(hidden)]

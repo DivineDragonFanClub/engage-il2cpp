@@ -4,37 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdesccallbase :: { IProcDescCallBase , ProcDescCallBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdesccallbase::{IProcDescCallBase,ProcDescCallBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmargs/ProcDescMArgS.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescMArgS")] # [parent (crate :: app :: procdesccallbase :: ProcDescCallBase)] pub struct ProcDescMArgS {
-# [offset (24)] # [rename (name = "m_Method")] pub m_method : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > ,
-# [offset (32)] # [rename (name = "m_Arg")] pub m_arg : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescmargs/ProcDescMArgS.md"))]#[::unity2::class(namespace="App",name="ProcDescMArgS")]#[parent(crate::app::procdesccallbase::ProcDescCallBase)]pub struct ProcDescMArgS{#[offset(24)]#[rename(name="m_Method")]pub m_method:crate::system::action_1::Action_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_Arg")]pub m_arg: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-procdescmargs-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescmargs")]
-pub trait IProcDescMArgSMethods : IProcDescMArgS { # [doc = "`.ctor(crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"] fn ctor (self , method : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProcDescMArgS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescMArgS , crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b4d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (method) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescMArgS as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescMArgS , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d2f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescmargs")]pub trait IProcDescMArgSMethods:IProcDescMArgS{#[doc="`.ctor(crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]fn ctor(self,method:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> > ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProcDescMArgS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281b4d0usize)as*mut u8,();
+(ProcDescMArgS)__receiver,(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(method),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+#[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescMArgS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d2f0usize)as*mut u8,();
+(ProcDescMArgS)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdescmargs")]
-impl < __T : IProcDescMArgS > IProcDescMArgSMethods for __T { }
+#[cfg(feature="app-procdescmargs")]impl<__T:IProcDescMArgS>IProcDescMArgSMethods for __T{}
 
-#[cfg(feature = "app-procdescmargs")]
-impl ProcDescMArgS { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescMArgS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescMArgS as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdescmargs")]impl ProcDescMArgS{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdescmargs")]
-impl ProcDescMArgS {
-# [doc = "`.ctor(crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::Il2CppString)` — overload selector"] pub fn new (method : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , arg : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescMArgS) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescMArgSMethods > :: ctor (this , method , arg) ; this }
+#[cfg(feature="app-procdescmargs")]impl ProcDescMArgS{#[doc="`.ctor(crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::Il2CppString)` — overload selector"]pub fn new(method:crate::system::action_1::Action_1< ::unity2::Il2CppString> ,arg: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescMArgS), ::core::stringify!(new),));
+ <Self as IProcDescMArgSMethods> ::ctor(this,method,arg);
+this}
 }
 
 #[cfg(feature = "app-procdescmargs")]

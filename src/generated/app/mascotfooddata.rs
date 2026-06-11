@@ -4,39 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfooddata/MascotFoodData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotFoodData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotfooddata :: MascotFoodData >)] pub struct MascotFoodData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfooddata/MascotFoodData.md"))]#[::unity2::class(namespace="App",name="MascotFoodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::mascotfooddata::MascotFoodData>)]pub struct MascotFoodData{}
 
 }
 
 #[cfg(feature = "app-mascotfooddata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mascotfooddata")]
-impl MascotFoodData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2035210usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotfooddata")]impl MascotFoodData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2035210usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mascotfooddata")]
-pub trait IMascotFoodDataMethods : IMascotFoodData { # [doc = "`get_Iid()` overload"] fn get_iid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MascotFoodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20352c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iid(::unity2::Il2CppString)` overload"] fn set_iid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MascotFoodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20352d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < MascotFoodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20352e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value(i32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MascotFoodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20352f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MascotFoodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2035300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotFoodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFoodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2035310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotfooddata")]pub trait IMascotFoodDataMethods:IMascotFoodData{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MascotFoodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20352c0usize)as*mut u8, ::unity2::Il2CppString;
+(MascotFoodData)__receiver)}
+}
+#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MascotFoodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20352d0usize)as*mut u8,();
+(MascotFoodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <MascotFoodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20352e0usize)as*mut u8,i32;
+(MascotFoodData)__receiver)}
+}
+#[doc="`set_Value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MascotFoodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20352f0usize)as*mut u8,();
+(MascotFoodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MascotFoodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2035300usize)as*mut u8, ::unity2::Il2CppString;
+(MascotFoodData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MascotFoodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2035310usize)as*mut u8,();
+(MascotFoodData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mascotfooddata")]
-impl < __T : IMascotFoodData > IMascotFoodDataMethods for __T { }
+#[cfg(feature="app-mascotfooddata")]impl<__T:IMascotFoodData>IMascotFoodDataMethods for __T{}
 
-#[cfg(feature = "app-mascotfooddata")]
-impl MascotFoodData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFoodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-mascotfooddata")]impl MascotFoodData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-mascotfooddata")]
-impl MascotFoodData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotFoodData) , :: core :: stringify ! (new) ,)) ; < Self as IMascotFoodDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mascotfooddata")]impl MascotFoodData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotFoodData), ::core::stringify!(new),));
+ <Self as IMascotFoodDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mascotfooddata")]

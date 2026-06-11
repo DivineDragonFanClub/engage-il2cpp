@@ -4,200 +4,78 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/char/Char.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Char {
-    pub m_value: u16,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/char/Char.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Char{pub m_value:u16,}
+impl::unity2::ClassIdentity for Char{const NAMESPACE: &'static str="System";
+const NAME: &'static str="Char";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Char {
-    const NAMESPACE: &'static str = "System";
-
-    const NAME: &'static str = "Char";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for Char{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for Char {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl Char{#[inline]pub fn max_value()->u16{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MaxValue");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_max_value(value:u16){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MaxValue");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl Char {
-    #[inline]
-    pub fn max_value() -> u16 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MaxValue");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_max_value(value: u16) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MaxValue");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn min_value() -> u16 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MinValue");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_min_value(value: u16) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "MinValue");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn category_for_latin1() -> :: unity2 :: Array < u8 > {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "categoryForLatin1");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_category_for_latin1(value: :: unity2 :: Array < u8 >) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "categoryForLatin1");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn unicode_plane00_end() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE00_END");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_unicode_plane00_end(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE00_END");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn unicode_plane01_start() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE01_START");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_unicode_plane01_start(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE01_START");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn unicode_plane16_end() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE16_END");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_unicode_plane16_end(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "UNICODE_PLANE16_END");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn high_surrogate_start() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "HIGH_SURROGATE_START");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_high_surrogate_start(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "HIGH_SURROGATE_START");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn low_surrogate_end() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "LOW_SURROGATE_END");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_low_surrogate_end(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "LOW_SURROGATE_END");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn min_value()->u16{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MinValue");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_min_value(value:u16){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"MinValue");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn category_for_latin1()-> ::unity2::Array<u8>{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"categoryForLatin1");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_category_for_latin1(value: ::unity2::Array<u8>){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"categoryForLatin1");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn unicode_plane00_end()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"UNICODE_PLANE00_END");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_unicode_plane00_end(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"UNICODE_PLANE00_END");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn unicode_plane01_start()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"UNICODE_PLANE01_START");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_unicode_plane01_start(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"UNICODE_PLANE01_START");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn unicode_plane16_end()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"UNICODE_PLANE16_END");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_unicode_plane16_end(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"UNICODE_PLANE16_END");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn high_surrogate_start()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"HIGH_SURROGATE_START");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_high_surrogate_start(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"HIGH_SURROGATE_START");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn low_surrogate_end()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"LOW_SURROGATE_END");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_low_surrogate_end(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"LOW_SURROGATE_END");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -205,14 +83,166 @@ impl Char {
 #[cfg(feature = "system-char-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-char")]
-impl Char { # [doc = "`IsLatin1(u16)` overload"] pub fn is_latin1 (ch : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0b10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ch) , :: core :: option :: Option :: None) } } } # [doc = "`IsAscii(u16)` overload"] pub fn is_ascii (ch : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0b20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ch) , :: core :: option :: Option :: None) } } } # [doc = "`ToString(u16)` overload"] pub fn to_string_2 (c : impl :: core :: convert :: Into < u16 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0de0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`Parse(::unity2::Il2CppString)` overload"] pub fn parse (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> u16 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0e80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`TryParse(::unity2::Il2CppString, *mutu16)` overload"] pub fn try_parse (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , u16) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < u16 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0f50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`IsDigit(u16)` overload"] pub fn is_digit (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0fb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsLetter(u16)` overload"] pub fn is_letter (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsWhiteSpaceLatin1(u16)` overload"] pub fn is_white_space_latin1 (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsWhiteSpace(u16)` overload"] pub fn is_white_space (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1360usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsUpper(u16)` overload"] pub fn is_upper (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsLower(u16)` overload"] pub fn is_lower (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d16e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsPunctuation(u16)` overload"] pub fn is_punctuation (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsLetterOrDigit(u16)` overload"] pub fn is_letter_or_digit (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`ToUpper(u16)` overload"] pub fn to_upper (c : impl :: core :: convert :: Into < u16 >) -> u16 { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1c10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`ToUpperInvariant(u16)` overload"] pub fn to_upper_invariant (c : impl :: core :: convert :: Into < u16 >) -> u16 { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1cc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`ToLower(u16)` overload"] pub fn to_lower (c : impl :: core :: convert :: Into < u16 >) -> u16 { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1e00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`ToLowerInvariant(u16)` overload"] pub fn to_lower_invariant (c : impl :: core :: convert :: Into < u16 >) -> u16 { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d1eb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsControl(u16)` overload"] pub fn is_control (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d3d50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsNumber(u16)` overload"] pub fn is_number (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d3ea0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsNumber(::unity2::Il2CppString, i32)` overload"] pub fn is_number_2 (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d4040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsSeparatorLatin1(u16)` overload"] pub fn is_separator_latin1 (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d4390usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsSeparator(u16)` overload"] pub fn is_separator (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d43b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsSurrogate(u16)` overload"] pub fn is_surrogate (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d44c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsSurrogate(::unity2::Il2CppString, i32)` overload"] pub fn is_surrogate_2 (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d44d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsSymbol(u16)` overload"] pub fn is_symbol (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d4600usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsHighSurrogate(u16)` overload"] pub fn is_high_surrogate (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d4c80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsHighSurrogate(::unity2::Il2CppString, i32)` overload"] pub fn is_high_surrogate_2 (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d4c90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsLowSurrogate(u16)` overload"] pub fn is_low_surrogate (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d4db0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsSurrogatePair(u16, u16)` overload"] pub fn is_surrogate_pair (high_surrogate : impl :: core :: convert :: Into < u16 > , low_surrogate : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d4dc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (high_surrogate) , :: core :: convert :: Into :: into (low_surrogate) , :: core :: option :: Option :: None) } } } # [doc = "`ConvertFromUtf32(i32)` overload"] pub fn convert_from_utf32 (utf32 : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d4df0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (utf32) , :: core :: option :: Option :: None) } } } # [doc = "`ConvertToUtf32(u16, u16)` overload"] pub fn convert_to_utf32 (high_surrogate : impl :: core :: convert :: Into < u16 > , low_surrogate : impl :: core :: convert :: Into < u16 >) -> i32 { unsafe { { let __inner : extern "C" fn (u16 , u16 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d4f50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (high_surrogate) , :: core :: convert :: Into :: into (low_surrogate) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d50a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-char")]impl Char{#[doc="`IsLatin1(u16)` overload"]pub fn is_latin1(ch:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0b10usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(ch))}
+}
+#[doc="`IsAscii(u16)` overload"]pub fn is_ascii(ch:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0b20usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(ch))}
+}
+#[doc="`ToString(u16)` overload"]pub fn to_string_2(c:impl::core::convert::Into<u16>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0de0usize)as*mut u8, ::unity2::Il2CppString;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`Parse(::unity2::Il2CppString)` overload"]pub fn parse(s:impl::core::convert::Into< ::unity2::Il2CppString>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0e80usize)as*mut u8,u16;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`TryParse(::unity2::Il2CppString, *mutu16)` overload"]pub fn try_parse(s:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,u16){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u16> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x31d0f50usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s),(*mut u16)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`IsDigit(u16)` overload"]pub fn is_digit(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0fb0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsLetter(u16)` overload"]pub fn is_letter(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1170usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsWhiteSpaceLatin1(u16)` overload"]pub fn is_white_space_latin1(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1310usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsWhiteSpace(u16)` overload"]pub fn is_white_space(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1360usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsUpper(u16)` overload"]pub fn is_upper(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1550usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsLower(u16)` overload"]pub fn is_lower(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d16e0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsPunctuation(u16)` overload"]pub fn is_punctuation(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1880usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsLetterOrDigit(u16)` overload"]pub fn is_letter_or_digit(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1a00usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`ToUpper(u16)` overload"]pub fn to_upper(c:impl::core::convert::Into<u16>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1c10usize)as*mut u8,u16;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`ToUpperInvariant(u16)` overload"]pub fn to_upper_invariant(c:impl::core::convert::Into<u16>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1cc0usize)as*mut u8,u16;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`ToLower(u16)` overload"]pub fn to_lower(c:impl::core::convert::Into<u16>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1e00usize)as*mut u8,u16;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`ToLowerInvariant(u16)` overload"]pub fn to_lower_invariant(c:impl::core::convert::Into<u16>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d1eb0usize)as*mut u8,u16;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsControl(u16)` overload"]pub fn is_control(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d3d50usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsNumber(u16)` overload"]pub fn is_number(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d3ea0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsNumber(::unity2::Il2CppString, i32)` overload"]pub fn is_number_2(s:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d4040usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsSeparatorLatin1(u16)` overload"]pub fn is_separator_latin1(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d4390usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsSeparator(u16)` overload"]pub fn is_separator(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d43b0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsSurrogate(u16)` overload"]pub fn is_surrogate(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d44c0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsSurrogate(::unity2::Il2CppString, i32)` overload"]pub fn is_surrogate_2(s:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d44d0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsSymbol(u16)` overload"]pub fn is_symbol(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d4600usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsHighSurrogate(u16)` overload"]pub fn is_high_surrogate(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d4c80usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsHighSurrogate(::unity2::Il2CppString, i32)` overload"]pub fn is_high_surrogate_2(s:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d4c90usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsLowSurrogate(u16)` overload"]pub fn is_low_surrogate(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d4db0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsSurrogatePair(u16, u16)` overload"]pub fn is_surrogate_pair(high_surrogate:impl::core::convert::Into<u16> ,low_surrogate:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d4dc0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(high_surrogate),(u16)::core::convert::Into::into(low_surrogate))}
+}
+#[doc="`ConvertFromUtf32(i32)` overload"]pub fn convert_from_utf32(utf32:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d4df0usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(utf32))}
+}
+#[doc="`ConvertToUtf32(u16, u16)` overload"]pub fn convert_to_utf32(high_surrogate:impl::core::convert::Into<u16> ,low_surrogate:impl::core::convert::Into<u16>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d4f50usize)as*mut u8,i32;
+(u16)::core::convert::Into::into(high_surrogate),(u16)::core::convert::Into::into(low_surrogate))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d50a0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-char")]
-impl Char { # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Char , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0bc0usize) as * mut u8) ; __inner (self as * mut Char , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Char , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0bd0usize) as * mut u8) ; __inner (self as * mut Char , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(u16)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Char , u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0c60usize) as * mut u8) ; __inner (self as * mut Char , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`CompareTo(crate::system::object::Object)` overload"] pub fn compare_to (& mut self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Char , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0c70usize) as * mut u8) ; __inner (self as * mut Char , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CompareTo(u16)` overload"] pub fn compare_to_2 (& mut self , value : impl :: core :: convert :: Into < u16 >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Char , u16 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0d50usize) as * mut u8) ; __inner (self as * mut Char , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Char , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31d0d60usize) as * mut u8) ; __inner (self as * mut Char , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-char")]impl Char{#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0bc0usize)as*mut u8,i32;
+(*mut Char)self as*mut Char)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0bd0usize)as*mut u8,bool;
+(*mut Char)self as*mut Char,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(u16)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0c60usize)as*mut u8,bool;
+(*mut Char)self as*mut Char,(u16)::core::convert::Into::into(obj))}
+}
+#[doc="`CompareTo(crate::system::object::Object)` overload"]pub fn compare_to(&mut self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0c70usize)as*mut u8,i32;
+(*mut Char)self as*mut Char,(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`CompareTo(u16)` overload"]pub fn compare_to_2(&mut self,value:impl::core::convert::Into<u16>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0d50usize)as*mut u8,i32;
+(*mut Char)self as*mut Char,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31d0d60usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Char)self as*mut Char)}
+}
+}
 
-#[cfg(feature = "system-char")]
-impl Char { pub fn is_latin1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_ascii_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn compare_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn compare_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn to_string_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn try_parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_digit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_letter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_white_space_latin1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_white_space_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_upper_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_lower_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_punctuation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn is_letter_or_digit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn to_upper_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn to_upper_invariant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn to_lower_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn to_lower_invariant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn is_control_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn is_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn is_number_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn is_separator_latin1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn is_separator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn is_surrogate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn is_surrogate_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn is_symbol_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn is_high_surrogate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn is_high_surrogate_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn is_low_surrogate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn is_surrogate_pair_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn convert_from_utf32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn convert_to_utf32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Char as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } }
+#[cfg(feature="system-char")]impl Char{pub fn is_latin1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_ascii_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn compare_to_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn to_string_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn parse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn try_parse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_digit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_letter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_white_space_latin1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_white_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_upper_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_lower_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_punctuation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_letter_or_digit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn to_upper_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn to_upper_invariant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn to_lower_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn to_lower_invariant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn is_control_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn is_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn is_number_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn is_separator_latin1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn is_separator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn is_surrogate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn is_surrogate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn is_symbol_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn is_high_surrogate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn is_high_surrogate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn is_low_surrogate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn is_surrogate_pair_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn convert_from_utf32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn convert_to_utf32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+}
 
 #[cfg(feature = "system-char")]
 #[doc(hidden)]

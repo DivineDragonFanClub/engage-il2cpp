@@ -4,49 +4,83 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopgodsymbol/RefineShopGodSymbol.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopGodSymbol")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RefineShopGodSymbol {
-# [offset (24)] # [rename (name = "m_GodSymbol0Object")] pub m_god_symbol0_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_GodSymbol0Image")] pub m_god_symbol0_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_GodSymbol0EffectObject")] pub m_god_symbol0_effect_object : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (48)] # [rename (name = "m_GodSymbol1Object")] pub m_god_symbol1_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_GodSymbol1Image")] pub m_god_symbol1_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "m_GodSymbol1EffectObject")] pub m_god_symbol1_effect_object : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (72)] # [rename (name = "m_CurrentGodSymbolObject")] pub m_current_god_symbol_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopgodsymbol/RefineShopGodSymbol.md"))]#[::unity2::class(namespace="App",name="RefineShopGodSymbol")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineShopGodSymbol{#[offset(24)]#[rename(name="m_GodSymbol0Object")]pub m_god_symbol0_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_GodSymbol0Image")]pub m_god_symbol0_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_GodSymbol0EffectObject")]pub m_god_symbol0_effect_object: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(48)]#[rename(name="m_GodSymbol1Object")]pub m_god_symbol1_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_GodSymbol1Image")]pub m_god_symbol1_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_GodSymbol1EffectObject")]pub m_god_symbol1_effect_object: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(72)]#[rename(name="m_CurrentGodSymbolObject")]pub m_current_god_symbol_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-refineshopgodsymbol-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopgodsymbol")]
-impl RefineShopGodSymbol { # [doc = "`Create(crate::unity_engine::gameobject::GameObject)` overload"] pub fn create (game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: app :: refineshopgodsymbol :: RefineShopGodSymbol { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopgodsymbol :: RefineShopGodSymbol = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965fd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (game_object) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopgodsymbol")]impl RefineShopGodSymbol{#[doc="`Create(crate::unity_engine::gameobject::GameObject)` overload"]pub fn create(game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::app::refineshopgodsymbol::RefineShopGodSymbol{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2965fd0usize)as*mut u8,crate::app::refineshopgodsymbol::RefineShopGodSymbol;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+}
 
-#[cfg(feature = "app-refineshopgodsymbol")]
-pub trait IRefineShopGodSymbolMethods : IRefineShopGodSymbol { # [doc = "`Open(crate::app::goddata::GodData)` overload"] fn open (self , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < RefineShopGodSymbol as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopGodSymbol , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2966080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < RefineShopGodSymbol as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopGodSymbol , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29668c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetData(crate::app::goddata::GodData)` overload"] fn set_data (self , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < RefineShopGodSymbol as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopGodSymbol , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2966970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } # [doc = "`Open(crate::unity_engine::gameobject::GameObject, crate::app::goddata::GodData)` overload"] fn open_2 (self , god_symbol_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , god_data : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> () { unsafe { let __receiver = < RefineShopGodSymbol as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopGodSymbol , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2966280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_symbol_object) , :: core :: convert :: Into :: into (god_data) , :: core :: option :: Option :: None) } } } # [doc = "`Close(crate::unity_engine::gameobject::GameObject)` overload"] fn close_2 (self , god_symbol_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < RefineShopGodSymbol as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopGodSymbol , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2966ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_symbol_object) , :: core :: option :: Option :: None) } } } # [doc = "`SetClose(crate::unity_engine::gameobject::GameObject)` overload"] fn set_close (self , god_symbol_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < RefineShopGodSymbol as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopGodSymbol , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2966710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_symbol_object) , :: core :: option :: Option :: None) } } } # [doc = "`GetHiddenObject()` overload"] fn get_hidden_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < RefineShopGodSymbol as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopGodSymbol , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2966830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopGodSymbol as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopGodSymbol , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2966c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopgodsymbol")]pub trait IRefineShopGodSymbolMethods:IRefineShopGodSymbol{#[doc="`Open(crate::app::goddata::GodData)` overload"]fn open(self,god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <RefineShopGodSymbol as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2966080usize)as*mut u8,();
+(RefineShopGodSymbol)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RefineShopGodSymbol as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29668c0usize)as*mut u8,();
+(RefineShopGodSymbol)__receiver)}
+}
+#[doc="`SetData(crate::app::goddata::GodData)` overload"]fn set_data(self,god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <RefineShopGodSymbol as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2966970usize)as*mut u8,();
+(RefineShopGodSymbol)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`Open(crate::unity_engine::gameobject::GameObject, crate::app::goddata::GodData)` overload"]fn open_2(self,god_symbol_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,god_data:impl::core::convert::Into<crate::app::goddata::GodData>)->(){unsafe{let __receiver= <RefineShopGodSymbol as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2966280usize)as*mut u8,();
+(RefineShopGodSymbol)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(god_symbol_object),(crate::app::goddata::GodData)::core::convert::Into::into(god_data))}
+}
+#[doc="`Close(crate::unity_engine::gameobject::GameObject)` overload"]fn close_2(self,god_symbol_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RefineShopGodSymbol as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2966ad0usize)as*mut u8,();
+(RefineShopGodSymbol)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(god_symbol_object))}
+}
+#[doc="`SetClose(crate::unity_engine::gameobject::GameObject)` overload"]fn set_close(self,god_symbol_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <RefineShopGodSymbol as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2966710usize)as*mut u8,();
+(RefineShopGodSymbol)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(god_symbol_object))}
+}
+#[doc="`GetHiddenObject()` overload"]fn get_hidden_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <RefineShopGodSymbol as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2966830usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(RefineShopGodSymbol)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopGodSymbol as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2966c10usize)as*mut u8,();
+(RefineShopGodSymbol)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopgodsymbol")]
-impl < __T : IRefineShopGodSymbol > IRefineShopGodSymbolMethods for __T { }
+#[cfg(feature="app-refineshopgodsymbol")]impl<__T:IRefineShopGodSymbol>IRefineShopGodSymbolMethods for __T{}
 
-#[cfg(feature = "app-refineshopgodsymbol")]
-impl RefineShopGodSymbol { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopGodSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopGodSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopGodSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopGodSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn open_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopGodSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn close_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopGodSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopGodSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_hidden_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopGodSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopGodSymbol as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-refineshopgodsymbol")]impl RefineShopGodSymbol{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn open_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn close_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_hidden_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-refineshopgodsymbol")]
-impl RefineShopGodSymbol {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopGodSymbol) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopGodSymbolMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineshopgodsymbol")]impl RefineShopGodSymbol{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopGodSymbol), ::core::stringify!(new),));
+ <Self as IRefineShopGodSymbolMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineshopgodsymbol")]

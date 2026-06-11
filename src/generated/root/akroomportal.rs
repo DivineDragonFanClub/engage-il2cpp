@@ -4,112 +4,223 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::aktriggerhandler::{AkTriggerHandler,IAkTriggerHandler}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroomportal/AkRoomPortal.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRoomPortal")] # [parent (crate :: root :: aktriggerhandler :: AkTriggerHandler)] pub struct AkRoomPortal {
-# [static_field] # [rename (name = "MAX_ROOMS_PER_PORTAL")] pub max_rooms_per_portal : i32 ,
-# [offset (44)] # [rename (name = "initialState")] pub initial_state : crate :: root :: akroomportal :: AkRoomPortal_State ,
-# [offset (48)] # [rename (name = "active")] pub active : bool ,
-# [offset (56)] # [rename (name = "closePortalTriggerList")] pub close_portal_trigger_list : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
-# [offset (64)] # [rename (name = "rooms")] pub rooms : :: unity2 :: Array < crate :: root :: akroom :: AkRoom > ,
-# [offset (72)] # [rename (name = "roomList")] pub room_list : :: unity2 :: Array < crate :: root :: akroom :: AkRoom_PriorityList > ,
-# [offset (80)] # [rename (name = "portalTransform")] pub portal_transform : crate :: root :: aktransform :: AkTransform ,
-# [offset (88)] # [rename (name = "portalCollider")] pub portal_collider : crate :: unity_engine :: boxcollider :: BoxCollider ,
-# [offset (96)] # [rename (name = "portalSet")] pub portal_set : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akroomportal/AkRoomPortal_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkRoomPortal_State{pub value:i32,}
+impl::unity2::ClassIdentity for AkRoomPortal_State{const NAMESPACE: &'static str="";
+const NAME: &'static str="AkRoomPortal.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AkRoomPortal_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AkRoomPortal_State{pub fn closed()->Self{Self{value:0}
+}
+pub fn open()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akroomportal/AkRoomPortal_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AkRoomPortal_State  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for AkRoomPortal_State  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "AkRoomPortal.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AkRoomPortal_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AkRoomPortal_State  {
-    pub fn closed() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn open() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akroomportal/AkRoomPortal.md"))]#[::unity2::class(namespace="",name="AkRoomPortal")]#[parent(crate::root::aktriggerhandler::AkTriggerHandler)]pub struct AkRoomPortal{#[static_field]#[rename(name="MAX_ROOMS_PER_PORTAL")]pub max_rooms_per_portal:i32, #[offset(44)]#[rename(name="initialState")]pub initial_state:crate::root::akroomportal::AkRoomPortal_State, #[offset(48)]#[rename(name="active")]pub active:bool, #[offset(56)]#[rename(name="closePortalTriggerList")]pub close_portal_trigger_list:crate::system::collections::generic::list_1::List_1<i32> , #[offset(64)]#[rename(name="rooms")]pub rooms: ::unity2::Array<crate::root::akroom::AkRoom> , #[offset(72)]#[rename(name="roomList")]pub room_list: ::unity2::Array<crate::root::akroom::AkRoom_PriorityList> , #[offset(80)]#[rename(name="portalTransform")]pub portal_transform:crate::root::aktransform::AkTransform, #[offset(88)]#[rename(name="portalCollider")]pub portal_collider:crate::unity_engine::boxcollider::BoxCollider, #[offset(96)]#[rename(name="portalSet")]pub portal_set:bool,}
 
 }
 
 #[cfg(feature = "root-akroomportal-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akroomportal")]
-pub trait IAkRoomPortalMethods : IAkRoomPortal { # [doc = "`get_portalActive()` overload"] fn get_portal_active (self ,) -> bool { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_portalActive(bool)` overload"] fn set_portal_active (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_frontRoomID()` overload"] fn get_front_room_id (self ,) -> u64 { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_backRoomID()` overload"] fn get_back_room_id (self ,) -> u64 { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRoom(i32)` overload"] fn get_room (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: root :: akroom :: AkRoom { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , i32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akroom :: AkRoom = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`get_frontRoom()` overload"] fn get_front_room (self ,) -> crate :: root :: akroom :: AkRoom { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> crate :: root :: akroom :: AkRoom = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_backRoom()` overload"] fn get_back_room (self ,) -> crate :: root :: akroom :: AkRoom { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> crate :: root :: akroom :: AkRoom = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f350b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetRoomPortal()` overload"] fn set_room_portal (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateRoomPortal()` overload"] fn update_room_portal (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Overlaps(crate::root::akroom::AkRoom)` overload"] fn overlaps (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> bool { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f350e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f360a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetID()` overload"] fn get_id (self ,) -> u64 { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f360e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f365f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } } # [doc = "`ClosePortal(crate::unity_engine::gameobject::GameObject)` overload"] fn close_portal (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f365e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f366c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f366f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRoomActive(crate::root::akroom::AkRoom)` overload"] fn is_room_active (self , in_room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> bool { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f35b90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_room) , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindOverlappingRooms(::unity2::Array<crate::root::akroom::AkRoom_PriorityList>)` overload"] fn find_overlapping_rooms (self , room_list : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: root :: akroom :: AkRoom_PriorityList > >) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: Array < crate :: root :: akroom :: AkRoom_PriorityList > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f362c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room_list) , :: core :: option :: Option :: None) } } } # [doc = "`FillRoomList(crate::unity_engine::vector3::Vector3, crate::root::akroom::AkRoom_PriorityList)` overload"] fn fill_room_list (self , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , list : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom_PriorityList >) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , crate :: unity_engine :: vector3 :: Vector3 , crate :: root :: akroom :: AkRoom_PriorityList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (position) , :: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateRooms()` overload"] fn update_rooms (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetRoom(i32, crate::root::akroom::AkRoom)` overload"] fn set_room (self , in_room_index : impl :: core :: convert :: Into < i32 > , in_room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , i32 , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_room_index) , :: core :: convert :: Into :: into (in_room) , :: core :: option :: Option :: None) } } } # [doc = "`SetFrontRoom(crate::root::akroom::AkRoom)` overload"] fn set_front_room (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`SetBackRoom(crate::root::akroom::AkRoom)` overload"] fn set_back_room (self , room : impl :: core :: convert :: Into < crate :: root :: akroom :: AkRoom >) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , crate :: root :: akroom :: AkRoom , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36bc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (room) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSoundEngineRoomIDs()` overload"] fn update_sound_engine_room_i_ds (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateOverlappingRooms()` overload"] fn update_overlapping_rooms (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRoomPortal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f36d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akroomportal")]pub trait IAkRoomPortalMethods:IAkRoomPortal{#[doc="`get_portalActive()` overload"]fn get_portal_active(self,)->bool{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35a00usize)as*mut u8,bool;
+(AkRoomPortal)__receiver)}
+}
+#[doc="`set_portalActive(bool)` overload"]fn set_portal_active(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35a10usize)as*mut u8,();
+(AkRoomPortal)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_frontRoomID()` overload"]fn get_front_room_id(self,)->u64{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35a20usize)as*mut u8,u64;
+(AkRoomPortal)__receiver)}
+}
+#[doc="`get_backRoomID()` overload"]fn get_back_room_id(self,)->u64{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35c30usize)as*mut u8,u64;
+(AkRoomPortal)__receiver)}
+}
+#[doc="`GetRoom(i32)` overload"]fn get_room(self,index:impl::core::convert::Into<i32>)->crate::root::akroom::AkRoom{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35da0usize)as*mut u8,crate::root::akroom::AkRoom;
+(AkRoomPortal)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_frontRoom()` overload"]fn get_front_room(self,)->crate::root::akroom::AkRoom{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35080usize)as*mut u8,crate::root::akroom::AkRoom;
+(AkRoomPortal)__receiver)}
+}
+#[doc="`get_backRoom()` overload"]fn get_back_room(self,)->crate::root::akroom::AkRoom{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f350b0usize)as*mut u8,crate::root::akroom::AkRoom;
+(AkRoomPortal)__receiver)}
+}
+#[doc="`SetRoomPortal()` overload"]fn set_room_portal(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35de0usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`UpdateRoomPortal()` overload"]fn update_room_portal(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35310usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`Overlaps(crate::root::akroom::AkRoom)` overload"]fn overlaps(self,room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->bool{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f350e0usize)as*mut u8,bool;
+(AkRoomPortal)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`get_IsValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f360a0usize)as*mut u8,bool;
+(AkRoomPortal)__receiver)}
+}
+#[doc="`GetID()` overload"]fn get_id(self,)->u64{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f360e0usize)as*mut u8,u64;
+(AkRoomPortal)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36410usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36550usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f365f0usize)as*mut u8,();
+(AkRoomPortal)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+}
+#[doc="`ClosePortal(crate::unity_engine::gameobject::GameObject)` overload"]fn close_portal(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f365e0usize)as*mut u8,();
+(AkRoomPortal)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36620usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f366c0usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f366f0usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`IsRoomActive(crate::root::akroom::AkRoom)` overload"]fn is_room_active(self,in_room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->bool{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35b90usize)as*mut u8,bool;
+(AkRoomPortal)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(in_room))}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36600usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36610usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`FindOverlappingRooms(::unity2::Array<crate::root::akroom::AkRoom_PriorityList>)` overload"]fn find_overlapping_rooms(self,room_list:impl::core::convert::Into< ::unity2::Array<crate::root::akroom::AkRoom_PriorityList> >)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f362c0usize)as*mut u8,();
+(AkRoomPortal)__receiver,(::unity2::Array<crate::root::akroom::AkRoom_PriorityList>)::core::convert::Into::into(room_list))}
+}
+#[doc="`FillRoomList(crate::unity_engine::vector3::Vector3, crate::root::akroom::AkRoom_PriorityList)` overload"]fn fill_room_list(self,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,list:impl::core::convert::Into<crate::root::akroom::AkRoom_PriorityList>)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36800usize)as*mut u8,();
+(AkRoomPortal)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position),(crate::root::akroom::AkRoom_PriorityList)::core::convert::Into::into(list))}
+}
+#[doc="`UpdateRooms()` overload"]fn update_rooms(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36100usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`SetRoom(i32, crate::root::akroom::AkRoom)` overload"]fn set_room(self,in_room_index:impl::core::convert::Into<i32> ,in_room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36980usize)as*mut u8,();
+(AkRoomPortal)__receiver,(i32)::core::convert::Into::into(in_room_index),(crate::root::akroom::AkRoom)::core::convert::Into::into(in_room))}
+}
+#[doc="`SetFrontRoom(crate::root::akroom::AkRoom)` overload"]fn set_front_room(self,room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36aa0usize)as*mut u8,();
+(AkRoomPortal)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`SetBackRoom(crate::root::akroom::AkRoom)` overload"]fn set_back_room(self,room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36bc0usize)as*mut u8,();
+(AkRoomPortal)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
+}
+#[doc="`UpdateSoundEngineRoomIDs()` overload"]fn update_sound_engine_room_i_ds(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36ce0usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`UpdateOverlappingRooms()` overload"]fn update_overlapping_rooms(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36d10usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36d20usize)as*mut u8,();
+(AkRoomPortal)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akroomportal")]
-impl < __T : IAkRoomPortal > IAkRoomPortalMethods for __T { }
+#[cfg(feature="root-akroomportal")]impl<__T:IAkRoomPortal>IAkRoomPortalMethods for __T{}
 
-#[cfg(feature = "root-akroomportal")]
-impl AkRoomPortal { pub fn get_portal_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_portal_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_front_room_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_back_room_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_front_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_back_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_room_portal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_room_portal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn overlaps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn close_portal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_room_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn find_overlapping_rooms_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn fill_room_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn update_rooms_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_front_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_back_room_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn update_sound_engine_room_i_ds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn update_overlapping_rooms_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } }
+#[cfg(feature="root-akroomportal")]impl AkRoomPortal{pub fn get_portal_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_portal_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_front_room_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_back_room_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_room_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_front_room_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_back_room_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_room_portal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_room_portal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn overlaps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn handle_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn close_portal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_room_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn find_overlapping_rooms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn fill_room_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn update_rooms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_room_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_front_room_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_back_room_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn update_sound_engine_room_i_ds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn update_overlapping_rooms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+}
 
-#[cfg(feature = "root-akroomportal")]
-impl AkRoomPortal {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoomPortal) , :: core :: stringify ! (new) ,)) ; < Self as IAkRoomPortalMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akroomportal")]impl AkRoomPortal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRoomPortal), ::core::stringify!(new),));
+ <Self as IAkRoomPortalMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akroomportal")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkRoomPortal_State;
     pub use super::AkRoomPortal;
     pub use super::IAkRoomPortal;
     pub use super::IAkRoomPortalMethods;
-    pub use super::AkRoomPortal_State;
     pub use crate::root::aktriggerhandler::IAkTriggerHandler;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

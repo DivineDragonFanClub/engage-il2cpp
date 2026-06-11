@@ -4,50 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterillusion/CharacterIllusion.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterIllusion")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterIllusion {
-# [offset (24)] # [rename (name = "NumIllusions")] pub num_illusions : i32 ,
-# [offset (28)] # [rename (name = "Interval")] pub interval : f32 ,
-# [offset (32)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [offset (40)] # [rename (name = "illusionHistory")] pub illusion_history : :: unity2 :: Array < :: unity2 :: Array < crate :: combat :: bakedmesh :: BakedMesh > > ,
-# [offset (48)] # [rename (name = "index")] pub index : i32 ,
-# [offset (52)] # [rename (name = "freqency")] pub freqency : f32 ,
-# [offset (56)] # [rename (name = "illusionGOs")] pub illusion_g_os : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (64)] # [rename (name = "srcSkinnedMeshRenderers")] pub src_skinned_mesh_renderers : :: unity2 :: Array < crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer > ,
-# [offset (72)] # [rename (name = "srcMeshFilters")] pub src_mesh_filters : :: unity2 :: Array < crate :: unity_engine :: meshfilter :: MeshFilter > ,
-# [offset (80)] # [rename (name = "srcMeshRenderers")] pub src_mesh_renderers : :: unity2 :: Array < crate :: unity_engine :: meshrenderer :: MeshRenderer > ,
-# [offset (88)] # [rename (name = "initialized")] pub initialized : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterillusion/CharacterIllusion.md"))]#[::unity2::class(namespace="Combat",name="CharacterIllusion")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterIllusion{#[offset(24)]#[rename(name="NumIllusions")]pub num_illusions:i32, #[offset(28)]#[rename(name="Interval")]pub interval:f32, #[offset(32)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(40)]#[rename(name="illusionHistory")]pub illusion_history: ::unity2::Array< ::unity2::Array<crate::combat::bakedmesh::BakedMesh> > , #[offset(48)]#[rename(name="index")]pub index:i32, #[offset(52)]#[rename(name="freqency")]pub freqency:f32, #[offset(56)]#[rename(name="illusionGOs")]pub illusion_g_os: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(64)]#[rename(name="srcSkinnedMeshRenderers")]pub src_skinned_mesh_renderers: ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer> , #[offset(72)]#[rename(name="srcMeshFilters")]pub src_mesh_filters: ::unity2::Array<crate::unity_engine::meshfilter::MeshFilter> , #[offset(80)]#[rename(name="srcMeshRenderers")]pub src_mesh_renderers: ::unity2::Array<crate::unity_engine::meshrenderer::MeshRenderer> , #[offset(88)]#[rename(name="initialized")]pub initialized:bool,}
 
 }
 
 #[cfg(feature = "combat-characterillusion-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterillusion")]
-pub trait ICharacterIllusionMethods : ICharacterIllusion { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e6fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`On()` overload"] fn on (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e70a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Off()` overload"] fn off (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e7700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e7810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e7820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyUpdate()` overload"] fn my_update (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e7930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Capture(::unity2::Array<crate::combat::bakedmesh::BakedMesh>)` overload"] fn capture (self , dst_meshes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: combat :: bakedmesh :: BakedMesh > >) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIllusion , :: unity2 :: Array < crate :: combat :: bakedmesh :: BakedMesh > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e79d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dst_meshes) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterIllusion as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIllusion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e7b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterillusion")]pub trait ICharacterIllusionMethods:ICharacterIllusion{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterIllusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e6fe0usize)as*mut u8,crate::combat::character::Character;
+(CharacterIllusion)__receiver)}
+}
+#[doc="`On()` overload"]fn on(self,)->(){unsafe{let __receiver= <CharacterIllusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e70a0usize)as*mut u8,();
+(CharacterIllusion)__receiver)}
+}
+#[doc="`Off()` overload"]fn off(self,)->(){unsafe{let __receiver= <CharacterIllusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e7700usize)as*mut u8,();
+(CharacterIllusion)__receiver)}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <CharacterIllusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e7810usize)as*mut u8,();
+(CharacterIllusion)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <CharacterIllusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e7820usize)as*mut u8,();
+(CharacterIllusion)__receiver)}
+}
+#[doc="`MyUpdate()` overload"]fn my_update(self,)->(){unsafe{let __receiver= <CharacterIllusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e7930usize)as*mut u8,();
+(CharacterIllusion)__receiver)}
+}
+#[doc="`Capture(::unity2::Array<crate::combat::bakedmesh::BakedMesh>)` overload"]fn capture(self,dst_meshes:impl::core::convert::Into< ::unity2::Array<crate::combat::bakedmesh::BakedMesh> >)->(){unsafe{let __receiver= <CharacterIllusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e79d0usize)as*mut u8,();
+(CharacterIllusion)__receiver,(::unity2::Array<crate::combat::bakedmesh::BakedMesh>)::core::convert::Into::into(dst_meshes))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterIllusion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e7b00usize)as*mut u8,();
+(CharacterIllusion)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterillusion")]
-impl < __T : ICharacterIllusion > ICharacterIllusionMethods for __T { }
+#[cfg(feature="combat-characterillusion")]impl<__T:ICharacterIllusion>ICharacterIllusionMethods for __T{}
 
-#[cfg(feature = "combat-characterillusion")]
-impl CharacterIllusion { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIllusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIllusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIllusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIllusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIllusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn my_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIllusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn capture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIllusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIllusion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="combat-characterillusion")]impl CharacterIllusion{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn my_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn capture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "combat-characterillusion")]
-impl CharacterIllusion {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterIllusion) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterIllusionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterillusion")]impl CharacterIllusion{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterIllusion), ::core::stringify!(new),));
+ <Self as ICharacterIllusionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterillusion")]

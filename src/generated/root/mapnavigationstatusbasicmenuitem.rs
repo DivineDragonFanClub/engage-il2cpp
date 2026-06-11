@@ -4,35 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationstatusbasicmenuitem/MapNavigationStatusBasicMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "MapNavigationStatusBasicMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct MapNavigationStatusBasicMenuItem {
-# [offset (104)] # [rename (name = "m_StatusTitle")] pub m_status_title : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_UnitInfoTitle")] pub m_unit_info_title : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapnavigationstatusbasicmenuitem/MapNavigationStatusBasicMenuItem.md"))]#[::unity2::class(namespace="",name="MapNavigationStatusBasicMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MapNavigationStatusBasicMenuItem{#[offset(104)]#[rename(name="m_StatusTitle")]pub m_status_title: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_UnitInfoTitle")]pub m_unit_info_title: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "root-mapnavigationstatusbasicmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapnavigationstatusbasicmenuitem")]
-pub trait IMapNavigationStatusBasicMenuItemMethods : IMapNavigationStatusBasicMenuItem { # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MapNavigationStatusBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationStatusBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df8e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < MapNavigationStatusBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationStatusBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df8f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MapNavigationStatusBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationStatusBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df8f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitColor()` overload"] fn init_color (self ,) -> () { unsafe { let __receiver = < MapNavigationStatusBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationStatusBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df8e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateText()` overload"] fn update_text (self ,) -> () { unsafe { let __receiver = < MapNavigationStatusBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationStatusBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df9040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfoText(::unity2::Il2CppString)` overload"] fn set_unit_info_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapNavigationStatusBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationStatusBasicMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df9130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapNavigationStatusBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationStatusBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df9140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapnavigationstatusbasicmenuitem")]pub trait IMapNavigationStatusBasicMenuItemMethods:IMapNavigationStatusBasicMenuItem{#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MapNavigationStatusBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df8e40usize)as*mut u8,();
+(MapNavigationStatusBasicMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <MapNavigationStatusBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df8f60usize)as*mut u8,();
+(MapNavigationStatusBasicMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapNavigationStatusBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df8f70usize)as*mut u8,();
+(MapNavigationStatusBasicMenuItem)__receiver)}
+}
+#[doc="`InitColor()` overload"]fn init_color(self,)->(){unsafe{let __receiver= <MapNavigationStatusBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df8e50usize)as*mut u8,();
+(MapNavigationStatusBasicMenuItem)__receiver)}
+}
+#[doc="`UpdateText()` overload"]fn update_text(self,)->(){unsafe{let __receiver= <MapNavigationStatusBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df9040usize)as*mut u8,();
+(MapNavigationStatusBasicMenuItem)__receiver)}
+}
+#[doc="`SetUnitInfoText(::unity2::Il2CppString)` overload"]fn set_unit_info_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapNavigationStatusBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df9130usize)as*mut u8,();
+(MapNavigationStatusBasicMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapNavigationStatusBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df9140usize)as*mut u8,();
+(MapNavigationStatusBasicMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapnavigationstatusbasicmenuitem")]
-impl < __T : IMapNavigationStatusBasicMenuItem > IMapNavigationStatusBasicMenuItemMethods for __T { }
+#[cfg(feature="root-mapnavigationstatusbasicmenuitem")]impl<__T:IMapNavigationStatusBasicMenuItem>IMapNavigationStatusBasicMenuItemMethods for __T{}
 
-#[cfg(feature = "root-mapnavigationstatusbasicmenuitem")]
-impl MapNavigationStatusBasicMenuItem { pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationStatusBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationStatusBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationStatusBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn init_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationStatusBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationStatusBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_unit_info_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationStatusBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationStatusBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-mapnavigationstatusbasicmenuitem")]impl MapNavigationStatusBasicMenuItem{pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn init_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_unit_info_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-mapnavigationstatusbasicmenuitem")]
-impl MapNavigationStatusBasicMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapNavigationStatusBasicMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMapNavigationStatusBasicMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapnavigationstatusbasicmenuitem")]impl MapNavigationStatusBasicMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapNavigationStatusBasicMenuItem), ::core::stringify!(new),));
+ <Self as IMapNavigationStatusBasicMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapnavigationstatusbasicmenuitem")]

@@ -4,36 +4,81 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuseditmenuitem/VersusEditMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusEditMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct VersusEditMenuItem {
-# [offset (104)] # [rename (name = "m_Data")] pub m_data : crate :: app :: mapeditorobjectdata :: MapEditorObjectData ,
-# [offset (136)] # [rename (name = "m_Category")] pub m_category : crate :: app :: mapeditorcategorydata :: MapEditorCategoryData ,
-# [offset (144)] # [rename (name = "m_OnSelectCallback")] pub m_on_select_callback : crate :: system :: action_1 :: Action_1 < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versuseditmenuitem/VersusEditMenuItem.md"))]#[::unity2::class(namespace="App",name="VersusEditMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct VersusEditMenuItem{#[offset(104)]#[rename(name="m_Data")]pub m_data:crate::app::mapeditorobjectdata::MapEditorObjectData, #[offset(136)]#[rename(name="m_Category")]pub m_category:crate::app::mapeditorcategorydata::MapEditorCategoryData, #[offset(144)]#[rename(name="m_OnSelectCallback")]pub m_on_select_callback:crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData> ,}
 
 }
 
 #[cfg(feature = "app-versuseditmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versuseditmenuitem")]
-pub trait IVersusEditMenuItemMethods : IVersusEditMenuItem { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abc20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abc30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Index()` overload"] fn get_index (self ,) -> i32 { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abc40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Index(i32)` overload"] fn set_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abc50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CategoryIcon()` overload"] fn get_category_icon (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abc60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CategoryIcon(::unity2::Il2CppString)` overload"] fn set_category_icon (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abc70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, crate::app::mapeditorobjectdata::MapEditorObjectData, crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData>)` overload"] fn ctor (self , index : impl :: core :: convert :: Into < i32 > , data : impl :: core :: convert :: Into < crate :: app :: mapeditorobjectdata :: MapEditorObjectData > , on_select_callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData > >) -> () { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , i32 , crate :: app :: mapeditorobjectdata :: MapEditorObjectData , crate :: system :: action_1 :: Action_1 < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26aa050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (on_select_callback) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abcd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < VersusEditMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abd20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versuseditmenuitem")]pub trait IVersusEditMenuItemMethods:IVersusEditMenuItem{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abc20usize)as*mut u8, ::unity2::Il2CppString;
+(VersusEditMenuItem)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abc30usize)as*mut u8,();
+(VersusEditMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abc40usize)as*mut u8,i32;
+(VersusEditMenuItem)__receiver)}
+}
+#[doc="`set_Index(i32)` overload"]fn set_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abc50usize)as*mut u8,();
+(VersusEditMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_CategoryIcon()` overload"]fn get_category_icon(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abc60usize)as*mut u8, ::unity2::Il2CppString;
+(VersusEditMenuItem)__receiver)}
+}
+#[doc="`set_CategoryIcon(::unity2::Il2CppString)` overload"]fn set_category_icon(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abc70usize)as*mut u8,();
+(VersusEditMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32, crate::app::mapeditorobjectdata::MapEditorObjectData, crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData>)` overload"]fn ctor(self,index:impl::core::convert::Into<i32> ,data:impl::core::convert::Into<crate::app::mapeditorobjectdata::MapEditorObjectData> ,on_select_callback:impl::core::convert::Into<crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData> >)->(){unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26aa050usize)as*mut u8,();
+(VersusEditMenuItem)__receiver,(i32)::core::convert::Into::into(index),(crate::app::mapeditorobjectdata::MapEditorObjectData)::core::convert::Into::into(data),(crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData>)::core::convert::Into::into(on_select_callback))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abc80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusEditMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abcd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VersusEditMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VersusEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abd20usize)as*mut u8,();
+(VersusEditMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versuseditmenuitem")]
-impl < __T : IVersusEditMenuItem > IVersusEditMenuItemMethods for __T { }
+#[cfg(feature="app-versuseditmenuitem")]impl<__T:IVersusEditMenuItem>IVersusEditMenuItemMethods for __T{}
 
-#[cfg(feature = "app-versuseditmenuitem")]
-impl VersusEditMenuItem { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_category_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_category_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-versuseditmenuitem")]impl VersusEditMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_category_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_category_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-versuseditmenuitem")]
-impl VersusEditMenuItem {
-# [doc = "`.ctor(i32, crate::app::mapeditorobjectdata::MapEditorObjectData, crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData>)` — overload selector"] pub fn new (index : i32 , data : crate :: app :: mapeditorobjectdata :: MapEditorObjectData , on_select_callback : crate :: system :: action_1 :: Action_1 < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusEditMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IVersusEditMenuItemMethods > :: ctor (this , index , data , on_select_callback) ; this }
+#[cfg(feature="app-versuseditmenuitem")]impl VersusEditMenuItem{#[doc="`.ctor(i32, crate::app::mapeditorobjectdata::MapEditorObjectData, crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData>)` — overload selector"]pub fn new(index:i32,data:crate::app::mapeditorobjectdata::MapEditorObjectData,on_select_callback:crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusEditMenuItem), ::core::stringify!(new),));
+ <Self as IVersusEditMenuItemMethods> ::ctor(this,index,data,on_select_callback);
+this}
 }
 
 #[cfg(feature = "app-versuseditmenuitem")]

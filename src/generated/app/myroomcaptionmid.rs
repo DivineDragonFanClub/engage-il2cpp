@@ -4,34 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomcaptionmid/MyRoomCaptionMID.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomCaptionMID")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct MyRoomCaptionMID {
-# [offset (16)] # [rename (name = "MID")] pub mid : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomcaptionmid/MyRoomCaptionMID.md"))]#[::unity2::class(namespace="App",name="MyRoomCaptionMID")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct MyRoomCaptionMID{#[offset(16)]#[rename(name="MID")]pub mid: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-myroomcaptionmid-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomcaptionmid")]
-pub trait IMyRoomCaptionMIDMethods : IMyRoomCaptionMID { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomCaptionMID as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomCaptionMID , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238c830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomcaptionmid")]pub trait IMyRoomCaptionMIDMethods:IMyRoomCaptionMID{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomCaptionMID as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238c830usize)as*mut u8,();
+(MyRoomCaptionMID)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomcaptionmid")]
-impl < __T : IMyRoomCaptionMID > IMyRoomCaptionMIDMethods for __T { }
+#[cfg(feature="app-myroomcaptionmid")]impl<__T:IMyRoomCaptionMID>IMyRoomCaptionMIDMethods for __T{}
 
-#[cfg(feature = "app-myroomcaptionmid")]
-impl MyRoomCaptionMID { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomCaptionMID as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-myroomcaptionmid")]impl MyRoomCaptionMID{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-myroomcaptionmid")]
-impl MyRoomCaptionMID {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomCaptionMID) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomCaptionMIDMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomcaptionmid")]impl MyRoomCaptionMID{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomCaptionMID), ::core::stringify!(new),));
+ <Self as IMyRoomCaptionMIDMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomcaptionmid")]

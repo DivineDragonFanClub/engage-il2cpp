@@ -4,37 +4,133 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gridmenu/GridMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "GridMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct GridMenu {
-# [offset (200)] # [rename (name = "m_gridMenuContent")] pub m_grid_menu_content : crate :: app :: gridmenucontent :: GridMenuContent ,
-# [offset (208)] # [rename (name = "m_column")] pub m_column : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gridmenu/GridMenu.md"))]#[::unity2::class(namespace="App",name="GridMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct GridMenu{#[offset(200)]#[rename(name="m_gridMenuContent")]pub m_grid_menu_content:crate::app::gridmenucontent::GridMenuContent, #[offset(208)]#[rename(name="m_column")]pub m_column:i32,}
 
 }
 
 #[cfg(feature = "app-gridmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gridmenu")]
-pub trait IGridMenuMethods : IGridMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: gridmenucontent :: GridMenuContent >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: gridmenucontent :: GridMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d4a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetShowRowMax()` overload"] fn get_show_row_max (self ,) -> i32 { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBuildRowNum()` overload"] fn get_build_row_num (self ,) -> i32 { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSelectIndex(i32)` overload"] fn set_select_index (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`RebuildInstant(crate::app::basicmenuselect::BasicMenuSelect, i32)` overload"] fn rebuild_instant (self , menu_select : impl :: core :: convert :: Into < crate :: app :: basicmenuselect :: BasicMenuSelect > , display_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , crate :: app :: basicmenuselect :: BasicMenuSelect , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d7e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_select) , :: core :: convert :: Into :: into (display_index) , :: core :: option :: Option :: None) } } } # [doc = "`KeyUp(bool)` overload"] fn key_up (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyDown(bool)` overload"] fn key_down (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296daa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyLeft(bool)` overload"] fn key_left (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296dcc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyRight(bool)` overload"] fn key_right (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296de90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`AdjustScrollIndex()` overload"] fn adjust_scroll_index (self ,) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296e0a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCellSize(f32, f32)` overload"] fn set_cell_size (self , w : impl :: core :: convert :: Into < f32 > , h : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296e120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: option :: Option :: None) } } } # [doc = "`SetCellW(f32)` overload"] fn set_cell_w (self , w : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296e2a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (w) , :: core :: option :: Option :: None) } } } # [doc = "`SetCellH(f32)` overload"] fn set_cell_h (self , h : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296e390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (h) , :: core :: option :: Option :: None) } } } # [doc = "`GetCellSize()` overload"] fn get_cell_size (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296e480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCellW()` overload"] fn get_cell_w (self ,) -> f32 { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296e520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCellH()` overload"] fn get_cell_h (self ,) -> f32 { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296e5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetColumnCount(i32)` overload"] fn set_column_count (self , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296e660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`GetColumnCount()` overload"] fn get_column_count (self ,) -> i32 { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d5d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGridMenuContent()` overload"] fn get_grid_menu_content (self ,) -> crate :: app :: gridmenucontent :: GridMenuContent { unsafe { let __receiver = < GridMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: gridmenucontent :: GridMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296e1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gridmenu")]pub trait IGridMenuMethods:IGridMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::gridmenucontent::GridMenuContent>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296d4a0usize)as*mut u8,();
+(GridMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::gridmenucontent::GridMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296d4e0usize)as*mut u8, ::unity2::Il2CppString;
+(GridMenu)__receiver)}
+}
+#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296d530usize)as*mut u8,i32;
+(GridMenu)__receiver)}
+}
+#[doc="`GetBuildRowNum()` overload"]fn get_build_row_num(self,)->i32{unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296d660usize)as*mut u8,i32;
+(GridMenu)__receiver)}
+}
+#[doc="`SetSelectIndex(i32)` overload"]fn set_select_index(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296d730usize)as*mut u8,();
+(GridMenu)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`RebuildInstant(crate::app::basicmenuselect::BasicMenuSelect, i32)` overload"]fn rebuild_instant(self,menu_select:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect> ,display_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296d7e0usize)as*mut u8,();
+(GridMenu)__receiver,(crate::app::basicmenuselect::BasicMenuSelect)::core::convert::Into::into(menu_select),(i32)::core::convert::Into::into(display_index))}
+}
+#[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296d8a0usize)as*mut u8,();
+(GridMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296daa0usize)as*mut u8,();
+(GridMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296dcc0usize)as*mut u8,();
+(GridMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296de90usize)as*mut u8,();
+(GridMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`AdjustScrollIndex()` overload"]fn adjust_scroll_index(self,)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296e0a0usize)as*mut u8,();
+(GridMenu)__receiver)}
+}
+#[doc="`SetCellSize(f32, f32)` overload"]fn set_cell_size(self,w:impl::core::convert::Into<f32> ,h:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296e120usize)as*mut u8,();
+(GridMenu)__receiver,(f32)::core::convert::Into::into(w),(f32)::core::convert::Into::into(h))}
+}
+#[doc="`SetCellW(f32)` overload"]fn set_cell_w(self,w:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296e2a0usize)as*mut u8,();
+(GridMenu)__receiver,(f32)::core::convert::Into::into(w))}
+}
+#[doc="`SetCellH(f32)` overload"]fn set_cell_h(self,h:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296e390usize)as*mut u8,();
+(GridMenu)__receiver,(f32)::core::convert::Into::into(h))}
+}
+#[doc="`GetCellSize()` overload"]fn get_cell_size(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296e480usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(GridMenu)__receiver)}
+}
+#[doc="`GetCellW()` overload"]fn get_cell_w(self,)->f32{unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296e520usize)as*mut u8,f32;
+(GridMenu)__receiver)}
+}
+#[doc="`GetCellH()` overload"]fn get_cell_h(self,)->f32{unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296e5c0usize)as*mut u8,f32;
+(GridMenu)__receiver)}
+}
+#[doc="`SetColumnCount(i32)` overload"]fn set_column_count(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296e660usize)as*mut u8,();
+(GridMenu)__receiver,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296d5d0usize)as*mut u8,i32;
+(GridMenu)__receiver)}
+}
+#[doc="`GetGridMenuContent()` overload"]fn get_grid_menu_content(self,)->crate::app::gridmenucontent::GridMenuContent{unsafe{let __receiver= <GridMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296e1e0usize)as*mut u8,crate::app::gridmenucontent::GridMenuContent;
+(GridMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gridmenu")]
-impl < __T : IGridMenu > IGridMenuMethods for __T { }
+#[cfg(feature="app-gridmenu")]impl<__T:IGridMenu>IGridMenuMethods for __T{}
 
-#[cfg(feature = "app-gridmenu")]
-impl GridMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_show_row_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_build_row_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_select_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn rebuild_instant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn key_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn key_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn key_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn key_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn adjust_scroll_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_cell_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_cell_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_cell_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_cell_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_cell_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_cell_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_column_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_column_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_grid_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
+#[cfg(feature="app-gridmenu")]impl GridMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_build_row_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_select_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn rebuild_instant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn key_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn key_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn adjust_scroll_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_cell_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_cell_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_cell_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_cell_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_cell_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_cell_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_grid_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
 
-#[cfg(feature = "app-gridmenu")]
-impl GridMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: gridmenucontent :: GridMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GridMenu) , :: core :: stringify ! (new) ,)) ; < Self as IGridMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-gridmenu")]impl GridMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::gridmenucontent::GridMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::gridmenucontent::GridMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GridMenu), ::core::stringify!(new),));
+ <Self as IGridMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-gridmenu")]

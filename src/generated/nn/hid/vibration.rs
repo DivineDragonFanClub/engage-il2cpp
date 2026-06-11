@@ -4,23 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/vibration/Vibration.md"))] # [:: unity2 :: class (namespace = "nn.hid" , name = "Vibration")] # [parent (crate :: system :: object :: Object)] pub struct Vibration {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibration/Vibration.md"))]#[::unity2::class(namespace="nn.hid",name="Vibration")]#[parent(crate::system::object::Object)]pub struct Vibration{}
 
 }
 
 #[cfg(feature = "nn-hid-vibration-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-vibration")]
-impl Vibration { # [doc = "`GetDeviceHandles(::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>, i32, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"] pub fn get_device_handles (p_out_values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle > > , count : impl :: core :: convert :: Into < i32 > , npad_id : impl :: core :: convert :: Into < crate :: nn :: hid :: npadid :: NpadId > , npad_style : impl :: core :: convert :: Into < crate :: nn :: hid :: npadstyle :: NpadStyle >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle > , i32 , crate :: nn :: hid :: npadid :: NpadId , crate :: nn :: hid :: npadstyle :: NpadStyle , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf5b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (p_out_values) , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (npad_id) , :: core :: convert :: Into :: into (npad_style) , :: core :: option :: Option :: None) } } } # [doc = "`GetDeviceInfo(*mutcrate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo, crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"] pub fn get_device_info (handle : impl :: core :: convert :: Into < crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle >) -> crate :: nn :: hid :: vibrationdeviceinfo :: VibrationDeviceInfo { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: nn :: hid :: vibrationdeviceinfo :: VibrationDeviceInfo > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: nn :: hid :: vibrationdeviceinfo :: VibrationDeviceInfo , crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf5c0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`InitializeDevice(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"] pub fn initialize_device (handle : impl :: core :: convert :: Into < crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle >) -> () { unsafe { { let __inner : extern "C" fn (crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf5d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`SendValue(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle, crate::nn::hid::vibrationvalue::VibrationValue)` overload"] pub fn send_value (handle : impl :: core :: convert :: Into < crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle > , value : impl :: core :: convert :: Into < crate :: nn :: hid :: vibrationvalue :: VibrationValue >) -> () { unsafe { { let __inner : extern "C" fn (crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle , crate :: nn :: hid :: vibrationvalue :: VibrationValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf5e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (handle) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetActualValue(*mutcrate::nn::hid::vibrationvalue::VibrationValue, crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"] pub fn get_actual_value (handle : impl :: core :: convert :: Into < crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle >) -> crate :: nn :: hid :: vibrationvalue :: VibrationValue { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: nn :: hid :: vibrationvalue :: VibrationValue > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: nn :: hid :: vibrationvalue :: VibrationValue , crate :: nn :: hid :: vibrationdevicehandle :: VibrationDeviceHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf5f0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`IsPermitted()` overload"] pub fn is_permitted () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bf600usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-vibration")]impl Vibration{#[doc="`GetDeviceHandles(::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>, i32, crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]pub fn get_device_handles(p_out_values:impl::core::convert::Into< ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle> > ,count:impl::core::convert::Into<i32> ,npad_id:impl::core::convert::Into<crate::nn::hid::npadid::NpadId> ,npad_style:impl::core::convert::Into<crate::nn::hid::npadstyle::NpadStyle>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bf5b0usize)as*mut u8,i32;
+(::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>)::core::convert::Into::into(p_out_values),(i32)::core::convert::Into::into(count),(crate::nn::hid::npadid::NpadId)::core::convert::Into::into(npad_id),(crate::nn::hid::npadstyle::NpadStyle)::core::convert::Into::into(npad_style))}
+}
+#[doc="`GetDeviceInfo(*mutcrate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo, crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"]pub fn get_device_info(handle:impl::core::convert::Into<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>)->crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf5c0usize)as*mut u8,();
+(*mut crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo)__out_0.as_mut_ptr(),(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)::core::convert::Into::into(handle));
+__out_0.assume_init()}
+}
+#[doc="`InitializeDevice(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"]pub fn initialize_device(handle:impl::core::convert::Into<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bf5d0usize)as*mut u8,();
+(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`SendValue(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle, crate::nn::hid::vibrationvalue::VibrationValue)` overload"]pub fn send_value(handle:impl::core::convert::Into<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle> ,value:impl::core::convert::Into<crate::nn::hid::vibrationvalue::VibrationValue>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bf5e0usize)as*mut u8,();
+(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)::core::convert::Into::into(handle),(crate::nn::hid::vibrationvalue::VibrationValue)::core::convert::Into::into(value))}
+}
+#[doc="`GetActualValue(*mutcrate::nn::hid::vibrationvalue::VibrationValue, crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)` overload"]pub fn get_actual_value(handle:impl::core::convert::Into<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>)->crate::nn::hid::vibrationvalue::VibrationValue{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::nn::hid::vibrationvalue::VibrationValue> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21bf5f0usize)as*mut u8,();
+(*mut crate::nn::hid::vibrationvalue::VibrationValue)__out_0.as_mut_ptr(),(crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle)::core::convert::Into::into(handle));
+__out_0.assume_init()}
+}
+#[doc="`IsPermitted()` overload"]pub fn is_permitted()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bf600usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "nn-hid-vibration")]
-impl Vibration { pub fn get_device_handles_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vibration as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_device_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vibration as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn initialize_device_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vibration as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn send_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vibration as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_actual_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vibration as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_permitted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vibration as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="nn-hid-vibration")]impl Vibration{pub fn get_device_handles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_device_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn initialize_device_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn send_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_actual_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_permitted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "nn-hid-vibration")]
 #[doc(hidden)]

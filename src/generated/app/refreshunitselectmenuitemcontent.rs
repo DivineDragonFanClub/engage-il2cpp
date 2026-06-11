@@ -4,42 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectmenuitemcontent/RefreshUnitSelectMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshUnitSelectMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct RefreshUnitSelectMenuItemContent {
-# [offset (72)] # [rename (name = "m_Setter")] pub m_setter : crate :: app :: unitmenuitemsetter :: UnitMenuItemSetter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitselectmenuitemcontent/RefreshUnitSelectMenuItemContent.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSelectMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct RefreshUnitSelectMenuItemContent{#[offset(72)]#[rename(name="m_Setter")]pub m_setter:crate::app::unitmenuitemsetter::UnitMenuItemSetter,}
 
 }
 
 #[cfg(feature = "app-refreshunitselectmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refreshunitselectmenuitemcontent")]
-pub trait IRefreshUnitSelectMenuItemContentMethods : IRefreshUnitSelectMenuItemContent { # [doc = "`get_m_Selected()` overload"] fn get_m_selected (self ,) -> bool { unsafe { let __receiver = < RefreshUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c2830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Selected(bool)` overload"] fn set_m_selected (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenuItemContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c2840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_Decided()` overload"] fn get_m_decided (self ,) -> bool { unsafe { let __receiver = < RefreshUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c2850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Decided(bool)` overload"] fn set_m_decided (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenuItemContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c2860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c2870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`SetContent(crate::app::unit::Unit)` overload"] fn set_content (self , m_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenuItemContent , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c1130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (m_unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitName(::unity2::Il2CppString)` overload"] fn set_unit_name (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RefreshUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenuItemContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c11e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c28b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefreshUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshUnitSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c2af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshunitselectmenuitemcontent")]pub trait IRefreshUnitSelectMenuItemContentMethods:IRefreshUnitSelectMenuItemContent{#[doc="`get_m_Selected()` overload"]fn get_m_selected(self,)->bool{unsafe{let __receiver= <RefreshUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c2830usize)as*mut u8,bool;
+(RefreshUnitSelectMenuItemContent)__receiver)}
+}
+#[doc="`set_m_Selected(bool)` overload"]fn set_m_selected(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefreshUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c2840usize)as*mut u8,();
+(RefreshUnitSelectMenuItemContent)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_Decided()` overload"]fn get_m_decided(self,)->bool{unsafe{let __receiver= <RefreshUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c2850usize)as*mut u8,bool;
+(RefreshUnitSelectMenuItemContent)__receiver)}
+}
+#[doc="`set_m_Decided(bool)` overload"]fn set_m_decided(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefreshUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c2860usize)as*mut u8,();
+(RefreshUnitSelectMenuItemContent)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <RefreshUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c2870usize)as*mut u8,();
+(RefreshUnitSelectMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`SetContent(crate::app::unit::Unit)` overload"]fn set_content(self,m_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RefreshUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c1130usize)as*mut u8,();
+(RefreshUnitSelectMenuItemContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(m_unit))}
+}
+#[doc="`SetUnitName(::unity2::Il2CppString)` overload"]fn set_unit_name(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RefreshUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c11e0usize)as*mut u8,();
+(RefreshUnitSelectMenuItemContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <RefreshUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c28b0usize)as*mut u8,();
+(RefreshUnitSelectMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefreshUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c2af0usize)as*mut u8,();
+(RefreshUnitSelectMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refreshunitselectmenuitemcontent")]
-impl < __T : IRefreshUnitSelectMenuItemContent > IRefreshUnitSelectMenuItemContentMethods for __T { }
+#[cfg(feature="app-refreshunitselectmenuitemcontent")]impl<__T:IRefreshUnitSelectMenuItemContent>IRefreshUnitSelectMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-refreshunitselectmenuitemcontent")]
-impl RefreshUnitSelectMenuItemContent { pub fn get_m_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_m_decided_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_m_decided_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_unit_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-refreshunitselectmenuitemcontent")]impl RefreshUnitSelectMenuItemContent{pub fn get_m_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_decided_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_decided_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_unit_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-refreshunitselectmenuitemcontent")]
-impl RefreshUnitSelectMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshUnitSelectMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshUnitSelectMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refreshunitselectmenuitemcontent")]impl RefreshUnitSelectMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSelectMenuItemContent), ::core::stringify!(new),));
+ <Self as IRefreshUnitSelectMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refreshunitselectmenuitemcontent")]

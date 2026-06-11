@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapdeploybitimage :: { IMapDeployBitImage , MapDeployBitImage }
- ;
- use crate :: app :: mapimagecorebit :: { IMapImageCoreBit , MapImageCoreBit }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapdeploybitimage::{IMapDeployBitImage,MapDeployBitImage}
+;
+use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeployattackimage/MapDeployAttackImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapDeployAttackImage")] # [parent (crate :: app :: mapdeploybitimage :: MapDeployBitImage)] pub struct MapDeployAttackImage {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeployattackimage/MapDeployAttackImage.md"))]#[::unity2::class(namespace="App",name="MapDeployAttackImage")]#[parent(crate::app::mapdeploybitimage::MapDeployBitImage)]pub struct MapDeployAttackImage{}
 
 }
 
 #[cfg(feature = "app-mapdeployattackimage-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapdeployattackimage")]
-pub trait IMapDeployAttackImageMethods : IMapDeployAttackImage { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapDeployAttackImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployAttackImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapdeployattackimage")]pub trait IMapDeployAttackImageMethods:IMapDeployAttackImage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDeployAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3700usize)as*mut u8,();
+(MapDeployAttackImage)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapdeployattackimage")]
-impl < __T : IMapDeployAttackImage > IMapDeployAttackImageMethods for __T { }
+#[cfg(feature="app-mapdeployattackimage")]impl<__T:IMapDeployAttackImage>IMapDeployAttackImageMethods for __T{}
 
-#[cfg(feature = "app-mapdeployattackimage")]
-impl MapDeployAttackImage { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployAttackImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-mapdeployattackimage")]impl MapDeployAttackImage{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-mapdeployattackimage")]
-impl MapDeployAttackImage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapDeployAttackImage) , :: core :: stringify ! (new) ,)) ; < Self as IMapDeployAttackImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapdeployattackimage")]impl MapDeployAttackImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDeployAttackImage), ::core::stringify!(new),));
+ <Self as IMapDeployAttackImageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapdeployattackimage")]

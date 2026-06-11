@@ -4,34 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: materialmenuitem :: { IMaterialMenuItem , MaterialMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::materialmenuitem::{IMaterialMenuItem,MaterialMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangetargetmenuitem/RefineShopExchangeTargetMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopExchangeTargetMenuItem")] # [parent (crate :: app :: materialmenuitem :: MaterialMenuItem)] pub struct RefineShopExchangeTargetMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangetargetmenuitem/RefineShopExchangeTargetMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeTargetMenuItem")]#[parent(crate::app::materialmenuitem::MaterialMenuItem)]pub struct RefineShopExchangeTargetMenuItem{}
 
 }
 
 #[cfg(feature = "app-refineshopexchangetargetmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopexchangetargetmenuitem")]
-pub trait IRefineShopExchangeTargetMenuItemMethods : IRefineShopExchangeTargetMenuItem { # [doc = "`get_m_EnoughMaterial()` overload"] fn get_m_enough_material (self ,) -> bool { unsafe { let __receiver = < RefineShopExchangeTargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeTargetMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_EnoughMaterial(bool)` overload"] fn set_m_enough_material (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefineShopExchangeTargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeTargetMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_MaxMaterial()` overload"] fn get_m_max_material (self ,) -> bool { unsafe { let __receiver = < RefineShopExchangeTargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeTargetMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_MaxMaterial(bool)` overload"] fn set_m_max_material (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefineShopExchangeTargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeTargetMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)` overload"] fn ctor (self , item_refine_exchange_data : impl :: core :: convert :: Into < crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineShopExchangeTargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeTargetMenuItem , crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData , crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler , crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item_refine_exchange_data) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RefineShopExchangeTargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeTargetMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < RefineShopExchangeTargetMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopExchangeTargetMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2965f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopexchangetargetmenuitem")]pub trait IRefineShopExchangeTargetMenuItemMethods:IRefineShopExchangeTargetMenuItem{#[doc="`get_m_EnoughMaterial()` overload"]fn get_m_enough_material(self,)->bool{unsafe{let __receiver= <RefineShopExchangeTargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965ec0usize)as*mut u8,bool;
+(RefineShopExchangeTargetMenuItem)__receiver)}
+}
+#[doc="`set_m_EnoughMaterial(bool)` overload"]fn set_m_enough_material(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineShopExchangeTargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965ed0usize)as*mut u8,();
+(RefineShopExchangeTargetMenuItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_MaxMaterial()` overload"]fn get_m_max_material(self,)->bool{unsafe{let __receiver= <RefineShopExchangeTargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965ee0usize)as*mut u8,bool;
+(RefineShopExchangeTargetMenuItem)__receiver)}
+}
+#[doc="`set_m_MaxMaterial(bool)` overload"]fn set_m_max_material(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineShopExchangeTargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965ef0usize)as*mut u8,();
+(RefineShopExchangeTargetMenuItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)` overload"]fn ctor(self,item_refine_exchange_data:impl::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData> ,select_event_handler:impl::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler>)->(){unsafe{let __receiver= <RefineShopExchangeTargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965350usize)as*mut u8,();
+(RefineShopExchangeTargetMenuItem)__receiver,(crate::app::itemrefineexchangedata::ItemRefineExchangeData)::core::convert::Into::into(item_refine_exchange_data),(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefineShopExchangeTargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965f00usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RefineShopExchangeTargetMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RefineShopExchangeTargetMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2965f30usize)as*mut u8,();
+(RefineShopExchangeTargetMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopexchangetargetmenuitem")]
-impl < __T : IRefineShopExchangeTargetMenuItem > IRefineShopExchangeTargetMenuItemMethods for __T { }
+#[cfg(feature="app-refineshopexchangetargetmenuitem")]impl<__T:IRefineShopExchangeTargetMenuItem>IRefineShopExchangeTargetMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refineshopexchangetargetmenuitem")]
-impl RefineShopExchangeTargetMenuItem { pub fn get_m_enough_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeTargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_enough_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeTargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_m_max_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeTargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_m_max_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeTargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeTargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeTargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopExchangeTargetMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-refineshopexchangetargetmenuitem")]impl RefineShopExchangeTargetMenuItem{pub fn get_m_enough_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_enough_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_max_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_max_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-refineshopexchangetargetmenuitem")]
-impl RefineShopExchangeTargetMenuItem {
-# [doc = "`.ctor(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)` — overload selector"] pub fn new (item_refine_exchange_data : crate :: app :: itemrefineexchangedata :: ItemRefineExchangeData , select_event_handler : crate :: app :: materialmenuitem :: MaterialMenuItem_SelectEventHandler , decide_event_handler : crate :: app :: materialmenuitem :: MaterialMenuItem_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopExchangeTargetMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopExchangeTargetMenuItemMethods > :: ctor (this , item_refine_exchange_data , select_event_handler , decide_event_handler) ; this }
+#[cfg(feature="app-refineshopexchangetargetmenuitem")]impl RefineShopExchangeTargetMenuItem{#[doc="`.ctor(crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)` — overload selector"]pub fn new(item_refine_exchange_data:crate::app::itemrefineexchangedata::ItemRefineExchangeData,select_event_handler:crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler,decide_event_handler:crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopExchangeTargetMenuItem), ::core::stringify!(new),));
+ <Self as IRefineShopExchangeTargetMenuItemMethods> ::ctor(this,item_refine_exchange_data,select_event_handler,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refineshopexchangetargetmenuitem")]

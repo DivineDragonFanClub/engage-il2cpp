@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/customattributenamedargument/CustomAttributeNamedArgument.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CustomAttributeNamedArgument {
-    pub typed_argument: crate :: system :: reflection :: customattributetypedargument :: CustomAttributeTypedArgument,
-    pub member_info: crate :: system :: reflection :: memberinfo :: MemberInfo,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/customattributenamedargument/CustomAttributeNamedArgument.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CustomAttributeNamedArgument{pub typed_argument:crate::system::reflection::customattributetypedargument::CustomAttributeTypedArgument,pub member_info:crate::system::reflection::memberinfo::MemberInfo,}
+impl::unity2::ClassIdentity for CustomAttributeNamedArgument{const NAMESPACE: &'static str="System.Reflection";
+const NAME: &'static str="CustomAttributeNamedArgument";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for CustomAttributeNamedArgument {
-    const NAMESPACE: &'static str = "System.Reflection";
-
-    const NAME: &'static str = "CustomAttributeNamedArgument";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for CustomAttributeNamedArgument {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for CustomAttributeNamedArgument{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,25 @@ impl ::unity2::IlType for CustomAttributeNamedArgument {
 #[cfg(feature = "system-reflection-customattributenamedargument-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-customattributenamedargument")]
-impl CustomAttributeNamedArgument { # [doc = "`.ctor(crate::system::reflection::memberinfo::MemberInfo, crate::system::object::Object)` overload"] pub fn ctor (& mut self , member_info : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo > , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (* mut CustomAttributeNamedArgument , crate :: system :: reflection :: memberinfo :: MemberInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3716500usize) as * mut u8) ; __inner (self as * mut CustomAttributeNamedArgument , :: core :: convert :: Into :: into (member_info) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut CustomAttributeNamedArgument , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3715780usize) as * mut u8) ; __inner (self as * mut CustomAttributeNamedArgument , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut CustomAttributeNamedArgument , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3715f50usize) as * mut u8) ; __inner (self as * mut CustomAttributeNamedArgument , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut CustomAttributeNamedArgument , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37163d0usize) as * mut u8) ; __inner (self as * mut CustomAttributeNamedArgument , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-customattributenamedargument")]impl CustomAttributeNamedArgument{#[doc="`.ctor(crate::system::reflection::memberinfo::MemberInfo, crate::system::object::Object)` overload"]pub fn ctor(&mut self,member_info:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3716500usize)as*mut u8,();
+(*mut CustomAttributeNamedArgument)self as*mut CustomAttributeNamedArgument,(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(member_info),(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3715780usize)as*mut u8, ::unity2::Il2CppString;
+(*mut CustomAttributeNamedArgument)self as*mut CustomAttributeNamedArgument)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3715f50usize)as*mut u8,bool;
+(*mut CustomAttributeNamedArgument)self as*mut CustomAttributeNamedArgument,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37163d0usize)as*mut u8,i32;
+(*mut CustomAttributeNamedArgument)self as*mut CustomAttributeNamedArgument)}
+}
+}
 
-#[cfg(feature = "system-reflection-customattributenamedargument")]
-impl CustomAttributeNamedArgument { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomAttributeNamedArgument as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomAttributeNamedArgument as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomAttributeNamedArgument as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomAttributeNamedArgument as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-reflection-customattributenamedargument")]impl CustomAttributeNamedArgument{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "system-reflection-customattributenamedargument")]
 #[doc(hidden)]

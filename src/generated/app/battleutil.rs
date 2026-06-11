@@ -4,71 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleutil/BattleUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleUtil")] # [parent (crate :: system :: object :: Object)] pub struct BattleUtil {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleutil/BattleUtil.md"))]#[::unity2::class(namespace="App",name="BattleUtil")]#[parent(crate::system::object::Object)]pub struct BattleUtil{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleutil/BattleUtil_CalcScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleUtil_CalcScope {
-    pub info: crate :: app :: battleinfo :: BattleInfo,
-    pub calc: crate :: app :: battlecalculator :: BattleCalculator,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleutil/BattleUtil_CalcScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleUtil_CalcScope{pub info:crate::app::battleinfo::BattleInfo,pub calc:crate::app::battlecalculator::BattleCalculator,}
+impl::unity2::ClassIdentity for BattleUtil_CalcScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BattleUtil.CalcScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for BattleUtil_CalcScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleUtil.CalcScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for BattleUtil_CalcScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for BattleUtil_CalcScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl BattleUtil_CalcScope{#[inline]pub fn s_stack()->crate::system::collections::generic::stack_1::Stack_1<crate::app::battlecalculator::BattleCalculator>{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Stack");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_s_stack(value:crate::system::collections::generic::stack_1::Stack_1<crate::app::battlecalculator::BattleCalculator>){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"s_Stack");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl BattleUtil_CalcScope {
-    #[inline]
-    pub fn s_stack() -> crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: battlecalculator :: BattleCalculator > {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Stack");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_s_stack(value: crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: battlecalculator :: BattleCalculator >) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "s_Stack");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -76,31 +37,127 @@ impl BattleUtil_CalcScope {
 #[cfg(feature = "app-battleutil-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battleutil")]
-impl BattleUtil { # [doc = "`GetDamageLevel(i32, bool, bool)` overload"] pub fn get_damage_level (damage : impl :: core :: convert :: Into < i32 > , critical : impl :: core :: convert :: Into < bool > , efficacy : impl :: core :: convert :: Into < bool >) -> crate :: app :: damagelevel :: DamageLevel { unsafe { { let __inner : extern "C" fn (i32 , bool , bool , :: unity2 :: OptionalMethod ,) -> crate :: app :: damagelevel :: DamageLevel = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93b50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (damage) , :: core :: convert :: Into :: into (critical) , :: core :: convert :: Into :: into (efficacy) , :: core :: option :: Option :: None) } } } # [doc = "`GetDamageLevel(crate::app::battlescene::BattleScene, crate::app::battleside::BattleSide_Type)` overload"] pub fn get_damage_level_2 (scene : impl :: core :: convert :: Into < crate :: app :: battlescene :: BattleScene > , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> crate :: app :: damagelevel :: DamageLevel { unsafe { { let __inner : extern "C" fn (crate :: app :: battlescene :: BattleScene , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: damagelevel :: DamageLevel = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93ba0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scene) , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`CanGainExp(crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn can_gain_exp (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93db0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } } # [doc = "`CanGainExp(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn can_gain_exp_2 (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , reverse : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93ea0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } } # [doc = "`CanRodExp(crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn can_rod_exp (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93ee0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } } # [doc = "`GetBattleExp(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString)` overload"] pub fn get_battle_exp (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , reverse : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , command : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e93fd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: convert :: Into :: into (command) , :: core :: option :: Option :: None) } } } # [doc = "`GetRodExp(crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn get_rod_exp (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e940c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } } # [doc = "`GetDanceExp(crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn get_dance_exp (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e941b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } } # [doc = "`GetSummonExp(crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn get_summon_exp (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e942a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } } # [doc = "`GetGuardExp(crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn get_guard_exp (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94390usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } } # [doc = "`GetBattleExp(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn get_battle_exp_2 (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , reverse : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94480usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnchantExp(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn get_enchant_exp (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94560usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`IsAmbush(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn is_ambush (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , reverse : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } } # [doc = "`IsIncessantAttack(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn is_incessant_attack (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , reverse : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } } # [doc = "`IsSwapOrder(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn is_swap_order (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , reverse : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94670usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } } # [doc = "`HasPlayerUnit(crate::app::battleinfo::BattleInfo)` overload"] pub fn has_player_unit (info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfo :: BattleInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94820usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`IsDetailBattle(crate::app::battleinfo::BattleInfo)` overload"] pub fn is_detail_battle (info : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfo :: BattleInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94980usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`IsGrowTalk(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"] pub fn is_grow_talk (current : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide > , reverse : impl :: core :: convert :: Into < crate :: app :: battleinfoside :: BattleInfoSide >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battleinfoside :: BattleInfoSide , crate :: app :: battleinfoside :: BattleInfoSide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e773c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (reverse) , :: core :: option :: Option :: None) } } } # [doc = "`CanGainSituation()` overload"] pub fn can_gain_situation () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94e20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayLastBattleDieSound()` overload"] pub fn play_last_battle_die_sound () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e94fe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-battleutil")]
-pub trait IBattleUtilMethods : IBattleUtil { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleUtil as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleUtil , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e95070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-battleutil")]
-impl < __T : IBattleUtil > IBattleUtilMethods for __T { }
-
-#[cfg(feature = "app-battleutil")]
-impl BattleUtil { pub fn get_damage_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_damage_level_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn can_gain_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn can_gain_exp_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn can_rod_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_battle_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_rod_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_dance_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_summon_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_guard_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_battle_exp_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_enchant_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_ambush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_incessant_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_swap_order_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn has_player_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_detail_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_grow_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn can_gain_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn play_last_battle_die_sound_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
-
-#[cfg(feature = "app-battleutil")]
-impl BattleUtil {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleUtil) , :: core :: stringify ! (new) ,)) ; < Self as IBattleUtilMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-battleutil")]impl BattleUtil{#[doc="`GetDamageLevel(i32, bool, bool)` overload"]pub fn get_damage_level(damage:impl::core::convert::Into<i32> ,critical:impl::core::convert::Into<bool> ,efficacy:impl::core::convert::Into<bool>)->crate::app::damagelevel::DamageLevel{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e93b50usize)as*mut u8,crate::app::damagelevel::DamageLevel;
+(i32)::core::convert::Into::into(damage),(bool)::core::convert::Into::into(critical),(bool)::core::convert::Into::into(efficacy))}
+}
+#[doc="`GetDamageLevel(crate::app::battlescene::BattleScene, crate::app::battleside::BattleSide_Type)` overload"]pub fn get_damage_level_2(scene:impl::core::convert::Into<crate::app::battlescene::BattleScene> ,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->crate::app::damagelevel::DamageLevel{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e93ba0usize)as*mut u8,crate::app::damagelevel::DamageLevel;
+(crate::app::battlescene::BattleScene)::core::convert::Into::into(scene),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+#[doc="`CanGainExp(crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn can_gain_exp(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e93db0usize)as*mut u8,bool;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current))}
+}
+#[doc="`CanGainExp(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn can_gain_exp_2(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e93ea0usize)as*mut u8,bool;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse))}
+}
+#[doc="`CanRodExp(crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn can_rod_exp(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e93ee0usize)as*mut u8,bool;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current))}
+}
+#[doc="`GetBattleExp(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, ::unity2::Il2CppString)` overload"]pub fn get_battle_exp(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,command:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e93fd0usize)as*mut u8,i32;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse),(::unity2::Il2CppString)::core::convert::Into::into(command))}
+}
+#[doc="`GetRodExp(crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn get_rod_exp(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e940c0usize)as*mut u8,i32;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current))}
+}
+#[doc="`GetDanceExp(crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn get_dance_exp(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e941b0usize)as*mut u8,i32;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current))}
+}
+#[doc="`GetSummonExp(crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn get_summon_exp(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e942a0usize)as*mut u8,i32;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current))}
+}
+#[doc="`GetGuardExp(crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn get_guard_exp(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94390usize)as*mut u8,i32;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current))}
+}
+#[doc="`GetBattleExp(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn get_battle_exp_2(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94480usize)as*mut u8,i32;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse))}
+}
+#[doc="`GetEnchantExp(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn get_enchant_exp(unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94560usize)as*mut u8,i32;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`IsAmbush(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn is_ambush(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94660usize)as*mut u8,bool;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse))}
+}
+#[doc="`IsIncessantAttack(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn is_incessant_attack(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94810usize)as*mut u8,bool;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse))}
+}
+#[doc="`IsSwapOrder(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn is_swap_order(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94670usize)as*mut u8,bool;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse))}
+}
+#[doc="`HasPlayerUnit(crate::app::battleinfo::BattleInfo)` overload"]pub fn has_player_unit(info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94820usize)as*mut u8,bool;
+(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
+}
+#[doc="`IsDetailBattle(crate::app::battleinfo::BattleInfo)` overload"]pub fn is_detail_battle(info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94980usize)as*mut u8,bool;
+(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
+}
+#[doc="`IsGrowTalk(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn is_grow_talk(current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e773c0usize)as*mut u8,bool;
+(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse))}
+}
+#[doc="`CanGainSituation()` overload"]pub fn can_gain_situation()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94e20usize)as*mut u8,bool;
+)}
+}
+#[doc="`PlayLastBattleDieSound()` overload"]pub fn play_last_battle_die_sound()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e94fe0usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-battleutil")]
-impl BattleUtil_CalcScope { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bc000usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battleutil")]pub trait IBattleUtilMethods:IBattleUtil{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleUtil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e95070usize)as*mut u8,();
+(BattleUtil)__receiver)}
+}
+}
 
-#[cfg(feature = "app-battleutil")]
-impl BattleUtil_CalcScope { # [doc = "`.ctor(crate::app::unit::Unit, crate::app::battleinfo::BattleInfo_Flags)` overload"] pub fn ctor (& mut self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , flags : impl :: core :: convert :: Into < crate :: app :: battleinfo :: BattleInfo_Flags >) -> () { unsafe { { let __inner : extern "C" fn (* mut BattleUtil_CalcScope , crate :: app :: unit :: Unit , crate :: app :: battleinfo :: BattleInfo_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bbcf0usize) as * mut u8) ; __inner (self as * mut BattleUtil_CalcScope , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (flags) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut BattleUtil_CalcScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bbec0usize) as * mut u8) ; __inner (self as * mut BattleUtil_CalcScope , :: core :: option :: Option :: None) } } } # [doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"] pub fn get_side (& mut self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> crate :: app :: battleinfoside :: BattleInfoSide { unsafe { { let __inner : extern "C" fn (* mut BattleUtil_CalcScope , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: battleinfoside :: BattleInfoSide = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bbfa0usize) as * mut u8) ; __inner (self as * mut BattleUtil_CalcScope , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battleutil")]impl<__T:IBattleUtil>IBattleUtilMethods for __T{}
 
-#[cfg(feature = "app-battleutil")]
-impl BattleUtil_CalcScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil_CalcScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil_CalcScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil_CalcScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleUtil_CalcScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-battleutil")]impl BattleUtil{pub fn get_damage_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_damage_level_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn can_gain_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn can_gain_exp_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn can_rod_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_battle_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_rod_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_dance_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_summon_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_guard_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_battle_exp_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_enchant_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_ambush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_incessant_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_swap_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn has_player_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_detail_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_grow_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn can_gain_situation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn play_last_battle_die_sound_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
+
+#[cfg(feature="app-battleutil")]impl BattleUtil{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleUtil), ::core::stringify!(new),));
+ <Self as IBattleUtilMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-battleutil")]impl BattleUtil_CalcScope{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bc000usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-battleutil")]impl BattleUtil_CalcScope{#[doc="`.ctor(crate::app::unit::Unit, crate::app::battleinfo::BattleInfo_Flags)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,flags:impl::core::convert::Into<crate::app::battleinfo::BattleInfo_Flags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bbcf0usize)as*mut u8,();
+(*mut BattleUtil_CalcScope)self as*mut BattleUtil_CalcScope,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::battleinfo::BattleInfo_Flags)::core::convert::Into::into(flags))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bbec0usize)as*mut u8,();
+(*mut BattleUtil_CalcScope)self as*mut BattleUtil_CalcScope)}
+}
+#[doc="`GetSide(crate::app::battleside::BattleSide_Type)` overload"]pub fn get_side(&mut self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->crate::app::battleinfoside::BattleInfoSide{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bbfa0usize)as*mut u8,crate::app::battleinfoside::BattleInfoSide;
+(*mut BattleUtil_CalcScope)self as*mut BattleUtil_CalcScope,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+}
+
+#[cfg(feature="app-battleutil")]impl BattleUtil_CalcScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "app-battleutil")]
 #[doc(hidden)]

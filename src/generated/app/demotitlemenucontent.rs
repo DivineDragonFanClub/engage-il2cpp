@@ -4,45 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/demotitlemenucontent/DemoTitleMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "DemoTitleMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct DemoTitleMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/demotitlemenucontent/DemoTitleMenuContent.md"))]#[::unity2::class(namespace="App",name="DemoTitleMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct DemoTitleMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-demotitlemenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-demotitlemenucontent")]
-impl DemoTitleMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceb0f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceb190usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceb230usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: basicmenucontent :: BasicMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenucontent :: BasicMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceb2d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceb400usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-demotitlemenucontent")]impl DemoTitleMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ceb0f0usize)as*mut u8,();
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ceb190usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ceb230usize)as*mut u8,bool;
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::basicmenucontent::BasicMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ceb2d0usize)as*mut u8,crate::app::basicmenucontent::BasicMenuContent;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ceb400usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-demotitlemenucontent")]
-pub trait IDemoTitleMenuContentMethods : IDemoTitleMenuContent { # [doc = "`InitObjReference()` overload"] fn init_obj_reference (self ,) -> () { unsafe { let __receiver = < DemoTitleMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DemoTitleMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cead30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < DemoTitleMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DemoTitleMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceadd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChildUpdate(i32)` overload"] fn child_update (self , selected_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DemoTitleMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DemoTitleMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceade0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (selected_index) , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorWidth(i32)` overload"] fn calc_cursor_width (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < DemoTitleMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DemoTitleMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceaf60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DemoTitleMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DemoTitleMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceb390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-demotitlemenucontent")]pub trait IDemoTitleMenuContentMethods:IDemoTitleMenuContent{#[doc="`InitObjReference()` overload"]fn init_obj_reference(self,)->(){unsafe{let __receiver= <DemoTitleMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cead30usize)as*mut u8,();
+(DemoTitleMenuContent)__receiver)}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <DemoTitleMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceadd0usize)as*mut u8,i32;
+(DemoTitleMenuContent)__receiver)}
+}
+#[doc="`ChildUpdate(i32)` overload"]fn child_update(self,selected_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DemoTitleMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceade0usize)as*mut u8,();
+(DemoTitleMenuContent)__receiver,(i32)::core::convert::Into::into(selected_index))}
+}
+#[doc="`CalcCursorWidth(i32)` overload"]fn calc_cursor_width(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <DemoTitleMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceaf60usize)as*mut u8,f32;
+(DemoTitleMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DemoTitleMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceb390usize)as*mut u8,();
+(DemoTitleMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-demotitlemenucontent")]
-impl < __T : IDemoTitleMenuContent > IDemoTitleMenuContentMethods for __T { }
+#[cfg(feature="app-demotitlemenucontent")]impl<__T:IDemoTitleMenuContent>IDemoTitleMenuContentMethods for __T{}
 
-#[cfg(feature = "app-demotitlemenucontent")]
-impl DemoTitleMenuContent { pub fn init_obj_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn child_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calc_cursor_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DemoTitleMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-demotitlemenucontent")]impl DemoTitleMenuContent{pub fn init_obj_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn child_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_cursor_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-demotitlemenucontent")]
-impl DemoTitleMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DemoTitleMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IDemoTitleMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-demotitlemenucontent")]impl DemoTitleMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DemoTitleMenuContent), ::core::stringify!(new),));
+ <Self as IDemoTitleMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-demotitlemenucontent")]

@@ -4,34 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: assembly :: { Assembly , IAssembly }
- ;
- use crate :: system :: reflection :: runtimeassembly :: { IRuntimeAssembly , RuntimeAssembly }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::assembly::{Assembly,IAssembly}
+;
+use crate::system::reflection::runtimeassembly::{IRuntimeAssembly,RuntimeAssembly}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoassembly/MonoAssembly.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MonoAssembly")] # [parent (crate :: system :: reflection :: runtimeassembly :: RuntimeAssembly)] pub struct MonoAssembly {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoassembly/MonoAssembly.md"))]#[::unity2::class(namespace="System.Reflection",name="MonoAssembly")]#[parent(crate::system::reflection::runtimeassembly::RuntimeAssembly)]pub struct MonoAssembly{}
 
 }
 
 #[cfg(feature = "system-reflection-monoassembly-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-monoassembly")]
-pub trait IMonoAssemblyMethods : IMonoAssembly { # [doc = "`GetType(::unity2::Il2CppString, bool, bool)` overload"] fn get_type (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , throw_on_error : impl :: core :: convert :: Into < bool > , ignore_case : impl :: core :: convert :: Into < bool >) -> :: unity2 :: SystemType { unsafe { let __receiver = < MonoAssembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoAssembly , :: unity2 :: Il2CppString , bool , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (throw_on_error) , :: core :: convert :: Into :: into (ignore_case) , :: core :: option :: Option :: None) } } } # [doc = "`GetModule(::unity2::Il2CppString)` overload"] fn get_module (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: reflection :: module :: Module { unsafe { let __receiver = < MonoAssembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoAssembly , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: module :: Module = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetModules(bool)` overload"] fn get_modules (self , get_resource_modules : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: reflection :: module :: Module > { unsafe { let __receiver = < MonoAssembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoAssembly , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: reflection :: module :: Module > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (get_resource_modules) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MonoAssembly as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MonoAssembly , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337b6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-monoassembly")]pub trait IMonoAssemblyMethods:IMonoAssembly{#[doc="`GetType(::unity2::Il2CppString, bool, bool)` overload"]fn get_type(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,throw_on_error:impl::core::convert::Into<bool> ,ignore_case:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <MonoAssembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337b390usize)as*mut u8, ::unity2::SystemType;
+(MonoAssembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(throw_on_error),(bool)::core::convert::Into::into(ignore_case))}
+}
+#[doc="`GetModule(::unity2::Il2CppString)` overload"]fn get_module(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::reflection::module::Module{unsafe{let __receiver= <MonoAssembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337b450usize)as*mut u8,crate::system::reflection::module::Module;
+(MonoAssembly)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetModules(bool)` overload"]fn get_modules(self,get_resource_modules:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::reflection::module::Module>{unsafe{let __receiver= <MonoAssembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337b590usize)as*mut u8, ::unity2::Array<crate::system::reflection::module::Module> ;
+(MonoAssembly)__receiver,(bool)::core::convert::Into::into(get_resource_modules))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MonoAssembly as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337b6f0usize)as*mut u8,();
+(MonoAssembly)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-monoassembly")]
-impl < __T : IMonoAssembly > IMonoAssemblyMethods for __T { }
+#[cfg(feature="system-reflection-monoassembly")]impl<__T:IMonoAssembly>IMonoAssemblyMethods for __T{}
 
-#[cfg(feature = "system-reflection-monoassembly")]
-impl MonoAssembly { pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoAssembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoAssembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_modules_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoAssembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MonoAssembly as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-reflection-monoassembly")]impl MonoAssembly{pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_modules_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "system-reflection-monoassembly")]
-impl MonoAssembly {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MonoAssembly) , :: core :: stringify ! (new) ,)) ; < Self as IMonoAssemblyMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-monoassembly")]impl MonoAssembly{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MonoAssembly), ::core::stringify!(new),));
+ <Self as IMonoAssemblyMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-monoassembly")]

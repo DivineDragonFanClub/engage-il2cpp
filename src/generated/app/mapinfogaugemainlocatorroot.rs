@@ -4,96 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinfobase :: { IMapInfoBase , MapInfoBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinfobase::{IMapInfoBase,MapInfoBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapInfoGaugeMainLocatorRoot")] # [parent (crate :: app :: mapinfobase :: MapInfoBase)] pub struct MapInfoGaugeMainLocatorRoot {
-# [offset (32)] # [rename (name = "m_MainLocatorRoot")] pub m_main_locator_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_SubLocatorRoots")] pub m_sub_locator_roots : :: unity2 :: Array < crate :: root :: mapinfogaugesublocatorroot :: MapInfoGaugeSubLocatorRoot > ,
-# [offset (48)] # [rename (name = "m_SubLocatorRoot")] pub m_sub_locator_root : crate :: root :: mapinfogaugesublocatorroot :: MapInfoGaugeSubLocatorRoot ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))]#[::unity2::class(namespace="App",name="MapInfoGaugeMainLocatorRoot")]#[parent(crate::app::mapinfobase::MapInfoBase)]pub struct MapInfoGaugeMainLocatorRoot{#[offset(32)]#[rename(name="m_MainLocatorRoot")]pub m_main_locator_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_SubLocatorRoots")]pub m_sub_locator_roots: ::unity2::Array<crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot> , #[offset(48)]#[rename(name="m_SubLocatorRoot")]pub m_sub_locator_root:crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot_OnMapStatus.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoGaugeMainLocatorRoot_OnMapStatus{pub value:i32,}
+impl::unity2::ClassIdentity for MapInfoGaugeMainLocatorRoot_OnMapStatus{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapInfoGaugeMainLocatorRoot.OnMapStatus";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot_OnMapStatus.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapInfoGaugeMainLocatorRoot_OnMapStatus  {
-    pub value: i32,
+impl::unity2::IlType for MapInfoGaugeMainLocatorRoot_OnMapStatus{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for MapInfoGaugeMainLocatorRoot_OnMapStatus  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapInfoGaugeMainLocatorRoot.OnMapStatus";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl MapInfoGaugeMainLocatorRoot_OnMapStatus{pub fn size1x1()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for MapInfoGaugeMainLocatorRoot_OnMapStatus  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn size2x2()->Self{Self{value:1}
 }
-
-
-impl  MapInfoGaugeMainLocatorRoot_OnMapStatus  {
-    pub fn size1x1() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn size2x2() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn size3x3() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn size5x5() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn size3x3()->Self{Self{value:2}
+}
+pub fn size5x5()->Self{Self{value:3}
+}
+pub fn num()->Self{Self{value:4}
+}
 }
 
 }
@@ -101,18 +52,97 @@ impl  MapInfoGaugeMainLocatorRoot_OnMapStatus  {
 #[cfg(feature = "app-mapinfogaugemainlocatorroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapinfogaugemainlocatorroot")]
-pub trait IMapInfoGaugeMainLocatorRootMethods : IMapInfoGaugeMainLocatorRoot { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20761b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdatePosition(crate::app::unit::Unit)` overload"] fn update_position (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2076240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateParam(crate::app::unit::Unit)` overload"] fn update_param (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2076660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`IsSetPosition()` overload"] fn is_set_position (self ,) -> bool { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2076280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSetParam()` overload"] fn is_set_param (self ,) -> bool { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20766a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetIcon(crate::app::unit::Unit)` overload"] fn set_icon (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20767a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteDisuseLocatorRoot(crate::app::unit::Unit)` overload"] fn delete_disuse_locator_root (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20769d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`get_SubLocatorRoot()` overload"] fn get_sub_locator_root (self ,) -> crate :: root :: mapinfogaugesublocatorroot :: MapInfoGaugeSubLocatorRoot { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , :: unity2 :: OptionalMethod ,) -> crate :: root :: mapinfogaugesublocatorroot :: MapInfoGaugeSubLocatorRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2076d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDisplayOutside(crate::app::unit::Unit, f32, f32, crate::unity_engine::camera::Camera)` overload"] fn is_display_outside (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , width : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 > , camera : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> bool { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , crate :: app :: unit :: Unit , f32 , f32 , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2076d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (width) , :: core :: convert :: Into :: into (height) , :: core :: convert :: Into :: into (camera) , :: core :: option :: Option :: None) } } } # [doc = "`InitHpForecast()` overload"] fn init_hp_forecast (self ,) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2078760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHpForecast(i32, i32)` overload"] fn set_hp_forecast (self , before : impl :: core :: convert :: Into < i32 > , after : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2078780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (before) , :: core :: convert :: Into :: into (after) , :: core :: option :: Option :: None) } } } # [doc = "`InitBreak()` overload"] fn init_break (self ,) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20787a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetBreak(bool)` overload"] fn set_break (self , is_break : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20787c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_break) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsComplete()` overload"] fn get_is_complete (self ,) -> bool { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20787d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsComplete(bool)` overload"] fn set_is_complete (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20787e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapInfoGaugeMainLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoGaugeMainLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20787f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapinfogaugemainlocatorroot")]pub trait IMapInfoGaugeMainLocatorRootMethods:IMapInfoGaugeMainLocatorRoot{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20761b0usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver)}
+}
+#[doc="`UpdatePosition(crate::app::unit::Unit)` overload"]fn update_position(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2076240usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`UpdateParam(crate::app::unit::Unit)` overload"]fn update_param(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2076660usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IsSetPosition()` overload"]fn is_set_position(self,)->bool{unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2076280usize)as*mut u8,bool;
+(MapInfoGaugeMainLocatorRoot)__receiver)}
+}
+#[doc="`IsSetParam()` overload"]fn is_set_param(self,)->bool{unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20766a0usize)as*mut u8,bool;
+(MapInfoGaugeMainLocatorRoot)__receiver)}
+}
+#[doc="`SetIcon(crate::app::unit::Unit)` overload"]fn set_icon(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20767a0usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`DeleteDisuseLocatorRoot(crate::app::unit::Unit)` overload"]fn delete_disuse_locator_root(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20769d0usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`get_SubLocatorRoot()` overload"]fn get_sub_locator_root(self,)->crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot{unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2076d60usize)as*mut u8,crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot;
+(MapInfoGaugeMainLocatorRoot)__receiver)}
+}
+#[doc="`IsDisplayOutside(crate::app::unit::Unit, f32, f32, crate::unity_engine::camera::Camera)` overload"]fn is_display_outside(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,width:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32> ,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2076d70usize)as*mut u8,bool;
+(MapInfoGaugeMainLocatorRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(f32)::core::convert::Into::into(width),(f32)::core::convert::Into::into(height),(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
+}
+#[doc="`InitHpForecast()` overload"]fn init_hp_forecast(self,)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2078760usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver)}
+}
+#[doc="`SetHpForecast(i32, i32)` overload"]fn set_hp_forecast(self,before:impl::core::convert::Into<i32> ,after:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2078780usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver,(i32)::core::convert::Into::into(before),(i32)::core::convert::Into::into(after))}
+}
+#[doc="`InitBreak()` overload"]fn init_break(self,)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20787a0usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver)}
+}
+#[doc="`SetBreak(bool)` overload"]fn set_break(self,is_break:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20787c0usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver,(bool)::core::convert::Into::into(is_break))}
+}
+#[doc="`get_IsComplete()` overload"]fn get_is_complete(self,)->bool{unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20787d0usize)as*mut u8,bool;
+(MapInfoGaugeMainLocatorRoot)__receiver)}
+}
+#[doc="`set_IsComplete(bool)` overload"]fn set_is_complete(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20787e0usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInfoGaugeMainLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20787f0usize)as*mut u8,();
+(MapInfoGaugeMainLocatorRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapinfogaugemainlocatorroot")]
-impl < __T : IMapInfoGaugeMainLocatorRoot > IMapInfoGaugeMainLocatorRootMethods for __T { }
+#[cfg(feature="app-mapinfogaugemainlocatorroot")]impl<__T:IMapInfoGaugeMainLocatorRoot>IMapInfoGaugeMainLocatorRootMethods for __T{}
 
-#[cfg(feature = "app-mapinfogaugemainlocatorroot")]
-impl MapInfoGaugeMainLocatorRoot { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_set_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn delete_disuse_locator_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_sub_locator_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_display_outside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn init_hp_forecast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_hp_forecast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn init_break_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_break_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_is_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_is_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoGaugeMainLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-mapinfogaugemainlocatorroot")]impl MapInfoGaugeMainLocatorRoot{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_set_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn delete_disuse_locator_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_sub_locator_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_display_outside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn init_hp_forecast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_hp_forecast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn init_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_is_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_is_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-mapinfogaugemainlocatorroot")]
-impl MapInfoGaugeMainLocatorRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoGaugeMainLocatorRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoGaugeMainLocatorRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapinfogaugemainlocatorroot")]impl MapInfoGaugeMainLocatorRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInfoGaugeMainLocatorRoot), ::core::stringify!(new),));
+ <Self as IMapInfoGaugeMainLocatorRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapinfogaugemainlocatorroot")]

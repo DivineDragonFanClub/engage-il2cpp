@@ -4,34 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: profilecardvisualbasemenuitem :: { IProfileCardVisualBaseMenuItem , ProfileCardVisualBaseMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::profilecardvisualbasemenuitem::{IProfileCardVisualBaseMenuItem,ProfileCardVisualBaseMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualbgmenuitem/ProfileCardVisualBgMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVisualBgMenuItem")] # [parent (crate :: app :: profilecardvisualbasemenuitem :: ProfileCardVisualBaseMenuItem)] pub struct ProfileCardVisualBgMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvisualbgmenuitem/ProfileCardVisualBgMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardVisualBgMenuItem")]#[parent(crate::app::profilecardvisualbasemenuitem::ProfileCardVisualBaseMenuItem)]pub struct ProfileCardVisualBgMenuItem{}
 
 }
 
 #[cfg(feature = "app-profilecardvisualbgmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardvisualbgmenuitem")]
-pub trait IProfileCardVisualBgMenuItemMethods : IProfileCardVisualBgMenuItem { # [doc = "`get_m_BgData()` overload"] fn get_m_bg_data (self ,) -> crate :: app :: profilecardbgdata :: ProfileCardBgData { unsafe { let __receiver = < ProfileCardVisualBgMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBgMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardbgdata :: ProfileCardBgData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c037e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_BgData(crate::app::profilecardbgdata::ProfileCardBgData)` overload"] fn set_m_bg_data (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardbgdata :: ProfileCardBgData >) -> () { unsafe { let __receiver = < ProfileCardVisualBgMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBgMenuItem , crate :: app :: profilecardbgdata :: ProfileCardBgData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c037f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::profilecardbgdata::ProfileCardBgData, bool)` overload"] fn ctor (self , bg_data : impl :: core :: convert :: Into < crate :: app :: profilecardbgdata :: ProfileCardBgData > , initial_select : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ProfileCardVisualBgMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBgMenuItem , crate :: app :: profilecardbgdata :: ProfileCardBgData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (bg_data) , :: core :: convert :: Into :: into (initial_select) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBgMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBgMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNewArrival()` overload"] fn is_new_arrival (self ,) -> bool { unsafe { let __receiver = < ProfileCardVisualBgMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBgMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAlreadyRead()` overload"] fn set_already_read (self ,) -> () { unsafe { let __receiver = < ProfileCardVisualBgMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVisualBgMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c03d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvisualbgmenuitem")]pub trait IProfileCardVisualBgMenuItemMethods:IProfileCardVisualBgMenuItem{#[doc="`get_m_BgData()` overload"]fn get_m_bg_data(self,)->crate::app::profilecardbgdata::ProfileCardBgData{unsafe{let __receiver= <ProfileCardVisualBgMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c037e0usize)as*mut u8,crate::app::profilecardbgdata::ProfileCardBgData;
+(ProfileCardVisualBgMenuItem)__receiver)}
+}
+#[doc="`set_m_BgData(crate::app::profilecardbgdata::ProfileCardBgData)` overload"]fn set_m_bg_data(self,value:impl::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData>)->(){unsafe{let __receiver= <ProfileCardVisualBgMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c037f0usize)as*mut u8,();
+(ProfileCardVisualBgMenuItem)__receiver,(crate::app::profilecardbgdata::ProfileCardBgData)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::profilecardbgdata::ProfileCardBgData, bool)` overload"]fn ctor(self,bg_data:impl::core::convert::Into<crate::app::profilecardbgdata::ProfileCardBgData> ,initial_select:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ProfileCardVisualBgMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03800usize)as*mut u8,();
+(ProfileCardVisualBgMenuItem)__receiver,(crate::app::profilecardbgdata::ProfileCardBgData)::core::convert::Into::into(bg_data),(bool)::core::convert::Into::into(initial_select))}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualBgMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03850usize)as*mut u8,();
+(ProfileCardVisualBgMenuItem)__receiver)}
+}
+#[doc="`IsNewArrival()` overload"]fn is_new_arrival(self,)->bool{unsafe{let __receiver= <ProfileCardVisualBgMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03ca0usize)as*mut u8,bool;
+(ProfileCardVisualBgMenuItem)__receiver)}
+}
+#[doc="`SetAlreadyRead()` overload"]fn set_already_read(self,)->(){unsafe{let __receiver= <ProfileCardVisualBgMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03d40usize)as*mut u8,();
+(ProfileCardVisualBgMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardvisualbgmenuitem")]
-impl < __T : IProfileCardVisualBgMenuItem > IProfileCardVisualBgMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardvisualbgmenuitem")]impl<__T:IProfileCardVisualBgMenuItem>IProfileCardVisualBgMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardvisualbgmenuitem")]
-impl ProfileCardVisualBgMenuItem { pub fn get_m_bg_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBgMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_bg_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBgMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBgMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBgMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_new_arrival_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBgMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_already_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVisualBgMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-profilecardvisualbgmenuitem")]impl ProfileCardVisualBgMenuItem{pub fn get_m_bg_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_bg_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_new_arrival_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_already_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-profilecardvisualbgmenuitem")]
-impl ProfileCardVisualBgMenuItem {
-# [doc = "`.ctor(crate::app::profilecardbgdata::ProfileCardBgData, bool)` — overload selector"] pub fn new (bg_data : crate :: app :: profilecardbgdata :: ProfileCardBgData , initial_select : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVisualBgMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVisualBgMenuItemMethods > :: ctor (this , bg_data , initial_select) ; this }
+#[cfg(feature="app-profilecardvisualbgmenuitem")]impl ProfileCardVisualBgMenuItem{#[doc="`.ctor(crate::app::profilecardbgdata::ProfileCardBgData, bool)` — overload selector"]pub fn new(bg_data:crate::app::profilecardbgdata::ProfileCardBgData,initial_select:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVisualBgMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardVisualBgMenuItemMethods> ::ctor(this,bg_data,initial_select);
+this}
 }
 
 #[cfg(feature = "app-profilecardvisualbgmenuitem")]

@@ -4,84 +4,264 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: collections :: generic :: list_1 :: { IList_1 , List_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::collections::generic::list_1::{IList_1,List_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_List.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapLayer.List")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: maplayer :: MapLayer_Data >)] pub struct MapLayer_List {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maplayer/MapLayer.md"))]#[::unity2::class(namespace="App",name="MapLayer")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maplayer::MapLayer>)]pub struct MapLayer{#[offset(32)]#[rename(name="m_List")]pub m_list:crate::app::maplayer::MapLayer_List,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapLayer")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maplayer :: MapLayer >)] pub struct MapLayer {
-# [offset (32)] # [rename (name = "m_List")] pub m_list : crate :: app :: maplayer :: MapLayer_List ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maplayer/MapLayer_Data.md"))]#[::unity2::class(namespace="App",name="MapLayer.Data")]#[parent(crate::system::object::Object)]pub struct MapLayer_Data{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_Data.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapLayer.Data")] # [parent (crate :: system :: object :: Object)] pub struct MapLayer_Data {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maplayer/MapLayer_List.md"))]#[::unity2::class(namespace="App",name="MapLayer.List")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::maplayer::MapLayer_Data>)]pub struct MapLayer_List{}
 
 }
 
 #[cfg(feature = "app-maplayer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-maplayer")]
-pub trait IMapLayer_ListMethods : IMapLayer_List { # [doc = "`Exists(crate::app::maplayer::MapLayer_Data)` overload"] fn exists (self , data : impl :: core :: convert :: Into < crate :: app :: maplayer :: MapLayer_Data >) -> bool { unsafe { let __receiver = < MapLayer_List as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_List , crate :: app :: maplayer :: MapLayer_Data , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"] fn is_connect (self , data : impl :: core :: convert :: Into < crate :: app :: maplayer :: MapLayer_Data >) -> bool { unsafe { let __receiver = < MapLayer_List as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_List , crate :: app :: maplayer :: MapLayer_Data , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapLayer_List as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_List , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-maplayer")]
-impl < __T : IMapLayer_List > IMapLayer_ListMethods for __T { }
-
-#[cfg(feature = "app-maplayer")]
-impl MapLayer_List { pub fn exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_List as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_List as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_List as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-maplayer")]
-impl MapLayer_List {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapLayer_List) , :: core :: stringify ! (new) ,)) ; < Self as IMapLayer_ListMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-maplayer")]pub trait IMapLayerMethods:IMapLayer{#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3200usize)as*mut u8,i32;
+(MapLayer)__receiver)}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,i:impl::core::convert::Into<i32>)->crate::app::maplayer::MapLayer_Data{unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3250usize)as*mut u8,crate::app::maplayer::MapLayer_Data;
+(MapLayer)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df32c0usize)as*mut u8,();
+(MapLayer)__receiver)}
+}
+#[doc="`Add(crate::app::maplayer::MapLayer_Data)` overload"]fn add(self,data:impl::core::convert::Into<crate::app::maplayer::MapLayer_Data>)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3320usize)as*mut u8,();
+(MapLayer)__receiver,(crate::app::maplayer::MapLayer_Data)::core::convert::Into::into(data))}
+}
+#[doc="`Add(i32, i32, i32, i32, i32, ::unity2::Il2CppString, bool)` overload"]fn add_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,w:impl::core::convert::Into<i32> ,h:impl::core::convert::Into<i32> ,group:impl::core::convert::Into<i32> ,tid:impl::core::convert::Into< ::unity2::Il2CppString> ,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3380usize)as*mut u8,();
+(MapLayer)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(w),(i32)::core::convert::Into::into(h),(i32)::core::convert::Into::into(group),(::unity2::Il2CppString)::core::convert::Into::into(tid),(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`SetEnable(i32, i32, bool)` overload"]fn set_enable(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df34c0usize)as*mut u8,();
+(MapLayer)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`SetEnable(i32, bool)` overload"]fn set_enable_2(self,group:impl::core::convert::Into<i32> ,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3660usize)as*mut u8,();
+(MapLayer)__receiver,(i32)::core::convert::Into::into(group),(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`Find(i32, i32)` overload"]fn find(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::maplayer::MapLayer_Data{unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de82d0usize)as*mut u8,crate::app::maplayer::MapLayer_Data;
+(MapLayer)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3740usize)as*mut u8,i32;
+(MapLayer)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3750usize)as*mut u8,();
+(MapLayer)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3880usize)as*mut u8,();
+(MapLayer)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3d90usize)as*mut u8,();
+(MapLayer)__receiver)}
+}
 }
 
-#[cfg(feature = "app-maplayer")]
-pub trait IMapLayerMethods : IMapLayer { # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , i : impl :: core :: convert :: Into < i32 >) -> crate :: app :: maplayer :: MapLayer_Data { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: maplayer :: MapLayer_Data = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df32c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::maplayer::MapLayer_Data)` overload"] fn add (self , data : impl :: core :: convert :: Into < crate :: app :: maplayer :: MapLayer_Data >) -> () { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , crate :: app :: maplayer :: MapLayer_Data , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Add(i32, i32, i32, i32, i32, ::unity2::Il2CppString, bool)` overload"] fn add_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , w : impl :: core :: convert :: Into < i32 > , h : impl :: core :: convert :: Into < i32 > , group : impl :: core :: convert :: Into < i32 > , tid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , i32 , i32 , i32 , i32 , i32 , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (w) , :: core :: convert :: Into :: into (h) , :: core :: convert :: Into :: into (group) , :: core :: convert :: Into :: into (tid) , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`SetEnable(i32, i32, bool)` overload"] fn set_enable (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df34c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`SetEnable(i32, bool)` overload"] fn set_enable_2 (self , group : impl :: core :: convert :: Into < i32 > , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (group) , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`Find(i32, i32)` overload"] fn find (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: maplayer :: MapLayer_Data { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: maplayer :: MapLayer_Data = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de82d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapLayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-maplayer")]impl<__T:IMapLayer>IMapLayerMethods for __T{}
 
-#[cfg(feature = "app-maplayer")]
-impl < __T : IMapLayer > IMapLayerMethods for __T { }
-
-#[cfg(feature = "app-maplayer")]
-impl MapLayer { pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_enable_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn find_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
-
-#[cfg(feature = "app-maplayer")]
-impl MapLayer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapLayer) , :: core :: stringify ! (new) ,)) ; < Self as IMapLayerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-maplayer")]impl MapLayer{pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_enable_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn find_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 }
 
-#[cfg(feature = "app-maplayer")]
-pub trait IMapLayer_DataMethods : IMapLayer_Data { # [doc = "`get_X()` overload"] fn get_x (self ,) -> i32 { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21864a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_X(i32)` overload"] fn set_x (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21864b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> i32 { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21864c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Z(i32)` overload"] fn set_z (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21864d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_W()` overload"] fn get_w (self ,) -> i32 { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21864e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_W(i32)` overload"] fn set_w (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21864f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_H()` overload"] fn get_h (self ,) -> i32 { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_H(i32)` overload"] fn set_h (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Group()` overload"] fn get_group (self ,) -> i32 { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Group(i32)` overload"] fn set_group (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Tid()` overload"] fn get_tid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Tid(::unity2::Il2CppString)` overload"] fn set_tid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Index()` overload"] fn get_index (self ,) -> i32 { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Index(i32)` overload"] fn set_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Enable()` overload"] fn get_enable (self ,) -> bool { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Enable(bool)` overload"] fn set_enable (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`IsOutside(i32, i32)` overload"] fn is_outside (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21865a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsInside(i32, i32)` overload"] fn is_inside (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21865f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"] fn is_connect (self , data : impl :: core :: convert :: Into < crate :: app :: maplayer :: MapLayer_Data >) -> bool { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , crate :: app :: maplayer :: MapLayer_Data , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`GetTerrain()` overload"] fn get_terrain (self ,) -> crate :: app :: terraindata_2 :: TerrainData_2 { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> crate :: app :: terraindata_2 :: TerrainData_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRoof()` overload"] fn is_roof (self ,) -> bool { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21867b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapLayer_Data as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapLayer_Data , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-maplayer")]impl MapLayer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapLayer), ::core::stringify!(new),));
+ <Self as IMapLayerMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-maplayer")]
-impl < __T : IMapLayer_Data > IMapLayer_DataMethods for __T { }
+#[cfg(feature="app-maplayer")]pub trait IMapLayer_DataMethods:IMapLayer_Data{#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21864a0usize)as*mut u8,i32;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`set_X(i32)` overload"]fn set_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21864b0usize)as*mut u8,();
+(MapLayer_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21864c0usize)as*mut u8,i32;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`set_Z(i32)` overload"]fn set_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21864d0usize)as*mut u8,();
+(MapLayer_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_W()` overload"]fn get_w(self,)->i32{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21864e0usize)as*mut u8,i32;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`set_W(i32)` overload"]fn set_w(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21864f0usize)as*mut u8,();
+(MapLayer_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_H()` overload"]fn get_h(self,)->i32{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186500usize)as*mut u8,i32;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`set_H(i32)` overload"]fn set_h(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186510usize)as*mut u8,();
+(MapLayer_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Group()` overload"]fn get_group(self,)->i32{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186520usize)as*mut u8,i32;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`set_Group(i32)` overload"]fn set_group(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186530usize)as*mut u8,();
+(MapLayer_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Tid()` overload"]fn get_tid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186540usize)as*mut u8, ::unity2::Il2CppString;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`set_Tid(::unity2::Il2CppString)` overload"]fn set_tid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186550usize)as*mut u8,();
+(MapLayer_Data)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Index()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186560usize)as*mut u8,i32;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`set_Index(i32)` overload"]fn set_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186570usize)as*mut u8,();
+(MapLayer_Data)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Enable()` overload"]fn get_enable(self,)->bool{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186580usize)as*mut u8,bool;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`set_Enable(bool)` overload"]fn set_enable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186590usize)as*mut u8,();
+(MapLayer_Data)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`IsOutside(i32, i32)` overload"]fn is_outside(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21865a0usize)as*mut u8,bool;
+(MapLayer_Data)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsInside(i32, i32)` overload"]fn is_inside(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21865f0usize)as*mut u8,bool;
+(MapLayer_Data)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"]fn is_connect(self,data:impl::core::convert::Into<crate::app::maplayer::MapLayer_Data>)->bool{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186640usize)as*mut u8,bool;
+(MapLayer_Data)__receiver,(crate::app::maplayer::MapLayer_Data)::core::convert::Into::into(data))}
+}
+#[doc="`GetTerrain()` overload"]fn get_terrain(self,)->crate::app::terraindata_2::TerrainData_2{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186720usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`IsRoof()` overload"]fn is_roof(self,)->bool{unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21867b0usize)as*mut u8,bool;
+(MapLayer_Data)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapLayer_Data as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186860usize)as*mut u8,();
+(MapLayer_Data)__receiver)}
+}
+}
 
-#[cfg(feature = "app-maplayer")]
-impl MapLayer_Data { pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_tid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_outside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_inside_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_roof_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapLayer_Data as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="app-maplayer")]impl<__T:IMapLayer_Data>IMapLayer_DataMethods for __T{}
 
-#[cfg(feature = "app-maplayer")]
-impl MapLayer_Data {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapLayer_Data) , :: core :: stringify ! (new) ,)) ; < Self as IMapLayer_DataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-maplayer")]impl MapLayer_Data{pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_tid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_tid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_outside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_inside_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_roof_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
+
+#[cfg(feature="app-maplayer")]impl MapLayer_Data{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapLayer_Data), ::core::stringify!(new),));
+ <Self as IMapLayer_DataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-maplayer")]pub trait IMapLayer_ListMethods:IMapLayer_List{#[doc="`Exists(crate::app::maplayer::MapLayer_Data)` overload"]fn exists(self,data:impl::core::convert::Into<crate::app::maplayer::MapLayer_Data>)->bool{unsafe{let __receiver= <MapLayer_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186870usize)as*mut u8,bool;
+(MapLayer_List)__receiver,(crate::app::maplayer::MapLayer_Data)::core::convert::Into::into(data))}
+}
+#[doc="`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"]fn is_connect(self,data:impl::core::convert::Into<crate::app::maplayer::MapLayer_Data>)->bool{unsafe{let __receiver= <MapLayer_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186920usize)as*mut u8,bool;
+(MapLayer_List)__receiver,(crate::app::maplayer::MapLayer_Data)::core::convert::Into::into(data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapLayer_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186a80usize)as*mut u8,();
+(MapLayer_List)__receiver)}
+}
+}
+
+#[cfg(feature="app-maplayer")]impl<__T:IMapLayer_List>IMapLayer_ListMethods for __T{}
+
+#[cfg(feature="app-maplayer")]impl MapLayer_List{pub fn exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-maplayer")]impl MapLayer_List{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapLayer_List), ::core::stringify!(new),));
+ <Self as IMapLayer_ListMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-maplayer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapLayer_List;
-    pub use super::IMapLayer_List;
-    pub use super::IMapLayer_ListMethods;
     pub use super::MapLayer;
     pub use super::IMapLayer;
     pub use super::IMapLayerMethods;
     pub use super::MapLayer_Data;
     pub use super::IMapLayer_Data;
     pub use super::IMapLayer_DataMethods;
+    pub use super::MapLayer_List;
+    pub use super::IMapLayer_List;
+    pub use super::IMapLayer_ListMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::object::IObject;

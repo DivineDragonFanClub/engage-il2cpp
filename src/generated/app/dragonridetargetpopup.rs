@@ -4,44 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetpopup/DragonRideTargetPopup.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTargetPopup")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideTargetPopup {
-# [offset (24)] # [rename (name = "m_RectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (32)] # [rename (name = "m_Camera")] pub m_camera : crate :: app :: dragonridecamera :: DragonRideCamera ,
-# [offset (40)] # [rename (name = "m_WorldPos")] pub m_world_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (56)] # [rename (name = "m_Config")] pub m_config : crate :: app :: dragonrideconfig :: DragonRideConfig ,
-# [offset (64)] # [rename (name = "m_AliveTimer")] pub m_alive_timer : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridetargetpopup/DragonRideTargetPopup.md"))]#[::unity2::class(namespace="App",name="DragonRideTargetPopup")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DragonRideTargetPopup{#[offset(24)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_Camera")]pub m_camera:crate::app::dragonridecamera::DragonRideCamera, #[offset(40)]#[rename(name="m_WorldPos")]pub m_world_pos:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="m_Config")]pub m_config:crate::app::dragonrideconfig::DragonRideConfig, #[offset(64)]#[rename(name="m_AliveTimer")]pub m_alive_timer:f32,}
 
 }
 
 #[cfg(feature = "app-dragonridetargetpopup-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonridetargetpopup")]
-pub trait IDragonRideTargetPopupMethods : IDragonRideTargetPopup { # [doc = "`get_IsAlive()` overload"] fn get_is_alive (self ,) -> bool { unsafe { let __receiver = < DragonRideTargetPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPopup , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < DragonRideTargetPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPopup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d20d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init(crate::unity_engine::vector3::Vector3, *mutcrate::app::dragonridecamera::DragonRideCamera, *mutcrate::app::dragonrideconfig::DragonRideConfig)` overload"] fn init (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> (crate :: app :: dragonridecamera :: DragonRideCamera , crate :: app :: dragonrideconfig :: DragonRideConfig) { unsafe { let __receiver = < DragonRideTargetPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: dragonridecamera :: DragonRideCamera > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: app :: dragonrideconfig :: DragonRideConfig > :: uninit () ; { let __inner : extern "C" fn (DragonRideTargetPopup , crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: app :: dragonridecamera :: DragonRideCamera , * mut crate :: app :: dragonrideconfig :: DragonRideConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d2500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideTargetPopup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetPopup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d25e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridetargetpopup")]pub trait IDragonRideTargetPopupMethods:IDragonRideTargetPopup{#[doc="`get_IsAlive()` overload"]fn get_is_alive(self,)->bool{unsafe{let __receiver= <DragonRideTargetPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2060usize)as*mut u8,bool;
+(DragonRideTargetPopup)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <DragonRideTargetPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d20d0usize)as*mut u8,();
+(DragonRideTargetPopup)__receiver)}
+}
+#[doc="`Init(crate::unity_engine::vector3::Vector3, *mutcrate::app::dragonridecamera::DragonRideCamera, *mutcrate::app::dragonrideconfig::DragonRideConfig)` overload"]fn init(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(crate::app::dragonridecamera::DragonRideCamera,crate::app::dragonrideconfig::DragonRideConfig){unsafe{let __receiver= <DragonRideTargetPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::dragonridecamera::DragonRideCamera> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::app::dragonrideconfig::DragonRideConfig> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d2500usize)as*mut u8,();
+(DragonRideTargetPopup)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(*mut crate::app::dragonridecamera::DragonRideCamera)__out_0.as_mut_ptr(),(*mut crate::app::dragonrideconfig::DragonRideConfig)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideTargetPopup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d25e0usize)as*mut u8,();
+(DragonRideTargetPopup)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonridetargetpopup")]
-impl < __T : IDragonRideTargetPopup > IDragonRideTargetPopupMethods for __T { }
+#[cfg(feature="app-dragonridetargetpopup")]impl<__T:IDragonRideTargetPopup>IDragonRideTargetPopupMethods for __T{}
 
-#[cfg(feature = "app-dragonridetargetpopup")]
-impl DragonRideTargetPopup { pub fn get_is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetPopup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-dragonridetargetpopup")]impl DragonRideTargetPopup{pub fn get_is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-dragonridetargetpopup")]
-impl DragonRideTargetPopup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideTargetPopup) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideTargetPopupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonridetargetpopup")]impl DragonRideTargetPopup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideTargetPopup), ::core::stringify!(new),));
+ <Self as IDragonRideTargetPopupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonridetargetpopup")]

@@ -4,46 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapboundingmanager/MapBoundingManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapBoundingManager")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapboundingmanager :: MapBoundingManager >)] pub struct MapBoundingManager {
-# [offset (32)] # [rename (name = "m_Prefab")] pub m_prefab : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_Colliders")] pub m_colliders : :: unity2 :: Array < crate :: unity_engine :: boxcollider :: BoxCollider > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapboundingmanager/MapBoundingManager.md"))]#[::unity2::class(namespace="App",name="MapBoundingManager")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::mapboundingmanager::MapBoundingManager>)]pub struct MapBoundingManager{#[offset(32)]#[rename(name="m_Prefab")]pub m_prefab:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Colliders")]pub m_colliders: ::unity2::Array<crate::unity_engine::boxcollider::BoxCollider> ,}
 
 }
 
 #[cfg(feature = "app-mapboundingmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapboundingmanager")]
-impl MapBoundingManager { # [doc = "`TryGetIntercect(crate::unity_engine::vector3::Vector3, *mutcrate::app::mapbounding::MapBounding)` overload"] pub fn try_get_intercect (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> (bool , crate :: app :: mapbounding :: MapBounding) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: mapbounding :: MapBounding > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: app :: mapbounding :: MapBounding , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299a210usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="app-mapboundingmanager")]impl MapBoundingManager{#[doc="`TryGetIntercect(crate::unity_engine::vector3::Vector3, *mutcrate::app::mapbounding::MapBounding)` overload"]pub fn try_get_intercect(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(bool,crate::app::mapbounding::MapBounding){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::mapbounding::MapBounding> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x299a210usize)as*mut u8,bool;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(*mut crate::app::mapbounding::MapBounding)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "app-mapboundingmanager")]
-pub trait IMapBoundingManagerMethods : IMapBoundingManager { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapBoundingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBoundingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299a150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapBoundingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBoundingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299a410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapboundingmanager")]pub trait IMapBoundingManagerMethods:IMapBoundingManager{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapBoundingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299a150usize)as*mut u8,();
+(MapBoundingManager)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBoundingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299a410usize)as*mut u8,();
+(MapBoundingManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapboundingmanager")]
-impl < __T : IMapBoundingManager > IMapBoundingManagerMethods for __T { }
+#[cfg(feature="app-mapboundingmanager")]impl<__T:IMapBoundingManager>IMapBoundingManagerMethods for __T{}
 
-#[cfg(feature = "app-mapboundingmanager")]
-impl MapBoundingManager { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBoundingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn try_get_intercect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBoundingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBoundingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-mapboundingmanager")]impl MapBoundingManager{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn try_get_intercect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-mapboundingmanager")]
-impl MapBoundingManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapBoundingManager) , :: core :: stringify ! (new) ,)) ; < Self as IMapBoundingManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapboundingmanager")]impl MapBoundingManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapBoundingManager), ::core::stringify!(new),));
+ <Self as IMapBoundingManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapboundingmanager")]

@@ -4,36 +4,98 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: collider :: { Collider , ICollider }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::collider::{Collider,ICollider}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/boxcollider/BoxCollider.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "BoxCollider")] # [parent (crate :: unity_engine :: collider :: Collider)] pub struct BoxCollider {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/boxcollider/BoxCollider.md"))]#[::unity2::class(namespace="UnityEngine",name="BoxCollider")]#[parent(crate::unity_engine::collider::Collider)]pub struct BoxCollider{}
 
 }
 
 #[cfg(feature = "unity_engine-boxcollider-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-boxcollider")]
-pub trait IBoxColliderMethods : IBoxCollider { # [doc = "`get_center()` overload"] fn get_center (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BoxCollider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef4420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_center(crate::unity_engine::vector3::Vector3)` overload"] fn set_center (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BoxCollider , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef44d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_size()` overload"] fn get_size (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BoxCollider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef4580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_size(crate::unity_engine::vector3::Vector3)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BoxCollider , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef4630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_extents()` overload"] fn get_extents (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BoxCollider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef46e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_extents(crate::unity_engine::vector3::Vector3)` overload"] fn set_extents (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BoxCollider , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef4750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BoxCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef47c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_center_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (BoxCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef4480usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`set_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn set_center_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (BoxCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef4530usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`get_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_size_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (BoxCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef45e0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`set_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn set_size_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < BoxCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (BoxCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ef4690usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-boxcollider")]pub trait IBoxColliderMethods:IBoxCollider{#[doc="`get_center()` overload"]fn get_center(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4420usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(BoxCollider)__receiver)}
+}
+#[doc="`set_center(crate::unity_engine::vector3::Vector3)` overload"]fn set_center(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef44d0usize)as*mut u8,();
+(BoxCollider)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_size()` overload"]fn get_size(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4580usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(BoxCollider)__receiver)}
+}
+#[doc="`set_size(crate::unity_engine::vector3::Vector3)` overload"]fn set_size(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4630usize)as*mut u8,();
+(BoxCollider)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_extents()` overload"]fn get_extents(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef46e0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(BoxCollider)__receiver)}
+}
+#[doc="`set_extents(crate::unity_engine::vector3::Vector3)` overload"]fn set_extents(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4750usize)as*mut u8,();
+(BoxCollider)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef47c0usize)as*mut u8,();
+(BoxCollider)__receiver)}
+}
+#[doc="`get_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn get_center_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4480usize)as*mut u8,();
+(BoxCollider)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`set_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn set_center_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4530usize)as*mut u8,();
+(BoxCollider)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`get_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn get_size_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef45e0usize)as*mut u8,();
+(BoxCollider)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`set_size_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn set_size_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ef4690usize)as*mut u8,();
+(BoxCollider)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-boxcollider")]
-impl < __T : IBoxCollider > IBoxColliderMethods for __T { }
+#[cfg(feature="unity_engine-boxcollider")]impl<__T:IBoxCollider>IBoxColliderMethods for __T{}
 
-#[cfg(feature = "unity_engine-boxcollider")]
-impl BoxCollider { pub fn get_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_extents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_extents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_center_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_center_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_size_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_size_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoxCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-boxcollider")]impl BoxCollider{pub fn get_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_extents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_extents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_center_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_center_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_size_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_size_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "unity_engine-boxcollider")]
-impl BoxCollider {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BoxCollider) , :: core :: stringify ! (new) ,)) ; < Self as IBoxColliderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-boxcollider")]impl BoxCollider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BoxCollider), ::core::stringify!(new),));
+ <Self as IBoxColliderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-boxcollider")]

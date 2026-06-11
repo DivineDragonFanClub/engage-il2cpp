@@ -4,52 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/vibrationfileinfo/VibrationFileInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VibrationFileInfo {
-    pub meta_data_size: u32,
-    pub format_id: u16,
-    pub sampling_rate: u16,
-    pub data_size: u32,
-    pub sample_length: i32,
-    pub is_loop: i32,
-    pub loop_start_position: u32,
-    pub loop_end_position: u32,
-    pub loop_interval: u32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/vibrationfileinfo/VibrationFileInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VibrationFileInfo{pub meta_data_size:u32,pub format_id:u16,pub sampling_rate:u16,pub data_size:u32,pub sample_length:i32,pub is_loop:i32,pub loop_start_position:u32,pub loop_end_position:u32,pub loop_interval:u32,}
+impl::unity2::ClassIdentity for VibrationFileInfo{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="VibrationFileInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for VibrationFileInfo {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "VibrationFileInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for VibrationFileInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for VibrationFileInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -57,11 +26,13 @@ impl ::unity2::IlType for VibrationFileInfo {
 #[cfg(feature = "nn-hid-vibrationfileinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-vibrationfileinfo")]
-impl VibrationFileInfo { # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut VibrationFileInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21bfbb0usize) as * mut u8) ; __inner (self as * mut VibrationFileInfo , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-vibrationfileinfo")]impl VibrationFileInfo{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bfbb0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut VibrationFileInfo)self as*mut VibrationFileInfo)}
+}
+}
 
-#[cfg(feature = "nn-hid-vibrationfileinfo")]
-impl VibrationFileInfo { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VibrationFileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="nn-hid-vibrationfileinfo")]impl VibrationFileInfo{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "nn-hid-vibrationfileinfo")]
 #[doc(hidden)]

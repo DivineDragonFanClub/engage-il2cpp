@@ -4,40 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
+;
+use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/nointerpcolorparameter/NoInterpColorParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "NoInterpColorParameter")] # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: color :: Color >)] pub struct NoInterpColorParameter {
-# [offset (36)] # [rename (name = "hdr")] pub hdr : bool ,
-# [offset (37)] # [rename (name = "showAlpha")] pub show_alpha : bool ,
-# [offset (38)] # [rename (name = "showEyeDropper")] pub show_eye_dropper : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/nointerpcolorparameter/NoInterpColorParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="NoInterpColorParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::color::Color>)]pub struct NoInterpColorParameter{#[offset(36)]#[rename(name="hdr")]pub hdr:bool, #[offset(37)]#[rename(name="showAlpha")]pub show_alpha:bool, #[offset(38)]#[rename(name="showEyeDropper")]pub show_eye_dropper:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpcolorparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-nointerpcolorparameter")]
-pub trait INoInterpColorParameterMethods : INoInterpColorParameter { # [doc = "`.ctor(crate::unity_engine::color::Color, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NoInterpColorParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoInterpColorParameter , crate :: unity_engine :: color :: Color , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abf20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::color::Color, bool, bool, bool, bool)` overload"] fn ctor_2 (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , hdr : impl :: core :: convert :: Into < bool > , show_alpha : impl :: core :: convert :: Into < bool > , show_eye_dropper : impl :: core :: convert :: Into < bool > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NoInterpColorParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoInterpColorParameter , crate :: unity_engine :: color :: Color , bool , bool , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abfc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (hdr) , :: core :: convert :: Into :: into (show_alpha) , :: core :: convert :: Into :: into (show_eye_dropper) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-nointerpcolorparameter")]pub trait INoInterpColorParameterMethods:INoInterpColorParameter{#[doc="`.ctor(crate::unity_engine::color::Color, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::color::Color> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoInterpColorParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30abf20usize)as*mut u8,();
+(NoInterpColorParameter)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
+}
+#[doc="`.ctor(crate::unity_engine::color::Color, bool, bool, bool, bool)` overload"]fn ctor_2(self,value:impl::core::convert::Into<crate::unity_engine::color::Color> ,hdr:impl::core::convert::Into<bool> ,show_alpha:impl::core::convert::Into<bool> ,show_eye_dropper:impl::core::convert::Into<bool> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoInterpColorParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30abfc0usize)as*mut u8,();
+(NoInterpColorParameter)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value),(bool)::core::convert::Into::into(hdr),(bool)::core::convert::Into::into(show_alpha),(bool)::core::convert::Into::into(show_eye_dropper),(bool)::core::convert::Into::into(override_state))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-nointerpcolorparameter")]
-impl < __T : INoInterpColorParameter > INoInterpColorParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-nointerpcolorparameter")]impl<__T:INoInterpColorParameter>INoInterpColorParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-nointerpcolorparameter")]
-impl NoInterpColorParameter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoInterpColorParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoInterpColorParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-nointerpcolorparameter")]impl NoInterpColorParameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-rendering-nointerpcolorparameter")]
-impl NoInterpColorParameter {
-# [doc = "`.ctor(crate::unity_engine::color::Color, bool)` — overload selector"] pub fn new (value : crate :: unity_engine :: color :: Color , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NoInterpColorParameter) , :: core :: stringify ! (new) ,)) ; < Self as INoInterpColorParameterMethods > :: ctor (this , value , override_state) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::color::Color, bool, bool, bool, bool)` — overload selector"] pub fn new_2 (value : crate :: unity_engine :: color :: Color , hdr : bool , show_alpha : bool , show_eye_dropper : bool , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NoInterpColorParameter) , :: core :: stringify ! (new_2) ,)) ; < Self as INoInterpColorParameterMethods > :: ctor_2 (this , value , hdr , show_alpha , show_eye_dropper , override_state) ; this }
+#[cfg(feature="unity_engine-rendering-nointerpcolorparameter")]impl NoInterpColorParameter{#[doc="`.ctor(crate::unity_engine::color::Color, bool)` — overload selector"]pub fn new(value:crate::unity_engine::color::Color,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoInterpColorParameter), ::core::stringify!(new),));
+ <Self as INoInterpColorParameterMethods> ::ctor(this,value,override_state);
+this}
+#[doc="`.ctor(crate::unity_engine::color::Color, bool, bool, bool, bool)` — overload selector"]pub fn new_2(value:crate::unity_engine::color::Color,hdr:bool,show_alpha:bool,show_eye_dropper:bool,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoInterpColorParameter), ::core::stringify!(new_2),));
+ <Self as INoInterpColorParameterMethods> ::ctor_2(this,value,hdr,show_alpha,show_eye_dropper,override_state);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpcolorparameter")]

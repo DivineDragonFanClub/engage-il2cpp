@@ -4,49 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/raycasthit2d/RaycastHit2D.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RaycastHit2D {
-    pub m_centroid: crate :: unity_engine :: vector2 :: Vector2,
-    pub m_point: crate :: unity_engine :: vector2 :: Vector2,
-    pub m_normal: crate :: unity_engine :: vector2 :: Vector2,
-    pub m_distance: f32,
-    pub m_fraction: f32,
-    pub m_collider: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/raycasthit2d/RaycastHit2D.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RaycastHit2D{pub m_centroid:crate::unity_engine::vector2::Vector2,pub m_point:crate::unity_engine::vector2::Vector2,pub m_normal:crate::unity_engine::vector2::Vector2,pub m_distance:f32,pub m_fraction:f32,pub m_collider:i32,}
+impl::unity2::ClassIdentity for RaycastHit2D{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="RaycastHit2D";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RaycastHit2D {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "RaycastHit2D";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RaycastHit2D {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RaycastHit2D{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -54,11 +26,25 @@ impl ::unity2::IlType for RaycastHit2D {
 #[cfg(feature = "unity_engine-raycasthit2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-raycasthit2d")]
-impl RaycastHit2D { # [doc = "`get_point()` overload"] pub fn get_point (& mut self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (* mut RaycastHit2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f33f90usize) as * mut u8) ; __inner (self as * mut RaycastHit2D , :: core :: option :: Option :: None) } } } # [doc = "`get_normal()` overload"] pub fn get_normal (& mut self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (* mut RaycastHit2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f33fa0usize) as * mut u8) ; __inner (self as * mut RaycastHit2D , :: core :: option :: Option :: None) } } } # [doc = "`get_distance()` overload"] pub fn get_distance (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut RaycastHit2D , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f33fb0usize) as * mut u8) ; __inner (self as * mut RaycastHit2D , :: core :: option :: Option :: None) } } } # [doc = "`get_collider()` overload"] pub fn get_collider (& mut self ,) -> crate :: unity_engine :: collider2d :: Collider2D { unsafe { { let __inner : extern "C" fn (* mut RaycastHit2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: collider2d :: Collider2D = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f33fc0usize) as * mut u8) ; __inner (self as * mut RaycastHit2D , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-raycasthit2d")]impl RaycastHit2D{#[doc="`get_point()` overload"]pub fn get_point(&mut self,)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f33f90usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(*mut RaycastHit2D)self as*mut RaycastHit2D)}
+}
+#[doc="`get_normal()` overload"]pub fn get_normal(&mut self,)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f33fa0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(*mut RaycastHit2D)self as*mut RaycastHit2D)}
+}
+#[doc="`get_distance()` overload"]pub fn get_distance(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f33fb0usize)as*mut u8,f32;
+(*mut RaycastHit2D)self as*mut RaycastHit2D)}
+}
+#[doc="`get_collider()` overload"]pub fn get_collider(&mut self,)->crate::unity_engine::collider2d::Collider2D{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f33fc0usize)as*mut u8,crate::unity_engine::collider2d::Collider2D;
+(*mut RaycastHit2D)self as*mut RaycastHit2D)}
+}
+}
 
-#[cfg(feature = "unity_engine-raycasthit2d")]
-impl RaycastHit2D { pub fn get_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-raycasthit2d")]impl RaycastHit2D{pub fn get_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_collider_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-raycasthit2d")]
 #[doc(hidden)]

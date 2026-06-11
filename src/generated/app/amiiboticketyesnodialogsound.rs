@@ -4,41 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: exchangeyesnodialog :: { ExchangeYesNoDialog , IExchangeYesNoDialog }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::exchangeyesnodialog::{ExchangeYesNoDialog,IExchangeYesNoDialog}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboticketyesnodialogsound/AmiiboTicketYesNoDialogSound.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboTicketYesNoDialogSound")] # [parent (crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog)] pub struct AmiiboTicketYesNoDialogSound {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiiboticketyesnodialogsound/AmiiboTicketYesNoDialogSound.md"))]#[::unity2::class(namespace="App",name="AmiiboTicketYesNoDialogSound")]#[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]pub struct AmiiboTicketYesNoDialogSound{}
 
 }
 
 #[cfg(feature = "app-amiiboticketyesnodialogsound-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-amiiboticketyesnodialogsound")]
-impl AmiiboTicketYesNoDialogSound { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, i32, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , music_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , ticket_num : impl :: core :: convert :: Into < i32 > , yes_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , i32 , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8a440usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (music_name) , :: core :: convert :: Into :: into (event_name) , :: core :: convert :: Into :: into (ticket_num) , :: core :: convert :: Into :: into (yes_event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiiboticketyesnodialogsound")]impl AmiiboTicketYesNoDialogSound{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, i32, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,music_name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,ticket_num:impl::core::convert::Into<i32> ,yes_event_handler:impl::core::convert::Into<crate::system::action::Action>)->crate::app::exchangeyesnodialog::ExchangeYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8a440usize)as*mut u8,crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(music_name),(::unity2::Il2CppString)::core::convert::Into::into(event_name),(i32)::core::convert::Into::into(ticket_num),(crate::system::action::Action)::core::convert::Into::into(yes_event_handler))}
+}
+}
 
-#[cfg(feature = "app-amiiboticketyesnodialogsound")]
-pub trait IAmiiboTicketYesNoDialogSoundMethods : IAmiiboTicketYesNoDialogSound { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: exchangedialogcontent :: ExchangeDialogContent > , top_message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , get_item_title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , get_item_param : impl :: core :: convert :: Into < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , cost_item_title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , cost_item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > > , cost_money_param : impl :: core :: convert :: Into < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam >) -> () { unsafe { let __receiver = < AmiiboTicketYesNoDialogSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTicketYesNoDialogSound , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: exchangedialogcontent :: ExchangeDialogContent , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8bfc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (top_message) , :: core :: convert :: Into :: into (get_item_title) , :: core :: convert :: Into :: into (get_item_param) , :: core :: convert :: Into :: into (cost_item_title) , :: core :: convert :: Into :: into (cost_item_param_list) , :: core :: convert :: Into :: into (cost_money_param) , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < AmiiboTicketYesNoDialogSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTicketYesNoDialogSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8bfd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiiboticketyesnodialogsound")]pub trait IAmiiboTicketYesNoDialogSoundMethods:IAmiiboTicketYesNoDialogSound{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::exchangedialogcontent::ExchangeDialogContent> ,top_message:impl::core::convert::Into< ::unity2::Il2CppString> ,get_item_title:impl::core::convert::Into< ::unity2::Il2CppString> ,get_item_param:impl::core::convert::Into<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> ,cost_item_title:impl::core::convert::Into< ::unity2::Il2CppString> ,cost_item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> > ,cost_money_param:impl::core::convert::Into<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam>)->(){unsafe{let __receiver= <AmiiboTicketYesNoDialogSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8bfc0usize)as*mut u8,();
+(AmiiboTicketYesNoDialogSound)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::exchangedialogcontent::ExchangeDialogContent)::core::convert::Into::into(menu_content),(::unity2::Il2CppString)::core::convert::Into::into(top_message),(::unity2::Il2CppString)::core::convert::Into::into(get_item_title),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam)::core::convert::Into::into(get_item_param),(::unity2::Il2CppString)::core::convert::Into::into(cost_item_title),(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)::core::convert::Into::into(cost_item_param_list),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)::core::convert::Into::into(cost_money_param))}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <AmiiboTicketYesNoDialogSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8bfd0usize)as*mut u8,();
+(AmiiboTicketYesNoDialogSound)__receiver)}
+}
+}
 
-#[cfg(feature = "app-amiiboticketyesnodialogsound")]
-impl < __T : IAmiiboTicketYesNoDialogSound > IAmiiboTicketYesNoDialogSoundMethods for __T { }
+#[cfg(feature="app-amiiboticketyesnodialogsound")]impl<__T:IAmiiboTicketYesNoDialogSound>IAmiiboTicketYesNoDialogSoundMethods for __T{}
 
-#[cfg(feature = "app-amiiboticketyesnodialogsound")]
-impl AmiiboTicketYesNoDialogSound { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTicketYesNoDialogSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTicketYesNoDialogSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTicketYesNoDialogSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-amiiboticketyesnodialogsound")]impl AmiiboTicketYesNoDialogSound{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-amiiboticketyesnodialogsound")]
-impl AmiiboTicketYesNoDialogSound {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: exchangedialogcontent :: ExchangeDialogContent , top_message : :: unity2 :: Il2CppString , get_item_title : :: unity2 :: Il2CppString , get_item_param : crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam , cost_item_title : :: unity2 :: Il2CppString , cost_item_param_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_ItemParam > , cost_money_param : crate :: app :: exchangeyesnodialog :: ExchangeYesNoDialog_MoneyParam) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AmiiboTicketYesNoDialogSound) , :: core :: stringify ! (new) ,)) ; < Self as IAmiiboTicketYesNoDialogSoundMethods > :: ctor (this , menu_item_list , menu_content , top_message , get_item_title , get_item_param , cost_item_title , cost_item_param_list , cost_money_param) ; this }
+#[cfg(feature="app-amiiboticketyesnodialogsound")]impl AmiiboTicketYesNoDialogSound{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::exchangedialogcontent::ExchangeDialogContent, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>, crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::exchangedialogcontent::ExchangeDialogContent,top_message: ::unity2::Il2CppString,get_item_title: ::unity2::Il2CppString,get_item_param:crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,cost_item_title: ::unity2::Il2CppString,cost_item_param_list:crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam> ,cost_money_param:crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AmiiboTicketYesNoDialogSound), ::core::stringify!(new),));
+ <Self as IAmiiboTicketYesNoDialogSoundMethods> ::ctor(this,menu_item_list,menu_content,top_message,get_item_title,get_item_param,cost_item_title,cost_item_param_list,cost_money_param);
+this}
 }
 
 #[cfg(feature = "app-amiiboticketyesnodialogsound")]

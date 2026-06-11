@@ -4,39 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopdata/AccessoryShopData.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: accessoryshopdata :: AccessoryShopData >)] pub struct AccessoryShopData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopdata/AccessoryShopData.md"))]#[::unity2::class(namespace="App",name="AccessoryShopData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::accessoryshopdata::AccessoryShopData>)]pub struct AccessoryShopData{}
 
 }
 
 #[cfg(feature = "app-accessoryshopdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessoryshopdata")]
-impl AccessoryShopData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c4890usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetStockAddedKey(::unity2::Il2CppString)` overload"] pub fn get_stock_added_key (condition : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c4940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (condition) , :: core :: option :: Option :: None) } } } # [doc = "`Regist()` overload"] pub fn regist () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c49b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetupContentList()` overload"] pub fn setup_content_list () -> :: unity2 :: Array < crate :: app :: accessoryshopcontent :: AccessoryShopContent > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: accessoryshopcontent :: AccessoryShopContent > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b8f60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsExistAdditionalStock()` overload"] pub fn is_exist_additional_stock () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c4b80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopdata")]impl AccessoryShopData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c4890usize)as*mut u8,();
+)}
+}
+#[doc="`GetStockAddedKey(::unity2::Il2CppString)` overload"]pub fn get_stock_added_key(condition:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c4940usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(condition))}
+}
+#[doc="`Regist()` overload"]pub fn regist()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c49b0usize)as*mut u8,();
+)}
+}
+#[doc="`SetupContentList()` overload"]pub fn setup_content_list()-> ::unity2::Array<crate::app::accessoryshopcontent::AccessoryShopContent>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b8f60usize)as*mut u8, ::unity2::Array<crate::app::accessoryshopcontent::AccessoryShopContent> ;
+)}
+}
+#[doc="`IsExistAdditionalStock()` overload"]pub fn is_exist_additional_stock()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c4b80usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "app-accessoryshopdata")]
-pub trait IAccessoryShopDataMethods : IAccessoryShopData { # [doc = "`get_Aid()` overload"] fn get_aid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AccessoryShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c4870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Aid(::unity2::Il2CppString)` overload"] fn set_aid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AccessoryShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c4880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < AccessoryShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c49a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c4db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopdata")]pub trait IAccessoryShopDataMethods:IAccessoryShopData{#[doc="`get_Aid()` overload"]fn get_aid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AccessoryShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c4870usize)as*mut u8, ::unity2::Il2CppString;
+(AccessoryShopData)__receiver)}
+}
+#[doc="`set_Aid(::unity2::Il2CppString)` overload"]fn set_aid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AccessoryShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c4880usize)as*mut u8,();
+(AccessoryShopData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <AccessoryShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c49a0usize)as*mut u8,();
+(AccessoryShopData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c4db0usize)as*mut u8,();
+(AccessoryShopData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-accessoryshopdata")]
-impl < __T : IAccessoryShopData > IAccessoryShopDataMethods for __T { }
+#[cfg(feature="app-accessoryshopdata")]impl<__T:IAccessoryShopData>IAccessoryShopDataMethods for __T{}
 
-#[cfg(feature = "app-accessoryshopdata")]
-impl AccessoryShopData { pub fn get_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_aid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_stock_added_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn regist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn setup_content_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_exist_additional_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-accessoryshopdata")]impl AccessoryShopData{pub fn get_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_aid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_stock_added_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn regist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn setup_content_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_exist_additional_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-accessoryshopdata")]
-impl AccessoryShopData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopData) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessoryshopdata")]impl AccessoryShopData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopData), ::core::stringify!(new),));
+ <Self as IAccessoryShopDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-accessoryshopdata")]

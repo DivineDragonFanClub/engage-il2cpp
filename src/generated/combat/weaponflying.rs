@@ -4,49 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/weaponflying/WeaponFlying.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "WeaponFlying")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WeaponFlying {
-# [offset (24)] # [rename (name = "CP")] pub cp : crate :: combat :: character :: Character ,
-# [offset (32)] # [rename (name = "m_Rigidbody")] pub m_rigidbody : crate :: unity_engine :: rigidbody :: Rigidbody ,
-# [offset (40)] # [rename (name = "m_PrevPos")] pub m_prev_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [static_field] # [rename (name = "InitialLife")] pub initial_life : f32 ,
-# [offset (52)] # [rename (name = "m_TimeToHit")] pub m_time_to_hit : f32 ,
-# [offset (56)] # [rename (name = "m_Life")] pub m_life : f32 ,
-# [offset (60)] # [rename (name = "m_AngularVelocity")] pub m_angular_velocity : f32 ,
-# [offset (64)] # [rename (name = "m_TrailGO")] pub m_trail_go : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (72)] # [rename (name = "collided")] pub collided : bool ,
-# [offset (73)] # [rename (name = "inWater")] pub in_water : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/weaponflying/WeaponFlying.md"))]#[::unity2::class(namespace="Combat",name="WeaponFlying")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct WeaponFlying{#[offset(24)]#[rename(name="CP")]pub cp:crate::combat::character::Character, #[offset(32)]#[rename(name="m_Rigidbody")]pub m_rigidbody:crate::unity_engine::rigidbody::Rigidbody, #[offset(40)]#[rename(name="m_PrevPos")]pub m_prev_pos:crate::unity_engine::vector3::Vector3, #[static_field]#[rename(name="InitialLife")]pub initial_life:f32, #[offset(52)]#[rename(name="m_TimeToHit")]pub m_time_to_hit:f32, #[offset(56)]#[rename(name="m_Life")]pub m_life:f32, #[offset(60)]#[rename(name="m_AngularVelocity")]pub m_angular_velocity:f32, #[offset(64)]#[rename(name="m_TrailGO")]pub m_trail_go:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="collided")]pub collided:bool, #[offset(73)]#[rename(name="inWater")]pub in_water:bool,}
 
 }
 
 #[cfg(feature = "combat-weaponflying-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-weaponflying")]
-pub trait IWeaponFlyingMethods : IWeaponFlying { # [doc = "`Initialize(crate::combat::character::Character, crate::combat::parabola::Parabola, f32)` overload"] fn initialize (self , owner : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , para : impl :: core :: convert :: Into < crate :: combat :: parabola :: Parabola > , angular_velocity : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < WeaponFlying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponFlying , crate :: combat :: character :: Character , crate :: combat :: parabola :: Parabola , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c7d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (owner) , :: core :: convert :: Into :: into (para) , :: core :: convert :: Into :: into (angular_velocity) , :: core :: option :: Option :: None) } } } # [doc = "`AttachTrailEffect(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"] fn attach_trail_effect (self , effect_prefab : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , node_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < WeaponFlying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponFlying , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c84d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (effect_prefab) , :: core :: convert :: Into :: into (node_name) , :: core :: option :: Option :: None) } } } # [doc = "`HitAndDelete()` overload"] fn hit_and_delete (self ,) -> () { unsafe { let __receiver = < WeaponFlying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponFlying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c8610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Drop()` overload"] fn drop (self ,) -> () { unsafe { let __receiver = < WeaponFlying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponFlying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c87f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Knockoff(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn knockoff (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < WeaponFlying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (WeaponFlying , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c8860usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`FadeoutTrailEffect(bool)` overload"] fn fadeout_trail_effect (self , stop_and_clear : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < WeaponFlying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponFlying , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c86a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stop_and_clear) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < WeaponFlying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponFlying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c8950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCollisionEnter(crate::unity_engine::collision::Collision)` overload"] fn on_collision_enter (self , collision : impl :: core :: convert :: Into < crate :: unity_engine :: collision :: Collision >) -> () { unsafe { let __receiver = < WeaponFlying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponFlying , crate :: unity_engine :: collision :: Collision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c8ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (collision) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WeaponFlying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponFlying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c8da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-weaponflying")]pub trait IWeaponFlyingMethods:IWeaponFlying{#[doc="`Initialize(crate::combat::character::Character, crate::combat::parabola::Parabola, f32)` overload"]fn initialize(self,owner:impl::core::convert::Into<crate::combat::character::Character> ,para:impl::core::convert::Into<crate::combat::parabola::Parabola> ,angular_velocity:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <WeaponFlying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c7d90usize)as*mut u8,();
+(WeaponFlying)__receiver,(crate::combat::character::Character)::core::convert::Into::into(owner),(crate::combat::parabola::Parabola)::core::convert::Into::into(para),(f32)::core::convert::Into::into(angular_velocity))}
+}
+#[doc="`AttachTrailEffect(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn attach_trail_effect(self,effect_prefab:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,node_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <WeaponFlying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c84d0usize)as*mut u8,();
+(WeaponFlying)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(effect_prefab),(::unity2::Il2CppString)::core::convert::Into::into(node_name))}
+}
+#[doc="`HitAndDelete()` overload"]fn hit_and_delete(self,)->(){unsafe{let __receiver= <WeaponFlying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c8610usize)as*mut u8,();
+(WeaponFlying)__receiver)}
+}
+#[doc="`Drop()` overload"]fn drop(self,)->(){unsafe{let __receiver= <WeaponFlying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c87f0usize)as*mut u8,();
+(WeaponFlying)__receiver)}
+}
+#[doc="`Knockoff(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn knockoff(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <WeaponFlying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c8860usize)as*mut u8,();
+(WeaponFlying)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`FadeoutTrailEffect(bool)` overload"]fn fadeout_trail_effect(self,stop_and_clear:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <WeaponFlying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c86a0usize)as*mut u8,();
+(WeaponFlying)__receiver,(bool)::core::convert::Into::into(stop_and_clear))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <WeaponFlying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c8950usize)as*mut u8,();
+(WeaponFlying)__receiver)}
+}
+#[doc="`OnCollisionEnter(crate::unity_engine::collision::Collision)` overload"]fn on_collision_enter(self,collision:impl::core::convert::Into<crate::unity_engine::collision::Collision>)->(){unsafe{let __receiver= <WeaponFlying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c8ad0usize)as*mut u8,();
+(WeaponFlying)__receiver,(crate::unity_engine::collision::Collision)::core::convert::Into::into(collision))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WeaponFlying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c8da0usize)as*mut u8,();
+(WeaponFlying)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-weaponflying")]
-impl < __T : IWeaponFlying > IWeaponFlyingMethods for __T { }
+#[cfg(feature="combat-weaponflying")]impl<__T:IWeaponFlying>IWeaponFlyingMethods for __T{}
 
-#[cfg(feature = "combat-weaponflying")]
-impl WeaponFlying { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponFlying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn attach_trail_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponFlying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn hit_and_delete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponFlying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn drop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponFlying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn knockoff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponFlying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn fadeout_trail_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponFlying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponFlying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_collision_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponFlying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponFlying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="combat-weaponflying")]impl WeaponFlying{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn attach_trail_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hit_and_delete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn drop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn knockoff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn fadeout_trail_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_collision_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "combat-weaponflying")]
-impl WeaponFlying {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponFlying) , :: core :: stringify ! (new) ,)) ; < Self as IWeaponFlyingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-weaponflying")]impl WeaponFlying{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponFlying), ::core::stringify!(new),));
+ <Self as IWeaponFlyingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-weaponflying")]

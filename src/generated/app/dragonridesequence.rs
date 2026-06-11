@@ -4,155 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: procscenesequence_1 :: { IProcSceneSequence_1 , ProcSceneSequence_1 }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::procscenesequence_1::{IProcSceneSequence_1,ProcSceneSequence_1}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)] pub struct DragonRideSequence {
-# [offset (133)] # [rename (name = "m_IsLoadMenuContent")] pub m_is_load_menu_content : bool ,
-# [offset (136)] # [rename (name = "m_PrizeBondData")] pub m_prize_bond_data : crate :: app :: dragonridesequence :: DragonRideSequence_PrizeData ,
-# [offset (144)] # [rename (name = "m_PrizeItemDataList")] pub m_prize_item_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: dragonridesequence :: DragonRideSequence_PrizeData > ,
-# [offset (152)] # [rename (name = "m_PrizeItemMax")] pub m_prize_item_max : i32 ,
-# [offset (156)] # [rename (name = "m_PrizeItemCount")] pub m_prize_item_count : i32 ,
-# [offset (160)] # [rename (name = "m_AnnouceDifficult")] pub m_annouce_difficult : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (168)] # [rename (name = "m_IsAnnounceVoiceOnce")] pub m_is_announce_voice_once : bool ,
-# [offset (176)] # [rename (name = "m_Talker")] pub m_talker : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (184)] # [rename (name = "m_TalkerChara")] pub m_talker_chara : crate :: combat :: character :: Character ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))]#[::unity2::class(namespace="App",name="DragonRideSequence.PrizeData")]#[parent(crate::system::object::Object)]pub struct DragonRideSequence_PrizeData{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridesequence/DragonRideSequence.md"))]#[::unity2::class(namespace="App",name="DragonRideSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct DragonRideSequence{#[offset(133)]#[rename(name="m_IsLoadMenuContent")]pub m_is_load_menu_content:bool, #[offset(136)]#[rename(name="m_PrizeBondData")]pub m_prize_bond_data:crate::app::dragonridesequence::DragonRideSequence_PrizeData, #[offset(144)]#[rename(name="m_PrizeItemDataList")]pub m_prize_item_data_list:crate::system::collections::generic::list_1::List_1<crate::app::dragonridesequence::DragonRideSequence_PrizeData> , #[offset(152)]#[rename(name="m_PrizeItemMax")]pub m_prize_item_max:i32, #[offset(156)]#[rename(name="m_PrizeItemCount")]pub m_prize_item_count:i32, #[offset(160)]#[rename(name="m_AnnouceDifficult")]pub m_annouce_difficult:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(168)]#[rename(name="m_IsAnnounceVoiceOnce")]pub m_is_announce_voice_once:bool, #[offset(176)]#[rename(name="m_Talker")]pub m_talker:crate::unity_engine::gameobject::GameObject, #[offset(184)]#[rename(name="m_TalkerChara")]pub m_talker_chara:crate::combat::character::Character,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridesequence/DragonRideSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DragonRideSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for DragonRideSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DragonRideSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideSequence.PrizeData")] # [parent (crate :: system :: object :: Object)] pub struct DragonRideSequence_PrizeData {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridesequence/DragonRideSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct DragonRideSequence_Label  {
-    pub value: i32,
+impl::unity2::IlType for DragonRideSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for DragonRideSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DragonRideSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl DragonRideSequence_Label{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for DragonRideSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn init()->Self{Self{value:1}
 }
-
-
-impl  DragonRideSequence_Label  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn init() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn check_test() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn ready_menu() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn play_select() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn check_new_difficult() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn announce_new_difficult() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn difficult_select() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn ready_game() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn execute_game() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn prize_talk() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn prize_bond() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn prize_item() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 13 }
-
-    }
-
+pub fn check_test()->Self{Self{value:2}
+}
+pub fn ready_menu()->Self{Self{value:3}
+}
+pub fn play_select()->Self{Self{value:4}
+}
+pub fn check_new_difficult()->Self{Self{value:5}
+}
+pub fn announce_new_difficult()->Self{Self{value:6}
+}
+pub fn difficult_select()->Self{Self{value:7}
+}
+pub fn ready_game()->Self{Self{value:8}
+}
+pub fn execute_game()->Self{Self{value:9}
+}
+pub fn prize_talk()->Self{Self{value:10}
+}
+pub fn prize_bond()->Self{Self{value:11}
+}
+pub fn prize_item()->Self{Self{value:12}
+}
+pub fn exit()->Self{Self{value:13}
+}
 }
 
 }
@@ -160,48 +69,266 @@ impl  DragonRideSequence_Label  {
 #[cfg(feature = "app-dragonridesequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonridesequence")]
-impl DragonRideSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , from_debug_menu : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad6c40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (from_debug_menu) , :: core :: option :: Option :: None) } } } # [doc = "`RegistFlag()` overload"] pub fn regist_flag () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad80b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-dragonridesequence")]
-pub trait IDragonRideSequenceMethods : IDragonRideSequence { # [doc = "`get_FromDebugMenu()` overload"] fn get_from_debug_menu (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FromDebugMenu(bool)` overload"] fn set_from_debug_menu (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`_CommonDebugMenu()` overload"] fn common_debug_menu (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CancelFade()` overload"] fn cancel_fade (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad3fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckTestExecute()` overload"] fn check_test_execute (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad4010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad4210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResource()` overload"] fn is_loading_resource (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad42c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResouce()` overload"] fn unload_resouce (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad4340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad43d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad4570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckNewDifficult()` overload"] fn check_new_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad4900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AnnounceNewDifficult()` overload"] fn announce_new_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad4e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckAnnounceDifficult()` overload"] fn check_announce_difficult (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad50f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateTitleBar()` overload"] fn create_title_bar (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad5140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseTitleBar()` overload"] fn close_title_bar (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad46c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateSelectMenu()` overload"] fn create_select_menu (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad5330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Talk_CourseSelect()` overload"] fn talk_course_select (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad5440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ConfirmAssist()` overload"] fn confirm_assist (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad5450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateGameSequence()` overload"] fn create_game_sequence (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad5600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckRetireMinigame()` overload"] fn check_retire_minigame (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad5610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckGetablePrize()` overload"] fn check_getable_prize (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad56d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPrizeFlag()` overload"] fn set_prize_flag (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad57d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPrizeList()` overload"] fn set_prize_list (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad59a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPrizeBond()` overload"] fn get_prize_bond (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad6640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPrizeItem()` overload"] fn get_prize_item (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad67e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`isGetAllPrizeItem()` overload"] fn is_get_all_prize_item (self ,) -> bool { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad69b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`VoiceAnnounceNewDifficult()` overload"] fn voice_announce_new_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad5000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopVoiceNewDifficult()` overload"] fn stop_voice_new_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad69c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`VoiceSelectDifficult()` overload"] fn voice_select_difficult (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad6a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`VoiceStart()` overload"] fn voice_start (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad6b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`VoiceEnd()` overload"] fn voice_end (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad4820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-dragonridesequence")]
-impl < __T : IDragonRideSequence > IDragonRideSequenceMethods for __T { }
-
-#[cfg(feature = "app-dragonridesequence")]
-impl DragonRideSequence { pub fn get_from_debug_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_from_debug_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn common_debug_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cancel_fade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn check_test_execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn unload_resouce_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn check_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn announce_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn check_announce_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn create_title_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn close_title_bar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn create_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn talk_course_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn confirm_assist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn create_game_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn check_retire_minigame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn check_getable_prize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_prize_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_prize_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_prize_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_prize_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn is_get_all_prize_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn voice_announce_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn stop_voice_new_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn voice_select_difficult_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn voice_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn voice_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn regist_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } }
-
-#[cfg(feature = "app-dragonridesequence")]
-impl DragonRideSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideSequence) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonridesequence")]pub trait IDragonRideSequence_PrizeDataMethods:IDragonRideSequence_PrizeData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideSequence_PrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5260usize)as*mut u8,();
+(DragonRideSequence_PrizeData)__receiver)}
+}
+#[doc="`.ctor(crate::app::itemdata::ItemData, i32)` overload"]fn ctor_2(self,set_item:impl::core::convert::Into<crate::app::itemdata::ItemData> ,set_num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideSequence_PrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5270usize)as*mut u8,();
+(DragonRideSequence_PrizeData)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(set_item),(i32)::core::convert::Into::into(set_num))}
+}
+#[doc="`AddNum(i32)` overload"]fn add_num(self,add:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideSequence_PrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd52d0usize)as*mut u8,();
+(DragonRideSequence_PrizeData)__receiver,(i32)::core::convert::Into::into(add))}
+}
+#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRideSequence_PrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd52e0usize)as*mut u8, ::unity2::Il2CppString;
+(DragonRideSequence_PrizeData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRideSequence_PrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd52f0usize)as*mut u8,();
+(DragonRideSequence_PrizeData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_item()` overload"]fn get_item(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <DragonRideSequence_PrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5300usize)as*mut u8,crate::app::itemdata::ItemData;
+(DragonRideSequence_PrizeData)__receiver)}
+}
+#[doc="`set_item(crate::app::itemdata::ItemData)` overload"]fn set_item(self,value:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <DragonRideSequence_PrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5310usize)as*mut u8,();
+(DragonRideSequence_PrizeData)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(value))}
+}
+#[doc="`get_num()` overload"]fn get_num(self,)->i32{unsafe{let __receiver= <DragonRideSequence_PrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5320usize)as*mut u8,i32;
+(DragonRideSequence_PrizeData)__receiver)}
+}
+#[doc="`set_num(i32)` overload"]fn set_num(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideSequence_PrizeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd5330usize)as*mut u8,();
+(DragonRideSequence_PrizeData)__receiver,(i32)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-dragonridesequence")]
-pub trait IDragonRideSequence_PrizeDataMethods : IDragonRideSequence_PrizeData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::itemdata::ItemData, i32)` overload"] fn ctor_2 (self , set_item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , set_num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence_PrizeData , crate :: app :: itemdata :: ItemData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set_item) , :: core :: convert :: Into :: into (set_num) , :: core :: option :: Option :: None) } } } # [doc = "`AddNum(i32)` overload"] fn add_num (self , add : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence_PrizeData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd52d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (add) , :: core :: option :: Option :: None) } } } # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd52e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd52f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_item()` overload"] fn get_item (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_item(crate::app::itemdata::ItemData)` overload"] fn set_item (self , value : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence_PrizeData , crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_num()` overload"] fn get_num (self ,) -> i32 { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence_PrizeData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_num(i32)` overload"] fn set_num (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideSequence_PrizeData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSequence_PrizeData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd5330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridesequence")]impl<__T:IDragonRideSequence_PrizeData>IDragonRideSequence_PrizeDataMethods for __T{}
 
-#[cfg(feature = "app-dragonridesequence")]
-impl < __T : IDragonRideSequence_PrizeData > IDragonRideSequence_PrizeDataMethods for __T { }
+#[cfg(feature="app-dragonridesequence")]impl DragonRideSequence_PrizeData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-dragonridesequence")]
-impl DragonRideSequence_PrizeData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSequence_PrizeData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-dragonridesequence")]impl DragonRideSequence_PrizeData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideSequence_PrizeData), ::core::stringify!(new),));
+ <Self as IDragonRideSequence_PrizeDataMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::app::itemdata::ItemData, i32)` — overload selector"]pub fn new_2(set_item:crate::app::itemdata::ItemData,set_num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideSequence_PrizeData), ::core::stringify!(new_2),));
+ <Self as IDragonRideSequence_PrizeDataMethods> ::ctor_2(this,set_item,set_num);
+this}
+}
 
-#[cfg(feature = "app-dragonridesequence")]
-impl DragonRideSequence_PrizeData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideSequence_PrizeData) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideSequence_PrizeDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonridesequence")]impl DragonRideSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,from_debug_menu:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad6c40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(from_debug_menu))}
+}
+#[doc="`RegistFlag()` overload"]pub fn regist_flag()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad80b0usize)as*mut u8,();
+)}
+}
+}
 
-# [doc = "`.ctor(crate::app::itemdata::ItemData, i32)` — overload selector"] pub fn new_2 (set_item : crate :: app :: itemdata :: ItemData , set_num : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideSequence_PrizeData) , :: core :: stringify ! (new_2) ,)) ; < Self as IDragonRideSequence_PrizeDataMethods > :: ctor_2 (this , set_item , set_num) ; this }
+#[cfg(feature="app-dragonridesequence")]pub trait IDragonRideSequenceMethods:IDragonRideSequence{#[doc="`get_FromDebugMenu()` overload"]fn get_from_debug_menu(self,)->bool{unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3f00usize)as*mut u8,bool;
+(DragonRideSequence)__receiver)}
+}
+#[doc="`set_FromDebugMenu(bool)` overload"]fn set_from_debug_menu(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3f10usize)as*mut u8,();
+(DragonRideSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`_CommonDebugMenu()` overload"]fn common_debug_menu(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3f20usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3f30usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CancelFade()` overload"]fn cancel_fade(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3fa0usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CheckTestExecute()` overload"]fn check_test_execute(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad4010usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad4210usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`IsLoadingResource()` overload"]fn is_loading_resource(self,)->bool{unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad42c0usize)as*mut u8,bool;
+(DragonRideSequence)__receiver)}
+}
+#[doc="`UnloadResouce()` overload"]fn unload_resouce(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad4340usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad43d0usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad4570usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CheckNewDifficult()` overload"]fn check_new_difficult(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad4900usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`AnnounceNewDifficult()` overload"]fn announce_new_difficult(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad4e50usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CheckAnnounceDifficult()` overload"]fn check_announce_difficult(self,)->bool{unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad50f0usize)as*mut u8,bool;
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CreateTitleBar()` overload"]fn create_title_bar(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad5140usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CloseTitleBar()` overload"]fn close_title_bar(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad46c0usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CreateSelectMenu()` overload"]fn create_select_menu(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad5330usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`Talk_CourseSelect()` overload"]fn talk_course_select(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad5440usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`ConfirmAssist()` overload"]fn confirm_assist(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad5450usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CreateGameSequence()` overload"]fn create_game_sequence(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad5600usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CheckRetireMinigame()` overload"]fn check_retire_minigame(self,)->bool{unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad5610usize)as*mut u8,bool;
+(DragonRideSequence)__receiver)}
+}
+#[doc="`CheckGetablePrize()` overload"]fn check_getable_prize(self,)->bool{unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad56d0usize)as*mut u8,bool;
+(DragonRideSequence)__receiver)}
+}
+#[doc="`SetPrizeFlag()` overload"]fn set_prize_flag(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad57d0usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`SetPrizeList()` overload"]fn set_prize_list(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad59a0usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`GetPrizeBond()` overload"]fn get_prize_bond(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad6640usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`GetPrizeItem()` overload"]fn get_prize_item(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad67e0usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`isGetAllPrizeItem()` overload"]fn is_get_all_prize_item(self,)->bool{unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad69b0usize)as*mut u8,bool;
+(DragonRideSequence)__receiver)}
+}
+#[doc="`VoiceAnnounceNewDifficult()` overload"]fn voice_announce_new_difficult(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad5000usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`StopVoiceNewDifficult()` overload"]fn stop_voice_new_difficult(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad69c0usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`VoiceSelectDifficult()` overload"]fn voice_select_difficult(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad6a80usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`VoiceStart()` overload"]fn voice_start(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad6b60usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`VoiceEnd()` overload"]fn voice_end(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad4820usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8000usize)as*mut u8,();
+(DragonRideSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-dragonridesequence")]impl<__T:IDragonRideSequence>IDragonRideSequenceMethods for __T{}
+
+#[cfg(feature="app-dragonridesequence")]impl DragonRideSequence{pub fn get_from_debug_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_from_debug_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn common_debug_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cancel_fade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn check_test_execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_loading_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn unload_resouce_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn check_new_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn announce_new_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn check_announce_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn create_title_bar_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn close_title_bar_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn create_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn talk_course_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn confirm_assist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn create_game_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn check_retire_minigame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn check_getable_prize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_prize_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_prize_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_prize_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_prize_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn is_get_all_prize_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn voice_announce_new_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn stop_voice_new_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn voice_select_difficult_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn voice_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn voice_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn regist_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+}
+
+#[cfg(feature="app-dragonridesequence")]impl DragonRideSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideSequence), ::core::stringify!(new),));
+ <Self as IDragonRideSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonridesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DragonRideSequence;
-    pub use super::IDragonRideSequence;
-    pub use super::IDragonRideSequenceMethods;
     pub use super::DragonRideSequence_PrizeData;
     pub use super::IDragonRideSequence_PrizeData;
     pub use super::IDragonRideSequence_PrizeDataMethods;
+    pub use super::DragonRideSequence;
+    pub use super::IDragonRideSequence;
+    pub use super::IDragonRideSequenceMethods;
     pub use super::DragonRideSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;

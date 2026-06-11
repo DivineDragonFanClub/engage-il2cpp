@@ -4,44 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharacteranimcontroller/EventCharacterAnimController.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventCharacterAnimController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EventCharacterAnimController {
-# [offset (24)] # [rename (name = "m_character")] pub m_character : crate :: combat :: character :: Character ,
-# [offset (32)] # [rename (name = "m_simpleAnimation")] pub m_simple_animation : crate :: app :: eventcharactersimpleanimation :: EventCharacterSimpleAnimation ,
-# [offset (40)] # [rename (name = "m_animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (48)] # [rename (name = "m_curBodyAnimName")] pub m_cur_body_anim_name : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "m_resHandleDictionary")] pub m_res_handle_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: animationclip :: AnimationClip > > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventcharacteranimcontroller/EventCharacterAnimController.md"))]#[::unity2::class(namespace="App",name="EventCharacterAnimController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventCharacterAnimController{#[offset(24)]#[rename(name="m_character")]pub m_character:crate::combat::character::Character, #[offset(32)]#[rename(name="m_simpleAnimation")]pub m_simple_animation:crate::app::eventcharactersimpleanimation::EventCharacterSimpleAnimation, #[offset(40)]#[rename(name="m_animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(48)]#[rename(name="m_curBodyAnimName")]pub m_cur_body_anim_name: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_resHandleDictionary")]pub m_res_handle_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::animationclip::AnimationClip> > ,}
 
 }
 
 #[cfg(feature = "app-eventcharacteranimcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-eventcharacteranimcontroller")]
-pub trait IEventCharacterAnimControllerMethods : IEventCharacterAnimController { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d19e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d1a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d1b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadBodyAnimAsync(::unity2::Il2CppString)` overload"] fn load_body_anim_async (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d1ba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingBodyAnim(::unity2::Il2CppString)` overload"] fn is_loading_body_anim (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d1d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadedBodyAnim(::unity2::Il2CppString)` overload"] fn is_loaded_body_anim (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d1d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: option :: Option :: None) } } } # [doc = "`PlayBodyAnim(::unity2::Il2CppString, f32)` overload"] fn play_body_anim (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , fade_sec : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d1e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: convert :: Into :: into (fade_sec) , :: core :: option :: Option :: None) } } } # [doc = "`Co_PlayBodyAnim(::unity2::Il2CppString, f32)` overload"] fn co_play_body_anim (self , body_anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , fade_sec : impl :: core :: convert :: Into < f32 >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < EventCharacterAnimController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterAnimController , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d1f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (body_anim_name) , :: core :: convert :: Into :: into (fade_sec) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eventcharacteranimcontroller")]pub trait IEventCharacterAnimControllerMethods:IEventCharacterAnimController{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventCharacterAnimController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d19e0usize)as*mut u8,();
+(EventCharacterAnimController)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <EventCharacterAnimController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d1a70usize)as*mut u8,();
+(EventCharacterAnimController)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <EventCharacterAnimController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d1b90usize)as*mut u8,();
+(EventCharacterAnimController)__receiver)}
+}
+#[doc="`LoadBodyAnimAsync(::unity2::Il2CppString)` overload"]fn load_body_anim_async(self,body_anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventCharacterAnimController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d1ba0usize)as*mut u8,();
+(EventCharacterAnimController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(body_anim_name))}
+}
+#[doc="`IsLoadingBodyAnim(::unity2::Il2CppString)` overload"]fn is_loading_body_anim(self,body_anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <EventCharacterAnimController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d1d80usize)as*mut u8,bool;
+(EventCharacterAnimController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(body_anim_name))}
+}
+#[doc="`IsLoadedBodyAnim(::unity2::Il2CppString)` overload"]fn is_loaded_body_anim(self,body_anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <EventCharacterAnimController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d1d50usize)as*mut u8,bool;
+(EventCharacterAnimController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(body_anim_name))}
+}
+#[doc="`PlayBodyAnim(::unity2::Il2CppString, f32)` overload"]fn play_body_anim(self,body_anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_sec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventCharacterAnimController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d1e20usize)as*mut u8,();
+(EventCharacterAnimController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(body_anim_name),(f32)::core::convert::Into::into(fade_sec))}
+}
+#[doc="`Co_PlayBodyAnim(::unity2::Il2CppString, f32)` overload"]fn co_play_body_anim(self,body_anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_sec:impl::core::convert::Into<f32>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <EventCharacterAnimController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d1f00usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(EventCharacterAnimController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(body_anim_name),(f32)::core::convert::Into::into(fade_sec))}
+}
+}
 
-#[cfg(feature = "app-eventcharacteranimcontroller")]
-impl < __T : IEventCharacterAnimController > IEventCharacterAnimControllerMethods for __T { }
+#[cfg(feature="app-eventcharacteranimcontroller")]impl<__T:IEventCharacterAnimController>IEventCharacterAnimControllerMethods for __T{}
 
-#[cfg(feature = "app-eventcharacteranimcontroller")]
-impl EventCharacterAnimController { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_body_anim_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_body_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_loaded_body_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn play_body_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn co_play_body_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterAnimController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-eventcharacteranimcontroller")]impl EventCharacterAnimController{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_body_anim_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_loaded_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn play_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn co_play_body_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-eventcharacteranimcontroller")]
-impl EventCharacterAnimController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventCharacterAnimController) , :: core :: stringify ! (new) ,)) ; < Self as IEventCharacterAnimControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-eventcharacteranimcontroller")]impl EventCharacterAnimController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventCharacterAnimController), ::core::stringify!(new),));
+ <Self as IEventCharacterAnimControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-eventcharacteranimcontroller")]

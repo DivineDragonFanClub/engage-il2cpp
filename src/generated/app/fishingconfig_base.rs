@@ -4,50 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig_base/FishingConfig_Base.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingConfig_Base")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct FishingConfig_Base {
-# [offset (24)] # [rename (name = "m_PlayerBasePos")] pub m_player_base_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (36)] # [rename (name = "m_PlayerBaseRot")] pub m_player_base_rot : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (48)] # [rename (name = "m_SolaBasePos")] pub m_sola_base_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (60)] # [rename (name = "m_SolaBaseRot")] pub m_sola_base_rot : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (72)] # [rename (name = "m_WaterSurfaceHeight")] pub m_water_surface_height : f32 ,
-# [offset (76)] # [rename (name = "m_NormalFOV")] pub m_normal_fov : f32 ,
-# [offset (80)] # [rename (name = "m_WaitFOV")] pub m_wait_fov : f32 ,
-# [offset (84)] # [rename (name = "m_CameraDistance")] pub m_camera_distance : f32 ,
-# [offset (88)] # [rename (name = "m_CameraHeight")] pub m_camera_height : f32 ,
-# [offset (92)] # [rename (name = "m_CameraOffset")] pub m_camera_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (104)] # [rename (name = "m_RodSelectCamera")] pub m_rod_select_camera : crate :: app :: fishing :: config :: fixcameraconfig :: FixCameraConfig ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingconfig_base/FishingConfig_Base.md"))]#[::unity2::class(namespace="App",name="FishingConfig_Base")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FishingConfig_Base{#[offset(24)]#[rename(name="m_PlayerBasePos")]pub m_player_base_pos:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="m_PlayerBaseRot")]pub m_player_base_rot:crate::unity_engine::vector3::Vector3, #[offset(48)]#[rename(name="m_SolaBasePos")]pub m_sola_base_pos:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="m_SolaBaseRot")]pub m_sola_base_rot:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="m_WaterSurfaceHeight")]pub m_water_surface_height:f32, #[offset(76)]#[rename(name="m_NormalFOV")]pub m_normal_fov:f32, #[offset(80)]#[rename(name="m_WaitFOV")]pub m_wait_fov:f32, #[offset(84)]#[rename(name="m_CameraDistance")]pub m_camera_distance:f32, #[offset(88)]#[rename(name="m_CameraHeight")]pub m_camera_height:f32, #[offset(92)]#[rename(name="m_CameraOffset")]pub m_camera_offset:crate::unity_engine::vector3::Vector3, #[offset(104)]#[rename(name="m_RodSelectCamera")]pub m_rod_select_camera:crate::app::fishing::config::fixcameraconfig::FixCameraConfig,}
 
 }
 
 #[cfg(feature = "app-fishingconfig_base-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingconfig_base")]
-pub trait IFishingConfig_BaseMethods : IFishingConfig_Base { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingConfig_Base as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingConfig_Base , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26efb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingconfig_base")]pub trait IFishingConfig_BaseMethods:IFishingConfig_Base{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingConfig_Base as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26efb10usize)as*mut u8,();
+(FishingConfig_Base)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingconfig_base")]
-impl < __T : IFishingConfig_Base > IFishingConfig_BaseMethods for __T { }
+#[cfg(feature="app-fishingconfig_base")]impl<__T:IFishingConfig_Base>IFishingConfig_BaseMethods for __T{}
 
-#[cfg(feature = "app-fishingconfig_base")]
-impl FishingConfig_Base { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingConfig_Base as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-fishingconfig_base")]impl FishingConfig_Base{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-fishingconfig_base")]
-impl FishingConfig_Base {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingConfig_Base) , :: core :: stringify ! (new) ,)) ; < Self as IFishingConfig_BaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingconfig_base")]impl FishingConfig_Base{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingConfig_Base), ::core::stringify!(new),));
+ <Self as IFishingConfig_BaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingconfig_base")]

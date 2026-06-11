@@ -4,74 +4,141 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlemath/BattleMath_Probability.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleMath.Probability")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct BattleMath_Probability {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlemath/BattleMath.md"))]#[::unity2::class(namespace="App",name="BattleMath")]#[parent(crate::system::object::Object)]pub struct BattleMath{#[static_field]#[rename(name="s_CurrentProbability100")]pub s_current_probability100:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_CurrentProbabilityHit")]pub s_current_probability_hit:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_Probability100")]pub s_probability100:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_ProbabilityHit")]pub s_probability_hit:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_ProbabilityTrue")]pub s_probability_true:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_ProbabilityFalse")]pub s_probability_false:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_RandomSeed")]pub s_random_seed:crate::system::collections::generic::stack_1::Stack_1<crate::app::randomseed::RandomSeed> , #[static_field]#[rename(name="s_Simulationed")]pub s_simulationed:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlemath/BattleMath.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleMath")] # [parent (crate :: system :: object :: Object)] pub struct BattleMath {
-# [static_field] # [rename (name = "s_CurrentProbability100")] pub s_current_probability100 : crate :: app :: battlemath :: BattleMath_Probability ,
-# [static_field] # [rename (name = "s_CurrentProbabilityHit")] pub s_current_probability_hit : crate :: app :: battlemath :: BattleMath_Probability ,
-# [static_field] # [rename (name = "s_Probability100")] pub s_probability100 : crate :: app :: battlemath :: BattleMath_Probability ,
-# [static_field] # [rename (name = "s_ProbabilityHit")] pub s_probability_hit : crate :: app :: battlemath :: BattleMath_Probability ,
-# [static_field] # [rename (name = "s_ProbabilityTrue")] pub s_probability_true : crate :: app :: battlemath :: BattleMath_Probability ,
-# [static_field] # [rename (name = "s_ProbabilityFalse")] pub s_probability_false : crate :: app :: battlemath :: BattleMath_Probability ,
-# [static_field] # [rename (name = "s_RandomSeed")] pub s_random_seed : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: randomseed :: RandomSeed > ,
-# [static_field] # [rename (name = "s_Simulationed")] pub s_simulationed : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlemath/BattleMath_Probability.md"))]#[::unity2::class(namespace="App",name="BattleMath.Probability")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct BattleMath_Probability{}
 
 }
 
 #[cfg(feature = "app-battlemath-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battlemath")]
-pub trait IBattleMath_ProbabilityMethods : IBattleMath_Probability { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BattleMath_Probability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleMath_Probability , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bb100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(i32)` overload"] fn invoke (self , ratio : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < BattleMath_Probability as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleMath_Probability , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bb120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-battlemath")]
-impl < __T : IBattleMath_Probability > IBattleMath_ProbabilityMethods for __T { }
-
-#[cfg(feature = "app-battlemath")]
-impl BattleMath_Probability { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath_Probability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath_Probability as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-battlemath")]
-impl BattleMath_Probability {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleMath_Probability) , :: core :: stringify ! (new) ,)) ; < Self as IBattleMath_ProbabilityMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-battlemath")]impl BattleMath{#[doc="`_IsProbability100(i32)` overload"]pub fn is_probability100(ratio:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d0b0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(ratio))}
+}
+#[doc="`_IsProbabilityHit(i32)` overload"]pub fn is_probability_hit(ratio:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d0e0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(ratio))}
+}
+#[doc="`_IsProbabilityTrue(i32)` overload"]pub fn is_probability_true(ratio:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d2c0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(ratio))}
+}
+#[doc="`_IsProbabilityFalse(i32)` overload"]pub fn is_probability_false(ratio:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d2d0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(ratio))}
+}
+#[doc="`SetSimulation(bool)` overload"]pub fn set_simulation(enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d2e0usize)as*mut u8,();
+(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`RandomCheck100(i32)` overload"]pub fn random_check100(percent:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d3a0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(percent))}
+}
+#[doc="`PushRandomSeed()` overload"]pub fn push_random_seed()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e7e400usize)as*mut u8,();
+)}
+}
+#[doc="`PopRandomSeed()` overload"]pub fn pop_random_seed()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e7eff0usize)as*mut u8,();
+)}
+}
+#[doc="`PushSimulation()` overload"]pub fn push_simulation()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e7e490usize)as*mut u8,();
+)}
+}
+#[doc="`PopSimulation()` overload"]pub fn pop_simulation()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e7f090usize)as*mut u8,();
+)}
+}
+#[doc="`RandomCheckHit(i32)` overload"]pub fn random_check_hit(ratio:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d420usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(ratio))}
+}
+#[doc="`GetHitRatio10000(i32)` overload"]pub fn get_hit_ratio10000(ratio:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d200usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(ratio))}
+}
+#[doc="`GetHitRealRatio(i32)` overload"]pub fn get_hit_real_ratio(ratio:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d4a0usize)as*mut u8,f32;
+(i32)::core::convert::Into::into(ratio))}
+}
+#[doc="`GetRandom(i32)` overload"]pub fn get_random(num:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d5b0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(num))}
+}
+#[doc="`GetRandom(i32, i32)` overload"]pub fn get_random_2(min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d5e0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d630usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-battlemath")]
-impl BattleMath { # [doc = "`_IsProbability100(i32)` overload"] pub fn is_probability100 (ratio : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d0b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`_IsProbabilityHit(i32)` overload"] pub fn is_probability_hit (ratio : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d0e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`_IsProbabilityTrue(i32)` overload"] pub fn is_probability_true (ratio : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d2c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`_IsProbabilityFalse(i32)` overload"] pub fn is_probability_false (ratio : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d2d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`SetSimulation(bool)` overload"] pub fn set_simulation (enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d2e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`RandomCheck100(i32)` overload"] pub fn random_check100 (percent : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d3a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (percent) , :: core :: option :: Option :: None) } } } # [doc = "`PushRandomSeed()` overload"] pub fn push_random_seed () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e7e400usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PopRandomSeed()` overload"] pub fn pop_random_seed () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e7eff0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PushSimulation()` overload"] pub fn push_simulation () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e7e490usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PopSimulation()` overload"] pub fn pop_simulation () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e7f090usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RandomCheckHit(i32)` overload"] pub fn random_check_hit (ratio : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`GetHitRatio10000(i32)` overload"] pub fn get_hit_ratio10000 (ratio : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`GetHitRealRatio(i32)` overload"] pub fn get_hit_real_ratio (ratio : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d4a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`GetRandom(i32)` overload"] pub fn get_random (num : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d5b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`GetRandom(i32, i32)` overload"] pub fn get_random_2 (min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d5e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d630usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlemath")]pub trait IBattleMathMethods:IBattleMath{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleMath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d620usize)as*mut u8,();
+(BattleMath)__receiver)}
+}
+}
 
-#[cfg(feature = "app-battlemath")]
-pub trait IBattleMathMethods : IBattleMath { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleMath as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleMath , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8d620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlemath")]impl<__T:IBattleMath>IBattleMathMethods for __T{}
 
-#[cfg(feature = "app-battlemath")]
-impl < __T : IBattleMath > IBattleMathMethods for __T { }
+#[cfg(feature="app-battlemath")]impl BattleMath{pub fn is_probability100_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_probability_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_probability_true_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_probability_false_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_simulation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn random_check100_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn push_random_seed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn pop_random_seed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn push_simulation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn pop_simulation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn random_check_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_hit_ratio10000_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_hit_real_ratio_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_random_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-battlemath")]
-impl BattleMath { pub fn is_probability100_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_probability_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_probability_true_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_probability_false_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_simulation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn random_check100_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn push_random_seed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn pop_random_seed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn push_simulation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn pop_simulation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn random_check_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_hit_ratio10000_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_hit_real_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_random_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleMath as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-battlemath")]impl BattleMath{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleMath), ::core::stringify!(new),));
+ <Self as IBattleMathMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-battlemath")]
-impl BattleMath {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleMath) , :: core :: stringify ! (new) ,)) ; < Self as IBattleMathMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-battlemath")]pub trait IBattleMath_ProbabilityMethods:IBattleMath_Probability{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BattleMath_Probability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bb100usize)as*mut u8,();
+(BattleMath_Probability)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,ratio:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BattleMath_Probability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bb120usize)as*mut u8,bool;
+(BattleMath_Probability)__receiver,(i32)::core::convert::Into::into(ratio))}
+}
+}
+
+#[cfg(feature="app-battlemath")]impl<__T:IBattleMath_Probability>IBattleMath_ProbabilityMethods for __T{}
+
+#[cfg(feature="app-battlemath")]impl BattleMath_Probability{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battlemath")]impl BattleMath_Probability{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleMath_Probability), ::core::stringify!(new),));
+ <Self as IBattleMath_ProbabilityMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-battlemath")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleMath_Probability;
-    pub use super::IBattleMath_Probability;
-    pub use super::IBattleMath_ProbabilityMethods;
     pub use super::BattleMath;
     pub use super::IBattleMath;
     pub use super::IBattleMathMethods;
+    pub use super::BattleMath_Probability;
+    pub use super::IBattleMath_Probability;
+    pub use super::IBattleMath_ProbabilityMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

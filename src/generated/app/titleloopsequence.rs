@@ -4,155 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: procscenesequence_1 :: { IProcSceneSequence_1 , ProcSceneSequence_1 }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::procscenesequence_1::{IProcSceneSequence_1,ProcSceneSequence_1}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titleloopsequence/TitleLoopSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "TitleLoopSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: titleloopsequence :: TitleLoopSequence >)] pub struct TitleLoopSequence {
-# [static_field] # [rename (name = "s_isGOPFirst")] pub s_is_gop_first : bool ,
-# [static_field] # [rename (name = "s_IsGOPMovieHeroFemale")] pub s_is_gop_movie_hero_female : bool ,
-# [static_field] # [rename (name = "s_LoopSequenceFromTitle")] pub s_loop_sequence_from_title : crate :: app :: titleloopsequence :: TitleLoopSequence_LoopSequenceFromTitle ,
-# [static_field] # [rename (name = "s_IsFromMainMenu")] pub s_is_from_main_menu : bool ,
-# [offset (132)] # [rename (name = "m_IsEndFromTitle")] pub m_is_end_from_title : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titleloopsequence/TitleLoopSequence.md"))]#[::unity2::class(namespace="App",name="TitleLoopSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::titleloopsequence::TitleLoopSequence>)]pub struct TitleLoopSequence{#[static_field]#[rename(name="s_isGOPFirst")]pub s_is_gop_first:bool, #[static_field]#[rename(name="s_IsGOPMovieHeroFemale")]pub s_is_gop_movie_hero_female:bool, #[static_field]#[rename(name="s_LoopSequenceFromTitle")]pub s_loop_sequence_from_title:crate::app::titleloopsequence::TitleLoopSequence_LoopSequenceFromTitle, #[static_field]#[rename(name="s_IsFromMainMenu")]pub s_is_from_main_menu:bool, #[offset(132)]#[rename(name="m_IsEndFromTitle")]pub m_is_end_from_title:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titleloopsequence/TitleLoopSequence_LoopSequenceFromTitle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TitleLoopSequence_LoopSequenceFromTitle{pub value:i32,}
+impl::unity2::ClassIdentity for TitleLoopSequence_LoopSequenceFromTitle{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TitleLoopSequence.LoopSequenceFromTitle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TitleLoopSequence_LoopSequenceFromTitle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TitleLoopSequence_LoopSequenceFromTitle{pub fn grand_opening()->Self{Self{value:0}
+}
+pub fn job_intro()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TitleLoopSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titleloopsequence/TitleLoopSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TitleLoopSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for TitleLoopSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TitleLoopSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for TitleLoopSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TitleLoopSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for TitleLoopSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for TitleLoopSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl TitleLoopSequence_Label{pub fn start()->Self{Self{value:0}
 }
-
-
-impl  TitleLoopSequence_Label  {
-    pub fn start() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn start_from_main_menu() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn grand_opening() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn title() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn title_from_main_menu() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn job_intro() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 6 }
-
-    }
-
+pub fn start_from_main_menu()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_LoopSequenceFromTitle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TitleLoopSequence_LoopSequenceFromTitle  {
-    pub value: i32,
+pub fn grand_opening()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for TitleLoopSequence_LoopSequenceFromTitle  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TitleLoopSequence.LoopSequenceFromTitle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn title()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::IlType for TitleLoopSequence_LoopSequenceFromTitle  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn title_from_main_menu()->Self{Self{value:4}
 }
-
-
-impl  TitleLoopSequence_LoopSequenceFromTitle  {
-    pub fn grand_opening() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn job_intro() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn job_intro()->Self{Self{value:5}
+}
+pub fn end()->Self{Self{value:6}
+}
 }
 
 }
@@ -160,21 +68,131 @@ impl  TitleLoopSequence_LoopSequenceFromTitle  {
 #[cfg(feature = "app-titleloopsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-titleloopsequence")]
-impl TitleLoopSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2296e50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`SetFromMainMenuOn()` overload"] pub fn set_from_main_menu_on () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2296f00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsGOPMovieHeroFemale()` overload"] pub fn is_gop_movie_hero_female () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2296f70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SwitchGOPMovieByHeroGender()` overload"] pub fn switch_gop_movie_by_hero_gender () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2296fe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetNextSequenceFromTitleToEnd()` overload"] pub fn set_next_sequence_from_title_to_end () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22970a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsNextSequenceGrandOpeningFromTitle()` overload"] pub fn is_next_sequence_grand_opening_from_title () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22958f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsNextSequenceJobIntroFromTitle()` overload"] pub fn is_next_sequence_job_intro_from_title () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295960usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2297140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-titleloopsequence")]impl TitleLoopSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2296e50usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`SetFromMainMenuOn()` overload"]pub fn set_from_main_menu_on()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2296f00usize)as*mut u8,();
+)}
+}
+#[doc="`IsGOPMovieHeroFemale()` overload"]pub fn is_gop_movie_hero_female()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2296f70usize)as*mut u8,bool;
+)}
+}
+#[doc="`SwitchGOPMovieByHeroGender()` overload"]pub fn switch_gop_movie_by_hero_gender()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2296fe0usize)as*mut u8,();
+)}
+}
+#[doc="`SetNextSequenceFromTitleToEnd()` overload"]pub fn set_next_sequence_from_title_to_end()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22970a0usize)as*mut u8,();
+)}
+}
+#[doc="`IsNextSequenceGrandOpeningFromTitle()` overload"]pub fn is_next_sequence_grand_opening_from_title()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22958f0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsNextSequenceJobIntroFromTitle()` overload"]pub fn is_next_sequence_job_intro_from_title()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2295960usize)as*mut u8,bool;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2297140usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-titleloopsequence")]
-pub trait ITitleLoopSequenceMethods : ITitleLoopSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2294cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnableMovieCanvas()` overload"] fn enable_movie_canvas (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2294d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisableMovieCanvas()` overload"] fn disable_movie_canvas (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2294e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadJobIntroData()` overload"] fn load_job_intro_data (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2294ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadJobIntroData()` overload"] fn unload_job_intro_data (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22952d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IncJobIntroGroupIndex()` overload"] fn inc_job_intro_group_index (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadMoviePrefab()` overload"] fn load_movie_prefab (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PrepareGOPMovie()` overload"] fn prepare_gop_movie (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadEmptyScene()` overload"] fn unload_empty_scene (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22954d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BranchFirst()` overload"] fn branch_first (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BranchFromTitle()` overload"] fn branch_from_title (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnableGOPMovieFromTitle()` overload"] fn enable_gop_movie_from_title (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22959d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisableGOPMovieFromTitle()` overload"] fn disable_gop_movie_from_title (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayGOPMovie()` overload"] fn play_gop_movie (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartTitleCall()` overload"] fn start_title_call (self ,) -> () { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDesc()` overload"] fn get_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < TitleLoopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TitleLoopSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2295c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-titleloopsequence")]pub trait ITitleLoopSequenceMethods:ITitleLoopSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2294cf0usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`EnableMovieCanvas()` overload"]fn enable_movie_canvas(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2294d50usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`DisableMovieCanvas()` overload"]fn disable_movie_canvas(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2294e10usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`LoadJobIntroData()` overload"]fn load_job_intro_data(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2294ed0usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`UnloadJobIntroData()` overload"]fn unload_job_intro_data(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22952d0usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`IncJobIntroGroupIndex()` overload"]fn inc_job_intro_group_index(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2295350usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`LoadMoviePrefab()` overload"]fn load_movie_prefab(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2295360usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`PrepareGOPMovie()` overload"]fn prepare_gop_movie(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2295420usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`UnloadEmptyScene()` overload"]fn unload_empty_scene(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22954d0usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`BranchFirst()` overload"]fn branch_first(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2295590usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`BranchFromTitle()` overload"]fn branch_from_title(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2295690usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`EnableGOPMovieFromTitle()` overload"]fn enable_gop_movie_from_title(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22959d0usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`DisableGOPMovieFromTitle()` overload"]fn disable_gop_movie_from_title(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2295a70usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`PlayGOPMovie()` overload"]fn play_gop_movie(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2295b10usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`StartTitleCall()` overload"]fn start_title_call(self,)->(){unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2295bd0usize)as*mut u8,();
+(TitleLoopSequence)__receiver)}
+}
+#[doc="`GetDesc()` overload"]fn get_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <TitleLoopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2295c40usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(TitleLoopSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-titleloopsequence")]
-impl < __T : ITitleLoopSequence > ITitleLoopSequenceMethods for __T { }
+#[cfg(feature="app-titleloopsequence")]impl<__T:ITitleLoopSequence>ITitleLoopSequenceMethods for __T{}
 
-#[cfg(feature = "app-titleloopsequence")]
-impl TitleLoopSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn enable_movie_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn disable_movie_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_job_intro_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unload_job_intro_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn inc_job_intro_group_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn load_movie_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn prepare_gop_movie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn unload_empty_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn branch_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn branch_from_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn enable_gop_movie_from_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn disable_gop_movie_from_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn play_gop_movie_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn start_title_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_from_main_menu_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_gop_movie_hero_female_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn switch_gop_movie_by_hero_gender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_next_sequence_from_title_to_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn is_next_sequence_grand_opening_from_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn is_next_sequence_job_intro_from_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TitleLoopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="app-titleloopsequence")]impl TitleLoopSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn enable_movie_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn disable_movie_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_job_intro_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_job_intro_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn inc_job_intro_group_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn load_movie_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn prepare_gop_movie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn unload_empty_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn branch_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn branch_from_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn enable_gop_movie_from_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn disable_gop_movie_from_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn play_gop_movie_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn start_title_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_from_main_menu_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_gop_movie_hero_female_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn switch_gop_movie_by_hero_gender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_next_sequence_from_title_to_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn is_next_sequence_grand_opening_from_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_next_sequence_job_intro_from_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "app-titleloopsequence")]
-impl TitleLoopSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TitleLoopSequence) , :: core :: stringify ! (new) ,)) ; < Self as ITitleLoopSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-titleloopsequence")]impl TitleLoopSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TitleLoopSequence), ::core::stringify!(new),));
+ <Self as ITitleLoopSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-titleloopsequence")]
@@ -183,8 +201,8 @@ pub mod prelude {
     pub use super::TitleLoopSequence;
     pub use super::ITitleLoopSequence;
     pub use super::ITitleLoopSequenceMethods;
-    pub use super::TitleLoopSequence_Label;
     pub use super::TitleLoopSequence_LoopSequenceFromTitle;
+    pub use super::TitleLoopSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

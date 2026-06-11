@@ -4,105 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsoundsequence/MyRoomSoundSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MyRoomSoundSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsoundsequence/MyRoomSoundSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomSoundSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomsoundsequence::MyRoomSoundSequence>)]pub struct MyRoomSoundSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomsoundsequence/MyRoomSoundSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomSoundSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MyRoomSoundSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MyRoomSoundSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MyRoomSoundSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MyRoomSoundSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MyRoomSoundSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MyRoomSoundSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MyRoomSoundSequence_Label{pub fn entry()->Self{Self{value:0}
 }
-
-
-impl  MyRoomSoundSequence_Label  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn main() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn main()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsoundsequence/MyRoomSoundSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomSoundSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomsoundsequence :: MyRoomSoundSequence >)] pub struct MyRoomSoundSequence {}
+pub fn end()->Self{Self{value:2}
+}
+}
 
 }
 
 #[cfg(feature = "app-myroomsoundsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomsoundsequence")]
-impl MyRoomSoundSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , is_jukebox : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x239c870usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (is_jukebox) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomsoundsequence")]impl MyRoomSoundSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_jukebox:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x239c870usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_jukebox))}
+}
+}
 
-#[cfg(feature = "app-myroomsoundsequence")]
-pub trait IMyRoomSoundSequenceMethods : IMyRoomSoundSequence { # [doc = "`get_IsJukebox()` overload"] fn get_is_jukebox (self ,) -> bool { unsafe { let __receiver = < MyRoomSoundSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a1bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsJukebox(bool)` overload"] fn set_is_jukebox (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MyRoomSoundSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a1bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < MyRoomSoundSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a1c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateSoundMenu()` overload"] fn create_sound_menu (self ,) -> () { unsafe { let __receiver = < MyRoomSoundSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Entry()` overload"] fn entry (self ,) -> () { unsafe { let __receiver = < MyRoomSoundSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a21b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < MyRoomSoundSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a2310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomSoundSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomSoundSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23a1be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomsoundsequence")]pub trait IMyRoomSoundSequenceMethods:IMyRoomSoundSequence{#[doc="`get_IsJukebox()` overload"]fn get_is_jukebox(self,)->bool{unsafe{let __receiver= <MyRoomSoundSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a1bc0usize)as*mut u8,bool;
+(MyRoomSoundSequence)__receiver)}
+}
+#[doc="`set_IsJukebox(bool)` overload"]fn set_is_jukebox(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomSoundSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a1bd0usize)as*mut u8,();
+(MyRoomSoundSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <MyRoomSoundSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a1c60usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(MyRoomSoundSequence)__receiver)}
+}
+#[doc="`CreateSoundMenu()` overload"]fn create_sound_menu(self,)->(){unsafe{let __receiver= <MyRoomSoundSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2110usize)as*mut u8,();
+(MyRoomSoundSequence)__receiver)}
+}
+#[doc="`Entry()` overload"]fn entry(self,)->(){unsafe{let __receiver= <MyRoomSoundSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a21b0usize)as*mut u8,();
+(MyRoomSoundSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <MyRoomSoundSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2310usize)as*mut u8,();
+(MyRoomSoundSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomSoundSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23a1be0usize)as*mut u8,();
+(MyRoomSoundSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomsoundsequence")]
-impl < __T : IMyRoomSoundSequence > IMyRoomSoundSequenceMethods for __T { }
+#[cfg(feature="app-myroomsoundsequence")]impl<__T:IMyRoomSoundSequence>IMyRoomSoundSequenceMethods for __T{}
 
-#[cfg(feature = "app-myroomsoundsequence")]
-impl MyRoomSoundSequence { pub fn get_is_jukebox_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_jukebox_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_sound_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn entry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomSoundSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-myroomsoundsequence")]impl MyRoomSoundSequence{pub fn get_is_jukebox_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_jukebox_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_sound_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-myroomsoundsequence")]
-impl MyRoomSoundSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomSoundSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomSoundSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomsoundsequence")]impl MyRoomSoundSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomSoundSequence), ::core::stringify!(new),));
+ <Self as IMyRoomSoundSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomsoundsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomSoundSequence_Label;
     pub use super::MyRoomSoundSequence;
     pub use super::IMyRoomSoundSequence;
     pub use super::IMyRoomSoundSequenceMethods;
+    pub use super::MyRoomSoundSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

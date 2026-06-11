@@ -4,39 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatsubspace/CombatSubspace.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CombatSubspace")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct CombatSubspace {
-# [static_field] # [rename (name = "s_SpaceHandle")] pub s_space_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [static_field] # [rename (name = "FadeLayer")] pub fade_layer : crate :: app :: fade :: Fade_Layer ,
-# [static_field] # [rename (name = "FadeTime")] pub fade_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatsubspace/CombatSubspace.md"))]#[::unity2::class(namespace="Combat",name="CombatSubspace")]#[parent(crate::app::procinst::ProcInst)]pub struct CombatSubspace{#[static_field]#[rename(name="s_SpaceHandle")]pub s_space_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[static_field]#[rename(name="FadeLayer")]pub fade_layer:crate::app::fade::Fade_Layer, #[static_field]#[rename(name="FadeTime")]pub fade_time:f32,}
 
 }
 
 #[cfg(feature = "combat-combatsubspace-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combatsubspace")]
-impl CombatSubspace { # [doc = "`RelocateToGround()` overload"] pub fn relocate_to_ground () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2932170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsSubspace()` overload"] pub fn is_subspace () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x292e110usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29322a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatsubspace")]impl CombatSubspace{#[doc="`RelocateToGround()` overload"]pub fn relocate_to_ground()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2932170usize)as*mut u8,();
+)}
+}
+#[doc="`IsSubspace()` overload"]pub fn is_subspace()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x292e110usize)as*mut u8,bool;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29322a0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-combatsubspace")]
-pub trait ICombatSubspaceMethods : ICombatSubspace { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CombatSubspace as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CombatSubspace , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2932210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combatsubspace")]pub trait ICombatSubspaceMethods:ICombatSubspace{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CombatSubspace as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2932210usize)as*mut u8,();
+(CombatSubspace)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-combatsubspace")]
-impl < __T : ICombatSubspace > ICombatSubspaceMethods for __T { }
+#[cfg(feature="combat-combatsubspace")]impl<__T:ICombatSubspace>ICombatSubspaceMethods for __T{}
 
-#[cfg(feature = "combat-combatsubspace")]
-impl CombatSubspace { pub fn relocate_to_ground_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSubspace as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_subspace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSubspace as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSubspace as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CombatSubspace as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-combatsubspace")]impl CombatSubspace{pub fn relocate_to_ground_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_subspace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-combatsubspace")]
-impl CombatSubspace {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CombatSubspace) , :: core :: stringify ! (new) ,)) ; < Self as ICombatSubspaceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-combatsubspace")]impl CombatSubspace{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CombatSubspace), ::core::stringify!(new),));
+ <Self as ICombatSubspaceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-combatsubspace")]

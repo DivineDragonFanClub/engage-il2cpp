@@ -4,41 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistroot/TroopListRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "TroopListRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TroopListRoot {
-# [offset (24)] # [rename (name = "m_UnitListRoot")] pub m_unit_list_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_SortRoot")] pub m_sort_root : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trooplistroot/TroopListRoot.md"))]#[::unity2::class(namespace="App",name="TroopListRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TroopListRoot{#[offset(24)]#[rename(name="m_UnitListRoot")]pub m_unit_list_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_SortRoot")]pub m_sort_root:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-trooplistroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-trooplistroot")]
-pub trait ITroopListRootMethods : ITroopListRoot { # [doc = "`GetUnitListRoot()` overload"] fn get_unit_list_root (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < TroopListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22abb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSortRoot()` overload"] fn get_sort_root (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < TroopListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22abb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TroopListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22abb20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < TroopListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22abb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TroopListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22abb40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TroopListRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TroopListRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22abb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-trooplistroot")]pub trait ITroopListRootMethods:ITroopListRoot{#[doc="`GetUnitListRoot()` overload"]fn get_unit_list_root(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TroopListRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22abb00usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(TroopListRoot)__receiver)}
+}
+#[doc="`GetSortRoot()` overload"]fn get_sort_root(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TroopListRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22abb10usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(TroopListRoot)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TroopListRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22abb20usize)as*mut u8,();
+(TroopListRoot)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <TroopListRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22abb30usize)as*mut u8,();
+(TroopListRoot)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TroopListRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22abb40usize)as*mut u8,();
+(TroopListRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TroopListRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22abb50usize)as*mut u8,();
+(TroopListRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-trooplistroot")]
-impl < __T : ITroopListRoot > ITroopListRootMethods for __T { }
+#[cfg(feature="app-trooplistroot")]impl<__T:ITroopListRoot>ITroopListRootMethods for __T{}
 
-#[cfg(feature = "app-trooplistroot")]
-impl TroopListRoot { pub fn get_unit_list_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_sort_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TroopListRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-trooplistroot")]impl TroopListRoot{pub fn get_unit_list_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_sort_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-trooplistroot")]
-impl TroopListRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TroopListRoot) , :: core :: stringify ! (new) ,)) ; < Self as ITroopListRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-trooplistroot")]impl TroopListRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TroopListRoot), ::core::stringify!(new),));
+ <Self as ITroopListRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-trooplistroot")]

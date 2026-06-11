@@ -4,141 +4,157 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencereplay/MapSequenceReplay.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceReplay")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencereplay :: MapSequenceReplay >)] pub struct MapSequenceReplay {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencereplay/MapSequenceReplay_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceReplay_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencereplay/MapSequenceReplay_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceReplay_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceReplay_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceReplay.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceReplay_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceReplay_Label{pub fn read()->Self{Self{value:0}
+}
+pub fn mind()->Self{Self{value:1}
+}
+pub fn engage_start()->Self{Self{value:2}
+}
+pub fn engage_link()->Self{Self{value:3}
+}
+pub fn engage_rewarp()->Self{Self{value:4}
+}
+pub fn god_change()->Self{Self{value:5}
+}
+pub fn surrender()->Self{Self{value:6}
+}
+pub fn cancel()->Self{Self{value:7}
+}
+pub fn end()->Self{Self{value:8}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapSequenceReplay_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceReplay.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSequenceReplay_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceReplay_Label  {
-    pub fn read() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn mind() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn engage_start() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn engage_link() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn engage_rewarp() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn god_change() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn surrender() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn cancel() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencereplay/MapSequenceReplay.md"))]#[::unity2::class(namespace="App",name="MapSequenceReplay")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencereplay::MapSequenceReplay>)]pub struct MapSequenceReplay{}
 
 }
 
 #[cfg(feature = "app-mapsequencereplay-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencereplay")]
-impl MapSequenceReplay { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f30940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencereplay")]impl MapSequenceReplay{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f30940usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-mapsequencereplay")]
-pub trait IMapSequenceReplayMethods : IMapSequenceReplay { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f6d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnPersistent()` overload"] fn on_persistent (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read()` overload"] fn read (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2fb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Focus()` overload"] fn focus (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2fee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MindTypeBranch()` overload"] fn mind_type_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2ffb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PrepareEngageRewarp()` overload"] fn prepare_engage_rewarp (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f300c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Mind()` overload"] fn mind (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f301a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Surrender()` overload"] fn surrender (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f302a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GameEndBranch()` overload"] fn game_end_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f30470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckCancelInput()` overload"] fn check_cancel_input (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2f8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckCancel()` overload"] fn check_cancel (self ,) -> bool { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2fbd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cancel()` overload"] fn cancel (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f30930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FinishReplay()` overload"] fn finish_replay (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2fd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f31760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencereplay")]pub trait IMapSequenceReplayMethods:IMapSequenceReplay{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f6d0usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f760usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f8e0usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`Read()` overload"]fn read(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2fb30usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`Focus()` overload"]fn focus(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2fee0usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`MindTypeBranch()` overload"]fn mind_type_branch(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2ffb0usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`PrepareEngageRewarp()` overload"]fn prepare_engage_rewarp(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f300c0usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`Mind()` overload"]fn mind(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f301a0usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`Surrender()` overload"]fn surrender(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f302a0usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`GameEndBranch()` overload"]fn game_end_branch(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f30470usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`CheckCancelInput()` overload"]fn check_cancel_input(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2f8f0usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`CheckCancel()` overload"]fn check_cancel(self,)->bool{unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2fbd0usize)as*mut u8,bool;
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`Cancel()` overload"]fn cancel(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f30930usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`FinishReplay()` overload"]fn finish_replay(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2fd40usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f31760usize)as*mut u8,();
+(MapSequenceReplay)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencereplay")]
-impl < __T : IMapSequenceReplay > IMapSequenceReplayMethods for __T { }
+#[cfg(feature="app-mapsequencereplay")]impl<__T:IMapSequenceReplay>IMapSequenceReplayMethods for __T{}
 
-#[cfg(feature = "app-mapsequencereplay")]
-impl MapSequenceReplay { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn focus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn mind_type_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn prepare_engage_rewarp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn surrender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn game_end_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn check_cancel_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn check_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn finish_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-mapsequencereplay")]impl MapSequenceReplay{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_persistent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn focus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn mind_type_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn prepare_engage_rewarp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn surrender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn game_end_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn check_cancel_input_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn check_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn finish_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-mapsequencereplay")]
-impl MapSequenceReplay {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceReplay) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceReplayMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencereplay")]impl MapSequenceReplay{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceReplay), ::core::stringify!(new),));
+ <Self as IMapSequenceReplayMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequencereplay")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequenceReplay_Label;
     pub use super::MapSequenceReplay;
     pub use super::IMapSequenceReplay;
     pub use super::IMapSequenceReplayMethods;
-    pub use super::MapSequenceReplay_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

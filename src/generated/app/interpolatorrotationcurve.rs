@@ -4,33 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorrotationcurve/InterpolatorRotationCurve.md"))] # [:: unity2 :: class (namespace = "App" , name = "InterpolatorRotationCurve")] # [parent (crate :: system :: object :: Object)] pub struct InterpolatorRotationCurve {
-# [offset (28)] # [rename (name = "m_time")] pub m_time : f32 ,
-# [offset (32)] # [rename (name = "m_term")] pub m_term : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interpolatorrotationcurve/InterpolatorRotationCurve.md"))]#[::unity2::class(namespace="App",name="InterpolatorRotationCurve")]#[parent(crate::system::object::Object)]pub struct InterpolatorRotationCurve{#[offset(28)]#[rename(name="m_time")]pub m_time:f32, #[offset(32)]#[rename(name="m_term")]pub m_term:f32,}
 
 }
 
 #[cfg(feature = "app-interpolatorrotationcurve-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-interpolatorrotationcurve")]
-pub trait IInterpolatorRotationCurveMethods : IInterpolatorRotationCurve { # [doc = "`get_Value()` overload"] fn get_value (self ,) -> f32 { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value(f32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Prev()` overload"] fn get_prev (self ,) -> f32 { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Prev(f32)` overload"] fn set_prev (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794e70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Next()` overload"] fn get_next (self ,) -> f32 { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Next(f32)` overload"] fn set_next (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794e90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsEnd()` overload"] fn get_is_end (self ,) -> bool { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Curve()` overload"] fn get_curve (self ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` overload"] fn ctor (self , animation_curve : impl :: core :: convert :: Into < crate :: unity_engine :: animationcurve :: AnimationCurve >) -> () { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , crate :: unity_engine :: animationcurve :: AnimationCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animation_curve) , :: core :: option :: Option :: None) } } } # [doc = "`Set(f32, f32)` overload"] fn set (self , value : impl :: core :: convert :: Into < f32 > , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < InterpolatorRotationCurve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InterpolatorRotationCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2794fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-interpolatorrotationcurve")]pub trait IInterpolatorRotationCurveMethods:IInterpolatorRotationCurve{#[doc="`get_Value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794e40usize)as*mut u8,f32;
+(InterpolatorRotationCurve)__receiver)}
+}
+#[doc="`set_Value(f32)` overload"]fn set_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794e50usize)as*mut u8,();
+(InterpolatorRotationCurve)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Prev()` overload"]fn get_prev(self,)->f32{unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794e60usize)as*mut u8,f32;
+(InterpolatorRotationCurve)__receiver)}
+}
+#[doc="`set_Prev(f32)` overload"]fn set_prev(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794e70usize)as*mut u8,();
+(InterpolatorRotationCurve)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Next()` overload"]fn get_next(self,)->f32{unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794e80usize)as*mut u8,f32;
+(InterpolatorRotationCurve)__receiver)}
+}
+#[doc="`set_Next(f32)` overload"]fn set_next(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794e90usize)as*mut u8,();
+(InterpolatorRotationCurve)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsEnd()` overload"]fn get_is_end(self,)->bool{unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794ea0usize)as*mut u8,bool;
+(InterpolatorRotationCurve)__receiver)}
+}
+#[doc="`get_Curve()` overload"]fn get_curve(self,)->crate::unity_engine::animationcurve::AnimationCurve{unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794ec0usize)as*mut u8,crate::unity_engine::animationcurve::AnimationCurve;
+(InterpolatorRotationCurve)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` overload"]fn ctor(self,animation_curve:impl::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>)->(){unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794ed0usize)as*mut u8,();
+(InterpolatorRotationCurve)__receiver,(crate::unity_engine::animationcurve::AnimationCurve)::core::convert::Into::into(animation_curve))}
+}
+#[doc="`Set(f32, f32)` overload"]fn set(self,value:impl::core::convert::Into<f32> ,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794f10usize)as*mut u8,();
+(InterpolatorRotationCurve)__receiver,(f32)::core::convert::Into::into(value),(f32)::core::convert::Into::into(time))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <InterpolatorRotationCurve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2794fd0usize)as*mut u8,();
+(InterpolatorRotationCurve)__receiver)}
+}
+}
 
-#[cfg(feature = "app-interpolatorrotationcurve")]
-impl < __T : IInterpolatorRotationCurve > IInterpolatorRotationCurveMethods for __T { }
+#[cfg(feature="app-interpolatorrotationcurve")]impl<__T:IInterpolatorRotationCurve>IInterpolatorRotationCurveMethods for __T{}
 
-#[cfg(feature = "app-interpolatorrotationcurve")]
-impl InterpolatorRotationCurve { pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_prev_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_prev_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_curve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InterpolatorRotationCurve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-interpolatorrotationcurve")]impl InterpolatorRotationCurve{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_prev_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_prev_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_curve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-interpolatorrotationcurve")]
-impl InterpolatorRotationCurve {
-# [doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` — overload selector"] pub fn new (animation_curve : crate :: unity_engine :: animationcurve :: AnimationCurve) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InterpolatorRotationCurve) , :: core :: stringify ! (new) ,)) ; < Self as IInterpolatorRotationCurveMethods > :: ctor (this , animation_curve) ; this }
+#[cfg(feature="app-interpolatorrotationcurve")]impl InterpolatorRotationCurve{#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` — overload selector"]pub fn new(animation_curve:crate::unity_engine::animationcurve::AnimationCurve)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InterpolatorRotationCurve), ::core::stringify!(new),));
+ <Self as IInterpolatorRotationCurveMethods> ::ctor(this,animation_curve);
+this}
 }
 
 #[cfg(feature = "app-interpolatorrotationcurve")]

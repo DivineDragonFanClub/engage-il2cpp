@@ -4,26 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashhelpers/HashHelpers.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "HashHelpers")] # [parent (crate :: system :: object :: Object)] pub struct HashHelpers {
-# [static_field] # [rename (name = "primes")] pub primes : :: unity2 :: Array < i32 > ,
-# [static_field] # [rename (name = "s_SerializationInfoTable")] pub s_serialization_info_table : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/hashhelpers/HashHelpers.md"))]#[::unity2::class(namespace="System.Collections",name="HashHelpers")]#[parent(crate::system::object::Object)]pub struct HashHelpers{#[static_field]#[rename(name="primes")]pub primes: ::unity2::Array<i32> , #[static_field]#[rename(name="s_SerializationInfoTable")]pub s_serialization_info_table: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "system-collections-hashhelpers-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-hashhelpers")]
-impl HashHelpers { # [doc = "`IsPrime(i32)` overload"] pub fn is_prime (candidate : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381e1b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (candidate) , :: core :: option :: Option :: None) } } } # [doc = "`GetPrime(i32)` overload"] pub fn get_prime (min : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381e2a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (min) , :: core :: option :: Option :: None) } } } # [doc = "`ExpandPrime(i32)` overload"] pub fn expand_prime (old_size : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381e4f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (old_size) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x381e590usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-hashhelpers")]impl HashHelpers{#[doc="`IsPrime(i32)` overload"]pub fn is_prime(candidate:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x381e1b0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(candidate))}
+}
+#[doc="`GetPrime(i32)` overload"]pub fn get_prime(min:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x381e2a0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(min))}
+}
+#[doc="`ExpandPrime(i32)` overload"]pub fn expand_prime(old_size:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x381e4f0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(old_size))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x381e590usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-collections-hashhelpers")]
-impl HashHelpers { pub fn is_prime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HashHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_prime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HashHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn expand_prime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HashHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HashHelpers as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="system-collections-hashhelpers")]impl HashHelpers{pub fn is_prime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_prime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn expand_prime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "system-collections-hashhelpers")]
 #[doc(hidden)]

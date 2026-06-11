@@ -4,41 +4,200 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terraincostdata/TerrainCostData.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainCostData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: terraincostdata :: TerrainCostData >)] pub struct TerrainCostData {
-# [offset (32)] # [rename (name = "Costs")] pub costs : :: unity2 :: Array < u8 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terraincostdata/TerrainCostData.md"))]#[::unity2::class(namespace="App",name="TerrainCostData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::terraincostdata::TerrainCostData>)]pub struct TerrainCostData{#[offset(32)]#[rename(name="Costs")]pub costs: ::unity2::Array<u8> ,}
 
 }
 
 #[cfg(feature = "app-terraincostdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-terraincostdata")]
-impl TerrainCostData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2540usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCost(crate::app::jobdata::JobData_MoveTypes, i32, i32)` overload"] pub fn get_cost (move_type : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData_MoveTypes > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: jobdata :: JobData_MoveTypes , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (move_type) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetCost(crate::app::unit::Unit, i32, i32)` overload"] pub fn get_cost_2 (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetCostWithoutOverlap(crate::app::jobdata::JobData_MoveTypes, i32, i32)` overload"] pub fn get_cost_without_overlap (move_type : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData_MoveTypes > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: jobdata :: JobData_MoveTypes , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2b10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (move_type) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsNoMove(crate::app::unit::Unit, i32, i32)` overload"] pub fn is_no_move (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2c70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsNoMove(crate::app::jobdata::JobData_MoveTypes, i32, i32)` overload"] pub fn is_no_move_2 (move_type : impl :: core :: convert :: Into < crate :: app :: jobdata :: JobData_MoveTypes > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: jobdata :: JobData_MoveTypes , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2cc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (move_type) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`IsNoMove(i32)` overload"] pub fn is_no_move_3 (cost : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2cb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cost) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-terraincostdata")]impl TerrainCostData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e2540usize)as*mut u8,();
+)}
+}
+#[doc="`GetCost(crate::app::jobdata::JobData_MoveTypes, i32, i32)` overload"]pub fn get_cost(move_type:impl::core::convert::Into<crate::app::jobdata::JobData_MoveTypes> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e2a20usize)as*mut u8,i32;
+(crate::app::jobdata::JobData_MoveTypes)::core::convert::Into::into(move_type),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetCost(crate::app::unit::Unit, i32, i32)` overload"]pub fn get_cost_2(unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e2c50usize)as*mut u8,i32;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetCostWithoutOverlap(crate::app::jobdata::JobData_MoveTypes, i32, i32)` overload"]pub fn get_cost_without_overlap(move_type:impl::core::convert::Into<crate::app::jobdata::JobData_MoveTypes> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e2b10usize)as*mut u8,i32;
+(crate::app::jobdata::JobData_MoveTypes)::core::convert::Into::into(move_type),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsNoMove(crate::app::unit::Unit, i32, i32)` overload"]pub fn is_no_move(unit:impl::core::convert::Into<crate::app::unit::Unit> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e2c70usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsNoMove(crate::app::jobdata::JobData_MoveTypes, i32, i32)` overload"]pub fn is_no_move_2(move_type:impl::core::convert::Into<crate::app::jobdata::JobData_MoveTypes> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e2cc0usize)as*mut u8,bool;
+(crate::app::jobdata::JobData_MoveTypes)::core::convert::Into::into(move_type),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsNoMove(i32)` overload"]pub fn is_no_move_3(cost:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e2cb0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(cost))}
+}
+}
 
-#[cfg(feature = "app-terraincostdata")]
-pub trait ITerrainCostDataMethods : ITerrainCostData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e25f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e26a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e26b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e26c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_None()` overload"] fn get_none (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e26d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_None(u8)` overload"] fn set_none (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Foot()` overload"] fn get_foot (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Foot(u8)` overload"] fn set_foot (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Horse()` overload"] fn get_horse (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Horse(u8)` overload"] fn set_horse (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e27c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Fly()` overload"] fn get_fly (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e27f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Fly(u8)` overload"] fn set_fly (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Dragon()` overload"] fn get_dragon (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Dragon(u8)` overload"] fn set_dragon (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Pad()` overload"] fn get_pad (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e28b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Pad(u8)` overload"] fn set_pad (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e28e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ColorR()` overload"] fn get_color_r (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ColorR(u8)` overload"] fn set_color_r (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ColorG()` overload"] fn get_color_g (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ColorG(u8)` overload"] fn set_color_g (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ColorB()` overload"] fn get_color_b (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ColorB(u8)` overload"] fn set_color_b (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ColorA()` overload"] fn get_color_a (self ,) -> u8 { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ColorA(u8)` overload"] fn set_color_a (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Color()` overload"] fn get_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e2990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Color(crate::unity_engine::color::Color)` overload"] fn set_color (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e29a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < TerrainCostData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainCostData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e29c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-terraincostdata")]pub trait ITerrainCostDataMethods:ITerrainCostData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e25f0usize)as*mut u8,();
+(TerrainCostData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e26a0usize)as*mut u8, ::unity2::Il2CppString;
+(TerrainCostData)__receiver)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e26b0usize)as*mut u8, ::unity2::Il2CppString;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e26c0usize)as*mut u8,();
+(TerrainCostData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_None()` overload"]fn get_none(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e26d0usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_None(u8)` overload"]fn set_none(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2700usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Foot()` overload"]fn get_foot(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2730usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_Foot(u8)` overload"]fn set_foot(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2760usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Horse()` overload"]fn get_horse(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2790usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_Horse(u8)` overload"]fn set_horse(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e27c0usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Fly()` overload"]fn get_fly(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e27f0usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_Fly(u8)` overload"]fn set_fly(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2820usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Dragon()` overload"]fn get_dragon(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2850usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_Dragon(u8)` overload"]fn set_dragon(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2880usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Pad()` overload"]fn get_pad(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e28b0usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_Pad(u8)` overload"]fn set_pad(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e28e0usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ColorR()` overload"]fn get_color_r(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2910usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_ColorR(u8)` overload"]fn set_color_r(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2920usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ColorG()` overload"]fn get_color_g(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2930usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_ColorG(u8)` overload"]fn set_color_g(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2940usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ColorB()` overload"]fn get_color_b(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2950usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_ColorB(u8)` overload"]fn set_color_b(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2960usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ColorA()` overload"]fn get_color_a(self,)->u8{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2970usize)as*mut u8,u8;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_ColorA(u8)` overload"]fn set_color_a(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2980usize)as*mut u8,();
+(TerrainCostData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e2990usize)as*mut u8,crate::unity_engine::color::Color;
+(TerrainCostData)__receiver)}
+}
+#[doc="`set_Color(crate::unity_engine::color::Color)` overload"]fn set_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e29a0usize)as*mut u8,();
+(TerrainCostData)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <TerrainCostData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e29c0usize)as*mut u8,();
+(TerrainCostData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-terraincostdata")]
-impl < __T : ITerrainCostData > ITerrainCostDataMethods for __T { }
+#[cfg(feature="app-terraincostdata")]impl<__T:ITerrainCostData>ITerrainCostDataMethods for __T{}
 
-#[cfg(feature = "app-terraincostdata")]
-impl TerrainCostData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_none_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_none_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_foot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_foot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_horse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_horse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_fly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_fly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_dragon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_dragon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_pad_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_pad_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_color_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_color_r_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_color_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_color_g_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_color_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_color_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_color_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_color_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_cost_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_cost_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_cost_without_overlap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn is_no_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn is_no_move_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn is_no_move_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainCostData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } }
+#[cfg(feature="app-terraincostdata")]impl TerrainCostData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_none_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_none_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_foot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_foot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_horse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_horse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_fly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_fly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_dragon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_dragon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_pad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_pad_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_color_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_color_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_color_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_color_g_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_color_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_color_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_color_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_color_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_cost_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_cost_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_cost_without_overlap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn is_no_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn is_no_move_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn is_no_move_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+}
 
-#[cfg(feature = "app-terraincostdata")]
-impl TerrainCostData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainCostData) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainCostDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-terraincostdata")]impl TerrainCostData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainCostData), ::core::stringify!(new),));
+ <Self as ITerrainCostDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-terraincostdata")]

@@ -4,44 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangeroot/ClassChangeRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "ClassChangeRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ClassChangeRoot {
-# [offset (24)] # [rename (name = "m_MenuContent")] pub m_menu_content : crate :: app :: classchangejobmenucontent :: ClassChangeJobMenuContent ,
-# [offset (32)] # [rename (name = "m_UnitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_UnitInfoBefore")] pub m_unit_info_before : crate :: app :: unitstatussetter :: UnitStatusSetter ,
-# [offset (48)] # [rename (name = "m_UnitInfoAfter")] pub m_unit_info_after : crate :: app :: unitstatussetter :: UnitStatusSetter ,
-# [offset (56)] # [rename (name = "m_WeaponIconList")] pub m_weapon_icon_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: image :: Image > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchangeroot/ClassChangeRoot.md"))]#[::unity2::class(namespace="App",name="ClassChangeRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ClassChangeRoot{#[offset(24)]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::classchangejobmenucontent::ClassChangeJobMenuContent, #[offset(32)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_UnitInfoBefore")]pub m_unit_info_before:crate::app::unitstatussetter::UnitStatusSetter, #[offset(48)]#[rename(name="m_UnitInfoAfter")]pub m_unit_info_after:crate::app::unitstatussetter::UnitStatusSetter, #[offset(56)]#[rename(name="m_WeaponIconList")]pub m_weapon_icon_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image> ,}
 
 }
 
 #[cfg(feature = "app-classchangeroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-classchangeroot")]
-pub trait IClassChangeRootMethods : IClassChangeRoot { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea6700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitUnitInfoAll()` overload"] fn init_unit_info_all (self ,) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea6800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuContent()` overload"] fn get_menu_content (self ,) -> crate :: app :: classchangejobmenucontent :: ClassChangeJobMenuContent { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeRoot , :: unity2 :: OptionalMethod ,) -> crate :: app :: classchangejobmenucontent :: ClassChangeJobMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea6850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfoAfter(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn set_unit_info_after (self , before : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , after : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeRoot , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea52c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (before) , :: core :: convert :: Into :: into (after) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitInfoBefore(crate::app::unit::Unit)` overload"] fn set_unit_info_before (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeRoot , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea47d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ClassChangeRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea6860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-classchangeroot")]pub trait IClassChangeRootMethods:IClassChangeRoot{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ClassChangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea6700usize)as*mut u8,();
+(ClassChangeRoot)__receiver)}
+}
+#[doc="`InitUnitInfoAll()` overload"]fn init_unit_info_all(self,)->(){unsafe{let __receiver= <ClassChangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea6800usize)as*mut u8,();
+(ClassChangeRoot)__receiver)}
+}
+#[doc="`GetMenuContent()` overload"]fn get_menu_content(self,)->crate::app::classchangejobmenucontent::ClassChangeJobMenuContent{unsafe{let __receiver= <ClassChangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea6850usize)as*mut u8,crate::app::classchangejobmenucontent::ClassChangeJobMenuContent;
+(ClassChangeRoot)__receiver)}
+}
+#[doc="`SetUnitInfoAfter(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn set_unit_info_after(self,before:impl::core::convert::Into<crate::app::unit::Unit> ,after:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ClassChangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea52c0usize)as*mut u8,();
+(ClassChangeRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(before),(crate::app::unit::Unit)::core::convert::Into::into(after))}
+}
+#[doc="`SetUnitInfoBefore(crate::app::unit::Unit)` overload"]fn set_unit_info_before(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ClassChangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea47d0usize)as*mut u8,();
+(ClassChangeRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ClassChangeRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea6860usize)as*mut u8,();
+(ClassChangeRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-classchangeroot")]
-impl < __T : IClassChangeRoot > IClassChangeRootMethods for __T { }
+#[cfg(feature="app-classchangeroot")]impl<__T:IClassChangeRoot>IClassChangeRootMethods for __T{}
 
-#[cfg(feature = "app-classchangeroot")]
-impl ClassChangeRoot { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn init_unit_info_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_unit_info_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_unit_info_before_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-classchangeroot")]impl ClassChangeRoot{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_unit_info_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_unit_info_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_unit_info_before_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-classchangeroot")]
-impl ClassChangeRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClassChangeRoot) , :: core :: stringify ! (new) ,)) ; < Self as IClassChangeRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-classchangeroot")]impl ClassChangeRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ClassChangeRoot), ::core::stringify!(new),));
+ <Self as IClassChangeRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-classchangeroot")]

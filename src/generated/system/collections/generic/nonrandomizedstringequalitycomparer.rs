@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: collections :: generic :: equalitycomparer_1 :: { EqualityComparer_1 , IEqualityComparer_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::collections::generic::equalitycomparer_1::{EqualityComparer_1,IEqualityComparer_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/nonrandomizedstringequalitycomparer/NonRandomizedStringEqualityComparer.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "NonRandomizedStringEqualityComparer")] # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < :: unity2 :: Il2CppString >)] pub struct NonRandomizedStringEqualityComparer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/nonrandomizedstringequalitycomparer/NonRandomizedStringEqualityComparer.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="NonRandomizedStringEqualityComparer")]#[parent(crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1< ::unity2::Il2CppString>)]pub struct NonRandomizedStringEqualityComparer{}
 
 }
 
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
-pub trait INonRandomizedStringEqualityComparerMethods : INonRandomizedStringEqualityComparer { # [doc = "`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn equals (self , x : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , y : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < NonRandomizedStringEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NonRandomizedStringEqualityComparer , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3385cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode(::unity2::Il2CppString)` overload"] fn get_hash_code (self , obj : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < NonRandomizedStringEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NonRandomizedStringEqualityComparer , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3385d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NonRandomizedStringEqualityComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NonRandomizedStringEqualityComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3385d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-nonrandomizedstringequalitycomparer")]pub trait INonRandomizedStringEqualityComparerMethods:INonRandomizedStringEqualityComparer{#[doc="`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn equals(self,x:impl::core::convert::Into< ::unity2::Il2CppString> ,y:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <NonRandomizedStringEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3385cf0usize)as*mut u8,bool;
+(NonRandomizedStringEqualityComparer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(x),(::unity2::Il2CppString)::core::convert::Into::into(y))}
+}
+#[doc="`GetHashCode(::unity2::Il2CppString)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <NonRandomizedStringEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3385d00usize)as*mut u8,i32;
+(NonRandomizedStringEqualityComparer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(obj))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NonRandomizedStringEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3385d20usize)as*mut u8,();
+(NonRandomizedStringEqualityComparer)__receiver)}
+}
+}
 
-#[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
-impl < __T : INonRandomizedStringEqualityComparer > INonRandomizedStringEqualityComparerMethods for __T { }
+#[cfg(feature="system-collections-generic-nonrandomizedstringequalitycomparer")]impl<__T:INonRandomizedStringEqualityComparer>INonRandomizedStringEqualityComparerMethods for __T{}
 
-#[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
-impl NonRandomizedStringEqualityComparer { pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NonRandomizedStringEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NonRandomizedStringEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NonRandomizedStringEqualityComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="system-collections-generic-nonrandomizedstringequalitycomparer")]impl NonRandomizedStringEqualityComparer{pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]
-impl NonRandomizedStringEqualityComparer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NonRandomizedStringEqualityComparer) , :: core :: stringify ! (new) ,)) ; < Self as INonRandomizedStringEqualityComparerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-generic-nonrandomizedstringequalitycomparer")]impl NonRandomizedStringEqualityComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NonRandomizedStringEqualityComparer), ::core::stringify!(new),));
+ <Self as INonRandomizedStringEqualityComparerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer")]

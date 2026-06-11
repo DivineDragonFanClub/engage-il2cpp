@@ -4,42 +4,121 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: versusservermetadata :: { IVersusServerMetaData , VersusServerMetaData }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::versusservermetadata::{IVersusServerMetaData,VersusServerMetaData}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusserverrankedmetadata/VersusServerRankedMetaData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusServerRankedMetaData")] # [parent (crate :: app :: versusservermetadata :: VersusServerMetaData)] pub struct VersusServerRankedMetaData {
-# [static_field] # [rename (name = "Version")] pub version : u16 ,
-# [offset (48)] # [rename (name = "m_Version")] pub m_version : u16 ,
-# [offset (56)] # [rename (name = "m_OwnerId")] pub m_owner_id : u64 ,
-# [offset (64)] # [rename (name = "m_OwnerName")] pub m_owner_name : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "m_SaveIdentifier")] pub m_save_identifier : u64 ,
-# [offset (80)] # [rename (name = "m_Rate")] pub m_rate : i16 ,
-# [offset (96)] # [rename (name = "m_ScreenShotDataId")] pub m_screen_shot_data_id : u64 ,
-# [offset (104)] # [rename (name = "m_Language")] pub m_language : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "INITIAL_RATE")] pub initial_rate : i16 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusserverrankedmetadata/VersusServerRankedMetaData.md"))]#[::unity2::class(namespace="App",name="VersusServerRankedMetaData")]#[parent(crate::app::versusservermetadata::VersusServerMetaData)]pub struct VersusServerRankedMetaData{#[static_field]#[rename(name="Version")]pub version:u16, #[offset(48)]#[rename(name="m_Version")]pub m_version:u16, #[offset(56)]#[rename(name="m_OwnerId")]pub m_owner_id:u64, #[offset(64)]#[rename(name="m_OwnerName")]pub m_owner_name: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_SaveIdentifier")]pub m_save_identifier:u64, #[offset(80)]#[rename(name="m_Rate")]pub m_rate:i16, #[offset(96)]#[rename(name="m_ScreenShotDataId")]pub m_screen_shot_data_id:u64, #[offset(104)]#[rename(name="m_Language")]pub m_language: ::unity2::Il2CppString, #[static_field]#[rename(name="INITIAL_RATE")]pub initial_rate:i16,}
 
 }
 
 #[cfg(feature = "app-versusserverrankedmetadata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusserverrankedmetadata")]
-pub trait IVersusServerRankedMetaDataMethods : IVersusServerRankedMetaData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b88b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetOwner(u64, ::unity2::Il2CppString, u64)` overload"] fn set_owner (self , principal_id : impl :: core :: convert :: Into < u64 > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , save_id : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , u64 , :: unity2 :: Il2CppString , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b89b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (principal_id) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (save_id) , :: core :: option :: Option :: None) } } } # [doc = "`SetRate(i32)` overload"] fn set_rate (self , rate : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b89f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rate) , :: core :: option :: Option :: None) } } } # [doc = "`SetScreenShotDataId(u64)` overload"] fn set_screen_shot_data_id (self , data_id : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b8a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data_id) , :: core :: option :: Option :: None) } } } # [doc = "`SetLanguage(::unity2::Il2CppString)` overload"] fn set_language (self , language : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b8a20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (language) , :: core :: option :: Option :: None) } } } # [doc = "`CopyFrom(crate::app::versusservermetadata::VersusServerMetaData)` overload"] fn copy_from (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusservermetadata :: VersusServerMetaData >) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , crate :: app :: versusservermetadata :: VersusServerMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b8a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetOwnerName()` overload"] fn get_owner_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b8b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b8b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> bool { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b8da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dump(::unity2::Il2CppString)` overload"] fn dump (self , opt : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b97b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (opt) , :: core :: option :: Option :: None) } } } # [doc = "`get_OwnerId()` overload"] fn get_owner_id (self ,) -> u64 { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b9bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SaveIdentifier()` overload"] fn get_save_identifier (self ,) -> u64 { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b9bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Rate()` overload"] fn get_rate (self ,) -> i32 { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b9c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ScreenShotDataId()` overload"] fn get_screen_shot_data_id (self ,) -> u64 { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b9c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Language()` overload"] fn get_language (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b9c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FriendName()` overload"] fn get_friend_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b9c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FriendName(::unity2::Il2CppString)` overload"] fn set_friend_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusServerRankedMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerRankedMetaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b9c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusserverrankedmetadata")]pub trait IVersusServerRankedMetaDataMethods:IVersusServerRankedMetaData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a6220usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b88b0usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`SetOwner(u64, ::unity2::Il2CppString, u64)` overload"]fn set_owner(self,principal_id:impl::core::convert::Into<u64> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,save_id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b89b0usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver,(u64)::core::convert::Into::into(principal_id),(::unity2::Il2CppString)::core::convert::Into::into(name),(u64)::core::convert::Into::into(save_id))}
+}
+#[doc="`SetRate(i32)` overload"]fn set_rate(self,rate:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b89f0usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver,(i32)::core::convert::Into::into(rate))}
+}
+#[doc="`SetScreenShotDataId(u64)` overload"]fn set_screen_shot_data_id(self,data_id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8a10usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver,(u64)::core::convert::Into::into(data_id))}
+}
+#[doc="`SetLanguage(::unity2::Il2CppString)` overload"]fn set_language(self,language:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8a20usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(language))}
+}
+#[doc="`CopyFrom(crate::app::versusservermetadata::VersusServerMetaData)` overload"]fn copy_from(self,meta_data:impl::core::convert::Into<crate::app::versusservermetadata::VersusServerMetaData>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8a30usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver,(crate::app::versusservermetadata::VersusServerMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`GetOwnerName()` overload"]fn get_owner_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8b60usize)as*mut u8, ::unity2::Il2CppString;
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8b90usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8da0usize)as*mut u8,bool;
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`Dump(::unity2::Il2CppString)` overload"]fn dump(self,opt:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b97b0usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(opt))}
+}
+#[doc="`get_OwnerId()` overload"]fn get_owner_id(self,)->u64{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b9bd0usize)as*mut u8,u64;
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`get_SaveIdentifier()` overload"]fn get_save_identifier(self,)->u64{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b9bf0usize)as*mut u8,u64;
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`get_Rate()` overload"]fn get_rate(self,)->i32{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b9c00usize)as*mut u8,i32;
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`get_ScreenShotDataId()` overload"]fn get_screen_shot_data_id(self,)->u64{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b9c20usize)as*mut u8,u64;
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`get_Language()` overload"]fn get_language(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b9c30usize)as*mut u8, ::unity2::Il2CppString;
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`get_FriendName()` overload"]fn get_friend_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b9c40usize)as*mut u8, ::unity2::Il2CppString;
+(VersusServerRankedMetaData)__receiver)}
+}
+#[doc="`set_FriendName(::unity2::Il2CppString)` overload"]fn set_friend_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b9c50usize)as*mut u8,();
+(VersusServerRankedMetaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-versusserverrankedmetadata")]
-impl < __T : IVersusServerRankedMetaData > IVersusServerRankedMetaDataMethods for __T { }
+#[cfg(feature="app-versusserverrankedmetadata")]impl<__T:IVersusServerRankedMetaData>IVersusServerRankedMetaDataMethods for __T{}
 
-#[cfg(feature = "app-versusserverrankedmetadata")]
-impl VersusServerRankedMetaData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_owner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_screen_shot_data_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_language_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_owner_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_owner_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_save_identifier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_screen_shot_data_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_language_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_friend_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_friend_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerRankedMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="app-versusserverrankedmetadata")]impl VersusServerRankedMetaData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_owner_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_screen_shot_data_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_language_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_owner_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_owner_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_save_identifier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_screen_shot_data_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_language_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_friend_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_friend_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "app-versusserverrankedmetadata")]
-impl VersusServerRankedMetaData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusServerRankedMetaData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusServerRankedMetaDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusserverrankedmetadata")]impl VersusServerRankedMetaData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusServerRankedMetaData), ::core::stringify!(new),));
+ <Self as IVersusServerRankedMetaDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusserverrankedmetadata")]

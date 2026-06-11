@@ -4,39 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akeventcallbackdata/AkEventCallbackData.md"))] # [:: unity2 :: class (namespace = "" , name = "AkEventCallbackData")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct AkEventCallbackData {
-# [offset (24)] # [rename (name = "callbackFlags")] pub callback_flags : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
-# [offset (32)] # [rename (name = "callbackFunc")] pub callback_func : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (40)] # [rename (name = "callbackGameObj")] pub callback_game_obj : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (48)] # [rename (name = "uFlags")] pub u_flags : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akeventcallbackdata/AkEventCallbackData.md"))]#[::unity2::class(namespace="",name="AkEventCallbackData")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct AkEventCallbackData{#[offset(24)]#[rename(name="callbackFlags")]pub callback_flags:crate::system::collections::generic::list_1::List_1<i32> , #[offset(32)]#[rename(name="callbackFunc")]pub callback_func:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="callbackGameObj")]pub callback_game_obj:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(48)]#[rename(name="uFlags")]pub u_flags:i32,}
 
 }
 
 #[cfg(feature = "root-akeventcallbackdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akeventcallbackdata")]
-pub trait IAkEventCallbackDataMethods : IAkEventCallbackData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkEventCallbackData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkEventCallbackData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1ace0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akeventcallbackdata")]pub trait IAkEventCallbackDataMethods:IAkEventCallbackData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEventCallbackData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1ace0usize)as*mut u8,();
+(AkEventCallbackData)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akeventcallbackdata")]
-impl < __T : IAkEventCallbackData > IAkEventCallbackDataMethods for __T { }
+#[cfg(feature="root-akeventcallbackdata")]impl<__T:IAkEventCallbackData>IAkEventCallbackDataMethods for __T{}
 
-#[cfg(feature = "root-akeventcallbackdata")]
-impl AkEventCallbackData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkEventCallbackData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akeventcallbackdata")]impl AkEventCallbackData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akeventcallbackdata")]
-impl AkEventCallbackData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkEventCallbackData) , :: core :: stringify ! (new) ,)) ; < Self as IAkEventCallbackDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akeventcallbackdata")]impl AkEventCallbackData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkEventCallbackData), ::core::stringify!(new),));
+ <Self as IAkEventCallbackDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akeventcallbackdata")]

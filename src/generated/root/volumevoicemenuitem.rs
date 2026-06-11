@@ -4,42 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: configbasicmenuitem :: { ConfigBasicMenuItem , IConfigBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::configbasicmenuitem::{ConfigBasicMenuItem,IConfigBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/volumevoicemenuitem/VolumeVoiceMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "VolumeVoiceMenuItem")] # [parent (crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem)] pub struct VolumeVoiceMenuItem {
-# [static_field] # [rename (name = "EventName")] pub event_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "UnitNameF")] pub unit_name_f : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "UnitNameM")] pub unit_name_m : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "PlayWaitFrame")] pub play_wait_frame : i32 ,
-# [offset (136)] # [rename (name = "m_Hero")] pub m_hero : crate :: app :: unit :: Unit ,
-# [offset (144)] # [rename (name = "m_IsPlay")] pub m_is_play : bool ,
-# [offset (148)] # [rename (name = "m_WaitFrame")] pub m_wait_frame : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/volumevoicemenuitem/VolumeVoiceMenuItem.md"))]#[::unity2::class(namespace="",name="VolumeVoiceMenuItem")]#[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]pub struct VolumeVoiceMenuItem{#[static_field]#[rename(name="EventName")]pub event_name: ::unity2::Il2CppString, #[static_field]#[rename(name="UnitNameF")]pub unit_name_f: ::unity2::Il2CppString, #[static_field]#[rename(name="UnitNameM")]pub unit_name_m: ::unity2::Il2CppString, #[static_field]#[rename(name="PlayWaitFrame")]pub play_wait_frame:i32, #[offset(136)]#[rename(name="m_Hero")]pub m_hero:crate::app::unit::Unit, #[offset(144)]#[rename(name="m_IsPlay")]pub m_is_play:bool, #[offset(148)]#[rename(name="m_WaitFrame")]pub m_wait_frame:i32,}
 
 }
 
 #[cfg(feature = "root-volumevoicemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-volumevoicemenuitem")]
-pub trait IVolumeVoiceMenuItemMethods : IVolumeVoiceMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VolumeVoiceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeVoiceMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < VolumeVoiceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeVoiceMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < VolumeVoiceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeVoiceMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < VolumeVoiceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeVoiceMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c43a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < VolumeVoiceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeVoiceMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c45d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitContent()` overload"] fn init_content (self ,) -> () { unsafe { let __receiver = < VolumeVoiceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeVoiceMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHelpText()` overload"] fn set_help_text (self ,) -> () { unsafe { let __receiver = < VolumeVoiceMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeVoiceMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c42f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-volumevoicemenuitem")]pub trait IVolumeVoiceMenuItemMethods:IVolumeVoiceMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VolumeVoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c4160usize)as*mut u8,();
+(VolumeVoiceMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <VolumeVoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c4380usize)as*mut u8,();
+(VolumeVoiceMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <VolumeVoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c4390usize)as*mut u8,();
+(VolumeVoiceMenuItem)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <VolumeVoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c43a0usize)as*mut u8,();
+(VolumeVoiceMenuItem)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VolumeVoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c45d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(VolumeVoiceMenuItem)__receiver)}
+}
+#[doc="`InitContent()` overload"]fn init_content(self,)->(){unsafe{let __receiver= <VolumeVoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c4700usize)as*mut u8,();
+(VolumeVoiceMenuItem)__receiver)}
+}
+#[doc="`SetHelpText()` overload"]fn set_help_text(self,)->(){unsafe{let __receiver= <VolumeVoiceMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c42f0usize)as*mut u8,();
+(VolumeVoiceMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-volumevoicemenuitem")]
-impl < __T : IVolumeVoiceMenuItem > IVolumeVoiceMenuItemMethods for __T { }
+#[cfg(feature="root-volumevoicemenuitem")]impl<__T:IVolumeVoiceMenuItem>IVolumeVoiceMenuItemMethods for __T{}
 
-#[cfg(feature = "root-volumevoicemenuitem")]
-impl VolumeVoiceMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeVoiceMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeVoiceMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeVoiceMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeVoiceMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeVoiceMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn init_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeVoiceMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_help_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeVoiceMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-volumevoicemenuitem")]impl VolumeVoiceMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn init_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-volumevoicemenuitem")]
-impl VolumeVoiceMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VolumeVoiceMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IVolumeVoiceMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-volumevoicemenuitem")]impl VolumeVoiceMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VolumeVoiceMenuItem), ::core::stringify!(new),));
+ <Self as IVolumeVoiceMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-volumevoicemenuitem")]

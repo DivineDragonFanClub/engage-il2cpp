@@ -4,39 +4,149 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: resource_management :: exceptions :: resourcemanagerexception :: { IResourceManagerException , ResourceManagerException }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::resource_management::exceptions::resourcemanagerexception::{IResourceManagerException,ResourceManagerException}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/exceptions/unknownresourceproviderexception/UnknownResourceProviderException.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Exceptions" , name = "UnknownResourceProviderException")] # [parent (crate :: unity_engine :: resource_management :: exceptions :: resourcemanagerexception :: ResourceManagerException)] pub struct UnknownResourceProviderException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/exceptions/unknownresourceproviderexception/UnknownResourceProviderException.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Exceptions",name="UnknownResourceProviderException")]#[parent(crate::unity_engine::resource_management::exceptions::resourcemanagerexception::ResourceManagerException)]pub struct UnknownResourceProviderException{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UnknownResourceProviderException_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () , "get_Location" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: NAME , "get_Location" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_location { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () , "set_Location" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: NAME , "set_Location" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_message { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () , "get_Message" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: NAME , "get_Message" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-exceptions-unknownresourceproviderexception")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnknownResourceProviderException_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_location{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UnknownResourceProviderException as::unity2::ClassIdentity> ::class(),"get_Location",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,"get_Location",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_location{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UnknownResourceProviderException as::unity2::ClassIdentity> ::class(),"set_Location",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,"set_Location",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UnknownResourceProviderException as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UnknownResourceProviderException as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor_3{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UnknownResourceProviderException as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_message{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UnknownResourceProviderException as::unity2::ClassIdentity> ::class(),"get_Message",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,"get_Message",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UnknownResourceProviderException as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,"ToString",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception")]
-pub trait IUnknownResourceProviderExceptionMethods : IUnknownResourceProviderException { # [doc = "`get_Location()` overload"] fn get_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation { unsafe { let __receiver = < UnknownResourceProviderException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnknownResourceProviderException , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation = :: core :: mem :: transmute (__UnknownResourceProviderException_unity2_raw :: __lookup_get_location :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Location(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"] fn set_location (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> () { unsafe { let __receiver = < UnknownResourceProviderException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnknownResourceProviderException , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UnknownResourceProviderException_unity2_raw :: __lookup_set_location :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"] fn ctor (self , location : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> () { unsafe { let __receiver = < UnknownResourceProviderException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnknownResourceProviderException , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UnknownResourceProviderException_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (location) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < UnknownResourceProviderException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnknownResourceProviderException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UnknownResourceProviderException_unity2_raw :: __lookup_ctor_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_3 (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnknownResourceProviderException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnknownResourceProviderException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UnknownResourceProviderException_unity2_raw :: __lookup_ctor_3 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`get_Message()` overload"] fn get_message (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnknownResourceProviderException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnknownResourceProviderException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__UnknownResourceProviderException_unity2_raw :: __lookup_get_message :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnknownResourceProviderException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnknownResourceProviderException , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__UnknownResourceProviderException_unity2_raw :: __lookup_to_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-exceptions-unknownresourceproviderexception")]pub trait IUnknownResourceProviderExceptionMethods:IUnknownResourceProviderException{#[doc="`get_Location()` overload"]fn get_location(self,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UnknownResourceProviderException_unity2_raw::__lookup_get_location::get_method_info().method_ptr,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation;
+(UnknownResourceProviderException)__receiver)}
+}
+#[doc="`set_Location(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn set_location(self,value:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->(){unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UnknownResourceProviderException_unity2_raw::__lookup_set_location::get_method_info().method_ptr,();
+(UnknownResourceProviderException)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn ctor(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->(){unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UnknownResourceProviderException_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(UnknownResourceProviderException)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location))}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UnknownResourceProviderException_unity2_raw::__lookup_ctor_2::get_method_info().method_ptr,();
+(UnknownResourceProviderException)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_3(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UnknownResourceProviderException_unity2_raw::__lookup_ctor_3::get_method_info().method_ptr,();
+(UnknownResourceProviderException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`get_Message()` overload"]fn get_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UnknownResourceProviderException_unity2_raw::__lookup_get_message::get_method_info().method_ptr, ::unity2::Il2CppString;
+(UnknownResourceProviderException)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UnknownResourceProviderException_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(UnknownResourceProviderException)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception")]
-impl < __T : IUnknownResourceProviderException > IUnknownResourceProviderExceptionMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-exceptions-unknownresourceproviderexception")]impl<__T:IUnknownResourceProviderException>IUnknownResourceProviderExceptionMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception")]
-impl UnknownResourceProviderException { pub fn get_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_location_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnknownResourceProviderException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-resource_management-exceptions-unknownresourceproviderexception")]impl UnknownResourceProviderException{pub fn get_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception")]
-impl UnknownResourceProviderException {
-# [doc = "`.ctor(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` — overload selector"] pub fn new (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnknownResourceProviderException) , :: core :: stringify ! (new) ,)) ; < Self as IUnknownResourceProviderExceptionMethods > :: ctor (this , location) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnknownResourceProviderException) , :: core :: stringify ! (new_2) ,)) ; < Self as IUnknownResourceProviderExceptionMethods > :: ctor_2 (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_3 (message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnknownResourceProviderException) , :: core :: stringify ! (new_3) ,)) ; < Self as IUnknownResourceProviderExceptionMethods > :: ctor_3 (this , message) ; this }
+#[cfg(feature="unity_engine-resource_management-exceptions-unknownresourceproviderexception")]impl UnknownResourceProviderException{#[doc="`.ctor(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` — overload selector"]pub fn new(location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnknownResourceProviderException), ::core::stringify!(new),));
+ <Self as IUnknownResourceProviderExceptionMethods> ::ctor(this,location);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnknownResourceProviderException), ::core::stringify!(new_2),));
+ <Self as IUnknownResourceProviderExceptionMethods> ::ctor_2(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_3(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnknownResourceProviderException), ::core::stringify!(new_3),));
+ <Self as IUnknownResourceProviderExceptionMethods> ::ctor_3(this,message);
+this}
 }
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-unknownresourceproviderexception")]

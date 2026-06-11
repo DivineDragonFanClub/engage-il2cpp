@@ -4,40 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akbaseplatformsettings :: { AkBasePlatformSettings , IAkBasePlatformSettings }
- ;
- use crate :: root :: akcommonplatformsettings :: { AkCommonPlatformSettings , IAkCommonPlatformSettings }
- ;
- use crate :: root :: akwwiseinitializationsettings :: { AkWwiseInitializationSettings_CommonPlatformSettings , AkWwiseInitializationSettings_PlatformSettings , IAkWwiseInitializationSettings_CommonPlatformSettings , IAkWwiseInitializationSettings_PlatformSettings }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akbaseplatformsettings::{AkBasePlatformSettings,IAkBasePlatformSettings}
+;
+use crate::root::akcommonplatformsettings::{AkCommonPlatformSettings,IAkCommonPlatformSettings}
+;
+use crate::root::akwwiseinitializationsettings::{AkWwiseInitializationSettings_CommonPlatformSettings,AkWwiseInitializationSettings_PlatformSettings,IAkWwiseInitializationSettings_CommonPlatformSettings,IAkWwiseInitializationSettings_PlatformSettings}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akswitchsettings/AkSwitchSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSwitchSettings")] # [parent (crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings_CommonPlatformSettings)] pub struct AkSwitchSettings {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akswitchsettings/AkSwitchSettings.md"))]#[::unity2::class(namespace="",name="AkSwitchSettings")]#[parent(crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_CommonPlatformSettings)]pub struct AkSwitchSettings{}
 
 }
 
 #[cfg(feature = "root-akswitchsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akswitchsettings")]
-pub trait IAkSwitchSettingsMethods : IAkSwitchSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkSwitchSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSwitchSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d25c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akswitchsettings")]pub trait IAkSwitchSettingsMethods:IAkSwitchSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkSwitchSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d25c30usize)as*mut u8,();
+(AkSwitchSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akswitchsettings")]
-impl < __T : IAkSwitchSettings > IAkSwitchSettingsMethods for __T { }
+#[cfg(feature="root-akswitchsettings")]impl<__T:IAkSwitchSettings>IAkSwitchSettingsMethods for __T{}
 
-#[cfg(feature = "root-akswitchsettings")]
-impl AkSwitchSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSwitchSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-akswitchsettings")]impl AkSwitchSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-akswitchsettings")]
-impl AkSwitchSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSwitchSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkSwitchSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akswitchsettings")]impl AkSwitchSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSwitchSettings), ::core::stringify!(new),));
+ <Self as IAkSwitchSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akswitchsettings")]

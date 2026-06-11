@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/personinspector/PersonInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "PersonInspector")] # [parent (crate :: app :: mapinspector :: MapInspector)] pub struct PersonInspector {
-# [offset (48)] # [rename (name = "m_Person")] pub m_person : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/personinspector/PersonInspector.md"))]#[::unity2::class(namespace="App",name="PersonInspector")]#[parent(crate::app::mapinspector::MapInspector)]pub struct PersonInspector{#[offset(48)]#[rename(name="m_Person")]pub m_person:i32,}
 
 }
 
 #[cfg(feature = "app-personinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-personinspector")]
-pub trait IPersonInspectorMethods : IPersonInspector { # [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , kind : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector_Kind > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < PersonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonInspector , crate :: app :: mapinspector :: MapInspector_Kind , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a7b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`IsEanble(i32)` overload"] fn is_eanble (self , person : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < PersonInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PersonInspector , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f2a8c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-personinspector")]pub trait IPersonInspectorMethods:IPersonInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <PersonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a7b0usize)as*mut u8,();
+(PersonInspector)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`IsEanble(i32)` overload"]fn is_eanble(self,person:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <PersonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f2a8c0usize)as*mut u8,bool;
+(PersonInspector)__receiver,(i32)::core::convert::Into::into(person))}
+}
+}
 
-#[cfg(feature = "app-personinspector")]
-impl < __T : IPersonInspector > IPersonInspectorMethods for __T { }
+#[cfg(feature="app-personinspector")]impl<__T:IPersonInspector>IPersonInspectorMethods for __T{}
 
-#[cfg(feature = "app-personinspector")]
-impl PersonInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_eanble_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PersonInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-personinspector")]impl PersonInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_eanble_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-personinspector")]
-impl PersonInspector {
-# [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (kind : crate :: app :: mapinspector :: MapInspector_Kind , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PersonInspector) , :: core :: stringify ! (new) ,)) ; < Self as IPersonInspectorMethods > :: ctor (this , kind , args) ; this }
+#[cfg(feature="app-personinspector")]impl PersonInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(kind:crate::app::mapinspector::MapInspector_Kind,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PersonInspector), ::core::stringify!(new),));
+ <Self as IPersonInspectorMethods> ::ctor(this,kind,args);
+this}
 }
 
 #[cfg(feature = "app-personinspector")]

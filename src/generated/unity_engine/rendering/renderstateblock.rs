@@ -4,49 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/renderstateblock/RenderStateBlock.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RenderStateBlock {
-    pub m_blend_state: crate :: unity_engine :: rendering :: blendstate :: BlendState,
-    pub m_raster_state: crate :: unity_engine :: rendering :: rasterstate :: RasterState,
-    pub m_depth_state: crate :: unity_engine :: rendering :: depthstate :: DepthState,
-    pub m_stencil_state: crate :: unity_engine :: rendering :: stencilstate :: StencilState,
-    pub m_stencil_reference: i32,
-    pub m_mask: crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/renderstateblock/RenderStateBlock.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RenderStateBlock{pub m_blend_state:crate::unity_engine::rendering::blendstate::BlendState,pub m_raster_state:crate::unity_engine::rendering::rasterstate::RasterState,pub m_depth_state:crate::unity_engine::rendering::depthstate::DepthState,pub m_stencil_state:crate::unity_engine::rendering::stencilstate::StencilState,pub m_stencil_reference:i32,pub m_mask:crate::unity_engine::rendering::renderstatemask::RenderStateMask,}
+impl::unity2::ClassIdentity for RenderStateBlock{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="RenderStateBlock";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RenderStateBlock {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "RenderStateBlock";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RenderStateBlock {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RenderStateBlock{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -54,11 +26,53 @@ impl ::unity2::IlType for RenderStateBlock {
 #[cfg(feature = "unity_engine-rendering-renderstateblock-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-renderstateblock")]
-impl RenderStateBlock { # [doc = "`.ctor(crate::unity_engine::rendering::renderstatemask::RenderStateMask)` overload"] pub fn ctor (& mut self , mask : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f834b0usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: convert :: Into :: into (mask) , :: core :: option :: Option :: None) } } } # [doc = "`set_depthState(crate::unity_engine::rendering::depthstate::DepthState)` overload"] pub fn set_depth_state (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: depthstate :: DepthState >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , crate :: unity_engine :: rendering :: depthstate :: DepthState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83690usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_stencilState()` overload"] pub fn get_stencil_state (& mut self ,) -> crate :: unity_engine :: rendering :: stencilstate :: StencilState { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: stencilstate :: StencilState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f836a0usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: option :: Option :: None) } } } # [doc = "`set_stencilState(crate::unity_engine::rendering::stencilstate::StencilState)` overload"] pub fn set_stencil_state (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: stencilstate :: StencilState >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , crate :: unity_engine :: rendering :: stencilstate :: StencilState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f836b0usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_stencilReference()` overload"] pub fn get_stencil_reference (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f836c0usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: option :: Option :: None) } } } # [doc = "`set_stencilReference(i32)` overload"] pub fn set_stencil_reference (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f836d0usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_mask()` overload"] pub fn get_mask (& mut self ,) -> crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f836e0usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: option :: Option :: None) } } } # [doc = "`set_mask(crate::unity_engine::rendering::renderstatemask::RenderStateMask)` overload"] pub fn set_mask (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask >) -> () { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , crate :: unity_engine :: rendering :: renderstatemask :: RenderStateMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f836f0usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::renderstateblock::RenderStateBlock)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83700usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83960usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RenderStateBlock , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f83a30usize) as * mut u8) ; __inner (self as * mut RenderStateBlock , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-renderstateblock")]impl RenderStateBlock{#[doc="`.ctor(crate::unity_engine::rendering::renderstatemask::RenderStateMask)` overload"]pub fn ctor(&mut self,mask:impl::core::convert::Into<crate::unity_engine::rendering::renderstatemask::RenderStateMask>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f834b0usize)as*mut u8,();
+(*mut RenderStateBlock)self as*mut RenderStateBlock,(crate::unity_engine::rendering::renderstatemask::RenderStateMask)::core::convert::Into::into(mask))}
+}
+#[doc="`set_depthState(crate::unity_engine::rendering::depthstate::DepthState)` overload"]pub fn set_depth_state(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::depthstate::DepthState>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83690usize)as*mut u8,();
+(*mut RenderStateBlock)self as*mut RenderStateBlock,(crate::unity_engine::rendering::depthstate::DepthState)::core::convert::Into::into(value))}
+}
+#[doc="`get_stencilState()` overload"]pub fn get_stencil_state(&mut self,)->crate::unity_engine::rendering::stencilstate::StencilState{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f836a0usize)as*mut u8,crate::unity_engine::rendering::stencilstate::StencilState;
+(*mut RenderStateBlock)self as*mut RenderStateBlock)}
+}
+#[doc="`set_stencilState(crate::unity_engine::rendering::stencilstate::StencilState)` overload"]pub fn set_stencil_state(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::stencilstate::StencilState>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f836b0usize)as*mut u8,();
+(*mut RenderStateBlock)self as*mut RenderStateBlock,(crate::unity_engine::rendering::stencilstate::StencilState)::core::convert::Into::into(value))}
+}
+#[doc="`get_stencilReference()` overload"]pub fn get_stencil_reference(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f836c0usize)as*mut u8,i32;
+(*mut RenderStateBlock)self as*mut RenderStateBlock)}
+}
+#[doc="`set_stencilReference(i32)` overload"]pub fn set_stencil_reference(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f836d0usize)as*mut u8,();
+(*mut RenderStateBlock)self as*mut RenderStateBlock,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_mask()` overload"]pub fn get_mask(&mut self,)->crate::unity_engine::rendering::renderstatemask::RenderStateMask{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f836e0usize)as*mut u8,crate::unity_engine::rendering::renderstatemask::RenderStateMask;
+(*mut RenderStateBlock)self as*mut RenderStateBlock)}
+}
+#[doc="`set_mask(crate::unity_engine::rendering::renderstatemask::RenderStateMask)` overload"]pub fn set_mask(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::renderstatemask::RenderStateMask>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f836f0usize)as*mut u8,();
+(*mut RenderStateBlock)self as*mut RenderStateBlock,(crate::unity_engine::rendering::renderstatemask::RenderStateMask)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::renderstateblock::RenderStateBlock)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::renderstateblock::RenderStateBlock>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83700usize)as*mut u8,bool;
+(*mut RenderStateBlock)self as*mut RenderStateBlock,(crate::unity_engine::rendering::renderstateblock::RenderStateBlock)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83960usize)as*mut u8,bool;
+(*mut RenderStateBlock)self as*mut RenderStateBlock,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f83a30usize)as*mut u8,i32;
+(*mut RenderStateBlock)self as*mut RenderStateBlock)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-renderstateblock")]
-impl RenderStateBlock { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_depth_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_stencil_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_stencil_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_stencil_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_stencil_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RenderStateBlock as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-rendering-renderstateblock")]impl RenderStateBlock{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_depth_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_stencil_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_stencil_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_stencil_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_stencil_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "unity_engine-rendering-renderstateblock")]
 #[doc(hidden)]

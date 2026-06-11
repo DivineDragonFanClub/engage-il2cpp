@@ -4,164 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aivalue/AIValue.md"))] # [:: unity2 :: class (namespace = "App" , name = "AIValue")] # [parent (crate :: system :: object :: Object)] pub struct AIValue {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_V")] pub m_v : crate :: app :: aivalue :: AIValue_UnionValue ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aivalue/AIValue_Value.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIValue_Value{pub value:i32,}
+impl::unity2::ClassIdentity for AIValue_Value{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIValue.Value";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIValue_Value{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AIValue_Value{pub fn num()->Self{Self{value:4}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_Value.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AIValue_Value  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aivalue/AIValue_Order.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIValue_Order{pub value:i32,}
+impl::unity2::ClassIdentity for AIValue_Order{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIValue.Order";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIValue_Order{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AIValue_Order{pub fn cause()->Self{Self{value:0}
+}
+pub fn mind()->Self{Self{value:1}
+}
+pub fn attack()->Self{Self{value:2}
+}
+pub fn r#move()->Self{Self{value:3}
+}
+pub fn num()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for AIValue_Value  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aivalue/AIValue.md"))]#[::unity2::class(namespace="App",name="AIValue")]#[parent(crate::system::object::Object)]pub struct AIValue{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_V")]pub m_v:crate::app::aivalue::AIValue_UnionValue,}
 
-    const NAME: &'static str = "AIValue.Value";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aivalue/AIValue_UnionValue.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIValue_UnionValue{pub v8_0:u8,pub v8_1:u8,pub v16:i16,}
+impl::unity2::ClassIdentity for AIValue_UnionValue{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIValue.UnionValue";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for AIValue_Value  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AIValue_Value  {
-    pub fn num() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_UnionValue.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIValue_UnionValue {
-    pub v8_0: u8,
-    pub v8_1: u8,
-    pub v16: i16,
-}
-
-
-impl ::unity2::ClassIdentity for AIValue_UnionValue {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIValue.UnionValue";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for AIValue_UnionValue {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_Order.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AIValue_Order  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for AIValue_Order  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIValue.Order";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for AIValue_Order  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AIValue_Order  {
-    pub fn cause() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn mind() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn r#move() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 4 }
-
-    }
-
+impl::unity2::IlType for AIValue_UnionValue{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -169,32 +67,173 @@ impl  AIValue_Order  {
 #[cfg(feature = "app-aivalue-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-aivalue")]
-impl AIValue { # [doc = "`ParseCoord(::unity2::Il2CppString, *muti32, *muti32, *muti32)` overload"] pub fn parse_coord (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (i32 , i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut i32 , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3520usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`ParseNumber(::unity2::Il2CppString, *muti32, *muti32)` overload"] pub fn parse_number (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (i32 , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b36c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`SkipSpace(::unity2::Il2CppString, i32)` overload"] pub fn skip_space (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , index : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3ad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsNumber(u16)` overload"] pub fn is_number (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3b40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aivalue")]impl AIValue{#[doc="`ParseCoord(::unity2::Il2CppString, *muti32, *muti32, *muti32)` overload"]pub fn parse_coord(str:impl::core::convert::Into< ::unity2::Il2CppString>)->(i32,i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b3520usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(str),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr(),(*mut i32)__out_2.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+#[doc="`ParseNumber(::unity2::Il2CppString, *muti32, *muti32)` overload"]pub fn parse_number(str:impl::core::convert::Into< ::unity2::Il2CppString>)->(i32,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b36c0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(str),(*mut i32)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`SkipSpace(::unity2::Il2CppString, i32)` overload"]pub fn skip_space(str:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b3ad0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(str),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsNumber(u16)` overload"]pub fn is_number(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b3b40usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+}
 
-#[cfg(feature = "app-aivalue")]
-pub trait IAIValueMethods : IAIValue { # [doc = "`get_X()` overload"] fn get_x (self ,) -> i32 { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> i32 { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetValue()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetValue(i16)` overload"] fn set_value (self , v : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`SetPosition(u8, u8)` overload"] fn set_position (self , x : impl :: core :: convert :: Into < u8 > , z : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , u8 , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetPerson()` overload"] fn get_person (self ,) -> crate :: app :: persondata :: PersonData { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> crate :: app :: persondata :: PersonData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetJob()` overload"] fn get_job (self ,) -> crate :: app :: jobdata :: JobData { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobdata :: JobData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTerrain()` overload"] fn get_terrain (self ,) -> crate :: app :: terraindata_2 :: TerrainData_2 { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> crate :: app :: terraindata_2 :: TerrainData_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetItem()` overload"] fn get_item (self ,) -> crate :: app :: itemdata :: ItemData { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemdata :: ItemData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAI()` overload"] fn get_ai (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: aidata :: AIData > { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: aidata :: AIData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAIName()` overload"] fn get_ai_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsValidFlagValue()` overload"] fn is_valid_flag_value (self ,) -> bool { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFlagValue()` overload"] fn get_flag_value (self ,) -> i32 { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetValue(::unity2::Il2CppString)` overload"] fn set_value_2 (self , str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`IsSignal()` overload"] fn is_signal (self ,) -> bool { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b37e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDefault()` overload"] fn is_default (self ,) -> bool { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b37f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsMax()` overload"] fn is_max (self ,) -> bool { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSkip()` overload"] fn is_skip (self ,) -> bool { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsArgument()` overload"] fn is_argument (self ,) -> bool { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetArgument(crate::app::aivalue::AIValue_Order, crate::app::unit::Unit)` overload"] fn get_argument (self , order : impl :: core :: convert :: Into < crate :: app :: aivalue :: AIValue_Order > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> crate :: app :: aivalue :: AIValue { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , crate :: app :: aivalue :: AIValue_Order , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> crate :: app :: aivalue :: AIValue = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (order) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b38a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`GetString()` overload"] fn get_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b2920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AIValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AIValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b3b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-aivalue")]pub trait IAIValueMethods:IAIValue{#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2800usize)as*mut u8,i32;
+(AIValue)__receiver)}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2810usize)as*mut u8,i32;
+(AIValue)__receiver)}
+}
+#[doc="`GetValue()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2820usize)as*mut u8,i32;
+(AIValue)__receiver)}
+}
+#[doc="`SetValue(i16)` overload"]fn set_value(self,v:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2830usize)as*mut u8,();
+(AIValue)__receiver,(i16)::core::convert::Into::into(v))}
+}
+#[doc="`SetPosition(u8, u8)` overload"]fn set_position(self,x:impl::core::convert::Into<u8> ,z:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2840usize)as*mut u8,();
+(AIValue)__receiver,(u8)::core::convert::Into::into(x),(u8)::core::convert::Into::into(z))}
+}
+#[doc="`GetPerson()` overload"]fn get_person(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2850usize)as*mut u8,crate::app::persondata::PersonData;
+(AIValue)__receiver)}
+}
+#[doc="`GetJob()` overload"]fn get_job(self,)->crate::app::jobdata::JobData{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2990usize)as*mut u8,crate::app::jobdata::JobData;
+(AIValue)__receiver)}
+}
+#[doc="`GetTerrain()` overload"]fn get_terrain(self,)->crate::app::terraindata_2::TerrainData_2{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2a60usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
+(AIValue)__receiver)}
+}
+#[doc="`GetItem()` overload"]fn get_item(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2b30usize)as*mut u8,crate::app::itemdata::ItemData;
+(AIValue)__receiver)}
+}
+#[doc="`GetAI()` overload"]fn get_ai(self,)->crate::system::collections::generic::list_1::List_1<crate::app::aidata::AIData>{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2c00usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::aidata::AIData> ;
+(AIValue)__receiver)}
+}
+#[doc="`GetAIName()` overload"]fn get_ai_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2cd0usize)as*mut u8, ::unity2::Il2CppString;
+(AIValue)__receiver)}
+}
+#[doc="`IsValidFlagValue()` overload"]fn is_valid_flag_value(self,)->bool{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2d40usize)as*mut u8,bool;
+(AIValue)__receiver)}
+}
+#[doc="`GetFlagValue()` overload"]fn get_flag_value(self,)->i32{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2d50usize)as*mut u8,i32;
+(AIValue)__receiver)}
+}
+#[doc="`SetValue(::unity2::Il2CppString)` overload"]fn set_value_2(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2e80usize)as*mut u8, ::unity2::Il2CppString;
+(AIValue)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`IsSignal()` overload"]fn is_signal(self,)->bool{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b37e0usize)as*mut u8,bool;
+(AIValue)__receiver)}
+}
+#[doc="`IsDefault()` overload"]fn is_default(self,)->bool{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b37f0usize)as*mut u8,bool;
+(AIValue)__receiver)}
+}
+#[doc="`IsMax()` overload"]fn is_max(self,)->bool{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b3800usize)as*mut u8,bool;
+(AIValue)__receiver)}
+}
+#[doc="`IsSkip()` overload"]fn is_skip(self,)->bool{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b3810usize)as*mut u8,bool;
+(AIValue)__receiver)}
+}
+#[doc="`IsArgument()` overload"]fn is_argument(self,)->bool{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b3820usize)as*mut u8,bool;
+(AIValue)__receiver)}
+}
+#[doc="`GetArgument(crate::app::aivalue::AIValue_Order, crate::app::unit::Unit)` overload"]fn get_argument(self,order:impl::core::convert::Into<crate::app::aivalue::AIValue_Order> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::aivalue::AIValue{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b3840usize)as*mut u8,crate::app::aivalue::AIValue;
+(AIValue)__receiver,(crate::app::aivalue::AIValue_Order)::core::convert::Into::into(order),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b3860usize)as*mut u8,();
+(AIValue)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b38a0usize)as*mut u8,();
+(AIValue)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`GetString()` overload"]fn get_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b2920usize)as*mut u8, ::unity2::Il2CppString;
+(AIValue)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b3b60usize)as*mut u8,();
+(AIValue)__receiver)}
+}
+}
 
-#[cfg(feature = "app-aivalue")]
-impl < __T : IAIValue > IAIValueMethods for __T { }
+#[cfg(feature="app-aivalue")]impl<__T:IAIValue>IAIValueMethods for __T{}
 
-#[cfg(feature = "app-aivalue")]
-impl AIValue { pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_ai_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_ai_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_valid_flag_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_flag_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_value_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_signal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn parse_coord_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn parse_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn skip_space_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn is_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AIValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } }
+#[cfg(feature="app-aivalue")]impl AIValue{pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_ai_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_ai_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_valid_flag_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_flag_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_value_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_signal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn parse_coord_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn parse_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn skip_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn is_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+}
 
-#[cfg(feature = "app-aivalue")]
-impl AIValue {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AIValue) , :: core :: stringify ! (new) ,)) ; < Self as IAIValueMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-aivalue")]impl AIValue{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIValue), ::core::stringify!(new),));
+ <Self as IAIValueMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-aivalue")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AIValue_Value;
+    pub use super::AIValue_Order;
     pub use super::AIValue;
     pub use super::IAIValue;
     pub use super::IAIValueMethods;
-    pub use super::AIValue_Value;
     pub use super::AIValue_UnionValue;
-    pub use super::AIValue_Order;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

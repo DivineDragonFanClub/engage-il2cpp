@@ -4,30 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/nativeclassattribute/NativeClassAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "NativeClassAttribute")] pub struct NativeClassAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/nativeclassattribute/NativeClassAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="NativeClassAttribute")]pub struct NativeClassAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-nativeclassattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-nativeclassattribute")]
-pub trait INativeClassAttributeMethods : INativeClassAttribute { # [doc = "`set_QualifiedNativeName(::unity2::Il2CppString)` overload"] fn set_qualified_native_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NativeClassAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeClassAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f37c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_Declaration(::unity2::Il2CppString)` overload"] fn set_declaration (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NativeClassAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeClassAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f37c60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , qualified_cpp_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NativeClassAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeClassAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f37c70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (qualified_cpp_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor_2 (self , qualified_cpp_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , declaration : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NativeClassAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeClassAttribute , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f37d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (qualified_cpp_name) , :: core :: convert :: Into :: into (declaration) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-nativeclassattribute")]pub trait INativeClassAttributeMethods:INativeClassAttribute{#[doc="`set_QualifiedNativeName(::unity2::Il2CppString)` overload"]fn set_qualified_native_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeClassAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37c50usize)as*mut u8,();
+(NativeClassAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`set_Declaration(::unity2::Il2CppString)` overload"]fn set_declaration(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeClassAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37c60usize)as*mut u8,();
+(NativeClassAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,qualified_cpp_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeClassAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37c70usize)as*mut u8,();
+(NativeClassAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(qualified_cpp_name))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor_2(self,qualified_cpp_name:impl::core::convert::Into< ::unity2::Il2CppString> ,declaration:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeClassAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37d00usize)as*mut u8,();
+(NativeClassAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(qualified_cpp_name),(::unity2::Il2CppString)::core::convert::Into::into(declaration))}
+}
+}
 
-#[cfg(feature = "unity_engine-nativeclassattribute")]
-impl < __T : INativeClassAttribute > INativeClassAttributeMethods for __T { }
+#[cfg(feature="unity_engine-nativeclassattribute")]impl<__T:INativeClassAttribute>INativeClassAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-nativeclassattribute")]
-impl NativeClassAttribute { pub fn set_qualified_native_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeClassAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_declaration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeClassAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeClassAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeClassAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-nativeclassattribute")]impl NativeClassAttribute{pub fn set_qualified_native_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_declaration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-nativeclassattribute")]
-impl NativeClassAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (qualified_cpp_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativeClassAttribute) , :: core :: stringify ! (new) ,)) ; < Self as INativeClassAttributeMethods > :: ctor (this , qualified_cpp_name) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new_2 (qualified_cpp_name : :: unity2 :: Il2CppString , declaration : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativeClassAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as INativeClassAttributeMethods > :: ctor_2 (this , qualified_cpp_name , declaration) ; this }
+#[cfg(feature="unity_engine-nativeclassattribute")]impl NativeClassAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(qualified_cpp_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativeClassAttribute), ::core::stringify!(new),));
+ <Self as INativeClassAttributeMethods> ::ctor(this,qualified_cpp_name);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new_2(qualified_cpp_name: ::unity2::Il2CppString,declaration: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativeClassAttribute), ::core::stringify!(new_2),));
+ <Self as INativeClassAttributeMethods> ::ctor_2(this,qualified_cpp_name,declaration);
+this}
 }
 
 #[cfg(feature = "unity_engine-nativeclassattribute")]

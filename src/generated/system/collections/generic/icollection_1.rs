@@ -4,31 +4,23 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/icollection_1/ICollection_1.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "ICollection`1")] pub struct ICollection_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/icollection_1/ICollection_1.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="ICollection`1")]pub struct ICollection_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "system-collections-generic-icollection_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-icollection_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ICollection_1 < T0 > {
-# [doc = "`get_Count()` overload"] # [method (name = "get_Count" , args = 0 , abstract_dispatch)] pub fn get_count (self ,) -> i32 ;
-
-# [doc = "`get_IsReadOnly()` overload"] # [method (name = "get_IsReadOnly" , args = 0 , abstract_dispatch)] pub fn get_is_read_only (self ,) -> bool ;
-
-# [doc = "`Add(T0)` overload"] # [method (name = "Add" , args = 1 , abstract_dispatch)] pub fn add (self , item : T0) -> () ;
-
-# [doc = "`Clear()` overload"] # [method (name = "Clear" , args = 0 , abstract_dispatch)] pub fn clear (self ,) -> () ;
-
-# [doc = "`Contains(T0)` overload"] # [method (name = "Contains" , args = 1 , abstract_dispatch)] pub fn contains (self , item : T0) -> bool ;
-
-# [doc = "`CopyTo(::unity2::Array<T0>, i32)` overload"] # [method (name = "CopyTo" , args = 2 , abstract_dispatch)] pub fn copy_to (self , array : :: unity2 :: Array < T0 > , array_index : i32) -> () ;
-
-# [doc = "`Remove(T0)` overload"] # [method (name = "Remove" , args = 1 , abstract_dispatch)] pub fn remove (self , item : T0) -> bool ;
+#[cfg(feature="system-collections-generic-icollection_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>ICollection_1<T0>{#[doc="`get_Count()` overload"]#[method(name="get_Count",args=0,abstract_dispatch)]pub fn get_count(self,)->i32;
+ #[doc="`get_IsReadOnly()` overload"]#[method(name="get_IsReadOnly",args=0,abstract_dispatch)]pub fn get_is_read_only(self,)->bool;
+ #[doc="`Add(T0)` overload"]#[method(name="Add",args=1,abstract_dispatch)]pub fn add(self,item:T0)->();
+ #[doc="`Clear()` overload"]#[method(name="Clear",args=0,abstract_dispatch)]pub fn clear(self,)->();
+ #[doc="`Contains(T0)` overload"]#[method(name="Contains",args=1,abstract_dispatch)]pub fn contains(self,item:T0)->bool;
+ #[doc="`CopyTo(::unity2::Array<T0>, i32)` overload"]#[method(name="CopyTo",args=2,abstract_dispatch)]pub fn copy_to(self,array: ::unity2::Array<T0> ,array_index:i32)->();
+ #[doc="`Remove(T0)` overload"]#[method(name="Remove",args=1,abstract_dispatch)]pub fn remove(self,item:T0)->bool;
 }
 
 #[cfg(feature = "system-collections-generic-icollection_1")]

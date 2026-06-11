@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/damagesound/DamageSound.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "DamageSound")] # [parent (crate :: system :: object :: Object)] pub struct DamageSound {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/damagesound/DamageSound.md"))]#[::unity2::class(namespace="Combat",name="DamageSound")]#[parent(crate::system::object::Object)]pub struct DamageSound{}
 
 }
 
 #[cfg(feature = "combat-damagesound-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-damagesound")]
-impl DamageSound { # [doc = "`Play(crate::combat::character::Character, crate::combat::character::Character, crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` overload"] pub fn play (attacker : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , damager : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , crate :: combat :: character :: Character , crate :: combat :: phase :: Phase , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f63d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (attacker) , :: core :: convert :: Into :: into (damager) , :: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-damagesound")]impl DamageSound{#[doc="`Play(crate::combat::character::Character, crate::combat::character::Character, crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` overload"]pub fn play(attacker:impl::core::convert::Into<crate::combat::character::Character> ,damager:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f63d0usize)as*mut u8,();
+(crate::combat::character::Character)::core::convert::Into::into(attacker),(crate::combat::character::Character)::core::convert::Into::into(damager),(crate::combat::phase::Phase)::core::convert::Into::into(phase),(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+}
 
-#[cfg(feature = "combat-damagesound")]
-impl DamageSound { pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DamageSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-damagesound")]impl DamageSound{pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-damagesound")]
 #[doc(hidden)]

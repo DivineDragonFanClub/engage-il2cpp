@@ -4,87 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: { IScriptableRendererData , ScriptableRendererData }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::{IScriptableRendererData,ScriptableRendererData}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "ReflectionRendererData.ShaderResources")] # [parent (crate :: system :: object :: Object)] pub struct ReflectionRendererData_ShaderResources {
-# [offset (16)] # [rename (name = "blitPS")] pub blit_ps : crate :: unity_engine :: shader :: Shader ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="ReflectionRendererData")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]pub struct ReflectionRendererData{#[offset(48)]#[rename(name="postProcessData")]pub post_process_data:crate::unity_engine::rendering::universal::postprocessdata::PostProcessData, #[offset(56)]#[rename(name="shaders")]pub shaders:crate::unity_engine::rendering::universal::custom::reflectionrendererdata::ReflectionRendererData_ShaderResources, #[offset(64)]#[rename(name="m_OpaqueLayerMask")]pub m_opaque_layer_mask:crate::unity_engine::layermask::LayerMask, #[offset(68)]#[rename(name="m_TransparentLayerMask")]pub m_transparent_layer_mask:crate::unity_engine::layermask::LayerMask, #[offset(72)]#[rename(name="m_ReflectionTarget")]pub m_reflection_target:crate::unity_engine::rendering::universal::custom::reflectionrendererdata::ReflectionRendererData_ReflectionTarget,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="ReflectionRendererData.ShaderResources")]#[parent(crate::system::object::Object)]pub struct ReflectionRendererData_ShaderResources{#[offset(16)]#[rename(name="blitPS")]pub blit_ps:crate::unity_engine::shader::Shader,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ReflectionTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ReflectionRendererData_ReflectionTarget{pub value:i32,}
+impl::unity2::ClassIdentity for ReflectionRendererData_ReflectionTarget{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Custom";
+const NAME: &'static str="ReflectionRendererData.ReflectionTarget";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ReflectionTarget.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ReflectionRendererData_ReflectionTarget  {
-    pub value: i32,
+impl::unity2::IlType for ReflectionRendererData_ReflectionTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for ReflectionRendererData_ReflectionTarget  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom";
-
-    const NAME: &'static str = "ReflectionRendererData.ReflectionTarget";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl ReflectionRendererData_ReflectionTarget{pub fn chara()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for ReflectionRendererData_ReflectionTarget  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn chara_map()->Self{Self{value:1}
 }
-
-
-impl  ReflectionRendererData_ReflectionTarget  {
-    pub fn chara() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn chara_map() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn chara_special_reflection() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn chara_special_reflection()->Self{Self{value:2}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "ReflectionRendererData")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData)] pub struct ReflectionRendererData {
-# [offset (48)] # [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
-# [offset (56)] # [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ShaderResources ,
-# [offset (64)] # [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [offset (68)] # [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
-# [offset (72)] # [rename (name = "m_ReflectionTarget")] pub m_reflection_target : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget ,
 }
 
 }
@@ -92,44 +47,87 @@ impl  ReflectionRendererData_ReflectionTarget  {
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-pub trait IReflectionRendererData_ShaderResourcesMethods : IReflectionRendererData_ShaderResources { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReflectionRendererData_ShaderResources as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionRendererData_ShaderResources , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb8660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-impl < __T : IReflectionRendererData_ShaderResources > IReflectionRendererData_ShaderResourcesMethods for __T { }
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-impl ReflectionRendererData_ShaderResources { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionRendererData_ShaderResources as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-impl ReflectionRendererData_ShaderResources {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReflectionRendererData_ShaderResources) , :: core :: stringify ! (new) ,)) ; < Self as IReflectionRendererData_ShaderResourcesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-reflectionrendererdata")]pub trait IReflectionRendererDataMethods:IReflectionRendererData{#[doc="`Create()` overload"]fn create(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <ReflectionRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31a5e90usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+(ReflectionRendererData)__receiver)}
+}
+#[doc="`get_opaqueLayerMask()` overload"]fn get_opaque_layer_mask(self,)->crate::unity_engine::layermask::LayerMask{unsafe{let __receiver= <ReflectionRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31a5f00usize)as*mut u8,crate::unity_engine::layermask::LayerMask;
+(ReflectionRendererData)__receiver)}
+}
+#[doc="`set_opaqueLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]fn set_opaque_layer_mask(self,value:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->(){unsafe{let __receiver= <ReflectionRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31a5f10usize)as*mut u8,();
+(ReflectionRendererData)__receiver,(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_transparentLayerMask()` overload"]fn get_transparent_layer_mask(self,)->crate::unity_engine::layermask::LayerMask{unsafe{let __receiver= <ReflectionRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31a5f40usize)as*mut u8,crate::unity_engine::layermask::LayerMask;
+(ReflectionRendererData)__receiver)}
+}
+#[doc="`set_transparentLayerMask(crate::unity_engine::layermask::LayerMask)` overload"]fn set_transparent_layer_mask(self,value:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->(){unsafe{let __receiver= <ReflectionRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31a5f50usize)as*mut u8,();
+(ReflectionRendererData)__receiver,(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(value))}
+}
+#[doc="`get_reflectionTarget()` overload"]fn get_reflection_target(self,)->crate::unity_engine::rendering::universal::custom::reflectionrendererdata::ReflectionRendererData_ReflectionTarget{unsafe{let __receiver= <ReflectionRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31a5f80usize)as*mut u8,crate::unity_engine::rendering::universal::custom::reflectionrendererdata::ReflectionRendererData_ReflectionTarget;
+(ReflectionRendererData)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ReflectionRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31a5f90usize)as*mut u8,();
+(ReflectionRendererData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ReflectionRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31a5fa0usize)as*mut u8,();
+(ReflectionRendererData)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-pub trait IReflectionRendererDataMethods : IReflectionRendererData { # [doc = "`Create()` overload"] fn create (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a5e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_opaqueLayerMask()` overload"] fn get_opaque_layer_mask (self ,) -> crate :: unity_engine :: layermask :: LayerMask { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a5f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_opaqueLayerMask(crate::unity_engine::layermask::LayerMask)` overload"] fn set_opaque_layer_mask (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionRendererData , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a5f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_transparentLayerMask()` overload"] fn get_transparent_layer_mask (self ,) -> crate :: unity_engine :: layermask :: LayerMask { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a5f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_transparentLayerMask(crate::unity_engine::layermask::LayerMask)` overload"] fn set_transparent_layer_mask (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> () { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionRendererData , crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a5f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_reflectionTarget()` overload"] fn get_reflection_target (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a5f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a5f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ReflectionRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ReflectionRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31a5fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-reflectionrendererdata")]impl<__T:IReflectionRendererData>IReflectionRendererDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-impl < __T : IReflectionRendererData > IReflectionRendererDataMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-reflectionrendererdata")]impl ReflectionRendererData{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_opaque_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_opaque_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_transparent_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_transparent_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_reflection_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-impl ReflectionRendererData { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_opaque_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_opaque_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_transparent_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_transparent_layer_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_reflection_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ReflectionRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-reflectionrendererdata")]impl ReflectionRendererData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReflectionRendererData), ::core::stringify!(new),));
+ <Self as IReflectionRendererDataMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
-impl ReflectionRendererData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ReflectionRendererData) , :: core :: stringify ! (new) ,)) ; < Self as IReflectionRendererDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-reflectionrendererdata")]pub trait IReflectionRendererData_ShaderResourcesMethods:IReflectionRendererData_ShaderResources{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ReflectionRendererData_ShaderResources as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb8660usize)as*mut u8,();
+(ReflectionRendererData_ShaderResources)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-custom-reflectionrendererdata")]impl<__T:IReflectionRendererData_ShaderResources>IReflectionRendererData_ShaderResourcesMethods for __T{}
+
+#[cfg(feature="unity_engine-rendering-universal-custom-reflectionrendererdata")]impl ReflectionRendererData_ShaderResources{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-custom-reflectionrendererdata")]impl ReflectionRendererData_ShaderResources{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ReflectionRendererData_ShaderResources), ::core::stringify!(new),));
+ <Self as IReflectionRendererData_ShaderResourcesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ReflectionRendererData;
+    pub use super::IReflectionRendererData;
+    pub use super::IReflectionRendererDataMethods;
     pub use super::ReflectionRendererData_ShaderResources;
     pub use super::IReflectionRendererData_ShaderResources;
     pub use super::IReflectionRendererData_ShaderResourcesMethods;
     pub use super::ReflectionRendererData_ReflectionTarget;
-    pub use super::ReflectionRendererData;
-    pub use super::IReflectionRendererData;
-    pub use super::IReflectionRendererDataMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

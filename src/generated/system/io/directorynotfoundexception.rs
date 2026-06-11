@@ -4,34 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: ioexception :: { IIOException , IOException }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::ioexception::{IIOException,IOException}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directorynotfoundexception/DirectoryNotFoundException.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "DirectoryNotFoundException")] # [parent (crate :: system :: io :: ioexception :: IOException)] pub struct DirectoryNotFoundException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/directorynotfoundexception/DirectoryNotFoundException.md"))]#[::unity2::class(namespace="System.IO",name="DirectoryNotFoundException")]#[parent(crate::system::io::ioexception::IOException)]pub struct DirectoryNotFoundException{}
 
 }
 
 #[cfg(feature = "system-io-directorynotfoundexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-directorynotfoundexception")]
-pub trait IDirectoryNotFoundExceptionMethods : IDirectoryNotFoundException { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DirectoryNotFoundException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DirectoryNotFoundException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x363e4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DirectoryNotFoundException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DirectoryNotFoundException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x363d550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-directorynotfoundexception")]pub trait IDirectoryNotFoundExceptionMethods:IDirectoryNotFoundException{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DirectoryNotFoundException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x363e4e0usize)as*mut u8,();
+(DirectoryNotFoundException)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DirectoryNotFoundException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x363d550usize)as*mut u8,();
+(DirectoryNotFoundException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+}
 
-#[cfg(feature = "system-io-directorynotfoundexception")]
-impl < __T : IDirectoryNotFoundException > IDirectoryNotFoundExceptionMethods for __T { }
+#[cfg(feature="system-io-directorynotfoundexception")]impl<__T:IDirectoryNotFoundException>IDirectoryNotFoundExceptionMethods for __T{}
 
-#[cfg(feature = "system-io-directorynotfoundexception")]
-impl DirectoryNotFoundException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DirectoryNotFoundException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DirectoryNotFoundException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-io-directorynotfoundexception")]impl DirectoryNotFoundException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "system-io-directorynotfoundexception")]
-impl DirectoryNotFoundException {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DirectoryNotFoundException) , :: core :: stringify ! (new) ,)) ; < Self as IDirectoryNotFoundExceptionMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DirectoryNotFoundException) , :: core :: stringify ! (new_2) ,)) ; < Self as IDirectoryNotFoundExceptionMethods > :: ctor_2 (this , message) ; this }
+#[cfg(feature="system-io-directorynotfoundexception")]impl DirectoryNotFoundException{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DirectoryNotFoundException), ::core::stringify!(new),));
+ <Self as IDirectoryNotFoundExceptionMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DirectoryNotFoundException), ::core::stringify!(new_2),));
+ <Self as IDirectoryNotFoundExceptionMethods> ::ctor_2(this,message);
+this}
 }
 
 #[cfg(feature = "system-io-directorynotfoundexception")]

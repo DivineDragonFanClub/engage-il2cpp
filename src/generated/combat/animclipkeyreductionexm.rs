@@ -4,23 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animclipkeyreductionexm/AnimClipKeyReductionExM.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AnimClipKeyReductionExM")] # [parent (crate :: system :: object :: Object)] pub struct AnimClipKeyReductionExM {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/animclipkeyreductionexm/AnimClipKeyReductionExM.md"))]#[::unity2::class(namespace="Combat",name="AnimClipKeyReductionExM")]#[parent(crate::system::object::Object)]pub struct AnimClipKeyReductionExM{}
 
 }
 
 #[cfg(feature = "combat-animclipkeyreductionexm-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-animclipkeyreductionexm")]
-impl AnimClipKeyReductionExM { # [doc = "`GetValueFromTime(crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, f32)` overload"] pub fn get_value_from_time (key1 : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , key2 : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , time : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: keyframe :: Keyframe , crate :: unity_engine :: keyframe :: Keyframe , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e1d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key1) , :: core :: convert :: Into :: into (key2) , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`IsInterpolationValue(crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, f32)` overload"] pub fn is_interpolation_value (key1 : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , key2 : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , comp : impl :: core :: convert :: Into < crate :: unity_engine :: keyframe :: Keyframe > , eps : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: keyframe :: Keyframe , crate :: unity_engine :: keyframe :: Keyframe , crate :: unity_engine :: keyframe :: Keyframe , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key1) , :: core :: convert :: Into :: into (key2) , :: core :: convert :: Into :: into (comp) , :: core :: convert :: Into :: into (eps) , :: core :: option :: Option :: None) } } } # [doc = "`GetDeleteKeyIndex(::unity2::Array<crate::unity_engine::keyframe::Keyframe>, f32)` overload"] pub fn get_delete_key_index (keys : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: keyframe :: Keyframe > > , eps : impl :: core :: convert :: Into < f32 >) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < i32 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: keyframe :: Keyframe > , f32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (keys) , :: core :: convert :: Into :: into (eps) , :: core :: option :: Option :: None) } } } # [doc = "`KeyReduction(crate::unity_engine::animationcurve::AnimationCurve, f32)` overload"] pub fn key_reduction (in_curve : impl :: core :: convert :: Into < crate :: unity_engine :: animationcurve :: AnimationCurve > , eps : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animationcurve :: AnimationCurve , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e5c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_curve) , :: core :: convert :: Into :: into (eps) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-animclipkeyreductionexm")]impl AnimClipKeyReductionExM{#[doc="`GetValueFromTime(crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, f32)` overload"]pub fn get_value_from_time(key1:impl::core::convert::Into<crate::unity_engine::keyframe::Keyframe> ,key2:impl::core::convert::Into<crate::unity_engine::keyframe::Keyframe> ,time:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e1d0usize)as*mut u8,f32;
+(crate::unity_engine::keyframe::Keyframe)::core::convert::Into::into(key1),(crate::unity_engine::keyframe::Keyframe)::core::convert::Into::into(key2),(f32)::core::convert::Into::into(time))}
+}
+#[doc="`IsInterpolationValue(crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, crate::unity_engine::keyframe::Keyframe, f32)` overload"]pub fn is_interpolation_value(key1:impl::core::convert::Into<crate::unity_engine::keyframe::Keyframe> ,key2:impl::core::convert::Into<crate::unity_engine::keyframe::Keyframe> ,comp:impl::core::convert::Into<crate::unity_engine::keyframe::Keyframe> ,eps:impl::core::convert::Into<f32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e330usize)as*mut u8,bool;
+(crate::unity_engine::keyframe::Keyframe)::core::convert::Into::into(key1),(crate::unity_engine::keyframe::Keyframe)::core::convert::Into::into(key2),(crate::unity_engine::keyframe::Keyframe)::core::convert::Into::into(comp),(f32)::core::convert::Into::into(eps))}
+}
+#[doc="`GetDeleteKeyIndex(::unity2::Array<crate::unity_engine::keyframe::Keyframe>, f32)` overload"]pub fn get_delete_key_index(keys:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::keyframe::Keyframe> > ,eps:impl::core::convert::Into<f32>)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e530usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<i32> ;
+(::unity2::Array<crate::unity_engine::keyframe::Keyframe>)::core::convert::Into::into(keys),(f32)::core::convert::Into::into(eps))}
+}
+#[doc="`KeyReduction(crate::unity_engine::animationcurve::AnimationCurve, f32)` overload"]pub fn key_reduction(in_curve:impl::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve> ,eps:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e5c0usize)as*mut u8,();
+(crate::unity_engine::animationcurve::AnimationCurve)::core::convert::Into::into(in_curve),(f32)::core::convert::Into::into(eps))}
+}
+}
 
-#[cfg(feature = "combat-animclipkeyreductionexm")]
-impl AnimClipKeyReductionExM { pub fn get_value_from_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_interpolation_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_delete_key_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn key_reduction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimClipKeyReductionExM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-animclipkeyreductionexm")]impl AnimClipKeyReductionExM{pub fn get_value_from_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_interpolation_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_delete_key_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn key_reduction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "combat-animclipkeyreductionexm")]
 #[doc(hidden)]

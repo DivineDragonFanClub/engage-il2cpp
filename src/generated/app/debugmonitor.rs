@@ -4,43 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmonitor/DebugMonitor.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugMonitor")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: debugmonitor :: DebugMonitor >)] pub struct DebugMonitor {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmonitor/DebugMonitor.md"))]#[::unity2::class(namespace="App",name="DebugMonitor")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::debugmonitor::DebugMonitor>)]pub struct DebugMonitor{}
 
 }
 
 #[cfg(feature = "app-debugmonitor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debugmonitor")]
-impl DebugMonitor { # [doc = "`IsShow()` overload"] pub fn is_show () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0ee70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugmonitor")]impl DebugMonitor{#[doc="`IsShow()` overload"]pub fn is_show()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a0ee70usize)as*mut u8,bool;
+)}
+}
+}
 
-#[cfg(feature = "app-debugmonitor")]
-pub trait IDebugMonitorMethods : IDebugMonitor { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugMonitor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMonitor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0ee80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugmonitor")]pub trait IDebugMonitorMethods:IDebugMonitor{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugMonitor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0ee80usize)as*mut u8,();
+(DebugMonitor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-debugmonitor")]
-impl < __T : IDebugMonitor > IDebugMonitorMethods for __T { }
+#[cfg(feature="app-debugmonitor")]impl<__T:IDebugMonitor>IDebugMonitorMethods for __T{}
 
-#[cfg(feature = "app-debugmonitor")]
-impl DebugMonitor { pub fn is_show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMonitor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-debugmonitor")]impl DebugMonitor{pub fn is_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-debugmonitor")]
-impl DebugMonitor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugMonitor) , :: core :: stringify ! (new) ,)) ; < Self as IDebugMonitorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debugmonitor")]impl DebugMonitor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugMonitor), ::core::stringify!(new),));
+ <Self as IDebugMonitorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debugmonitor")]

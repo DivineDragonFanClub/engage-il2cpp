@@ -4,65 +4,101 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: events :: unityevent :: { IUnityEvent , UnityEvent }
- ;
- use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: selectable :: { ISelectable , Selectable }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::events::unityevent::{IUnityEvent,UnityEvent}
+;
+use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/button/Button.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Button")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Button {
-# [offset (248)] # [rename (name = "m_OnClick")] pub m_on_click : crate :: unity_engine :: ui :: button :: Button_ButtonClickedEvent ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/button/Button.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Button")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Button{#[offset(248)]#[rename(name="m_OnClick")]pub m_on_click:crate::unity_engine::ui::button::Button_ButtonClickedEvent,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/button/Button_ButtonClickedEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Button.ButtonClickedEvent")] # [parent (crate :: unity_engine :: events :: unityevent :: UnityEvent)] pub struct Button_ButtonClickedEvent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/button/Button_ButtonClickedEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Button.ButtonClickedEvent")]#[parent(crate::unity_engine::events::unityevent::UnityEvent)]pub struct Button_ButtonClickedEvent{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-button-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-button")]
-pub trait IButtonMethods : IButton { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Button as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Button , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_onClick()` overload"] fn get_on_click (self ,) -> crate :: unity_engine :: ui :: button :: Button_ButtonClickedEvent { unsafe { let __receiver = < Button as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Button , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: button :: Button_ButtonClickedEvent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_onClick(crate::unity_engine::ui::button::Button_ButtonClickedEvent)` overload"] fn set_on_click (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: button :: Button_ButtonClickedEvent >) -> () { unsafe { let __receiver = < Button as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Button , crate :: unity_engine :: ui :: button :: Button_ButtonClickedEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Press()` overload"] fn press (self ,) -> () { unsafe { let __receiver = < Button as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Button , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_click (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Button as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Button , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c3b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn on_submit (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < Button as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Button , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnFinishSubmit()` overload"] fn on_finish_submit (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Button as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Button , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-ui-button")]
-impl < __T : IButton > IButtonMethods for __T { }
-
-#[cfg(feature = "unity_engine-ui-button")]
-impl Button { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Button as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_on_click_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Button as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_on_click_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Button as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Button as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_pointer_click_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Button as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_submit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Button as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_finish_submit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Button as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "unity_engine-ui-button")]
-impl Button {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Button) , :: core :: stringify ! (new) ,)) ; < Self as IButtonMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-button")]pub trait IButtonMethods:IButton{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c240usize)as*mut u8,();
+(Button)__receiver)}
+}
+#[doc="`get_onClick()` overload"]fn get_on_click(self,)->crate::unity_engine::ui::button::Button_ButtonClickedEvent{unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c2f0usize)as*mut u8,crate::unity_engine::ui::button::Button_ButtonClickedEvent;
+(Button)__receiver)}
+}
+#[doc="`set_onClick(crate::unity_engine::ui::button::Button_ButtonClickedEvent)` overload"]fn set_on_click(self,value:impl::core::convert::Into<crate::unity_engine::ui::button::Button_ButtonClickedEvent>)->(){unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c300usize)as*mut u8,();
+(Button)__receiver,(crate::unity_engine::ui::button::Button_ButtonClickedEvent)::core::convert::Into::into(value))}
+}
+#[doc="`Press()` overload"]fn press(self,)->(){unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c310usize)as*mut u8,();
+(Button)__receiver)}
+}
+#[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c3b0usize)as*mut u8,();
+(Button)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_submit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c450usize)as*mut u8,();
+(Button)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnFinishSubmit()` overload"]fn on_finish_submit(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Button as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c5a0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(Button)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-ui-button")]
-pub trait IButton_ButtonClickedEventMethods : IButton_ButtonClickedEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Button_ButtonClickedEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Button_ButtonClickedEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0be40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-button")]impl<__T:IButton>IButtonMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-button")]
-impl < __T : IButton_ButtonClickedEvent > IButton_ButtonClickedEventMethods for __T { }
+#[cfg(feature="unity_engine-ui-button")]impl Button{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_on_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_on_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_pointer_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_submit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_finish_submit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-ui-button")]
-impl Button_ButtonClickedEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Button_ButtonClickedEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-ui-button")]impl Button{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Button), ::core::stringify!(new),));
+ <Self as IButtonMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-ui-button")]
-impl Button_ButtonClickedEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Button_ButtonClickedEvent) , :: core :: stringify ! (new) ,)) ; < Self as IButton_ButtonClickedEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-button")]pub trait IButton_ButtonClickedEventMethods:IButton_ButtonClickedEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Button_ButtonClickedEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0be40usize)as*mut u8,();
+(Button_ButtonClickedEvent)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-button")]impl<__T:IButton_ButtonClickedEvent>IButton_ButtonClickedEventMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-button")]impl Button_ButtonClickedEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-button")]impl Button_ButtonClickedEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Button_ButtonClickedEvent), ::core::stringify!(new),));
+ <Self as IButton_ButtonClickedEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-button")]

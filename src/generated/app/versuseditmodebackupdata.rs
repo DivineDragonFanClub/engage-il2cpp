@@ -4,35 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versuseditmodebackupdata/VersusEditModeBackupData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusEditModeBackupData")] # [parent (crate :: system :: object :: Object)] pub struct VersusEditModeBackupData {
-# [static_field] # [rename (name = "Version")] pub version : u8 ,
-# [static_field] # [rename (name = "BufferSize")] pub buffer_size : i32 ,
-# [offset (16)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
-# [offset (24)] # [rename (name = "m_Stream")] pub m_stream : crate :: app :: stream_2 :: Stream_2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versuseditmodebackupdata/VersusEditModeBackupData.md"))]#[::unity2::class(namespace="App",name="VersusEditModeBackupData")]#[parent(crate::system::object::Object)]pub struct VersusEditModeBackupData{#[static_field]#[rename(name="Version")]pub version:u8, #[static_field]#[rename(name="BufferSize")]pub buffer_size:i32, #[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::Array<u8> , #[offset(24)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2,}
 
 }
 
 #[cfg(feature = "app-versuseditmodebackupdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versuseditmodebackupdata")]
-pub trait IVersusEditModeBackupDataMethods : IVersusEditModeBackupData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusEditModeBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditModeBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < VersusEditModeBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditModeBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a89f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> () { unsafe { let __receiver = < VersusEditModeBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditModeBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindUnit(::unity2::Il2CppString)` overload"] fn find_unit (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < VersusEditModeBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusEditModeBackupData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26abe80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versuseditmodebackupdata")]pub trait IVersusEditModeBackupDataMethods:IVersusEditModeBackupData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusEditModeBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a6680usize)as*mut u8,();
+(VersusEditModeBackupData)__receiver)}
+}
+#[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusEditModeBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a89f0usize)as*mut u8,();
+(VersusEditModeBackupData)__receiver)}
+}
+#[doc="`Deserialize()` overload"]fn deserialize(self,)->(){unsafe{let __receiver= <VersusEditModeBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a8d30usize)as*mut u8,();
+(VersusEditModeBackupData)__receiver)}
+}
+#[doc="`FindUnit(::unity2::Il2CppString)` overload"]fn find_unit(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::unit::Unit{unsafe{let __receiver= <VersusEditModeBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26abe80usize)as*mut u8,crate::app::unit::Unit;
+(VersusEditModeBackupData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+}
 
-#[cfg(feature = "app-versuseditmodebackupdata")]
-impl < __T : IVersusEditModeBackupData > IVersusEditModeBackupDataMethods for __T { }
+#[cfg(feature="app-versuseditmodebackupdata")]impl<__T:IVersusEditModeBackupData>IVersusEditModeBackupDataMethods for __T{}
 
-#[cfg(feature = "app-versuseditmodebackupdata")]
-impl VersusEditModeBackupData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditModeBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditModeBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditModeBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn find_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusEditModeBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-versuseditmodebackupdata")]impl VersusEditModeBackupData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn find_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-versuseditmodebackupdata")]
-impl VersusEditModeBackupData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusEditModeBackupData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusEditModeBackupDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versuseditmodebackupdata")]impl VersusEditModeBackupData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusEditModeBackupData), ::core::stringify!(new),));
+ <Self as IVersusEditModeBackupDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versuseditmodebackupdata")]

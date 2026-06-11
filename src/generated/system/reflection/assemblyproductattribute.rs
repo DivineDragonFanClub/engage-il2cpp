@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyproductattribute/AssemblyProductAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyProductAttribute")] pub struct AssemblyProductAttribute {
-# [offset (16)] # [rename (name = "m_product")] pub m_product : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblyproductattribute/AssemblyProductAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyProductAttribute")]pub struct AssemblyProductAttribute{#[offset(16)]#[rename(name="m_product")]pub m_product: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblyproductattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblyproductattribute")]
-pub trait IAssemblyProductAttributeMethods : IAssemblyProductAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , product : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyProductAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyProductAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3403a90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (product) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblyproductattribute")]pub trait IAssemblyProductAttributeMethods:IAssemblyProductAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,product:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyProductAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3403a90usize)as*mut u8,();
+(AssemblyProductAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(product))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblyproductattribute")]
-impl < __T : IAssemblyProductAttribute > IAssemblyProductAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblyproductattribute")]impl<__T:IAssemblyProductAttribute>IAssemblyProductAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblyproductattribute")]
-impl AssemblyProductAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyProductAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblyproductattribute")]impl AssemblyProductAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblyproductattribute")]
-impl AssemblyProductAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (product : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyProductAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyProductAttributeMethods > :: ctor (this , product) ; this }
+#[cfg(feature="system-reflection-assemblyproductattribute")]impl AssemblyProductAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(product: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyProductAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyProductAttributeMethods> ::ctor(this,product);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblyproductattribute")]

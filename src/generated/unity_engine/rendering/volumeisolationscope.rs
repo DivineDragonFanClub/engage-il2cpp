@@ -4,42 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/volumeisolationscope/VolumeIsolationScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VolumeIsolationScope {}
-
-
-impl ::unity2::ClassIdentity for VolumeIsolationScope {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "VolumeIsolationScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/volumeisolationscope/VolumeIsolationScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VolumeIsolationScope{}
+impl::unity2::ClassIdentity for VolumeIsolationScope{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="VolumeIsolationScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for VolumeIsolationScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for VolumeIsolationScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -47,11 +26,17 @@ impl ::unity2::IlType for VolumeIsolationScope {
 #[cfg(feature = "unity_engine-rendering-volumeisolationscope-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-volumeisolationscope")]
-impl VolumeIsolationScope { # [doc = "`.ctor(bool)` overload"] pub fn ctor (& mut self , unused : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut VolumeIsolationScope , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e6810usize) as * mut u8) ; __inner (self as * mut VolumeIsolationScope , :: core :: convert :: Into :: into (unused) , :: core :: option :: Option :: None) } } } # [doc = "`System.IDisposable.Dispose()` overload"] pub fn system_i_disposable_dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut VolumeIsolationScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e6820usize) as * mut u8) ; __inner (self as * mut VolumeIsolationScope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-volumeisolationscope")]impl VolumeIsolationScope{#[doc="`.ctor(bool)` overload"]pub fn ctor(&mut self,unused:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e6810usize)as*mut u8,();
+(*mut VolumeIsolationScope)self as*mut VolumeIsolationScope,(bool)::core::convert::Into::into(unused))}
+}
+#[doc="`System.IDisposable.Dispose()` overload"]pub fn system_i_disposable_dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33e6820usize)as*mut u8,();
+(*mut VolumeIsolationScope)self as*mut VolumeIsolationScope)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumeisolationscope")]
-impl VolumeIsolationScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeIsolationScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn system_i_disposable_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeIsolationScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-volumeisolationscope")]impl VolumeIsolationScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn system_i_disposable_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-rendering-volumeisolationscope")]
 #[doc(hidden)]

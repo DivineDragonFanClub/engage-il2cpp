@@ -4,35 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/mousepositiondebug/MousePositionDebug.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "MousePositionDebug")] # [parent (crate :: system :: object :: Object)] pub struct MousePositionDebug {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: unity_engine :: rendering :: mousepositiondebug :: MousePositionDebug ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/mousepositiondebug/MousePositionDebug.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="MousePositionDebug")]#[parent(crate::system::object::Object)]pub struct MousePositionDebug{#[static_field]#[rename(name="s_Instance")]pub s_instance:crate::unity_engine::rendering::mousepositiondebug::MousePositionDebug,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-mousepositiondebug-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
-impl MousePositionDebug { # [doc = "`get_instance()` overload"] pub fn get_instance () -> crate :: unity_engine :: rendering :: mousepositiondebug :: MousePositionDebug { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: mousepositiondebug :: MousePositionDebug = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abc20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abd60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-mousepositiondebug")]impl MousePositionDebug{#[doc="`get_instance()` overload"]pub fn get_instance()->crate::unity_engine::rendering::mousepositiondebug::MousePositionDebug{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30abc20usize)as*mut u8,crate::unity_engine::rendering::mousepositiondebug::MousePositionDebug;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30abd60usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
-pub trait IMousePositionDebugMethods : IMousePositionDebug { # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MousePositionDebug , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abd10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MousePositionDebug , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abd20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMousePosition(f32, bool)` overload"] fn get_mouse_position (self , screen_height : impl :: core :: convert :: Into < f32 > , scene_view : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MousePositionDebug , f32 , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abd30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (screen_height) , :: core :: convert :: Into :: into (scene_view) , :: core :: option :: Option :: None) } } } # [doc = "`GetInputMousePosition()` overload"] fn get_input_mouse_position (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MousePositionDebug , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abd40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMouseClickPosition(f32)` overload"] fn get_mouse_click_position (self , screen_height : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MousePositionDebug , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abd50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (screen_height) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MousePositionDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MousePositionDebug , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30abd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-mousepositiondebug")]pub trait IMousePositionDebugMethods:IMousePositionDebug{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <MousePositionDebug as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30abd10usize)as*mut u8,();
+(MousePositionDebug)__receiver)}
+}
+#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <MousePositionDebug as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30abd20usize)as*mut u8,();
+(MousePositionDebug)__receiver)}
+}
+#[doc="`GetMousePosition(f32, bool)` overload"]fn get_mouse_position(self,screen_height:impl::core::convert::Into<f32> ,scene_view:impl::core::convert::Into<bool>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <MousePositionDebug as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30abd30usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(MousePositionDebug)__receiver,(f32)::core::convert::Into::into(screen_height),(bool)::core::convert::Into::into(scene_view))}
+}
+#[doc="`GetInputMousePosition()` overload"]fn get_input_mouse_position(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <MousePositionDebug as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30abd40usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(MousePositionDebug)__receiver)}
+}
+#[doc="`GetMouseClickPosition(f32)` overload"]fn get_mouse_click_position(self,screen_height:impl::core::convert::Into<f32>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <MousePositionDebug as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30abd50usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(MousePositionDebug)__receiver,(f32)::core::convert::Into::into(screen_height))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MousePositionDebug as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30abd00usize)as*mut u8,();
+(MousePositionDebug)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
-impl < __T : IMousePositionDebug > IMousePositionDebugMethods for __T { }
+#[cfg(feature="unity_engine-rendering-mousepositiondebug")]impl<__T:IMousePositionDebug>IMousePositionDebugMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
-impl MousePositionDebug { pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MousePositionDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MousePositionDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MousePositionDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_mouse_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MousePositionDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_input_mouse_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MousePositionDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_mouse_click_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MousePositionDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MousePositionDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MousePositionDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-rendering-mousepositiondebug")]impl MousePositionDebug{pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mouse_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_input_mouse_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_mouse_click_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-rendering-mousepositiondebug")]
-impl MousePositionDebug {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MousePositionDebug) , :: core :: stringify ! (new) ,)) ; < Self as IMousePositionDebugMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-mousepositiondebug")]impl MousePositionDebug{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MousePositionDebug), ::core::stringify!(new),));
+ <Self as IMousePositionDebugMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-mousepositiondebug")]

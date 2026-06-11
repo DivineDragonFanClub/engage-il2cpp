@@ -4,34 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: event_systems :: abstracteventdata :: { AbstractEventData , IAbstractEventData }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::event_systems::abstracteventdata::{AbstractEventData,IAbstractEventData}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/baseeventdata/BaseEventData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "BaseEventData")] # [parent (crate :: unity_engine :: event_systems :: abstracteventdata :: AbstractEventData)] pub struct BaseEventData {
-# [offset (24)] # [rename (name = "m_EventSystem")] pub m_event_system : crate :: unity_engine :: event_systems :: eventsystem :: EventSystem ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/baseeventdata/BaseEventData.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="BaseEventData")]#[parent(crate::unity_engine::event_systems::abstracteventdata::AbstractEventData)]pub struct BaseEventData{#[offset(24)]#[rename(name="m_EventSystem")]pub m_event_system:crate::unity_engine::event_systems::eventsystem::EventSystem,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-baseeventdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-baseeventdata")]
-pub trait IBaseEventDataMethods : IBaseEventData { # [doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` overload"] fn ctor (self , event_system : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: eventsystem :: EventSystem >) -> () { unsafe { let __receiver = < BaseEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseEventData , crate :: unity_engine :: event_systems :: eventsystem :: EventSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a0f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_system) , :: core :: option :: Option :: None) } } } # [doc = "`get_currentInputModule()` overload"] fn get_current_input_module (self ,) -> crate :: unity_engine :: event_systems :: baseinputmodule :: BaseInputModule { unsafe { let __receiver = < BaseEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: baseinputmodule :: BaseInputModule = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_selectedObject()` overload"] fn get_selected_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < BaseEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_selectedObject(crate::unity_engine::gameobject::GameObject)` overload"] fn set_selected_object (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < BaseEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseEventData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317a150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-baseeventdata")]pub trait IBaseEventDataMethods:IBaseEventData{#[doc="`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` overload"]fn ctor(self,event_system:impl::core::convert::Into<crate::unity_engine::event_systems::eventsystem::EventSystem>)->(){unsafe{let __receiver= <BaseEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a0f0usize)as*mut u8,();
+(BaseEventData)__receiver,(crate::unity_engine::event_systems::eventsystem::EventSystem)::core::convert::Into::into(event_system))}
+}
+#[doc="`get_currentInputModule()` overload"]fn get_current_input_module(self,)->crate::unity_engine::event_systems::baseinputmodule::BaseInputModule{unsafe{let __receiver= <BaseEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a130usize)as*mut u8,crate::unity_engine::event_systems::baseinputmodule::BaseInputModule;
+(BaseEventData)__receiver)}
+}
+#[doc="`get_selectedObject()` overload"]fn get_selected_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <BaseEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a140usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(BaseEventData)__receiver)}
+}
+#[doc="`set_selectedObject(crate::unity_engine::gameobject::GameObject)` overload"]fn set_selected_object(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <BaseEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317a150usize)as*mut u8,();
+(BaseEventData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-baseeventdata")]
-impl < __T : IBaseEventData > IBaseEventDataMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-baseeventdata")]impl<__T:IBaseEventData>IBaseEventDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-baseeventdata")]
-impl BaseEventData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_current_input_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_selected_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_selected_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-event_systems-baseeventdata")]impl BaseEventData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_current_input_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_selected_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_selected_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-baseeventdata")]
-impl BaseEventData {
-# [doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` — overload selector"] pub fn new (event_system : crate :: unity_engine :: event_systems :: eventsystem :: EventSystem) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BaseEventData) , :: core :: stringify ! (new) ,)) ; < Self as IBaseEventDataMethods > :: ctor (this , event_system) ; this }
+#[cfg(feature="unity_engine-event_systems-baseeventdata")]impl BaseEventData{#[doc="`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` — overload selector"]pub fn new(event_system:crate::unity_engine::event_systems::eventsystem::EventSystem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BaseEventData), ::core::stringify!(new),));
+ <Self as IBaseEventDataMethods> ::ctor(this,event_system);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-baseeventdata")]

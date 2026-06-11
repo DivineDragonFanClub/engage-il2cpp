@@ -4,77 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/configbgmselectsequence/ConfigBgmSelectSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ConfigBgmSelectSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/configbgmselectsequence/ConfigBgmSelectSequence.md"))]#[::unity2::class(namespace="App",name="ConfigBgmSelectSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::configbgmselectsequence::ConfigBgmSelectSequence>)]pub struct ConfigBgmSelectSequence{#[offset(120)]#[rename(name="m_selectBgm")]pub m_select_bgm: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_callback")]pub m_callback:crate::system::action_1::Action_1< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/configbgmselectsequence/ConfigBgmSelectSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ConfigBgmSelectSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for ConfigBgmSelectSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ConfigBgmSelectSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for ConfigBgmSelectSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ConfigBgmSelectSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for ConfigBgmSelectSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for ConfigBgmSelectSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl ConfigBgmSelectSequence_Label{pub fn entry()->Self{Self{value:0}
 }
-
-
-impl  ConfigBgmSelectSequence_Label  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn select() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn select()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/configbgmselectsequence/ConfigBgmSelectSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ConfigBgmSelectSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: configbgmselectsequence :: ConfigBgmSelectSequence >)] pub struct ConfigBgmSelectSequence {
-# [offset (120)] # [rename (name = "m_selectBgm")] pub m_select_bgm : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_callback")] pub m_callback : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > ,
+pub fn exit()->Self{Self{value:2}
+}
 }
 
 }
@@ -82,30 +42,67 @@ impl  ConfigBgmSelectSequence_Label  {
 #[cfg(feature = "app-configbgmselectsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-configbgmselectsequence")]
-impl ConfigBgmSelectSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , select_bgm : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2538250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (select_bgm) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-configbgmselectsequence")]impl ConfigBgmSelectSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,select_bgm:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2538250usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(select_bgm),(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(callback))}
+}
+}
 
-#[cfg(feature = "app-configbgmselectsequence")]
-pub trait IConfigBgmSelectSequenceMethods : IConfigBgmSelectSequence { # [doc = "`.ctor(::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"] fn ctor (self , select_bgm : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < ConfigBgmSelectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBgmSelectSequence , :: unity2 :: Il2CppString , crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (select_bgm) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < ConfigBgmSelectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBgmSelectSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResources()` overload"] fn unload_resources (self ,) -> () { unsafe { let __receiver = < ConfigBgmSelectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBgmSelectSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < ConfigBgmSelectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBgmSelectSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateMenu()` overload"] fn create_menu (self ,) -> () { unsafe { let __receiver = < ConfigBgmSelectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBgmSelectSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < ConfigBgmSelectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBgmSelectSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < ConfigBgmSelectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBgmSelectSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-configbgmselectsequence")]pub trait IConfigBgmSelectSequenceMethods:IConfigBgmSelectSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` overload"]fn ctor(self,select_bgm:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <ConfigBgmSelectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537a60usize)as*mut u8,();
+(ConfigBgmSelectSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(select_bgm),(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(callback))}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <ConfigBgmSelectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537b10usize)as*mut u8,();
+(ConfigBgmSelectSequence)__receiver)}
+}
+#[doc="`UnloadResources()` overload"]fn unload_resources(self,)->(){unsafe{let __receiver= <ConfigBgmSelectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537be0usize)as*mut u8,();
+(ConfigBgmSelectSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <ConfigBgmSelectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537bf0usize)as*mut u8,bool;
+(ConfigBgmSelectSequence)__receiver)}
+}
+#[doc="`CreateMenu()` overload"]fn create_menu(self,)->(){unsafe{let __receiver= <ConfigBgmSelectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537c60usize)as*mut u8,();
+(ConfigBgmSelectSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <ConfigBgmSelectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537d50usize)as*mut u8,();
+(ConfigBgmSelectSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <ConfigBgmSelectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537e80usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(ConfigBgmSelectSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-configbgmselectsequence")]
-impl < __T : IConfigBgmSelectSequence > IConfigBgmSelectSequenceMethods for __T { }
+#[cfg(feature="app-configbgmselectsequence")]impl<__T:IConfigBgmSelectSequence>IConfigBgmSelectSequenceMethods for __T{}
 
-#[cfg(feature = "app-configbgmselectsequence")]
-impl ConfigBgmSelectSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBgmSelectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBgmSelectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBgmSelectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBgmSelectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBgmSelectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBgmSelectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBgmSelectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBgmSelectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-configbgmselectsequence")]impl ConfigBgmSelectSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-configbgmselectsequence")]
-impl ConfigBgmSelectSequence {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` — overload selector"] pub fn new (select_bgm : :: unity2 :: Il2CppString , callback : crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConfigBgmSelectSequence) , :: core :: stringify ! (new) ,)) ; < Self as IConfigBgmSelectSequenceMethods > :: ctor (this , select_bgm , callback) ; this }
+#[cfg(feature="app-configbgmselectsequence")]impl ConfigBgmSelectSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::system::action_1::Action_1<::unity2::Il2CppString>)` — overload selector"]pub fn new(select_bgm: ::unity2::Il2CppString,callback:crate::system::action_1::Action_1< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConfigBgmSelectSequence), ::core::stringify!(new),));
+ <Self as IConfigBgmSelectSequenceMethods> ::ctor(this,select_bgm,callback);
+this}
 }
 
 #[cfg(feature = "app-configbgmselectsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConfigBgmSelectSequence_Label;
     pub use super::ConfigBgmSelectSequence;
     pub use super::IConfigBgmSelectSequence;
     pub use super::IConfigBgmSelectSequenceMethods;
+    pub use super::ConfigBgmSelectSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

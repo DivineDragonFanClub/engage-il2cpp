@@ -4,39 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencealternateconfirm/MapSequenceAlternateConfirm.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceAlternateConfirm")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencealternateconfirm :: MapSequenceAlternateConfirm >)] pub struct MapSequenceAlternateConfirm {
-# [offset (120)] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencealternateconfirm/MapSequenceAlternateConfirm.md"))]#[::unity2::class(namespace="App",name="MapSequenceAlternateConfirm")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencealternateconfirm::MapSequenceAlternateConfirm>)]pub struct MapSequenceAlternateConfirm{#[offset(120)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-mapsequencealternateconfirm-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencealternateconfirm")]
-impl MapSequenceAlternateConfirm { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b2cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencealternateconfirm")]impl MapSequenceAlternateConfirm{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23b2cf0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-mapsequencealternateconfirm")]
-pub trait IMapSequenceAlternateConfirmMethods : IMapSequenceAlternateConfirm { # [doc = "`get_GlobalAssetPath()` overload"] fn get_global_asset_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MapSequenceAlternateConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceAlternateConfirm , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b2ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapSequenceAlternateConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceAlternateConfirm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b3160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapSequenceAlternateConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceAlternateConfirm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b31e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadRes()` overload"] fn load_res (self ,) -> () { unsafe { let __receiver = < MapSequenceAlternateConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceAlternateConfirm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b3250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingRes()` overload"] fn is_loading_res (self ,) -> bool { unsafe { let __receiver = < MapSequenceAlternateConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceAlternateConfirm , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b32b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < MapSequenceAlternateConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceAlternateConfirm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b3310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < MapSequenceAlternateConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceAlternateConfirm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b34b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < MapSequenceAlternateConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceAlternateConfirm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b3580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceAlternateConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceAlternateConfirm , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23b30e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencealternateconfirm")]pub trait IMapSequenceAlternateConfirmMethods:IMapSequenceAlternateConfirm{#[doc="`get_GlobalAssetPath()` overload"]fn get_global_asset_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSequenceAlternateConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23b2ca0usize)as*mut u8, ::unity2::Il2CppString;
+(MapSequenceAlternateConfirm)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceAlternateConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23b3160usize)as*mut u8,();
+(MapSequenceAlternateConfirm)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceAlternateConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23b31e0usize)as*mut u8,();
+(MapSequenceAlternateConfirm)__receiver)}
+}
+#[doc="`LoadRes()` overload"]fn load_res(self,)->(){unsafe{let __receiver= <MapSequenceAlternateConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23b3250usize)as*mut u8,();
+(MapSequenceAlternateConfirm)__receiver)}
+}
+#[doc="`IsLoadingRes()` overload"]fn is_loading_res(self,)->bool{unsafe{let __receiver= <MapSequenceAlternateConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23b32b0usize)as*mut u8,bool;
+(MapSequenceAlternateConfirm)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <MapSequenceAlternateConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23b3310usize)as*mut u8,();
+(MapSequenceAlternateConfirm)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <MapSequenceAlternateConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23b34b0usize)as*mut u8,();
+(MapSequenceAlternateConfirm)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MapSequenceAlternateConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23b3580usize)as*mut u8,();
+(MapSequenceAlternateConfirm)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceAlternateConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23b30e0usize)as*mut u8,();
+(MapSequenceAlternateConfirm)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencealternateconfirm")]
-impl < __T : IMapSequenceAlternateConfirm > IMapSequenceAlternateConfirmMethods for __T { }
+#[cfg(feature="app-mapsequencealternateconfirm")]impl<__T:IMapSequenceAlternateConfirm>IMapSequenceAlternateConfirmMethods for __T{}
 
-#[cfg(feature = "app-mapsequencealternateconfirm")]
-impl MapSequenceAlternateConfirm { pub fn get_global_asset_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_loading_res_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceAlternateConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-mapsequencealternateconfirm")]impl MapSequenceAlternateConfirm{pub fn get_global_asset_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_loading_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-mapsequencealternateconfirm")]
-impl MapSequenceAlternateConfirm {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceAlternateConfirm) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceAlternateConfirmMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencealternateconfirm")]impl MapSequenceAlternateConfirm{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceAlternateConfirm), ::core::stringify!(new),));
+ <Self as IMapSequenceAlternateConfirmMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequencealternateconfirm")]

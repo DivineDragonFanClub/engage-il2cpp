@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineundo/TimelineUndo.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimelineUndo")] # [parent (crate :: system :: object :: Object)] pub struct TimelineUndo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineundo/TimelineUndo.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineUndo")]#[parent(crate::system::object::Object)]pub struct TimelineUndo{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineundo-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-timelineundo")]
-impl TimelineUndo { # [doc = "`PushDestroyUndo(crate::unity_engine::timeline::timelineasset::TimelineAsset, crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"] pub fn push_destroy_undo (timeline : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset > , thing_to_dirty : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 > , object_to_destroy : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: timelineasset :: TimelineAsset , crate :: unity_engine :: object_2 :: Object_2 , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d7c60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (timeline) , :: core :: convert :: Into :: into (thing_to_dirty) , :: core :: convert :: Into :: into (object_to_destroy) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-timelineundo")]impl TimelineUndo{#[doc="`PushDestroyUndo(crate::unity_engine::timeline::timelineasset::TimelineAsset, crate::unity_engine::object_2::Object_2, crate::unity_engine::object_2::Object_2)` overload"]pub fn push_destroy_undo(timeline:impl::core::convert::Into<crate::unity_engine::timeline::timelineasset::TimelineAsset> ,thing_to_dirty:impl::core::convert::Into<crate::unity_engine::object_2::Object_2> ,object_to_destroy:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7c60usize)as*mut u8,();
+(crate::unity_engine::timeline::timelineasset::TimelineAsset)::core::convert::Into::into(timeline),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(thing_to_dirty),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(object_to_destroy))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-timelineundo")]
-impl TimelineUndo { pub fn push_destroy_undo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimelineUndo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-timelineundo")]impl TimelineUndo{pub fn push_destroy_undo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-timeline-timelineundo")]
 #[doc(hidden)]

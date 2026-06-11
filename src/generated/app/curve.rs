@@ -4,137 +4,155 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/curve/Curve.md"))] # [:: unity2 :: class (namespace = "App" , name = "Curve")] # [parent (crate :: system :: object :: Object)] pub struct Curve {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/curve/Curve_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Curve_Type  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/curve/Curve_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Curve_Type{pub value:i32,}
+impl::unity2::ClassIdentity for Curve_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Curve.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Curve_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Curve_Type{pub fn linear()->Self{Self{value:0}
+}
+pub fn accel()->Self{Self{value:1}
+}
+pub fn decel()->Self{Self{value:2}
+}
+pub fn accel_decel()->Self{Self{value:3}
+}
+pub fn decel_accel()->Self{Self{value:4}
+}
+pub fn linear_decel()->Self{Self{value:5}
+}
+pub fn linear_accel()->Self{Self{value:6}
+}
+pub fn decel_linear()->Self{Self{value:7}
+}
+pub fn accel_linear()->Self{Self{value:8}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Curve_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Curve.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Curve_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Curve_Type  {
-    pub fn linear() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn accel() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn decel() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn accel_decel() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn decel_accel() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn linear_decel() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn linear_accel() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn decel_linear() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn accel_linear() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/curve/Curve.md"))]#[::unity2::class(namespace="App",name="Curve")]#[parent(crate::system::object::Object)]pub struct Curve{}
 
 }
 
 #[cfg(feature = "app-curve-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-curve")]
-impl Curve { # [doc = "`Calc(crate::app::curve::Curve_Type, f32, f32, f32, f32, i32)` overload"] pub fn calc (r#type : impl :: core :: convert :: Into < crate :: app :: curve :: Curve_Type > , prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , num : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: app :: curve :: Curve_Type , f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2545ba0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`Lerp(f32, f32, f32, f32, i32)` overload"] pub fn lerp (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , unused : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (unused) , :: core :: option :: Option :: None) } } } # [doc = "`Lerp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, i32)` overload"] pub fn lerp_2 (prev : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , next : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , unused : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (unused) , :: core :: option :: Option :: None) } } } # [doc = "`Lerp(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32, f32, i32)` overload"] pub fn lerp_3 (prev : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , next : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , unused : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (unused) , :: core :: option :: Option :: None) } } } # [doc = "`Accel(f32, f32, f32, f32, i32)` overload"] pub fn accel (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , num : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25462b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`Decel(f32, f32, f32, f32, i32)` overload"] pub fn decel (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , num : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`AcDecel(f32, f32, f32, f32, i32)` overload"] pub fn ac_decel (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , num : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25463e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`DecAccel(f32, f32, f32, f32, i32)` overload"] pub fn dec_accel (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , num : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`LerpDecel(f32, f32, f32, f32, i32)` overload"] pub fn lerp_decel (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , num : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546680usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`LerpAccel(f32, f32, f32, f32, i32)` overload"] pub fn lerp_accel (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , num : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546740usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`DecelLerp(f32, f32, f32, f32, i32)` overload"] pub fn decel_lerp (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , num : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25467f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`AccelLerp(f32, f32, f32, f32, i32)` overload"] pub fn accel_lerp (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , num : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25468b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`LerpSyncTime(f32, f32, f32, f32, i32)` overload"] pub fn lerp_sync_time (prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , unused : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (unused) , :: core :: option :: Option :: None) } } } # [doc = "`LerpSyncTime(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, i32)` overload"] pub fn lerp_sync_time_2 (prev : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , next : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , unused : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (unused) , :: core :: option :: Option :: None) } } } # [doc = "`LerpSyncTime(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32, f32, i32)` overload"] pub fn lerp_sync_time_3 (prev : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , next : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , now : impl :: core :: convert :: Into < f32 > , term : impl :: core :: convert :: Into < f32 > , unused : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546be0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (now) , :: core :: convert :: Into :: into (term) , :: core :: convert :: Into :: into (unused) , :: core :: option :: Option :: None) } } } # [doc = "`Hermite(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn hermite (v0 : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , v1 : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , v2 : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , v3 : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546e20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v0) , :: core :: convert :: Into :: into (v1) , :: core :: convert :: Into :: into (v2) , :: core :: convert :: Into :: into (v3) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`Hermite(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"] pub fn hermite_2 (v0 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , v1 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , v2 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , v3 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v0) , :: core :: convert :: Into :: into (v1) , :: core :: convert :: Into :: into (v2) , :: core :: convert :: Into :: into (v3) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`CatmullRom(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] pub fn catmull_rom (v0 : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , v1 : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , v2 : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , v3 : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2546f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v0) , :: core :: convert :: Into :: into (v1) , :: core :: convert :: Into :: into (v2) , :: core :: convert :: Into :: into (v3) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`CatmullRom(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"] pub fn catmull_rom_2 (v0 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , v1 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , v2 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , v3 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , t : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2547000usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (v0) , :: core :: convert :: Into :: into (v1) , :: core :: convert :: Into :: into (v2) , :: core :: convert :: Into :: into (v3) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-curve")]impl Curve{#[doc="`Calc(crate::app::curve::Curve_Type, f32, f32, f32, f32, i32)` overload"]pub fn calc(r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,num:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2545ba0usize)as*mut u8,f32;
+(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`Lerp(f32, f32, f32, f32, i32)` overload"]pub fn lerp(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,unused:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546200usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(unused))}
+}
+#[doc="`Lerp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, i32)` overload"]pub fn lerp_2(prev:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,next:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,unused:impl::core::convert::Into<i32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546220usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(prev),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(unused))}
+}
+#[doc="`Lerp(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32, f32, i32)` overload"]pub fn lerp_3(prev:impl::core::convert::Into<crate::unity_engine::color::Color> ,next:impl::core::convert::Into<crate::unity_engine::color::Color> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,unused:impl::core::convert::Into<i32>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546260usize)as*mut u8,crate::unity_engine::color::Color;
+(crate::unity_engine::color::Color)::core::convert::Into::into(prev),(crate::unity_engine::color::Color)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(unused))}
+}
+#[doc="`Accel(f32, f32, f32, f32, i32)` overload"]pub fn accel(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,num:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25462b0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`Decel(f32, f32, f32, f32, i32)` overload"]pub fn decel(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,num:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546340usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`AcDecel(f32, f32, f32, f32, i32)` overload"]pub fn ac_decel(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,num:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25463e0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`DecAccel(f32, f32, f32, f32, i32)` overload"]pub fn dec_accel(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,num:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546530usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`LerpDecel(f32, f32, f32, f32, i32)` overload"]pub fn lerp_decel(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,num:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546680usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`LerpAccel(f32, f32, f32, f32, i32)` overload"]pub fn lerp_accel(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,num:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546740usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`DecelLerp(f32, f32, f32, f32, i32)` overload"]pub fn decel_lerp(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,num:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25467f0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`AccelLerp(f32, f32, f32, f32, i32)` overload"]pub fn accel_lerp(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,num:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25468b0usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`LerpSyncTime(f32, f32, f32, f32, i32)` overload"]pub fn lerp_sync_time(prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,unused:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546960usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(unused))}
+}
+#[doc="`LerpSyncTime(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32, f32, i32)` overload"]pub fn lerp_sync_time_2(prev:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,next:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,unused:impl::core::convert::Into<i32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546a20usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(prev),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(unused))}
+}
+#[doc="`LerpSyncTime(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32, f32, i32)` overload"]pub fn lerp_sync_time_3(prev:impl::core::convert::Into<crate::unity_engine::color::Color> ,next:impl::core::convert::Into<crate::unity_engine::color::Color> ,now:impl::core::convert::Into<f32> ,term:impl::core::convert::Into<f32> ,unused:impl::core::convert::Into<i32>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546be0usize)as*mut u8,crate::unity_engine::color::Color;
+(crate::unity_engine::color::Color)::core::convert::Into::into(prev),(crate::unity_engine::color::Color)::core::convert::Into::into(next),(f32)::core::convert::Into::into(now),(f32)::core::convert::Into::into(term),(i32)::core::convert::Into::into(unused))}
+}
+#[doc="`Hermite(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn hermite(v0:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,v1:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,v2:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,v3:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546e20usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v0),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v1),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v2),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v3),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`Hermite(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]pub fn hermite_2(v0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,v1:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,v2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,v3:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546ec0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v1),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v2),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v3),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`CatmullRom(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn catmull_rom(v0:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,v1:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,v2:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,v3:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2546f40usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v0),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v1),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v2),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(v3),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`CatmullRom(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]pub fn catmull_rom_2(v0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,v1:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,v2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,v3:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2547000usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v0),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v1),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v2),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v3),(f32)::core::convert::Into::into(t))}
+}
+}
 
-#[cfg(feature = "app-curve")]
-pub trait ICurveMethods : ICurve { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Curve as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Curve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2547090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-curve")]pub trait ICurveMethods:ICurve{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Curve as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2547090usize)as*mut u8,();
+(Curve)__receiver)}
+}
+}
 
-#[cfg(feature = "app-curve")]
-impl < __T : ICurve > ICurveMethods for __T { }
+#[cfg(feature="app-curve")]impl<__T:ICurve>ICurveMethods for __T{}
 
-#[cfg(feature = "app-curve")]
-impl Curve { pub fn calc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn lerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn lerp_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn lerp_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn accel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn decel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ac_decel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn dec_accel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn lerp_decel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn lerp_accel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn decel_lerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn accel_lerp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn lerp_sync_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn lerp_sync_time_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn lerp_sync_time_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn hermite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn hermite_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn catmull_rom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn catmull_rom_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Curve as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
+#[cfg(feature="app-curve")]impl Curve{pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn lerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn lerp_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn lerp_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn accel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn decel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ac_decel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn dec_accel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn lerp_decel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn lerp_accel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn decel_lerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn accel_lerp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn lerp_sync_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn lerp_sync_time_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn lerp_sync_time_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn hermite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn hermite_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn catmull_rom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn catmull_rom_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
 
-#[cfg(feature = "app-curve")]
-impl Curve {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Curve) , :: core :: stringify ! (new) ,)) ; < Self as ICurveMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-curve")]impl Curve{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Curve), ::core::stringify!(new),));
+ <Self as ICurveMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-curve")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Curve_Type;
     pub use super::Curve;
     pub use super::ICurve;
     pub use super::ICurveMethods;
-    pub use super::Curve_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

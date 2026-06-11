@@ -4,38 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structlist_1 :: { IStructList_1 , StructList_1 }
- ;
- use crate :: system :: collections :: generic :: list_1 :: { IList_1 , List_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structlist_1::{IStructList_1,StructList_1}
+;
+use crate::system::collections::generic::list_1::{IList_1,List_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structdataarraylist_1/StructDataArrayList_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructDataArrayList`1")] # [parent (crate :: app :: structlist_1 :: StructList_1 < T0 >)] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < T0 >)] # [parent (crate :: system :: object :: Object)] pub struct StructDataArrayList_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structdataarraylist_1/StructDataArrayList_1.md"))]#[::unity2::class(namespace="App",name="StructDataArrayList`1")]#[parent(crate::app::structlist_1::StructList_1<T0>)]#[parent(crate::system::collections::generic::list_1::List_1<T0>)]#[parent(crate::system::object::Object)]pub struct StructDataArrayList_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "app-structdataarraylist_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-structdataarraylist_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > StructDataArrayList_1 < T0 > {
-# [doc = "`.ctor(::unity2::Il2CppString)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , name : :: unity2 :: Il2CppString) -> () ;
-
-# [doc = "`get_ArrayName()` overload"] # [method (name = "get_ArrayName" , args = 0)] pub fn get_array_name (self ,) -> :: unity2 :: Il2CppString ;
-
-# [doc = "`set_ArrayName(::unity2::Il2CppString)` overload"] # [method (name = "set_ArrayName" , args = 1)] pub fn set_array_name (self , value : :: unity2 :: Il2CppString) -> () ;
-
-# [doc = "`get_ArrayHash()` overload"] # [method (name = "get_ArrayHash" , args = 0)] pub fn get_array_hash (self ,) -> i32 ;
-
-# [doc = "`set_ArrayHash(i32)` overload"] # [method (name = "set_ArrayHash" , args = 1)] pub fn set_array_hash (self , value : i32) -> () ;
+#[cfg(feature="app-structdataarraylist_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>StructDataArrayList_1<T0>{#[doc="`.ctor(::unity2::Il2CppString)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,name: ::unity2::Il2CppString)->();
+ #[doc="`get_ArrayName()` overload"]#[method(name="get_ArrayName",args=0)]pub fn get_array_name(self,)-> ::unity2::Il2CppString;
+ #[doc="`set_ArrayName(::unity2::Il2CppString)` overload"]#[method(name="set_ArrayName",args=1)]pub fn set_array_name(self,value: ::unity2::Il2CppString)->();
+ #[doc="`get_ArrayHash()` overload"]#[method(name="get_ArrayHash",args=0)]pub fn get_array_hash(self,)->i32;
+ #[doc="`set_ArrayHash(i32)` overload"]#[method(name="set_ArrayHash",args=1)]pub fn set_array_hash(self,value:i32)->();
 }
 
-#[cfg(feature = "app-structdataarraylist_1")]
-impl < T0 : :: unity2 :: ClassIdentity > StructDataArrayList_1 < T0 > {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StructDataArrayList_1) , :: core :: stringify ! (new) ,)) ; < Self as IStructDataArrayList_1Methods < T0 > > :: ctor (this , name) ; this }
+#[cfg(feature="app-structdataarraylist_1")]impl<T0: ::unity2::ClassIdentity>StructDataArrayList_1<T0>{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StructDataArrayList_1), ::core::stringify!(new),));
+ <Self as IStructDataArrayList_1Methods<T0> > ::ctor(this,name);
+this}
 }
 
 #[cfg(feature = "app-structdataarraylist_1")]

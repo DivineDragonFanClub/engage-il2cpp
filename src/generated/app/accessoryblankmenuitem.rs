@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryblankmenuitem/AccessoryBlankMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryBlankMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct AccessoryBlankMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryblankmenuitem/AccessoryBlankMenuItem.md"))]#[::unity2::class(namespace="App",name="AccessoryBlankMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct AccessoryBlankMenuItem{}
 
 }
 
 #[cfg(feature = "app-accessoryblankmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessoryblankmenuitem")]
-pub trait IAccessoryBlankMenuItemMethods : IAccessoryBlankMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryBlankMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryBlankMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b4a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AccessoryBlankMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryBlankMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b4a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < AccessoryBlankMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryBlankMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27b4aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryblankmenuitem")]pub trait IAccessoryBlankMenuItemMethods:IAccessoryBlankMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryBlankMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b4a40usize)as*mut u8,();
+(AccessoryBlankMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AccessoryBlankMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b4a50usize)as*mut u8, ::unity2::Il2CppString;
+(AccessoryBlankMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <AccessoryBlankMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27b4aa0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(AccessoryBlankMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-accessoryblankmenuitem")]
-impl < __T : IAccessoryBlankMenuItem > IAccessoryBlankMenuItemMethods for __T { }
+#[cfg(feature="app-accessoryblankmenuitem")]impl<__T:IAccessoryBlankMenuItem>IAccessoryBlankMenuItemMethods for __T{}
 
-#[cfg(feature = "app-accessoryblankmenuitem")]
-impl AccessoryBlankMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryBlankMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryBlankMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryBlankMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-accessoryblankmenuitem")]impl AccessoryBlankMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-accessoryblankmenuitem")]
-impl AccessoryBlankMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryBlankMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryBlankMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessoryblankmenuitem")]impl AccessoryBlankMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryBlankMenuItem), ::core::stringify!(new),));
+ <Self as IAccessoryBlankMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-accessoryblankmenuitem")]

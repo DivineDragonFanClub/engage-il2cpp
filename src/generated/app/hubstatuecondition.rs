@@ -4,44 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubstatuecondition/HubStatueCondition.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubStatueCondition")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubStatueCondition {
-# [offset (24)] # [rename (name = "m_stage1Object")] pub m_stage1_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_stage2Object")] pub m_stage2_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_completeObjectM")] pub m_complete_object_m : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_completeObjectF")] pub m_complete_object_f : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "m_phase")] pub m_phase : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubstatuecondition/HubStatueCondition.md"))]#[::unity2::class(namespace="App",name="HubStatueCondition")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubStatueCondition{#[offset(24)]#[rename(name="m_stage1Object")]pub m_stage1_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_stage2Object")]pub m_stage2_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_completeObjectM")]pub m_complete_object_m:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_completeObjectF")]pub m_complete_object_f:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_phase")]pub m_phase:i32,}
 
 }
 
 #[cfg(feature = "app-hubstatuecondition-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubstatuecondition")]
-pub trait IHubStatueConditionMethods : IHubStatueCondition { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubStatueCondition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubStatueCondition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5aa90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubStatueCondition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubStatueCondition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5ac70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubStatueCondition as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubStatueCondition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5af20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubstatuecondition")]pub trait IHubStatueConditionMethods:IHubStatueCondition{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubStatueCondition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5aa90usize)as*mut u8,();
+(HubStatueCondition)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubStatueCondition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5ac70usize)as*mut u8,();
+(HubStatueCondition)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubStatueCondition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5af20usize)as*mut u8,();
+(HubStatueCondition)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubstatuecondition")]
-impl < __T : IHubStatueCondition > IHubStatueConditionMethods for __T { }
+#[cfg(feature="app-hubstatuecondition")]impl<__T:IHubStatueCondition>IHubStatueConditionMethods for __T{}
 
-#[cfg(feature = "app-hubstatuecondition")]
-impl HubStatueCondition { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubStatueCondition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubStatueCondition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubStatueCondition as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-hubstatuecondition")]impl HubStatueCondition{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-hubstatuecondition")]
-impl HubStatueCondition {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubStatueCondition) , :: core :: stringify ! (new) ,)) ; < Self as IHubStatueConditionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubstatuecondition")]impl HubStatueCondition{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubStatueCondition), ::core::stringify!(new),));
+ <Self as IHubStatueConditionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubstatuecondition")]

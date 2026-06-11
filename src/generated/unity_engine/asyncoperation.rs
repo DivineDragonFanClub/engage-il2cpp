@@ -4,38 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: yieldinstruction :: { IYieldInstruction , YieldInstruction }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asyncoperation/AsyncOperation.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AsyncOperation")] # [parent (crate :: unity_engine :: yieldinstruction :: YieldInstruction)] pub struct AsyncOperation {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_completeCallback")] pub m_complete_callback : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: asyncoperation :: AsyncOperation > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/asyncoperation/AsyncOperation.md"))]#[::unity2::class(namespace="UnityEngine",name="AsyncOperation")]#[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]pub struct AsyncOperation{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_completeCallback")]pub m_complete_callback:crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation> ,}
 
 }
 
 #[cfg(feature = "unity_engine-asyncoperation-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-asyncoperation")]
-impl AsyncOperation { # [doc = "`InternalDestroy(::unity2::IntPtr)` overload"] pub fn internal_destroy (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c363b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-asyncoperation")]impl AsyncOperation{#[doc="`InternalDestroy(::unity2::IntPtr)` overload"]pub fn internal_destroy(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c363b0usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-asyncoperation")]
-pub trait IAsyncOperationMethods : IAsyncOperation { # [doc = "`get_isDone()` overload"] fn get_is_done (self ,) -> bool { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_progress()` overload"] fn get_progress (self ,) -> f32 { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_priority(i32)` overload"] fn set_priority (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c364a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_allowSceneActivation()` overload"] fn get_allow_scene_activation (self ,) -> bool { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c364f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_allowSceneActivation(bool)` overload"] fn set_allow_scene_activation (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InvokeCompletionEvent()` overload"] fn invoke_completion_event (self ,) -> () { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`add_completed(crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation>)` overload"] fn add_completed (self , value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: asyncoperation :: AsyncOperation > >) -> () { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: asyncoperation :: AsyncOperation > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c366b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`remove_completed(crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation>)` overload"] fn remove_completed (self , value : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: asyncoperation :: AsyncOperation > >) -> () { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: asyncoperation :: AsyncOperation > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c367b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AsyncOperation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AsyncOperation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-asyncoperation")]pub trait IAsyncOperationMethods:IAsyncOperation{#[doc="`get_isDone()` overload"]fn get_is_done(self,)->bool{unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36400usize)as*mut u8,bool;
+(AsyncOperation)__receiver)}
+}
+#[doc="`get_progress()` overload"]fn get_progress(self,)->f32{unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36450usize)as*mut u8,f32;
+(AsyncOperation)__receiver)}
+}
+#[doc="`set_priority(i32)` overload"]fn set_priority(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c364a0usize)as*mut u8,();
+(AsyncOperation)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_allowSceneActivation()` overload"]fn get_allow_scene_activation(self,)->bool{unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c364f0usize)as*mut u8,bool;
+(AsyncOperation)__receiver)}
+}
+#[doc="`set_allowSceneActivation(bool)` overload"]fn set_allow_scene_activation(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36540usize)as*mut u8,();
+(AsyncOperation)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36590usize)as*mut u8,();
+(AsyncOperation)__receiver)}
+}
+#[doc="`InvokeCompletionEvent()` overload"]fn invoke_completion_event(self,)->(){unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36630usize)as*mut u8,();
+(AsyncOperation)__receiver)}
+}
+#[doc="`add_completed(crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation>)` overload"]fn add_completed(self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation> >)->(){unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c366b0usize)as*mut u8,();
+(AsyncOperation)__receiver,(crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation>)::core::convert::Into::into(value))}
+}
+#[doc="`remove_completed(crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation>)` overload"]fn remove_completed(self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation> >)->(){unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c367b0usize)as*mut u8,();
+(AsyncOperation)__receiver,(crate::system::action_1::Action_1<crate::unity_engine::asyncoperation::AsyncOperation>)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36840usize)as*mut u8,();
+(AsyncOperation)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-asyncoperation")]
-impl < __T : IAsyncOperation > IAsyncOperationMethods for __T { }
+#[cfg(feature="unity_engine-asyncoperation")]impl<__T:IAsyncOperation>IAsyncOperationMethods for __T{}
 
-#[cfg(feature = "unity_engine-asyncoperation")]
-impl AsyncOperation { pub fn internal_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_progress_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_allow_scene_activation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_allow_scene_activation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn invoke_completion_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn remove_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AsyncOperation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-asyncoperation")]impl AsyncOperation{pub fn internal_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_allow_scene_activation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_allow_scene_activation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn invoke_completion_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn remove_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "unity_engine-asyncoperation")]
-impl AsyncOperation {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AsyncOperation) , :: core :: stringify ! (new) ,)) ; < Self as IAsyncOperationMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-asyncoperation")]impl AsyncOperation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AsyncOperation), ::core::stringify!(new),));
+ <Self as IAsyncOperationMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-asyncoperation")]

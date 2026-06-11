@@ -4,38 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcallbackserializer/AkCallbackSerializer.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCallbackSerializer")] # [parent (crate :: system :: object :: Object)] pub struct AkCallbackSerializer {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcallbackserializer/AkCallbackSerializer.md"))]#[::unity2::class(namespace="",name="AkCallbackSerializer")]#[parent(crate::system::object::Object)]pub struct AkCallbackSerializer{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akcallbackserializer-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akcallbackserializer")]
-impl AkCallbackSerializer { # [doc = "`getCPtr(crate::root::akcallbackserializer::AkCallbackSerializer)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akcallbackserializer :: AkCallbackSerializer >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akcallbackserializer :: AkCallbackSerializer , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0f980usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Init(::unity2::IntPtr, u32)` overload"] pub fn init (in_p_memory : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , in_u_size : impl :: core :: convert :: Into < u32 >) -> crate :: root :: akresult :: AKRESULT { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , u32 , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0fc10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_p_memory) , :: core :: convert :: Into :: into (in_u_size) , :: core :: option :: Option :: None) } } } # [doc = "`Term()` overload"] pub fn term () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0fc90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Lock()` overload"] pub fn lock () -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0fd00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Unlock()` overload"] pub fn unlock () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0fd70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetLocalOutput(u32)` overload"] pub fn set_local_output (in_u_error_level : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0fde0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_u_error_level) , :: core :: option :: Option :: None) } } } # [doc = "`AudioSourceChangeCallbackFunc(bool, crate::system::object::Object)` overload"] pub fn audio_source_change_callback_func (in_b_other_audio_playing : impl :: core :: convert :: Into < bool > , in_p_cookie : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: root :: akresult :: AKRESULT { unsafe { { let __inner : extern "C" fn (bool , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: root :: akresult :: AKRESULT = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0fe50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (in_b_other_audio_playing) , :: core :: convert :: Into :: into (in_p_cookie) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcallbackserializer")]impl AkCallbackSerializer{#[doc="`getCPtr(crate::root::akcallbackserializer::AkCallbackSerializer)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akcallbackserializer::AkCallbackSerializer>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f0f980usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akcallbackserializer::AkCallbackSerializer)::core::convert::Into::into(obj))}
+}
+#[doc="`Init(::unity2::IntPtr, u32)` overload"]pub fn init(in_p_memory:impl::core::convert::Into< ::unity2::IntPtr> ,in_u_size:impl::core::convert::Into<u32>)->crate::root::akresult::AKRESULT{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f0fc10usize)as*mut u8,crate::root::akresult::AKRESULT;
+(::unity2::IntPtr)::core::convert::Into::into(in_p_memory),(u32)::core::convert::Into::into(in_u_size))}
+}
+#[doc="`Term()` overload"]pub fn term()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f0fc90usize)as*mut u8,();
+)}
+}
+#[doc="`Lock()` overload"]pub fn lock()-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f0fd00usize)as*mut u8, ::unity2::IntPtr;
+)}
+}
+#[doc="`Unlock()` overload"]pub fn unlock()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f0fd70usize)as*mut u8,();
+)}
+}
+#[doc="`SetLocalOutput(u32)` overload"]pub fn set_local_output(in_u_error_level:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f0fde0usize)as*mut u8,();
+(u32)::core::convert::Into::into(in_u_error_level))}
+}
+#[doc="`AudioSourceChangeCallbackFunc(bool, crate::system::object::Object)` overload"]pub fn audio_source_change_callback_func(in_b_other_audio_playing:impl::core::convert::Into<bool> ,in_p_cookie:impl::core::convert::Into<crate::system::object::Object>)->crate::root::akresult::AKRESULT{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f0fe50usize)as*mut u8,crate::root::akresult::AKRESULT;
+(bool)::core::convert::Into::into(in_b_other_audio_playing),(crate::system::object::Object)::core::convert::Into::into(in_p_cookie))}
+}
+}
 
-#[cfg(feature = "root-akcallbackserializer")]
-pub trait IAkCallbackSerializerMethods : IAkCallbackSerializer { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkCallbackSerializer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackSerializer , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0f940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkCallbackSerializer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackSerializer , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0f9e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkCallbackSerializer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackSerializer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0fa10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkCallbackSerializer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackSerializer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0fa80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkCallbackSerializer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCallbackSerializer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f0fef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcallbackserializer")]pub trait IAkCallbackSerializerMethods:IAkCallbackSerializer{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkCallbackSerializer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f0f940usize)as*mut u8,();
+(AkCallbackSerializer)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkCallbackSerializer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f0f9e0usize)as*mut u8,();
+(AkCallbackSerializer)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkCallbackSerializer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f0fa10usize)as*mut u8,();
+(AkCallbackSerializer)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkCallbackSerializer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f0fa80usize)as*mut u8,();
+(AkCallbackSerializer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkCallbackSerializer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f0fef0usize)as*mut u8,();
+(AkCallbackSerializer)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akcallbackserializer")]
-impl < __T : IAkCallbackSerializer > IAkCallbackSerializerMethods for __T { }
+#[cfg(feature="root-akcallbackserializer")]impl<__T:IAkCallbackSerializer>IAkCallbackSerializerMethods for __T{}
 
-#[cfg(feature = "root-akcallbackserializer")]
-impl AkCallbackSerializer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn term_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn lock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn unlock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_local_output_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn audio_source_change_callback_func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCallbackSerializer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="root-akcallbackserializer")]impl AkCallbackSerializer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn term_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn lock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn unlock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_local_output_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn audio_source_change_callback_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "root-akcallbackserializer")]
-impl AkCallbackSerializer {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackSerializer) , :: core :: stringify ! (new) ,)) ; < Self as IAkCallbackSerializerMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCallbackSerializer) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkCallbackSerializerMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akcallbackserializer")]impl AkCallbackSerializer{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackSerializer), ::core::stringify!(new),));
+ <Self as IAkCallbackSerializerMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCallbackSerializer), ::core::stringify!(new_2),));
+ <Self as IAkCallbackSerializerMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akcallbackserializer")]

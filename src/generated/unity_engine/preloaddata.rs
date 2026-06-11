@@ -4,28 +4,30 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/preloaddata/PreloadData.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "PreloadData")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct PreloadData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/preloaddata/PreloadData.md"))]#[::unity2::class(namespace="UnityEngine",name="PreloadData")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct PreloadData{}
 
 }
 
 #[cfg(feature = "unity_engine-preloaddata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-preloaddata")]
-pub trait IPreloadDataMethods : IPreloadData { # [doc = "`PreloadDataDontStripMe()` overload"] fn preload_data_dont_strip_me (self ,) -> () { unsafe { let __receiver = < PreloadData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PreloadData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f8a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-preloaddata")]pub trait IPreloadDataMethods:IPreloadData{#[doc="`PreloadDataDontStripMe()` overload"]fn preload_data_dont_strip_me(self,)->(){unsafe{let __receiver= <PreloadData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f8a80usize)as*mut u8,();
+(PreloadData)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-preloaddata")]
-impl < __T : IPreloadData > IPreloadDataMethods for __T { }
+#[cfg(feature="unity_engine-preloaddata")]impl<__T:IPreloadData>IPreloadDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-preloaddata")]
-impl PreloadData { pub fn preload_data_dont_strip_me_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PreloadData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-preloaddata")]impl PreloadData{pub fn preload_data_dont_strip_me_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-preloaddata")]
 #[doc(hidden)]

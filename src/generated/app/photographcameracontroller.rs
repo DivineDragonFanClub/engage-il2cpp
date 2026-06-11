@@ -4,41 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographcameracontroller/PhotographCameraController.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographCameraController")] # [parent (crate :: system :: object :: Object)] pub struct PhotographCameraController {
-# [offset (16)] # [rename (name = "m_IsEnable")] pub m_is_enable : bool ,
-# [offset (17)] # [rename (name = "m_IsPhotographMode")] pub m_is_photograph_mode : bool ,
-# [offset (24)] # [rename (name = "m_ParameterList")] pub m_parameter_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: photographcameraparameter :: PhotographCameraParameter > ,
-# [offset (32)] # [rename (name = "m_CurrentParameter")] pub m_current_parameter : crate :: app :: photographcameraparameter :: PhotographCameraParameter ,
-# [offset (40)] # [rename (name = "m_MoveX")] pub m_move_x : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (48)] # [rename (name = "m_MoveY")] pub m_move_y : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (56)] # [rename (name = "m_AngleY")] pub m_angle_y : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
-# [offset (64)] # [rename (name = "m_Fov")] pub m_fov : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (72)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
-# [offset (80)] # [rename (name = "flg")] pub flg : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographcameracontroller/PhotographCameraController.md"))]#[::unity2::class(namespace="App",name="PhotographCameraController")]#[parent(crate::system::object::Object)]pub struct PhotographCameraController{#[offset(16)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(17)]#[rename(name="m_IsPhotographMode")]pub m_is_photograph_mode:bool, #[offset(24)]#[rename(name="m_ParameterList")]pub m_parameter_list:crate::system::collections::generic::list_1::List_1<crate::app::photographcameraparameter::PhotographCameraParameter> , #[offset(32)]#[rename(name="m_CurrentParameter")]pub m_current_parameter:crate::app::photographcameraparameter::PhotographCameraParameter, #[offset(40)]#[rename(name="m_MoveX")]pub m_move_x:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(48)]#[rename(name="m_MoveY")]pub m_move_y:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(56)]#[rename(name="m_AngleY")]pub m_angle_y:crate::app::interpolatorrotation::InterpolatorRotation, #[offset(64)]#[rename(name="m_Fov")]pub m_fov:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(72)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(80)]#[rename(name="flg")]pub flg:bool,}
 
 }
 
 #[cfg(feature = "app-photographcameracontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographcameracontroller")]
-pub trait IPhotographCameraControllerMethods : IPhotographCameraController { # [doc = "`Setup(crate::unity_engine::gameobject::GameObject, crate::app::photographdisposmanager::PhotographDisposManager)` overload"] fn setup (self , spot : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager >) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographCameraController , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: photographdisposmanager :: PhotographDisposManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2688190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (spot) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: option :: Option :: None) } } } # [doc = "`Enable()` overload"] fn enable (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2688620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Disable()` overload"] fn disable (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2688630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetIsPhotographMode(bool)` overload"] fn set_is_photograph_mode (self , is_photograph_mode : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographCameraController , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2688700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_photograph_mode) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26887e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCameraParameter()` overload"] fn set_camera_parameter (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26883e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographCameraController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographCameraController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2689de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographcameracontroller")]pub trait IPhotographCameraControllerMethods:IPhotographCameraController{#[doc="`Setup(crate::unity_engine::gameobject::GameObject, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]fn setup(self,spot:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>)->(){unsafe{let __receiver= <PhotographCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2688190usize)as*mut u8,();
+(PhotographCameraController)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(spot),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager))}
+}
+#[doc="`Enable()` overload"]fn enable(self,)->(){unsafe{let __receiver= <PhotographCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2688620usize)as*mut u8,();
+(PhotographCameraController)__receiver)}
+}
+#[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <PhotographCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2688630usize)as*mut u8,();
+(PhotographCameraController)__receiver)}
+}
+#[doc="`SetIsPhotographMode(bool)` overload"]fn set_is_photograph_mode(self,is_photograph_mode:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2688700usize)as*mut u8,();
+(PhotographCameraController)__receiver,(bool)::core::convert::Into::into(is_photograph_mode))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <PhotographCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26887e0usize)as*mut u8,();
+(PhotographCameraController)__receiver)}
+}
+#[doc="`SetCameraParameter()` overload"]fn set_camera_parameter(self,)->(){unsafe{let __receiver= <PhotographCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26883e0usize)as*mut u8,();
+(PhotographCameraController)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2689de0usize)as*mut u8,();
+(PhotographCameraController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographcameracontroller")]
-impl < __T : IPhotographCameraController > IPhotographCameraControllerMethods for __T { }
+#[cfg(feature="app-photographcameracontroller")]impl<__T:IPhotographCameraController>IPhotographCameraControllerMethods for __T{}
 
-#[cfg(feature = "app-photographcameracontroller")]
-impl PhotographCameraController { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_is_photograph_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_camera_parameter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographCameraController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-photographcameracontroller")]impl PhotographCameraController{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_photograph_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_camera_parameter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-photographcameracontroller")]
-impl PhotographCameraController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographCameraController) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographCameraControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographcameracontroller")]impl PhotographCameraController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographCameraController), ::core::stringify!(new),));
+ <Self as IPhotographCameraControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-photographcameracontroller")]

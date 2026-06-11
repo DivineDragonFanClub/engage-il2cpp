@@ -4,37 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroommoviemenu/MyRoomMovieMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomMovieMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct MyRoomMovieMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroommoviemenu/MyRoomMovieMenu.md"))]#[::unity2::class(namespace="App",name="MyRoomMovieMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomMovieMenu{}
 
 }
 
 #[cfg(feature = "app-myroommoviemenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroommoviemenu")]
-impl MyRoomMovieMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23909a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroommoviemenu")]impl MyRoomMovieMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23909a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-myroommoviemenu")]
-pub trait IMyRoomMovieMenuMethods : IMyRoomMovieMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicmenucontent :: BasicMenuContent >) -> () { unsafe { let __receiver = < MyRoomMovieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomMovieMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicmenucontent :: BasicMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2390990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MyRoomMovieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomMovieMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23910a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnClose()` overload"] fn on_close (self ,) -> () { unsafe { let __receiver = < MyRoomMovieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomMovieMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23910f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTitle(::unity2::Il2CppString)` overload"] fn set_title (self , title : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomMovieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomMovieMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2391170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (title) , :: core :: option :: Option :: None) } } } # [doc = "`SetHelp(::unity2::Il2CppString)` overload"] fn set_help (self , help : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomMovieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomMovieMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2391330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (help) , :: core :: option :: Option :: None) } } } # [doc = "`SetThumbnail(::unity2::Il2CppString)` overload"] fn set_thumbnail (self , thumbnail : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MyRoomMovieMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomMovieMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23914f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (thumbnail) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroommoviemenu")]pub trait IMyRoomMovieMenuMethods:IMyRoomMovieMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MyRoomMovieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2390990usize)as*mut u8,();
+(MyRoomMovieMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomMovieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23910a0usize)as*mut u8, ::unity2::Il2CppString;
+(MyRoomMovieMenu)__receiver)}
+}
+#[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MyRoomMovieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23910f0usize)as*mut u8,();
+(MyRoomMovieMenu)__receiver)}
+}
+#[doc="`SetTitle(::unity2::Il2CppString)` overload"]fn set_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MyRoomMovieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2391170usize)as*mut u8,();
+(MyRoomMovieMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
+}
+#[doc="`SetHelp(::unity2::Il2CppString)` overload"]fn set_help(self,help:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MyRoomMovieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2391330usize)as*mut u8,();
+(MyRoomMovieMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(help))}
+}
+#[doc="`SetThumbnail(::unity2::Il2CppString)` overload"]fn set_thumbnail(self,thumbnail:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MyRoomMovieMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23914f0usize)as*mut u8,();
+(MyRoomMovieMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(thumbnail))}
+}
+}
 
-#[cfg(feature = "app-myroommoviemenu")]
-impl < __T : IMyRoomMovieMenu > IMyRoomMovieMenuMethods for __T { }
+#[cfg(feature="app-myroommoviemenu")]impl<__T:IMyRoomMovieMenu>IMyRoomMovieMenuMethods for __T{}
 
-#[cfg(feature = "app-myroommoviemenu")]
-impl MyRoomMovieMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomMovieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomMovieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomMovieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomMovieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomMovieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomMovieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_thumbnail_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomMovieMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-myroommoviemenu")]impl MyRoomMovieMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_thumbnail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-myroommoviemenu")]
-impl MyRoomMovieMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicmenucontent :: BasicMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomMovieMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomMovieMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-myroommoviemenu")]impl MyRoomMovieMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomMovieMenu), ::core::stringify!(new),));
+ <Self as IMyRoomMovieMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-myroommoviemenu")]

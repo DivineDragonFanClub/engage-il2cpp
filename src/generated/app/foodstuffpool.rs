@@ -4,36 +4,130 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffpool/FoodstuffPool.md"))] # [:: unity2 :: class (namespace = "App" , name = "FoodstuffPool")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: foodstuffpool :: FoodstuffPool >)] pub struct FoodstuffPool {
-# [offset (32)] # [rename (name = "m_Food")] pub m_food : crate :: app :: fooddata :: FoodData ,
-# [offset (40)] # [rename (name = "m_FoodstuffList")] pub m_foodstuff_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: foodstuffdata :: FoodstuffData > ,
-# [offset (48)] # [rename (name = "AddableFoodstuffNum")] pub addable_foodstuff_num : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffpool/FoodstuffPool.md"))]#[::unity2::class(namespace="App",name="FoodstuffPool")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::foodstuffpool::FoodstuffPool>)]pub struct FoodstuffPool{#[offset(32)]#[rename(name="m_Food")]pub m_food:crate::app::fooddata::FoodData, #[offset(40)]#[rename(name="m_FoodstuffList")]pub m_foodstuff_list:crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> , #[offset(48)]#[rename(name="AddableFoodstuffNum")]pub addable_foodstuff_num:i32,}
 
 }
 
 #[cfg(feature = "app-foodstuffpool-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-foodstuffpool")]
-pub trait IFoodstuffPoolMethods : IFoodstuffPool { # [doc = "`GetFoodstuffs()` overload"] fn get_foodstuffs (self ,) -> :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2614fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNormalFoodstuffs()` overload"] fn get_normal_foodstuffs (self ,) -> :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: foodstuffdata :: FoodstuffData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNormalFoodstuffCount()` overload"] fn get_normal_foodstuff_count (self ,) -> i32 { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRareFoodstuff()` overload"] fn get_rare_foodstuff (self ,) -> crate :: app :: foodstuffdata :: FoodstuffData { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> crate :: app :: foodstuffdata :: FoodstuffData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset(crate::app::fooddata::FoodData)` overload"] fn reset (self , food : impl :: core :: convert :: Into < crate :: app :: fooddata :: FoodData >) -> () { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , crate :: app :: fooddata :: FoodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (food) , :: core :: option :: Option :: None) } } } # [doc = "`get_TypeCount()` overload"] fn get_type_count (self ,) -> i32 { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsIncludeRaiseReliance()` overload"] fn is_include_raise_reliance (self ,) -> bool { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Count(crate::app::foodstuffdata::FoodstuffData)` overload"] fn count (self , data : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> i32 { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26157a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`CountExceptForRaiseReliance()` overload"] fn count_except_for_raise_reliance (self ,) -> i32 { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26158c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanAddItem(crate::app::foodstuffdata::FoodstuffData)` overload"] fn can_add_item (self , data : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> bool { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`TryAddItem(crate::app::foodstuffdata::FoodstuffData)` overload"] fn try_add_item (self , data : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> bool { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`TryRemoveItem(crate::app::foodstuffdata::FoodstuffData)` overload"] fn try_remove_item (self , data : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> bool { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`TryRemoveLastNormalItem(*mutcrate::app::foodstuffdata::FoodstuffData)` overload"] fn try_remove_last_normal_item (self ,) -> (bool , crate :: app :: foodstuffdata :: FoodstuffData) { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: foodstuffdata :: FoodstuffData > :: uninit () ; let __ret = { { let __inner : extern "C" fn (FoodstuffPool , * mut crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615b30usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`TryRemoveRareItem(*mutcrate::app::foodstuffdata::FoodstuffData)` overload"] fn try_remove_rare_item (self ,) -> (bool , crate :: app :: foodstuffdata :: FoodstuffData) { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: foodstuffdata :: FoodstuffData > :: uninit () ; let __ret = { { let __inner : extern "C" fn (FoodstuffPool , * mut crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615ca0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetNormalFoodstuffAndCount()` overload"] fn get_normal_foodstuff_and_count (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: foodstuffdata :: FoodstuffData , i32 > { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: foodstuffdata :: FoodstuffData , i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNormalFoodstuffMostCount()` overload"] fn get_normal_foodstuff_most_count (self ,) -> i32 { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsAccept(crate::app::foodstuffdata::FoodstuffData, *mutcrate::app::foodstuffdata::FoodstuffData)` overload"] fn is_accept (self , data : impl :: core :: convert :: Into < crate :: app :: foodstuffdata :: FoodstuffData >) -> (bool , crate :: app :: foodstuffdata :: FoodstuffData) { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: foodstuffdata :: FoodstuffData > :: uninit () ; let __ret = { { let __inner : extern "C" fn (FoodstuffPool , crate :: app :: foodstuffdata :: FoodstuffData , * mut crate :: app :: foodstuffdata :: FoodstuffData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2615f80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FoodstuffPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FoodstuffPool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2616120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-foodstuffpool")]pub trait IFoodstuffPoolMethods:IFoodstuffPool{#[doc="`GetFoodstuffs()` overload"]fn get_foodstuffs(self,)-> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2614fc0usize)as*mut u8, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> ;
+(FoodstuffPool)__receiver)}
+}
+#[doc="`GetNormalFoodstuffs()` overload"]fn get_normal_foodstuffs(self,)-> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615020usize)as*mut u8, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData> ;
+(FoodstuffPool)__receiver)}
+}
+#[doc="`GetNormalFoodstuffCount()` overload"]fn get_normal_foodstuff_count(self,)->i32{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615210usize)as*mut u8,i32;
+(FoodstuffPool)__receiver)}
+}
+#[doc="`GetRareFoodstuff()` overload"]fn get_rare_foodstuff(self,)->crate::app::foodstuffdata::FoodstuffData{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615380usize)as*mut u8,crate::app::foodstuffdata::FoodstuffData;
+(FoodstuffPool)__receiver)}
+}
+#[doc="`Reset(crate::app::fooddata::FoodData)` overload"]fn reset(self,food:impl::core::convert::Into<crate::app::fooddata::FoodData>)->(){unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615510usize)as*mut u8,();
+(FoodstuffPool)__receiver,(crate::app::fooddata::FoodData)::core::convert::Into::into(food))}
+}
+#[doc="`get_TypeCount()` overload"]fn get_type_count(self,)->i32{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615590usize)as*mut u8,i32;
+(FoodstuffPool)__receiver)}
+}
+#[doc="`IsIncludeRaiseReliance()` overload"]fn is_include_raise_reliance(self,)->bool{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615600usize)as*mut u8,bool;
+(FoodstuffPool)__receiver)}
+}
+#[doc="`Count(crate::app::foodstuffdata::FoodstuffData)` overload"]fn count(self,data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->i32{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26157a0usize)as*mut u8,i32;
+(FoodstuffPool)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(data))}
+}
+#[doc="`CountExceptForRaiseReliance()` overload"]fn count_except_for_raise_reliance(self,)->i32{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26158c0usize)as*mut u8,i32;
+(FoodstuffPool)__receiver)}
+}
+#[doc="`CanAddItem(crate::app::foodstuffdata::FoodstuffData)` overload"]fn can_add_item(self,data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->bool{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615920usize)as*mut u8,bool;
+(FoodstuffPool)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(data))}
+}
+#[doc="`TryAddItem(crate::app::foodstuffdata::FoodstuffData)` overload"]fn try_add_item(self,data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->bool{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615a10usize)as*mut u8,bool;
+(FoodstuffPool)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(data))}
+}
+#[doc="`TryRemoveItem(crate::app::foodstuffdata::FoodstuffData)` overload"]fn try_remove_item(self,data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->bool{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615aa0usize)as*mut u8,bool;
+(FoodstuffPool)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(data))}
+}
+#[doc="`TryRemoveLastNormalItem(*mutcrate::app::foodstuffdata::FoodstuffData)` overload"]fn try_remove_last_normal_item(self,)->(bool,crate::app::foodstuffdata::FoodstuffData){unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::foodstuffdata::FoodstuffData> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2615b30usize)as*mut u8,bool;
+(FoodstuffPool)__receiver,(*mut crate::app::foodstuffdata::FoodstuffData)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`TryRemoveRareItem(*mutcrate::app::foodstuffdata::FoodstuffData)` overload"]fn try_remove_rare_item(self,)->(bool,crate::app::foodstuffdata::FoodstuffData){unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::foodstuffdata::FoodstuffData> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2615ca0usize)as*mut u8,bool;
+(FoodstuffPool)__receiver,(*mut crate::app::foodstuffdata::FoodstuffData)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetNormalFoodstuffAndCount()` overload"]fn get_normal_foodstuff_and_count(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::foodstuffdata::FoodstuffData,i32>{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615d50usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::foodstuffdata::FoodstuffData,i32> ;
+(FoodstuffPool)__receiver)}
+}
+#[doc="`GetNormalFoodstuffMostCount()` overload"]fn get_normal_foodstuff_most_count(self,)->i32{unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2615ee0usize)as*mut u8,i32;
+(FoodstuffPool)__receiver)}
+}
+#[doc="`IsAccept(crate::app::foodstuffdata::FoodstuffData, *mutcrate::app::foodstuffdata::FoodstuffData)` overload"]fn is_accept(self,data:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData>)->(bool,crate::app::foodstuffdata::FoodstuffData){unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::foodstuffdata::FoodstuffData> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2615f80usize)as*mut u8,bool;
+(FoodstuffPool)__receiver,(crate::app::foodstuffdata::FoodstuffData)::core::convert::Into::into(data),(*mut crate::app::foodstuffdata::FoodstuffData)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FoodstuffPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2616120usize)as*mut u8,();
+(FoodstuffPool)__receiver)}
+}
+}
 
-#[cfg(feature = "app-foodstuffpool")]
-impl < __T : IFoodstuffPool > IFoodstuffPoolMethods for __T { }
+#[cfg(feature="app-foodstuffpool")]impl<__T:IFoodstuffPool>IFoodstuffPoolMethods for __T{}
 
-#[cfg(feature = "app-foodstuffpool")]
-impl FoodstuffPool { pub fn get_foodstuffs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_normal_foodstuffs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_normal_foodstuff_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_rare_foodstuff_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_type_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_include_raise_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn count_except_for_raise_reliance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn can_add_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn try_add_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn try_remove_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn try_remove_last_normal_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn try_remove_rare_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_normal_foodstuff_and_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_normal_foodstuff_most_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_accept_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FoodstuffPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="app-foodstuffpool")]impl FoodstuffPool{pub fn get_foodstuffs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_normal_foodstuffs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_normal_foodstuff_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_rare_foodstuff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_type_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_include_raise_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn count_except_for_raise_reliance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn can_add_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_add_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn try_remove_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn try_remove_last_normal_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn try_remove_rare_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_normal_foodstuff_and_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_normal_foodstuff_most_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_accept_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "app-foodstuffpool")]
-impl FoodstuffPool {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FoodstuffPool) , :: core :: stringify ! (new) ,)) ; < Self as IFoodstuffPoolMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-foodstuffpool")]impl FoodstuffPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FoodstuffPool), ::core::stringify!(new),));
+ <Self as IFoodstuffPoolMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-foodstuffpool")]

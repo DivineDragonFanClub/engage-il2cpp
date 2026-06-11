@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/layermask/LayerMask.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LayerMask {
-    pub m_mask: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/layermask/LayerMask.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LayerMask{pub m_mask:i32,}
+impl::unity2::ClassIdentity for LayerMask{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="LayerMask";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for LayerMask {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "LayerMask";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for LayerMask {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for LayerMask{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -49,14 +26,35 @@ impl ::unity2::IlType for LayerMask {
 #[cfg(feature = "unity_engine-layermask-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-layermask")]
-impl LayerMask { # [doc = "`op_Implicit(crate::unity_engine::layermask::LayerMask)` overload"] pub fn op_implicit (mask : impl :: core :: convert :: Into < crate :: unity_engine :: layermask :: LayerMask >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: layermask :: LayerMask , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c531c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mask) , :: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(i32)` overload"] pub fn op_implicit_2 (int_val : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: layermask :: LayerMask { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: layermask :: LayerMask = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c531d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (int_val) , :: core :: option :: Option :: None) } } } # [doc = "`LayerToName(i32)` overload"] pub fn layer_to_name (layer : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c531f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (layer) , :: core :: option :: Option :: None) } } } # [doc = "`NameToLayer(::unity2::Il2CppString)` overload"] pub fn name_to_layer (layer_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c53240usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (layer_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetMask(::unity2::Array<::unity2::Il2CppString>)` overload"] pub fn get_mask (layer_names : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c53290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (layer_names) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-layermask")]impl LayerMask{#[doc="`op_Implicit(crate::unity_engine::layermask::LayerMask)` overload"]pub fn op_implicit(mask:impl::core::convert::Into<crate::unity_engine::layermask::LayerMask>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c531c0usize)as*mut u8,i32;
+(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(mask))}
+}
+#[doc="`op_Implicit(i32)` overload"]pub fn op_implicit_2(int_val:impl::core::convert::Into<i32>)->crate::unity_engine::layermask::LayerMask{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c531d0usize)as*mut u8,crate::unity_engine::layermask::LayerMask;
+(i32)::core::convert::Into::into(int_val))}
+}
+#[doc="`LayerToName(i32)` overload"]pub fn layer_to_name(layer:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c531f0usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(layer))}
+}
+#[doc="`NameToLayer(::unity2::Il2CppString)` overload"]pub fn name_to_layer(layer_name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c53240usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(layer_name))}
+}
+#[doc="`GetMask(::unity2::Array<::unity2::Il2CppString>)` overload"]pub fn get_mask(layer_names:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c53290usize)as*mut u8,i32;
+(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(layer_names))}
+}
+}
 
-#[cfg(feature = "unity_engine-layermask")]
-impl LayerMask { # [doc = "`get_value()` overload"] pub fn get_value (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut LayerMask , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c531e0usize) as * mut u8) ; __inner (self as * mut LayerMask , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-layermask")]impl LayerMask{#[doc="`get_value()` overload"]pub fn get_value(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c531e0usize)as*mut u8,i32;
+(*mut LayerMask)self as*mut LayerMask)}
+}
+}
 
-#[cfg(feature = "unity_engine-layermask")]
-impl LayerMask { pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayerMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn op_implicit_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayerMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayerMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn layer_to_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayerMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn name_to_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayerMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayerMask as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-layermask")]impl LayerMask{pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn op_implicit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn layer_to_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn name_to_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-layermask")]
 #[doc(hidden)]

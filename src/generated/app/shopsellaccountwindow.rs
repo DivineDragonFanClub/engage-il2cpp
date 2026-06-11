@@ -4,45 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellaccountwindow/ShopSellAccountWindow.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopSellAccountWindow")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ShopSellAccountWindow {
-# [offset (24)] # [rename (name = "m_CountTitleText")] pub m_count_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_CountValueText")] pub m_count_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_TotalTitleText")] pub m_total_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_TotalValueText")] pub m_total_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_TotalValueGText")] pub m_total_value_g_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellaccountwindow/ShopSellAccountWindow.md"))]#[::unity2::class(namespace="App",name="ShopSellAccountWindow")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ShopSellAccountWindow{#[offset(24)]#[rename(name="m_CountTitleText")]pub m_count_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_CountValueText")]pub m_count_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_TotalTitleText")]pub m_total_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_TotalValueText")]pub m_total_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_TotalValueGText")]pub m_total_value_g_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator,}
 
 }
 
 #[cfg(feature = "app-shopsellaccountwindow-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-shopsellaccountwindow")]
-pub trait IShopSellAccountWindowMethods : IShopSellAccountWindow { # [doc = "`get_m_Count()` overload"] fn get_m_count (self ,) -> i32 { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Count(i32)` overload"] fn set_m_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellAccountWindow , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_Total()` overload"] fn get_m_total (self ,) -> i32 { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Total(i32)` overload"] fn set_m_total (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellAccountWindow , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1f70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateInfo(i32, i32)` overload"] fn update_info (self , item_count : impl :: core :: convert :: Into < i32 > , total_value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellAccountWindow , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b2110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item_count) , :: core :: convert :: Into :: into (total_value) , :: core :: option :: Option :: None) } } } # [doc = "`ClearInfo()` overload"] fn clear_info (self ,) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b21f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b2280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShopSellAccountWindow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellAccountWindow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b2330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopsellaccountwindow")]pub trait IShopSellAccountWindowMethods:IShopSellAccountWindow{#[doc="`get_m_Count()` overload"]fn get_m_count(self,)->i32{unsafe{let __receiver= <ShopSellAccountWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1f40usize)as*mut u8,i32;
+(ShopSellAccountWindow)__receiver)}
+}
+#[doc="`set_m_Count(i32)` overload"]fn set_m_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ShopSellAccountWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1f50usize)as*mut u8,();
+(ShopSellAccountWindow)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_Total()` overload"]fn get_m_total(self,)->i32{unsafe{let __receiver= <ShopSellAccountWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1f60usize)as*mut u8,i32;
+(ShopSellAccountWindow)__receiver)}
+}
+#[doc="`set_m_Total(i32)` overload"]fn set_m_total(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ShopSellAccountWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1f70usize)as*mut u8,();
+(ShopSellAccountWindow)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ShopSellAccountWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1f80usize)as*mut u8,();
+(ShopSellAccountWindow)__receiver)}
+}
+#[doc="`UpdateInfo(i32, i32)` overload"]fn update_info(self,item_count:impl::core::convert::Into<i32> ,total_value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ShopSellAccountWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b2110usize)as*mut u8,();
+(ShopSellAccountWindow)__receiver,(i32)::core::convert::Into::into(item_count),(i32)::core::convert::Into::into(total_value))}
+}
+#[doc="`ClearInfo()` overload"]fn clear_info(self,)->(){unsafe{let __receiver= <ShopSellAccountWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b21f0usize)as*mut u8,();
+(ShopSellAccountWindow)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <ShopSellAccountWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b2280usize)as*mut u8,();
+(ShopSellAccountWindow)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSellAccountWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b2330usize)as*mut u8,();
+(ShopSellAccountWindow)__receiver)}
+}
+}
 
-#[cfg(feature = "app-shopsellaccountwindow")]
-impl < __T : IShopSellAccountWindow > IShopSellAccountWindowMethods for __T { }
+#[cfg(feature="app-shopsellaccountwindow")]impl<__T:IShopSellAccountWindow>IShopSellAccountWindowMethods for __T{}
 
-#[cfg(feature = "app-shopsellaccountwindow")]
-impl ShopSellAccountWindow { pub fn get_m_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_m_total_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_m_total_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn clear_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellAccountWindow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-shopsellaccountwindow")]impl ShopSellAccountWindow{pub fn get_m_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_total_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_total_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-shopsellaccountwindow")]
-impl ShopSellAccountWindow {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopSellAccountWindow) , :: core :: stringify ! (new) ,)) ; < Self as IShopSellAccountWindowMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-shopsellaccountwindow")]impl ShopSellAccountWindow{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopSellAccountWindow), ::core::stringify!(new),));
+ <Self as IShopSellAccountWindowMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-shopsellaccountwindow")]

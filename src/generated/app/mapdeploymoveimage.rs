@@ -4,38 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapimagecore_1 :: { IMapImageCore_1 , MapImageCore_1 }
- ;
- use crate :: app :: mapimagecoresbyte :: { IMapImageCoreSbyte , MapImageCoreSbyte }
- ;
- use crate :: app :: mapimageindex :: { IMapImageIndex , MapImageIndex }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapimagecore_1::{IMapImageCore_1,MapImageCore_1}
+;
+use crate::app::mapimagecoresbyte::{IMapImageCoreSbyte,MapImageCoreSbyte}
+;
+use crate::app::mapimageindex::{IMapImageIndex,MapImageIndex}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploymoveimage/MapDeployMoveImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapDeployMoveImage")] # [parent (crate :: app :: mapimagecoresbyte :: MapImageCoreSbyte)] pub struct MapDeployMoveImage {
-# [offset (24)] # [rename (name = "m_Display")] pub m_display : crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeploymoveimage/MapDeployMoveImage.md"))]#[::unity2::class(namespace="App",name="MapDeployMoveImage")]#[parent(crate::app::mapimagecoresbyte::MapImageCoreSbyte)]pub struct MapDeployMoveImage{#[offset(24)]#[rename(name="m_Display")]pub m_display:crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy> ,}
 
 }
 
 #[cfg(feature = "app-mapdeploymoveimage-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapdeploymoveimage")]
-pub trait IMapDeployMoveImageMethods : IMapDeployMoveImage { # [doc = "`get_Display()` overload"] fn get_display (self ,) -> crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > { unsafe { let __receiver = < MapDeployMoveImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployMoveImage , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Display(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>)` overload"] fn set_display (self , value : impl :: core :: convert :: Into < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > >) -> () { unsafe { let __receiver = < MapDeployMoveImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployMoveImage , crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3c00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < MapDeployMoveImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployMoveImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Get(i32, i32)` overload"] fn get (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> i8 { unsafe { let __receiver = < MapDeployMoveImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployMoveImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3c70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetPure(i32, i32)` overload"] fn get_pure (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> i8 { unsafe { let __receiver = < MapDeployMoveImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployMoveImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`GetBool(i32, i32)` overload"] fn get_bool (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapDeployMoveImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployMoveImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapDeployMoveImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeployMoveImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapdeploymoveimage")]pub trait IMapDeployMoveImageMethods:IMapDeployMoveImage{#[doc="`get_Display()` overload"]fn get_display(self,)->crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>{unsafe{let __receiver= <MapDeployMoveImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3bf0usize)as*mut u8,crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy> ;
+(MapDeployMoveImage)__receiver)}
+}
+#[doc="`set_Display(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>)` overload"]fn set_display(self,value:impl::core::convert::Into<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy> >)->(){unsafe{let __receiver= <MapDeployMoveImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3c00usize)as*mut u8,();
+(MapDeployMoveImage)__receiver,(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapDeployMoveImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3c10usize)as*mut u8,();
+(MapDeployMoveImage)__receiver)}
+}
+#[doc="`Get(i32, i32)` overload"]fn get(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i8{unsafe{let __receiver= <MapDeployMoveImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3c70usize)as*mut u8,i8;
+(MapDeployMoveImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetPure(i32, i32)` overload"]fn get_pure(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i8{unsafe{let __receiver= <MapDeployMoveImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3cf0usize)as*mut u8,i8;
+(MapDeployMoveImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetBool(i32, i32)` overload"]fn get_bool(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapDeployMoveImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3d70usize)as*mut u8,bool;
+(MapDeployMoveImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDeployMoveImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3e00usize)as*mut u8,();
+(MapDeployMoveImage)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapdeploymoveimage")]
-impl < __T : IMapDeployMoveImage > IMapDeployMoveImageMethods for __T { }
+#[cfg(feature="app-mapdeploymoveimage")]impl<__T:IMapDeployMoveImage>IMapDeployMoveImageMethods for __T{}
 
-#[cfg(feature = "app-mapdeploymoveimage")]
-impl MapDeployMoveImage { pub fn get_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployMoveImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployMoveImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployMoveImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployMoveImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_pure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployMoveImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_bool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployMoveImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeployMoveImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-mapdeploymoveimage")]impl MapDeployMoveImage{pub fn get_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_pure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_bool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-mapdeploymoveimage")]
-impl MapDeployMoveImage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapDeployMoveImage) , :: core :: stringify ! (new) ,)) ; < Self as IMapDeployMoveImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapdeploymoveimage")]impl MapDeployMoveImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDeployMoveImage), ::core::stringify!(new),));
+ <Self as IMapDeployMoveImageMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapdeploymoveimage")]

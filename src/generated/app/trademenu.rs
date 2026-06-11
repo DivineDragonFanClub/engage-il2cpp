@@ -4,40 +4,120 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: gridmenu :: { GridMenu , IGridMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::gridmenu::{GridMenu,IGridMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trademenu/TradeMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "TradeMenu")] # [parent (crate :: app :: gridmenu :: GridMenu)] pub struct TradeMenu {
-# [offset (212)] # [rename (name = "m_selectItemIndex")] pub m_select_item_index : i32 ,
-# [offset (216)] # [rename (name = "m_CanLeftUnitAutoEquipBefore")] pub m_can_left_unit_auto_equip_before : bool ,
-# [offset (217)] # [rename (name = "m_CanRightUnitAutoEquipBefore")] pub m_can_right_unit_auto_equip_before : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/trademenu/TradeMenu.md"))]#[::unity2::class(namespace="App",name="TradeMenu")]#[parent(crate::app::gridmenu::GridMenu)]pub struct TradeMenu{#[offset(212)]#[rename(name="m_selectItemIndex")]pub m_select_item_index:i32, #[offset(216)]#[rename(name="m_CanLeftUnitAutoEquipBefore")]pub m_can_left_unit_auto_equip_before:bool, #[offset(217)]#[rename(name="m_CanRightUnitAutoEquipBefore")]pub m_can_right_unit_auto_equip_before:bool,}
 
 }
 
 #[cfg(feature = "app-trademenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-trademenu")]
-pub trait ITradeMenuMethods : ITradeMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::trademenucontent::TradeMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: trademenucontent :: TradeMenuContent >) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: trademenucontent :: TradeMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetShowRowMax()` overload"] fn get_show_row_max (self ,) -> i32 { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBuildRowNum()` overload"] fn get_build_row_num (self ,) -> i32 { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`KeyLeft(bool)` overload"] fn key_left (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`KeyRight(bool)` overload"] fn key_right (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitLeftUnitInfo(crate::app::unit::Unit)` overload"] fn init_left_unit_info (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`InitRightUnitInfo(crate::app::unit::Unit)` overload"] fn init_right_unit_info (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetLeftUnitName(::unity2::Il2CppString)` overload"] fn set_left_unit_name (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`SetRightUnitName(::unity2::Il2CppString)` overload"] fn set_right_unit_name (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229ba00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`CanLeftUnitAutoEquip()` overload"] fn can_left_unit_auto_equip (self ,) -> bool { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229bae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanRightUnitAutoEquip()` overload"] fn can_right_unit_auto_equip (self ,) -> bool { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229baf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShowSelectCursor()` overload"] fn show_select_cursor (self ,) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideSelectCursor()` overload"] fn hide_select_cursor (self ,) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229bb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSelectItemIndex(i32)` overload"] fn set_select_item_index (self , item_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229b600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (item_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetSelectItemIndex()` overload"] fn get_select_item_index (self ,) -> i32 { unsafe { let __receiver = < TradeMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TradeMenu , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229bc70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-trademenu")]pub trait ITradeMenuMethods:ITradeMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::trademenucontent::TradeMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::trademenucontent::TradeMenuContent>)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b140usize)as*mut u8,();
+(TradeMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::trademenucontent::TradeMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b1d0usize)as*mut u8, ::unity2::Il2CppString;
+(TradeMenu)__receiver)}
+}
+#[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b220usize)as*mut u8,i32;
+(TradeMenu)__receiver)}
+}
+#[doc="`GetBuildRowNum()` overload"]fn get_build_row_num(self,)->i32{unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b230usize)as*mut u8,i32;
+(TradeMenu)__receiver)}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b240usize)as*mut u8,();
+(TradeMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b3c0usize)as*mut u8,();
+(TradeMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b550usize)as*mut u8,();
+(TradeMenu)__receiver)}
+}
+#[doc="`InitLeftUnitInfo(crate::app::unit::Unit)` overload"]fn init_left_unit_info(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b7c0usize)as*mut u8,();
+(TradeMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`InitRightUnitInfo(crate::app::unit::Unit)` overload"]fn init_right_unit_info(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b930usize)as*mut u8,();
+(TradeMenu)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetLeftUnitName(::unity2::Il2CppString)` overload"]fn set_left_unit_name(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b890usize)as*mut u8,();
+(TradeMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`SetRightUnitName(::unity2::Il2CppString)` overload"]fn set_right_unit_name(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229ba00usize)as*mut u8,();
+(TradeMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`CanLeftUnitAutoEquip()` overload"]fn can_left_unit_auto_equip(self,)->bool{unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229bae0usize)as*mut u8,bool;
+(TradeMenu)__receiver)}
+}
+#[doc="`CanRightUnitAutoEquip()` overload"]fn can_right_unit_auto_equip(self,)->bool{unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229baf0usize)as*mut u8,bool;
+(TradeMenu)__receiver)}
+}
+#[doc="`ShowSelectCursor()` overload"]fn show_select_cursor(self,)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b730usize)as*mut u8,();
+(TradeMenu)__receiver)}
+}
+#[doc="`HideSelectCursor()` overload"]fn hide_select_cursor(self,)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229bb10usize)as*mut u8,();
+(TradeMenu)__receiver)}
+}
+#[doc="`SetSelectItemIndex(i32)` overload"]fn set_select_item_index(self,item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229b600usize)as*mut u8,();
+(TradeMenu)__receiver,(i32)::core::convert::Into::into(item_index))}
+}
+#[doc="`GetSelectItemIndex()` overload"]fn get_select_item_index(self,)->i32{unsafe{let __receiver= <TradeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229bc70usize)as*mut u8,i32;
+(TradeMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-trademenu")]
-impl < __T : ITradeMenu > ITradeMenuMethods for __T { }
+#[cfg(feature="app-trademenu")]impl<__T:ITradeMenu>ITradeMenuMethods for __T{}
 
-#[cfg(feature = "app-trademenu")]
-impl TradeMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_show_row_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_build_row_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn key_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn key_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_left_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn init_right_unit_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_left_unit_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_right_unit_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn can_left_unit_auto_equip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn can_right_unit_auto_equip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn show_select_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn hide_select_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_select_item_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_select_item_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TradeMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-trademenu")]impl TradeMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_show_row_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_build_row_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_left_unit_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn init_right_unit_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_left_unit_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_right_unit_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn can_left_unit_auto_equip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn can_right_unit_auto_equip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn show_select_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn hide_select_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_select_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_select_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-trademenu")]
-impl TradeMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::trademenucontent::TradeMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: trademenucontent :: TradeMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TradeMenu) , :: core :: stringify ! (new) ,)) ; < Self as ITradeMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-trademenu")]impl TradeMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::trademenucontent::TradeMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::trademenucontent::TradeMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TradeMenu), ::core::stringify!(new),));
+ <Self as ITradeMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-trademenu")]

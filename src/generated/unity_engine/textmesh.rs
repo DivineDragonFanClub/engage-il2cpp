@@ -4,30 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/textmesh/TextMesh.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TextMesh")] # [parent (crate :: unity_engine :: component :: Component)] pub struct TextMesh {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textmesh/TextMesh.md"))]#[::unity2::class(namespace="UnityEngine",name="TextMesh")]#[parent(crate::unity_engine::component::Component)]pub struct TextMesh{}
 
 }
 
 #[cfg(feature = "unity_engine-textmesh-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-textmesh")]
-pub trait ITextMeshMethods : ITextMesh { # [doc = "`set_text(::unity2::Il2CppString)` overload"] fn set_text (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TextMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMesh , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_fontSize(i32)` overload"] fn set_font_size (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TextMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMesh , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f311b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_anchor(crate::unity_engine::textanchor::TextAnchor)` overload"] fn set_anchor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: textanchor :: TextAnchor >) -> () { unsafe { let __receiver = < TextMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMesh , crate :: unity_engine :: textanchor :: TextAnchor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_color(crate::unity_engine::color::Color)` overload"] fn set_color (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < TextMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TextMesh , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f31250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_color_Injected(*mutcrate::unity_engine::color::Color)` overload"] fn set_color_injected (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < TextMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; { let __inner : extern "C" fn (TextMesh , * mut crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f312b0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-textmesh")]pub trait ITextMeshMethods:ITextMesh{#[doc="`set_text(::unity2::Il2CppString)` overload"]fn set_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f31160usize)as*mut u8,();
+(TextMesh)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`set_fontSize(i32)` overload"]fn set_font_size(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f311b0usize)as*mut u8,();
+(TextMesh)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`set_anchor(crate::unity_engine::textanchor::TextAnchor)` overload"]fn set_anchor(self,value:impl::core::convert::Into<crate::unity_engine::textanchor::TextAnchor>)->(){unsafe{let __receiver= <TextMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f31200usize)as*mut u8,();
+(TextMesh)__receiver,(crate::unity_engine::textanchor::TextAnchor)::core::convert::Into::into(value))}
+}
+#[doc="`set_color(crate::unity_engine::color::Color)` overload"]fn set_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <TextMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f31250usize)as*mut u8,();
+(TextMesh)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`set_color_Injected(*mutcrate::unity_engine::color::Color)` overload"]fn set_color_injected(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <TextMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::color::Color> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f312b0usize)as*mut u8,();
+(TextMesh)__receiver,(*mut crate::unity_engine::color::Color)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-textmesh")]
-impl < __T : ITextMesh > ITextMeshMethods for __T { }
+#[cfg(feature="unity_engine-textmesh")]impl<__T:ITextMesh>ITextMeshMethods for __T{}
 
-#[cfg(feature = "unity_engine-textmesh")]
-impl TextMesh { pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_font_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_anchor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_color_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TextMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-textmesh")]impl TextMesh{pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_font_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_anchor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_color_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-textmesh")]
 #[doc(hidden)]

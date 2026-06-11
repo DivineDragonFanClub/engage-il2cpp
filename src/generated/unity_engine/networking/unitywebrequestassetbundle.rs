@@ -4,23 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/unitywebrequestassetbundle/UnityWebRequestAssetBundle.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "UnityWebRequestAssetBundle")] # [parent (crate :: system :: object :: Object)] pub struct UnityWebRequestAssetBundle {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/unitywebrequestassetbundle/UnityWebRequestAssetBundle.md"))]#[::unity2::class(namespace="UnityEngine.Networking",name="UnityWebRequestAssetBundle")]#[parent(crate::system::object::Object)]pub struct UnityWebRequestAssetBundle{}
 
 }
 
 #[cfg(feature = "unity_engine-networking-unitywebrequestassetbundle-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-networking-unitywebrequestassetbundle")]
-impl UnityWebRequestAssetBundle { # [doc = "`GetAssetBundle(::unity2::Il2CppString)` overload"] pub fn get_asset_bundle (uri : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f457f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (uri) , :: core :: option :: Option :: None) } } } # [doc = "`GetAssetBundle(::unity2::Il2CppString, u32)` overload"] pub fn get_asset_bundle_2 (uri : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , crc : impl :: core :: convert :: Into < u32 >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , u32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f45800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (uri) , :: core :: convert :: Into :: into (crc) , :: core :: option :: Option :: None) } } } # [doc = "`GetAssetBundle(::unity2::Il2CppString, crate::unity_engine::cachedassetbundle::CachedAssetBundle, u32)` overload"] pub fn get_asset_bundle_3 (uri : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , cached_asset_bundle : impl :: core :: convert :: Into < crate :: unity_engine :: cachedassetbundle :: CachedAssetBundle > , crc : impl :: core :: convert :: Into < u32 >) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: unity_engine :: cachedassetbundle :: CachedAssetBundle , u32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: networking :: unitywebrequest :: UnityWebRequest = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f458f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (uri) , :: core :: convert :: Into :: into (cached_asset_bundle) , :: core :: convert :: Into :: into (crc) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-unitywebrequestassetbundle")]impl UnityWebRequestAssetBundle{#[doc="`GetAssetBundle(::unity2::Il2CppString)` overload"]pub fn get_asset_bundle(uri:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::networking::unitywebrequest::UnityWebRequest{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f457f0usize)as*mut u8,crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+(::unity2::Il2CppString)::core::convert::Into::into(uri))}
+}
+#[doc="`GetAssetBundle(::unity2::Il2CppString, u32)` overload"]pub fn get_asset_bundle_2(uri:impl::core::convert::Into< ::unity2::Il2CppString> ,crc:impl::core::convert::Into<u32>)->crate::unity_engine::networking::unitywebrequest::UnityWebRequest{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f45800usize)as*mut u8,crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+(::unity2::Il2CppString)::core::convert::Into::into(uri),(u32)::core::convert::Into::into(crc))}
+}
+#[doc="`GetAssetBundle(::unity2::Il2CppString, crate::unity_engine::cachedassetbundle::CachedAssetBundle, u32)` overload"]pub fn get_asset_bundle_3(uri:impl::core::convert::Into< ::unity2::Il2CppString> ,cached_asset_bundle:impl::core::convert::Into<crate::unity_engine::cachedassetbundle::CachedAssetBundle> ,crc:impl::core::convert::Into<u32>)->crate::unity_engine::networking::unitywebrequest::UnityWebRequest{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f458f0usize)as*mut u8,crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+(::unity2::Il2CppString)::core::convert::Into::into(uri),(crate::unity_engine::cachedassetbundle::CachedAssetBundle)::core::convert::Into::into(cached_asset_bundle),(u32)::core::convert::Into::into(crc))}
+}
+}
 
-#[cfg(feature = "unity_engine-networking-unitywebrequestassetbundle")]
-impl UnityWebRequestAssetBundle { pub fn get_asset_bundle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityWebRequestAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_asset_bundle_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityWebRequestAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_asset_bundle_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnityWebRequestAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-networking-unitywebrequestassetbundle")]impl UnityWebRequestAssetBundle{pub fn get_asset_bundle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_asset_bundle_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_asset_bundle_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-networking-unitywebrequestassetbundle")]
 #[doc(hidden)]

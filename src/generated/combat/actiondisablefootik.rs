@@ -4,35 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiondisablefootik/ActionDisableFootIK.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionDisableFootIK")] # [parent (crate :: combat :: state :: State)] pub struct ActionDisableFootIK {
-# [offset (20)] # [rename (name = "m_IsOnlyHorse")] pub m_is_only_horse : bool ,
-# [offset (21)] # [rename (name = "m_IsOnlyDragonic")] pub m_is_only_dragonic : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiondisablefootik/ActionDisableFootIK.md"))]#[::unity2::class(namespace="Combat",name="ActionDisableFootIK")]#[parent(crate::combat::state::State)]pub struct ActionDisableFootIK{#[offset(20)]#[rename(name="m_IsOnlyHorse")]pub m_is_only_horse:bool, #[offset(21)]#[rename(name="m_IsOnlyDragonic")]pub m_is_only_dragonic:bool,}
 
 }
 
 #[cfg(feature = "combat-actiondisablefootik-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actiondisablefootik")]
-pub trait IActionDisableFootIKMethods : IActionDisableFootIK { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionDisableFootIK as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDisableFootIK , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(bool, bool)` overload"] fn ctor (self , is_only_horse : impl :: core :: convert :: Into < bool > , is_only_dragonic : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ActionDisableFootIK as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDisableFootIK , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_only_horse) , :: core :: convert :: Into :: into (is_only_dragonic) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionDisableFootIK as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDisableFootIK , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc44d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiondisablefootik")]pub trait IActionDisableFootIKMethods:IActionDisableFootIK{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionDisableFootIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4430usize)as*mut u8, ::unity2::Il2CppString;
+(ActionDisableFootIK)__receiver)}
+}
+#[doc="`.ctor(bool, bool)` overload"]fn ctor(self,is_only_horse:impl::core::convert::Into<bool> ,is_only_dragonic:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ActionDisableFootIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4480usize)as*mut u8,();
+(ActionDisableFootIK)__receiver,(bool)::core::convert::Into::into(is_only_horse),(bool)::core::convert::Into::into(is_only_dragonic))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionDisableFootIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc44d0usize)as*mut u8,();
+(ActionDisableFootIK)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actiondisablefootik")]
-impl < __T : IActionDisableFootIK > IActionDisableFootIKMethods for __T { }
+#[cfg(feature="combat-actiondisablefootik")]impl<__T:IActionDisableFootIK>IActionDisableFootIKMethods for __T{}
 
-#[cfg(feature = "combat-actiondisablefootik")]
-impl ActionDisableFootIK { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDisableFootIK as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDisableFootIK as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDisableFootIK as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-actiondisablefootik")]impl ActionDisableFootIK{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-actiondisablefootik")]
-impl ActionDisableFootIK {
-# [doc = "`.ctor(bool, bool)` — overload selector"] pub fn new (is_only_horse : bool , is_only_dragonic : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionDisableFootIK) , :: core :: stringify ! (new) ,)) ; < Self as IActionDisableFootIKMethods > :: ctor (this , is_only_horse , is_only_dragonic) ; this }
+#[cfg(feature="combat-actiondisablefootik")]impl ActionDisableFootIK{#[doc="`.ctor(bool, bool)` — overload selector"]pub fn new(is_only_horse:bool,is_only_dragonic:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionDisableFootIK), ::core::stringify!(new),));
+ <Self as IActionDisableFootIKMethods> ::ctor(this,is_only_horse,is_only_dragonic);
+this}
 }
 
 #[cfg(feature = "combat-actiondisablefootik")]

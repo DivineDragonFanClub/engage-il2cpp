@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblykeyfileattribute/AssemblyKeyFileAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyKeyFileAttribute")] pub struct AssemblyKeyFileAttribute {
-# [offset (16)] # [rename (name = "m_keyFile")] pub m_key_file : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblykeyfileattribute/AssemblyKeyFileAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyKeyFileAttribute")]pub struct AssemblyKeyFileAttribute{#[offset(16)]#[rename(name="m_keyFile")]pub m_key_file: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblykeyfileattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblykeyfileattribute")]
-pub trait IAssemblyKeyFileAttributeMethods : IAssemblyKeyFileAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , key_file : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyKeyFileAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyKeyFileAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key_file) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblykeyfileattribute")]pub trait IAssemblyKeyFileAttributeMethods:IAssemblyKeyFileAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,key_file:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyKeyFileAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401cd0usize)as*mut u8,();
+(AssemblyKeyFileAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key_file))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblykeyfileattribute")]
-impl < __T : IAssemblyKeyFileAttribute > IAssemblyKeyFileAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblykeyfileattribute")]impl<__T:IAssemblyKeyFileAttribute>IAssemblyKeyFileAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblykeyfileattribute")]
-impl AssemblyKeyFileAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyKeyFileAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblykeyfileattribute")]impl AssemblyKeyFileAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblykeyfileattribute")]
-impl AssemblyKeyFileAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (key_file : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyKeyFileAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyKeyFileAttributeMethods > :: ctor (this , key_file) ; this }
+#[cfg(feature="system-reflection-assemblykeyfileattribute")]impl AssemblyKeyFileAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(key_file: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyKeyFileAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyKeyFileAttributeMethods> ::ctor(this,key_file);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblykeyfileattribute")]

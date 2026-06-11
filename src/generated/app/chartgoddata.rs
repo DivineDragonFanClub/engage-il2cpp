@@ -4,111 +4,260 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartgoddata/ChartGodData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChartGodData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: chartgoddata :: ChartGodData >)] pub struct ChartGodData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartgoddata/ChartGodData.md"))]#[::unity2::class(namespace="App",name="ChartGodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::chartgoddata::ChartGodData>)]pub struct ChartGodData{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartgoddata/ChartGodData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChartGodData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: chartgoddata :: ChartGodData_Flags >)] pub struct ChartGodData_FlagField {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/chartgoddata/ChartGodData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ChartGodData_Flags  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartgoddata/ChartGodData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ChartGodData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for ChartGodData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="ChartGodData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ChartGodData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ChartGodData_Flags{pub fn add_god_lueur()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for ChartGodData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ChartGodData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ChartGodData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ChartGodData_Flags  {
-    pub fn add_god_lueur() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartgoddata/ChartGodData_FlagField.md"))]#[::unity2::class(namespace="App",name="ChartGodData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::chartgoddata::ChartGodData_Flags>)]pub struct ChartGodData_FlagField{}
 
 }
 
 #[cfg(feature = "app-chartgoddata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-chartgoddata")]
-impl ChartGodData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0220usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetLevel(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_level (prefixless_cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea04a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prefixless_cid) , :: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-chartgoddata")]
-pub trait IChartGodDataMethods : IChartGodData { # [doc = "`get_Chapter()` overload"] fn get_chapter (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea02d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Chapter(::unity2::Il2CppString)` overload"] fn set_chapter (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea02e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MarthLevel()` overload"] fn get_marth_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea02f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MarthLevel(i32)` overload"] fn set_marth_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SigludLevel()` overload"] fn get_siglud_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SigludLevel(i32)` overload"] fn set_siglud_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CelicaLevel()` overload"] fn get_celica_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CelicaLevel(i32)` overload"] fn set_celica_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MicaiahLevel()` overload"] fn get_micaiah_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MicaiahLevel(i32)` overload"] fn set_micaiah_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RoyLevel()` overload"] fn get_roy_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RoyLevel(i32)` overload"] fn set_roy_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LeafLevel()` overload"] fn get_leaf_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LeafLevel(i32)` overload"] fn set_leaf_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea03a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LucinaLevel()` overload"] fn get_lucina_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea03b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LucinaLevel(i32)` overload"] fn set_lucina_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea03c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LinLevel()` overload"] fn get_lin_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea03d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LinLevel(i32)` overload"] fn set_lin_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea03e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IkeLevel()` overload"] fn get_ike_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea03f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IkeLevel(i32)` overload"] fn set_ike_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_BylethLevel()` overload"] fn get_byleth_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_BylethLevel(i32)` overload"] fn set_byleth_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_KamuiLevel()` overload"] fn get_kamui_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_KamuiLevel(i32)` overload"] fn set_kamui_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EirikLevel()` overload"] fn get_eirik_level (self ,) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EirikLevel(i32)` overload"] fn set_eirik_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: chartgoddata :: ChartGodData_FlagField { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> crate :: app :: chartgoddata :: ChartGodData_FlagField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::chartgoddata::ChartGodData_FlagField)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: chartgoddata :: ChartGodData_FlagField >) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , crate :: app :: chartgoddata :: ChartGodData_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea0490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Gid2Level(::unity2::Il2CppString)` overload"] fn gid2_level (self , gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea05c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ChartGodData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea09c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-chartgoddata")]
-impl < __T : IChartGodData > IChartGodDataMethods for __T { }
-
-#[cfg(feature = "app-chartgoddata")]
-impl ChartGodData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_marth_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_marth_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_siglud_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_siglud_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_celica_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_celica_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_micaiah_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_micaiah_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_roy_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_roy_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_leaf_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_leaf_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_lucina_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_lucina_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_lin_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_lin_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_ike_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_ike_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_byleth_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_byleth_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_kamui_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_kamui_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_eirik_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_eirik_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn gid2_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } }
-
-#[cfg(feature = "app-chartgoddata")]
-impl ChartGodData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChartGodData) , :: core :: stringify ! (new) ,)) ; < Self as IChartGodDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-chartgoddata")]impl ChartGodData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0220usize)as*mut u8,();
+)}
+}
+#[doc="`GetLevel(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn get_level(prefixless_cid:impl::core::convert::Into< ::unity2::Il2CppString> ,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea04a0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(prefixless_cid),(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
 }
 
-#[cfg(feature = "app-chartgoddata")]
-pub trait IChartGodData_FlagFieldMethods : IChartGodData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChartGodData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c61e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::chartgoddata::ChartGodData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: chartgoddata :: ChartGodData_Flags >) -> () { unsafe { let __receiver = < ChartGodData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData_FlagField , crate :: app :: chartgoddata :: ChartGodData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c6240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`ToInt(crate::app::chartgoddata::ChartGodData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: chartgoddata :: ChartGodData_Flags >) -> i32 { unsafe { let __receiver = < ChartGodData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChartGodData_FlagField , crate :: app :: chartgoddata :: ChartGodData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19c62a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-chartgoddata")]pub trait IChartGodDataMethods:IChartGodData{#[doc="`get_Chapter()` overload"]fn get_chapter(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea02d0usize)as*mut u8, ::unity2::Il2CppString;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_Chapter(::unity2::Il2CppString)` overload"]fn set_chapter(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea02e0usize)as*mut u8,();
+(ChartGodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_MarthLevel()` overload"]fn get_marth_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea02f0usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_MarthLevel(i32)` overload"]fn set_marth_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0300usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SigludLevel()` overload"]fn get_siglud_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0310usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_SigludLevel(i32)` overload"]fn set_siglud_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0320usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_CelicaLevel()` overload"]fn get_celica_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0330usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_CelicaLevel(i32)` overload"]fn set_celica_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0340usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MicaiahLevel()` overload"]fn get_micaiah_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0350usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_MicaiahLevel(i32)` overload"]fn set_micaiah_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0360usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_RoyLevel()` overload"]fn get_roy_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0370usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_RoyLevel(i32)` overload"]fn set_roy_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0380usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_LeafLevel()` overload"]fn get_leaf_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0390usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_LeafLevel(i32)` overload"]fn set_leaf_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea03a0usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_LucinaLevel()` overload"]fn get_lucina_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea03b0usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_LucinaLevel(i32)` overload"]fn set_lucina_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea03c0usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_LinLevel()` overload"]fn get_lin_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea03d0usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_LinLevel(i32)` overload"]fn set_lin_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea03e0usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IkeLevel()` overload"]fn get_ike_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea03f0usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_IkeLevel(i32)` overload"]fn set_ike_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0400usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BylethLevel()` overload"]fn get_byleth_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0410usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_BylethLevel(i32)` overload"]fn set_byleth_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0420usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_KamuiLevel()` overload"]fn get_kamui_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0430usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_KamuiLevel(i32)` overload"]fn set_kamui_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0440usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_EirikLevel()` overload"]fn get_eirik_level(self,)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0450usize)as*mut u8,i32;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_EirikLevel(i32)` overload"]fn set_eirik_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0460usize)as*mut u8,();
+(ChartGodData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::chartgoddata::ChartGodData_FlagField{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0470usize)as*mut u8,crate::app::chartgoddata::ChartGodData_FlagField;
+(ChartGodData)__receiver)}
+}
+#[doc="`set_Flag(crate::app::chartgoddata::ChartGodData_FlagField)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::chartgoddata::ChartGodData_FlagField>)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0480usize)as*mut u8,();
+(ChartGodData)__receiver,(crate::app::chartgoddata::ChartGodData_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0490usize)as*mut u8, ::unity2::Il2CppString;
+(ChartGodData)__receiver)}
+}
+#[doc="`Gid2Level(::unity2::Il2CppString)` overload"]fn gid2_level(self,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea05c0usize)as*mut u8,i32;
+(ChartGodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea09c0usize)as*mut u8,();
+(ChartGodData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-chartgoddata")]
-impl < __T : IChartGodData_FlagField > IChartGodData_FlagFieldMethods for __T { }
+#[cfg(feature="app-chartgoddata")]impl<__T:IChartGodData>IChartGodDataMethods for __T{}
 
-#[cfg(feature = "app-chartgoddata")]
-impl ChartGodData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChartGodData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-chartgoddata")]impl ChartGodData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_marth_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_marth_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_siglud_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_siglud_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_celica_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_celica_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_micaiah_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_micaiah_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_roy_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_roy_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_leaf_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_leaf_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_lucina_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_lucina_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_lin_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_lin_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_ike_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_ike_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_byleth_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_byleth_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_kamui_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_kamui_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_eirik_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_eirik_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn gid2_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+}
 
-#[cfg(feature = "app-chartgoddata")]
-impl ChartGodData_FlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChartGodData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IChartGodData_FlagFieldMethods > :: ctor (this , f) ; this }
+#[cfg(feature="app-chartgoddata")]impl ChartGodData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChartGodData), ::core::stringify!(new),));
+ <Self as IChartGodDataMethods> ::ctor(this,);
+this}
+}
 
-# [doc = "`.ctor(crate::app::chartgoddata::ChartGodData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: chartgoddata :: ChartGodData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChartGodData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IChartGodData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
+#[cfg(feature="app-chartgoddata")]pub trait IChartGodData_FlagFieldMethods:IChartGodData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61e0usize)as*mut u8,();
+(ChartGodData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::chartgoddata::ChartGodData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::chartgoddata::ChartGodData_Flags>)->(){unsafe{let __receiver= <ChartGodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c6240usize)as*mut u8,();
+(ChartGodData_FlagField)__receiver,(crate::app::chartgoddata::ChartGodData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::chartgoddata::ChartGodData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::chartgoddata::ChartGodData_Flags>)->i32{unsafe{let __receiver= <ChartGodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c62a0usize)as*mut u8,i32;
+(ChartGodData_FlagField)__receiver,(crate::app::chartgoddata::ChartGodData_Flags)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-chartgoddata")]impl<__T:IChartGodData_FlagField>IChartGodData_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-chartgoddata")]impl ChartGodData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-chartgoddata")]impl ChartGodData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChartGodData_FlagField), ::core::stringify!(new),));
+ <Self as IChartGodData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::chartgoddata::ChartGodData_Flags)` — overload selector"]pub fn new_2(f:crate::app::chartgoddata::ChartGodData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChartGodData_FlagField), ::core::stringify!(new_2),));
+ <Self as IChartGodData_FlagFieldMethods> ::ctor_2(this,f);
+this}
 }
 
 #[cfg(feature = "app-chartgoddata")]
@@ -117,10 +266,10 @@ pub mod prelude {
     pub use super::ChartGodData;
     pub use super::IChartGodData;
     pub use super::IChartGodDataMethods;
+    pub use super::ChartGodData_Flags;
     pub use super::ChartGodData_FlagField;
     pub use super::IChartGodData_FlagField;
     pub use super::IChartGodData_FlagFieldMethods;
-    pub use super::ChartGodData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

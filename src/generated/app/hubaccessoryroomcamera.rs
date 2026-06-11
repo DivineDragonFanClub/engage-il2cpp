@@ -4,140 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_BackgroundSettings.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HubAccessoryRoomCamera_BackgroundSettings {
-    pub light_direction: crate :: unity_engine :: vector3 :: Vector3,
-    pub light_color: crate :: unity_engine :: color :: Color,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera.md"))]#[::unity2::class(namespace="App",name="HubAccessoryRoomCamera")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubAccessoryRoomCamera{#[offset(24)]#[rename(name="RotateSpeed")]pub rotate_speed:f32, #[offset(28)]#[rename(name="RotateAccel")]pub rotate_accel:f32, #[offset(32)]#[rename(name="RotateBrake")]pub rotate_brake:f32, #[offset(36)]#[rename(name="CamSpeedBody")]pub cam_speed_body:f32, #[offset(40)]#[rename(name="CamSpeedAccs")]pub cam_speed_accs:f32, #[offset(44)]#[rename(name="MinDistBody")]pub min_dist_body:f32, #[offset(48)]#[rename(name="MaxDistBody")]pub max_dist_body:f32, #[offset(52)]#[rename(name="MinDistAccs")]pub min_dist_accs:f32, #[offset(56)]#[rename(name="MaxDistAccs")]pub max_dist_accs:f32, #[offset(60)]#[rename(name="MinFoVBody")]pub min_fo_v_body:f32, #[offset(64)]#[rename(name="MaxFoVBody")]pub max_fo_v_body:f32, #[offset(68)]#[rename(name="MinFoVAccs")]pub min_fo_v_accs:f32, #[offset(72)]#[rename(name="MaxFoVAccs")]pub max_fo_v_accs:f32, #[offset(76)]#[rename(name="HeightFixerBody")]pub height_fixer_body:f32, #[offset(80)]#[rename(name="FarthestBodyHeight")]pub farthest_body_height:f32, #[offset(84)]#[rename(name="HeightFixerBack")]pub height_fixer_back:f32, #[static_field]#[rename(name="HeightFixerHead")]pub height_fixer_head:f32, #[static_field]#[rename(name="HeightFixerFace")]pub height_fixer_face:f32, #[offset(88)]#[rename(name="TiltHigh")]pub tilt_high:f32, #[offset(92)]#[rename(name="TiltLow")]pub tilt_low:f32, #[offset(96)]#[rename(name="TiltHighMax")]pub tilt_high_max:f32, #[offset(100)]#[rename(name="TiltLowMax")]pub tilt_low_max:f32, #[offset(104)]#[rename(name="TiltSpeed")]pub tilt_speed:f32, #[offset(108)]#[rename(name="TiltBackSpeedHand")]pub tilt_back_speed_hand:f32, #[offset(112)]#[rename(name="TiltBackSpeedAuto")]pub tilt_back_speed_auto:f32, #[offset(116)]#[rename(name="CameraChangeSpeed")]pub camera_change_speed:f32, #[offset(120)]#[rename(name="CameraChangeCurve")]pub camera_change_curve:f32, #[offset(124)]#[rename(name="SlipSlideSizeTop")]pub slip_slide_size_top:f32, #[offset(128)]#[rename(name="SlipSlideSizeSelect")]pub slip_slide_size_select:f32, #[offset(132)]#[rename(name="SlipSlideSizePreview")]pub slip_slide_size_preview:f32, #[offset(136)]#[rename(name="SlipSlideSpeed")]pub slip_slide_speed:f32, #[offset(140)]#[rename(name="CameraBoost")]pub camera_boost:f32, #[offset(144)]#[rename(name="EyesIKWeight")]pub eyes_ik_weight:f32, #[offset(148)]#[rename(name="HeadIKWeight")]pub head_ik_weight:f32, #[offset(152)]#[rename(name="BodyIKWeight")]pub body_ik_weight:f32, #[offset(156)]#[rename(name="LookChangeSpeed")]pub look_change_speed:f32, #[offset(160)]#[rename(name="LookChangeDegree")]pub look_change_degree:f32, #[offset(164)]#[rename(name="m_SelectingBackId")]pub m_selecting_back_id:i32, #[offset(168)]#[rename(name="m_IsBackUpdating")]pub m_is_back_updating:bool, #[offset(176)]#[rename(name="m_BGHandle")]pub m_bg_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(184)]#[rename(name="m_LookTarget")]pub m_look_target:crate::unity_engine::gameobject::GameObject, #[offset(232)]#[rename(name="m_ViewMode")]pub m_view_mode:crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode, #[offset(248)]#[rename(name="m_CameraPos")]pub m_camera_pos:crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, #[offset(272)]#[rename(name="m_CameraDiff")]pub m_camera_diff:crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, #[offset(296)]#[rename(name="m_CameraDiffRate")]pub m_camera_diff_rate:f32, #[offset(304)]#[rename(name="m_LookCamRate")]pub m_look_cam_rate:f32, #[offset(308)]#[rename(name="m_LastTargetPosNearest")]pub m_last_target_pos_nearest:crate::unity_engine::vector3::Vector3, #[offset(320)]#[rename(name="m_LastTargetPosFarthest")]pub m_last_target_pos_farthest:crate::unity_engine::vector3::Vector3, #[offset(336)]#[rename(name="Backgrounds")]pub backgrounds: ::unity2::Array<crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_BackgroundSettings> , #[offset(344)]#[rename(name="MainLight")]pub main_light:crate::unity_engine::light::Light, #[offset(352)]#[rename(name="m_LastRotSpeed")]pub m_last_rot_speed:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_CameraPositionParam.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HubAccessoryRoomCamera_CameraPositionParam{}
+impl::unity2::ClassIdentity for HubAccessoryRoomCamera_CameraPositionParam{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubAccessoryRoomCamera.CameraPositionParam";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubAccessoryRoomCamera_CameraPositionParam{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for HubAccessoryRoomCamera_BackgroundSettings {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubAccessoryRoomCamera.BackgroundSettings";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_BackgroundSettings.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HubAccessoryRoomCamera_BackgroundSettings{pub light_direction:crate::unity_engine::vector3::Vector3,pub light_color:crate::unity_engine::color::Color,}
+impl::unity2::ClassIdentity for HubAccessoryRoomCamera_BackgroundSettings{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubAccessoryRoomCamera.BackgroundSettings";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for HubAccessoryRoomCamera_BackgroundSettings {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessoryRoomCamera")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubAccessoryRoomCamera {
-# [offset (24)] # [rename (name = "RotateSpeed")] pub rotate_speed : f32 ,
-# [offset (28)] # [rename (name = "RotateAccel")] pub rotate_accel : f32 ,
-# [offset (32)] # [rename (name = "RotateBrake")] pub rotate_brake : f32 ,
-# [offset (36)] # [rename (name = "CamSpeedBody")] pub cam_speed_body : f32 ,
-# [offset (40)] # [rename (name = "CamSpeedAccs")] pub cam_speed_accs : f32 ,
-# [offset (44)] # [rename (name = "MinDistBody")] pub min_dist_body : f32 ,
-# [offset (48)] # [rename (name = "MaxDistBody")] pub max_dist_body : f32 ,
-# [offset (52)] # [rename (name = "MinDistAccs")] pub min_dist_accs : f32 ,
-# [offset (56)] # [rename (name = "MaxDistAccs")] pub max_dist_accs : f32 ,
-# [offset (60)] # [rename (name = "MinFoVBody")] pub min_fo_v_body : f32 ,
-# [offset (64)] # [rename (name = "MaxFoVBody")] pub max_fo_v_body : f32 ,
-# [offset (68)] # [rename (name = "MinFoVAccs")] pub min_fo_v_accs : f32 ,
-# [offset (72)] # [rename (name = "MaxFoVAccs")] pub max_fo_v_accs : f32 ,
-# [offset (76)] # [rename (name = "HeightFixerBody")] pub height_fixer_body : f32 ,
-# [offset (80)] # [rename (name = "FarthestBodyHeight")] pub farthest_body_height : f32 ,
-# [offset (84)] # [rename (name = "HeightFixerBack")] pub height_fixer_back : f32 ,
-# [static_field] # [rename (name = "HeightFixerHead")] pub height_fixer_head : f32 ,
-# [static_field] # [rename (name = "HeightFixerFace")] pub height_fixer_face : f32 ,
-# [offset (88)] # [rename (name = "TiltHigh")] pub tilt_high : f32 ,
-# [offset (92)] # [rename (name = "TiltLow")] pub tilt_low : f32 ,
-# [offset (96)] # [rename (name = "TiltHighMax")] pub tilt_high_max : f32 ,
-# [offset (100)] # [rename (name = "TiltLowMax")] pub tilt_low_max : f32 ,
-# [offset (104)] # [rename (name = "TiltSpeed")] pub tilt_speed : f32 ,
-# [offset (108)] # [rename (name = "TiltBackSpeedHand")] pub tilt_back_speed_hand : f32 ,
-# [offset (112)] # [rename (name = "TiltBackSpeedAuto")] pub tilt_back_speed_auto : f32 ,
-# [offset (116)] # [rename (name = "CameraChangeSpeed")] pub camera_change_speed : f32 ,
-# [offset (120)] # [rename (name = "CameraChangeCurve")] pub camera_change_curve : f32 ,
-# [offset (124)] # [rename (name = "SlipSlideSizeTop")] pub slip_slide_size_top : f32 ,
-# [offset (128)] # [rename (name = "SlipSlideSizeSelect")] pub slip_slide_size_select : f32 ,
-# [offset (132)] # [rename (name = "SlipSlideSizePreview")] pub slip_slide_size_preview : f32 ,
-# [offset (136)] # [rename (name = "SlipSlideSpeed")] pub slip_slide_speed : f32 ,
-# [offset (140)] # [rename (name = "CameraBoost")] pub camera_boost : f32 ,
-# [offset (144)] # [rename (name = "EyesIKWeight")] pub eyes_ik_weight : f32 ,
-# [offset (148)] # [rename (name = "HeadIKWeight")] pub head_ik_weight : f32 ,
-# [offset (152)] # [rename (name = "BodyIKWeight")] pub body_ik_weight : f32 ,
-# [offset (156)] # [rename (name = "LookChangeSpeed")] pub look_change_speed : f32 ,
-# [offset (160)] # [rename (name = "LookChangeDegree")] pub look_change_degree : f32 ,
-# [offset (164)] # [rename (name = "m_SelectingBackId")] pub m_selecting_back_id : i32 ,
-# [offset (168)] # [rename (name = "m_IsBackUpdating")] pub m_is_back_updating : bool ,
-# [offset (176)] # [rename (name = "m_BGHandle")] pub m_bg_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (184)] # [rename (name = "m_LookTarget")] pub m_look_target : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (232)] # [rename (name = "m_ViewMode")] pub m_view_mode : crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode ,
-# [offset (248)] # [rename (name = "m_CameraPos")] pub m_camera_pos : crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam ,
-# [offset (272)] # [rename (name = "m_CameraDiff")] pub m_camera_diff : crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam ,
-# [offset (296)] # [rename (name = "m_CameraDiffRate")] pub m_camera_diff_rate : f32 ,
-# [offset (304)] # [rename (name = "m_LookCamRate")] pub m_look_cam_rate : f32 ,
-# [offset (308)] # [rename (name = "m_LastTargetPosNearest")] pub m_last_target_pos_nearest : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (320)] # [rename (name = "m_LastTargetPosFarthest")] pub m_last_target_pos_farthest : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (336)] # [rename (name = "Backgrounds")] pub backgrounds : :: unity2 :: Array < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_BackgroundSettings > ,
-# [offset (344)] # [rename (name = "MainLight")] pub main_light : crate :: unity_engine :: light :: Light ,
-# [offset (352)] # [rename (name = "m_LastRotSpeed")] pub m_last_rot_speed : f32 ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroomcamera/HubAccessoryRoomCamera_CameraPositionParam.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HubAccessoryRoomCamera_CameraPositionParam {}
-
-
-impl ::unity2::ClassIdentity for HubAccessoryRoomCamera_CameraPositionParam {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubAccessoryRoomCamera.CameraPositionParam";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for HubAccessoryRoomCamera_CameraPositionParam {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for HubAccessoryRoomCamera_BackgroundSettings{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -145,37 +48,256 @@ impl ::unity2::IlType for HubAccessoryRoomCamera_CameraPositionParam {
 #[cfg(feature = "app-hubaccessoryroomcamera-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-pub trait IHubAccessoryRoomCameraMethods : IHubAccessoryRoomCamera { # [doc = "`get_MinDist()` overload"] fn get_min_dist (self ,) -> f32 { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d71a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MaxDist()` overload"] fn get_max_dist (self ,) -> f32 { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d71a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MinFoV()` overload"] fn get_min_fo_v (self ,) -> f32 { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d71a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MaxFoV()` overload"] fn get_max_fo_v (self ,) -> f32 { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d71ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d71ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d72060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Character()` overload"] fn get_character (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d734b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Character(crate::combat::character::Character)` overload"] fn set_character (self , value : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d734c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PID()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d734d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PID(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d734e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetCharacter(crate::combat::character::Character, ::unity2::Il2CppString)` overload"] fn set_character_2 (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , crate :: combat :: character :: Character , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d734f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`get_ViewMode()` overload"] fn get_view_mode (self ,) -> crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ViewMode(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"] fn set_view_mode (self , value : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , crate :: app :: hubaccessoryroom :: HubAccessoryRoom_ViewMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d71cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsAccs()` overload"] fn get_is_accs (self ,) -> bool { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73c50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsAccs(bool)` overload"] fn set_is_accs (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73c60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsCharacterChanged()` overload"] fn get_is_character_changed (self ,) -> bool { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsCharacterChanged(bool)` overload"] fn set_is_character_changed (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73c80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsTargetChanged()` overload"] fn get_is_target_changed (self ,) -> bool { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsTargetChanged(bool)` overload"] fn set_is_target_changed (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPreviewChanged()` overload"] fn get_is_preview_changed (self ,) -> bool { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsPreviewChanged(bool)` overload"] fn set_is_preview_changed (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CameraTilt()` overload"] fn get_camera_tilt (self ,) -> f32 { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CameraTilt(f32)` overload"] fn set_camera_tilt (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SlipSlide()` overload"] fn get_slip_slide (self ,) -> f32 { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SlipSlide(f32)` overload"] fn set_slip_slide (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLookCam()` overload"] fn get_is_look_cam (self ,) -> bool { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsLookCam(bool)` overload"] fn set_is_look_cam (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73d20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TargetPosNearest()` overload"] fn get_target_pos_nearest (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TargetPosFarthest()` overload"] fn get_target_pos_farthest (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d73f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitPos(bool)` overload"] fn init_pos (self , force : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d71d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (force) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateBack()` overload"] fn update_back (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d720e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadInput()` overload"] fn load_input (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d72470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCameraPos()` overload"] fn update_camera_pos (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d72e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCameraPos()` overload"] fn set_camera_pos (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d72ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubAccessoryRoomCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessoryRoomCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d746c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-impl < __T : IHubAccessoryRoomCamera > IHubAccessoryRoomCameraMethods for __T { }
-
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-impl HubAccessoryRoomCamera { pub fn get_min_dist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_max_dist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_min_fo_v_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_max_fo_v_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_character_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_view_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_view_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_is_accs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_is_accs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_is_character_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_is_character_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_is_target_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_is_target_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_is_preview_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_is_preview_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_camera_tilt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_camera_tilt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_slip_slide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_slip_slide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_is_look_cam_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_is_look_cam_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_target_pos_nearest_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_target_pos_farthest_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn init_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn update_back_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn load_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn update_camera_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn set_camera_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } }
-
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-impl HubAccessoryRoomCamera {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubAccessoryRoomCamera) , :: core :: stringify ! (new) ,)) ; < Self as IHubAccessoryRoomCameraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubaccessoryroomcamera")]pub trait IHubAccessoryRoomCameraMethods:IHubAccessoryRoomCamera{#[doc="`get_MinDist()` overload"]fn get_min_dist(self,)->f32{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d71a50usize)as*mut u8,f32;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`get_MaxDist()` overload"]fn get_max_dist(self,)->f32{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d71a70usize)as*mut u8,f32;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`get_MinFoV()` overload"]fn get_min_fo_v(self,)->f32{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d71a90usize)as*mut u8,f32;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`get_MaxFoV()` overload"]fn get_max_fo_v(self,)->f32{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d71ab0usize)as*mut u8,f32;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d71ad0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d72060usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`get_Character()` overload"]fn get_character(self,)->crate::combat::character::Character{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d734b0usize)as*mut u8,crate::combat::character::Character;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_Character(crate::combat::character::Character)` overload"]fn set_character(self,value:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d734c0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(crate::combat::character::Character)::core::convert::Into::into(value))}
+}
+#[doc="`get_PID()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d734d0usize)as*mut u8, ::unity2::Il2CppString;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_PID(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d734e0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`SetCharacter(crate::combat::character::Character, ::unity2::Il2CppString)` overload"]fn set_character_2(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d734f0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`get_ViewMode()` overload"]fn get_view_mode(self,)->crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73c40usize)as*mut u8,crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_ViewMode(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)` overload"]fn set_view_mode(self,value:impl::core::convert::Into<crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d71cd0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsAccs()` overload"]fn get_is_accs(self,)->bool{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73c50usize)as*mut u8,bool;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_IsAccs(bool)` overload"]fn set_is_accs(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73c60usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsCharacterChanged()` overload"]fn get_is_character_changed(self,)->bool{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73c70usize)as*mut u8,bool;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_IsCharacterChanged(bool)` overload"]fn set_is_character_changed(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73c80usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsTargetChanged()` overload"]fn get_is_target_changed(self,)->bool{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73c90usize)as*mut u8,bool;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_IsTargetChanged(bool)` overload"]fn set_is_target_changed(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73ca0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsPreviewChanged()` overload"]fn get_is_preview_changed(self,)->bool{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73cb0usize)as*mut u8,bool;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_IsPreviewChanged(bool)` overload"]fn set_is_preview_changed(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73cc0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_CameraTilt()` overload"]fn get_camera_tilt(self,)->f32{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73cd0usize)as*mut u8,f32;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_CameraTilt(f32)` overload"]fn set_camera_tilt(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73ce0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SlipSlide()` overload"]fn get_slip_slide(self,)->f32{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73cf0usize)as*mut u8,f32;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_SlipSlide(f32)` overload"]fn set_slip_slide(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73d00usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsLookCam()` overload"]fn get_is_look_cam(self,)->bool{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73d10usize)as*mut u8,bool;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`set_IsLookCam(bool)` overload"]fn set_is_look_cam(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73d20usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_TargetPosNearest()` overload"]fn get_target_pos_nearest(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73d30usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`get_TargetPosFarthest()` overload"]fn get_target_pos_farthest(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d73f70usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`InitPos(bool)` overload"]fn init_pos(self,force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d71d90usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver,(bool)::core::convert::Into::into(force))}
+}
+#[doc="`UpdateBack()` overload"]fn update_back(self,)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d720e0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`LoadInput()` overload"]fn load_input(self,)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d72470usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`UpdateCameraPos()` overload"]fn update_camera_pos(self,)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d72e90usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`SetCameraPos()` overload"]fn set_camera_pos(self,)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d72ed0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubAccessoryRoomCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d746c0usize)as*mut u8,();
+(HubAccessoryRoomCamera)__receiver)}
+}
 }
 
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-impl HubAccessoryRoomCamera_CameraPositionParam { # [doc = "`op_Multiply(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, f32)` overload"] pub fn op_multiply (param : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam > , rate : impl :: core :: convert :: Into < f32 >) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam { unsafe { { let __inner : extern "C" fn (crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce37d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (param) , :: core :: convert :: Into :: into (rate) , :: core :: option :: Option :: None) } } } # [doc = "`op_Addition(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"] pub fn op_addition (left : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam > , right : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam >) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam { unsafe { { let __inner : extern "C" fn (crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`op_Subtraction(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"] pub fn op_subtraction (left : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam > , right : impl :: core :: convert :: Into < crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam >) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam { unsafe { { let __inner : extern "C" fn (crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessoryroomcamera :: HubAccessoryRoomCamera_CameraPositionParam = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3850usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubaccessoryroomcamera")]impl<__T:IHubAccessoryRoomCamera>IHubAccessoryRoomCameraMethods for __T{}
 
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-impl HubAccessoryRoomCamera_CameraPositionParam { # [doc = "`get_Distance()` overload"] pub fn get_distance (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3710usize) as * mut u8) ; __inner (self as * mut HubAccessoryRoomCamera_CameraPositionParam , :: core :: option :: Option :: None) } } } # [doc = "`set_Distance(f32)` overload"] pub fn set_distance (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut HubAccessoryRoomCamera_CameraPositionParam , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3720usize) as * mut u8) ; __inner (self as * mut HubAccessoryRoomCamera_CameraPositionParam , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FoV()` overload"] pub fn get_fo_v (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3730usize) as * mut u8) ; __inner (self as * mut HubAccessoryRoomCamera_CameraPositionParam , :: core :: option :: Option :: None) } } } # [doc = "`set_FoV(f32)` overload"] pub fn set_fo_v (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut HubAccessoryRoomCamera_CameraPositionParam , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3740usize) as * mut u8) ; __inner (self as * mut HubAccessoryRoomCamera_CameraPositionParam , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Degree()` overload"] pub fn get_degree (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3750usize) as * mut u8) ; __inner (self as * mut HubAccessoryRoomCamera_CameraPositionParam , :: core :: option :: Option :: None) } } } # [doc = "`set_Degree(f32)` overload"] pub fn set_degree (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut HubAccessoryRoomCamera_CameraPositionParam , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3760usize) as * mut u8) ; __inner (self as * mut HubAccessoryRoomCamera_CameraPositionParam , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TargetPos()` overload"] pub fn get_target_pos (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3770usize) as * mut u8) ; __inner (self as * mut HubAccessoryRoomCamera_CameraPositionParam , :: core :: option :: Option :: None) } } } # [doc = "`set_TargetPos(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_target_pos (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut HubAccessoryRoomCamera_CameraPositionParam , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3780usize) as * mut u8) ; __inner (self as * mut HubAccessoryRoomCamera_CameraPositionParam , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] pub fn reset (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut HubAccessoryRoomCamera_CameraPositionParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3790usize) as * mut u8) ; __inner (self as * mut HubAccessoryRoomCamera_CameraPositionParam , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubaccessoryroomcamera")]impl HubAccessoryRoomCamera{pub fn get_min_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_max_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_min_fo_v_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_max_fo_v_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_character_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_view_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_view_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_is_accs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_is_accs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_is_character_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_is_character_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_is_target_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_is_target_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_is_preview_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_is_preview_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_camera_tilt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_camera_tilt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_slip_slide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_slip_slide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_is_look_cam_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_is_look_cam_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_target_pos_nearest_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_target_pos_farthest_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn init_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn update_back_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn load_input_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn update_camera_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn set_camera_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+}
 
-#[cfg(feature = "app-hubaccessoryroomcamera")]
-impl HubAccessoryRoomCamera_CameraPositionParam { pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_fo_v_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_fo_v_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_degree_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_degree_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_target_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_target_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn op_multiply_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn op_addition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_subtraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessoryRoomCamera_CameraPositionParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-hubaccessoryroomcamera")]impl HubAccessoryRoomCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubAccessoryRoomCamera), ::core::stringify!(new),));
+ <Self as IHubAccessoryRoomCameraMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-hubaccessoryroomcamera")]impl HubAccessoryRoomCamera_CameraPositionParam{#[doc="`op_Multiply(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, f32)` overload"]pub fn op_multiply(param:impl::core::convert::Into<crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam> ,rate:impl::core::convert::Into<f32>)->crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce37d0usize)as*mut u8,crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam;
+(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)::core::convert::Into::into(param),(f32)::core::convert::Into::into(rate))}
+}
+#[doc="`op_Addition(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]pub fn op_addition(left:impl::core::convert::Into<crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam> ,right:impl::core::convert::Into<crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam>)->crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3810usize)as*mut u8,crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam;
+(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)::core::convert::Into::into(left),(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)::core::convert::Into::into(right))}
+}
+#[doc="`op_Subtraction(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam, crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)` overload"]pub fn op_subtraction(left:impl::core::convert::Into<crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam> ,right:impl::core::convert::Into<crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam>)->crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3850usize)as*mut u8,crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam;
+(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)::core::convert::Into::into(left),(crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera_CameraPositionParam)::core::convert::Into::into(right))}
+}
+}
+
+#[cfg(feature="app-hubaccessoryroomcamera")]impl HubAccessoryRoomCamera_CameraPositionParam{#[doc="`get_Distance()` overload"]pub fn get_distance(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3710usize)as*mut u8,f32;
+(*mut HubAccessoryRoomCamera_CameraPositionParam)self as*mut HubAccessoryRoomCamera_CameraPositionParam)}
+}
+#[doc="`set_Distance(f32)` overload"]pub fn set_distance(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3720usize)as*mut u8,();
+(*mut HubAccessoryRoomCamera_CameraPositionParam)self as*mut HubAccessoryRoomCamera_CameraPositionParam,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_FoV()` overload"]pub fn get_fo_v(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3730usize)as*mut u8,f32;
+(*mut HubAccessoryRoomCamera_CameraPositionParam)self as*mut HubAccessoryRoomCamera_CameraPositionParam)}
+}
+#[doc="`set_FoV(f32)` overload"]pub fn set_fo_v(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3740usize)as*mut u8,();
+(*mut HubAccessoryRoomCamera_CameraPositionParam)self as*mut HubAccessoryRoomCamera_CameraPositionParam,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Degree()` overload"]pub fn get_degree(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3750usize)as*mut u8,f32;
+(*mut HubAccessoryRoomCamera_CameraPositionParam)self as*mut HubAccessoryRoomCamera_CameraPositionParam)}
+}
+#[doc="`set_Degree(f32)` overload"]pub fn set_degree(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3760usize)as*mut u8,();
+(*mut HubAccessoryRoomCamera_CameraPositionParam)self as*mut HubAccessoryRoomCamera_CameraPositionParam,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_TargetPos()` overload"]pub fn get_target_pos(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3770usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut HubAccessoryRoomCamera_CameraPositionParam)self as*mut HubAccessoryRoomCamera_CameraPositionParam)}
+}
+#[doc="`set_TargetPos(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_target_pos(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3780usize)as*mut u8,();
+(*mut HubAccessoryRoomCamera_CameraPositionParam)self as*mut HubAccessoryRoomCamera_CameraPositionParam,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3790usize)as*mut u8,();
+(*mut HubAccessoryRoomCamera_CameraPositionParam)self as*mut HubAccessoryRoomCamera_CameraPositionParam)}
+}
+}
+
+#[cfg(feature="app-hubaccessoryroomcamera")]impl HubAccessoryRoomCamera_CameraPositionParam{pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_fo_v_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_fo_v_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_degree_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_degree_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_target_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_target_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn op_multiply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn op_addition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_subtraction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
 #[cfg(feature = "app-hubaccessoryroomcamera")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubAccessoryRoomCamera_BackgroundSettings;
     pub use super::HubAccessoryRoomCamera;
     pub use super::IHubAccessoryRoomCamera;
     pub use super::IHubAccessoryRoomCameraMethods;
     pub use super::HubAccessoryRoomCamera_CameraPositionParam;
+    pub use super::HubAccessoryRoomCamera_BackgroundSettings;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

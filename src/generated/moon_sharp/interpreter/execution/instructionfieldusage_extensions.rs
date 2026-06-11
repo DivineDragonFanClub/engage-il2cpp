@@ -4,26 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/instructionfieldusage_extensions/InstructionFieldUsage_Extensions.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Execution" , name = "InstructionFieldUsage_Extensions")] # [parent (crate :: system :: object :: Object)] pub struct InstructionFieldUsage_Extensions {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/execution/instructionfieldusage_extensions/InstructionFieldUsage_Extensions.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Execution",name="InstructionFieldUsage_Extensions")]#[parent(crate::system::object::Object)]pub struct InstructionFieldUsage_Extensions{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InstructionFieldUsage_Extensions_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_field_usage { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: opcode :: OpCode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InstructionFieldUsage_Extensions as :: unity2 :: ClassIdentity > :: class () , "GetFieldUsage" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InstructionFieldUsage_Extensions as :: unity2 :: ClassIdentity > :: NAME , "GetFieldUsage" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-instructionfieldusage_extensions")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InstructionFieldUsage_Extensions_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_field_usage{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::opcode::OpCode as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InstructionFieldUsage_Extensions as::unity2::ClassIdentity> ::class(),"GetFieldUsage",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InstructionFieldUsage_Extensions as::unity2::ClassIdentity> ::NAME,"GetFieldUsage",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions")]
-impl InstructionFieldUsage_Extensions { # [doc = "`GetFieldUsage(crate::moon_sharp::interpreter::execution::vm::opcode::OpCode)` overload"] pub fn get_field_usage (op : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: opcode :: OpCode >) -> crate :: moon_sharp :: interpreter :: execution :: instructionfieldusage :: InstructionFieldUsage { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: execution :: vm :: opcode :: OpCode , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: execution :: instructionfieldusage :: InstructionFieldUsage = :: core :: mem :: transmute (__InstructionFieldUsage_Extensions_unity2_raw :: __lookup_get_field_usage :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (op) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-execution-instructionfieldusage_extensions")]impl InstructionFieldUsage_Extensions{#[doc="`GetFieldUsage(crate::moon_sharp::interpreter::execution::vm::opcode::OpCode)` overload"]pub fn get_field_usage(op:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::opcode::OpCode>)->crate::moon_sharp::interpreter::execution::instructionfieldusage::InstructionFieldUsage{unsafe{::unity2::il2cpp_call!(__InstructionFieldUsage_Extensions_unity2_raw::__lookup_get_field_usage::get_method_info().method_ptr,crate::moon_sharp::interpreter::execution::instructionfieldusage::InstructionFieldUsage;
+(crate::moon_sharp::interpreter::execution::vm::opcode::OpCode)::core::convert::Into::into(op))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions")]
-impl InstructionFieldUsage_Extensions { pub fn get_field_usage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InstructionFieldUsage_Extensions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="moon_sharp-interpreter-execution-instructionfieldusage_extensions")]impl InstructionFieldUsage_Extensions{pub fn get_field_usage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions")]
 #[doc(hidden)]

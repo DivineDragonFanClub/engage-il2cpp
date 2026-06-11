@@ -4,49 +4,95 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenucontent/RingCleaningUnitSelectMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningUnitSelectMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct RingCleaningUnitSelectMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_BondSetter")] pub m_bond_setter : crate :: app :: menubondsetter :: MenuBondSetter ,
-# [offset (240)] # [rename (name = "m_HelpMessage")] pub m_help_message : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_GodInfo")] pub m_god_info : crate :: app :: godroomgodinfosetter :: GodRoomGodInfoSetter ,
-# [static_field] # [rename (name = "ListGodNum")] pub list_god_num : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningunitselectmenucontent/RingCleaningUnitSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="RingCleaningUnitSelectMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct RingCleaningUnitSelectMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_BondSetter")]pub m_bond_setter:crate::app::menubondsetter::MenuBondSetter, #[offset(240)]#[rename(name="m_HelpMessage")]pub m_help_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_GodInfo")]pub m_god_info:crate::app::godroomgodinfosetter::GodRoomGodInfoSetter, #[static_field]#[rename(name="ListGodNum")]pub list_god_num:i32,}
 
 }
 
 #[cfg(feature = "app-ringcleaningunitselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringcleaningunitselectmenucontent")]
-impl RingCleaningUnitSelectMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2419fc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241a170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c5e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: ringcleaningunitselectmenucontent :: RingCleaningUnitSelectMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningunitselectmenucontent :: RingCleaningUnitSelectMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420bf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)` overload"] pub fn destroy (content : impl :: core :: convert :: Into < crate :: app :: ringcleaningunitselectmenucontent :: RingCleaningUnitSelectMenuContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: ringcleaningunitselectmenucontent :: RingCleaningUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422080usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422250usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningunitselectmenucontent")]impl RingCleaningUnitSelectMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2419fc0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241a170usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241c5e0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2420bf0usize)as*mut u8,crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent;
+)}
+}
+#[doc="`Destroy(crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)` overload"]pub fn destroy(content:impl::core::convert::Into<crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422080usize)as*mut u8,();
+(crate::app::ringcleaningunitselectmenucontent::RingCleaningUnitSelectMenuContent)::core::convert::Into::into(content))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2422250usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningunitselectmenucontent")]
-pub trait IRingCleaningUnitSelectMenuContentMethods : IRingCleaningUnitSelectMenuContent { # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < RingCleaningUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningUnitSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2421ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < RingCleaningUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2421fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < RingCleaningUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < RingCleaningUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2422170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateGodInfo(crate::app::unit::Unit)` overload"] fn update_god_info (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < RingCleaningUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningUnitSelectMenuContent , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2421040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningUnitSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningUnitSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24221e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningunitselectmenucontent")]pub trait IRingCleaningUnitSelectMenuContentMethods:IRingCleaningUnitSelectMenuContent{#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RingCleaningUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2421ef0usize)as*mut u8,f32;
+(RingCleaningUnitSelectMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2421fb0usize)as*mut u8,();
+(RingCleaningUnitSelectMenuContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <RingCleaningUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2422100usize)as*mut u8,f32;
+(RingCleaningUnitSelectMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <RingCleaningUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2422170usize)as*mut u8,f32;
+(RingCleaningUnitSelectMenuContent)__receiver)}
+}
+#[doc="`UpdateGodInfo(crate::app::unit::Unit)` overload"]fn update_god_info(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2421040usize)as*mut u8,();
+(RingCleaningUnitSelectMenuContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingCleaningUnitSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24221e0usize)as*mut u8,();
+(RingCleaningUnitSelectMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningunitselectmenucontent")]
-impl < __T : IRingCleaningUnitSelectMenuContent > IRingCleaningUnitSelectMenuContentMethods for __T { }
+#[cfg(feature="app-ringcleaningunitselectmenucontent")]impl<__T:IRingCleaningUnitSelectMenuContent>IRingCleaningUnitSelectMenuContentMethods for __T{}
 
-#[cfg(feature = "app-ringcleaningunitselectmenucontent")]
-impl RingCleaningUnitSelectMenuContent { pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_god_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningUnitSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-ringcleaningunitselectmenucontent")]impl RingCleaningUnitSelectMenuContent{pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_god_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-ringcleaningunitselectmenucontent")]
-impl RingCleaningUnitSelectMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningUnitSelectMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningUnitSelectMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringcleaningunitselectmenucontent")]impl RingCleaningUnitSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningUnitSelectMenuContent), ::core::stringify!(new),));
+ <Self as IRingCleaningUnitSelectMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringcleaningunitselectmenucontent")]

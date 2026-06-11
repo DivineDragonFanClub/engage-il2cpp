@@ -4,48 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonscriptableobject_1 :: { ISingletonScriptableObject_1 , SingletonScriptableObject_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonscriptableobject_1::{ISingletonScriptableObject_1,SingletonScriptableObject_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcolor/ProfileCardColor.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardColor")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: profilecardcolor :: ProfileCardColor >)] pub struct ProfileCardColor {
-# [offset (24)] # [rename (name = "黒")] pub 黒 : crate :: unity_engine :: color :: Color ,
-# [offset (40)] # [rename (name = "灰")] pub 灰 : crate :: unity_engine :: color :: Color ,
-# [offset (56)] # [rename (name = "赤")] pub 赤 : crate :: unity_engine :: color :: Color ,
-# [offset (72)] # [rename (name = "桃")] pub 桃 : crate :: unity_engine :: color :: Color ,
-# [offset (88)] # [rename (name = "紫")] pub 紫 : crate :: unity_engine :: color :: Color ,
-# [offset (104)] # [rename (name = "青")] pub 青 : crate :: unity_engine :: color :: Color ,
-# [offset (120)] # [rename (name = "群青")] pub 群青 : crate :: unity_engine :: color :: Color ,
-# [offset (136)] # [rename (name = "緑")] pub 緑 : crate :: unity_engine :: color :: Color ,
-# [offset (152)] # [rename (name = "黄緑")] pub 黄緑 : crate :: unity_engine :: color :: Color ,
-# [offset (168)] # [rename (name = "茶色")] pub 茶色 : crate :: unity_engine :: color :: Color ,
-# [offset (184)] # [rename (name = "橙")] pub 橙 : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcolor/ProfileCardColor.md"))]#[::unity2::class(namespace="App",name="ProfileCardColor")]#[parent(crate::app::singletonscriptableobject_1::SingletonScriptableObject_1<crate::app::profilecardcolor::ProfileCardColor>)]pub struct ProfileCardColor{#[offset(24)]#[rename(name="黒")]pub 黒:crate::unity_engine::color::Color, #[offset(40)]#[rename(name="灰")]pub 灰:crate::unity_engine::color::Color, #[offset(56)]#[rename(name="赤")]pub 赤:crate::unity_engine::color::Color, #[offset(72)]#[rename(name="桃")]pub 桃:crate::unity_engine::color::Color, #[offset(88)]#[rename(name="紫")]pub 紫:crate::unity_engine::color::Color, #[offset(104)]#[rename(name="青")]pub 青:crate::unity_engine::color::Color, #[offset(120)]#[rename(name="群青")]pub 群青:crate::unity_engine::color::Color, #[offset(136)]#[rename(name="緑")]pub 緑:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="黄緑")]pub 黄緑:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="茶色")]pub 茶色:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="橙")]pub 橙:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-profilecardcolor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardcolor")]
-pub trait IProfileCardColorMethods : IProfileCardColor { # [doc = "`GetColor(::unity2::Il2CppString)` overload"] fn get_color (self , color : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < ProfileCardColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardColor , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230d2b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230d690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardcolor")]pub trait IProfileCardColorMethods:IProfileCardColor{#[doc="`GetColor(::unity2::Il2CppString)` overload"]fn get_color(self,color:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::color::Color{unsafe{let __receiver= <ProfileCardColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230d2b0usize)as*mut u8,crate::unity_engine::color::Color;
+(ProfileCardColor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(color))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230d690usize)as*mut u8,();
+(ProfileCardColor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardcolor")]
-impl < __T : IProfileCardColor > IProfileCardColorMethods for __T { }
+#[cfg(feature="app-profilecardcolor")]impl<__T:IProfileCardColor>IProfileCardColorMethods for __T{}
 
-#[cfg(feature = "app-profilecardcolor")]
-impl ProfileCardColor { pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-profilecardcolor")]impl ProfileCardColor{pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-profilecardcolor")]
-impl ProfileCardColor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardColor) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardColorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardcolor")]impl ProfileCardColor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardColor), ::core::stringify!(new),));
+ <Self as IProfileCardColorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardcolor")]

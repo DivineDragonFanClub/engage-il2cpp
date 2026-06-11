@@ -4,57 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksequence/LaterTalkSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "LaterTalkSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: latertalksequence :: LaterTalkSequence >)] pub struct LaterTalkSequence {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_BgmHeader")] pub m_bgm_header : :: unity2 :: Il2CppString ,
-# [offset (136)] # [rename (name = "m_Locator")] pub m_locator : crate :: combat :: basecombatlocation :: BaseCombatLocation ,
-# [offset (144)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (152)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (160)] # [rename (name = "m_VolumeAlive")] pub m_volume_alive : crate :: unity_engine :: rendering :: volume :: Volume ,
-# [offset (168)] # [rename (name = "m_VolumeDead")] pub m_volume_dead : crate :: unity_engine :: rendering :: volume :: Volume ,
-# [offset (176)] # [rename (name = "m_GcMode")] pub m_gc_mode : crate :: unity_engine :: scripting :: garbagecollector :: GarbageCollector_Mode ,
-# [static_field] # [rename (name = "BgmBranch")] pub bgm_branch : :: unity2 :: Il2CppString ,
-# [offset (200)] # [rename (name = "m_CurrentBg")] pub m_current_bg : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (224)] # [rename (name = "m_NextBg")] pub m_next_bg : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (232)] # [rename (name = "m_FadeInTime")] pub m_fade_in_time : f32 ,
-# [offset (236)] # [rename (name = "m_FadeOutTime")] pub m_fade_out_time : f32 ,
-# [offset (240)] # [rename (name = "m_CameraCtrls")] pub m_camera_ctrls : :: unity2 :: Array < crate :: combat :: cameracontrollerunitdetail :: CameraControllerUnitDetail > ,
-# [offset (248)] # [rename (name = "m_DefaultSlipSlideScales")] pub m_default_slip_slide_scales : :: unity2 :: Array < f32 > ,
-# [offset (256)] # [rename (name = "m_SlideTime")] pub m_slide_time : f32 ,
-# [offset (260)] # [rename (name = "m_SlideStart")] pub m_slide_start : f32 ,
-# [offset (264)] # [rename (name = "m_SlideEnd")] pub m_slide_end : f32 ,
-# [offset (268)] # [rename (name = "m_Power")] pub m_power : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/latertalksequence/LaterTalkSequence.md"))]#[::unity2::class(namespace="App",name="LaterTalkSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::latertalksequence::LaterTalkSequence>)]pub struct LaterTalkSequence{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_BgmHeader")]pub m_bgm_header: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_Locator")]pub m_locator:crate::combat::basecombatlocation::BaseCombatLocation, #[offset(144)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(152)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_VolumeAlive")]pub m_volume_alive:crate::unity_engine::rendering::volume::Volume, #[offset(168)]#[rename(name="m_VolumeDead")]pub m_volume_dead:crate::unity_engine::rendering::volume::Volume, #[offset(176)]#[rename(name="m_GcMode")]pub m_gc_mode:crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode, #[static_field]#[rename(name="BgmBranch")]pub bgm_branch: ::unity2::Il2CppString, #[offset(200)]#[rename(name="m_CurrentBg")]pub m_current_bg:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(224)]#[rename(name="m_NextBg")]pub m_next_bg:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(232)]#[rename(name="m_FadeInTime")]pub m_fade_in_time:f32, #[offset(236)]#[rename(name="m_FadeOutTime")]pub m_fade_out_time:f32, #[offset(240)]#[rename(name="m_CameraCtrls")]pub m_camera_ctrls: ::unity2::Array<crate::combat::cameracontrollerunitdetail::CameraControllerUnitDetail> , #[offset(248)]#[rename(name="m_DefaultSlipSlideScales")]pub m_default_slip_slide_scales: ::unity2::Array<f32> , #[offset(256)]#[rename(name="m_SlideTime")]pub m_slide_time:f32, #[offset(260)]#[rename(name="m_SlideStart")]pub m_slide_start:f32, #[offset(264)]#[rename(name="m_SlideEnd")]pub m_slide_end:f32, #[offset(268)]#[rename(name="m_Power")]pub m_power:f32,}
 
 }
 
 #[cfg(feature = "app-latertalksequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-latertalksequence")]
-impl LaterTalkSequence { # [doc = "`IsExist()` overload"] pub fn is_exist () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdce60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , bgm_header : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdcee0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (bgm_header) , :: core :: option :: Option :: None) } } } # [doc = "`PreSetup(::unity2::Il2CppString)` overload"] pub fn pre_setup (bgm_header : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdd660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (bgm_header) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-latertalksequence")]impl LaterTalkSequence{#[doc="`IsExist()` overload"]pub fn is_exist()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdce60usize)as*mut u8,bool;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,bgm_header:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdcee0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(bgm_header))}
+}
+#[doc="`PreSetup(::unity2::Il2CppString)` overload"]pub fn pre_setup(bgm_header:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdd660usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(bgm_header))}
+}
+}
 
-#[cfg(feature = "app-latertalksequence")]
-pub trait ILaterTalkSequenceMethods : ILaterTalkSequence { # [doc = "`get_Setter()` overload"] fn get_setter (self ,) -> crate :: app :: latertalksetter :: LaterTalkSetter { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: latertalksetter :: LaterTalkSetter = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdd640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Setter(crate::app::latertalksetter::LaterTalkSetter)` overload"] fn set_setter (self , value : impl :: core :: convert :: Into < crate :: app :: latertalksetter :: LaterTalkSetter >) -> () { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , crate :: app :: latertalksetter :: LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdd650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetUp()` overload"] fn set_up (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdda80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bddb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FadeIn()` overload"] fn fade_in (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bddd00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartLoadNext()` overload"] fn start_load_next (self ,) -> () { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bddd80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bde210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FadeOut()` overload"] fn fade_out (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bde290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSlideIn(f32)` overload"] fn start_slide_in (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bde310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`StartSlideOut(f32)` overload"] fn start_slide_out (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bde4d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`Slide()` overload"] fn slide (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bde690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LaterTalkSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdd5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-latertalksequence")]pub trait ILaterTalkSequenceMethods:ILaterTalkSequence{#[doc="`get_Setter()` overload"]fn get_setter(self,)->crate::app::latertalksetter::LaterTalkSetter{unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdd640usize)as*mut u8,crate::app::latertalksetter::LaterTalkSetter;
+(LaterTalkSequence)__receiver)}
+}
+#[doc="`set_Setter(crate::app::latertalksetter::LaterTalkSetter)` overload"]fn set_setter(self,value:impl::core::convert::Into<crate::app::latertalksetter::LaterTalkSetter>)->(){unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdd650usize)as*mut u8,();
+(LaterTalkSequence)__receiver,(crate::app::latertalksetter::LaterTalkSetter)::core::convert::Into::into(value))}
+}
+#[doc="`SetUp()` overload"]fn set_up(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdda80usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(LaterTalkSequence)__receiver)}
+}
+#[doc="`Unload()` overload"]fn unload(self,)->(){unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bddb00usize)as*mut u8,();
+(LaterTalkSequence)__receiver)}
+}
+#[doc="`FadeIn()` overload"]fn fade_in(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bddd00usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(LaterTalkSequence)__receiver)}
+}
+#[doc="`StartLoadNext()` overload"]fn start_load_next(self,)->(){unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bddd80usize)as*mut u8,();
+(LaterTalkSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bde210usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(LaterTalkSequence)__receiver)}
+}
+#[doc="`FadeOut()` overload"]fn fade_out(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bde290usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(LaterTalkSequence)__receiver)}
+}
+#[doc="`StartSlideIn(f32)` overload"]fn start_slide_in(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bde310usize)as*mut u8,();
+(LaterTalkSequence)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`StartSlideOut(f32)` overload"]fn start_slide_out(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bde4d0usize)as*mut u8,();
+(LaterTalkSequence)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`Slide()` overload"]fn slide(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bde690usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(LaterTalkSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LaterTalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdd5c0usize)as*mut u8,();
+(LaterTalkSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-latertalksequence")]
-impl < __T : ILaterTalkSequence > ILaterTalkSequenceMethods for __T { }
+#[cfg(feature="app-latertalksequence")]impl<__T:ILaterTalkSequence>ILaterTalkSequenceMethods for __T{}
 
-#[cfg(feature = "app-latertalksequence")]
-impl LaterTalkSequence { pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_setter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn pre_setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn start_load_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn start_slide_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn start_slide_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn slide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-latertalksequence")]impl LaterTalkSequence{pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_setter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_setter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn pre_setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn start_load_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn start_slide_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn start_slide_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn slide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "app-latertalksequence")]
-impl LaterTalkSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LaterTalkSequence) , :: core :: stringify ! (new) ,)) ; < Self as ILaterTalkSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-latertalksequence")]impl LaterTalkSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LaterTalkSequence), ::core::stringify!(new),));
+ <Self as ILaterTalkSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-latertalksequence")]

@@ -4,38 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomfadeclip/MyRoomFadeClip.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomFadeClip")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct MyRoomFadeClip {
-# [offset (24)] # [rename (name = "Template")] pub template : crate :: app :: myroomfadecolor :: MyRoomFadeColor ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomfadeclip/MyRoomFadeClip.md"))]#[::unity2::class(namespace="App",name="MyRoomFadeClip")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct MyRoomFadeClip{#[offset(24)]#[rename(name="Template")]pub template:crate::app::myroomfadecolor::MyRoomFadeColor,}
 
 }
 
 #[cfg(feature = "app-myroomfadeclip-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomfadeclip")]
-pub trait IMyRoomFadeClipMethods : IMyRoomFadeClip { # [doc = "`get_clipCaps()` overload"] fn get_clip_caps (self ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps { unsafe { let __receiver = < MyRoomFadeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomFadeClip , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: clipcaps :: ClipCaps = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238ff60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"] fn create_playable (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , owner : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < MyRoomFadeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomFadeClip , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238ff70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomFadeClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomFadeClip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2390030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomfadeclip")]pub trait IMyRoomFadeClipMethods:IMyRoomFadeClip{#[doc="`get_clipCaps()` overload"]fn get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <MyRoomFadeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238ff60usize)as*mut u8,crate::unity_engine::timeline::clipcaps::ClipCaps;
+(MyRoomFadeClip)__receiver)}
+}
+#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <MyRoomFadeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238ff70usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(MyRoomFadeClip)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(owner))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomFadeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2390030usize)as*mut u8,();
+(MyRoomFadeClip)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomfadeclip")]
-impl < __T : IMyRoomFadeClip > IMyRoomFadeClipMethods for __T { }
+#[cfg(feature="app-myroomfadeclip")]impl<__T:IMyRoomFadeClip>IMyRoomFadeClipMethods for __T{}
 
-#[cfg(feature = "app-myroomfadeclip")]
-impl MyRoomFadeClip { pub fn get_clip_caps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomFadeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomFadeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomFadeClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-myroomfadeclip")]impl MyRoomFadeClip{pub fn get_clip_caps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-myroomfadeclip")]
-impl MyRoomFadeClip {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomFadeClip) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomFadeClipMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomfadeclip")]impl MyRoomFadeClip{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomFadeClip), ::core::stringify!(new),));
+ <Self as IMyRoomFadeClipMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomfadeclip")]

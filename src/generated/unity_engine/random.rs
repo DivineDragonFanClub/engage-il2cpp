@@ -4,23 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/random/Random.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Random")] # [parent (crate :: system :: object :: Object)] pub struct Random {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/random/Random.md"))]#[::unity2::class(namespace="UnityEngine",name="Random")]#[parent(crate::system::object::Object)]pub struct Random{}
 
 }
 
 #[cfg(feature = "unity_engine-random-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-random")]
-impl Random { # [doc = "`InitState(i32)` overload"] pub fn init_state (seed : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79c00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (seed) , :: core :: option :: Option :: None) } } } # [doc = "`Range(f32, f32)` overload"] pub fn range (min_inclusive : impl :: core :: convert :: Into < f32 > , max_inclusive : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (min_inclusive) , :: core :: convert :: Into :: into (max_inclusive) , :: core :: option :: Option :: None) } } } # [doc = "`Range(i32, i32)` overload"] pub fn range_2 (min_inclusive : impl :: core :: convert :: Into < i32 > , max_exclusive : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79ca0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (min_inclusive) , :: core :: convert :: Into :: into (max_exclusive) , :: core :: option :: Option :: None) } } } # [doc = "`RandomRangeInt(i32, i32)` overload"] pub fn random_range_int (min_inclusive : impl :: core :: convert :: Into < i32 > , max_exclusive : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (min_inclusive) , :: core :: convert :: Into :: into (max_exclusive) , :: core :: option :: Option :: None) } } } # [doc = "`get_value()` overload"] pub fn get_value () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79d40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_insideUnitSphere()` overload"] pub fn get_inside_unit_sphere () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79d80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_insideUnitSphere_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn get_inside_unit_sphere_injected () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f79de0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-random")]impl Random{#[doc="`InitState(i32)` overload"]pub fn init_state(seed:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f79c00usize)as*mut u8,();
+(i32)::core::convert::Into::into(seed))}
+}
+#[doc="`Range(f32, f32)` overload"]pub fn range(min_inclusive:impl::core::convert::Into<f32> ,max_inclusive:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f79c50usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(min_inclusive),(f32)::core::convert::Into::into(max_inclusive))}
+}
+#[doc="`Range(i32, i32)` overload"]pub fn range_2(min_inclusive:impl::core::convert::Into<i32> ,max_exclusive:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f79ca0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(min_inclusive),(i32)::core::convert::Into::into(max_exclusive))}
+}
+#[doc="`RandomRangeInt(i32, i32)` overload"]pub fn random_range_int(min_inclusive:impl::core::convert::Into<i32> ,max_exclusive:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f79cf0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(min_inclusive),(i32)::core::convert::Into::into(max_exclusive))}
+}
+#[doc="`get_value()` overload"]pub fn get_value()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f79d40usize)as*mut u8,f32;
+)}
+}
+#[doc="`get_insideUnitSphere()` overload"]pub fn get_inside_unit_sphere()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f79d80usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`get_insideUnitSphere_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn get_inside_unit_sphere_injected()->crate::unity_engine::vector3::Vector3{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f79de0usize)as*mut u8,();
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-random")]
-impl Random { pub fn init_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn range_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn random_range_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_inside_unit_sphere_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_inside_unit_sphere_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Random as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-random")]impl Random{pub fn init_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn range_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn random_range_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_inside_unit_sphere_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_inside_unit_sphere_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-random")]
 #[doc(hidden)]

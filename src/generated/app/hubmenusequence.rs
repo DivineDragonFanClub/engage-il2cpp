@@ -4,140 +4,95 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmenusequence/HubMenuSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubMenuSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenusequence/HubMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubMenuSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for HubMenuSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubMenuSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubMenuSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubMenuSequence_Label{pub fn init()->Self{Self{value:0}
+}
+pub fn top_menu()->Self{Self{value:1}
+}
+pub fn god()->Self{Self{value:2}
+}
+pub fn inventory()->Self{Self{value:3}
+}
+pub fn map_info()->Self{Self{value:4}
+}
+pub fn material_list()->Self{Self{value:5}
+}
+pub fn save_data()->Self{Self{value:6}
+}
+pub fn goto_next()->Self{Self{value:7}
+}
+pub fn goto_gmap()->Self{Self{value:8}
+}
+pub fn end()->Self{Self{value:9}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for HubMenuSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubMenuSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubMenuSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubMenuSequence_Label  {
-    pub fn init() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top_menu() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn god() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn inventory() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn map_info() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn material_list() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn save_data() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn goto_next() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn goto_gmap() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 9 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenusequence/HubMenuSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMenuSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubmenusequence :: HubMenuSequence >)] pub struct HubMenuSequence {
-# [offset (114)] # [rename (name = "IsGotoNext")] pub is_goto_next : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmenusequence/HubMenuSequence.md"))]#[::unity2::class(namespace="App",name="HubMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::hubmenusequence::HubMenuSequence>)]pub struct HubMenuSequence{#[offset(114)]#[rename(name="IsGotoNext")]pub is_goto_next:bool,}
 
 }
 
 #[cfg(feature = "app-hubmenusequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmenusequence")]
-impl HubMenuSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b8bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenusequence")]impl HubMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b8bd0usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-hubmenusequence")]
-pub trait IHubMenuSequenceMethods : IHubMenuSequence { # [doc = "`OpenDialogNext()` overload"] fn open_dialog_next (self ,) -> () { unsafe { let __receiver = < HubMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b98f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenDialogGmap()` overload"] fn open_dialog_gmap (self ,) -> () { unsafe { let __receiver = < HubMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b9980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateMapInfoBind()` overload"] fn create_map_info_bind (self ,) -> () { unsafe { let __receiver = < HubMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b9ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubMenuSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMenuSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28b9870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmenusequence")]pub trait IHubMenuSequenceMethods:IHubMenuSequence{#[doc="`OpenDialogNext()` overload"]fn open_dialog_next(self,)->(){unsafe{let __receiver= <HubMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b98f0usize)as*mut u8,();
+(HubMenuSequence)__receiver)}
+}
+#[doc="`OpenDialogGmap()` overload"]fn open_dialog_gmap(self,)->(){unsafe{let __receiver= <HubMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b9980usize)as*mut u8,();
+(HubMenuSequence)__receiver)}
+}
+#[doc="`CreateMapInfoBind()` overload"]fn create_map_info_bind(self,)->(){unsafe{let __receiver= <HubMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b9ce0usize)as*mut u8,();
+(HubMenuSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28b9870usize)as*mut u8,();
+(HubMenuSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmenusequence")]
-impl < __T : IHubMenuSequence > IHubMenuSequenceMethods for __T { }
+#[cfg(feature="app-hubmenusequence")]impl<__T:IHubMenuSequence>IHubMenuSequenceMethods for __T{}
 
-#[cfg(feature = "app-hubmenusequence")]
-impl HubMenuSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn open_dialog_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn open_dialog_gmap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_map_info_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMenuSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-hubmenusequence")]impl HubMenuSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn open_dialog_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn open_dialog_gmap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_map_info_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-hubmenusequence")]
-impl HubMenuSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMenuSequence) , :: core :: stringify ! (new) ,)) ; < Self as IHubMenuSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubmenusequence")]impl HubMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMenuSequence), ::core::stringify!(new),));
+ <Self as IHubMenuSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubmenusequence")]

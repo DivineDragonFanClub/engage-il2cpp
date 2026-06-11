@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/typefilter/TypeFilter.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "TypeFilter")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct TypeFilter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/typefilter/TypeFilter.md"))]#[::unity2::class(namespace="System.Reflection",name="TypeFilter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct TypeFilter{}
 
 }
 
 #[cfg(feature = "system-reflection-typefilter-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-typefilter")]
-pub trait ITypeFilterMethods : ITypeFilter { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < TypeFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TypeFilter , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35635b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::SystemType, crate::system::object::Object)` overload"] fn invoke (self , m : impl :: core :: convert :: Into < :: unity2 :: SystemType > , filter_criteria : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < TypeFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TypeFilter , :: unity2 :: SystemType , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35635d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (m) , :: core :: convert :: Into :: into (filter_criteria) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-typefilter")]pub trait ITypeFilterMethods:ITypeFilter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TypeFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35635b0usize)as*mut u8,();
+(TypeFilter)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::SystemType, crate::system::object::Object)` overload"]fn invoke(self,m:impl::core::convert::Into< ::unity2::SystemType> ,filter_criteria:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <TypeFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35635d0usize)as*mut u8,bool;
+(TypeFilter)__receiver,(::unity2::SystemType)::core::convert::Into::into(m),(crate::system::object::Object)::core::convert::Into::into(filter_criteria))}
+}
+}
 
-#[cfg(feature = "system-reflection-typefilter")]
-impl < __T : ITypeFilter > ITypeFilterMethods for __T { }
+#[cfg(feature="system-reflection-typefilter")]impl<__T:ITypeFilter>ITypeFilterMethods for __T{}
 
-#[cfg(feature = "system-reflection-typefilter")]
-impl TypeFilter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TypeFilter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TypeFilter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-reflection-typefilter")]impl TypeFilter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "system-reflection-typefilter")]
-impl TypeFilter {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TypeFilter) , :: core :: stringify ! (new) ,)) ; < Self as ITypeFilterMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="system-reflection-typefilter")]impl TypeFilter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TypeFilter), ::core::stringify!(new),));
+ <Self as ITypeFilterMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "system-reflection-typefilter")]

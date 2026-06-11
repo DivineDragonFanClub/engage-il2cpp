@@ -4,42 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinelevels/GodWeaponRefineLevels.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodWeaponRefineLevels")] # [parent (crate :: system :: object :: Object)] pub struct GodWeaponRefineLevels {
-# [offset (16)] # [rename (name = "m_Capacity")] pub m_capacity : u8 ,
-# [offset (17)] # [rename (name = "m_Power")] pub m_power : u8 ,
-# [offset (18)] # [rename (name = "m_Hit")] pub m_hit : u8 ,
-# [offset (19)] # [rename (name = "m_Critical")] pub m_critical : u8 ,
-# [offset (20)] # [rename (name = "m_Avoid")] pub m_avoid : u8 ,
-# [offset (21)] # [rename (name = "m_Secure")] pub m_secure : u8 ,
-# [offset (22)] # [rename (name = "m_Tech")] pub m_tech : u8 ,
-# [offset (23)] # [rename (name = "m_Quick")] pub m_quick : u8 ,
-# [offset (24)] # [rename (name = "m_Def")] pub m_def : u8 ,
-# [offset (25)] # [rename (name = "m_Mdef")] pub m_mdef : u8 ,
-# [offset (32)] # [rename (name = "m_Sid")] pub m_sid : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godweaponrefinelevels/GodWeaponRefineLevels.md"))]#[::unity2::class(namespace="App",name="GodWeaponRefineLevels")]#[parent(crate::system::object::Object)]pub struct GodWeaponRefineLevels{#[offset(16)]#[rename(name="m_Capacity")]pub m_capacity:u8, #[offset(17)]#[rename(name="m_Power")]pub m_power:u8, #[offset(18)]#[rename(name="m_Hit")]pub m_hit:u8, #[offset(19)]#[rename(name="m_Critical")]pub m_critical:u8, #[offset(20)]#[rename(name="m_Avoid")]pub m_avoid:u8, #[offset(21)]#[rename(name="m_Secure")]pub m_secure:u8, #[offset(22)]#[rename(name="m_Tech")]pub m_tech:u8, #[offset(23)]#[rename(name="m_Quick")]pub m_quick:u8, #[offset(24)]#[rename(name="m_Def")]pub m_def:u8, #[offset(25)]#[rename(name="m_Mdef")]pub m_mdef:u8, #[offset(32)]#[rename(name="m_Sid")]pub m_sid: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-godweaponrefinelevels-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godweaponrefinelevels")]
-pub trait IGodWeaponRefineLevelsMethods : IGodWeaponRefineLevels { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodWeaponRefineLevels as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineLevels , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2343a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < GodWeaponRefineLevels as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineLevels , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2344980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopyFrom(crate::app::godweaponrefinelevels::GodWeaponRefineLevels)` overload"] fn copy_from (self , from : impl :: core :: convert :: Into < crate :: app :: godweaponrefinelevels :: GodWeaponRefineLevels >) -> () { unsafe { let __receiver = < GodWeaponRefineLevels as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodWeaponRefineLevels , crate :: app :: godweaponrefinelevels :: GodWeaponRefineLevels , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2344d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godweaponrefinelevels")]pub trait IGodWeaponRefineLevelsMethods:IGodWeaponRefineLevels{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodWeaponRefineLevels as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2343a70usize)as*mut u8,();
+(GodWeaponRefineLevels)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <GodWeaponRefineLevels as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2344980usize)as*mut u8,();
+(GodWeaponRefineLevels)__receiver)}
+}
+#[doc="`CopyFrom(crate::app::godweaponrefinelevels::GodWeaponRefineLevels)` overload"]fn copy_from(self,from:impl::core::convert::Into<crate::app::godweaponrefinelevels::GodWeaponRefineLevels>)->(){unsafe{let __receiver= <GodWeaponRefineLevels as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2344d50usize)as*mut u8,();
+(GodWeaponRefineLevels)__receiver,(crate::app::godweaponrefinelevels::GodWeaponRefineLevels)::core::convert::Into::into(from))}
+}
+}
 
-#[cfg(feature = "app-godweaponrefinelevels")]
-impl < __T : IGodWeaponRefineLevels > IGodWeaponRefineLevelsMethods for __T { }
+#[cfg(feature="app-godweaponrefinelevels")]impl<__T:IGodWeaponRefineLevels>IGodWeaponRefineLevelsMethods for __T{}
 
-#[cfg(feature = "app-godweaponrefinelevels")]
-impl GodWeaponRefineLevels { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineLevels as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineLevels as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodWeaponRefineLevels as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-godweaponrefinelevels")]impl GodWeaponRefineLevels{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-godweaponrefinelevels")]
-impl GodWeaponRefineLevels {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodWeaponRefineLevels) , :: core :: stringify ! (new) ,)) ; < Self as IGodWeaponRefineLevelsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godweaponrefinelevels")]impl GodWeaponRefineLevels{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodWeaponRefineLevels), ::core::stringify!(new),));
+ <Self as IGodWeaponRefineLevelsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godweaponrefinelevels")]

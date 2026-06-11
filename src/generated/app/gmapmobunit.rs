@@ -4,32 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmobunit/GmapMobUnit.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapMobUnit")] # [parent (crate :: system :: object :: Object)] pub struct GmapMobUnit {
-# [offset (16)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapmobunit/GmapMobUnit.md"))]#[::unity2::class(namespace="App",name="GmapMobUnit")]#[parent(crate::system::object::Object)]pub struct GmapMobUnit{#[offset(16)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
 
 }
 
 #[cfg(feature = "app-gmapmobunit-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmapmobunit")]
-pub trait IGmapMobUnitMethods : IGmapMobUnit { # [doc = "`get_Actor()` overload"] fn get_actor (self ,) -> crate :: app :: unitactor :: UnitActor { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMobUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitactor :: UnitActor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , jid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMobUnit , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f2f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (jid) , :: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitFromUnitPool(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn set_unit_from_unit_pool (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , jid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , iid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMobUnit , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (jid) , :: core :: convert :: Into :: into (iid) , :: core :: option :: Option :: None) } } } # [doc = "`SetPosition(f32, f32, f32)` overload"] fn set_position (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 > , z : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMobUnit , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`LoadActor()` overload"] fn load_actor (self ,) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMobUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMobUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadUnit()` overload"] fn unload_unit (self ,) -> () { unsafe { let __receiver = < GmapMobUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapMobUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x252f520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapmobunit")]pub trait IGmapMobUnitMethods:IGmapMobUnit{#[doc="`get_Actor()` overload"]fn get_actor(self,)->crate::app::unitactor::UnitActor{unsafe{let __receiver= <GmapMobUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f2e0usize)as*mut u8,crate::app::unitactor::UnitActor;
+(GmapMobUnit)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,jid:impl::core::convert::Into< ::unity2::Il2CppString> ,iid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GmapMobUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f2f0usize)as*mut u8,();
+(GmapMobUnit)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(jid),(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`SetUnitFromUnitPool(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_unit_from_unit_pool(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,jid:impl::core::convert::Into< ::unity2::Il2CppString> ,iid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GmapMobUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f340usize)as*mut u8,();
+(GmapMobUnit)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(jid),(::unity2::Il2CppString)::core::convert::Into::into(iid))}
+}
+#[doc="`SetPosition(f32, f32, f32)` overload"]fn set_position(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,z:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GmapMobUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f400usize)as*mut u8,();
+(GmapMobUnit)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(z))}
+}
+#[doc="`LoadActor()` overload"]fn load_actor(self,)->(){unsafe{let __receiver= <GmapMobUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f410usize)as*mut u8,();
+(GmapMobUnit)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <GmapMobUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f510usize)as*mut u8,bool;
+(GmapMobUnit)__receiver)}
+}
+#[doc="`UnloadUnit()` overload"]fn unload_unit(self,)->(){unsafe{let __receiver= <GmapMobUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x252f520usize)as*mut u8,();
+(GmapMobUnit)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmapmobunit")]
-impl < __T : IGmapMobUnit > IGmapMobUnitMethods for __T { }
+#[cfg(feature="app-gmapmobunit")]impl<__T:IGmapMobUnit>IGmapMobUnitMethods for __T{}
 
-#[cfg(feature = "app-gmapmobunit")]
-impl GmapMobUnit { pub fn get_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMobUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMobUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_unit_from_unit_pool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMobUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMobUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMobUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMobUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn unload_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapMobUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-gmapmobunit")]impl GmapMobUnit{pub fn get_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_unit_from_unit_pool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn unload_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-gmapmobunit")]
-impl GmapMobUnit {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (pid : :: unity2 :: Il2CppString , jid : :: unity2 :: Il2CppString , iid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapMobUnit) , :: core :: stringify ! (new) ,)) ; < Self as IGmapMobUnitMethods > :: ctor (this , pid , jid , iid) ; this }
+#[cfg(feature="app-gmapmobunit")]impl GmapMobUnit{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(pid: ::unity2::Il2CppString,jid: ::unity2::Il2CppString,iid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapMobUnit), ::core::stringify!(new),));
+ <Self as IGmapMobUnitMethods> ::ctor(this,pid,jid,iid);
+this}
 }
 
 #[cfg(feature = "app-gmapmobunit")]

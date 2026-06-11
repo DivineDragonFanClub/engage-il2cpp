@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/spritestate/SpriteState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SpriteState {
-    pub m_highlighted_sprite: crate :: unity_engine :: sprite :: Sprite,
-    pub m_pressed_sprite: crate :: unity_engine :: sprite :: Sprite,
-    pub m_selected_sprite: crate :: unity_engine :: sprite :: Sprite,
-    pub m_disabled_sprite: crate :: unity_engine :: sprite :: Sprite,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/spritestate/SpriteState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SpriteState{pub m_highlighted_sprite:crate::unity_engine::sprite::Sprite,pub m_pressed_sprite:crate::unity_engine::sprite::Sprite,pub m_selected_sprite:crate::unity_engine::sprite::Sprite,pub m_disabled_sprite:crate::unity_engine::sprite::Sprite,}
+impl::unity2::ClassIdentity for SpriteState{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="SpriteState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for SpriteState {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "SpriteState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SpriteState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SpriteState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,45 @@ impl ::unity2::IlType for SpriteState {
 #[cfg(feature = "unity_engine-ui-spritestate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-spritestate")]
-impl SpriteState { # [doc = "`get_highlightedSprite()` overload"] pub fn get_highlighted_sprite (& mut self ,) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (* mut SpriteState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c02750usize) as * mut u8) ; __inner (self as * mut SpriteState , :: core :: option :: Option :: None) } } } # [doc = "`set_highlightedSprite(crate::unity_engine::sprite::Sprite)` overload"] pub fn set_highlighted_sprite (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { { let __inner : extern "C" fn (* mut SpriteState , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c02760usize) as * mut u8) ; __inner (self as * mut SpriteState , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pressedSprite()` overload"] pub fn get_pressed_sprite (& mut self ,) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (* mut SpriteState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c02770usize) as * mut u8) ; __inner (self as * mut SpriteState , :: core :: option :: Option :: None) } } } # [doc = "`set_pressedSprite(crate::unity_engine::sprite::Sprite)` overload"] pub fn set_pressed_sprite (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { { let __inner : extern "C" fn (* mut SpriteState , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c02780usize) as * mut u8) ; __inner (self as * mut SpriteState , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_selectedSprite()` overload"] pub fn get_selected_sprite (& mut self ,) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (* mut SpriteState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c02790usize) as * mut u8) ; __inner (self as * mut SpriteState , :: core :: option :: Option :: None) } } } # [doc = "`set_selectedSprite(crate::unity_engine::sprite::Sprite)` overload"] pub fn set_selected_sprite (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { { let __inner : extern "C" fn (* mut SpriteState , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c027a0usize) as * mut u8) ; __inner (self as * mut SpriteState , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_disabledSprite()` overload"] pub fn get_disabled_sprite (& mut self ,) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (* mut SpriteState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c027b0usize) as * mut u8) ; __inner (self as * mut SpriteState , :: core :: option :: Option :: None) } } } # [doc = "`set_disabledSprite(crate::unity_engine::sprite::Sprite)` overload"] pub fn set_disabled_sprite (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> () { unsafe { { let __inner : extern "C" fn (* mut SpriteState , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c027c0usize) as * mut u8) ; __inner (self as * mut SpriteState , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::ui::spritestate::SpriteState)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: spritestate :: SpriteState >) -> bool { unsafe { { let __inner : extern "C" fn (* mut SpriteState , crate :: unity_engine :: ui :: spritestate :: SpriteState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c027d0usize) as * mut u8) ; __inner (self as * mut SpriteState , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-spritestate")]impl SpriteState{#[doc="`get_highlightedSprite()` overload"]pub fn get_highlighted_sprite(&mut self,)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c02750usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(*mut SpriteState)self as*mut SpriteState)}
+}
+#[doc="`set_highlightedSprite(crate::unity_engine::sprite::Sprite)` overload"]pub fn set_highlighted_sprite(&mut self,value:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c02760usize)as*mut u8,();
+(*mut SpriteState)self as*mut SpriteState,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(value))}
+}
+#[doc="`get_pressedSprite()` overload"]pub fn get_pressed_sprite(&mut self,)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c02770usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(*mut SpriteState)self as*mut SpriteState)}
+}
+#[doc="`set_pressedSprite(crate::unity_engine::sprite::Sprite)` overload"]pub fn set_pressed_sprite(&mut self,value:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c02780usize)as*mut u8,();
+(*mut SpriteState)self as*mut SpriteState,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(value))}
+}
+#[doc="`get_selectedSprite()` overload"]pub fn get_selected_sprite(&mut self,)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c02790usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(*mut SpriteState)self as*mut SpriteState)}
+}
+#[doc="`set_selectedSprite(crate::unity_engine::sprite::Sprite)` overload"]pub fn set_selected_sprite(&mut self,value:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c027a0usize)as*mut u8,();
+(*mut SpriteState)self as*mut SpriteState,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(value))}
+}
+#[doc="`get_disabledSprite()` overload"]pub fn get_disabled_sprite(&mut self,)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c027b0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(*mut SpriteState)self as*mut SpriteState)}
+}
+#[doc="`set_disabledSprite(crate::unity_engine::sprite::Sprite)` overload"]pub fn set_disabled_sprite(&mut self,value:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c027c0usize)as*mut u8,();
+(*mut SpriteState)self as*mut SpriteState,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::unity_engine::ui::spritestate::SpriteState)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::ui::spritestate::SpriteState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c027d0usize)as*mut u8,bool;
+(*mut SpriteState)self as*mut SpriteState,(crate::unity_engine::ui::spritestate::SpriteState)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-spritestate")]
-impl SpriteState { pub fn get_highlighted_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_highlighted_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_pressed_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_pressed_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_selected_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_selected_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_disabled_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_disabled_sprite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-ui-spritestate")]impl SpriteState{pub fn get_highlighted_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_highlighted_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_pressed_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_pressed_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_selected_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_selected_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_disabled_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_disabled_sprite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-ui-spritestate")]
 #[doc(hidden)]

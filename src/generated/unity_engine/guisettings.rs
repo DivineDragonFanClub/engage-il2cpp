@@ -4,36 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guisettings/GUISettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUISettings")] # [parent (crate :: system :: object :: Object)] pub struct GUISettings {
-# [offset (16)] # [rename (name = "m_DoubleClickSelectsWord")] pub m_double_click_selects_word : bool ,
-# [offset (17)] # [rename (name = "m_TripleClickSelectsLine")] pub m_triple_click_selects_line : bool ,
-# [offset (20)] # [rename (name = "m_CursorColor")] pub m_cursor_color : crate :: unity_engine :: color :: Color ,
-# [offset (36)] # [rename (name = "m_CursorFlashSpeed")] pub m_cursor_flash_speed : f32 ,
-# [offset (40)] # [rename (name = "m_SelectionColor")] pub m_selection_color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guisettings/GUISettings.md"))]#[::unity2::class(namespace="UnityEngine",name="GUISettings")]#[parent(crate::system::object::Object)]pub struct GUISettings{#[offset(16)]#[rename(name="m_DoubleClickSelectsWord")]pub m_double_click_selects_word:bool, #[offset(17)]#[rename(name="m_TripleClickSelectsLine")]pub m_triple_click_selects_line:bool, #[offset(20)]#[rename(name="m_CursorColor")]pub m_cursor_color:crate::unity_engine::color::Color, #[offset(36)]#[rename(name="m_CursorFlashSpeed")]pub m_cursor_flash_speed:f32, #[offset(40)]#[rename(name="m_SelectionColor")]pub m_selection_color:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "unity_engine-guisettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-guisettings")]
-pub trait IGUISettingsMethods : IGUISettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GUISettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUISettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c4b580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-guisettings")]pub trait IGUISettingsMethods:IGUISettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GUISettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c4b580usize)as*mut u8,();
+(GUISettings)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-guisettings")]
-impl < __T : IGUISettings > IGUISettingsMethods for __T { }
+#[cfg(feature="unity_engine-guisettings")]impl<__T:IGUISettings>IGUISettingsMethods for __T{}
 
-#[cfg(feature = "unity_engine-guisettings")]
-impl GUISettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUISettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-guisettings")]impl GUISettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-guisettings")]
-impl GUISettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GUISettings) , :: core :: stringify ! (new) ,)) ; < Self as IGUISettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-guisettings")]impl GUISettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUISettings), ::core::stringify!(new),));
+ <Self as IGUISettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-guisettings")]

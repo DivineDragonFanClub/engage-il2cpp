@@ -4,105 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/randomseed/RandomSeed_CastType_I2F.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RandomSeed_CastType_I2F {
-    pub ivalue: u32,
-    pub fvalue: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/randomseed/RandomSeed_CastType_I2F.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RandomSeed_CastType_I2F{pub ivalue:u32,pub fvalue:f32,}
+impl::unity2::ClassIdentity for RandomSeed_CastType_I2F{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RandomSeed.CastType_I2F";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RandomSeed_CastType_I2F{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for RandomSeed_CastType_I2F {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RandomSeed.CastType_I2F";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/randomseed/RandomSeed.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RandomSeed{pub seed1:u32,pub seed2:u32,pub seed3:u32,pub seed4:u32,}
+impl::unity2::ClassIdentity for RandomSeed{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RandomSeed";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for RandomSeed_CastType_I2F {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RandomSeed{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/randomseed/RandomSeed.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RandomSeed {
-    pub seed1: u32,
-    pub seed2: u32,
-    pub seed3: u32,
-    pub seed4: u32,
+impl RandomSeed{#[inline]pub fn version()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Version");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_version(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Version");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl ::unity2::ClassIdentity for RandomSeed {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RandomSeed";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RandomSeed {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl RandomSeed {
-    #[inline]
-    pub fn version() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Version");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_version(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Version");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -110,11 +45,45 @@ impl RandomSeed {
 #[cfg(feature = "app-randomseed-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-randomseed")]
-impl RandomSeed { # [doc = "`Initialize()` overload"] pub fn initialize (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut RandomSeed , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2374f40usize) as * mut u8) ; __inner (self as * mut RandomSeed , :: core :: option :: Option :: None) } } } # [doc = "`Initialize(u32)` overload"] pub fn initialize_2 (& mut self , v : impl :: core :: convert :: Into < u32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RandomSeed , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375000usize) as * mut u8) ; __inner (self as * mut RandomSeed , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] pub fn serialize (& mut self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RandomSeed , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375a20usize) as * mut u8) ; __inner (self as * mut RandomSeed , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] pub fn deserialize (& mut self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RandomSeed , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375d50usize) as * mut u8) ; __inner (self as * mut RandomSeed , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Peek()` overload"] pub fn peek (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RandomSeed , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375060usize) as * mut u8) ; __inner (self as * mut RandomSeed , :: core :: option :: Option :: None) } } } # [doc = "`GetValue()` overload"] pub fn get_value (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RandomSeed , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23750c0usize) as * mut u8) ; __inner (self as * mut RandomSeed , :: core :: option :: Option :: None) } } } # [doc = "`GetFloat()` overload"] pub fn get_float (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut RandomSeed , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2375130usize) as * mut u8) ; __inner (self as * mut RandomSeed , :: core :: option :: Option :: None) } } } # [doc = "`Dump()` overload"] pub fn dump (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut RandomSeed , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2376210usize) as * mut u8) ; __inner (self as * mut RandomSeed , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut RandomSeed , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2376220usize) as * mut u8) ; __inner (self as * mut RandomSeed , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-randomseed")]impl RandomSeed{#[doc="`Initialize()` overload"]pub fn initialize(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2374f40usize)as*mut u8,();
+(*mut RandomSeed)self as*mut RandomSeed)}
+}
+#[doc="`Initialize(u32)` overload"]pub fn initialize_2(&mut self,v:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2375000usize)as*mut u8,();
+(*mut RandomSeed)self as*mut RandomSeed,(u32)::core::convert::Into::into(v))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2375a20usize)as*mut u8,();
+(*mut RandomSeed)self as*mut RandomSeed,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]pub fn deserialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2375d50usize)as*mut u8,();
+(*mut RandomSeed)self as*mut RandomSeed,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Peek()` overload"]pub fn peek(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2375060usize)as*mut u8,i32;
+(*mut RandomSeed)self as*mut RandomSeed)}
+}
+#[doc="`GetValue()` overload"]pub fn get_value(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23750c0usize)as*mut u8,i32;
+(*mut RandomSeed)self as*mut RandomSeed)}
+}
+#[doc="`GetFloat()` overload"]pub fn get_float(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2375130usize)as*mut u8,f32;
+(*mut RandomSeed)self as*mut RandomSeed)}
+}
+#[doc="`Dump()` overload"]pub fn dump(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2376210usize)as*mut u8,();
+(*mut RandomSeed)self as*mut RandomSeed)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2376220usize)as*mut u8, ::unity2::Il2CppString;
+(*mut RandomSeed)self as*mut RandomSeed)}
+}
+}
 
-#[cfg(feature = "app-randomseed")]
-impl RandomSeed { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RandomSeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn initialize_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RandomSeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RandomSeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RandomSeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn peek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RandomSeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RandomSeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RandomSeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RandomSeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RandomSeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-randomseed")]impl RandomSeed{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "app-randomseed")]
 #[doc(hidden)]

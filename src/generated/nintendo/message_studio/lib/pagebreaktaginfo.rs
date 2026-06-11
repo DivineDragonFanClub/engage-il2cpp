@@ -4,30 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/pagebreaktaginfo/PageBreakTagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "PageBreakTagInfo")] # [parent (crate :: system :: object :: Object)] pub struct PageBreakTagInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/pagebreaktaginfo/PageBreakTagInfo.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="PageBreakTagInfo")]#[parent(crate::system::object::Object)]pub struct PageBreakTagInfo{}
 
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
-pub trait IPageBreakTagInfoMethods : IPageBreakTagInfo { # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < PageBreakTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PageBreakTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f24300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < PageBreakTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PageBreakTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f24310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PageBreakTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PageBreakTagInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f24320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nintendo-message_studio-lib-pagebreaktaginfo")]pub trait IPageBreakTagInfoMethods:IPageBreakTagInfo{#[doc="`get_Tag()` overload"]fn get_tag(self,)->u16{unsafe{let __receiver= <PageBreakTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f24300usize)as*mut u8,u16;
+(PageBreakTagInfo)__receiver)}
+}
+#[doc="`get_TagGroup()` overload"]fn get_tag_group(self,)->u16{unsafe{let __receiver= <PageBreakTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f24310usize)as*mut u8,u16;
+(PageBreakTagInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PageBreakTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f24320usize)as*mut u8,();
+(PageBreakTagInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
-impl < __T : IPageBreakTagInfo > IPageBreakTagInfoMethods for __T { }
+#[cfg(feature="nintendo-message_studio-lib-pagebreaktaginfo")]impl<__T:IPageBreakTagInfo>IPageBreakTagInfoMethods for __T{}
 
-#[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
-impl PageBreakTagInfo { pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PageBreakTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PageBreakTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PageBreakTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="nintendo-message_studio-lib-pagebreaktaginfo")]impl PageBreakTagInfo{pub fn get_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_tag_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]
-impl PageBreakTagInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PageBreakTagInfo) , :: core :: stringify ! (new) ,)) ; < Self as IPageBreakTagInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="nintendo-message_studio-lib-pagebreaktaginfo")]impl PageBreakTagInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PageBreakTagInfo), ::core::stringify!(new),));
+ <Self as IPageBreakTagInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-pagebreaktaginfo")]

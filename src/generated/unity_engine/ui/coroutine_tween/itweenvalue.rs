@@ -4,27 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/itweenvalue/ITweenValue.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI.CoroutineTween" , name = "ITweenValue")] pub struct ITweenValue {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/itweenvalue/ITweenValue.md"))]#[::unity2::class(namespace="UnityEngine.UI.CoroutineTween",name="ITweenValue")]pub struct ITweenValue{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-itweenvalue-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-itweenvalue")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ITweenValue_unity2_raw { use super :: * ; pub unsafe fn tween_value (this : ITweenValue , float_percentage : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("TweenValue") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "TweenValue" , < ITweenValue as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ITweenValue , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , float_percentage , __mi) } pub unsafe fn get_ignore_time_scale (this : ITweenValue , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_ignoreTimeScale") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_ignoreTimeScale" , < ITweenValue as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ITweenValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_duration (this : ITweenValue , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_duration") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_duration" , < ITweenValue as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ITweenValue , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn valid_target (this : ITweenValue , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ValidTarget") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ValidTarget" , < ITweenValue as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ITweenValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-ui-coroutine_tween-itweenvalue")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ITweenValue_unity2_raw{use super:: * ;
+pub unsafe fn tween_value(this:ITweenValue,float_percentage:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("TweenValue").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","TweenValue", <ITweenValue as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ITweenValue,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,float_percentage,__mi)}
+pub unsafe fn get_ignore_time_scale(this:ITweenValue,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_ignoreTimeScale").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_ignoreTimeScale", <ITweenValue as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ITweenValue, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_duration(this:ITweenValue,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_duration").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_duration", <ITweenValue as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ITweenValue, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn valid_target(this:ITweenValue,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ValidTarget").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ValidTarget", <ITweenValue as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ITweenValue, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-itweenvalue")]
-pub trait IITweenValueMethods : IITweenValue { # [doc = "`TweenValue(f32)` overload"] fn tween_value (self , float_percentage : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ITweenValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITweenValue_unity2_raw :: tween_value (__receiver , :: core :: convert :: Into :: into (float_percentage) , :: core :: option :: Option :: None) } } # [doc = "`get_ignoreTimeScale()` overload"] fn get_ignore_time_scale (self ,) -> bool { unsafe { let __receiver = < ITweenValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITweenValue_unity2_raw :: get_ignore_time_scale (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_duration()` overload"] fn get_duration (self ,) -> f32 { unsafe { let __receiver = < ITweenValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITweenValue_unity2_raw :: get_duration (__receiver , :: core :: option :: Option :: None) } } # [doc = "`ValidTarget()` overload"] fn valid_target (self ,) -> bool { unsafe { let __receiver = < ITweenValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ITweenValue_unity2_raw :: valid_target (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-ui-coroutine_tween-itweenvalue")]pub trait IITweenValueMethods:IITweenValue{#[doc="`TweenValue(f32)` overload"]fn tween_value(self,float_percentage:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ITweenValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ITweenValue_unity2_raw::tween_value(__receiver, ::core::convert::Into::into(float_percentage), ::core::option::Option::None)}
+}
+#[doc="`get_ignoreTimeScale()` overload"]fn get_ignore_time_scale(self,)->bool{unsafe{let __receiver= <ITweenValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ITweenValue_unity2_raw::get_ignore_time_scale(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_duration()` overload"]fn get_duration(self,)->f32{unsafe{let __receiver= <ITweenValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ITweenValue_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ValidTarget()` overload"]fn valid_target(self,)->bool{unsafe{let __receiver= <ITweenValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ITweenValue_unity2_raw::valid_target(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-itweenvalue")]
-impl < __T : IITweenValue > IITweenValueMethods for __T { }
+#[cfg(feature="unity_engine-ui-coroutine_tween-itweenvalue")]impl<__T:IITweenValue>IITweenValueMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-itweenvalue")]
-impl ITweenValue { pub fn tween_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ITweenValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_ignore_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ITweenValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ITweenValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn valid_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ITweenValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-ui-coroutine_tween-itweenvalue")]impl ITweenValue{pub fn tween_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_ignore_time_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn valid_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-itweenvalue")]
 #[doc(hidden)]

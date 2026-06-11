@@ -4,41 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structtemplate_1/StructTemplate_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "StructTemplate`1")] # [parent (crate :: app :: structbase :: StructBase)] # [parent (crate :: system :: object :: Object)] pub struct StructTemplate_1 < T0 : :: unity2 :: ClassIdentity > {
-# [static_field] # [rename (name = "s_header")] pub s_header : crate :: app :: structheader :: StructHeader ,
-# [static_field] # [rename (name = "s_dictionary")] pub s_dictionary : crate :: app :: structdictionary_1 :: StructDictionary_1 < T0 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structtemplate_1/StructTemplate_1.md"))]#[::unity2::class(namespace="App",name="StructTemplate`1")]#[parent(crate::app::structbase::StructBase)]#[parent(crate::system::object::Object)]pub struct StructTemplate_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="s_header")]pub s_header:crate::app::structheader::StructHeader, #[static_field]#[rename(name="s_dictionary")]pub s_dictionary:crate::app::structdictionary_1::StructDictionary_1<T0> ,}
 
 }
 
 #[cfg(feature = "app-structtemplate_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-structtemplate_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > StructTemplate_1 < T0 > {
-# [doc = "`GetHeader()` overload"] # [method (name = "GetHeader" , args = 0)] pub fn get_header () -> crate :: app :: structheader :: StructHeader ;
-
-# [doc = "`GetFilePath()` overload"] # [method (name = "GetFilePath" , args = 0)] pub fn get_file_path () -> :: unity2 :: Il2CppString ;
-
-# [doc = "`IsExist()` overload"] # [method (name = "IsExist" , args = 0)] pub fn is_exist () -> bool ;
-
-# [doc = "`IsExist(::unity2::Il2CppString)` overload"] # [method (name = "IsExist" , args = 1)] pub fn is_exist_2 (name : :: unity2 :: Il2CppString) -> bool ;
-
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
-
-# [doc = "`.cctor()` overload"] # [method (name = ".cctor" , args = 0)] pub fn cctor () -> () ;
+#[cfg(feature="app-structtemplate_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>StructTemplate_1<T0>{#[doc="`GetHeader()` overload"]#[method(name="GetHeader",args=0)]pub fn get_header()->crate::app::structheader::StructHeader;
+ #[doc="`GetFilePath()` overload"]#[method(name="GetFilePath",args=0)]pub fn get_file_path()-> ::unity2::Il2CppString;
+ #[doc="`IsExist()` overload"]#[method(name="IsExist",args=0)]pub fn is_exist()->bool;
+ #[doc="`IsExist(::unity2::Il2CppString)` overload"]#[method(name="IsExist",args=1)]pub fn is_exist_2(name: ::unity2::Il2CppString)->bool;
+ #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
+ #[doc="`.cctor()` overload"]#[method(name=".cctor",args=0)]pub fn cctor()->();
 }
 
-#[cfg(feature = "app-structtemplate_1")]
-impl < T0 : :: unity2 :: ClassIdentity > StructTemplate_1 < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StructTemplate_1) , :: core :: stringify ! (new) ,)) ; < Self as IStructTemplate_1Methods < T0 > > :: ctor (this ,) ; this }
+#[cfg(feature="app-structtemplate_1")]impl<T0: ::unity2::ClassIdentity>StructTemplate_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StructTemplate_1), ::core::stringify!(new),));
+ <Self as IStructTemplate_1Methods<T0> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-structtemplate_1")]

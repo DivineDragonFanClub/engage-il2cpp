@@ -4,50 +4,101 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenucontent/PhotographSelectAreaMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectAreaMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct PhotographSelectAreaMenuContent {
-# [static_field] # [rename (name = "s_MenuPrefabPath")] pub s_menu_prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_AreaSpriteAtlasPath")] pub s_area_sprite_atlas_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_AreaImage")] pub m_area_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (240)] # [rename (name = "m_SpotCount")] pub m_spot_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_AreaSpriteAtlas")] pub m_area_sprite_atlas : crate :: unity_engine :: u2d :: spriteatlas :: SpriteAtlas ,
-# [offset (256)] # [rename (name = "m_AreaSprite")] pub m_area_sprite : crate :: unity_engine :: sprite :: Sprite ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectareamenucontent/PhotographSelectAreaMenuContent.md"))]#[::unity2::class(namespace="App",name="PhotographSelectAreaMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct PhotographSelectAreaMenuContent{#[static_field]#[rename(name="s_MenuPrefabPath")]pub s_menu_prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_AreaSpriteAtlasPath")]pub s_area_sprite_atlas_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_AreaImage")]pub m_area_image:crate::unity_engine::ui::image::Image, #[offset(240)]#[rename(name="m_SpotCount")]pub m_spot_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_AreaSpriteAtlas")]pub m_area_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(256)]#[rename(name="m_AreaSprite")]pub m_area_sprite:crate::unity_engine::sprite::Sprite,}
 
 }
 
 #[cfg(feature = "app-photographselectareamenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographselectareamenucontent")]
-impl PhotographSelectAreaMenuContent { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694d40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`LoadResource()` overload"] pub fn load_resource () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2695350usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResource()` overload"] pub fn is_loading_resource () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2695650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadResource()` overload"] pub fn unload_resource () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2695760usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2695890usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectareamenucontent")]impl PhotographSelectAreaMenuContent{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2694d40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`LoadResource()` overload"]pub fn load_resource()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2695350usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingResource()` overload"]pub fn is_loading_resource()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2695650usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadResource()` overload"]pub fn unload_resource()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2695760usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2695890usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-photographselectareamenucontent")]
-pub trait IPhotographSelectAreaMenuContentMethods : IPhotographSelectAreaMenuContent { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < PhotographSelectAreaMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAreaData(crate::app::photographspotdata::PhotographSpotData)` overload"] fn set_area_data (self , area_data : impl :: core :: convert :: Into < crate :: app :: photographspotdata :: PhotographSpotData >) -> () { unsafe { let __receiver = < PhotographSelectAreaMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenuContent , crate :: app :: photographspotdata :: PhotographSpotData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2694f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (area_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < PhotographSelectAreaMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26950b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < PhotographSelectAreaMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2695130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < PhotographSelectAreaMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26951a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosX(i32)` overload"] fn calc_cursor_moved_pos_x (self , idx : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < PhotographSelectAreaMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2695210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (idx) , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , idx : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < PhotographSelectAreaMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26952b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (idx) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PhotographSelectAreaMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectAreaMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2695820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectareamenucontent")]pub trait IPhotographSelectAreaMenuContentMethods:IPhotographSelectAreaMenuContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <PhotographSelectAreaMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694e80usize)as*mut u8,();
+(PhotographSelectAreaMenuContent)__receiver)}
+}
+#[doc="`SetAreaData(crate::app::photographspotdata::PhotographSpotData)` overload"]fn set_area_data(self,area_data:impl::core::convert::Into<crate::app::photographspotdata::PhotographSpotData>)->(){unsafe{let __receiver= <PhotographSelectAreaMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2694f60usize)as*mut u8,();
+(PhotographSelectAreaMenuContent)__receiver,(crate::app::photographspotdata::PhotographSpotData)::core::convert::Into::into(area_data))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <PhotographSelectAreaMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26950b0usize)as*mut u8,();
+(PhotographSelectAreaMenuContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <PhotographSelectAreaMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2695130usize)as*mut u8,f32;
+(PhotographSelectAreaMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <PhotographSelectAreaMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26951a0usize)as*mut u8,f32;
+(PhotographSelectAreaMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,idx:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <PhotographSelectAreaMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2695210usize)as*mut u8,f32;
+(PhotographSelectAreaMenuContent)__receiver,(i32)::core::convert::Into::into(idx))}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,idx:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <PhotographSelectAreaMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26952b0usize)as*mut u8,f32;
+(PhotographSelectAreaMenuContent)__receiver,(i32)::core::convert::Into::into(idx))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographSelectAreaMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2695820usize)as*mut u8,();
+(PhotographSelectAreaMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographselectareamenucontent")]
-impl < __T : IPhotographSelectAreaMenuContent > IPhotographSelectAreaMenuContentMethods for __T { }
+#[cfg(feature="app-photographselectareamenucontent")]impl<__T:IPhotographSelectAreaMenuContent>IPhotographSelectAreaMenuContentMethods for __T{}
 
-#[cfg(feature = "app-photographselectareamenucontent")]
-impl PhotographSelectAreaMenuContent { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_area_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_cursor_moved_pos_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectAreaMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-photographselectareamenucontent")]impl PhotographSelectAreaMenuContent{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_area_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_cursor_moved_pos_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_loading_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn unload_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-photographselectareamenucontent")]
-impl PhotographSelectAreaMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectAreaMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectAreaMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-photographselectareamenucontent")]impl PhotographSelectAreaMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectAreaMenuContent), ::core::stringify!(new),));
+ <Self as IPhotographSelectAreaMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-photographselectareamenucontent")]

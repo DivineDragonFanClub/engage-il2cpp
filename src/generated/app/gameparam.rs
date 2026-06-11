@@ -4,160 +4,303 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam_Holder.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameParam.Holder")] # [parent (crate :: system :: object :: Object)] pub struct GameParam_Holder {
-# [offset (16)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Param")] pub m_param : crate :: app :: gameparam :: GameParam ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam.md"))]#[::unity2::class(namespace="App",name="GameParam")]#[parent(crate::app::structdata_1::StructData_1<crate::app::gameparam::GameParam>)]pub struct GameParam{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam_Holder.md"))]#[::unity2::class(namespace="App",name="GameParam.Holder")]#[parent(crate::system::object::Object)]pub struct GameParam_Holder{#[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Param")]pub m_param:crate::app::gameparam::GameParam,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam_ParamFunction.md"))]#[::unity2::class(namespace="App",name="GameParam.ParamFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GameParam_ParamFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameparam/GameParam_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameParam_Kind{pub value:i32,}
+impl::unity2::ClassIdentity for GameParam_Kind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameParam.Kind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameparam/GameParam_Kind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameParam_Kind  {
-    pub value: i32,
+impl::unity2::IlType for GameParam_Kind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for GameParam_Kind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameParam.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl GameParam_Kind{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for GameParam_Kind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn value()->Self{Self{value:1}
 }
-
-
-impl  GameParam_Kind  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn value() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn open() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn close() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn open()->Self{Self{value:2}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameParam")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: gameparam :: GameParam >)] pub struct GameParam {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameparam/GameParam_ParamFunction.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameParam.ParamFunction")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct GameParam_ParamFunction {}
+pub fn close()->Self{Self{value:3}
+}
+}
 
 }
 
 #[cfg(feature = "app-gameparam-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gameparam")]
-pub trait IGameParam_HolderMethods : IGameParam_Holder { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GameParam_Holder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam_Holder , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e66580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetParam()` overload"] fn get_param (self ,) -> crate :: app :: gameparam :: GameParam { unsafe { let __receiver = < GameParam_Holder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam_Holder , :: unity2 :: OptionalMethod ,) -> crate :: app :: gameparam :: GameParam = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e665d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < GameParam_Holder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam_Holder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e66690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetInt()` overload"] fn get_int (self ,) -> i32 { unsafe { let __receiver = < GameParam_Holder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam_Holder , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e666a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetFloat()` overload"] fn get_float (self ,) -> f32 { unsafe { let __receiver = < GameParam_Holder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam_Holder , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e66780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBool()` overload"] fn get_bool (self ,) -> bool { unsafe { let __receiver = < GameParam_Holder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam_Holder , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e66840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gameparam")]
-impl < __T : IGameParam_Holder > IGameParam_HolderMethods for __T { }
-
-#[cfg(feature = "app-gameparam")]
-impl GameParam_Holder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam_Holder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam_Holder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam_Holder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam_Holder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam_Holder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_bool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam_Holder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-gameparam")]
-impl GameParam_Holder {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameParam_Holder) , :: core :: stringify ! (new) ,)) ; < Self as IGameParam_HolderMethods > :: ctor (this , name) ; this }
+#[cfg(feature="app-gameparam")]impl GameParam{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2280680usize)as*mut u8,();
+)}
+}
+#[doc="`GetBool(::unity2::Il2CppString)` overload"]pub fn get_bool(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2280b20usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetInt(::unity2::Il2CppString)` overload"]pub fn get_int(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2280c20usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetFloat(::unity2::Il2CppString)` overload"]pub fn get_float(name:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2280d40usize)as*mut u8,f32;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetColor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn get_color(name_r:impl::core::convert::Into< ::unity2::Il2CppString> ,name_g:impl::core::convert::Into< ::unity2::Il2CppString> ,name_b:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2280e40usize)as*mut u8,crate::unity_engine::color::Color;
+(::unity2::Il2CppString)::core::convert::Into::into(name_r),(::unity2::Il2CppString)::core::convert::Into::into(name_g),(::unity2::Il2CppString)::core::convert::Into::into(name_b))}
+}
+#[doc="`GetColor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn get_color_2(name_r:impl::core::convert::Into< ::unity2::Il2CppString> ,name_g:impl::core::convert::Into< ::unity2::Il2CppString> ,name_b:impl::core::convert::Into< ::unity2::Il2CppString> ,name_a:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2280ec0usize)as*mut u8,crate::unity_engine::color::Color;
+(::unity2::Il2CppString)::core::convert::Into::into(name_r),(::unity2::Il2CppString)::core::convert::Into::into(name_g),(::unity2::Il2CppString)::core::convert::Into::into(name_b),(::unity2::Il2CppString)::core::convert::Into::into(name_a))}
+}
+#[doc="`TryGetGroupIndex(::unity2::Il2CppString)` overload"]pub fn try_get_group_index(group:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2280f60usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(group))}
+}
+#[doc="`EachFunction(crate::app::gameparam::GameParam_ParamFunction, i32, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn each_function(func:impl::core::convert::Into<crate::app::gameparam::GameParam_ParamFunction> ,index:impl::core::convert::Into<i32> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2281050usize)as*mut u8,i32;
+(crate::app::gameparam::GameParam_ParamFunction)::core::convert::Into::into(func),(i32)::core::convert::Into::into(index),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`EachFunction(crate::app::gameparam::GameParam_ParamFunction, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn each_function_2(func:impl::core::convert::Into<crate::app::gameparam::GameParam_ParamFunction> ,group:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22811d0usize)as*mut u8,();
+(crate::app::gameparam::GameParam_ParamFunction)::core::convert::Into::into(func),(::unity2::Il2CppString)::core::convert::Into::into(group),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
 }
 
-#[cfg(feature = "app-gameparam")]
-impl GameParam { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280680usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetBool(::unity2::Il2CppString)` overload"] pub fn get_bool (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280b20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetInt(::unity2::Il2CppString)` overload"] pub fn get_int (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280c20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetFloat(::unity2::Il2CppString)` overload"] pub fn get_float (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280d40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetColor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_color (name_r : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name_g : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name_b : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name_r) , :: core :: convert :: Into :: into (name_g) , :: core :: convert :: Into :: into (name_b) , :: core :: option :: Option :: None) } } } # [doc = "`GetColor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_color_2 (name_r : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name_g : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name_b : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , name_a : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: color :: Color { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name_r) , :: core :: convert :: Into :: into (name_g) , :: core :: convert :: Into :: into (name_b) , :: core :: convert :: Into :: into (name_a) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetGroupIndex(::unity2::Il2CppString)` overload"] pub fn try_get_group_index (group : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280f60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (group) , :: core :: option :: Option :: None) } } } # [doc = "`EachFunction(crate::app::gameparam::GameParam_ParamFunction, i32, ::unity2::Array<crate::system::object::Object>)` overload"] pub fn each_function (func : impl :: core :: convert :: Into < crate :: app :: gameparam :: GameParam_ParamFunction > , index : impl :: core :: convert :: Into < i32 > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: gameparam :: GameParam_ParamFunction , i32 , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2281050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (func) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`EachFunction(crate::app::gameparam::GameParam_ParamFunction, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] pub fn each_function_2 (func : impl :: core :: convert :: Into < crate :: app :: gameparam :: GameParam_ParamFunction > , group : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: gameparam :: GameParam_ParamFunction , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22811d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (func) , :: core :: convert :: Into :: into (group) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gameparam")]
-pub trait IGameParamMethods : IGameParam { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Name(::unity2::Il2CppString)` overload"] fn set_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_English()` overload"] fn get_english (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_English(::unity2::Il2CppString)` overload"] fn set_english (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> f32 { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value(f32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Min()` overload"] fn get_min (self ,) -> f32 { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Min(f32)` overload"] fn set_min (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22807a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Max()` overload"] fn get_max (self ,) -> f32 { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22807b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Max(f32)` overload"] fn set_max (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22807c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Step()` overload"] fn get_step (self ,) -> f32 { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22807d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Step(f32)` overload"] fn set_step (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22807e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Enum()` overload"] fn get_enum (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22807f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Enum(::unity2::Il2CppString)` overload"] fn set_enum (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Initial()` overload"] fn get_initial (self ,) -> f32 { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Initial(f32)` overload"] fn set_initial (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGroupName()` overload"] fn get_group_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetKind()` overload"] fn get_kind (self ,) -> crate :: app :: gameparam :: GameParam_Kind { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> crate :: app :: gameparam :: GameParam_Kind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22808c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2280950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetString()` overload"] fn get_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22809f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22812d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-gameparam")]
-impl < __T : IGameParam > IGameParamMethods for __T { }
-
-#[cfg(feature = "app-gameparam")]
-impl GameParam { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_english_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_english_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_step_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_step_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_enum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_enum_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_initial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_initial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_group_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_bool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_color_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn try_get_group_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn each_function_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn each_function_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } }
-
-#[cfg(feature = "app-gameparam")]
-impl GameParam {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameParam) , :: core :: stringify ! (new) ,)) ; < Self as IGameParamMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gameparam")]pub trait IGameParamMethods:IGameParam{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280730usize)as*mut u8, ::unity2::Il2CppString;
+(GameParam)__receiver)}
+}
+#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280740usize)as*mut u8,();
+(GameParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_English()` overload"]fn get_english(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280750usize)as*mut u8, ::unity2::Il2CppString;
+(GameParam)__receiver)}
+}
+#[doc="`set_English(::unity2::Il2CppString)` overload"]fn set_english(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280760usize)as*mut u8,();
+(GameParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280770usize)as*mut u8,f32;
+(GameParam)__receiver)}
+}
+#[doc="`set_Value(f32)` overload"]fn set_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280780usize)as*mut u8,();
+(GameParam)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Min()` overload"]fn get_min(self,)->f32{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280790usize)as*mut u8,f32;
+(GameParam)__receiver)}
+}
+#[doc="`set_Min(f32)` overload"]fn set_min(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22807a0usize)as*mut u8,();
+(GameParam)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Max()` overload"]fn get_max(self,)->f32{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22807b0usize)as*mut u8,f32;
+(GameParam)__receiver)}
+}
+#[doc="`set_Max(f32)` overload"]fn set_max(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22807c0usize)as*mut u8,();
+(GameParam)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Step()` overload"]fn get_step(self,)->f32{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22807d0usize)as*mut u8,f32;
+(GameParam)__receiver)}
+}
+#[doc="`set_Step(f32)` overload"]fn set_step(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22807e0usize)as*mut u8,();
+(GameParam)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Enum()` overload"]fn get_enum(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22807f0usize)as*mut u8, ::unity2::Il2CppString;
+(GameParam)__receiver)}
+}
+#[doc="`set_Enum(::unity2::Il2CppString)` overload"]fn set_enum(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280800usize)as*mut u8,();
+(GameParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Initial()` overload"]fn get_initial(self,)->f32{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280810usize)as*mut u8,f32;
+(GameParam)__receiver)}
+}
+#[doc="`set_Initial(f32)` overload"]fn set_initial(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280820usize)as*mut u8,();
+(GameParam)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280830usize)as*mut u8,();
+(GameParam)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280840usize)as*mut u8, ::unity2::Il2CppString;
+(GameParam)__receiver)}
+}
+#[doc="`GetGroupName()` overload"]fn get_group_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280850usize)as*mut u8, ::unity2::Il2CppString;
+(GameParam)__receiver)}
+}
+#[doc="`GetKind()` overload"]fn get_kind(self,)->crate::app::gameparam::GameParam_Kind{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22808c0usize)as*mut u8,crate::app::gameparam::GameParam_Kind;
+(GameParam)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2280950usize)as*mut u8,();
+(GameParam)__receiver)}
+}
+#[doc="`GetString()` overload"]fn get_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22809f0usize)as*mut u8, ::unity2::Il2CppString;
+(GameParam)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22812d0usize)as*mut u8,();
+(GameParam)__receiver)}
+}
 }
 
-#[cfg(feature = "app-gameparam")]
-pub trait IGameParam_ParamFunctionMethods : IGameParam_ParamFunction { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < GameParam_ParamFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam_ParamFunction , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e66900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::gameparam::GameParam, ::unity2::Array<crate::system::object::Object>)` overload"] fn invoke (self , param : impl :: core :: convert :: Into < crate :: app :: gameparam :: GameParam > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < GameParam_ParamFunction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameParam_ParamFunction , crate :: app :: gameparam :: GameParam , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e66920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (param) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gameparam")]impl<__T:IGameParam>IGameParamMethods for __T{}
 
-#[cfg(feature = "app-gameparam")]
-impl < __T : IGameParam_ParamFunction > IGameParam_ParamFunctionMethods for __T { }
+#[cfg(feature="app-gameparam")]impl GameParam{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_english_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_english_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_step_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_step_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_enum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_enum_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_initial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_initial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_group_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_bool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_color_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn try_get_group_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn each_function_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn each_function_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+}
 
-#[cfg(feature = "app-gameparam")]
-impl GameParam_ParamFunction { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam_ParamFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameParam_ParamFunction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-gameparam")]impl GameParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameParam), ::core::stringify!(new),));
+ <Self as IGameParamMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-gameparam")]
-impl GameParam_ParamFunction {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameParam_ParamFunction) , :: core :: stringify ! (new) ,)) ; < Self as IGameParam_ParamFunctionMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-gameparam")]pub trait IGameParam_HolderMethods:IGameParam_Holder{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameParam_Holder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66580usize)as*mut u8,();
+(GameParam_Holder)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetParam()` overload"]fn get_param(self,)->crate::app::gameparam::GameParam{unsafe{let __receiver= <GameParam_Holder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e665d0usize)as*mut u8,crate::app::gameparam::GameParam;
+(GameParam_Holder)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <GameParam_Holder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66690usize)as*mut u8,();
+(GameParam_Holder)__receiver)}
+}
+#[doc="`GetInt()` overload"]fn get_int(self,)->i32{unsafe{let __receiver= <GameParam_Holder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e666a0usize)as*mut u8,i32;
+(GameParam_Holder)__receiver)}
+}
+#[doc="`GetFloat()` overload"]fn get_float(self,)->f32{unsafe{let __receiver= <GameParam_Holder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66780usize)as*mut u8,f32;
+(GameParam_Holder)__receiver)}
+}
+#[doc="`GetBool()` overload"]fn get_bool(self,)->bool{unsafe{let __receiver= <GameParam_Holder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66840usize)as*mut u8,bool;
+(GameParam_Holder)__receiver)}
+}
+}
+
+#[cfg(feature="app-gameparam")]impl<__T:IGameParam_Holder>IGameParam_HolderMethods for __T{}
+
+#[cfg(feature="app-gameparam")]impl GameParam_Holder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_bool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-gameparam")]impl GameParam_Holder{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameParam_Holder), ::core::stringify!(new),));
+ <Self as IGameParam_HolderMethods> ::ctor(this,name);
+this}
+}
+
+#[cfg(feature="app-gameparam")]pub trait IGameParam_ParamFunctionMethods:IGameParam_ParamFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GameParam_ParamFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66900usize)as*mut u8,();
+(GameParam_ParamFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::gameparam::GameParam, ::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,param:impl::core::convert::Into<crate::app::gameparam::GameParam> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <GameParam_ParamFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66920usize)as*mut u8,();
+(GameParam_ParamFunction)__receiver,(crate::app::gameparam::GameParam)::core::convert::Into::into(param),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+}
+
+#[cfg(feature="app-gameparam")]impl<__T:IGameParam_ParamFunction>IGameParam_ParamFunctionMethods for __T{}
+
+#[cfg(feature="app-gameparam")]impl GameParam_ParamFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gameparam")]impl GameParam_ParamFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameParam_ParamFunction), ::core::stringify!(new),));
+ <Self as IGameParam_ParamFunctionMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-gameparam")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameParam_Holder;
-    pub use super::IGameParam_Holder;
-    pub use super::IGameParam_HolderMethods;
-    pub use super::GameParam_Kind;
     pub use super::GameParam;
     pub use super::IGameParam;
     pub use super::IGameParamMethods;
+    pub use super::GameParam_Holder;
+    pub use super::IGameParam_Holder;
+    pub use super::IGameParam_HolderMethods;
     pub use super::GameParam_ParamFunction;
     pub use super::IGameParam_ParamFunction;
     pub use super::IGameParam_ParamFunctionMethods;
+    pub use super::GameParam_Kind;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

@@ -4,32 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumestack/VolumeStack.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "VolumeStack")] # [parent (crate :: system :: object :: Object)] pub struct VolumeStack {
-# [offset (16)] # [rename (name = "components")] pub components : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: SystemType , crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/volumestack/VolumeStack.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="VolumeStack")]#[parent(crate::system::object::Object)]pub struct VolumeStack{#[offset(16)]#[rename(name="components")]pub components:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::SystemType,crate::unity_engine::rendering::volumecomponent::VolumeComponent> ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-volumestack-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-volumestack")]
-pub trait IVolumeStackMethods : IVolumeStack { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VolumeStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e6f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reload(crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>)` overload"] fn reload (self , base_types : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: SystemType > >) -> () { unsafe { let __receiver = < VolumeStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeStack , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: SystemType > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e6fa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (base_types) , :: core :: option :: Option :: None) } } } fn get_component < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self ,) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< VolumeStack as :: unity2 :: ClassIdentity > :: class () , "GetComponent" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < VolumeStack as :: unity2 :: ClassIdentity > :: NAME , "GetComponent" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < VolumeStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (VolumeStack , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetComponent(::unity2::SystemType)` overload"] fn get_component_2 (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent { unsafe { let __receiver = < VolumeStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeStack , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volumecomponent :: VolumeComponent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e7640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < VolumeStack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeStack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e7340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-volumestack")]pub trait IVolumeStackMethods:IVolumeStack{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VolumeStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e6f90usize)as*mut u8,();
+(VolumeStack)__receiver)}
+}
+#[doc="`Reload(crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::SystemType>)` overload"]fn reload(self,base_types:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::SystemType> >)->(){unsafe{let __receiver= <VolumeStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e6fa0usize)as*mut u8,();
+(VolumeStack)__receiver,(crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::SystemType>)::core::convert::Into::into(base_types))}
+}
+fn get_component<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<VolumeStack as::unity2::ClassIdentity> ::class(),"GetComponent",0,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <VolumeStack as::unity2::ClassIdentity> ::NAME,"GetComponent",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <VolumeStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(VolumeStack, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`GetComponent(::unity2::SystemType)` overload"]fn get_component_2(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::rendering::volumecomponent::VolumeComponent{unsafe{let __receiver= <VolumeStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e7640usize)as*mut u8,crate::unity_engine::rendering::volumecomponent::VolumeComponent;
+(VolumeStack)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <VolumeStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e7340usize)as*mut u8,();
+(VolumeStack)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumestack")]
-impl < __T : IVolumeStack > IVolumeStackMethods for __T { }
+#[cfg(feature="unity_engine-rendering-volumestack")]impl<__T:IVolumeStack>IVolumeStackMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-volumestack")]
-impl VolumeStack { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeStack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeStack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_component_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeStack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeStack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-volumestack")]impl VolumeStack{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_component_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumestack")]
-impl VolumeStack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VolumeStack) , :: core :: stringify ! (new) ,)) ; < Self as IVolumeStackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-volumestack")]impl VolumeStack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VolumeStack), ::core::stringify!(new),));
+ <Self as IVolumeStackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-volumestack")]

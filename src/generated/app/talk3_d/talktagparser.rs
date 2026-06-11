@@ -4,39 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagparser/TalkTagParser.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkTagParser")] # [parent (crate :: system :: object :: Object)] pub struct TalkTagParser {
-# [static_field] # [rename (name = "ShiftIn")] pub shift_in : u16 ,
-# [static_field] # [rename (name = "ShiftOut")] pub shift_out : u16 ,
-# [offset (16)] # [rename (name = "m_TagDictionary")] pub m_tag_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: mess :: Mess_TagGroup , crate :: app :: talk3_d :: talktag :: TalkTag > ,
-# [offset (24)] # [rename (name = "m_TagFinish")] pub m_tag_finish : crate :: app :: talk3_d :: talktagfinish :: TalkTagFinish ,
-# [offset (32)] # [rename (name = "m_TagAddLetter")] pub m_tag_add_letter : crate :: app :: talk3_d :: talktagaddletter :: TalkTagAddLetter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagparser/TalkTagParser.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagParser")]#[parent(crate::system::object::Object)]pub struct TalkTagParser{#[static_field]#[rename(name="ShiftIn")]pub shift_in:u16, #[static_field]#[rename(name="ShiftOut")]pub shift_out:u16, #[offset(16)]#[rename(name="m_TagDictionary")]pub m_tag_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::mess::Mess_TagGroup,crate::app::talk3_d::talktag::TalkTag> , #[offset(24)]#[rename(name="m_TagFinish")]pub m_tag_finish:crate::app::talk3_d::talktagfinish::TalkTagFinish, #[offset(32)]#[rename(name="m_TagAddLetter")]pub m_tag_add_letter:crate::app::talk3_d::talktagaddletter::TalkTagAddLetter,}
 
 }
 
 #[cfg(feature = "app-talk3_d-talktagparser-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talktagparser")]
-impl TalkTagParser { # [doc = "`GetHeadText(::unity2::Il2CppString, i32)` overload"] pub fn get_head_text (mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , num : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21da9c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mid) , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`AddCharToHeadText(u16, *mut::unity2::Il2CppString, *muti32, *mutbool, *mutbool, *mutbool)` overload"] pub fn add_char_to_head_text (chr : impl :: core :: convert :: Into < u16 >) -> (bool , :: unity2 :: Il2CppString , i32 , bool , bool , bool) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let mut __out_4 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { { let __inner : extern "C" fn (u16 , * mut :: unity2 :: Il2CppString , * mut i32 , * mut bool , * mut bool , * mut bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21dae80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chr) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , __out_4 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init () , __out_4 . assume_init ()) } } }
+#[cfg(feature="app-talk3_d-talktagparser")]impl TalkTagParser{#[doc="`GetHeadText(::unity2::Il2CppString, i32)` overload"]pub fn get_head_text(mid:impl::core::convert::Into< ::unity2::Il2CppString> ,num:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21da9c0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(mid),(i32)::core::convert::Into::into(num))}
+}
+#[doc="`AddCharToHeadText(u16, *mut::unity2::Il2CppString, *muti32, *mutbool, *mutbool, *mutbool)` overload"]pub fn add_char_to_head_text(chr:impl::core::convert::Into<u16>)->(bool, ::unity2::Il2CppString,i32,bool,bool,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let mut __out_4= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21dae80usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(chr),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr(),(*mut bool)__out_2.as_mut_ptr(),(*mut bool)__out_3.as_mut_ptr(),(*mut bool)__out_4.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init(),__out_4.assume_init())}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talktagparser")]
-pub trait ITalkTagParserMethods : ITalkTagParser { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkTagParser as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagParser , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21da450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Parse(crate::app::talk3_d::talkptr::TalkPtr)` overload"] fn parse (self , talk_ptr : impl :: core :: convert :: Into < crate :: app :: talk3_d :: talkptr :: TalkPtr >) -> crate :: app :: talk3_d :: talktag :: TalkTag { unsafe { let __receiver = < TalkTagParser as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagParser , crate :: app :: talk3_d :: talkptr :: TalkPtr , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21da8b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (talk_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`GetAddLetterTagForReplace(u16)` overload"] fn get_add_letter_tag_for_replace (self , chr : impl :: core :: convert :: Into < u16 >) -> crate :: app :: talk3_d :: talktag :: TalkTag { unsafe { let __receiver = < TalkTagParser as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagParser , u16 , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talktag :: TalkTag = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21da9a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: option :: Option :: None) } } } # [doc = "`ResetLineFeedEnable()` overload"] fn reset_line_feed_enable (self ,) -> () { unsafe { let __receiver = < TalkTagParser as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkTagParser , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21da9b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talktagparser")]pub trait ITalkTagParserMethods:ITalkTagParser{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagParser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21da450usize)as*mut u8,();
+(TalkTagParser)__receiver)}
+}
+#[doc="`Parse(crate::app::talk3_d::talkptr::TalkPtr)` overload"]fn parse(self,talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->crate::app::talk3_d::talktag::TalkTag{unsafe{let __receiver= <TalkTagParser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21da8b0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag;
+(TalkTagParser)__receiver,(crate::app::talk3_d::talkptr::TalkPtr)::core::convert::Into::into(talk_ptr))}
+}
+#[doc="`GetAddLetterTagForReplace(u16)` overload"]fn get_add_letter_tag_for_replace(self,chr:impl::core::convert::Into<u16>)->crate::app::talk3_d::talktag::TalkTag{unsafe{let __receiver= <TalkTagParser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21da9a0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag;
+(TalkTagParser)__receiver,(u16)::core::convert::Into::into(chr))}
+}
+#[doc="`ResetLineFeedEnable()` overload"]fn reset_line_feed_enable(self,)->(){unsafe{let __receiver= <TalkTagParser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21da9b0usize)as*mut u8,();
+(TalkTagParser)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talktagparser")]
-impl < __T : ITalkTagParser > ITalkTagParserMethods for __T { }
+#[cfg(feature="app-talk3_d-talktagparser")]impl<__T:ITalkTagParser>ITalkTagParserMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talktagparser")]
-impl TalkTagParser { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagParser as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagParser as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_add_letter_tag_for_replace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagParser as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn reset_line_feed_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagParser as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_head_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagParser as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_char_to_head_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkTagParser as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-talk3_d-talktagparser")]impl TalkTagParser{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn parse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_add_letter_tag_for_replace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_line_feed_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_head_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_char_to_head_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-talk3_d-talktagparser")]
-impl TalkTagParser {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkTagParser) , :: core :: stringify ! (new) ,)) ; < Self as ITalkTagParserMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talktagparser")]impl TalkTagParser{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkTagParser), ::core::stringify!(new),));
+ <Self as ITalkTagParserMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talktagparser")]

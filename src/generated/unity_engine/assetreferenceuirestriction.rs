@@ -4,28 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetreferenceuirestriction/AssetReferenceUIRestriction.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AssetReferenceUIRestriction")] pub struct AssetReferenceUIRestriction {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/assetreferenceuirestriction/AssetReferenceUIRestriction.md"))]#[::unity2::class(namespace="UnityEngine",name="AssetReferenceUIRestriction")]pub struct AssetReferenceUIRestriction{}
 
 }
 
 #[cfg(feature = "unity_engine-assetreferenceuirestriction-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-assetreferenceuirestriction")]
-pub trait IAssetReferenceUIRestrictionMethods : IAssetReferenceUIRestriction { # [doc = "`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"] fn validate_asset (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 >) -> bool { unsafe { let __receiver = < AssetReferenceUIRestriction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceUIRestriction , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db32c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateAsset(::unity2::Il2CppString)` overload"] fn validate_asset_2 (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < AssetReferenceUIRestriction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceUIRestriction , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db32d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssetReferenceUIRestriction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceUIRestriction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-assetreferenceuirestriction")]pub trait IAssetReferenceUIRestrictionMethods:IAssetReferenceUIRestriction{#[doc="`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]fn validate_asset(self,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->bool{unsafe{let __receiver= <AssetReferenceUIRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db32c0usize)as*mut u8,bool;
+(AssetReferenceUIRestriction)__receiver,(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))}
+}
+#[doc="`ValidateAsset(::unity2::Il2CppString)` overload"]fn validate_asset_2(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <AssetReferenceUIRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db32d0usize)as*mut u8,bool;
+(AssetReferenceUIRestriction)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetReferenceUIRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3170usize)as*mut u8,();
+(AssetReferenceUIRestriction)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-assetreferenceuirestriction")]
-impl < __T : IAssetReferenceUIRestriction > IAssetReferenceUIRestrictionMethods for __T { }
+#[cfg(feature="unity_engine-assetreferenceuirestriction")]impl<__T:IAssetReferenceUIRestriction>IAssetReferenceUIRestrictionMethods for __T{}
 
-#[cfg(feature = "unity_engine-assetreferenceuirestriction")]
-impl AssetReferenceUIRestriction { pub fn validate_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceUIRestriction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn validate_asset_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceUIRestriction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceUIRestriction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-assetreferenceuirestriction")]impl AssetReferenceUIRestriction{pub fn validate_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn validate_asset_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-assetreferenceuirestriction")]
-impl AssetReferenceUIRestriction {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetReferenceUIRestriction) , :: core :: stringify ! (new) ,)) ; < Self as IAssetReferenceUIRestrictionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-assetreferenceuirestriction")]impl AssetReferenceUIRestriction{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetReferenceUIRestriction), ::core::stringify!(new),));
+ <Self as IAssetReferenceUIRestrictionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-assetreferenceuirestriction")]

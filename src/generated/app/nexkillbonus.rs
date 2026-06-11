@@ -4,234 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NexKillBonus_Kinds  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexkillbonus/NexKillBonus.md"))]#[::unity2::class(namespace="App",name="NexKillBonus")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::nexkillbonus::NexKillBonus>)]pub struct NexKillBonus{#[static_field]#[rename(name="MaxWidth")]pub max_width:i32, #[static_field]#[rename(name="MaxHeight")]pub max_height:i32, #[static_field]#[rename(name="MaxPostData")]pub max_post_data:i32, #[static_field]#[rename(name="Period")]pub period:i32, #[static_field]#[rename(name="MaxCount")]pub max_count:i32, #[static_field]#[rename(name="StreamBufferSize")]pub stream_buffer_size:i32, #[static_field]#[rename(name="GetBufferSize")]pub get_buffer_size:i32, #[offset(40)]#[rename(name="m_IsSucceeded")]pub m_is_succeeded:bool, #[offset(48)]#[rename(name="m_SerializeStream")]pub m_serialize_stream:crate::app::stream_2::Stream_2, #[offset(56)]#[rename(name="m_SerializeStreamBuffer")]pub m_serialize_stream_buffer: ::unity2::Array<u8> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexkillbonus/NexKillBonus_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexKillBonus_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for NexKillBonus_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexKillBonus.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexKillBonus_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexKillBonus_Kinds{pub fn kill()->Self{Self{value:0}
+}
+pub fn killed()->Self{Self{value:1}
+}
+pub fn max()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for NexKillBonus_Kinds  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexkillbonus/NexKillBonus_ServerSequence.md"))]#[::unity2::class(namespace="App",name="NexKillBonus.ServerSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexKillBonus_ServerSequence{#[offset(112)]#[rename(name="m_Mode")]pub m_mode:crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, #[offset(120)]#[rename(name="m_Cid")]pub m_cid: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_KillCountImage")]pub m_kill_count_image:crate::app::mapkillbonus::MapKillBonus_CountImage, #[offset(136)]#[rename(name="m_KilledCountImage")]pub m_killed_count_image:crate::app::mapkillbonus::MapKillBonus_CountImage, #[offset(144)]#[rename(name="m_DataId")]pub m_data_id:u64,}
 
-    const NAME: &'static str = "NexKillBonus.Kinds";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexkillbonus/NexKillBonus_ServerSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexKillBonus_ServerSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for NexKillBonus_ServerSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexKillBonus.ServerSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for NexKillBonus_ServerSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl NexKillBonus_ServerSequence_Label{pub fn search_data()->Self{Self{value:0}
+}
+pub fn search_self_data()->Self{Self{value:1}
+}
+pub fn delete_data()->Self{Self{value:2}
+}
+pub fn get_data()->Self{Self{value:3}
+}
+pub fn post_data()->Self{Self{value:4}
+}
+pub fn update_data()->Self{Self{value:5}
+}
+pub fn succeeded()->Self{Self{value:6}
+}
+pub fn error()->Self{Self{value:7}
+}
+pub fn end()->Self{Self{value:8}
+}
 }
 
 
-impl  ::unity2::IlType for NexKillBonus_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexkillbonus/NexKillBonus_ServerSequence_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexKillBonus_ServerSequence_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for NexKillBonus_ServerSequence_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="NexKillBonus.ServerSequence.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  NexKillBonus_Kinds  {
-    pub fn kill() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn killed() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 2 }
-
-    }
-
+impl::unity2::IlType for NexKillBonus_ServerSequence_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NexKillBonus_ServerSequence_Label  {
-    pub value: i32,
+impl NexKillBonus_ServerSequence_Mode{pub fn download()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexKillBonus.ServerSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn upload()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::IlType for NexKillBonus_ServerSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  NexKillBonus_ServerSequence_Label  {
-    pub fn search_data() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn search_self_data() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn delete_data() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn get_data() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn post_data() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn update_data() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn succeeded() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn error() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct NexKillBonus_ServerSequence_Mode  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexKillBonus.ServerSequence.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for NexKillBonus_ServerSequence_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  NexKillBonus_ServerSequence_Mode  {
-    pub fn download() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn upload() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus_ServerSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexKillBonus.ServerSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct NexKillBonus_ServerSequence {
-# [offset (112)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode ,
-# [offset (120)] # [rename (name = "m_Cid")] pub m_cid : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_KillCountImage")] pub m_kill_count_image : crate :: app :: mapkillbonus :: MapKillBonus_CountImage ,
-# [offset (136)] # [rename (name = "m_KilledCountImage")] pub m_killed_count_image : crate :: app :: mapkillbonus :: MapKillBonus_CountImage ,
-# [offset (144)] # [rename (name = "m_DataId")] pub m_data_id : u64 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus.md"))] # [:: unity2 :: class (namespace = "App" , name = "NexKillBonus")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexkillbonus :: NexKillBonus >)] pub struct NexKillBonus {
-# [static_field] # [rename (name = "MaxWidth")] pub max_width : i32 ,
-# [static_field] # [rename (name = "MaxHeight")] pub max_height : i32 ,
-# [static_field] # [rename (name = "MaxPostData")] pub max_post_data : i32 ,
-# [static_field] # [rename (name = "Period")] pub period : i32 ,
-# [static_field] # [rename (name = "MaxCount")] pub max_count : i32 ,
-# [static_field] # [rename (name = "StreamBufferSize")] pub stream_buffer_size : i32 ,
-# [static_field] # [rename (name = "GetBufferSize")] pub get_buffer_size : i32 ,
-# [offset (40)] # [rename (name = "m_IsSucceeded")] pub m_is_succeeded : bool ,
-# [offset (48)] # [rename (name = "m_SerializeStream")] pub m_serialize_stream : crate :: app :: stream_2 :: Stream_2 ,
-# [offset (56)] # [rename (name = "m_SerializeStreamBuffer")] pub m_serialize_stream_buffer : :: unity2 :: Array < u8 > ,
 }
 
 }
@@ -239,49 +91,204 @@ impl  NexKillBonus_ServerSequence_Mode  {
 #[cfg(feature = "app-nexkillbonus-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-nexkillbonus")]
-impl NexKillBonus_ServerSequence { # [doc = "`CreateBindDownload(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn create_bind_download (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a42b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindUpload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"] pub fn create_bind_upload (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , kill_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage > , killed_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a4f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (kill_count_image) , :: core :: convert :: Into :: into (killed_count_image) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"] pub fn create_bind_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , mode : impl :: core :: convert :: Into < crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , kill_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage > , killed_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode , :: unity2 :: Il2CppString , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a42d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (kill_count_image) , :: core :: convert :: Into :: into (killed_count_image) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-nexkillbonus")]
-pub trait INexKillBonus_ServerSequenceMethods : INexKillBonus_ServerSequence { # [doc = "`.ctor(crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"] fn ctor (self , mode : impl :: core :: convert :: Into < crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , kill_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage > , killed_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage >) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode , :: unity2 :: Il2CppString , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a2a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (kill_count_image) , :: core :: convert :: Into :: into (killed_count_image) , :: core :: option :: Option :: None) } } } # [doc = "`Login()` overload"] fn login (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a2af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Postlogin()` overload"] fn postlogin (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a2b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SearchData()` overload"] fn search_data (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a2cd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SearchSelfData()` overload"] fn search_self_data (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a34a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeleteData()` overload"] fn delete_data (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a3740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetData()` overload"] fn get_data (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a3950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostData()` overload"] fn post_data (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a3bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateData()` overload"] fn update_data (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a3f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Succeeded()` overload"] fn succeeded (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a4190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetError(crate::app::neterror::NetError_App)` overload"] fn set_error (self , error : impl :: core :: convert :: Into < crate :: app :: neterror :: NetError_App >) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , crate :: app :: neterror :: NetError_App , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a3020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (error) , :: core :: option :: Option :: None) } } } # [doc = "`Error()` overload"] fn error (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a4210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenWaitMessage()` overload"] fn open_wait_message (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a4280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseWaitMessage()` overload"] fn close_wait_message (self ,) -> () { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a4290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDataType()` overload"] fn get_data_type (self ,) -> u16 { unsafe { let __receiver = < NexKillBonus_ServerSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus_ServerSequence , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20a2f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-nexkillbonus")]
-impl < __T : INexKillBonus_ServerSequence > INexKillBonus_ServerSequenceMethods for __T { }
-
-#[cfg(feature = "app-nexkillbonus")]
-impl NexKillBonus_ServerSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn login_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn postlogin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn search_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn search_self_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn delete_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn post_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn succeeded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn open_wait_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn close_wait_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_data_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn create_bind_download_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn create_bind_upload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn create_bind_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus_ServerSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
-
-#[cfg(feature = "app-nexkillbonus")]
-impl NexKillBonus_ServerSequence {
-# [doc = "`.ctor(crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` — overload selector"] pub fn new (mode : crate :: app :: nexkillbonus :: NexKillBonus_ServerSequence_Mode , cid : :: unity2 :: Il2CppString , kill_count_image : crate :: app :: mapkillbonus :: MapKillBonus_CountImage , killed_count_image : crate :: app :: mapkillbonus :: MapKillBonus_CountImage) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NexKillBonus_ServerSequence) , :: core :: stringify ! (new) ,)) ; < Self as INexKillBonus_ServerSequenceMethods > :: ctor (this , mode , cid , kill_count_image , killed_count_image) ; this }
+#[cfg(feature="app-nexkillbonus")]pub trait INexKillBonusMethods:INexKillBonus{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f143b0usize)as*mut u8,();
+(NexKillBonus)__receiver)}
+}
+#[doc="`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]fn download(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14530usize)as*mut u8,bool;
+(NexKillBonus)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]fn upload(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,kill_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage> ,killed_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>)->bool{unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f145c0usize)as*mut u8,bool;
+(NexKillBonus)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(cid),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(kill_count_image),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(killed_count_image))}
+}
+#[doc="`ClearSucceeded()` overload"]fn clear_succeeded(self,)->(){unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f145b0usize)as*mut u8,();
+(NexKillBonus)__receiver)}
+}
+#[doc="`get_IsSucceeded()` overload"]fn get_is_succeeded(self,)->bool{unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14600usize)as*mut u8,bool;
+(NexKillBonus)__receiver)}
+}
+#[doc="`SetData(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]fn set_data(self,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14610usize)as*mut u8,();
+(NexKillBonus)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid),(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+#[doc="`CreateData(crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage, *mut::unity2::Array<u8>, *mutu32)` overload"]fn create_data(self,kill_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage> ,killed_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>)->(::unity2::Array<u8> ,u32){unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<u8> > ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f148d0usize)as*mut u8,();
+(NexKillBonus)__receiver,(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(kill_count_image),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(killed_count_image),(*mut::unity2::Array<u8>)__out_0.as_mut_ptr(),(*mut u32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`AddCounts(crate::app::nexkillbonus::NexKillBonus_Kinds, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]fn add_counts(self,kind:impl::core::convert::Into<crate::app::nexkillbonus::NexKillBonus_Kinds> ,count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>)->(){unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14930usize)as*mut u8,();
+(NexKillBonus)__receiver,(crate::app::nexkillbonus::NexKillBonus_Kinds)::core::convert::Into::into(kind),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(count_image))}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14be0usize)as*mut u8,i32;
+(NexKillBonus)__receiver)}
+}
+#[doc="`Serialize(*mut::unity2::Array<u8>, *mutu32)` overload"]fn serialize(self,)->(::unity2::Array<u8> ,u32){unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<u8> > ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14a80usize)as*mut u8,();
+(NexKillBonus)__receiver,(*mut::unity2::Array<u8>)__out_0.as_mut_ptr(),(*mut u32)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Deserialize(::unity2::Array<u8>)` overload"]fn deserialize(self,data:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14620usize)as*mut u8,();
+(NexKillBonus)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+#[doc="`ClearData()` overload"]fn clear_data(self,)->(){unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14590usize)as*mut u8,();
+(NexKillBonus)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NexKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14bf0usize)as*mut u8,();
+(NexKillBonus)__receiver)}
+}
 }
 
-#[cfg(feature = "app-nexkillbonus")]
-pub trait INexKillBonusMethods : INexKillBonus { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f143b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Download(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] fn download (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14530usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`Upload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"] fn upload (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , kill_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage > , killed_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage >) -> bool { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f145c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (kill_count_image) , :: core :: convert :: Into :: into (killed_count_image) , :: core :: option :: Option :: None) } } } # [doc = "`ClearSucceeded()` overload"] fn clear_succeeded (self ,) -> () { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f145b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSucceeded()` overload"] fn get_is_succeeded (self ,) -> bool { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetData(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"] fn set_data (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , :: unity2 :: Il2CppString , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`CreateData(crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage, *mut::unity2::Array<u8>, *mutu32)` overload"] fn create_data (self , kill_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage > , killed_count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage >) -> (:: unity2 :: Array < u8 > , u32) { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Array < u8 > > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u32 > :: uninit () ; { let __inner : extern "C" fn (NexKillBonus , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , * mut :: unity2 :: Array < u8 > , * mut u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f148d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kill_count_image) , :: core :: convert :: Into :: into (killed_count_image) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`AddCounts(crate::app::nexkillbonus::NexKillBonus_Kinds, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"] fn add_counts (self , kind : impl :: core :: convert :: Into < crate :: app :: nexkillbonus :: NexKillBonus_Kinds > , count_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_CountImage >) -> () { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , crate :: app :: nexkillbonus :: NexKillBonus_Kinds , crate :: app :: mapkillbonus :: MapKillBonus_CountImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (count_image) , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(*mut::unity2::Array<u8>, *mutu32)` overload"] fn serialize (self ,) -> (:: unity2 :: Array < u8 > , u32) { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Array < u8 > > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u32 > :: uninit () ; { let __inner : extern "C" fn (NexKillBonus , * mut :: unity2 :: Array < u8 > , * mut u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14a80usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Deserialize(::unity2::Array<u8>)` overload"] fn deserialize (self , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`ClearData()` overload"] fn clear_data (self ,) -> () { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NexKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NexKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f14bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-nexkillbonus")]impl<__T:INexKillBonus>INexKillBonusMethods for __T{}
 
-#[cfg(feature = "app-nexkillbonus")]
-impl < __T : INexKillBonus > INexKillBonusMethods for __T { }
+#[cfg(feature="app-nexkillbonus")]impl NexKillBonus{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clear_succeeded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_succeeded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_counts_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-nexkillbonus")]
-impl NexKillBonus { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn download_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn upload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clear_succeeded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_succeeded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_counts_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn clear_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NexKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-nexkillbonus")]impl NexKillBonus{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexKillBonus), ::core::stringify!(new),));
+ <Self as INexKillBonusMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-nexkillbonus")]
-impl NexKillBonus {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NexKillBonus) , :: core :: stringify ! (new) ,)) ; < Self as INexKillBonusMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-nexkillbonus")]impl NexKillBonus_ServerSequence{#[doc="`CreateBindDownload(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_bind_download(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20a42b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`CreateBindUpload(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]pub fn create_bind_upload(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,kill_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage> ,killed_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20a4f40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(cid),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(kill_count_image),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(killed_count_image))}
+}
+#[doc="`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]pub fn create_bind_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mode:impl::core::convert::Into<crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode> ,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,kill_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage> ,killed_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20a42d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode)::core::convert::Into::into(mode),(::unity2::Il2CppString)::core::convert::Into::into(cid),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(kill_count_image),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(killed_count_image))}
+}
+}
+
+#[cfg(feature="app-nexkillbonus")]pub trait INexKillBonus_ServerSequenceMethods:INexKillBonus_ServerSequence{#[doc="`.ctor(crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` overload"]fn ctor(self,mode:impl::core::convert::Into<crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode> ,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,kill_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage> ,killed_count_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_CountImage>)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a2a70usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver,(crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode)::core::convert::Into::into(mode),(::unity2::Il2CppString)::core::convert::Into::into(cid),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(kill_count_image),(crate::app::mapkillbonus::MapKillBonus_CountImage)::core::convert::Into::into(killed_count_image))}
+}
+#[doc="`Login()` overload"]fn login(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a2af0usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`Postlogin()` overload"]fn postlogin(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a2b60usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`SearchData()` overload"]fn search_data(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a2cd0usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`SearchSelfData()` overload"]fn search_self_data(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a34a0usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`DeleteData()` overload"]fn delete_data(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a3740usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`GetData()` overload"]fn get_data(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a3950usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`PostData()` overload"]fn post_data(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a3bd0usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`UpdateData()` overload"]fn update_data(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a3f10usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`Succeeded()` overload"]fn succeeded(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a4190usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`SetError(crate::app::neterror::NetError_App)` overload"]fn set_error(self,error:impl::core::convert::Into<crate::app::neterror::NetError_App>)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a3020usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver,(crate::app::neterror::NetError_App)::core::convert::Into::into(error))}
+}
+#[doc="`Error()` overload"]fn error(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a4210usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`OpenWaitMessage()` overload"]fn open_wait_message(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a4280usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`CloseWaitMessage()` overload"]fn close_wait_message(self,)->(){unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a4290usize)as*mut u8,();
+(NexKillBonus_ServerSequence)__receiver)}
+}
+#[doc="`GetDataType()` overload"]fn get_data_type(self,)->u16{unsafe{let __receiver= <NexKillBonus_ServerSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20a2f70usize)as*mut u8,u16;
+(NexKillBonus_ServerSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-nexkillbonus")]impl<__T:INexKillBonus_ServerSequence>INexKillBonus_ServerSequenceMethods for __T{}
+
+#[cfg(feature="app-nexkillbonus")]impl NexKillBonus_ServerSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn login_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn postlogin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn search_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn search_self_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn delete_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn post_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn succeeded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn open_wait_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn close_wait_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_data_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn create_bind_download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn create_bind_upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn create_bind_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
+
+#[cfg(feature="app-nexkillbonus")]impl NexKillBonus_ServerSequence{#[doc="`.ctor(crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode, ::unity2::Il2CppString, crate::app::mapkillbonus::MapKillBonus_CountImage, crate::app::mapkillbonus::MapKillBonus_CountImage)` — overload selector"]pub fn new(mode:crate::app::nexkillbonus::NexKillBonus_ServerSequence_Mode,cid: ::unity2::Il2CppString,kill_count_image:crate::app::mapkillbonus::MapKillBonus_CountImage,killed_count_image:crate::app::mapkillbonus::MapKillBonus_CountImage)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NexKillBonus_ServerSequence), ::core::stringify!(new),));
+ <Self as INexKillBonus_ServerSequenceMethods> ::ctor(this,mode,cid,kill_count_image,killed_count_image);
+this}
 }
 
 #[cfg(feature = "app-nexkillbonus")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NexKillBonus_Kinds;
-    pub use super::NexKillBonus_ServerSequence_Label;
-    pub use super::NexKillBonus_ServerSequence_Mode;
-    pub use super::NexKillBonus_ServerSequence;
-    pub use super::INexKillBonus_ServerSequence;
-    pub use super::INexKillBonus_ServerSequenceMethods;
     pub use super::NexKillBonus;
     pub use super::INexKillBonus;
     pub use super::INexKillBonusMethods;
+    pub use super::NexKillBonus_Kinds;
+    pub use super::NexKillBonus_ServerSequence;
+    pub use super::INexKillBonus_ServerSequence;
+    pub use super::INexKillBonus_ServerSequenceMethods;
+    pub use super::NexKillBonus_ServerSequence_Label;
+    pub use super::NexKillBonus_ServerSequence_Mode;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;

@@ -4,84 +4,136 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectroot/ArenaBondGodSelectRoot_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ArenaBondGodSelectRoot.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ArenaBondGodSelectRoot_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectroot/ArenaBondGodSelectRoot.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ArenaBondGodSelectRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="HelpPrefabPath")]pub help_prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MenuContent")]pub m_menu_content:crate::app::arenabondgodselectmenucontent::ArenaBondGodSelectMenuContent, #[offset(32)]#[rename(name="m_SkillListSetter")]pub m_skill_list_setter:crate::app::arenabondgodselectskilllistsetter::ArenaBondGodSelectSkillListSetter, #[offset(40)]#[rename(name="m_BondSetter")]pub m_bond_setter:crate::app::menubondsetter::MenuBondSetter, #[offset(48)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot_DecideEventHandler, #[offset(56)]#[rename(name="m_Menu")]pub m_menu:crate::app::arenabondgodselectmenu::ArenaBondGodSelectMenu, #[offset(64)]#[rename(name="m_SelectUnit")]pub m_select_unit:crate::app::unit::Unit, #[offset(72)]#[rename(name="m_SelectGod")]pub m_select_god:crate::app::godunit::GodUnit, #[offset(80)]#[rename(name="m_SelectType")]pub m_select_type:crate::app::ringcleaningsequence::RingCleaningSequence_GodType,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectroot/ArenaBondGodSelectRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "ArenaBondGodSelectRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ArenaBondGodSelectRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "HelpPrefabPath")] pub help_prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_MenuContent")] pub m_menu_content : crate :: app :: arenabondgodselectmenucontent :: ArenaBondGodSelectMenuContent ,
-# [offset (32)] # [rename (name = "m_SkillListSetter")] pub m_skill_list_setter : crate :: app :: arenabondgodselectskilllistsetter :: ArenaBondGodSelectSkillListSetter ,
-# [offset (40)] # [rename (name = "m_BondSetter")] pub m_bond_setter : crate :: app :: menubondsetter :: MenuBondSetter ,
-# [offset (48)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: arenabondgodselectroot :: ArenaBondGodSelectRoot_DecideEventHandler ,
-# [offset (56)] # [rename (name = "m_Menu")] pub m_menu : crate :: app :: arenabondgodselectmenu :: ArenaBondGodSelectMenu ,
-# [offset (64)] # [rename (name = "m_SelectUnit")] pub m_select_unit : crate :: app :: unit :: Unit ,
-# [offset (72)] # [rename (name = "m_SelectGod")] pub m_select_god : crate :: app :: godunit :: GodUnit ,
-# [offset (80)] # [rename (name = "m_SelectType")] pub m_select_type : crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectroot/ArenaBondGodSelectRoot_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectRoot.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaBondGodSelectRoot_DecideEventHandler{}
 
 }
 
 #[cfg(feature = "app-arenabondgodselectroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-arenabondgodselectroot")]
-pub trait IArenaBondGodSelectRoot_DecideEventHandlerMethods : IArenaBondGodSelectRoot_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba8b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn invoke (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , select_type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot_DecideEventHandler , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba8b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (select_type) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-arenabondgodselectroot")]
-impl < __T : IArenaBondGodSelectRoot_DecideEventHandler > IArenaBondGodSelectRoot_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-arenabondgodselectroot")]
-impl ArenaBondGodSelectRoot_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-arenabondgodselectroot")]
-impl ArenaBondGodSelectRoot_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArenaBondGodSelectRoot_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IArenaBondGodSelectRoot_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-arenabondgodselectroot")]impl ArenaBondGodSelectRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9eb50usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9ebf0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9ecc0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,change_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot_DecideEventHandler>)->crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9ed60usize)as*mut u8,crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(select_unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(default_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(change_type),(crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
 }
 
-#[cfg(feature = "app-arenabondgodselectroot")]
-impl ArenaBondGodSelectRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9eb50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9ebf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9ecc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , select_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , default_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , change_type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: arenabondgodselectroot :: ArenaBondGodSelectRoot_DecideEventHandler >) -> crate :: app :: arenabondgodselectroot :: ArenaBondGodSelectRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , crate :: app :: arenabondgodselectroot :: ArenaBondGodSelectRoot_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: arenabondgodselectroot :: ArenaBondGodSelectRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9ed60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (select_unit) , :: core :: convert :: Into :: into (default_god) , :: core :: convert :: Into :: into (change_type) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenabondgodselectroot")]pub trait IArenaBondGodSelectRootMethods:IArenaBondGodSelectRoot{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot_DecideEventHandler)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,change_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType> ,decide_event_handler:impl::core::convert::Into<crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot_DecideEventHandler>)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9eef0usize)as*mut u8,();
+(ArenaBondGodSelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(select_unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(default_god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(change_type),(crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`CharaInfoPlayAnim(::unity2::Il2CppString)` overload"]fn chara_info_play_anim(self,anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9f260usize)as*mut u8,();
+(ArenaBondGodSelectRoot)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anim_name))}
+}
+#[doc="`OnSelectMenuItem(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn on_select_menu_item(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,change_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9f350usize)as*mut u8,();
+(ArenaBondGodSelectRoot)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(change_type))}
+}
+#[doc="`OnDecideMenuItem(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn on_decide_menu_item(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,change_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9f960usize)as*mut u8,();
+(ArenaBondGodSelectRoot)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(change_type))}
+}
+#[doc="`OnChangeUnitToPrev()` overload"]fn on_change_unit_to_prev(self,)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9fa90usize)as*mut u8,();
+(ArenaBondGodSelectRoot)__receiver)}
+}
+#[doc="`OnChangeUnitToNext()` overload"]fn on_change_unit_to_next(self,)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9fc80usize)as*mut u8,();
+(ArenaBondGodSelectRoot)__receiver)}
+}
+#[doc="`OnStartHelp(crate::app::procinst::ProcInst, crate::app::goddata::GodData, i32)` overload"]fn on_start_help(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,god:impl::core::convert::Into<crate::app::goddata::GodData> ,bond_lv:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9fe90usize)as*mut u8,();
+(ArenaBondGodSelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::goddata::GodData)::core::convert::Into::into(god),(i32)::core::convert::Into::into(bond_lv))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca01d0usize)as*mut u8,();
+(ArenaBondGodSelectRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-arenabondgodselectroot")]
-pub trait IArenaBondGodSelectRootMethods : IArenaBondGodSelectRoot { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType, crate::app::arenabondgodselectroot::ArenaBondGodSelectRoot_DecideEventHandler)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , select_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , default_god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , change_type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: arenabondgodselectroot :: ArenaBondGodSelectRoot_DecideEventHandler >) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot , crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , crate :: app :: arenabondgodselectroot :: ArenaBondGodSelectRoot_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9eef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (select_unit) , :: core :: convert :: Into :: into (default_god) , :: core :: convert :: Into :: into (change_type) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`CharaInfoPlayAnim(::unity2::Il2CppString)` overload"] fn chara_info_play_anim (self , anim_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9f260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (anim_name) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelectMenuItem(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn on_select_menu_item (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , change_type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9f350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (change_type) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecideMenuItem(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn on_decide_menu_item (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , change_type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9f960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (change_type) , :: core :: option :: Option :: None) } } } # [doc = "`OnChangeUnitToPrev()` overload"] fn on_change_unit_to_prev (self ,) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9fa90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnChangeUnitToNext()` overload"] fn on_change_unit_to_next (self ,) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9fc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnStartHelp(crate::app::procinst::ProcInst, crate::app::goddata::GodData, i32)` overload"] fn on_start_help (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , god : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData > , bond_lv : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot , crate :: app :: procinst :: ProcInst , crate :: app :: goddata :: GodData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9fe90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (bond_lv) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ArenaBondGodSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondGodSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca01d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenabondgodselectroot")]impl<__T:IArenaBondGodSelectRoot>IArenaBondGodSelectRootMethods for __T{}
 
-#[cfg(feature = "app-arenabondgodselectroot")]
-impl < __T : IArenaBondGodSelectRoot > IArenaBondGodSelectRootMethods for __T { }
+#[cfg(feature="app-arenabondgodselectroot")]impl ArenaBondGodSelectRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn chara_info_play_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_decide_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_change_unit_to_prev_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_change_unit_to_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_start_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-arenabondgodselectroot")]
-impl ArenaBondGodSelectRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn chara_info_play_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_select_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_decide_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_change_unit_to_prev_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_change_unit_to_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_start_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondGodSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-arenabondgodselectroot")]impl ArenaBondGodSelectRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondGodSelectRoot), ::core::stringify!(new),));
+ <Self as IArenaBondGodSelectRootMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-arenabondgodselectroot")]
-impl ArenaBondGodSelectRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArenaBondGodSelectRoot) , :: core :: stringify ! (new) ,)) ; < Self as IArenaBondGodSelectRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-arenabondgodselectroot")]pub trait IArenaBondGodSelectRoot_DecideEventHandlerMethods:IArenaBondGodSelectRoot_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba8b60usize)as*mut u8,();
+(ArenaBondGodSelectRoot_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,select_type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <ArenaBondGodSelectRoot_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba8b80usize)as*mut u8,();
+(ArenaBondGodSelectRoot_DecideEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(select_type))}
+}
+}
+
+#[cfg(feature="app-arenabondgodselectroot")]impl<__T:IArenaBondGodSelectRoot_DecideEventHandler>IArenaBondGodSelectRoot_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-arenabondgodselectroot")]impl ArenaBondGodSelectRoot_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondgodselectroot")]impl ArenaBondGodSelectRoot_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondGodSelectRoot_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IArenaBondGodSelectRoot_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-arenabondgodselectroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArenaBondGodSelectRoot_DecideEventHandler;
-    pub use super::IArenaBondGodSelectRoot_DecideEventHandler;
-    pub use super::IArenaBondGodSelectRoot_DecideEventHandlerMethods;
     pub use super::ArenaBondGodSelectRoot;
     pub use super::IArenaBondGodSelectRoot;
     pub use super::IArenaBondGodSelectRootMethods;
+    pub use super::ArenaBondGodSelectRoot_DecideEventHandler;
+    pub use super::IArenaBondGodSelectRoot_DecideEventHandler;
+    pub use super::IArenaBondGodSelectRoot_DecideEventHandlerMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -4,42 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: launchbehaviour :: { ILaunchBehaviour , LaunchBehaviour }
- ;
- use crate :: combat :: magic :: { IMagic , Magic }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::launchbehaviour::{ILaunchBehaviour,LaunchBehaviour}
+;
+use crate::combat::magic::{IMagic,Magic}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/magic_bridge/Magic_Bridge.md"))] # [:: unity2 :: class (namespace = "" , name = "Magic_Bridge")] # [parent (crate :: combat :: magic :: Magic)] pub struct Magic_Bridge {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/magic_bridge/Magic_Bridge.md"))]#[::unity2::class(namespace="",name="Magic_Bridge")]#[parent(crate::combat::magic::Magic)]pub struct Magic_Bridge{}
 
 }
 
 #[cfg(feature = "root-magic_bridge-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-magic_bridge")]
-pub trait IMagic_BridgeMethods : IMagic_Bridge { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Magic_Bridge as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Magic_Bridge , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bf6880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-magic_bridge")]pub trait IMagic_BridgeMethods:IMagic_Bridge{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Magic_Bridge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf6880usize)as*mut u8,();
+(Magic_Bridge)__receiver)}
+}
+}
 
-#[cfg(feature = "root-magic_bridge")]
-impl < __T : IMagic_Bridge > IMagic_BridgeMethods for __T { }
+#[cfg(feature="root-magic_bridge")]impl<__T:IMagic_Bridge>IMagic_BridgeMethods for __T{}
 
-#[cfg(feature = "root-magic_bridge")]
-impl Magic_Bridge { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Magic_Bridge as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-magic_bridge")]impl Magic_Bridge{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-magic_bridge")]
-impl Magic_Bridge {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Magic_Bridge) , :: core :: stringify ! (new) ,)) ; < Self as IMagic_BridgeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-magic_bridge")]impl Magic_Bridge{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Magic_Bridge), ::core::stringify!(new),));
+ <Self as IMagic_BridgeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-magic_bridge")]

@@ -4,46 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/pixelperfectcamerainternal/PixelPerfectCameraInternal.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "PixelPerfectCameraInternal")] # [parent (crate :: system :: object :: Object)] pub struct PixelPerfectCameraInternal {
-# [offset (16)] # [rename (name = "m_Component")] pub m_component : crate :: unity_engine :: experimental :: rendering :: universal :: ipixelperfectcamera_interface :: IPixelPerfectCamera_Interface ,
-# [offset (24)] # [rename (name = "m_SerializableComponent")] pub m_serializable_component : crate :: unity_engine :: experimental :: rendering :: universal :: pixelperfectcamera :: PixelPerfectCamera ,
-# [offset (32)] # [rename (name = "originalOrthoSize")] pub original_ortho_size : f32 ,
-# [offset (36)] # [rename (name = "hasPostProcessLayer")] pub has_post_process_layer : bool ,
-# [offset (37)] # [rename (name = "cropFrameXAndY")] pub crop_frame_x_and_y : bool ,
-# [offset (38)] # [rename (name = "cropFrameXOrY")] pub crop_frame_x_or_y : bool ,
-# [offset (39)] # [rename (name = "useStretchFill")] pub use_stretch_fill : bool ,
-# [offset (40)] # [rename (name = "zoom")] pub zoom : i32 ,
-# [offset (44)] # [rename (name = "useOffscreenRT")] pub use_offscreen_rt : bool ,
-# [offset (48)] # [rename (name = "offscreenRTWidth")] pub offscreen_rt_width : i32 ,
-# [offset (52)] # [rename (name = "offscreenRTHeight")] pub offscreen_rt_height : i32 ,
-# [offset (56)] # [rename (name = "pixelRect")] pub pixel_rect : crate :: unity_engine :: rect :: Rect ,
-# [offset (72)] # [rename (name = "orthoSize")] pub ortho_size : f32 ,
-# [offset (76)] # [rename (name = "unitsPerPixel")] pub units_per_pixel : f32 ,
-# [offset (80)] # [rename (name = "cinemachineVCamZoom")] pub cinemachine_v_cam_zoom : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/pixelperfectcamerainternal/PixelPerfectCameraInternal.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="PixelPerfectCameraInternal")]#[parent(crate::system::object::Object)]pub struct PixelPerfectCameraInternal{#[offset(16)]#[rename(name="m_Component")]pub m_component:crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface, #[offset(24)]#[rename(name="m_SerializableComponent")]pub m_serializable_component:crate::unity_engine::experimental::rendering::universal::pixelperfectcamera::PixelPerfectCamera, #[offset(32)]#[rename(name="originalOrthoSize")]pub original_ortho_size:f32, #[offset(36)]#[rename(name="hasPostProcessLayer")]pub has_post_process_layer:bool, #[offset(37)]#[rename(name="cropFrameXAndY")]pub crop_frame_x_and_y:bool, #[offset(38)]#[rename(name="cropFrameXOrY")]pub crop_frame_x_or_y:bool, #[offset(39)]#[rename(name="useStretchFill")]pub use_stretch_fill:bool, #[offset(40)]#[rename(name="zoom")]pub zoom:i32, #[offset(44)]#[rename(name="useOffscreenRT")]pub use_offscreen_rt:bool, #[offset(48)]#[rename(name="offscreenRTWidth")]pub offscreen_rt_width:i32, #[offset(52)]#[rename(name="offscreenRTHeight")]pub offscreen_rt_height:i32, #[offset(56)]#[rename(name="pixelRect")]pub pixel_rect:crate::unity_engine::rect::Rect, #[offset(72)]#[rename(name="orthoSize")]pub ortho_size:f32, #[offset(76)]#[rename(name="unitsPerPixel")]pub units_per_pixel:f32, #[offset(80)]#[rename(name="cinemachineVCamZoom")]pub cinemachine_v_cam_zoom:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]
-pub trait IPixelPerfectCameraInternalMethods : IPixelPerfectCameraInternal { # [doc = "`.ctor(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)` overload"] fn ctor (self , component : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: ipixelperfectcamera_interface :: IPixelPerfectCamera_Interface >) -> () { unsafe { let __receiver = < PixelPerfectCameraInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PixelPerfectCameraInternal , crate :: unity_engine :: experimental :: rendering :: universal :: ipixelperfectcamera_interface :: IPixelPerfectCamera_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3196210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (component) , :: core :: option :: Option :: None) } } } # [doc = "`OnBeforeSerialize()` overload"] fn on_before_serialize (self ,) -> () { unsafe { let __receiver = < PixelPerfectCameraInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PixelPerfectCameraInternal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31971f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnAfterDeserialize()` overload"] fn on_after_deserialize (self ,) -> () { unsafe { let __receiver = < PixelPerfectCameraInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PixelPerfectCameraInternal , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3197280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateCameraProperties(i32, i32)` overload"] fn calculate_camera_properties (self , screen_width : impl :: core :: convert :: Into < i32 > , screen_height : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PixelPerfectCameraInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PixelPerfectCameraInternal , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3196430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (screen_width) , :: core :: convert :: Into :: into (screen_height) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateFinalBlitPixelRect(i32, i32)` overload"] fn calculate_final_blit_pixel_rect (self , screen_width : impl :: core :: convert :: Into < i32 > , screen_height : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: rect :: Rect { unsafe { let __receiver = < PixelPerfectCameraInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PixelPerfectCameraInternal , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3196b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (screen_width) , :: core :: convert :: Into :: into (screen_height) , :: core :: option :: Option :: None) } } } # [doc = "`CorrectCinemachineOrthoSize(f32)` overload"] fn correct_cinemachine_ortho_size (self , target_ortho_size : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < PixelPerfectCameraInternal as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PixelPerfectCameraInternal , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3195c20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target_ortho_size) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]pub trait IPixelPerfectCameraInternalMethods:IPixelPerfectCameraInternal{#[doc="`.ctor(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)` overload"]fn ctor(self,component:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface>)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3196210usize)as*mut u8,();
+(PixelPerfectCameraInternal)__receiver,(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)::core::convert::Into::into(component))}
+}
+#[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31971f0usize)as*mut u8,();
+(PixelPerfectCameraInternal)__receiver)}
+}
+#[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3197280usize)as*mut u8,();
+(PixelPerfectCameraInternal)__receiver)}
+}
+#[doc="`CalculateCameraProperties(i32, i32)` overload"]fn calculate_camera_properties(self,screen_width:impl::core::convert::Into<i32> ,screen_height:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3196430usize)as*mut u8,();
+(PixelPerfectCameraInternal)__receiver,(i32)::core::convert::Into::into(screen_width),(i32)::core::convert::Into::into(screen_height))}
+}
+#[doc="`CalculateFinalBlitPixelRect(i32, i32)` overload"]fn calculate_final_blit_pixel_rect(self,screen_width:impl::core::convert::Into<i32> ,screen_height:impl::core::convert::Into<i32>)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3196b10usize)as*mut u8,crate::unity_engine::rect::Rect;
+(PixelPerfectCameraInternal)__receiver,(i32)::core::convert::Into::into(screen_width),(i32)::core::convert::Into::into(screen_height))}
+}
+#[doc="`CorrectCinemachineOrthoSize(f32)` overload"]fn correct_cinemachine_ortho_size(self,target_ortho_size:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3195c20usize)as*mut u8,f32;
+(PixelPerfectCameraInternal)__receiver,(f32)::core::convert::Into::into(target_ortho_size))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]
-impl < __T : IPixelPerfectCameraInternal > IPixelPerfectCameraInternalMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]impl<__T:IPixelPerfectCameraInternal>IPixelPerfectCameraInternalMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]
-impl PixelPerfectCameraInternal { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PixelPerfectCameraInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_before_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PixelPerfectCameraInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_after_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PixelPerfectCameraInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calculate_camera_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PixelPerfectCameraInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calculate_final_blit_pixel_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PixelPerfectCameraInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn correct_cinemachine_ortho_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PixelPerfectCameraInternal as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]impl PixelPerfectCameraInternal{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_before_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_after_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calculate_camera_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calculate_final_blit_pixel_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn correct_cinemachine_ortho_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]
-impl PixelPerfectCameraInternal {
-# [doc = "`.ctor(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)` — overload selector"] pub fn new (component : crate :: unity_engine :: experimental :: rendering :: universal :: ipixelperfectcamera_interface :: IPixelPerfectCamera_Interface) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PixelPerfectCameraInternal) , :: core :: stringify ! (new) ,)) ; < Self as IPixelPerfectCameraInternalMethods > :: ctor (this , component) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]impl PixelPerfectCameraInternal{#[doc="`.ctor(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)` — overload selector"]pub fn new(component:crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PixelPerfectCameraInternal), ::core::stringify!(new),));
+ <Self as IPixelPerfectCameraInternalMethods> ::ctor(this,component);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]

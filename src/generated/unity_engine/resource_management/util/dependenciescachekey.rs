@@ -4,36 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/dependenciescachekey/DependenciesCacheKey.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "DependenciesCacheKey")] # [parent (crate :: system :: object :: Object)] pub struct DependenciesCacheKey {
-# [offset (16)] # [rename (name = "m_Dependencies")] pub m_dependencies : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > ,
-# [offset (24)] # [rename (name = "m_DependenciesHash")] pub m_dependencies_hash : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/dependenciescachekey/DependenciesCacheKey.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Util",name="DependenciesCacheKey")]#[parent(crate::system::object::Object)]pub struct DependenciesCacheKey{#[offset(16)]#[rename(name="m_Dependencies")]pub m_dependencies:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> , #[offset(24)]#[rename(name="m_DependenciesHash")]pub m_dependencies_hash:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DependenciesCacheKey_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: util :: dependenciescachekey :: DependenciesCacheKey as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-util-dependenciescachekey")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DependenciesCacheKey_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DependenciesCacheKey as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DependenciesCacheKey as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_hash_code{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DependenciesCacheKey as::unity2::ClassIdentity> ::class(),"GetHashCode",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DependenciesCacheKey as::unity2::ClassIdentity> ::NAME,"GetHashCode",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DependenciesCacheKey as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DependenciesCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DependenciesCacheKey as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DependenciesCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals_3{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::util::dependenciescachekey::DependenciesCacheKey as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DependenciesCacheKey as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DependenciesCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]
-pub trait IDependenciesCacheKeyMethods : IDependenciesCacheKey { # [doc = "`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>, i32)` overload"] fn ctor (self , dependencies : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , dependencies_hash : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DependenciesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DependenciesCacheKey , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DependenciesCacheKey_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (dependencies) , :: core :: convert :: Into :: into (dependencies_hash) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < DependenciesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DependenciesCacheKey , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__DependenciesCacheKey_unity2_raw :: __lookup_get_hash_code :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < DependenciesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DependenciesCacheKey , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DependenciesCacheKey_unity2_raw :: __lookup_equals :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"] fn equals_2 (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey >) -> bool { unsafe { let __receiver = < DependenciesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DependenciesCacheKey , crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DependenciesCacheKey_unity2_raw :: __lookup_equals_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::resource_management::util::dependenciescachekey::DependenciesCacheKey)` overload"] fn equals_3 (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: util :: dependenciescachekey :: DependenciesCacheKey >) -> bool { unsafe { let __receiver = < DependenciesCacheKey as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DependenciesCacheKey , crate :: unity_engine :: resource_management :: util :: dependenciescachekey :: DependenciesCacheKey , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DependenciesCacheKey_unity2_raw :: __lookup_equals_3 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-util-dependenciescachekey")]pub trait IDependenciesCacheKeyMethods:IDependenciesCacheKey{#[doc="`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>, i32)` overload"]fn ctor(self,dependencies:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> > ,dependencies_hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DependenciesCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DependenciesCacheKey_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(DependenciesCacheKey)__receiver,(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)::core::convert::Into::into(dependencies),(i32)::core::convert::Into::into(dependencies_hash))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <DependenciesCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DependenciesCacheKey_unity2_raw::__lookup_get_hash_code::get_method_info().method_ptr,i32;
+(DependenciesCacheKey)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <DependenciesCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DependenciesCacheKey_unity2_raw::__lookup_equals::get_method_info().method_ptr,bool;
+(DependenciesCacheKey)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"]fn equals_2(self,other:impl::core::convert::Into<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey>)->bool{unsafe{let __receiver= <DependenciesCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DependenciesCacheKey_unity2_raw::__lookup_equals_2::get_method_info().method_ptr,bool;
+(DependenciesCacheKey)__receiver,(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::unity_engine::resource_management::util::dependenciescachekey::DependenciesCacheKey)` overload"]fn equals_3(self,other:impl::core::convert::Into<crate::unity_engine::resource_management::util::dependenciescachekey::DependenciesCacheKey>)->bool{unsafe{let __receiver= <DependenciesCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DependenciesCacheKey_unity2_raw::__lookup_equals_3::get_method_info().method_ptr,bool;
+(DependenciesCacheKey)__receiver,(crate::unity_engine::resource_management::util::dependenciescachekey::DependenciesCacheKey)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]
-impl < __T : IDependenciesCacheKey > IDependenciesCacheKeyMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-util-dependenciescachekey")]impl<__T:IDependenciesCacheKey>IDependenciesCacheKeyMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]
-impl DependenciesCacheKey { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DependenciesCacheKey as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-resource_management-util-dependenciescachekey")]impl DependenciesCacheKey{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]
-impl DependenciesCacheKey {
-# [doc = "`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>, i32)` — overload selector"] pub fn new (dependencies : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , dependencies_hash : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DependenciesCacheKey) , :: core :: stringify ! (new) ,)) ; < Self as IDependenciesCacheKeyMethods > :: ctor (this , dependencies , dependencies_hash) ; this }
+#[cfg(feature="unity_engine-resource_management-util-dependenciescachekey")]impl DependenciesCacheKey{#[doc="`.ctor(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>, i32)` — overload selector"]pub fn new(dependencies:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,dependencies_hash:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DependenciesCacheKey), ::core::stringify!(new),));
+ <Self as IDependenciesCacheKeyMethods> ::ctor(this,dependencies,dependencies_hash);
+this}
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]

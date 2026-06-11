@@ -4,34 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: ioexception :: { IIOException , IOException }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::ioexception::{IIOException,IOException}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/endofstreamexception/EndOfStreamException.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "EndOfStreamException")] # [parent (crate :: system :: io :: ioexception :: IOException)] pub struct EndOfStreamException {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/endofstreamexception/EndOfStreamException.md"))]#[::unity2::class(namespace="System.IO",name="EndOfStreamException")]#[parent(crate::system::io::ioexception::IOException)]pub struct EndOfStreamException{}
 
 }
 
 #[cfg(feature = "system-io-endofstreamexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-endofstreamexception")]
-pub trait IEndOfStreamExceptionMethods : IEndOfStreamException { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EndOfStreamException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndOfStreamException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3acbbc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EndOfStreamException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndOfStreamException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3acbc40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-endofstreamexception")]pub trait IEndOfStreamExceptionMethods:IEndOfStreamException{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EndOfStreamException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3acbbc0usize)as*mut u8,();
+(EndOfStreamException)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EndOfStreamException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3acbc40usize)as*mut u8,();
+(EndOfStreamException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+}
 
-#[cfg(feature = "system-io-endofstreamexception")]
-impl < __T : IEndOfStreamException > IEndOfStreamExceptionMethods for __T { }
+#[cfg(feature="system-io-endofstreamexception")]impl<__T:IEndOfStreamException>IEndOfStreamExceptionMethods for __T{}
 
-#[cfg(feature = "system-io-endofstreamexception")]
-impl EndOfStreamException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndOfStreamException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndOfStreamException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-io-endofstreamexception")]impl EndOfStreamException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "system-io-endofstreamexception")]
-impl EndOfStreamException {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EndOfStreamException) , :: core :: stringify ! (new) ,)) ; < Self as IEndOfStreamExceptionMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EndOfStreamException) , :: core :: stringify ! (new_2) ,)) ; < Self as IEndOfStreamExceptionMethods > :: ctor_2 (this , message) ; this }
+#[cfg(feature="system-io-endofstreamexception")]impl EndOfStreamException{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EndOfStreamException), ::core::stringify!(new),));
+ <Self as IEndOfStreamExceptionMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EndOfStreamException), ::core::stringify!(new_2),));
+ <Self as IEndOfStreamExceptionMethods> ::ctor_2(this,message);
+this}
 }
 
 #[cfg(feature = "system-io-endofstreamexception")]

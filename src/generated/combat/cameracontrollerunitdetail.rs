@@ -4,60 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerunitdetail/CameraControllerUnitDetail.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerUnitDetail")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerUnitDetail {
-# [offset (168)] # [rename (name = "SpeedDistance")] pub speed_distance : f32 ,
-# [offset (172)] # [rename (name = "SpeedRotate")] pub speed_rotate : f32 ,
-# [offset (176)] # [rename (name = "AccelRotate")] pub accel_rotate : f32 ,
-# [offset (180)] # [rename (name = "BrakeRotate")] pub brake_rotate : f32 ,
-# [offset (184)] # [rename (name = "TargetEmblemSpeed")] pub target_emblem_speed : f32 ,
-# [offset (188)] # [rename (name = "DistanceEmblemHideNormal")] pub distance_emblem_hide_normal : f32 ,
-# [offset (192)] # [rename (name = "DistanceEmblemHideSigurd")] pub distance_emblem_hide_sigurd : f32 ,
-# [offset (196)] # [rename (name = "FlyingEmblemUpDown")] pub flying_emblem_up_down : bool ,
-# [offset (200)] # [rename (name = "AutoSpeed")] pub auto_speed : f32 ,
-# [offset (204)] # [rename (name = "DefaultCameraPosIndex")] pub default_camera_pos_index : i32 ,
-# [offset (208)] # [rename (name = "CameraPos")] pub camera_pos : :: unity2 :: Array < crate :: combat :: unitdetailcameraposition :: UnitDetailCameraPosition > ,
-# [offset (216)] # [rename (name = "m_Front")] pub m_front : f32 ,
-# [offset (220)] # [rename (name = "m_Direction")] pub m_direction : f32 ,
-# [offset (228)] # [rename (name = "m_LastRotateSpeed")] pub m_last_rotate_speed : f32 ,
-# [offset (232)] # [rename (name = "m_AutoRotate")] pub m_auto_rotate : bool ,
-# [offset (236)] # [rename (name = "m_EmblemAlpha")] pub m_emblem_alpha : f32 ,
-# [offset (240)] # [rename (name = "m_EmblemAlphaStep")] pub m_emblem_alpha_step : f32 ,
-# [offset (244)] # [rename (name = "m_LookEmblem")] pub m_look_emblem : bool ,
-# [offset (248)] # [rename (name = "m_LookEmblemRate")] pub m_look_emblem_rate : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerunitdetail/CameraControllerUnitDetail.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerUnitDetail")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerUnitDetail{#[offset(168)]#[rename(name="SpeedDistance")]pub speed_distance:f32, #[offset(172)]#[rename(name="SpeedRotate")]pub speed_rotate:f32, #[offset(176)]#[rename(name="AccelRotate")]pub accel_rotate:f32, #[offset(180)]#[rename(name="BrakeRotate")]pub brake_rotate:f32, #[offset(184)]#[rename(name="TargetEmblemSpeed")]pub target_emblem_speed:f32, #[offset(188)]#[rename(name="DistanceEmblemHideNormal")]pub distance_emblem_hide_normal:f32, #[offset(192)]#[rename(name="DistanceEmblemHideSigurd")]pub distance_emblem_hide_sigurd:f32, #[offset(196)]#[rename(name="FlyingEmblemUpDown")]pub flying_emblem_up_down:bool, #[offset(200)]#[rename(name="AutoSpeed")]pub auto_speed:f32, #[offset(204)]#[rename(name="DefaultCameraPosIndex")]pub default_camera_pos_index:i32, #[offset(208)]#[rename(name="CameraPos")]pub camera_pos: ::unity2::Array<crate::combat::unitdetailcameraposition::UnitDetailCameraPosition> , #[offset(216)]#[rename(name="m_Front")]pub m_front:f32, #[offset(220)]#[rename(name="m_Direction")]pub m_direction:f32, #[offset(228)]#[rename(name="m_LastRotateSpeed")]pub m_last_rotate_speed:f32, #[offset(232)]#[rename(name="m_AutoRotate")]pub m_auto_rotate:bool, #[offset(236)]#[rename(name="m_EmblemAlpha")]pub m_emblem_alpha:f32, #[offset(240)]#[rename(name="m_EmblemAlphaStep")]pub m_emblem_alpha_step:f32, #[offset(244)]#[rename(name="m_LookEmblem")]pub m_look_emblem:bool, #[offset(248)]#[rename(name="m_LookEmblemRate")]pub m_look_emblem_rate:f32,}
 
 }
 
 #[cfg(feature = "combat-cameracontrollerunitdetail-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollerunitdetail")]
-pub trait ICameraControllerUnitDetailMethods : ICameraControllerUnitDetail { # [doc = "`get_Distance()` overload"] fn get_distance (self ,) -> f32 { unsafe { let __receiver = < CameraControllerUnitDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerUnitDetail , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b5880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Distance(f32)` overload"] fn set_distance (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraControllerUnitDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerUnitDetail , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b5890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsJointLoaded()` overload"] fn get_is_joint_loaded (self ,) -> bool { unsafe { let __receiver = < CameraControllerUnitDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerUnitDetail , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b58a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerUnitDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerUnitDetail , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b59a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerUnitDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerUnitDetail , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b6fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerUnitDetail as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerUnitDetail , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b7000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollerunitdetail")]pub trait ICameraControllerUnitDetailMethods:ICameraControllerUnitDetail{#[doc="`get_Distance()` overload"]fn get_distance(self,)->f32{unsafe{let __receiver= <CameraControllerUnitDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b5880usize)as*mut u8,f32;
+(CameraControllerUnitDetail)__receiver)}
+}
+#[doc="`set_Distance(f32)` overload"]fn set_distance(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CameraControllerUnitDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b5890usize)as*mut u8,();
+(CameraControllerUnitDetail)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsJointLoaded()` overload"]fn get_is_joint_loaded(self,)->bool{unsafe{let __receiver= <CameraControllerUnitDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b58a0usize)as*mut u8,bool;
+(CameraControllerUnitDetail)__receiver)}
+}
+#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerUnitDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b59a0usize)as*mut u8,();
+(CameraControllerUnitDetail)__receiver)}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerUnitDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b6fb0usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerUnitDetail)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerUnitDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b7000usize)as*mut u8,();
+(CameraControllerUnitDetail)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameracontrollerunitdetail")]
-impl < __T : ICameraControllerUnitDetail > ICameraControllerUnitDetailMethods for __T { }
+#[cfg(feature="combat-cameracontrollerunitdetail")]impl<__T:ICameraControllerUnitDetail>ICameraControllerUnitDetailMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollerunitdetail")]
-impl CameraControllerUnitDetail { pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerUnitDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerUnitDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_joint_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerUnitDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerUnitDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerUnitDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerUnitDetail as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="combat-cameracontrollerunitdetail")]impl CameraControllerUnitDetail{pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_joint_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "combat-cameracontrollerunitdetail")]
-impl CameraControllerUnitDetail {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerUnitDetail) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerUnitDetailMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollerunitdetail")]impl CameraControllerUnitDetail{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerUnitDetail), ::core::stringify!(new),));
+ <Self as ICameraControllerUnitDetailMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameracontrollerunitdetail")]

@@ -4,32 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gridlayout/GridLayout.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GridLayout")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct GridLayout {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/gridlayout/GridLayout.md"))]#[::unity2::class(namespace="UnityEngine",name="GridLayout")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct GridLayout{}
 
 }
 
 #[cfg(feature = "unity_engine-gridlayout-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-gridlayout")]
-pub trait IGridLayoutMethods : IGridLayout { # [doc = "`DoNothing()` overload"] fn do_nothing (self ,) -> () { unsafe { let __receiver = < GridLayout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f47010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-gridlayout")]pub trait IGridLayoutMethods:IGridLayout{#[doc="`DoNothing()` overload"]fn do_nothing(self,)->(){unsafe{let __receiver= <GridLayout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f47010usize)as*mut u8,();
+(GridLayout)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-gridlayout")]
-impl < __T : IGridLayout > IGridLayoutMethods for __T { }
+#[cfg(feature="unity_engine-gridlayout")]impl<__T:IGridLayout>IGridLayoutMethods for __T{}
 
-#[cfg(feature = "unity_engine-gridlayout")]
-impl GridLayout { pub fn do_nothing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-gridlayout")]impl GridLayout{pub fn do_nothing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-gridlayout")]
 #[doc(hidden)]

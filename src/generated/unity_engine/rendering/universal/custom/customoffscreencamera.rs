@@ -4,42 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customoffscreencamera/CustomOffscreenCamera.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "CustomOffscreenCamera")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CustomOffscreenCamera {
-# [offset (24)] # [rename (name = "m_PPVolumeProfile")] pub m_pp_volume_profile : crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile ,
-# [offset (32)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (40)] # [rename (name = "m_AdditionalCameraData")] pub m_additional_camera_data : crate :: unity_engine :: rendering :: universal :: universaladditionalcameradata :: UniversalAdditionalCameraData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/customoffscreencamera/CustomOffscreenCamera.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="CustomOffscreenCamera")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CustomOffscreenCamera{#[offset(24)]#[rename(name="m_PPVolumeProfile")]pub m_pp_volume_profile:crate::unity_engine::rendering::volumeprofile::VolumeProfile, #[offset(32)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(40)]#[rename(name="m_AdditionalCameraData")]pub m_additional_camera_data:crate::unity_engine::rendering::universal::universaladditionalcameradata::UniversalAdditionalCameraData,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera")]
-pub trait ICustomOffscreenCameraMethods : ICustomOffscreenCamera { # [doc = "`get_profile()` overload"] fn get_profile (self ,) -> crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile { unsafe { let __receiver = < CustomOffscreenCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomOffscreenCamera , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volumeprofile :: VolumeProfile = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4d2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < CustomOffscreenCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomOffscreenCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4d2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < CustomOffscreenCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomOffscreenCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4d4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomBeginFrameRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera>)` overload"] fn custom_begin_frame_rendering (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext > , cameras : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: camera :: Camera > >) -> () { unsafe { let __receiver = < CustomOffscreenCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomOffscreenCamera , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , :: unity2 :: Array < crate :: unity_engine :: camera :: Camera > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4d570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , :: core :: convert :: Into :: into (cameras) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CustomOffscreenCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomOffscreenCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4d7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customoffscreencamera")]pub trait ICustomOffscreenCameraMethods:ICustomOffscreenCamera{#[doc="`get_profile()` overload"]fn get_profile(self,)->crate::unity_engine::rendering::volumeprofile::VolumeProfile{unsafe{let __receiver= <CustomOffscreenCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4d2d0usize)as*mut u8,crate::unity_engine::rendering::volumeprofile::VolumeProfile;
+(CustomOffscreenCamera)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <CustomOffscreenCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4d2e0usize)as*mut u8,();
+(CustomOffscreenCamera)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <CustomOffscreenCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4d4a0usize)as*mut u8,();
+(CustomOffscreenCamera)__receiver)}
+}
+#[doc="`CustomBeginFrameRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera>)` overload"]fn custom_begin_frame_rendering(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext> ,cameras:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::camera::Camera> >)->(){unsafe{let __receiver= <CustomOffscreenCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4d570usize)as*mut u8,();
+(CustomOffscreenCamera)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(::unity2::Array<crate::unity_engine::camera::Camera>)::core::convert::Into::into(cameras))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomOffscreenCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4d7b0usize)as*mut u8,();
+(CustomOffscreenCamera)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera")]
-impl < __T : ICustomOffscreenCamera > ICustomOffscreenCameraMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-customoffscreencamera")]impl<__T:ICustomOffscreenCamera>ICustomOffscreenCameraMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera")]
-impl CustomOffscreenCamera { pub fn get_profile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomOffscreenCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomOffscreenCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomOffscreenCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn custom_begin_frame_rendering_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomOffscreenCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomOffscreenCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customoffscreencamera")]impl CustomOffscreenCamera{pub fn get_profile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn custom_begin_frame_rendering_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera")]
-impl CustomOffscreenCamera {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomOffscreenCamera) , :: core :: stringify ! (new) ,)) ; < Self as ICustomOffscreenCameraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-customoffscreencamera")]impl CustomOffscreenCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomOffscreenCamera), ::core::stringify!(new),));
+ <Self as ICustomOffscreenCameraMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customoffscreencamera")]

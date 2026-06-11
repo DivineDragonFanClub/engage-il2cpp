@@ -4,86 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/discretetime/DiscreteTime.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DiscreteTime {
-    pub m_discrete_time: i64,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/discretetime/DiscreteTime.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DiscreteTime{pub m_discrete_time:i64,}
+impl::unity2::ClassIdentity for DiscreteTime{const NAMESPACE: &'static str="UnityEngine.Timeline";
+const NAME: &'static str="DiscreteTime";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for DiscreteTime {
-    const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-    const NAME: &'static str = "DiscreteTime";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for DiscreteTime{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for DiscreteTime {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl DiscreteTime{#[inline]pub fn k_tick()->f64{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"k_Tick");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_k_tick(value:f64){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"k_Tick");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl DiscreteTime {
-    #[inline]
-    pub fn k_tick() -> f64 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_Tick");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_k_tick(value: f64) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_Tick");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn k_max_time() -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kMaxTime");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_k_max_time(value: crate :: unity_engine :: timeline :: discretetime :: DiscreteTime) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "kMaxTime");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn k_max_time()->crate::unity_engine::timeline::discretetime::DiscreteTime{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kMaxTime");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_k_max_time(value:crate::unity_engine::timeline::discretetime::DiscreteTime){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"kMaxTime");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -91,14 +41,115 @@ impl DiscreteTime {
 #[cfg(feature = "unity_engine-timeline-discretetime-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-discretetime")]
-impl DiscreteTime { # [doc = "`get_tickValue()` overload"] pub fn get_tick_value () -> f64 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d5d00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`FromTicks(i64)` overload"] pub fn from_ticks (ticks : impl :: core :: convert :: Into < i64 >) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime { unsafe { { let __inner : extern "C" fn (i64 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d60a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ticks) , :: core :: option :: Option :: None) } } } # [doc = "`DoubleToDiscreteTime(f64)` overload"] pub fn double_to_discrete_time (time : impl :: core :: convert :: Into < f64 >) -> i64 { unsafe { { let __inner : extern "C" fn (f64 , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d5e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`IntToDiscreteTime(i32)` overload"] pub fn int_to_discrete_time (time : impl :: core :: convert :: Into < i32 >) -> i64 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d5f70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`ToDouble(i64)` overload"] pub fn to_double (time : impl :: core :: convert :: Into < i64 >) -> f64 { unsafe { { let __inner : extern "C" fn (i64 , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d61f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`op_Explicit(crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"] pub fn op_explicit (b : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime >) -> f64 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6210usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`op_Explicit(f64)` overload"] pub fn op_explicit_2 (time : impl :: core :: convert :: Into < f64 >) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime { unsafe { { let __inner : extern "C" fn (f64 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(i32)` overload"] pub fn op_implicit (time : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d62c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6340usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_LessThanOrEqual(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"] pub fn op_less_than_or_equal (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d63b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_GreaterThanOrEqual(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"] pub fn op_greater_than_or_equal (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d63c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Subtraction(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"] pub fn op_subtraction (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime >) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d63d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`Max(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"] pub fn max (lhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime > , rhs : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime >) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6440usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`GetNearestTick(f64)` overload"] pub fn get_nearest_tick (time : impl :: core :: convert :: Into < f64 >) -> i64 { unsafe { { let __inner : extern "C" fn (f64 , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d64c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d65c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-discretetime")]impl DiscreteTime{#[doc="`get_tickValue()` overload"]pub fn get_tick_value()->f64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d5d00usize)as*mut u8,f64;
+)}
+}
+#[doc="`FromTicks(i64)` overload"]pub fn from_ticks(ticks:impl::core::convert::Into<i64>)->crate::unity_engine::timeline::discretetime::DiscreteTime{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d60a0usize)as*mut u8,crate::unity_engine::timeline::discretetime::DiscreteTime;
+(i64)::core::convert::Into::into(ticks))}
+}
+#[doc="`DoubleToDiscreteTime(f64)` overload"]pub fn double_to_discrete_time(time:impl::core::convert::Into<f64>)->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d5e40usize)as*mut u8,i64;
+(f64)::core::convert::Into::into(time))}
+}
+#[doc="`IntToDiscreteTime(i32)` overload"]pub fn int_to_discrete_time(time:impl::core::convert::Into<i32>)->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d5f70usize)as*mut u8,i64;
+(i32)::core::convert::Into::into(time))}
+}
+#[doc="`ToDouble(i64)` overload"]pub fn to_double(time:impl::core::convert::Into<i64>)->f64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d61f0usize)as*mut u8,f64;
+(i64)::core::convert::Into::into(time))}
+}
+#[doc="`op_Explicit(crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]pub fn op_explicit(b:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>)->f64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6210usize)as*mut u8,f64;
+(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(b))}
+}
+#[doc="`op_Explicit(f64)` overload"]pub fn op_explicit_2(time:impl::core::convert::Into<f64>)->crate::unity_engine::timeline::discretetime::DiscreteTime{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6290usize)as*mut u8,crate::unity_engine::timeline::discretetime::DiscreteTime;
+(f64)::core::convert::Into::into(time))}
+}
+#[doc="`op_Implicit(i32)` overload"]pub fn op_implicit(time:impl::core::convert::Into<i32>)->crate::unity_engine::timeline::discretetime::DiscreteTime{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d62c0usize)as*mut u8,crate::unity_engine::timeline::discretetime::DiscreteTime;
+(i32)::core::convert::Into::into(time))}
+}
+#[doc="`op_Equality(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime> ,rhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6330usize)as*mut u8,bool;
+(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(lhs),(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime> ,rhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6340usize)as*mut u8,bool;
+(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(lhs),(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_LessThanOrEqual(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]pub fn op_less_than_or_equal(lhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime> ,rhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d63b0usize)as*mut u8,bool;
+(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(lhs),(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_GreaterThanOrEqual(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]pub fn op_greater_than_or_equal(lhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime> ,rhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d63c0usize)as*mut u8,bool;
+(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(lhs),(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Subtraction(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]pub fn op_subtraction(lhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime> ,rhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>)->crate::unity_engine::timeline::discretetime::DiscreteTime{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d63d0usize)as*mut u8,crate::unity_engine::timeline::discretetime::DiscreteTime;
+(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(lhs),(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(rhs))}
+}
+#[doc="`Max(crate::unity_engine::timeline::discretetime::DiscreteTime, crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]pub fn max(lhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime> ,rhs:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>)->crate::unity_engine::timeline::discretetime::DiscreteTime{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6440usize)as*mut u8,crate::unity_engine::timeline::discretetime::DiscreteTime;
+(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(lhs),(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(rhs))}
+}
+#[doc="`GetNearestTick(f64)` overload"]pub fn get_nearest_tick(time:impl::core::convert::Into<f64>)->i64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d64c0usize)as*mut u8,i64;
+(f64)::core::convert::Into::into(time))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d65c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-discretetime")]
-impl DiscreteTime { # [doc = "`.ctor(i64)` overload"] pub fn ctor (& mut self , time : impl :: core :: convert :: Into < i64 >) -> () { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d5d20usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f64)` overload"] pub fn ctor_2 (& mut self , time : impl :: core :: convert :: Into < f64 >) -> () { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d5d30usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] pub fn ctor_3 (& mut self , time : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d5ef0usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`OneTickBefore()` overload"] pub fn one_tick_before (& mut self ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6080usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: option :: Option :: None) } } } # [doc = "`OneTickAfter()` overload"] pub fn one_tick_after (& mut self ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: timeline :: discretetime :: DiscreteTime = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6090usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: option :: Option :: None) } } } # [doc = "`CompareTo(crate::system::object::Object)` overload"] pub fn compare_to (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d60b0usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: discretetime :: DiscreteTime >) -> bool { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , crate :: unity_engine :: timeline :: discretetime :: DiscreteTime , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6150usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6160usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d63e0usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DiscreteTime , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6410usize) as * mut u8) ; __inner (self as * mut DiscreteTime , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-discretetime")]impl DiscreteTime{#[doc="`.ctor(i64)` overload"]pub fn ctor(&mut self,time:impl::core::convert::Into<i64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d5d20usize)as*mut u8,();
+(*mut DiscreteTime)self as*mut DiscreteTime,(i64)::core::convert::Into::into(time))}
+}
+#[doc="`.ctor(f64)` overload"]pub fn ctor_2(&mut self,time:impl::core::convert::Into<f64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d5d30usize)as*mut u8,();
+(*mut DiscreteTime)self as*mut DiscreteTime,(f64)::core::convert::Into::into(time))}
+}
+#[doc="`.ctor(i32)` overload"]pub fn ctor_3(&mut self,time:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d5ef0usize)as*mut u8,();
+(*mut DiscreteTime)self as*mut DiscreteTime,(i32)::core::convert::Into::into(time))}
+}
+#[doc="`OneTickBefore()` overload"]pub fn one_tick_before(&mut self,)->crate::unity_engine::timeline::discretetime::DiscreteTime{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6080usize)as*mut u8,crate::unity_engine::timeline::discretetime::DiscreteTime;
+(*mut DiscreteTime)self as*mut DiscreteTime)}
+}
+#[doc="`OneTickAfter()` overload"]pub fn one_tick_after(&mut self,)->crate::unity_engine::timeline::discretetime::DiscreteTime{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6090usize)as*mut u8,crate::unity_engine::timeline::discretetime::DiscreteTime;
+(*mut DiscreteTime)self as*mut DiscreteTime)}
+}
+#[doc="`CompareTo(crate::system::object::Object)` overload"]pub fn compare_to(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d60b0usize)as*mut u8,i32;
+(*mut DiscreteTime)self as*mut DiscreteTime,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::timeline::discretetime::DiscreteTime)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::timeline::discretetime::DiscreteTime>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6150usize)as*mut u8,bool;
+(*mut DiscreteTime)self as*mut DiscreteTime,(crate::unity_engine::timeline::discretetime::DiscreteTime)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6160usize)as*mut u8,bool;
+(*mut DiscreteTime)self as*mut DiscreteTime,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d63e0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut DiscreteTime)self as*mut DiscreteTime)}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6410usize)as*mut u8,i32;
+(*mut DiscreteTime)self as*mut DiscreteTime)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-discretetime")]
-impl DiscreteTime { pub fn get_tick_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn one_tick_before_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn one_tick_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn from_ticks_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn compare_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn double_to_discrete_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn int_to_discrete_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn to_double_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn op_explicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn op_explicit_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn op_less_than_or_equal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn op_greater_than_or_equal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn op_subtraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_nearest_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DiscreteTime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } }
+#[cfg(feature="unity_engine-timeline-discretetime")]impl DiscreteTime{pub fn get_tick_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn one_tick_before_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn one_tick_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn from_ticks_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn double_to_discrete_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn int_to_discrete_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn to_double_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn op_explicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn op_explicit_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn op_less_than_or_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn op_greater_than_or_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn op_subtraction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_nearest_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+}
 
 #[cfg(feature = "unity_engine-timeline-discretetime")]
 #[doc(hidden)]

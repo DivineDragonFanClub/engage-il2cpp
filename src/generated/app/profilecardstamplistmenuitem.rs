@@ -4,35 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstamplistmenuitem/ProfileCardStampListMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardStampListMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ProfileCardStampListMenuItem {
-# [offset (104)] # [rename (name = "m_ProfileCardStampData")] pub m_profile_card_stamp_data : crate :: app :: profilecardstampdata :: ProfileCardStampData ,
-# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstamplistmenuitem/ProfileCardStampListMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampListMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ProfileCardStampListMenuItem{#[offset(104)]#[rename(name="m_ProfileCardStampData")]pub m_profile_card_stamp_data:crate::app::profilecardstampdata::ProfileCardStampData, #[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-profilecardstamplistmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardstamplistmenuitem")]
-pub trait IProfileCardStampListMenuItemMethods : IProfileCardStampListMenuItem { # [doc = "`.ctor(crate::app::profilecardstampdata::ProfileCardStampData, bool, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler)` overload"] fn ctor (self , profile_card_stamp_data : impl :: core :: convert :: Into < crate :: app :: profilecardstampdata :: ProfileCardStampData > , initial_select : impl :: core :: convert :: Into < bool > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < ProfileCardStampListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenuItem , crate :: app :: profilecardstampdata :: ProfileCardStampData , bool , crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf1d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (profile_card_stamp_data) , :: core :: convert :: Into :: into (initial_select) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf3180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateNewIcon()` overload"] fn update_new_icon (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf33a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf3640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < ProfileCardStampListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf36e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ProfileCardStampListMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardStampListMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bf3710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardstamplistmenuitem")]pub trait IProfileCardStampListMenuItemMethods:IProfileCardStampListMenuItem{#[doc="`.ctor(crate::app::profilecardstampdata::ProfileCardStampData, bool, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler)` overload"]fn ctor(self,profile_card_stamp_data:impl::core::convert::Into<crate::app::profilecardstampdata::ProfileCardStampData> ,initial_select:impl::core::convert::Into<bool> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardStampListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1d70usize)as*mut u8,();
+(ProfileCardStampListMenuItem)__receiver,(crate::app::profilecardstampdata::ProfileCardStampData)::core::convert::Into::into(profile_card_stamp_data),(bool)::core::convert::Into::into(initial_select),(crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf3180usize)as*mut u8,();
+(ProfileCardStampListMenuItem)__receiver)}
+}
+#[doc="`UpdateNewIcon()` overload"]fn update_new_icon(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf33a0usize)as*mut u8,();
+(ProfileCardStampListMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf3640usize)as*mut u8,();
+(ProfileCardStampListMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <ProfileCardStampListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf36e0usize)as*mut u8,();
+(ProfileCardStampListMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardStampListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf3710usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ProfileCardStampListMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardstamplistmenuitem")]
-impl < __T : IProfileCardStampListMenuItem > IProfileCardStampListMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardstamplistmenuitem")]impl<__T:IProfileCardStampListMenuItem>IProfileCardStampListMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardstamplistmenuitem")]
-impl ProfileCardStampListMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_new_icon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardStampListMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-profilecardstamplistmenuitem")]impl ProfileCardStampListMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_new_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-profilecardstamplistmenuitem")]
-impl ProfileCardStampListMenuItem {
-# [doc = "`.ctor(crate::app::profilecardstampdata::ProfileCardStampData, bool, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler)` — overload selector"] pub fn new (profile_card_stamp_data : crate :: app :: profilecardstampdata :: ProfileCardStampData , initial_select : bool , decide_event_handler : crate :: app :: profilecardstamplistmenu :: ProfileCardStampListMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardStampListMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardStampListMenuItemMethods > :: ctor (this , profile_card_stamp_data , initial_select , decide_event_handler) ; this }
+#[cfg(feature="app-profilecardstamplistmenuitem")]impl ProfileCardStampListMenuItem{#[doc="`.ctor(crate::app::profilecardstampdata::ProfileCardStampData, bool, crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler)` — overload selector"]pub fn new(profile_card_stamp_data:crate::app::profilecardstampdata::ProfileCardStampData,initial_select:bool,decide_event_handler:crate::app::profilecardstamplistmenu::ProfileCardStampListMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampListMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardStampListMenuItemMethods> ::ctor(this,profile_card_stamp_data,initial_select,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-profilecardstamplistmenuitem")]

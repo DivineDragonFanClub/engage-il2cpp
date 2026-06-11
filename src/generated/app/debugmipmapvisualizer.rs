@@ -4,45 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmipmapvisualizer/DebugMipmapVisualizer.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugMipmapVisualizer")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: debugmipmapvisualizer :: DebugMipmapVisualizer >)] pub struct DebugMipmapVisualizer {
-# [offset (32)] # [rename (name = "m_Shader")] pub m_shader : crate :: unity_engine :: shader :: Shader ,
-# [offset (40)] # [rename (name = "m_MipmapTexture")] pub m_mipmap_texture : crate :: unity_engine :: texture2d :: Texture2D ,
-# [offset (48)] # [rename (name = "m_Backup")] pub m_backup : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: renderer :: Renderer , :: unity2 :: Array < crate :: unity_engine :: material :: Material > > ,
-# [offset (56)] # [rename (name = "m_MipmapTextureIndexProp")] pub m_mipmap_texture_index_prop : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugmipmapvisualizer/DebugMipmapVisualizer.md"))]#[::unity2::class(namespace="App",name="DebugMipmapVisualizer")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::debugmipmapvisualizer::DebugMipmapVisualizer>)]pub struct DebugMipmapVisualizer{#[offset(32)]#[rename(name="m_Shader")]pub m_shader:crate::unity_engine::shader::Shader, #[offset(40)]#[rename(name="m_MipmapTexture")]pub m_mipmap_texture:crate::unity_engine::texture2d::Texture2D, #[offset(48)]#[rename(name="m_Backup")]pub m_backup:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::renderer::Renderer, ::unity2::Array<crate::unity_engine::material::Material> > , #[offset(56)]#[rename(name="m_MipmapTextureIndexProp")]pub m_mipmap_texture_index_prop:i32,}
 
 }
 
 #[cfg(feature = "app-debugmipmapvisualizer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debugmipmapvisualizer")]
-pub trait IDebugMipmapVisualizerMethods : IDebugMipmapVisualizer { # [doc = "`GetMaterials(crate::unity_engine::renderer::Renderer)` overload"] fn get_materials (self , render : impl :: core :: convert :: Into < crate :: unity_engine :: renderer :: Renderer >) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < DebugMipmapVisualizer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMipmapVisualizer , crate :: unity_engine :: renderer :: Renderer , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0e3d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (render) , :: core :: option :: Option :: None) } } } # [doc = "`SetMaterials(crate::unity_engine::renderer::Renderer, ::unity2::Array<crate::unity_engine::material::Material>)` overload"] fn set_materials (self , render : impl :: core :: convert :: Into < crate :: unity_engine :: renderer :: Renderer > , materials : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: material :: Material > >) -> () { unsafe { let __receiver = < DebugMipmapVisualizer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMipmapVisualizer , crate :: unity_engine :: renderer :: Renderer , :: unity2 :: Array < crate :: unity_engine :: material :: Material > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0e470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (render) , :: core :: convert :: Into :: into (materials) , :: core :: option :: Option :: None) } } } # [doc = "`CompareRenderers(::unity2::Array<crate::unity_engine::renderer::Renderer>, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"] fn compare_renderers (self , a : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > > , b : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > >) -> bool { unsafe { let __receiver = < DebugMipmapVisualizer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMipmapVisualizer , :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > , :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0e520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < DebugMipmapVisualizer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMipmapVisualizer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0e740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < DebugMipmapVisualizer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMipmapVisualizer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0eb80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugMipmapVisualizer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugMipmapVisualizer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a0ed90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debugmipmapvisualizer")]pub trait IDebugMipmapVisualizerMethods:IDebugMipmapVisualizer{#[doc="`GetMaterials(crate::unity_engine::renderer::Renderer)` overload"]fn get_materials(self,render:impl::core::convert::Into<crate::unity_engine::renderer::Renderer>)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <DebugMipmapVisualizer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0e3d0usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(DebugMipmapVisualizer)__receiver,(crate::unity_engine::renderer::Renderer)::core::convert::Into::into(render))}
+}
+#[doc="`SetMaterials(crate::unity_engine::renderer::Renderer, ::unity2::Array<crate::unity_engine::material::Material>)` overload"]fn set_materials(self,render:impl::core::convert::Into<crate::unity_engine::renderer::Renderer> ,materials:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::material::Material> >)->(){unsafe{let __receiver= <DebugMipmapVisualizer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0e470usize)as*mut u8,();
+(DebugMipmapVisualizer)__receiver,(crate::unity_engine::renderer::Renderer)::core::convert::Into::into(render),(::unity2::Array<crate::unity_engine::material::Material>)::core::convert::Into::into(materials))}
+}
+#[doc="`CompareRenderers(::unity2::Array<crate::unity_engine::renderer::Renderer>, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]fn compare_renderers(self,a:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::renderer::Renderer> > ,b:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::renderer::Renderer> >)->bool{unsafe{let __receiver= <DebugMipmapVisualizer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0e520usize)as*mut u8,bool;
+(DebugMipmapVisualizer)__receiver,(::unity2::Array<crate::unity_engine::renderer::Renderer>)::core::convert::Into::into(a),(::unity2::Array<crate::unity_engine::renderer::Renderer>)::core::convert::Into::into(b))}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <DebugMipmapVisualizer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0e740usize)as*mut u8,();
+(DebugMipmapVisualizer)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <DebugMipmapVisualizer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0eb80usize)as*mut u8,();
+(DebugMipmapVisualizer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugMipmapVisualizer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0ed90usize)as*mut u8,();
+(DebugMipmapVisualizer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-debugmipmapvisualizer")]
-impl < __T : IDebugMipmapVisualizer > IDebugMipmapVisualizerMethods for __T { }
+#[cfg(feature="app-debugmipmapvisualizer")]impl<__T:IDebugMipmapVisualizer>IDebugMipmapVisualizerMethods for __T{}
 
-#[cfg(feature = "app-debugmipmapvisualizer")]
-impl DebugMipmapVisualizer { pub fn get_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMipmapVisualizer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMipmapVisualizer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn compare_renderers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMipmapVisualizer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMipmapVisualizer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMipmapVisualizer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugMipmapVisualizer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-debugmipmapvisualizer")]impl DebugMipmapVisualizer{pub fn get_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn compare_renderers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-debugmipmapvisualizer")]
-impl DebugMipmapVisualizer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugMipmapVisualizer) , :: core :: stringify ! (new) ,)) ; < Self as IDebugMipmapVisualizerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debugmipmapvisualizer")]impl DebugMipmapVisualizer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugMipmapVisualizer), ::core::stringify!(new),));
+ <Self as IDebugMipmapVisualizerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debugmipmapvisualizer")]

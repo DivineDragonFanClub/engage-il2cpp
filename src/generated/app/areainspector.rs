@@ -4,40 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/areainspector/AreaInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "AreaInspector")] # [parent (crate :: app :: mapinspector :: MapInspector)] pub struct AreaInspector {
-# [offset (48)] # [rename (name = "m_X1")] pub m_x1 : i32 ,
-# [offset (52)] # [rename (name = "m_Z1")] pub m_z1 : i32 ,
-# [offset (56)] # [rename (name = "m_X2")] pub m_x2 : i32 ,
-# [offset (60)] # [rename (name = "m_Z2")] pub m_z2 : i32 ,
-# [offset (64)] # [rename (name = "m_Force")] pub m_force : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/areainspector/AreaInspector.md"))]#[::unity2::class(namespace="App",name="AreaInspector")]#[parent(crate::app::mapinspector::MapInspector)]pub struct AreaInspector{#[offset(48)]#[rename(name="m_X1")]pub m_x1:i32, #[offset(52)]#[rename(name="m_Z1")]pub m_z1:i32, #[offset(56)]#[rename(name="m_X2")]pub m_x2:i32, #[offset(60)]#[rename(name="m_Z2")]pub m_z2:i32, #[offset(64)]#[rename(name="m_Force")]pub m_force:i32,}
 
 }
 
 #[cfg(feature = "app-areainspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-areainspector")]
-pub trait IAreaInspectorMethods : IAreaInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < AreaInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AreaInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9cce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`IsEanble(i32, i32, i32)` overload"] fn is_eanble (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , force : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < AreaInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AreaInspector , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9ce30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (force) , :: core :: option :: Option :: None) } } } # [doc = "`get_X1()` overload"] fn get_x1 (self ,) -> i32 { unsafe { let __receiver = < AreaInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AreaInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9cec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Z1()` overload"] fn get_z1 (self ,) -> i32 { unsafe { let __receiver = < AreaInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AreaInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9ced0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_X2()` overload"] fn get_x2 (self ,) -> i32 { unsafe { let __receiver = < AreaInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AreaInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9cee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Z2()` overload"] fn get_z2 (self ,) -> i32 { unsafe { let __receiver = < AreaInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AreaInspector , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9cef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Color()` overload"] fn get_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < AreaInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AreaInspector , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9cf00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-areainspector")]pub trait IAreaInspectorMethods:IAreaInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9cce0usize)as*mut u8,();
+(AreaInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`IsEanble(i32, i32, i32)` overload"]fn is_eanble(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,force:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9ce30usize)as*mut u8,bool;
+(AreaInspector)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(force))}
+}
+#[doc="`get_X1()` overload"]fn get_x1(self,)->i32{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9cec0usize)as*mut u8,i32;
+(AreaInspector)__receiver)}
+}
+#[doc="`get_Z1()` overload"]fn get_z1(self,)->i32{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9ced0usize)as*mut u8,i32;
+(AreaInspector)__receiver)}
+}
+#[doc="`get_X2()` overload"]fn get_x2(self,)->i32{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9cee0usize)as*mut u8,i32;
+(AreaInspector)__receiver)}
+}
+#[doc="`get_Z2()` overload"]fn get_z2(self,)->i32{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9cef0usize)as*mut u8,i32;
+(AreaInspector)__receiver)}
+}
+#[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <AreaInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9cf00usize)as*mut u8,crate::unity_engine::color::Color;
+(AreaInspector)__receiver)}
+}
+}
 
-#[cfg(feature = "app-areainspector")]
-impl < __T : IAreaInspector > IAreaInspectorMethods for __T { }
+#[cfg(feature="app-areainspector")]impl<__T:IAreaInspector>IAreaInspectorMethods for __T{}
 
-#[cfg(feature = "app-areainspector")]
-impl AreaInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AreaInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_eanble_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AreaInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_x1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AreaInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_z1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AreaInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_x2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AreaInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_z2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AreaInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AreaInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-areainspector")]impl AreaInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_eanble_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_z1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_x2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_z2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-areainspector")]
-impl AreaInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AreaInspector) , :: core :: stringify ! (new) ,)) ; < Self as IAreaInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-areainspector")]impl AreaInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AreaInspector), ::core::stringify!(new),));
+ <Self as IAreaInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-areainspector")]

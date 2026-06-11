@@ -4,19 +4,14 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: localvariableinfo :: { ILocalVariableInfo , LocalVariableInfo }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::localvariableinfo::{ILocalVariableInfo,LocalVariableInfo}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/localbuilder/LocalBuilder.md"))] # [:: unity2 :: class (namespace = "System.Reflection.Emit" , name = "LocalBuilder")] # [parent (crate :: system :: reflection :: localvariableinfo :: LocalVariableInfo)] pub struct LocalBuilder {
-# [offset (32)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "ilgen")] pub ilgen : crate :: system :: reflection :: emit :: ilgenerator :: ILGenerator ,
-# [offset (48)] # [rename (name = "startOffset")] pub start_offset : i32 ,
-# [offset (52)] # [rename (name = "endOffset")] pub end_offset : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/emit/localbuilder/LocalBuilder.md"))]#[::unity2::class(namespace="System.Reflection.Emit",name="LocalBuilder")]#[parent(crate::system::reflection::localvariableinfo::LocalVariableInfo)]pub struct LocalBuilder{#[offset(32)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="ilgen")]pub ilgen:crate::system::reflection::emit::ilgenerator::ILGenerator, #[offset(48)]#[rename(name="startOffset")]pub start_offset:i32, #[offset(52)]#[rename(name="endOffset")]pub end_offset:i32,}
 
 }
 

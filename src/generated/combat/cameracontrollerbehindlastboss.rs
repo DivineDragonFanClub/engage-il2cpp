@@ -4,56 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbehindlastboss/CameraControllerBehindLastBoss.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerBehindLastBoss")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerBehindLastBoss {
-# [offset (168)] # [rename (name = "FollowVectorH")] pub follow_vector_h : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (180)] # [rename (name = "LookAtVectorH")] pub look_at_vector_h : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (192)] # [rename (name = "FOVH")] pub fovh : f32 ,
-# [offset (196)] # [rename (name = "FollowVectorL")] pub follow_vector_l : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (208)] # [rename (name = "LookAtVectorL")] pub look_at_vector_l : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (220)] # [rename (name = "FOVL")] pub fovl : f32 ,
-# [offset (224)] # [rename (name = "FollowVectorD")] pub follow_vector_d : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (236)] # [rename (name = "SpeedThresholdUp")] pub speed_threshold_up : f32 ,
-# [offset (240)] # [rename (name = "SpeedThresholdDown")] pub speed_threshold_down : f32 ,
-# [offset (244)] # [rename (name = "FollowVectorMulti")] pub follow_vector_multi : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (256)] # [rename (name = "LookAtVectorMulti")] pub look_at_vector_multi : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (268)] # [rename (name = "m_IsHeadHigh")] pub m_is_head_high : bool ,
-# [offset (272)] # [rename (name = "m_HeadHight")] pub m_head_hight : :: unity2 :: Array < f32 > ,
-# [offset (280)] # [rename (name = "m_WorldTime")] pub m_world_time : :: unity2 :: Array < f32 > ,
-# [offset (288)] # [rename (name = "m_IsCharacterLoaded")] pub m_is_character_loaded : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerbehindlastboss/CameraControllerBehindLastBoss.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerBehindLastBoss")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerBehindLastBoss{#[offset(168)]#[rename(name="FollowVectorH")]pub follow_vector_h:crate::unity_engine::vector3::Vector3, #[offset(180)]#[rename(name="LookAtVectorH")]pub look_at_vector_h:crate::unity_engine::vector3::Vector3, #[offset(192)]#[rename(name="FOVH")]pub fovh:f32, #[offset(196)]#[rename(name="FollowVectorL")]pub follow_vector_l:crate::unity_engine::vector3::Vector3, #[offset(208)]#[rename(name="LookAtVectorL")]pub look_at_vector_l:crate::unity_engine::vector3::Vector3, #[offset(220)]#[rename(name="FOVL")]pub fovl:f32, #[offset(224)]#[rename(name="FollowVectorD")]pub follow_vector_d:crate::unity_engine::vector3::Vector3, #[offset(236)]#[rename(name="SpeedThresholdUp")]pub speed_threshold_up:f32, #[offset(240)]#[rename(name="SpeedThresholdDown")]pub speed_threshold_down:f32, #[offset(244)]#[rename(name="FollowVectorMulti")]pub follow_vector_multi:crate::unity_engine::vector3::Vector3, #[offset(256)]#[rename(name="LookAtVectorMulti")]pub look_at_vector_multi:crate::unity_engine::vector3::Vector3, #[offset(268)]#[rename(name="m_IsHeadHigh")]pub m_is_head_high:bool, #[offset(272)]#[rename(name="m_HeadHight")]pub m_head_hight: ::unity2::Array<f32> , #[offset(280)]#[rename(name="m_WorldTime")]pub m_world_time: ::unity2::Array<f32> , #[offset(288)]#[rename(name="m_IsCharacterLoaded")]pub m_is_character_loaded:bool,}
 
 }
 
 #[cfg(feature = "combat-cameracontrollerbehindlastboss-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollerbehindlastboss")]
-pub trait ICameraControllerBehindLastBossMethods : ICameraControllerBehindLastBoss { # [doc = "`GetCombatVector(crate::unity_engine::vector3::Vector3)` overload"] fn get_combat_vector (self , vec : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraControllerBehindLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehindLastBoss , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (vec) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerBehindLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehindLastBoss , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerBehindLastBoss as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBehindLastBoss , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2997ec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollerbehindlastboss")]pub trait ICameraControllerBehindLastBossMethods:ICameraControllerBehindLastBoss{#[doc="`GetCombatVector(crate::unity_engine::vector3::Vector3)` overload"]fn get_combat_vector(self,vec:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraControllerBehindLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997db0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraControllerBehindLastBoss)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(vec))}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerBehindLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997e50usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerBehindLastBoss)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerBehindLastBoss as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2997ec0usize)as*mut u8,();
+(CameraControllerBehindLastBoss)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameracontrollerbehindlastboss")]
-impl < __T : ICameraControllerBehindLastBoss > ICameraControllerBehindLastBossMethods for __T { }
+#[cfg(feature="combat-cameracontrollerbehindlastboss")]impl<__T:ICameraControllerBehindLastBoss>ICameraControllerBehindLastBossMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollerbehindlastboss")]
-impl CameraControllerBehindLastBoss { pub fn get_combat_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehindLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehindLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBehindLastBoss as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-cameracontrollerbehindlastboss")]impl CameraControllerBehindLastBoss{pub fn get_combat_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-cameracontrollerbehindlastboss")]
-impl CameraControllerBehindLastBoss {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerBehindLastBoss) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerBehindLastBossMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollerbehindlastboss")]impl CameraControllerBehindLastBoss{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerBehindLastBoss), ::core::stringify!(new),));
+ <Self as ICameraControllerBehindLastBossMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameracontrollerbehindlastboss")]

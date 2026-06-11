@@ -4,46 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapcinemascope/GmapCinemaScope.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapCinemaScope")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct GmapCinemaScope {
-# [static_field] # [rename (name = "CinemaScopePath")] pub cinema_scope_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_Message")] pub m_message : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_IsDestroyReserved")] pub m_is_destroy_reserved : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapcinemascope/GmapCinemaScope.md"))]#[::unity2::class(namespace="App",name="GmapCinemaScope")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapCinemaScope{#[static_field]#[rename(name="CinemaScopePath")]pub cinema_scope_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Message")]pub m_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_IsDestroyReserved")]pub m_is_destroy_reserved:bool,}
 
 }
 
 #[cfg(feature = "app-gmapcinemascope-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmapcinemascope")]
-impl GmapCinemaScope { # [doc = "`LoadResource()` overload"] pub fn load_resource () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528250usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] pub fn is_loading () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25282f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadResource()` overload"] pub fn unload_resource () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528370usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: gmapcinemascope :: GmapCinemaScope { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gmapcinemascope :: GmapCinemaScope = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25283f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::gmapcinemascope::GmapCinemaScope)` overload"] pub fn destroy (cinema_scope : impl :: core :: convert :: Into < crate :: app :: gmapcinemascope :: GmapCinemaScope >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: gmapcinemascope :: GmapCinemaScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528500usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cinema_scope) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapcinemascope")]impl GmapCinemaScope{#[doc="`LoadResource()` overload"]pub fn load_resource()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2528250usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoading()` overload"]pub fn is_loading()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25282f0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadResource()` overload"]pub fn unload_resource()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2528370usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::gmapcinemascope::GmapCinemaScope{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25283f0usize)as*mut u8,crate::app::gmapcinemascope::GmapCinemaScope;
+)}
+}
+#[doc="`Destroy(crate::app::gmapcinemascope::GmapCinemaScope)` overload"]pub fn destroy(cinema_scope:impl::core::convert::Into<crate::app::gmapcinemascope::GmapCinemaScope>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2528500usize)as*mut u8,();
+(crate::app::gmapcinemascope::GmapCinemaScope)::core::convert::Into::into(cinema_scope))}
+}
+}
 
-#[cfg(feature = "app-gmapcinemascope")]
-pub trait IGmapCinemaScopeMethods : IGmapCinemaScope { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < GmapCinemaScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemaScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < GmapCinemaScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemaScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25285e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDestroy()` overload"] fn update_destroy (self ,) -> () { unsafe { let __receiver = < GmapCinemaScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemaScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapCinemaScope as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapCinemaScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2528700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapcinemascope")]pub trait IGmapCinemaScopeMethods:IGmapCinemaScope{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <GmapCinemaScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2528510usize)as*mut u8,();
+(GmapCinemaScope)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <GmapCinemaScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25285e0usize)as*mut u8,();
+(GmapCinemaScope)__receiver)}
+}
+#[doc="`UpdateDestroy()` overload"]fn update_destroy(self,)->(){unsafe{let __receiver= <GmapCinemaScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2528680usize)as*mut u8,();
+(GmapCinemaScope)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapCinemaScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2528700usize)as*mut u8,();
+(GmapCinemaScope)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmapcinemascope")]
-impl < __T : IGmapCinemaScope > IGmapCinemaScopeMethods for __T { }
+#[cfg(feature="app-gmapcinemascope")]impl<__T:IGmapCinemaScope>IGmapCinemaScopeMethods for __T{}
 
-#[cfg(feature = "app-gmapcinemascope")]
-impl GmapCinemaScope { pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemaScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemaScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemaScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemaScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemaScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemaScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemaScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemaScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapCinemaScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-gmapcinemascope")]impl GmapCinemaScope{pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-gmapcinemascope")]
-impl GmapCinemaScope {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapCinemaScope) , :: core :: stringify ! (new) ,)) ; < Self as IGmapCinemaScopeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gmapcinemascope")]impl GmapCinemaScope{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapCinemaScope), ::core::stringify!(new),));
+ <Self as IGmapCinemaScopeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gmapcinemascope")]

@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: root :: mapnavigationminimapbasicmenuitem :: { IMapNavigationMiniMapBasicMenuItem , MapNavigationMiniMapBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::root::mapnavigationminimapbasicmenuitem::{IMapNavigationMiniMapBasicMenuItem,MapNavigationMiniMapBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/minimapsmallmenuitem/MiniMapSmallMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "MiniMapSmallMenuItem")] # [parent (crate :: root :: mapnavigationminimapbasicmenuitem :: MapNavigationMiniMapBasicMenuItem)] pub struct MiniMapSmallMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/minimapsmallmenuitem/MiniMapSmallMenuItem.md"))]#[::unity2::class(namespace="",name="MiniMapSmallMenuItem")]#[parent(crate::root::mapnavigationminimapbasicmenuitem::MapNavigationMiniMapBasicMenuItem)]pub struct MiniMapSmallMenuItem{}
 
 }
 
 #[cfg(feature = "root-minimapsmallmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-minimapsmallmenuitem")]
-pub trait IMiniMapSmallMenuItemMethods : IMiniMapSmallMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MiniMapSmallMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapSmallMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277a710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < MiniMapSmallMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MiniMapSmallMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x277a7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-minimapsmallmenuitem")]pub trait IMiniMapSmallMenuItemMethods:IMiniMapSmallMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MiniMapSmallMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277a710usize)as*mut u8,();
+(MiniMapSmallMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MiniMapSmallMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x277a7c0usize)as*mut u8,();
+(MiniMapSmallMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-minimapsmallmenuitem")]
-impl < __T : IMiniMapSmallMenuItem > IMiniMapSmallMenuItemMethods for __T { }
+#[cfg(feature="root-minimapsmallmenuitem")]impl<__T:IMiniMapSmallMenuItem>IMiniMapSmallMenuItemMethods for __T{}
 
-#[cfg(feature = "root-minimapsmallmenuitem")]
-impl MiniMapSmallMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapSmallMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MiniMapSmallMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-minimapsmallmenuitem")]impl MiniMapSmallMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-minimapsmallmenuitem")]
-impl MiniMapSmallMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MiniMapSmallMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IMiniMapSmallMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-minimapsmallmenuitem")]impl MiniMapSmallMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MiniMapSmallMenuItem), ::core::stringify!(new),));
+ <Self as IMiniMapSmallMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-minimapsmallmenuitem")]

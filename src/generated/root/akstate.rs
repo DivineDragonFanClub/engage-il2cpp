@@ -4,47 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akdragdroptriggerhandler :: { AkDragDropTriggerHandler , IAkDragDropTriggerHandler }
- ;
- use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akdragdroptriggerhandler::{AkDragDropTriggerHandler,IAkDragDropTriggerHandler}
+;
+use crate::root::aktriggerhandler::{AkTriggerHandler,IAkTriggerHandler}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akstate/AkState.md"))] # [:: unity2 :: class (namespace = "" , name = "AkState")] # [parent (crate :: root :: akdragdroptriggerhandler :: AkDragDropTriggerHandler)] pub struct AkState {
-# [offset (56)] # [rename (name = "valueIdInternal")] pub value_id_internal : i32 ,
-# [offset (60)] # [rename (name = "groupIdInternal")] pub group_id_internal : i32 ,
-# [offset (64)] # [rename (name = "valueGuidInternal")] pub value_guid_internal : :: unity2 :: Array < u8 > ,
-# [offset (72)] # [rename (name = "groupGuidInternal")] pub group_guid_internal : :: unity2 :: Array < u8 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akstate/AkState.md"))]#[::unity2::class(namespace="",name="AkState")]#[parent(crate::root::akdragdroptriggerhandler::AkDragDropTriggerHandler)]pub struct AkState{#[offset(56)]#[rename(name="valueIdInternal")]pub value_id_internal:i32, #[offset(60)]#[rename(name="groupIdInternal")]pub group_id_internal:i32, #[offset(64)]#[rename(name="valueGuidInternal")]pub value_guid_internal: ::unity2::Array<u8> , #[offset(72)]#[rename(name="groupGuidInternal")]pub group_guid_internal: ::unity2::Array<u8> ,}
 
 }
 
 #[cfg(feature = "root-akstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akstate")]
-pub trait IAkStateMethods : IAkState { # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkState , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d22e30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } } # [doc = "`get_valueID()` overload"] fn get_value_id (self ,) -> i32 { unsafe { let __receiver = < AkState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d22e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_groupID()` overload"] fn get_group_id (self ,) -> i32 { unsafe { let __receiver = < AkState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d22e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_valueGuid()` overload"] fn get_value_guid (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AkState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkState , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d22e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_groupGuid()` overload"] fn get_group_guid (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AkState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkState , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d22f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d22ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akstate")]pub trait IAkStateMethods:IAkState{#[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d22e30usize)as*mut u8,();
+(AkState)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+}
+#[doc="`get_valueID()` overload"]fn get_value_id(self,)->i32{unsafe{let __receiver= <AkState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d22e40usize)as*mut u8,i32;
+(AkState)__receiver)}
+}
+#[doc="`get_groupID()` overload"]fn get_group_id(self,)->i32{unsafe{let __receiver= <AkState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d22e60usize)as*mut u8,i32;
+(AkState)__receiver)}
+}
+#[doc="`get_valueGuid()` overload"]fn get_value_guid(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <AkState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d22e80usize)as*mut u8, ::unity2::Array<u8> ;
+(AkState)__receiver)}
+}
+#[doc="`get_groupGuid()` overload"]fn get_group_guid(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <AkState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d22f40usize)as*mut u8, ::unity2::Array<u8> ;
+(AkState)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d22ff0usize)as*mut u8,();
+(AkState)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akstate")]
-impl < __T : IAkState > IAkStateMethods for __T { }
+#[cfg(feature="root-akstate")]impl<__T:IAkState>IAkStateMethods for __T{}
 
-#[cfg(feature = "root-akstate")]
-impl AkState { pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_value_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_group_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_value_guid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_group_guid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-akstate")]impl AkState{pub fn handle_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_value_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_group_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_value_guid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_group_guid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-akstate")]
-impl AkState {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkState) , :: core :: stringify ! (new) ,)) ; < Self as IAkStateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akstate")]impl AkState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkState), ::core::stringify!(new),));
+ <Self as IAkStateMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akstate")]

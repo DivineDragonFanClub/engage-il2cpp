@@ -4,35 +4,30 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actioninvoke2_1/ActionInvoke2_1.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionInvoke2`1")] # [parent (crate :: combat :: state :: State)] # [parent (crate :: system :: object :: Object)] pub struct ActionInvoke2_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_Func")] pub m_func : crate :: system :: action_1 :: Action_1 < T0 > ,
-# [rename (name = "m_Arg")] pub m_arg : T0 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actioninvoke2_1/ActionInvoke2_1.md"))]#[::unity2::class(namespace="Combat",name="ActionInvoke2`1")]#[parent(crate::combat::state::State)]#[parent(crate::system::object::Object)]pub struct ActionInvoke2_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Func")]pub m_func:crate::system::action_1::Action_1<T0> , #[rename(name="m_Arg")]pub m_arg:T0,}
 
 }
 
 #[cfg(feature = "combat-actioninvoke2_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actioninvoke2_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > ActionInvoke2_1 < T0 > {
-# [doc = "`get_Name()` overload"] # [method (name = "get_Name" , args = 0)] pub fn get_name (self ,) -> :: unity2 :: Il2CppString ;
-
-# [doc = "`.ctor(T0, crate::system::action_1::Action_1<T0>)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , arg : T0 , func : crate :: system :: action_1 :: Action_1 < T0 >) -> () ;
-
-# [doc = "`OnEnter()` overload"] # [method (name = "OnEnter" , args = 0)] pub fn on_enter (self ,) -> () ;
+#[cfg(feature="combat-actioninvoke2_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>ActionInvoke2_1<T0>{#[doc="`get_Name()` overload"]#[method(name="get_Name",args=0)]pub fn get_name(self,)-> ::unity2::Il2CppString;
+ #[doc="`.ctor(T0, crate::system::action_1::Action_1<T0>)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,arg:T0,func:crate::system::action_1::Action_1<T0>)->();
+ #[doc="`OnEnter()` overload"]#[method(name="OnEnter",args=0)]pub fn on_enter(self,)->();
 }
 
-#[cfg(feature = "combat-actioninvoke2_1")]
-impl < T0 : :: unity2 :: ClassIdentity > ActionInvoke2_1 < T0 > {
-# [doc = "`.ctor(T0, crate::system::action_1::Action_1<T0>)` — overload selector"] pub fn new (arg : T0 , func : crate :: system :: action_1 :: Action_1 < T0 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionInvoke2_1) , :: core :: stringify ! (new) ,)) ; < Self as IActionInvoke2_1Methods < T0 > > :: ctor (this , arg , func) ; this }
+#[cfg(feature="combat-actioninvoke2_1")]impl<T0: ::unity2::ClassIdentity>ActionInvoke2_1<T0>{#[doc="`.ctor(T0, crate::system::action_1::Action_1<T0>)` — overload selector"]pub fn new(arg:T0,func:crate::system::action_1::Action_1<T0>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionInvoke2_1), ::core::stringify!(new),));
+ <Self as IActionInvoke2_1Methods<T0> > ::ctor(this,arg,func);
+this}
 }
 
 #[cfg(feature = "combat-actioninvoke2_1")]

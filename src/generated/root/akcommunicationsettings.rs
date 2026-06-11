@@ -4,67 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akcommunicationsettings/AkCommunicationSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkCommunicationSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkCommunicationSettings {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommunicationsettings/AkCommunicationSettings.md"))]#[::unity2::class(namespace="",name="AkCommunicationSettings")]#[parent(crate::system::object::Object)]pub struct AkCommunicationSettings{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommunicationsettings/AkCommunicationSettings_AkCommSystem.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkCommunicationSettings_AkCommSystem{pub value:i32,}
+impl::unity2::ClassIdentity for AkCommunicationSettings_AkCommSystem{const NAMESPACE: &'static str="";
+const NAME: &'static str="AkCommunicationSettings.AkCommSystem";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/akcommunicationsettings/AkCommunicationSettings_AkCommSystem.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AkCommunicationSettings_AkCommSystem  {
-    pub value: i32,
+impl::unity2::IlType for AkCommunicationSettings_AkCommSystem{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for AkCommunicationSettings_AkCommSystem  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "AkCommunicationSettings.AkCommSystem";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl AkCommunicationSettings_AkCommSystem{pub fn ak_comm_system_socket()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for AkCommunicationSettings_AkCommSystem  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn ak_comm_system_htcs()->Self{Self{value:1}
 }
-
-
-impl  AkCommunicationSettings_AkCommSystem  {
-    pub fn ak_comm_system_socket() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn ak_comm_system_htcs() -> Self {
-        Self { value: 1 }
-
-    }
-
 }
 
 }
@@ -72,23 +36,133 @@ impl  AkCommunicationSettings_AkCommSystem  {
 #[cfg(feature = "root-akcommunicationsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akcommunicationsettings")]
-impl AkCommunicationSettings { # [doc = "`getCPtr(crate::root::akcommunicationsettings::AkCommunicationSettings)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akcommunicationsettings :: AkCommunicationSettings >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akcommunicationsettings :: AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f159f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcommunicationsettings")]impl AkCommunicationSettings{#[doc="`getCPtr(crate::root::akcommunicationsettings::AkCommunicationSettings)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akcommunicationsettings::AkCommunicationSettings>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f159f0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akcommunicationsettings::AkCommunicationSettings)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akcommunicationsettings")]
-pub trait IAkCommunicationSettingsMethods : IAkCommunicationSettings { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f159b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_commsThreadProperties(crate::root::akthreadproperties::AkThreadProperties)` overload"] fn set_comms_thread_properties (self , value : impl :: core :: convert :: Into < crate :: root :: akthreadproperties :: AkThreadProperties >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , crate :: root :: akthreadproperties :: AkThreadProperties , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_commsThreadProperties()` overload"] fn get_comms_thread_properties (self ,) -> crate :: root :: akthreadproperties :: AkThreadProperties { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akthreadproperties :: AkThreadProperties = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uPoolSize(u32)` overload"] fn set_u_pool_size (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f124a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uPoolSize()` overload"] fn get_u_pool_size (self ,) -> u32 { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uDiscoveryBroadcastPort(u16)` overload"] fn set_u_discovery_broadcast_port (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f12520usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uDiscoveryBroadcastPort()` overload"] fn get_u_discovery_broadcast_port (self ,) -> u16 { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uCommandPort(u16)` overload"] fn set_u_command_port (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f125a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uCommandPort()` overload"] fn get_u_command_port (self ,) -> u16 { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uNotificationPort(u16)` overload"] fn set_u_notification_port (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f12620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uNotificationPort()` overload"] fn get_u_notification_port (self ,) -> u16 { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f15fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_commSystem(crate::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem)` overload"] fn set_comm_system (self , value : impl :: core :: convert :: Into < crate :: root :: akcommunicationsettings :: AkCommunicationSettings_AkCommSystem >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , crate :: root :: akcommunicationsettings :: AkCommunicationSettings_AkCommSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f12720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_commSystem()` overload"] fn get_comm_system (self ,) -> crate :: root :: akcommunicationsettings :: AkCommunicationSettings_AkCommSystem { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommunicationsettings :: AkCommunicationSettings_AkCommSystem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_bInitSystemLib(bool)` overload"] fn set_b_init_system_lib (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f126a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_bInitSystemLib()` overload"] fn get_b_init_system_lib (self ,) -> bool { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f160b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_szAppNetworkName(::unity2::Il2CppString)` overload"] fn set_sz_app_network_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f127a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_szAppNetworkName()` overload"] fn get_sz_app_network_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkCommunicationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkCommunicationSettings , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f16120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akcommunicationsettings")]pub trait IAkCommunicationSettingsMethods:IAkCommunicationSettings{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f159b0usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15a50usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15a80usize)as*mut u8,();
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15af0usize)as*mut u8,();
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15c80usize)as*mut u8,();
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`set_commsThreadProperties(crate::root::akthreadproperties::AkThreadProperties)` overload"]fn set_comms_thread_properties(self,value:impl::core::convert::Into<crate::root::akthreadproperties::AkThreadProperties>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15d10usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(crate::root::akthreadproperties::AkThreadProperties)::core::convert::Into::into(value))}
+}
+#[doc="`get_commsThreadProperties()` overload"]fn get_comms_thread_properties(self,)->crate::root::akthreadproperties::AkThreadProperties{unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15da0usize)as*mut u8,crate::root::akthreadproperties::AkThreadProperties;
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`set_uPoolSize(u32)` overload"]fn set_u_pool_size(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f124a0usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uPoolSize()` overload"]fn get_u_pool_size(self,)->u32{unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15e80usize)as*mut u8,u32;
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`set_uDiscoveryBroadcastPort(u16)` overload"]fn set_u_discovery_broadcast_port(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12520usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_uDiscoveryBroadcastPort()` overload"]fn get_u_discovery_broadcast_port(self,)->u16{unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15ef0usize)as*mut u8,u16;
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`set_uCommandPort(u16)` overload"]fn set_u_command_port(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f125a0usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_uCommandPort()` overload"]fn get_u_command_port(self,)->u16{unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15f60usize)as*mut u8,u16;
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`set_uNotificationPort(u16)` overload"]fn set_u_notification_port(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12620usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_uNotificationPort()` overload"]fn get_u_notification_port(self,)->u16{unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15fd0usize)as*mut u8,u16;
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`set_commSystem(crate::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem)` overload"]fn set_comm_system(self,value:impl::core::convert::Into<crate::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12720usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(crate::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem)::core::convert::Into::into(value))}
+}
+#[doc="`get_commSystem()` overload"]fn get_comm_system(self,)->crate::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem{unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16040usize)as*mut u8,crate::root::akcommunicationsettings::AkCommunicationSettings_AkCommSystem;
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`set_bInitSystemLib(bool)` overload"]fn set_b_init_system_lib(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f126a0usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_bInitSystemLib()` overload"]fn get_b_init_system_lib(self,)->bool{unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f160b0usize)as*mut u8,bool;
+(AkCommunicationSettings)__receiver)}
+}
+#[doc="`set_szAppNetworkName(::unity2::Il2CppString)` overload"]fn set_sz_app_network_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f127a0usize)as*mut u8,();
+(AkCommunicationSettings)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_szAppNetworkName()` overload"]fn get_sz_app_network_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16120usize)as*mut u8, ::unity2::Il2CppString;
+(AkCommunicationSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akcommunicationsettings")]
-impl < __T : IAkCommunicationSettings > IAkCommunicationSettingsMethods for __T { }
+#[cfg(feature="root-akcommunicationsettings")]impl<__T:IAkCommunicationSettings>IAkCommunicationSettingsMethods for __T{}
 
-#[cfg(feature = "root-akcommunicationsettings")]
-impl AkCommunicationSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_comms_thread_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_comms_thread_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_u_pool_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_u_pool_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_u_discovery_broadcast_port_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_u_discovery_broadcast_port_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_u_command_port_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_u_command_port_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_u_notification_port_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_u_notification_port_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_comm_system_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_comm_system_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_b_init_system_lib_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_b_init_system_lib_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_sz_app_network_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_sz_app_network_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkCommunicationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="root-akcommunicationsettings")]impl AkCommunicationSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_comms_thread_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_comms_thread_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_u_pool_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_u_pool_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_u_discovery_broadcast_port_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_u_discovery_broadcast_port_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_u_command_port_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_u_command_port_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_u_notification_port_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_u_notification_port_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_comm_system_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_comm_system_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_b_init_system_lib_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_b_init_system_lib_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_sz_app_network_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_sz_app_network_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "root-akcommunicationsettings")]
-impl AkCommunicationSettings {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCommunicationSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkCommunicationSettingsMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkCommunicationSettings) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkCommunicationSettingsMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akcommunicationsettings")]impl AkCommunicationSettings{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCommunicationSettings), ::core::stringify!(new),));
+ <Self as IAkCommunicationSettingsMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkCommunicationSettings), ::core::stringify!(new_2),));
+ <Self as IAkCommunicationSettingsMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akcommunicationsettings")]

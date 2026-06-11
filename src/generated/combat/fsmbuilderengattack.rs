@@ -4,37 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: fsmbuilder :: { FSMBuilder , IFSMBuilder }
- ;
- use crate :: combat :: fsmbuilderstandard :: { FSMBuilderStandard , IFSMBuilderStandard }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::fsmbuilder::{FSMBuilder,IFSMBuilder}
+;
+use crate::combat::fsmbuilderstandard::{FSMBuilderStandard,IFSMBuilderStandard}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderengattack/FSMBuilderEngAttack.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FSMBuilderEngAttack")] # [parent (crate :: combat :: fsmbuilderstandard :: FSMBuilderStandard)] pub struct FSMBuilderEngAttack {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fsmbuilderengattack/FSMBuilderEngAttack.md"))]#[::unity2::class(namespace="Combat",name="FSMBuilderEngAttack")]#[parent(crate::combat::fsmbuilderstandard::FSMBuilderStandard)]pub struct FSMBuilderEngAttack{}
 
 }
 
 #[cfg(feature = "combat-fsmbuilderengattack-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fsmbuilderengattack")]
-impl FSMBuilderEngAttack { # [doc = "`MakeLastSituation()` overload"] pub fn make_last_situation () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d499f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuilderengattack")]impl FSMBuilderEngAttack{#[doc="`MakeLastSituation()` overload"]pub fn make_last_situation()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d499f0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-fsmbuilderengattack")]
-pub trait IFSMBuilderEngAttackMethods : IFSMBuilderEngAttack { # [doc = "`Build()` overload"] fn build (self ,) -> () { unsafe { let __receiver = < FSMBuilderEngAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderEngAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d48940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildStart()` overload"] fn build_start (self ,) -> () { unsafe { let __receiver = < FSMBuilderEngAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderEngAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d48c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMain()` overload"] fn build_main (self ,) -> () { unsafe { let __receiver = < FSMBuilderEngAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderEngAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d49080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAllForOne()` overload"] fn build_all_for_one (self ,) -> () { unsafe { let __receiver = < FSMBuilderEngAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderEngAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d489d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildEnd()` overload"] fn build_end (self ,) -> () { unsafe { let __receiver = < FSMBuilderEngAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderEngAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d49550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FSMBuilderEngAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSMBuilderEngAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d47870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsmbuilderengattack")]pub trait IFSMBuilderEngAttackMethods:IFSMBuilderEngAttack{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <FSMBuilderEngAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d48940usize)as*mut u8,();
+(FSMBuilderEngAttack)__receiver)}
+}
+#[doc="`BuildStart()` overload"]fn build_start(self,)->(){unsafe{let __receiver= <FSMBuilderEngAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d48c60usize)as*mut u8,();
+(FSMBuilderEngAttack)__receiver)}
+}
+#[doc="`BuildMain()` overload"]fn build_main(self,)->(){unsafe{let __receiver= <FSMBuilderEngAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d49080usize)as*mut u8,();
+(FSMBuilderEngAttack)__receiver)}
+}
+#[doc="`BuildAllForOne()` overload"]fn build_all_for_one(self,)->(){unsafe{let __receiver= <FSMBuilderEngAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d489d0usize)as*mut u8,();
+(FSMBuilderEngAttack)__receiver)}
+}
+#[doc="`BuildEnd()` overload"]fn build_end(self,)->(){unsafe{let __receiver= <FSMBuilderEngAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d49550usize)as*mut u8,();
+(FSMBuilderEngAttack)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSMBuilderEngAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47870usize)as*mut u8,();
+(FSMBuilderEngAttack)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-fsmbuilderengattack")]
-impl < __T : IFSMBuilderEngAttack > IFSMBuilderEngAttackMethods for __T { }
+#[cfg(feature="combat-fsmbuilderengattack")]impl<__T:IFSMBuilderEngAttack>IFSMBuilderEngAttackMethods for __T{}
 
-#[cfg(feature = "combat-fsmbuilderengattack")]
-impl FSMBuilderEngAttack { pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderEngAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderEngAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_main_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderEngAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_all_for_one_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderEngAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn build_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderEngAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn make_last_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderEngAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSMBuilderEngAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="combat-fsmbuilderengattack")]impl FSMBuilderEngAttack{pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_all_for_one_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn build_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn make_last_situation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "combat-fsmbuilderengattack")]
-impl FSMBuilderEngAttack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FSMBuilderEngAttack) , :: core :: stringify ! (new) ,)) ; < Self as IFSMBuilderEngAttackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-fsmbuilderengattack")]impl FSMBuilderEngAttack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FSMBuilderEngAttack), ::core::stringify!(new),));
+ <Self as IFSMBuilderEngAttackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-fsmbuilderengattack")]

@@ -4,30 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/subsystems_implementation/subsystemdescriptorwithprovider/SubsystemDescriptorWithProvider.md"))] # [:: unity2 :: class (namespace = "UnityEngine.SubsystemsImplementation" , name = "SubsystemDescriptorWithProvider")] # [parent (crate :: system :: object :: Object)] pub struct SubsystemDescriptorWithProvider {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/subsystems_implementation/subsystemdescriptorwithprovider/SubsystemDescriptorWithProvider.md"))]#[::unity2::class(namespace="UnityEngine.SubsystemsImplementation",name="SubsystemDescriptorWithProvider")]#[parent(crate::system::object::Object)]pub struct SubsystemDescriptorWithProvider{}
 
 }
 
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
-pub trait ISubsystemDescriptorWithProviderMethods : ISubsystemDescriptorWithProvider { # [doc = "`get_id()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < SubsystemDescriptorWithProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SubsystemDescriptorWithProvider , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3ae50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SubsystemDescriptorWithProvider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SubsystemDescriptorWithProvider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3ae60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]pub trait ISubsystemDescriptorWithProviderMethods:ISubsystemDescriptorWithProvider{#[doc="`get_id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SubsystemDescriptorWithProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ae50usize)as*mut u8, ::unity2::Il2CppString;
+(SubsystemDescriptorWithProvider)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SubsystemDescriptorWithProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ae60usize)as*mut u8,();
+(SubsystemDescriptorWithProvider)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
-impl < __T : ISubsystemDescriptorWithProvider > ISubsystemDescriptorWithProviderMethods for __T { }
+#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl<__T:ISubsystemDescriptorWithProvider>ISubsystemDescriptorWithProviderMethods for __T{}
 
-#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
-impl SubsystemDescriptorWithProvider { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubsystemDescriptorWithProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SubsystemDescriptorWithProvider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl SubsystemDescriptorWithProvider{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
-impl SubsystemDescriptorWithProvider {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SubsystemDescriptorWithProvider) , :: core :: stringify ! (new) ,)) ; < Self as ISubsystemDescriptorWithProviderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl SubsystemDescriptorWithProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SubsystemDescriptorWithProvider), ::core::stringify!(new),));
+ <Self as ISubsystemDescriptorWithProviderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]

@@ -4,36 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: scripting :: preserveattribute :: { IPreserveAttribute , PreserveAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::scripting::preserveattribute::{IPreserveAttribute,PreserveAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/runtimeinitializeonloadmethodattribute/RuntimeInitializeOnLoadMethodAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "RuntimeInitializeOnLoadMethodAttribute")] # [parent (crate :: unity_engine :: scripting :: preserveattribute :: PreserveAttribute)] pub struct RuntimeInitializeOnLoadMethodAttribute {
-# [offset (16)] # [rename (name = "m_LoadType")] pub m_load_type : crate :: unity_engine :: runtimeinitializeloadtype :: RuntimeInitializeLoadType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/runtimeinitializeonloadmethodattribute/RuntimeInitializeOnLoadMethodAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="RuntimeInitializeOnLoadMethodAttribute")]#[parent(crate::unity_engine::scripting::preserveattribute::PreserveAttribute)]pub struct RuntimeInitializeOnLoadMethodAttribute{#[offset(16)]#[rename(name="m_LoadType")]pub m_load_type:crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType,}
 
 }
 
 #[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
-pub trait IRuntimeInitializeOnLoadMethodAttributeMethods : IRuntimeInitializeOnLoadMethodAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeInitializeOnLoadMethodAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeInitializeOnLoadMethodAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f898f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` overload"] fn ctor_2 (self , load_type : impl :: core :: convert :: Into < crate :: unity_engine :: runtimeinitializeloadtype :: RuntimeInitializeLoadType >) -> () { unsafe { let __receiver = < RuntimeInitializeOnLoadMethodAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeInitializeOnLoadMethodAttribute , crate :: unity_engine :: runtimeinitializeloadtype :: RuntimeInitializeLoadType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (load_type) , :: core :: option :: Option :: None) } } } # [doc = "`set_loadType(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` overload"] fn set_load_type (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: runtimeinitializeloadtype :: RuntimeInitializeLoadType >) -> () { unsafe { let __receiver = < RuntimeInitializeOnLoadMethodAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeInitializeOnLoadMethodAttribute , crate :: unity_engine :: runtimeinitializeloadtype :: RuntimeInitializeLoadType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f89920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-runtimeinitializeonloadmethodattribute")]pub trait IRuntimeInitializeOnLoadMethodAttributeMethods:IRuntimeInitializeOnLoadMethodAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeInitializeOnLoadMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f898f0usize)as*mut u8,();
+(RuntimeInitializeOnLoadMethodAttribute)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` overload"]fn ctor_2(self,load_type:impl::core::convert::Into<crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType>)->(){unsafe{let __receiver= <RuntimeInitializeOnLoadMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f89930usize)as*mut u8,();
+(RuntimeInitializeOnLoadMethodAttribute)__receiver,(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)::core::convert::Into::into(load_type))}
+}
+#[doc="`set_loadType(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` overload"]fn set_load_type(self,value:impl::core::convert::Into<crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType>)->(){unsafe{let __receiver= <RuntimeInitializeOnLoadMethodAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f89920usize)as*mut u8,();
+(RuntimeInitializeOnLoadMethodAttribute)__receiver,(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
-impl < __T : IRuntimeInitializeOnLoadMethodAttribute > IRuntimeInitializeOnLoadMethodAttributeMethods for __T { }
+#[cfg(feature="unity_engine-runtimeinitializeonloadmethodattribute")]impl<__T:IRuntimeInitializeOnLoadMethodAttribute>IRuntimeInitializeOnLoadMethodAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
-impl RuntimeInitializeOnLoadMethodAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeInitializeOnLoadMethodAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeInitializeOnLoadMethodAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_load_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeInitializeOnLoadMethodAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-runtimeinitializeonloadmethodattribute")]impl RuntimeInitializeOnLoadMethodAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_load_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]
-impl RuntimeInitializeOnLoadMethodAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeInitializeOnLoadMethodAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeInitializeOnLoadMethodAttributeMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` — overload selector"] pub fn new_2 (load_type : crate :: unity_engine :: runtimeinitializeloadtype :: RuntimeInitializeLoadType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeInitializeOnLoadMethodAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as IRuntimeInitializeOnLoadMethodAttributeMethods > :: ctor_2 (this , load_type) ; this }
+#[cfg(feature="unity_engine-runtimeinitializeonloadmethodattribute")]impl RuntimeInitializeOnLoadMethodAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeInitializeOnLoadMethodAttribute), ::core::stringify!(new),));
+ <Self as IRuntimeInitializeOnLoadMethodAttributeMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)` — overload selector"]pub fn new_2(load_type:crate::unity_engine::runtimeinitializeloadtype::RuntimeInitializeLoadType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeInitializeOnLoadMethodAttribute), ::core::stringify!(new_2),));
+ <Self as IRuntimeInitializeOnLoadMethodAttributeMethods> ::ctor_2(this,load_type);
+this}
 }
 
 #[cfg(feature = "unity_engine-runtimeinitializeonloadmethodattribute")]

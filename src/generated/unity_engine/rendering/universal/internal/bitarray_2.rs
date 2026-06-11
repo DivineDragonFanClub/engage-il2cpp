@@ -4,42 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/bitarray_2/BitArray_2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BitArray_2 {}
-
-
-impl ::unity2::ClassIdentity for BitArray_2 {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-    const NAME: &'static str = "BitArray";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/bitarray_2/BitArray_2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BitArray_2{}
+impl::unity2::ClassIdentity for BitArray_2{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal.Internal";
+const NAME: &'static str="BitArray";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for BitArray_2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for BitArray_2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -47,11 +26,25 @@ impl ::unity2::IlType for BitArray_2 {
 #[cfg(feature = "unity_engine-rendering-universal-internal-bitarray_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-bitarray_2")]
-impl BitArray_2 { # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut BitArray_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d290usize) as * mut u8) ; __inner (self as * mut BitArray_2 , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut BitArray_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d2f0usize) as * mut u8) ; __inner (self as * mut BitArray_2 , :: core :: option :: Option :: None) } } } # [doc = "`IsSet(i32)` overload"] pub fn is_set (& mut self , bit_index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (* mut BitArray_2 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d320usize) as * mut u8) ; __inner (self as * mut BitArray_2 , :: core :: convert :: Into :: into (bit_index) , :: core :: option :: Option :: None) } } } # [doc = "`Set(i32, bool)` overload"] pub fn set (& mut self , bit_index : impl :: core :: convert :: Into < i32 > , val : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut BitArray_2 , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a3d340usize) as * mut u8) ; __inner (self as * mut BitArray_2 , :: core :: convert :: Into :: into (bit_index) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-internal-bitarray_2")]impl BitArray_2{#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d290usize)as*mut u8,();
+(*mut BitArray_2)self as*mut BitArray_2)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d2f0usize)as*mut u8,();
+(*mut BitArray_2)self as*mut BitArray_2)}
+}
+#[doc="`IsSet(i32)` overload"]pub fn is_set(&mut self,bit_index:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d320usize)as*mut u8,bool;
+(*mut BitArray_2)self as*mut BitArray_2,(i32)::core::convert::Into::into(bit_index))}
+}
+#[doc="`Set(i32, bool)` overload"]pub fn set(&mut self,bit_index:impl::core::convert::Into<i32> ,val:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a3d340usize)as*mut u8,();
+(*mut BitArray_2)self as*mut BitArray_2,(i32)::core::convert::Into::into(bit_index),(bool)::core::convert::Into::into(val))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-internal-bitarray_2")]
-impl BitArray_2 { pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitArray_2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-universal-internal-bitarray_2")]impl BitArray_2{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-bitarray_2")]
 #[doc(hidden)]

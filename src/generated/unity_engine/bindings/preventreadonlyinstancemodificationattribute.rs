@@ -4,28 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/preventreadonlyinstancemodificationattribute/PreventReadOnlyInstanceModificationAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "PreventReadOnlyInstanceModificationAttribute")] pub struct PreventReadOnlyInstanceModificationAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/preventreadonlyinstancemodificationattribute/PreventReadOnlyInstanceModificationAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="PreventReadOnlyInstanceModificationAttribute")]pub struct PreventReadOnlyInstanceModificationAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute")]
-pub trait IPreventReadOnlyInstanceModificationAttributeMethods : IPreventReadOnlyInstanceModificationAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PreventReadOnlyInstanceModificationAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PreventReadOnlyInstanceModificationAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-preventreadonlyinstancemodificationattribute")]pub trait IPreventReadOnlyInstanceModificationAttributeMethods:IPreventReadOnlyInstanceModificationAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PreventReadOnlyInstanceModificationAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38500usize)as*mut u8,();
+(PreventReadOnlyInstanceModificationAttribute)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute")]
-impl < __T : IPreventReadOnlyInstanceModificationAttribute > IPreventReadOnlyInstanceModificationAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-preventreadonlyinstancemodificationattribute")]impl<__T:IPreventReadOnlyInstanceModificationAttribute>IPreventReadOnlyInstanceModificationAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute")]
-impl PreventReadOnlyInstanceModificationAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PreventReadOnlyInstanceModificationAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-bindings-preventreadonlyinstancemodificationattribute")]impl PreventReadOnlyInstanceModificationAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute")]
-impl PreventReadOnlyInstanceModificationAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PreventReadOnlyInstanceModificationAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IPreventReadOnlyInstanceModificationAttributeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-bindings-preventreadonlyinstancemodificationattribute")]impl PreventReadOnlyInstanceModificationAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PreventReadOnlyInstanceModificationAttribute), ::core::stringify!(new),));
+ <Self as IPreventReadOnlyInstanceModificationAttributeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute")]

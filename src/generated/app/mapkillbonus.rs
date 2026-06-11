@@ -4,258 +4,101 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapimagecore_1 :: { IMapImageCore_1 , MapImageCore_1 }
- ;
- use crate :: app :: mapimagecorebyte :: { IMapImageCoreByte , MapImageCoreByte }
- ;
- use crate :: app :: mapimageindex :: { IMapImageIndex , MapImageIndex }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapimagecore_1::{IMapImageCore_1,MapImageCore_1}
+;
+use crate::app::mapimagecorebyte::{IMapImageCoreByte,MapImageCoreByte}
+;
+use crate::app::mapimageindex::{IMapImageIndex,MapImageIndex}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapKillBonus")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapkillbonus :: MapKillBonus >)] pub struct MapKillBonus {
-# [static_field] # [rename (name = "MaxBonusCount")] pub max_bonus_count : i32 ,
-# [static_field] # [rename (name = "MaxWidth")] pub max_width : i32 ,
-# [static_field] # [rename (name = "MaxHeight")] pub max_height : i32 ,
-# [static_field] # [rename (name = "MaxCellCount")] pub max_cell_count : i32 ,
-# [offset (32)] # [rename (name = "m_KindImage")] pub m_kind_image : crate :: app :: mapkillbonus :: MapKillBonus_KindImage ,
-# [offset (40)] # [rename (name = "m_CountImages")] pub m_count_images : :: unity2 :: Array < crate :: app :: mapkillbonus :: MapKillBonus_CountImage > ,
-# [offset (48)] # [rename (name = "m_KillBonuses")] pub m_kill_bonuses : :: unity2 :: Array < crate :: app :: mapkillbonus :: MapKillBonus_KillBonus > ,
-# [offset (56)] # [rename (name = "m_KillBonusIndex")] pub m_kill_bonus_index : i32 ,
-# [offset (60)] # [rename (name = "m_KillBonusCount")] pub m_kill_bonus_count : i32 ,
-# [offset (64)] # [rename (name = "m_KilledBonuses")] pub m_killed_bonuses : :: unity2 :: Array < crate :: app :: mapkillbonus :: MapKillBonus_KilledBonus > ,
-# [offset (72)] # [rename (name = "m_KilledGodBonuses")] pub m_killed_god_bonuses : :: unity2 :: Array < crate :: app :: mapkillbonus :: MapKillBonus_KilledBonus > ,
-# [offset (80)] # [rename (name = "m_KilledBonusIndex")] pub m_killed_bonus_index : i32 ,
-# [offset (84)] # [rename (name = "m_KilledBonusCount")] pub m_killed_bonus_count : i32 ,
-# [offset (88)] # [rename (name = "m_Work")] pub m_work : crate :: app :: mapkillbonus :: MapKillBonus_Work ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus_KilledBonus.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapKillBonus_KilledBonus{pub kind:crate::app::killedbonusdata::KilledBonusData_Kinds,pub value:i32,}
+impl::unity2::ClassIdentity for MapKillBonus_KilledBonus{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapKillBonus.KilledBonus";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapKillBonus_KilledBonus{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_DownloadSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapKillBonus.DownloadSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapKillBonus_DownloadSequence {
-# [offset (112)] # [rename (name = "m_Cid")] pub m_cid : :: unity2 :: Il2CppString ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapKillBonus_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for MapKillBonus_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapKillBonus.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapKillBonus_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapKillBonus_Kinds{pub fn none()->Self{Self{value:0}
+}
+pub fn kill()->Self{Self{value:1}
+}
+pub fn killed()->Self{Self{value:2}
+}
+pub fn max()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_Work_Pos.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapKillBonus_Work_Pos {
-    pub x: u16,
-    pub z: u16,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus_Work.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapKillBonus_Work{pub positions: ::unity2::Array<crate::app::mapkillbonus::MapKillBonus_Work_Pos>,pub rates0:crate::system::collections::generic::list_1::List_1<i32>,pub rates1:crate::system::collections::generic::list_1::List_1<i32>,}
+impl::unity2::ClassIdentity for MapKillBonus_Work{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapKillBonus.Work";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapKillBonus_Work{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for MapKillBonus_Work_Pos {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKillBonus.Work.Pos";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus_Work_Pos.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapKillBonus_Work_Pos{pub x:u16,pub z:u16,}
+impl::unity2::ClassIdentity for MapKillBonus_Work_Pos{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapKillBonus.Work.Pos";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapKillBonus_Work_Pos{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::IlType for MapKillBonus_Work_Pos {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus_DownloadSequence.md"))]#[::unity2::class(namespace="App",name="MapKillBonus.DownloadSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MapKillBonus_DownloadSequence{#[offset(112)]#[rename(name="m_Cid")]pub m_cid: ::unity2::Il2CppString,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus_CountImage.md"))]#[::unity2::class(namespace="App",name="MapKillBonus.CountImage")]#[parent(crate::app::mapimagecore_1::MapImageCore_1<i16>)]pub struct MapKillBonus_CountImage{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus.md"))]#[::unity2::class(namespace="App",name="MapKillBonus")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapkillbonus::MapKillBonus>)]pub struct MapKillBonus{#[static_field]#[rename(name="MaxBonusCount")]pub max_bonus_count:i32, #[static_field]#[rename(name="MaxWidth")]pub max_width:i32, #[static_field]#[rename(name="MaxHeight")]pub max_height:i32, #[static_field]#[rename(name="MaxCellCount")]pub max_cell_count:i32, #[offset(32)]#[rename(name="m_KindImage")]pub m_kind_image:crate::app::mapkillbonus::MapKillBonus_KindImage, #[offset(40)]#[rename(name="m_CountImages")]pub m_count_images: ::unity2::Array<crate::app::mapkillbonus::MapKillBonus_CountImage> , #[offset(48)]#[rename(name="m_KillBonuses")]pub m_kill_bonuses: ::unity2::Array<crate::app::mapkillbonus::MapKillBonus_KillBonus> , #[offset(56)]#[rename(name="m_KillBonusIndex")]pub m_kill_bonus_index:i32, #[offset(60)]#[rename(name="m_KillBonusCount")]pub m_kill_bonus_count:i32, #[offset(64)]#[rename(name="m_KilledBonuses")]pub m_killed_bonuses: ::unity2::Array<crate::app::mapkillbonus::MapKillBonus_KilledBonus> , #[offset(72)]#[rename(name="m_KilledGodBonuses")]pub m_killed_god_bonuses: ::unity2::Array<crate::app::mapkillbonus::MapKillBonus_KilledBonus> , #[offset(80)]#[rename(name="m_KilledBonusIndex")]pub m_killed_bonus_index:i32, #[offset(84)]#[rename(name="m_KilledBonusCount")]pub m_killed_bonus_count:i32, #[offset(88)]#[rename(name="m_Work")]pub m_work:crate::app::mapkillbonus::MapKillBonus_Work,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus_KindImage.md"))]#[::unity2::class(namespace="App",name="MapKillBonus.KindImage")]#[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]pub struct MapKillBonus_KindImage{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus_GainSequence.md"))]#[::unity2::class(namespace="App",name="MapKillBonus.GainSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MapKillBonus_GainSequence{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_Kind")]pub m_kind:crate::app::mapkillbonus::MapKillBonus_Kinds,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkillbonus/MapKillBonus_KillBonus.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapKillBonus_KillBonus{pub iid: ::unity2::Il2CppString,}
+impl::unity2::ClassIdentity for MapKillBonus_KillBonus{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapKillBonus.KillBonus";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_KindImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapKillBonus.KindImage")] # [parent (crate :: app :: mapimagecorebyte :: MapImageCoreByte)] pub struct MapKillBonus_KindImage {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_Work.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapKillBonus_Work {
-    pub positions: :: unity2 :: Array < crate :: app :: mapkillbonus :: MapKillBonus_Work_Pos >,
-    pub rates0: crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >,
-    pub rates1: crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >,
-}
-
-
-impl ::unity2::ClassIdentity for MapKillBonus_Work {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKillBonus.Work";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapKillBonus_Work {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_GainSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapKillBonus.GainSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapKillBonus_GainSequence {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: mapkillbonus :: MapKillBonus_Kinds ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapKillBonus_Kinds  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapKillBonus_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKillBonus.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapKillBonus_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapKillBonus_Kinds  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn kill() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn killed() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_KilledBonus.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapKillBonus_KilledBonus {
-    pub kind: crate :: app :: killedbonusdata :: KilledBonusData_Kinds,
-    pub value: i32,
-}
-
-
-impl ::unity2::ClassIdentity for MapKillBonus_KilledBonus {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKillBonus.KilledBonus";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapKillBonus_KilledBonus {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_CountImage.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapKillBonus.CountImage")] # [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < i16 >)] pub struct MapKillBonus_CountImage {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_KillBonus.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapKillBonus_KillBonus {
-    pub iid: :: unity2 :: Il2CppString,
-}
-
-
-impl ::unity2::ClassIdentity for MapKillBonus_KillBonus {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKillBonus.KillBonus";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapKillBonus_KillBonus {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MapKillBonus_KillBonus{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -263,119 +106,386 @@ impl ::unity2::IlType for MapKillBonus_KillBonus {
 #[cfg(feature = "app-mapkillbonus-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus { # [doc = "`IsEnable()` overload"] pub fn is_enable () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1deff50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsEnableChapter(crate::app::chapterdata::ChapterData)` overload"] pub fn is_enable_chapter (chapter : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0070usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chapter) , :: core :: option :: Option :: None) } } } # [doc = "`GetRandomValue(i32)` overload"] pub fn get_random_value (num : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df1b20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapkillbonus")]
-pub trait IMapKillBonusMethods : IMapKillBonus { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1def800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1defed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Download(crate::app::procinst::ProcInst)` overload"] fn download (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Upload(crate::app::procinst::ProcInst)` overload"] fn upload (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryGain(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"] fn try_gain (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetKind(i32, i32)` overload"] fn get_kind (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapkillbonus :: MapKillBonus_Kinds { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapkillbonus :: MapKillBonus_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`CopyKindImageTo(crate::app::mapkillbonus::MapKillBonus_KindImage)` overload"] fn copy_kind_image_to (self , kind_image : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_KindImage >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , crate :: app :: mapkillbonus :: MapKillBonus_KindImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind_image) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateEffect(i32, i32)` overload"] fn try_create_effect (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0ec0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateEffect(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"] fn try_create_effect_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_Kinds >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , i32 , crate :: app :: mapkillbonus :: MapKillBonus_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`TryDeleteEffect(i32, i32)` overload"] fn try_delete_effect (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`TryDeleteEffect(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"] fn try_delete_effect_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_Kinds >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , i32 , crate :: app :: mapkillbonus :: MapKillBonus_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df1090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`AddCount(crate::app::unit::Unit)` overload"] fn add_count (self , dead_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df1180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dead_unit) , :: core :: option :: Option :: None) } } } # [doc = "`AddCount(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"] fn add_count_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_Kinds >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , i32 , crate :: app :: mapkillbonus :: MapKillBonus_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df12e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetCountImage(crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"] fn get_count_image (self , kind : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_Kinds >) -> crate :: app :: mapkillbonus :: MapKillBonus_CountImage { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , crate :: app :: mapkillbonus :: MapKillBonus_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapkillbonus :: MapKillBonus_CountImage = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df03d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`ClearNetSucceeded()` overload"] fn clear_net_succeeded (self ,) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df01c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBonusIndex(crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"] fn get_bonus_index (self , kind : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_Kinds >) -> i32 { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , crate :: app :: mapkillbonus :: MapKillBonus_Kinds , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df1450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`RewindBonus(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds, i32)` overload"] fn rewind_bonus (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_Kinds > , bonus_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , i32 , crate :: app :: mapkillbonus :: MapKillBonus_Kinds , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df1470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (bonus_index) , :: core :: option :: Option :: None) } } } # [doc = "`RewindCount(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds, i32)` overload"] fn rewind_count (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_Kinds > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , i32 , crate :: app :: mapkillbonus :: MapKillBonus_Kinds , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df14f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsNetSucceeded()` overload"] fn get_is_net_succeeded (self ,) -> bool { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DecideCells(i32, i32)` overload"] fn decide_cells (self , map_max_kill_bonus_count : impl :: core :: convert :: Into < i32 > , map_max_killed_bonus_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df05d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (map_max_kill_bonus_count) , :: core :: convert :: Into :: into (map_max_killed_bonus_count) , :: core :: option :: Option :: None) } } } # [doc = "`DecideKillBonus(i32)` overload"] fn decide_kill_bonus (self , map_max_bonus_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df0690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (map_max_bonus_count) , :: core :: option :: Option :: None) } } } # [doc = "`DecideKilledBonus(i32)` overload"] fn decide_killed_bonus (self , map_max_bonus_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df08f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (map_max_bonus_count) , :: core :: option :: Option :: None) } } } # [doc = "`GetKillBonusData()` overload"] fn get_kill_bonus_data (self ,) -> crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: killbonusdata :: KillBonusData > { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: killbonusdata :: KillBonusData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df18a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetKilledBonusData()` overload"] fn get_killed_bonus_data (self ,) -> crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: killedbonusdata :: KilledBonusData > { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> crate :: app :: structdataarraylist_1 :: StructDataArrayList_1 < crate :: app :: killedbonusdata :: KilledBonusData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df1b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1defae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df1dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df1de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df2300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } # [doc = "`DbgDump()` overload"] fn dbg_dump (self ,) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df28b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapKillBonus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df3180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl < __T : IMapKillBonus > IMapKillBonusMethods for __T { }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_enable_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn download_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn upload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn try_gain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn copy_kind_image_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn try_create_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn try_create_effect_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn try_delete_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn try_delete_effect_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn add_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn add_count_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_count_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn clear_net_succeeded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_bonus_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn rewind_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn rewind_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_is_net_succeeded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn decide_cells_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn decide_kill_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn decide_killed_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_kill_bonus_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_killed_bonus_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_random_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn dbg_dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapKillBonus) , :: core :: stringify ! (new) ,)) ; < Self as IMapKillBonusMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_KilledBonus{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2186260usize)as*mut u8,();
+(*mut MapKillBonus_KilledBonus)self as*mut MapKillBonus_KilledBonus)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2186270usize)as*mut u8,();
+(*mut MapKillBonus_KilledBonus)self as*mut MapKillBonus_KilledBonus,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]pub fn deserialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21862b0usize)as*mut u8,();
+(*mut MapKillBonus_KilledBonus)self as*mut MapKillBonus_KilledBonus,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
 }
 
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_DownloadSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185390usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapkillbonus")]
-pub trait IMapKillBonus_DownloadSequenceMethods : IMapKillBonus_DownloadSequence { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MapKillBonus_DownloadSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_DownloadSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } # [doc = "`Get()` overload"] fn get (self ,) -> () { unsafe { let __receiver = < MapKillBonus_DownloadSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_DownloadSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < MapKillBonus_DownloadSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_DownloadSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl < __T : IMapKillBonus_DownloadSequence > IMapKillBonus_DownloadSequenceMethods for __T { }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_DownloadSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_DownloadSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_DownloadSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_DownloadSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_DownloadSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_DownloadSequence {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (cid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapKillBonus_DownloadSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMapKillBonus_DownloadSequenceMethods > :: ctor (this , cid) ; this }
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_KilledBonus{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature = "app-mapkillbonus")]
-pub trait IMapKillBonus_KindImageMethods : IMapKillBonus_KindImage { # [doc = "`SetKind(i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"] fn set_kind (self , index : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_Kinds >) -> () { unsafe { let __receiver = < MapKillBonus_KindImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_KindImage , i32 , crate :: app :: mapkillbonus :: MapKillBonus_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21863b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`SetKind(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"] fn set_kind_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , kind : impl :: core :: convert :: Into < crate :: app :: mapkillbonus :: MapKillBonus_Kinds >) -> () { unsafe { let __receiver = < MapKillBonus_KindImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_KindImage , i32 , i32 , crate :: app :: mapkillbonus :: MapKillBonus_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetKind(i32)` overload"] fn get_kind (self , index : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapkillbonus :: MapKillBonus_Kinds { unsafe { let __receiver = < MapKillBonus_KindImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_KindImage , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapkillbonus :: MapKillBonus_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetKind(i32, i32)` overload"] fn get_kind_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapkillbonus :: MapKillBonus_Kinds { unsafe { let __receiver = < MapKillBonus_KindImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_KindImage , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapkillbonus :: MapKillBonus_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21856e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapKillBonus_KindImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_KindImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl < __T : IMapKillBonus_KindImage > IMapKillBonus_KindImageMethods for __T { }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_KindImage { pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KindImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_kind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KindImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KindImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_kind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KindImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KindImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_KindImage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapKillBonus_KindImage) , :: core :: stringify ! (new) ,)) ; < Self as IMapKillBonus_KindImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_DownloadSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2185390usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
 }
 
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_GainSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185e70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapkillbonus")]
-pub trait IMapKillBonus_GainSequenceMethods : IMapKillBonus_GainSequence { # [doc = "`.ctor(crate::app::unit::Unit)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapKillBonus_GainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_GainSequence , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21855d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Gain()` overload"] fn gain (self ,) -> () { unsafe { let __receiver = < MapKillBonus_GainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_GainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GainKillBonus()` overload"] fn gain_kill_bonus (self ,) -> () { unsafe { let __receiver = < MapKillBonus_GainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_GainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GainKilledBonus()` overload"] fn gain_killed_bonus (self ,) -> () { unsafe { let __receiver = < MapKillBonus_GainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_GainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21858b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetKilledBonus(crate::app::unit::Unit)` overload"] fn get_killed_bonus (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> * mut crate :: app :: mapkillbonus :: MapKillBonus_KilledBonus { unsafe { let __receiver = < MapKillBonus_GainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_GainSequence , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> * mut crate :: app :: mapkillbonus :: MapKillBonus_KilledBonus = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185bb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapKillBonus_GainSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_GainSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2185c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl < __T : IMapKillBonus_GainSequence > IMapKillBonus_GainSequenceMethods for __T { }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_GainSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_GainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn gain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_GainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn gain_kill_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_GainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn gain_killed_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_GainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_killed_bonus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_GainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_GainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_GainSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_GainSequence {
-# [doc = "`.ctor(crate::app::unit::Unit)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapKillBonus_GainSequence) , :: core :: stringify ! (new) ,)) ; < Self as IMapKillBonus_GainSequenceMethods > :: ctor (this , unit) ; this }
+#[cfg(feature="app-mapkillbonus")]pub trait IMapKillBonus_DownloadSequenceMethods:IMapKillBonus_DownloadSequence{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,cid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapKillBonus_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2185240usize)as*mut u8,();
+(MapKillBonus_DownloadSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+#[doc="`Get()` overload"]fn get(self,)->(){unsafe{let __receiver= <MapKillBonus_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2185280usize)as*mut u8,();
+(MapKillBonus_DownloadSequence)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <MapKillBonus_DownloadSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2185310usize)as*mut u8,();
+(MapKillBonus_DownloadSequence)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_KilledBonus { # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MapKillBonus_KilledBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186260usize) as * mut u8) ; __inner (self as * mut MapKillBonus_KilledBonus , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] pub fn serialize (& mut self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapKillBonus_KilledBonus , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186270usize) as * mut u8) ; __inner (self as * mut MapKillBonus_KilledBonus , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"] pub fn deserialize (& mut self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapKillBonus_KilledBonus , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21862b0usize) as * mut u8) ; __inner (self as * mut MapKillBonus_KilledBonus , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapkillbonus")]impl<__T:IMapKillBonus_DownloadSequence>IMapKillBonus_DownloadSequenceMethods for __T{}
 
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_KilledBonus { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KilledBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KilledBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KilledBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-mapkillbonus")]
-pub trait IMapKillBonus_CountImageMethods : IMapKillBonus_CountImage { # [doc = "`Add(i32, i16)` overload"] fn add (self , index : impl :: core :: convert :: Into < i32 > , v : impl :: core :: convert :: Into < i16 >) -> () { unsafe { let __receiver = < MapKillBonus_CountImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_CountImage , i32 , i16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21851a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapKillBonus_CountImage as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapKillBonus_CountImage , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21851e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl < __T : IMapKillBonus_CountImage > IMapKillBonus_CountImageMethods for __T { }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_CountImage { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_CountImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_CountImage as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_CountImage {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapKillBonus_CountImage) , :: core :: stringify ! (new) ,)) ; < Self as IMapKillBonus_CountImageMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_DownloadSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_KillBonus { # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MapKillBonus_KillBonus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21860a0usize) as * mut u8) ; __inner (self as * mut MapKillBonus_KillBonus , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] pub fn serialize (& mut self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapKillBonus_KillBonus , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21860b0usize) as * mut u8) ; __inner (self as * mut MapKillBonus_KillBonus , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"] pub fn deserialize (& mut self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapKillBonus_KillBonus , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2186190usize) as * mut u8) ; __inner (self as * mut MapKillBonus_KillBonus , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_DownloadSequence{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(cid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapKillBonus_DownloadSequence), ::core::stringify!(new),));
+ <Self as IMapKillBonus_DownloadSequenceMethods> ::ctor(this,cid);
+this}
+}
 
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_KillBonus { pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapKillBonus_KillBonus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-mapkillbonus")]pub trait IMapKillBonus_CountImageMethods:IMapKillBonus_CountImage{#[doc="`Add(i32, i16)` overload"]fn add(self,index:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <MapKillBonus_CountImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21851a0usize)as*mut u8,();
+(MapKillBonus_CountImage)__receiver,(i32)::core::convert::Into::into(index),(i16)::core::convert::Into::into(v))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapKillBonus_CountImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21851e0usize)as*mut u8,();
+(MapKillBonus_CountImage)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl<__T:IMapKillBonus_CountImage>IMapKillBonus_CountImageMethods for __T{}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_CountImage{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_CountImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapKillBonus_CountImage), ::core::stringify!(new),));
+ <Self as IMapKillBonus_CountImageMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus{#[doc="`IsEnable()` overload"]pub fn is_enable()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1deff50usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsEnableChapter(crate::app::chapterdata::ChapterData)` overload"]pub fn is_enable_chapter(chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df0070usize)as*mut u8,bool;
+(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
+}
+#[doc="`GetRandomValue(i32)` overload"]pub fn get_random_value(num:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df1b20usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(num))}
+}
+}
+
+#[cfg(feature="app-mapkillbonus")]pub trait IMapKillBonusMethods:IMapKillBonus{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1def800usize)as*mut u8,();
+(MapKillBonus)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1defed0usize)as*mut u8,();
+(MapKillBonus)__receiver)}
+}
+#[doc="`Download(crate::app::procinst::ProcInst)` overload"]fn download(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0090usize)as*mut u8,bool;
+(MapKillBonus)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Upload(crate::app::procinst::ProcInst)` overload"]fn upload(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0240usize)as*mut u8,bool;
+(MapKillBonus)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0420usize)as*mut u8,();
+(MapKillBonus)__receiver)}
+}
+#[doc="`TryGain(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]fn try_gain(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0d70usize)as*mut u8,();
+(MapKillBonus)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetKind(i32, i32)` overload"]fn get_kind(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapkillbonus::MapKillBonus_Kinds{unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0e50usize)as*mut u8,crate::app::mapkillbonus::MapKillBonus_Kinds;
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`CopyKindImageTo(crate::app::mapkillbonus::MapKillBonus_KindImage)` overload"]fn copy_kind_image_to(self,kind_image:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_KindImage>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0e60usize)as*mut u8,();
+(MapKillBonus)__receiver,(crate::app::mapkillbonus::MapKillBonus_KindImage)::core::convert::Into::into(kind_image))}
+}
+#[doc="`TryCreateEffect(i32, i32)` overload"]fn try_create_effect(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0ec0usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`TryCreateEffect(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"]fn try_create_effect_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_Kinds>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0f00usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::mapkillbonus::MapKillBonus_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`TryDeleteEffect(i32, i32)` overload"]fn try_delete_effect(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0e10usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`TryDeleteEffect(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"]fn try_delete_effect_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_Kinds>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df1090usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::mapkillbonus::MapKillBonus_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`AddCount(crate::app::unit::Unit)` overload"]fn add_count(self,dead_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df1180usize)as*mut u8,();
+(MapKillBonus)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(dead_unit))}
+}
+#[doc="`AddCount(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"]fn add_count_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_Kinds>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df12e0usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::mapkillbonus::MapKillBonus_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`GetCountImage(crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"]fn get_count_image(self,kind:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_Kinds>)->crate::app::mapkillbonus::MapKillBonus_CountImage{unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df03d0usize)as*mut u8,crate::app::mapkillbonus::MapKillBonus_CountImage;
+(MapKillBonus)__receiver,(crate::app::mapkillbonus::MapKillBonus_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`ClearNetSucceeded()` overload"]fn clear_net_succeeded(self,)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df01c0usize)as*mut u8,();
+(MapKillBonus)__receiver)}
+}
+#[doc="`GetBonusIndex(crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"]fn get_bonus_index(self,kind:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_Kinds>)->i32{unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df1450usize)as*mut u8,i32;
+(MapKillBonus)__receiver,(crate::app::mapkillbonus::MapKillBonus_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`RewindBonus(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds, i32)` overload"]fn rewind_bonus(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_Kinds> ,bonus_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df1470usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::mapkillbonus::MapKillBonus_Kinds)::core::convert::Into::into(kind),(i32)::core::convert::Into::into(bonus_index))}
+}
+#[doc="`RewindCount(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds, i32)` overload"]fn rewind_count(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_Kinds> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df14f0usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::mapkillbonus::MapKillBonus_Kinds)::core::convert::Into::into(kind),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`get_IsNetSucceeded()` overload"]fn get_is_net_succeeded(self,)->bool{unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0550usize)as*mut u8,bool;
+(MapKillBonus)__receiver)}
+}
+#[doc="`DecideCells(i32, i32)` overload"]fn decide_cells(self,map_max_kill_bonus_count:impl::core::convert::Into<i32> ,map_max_killed_bonus_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df05d0usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(map_max_kill_bonus_count),(i32)::core::convert::Into::into(map_max_killed_bonus_count))}
+}
+#[doc="`DecideKillBonus(i32)` overload"]fn decide_kill_bonus(self,map_max_bonus_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df0690usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(map_max_bonus_count))}
+}
+#[doc="`DecideKilledBonus(i32)` overload"]fn decide_killed_bonus(self,map_max_bonus_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df08f0usize)as*mut u8,();
+(MapKillBonus)__receiver,(i32)::core::convert::Into::into(map_max_bonus_count))}
+}
+#[doc="`GetKillBonusData()` overload"]fn get_kill_bonus_data(self,)->crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::killbonusdata::KillBonusData>{unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df18a0usize)as*mut u8,crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::killbonusdata::KillBonusData> ;
+(MapKillBonus)__receiver)}
+}
+#[doc="`GetKilledBonusData()` overload"]fn get_killed_bonus_data(self,)->crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::killedbonusdata::KilledBonusData>{unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df1b50usize)as*mut u8,crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::killedbonusdata::KilledBonusData> ;
+(MapKillBonus)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1defae0usize)as*mut u8,();
+(MapKillBonus)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df1dd0usize)as*mut u8,i32;
+(MapKillBonus)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df1de0usize)as*mut u8,();
+(MapKillBonus)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df2300usize)as*mut u8,();
+(MapKillBonus)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+#[doc="`DbgDump()` overload"]fn dbg_dump(self,)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df28b0usize)as*mut u8,();
+(MapKillBonus)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapKillBonus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3180usize)as*mut u8,();
+(MapKillBonus)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl<__T:IMapKillBonus>IMapKillBonusMethods for __T{}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_enable_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn download_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn upload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn try_gain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn copy_kind_image_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_create_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn try_create_effect_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn try_delete_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn try_delete_effect_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn add_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn add_count_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_count_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn clear_net_succeeded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_bonus_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn rewind_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn rewind_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_is_net_succeeded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn decide_cells_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn decide_kill_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn decide_killed_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_kill_bonus_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_killed_bonus_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_random_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn dbg_dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapKillBonus), ::core::stringify!(new),));
+ <Self as IMapKillBonusMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapkillbonus")]pub trait IMapKillBonus_KindImageMethods:IMapKillBonus_KindImage{#[doc="`SetKind(i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"]fn set_kind(self,index:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_Kinds>)->(){unsafe{let __receiver= <MapKillBonus_KindImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21863b0usize)as*mut u8,();
+(MapKillBonus_KindImage)__receiver,(i32)::core::convert::Into::into(index),(crate::app::mapkillbonus::MapKillBonus_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`SetKind(i32, i32, crate::app::mapkillbonus::MapKillBonus_Kinds)` overload"]fn set_kind_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,kind:impl::core::convert::Into<crate::app::mapkillbonus::MapKillBonus_Kinds>)->(){unsafe{let __receiver= <MapKillBonus_KindImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2185df0usize)as*mut u8,();
+(MapKillBonus_KindImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::mapkillbonus::MapKillBonus_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`GetKind(i32)` overload"]fn get_kind(self,index:impl::core::convert::Into<i32>)->crate::app::mapkillbonus::MapKillBonus_Kinds{unsafe{let __receiver= <MapKillBonus_KindImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186420usize)as*mut u8,crate::app::mapkillbonus::MapKillBonus_Kinds;
+(MapKillBonus_KindImage)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetKind(i32, i32)` overload"]fn get_kind_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapkillbonus::MapKillBonus_Kinds{unsafe{let __receiver= <MapKillBonus_KindImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21856e0usize)as*mut u8,crate::app::mapkillbonus::MapKillBonus_Kinds;
+(MapKillBonus_KindImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapKillBonus_KindImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186490usize)as*mut u8,();
+(MapKillBonus_KindImage)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl<__T:IMapKillBonus_KindImage>IMapKillBonus_KindImageMethods for __T{}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_KindImage{pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_kind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_kind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_KindImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapKillBonus_KindImage), ::core::stringify!(new),));
+ <Self as IMapKillBonus_KindImageMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_GainSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2185e70usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-mapkillbonus")]pub trait IMapKillBonus_GainSequenceMethods:IMapKillBonus_GainSequence{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapKillBonus_GainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21855d0usize)as*mut u8,();
+(MapKillBonus_GainSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Gain()` overload"]fn gain(self,)->(){unsafe{let __receiver= <MapKillBonus_GainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2185760usize)as*mut u8,();
+(MapKillBonus_GainSequence)__receiver)}
+}
+#[doc="`GainKillBonus()` overload"]fn gain_kill_bonus(self,)->(){unsafe{let __receiver= <MapKillBonus_GainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2185780usize)as*mut u8,();
+(MapKillBonus_GainSequence)__receiver)}
+}
+#[doc="`GainKilledBonus()` overload"]fn gain_killed_bonus(self,)->(){unsafe{let __receiver= <MapKillBonus_GainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21858b0usize)as*mut u8,();
+(MapKillBonus_GainSequence)__receiver)}
+}
+#[doc="`GetKilledBonus(crate::app::unit::Unit)` overload"]fn get_killed_bonus(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)-> *mut crate::app::mapkillbonus::MapKillBonus_KilledBonus{unsafe{let __receiver= <MapKillBonus_GainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2185bb0usize)as*mut u8, *mut crate::app::mapkillbonus::MapKillBonus_KilledBonus;
+(MapKillBonus_GainSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapKillBonus_GainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2185c80usize)as*mut u8,();
+(MapKillBonus_GainSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl<__T:IMapKillBonus_GainSequence>IMapKillBonus_GainSequenceMethods for __T{}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_GainSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn gain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn gain_kill_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn gain_killed_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_killed_bonus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_GainSequence{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapKillBonus_GainSequence), ::core::stringify!(new),));
+ <Self as IMapKillBonus_GainSequenceMethods> ::ctor(this,unit);
+this}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_KillBonus{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21860a0usize)as*mut u8,();
+(*mut MapKillBonus_KillBonus)self as*mut MapKillBonus_KillBonus)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]pub fn serialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21860b0usize)as*mut u8,();
+(*mut MapKillBonus_KillBonus)self as*mut MapKillBonus_KillBonus,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]pub fn deserialize(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2186190usize)as*mut u8,();
+(*mut MapKillBonus_KillBonus)self as*mut MapKillBonus_KillBonus,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+}
+
+#[cfg(feature="app-mapkillbonus")]impl MapKillBonus_KillBonus{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "app-mapkillbonus")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapKillBonus;
-    pub use super::IMapKillBonus;
-    pub use super::IMapKillBonusMethods;
+    pub use super::MapKillBonus_KilledBonus;
+    pub use super::MapKillBonus_Kinds;
+    pub use super::MapKillBonus_Work;
+    pub use super::MapKillBonus_Work_Pos;
     pub use super::MapKillBonus_DownloadSequence;
     pub use super::IMapKillBonus_DownloadSequence;
     pub use super::IMapKillBonus_DownloadSequenceMethods;
-    pub use super::MapKillBonus_Work_Pos;
-    pub use super::MapKillBonus_KindImage;
-    pub use super::IMapKillBonus_KindImage;
-    pub use super::IMapKillBonus_KindImageMethods;
-    pub use super::MapKillBonus_Work;
-    pub use super::MapKillBonus_GainSequence;
-    pub use super::IMapKillBonus_GainSequence;
-    pub use super::IMapKillBonus_GainSequenceMethods;
-    pub use super::MapKillBonus_Kinds;
-    pub use super::MapKillBonus_KilledBonus;
     pub use super::MapKillBonus_CountImage;
     pub use super::IMapKillBonus_CountImage;
     pub use super::IMapKillBonus_CountImageMethods;
+    pub use super::MapKillBonus;
+    pub use super::IMapKillBonus;
+    pub use super::IMapKillBonusMethods;
+    pub use super::MapKillBonus_KindImage;
+    pub use super::IMapKillBonus_KindImage;
+    pub use super::IMapKillBonus_KindImageMethods;
+    pub use super::MapKillBonus_GainSequence;
+    pub use super::IMapKillBonus_GainSequence;
+    pub use super::IMapKillBonus_GainSequenceMethods;
     pub use super::MapKillBonus_KillBonus;
     pub use crate::app::mapimagecore_1::IMapImageCore_1;
     pub use crate::app::mapimagecorebyte::IMapImageCoreByte;

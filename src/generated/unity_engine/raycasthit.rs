@@ -4,49 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/raycasthit/RaycastHit.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RaycastHit {
-    pub m_point: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_normal: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_face_id: u32,
-    pub m_distance: f32,
-    pub m_uv: crate :: unity_engine :: vector2 :: Vector2,
-    pub m_collider: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/raycasthit/RaycastHit.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RaycastHit{pub m_point:crate::unity_engine::vector3::Vector3,pub m_normal:crate::unity_engine::vector3::Vector3,pub m_face_id:u32,pub m_distance:f32,pub m_uv:crate::unity_engine::vector2::Vector2,pub m_collider:i32,}
+impl::unity2::ClassIdentity for RaycastHit{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="RaycastHit";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RaycastHit {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "RaycastHit";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RaycastHit {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RaycastHit{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -54,11 +26,49 @@ impl ::unity2::IlType for RaycastHit {
 #[cfg(feature = "unity_engine-raycasthit-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-raycasthit")]
-impl RaycastHit { # [doc = "`get_collider()` overload"] pub fn get_collider (& mut self ,) -> crate :: unity_engine :: collider :: Collider { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: collider :: Collider = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efd8e0usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: option :: Option :: None) } } } # [doc = "`get_point()` overload"] pub fn get_point (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efd9c0usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: option :: Option :: None) } } } # [doc = "`set_point(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_point (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efd9d0usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_normal()` overload"] pub fn get_normal (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efd9e0usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: option :: Option :: None) } } } # [doc = "`set_normal(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_normal (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efd9f0usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_distance()` overload"] pub fn get_distance (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efda00usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: option :: Option :: None) } } } # [doc = "`set_distance(f32)` overload"] pub fn set_distance (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efda10usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_triangleIndex()` overload"] pub fn get_triangle_index (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efda20usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: option :: Option :: None) } } } # [doc = "`get_transform()` overload"] pub fn get_transform (& mut self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efda30usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: option :: Option :: None) } } } # [doc = "`get_rigidbody()` overload"] pub fn get_rigidbody (& mut self ,) -> crate :: unity_engine :: rigidbody :: Rigidbody { unsafe { { let __inner : extern "C" fn (* mut RaycastHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rigidbody :: Rigidbody = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3efdc50usize) as * mut u8) ; __inner (self as * mut RaycastHit , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-raycasthit")]impl RaycastHit{#[doc="`get_collider()` overload"]pub fn get_collider(&mut self,)->crate::unity_engine::collider::Collider{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efd8e0usize)as*mut u8,crate::unity_engine::collider::Collider;
+(*mut RaycastHit)self as*mut RaycastHit)}
+}
+#[doc="`get_point()` overload"]pub fn get_point(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efd9c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut RaycastHit)self as*mut RaycastHit)}
+}
+#[doc="`set_point(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_point(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efd9d0usize)as*mut u8,();
+(*mut RaycastHit)self as*mut RaycastHit,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_normal()` overload"]pub fn get_normal(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efd9e0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut RaycastHit)self as*mut RaycastHit)}
+}
+#[doc="`set_normal(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_normal(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efd9f0usize)as*mut u8,();
+(*mut RaycastHit)self as*mut RaycastHit,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_distance()` overload"]pub fn get_distance(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efda00usize)as*mut u8,f32;
+(*mut RaycastHit)self as*mut RaycastHit)}
+}
+#[doc="`set_distance(f32)` overload"]pub fn set_distance(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efda10usize)as*mut u8,();
+(*mut RaycastHit)self as*mut RaycastHit,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_triangleIndex()` overload"]pub fn get_triangle_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efda20usize)as*mut u8,i32;
+(*mut RaycastHit)self as*mut RaycastHit)}
+}
+#[doc="`get_transform()` overload"]pub fn get_transform(&mut self,)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efda30usize)as*mut u8,crate::unity_engine::transform::Transform;
+(*mut RaycastHit)self as*mut RaycastHit)}
+}
+#[doc="`get_rigidbody()` overload"]pub fn get_rigidbody(&mut self,)->crate::unity_engine::rigidbody::Rigidbody{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3efdc50usize)as*mut u8,crate::unity_engine::rigidbody::Rigidbody;
+(*mut RaycastHit)self as*mut RaycastHit)}
+}
+}
 
-#[cfg(feature = "unity_engine-raycasthit")]
-impl RaycastHit { pub fn get_collider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_point_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_triangle_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_rigidbody_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RaycastHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="unity_engine-raycasthit")]impl RaycastHit{pub fn get_collider_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_triangle_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_rigidbody_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
 #[cfg(feature = "unity_engine-raycasthit")]
 #[doc(hidden)]

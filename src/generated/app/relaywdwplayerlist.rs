@@ -4,40 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaywdwplayerlist/RelayWdwPlayerList.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayWdwPlayerList")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RelayWdwPlayerList {
-# [offset (24)] # [rename (name = "m_PlayerList")] pub m_player_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaywdwplayerlist/RelayWdwPlayerList.md"))]#[::unity2::class(namespace="App",name="RelayWdwPlayerList")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RelayWdwPlayerList{#[offset(24)]#[rename(name="m_PlayerList")]pub m_player_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-relaywdwplayerlist-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relaywdwplayerlist")]
-pub trait IRelayWdwPlayerListMethods : IRelayWdwPlayerList { # [doc = "`SetData(crate::app::relayservermetadata::RelayServerMetaData)` overload"] fn set_data (self , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData >) -> () { unsafe { let __receiver = < RelayWdwPlayerList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayWdwPlayerList , crate :: app :: relayservermetadata :: RelayServerMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2005020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`SetLastPlayer(i32, ::unity2::Il2CppString)` overload"] fn set_last_player (self , idx : impl :: core :: convert :: Into < i32 > , player_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RelayWdwPlayerList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayWdwPlayerList , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200a7f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (idx) , :: core :: convert :: Into :: into (player_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayWdwPlayerList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayWdwPlayerList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200f650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relaywdwplayerlist")]pub trait IRelayWdwPlayerListMethods:IRelayWdwPlayerList{#[doc="`SetData(crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn set_data(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{let __receiver= <RelayWdwPlayerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2005020usize)as*mut u8,();
+(RelayWdwPlayerList)__receiver,(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`SetLastPlayer(i32, ::unity2::Il2CppString)` overload"]fn set_last_player(self,idx:impl::core::convert::Into<i32> ,player_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayWdwPlayerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200a7f0usize)as*mut u8,();
+(RelayWdwPlayerList)__receiver,(i32)::core::convert::Into::into(idx),(::unity2::Il2CppString)::core::convert::Into::into(player_name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayWdwPlayerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200f650usize)as*mut u8,();
+(RelayWdwPlayerList)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relaywdwplayerlist")]
-impl < __T : IRelayWdwPlayerList > IRelayWdwPlayerListMethods for __T { }
+#[cfg(feature="app-relaywdwplayerlist")]impl<__T:IRelayWdwPlayerList>IRelayWdwPlayerListMethods for __T{}
 
-#[cfg(feature = "app-relaywdwplayerlist")]
-impl RelayWdwPlayerList { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayWdwPlayerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_last_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayWdwPlayerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayWdwPlayerList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-relaywdwplayerlist")]impl RelayWdwPlayerList{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_last_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-relaywdwplayerlist")]
-impl RelayWdwPlayerList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayWdwPlayerList) , :: core :: stringify ! (new) ,)) ; < Self as IRelayWdwPlayerListMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relaywdwplayerlist")]impl RelayWdwPlayerList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayWdwPlayerList), ::core::stringify!(new),));
+ <Self as IRelayWdwPlayerListMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relaywdwplayerlist")]

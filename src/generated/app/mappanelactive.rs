@@ -4,182 +4,75 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield64 :: { BitField64 , IBitField64 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate64_1 :: { BitFieldTemplate64_1 , IBitFieldTemplate64_1 }
- ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: root :: mappanelbase_1 :: { IMapPanelBase_1 , MapPanelBase_1 }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield64::{BitField64,IBitField64}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate64_1::{BitFieldTemplate64_1,IBitFieldTemplate64_1}
+;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::root::mappanelbase_1::{IMapPanelBase_1,MapPanelBase_1}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelActive.FlagField")] # [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >)] pub struct MapPanelActive_FlagField {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive.md"))]#[::unity2::class(namespace="App",name="MapPanelActive")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelactive::MapPanelActive>)]pub struct MapPanelActive{#[offset(64)]#[rename(name="m_ImageList")]pub m_image_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mappanelactive::MapPanelActive_MeshIndex> > , #[offset(72)]#[rename(name="m_MoveImage")]pub m_move_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_AttackImage")]pub m_attack_image:crate::unity_engine::material::Material, #[offset(88)]#[rename(name="m_HealImage")]pub m_heal_image:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_SupportImage")]pub m_support_image:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_InterferenceImage")]pub m_interference_image:crate::unity_engine::material::Material, #[offset(112)]#[rename(name="m_DanceImage")]pub m_dance_image:crate::unity_engine::material::Material, #[offset(120)]#[rename(name="m_ActionImage")]pub m_action_image:crate::unity_engine::material::Material, #[offset(128)]#[rename(name="m_RangeImage")]pub m_range_image:crate::unity_engine::material::Material, #[offset(136)]#[rename(name="m_OverlapImage")]pub m_overlap_image:crate::unity_engine::material::Material, #[offset(144)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(148)]#[rename(name="m_Mode")]pub m_mode:crate::app::mappaneldeploy::MapPanelDeploy_Mode, #[offset(152)]#[rename(name="m_Flag")]pub m_flag:crate::app::mappanelactive::MapPanelActive_FlagField, #[offset(160)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(168)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(176)]#[rename(name="m_MoveColor")]pub m_move_color:crate::unity_engine::color::Color, #[offset(192)]#[rename(name="m_AttackColor")]pub m_attack_color:crate::unity_engine::color::Color, #[offset(208)]#[rename(name="m_HealColor")]pub m_heal_color:crate::unity_engine::color::Color, #[offset(224)]#[rename(name="m_SupportColor")]pub m_support_color:crate::unity_engine::color::Color, #[offset(240)]#[rename(name="m_InterferenceColor")]pub m_interference_color:crate::unity_engine::color::Color, #[offset(256)]#[rename(name="m_DanceColor")]pub m_dance_color:crate::unity_engine::color::Color, #[offset(272)]#[rename(name="m_ActionColor")]pub m_action_color:crate::unity_engine::color::Color, #[offset(288)]#[rename(name="m_DragonVeinColor")]pub m_dragon_vein_color:crate::unity_engine::color::Color, #[offset(304)]#[rename(name="m_OverlapColor")]pub m_overlap_color:crate::unity_engine::color::Color, #[offset(320)]#[rename(name="m_AttackRangeColor")]pub m_attack_range_color:crate::unity_engine::color::Color, #[offset(336)]#[rename(name="m_HealRangeColor")]pub m_heal_range_color:crate::unity_engine::color::Color, #[offset(352)]#[rename(name="m_SupportRangeColor")]pub m_support_range_color:crate::unity_engine::color::Color, #[offset(368)]#[rename(name="m_InterferenceRangeColor")]pub m_interference_range_color:crate::unity_engine::color::Color, #[offset(384)]#[rename(name="m_WarpRangeColor")]pub m_warp_range_color:crate::unity_engine::color::Color, #[offset(400)]#[rename(name="m_DanceRangeColor")]pub m_dance_range_color:crate::unity_engine::color::Color, #[offset(416)]#[rename(name="m_ActionRangeColor")]pub m_action_range_color:crate::unity_engine::color::Color, #[offset(432)]#[rename(name="m_RangeColor")]pub m_range_color:crate::unity_engine::color::Color, #[offset(448)]#[rename(name="m_DisplayColor")]pub m_display_color:crate::unity_engine::color::Color, #[offset(464)]#[rename(name="m_TempImage")]pub m_temp_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(472)]#[rename(name="m_MovingAlpha")]pub m_moving_alpha:crate::app::gamecurve::GameCurve, #[offset(480)]#[rename(name="m_StoppedAlpha")]pub m_stopped_alpha:crate::app::gamecurve::GameCurve, #[offset(488)]#[rename(name="m_Time")]pub m_time:f32, #[offset(496)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[static_field]#[rename(name="AROUND")]pub around: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int> , #[static_field]#[rename(name="ROTATION")]pub rotation: ::unity2::Array<i32> , #[static_field]#[rename(name="FLAG")]pub flag_field: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int> ,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelactive/MapPanelActive_MeshIndex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapPanelActive_MeshIndex  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive_TargetFunc.md"))]#[::unity2::class(namespace="App",name="MapPanelActive.TargetFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapPanelActive_TargetFunc{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive_FlagField.md"))]#[::unity2::class(namespace="App",name="MapPanelActive.FlagField")]#[parent(crate::app::bitfieldtemplate64_1::BitFieldTemplate64_1<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> >)]pub struct MapPanelActive_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelactive/MapPanelActive_MeshIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelActive_MeshIndex{pub value:i32,}
+impl::unity2::ClassIdentity for MapPanelActive_MeshIndex{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapPanelActive.MeshIndex";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MapPanelActive_MeshIndex  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPanelActive.MeshIndex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MapPanelActive_MeshIndex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MapPanelActive_MeshIndex  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MapPanelActive_MeshIndex{pub fn r#move()->Self{Self{value:0}
 }
-
-
-impl  MapPanelActive_MeshIndex  {
-    pub fn r#move() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn heal() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn support() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn interference() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn dance() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn action() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn range() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn overlap() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 9 }
-
-    }
-
+pub fn attack()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_TargetFunc.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelActive.TargetFunc")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct MapPanelActive_TargetFunc {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelActive")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelactive :: MapPanelActive >)] pub struct MapPanelActive {
-# [offset (64)] # [rename (name = "m_ImageList")] pub m_image_list : :: unity2 :: Array < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mappanelactive :: MapPanelActive_MeshIndex > > ,
-# [offset (72)] # [rename (name = "m_MoveImage")] pub m_move_image : crate :: unity_engine :: material :: Material ,
-# [offset (80)] # [rename (name = "m_AttackImage")] pub m_attack_image : crate :: unity_engine :: material :: Material ,
-# [offset (88)] # [rename (name = "m_HealImage")] pub m_heal_image : crate :: unity_engine :: material :: Material ,
-# [offset (96)] # [rename (name = "m_SupportImage")] pub m_support_image : crate :: unity_engine :: material :: Material ,
-# [offset (104)] # [rename (name = "m_InterferenceImage")] pub m_interference_image : crate :: unity_engine :: material :: Material ,
-# [offset (112)] # [rename (name = "m_DanceImage")] pub m_dance_image : crate :: unity_engine :: material :: Material ,
-# [offset (120)] # [rename (name = "m_ActionImage")] pub m_action_image : crate :: unity_engine :: material :: Material ,
-# [offset (128)] # [rename (name = "m_RangeImage")] pub m_range_image : crate :: unity_engine :: material :: Material ,
-# [offset (136)] # [rename (name = "m_OverlapImage")] pub m_overlap_image : crate :: unity_engine :: material :: Material ,
-# [offset (144)] # [rename (name = "m_Mind")] pub m_mind : crate :: app :: mapmind :: MapMind_Type ,
-# [offset (148)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: mappaneldeploy :: MapPanelDeploy_Mode ,
-# [offset (152)] # [rename (name = "m_Flag")] pub m_flag : crate :: app :: mappanelactive :: MapPanelActive_FlagField ,
-# [offset (160)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
-# [offset (168)] # [rename (name = "m_Alpha")] pub m_alpha : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (176)] # [rename (name = "m_MoveColor")] pub m_move_color : crate :: unity_engine :: color :: Color ,
-# [offset (192)] # [rename (name = "m_AttackColor")] pub m_attack_color : crate :: unity_engine :: color :: Color ,
-# [offset (208)] # [rename (name = "m_HealColor")] pub m_heal_color : crate :: unity_engine :: color :: Color ,
-# [offset (224)] # [rename (name = "m_SupportColor")] pub m_support_color : crate :: unity_engine :: color :: Color ,
-# [offset (240)] # [rename (name = "m_InterferenceColor")] pub m_interference_color : crate :: unity_engine :: color :: Color ,
-# [offset (256)] # [rename (name = "m_DanceColor")] pub m_dance_color : crate :: unity_engine :: color :: Color ,
-# [offset (272)] # [rename (name = "m_ActionColor")] pub m_action_color : crate :: unity_engine :: color :: Color ,
-# [offset (288)] # [rename (name = "m_DragonVeinColor")] pub m_dragon_vein_color : crate :: unity_engine :: color :: Color ,
-# [offset (304)] # [rename (name = "m_OverlapColor")] pub m_overlap_color : crate :: unity_engine :: color :: Color ,
-# [offset (320)] # [rename (name = "m_AttackRangeColor")] pub m_attack_range_color : crate :: unity_engine :: color :: Color ,
-# [offset (336)] # [rename (name = "m_HealRangeColor")] pub m_heal_range_color : crate :: unity_engine :: color :: Color ,
-# [offset (352)] # [rename (name = "m_SupportRangeColor")] pub m_support_range_color : crate :: unity_engine :: color :: Color ,
-# [offset (368)] # [rename (name = "m_InterferenceRangeColor")] pub m_interference_range_color : crate :: unity_engine :: color :: Color ,
-# [offset (384)] # [rename (name = "m_WarpRangeColor")] pub m_warp_range_color : crate :: unity_engine :: color :: Color ,
-# [offset (400)] # [rename (name = "m_DanceRangeColor")] pub m_dance_range_color : crate :: unity_engine :: color :: Color ,
-# [offset (416)] # [rename (name = "m_ActionRangeColor")] pub m_action_range_color : crate :: unity_engine :: color :: Color ,
-# [offset (432)] # [rename (name = "m_RangeColor")] pub m_range_color : crate :: unity_engine :: color :: Color ,
-# [offset (448)] # [rename (name = "m_DisplayColor")] pub m_display_color : crate :: unity_engine :: color :: Color ,
-# [offset (464)] # [rename (name = "m_TempImage")] pub m_temp_image : crate :: app :: mapimagecorebit :: MapImageCoreBit ,
-# [offset (472)] # [rename (name = "m_MovingAlpha")] pub m_moving_alpha : crate :: app :: gamecurve :: GameCurve ,
-# [offset (480)] # [rename (name = "m_StoppedAlpha")] pub m_stopped_alpha : crate :: app :: gamecurve :: GameCurve ,
-# [offset (488)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (496)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [static_field] # [rename (name = "AROUND")] pub around : :: unity2 :: Array < crate :: unity_engine :: vector2int :: Vector2Int > ,
-# [static_field] # [rename (name = "ROTATION")] pub rotation : :: unity2 :: Array < i32 > ,
-# [static_field] # [rename (name = "FLAG")] pub flag_field : :: unity2 :: Array < crate :: unity_engine :: vector2int :: Vector2Int > ,
+pub fn heal()->Self{Self{value:2}
+}
+pub fn support()->Self{Self{value:3}
+}
+pub fn interference()->Self{Self{value:4}
+}
+pub fn dance()->Self{Self{value:5}
+}
+pub fn action()->Self{Self{value:6}
+}
+pub fn range()->Self{Self{value:7}
+}
+pub fn overlap()->Self{Self{value:8}
+}
+pub fn num()->Self{Self{value:9}
+}
 }
 
 }
@@ -187,64 +80,289 @@ impl  MapPanelActive_MeshIndex  {
 #[cfg(feature = "app-mappanelactive-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mappanelactive")]
-pub trait IMapPanelActive_FlagFieldMethods : IMapPanelActive_FlagField { # [doc = "`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"] fn to_long (self , value : impl :: core :: convert :: Into < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >) -> i64 { unsafe { let __receiver = < MapPanelActive_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive_FlagField , crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPanelActive_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mappanelactive")]
-impl < __T : IMapPanelActive_FlagField > IMapPanelActive_FlagFieldMethods for __T { }
-
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive_FlagField { pub fn to_long_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive_FlagField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelActive_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelActive_FlagFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e02600usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-mappanelactive")]
-pub trait IMapPanelActive_TargetFuncMethods : IMapPanelActive_TargetFunc { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < MapPanelActive_TargetFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive_TargetFunc , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d3a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(i32, i32)` overload"] fn invoke (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapPanelActive_TargetFunc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive_TargetFunc , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mappanelactive")]
-impl < __T : IMapPanelActive_TargetFunc > IMapPanelActive_TargetFuncMethods for __T { }
-
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive_TargetFunc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive_TargetFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive_TargetFunc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive_TargetFunc {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelActive_TargetFunc) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelActive_TargetFuncMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-mappanelactive")]pub trait IMapPanelActiveMethods:IMapPanelActive{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff2e0usize)as*mut u8,i32;
+(MapPanelActive)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff2f0usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff350usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff480usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
+#[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff810usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(MapPanelActive)__receiver)}
+}
+#[doc="`UpdatePanelAlpha()` overload"]fn update_panel_alpha(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff7e0usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
+#[doc="`UpdateAlwaysPanelAlpha()` overload"]fn update_always_panel_alpha(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dffa80usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
+#[doc="`UpdateOrderPanelAlpha()` overload"]fn update_order_panel_alpha(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dffcc0usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
+#[doc="`GetMode()` overload"]fn get_mode(self,)->crate::app::mappaneldeploy::MapPanelDeploy_Mode{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfff80usize)as*mut u8,crate::app::mappaneldeploy::MapPanelDeploy_Mode;
+(MapPanelActive)__receiver)}
+}
+#[doc="`SetMode(crate::app::mappaneldeploy::MapPanelDeploy_Mode, bool, crate::app::skilldata::SkillData)` overload"]fn set_mode(self,mode:impl::core::convert::Into<crate::app::mappaneldeploy::MapPanelDeploy_Mode> ,is_force_update:impl::core::convert::Into<bool> ,command_skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dfff90usize)as*mut u8,();
+(MapPanelActive)__receiver,(crate::app::mappaneldeploy::MapPanelDeploy_Mode)::core::convert::Into::into(mode),(bool)::core::convert::Into::into(is_force_update),(crate::app::skilldata::SkillData)::core::convert::Into::into(command_skill))}
+}
+#[doc="`UpdateMode()` overload"]fn update_mode(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff660usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
+#[doc="`UpdateVertex()` overload"]fn update_vertex(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dff7b0usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
+#[doc="`SetUnit(crate::app::unit::Unit)` overload"]fn set_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e00c10usize)as*mut u8,();
+(MapPanelActive)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`set_IsUpdate(bool)` overload"]fn set_is_update(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e00c20usize)as*mut u8,();
+(MapPanelActive)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`CanTarget(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn can_target(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e00c30usize)as*mut u8,bool;
+(MapPanelActive)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`CanAttack(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn can_attack(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e00eb0usize)as*mut u8,bool;
+(MapPanelActive)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`CanUseRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn can_use_rod(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e00fb0usize)as*mut u8,bool;
+(MapPanelActive)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`EachTargetCell(i32, i32, i32, i32, crate::app::mappanelactive::MapPanelActive_TargetFunc)` overload"]fn each_target_cell(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,min_range:impl::core::convert::Into<i32> ,max_range:impl::core::convert::Into<i32> ,func:impl::core::convert::Into<crate::app::mappanelactive::MapPanelActive_TargetFunc>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e010a0usize)as*mut u8,();
+(MapPanelActive)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(min_range),(i32)::core::convert::Into::into(max_range),(crate::app::mappanelactive::MapPanelActive_TargetFunc)::core::convert::Into::into(func))}
+}
+#[doc="`AddCell(crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>, i32, i32, crate::unity_engine::color::Color, crate::root::mappanelbase_1::MapPanelBase_1_PanelType<crate::app::mappanelactive::MapPanelActive>)` overload"]fn add_cell(self,ranges:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> > ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,r#type:impl::core::convert::Into<crate::root::mappanelbase_1::MapPanelBase_1_PanelType<crate::app::mappanelactive::MapPanelActive> >)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e011e0usize)as*mut u8,();
+(MapPanelActive)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>)::core::convert::Into::into(ranges),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(crate::root::mappanelbase_1::MapPanelBase_1_PanelType<crate::app::mappanelactive::MapPanelActive>)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetVertex()` overload"]fn set_vertex(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e006a0usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
+#[doc="`SetMesh(crate::app::mapdeploymoveimage::MapDeployMoveImage, crate::app::mappanelactive::MapPanelActive_MeshIndex)` overload"]fn set_mesh(self,image:impl::core::convert::Into<crate::app::mapdeploymoveimage::MapDeployMoveImage> ,index:impl::core::convert::Into<crate::app::mappanelactive::MapPanelActive_MeshIndex>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e013b0usize)as*mut u8,();
+(MapPanelActive)__receiver,(crate::app::mapdeploymoveimage::MapDeployMoveImage)::core::convert::Into::into(image),(crate::app::mappanelactive::MapPanelActive_MeshIndex)::core::convert::Into::into(index))}
+}
+#[doc="`SetMesh(crate::app::mapimagecorebit::MapImageCoreBit, crate::app::mappanelactive::MapPanelActive_MeshIndex, crate::unity_engine::color::Color, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>, bool)` overload"]fn set_mesh_2(self,image:impl::core::convert::Into<crate::app::mapimagecorebit::MapImageCoreBit> ,index:impl::core::convert::Into<crate::app::mappanelactive::MapPanelActive_MeshIndex> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,display:impl::core::convert::Into<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy> > ,is_ignore_move_image:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e01800usize)as*mut u8,();
+(MapPanelActive)__receiver,(crate::app::mapimagecorebit::MapImageCoreBit)::core::convert::Into::into(image),(crate::app::mappanelactive::MapPanelActive_MeshIndex)::core::convert::Into::into(index),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>)::core::convert::Into::into(display),(bool)::core::convert::Into::into(is_ignore_move_image))}
+}
+#[doc="`CanSetMesh(i32, i32)` overload"]fn can_set_mesh(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e01fb0usize)as*mut u8,bool;
+(MapPanelActive)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`CanDrawMoveImage(i32, i32)` overload"]fn can_draw_move_image(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e01d60usize)as*mut u8,bool;
+(MapPanelActive)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`get_Mind()` overload"]fn get_mind(self,)->crate::app::mapmind::MapMind_Type{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02300usize)as*mut u8,crate::app::mapmind::MapMind_Type;
+(MapPanelActive)__receiver)}
+}
+#[doc="`set_Mind(crate::app::mapmind::MapMind_Type)` overload"]fn set_mind(self,value:impl::core::convert::Into<crate::app::mapmind::MapMind_Type>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02310usize)as*mut u8,();
+(MapPanelActive)__receiver,(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(value))}
+}
+#[doc="`set_Flag(crate::app::mappanelactive::MapPanelActive_FlagField)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::mappanelactive::MapPanelActive_FlagField>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02320usize)as*mut u8,();
+(MapPanelActive)__receiver,(crate::app::mappanelactive::MapPanelActive_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`get_HealColor()` overload"]fn get_heal_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02330usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`get_ActionColor()` overload"]fn get_action_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02340usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`get_DragonVeinColor()` overload"]fn get_dragon_vein_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02360usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`get_AttackRangeColor()` overload"]fn get_attack_range_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02380usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`get_HealRangeColor()` overload"]fn get_heal_range_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e023a0usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`get_SupportRangeColor()` overload"]fn get_support_range_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e023c0usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`get_InterferenceRangeColor()` overload"]fn get_interference_range_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e023e0usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`get_WarpRangeColor()` overload"]fn get_warp_range_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02400usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`get_DanceRangeColor()` overload"]fn get_dance_range_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02420usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`get_ActionRangeColor()` overload"]fn get_action_range_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02440usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`set_DisplayColor(crate::unity_engine::color::Color)` overload"]fn set_display_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02460usize)as*mut u8,();
+(MapPanelActive)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`get_RangeColor()` overload"]fn get_range_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02480usize)as*mut u8,crate::unity_engine::color::Color;
+(MapPanelActive)__receiver)}
+}
+#[doc="`set_RangeColor(crate::unity_engine::color::Color)` overload"]fn set_range_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e024a0usize)as*mut u8,();
+(MapPanelActive)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelActive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e024c0usize)as*mut u8,();
+(MapPanelActive)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02600usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mappanelactive")]impl<__T:IMapPanelActive>IMapPanelActiveMethods for __T{}
 
-#[cfg(feature = "app-mappanelactive")]
-pub trait IMapPanelActiveMethods : IMapPanelActive { # [doc = "`get_SubMeshCount()` overload"] fn get_sub_mesh_count (self ,) -> i32 { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dff2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dff2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dff350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dff480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSourceMaterials()` overload"] fn get_source_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dff810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdatePanelAlpha()` overload"] fn update_panel_alpha (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dff7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAlwaysPanelAlpha()` overload"] fn update_always_panel_alpha (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dffa80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateOrderPanelAlpha()` overload"] fn update_order_panel_alpha (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dffcc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMode()` overload"] fn get_mode (self ,) -> crate :: app :: mappaneldeploy :: MapPanelDeploy_Mode { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: app :: mappaneldeploy :: MapPanelDeploy_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dfff80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMode(crate::app::mappaneldeploy::MapPanelDeploy_Mode, bool, crate::app::skilldata::SkillData)` overload"] fn set_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: mappaneldeploy :: MapPanelDeploy_Mode > , is_force_update : impl :: core :: convert :: Into < bool > , command_skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: app :: mappaneldeploy :: MapPanelDeploy_Mode , bool , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dfff90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (is_force_update) , :: core :: convert :: Into :: into (command_skill) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateMode()` overload"] fn update_mode (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dff660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVertex()` overload"] fn update_vertex (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dff7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUnit(crate::app::unit::Unit)` overload"] fn set_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e00c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`set_IsUpdate(bool)` overload"] fn set_is_update (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e00c20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CanTarget(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn can_target (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e00c30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`CanAttack(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn can_attack (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e00eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`CanUseRod(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn can_use_rod (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e00fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`EachTargetCell(i32, i32, i32, i32, crate::app::mappanelactive::MapPanelActive_TargetFunc)` overload"] fn each_target_cell (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , min_range : impl :: core :: convert :: Into < i32 > , max_range : impl :: core :: convert :: Into < i32 > , func : impl :: core :: convert :: Into < crate :: app :: mappanelactive :: MapPanelActive_TargetFunc >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , i32 , i32 , i32 , i32 , crate :: app :: mappanelactive :: MapPanelActive_TargetFunc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e010a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (min_range) , :: core :: convert :: Into :: into (max_range) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`AddCell(crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>, i32, i32, crate::unity_engine::color::Color, crate::root::mappanelbase_1::MapPanelBase_1_PanelType<crate::app::mappanelactive::MapPanelActive>)` overload"] fn add_cell (self , ranges : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: rangedata :: RangeData_Offset > > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , r#type : impl :: core :: convert :: Into < crate :: root :: mappanelbase_1 :: MapPanelBase_1_PanelType < crate :: app :: mappanelactive :: MapPanelActive > >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: rangedata :: RangeData_Offset > , i32 , i32 , crate :: unity_engine :: color :: Color , crate :: root :: mappanelbase_1 :: MapPanelBase_1_PanelType < crate :: app :: mappanelactive :: MapPanelActive > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e011e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ranges) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetVertex()` overload"] fn set_vertex (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e006a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMesh(crate::app::mapdeploymoveimage::MapDeployMoveImage, crate::app::mappanelactive::MapPanelActive_MeshIndex)` overload"] fn set_mesh (self , image : impl :: core :: convert :: Into < crate :: app :: mapdeploymoveimage :: MapDeployMoveImage > , index : impl :: core :: convert :: Into < crate :: app :: mappanelactive :: MapPanelActive_MeshIndex >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: app :: mapdeploymoveimage :: MapDeployMoveImage , crate :: app :: mappanelactive :: MapPanelActive_MeshIndex , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e013b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (image) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SetMesh(crate::app::mapimagecorebit::MapImageCoreBit, crate::app::mappanelactive::MapPanelActive_MeshIndex, crate::unity_engine::color::Color, crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<crate::app::mapdeploy::MapDeploy>, bool)` overload"] fn set_mesh_2 (self , image : impl :: core :: convert :: Into < crate :: app :: mapimagecorebit :: MapImageCoreBit > , index : impl :: core :: convert :: Into < crate :: app :: mappanelactive :: MapPanelActive_MeshIndex > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , display : impl :: core :: convert :: Into < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > > , is_ignore_move_image : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: app :: mapimagecorebit :: MapImageCoreBit , crate :: app :: mappanelactive :: MapPanelActive_MeshIndex , crate :: unity_engine :: color :: Color , crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_DisplayType < crate :: app :: mapdeploy :: MapDeploy > , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e01800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (image) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (display) , :: core :: convert :: Into :: into (is_ignore_move_image) , :: core :: option :: Option :: None) } } } # [doc = "`CanSetMesh(i32, i32)` overload"] fn can_set_mesh (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e01fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`CanDrawMoveImage(i32, i32)` overload"] fn can_draw_move_image (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e01d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`get_Mind()` overload"] fn get_mind (self ,) -> crate :: app :: mapmind :: MapMind_Type { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapmind :: MapMind_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Mind(crate::app::mapmind::MapMind_Type)` overload"] fn set_mind (self , value : impl :: core :: convert :: Into < crate :: app :: mapmind :: MapMind_Type >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: app :: mapmind :: MapMind_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::mappanelactive::MapPanelActive_FlagField)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: mappanelactive :: MapPanelActive_FlagField >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: app :: mappanelactive :: MapPanelActive_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_HealColor()` overload"] fn get_heal_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ActionColor()` overload"] fn get_action_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DragonVeinColor()` overload"] fn get_dragon_vein_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_AttackRangeColor()` overload"] fn get_attack_range_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_HealRangeColor()` overload"] fn get_heal_range_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e023a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SupportRangeColor()` overload"] fn get_support_range_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e023c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_InterferenceRangeColor()` overload"] fn get_interference_range_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e023e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_WarpRangeColor()` overload"] fn get_warp_range_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DanceRangeColor()` overload"] fn get_dance_range_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ActionRangeColor()` overload"] fn get_action_range_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DisplayColor(crate::unity_engine::color::Color)` overload"] fn set_display_color (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RangeColor()` overload"] fn get_range_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e02480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RangeColor(crate::unity_engine::color::Color)` overload"] fn set_range_color (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e024a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPanelActive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelActive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e024c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive{pub fn get_sub_mesh_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_source_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_panel_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_always_panel_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_order_panel_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn update_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_is_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn can_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn can_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn can_use_rod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn each_target_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn add_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_mesh_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn can_set_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn can_draw_move_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_heal_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_action_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_dragon_vein_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_attack_range_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_heal_range_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_support_range_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_interference_range_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_warp_range_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_dance_range_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_action_range_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn set_display_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_range_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn set_range_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+}
 
-#[cfg(feature = "app-mappanelactive")]
-impl < __T : IMapPanelActive > IMapPanelActiveMethods for __T { }
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelActive), ::core::stringify!(new),));
+ <Self as IMapPanelActiveMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive { pub fn get_sub_mesh_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_source_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_panel_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_always_panel_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_order_panel_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn update_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_is_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn can_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn can_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn can_use_rod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn each_target_cell_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn add_cell_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_mesh_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn can_set_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn can_draw_move_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_heal_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_action_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_dragon_vein_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_attack_range_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_heal_range_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_support_range_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_interference_range_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_warp_range_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn get_dance_range_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_action_range_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn set_display_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_range_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn set_range_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelActive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } }
+#[cfg(feature="app-mappanelactive")]pub trait IMapPanelActive_TargetFuncMethods:IMapPanelActive_TargetFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapPanelActive_TargetFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d3a0usize)as*mut u8,();
+(MapPanelActive_TargetFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, i32)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapPanelActive_TargetFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d0e0usize)as*mut u8,bool;
+(MapPanelActive_TargetFunc)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+}
 
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelActive) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelActiveMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mappanelactive")]impl<__T:IMapPanelActive_TargetFunc>IMapPanelActive_TargetFuncMethods for __T{}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_TargetFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_TargetFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelActive_TargetFunc), ::core::stringify!(new),));
+ <Self as IMapPanelActive_TargetFuncMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-mappanelactive")]pub trait IMapPanelActive_FlagFieldMethods:IMapPanelActive_FlagField{#[doc="`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]fn to_long(self,value:impl::core::convert::Into<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy> >)->i64{unsafe{let __receiver= <MapPanelActive_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d330usize)as*mut u8,i64;
+(MapPanelActive_FlagField)__receiver,(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelActive_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d340usize)as*mut u8,();
+(MapPanelActive_FlagField)__receiver)}
+}
+}
+
+#[cfg(feature="app-mappanelactive")]impl<__T:IMapPanelActive_FlagField>IMapPanelActive_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_FlagField{pub fn to_long_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mappanelactive")]impl MapPanelActive_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelActive_FlagField), ::core::stringify!(new),));
+ <Self as IMapPanelActive_FlagFieldMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mappanelactive")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapPanelActive;
+    pub use super::IMapPanelActive;
+    pub use super::IMapPanelActiveMethods;
+    pub use super::MapPanelActive_TargetFunc;
+    pub use super::IMapPanelActive_TargetFunc;
+    pub use super::IMapPanelActive_TargetFuncMethods;
     pub use super::MapPanelActive_FlagField;
     pub use super::IMapPanelActive_FlagField;
     pub use super::IMapPanelActive_FlagFieldMethods;
     pub use super::MapPanelActive_MeshIndex;
-    pub use super::MapPanelActive_TargetFunc;
-    pub use super::IMapPanelActive_TargetFunc;
-    pub use super::IMapPanelActive_TargetFuncMethods;
-    pub use super::MapPanelActive;
-    pub use super::IMapPanelActive;
-    pub use super::IMapPanelActiveMethods;
     pub use crate::app::bitfield64::IBitField64;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate64_1::IBitFieldTemplate64_1;

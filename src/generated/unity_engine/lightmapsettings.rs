@@ -4,35 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/lightmapsettings/LightmapSettings.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "LightmapSettings")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct LightmapSettings {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/lightmapsettings/LightmapSettings.md"))]#[::unity2::class(namespace="UnityEngine",name="LightmapSettings")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct LightmapSettings{}
 
 }
 
 #[cfg(feature = "unity_engine-lightmapsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-lightmapsettings")]
-impl LightmapSettings { # [doc = "`get_lightmaps()` overload"] pub fn get_lightmaps () -> :: unity2 :: Array < crate :: unity_engine :: lightmapdata :: LightmapData > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: lightmapdata :: LightmapData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c563d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_lightmaps(::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>)` overload"] pub fn set_lightmaps (value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: lightmapdata :: LightmapData > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: lightmapdata :: LightmapData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56410usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_lightmapsMode()` overload"] pub fn get_lightmaps_mode () -> crate :: unity_engine :: lightmapsmode :: LightmapsMode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lightmapsmode :: LightmapsMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56460usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_lightmapsMode(crate::unity_engine::lightmapsmode::LightmapsMode)` overload"] pub fn set_lightmaps_mode (value : impl :: core :: convert :: Into < crate :: unity_engine :: lightmapsmode :: LightmapsMode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: lightmapsmode :: LightmapsMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c564a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_lightProbes()` overload"] pub fn get_light_probes () -> crate :: unity_engine :: lightprobes :: LightProbes { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lightprobes :: LightProbes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c564f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_lightProbes(crate::unity_engine::lightprobes::LightProbes)` overload"] pub fn set_light_probes (value : impl :: core :: convert :: Into < crate :: unity_engine :: lightprobes :: LightProbes >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: lightprobes :: LightProbes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] pub fn reset () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56580usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_lightmapsModeLegacy()` overload"] pub fn get_lightmaps_mode_legacy () -> crate :: unity_engine :: lightmapsmodelegacy :: LightmapsModeLegacy { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lightmapsmodelegacy :: LightmapsModeLegacy = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c565c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_lightmapsModeLegacy(crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy)` overload"] pub fn set_lightmaps_mode_legacy (value : impl :: core :: convert :: Into < crate :: unity_engine :: lightmapsmodelegacy :: LightmapsModeLegacy >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: lightmapsmodelegacy :: LightmapsModeLegacy , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c565d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_bakedColorSpace()` overload"] pub fn get_baked_color_space () -> crate :: unity_engine :: colorspace :: ColorSpace { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: colorspace :: ColorSpace = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c565e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_bakedColorSpace(crate::unity_engine::colorspace::ColorSpace)` overload"] pub fn set_baked_color_space (value : impl :: core :: convert :: Into < crate :: unity_engine :: colorspace :: ColorSpace >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: colorspace :: ColorSpace , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c565f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-lightmapsettings")]impl LightmapSettings{#[doc="`get_lightmaps()` overload"]pub fn get_lightmaps()-> ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c563d0usize)as*mut u8, ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData> ;
+)}
+}
+#[doc="`set_lightmaps(::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>)` overload"]pub fn set_lightmaps(value:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56410usize)as*mut u8,();
+(::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_lightmapsMode()` overload"]pub fn get_lightmaps_mode()->crate::unity_engine::lightmapsmode::LightmapsMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56460usize)as*mut u8,crate::unity_engine::lightmapsmode::LightmapsMode;
+)}
+}
+#[doc="`set_lightmapsMode(crate::unity_engine::lightmapsmode::LightmapsMode)` overload"]pub fn set_lightmaps_mode(value:impl::core::convert::Into<crate::unity_engine::lightmapsmode::LightmapsMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c564a0usize)as*mut u8,();
+(crate::unity_engine::lightmapsmode::LightmapsMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_lightProbes()` overload"]pub fn get_light_probes()->crate::unity_engine::lightprobes::LightProbes{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c564f0usize)as*mut u8,crate::unity_engine::lightprobes::LightProbes;
+)}
+}
+#[doc="`set_lightProbes(crate::unity_engine::lightprobes::LightProbes)` overload"]pub fn set_light_probes(value:impl::core::convert::Into<crate::unity_engine::lightprobes::LightProbes>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56530usize)as*mut u8,();
+(crate::unity_engine::lightprobes::LightProbes)::core::convert::Into::into(value))}
+}
+#[doc="`Reset()` overload"]pub fn reset()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c56580usize)as*mut u8,();
+)}
+}
+#[doc="`get_lightmapsModeLegacy()` overload"]pub fn get_lightmaps_mode_legacy()->crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c565c0usize)as*mut u8,crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy;
+)}
+}
+#[doc="`set_lightmapsModeLegacy(crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy)` overload"]pub fn set_lightmaps_mode_legacy(value:impl::core::convert::Into<crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c565d0usize)as*mut u8,();
+(crate::unity_engine::lightmapsmodelegacy::LightmapsModeLegacy)::core::convert::Into::into(value))}
+}
+#[doc="`get_bakedColorSpace()` overload"]pub fn get_baked_color_space()->crate::unity_engine::colorspace::ColorSpace{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c565e0usize)as*mut u8,crate::unity_engine::colorspace::ColorSpace;
+)}
+}
+#[doc="`set_bakedColorSpace(crate::unity_engine::colorspace::ColorSpace)` overload"]pub fn set_baked_color_space(value:impl::core::convert::Into<crate::unity_engine::colorspace::ColorSpace>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c565f0usize)as*mut u8,();
+(crate::unity_engine::colorspace::ColorSpace)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "unity_engine-lightmapsettings")]
-pub trait ILightmapSettingsMethods : ILightmapSettings { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LightmapSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LightmapSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c56360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-lightmapsettings")]pub trait ILightmapSettingsMethods:ILightmapSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LightmapSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c56360usize)as*mut u8,();
+(LightmapSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-lightmapsettings")]
-impl < __T : ILightmapSettings > ILightmapSettingsMethods for __T { }
+#[cfg(feature="unity_engine-lightmapsettings")]impl<__T:ILightmapSettings>ILightmapSettingsMethods for __T{}
 
-#[cfg(feature = "unity_engine-lightmapsettings")]
-impl LightmapSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_lightmaps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_lightmaps_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_lightmaps_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_lightmaps_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_light_probes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_light_probes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_lightmaps_mode_legacy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_lightmaps_mode_legacy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_baked_color_space_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_baked_color_space_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightmapSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="unity_engine-lightmapsettings")]impl LightmapSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_lightmaps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_lightmaps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_lightmaps_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_lightmaps_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_light_probes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_light_probes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_lightmaps_mode_legacy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_lightmaps_mode_legacy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_baked_color_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_baked_color_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "unity_engine-lightmapsettings")]
-impl LightmapSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LightmapSettings) , :: core :: stringify ! (new) ,)) ; < Self as ILightmapSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-lightmapsettings")]impl LightmapSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LightmapSettings), ::core::stringify!(new),));
+ <Self as ILightmapSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-lightmapsettings")]

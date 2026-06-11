@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/irenderpass2d/IRenderPass2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "IRenderPass2D")] pub struct IRenderPass2D {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/irenderpass2d/IRenderPass2D.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="IRenderPass2D")]pub struct IRenderPass2D{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IRenderPass2D_unity2_raw { use super :: * ; pub unsafe fn get_renderer_data (this : IRenderPass2D , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_rendererData") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_rendererData" , < IRenderPass2D as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IRenderPass2D , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-irenderpass2d")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IRenderPass2D_unity2_raw{use super:: * ;
+pub unsafe fn get_renderer_data(this:IRenderPass2D,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_rendererData").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_rendererData", <IRenderPass2D as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IRenderPass2D, ::unity2::OptionalMethod,)->crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
-pub trait IIRenderPass2DMethods : IIRenderPass2D { # [doc = "`get_rendererData()` overload"] fn get_renderer_data (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData { unsafe { let __receiver = < IRenderPass2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IRenderPass2D_unity2_raw :: get_renderer_data (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-irenderpass2d")]pub trait IIRenderPass2DMethods:IIRenderPass2D{#[doc="`get_rendererData()` overload"]fn get_renderer_data(self,)->crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData{unsafe{let __receiver= <IRenderPass2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IRenderPass2D_unity2_raw::get_renderer_data(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
-impl < __T : IIRenderPass2D > IIRenderPass2DMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-universal-irenderpass2d")]impl<__T:IIRenderPass2D>IIRenderPass2DMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
-impl IRenderPass2D { pub fn get_renderer_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IRenderPass2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-irenderpass2d")]impl IRenderPass2D{pub fn get_renderer_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
 #[doc(hidden)]

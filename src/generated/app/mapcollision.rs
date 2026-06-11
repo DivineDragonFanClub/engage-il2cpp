@@ -4,46 +4,78 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcollision/MapCollision.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCollision")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapCollision {
-# [offset (24)] # [rename (name = "m_MapObject")] pub m_map_object : crate :: app :: mapobject :: MapObject ,
-# [offset (32)] # [rename (name = "m_Renderers")] pub m_renderers : :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > ,
-# [offset (40)] # [rename (name = "m_Alpha")] pub m_alpha : f32 ,
-# [offset (44)] # [rename (name = "m_DisableCloseTransparent")] pub m_disable_close_transparent : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcollision/MapCollision.md"))]#[::unity2::class(namespace="App",name="MapCollision")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapCollision{#[offset(24)]#[rename(name="m_MapObject")]pub m_map_object:crate::app::mapobject::MapObject, #[offset(32)]#[rename(name="m_Renderers")]pub m_renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer> , #[offset(40)]#[rename(name="m_Alpha")]pub m_alpha:f32, #[offset(44)]#[rename(name="m_DisableCloseTransparent")]pub m_disable_close_transparent:bool,}
 
 }
 
 #[cfg(feature = "app-mapcollision-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapcollision")]
-impl MapCollision { # [doc = "`GetRoot(crate::unity_engine::transform::Transform)` overload"] pub fn get_root (transform : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: unity_engine :: transform :: Transform { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299ddd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (transform) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapcollision")]impl MapCollision{#[doc="`GetRoot(crate::unity_engine::transform::Transform)` overload"]pub fn get_root(transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299ddd0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform))}
+}
+}
 
-#[cfg(feature = "app-mapcollision")]
-pub trait IMapCollisionMethods : IMapCollision { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCollision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299dec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapObject()` overload"] fn get_map_object (self ,) -> crate :: app :: mapobject :: MapObject { unsafe { let __receiver = < MapCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCollision , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapobject :: MapObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299e140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRenderers()` overload"] fn get_renderers (self ,) -> :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > { unsafe { let __receiver = < MapCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCollision , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: renderer :: Renderer > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299e150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAlpha(f32)` overload"] fn set_alpha (self , alpha : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCollision , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299e160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (alpha) , :: core :: option :: Option :: None) } } } # [doc = "`GetAlpha()` overload"] fn get_alpha (self ,) -> f32 { unsafe { let __receiver = < MapCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCollision , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299e200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CommitAlpha()` overload"] fn commit_alpha (self ,) -> () { unsafe { let __receiver = < MapCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCollision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299e210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCollision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299e2c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapcollision")]pub trait IMapCollisionMethods:IMapCollision{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299dec0usize)as*mut u8,();
+(MapCollision)__receiver)}
+}
+#[doc="`GetMapObject()` overload"]fn get_map_object(self,)->crate::app::mapobject::MapObject{unsafe{let __receiver= <MapCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299e140usize)as*mut u8,crate::app::mapobject::MapObject;
+(MapCollision)__receiver)}
+}
+#[doc="`GetRenderers()` overload"]fn get_renderers(self,)-> ::unity2::Array<crate::unity_engine::renderer::Renderer>{unsafe{let __receiver= <MapCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299e150usize)as*mut u8, ::unity2::Array<crate::unity_engine::renderer::Renderer> ;
+(MapCollision)__receiver)}
+}
+#[doc="`SetAlpha(f32)` overload"]fn set_alpha(self,alpha:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299e160usize)as*mut u8,();
+(MapCollision)__receiver,(f32)::core::convert::Into::into(alpha))}
+}
+#[doc="`GetAlpha()` overload"]fn get_alpha(self,)->f32{unsafe{let __receiver= <MapCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299e200usize)as*mut u8,f32;
+(MapCollision)__receiver)}
+}
+#[doc="`CommitAlpha()` overload"]fn commit_alpha(self,)->(){unsafe{let __receiver= <MapCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299e210usize)as*mut u8,();
+(MapCollision)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x299e2c0usize)as*mut u8,();
+(MapCollision)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapcollision")]
-impl < __T : IMapCollision > IMapCollisionMethods for __T { }
+#[cfg(feature="app-mapcollision")]impl<__T:IMapCollision>IMapCollisionMethods for __T{}
 
-#[cfg(feature = "app-mapcollision")]
-impl MapCollision { pub fn get_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_map_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_renderers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn commit_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-mapcollision")]impl MapCollision{pub fn get_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_map_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_renderers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn commit_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-mapcollision")]
-impl MapCollision {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCollision) , :: core :: stringify ! (new) ,)) ; < Self as IMapCollisionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapcollision")]impl MapCollision{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCollision), ::core::stringify!(new),));
+ <Self as IMapCollisionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapcollision")]

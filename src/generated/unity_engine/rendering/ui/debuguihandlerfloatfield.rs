@@ -4,44 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: { DebugUIHandlerWidget , IDebugUIHandlerWidget }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWidget,IDebugUIHandlerWidget}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerfloatfield/DebugUIHandlerFloatField.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerFloatField")] # [parent (crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget)] pub struct DebugUIHandlerFloatField {
-# [offset (88)] # [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
-# [offset (96)] # [rename (name = "valueLabel")] pub value_label : crate :: unity_engine :: ui :: text :: Text ,
-# [offset (104)] # [rename (name = "m_Field")] pub m_field : crate :: unity_engine :: rendering :: debugui :: DebugUI_FloatField ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguihandlerfloatfield/DebugUIHandlerFloatField.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIHandlerFloatField")]#[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]pub struct DebugUIHandlerFloatField{#[offset(88)]#[rename(name="nameLabel")]pub name_label:crate::unity_engine::ui::text::Text, #[offset(96)]#[rename(name="valueLabel")]pub value_label:crate::unity_engine::ui::text::Text, #[offset(104)]#[rename(name="m_Field")]pub m_field:crate::unity_engine::rendering::debugui::DebugUI_FloatField,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfloatfield-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfloatfield")]
-pub trait IDebugUIHandlerFloatFieldMethods : IDebugUIHandlerFloatField { # [doc = "`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"] fn set_widget (self , widget : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget >) -> () { unsafe { let __receiver = < DebugUIHandlerFloatField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFloatField , crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3540290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (widget) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn on_selection (self , from_next : impl :: core :: convert :: Into < bool > , previous : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> bool { unsafe { let __receiver = < DebugUIHandlerFloatField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFloatField , bool , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35403f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from_next) , :: core :: convert :: Into :: into (previous) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselection()` overload"] fn on_deselection (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerFloatField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFloatField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3540450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnIncrement(bool)` overload"] fn on_increment (self , fast : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerFloatField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFloatField , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35404a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fast) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecrement(bool)` overload"] fn on_decrement (self , fast : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DebugUIHandlerFloatField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFloatField , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35405f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fast) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeValue(bool, f32)` overload"] fn change_value (self , fast : impl :: core :: convert :: Into < bool > , multiplier : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DebugUIHandlerFloatField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFloatField , bool , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3540540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fast) , :: core :: convert :: Into :: into (multiplier) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateValueLabel()` overload"] fn update_value_label (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerFloatField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFloatField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3540330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerFloatField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerFloatField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3540690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerfloatfield")]pub trait IDebugUIHandlerFloatFieldMethods:IDebugUIHandlerFloatField{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3540290usize)as*mut u8,();
+(DebugUIHandlerFloatField)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Widget)::core::convert::Into::into(widget))}
+}
+#[doc="`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn on_selection(self,from_next:impl::core::convert::Into<bool> ,previous:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35403f0usize)as*mut u8,bool;
+(DebugUIHandlerFloatField)__receiver,(bool)::core::convert::Into::into(from_next),(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(previous))}
+}
+#[doc="`OnDeselection()` overload"]fn on_deselection(self,)->(){unsafe{let __receiver= <DebugUIHandlerFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3540450usize)as*mut u8,();
+(DebugUIHandlerFloatField)__receiver)}
+}
+#[doc="`OnIncrement(bool)` overload"]fn on_increment(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35404a0usize)as*mut u8,();
+(DebugUIHandlerFloatField)__receiver,(bool)::core::convert::Into::into(fast))}
+}
+#[doc="`OnDecrement(bool)` overload"]fn on_decrement(self,fast:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DebugUIHandlerFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35405f0usize)as*mut u8,();
+(DebugUIHandlerFloatField)__receiver,(bool)::core::convert::Into::into(fast))}
+}
+#[doc="`ChangeValue(bool, f32)` overload"]fn change_value(self,fast:impl::core::convert::Into<bool> ,multiplier:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DebugUIHandlerFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3540540usize)as*mut u8,();
+(DebugUIHandlerFloatField)__receiver,(bool)::core::convert::Into::into(fast),(f32)::core::convert::Into::into(multiplier))}
+}
+#[doc="`UpdateValueLabel()` overload"]fn update_value_label(self,)->(){unsafe{let __receiver= <DebugUIHandlerFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3540330usize)as*mut u8,();
+(DebugUIHandlerFloatField)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerFloatField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3540690usize)as*mut u8,();
+(DebugUIHandlerFloatField)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfloatfield")]
-impl < __T : IDebugUIHandlerFloatField > IDebugUIHandlerFloatFieldMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerfloatfield")]impl<__T:IDebugUIHandlerFloatField>IDebugUIHandlerFloatFieldMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfloatfield")]
-impl DebugUIHandlerFloatField { pub fn set_widget_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFloatField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFloatField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_deselection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFloatField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_increment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFloatField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_decrement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFloatField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn change_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFloatField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_value_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFloatField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerFloatField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerfloatfield")]impl DebugUIHandlerFloatField{pub fn set_widget_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_deselection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_increment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_decrement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn change_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_value_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfloatfield")]
-impl DebugUIHandlerFloatField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerFloatField) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerFloatFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerfloatfield")]impl DebugUIHandlerFloatField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIHandlerFloatField), ::core::stringify!(new),));
+ <Self as IDebugUIHandlerFloatFieldMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerfloatfield")]

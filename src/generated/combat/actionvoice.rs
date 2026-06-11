@@ -4,36 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionvoice/ActionVoice.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionVoice")] # [parent (crate :: combat :: actionbase :: ActionBase)] pub struct ActionVoice {
-# [offset (40)] # [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionvoice/ActionVoice.md"))]#[::unity2::class(namespace="Combat",name="ActionVoice")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionVoice{#[offset(40)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "combat-actionvoice-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionvoice")]
-pub trait IActionVoiceMethods : IActionVoice { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionVoice , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, ::unity2::Il2CppString)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ActionVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionVoice , crate :: combat :: character :: Character , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc96a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionVoice as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionVoice , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc9700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionvoice")]pub trait IActionVoiceMethods:IActionVoice{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9650usize)as*mut u8, ::unity2::Il2CppString;
+(ActionVoice)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, ::unity2::Il2CppString)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ActionVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc96a0usize)as*mut u8,();
+(ActionVoice)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionVoice as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9700usize)as*mut u8,();
+(ActionVoice)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actionvoice")]
-impl < __T : IActionVoice > IActionVoiceMethods for __T { }
+#[cfg(feature="combat-actionvoice")]impl<__T:IActionVoice>IActionVoiceMethods for __T{}
 
-#[cfg(feature = "combat-actionvoice")]
-impl ActionVoice { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionVoice as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-actionvoice")]impl ActionVoice{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-actionvoice")]
-impl ActionVoice {
-# [doc = "`.ctor(crate::combat::character::Character, ::unity2::Il2CppString)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionVoice) , :: core :: stringify ! (new) ,)) ; < Self as IActionVoiceMethods > :: ctor (this , chr , name) ; this }
+#[cfg(feature="combat-actionvoice")]impl ActionVoice{#[doc="`.ctor(crate::combat::character::Character, ::unity2::Il2CppString)` — overload selector"]pub fn new(chr:crate::combat::character::Character,name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionVoice), ::core::stringify!(new),));
+ <Self as IActionVoiceMethods> ::ctor(this,chr,name);
+this}
 }
 
 #[cfg(feature = "combat-actionvoice")]

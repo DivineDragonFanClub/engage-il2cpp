@@ -4,52 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/languageimagesetter/LanguageImageSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "LanguageImageSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct LanguageImageSetter {
-# [offset (24)] # [rename (name = "m_Target")] pub m_target : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_Sprite_JP_Japanese")] pub m_sprite_jp_japanese : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (40)] # [rename (name = "m_Sprite_US_English")] pub m_sprite_us_english : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (48)] # [rename (name = "m_Sprite_US_French")] pub m_sprite_us_french : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (56)] # [rename (name = "m_Sprite_US_Spanish")] pub m_sprite_us_spanish : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (64)] # [rename (name = "m_Sprite_EU_English")] pub m_sprite_eu_english : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (72)] # [rename (name = "m_Sprite_EU_French")] pub m_sprite_eu_french : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (80)] # [rename (name = "m_Sprite_EU_Spanish")] pub m_sprite_eu_spanish : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (88)] # [rename (name = "m_Sprite_EU_German")] pub m_sprite_eu_german : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (96)] # [rename (name = "m_Sprite_EU_Italian")] pub m_sprite_eu_italian : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (104)] # [rename (name = "m_Sprite_CN_Traditional")] pub m_sprite_cn_traditional : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (112)] # [rename (name = "m_Sprite_CN_Simplified")] pub m_sprite_cn_simplified : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (120)] # [rename (name = "m_Sprite_KR_Korean")] pub m_sprite_kr_korean : crate :: unity_engine :: sprite :: Sprite ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/languageimagesetter/LanguageImageSetter.md"))]#[::unity2::class(namespace="App",name="LanguageImageSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct LanguageImageSetter{#[offset(24)]#[rename(name="m_Target")]pub m_target:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_Sprite_JP_Japanese")]pub m_sprite_jp_japanese:crate::unity_engine::sprite::Sprite, #[offset(40)]#[rename(name="m_Sprite_US_English")]pub m_sprite_us_english:crate::unity_engine::sprite::Sprite, #[offset(48)]#[rename(name="m_Sprite_US_French")]pub m_sprite_us_french:crate::unity_engine::sprite::Sprite, #[offset(56)]#[rename(name="m_Sprite_US_Spanish")]pub m_sprite_us_spanish:crate::unity_engine::sprite::Sprite, #[offset(64)]#[rename(name="m_Sprite_EU_English")]pub m_sprite_eu_english:crate::unity_engine::sprite::Sprite, #[offset(72)]#[rename(name="m_Sprite_EU_French")]pub m_sprite_eu_french:crate::unity_engine::sprite::Sprite, #[offset(80)]#[rename(name="m_Sprite_EU_Spanish")]pub m_sprite_eu_spanish:crate::unity_engine::sprite::Sprite, #[offset(88)]#[rename(name="m_Sprite_EU_German")]pub m_sprite_eu_german:crate::unity_engine::sprite::Sprite, #[offset(96)]#[rename(name="m_Sprite_EU_Italian")]pub m_sprite_eu_italian:crate::unity_engine::sprite::Sprite, #[offset(104)]#[rename(name="m_Sprite_CN_Traditional")]pub m_sprite_cn_traditional:crate::unity_engine::sprite::Sprite, #[offset(112)]#[rename(name="m_Sprite_CN_Simplified")]pub m_sprite_cn_simplified:crate::unity_engine::sprite::Sprite, #[offset(120)]#[rename(name="m_Sprite_KR_Korean")]pub m_sprite_kr_korean:crate::unity_engine::sprite::Sprite,}
 
 }
 
 #[cfg(feature = "app-languageimagesetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-languageimagesetter")]
-pub trait ILanguageImageSetterMethods : ILanguageImageSetter { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < LanguageImageSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LanguageImageSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdc9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LanguageImageSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LanguageImageSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdcb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-languageimagesetter")]pub trait ILanguageImageSetterMethods:ILanguageImageSetter{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <LanguageImageSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdc9e0usize)as*mut u8,();
+(LanguageImageSetter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LanguageImageSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdcb50usize)as*mut u8,();
+(LanguageImageSetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-languageimagesetter")]
-impl < __T : ILanguageImageSetter > ILanguageImageSetterMethods for __T { }
+#[cfg(feature="app-languageimagesetter")]impl<__T:ILanguageImageSetter>ILanguageImageSetterMethods for __T{}
 
-#[cfg(feature = "app-languageimagesetter")]
-impl LanguageImageSetter { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LanguageImageSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LanguageImageSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-languageimagesetter")]impl LanguageImageSetter{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-languageimagesetter")]
-impl LanguageImageSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LanguageImageSetter) , :: core :: stringify ! (new) ,)) ; < Self as ILanguageImageSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-languageimagesetter")]impl LanguageImageSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LanguageImageSetter), ::core::stringify!(new),));
+ <Self as ILanguageImageSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-languageimagesetter")]

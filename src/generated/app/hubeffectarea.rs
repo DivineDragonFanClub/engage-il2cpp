@@ -4,40 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubeffectarea/HubEffectArea.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubEffectArea")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubEffectArea {
-# [offset (24)] # [rename (name = "m_ShowEffects")] pub m_show_effects : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubeffectarea/HubEffectArea.md"))]#[::unity2::class(namespace="App",name="HubEffectArea")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubEffectArea{#[offset(24)]#[rename(name="m_ShowEffects")]pub m_show_effects: ::unity2::Array<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-hubeffectarea-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubeffectarea")]
-pub trait IHubEffectAreaMethods : IHubEffectArea { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubEffectArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEffectArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d88bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Enter()` overload"] fn enter (self ,) -> () { unsafe { let __receiver = < HubEffectArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEffectArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Leave()` overload"] fn leave (self ,) -> () { unsafe { let __receiver = < HubEffectArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEffectArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d87860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubEffectArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEffectArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d88d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubeffectarea")]pub trait IHubEffectAreaMethods:IHubEffectArea{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubEffectArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d88bf0usize)as*mut u8,();
+(HubEffectArea)__receiver)}
+}
+#[doc="`Enter()` overload"]fn enter(self,)->(){unsafe{let __receiver= <HubEffectArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87560usize)as*mut u8,();
+(HubEffectArea)__receiver)}
+}
+#[doc="`Leave()` overload"]fn leave(self,)->(){unsafe{let __receiver= <HubEffectArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d87860usize)as*mut u8,();
+(HubEffectArea)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubEffectArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d88d70usize)as*mut u8,();
+(HubEffectArea)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubeffectarea")]
-impl < __T : IHubEffectArea > IHubEffectAreaMethods for __T { }
+#[cfg(feature="app-hubeffectarea")]impl<__T:IHubEffectArea>IHubEffectAreaMethods for __T{}
 
-#[cfg(feature = "app-hubeffectarea")]
-impl HubEffectArea { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn leave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEffectArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-hubeffectarea")]impl HubEffectArea{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn leave_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-hubeffectarea")]
-impl HubEffectArea {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubEffectArea) , :: core :: stringify ! (new) ,)) ; < Self as IHubEffectAreaMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubeffectarea")]impl HubEffectArea{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubEffectArea), ::core::stringify!(new),));
+ <Self as IHubEffectAreaMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubeffectarea")]

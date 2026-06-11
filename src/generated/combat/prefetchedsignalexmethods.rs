@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/prefetchedsignalexmethods/PrefetchedSignalExMethods.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PrefetchedSignalExMethods")] # [parent (crate :: system :: object :: Object)] pub struct PrefetchedSignalExMethods {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/prefetchedsignalexmethods/PrefetchedSignalExMethods.md"))]#[::unity2::class(namespace="Combat",name="PrefetchedSignalExMethods")]#[parent(crate::system::object::Object)]pub struct PrefetchedSignalExMethods{}
 
 }
 
 #[cfg(feature = "combat-prefetchedsignalexmethods-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-prefetchedsignalexmethods")]
-impl PrefetchedSignalExMethods { # [doc = "`IsNull(crate::combat::prefetchedsignal::PrefetchedSignal)` overload"] pub fn is_null (a : impl :: core :: convert :: Into < crate :: combat :: prefetchedsignal :: PrefetchedSignal >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: prefetchedsignal :: PrefetchedSignal , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2818010usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } # [doc = "`IsNotNull(crate::combat::prefetchedsignal::PrefetchedSignal)` overload"] pub fn is_not_null (a : impl :: core :: convert :: Into < crate :: combat :: prefetchedsignal :: PrefetchedSignal >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: prefetchedsignal :: PrefetchedSignal , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2818030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-prefetchedsignalexmethods")]impl PrefetchedSignalExMethods{#[doc="`IsNull(crate::combat::prefetchedsignal::PrefetchedSignal)` overload"]pub fn is_null(a:impl::core::convert::Into<crate::combat::prefetchedsignal::PrefetchedSignal>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2818010usize)as*mut u8,bool;
+(crate::combat::prefetchedsignal::PrefetchedSignal)::core::convert::Into::into(a))}
+}
+#[doc="`IsNotNull(crate::combat::prefetchedsignal::PrefetchedSignal)` overload"]pub fn is_not_null(a:impl::core::convert::Into<crate::combat::prefetchedsignal::PrefetchedSignal>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2818030usize)as*mut u8,bool;
+(crate::combat::prefetchedsignal::PrefetchedSignal)::core::convert::Into::into(a))}
+}
+}
 
-#[cfg(feature = "combat-prefetchedsignalexmethods")]
-impl PrefetchedSignalExMethods { pub fn is_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PrefetchedSignalExMethods as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_not_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PrefetchedSignalExMethods as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-prefetchedsignalexmethods")]impl PrefetchedSignalExMethods{pub fn is_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_not_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "combat-prefetchedsignalexmethods")]
 #[doc(hidden)]

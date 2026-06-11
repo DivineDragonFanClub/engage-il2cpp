@@ -4,18 +4,18 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/joint2d/Joint2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Joint2D")] # [parent (crate :: unity_engine :: behaviour :: Behaviour)] pub struct Joint2D {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/joint2d/Joint2D.md"))]#[::unity2::class(namespace="UnityEngine",name="Joint2D")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct Joint2D{}
 
 }
 

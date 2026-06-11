@@ -4,43 +4,81 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetmanager/DragonRideTargetManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideTargetManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonridetargetmanager :: DragonRideTargetManager >)] pub struct DragonRideTargetManager {
-# [offset (28)] # [rename (name = "MaxArrayCount")] pub max_array_count : i32 ,
-# [offset (32)] # [rename (name = "m_Prefab")] pub m_prefab : crate :: app :: resourcegameobject :: ResourceGameObject ,
-# [offset (40)] # [rename (name = "m_ReserveTargetParent")] pub m_reserve_target_parent : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_ReturnTargetCount")] pub m_return_target_count : i32 ,
-# [offset (56)] # [rename (name = "m_ReservePopupParent")] pub m_reserve_popup_parent : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "m_ReturnPopupCount")] pub m_return_popup_count : i32 ,
-# [offset (72)] # [rename (name = "m_TargetArray")] pub m_target_array : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (80)] # [rename (name = "m_PopupArray")] pub m_popup_array : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (88)] # [rename (name = "m_ObjUseCount")] pub m_obj_use_count : i32 ,
-# [offset (92)] # [rename (name = "m_PopupUseCount")] pub m_popup_use_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridetargetmanager/DragonRideTargetManager.md"))]#[::unity2::class(namespace="App",name="DragonRideTargetManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::dragonridetargetmanager::DragonRideTargetManager>)]pub struct DragonRideTargetManager{#[offset(28)]#[rename(name="MaxArrayCount")]pub max_array_count:i32, #[offset(32)]#[rename(name="m_Prefab")]pub m_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(40)]#[rename(name="m_ReserveTargetParent")]pub m_reserve_target_parent:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_ReturnTargetCount")]pub m_return_target_count:i32, #[offset(56)]#[rename(name="m_ReservePopupParent")]pub m_reserve_popup_parent:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_ReturnPopupCount")]pub m_return_popup_count:i32, #[offset(72)]#[rename(name="m_TargetArray")]pub m_target_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(80)]#[rename(name="m_PopupArray")]pub m_popup_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(88)]#[rename(name="m_ObjUseCount")]pub m_obj_use_count:i32, #[offset(92)]#[rename(name="m_PopupUseCount")]pub m_popup_use_count:i32,}
 
 }
 
 #[cfg(feature = "app-dragonridetargetmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonridetargetmanager")]
-pub trait IDragonRideTargetManagerMethods : IDragonRideTargetManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destruct()` overload"] fn destruct (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d16e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMaxCount()` overload"] fn get_max_count (self ,) -> i32 { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d17b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RentalTarget()` overload"] fn rental_target (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d17c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RentalPopup()` overload"] fn rental_popup (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CheckReserveListCondition()` overload"] fn check_reserve_list_condition (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReturnReserveTarget(crate::unity_engine::gameobject::GameObject)` overload"] fn return_reserve_target (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`ReturnReservePopup(crate::unity_engine::gameobject::GameObject)` overload"] fn return_reserve_popup (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1980usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`HideAllTarget()` overload"] fn hide_all_target (self ,) -> () { unsafe { let __receiver = < DragonRideTargetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideTargetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridetargetmanager")]pub trait IDragonRideTargetManagerMethods:IDragonRideTargetManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1110usize)as*mut u8,();
+(DragonRideTargetManager)__receiver)}
+}
+#[doc="`Destruct()` overload"]fn destruct(self,)->(){unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1530usize)as*mut u8,();
+(DragonRideTargetManager)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d16e0usize)as*mut u8,();
+(DragonRideTargetManager)__receiver)}
+}
+#[doc="`GetMaxCount()` overload"]fn get_max_count(self,)->i32{unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d17b0usize)as*mut u8,i32;
+(DragonRideTargetManager)__receiver)}
+}
+#[doc="`RentalTarget()` overload"]fn rental_target(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d17c0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(DragonRideTargetManager)__receiver)}
+}
+#[doc="`RentalPopup()` overload"]fn rental_popup(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1820usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(DragonRideTargetManager)__receiver)}
+}
+#[doc="`CheckReserveListCondition()` overload"]fn check_reserve_list_condition(self,)->(){unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1880usize)as*mut u8,();
+(DragonRideTargetManager)__receiver)}
+}
+#[doc="`ReturnReserveTarget(crate::unity_engine::gameobject::GameObject)` overload"]fn return_reserve_target(self,target:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1890usize)as*mut u8,();
+(DragonRideTargetManager)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(target))}
+}
+#[doc="`ReturnReservePopup(crate::unity_engine::gameobject::GameObject)` overload"]fn return_reserve_popup(self,target:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1980usize)as*mut u8,();
+(DragonRideTargetManager)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(target))}
+}
+#[doc="`HideAllTarget()` overload"]fn hide_all_target(self,)->(){unsafe{let __receiver= <DragonRideTargetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1a70usize)as*mut u8,();
+(DragonRideTargetManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonridetargetmanager")]
-impl < __T : IDragonRideTargetManager > IDragonRideTargetManagerMethods for __T { }
+#[cfg(feature="app-dragonridetargetmanager")]impl<__T:IDragonRideTargetManager>IDragonRideTargetManagerMethods for __T{}
 
-#[cfg(feature = "app-dragonridetargetmanager")]
-impl DragonRideTargetManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn destruct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_max_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn rental_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn rental_popup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn check_reserve_list_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn return_reserve_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn return_reserve_popup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn hide_all_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideTargetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-dragonridetargetmanager")]impl DragonRideTargetManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn destruct_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_max_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn rental_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn rental_popup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn check_reserve_list_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn return_reserve_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn return_reserve_popup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn hide_all_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-dragonridetargetmanager")]
-impl DragonRideTargetManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideTargetManager) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideTargetManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonridetargetmanager")]impl DragonRideTargetManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideTargetManager), ::core::stringify!(new),));
+ <Self as IDragonRideTargetManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonridetargetmanager")]

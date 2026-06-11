@@ -4,116 +4,115 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: root :: mappanelbase_1 :: { IMapPanelBase_1 , MapPanelBase_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::root::mappanelbase_1::{IMapPanelBase_1,MapPanelBase_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mappanelimpact/MapPanelImpact.md"))] # [:: unity2 :: class (namespace = "" , name = "MapPanelImpact")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: root :: mappanelimpact :: MapPanelImpact >)] pub struct MapPanelImpact {
-# [offset (64)] # [rename (name = "m_Alpha")] pub m_alpha : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (72)] # [rename (name = "m_LandImage")] pub m_land_image : crate :: unity_engine :: material :: Material ,
-# [offset (80)] # [rename (name = "m_FriendlyLandColor")] pub m_friendly_land_color : crate :: unity_engine :: color :: Color ,
-# [offset (96)] # [rename (name = "m_HostileLandColor")] pub m_hostile_land_color : crate :: unity_engine :: color :: Color ,
-# [offset (112)] # [rename (name = "m_FriendlyLandImage")] pub m_friendly_land_image : crate :: app :: mapimagecorebit :: MapImageCoreBit ,
-# [offset (120)] # [rename (name = "m_HostileLandImage")] pub m_hostile_land_image : crate :: app :: mapimagecorebit :: MapImageCoreBit ,
-# [offset (128)] # [rename (name = "m_CurrentUnit")] pub m_current_unit : crate :: app :: unit :: Unit ,
-# [offset (136)] # [rename (name = "m_LandImageFunc")] pub m_land_image_func : crate :: app :: mapskill :: MapSkill_UnitFunc ,
-# [offset (144)] # [rename (name = "m_LandCellFunc")] pub m_land_cell_func : crate :: app :: mapfor :: MapFor_PosFunction ,
-# [offset (152)] # [rename (name = "m_FriendlyLandImageGetter")] pub m_friendly_land_image_getter : crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: root :: mappanelimpact :: MapPanelImpact > ,
-# [offset (160)] # [rename (name = "m_HostileLandImageGetter")] pub m_hostile_land_image_getter : crate :: root :: mappanelbase_1 :: MapPanelBase_1_ImageGetFunction < crate :: root :: mappanelimpact :: MapPanelImpact > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappanelimpact/MapPanelImpact_MeshIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelImpact_MeshIndex{pub value:i32,}
+impl::unity2::ClassIdentity for MapPanelImpact_MeshIndex{const NAMESPACE: &'static str="";
+const NAME: &'static str="MapPanelImpact.MeshIndex";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapPanelImpact_MeshIndex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapPanelImpact_MeshIndex{pub fn land()->Self{Self{value:0}
+}
+pub fn num()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mappanelimpact/MapPanelImpact_MeshIndex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapPanelImpact_MeshIndex  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapPanelImpact_MeshIndex  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapPanelImpact.MeshIndex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapPanelImpact_MeshIndex  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapPanelImpact_MeshIndex  {
-    pub fn land() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mappanelimpact/MapPanelImpact.md"))]#[::unity2::class(namespace="",name="MapPanelImpact")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::root::mappanelimpact::MapPanelImpact>)]pub struct MapPanelImpact{#[offset(64)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(72)]#[rename(name="m_LandImage")]pub m_land_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_FriendlyLandColor")]pub m_friendly_land_color:crate::unity_engine::color::Color, #[offset(96)]#[rename(name="m_HostileLandColor")]pub m_hostile_land_color:crate::unity_engine::color::Color, #[offset(112)]#[rename(name="m_FriendlyLandImage")]pub m_friendly_land_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(120)]#[rename(name="m_HostileLandImage")]pub m_hostile_land_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(128)]#[rename(name="m_CurrentUnit")]pub m_current_unit:crate::app::unit::Unit, #[offset(136)]#[rename(name="m_LandImageFunc")]pub m_land_image_func:crate::app::mapskill::MapSkill_UnitFunc, #[offset(144)]#[rename(name="m_LandCellFunc")]pub m_land_cell_func:crate::app::mapfor::MapFor_PosFunction, #[offset(152)]#[rename(name="m_FriendlyLandImageGetter")]pub m_friendly_land_image_getter:crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::root::mappanelimpact::MapPanelImpact> , #[offset(160)]#[rename(name="m_HostileLandImageGetter")]pub m_hostile_land_image_getter:crate::root::mappanelbase_1::MapPanelBase_1_ImageGetFunction<crate::root::mappanelimpact::MapPanelImpact> ,}
 
 }
 
 #[cfg(feature = "root-mappanelimpact-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mappanelimpact")]
-pub trait IMapPanelImpactMethods : IMapPanelImpact { # [doc = "`get_SubMeshCount()` overload"] fn get_sub_mesh_count (self ,) -> i32 { unsafe { let __receiver = < MapPanelImpact as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelImpact , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2352450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapPanelImpact as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelImpact , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2352460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapPanelImpact as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelImpact , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2352640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSourceMaterials()` overload"] fn get_source_materials (self ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > { unsafe { let __receiver = < MapPanelImpact as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelImpact , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: material :: Material > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2352760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetVertex()` overload"] fn set_vertex (self ,) -> () { unsafe { let __receiver = < MapPanelImpact as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelImpact , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2352720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLandImage(i32, i32, crate::app::unit::Unit)` overload"] fn set_land_image (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapPanelImpact as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelImpact , i32 , i32 , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2352be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`AddLandCell(i32, i32)` overload"] fn add_land_cell (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapPanelImpact as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelImpact , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2352ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`SetMesh()` overload"] fn set_mesh (self ,) -> () { unsafe { let __receiver = < MapPanelImpact as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelImpact , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2352810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPanelImpact as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelImpact , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2352f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mappanelimpact")]pub trait IMapPanelImpactMethods:IMapPanelImpact{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelImpact as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2352450usize)as*mut u8,i32;
+(MapPanelImpact)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapPanelImpact as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2352460usize)as*mut u8,();
+(MapPanelImpact)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapPanelImpact as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2352640usize)as*mut u8,();
+(MapPanelImpact)__receiver)}
+}
+#[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MapPanelImpact as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2352760usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
+(MapPanelImpact)__receiver)}
+}
+#[doc="`SetVertex()` overload"]fn set_vertex(self,)->(){unsafe{let __receiver= <MapPanelImpact as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2352720usize)as*mut u8,();
+(MapPanelImpact)__receiver)}
+}
+#[doc="`SetLandImage(i32, i32, crate::app::unit::Unit)` overload"]fn set_land_image(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapPanelImpact as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2352be0usize)as*mut u8,();
+(MapPanelImpact)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`AddLandCell(i32, i32)` overload"]fn add_land_cell(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapPanelImpact as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2352ce0usize)as*mut u8,();
+(MapPanelImpact)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`SetMesh()` overload"]fn set_mesh(self,)->(){unsafe{let __receiver= <MapPanelImpact as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2352810usize)as*mut u8,();
+(MapPanelImpact)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelImpact as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2352f10usize)as*mut u8,();
+(MapPanelImpact)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mappanelimpact")]
-impl < __T : IMapPanelImpact > IMapPanelImpactMethods for __T { }
+#[cfg(feature="root-mappanelimpact")]impl<__T:IMapPanelImpact>IMapPanelImpactMethods for __T{}
 
-#[cfg(feature = "root-mappanelimpact")]
-impl MapPanelImpact { pub fn get_sub_mesh_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelImpact as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelImpact as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelImpact as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_source_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelImpact as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelImpact as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_land_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelImpact as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_land_cell_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelImpact as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelImpact as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelImpact as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="root-mappanelimpact")]impl MapPanelImpact{pub fn get_sub_mesh_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_source_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_land_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_land_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "root-mappanelimpact")]
-impl MapPanelImpact {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelImpact) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelImpactMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mappanelimpact")]impl MapPanelImpact{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelImpact), ::core::stringify!(new),));
+ <Self as IMapPanelImpactMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mappanelimpact")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapPanelImpact_MeshIndex;
     pub use super::MapPanelImpact;
     pub use super::IMapPanelImpact;
     pub use super::IMapPanelImpactMethods;
-    pub use super::MapPanelImpact_MeshIndex;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

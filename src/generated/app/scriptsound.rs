@@ -4,35 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptsound/ScriptSound.md"))] # [:: unity2 :: class (namespace = "App" , name = "ScriptSound")] # [parent (crate :: app :: scriptutil :: ScriptUtil)] pub struct ScriptSound {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptsound/ScriptSound.md"))]#[::unity2::class(namespace="App",name="ScriptSound")]#[parent(crate::app::scriptutil::ScriptUtil)]pub struct ScriptSound{}
 
 }
 
 #[cfg(feature = "app-scriptsound-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-scriptsound")]
-impl ScriptSound { # [doc = "`SoundPostEvent(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn sound_post_event (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ed74e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`SetFieldPhaseBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn set_field_phase_bgm (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ed75e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`SetFieldBgmVolume(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn set_field_bgm_volume (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ed76e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`PlayFieldBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn play_field_bgm (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ed77c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`PauseFieldBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn pause_field_bgm (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ed7880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`ResumeFieldBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn resume_field_bgm (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ed7940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`SetFieldBgmWarSituation(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn set_field_bgm_war_situation (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ed7a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`Regist(crate::app::eventscript::EventScript)` overload"] pub fn regist (script : impl :: core :: convert :: Into < crate :: app :: eventscript :: EventScript >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: eventscript :: EventScript , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ed7ac0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (script) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-scriptsound")]impl ScriptSound{#[doc="`SoundPostEvent(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn sound_post_event(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed74e0usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`SetFieldPhaseBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn set_field_phase_bgm(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed75e0usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`SetFieldBgmVolume(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn set_field_bgm_volume(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed76e0usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`PlayFieldBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn play_field_bgm(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed77c0usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`PauseFieldBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn pause_field_bgm(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed7880usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`ResumeFieldBgm(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn resume_field_bgm(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed7940usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`SetFieldBgmWarSituation(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn set_field_bgm_war_situation(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed7a00usize)as*mut u8,();
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`Regist(crate::app::eventscript::EventScript)` overload"]pub fn regist(script:impl::core::convert::Into<crate::app::eventscript::EventScript>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ed7ac0usize)as*mut u8,();
+(crate::app::eventscript::EventScript)::core::convert::Into::into(script))}
+}
+}
 
-#[cfg(feature = "app-scriptsound")]
-pub trait IScriptSoundMethods : IScriptSound { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ScriptSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ed7d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-scriptsound")]pub trait IScriptSoundMethods:IScriptSound{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ed7d00usize)as*mut u8,();
+(ScriptSound)__receiver)}
+}
+}
 
-#[cfg(feature = "app-scriptsound")]
-impl < __T : IScriptSound > IScriptSoundMethods for __T { }
+#[cfg(feature="app-scriptsound")]impl<__T:IScriptSound>IScriptSoundMethods for __T{}
 
-#[cfg(feature = "app-scriptsound")]
-impl ScriptSound { pub fn sound_post_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_field_phase_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_field_bgm_volume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn play_field_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn pause_field_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn resume_field_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_field_bgm_war_situation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn regist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-scriptsound")]impl ScriptSound{pub fn sound_post_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_field_phase_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_field_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn play_field_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn pause_field_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn resume_field_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_field_bgm_war_situation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn regist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-scriptsound")]
-impl ScriptSound {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScriptSound) , :: core :: stringify ! (new) ,)) ; < Self as IScriptSoundMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-scriptsound")]impl ScriptSound{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptSound), ::core::stringify!(new),));
+ <Self as IScriptSoundMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-scriptsound")]

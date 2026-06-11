@@ -4,59 +4,85 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymanager/ChallengeDifficultyManager_ReturnEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChallengeDifficultyManager.ReturnEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ChallengeDifficultyManager_ReturnEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengedifficultymanager/ChallengeDifficultyManager_ReturnEventHandler.md"))]#[::unity2::class(namespace="App",name="ChallengeDifficultyManager.ReturnEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ChallengeDifficultyManager_ReturnEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymanager/ChallengeDifficultyManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "ChallengeDifficultyManager")] # [parent (crate :: system :: object :: Object)] pub struct ChallengeDifficultyManager {
-# [offset (16)] # [rename (name = "m_ReturnEventHandler")] pub m_return_event_handler : crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler ,
-# [offset (24)] # [rename (name = "m_Menu")] pub m_menu : crate :: app :: challengedifficultymenu :: ChallengeDifficultyMenu ,
-# [offset (32)] # [rename (name = "m_ChallengeData")] pub m_challenge_data : crate :: app :: challengedata :: ChallengeData ,
-# [offset (40)] # [rename (name = "m_Difficulty")] pub m_difficulty : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengedifficultymanager/ChallengeDifficultyManager.md"))]#[::unity2::class(namespace="App",name="ChallengeDifficultyManager")]#[parent(crate::system::object::Object)]pub struct ChallengeDifficultyManager{#[offset(16)]#[rename(name="m_ReturnEventHandler")]pub m_return_event_handler:crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler, #[offset(24)]#[rename(name="m_Menu")]pub m_menu:crate::app::challengedifficultymenu::ChallengeDifficultyMenu, #[offset(32)]#[rename(name="m_ChallengeData")]pub m_challenge_data:crate::app::challengedata::ChallengeData, #[offset(40)]#[rename(name="m_Difficulty")]pub m_difficulty:i32,}
 
 }
 
 #[cfg(feature = "app-challengedifficultymanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-challengedifficultymanager")]
-pub trait IChallengeDifficultyManager_ReturnEventHandlerMethods : IChallengeDifficultyManager_ReturnEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChallengeDifficultyManager_ReturnEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19be880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, i32)` overload"] fn invoke (self , result : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu_Result > , difficulty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChallengeDifficultyManager_ReturnEventHandler , crate :: app :: basicmenu :: BasicMenu_Result , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19be8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (result) , :: core :: convert :: Into :: into (difficulty) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-challengedifficultymanager")]
-impl < __T : IChallengeDifficultyManager_ReturnEventHandler > IChallengeDifficultyManager_ReturnEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-challengedifficultymanager")]
-impl ChallengeDifficultyManager_ReturnEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChallengeDifficultyManager_ReturnEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-challengedifficultymanager")]
-impl ChallengeDifficultyManager_ReturnEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChallengeDifficultyManager_ReturnEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IChallengeDifficultyManager_ReturnEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-challengedifficultymanager")]pub trait IChallengeDifficultyManager_ReturnEventHandlerMethods:IChallengeDifficultyManager_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ChallengeDifficultyManager_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19be880usize)as*mut u8,();
+(ChallengeDifficultyManager_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::basicmenu::BasicMenu_Result, i32)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::basicmenu::BasicMenu_Result> ,difficulty:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChallengeDifficultyManager_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19be8a0usize)as*mut u8,();
+(ChallengeDifficultyManager_ReturnEventHandler)__receiver,(crate::app::basicmenu::BasicMenu_Result)::core::convert::Into::into(result),(i32)::core::convert::Into::into(difficulty))}
+}
 }
 
-#[cfg(feature = "app-challengedifficultymanager")]
-impl ChallengeDifficultyManager { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler)` overload"] pub fn create (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , root : impl :: core :: convert :: Into < crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot > , challenge_data : impl :: core :: convert :: Into < crate :: app :: challengedata :: ChallengeData > , return_event_handler : impl :: core :: convert :: Into < crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler >) -> crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot , crate :: app :: challengedata :: ChallengeData , crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c21e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (root) , :: core :: convert :: Into :: into (challenge_data) , :: core :: convert :: Into :: into (return_event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-challengedifficultymanager")]impl<__T:IChallengeDifficultyManager_ReturnEventHandler>IChallengeDifficultyManager_ReturnEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-challengedifficultymanager")]
-pub trait IChallengeDifficultyManagerMethods : IChallengeDifficultyManager { # [doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler)` overload"] fn ctor (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , root : impl :: core :: convert :: Into < crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot > , challenge_data : impl :: core :: convert :: Into < crate :: app :: challengedata :: ChallengeData > , return_event_handler : impl :: core :: convert :: Into < crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler >) -> () { unsafe { let __receiver = < ChallengeDifficultyManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChallengeDifficultyManager , crate :: app :: procinst :: ProcInst , crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot , crate :: app :: challengedata :: ChallengeData , crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c22b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (root) , :: core :: convert :: Into :: into (challenge_data) , :: core :: convert :: Into :: into (return_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecide(i32)` overload"] fn on_decide (self , difficulty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChallengeDifficultyManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChallengeDifficultyManager , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c2570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (difficulty) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecideYes()` overload"] fn on_decide_yes (self ,) -> () { unsafe { let __receiver = < ChallengeDifficultyManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChallengeDifficultyManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c2740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRequestClose(i32)` overload"] fn on_request_close (self , difficulty : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ChallengeDifficultyManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ChallengeDifficultyManager , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c2790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (difficulty) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-challengedifficultymanager")]impl ChallengeDifficultyManager_ReturnEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-challengedifficultymanager")]
-impl < __T : IChallengeDifficultyManager > IChallengeDifficultyManagerMethods for __T { }
+#[cfg(feature="app-challengedifficultymanager")]impl ChallengeDifficultyManager_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChallengeDifficultyManager_ReturnEventHandler), ::core::stringify!(new),));
+ <Self as IChallengeDifficultyManager_ReturnEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "app-challengedifficultymanager")]
-impl ChallengeDifficultyManager { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChallengeDifficultyManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChallengeDifficultyManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_decide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChallengeDifficultyManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_decide_yes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChallengeDifficultyManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_request_close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ChallengeDifficultyManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-challengedifficultymanager")]impl ChallengeDifficultyManager{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,root:impl::core::convert::Into<crate::app::challengemapselectroot::ChallengeMapSelectRoot> ,challenge_data:impl::core::convert::Into<crate::app::challengedata::ChallengeData> ,return_event_handler:impl::core::convert::Into<crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler>)->crate::app::challengedifficultymanager::ChallengeDifficultyManager{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c21e0usize)as*mut u8,crate::app::challengedifficultymanager::ChallengeDifficultyManager;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::challengemapselectroot::ChallengeMapSelectRoot)::core::convert::Into::into(root),(crate::app::challengedata::ChallengeData)::core::convert::Into::into(challenge_data),(crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
+}
+}
 
-#[cfg(feature = "app-challengedifficultymanager")]
-impl ChallengeDifficultyManager {
-# [doc = "`.ctor(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler)` — overload selector"] pub fn new (super_ : crate :: app :: procinst :: ProcInst , root : crate :: app :: challengemapselectroot :: ChallengeMapSelectRoot , challenge_data : crate :: app :: challengedata :: ChallengeData , return_event_handler : crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ChallengeDifficultyManager) , :: core :: stringify ! (new) ,)) ; < Self as IChallengeDifficultyManagerMethods > :: ctor (this , super_ , root , challenge_data , return_event_handler) ; this }
+#[cfg(feature="app-challengedifficultymanager")]pub trait IChallengeDifficultyManagerMethods:IChallengeDifficultyManager{#[doc="`.ctor(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler)` overload"]fn ctor(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,root:impl::core::convert::Into<crate::app::challengemapselectroot::ChallengeMapSelectRoot> ,challenge_data:impl::core::convert::Into<crate::app::challengedata::ChallengeData> ,return_event_handler:impl::core::convert::Into<crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler>)->(){unsafe{let __receiver= <ChallengeDifficultyManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c22b0usize)as*mut u8,();
+(ChallengeDifficultyManager)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::challengemapselectroot::ChallengeMapSelectRoot)::core::convert::Into::into(root),(crate::app::challengedata::ChallengeData)::core::convert::Into::into(challenge_data),(crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
+}
+#[doc="`OnDecide(i32)` overload"]fn on_decide(self,difficulty:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChallengeDifficultyManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c2570usize)as*mut u8,();
+(ChallengeDifficultyManager)__receiver,(i32)::core::convert::Into::into(difficulty))}
+}
+#[doc="`OnDecideYes()` overload"]fn on_decide_yes(self,)->(){unsafe{let __receiver= <ChallengeDifficultyManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c2740usize)as*mut u8,();
+(ChallengeDifficultyManager)__receiver)}
+}
+#[doc="`OnRequestClose(i32)` overload"]fn on_request_close(self,difficulty:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChallengeDifficultyManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25c2790usize)as*mut u8,();
+(ChallengeDifficultyManager)__receiver,(i32)::core::convert::Into::into(difficulty))}
+}
+}
+
+#[cfg(feature="app-challengedifficultymanager")]impl<__T:IChallengeDifficultyManager>IChallengeDifficultyManagerMethods for __T{}
+
+#[cfg(feature="app-challengedifficultymanager")]impl ChallengeDifficultyManager{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_decide_yes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_request_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-challengedifficultymanager")]impl ChallengeDifficultyManager{#[doc="`.ctor(crate::app::procinst::ProcInst, crate::app::challengemapselectroot::ChallengeMapSelectRoot, crate::app::challengedata::ChallengeData, crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler)` — overload selector"]pub fn new(super_:crate::app::procinst::ProcInst,root:crate::app::challengemapselectroot::ChallengeMapSelectRoot,challenge_data:crate::app::challengedata::ChallengeData,return_event_handler:crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChallengeDifficultyManager), ::core::stringify!(new),));
+ <Self as IChallengeDifficultyManagerMethods> ::ctor(this,super_,root,challenge_data,return_event_handler);
+this}
 }
 
 #[cfg(feature = "app-challengedifficultymanager")]

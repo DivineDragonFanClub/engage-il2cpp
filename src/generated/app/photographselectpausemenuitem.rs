@@ -4,37 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectpausemenuitem/PhotographSelectPauseMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "PhotographSelectPauseMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct PhotographSelectPauseMenuItem {
-# [offset (104)] # [rename (name = "m_PauseData")] pub m_pause_data : crate :: app :: photographpausedata :: PhotographPauseData ,
-# [offset (112)] # [rename (name = "m_DisposManager")] pub m_dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager ,
-# [offset (120)] # [rename (name = "m_IsCurrentPause")] pub m_is_current_pause : bool ,
-# [offset (128)] # [rename (name = "m_CharacterId")] pub m_character_id : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectpausemenuitem/PhotographSelectPauseMenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographSelectPauseMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct PhotographSelectPauseMenuItem{#[offset(104)]#[rename(name="m_PauseData")]pub m_pause_data:crate::app::photographpausedata::PhotographPauseData, #[offset(112)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(120)]#[rename(name="m_IsCurrentPause")]pub m_is_current_pause:bool, #[offset(128)]#[rename(name="m_CharacterId")]pub m_character_id: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-photographselectpausemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-photographselectpausemenuitem")]
-pub trait IPhotographSelectPauseMenuItemMethods : IPhotographSelectPauseMenuItem { # [doc = "`get_IsCurrentPause()` overload"] fn get_is_current_pause (self ,) -> bool { unsafe { let __receiver = < PhotographSelectPauseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectPauseMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269adb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::photographpausedata::PhotographPauseData, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"] fn ctor (self , pause_data : impl :: core :: convert :: Into < crate :: app :: photographpausedata :: PhotographPauseData > , dispos_manager : impl :: core :: convert :: Into < crate :: app :: photographdisposmanager :: PhotographDisposManager > , is_current_pause : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PhotographSelectPauseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectPauseMenuItem , crate :: app :: photographpausedata :: PhotographPauseData , crate :: app :: photographdisposmanager :: PhotographDisposManager , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2699d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pause_data) , :: core :: convert :: Into :: into (dispos_manager) , :: core :: convert :: Into :: into (is_current_pause) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < PhotographSelectPauseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectPauseMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269adc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectPauseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectPauseMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269ae20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < PhotographSelectPauseMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PhotographSelectPauseMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x269ae30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-photographselectpausemenuitem")]pub trait IPhotographSelectPauseMenuItemMethods:IPhotographSelectPauseMenuItem{#[doc="`get_IsCurrentPause()` overload"]fn get_is_current_pause(self,)->bool{unsafe{let __receiver= <PhotographSelectPauseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269adb0usize)as*mut u8,bool;
+(PhotographSelectPauseMenuItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::photographpausedata::PhotographPauseData, crate::app::photographdisposmanager::PhotographDisposManager, bool)` overload"]fn ctor(self,pause_data:impl::core::convert::Into<crate::app::photographpausedata::PhotographPauseData> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,is_current_pause:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectPauseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2699d10usize)as*mut u8,();
+(PhotographSelectPauseMenuItem)__receiver,(crate::app::photographpausedata::PhotographPauseData)::core::convert::Into::into(pause_data),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(bool)::core::convert::Into::into(is_current_pause))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <PhotographSelectPauseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269adc0usize)as*mut u8,();
+(PhotographSelectPauseMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectPauseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269ae20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectPauseMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectPauseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x269ae30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(PhotographSelectPauseMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-photographselectpausemenuitem")]
-impl < __T : IPhotographSelectPauseMenuItem > IPhotographSelectPauseMenuItemMethods for __T { }
+#[cfg(feature="app-photographselectpausemenuitem")]impl<__T:IPhotographSelectPauseMenuItem>IPhotographSelectPauseMenuItemMethods for __T{}
 
-#[cfg(feature = "app-photographselectpausemenuitem")]
-impl PhotographSelectPauseMenuItem { pub fn get_is_current_pause_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectPauseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectPauseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectPauseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectPauseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PhotographSelectPauseMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-photographselectpausemenuitem")]impl PhotographSelectPauseMenuItem{pub fn get_is_current_pause_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-photographselectpausemenuitem")]
-impl PhotographSelectPauseMenuItem {
-# [doc = "`.ctor(crate::app::photographpausedata::PhotographPauseData, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"] pub fn new (pause_data : crate :: app :: photographpausedata :: PhotographPauseData , dispos_manager : crate :: app :: photographdisposmanager :: PhotographDisposManager , is_current_pause : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PhotographSelectPauseMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IPhotographSelectPauseMenuItemMethods > :: ctor (this , pause_data , dispos_manager , is_current_pause) ; this }
+#[cfg(feature="app-photographselectpausemenuitem")]impl PhotographSelectPauseMenuItem{#[doc="`.ctor(crate::app::photographpausedata::PhotographPauseData, crate::app::photographdisposmanager::PhotographDisposManager, bool)` — overload selector"]pub fn new(pause_data:crate::app::photographpausedata::PhotographPauseData,dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager,is_current_pause:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectPauseMenuItem), ::core::stringify!(new),));
+ <Self as IPhotographSelectPauseMenuItemMethods> ::ctor(this,pause_data,dispos_manager,is_current_pause);
+this}
 }
 
 #[cfg(feature = "app-photographselectpausemenuitem")]

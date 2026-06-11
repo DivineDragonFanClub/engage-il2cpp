@@ -4,50 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/globaldynamicresolutionsettings/GlobalDynamicResolutionSettings.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct GlobalDynamicResolutionSettings {
-    pub enabled: bool,
-    pub max_percentage: f32,
-    pub min_percentage: f32,
-    pub dyn_res_type: crate :: unity_engine :: rendering :: dynamicresolutiontype :: DynamicResolutionType,
-    pub upsample_filter: crate :: unity_engine :: rendering :: dynamicresupscalefilter :: DynamicResUpscaleFilter,
-    pub force_resolution: bool,
-    pub forced_percentage: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/globaldynamicresolutionsettings/GlobalDynamicResolutionSettings.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GlobalDynamicResolutionSettings{pub enabled:bool,pub max_percentage:f32,pub min_percentage:f32,pub dyn_res_type:crate::unity_engine::rendering::dynamicresolutiontype::DynamicResolutionType,pub upsample_filter:crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter,pub force_resolution:bool,pub forced_percentage:f32,}
+impl::unity2::ClassIdentity for GlobalDynamicResolutionSettings{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="GlobalDynamicResolutionSettings";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for GlobalDynamicResolutionSettings {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "GlobalDynamicResolutionSettings";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for GlobalDynamicResolutionSettings {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for GlobalDynamicResolutionSettings{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -55,11 +26,13 @@ impl ::unity2::IlType for GlobalDynamicResolutionSettings {
 #[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings")]
-impl GlobalDynamicResolutionSettings { # [doc = "`NewDefault()` overload"] pub fn new_default () -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30aa5f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-globaldynamicresolutionsettings")]impl GlobalDynamicResolutionSettings{#[doc="`NewDefault()` overload"]pub fn new_default()->crate::unity_engine::rendering::globaldynamicresolutionsettings::GlobalDynamicResolutionSettings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30aa5f0usize)as*mut u8,crate::unity_engine::rendering::globaldynamicresolutionsettings::GlobalDynamicResolutionSettings;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings")]
-impl GlobalDynamicResolutionSettings { pub fn new_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GlobalDynamicResolutionSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-globaldynamicresolutionsettings")]impl GlobalDynamicResolutionSettings{pub fn new_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings")]
 #[doc(hidden)]

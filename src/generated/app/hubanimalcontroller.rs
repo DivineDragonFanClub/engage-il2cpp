@@ -4,44 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubanimalcontroller/HubAnimalController.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAnimalController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubAnimalController {
-# [offset (24)] # [rename (name = "m_hubUnit")] pub m_hub_unit : crate :: app :: hubunitcontroller :: HubUnitController ,
-# [offset (32)] # [rename (name = "m_delay")] pub m_delay : f32 ,
-# [offset (36)] # [rename (name = "m_isSleep")] pub m_is_sleep : bool ,
-# [offset (37)] # [rename (name = "m_trigger")] pub m_trigger : bool ,
-# [offset (40)] # [rename (name = "m_rangeAction")] pub m_range_action : crate :: app :: hubrangeaction :: HubRangeAction ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubanimalcontroller/HubAnimalController.md"))]#[::unity2::class(namespace="App",name="HubAnimalController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubAnimalController{#[offset(24)]#[rename(name="m_hubUnit")]pub m_hub_unit:crate::app::hubunitcontroller::HubUnitController, #[offset(32)]#[rename(name="m_delay")]pub m_delay:f32, #[offset(36)]#[rename(name="m_isSleep")]pub m_is_sleep:bool, #[offset(37)]#[rename(name="m_trigger")]pub m_trigger:bool, #[offset(40)]#[rename(name="m_rangeAction")]pub m_range_action:crate::app::hubrangeaction::HubRangeAction,}
 
 }
 
 #[cfg(feature = "app-hubanimalcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubanimalcontroller")]
-pub trait IHubAnimalControllerMethods : IHubAnimalController { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubAnimalController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAnimalController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubAnimalController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAnimalController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnterRange(crate::app::hubunitcontroller::HubUnitController)` overload"] fn enter_range (self , unit : impl :: core :: convert :: Into < crate :: app :: hubunitcontroller :: HubUnitController >) -> () { unsafe { let __receiver = < HubAnimalController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAnimalController , crate :: app :: hubunitcontroller :: HubUnitController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`LeaveRange(crate::app::hubunitcontroller::HubUnitController)` overload"] fn leave_range (self , unit : impl :: core :: convert :: Into < crate :: app :: hubunitcontroller :: HubUnitController >) -> () { unsafe { let __receiver = < HubAnimalController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAnimalController , crate :: app :: hubunitcontroller :: HubUnitController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubAnimalController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAnimalController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d76880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubanimalcontroller")]pub trait IHubAnimalControllerMethods:IHubAnimalController{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubAnimalController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76600usize)as*mut u8,();
+(HubAnimalController)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubAnimalController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76770usize)as*mut u8,();
+(HubAnimalController)__receiver)}
+}
+#[doc="`EnterRange(crate::app::hubunitcontroller::HubUnitController)` overload"]fn enter_range(self,unit:impl::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>)->(){unsafe{let __receiver= <HubAnimalController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76850usize)as*mut u8,();
+(HubAnimalController)__receiver,(crate::app::hubunitcontroller::HubUnitController)::core::convert::Into::into(unit))}
+}
+#[doc="`LeaveRange(crate::app::hubunitcontroller::HubUnitController)` overload"]fn leave_range(self,unit:impl::core::convert::Into<crate::app::hubunitcontroller::HubUnitController>)->(){unsafe{let __receiver= <HubAnimalController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76860usize)as*mut u8,();
+(HubAnimalController)__receiver,(crate::app::hubunitcontroller::HubUnitController)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubAnimalController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d76880usize)as*mut u8,();
+(HubAnimalController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubanimalcontroller")]
-impl < __T : IHubAnimalController > IHubAnimalControllerMethods for __T { }
+#[cfg(feature="app-hubanimalcontroller")]impl<__T:IHubAnimalController>IHubAnimalControllerMethods for __T{}
 
-#[cfg(feature = "app-hubanimalcontroller")]
-impl HubAnimalController { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAnimalController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAnimalController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn enter_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAnimalController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn leave_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAnimalController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAnimalController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-hubanimalcontroller")]impl HubAnimalController{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn enter_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn leave_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-hubanimalcontroller")]
-impl HubAnimalController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubAnimalController) , :: core :: stringify ! (new) ,)) ; < Self as IHubAnimalControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubanimalcontroller")]impl HubAnimalController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubAnimalController), ::core::stringify!(new),));
+ <Self as IHubAnimalControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubanimalcontroller")]

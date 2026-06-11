@@ -4,48 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenucontent/ArenaTopMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ArenaTopMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct ArenaTopMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "LastCountRoot")] pub last_count_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "LastCount")] pub last_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "GodBondHelpRoot")] pub god_bond_help_root : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenatopmenucontent/ArenaTopMenuContent.md"))]#[::unity2::class(namespace="App",name="ArenaTopMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct ArenaTopMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="LastCountRoot")]pub last_count_root:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="LastCount")]pub last_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="GodBondHelpRoot")]pub god_bond_help_root:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-arenatopmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-arenatopmenucontent")]
-impl ArenaTopMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117cb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117d30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117db0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: arenatopmenucontent :: ArenaTopMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: arenatopmenucontent :: ArenaTopMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21178e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenatopmenucontent")]impl ArenaTopMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2117cb0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2117d30usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2117db0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::arenatopmenucontent::ArenaTopMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21178e0usize)as*mut u8,crate::app::arenatopmenucontent::ArenaTopMenuContent;
+)}
+}
+}
 
-#[cfg(feature = "app-arenatopmenucontent")]
-pub trait IArenaTopMenuContentMethods : IArenaTopMenuContent { # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < ArenaTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < ArenaTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < ArenaTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetState(i32, bool)` overload"] fn set_state (self , last_train_count : impl :: core :: convert :: Into < i32 > , show_count : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ArenaTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenuContent , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (last_train_count) , :: core :: convert :: Into :: into (show_count) , :: core :: option :: Option :: None) } } } # [doc = "`ToggleNormal(i32)` overload"] fn toggle_normal (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ArenaTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117b50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ArenaTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenatopmenucontent")]pub trait IArenaTopMenuContentMethods:IArenaTopMenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <ArenaTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117e30usize)as*mut u8,i32;
+(ArenaTopMenuContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <ArenaTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117e40usize)as*mut u8,f32;
+(ArenaTopMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <ArenaTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117eb0usize)as*mut u8,f32;
+(ArenaTopMenuContent)__receiver)}
+}
+#[doc="`SetState(i32, bool)` overload"]fn set_state(self,last_train_count:impl::core::convert::Into<i32> ,show_count:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ArenaTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117990usize)as*mut u8,();
+(ArenaTopMenuContent)__receiver,(i32)::core::convert::Into::into(last_train_count),(bool)::core::convert::Into::into(show_count))}
+}
+#[doc="`ToggleNormal(i32)` overload"]fn toggle_normal(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArenaTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117b50usize)as*mut u8,();
+(ArenaTopMenuContent)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117f20usize)as*mut u8,();
+(ArenaTopMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-arenatopmenucontent")]
-impl < __T : IArenaTopMenuContent > IArenaTopMenuContentMethods for __T { }
+#[cfg(feature="app-arenatopmenucontent")]impl<__T:IArenaTopMenuContent>IArenaTopMenuContentMethods for __T{}
 
-#[cfg(feature = "app-arenatopmenucontent")]
-impl ArenaTopMenuContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn toggle_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-arenatopmenucontent")]impl ArenaTopMenuContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn toggle_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-arenatopmenucontent")]
-impl ArenaTopMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArenaTopMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IArenaTopMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-arenatopmenucontent")]impl ArenaTopMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaTopMenuContent), ::core::stringify!(new),));
+ <Self as IArenaTopMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-arenatopmenucontent")]

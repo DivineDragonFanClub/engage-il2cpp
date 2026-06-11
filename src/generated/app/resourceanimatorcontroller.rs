@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: resourcehandle_2 :: { IResourceHandle_2 , ResourceHandle_2 }
- ;
- use crate :: app :: tresourcehandle_1 :: { ITResourceHandle_1 , TResourceHandle_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::resourcehandle_2::{IResourceHandle_2,ResourceHandle_2}
+;
+use crate::app::tresourcehandle_1::{ITResourceHandle_1,TResourceHandle_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceanimatorcontroller/ResourceAnimatorController.md"))] # [:: unity2 :: class (namespace = "App" , name = "ResourceAnimatorController")] # [parent (crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController >)] pub struct ResourceAnimatorController {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/resourceanimatorcontroller/ResourceAnimatorController.md"))]#[::unity2::class(namespace="App",name="ResourceAnimatorController")]#[parent(crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController>)]pub struct ResourceAnimatorController{}
 
 }
 
 #[cfg(feature = "app-resourceanimatorcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-resourceanimatorcontroller")]
-pub trait IResourceAnimatorControllerMethods : IResourceAnimatorController { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ResourceAnimatorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceAnimatorController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-resourceanimatorcontroller")]pub trait IResourceAnimatorControllerMethods:IResourceAnimatorController{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ResourceAnimatorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2013460usize)as*mut u8,();
+(ResourceAnimatorController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-resourceanimatorcontroller")]
-impl < __T : IResourceAnimatorController > IResourceAnimatorControllerMethods for __T { }
+#[cfg(feature="app-resourceanimatorcontroller")]impl<__T:IResourceAnimatorController>IResourceAnimatorControllerMethods for __T{}
 
-#[cfg(feature = "app-resourceanimatorcontroller")]
-impl ResourceAnimatorController { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceAnimatorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-resourceanimatorcontroller")]impl ResourceAnimatorController{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-resourceanimatorcontroller")]
-impl ResourceAnimatorController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ResourceAnimatorController) , :: core :: stringify ! (new) ,)) ; < Self as IResourceAnimatorControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-resourceanimatorcontroller")]impl ResourceAnimatorController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ResourceAnimatorController), ::core::stringify!(new),));
+ <Self as IResourceAnimatorControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-resourceanimatorcontroller")]

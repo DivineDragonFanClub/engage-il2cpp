@@ -4,52 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfosequenceattack/MapBattleInfoSequenceAttack.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapBattleInfoSequenceAttack")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapBattleInfoSequenceAttack {
-# [offset (24)] # [rename (name = "m_DefenseDamage")] pub m_defense_damage : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_DefenseArrow")] pub m_defense_arrow : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_DefenseDead")] pub m_defense_dead : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (48)] # [rename (name = "m_OffenseDamage")] pub m_offense_damage : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_OffenseArrow")] pub m_offense_arrow : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (64)] # [rename (name = "m_OffenseDead")] pub m_offense_dead : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (72)] # [rename (name = "m_DefenseResult")] pub m_defense_result : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_OffenseResult")] pub m_offense_result : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (88)] # [rename (name = "m_DamageMaterial")] pub m_damage_material : crate :: unity_engine :: material :: Material ,
-# [offset (96)] # [rename (name = "m_HealMaterial")] pub m_heal_material : crate :: unity_engine :: material :: Material ,
-# [offset (104)] # [rename (name = "m_ArrowSprite")] pub m_arrow_sprite : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (112)] # [rename (name = "m_InstDamageMaterial")] pub m_inst_damage_material : crate :: unity_engine :: material :: Material ,
-# [offset (120)] # [rename (name = "m_InstHealMaterial")] pub m_inst_heal_material : crate :: unity_engine :: material :: Material ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbattleinfosequenceattack/MapBattleInfoSequenceAttack.md"))]#[::unity2::class(namespace="App",name="MapBattleInfoSequenceAttack")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapBattleInfoSequenceAttack{#[offset(24)]#[rename(name="m_DefenseDamage")]pub m_defense_damage:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_DefenseArrow")]pub m_defense_arrow:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_DefenseDead")]pub m_defense_dead:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_OffenseDamage")]pub m_offense_damage:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_OffenseArrow")]pub m_offense_arrow:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_OffenseDead")]pub m_offense_dead:crate::unity_engine::ui::image::Image, #[offset(72)]#[rename(name="m_DefenseResult")]pub m_defense_result:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_OffenseResult")]pub m_offense_result:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(88)]#[rename(name="m_DamageMaterial")]pub m_damage_material:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_HealMaterial")]pub m_heal_material:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_ArrowSprite")]pub m_arrow_sprite: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(112)]#[rename(name="m_InstDamageMaterial")]pub m_inst_damage_material:crate::unity_engine::material::Material, #[offset(120)]#[rename(name="m_InstHealMaterial")]pub m_inst_heal_material:crate::unity_engine::material::Material,}
 
 }
 
 #[cfg(feature = "app-mapbattleinfosequenceattack-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapbattleinfosequenceattack")]
-pub trait IMapBattleInfoSequenceAttackMethods : IMapBattleInfoSequenceAttack { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoSequenceAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0de20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo, bool)` overload"] fn setup (self , attack : impl :: core :: convert :: Into < crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo > , is_hide : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0cbd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attack) , :: core :: convert :: Into :: into (is_hide) , :: core :: option :: Option :: None) } } } # [doc = "`SetArrow(bool, crate::app::force::Force_Type)` overload"] fn set_arrow (self , is_offense : impl :: core :: convert :: Into < bool > , force_type : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoSequenceAttack , bool , crate :: app :: force :: Force_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0e280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_offense) , :: core :: convert :: Into :: into (force_type) , :: core :: option :: Option :: None) } } } # [doc = "`SetReceiveDamage(crate::app::battleside::BattleSide_Type, ::unity2::Il2CppString, bool, i32, bool)` overload"] fn set_receive_damage (self , side_type : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , atk_string : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_heal : impl :: core :: convert :: Into < bool > , receive_first_damage : impl :: core :: convert :: Into < i32 > , is_hide : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: Il2CppString , bool , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0ded0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side_type) , :: core :: convert :: Into :: into (atk_string) , :: core :: convert :: Into :: into (is_heal) , :: core :: convert :: Into :: into (receive_first_damage) , :: core :: convert :: Into :: into (is_hide) , :: core :: option :: Option :: None) } } } # [doc = "`SetSendDamage(crate::app::battleside::BattleSide_Type, i32, i32)` overload"] fn set_send_damage (self , side_type : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , atk : impl :: core :: convert :: Into < i32 > , send_first_damage : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: battleside :: BattleSide_Type , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0e0f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side_type) , :: core :: convert :: Into :: into (atk) , :: core :: convert :: Into :: into (send_first_damage) , :: core :: option :: Option :: None) } } } # [doc = "`SetSceneResult(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult, crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult)` overload"] fn set_scene_result (self , offense : impl :: core :: convert :: Into < crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult > , defense : impl :: core :: convert :: Into < crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult , crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0e470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (offense) , :: core :: convert :: Into :: into (defense) , :: core :: option :: Option :: None) } } } # [doc = "`SetDeath(crate::app::battleside::BattleSide_Type)` overload"] fn set_death (self , side : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type >) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoSequenceAttack , crate :: app :: battleside :: BattleSide_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0e6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapBattleInfoSequenceAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBattleInfoSequenceAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f0e740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapbattleinfosequenceattack")]pub trait IMapBattleInfoSequenceAttackMethods:IMapBattleInfoSequenceAttack{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapBattleInfoSequenceAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0de20usize)as*mut u8,();
+(MapBattleInfoSequenceAttack)__receiver)}
+}
+#[doc="`Setup(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo, bool)` overload"]fn setup(self,attack:impl::core::convert::Into<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo> ,is_hide:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapBattleInfoSequenceAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0cbd0usize)as*mut u8,();
+(MapBattleInfoSequenceAttack)__receiver,(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo)::core::convert::Into::into(attack),(bool)::core::convert::Into::into(is_hide))}
+}
+#[doc="`SetArrow(bool, crate::app::force::Force_Type)` overload"]fn set_arrow(self,is_offense:impl::core::convert::Into<bool> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type>)->(){unsafe{let __receiver= <MapBattleInfoSequenceAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0e280usize)as*mut u8,();
+(MapBattleInfoSequenceAttack)__receiver,(bool)::core::convert::Into::into(is_offense),(crate::app::force::Force_Type)::core::convert::Into::into(force_type))}
+}
+#[doc="`SetReceiveDamage(crate::app::battleside::BattleSide_Type, ::unity2::Il2CppString, bool, i32, bool)` overload"]fn set_receive_damage(self,side_type:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,atk_string:impl::core::convert::Into< ::unity2::Il2CppString> ,is_heal:impl::core::convert::Into<bool> ,receive_first_damage:impl::core::convert::Into<i32> ,is_hide:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapBattleInfoSequenceAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0ded0usize)as*mut u8,();
+(MapBattleInfoSequenceAttack)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side_type),(::unity2::Il2CppString)::core::convert::Into::into(atk_string),(bool)::core::convert::Into::into(is_heal),(i32)::core::convert::Into::into(receive_first_damage),(bool)::core::convert::Into::into(is_hide))}
+}
+#[doc="`SetSendDamage(crate::app::battleside::BattleSide_Type, i32, i32)` overload"]fn set_send_damage(self,side_type:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,atk:impl::core::convert::Into<i32> ,send_first_damage:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapBattleInfoSequenceAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0e0f0usize)as*mut u8,();
+(MapBattleInfoSequenceAttack)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side_type),(i32)::core::convert::Into::into(atk),(i32)::core::convert::Into::into(send_first_damage))}
+}
+#[doc="`SetSceneResult(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult, crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult)` overload"]fn set_scene_result(self,offense:impl::core::convert::Into<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult> ,defense:impl::core::convert::Into<crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult>)->(){unsafe{let __receiver= <MapBattleInfoSequenceAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0e470usize)as*mut u8,();
+(MapBattleInfoSequenceAttack)__receiver,(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult)::core::convert::Into::into(offense),(crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult)::core::convert::Into::into(defense))}
+}
+#[doc="`SetDeath(crate::app::battleside::BattleSide_Type)` overload"]fn set_death(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->(){unsafe{let __receiver= <MapBattleInfoSequenceAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0e6b0usize)as*mut u8,();
+(MapBattleInfoSequenceAttack)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBattleInfoSequenceAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0e740usize)as*mut u8,();
+(MapBattleInfoSequenceAttack)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapbattleinfosequenceattack")]
-impl < __T : IMapBattleInfoSequenceAttack > IMapBattleInfoSequenceAttackMethods for __T { }
+#[cfg(feature="app-mapbattleinfosequenceattack")]impl<__T:IMapBattleInfoSequenceAttack>IMapBattleInfoSequenceAttackMethods for __T{}
 
-#[cfg(feature = "app-mapbattleinfosequenceattack")]
-impl MapBattleInfoSequenceAttack { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_receive_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_send_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_scene_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_death_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBattleInfoSequenceAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-mapbattleinfosequenceattack")]impl MapBattleInfoSequenceAttack{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_arrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_receive_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_send_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_scene_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_death_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-mapbattleinfosequenceattack")]
-impl MapBattleInfoSequenceAttack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapBattleInfoSequenceAttack) , :: core :: stringify ! (new) ,)) ; < Self as IMapBattleInfoSequenceAttackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapbattleinfosequenceattack")]impl MapBattleInfoSequenceAttack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapBattleInfoSequenceAttack), ::core::stringify!(new),));
+ <Self as IMapBattleInfoSequenceAttackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapbattleinfosequenceattack")]

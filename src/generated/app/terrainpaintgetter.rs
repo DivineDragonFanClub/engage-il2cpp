@@ -4,46 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainpaintgetter/TerrainPaintGetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainPaintGetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TerrainPaintGetter {
-# [offset (24)] # [rename (name = "m_Data")] pub m_data : crate :: app :: terrainpaintdata :: TerrainPaintData ,
-# [offset (32)] # [rename (name = "m_drawDebugGizmo")] pub m_draw_debug_gizmo : bool ,
-# [offset (36)] # [rename (name = "m_debugGizmoHeight")] pub m_debug_gizmo_height : f32 ,
-# [offset (40)] # [rename (name = "m_debugGizmoGridColor")] pub m_debug_gizmo_grid_color : crate :: unity_engine :: color :: Color ,
-# [offset (56)] # [rename (name = "m_debugGizmoDrawIndex")] pub m_debug_gizmo_draw_index : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
-# [offset (64)] # [rename (name = "m_debugGizmoDrawAlpha")] pub m_debug_gizmo_draw_alpha : f32 ,
-# [offset (72)] # [rename (name = "m_debugGizmoDrawColor")] pub m_debug_gizmo_draw_color : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: color :: Color > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terrainpaintgetter/TerrainPaintGetter.md"))]#[::unity2::class(namespace="App",name="TerrainPaintGetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TerrainPaintGetter{#[offset(24)]#[rename(name="m_Data")]pub m_data:crate::app::terrainpaintdata::TerrainPaintData, #[offset(32)]#[rename(name="m_drawDebugGizmo")]pub m_draw_debug_gizmo:bool, #[offset(36)]#[rename(name="m_debugGizmoHeight")]pub m_debug_gizmo_height:f32, #[offset(40)]#[rename(name="m_debugGizmoGridColor")]pub m_debug_gizmo_grid_color:crate::unity_engine::color::Color, #[offset(56)]#[rename(name="m_debugGizmoDrawIndex")]pub m_debug_gizmo_draw_index:crate::system::collections::generic::list_1::List_1<i32> , #[offset(64)]#[rename(name="m_debugGizmoDrawAlpha")]pub m_debug_gizmo_draw_alpha:f32, #[offset(72)]#[rename(name="m_debugGizmoDrawColor")]pub m_debug_gizmo_draw_color:crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> ,}
 
 }
 
 #[cfg(feature = "app-terrainpaintgetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-terrainpaintgetter")]
-pub trait ITerrainPaintGetterMethods : ITerrainPaintGetter { # [doc = "`Get(f32, f32)` overload"] fn get (self , x : impl :: core :: convert :: Into < f32 > , y : impl :: core :: convert :: Into < f32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TerrainPaintGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintGetter , f32 , f32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e71a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`Get(crate::unity_engine::vector2::Vector2)` overload"] fn get_2 (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TerrainPaintGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintGetter , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`OnDrawGizmos()` overload"] fn on_draw_gizmos (self ,) -> () { unsafe { let __receiver = < TerrainPaintGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintGetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e7330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainPaintGetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainPaintGetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e76c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-terrainpaintgetter")]pub trait ITerrainPaintGetterMethods:ITerrainPaintGetter{#[doc="`Get(f32, f32)` overload"]fn get(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e71a0usize)as*mut u8, ::unity2::Il2CppString;
+(TerrainPaintGetter)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`Get(crate::unity_engine::vector2::Vector2)` overload"]fn get_2(self,pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7320usize)as*mut u8, ::unity2::Il2CppString;
+(TerrainPaintGetter)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pos))}
+}
+#[doc="`OnDrawGizmos()` overload"]fn on_draw_gizmos(self,)->(){unsafe{let __receiver= <TerrainPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7330usize)as*mut u8,();
+(TerrainPaintGetter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e76c0usize)as*mut u8,();
+(TerrainPaintGetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-terrainpaintgetter")]
-impl < __T : ITerrainPaintGetter > ITerrainPaintGetterMethods for __T { }
+#[cfg(feature="app-terrainpaintgetter")]impl<__T:ITerrainPaintGetter>ITerrainPaintGetterMethods for __T{}
 
-#[cfg(feature = "app-terrainpaintgetter")]
-impl TerrainPaintGetter { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_draw_gizmos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainPaintGetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-terrainpaintgetter")]impl TerrainPaintGetter{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-terrainpaintgetter")]
-impl TerrainPaintGetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainPaintGetter) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainPaintGetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-terrainpaintgetter")]impl TerrainPaintGetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainPaintGetter), ::core::stringify!(new),));
+ <Self as ITerrainPaintGetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-terrainpaintgetter")]

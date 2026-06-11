@@ -4,33 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/builtinruntimereflectionsystem/BuiltinRuntimeReflectionSystem.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering" , name = "BuiltinRuntimeReflectionSystem")] # [parent (crate :: system :: object :: Object)] pub struct BuiltinRuntimeReflectionSystem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/builtinruntimereflectionsystem/BuiltinRuntimeReflectionSystem.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering",name="BuiltinRuntimeReflectionSystem")]#[parent(crate::system::object::Object)]pub struct BuiltinRuntimeReflectionSystem{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem")]
-impl BuiltinRuntimeReflectionSystem { # [doc = "`BuiltinUpdate()` overload"] pub fn builtin_update () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38fc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Internal_BuiltinRuntimeReflectionSystem_New()` overload"] pub fn internal_builtin_runtime_reflection_system_new () -> crate :: unity_engine :: experimental :: rendering :: builtinruntimereflectionsystem :: BuiltinRuntimeReflectionSystem { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: rendering :: builtinruntimereflectionsystem :: BuiltinRuntimeReflectionSystem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c39020usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]impl BuiltinRuntimeReflectionSystem{#[doc="`BuiltinUpdate()` overload"]pub fn builtin_update()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38fc0usize)as*mut u8,bool;
+)}
+}
+#[doc="`Internal_BuiltinRuntimeReflectionSystem_New()` overload"]pub fn internal_builtin_runtime_reflection_system_new()->crate::unity_engine::experimental::rendering::builtinruntimereflectionsystem::BuiltinRuntimeReflectionSystem{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c39020usize)as*mut u8,crate::unity_engine::experimental::rendering::builtinruntimereflectionsystem::BuiltinRuntimeReflectionSystem;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem")]
-pub trait IBuiltinRuntimeReflectionSystemMethods : IBuiltinRuntimeReflectionSystem { # [doc = "`TickRealtimeProbes()` overload"] fn tick_realtime_probes (self ,) -> bool { unsafe { let __receiver = < BuiltinRuntimeReflectionSystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BuiltinRuntimeReflectionSystem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c38f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < BuiltinRuntimeReflectionSystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BuiltinRuntimeReflectionSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c39000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose_2 (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BuiltinRuntimeReflectionSystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BuiltinRuntimeReflectionSystem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c39010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BuiltinRuntimeReflectionSystem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BuiltinRuntimeReflectionSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c39080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]pub trait IBuiltinRuntimeReflectionSystemMethods:IBuiltinRuntimeReflectionSystem{#[doc="`TickRealtimeProbes()` overload"]fn tick_realtime_probes(self,)->bool{unsafe{let __receiver= <BuiltinRuntimeReflectionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c38f80usize)as*mut u8,bool;
+(BuiltinRuntimeReflectionSystem)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <BuiltinRuntimeReflectionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c39000usize)as*mut u8,();
+(BuiltinRuntimeReflectionSystem)__receiver)}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose_2(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BuiltinRuntimeReflectionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c39010usize)as*mut u8,();
+(BuiltinRuntimeReflectionSystem)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BuiltinRuntimeReflectionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c39080usize)as*mut u8,();
+(BuiltinRuntimeReflectionSystem)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem")]
-impl < __T : IBuiltinRuntimeReflectionSystem > IBuiltinRuntimeReflectionSystemMethods for __T { }
+#[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]impl<__T:IBuiltinRuntimeReflectionSystem>IBuiltinRuntimeReflectionSystemMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem")]
-impl BuiltinRuntimeReflectionSystem { pub fn tick_realtime_probes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BuiltinRuntimeReflectionSystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BuiltinRuntimeReflectionSystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BuiltinRuntimeReflectionSystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn builtin_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BuiltinRuntimeReflectionSystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn internal_builtin_runtime_reflection_system_new_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BuiltinRuntimeReflectionSystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BuiltinRuntimeReflectionSystem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]impl BuiltinRuntimeReflectionSystem{pub fn tick_realtime_probes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn builtin_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn internal_builtin_runtime_reflection_system_new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem")]
-impl BuiltinRuntimeReflectionSystem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BuiltinRuntimeReflectionSystem) , :: core :: stringify ! (new) ,)) ; < Self as IBuiltinRuntimeReflectionSystemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-rendering-builtinruntimereflectionsystem")]impl BuiltinRuntimeReflectionSystem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BuiltinRuntimeReflectionSystem), ::core::stringify!(new),));
+ <Self as IBuiltinRuntimeReflectionSystemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-builtinruntimereflectionsystem")]

@@ -4,35 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/contextmenuitemattribute/ContextMenuItemAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ContextMenuItemAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct ContextMenuItemAttribute {
-# [offset (16)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "function")] pub function : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/contextmenuitemattribute/ContextMenuItemAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="ContextMenuItemAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct ContextMenuItemAttribute{#[offset(16)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="function")]pub function: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-contextmenuitemattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-contextmenuitemattribute")]
-pub trait IContextMenuItemAttributeMethods : IContextMenuItemAttribute { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , function : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ContextMenuItemAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ContextMenuItemAttribute , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c47390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-contextmenuitemattribute")]pub trait IContextMenuItemAttributeMethods:IContextMenuItemAttribute{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,function:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ContextMenuItemAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c47390usize)as*mut u8,();
+(ContextMenuItemAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(function))}
+}
+}
 
-#[cfg(feature = "unity_engine-contextmenuitemattribute")]
-impl < __T : IContextMenuItemAttribute > IContextMenuItemAttributeMethods for __T { }
+#[cfg(feature="unity_engine-contextmenuitemattribute")]impl<__T:IContextMenuItemAttribute>IContextMenuItemAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-contextmenuitemattribute")]
-impl ContextMenuItemAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ContextMenuItemAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-contextmenuitemattribute")]impl ContextMenuItemAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-contextmenuitemattribute")]
-impl ContextMenuItemAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , function : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ContextMenuItemAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IContextMenuItemAttributeMethods > :: ctor (this , name , function) ; this }
+#[cfg(feature="unity_engine-contextmenuitemattribute")]impl ContextMenuItemAttribute{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,function: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ContextMenuItemAttribute), ::core::stringify!(new),));
+ <Self as IContextMenuItemAttributeMethods> ::ctor(this,name,function);
+this}
 }
 
 #[cfg(feature = "unity_engine-contextmenuitemattribute")]

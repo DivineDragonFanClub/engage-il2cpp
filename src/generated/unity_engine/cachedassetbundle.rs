@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/cachedassetbundle/CachedAssetBundle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CachedAssetBundle {
-    pub m_name: :: unity2 :: Il2CppString,
-    pub m_hash: crate :: unity_engine :: hash128 :: Hash128,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cachedassetbundle/CachedAssetBundle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CachedAssetBundle{pub m_name: ::unity2::Il2CppString,pub m_hash:crate::unity_engine::hash128::Hash128,}
+impl::unity2::ClassIdentity for CachedAssetBundle{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="CachedAssetBundle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for CachedAssetBundle {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "CachedAssetBundle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for CachedAssetBundle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for CachedAssetBundle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,21 @@ impl ::unity2::IlType for CachedAssetBundle {
 #[cfg(feature = "unity_engine-cachedassetbundle-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-cachedassetbundle")]
-impl CachedAssetBundle { # [doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::hash128::Hash128)` overload"] pub fn ctor (& mut self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , hash : impl :: core :: convert :: Into < crate :: unity_engine :: hash128 :: Hash128 >) -> () { unsafe { { let __inner : extern "C" fn (* mut CachedAssetBundle , :: unity2 :: Il2CppString , crate :: unity_engine :: hash128 :: Hash128 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c39100usize) as * mut u8) ; __inner (self as * mut CachedAssetBundle , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (hash) , :: core :: option :: Option :: None) } } } # [doc = "`get_name()` overload"] pub fn get_name (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut CachedAssetBundle , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c39140usize) as * mut u8) ; __inner (self as * mut CachedAssetBundle , :: core :: option :: Option :: None) } } } # [doc = "`get_hash()` overload"] pub fn get_hash (& mut self ,) -> crate :: unity_engine :: hash128 :: Hash128 { unsafe { { let __inner : extern "C" fn (* mut CachedAssetBundle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: hash128 :: Hash128 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c39150usize) as * mut u8) ; __inner (self as * mut CachedAssetBundle , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-cachedassetbundle")]impl CachedAssetBundle{#[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::hash128::Hash128)` overload"]pub fn ctor(&mut self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,hash:impl::core::convert::Into<crate::unity_engine::hash128::Hash128>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c39100usize)as*mut u8,();
+(*mut CachedAssetBundle)self as*mut CachedAssetBundle,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::hash128::Hash128)::core::convert::Into::into(hash))}
+}
+#[doc="`get_name()` overload"]pub fn get_name(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c39140usize)as*mut u8, ::unity2::Il2CppString;
+(*mut CachedAssetBundle)self as*mut CachedAssetBundle)}
+}
+#[doc="`get_hash()` overload"]pub fn get_hash(&mut self,)->crate::unity_engine::hash128::Hash128{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c39150usize)as*mut u8,crate::unity_engine::hash128::Hash128;
+(*mut CachedAssetBundle)self as*mut CachedAssetBundle)}
+}
+}
 
-#[cfg(feature = "unity_engine-cachedassetbundle")]
-impl CachedAssetBundle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CachedAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CachedAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CachedAssetBundle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-cachedassetbundle")]impl CachedAssetBundle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-cachedassetbundle")]
 #[doc(hidden)]

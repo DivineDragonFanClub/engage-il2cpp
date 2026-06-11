@@ -4,33 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godinheritedskills/GodInheritedSkills.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodInheritedSkills")] # [parent (crate :: system :: object :: Object)] pub struct GodInheritedSkills {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_Sids")] pub m_sids : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godinheritedskills/GodInheritedSkills.md"))]#[::unity2::class(namespace="App",name="GodInheritedSkills")]#[parent(crate::system::object::Object)]pub struct GodInheritedSkills{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Sids")]pub m_sids:crate::system::collections::generic::hashset_1::HashSet_1<i32> ,}
 
 }
 
 #[cfg(feature = "app-godinheritedskills-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godinheritedskills")]
-pub trait IGodInheritedSkillsMethods : IGodInheritedSkills { # [doc = "`Add(crate::app::skilldata::SkillData)` overload"] fn add (self , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < GodInheritedSkills as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodInheritedSkills , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23333d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::app::skilldata::SkillData)` overload"] fn remove (self , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < GodInheritedSkills as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodInheritedSkills , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < GodInheritedSkills as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodInheritedSkills , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Has(crate::app::skilldata::SkillData)` overload"] fn has (self , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> bool { unsafe { let __receiver = < GodInheritedSkills as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodInheritedSkills , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23334f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < GodInheritedSkills as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodInheritedSkills , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GodInheritedSkills as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodInheritedSkills , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23335a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GodInheritedSkills as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodInheritedSkills , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodInheritedSkills as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodInheritedSkills , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2333be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godinheritedskills")]pub trait IGodInheritedSkillsMethods:IGodInheritedSkills{#[doc="`Add(crate::app::skilldata::SkillData)` overload"]fn add(self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <GodInheritedSkills as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23333d0usize)as*mut u8,();
+(GodInheritedSkills)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`Remove(crate::app::skilldata::SkillData)` overload"]fn remove(self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <GodInheritedSkills as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333430usize)as*mut u8,();
+(GodInheritedSkills)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <GodInheritedSkills as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333490usize)as*mut u8,();
+(GodInheritedSkills)__receiver)}
+}
+#[doc="`Has(crate::app::skilldata::SkillData)` overload"]fn has(self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{let __receiver= <GodInheritedSkills as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23334f0usize)as*mut u8,bool;
+(GodInheritedSkills)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <GodInheritedSkills as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333550usize)as*mut u8,i32;
+(GodInheritedSkills)__receiver)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GodInheritedSkills as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23335a0usize)as*mut u8,();
+(GodInheritedSkills)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GodInheritedSkills as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333700usize)as*mut u8,();
+(GodInheritedSkills)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodInheritedSkills as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2333be0usize)as*mut u8,();
+(GodInheritedSkills)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godinheritedskills")]
-impl < __T : IGodInheritedSkills > IGodInheritedSkillsMethods for __T { }
+#[cfg(feature="app-godinheritedskills")]impl<__T:IGodInheritedSkills>IGodInheritedSkillsMethods for __T{}
 
-#[cfg(feature = "app-godinheritedskills")]
-impl GodInheritedSkills { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodInheritedSkills as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodInheritedSkills as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodInheritedSkills as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn has_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodInheritedSkills as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodInheritedSkills as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodInheritedSkills as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodInheritedSkills as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodInheritedSkills as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-godinheritedskills")]impl GodInheritedSkills{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn has_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-godinheritedskills")]
-impl GodInheritedSkills {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodInheritedSkills) , :: core :: stringify ! (new) ,)) ; < Self as IGodInheritedSkillsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godinheritedskills")]impl GodInheritedSkills{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodInheritedSkills), ::core::stringify!(new),));
+ <Self as IGodInheritedSkillsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godinheritedskills")]

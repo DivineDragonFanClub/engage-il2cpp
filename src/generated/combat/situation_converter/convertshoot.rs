@@ -4,37 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: situation_converter :: baseconverter :: { BaseConverter , IBaseConverter }
- ;
- use crate :: combat :: situation_converter :: converterwithut :: { ConverterWithUt , IConverterWithUt }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::situation_converter::baseconverter::{BaseConverter,IBaseConverter}
+;
+use crate::combat::situation_converter::converterwithut::{ConverterWithUt,IConverterWithUt}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertshoot/ConvertShoot.md"))] # [:: unity2 :: class (namespace = "Combat.SituationConverter" , name = "ConvertShoot")] # [parent (crate :: combat :: situation_converter :: converterwithut :: ConverterWithUt)] pub struct ConvertShoot {
-# [offset (48)] # [rename (name = "CameraList")] pub camera_list : :: unity2 :: Array < crate :: combat :: cameraposition :: CameraPosition > ,
-# [offset (56)] # [rename (name = "m_LastUnused")] pub m_last_unused : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertshoot/ConvertShoot.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertShoot")]#[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]pub struct ConvertShoot{#[offset(48)]#[rename(name="CameraList")]pub camera_list: ::unity2::Array<crate::combat::cameraposition::CameraPosition> , #[offset(56)]#[rename(name="m_LastUnused")]pub m_last_unused:i32,}
 
 }
 
 #[cfg(feature = "combat-situation_converter-convertshoot-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-situation_converter-convertshoot")]
-pub trait IConvertShootMethods : IConvertShoot { # [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"] fn ctor (self , data : impl :: core :: convert :: Into < crate :: combat :: situation_converter :: cameradataset :: CameraDataSet >) -> () { unsafe { let __receiver = < ConvertShoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertShoot , crate :: combat :: situation_converter :: cameradataset :: CameraDataSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2542dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`OnBegin()` overload"] fn on_begin (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertShoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertShoot , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2542e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnApproach()` overload"] fn on_approach (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertShoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertShoot , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDamage()` overload"] fn on_damage (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertShoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertShoot , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUnusable()` overload"] fn on_unusable (self ,) -> crate :: combat :: cameraposition :: CameraPosition { unsafe { let __receiver = < ConvertShoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConvertShoot , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameraposition :: CameraPosition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2543450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-situation_converter-convertshoot")]pub trait IConvertShootMethods:IConvertShoot{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2542dd0usize)as*mut u8,();
+(ConvertShoot)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
+}
+#[doc="`OnBegin()` overload"]fn on_begin(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2542e80usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertShoot)__receiver)}
+}
+#[doc="`OnApproach()` overload"]fn on_approach(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543120usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertShoot)__receiver)}
+}
+#[doc="`OnDamage()` overload"]fn on_damage(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543340usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertShoot)__receiver)}
+}
+#[doc="`OnUnusable()` overload"]fn on_unusable(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2543450usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertShoot)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-situation_converter-convertshoot")]
-impl < __T : IConvertShoot > IConvertShootMethods for __T { }
+#[cfg(feature="combat-situation_converter-convertshoot")]impl<__T:IConvertShoot>IConvertShootMethods for __T{}
 
-#[cfg(feature = "combat-situation_converter-convertshoot")]
-impl ConvertShoot { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertShoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertShoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_approach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertShoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertShoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_unusable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConvertShoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-situation_converter-convertshoot")]impl ConvertShoot{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_approach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_unusable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-situation_converter-convertshoot")]
-impl ConvertShoot {
-# [doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"] pub fn new (data : crate :: combat :: situation_converter :: cameradataset :: CameraDataSet) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConvertShoot) , :: core :: stringify ! (new) ,)) ; < Self as IConvertShootMethods > :: ctor (this , data) ; this }
+#[cfg(feature="combat-situation_converter-convertshoot")]impl ConvertShoot{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConvertShoot), ::core::stringify!(new),));
+ <Self as IConvertShootMethods> ::ctor(this,data);
+this}
 }
 
 #[cfg(feature = "combat-situation_converter-convertshoot")]

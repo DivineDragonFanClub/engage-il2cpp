@@ -4,30 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: streamreader :: { IStreamReader , StreamReader }
- ;
- use crate :: system :: io :: textreader :: { ITextReader , TextReader }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::streamreader::{IStreamReader,StreamReader}
+;
+use crate::system::io::textreader::{ITextReader,TextReader}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/cstreamreader/CStreamReader.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "CStreamReader")] # [parent (crate :: system :: io :: streamreader :: StreamReader)] pub struct CStreamReader {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/cstreamreader/CStreamReader.md"))]#[::unity2::class(namespace="System.IO",name="CStreamReader")]#[parent(crate::system::io::streamreader::StreamReader)]pub struct CStreamReader{}
 
 }
 
 #[cfg(feature = "system-io-cstreamreader-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-cstreamreader")]
-pub trait ICStreamReaderMethods : ICStreamReader { # [doc = "`Peek()` overload"] fn peek (self ,) -> i32 { unsafe { let __receiver = < CStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CStreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x339a1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read()` overload"] fn read (self ,) -> i32 { unsafe { let __receiver = < CStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CStreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x339a250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"] fn read_2 (self , dest : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < CStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CStreamReader , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x339a340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dest) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`ReadLine()` overload"] fn read_line (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CStreamReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x339a4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadToEnd()` overload"] fn read_to_end (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < CStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CStreamReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x339a580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-cstreamreader")]pub trait ICStreamReaderMethods:ICStreamReader{#[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x339a1b0usize)as*mut u8,i32;
+(CStreamReader)__receiver)}
+}
+#[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x339a250usize)as*mut u8,i32;
+(CStreamReader)__receiver)}
+}
+#[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read_2(self,dest:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x339a340usize)as*mut u8,i32;
+(CStreamReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(dest),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x339a4e0usize)as*mut u8, ::unity2::Il2CppString;
+(CStreamReader)__receiver)}
+}
+#[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x339a580usize)as*mut u8, ::unity2::Il2CppString;
+(CStreamReader)__receiver)}
+}
+}
 
-#[cfg(feature = "system-io-cstreamreader")]
-impl < __T : ICStreamReader > ICStreamReaderMethods for __T { }
+#[cfg(feature="system-io-cstreamreader")]impl<__T:ICStreamReader>ICStreamReaderMethods for __T{}
 
-#[cfg(feature = "system-io-cstreamreader")]
-impl CStreamReader { pub fn peek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn read_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn read_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn read_to_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="system-io-cstreamreader")]impl CStreamReader{pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_to_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "system-io-cstreamreader")]
 #[doc(hidden)]

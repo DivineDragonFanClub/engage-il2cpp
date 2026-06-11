@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/depthstate/DepthState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DepthState {
-    pub m_write_enabled: u8,
-    pub m_compare_function: i8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/depthstate/DepthState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DepthState{pub m_write_enabled:u8,pub m_compare_function:i8,}
+impl::unity2::ClassIdentity for DepthState{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="DepthState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for DepthState {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "DepthState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for DepthState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for DepthState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,14 +26,39 @@ impl ::unity2::IlType for DepthState {
 #[cfg(feature = "unity_engine-rendering-depthstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-depthstate")]
-impl DepthState { # [doc = "`get_defaultValue()` overload"] pub fn get_default_value () -> crate :: unity_engine :: rendering :: depthstate :: DepthState { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: depthstate :: DepthState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c000usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-depthstate")]impl DepthState{#[doc="`get_defaultValue()` overload"]pub fn get_default_value()->crate::unity_engine::rendering::depthstate::DepthState{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c000usize)as*mut u8,crate::unity_engine::rendering::depthstate::DepthState;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-depthstate")]
-impl DepthState { # [doc = "`.ctor(bool, crate::unity_engine::rendering::comparefunction::CompareFunction)` overload"] pub fn ctor (& mut self , write_enabled : impl :: core :: convert :: Into < bool > , compare_function : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: comparefunction :: CompareFunction >) -> () { unsafe { { let __inner : extern "C" fn (* mut DepthState , bool , crate :: unity_engine :: rendering :: comparefunction :: CompareFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c070usize) as * mut u8) ; __inner (self as * mut DepthState , :: core :: convert :: Into :: into (write_enabled) , :: core :: convert :: Into :: into (compare_function) , :: core :: option :: Option :: None) } } } # [doc = "`set_writeEnabled(bool)` overload"] pub fn set_write_enabled (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut DepthState , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c100usize) as * mut u8) ; __inner (self as * mut DepthState , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_compareFunction(crate::unity_engine::rendering::comparefunction::CompareFunction)` overload"] pub fn set_compare_function (& mut self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: comparefunction :: CompareFunction >) -> () { unsafe { { let __inner : extern "C" fn (* mut DepthState , crate :: unity_engine :: rendering :: comparefunction :: CompareFunction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c180usize) as * mut u8) ; __inner (self as * mut DepthState , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::depthstate::DepthState)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: depthstate :: DepthState >) -> bool { unsafe { { let __inner : extern "C" fn (* mut DepthState , crate :: unity_engine :: rendering :: depthstate :: DepthState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c190usize) as * mut u8) ; __inner (self as * mut DepthState , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut DepthState , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c1c0usize) as * mut u8) ; __inner (self as * mut DepthState , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut DepthState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4c260usize) as * mut u8) ; __inner (self as * mut DepthState , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-depthstate")]impl DepthState{#[doc="`.ctor(bool, crate::unity_engine::rendering::comparefunction::CompareFunction)` overload"]pub fn ctor(&mut self,write_enabled:impl::core::convert::Into<bool> ,compare_function:impl::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c070usize)as*mut u8,();
+(*mut DepthState)self as*mut DepthState,(bool)::core::convert::Into::into(write_enabled),(crate::unity_engine::rendering::comparefunction::CompareFunction)::core::convert::Into::into(compare_function))}
+}
+#[doc="`set_writeEnabled(bool)` overload"]pub fn set_write_enabled(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c100usize)as*mut u8,();
+(*mut DepthState)self as*mut DepthState,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`set_compareFunction(crate::unity_engine::rendering::comparefunction::CompareFunction)` overload"]pub fn set_compare_function(&mut self,value:impl::core::convert::Into<crate::unity_engine::rendering::comparefunction::CompareFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c180usize)as*mut u8,();
+(*mut DepthState)self as*mut DepthState,(crate::unity_engine::rendering::comparefunction::CompareFunction)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::depthstate::DepthState)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::depthstate::DepthState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c190usize)as*mut u8,bool;
+(*mut DepthState)self as*mut DepthState,(crate::unity_engine::rendering::depthstate::DepthState)::core::convert::Into::into(other))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c1c0usize)as*mut u8,bool;
+(*mut DepthState)self as*mut DepthState,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4c260usize)as*mut u8,i32;
+(*mut DepthState)self as*mut DepthState)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-depthstate")]
-impl DepthState { pub fn get_default_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DepthState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DepthState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_write_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DepthState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_compare_function_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DepthState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DepthState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DepthState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DepthState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-rendering-depthstate")]impl DepthState{pub fn get_default_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_write_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_compare_function_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
 #[cfg(feature = "unity_engine-rendering-depthstate")]
 #[doc(hidden)]

@@ -4,33 +4,90 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitreliancemapresult/UnitRelianceMapResult.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitRelianceMapResult")] # [parent (crate :: system :: object :: Object)] pub struct UnitRelianceMapResult {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitreliancemapresult/UnitRelianceMapResult.md"))]#[::unity2::class(namespace="App",name="UnitRelianceMapResult")]#[parent(crate::system::object::Object)]pub struct UnitRelianceMapResult{}
 
 }
 
 #[cfg(feature = "app-unitreliancemapresult-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitreliancemapresult")]
-impl UnitRelianceMapResult { # [doc = "`Compare(crate::app::unitreliancemapresult::UnitRelianceMapResult, crate::app::unitreliancemapresult::UnitRelianceMapResult)` overload"] pub fn compare (a : impl :: core :: convert :: Into < crate :: app :: unitreliancemapresult :: UnitRelianceMapResult > , b : impl :: core :: convert :: Into < crate :: app :: unitreliancemapresult :: UnitRelianceMapResult >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: unitreliancemapresult :: UnitRelianceMapResult , crate :: app :: unitreliancemapresult :: UnitRelianceMapResult , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c6c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitreliancemapresult")]impl UnitRelianceMapResult{#[doc="`Compare(crate::app::unitreliancemapresult::UnitRelianceMapResult, crate::app::unitreliancemapresult::UnitRelianceMapResult)` overload"]pub fn compare(a:impl::core::convert::Into<crate::app::unitreliancemapresult::UnitRelianceMapResult> ,b:impl::core::convert::Into<crate::app::unitreliancemapresult::UnitRelianceMapResult>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c6c0usize)as*mut u8,i32;
+(crate::app::unitreliancemapresult::UnitRelianceMapResult)::core::convert::Into::into(a),(crate::app::unitreliancemapresult::UnitRelianceMapResult)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "app-unitreliancemapresult")]
-pub trait IUnitRelianceMapResultMethods : IUnitRelianceMapResult { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitreliancedata::UnitRelianceData)` overload"] fn ctor (self , pid_a : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , pid_b : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , unit_data : impl :: core :: convert :: Into < crate :: app :: unitreliancedata :: UnitRelianceData >) -> () { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , crate :: app :: unitreliancedata :: UnitRelianceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c59c90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid_a) , :: core :: convert :: Into :: into (pid_b) , :: core :: convert :: Into :: into (unit_data) , :: core :: option :: Option :: None) } } } # [doc = "`get_PidA()` overload"] fn get_pid_a (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PidA(::unity2::Il2CppString)` overload"] fn set_pid_a (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PersonIndexA()` overload"] fn get_person_index_a (self ,) -> i32 { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PersonIndexA(i32)` overload"] fn set_person_index_a (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PidB()` overload"] fn get_pid_b (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PidB(::unity2::Il2CppString)` overload"] fn set_pid_b (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PersonIndexB()` overload"] fn get_person_index_b (self ,) -> i32 { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PersonIndexB(i32)` overload"] fn set_person_index_b (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_UnitData()` overload"] fn get_unit_data (self ,) -> crate :: app :: unitreliancedata :: UnitRelianceData { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitreliancedata :: UnitRelianceData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_UnitData(crate::app::unitreliancedata::UnitRelianceData)` overload"] fn set_unit_data (self , value : impl :: core :: convert :: Into < crate :: app :: unitreliancedata :: UnitRelianceData >) -> () { unsafe { let __receiver = < UnitRelianceMapResult as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitRelianceMapResult , crate :: app :: unitreliancedata :: UnitRelianceData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c5c6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitreliancemapresult")]pub trait IUnitRelianceMapResultMethods:IUnitRelianceMapResult{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitreliancedata::UnitRelianceData)` overload"]fn ctor(self,pid_a:impl::core::convert::Into< ::unity2::Il2CppString> ,pid_b:impl::core::convert::Into< ::unity2::Il2CppString> ,unit_data:impl::core::convert::Into<crate::app::unitreliancedata::UnitRelianceData>)->(){unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c59c90usize)as*mut u8,();
+(UnitRelianceMapResult)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid_a),(::unity2::Il2CppString)::core::convert::Into::into(pid_b),(crate::app::unitreliancedata::UnitRelianceData)::core::convert::Into::into(unit_data))}
+}
+#[doc="`get_PidA()` overload"]fn get_pid_a(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c620usize)as*mut u8, ::unity2::Il2CppString;
+(UnitRelianceMapResult)__receiver)}
+}
+#[doc="`set_PidA(::unity2::Il2CppString)` overload"]fn set_pid_a(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c630usize)as*mut u8,();
+(UnitRelianceMapResult)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PersonIndexA()` overload"]fn get_person_index_a(self,)->i32{unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c640usize)as*mut u8,i32;
+(UnitRelianceMapResult)__receiver)}
+}
+#[doc="`set_PersonIndexA(i32)` overload"]fn set_person_index_a(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c650usize)as*mut u8,();
+(UnitRelianceMapResult)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PidB()` overload"]fn get_pid_b(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c660usize)as*mut u8, ::unity2::Il2CppString;
+(UnitRelianceMapResult)__receiver)}
+}
+#[doc="`set_PidB(::unity2::Il2CppString)` overload"]fn set_pid_b(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c670usize)as*mut u8,();
+(UnitRelianceMapResult)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PersonIndexB()` overload"]fn get_person_index_b(self,)->i32{unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c680usize)as*mut u8,i32;
+(UnitRelianceMapResult)__receiver)}
+}
+#[doc="`set_PersonIndexB(i32)` overload"]fn set_person_index_b(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c690usize)as*mut u8,();
+(UnitRelianceMapResult)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_UnitData()` overload"]fn get_unit_data(self,)->crate::app::unitreliancedata::UnitRelianceData{unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c6a0usize)as*mut u8,crate::app::unitreliancedata::UnitRelianceData;
+(UnitRelianceMapResult)__receiver)}
+}
+#[doc="`set_UnitData(crate::app::unitreliancedata::UnitRelianceData)` overload"]fn set_unit_data(self,value:impl::core::convert::Into<crate::app::unitreliancedata::UnitRelianceData>)->(){unsafe{let __receiver= <UnitRelianceMapResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5c6b0usize)as*mut u8,();
+(UnitRelianceMapResult)__receiver,(crate::app::unitreliancedata::UnitRelianceData)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-unitreliancemapresult")]
-impl < __T : IUnitRelianceMapResult > IUnitRelianceMapResultMethods for __T { }
+#[cfg(feature="app-unitreliancemapresult")]impl<__T:IUnitRelianceMapResult>IUnitRelianceMapResultMethods for __T{}
 
-#[cfg(feature = "app-unitreliancemapresult")]
-impl UnitRelianceMapResult { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_pid_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_pid_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_person_index_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_person_index_a_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_pid_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_pid_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_person_index_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_person_index_b_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_unit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_unit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitRelianceMapResult as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-unitreliancemapresult")]impl UnitRelianceMapResult{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_pid_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_pid_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_person_index_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_person_index_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_pid_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_pid_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_person_index_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_person_index_b_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_unit_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_unit_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-unitreliancemapresult")]
-impl UnitRelianceMapResult {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitreliancedata::UnitRelianceData)` — overload selector"] pub fn new (pid_a : :: unity2 :: Il2CppString , pid_b : :: unity2 :: Il2CppString , unit_data : crate :: app :: unitreliancedata :: UnitRelianceData) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitRelianceMapResult) , :: core :: stringify ! (new) ,)) ; < Self as IUnitRelianceMapResultMethods > :: ctor (this , pid_a , pid_b , unit_data) ; this }
+#[cfg(feature="app-unitreliancemapresult")]impl UnitRelianceMapResult{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::unitreliancedata::UnitRelianceData)` — overload selector"]pub fn new(pid_a: ::unity2::Il2CppString,pid_b: ::unity2::Il2CppString,unit_data:crate::app::unitreliancedata::UnitRelianceData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitRelianceMapResult), ::core::stringify!(new),));
+ <Self as IUnitRelianceMapResultMethods> ::ctor(this,pid_a,pid_b,unit_data);
+this}
 }
 
 #[cfg(feature = "app-unitreliancemapresult")]

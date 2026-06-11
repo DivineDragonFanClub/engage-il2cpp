@@ -4,32 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/runtimeanimatorcontroller/RuntimeAnimatorController.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "RuntimeAnimatorController")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct RuntimeAnimatorController {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/runtimeanimatorcontroller/RuntimeAnimatorController.md"))]#[::unity2::class(namespace="UnityEngine",name="RuntimeAnimatorController")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct RuntimeAnimatorController{}
 
 }
 
 #[cfg(feature = "unity_engine-runtimeanimatorcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-runtimeanimatorcontroller")]
-pub trait IRuntimeAnimatorControllerMethods : IRuntimeAnimatorController { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeAnimatorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeAnimatorController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb7400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_animationClips()` overload"] fn get_animation_clips (self ,) -> :: unity2 :: Array < crate :: unity_engine :: animationclip :: AnimationClip > { unsafe { let __receiver = < RuntimeAnimatorController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeAnimatorController , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: animationclip :: AnimationClip > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ebae10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-runtimeanimatorcontroller")]pub trait IRuntimeAnimatorControllerMethods:IRuntimeAnimatorController{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeAnimatorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb7400usize)as*mut u8,();
+(RuntimeAnimatorController)__receiver)}
+}
+#[doc="`get_animationClips()` overload"]fn get_animation_clips(self,)-> ::unity2::Array<crate::unity_engine::animationclip::AnimationClip>{unsafe{let __receiver= <RuntimeAnimatorController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebae10usize)as*mut u8, ::unity2::Array<crate::unity_engine::animationclip::AnimationClip> ;
+(RuntimeAnimatorController)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-runtimeanimatorcontroller")]
-impl < __T : IRuntimeAnimatorController > IRuntimeAnimatorControllerMethods for __T { }
+#[cfg(feature="unity_engine-runtimeanimatorcontroller")]impl<__T:IRuntimeAnimatorController>IRuntimeAnimatorControllerMethods for __T{}
 
-#[cfg(feature = "unity_engine-runtimeanimatorcontroller")]
-impl RuntimeAnimatorController { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeAnimatorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_animation_clips_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeAnimatorController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-runtimeanimatorcontroller")]impl RuntimeAnimatorController{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_animation_clips_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-runtimeanimatorcontroller")]
-impl RuntimeAnimatorController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeAnimatorController) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeAnimatorControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-runtimeanimatorcontroller")]impl RuntimeAnimatorController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeAnimatorController), ::core::stringify!(new),));
+ <Self as IRuntimeAnimatorControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-runtimeanimatorcontroller")]

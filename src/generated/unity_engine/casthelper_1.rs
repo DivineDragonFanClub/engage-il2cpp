@@ -4,44 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/casthelper_1/CastHelper_1.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CastHelper_1<T0> { pub _phantom: ::core::marker::PhantomData<(T0,)> }
-
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for CastHelper_1<T0> {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "CastHelper`1";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-            .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-            .expect("generic instantiation")
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/casthelper_1/CastHelper_1.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CastHelper_1<T0>{pub _phantom: ::core::marker::PhantomData<(T0,)>}
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for CastHelper_1<T0>{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="CastHelper`1";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME).make_generic(&[<T0 as::unity2::ClassIdentity>::class()]).expect("generic instantiation")}
+)}
 }
-
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for CastHelper_1<T0> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for CastHelper_1<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }

@@ -4,68 +4,90 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip_PCMSetPositionCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AudioClip.PCMSetPositionCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AudioClip_PCMSetPositionCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/audioclip/AudioClip_PCMSetPositionCallback.md"))]#[::unity2::class(namespace="UnityEngine",name="AudioClip.PCMSetPositionCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AudioClip_PCMSetPositionCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AudioClip")] # [parent (crate :: unity_engine :: object_2 :: Object_2)] pub struct AudioClip {
-# [offset (24)] # [rename (name = "m_PCMReaderCallback")] pub m_pcm_reader_callback : crate :: unity_engine :: audioclip :: AudioClip_PCMReaderCallback ,
-# [offset (32)] # [rename (name = "m_PCMSetPositionCallback")] pub m_pcm_set_position_callback : crate :: unity_engine :: audioclip :: AudioClip_PCMSetPositionCallback ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/audioclip/AudioClip_PCMReaderCallback.md"))]#[::unity2::class(namespace="UnityEngine",name="AudioClip.PCMReaderCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AudioClip_PCMReaderCallback{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip_PCMReaderCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AudioClip.PCMReaderCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct AudioClip_PCMReaderCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/audioclip/AudioClip.md"))]#[::unity2::class(namespace="UnityEngine",name="AudioClip")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct AudioClip{#[offset(24)]#[rename(name="m_PCMReaderCallback")]pub m_pcm_reader_callback:crate::unity_engine::audioclip::AudioClip_PCMReaderCallback, #[offset(32)]#[rename(name="m_PCMSetPositionCallback")]pub m_pcm_set_position_callback:crate::unity_engine::audioclip::AudioClip_PCMSetPositionCallback,}
 
 }
 
 #[cfg(feature = "unity_engine-audioclip-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-audioclip")]
-pub trait IAudioClip_PCMSetPositionCallbackMethods : IAudioClip_PCMSetPositionCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AudioClip_PCMSetPositionCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudioClip_PCMSetPositionCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3f460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(i32)` overload"] fn invoke (self , position : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AudioClip_PCMSetPositionCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudioClip_PCMSetPositionCallback , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3e870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-audioclip")]
-impl < __T : IAudioClip_PCMSetPositionCallback > IAudioClip_PCMSetPositionCallbackMethods for __T { }
-
-#[cfg(feature = "unity_engine-audioclip")]
-impl AudioClip_PCMSetPositionCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioClip_PCMSetPositionCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioClip_PCMSetPositionCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "unity_engine-audioclip")]
-impl AudioClip_PCMSetPositionCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AudioClip_PCMSetPositionCallback) , :: core :: stringify ! (new) ,)) ; < Self as IAudioClip_PCMSetPositionCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-audioclip")]pub trait IAudioClip_PCMSetPositionCallbackMethods:IAudioClip_PCMSetPositionCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AudioClip_PCMSetPositionCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f460usize)as*mut u8,();
+(AudioClip_PCMSetPositionCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,position:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AudioClip_PCMSetPositionCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3e870usize)as*mut u8,();
+(AudioClip_PCMSetPositionCallback)__receiver,(i32)::core::convert::Into::into(position))}
+}
 }
 
-#[cfg(feature = "unity_engine-audioclip")]
-pub trait IAudioClipMethods : IAudioClip { # [doc = "`InvokePCMReaderCallback_Internal(::unity2::Array<f32>)` overload"] fn invoke_pcm_reader_callback_internal (self , data : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > >) -> () { unsafe { let __receiver = < AudioClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudioClip , :: unity2 :: Array < f32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3e4f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`InvokePCMSetPositionCallback_Internal(i32)` overload"] fn invoke_pcm_set_position_callback_internal (self , position : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AudioClip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudioClip , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3e860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-audioclip")]impl<__T:IAudioClip_PCMSetPositionCallback>IAudioClip_PCMSetPositionCallbackMethods for __T{}
 
-#[cfg(feature = "unity_engine-audioclip")]
-impl < __T : IAudioClip > IAudioClipMethods for __T { }
+#[cfg(feature="unity_engine-audioclip")]impl AudioClip_PCMSetPositionCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-audioclip")]
-impl AudioClip { pub fn invoke_pcm_reader_callback_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_pcm_set_position_callback_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioClip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-audioclip")]impl AudioClip_PCMSetPositionCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AudioClip_PCMSetPositionCallback), ::core::stringify!(new),));
+ <Self as IAudioClip_PCMSetPositionCallbackMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "unity_engine-audioclip")]
-pub trait IAudioClip_PCMReaderCallbackMethods : IAudioClip_PCMReaderCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AudioClip_PCMReaderCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudioClip_PCMReaderCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3f400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(::unity2::Array<f32>)` overload"] fn invoke (self , data : impl :: core :: convert :: Into < :: unity2 :: Array < f32 > >) -> () { unsafe { let __receiver = < AudioClip_PCMReaderCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudioClip_PCMReaderCallback , :: unity2 :: Array < f32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3e500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-audioclip")]pub trait IAudioClip_PCMReaderCallbackMethods:IAudioClip_PCMReaderCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AudioClip_PCMReaderCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3f400usize)as*mut u8,();
+(AudioClip_PCMReaderCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<f32>)` overload"]fn invoke(self,data:impl::core::convert::Into< ::unity2::Array<f32> >)->(){unsafe{let __receiver= <AudioClip_PCMReaderCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3e500usize)as*mut u8,();
+(AudioClip_PCMReaderCallback)__receiver,(::unity2::Array<f32>)::core::convert::Into::into(data))}
+}
+}
 
-#[cfg(feature = "unity_engine-audioclip")]
-impl < __T : IAudioClip_PCMReaderCallback > IAudioClip_PCMReaderCallbackMethods for __T { }
+#[cfg(feature="unity_engine-audioclip")]impl<__T:IAudioClip_PCMReaderCallback>IAudioClip_PCMReaderCallbackMethods for __T{}
 
-#[cfg(feature = "unity_engine-audioclip")]
-impl AudioClip_PCMReaderCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioClip_PCMReaderCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudioClip_PCMReaderCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-audioclip")]impl AudioClip_PCMReaderCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-audioclip")]
-impl AudioClip_PCMReaderCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AudioClip_PCMReaderCallback) , :: core :: stringify ! (new) ,)) ; < Self as IAudioClip_PCMReaderCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-audioclip")]impl AudioClip_PCMReaderCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AudioClip_PCMReaderCallback), ::core::stringify!(new),));
+ <Self as IAudioClip_PCMReaderCallbackMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="unity_engine-audioclip")]pub trait IAudioClipMethods:IAudioClip{#[doc="`InvokePCMReaderCallback_Internal(::unity2::Array<f32>)` overload"]fn invoke_pcm_reader_callback_internal(self,data:impl::core::convert::Into< ::unity2::Array<f32> >)->(){unsafe{let __receiver= <AudioClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3e4f0usize)as*mut u8,();
+(AudioClip)__receiver,(::unity2::Array<f32>)::core::convert::Into::into(data))}
+}
+#[doc="`InvokePCMSetPositionCallback_Internal(i32)` overload"]fn invoke_pcm_set_position_callback_internal(self,position:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AudioClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3e860usize)as*mut u8,();
+(AudioClip)__receiver,(i32)::core::convert::Into::into(position))}
+}
+}
+
+#[cfg(feature="unity_engine-audioclip")]impl<__T:IAudioClip>IAudioClipMethods for __T{}
+
+#[cfg(feature="unity_engine-audioclip")]impl AudioClip{pub fn invoke_pcm_reader_callback_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_pcm_set_position_callback_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
 #[cfg(feature = "unity_engine-audioclip")]
@@ -74,12 +96,12 @@ pub mod prelude {
     pub use super::AudioClip_PCMSetPositionCallback;
     pub use super::IAudioClip_PCMSetPositionCallback;
     pub use super::IAudioClip_PCMSetPositionCallbackMethods;
-    pub use super::AudioClip;
-    pub use super::IAudioClip;
-    pub use super::IAudioClipMethods;
     pub use super::AudioClip_PCMReaderCallback;
     pub use super::IAudioClip_PCMReaderCallback;
     pub use super::IAudioClip_PCMReaderCallbackMethods;
+    pub use super::AudioClip;
+    pub use super::IAudioClip;
+    pub use super::IAudioClipMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

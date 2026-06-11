@@ -4,35 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapsequenceresume/MapSequenceResume.md"))] # [:: unity2 :: class (namespace = "" , name = "MapSequenceResume")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapSequenceResume {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapsequenceresume/MapSequenceResume.md"))]#[::unity2::class(namespace="",name="MapSequenceResume")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceResume{}
 
 }
 
 #[cfg(feature = "root-mapsequenceresume-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapsequenceresume")]
-impl MapSequenceResume { # [doc = "`CreateRoute(crate::app::unit::Unit, i32, i32)` overload"] pub fn create_route (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , goal_x : impl :: core :: convert :: Into < i32 > , goal_z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f317e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (goal_x) , :: core :: convert :: Into :: into (goal_z) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33090usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapsequenceresume")]impl MapSequenceResume{#[doc="`CreateRoute(crate::app::unit::Unit, i32, i32)` overload"]pub fn create_route(unit:impl::core::convert::Into<crate::app::unit::Unit> ,goal_x:impl::core::convert::Into<i32> ,goal_z:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f317e0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(goal_x),(i32)::core::convert::Into::into(goal_z))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f33090usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "root-mapsequenceresume")]
-pub trait IMapSequenceResumeMethods : IMapSequenceResume { # [doc = "`MoveUnit()` overload"] fn move_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f31b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitMovingUnit()` overload"] fn wait_moving_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f31d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostMoveUnit()` overload"] fn post_move_unit (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f31dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResumeBranch()` overload"] fn resume_branch (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f31e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceResume as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceResume , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f33410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapsequenceresume")]pub trait IMapSequenceResumeMethods:IMapSequenceResume{#[doc="`MoveUnit()` overload"]fn move_unit(self,)->(){unsafe{let __receiver= <MapSequenceResume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f31b50usize)as*mut u8,();
+(MapSequenceResume)__receiver)}
+}
+#[doc="`WaitMovingUnit()` overload"]fn wait_moving_unit(self,)->(){unsafe{let __receiver= <MapSequenceResume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f31d10usize)as*mut u8,();
+(MapSequenceResume)__receiver)}
+}
+#[doc="`PostMoveUnit()` overload"]fn post_move_unit(self,)->(){unsafe{let __receiver= <MapSequenceResume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f31dc0usize)as*mut u8,();
+(MapSequenceResume)__receiver)}
+}
+#[doc="`ResumeBranch()` overload"]fn resume_branch(self,)->(){unsafe{let __receiver= <MapSequenceResume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f31e90usize)as*mut u8,();
+(MapSequenceResume)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceResume as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f33410usize)as*mut u8,();
+(MapSequenceResume)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapsequenceresume")]
-impl < __T : IMapSequenceResume > IMapSequenceResumeMethods for __T { }
+#[cfg(feature="root-mapsequenceresume")]impl<__T:IMapSequenceResume>IMapSequenceResumeMethods for __T{}
 
-#[cfg(feature = "root-mapsequenceresume")]
-impl MapSequenceResume { pub fn create_route_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceResume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn move_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceResume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn wait_moving_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceResume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn post_move_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceResume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn resume_branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceResume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceResume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceResume as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="root-mapsequenceresume")]impl MapSequenceResume{pub fn create_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn move_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn wait_moving_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn post_move_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn resume_branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "root-mapsequenceresume")]
-impl MapSequenceResume {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceResume) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceResumeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapsequenceresume")]impl MapSequenceResume{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceResume), ::core::stringify!(new),));
+ <Self as IMapSequenceResumeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapsequenceresume")]

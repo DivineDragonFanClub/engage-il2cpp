@@ -4,54 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcombatviewersettings/MapCombatViewerSettings.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCombatViewerSettings")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct MapCombatViewerSettings {
-# [offset (24)] # [rename (name = "FieldName")] pub field_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "Characters")] pub characters : :: unity2 :: Array < crate :: app :: characteridset :: CharacterIdSet > ,
-# [offset (40)] # [rename (name = "RandomPosition")] pub random_position : bool ,
-# [offset (41)] # [rename (name = "RandomCharacter")] pub random_character : bool ,
-# [offset (42)] # [rename (name = "PlayerAttack")] pub player_attack : bool ,
-# [offset (43)] # [rename (name = "EternalCombat")] pub eternal_combat : bool ,
-# [offset (44)] # [rename (name = "RepeatCombat")] pub repeat_combat : bool ,
-# [offset (45)] # [rename (name = "CharaSelectRandomly")] pub chara_select_randomly : bool ,
-# [offset (48)] # [rename (name = "SortiePreset")] pub sortie_preset : i32 ,
-# [offset (52)] # [rename (name = "BattlePreset")] pub battle_preset : i32 ,
-# [offset (56)] # [rename (name = "CombatSeed")] pub combat_seed : u32 ,
-# [static_field] # [rename (name = "ChainAttackCount")] pub chain_attack_count : i32 ,
-# [static_field] # [rename (name = "ChainGuardCount")] pub chain_guard_count : i32 ,
-# [static_field] # [rename (name = "Id2Name")] pub id2_name : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "SortiePresets")] pub sortie_presets : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "BattlePresets")] pub battle_presets : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcombatviewersettings/MapCombatViewerSettings.md"))]#[::unity2::class(namespace="App",name="MapCombatViewerSettings")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct MapCombatViewerSettings{#[offset(24)]#[rename(name="FieldName")]pub field_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="Characters")]pub characters: ::unity2::Array<crate::app::characteridset::CharacterIdSet> , #[offset(40)]#[rename(name="RandomPosition")]pub random_position:bool, #[offset(41)]#[rename(name="RandomCharacter")]pub random_character:bool, #[offset(42)]#[rename(name="PlayerAttack")]pub player_attack:bool, #[offset(43)]#[rename(name="EternalCombat")]pub eternal_combat:bool, #[offset(44)]#[rename(name="RepeatCombat")]pub repeat_combat:bool, #[offset(45)]#[rename(name="CharaSelectRandomly")]pub chara_select_randomly:bool, #[offset(48)]#[rename(name="SortiePreset")]pub sortie_preset:i32, #[offset(52)]#[rename(name="BattlePreset")]pub battle_preset:i32, #[offset(56)]#[rename(name="CombatSeed")]pub combat_seed:u32, #[static_field]#[rename(name="ChainAttackCount")]pub chain_attack_count:i32, #[static_field]#[rename(name="ChainGuardCount")]pub chain_guard_count:i32, #[static_field]#[rename(name="Id2Name")]pub id2_name: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="SortiePresets")]pub sortie_presets: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="BattlePresets")]pub battle_presets: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-mapcombatviewersettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapcombatviewersettings")]
-impl MapCombatViewerSettings { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a8f20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapcombatviewersettings")]impl MapCombatViewerSettings{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29a8f20usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mapcombatviewersettings")]
-pub trait IMapCombatViewerSettingsMethods : IMapCombatViewerSettings { # [doc = "`get_NeedRefresh()` overload"] fn get_need_refresh (self ,) -> bool { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a6840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NeedRefresh(bool)` overload"] fn set_need_refresh (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a6850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a6860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHash()` overload"] fn get_hash (self ,) -> i32 { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a8040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Validate()` overload"] fn validate (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a8140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadSortiePreset(i32)` overload"] fn load_sortie_preset (self , preset_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a6a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (preset_id) , :: core :: option :: Option :: None) } } } # [doc = "`LoadBattlePreset(i32)` overload"] fn load_battle_preset (self , preset_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a8030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (preset_id) , :: core :: option :: Option :: None) } } } # [doc = "`LoadBattlePreset(crate::combat::combatrecord::CombatRecord)` overload"] fn load_battle_preset_2 (self , record : impl :: core :: convert :: Into < crate :: combat :: combatrecord :: CombatRecord >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , crate :: combat :: combatrecord :: CombatRecord , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a8330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (record) , :: core :: option :: Option :: None) } } } # [doc = "`SetCharacterRandom()` overload"] fn set_character_random (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a87a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SettingRandamCharacter(i32)` overload"] fn setting_randam_character (self , side : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a8960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: option :: Option :: None) } } } # [doc = "`SetCharacterParamRandom()` overload"] fn set_character_param_random (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a8da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCombatViewerSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCombatViewerSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a8f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapcombatviewersettings")]pub trait IMapCombatViewerSettingsMethods:IMapCombatViewerSettings{#[doc="`get_NeedRefresh()` overload"]fn get_need_refresh(self,)->bool{unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a6840usize)as*mut u8,bool;
+(MapCombatViewerSettings)__receiver)}
+}
+#[doc="`set_NeedRefresh(bool)` overload"]fn set_need_refresh(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a6850usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a6860usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver)}
+}
+#[doc="`GetHash()` overload"]fn get_hash(self,)->i32{unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a8040usize)as*mut u8,i32;
+(MapCombatViewerSettings)__receiver)}
+}
+#[doc="`Validate()` overload"]fn validate(self,)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a8140usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver)}
+}
+#[doc="`LoadSortiePreset(i32)` overload"]fn load_sortie_preset(self,preset_id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a6a30usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver,(i32)::core::convert::Into::into(preset_id))}
+}
+#[doc="`LoadBattlePreset(i32)` overload"]fn load_battle_preset(self,preset_id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a8030usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver,(i32)::core::convert::Into::into(preset_id))}
+}
+#[doc="`LoadBattlePreset(crate::combat::combatrecord::CombatRecord)` overload"]fn load_battle_preset_2(self,record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a8330usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
+}
+#[doc="`SetCharacterRandom()` overload"]fn set_character_random(self,)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a87a0usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver)}
+}
+#[doc="`SettingRandamCharacter(i32)` overload"]fn setting_randam_character(self,side:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a8960usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver,(i32)::core::convert::Into::into(side))}
+}
+#[doc="`SetCharacterParamRandom()` overload"]fn set_character_param_random(self,)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a8da0usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCombatViewerSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29a8f10usize)as*mut u8,();
+(MapCombatViewerSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapcombatviewersettings")]
-impl < __T : IMapCombatViewerSettings > IMapCombatViewerSettingsMethods for __T { }
+#[cfg(feature="app-mapcombatviewersettings")]impl<__T:IMapCombatViewerSettings>IMapCombatViewerSettingsMethods for __T{}
 
-#[cfg(feature = "app-mapcombatviewersettings")]
-impl MapCombatViewerSettings { pub fn get_need_refresh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_need_refresh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_sortie_preset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn load_battle_preset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn load_battle_preset_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_character_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn setting_randam_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_character_param_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCombatViewerSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-mapcombatviewersettings")]impl MapCombatViewerSettings{pub fn get_need_refresh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_need_refresh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_sortie_preset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn load_battle_preset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn load_battle_preset_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_character_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn setting_randam_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_character_param_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-mapcombatviewersettings")]
-impl MapCombatViewerSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCombatViewerSettings) , :: core :: stringify ! (new) ,)) ; < Self as IMapCombatViewerSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapcombatviewersettings")]impl MapCombatViewerSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCombatViewerSettings), ::core::stringify!(new),));
+ <Self as IMapCombatViewerSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapcombatviewersettings")]

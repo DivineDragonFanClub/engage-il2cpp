@@ -4,40 +4,159 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/binaryreader/BinaryReader.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "BinaryReader")] # [parent (crate :: system :: object :: Object)] pub struct BinaryReader {
-# [offset (16)] # [rename (name = "m_stream")] pub m_stream : crate :: system :: io :: stream :: Stream ,
-# [offset (24)] # [rename (name = "m_buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
-# [offset (40)] # [rename (name = "m_charBytes")] pub m_char_bytes : :: unity2 :: Array < u8 > ,
-# [offset (48)] # [rename (name = "m_singleChar")] pub m_single_char : :: unity2 :: Array < u16 > ,
-# [offset (56)] # [rename (name = "m_charBuffer")] pub m_char_buffer : :: unity2 :: Array < u16 > ,
-# [offset (64)] # [rename (name = "m_maxCharsSize")] pub m_max_chars_size : i32 ,
-# [offset (68)] # [rename (name = "m_2BytesPerChar")] pub m_2bytes_per_char : bool ,
-# [offset (69)] # [rename (name = "m_isMemoryStream")] pub m_is_memory_stream : bool ,
-# [offset (70)] # [rename (name = "m_leaveOpen")] pub m_leave_open : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/binaryreader/BinaryReader.md"))]#[::unity2::class(namespace="System.IO",name="BinaryReader")]#[parent(crate::system::object::Object)]pub struct BinaryReader{#[offset(16)]#[rename(name="m_stream")]pub m_stream:crate::system::io::stream::Stream, #[offset(24)]#[rename(name="m_buffer")]pub m_buffer: ::unity2::Array<u8> , #[offset(40)]#[rename(name="m_charBytes")]pub m_char_bytes: ::unity2::Array<u8> , #[offset(48)]#[rename(name="m_singleChar")]pub m_single_char: ::unity2::Array<u16> , #[offset(56)]#[rename(name="m_charBuffer")]pub m_char_buffer: ::unity2::Array<u16> , #[offset(64)]#[rename(name="m_maxCharsSize")]pub m_max_chars_size:i32, #[offset(68)]#[rename(name="m_2BytesPerChar")]pub m_2bytes_per_char:bool, #[offset(69)]#[rename(name="m_isMemoryStream")]pub m_is_memory_stream:bool, #[offset(70)]#[rename(name="m_leaveOpen")]pub m_leave_open:bool,}
 
 }
 
 #[cfg(feature = "system-io-binaryreader-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-binaryreader")]
-pub trait IBinaryReaderMethods : IBinaryReader { # [doc = "`.ctor(crate::system::io::stream::Stream)` overload"] fn ctor (self , input : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> () { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (input) , :: core :: option :: Option :: None) } } } # [doc = "`get_BaseStream()` overload"] fn get_base_stream (self ,) -> crate :: system :: io :: stream :: Stream { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> crate :: system :: io :: stream :: Stream = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose_2 (self ,) -> () { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read()` overload"] fn read (self ,) -> i32 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadBoolean()` overload"] fn read_boolean (self ,) -> bool { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadByte()` overload"] fn read_byte (self ,) -> u8 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadSByte()` overload"] fn read_s_byte (self ,) -> i8 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadChar()` overload"] fn read_char (self ,) -> u16 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadInt16()` overload"] fn read_int16 (self ,) -> i16 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> i16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadUInt16()` overload"] fn read_u_int16 (self ,) -> u16 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadInt32()` overload"] fn read_int32 (self ,) -> i32 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338ea40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadUInt32()` overload"] fn read_u_int32 (self ,) -> u32 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338eb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadInt64()` overload"] fn read_int64 (self ,) -> i64 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338ebe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadUInt64()` overload"] fn read_u_int64 (self ,) -> u64 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338ecb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadSingle()` overload"] fn read_single (self ,) -> f32 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338ed80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadDouble()` overload"] fn read_double (self ,) -> f64 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338ee00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadString()` overload"] fn read_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338efe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InternalReadChars(::unity2::Array<u16>, i32, i32)` overload"] fn internal_read_chars (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338f370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`InternalReadOneChar()` overload"] fn internal_read_one_char (self ,) -> i32 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338e580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadChars(i32)` overload"] fn read_chars (self , count : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < u16 > { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u16 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338f6a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u8>, i32, i32)` overload"] fn read_2 (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338f820usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`ReadBytes(i32)` overload"] fn read_bytes (self , count : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338f9c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`FillBuffer(i32)` overload"] fn fill_buffer (self , num_bytes : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338fb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (num_bytes) , :: core :: option :: Option :: None) } } } # [doc = "`Read7BitEncodedInt()` overload"] fn read7_bit_encoded_int (self ,) -> i32 { unsafe { let __receiver = < BinaryReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BinaryReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x338f2c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-binaryreader")]pub trait IBinaryReaderMethods:IBinaryReader{#[doc="`.ctor(crate::system::io::stream::Stream)` overload"]fn ctor(self,input:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e130usize)as*mut u8,();
+(BinaryReader)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(input))}
+}
+#[doc="`get_BaseStream()` overload"]fn get_base_stream(self,)->crate::system::io::stream::Stream{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e460usize)as*mut u8,crate::system::io::stream::Stream;
+(BinaryReader)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e470usize)as*mut u8,();
+(BinaryReader)__receiver)}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e480usize)as*mut u8,();
+(BinaryReader)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`Dispose()` overload"]fn dispose_2(self,)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e530usize)as*mut u8,();
+(BinaryReader)__receiver)}
+}
+#[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e540usize)as*mut u8,i32;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadBoolean()` overload"]fn read_boolean(self,)->bool{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e810usize)as*mut u8,bool;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadByte()` overload"]fn read_byte(self,)->u8{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e870usize)as*mut u8,u8;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadSByte()` overload"]fn read_s_byte(self,)->i8{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e8e0usize)as*mut u8,i8;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadChar()` overload"]fn read_char(self,)->u16{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e930usize)as*mut u8,u16;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadInt16()` overload"]fn read_int16(self,)->i16{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e980usize)as*mut u8,i16;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadUInt16()` overload"]fn read_u_int16(self,)->u16{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e9e0usize)as*mut u8,u16;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadInt32()` overload"]fn read_int32(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338ea40usize)as*mut u8,i32;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadUInt32()` overload"]fn read_u_int32(self,)->u32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338eb60usize)as*mut u8,u32;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadInt64()` overload"]fn read_int64(self,)->i64{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338ebe0usize)as*mut u8,i64;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadUInt64()` overload"]fn read_u_int64(self,)->u64{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338ecb0usize)as*mut u8,u64;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadSingle()` overload"]fn read_single(self,)->f32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338ed80usize)as*mut u8,f32;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadDouble()` overload"]fn read_double(self,)->f64{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338ee00usize)as*mut u8,f64;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadString()` overload"]fn read_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338efe0usize)as*mut u8, ::unity2::Il2CppString;
+(BinaryReader)__receiver)}
+}
+#[doc="`InternalReadChars(::unity2::Array<u16>, i32, i32)` overload"]fn internal_read_chars(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338f370usize)as*mut u8,i32;
+(BinaryReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`InternalReadOneChar()` overload"]fn internal_read_one_char(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338e580usize)as*mut u8,i32;
+(BinaryReader)__receiver)}
+}
+#[doc="`ReadChars(i32)` overload"]fn read_chars(self,count:impl::core::convert::Into<i32>)-> ::unity2::Array<u16>{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338f6a0usize)as*mut u8, ::unity2::Array<u16> ;
+(BinaryReader)__receiver,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338f820usize)as*mut u8,i32;
+(BinaryReader)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`ReadBytes(i32)` overload"]fn read_bytes(self,count:impl::core::convert::Into<i32>)-> ::unity2::Array<u8>{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338f9c0usize)as*mut u8, ::unity2::Array<u8> ;
+(BinaryReader)__receiver,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`FillBuffer(i32)` overload"]fn fill_buffer(self,num_bytes:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338fb60usize)as*mut u8,();
+(BinaryReader)__receiver,(i32)::core::convert::Into::into(num_bytes))}
+}
+#[doc="`Read7BitEncodedInt()` overload"]fn read7_bit_encoded_int(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x338f2c0usize)as*mut u8,i32;
+(BinaryReader)__receiver)}
+}
+}
 
-#[cfg(feature = "system-io-binaryreader")]
-impl < __T : IBinaryReader > IBinaryReaderMethods for __T { }
+#[cfg(feature="system-io-binaryreader")]impl<__T:IBinaryReader>IBinaryReaderMethods for __T{}
 
-#[cfg(feature = "system-io-binaryreader")]
-impl BinaryReader { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_base_stream_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn dispose_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn read_boolean_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn read_byte_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn read_s_byte_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn read_char_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn read_int16_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn read_u_int16_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn read_int32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn read_u_int32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn read_int64_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn read_u_int64_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn read_single_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn read_double_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn read_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn internal_read_chars_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn internal_read_one_char_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn read_chars_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn read_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn read_bytes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn fill_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn read7_bit_encoded_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BinaryReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } }
+#[cfg(feature="system-io-binaryreader")]impl BinaryReader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_base_stream_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn read_boolean_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn read_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn read_s_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn read_char_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn read_int16_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn read_u_int16_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn read_int32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn read_u_int32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn read_int64_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn read_u_int64_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn read_single_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn read_double_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn read_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn internal_read_chars_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn internal_read_one_char_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn read_chars_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn read_bytes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn fill_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn read7_bit_encoded_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
 
-#[cfg(feature = "system-io-binaryreader")]
-impl BinaryReader {
-# [doc = "`.ctor(crate::system::io::stream::Stream)` — overload selector"] pub fn new (input : crate :: system :: io :: stream :: Stream) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BinaryReader) , :: core :: stringify ! (new) ,)) ; < Self as IBinaryReaderMethods > :: ctor (this , input) ; this }
+#[cfg(feature="system-io-binaryreader")]impl BinaryReader{#[doc="`.ctor(crate::system::io::stream::Stream)` — overload selector"]pub fn new(input:crate::system::io::stream::Stream)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BinaryReader), ::core::stringify!(new),));
+ <Self as IBinaryReaderMethods> ::ctor(this,input);
+this}
 }
 
 #[cfg(feature = "system-io-binaryreader")]

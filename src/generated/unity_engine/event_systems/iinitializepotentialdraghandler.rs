@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/iinitializepotentialdraghandler/IInitializePotentialDragHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "IInitializePotentialDragHandler")] pub struct IInitializePotentialDragHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/iinitializepotentialdraghandler/IInitializePotentialDragHandler.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="IInitializePotentialDragHandler")]pub struct IInitializePotentialDragHandler{}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IInitializePotentialDragHandler_unity2_raw { use super :: * ; pub unsafe fn on_initialize_potential_drag (this : IInitializePotentialDragHandler , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnInitializePotentialDrag") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnInitializePotentialDrag" , < IInitializePotentialDragHandler as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IInitializePotentialDragHandler , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , event_data , __mi) } }
+#[cfg(feature="unity_engine-event_systems-iinitializepotentialdraghandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IInitializePotentialDragHandler_unity2_raw{use super:: * ;
+pub unsafe fn on_initialize_potential_drag(this:IInitializePotentialDragHandler,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnInitializePotentialDrag").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnInitializePotentialDrag", <IInitializePotentialDragHandler as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IInitializePotentialDragHandler,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+}
 
-#[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler")]
-pub trait IIInitializePotentialDragHandlerMethods : IIInitializePotentialDragHandler { # [doc = "`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_initialize_potential_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < IInitializePotentialDragHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IInitializePotentialDragHandler_unity2_raw :: on_initialize_potential_drag (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-event_systems-iinitializepotentialdraghandler")]pub trait IIInitializePotentialDragHandlerMethods:IIInitializePotentialDragHandler{#[doc="`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_initialize_potential_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <IInitializePotentialDragHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IInitializePotentialDragHandler_unity2_raw::on_initialize_potential_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler")]
-impl < __T : IIInitializePotentialDragHandler > IIInitializePotentialDragHandlerMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-iinitializepotentialdraghandler")]impl<__T:IIInitializePotentialDragHandler>IIInitializePotentialDragHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler")]
-impl IInitializePotentialDragHandler { pub fn on_initialize_potential_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IInitializePotentialDragHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-event_systems-iinitializepotentialdraghandler")]impl IInitializePotentialDragHandler{pub fn on_initialize_potential_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-event_systems-iinitializepotentialdraghandler")]
 #[doc(hidden)]

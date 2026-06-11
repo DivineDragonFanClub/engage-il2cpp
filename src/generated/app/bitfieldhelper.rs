@@ -4,33 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfieldhelper/BitFieldHelper.md"))] # [:: unity2 :: class (namespace = "App" , name = "BitFieldHelper")] # [parent (crate :: system :: object :: Object)] pub struct BitFieldHelper {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bitfieldhelper/BitFieldHelper.md"))]#[::unity2::class(namespace="App",name="BitFieldHelper")]#[parent(crate::system::object::Object)]pub struct BitFieldHelper{}
 
 }
 
 #[cfg(feature = "app-bitfieldhelper-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bitfieldhelper")]
-impl BitFieldHelper { # [doc = "`GetByNames(::unity2::SystemType, i32)` overload"] pub fn get_by_names (src_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , src_value : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2987610usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (src_type) , :: core :: convert :: Into :: into (src_value) , :: core :: option :: Option :: None) } } } # [doc = "`GetByNames(::unity2::SystemType, i64)` overload"] pub fn get_by_names_2 (src_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , src_value : impl :: core :: convert :: Into < i64 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , i64 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2987b60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (src_type) , :: core :: convert :: Into :: into (src_value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bitfieldhelper")]impl BitFieldHelper{#[doc="`GetByNames(::unity2::SystemType, i32)` overload"]pub fn get_by_names(src_type:impl::core::convert::Into< ::unity2::SystemType> ,src_value:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2987610usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::SystemType)::core::convert::Into::into(src_type),(i32)::core::convert::Into::into(src_value))}
+}
+#[doc="`GetByNames(::unity2::SystemType, i64)` overload"]pub fn get_by_names_2(src_type:impl::core::convert::Into< ::unity2::SystemType> ,src_value:impl::core::convert::Into<i64>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2987b60usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::SystemType)::core::convert::Into::into(src_type),(i64)::core::convert::Into::into(src_value))}
+}
+}
 
-#[cfg(feature = "app-bitfieldhelper")]
-pub trait IBitFieldHelperMethods : IBitFieldHelper { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BitFieldHelper as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitFieldHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2988110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bitfieldhelper")]pub trait IBitFieldHelperMethods:IBitFieldHelper{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BitFieldHelper as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2988110usize)as*mut u8,();
+(BitFieldHelper)__receiver)}
+}
+}
 
-#[cfg(feature = "app-bitfieldhelper")]
-impl < __T : IBitFieldHelper > IBitFieldHelperMethods for __T { }
+#[cfg(feature="app-bitfieldhelper")]impl<__T:IBitFieldHelper>IBitFieldHelperMethods for __T{}
 
-#[cfg(feature = "app-bitfieldhelper")]
-impl BitFieldHelper { pub fn get_by_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitFieldHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_by_names_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitFieldHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitFieldHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-bitfieldhelper")]impl BitFieldHelper{pub fn get_by_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_by_names_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-bitfieldhelper")]
-impl BitFieldHelper {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitFieldHelper) , :: core :: stringify ! (new) ,)) ; < Self as IBitFieldHelperMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-bitfieldhelper")]impl BitFieldHelper{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitFieldHelper), ::core::stringify!(new),));
+ <Self as IBitFieldHelperMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-bitfieldhelper")]

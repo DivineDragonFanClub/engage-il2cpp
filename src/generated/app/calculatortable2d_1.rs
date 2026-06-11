@@ -4,34 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatortable2d_1/CalculatorTable2D_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "CalculatorTable2D`1")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < T0 >)] # [parent (crate :: app :: structtemplate_1 :: StructTemplate_1 < T0 >)] # [parent (crate :: app :: structbase :: StructBase)] # [parent (crate :: system :: object :: Object)] pub struct CalculatorTable2D_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatortable2d_1/CalculatorTable2D_1.md"))]#[::unity2::class(namespace="App",name="CalculatorTable2D`1")]#[parent(crate::app::structdataarray_1::StructDataArray_1<T0>)]#[parent(crate::app::structtemplate_1::StructTemplate_1<T0>)]#[parent(crate::app::structbase::StructBase)]#[parent(crate::system::object::Object)]pub struct CalculatorTable2D_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "app-calculatortable2d_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-calculatortable2d_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > CalculatorTable2D_1 < T0 > {
-# [doc = "`GetTable(::unity2::Il2CppString, i32)` overload"] # [method (name = "GetTable" , args = 2)] pub fn get_table (name : :: unity2 :: Il2CppString , index : i32) -> T0 ;
-
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
+#[cfg(feature="app-calculatortable2d_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>CalculatorTable2D_1<T0>{#[doc="`GetTable(::unity2::Il2CppString, i32)` overload"]#[method(name="GetTable",args=2)]pub fn get_table(name: ::unity2::Il2CppString,index:i32)->T0;
+ #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
 }
 
-#[cfg(feature = "app-calculatortable2d_1")]
-impl < T0 : :: unity2 :: ClassIdentity > CalculatorTable2D_1 < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CalculatorTable2D_1) , :: core :: stringify ! (new) ,)) ; < Self as ICalculatorTable2D_1Methods < T0 > > :: ctor (this ,) ; this }
+#[cfg(feature="app-calculatortable2d_1")]impl<T0: ::unity2::ClassIdentity>CalculatorTable2D_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CalculatorTable2D_1), ::core::stringify!(new),));
+ <Self as ICalculatorTable2D_1Methods<T0> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-calculatortable2d_1")]

@@ -4,135 +4,196 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/encountjobdata/EncountJobData_Flags.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct EncountJobData_Flags  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountjobdata/EncountJobData_FlagField.md"))]#[::unity2::class(namespace="App",name="EncountJobData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::encountjobdata::EncountJobData_Flags>)]pub struct EncountJobData_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountjobdata/EncountJobData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EncountJobData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for EncountJobData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EncountJobData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for EncountJobData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl EncountJobData_Flags{pub fn none()->Self{Self{value:0}
+}
+pub fn cc_random_selected()->Self{Self{value:1}
+}
+pub fn reserve()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for EncountJobData_Flags  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EncountJobData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for EncountJobData_Flags  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  EncountJobData_Flags  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn cc_random_selected() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn reserve() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountjobdata/EncountJobData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EncountJobData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: encountjobdata :: EncountJobData >)] pub struct EncountJobData {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountjobdata/EncountJobData_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "EncountJobData.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: encountjobdata :: EncountJobData_Flags >)] pub struct EncountJobData_FlagField {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountjobdata/EncountJobData.md"))]#[::unity2::class(namespace="App",name="EncountJobData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::encountjobdata::EncountJobData>)]pub struct EncountJobData{}
 
 }
 
 #[cfg(feature = "app-encountjobdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-encountjobdata")]
-impl EncountJobData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dae50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetFromJid(::unity2::Il2CppString)` overload"] pub fn get_from_jid (jid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: encountjobdata :: EncountJobData { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: encountjobdata :: EncountJobData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de4f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (jid) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-encountjobdata")]
-pub trait IEncountJobDataMethods : IEncountJobData { # [doc = "`get_EJid()` overload"] fn get_e_jid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EJid(::unity2::Il2CppString)` overload"] fn set_e_jid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Jobs()` overload"] fn get_jobs (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Jobs(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_jobs (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Flag()` overload"] fn get_flag (self ,) -> crate :: app :: encountjobdata :: EncountJobData_FlagField { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> crate :: app :: encountjobdata :: EncountJobData_FlagField = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Flag(crate::app::encountjobdata::EncountJobData_FlagField)` overload"] fn set_flag (self , value : impl :: core :: convert :: Into < crate :: app :: encountjobdata :: EncountJobData_FlagField >) -> () { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , crate :: app :: encountjobdata :: EncountJobData_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetJid(i32)` overload"] fn get_jid (self , index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de3d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`GetJidList()` overload"] fn get_jid_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetJidCount()` overload"] fn get_jid_count (self ,) -> i32 { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPrefixlessEJid()` overload"] fn get_prefixless_e_jid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCcRandomSelected()` overload"] fn is_cc_random_selected (self ,) -> bool { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsContainsFromJid(::unity2::Il2CppString)` overload"] fn is_contains_from_jid (self , jid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (jid) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EncountJobData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-encountjobdata")]
-impl < __T : IEncountJobData > IEncountJobDataMethods for __T { }
-
-#[cfg(feature = "app-encountjobdata")]
-impl EncountJobData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_e_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_e_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_jobs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_jobs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_flag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_jid_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_jid_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_prefixless_e_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_cc_random_selected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_from_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_contains_from_jid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
-
-#[cfg(feature = "app-encountjobdata")]
-impl EncountJobData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EncountJobData) , :: core :: stringify ! (new) ,)) ; < Self as IEncountJobDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-encountjobdata")]pub trait IEncountJobData_FlagFieldMethods:IEncountJobData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <EncountJobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6a70usize)as*mut u8,();
+(EncountJobData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::encountjobdata::EncountJobData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::encountjobdata::EncountJobData_Flags>)->(){unsafe{let __receiver= <EncountJobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6ad0usize)as*mut u8,();
+(EncountJobData_FlagField)__receiver,(crate::app::encountjobdata::EncountJobData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::encountjobdata::EncountJobData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::encountjobdata::EncountJobData_Flags>)->i32{unsafe{let __receiver= <EncountJobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6b30usize)as*mut u8,i32;
+(EncountJobData_FlagField)__receiver,(crate::app::encountjobdata::EncountJobData_Flags)::core::convert::Into::into(value))}
+}
 }
 
-#[cfg(feature = "app-encountjobdata")]
-pub trait IEncountJobData_FlagFieldMethods : IEncountJobData_FlagField { # [doc = "`.ctor(i32)` overload"] fn ctor (self , f : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < EncountJobData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData_FlagField , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd6a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::encountjobdata::EncountJobData_Flags)` overload"] fn ctor_2 (self , f : impl :: core :: convert :: Into < crate :: app :: encountjobdata :: EncountJobData_Flags >) -> () { unsafe { let __receiver = < EncountJobData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData_FlagField , crate :: app :: encountjobdata :: EncountJobData_Flags , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd6ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (f) , :: core :: option :: Option :: None) } } } # [doc = "`ToInt(crate::app::encountjobdata::EncountJobData_Flags)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: encountjobdata :: EncountJobData_Flags >) -> i32 { unsafe { let __receiver = < EncountJobData_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountJobData_FlagField , crate :: app :: encountjobdata :: EncountJobData_Flags , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd6b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-encountjobdata")]impl<__T:IEncountJobData_FlagField>IEncountJobData_FlagFieldMethods for __T{}
 
-#[cfg(feature = "app-encountjobdata")]
-impl < __T : IEncountJobData_FlagField > IEncountJobData_FlagFieldMethods for __T { }
+#[cfg(feature="app-encountjobdata")]impl EncountJobData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-encountjobdata")]
-impl EncountJobData_FlagField { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountJobData_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-encountjobdata")]impl EncountJobData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EncountJobData_FlagField), ::core::stringify!(new),));
+ <Self as IEncountJobData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::encountjobdata::EncountJobData_Flags)` — overload selector"]pub fn new_2(f:crate::app::encountjobdata::EncountJobData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EncountJobData_FlagField), ::core::stringify!(new_2),));
+ <Self as IEncountJobData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
 
-#[cfg(feature = "app-encountjobdata")]
-impl EncountJobData_FlagField {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (f : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EncountJobData_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IEncountJobData_FlagFieldMethods > :: ctor (this , f) ; this }
+#[cfg(feature="app-encountjobdata")]impl EncountJobData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dae50usize)as*mut u8,();
+)}
+}
+#[doc="`GetFromJid(::unity2::Il2CppString)` overload"]pub fn get_from_jid(jid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::encountjobdata::EncountJobData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22de4f0usize)as*mut u8,crate::app::encountjobdata::EncountJobData;
+(::unity2::Il2CppString)::core::convert::Into::into(jid))}
+}
+}
 
-# [doc = "`.ctor(crate::app::encountjobdata::EncountJobData_Flags)` — overload selector"] pub fn new_2 (f : crate :: app :: encountjobdata :: EncountJobData_Flags) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EncountJobData_FlagField) , :: core :: stringify ! (new_2) ,)) ; < Self as IEncountJobData_FlagFieldMethods > :: ctor_2 (this , f) ; this }
+#[cfg(feature="app-encountjobdata")]pub trait IEncountJobDataMethods:IEncountJobData{#[doc="`get_EJid()` overload"]fn get_e_jid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de310usize)as*mut u8, ::unity2::Il2CppString;
+(EncountJobData)__receiver)}
+}
+#[doc="`set_EJid(::unity2::Il2CppString)` overload"]fn set_e_jid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de320usize)as*mut u8,();
+(EncountJobData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Jobs()` overload"]fn get_jobs(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de330usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(EncountJobData)__receiver)}
+}
+#[doc="`set_Jobs(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_jobs(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de340usize)as*mut u8,();
+(EncountJobData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Flag()` overload"]fn get_flag(self,)->crate::app::encountjobdata::EncountJobData_FlagField{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de350usize)as*mut u8,crate::app::encountjobdata::EncountJobData_FlagField;
+(EncountJobData)__receiver)}
+}
+#[doc="`set_Flag(crate::app::encountjobdata::EncountJobData_FlagField)` overload"]fn set_flag(self,value:impl::core::convert::Into<crate::app::encountjobdata::EncountJobData_FlagField>)->(){unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de360usize)as*mut u8,();
+(EncountJobData)__receiver,(crate::app::encountjobdata::EncountJobData_FlagField)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de370usize)as*mut u8, ::unity2::Il2CppString;
+(EncountJobData)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de380usize)as*mut u8, ::unity2::Il2CppString;
+(EncountJobData)__receiver)}
+}
+#[doc="`GetJid(i32)` overload"]fn get_jid(self,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de3d0usize)as*mut u8, ::unity2::Il2CppString;
+(EncountJobData)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetJidList()` overload"]fn get_jid_list(self,)->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de410usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+(EncountJobData)__receiver)}
+}
+#[doc="`GetJidCount()` overload"]fn get_jid_count(self,)->i32{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de470usize)as*mut u8,i32;
+(EncountJobData)__receiver)}
+}
+#[doc="`GetPrefixlessEJid()` overload"]fn get_prefixless_e_jid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de480usize)as*mut u8, ::unity2::Il2CppString;
+(EncountJobData)__receiver)}
+}
+#[doc="`IsCcRandomSelected()` overload"]fn is_cc_random_selected(self,)->bool{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de490usize)as*mut u8,bool;
+(EncountJobData)__receiver)}
+}
+#[doc="`IsContainsFromJid(::unity2::Il2CppString)` overload"]fn is_contains_from_jid(self,jid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de630usize)as*mut u8,bool;
+(EncountJobData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(jid))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de690usize)as*mut u8,();
+(EncountJobData)__receiver)}
+}
+}
+
+#[cfg(feature="app-encountjobdata")]impl<__T:IEncountJobData>IEncountJobDataMethods for __T{}
+
+#[cfg(feature="app-encountjobdata")]impl EncountJobData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_e_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_e_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_jobs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_jobs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_flag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_jid_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_jid_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_prefixless_e_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_cc_random_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_from_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_contains_from_jid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-encountjobdata")]impl EncountJobData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EncountJobData), ::core::stringify!(new),));
+ <Self as IEncountJobDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-encountjobdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::EncountJobData_FlagField;
+    pub use super::IEncountJobData_FlagField;
+    pub use super::IEncountJobData_FlagFieldMethods;
     pub use super::EncountJobData_Flags;
     pub use super::EncountJobData;
     pub use super::IEncountJobData;
     pub use super::IEncountJobDataMethods;
-    pub use super::EncountJobData_FlagField;
-    pub use super::IEncountJobData_FlagField;
-    pub use super::IEncountJobData_FlagFieldMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

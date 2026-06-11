@@ -4,32 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: trackedreference :: { ITrackedReference , TrackedReference }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::trackedreference::{ITrackedReference,TrackedReference}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animationstate/AnimationState.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AnimationState")] # [parent (crate :: unity_engine :: trackedreference :: TrackedReference)] pub struct AnimationState {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animationstate/AnimationState.md"))]#[::unity2::class(namespace="UnityEngine",name="AnimationState")]#[parent(crate::unity_engine::trackedreference::TrackedReference)]pub struct AnimationState{}
 
 }
 
 #[cfg(feature = "unity_engine-animationstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animationstate")]
-pub trait IAnimationStateMethods : IAnimationState { # [doc = "`set_normalizedTime(f32)` overload"] fn set_normalized_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AnimationState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationState , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb03e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_layer(i32)` overload"] fn set_layer (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AnimationState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationState , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb0430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_clip()` overload"] fn get_clip (self ,) -> crate :: unity_engine :: animationclip :: AnimationClip { unsafe { let __receiver = < AnimationState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eabf30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimationState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb0480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animationstate")]pub trait IAnimationStateMethods:IAnimationState{#[doc="`set_normalizedTime(f32)` overload"]fn set_normalized_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AnimationState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb03e0usize)as*mut u8,();
+(AnimationState)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_layer(i32)` overload"]fn set_layer(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AnimationState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb0430usize)as*mut u8,();
+(AnimationState)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_clip()` overload"]fn get_clip(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <AnimationState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eabf30usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
+(AnimationState)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimationState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eb0480usize)as*mut u8,();
+(AnimationState)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-animationstate")]
-impl < __T : IAnimationState > IAnimationStateMethods for __T { }
+#[cfg(feature="unity_engine-animationstate")]impl<__T:IAnimationState>IAnimationStateMethods for __T{}
 
-#[cfg(feature = "unity_engine-animationstate")]
-impl AnimationState { pub fn set_normalized_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-animationstate")]impl AnimationState{pub fn set_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-animationstate")]
-impl AnimationState {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimationState) , :: core :: stringify ! (new) ,)) ; < Self as IAnimationStateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-animationstate")]impl AnimationState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimationState), ::core::stringify!(new),));
+ <Self as IAnimationStateMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-animationstate")]

@@ -4,162 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/boolean/Boolean.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Boolean {
-    pub m_value: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/boolean/Boolean.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Boolean{pub m_value:bool,}
+impl::unity2::ClassIdentity for Boolean{const NAMESPACE: &'static str="System";
+const NAME: &'static str="Boolean";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Boolean {
-    const NAMESPACE: &'static str = "System";
-
-    const NAME: &'static str = "Boolean";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for Boolean{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for Boolean {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl Boolean{#[inline]pub fn r#true()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"True");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_true(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"True");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl Boolean {
-    #[inline]
-    pub fn r#true() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "True");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_true(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "True");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn r#false() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "False");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_false(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "False");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn true_literal() -> :: unity2 :: Il2CppString {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "TrueLiteral");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_true_literal(value: :: unity2 :: Il2CppString) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "TrueLiteral");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn false_literal() -> :: unity2 :: Il2CppString {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "FalseLiteral");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_false_literal(value: :: unity2 :: Il2CppString) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "FalseLiteral");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn true_string() -> :: unity2 :: Il2CppString {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "TrueString");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_true_string(value: :: unity2 :: Il2CppString) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "TrueString");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn false_string() -> :: unity2 :: Il2CppString {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "FalseString");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_false_string(value: :: unity2 :: Il2CppString) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "FalseString");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+#[inline]pub fn r#false()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"False");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_false(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"False");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn true_literal()-> ::unity2::Il2CppString{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TrueLiteral");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_true_literal(value: ::unity2::Il2CppString){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TrueLiteral");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn false_literal()-> ::unity2::Il2CppString{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"FalseLiteral");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_false_literal(value: ::unity2::Il2CppString){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"FalseLiteral");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn true_string()-> ::unity2::Il2CppString{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TrueString");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_true_string(value: ::unity2::Il2CppString){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TrueString");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn false_string()-> ::unity2::Il2CppString{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"FalseString");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_false_string(value: ::unity2::Il2CppString){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"FalseString");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -167,14 +69,54 @@ impl Boolean {
 #[cfg(feature = "system-boolean-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-boolean")]
-impl Boolean { # [doc = "`Parse(::unity2::Il2CppString)` overload"] pub fn parse (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33934b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`TryParse(::unity2::Il2CppString, *mutbool)` overload"] pub fn try_parse (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , bool) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33935d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`TrimWhiteSpaceAndNull(::unity2::Il2CppString)` overload"] pub fn trim_white_space_and_null (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3393710usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33940b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-boolean")]impl Boolean{#[doc="`Parse(::unity2::Il2CppString)` overload"]pub fn parse(value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33934b0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`TryParse(::unity2::Il2CppString, *mutbool)` overload"]pub fn try_parse(value:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x33935d0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(value),(*mut bool)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`TrimWhiteSpaceAndNull(::unity2::Il2CppString)` overload"]pub fn trim_white_space_and_null(value:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3393710usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33940b0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-boolean")]
-impl Boolean { # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Boolean , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33931d0usize) as * mut u8) ; __inner (self as * mut Boolean , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Boolean , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33931e0usize) as * mut u8) ; __inner (self as * mut Boolean , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Boolean , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33932c0usize) as * mut u8) ; __inner (self as * mut Boolean , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(bool)` overload"] pub fn equals_2 (& mut self , obj : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (* mut Boolean , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3393350usize) as * mut u8) ; __inner (self as * mut Boolean , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`CompareTo(crate::system::object::Object)` overload"] pub fn compare_to (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Boolean , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3393370usize) as * mut u8) ; __inner (self as * mut Boolean , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`CompareTo(bool)` overload"] pub fn compare_to_2 (& mut self , value : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut Boolean , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3393480usize) as * mut u8) ; __inner (self as * mut Boolean , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-boolean")]impl Boolean{#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33931d0usize)as*mut u8,i32;
+(*mut Boolean)self as*mut Boolean)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33931e0usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Boolean)self as*mut Boolean)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33932c0usize)as*mut u8,bool;
+(*mut Boolean)self as*mut Boolean,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(bool)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3393350usize)as*mut u8,bool;
+(*mut Boolean)self as*mut Boolean,(bool)::core::convert::Into::into(obj))}
+}
+#[doc="`CompareTo(crate::system::object::Object)` overload"]pub fn compare_to(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3393370usize)as*mut u8,i32;
+(*mut Boolean)self as*mut Boolean,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`CompareTo(bool)` overload"]pub fn compare_to_2(&mut self,value:impl::core::convert::Into<bool>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3393480usize)as*mut u8,i32;
+(*mut Boolean)self as*mut Boolean,(bool)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "system-boolean")]
-impl Boolean { pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn compare_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn compare_to_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn try_parse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn trim_white_space_and_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Boolean as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } }
+#[cfg(feature="system-boolean")]impl Boolean{pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn compare_to_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn parse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn try_parse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn trim_white_space_and_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+}
 
 #[cfg(feature = "system-boolean")]
 #[doc(hidden)]

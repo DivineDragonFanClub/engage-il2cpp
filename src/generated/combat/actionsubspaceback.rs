@@ -4,35 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionsubspaceback/ActionSubspaceBack.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionSubspaceBack")] # [parent (crate :: combat :: state :: State)] pub struct ActionSubspaceBack {
-# [offset (20)] # [rename (name = "m_Side")] pub m_side : i32 ,
-# [offset (24)] # [rename (name = "m_IsLastBossDead")] pub m_is_last_boss_dead : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionsubspaceback/ActionSubspaceBack.md"))]#[::unity2::class(namespace="Combat",name="ActionSubspaceBack")]#[parent(crate::combat::state::State)]pub struct ActionSubspaceBack{#[offset(20)]#[rename(name="m_Side")]pub m_side:i32, #[offset(24)]#[rename(name="m_IsLastBossDead")]pub m_is_last_boss_dead:bool,}
 
 }
 
 #[cfg(feature = "combat-actionsubspaceback-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionsubspaceback")]
-pub trait IActionSubspaceBackMethods : IActionSubspaceBack { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionSubspaceBack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionSubspaceBack , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc8590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::phase::Phase)` overload"] fn ctor (self , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < ActionSubspaceBack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionSubspaceBack , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc85e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionSubspaceBack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionSubspaceBack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc8690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionSubspaceBack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionSubspaceBack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc87c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionsubspaceback")]pub trait IActionSubspaceBackMethods:IActionSubspaceBack{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionSubspaceBack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc8590usize)as*mut u8, ::unity2::Il2CppString;
+(ActionSubspaceBack)__receiver)}
+}
+#[doc="`.ctor(crate::combat::phase::Phase)` overload"]fn ctor(self,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <ActionSubspaceBack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc85e0usize)as*mut u8,();
+(ActionSubspaceBack)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionSubspaceBack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc8690usize)as*mut u8,();
+(ActionSubspaceBack)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionSubspaceBack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc87c0usize)as*mut u8,();
+(ActionSubspaceBack)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actionsubspaceback")]
-impl < __T : IActionSubspaceBack > IActionSubspaceBackMethods for __T { }
+#[cfg(feature="combat-actionsubspaceback")]impl<__T:IActionSubspaceBack>IActionSubspaceBackMethods for __T{}
 
-#[cfg(feature = "combat-actionsubspaceback")]
-impl ActionSubspaceBack { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionSubspaceBack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionSubspaceBack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionSubspaceBack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionSubspaceBack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-actionsubspaceback")]impl ActionSubspaceBack{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-actionsubspaceback")]
-impl ActionSubspaceBack {
-# [doc = "`.ctor(crate::combat::phase::Phase)` — overload selector"] pub fn new (phase : crate :: combat :: phase :: Phase) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionSubspaceBack) , :: core :: stringify ! (new) ,)) ; < Self as IActionSubspaceBackMethods > :: ctor (this , phase) ; this }
+#[cfg(feature="combat-actionsubspaceback")]impl ActionSubspaceBack{#[doc="`.ctor(crate::combat::phase::Phase)` — overload selector"]pub fn new(phase:crate::combat::phase::Phase)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionSubspaceBack), ::core::stringify!(new),));
+ <Self as IActionSubspaceBackMethods> ::ctor(this,phase);
+this}
 }
 
 #[cfg(feature = "combat-actionsubspaceback")]

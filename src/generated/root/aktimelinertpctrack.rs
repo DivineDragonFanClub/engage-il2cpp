@@ -4,38 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: trackasset :: { ITrackAsset , TrackAsset }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktimelinertpctrack/AkTimelineRtpcTrack.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTimelineRtpcTrack")] # [parent (crate :: unity_engine :: timeline :: trackasset :: TrackAsset)] pub struct AkTimelineRtpcTrack {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktimelinertpctrack/AkTimelineRtpcTrack.md"))]#[::unity2::class(namespace="",name="AkTimelineRtpcTrack")]#[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]pub struct AkTimelineRtpcTrack{}
 
 }
 
 #[cfg(feature = "root-aktimelinertpctrack-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aktimelinertpctrack")]
-pub trait IAkTimelineRtpcTrackMethods : IAkTimelineRtpcTrack { # [doc = "`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"] fn create_track_mixer (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , input_count : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < AkTimelineRtpcTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTimelineRtpcTrack , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d28fc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (input_count) , :: core :: option :: Option :: None) } } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < AkTimelineRtpcTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTimelineRtpcTrack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d29350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkTimelineRtpcTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTimelineRtpcTrack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d295e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktimelinertpctrack")]pub trait IAkTimelineRtpcTrackMethods:IAkTimelineRtpcTrack{#[doc="`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn create_track_mixer(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AkTimelineRtpcTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28fc0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(AkTimelineRtpcTrack)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(i32)::core::convert::Into::into(input_count))}
+}
+#[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <AkTimelineRtpcTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d29350usize)as*mut u8,();
+(AkTimelineRtpcTrack)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkTimelineRtpcTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d295e0usize)as*mut u8,();
+(AkTimelineRtpcTrack)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aktimelinertpctrack")]
-impl < __T : IAkTimelineRtpcTrack > IAkTimelineRtpcTrackMethods for __T { }
+#[cfg(feature="root-aktimelinertpctrack")]impl<__T:IAkTimelineRtpcTrack>IAkTimelineRtpcTrackMethods for __T{}
 
-#[cfg(feature = "root-aktimelinertpctrack")]
-impl AkTimelineRtpcTrack { pub fn create_track_mixer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTimelineRtpcTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTimelineRtpcTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTimelineRtpcTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-aktimelinertpctrack")]impl AkTimelineRtpcTrack{pub fn create_track_mixer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-aktimelinertpctrack")]
-impl AkTimelineRtpcTrack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTimelineRtpcTrack) , :: core :: stringify ! (new) ,)) ; < Self as IAkTimelineRtpcTrackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-aktimelinertpctrack")]impl AkTimelineRtpcTrack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTimelineRtpcTrack), ::core::stringify!(new),));
+ <Self as IAkTimelineRtpcTrackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-aktimelinertpctrack")]

@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatorutility/AnimatorUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "AnimatorUtility")] # [parent (crate :: system :: object :: Object)] pub struct AnimatorUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animatorutility/AnimatorUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="AnimatorUtility")]#[parent(crate::system::object::Object)]pub struct AnimatorUtility{}
 
 }
 
 #[cfg(feature = "unity_engine-animatorutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animatorutility")]
-impl AnimatorUtility { # [doc = "`OptimizeTransformHierarchy(crate::unity_engine::gameobject::GameObject, ::unity2::Array<::unity2::Il2CppString>)` overload"] pub fn optimize_transform_hierarchy (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , exposed_transforms : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eb8510usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (exposed_transforms) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animatorutility")]impl AnimatorUtility{#[doc="`OptimizeTransformHierarchy(crate::unity_engine::gameobject::GameObject, ::unity2::Array<::unity2::Il2CppString>)` overload"]pub fn optimize_transform_hierarchy(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,exposed_transforms:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb8510usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(exposed_transforms))}
+}
+}
 
-#[cfg(feature = "unity_engine-animatorutility")]
-impl AnimatorUtility { pub fn optimize_transform_hierarchy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimatorUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-animatorutility")]impl AnimatorUtility{pub fn optimize_transform_hierarchy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-animatorutility")]
 #[doc(hidden)]

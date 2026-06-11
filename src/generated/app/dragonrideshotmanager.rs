@@ -4,42 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideshotmanager/DragonRideShotManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideShotManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonrideshotmanager :: DragonRideShotManager >)] pub struct DragonRideShotManager {
-# [offset (32)] # [rename (name = "m_PoolParent")] pub m_pool_parent : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_UseCount")] pub m_use_count : i32 ,
-# [offset (44)] # [rename (name = "m_ReturnCount")] pub m_return_count : i32 ,
-# [offset (48)] # [rename (name = "m_ReservePoolArray")] pub m_reserve_pool_array : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (56)] # [rename (name = "MaxShotCount")] pub max_shot_count : i32 ,
-# [offset (60)] # [rename (name = "m_DefaultInterpSecond")] pub m_default_interp_second : f32 ,
-# [offset (64)] # [rename (name = "m_DefaultShotSpeed")] pub m_default_shot_speed : f32 ,
-# [offset (68)] # [rename (name = "m_DefaultLifeSecond")] pub m_default_life_second : f32 ,
-# [offset (72)] # [rename (name = "m_IsPenetrate")] pub m_is_penetrate : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideshotmanager/DragonRideShotManager.md"))]#[::unity2::class(namespace="App",name="DragonRideShotManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::dragonrideshotmanager::DragonRideShotManager>)]pub struct DragonRideShotManager{#[offset(32)]#[rename(name="m_PoolParent")]pub m_pool_parent:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_UseCount")]pub m_use_count:i32, #[offset(44)]#[rename(name="m_ReturnCount")]pub m_return_count:i32, #[offset(48)]#[rename(name="m_ReservePoolArray")]pub m_reserve_pool_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(56)]#[rename(name="MaxShotCount")]pub max_shot_count:i32, #[offset(60)]#[rename(name="m_DefaultInterpSecond")]pub m_default_interp_second:f32, #[offset(64)]#[rename(name="m_DefaultShotSpeed")]pub m_default_shot_speed:f32, #[offset(68)]#[rename(name="m_DefaultLifeSecond")]pub m_default_life_second:f32, #[offset(72)]#[rename(name="m_IsPenetrate")]pub m_is_penetrate:bool,}
 
 }
 
 #[cfg(feature = "app-dragonrideshotmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonrideshotmanager")]
-pub trait IDragonRideShotManagerMethods : IDragonRideShotManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideShotManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShotManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destruct()` overload"] fn destruct (self ,) -> () { unsafe { let __receiver = < DragonRideShotManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShotManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad0070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDefaultParam(f32, f32, f32, bool)` overload"] fn set_default_param (self , interp_second : impl :: core :: convert :: Into < f32 > , shot_speed : impl :: core :: convert :: Into < f32 > , life_second : impl :: core :: convert :: Into < f32 > , is_penetrate : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DragonRideShotManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShotManager , f32 , f32 , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9b00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (interp_second) , :: core :: convert :: Into :: into (shot_speed) , :: core :: convert :: Into :: into (life_second) , :: core :: convert :: Into :: into (is_penetrate) , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < DragonRideShotManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShotManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InactiveAllShot()` overload"] fn inactive_all_shot (self ,) -> () { unsafe { let __receiver = < DragonRideShotManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShotManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetActiveShot(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, bool, bool, bool, bool)` overload"] fn set_active_shot (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , target : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , straight : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , diff : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , is_assist : impl :: core :: convert :: Into < bool > , is_special_time : impl :: core :: convert :: Into < bool > , is_penetrate : impl :: core :: convert :: Into < bool > , is_maximum : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DragonRideShotManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShotManager , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , bool , bool , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9c70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (straight) , :: core :: convert :: Into :: into (diff) , :: core :: convert :: Into :: into (is_assist) , :: core :: convert :: Into :: into (is_special_time) , :: core :: convert :: Into :: into (is_penetrate) , :: core :: convert :: Into :: into (is_maximum) , :: core :: option :: Option :: None) } } } # [doc = "`ResetShot(crate::unity_engine::gameobject::GameObject)` overload"] fn reset_shot (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < DragonRideShotManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShotManager , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad94e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonrideshotmanager")]pub trait IDragonRideShotManagerMethods:IDragonRideShotManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideShotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9870usize)as*mut u8,();
+(DragonRideShotManager)__receiver)}
+}
+#[doc="`Destruct()` overload"]fn destruct(self,)->(){unsafe{let __receiver= <DragonRideShotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad0070usize)as*mut u8,();
+(DragonRideShotManager)__receiver)}
+}
+#[doc="`SetDefaultParam(f32, f32, f32, bool)` overload"]fn set_default_param(self,interp_second:impl::core::convert::Into<f32> ,shot_speed:impl::core::convert::Into<f32> ,life_second:impl::core::convert::Into<f32> ,is_penetrate:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DragonRideShotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9b00usize)as*mut u8,();
+(DragonRideShotManager)__receiver,(f32)::core::convert::Into::into(interp_second),(f32)::core::convert::Into::into(shot_speed),(f32)::core::convert::Into::into(life_second),(bool)::core::convert::Into::into(is_penetrate))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <DragonRideShotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9b20usize)as*mut u8,();
+(DragonRideShotManager)__receiver)}
+}
+#[doc="`InactiveAllShot()` overload"]fn inactive_all_shot(self,)->(){unsafe{let __receiver= <DragonRideShotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9be0usize)as*mut u8,();
+(DragonRideShotManager)__receiver)}
+}
+#[doc="`SetActiveShot(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, bool, bool, bool, bool)` overload"]fn set_active_shot(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,target:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,straight:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,diff:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,is_assist:impl::core::convert::Into<bool> ,is_special_time:impl::core::convert::Into<bool> ,is_penetrate:impl::core::convert::Into<bool> ,is_maximum:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DragonRideShotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9c70usize)as*mut u8,();
+(DragonRideShotManager)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(straight),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(diff),(bool)::core::convert::Into::into(is_assist),(bool)::core::convert::Into::into(is_special_time),(bool)::core::convert::Into::into(is_penetrate),(bool)::core::convert::Into::into(is_maximum))}
+}
+#[doc="`ResetShot(crate::unity_engine::gameobject::GameObject)` overload"]fn reset_shot(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DragonRideShotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad94e0usize)as*mut u8,();
+(DragonRideShotManager)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "app-dragonrideshotmanager")]
-impl < __T : IDragonRideShotManager > IDragonRideShotManagerMethods for __T { }
+#[cfg(feature="app-dragonrideshotmanager")]impl<__T:IDragonRideShotManager>IDragonRideShotManagerMethods for __T{}
 
-#[cfg(feature = "app-dragonrideshotmanager")]
-impl DragonRideShotManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShotManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn destruct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShotManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_default_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShotManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShotManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn inactive_all_shot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShotManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_active_shot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShotManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn reset_shot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShotManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-dragonrideshotmanager")]impl DragonRideShotManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn destruct_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_default_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn inactive_all_shot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_active_shot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_shot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-dragonrideshotmanager")]
-impl DragonRideShotManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideShotManager) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideShotManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonrideshotmanager")]impl DragonRideShotManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideShotManager), ::core::stringify!(new),));
+ <Self as IDragonRideShotManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonrideshotmanager")]

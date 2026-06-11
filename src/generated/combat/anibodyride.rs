@@ -4,33 +4,109 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/anibodyride/AniBodyRide.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AniBodyRide")] # [parent (crate :: system :: object :: Object)] pub struct AniBodyRide {
-# [offset (16)] # [rename (name = "initialized")] pub initialized : bool ,
-# [offset (56)] # [rename (name = "playingIndex")] pub playing_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/anibodyride/AniBodyRide.md"))]#[::unity2::class(namespace="Combat",name="AniBodyRide")]#[parent(crate::system::object::Object)]pub struct AniBodyRide{#[offset(16)]#[rename(name="initialized")]pub initialized:bool, #[offset(56)]#[rename(name="playingIndex")]pub playing_index:i32,}
 
 }
 
 #[cfg(feature = "combat-anibodyride-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-anibodyride")]
-pub trait IAniBodyRideMethods : IAniBodyRide { # [doc = "`get_gameObject()` overload"] fn get_game_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"] fn set_game_object (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_animator()` overload"] fn get_animator (self ,) -> crate :: unity_engine :: animator :: Animator { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animator :: Animator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d8b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_animator(crate::unity_engine::animator::Animator)` overload"] fn set_animator (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator >) -> () { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , crate :: unity_engine :: animator :: Animator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d8c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_clips()` overload"] fn get_clips (self ,) -> :: unity2 :: Array < crate :: unity_engine :: animationclip :: AnimationClip > { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: animationclip :: AnimationClip > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_clips(::unity2::Array<crate::unity_engine::animationclip::AnimationClip>)` overload"] fn set_clips (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: animationclip :: AnimationClip > >) -> () { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: Array < crate :: unity_engine :: animationclip :: AnimationClip > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_clipNames()` overload"] fn get_clip_names (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_clipNames(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_clip_names (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Playing()` overload"] fn get_playing (self ,) -> crate :: unity_engine :: animationclip :: AnimationClip { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationclip :: AnimationClip = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayingClipLength()` overload"] fn get_playing_clip_length (self ,) -> f32 { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8daa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPlaying()` overload"] fn get_is_playing (self ,) -> bool { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8d9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"] fn ctor (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8dab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`Evaluate(f32)` overload"] fn evaluate (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8de90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`Play(i32)` overload"] fn play (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8df10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`FindIndex(::unity2::Il2CppString)` overload"] fn find_index (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < AniBodyRide as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AniBodyRide , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8df20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-anibodyride")]pub trait IAniBodyRideMethods:IAniBodyRide{#[doc="`get_gameObject()` overload"]fn get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d890usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(AniBodyRide)__receiver)}
+}
+#[doc="`set_gameObject(crate::unity_engine::gameobject::GameObject)` overload"]fn set_game_object(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d8a0usize)as*mut u8,();
+(AniBodyRide)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_animator()` overload"]fn get_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d8b0usize)as*mut u8,crate::unity_engine::animator::Animator;
+(AniBodyRide)__receiver)}
+}
+#[doc="`set_animator(crate::unity_engine::animator::Animator)` overload"]fn set_animator(self,value:impl::core::convert::Into<crate::unity_engine::animator::Animator>)->(){unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d8c0usize)as*mut u8,();
+(AniBodyRide)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(value))}
+}
+#[doc="`get_clips()` overload"]fn get_clips(self,)-> ::unity2::Array<crate::unity_engine::animationclip::AnimationClip>{unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d8d0usize)as*mut u8, ::unity2::Array<crate::unity_engine::animationclip::AnimationClip> ;
+(AniBodyRide)__receiver)}
+}
+#[doc="`set_clips(::unity2::Array<crate::unity_engine::animationclip::AnimationClip>)` overload"]fn set_clips(self,value:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::animationclip::AnimationClip> >)->(){unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d8e0usize)as*mut u8,();
+(AniBodyRide)__receiver,(::unity2::Array<crate::unity_engine::animationclip::AnimationClip>)::core::convert::Into::into(value))}
+}
+#[doc="`get_clipNames()` overload"]fn get_clip_names(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d8f0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(AniBodyRide)__receiver)}
+}
+#[doc="`set_clipNames(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_clip_names(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d900usize)as*mut u8,();
+(AniBodyRide)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Playing()` overload"]fn get_playing(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d910usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
+(AniBodyRide)__receiver)}
+}
+#[doc="`get_PlayingClipLength()` overload"]fn get_playing_clip_length(self,)->f32{unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d960usize)as*mut u8,f32;
+(AniBodyRide)__receiver)}
+}
+#[doc="`get_IsValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8daa0usize)as*mut u8,bool;
+(AniBodyRide)__receiver)}
+}
+#[doc="`get_IsPlaying()` overload"]fn get_is_playing(self,)->bool{unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8d9e0usize)as*mut u8,bool;
+(AniBodyRide)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8dab0usize)as*mut u8,();
+(AniBodyRide)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`Evaluate(f32)` overload"]fn evaluate(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8de90usize)as*mut u8,();
+(AniBodyRide)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`Play(i32)` overload"]fn play(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8df10usize)as*mut u8,();
+(AniBodyRide)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`FindIndex(::unity2::Il2CppString)` overload"]fn find_index(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <AniBodyRide as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8df20usize)as*mut u8,i32;
+(AniBodyRide)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "combat-anibodyride")]
-impl < __T : IAniBodyRide > IAniBodyRideMethods for __T { }
+#[cfg(feature="combat-anibodyride")]impl<__T:IAniBodyRide>IAniBodyRideMethods for __T{}
 
-#[cfg(feature = "combat-anibodyride")]
-impl AniBodyRide { pub fn get_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_animator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_animator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_clips_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_clips_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_clip_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_clip_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_playing_clip_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_is_playing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn evaluate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn find_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AniBodyRide as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="combat-anibodyride")]impl AniBodyRide{pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_clips_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_clips_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_clip_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_clip_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_playing_clip_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn evaluate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn find_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "combat-anibodyride")]
-impl AniBodyRide {
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (go : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AniBodyRide) , :: core :: stringify ! (new) ,)) ; < Self as IAniBodyRideMethods > :: ctor (this , go) ; this }
+#[cfg(feature="combat-anibodyride")]impl AniBodyRide{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(go:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AniBodyRide), ::core::stringify!(new),));
+ <Self as IAniBodyRideMethods> ::ctor(this,go);
+this}
 }
 
 #[cfg(feature = "combat-anibodyride")]

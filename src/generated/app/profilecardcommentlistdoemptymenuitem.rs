@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: profilecardcommentlistmenuitem :: { IProfileCardCommentListMenuItem , ProfileCardCommentListMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::profilecardcommentlistmenuitem::{IProfileCardCommentListMenuItem,ProfileCardCommentListMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistdoemptymenuitem/ProfileCardCommentListDoEmptyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardCommentListDoEmptyMenuItem")] # [parent (crate :: app :: profilecardcommentlistmenuitem :: ProfileCardCommentListMenuItem)] pub struct ProfileCardCommentListDoEmptyMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardcommentlistdoemptymenuitem/ProfileCardCommentListDoEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardCommentListDoEmptyMenuItem")]#[parent(crate::app::profilecardcommentlistmenuitem::ProfileCardCommentListMenuItem)]pub struct ProfileCardCommentListDoEmptyMenuItem{}
 
 }
 
 #[cfg(feature = "app-profilecardcommentlistdoemptymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardcommentlistdoemptymenuitem")]
-pub trait IProfileCardCommentListDoEmptyMenuItemMethods : IProfileCardCommentListDoEmptyMenuItem { # [doc = "`.ctor(bool, crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler)` overload"] fn ctor (self , initial_select : impl :: core :: convert :: Into < bool > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: profilecardcommentlistmenu :: ProfileCardCommentListMenu_SelectEventHandler >) -> () { unsafe { let __receiver = < ProfileCardCommentListDoEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardCommentListDoEmptyMenuItem , bool , crate :: app :: profilecardcommentlistmenu :: ProfileCardCommentListMenu_SelectEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x230ee30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (initial_select) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardcommentlistdoemptymenuitem")]pub trait IProfileCardCommentListDoEmptyMenuItemMethods:IProfileCardCommentListDoEmptyMenuItem{#[doc="`.ctor(bool, crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler)` overload"]fn ctor(self,initial_select:impl::core::convert::Into<bool> ,select_event_handler:impl::core::convert::Into<crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler>)->(){unsafe{let __receiver= <ProfileCardCommentListDoEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x230ee30usize)as*mut u8,();
+(ProfileCardCommentListDoEmptyMenuItem)__receiver,(bool)::core::convert::Into::into(initial_select),(crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
+}
+}
 
-#[cfg(feature = "app-profilecardcommentlistdoemptymenuitem")]
-impl < __T : IProfileCardCommentListDoEmptyMenuItem > IProfileCardCommentListDoEmptyMenuItemMethods for __T { }
+#[cfg(feature="app-profilecardcommentlistdoemptymenuitem")]impl<__T:IProfileCardCommentListDoEmptyMenuItem>IProfileCardCommentListDoEmptyMenuItemMethods for __T{}
 
-#[cfg(feature = "app-profilecardcommentlistdoemptymenuitem")]
-impl ProfileCardCommentListDoEmptyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardCommentListDoEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-profilecardcommentlistdoemptymenuitem")]impl ProfileCardCommentListDoEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-profilecardcommentlistdoemptymenuitem")]
-impl ProfileCardCommentListDoEmptyMenuItem {
-# [doc = "`.ctor(bool, crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler)` — overload selector"] pub fn new (initial_select : bool , select_event_handler : crate :: app :: profilecardcommentlistmenu :: ProfileCardCommentListMenu_SelectEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardCommentListDoEmptyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardCommentListDoEmptyMenuItemMethods > :: ctor (this , initial_select , select_event_handler) ; this }
+#[cfg(feature="app-profilecardcommentlistdoemptymenuitem")]impl ProfileCardCommentListDoEmptyMenuItem{#[doc="`.ctor(bool, crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler)` — overload selector"]pub fn new(initial_select:bool,select_event_handler:crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardCommentListDoEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardCommentListDoEmptyMenuItemMethods> ::ctor(this,initial_select,select_event_handler);
+this}
 }
 
 #[cfg(feature = "app-profilecardcommentlistdoemptymenuitem")]

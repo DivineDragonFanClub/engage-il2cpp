@@ -4,12 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/lua_state_interop/namespacedoc_6/NamespaceDoc_6.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop" , name = "NamespaceDoc")] # [parent (crate :: system :: object :: Object)] pub struct NamespaceDoc_6 {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/lua_state_interop/namespacedoc_6/NamespaceDoc_6.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop.LuaStateInterop",name="NamespaceDoc")]#[parent(crate::system::object::Object)]pub struct NamespaceDoc_6{}
 
 }
 

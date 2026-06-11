@@ -4,38 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/attackrangeindicator/AttackRangeIndicator.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AttackRangeIndicator")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AttackRangeIndicator {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/attackrangeindicator/AttackRangeIndicator.md"))]#[::unity2::class(namespace="Combat",name="AttackRangeIndicator")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AttackRangeIndicator{}
 
 }
 
 #[cfg(feature = "combat-attackrangeindicator-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-attackrangeindicator")]
-pub trait IAttackRangeIndicatorMethods : IAttackRangeIndicator { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AttackRangeIndicator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AttackRangeIndicator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211e4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-attackrangeindicator")]pub trait IAttackRangeIndicatorMethods:IAttackRangeIndicator{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AttackRangeIndicator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211e4b0usize)as*mut u8,();
+(AttackRangeIndicator)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-attackrangeindicator")]
-impl < __T : IAttackRangeIndicator > IAttackRangeIndicatorMethods for __T { }
+#[cfg(feature="combat-attackrangeindicator")]impl<__T:IAttackRangeIndicator>IAttackRangeIndicatorMethods for __T{}
 
-#[cfg(feature = "combat-attackrangeindicator")]
-impl AttackRangeIndicator { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AttackRangeIndicator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-attackrangeindicator")]impl AttackRangeIndicator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "combat-attackrangeindicator")]
-impl AttackRangeIndicator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AttackRangeIndicator) , :: core :: stringify ! (new) ,)) ; < Self as IAttackRangeIndicatorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-attackrangeindicator")]impl AttackRangeIndicator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AttackRangeIndicator), ::core::stringify!(new),));
+ <Self as IAttackRangeIndicatorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-attackrangeindicator")]

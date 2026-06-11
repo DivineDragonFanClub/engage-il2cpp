@@ -4,36 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hitstop/HitStop.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "HitStop")] # [parent (crate :: system :: object :: Object)] pub struct HitStop {
-# [offset (16)] # [rename (name = "m_HitStopSpeedCurve")] pub m_hit_stop_speed_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (32)] # [rename (name = "m_NormalizedScale")] pub m_normalized_scale : f32 ,
-# [offset (36)] # [rename (name = "m_LastSpeed")] pub m_last_speed : f32 ,
-# [offset (40)] # [rename (name = "m_bHitStopEndCalled")] pub m_b_hit_stop_end_called : bool ,
-# [offset (44)] # [rename (name = "m_HitStopStart")] pub m_hit_stop_start : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/hitstop/HitStop.md"))]#[::unity2::class(namespace="Combat",name="HitStop")]#[parent(crate::system::object::Object)]pub struct HitStop{#[offset(16)]#[rename(name="m_HitStopSpeedCurve")]pub m_hit_stop_speed_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(32)]#[rename(name="m_NormalizedScale")]pub m_normalized_scale:f32, #[offset(36)]#[rename(name="m_LastSpeed")]pub m_last_speed:f32, #[offset(40)]#[rename(name="m_bHitStopEndCalled")]pub m_b_hit_stop_end_called:bool, #[offset(44)]#[rename(name="m_HitStopStart")]pub m_hit_stop_start:f32,}
 
 }
 
 #[cfg(feature = "combat-hitstop-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-hitstop")]
-pub trait IHitStopMethods : IHitStop { # [doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` overload"] fn ctor (self , hit_stop_speed_curve : impl :: core :: convert :: Into < crate :: unity_engine :: animationcurve :: AnimationCurve >) -> () { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , crate :: unity_engine :: animationcurve :: AnimationCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2167190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hit_stop_speed_curve) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2167200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21671e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RemainingTime()` overload"] fn get_remaining_time (self ,) -> f32 { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2167220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_RemainingTime(f32)` overload"] fn set_remaining_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2167230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsRunning()` overload"] fn get_is_running (self ,) -> bool { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2167240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Speed()` overload"] fn get_speed (self ,) -> f32 { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2167250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Speed(f32)` overload"] fn set_speed (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2167260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NormalizedTime()` overload"] fn get_normalized_time (self ,) -> f32 { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2167270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start(f32)` overload"] fn start (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2167290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21673f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Resume()` overload"] fn resume (self ,) -> () { unsafe { let __receiver = < HitStop as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HitStop , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21674c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-hitstop")]pub trait IHitStopMethods:IHitStop{#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` overload"]fn ctor(self,hit_stop_speed_curve:impl::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167190usize)as*mut u8,();
+(HitStop)__receiver,(crate::unity_engine::animationcurve::AnimationCurve)::core::convert::Into::into(hit_stop_speed_curve))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167200usize)as*mut u8,();
+(HitStop)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21671e0usize)as*mut u8,();
+(HitStop)__receiver)}
+}
+#[doc="`get_RemainingTime()` overload"]fn get_remaining_time(self,)->f32{unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167220usize)as*mut u8,f32;
+(HitStop)__receiver)}
+}
+#[doc="`set_RemainingTime(f32)` overload"]fn set_remaining_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167230usize)as*mut u8,();
+(HitStop)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsRunning()` overload"]fn get_is_running(self,)->bool{unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167240usize)as*mut u8,bool;
+(HitStop)__receiver)}
+}
+#[doc="`get_Speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167250usize)as*mut u8,f32;
+(HitStop)__receiver)}
+}
+#[doc="`set_Speed(f32)` overload"]fn set_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167260usize)as*mut u8,();
+(HitStop)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_NormalizedTime()` overload"]fn get_normalized_time(self,)->f32{unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167270usize)as*mut u8,f32;
+(HitStop)__receiver)}
+}
+#[doc="`Start(f32)` overload"]fn start(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167290usize)as*mut u8,();
+(HitStop)__receiver,(f32)::core::convert::Into::into(time))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21673f0usize)as*mut u8,();
+(HitStop)__receiver)}
+}
+#[doc="`Resume()` overload"]fn resume(self,)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21674c0usize)as*mut u8,();
+(HitStop)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-hitstop")]
-impl < __T : IHitStop > IHitStopMethods for __T { }
+#[cfg(feature="combat-hitstop")]impl<__T:IHitStop>IHitStopMethods for __T{}
 
-#[cfg(feature = "combat-hitstop")]
-impl HitStop { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_remaining_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_remaining_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_running_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_normalized_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn resume_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStop as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="combat-hitstop")]impl HitStop{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_remaining_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_remaining_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_running_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_normalized_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "combat-hitstop")]
-impl HitStop {
-# [doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` — overload selector"] pub fn new (hit_stop_speed_curve : crate :: unity_engine :: animationcurve :: AnimationCurve) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HitStop) , :: core :: stringify ! (new) ,)) ; < Self as IHitStopMethods > :: ctor (this , hit_stop_speed_curve) ; this }
+#[cfg(feature="combat-hitstop")]impl HitStop{#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` — overload selector"]pub fn new(hit_stop_speed_curve:crate::unity_engine::animationcurve::AnimationCurve)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HitStop), ::core::stringify!(new),));
+ <Self as IHitStopMethods> ::ctor(this,hit_stop_speed_curve);
+this}
 }
 
 #[cfg(feature = "combat-hitstop")]

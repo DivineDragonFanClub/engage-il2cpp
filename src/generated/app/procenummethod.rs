@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procenummethod/ProcEnumMethod.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcEnumMethod")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ProcEnumMethod {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procenummethod/ProcEnumMethod.md"))]#[::unity2::class(namespace="App",name="ProcEnumMethod")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProcEnumMethod{}
 
 }
 
 #[cfg(feature = "app-procenummethod-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procenummethod")]
-pub trait IProcEnumMethodMethods : IProcEnumMethod { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ProcEnumMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcEnumMethod , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281dcc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ProcEnumMethod as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcEnumMethod , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procenummethod")]pub trait IProcEnumMethodMethods:IProcEnumMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProcEnumMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281dcc0usize)as*mut u8,();
+(ProcEnumMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ProcEnumMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d610usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ProcEnumMethod)__receiver)}
+}
+}
 
-#[cfg(feature = "app-procenummethod")]
-impl < __T : IProcEnumMethod > IProcEnumMethodMethods for __T { }
+#[cfg(feature="app-procenummethod")]impl<__T:IProcEnumMethod>IProcEnumMethodMethods for __T{}
 
-#[cfg(feature = "app-procenummethod")]
-impl ProcEnumMethod { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcEnumMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcEnumMethod as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procenummethod")]impl ProcEnumMethod{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procenummethod")]
-impl ProcEnumMethod {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcEnumMethod) , :: core :: stringify ! (new) ,)) ; < Self as IProcEnumMethodMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-procenummethod")]impl ProcEnumMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcEnumMethod), ::core::stringify!(new),));
+ <Self as IProcEnumMethodMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-procenummethod")]

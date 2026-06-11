@@ -4,42 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/waterbasev2/WaterBaseV2.md"))] # [:: unity2 :: class (namespace = "App.Water" , name = "WaterBaseV2")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct WaterBaseV2 {
-# [offset (24)] # [rename (name = "sharedMaterial")] pub shared_material : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "edgeBlend")] pub edge_blend : bool ,
-# [offset (33)] # [rename (name = "reflection")] pub reflection : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/water/waterbasev2/WaterBaseV2.md"))]#[::unity2::class(namespace="App.Water",name="WaterBaseV2")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct WaterBaseV2{#[offset(24)]#[rename(name="sharedMaterial")]pub shared_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="edgeBlend")]pub edge_blend:bool, #[offset(33)]#[rename(name="reflection")]pub reflection:bool,}
 
 }
 
 #[cfg(feature = "app-water-waterbasev2-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-water-waterbasev2")]
-pub trait IWaterBaseV2Methods : IWaterBaseV2 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WaterBaseV2 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WaterBaseV2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c4b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-water-waterbasev2")]pub trait IWaterBaseV2Methods:IWaterBaseV2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WaterBaseV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c4b30usize)as*mut u8,();
+(WaterBaseV2)__receiver)}
+}
+}
 
-#[cfg(feature = "app-water-waterbasev2")]
-impl < __T : IWaterBaseV2 > IWaterBaseV2Methods for __T { }
+#[cfg(feature="app-water-waterbasev2")]impl<__T:IWaterBaseV2>IWaterBaseV2Methods for __T{}
 
-#[cfg(feature = "app-water-waterbasev2")]
-impl WaterBaseV2 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WaterBaseV2 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-water-waterbasev2")]impl WaterBaseV2{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-water-waterbasev2")]
-impl WaterBaseV2 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WaterBaseV2) , :: core :: stringify ! (new) ,)) ; < Self as IWaterBaseV2Methods > :: ctor (this ,) ; this }
+#[cfg(feature="app-water-waterbasev2")]impl WaterBaseV2{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WaterBaseV2), ::core::stringify!(new),));
+ <Self as IWaterBaseV2Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-water-waterbasev2")]

@@ -4,84 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectsequence/EffectSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "EffectSequence")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectsequence :: EffectSequence >)] pub struct EffectSequence {
-# [offset (64)] # [rename (name = "m_Effects")] pub m_effects : :: unity2 :: Array < crate :: app :: effectdata :: EffectData > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectsequence/EffectSequence.md"))]#[::unity2::class(namespace="App",name="EffectSequence")]#[parent(crate::app::structdata_1::StructData_1<crate::app::effectsequence::EffectSequence>)]pub struct EffectSequence{#[offset(64)]#[rename(name="m_Effects")]pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectsequence/EffectSequence_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EffectSequence_Kind{pub value:i32,}
+impl::unity2::ClassIdentity for EffectSequence_Kind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EffectSequence.Kind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectsequence/EffectSequence_Kind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct EffectSequence_Kind  {
-    pub value: i32,
+impl::unity2::IlType for EffectSequence_Kind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for EffectSequence_Kind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EffectSequence.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl EffectSequence_Kind{pub fn active()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for EffectSequence_Kind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn shoot()->Self{Self{value:1}
 }
-
-
-impl  EffectSequence_Kind  {
-    pub fn active() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn shoot() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn hit() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn hit()->Self{Self{value:2}
+}
+pub fn num()->Self{Self{value:3}
+}
 }
 
 }
@@ -89,21 +46,106 @@ impl  EffectSequence_Kind  {
 #[cfg(feature = "app-effectsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-effectsequence")]
-impl EffectSequence { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8cb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-effectsequence")]impl EffectSequence{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d8cb0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-effectsequence")]
-pub trait IEffectSequenceMethods : IEffectSequence { # [doc = "`get_Sequence()` overload"] fn get_sequence (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Sequence(::unity2::Il2CppString)` overload"] fn set_sequence (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Active()` overload"] fn get_active (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Active(::unity2::Il2CppString)` overload"] fn set_active (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Shoot()` overload"] fn get_shoot (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Shoot(::unity2::Il2CppString)` overload"] fn set_shoot (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8db0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Hit()` overload"] fn get_hit (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Hit(::unity2::Il2CppString)` overload"] fn set_hit (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8dd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetData(crate::app::effectsequence::EffectSequence_Kind)` overload"] fn get_data (self , kind : impl :: core :: convert :: Into < crate :: app :: effectsequence :: EffectSequence_Kind >) -> crate :: app :: effectdata :: EffectData { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , crate :: app :: effectsequence :: EffectSequence_Kind , :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`PlaySequence(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3)` overload"] fn play_sequence (self , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , crate :: app :: effectdata :: EffectData_Modes , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (position) , :: core :: option :: Option :: None) } } } # [doc = "`PlaySequence(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"] fn play_sequence_2 (self , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , rotation : impl :: core :: convert :: Into < crate :: unity_engine :: quaternion :: Quaternion >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , crate :: app :: effectdata :: EffectData_Modes , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: quaternion :: Quaternion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (position) , :: core :: convert :: Into :: into (rotation) , :: core :: option :: Option :: None) } } } # [doc = "`PlayShoot(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject)` overload"] fn play_shoot (self , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , crate :: app :: effectdata :: EffectData_Modes , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d9140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`PlayImpl(crate::app::effectsequence::EffectSequence_Kind, crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, *mutf32)` overload"] fn play_impl (self , kind : impl :: core :: convert :: Into < crate :: app :: effectsequence :: EffectSequence_Kind > , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> (crate :: app :: resourceobject :: ResourceObject , f32) { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (EffectSequence , crate :: app :: effectsequence :: EffectSequence_Kind , crate :: app :: effectdata :: EffectData_Modes , crate :: unity_engine :: gameobject :: GameObject , * mut f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: resourceobject :: ResourceObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d90b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (parent) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`TryGetData(::unity2::Il2CppString)` overload"] fn try_get_data (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: effectdata :: EffectData { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d9220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d92c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d95b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-effectsequence")]pub trait IEffectSequenceMethods:IEffectSequence{#[doc="`get_Sequence()` overload"]fn get_sequence(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8d60usize)as*mut u8, ::unity2::Il2CppString;
+(EffectSequence)__receiver)}
+}
+#[doc="`set_Sequence(::unity2::Il2CppString)` overload"]fn set_sequence(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8d70usize)as*mut u8,();
+(EffectSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Active()` overload"]fn get_active(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8d80usize)as*mut u8, ::unity2::Il2CppString;
+(EffectSequence)__receiver)}
+}
+#[doc="`set_Active(::unity2::Il2CppString)` overload"]fn set_active(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8d90usize)as*mut u8,();
+(EffectSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Shoot()` overload"]fn get_shoot(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8da0usize)as*mut u8, ::unity2::Il2CppString;
+(EffectSequence)__receiver)}
+}
+#[doc="`set_Shoot(::unity2::Il2CppString)` overload"]fn set_shoot(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8db0usize)as*mut u8,();
+(EffectSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Hit()` overload"]fn get_hit(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8dc0usize)as*mut u8, ::unity2::Il2CppString;
+(EffectSequence)__receiver)}
+}
+#[doc="`set_Hit(::unity2::Il2CppString)` overload"]fn set_hit(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8dd0usize)as*mut u8,();
+(EffectSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetData(crate::app::effectsequence::EffectSequence_Kind)` overload"]fn get_data(self,kind:impl::core::convert::Into<crate::app::effectsequence::EffectSequence_Kind>)->crate::app::effectdata::EffectData{unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8de0usize)as*mut u8,crate::app::effectdata::EffectData;
+(EffectSequence)__receiver,(crate::app::effectsequence::EffectSequence_Kind)::core::convert::Into::into(kind))}
+}
+#[doc="`PlaySequence(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3)` overload"]fn play_sequence(self,mode:impl::core::convert::Into<crate::app::effectdata::EffectData_Modes> ,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8e20usize)as*mut u8,();
+(EffectSequence)__receiver,(crate::app::effectdata::EffectData_Modes)::core::convert::Into::into(mode),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position))}
+}
+#[doc="`PlaySequence(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]fn play_sequence_2(self,mode:impl::core::convert::Into<crate::app::effectdata::EffectData_Modes> ,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8eb0usize)as*mut u8,();
+(EffectSequence)__receiver,(crate::app::effectdata::EffectData_Modes)::core::convert::Into::into(mode),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(rotation))}
+}
+#[doc="`PlayShoot(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject)` overload"]fn play_shoot(self,mode:impl::core::convert::Into<crate::app::effectdata::EffectData_Modes> ,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d9140usize)as*mut u8,();
+(EffectSequence)__receiver,(crate::app::effectdata::EffectData_Modes)::core::convert::Into::into(mode),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent))}
+}
+#[doc="`PlayImpl(crate::app::effectsequence::EffectSequence_Kind, crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, *mutf32)` overload"]fn play_impl(self,kind:impl::core::convert::Into<crate::app::effectsequence::EffectSequence_Kind> ,mode:impl::core::convert::Into<crate::app::effectdata::EffectData_Modes> ,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(crate::app::resourceobject::ResourceObject,f32){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x22d90b0usize)as*mut u8,crate::app::resourceobject::ResourceObject;
+(EffectSequence)__receiver,(crate::app::effectsequence::EffectSequence_Kind)::core::convert::Into::into(kind),(crate::app::effectdata::EffectData_Modes)::core::convert::Into::into(mode),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent),(*mut f32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`TryGetData(::unity2::Il2CppString)` overload"]fn try_get_data(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::effectdata::EffectData{unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d9220usize)as*mut u8,crate::app::effectdata::EffectData;
+(EffectSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d92c0usize)as*mut u8,();
+(EffectSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d95b0usize)as*mut u8,();
+(EffectSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-effectsequence")]
-impl < __T : IEffectSequence > IEffectSequenceMethods for __T { }
+#[cfg(feature="app-effectsequence")]impl<__T:IEffectSequence>IEffectSequenceMethods for __T{}
 
-#[cfg(feature = "app-effectsequence")]
-impl EffectSequence { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_shoot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_shoot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn play_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn play_sequence_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn play_shoot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn play_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn try_get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="app-effectsequence")]impl EffectSequence{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_shoot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_shoot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn play_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn play_sequence_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn play_shoot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn play_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn try_get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "app-effectsequence")]
-impl EffectSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectSequence) , :: core :: stringify ! (new) ,)) ; < Self as IEffectSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-effectsequence")]impl EffectSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EffectSequence), ::core::stringify!(new),));
+ <Self as IEffectSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-effectsequence")]

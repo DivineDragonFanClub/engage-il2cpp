@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/trailhand/TrailHand.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TrailHand {
-    pub supplier: crate :: combat :: trailvertexsupplier :: TrailVertexSupplier,
-    pub mesh: crate :: combat :: trailmesh :: TrailMesh,
-    pub root_node: crate :: unity_engine :: transform :: Transform,
-    pub tip_node: crate :: unity_engine :: transform :: Transform,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/trailhand/TrailHand.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TrailHand{pub supplier:crate::combat::trailvertexsupplier::TrailVertexSupplier,pub mesh:crate::combat::trailmesh::TrailMesh,pub root_node:crate::unity_engine::transform::Transform,pub tip_node:crate::unity_engine::transform::Transform,}
+impl::unity2::ClassIdentity for TrailHand{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="TrailHand";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TrailHand {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "TrailHand";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TrailHand {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TrailHand{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,25 @@ impl ::unity2::IlType for TrailHand {
 #[cfg(feature = "combat-trailhand-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-trailhand")]
-impl TrailHand { # [doc = "`get_IsAlive()` overload"] pub fn get_is_alive (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut TrailHand , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e380usize) as * mut u8) ; __inner (self as * mut TrailHand , :: core :: option :: Option :: None) } } } # [doc = "`SetRootAndTipTransform(crate::unity_engine::transform::Transform, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn set_root_and_tip_transform (& mut self , t : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , root_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , tip_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TrailHand , crate :: unity_engine :: transform :: Transform , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e4a0usize) as * mut u8) ; __inner (self as * mut TrailHand , :: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (root_name) , :: core :: convert :: Into :: into (tip_name) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut TrailHand , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e5f0usize) as * mut u8) ; __inner (self as * mut TrailHand , :: core :: option :: Option :: None) } } } # [doc = "`Update(f32)` overload"] pub fn update (& mut self , dt : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TrailHand , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e710usize) as * mut u8) ; __inner (self as * mut TrailHand , :: core :: convert :: Into :: into (dt) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-trailhand")]impl TrailHand{#[doc="`get_IsAlive()` overload"]pub fn get_is_alive(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229e380usize)as*mut u8,bool;
+(*mut TrailHand)self as*mut TrailHand)}
+}
+#[doc="`SetRootAndTipTransform(crate::unity_engine::transform::Transform, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn set_root_and_tip_transform(&mut self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,root_name:impl::core::convert::Into< ::unity2::Il2CppString> ,tip_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229e4a0usize)as*mut u8,bool;
+(*mut TrailHand)self as*mut TrailHand,(crate::unity_engine::transform::Transform)::core::convert::Into::into(t),(::unity2::Il2CppString)::core::convert::Into::into(root_name),(::unity2::Il2CppString)::core::convert::Into::into(tip_name))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229e5f0usize)as*mut u8,();
+(*mut TrailHand)self as*mut TrailHand)}
+}
+#[doc="`Update(f32)` overload"]pub fn update(&mut self,dt:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229e710usize)as*mut u8,();
+(*mut TrailHand)self as*mut TrailHand,(f32)::core::convert::Into::into(dt))}
+}
+}
 
-#[cfg(feature = "combat-trailhand")]
-impl TrailHand { pub fn get_is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailHand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_root_and_tip_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailHand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailHand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailHand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-trailhand")]impl TrailHand{pub fn get_is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_root_and_tip_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "combat-trailhand")]
 #[doc(hidden)]

@@ -4,23 +4,28 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/clipping/Clipping.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Clipping")] # [parent (crate :: system :: object :: Object)] pub struct Clipping {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/clipping/Clipping.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Clipping")]#[parent(crate::system::object::Object)]pub struct Clipping{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-clipping-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-clipping")]
-impl Clipping { # [doc = "`FindCullAndClipWorldRect(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>, *mutbool)` overload"] pub fn find_cull_and_clip_world_rect (rect_mask_parents : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: rectmask2d :: RectMask2D > >) -> (crate :: unity_engine :: rect :: Rect , bool) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: rectmask2d :: RectMask2D > , * mut bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rect :: Rect = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317efb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rect_mask_parents) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="unity_engine-ui-clipping")]impl Clipping{#[doc="`FindCullAndClipWorldRect(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>, *mutbool)` overload"]pub fn find_cull_and_clip_world_rect(rect_mask_parents:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D> >)->(crate::unity_engine::rect::Rect,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x317efb0usize)as*mut u8,crate::unity_engine::rect::Rect;
+(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>)::core::convert::Into::into(rect_mask_parents),(*mut bool)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-clipping")]
-impl Clipping { pub fn find_cull_and_clip_world_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Clipping as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-ui-clipping")]impl Clipping{pub fn find_cull_and_clip_world_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-ui-clipping")]
 #[doc(hidden)]

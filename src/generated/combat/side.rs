@@ -4,41 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/side/Side.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Side")] # [parent (crate :: system :: object :: Object)] pub struct Side {
-# [static_field] # [rename (name = "Invalid")] pub invalid : i32 ,
-# [static_field] # [rename (name = "Player")] pub player : i32 ,
-# [static_field] # [rename (name = "Enemy")] pub enemy : i32 ,
-# [static_field] # [rename (name = "PGrandew")] pub p_grandew : i32 ,
-# [static_field] # [rename (name = "EGrandew")] pub e_grandew : i32 ,
-# [static_field] # [rename (name = "PChainAtk")] pub p_chain_atk : i32 ,
-# [static_field] # [rename (name = "EChainAtk")] pub e_chain_atk : i32 ,
-# [static_field] # [rename (name = "PChainGrd1")] pub p_chain_grd1 : i32 ,
-# [static_field] # [rename (name = "EChainGrd1")] pub e_chain_grd1 : i32 ,
-# [static_field] # [rename (name = "PChainGrd2")] pub p_chain_grd2 : i32 ,
-# [static_field] # [rename (name = "EChainGrd2")] pub e_chain_grd2 : i32 ,
-# [static_field] # [rename (name = "PChainGrd3")] pub p_chain_grd3 : i32 ,
-# [static_field] # [rename (name = "EChainGrd3")] pub e_chain_grd3 : i32 ,
-# [static_field] # [rename (name = "PChainGrd4")] pub p_chain_grd4 : i32 ,
-# [static_field] # [rename (name = "EChainGrd4")] pub e_chain_grd4 : i32 ,
-# [static_field] # [rename (name = "Max")] pub max : i32 ,
-# [static_field] # [rename (name = "Regular")] pub regular : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/side/Side.md"))]#[::unity2::class(namespace="Combat",name="Side")]#[parent(crate::system::object::Object)]pub struct Side{#[static_field]#[rename(name="Invalid")]pub invalid:i32, #[static_field]#[rename(name="Player")]pub player:i32, #[static_field]#[rename(name="Enemy")]pub enemy:i32, #[static_field]#[rename(name="PGrandew")]pub p_grandew:i32, #[static_field]#[rename(name="EGrandew")]pub e_grandew:i32, #[static_field]#[rename(name="PChainAtk")]pub p_chain_atk:i32, #[static_field]#[rename(name="EChainAtk")]pub e_chain_atk:i32, #[static_field]#[rename(name="PChainGrd1")]pub p_chain_grd1:i32, #[static_field]#[rename(name="EChainGrd1")]pub e_chain_grd1:i32, #[static_field]#[rename(name="PChainGrd2")]pub p_chain_grd2:i32, #[static_field]#[rename(name="EChainGrd2")]pub e_chain_grd2:i32, #[static_field]#[rename(name="PChainGrd3")]pub p_chain_grd3:i32, #[static_field]#[rename(name="EChainGrd3")]pub e_chain_grd3:i32, #[static_field]#[rename(name="PChainGrd4")]pub p_chain_grd4:i32, #[static_field]#[rename(name="EChainGrd4")]pub e_chain_grd4:i32, #[static_field]#[rename(name="Max")]pub max:i32, #[static_field]#[rename(name="Regular")]pub regular:i32,}
 
 }
 
 #[cfg(feature = "combat-side-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-side")]
-impl Side { # [doc = "`ToName(i32)` overload"] pub fn to_name (i : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247c130usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`FromName(::unity2::Il2CppString)` overload"] pub fn from_name (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247c6e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsMaster(i32)` overload"] pub fn is_master (i : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`IsPairedGrandew(i32)` overload"] pub fn is_paired_grandew (i : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cae0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`IsChain(i32)` overload"] pub fn is_chain (i : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247caf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`IsChainAtk(i32)` overload"] pub fn is_chain_atk (i : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cb00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`IsChainGrd(i32)` overload"] pub fn is_chain_grd (i : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cb10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayerSide(i32)` overload"] pub fn is_player_side (i : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cb30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnemySide(i32)` overload"] pub fn is_enemy_side (i : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cb40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToEnemy(i32)` overload"] pub fn to_enemy (i : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cb50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToEnemyGrandew(i32)` overload"] pub fn to_enemy_grandew (i : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cb60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToGrandew(i32)` overload"] pub fn to_grandew (i : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cb70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToMaster(i32)` overload"] pub fn to_master (i : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cb90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToPartner(i32)` overload"] pub fn to_partner (i : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cbb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToMirrorSide(i32)` overload"] pub fn to_mirror_side (i : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cbd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToEnemyChr(i32)` overload"] pub fn to_enemy_chr (i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cbf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToGrandewChr(i32)` overload"] pub fn to_grandew_chr (i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cc50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToMasterChr(i32)` overload"] pub fn to_master_chr (i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cce0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToPartnerChr(i32)` overload"] pub fn to_partner_chr (i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cd50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToEnemyGrandewChr(i32)` overload"] pub fn to_enemy_grandew_chr (i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247cdc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ConvertFrom(crate::app::battleside::BattleSide_Type, bool)` overload"] pub fn convert_from (side_type : impl :: core :: convert :: Into < crate :: app :: battleside :: BattleSide_Type > , is_reversed : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: battleside :: BattleSide_Type , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247ce20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (side_type) , :: core :: convert :: Into :: into (is_reversed) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-side")]impl Side{#[doc="`ToName(i32)` overload"]pub fn to_name(i:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247c130usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`FromName(::unity2::Il2CppString)` overload"]pub fn from_name(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247c6e0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsMaster(i32)` overload"]pub fn is_master(i:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cad0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`IsPairedGrandew(i32)` overload"]pub fn is_paired_grandew(i:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cae0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`IsChain(i32)` overload"]pub fn is_chain(i:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247caf0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`IsChainAtk(i32)` overload"]pub fn is_chain_atk(i:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cb00usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`IsChainGrd(i32)` overload"]pub fn is_chain_grd(i:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cb10usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`IsPlayerSide(i32)` overload"]pub fn is_player_side(i:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cb30usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`IsEnemySide(i32)` overload"]pub fn is_enemy_side(i:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cb40usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToEnemy(i32)` overload"]pub fn to_enemy(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cb50usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToEnemyGrandew(i32)` overload"]pub fn to_enemy_grandew(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cb60usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToGrandew(i32)` overload"]pub fn to_grandew(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cb70usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToMaster(i32)` overload"]pub fn to_master(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cb90usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToPartner(i32)` overload"]pub fn to_partner(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cbb0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToMirrorSide(i32)` overload"]pub fn to_mirror_side(i:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cbd0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToEnemyChr(i32)` overload"]pub fn to_enemy_chr(i:impl::core::convert::Into<i32>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cbf0usize)as*mut u8,crate::combat::character::Character;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToGrandewChr(i32)` overload"]pub fn to_grandew_chr(i:impl::core::convert::Into<i32>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cc50usize)as*mut u8,crate::combat::character::Character;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToMasterChr(i32)` overload"]pub fn to_master_chr(i:impl::core::convert::Into<i32>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cce0usize)as*mut u8,crate::combat::character::Character;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToPartnerChr(i32)` overload"]pub fn to_partner_chr(i:impl::core::convert::Into<i32>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cd50usize)as*mut u8,crate::combat::character::Character;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToEnemyGrandewChr(i32)` overload"]pub fn to_enemy_grandew_chr(i:impl::core::convert::Into<i32>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247cdc0usize)as*mut u8,crate::combat::character::Character;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ConvertFrom(crate::app::battleside::BattleSide_Type, bool)` overload"]pub fn convert_from(side_type:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,is_reversed:impl::core::convert::Into<bool>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247ce20usize)as*mut u8,i32;
+(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side_type),(bool)::core::convert::Into::into(is_reversed))}
+}
+}
 
-#[cfg(feature = "combat-side")]
-impl Side { pub fn to_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn from_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_master_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_paired_grandew_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_chain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_chain_atk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_chain_grd_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_player_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_enemy_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn to_enemy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn to_enemy_grandew_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn to_grandew_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn to_master_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn to_partner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn to_mirror_side_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn to_enemy_chr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn to_grandew_chr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn to_master_chr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn to_partner_chr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn to_enemy_grandew_chr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn convert_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Side as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="combat-side")]impl Side{pub fn to_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn from_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_master_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_paired_grandew_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_chain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_chain_atk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_chain_grd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_player_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_enemy_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn to_enemy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn to_enemy_grandew_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn to_grandew_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn to_master_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn to_partner_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn to_mirror_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn to_enemy_chr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn to_grandew_chr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn to_master_chr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn to_partner_chr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn to_enemy_grandew_chr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn convert_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
 #[cfg(feature = "combat-side")]
 #[doc(hidden)]

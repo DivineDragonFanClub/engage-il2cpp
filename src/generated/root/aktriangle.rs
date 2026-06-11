@@ -4,40 +4,129 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriangle/AkTriangle.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTriangle")] # [parent (crate :: system :: object :: Object)] pub struct AkTriangle {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktriangle/AkTriangle.md"))]#[::unity2::class(namespace="",name="AkTriangle")]#[parent(crate::system::object::Object)]pub struct AkTriangle{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-aktriangle-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aktriangle")]
-impl AkTriangle { # [doc = "`getCPtr(crate::root::aktriangle::AkTriangle)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: aktriangle :: AkTriangle >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: aktriangle :: AkTriangle , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d29fd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeOf()` overload"] pub fn get_size_of () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2a480usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktriangle")]impl AkTriangle{#[doc="`getCPtr(crate::root::aktriangle::AkTriangle)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::aktriangle::AkTriangle>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d29fd0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::aktriangle::AkTriangle)::core::convert::Into::into(obj))}
+}
+#[doc="`GetSizeOf()` overload"]pub fn get_size_of()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a480usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "root-aktriangle")]
-pub trait IAkTriangleMethods : IAkTriangle { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d29f90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2a030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2a060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2a0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2a250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u16, u16, u16, u16)` overload"] fn ctor_3 (self , in_pt0 : impl :: core :: convert :: Into < u16 > , in_pt1 : impl :: core :: convert :: Into < u16 > , in_pt2 : impl :: core :: convert :: Into < u16 > , in_surface_info : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , u16 , u16 , u16 , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2a2e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_pt0) , :: core :: convert :: Into :: into (in_pt1) , :: core :: convert :: Into :: into (in_pt2) , :: core :: convert :: Into :: into (in_surface_info) , :: core :: option :: Option :: None) } } } # [doc = "`set_point0(u16)` overload"] fn set_point0 (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d24750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_point0()` overload"] fn get_point0 (self ,) -> u16 { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d24950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_point1(u16)` overload"] fn set_point1 (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d247d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_point1()` overload"] fn get_point1 (self ,) -> u16 { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d249c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_point2(u16)` overload"] fn set_point2 (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d24850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_point2()` overload"] fn get_point2 (self ,) -> u16 { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d24a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_surface(u16)` overload"] fn set_surface (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d248d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_surface()` overload"] fn get_surface (self ,) -> u16 { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2a3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2a410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone(crate::root::aktriangle::AkTriangle)` overload"] fn clone (self , other : impl :: core :: convert :: Into < crate :: root :: aktriangle :: AkTriangle >) -> () { unsafe { let __receiver = < AkTriangle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriangle , crate :: root :: aktriangle :: AkTriangle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2a4f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktriangle")]pub trait IAkTriangleMethods:IAkTriangle{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d29f90usize)as*mut u8,();
+(AkTriangle)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a030usize)as*mut u8,();
+(AkTriangle)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a060usize)as*mut u8,();
+(AkTriangle)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a0d0usize)as*mut u8,();
+(AkTriangle)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a250usize)as*mut u8,();
+(AkTriangle)__receiver)}
+}
+#[doc="`.ctor(u16, u16, u16, u16)` overload"]fn ctor_3(self,in_pt0:impl::core::convert::Into<u16> ,in_pt1:impl::core::convert::Into<u16> ,in_pt2:impl::core::convert::Into<u16> ,in_surface_info:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a2e0usize)as*mut u8,();
+(AkTriangle)__receiver,(u16)::core::convert::Into::into(in_pt0),(u16)::core::convert::Into::into(in_pt1),(u16)::core::convert::Into::into(in_pt2),(u16)::core::convert::Into::into(in_surface_info))}
+}
+#[doc="`set_point0(u16)` overload"]fn set_point0(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d24750usize)as*mut u8,();
+(AkTriangle)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_point0()` overload"]fn get_point0(self,)->u16{unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d24950usize)as*mut u8,u16;
+(AkTriangle)__receiver)}
+}
+#[doc="`set_point1(u16)` overload"]fn set_point1(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d247d0usize)as*mut u8,();
+(AkTriangle)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_point1()` overload"]fn get_point1(self,)->u16{unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d249c0usize)as*mut u8,u16;
+(AkTriangle)__receiver)}
+}
+#[doc="`set_point2(u16)` overload"]fn set_point2(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d24850usize)as*mut u8,();
+(AkTriangle)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_point2()` overload"]fn get_point2(self,)->u16{unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d24a30usize)as*mut u8,u16;
+(AkTriangle)__receiver)}
+}
+#[doc="`set_surface(u16)` overload"]fn set_surface(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d248d0usize)as*mut u8,();
+(AkTriangle)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_surface()` overload"]fn get_surface(self,)->u16{unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a3a0usize)as*mut u8,u16;
+(AkTriangle)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a410usize)as*mut u8,();
+(AkTriangle)__receiver)}
+}
+#[doc="`Clone(crate::root::aktriangle::AkTriangle)` overload"]fn clone(self,other:impl::core::convert::Into<crate::root::aktriangle::AkTriangle>)->(){unsafe{let __receiver= <AkTriangle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a4f0usize)as*mut u8,();
+(AkTriangle)__receiver,(crate::root::aktriangle::AkTriangle)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "root-aktriangle")]
-impl < __T : IAkTriangle > IAkTriangleMethods for __T { }
+#[cfg(feature="root-aktriangle")]impl<__T:IAkTriangle>IAkTriangleMethods for __T{}
 
-#[cfg(feature = "root-aktriangle")]
-impl AkTriangle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_point0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_point0_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_point1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_point1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_point2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_point2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_surface_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_surface_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_size_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriangle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="root-aktriangle")]impl AkTriangle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_point0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_point0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_point1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_point1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_point2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_point2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_surface_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_surface_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_size_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "root-aktriangle")]
-impl AkTriangle {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTriangle) , :: core :: stringify ! (new) ,)) ; < Self as IAkTriangleMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTriangle) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkTriangleMethods > :: ctor_2 (this ,) ; this }
-
-# [doc = "`.ctor(u16, u16, u16, u16)` — overload selector"] pub fn new_3 (in_pt0 : u16 , in_pt1 : u16 , in_pt2 : u16 , in_surface_info : u16) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTriangle) , :: core :: stringify ! (new_3) ,)) ; < Self as IAkTriangleMethods > :: ctor_3 (this , in_pt0 , in_pt1 , in_pt2 , in_surface_info) ; this }
+#[cfg(feature="root-aktriangle")]impl AkTriangle{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTriangle), ::core::stringify!(new),));
+ <Self as IAkTriangleMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTriangle), ::core::stringify!(new_2),));
+ <Self as IAkTriangleMethods> ::ctor_2(this,);
+this}
+#[doc="`.ctor(u16, u16, u16, u16)` — overload selector"]pub fn new_3(in_pt0:u16,in_pt1:u16,in_pt2:u16,in_surface_info:u16)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTriangle), ::core::stringify!(new_3),));
+ <Self as IAkTriangleMethods> ::ctor_3(this,in_pt0,in_pt1,in_pt2,in_surface_info);
+this}
 }
 
 #[cfg(feature = "root-aktriangle")]

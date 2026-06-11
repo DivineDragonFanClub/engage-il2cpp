@@ -4,86 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadingmanager/LoadingManager_Modes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct LoadingManager_Modes  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/loadingmanager/LoadingManager.md"))]#[::unity2::class(namespace="App",name="LoadingManager")]#[parent(crate::system::object::Object)]pub struct LoadingManager{#[static_field]#[rename(name="s_Binder")]pub s_binder:crate::app::bindholder::BindHolder, #[static_field]#[rename(name="s_Timer")]pub s_timer:crate::app::timer::Timer, #[static_field]#[rename(name="s_FadeBind")]pub s_fade_bind:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/loadingmanager/LoadingManager_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct LoadingManager_Modes{pub value:i32,}
+impl::unity2::ClassIdentity for LoadingManager_Modes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="LoadingManager.Modes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for LoadingManager_Modes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "LoadingManager.Modes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for LoadingManager_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for LoadingManager_Modes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl LoadingManager_Modes{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  LoadingManager_Modes  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn map() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn hub() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn gmap() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn cook() -> Self {
-        Self { value: 4 }
-
-    }
-
+pub fn map()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadingmanager/LoadingManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "LoadingManager")] # [parent (crate :: system :: object :: Object)] pub struct LoadingManager {
-# [static_field] # [rename (name = "s_Binder")] pub s_binder : crate :: app :: bindholder :: BindHolder ,
-# [static_field] # [rename (name = "s_Timer")] pub s_timer : crate :: app :: timer :: Timer ,
-# [static_field] # [rename (name = "s_FadeBind")] pub s_fade_bind : bool ,
+pub fn hub()->Self{Self{value:2}
+}
+pub fn gmap()->Self{Self{value:3}
+}
+pub fn cook()->Self{Self{value:4}
+}
 }
 
 }
@@ -91,30 +42,65 @@ impl  LoadingManager_Modes  {
 #[cfg(feature = "app-loadingmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-loadingmanager")]
-impl LoadingManager { # [doc = "`Bind()` overload"] pub fn bind () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bee4e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Bind(crate::app::loadingmanager::LoadingManager_Modes)` overload"] pub fn bind_2 (mode : impl :: core :: convert :: Into < crate :: app :: loadingmanager :: LoadingManager_Modes >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: loadingmanager :: LoadingManager_Modes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bee550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`BindForCook(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn bind_for_cook (hero_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , eat_unit0 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , eat_unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bee620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (hero_unit) , :: core :: convert :: Into :: into (eat_unit0) , :: core :: convert :: Into :: into (eat_unit1) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] pub fn update () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bee750usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Unbind()` overload"] pub fn unbind () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bee830usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsBind()` overload"] pub fn is_bind () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bee8f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryFadeBind()` overload"] pub fn try_fade_bind () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bee960usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1beeaa0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-loadingmanager")]impl LoadingManager{#[doc="`Bind()` overload"]pub fn bind()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bee4e0usize)as*mut u8,();
+)}
+}
+#[doc="`Bind(crate::app::loadingmanager::LoadingManager_Modes)` overload"]pub fn bind_2(mode:impl::core::convert::Into<crate::app::loadingmanager::LoadingManager_Modes>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bee550usize)as*mut u8,();
+(crate::app::loadingmanager::LoadingManager_Modes)::core::convert::Into::into(mode))}
+}
+#[doc="`BindForCook(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn bind_for_cook(hero_unit:impl::core::convert::Into<crate::app::unit::Unit> ,eat_unit0:impl::core::convert::Into<crate::app::unit::Unit> ,eat_unit1:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bee620usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(hero_unit),(crate::app::unit::Unit)::core::convert::Into::into(eat_unit0),(crate::app::unit::Unit)::core::convert::Into::into(eat_unit1))}
+}
+#[doc="`Update()` overload"]pub fn update()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bee750usize)as*mut u8,();
+)}
+}
+#[doc="`Unbind()` overload"]pub fn unbind()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bee830usize)as*mut u8,();
+)}
+}
+#[doc="`IsBind()` overload"]pub fn is_bind()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bee8f0usize)as*mut u8,bool;
+)}
+}
+#[doc="`TryFadeBind()` overload"]pub fn try_fade_bind()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bee960usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1beeaa0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-loadingmanager")]
-pub trait ILoadingManagerMethods : ILoadingManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LoadingManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LoadingManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1beea90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-loadingmanager")]pub trait ILoadingManagerMethods:ILoadingManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LoadingManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1beea90usize)as*mut u8,();
+(LoadingManager)__receiver)}
+}
+}
 
-#[cfg(feature = "app-loadingmanager")]
-impl < __T : ILoadingManager > ILoadingManagerMethods for __T { }
+#[cfg(feature="app-loadingmanager")]impl<__T:ILoadingManager>ILoadingManagerMethods for __T{}
 
-#[cfg(feature = "app-loadingmanager")]
-impl LoadingManager { pub fn bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn bind_for_cook_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unbind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn try_fade_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LoadingManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-loadingmanager")]impl LoadingManager{pub fn bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn bind_for_cook_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unbind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn try_fade_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-loadingmanager")]
-impl LoadingManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LoadingManager) , :: core :: stringify ! (new) ,)) ; < Self as ILoadingManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-loadingmanager")]impl LoadingManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LoadingManager), ::core::stringify!(new),));
+ <Self as ILoadingManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-loadingmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LoadingManager_Modes;
     pub use super::LoadingManager;
     pub use super::ILoadingManager;
     pub use super::ILoadingManagerMethods;
+    pub use super::LoadingManager_Modes;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

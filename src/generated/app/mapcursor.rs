@@ -4,348 +4,596 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: bitfield32 :: { BitField32 , IBitField32 }
- ;
- use crate :: app :: bitfieldcommon :: { BitFieldCommon , IBitFieldCommon }
- ;
- use crate :: app :: bitfieldtemplate32_1 :: { BitFieldTemplate32_1 , IBitFieldTemplate32_1 }
- ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::bitfield32::{BitField32,IBitField32}
+;
+use crate::app::bitfieldcommon::{BitFieldCommon,IBitFieldCommon}
+;
+use crate::app::bitfieldtemplate32_1::{BitFieldTemplate32_1,IBitFieldTemplate32_1}
+;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor_FlagField.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCursor.FlagField")] # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapcursor :: MapCursor_Flag >)] pub struct MapCursor_FlagField {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor.md"))]#[::unity2::class(namespace="App",name="MapCursor")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapcursor::MapCursor>)]pub struct MapCursor{#[static_field]#[rename(name="MapCursorMoveOffset")]pub map_cursor_move_offset:f32, #[static_field]#[rename(name="MOVE_WAIT_FRAME")]pub move_wait_frame:i32, #[static_field]#[rename(name="MOVE_CENTER_FRAME")]pub move_center_frame:i32, #[offset(28)]#[rename(name="m_Pos")]pub m_pos:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="m_OldPos")]pub m_old_pos:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="m_OrigPos")]pub m_orig_pos:crate::unity_engine::vector3::Vector3, #[offset(64)]#[rename(name="m_Rotate")]pub m_rotate:crate::unity_engine::vector3::Vector3, #[offset(76)]#[rename(name="m_Move")]pub m_move:crate::unity_engine::vector3::Vector3, #[offset(88)]#[rename(name="m_EnterPos")]pub m_enter_pos:crate::unity_engine::vector3::Vector3, #[offset(100)]#[rename(name="m_MoveCount")]pub m_move_count:i32, #[offset(104)]#[rename(name="m_IsRotateXSoundPlaying")]pub m_is_rotate_x_sound_playing:bool, #[static_field]#[rename(name="m_CursorTop")]pub m_cursor_top:crate::app::mapcursor::MapCursor_CursorTopType, #[static_field]#[rename(name="m_CursorTopAnim")]pub m_cursor_top_anim:crate::app::mapcursor::MapCursor_AnimType, #[static_field]#[rename(name="m_CursorBottomAnim")]pub m_cursor_bottom_anim:crate::app::mapcursor::MapCursor_AnimType, #[offset(112)]#[rename(name="m_CursorIconBill")]pub m_cursor_icon_bill:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="m_DistanceDir")]pub m_distance_dir:i32, #[offset(124)]#[rename(name="m_AnalogCount")]pub m_analog_count:i32, #[offset(128)]#[rename(name="m_CenterCount")]pub m_center_count:i32, #[offset(132)]#[rename(name="m_DistanceScale")]pub m_distance_scale:f32, #[offset(136)]#[rename(name="m_MapCursorMoveType")]pub m_map_cursor_move_type:crate::app::gameconfig::GameConfig_MapCursorMoveTyep, #[offset(140)]#[rename(name="m_IsLockMoveType")]pub m_is_lock_move_type:bool, #[offset(144)]#[rename(name="m_CursorTopObj")]pub m_cursor_top_obj:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_CursorBottomObj")]pub m_cursor_bottom_obj:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_CursorTopMgr")]pub m_cursor_top_mgr:crate::root::mappointeranimmanager::MapPointerAnimManager, #[offset(168)]#[rename(name="m_CursorBottomMgr")]pub m_cursor_bottom_mgr:crate::root::mapcursoranimmanager::MapCursorAnimManager, #[static_field]#[rename(name="m_MapPointerLocatorRoot")]pub m_map_pointer_locator_root:crate::root::mappointerlocatorroot::MapPointerLocatorRoot, #[static_field]#[rename(name="m_MapCursorLocatorRoot")]pub m_map_cursor_locator_root:crate::root::mapcursorlocatorroot::MapCursorLocatorRoot, #[offset(176)]#[rename(name="m_PositionTop")]pub m_position_top:crate::app::interpolatorvector3::InterpolatorVector3, #[offset(184)]#[rename(name="m_PositionBottom")]pub m_position_bottom:crate::app::interpolatorvector3::InterpolatorVector3, #[offset(192)]#[rename(name="m_CursorMind")]pub m_cursor_mind:crate::app::mapmind::MapMind_Type, #[offset(196)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(216)]#[rename(name="m_Flags")]pub m_flags:crate::app::mapcursor::MapCursor_FlagField,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_DistanceMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapCursor_DistanceMode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_DistanceMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursor_DistanceMode{pub value:i32,}
+impl::unity2::ClassIdentity for MapCursor_DistanceMode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapCursor.DistanceMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapCursor_DistanceMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapCursor_DistanceMode{pub fn near()->Self{Self{value:0}
+}
+pub fn middle()->Self{Self{value:1}
+}
+pub fn far()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapCursor_DistanceMode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapCursor.DistanceMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_CursorTopType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursor_CursorTopType{pub value:i32,}
+impl::unity2::ClassIdentity for MapCursor_CursorTopType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapCursor.CursorTopType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapCursor_CursorTopType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapCursor_CursorTopType{pub fn pointer()->Self{Self{value:0}
+}
+pub fn attack()->Self{Self{value:1}
+}
+pub fn talk()->Self{Self{value:2}
+}
+pub fn rod()->Self{Self{value:3}
+}
+pub fn dance()->Self{Self{value:4}
+}
+pub fn cannon()->Self{Self{value:5}
+}
+pub fn num()->Self{Self{value:6}
+}
 }
 
 
-impl  ::unity2::IlType for MapCursor_DistanceMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_Flag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursor_Flag{pub value:i32,}
+impl::unity2::ClassIdentity for MapCursor_Flag{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapCursor.Flag";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapCursor_Flag{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapCursor_Flag{pub fn hide()->Self{Self{value:1}
+}
+pub fn auto()->Self{Self{value:2}
+}
 }
 
 
-impl  MapCursor_DistanceMode  {
-    pub fn near() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn middle() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn far() -> Self {
-        Self { value: 2 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_AnimType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursor_AnimType{pub value:i32,}
+impl::unity2::ClassIdentity for MapCursor_AnimType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapCursor.AnimType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapCursor_AnimType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapCursor_AnimType{pub fn none()->Self{Self{value:1}
+}
+pub fn r#in()->Self{Self{value:2}
+}
+pub fn out()->Self{Self{value:4}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_AnimType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapCursor_AnimType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapCursor_AnimType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapCursor.AnimType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapCursor_AnimType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapCursor_AnimType  {
-    pub fn none() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn r#in() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn out() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_CursorTopType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapCursor_CursorTopType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapCursor_CursorTopType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapCursor.CursorTopType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapCursor_CursorTopType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapCursor_CursorTopType  {
-    pub fn pointer() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn talk() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn rod() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn dance() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn cannon() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 6 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcursor/MapCursor_Flag.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapCursor_Flag  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for MapCursor_Flag  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapCursor.Flag";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapCursor_Flag  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapCursor_Flag  {
-    pub fn hide() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn auto() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcursor/MapCursor.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapCursor")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapcursor :: MapCursor >)] pub struct MapCursor {
-# [static_field] # [rename (name = "MapCursorMoveOffset")] pub map_cursor_move_offset : f32 ,
-# [static_field] # [rename (name = "MOVE_WAIT_FRAME")] pub move_wait_frame : i32 ,
-# [static_field] # [rename (name = "MOVE_CENTER_FRAME")] pub move_center_frame : i32 ,
-# [offset (28)] # [rename (name = "m_Pos")] pub m_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (40)] # [rename (name = "m_OldPos")] pub m_old_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (52)] # [rename (name = "m_OrigPos")] pub m_orig_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (64)] # [rename (name = "m_Rotate")] pub m_rotate : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (76)] # [rename (name = "m_Move")] pub m_move : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (88)] # [rename (name = "m_EnterPos")] pub m_enter_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (100)] # [rename (name = "m_MoveCount")] pub m_move_count : i32 ,
-# [offset (104)] # [rename (name = "m_IsRotateXSoundPlaying")] pub m_is_rotate_x_sound_playing : bool ,
-# [static_field] # [rename (name = "m_CursorTop")] pub m_cursor_top : crate :: app :: mapcursor :: MapCursor_CursorTopType ,
-# [static_field] # [rename (name = "m_CursorTopAnim")] pub m_cursor_top_anim : crate :: app :: mapcursor :: MapCursor_AnimType ,
-# [static_field] # [rename (name = "m_CursorBottomAnim")] pub m_cursor_bottom_anim : crate :: app :: mapcursor :: MapCursor_AnimType ,
-# [offset (112)] # [rename (name = "m_CursorIconBill")] pub m_cursor_icon_bill : crate :: unity_engine :: transform :: Transform ,
-# [offset (120)] # [rename (name = "m_DistanceDir")] pub m_distance_dir : i32 ,
-# [offset (124)] # [rename (name = "m_AnalogCount")] pub m_analog_count : i32 ,
-# [offset (128)] # [rename (name = "m_CenterCount")] pub m_center_count : i32 ,
-# [offset (132)] # [rename (name = "m_DistanceScale")] pub m_distance_scale : f32 ,
-# [offset (136)] # [rename (name = "m_MapCursorMoveType")] pub m_map_cursor_move_type : crate :: app :: gameconfig :: GameConfig_MapCursorMoveTyep ,
-# [offset (140)] # [rename (name = "m_IsLockMoveType")] pub m_is_lock_move_type : bool ,
-# [offset (144)] # [rename (name = "m_CursorTopObj")] pub m_cursor_top_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (152)] # [rename (name = "m_CursorBottomObj")] pub m_cursor_bottom_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (160)] # [rename (name = "m_CursorTopMgr")] pub m_cursor_top_mgr : crate :: root :: mappointeranimmanager :: MapPointerAnimManager ,
-# [offset (168)] # [rename (name = "m_CursorBottomMgr")] pub m_cursor_bottom_mgr : crate :: root :: mapcursoranimmanager :: MapCursorAnimManager ,
-# [static_field] # [rename (name = "m_MapPointerLocatorRoot")] pub m_map_pointer_locator_root : crate :: root :: mappointerlocatorroot :: MapPointerLocatorRoot ,
-# [static_field] # [rename (name = "m_MapCursorLocatorRoot")] pub m_map_cursor_locator_root : crate :: root :: mapcursorlocatorroot :: MapCursorLocatorRoot ,
-# [offset (176)] # [rename (name = "m_PositionTop")] pub m_position_top : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [offset (184)] # [rename (name = "m_PositionBottom")] pub m_position_bottom : crate :: app :: interpolatorvector3 :: InterpolatorVector3 ,
-# [offset (192)] # [rename (name = "m_CursorMind")] pub m_cursor_mind : crate :: app :: mapmind :: MapMind_Type ,
-# [offset (196)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-# [offset (216)] # [rename (name = "m_Flags")] pub m_flags : crate :: app :: mapcursor :: MapCursor_FlagField ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapcursor/MapCursor_FlagField.md"))]#[::unity2::class(namespace="App",name="MapCursor.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::mapcursor::MapCursor_Flag>)]pub struct MapCursor_FlagField{}
 
 }
 
 #[cfg(feature = "app-mapcursor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapcursor")]
-pub trait IMapCursor_FlagFieldMethods : IMapCursor_FlagField { # [doc = "`ToInt(crate::app::mapcursor::MapCursor_Flag)` overload"] fn to_int (self , value : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_Flag >) -> i32 { unsafe { let __receiver = < MapCursor_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor_FlagField , crate :: app :: mapcursor :: MapCursor_Flag , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bdb00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCursor_FlagField as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor_FlagField , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bdb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapcursor")]
-impl < __T : IMapCursor_FlagField > IMapCursor_FlagFieldMethods for __T { }
-
-#[cfg(feature = "app-mapcursor")]
-impl MapCursor_FlagField { pub fn to_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor_FlagField as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mapcursor")]
-impl MapCursor_FlagField {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCursor_FlagField) , :: core :: stringify ! (new) ,)) ; < Self as IMapCursor_FlagFieldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapcursor")]impl MapCursor{#[doc="`GetCursorMind()` overload"]pub fn get_cursor_mind()->crate::app::mapmind::MapMind_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29a9a70usize)as*mut u8,crate::app::mapmind::MapMind_Type;
+)}
+}
+#[doc="`SetCursorMind(crate::app::mapmind::MapMind_Type)` overload"]pub fn set_cursor_mind(mind:impl::core::convert::Into<crate::app::mapmind::MapMind_Type>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29a9b10usize)as*mut u8,();
+(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(mind))}
+}
+#[doc="`GetCameraTilt(crate::app::mapcursor::MapCursor_DistanceMode)` overload"]pub fn get_camera_tilt(mode:impl::core::convert::Into<crate::app::mapcursor::MapCursor_DistanceMode>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29a9cf0usize)as*mut u8,f32;
+(crate::app::mapcursor::MapCursor_DistanceMode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetCameraTiltClamp(crate::app::mapcursor::MapCursor_DistanceMode)` overload"]pub fn get_camera_tilt_clamp(mode:impl::core::convert::Into<crate::app::mapcursor::MapCursor_DistanceMode>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29a9dd0usize)as*mut u8,f32;
+(crate::app::mapcursor::MapCursor_DistanceMode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetCameraTilt(f32)` overload"]pub fn get_camera_tilt_2(ratio:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29aa030usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(ratio))}
+}
+#[doc="`GetCameraTiltMin()` overload"]pub fn get_camera_tilt_min()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29aa1d0usize)as*mut u8,f32;
+)}
+}
+#[doc="`GetCameraTiltMax()` overload"]pub fn get_camera_tilt_max()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29aa270usize)as*mut u8,f32;
+)}
+}
+#[doc="`GetCameraDistance(crate::app::mapcursor::MapCursor_DistanceMode)` overload"]pub fn get_camera_distance(mode:impl::core::convert::Into<crate::app::mapcursor::MapCursor_DistanceMode>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x299db10usize)as*mut u8,f32;
+(crate::app::mapcursor::MapCursor_DistanceMode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetCameraTiltClamp(f32, bool)` overload"]pub fn get_camera_tilt_clamp_2(value:impl::core::convert::Into<f32> ,is_margin:impl::core::convert::Into<bool>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29a9e40usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(value),(bool)::core::convert::Into::into(is_margin))}
+}
+#[doc="`GetCameraTiltRate(f32)` overload"]pub fn get_camera_tilt_rate(tilt:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29aa310usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(tilt))}
+}
+#[doc="`GetCameraDistanceMode(f32)` overload"]pub fn get_camera_distance_mode(tilt:impl::core::convert::Into<f32>)->crate::app::mapcursor::MapCursor_DistanceMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29aa4b0usize)as*mut u8,crate::app::mapcursor::MapCursor_DistanceMode;
+(f32)::core::convert::Into::into(tilt))}
+}
+#[doc="`IsChangeCursorTop()` overload"]pub fn is_change_cursor_top()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b20e0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsChangeCursorBottom()` overload"]pub fn is_change_cursor_bottom()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b2240usize)as*mut u8,bool;
+)}
+}
+#[doc="`SetCursorTop(crate::app::mapmind::MapMind_Type)` overload"]pub fn set_cursor_top(mind:impl::core::convert::Into<crate::app::mapmind::MapMind_Type>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b27f0usize)as*mut u8,();
+(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(mind))}
+}
+#[doc="`ApplyCursorTop(crate::app::mapcursor::MapCursor_CursorTopType)` overload"]pub fn apply_cursor_top(new_cursor_top:impl::core::convert::Into<crate::app::mapcursor::MapCursor_CursorTopType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b2a30usize)as*mut u8,();
+(crate::app::mapcursor::MapCursor_CursorTopType)::core::convert::Into::into(new_cursor_top))}
+}
+#[doc="`GetMapPointerTransform(crate::app::mapcursor::MapCursor_CursorTopType)` overload"]pub fn get_map_pointer_transform(r#type:impl::core::convert::Into<crate::app::mapcursor::MapCursor_CursorTopType>)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b2c50usize)as*mut u8,crate::unity_engine::transform::Transform;
+(crate::app::mapcursor::MapCursor_CursorTopType)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetActive(crate::unity_engine::gameobject::GameObject, bool)` overload"]pub fn set_active(game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b2dc0usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(bool)::core::convert::Into::into(value))}
+}
+#[doc="`PlayCursorAnim()` overload"]pub fn play_cursor_anim()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29a9c80usize)as*mut u8,();
+)}
+}
+#[doc="`PlayCursorTopAnim()` overload"]pub fn play_cursor_top_anim()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b2e10usize)as*mut u8,();
+)}
+}
+#[doc="`PlayCursorBottomAnim()` overload"]pub fn play_cursor_bottom_anim()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b2fe0usize)as*mut u8,();
+)}
+}
+#[doc="`Setup()` overload"]pub fn setup()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bb9a0usize)as*mut u8,();
+)}
+}
+#[doc="`GetCursorUnit()` overload"]pub fn get_cursor_unit()->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b1910usize)as*mut u8,crate::app::unit::Unit;
+)}
+}
+#[doc="`GetX()` overload"]pub fn get_x()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bbec0usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetZ()` overload"]pub fn get_z()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bc000usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetNoClampX()` overload"]pub fn get_no_clamp_x()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bc140usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetNoClampZ()` overload"]pub fn get_no_clamp_z()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bc260usize)as*mut u8,i32;
+)}
+}
+#[doc="`Set(i32, i32, f32, bool)` overload"]pub fn set(x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,speed:impl::core::convert::Into<f32> ,is_update_enter_pos:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bc380usize)as*mut u8,();
+(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(f32)::core::convert::Into::into(speed),(bool)::core::convert::Into::into(is_update_enter_pos))}
+}
+#[doc="`Set(crate::app::unit::Unit, f32, bool)` overload"]pub fn set_2(unit:impl::core::convert::Into<crate::app::unit::Unit> ,speed:impl::core::convert::Into<f32> ,is_update_enter_pos:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bd180usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(f32)::core::convert::Into::into(speed),(bool)::core::convert::Into::into(is_update_enter_pos))}
+}
+#[doc="`Set(crate::unity_engine::vector3::Vector3, f32, bool)` overload"]pub fn set_3(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,speed:impl::core::convert::Into<f32> ,is_update_enter_pos:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bd0a0usize)as*mut u8,();
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(speed),(bool)::core::convert::Into::into(is_update_enter_pos))}
+}
+#[doc="`TrySet(crate::unity_engine::vector3::Vector3, f32, bool)` overload"]pub fn try_set(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,speed:impl::core::convert::Into<f32> ,is_update_enter_pos:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bec90usize)as*mut u8,bool;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(speed),(bool)::core::convert::Into::into(is_update_enter_pos))}
+}
+#[doc="`Instant()` overload"]pub fn instant()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29beec0usize)as*mut u8,();
+)}
+}
+#[doc="`Show()` overload"]pub fn show()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bfa80usize)as*mut u8,();
+)}
+}
+#[doc="`Hide()` overload"]pub fn hide()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bfd50usize)as*mut u8,();
+)}
+}
+#[doc="`IsVisible()` overload"]pub fn is_visible()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bfde0usize)as*mut u8,bool;
+)}
+}
+#[doc="`SetVisible(bool)` overload"]pub fn set_visible(enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bfc40usize)as*mut u8,();
+(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`PlayCameraMoveSe()` overload"]pub fn play_camera_move_se()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b92c0usize)as*mut u8,();
+)}
+}
+#[doc="`StopCameraMoveSe()` overload"]pub fn stop_camera_move_se()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b93b0usize)as*mut u8,();
+)}
+}
+#[doc="`GetDistanceMode()` overload"]pub fn get_distance_mode()->crate::app::mapcursor::MapCursor_DistanceMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bfeb0usize)as*mut u8,crate::app::mapcursor::MapCursor_DistanceMode;
+)}
+}
+#[doc="`SetDistanceMode(crate::app::mapcursor::MapCursor_DistanceMode)` overload"]pub fn set_distance_mode(mode:impl::core::convert::Into<crate::app::mapcursor::MapCursor_DistanceMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bffb0usize)as*mut u8,();
+(crate::app::mapcursor::MapCursor_DistanceMode)::core::convert::Into::into(mode))}
+}
+#[doc="`SetDistanceScale(f32)` overload"]pub fn set_distance_scale(scale:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c0110usize)as*mut u8,();
+(f32)::core::convert::Into::into(scale))}
+}
+#[doc="`GetDistanceRateForSound()` overload"]pub fn get_distance_rate_for_sound()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c01e0usize)as*mut u8,f32;
+)}
+}
+#[doc="`GetMapCursorMoveType()` overload"]pub fn get_map_cursor_move_type()->crate::app::gameconfig::GameConfig_MapCursorMoveTyep{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b2020usize)as*mut u8,crate::app::gameconfig::GameConfig_MapCursorMoveTyep;
+)}
+}
+#[doc="`SetMapCursorMoveType(crate::app::gameconfig::GameConfig_MapCursorMoveTyep)` overload"]pub fn set_map_cursor_move_type(r#type:impl::core::convert::Into<crate::app::gameconfig::GameConfig_MapCursorMoveTyep>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c0400usize)as*mut u8,();
+(crate::app::gameconfig::GameConfig_MapCursorMoveTyep)::core::convert::Into::into(r#type))}
+}
+#[doc="`get_IsLockMoveType()` overload"]pub fn get_is_lock_move_type()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29b1f70usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsLockMoveType(bool)` overload"]pub fn set_is_lock_move_type(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c04b0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`GetRotate()` overload"]pub fn get_rotate()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c0560usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`GetPos()` overload"]pub fn get_pos()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29bee00usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`GetEnterPos()` overload"]pub fn get_enter_pos()->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c0620usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+)}
+}
+#[doc="`SetEnterPos(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_enter_pos(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c06e0usize)as*mut u8,();
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`Tick()` overload"]pub fn tick()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c07a0usize)as*mut u8,();
+)}
+}
+#[doc="`TickMove(bool)` overload"]pub fn tick_move(is_trigger:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c07b0usize)as*mut u8,();
+(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`TickRotate()` overload"]pub fn tick_rotate()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c0880usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29c0ea0usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-mapcursor")]
-impl MapCursor { # [doc = "`GetCursorMind()` overload"] pub fn get_cursor_mind () -> crate :: app :: mapmind :: MapMind_Type { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mapmind :: MapMind_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a9a70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetCursorMind(crate::app::mapmind::MapMind_Type)` overload"] pub fn set_cursor_mind (mind : impl :: core :: convert :: Into < crate :: app :: mapmind :: MapMind_Type >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: mapmind :: MapMind_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a9b10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mind) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTilt(crate::app::mapcursor::MapCursor_DistanceMode)` overload"] pub fn get_camera_tilt (mode : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_DistanceMode >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: app :: mapcursor :: MapCursor_DistanceMode , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a9cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTiltClamp(crate::app::mapcursor::MapCursor_DistanceMode)` overload"] pub fn get_camera_tilt_clamp (mode : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_DistanceMode >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: app :: mapcursor :: MapCursor_DistanceMode , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a9dd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTilt(f32)` overload"] pub fn get_camera_tilt_2 (ratio : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ratio) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTiltMin()` overload"] pub fn get_camera_tilt_min () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa1d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCameraTiltMax()` overload"] pub fn get_camera_tilt_max () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa270usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCameraDistance(crate::app::mapcursor::MapCursor_DistanceMode)` overload"] pub fn get_camera_distance (mode : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_DistanceMode >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: app :: mapcursor :: MapCursor_DistanceMode , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x299db10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTiltClamp(f32, bool)` overload"] pub fn get_camera_tilt_clamp_2 (value : impl :: core :: convert :: Into < f32 > , is_margin : impl :: core :: convert :: Into < bool >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , bool , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a9e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (is_margin) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTiltRate(f32)` overload"] pub fn get_camera_tilt_rate (tilt : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tilt) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraDistanceMode(f32)` overload"] pub fn get_camera_distance_mode (tilt : impl :: core :: convert :: Into < f32 >) -> crate :: app :: mapcursor :: MapCursor_DistanceMode { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapcursor :: MapCursor_DistanceMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa4b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tilt) , :: core :: option :: Option :: None) } } } # [doc = "`IsChangeCursorTop()` overload"] pub fn is_change_cursor_top () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b20e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsChangeCursorBottom()` overload"] pub fn is_change_cursor_bottom () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b2240usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetCursorTop(crate::app::mapmind::MapMind_Type)` overload"] pub fn set_cursor_top (mind : impl :: core :: convert :: Into < crate :: app :: mapmind :: MapMind_Type >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: mapmind :: MapMind_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b27f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mind) , :: core :: option :: Option :: None) } } } # [doc = "`ApplyCursorTop(crate::app::mapcursor::MapCursor_CursorTopType)` overload"] pub fn apply_cursor_top (new_cursor_top : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_CursorTopType >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: mapcursor :: MapCursor_CursorTopType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b2a30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (new_cursor_top) , :: core :: option :: Option :: None) } } } # [doc = "`GetMapPointerTransform(crate::app::mapcursor::MapCursor_CursorTopType)` overload"] pub fn get_map_pointer_transform (r#type : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_CursorTopType >) -> crate :: unity_engine :: transform :: Transform { unsafe { { let __inner : extern "C" fn (crate :: app :: mapcursor :: MapCursor_CursorTopType , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b2c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetActive(crate::unity_engine::gameobject::GameObject, bool)` overload"] pub fn set_active (game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b2dc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`PlayCursorAnim()` overload"] pub fn play_cursor_anim () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29a9c80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayCursorTopAnim()` overload"] pub fn play_cursor_top_anim () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b2e10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayCursorBottomAnim()` overload"] pub fn play_cursor_bottom_anim () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b2fe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] pub fn setup () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bb9a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCursorUnit()` overload"] pub fn get_cursor_unit () -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b1910usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetX()` overload"] pub fn get_x () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bbec0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetZ()` overload"] pub fn get_z () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bc000usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetNoClampX()` overload"] pub fn get_no_clamp_x () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bc140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetNoClampZ()` overload"] pub fn get_no_clamp_z () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bc260usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Set(i32, i32, f32, bool)` overload"] pub fn set (x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , speed : impl :: core :: convert :: Into < f32 > , is_update_enter_pos : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (i32 , i32 , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bc380usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (speed) , :: core :: convert :: Into :: into (is_update_enter_pos) , :: core :: option :: Option :: None) } } } # [doc = "`Set(crate::app::unit::Unit, f32, bool)` overload"] pub fn set_2 (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , speed : impl :: core :: convert :: Into < f32 > , is_update_enter_pos : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bd180usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (speed) , :: core :: convert :: Into :: into (is_update_enter_pos) , :: core :: option :: Option :: None) } } } # [doc = "`Set(crate::unity_engine::vector3::Vector3, f32, bool)` overload"] pub fn set_3 (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , speed : impl :: core :: convert :: Into < f32 > , is_update_enter_pos : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bd0a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (speed) , :: core :: convert :: Into :: into (is_update_enter_pos) , :: core :: option :: Option :: None) } } } # [doc = "`TrySet(crate::unity_engine::vector3::Vector3, f32, bool)` overload"] pub fn try_set (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , speed : impl :: core :: convert :: Into < f32 > , is_update_enter_pos : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , f32 , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bec90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (speed) , :: core :: convert :: Into :: into (is_update_enter_pos) , :: core :: option :: Option :: None) } } } # [doc = "`Instant()` overload"] pub fn instant () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29beec0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Show()` overload"] pub fn show () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bfa80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] pub fn hide () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bfd50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsVisible()` overload"] pub fn is_visible () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bfde0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetVisible(bool)` overload"] pub fn set_visible (enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bfc40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`PlayCameraMoveSe()` overload"] pub fn play_camera_move_se () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b92c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`StopCameraMoveSe()` overload"] pub fn stop_camera_move_se () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b93b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetDistanceMode()` overload"] pub fn get_distance_mode () -> crate :: app :: mapcursor :: MapCursor_DistanceMode { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mapcursor :: MapCursor_DistanceMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bfeb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetDistanceMode(crate::app::mapcursor::MapCursor_DistanceMode)` overload"] pub fn set_distance_mode (mode : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_DistanceMode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: mapcursor :: MapCursor_DistanceMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bffb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`SetDistanceScale(f32)` overload"] pub fn set_distance_scale (scale : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0110usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (scale) , :: core :: option :: Option :: None) } } } # [doc = "`GetDistanceRateForSound()` overload"] pub fn get_distance_rate_for_sound () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c01e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMapCursorMoveType()` overload"] pub fn get_map_cursor_move_type () -> crate :: app :: gameconfig :: GameConfig_MapCursorMoveTyep { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: gameconfig :: GameConfig_MapCursorMoveTyep = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b2020usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetMapCursorMoveType(crate::app::gameconfig::GameConfig_MapCursorMoveTyep)` overload"] pub fn set_map_cursor_move_type (r#type : impl :: core :: convert :: Into < crate :: app :: gameconfig :: GameConfig_MapCursorMoveTyep >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: gameconfig :: GameConfig_MapCursorMoveTyep , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0400usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsLockMoveType()` overload"] pub fn get_is_lock_move_type () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b1f70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsLockMoveType(bool)` overload"] pub fn set_is_lock_move_type (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c04b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetRotate()` overload"] pub fn get_rotate () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0560usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetPos()` overload"] pub fn get_pos () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bee00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetEnterPos()` overload"] pub fn get_enter_pos () -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0620usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetEnterPos(crate::unity_engine::vector3::Vector3)` overload"] pub fn set_enter_pos (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c06e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] pub fn tick () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c07a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TickMove(bool)` overload"] pub fn tick_move (is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c07b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`TickRotate()` overload"] pub fn tick_rotate () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0880usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0ea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapcursor")]pub trait IMapCursorMethods:IMapCursor{#[doc="`GetCameraDistance()` overload"]fn get_camera_distance_2(self,)->f32{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29aa5a0usize)as*mut u8,f32;
+(MapCursor)__receiver)}
+}
+#[doc="`GetCameraRotate()` overload"]fn get_camera_rotate(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29aa6c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(MapCursor)__receiver)}
+}
+#[doc="`GetBackMode(crate::app::mapcursor::MapCursor_DistanceMode)` overload"]fn get_back_mode(self,mode:impl::core::convert::Into<crate::app::mapcursor::MapCursor_DistanceMode>)->crate::app::mapcursor::MapCursor_DistanceMode{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29aa750usize)as*mut u8,crate::app::mapcursor::MapCursor_DistanceMode;
+(MapCursor)__receiver,(crate::app::mapcursor::MapCursor_DistanceMode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetZoomMode(crate::app::mapcursor::MapCursor_DistanceMode)` overload"]fn get_zoom_mode(self,mode:impl::core::convert::Into<crate::app::mapcursor::MapCursor_DistanceMode>)->crate::app::mapcursor::MapCursor_DistanceMode{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29aa800usize)as*mut u8,crate::app::mapcursor::MapCursor_DistanceMode;
+(MapCursor)__receiver,(crate::app::mapcursor::MapCursor_DistanceMode)::core::convert::Into::into(mode))}
+}
+#[doc="`GetNextMode(crate::app::mapcursor::MapCursor_DistanceMode, i32)` overload"]fn get_next_mode(self,mode:impl::core::convert::Into<crate::app::mapcursor::MapCursor_DistanceMode> ,dir:impl::core::convert::Into<i32>)->crate::app::mapcursor::MapCursor_DistanceMode{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29aa8b0usize)as*mut u8,crate::app::mapcursor::MapCursor_DistanceMode;
+(MapCursor)__receiver,(crate::app::mapcursor::MapCursor_DistanceMode)::core::convert::Into::into(mode),(i32)::core::convert::Into::into(dir))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29aa9d0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29ab630usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29ab640usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`ToggleCursorMoveSize()` overload"]fn toggle_cursor_move_size(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b07c0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`CalcCursorTopPos()` overload"]fn calc_cursor_top_pos(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29abc80usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(MapCursor)__receiver)}
+}
+#[doc="`CalcCursorBottomPos()` overload"]fn calc_cursor_bottom_pos(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29ad650usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(MapCursor)__receiver)}
+}
+#[doc="`GetCursorTime(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn get_cursor_time(self,prev:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,next:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->f32{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29afcf0usize)as*mut u8,f32;
+(MapCursor)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(prev),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(next))}
+}
+#[doc="`GetCursorSpeed()` overload"]fn get_cursor_speed(self,)->f32{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29afda0usize)as*mut u8,f32;
+(MapCursor)__receiver)}
+}
+#[doc="`GetMovePos(f32, f32, f32)` overload"]fn get_move_pos(self,prev:impl::core::convert::Into<f32> ,next:impl::core::convert::Into<f32> ,speed:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b2380usize)as*mut u8,f32;
+(MapCursor)__receiver,(f32)::core::convert::Into::into(prev),(f32)::core::convert::Into::into(next),(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`GetMovePos(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]fn get_move_pos_2(self,prev:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,next:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,speed:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29aff00usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(MapCursor)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(prev),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(next),(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`GetDigitalMove(crate::nn::hid::npadbutton::NpadButton)` overload"]fn get_digital_move(self,button:impl::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>)->f32{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b23d0usize)as*mut u8,f32;
+(MapCursor)__receiver,(crate::nn::hid::npadbutton::NpadButton)::core::convert::Into::into(button))}
+}
+#[doc="`TryBorderSound(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn try_border_sound(self,old:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b3370usize)as*mut u8,();
+(MapCursor)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(old),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`CalcDigitalMove()` overload"]fn calc_digital_move(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b3790usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`CalcAnalogMove()` overload"]fn calc_analog_move(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b3bd0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`UpdateEnterPos()` overload"]fn update_enter_pos(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b5f20usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`ResetEnterPos()` overload"]fn reset_enter_pos(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b62e0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`AdjustPosition()` overload"]fn adjust_position(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b64d0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`TickInputReset()` overload"]fn tick_input_reset(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b8cc0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`TickInputMove(bool)` overload"]fn tick_input_move(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b8cd0usize)as*mut u8,();
+(MapCursor)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+}
+#[doc="`TryPlayCameraMoveSe()` overload"]fn try_play_camera_move_se(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b91d0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`TryStopCameraMoveSe()` overload"]fn try_stop_camera_move_se(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b9340usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`TickInputRotate()` overload"]fn tick_input_rotate(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b9470usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`TickInputDanger()` overload"]fn tick_input_danger(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29ba630usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`CommitCamera()` overload"]fn commit_camera(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29bab50usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`CommitCameraPosition(f32)` overload"]fn commit_camera_position(self,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b8ff0usize)as*mut u8,();
+(MapCursor)__receiver,(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`CommitCameraRotate()` overload"]fn commit_camera_rotate(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29ba590usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`UpdatePosition()` overload"]fn update_position(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b8e90usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`ClampPosition(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn clamp_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29bab80usize)as*mut u8,();
+(MapCursor)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`SetColor(crate::unity_engine::color::Color)` overload"]fn set_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29bf000usize)as*mut u8,();
+(MapCursor)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`SetColor()` overload"]fn set_color_2(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29bf1d0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29bfa70usize)as*mut u8,crate::unity_engine::color::Color;
+(MapCursor)__receiver)}
+}
+#[doc="`InstantImpl()` overload"]fn instant_impl(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29befa0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`SetImpl(crate::unity_engine::vector3::Vector3, f32, bool)` overload"]fn set_impl(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,speed:impl::core::convert::Into<f32> ,is_update_enter_pos:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29be990usize)as*mut u8,();
+(MapCursor)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(speed),(bool)::core::convert::Into::into(is_update_enter_pos))}
+}
+#[doc="`UpdateVisible()` overload"]fn update_visible(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29bbd60usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`OnBind()` overload"]fn on_bind(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c0ae0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`OnUnbind()` overload"]fn on_unbind(self,)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c0af0usize)as*mut u8,();
+(MapCursor)__receiver)}
+}
+#[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c0b00usize)as*mut u8,i32;
+(MapCursor)__receiver)}
+}
+#[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c0b10usize)as*mut u8,();
+(MapCursor)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapCursor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c0bb0usize)as*mut u8,();
+(MapCursor)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+}
+}
 
-#[cfg(feature = "app-mapcursor")]
-pub trait IMapCursorMethods : IMapCursor { # [doc = "`GetCameraDistance()` overload"] fn get_camera_distance_2 (self ,) -> f32 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraRotate()` overload"] fn get_camera_rotate (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa6c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBackMode(crate::app::mapcursor::MapCursor_DistanceMode)` overload"] fn get_back_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_DistanceMode >) -> crate :: app :: mapcursor :: MapCursor_DistanceMode { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: app :: mapcursor :: MapCursor_DistanceMode , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapcursor :: MapCursor_DistanceMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetZoomMode(crate::app::mapcursor::MapCursor_DistanceMode)` overload"] fn get_zoom_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_DistanceMode >) -> crate :: app :: mapcursor :: MapCursor_DistanceMode { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: app :: mapcursor :: MapCursor_DistanceMode , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapcursor :: MapCursor_DistanceMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`GetNextMode(crate::app::mapcursor::MapCursor_DistanceMode, i32)` overload"] fn get_next_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: mapcursor :: MapCursor_DistanceMode > , dir : impl :: core :: convert :: Into < i32 >) -> crate :: app :: mapcursor :: MapCursor_DistanceMode { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: app :: mapcursor :: MapCursor_DistanceMode , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapcursor :: MapCursor_DistanceMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa8b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (dir) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aa9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ab630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ab640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToggleCursorMoveSize()` overload"] fn toggle_cursor_move_size (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b07c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorTopPos()` overload"] fn calc_cursor_top_pos (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29abc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorBottomPos()` overload"] fn calc_cursor_bottom_pos (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ad650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCursorTime(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] fn get_cursor_time (self , prev : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , next : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> f32 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29afcf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: option :: Option :: None) } } } # [doc = "`GetCursorSpeed()` overload"] fn get_cursor_speed (self ,) -> f32 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29afda0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMovePos(f32, f32, f32)` overload"] fn get_move_pos (self , prev : impl :: core :: convert :: Into < f32 > , next : impl :: core :: convert :: Into < f32 > , speed : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b2380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } # [doc = "`GetMovePos(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] fn get_move_pos_2 (self , prev : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , next : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , speed : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29aff00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (prev) , :: core :: convert :: Into :: into (next) , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } # [doc = "`GetDigitalMove(crate::nn::hid::npadbutton::NpadButton)` overload"] fn get_digital_move (self , button : impl :: core :: convert :: Into < crate :: nn :: hid :: npadbutton :: NpadButton >) -> f32 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: nn :: hid :: npadbutton :: NpadButton , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b23d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (button) , :: core :: option :: Option :: None) } } } # [doc = "`TryBorderSound(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] fn try_border_sound (self , old : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b3370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (old) , :: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`CalcDigitalMove()` overload"] fn calc_digital_move (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b3790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcAnalogMove()` overload"] fn calc_analog_move (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b3bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateEnterPos()` overload"] fn update_enter_pos (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b5f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetEnterPos()` overload"] fn reset_enter_pos (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b62e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AdjustPosition()` overload"] fn adjust_position (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b64d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickInputReset()` overload"] fn tick_input_reset (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b8cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickInputMove(bool)` overload"] fn tick_input_move (self , is_trigger : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b8cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_trigger) , :: core :: option :: Option :: None) } } } # [doc = "`TryPlayCameraMoveSe()` overload"] fn try_play_camera_move_se (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b91d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryStopCameraMoveSe()` overload"] fn try_stop_camera_move_se (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b9340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickInputRotate()` overload"] fn tick_input_rotate (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b9470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TickInputDanger()` overload"] fn tick_input_danger (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ba630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CommitCamera()` overload"] fn commit_camera (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bab50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CommitCameraPosition(f32)` overload"] fn commit_camera_position (self , speed : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b8ff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } # [doc = "`CommitCameraRotate()` overload"] fn commit_camera_rotate (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29ba590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdatePosition()` overload"] fn update_position (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b8e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClampPosition(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn clamp_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (MapCursor , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bab80usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bf000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`SetColor()` overload"] fn set_color_2 (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bf1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Color()` overload"] fn get_color (self ,) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bfa70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InstantImpl()` overload"] fn instant_impl (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29befa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetImpl(crate::unity_engine::vector3::Vector3, f32, bool)` overload"] fn set_impl (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , speed : impl :: core :: convert :: Into < f32 > , is_update_enter_pos : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: unity_engine :: vector3 :: Vector3 , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29be990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (speed) , :: core :: convert :: Into :: into (is_update_enter_pos) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVisible()` overload"] fn update_visible (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bbd60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBind()` overload"] fn on_bind (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUnbind()` overload"] fn on_unbind (self ,) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Version()` overload"] fn get_version (self ,) -> i32 { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"] fn on_serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"] fn on_deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 > , version : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCursor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursor , crate :: app :: stream_2 :: Stream_2 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c0bb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: convert :: Into :: into (version) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapcursor")]impl<__T:IMapCursor>IMapCursorMethods for __T{}
 
-#[cfg(feature = "app-mapcursor")]
-impl < __T : IMapCursor > IMapCursorMethods for __T { }
+#[cfg(feature="app-mapcursor")]impl MapCursor{pub fn get_cursor_mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_cursor_mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_camera_tilt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_camera_tilt_clamp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_camera_tilt_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_camera_tilt_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_camera_tilt_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_camera_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_camera_tilt_clamp_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_camera_tilt_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_camera_distance_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_camera_distance_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_camera_rotate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_back_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_zoom_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_next_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn toggle_cursor_move_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn calc_cursor_top_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn calc_cursor_bottom_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_change_cursor_top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn is_change_cursor_bottom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_cursor_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_cursor_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_move_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_move_pos_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_digital_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_cursor_top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn apply_cursor_top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_map_pointer_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn play_cursor_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn play_cursor_top_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn play_cursor_bottom_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn try_border_sound_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn calc_digital_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn calc_analog_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn update_enter_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn reset_enter_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn adjust_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn tick_input_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn tick_input_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn try_play_camera_move_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn try_stop_camera_move_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn tick_input_rotate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn tick_input_danger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn commit_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn commit_camera_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn commit_camera_rotate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn update_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn clamp_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn get_cursor_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn get_no_clamp_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn get_no_clamp_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn set_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn set_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn try_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn instant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn set_color_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn set_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn instant_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn set_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn update_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn play_camera_move_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn stop_camera_move_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn get_distance_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn set_distance_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn set_distance_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn get_distance_rate_for_sound_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn get_map_cursor_move_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn set_map_cursor_move_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn get_is_lock_move_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+pub fn set_is_lock_move_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[83]}
+pub fn get_rotate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[84]}
+pub fn get_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[85]}
+pub fn get_enter_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[86]}
+pub fn set_enter_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[87]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[88]}
+pub fn tick_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[89]}
+pub fn tick_rotate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[90]}
+pub fn on_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[91]}
+pub fn on_unbind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[92]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[93]}
+pub fn on_serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[94]}
+pub fn on_deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[95]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[96]}
+}
 
-#[cfg(feature = "app-mapcursor")]
-impl MapCursor { pub fn get_cursor_mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_cursor_mind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_camera_tilt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_camera_tilt_clamp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_camera_tilt_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_camera_tilt_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_camera_tilt_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_camera_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_camera_tilt_clamp_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_camera_tilt_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_camera_distance_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_camera_distance_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_camera_rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_back_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_zoom_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_next_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn toggle_cursor_move_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn calc_cursor_top_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn calc_cursor_bottom_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn is_change_cursor_top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn is_change_cursor_bottom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_cursor_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_cursor_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_move_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_move_pos_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_digital_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_cursor_top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn apply_cursor_top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_map_pointer_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn play_cursor_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn play_cursor_top_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn play_cursor_bottom_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn try_border_sound_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn calc_digital_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn calc_analog_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn update_enter_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn reset_enter_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn adjust_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn tick_input_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn tick_input_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn try_play_camera_move_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn try_stop_camera_move_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn tick_input_rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn tick_input_danger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn commit_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn commit_camera_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn commit_camera_rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn update_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn clamp_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn get_cursor_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn get_no_clamp_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn get_no_clamp_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn set_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn set_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn try_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn instant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn set_color_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn get_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn is_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn set_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn instant_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn set_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn update_visible_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn play_camera_move_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn stop_camera_move_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn get_distance_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn set_distance_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn set_distance_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } pub fn get_distance_rate_for_sound_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [79] } pub fn get_map_cursor_move_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [80] } pub fn set_map_cursor_move_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [81] } pub fn get_is_lock_move_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [82] } pub fn set_is_lock_move_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [83] } pub fn get_rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [84] } pub fn get_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [85] } pub fn get_enter_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [86] } pub fn set_enter_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [87] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [88] } pub fn tick_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [89] } pub fn tick_rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [90] } pub fn on_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [91] } pub fn on_unbind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [92] } pub fn get_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [93] } pub fn on_serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [94] } pub fn on_deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [95] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [96] } }
+#[cfg(feature="app-mapcursor")]impl MapCursor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCursor), ::core::stringify!(new),));
+ <Self as IMapCursorMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-mapcursor")]
-impl MapCursor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCursor) , :: core :: stringify ! (new) ,)) ; < Self as IMapCursorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapcursor")]pub trait IMapCursor_FlagFieldMethods:IMapCursor_FlagField{#[doc="`ToInt(crate::app::mapcursor::MapCursor_Flag)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::mapcursor::MapCursor_Flag>)->i32{unsafe{let __receiver= <MapCursor_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdb00usize)as*mut u8,i32;
+(MapCursor_FlagField)__receiver,(crate::app::mapcursor::MapCursor_Flag)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCursor_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bdb10usize)as*mut u8,();
+(MapCursor_FlagField)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapcursor")]impl<__T:IMapCursor_FlagField>IMapCursor_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-mapcursor")]impl MapCursor_FlagField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapcursor")]impl MapCursor_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCursor_FlagField), ::core::stringify!(new),));
+ <Self as IMapCursor_FlagFieldMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapcursor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapCursor_FlagField;
-    pub use super::IMapCursor_FlagField;
-    pub use super::IMapCursor_FlagFieldMethods;
-    pub use super::MapCursor_DistanceMode;
-    pub use super::MapCursor_AnimType;
-    pub use super::MapCursor_CursorTopType;
-    pub use super::MapCursor_Flag;
     pub use super::MapCursor;
     pub use super::IMapCursor;
     pub use super::IMapCursorMethods;
+    pub use super::MapCursor_DistanceMode;
+    pub use super::MapCursor_CursorTopType;
+    pub use super::MapCursor_Flag;
+    pub use super::MapCursor_AnimType;
+    pub use super::MapCursor_FlagField;
+    pub use super::IMapCursor_FlagField;
+    pub use super::IMapCursor_FlagFieldMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

@@ -4,23 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/hashutility/HashUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "HashUtility")] # [parent (crate :: system :: object :: Object)] pub struct HashUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/hashutility/HashUtility.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="HashUtility")]#[parent(crate::system::object::Object)]pub struct HashUtility{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-hashutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-hashutility")]
-impl HashUtility { # [doc = "`CombineHash(i32, i32)` overload"] pub fn combine_hash (h1 : impl :: core :: convert :: Into < i32 > , h2 : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d2350usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (h1) , :: core :: convert :: Into :: into (h2) , :: core :: option :: Option :: None) } } } # [doc = "`CombineHash(i32, i32, i32)` overload"] pub fn combine_hash_2 (h1 : impl :: core :: convert :: Into < i32 > , h2 : impl :: core :: convert :: Into < i32 > , h3 : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6d70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (h1) , :: core :: convert :: Into :: into (h2) , :: core :: convert :: Into :: into (h3) , :: core :: option :: Option :: None) } } } # [doc = "`CombineHash(i32, i32, i32, i32)` overload"] pub fn combine_hash_3 (h1 : impl :: core :: convert :: Into < i32 > , h2 : impl :: core :: convert :: Into < i32 > , h3 : impl :: core :: convert :: Into < i32 > , h4 : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6da0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (h1) , :: core :: convert :: Into :: into (h2) , :: core :: convert :: Into :: into (h3) , :: core :: convert :: Into :: into (h4) , :: core :: option :: Option :: None) } } } # [doc = "`CombineHash(i32, i32, i32, i32, i32)` overload"] pub fn combine_hash_4 (h1 : impl :: core :: convert :: Into < i32 > , h2 : impl :: core :: convert :: Into < i32 > , h3 : impl :: core :: convert :: Into < i32 > , h4 : impl :: core :: convert :: Into < i32 > , h5 : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6de0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (h1) , :: core :: convert :: Into :: into (h2) , :: core :: convert :: Into :: into (h3) , :: core :: convert :: Into :: into (h4) , :: core :: convert :: Into :: into (h5) , :: core :: option :: Option :: None) } } } # [doc = "`CombineHash(i32, i32, i32, i32, i32, i32)` overload"] pub fn combine_hash_5 (h1 : impl :: core :: convert :: Into < i32 > , h2 : impl :: core :: convert :: Into < i32 > , h3 : impl :: core :: convert :: Into < i32 > , h4 : impl :: core :: convert :: Into < i32 > , h5 : impl :: core :: convert :: Into < i32 > , h6 : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6e30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (h1) , :: core :: convert :: Into :: into (h2) , :: core :: convert :: Into :: into (h3) , :: core :: convert :: Into :: into (h4) , :: core :: convert :: Into :: into (h5) , :: core :: convert :: Into :: into (h6) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-hashutility")]impl HashUtility{#[doc="`CombineHash(i32, i32)` overload"]pub fn combine_hash(h1:impl::core::convert::Into<i32> ,h2:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d2350usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(h1),(i32)::core::convert::Into::into(h2))}
+}
+#[doc="`CombineHash(i32, i32, i32)` overload"]pub fn combine_hash_2(h1:impl::core::convert::Into<i32> ,h2:impl::core::convert::Into<i32> ,h3:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6d70usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(h1),(i32)::core::convert::Into::into(h2),(i32)::core::convert::Into::into(h3))}
+}
+#[doc="`CombineHash(i32, i32, i32, i32)` overload"]pub fn combine_hash_3(h1:impl::core::convert::Into<i32> ,h2:impl::core::convert::Into<i32> ,h3:impl::core::convert::Into<i32> ,h4:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6da0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(h1),(i32)::core::convert::Into::into(h2),(i32)::core::convert::Into::into(h3),(i32)::core::convert::Into::into(h4))}
+}
+#[doc="`CombineHash(i32, i32, i32, i32, i32)` overload"]pub fn combine_hash_4(h1:impl::core::convert::Into<i32> ,h2:impl::core::convert::Into<i32> ,h3:impl::core::convert::Into<i32> ,h4:impl::core::convert::Into<i32> ,h5:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6de0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(h1),(i32)::core::convert::Into::into(h2),(i32)::core::convert::Into::into(h3),(i32)::core::convert::Into::into(h4),(i32)::core::convert::Into::into(h5))}
+}
+#[doc="`CombineHash(i32, i32, i32, i32, i32, i32)` overload"]pub fn combine_hash_5(h1:impl::core::convert::Into<i32> ,h2:impl::core::convert::Into<i32> ,h3:impl::core::convert::Into<i32> ,h4:impl::core::convert::Into<i32> ,h5:impl::core::convert::Into<i32> ,h6:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6e30usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(h1),(i32)::core::convert::Into::into(h2),(i32)::core::convert::Into::into(h3),(i32)::core::convert::Into::into(h4),(i32)::core::convert::Into::into(h5),(i32)::core::convert::Into::into(h6))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-hashutility")]
-impl HashUtility { pub fn combine_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HashUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn combine_hash_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HashUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn combine_hash_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HashUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn combine_hash_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HashUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn combine_hash_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HashUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-timeline-hashutility")]impl HashUtility{pub fn combine_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn combine_hash_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn combine_hash_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn combine_hash_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn combine_hash_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-timeline-hashutility")]
 #[doc(hidden)]

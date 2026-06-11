@@ -4,36 +4,149 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/memberinfo/MemberInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MemberInfo")] # [parent (crate :: system :: object :: Object)] pub struct MemberInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/memberinfo/MemberInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="MemberInfo")]#[parent(crate::system::object::Object)]pub struct MemberInfo{}
 
 }
 
 #[cfg(feature = "system-reflection-memberinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-memberinfo")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __MemberInfo_unity2_raw { use super :: * ; pub unsafe fn get_member_type (this : MemberInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: membertypes :: MemberTypes { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_MemberType") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_MemberType" , < MemberInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (MemberInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: membertypes :: MemberTypes = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_name (this : MemberInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Name") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Name" , < MemberInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (MemberInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_declaring_type (this : MemberInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_DeclaringType") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_DeclaringType" , < MemberInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (MemberInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_reflected_type (this : MemberInfo , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_ReflectedType") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_ReflectedType" , < MemberInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (MemberInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_custom_attributes (this : MemberInfo , inherit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetCustomAttributes") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetCustomAttributes" , < MemberInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (MemberInfo , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , inherit , __mi) } pub unsafe fn get_custom_attributes_2 (this : MemberInfo , attribute_type : :: unity2 :: SystemType , inherit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetCustomAttributes") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetCustomAttributes" , < MemberInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (MemberInfo , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , attribute_type , inherit , __mi) } pub unsafe fn is_defined (this : MemberInfo , attribute_type : :: unity2 :: SystemType , inherit : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("IsDefined") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "IsDefined" , < MemberInfo as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (MemberInfo , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , attribute_type , inherit , __mi) } }
+#[cfg(feature="system-reflection-memberinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MemberInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_member_type(this:MemberInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_MemberType").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_MemberType", <MemberInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(MemberInfo, ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:MemberInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Name").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Name", <MemberInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(MemberInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_declaring_type(this:MemberInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_DeclaringType").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_DeclaringType", <MemberInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(MemberInfo, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_reflected_type(this:MemberInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_ReflectedType").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_ReflectedType", <MemberInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(MemberInfo, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_custom_attributes(this:MemberInfo,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetCustomAttributes").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetCustomAttributes", <MemberInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(MemberInfo,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inherit,__mi)}
+pub unsafe fn get_custom_attributes_2(this:MemberInfo,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetCustomAttributes").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetCustomAttributes", <MemberInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(MemberInfo, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+pub unsafe fn is_defined(this:MemberInfo,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsDefined").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","IsDefined", <MemberInfo as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(MemberInfo, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+}
 
-#[cfg(feature = "system-reflection-memberinfo")]
-impl MemberInfo { # [doc = "`op_Equality(crate::system::reflection::memberinfo::MemberInfo, crate::system::reflection::memberinfo::MemberInfo)` overload"] pub fn op_equality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: memberinfo :: MemberInfo , crate :: system :: reflection :: memberinfo :: MemberInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336f6c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::system::reflection::memberinfo::MemberInfo, crate::system::reflection::memberinfo::MemberInfo)` overload"] pub fn op_inequality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: memberinfo :: MemberInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: memberinfo :: MemberInfo , crate :: system :: reflection :: memberinfo :: MemberInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336fe10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-memberinfo")]impl MemberInfo{#[doc="`op_Equality(crate::system::reflection::memberinfo::MemberInfo, crate::system::reflection::memberinfo::MemberInfo)` overload"]pub fn op_equality(left:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo> ,right:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x336f6c0usize)as*mut u8,bool;
+(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(left),(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(right))}
+}
+#[doc="`op_Inequality(crate::system::reflection::memberinfo::MemberInfo, crate::system::reflection::memberinfo::MemberInfo)` overload"]pub fn op_inequality(left:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo> ,right:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x336fe10usize)as*mut u8,bool;
+(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(left),(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(right))}
+}
+}
 
-#[cfg(feature = "system-reflection-memberinfo")]
-pub trait IMemberInfoMethods : IMemberInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MemberInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336f5a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MemberType()` overload"] fn get_member_type (self ,) -> crate :: system :: reflection :: membertypes :: MemberTypes { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MemberInfo_unity2_raw :: get_member_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MemberInfo_unity2_raw :: get_name (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_DeclaringType()` overload"] fn get_declaring_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MemberInfo_unity2_raw :: get_declaring_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_ReflectedType()` overload"] fn get_reflected_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MemberInfo_unity2_raw :: get_reflected_type (__receiver , :: core :: option :: Option :: None) } } # [doc = "`GetCustomAttributes(bool)` overload"] fn get_custom_attributes (self , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MemberInfo_unity2_raw :: get_custom_attributes (__receiver , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes_2 (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MemberInfo_unity2_raw :: get_custom_attributes_2 (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __MemberInfo_unity2_raw :: is_defined (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } # [doc = "`GetCustomAttributesData()` overload"] fn get_custom_attributes_data (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MemberInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: reflection :: customattributedata :: CustomAttributeData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336f5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MetadataToken()` overload"] fn get_metadata_token (self ,) -> i32 { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MemberInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336f5f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Module()` overload"] fn get_module (self ,) -> crate :: system :: reflection :: module :: Module { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MemberInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: module :: Module = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336f600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MemberInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336fe30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < MemberInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MemberInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x336fe40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-memberinfo")]pub trait IMemberInfoMethods:IMemberInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336f5a0usize)as*mut u8,();
+(MemberInfo)__receiver)}
+}
+#[doc="`get_MemberType()` overload"]fn get_member_type(self,)->crate::system::reflection::membertypes::MemberTypes{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MemberInfo_unity2_raw::get_member_type(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MemberInfo_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MemberInfo_unity2_raw::get_declaring_type(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MemberInfo_unity2_raw::get_reflected_type(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MemberInfo_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MemberInfo_unity2_raw::get_custom_attributes_2(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MemberInfo_unity2_raw::is_defined(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
+}
+#[doc="`GetCustomAttributesData()` overload"]fn get_custom_attributes_data(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336f5b0usize)as*mut u8,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> ;
+(MemberInfo)__receiver)}
+}
+#[doc="`get_MetadataToken()` overload"]fn get_metadata_token(self,)->i32{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336f5f0usize)as*mut u8,i32;
+(MemberInfo)__receiver)}
+}
+#[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336f600usize)as*mut u8,crate::system::reflection::module::Module;
+(MemberInfo)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336fe30usize)as*mut u8,bool;
+(MemberInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MemberInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x336fe40usize)as*mut u8,i32;
+(MemberInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-memberinfo")]
-impl < __T : IMemberInfo > IMemberInfoMethods for __T { }
+#[cfg(feature="system-reflection-memberinfo")]impl<__T:IMemberInfo>IMemberInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-memberinfo")]
-impl MemberInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_member_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_declaring_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_reflected_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_custom_attributes_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_custom_attributes_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_metadata_token_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MemberInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="system-reflection-memberinfo")]impl MemberInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_member_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_declaring_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_reflected_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_custom_attributes_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_custom_attributes_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_metadata_token_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "system-reflection-memberinfo")]
-impl MemberInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MemberInfo) , :: core :: stringify ! (new) ,)) ; < Self as IMemberInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-memberinfo")]impl MemberInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MemberInfo), ::core::stringify!(new),));
+ <Self as IMemberInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-memberinfo")]

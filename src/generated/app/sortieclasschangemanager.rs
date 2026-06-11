@@ -4,34 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieclasschangemanager/SortieClassChangeManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieClassChangeManager")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieclasschangemanager :: SortieClassChangeManager >)] pub struct SortieClassChangeManager {
-# [offset (32)] # [rename (name = "m_jobData")] pub m_job_data : crate :: app :: classchange :: ClassChange_ChangeJobData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieclasschangemanager/SortieClassChangeManager.md"))]#[::unity2::class(namespace="App",name="SortieClassChangeManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortieclasschangemanager::SortieClassChangeManager>)]pub struct SortieClassChangeManager{#[offset(32)]#[rename(name="m_jobData")]pub m_job_data:crate::app::classchange::ClassChange_ChangeJobData,}
 
 }
 
 #[cfg(feature = "app-sortieclasschangemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortieclasschangemanager")]
-pub trait ISortieClassChangeManagerMethods : ISortieClassChangeManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieClassChangeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieClassChangeManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_JobData()` overload"] fn get_job_data (self ,) -> crate :: app :: classchange :: ClassChange_ChangeJobData { unsafe { let __receiver = < SortieClassChangeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieClassChangeManager , :: unity2 :: OptionalMethod ,) -> crate :: app :: classchange :: ClassChange_ChangeJobData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_JobData(crate::app::classchange::ClassChange_ChangeJobData)` overload"] fn set_job_data (self , value : impl :: core :: convert :: Into < crate :: app :: classchange :: ClassChange_ChangeJobData >) -> () { unsafe { let __receiver = < SortieClassChangeManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieClassChangeManager , crate :: app :: classchange :: ClassChange_ChangeJobData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortieclasschangemanager")]pub trait ISortieClassChangeManagerMethods:ISortieClassChangeManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieClassChangeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4e20usize)as*mut u8,();
+(SortieClassChangeManager)__receiver)}
+}
+#[doc="`get_JobData()` overload"]fn get_job_data(self,)->crate::app::classchange::ClassChange_ChangeJobData{unsafe{let __receiver= <SortieClassChangeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4ea0usize)as*mut u8,crate::app::classchange::ClassChange_ChangeJobData;
+(SortieClassChangeManager)__receiver)}
+}
+#[doc="`set_JobData(crate::app::classchange::ClassChange_ChangeJobData)` overload"]fn set_job_data(self,value:impl::core::convert::Into<crate::app::classchange::ClassChange_ChangeJobData>)->(){unsafe{let __receiver= <SortieClassChangeManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4eb0usize)as*mut u8,();
+(SortieClassChangeManager)__receiver,(crate::app::classchange::ClassChange_ChangeJobData)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-sortieclasschangemanager")]
-impl < __T : ISortieClassChangeManager > ISortieClassChangeManagerMethods for __T { }
+#[cfg(feature="app-sortieclasschangemanager")]impl<__T:ISortieClassChangeManager>ISortieClassChangeManagerMethods for __T{}
 
-#[cfg(feature = "app-sortieclasschangemanager")]
-impl SortieClassChangeManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieClassChangeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_job_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieClassChangeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_job_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieClassChangeManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-sortieclasschangemanager")]impl SortieClassChangeManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_job_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_job_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-sortieclasschangemanager")]
-impl SortieClassChangeManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieClassChangeManager) , :: core :: stringify ! (new) ,)) ; < Self as ISortieClassChangeManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortieclasschangemanager")]impl SortieClassChangeManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieClassChangeManager), ::core::stringify!(new),));
+ <Self as ISortieClassChangeManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortieclasschangemanager")]

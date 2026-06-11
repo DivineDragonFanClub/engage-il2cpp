@@ -4,44 +4,111 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: root :: mappanelbase_1 :: { IMapPanelBase_1 , MapPanelBase_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::root::mappanelbase_1::{IMapPanelBase_1,MapPanelBase_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelroute/MapPanelRoute.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelRoute")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelroute :: MapPanelRoute >)] pub struct MapPanelRoute {
-# [offset (64)] # [rename (name = "m_Routes")] pub m_routes : :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelroute/MapPanelRoute.md"))]#[::unity2::class(namespace="App",name="MapPanelRoute")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelroute::MapPanelRoute>)]pub struct MapPanelRoute{#[offset(64)]#[rename(name="m_Routes")]pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type> ,}
 
 }
 
 #[cfg(feature = "app-mappanelroute-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mappanelroute")]
-pub trait IMapPanelRouteMethods : IMapPanelRoute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2353040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2353160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupRoute()` overload"] fn setup_route (self ,) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2353170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupResumeRoute(::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"] fn setup_resume_route (self , routes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > >) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2353470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (routes) , :: core :: option :: Option :: None) } } } # [doc = "`SetTransparent(bool)` overload"] fn set_transparent (self , enable : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23551a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enable) , :: core :: option :: Option :: None) } } } # [doc = "`Save(::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"] fn save (self , routes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > >) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (routes) , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2353120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsRoute()` overload"] fn is_route (self ,) -> bool { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUV(crate::app::dir_2::Dir_Type, crate::app::dir_2::Dir_Type)` overload"] fn get_uv (self , old_dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type > , cur_dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , crate :: app :: dir_2 :: Dir_Type , crate :: app :: dir_2 :: Dir_Type , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23535b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (old_dir) , :: core :: convert :: Into :: into (cur_dir) , :: core :: option :: Option :: None) } } } # [doc = "`AddVerticalVertex(crate::app::dir_2::Dir_Type, i32, i32, i32, i32)` overload"] fn add_vertical_vertex (self , old_dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type > , old_x : impl :: core :: convert :: Into < i32 > , old_z : impl :: core :: convert :: Into < i32 > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , crate :: app :: dir_2 :: Dir_Type , i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23537b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (old_dir) , :: core :: convert :: Into :: into (old_x) , :: core :: convert :: Into :: into (old_z) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`AddHeadVertex(crate::app::dir_2::Dir_Type, i32, i32)` overload"] fn add_head_vertex (self , old_dir : impl :: core :: convert :: Into < crate :: app :: dir_2 :: Dir_Type > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , crate :: app :: dir_2 :: Dir_Type , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23550d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (old_dir) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`AddCell(i32, i32, crate::unity_engine::vector2::Vector2)` overload"] fn add_cell (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , uv : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , i32 , i32 , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2353710usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (uv) , :: core :: option :: Option :: None) } } } # [doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector3::Vector3)` overload"] fn add_cell_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , uv0 : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , uv2 : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , i32 , i32 , crate :: unity_engine :: color :: Color , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2355270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (color) , :: core :: convert :: Into :: into (uv0) , :: core :: convert :: Into :: into (uv2) , :: core :: option :: Option :: None) } } } # [doc = "`get_Routes()` overload"] fn get_routes (self ,) -> :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > { unsafe { let __receiver = < MapPanelRoute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelRoute , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23559e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mappanelroute")]pub trait IMapPanelRouteMethods:IMapPanelRoute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2353040usize)as*mut u8,();
+(MapPanelRoute)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2353160usize)as*mut u8,();
+(MapPanelRoute)__receiver)}
+}
+#[doc="`SetupRoute()` overload"]fn setup_route(self,)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2353170usize)as*mut u8,();
+(MapPanelRoute)__receiver)}
+}
+#[doc="`SetupResumeRoute(::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"]fn setup_resume_route(self,routes:impl::core::convert::Into< ::unity2::Array<crate::app::dir_2::Dir_Type> >)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2353470usize)as*mut u8,();
+(MapPanelRoute)__receiver,(::unity2::Array<crate::app::dir_2::Dir_Type>)::core::convert::Into::into(routes))}
+}
+#[doc="`SetTransparent(bool)` overload"]fn set_transparent(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23551a0usize)as*mut u8,();
+(MapPanelRoute)__receiver,(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`Save(::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"]fn save(self,routes:impl::core::convert::Into< ::unity2::Array<crate::app::dir_2::Dir_Type> >)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355210usize)as*mut u8,();
+(MapPanelRoute)__receiver,(::unity2::Array<crate::app::dir_2::Dir_Type>)::core::convert::Into::into(routes))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2353120usize)as*mut u8,();
+(MapPanelRoute)__receiver)}
+}
+#[doc="`IsRoute()` overload"]fn is_route(self,)->bool{unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355230usize)as*mut u8,bool;
+(MapPanelRoute)__receiver)}
+}
+#[doc="`GetUV(crate::app::dir_2::Dir_Type, crate::app::dir_2::Dir_Type)` overload"]fn get_uv(self,old_dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type> ,cur_dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23535b0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(MapPanelRoute)__receiver,(crate::app::dir_2::Dir_Type)::core::convert::Into::into(old_dir),(crate::app::dir_2::Dir_Type)::core::convert::Into::into(cur_dir))}
+}
+#[doc="`AddVerticalVertex(crate::app::dir_2::Dir_Type, i32, i32, i32, i32)` overload"]fn add_vertical_vertex(self,old_dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type> ,old_x:impl::core::convert::Into<i32> ,old_z:impl::core::convert::Into<i32> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23537b0usize)as*mut u8,();
+(MapPanelRoute)__receiver,(crate::app::dir_2::Dir_Type)::core::convert::Into::into(old_dir),(i32)::core::convert::Into::into(old_x),(i32)::core::convert::Into::into(old_z),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`AddHeadVertex(crate::app::dir_2::Dir_Type, i32, i32)` overload"]fn add_head_vertex(self,old_dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23550d0usize)as*mut u8,();
+(MapPanelRoute)__receiver,(crate::app::dir_2::Dir_Type)::core::convert::Into::into(old_dir),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`AddCell(i32, i32, crate::unity_engine::vector2::Vector2)` overload"]fn add_cell(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,uv:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2353710usize)as*mut u8,();
+(MapPanelRoute)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv))}
+}
+#[doc="`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector3::Vector3)` overload"]fn add_cell_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,uv0:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,uv2:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2355270usize)as*mut u8,();
+(MapPanelRoute)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(uv0),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(uv2))}
+}
+#[doc="`get_Routes()` overload"]fn get_routes(self,)-> ::unity2::Array<crate::app::dir_2::Dir_Type>{unsafe{let __receiver= <MapPanelRoute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23559e0usize)as*mut u8, ::unity2::Array<crate::app::dir_2::Dir_Type> ;
+(MapPanelRoute)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mappanelroute")]
-impl < __T : IMapPanelRoute > IMapPanelRouteMethods for __T { }
+#[cfg(feature="app-mappanelroute")]impl<__T:IMapPanelRoute>IMapPanelRouteMethods for __T{}
 
-#[cfg(feature = "app-mappanelroute")]
-impl MapPanelRoute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn setup_route_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn setup_resume_route_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_transparent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn save_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_route_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_uv_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_vertical_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn add_head_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_cell_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn add_cell_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_routes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelRoute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-mappanelroute")]impl MapPanelRoute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn setup_resume_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_transparent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn save_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_uv_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_vertical_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_head_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_cell_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn add_cell_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_routes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-mappanelroute")]
-impl MapPanelRoute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelRoute) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelRouteMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mappanelroute")]impl MapPanelRoute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelRoute), ::core::stringify!(new),));
+ <Self as IMapPanelRouteMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mappanelroute")]

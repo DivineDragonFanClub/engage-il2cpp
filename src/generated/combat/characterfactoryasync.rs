@@ -4,23 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterfactoryasync/CharacterFactoryAsync.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterFactoryAsync")] # [parent (crate :: system :: object :: Object)] pub struct CharacterFactoryAsync {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterfactoryasync/CharacterFactoryAsync.md"))]#[::unity2::class(namespace="Combat",name="CharacterFactoryAsync")]#[parent(crate::system::object::Object)]pub struct CharacterFactoryAsync{}
 
 }
 
 #[cfg(feature = "combat-characterfactoryasync-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterfactoryasync")]
-impl CharacterFactoryAsync { # [doc = "`Create(crate::combat::characterappearance::CharacterAppearance, crate::unity_engine::transform::Transform, bool)` overload"] pub fn create (appearance : impl :: core :: convert :: Into < crate :: combat :: characterappearance :: CharacterAppearance > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , invisible : impl :: core :: convert :: Into < bool >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: combat :: characterappearance :: CharacterAppearance , crate :: unity_engine :: transform :: Transform , bool , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27de810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (appearance) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (invisible) , :: core :: option :: Option :: None) } } } # [doc = "`CreateForTalk(crate::combat::characterappearance::CharacterAppearance, crate::unity_engine::transform::Transform, bool)` overload"] pub fn create_for_talk (appearance : impl :: core :: convert :: Into < crate :: combat :: characterappearance :: CharacterAppearance > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , invisible : impl :: core :: convert :: Into < bool >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (crate :: combat :: characterappearance :: CharacterAppearance , crate :: unity_engine :: transform :: Transform , bool , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27de200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (appearance) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (invisible) , :: core :: option :: Option :: None) } } } # [doc = "`CreateImpl(::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance, crate::unity_engine::transform::Transform, bool)` overload"] pub fn create_impl (asset_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , appearance : impl :: core :: convert :: Into < crate :: combat :: characterappearance :: CharacterAppearance > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , invisible : impl :: core :: convert :: Into < bool >) -> crate :: combat :: character :: Character { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: combat :: characterappearance :: CharacterAppearance , crate :: unity_engine :: transform :: Transform , bool , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27de880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset_path) , :: core :: convert :: Into :: into (appearance) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (invisible) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterfactoryasync")]impl CharacterFactoryAsync{#[doc="`Create(crate::combat::characterappearance::CharacterAppearance, crate::unity_engine::transform::Transform, bool)` overload"]pub fn create(appearance:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,invisible:impl::core::convert::Into<bool>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27de810usize)as*mut u8,crate::combat::character::Character;
+(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(appearance),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(bool)::core::convert::Into::into(invisible))}
+}
+#[doc="`CreateForTalk(crate::combat::characterappearance::CharacterAppearance, crate::unity_engine::transform::Transform, bool)` overload"]pub fn create_for_talk(appearance:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,invisible:impl::core::convert::Into<bool>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27de200usize)as*mut u8,crate::combat::character::Character;
+(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(appearance),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(bool)::core::convert::Into::into(invisible))}
+}
+#[doc="`CreateImpl(::unity2::Il2CppString, crate::combat::characterappearance::CharacterAppearance, crate::unity_engine::transform::Transform, bool)` overload"]pub fn create_impl(asset_path:impl::core::convert::Into< ::unity2::Il2CppString> ,appearance:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,invisible:impl::core::convert::Into<bool>)->crate::combat::character::Character{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27de880usize)as*mut u8,crate::combat::character::Character;
+(::unity2::Il2CppString)::core::convert::Into::into(asset_path),(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(appearance),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(bool)::core::convert::Into::into(invisible))}
+}
+}
 
-#[cfg(feature = "combat-characterfactoryasync")]
-impl CharacterFactoryAsync { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_for_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterFactoryAsync as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-characterfactoryasync")]impl CharacterFactoryAsync{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_for_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "combat-characterfactoryasync")]
 #[doc(hidden)]

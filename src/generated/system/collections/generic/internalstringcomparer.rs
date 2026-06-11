@@ -4,32 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: collections :: generic :: equalitycomparer_1 :: { EqualityComparer_1 , IEqualityComparer_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::collections::generic::equalitycomparer_1::{EqualityComparer_1,IEqualityComparer_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/internalstringcomparer/InternalStringComparer.md"))] # [:: unity2 :: class (namespace = "System.Collections.Generic" , name = "InternalStringComparer")] # [parent (crate :: system :: collections :: generic :: equalitycomparer_1 :: EqualityComparer_1 < :: unity2 :: Il2CppString >)] pub struct InternalStringComparer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/internalstringcomparer/InternalStringComparer.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="InternalStringComparer")]#[parent(crate::system::collections::generic::equalitycomparer_1::EqualityComparer_1< ::unity2::Il2CppString>)]pub struct InternalStringComparer{}
 
 }
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-generic-internalstringcomparer")]
-pub trait IInternalStringComparerMethods : IInternalStringComparer { # [doc = "`GetHashCode(::unity2::Il2CppString)` overload"] fn get_hash_code (self , obj : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { let __receiver = < InternalStringComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InternalStringComparer , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3263620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn equals (self , x : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , y : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < InternalStringComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InternalStringComparer , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3263640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`IndexOf(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, i32, i32)` overload"] fn index_of (self , array : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , start_index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < InternalStringComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InternalStringComparer , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: Il2CppString , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3263670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (start_index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < InternalStringComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InternalStringComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3263700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-generic-internalstringcomparer")]pub trait IInternalStringComparerMethods:IInternalStringComparer{#[doc="`GetHashCode(::unity2::Il2CppString)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3263620usize)as*mut u8,i32;
+(InternalStringComparer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn equals(self,x:impl::core::convert::Into< ::unity2::Il2CppString> ,y:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3263640usize)as*mut u8,bool;
+(InternalStringComparer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(x),(::unity2::Il2CppString)::core::convert::Into::into(y))}
+}
+#[doc="`IndexOf(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, i32, i32)` overload"]fn index_of(self,array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,value:impl::core::convert::Into< ::unity2::Il2CppString> ,start_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3263670usize)as*mut u8,i32;
+(InternalStringComparer)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(array),(::unity2::Il2CppString)::core::convert::Into::into(value),(i32)::core::convert::Into::into(start_index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InternalStringComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3263700usize)as*mut u8,();
+(InternalStringComparer)__receiver)}
+}
+}
 
-#[cfg(feature = "system-collections-generic-internalstringcomparer")]
-impl < __T : IInternalStringComparer > IInternalStringComparerMethods for __T { }
+#[cfg(feature="system-collections-generic-internalstringcomparer")]impl<__T:IInternalStringComparer>IInternalStringComparerMethods for __T{}
 
-#[cfg(feature = "system-collections-generic-internalstringcomparer")]
-impl InternalStringComparer { pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InternalStringComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InternalStringComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InternalStringComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InternalStringComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-collections-generic-internalstringcomparer")]impl InternalStringComparer{pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "system-collections-generic-internalstringcomparer")]
-impl InternalStringComparer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InternalStringComparer) , :: core :: stringify ! (new) ,)) ; < Self as IInternalStringComparerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-generic-internalstringcomparer")]impl InternalStringComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InternalStringComparer), ::core::stringify!(new),));
+ <Self as IInternalStringComparerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-generic-internalstringcomparer")]

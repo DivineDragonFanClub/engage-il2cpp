@@ -4,32 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/api_updating/movedfromattribute/MovedFromAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Scripting.APIUpdating" , name = "MovedFromAttribute")] pub struct MovedFromAttribute {
-# [offset (16)] # [rename (name = "data")] pub data : crate :: unity_engine :: scripting :: api_updating :: movedfromattributedata :: MovedFromAttributeData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scripting/api_updating/movedfromattribute/MovedFromAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Scripting.APIUpdating",name="MovedFromAttribute")]pub struct MovedFromAttribute{#[offset(16)]#[rename(name="data")]pub data:crate::unity_engine::scripting::api_updating::movedfromattributedata::MovedFromAttributeData,}
 
 }
 
 #[cfg(feature = "unity_engine-scripting-api_updating-movedfromattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-scripting-api_updating-movedfromattribute")]
-pub trait IMovedFromAttributeMethods : IMovedFromAttribute { # [doc = "`.ctor(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , auto_update_api : impl :: core :: convert :: Into < bool > , source_namespace : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , source_assembly : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , source_class_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MovedFromAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MovedFromAttribute , bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32edb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (auto_update_api) , :: core :: convert :: Into :: into (source_namespace) , :: core :: convert :: Into :: into (source_assembly) , :: core :: convert :: Into :: into (source_class_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , source_namespace : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MovedFromAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MovedFromAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32edcc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (source_namespace) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-scripting-api_updating-movedfromattribute")]pub trait IMovedFromAttributeMethods:IMovedFromAttribute{#[doc="`.ctor(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,auto_update_api:impl::core::convert::Into<bool> ,source_namespace:impl::core::convert::Into< ::unity2::Il2CppString> ,source_assembly:impl::core::convert::Into< ::unity2::Il2CppString> ,source_class_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MovedFromAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32edb60usize)as*mut u8,();
+(MovedFromAttribute)__receiver,(bool)::core::convert::Into::into(auto_update_api),(::unity2::Il2CppString)::core::convert::Into::into(source_namespace),(::unity2::Il2CppString)::core::convert::Into::into(source_assembly),(::unity2::Il2CppString)::core::convert::Into::into(source_class_name))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,source_namespace:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MovedFromAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32edcc0usize)as*mut u8,();
+(MovedFromAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(source_namespace))}
+}
+}
 
-#[cfg(feature = "unity_engine-scripting-api_updating-movedfromattribute")]
-impl < __T : IMovedFromAttribute > IMovedFromAttributeMethods for __T { }
+#[cfg(feature="unity_engine-scripting-api_updating-movedfromattribute")]impl<__T:IMovedFromAttribute>IMovedFromAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-scripting-api_updating-movedfromattribute")]
-impl MovedFromAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MovedFromAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MovedFromAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-scripting-api_updating-movedfromattribute")]impl MovedFromAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-scripting-api_updating-movedfromattribute")]
-impl MovedFromAttribute {
-# [doc = "`.ctor(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (auto_update_api : bool , source_namespace : :: unity2 :: Il2CppString , source_assembly : :: unity2 :: Il2CppString , source_class_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MovedFromAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IMovedFromAttributeMethods > :: ctor (this , auto_update_api , source_namespace , source_assembly , source_class_name) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (source_namespace : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MovedFromAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as IMovedFromAttributeMethods > :: ctor_2 (this , source_namespace) ; this }
+#[cfg(feature="unity_engine-scripting-api_updating-movedfromattribute")]impl MovedFromAttribute{#[doc="`.ctor(bool, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(auto_update_api:bool,source_namespace: ::unity2::Il2CppString,source_assembly: ::unity2::Il2CppString,source_class_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MovedFromAttribute), ::core::stringify!(new),));
+ <Self as IMovedFromAttributeMethods> ::ctor(this,auto_update_api,source_namespace,source_assembly,source_class_name);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(source_namespace: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MovedFromAttribute), ::core::stringify!(new_2),));
+ <Self as IMovedFromAttributeMethods> ::ctor_2(this,source_namespace);
+this}
 }
 
 #[cfg(feature = "unity_engine-scripting-api_updating-movedfromattribute")]

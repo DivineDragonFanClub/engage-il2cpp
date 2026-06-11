@@ -4,147 +4,210 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusSendReportSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct VersusSendReportSequence {
-# [offset (112)] # [rename (name = "m_Info")] pub m_info : crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo ,
-# [offset (120)] # [rename (name = "m_EndCallback")] pub m_end_callback : crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback ,
-# [offset (128)] # [rename (name = "m_IsSucceed")] pub m_is_succeed : bool ,
-# [static_field] # [rename (name = "s_SendCount")] pub s_send_count : i32 ,
-# [static_field] # [rename (name = "MAX_SEND_COUNT")] pub max_send_count : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussendreportsequence/VersusSendReportSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VersusSendReportSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for VersusSendReportSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="VersusSendReportSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for VersusSendReportSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl VersusSendReportSequence_Label{pub fn error()->Self{Self{value:0}
+}
+pub fn end()->Self{Self{value:1}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusSendReportSequence.EndCallback")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct VersusSendReportSequence_EndCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]#[::unity2::class(namespace="App",name="VersusSendReportSequence.UploadInfo")]#[parent(crate::system::object::Object)]pub struct VersusSendReportSequence_UploadInfo{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct VersusSendReportSequence_Label  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussendreportsequence/VersusSendReportSequence.md"))]#[::unity2::class(namespace="App",name="VersusSendReportSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct VersusSendReportSequence{#[offset(112)]#[rename(name="m_Info")]pub m_info:crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, #[offset(120)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback, #[offset(128)]#[rename(name="m_IsSucceed")]pub m_is_succeed:bool, #[static_field]#[rename(name="s_SendCount")]pub s_send_count:i32, #[static_field]#[rename(name="MAX_SEND_COUNT")]pub max_send_count:i32,}
 
 
-impl  ::unity2::ClassIdentity for VersusSendReportSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "VersusSendReportSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for VersusSendReportSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  VersusSendReportSequence_Label  {
-    pub fn error() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusSendReportSequence.UploadInfo")] # [parent (crate :: system :: object :: Object)] pub struct VersusSendReportSequence_UploadInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md"))]#[::unity2::class(namespace="App",name="VersusSendReportSequence.EndCallback")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct VersusSendReportSequence_EndCallback{}
 
 }
 
 #[cfg(feature = "app-versussendreportsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , info : impl :: core :: convert :: Into < crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo > , end_callback : impl :: core :: convert :: Into < crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo , crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1f70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (end_callback) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3c40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versussendreportsequence")]
-pub trait IVersusSendReportSequenceMethods : IVersusSendReportSequence { # [doc = "`.ctor(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` overload"] fn ctor (self , info : impl :: core :: convert :: Into < crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo > , end_callback : impl :: core :: convert :: Into < crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback >) -> () { unsafe { let __receiver = < VersusSendReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence , crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo , crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b38a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (end_callback) , :: core :: option :: Option :: None) } } } # [doc = "`SendReport()` overload"] fn send_report (self ,) -> () { unsafe { let __receiver = < VersusSendReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b38f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddList()` overload"] fn add_list (self ,) -> () { unsafe { let __receiver = < VersusSendReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b39e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetResult(*mut::unity2::Il2CppString)` overload"] fn get_result (self ,) -> (crate :: app :: nexversus :: NexVersus_Results , :: unity2 :: Il2CppString) { unsafe { let __receiver = < VersusSendReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { { let __inner : extern "C" fn (VersusSendReportSequence , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: nexversus :: NexVersus_Results = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3a70usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < VersusSendReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < VersusSendReportSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versussendreportsequence")]
-impl < __T : IVersusSendReportSequence > IVersusSendReportSequenceMethods for __T { }
-
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn send_report_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence {
-# [doc = "`.ctor(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` — overload selector"] pub fn new (info : crate :: app :: versussendreportsequence :: VersusSendReportSequence_UploadInfo , end_callback : crate :: app :: versussendreportsequence :: VersusSendReportSequence_EndCallback) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusSendReportSequence) , :: core :: stringify ! (new) ,)) ; < Self as IVersusSendReportSequenceMethods > :: ctor (this , info , end_callback) ; this }
+#[cfg(feature="app-versussendreportsequence")]pub trait IVersusSendReportSequence_UploadInfoMethods:IVersusSendReportSequence_UploadInfo{#[doc="`set_DataId(u64)` overload"]fn set_data_id(self,value:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b070usize)as*mut u8,();
+(VersusSendReportSequence_UploadInfo)__receiver,(u64)::core::convert::Into::into(value))}
+}
+#[doc="`get_DataId()` overload"]fn get_data_id(self,)->u64{unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b080usize)as*mut u8,u64;
+(VersusSendReportSequence_UploadInfo)__receiver)}
+}
+#[doc="`set_ScreenShotId(u64)` overload"]fn set_screen_shot_id(self,value:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b090usize)as*mut u8,();
+(VersusSendReportSequence_UploadInfo)__receiver,(u64)::core::convert::Into::into(value))}
+}
+#[doc="`get_ScreenShotId()` overload"]fn get_screen_shot_id(self,)->u64{unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b0a0usize)as*mut u8,u64;
+(VersusSendReportSequence_UploadInfo)__receiver)}
+}
+#[doc="`set_Reason(::unity2::Il2CppString)` overload"]fn set_reason(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b0d0usize)as*mut u8,();
+(VersusSendReportSequence_UploadInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Reason()` overload"]fn get_reason(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b0e0usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSendReportSequence_UploadInfo)__receiver)}
+}
+#[doc="`set_PrincipalId(u64)` overload"]fn set_principal_id(self,value:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b0f0usize)as*mut u8,();
+(VersusSendReportSequence_UploadInfo)__receiver,(u64)::core::convert::Into::into(value))}
+}
+#[doc="`get_PrincipalId()` overload"]fn get_principal_id(self,)->u64{unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b100usize)as*mut u8,u64;
+(VersusSendReportSequence_UploadInfo)__receiver)}
+}
+#[doc="`set_Language(::unity2::Il2CppString)` overload"]fn set_language(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b110usize)as*mut u8,();
+(VersusSendReportSequence_UploadInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Language()` overload"]fn get_language(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b120usize)as*mut u8, ::unity2::Il2CppString;
+(VersusSendReportSequence_UploadInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusSendReportSequence_UploadInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1b130usize)as*mut u8,();
+(VersusSendReportSequence_UploadInfo)__receiver)}
+}
 }
 
-#[cfg(feature = "app-versussendreportsequence")]
-pub trait IVersusSendReportSequence_EndCallbackMethods : IVersusSendReportSequence_EndCallback { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < VersusSendReportSequence_EndCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_EndCallback , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1ad70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(bool)` overload"] fn invoke (self , is_succeed : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < VersusSendReportSequence_EndCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_EndCallback , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1ad90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_succeed) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versussendreportsequence")]impl<__T:IVersusSendReportSequence_UploadInfo>IVersusSendReportSequence_UploadInfoMethods for __T{}
 
-#[cfg(feature = "app-versussendreportsequence")]
-impl < __T : IVersusSendReportSequence_EndCallback > IVersusSendReportSequence_EndCallbackMethods for __T { }
-
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence_EndCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_EndCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_EndCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence_EndCallback {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusSendReportSequence_EndCallback) , :: core :: stringify ! (new) ,)) ; < Self as IVersusSendReportSequence_EndCallbackMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-versussendreportsequence")]impl VersusSendReportSequence_UploadInfo{pub fn set_data_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_data_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_screen_shot_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_screen_shot_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_reason_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_reason_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_principal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_principal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_language_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_language_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 }
 
-#[cfg(feature = "app-versussendreportsequence")]
-pub trait IVersusSendReportSequence_UploadInfoMethods : IVersusSendReportSequence_UploadInfo { # [doc = "`set_DataId(u64)` overload"] fn set_data_id (self , value : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DataId()` overload"] fn get_data_id (self ,) -> u64 { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ScreenShotId(u64)` overload"] fn set_screen_shot_id (self , value : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ScreenShotId()` overload"] fn get_screen_shot_id (self ,) -> u64 { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b0a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Reason(::unity2::Il2CppString)` overload"] fn set_reason (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b0d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Reason()` overload"] fn get_reason (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b0e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PrincipalId(u64)` overload"] fn set_principal_id (self , value : impl :: core :: convert :: Into < u64 >) -> () { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b0f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PrincipalId()` overload"] fn get_principal_id (self ,) -> u64 { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Language(::unity2::Il2CppString)` overload"] fn set_language (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Language()` overload"] fn get_language (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusSendReportSequence_UploadInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusSendReportSequence_UploadInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b1b130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versussendreportsequence")]impl VersusSendReportSequence_UploadInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSendReportSequence_UploadInfo), ::core::stringify!(new),));
+ <Self as IVersusSendReportSequence_UploadInfoMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-versussendreportsequence")]
-impl < __T : IVersusSendReportSequence_UploadInfo > IVersusSendReportSequence_UploadInfoMethods for __T { }
+#[cfg(feature="app-versussendreportsequence")]impl VersusSendReportSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,info:impl::core::convert::Into<crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo> ,end_callback:impl::core::convert::Into<crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b1f70usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo)::core::convert::Into::into(info),(crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)::core::convert::Into::into(end_callback))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b3c40usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence_UploadInfo { pub fn set_data_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_data_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_screen_shot_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_screen_shot_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_reason_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_reason_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_principal_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_principal_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_language_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_language_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusSendReportSequence_UploadInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-versussendreportsequence")]pub trait IVersusSendReportSequenceMethods:IVersusSendReportSequence{#[doc="`.ctor(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` overload"]fn ctor(self,info:impl::core::convert::Into<crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo> ,end_callback:impl::core::convert::Into<crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback>)->(){unsafe{let __receiver= <VersusSendReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b38a0usize)as*mut u8,();
+(VersusSendReportSequence)__receiver,(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo)::core::convert::Into::into(info),(crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)::core::convert::Into::into(end_callback))}
+}
+#[doc="`SendReport()` overload"]fn send_report(self,)->(){unsafe{let __receiver= <VersusSendReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b38f0usize)as*mut u8,();
+(VersusSendReportSequence)__receiver)}
+}
+#[doc="`AddList()` overload"]fn add_list(self,)->(){unsafe{let __receiver= <VersusSendReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b39e0usize)as*mut u8,();
+(VersusSendReportSequence)__receiver)}
+}
+#[doc="`GetResult(*mut::unity2::Il2CppString)` overload"]fn get_result(self,)->(crate::app::nexversus::NexVersus_Results, ::unity2::Il2CppString){unsafe{let __receiver= <VersusSendReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x26b3a70usize)as*mut u8,crate::app::nexversus::NexVersus_Results;
+(VersusSendReportSequence)__receiver,(*mut::unity2::Il2CppString)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <VersusSendReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b3b10usize)as*mut u8,();
+(VersusSendReportSequence)__receiver)}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <VersusSendReportSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b3c20usize)as*mut u8,();
+(VersusSendReportSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence_UploadInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusSendReportSequence_UploadInfo) , :: core :: stringify ! (new) ,)) ; < Self as IVersusSendReportSequence_UploadInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versussendreportsequence")]impl<__T:IVersusSendReportSequence>IVersusSendReportSequenceMethods for __T{}
+
+#[cfg(feature="app-versussendreportsequence")]impl VersusSendReportSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn send_report_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-versussendreportsequence")]impl VersusSendReportSequence{#[doc="`.ctor(crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo, crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)` — overload selector"]pub fn new(info:crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,end_callback:crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSendReportSequence), ::core::stringify!(new),));
+ <Self as IVersusSendReportSequenceMethods> ::ctor(this,info,end_callback);
+this}
+}
+
+#[cfg(feature="app-versussendreportsequence")]pub trait IVersusSendReportSequence_EndCallbackMethods:IVersusSendReportSequence_EndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <VersusSendReportSequence_EndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1ad70usize)as*mut u8,();
+(VersusSendReportSequence_EndCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool)` overload"]fn invoke(self,is_succeed:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <VersusSendReportSequence_EndCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b1ad90usize)as*mut u8,();
+(VersusSendReportSequence_EndCallback)__receiver,(bool)::core::convert::Into::into(is_succeed))}
+}
+}
+
+#[cfg(feature="app-versussendreportsequence")]impl<__T:IVersusSendReportSequence_EndCallback>IVersusSendReportSequence_EndCallbackMethods for __T{}
+
+#[cfg(feature="app-versussendreportsequence")]impl VersusSendReportSequence_EndCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-versussendreportsequence")]impl VersusSendReportSequence_EndCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusSendReportSequence_EndCallback), ::core::stringify!(new),));
+ <Self as IVersusSendReportSequence_EndCallbackMethods> ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-versussendreportsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::VersusSendReportSequence_Label;
+    pub use super::VersusSendReportSequence_UploadInfo;
+    pub use super::IVersusSendReportSequence_UploadInfo;
+    pub use super::IVersusSendReportSequence_UploadInfoMethods;
     pub use super::VersusSendReportSequence;
     pub use super::IVersusSendReportSequence;
     pub use super::IVersusSendReportSequenceMethods;
     pub use super::VersusSendReportSequence_EndCallback;
     pub use super::IVersusSendReportSequence_EndCallback;
     pub use super::IVersusSendReportSequence_EndCallbackMethods;
-    pub use super::VersusSendReportSequence_Label;
-    pub use super::VersusSendReportSequence_UploadInfo;
-    pub use super::IVersusSendReportSequence_UploadInfo;
-    pub use super::IVersusSendReportSequence_UploadInfoMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

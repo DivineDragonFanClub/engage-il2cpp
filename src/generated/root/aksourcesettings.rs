@@ -4,38 +4,109 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aksourcesettings/AkSourceSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSourceSettings")] # [parent (crate :: system :: object :: Object)] pub struct AkSourceSettings {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aksourcesettings/AkSourceSettings.md"))]#[::unity2::class(namespace="",name="AkSourceSettings")]#[parent(crate::system::object::Object)]pub struct AkSourceSettings{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-aksourcesettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aksourcesettings")]
-impl AkSourceSettings { # [doc = "`getCPtr(crate::root::aksourcesettings::AkSourceSettings)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: aksourcesettings :: AkSourceSettings >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: aksourcesettings :: AkSourceSettings , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d213b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetSizeOf()` overload"] pub fn get_size_of () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21970usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aksourcesettings")]impl AkSourceSettings{#[doc="`getCPtr(crate::root::aksourcesettings::AkSourceSettings)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::aksourcesettings::AkSourceSettings>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d213b0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::aksourcesettings::AkSourceSettings)::core::convert::Into::into(obj))}
+}
+#[doc="`GetSizeOf()` overload"]pub fn get_size_of()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d21970usize)as*mut u8,i32;
+)}
+}
+}
 
-#[cfg(feature = "root-aksourcesettings")]
-pub trait IAkSourceSettingsMethods : IAkSourceSettings { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d214b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_sourceID(u32)` overload"] fn set_source_id (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_sourceID()` overload"] fn get_source_id (self ,) -> u32 { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d216b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pMediaMemory(::unity2::IntPtr)` overload"] fn set_p_media_memory (self , value : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pMediaMemory()` overload"] fn get_p_media_memory (self ,) -> :: unity2 :: IntPtr { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d217a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uMediaSize(u32)` overload"] fn set_u_media_size (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uMediaSize()` overload"] fn get_u_media_size (self ,) -> u32 { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone(crate::root::aksourcesettings::AkSourceSettings)` overload"] fn clone (self , other : impl :: core :: convert :: Into < crate :: root :: aksourcesettings :: AkSourceSettings >) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , crate :: root :: aksourcesettings :: AkSourceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d219e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkSourceSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSourceSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d21aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aksourcesettings")]pub trait IAkSourceSettingsMethods:IAkSourceSettings{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21370usize)as*mut u8,();
+(AkSourceSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21410usize)as*mut u8,();
+(AkSourceSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21440usize)as*mut u8,();
+(AkSourceSettings)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d214b0usize)as*mut u8,();
+(AkSourceSettings)__receiver)}
+}
+#[doc="`set_sourceID(u32)` overload"]fn set_source_id(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21630usize)as*mut u8,();
+(AkSourceSettings)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_sourceID()` overload"]fn get_source_id(self,)->u32{unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d216b0usize)as*mut u8,u32;
+(AkSourceSettings)__receiver)}
+}
+#[doc="`set_pMediaMemory(::unity2::IntPtr)` overload"]fn set_p_media_memory(self,value:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21720usize)as*mut u8,();
+(AkSourceSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(value))}
+}
+#[doc="`get_pMediaMemory()` overload"]fn get_p_media_memory(self,)-> ::unity2::IntPtr{unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d217a0usize)as*mut u8, ::unity2::IntPtr;
+(AkSourceSettings)__receiver)}
+}
+#[doc="`set_uMediaSize(u32)` overload"]fn set_u_media_size(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21810usize)as*mut u8,();
+(AkSourceSettings)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uMediaSize()` overload"]fn get_u_media_size(self,)->u32{unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21890usize)as*mut u8,u32;
+(AkSourceSettings)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21900usize)as*mut u8,();
+(AkSourceSettings)__receiver)}
+}
+#[doc="`Clone(crate::root::aksourcesettings::AkSourceSettings)` overload"]fn clone(self,other:impl::core::convert::Into<crate::root::aksourcesettings::AkSourceSettings>)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d219e0usize)as*mut u8,();
+(AkSourceSettings)__receiver,(crate::root::aksourcesettings::AkSourceSettings)::core::convert::Into::into(other))}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkSourceSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d21aa0usize)as*mut u8,();
+(AkSourceSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aksourcesettings")]
-impl < __T : IAkSourceSettings > IAkSourceSettingsMethods for __T { }
+#[cfg(feature="root-aksourcesettings")]impl<__T:IAkSourceSettings>IAkSourceSettingsMethods for __T{}
 
-#[cfg(feature = "root-aksourcesettings")]
-impl AkSourceSettings { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_source_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_source_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_p_media_memory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_p_media_memory_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_u_media_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_u_media_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_size_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSourceSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="root-aksourcesettings")]impl AkSourceSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_source_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_source_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_p_media_memory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_p_media_memory_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_u_media_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_u_media_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_size_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "root-aksourcesettings")]
-impl AkSourceSettings {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSourceSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkSourceSettingsMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSourceSettings) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkSourceSettingsMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-aksourcesettings")]impl AkSourceSettings{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSourceSettings), ::core::stringify!(new),));
+ <Self as IAkSourceSettingsMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSourceSettings), ::core::stringify!(new_2),));
+ <Self as IAkSourceSettingsMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-aksourcesettings")]

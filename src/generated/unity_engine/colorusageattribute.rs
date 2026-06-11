@@ -4,41 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/colorusageattribute/ColorUsageAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ColorUsageAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct ColorUsageAttribute {
-# [offset (16)] # [rename (name = "showAlpha")] pub show_alpha : bool ,
-# [offset (17)] # [rename (name = "hdr")] pub hdr : bool ,
-# [offset (20)] # [rename (name = "minBrightness")] pub min_brightness : f32 ,
-# [offset (24)] # [rename (name = "maxBrightness")] pub max_brightness : f32 ,
-# [offset (28)] # [rename (name = "minExposureValue")] pub min_exposure_value : f32 ,
-# [offset (32)] # [rename (name = "maxExposureValue")] pub max_exposure_value : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/colorusageattribute/ColorUsageAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="ColorUsageAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct ColorUsageAttribute{#[offset(16)]#[rename(name="showAlpha")]pub show_alpha:bool, #[offset(17)]#[rename(name="hdr")]pub hdr:bool, #[offset(20)]#[rename(name="minBrightness")]pub min_brightness:f32, #[offset(24)]#[rename(name="maxBrightness")]pub max_brightness:f32, #[offset(28)]#[rename(name="minExposureValue")]pub min_exposure_value:f32, #[offset(32)]#[rename(name="maxExposureValue")]pub max_exposure_value:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-colorusageattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-colorusageattribute")]
-pub trait IColorUsageAttributeMethods : IColorUsageAttribute { # [doc = "`.ctor(bool)` overload"] fn ctor (self , show_alpha : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ColorUsageAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorUsageAttribute , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (show_alpha) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(bool, bool)` overload"] fn ctor_2 (self , show_alpha : impl :: core :: convert :: Into < bool > , hdr : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ColorUsageAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ColorUsageAttribute , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c41b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (show_alpha) , :: core :: convert :: Into :: into (hdr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-colorusageattribute")]pub trait IColorUsageAttributeMethods:IColorUsageAttribute{#[doc="`.ctor(bool)` overload"]fn ctor(self,show_alpha:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ColorUsageAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c41ac0usize)as*mut u8,();
+(ColorUsageAttribute)__receiver,(bool)::core::convert::Into::into(show_alpha))}
+}
+#[doc="`.ctor(bool, bool)` overload"]fn ctor_2(self,show_alpha:impl::core::convert::Into<bool> ,hdr:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ColorUsageAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c41b10usize)as*mut u8,();
+(ColorUsageAttribute)__receiver,(bool)::core::convert::Into::into(show_alpha),(bool)::core::convert::Into::into(hdr))}
+}
+}
 
-#[cfg(feature = "unity_engine-colorusageattribute")]
-impl < __T : IColorUsageAttribute > IColorUsageAttributeMethods for __T { }
+#[cfg(feature="unity_engine-colorusageattribute")]impl<__T:IColorUsageAttribute>IColorUsageAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-colorusageattribute")]
-impl ColorUsageAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUsageAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ColorUsageAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-colorusageattribute")]impl ColorUsageAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-colorusageattribute")]
-impl ColorUsageAttribute {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (show_alpha : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ColorUsageAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IColorUsageAttributeMethods > :: ctor (this , show_alpha) ; this }
-
-# [doc = "`.ctor(bool, bool)` — overload selector"] pub fn new_2 (show_alpha : bool , hdr : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ColorUsageAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as IColorUsageAttributeMethods > :: ctor_2 (this , show_alpha , hdr) ; this }
+#[cfg(feature="unity_engine-colorusageattribute")]impl ColorUsageAttribute{#[doc="`.ctor(bool)` — overload selector"]pub fn new(show_alpha:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ColorUsageAttribute), ::core::stringify!(new),));
+ <Self as IColorUsageAttributeMethods> ::ctor(this,show_alpha);
+this}
+#[doc="`.ctor(bool, bool)` — overload selector"]pub fn new_2(show_alpha:bool,hdr:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ColorUsageAttribute), ::core::stringify!(new_2),));
+ <Self as IColorUsageAttributeMethods> ::ctor_2(this,show_alpha,hdr);
+this}
 }
 
 #[cfg(feature = "unity_engine-colorusageattribute")]

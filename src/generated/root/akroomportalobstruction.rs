@@ -4,42 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akobstructionocclusion :: { AkObstructionOcclusion , IAkObstructionOcclusion }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akobstructionocclusion::{AkObstructionOcclusion,IAkObstructionOcclusion}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akroomportalobstruction/AkRoomPortalObstruction.md"))] # [:: unity2 :: class (namespace = "" , name = "AkRoomPortalObstruction")] # [parent (crate :: root :: akobstructionocclusion :: AkObstructionOcclusion)] pub struct AkRoomPortalObstruction {
-# [offset (72)] # [rename (name = "m_portal")] pub m_portal : crate :: root :: akroomportal :: AkRoomPortal ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akroomportalobstruction/AkRoomPortalObstruction.md"))]#[::unity2::class(namespace="",name="AkRoomPortalObstruction")]#[parent(crate::root::akobstructionocclusion::AkObstructionOcclusion)]pub struct AkRoomPortalObstruction{#[offset(72)]#[rename(name="m_portal")]pub m_portal:crate::root::akroomportal::AkRoomPortal,}
 
 }
 
 #[cfg(feature = "root-akroomportalobstruction-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akroomportalobstruction")]
-pub trait IAkRoomPortalObstructionMethods : IAkRoomPortalObstruction { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkRoomPortalObstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortalObstruction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d036a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCurrentListenerList()` overload"] fn update_current_listener_list (self ,) -> () { unsafe { let __receiver = < AkRoomPortalObstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortalObstruction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetObstructionOcclusion(crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue>)` overload"] fn set_obstruction_occlusion (self , obs_occ_pair : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < crate :: root :: akaudiolistener :: AkAudioListener , crate :: root :: akobstructionocclusion :: AkObstructionOcclusion_ObstructionOcclusionValue > >) -> () { unsafe { let __receiver = < AkRoomPortalObstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortalObstruction , crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < crate :: root :: akaudiolistener :: AkAudioListener , crate :: root :: akobstructionocclusion :: AkObstructionOcclusion_ObstructionOcclusionValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obs_occ_pair) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkRoomPortalObstruction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkRoomPortalObstruction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akroomportalobstruction")]pub trait IAkRoomPortalObstructionMethods:IAkRoomPortalObstruction{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <AkRoomPortalObstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d036a0usize)as*mut u8,();
+(AkRoomPortalObstruction)__receiver)}
+}
+#[doc="`UpdateCurrentListenerList()` overload"]fn update_current_listener_list(self,)->(){unsafe{let __receiver= <AkRoomPortalObstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03710usize)as*mut u8,();
+(AkRoomPortalObstruction)__receiver)}
+}
+#[doc="`SetObstructionOcclusion(crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue>)` overload"]fn set_obstruction_occlusion(self,obs_occ_pair:impl::core::convert::Into<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue> >)->(){unsafe{let __receiver= <AkRoomPortalObstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03880usize)as*mut u8,();
+(AkRoomPortalObstruction)__receiver,(crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue>)::core::convert::Into::into(obs_occ_pair))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRoomPortalObstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03a00usize)as*mut u8,();
+(AkRoomPortalObstruction)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akroomportalobstruction")]
-impl < __T : IAkRoomPortalObstruction > IAkRoomPortalObstructionMethods for __T { }
+#[cfg(feature="root-akroomportalobstruction")]impl<__T:IAkRoomPortalObstruction>IAkRoomPortalObstructionMethods for __T{}
 
-#[cfg(feature = "root-akroomportalobstruction")]
-impl AkRoomPortalObstruction { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortalObstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_current_listener_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortalObstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_obstruction_occlusion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortalObstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkRoomPortalObstruction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-akroomportalobstruction")]impl AkRoomPortalObstruction{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_current_listener_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_obstruction_occlusion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "root-akroomportalobstruction")]
-impl AkRoomPortalObstruction {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkRoomPortalObstruction) , :: core :: stringify ! (new) ,)) ; < Self as IAkRoomPortalObstructionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akroomportalobstruction")]impl AkRoomPortalObstruction{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkRoomPortalObstruction), ::core::stringify!(new),));
+ <Self as IAkRoomPortalObstructionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akroomportalobstruction")]

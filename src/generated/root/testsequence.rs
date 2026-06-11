@@ -4,91 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsequence/TestSequence.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TestSequence {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/testsequence/TestSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TestSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testsequence/TestSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TestSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for TestSequence_Label{const NAMESPACE: &'static str="";
+const NAME: &'static str="TestSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TestSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TestSequence_Label{pub fn end()->Self{Self{value:0}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for TestSequence_Label  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "TestSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TestSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TestSequence_Label  {
-    pub fn end() -> Self {
-        Self { value: 0 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testsequence/TestSequence.md"))]#[::unity2::class(namespace="",name="TestSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct TestSequence{}
 
 }
 
 #[cfg(feature = "root-testsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-testsequence")]
-impl TestSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e85b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-testsequence")]impl TestSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e85b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "root-testsequence")]
-pub trait ITestSequenceMethods : ITestSequence { # [doc = "`DrawMessage()` overload"] fn draw_message (self ,) -> () { unsafe { let __receiver = < TestSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e82e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Branch()` overload"] fn branch (self ,) -> bool { unsafe { let __receiver = < TestSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e82f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExceTest()` overload"] fn exce_test (self ,) -> () { unsafe { let __receiver = < TestSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExecTest2()` overload"] fn exec_test2 (self ,) -> () { unsafe { let __receiver = < TestSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e85a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TestSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-testsequence")]pub trait ITestSequenceMethods:ITestSequence{#[doc="`DrawMessage()` overload"]fn draw_message(self,)->(){unsafe{let __receiver= <TestSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e82e0usize)as*mut u8,();
+(TestSequence)__receiver)}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->bool{unsafe{let __receiver= <TestSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e82f0usize)as*mut u8,bool;
+(TestSequence)__receiver)}
+}
+#[doc="`ExceTest()` overload"]fn exce_test(self,)->(){unsafe{let __receiver= <TestSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8300usize)as*mut u8,();
+(TestSequence)__receiver)}
+}
+#[doc="`ExecTest2()` overload"]fn exec_test2(self,)->(){unsafe{let __receiver= <TestSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e85a0usize)as*mut u8,();
+(TestSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TestSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8960usize)as*mut u8,();
+(TestSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "root-testsequence")]
-impl < __T : ITestSequence > ITestSequenceMethods for __T { }
+#[cfg(feature="root-testsequence")]impl<__T:ITestSequence>ITestSequenceMethods for __T{}
 
-#[cfg(feature = "root-testsequence")]
-impl TestSequence { pub fn draw_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn exce_test_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn exec_test2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="root-testsequence")]impl TestSequence{pub fn draw_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn exce_test_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn exec_test2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "root-testsequence")]
-impl TestSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TestSequence) , :: core :: stringify ! (new) ,)) ; < Self as ITestSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-testsequence")]impl TestSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TestSequence), ::core::stringify!(new),));
+ <Self as ITestSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-testsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TestSequence_Label;
     pub use super::TestSequence;
     pub use super::ITestSequence;
     pub use super::ITestSequenceMethods;
-    pub use super::TestSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

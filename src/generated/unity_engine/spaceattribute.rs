@@ -4,36 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spaceattribute/SpaceAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SpaceAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct SpaceAttribute {
-# [offset (16)] # [rename (name = "height")] pub height : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/spaceattribute/SpaceAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="SpaceAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct SpaceAttribute{#[offset(16)]#[rename(name="height")]pub height:f32,}
 
 }
 
 #[cfg(feature = "unity_engine-spaceattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-spaceattribute")]
-pub trait ISpaceAttributeMethods : ISpaceAttribute { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SpaceAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpaceAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(f32)` overload"] fn ctor_2 (self , height : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < SpaceAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpaceAttribute , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f94c60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-spaceattribute")]pub trait ISpaceAttributeMethods:ISpaceAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SpaceAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f94c30usize)as*mut u8,();
+(SpaceAttribute)__receiver)}
+}
+#[doc="`.ctor(f32)` overload"]fn ctor_2(self,height:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SpaceAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f94c60usize)as*mut u8,();
+(SpaceAttribute)__receiver,(f32)::core::convert::Into::into(height))}
+}
+}
 
-#[cfg(feature = "unity_engine-spaceattribute")]
-impl < __T : ISpaceAttribute > ISpaceAttributeMethods for __T { }
+#[cfg(feature="unity_engine-spaceattribute")]impl<__T:ISpaceAttribute>ISpaceAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-spaceattribute")]
-impl SpaceAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpaceAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpaceAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-spaceattribute")]impl SpaceAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-spaceattribute")]
-impl SpaceAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SpaceAttribute) , :: core :: stringify ! (new) ,)) ; < Self as ISpaceAttributeMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(f32)` — overload selector"] pub fn new_2 (height : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SpaceAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as ISpaceAttributeMethods > :: ctor_2 (this , height) ; this }
+#[cfg(feature="unity_engine-spaceattribute")]impl SpaceAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SpaceAttribute), ::core::stringify!(new),));
+ <Self as ISpaceAttributeMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(f32)` — overload selector"]pub fn new_2(height:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SpaceAttribute), ::core::stringify!(new_2),));
+ <Self as ISpaceAttributeMethods> ::ctor_2(this,height);
+this}
 }
 
 #[cfg(feature = "unity_engine-spaceattribute")]

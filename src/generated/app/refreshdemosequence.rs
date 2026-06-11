@@ -4,87 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshdemosequence/RefreshDemoSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshDemoSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RefreshDemoSequence {
-# [static_field] # [rename (name = "s_BasketPath")] pub s_basket_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_FruitsPath")] pub s_fruits_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_AOCHumMPath")] pub s_aoc_hum_m_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_AOCHumFPath")] pub s_aoc_hum_f_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_AOCHorsePath")] pub s_aoc_horse_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_AOCc400Path")] pub s_ao_cc400_path : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_RefreshArea")] pub m_refresh_area : crate :: app :: refreshdemosequence :: RefreshDemoSequence_RefreshArea ,
-# [offset (120)] # [rename (name = "m_SelectUnitList")] pub m_select_unit_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit > ,
-# [offset (128)] # [rename (name = "m_AreaObject")] pub m_area_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_LoadingCount")] pub m_loading_count : i32 ,
-# [offset (144)] # [rename (name = "m_MainCamera")] pub m_main_camera : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (152)] # [rename (name = "m_DemoCameraHandle")] pub m_demo_camera_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (160)] # [rename (name = "m_DemoCamera")] pub m_demo_camera : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (168)] # [rename (name = "m_ReliancePopUp")] pub m_reliance_pop_up : crate :: app :: reliancepopupcontroller :: ReliancePopUpController ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshdemosequence/RefreshDemoSequence.md"))]#[::unity2::class(namespace="App",name="RefreshDemoSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct RefreshDemoSequence{#[static_field]#[rename(name="s_BasketPath")]pub s_basket_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_FruitsPath")]pub s_fruits_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_AOCHumMPath")]pub s_aoc_hum_m_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_AOCHumFPath")]pub s_aoc_hum_f_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_AOCHorsePath")]pub s_aoc_horse_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_AOCc400Path")]pub s_ao_cc400_path: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_RefreshArea")]pub m_refresh_area:crate::app::refreshdemosequence::RefreshDemoSequence_RefreshArea, #[offset(120)]#[rename(name="m_SelectUnitList")]pub m_select_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(128)]#[rename(name="m_AreaObject")]pub m_area_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_LoadingCount")]pub m_loading_count:i32, #[offset(144)]#[rename(name="m_MainCamera")]pub m_main_camera:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_DemoCameraHandle")]pub m_demo_camera_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(160)]#[rename(name="m_DemoCamera")]pub m_demo_camera:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_ReliancePopUp")]pub m_reliance_pop_up:crate::app::reliancepopupcontroller::ReliancePopUpController,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshdemosequence/RefreshDemoSequence_RefreshArea.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefreshDemoSequence_RefreshArea{pub value:i32,}
+impl::unity2::ClassIdentity for RefreshDemoSequence_RefreshArea{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RefreshDemoSequence.RefreshArea";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshdemosequence/RefreshDemoSequence_RefreshArea.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RefreshDemoSequence_RefreshArea  {
-    pub value: i32,
+impl::unity2::IlType for RefreshDemoSequence_RefreshArea{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for RefreshDemoSequence_RefreshArea  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefreshDemoSequence.RefreshArea";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl RefreshDemoSequence_RefreshArea{pub fn pool()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for RefreshDemoSequence_RefreshArea  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn orchard()->Self{Self{value:1}
 }
-
-
-impl  RefreshDemoSequence_RefreshArea  {
-    pub fn pool() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn orchard() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn stable() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn stable()->Self{Self{value:2}
+}
 }
 
 }
@@ -92,21 +40,82 @@ impl  RefreshDemoSequence_RefreshArea  {
 #[cfg(feature = "app-refreshdemosequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refreshdemosequence")]
-impl RefreshDemoSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit2 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b8b30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (aid) , :: core :: convert :: Into :: into (unit1) , :: core :: convert :: Into :: into (unit2) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bacd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshdemosequence")]impl RefreshDemoSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,aid:impl::core::convert::Into< ::unity2::Il2CppString> ,unit1:impl::core::convert::Into<crate::app::unit::Unit> ,unit2:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b8b30usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(aid),(crate::app::unit::Unit)::core::convert::Into::into(unit1),(crate::app::unit::Unit)::core::convert::Into::into(unit2))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22bacd0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-refreshdemosequence")]
-pub trait IRefreshDemoSequenceMethods : IRefreshDemoSequence { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn ctor (self , aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , unit1 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit2 : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: Il2CppString , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b8bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (aid) , :: core :: convert :: Into :: into (unit1) , :: core :: convert :: Into :: into (unit2) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b8d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b9470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateUnit(crate::app::unit::Unit, i32)` overload"] fn create_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , locator_num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , crate :: app :: unit :: Unit , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b9a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (locator_num) , :: core :: option :: Option :: None) } } } # [doc = "`CreateHorse(::unity2::Il2CppString, i32)` overload"] fn create_horse (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , locator_num : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b9d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (locator_num) , :: core :: option :: Option :: None) } } } # [doc = "`IsWaitingSetup()` overload"] fn is_waiting_setup (self ,) -> bool { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b9f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayDemo()` overload"] fn play_demo (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b9f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b9fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ba1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResource()` overload"] fn is_loading_resource (self ,) -> bool { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ba960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResource()` overload"] fn unload_resource (self ,) -> () { unsafe { let __receiver = < RefreshDemoSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshDemoSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22babc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshdemosequence")]pub trait IRefreshDemoSequenceMethods:IRefreshDemoSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn ctor(self,aid:impl::core::convert::Into< ::unity2::Il2CppString> ,unit1:impl::core::convert::Into<crate::app::unit::Unit> ,unit2:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b8bd0usize)as*mut u8,();
+(RefreshDemoSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(aid),(crate::app::unit::Unit)::core::convert::Into::into(unit1),(crate::app::unit::Unit)::core::convert::Into::into(unit2))}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b8d80usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(RefreshDemoSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b9470usize)as*mut u8,();
+(RefreshDemoSequence)__receiver)}
+}
+#[doc="`CreateUnit(crate::app::unit::Unit, i32)` overload"]fn create_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,locator_num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b9a30usize)as*mut u8,();
+(RefreshDemoSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(locator_num))}
+}
+#[doc="`CreateHorse(::unity2::Il2CppString, i32)` overload"]fn create_horse(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,locator_num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b9d00usize)as*mut u8,();
+(RefreshDemoSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(i32)::core::convert::Into::into(locator_num))}
+}
+#[doc="`IsWaitingSetup()` overload"]fn is_waiting_setup(self,)->bool{unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b9f20usize)as*mut u8,bool;
+(RefreshDemoSequence)__receiver)}
+}
+#[doc="`PlayDemo()` overload"]fn play_demo(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b9f60usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(RefreshDemoSequence)__receiver)}
+}
+#[doc="`EndSequence()` overload"]fn end_sequence(self,)->(){unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b9fe0usize)as*mut u8,();
+(RefreshDemoSequence)__receiver)}
+}
+#[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ba1f0usize)as*mut u8,();
+(RefreshDemoSequence)__receiver)}
+}
+#[doc="`IsLoadingResource()` overload"]fn is_loading_resource(self,)->bool{unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ba960usize)as*mut u8,bool;
+(RefreshDemoSequence)__receiver)}
+}
+#[doc="`UnloadResource()` overload"]fn unload_resource(self,)->(){unsafe{let __receiver= <RefreshDemoSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22babc0usize)as*mut u8,();
+(RefreshDemoSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refreshdemosequence")]
-impl < __T : IRefreshDemoSequence > IRefreshDemoSequenceMethods for __T { }
+#[cfg(feature="app-refreshdemosequence")]impl<__T:IRefreshDemoSequence>IRefreshDemoSequenceMethods for __T{}
 
-#[cfg(feature = "app-refreshdemosequence")]
-impl RefreshDemoSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_horse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_waiting_setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn play_demo_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshDemoSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-refreshdemosequence")]impl RefreshDemoSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_horse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_waiting_setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn play_demo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_loading_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn unload_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-refreshdemosequence")]
-impl RefreshDemoSequence {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"] pub fn new (aid : :: unity2 :: Il2CppString , unit1 : crate :: app :: unit :: Unit , unit2 : crate :: app :: unit :: Unit) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshDemoSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshDemoSequenceMethods > :: ctor (this , aid , unit1 , unit2) ; this }
+#[cfg(feature="app-refreshdemosequence")]impl RefreshDemoSequence{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]pub fn new(aid: ::unity2::Il2CppString,unit1:crate::app::unit::Unit,unit2:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshDemoSequence), ::core::stringify!(new),));
+ <Self as IRefreshDemoSequenceMethods> ::ctor(this,aid,unit1,unit2);
+this}
 }
 
 #[cfg(feature = "app-refreshdemosequence")]

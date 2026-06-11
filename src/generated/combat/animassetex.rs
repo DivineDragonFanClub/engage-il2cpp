@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animassetex/AnimAssetEx.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AnimAssetEx")] # [parent (crate :: system :: object :: Object)] pub struct AnimAssetEx {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/animassetex/AnimAssetEx.md"))]#[::unity2::class(namespace="Combat",name="AnimAssetEx")]#[parent(crate::system::object::Object)]pub struct AnimAssetEx{}
 
 }
 
 #[cfg(feature = "combat-animassetex-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-animassetex")]
-impl AnimAssetEx { # [doc = "`Exists(crate::combat::animasset::AnimAsset)` overload"] pub fn exists (aa : impl :: core :: convert :: Into < crate :: combat :: animasset :: AnimAsset >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: animasset :: AnimAsset , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (aa) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-animassetex")]impl AnimAssetEx{#[doc="`Exists(crate::combat::animasset::AnimAsset)` overload"]pub fn exists(aa:impl::core::convert::Into<crate::combat::animasset::AnimAsset>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e140usize)as*mut u8,bool;
+(crate::combat::animasset::AnimAsset)::core::convert::Into::into(aa))}
+}
+}
 
-#[cfg(feature = "combat-animassetex")]
-impl AnimAssetEx { pub fn exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimAssetEx as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-animassetex")]impl AnimAssetEx{pub fn exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-animassetex")]
 #[doc(hidden)]

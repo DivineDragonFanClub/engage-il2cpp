@@ -4,358 +4,136 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningsequence/RingCleaningSequence_ConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningSequence.ConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct RingCleaningSequence_ConfirmDialogItemYes {
-# [offset (112)] # [rename (name = "m_Action")] pub m_action : crate :: system :: action :: Action ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningsequence/RingCleaningSequence_Strength.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningSequence_Strength{pub value:i32,}
+impl::unity2::ClassIdentity for RingCleaningSequence_Strength{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingCleaningSequence.Strength";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingCleaningSequence_Strength{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingCleaningSequence_Strength{pub fn strong()->Self{Self{value:0}
+}
+pub fn weak()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RingCleaningSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningsequence/RingCleaningSequence.md"))]#[::unity2::class(namespace="App",name="RingCleaningSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::ringcleaningsequence::RingCleaningSequence>)]pub struct RingCleaningSequence{#[offset(120)]#[rename(name="m_SceneResourceHandle")]pub m_scene_resource_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(128)]#[rename(name="m_DisableList")]pub m_disable_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[static_field]#[rename(name="InfoPrefab")]pub info_prefab: ::unity2::Il2CppString, #[static_field]#[rename(name="FinishTelopPrefab")]pub finish_telop_prefab: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_RingController")]pub m_ring_controller:crate::app::ringcleaningringcontroller::RingCleaningRingController, #[offset(160)]#[rename(name="m_FaceImage")]pub m_face_image:crate::app::ring_cleaning::faceimagescontroller::FaceImagesController, #[offset(168)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(176)]#[rename(name="m_Info")]pub m_info:crate::unity_engine::gameobject::GameObject, #[offset(184)]#[rename(name="m_InfoRoot")]pub m_info_root:crate::app::ringcleaningroot::RingCleaningRoot, #[offset(192)]#[rename(name="m_Cloth")]pub m_cloth:crate::app::ringcleaningcloth::RingCleaningCloth, #[offset(208)]#[rename(name="m_TelopObject")]pub m_telop_object:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="WeakNotHitValue")]pub weak_not_hit_value:i32, #[static_field]#[rename(name="WeakHitValue")]pub weak_hit_value:i32, #[static_field]#[rename(name="StrongNotHitValue")]pub strong_not_hit_value:i32, #[static_field]#[rename(name="StrongHitValue")]pub strong_hit_value:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningsequence/RingCleaningSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for RingCleaningSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingCleaningSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingCleaningSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingCleaningSequence_Label{pub fn init()->Self{Self{value:0}
+}
+pub fn tick()->Self{Self{value:1}
+}
+pub fn tick_continue()->Self{Self{value:2}
+}
+pub fn finish_cleaning()->Self{Self{value:3}
+}
+pub fn reset_rotation()->Self{Self{value:4}
+}
+pub fn play_telop()->Self{Self{value:5}
+}
+pub fn end()->Self{Self{value:6}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for RingCleaningSequence_Label  {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningsequence/RingCleaningSequence_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="RingCleaningSequence.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RingCleaningSequence_ConfirmDialogItemYes{#[offset(112)]#[rename(name="m_Action")]pub m_action:crate::system::action::Action,}
 
-    const NAME: &'static str = "RingCleaningSequence.Label";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningsequence/RingCleaningSequence_ExitConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RingCleaningSequence.ExitConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RingCleaningSequence_ExitConfirmDialog{}
 
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningsequence/RingCleaningSequence_RButtonHoldSequence.md"))]#[::unity2::class(namespace="App",name="RingCleaningSequence.RButtonHoldSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct RingCleaningSequence_RButtonHoldSequence{#[offset(112)]#[rename(name="m_Cloth")]pub m_cloth:crate::app::ringcleaningcloth::RingCleaningCloth, #[offset(120)]#[rename(name="m_Callback")]pub m_callback:crate::system::action::Action, #[offset(128)]#[rename(name="m_HoldCounter")]pub m_hold_counter:i32, #[offset(132)]#[rename(name="HoldCounterThreshold")]pub hold_counter_threshold:i32, #[offset(136)]#[rename(name="m_IsTrigger")]pub m_is_trigger:bool, #[offset(140)]#[rename(name="GapSize")]pub gap_size:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningsequence/RingCleaningSequence_HitResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningSequence_HitResult{pub value:i32,}
+impl::unity2::ClassIdentity for RingCleaningSequence_HitResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingCleaningSequence.HitResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingCleaningSequence_HitResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingCleaningSequence_HitResult{pub fn not_hit()->Self{Self{value:0}
+}
+pub fn near()->Self{Self{value:1}
+}
+pub fn hit()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::IlType for RingCleaningSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningsequence/RingCleaningSequence_GodType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningSequence_GodType{pub value:i32,}
+impl::unity2::ClassIdentity for RingCleaningSequence_GodType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingCleaningSequence.GodType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for RingCleaningSequence_GodType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl RingCleaningSequence_GodType{pub fn none()->Self{Self{value: -1}
+}
+pub fn three_edelgard()->Self{Self{value:0}
+}
+pub fn three_dimitri()->Self{Self{value:1}
+}
+pub fn three_claude()->Self{Self{value:2}
+}
+pub fn chrom_reflet()->Self{Self{value:3}
+}
 }
 
 
-impl  RingCleaningSequence_Label  {
-    pub fn init() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn tick() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn tick_continue() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn finish_cleaning() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn reset_rotation() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn play_telop() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 6 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningsequence/RingCleaningSequence_RButtonHoldSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingCleaningSequence_RButtonHoldSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for RingCleaningSequence_RButtonHoldSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RingCleaningSequence.RButtonHoldSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_GodType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RingCleaningSequence_GodType  {
-    pub value: i32,
+impl::unity2::IlType for RingCleaningSequence_RButtonHoldSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for RingCleaningSequence_GodType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingCleaningSequence.GodType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl RingCleaningSequence_RButtonHoldSequence_Label{pub fn end()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for RingCleaningSequence_GodType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RingCleaningSequence_GodType  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn three_edelgard() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn three_dimitri() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn three_claude() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn chrom_reflet() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_HitResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RingCleaningSequence_HitResult  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RingCleaningSequence_HitResult  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingCleaningSequence.HitResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RingCleaningSequence_HitResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RingCleaningSequence_HitResult  {
-    pub fn not_hit() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn near() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn hit() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_RButtonHoldSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RingCleaningSequence_RButtonHoldSequence_Label  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RingCleaningSequence_RButtonHoldSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingCleaningSequence.RButtonHoldSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RingCleaningSequence_RButtonHoldSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RingCleaningSequence_RButtonHoldSequence_Label  {
-    pub fn end() -> Self {
-        Self { value: 0 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningsequence/RingCleaningSequence_ExitConfirmDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningSequence.ExitConfirmDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct RingCleaningSequence_ExitConfirmDialog {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_Strength.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RingCleaningSequence_Strength  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for RingCleaningSequence_Strength  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingCleaningSequence.Strength";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for RingCleaningSequence_Strength  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  RingCleaningSequence_Strength  {
-    pub fn strong() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn weak() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningsequence/RingCleaningSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringcleaningsequence :: RingCleaningSequence >)] pub struct RingCleaningSequence {
-# [offset (120)] # [rename (name = "m_SceneResourceHandle")] pub m_scene_resource_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (128)] # [rename (name = "m_DisableList")] pub m_disable_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [static_field] # [rename (name = "InfoPrefab")] pub info_prefab : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FinishTelopPrefab")] pub finish_telop_prefab : :: unity2 :: Il2CppString ,
-# [offset (152)] # [rename (name = "m_RingController")] pub m_ring_controller : crate :: app :: ringcleaningringcontroller :: RingCleaningRingController ,
-# [offset (160)] # [rename (name = "m_FaceImage")] pub m_face_image : crate :: app :: ring_cleaning :: faceimagescontroller :: FaceImagesController ,
-# [offset (168)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (176)] # [rename (name = "m_Info")] pub m_info : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (184)] # [rename (name = "m_InfoRoot")] pub m_info_root : crate :: app :: ringcleaningroot :: RingCleaningRoot ,
-# [offset (192)] # [rename (name = "m_Cloth")] pub m_cloth : crate :: app :: ringcleaningcloth :: RingCleaningCloth ,
-# [offset (208)] # [rename (name = "m_TelopObject")] pub m_telop_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [static_field] # [rename (name = "WeakNotHitValue")] pub weak_not_hit_value : i32 ,
-# [static_field] # [rename (name = "WeakHitValue")] pub weak_hit_value : i32 ,
-# [static_field] # [rename (name = "StrongNotHitValue")] pub strong_not_hit_value : i32 ,
-# [static_field] # [rename (name = "StrongHitValue")] pub strong_hit_value : i32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningsequence/RingCleaningSequence_RButtonHoldSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningSequence.RButtonHoldSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct RingCleaningSequence_RButtonHoldSequence {
-# [offset (112)] # [rename (name = "m_Cloth")] pub m_cloth : crate :: app :: ringcleaningcloth :: RingCleaningCloth ,
-# [offset (120)] # [rename (name = "m_Callback")] pub m_callback : crate :: system :: action :: Action ,
-# [offset (128)] # [rename (name = "m_HoldCounter")] pub m_hold_counter : i32 ,
-# [offset (132)] # [rename (name = "HoldCounterThreshold")] pub hold_counter_threshold : i32 ,
-# [offset (136)] # [rename (name = "m_IsTrigger")] pub m_is_trigger : bool ,
-# [offset (140)] # [rename (name = "GapSize")] pub gap_size : f32 ,
 }
 
 }
@@ -363,91 +141,358 @@ impl  RingCleaningSequence_Strength  {
 #[cfg(feature = "app-ringcleaningsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringcleaningsequence")]
-pub trait IRingCleaningSequence_ConfirmDialogItemYesMethods : IRingCleaningSequence_ConfirmDialogItemYes { # [doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"] fn ctor (self , action : impl :: core :: convert :: Into < crate :: system :: action :: Action > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RingCleaningSequence_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence_ConfirmDialogItemYes , crate :: system :: action :: Action , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b10200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (action) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RingCleaningSequence_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence_ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b10240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl < __T : IRingCleaningSequence_ConfirmDialogItemYes > IRingCleaningSequence_ConfirmDialogItemYesMethods for __T { }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence_ConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence_ConfirmDialogItemYes {
-# [doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"] pub fn new (action : crate :: system :: action :: Action , text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningSequence_ConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningSequence_ConfirmDialogItemYesMethods > :: ctor (this , action , text) ; this }
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence{#[doc="`get_SelectedGodUnit()` overload"]pub fn get_selected_god_unit()->crate::app::godunit::GodUnit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241c8b0usize)as*mut u8,crate::app::godunit::GodUnit;
+)}
+}
+#[doc="`set_SelectedGodUnit(crate::app::godunit::GodUnit)` overload"]pub fn set_selected_god_unit(value:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241c900usize)as*mut u8,();
+(crate::app::godunit::GodUnit)::core::convert::Into::into(value))}
+}
+#[doc="`get_SelectedGodType()` overload"]pub fn get_selected_god_type()->crate::app::ringcleaningsequence::RingCleaningSequence_GodType{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241c960usize)as*mut u8,crate::app::ringcleaningsequence::RingCleaningSequence_GodType;
+)}
+}
+#[doc="`set_SelectedGodType(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]pub fn set_selected_god_type(value:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241c9b0usize)as*mut u8,();
+(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(value))}
+}
+#[doc="`get_SelectedUnit()` overload"]pub fn get_selected_unit()->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241ca10usize)as*mut u8,crate::app::unit::Unit;
+)}
+}
+#[doc="`set_SelectedUnit(crate::app::unit::Unit)` overload"]pub fn set_selected_unit(value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241ca60usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`GetMultiChangeIndex(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]pub fn get_multi_change_index(r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2420900usize)as*mut u8,i32;
+(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x241af90usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`ForEachCanCleanGodUnit(crate::system::action_1::Action_1<crate::app::godunit::GodUnit>)` overload"]pub fn for_each_can_clean_god_unit(func:impl::core::convert::Into<crate::system::action_1::Action_1<crate::app::godunit::GodUnit> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2420910usize)as*mut u8,();
+(crate::system::action_1::Action_1<crate::app::godunit::GodUnit>)::core::convert::Into::into(func))}
+}
 }
 
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence_ExitConfirmDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , action : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b10310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (action) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-pub trait IRingCleaningSequence_ExitConfirmDialogMethods : IRingCleaningSequence_ExitConfirmDialog { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> () { unsafe { let __receiver = < RingCleaningSequence_ExitConfirmDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence_ExitConfirmDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b10270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl < __T : IRingCleaningSequence_ExitConfirmDialog > IRingCleaningSequence_ExitConfirmDialogMethods for __T { }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence_ExitConfirmDialog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_ExitConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_ExitConfirmDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence_ExitConfirmDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningSequence_ExitConfirmDialog) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningSequence_ExitConfirmDialogMethods > :: ctor (this , menu_item_list) ; this }
+#[cfg(feature="app-ringcleaningsequence")]pub trait IRingCleaningSequenceMethods:IRingCleaningSequence{#[doc="`get_SceneName()` overload"]fn get_scene_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241c7f0usize)as*mut u8, ::unity2::Il2CppString;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`get_ReturnSceneName()` overload"]fn get_return_scene_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241c800usize)as*mut u8, ::unity2::Il2CppString;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`get_EngageZonePrefab()` overload"]fn get_engage_zone_prefab(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241c870usize)as*mut u8, ::unity2::Il2CppString;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`set_EngageZonePrefab(::unity2::Il2CppString)` overload"]fn set_engage_zone_prefab(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241c880usize)as*mut u8,();
+(RingCleaningSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsPlayableTelop()` overload"]fn get_is_playable_telop(self,)->bool{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241c890usize)as*mut u8,bool;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`set_IsPlayableTelop(bool)` overload"]fn set_is_playable_telop(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241c8a0usize)as*mut u8,();
+(RingCleaningSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241cac0usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241cc20usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`LoadScene()` overload"]fn load_scene(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241d5b0usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`LoadPrefabs()` overload"]fn load_prefabs(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241d5d0usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`IsLoadingPrefabs()` overload"]fn is_loading_prefabs(self,)->bool{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241d730usize)as*mut u8,bool;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`CreateObjectFromPrefab()` overload"]fn create_object_from_prefab(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241d850usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`InitAfterLoadedScene()` overload"]fn init_after_loaded_scene(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241dc40usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`InstantiateEngageZone()` overload"]fn instantiate_engage_zone(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241ddc0usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`IsLoadingKeyHelp()` overload"]fn is_loading_key_help(self,)->bool{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241de80usize)as*mut u8,bool;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`IsCreatingCharacter()` overload"]fn is_creating_character(self,)->bool{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241de90usize)as*mut u8,bool;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`AdjustFaceCamera()` overload"]fn adjust_face_camera(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241dec0usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`PersistentTick()` overload"]fn persistent_tick(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241ded0usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`StartTick()` overload"]fn start_tick(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241e020usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241e330usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`CleanRing(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"]fn clean_ring(self,strength:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_Strength> ,hit_result:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_HitResult>)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241ee00usize)as*mut u8,();
+(RingCleaningSequence)__receiver,(crate::app::ringcleaningsequence::RingCleaningSequence_Strength)::core::convert::Into::into(strength),(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)::core::convert::Into::into(hit_result))}
+}
+#[doc="`CleanRingWeak(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"]fn clean_ring_weak(self,hit_result:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_HitResult>)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241eee0usize)as*mut u8,();
+(RingCleaningSequence)__receiver,(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)::core::convert::Into::into(hit_result))}
+}
+#[doc="`CleanRingStrong(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"]fn clean_ring_strong(self,hit_result:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_HitResult>)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241f340usize)as*mut u8,();
+(RingCleaningSequence)__receiver,(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)::core::convert::Into::into(hit_result))}
+}
+#[doc="`CompleteCleaning(crate::app::ringcleaningsequence::RingCleaningSequence_Strength)` overload"]fn complete_cleaning(self,strength:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_Strength>)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241f9b0usize)as*mut u8,();
+(RingCleaningSequence)__receiver,(crate::app::ringcleaningsequence::RingCleaningSequence_Strength)::core::convert::Into::into(strength))}
+}
+#[doc="`GetSelectedGodUnitGid()` overload"]fn get_selected_god_unit_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241fe60usize)as*mut u8, ::unity2::Il2CppString;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`CleaningAction()` overload"]fn cleaning_action(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420020usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`StrongCleaningAction()` overload"]fn strong_cleaning_action(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420030usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`DecreaseDirty(i32)` overload"]fn decrease_dirty(self,decrease:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241f8b0usize)as*mut u8,i32;
+(RingCleaningSequence)__receiver,(i32)::core::convert::Into::into(decrease))}
+}
+#[doc="`AddBondExp(bool, crate::app::ringcleaningsequence::RingCleaningSequence_Strength)` overload"]fn add_bond_exp(self,is_finish:impl::core::convert::Into<bool> ,strength:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_Strength>)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241fb10usize)as*mut u8,();
+(RingCleaningSequence)__receiver,(bool)::core::convert::Into::into(is_finish),(crate::app::ringcleaningsequence::RingCleaningSequence_Strength)::core::convert::Into::into(strength))}
+}
+#[doc="`ResetRotation()` overload"]fn reset_rotation(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420180usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`PlayTelop()` overload"]fn play_telop(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420200usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420280usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`UnloadScene()` overload"]fn unload_scene(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420300usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`Final()` overload"]fn r#final(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420310usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`BackgroundUnbind()` overload"]fn background_unbind(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241d500usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`BackgroundBind()` overload"]fn background_bind(self,)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2420860usize)as*mut u8,();
+(RingCleaningSequence)__receiver)}
+}
+#[doc="`PlayGlitterEffect(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"]fn play_glitter_effect(self,strength:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_Strength> ,hit_result:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_HitResult>)->(){unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241f7d0usize)as*mut u8,();
+(RingCleaningSequence)__receiver,(crate::app::ringcleaningsequence::RingCleaningSequence_Strength)::core::convert::Into::into(strength),(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)::core::convert::Into::into(hit_result))}
+}
+#[doc="`GetCleaningValue(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, bool)` overload"]fn get_cleaning_value(self,strength:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_Strength> ,is_hit:impl::core::convert::Into<bool>)->i32{unsafe{let __receiver= <RingCleaningSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241f880usize)as*mut u8,i32;
+(RingCleaningSequence)__receiver,(crate::app::ringcleaningsequence::RingCleaningSequence_Strength)::core::convert::Into::into(strength),(bool)::core::convert::Into::into(is_hit))}
+}
 }
 
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence { # [doc = "`get_SelectedGodUnit()` overload"] pub fn get_selected_god_unit () -> crate :: app :: godunit :: GodUnit { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: godunit :: GodUnit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c8b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_SelectedGodUnit(crate::app::godunit::GodUnit)` overload"] pub fn set_selected_god_unit (value : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c900usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SelectedGodType()` overload"] pub fn get_selected_god_type () -> crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c960usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_SelectedGodType(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] pub fn set_selected_god_type (value : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c9b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SelectedUnit()` overload"] pub fn get_selected_unit () -> crate :: app :: unit :: Unit { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241ca10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_SelectedUnit(crate::app::unit::Unit)` overload"] pub fn set_selected_unit (value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241ca60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetMultiChangeIndex(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] pub fn get_multi_change_index (r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420900usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241af90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`ForEachCanCleanGodUnit(crate::system::action_1::Action_1<crate::app::godunit::GodUnit>)` overload"] pub fn for_each_can_clean_god_unit (func : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: app :: godunit :: GodUnit > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < crate :: app :: godunit :: GodUnit > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420910usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningsequence")]impl<__T:IRingCleaningSequence>IRingCleaningSequenceMethods for __T{}
 
-#[cfg(feature = "app-ringcleaningsequence")]
-pub trait IRingCleaningSequenceMethods : IRingCleaningSequence { # [doc = "`get_SceneName()` overload"] fn get_scene_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReturnSceneName()` overload"] fn get_return_scene_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_EngageZonePrefab()` overload"] fn get_engage_zone_prefab (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EngageZonePrefab(::unity2::Il2CppString)` overload"] fn set_engage_zone_prefab (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsPlayableTelop()` overload"] fn get_is_playable_telop (self ,) -> bool { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsPlayableTelop(bool)` overload"] fn set_is_playable_telop (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241c8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241cac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241cc20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadScene()` overload"] fn load_scene (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241d5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadPrefabs()` overload"] fn load_prefabs (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241d5d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefabs()` overload"] fn is_loading_prefabs (self ,) -> bool { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241d730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateObjectFromPrefab()` overload"] fn create_object_from_prefab (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241d850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitAfterLoadedScene()` overload"] fn init_after_loaded_scene (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241dc40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InstantiateEngageZone()` overload"] fn instantiate_engage_zone (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241ddc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingKeyHelp()` overload"] fn is_loading_key_help (self ,) -> bool { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241de80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCreatingCharacter()` overload"] fn is_creating_character (self ,) -> bool { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241de90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AdjustFaceCamera()` overload"] fn adjust_face_camera (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241dec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PersistentTick()` overload"] fn persistent_tick (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241ded0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartTick()` overload"] fn start_tick (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241e020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241e330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CleanRing(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"] fn clean_ring (self , strength : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength > , hit_result : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult >) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength , crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241ee00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (strength) , :: core :: convert :: Into :: into (hit_result) , :: core :: option :: Option :: None) } } } # [doc = "`CleanRingWeak(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"] fn clean_ring_weak (self , hit_result : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult >) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241eee0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hit_result) , :: core :: option :: Option :: None) } } } # [doc = "`CleanRingStrong(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"] fn clean_ring_strong (self , hit_result : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult >) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241f340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (hit_result) , :: core :: option :: Option :: None) } } } # [doc = "`CompleteCleaning(crate::app::ringcleaningsequence::RingCleaningSequence_Strength)` overload"] fn complete_cleaning (self , strength : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength >) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241f9b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (strength) , :: core :: option :: Option :: None) } } } # [doc = "`GetSelectedGodUnitGid()` overload"] fn get_selected_god_unit_gid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241fe60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CleaningAction()` overload"] fn cleaning_action (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StrongCleaningAction()` overload"] fn strong_cleaning_action (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DecreaseDirty(i32)` overload"] fn decrease_dirty (self , decrease : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241f8b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decrease) , :: core :: option :: Option :: None) } } } # [doc = "`AddBondExp(bool, crate::app::ringcleaningsequence::RingCleaningSequence_Strength)` overload"] fn add_bond_exp (self , is_finish : impl :: core :: convert :: Into < bool > , strength : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength >) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , bool , crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241fb10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_finish) , :: core :: convert :: Into :: into (strength) , :: core :: option :: Option :: None) } } } # [doc = "`ResetRotation()` overload"] fn reset_rotation (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayTelop()` overload"] fn play_telop (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadScene()` overload"] fn unload_scene (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Final()` overload"] fn r#final (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BackgroundUnbind()` overload"] fn background_unbind (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241d500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BackgroundBind()` overload"] fn background_bind (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2420860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayGlitterEffect(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"] fn play_glitter_effect (self , strength : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength > , hit_result : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult >) -> () { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength , crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241f7d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (strength) , :: core :: convert :: Into :: into (hit_result) , :: core :: option :: Option :: None) } } } # [doc = "`GetCleaningValue(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, bool)` overload"] fn get_cleaning_value (self , strength : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength > , is_hit : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < RingCleaningSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence , crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241f880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (strength) , :: core :: convert :: Into :: into (is_hit) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl < __T : IRingCleaningSequence > IRingCleaningSequenceMethods for __T { }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence { pub fn get_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_return_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_engage_zone_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_engage_zone_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_playable_telop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_is_playable_telop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_selected_god_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_selected_god_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_selected_god_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_selected_god_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_selected_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_selected_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn load_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn load_prefabs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_loading_prefabs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn create_object_from_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn init_after_loaded_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn instantiate_engage_zone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn is_loading_key_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn is_creating_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn adjust_face_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn persistent_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn start_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn clean_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn clean_ring_weak_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn clean_ring_strong_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn complete_cleaning_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_selected_god_unit_gid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn cleaning_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn strong_cleaning_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn decrease_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn add_bond_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn reset_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn play_telop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn unload_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn final_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn background_unbind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn background_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn play_glitter_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn get_cleaning_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_multi_change_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn for_each_can_clean_god_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } }
-
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence{pub fn get_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_return_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_engage_zone_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_engage_zone_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_playable_telop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_is_playable_telop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_selected_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_selected_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_selected_god_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_selected_god_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_selected_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_selected_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn load_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn load_prefabs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_loading_prefabs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn create_object_from_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn init_after_loaded_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn instantiate_engage_zone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn is_loading_key_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn is_creating_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn adjust_face_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn persistent_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn start_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn clean_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn clean_ring_weak_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn clean_ring_strong_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn complete_cleaning_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_selected_god_unit_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn cleaning_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn strong_cleaning_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn decrease_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn add_bond_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn reset_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn play_telop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn unload_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn final_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn background_unbind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn background_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn play_glitter_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_cleaning_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_multi_change_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn for_each_can_clean_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
 }
 
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence_RButtonHoldSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::ringcleaningcloth::RingCleaningCloth, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , cloth : impl :: core :: convert :: Into < crate :: app :: ringcleaningcloth :: RingCleaningCloth > , callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: ringcleaningcloth :: RingCleaningCloth , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b10ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (cloth) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningSequence), ::core::stringify!(new),));
+ <Self as IRingCleaningSequenceMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-ringcleaningsequence")]
-pub trait IRingCleaningSequence_RButtonHoldSequenceMethods : IRingCleaningSequence_RButtonHoldSequence { # [doc = "`.ctor(crate::app::ringcleaningcloth::RingCleaningCloth, crate::system::action::Action)` overload"] fn ctor (self , cloth : impl :: core :: convert :: Into < crate :: app :: ringcleaningcloth :: RingCleaningCloth > , callback : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence_RButtonHoldSequence , crate :: app :: ringcleaningcloth :: RingCleaningCloth , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b105b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cloth) , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence_RButtonHoldSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b10620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence_RButtonHoldSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b106a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayRubEffect()` overload"] fn play_rub_effect (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence_RButtonHoldSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b10dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] fn end (self ,) -> () { unsafe { let __receiver = < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningSequence_RButtonHoldSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b10e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningsequence")]pub trait IRingCleaningSequence_ConfirmDialogItemYesMethods:IRingCleaningSequence_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]fn ctor(self,action:impl::core::convert::Into<crate::system::action::Action> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RingCleaningSequence_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b10200usize)as*mut u8,();
+(RingCleaningSequence_ConfirmDialogItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(action),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RingCleaningSequence_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b10240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RingCleaningSequence_ConfirmDialogItemYes)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningsequence")]
-impl < __T : IRingCleaningSequence_RButtonHoldSequence > IRingCleaningSequence_RButtonHoldSequenceMethods for __T { }
+#[cfg(feature="app-ringcleaningsequence")]impl<__T:IRingCleaningSequence_ConfirmDialogItemYes>IRingCleaningSequence_ConfirmDialogItemYesMethods for __T{}
 
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence_RButtonHoldSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn play_rub_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningSequence_RButtonHoldSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-ringcleaningsequence")]
-impl RingCleaningSequence_RButtonHoldSequence {
-# [doc = "`.ctor(crate::app::ringcleaningcloth::RingCleaningCloth, crate::system::action::Action)` — overload selector"] pub fn new (cloth : crate :: app :: ringcleaningcloth :: RingCleaningCloth , callback : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningSequence_RButtonHoldSequence) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningSequence_RButtonHoldSequenceMethods > :: ctor (this , cloth , callback) ; this }
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence_ConfirmDialogItemYes{#[doc="`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]pub fn new(action:crate::system::action::Action,text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningSequence_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IRingCleaningSequence_ConfirmDialogItemYesMethods> ::ctor(this,action,text);
+this}
+}
+
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence_ExitConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b10310usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(action))}
+}
+}
+
+#[cfg(feature="app-ringcleaningsequence")]pub trait IRingCleaningSequence_ExitConfirmDialogMethods:IRingCleaningSequence_ExitConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <RingCleaningSequence_ExitConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b10270usize)as*mut u8,();
+(RingCleaningSequence_ExitConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-ringcleaningsequence")]impl<__T:IRingCleaningSequence_ExitConfirmDialog>IRingCleaningSequence_ExitConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence_ExitConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence_ExitConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningSequence_ExitConfirmDialog), ::core::stringify!(new),));
+ <Self as IRingCleaningSequence_ExitConfirmDialogMethods> ::ctor(this,menu_item_list);
+this}
+}
+
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence_RButtonHoldSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::ringcleaningcloth::RingCleaningCloth, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,cloth:impl::core::convert::Into<crate::app::ringcleaningcloth::RingCleaningCloth> ,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b10ec0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::ringcleaningcloth::RingCleaningCloth)::core::convert::Into::into(cloth),(crate::system::action::Action)::core::convert::Into::into(callback))}
+}
+}
+
+#[cfg(feature="app-ringcleaningsequence")]pub trait IRingCleaningSequence_RButtonHoldSequenceMethods:IRingCleaningSequence_RButtonHoldSequence{#[doc="`.ctor(crate::app::ringcleaningcloth::RingCleaningCloth, crate::system::action::Action)` overload"]fn ctor(self,cloth:impl::core::convert::Into<crate::app::ringcleaningcloth::RingCleaningCloth> ,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <RingCleaningSequence_RButtonHoldSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b105b0usize)as*mut u8,();
+(RingCleaningSequence_RButtonHoldSequence)__receiver,(crate::app::ringcleaningcloth::RingCleaningCloth)::core::convert::Into::into(cloth),(crate::system::action::Action)::core::convert::Into::into(callback))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RingCleaningSequence_RButtonHoldSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b10620usize)as*mut u8,();
+(RingCleaningSequence_RButtonHoldSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <RingCleaningSequence_RButtonHoldSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b106a0usize)as*mut u8,();
+(RingCleaningSequence_RButtonHoldSequence)__receiver)}
+}
+#[doc="`PlayRubEffect()` overload"]fn play_rub_effect(self,)->(){unsafe{let __receiver= <RingCleaningSequence_RButtonHoldSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b10dc0usize)as*mut u8,();
+(RingCleaningSequence_RButtonHoldSequence)__receiver)}
+}
+#[doc="`End()` overload"]fn end(self,)->(){unsafe{let __receiver= <RingCleaningSequence_RButtonHoldSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b10e20usize)as*mut u8,();
+(RingCleaningSequence_RButtonHoldSequence)__receiver)}
+}
+}
+
+#[cfg(feature="app-ringcleaningsequence")]impl<__T:IRingCleaningSequence_RButtonHoldSequence>IRingCleaningSequence_RButtonHoldSequenceMethods for __T{}
+
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence_RButtonHoldSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn play_rub_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-ringcleaningsequence")]impl RingCleaningSequence_RButtonHoldSequence{#[doc="`.ctor(crate::app::ringcleaningcloth::RingCleaningCloth, crate::system::action::Action)` — overload selector"]pub fn new(cloth:crate::app::ringcleaningcloth::RingCleaningCloth,callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningSequence_RButtonHoldSequence), ::core::stringify!(new),));
+ <Self as IRingCleaningSequence_RButtonHoldSequenceMethods> ::ctor(this,cloth,callback);
+this}
 }
 
 #[cfg(feature = "app-ringcleaningsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RingCleaningSequence_ConfirmDialogItemYes;
-    pub use super::IRingCleaningSequence_ConfirmDialogItemYes;
-    pub use super::IRingCleaningSequence_ConfirmDialogItemYesMethods;
-    pub use super::RingCleaningSequence_Label;
-    pub use super::RingCleaningSequence_GodType;
-    pub use super::RingCleaningSequence_HitResult;
-    pub use super::RingCleaningSequence_RButtonHoldSequence_Label;
-    pub use super::RingCleaningSequence_ExitConfirmDialog;
-    pub use super::IRingCleaningSequence_ExitConfirmDialog;
-    pub use super::IRingCleaningSequence_ExitConfirmDialogMethods;
     pub use super::RingCleaningSequence_Strength;
     pub use super::RingCleaningSequence;
     pub use super::IRingCleaningSequence;
     pub use super::IRingCleaningSequenceMethods;
+    pub use super::RingCleaningSequence_Label;
+    pub use super::RingCleaningSequence_ConfirmDialogItemYes;
+    pub use super::IRingCleaningSequence_ConfirmDialogItemYes;
+    pub use super::IRingCleaningSequence_ConfirmDialogItemYesMethods;
+    pub use super::RingCleaningSequence_ExitConfirmDialog;
+    pub use super::IRingCleaningSequence_ExitConfirmDialog;
+    pub use super::IRingCleaningSequence_ExitConfirmDialogMethods;
     pub use super::RingCleaningSequence_RButtonHoldSequence;
     pub use super::IRingCleaningSequence_RButtonHoldSequence;
     pub use super::IRingCleaningSequence_RButtonHoldSequenceMethods;
+    pub use super::RingCleaningSequence_HitResult;
+    pub use super::RingCleaningSequence_GodType;
+    pub use super::RingCleaningSequence_RButtonHoldSequence_Label;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

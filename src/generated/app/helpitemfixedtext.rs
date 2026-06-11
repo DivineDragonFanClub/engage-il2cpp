@@ -4,42 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: helpitembase :: { HelpItemBase , IHelpItemBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::helpitembase::{HelpItemBase,IHelpItemBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemfixedtext/HelpItemFixedText.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemFixedText")] # [parent (crate :: app :: helpitembase :: HelpItemBase)] pub struct HelpItemFixedText {
-# [offset (80)] # [rename (name = "m_MID")] pub m_mid : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpitemfixedtext/HelpItemFixedText.md"))]#[::unity2::class(namespace="App",name="HelpItemFixedText")]#[parent(crate::app::helpitembase::HelpItemBase)]pub struct HelpItemFixedText{#[offset(80)]#[rename(name="m_MID")]pub m_mid: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-helpitemfixedtext-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpitemfixedtext")]
-pub trait IHelpItemFixedTextMethods : IHelpItemFixedText { # [doc = "`SetData(::unity2::Il2CppString)` overload"] fn set_data (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HelpItemFixedText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemFixedText , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d2a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < HelpItemFixedText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemFixedText , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"] fn set_contents (self , setter : impl :: core :: convert :: Into < crate :: app :: helpparamsetter :: HelpParamSetter >) -> () { unsafe { let __receiver = < HelpItemFixedText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemFixedText , crate :: app :: helpparamsetter :: HelpParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d2e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemFixedText as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemFixedText , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpitemfixedtext")]pub trait IHelpItemFixedTextMethods:IHelpItemFixedText{#[doc="`SetData(::unity2::Il2CppString)` overload"]fn set_data(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HelpItemFixedText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d2a0usize)as*mut u8,();
+(HelpItemFixedText)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemFixedText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d2b0usize)as*mut u8,bool;
+(HelpItemFixedText)__receiver)}
+}
+#[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemFixedText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d2e0usize)as*mut u8,();
+(HelpItemFixedText)__receiver,(crate::app::helpparamsetter::HelpParamSetter)::core::convert::Into::into(setter))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemFixedText as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d380usize)as*mut u8,();
+(HelpItemFixedText)__receiver)}
+}
+}
 
-#[cfg(feature = "app-helpitemfixedtext")]
-impl < __T : IHelpItemFixedText > IHelpItemFixedTextMethods for __T { }
+#[cfg(feature="app-helpitemfixedtext")]impl<__T:IHelpItemFixedText>IHelpItemFixedTextMethods for __T{}
 
-#[cfg(feature = "app-helpitemfixedtext")]
-impl HelpItemFixedText { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemFixedText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemFixedText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemFixedText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemFixedText as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-helpitemfixedtext")]impl HelpItemFixedText{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-helpitemfixedtext")]
-impl HelpItemFixedText {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemFixedText) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemFixedTextMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpitemfixedtext")]impl HelpItemFixedText{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpItemFixedText), ::core::stringify!(new),));
+ <Self as IHelpItemFixedTextMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpitemfixedtext")]

@@ -4,50 +4,137 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideshot/DragonRideShot.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideShot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideShot {
-# [offset (76)] # [rename (name = "m_PrePosition")] pub m_pre_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (88)] # [rename (name = "m_IsAssist")] pub m_is_assist : bool ,
-# [offset (89)] # [rename (name = "m_IsPenetrate")] pub m_is_penetrate : bool ,
-# [offset (90)] # [rename (name = "m_IsSpecialShot")] pub m_is_special_shot : bool ,
-# [offset (91)] # [rename (name = "m_IsMaximumAssist")] pub m_is_maximum_assist : bool ,
-# [offset (92)] # [rename (name = "m_IsDestroy")] pub m_is_destroy : bool ,
-# [offset (96)] # [rename (name = "m_DiffInterp")] pub m_diff_interp : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (104)] # [rename (name = "m_Effect")] pub m_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (112)] # [rename (name = "m_CheckRayPoint")] pub m_check_ray_point : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (120)] # [rename (name = "m_HitCheckRay")] pub m_hit_check_ray : crate :: unity_engine :: ray :: Ray ,
-# [offset (144)] # [rename (name = "m_LifeTimer")] pub m_life_timer : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideshot/DragonRideShot.md"))]#[::unity2::class(namespace="App",name="DragonRideShot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DragonRideShot{#[offset(76)]#[rename(name="m_PrePosition")]pub m_pre_position:crate::unity_engine::vector3::Vector3, #[offset(88)]#[rename(name="m_IsAssist")]pub m_is_assist:bool, #[offset(89)]#[rename(name="m_IsPenetrate")]pub m_is_penetrate:bool, #[offset(90)]#[rename(name="m_IsSpecialShot")]pub m_is_special_shot:bool, #[offset(91)]#[rename(name="m_IsMaximumAssist")]pub m_is_maximum_assist:bool, #[offset(92)]#[rename(name="m_IsDestroy")]pub m_is_destroy:bool, #[offset(96)]#[rename(name="m_DiffInterp")]pub m_diff_interp:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(104)]#[rename(name="m_Effect")]pub m_effect:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_CheckRayPoint")]pub m_check_ray_point: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(120)]#[rename(name="m_HitCheckRay")]pub m_hit_check_ray:crate::unity_engine::ray::Ray, #[offset(144)]#[rename(name="m_LifeTimer")]pub m_life_timer:f32,}
 
 }
 
 #[cfg(feature = "app-dragonrideshot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonrideshot")]
-pub trait IDragonRideShotMethods : IDragonRideShot { # [doc = "`get_EraseSecond()` overload"] fn get_erase_second (self ,) -> f32 { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EraseSecond(f32)` overload"] fn set_erase_second (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ShotSpeed()` overload"] fn get_shot_speed (self ,) -> f32 { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ShotSpeed(f32)` overload"] fn set_shot_speed (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8950usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsInitialized()` overload"] fn get_is_initialized (self ,) -> bool { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsInitialized(bool)` overload"] fn set_is_initialized (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_StraightVector()` overload"] fn get_straight_vector (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_StraightVector(crate::unity_engine::vector3::Vector3)` overload"] fn set_straight_vector (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FirstVector()` overload"] fn get_first_vector (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad89a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FirstVector(crate::unity_engine::vector3::Vector3)` overload"] fn set_first_vector (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad89b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DiffVector()` overload"] fn get_diff_vector (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad89c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DiffVector(crate::unity_engine::vector3::Vector3)` overload"] fn set_diff_vector (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad89d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_InterpStraightSecond()` overload"] fn get_interp_straight_second (self ,) -> f32 { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad89e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_InterpStraightSecond(f32)` overload"] fn set_interp_straight_second (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad89f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Initialize(bool, bool, bool, bool)` overload"] fn initialize (self , is_assist : impl :: core :: convert :: Into < bool > , is_special : impl :: core :: convert :: Into < bool > , is_penetrate : impl :: core :: convert :: Into < bool > , is_maximum : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , bool , bool , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8a00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_assist) , :: core :: convert :: Into :: into (is_special) , :: core :: convert :: Into :: into (is_penetrate) , :: core :: convert :: Into :: into (is_maximum) , :: core :: option :: Option :: None) } } } # [doc = "`PostUpdate()` overload"] fn post_update (self ,) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad8e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"] fn on_trigger_enter (self , collision : impl :: core :: convert :: Into < crate :: unity_engine :: collider :: Collider >) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , crate :: unity_engine :: collider :: Collider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (collision) , :: core :: option :: Option :: None) } } } # [doc = "`CallReset()` overload"] fn call_reset (self ,) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideShot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonrideshot")]pub trait IDragonRideShotMethods:IDragonRideShot{#[doc="`get_EraseSecond()` overload"]fn get_erase_second(self,)->f32{unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8920usize)as*mut u8,f32;
+(DragonRideShot)__receiver)}
+}
+#[doc="`set_EraseSecond(f32)` overload"]fn set_erase_second(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8930usize)as*mut u8,();
+(DragonRideShot)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ShotSpeed()` overload"]fn get_shot_speed(self,)->f32{unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8940usize)as*mut u8,f32;
+(DragonRideShot)__receiver)}
+}
+#[doc="`set_ShotSpeed(f32)` overload"]fn set_shot_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8950usize)as*mut u8,();
+(DragonRideShot)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsInitialized()` overload"]fn get_is_initialized(self,)->bool{unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8960usize)as*mut u8,bool;
+(DragonRideShot)__receiver)}
+}
+#[doc="`set_IsInitialized(bool)` overload"]fn set_is_initialized(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8970usize)as*mut u8,();
+(DragonRideShot)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_StraightVector()` overload"]fn get_straight_vector(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8980usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(DragonRideShot)__receiver)}
+}
+#[doc="`set_StraightVector(crate::unity_engine::vector3::Vector3)` overload"]fn set_straight_vector(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8990usize)as*mut u8,();
+(DragonRideShot)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_FirstVector()` overload"]fn get_first_vector(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad89a0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(DragonRideShot)__receiver)}
+}
+#[doc="`set_FirstVector(crate::unity_engine::vector3::Vector3)` overload"]fn set_first_vector(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad89b0usize)as*mut u8,();
+(DragonRideShot)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_DiffVector()` overload"]fn get_diff_vector(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad89c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(DragonRideShot)__receiver)}
+}
+#[doc="`set_DiffVector(crate::unity_engine::vector3::Vector3)` overload"]fn set_diff_vector(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad89d0usize)as*mut u8,();
+(DragonRideShot)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_InterpStraightSecond()` overload"]fn get_interp_straight_second(self,)->f32{unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad89e0usize)as*mut u8,f32;
+(DragonRideShot)__receiver)}
+}
+#[doc="`set_InterpStraightSecond(f32)` overload"]fn set_interp_straight_second(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad89f0usize)as*mut u8,();
+(DragonRideShot)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Initialize(bool, bool, bool, bool)` overload"]fn initialize(self,is_assist:impl::core::convert::Into<bool> ,is_special:impl::core::convert::Into<bool> ,is_penetrate:impl::core::convert::Into<bool> ,is_maximum:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8a00usize)as*mut u8,();
+(DragonRideShot)__receiver,(bool)::core::convert::Into::into(is_assist),(bool)::core::convert::Into::into(is_special),(bool)::core::convert::Into::into(is_penetrate),(bool)::core::convert::Into::into(is_maximum))}
+}
+#[doc="`PostUpdate()` overload"]fn post_update(self,)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad8e10usize)as*mut u8,();
+(DragonRideShot)__receiver)}
+}
+#[doc="`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_enter(self,collision:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9640usize)as*mut u8,();
+(DragonRideShot)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(collision))}
+}
+#[doc="`CallReset()` overload"]fn call_reset(self,)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9650usize)as*mut u8,();
+(DragonRideShot)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9750usize)as*mut u8,();
+(DragonRideShot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9760usize)as*mut u8,();
+(DragonRideShot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonrideshot")]
-impl < __T : IDragonRideShot > IDragonRideShotMethods for __T { }
+#[cfg(feature="app-dragonrideshot")]impl<__T:IDragonRideShot>IDragonRideShotMethods for __T{}
 
-#[cfg(feature = "app-dragonrideshot")]
-impl DragonRideShot { pub fn get_erase_second_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_erase_second_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_shot_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_shot_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_initialized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_is_initialized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_straight_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_straight_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_first_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_first_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_diff_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_diff_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_interp_straight_second_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_interp_straight_second_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn post_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn on_trigger_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn call_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
+#[cfg(feature="app-dragonrideshot")]impl DragonRideShot{pub fn get_erase_second_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_erase_second_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_shot_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_shot_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_is_initialized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_straight_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_straight_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_first_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_first_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_diff_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_diff_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_interp_straight_second_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_interp_straight_second_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn post_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn on_trigger_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn call_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
 
-#[cfg(feature = "app-dragonrideshot")]
-impl DragonRideShot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideShot) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideShotMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonrideshot")]impl DragonRideShot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideShot), ::core::stringify!(new),));
+ <Self as IDragonRideShotMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonrideshot")]

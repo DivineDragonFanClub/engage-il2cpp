@@ -4,38 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfosight/MapInfoSight.md"))] # [:: unity2 :: class (namespace = "" , name = "MapInfoSight")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapInfoSight {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapinfosight/MapInfoSight.md"))]#[::unity2::class(namespace="",name="MapInfoSight")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapInfoSight{}
 
 }
 
 #[cfg(feature = "root-mapinfosight-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapinfosight")]
-pub trait IMapInfoSightMethods : IMapInfoSight { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapInfoSight as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoSight , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2086510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapinfosight")]pub trait IMapInfoSightMethods:IMapInfoSight{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInfoSight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2086510usize)as*mut u8,();
+(MapInfoSight)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapinfosight")]
-impl < __T : IMapInfoSight > IMapInfoSightMethods for __T { }
+#[cfg(feature="root-mapinfosight")]impl<__T:IMapInfoSight>IMapInfoSightMethods for __T{}
 
-#[cfg(feature = "root-mapinfosight")]
-impl MapInfoSight { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoSight as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-mapinfosight")]impl MapInfoSight{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-mapinfosight")]
-impl MapInfoSight {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoSight) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoSightMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapinfosight")]impl MapInfoSight{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInfoSight), ::core::stringify!(new),));
+ <Self as IMapInfoSightMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapinfosight")]

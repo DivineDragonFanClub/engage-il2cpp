@@ -4,32 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsm/FSM.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "FSM")] # [parent (crate :: system :: object :: Object)] pub struct FSM {
-# [offset (16)] # [rename (name = "StateList")] pub state_list : crate :: system :: collections :: generic :: linkedlist_1 :: LinkedList_1 < crate :: combat :: state :: State > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fsm/FSM.md"))]#[::unity2::class(namespace="Combat",name="FSM")]#[parent(crate::system::object::Object)]pub struct FSM{#[offset(16)]#[rename(name="StateList")]pub state_list:crate::system::collections::generic::linkedlist_1::LinkedList_1<crate::combat::state::State> ,}
 
 }
 
 #[cfg(feature = "combat-fsm-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-fsm")]
-pub trait IFSMMethods : IFSM { # [doc = "`get_CurrentState()` overload"] fn get_current_state (self ,) -> crate :: combat :: state :: State { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , :: unity2 :: OptionalMethod ,) -> crate :: combat :: state :: State = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d46400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d46470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d46500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d46570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d466b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d469b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCore(crate::system::action_1::Action_1<crate::combat::state::State>)` overload"] fn update_core (self , update_func : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: combat :: state :: State > >) -> () { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , crate :: system :: action_1 :: Action_1 < crate :: combat :: state :: State > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d467d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (update_func) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::combat::state::State)` overload"] fn add (self , state : impl :: core :: convert :: Into < crate :: combat :: state :: State >) -> () { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , crate :: combat :: state :: State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d46ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`AddFirst(crate::combat::state::State)` overload"] fn add_first (self , state : impl :: core :: convert :: Into < crate :: combat :: state :: State >) -> () { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , crate :: combat :: state :: State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d46b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d46c30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DebuggerDisplay()` overload"] fn get_debugger_display (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d46cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FSM as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FSM , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d46d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-fsm")]pub trait IFSMMethods:IFSM{#[doc="`get_CurrentState()` overload"]fn get_current_state(self,)->crate::combat::state::State{unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46400usize)as*mut u8,crate::combat::state::State;
+(FSM)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46470usize)as*mut u8,();
+(FSM)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46500usize)as*mut u8,();
+(FSM)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46570usize)as*mut u8,();
+(FSM)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d466b0usize)as*mut u8,();
+(FSM)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d469b0usize)as*mut u8,();
+(FSM)__receiver)}
+}
+#[doc="`UpdateCore(crate::system::action_1::Action_1<crate::combat::state::State>)` overload"]fn update_core(self,update_func:impl::core::convert::Into<crate::system::action_1::Action_1<crate::combat::state::State> >)->(){unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d467d0usize)as*mut u8,();
+(FSM)__receiver,(crate::system::action_1::Action_1<crate::combat::state::State>)::core::convert::Into::into(update_func))}
+}
+#[doc="`Add(crate::combat::state::State)` overload"]fn add(self,state:impl::core::convert::Into<crate::combat::state::State>)->(){unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46ad0usize)as*mut u8,();
+(FSM)__receiver,(crate::combat::state::State)::core::convert::Into::into(state))}
+}
+#[doc="`AddFirst(crate::combat::state::State)` overload"]fn add_first(self,state:impl::core::convert::Into<crate::combat::state::State>)->(){unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46b30usize)as*mut u8,();
+(FSM)__receiver,(crate::combat::state::State)::core::convert::Into::into(state))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46c30usize)as*mut u8,();
+(FSM)__receiver)}
+}
+#[doc="`get_DebuggerDisplay()` overload"]fn get_debugger_display(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46cf0usize)as*mut u8, ::unity2::Il2CppString;
+(FSM)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FSM as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d46d00usize)as*mut u8, ::unity2::Il2CppString;
+(FSM)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-fsm")]
-impl < __T : IFSM > IFSMMethods for __T { }
+#[cfg(feature="combat-fsm")]impl<__T:IFSM>IFSMMethods for __T{}
 
-#[cfg(feature = "combat-fsm")]
-impl FSM { pub fn get_current_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn update_core_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_first_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_debugger_display_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FSM as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="combat-fsm")]impl FSM{pub fn get_current_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_core_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_first_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_debugger_display_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "combat-fsm")]
-impl FSM {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FSM) , :: core :: stringify ! (new) ,)) ; < Self as IFSMMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-fsm")]impl FSM{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FSM), ::core::stringify!(new),));
+ <Self as IFSMMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-fsm")]

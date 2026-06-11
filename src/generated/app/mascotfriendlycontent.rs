@@ -4,48 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotfriendlycontent/MascotFriendlyContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "MascotFriendlyContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MascotFriendlyContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "UIName")] pub ui_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_gauge")] pub m_gauge : crate :: app :: interpolatorfloat :: InterpolatorFloat ,
-# [offset (32)] # [rename (name = "m_gaugeImage")] pub m_gauge_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (40)] # [rename (name = "m_animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (48)] # [rename (name = "m_max")] pub m_max : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mascotfriendlycontent/MascotFriendlyContent.md"))]#[::unity2::class(namespace="App",name="MascotFriendlyContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MascotFriendlyContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="UIName")]pub ui_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_gauge")]pub m_gauge:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(32)]#[rename(name="m_gaugeImage")]pub m_gauge_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(48)]#[rename(name="m_max")]pub m_max:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-mascotfriendlycontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mascotfriendlycontent")]
-impl MascotFriendlyContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2038da0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2038e40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2038ec0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: mascotfriendlycontent :: MascotFriendlyContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mascotfriendlycontent :: MascotFriendlyContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2038f40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] pub fn destroy () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039010usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotfriendlycontent")]impl MascotFriendlyContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2038da0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2038e40usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2038ec0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::mascotfriendlycontent::MascotFriendlyContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2038f40usize)as*mut u8,crate::app::mascotfriendlycontent::MascotFriendlyContent;
+)}
+}
+#[doc="`Destroy()` overload"]pub fn destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2039010usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mascotfriendlycontent")]
-pub trait IMascotFriendlyContentMethods : IMascotFriendlyContent { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MascotFriendlyContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFriendlyContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20390a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < MascotFriendlyContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFriendlyContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < MascotFriendlyContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFriendlyContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryPopup()` overload"] fn try_popup (self ,) -> () { unsafe { let __receiver = < MascotFriendlyContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFriendlyContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20392d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MascotFriendlyContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFriendlyContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MascotFriendlyContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MascotFriendlyContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2039510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mascotfriendlycontent")]pub trait IMascotFriendlyContentMethods:IMascotFriendlyContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MascotFriendlyContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20390a0usize)as*mut u8,();
+(MascotFriendlyContent)__receiver)}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <MascotFriendlyContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039210usize)as*mut u8,();
+(MascotFriendlyContent)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <MascotFriendlyContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039270usize)as*mut u8,();
+(MascotFriendlyContent)__receiver)}
+}
+#[doc="`TryPopup()` overload"]fn try_popup(self,)->(){unsafe{let __receiver= <MascotFriendlyContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20392d0usize)as*mut u8,();
+(MascotFriendlyContent)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MascotFriendlyContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039370usize)as*mut u8,();
+(MascotFriendlyContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MascotFriendlyContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2039510usize)as*mut u8,();
+(MascotFriendlyContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mascotfriendlycontent")]
-impl < __T : IMascotFriendlyContent > IMascotFriendlyContentMethods for __T { }
+#[cfg(feature="app-mascotfriendlycontent")]impl<__T:IMascotFriendlyContent>IMascotFriendlyContentMethods for __T{}
 
-#[cfg(feature = "app-mascotfriendlycontent")]
-impl MascotFriendlyContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn try_popup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MascotFriendlyContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-mascotfriendlycontent")]impl MascotFriendlyContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn try_popup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-mascotfriendlycontent")]
-impl MascotFriendlyContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MascotFriendlyContent) , :: core :: stringify ! (new) ,)) ; < Self as IMascotFriendlyContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mascotfriendlycontent")]impl MascotFriendlyContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MascotFriendlyContent), ::core::stringify!(new),));
+ <Self as IMascotFriendlyContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mascotfriendlycontent")]

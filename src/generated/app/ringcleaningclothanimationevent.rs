@@ -4,44 +4,101 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningclothanimationevent/RingCleaningClothAnimationEvent.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCleaningClothAnimationEvent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingCleaningClothAnimationEvent {
-# [static_field] # [rename (name = "s_AnimTime")] pub s_anim_time : f32 ,
-# [offset (40)] # [rename (name = "m_Animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcleaningclothanimationevent/RingCleaningClothAnimationEvent.md"))]#[::unity2::class(namespace="App",name="RingCleaningClothAnimationEvent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingCleaningClothAnimationEvent{#[static_field]#[rename(name="s_AnimTime")]pub s_anim_time:f32, #[offset(40)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator,}
 
 }
 
 #[cfg(feature = "app-ringcleaningclothanimationevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringcleaningclothanimationevent")]
-impl RingCleaningClothAnimationEvent { # [doc = "`get_IsPlayingAnim()` overload"] pub fn get_is_playing_anim () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsPlayingAnim(bool)` overload"] pub fn set_is_playing_anim (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24171b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417420usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningclothanimationevent")]impl RingCleaningClothAnimationEvent{#[doc="`get_IsPlayingAnim()` overload"]pub fn get_is_playing_anim()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2417140usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsPlayingAnim(bool)` overload"]pub fn set_is_playing_anim(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24171b0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2417420usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningclothanimationevent")]
-pub trait IRingCleaningClothAnimationEventMethods : IRingCleaningClothAnimationEvent { # [doc = "`get_CleaningLoopStartAction()` overload"] fn get_cleaning_loop_start_action (self ,) -> crate :: system :: action :: Action { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , :: unity2 :: OptionalMethod ,) -> crate :: system :: action :: Action = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CleaningLoopStartAction(crate::system::action::Action)` overload"] fn set_cleaning_loop_start_action (self , value : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_StrongCleaningLoopStartAction()` overload"] fn get_strong_cleaning_loop_start_action (self ,) -> crate :: system :: action :: Action { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , :: unity2 :: OptionalMethod ,) -> crate :: system :: action :: Action = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_StrongCleaningLoopStartAction(crate::system::action::Action)` overload"] fn set_strong_cleaning_loop_start_action (self , value : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CleaningStartEvent()` overload"] fn cleaning_start_event (self ,) -> () { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24172e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CleaningEndEvent()` overload"] fn cleaning_end_event (self ,) -> () { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StrongCleaningStartEvent()` overload"] fn strong_cleaning_start_event (self ,) -> () { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StrongCleaningEndEvent()` overload"] fn strong_cleaning_end_event (self ,) -> () { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCleaningClothAnimationEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCleaningClothAnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2417410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcleaningclothanimationevent")]pub trait IRingCleaningClothAnimationEventMethods:IRingCleaningClothAnimationEvent{#[doc="`get_CleaningLoopStartAction()` overload"]fn get_cleaning_loop_start_action(self,)->crate::system::action::Action{unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417230usize)as*mut u8,crate::system::action::Action;
+(RingCleaningClothAnimationEvent)__receiver)}
+}
+#[doc="`set_CleaningLoopStartAction(crate::system::action::Action)` overload"]fn set_cleaning_loop_start_action(self,value:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417240usize)as*mut u8,();
+(RingCleaningClothAnimationEvent)__receiver,(crate::system::action::Action)::core::convert::Into::into(value))}
+}
+#[doc="`get_StrongCleaningLoopStartAction()` overload"]fn get_strong_cleaning_loop_start_action(self,)->crate::system::action::Action{unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417250usize)as*mut u8,crate::system::action::Action;
+(RingCleaningClothAnimationEvent)__receiver)}
+}
+#[doc="`set_StrongCleaningLoopStartAction(crate::system::action::Action)` overload"]fn set_strong_cleaning_loop_start_action(self,value:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417260usize)as*mut u8,();
+(RingCleaningClothAnimationEvent)__receiver,(crate::system::action::Action)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417270usize)as*mut u8,();
+(RingCleaningClothAnimationEvent)__receiver)}
+}
+#[doc="`CleaningStartEvent()` overload"]fn cleaning_start_event(self,)->(){unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24172e0usize)as*mut u8,();
+(RingCleaningClothAnimationEvent)__receiver)}
+}
+#[doc="`CleaningEndEvent()` overload"]fn cleaning_end_event(self,)->(){unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417300usize)as*mut u8,();
+(RingCleaningClothAnimationEvent)__receiver)}
+}
+#[doc="`StrongCleaningStartEvent()` overload"]fn strong_cleaning_start_event(self,)->(){unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417310usize)as*mut u8,();
+(RingCleaningClothAnimationEvent)__receiver)}
+}
+#[doc="`StrongCleaningEndEvent()` overload"]fn strong_cleaning_end_event(self,)->(){unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417330usize)as*mut u8,();
+(RingCleaningClothAnimationEvent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingCleaningClothAnimationEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2417410usize)as*mut u8,();
+(RingCleaningClothAnimationEvent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringcleaningclothanimationevent")]
-impl < __T : IRingCleaningClothAnimationEvent > IRingCleaningClothAnimationEventMethods for __T { }
+#[cfg(feature="app-ringcleaningclothanimationevent")]impl<__T:IRingCleaningClothAnimationEvent>IRingCleaningClothAnimationEventMethods for __T{}
 
-#[cfg(feature = "app-ringcleaningclothanimationevent")]
-impl RingCleaningClothAnimationEvent { pub fn get_is_playing_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_playing_anim_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_cleaning_loop_start_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_cleaning_loop_start_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_strong_cleaning_loop_start_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_strong_cleaning_loop_start_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cleaning_start_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cleaning_end_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn strong_cleaning_start_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn strong_cleaning_end_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCleaningClothAnimationEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-ringcleaningclothanimationevent")]impl RingCleaningClothAnimationEvent{pub fn get_is_playing_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_playing_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_cleaning_loop_start_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_cleaning_loop_start_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_strong_cleaning_loop_start_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_strong_cleaning_loop_start_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cleaning_start_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cleaning_end_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn strong_cleaning_start_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn strong_cleaning_end_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-ringcleaningclothanimationevent")]
-impl RingCleaningClothAnimationEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCleaningClothAnimationEvent) , :: core :: stringify ! (new) ,)) ; < Self as IRingCleaningClothAnimationEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringcleaningclothanimationevent")]impl RingCleaningClothAnimationEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCleaningClothAnimationEvent), ::core::stringify!(new),));
+ <Self as IRingCleaningClothAnimationEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringcleaningclothanimationevent")]

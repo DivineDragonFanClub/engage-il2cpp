@@ -4,23 +4,73 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/__error/__Error.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "__Error")] # [parent (crate :: system :: object :: Object)] pub struct __Error {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/__error/__Error.md"))]#[::unity2::class(namespace="System.IO",name="__Error")]#[parent(crate::system::object::Object)]pub struct __Error{}
 
 }
 
 #[cfg(feature = "system-io-__error-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-__error")]
-impl __Error { # [doc = "`EndOfFile()` overload"] pub fn end_of_file () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34c9ce0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`FileNotOpen()` overload"] pub fn file_not_open () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34c9d40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`StreamIsClosed()` overload"] pub fn stream_is_closed () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34c9da0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`MemoryStreamNotExpandable()` overload"] pub fn memory_stream_not_expandable () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34c9e00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ReaderClosed()` overload"] pub fn reader_closed () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34c9e60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ReadNotSupported()` overload"] pub fn read_not_supported () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34c9ec0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`WrongAsyncResult()` overload"] pub fn wrong_async_result () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34c9f20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EndReadCalledTwice()` overload"] pub fn end_read_called_twice () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34c9f80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EndWriteCalledTwice()` overload"] pub fn end_write_called_twice () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34c9fe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetDisplayablePath(::unity2::Il2CppString, bool)` overload"] pub fn get_displayable_path (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_invalid_path : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34ca040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (is_invalid_path) , :: core :: option :: Option :: None) } } } # [doc = "`WinIOError(i32, ::unity2::Il2CppString)` overload"] pub fn win_io_error (error_code : impl :: core :: convert :: Into < i32 > , maybe_full_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34ca180usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (error_code) , :: core :: convert :: Into :: into (maybe_full_path) , :: core :: option :: Option :: None) } } } # [doc = "`WriteNotSupported()` overload"] pub fn write_not_supported () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34ca6e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`WriterClosed()` overload"] pub fn writer_closed () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34ca740usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-__error")]impl __Error{#[doc="`EndOfFile()` overload"]pub fn end_of_file()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34c9ce0usize)as*mut u8,();
+)}
+}
+#[doc="`FileNotOpen()` overload"]pub fn file_not_open()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34c9d40usize)as*mut u8,();
+)}
+}
+#[doc="`StreamIsClosed()` overload"]pub fn stream_is_closed()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34c9da0usize)as*mut u8,();
+)}
+}
+#[doc="`MemoryStreamNotExpandable()` overload"]pub fn memory_stream_not_expandable()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34c9e00usize)as*mut u8,();
+)}
+}
+#[doc="`ReaderClosed()` overload"]pub fn reader_closed()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34c9e60usize)as*mut u8,();
+)}
+}
+#[doc="`ReadNotSupported()` overload"]pub fn read_not_supported()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34c9ec0usize)as*mut u8,();
+)}
+}
+#[doc="`WrongAsyncResult()` overload"]pub fn wrong_async_result()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34c9f20usize)as*mut u8,();
+)}
+}
+#[doc="`EndReadCalledTwice()` overload"]pub fn end_read_called_twice()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34c9f80usize)as*mut u8,();
+)}
+}
+#[doc="`EndWriteCalledTwice()` overload"]pub fn end_write_called_twice()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34c9fe0usize)as*mut u8,();
+)}
+}
+#[doc="`GetDisplayablePath(::unity2::Il2CppString, bool)` overload"]pub fn get_displayable_path(path:impl::core::convert::Into< ::unity2::Il2CppString> ,is_invalid_path:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34ca040usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(bool)::core::convert::Into::into(is_invalid_path))}
+}
+#[doc="`WinIOError(i32, ::unity2::Il2CppString)` overload"]pub fn win_io_error(error_code:impl::core::convert::Into<i32> ,maybe_full_path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34ca180usize)as*mut u8,();
+(i32)::core::convert::Into::into(error_code),(::unity2::Il2CppString)::core::convert::Into::into(maybe_full_path))}
+}
+#[doc="`WriteNotSupported()` overload"]pub fn write_not_supported()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34ca6e0usize)as*mut u8,();
+)}
+}
+#[doc="`WriterClosed()` overload"]pub fn writer_closed()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34ca740usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-io-__error")]
-impl __Error { pub fn end_of_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn file_not_open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn stream_is_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn memory_stream_not_expandable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn reader_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn read_not_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn wrong_async_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn end_read_called_twice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn end_write_called_twice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_displayable_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn win_io_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn write_not_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn writer_closed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < __Error as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="system-io-__error")]impl __Error{pub fn end_of_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn file_not_open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn stream_is_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn memory_stream_not_expandable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reader_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn read_not_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn wrong_async_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn end_read_called_twice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn end_write_called_twice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_displayable_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn win_io_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn write_not_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn writer_closed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
 #[cfg(feature = "system-io-__error")]
 #[doc(hidden)]

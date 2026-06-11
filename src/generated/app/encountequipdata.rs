@@ -4,43 +4,91 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountequipdata/EncountEquipData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EncountEquipData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: encountequipdata :: EncountEquipData >)] pub struct EncountEquipData {
-# [static_field] # [rename (name = "RankNone")] pub rank_none : i32 ,
-# [offset (52)] # [rename (name = "m_LowerRank")] pub m_lower_rank : i32 ,
-# [offset (56)] # [rename (name = "m_UpperRank")] pub m_upper_rank : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountequipdata/EncountEquipData.md"))]#[::unity2::class(namespace="App",name="EncountEquipData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::encountequipdata::EncountEquipData>)]pub struct EncountEquipData{#[static_field]#[rename(name="RankNone")]pub rank_none:i32, #[offset(52)]#[rename(name="m_LowerRank")]pub m_lower_rank:i32, #[offset(56)]#[rename(name="m_UpperRank")]pub m_upper_rank:i32,}
 
 }
 
 #[cfg(feature = "app-encountequipdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-encountequipdata")]
-impl EncountEquipData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dac40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-encountequipdata")]impl EncountEquipData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dac40usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-encountequipdata")]
-pub trait IEncountEquipDataMethods : IEncountEquipData { # [doc = "`get_Category()` overload"] fn get_category (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Category(::unity2::Il2CppString)` overload"] fn set_category (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Percentage()` overload"] fn get_percentage (self ,) -> u8 { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Percentage(u8)` overload"] fn set_percentage (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dca10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetKindCount(crate::app::itemdata::ItemData_Kinds)` overload"] fn get_kind_count (self , kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> i32 { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dca20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetKindCount(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"] fn get_kind_count_2 (self , kinds : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > >) -> i32 { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , :: unity2 :: Array < crate :: app :: itemdata :: ItemData_Kinds > , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dcbf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kinds) , :: core :: option :: Option :: None) } } } # [doc = "`IsContains(i32)` overload"] fn is_contains (self , rank : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dc200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rank) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EncountEquipData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountEquipData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22dcc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-encountequipdata")]pub trait IEncountEquipDataMethods:IEncountEquipData{#[doc="`get_Category()` overload"]fn get_category(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dc8d0usize)as*mut u8, ::unity2::Il2CppString;
+(EncountEquipData)__receiver)}
+}
+#[doc="`set_Category(::unity2::Il2CppString)` overload"]fn set_category(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dc8e0usize)as*mut u8,();
+(EncountEquipData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Percentage()` overload"]fn get_percentage(self,)->u8{unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dc8f0usize)as*mut u8,u8;
+(EncountEquipData)__receiver)}
+}
+#[doc="`set_Percentage(u8)` overload"]fn set_percentage(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dc900usize)as*mut u8,();
+(EncountEquipData)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dc910usize)as*mut u8,();
+(EncountEquipData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dca10usize)as*mut u8, ::unity2::Il2CppString;
+(EncountEquipData)__receiver)}
+}
+#[doc="`GetKindCount(crate::app::itemdata::ItemData_Kinds)` overload"]fn get_kind_count(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->i32{unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dca20usize)as*mut u8,i32;
+(EncountEquipData)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`GetKindCount(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)` overload"]fn get_kind_count_2(self,kinds:impl::core::convert::Into< ::unity2::Array<crate::app::itemdata::ItemData_Kinds> >)->i32{unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dcbf0usize)as*mut u8,i32;
+(EncountEquipData)__receiver,(::unity2::Array<crate::app::itemdata::ItemData_Kinds>)::core::convert::Into::into(kinds))}
+}
+#[doc="`IsContains(i32)` overload"]fn is_contains(self,rank:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dc200usize)as*mut u8,bool;
+(EncountEquipData)__receiver,(i32)::core::convert::Into::into(rank))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22dcc80usize)as*mut u8,();
+(EncountEquipData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-encountequipdata")]
-impl < __T : IEncountEquipData > IEncountEquipDataMethods for __T { }
+#[cfg(feature="app-encountequipdata")]impl<__T:IEncountEquipData>IEncountEquipDataMethods for __T{}
 
-#[cfg(feature = "app-encountequipdata")]
-impl EncountEquipData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_category_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_percentage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_percentage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_kind_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_kind_count_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountEquipData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-encountequipdata")]impl EncountEquipData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_percentage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_percentage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_kind_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_kind_count_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-encountequipdata")]
-impl EncountEquipData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EncountEquipData) , :: core :: stringify ! (new) ,)) ; < Self as IEncountEquipDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-encountequipdata")]impl EncountEquipData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EncountEquipData), ::core::stringify!(new),));
+ <Self as IEncountEquipDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-encountequipdata")]

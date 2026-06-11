@@ -4,32 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionbase/ActionBase.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionBase")] # [parent (crate :: combat :: state :: State)] pub struct ActionBase {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionbase/ActionBase.md"))]#[::unity2::class(namespace="Combat",name="ActionBase")]#[parent(crate::combat::state::State)]pub struct ActionBase{}
 
 }
 
 #[cfg(feature = "combat-actionbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionbase")]
-pub trait IActionBaseMethods : IActionBase { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < ActionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionBase , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_CP(crate::combat::character::Character)` overload"] fn set_cp (self , value : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < ActionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionBase , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_Phase()` overload"] fn get_m_phase (self ,) -> crate :: combat :: phase :: Phase { unsafe { let __receiver = < ActionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionBase , :: unity2 :: OptionalMethod ,) -> crate :: combat :: phase :: Phase = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Phase(crate::combat::phase::Phase)` overload"] fn set_m_phase (self , value : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < ActionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionBase , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < ActionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionBase , crate :: combat :: character :: Character , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3f40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } # [doc = "`SetPhaseForRush(crate::combat::phase::Phase)` overload"] fn set_phase_for_rush (self , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < ActionBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionBase , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionbase")]pub trait IActionBaseMethods:IActionBase{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <ActionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3f00usize)as*mut u8,crate::combat::character::Character;
+(ActionBase)__receiver)}
+}
+#[doc="`set_CP(crate::combat::character::Character)` overload"]fn set_cp(self,value:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <ActionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3f10usize)as*mut u8,();
+(ActionBase)__receiver,(crate::combat::character::Character)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_Phase()` overload"]fn get_m_phase(self,)->crate::combat::phase::Phase{unsafe{let __receiver= <ActionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3f20usize)as*mut u8,crate::combat::phase::Phase;
+(ActionBase)__receiver)}
+}
+#[doc="`set_m_Phase(crate::combat::phase::Phase)` overload"]fn set_m_phase(self,value:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <ActionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3f30usize)as*mut u8,();
+(ActionBase)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <ActionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3f40usize)as*mut u8,();
+(ActionBase)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+#[doc="`SetPhaseForRush(crate::combat::phase::Phase)` overload"]fn set_phase_for_rush(self,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <ActionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3940usize)as*mut u8,();
+(ActionBase)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+}
 
-#[cfg(feature = "combat-actionbase")]
-impl < __T : IActionBase > IActionBaseMethods for __T { }
+#[cfg(feature="combat-actionbase")]impl<__T:IActionBase>IActionBaseMethods for __T{}
 
-#[cfg(feature = "combat-actionbase")]
-impl ActionBase { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_m_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_m_phase_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_phase_for_rush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-actionbase")]impl ActionBase{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_phase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_phase_for_rush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-actionbase")]
-impl ActionBase {
-# [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , phase : crate :: combat :: phase :: Phase) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionBase) , :: core :: stringify ! (new) ,)) ; < Self as IActionBaseMethods > :: ctor (this , chr , phase) ; this }
+#[cfg(feature="combat-actionbase")]impl ActionBase{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"]pub fn new(chr:crate::combat::character::Character,phase:crate::combat::phase::Phase)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionBase), ::core::stringify!(new),));
+ <Self as IActionBaseMethods> ::ctor(this,chr,phase);
+this}
 }
 
 #[cfg(feature = "combat-actionbase")]

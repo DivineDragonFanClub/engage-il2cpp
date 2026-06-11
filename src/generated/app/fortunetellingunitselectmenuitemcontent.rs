@@ -4,42 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingunitselectmenuitemcontent/FortuneTellingUnitSelectMenuItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "FortuneTellingUnitSelectMenuItemContent")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct FortuneTellingUnitSelectMenuItemContent {
-# [offset (72)] # [rename (name = "m_Setter")] pub m_setter : crate :: app :: unitmenuitemsetter :: UnitMenuItemSetter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingunitselectmenuitemcontent/FortuneTellingUnitSelectMenuItemContent.md"))]#[::unity2::class(namespace="App",name="FortuneTellingUnitSelectMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct FortuneTellingUnitSelectMenuItemContent{#[offset(72)]#[rename(name="m_Setter")]pub m_setter:crate::app::unitmenuitemsetter::UnitMenuItemSetter,}
 
 }
 
 #[cfg(feature = "app-fortunetellingunitselectmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fortunetellingunitselectmenuitemcontent")]
-pub trait IFortuneTellingUnitSelectMenuItemContentMethods : IFortuneTellingUnitSelectMenuItemContent { # [doc = "`GetTextMeshProComponent()` overload"] fn get_text_mesh_pro_component (self ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI { unsafe { let __receiver = < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261ae10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenuItemContent , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261ae30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261af60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261aee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FortuneTellingUnitSelectMenuItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x261afb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fortunetellingunitselectmenuitemcontent")]pub trait IFortuneTellingUnitSelectMenuItemContentMethods:IFortuneTellingUnitSelectMenuItemContent{#[doc="`GetTextMeshProComponent()` overload"]fn get_text_mesh_pro_component(self,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{unsafe{let __receiver= <FortuneTellingUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261ae10usize)as*mut u8,crate::tm_pro::textmeshprougui::TextMeshProUGUI;
+(FortuneTellingUnitSelectMenuItemContent)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261ae30usize)as*mut u8,();
+(FortuneTellingUnitSelectMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261af60usize)as*mut u8,();
+(FortuneTellingUnitSelectMenuItemContent)__receiver)}
+}
+#[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <FortuneTellingUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261aee0usize)as*mut u8,crate::app::unit::Unit;
+(FortuneTellingUnitSelectMenuItemContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x261afb0usize)as*mut u8,();
+(FortuneTellingUnitSelectMenuItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fortunetellingunitselectmenuitemcontent")]
-impl < __T : IFortuneTellingUnitSelectMenuItemContent > IFortuneTellingUnitSelectMenuItemContentMethods for __T { }
+#[cfg(feature="app-fortunetellingunitselectmenuitemcontent")]impl<__T:IFortuneTellingUnitSelectMenuItemContent>IFortuneTellingUnitSelectMenuItemContentMethods for __T{}
 
-#[cfg(feature = "app-fortunetellingunitselectmenuitemcontent")]
-impl FortuneTellingUnitSelectMenuItemContent { pub fn get_text_mesh_pro_component_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FortuneTellingUnitSelectMenuItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-fortunetellingunitselectmenuitemcontent")]impl FortuneTellingUnitSelectMenuItemContent{pub fn get_text_mesh_pro_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-fortunetellingunitselectmenuitemcontent")]
-impl FortuneTellingUnitSelectMenuItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FortuneTellingUnitSelectMenuItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IFortuneTellingUnitSelectMenuItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fortunetellingunitselectmenuitemcontent")]impl FortuneTellingUnitSelectMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FortuneTellingUnitSelectMenuItemContent), ::core::stringify!(new),));
+ <Self as IFortuneTellingUnitSelectMenuItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fortunetellingunitselectmenuitemcontent")]

@@ -4,44 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/boundingboxdrawer/BoundingBoxDrawer.md"))] # [:: unity2 :: class (namespace = "App" , name = "BoundingBoxDrawer")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct BoundingBoxDrawer {
-# [offset (24)] # [rename (name = "m_OnlySelected")] pub m_only_selected : bool ,
-# [offset (28)] # [rename (name = "m_Alpha")] pub m_alpha : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/boundingboxdrawer/BoundingBoxDrawer.md"))]#[::unity2::class(namespace="App",name="BoundingBoxDrawer")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct BoundingBoxDrawer{#[offset(24)]#[rename(name="m_OnlySelected")]pub m_only_selected:bool, #[offset(28)]#[rename(name="m_Alpha")]pub m_alpha:f32,}
 
 }
 
 #[cfg(feature = "app-boundingboxdrawer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-boundingboxdrawer")]
-impl BoundingBoxDrawer { # [doc = "`DrawBoundingBox(crate::unity_engine::bounds::Bounds, crate::unity_engine::gameobject::GameObject, f32)` overload"] pub fn draw_bounding_box (bounds : impl :: core :: convert :: Into < crate :: unity_engine :: bounds :: Bounds > , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , alpha : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: bounds :: Bounds , crate :: unity_engine :: gameobject :: GameObject , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298aec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (bounds) , :: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (alpha) , :: core :: option :: Option :: None) } } } # [doc = "`DrawBoundingBox(crate::unity_engine::gameobject::GameObject, f32)` overload"] pub fn draw_bounding_box_2 (go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , alpha : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298aed0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (alpha) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-boundingboxdrawer")]impl BoundingBoxDrawer{#[doc="`DrawBoundingBox(crate::unity_engine::bounds::Bounds, crate::unity_engine::gameobject::GameObject, f32)` overload"]pub fn draw_bounding_box(bounds:impl::core::convert::Into<crate::unity_engine::bounds::Bounds> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,alpha:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298aec0usize)as*mut u8,();
+(crate::unity_engine::bounds::Bounds)::core::convert::Into::into(bounds),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(f32)::core::convert::Into::into(alpha))}
+}
+#[doc="`DrawBoundingBox(crate::unity_engine::gameobject::GameObject, f32)` overload"]pub fn draw_bounding_box_2(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,alpha:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298aed0usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(f32)::core::convert::Into::into(alpha))}
+}
+}
 
-#[cfg(feature = "app-boundingboxdrawer")]
-pub trait IBoundingBoxDrawerMethods : IBoundingBoxDrawer { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BoundingBoxDrawer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BoundingBoxDrawer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298b240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-boundingboxdrawer")]pub trait IBoundingBoxDrawerMethods:IBoundingBoxDrawer{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BoundingBoxDrawer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298b240usize)as*mut u8,();
+(BoundingBoxDrawer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-boundingboxdrawer")]
-impl < __T : IBoundingBoxDrawer > IBoundingBoxDrawerMethods for __T { }
+#[cfg(feature="app-boundingboxdrawer")]impl<__T:IBoundingBoxDrawer>IBoundingBoxDrawerMethods for __T{}
 
-#[cfg(feature = "app-boundingboxdrawer")]
-impl BoundingBoxDrawer { pub fn draw_bounding_box_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoundingBoxDrawer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn draw_bounding_box_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoundingBoxDrawer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BoundingBoxDrawer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-boundingboxdrawer")]impl BoundingBoxDrawer{pub fn draw_bounding_box_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn draw_bounding_box_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-boundingboxdrawer")]
-impl BoundingBoxDrawer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BoundingBoxDrawer) , :: core :: stringify ! (new) ,)) ; < Self as IBoundingBoxDrawerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-boundingboxdrawer")]impl BoundingBoxDrawer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BoundingBoxDrawer), ::core::stringify!(new),));
+ <Self as IBoundingBoxDrawerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-boundingboxdrawer")]

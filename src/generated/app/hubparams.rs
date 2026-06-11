@@ -4,57 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubparams/HubParams.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubParams")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubParams {
-# [offset (24)] # [rename (name = "m_DisplayUnitNum")] pub m_display_unit_num : i32 ,
-# [offset (28)] # [rename (name = "m_PadThreshold")] pub m_pad_threshold : f32 ,
-# [offset (32)] # [rename (name = "m_MaxSpeed")] pub m_max_speed : f32 ,
-# [offset (36)] # [rename (name = "m_Accel")] pub m_accel : f32 ,
-# [offset (40)] # [rename (name = "m_Decel")] pub m_decel : f32 ,
-# [offset (44)] # [rename (name = "m_RotateSpeedRate")] pub m_rotate_speed_rate : f32 ,
-# [offset (48)] # [rename (name = "m_DashStopTime")] pub m_dash_stop_time : f32 ,
-# [offset (56)] # [rename (name = "m_SpeedCurve")] pub m_speed_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (64)] # [rename (name = "m_DashSpeedIntensity")] pub m_dash_speed_intensity : f32 ,
-# [offset (68)] # [rename (name = "m_GravityY")] pub m_gravity_y : f32 ,
-# [offset (72)] # [rename (name = "m_TurnCurve")] pub m_turn_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (80)] # [rename (name = "m_MinLookAtDist")] pub m_min_look_at_dist : f32 ,
-# [offset (84)] # [rename (name = "m_MaxLookAtDist")] pub m_max_look_at_dist : f32 ,
-# [offset (88)] # [rename (name = "m_PlayerBodyWeight")] pub m_player_body_weight : f32 ,
-# [offset (92)] # [rename (name = "m_PlayerHeadWeight")] pub m_player_head_weight : f32 ,
-# [offset (96)] # [rename (name = "m_OthersBodyWeight")] pub m_others_body_weight : f32 ,
-# [offset (100)] # [rename (name = "m_OthersHeadWeight")] pub m_others_head_weight : f32 ,
-# [offset (104)] # [rename (name = "m_Allowance")] pub m_allowance : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubparams/HubParams.md"))]#[::unity2::class(namespace="App",name="HubParams")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubParams{#[offset(24)]#[rename(name="m_DisplayUnitNum")]pub m_display_unit_num:i32, #[offset(28)]#[rename(name="m_PadThreshold")]pub m_pad_threshold:f32, #[offset(32)]#[rename(name="m_MaxSpeed")]pub m_max_speed:f32, #[offset(36)]#[rename(name="m_Accel")]pub m_accel:f32, #[offset(40)]#[rename(name="m_Decel")]pub m_decel:f32, #[offset(44)]#[rename(name="m_RotateSpeedRate")]pub m_rotate_speed_rate:f32, #[offset(48)]#[rename(name="m_DashStopTime")]pub m_dash_stop_time:f32, #[offset(56)]#[rename(name="m_SpeedCurve")]pub m_speed_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(64)]#[rename(name="m_DashSpeedIntensity")]pub m_dash_speed_intensity:f32, #[offset(68)]#[rename(name="m_GravityY")]pub m_gravity_y:f32, #[offset(72)]#[rename(name="m_TurnCurve")]pub m_turn_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(80)]#[rename(name="m_MinLookAtDist")]pub m_min_look_at_dist:f32, #[offset(84)]#[rename(name="m_MaxLookAtDist")]pub m_max_look_at_dist:f32, #[offset(88)]#[rename(name="m_PlayerBodyWeight")]pub m_player_body_weight:f32, #[offset(92)]#[rename(name="m_PlayerHeadWeight")]pub m_player_head_weight:f32, #[offset(96)]#[rename(name="m_OthersBodyWeight")]pub m_others_body_weight:f32, #[offset(100)]#[rename(name="m_OthersHeadWeight")]pub m_others_head_weight:f32, #[offset(104)]#[rename(name="m_Allowance")]pub m_allowance:f32,}
 
 }
 
 #[cfg(feature = "app-hubparams-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubparams")]
-pub trait IHubParamsMethods : IHubParams { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d5d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d5d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubParams as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubParams , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d5da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubparams")]pub trait IHubParamsMethods:IHubParams{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d5d80usize)as*mut u8,();
+(HubParams)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d5d90usize)as*mut u8,();
+(HubParams)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubParams as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d5da0usize)as*mut u8,();
+(HubParams)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubparams")]
-impl < __T : IHubParams > IHubParamsMethods for __T { }
+#[cfg(feature="app-hubparams")]impl<__T:IHubParams>IHubParamsMethods for __T{}
 
-#[cfg(feature = "app-hubparams")]
-impl HubParams { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubParams as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-hubparams")]impl HubParams{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-hubparams")]
-impl HubParams {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubParams) , :: core :: stringify ! (new) ,)) ; < Self as IHubParamsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubparams")]impl HubParams{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubParams), ::core::stringify!(new),));
+ <Self as IHubParamsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubparams")]

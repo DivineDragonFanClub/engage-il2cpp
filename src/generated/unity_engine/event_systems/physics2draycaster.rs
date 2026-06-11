@@ -4,46 +4,53 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: baseraycaster :: { BaseRaycaster , IBaseRaycaster }
- ;
- use crate :: unity_engine :: event_systems :: physicsraycaster :: { IPhysicsRaycaster , PhysicsRaycaster }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::baseraycaster::{BaseRaycaster,IBaseRaycaster}
+;
+use crate::unity_engine::event_systems::physicsraycaster::{IPhysicsRaycaster,PhysicsRaycaster}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/physics2draycaster/Physics2DRaycaster.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "Physics2DRaycaster")] # [parent (crate :: unity_engine :: event_systems :: physicsraycaster :: PhysicsRaycaster)] pub struct Physics2DRaycaster {
-# [offset (64)] # [rename (name = "m_Hits")] pub m_hits : :: unity2 :: Array < crate :: unity_engine :: raycasthit2d :: RaycastHit2D > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/physics2draycaster/Physics2DRaycaster.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="Physics2DRaycaster")]#[parent(crate::unity_engine::event_systems::physicsraycaster::PhysicsRaycaster)]pub struct Physics2DRaycaster{#[offset(64)]#[rename(name="m_Hits")]pub m_hits: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D> ,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-physics2draycaster-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-physics2draycaster")]
-pub trait IPhysics2DRaycasterMethods : IPhysics2DRaycaster { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Physics2DRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Physics2DRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371df30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"] fn raycast (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > , result_append_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > >) -> () { unsafe { let __receiver = < Physics2DRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Physics2DRaycaster , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371dfb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: convert :: Into :: into (result_append_list) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-physics2draycaster")]pub trait IPhysics2DRaycasterMethods:IPhysics2DRaycaster{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Physics2DRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371df30usize)as*mut u8,();
+(Physics2DRaycaster)__receiver)}
+}
+#[doc="`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]fn raycast(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,result_append_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> >)->(){unsafe{let __receiver= <Physics2DRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371dfb0usize)as*mut u8,();
+(Physics2DRaycaster)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data),(crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)::core::convert::Into::into(result_append_list))}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-physics2draycaster")]
-impl < __T : IPhysics2DRaycaster > IPhysics2DRaycasterMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-physics2draycaster")]impl<__T:IPhysics2DRaycaster>IPhysics2DRaycasterMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-physics2draycaster")]
-impl Physics2DRaycaster { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Physics2DRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn raycast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Physics2DRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-event_systems-physics2draycaster")]impl Physics2DRaycaster{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-physics2draycaster")]
-impl Physics2DRaycaster {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Physics2DRaycaster) , :: core :: stringify ! (new) ,)) ; < Self as IPhysics2DRaycasterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-physics2draycaster")]impl Physics2DRaycaster{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Physics2DRaycaster), ::core::stringify!(new),));
+ <Self as IPhysics2DRaycasterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-physics2draycaster")]

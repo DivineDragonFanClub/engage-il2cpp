@@ -4,235 +4,201 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animation.md"))] # [:: unity2 :: class (namespace = "App" , name = "TransformAnimation.Animation")] # [parent (crate :: system :: object :: Object)] pub struct TransformAnimation_Animation {
-# [offset (16)] # [rename (name = "Kind")] pub kind : crate :: app :: transformanimation :: TransformAnimation_Kinds ,
-# [offset (20)] # [rename (name = "Action")] pub action : crate :: app :: transformanimation :: TransformAnimation_Actions ,
-# [offset (24)] # [rename (name = "Start")] pub start : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (36)] # [rename (name = "End")] pub end : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (48)] # [rename (name = "Cycle")] pub cycle : f32 ,
-# [offset (52)] # [rename (name = "IsRandom")] pub is_random : bool ,
-# [offset (56)] # [rename (name = "Tragets")] pub tragets : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transformanimation/TransformAnimation_Actions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TransformAnimation_Actions{pub value:i32,}
+impl::unity2::ClassIdentity for TransformAnimation_Actions{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TransformAnimation.Actions";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TransformAnimation_Actions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TransformAnimation_Actions{pub fn none()->Self{Self{value:0}
+}
+pub fn r#loop()->Self{Self{value:1}
+}
+pub fn repeat()->Self{Self{value:2}
+}
 }
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animator_Node.md"))] # [:: unity2 :: class (namespace = "App" , name = "TransformAnimation.Animator.Node")] # [parent (crate :: system :: object :: Object)] pub struct TransformAnimation_Animator_Node {
-# [offset (16)] # [rename (name = "m_Target")] pub m_target : crate :: unity_engine :: transform :: Transform ,
-# [offset (24)] # [rename (name = "m_Start")] pub m_start : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (36)] # [rename (name = "m_End")] pub m_end : crate :: unity_engine :: vector3 :: Vector3 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transformanimation/TransformAnimation_Animator.md"))]#[::unity2::class(namespace="App",name="TransformAnimation.Animator")]#[parent(crate::system::object::Object)]pub struct TransformAnimation_Animator{#[offset(16)]#[rename(name="m_Animation")]pub m_animation:crate::app::transformanimation::TransformAnimation_Animation, #[offset(24)]#[rename(name="m_Time")]pub m_time:f32, #[offset(28)]#[rename(name="m_Cycle")]pub m_cycle:f32, #[offset(32)]#[rename(name="m_Inverse")]pub m_inverse:f32, #[offset(40)]#[rename(name="m_Nodes")]pub m_nodes:crate::system::collections::generic::list_1::List_1<crate::app::transformanimation::TransformAnimation_Animator_Node> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transformanimation/TransformAnimation_Animation.md"))]#[::unity2::class(namespace="App",name="TransformAnimation.Animation")]#[parent(crate::system::object::Object)]pub struct TransformAnimation_Animation{#[offset(16)]#[rename(name="Kind")]pub kind:crate::app::transformanimation::TransformAnimation_Kinds, #[offset(20)]#[rename(name="Action")]pub action:crate::app::transformanimation::TransformAnimation_Actions, #[offset(24)]#[rename(name="Start")]pub start:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="End")]pub end:crate::unity_engine::vector3::Vector3, #[offset(48)]#[rename(name="Cycle")]pub cycle:f32, #[offset(52)]#[rename(name="IsRandom")]pub is_random:bool, #[offset(56)]#[rename(name="Tragets")]pub tragets: ::unity2::Array<crate::unity_engine::gameobject::GameObject> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transformanimation/TransformAnimation_Animator_Node.md"))]#[::unity2::class(namespace="App",name="TransformAnimation.Animator.Node")]#[parent(crate::system::object::Object)]pub struct TransformAnimation_Animator_Node{#[offset(16)]#[rename(name="m_Target")]pub m_target:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="m_Start")]pub m_start:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="m_End")]pub m_end:crate::unity_engine::vector3::Vector3,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transformanimation/TransformAnimation_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TransformAnimation_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for TransformAnimation_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TransformAnimation.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TransformAnimation_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TransformAnimation_Kinds{pub fn none()->Self{Self{value:0}
+}
+pub fn position()->Self{Self{value:1}
+}
+pub fn rotation()->Self{Self{value:2}
+}
+pub fn scale()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformanimation/TransformAnimation_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TransformAnimation_Kinds  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TransformAnimation_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TransformAnimation.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TransformAnimation_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TransformAnimation_Kinds  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn position() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn rotation() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn scale() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animator.md"))] # [:: unity2 :: class (namespace = "App" , name = "TransformAnimation.Animator")] # [parent (crate :: system :: object :: Object)] pub struct TransformAnimation_Animator {
-# [offset (16)] # [rename (name = "m_Animation")] pub m_animation : crate :: app :: transformanimation :: TransformAnimation_Animation ,
-# [offset (24)] # [rename (name = "m_Time")] pub m_time : f32 ,
-# [offset (28)] # [rename (name = "m_Cycle")] pub m_cycle : f32 ,
-# [offset (32)] # [rename (name = "m_Inverse")] pub m_inverse : f32 ,
-# [offset (40)] # [rename (name = "m_Nodes")] pub m_nodes : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: transformanimation :: TransformAnimation_Animator_Node > ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformanimation/TransformAnimation_Actions.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TransformAnimation_Actions  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TransformAnimation_Actions  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TransformAnimation.Actions";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TransformAnimation_Actions  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TransformAnimation_Actions  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn r#loop() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn repeat() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation.md"))] # [:: unity2 :: class (namespace = "App" , name = "TransformAnimation")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TransformAnimation {
-# [offset (24)] # [rename (name = "m_Animations")] pub m_animations : :: unity2 :: Array < crate :: app :: transformanimation :: TransformAnimation_Animation > ,
-# [offset (32)] # [rename (name = "m_Animators")] pub m_animators : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: transformanimation :: TransformAnimation_Animator > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/transformanimation/TransformAnimation.md"))]#[::unity2::class(namespace="App",name="TransformAnimation")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TransformAnimation{#[offset(24)]#[rename(name="m_Animations")]pub m_animations: ::unity2::Array<crate::app::transformanimation::TransformAnimation_Animation> , #[offset(32)]#[rename(name="m_Animators")]pub m_animators:crate::system::collections::generic::list_1::List_1<crate::app::transformanimation::TransformAnimation_Animator> ,}
 
 }
 
 #[cfg(feature = "app-transformanimation-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-transformanimation")]
-pub trait ITransformAnimation_AnimationMethods : ITransformAnimation_Animation { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TransformAnimation_Animation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation_Animation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCycle()` overload"] fn calc_cycle (self ,) -> f32 { unsafe { let __receiver = < TransformAnimation_Animation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation_Animation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcInverse()` overload"] fn calc_inverse (self ,) -> f32 { unsafe { let __receiver = < TransformAnimation_Animation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation_Animation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-transformanimation")]
-impl < __T : ITransformAnimation_Animation > ITransformAnimation_AnimationMethods for __T { }
-
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation_Animation { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation_Animation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_cycle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation_Animation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calc_inverse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation_Animation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation_Animation {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TransformAnimation_Animation) , :: core :: stringify ! (new) ,)) ; < Self as ITransformAnimation_AnimationMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-transformanimation")]pub trait ITransformAnimation_AnimatorMethods:ITransformAnimation_Animator{#[doc="`.ctor(crate::app::transformanimation::TransformAnimation_Animation)` overload"]fn ctor(self,animation:impl::core::convert::Into<crate::app::transformanimation::TransformAnimation_Animation>)->(){unsafe{let __receiver= <TransformAnimation_Animator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f180usize)as*mut u8,();
+(TransformAnimation_Animator)__receiver,(crate::app::transformanimation::TransformAnimation_Animation)::core::convert::Into::into(animation))}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <TransformAnimation_Animator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f350usize)as*mut u8,();
+(TransformAnimation_Animator)__receiver)}
+}
+#[doc="`Update(f32)` overload"]fn update(self,delta_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TransformAnimation_Animator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f490usize)as*mut u8,();
+(TransformAnimation_Animator)__receiver,(f32)::core::convert::Into::into(delta_time))}
+}
 }
 
-#[cfg(feature = "app-transformanimation")]
-pub trait ITransformAnimation_Animator_NodeMethods : ITransformAnimation_Animator_Node { # [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"] fn ctor (self , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < TransformAnimation_Animator_Node as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation_Animator_Node , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f3d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`Commit(crate::app::transformanimation::TransformAnimation_Animation)` overload"] fn commit (self , animation : impl :: core :: convert :: Into < crate :: app :: transformanimation :: TransformAnimation_Animation >) -> () { unsafe { let __receiver = < TransformAnimation_Animator_Node as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation_Animator_Node , crate :: app :: transformanimation :: TransformAnimation_Animation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f3d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animation) , :: core :: option :: Option :: None) } } } # [doc = "`Update(crate::app::transformanimation::TransformAnimation_Animation, f32)` overload"] fn update (self , animation : impl :: core :: convert :: Into < crate :: app :: transformanimation :: TransformAnimation_Animation > , t : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TransformAnimation_Animator_Node as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation_Animator_Node , crate :: app :: transformanimation :: TransformAnimation_Animation , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f3f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animation) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-transformanimation")]impl<__T:ITransformAnimation_Animator>ITransformAnimation_AnimatorMethods for __T{}
 
-#[cfg(feature = "app-transformanimation")]
-impl < __T : ITransformAnimation_Animator_Node > ITransformAnimation_Animator_NodeMethods for __T { }
-
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation_Animator_Node { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation_Animator_Node as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation_Animator_Node as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation_Animator_Node as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation_Animator_Node {
-# [doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"] pub fn new (go : crate :: unity_engine :: gameobject :: GameObject) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TransformAnimation_Animator_Node) , :: core :: stringify ! (new) ,)) ; < Self as ITransformAnimation_Animator_NodeMethods > :: ctor (this , go) ; this }
+#[cfg(feature="app-transformanimation")]impl TransformAnimation_Animator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature = "app-transformanimation")]
-pub trait ITransformAnimation_AnimatorMethods : ITransformAnimation_Animator { # [doc = "`.ctor(crate::app::transformanimation::TransformAnimation_Animation)` overload"] fn ctor (self , animation : impl :: core :: convert :: Into < crate :: app :: transformanimation :: TransformAnimation_Animation >) -> () { unsafe { let __receiver = < TransformAnimation_Animator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation_Animator , crate :: app :: transformanimation :: TransformAnimation_Animation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (animation) , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < TransformAnimation_Animator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation_Animator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update(f32)` overload"] fn update (self , delta_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TransformAnimation_Animator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation_Animator , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b3f490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (delta_time) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-transformanimation")]
-impl < __T : ITransformAnimation_Animator > ITransformAnimation_AnimatorMethods for __T { }
-
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation_Animator { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation_Animator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation_Animator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation_Animator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation_Animator {
-# [doc = "`.ctor(crate::app::transformanimation::TransformAnimation_Animation)` — overload selector"] pub fn new (animation : crate :: app :: transformanimation :: TransformAnimation_Animation) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TransformAnimation_Animator) , :: core :: stringify ! (new) ,)) ; < Self as ITransformAnimation_AnimatorMethods > :: ctor (this , animation) ; this }
+#[cfg(feature="app-transformanimation")]impl TransformAnimation_Animator{#[doc="`.ctor(crate::app::transformanimation::TransformAnimation_Animation)` — overload selector"]pub fn new(animation:crate::app::transformanimation::TransformAnimation_Animation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TransformAnimation_Animator), ::core::stringify!(new),));
+ <Self as ITransformAnimation_AnimatorMethods> ::ctor(this,animation);
+this}
 }
 
-#[cfg(feature = "app-transformanimation")]
-pub trait ITransformAnimationMethods : ITransformAnimation { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TransformAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a0940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < TransformAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a0b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < TransformAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a0ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TransformAnimation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TransformAnimation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22a0c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-transformanimation")]pub trait ITransformAnimation_AnimationMethods:ITransformAnimation_Animation{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TransformAnimation_Animation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f0b0usize)as*mut u8,();
+(TransformAnimation_Animation)__receiver)}
+}
+#[doc="`CalcCycle()` overload"]fn calc_cycle(self,)->f32{unsafe{let __receiver= <TransformAnimation_Animation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f110usize)as*mut u8,f32;
+(TransformAnimation_Animation)__receiver)}
+}
+#[doc="`CalcInverse()` overload"]fn calc_inverse(self,)->f32{unsafe{let __receiver= <TransformAnimation_Animation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b3f140usize)as*mut u8,f32;
+(TransformAnimation_Animation)__receiver)}
+}
+}
 
-#[cfg(feature = "app-transformanimation")]
-impl < __T : ITransformAnimation > ITransformAnimationMethods for __T { }
+#[cfg(feature="app-transformanimation")]impl<__T:ITransformAnimation_Animation>ITransformAnimation_AnimationMethods for __T{}
 
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TransformAnimation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-transformanimation")]impl TransformAnimation_Animation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_cycle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_inverse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TransformAnimation) , :: core :: stringify ! (new) ,)) ; < Self as ITransformAnimationMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-transformanimation")]impl TransformAnimation_Animation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TransformAnimation_Animation), ::core::stringify!(new),));
+ <Self as ITransformAnimation_AnimationMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-transformanimation")]pub trait ITransformAnimation_Animator_NodeMethods:ITransformAnimation_Animator_Node{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <TransformAnimation_Animator_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f3d30usize)as*mut u8,();
+(TransformAnimation_Animator_Node)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`Commit(crate::app::transformanimation::TransformAnimation_Animation)` overload"]fn commit(self,animation:impl::core::convert::Into<crate::app::transformanimation::TransformAnimation_Animation>)->(){unsafe{let __receiver= <TransformAnimation_Animator_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f3d70usize)as*mut u8,();
+(TransformAnimation_Animator_Node)__receiver,(crate::app::transformanimation::TransformAnimation_Animation)::core::convert::Into::into(animation))}
+}
+#[doc="`Update(crate::app::transformanimation::TransformAnimation_Animation, f32)` overload"]fn update(self,animation:impl::core::convert::Into<crate::app::transformanimation::TransformAnimation_Animation> ,t:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TransformAnimation_Animator_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f3f10usize)as*mut u8,();
+(TransformAnimation_Animator_Node)__receiver,(crate::app::transformanimation::TransformAnimation_Animation)::core::convert::Into::into(animation),(f32)::core::convert::Into::into(t))}
+}
+}
+
+#[cfg(feature="app-transformanimation")]impl<__T:ITransformAnimation_Animator_Node>ITransformAnimation_Animator_NodeMethods for __T{}
+
+#[cfg(feature="app-transformanimation")]impl TransformAnimation_Animator_Node{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-transformanimation")]impl TransformAnimation_Animator_Node{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(go:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TransformAnimation_Animator_Node), ::core::stringify!(new),));
+ <Self as ITransformAnimation_Animator_NodeMethods> ::ctor(this,go);
+this}
+}
+
+#[cfg(feature="app-transformanimation")]pub trait ITransformAnimationMethods:ITransformAnimation{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TransformAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a0940usize)as*mut u8,();
+(TransformAnimation)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <TransformAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a0b60usize)as*mut u8,();
+(TransformAnimation)__receiver)}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <TransformAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a0ab0usize)as*mut u8,();
+(TransformAnimation)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TransformAnimation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22a0c20usize)as*mut u8,();
+(TransformAnimation)__receiver)}
+}
+}
+
+#[cfg(feature="app-transformanimation")]impl<__T:ITransformAnimation>ITransformAnimationMethods for __T{}
+
+#[cfg(feature="app-transformanimation")]impl TransformAnimation{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-transformanimation")]impl TransformAnimation{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TransformAnimation), ::core::stringify!(new),));
+ <Self as ITransformAnimationMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-transformanimation")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TransformAnimation_Actions;
+    pub use super::TransformAnimation_Animator;
+    pub use super::ITransformAnimation_Animator;
+    pub use super::ITransformAnimation_AnimatorMethods;
     pub use super::TransformAnimation_Animation;
     pub use super::ITransformAnimation_Animation;
     pub use super::ITransformAnimation_AnimationMethods;
@@ -240,10 +206,6 @@ pub mod prelude {
     pub use super::ITransformAnimation_Animator_Node;
     pub use super::ITransformAnimation_Animator_NodeMethods;
     pub use super::TransformAnimation_Kinds;
-    pub use super::TransformAnimation_Animator;
-    pub use super::ITransformAnimation_Animator;
-    pub use super::ITransformAnimation_AnimatorMethods;
-    pub use super::TransformAnimation_Actions;
     pub use super::TransformAnimation;
     pub use super::ITransformAnimation;
     pub use super::ITransformAnimationMethods;

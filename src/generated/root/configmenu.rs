@@ -4,37 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configmenu/ConfigMenu.md"))] # [:: unity2 :: class (namespace = "" , name = "ConfigMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct ConfigMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/configmenu/ConfigMenu.md"))]#[::unity2::class(namespace="",name="ConfigMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ConfigMenu{}
 
 }
 
 #[cfg(feature = "root-configmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-configmenu")]
-impl ConfigMenu { # [doc = "`CanToggleEnableNetwork()` overload"] pub fn can_toggle_enable_network () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2538980usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2538a10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-configmenu")]impl ConfigMenu{#[doc="`CanToggleEnableNetwork()` overload"]pub fn can_toggle_enable_network()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2538980usize)as*mut u8,bool;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2538a10usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "root-configmenu")]
-pub trait IConfigMenuMethods : IConfigMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::configmenucontent::ConfigMenuContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: root :: configmenucontent :: ConfigMenuContent >) -> () { unsafe { let __receiver = < ConfigMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: root :: configmenucontent :: ConfigMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2538360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ConfigMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2538370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`XCall()` overload"] fn x_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ConfigMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2538380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnInitialize()` overload"] fn on_initialize (self ,) -> () { unsafe { let __receiver = < ConfigMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2538570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-configmenu")]pub trait IConfigMenuMethods:IConfigMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::configmenucontent::ConfigMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::root::configmenucontent::ConfigMenuContent>)->(){unsafe{let __receiver= <ConfigMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2538360usize)as*mut u8,();
+(ConfigMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::root::configmenucontent::ConfigMenuContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ConfigMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2538370usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ConfigMenu)__receiver)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ConfigMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2538380usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ConfigMenu)__receiver)}
+}
+#[doc="`OnInitialize()` overload"]fn on_initialize(self,)->(){unsafe{let __receiver= <ConfigMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2538570usize)as*mut u8,();
+(ConfigMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "root-configmenu")]
-impl < __T : IConfigMenu > IConfigMenuMethods for __T { }
+#[cfg(feature="root-configmenu")]impl<__T:IConfigMenu>IConfigMenuMethods for __T{}
 
-#[cfg(feature = "root-configmenu")]
-impl ConfigMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn x_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn can_toggle_enable_network_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="root-configmenu")]impl ConfigMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn can_toggle_enable_network_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "root-configmenu")]
-impl ConfigMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::configmenucontent::ConfigMenuContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: root :: configmenucontent :: ConfigMenuContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConfigMenu) , :: core :: stringify ! (new) ,)) ; < Self as IConfigMenuMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="root-configmenu")]impl ConfigMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::root::configmenucontent::ConfigMenuContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::root::configmenucontent::ConfigMenuContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConfigMenu), ::core::stringify!(new),));
+ <Self as IConfigMenuMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "root-configmenu")]

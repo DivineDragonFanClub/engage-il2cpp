@@ -4,34 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: dynamicmesh :: { DynamicMesh , IDynamicMesh }
- ;
- use crate :: app :: map :: { IMap_CellMesh , Map_CellMesh }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::dynamicmesh::{DynamicMesh,IDynamicMesh}
+;
+use crate::app::map::{IMap_CellMesh,Map_CellMesh}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gridmesh/GridMesh.md"))] # [:: unity2 :: class (namespace = "App" , name = "GridMesh")] # [parent (crate :: app :: map :: Map_CellMesh)] pub struct GridMesh {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gridmesh/GridMesh.md"))]#[::unity2::class(namespace="App",name="GridMesh")]#[parent(crate::app::map::Map_CellMesh)]pub struct GridMesh{}
 
 }
 
 #[cfg(feature = "app-gridmesh-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gridmesh")]
-pub trait IGridMeshMethods : IGridMesh { # [doc = "`DrawGrid(crate::app::mapheight::MapHeight_CellMap, i32, i32, crate::unity_engine::color::Color)` overload"] fn draw_grid (self , cell_map : impl :: core :: convert :: Into < crate :: app :: mapheight :: MapHeight_CellMap > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < GridMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMesh , crate :: app :: mapheight :: MapHeight_CellMap , i32 , i32 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296f470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cell_map) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < GridMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2970550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GridMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29708b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gridmesh")]pub trait IGridMeshMethods:IGridMesh{#[doc="`DrawGrid(crate::app::mapheight::MapHeight_CellMap, i32, i32, crate::unity_engine::color::Color)` overload"]fn draw_grid(self,cell_map:impl::core::convert::Into<crate::app::mapheight::MapHeight_CellMap> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <GridMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296f470usize)as*mut u8,();
+(GridMesh)__receiver,(crate::app::mapheight::MapHeight_CellMap)::core::convert::Into::into(cell_map),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <GridMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2970550usize)as*mut u8,();
+(GridMesh)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GridMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29708b0usize)as*mut u8,();
+(GridMesh)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gridmesh")]
-impl < __T : IGridMesh > IGridMeshMethods for __T { }
+#[cfg(feature="app-gridmesh")]impl<__T:IGridMesh>IGridMeshMethods for __T{}
 
-#[cfg(feature = "app-gridmesh")]
-impl GridMesh { pub fn draw_grid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-gridmesh")]impl GridMesh{pub fn draw_grid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-gridmesh")]
-impl GridMesh {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GridMesh) , :: core :: stringify ! (new) ,)) ; < Self as IGridMeshMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gridmesh")]impl GridMesh{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GridMesh), ::core::stringify!(new),));
+ <Self as IGridMeshMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gridmesh")]

@@ -4,45 +4,113 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlying/CharacterLying.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterLying")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterLying {
-# [static_field] # [rename (name = "HumanCollideRadius")] pub human_collide_radius : f32 ,
-# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [offset (32)] # [rename (name = "isRunning")] pub is_running : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characterlying/CharacterLying.md"))]#[::unity2::class(namespace="Combat",name="CharacterLying")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterLying{#[static_field]#[rename(name="HumanCollideRadius")]pub human_collide_radius:f32, #[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(32)]#[rename(name="isRunning")]pub is_running:bool,}
 
 }
 
 #[cfg(feature = "combat-characterlying-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characterlying")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CharacterLying_unity2_raw { use super :: * ; pub unsafe fn my_start (this : CharacterLying , die_hash : i32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("MyStart") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "MyStart" , < CharacterLying as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (CharacterLying , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , die_hash , __mi) } pub unsafe fn make_my_dead_pose (this : CharacterLying , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("MakeMyDeadPose") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "MakeMyDeadPose" , < CharacterLying as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (CharacterLying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn my_late_update (this : CharacterLying , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("MyLateUpdate") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "MyLateUpdate" , < CharacterLying as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (CharacterLying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="combat-characterlying")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CharacterLying_unity2_raw{use super:: * ;
+pub unsafe fn my_start(this:CharacterLying,die_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("MyStart").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","MyStart", <CharacterLying as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(CharacterLying,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,die_hash,__mi)}
+pub unsafe fn make_my_dead_pose(this:CharacterLying,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("MakeMyDeadPose").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","MakeMyDeadPose", <CharacterLying as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(CharacterLying, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn my_late_update(this:CharacterLying,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("MyLateUpdate").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","MyLateUpdate", <CharacterLying as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(CharacterLying, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "combat-characterlying")]
-pub trait ICharacterLyingMethods : ICharacterLying { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLying , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ecb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Run(i32)` overload"] fn run (self , die_hash : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLying , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ecbc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (die_hash) , :: core :: option :: Option :: None) } } } # [doc = "`MakeDeadPose()` overload"] fn make_dead_pose (self ,) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ecc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RunScheduler()` overload"] fn run_scheduler (self ,) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ecc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ecd10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ecd30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyStart(i32)` overload"] fn my_start (self , die_hash : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLying_unity2_raw :: my_start (__receiver , :: core :: convert :: Into :: into (die_hash) , :: core :: option :: Option :: None) } } # [doc = "`MakeMyDeadPose()` overload"] fn make_my_dead_pose (self ,) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLying_unity2_raw :: make_my_dead_pose (__receiver , :: core :: option :: Option :: None) } } # [doc = "`MyUpdate()` overload"] fn my_update (self ,) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ecd50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyLateUpdate()` overload"] fn my_late_update (self ,) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __CharacterLying_unity2_raw :: my_late_update (__receiver , :: core :: option :: Option :: None) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterLying as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterLying , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27ecd60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characterlying")]pub trait ICharacterLyingMethods:ICharacterLying{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecb00usize)as*mut u8,crate::combat::character::Character;
+(CharacterLying)__receiver)}
+}
+#[doc="`Run(i32)` overload"]fn run(self,die_hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecbc0usize)as*mut u8,();
+(CharacterLying)__receiver,(i32)::core::convert::Into::into(die_hash))}
+}
+#[doc="`MakeDeadPose()` overload"]fn make_dead_pose(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecc30usize)as*mut u8,();
+(CharacterLying)__receiver)}
+}
+#[doc="`RunScheduler()` overload"]fn run_scheduler(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecc10usize)as*mut u8,();
+(CharacterLying)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecd10usize)as*mut u8,();
+(CharacterLying)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecd30usize)as*mut u8,();
+(CharacterLying)__receiver)}
+}
+#[doc="`MyStart(i32)` overload"]fn my_start(self,die_hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__CharacterLying_unity2_raw::my_start(__receiver, ::core::convert::Into::into(die_hash), ::core::option::Option::None)}
+}
+#[doc="`MakeMyDeadPose()` overload"]fn make_my_dead_pose(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__CharacterLying_unity2_raw::make_my_dead_pose(__receiver, ::core::option::Option::None)}
+}
+#[doc="`MyUpdate()` overload"]fn my_update(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecd50usize)as*mut u8,();
+(CharacterLying)__receiver)}
+}
+#[doc="`MyLateUpdate()` overload"]fn my_late_update(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__CharacterLying_unity2_raw::my_late_update(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecd60usize)as*mut u8,();
+(CharacterLying)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characterlying")]
-impl < __T : ICharacterLying > ICharacterLyingMethods for __T { }
+#[cfg(feature="combat-characterlying")]impl<__T:ICharacterLying>ICharacterLyingMethods for __T{}
 
-#[cfg(feature = "combat-characterlying")]
-impl CharacterLying { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn make_dead_pose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn run_scheduler_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn make_my_dead_pose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn my_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn my_late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterLying as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="combat-characterlying")]impl CharacterLying{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn run_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn make_dead_pose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn run_scheduler_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn make_my_dead_pose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn my_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn my_late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "combat-characterlying")]
-impl CharacterLying {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterLying) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterLyingMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characterlying")]impl CharacterLying{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterLying), ::core::stringify!(new),));
+ <Self as ICharacterLyingMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characterlying")]

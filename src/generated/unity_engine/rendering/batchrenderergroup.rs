@@ -4,56 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "BatchRendererGroup")] # [parent (crate :: system :: object :: Object)] pub struct BatchRendererGroup {
-# [offset (16)] # [rename (name = "m_GroupHandle")] pub m_group_handle : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "m_PerformCulling")] pub m_perform_culling : crate :: unity_engine :: rendering :: batchrenderergroup :: BatchRendererGroup_OnPerformCulling ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup_OnPerformCulling.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="BatchRendererGroup.OnPerformCulling")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct BatchRendererGroup_OnPerformCulling{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup_OnPerformCulling.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "BatchRendererGroup.OnPerformCulling")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct BatchRendererGroup_OnPerformCulling {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="BatchRendererGroup")]#[parent(crate::system::object::Object)]pub struct BatchRendererGroup{#[offset(16)]#[rename(name="m_GroupHandle")]pub m_group_handle: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_PerformCulling")]pub m_perform_culling:crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup_OnPerformCulling,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-batchrenderergroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
-impl BatchRendererGroup { # [doc = "`InvokeOnPerformCulling(crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup, *mutcrate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput, *mutcrate::unity_engine::rendering::lodparameters::LODParameters)` overload"] pub fn invoke_on_perform_culling (group : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: batchrenderergroup :: BatchRendererGroup >) -> (crate :: unity_engine :: rendering :: batchrenderercullingoutput :: BatchRendererCullingOutput , crate :: unity_engine :: rendering :: lodparameters :: LODParameters) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: batchrenderercullingoutput :: BatchRendererCullingOutput > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: lodparameters :: LODParameters > :: uninit () ; { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: batchrenderergroup :: BatchRendererGroup , * mut crate :: unity_engine :: rendering :: batchrenderercullingoutput :: BatchRendererCullingOutput , * mut crate :: unity_engine :: rendering :: lodparameters :: LODParameters , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c372f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (group) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="unity_engine-rendering-batchrenderergroup")]pub trait IBatchRendererGroup_OnPerformCullingMethods:IBatchRendererGroup_OnPerformCulling{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BatchRendererGroup_OnPerformCulling as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x379b3b0usize)as*mut u8,();
+(BatchRendererGroup_OnPerformCulling)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
-impl BatchRendererGroup { pub fn invoke_on_perform_culling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BatchRendererGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-batchrenderergroup")]impl<__T:IBatchRendererGroup_OnPerformCulling>IBatchRendererGroup_OnPerformCullingMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
-pub trait IBatchRendererGroup_OnPerformCullingMethods : IBatchRendererGroup_OnPerformCulling { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < BatchRendererGroup_OnPerformCulling as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BatchRendererGroup_OnPerformCulling , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x379b3b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-batchrenderergroup")]impl BatchRendererGroup_OnPerformCulling{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
-impl < __T : IBatchRendererGroup_OnPerformCulling > IBatchRendererGroup_OnPerformCullingMethods for __T { }
+#[cfg(feature="unity_engine-rendering-batchrenderergroup")]impl BatchRendererGroup_OnPerformCulling{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BatchRendererGroup_OnPerformCulling), ::core::stringify!(new),));
+ <Self as IBatchRendererGroup_OnPerformCullingMethods> ::ctor(this,object,method);
+this}
+}
 
-#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
-impl BatchRendererGroup_OnPerformCulling { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BatchRendererGroup_OnPerformCulling as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-batchrenderergroup")]impl BatchRendererGroup{#[doc="`InvokeOnPerformCulling(crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup, *mutcrate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput, *mutcrate::unity_engine::rendering::lodparameters::LODParameters)` overload"]pub fn invoke_on_perform_culling(group:impl::core::convert::Into<crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup>)->(crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput,crate::unity_engine::rendering::lodparameters::LODParameters){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::lodparameters::LODParameters> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c372f0usize)as*mut u8,();
+(crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup)::core::convert::Into::into(group),(*mut crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput)__out_0.as_mut_ptr(),(*mut crate::unity_engine::rendering::lodparameters::LODParameters)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
-impl BatchRendererGroup_OnPerformCulling {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BatchRendererGroup_OnPerformCulling) , :: core :: stringify ! (new) ,)) ; < Self as IBatchRendererGroup_OnPerformCullingMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-rendering-batchrenderergroup")]impl BatchRendererGroup{pub fn invoke_on_perform_culling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BatchRendererGroup;
-    pub use super::IBatchRendererGroup;
     pub use super::BatchRendererGroup_OnPerformCulling;
     pub use super::IBatchRendererGroup_OnPerformCulling;
     pub use super::IBatchRendererGroup_OnPerformCullingMethods;
+    pub use super::BatchRendererGroup;
+    pub use super::IBatchRendererGroup;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -4,78 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapplayerunit/GmapPlayerUnit.md"))] # [:: unity2 :: class (namespace = "App" , name = "GmapPlayerUnit")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gmapplayerunit :: GmapPlayerUnit >)] pub struct GmapPlayerUnit {
-# [offset (32)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (40)] # [rename (name = "ShipPrefabPath")] pub ship_prefab_path : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_Ship")] pub m_ship : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "ColliderPrefabPath")] pub collider_prefab_path : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "TeleportInEffect")] pub teleport_in_effect : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "TeleportOutEffect")] pub teleport_out_effect : :: unity2 :: Il2CppString ,
-# [offset (80)] # [rename (name = "m_Rotation")] pub m_rotation : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
-# [offset (96)] # [rename (name = "m_GroundObjectNames")] pub m_ground_object_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (104)] # [rename (name = "SeaObjectNames")] pub sea_object_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (112)] # [rename (name = "IgnoreObjectNames")] pub ignore_object_names : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (120)] # [rename (name = "PositionDelta")] pub position_delta : crate :: unity_engine :: vector3 :: Vector3 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapplayerunit/GmapPlayerUnit.md"))]#[::unity2::class(namespace="App",name="GmapPlayerUnit")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gmapplayerunit::GmapPlayerUnit>)]pub struct GmapPlayerUnit{#[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(40)]#[rename(name="ShipPrefabPath")]pub ship_prefab_path: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_Ship")]pub m_ship:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="ColliderPrefabPath")]pub collider_prefab_path: ::unity2::Il2CppString, #[offset(64)]#[rename(name="TeleportInEffect")]pub teleport_in_effect: ::unity2::Il2CppString, #[offset(72)]#[rename(name="TeleportOutEffect")]pub teleport_out_effect: ::unity2::Il2CppString, #[offset(80)]#[rename(name="m_Rotation")]pub m_rotation:crate::app::interpolatorrotation::InterpolatorRotation, #[offset(96)]#[rename(name="m_GroundObjectNames")]pub m_ground_object_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(104)]#[rename(name="SeaObjectNames")]pub sea_object_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(112)]#[rename(name="IgnoreObjectNames")]pub ignore_object_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(120)]#[rename(name="PositionDelta")]pub position_delta:crate::unity_engine::vector3::Vector3,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapplayerunit/GmapPlayerUnit_ModelType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapPlayerUnit_ModelType{pub value:i32,}
+impl::unity2::ClassIdentity for GmapPlayerUnit_ModelType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GmapPlayerUnit.ModelType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapplayerunit/GmapPlayerUnit_ModelType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GmapPlayerUnit_ModelType  {
-    pub value: i32,
+impl::unity2::IlType for GmapPlayerUnit_ModelType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for GmapPlayerUnit_ModelType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapPlayerUnit.ModelType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl GmapPlayerUnit_ModelType{pub fn unit()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for GmapPlayerUnit_ModelType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn ship()->Self{Self{value:1}
 }
-
-
-impl  GmapPlayerUnit_ModelType  {
-    pub fn unit() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn ship() -> Self {
-        Self { value: 1 }
-
-    }
-
 }
 
 }
@@ -83,21 +38,173 @@ impl  GmapPlayerUnit_ModelType  {
 #[cfg(feature = "app-gmapplayerunit-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gmapplayerunit")]
-impl GmapPlayerUnit { # [doc = "`GetAngleLength(f32, f32)` overload"] pub fn get_angle_length (current : impl :: core :: convert :: Into < f32 > , target : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38430usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (current) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapplayerunit")]impl GmapPlayerUnit{#[doc="`GetAngleLength(f32, f32)` overload"]pub fn get_angle_length(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b38430usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target))}
+}
+}
 
-#[cfg(feature = "app-gmapplayerunit")]
-pub trait IGmapPlayerUnitMethods : IGmapPlayerUnit { # [doc = "`get_Actor()` overload"] fn get_actor (self ,) -> crate :: app :: unitactor :: UnitActor { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitactor :: UnitActor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b373f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayerModelType()` overload"] fn get_player_model_type (self ,) -> crate :: app :: gmapplayerunit :: GmapPlayerUnit_ModelType { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> crate :: app :: gmapplayerunit :: GmapPlayerUnit_ModelType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PlayerModelType(crate::app::gmapplayerunit::GmapPlayerUnit_ModelType)` overload"] fn set_player_model_type (self , value : impl :: core :: convert :: Into < crate :: app :: gmapplayerunit :: GmapPlayerUnit_ModelType >) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , crate :: app :: gmapplayerunit :: GmapPlayerUnit_ModelType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateRotation()` overload"] fn update_rotation (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CommitRotation()` overload"] fn commit_rotation (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Position()` overload"] fn get_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Position(crate::unity_engine::vector3::Vector3)` overload"] fn set_position (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37f70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Up()` overload"] fn get_up (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Up(crate::unity_engine::vector3::Vector3)` overload"] fn set_up (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_Rotation(crate::unity_engine::quaternion::Quaternion)` overload"] fn set_rotation (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: quaternion :: Quaternion >) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , crate :: unity_engine :: quaternion :: Quaternion , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37eb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetDirection(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] fn set_direction (self , dir : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , up : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b380a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dir) , :: core :: convert :: Into :: into (up) , :: core :: option :: Option :: None) } } } # [doc = "`SetRotate(f32)` overload"] fn set_rotate (self , angle : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (angle) , :: core :: option :: Option :: None) } } } # [doc = "`SetRotateImmidiate(f32)` overload"] fn set_rotate_immidiate (self , angle : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (angle) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitFromUnitPool()` overload"] fn set_unit_from_unit_pool (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadActor()` overload"] fn load_actor (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadUnit()` overload"] fn unload_unit (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b387b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b388a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupModelType()` overload"] fn setup_model_type (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangeModelType(crate::app::gmapplayerunit::GmapPlayerUnit_ModelType)` overload"] fn change_model_type (self , model_type : impl :: core :: convert :: Into < crate :: app :: gmapplayerunit :: GmapPlayerUnit_ModelType >) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , crate :: app :: gmapplayerunit :: GmapPlayerUnit_ModelType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b37870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (model_type) , :: core :: option :: Option :: None) } } } # [doc = "`StopRun()` overload"] fn stop_run (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b382e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Show()` overload"] fn show (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMapTransparent(bool)` overload"] fn set_map_transparent (self , active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38960usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (active) , :: core :: option :: Option :: None) } } } # [doc = "`IsOnGround()` overload"] fn is_on_ground (self ,) -> bool { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b375b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayTeleportOut()` overload"] fn play_teleport_out (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayTeleportIn()` overload"] fn play_teleport_in (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GmapPlayerUnit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GmapPlayerUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b38df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gmapplayerunit")]pub trait IGmapPlayerUnitMethods:IGmapPlayerUnit{#[doc="`get_Actor()` overload"]fn get_actor(self,)->crate::app::unitactor::UnitActor{unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b373f0usize)as*mut u8,crate::app::unitactor::UnitActor;
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`get_PlayerModelType()` overload"]fn get_player_model_type(self,)->crate::app::gmapplayerunit::GmapPlayerUnit_ModelType{unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37400usize)as*mut u8,crate::app::gmapplayerunit::GmapPlayerUnit_ModelType;
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`set_PlayerModelType(crate::app::gmapplayerunit::GmapPlayerUnit_ModelType)` overload"]fn set_player_model_type(self,value:impl::core::convert::Into<crate::app::gmapplayerunit::GmapPlayerUnit_ModelType>)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37410usize)as*mut u8,();
+(GmapPlayerUnit)__receiver,(crate::app::gmapplayerunit::GmapPlayerUnit_ModelType)::core::convert::Into::into(value))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37420usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37510usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`UpdateRotation()` overload"]fn update_rotation(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37990usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`CommitRotation()` overload"]fn commit_rotation(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37dd0usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`get_Position()` overload"]fn get_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37f40usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`set_Position(crate::unity_engine::vector3::Vector3)` overload"]fn set_position(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37f70usize)as*mut u8,();
+(GmapPlayerUnit)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_Up()` overload"]fn get_up(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37ff0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`set_Up(crate::unity_engine::vector3::Vector3)` overload"]fn set_up(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38020usize)as*mut u8,();
+(GmapPlayerUnit)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`set_Rotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn set_rotation(self,value:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37eb0usize)as*mut u8,();
+(GmapPlayerUnit)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(value))}
+}
+#[doc="`SetDirection(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn set_direction(self,dir:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,up:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b380a0usize)as*mut u8,();
+(GmapPlayerUnit)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(dir),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(up))}
+}
+#[doc="`SetRotate(f32)` overload"]fn set_rotate(self,angle:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38390usize)as*mut u8,();
+(GmapPlayerUnit)__receiver,(f32)::core::convert::Into::into(angle))}
+}
+#[doc="`SetRotateImmidiate(f32)` overload"]fn set_rotate_immidiate(self,angle:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38450usize)as*mut u8,();
+(GmapPlayerUnit)__receiver,(f32)::core::convert::Into::into(angle))}
+}
+#[doc="`SetUnitFromUnitPool()` overload"]fn set_unit_from_unit_pool(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37430usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`LoadActor()` overload"]fn load_actor(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38490usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38670usize)as*mut u8,bool;
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`UnloadUnit()` overload"]fn unload_unit(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b387b0usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b388a0usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`SetupModelType()` overload"]fn setup_model_type(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38b20usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`ChangeModelType(crate::app::gmapplayerunit::GmapPlayerUnit_ModelType)` overload"]fn change_model_type(self,model_type:impl::core::convert::Into<crate::app::gmapplayerunit::GmapPlayerUnit_ModelType>)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37870usize)as*mut u8,();
+(GmapPlayerUnit)__receiver,(crate::app::gmapplayerunit::GmapPlayerUnit_ModelType)::core::convert::Into::into(model_type))}
+}
+#[doc="`StopRun()` overload"]fn stop_run(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b382e0usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38b50usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38be0usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`SetMapTransparent(bool)` overload"]fn set_map_transparent(self,active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38960usize)as*mut u8,();
+(GmapPlayerUnit)__receiver,(bool)::core::convert::Into::into(active))}
+}
+#[doc="`IsOnGround()` overload"]fn is_on_ground(self,)->bool{unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b375b0usize)as*mut u8,bool;
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`PlayTeleportOut()` overload"]fn play_teleport_out(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38c10usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`PlayTeleportIn()` overload"]fn play_teleport_in(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38d30usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b38df0usize)as*mut u8,();
+(GmapPlayerUnit)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gmapplayerunit")]
-impl < __T : IGmapPlayerUnit > IGmapPlayerUnitMethods for __T { }
+#[cfg(feature="app-gmapplayerunit")]impl<__T:IGmapPlayerUnit>IGmapPlayerUnitMethods for __T{}
 
-#[cfg(feature = "app-gmapplayerunit")]
-impl GmapPlayerUnit { pub fn get_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_player_model_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_player_model_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn commit_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_rotation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_direction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_rotate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_rotate_immidiate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_angle_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_unit_from_unit_pool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn load_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn unload_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn setup_model_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn change_model_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn stop_run_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn show_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_map_transparent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn is_on_ground_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn play_teleport_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn play_teleport_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GmapPlayerUnit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } }
+#[cfg(feature="app-gmapplayerunit")]impl GmapPlayerUnit{pub fn get_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_player_model_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_player_model_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn commit_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_rotate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_rotate_immidiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_angle_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_unit_from_unit_pool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn load_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn unload_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn setup_model_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn change_model_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn stop_run_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_map_transparent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn is_on_ground_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn play_teleport_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn play_teleport_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+}
 
-#[cfg(feature = "app-gmapplayerunit")]
-impl GmapPlayerUnit {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GmapPlayerUnit) , :: core :: stringify ! (new) ,)) ; < Self as IGmapPlayerUnitMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gmapplayerunit")]impl GmapPlayerUnit{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GmapPlayerUnit), ::core::stringify!(new),));
+ <Self as IGmapPlayerUnitMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gmapplayerunit")]

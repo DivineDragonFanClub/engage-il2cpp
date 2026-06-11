@@ -4,44 +4,1060 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/dynvalue/DynValue.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "DynValue")] # [parent (crate :: system :: object :: Object)] pub struct DynValue {
-# [static_field] # [rename (name = "s_RefIDCounter")] pub s_ref_id_counter : i32 ,
-# [offset (16)] # [rename (name = "m_RefID")] pub m_ref_id : i32 ,
-# [offset (20)] # [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
-# [offset (24)] # [rename (name = "m_ReadOnly")] pub m_read_only : bool ,
-# [offset (32)] # [rename (name = "m_Number")] pub m_number : f64 ,
-# [offset (40)] # [rename (name = "m_Object")] pub m_object : :: unity2 :: IlInstance ,
-# [offset (48)] # [rename (name = "m_Type")] pub m_type : crate :: moon_sharp :: interpreter :: datatype :: DataType ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/dynvalue/DynValue.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="DynValue")]#[parent(crate::system::object::Object)]pub struct DynValue{#[static_field]#[rename(name="s_RefIDCounter")]pub s_ref_id_counter:i32, #[offset(16)]#[rename(name="m_RefID")]pub m_ref_id:i32, #[offset(20)]#[rename(name="m_HashCode")]pub m_hash_code:i32, #[offset(24)]#[rename(name="m_ReadOnly")]pub m_read_only:bool, #[offset(32)]#[rename(name="m_Number")]pub m_number:f64, #[offset(40)]#[rename(name="m_Object")]pub m_object: ::unity2::IlInstance, #[offset(48)]#[rename(name="m_Type")]pub m_type:crate::moon_sharp::interpreter::datatype::DataType,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-dynvalue-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-dynvalue")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __DynValue_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_reference_id { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_ReferenceID" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_ReferenceID" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Type" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Type" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_function { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Function" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Function" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_number { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Number" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Number" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tuple { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Tuple" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Tuple" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_coroutine { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Coroutine" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Coroutine" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_table { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Table" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Table" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_boolean { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Boolean" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Boolean" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_String" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_String" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_callback { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Callback" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Callback" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_tail_call_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_TailCallData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_TailCallData" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_yield_request { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_YieldRequest" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_YieldRequest" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_user_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_UserData" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_UserData" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_read_only { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_ReadOnly" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_ReadOnly" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_nil { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewNil" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewNil" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_boolean { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewBoolean" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewBoolean" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_number { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewNumber" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewNumber" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewString" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_string_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: system :: object :: Object > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewString" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_coroutine { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: coroutine_2 :: Coroutine_2 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewCoroutine" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewCoroutine" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_closure { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: closure :: Closure as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewClosure" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewClosure" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_callback { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: func_3 :: Func_3 < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewCallback" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewCallback" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_callback_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewCallback" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewCallback" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_table { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewTable" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewTable" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_prime_table { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewPrimeTable" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewPrimeTable" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_table_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewTable" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewTable" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_table_3 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewTable" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewTable" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_tail_call_req { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewTailCallReq" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewTailCallReq" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_tail_call_req_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tailcalldata :: TailCallData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewTailCallReq" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewTailCallReq" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_yield_req { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewYieldReq" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewYieldReq" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_forced_yield_req { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewForcedYieldReq" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewForcedYieldReq" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_tuple { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewTuple" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewTuple" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_tuple_nested { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewTupleNested" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewTupleNested" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_new_user_data { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: userdata :: UserData as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "NewUserData" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "NewUserData" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_as_read_only { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "AsReadOnly" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "AsReadOnly" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clone { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "Clone" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "Clone" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clone_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "Clone" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "Clone" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_clone_as_writable { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "CloneAsWritable" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "CloneAsWritable" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_void { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Void" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Void" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_void { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "set_Void" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "set_Void" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_nil { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_Nil" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_Nil" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_nil { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "set_Nil" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "set_Nil" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_true { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_True" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_True" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_true { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "set_True" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "set_True" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_false { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "get_False" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "get_False" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_false { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "set_False" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "set_False" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , ".cctor" , 0 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , ".cctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_print_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "ToPrintString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "ToPrintString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_debug_print_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "ToDebugPrintString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "ToDebugPrintString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cast_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "CastToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "CastToString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_cast_to_bool { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "CastToBool" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "CastToBool" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_as_private_resource { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "GetAsPrivateResource" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "GetAsPrivateResource" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_scalar { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "ToScalar" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "ToScalar" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_assign { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "Assign" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "Assign" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "GetLength" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "GetLength" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_nil { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "IsNil" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "IsNil" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_not_nil { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "IsNotNil" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "IsNotNil" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_void { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "IsVoid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "IsVoid" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_not_void { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "IsNotVoid" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "IsNotVoid" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_is_nil_or_nan { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "IsNilOrNan" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "IsNilOrNan" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_assign_number { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< f64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "AssignNumber" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "AssignNumber" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_from_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: script :: Script as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "FromObject" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "FromObject" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "ToObject" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "ToObject" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_object_2 { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "ToObject" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "ToObject" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_check_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: datatype :: DataType as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: typevalidationflags :: TypeValidationFlags as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , "CheckType" , 4 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "CheckType" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< DynValue as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-dynvalue")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DynValue_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_reference_id{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_ReferenceID",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_ReferenceID",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_type{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Type",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Type",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_function{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Function",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Function",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_number{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Number",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Number",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_tuple{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Tuple",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Tuple",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_coroutine{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Coroutine",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Coroutine",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_table{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Table",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Table",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_boolean{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Boolean",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Boolean",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_String",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_String",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_callback{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Callback",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Callback",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_tail_call_data{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_TailCallData",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_TailCallData",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_yield_request{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_YieldRequest",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_YieldRequest",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_user_data{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_UserData",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_UserData",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_read_only{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_ReadOnly",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_ReadOnly",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_nil{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewNil",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewNil",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_boolean{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewBoolean",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewBoolean",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_number{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<f64 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewNumber",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewNumber",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewString",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_string_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::system::object::Object>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewString",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_coroutine{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::coroutine_2::Coroutine_2 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewCoroutine",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewCoroutine",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_closure{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::closure::Closure as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewClosure",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewClosure",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_callback{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::func_3::Func_3<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewCallback",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewCallback",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_callback_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::callbackfunction::CallbackFunction as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewCallback",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewCallback",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_table{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewTable",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewTable",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_prime_table{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewPrimeTable",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewPrimeTable",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_table_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewTable",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewTable",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_table_3{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewTable",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewTable",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_tail_call_req{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewTailCallReq",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewTailCallReq",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_tail_call_req_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tailcalldata::TailCallData as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewTailCallReq",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewTailCallReq",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_yield_req{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewYieldReq",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewYieldReq",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_forced_yield_req{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewForcedYieldReq",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewForcedYieldReq",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_tuple{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewTuple",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewTuple",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_tuple_nested{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewTupleNested",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewTupleNested",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new_user_data{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::userdata::UserData as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"NewUserData",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"NewUserData",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_as_read_only{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"AsReadOnly",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"AsReadOnly",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_clone{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"Clone",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"Clone",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_clone_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"Clone",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"Clone",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_clone_as_writable{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"CloneAsWritable",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"CloneAsWritable",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_void{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Void",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Void",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_void{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"set_Void",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"set_Void",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_nil{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_Nil",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_Nil",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_nil{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"set_Nil",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"set_Nil",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_true{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_True",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_True",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_true{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"set_True",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"set_True",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_false{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"get_False",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"get_False",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_false{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"set_False",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"set_False",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_cctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),".cctor",0,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,".cctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_print_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"ToPrintString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"ToPrintString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_debug_print_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"ToDebugPrintString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"ToDebugPrintString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"ToString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_hash_code{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"GetHashCode",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"GetHashCode",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"Equals",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_cast_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"CastToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"CastToString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_cast_to_bool{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"CastToBool",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"CastToBool",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_as_private_resource{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"GetAsPrivateResource",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"GetAsPrivateResource",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_scalar{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"ToScalar",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"ToScalar",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_assign{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"Assign",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"Assign",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_length{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"GetLength",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"GetLength",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_nil{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"IsNil",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"IsNil",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_not_nil{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"IsNotNil",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"IsNotNil",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_void{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"IsVoid",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"IsVoid",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_not_void{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"IsNotVoid",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"IsNotVoid",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_nil_or_nan{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"IsNilOrNan",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"IsNilOrNan",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_assign_number{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<f64 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"AssignNumber",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"AssignNumber",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_from_object{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"FromObject",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"FromObject",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_object{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"ToObject",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"ToObject",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_object_2{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"ToObject",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"ToObject",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_check_type{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::datatype::DataType as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::typevalidationflags::TypeValidationFlags as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),"CheckType",4,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"CheckType",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<DynValue as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-dynvalue")]
-impl DynValue { # [doc = "`NewNil()` overload"] pub fn new_nil () -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_nil :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`NewBoolean(bool)` overload"] pub fn new_boolean (v : impl :: core :: convert :: Into < bool >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_boolean :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`NewNumber(f64)` overload"] pub fn new_number (num : impl :: core :: convert :: Into < f64 >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (f64 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_number :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`NewString(::unity2::Il2CppString)` overload"] pub fn new_string (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_string :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`NewString(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] pub fn new_string_2 (format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_string_2 :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (format) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`NewCoroutine(crate::moon_sharp::interpreter::coroutine_2::Coroutine_2)` overload"] pub fn new_coroutine (coroutine : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: coroutine_2 :: Coroutine_2 >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: coroutine_2 :: Coroutine_2 , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_coroutine :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (coroutine) , :: core :: option :: Option :: None) } } } # [doc = "`NewClosure(crate::moon_sharp::interpreter::closure::Closure)` overload"] pub fn new_closure (function : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: closure :: Closure >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: closure :: Closure , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_closure :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`NewCallback(crate::system::func_3::Func_3<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::Il2CppString)` overload"] pub fn new_callback (call_back : impl :: core :: convert :: Into < crate :: system :: func_3 :: Func_3 < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: system :: func_3 :: Func_3 < crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext , crate :: moon_sharp :: interpreter :: callbackarguments :: CallbackArguments , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_callback :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (call_back) , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`NewCallback(crate::moon_sharp::interpreter::callbackfunction::CallbackFunction)` overload"] pub fn new_callback_2 (function : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_callback_2 :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`NewTable(crate::moon_sharp::interpreter::table::Table)` overload"] pub fn new_table (table : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_table :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (table) , :: core :: option :: Option :: None) } } } # [doc = "`NewPrimeTable()` overload"] pub fn new_prime_table () -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_prime_table :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`NewTable(crate::moon_sharp::interpreter::script::Script)` overload"] pub fn new_table_2 (script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: script :: Script , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_table_2 :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (script) , :: core :: option :: Option :: None) } } } # [doc = "`NewTable(crate::moon_sharp::interpreter::script::Script, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn new_table_3 (script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , array_values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: script :: Script , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_table_3 :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (script) , :: core :: convert :: Into :: into (array_values) , :: core :: option :: Option :: None) } } } # [doc = "`NewTailCallReq(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn new_tail_call_req (tail_fn : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_tail_call_req :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (tail_fn) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`NewTailCallReq(crate::moon_sharp::interpreter::tailcalldata::TailCallData)` overload"] pub fn new_tail_call_req_2 (tail_call_data : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tailcalldata :: TailCallData >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: tailcalldata :: TailCallData , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_tail_call_req_2 :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (tail_call_data) , :: core :: option :: Option :: None) } } } # [doc = "`NewYieldReq(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn new_yield_req (args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_yield_req :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`NewForcedYieldReq()` overload"] pub fn new_forced_yield_req () -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_forced_yield_req :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`NewTuple(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn new_tuple (values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_tuple :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`NewTupleNested(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] pub fn new_tuple_nested (values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_tuple_nested :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (values) , :: core :: option :: Option :: None) } } } # [doc = "`NewUserData(crate::moon_sharp::interpreter::userdata::UserData)` overload"] pub fn new_user_data (user_data : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: userdata :: UserData >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: userdata :: UserData , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_new_user_data :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (user_data) , :: core :: option :: Option :: None) } } } # [doc = "`get_Void()` overload"] pub fn get_void () -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_void :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_Void(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] pub fn set_void (value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_set_void :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Nil()` overload"] pub fn get_nil () -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_nil :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_Nil(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] pub fn set_nil (value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_set_nil :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_True()` overload"] pub fn get_true () -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_true :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_True(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] pub fn set_true (value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_set_true :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_False()` overload"] pub fn get_false () -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_false :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_False(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] pub fn set_false (value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_set_false :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_cctor :: get_method_info () . method_ptr) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`FromObject(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"] pub fn from_object (script : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: script :: Script > , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: script :: Script , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_from_object :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (script) , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-dynvalue")]impl DynValue{#[doc="`NewNil()` overload"]pub fn new_nil()->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_nil::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+)}
+}
+#[doc="`NewBoolean(bool)` overload"]pub fn new_boolean(v:impl::core::convert::Into<bool>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_boolean::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(bool)::core::convert::Into::into(v))}
+}
+#[doc="`NewNumber(f64)` overload"]pub fn new_number(num:impl::core::convert::Into<f64>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_number::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(f64)::core::convert::Into::into(num))}
+}
+#[doc="`NewString(::unity2::Il2CppString)` overload"]pub fn new_string(str:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_string::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`NewString(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn new_string_2(format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_string_2::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`NewCoroutine(crate::moon_sharp::interpreter::coroutine_2::Coroutine_2)` overload"]pub fn new_coroutine(coroutine:impl::core::convert::Into<crate::moon_sharp::interpreter::coroutine_2::Coroutine_2>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_coroutine::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::coroutine_2::Coroutine_2)::core::convert::Into::into(coroutine))}
+}
+#[doc="`NewClosure(crate::moon_sharp::interpreter::closure::Closure)` overload"]pub fn new_closure(function:impl::core::convert::Into<crate::moon_sharp::interpreter::closure::Closure>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_closure::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::closure::Closure)::core::convert::Into::into(function))}
+}
+#[doc="`NewCallback(crate::system::func_3::Func_3<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>, ::unity2::Il2CppString)` overload"]pub fn new_callback(call_back:impl::core::convert::Into<crate::system::func_3::Func_3<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue> > ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_callback::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::system::func_3::Func_3<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(call_back),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`NewCallback(crate::moon_sharp::interpreter::callbackfunction::CallbackFunction)` overload"]pub fn new_callback_2(function:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackfunction::CallbackFunction>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_callback_2::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::callbackfunction::CallbackFunction)::core::convert::Into::into(function))}
+}
+#[doc="`NewTable(crate::moon_sharp::interpreter::table::Table)` overload"]pub fn new_table(table:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_table::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(table))}
+}
+#[doc="`NewPrimeTable()` overload"]pub fn new_prime_table()->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_prime_table::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+)}
+}
+#[doc="`NewTable(crate::moon_sharp::interpreter::script::Script)` overload"]pub fn new_table_2(script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_table_2::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script))}
+}
+#[doc="`NewTable(crate::moon_sharp::interpreter::script::Script, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn new_table_3(script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,array_values:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_table_3::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(array_values))}
+}
+#[doc="`NewTailCallReq(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn new_tail_call_req(tail_fn:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_tail_call_req::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(tail_fn),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`NewTailCallReq(crate::moon_sharp::interpreter::tailcalldata::TailCallData)` overload"]pub fn new_tail_call_req_2(tail_call_data:impl::core::convert::Into<crate::moon_sharp::interpreter::tailcalldata::TailCallData>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_tail_call_req_2::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::tailcalldata::TailCallData)::core::convert::Into::into(tail_call_data))}
+}
+#[doc="`NewYieldReq(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn new_yield_req(args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_yield_req::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`NewForcedYieldReq()` overload"]pub fn new_forced_yield_req()->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_forced_yield_req::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+)}
+}
+#[doc="`NewTuple(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn new_tuple(values:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_tuple::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(values))}
+}
+#[doc="`NewTupleNested(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]pub fn new_tuple_nested(values:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_tuple_nested::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(values))}
+}
+#[doc="`NewUserData(crate::moon_sharp::interpreter::userdata::UserData)` overload"]pub fn new_user_data(user_data:impl::core::convert::Into<crate::moon_sharp::interpreter::userdata::UserData>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_new_user_data::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::userdata::UserData)::core::convert::Into::into(user_data))}
+}
+#[doc="`get_Void()` overload"]pub fn get_void()->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_void::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+)}
+}
+#[doc="`set_Void(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]pub fn set_void(value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_set_void::get_method_info().method_ptr,();
+(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+}
+#[doc="`get_Nil()` overload"]pub fn get_nil()->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_nil::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+)}
+}
+#[doc="`set_Nil(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]pub fn set_nil(value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_set_nil::get_method_info().method_ptr,();
+(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+}
+#[doc="`get_True()` overload"]pub fn get_true()->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_true::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+)}
+}
+#[doc="`set_True(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]pub fn set_true(value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_set_true::get_method_info().method_ptr,();
+(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+}
+#[doc="`get_False()` overload"]pub fn get_false()->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_false::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+)}
+}
+#[doc="`set_False(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]pub fn set_false(value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_set_false::get_method_info().method_ptr,();
+(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_cctor::get_method_info().method_ptr,();
+)}
+}
+#[doc="`FromObject(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]pub fn from_object(script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_from_object::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-dynvalue")]
-pub trait IDynValueMethods : IDynValue { # [doc = "`get_ReferenceID()` overload"] fn get_reference_id (self ,) -> i32 { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_reference_id :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Type()` overload"] fn get_type (self ,) -> crate :: moon_sharp :: interpreter :: datatype :: DataType { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: datatype :: DataType = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_type :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Function()` overload"] fn get_function (self ,) -> crate :: moon_sharp :: interpreter :: closure :: Closure { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: closure :: Closure = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_function :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Number()` overload"] fn get_number (self ,) -> f64 { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_number :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Tuple()` overload"] fn get_tuple (self ,) -> :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_tuple :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Coroutine()` overload"] fn get_coroutine (self ,) -> crate :: moon_sharp :: interpreter :: coroutine_2 :: Coroutine_2 { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: coroutine_2 :: Coroutine_2 = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_coroutine :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Table()` overload"] fn get_table (self ,) -> crate :: moon_sharp :: interpreter :: table :: Table { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: table :: Table = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_table :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Boolean()` overload"] fn get_boolean (self ,) -> bool { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_boolean :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_String()` overload"] fn get_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Callback()` overload"] fn get_callback (self ,) -> crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: callbackfunction :: CallbackFunction = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_callback :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TailCallData()` overload"] fn get_tail_call_data (self ,) -> crate :: moon_sharp :: interpreter :: tailcalldata :: TailCallData { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tailcalldata :: TailCallData = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_tail_call_data :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_YieldRequest()` overload"] fn get_yield_request (self ,) -> crate :: moon_sharp :: interpreter :: yieldrequest :: YieldRequest { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: yieldrequest :: YieldRequest = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_yield_request :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_UserData()` overload"] fn get_user_data (self ,) -> crate :: moon_sharp :: interpreter :: userdata :: UserData { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: userdata :: UserData = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_user_data :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReadOnly()` overload"] fn get_read_only (self ,) -> bool { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_read_only :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AsReadOnly()` overload"] fn as_read_only (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_as_read_only :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone()` overload"] fn clone (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_clone :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone(bool)` overload"] fn clone_2 (self , read_only : impl :: core :: convert :: Into < bool >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , bool , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_clone_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (read_only) , :: core :: option :: Option :: None) } } } # [doc = "`CloneAsWritable()` overload"] fn clone_as_writable (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_clone_as_writable :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToPrintString()` overload"] fn to_print_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_to_print_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToDebugPrintString()` overload"] fn to_debug_print_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_to_debug_print_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_to_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_hash_code :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_equals :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`CastToString()` overload"] fn cast_to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_cast_to_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CastToBool()` overload"] fn cast_to_bool (self ,) -> bool { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_cast_to_bool :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAsPrivateResource()` overload"] fn get_as_private_resource (self ,) -> crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: iscriptprivateresource :: IScriptPrivateResource = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_as_private_resource :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToScalar()` overload"] fn to_scalar (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_to_scalar :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Assign(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] fn assign (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> () { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_assign :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetLength()` overload"] fn get_length (self ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_get_length :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNil()` overload"] fn is_nil (self ,) -> bool { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_is_nil :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNotNil()` overload"] fn is_not_nil (self ,) -> bool { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_is_not_nil :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsVoid()` overload"] fn is_void (self ,) -> bool { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_is_void :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNotVoid()` overload"] fn is_not_void (self ,) -> bool { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_is_not_void :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsNilOrNan()` overload"] fn is_nil_or_nan (self ,) -> bool { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_is_nil_or_nan :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AssignNumber(f64)` overload"] fn assign_number (self , num : impl :: core :: convert :: Into < f64 >) -> () { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_assign_number :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`ToObject()` overload"] fn to_object (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_to_object :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToObject(::unity2::SystemType)` overload"] fn to_object_2 (self , desired_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: object :: Object { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_to_object_2 :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (desired_type) , :: core :: option :: Option :: None) } } } # [doc = "`CheckType(::unity2::Il2CppString, crate::moon_sharp::interpreter::datatype::DataType, i32, crate::moon_sharp::interpreter::typevalidationflags::TypeValidationFlags)` overload"] fn check_type (self , func_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , desired_type : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: datatype :: DataType > , arg_num : impl :: core :: convert :: Into < i32 > , flags : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: typevalidationflags :: TypeValidationFlags >) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: datatype :: DataType , i32 , crate :: moon_sharp :: interpreter :: typevalidationflags :: TypeValidationFlags , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: dynvalue :: DynValue = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_check_type :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (func_name) , :: core :: convert :: Into :: into (desired_type) , :: core :: convert :: Into :: into (arg_num) , :: core :: convert :: Into :: into (flags) , :: core :: option :: Option :: None) } } } fn check_user_data_type < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , func_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg_num : impl :: core :: convert :: Into < i32 > , flags : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: typevalidationflags :: TypeValidationFlags >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< DynValue as :: unity2 :: ClassIdentity > :: class () , "CheckUserDataType" , 3 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DynValue as :: unity2 :: ClassIdentity > :: NAME , "CheckUserDataType" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (DynValue , :: unity2 :: Il2CppString , i32 , crate :: moon_sharp :: interpreter :: typevalidationflags :: TypeValidationFlags , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (func_name) , :: core :: convert :: Into :: into (arg_num) , :: core :: convert :: Into :: into (flags) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DynValue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DynValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__DynValue_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-dynvalue")]pub trait IDynValueMethods:IDynValue{#[doc="`get_ReferenceID()` overload"]fn get_reference_id(self,)->i32{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_reference_id::get_method_info().method_ptr,i32;
+(DynValue)__receiver)}
+}
+#[doc="`get_Type()` overload"]fn get_type(self,)->crate::moon_sharp::interpreter::datatype::DataType{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_type::get_method_info().method_ptr,crate::moon_sharp::interpreter::datatype::DataType;
+(DynValue)__receiver)}
+}
+#[doc="`get_Function()` overload"]fn get_function(self,)->crate::moon_sharp::interpreter::closure::Closure{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_function::get_method_info().method_ptr,crate::moon_sharp::interpreter::closure::Closure;
+(DynValue)__receiver)}
+}
+#[doc="`get_Number()` overload"]fn get_number(self,)->f64{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_number::get_method_info().method_ptr,f64;
+(DynValue)__receiver)}
+}
+#[doc="`get_Tuple()` overload"]fn get_tuple(self,)-> ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_tuple::get_method_info().method_ptr, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> ;
+(DynValue)__receiver)}
+}
+#[doc="`get_Coroutine()` overload"]fn get_coroutine(self,)->crate::moon_sharp::interpreter::coroutine_2::Coroutine_2{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_coroutine::get_method_info().method_ptr,crate::moon_sharp::interpreter::coroutine_2::Coroutine_2;
+(DynValue)__receiver)}
+}
+#[doc="`get_Table()` overload"]fn get_table(self,)->crate::moon_sharp::interpreter::table::Table{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_table::get_method_info().method_ptr,crate::moon_sharp::interpreter::table::Table;
+(DynValue)__receiver)}
+}
+#[doc="`get_Boolean()` overload"]fn get_boolean(self,)->bool{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_boolean::get_method_info().method_ptr,bool;
+(DynValue)__receiver)}
+}
+#[doc="`get_String()` overload"]fn get_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(DynValue)__receiver)}
+}
+#[doc="`get_Callback()` overload"]fn get_callback(self,)->crate::moon_sharp::interpreter::callbackfunction::CallbackFunction{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_callback::get_method_info().method_ptr,crate::moon_sharp::interpreter::callbackfunction::CallbackFunction;
+(DynValue)__receiver)}
+}
+#[doc="`get_TailCallData()` overload"]fn get_tail_call_data(self,)->crate::moon_sharp::interpreter::tailcalldata::TailCallData{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_tail_call_data::get_method_info().method_ptr,crate::moon_sharp::interpreter::tailcalldata::TailCallData;
+(DynValue)__receiver)}
+}
+#[doc="`get_YieldRequest()` overload"]fn get_yield_request(self,)->crate::moon_sharp::interpreter::yieldrequest::YieldRequest{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_yield_request::get_method_info().method_ptr,crate::moon_sharp::interpreter::yieldrequest::YieldRequest;
+(DynValue)__receiver)}
+}
+#[doc="`get_UserData()` overload"]fn get_user_data(self,)->crate::moon_sharp::interpreter::userdata::UserData{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_user_data::get_method_info().method_ptr,crate::moon_sharp::interpreter::userdata::UserData;
+(DynValue)__receiver)}
+}
+#[doc="`get_ReadOnly()` overload"]fn get_read_only(self,)->bool{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_read_only::get_method_info().method_ptr,bool;
+(DynValue)__receiver)}
+}
+#[doc="`AsReadOnly()` overload"]fn as_read_only(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_as_read_only::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(DynValue)__receiver)}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_clone::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(DynValue)__receiver)}
+}
+#[doc="`Clone(bool)` overload"]fn clone_2(self,read_only:impl::core::convert::Into<bool>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_clone_2::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(DynValue)__receiver,(bool)::core::convert::Into::into(read_only))}
+}
+#[doc="`CloneAsWritable()` overload"]fn clone_as_writable(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_clone_as_writable::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(DynValue)__receiver)}
+}
+#[doc="`ToPrintString()` overload"]fn to_print_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_to_print_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(DynValue)__receiver)}
+}
+#[doc="`ToDebugPrintString()` overload"]fn to_debug_print_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_to_debug_print_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(DynValue)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(DynValue)__receiver)}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_hash_code::get_method_info().method_ptr,i32;
+(DynValue)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_equals::get_method_info().method_ptr,bool;
+(DynValue)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`CastToString()` overload"]fn cast_to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_cast_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(DynValue)__receiver)}
+}
+#[doc="`CastToBool()` overload"]fn cast_to_bool(self,)->bool{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_cast_to_bool::get_method_info().method_ptr,bool;
+(DynValue)__receiver)}
+}
+#[doc="`GetAsPrivateResource()` overload"]fn get_as_private_resource(self,)->crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_as_private_resource::get_method_info().method_ptr,crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource;
+(DynValue)__receiver)}
+}
+#[doc="`ToScalar()` overload"]fn to_scalar(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_to_scalar::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(DynValue)__receiver)}
+}
+#[doc="`Assign(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn assign(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_assign::get_method_info().method_ptr,();
+(DynValue)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+}
+#[doc="`GetLength()` overload"]fn get_length(self,)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_get_length::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(DynValue)__receiver)}
+}
+#[doc="`IsNil()` overload"]fn is_nil(self,)->bool{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_is_nil::get_method_info().method_ptr,bool;
+(DynValue)__receiver)}
+}
+#[doc="`IsNotNil()` overload"]fn is_not_nil(self,)->bool{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_is_not_nil::get_method_info().method_ptr,bool;
+(DynValue)__receiver)}
+}
+#[doc="`IsVoid()` overload"]fn is_void(self,)->bool{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_is_void::get_method_info().method_ptr,bool;
+(DynValue)__receiver)}
+}
+#[doc="`IsNotVoid()` overload"]fn is_not_void(self,)->bool{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_is_not_void::get_method_info().method_ptr,bool;
+(DynValue)__receiver)}
+}
+#[doc="`IsNilOrNan()` overload"]fn is_nil_or_nan(self,)->bool{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_is_nil_or_nan::get_method_info().method_ptr,bool;
+(DynValue)__receiver)}
+}
+#[doc="`AssignNumber(f64)` overload"]fn assign_number(self,num:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_assign_number::get_method_info().method_ptr,();
+(DynValue)__receiver,(f64)::core::convert::Into::into(num))}
+}
+#[doc="`ToObject()` overload"]fn to_object(self,)->crate::system::object::Object{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_to_object::get_method_info().method_ptr,crate::system::object::Object;
+(DynValue)__receiver)}
+}
+#[doc="`ToObject(::unity2::SystemType)` overload"]fn to_object_2(self,desired_type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::object::Object{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_to_object_2::get_method_info().method_ptr,crate::system::object::Object;
+(DynValue)__receiver,(::unity2::SystemType)::core::convert::Into::into(desired_type))}
+}
+#[doc="`CheckType(::unity2::Il2CppString, crate::moon_sharp::interpreter::datatype::DataType, i32, crate::moon_sharp::interpreter::typevalidationflags::TypeValidationFlags)` overload"]fn check_type(self,func_name:impl::core::convert::Into< ::unity2::Il2CppString> ,desired_type:impl::core::convert::Into<crate::moon_sharp::interpreter::datatype::DataType> ,arg_num:impl::core::convert::Into<i32> ,flags:impl::core::convert::Into<crate::moon_sharp::interpreter::typevalidationflags::TypeValidationFlags>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_check_type::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
+(DynValue)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(func_name),(crate::moon_sharp::interpreter::datatype::DataType)::core::convert::Into::into(desired_type),(i32)::core::convert::Into::into(arg_num),(crate::moon_sharp::interpreter::typevalidationflags::TypeValidationFlags)::core::convert::Into::into(flags))}
+}
+fn check_user_data_type<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,func_name:impl::core::convert::Into< ::unity2::Il2CppString> ,arg_num:impl::core::convert::Into<i32> ,flags:impl::core::convert::Into<crate::moon_sharp::interpreter::typevalidationflags::TypeValidationFlags>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<DynValue as::unity2::ClassIdentity> ::class(),"CheckUserDataType",3,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DynValue as::unity2::ClassIdentity> ::NAME,"CheckUserDataType",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(DynValue, ::unity2::Il2CppString,i32,crate::moon_sharp::interpreter::typevalidationflags::TypeValidationFlags, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::convert::Into::into(func_name), ::core::convert::Into::into(arg_num), ::core::convert::Into::into(flags), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DynValue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__DynValue_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(DynValue)__receiver)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-dynvalue")]
-impl < __T : IDynValue > IDynValueMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-dynvalue")]impl<__T:IDynValue>IDynValueMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-dynvalue")]
-impl DynValue { pub fn get_reference_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_function_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_tuple_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_boolean_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_tail_call_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_yield_request_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_user_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn new_nil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn new_boolean_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn new_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn new_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn new_string_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn new_coroutine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn new_closure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn new_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn new_callback_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn new_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn new_prime_table_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn new_table_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn new_table_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn new_tail_call_req_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn new_tail_call_req_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn new_yield_req_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn new_forced_yield_req_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn new_tuple_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn new_tuple_nested_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn new_user_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn as_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn clone_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn clone_as_writable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_void_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn set_void_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn get_nil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn set_nil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn get_true_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn set_true_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn get_false_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn set_false_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn to_print_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn to_debug_print_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn cast_to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn cast_to_bool_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn get_as_private_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn to_scalar_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn assign_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn is_nil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn is_not_nil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn is_void_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn is_not_void_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn is_nil_or_nan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn assign_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn from_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn to_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn to_object_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn check_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DynValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } }
+#[cfg(feature="moon_sharp-interpreter-dynvalue")]impl DynValue{pub fn get_reference_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_function_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_tuple_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_boolean_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_tail_call_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_yield_request_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_user_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn new_nil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn new_boolean_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn new_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn new_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn new_string_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn new_coroutine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn new_closure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn new_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn new_callback_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn new_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn new_prime_table_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn new_table_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn new_table_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn new_tail_call_req_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn new_tail_call_req_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn new_yield_req_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn new_forced_yield_req_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn new_tuple_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn new_tuple_nested_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn new_user_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn as_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn clone_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn clone_as_writable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_void_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn set_void_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_nil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn set_nil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_true_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn set_true_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_false_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn set_false_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn to_print_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn to_debug_print_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn cast_to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn cast_to_bool_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn get_as_private_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn to_scalar_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn assign_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn is_nil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn is_not_nil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn is_void_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn is_not_void_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn is_nil_or_nan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn assign_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn from_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn to_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn to_object_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn check_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-dynvalue")]
-impl DynValue {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DynValue) , :: core :: stringify ! (new) ,)) ; < Self as IDynValueMethods > :: ctor (this ,) ; this }
+#[cfg(feature="moon_sharp-interpreter-dynvalue")]impl DynValue{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DynValue), ::core::stringify!(new),));
+ <Self as IDynValueMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-dynvalue")]

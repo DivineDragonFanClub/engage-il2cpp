@@ -4,23 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/dirut/DirUt.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "DirUt")] # [parent (crate :: system :: object :: Object)] pub struct DirUt {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/dirut/DirUt.md"))]#[::unity2::class(namespace="Combat",name="DirUt")]#[parent(crate::system::object::Object)]pub struct DirUt{}
 
 }
 
 #[cfg(feature = "combat-dirut-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-dirut")]
-impl DirUt { # [doc = "`VecToDir2(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::combat::dir::Dir, *mutcrate::combat::dir::Dir)` overload"] pub fn vec_to_dir2 () -> (crate :: unity_engine :: vector3 :: Vector3 , crate :: combat :: dir :: Dir , crate :: combat :: dir :: Dir) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: combat :: dir :: Dir > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: combat :: dir :: Dir > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: combat :: dir :: Dir , * mut crate :: combat :: dir :: Dir , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee290usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`VecToDir(*mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn vec_to_dir () -> (crate :: combat :: dir :: Dir , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: dir :: Dir = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee420usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`ToJapanese(*mutcrate::unity_engine::vector3::Vector3)` overload"] pub fn to_japanese () -> (:: unity2 :: Il2CppString , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cee450usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } }
+#[cfg(feature="combat-dirut")]impl DirUt{#[doc="`VecToDir2(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::combat::dir::Dir, *mutcrate::combat::dir::Dir)` overload"]pub fn vec_to_dir2()->(crate::unity_engine::vector3::Vector3,crate::combat::dir::Dir,crate::combat::dir::Dir){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::combat::dir::Dir> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <crate::combat::dir::Dir> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cee290usize)as*mut u8,();
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::combat::dir::Dir)__out_1.as_mut_ptr(),(*mut crate::combat::dir::Dir)__out_2.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+#[doc="`VecToDir(*mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn vec_to_dir()->(crate::combat::dir::Dir,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1cee420usize)as*mut u8,crate::combat::dir::Dir;
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`ToJapanese(*mutcrate::unity_engine::vector3::Vector3)` overload"]pub fn to_japanese()->(::unity2::Il2CppString,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1cee450usize)as*mut u8, ::unity2::Il2CppString;
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
 
-#[cfg(feature = "combat-dirut")]
-impl DirUt { pub fn vec_to_dir2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DirUt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn vec_to_dir_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DirUt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_japanese_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DirUt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-dirut")]impl DirUt{pub fn vec_to_dir2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn vec_to_dir_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_japanese_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "combat-dirut")]
 #[doc(hidden)]

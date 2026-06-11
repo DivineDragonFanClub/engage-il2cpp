@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: addressable_assets :: assetreference :: { AssetReference , IAssetReference }
- ;
- use crate :: unity_engine :: addressable_assets :: assetreferencet_1 :: { AssetReferenceT_1 , IAssetReferenceT_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::addressable_assets::assetreference::{AssetReference,IAssetReference}
+;
+use crate::unity_engine::addressable_assets::assetreferencet_1::{AssetReferenceT_1,IAssetReferenceT_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencesprite/AssetReferenceSprite.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets" , name = "AssetReferenceSprite")] # [parent (crate :: unity_engine :: addressable_assets :: assetreferencet_1 :: AssetReferenceT_1 < crate :: unity_engine :: sprite :: Sprite >)] pub struct AssetReferenceSprite {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/assetreferencesprite/AssetReferenceSprite.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AssetReferenceSprite")]#[parent(crate::unity_engine::addressable_assets::assetreferencet_1::AssetReferenceT_1<crate::unity_engine::sprite::Sprite>)]pub struct AssetReferenceSprite{}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite")]
-pub trait IAssetReferenceSpriteMethods : IAssetReferenceSprite { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , guid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssetReferenceSprite as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceSprite , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db2fa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (guid) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateAsset(::unity2::Il2CppString)` overload"] fn validate_asset (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < AssetReferenceSprite as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceSprite , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-assetreferencesprite")]pub trait IAssetReferenceSpriteMethods:IAssetReferenceSprite{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,guid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetReferenceSprite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2fa0usize)as*mut u8,();
+(AssetReferenceSprite)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(guid))}
+}
+#[doc="`ValidateAsset(::unity2::Il2CppString)` overload"]fn validate_asset(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <AssetReferenceSprite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3000usize)as*mut u8,bool;
+(AssetReferenceSprite)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite")]
-impl < __T : IAssetReferenceSprite > IAssetReferenceSpriteMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-assetreferencesprite")]impl<__T:IAssetReferenceSprite>IAssetReferenceSpriteMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite")]
-impl AssetReferenceSprite { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceSprite as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn validate_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceSprite as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-addressable_assets-assetreferencesprite")]impl AssetReferenceSprite{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn validate_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite")]
-impl AssetReferenceSprite {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (guid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetReferenceSprite) , :: core :: stringify ! (new) ,)) ; < Self as IAssetReferenceSpriteMethods > :: ctor (this , guid) ; this }
+#[cfg(feature="unity_engine-addressable_assets-assetreferencesprite")]impl AssetReferenceSprite{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(guid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetReferenceSprite), ::core::stringify!(new),));
+ <Self as IAssetReferenceSpriteMethods> ::ctor(this,guid);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite")]

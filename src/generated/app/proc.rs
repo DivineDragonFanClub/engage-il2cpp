@@ -4,128 +4,427 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc.md"))] # [:: unity2 :: class (namespace = "App" , name = "Proc")] # [parent (crate :: system :: object :: Object)] pub struct Proc {
-# [static_field] # [rename (name = "s_Roots")] pub s_roots : :: unity2 :: Array < crate :: app :: procinst :: ProcInst > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc_RootType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Proc_RootType{pub value:i32,}
+impl::unity2::ClassIdentity for Proc_RootType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Proc.RootType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Proc_RootType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Proc_RootType{pub fn hi()->Self{Self{value:0}
+}
+pub fn def()->Self{Self{value:1}
+}
+pub fn low()->Self{Self{value:2}
+}
+pub fn num()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc_RootType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Proc_RootType  {
-    pub value: i32,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc.md"))]#[::unity2::class(namespace="App",name="Proc")]#[parent(crate::system::object::Object)]pub struct Proc{#[static_field]#[rename(name="s_Roots")]pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst> ,}
 
 
-impl  ::unity2::ClassIdentity for Proc_RootType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Proc.RootType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Proc_RootType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Proc_RootType  {
-    pub fn hi() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn def() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn low() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc_ProcCallback_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "Proc.ProcCallback`1")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] # [parent (crate :: system :: delegate :: Delegate)] # [parent (crate :: system :: object :: Object)] pub struct Proc_ProcCallback_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/proc/Proc_ProcCallback_1.md"))]#[::unity2::class(namespace="App",name="Proc.ProcCallback`1")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct Proc_ProcCallback_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "app-proc-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-proc")]
-impl Proc { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2819980usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Exec(crate::app::proc::Proc_RootType)` overload"] pub fn exec (r#type : impl :: core :: convert :: Into < crate :: app :: proc :: Proc_RootType >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: proc :: Proc_RootType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2819f70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`Sweep()` overload"] pub fn sweep () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281a3b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`FindByName(::unity2::Il2CppString)` overload"] pub fn find_by_name (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281a5b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`KillByName(::unity2::Il2CppString)` overload"] pub fn kill_by_name (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281a810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`KillByBind(crate::app::procinst::ProcInst)` overload"] pub fn kill_by_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281aa60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } pub fn find_by_class < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > () -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Proc as :: unity2 :: ClassIdentity > :: class () , "FindByClass" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Proc as :: unity2 :: ClassIdentity > :: NAME , "FindByClass" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn kill_by_class < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > () -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Proc as :: unity2 :: ClassIdentity > :: class () , "KillByClass" , 0 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Proc as :: unity2 :: ClassIdentity > :: NAME , "KillByClass" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn callback_by_class < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (callback : impl :: core :: convert :: Into < crate :: app :: proc :: Proc_ProcCallback_1 < M0 > >) -> bool { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Proc as :: unity2 :: ClassIdentity > :: class () , "CallbackByClass" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Proc as :: unity2 :: ClassIdentity > :: NAME , "CallbackByClass" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: app :: proc :: Proc_ProcCallback_1 < M0 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetRoot(crate::app::proc::Proc_RootType)` overload"] pub fn get_root (r#type : impl :: core :: convert :: Into < crate :: app :: proc :: Proc_RootType >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: proc :: Proc_RootType , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281aac0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetRootHi()` overload"] pub fn get_root_hi () -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ab50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetRootDef()` overload"] pub fn get_root_def () -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281abd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetRootLow()` overload"] pub fn get_root_low () -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ac50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`End()` overload"] pub fn end () -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280aa50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Halt()` overload"] pub fn halt () -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ad00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Jump(i32)` overload"] pub fn jump (label : impl :: core :: convert :: Into < i32 >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ad90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Jump(::unity2::Il2CppString)` overload"] pub fn jump_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ae30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Label(i32)` overload"] pub fn label (label : impl :: core :: convert :: Into < i32 >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281aeb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Label(::unity2::Il2CppString)` overload"] pub fn label_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281af50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Jump(crate::system::valuetype::ValueType)` overload"] pub fn jump_3 (label : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280a8c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Label(crate::system::valuetype::ValueType)` overload"] pub fn label_3 (label : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280a6c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Push(i32)` overload"] pub fn push (label : impl :: core :: convert :: Into < i32 >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281afd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Push(crate::system::valuetype::ValueType)` overload"] pub fn push_2 (label : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b070usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Pop()` overload"] pub fn pop () -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b130usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Yield()` overload"] pub fn r#yield () -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b1c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Call(crate::app::procvoidfunction::ProcVoidFunction)` overload"] pub fn call (function : impl :: core :: convert :: Into < crate :: app :: procvoidfunction :: ProcVoidFunction >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procvoidfunction :: ProcVoidFunction , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`Call(crate::app::procvoidmethod::ProcVoidMethod)` overload"] pub fn call_2 (function : impl :: core :: convert :: Into < crate :: app :: procvoidmethod :: ProcVoidMethod >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procvoidmethod :: ProcVoidMethod , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280a7a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`Call(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"] pub fn call_3 (function : impl :: core :: convert :: Into < crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString > > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b350usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } # [doc = "`Call(crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"] pub fn call_4 (function : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > > , arg : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: system :: action_1 :: Action_1 < :: unity2 :: Il2CppString > , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b440usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } pub fn call_5 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (function : impl :: core :: convert :: Into < crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , M0 > > , arg : impl :: core :: convert :: Into < M0 >) -> crate :: app :: procdesc :: ProcDesc { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Proc as :: unity2 :: ClassIdentity > :: class () , "Call" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Proc as :: unity2 :: ClassIdentity > :: NAME , "Call" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: action_2 :: Action_2 < crate :: app :: procinst :: ProcInst , M0 > , M0 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn call_6 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (function : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < M0 > > , arg : impl :: core :: convert :: Into < M0 >) -> crate :: app :: procdesc :: ProcDesc { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Proc as :: unity2 :: ClassIdentity > :: class () , "Call" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Proc as :: unity2 :: ClassIdentity > :: NAME , "Call" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: action_1 :: Action_1 < M0 > , M0 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`Tick(crate::app::procvoidfunction::ProcVoidFunction)` overload"] pub fn tick (function : impl :: core :: convert :: Into < crate :: app :: procvoidfunction :: ProcVoidFunction >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procvoidfunction :: ProcVoidFunction , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`Tick(crate::app::procvoidmethod::ProcVoidMethod)` overload"] pub fn tick_2 (method : impl :: core :: convert :: Into < crate :: app :: procvoidmethod :: ProcVoidMethod >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procvoidmethod :: ProcVoidMethod , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b5f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Tick(crate::app::procenummethod::ProcEnumMethod)` overload"] pub fn tick_3 (method : impl :: core :: convert :: Into < crate :: app :: procenummethod :: ProcEnumMethod >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procenummethod :: ProcEnumMethod , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b6b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`WaitTime(f32)` overload"] pub fn wait_time (second : impl :: core :: convert :: Into < f32 >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b7c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (second) , :: core :: option :: Option :: None) } } } # [doc = "`WaitWhileTrue(crate::app::procboolfunction::ProcBoolFunction)` overload"] pub fn wait_while_true (function : impl :: core :: convert :: Into < crate :: app :: procboolfunction :: ProcBoolFunction >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolfunction :: ProcBoolFunction , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b870usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`WaitWhileFalse(crate::app::procboolfunction::ProcBoolFunction)` overload"] pub fn wait_while_false (function : impl :: core :: convert :: Into < crate :: app :: procboolfunction :: ProcBoolFunction >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolfunction :: ProcBoolFunction , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281b930usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`WaitWhileTrue(crate::app::procboolmethod::ProcBoolMethod)` overload"] pub fn wait_while_true_2 (function : impl :: core :: convert :: Into < crate :: app :: procboolmethod :: ProcBoolMethod >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolmethod :: ProcBoolMethod , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280a840usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`WaitWhileFalse(crate::app::procboolmethod::ProcBoolMethod)` overload"] pub fn wait_while_false_2 (function : impl :: core :: convert :: Into < crate :: app :: procboolmethod :: ProcBoolMethod >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolmethod :: ProcBoolMethod , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281ba30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: option :: Option :: None) } } } # [doc = "`JumpTrue(crate::app::procboolfunction::ProcBoolFunction, i32)` overload"] pub fn jump_true (function : impl :: core :: convert :: Into < crate :: app :: procboolfunction :: ProcBoolFunction > , label : impl :: core :: convert :: Into < i32 >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolfunction :: ProcBoolFunction , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281baf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`JumpTrue(crate::app::procboolfunction::ProcBoolFunction, ::unity2::Il2CppString)` overload"] pub fn jump_true_2 (function : impl :: core :: convert :: Into < crate :: app :: procboolfunction :: ProcBoolFunction > , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolfunction :: ProcBoolFunction , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281bbc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`JumpFalse(crate::app::procboolfunction::ProcBoolFunction, i32)` overload"] pub fn jump_false (function : impl :: core :: convert :: Into < crate :: app :: procboolfunction :: ProcBoolFunction > , label : impl :: core :: convert :: Into < i32 >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolfunction :: ProcBoolFunction , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281bc60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`JumpFalse(crate::app::procboolfunction::ProcBoolFunction, ::unity2::Il2CppString)` overload"] pub fn jump_false_2 (function : impl :: core :: convert :: Into < crate :: app :: procboolfunction :: ProcBoolFunction > , label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolfunction :: ProcBoolFunction , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281bd30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`JumpTrue(crate::app::procboolmethod::ProcBoolMethod, i32)` overload"] pub fn jump_true_3 (function : impl :: core :: convert :: Into < crate :: app :: procboolmethod :: ProcBoolMethod > , label : impl :: core :: convert :: Into < i32 >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolmethod :: ProcBoolMethod , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281bdd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`JumpFalse(crate::app::procboolmethod::ProcBoolMethod, i32)` overload"] pub fn jump_false_3 (function : impl :: core :: convert :: Into < crate :: app :: procboolmethod :: ProcBoolMethod > , label : impl :: core :: convert :: Into < i32 >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolmethod :: ProcBoolMethod , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281bea0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (function) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`JumpTrue(crate::app::procboolmethod::ProcBoolMethod, crate::system::valuetype::ValueType)` overload"] pub fn jump_true_4 (method : impl :: core :: convert :: Into < crate :: app :: procboolmethod :: ProcBoolMethod > , label : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolmethod :: ProcBoolMethod , crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280a980usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (method) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`JumpFalse(crate::app::procboolmethod::ProcBoolMethod, crate::system::valuetype::ValueType)` overload"] pub fn jump_false_4 (method : impl :: core :: convert :: Into < crate :: app :: procboolmethod :: ProcBoolMethod > , label : impl :: core :: convert :: Into < crate :: system :: valuetype :: ValueType >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procboolmethod :: ProcBoolMethod , crate :: system :: valuetype :: ValueType , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281bf70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (method) , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Persistent(crate::app::procvoidmethod::ProcVoidMethod)` overload"] pub fn persistent (method : impl :: core :: convert :: Into < crate :: app :: procvoidmethod :: ProcVoidMethod >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: procvoidmethod :: ProcVoidMethod , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`PersistentNull()` overload"] pub fn persistent_null () -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c100usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Sound(::unity2::Il2CppString)` overload"] pub fn sound (event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`Log(::unity2::Il2CppString)` overload"] pub fn log (log : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c230usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (log) , :: core :: option :: Option :: None) } } } # [doc = "`Vsync(crate::app::gametime::GameTime_VsycMode)` overload"] pub fn vsync (mode : impl :: core :: convert :: Into < crate :: app :: gametime :: GameTime_VsycMode >) -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (crate :: app :: gametime :: GameTime_VsycMode , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c2f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`WaitIsLoading()` overload"] pub fn wait_is_loading () -> crate :: app :: procdesc :: ProcDesc { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c390usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } pub fn create_no_desc < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Proc as :: unity2 :: ClassIdentity > :: class () , "CreateNoDesc" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Proc as :: unity2 :: ClassIdentity > :: NAME , "CreateNoDesc" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn create_bind_no_desc < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< Proc as :: unity2 :: ClassIdentity > :: class () , "CreateBindNoDesc" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < Proc as :: unity2 :: ClassIdentity > :: NAME , "CreateBindNoDesc" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetDebugLog(crate::app::procinst::ProcInst)` overload"] pub fn get_debug_log (inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c4d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-proc")]
-pub trait IProcMethods : IProc { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Proc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Proc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c4c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-proc")]
-impl < __T : IProc > IProcMethods for __T { }
-
-#[cfg(feature = "app-proc")]
-impl Proc { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn exec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn sweep_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn find_by_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn kill_by_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn kill_by_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_root_hi_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_root_def_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_root_low_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn halt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn jump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn jump_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn label_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn jump_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn label_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn push_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn push_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn pop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn yield_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn call_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn call_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn call_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn tick_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn tick_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn wait_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn wait_while_true_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn wait_while_false_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn wait_while_true_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn wait_while_false_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn jump_true_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn jump_true_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn jump_false_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn jump_false_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn jump_true_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn jump_false_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn jump_true_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn jump_false_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn persistent_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn persistent_null_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn sound_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn vsync_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn wait_is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn get_debug_log_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Proc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } }
-
-#[cfg(feature = "app-proc")]
-impl Proc {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Proc) , :: core :: stringify ! (new) ,)) ; < Self as IProcMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-proc")]impl Proc{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2819980usize)as*mut u8,();
+)}
+}
+#[doc="`Exec(crate::app::proc::Proc_RootType)` overload"]pub fn exec(r#type:impl::core::convert::Into<crate::app::proc::Proc_RootType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2819f70usize)as*mut u8,();
+(crate::app::proc::Proc_RootType)::core::convert::Into::into(r#type))}
+}
+#[doc="`Sweep()` overload"]pub fn sweep()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281a3b0usize)as*mut u8,();
+)}
+}
+#[doc="`FindByName(::unity2::Il2CppString)` overload"]pub fn find_by_name(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281a5b0usize)as*mut u8,crate::app::procinst::ProcInst;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`KillByName(::unity2::Il2CppString)` overload"]pub fn kill_by_name(name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281a810usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`KillByBind(crate::app::procinst::ProcInst)` overload"]pub fn kill_by_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281aa60usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+pub fn find_by_class<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>()->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Proc as::unity2::ClassIdentity> ::class(),"FindByClass",0,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Proc as::unity2::ClassIdentity> ::NAME,"FindByClass",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn kill_by_class<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>()->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Proc as::unity2::ClassIdentity> ::class(),"KillByClass",0,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Proc as::unity2::ClassIdentity> ::NAME,"KillByClass",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn callback_by_class<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(callback:impl::core::convert::Into<crate::app::proc::Proc_ProcCallback_1<M0> >)->bool{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Proc as::unity2::ClassIdentity> ::class(),"CallbackByClass",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Proc as::unity2::ClassIdentity> ::NAME,"CallbackByClass",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::app::proc::Proc_ProcCallback_1<M0> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(callback), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`GetRoot(crate::app::proc::Proc_RootType)` overload"]pub fn get_root(r#type:impl::core::convert::Into<crate::app::proc::Proc_RootType>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281aac0usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::proc::Proc_RootType)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetRootHi()` overload"]pub fn get_root_hi()->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281ab50usize)as*mut u8,crate::app::procinst::ProcInst;
+)}
+}
+#[doc="`GetRootDef()` overload"]pub fn get_root_def()->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281abd0usize)as*mut u8,crate::app::procinst::ProcInst;
+)}
+}
+#[doc="`GetRootLow()` overload"]pub fn get_root_low()->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281ac50usize)as*mut u8,crate::app::procinst::ProcInst;
+)}
+}
+#[doc="`End()` overload"]pub fn end()->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280aa50usize)as*mut u8,crate::app::procdesc::ProcDesc;
+)}
+}
+#[doc="`Halt()` overload"]pub fn halt()->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281ad00usize)as*mut u8,crate::app::procdesc::ProcDesc;
+)}
+}
+#[doc="`Jump(i32)` overload"]pub fn jump(label:impl::core::convert::Into<i32>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281ad90usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(i32)::core::convert::Into::into(label))}
+}
+#[doc="`Jump(::unity2::Il2CppString)` overload"]pub fn jump_2(label:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281ae30usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`Label(i32)` overload"]pub fn label(label:impl::core::convert::Into<i32>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281aeb0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(i32)::core::convert::Into::into(label))}
+}
+#[doc="`Label(::unity2::Il2CppString)` overload"]pub fn label_2(label:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281af50usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`Jump(crate::system::valuetype::ValueType)` overload"]pub fn jump_3(label:impl::core::convert::Into<crate::system::valuetype::ValueType>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280a8c0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::system::valuetype::ValueType)::core::convert::Into::into(label))}
+}
+#[doc="`Label(crate::system::valuetype::ValueType)` overload"]pub fn label_3(label:impl::core::convert::Into<crate::system::valuetype::ValueType>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280a6c0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::system::valuetype::ValueType)::core::convert::Into::into(label))}
+}
+#[doc="`Push(i32)` overload"]pub fn push(label:impl::core::convert::Into<i32>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281afd0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(i32)::core::convert::Into::into(label))}
+}
+#[doc="`Push(crate::system::valuetype::ValueType)` overload"]pub fn push_2(label:impl::core::convert::Into<crate::system::valuetype::ValueType>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b070usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::system::valuetype::ValueType)::core::convert::Into::into(label))}
+}
+#[doc="`Pop()` overload"]pub fn pop()->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b130usize)as*mut u8,crate::app::procdesc::ProcDesc;
+)}
+}
+#[doc="`Yield()` overload"]pub fn r#yield()->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b1c0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+)}
+}
+#[doc="`Call(crate::app::procvoidfunction::ProcVoidFunction)` overload"]pub fn call(function:impl::core::convert::Into<crate::app::procvoidfunction::ProcVoidFunction>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b250usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procvoidfunction::ProcVoidFunction)::core::convert::Into::into(function))}
+}
+#[doc="`Call(crate::app::procvoidmethod::ProcVoidMethod)` overload"]pub fn call_2(function:impl::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280a7a0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procvoidmethod::ProcVoidMethod)::core::convert::Into::into(function))}
+}
+#[doc="`Call(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]pub fn call_3(function:impl::core::convert::Into<crate::system::action_2::Action_2<crate::app::procinst::ProcInst, ::unity2::Il2CppString> > ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b350usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::system::action_2::Action_2<crate::app::procinst::ProcInst, ::unity2::Il2CppString>)::core::convert::Into::into(function),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+#[doc="`Call(crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]pub fn call_4(function:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> > ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b440usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(function),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+}
+pub fn call_5<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(function:impl::core::convert::Into<crate::system::action_2::Action_2<crate::app::procinst::ProcInst,M0> > ,arg:impl::core::convert::Into<M0>)->crate::app::procdesc::ProcDesc{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Proc as::unity2::ClassIdentity> ::class(),"Call",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Proc as::unity2::ClassIdentity> ::NAME,"Call",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::action_2::Action_2<crate::app::procinst::ProcInst,M0> ,M0, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(function), ::core::convert::Into::into(arg), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn call_6<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(function:impl::core::convert::Into<crate::system::action_1::Action_1<M0> > ,arg:impl::core::convert::Into<M0>)->crate::app::procdesc::ProcDesc{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Proc as::unity2::ClassIdentity> ::class(),"Call",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Proc as::unity2::ClassIdentity> ::NAME,"Call",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::action_1::Action_1<M0> ,M0, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(function), ::core::convert::Into::into(arg), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`Tick(crate::app::procvoidfunction::ProcVoidFunction)` overload"]pub fn tick(function:impl::core::convert::Into<crate::app::procvoidfunction::ProcVoidFunction>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b530usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procvoidfunction::ProcVoidFunction)::core::convert::Into::into(function))}
+}
+#[doc="`Tick(crate::app::procvoidmethod::ProcVoidMethod)` overload"]pub fn tick_2(method:impl::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b5f0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procvoidmethod::ProcVoidMethod)::core::convert::Into::into(method))}
+}
+#[doc="`Tick(crate::app::procenummethod::ProcEnumMethod)` overload"]pub fn tick_3(method:impl::core::convert::Into<crate::app::procenummethod::ProcEnumMethod>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b6b0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procenummethod::ProcEnumMethod)::core::convert::Into::into(method))}
+}
+#[doc="`WaitTime(f32)` overload"]pub fn wait_time(second:impl::core::convert::Into<f32>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b7c0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(f32)::core::convert::Into::into(second))}
+}
+#[doc="`WaitWhileTrue(crate::app::procboolfunction::ProcBoolFunction)` overload"]pub fn wait_while_true(function:impl::core::convert::Into<crate::app::procboolfunction::ProcBoolFunction>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b870usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolfunction::ProcBoolFunction)::core::convert::Into::into(function))}
+}
+#[doc="`WaitWhileFalse(crate::app::procboolfunction::ProcBoolFunction)` overload"]pub fn wait_while_false(function:impl::core::convert::Into<crate::app::procboolfunction::ProcBoolFunction>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281b930usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolfunction::ProcBoolFunction)::core::convert::Into::into(function))}
+}
+#[doc="`WaitWhileTrue(crate::app::procboolmethod::ProcBoolMethod)` overload"]pub fn wait_while_true_2(function:impl::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280a840usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(function))}
+}
+#[doc="`WaitWhileFalse(crate::app::procboolmethod::ProcBoolMethod)` overload"]pub fn wait_while_false_2(function:impl::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281ba30usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(function))}
+}
+#[doc="`JumpTrue(crate::app::procboolfunction::ProcBoolFunction, i32)` overload"]pub fn jump_true(function:impl::core::convert::Into<crate::app::procboolfunction::ProcBoolFunction> ,label:impl::core::convert::Into<i32>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281baf0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolfunction::ProcBoolFunction)::core::convert::Into::into(function),(i32)::core::convert::Into::into(label))}
+}
+#[doc="`JumpTrue(crate::app::procboolfunction::ProcBoolFunction, ::unity2::Il2CppString)` overload"]pub fn jump_true_2(function:impl::core::convert::Into<crate::app::procboolfunction::ProcBoolFunction> ,label:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281bbc0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolfunction::ProcBoolFunction)::core::convert::Into::into(function),(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`JumpFalse(crate::app::procboolfunction::ProcBoolFunction, i32)` overload"]pub fn jump_false(function:impl::core::convert::Into<crate::app::procboolfunction::ProcBoolFunction> ,label:impl::core::convert::Into<i32>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281bc60usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolfunction::ProcBoolFunction)::core::convert::Into::into(function),(i32)::core::convert::Into::into(label))}
+}
+#[doc="`JumpFalse(crate::app::procboolfunction::ProcBoolFunction, ::unity2::Il2CppString)` overload"]pub fn jump_false_2(function:impl::core::convert::Into<crate::app::procboolfunction::ProcBoolFunction> ,label:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281bd30usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolfunction::ProcBoolFunction)::core::convert::Into::into(function),(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`JumpTrue(crate::app::procboolmethod::ProcBoolMethod, i32)` overload"]pub fn jump_true_3(function:impl::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod> ,label:impl::core::convert::Into<i32>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281bdd0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(function),(i32)::core::convert::Into::into(label))}
+}
+#[doc="`JumpFalse(crate::app::procboolmethod::ProcBoolMethod, i32)` overload"]pub fn jump_false_3(function:impl::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod> ,label:impl::core::convert::Into<i32>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281bea0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(function),(i32)::core::convert::Into::into(label))}
+}
+#[doc="`JumpTrue(crate::app::procboolmethod::ProcBoolMethod, crate::system::valuetype::ValueType)` overload"]pub fn jump_true_4(method:impl::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod> ,label:impl::core::convert::Into<crate::system::valuetype::ValueType>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280a980usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(method),(crate::system::valuetype::ValueType)::core::convert::Into::into(label))}
+}
+#[doc="`JumpFalse(crate::app::procboolmethod::ProcBoolMethod, crate::system::valuetype::ValueType)` overload"]pub fn jump_false_4(method:impl::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod> ,label:impl::core::convert::Into<crate::system::valuetype::ValueType>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281bf70usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(method),(crate::system::valuetype::ValueType)::core::convert::Into::into(label))}
+}
+#[doc="`Persistent(crate::app::procvoidmethod::ProcVoidMethod)` overload"]pub fn persistent(method:impl::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c040usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::procvoidmethod::ProcVoidMethod)::core::convert::Into::into(method))}
+}
+#[doc="`PersistentNull()` overload"]pub fn persistent_null()->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c100usize)as*mut u8,crate::app::procdesc::ProcDesc;
+)}
+}
+#[doc="`Sound(::unity2::Il2CppString)` overload"]pub fn sound(event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c170usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`Log(::unity2::Il2CppString)` overload"]pub fn log(log:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c230usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(::unity2::Il2CppString)::core::convert::Into::into(log))}
+}
+#[doc="`Vsync(crate::app::gametime::GameTime_VsycMode)` overload"]pub fn vsync(mode:impl::core::convert::Into<crate::app::gametime::GameTime_VsycMode>)->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c2f0usize)as*mut u8,crate::app::procdesc::ProcDesc;
+(crate::app::gametime::GameTime_VsycMode)::core::convert::Into::into(mode))}
+}
+#[doc="`WaitIsLoading()` overload"]pub fn wait_is_loading()->crate::app::procdesc::ProcDesc{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c390usize)as*mut u8,crate::app::procdesc::ProcDesc;
+)}
+}
+pub fn create_no_desc<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Proc as::unity2::ClassIdentity> ::class(),"CreateNoDesc",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Proc as::unity2::ClassIdentity> ::NAME,"CreateNoDesc",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(super_), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn create_bind_no_desc<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Proc as::unity2::ClassIdentity> ::class(),"CreateBindNoDesc",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <Proc as::unity2::ClassIdentity> ::NAME,"CreateBindNoDesc",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(super_), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`GetDebugLog(crate::app::procinst::ProcInst)` overload"]pub fn get_debug_log(inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c460usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c4d0usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-proc")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > Proc_ProcCallback_1 < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] # [method (name = ".ctor" , args = 2)] pub fn ctor (self , object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> () ;
-
-# [doc = "`Invoke(T0)` overload"] # [method (name = "Invoke" , args = 1)] pub fn invoke (self , inst : T0) -> () ;
+#[cfg(feature="app-proc")]pub trait IProcMethods:IProc{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Proc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281c4c0usize)as*mut u8,();
+(Proc)__receiver)}
+}
 }
 
-#[cfg(feature = "app-proc")]
-impl < T0 : :: unity2 :: ClassIdentity > Proc_ProcCallback_1 < T0 > {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Proc_ProcCallback_1) , :: core :: stringify ! (new) ,)) ; < Self as IProc_ProcCallback_1Methods < T0 > > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-proc")]impl<__T:IProc>IProcMethods for __T{}
+
+#[cfg(feature="app-proc")]impl Proc{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn exec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn sweep_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn find_by_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn kill_by_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn kill_by_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_root_hi_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_root_def_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_root_low_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn halt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn jump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn jump_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn label_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn jump_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn label_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn push_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn push_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn yield_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn call_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn call_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn call_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn tick_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn tick_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn wait_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn wait_while_true_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn wait_while_false_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn wait_while_true_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn wait_while_false_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn jump_true_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn jump_true_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn jump_false_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn jump_false_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn jump_true_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn jump_false_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn jump_true_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn jump_false_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn persistent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn persistent_null_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn sound_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn vsync_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn wait_is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn get_debug_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+}
+
+#[cfg(feature="app-proc")]impl Proc{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Proc), ::core::stringify!(new),));
+ <Self as IProcMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-proc")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Proc_ProcCallback_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,inst:T0)->();
+}
+
+#[cfg(feature="app-proc")]impl<T0: ::unity2::ClassIdentity>Proc_ProcCallback_1<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Proc_ProcCallback_1), ::core::stringify!(new),));
+ <Self as IProc_ProcCallback_1Methods<T0> > ::ctor(this,object,method);
+this}
 }
 
 #[cfg(feature = "app-proc")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Proc_RootType;
     pub use super::Proc;
     pub use super::IProc;
     pub use super::IProcMethods;
-    pub use super::Proc_RootType;
     pub use super::Proc_ProcCallback_1;
     pub use super::IProc_ProcCallback_1;
     pub use super::IProc_ProcCallback_1Methods;

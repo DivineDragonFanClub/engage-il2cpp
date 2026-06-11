@@ -4,38 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopbuyyesnodialognomenuitem/ShopBuyYesNoDialogNoMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopBuyYesNoDialogNoMenuItem")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct ShopBuyYesNoDialogNoMenuItem {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopbuyyesnodialognomenuitem/ShopBuyYesNoDialogNoMenuItem.md"))]#[::unity2::class(namespace="App",name="ShopBuyYesNoDialogNoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct ShopBuyYesNoDialogNoMenuItem{}
 
 }
 
 #[cfg(feature = "app-shopbuyyesnodialognomenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-shopbuyyesnodialognomenuitem")]
-pub trait IShopBuyYesNoDialogNoMenuItemMethods : IShopBuyYesNoDialogNoMenuItem { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShopBuyYesNoDialogNoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopBuyYesNoDialogNoMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ae1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ShopBuyYesNoDialogNoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopBuyYesNoDialogNoMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ae190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ShopBuyYesNoDialogNoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopBuyYesNoDialogNoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ae250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ShopBuyYesNoDialogNoMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopBuyYesNoDialogNoMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21ae2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopbuyyesnodialognomenuitem")]pub trait IShopBuyYesNoDialogNoMenuItemMethods:IShopBuyYesNoDialogNoMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopBuyYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ae1c0usize)as*mut u8,();
+(ShopBuyYesNoDialogNoMenuItem)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ShopBuyYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ae190usize)as*mut u8,();
+(ShopBuyYesNoDialogNoMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopBuyYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ae250usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ShopBuyYesNoDialogNoMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopBuyYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21ae2d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ShopBuyYesNoDialogNoMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-shopbuyyesnodialognomenuitem")]
-impl < __T : IShopBuyYesNoDialogNoMenuItem > IShopBuyYesNoDialogNoMenuItemMethods for __T { }
+#[cfg(feature="app-shopbuyyesnodialognomenuitem")]impl<__T:IShopBuyYesNoDialogNoMenuItem>IShopBuyYesNoDialogNoMenuItemMethods for __T{}
 
-#[cfg(feature = "app-shopbuyyesnodialognomenuitem")]
-impl ShopBuyYesNoDialogNoMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopBuyYesNoDialogNoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopBuyYesNoDialogNoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopBuyYesNoDialogNoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopBuyYesNoDialogNoMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-shopbuyyesnodialognomenuitem")]impl ShopBuyYesNoDialogNoMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-shopbuyyesnodialognomenuitem")]
-impl ShopBuyYesNoDialogNoMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopBuyYesNoDialogNoMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IShopBuyYesNoDialogNoMenuItemMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (text : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopBuyYesNoDialogNoMenuItem) , :: core :: stringify ! (new_2) ,)) ; < Self as IShopBuyYesNoDialogNoMenuItemMethods > :: ctor_2 (this , text) ; this }
+#[cfg(feature="app-shopbuyyesnodialognomenuitem")]impl ShopBuyYesNoDialogNoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopBuyYesNoDialogNoMenuItem), ::core::stringify!(new),));
+ <Self as IShopBuyYesNoDialogNoMenuItemMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopBuyYesNoDialogNoMenuItem), ::core::stringify!(new_2),));
+ <Self as IShopBuyYesNoDialogNoMenuItemMethods> ::ctor_2(this,text);
+this}
 }
 
 #[cfg(feature = "app-shopbuyyesnodialognomenuitem")]

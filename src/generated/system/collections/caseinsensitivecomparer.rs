@@ -4,33 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/caseinsensitivecomparer/CaseInsensitiveComparer.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "CaseInsensitiveComparer")] # [parent (crate :: system :: object :: Object)] pub struct CaseInsensitiveComparer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/caseinsensitivecomparer/CaseInsensitiveComparer.md"))]#[::unity2::class(namespace="System.Collections",name="CaseInsensitiveComparer")]#[parent(crate::system::object::Object)]pub struct CaseInsensitiveComparer{}
 
 }
 
 #[cfg(feature = "system-collections-caseinsensitivecomparer-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-caseinsensitivecomparer")]
-impl CaseInsensitiveComparer { # [doc = "`get_Default()` overload"] pub fn get_default () -> crate :: system :: collections :: caseinsensitivecomparer :: CaseInsensitiveComparer { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: caseinsensitivecomparer :: CaseInsensitiveComparer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a1080usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-caseinsensitivecomparer")]impl CaseInsensitiveComparer{#[doc="`get_Default()` overload"]pub fn get_default()->crate::system::collections::caseinsensitivecomparer::CaseInsensitiveComparer{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a1080usize)as*mut u8,crate::system::collections::caseinsensitivecomparer::CaseInsensitiveComparer;
+)}
+}
+}
 
-#[cfg(feature = "system-collections-caseinsensitivecomparer")]
-pub trait ICaseInsensitiveComparerMethods : ICaseInsensitiveComparer { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CaseInsensitiveComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CaseInsensitiveComparer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a0f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"] fn compare (self , a : impl :: core :: convert :: Into < crate :: system :: object :: Object > , b : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> i32 { unsafe { let __receiver = < CaseInsensitiveComparer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CaseInsensitiveComparer , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33a1110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-caseinsensitivecomparer")]pub trait ICaseInsensitiveComparerMethods:ICaseInsensitiveComparer{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CaseInsensitiveComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33a0f60usize)as*mut u8,();
+(CaseInsensitiveComparer)__receiver)}
+}
+#[doc="`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]fn compare(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <CaseInsensitiveComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33a1110usize)as*mut u8,i32;
+(CaseInsensitiveComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(a),(crate::system::object::Object)::core::convert::Into::into(b))}
+}
+}
 
-#[cfg(feature = "system-collections-caseinsensitivecomparer")]
-impl < __T : ICaseInsensitiveComparer > ICaseInsensitiveComparerMethods for __T { }
+#[cfg(feature="system-collections-caseinsensitivecomparer")]impl<__T:ICaseInsensitiveComparer>ICaseInsensitiveComparerMethods for __T{}
 
-#[cfg(feature = "system-collections-caseinsensitivecomparer")]
-impl CaseInsensitiveComparer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CaseInsensitiveComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CaseInsensitiveComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn compare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CaseInsensitiveComparer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-collections-caseinsensitivecomparer")]impl CaseInsensitiveComparer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "system-collections-caseinsensitivecomparer")]
-impl CaseInsensitiveComparer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CaseInsensitiveComparer) , :: core :: stringify ! (new) ,)) ; < Self as ICaseInsensitiveComparerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-collections-caseinsensitivecomparer")]impl CaseInsensitiveComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CaseInsensitiveComparer), ::core::stringify!(new),));
+ <Self as ICaseInsensitiveComparerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-collections-caseinsensitivecomparer")]

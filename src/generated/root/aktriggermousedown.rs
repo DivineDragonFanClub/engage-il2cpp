@@ -4,40 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: aktriggerbase :: { AkTriggerBase , IAkTriggerBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::aktriggerbase::{AkTriggerBase,IAkTriggerBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggermousedown/AkTriggerMouseDown.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTriggerMouseDown")] # [parent (crate :: root :: aktriggerbase :: AkTriggerBase)] pub struct AkTriggerMouseDown {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktriggermousedown/AkTriggerMouseDown.md"))]#[::unity2::class(namespace="",name="AkTriggerMouseDown")]#[parent(crate::root::aktriggerbase::AkTriggerBase)]pub struct AkTriggerMouseDown{}
 
 }
 
 #[cfg(feature = "root-aktriggermousedown-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aktriggermousedown")]
-pub trait IAkTriggerMouseDownMethods : IAkTriggerMouseDown { # [doc = "`OnMouseDown()` overload"] fn on_mouse_down (self ,) -> () { unsafe { let __receiver = < AkTriggerMouseDown as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerMouseDown , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2bd50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkTriggerMouseDown as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerMouseDown , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2bd70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktriggermousedown")]pub trait IAkTriggerMouseDownMethods:IAkTriggerMouseDown{#[doc="`OnMouseDown()` overload"]fn on_mouse_down(self,)->(){unsafe{let __receiver= <AkTriggerMouseDown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2bd50usize)as*mut u8,();
+(AkTriggerMouseDown)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkTriggerMouseDown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2bd70usize)as*mut u8,();
+(AkTriggerMouseDown)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aktriggermousedown")]
-impl < __T : IAkTriggerMouseDown > IAkTriggerMouseDownMethods for __T { }
+#[cfg(feature="root-aktriggermousedown")]impl<__T:IAkTriggerMouseDown>IAkTriggerMouseDownMethods for __T{}
 
-#[cfg(feature = "root-aktriggermousedown")]
-impl AkTriggerMouseDown { pub fn on_mouse_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerMouseDown as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerMouseDown as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-aktriggermousedown")]impl AkTriggerMouseDown{pub fn on_mouse_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-aktriggermousedown")]
-impl AkTriggerMouseDown {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTriggerMouseDown) , :: core :: stringify ! (new) ,)) ; < Self as IAkTriggerMouseDownMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-aktriggermousedown")]impl AkTriggerMouseDown{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTriggerMouseDown), ::core::stringify!(new),));
+ <Self as IAkTriggerMouseDownMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-aktriggermousedown")]

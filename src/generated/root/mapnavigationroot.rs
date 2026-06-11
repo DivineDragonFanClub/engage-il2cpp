@@ -4,47 +4,84 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapnavigationroot/MapNavigationRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "MapNavigationRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapNavigationRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_StatusMenuContentObject")] pub m_status_menu_content_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_MiniMapMenuContentObject")] pub m_mini_map_menu_content_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_StatusTitleText")] pub m_status_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_MiniMapTitleText")] pub m_mini_map_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapnavigationroot/MapNavigationRoot.md"))]#[::unity2::class(namespace="",name="MapNavigationRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapNavigationRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_StatusMenuContentObject")]pub m_status_menu_content_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_MiniMapMenuContentObject")]pub m_mini_map_menu_content_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_StatusTitleText")]pub m_status_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_MiniMapTitleText")]pub m_mini_map_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "root-mapnavigationroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapnavigationroot")]
-impl MapNavigationRoot { # [doc = "`LoadPrefab()` overload"] pub fn load_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df75f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7670usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df76f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7770usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::unity_engine::gameobject::GameObject)` overload"] pub fn destroy (game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df79d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (game_object) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapnavigationroot")]impl MapNavigationRoot{#[doc="`LoadPrefab()` overload"]pub fn load_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df75f0usize)as*mut u8,();
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df7670usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df76f0usize)as*mut u8,bool;
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df7770usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`Destroy(crate::unity_engine::gameobject::GameObject)` overload"]pub fn destroy(game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df79d0usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+}
 
-#[cfg(feature = "root-mapnavigationroot")]
-pub trait IMapNavigationRootMethods : IMapNavigationRoot { # [doc = "`SetTitleText()` overload"] fn set_title_text (self ,) -> () { unsafe { let __receiver = < MapNavigationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetStatusMenuContent()` overload"] fn get_status_menu_content (self ,) -> crate :: root :: mapnavigationstatusmenucontent :: MapNavigationStatusMenuContent { unsafe { let __receiver = < MapNavigationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationRoot , :: unity2 :: OptionalMethod ,) -> crate :: root :: mapnavigationstatusmenucontent :: MapNavigationStatusMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMiniMapMenuContent()` overload"] fn get_mini_map_menu_content (self ,) -> crate :: root :: mapnavigationminimapmenucontent :: MapNavigationMiniMapMenuContent { unsafe { let __receiver = < MapNavigationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationRoot , :: unity2 :: OptionalMethod ,) -> crate :: root :: mapnavigationminimapmenucontent :: MapNavigationMiniMapMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df72f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAnimator()` overload"] fn get_animator (self ,) -> crate :: unity_engine :: animator :: Animator { unsafe { let __receiver = < MapNavigationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationRoot , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animator :: Animator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapNavigationRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapNavigationRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1df7b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapnavigationroot")]pub trait IMapNavigationRootMethods:IMapNavigationRoot{#[doc="`SetTitleText()` overload"]fn set_title_text(self,)->(){unsafe{let __receiver= <MapNavigationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7830usize)as*mut u8,();
+(MapNavigationRoot)__receiver)}
+}
+#[doc="`GetStatusMenuContent()` overload"]fn get_status_menu_content(self,)->crate::root::mapnavigationstatusmenucontent::MapNavigationStatusMenuContent{unsafe{let __receiver= <MapNavigationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7a40usize)as*mut u8,crate::root::mapnavigationstatusmenucontent::MapNavigationStatusMenuContent;
+(MapNavigationRoot)__receiver)}
+}
+#[doc="`GetMiniMapMenuContent()` overload"]fn get_mini_map_menu_content(self,)->crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent{unsafe{let __receiver= <MapNavigationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df72f0usize)as*mut u8,crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent;
+(MapNavigationRoot)__receiver)}
+}
+#[doc="`GetAnimator()` overload"]fn get_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <MapNavigationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7aa0usize)as*mut u8,crate::unity_engine::animator::Animator;
+(MapNavigationRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapNavigationRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1df7b00usize)as*mut u8,();
+(MapNavigationRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapnavigationroot")]
-impl < __T : IMapNavigationRoot > IMapNavigationRootMethods for __T { }
+#[cfg(feature="root-mapnavigationroot")]impl<__T:IMapNavigationRoot>IMapNavigationRootMethods for __T{}
 
-#[cfg(feature = "root-mapnavigationroot")]
-impl MapNavigationRoot { pub fn load_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_title_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_status_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_mini_map_menu_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_animator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapNavigationRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="root-mapnavigationroot")]impl MapNavigationRoot{pub fn load_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_title_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_status_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_mini_map_menu_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "root-mapnavigationroot")]
-impl MapNavigationRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapNavigationRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapNavigationRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapnavigationroot")]impl MapNavigationRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapNavigationRoot), ::core::stringify!(new),));
+ <Self as IMapNavigationRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapnavigationroot")]

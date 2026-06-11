@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumecomponentmenu/VolumeComponentMenu.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "VolumeComponentMenu")] pub struct VolumeComponentMenu {
-# [offset (16)] # [rename (name = "menu")] pub menu : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/volumecomponentmenu/VolumeComponentMenu.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="VolumeComponentMenu")]pub struct VolumeComponentMenu{#[offset(16)]#[rename(name="menu")]pub menu: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponentmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
-pub trait IVolumeComponentMenuMethods : IVolumeComponentMenu { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , menu : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VolumeComponentMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VolumeComponentMenu , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e67d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-volumecomponentmenu")]pub trait IVolumeComponentMenuMethods:IVolumeComponentMenu{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,menu:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VolumeComponentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e67d0usize)as*mut u8,();
+(VolumeComponentMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(menu))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
-impl < __T : IVolumeComponentMenu > IVolumeComponentMenuMethods for __T { }
+#[cfg(feature="unity_engine-rendering-volumecomponentmenu")]impl<__T:IVolumeComponentMenu>IVolumeComponentMenuMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
-impl VolumeComponentMenu { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VolumeComponentMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-volumecomponentmenu")]impl VolumeComponentMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
-impl VolumeComponentMenu {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (menu : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VolumeComponentMenu) , :: core :: stringify ! (new) ,)) ; < Self as IVolumeComponentMenuMethods > :: ctor (this , menu) ; this }
+#[cfg(feature="unity_engine-rendering-volumecomponentmenu")]impl VolumeComponentMenu{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(menu: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VolumeComponentMenu), ::core::stringify!(new),));
+ <Self as IVolumeComponentMenuMethods> ::ctor(this,menu);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]

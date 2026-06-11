@@ -4,37 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusratecalc/VersusRateCalc.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusRateCalc")] # [parent (crate :: system :: object :: Object)] pub struct VersusRateCalc {
-# [static_field] # [rename (name = "K")] pub k : i32 ,
-# [static_field] # [rename (name = "RateMin")] pub rate_min : i32 ,
-# [static_field] # [rename (name = "RateMax")] pub rate_max : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusratecalc/VersusRateCalc.md"))]#[::unity2::class(namespace="App",name="VersusRateCalc")]#[parent(crate::system::object::Object)]pub struct VersusRateCalc{#[static_field]#[rename(name="K")]pub k:i32, #[static_field]#[rename(name="RateMin")]pub rate_min:i32, #[static_field]#[rename(name="RateMax")]pub rate_max:i32,}
 
 }
 
 #[cfg(feature = "app-versusratecalc-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusratecalc")]
-impl VersusRateCalc { # [doc = "`GetRateDataType(i32)` overload"] pub fn get_rate_data_type (rate : impl :: core :: convert :: Into < i32 >) -> u16 { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1430usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rate) , :: core :: option :: Option :: None) } } } # [doc = "`GetWinRate(i32, i32)` overload"] pub fn get_win_rate (rate : impl :: core :: convert :: Into < i32 > , opponent_rate : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1470usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rate) , :: core :: convert :: Into :: into (opponent_rate) , :: core :: option :: Option :: None) } } } # [doc = "`GetLoseRate(i32, i32)` overload"] pub fn get_lose_rate (rate : impl :: core :: convert :: Into < i32 > , opponent_rate : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b14e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (rate) , :: core :: convert :: Into :: into (opponent_rate) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusratecalc")]impl VersusRateCalc{#[doc="`GetRateDataType(i32)` overload"]pub fn get_rate_data_type(rate:impl::core::convert::Into<i32>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b1430usize)as*mut u8,u16;
+(i32)::core::convert::Into::into(rate))}
+}
+#[doc="`GetWinRate(i32, i32)` overload"]pub fn get_win_rate(rate:impl::core::convert::Into<i32> ,opponent_rate:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b1470usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(rate),(i32)::core::convert::Into::into(opponent_rate))}
+}
+#[doc="`GetLoseRate(i32, i32)` overload"]pub fn get_lose_rate(rate:impl::core::convert::Into<i32> ,opponent_rate:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b14e0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(rate),(i32)::core::convert::Into::into(opponent_rate))}
+}
+}
 
-#[cfg(feature = "app-versusratecalc")]
-pub trait IVersusRateCalcMethods : IVersusRateCalc { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusRateCalc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRateCalc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b1550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusratecalc")]pub trait IVersusRateCalcMethods:IVersusRateCalc{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusRateCalc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b1550usize)as*mut u8,();
+(VersusRateCalc)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusratecalc")]
-impl < __T : IVersusRateCalc > IVersusRateCalcMethods for __T { }
+#[cfg(feature="app-versusratecalc")]impl<__T:IVersusRateCalc>IVersusRateCalcMethods for __T{}
 
-#[cfg(feature = "app-versusratecalc")]
-impl VersusRateCalc { pub fn get_rate_data_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRateCalc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_win_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRateCalc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_lose_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRateCalc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRateCalc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-versusratecalc")]impl VersusRateCalc{pub fn get_rate_data_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_win_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_lose_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-versusratecalc")]
-impl VersusRateCalc {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusRateCalc) , :: core :: stringify ! (new) ,)) ; < Self as IVersusRateCalcMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusratecalc")]impl VersusRateCalc{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusRateCalc), ::core::stringify!(new),));
+ <Self as IVersusRateCalcMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusratecalc")]

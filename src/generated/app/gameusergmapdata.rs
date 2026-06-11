@@ -4,86 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameusergmapdata/GameUserGmapData_EncountCounterType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GameUserGmapData_EncountCounterType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameusergmapdata/GameUserGmapData.md"))]#[::unity2::class(namespace="App",name="GameUserGmapData")]#[parent(crate::system::object::Object)]pub struct GameUserGmapData{#[offset(16)]#[rename(name="m_GmapCameraDistance")]pub m_gmap_camera_distance:f32, #[offset(24)]#[rename(name="m_Mobs")]pub m_mobs:crate::system::collections::specialized::ordereddictionary::OrderedDictionary, #[offset(32)]#[rename(name="m_LastUpdateDateTime")]pub m_last_update_date_time:i64, #[offset(40)]#[rename(name="m_EncountCounters")]pub m_encount_counters: ::unity2::Array<u8> , #[offset(48)]#[rename(name="EncountTimeHoursSpan")]pub encount_time_hours_span:f32, #[offset(52)]#[rename(name="m_Mode")]pub m_mode:crate::app::gmapmode::GmapMode_Mode, #[offset(56)]#[rename(name="m_NowSpotGod")]pub m_now_spot_god: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_NowSpotEvil")]pub m_now_spot_evil: ::unity2::Il2CppString, #[static_field]#[rename(name="Version")]pub version:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameusergmapdata/GameUserGmapData_EncountCounterType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameUserGmapData_EncountCounterType{pub value:i32,}
+impl::unity2::ClassIdentity for GameUserGmapData_EncountCounterType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameUserGmapData.EncountCounterType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for GameUserGmapData_EncountCounterType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameUserGmapData.EncountCounterType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for GameUserGmapData_EncountCounterType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for GameUserGmapData_EncountCounterType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl GameUserGmapData_EncountCounterType{pub fn map_clear()->Self{Self{value:0}
 }
-
-
-impl  GameUserGmapData_EncountCounterType  {
-    pub fn map_clear() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn network() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn minigame() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn network()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameusergmapdata/GameUserGmapData.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameUserGmapData")] # [parent (crate :: system :: object :: Object)] pub struct GameUserGmapData {
-# [offset (16)] # [rename (name = "m_GmapCameraDistance")] pub m_gmap_camera_distance : f32 ,
-# [offset (24)] # [rename (name = "m_Mobs")] pub m_mobs : crate :: system :: collections :: specialized :: ordereddictionary :: OrderedDictionary ,
-# [offset (32)] # [rename (name = "m_LastUpdateDateTime")] pub m_last_update_date_time : i64 ,
-# [offset (40)] # [rename (name = "m_EncountCounters")] pub m_encount_counters : :: unity2 :: Array < u8 > ,
-# [offset (48)] # [rename (name = "EncountTimeHoursSpan")] pub encount_time_hours_span : f32 ,
-# [offset (52)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: gmapmode :: GmapMode_Mode ,
-# [offset (56)] # [rename (name = "m_NowSpotGod")] pub m_now_spot_god : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "m_NowSpotEvil")] pub m_now_spot_evil : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
+pub fn minigame()->Self{Self{value:2}
+}
+pub fn num()->Self{Self{value:3}
+}
 }
 
 }
@@ -91,27 +40,186 @@ impl  GameUserGmapData_EncountCounterType  {
 #[cfg(feature = "app-gameusergmapdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gameusergmapdata")]
-pub trait IGameUserGmapDataMethods : IGameUserGmapData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251ace0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25126e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Mode()` overload"] fn get_mode (self ,) -> crate :: app :: gmapmode :: GmapMode_Mode { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> crate :: app :: gmapmode :: GmapMode_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Mode(crate::app::gmapmode::GmapMode_Mode)` overload"] fn set_mode (self , value : impl :: core :: convert :: Into < crate :: app :: gmapmode :: GmapMode_Mode >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , crate :: app :: gmapmode :: GmapMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c5d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NowSpotGod()` overload"] fn get_now_spot_god (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NowSpotGod(::unity2::Il2CppString)` overload"] fn set_now_spot_god (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NowSpotEvil()` overload"] fn get_now_spot_evil (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NowSpotEvil(::unity2::Il2CppString)` overload"] fn set_now_spot_evil (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GmapCameraDistance()` overload"] fn get_gmap_camera_distance (self ,) -> f32 { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GmapCameraDistance(f32)` overload"] fn set_gmap_camera_distance (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`AddMob(::unity2::Il2CppString, crate::app::encountmob::EncountMob)` overload"] fn add_mob (self , spot_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , mob : impl :: core :: convert :: Into < crate :: app :: encountmob :: EncountMob >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: Il2CppString , crate :: app :: encountmob :: EncountMob , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (spot_id) , :: core :: convert :: Into :: into (mob) , :: core :: option :: Option :: None) } } } # [doc = "`GetMob(::unity2::Il2CppString)` overload"] fn get_mob (self , spot_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: encountmob :: EncountMob { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: encountmob :: EncountMob = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c6a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (spot_id) , :: core :: option :: Option :: None) } } } # [doc = "`ClearMob(::unity2::Il2CppString)` overload"] fn clear_mob (self , spot_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (spot_id) , :: core :: option :: Option :: None) } } } # [doc = "`PopMobList(i32)` overload"] fn pop_mob_list (self , num : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < crate :: app :: gmapspot :: GmapSpot > { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: gmapspot :: GmapSpot > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251c7a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`ExistsMob(::unity2::Il2CppString)` overload"] fn exists_mob (self , spot_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25164b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (spot_id) , :: core :: option :: Option :: None) } } } # [doc = "`CountMob()` overload"] fn count_mob (self ,) -> i32 { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251ca30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCheckDispos()` overload"] fn is_check_dispos (self ,) -> bool { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251ca40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDisposCountFromDeltaHours(bool)` overload"] fn get_dispos_count_from_delta_hours (self , print_log : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251cc40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (print_log) , :: core :: option :: Option :: None) } } } # [doc = "`IsCheckDisposTime()` overload"] fn is_check_dispos_time (self ,) -> bool { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251cac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitializeDisposTime()` overload"] fn initialize_dispos_time (self ,) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251ce80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddEncountCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)` overload"] fn add_encount_counter (self , r#type : impl :: core :: convert :: Into < crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25148d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetDisposEncountCount()` overload"] fn get_dispos_encount_count (self ,) -> i32 { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251cbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetEncountCounter()` overload"] fn reset_encount_counter (self ,) -> i32 { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251d500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetEncountCountMapClear(bool)` overload"] fn get_encount_count_map_clear (self , is_update : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251d040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_update) , :: core :: option :: Option :: None) } } } # [doc = "`GetEncountCountNetwork(bool)` overload"] fn get_encount_count_network (self , is_update : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251d1e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_update) , :: core :: option :: Option :: None) } } } # [doc = "`GetEncountCountMinigame(bool)` overload"] fn get_encount_count_minigame (self , is_update : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251d370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_update) , :: core :: option :: Option :: None) } } } # [doc = "`IsValidRealTime()` overload"] fn is_valid_real_time (self ,) -> bool { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251cd60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsValidCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)` overload"] fn is_valid_counter (self , r#type : impl :: core :: convert :: Into < crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType >) -> bool { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251cf10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetEncountCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)` overload"] fn get_encount_counter (self , r#type : impl :: core :: convert :: Into < crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType >) -> i32 { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251d560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetEncountCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType, i32)` overload"] fn set_encount_counter (self , r#type : impl :: core :: convert :: Into < crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , crate :: app :: gameusergmapdata :: GameUserGmapData_EncountCounterType , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x251d5a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2517cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < GameUserGmapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameUserGmapData , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25192c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gameusergmapdata")]pub trait IGameUserGmapDataMethods:IGameUserGmapData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251ace0usize)as*mut u8,();
+(GameUserGmapData)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25126e0usize)as*mut u8,();
+(GameUserGmapData)__receiver)}
+}
+#[doc="`get_Mode()` overload"]fn get_mode(self,)->crate::app::gmapmode::GmapMode_Mode{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c5c0usize)as*mut u8,crate::app::gmapmode::GmapMode_Mode;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`set_Mode(crate::app::gmapmode::GmapMode_Mode)` overload"]fn set_mode(self,value:impl::core::convert::Into<crate::app::gmapmode::GmapMode_Mode>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c5d0usize)as*mut u8,();
+(GameUserGmapData)__receiver,(crate::app::gmapmode::GmapMode_Mode)::core::convert::Into::into(value))}
+}
+#[doc="`get_NowSpotGod()` overload"]fn get_now_spot_god(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c5e0usize)as*mut u8, ::unity2::Il2CppString;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`set_NowSpotGod(::unity2::Il2CppString)` overload"]fn set_now_spot_god(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c5f0usize)as*mut u8,();
+(GameUserGmapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_NowSpotEvil()` overload"]fn get_now_spot_evil(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c600usize)as*mut u8, ::unity2::Il2CppString;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`set_NowSpotEvil(::unity2::Il2CppString)` overload"]fn set_now_spot_evil(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c610usize)as*mut u8,();
+(GameUserGmapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_GmapCameraDistance()` overload"]fn get_gmap_camera_distance(self,)->f32{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c620usize)as*mut u8,f32;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`set_GmapCameraDistance(f32)` overload"]fn set_gmap_camera_distance(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c630usize)as*mut u8,();
+(GameUserGmapData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`AddMob(::unity2::Il2CppString, crate::app::encountmob::EncountMob)` overload"]fn add_mob(self,spot_id:impl::core::convert::Into< ::unity2::Il2CppString> ,mob:impl::core::convert::Into<crate::app::encountmob::EncountMob>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c640usize)as*mut u8,();
+(GameUserGmapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(spot_id),(crate::app::encountmob::EncountMob)::core::convert::Into::into(mob))}
+}
+#[doc="`GetMob(::unity2::Il2CppString)` overload"]fn get_mob(self,spot_id:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::encountmob::EncountMob{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c6a0usize)as*mut u8,crate::app::encountmob::EncountMob;
+(GameUserGmapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(spot_id))}
+}
+#[doc="`ClearMob(::unity2::Il2CppString)` overload"]fn clear_mob(self,spot_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c760usize)as*mut u8,();
+(GameUserGmapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(spot_id))}
+}
+#[doc="`PopMobList(i32)` overload"]fn pop_mob_list(self,num:impl::core::convert::Into<i32>)-> ::unity2::Array<crate::app::gmapspot::GmapSpot>{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251c7a0usize)as*mut u8, ::unity2::Array<crate::app::gmapspot::GmapSpot> ;
+(GameUserGmapData)__receiver,(i32)::core::convert::Into::into(num))}
+}
+#[doc="`ExistsMob(::unity2::Il2CppString)` overload"]fn exists_mob(self,spot_id:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25164b0usize)as*mut u8,bool;
+(GameUserGmapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(spot_id))}
+}
+#[doc="`CountMob()` overload"]fn count_mob(self,)->i32{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251ca30usize)as*mut u8,i32;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`IsCheckDispos()` overload"]fn is_check_dispos(self,)->bool{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251ca40usize)as*mut u8,bool;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`GetDisposCountFromDeltaHours(bool)` overload"]fn get_dispos_count_from_delta_hours(self,print_log:impl::core::convert::Into<bool>)->i32{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251cc40usize)as*mut u8,i32;
+(GameUserGmapData)__receiver,(bool)::core::convert::Into::into(print_log))}
+}
+#[doc="`IsCheckDisposTime()` overload"]fn is_check_dispos_time(self,)->bool{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251cac0usize)as*mut u8,bool;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`InitializeDisposTime()` overload"]fn initialize_dispos_time(self,)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251ce80usize)as*mut u8,();
+(GameUserGmapData)__receiver)}
+}
+#[doc="`AddEncountCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)` overload"]fn add_encount_counter(self,r#type:impl::core::convert::Into<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25148d0usize)as*mut u8,();
+(GameUserGmapData)__receiver,(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetDisposEncountCount()` overload"]fn get_dispos_encount_count(self,)->i32{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251cbe0usize)as*mut u8,i32;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`ResetEncountCounter()` overload"]fn reset_encount_counter(self,)->i32{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251d500usize)as*mut u8,i32;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`GetEncountCountMapClear(bool)` overload"]fn get_encount_count_map_clear(self,is_update:impl::core::convert::Into<bool>)->i32{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251d040usize)as*mut u8,i32;
+(GameUserGmapData)__receiver,(bool)::core::convert::Into::into(is_update))}
+}
+#[doc="`GetEncountCountNetwork(bool)` overload"]fn get_encount_count_network(self,is_update:impl::core::convert::Into<bool>)->i32{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251d1e0usize)as*mut u8,i32;
+(GameUserGmapData)__receiver,(bool)::core::convert::Into::into(is_update))}
+}
+#[doc="`GetEncountCountMinigame(bool)` overload"]fn get_encount_count_minigame(self,is_update:impl::core::convert::Into<bool>)->i32{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251d370usize)as*mut u8,i32;
+(GameUserGmapData)__receiver,(bool)::core::convert::Into::into(is_update))}
+}
+#[doc="`IsValidRealTime()` overload"]fn is_valid_real_time(self,)->bool{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251cd60usize)as*mut u8,bool;
+(GameUserGmapData)__receiver)}
+}
+#[doc="`IsValidCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)` overload"]fn is_valid_counter(self,r#type:impl::core::convert::Into<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType>)->bool{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251cf10usize)as*mut u8,bool;
+(GameUserGmapData)__receiver,(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetEncountCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)` overload"]fn get_encount_counter(self,r#type:impl::core::convert::Into<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType>)->i32{unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251d560usize)as*mut u8,i32;
+(GameUserGmapData)__receiver,(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetEncountCounter(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType, i32)` overload"]fn set_encount_counter(self,r#type:impl::core::convert::Into<crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x251d5a0usize)as*mut u8,();
+(GameUserGmapData)__receiver,(crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2517cd0usize)as*mut u8,();
+(GameUserGmapData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameUserGmapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25192c0usize)as*mut u8,();
+(GameUserGmapData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
 
-#[cfg(feature = "app-gameusergmapdata")]
-impl < __T : IGameUserGmapData > IGameUserGmapDataMethods for __T { }
+#[cfg(feature="app-gameusergmapdata")]impl<__T:IGameUserGmapData>IGameUserGmapDataMethods for __T{}
 
-#[cfg(feature = "app-gameusergmapdata")]
-impl GameUserGmapData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_now_spot_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_now_spot_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_now_spot_evil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_now_spot_evil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_gmap_camera_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_gmap_camera_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn add_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn clear_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn pop_mob_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn exists_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn count_mob_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_check_dispos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_dispos_count_from_delta_hours_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_check_dispos_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn initialize_dispos_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn add_encount_counter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_dispos_encount_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn reset_encount_counter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_encount_count_map_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_encount_count_network_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_encount_count_minigame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn is_valid_real_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn is_valid_counter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_encount_counter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_encount_counter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameUserGmapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } }
+#[cfg(feature="app-gameusergmapdata")]impl GameUserGmapData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_now_spot_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_now_spot_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_now_spot_evil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_now_spot_evil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_gmap_camera_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_gmap_camera_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn pop_mob_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn exists_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn count_mob_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_check_dispos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_dispos_count_from_delta_hours_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_check_dispos_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn initialize_dispos_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn add_encount_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_dispos_encount_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn reset_encount_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_encount_count_map_clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_encount_count_network_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_encount_count_minigame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn is_valid_real_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn is_valid_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_encount_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_encount_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+}
 
-#[cfg(feature = "app-gameusergmapdata")]
-impl GameUserGmapData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameUserGmapData) , :: core :: stringify ! (new) ,)) ; < Self as IGameUserGmapDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gameusergmapdata")]impl GameUserGmapData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameUserGmapData), ::core::stringify!(new),));
+ <Self as IGameUserGmapDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gameusergmapdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameUserGmapData_EncountCounterType;
     pub use super::GameUserGmapData;
     pub use super::IGameUserGmapData;
     pub use super::IGameUserGmapDataMethods;
+    pub use super::GameUserGmapData_EncountCounterType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

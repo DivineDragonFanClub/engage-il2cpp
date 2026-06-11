@@ -4,29 +4,22 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/dictionarypool_2/DictionaryPool_2.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "DictionaryPool`2")] # [parent (crate :: system :: object :: Object)] pub struct DictionaryPool_2 < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > {
-# [static_field] # [rename (name = "s_Pool")] pub s_pool : crate :: unity_engine :: rendering :: objectpool_1_2 :: ObjectPool_1_2 < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 > > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/dictionarypool_2/DictionaryPool_2.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="DictionaryPool`2")]#[parent(crate::system::object::Object)]pub struct DictionaryPool_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{#[static_field]#[rename(name="s_Pool")]pub s_pool:crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1> > ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-dictionarypool_2-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-dictionarypool_2")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity , T1 : :: unity2 :: ClassIdentity > DictionaryPool_2 < T0 , T1 > {
-# [doc = "`Get()` overload"] # [method (name = "Get" , args = 0)] pub fn get () -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 > ;
-
-# [doc = "`Get(*mutcrate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"] # [method (name = "Get" , args = 1)] pub fn get_2 (value : * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 >) -> crate :: unity_engine :: rendering :: objectpool_1_2 :: ObjectPool_1_PooledObject < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 > > ;
-
-# [doc = "`Release(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"] # [method (name = "Release" , args = 1)] pub fn release (to_release : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 >) -> () ;
-
-# [doc = "`.cctor()` overload"] # [method (name = ".cctor" , args = 0)] pub fn cctor () -> () ;
+#[cfg(feature="unity_engine-rendering-dictionarypool_2")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>DictionaryPool_2<T0,T1>{#[doc="`Get()` overload"]#[method(name="Get",args=0)]pub fn get()->crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1> ;
+ #[doc="`Get(*mutcrate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"]#[method(name="Get",args=1)]pub fn get_2(value: *mut crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)->crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1> > ;
+ #[doc="`Release(crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)` overload"]#[method(name="Release",args=1)]pub fn release(to_release:crate::system::collections::generic::dictionary_2::Dictionary_2<T0,T1>)->();
+ #[doc="`.cctor()` overload"]#[method(name=".cctor",args=0)]pub fn cctor()->();
 }
 
 #[cfg(feature = "unity_engine-rendering-dictionarypool_2")]

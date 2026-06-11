@@ -4,34 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tooltipattribute/TooltipAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "TooltipAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct TooltipAttribute {
-# [offset (16)] # [rename (name = "tooltip")] pub tooltip : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tooltipattribute/TooltipAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="TooltipAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct TooltipAttribute{#[offset(16)]#[rename(name="tooltip")]pub tooltip: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-tooltipattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-tooltipattribute")]
-pub trait ITooltipAttributeMethods : ITooltipAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , tooltip : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TooltipAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TooltipAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x378ec20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tooltip) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-tooltipattribute")]pub trait ITooltipAttributeMethods:ITooltipAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,tooltip:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TooltipAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x378ec20usize)as*mut u8,();
+(TooltipAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(tooltip))}
+}
+}
 
-#[cfg(feature = "unity_engine-tooltipattribute")]
-impl < __T : ITooltipAttribute > ITooltipAttributeMethods for __T { }
+#[cfg(feature="unity_engine-tooltipattribute")]impl<__T:ITooltipAttribute>ITooltipAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-tooltipattribute")]
-impl TooltipAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TooltipAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-tooltipattribute")]impl TooltipAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-tooltipattribute")]
-impl TooltipAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (tooltip : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TooltipAttribute) , :: core :: stringify ! (new) ,)) ; < Self as ITooltipAttributeMethods > :: ctor (this , tooltip) ; this }
+#[cfg(feature="unity_engine-tooltipattribute")]impl TooltipAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(tooltip: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TooltipAttribute), ::core::stringify!(new),));
+ <Self as ITooltipAttributeMethods> ::ctor(this,tooltip);
+this}
 }
 
 #[cfg(feature = "unity_engine-tooltipattribute")]

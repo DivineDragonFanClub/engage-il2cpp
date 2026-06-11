@@ -4,37 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skilltutorialsequence/SkillTutorialSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "SkillTutorialSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct SkillTutorialSequence {
-# [static_field] # [rename (name = "TUTID_SKILL")] pub tutid_skill : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilltutorialsequence/SkillTutorialSequence.md"))]#[::unity2::class(namespace="App",name="SkillTutorialSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct SkillTutorialSequence{#[static_field]#[rename(name="TUTID_SKILL")]pub tutid_skill: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-skilltutorialsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-skilltutorialsequence")]
-impl SkillTutorialSequence { # [doc = "`TryCreateBind(crate::app::procinst::ProcInst)` overload"] pub fn try_create_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdad80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-skilltutorialsequence")]impl SkillTutorialSequence{#[doc="`TryCreateBind(crate::app::procinst::ProcInst)` overload"]pub fn try_create_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fdad80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
+}
+}
 
-#[cfg(feature = "app-skilltutorialsequence")]
-pub trait ISkillTutorialSequenceMethods : ISkillTutorialSequence { # [doc = "`Dialog()` overload"] fn dialog (self ,) -> () { unsafe { let __receiver = < SkillTutorialSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillTutorialSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdb040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tutorial()` overload"] fn tutorial (self ,) -> () { unsafe { let __receiver = < SkillTutorialSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillTutorialSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdb120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkillTutorialSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkillTutorialSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdb030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-skilltutorialsequence")]pub trait ISkillTutorialSequenceMethods:ISkillTutorialSequence{#[doc="`Dialog()` overload"]fn dialog(self,)->(){unsafe{let __receiver= <SkillTutorialSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdb040usize)as*mut u8,();
+(SkillTutorialSequence)__receiver)}
+}
+#[doc="`Tutorial()` overload"]fn tutorial(self,)->(){unsafe{let __receiver= <SkillTutorialSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdb120usize)as*mut u8,();
+(SkillTutorialSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillTutorialSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdb030usize)as*mut u8,();
+(SkillTutorialSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-skilltutorialsequence")]
-impl < __T : ISkillTutorialSequence > ISkillTutorialSequenceMethods for __T { }
+#[cfg(feature="app-skilltutorialsequence")]impl<__T:ISkillTutorialSequence>ISkillTutorialSequenceMethods for __T{}
 
-#[cfg(feature = "app-skilltutorialsequence")]
-impl SkillTutorialSequence { pub fn try_create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillTutorialSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dialog_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillTutorialSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn tutorial_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillTutorialSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkillTutorialSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-skilltutorialsequence")]impl SkillTutorialSequence{pub fn try_create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tutorial_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-skilltutorialsequence")]
-impl SkillTutorialSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkillTutorialSequence) , :: core :: stringify ! (new) ,)) ; < Self as ISkillTutorialSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-skilltutorialsequence")]impl SkillTutorialSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillTutorialSequence), ::core::stringify!(new),));
+ <Self as ISkillTutorialSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-skilltutorialsequence")]

@@ -4,10 +4,10 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ilayoutgroup_interface/ILayoutGroup_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ILayoutGroup")] pub struct ILayoutGroup_Interface {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/ilayoutgroup_interface/ILayoutGroup_Interface.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ILayoutGroup")]pub struct ILayoutGroup_Interface{}
 
 }
 

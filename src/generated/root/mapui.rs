@@ -4,48 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapui/MapUI.md"))] # [:: unity2 :: class (namespace = "" , name = "MapUI")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapui :: MapUI >)] pub struct MapUI {
-# [offset (32)] # [rename (name = "m_UpDownCurve")] pub m_up_down_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (40)] # [rename (name = "m_ScaleCurve")] pub m_scale_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (48)] # [rename (name = "m_CannonIconOffset")] pub m_cannon_icon_offset : f32 ,
-# [offset (52)] # [rename (name = "m_Time")] pub m_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapui/MapUI.md"))]#[::unity2::class(namespace="",name="MapUI")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::root::mapui::MapUI>)]pub struct MapUI{#[offset(32)]#[rename(name="m_UpDownCurve")]pub m_up_down_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(40)]#[rename(name="m_ScaleCurve")]pub m_scale_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(48)]#[rename(name="m_CannonIconOffset")]pub m_cannon_icon_offset:f32, #[offset(52)]#[rename(name="m_Time")]pub m_time:f32,}
 
 }
 
 #[cfg(feature = "root-mapui-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapui")]
-impl MapUI { # [doc = "`GetCamera()` overload"] pub fn get_camera () -> crate :: unity_engine :: camera :: Camera { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ee30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapui")]impl MapUI{#[doc="`GetCamera()` overload"]pub fn get_camera()->crate::unity_engine::camera::Camera{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x201ee30usize)as*mut u8,crate::unity_engine::camera::Camera;
+)}
+}
+}
 
-#[cfg(feature = "root-mapui")]
-pub trait IMapUIMethods : IMapUI { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < MapUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201eda0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201edb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Time()` overload"] fn get_time (self ,) -> f32 { unsafe { let __receiver = < MapUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUI , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ef20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CannonIconOffset()` overload"] fn get_cannon_icon_offset (self ,) -> f32 { unsafe { let __receiver = < MapUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUI , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ef30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_UpDownCurve()` overload"] fn get_up_down_curve (self ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve { unsafe { let __receiver = < MapUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUI , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ef40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ScaleCurve()` overload"] fn get_scale_curve (self ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve { unsafe { let __receiver = < MapUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUI , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animationcurve :: AnimationCurve = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ef50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapUI as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapUI , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x201ef60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapui")]pub trait IMapUIMethods:IMapUI{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201eda0usize)as*mut u8,();
+(MapUI)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201edb0usize)as*mut u8,();
+(MapUI)__receiver)}
+}
+#[doc="`get_Time()` overload"]fn get_time(self,)->f32{unsafe{let __receiver= <MapUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ef20usize)as*mut u8,f32;
+(MapUI)__receiver)}
+}
+#[doc="`get_CannonIconOffset()` overload"]fn get_cannon_icon_offset(self,)->f32{unsafe{let __receiver= <MapUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ef30usize)as*mut u8,f32;
+(MapUI)__receiver)}
+}
+#[doc="`get_UpDownCurve()` overload"]fn get_up_down_curve(self,)->crate::unity_engine::animationcurve::AnimationCurve{unsafe{let __receiver= <MapUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ef40usize)as*mut u8,crate::unity_engine::animationcurve::AnimationCurve;
+(MapUI)__receiver)}
+}
+#[doc="`get_ScaleCurve()` overload"]fn get_scale_curve(self,)->crate::unity_engine::animationcurve::AnimationCurve{unsafe{let __receiver= <MapUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ef50usize)as*mut u8,crate::unity_engine::animationcurve::AnimationCurve;
+(MapUI)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x201ef60usize)as*mut u8,();
+(MapUI)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapui")]
-impl < __T : IMapUI > IMapUIMethods for __T { }
+#[cfg(feature="root-mapui")]impl<__T:IMapUI>IMapUIMethods for __T{}
 
-#[cfg(feature = "root-mapui")]
-impl MapUI { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_cannon_icon_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_up_down_curve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_scale_curve_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapUI as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="root-mapui")]impl MapUI{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_cannon_icon_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_up_down_curve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_scale_curve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "root-mapui")]
-impl MapUI {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapUI) , :: core :: stringify ! (new) ,)) ; < Self as IMapUIMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapui")]impl MapUI{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapUI), ::core::stringify!(new),));
+ <Self as IMapUIMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapui")]

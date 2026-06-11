@@ -4,38 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeactivate/MapDeactivate.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapDeactivate")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapDeactivate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeactivate/MapDeactivate.md"))]#[::unity2::class(namespace="App",name="MapDeactivate")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapDeactivate{}
 
 }
 
 #[cfg(feature = "app-mapdeactivate-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapdeactivate")]
-pub trait IMapDeactivateMethods : IMapDeactivate { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapDeactivate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapDeactivate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapdeactivate")]pub trait IMapDeactivateMethods:IMapDeactivate{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDeactivate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3340usize)as*mut u8,();
+(MapDeactivate)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapdeactivate")]
-impl < __T : IMapDeactivate > IMapDeactivateMethods for __T { }
+#[cfg(feature="app-mapdeactivate")]impl<__T:IMapDeactivate>IMapDeactivateMethods for __T{}
 
-#[cfg(feature = "app-mapdeactivate")]
-impl MapDeactivate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapDeactivate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-mapdeactivate")]impl MapDeactivate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-mapdeactivate")]
-impl MapDeactivate {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapDeactivate) , :: core :: stringify ! (new) ,)) ; < Self as IMapDeactivateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapdeactivate")]impl MapDeactivate{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapDeactivate), ::core::stringify!(new),));
+ <Self as IMapDeactivateMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapdeactivate")]

@@ -4,31 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfoiconpool/MapInfoIconPool.md"))] # [:: unity2 :: class (namespace = "" , name = "MapInfoIconPool")] pub struct MapInfoIconPool {
-# [offset (32)] # [rename (name = "m_Prefab")] pub m_prefab : crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot ,
-# [offset (40)] # [rename (name = "m_ParentTransform")] pub m_parent_transform : crate :: unity_engine :: transform :: Transform ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapinfoiconpool/MapInfoIconPool.md"))]#[::unity2::class(namespace="",name="MapInfoIconPool")]pub struct MapInfoIconPool{#[offset(32)]#[rename(name="m_Prefab")]pub m_prefab:crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot, #[offset(40)]#[rename(name="m_ParentTransform")]pub m_parent_transform:crate::unity_engine::transform::Transform,}
 
 }
 
 #[cfg(feature = "root-mapinfoiconpool-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapinfoiconpool")]
-pub trait IMapInfoIconPoolMethods : IMapInfoIconPool { # [doc = "`.ctor(crate::unity_engine::transform::Transform, crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot)` overload"] fn ctor (self , transform : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , prefab : impl :: core :: convert :: Into < crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot >) -> () { unsafe { let __receiver = < MapInfoIconPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconPool , crate :: unity_engine :: transform :: Transform , crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2085760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (transform) , :: core :: convert :: Into :: into (prefab) , :: core :: option :: Option :: None) } } } # [doc = "`CreateInstance()` overload"] fn create_instance (self ,) -> crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot { unsafe { let __receiver = < MapInfoIconPool as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoIconPool , :: unity2 :: OptionalMethod ,) -> crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20857f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapinfoiconpool")]pub trait IMapInfoIconPoolMethods:IMapInfoIconPool{#[doc="`.ctor(crate::unity_engine::transform::Transform, crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot)` overload"]fn ctor(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,prefab:impl::core::convert::Into<crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot>)->(){unsafe{let __receiver= <MapInfoIconPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2085760usize)as*mut u8,();
+(MapInfoIconPool)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform),(crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot)::core::convert::Into::into(prefab))}
+}
+#[doc="`CreateInstance()` overload"]fn create_instance(self,)->crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot{unsafe{let __receiver= <MapInfoIconPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20857f0usize)as*mut u8,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot;
+(MapInfoIconPool)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapinfoiconpool")]
-impl < __T : IMapInfoIconPool > IMapInfoIconPoolMethods for __T { }
+#[cfg(feature="root-mapinfoiconpool")]impl<__T:IMapInfoIconPool>IMapInfoIconPoolMethods for __T{}
 
-#[cfg(feature = "root-mapinfoiconpool")]
-impl MapInfoIconPool { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoIconPool as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-mapinfoiconpool")]impl MapInfoIconPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-mapinfoiconpool")]
-impl MapInfoIconPool {
-# [doc = "`.ctor(crate::unity_engine::transform::Transform, crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot)` — overload selector"] pub fn new (transform : crate :: unity_engine :: transform :: Transform , prefab : crate :: root :: mapinfoiconlocatorroot :: MapInfoIconLocatorRoot) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoIconPool) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoIconPoolMethods > :: ctor (this , transform , prefab) ; this }
+#[cfg(feature="root-mapinfoiconpool")]impl MapInfoIconPool{#[doc="`.ctor(crate::unity_engine::transform::Transform, crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot)` — overload selector"]pub fn new(transform:crate::unity_engine::transform::Transform,prefab:crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInfoIconPool), ::core::stringify!(new),));
+ <Self as IMapInfoIconPoolMethods> ::ctor(this,transform,prefab);
+this}
 }
 
 #[cfg(feature = "root-mapinfoiconpool")]

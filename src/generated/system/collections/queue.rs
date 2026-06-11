@@ -4,69 +4,163 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueDebugView.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Queue.QueueDebugView")] # [parent (crate :: system :: object :: Object)] pub struct Queue_QueueDebugView {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/queue/Queue_QueueDebugView.md"))]#[::unity2::class(namespace="System.Collections",name="Queue.QueueDebugView")]#[parent(crate::system::object::Object)]pub struct Queue_QueueDebugView{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Queue")] # [parent (crate :: system :: object :: Object)] pub struct Queue {
-# [offset (16)] # [rename (name = "_array")] pub array : :: unity2 :: Array < crate :: system :: object :: Object > ,
-# [offset (24)] # [rename (name = "_head")] pub head : i32 ,
-# [offset (28)] # [rename (name = "_tail")] pub tail : i32 ,
-# [offset (32)] # [rename (name = "_size")] pub size : i32 ,
-# [offset (36)] # [rename (name = "_growFactor")] pub grow_factor : i32 ,
-# [offset (40)] # [rename (name = "_version")] pub version : i32 ,
-# [offset (48)] # [rename (name = "_syncRoot")] pub sync_root : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/queue/Queue.md"))]#[::unity2::class(namespace="System.Collections",name="Queue")]#[parent(crate::system::object::Object)]pub struct Queue{#[offset(16)]#[rename(name="_array")]pub array: ::unity2::Array<crate::system::object::Object> , #[offset(24)]#[rename(name="_head")]pub head:i32, #[offset(28)]#[rename(name="_tail")]pub tail:i32, #[offset(32)]#[rename(name="_size")]pub size:i32, #[offset(36)]#[rename(name="_growFactor")]pub grow_factor:i32, #[offset(40)]#[rename(name="_version")]pub version:i32, #[offset(48)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/queue/Queue_QueueEnumerator.md"))] # [:: unity2 :: class (namespace = "System.Collections" , name = "Queue.QueueEnumerator")] # [parent (crate :: system :: object :: Object)] pub struct Queue_QueueEnumerator {
-# [offset (16)] # [rename (name = "_q")] pub q : crate :: system :: collections :: queue :: Queue ,
-# [offset (24)] # [rename (name = "_index")] pub index : i32 ,
-# [offset (28)] # [rename (name = "_version")] pub version : i32 ,
-# [offset (32)] # [rename (name = "currentElement")] pub current_element : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/queue/Queue_QueueEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="Queue.QueueEnumerator")]#[parent(crate::system::object::Object)]pub struct Queue_QueueEnumerator{#[offset(16)]#[rename(name="_q")]pub q:crate::system::collections::queue::Queue, #[offset(24)]#[rename(name="_index")]pub index:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="currentElement")]pub current_element: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "system-collections-queue-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-collections-queue")]
-pub trait IQueueMethods : IQueue { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] fn ctor_2 (self , capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, f32)` overload"] fn ctor_3 (self , capacity : impl :: core :: convert :: Into < i32 > , grow_factor : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad9f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: convert :: Into :: into (grow_factor) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::icollection::ICollection)` overload"] fn ctor_4 (self , col : impl :: core :: convert :: Into < crate :: system :: collections :: icollection :: ICollection >) -> () { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , crate :: system :: collections :: icollection :: ICollection , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (col) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clone()` overload"] fn clone (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSynchronized()` overload"] fn get_is_synchronized (self ,) -> bool { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_SyncRoot()` overload"] fn get_sync_root (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada4c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(::unity2::IlInstance, i32)` overload"] fn copy_to (self , array : impl :: core :: convert :: Into < :: unity2 :: IlInstance > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , :: unity2 :: IlInstance , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Enqueue(crate::system::object::Object)` overload"] fn enqueue (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dequeue()` overload"] fn dequeue (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Peek()` overload"] fn peek (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3adaa80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetElement(i32)` overload"] fn get_element (self , i : impl :: core :: convert :: Into < i32 >) -> crate :: system :: object :: Object { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3adab30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`SetCapacity(i32)` overload"] fn set_capacity (self , capacity : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Queue as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ada830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (capacity) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "system-collections-queue")]
-impl < __T : IQueue > IQueueMethods for __T { }
-
-#[cfg(feature = "system-collections-queue")]
-impl Queue { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_synchronized_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_sync_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn enqueue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn dequeue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn peek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_element_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_capacity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
-
-#[cfg(feature = "system-collections-queue")]
-impl Queue {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Queue) , :: core :: stringify ! (new) ,)) ; < Self as IQueueMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new_2 (capacity : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Queue) , :: core :: stringify ! (new_2) ,)) ; < Self as IQueueMethods > :: ctor_2 (this , capacity) ; this }
-
-# [doc = "`.ctor(i32, f32)` — overload selector"] pub fn new_3 (capacity : i32 , grow_factor : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Queue) , :: core :: stringify ! (new_3) ,)) ; < Self as IQueueMethods > :: ctor_3 (this , capacity , grow_factor) ; this }
-
-# [doc = "`.ctor(crate::system::collections::icollection::ICollection)` — overload selector"] pub fn new_4 (col : crate :: system :: collections :: icollection :: ICollection) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Queue) , :: core :: stringify ! (new_4) ,)) ; < Self as IQueueMethods > :: ctor_4 (this , col) ; this }
+#[cfg(feature="system-collections-queue")]pub trait IQueueMethods:IQueue{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9ea0usize)as*mut u8,();
+(Queue)__receiver)}
+}
+#[doc="`.ctor(i32)` overload"]fn ctor_2(self,capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada130usize)as*mut u8,();
+(Queue)__receiver,(i32)::core::convert::Into::into(capacity))}
+}
+#[doc="`.ctor(i32, f32)` overload"]fn ctor_3(self,capacity:impl::core::convert::Into<i32> ,grow_factor:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9f20usize)as*mut u8,();
+(Queue)__receiver,(i32)::core::convert::Into::into(capacity),(f32)::core::convert::Into::into(grow_factor))}
+}
+#[doc="`.ctor(crate::system::collections::icollection::ICollection)` overload"]fn ctor_4(self,col:impl::core::convert::Into<crate::system::collections::icollection::ICollection>)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada140usize)as*mut u8,();
+(Queue)__receiver,(crate::system::collections::icollection::ICollection)::core::convert::Into::into(col))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada3c0usize)as*mut u8,i32;
+(Queue)__receiver)}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada3d0usize)as*mut u8,crate::system::object::Object;
+(Queue)__receiver)}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada4b0usize)as*mut u8,bool;
+(Queue)__receiver)}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada4c0usize)as*mut u8,crate::system::object::Object;
+(Queue)__receiver)}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada550usize)as*mut u8,();
+(Queue)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Enqueue(crate::system::object::Object)` overload"]fn enqueue(self,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada720usize)as*mut u8,();
+(Queue)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada920usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(Queue)__receiver)}
+}
+#[doc="`Dequeue()` overload"]fn dequeue(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada990usize)as*mut u8,crate::system::object::Object;
+(Queue)__receiver)}
+}
+#[doc="`Peek()` overload"]fn peek(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3adaa80usize)as*mut u8,crate::system::object::Object;
+(Queue)__receiver)}
+}
+#[doc="`GetElement(i32)` overload"]fn get_element(self,i:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3adab30usize)as*mut u8,crate::system::object::Object;
+(Queue)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`SetCapacity(i32)` overload"]fn set_capacity(self,capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada830usize)as*mut u8,();
+(Queue)__receiver,(i32)::core::convert::Into::into(capacity))}
+}
 }
 
-#[cfg(feature = "system-collections-queue")]
-pub trait IQueue_QueueEnumeratorMethods : IQueue_QueueEnumerator { # [doc = "`.ctor(crate::system::collections::queue::Queue)` overload"] fn ctor (self , q : impl :: core :: convert :: Into < crate :: system :: collections :: queue :: Queue >) -> () { unsafe { let __receiver = < Queue_QueueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue_QueueEnumerator , crate :: system :: collections :: queue :: Queue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34dd9f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (q) , :: core :: option :: Option :: None) } } } # [doc = "`Clone()` overload"] fn clone (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Queue_QueueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue_QueueEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34dda80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] fn move_next (self ,) -> bool { unsafe { let __receiver = < Queue_QueueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue_QueueEnumerator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34dda90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Current()` overload"] fn get_current (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < Queue_QueueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue_QueueEnumerator , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34ddb80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < Queue_QueueEnumerator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Queue_QueueEnumerator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x34ddc20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-collections-queue")]impl<__T:IQueue>IQueueMethods for __T{}
 
-#[cfg(feature = "system-collections-queue")]
-impl < __T : IQueue_QueueEnumerator > IQueue_QueueEnumeratorMethods for __T { }
+#[cfg(feature="system-collections-queue")]impl Queue{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn enqueue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn dequeue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_element_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "system-collections-queue")]
-impl Queue_QueueEnumerator { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue_QueueEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue_QueueEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue_QueueEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue_QueueEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Queue_QueueEnumerator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="system-collections-queue")]impl Queue{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Queue), ::core::stringify!(new),));
+ <Self as IQueueMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(i32)` — overload selector"]pub fn new_2(capacity:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Queue), ::core::stringify!(new_2),));
+ <Self as IQueueMethods> ::ctor_2(this,capacity);
+this}
+#[doc="`.ctor(i32, f32)` — overload selector"]pub fn new_3(capacity:i32,grow_factor:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Queue), ::core::stringify!(new_3),));
+ <Self as IQueueMethods> ::ctor_3(this,capacity,grow_factor);
+this}
+#[doc="`.ctor(crate::system::collections::icollection::ICollection)` — overload selector"]pub fn new_4(col:crate::system::collections::icollection::ICollection)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Queue), ::core::stringify!(new_4),));
+ <Self as IQueueMethods> ::ctor_4(this,col);
+this}
+}
 
-#[cfg(feature = "system-collections-queue")]
-impl Queue_QueueEnumerator {
-# [doc = "`.ctor(crate::system::collections::queue::Queue)` — overload selector"] pub fn new (q : crate :: system :: collections :: queue :: Queue) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Queue_QueueEnumerator) , :: core :: stringify ! (new) ,)) ; < Self as IQueue_QueueEnumeratorMethods > :: ctor (this , q) ; this }
+#[cfg(feature="system-collections-queue")]pub trait IQueue_QueueEnumeratorMethods:IQueue_QueueEnumerator{#[doc="`.ctor(crate::system::collections::queue::Queue)` overload"]fn ctor(self,q:impl::core::convert::Into<crate::system::collections::queue::Queue>)->(){unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34dd9f0usize)as*mut u8,();
+(Queue_QueueEnumerator)__receiver,(crate::system::collections::queue::Queue)::core::convert::Into::into(q))}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34dda80usize)as*mut u8,crate::system::object::Object;
+(Queue_QueueEnumerator)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34dda90usize)as*mut u8,bool;
+(Queue_QueueEnumerator)__receiver)}
+}
+#[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34ddb80usize)as*mut u8,crate::system::object::Object;
+(Queue_QueueEnumerator)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34ddc20usize)as*mut u8,();
+(Queue_QueueEnumerator)__receiver)}
+}
+}
+
+#[cfg(feature="system-collections-queue")]impl<__T:IQueue_QueueEnumerator>IQueue_QueueEnumeratorMethods for __T{}
+
+#[cfg(feature="system-collections-queue")]impl Queue_QueueEnumerator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="system-collections-queue")]impl Queue_QueueEnumerator{#[doc="`.ctor(crate::system::collections::queue::Queue)` — overload selector"]pub fn new(q:crate::system::collections::queue::Queue)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Queue_QueueEnumerator), ::core::stringify!(new),));
+ <Self as IQueue_QueueEnumeratorMethods> ::ctor(this,q);
+this}
 }
 
 #[cfg(feature = "system-collections-queue")]

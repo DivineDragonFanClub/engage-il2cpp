@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/notificationutilities/NotificationUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "NotificationUtilities")] # [parent (crate :: system :: object :: Object)] pub struct NotificationUtilities {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/notificationutilities/NotificationUtilities.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="NotificationUtilities")]#[parent(crate::system::object::Object)]pub struct NotificationUtilities{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-notificationutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-notificationutilities")]
-impl NotificationUtilities { # [doc = "`CreateNotificationsPlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>, crate::unity_engine::gameobject::GameObject)` overload"] pub fn create_notifications_playable (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , markers : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface > > , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: scriptplayable_1 :: ScriptPlayable_1 < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour > { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: timeline :: imarker_interface :: IMarker_Interface > , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: scriptplayable_1 :: ScriptPlayable_1 < crate :: unity_engine :: timeline :: timenotificationbehaviour :: TimeNotificationBehaviour > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d87a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (markers) , :: core :: convert :: Into :: into (go) , :: core :: option :: Option :: None) } } } # [doc = "`TrackTypeSupportsNotifications(::unity2::SystemType)` overload"] pub fn track_type_supports_notifications (r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d9200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-notificationutilities")]impl NotificationUtilities{#[doc="`CreateNotificationsPlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_notifications_playable(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,markers:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface> > ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d87a0usize)as*mut u8,crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<crate::unity_engine::timeline::timenotificationbehaviour::TimeNotificationBehaviour> ;
+(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>)::core::convert::Into::into(markers),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`TrackTypeSupportsNotifications(::unity2::SystemType)` overload"]pub fn track_type_supports_notifications(r#type:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d9200usize)as*mut u8,bool;
+(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-notificationutilities")]
-impl NotificationUtilities { pub fn create_notifications_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NotificationUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn track_type_supports_notifications_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NotificationUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-timeline-notificationutilities")]impl NotificationUtilities{pub fn create_notifications_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn track_type_supports_notifications_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-timeline-notificationutilities")]
 #[doc(hidden)]

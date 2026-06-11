@@ -4,36 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: actiondisposerholder :: { ActionDisposerHolder , IActionDisposerHolder }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::actiondisposerholder::{ActionDisposerHolder,IActionDisposerHolder}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionobservable/ActionObservable.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionObservable")] # [parent (crate :: combat :: actiondisposerholder :: ActionDisposerHolder)] pub struct ActionObservable {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionobservable/ActionObservable.md"))]#[::unity2::class(namespace="Combat",name="ActionObservable")]#[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]pub struct ActionObservable{}
 
 }
 
 #[cfg(feature = "combat-actionobservable-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionobservable")]
-pub trait IActionObservableMethods : IActionObservable { # [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { let __receiver = < ActionObservable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionObservable , crate :: combat :: character :: Character , crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bbef90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionObservable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionObservable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc08f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionObservable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionObservable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc0af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < ActionObservable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionObservable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc0f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnterAttack()` overload"] fn on_enter_attack (self ,) -> () { unsafe { let __receiver = < ActionObservable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionObservable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnHitPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn on_hit_passed (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < ActionObservable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionObservable , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc7f20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionobservable")]pub trait IActionObservableMethods:IActionObservable{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbef90usize)as*mut u8,();
+(ActionObservable)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc08f0usize)as*mut u8,();
+(ActionObservable)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc0af0usize)as*mut u8,();
+(ActionObservable)__receiver)}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc0f20usize)as*mut u8,();
+(ActionObservable)__receiver)}
+}
+#[doc="`OnEnterAttack()` overload"]fn on_enter_attack(self,)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3950usize)as*mut u8,();
+(ActionObservable)__receiver)}
+}
+#[doc="`OnHitPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_hit_passed(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7f20usize)as*mut u8,();
+(ActionObservable)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+}
 
-#[cfg(feature = "combat-actionobservable")]
-impl < __T : IActionObservable > IActionObservableMethods for __T { }
+#[cfg(feature="combat-actionobservable")]impl<__T:IActionObservable>IActionObservableMethods for __T{}
 
-#[cfg(feature = "combat-actionobservable")]
-impl ActionObservable { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionObservable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionObservable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionObservable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionObservable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_enter_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionObservable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_hit_passed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionObservable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="combat-actionobservable")]impl ActionObservable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_enter_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_hit_passed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "combat-actionobservable")]
-impl ActionObservable {
-# [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , phase : crate :: combat :: phase :: Phase) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionObservable) , :: core :: stringify ! (new) ,)) ; < Self as IActionObservableMethods > :: ctor (this , chr , phase) ; this }
+#[cfg(feature="combat-actionobservable")]impl ActionObservable{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"]pub fn new(chr:crate::combat::character::Character,phase:crate::combat::phase::Phase)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionObservable), ::core::stringify!(new),));
+ <Self as IActionObservableMethods> ::ctor(this,chr,phase);
+this}
 }
 
 #[cfg(feature = "combat-actionobservable")]

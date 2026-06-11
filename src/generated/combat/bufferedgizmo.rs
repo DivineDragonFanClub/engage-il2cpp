@@ -4,53 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bufferedgizmo/BufferedGizmo_Segment.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "BufferedGizmo.Segment")] # [parent (crate :: system :: object :: Object)] pub struct BufferedGizmo_Segment {
-# [offset (16)] # [rename (name = "A")] pub a : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (28)] # [rename (name = "B")] pub b : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (40)] # [rename (name = "color")] pub color : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/bufferedgizmo/BufferedGizmo_Segment.md"))]#[::unity2::class(namespace="Combat",name="BufferedGizmo.Segment")]#[parent(crate::system::object::Object)]pub struct BufferedGizmo_Segment{#[offset(16)]#[rename(name="A")]pub a:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="B")]pub b:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="color")]pub color:crate::unity_engine::color::Color,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bufferedgizmo/BufferedGizmo.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "BufferedGizmo")] # [parent (crate :: system :: object :: Object)] pub struct BufferedGizmo {
-# [offset (16)] # [rename (name = "segments")] pub segments : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: bufferedgizmo :: BufferedGizmo_Segment > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/bufferedgizmo/BufferedGizmo.md"))]#[::unity2::class(namespace="Combat",name="BufferedGizmo")]#[parent(crate::system::object::Object)]pub struct BufferedGizmo{#[offset(16)]#[rename(name="segments")]pub segments:crate::system::collections::generic::list_1::List_1<crate::combat::bufferedgizmo::BufferedGizmo_Segment> ,}
 
 }
 
 #[cfg(feature = "combat-bufferedgizmo-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-bufferedgizmo")]
-pub trait IBufferedGizmo_SegmentMethods : IBufferedGizmo_Segment { # [doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"] fn ctor (self , a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < BufferedGizmo_Segment as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BufferedGizmo_Segment , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bcdc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "combat-bufferedgizmo")]
-impl < __T : IBufferedGizmo_Segment > IBufferedGizmo_SegmentMethods for __T { }
-
-#[cfg(feature = "combat-bufferedgizmo")]
-impl BufferedGizmo_Segment { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BufferedGizmo_Segment as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "combat-bufferedgizmo")]
-impl BufferedGizmo_Segment {
-# [doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` — overload selector"] pub fn new (a : crate :: unity_engine :: vector3 :: Vector3 , b : crate :: unity_engine :: vector3 :: Vector3 , color : crate :: unity_engine :: color :: Color) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BufferedGizmo_Segment) , :: core :: stringify ! (new) ,)) ; < Self as IBufferedGizmo_SegmentMethods > :: ctor (this , a , b , color) ; this }
+#[cfg(feature="combat-bufferedgizmo")]pub trait IBufferedGizmo_SegmentMethods:IBufferedGizmo_Segment{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]fn ctor(self,a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <BufferedGizmo_Segment as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bcdc0usize)as*mut u8,();
+(BufferedGizmo_Segment)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
 }
 
-#[cfg(feature = "combat-bufferedgizmo")]
-pub trait IBufferedGizmoMethods : IBufferedGizmo { # [doc = "`Add(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"] fn add (self , a : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , b : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < BufferedGizmo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BufferedGizmo , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298c0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`Draw()` overload"] fn draw (self ,) -> () { unsafe { let __receiver = < BufferedGizmo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BufferedGizmo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298c1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BufferedGizmo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BufferedGizmo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298c320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-bufferedgizmo")]impl<__T:IBufferedGizmo_Segment>IBufferedGizmo_SegmentMethods for __T{}
 
-#[cfg(feature = "combat-bufferedgizmo")]
-impl < __T : IBufferedGizmo > IBufferedGizmoMethods for __T { }
+#[cfg(feature="combat-bufferedgizmo")]impl BufferedGizmo_Segment{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "combat-bufferedgizmo")]
-impl BufferedGizmo { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BufferedGizmo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn draw_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BufferedGizmo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BufferedGizmo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-bufferedgizmo")]impl BufferedGizmo_Segment{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` — overload selector"]pub fn new(a:crate::unity_engine::vector3::Vector3,b:crate::unity_engine::vector3::Vector3,color:crate::unity_engine::color::Color)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BufferedGizmo_Segment), ::core::stringify!(new),));
+ <Self as IBufferedGizmo_SegmentMethods> ::ctor(this,a,b,color);
+this}
+}
 
-#[cfg(feature = "combat-bufferedgizmo")]
-impl BufferedGizmo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BufferedGizmo) , :: core :: stringify ! (new) ,)) ; < Self as IBufferedGizmoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-bufferedgizmo")]pub trait IBufferedGizmoMethods:IBufferedGizmo{#[doc="`Add(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::color::Color)` overload"]fn add(self,a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <BufferedGizmo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298c0e0usize)as*mut u8,();
+(BufferedGizmo)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`Draw()` overload"]fn draw(self,)->(){unsafe{let __receiver= <BufferedGizmo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298c1d0usize)as*mut u8,();
+(BufferedGizmo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BufferedGizmo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298c320usize)as*mut u8,();
+(BufferedGizmo)__receiver)}
+}
+}
+
+#[cfg(feature="combat-bufferedgizmo")]impl<__T:IBufferedGizmo>IBufferedGizmoMethods for __T{}
+
+#[cfg(feature="combat-bufferedgizmo")]impl BufferedGizmo{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn draw_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="combat-bufferedgizmo")]impl BufferedGizmo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BufferedGizmo), ::core::stringify!(new),));
+ <Self as IBufferedGizmoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-bufferedgizmo")]

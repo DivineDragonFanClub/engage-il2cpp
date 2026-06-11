@@ -4,127 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_LightmapMixedBakeModes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SupportedRenderingFeatures_LightmapMixedBakeModes  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_LightmapMixedBakeModes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SupportedRenderingFeatures_LightmapMixedBakeModes{pub value:i32,}
+impl::unity2::ClassIdentity for SupportedRenderingFeatures_LightmapMixedBakeModes{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="SupportedRenderingFeatures.LightmapMixedBakeModes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SupportedRenderingFeatures_LightmapMixedBakeModes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SupportedRenderingFeatures_LightmapMixedBakeModes{pub fn none()->Self{Self{value:0}
+}
+pub fn indirect_only()->Self{Self{value:1}
+}
+pub fn subtractive()->Self{Self{value:2}
+}
+pub fn shadowmask()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SupportedRenderingFeatures_LightmapMixedBakeModes  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="SupportedRenderingFeatures")]#[parent(crate::system::object::Object)]pub struct SupportedRenderingFeatures{#[static_field]#[rename(name="s_Active")]pub s_active:crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures,}
 
-    const NAME: &'static str = "SupportedRenderingFeatures.LightmapMixedBakeModes";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_ReflectionProbeModes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SupportedRenderingFeatures_ReflectionProbeModes{pub value:i32,}
+impl::unity2::ClassIdentity for SupportedRenderingFeatures_ReflectionProbeModes{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="SupportedRenderingFeatures.ReflectionProbeModes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for SupportedRenderingFeatures_LightmapMixedBakeModes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SupportedRenderingFeatures_ReflectionProbeModes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  SupportedRenderingFeatures_LightmapMixedBakeModes  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn indirect_only() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn subtractive() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn shadowmask() -> Self {
-        Self { value: 4 }
-
-    }
-
+impl SupportedRenderingFeatures_ReflectionProbeModes{pub fn none()->Self{Self{value:0}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures_ReflectionProbeModes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SupportedRenderingFeatures_ReflectionProbeModes  {
-    pub value: i32,
+pub fn rotation()->Self{Self{value:1}
 }
-
-
-impl  ::unity2::ClassIdentity for SupportedRenderingFeatures_ReflectionProbeModes  {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "SupportedRenderingFeatures.ReflectionProbeModes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SupportedRenderingFeatures_ReflectionProbeModes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SupportedRenderingFeatures_ReflectionProbeModes  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn rotation() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/supportedrenderingfeatures/SupportedRenderingFeatures.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "SupportedRenderingFeatures")] # [parent (crate :: system :: object :: Object)] pub struct SupportedRenderingFeatures {
-# [static_field] # [rename (name = "s_Active")] pub s_active : crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures ,
 }
 
 }
@@ -132,31 +56,130 @@ impl  SupportedRenderingFeatures_ReflectionProbeModes  {
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
-impl SupportedRenderingFeatures { # [doc = "`get_active()` overload"] pub fn get_active () -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9ad20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_active(crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures)` overload"] pub fn set_active (value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f815b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`FallbackMixedLightingModeByRef(::unity2::IntPtr)` overload"] pub fn fallback_mixed_lighting_mode_by_ref (fallback_mode_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9af00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (fallback_mode_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`IsMixedLightingModeSupported(crate::unity_engine::mixedlightingmode::MixedLightingMode)` overload"] pub fn is_mixed_lighting_mode_supported (mixed_mode : impl :: core :: convert :: Into < crate :: unity_engine :: mixedlightingmode :: MixedLightingMode >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: mixedlightingmode :: MixedLightingMode , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b0d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mixed_mode) , :: core :: option :: Option :: None) } } } # [doc = "`IsMixedLightingModeSupportedByRef(crate::unity_engine::mixedlightingmode::MixedLightingMode, ::unity2::IntPtr)` overload"] pub fn is_mixed_lighting_mode_supported_by_ref (mixed_mode : impl :: core :: convert :: Into < crate :: unity_engine :: mixedlightingmode :: MixedLightingMode > , is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: mixedlightingmode :: MixedLightingMode , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mixed_mode) , :: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`IsLightmapBakeTypeSupported(crate::unity_engine::lightmapbaketype::LightmapBakeType)` overload"] pub fn is_lightmap_bake_type_supported (bake_type : impl :: core :: convert :: Into < crate :: unity_engine :: lightmapbaketype :: LightmapBakeType >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: lightmapbaketype :: LightmapBakeType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b2f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (bake_type) , :: core :: option :: Option :: None) } } } # [doc = "`IsLightmapBakeTypeSupportedByRef(crate::unity_engine::lightmapbaketype::LightmapBakeType, ::unity2::IntPtr)` overload"] pub fn is_lightmap_bake_type_supported_by_ref (bake_type : impl :: core :: convert :: Into < crate :: unity_engine :: lightmapbaketype :: LightmapBakeType > , is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: lightmapbaketype :: LightmapBakeType , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b370usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (bake_type) , :: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`IsLightmapsModeSupportedByRef(crate::unity_engine::lightmapsmode::LightmapsMode, ::unity2::IntPtr)` overload"] pub fn is_lightmaps_mode_supported_by_ref (mode : impl :: core :: convert :: Into < crate :: unity_engine :: lightmapsmode :: LightmapsMode > , is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: lightmapsmode :: LightmapsMode , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`IsLightmapperSupportedByRef(i32, ::unity2::IntPtr)` overload"] pub fn is_lightmapper_supported_by_ref (lightmapper : impl :: core :: convert :: Into < i32 > , is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b5e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lightmapper) , :: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`IsUIOverlayRenderedBySRP(::unity2::IntPtr)` overload"] pub fn is_ui_overlay_rendered_by_srp (is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b670usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`IsAutoAmbientProbeBakingSupported(::unity2::IntPtr)` overload"] pub fn is_auto_ambient_probe_baking_supported (is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b6f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`IsAutoDefaultReflectionProbeBakingSupported(::unity2::IntPtr)` overload"] pub fn is_auto_default_reflection_probe_baking_supported (is_supported_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b770usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_supported_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`FallbackLightmapperByRef(::unity2::IntPtr)` overload"] pub fn fallback_lightmapper_by_ref (lightmapper_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b7f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lightmapper_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9b810usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-supportedrenderingfeatures")]impl SupportedRenderingFeatures{#[doc="`get_active()` overload"]pub fn get_active()->crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9ad20usize)as*mut u8,crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures;
+)}
+}
+#[doc="`set_active(crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures)` overload"]pub fn set_active(value:impl::core::convert::Into<crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f815b0usize)as*mut u8,();
+(crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures)::core::convert::Into::into(value))}
+}
+#[doc="`FallbackMixedLightingModeByRef(::unity2::IntPtr)` overload"]pub fn fallback_mixed_lighting_mode_by_ref(fallback_mode_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9af00usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(fallback_mode_ptr))}
+}
+#[doc="`IsMixedLightingModeSupported(crate::unity_engine::mixedlightingmode::MixedLightingMode)` overload"]pub fn is_mixed_lighting_mode_supported(mixed_mode:impl::core::convert::Into<crate::unity_engine::mixedlightingmode::MixedLightingMode>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b0d0usize)as*mut u8,bool;
+(crate::unity_engine::mixedlightingmode::MixedLightingMode)::core::convert::Into::into(mixed_mode))}
+}
+#[doc="`IsMixedLightingModeSupportedByRef(crate::unity_engine::mixedlightingmode::MixedLightingMode, ::unity2::IntPtr)` overload"]pub fn is_mixed_lighting_mode_supported_by_ref(mixed_mode:impl::core::convert::Into<crate::unity_engine::mixedlightingmode::MixedLightingMode> ,is_supported_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b150usize)as*mut u8,();
+(crate::unity_engine::mixedlightingmode::MixedLightingMode)::core::convert::Into::into(mixed_mode),(::unity2::IntPtr)::core::convert::Into::into(is_supported_ptr))}
+}
+#[doc="`IsLightmapBakeTypeSupported(crate::unity_engine::lightmapbaketype::LightmapBakeType)` overload"]pub fn is_lightmap_bake_type_supported(bake_type:impl::core::convert::Into<crate::unity_engine::lightmapbaketype::LightmapBakeType>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b2f0usize)as*mut u8,bool;
+(crate::unity_engine::lightmapbaketype::LightmapBakeType)::core::convert::Into::into(bake_type))}
+}
+#[doc="`IsLightmapBakeTypeSupportedByRef(crate::unity_engine::lightmapbaketype::LightmapBakeType, ::unity2::IntPtr)` overload"]pub fn is_lightmap_bake_type_supported_by_ref(bake_type:impl::core::convert::Into<crate::unity_engine::lightmapbaketype::LightmapBakeType> ,is_supported_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b370usize)as*mut u8,();
+(crate::unity_engine::lightmapbaketype::LightmapBakeType)::core::convert::Into::into(bake_type),(::unity2::IntPtr)::core::convert::Into::into(is_supported_ptr))}
+}
+#[doc="`IsLightmapsModeSupportedByRef(crate::unity_engine::lightmapsmode::LightmapsMode, ::unity2::IntPtr)` overload"]pub fn is_lightmaps_mode_supported_by_ref(mode:impl::core::convert::Into<crate::unity_engine::lightmapsmode::LightmapsMode> ,is_supported_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b550usize)as*mut u8,();
+(crate::unity_engine::lightmapsmode::LightmapsMode)::core::convert::Into::into(mode),(::unity2::IntPtr)::core::convert::Into::into(is_supported_ptr))}
+}
+#[doc="`IsLightmapperSupportedByRef(i32, ::unity2::IntPtr)` overload"]pub fn is_lightmapper_supported_by_ref(lightmapper:impl::core::convert::Into<i32> ,is_supported_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b5e0usize)as*mut u8,();
+(i32)::core::convert::Into::into(lightmapper),(::unity2::IntPtr)::core::convert::Into::into(is_supported_ptr))}
+}
+#[doc="`IsUIOverlayRenderedBySRP(::unity2::IntPtr)` overload"]pub fn is_ui_overlay_rendered_by_srp(is_supported_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b670usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(is_supported_ptr))}
+}
+#[doc="`IsAutoAmbientProbeBakingSupported(::unity2::IntPtr)` overload"]pub fn is_auto_ambient_probe_baking_supported(is_supported_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b6f0usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(is_supported_ptr))}
+}
+#[doc="`IsAutoDefaultReflectionProbeBakingSupported(::unity2::IntPtr)` overload"]pub fn is_auto_default_reflection_probe_baking_supported(is_supported_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b770usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(is_supported_ptr))}
+}
+#[doc="`FallbackLightmapperByRef(::unity2::IntPtr)` overload"]pub fn fallback_lightmapper_by_ref(lightmapper_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b7f0usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(lightmapper_ptr))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f9b810usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
-pub trait ISupportedRenderingFeaturesMethods : ISupportedRenderingFeatures { # [doc = "`get_defaultMixedLightingModes()` overload"] fn get_default_mixed_lighting_modes (self ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9ae80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_mixedLightingModes()` overload"] fn get_mixed_lighting_modes (self ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: supportedrenderingfeatures :: SupportedRenderingFeatures_LightmapMixedBakeModes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9ae90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_lightmapBakeTypes()` overload"] fn get_lightmap_bake_types (self ,) -> crate :: unity_engine :: lightmapbaketype :: LightmapBakeType { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lightmapbaketype :: LightmapBakeType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9aea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_lightmapsModes()` overload"] fn get_lightmaps_modes (self ,) -> crate :: unity_engine :: lightmapsmode :: LightmapsMode { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: lightmapsmode :: LightmapsMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9aeb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_enlighten()` overload"] fn get_enlighten (self ,) -> bool { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9aec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_rendersUIOverlay()` overload"] fn get_renders_ui_overlay (self ,) -> bool { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9aed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_autoAmbientProbeBaking()` overload"] fn get_auto_ambient_probe_baking (self ,) -> bool { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9aee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_autoDefaultReflectionProbeBaking()` overload"] fn get_auto_default_reflection_probe_baking (self ,) -> bool { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f9aef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SupportedRenderingFeatures as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SupportedRenderingFeatures , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f81510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-supportedrenderingfeatures")]pub trait ISupportedRenderingFeaturesMethods:ISupportedRenderingFeatures{#[doc="`get_defaultMixedLightingModes()` overload"]fn get_default_mixed_lighting_modes(self,)->crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes{unsafe{let __receiver= <SupportedRenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f9ae80usize)as*mut u8,crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes;
+(SupportedRenderingFeatures)__receiver)}
+}
+#[doc="`get_mixedLightingModes()` overload"]fn get_mixed_lighting_modes(self,)->crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes{unsafe{let __receiver= <SupportedRenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f9ae90usize)as*mut u8,crate::unity_engine::rendering::supportedrenderingfeatures::SupportedRenderingFeatures_LightmapMixedBakeModes;
+(SupportedRenderingFeatures)__receiver)}
+}
+#[doc="`get_lightmapBakeTypes()` overload"]fn get_lightmap_bake_types(self,)->crate::unity_engine::lightmapbaketype::LightmapBakeType{unsafe{let __receiver= <SupportedRenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f9aea0usize)as*mut u8,crate::unity_engine::lightmapbaketype::LightmapBakeType;
+(SupportedRenderingFeatures)__receiver)}
+}
+#[doc="`get_lightmapsModes()` overload"]fn get_lightmaps_modes(self,)->crate::unity_engine::lightmapsmode::LightmapsMode{unsafe{let __receiver= <SupportedRenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f9aeb0usize)as*mut u8,crate::unity_engine::lightmapsmode::LightmapsMode;
+(SupportedRenderingFeatures)__receiver)}
+}
+#[doc="`get_enlighten()` overload"]fn get_enlighten(self,)->bool{unsafe{let __receiver= <SupportedRenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f9aec0usize)as*mut u8,bool;
+(SupportedRenderingFeatures)__receiver)}
+}
+#[doc="`get_rendersUIOverlay()` overload"]fn get_renders_ui_overlay(self,)->bool{unsafe{let __receiver= <SupportedRenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f9aed0usize)as*mut u8,bool;
+(SupportedRenderingFeatures)__receiver)}
+}
+#[doc="`get_autoAmbientProbeBaking()` overload"]fn get_auto_ambient_probe_baking(self,)->bool{unsafe{let __receiver= <SupportedRenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f9aee0usize)as*mut u8,bool;
+(SupportedRenderingFeatures)__receiver)}
+}
+#[doc="`get_autoDefaultReflectionProbeBaking()` overload"]fn get_auto_default_reflection_probe_baking(self,)->bool{unsafe{let __receiver= <SupportedRenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f9aef0usize)as*mut u8,bool;
+(SupportedRenderingFeatures)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SupportedRenderingFeatures as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f81510usize)as*mut u8,();
+(SupportedRenderingFeatures)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
-impl < __T : ISupportedRenderingFeatures > ISupportedRenderingFeaturesMethods for __T { }
+#[cfg(feature="unity_engine-rendering-supportedrenderingfeatures")]impl<__T:ISupportedRenderingFeatures>ISupportedRenderingFeaturesMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
-impl SupportedRenderingFeatures { pub fn get_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_default_mixed_lighting_modes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_mixed_lighting_modes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_lightmap_bake_types_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_lightmaps_modes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_enlighten_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_renders_ui_overlay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_auto_ambient_probe_baking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_auto_default_reflection_probe_baking_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn fallback_mixed_lighting_mode_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_mixed_lighting_mode_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_mixed_lighting_mode_supported_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_lightmap_bake_type_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn is_lightmap_bake_type_supported_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_lightmaps_mode_supported_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_lightmapper_supported_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_ui_overlay_rendered_by_srp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn is_auto_ambient_probe_baking_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn is_auto_default_reflection_probe_baking_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn fallback_lightmapper_by_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SupportedRenderingFeatures as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
+#[cfg(feature="unity_engine-rendering-supportedrenderingfeatures")]impl SupportedRenderingFeatures{pub fn get_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_default_mixed_lighting_modes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mixed_lighting_modes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_lightmap_bake_types_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_lightmaps_modes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_enlighten_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_renders_ui_overlay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_auto_ambient_probe_baking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_auto_default_reflection_probe_baking_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn fallback_mixed_lighting_mode_by_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_mixed_lighting_mode_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_mixed_lighting_mode_supported_by_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_lightmap_bake_type_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn is_lightmap_bake_type_supported_by_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_lightmaps_mode_supported_by_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_lightmapper_supported_by_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_ui_overlay_rendered_by_srp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn is_auto_ambient_probe_baking_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn is_auto_default_reflection_probe_baking_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn fallback_lightmapper_by_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
 
-#[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
-impl SupportedRenderingFeatures {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SupportedRenderingFeatures) , :: core :: stringify ! (new) ,)) ; < Self as ISupportedRenderingFeaturesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-supportedrenderingfeatures")]impl SupportedRenderingFeatures{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SupportedRenderingFeatures), ::core::stringify!(new),));
+ <Self as ISupportedRenderingFeaturesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-supportedrenderingfeatures")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SupportedRenderingFeatures_LightmapMixedBakeModes;
-    pub use super::SupportedRenderingFeatures_ReflectionProbeModes;
     pub use super::SupportedRenderingFeatures;
     pub use super::ISupportedRenderingFeatures;
     pub use super::ISupportedRenderingFeaturesMethods;
+    pub use super::SupportedRenderingFeatures_ReflectionProbeModes;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -4,40 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapinfodebug/MapInfoDebug.md"))] # [:: unity2 :: class (namespace = "" , name = "MapInfoDebug")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: mapinfodebug :: MapInfoDebug >)] pub struct MapInfoDebug {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapinfodebug/MapInfoDebug.md"))]#[::unity2::class(namespace="",name="MapInfoDebug")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::root::mapinfodebug::MapInfoDebug>)]pub struct MapInfoDebug{}
 
 }
 
 #[cfg(feature = "root-mapinfodebug-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapinfodebug")]
-pub trait IMapInfoDebugMethods : IMapInfoDebug { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapInfoDebug as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapInfoDebug , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2072cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapinfodebug")]pub trait IMapInfoDebugMethods:IMapInfoDebug{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapInfoDebug as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2072cb0usize)as*mut u8,();
+(MapInfoDebug)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapinfodebug")]
-impl < __T : IMapInfoDebug > IMapInfoDebugMethods for __T { }
+#[cfg(feature="root-mapinfodebug")]impl<__T:IMapInfoDebug>IMapInfoDebugMethods for __T{}
 
-#[cfg(feature = "root-mapinfodebug")]
-impl MapInfoDebug { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapInfoDebug as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-mapinfodebug")]impl MapInfoDebug{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-mapinfodebug")]
-impl MapInfoDebug {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapInfoDebug) , :: core :: stringify ! (new) ,)) ; < Self as IMapInfoDebugMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapinfodebug")]impl MapInfoDebug{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapInfoDebug), ::core::stringify!(new),));
+ <Self as IMapInfoDebugMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapinfodebug")]

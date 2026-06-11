@@ -4,41 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesolaimagerender/DragonRideSolaImageRender.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideSolaImageRender")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideSolaImageRender {
-# [offset (24)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (32)] # [rename (name = "m_Sola")] pub m_sola : crate :: combat :: character :: Character ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridesolaimagerender/DragonRideSolaImageRender.md"))]#[::unity2::class(namespace="App",name="DragonRideSolaImageRender")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DragonRideSolaImageRender{#[offset(24)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(32)]#[rename(name="m_Sola")]pub m_sola:crate::combat::character::Character,}
 
 }
 
 #[cfg(feature = "app-dragonridesolaimagerender-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonridesolaimagerender")]
-pub trait IDragonRideSolaImageRenderMethods : IDragonRideSolaImageRender { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideSolaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSolaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9e40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < DragonRideSolaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSolaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ad9e50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < DragonRideSolaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSolaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ada040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLayer(crate::unity_engine::gameobject::GameObject, i32)` overload"] fn set_layer (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , set_layer : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < DragonRideSolaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSolaImageRender , crate :: unity_engine :: gameobject :: GameObject , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ada050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (set_layer) , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < DragonRideSolaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSolaImageRender , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ada350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlaySolaAnime(::unity2::Il2CppString)` overload"] fn play_sola_anime (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < DragonRideSolaImageRender as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideSolaImageRender , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ada8d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonridesolaimagerender")]pub trait IDragonRideSolaImageRenderMethods:IDragonRideSolaImageRender{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideSolaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9e40usize)as*mut u8,();
+(DragonRideSolaImageRender)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <DragonRideSolaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad9e50usize)as*mut u8,();
+(DragonRideSolaImageRender)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <DragonRideSolaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ada040usize)as*mut u8,();
+(DragonRideSolaImageRender)__receiver)}
+}
+#[doc="`SetLayer(crate::unity_engine::gameobject::GameObject, i32)` overload"]fn set_layer(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,set_layer:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DragonRideSolaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ada050usize)as*mut u8,();
+(DragonRideSolaImageRender)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj),(i32)::core::convert::Into::into(set_layer))}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <DragonRideSolaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ada350usize)as*mut u8,();
+(DragonRideSolaImageRender)__receiver)}
+}
+#[doc="`PlaySolaAnime(::unity2::Il2CppString)` overload"]fn play_sola_anime(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DragonRideSolaImageRender as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ada8d0usize)as*mut u8,();
+(DragonRideSolaImageRender)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "app-dragonridesolaimagerender")]
-impl < __T : IDragonRideSolaImageRender > IDragonRideSolaImageRenderMethods for __T { }
+#[cfg(feature="app-dragonridesolaimagerender")]impl<__T:IDragonRideSolaImageRender>IDragonRideSolaImageRenderMethods for __T{}
 
-#[cfg(feature = "app-dragonridesolaimagerender")]
-impl DragonRideSolaImageRender { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSolaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSolaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSolaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSolaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSolaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn play_sola_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideSolaImageRender as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-dragonridesolaimagerender")]impl DragonRideSolaImageRender{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn play_sola_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-dragonridesolaimagerender")]
-impl DragonRideSolaImageRender {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideSolaImageRender) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideSolaImageRenderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonridesolaimagerender")]impl DragonRideSolaImageRender{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideSolaImageRender), ::core::stringify!(new),));
+ <Self as IDragonRideSolaImageRenderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonridesolaimagerender")]

@@ -4,35 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/loaders/invalidscriptloader/InvalidScriptLoader.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Loaders" , name = "InvalidScriptLoader")] # [parent (crate :: system :: object :: Object)] pub struct InvalidScriptLoader {
-# [offset (16)] # [rename (name = "m_Error")] pub m_error : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/loaders/invalidscriptloader/InvalidScriptLoader.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Loaders",name="InvalidScriptLoader")]#[parent(crate::system::object::Object)]pub struct InvalidScriptLoader{#[offset(16)]#[rename(name="m_Error")]pub m_error: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-invalidscriptloader-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-loaders-invalidscriptloader")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __InvalidScriptLoader_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvalidScriptLoader as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvalidScriptLoader as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_load_file { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvalidScriptLoader as :: unity2 :: ClassIdentity > :: class () , "LoadFile" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvalidScriptLoader as :: unity2 :: ClassIdentity > :: NAME , "LoadFile" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_resolve_file_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvalidScriptLoader as :: unity2 :: ClassIdentity > :: class () , "ResolveFileName" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvalidScriptLoader as :: unity2 :: ClassIdentity > :: NAME , "ResolveFileName" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_resolve_module_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< InvalidScriptLoader as :: unity2 :: ClassIdentity > :: class () , "ResolveModuleName" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < InvalidScriptLoader as :: unity2 :: ClassIdentity > :: NAME , "ResolveModuleName" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-loaders-invalidscriptloader")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InvalidScriptLoader_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InvalidScriptLoader as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_load_file{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InvalidScriptLoader as::unity2::ClassIdentity> ::class(),"LoadFile",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,"LoadFile",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_resolve_file_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InvalidScriptLoader as::unity2::ClassIdentity> ::class(),"ResolveFileName",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,"ResolveFileName",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_resolve_module_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<InvalidScriptLoader as::unity2::ClassIdentity> ::class(),"ResolveModuleName",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <InvalidScriptLoader as::unity2::ClassIdentity> ::NAME,"ResolveModuleName",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-loaders-invalidscriptloader")]
-pub trait IInvalidScriptLoaderMethods : IInvalidScriptLoader { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , frameworkname : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < InvalidScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidScriptLoader , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__InvalidScriptLoader_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (frameworkname) , :: core :: option :: Option :: None) } } } # [doc = "`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn load_file (self , file : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> crate :: system :: object :: Object { unsafe { let __receiver = < InvalidScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__InvalidScriptLoader_unity2_raw :: __lookup_load_file :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (file) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } } # [doc = "`ResolveFileName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn resolve_file_name (self , filename : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InvalidScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__InvalidScriptLoader_unity2_raw :: __lookup_resolve_file_name :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (filename) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } } # [doc = "`ResolveModuleName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"] fn resolve_module_name (self , modname : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , global_context : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < InvalidScriptLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (InvalidScriptLoader , :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__InvalidScriptLoader_unity2_raw :: __lookup_resolve_module_name :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (modname) , :: core :: convert :: Into :: into (global_context) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-loaders-invalidscriptloader")]pub trait IInvalidScriptLoaderMethods:IInvalidScriptLoader{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,frameworkname:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvalidScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InvalidScriptLoader_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(InvalidScriptLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(frameworkname))}
+}
+#[doc="`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn load_file(self,file:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->crate::system::object::Object{unsafe{let __receiver= <InvalidScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InvalidScriptLoader_unity2_raw::__lookup_load_file::get_method_info().method_ptr,crate::system::object::Object;
+(InvalidScriptLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file),(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(global_context))}
+}
+#[doc="`ResolveFileName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn resolve_file_name(self,filename:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvalidScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InvalidScriptLoader_unity2_raw::__lookup_resolve_file_name::get_method_info().method_ptr, ::unity2::Il2CppString;
+(InvalidScriptLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(filename),(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(global_context))}
+}
+#[doc="`ResolveModuleName(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn resolve_module_name(self,modname:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvalidScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__InvalidScriptLoader_unity2_raw::__lookup_resolve_module_name::get_method_info().method_ptr, ::unity2::Il2CppString;
+(InvalidScriptLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(modname),(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(global_context))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-loaders-invalidscriptloader")]
-impl < __T : IInvalidScriptLoader > IInvalidScriptLoaderMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-loaders-invalidscriptloader")]impl<__T:IInvalidScriptLoader>IInvalidScriptLoaderMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-loaders-invalidscriptloader")]
-impl InvalidScriptLoader { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidScriptLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidScriptLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn resolve_file_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidScriptLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn resolve_module_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < InvalidScriptLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="moon_sharp-interpreter-loaders-invalidscriptloader")]impl InvalidScriptLoader{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn resolve_file_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn resolve_module_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-loaders-invalidscriptloader")]
-impl InvalidScriptLoader {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (frameworkname : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (InvalidScriptLoader) , :: core :: stringify ! (new) ,)) ; < Self as IInvalidScriptLoaderMethods > :: ctor (this , frameworkname) ; this }
+#[cfg(feature="moon_sharp-interpreter-loaders-invalidscriptloader")]impl InvalidScriptLoader{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(frameworkname: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvalidScriptLoader), ::core::stringify!(new),));
+ <Self as IInvalidScriptLoaderMethods> ::ctor(this,frameworkname);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-loaders-invalidscriptloader")]

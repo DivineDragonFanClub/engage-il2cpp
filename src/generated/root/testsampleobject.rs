@@ -4,36 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: structscriptableobject_1 :: { IStructScriptableObject_1 , StructScriptableObject_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::structscriptableobject_1::{IStructScriptableObject_1,StructScriptableObject_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/testsampleobject/TestSampleObject.md"))] # [:: unity2 :: class (namespace = "" , name = "TestSampleObject")] # [parent (crate :: root :: structscriptableobject_1 :: StructScriptableObject_1 < crate :: root :: testsampledata :: TestSampleData >)] pub struct TestSampleObject {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/testsampleobject/TestSampleObject.md"))]#[::unity2::class(namespace="",name="TestSampleObject")]#[parent(crate::root::structscriptableobject_1::StructScriptableObject_1<crate::root::testsampledata::TestSampleData>)]pub struct TestSampleObject{}
 
 }
 
 #[cfg(feature = "root-testsampleobject-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-testsampleobject")]
-pub trait ITestSampleObjectMethods : ITestSampleObject { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TestSampleObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TestSampleObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e8280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-testsampleobject")]pub trait ITestSampleObjectMethods:ITestSampleObject{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TestSampleObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8280usize)as*mut u8,();
+(TestSampleObject)__receiver)}
+}
+}
 
-#[cfg(feature = "root-testsampleobject")]
-impl < __T : ITestSampleObject > ITestSampleObjectMethods for __T { }
+#[cfg(feature="root-testsampleobject")]impl<__T:ITestSampleObject>ITestSampleObjectMethods for __T{}
 
-#[cfg(feature = "root-testsampleobject")]
-impl TestSampleObject { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TestSampleObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="root-testsampleobject")]impl TestSampleObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "root-testsampleobject")]
-impl TestSampleObject {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TestSampleObject) , :: core :: stringify ! (new) ,)) ; < Self as ITestSampleObjectMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-testsampleobject")]impl TestSampleObject{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TestSampleObject), ::core::stringify!(new),));
+ <Self as ITestSampleObjectMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-testsampleobject")]

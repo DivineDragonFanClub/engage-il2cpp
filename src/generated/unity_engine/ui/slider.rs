@@ -4,207 +4,354 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: events :: unityevent_1 :: { IUnityEvent_1 , UnityEvent_1 }
- ;
- use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: selectable :: { ISelectable , Selectable }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::events::unityevent_1::{IUnityEvent_1,UnityEvent_1}
+;
+use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Axis.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Slider_Axis  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/slider/Slider_Axis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Slider_Axis{pub value:i32,}
+impl::unity2::ClassIdentity for Slider_Axis{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Slider.Axis";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Slider_Axis{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Slider_Axis{pub fn horizontal()->Self{Self{value:0}
+}
+pub fn vertical()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Slider_Axis  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Slider.Axis";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/slider/Slider_Direction.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Slider_Direction{pub value:i32,}
+impl::unity2::ClassIdentity for Slider_Direction{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Slider.Direction";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Slider_Direction{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Slider_Direction{pub fn left_to_right()->Self{Self{value:0}
+}
+pub fn right_to_left()->Self{Self{value:1}
+}
+pub fn bottom_to_top()->Self{Self{value:2}
+}
+pub fn top_to_bottom()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::IlType for Slider_Axis  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/slider/Slider.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Slider")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Slider{#[offset(248)]#[rename(name="m_FillRect")]pub m_fill_rect:crate::unity_engine::recttransform::RectTransform, #[offset(256)]#[rename(name="m_HandleRect")]pub m_handle_rect:crate::unity_engine::recttransform::RectTransform, #[offset(264)]#[rename(name="m_Direction")]pub m_direction:crate::unity_engine::ui::slider::Slider_Direction, #[offset(268)]#[rename(name="m_MinValue")]pub m_min_value:f32, #[offset(272)]#[rename(name="m_MaxValue")]pub m_max_value:f32, #[offset(276)]#[rename(name="m_WholeNumbers")]pub m_whole_numbers:bool, #[offset(280)]#[rename(name="m_Value")]pub m_value:f32, #[offset(288)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::unity_engine::ui::slider::Slider_SliderEvent, #[offset(296)]#[rename(name="m_FillImage")]pub m_fill_image:crate::unity_engine::ui::image::Image, #[offset(304)]#[rename(name="m_FillTransform")]pub m_fill_transform:crate::unity_engine::transform::Transform, #[offset(312)]#[rename(name="m_FillContainerRect")]pub m_fill_container_rect:crate::unity_engine::recttransform::RectTransform, #[offset(320)]#[rename(name="m_HandleTransform")]pub m_handle_transform:crate::unity_engine::transform::Transform, #[offset(328)]#[rename(name="m_HandleContainerRect")]pub m_handle_container_rect:crate::unity_engine::recttransform::RectTransform, #[offset(336)]#[rename(name="m_Offset")]pub m_offset:crate::unity_engine::vector2::Vector2, #[offset(344)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker, #[offset(345)]#[rename(name="m_DelayedUpdateVisuals")]pub m_delayed_update_visuals:bool,}
 
 
-impl  Slider_Axis  {
-    pub fn horizontal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn vertical() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Slider")] # [parent (crate :: unity_engine :: ui :: selectable :: Selectable)] pub struct Slider {
-# [offset (248)] # [rename (name = "m_FillRect")] pub m_fill_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (256)] # [rename (name = "m_HandleRect")] pub m_handle_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (264)] # [rename (name = "m_Direction")] pub m_direction : crate :: unity_engine :: ui :: slider :: Slider_Direction ,
-# [offset (268)] # [rename (name = "m_MinValue")] pub m_min_value : f32 ,
-# [offset (272)] # [rename (name = "m_MaxValue")] pub m_max_value : f32 ,
-# [offset (276)] # [rename (name = "m_WholeNumbers")] pub m_whole_numbers : bool ,
-# [offset (280)] # [rename (name = "m_Value")] pub m_value : f32 ,
-# [offset (288)] # [rename (name = "m_OnValueChanged")] pub m_on_value_changed : crate :: unity_engine :: ui :: slider :: Slider_SliderEvent ,
-# [offset (296)] # [rename (name = "m_FillImage")] pub m_fill_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (304)] # [rename (name = "m_FillTransform")] pub m_fill_transform : crate :: unity_engine :: transform :: Transform ,
-# [offset (312)] # [rename (name = "m_FillContainerRect")] pub m_fill_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (320)] # [rename (name = "m_HandleTransform")] pub m_handle_transform : crate :: unity_engine :: transform :: Transform ,
-# [offset (328)] # [rename (name = "m_HandleContainerRect")] pub m_handle_container_rect : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (336)] # [rename (name = "m_Offset")] pub m_offset : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (344)] # [rename (name = "m_Tracker")] pub m_tracker : crate :: unity_engine :: drivenrecttransformtracker :: DrivenRectTransformTracker ,
-# [offset (345)] # [rename (name = "m_DelayedUpdateVisuals")] pub m_delayed_update_visuals : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider_SliderEvent.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Slider.SliderEvent")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct Slider_SliderEvent {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Direction.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Slider_Direction  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Slider_Direction  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Slider.Direction";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Slider_Direction  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Slider_Direction  {
-    pub fn left_to_right() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right_to_left() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn bottom_to_top() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn top_to_bottom() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/slider/Slider_SliderEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Slider.SliderEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<f32>)]pub struct Slider_SliderEvent{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-slider-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-slider")]
-pub trait ISliderMethods : ISlider { # [doc = "`get_fillRect()` overload"] fn get_fill_rect (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fillRect(crate::unity_engine::recttransform::RectTransform)` overload"] fn set_fill_rect (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: recttransform :: RectTransform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e5d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_handleRect()` overload"] fn get_handle_rect (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ecd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_handleRect(crate::unity_engine::recttransform::RectTransform)` overload"] fn set_handle_rect (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: recttransform :: RectTransform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ece0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_direction()` overload"] fn get_direction (self ,) -> crate :: unity_engine :: ui :: slider :: Slider_Direction { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: slider :: Slider_Direction = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ed60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_direction(crate::unity_engine::ui::slider::Slider_Direction)` overload"] fn set_direction (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: slider :: Slider_Direction >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: ui :: slider :: Slider_Direction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ed70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_minValue()` overload"] fn get_min_value (self ,) -> f32 { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372edf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_minValue(f32)` overload"] fn set_min_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ee00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_maxValue()` overload"] fn get_max_value (self ,) -> f32 { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372eea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_maxValue(f32)` overload"] fn set_max_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372eeb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_wholeNumbers()` overload"] fn get_whole_numbers (self ,) -> bool { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ef50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_wholeNumbers(bool)` overload"] fn set_whole_numbers (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372ef60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_value()` overload"] fn get_value (self ,) -> f32 { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_value(f32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetValueWithoutNotify(f32)` overload"] fn set_value_without_notify (self , input : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f0e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (input) , :: core :: option :: Option :: None) } } } # [doc = "`get_normalizedValue()` overload"] fn get_normalized_value (self ,) -> f32 { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_normalizedValue(f32)` overload"] fn set_normalized_value (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_onValueChanged()` overload"] fn get_on_value_changed (self ,) -> crate :: unity_engine :: ui :: slider :: Slider_SliderEvent { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: slider :: Slider_SliderEvent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_onValueChanged(crate::unity_engine::ui::slider::Slider_SliderEvent)` overload"] fn set_on_value_changed (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: slider :: Slider_SliderEvent >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: ui :: slider :: Slider_SliderEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f1d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_stepSize()` overload"] fn get_step_size (self ,) -> f32 { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"] fn rebuild (self , executing : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: ui :: canvasupdate :: CanvasUpdate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (executing) , :: core :: option :: Option :: None) } } } # [doc = "`LayoutComplete()` overload"] fn layout_complete (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GraphicUpdateComplete()` overload"] fn graphic_update_complete (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDidApplyAnimationProperties()` overload"] fn on_did_apply_animation_properties (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f3d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateCachedReferences()` overload"] fn update_cached_references (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClampValue(f32)` overload"] fn clamp_value (self , input : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (input) , :: core :: option :: Option :: None) } } } # [doc = "`Set(f32, bool)` overload"] fn set (self , input : impl :: core :: convert :: Into < f32 > , send_callback : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , f32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (input) , :: core :: convert :: Into :: into (send_callback) , :: core :: option :: Option :: None) } } } # [doc = "`OnRectTransformDimensionsChange()` overload"] fn on_rect_transform_dimensions_change (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_axis()` overload"] fn get_axis (self ,) -> crate :: unity_engine :: ui :: slider :: Slider_Axis { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: slider :: Slider_Axis = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_reverseValue()` overload"] fn get_reverse_value (self ,) -> bool { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateVisuals()` overload"] fn update_visuals (self ,) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372e990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::camera::Camera)` overload"] fn update_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > , cam : impl :: core :: convert :: Into < crate :: unity_engine :: camera :: Camera >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , crate :: unity_engine :: camera :: Camera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372f9f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: convert :: Into :: into (cam) , :: core :: option :: Option :: None) } } } # [doc = "`MayDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn may_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> bool { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372fcc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_pointer_down (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x372fd30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3730010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"] fn on_move (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: event_systems :: axiseventdata :: AxisEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3730100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnLeft()` overload"] fn find_selectable_on_left (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3730380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnRight()` overload"] fn find_selectable_on_right (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37303b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnUp()` overload"] fn find_selectable_on_up (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37303e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FindSelectableOnDown()` overload"] fn find_selectable_on_down (self ,) -> crate :: unity_engine :: ui :: selectable :: Selectable { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: selectable :: Selectable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3730410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn on_initialize_potential_drag (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3730440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: option :: Option :: None) } } } # [doc = "`SetDirection(crate::unity_engine::ui::slider::Slider_Direction, bool)` overload"] fn set_direction_2 (self , direction : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: slider :: Slider_Direction > , include_rect_layouts : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , crate :: unity_engine :: ui :: slider :: Slider_Direction , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3730450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (direction) , :: core :: convert :: Into :: into (include_rect_layouts) , :: core :: option :: Option :: None) } } } # [doc = "`UnityEngine.UI.ICanvasElement.get_transform()` overload"] fn unity_engine_ui_i_canvas_element_get_transform (self ,) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < Slider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3730640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-ui-slider")]
-impl < __T : ISlider > ISliderMethods for __T { }
-
-#[cfg(feature = "unity_engine-ui-slider")]
-impl Slider { pub fn get_fill_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_fill_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_handle_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_handle_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_direction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_direction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_min_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_min_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_max_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_max_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_whole_numbers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_whole_numbers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_value_without_notify_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_normalized_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_normalized_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_on_value_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_on_value_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_step_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn rebuild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn layout_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn graphic_update_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn on_did_apply_animation_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn update_cached_references_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn clamp_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn on_rect_transform_dimensions_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_reverse_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn update_visuals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn update_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn may_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn on_pointer_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn on_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn on_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn find_selectable_on_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn find_selectable_on_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn find_selectable_on_up_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn find_selectable_on_down_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn on_initialize_potential_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn set_direction_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn unity_engine_ui_i_canvas_element_get_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } }
-
-#[cfg(feature = "unity_engine-ui-slider")]
-impl Slider {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Slider) , :: core :: stringify ! (new) ,)) ; < Self as ISliderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-slider")]pub trait ISliderMethods:ISlider{#[doc="`get_fillRect()` overload"]fn get_fill_rect(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e5c0usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(Slider)__receiver)}
+}
+#[doc="`set_fillRect(crate::unity_engine::recttransform::RectTransform)` overload"]fn set_fill_rect(self,value:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e5d0usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(value))}
+}
+#[doc="`get_handleRect()` overload"]fn get_handle_rect(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ecd0usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(Slider)__receiver)}
+}
+#[doc="`set_handleRect(crate::unity_engine::recttransform::RectTransform)` overload"]fn set_handle_rect(self,value:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ece0usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(value))}
+}
+#[doc="`get_direction()` overload"]fn get_direction(self,)->crate::unity_engine::ui::slider::Slider_Direction{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ed60usize)as*mut u8,crate::unity_engine::ui::slider::Slider_Direction;
+(Slider)__receiver)}
+}
+#[doc="`set_direction(crate::unity_engine::ui::slider::Slider_Direction)` overload"]fn set_direction(self,value:impl::core::convert::Into<crate::unity_engine::ui::slider::Slider_Direction>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ed70usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::ui::slider::Slider_Direction)::core::convert::Into::into(value))}
+}
+#[doc="`get_minValue()` overload"]fn get_min_value(self,)->f32{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372edf0usize)as*mut u8,f32;
+(Slider)__receiver)}
+}
+#[doc="`set_minValue(f32)` overload"]fn set_min_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ee00usize)as*mut u8,();
+(Slider)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_maxValue()` overload"]fn get_max_value(self,)->f32{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372eea0usize)as*mut u8,f32;
+(Slider)__receiver)}
+}
+#[doc="`set_maxValue(f32)` overload"]fn set_max_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372eeb0usize)as*mut u8,();
+(Slider)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_wholeNumbers()` overload"]fn get_whole_numbers(self,)->bool{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ef50usize)as*mut u8,bool;
+(Slider)__receiver)}
+}
+#[doc="`set_wholeNumbers(bool)` overload"]fn set_whole_numbers(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372ef60usize)as*mut u8,();
+(Slider)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f000usize)as*mut u8,f32;
+(Slider)__receiver)}
+}
+#[doc="`set_value(f32)` overload"]fn set_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f0c0usize)as*mut u8,();
+(Slider)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`SetValueWithoutNotify(f32)` overload"]fn set_value_without_notify(self,input:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f0e0usize)as*mut u8,();
+(Slider)__receiver,(f32)::core::convert::Into::into(input))}
+}
+#[doc="`get_normalizedValue()` overload"]fn get_normalized_value(self,)->f32{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f100usize)as*mut u8,f32;
+(Slider)__receiver)}
+}
+#[doc="`set_normalizedValue(f32)` overload"]fn set_normalized_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f180usize)as*mut u8,();
+(Slider)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_onValueChanged()` overload"]fn get_on_value_changed(self,)->crate::unity_engine::ui::slider::Slider_SliderEvent{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f1c0usize)as*mut u8,crate::unity_engine::ui::slider::Slider_SliderEvent;
+(Slider)__receiver)}
+}
+#[doc="`set_onValueChanged(crate::unity_engine::ui::slider::Slider_SliderEvent)` overload"]fn set_on_value_changed(self,value:impl::core::convert::Into<crate::unity_engine::ui::slider::Slider_SliderEvent>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f1d0usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::ui::slider::Slider_SliderEvent)::core::convert::Into::into(value))}
+}
+#[doc="`get_stepSize()` overload"]fn get_step_size(self,)->f32{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f1e0usize)as*mut u8,f32;
+(Slider)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f210usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,executing:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f2d0usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::ui::canvasupdate::CanvasUpdate)::core::convert::Into::into(executing))}
+}
+#[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f2e0usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f2f0usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f300usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f350usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f380usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f3d0usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`UpdateCachedReferences()` overload"]fn update_cached_references(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e650usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`ClampValue(f32)` overload"]fn clamp_value(self,input:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f740usize)as*mut u8,f32;
+(Slider)__receiver,(f32)::core::convert::Into::into(input))}
+}
+#[doc="`Set(f32, bool)` overload"]fn set(self,input:impl::core::convert::Into<f32> ,send_callback:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f830usize)as*mut u8,();
+(Slider)__receiver,(f32)::core::convert::Into::into(input),(bool)::core::convert::Into::into(send_callback))}
+}
+#[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f9a0usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`get_axis()` overload"]fn get_axis(self,)->crate::unity_engine::ui::slider::Slider_Axis{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f820usize)as*mut u8,crate::unity_engine::ui::slider::Slider_Axis;
+(Slider)__receiver)}
+}
+#[doc="`get_reverseValue()` overload"]fn get_reverse_value(self,)->bool{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f800usize)as*mut u8,bool;
+(Slider)__receiver)}
+}
+#[doc="`UpdateVisuals()` overload"]fn update_visuals(self,)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372e990usize)as*mut u8,();
+(Slider)__receiver)}
+}
+#[doc="`UpdateDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::camera::Camera)` overload"]fn update_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,cam:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372f9f0usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data),(crate::unity_engine::camera::Camera)::core::convert::Into::into(cam))}
+}
+#[doc="`MayDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn may_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->bool{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372fcc0usize)as*mut u8,bool;
+(Slider)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_down(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x372fd30usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3730010usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]fn on_move(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3730100usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::event_systems::axiseventdata::AxisEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`FindSelectableOnLeft()` overload"]fn find_selectable_on_left(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3730380usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Slider)__receiver)}
+}
+#[doc="`FindSelectableOnRight()` overload"]fn find_selectable_on_right(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37303b0usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Slider)__receiver)}
+}
+#[doc="`FindSelectableOnUp()` overload"]fn find_selectable_on_up(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37303e0usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Slider)__receiver)}
+}
+#[doc="`FindSelectableOnDown()` overload"]fn find_selectable_on_down(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3730410usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
+(Slider)__receiver)}
+}
+#[doc="`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_initialize_potential_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3730440usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+}
+#[doc="`SetDirection(crate::unity_engine::ui::slider::Slider_Direction, bool)` overload"]fn set_direction_2(self,direction:impl::core::convert::Into<crate::unity_engine::ui::slider::Slider_Direction> ,include_rect_layouts:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3730450usize)as*mut u8,();
+(Slider)__receiver,(crate::unity_engine::ui::slider::Slider_Direction)::core::convert::Into::into(direction),(bool)::core::convert::Into::into(include_rect_layouts))}
+}
+#[doc="`UnityEngine.UI.ICanvasElement.get_transform()` overload"]fn unity_engine_ui_i_canvas_element_get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Slider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3730640usize)as*mut u8,crate::unity_engine::transform::Transform;
+(Slider)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-ui-slider")]
-pub trait ISlider_SliderEventMethods : ISlider_SliderEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Slider_SliderEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Slider_SliderEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c10180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-slider")]impl<__T:ISlider>ISliderMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-slider")]
-impl < __T : ISlider_SliderEvent > ISlider_SliderEventMethods for __T { }
+#[cfg(feature="unity_engine-ui-slider")]impl Slider{pub fn get_fill_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_fill_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_handle_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_handle_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_direction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_min_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_min_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_max_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_max_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_whole_numbers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_whole_numbers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_value_without_notify_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_normalized_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_normalized_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_on_value_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_on_value_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_step_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn layout_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn graphic_update_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn on_did_apply_animation_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn update_cached_references_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn clamp_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn on_rect_transform_dimensions_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_reverse_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn update_visuals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn update_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn may_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn on_pointer_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn on_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn on_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn find_selectable_on_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn find_selectable_on_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn find_selectable_on_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn find_selectable_on_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn on_initialize_potential_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn set_direction_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn unity_engine_ui_i_canvas_element_get_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+}
 
-#[cfg(feature = "unity_engine-ui-slider")]
-impl Slider_SliderEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Slider_SliderEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-ui-slider")]impl Slider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Slider), ::core::stringify!(new),));
+ <Self as ISliderMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-ui-slider")]
-impl Slider_SliderEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Slider_SliderEvent) , :: core :: stringify ! (new) ,)) ; < Self as ISlider_SliderEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-slider")]pub trait ISlider_SliderEventMethods:ISlider_SliderEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Slider_SliderEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c10180usize)as*mut u8,();
+(Slider_SliderEvent)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-slider")]impl<__T:ISlider_SliderEvent>ISlider_SliderEventMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-slider")]impl Slider_SliderEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-slider")]impl Slider_SliderEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Slider_SliderEvent), ::core::stringify!(new),));
+ <Self as ISlider_SliderEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-slider")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Slider_Axis;
+    pub use super::Slider_Direction;
     pub use super::Slider;
     pub use super::ISlider;
     pub use super::ISliderMethods;
     pub use super::Slider_SliderEvent;
     pub use super::ISlider_SliderEvent;
     pub use super::ISlider_SliderEventMethods;
-    pub use super::Slider_Direction;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

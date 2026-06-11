@@ -4,242 +4,768 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidievent/AkMIDIEvent_tChanAftertouch.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIEvent.tChanAftertouch")] # [parent (crate :: system :: object :: Object)] pub struct AkMIDIEvent_tChanAftertouch {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidievent/AkMIDIEvent.md"))]#[::unity2::class(namespace="",name="AkMIDIEvent")]#[parent(crate::system::object::Object)]pub struct AkMIDIEvent{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidievent/AkMIDIEvent_tNoteOnOff.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIEvent.tNoteOnOff")] # [parent (crate :: system :: object :: Object)] pub struct AkMIDIEvent_tNoteOnOff {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidievent/AkMIDIEvent_tChanAftertouch.md"))]#[::unity2::class(namespace="",name="AkMIDIEvent.tChanAftertouch")]#[parent(crate::system::object::Object)]pub struct AkMIDIEvent_tChanAftertouch{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidievent/AkMIDIEvent_tCc.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIEvent.tCc")] # [parent (crate :: system :: object :: Object)] pub struct AkMIDIEvent_tCc {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidievent/AkMIDIEvent_tCc.md"))]#[::unity2::class(namespace="",name="AkMIDIEvent.tCc")]#[parent(crate::system::object::Object)]pub struct AkMIDIEvent_tCc{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidievent/AkMIDIEvent.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIEvent")] # [parent (crate :: system :: object :: Object)] pub struct AkMIDIEvent {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidievent/AkMIDIEvent_tGen.md"))]#[::unity2::class(namespace="",name="AkMIDIEvent.tGen")]#[parent(crate::system::object::Object)]pub struct AkMIDIEvent_tGen{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidievent/AkMIDIEvent_tPitchBend.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIEvent.tPitchBend")] # [parent (crate :: system :: object :: Object)] pub struct AkMIDIEvent_tPitchBend {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidievent/AkMIDIEvent_tPitchBend.md"))]#[::unity2::class(namespace="",name="AkMIDIEvent.tPitchBend")]#[parent(crate::system::object::Object)]pub struct AkMIDIEvent_tPitchBend{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidievent/AkMIDIEvent_tNoteAftertouch.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIEvent.tNoteAftertouch")] # [parent (crate :: system :: object :: Object)] pub struct AkMIDIEvent_tNoteAftertouch {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidievent/AkMIDIEvent_tNoteAftertouch.md"))]#[::unity2::class(namespace="",name="AkMIDIEvent.tNoteAftertouch")]#[parent(crate::system::object::Object)]pub struct AkMIDIEvent_tNoteAftertouch{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidievent/AkMIDIEvent_tProgramChange.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIEvent.tProgramChange")] # [parent (crate :: system :: object :: Object)] pub struct AkMIDIEvent_tProgramChange {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidievent/AkMIDIEvent_tNoteOnOff.md"))]#[::unity2::class(namespace="",name="AkMIDIEvent.tNoteOnOff")]#[parent(crate::system::object::Object)]pub struct AkMIDIEvent_tNoteOnOff{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akmidievent/AkMIDIEvent_tGen.md"))] # [:: unity2 :: class (namespace = "" , name = "AkMIDIEvent.tGen")] # [parent (crate :: system :: object :: Object)] pub struct AkMIDIEvent_tGen {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmidievent/AkMIDIEvent_tProgramChange.md"))]#[::unity2::class(namespace="",name="AkMIDIEvent.tProgramChange")]#[parent(crate::system::object::Object)]pub struct AkMIDIEvent_tProgramChange{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akmidievent-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tChanAftertouch { # [doc = "`getCPtr(crate::root::akmidievent::AkMIDIEvent_tChanAftertouch)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tChanAftertouch >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidievent :: AkMIDIEvent_tChanAftertouch , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f130usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-pub trait IAkMIDIEvent_tChanAftertouchMethods : IAkMIDIEvent_tChanAftertouch { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIEvent_tChanAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tChanAftertouch , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f0f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIEvent_tChanAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tChanAftertouch , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tChanAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tChanAftertouch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tChanAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tChanAftertouch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byValue(u8)` overload"] fn set_by_value (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tChanAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tChanAftertouch , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byValue()` overload"] fn get_by_value (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tChanAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tChanAftertouch , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tChanAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tChanAftertouch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-impl < __T : IAkMIDIEvent_tChanAftertouch > IAkMIDIEvent_tChanAftertouchMethods for __T { }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tChanAftertouch { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tChanAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tChanAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tChanAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tChanAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tChanAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_by_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tChanAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_by_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tChanAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tChanAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tChanAftertouch {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tChanAftertouch) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIEvent_tChanAftertouchMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tChanAftertouch) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIEvent_tChanAftertouchMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent{#[doc="`getCPtr(crate::root::akmidievent::AkMIDIEvent)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f23420usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidievent::AkMIDIEvent)::core::convert::Into::into(obj))}
+}
 }
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tNoteOnOff { # [doc = "`getCPtr(crate::root::akmidievent::AkMIDIEvent_tNoteOnOff)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tNoteOnOff >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidievent :: AkMIDIEvent_tNoteOnOff , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0000usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-pub trait IAkMIDIEvent_tNoteOnOffMethods : IAkMIDIEvent_tNoteOnOff { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteOnOff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteOnOff , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ffc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteOnOff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteOnOff , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteOnOff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteOnOff , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteOnOff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteOnOff , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byNote(u8)` overload"] fn set_by_note (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteOnOff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteOnOff , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byNote()` overload"] fn get_by_note (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tNoteOnOff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteOnOff , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byVelocity(u8)` overload"] fn set_by_velocity (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteOnOff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteOnOff , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byVelocity()` overload"] fn get_by_velocity (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tNoteOnOff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteOnOff , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteOnOff as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteOnOff , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-impl < __T : IAkMIDIEvent_tNoteOnOff > IAkMIDIEvent_tNoteOnOffMethods for __T { }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tNoteOnOff { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_by_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_by_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_by_velocity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_by_velocity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteOnOff as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tNoteOnOff {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tNoteOnOff) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIEvent_tNoteOnOffMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tNoteOnOff) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIEvent_tNoteOnOffMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidievent")]pub trait IAkMIDIEventMethods:IAkMIDIEvent{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f233e0usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23480usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f234b0usize)as*mut u8,();
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23520usize)as*mut u8,();
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byChan(u8)` overload"]fn set_by_chan(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f236b0usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byChan()` overload"]fn get_by_chan(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23730usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_Gen(crate::root::akmidievent::AkMIDIEvent_tGen)` overload"]fn set_gen(self,value:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tGen>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f237a0usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(crate::root::akmidievent::AkMIDIEvent_tGen)::core::convert::Into::into(value))}
+}
+#[doc="`get_Gen()` overload"]fn get_gen(self,)->crate::root::akmidievent::AkMIDIEvent_tGen{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23830usize)as*mut u8,crate::root::akmidievent::AkMIDIEvent_tGen;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_Cc(crate::root::akmidievent::AkMIDIEvent_tCc)` overload"]fn set_cc(self,value:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tCc>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23910usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(crate::root::akmidievent::AkMIDIEvent_tCc)::core::convert::Into::into(value))}
+}
+#[doc="`get_Cc()` overload"]fn get_cc(self,)->crate::root::akmidievent::AkMIDIEvent_tCc{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f239a0usize)as*mut u8,crate::root::akmidievent::AkMIDIEvent_tCc;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_NoteOnOff(crate::root::akmidievent::AkMIDIEvent_tNoteOnOff)` overload"]fn set_note_on_off(self,value:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tNoteOnOff>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23a80usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(crate::root::akmidievent::AkMIDIEvent_tNoteOnOff)::core::convert::Into::into(value))}
+}
+#[doc="`get_NoteOnOff()` overload"]fn get_note_on_off(self,)->crate::root::akmidievent::AkMIDIEvent_tNoteOnOff{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23b10usize)as*mut u8,crate::root::akmidievent::AkMIDIEvent_tNoteOnOff;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_PitchBend(crate::root::akmidievent::AkMIDIEvent_tPitchBend)` overload"]fn set_pitch_bend(self,value:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tPitchBend>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23bf0usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(crate::root::akmidievent::AkMIDIEvent_tPitchBend)::core::convert::Into::into(value))}
+}
+#[doc="`get_PitchBend()` overload"]fn get_pitch_bend(self,)->crate::root::akmidievent::AkMIDIEvent_tPitchBend{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23c80usize)as*mut u8,crate::root::akmidievent::AkMIDIEvent_tPitchBend;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_NoteAftertouch(crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch)` overload"]fn set_note_aftertouch(self,value:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23d60usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch)::core::convert::Into::into(value))}
+}
+#[doc="`get_NoteAftertouch()` overload"]fn get_note_aftertouch(self,)->crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23df0usize)as*mut u8,crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_ChanAftertouch(crate::root::akmidievent::AkMIDIEvent_tChanAftertouch)` overload"]fn set_chan_aftertouch(self,value:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tChanAftertouch>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23ed0usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(crate::root::akmidievent::AkMIDIEvent_tChanAftertouch)::core::convert::Into::into(value))}
+}
+#[doc="`get_ChanAftertouch()` overload"]fn get_chan_aftertouch(self,)->crate::root::akmidievent::AkMIDIEvent_tChanAftertouch{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f23f60usize)as*mut u8,crate::root::akmidievent::AkMIDIEvent_tChanAftertouch;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_ProgramChange(crate::root::akmidievent::AkMIDIEvent_tProgramChange)` overload"]fn set_program_change(self,value:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tProgramChange>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24040usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(crate::root::akmidievent::AkMIDIEvent_tProgramChange)::core::convert::Into::into(value))}
+}
+#[doc="`get_ProgramChange()` overload"]fn get_program_change(self,)->crate::root::akmidievent::AkMIDIEvent_tProgramChange{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f240d0usize)as*mut u8,crate::root::akmidievent::AkMIDIEvent_tProgramChange;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byType(crate::root::akmidieventtypes::AkMIDIEventTypes)` overload"]fn set_by_type(self,value:impl::core::convert::Into<crate::root::akmidieventtypes::AkMIDIEventTypes>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f241b0usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(crate::root::akmidieventtypes::AkMIDIEventTypes)::core::convert::Into::into(value))}
+}
+#[doc="`get_byType()` overload"]fn get_by_type(self,)->crate::root::akmidieventtypes::AkMIDIEventTypes{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24230usize)as*mut u8,crate::root::akmidieventtypes::AkMIDIEventTypes;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byOnOffNote(u8)` overload"]fn set_by_on_off_note(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f242a0usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byOnOffNote()` overload"]fn get_by_on_off_note(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24320usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byVelocity(u8)` overload"]fn set_by_velocity(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24390usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byVelocity()` overload"]fn get_by_velocity(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24410usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byCc(crate::root::akmidicctypes::AkMIDICcTypes)` overload"]fn set_by_cc(self,value:impl::core::convert::Into<crate::root::akmidicctypes::AkMIDICcTypes>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24480usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(crate::root::akmidicctypes::AkMIDICcTypes)::core::convert::Into::into(value))}
+}
+#[doc="`get_byCc()` overload"]fn get_by_cc(self,)->crate::root::akmidicctypes::AkMIDICcTypes{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24500usize)as*mut u8,crate::root::akmidicctypes::AkMIDICcTypes;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byCcValue(u8)` overload"]fn set_by_cc_value(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24570usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byCcValue()` overload"]fn get_by_cc_value(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f245f0usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byValueLsb(u8)` overload"]fn set_by_value_lsb(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24660usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byValueLsb()` overload"]fn get_by_value_lsb(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f246e0usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byValueMsb(u8)` overload"]fn set_by_value_msb(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24750usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byValueMsb()` overload"]fn get_by_value_msb(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f247d0usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byAftertouchNote(u8)` overload"]fn set_by_aftertouch_note(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24840usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byAftertouchNote()` overload"]fn get_by_aftertouch_note(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f248c0usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byNoteAftertouchValue(u8)` overload"]fn set_by_note_aftertouch_value(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24930usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byNoteAftertouchValue()` overload"]fn get_by_note_aftertouch_value(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f249b0usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byChanAftertouchValue(u8)` overload"]fn set_by_chan_aftertouch_value(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24a20usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byChanAftertouchValue()` overload"]fn get_by_chan_aftertouch_value(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24aa0usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`set_byProgramNum(u8)` overload"]fn set_by_program_num(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24b10usize)as*mut u8,();
+(AkMIDIEvent)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byProgramNum()` overload"]fn get_by_program_num(self,)->u8{unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24b90usize)as*mut u8,u8;
+(AkMIDIEvent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f24c00usize)as*mut u8,();
+(AkMIDIEvent)__receiver)}
+}
 }
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tCc { # [doc = "`getCPtr(crate::root::akmidievent::AkMIDIEvent_tCc)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tCc >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidievent :: AkMIDIEvent_tCc , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ebf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmidievent")]impl<__T:IAkMIDIEvent>IAkMIDIEventMethods for __T{}
 
-#[cfg(feature = "root-akmidievent")]
-pub trait IAkMIDIEvent_tCcMethods : IAkMIDIEvent_tCc { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIEvent_tCc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tCc , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ebb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIEvent_tCc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tCc , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ec50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tCc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tCc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ec80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tCc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tCc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ecf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byCc(u8)` overload"] fn set_by_cc (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tCc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tCc , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ee80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byCc()` overload"] fn get_by_cc (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tCc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tCc , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ef00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byValue(u8)` overload"] fn set_by_value (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tCc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tCc , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ef70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byValue()` overload"] fn get_by_value (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tCc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tCc , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9eff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tCc as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tCc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-impl < __T : IAkMIDIEvent_tCc > IAkMIDIEvent_tCcMethods for __T { }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tCc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_by_cc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_by_cc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_by_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_by_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tCc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tCc {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tCc) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIEvent_tCcMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tCc) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIEvent_tCcMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_by_chan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_by_chan_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_gen_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_gen_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_cc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_cc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_note_on_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_note_on_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_pitch_bend_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_pitch_bend_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_note_aftertouch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_note_aftertouch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_chan_aftertouch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_chan_aftertouch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_program_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_program_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_by_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_by_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_by_on_off_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_by_on_off_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_by_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_by_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_by_cc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_by_cc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_by_cc_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_by_cc_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_by_value_lsb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_by_value_lsb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn set_by_value_msb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_by_value_msb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_by_aftertouch_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_by_aftertouch_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn set_by_note_aftertouch_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_by_note_aftertouch_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn set_by_chan_aftertouch_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_by_chan_aftertouch_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn set_by_program_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_by_program_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
 }
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent { # [doc = "`getCPtr(crate::root::akmidievent::AkMIDIEvent)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidievent :: AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23420usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-pub trait IAkMIDIEventMethods : IAkMIDIEvent { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f233e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f234b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byChan(u8)` overload"] fn set_by_chan (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f236b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byChan()` overload"] fn get_by_chan (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Gen(crate::root::akmidievent::AkMIDIEvent_tGen)` overload"] fn set_gen (self , value : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tGen >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , crate :: root :: akmidievent :: AkMIDIEvent_tGen , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f237a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Gen()` overload"] fn get_gen (self ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tGen { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tGen = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Cc(crate::root::akmidievent::AkMIDIEvent_tCc)` overload"] fn set_cc (self , value : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tCc >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , crate :: root :: akmidievent :: AkMIDIEvent_tCc , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23910usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Cc()` overload"] fn get_cc (self ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tCc { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tCc = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f239a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NoteOnOff(crate::root::akmidievent::AkMIDIEvent_tNoteOnOff)` overload"] fn set_note_on_off (self , value : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tNoteOnOff >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , crate :: root :: akmidievent :: AkMIDIEvent_tNoteOnOff , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23a80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NoteOnOff()` overload"] fn get_note_on_off (self ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tNoteOnOff { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tNoteOnOff = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PitchBend(crate::root::akmidievent::AkMIDIEvent_tPitchBend)` overload"] fn set_pitch_bend (self , value : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tPitchBend >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , crate :: root :: akmidievent :: AkMIDIEvent_tPitchBend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PitchBend()` overload"] fn get_pitch_bend (self ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tPitchBend { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tPitchBend = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NoteAftertouch(crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch)` overload"] fn set_note_aftertouch (self , value : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tNoteAftertouch >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , crate :: root :: akmidievent :: AkMIDIEvent_tNoteAftertouch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23d60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NoteAftertouch()` overload"] fn get_note_aftertouch (self ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tNoteAftertouch { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tNoteAftertouch = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ChanAftertouch(crate::root::akmidievent::AkMIDIEvent_tChanAftertouch)` overload"] fn set_chan_aftertouch (self , value : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tChanAftertouch >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , crate :: root :: akmidievent :: AkMIDIEvent_tChanAftertouch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23ed0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ChanAftertouch()` overload"] fn get_chan_aftertouch (self ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tChanAftertouch { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tChanAftertouch = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f23f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ProgramChange(crate::root::akmidievent::AkMIDIEvent_tProgramChange)` overload"] fn set_program_change (self , value : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tProgramChange >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , crate :: root :: akmidievent :: AkMIDIEvent_tProgramChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ProgramChange()` overload"] fn get_program_change (self ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tProgramChange { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidievent :: AkMIDIEvent_tProgramChange = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f240d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byType(crate::root::akmidieventtypes::AkMIDIEventTypes)` overload"] fn set_by_type (self , value : impl :: core :: convert :: Into < crate :: root :: akmidieventtypes :: AkMIDIEventTypes >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , crate :: root :: akmidieventtypes :: AkMIDIEventTypes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f241b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byType()` overload"] fn get_by_type (self ,) -> crate :: root :: akmidieventtypes :: AkMIDIEventTypes { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidieventtypes :: AkMIDIEventTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byOnOffNote(u8)` overload"] fn set_by_on_off_note (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f242a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byOnOffNote()` overload"] fn get_by_on_off_note (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byVelocity(u8)` overload"] fn set_by_velocity (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byVelocity()` overload"] fn get_by_velocity (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byCc(crate::root::akmidicctypes::AkMIDICcTypes)` overload"] fn set_by_cc (self , value : impl :: core :: convert :: Into < crate :: root :: akmidicctypes :: AkMIDICcTypes >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , crate :: root :: akmidicctypes :: AkMIDICcTypes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byCc()` overload"] fn get_by_cc (self ,) -> crate :: root :: akmidicctypes :: AkMIDICcTypes { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> crate :: root :: akmidicctypes :: AkMIDICcTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byCcValue(u8)` overload"] fn set_by_cc_value (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byCcValue()` overload"] fn get_by_cc_value (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f245f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byValueLsb(u8)` overload"] fn set_by_value_lsb (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byValueLsb()` overload"] fn get_by_value_lsb (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f246e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byValueMsb(u8)` overload"] fn set_by_value_msb (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byValueMsb()` overload"] fn get_by_value_msb (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f247d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byAftertouchNote(u8)` overload"] fn set_by_aftertouch_note (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byAftertouchNote()` overload"] fn get_by_aftertouch_note (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f248c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byNoteAftertouchValue(u8)` overload"] fn set_by_note_aftertouch_value (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24930usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byNoteAftertouchValue()` overload"] fn get_by_note_aftertouch_value (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f249b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byChanAftertouchValue(u8)` overload"] fn set_by_chan_aftertouch_value (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24a20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byChanAftertouchValue()` overload"] fn get_by_chan_aftertouch_value (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byProgramNum(u8)` overload"] fn set_by_program_num (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byProgramNum()` overload"] fn get_by_program_num (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24b90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f24c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-impl < __T : IAkMIDIEvent > IAkMIDIEventMethods for __T { }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_by_chan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_by_chan_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_gen_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_gen_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_cc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_cc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_note_on_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_note_on_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_pitch_bend_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_pitch_bend_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_note_aftertouch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_note_aftertouch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_chan_aftertouch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_chan_aftertouch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_program_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_program_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_by_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_by_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_by_on_off_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_by_on_off_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_by_velocity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_by_velocity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_by_cc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_by_cc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_by_cc_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_by_cc_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_by_value_lsb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_by_value_lsb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn set_by_value_msb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_by_value_msb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn set_by_aftertouch_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_by_aftertouch_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn set_by_note_aftertouch_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_by_note_aftertouch_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn set_by_chan_aftertouch_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_by_chan_aftertouch_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn set_by_program_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_by_program_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIEventMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIEventMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent), ::core::stringify!(new),));
+ <Self as IAkMIDIEventMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent), ::core::stringify!(new_2),));
+ <Self as IAkMIDIEventMethods> ::ctor_2(this,);
+this}
 }
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tPitchBend { # [doc = "`getCPtr(crate::root::akmidievent::AkMIDIEvent_tPitchBend)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tPitchBend >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidievent :: AkMIDIEvent_tPitchBend , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-pub trait IAkMIDIEvent_tPitchBendMethods : IAkMIDIEvent_tPitchBend { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIEvent_tPitchBend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tPitchBend , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIEvent_tPitchBend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tPitchBend , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba05a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tPitchBend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tPitchBend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba05d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tPitchBend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tPitchBend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byValueLsb(u8)` overload"] fn set_by_value_lsb (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tPitchBend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tPitchBend , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba07d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byValueLsb()` overload"] fn get_by_value_lsb (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tPitchBend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tPitchBend , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byValueMsb(u8)` overload"] fn set_by_value_msb (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tPitchBend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tPitchBend , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba08c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byValueMsb()` overload"] fn get_by_value_msb (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tPitchBend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tPitchBend , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tPitchBend as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tPitchBend , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba09b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-impl < __T : IAkMIDIEvent_tPitchBend > IAkMIDIEvent_tPitchBendMethods for __T { }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tPitchBend { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_by_value_lsb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_by_value_lsb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_by_value_msb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_by_value_msb_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tPitchBend as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tPitchBend {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tPitchBend) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIEvent_tPitchBendMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tPitchBend) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIEvent_tPitchBendMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tChanAftertouch{#[doc="`getCPtr(crate::root::akmidievent::AkMIDIEvent_tChanAftertouch)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tChanAftertouch>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f130usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidievent::AkMIDIEvent_tChanAftertouch)::core::convert::Into::into(obj))}
+}
 }
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tNoteAftertouch { # [doc = "`getCPtr(crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tNoteAftertouch >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidievent :: AkMIDIEvent_tNoteAftertouch , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9fac0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-pub trait IAkMIDIEvent_tNoteAftertouchMethods : IAkMIDIEvent_tNoteAftertouch { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteAftertouch , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9fa80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteAftertouch , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9fb20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteAftertouch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9fb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteAftertouch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9fbc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byNote(u8)` overload"] fn set_by_note (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteAftertouch , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9fd50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byNote()` overload"] fn get_by_note (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tNoteAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteAftertouch , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9fdd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byValue(u8)` overload"] fn set_by_value (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteAftertouch , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9fe40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byValue()` overload"] fn get_by_value (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tNoteAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteAftertouch , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9fec0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tNoteAftertouch as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tNoteAftertouch , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9ff30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-impl < __T : IAkMIDIEvent_tNoteAftertouch > IAkMIDIEvent_tNoteAftertouchMethods for __T { }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tNoteAftertouch { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_by_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_by_note_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_by_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_by_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tNoteAftertouch as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tNoteAftertouch {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tNoteAftertouch) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIEvent_tNoteAftertouchMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tNoteAftertouch) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIEvent_tNoteAftertouchMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidievent")]pub trait IAkMIDIEvent_tChanAftertouchMethods:IAkMIDIEvent_tChanAftertouch{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIEvent_tChanAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f0f0usize)as*mut u8,();
+(AkMIDIEvent_tChanAftertouch)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIEvent_tChanAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f190usize)as*mut u8,();
+(AkMIDIEvent_tChanAftertouch)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tChanAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f1c0usize)as*mut u8,();
+(AkMIDIEvent_tChanAftertouch)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tChanAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f230usize)as*mut u8,();
+(AkMIDIEvent_tChanAftertouch)__receiver)}
+}
+#[doc="`set_byValue(u8)` overload"]fn set_by_value(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tChanAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f3c0usize)as*mut u8,();
+(AkMIDIEvent_tChanAftertouch)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byValue()` overload"]fn get_by_value(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tChanAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f440usize)as*mut u8,u8;
+(AkMIDIEvent_tChanAftertouch)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tChanAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f4b0usize)as*mut u8,();
+(AkMIDIEvent_tChanAftertouch)__receiver)}
+}
 }
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tProgramChange { # [doc = "`getCPtr(crate::root::akmidievent::AkMIDIEvent_tProgramChange)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tProgramChange >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidievent :: AkMIDIEvent_tProgramChange , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0a80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmidievent")]impl<__T:IAkMIDIEvent_tChanAftertouch>IAkMIDIEvent_tChanAftertouchMethods for __T{}
 
-#[cfg(feature = "root-akmidievent")]
-pub trait IAkMIDIEvent_tProgramChangeMethods : IAkMIDIEvent_tProgramChange { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIEvent_tProgramChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tProgramChange , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0a40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIEvent_tProgramChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tProgramChange , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tProgramChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tProgramChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tProgramChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tProgramChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byProgramNum(u8)` overload"] fn set_by_program_num (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tProgramChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tProgramChange , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0d10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byProgramNum()` overload"] fn get_by_program_num (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tProgramChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tProgramChange , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tProgramChange as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tProgramChange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba0e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akmidievent")]
-impl < __T : IAkMIDIEvent_tProgramChange > IAkMIDIEvent_tProgramChangeMethods for __T { }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tProgramChange { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tProgramChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tProgramChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tProgramChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tProgramChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tProgramChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_by_program_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tProgramChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_by_program_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tProgramChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tProgramChange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tProgramChange {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tProgramChange) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIEvent_tProgramChangeMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tProgramChange) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIEvent_tProgramChangeMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tChanAftertouch{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_by_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_by_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tGen { # [doc = "`getCPtr(crate::root::akmidievent::AkMIDIEvent_tGen)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akmidievent :: AkMIDIEvent_tGen >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akmidievent :: AkMIDIEvent_tGen , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f580usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tChanAftertouch{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tChanAftertouch), ::core::stringify!(new),));
+ <Self as IAkMIDIEvent_tChanAftertouchMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tChanAftertouch), ::core::stringify!(new_2),));
+ <Self as IAkMIDIEvent_tChanAftertouchMethods> ::ctor_2(this,);
+this}
+}
 
-#[cfg(feature = "root-akmidievent")]
-pub trait IAkMIDIEvent_tGenMethods : IAkMIDIEvent_tGen { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkMIDIEvent_tGen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tGen , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkMIDIEvent_tGen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tGen , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f5e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tGen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tGen , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tGen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tGen , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byParam1(u8)` overload"] fn set_by_param1 (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tGen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tGen , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byParam1()` overload"] fn get_by_param1 (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tGen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tGen , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_byParam2(u8)` overload"] fn set_by_param2 (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < AkMIDIEvent_tGen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tGen , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f900usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_byParam2()` overload"] fn get_by_param2 (self ,) -> u8 { unsafe { let __receiver = < AkMIDIEvent_tGen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tGen , :: unity2 :: OptionalMethod ,) -> u8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkMIDIEvent_tGen as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkMIDIEvent_tGen , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b9f9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tCc{#[doc="`getCPtr(crate::root::akmidievent::AkMIDIEvent_tCc)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tCc>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ebf0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidievent::AkMIDIEvent_tCc)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akmidievent")]
-impl < __T : IAkMIDIEvent_tGen > IAkMIDIEvent_tGenMethods for __T { }
+#[cfg(feature="root-akmidievent")]pub trait IAkMIDIEvent_tCcMethods:IAkMIDIEvent_tCc{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIEvent_tCc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ebb0usize)as*mut u8,();
+(AkMIDIEvent_tCc)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIEvent_tCc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ec50usize)as*mut u8,();
+(AkMIDIEvent_tCc)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tCc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ec80usize)as*mut u8,();
+(AkMIDIEvent_tCc)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tCc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ecf0usize)as*mut u8,();
+(AkMIDIEvent_tCc)__receiver)}
+}
+#[doc="`set_byCc(u8)` overload"]fn set_by_cc(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tCc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ee80usize)as*mut u8,();
+(AkMIDIEvent_tCc)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byCc()` overload"]fn get_by_cc(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tCc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ef00usize)as*mut u8,u8;
+(AkMIDIEvent_tCc)__receiver)}
+}
+#[doc="`set_byValue(u8)` overload"]fn set_by_value(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tCc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ef70usize)as*mut u8,();
+(AkMIDIEvent_tCc)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byValue()` overload"]fn get_by_value(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tCc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9eff0usize)as*mut u8,u8;
+(AkMIDIEvent_tCc)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tCc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f060usize)as*mut u8,();
+(AkMIDIEvent_tCc)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tGen { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_by_param1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_by_param1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_by_param2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_by_param2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkMIDIEvent_tGen as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="root-akmidievent")]impl<__T:IAkMIDIEvent_tCc>IAkMIDIEvent_tCcMethods for __T{}
 
-#[cfg(feature = "root-akmidievent")]
-impl AkMIDIEvent_tGen {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tGen) , :: core :: stringify ! (new) ,)) ; < Self as IAkMIDIEvent_tGenMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tCc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_by_cc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_by_cc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_by_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_by_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkMIDIEvent_tGen) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkMIDIEvent_tGenMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tCc{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tCc), ::core::stringify!(new),));
+ <Self as IAkMIDIEvent_tCcMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tCc), ::core::stringify!(new_2),));
+ <Self as IAkMIDIEvent_tCcMethods> ::ctor_2(this,);
+this}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tGen{#[doc="`getCPtr(crate::root::akmidievent::AkMIDIEvent_tGen)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tGen>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f580usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidievent::AkMIDIEvent_tGen)::core::convert::Into::into(obj))}
+}
+}
+
+#[cfg(feature="root-akmidievent")]pub trait IAkMIDIEvent_tGenMethods:IAkMIDIEvent_tGen{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIEvent_tGen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f540usize)as*mut u8,();
+(AkMIDIEvent_tGen)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIEvent_tGen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f5e0usize)as*mut u8,();
+(AkMIDIEvent_tGen)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tGen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f610usize)as*mut u8,();
+(AkMIDIEvent_tGen)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tGen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f680usize)as*mut u8,();
+(AkMIDIEvent_tGen)__receiver)}
+}
+#[doc="`set_byParam1(u8)` overload"]fn set_by_param1(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tGen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f810usize)as*mut u8,();
+(AkMIDIEvent_tGen)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byParam1()` overload"]fn get_by_param1(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tGen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f890usize)as*mut u8,u8;
+(AkMIDIEvent_tGen)__receiver)}
+}
+#[doc="`set_byParam2(u8)` overload"]fn set_by_param2(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tGen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f900usize)as*mut u8,();
+(AkMIDIEvent_tGen)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byParam2()` overload"]fn get_by_param2(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tGen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f980usize)as*mut u8,u8;
+(AkMIDIEvent_tGen)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tGen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9f9f0usize)as*mut u8,();
+(AkMIDIEvent_tGen)__receiver)}
+}
+}
+
+#[cfg(feature="root-akmidievent")]impl<__T:IAkMIDIEvent_tGen>IAkMIDIEvent_tGenMethods for __T{}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tGen{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_by_param1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_by_param1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_by_param2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_by_param2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tGen{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tGen), ::core::stringify!(new),));
+ <Self as IAkMIDIEvent_tGenMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tGen), ::core::stringify!(new_2),));
+ <Self as IAkMIDIEvent_tGenMethods> ::ctor_2(this,);
+this}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tPitchBend{#[doc="`getCPtr(crate::root::akmidievent::AkMIDIEvent_tPitchBend)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tPitchBend>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0540usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidievent::AkMIDIEvent_tPitchBend)::core::convert::Into::into(obj))}
+}
+}
+
+#[cfg(feature="root-akmidievent")]pub trait IAkMIDIEvent_tPitchBendMethods:IAkMIDIEvent_tPitchBend{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIEvent_tPitchBend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0500usize)as*mut u8,();
+(AkMIDIEvent_tPitchBend)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIEvent_tPitchBend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba05a0usize)as*mut u8,();
+(AkMIDIEvent_tPitchBend)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tPitchBend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba05d0usize)as*mut u8,();
+(AkMIDIEvent_tPitchBend)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tPitchBend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0640usize)as*mut u8,();
+(AkMIDIEvent_tPitchBend)__receiver)}
+}
+#[doc="`set_byValueLsb(u8)` overload"]fn set_by_value_lsb(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tPitchBend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba07d0usize)as*mut u8,();
+(AkMIDIEvent_tPitchBend)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byValueLsb()` overload"]fn get_by_value_lsb(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tPitchBend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0850usize)as*mut u8,u8;
+(AkMIDIEvent_tPitchBend)__receiver)}
+}
+#[doc="`set_byValueMsb(u8)` overload"]fn set_by_value_msb(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tPitchBend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba08c0usize)as*mut u8,();
+(AkMIDIEvent_tPitchBend)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byValueMsb()` overload"]fn get_by_value_msb(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tPitchBend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0940usize)as*mut u8,u8;
+(AkMIDIEvent_tPitchBend)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tPitchBend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba09b0usize)as*mut u8,();
+(AkMIDIEvent_tPitchBend)__receiver)}
+}
+}
+
+#[cfg(feature="root-akmidievent")]impl<__T:IAkMIDIEvent_tPitchBend>IAkMIDIEvent_tPitchBendMethods for __T{}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tPitchBend{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_by_value_lsb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_by_value_lsb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_by_value_msb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_by_value_msb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tPitchBend{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tPitchBend), ::core::stringify!(new),));
+ <Self as IAkMIDIEvent_tPitchBendMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tPitchBend), ::core::stringify!(new_2),));
+ <Self as IAkMIDIEvent_tPitchBendMethods> ::ctor_2(this,);
+this}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tNoteAftertouch{#[doc="`getCPtr(crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b9fac0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidievent::AkMIDIEvent_tNoteAftertouch)::core::convert::Into::into(obj))}
+}
+}
+
+#[cfg(feature="root-akmidievent")]pub trait IAkMIDIEvent_tNoteAftertouchMethods:IAkMIDIEvent_tNoteAftertouch{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9fa80usize)as*mut u8,();
+(AkMIDIEvent_tNoteAftertouch)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9fb20usize)as*mut u8,();
+(AkMIDIEvent_tNoteAftertouch)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9fb50usize)as*mut u8,();
+(AkMIDIEvent_tNoteAftertouch)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9fbc0usize)as*mut u8,();
+(AkMIDIEvent_tNoteAftertouch)__receiver)}
+}
+#[doc="`set_byNote(u8)` overload"]fn set_by_note(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9fd50usize)as*mut u8,();
+(AkMIDIEvent_tNoteAftertouch)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byNote()` overload"]fn get_by_note(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tNoteAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9fdd0usize)as*mut u8,u8;
+(AkMIDIEvent_tNoteAftertouch)__receiver)}
+}
+#[doc="`set_byValue(u8)` overload"]fn set_by_value(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9fe40usize)as*mut u8,();
+(AkMIDIEvent_tNoteAftertouch)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byValue()` overload"]fn get_by_value(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tNoteAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9fec0usize)as*mut u8,u8;
+(AkMIDIEvent_tNoteAftertouch)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteAftertouch as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ff30usize)as*mut u8,();
+(AkMIDIEvent_tNoteAftertouch)__receiver)}
+}
+}
+
+#[cfg(feature="root-akmidievent")]impl<__T:IAkMIDIEvent_tNoteAftertouch>IAkMIDIEvent_tNoteAftertouchMethods for __T{}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tNoteAftertouch{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_by_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_by_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_by_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_by_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tNoteAftertouch{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tNoteAftertouch), ::core::stringify!(new),));
+ <Self as IAkMIDIEvent_tNoteAftertouchMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tNoteAftertouch), ::core::stringify!(new_2),));
+ <Self as IAkMIDIEvent_tNoteAftertouchMethods> ::ctor_2(this,);
+this}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tNoteOnOff{#[doc="`getCPtr(crate::root::akmidievent::AkMIDIEvent_tNoteOnOff)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tNoteOnOff>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0000usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidievent::AkMIDIEvent_tNoteOnOff)::core::convert::Into::into(obj))}
+}
+}
+
+#[cfg(feature="root-akmidievent")]pub trait IAkMIDIEvent_tNoteOnOffMethods:IAkMIDIEvent_tNoteOnOff{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteOnOff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9ffc0usize)as*mut u8,();
+(AkMIDIEvent_tNoteOnOff)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteOnOff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0060usize)as*mut u8,();
+(AkMIDIEvent_tNoteOnOff)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteOnOff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0090usize)as*mut u8,();
+(AkMIDIEvent_tNoteOnOff)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteOnOff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0100usize)as*mut u8,();
+(AkMIDIEvent_tNoteOnOff)__receiver)}
+}
+#[doc="`set_byNote(u8)` overload"]fn set_by_note(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteOnOff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0290usize)as*mut u8,();
+(AkMIDIEvent_tNoteOnOff)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byNote()` overload"]fn get_by_note(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tNoteOnOff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0310usize)as*mut u8,u8;
+(AkMIDIEvent_tNoteOnOff)__receiver)}
+}
+#[doc="`set_byVelocity(u8)` overload"]fn set_by_velocity(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteOnOff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0380usize)as*mut u8,();
+(AkMIDIEvent_tNoteOnOff)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byVelocity()` overload"]fn get_by_velocity(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tNoteOnOff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0400usize)as*mut u8,u8;
+(AkMIDIEvent_tNoteOnOff)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tNoteOnOff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0470usize)as*mut u8,();
+(AkMIDIEvent_tNoteOnOff)__receiver)}
+}
+}
+
+#[cfg(feature="root-akmidievent")]impl<__T:IAkMIDIEvent_tNoteOnOff>IAkMIDIEvent_tNoteOnOffMethods for __T{}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tNoteOnOff{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_by_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_by_note_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_by_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_by_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tNoteOnOff{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tNoteOnOff), ::core::stringify!(new),));
+ <Self as IAkMIDIEvent_tNoteOnOffMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tNoteOnOff), ::core::stringify!(new_2),));
+ <Self as IAkMIDIEvent_tNoteOnOffMethods> ::ctor_2(this,);
+this}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tProgramChange{#[doc="`getCPtr(crate::root::akmidievent::AkMIDIEvent_tProgramChange)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akmidievent::AkMIDIEvent_tProgramChange>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0a80usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akmidievent::AkMIDIEvent_tProgramChange)::core::convert::Into::into(obj))}
+}
+}
+
+#[cfg(feature="root-akmidievent")]pub trait IAkMIDIEvent_tProgramChangeMethods:IAkMIDIEvent_tProgramChange{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkMIDIEvent_tProgramChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0a40usize)as*mut u8,();
+(AkMIDIEvent_tProgramChange)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkMIDIEvent_tProgramChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0ae0usize)as*mut u8,();
+(AkMIDIEvent_tProgramChange)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tProgramChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0b10usize)as*mut u8,();
+(AkMIDIEvent_tProgramChange)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tProgramChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0b80usize)as*mut u8,();
+(AkMIDIEvent_tProgramChange)__receiver)}
+}
+#[doc="`set_byProgramNum(u8)` overload"]fn set_by_program_num(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AkMIDIEvent_tProgramChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0d10usize)as*mut u8,();
+(AkMIDIEvent_tProgramChange)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_byProgramNum()` overload"]fn get_by_program_num(self,)->u8{unsafe{let __receiver= <AkMIDIEvent_tProgramChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0d90usize)as*mut u8,u8;
+(AkMIDIEvent_tProgramChange)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkMIDIEvent_tProgramChange as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba0e00usize)as*mut u8,();
+(AkMIDIEvent_tProgramChange)__receiver)}
+}
+}
+
+#[cfg(feature="root-akmidievent")]impl<__T:IAkMIDIEvent_tProgramChange>IAkMIDIEvent_tProgramChangeMethods for __T{}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tProgramChange{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_by_program_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_by_program_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="root-akmidievent")]impl AkMIDIEvent_tProgramChange{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tProgramChange), ::core::stringify!(new),));
+ <Self as IAkMIDIEvent_tProgramChangeMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkMIDIEvent_tProgramChange), ::core::stringify!(new_2),));
+ <Self as IAkMIDIEvent_tProgramChangeMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akmidievent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkMIDIEvent_tChanAftertouch;
-    pub use super::IAkMIDIEvent_tChanAftertouch;
-    pub use super::IAkMIDIEvent_tChanAftertouchMethods;
-    pub use super::AkMIDIEvent_tNoteOnOff;
-    pub use super::IAkMIDIEvent_tNoteOnOff;
-    pub use super::IAkMIDIEvent_tNoteOnOffMethods;
-    pub use super::AkMIDIEvent_tCc;
-    pub use super::IAkMIDIEvent_tCc;
-    pub use super::IAkMIDIEvent_tCcMethods;
     pub use super::AkMIDIEvent;
     pub use super::IAkMIDIEvent;
     pub use super::IAkMIDIEventMethods;
+    pub use super::AkMIDIEvent_tChanAftertouch;
+    pub use super::IAkMIDIEvent_tChanAftertouch;
+    pub use super::IAkMIDIEvent_tChanAftertouchMethods;
+    pub use super::AkMIDIEvent_tCc;
+    pub use super::IAkMIDIEvent_tCc;
+    pub use super::IAkMIDIEvent_tCcMethods;
+    pub use super::AkMIDIEvent_tGen;
+    pub use super::IAkMIDIEvent_tGen;
+    pub use super::IAkMIDIEvent_tGenMethods;
     pub use super::AkMIDIEvent_tPitchBend;
     pub use super::IAkMIDIEvent_tPitchBend;
     pub use super::IAkMIDIEvent_tPitchBendMethods;
     pub use super::AkMIDIEvent_tNoteAftertouch;
     pub use super::IAkMIDIEvent_tNoteAftertouch;
     pub use super::IAkMIDIEvent_tNoteAftertouchMethods;
+    pub use super::AkMIDIEvent_tNoteOnOff;
+    pub use super::IAkMIDIEvent_tNoteOnOff;
+    pub use super::IAkMIDIEvent_tNoteOnOffMethods;
     pub use super::AkMIDIEvent_tProgramChange;
     pub use super::IAkMIDIEvent_tProgramChange;
     pub use super::IAkMIDIEvent_tProgramChangeMethods;
-    pub use super::AkMIDIEvent_tGen;
-    pub use super::IAkMIDIEvent_tGen;
-    pub use super::IAkMIDIEvent_tGenMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -4,106 +4,177 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry_AssetPathString.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    pub original: :: unity2 :: Il2CppString,
-    pub lower: :: unity2 :: Il2CppString,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry_AssetPathString.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AssetBundleBuildMap_AssetBundleEntry_AssetPathString{pub original: ::unity2::Il2CppString,pub lower: ::unity2::Il2CppString,}
+impl::unity2::ClassIdentity for AssetBundleBuildMap_AssetBundleEntry_AssetPathString{const NAMESPACE: &'static str="UnityEngine.AssetGraph";
+const NAME: &'static str="AssetBundleBuildMap.AssetBundleEntry.AssetPathString";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AssetBundleBuildMap_AssetBundleEntry_AssetPathString{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl ::unity2::ClassIdentity for AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    const NAMESPACE: &'static str = "UnityEngine.AssetGraph";
-
-    const NAME: &'static str = "AssetBundleBuildMap.AssetBundleEntry.AssetPathString";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))]#[::unity2::class(namespace="UnityEngine.AssetGraph",name="AssetBundleBuildMap")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct AssetBundleBuildMap{#[offset(24)]#[rename(name="m_assetBundles")]pub m_asset_bundles:crate::system::collections::generic::list_1::List_1<crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry> , #[static_field]#[rename(name="s_map")]pub s_map:crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap,}
 
 
-impl ::unity2::IlType for AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AssetGraph" , name = "AssetBundleBuildMap")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct AssetBundleBuildMap {
-# [offset (24)] # [rename (name = "m_assetBundles")] pub m_asset_bundles : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry > ,
-# [static_field] # [rename (name = "s_map")] pub s_map : crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AssetGraph" , name = "AssetBundleBuildMap.AssetBundleEntry")] # [parent (crate :: system :: object :: Object)] pub struct AssetBundleBuildMap_AssetBundleEntry {
-# [offset (16)] # [rename (name = "m_assetBundleName")] pub m_asset_bundle_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_assetBundleVariantName")] pub m_asset_bundle_variant_name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_fullName")] pub m_full_name : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_assets")] pub m_assets : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry_AssetPathString > ,
-# [offset (48)] # [rename (name = "m_registererId")] pub m_registerer_id : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry.md"))]#[::unity2::class(namespace="UnityEngine.AssetGraph",name="AssetBundleBuildMap.AssetBundleEntry")]#[parent(crate::system::object::Object)]pub struct AssetBundleBuildMap_AssetBundleEntry{#[offset(16)]#[rename(name="m_assetBundleName")]pub m_asset_bundle_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_assetBundleVariantName")]pub m_asset_bundle_variant_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_fullName")]pub m_full_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_assets")]pub m_assets:crate::system::collections::generic::list_1::List_1<crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry_AssetPathString> , #[offset(48)]#[rename(name="m_registererId")]pub m_registerer_id: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] pub fn ctor (& mut self , s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut AssetBundleBuildMap_AssetBundleEntry_AssetPathString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b31fa0usize) as * mut u8) ; __inner (self as * mut AssetBundleBuildMap_AssetBundleEntry_AssetPathString , :: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap_AssetBundleEntry_AssetPathString as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl AssetBundleBuildMap { # [doc = "`GetBuildMap()` overload"] pub fn get_build_map () -> crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2118a00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Load()` overload"] pub fn load () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2118b30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetMapDirty()` overload"] pub fn set_map_dirty () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2118b40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`MakeFullName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn make_full_name (asset_bundle_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , variant_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2118b50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset_bundle_name) , :: core :: convert :: Into :: into (variant_name) , :: core :: option :: Option :: None) } } } # [doc = "`FullNameToNameAndVariant(::unity2::Il2CppString)` overload"] pub fn full_name_to_name_and_variant (asset_bundle_full_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2118c20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset_bundle_full_name) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-pub trait IAssetBundleBuildMapMethods : IAssetBundleBuildMap { # [doc = "`GetAssetBundle(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn get_asset_bundle (self , registerer_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , asset_bundle_full_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2118e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (registerer_id) , :: core :: convert :: Into :: into (asset_bundle_full_name) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2118fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearFromId(::unity2::Il2CppString)` overload"] fn clear_from_id (self , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`GetAssetBundleWithNameAndVariant(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn get_asset_bundle_with_name_and_variant (self , registerer_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , asset_bundle_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , variant_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: asset_graph :: assetbundlebuildmap :: AssetBundleBuildMap_AssetBundleEntry = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (registerer_id) , :: core :: convert :: Into :: into (asset_bundle_name) , :: core :: convert :: Into :: into (variant_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetAssetPathsFromAssetBundleAndAssetName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn get_asset_paths_from_asset_bundle_and_asset_name (self , assetbundle_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (assetbundle_name) , :: core :: convert :: Into :: into (asset_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetAssetPathsFromAssetBundle(::unity2::Il2CppString)` overload"] fn get_asset_paths_from_asset_bundle (self , asset_bundle_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (asset_bundle_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetAssetBundleName(::unity2::Il2CppString)` overload"] fn get_asset_bundle_name (self , asset_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (asset_path) , :: core :: option :: Option :: None) } } } # [doc = "`GetImplicitAssetBundleName(::unity2::Il2CppString)` overload"] fn get_implicit_asset_bundle_name (self , asset_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (asset_path) , :: core :: option :: Option :: None) } } } # [doc = "`GetAllAssetBundleNames()` overload"] fn get_all_asset_bundle_names (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2119780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AssetBundleBuildMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21198d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl < __T : IAssetBundleBuildMap > IAssetBundleBuildMapMethods for __T { }
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl AssetBundleBuildMap { pub fn get_build_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_map_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn make_full_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn full_name_to_name_and_variant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_asset_bundle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn clear_from_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_asset_bundle_with_name_and_variant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_asset_paths_from_asset_bundle_and_asset_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_asset_paths_from_asset_bundle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_asset_bundle_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_implicit_asset_bundle_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_all_asset_bundle_names_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl AssetBundleBuildMap {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetBundleBuildMap) , :: core :: stringify ! (new) ,)) ; < Self as IAssetBundleBuildMapMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString{#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,s:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31fa0usize)as*mut u8,();
+(*mut AssetBundleBuildMap_AssetBundleEntry_AssetPathString)self as*mut AssetBundleBuildMap_AssetBundleEntry_AssetPathString,(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
 }
 
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-pub trait IAssetBundleBuildMap_AssetBundleEntryMethods : IAssetBundleBuildMap_AssetBundleEntry { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap_AssetBundleEntry , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baf0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Variant()` overload"] fn get_variant (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap_AssetBundleEntry , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baf100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FullName()` overload"] fn get_full_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap_AssetBundleEntry , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baf110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , registerer_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , asset_bundle_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , variant_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap_AssetBundleEntry , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baf120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (registerer_id) , :: core :: convert :: Into :: into (asset_bundle_name) , :: core :: convert :: Into :: into (variant_name) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap_AssetBundleEntry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baf230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddAssets(::unity2::Il2CppString, crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>)` overload"] fn add_assets (self , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , assets : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap_AssetBundleEntry , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baf290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (assets) , :: core :: option :: Option :: None) } } } # [doc = "`GetAssetFromAssetName(::unity2::Il2CppString)` overload"] fn get_asset_from_asset_name (self , asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > { unsafe { let __receiver = < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetBundleBuildMap_AssetBundleEntry , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baedd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (asset_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl < __T : IAssetBundleBuildMap_AssetBundleEntry > IAssetBundleBuildMap_AssetBundleEntryMethods for __T { }
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap{#[doc="`GetBuildMap()` overload"]pub fn get_build_map()->crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2118a00usize)as*mut u8,crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap;
+)}
+}
+#[doc="`Load()` overload"]pub fn load()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2118b30usize)as*mut u8,bool;
+)}
+}
+#[doc="`SetMapDirty()` overload"]pub fn set_map_dirty()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2118b40usize)as*mut u8,();
+)}
+}
+#[doc="`MakeFullName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn make_full_name(asset_bundle_name:impl::core::convert::Into< ::unity2::Il2CppString> ,variant_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2118b50usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(asset_bundle_name),(::unity2::Il2CppString)::core::convert::Into::into(variant_name))}
+}
+#[doc="`FullNameToNameAndVariant(::unity2::Il2CppString)` overload"]pub fn full_name_to_name_and_variant(asset_bundle_full_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2118c20usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(::unity2::Il2CppString)::core::convert::Into::into(asset_bundle_full_name))}
+}
+}
 
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl AssetBundleBuildMap_AssetBundleEntry { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_variant_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_full_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_assets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_asset_from_asset_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetBundleBuildMap_AssetBundleEntry as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]pub trait IAssetBundleBuildMapMethods:IAssetBundleBuildMap{#[doc="`GetAssetBundle(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn get_asset_bundle(self,registerer_id:impl::core::convert::Into< ::unity2::Il2CppString> ,asset_bundle_full_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry{unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2118e10usize)as*mut u8,crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry;
+(AssetBundleBuildMap)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(registerer_id),(::unity2::Il2CppString)::core::convert::Into::into(asset_bundle_full_name))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2118fb0usize)as*mut u8,();
+(AssetBundleBuildMap)__receiver)}
+}
+#[doc="`ClearFromId(::unity2::Il2CppString)` overload"]fn clear_from_id(self,id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2119010usize)as*mut u8,();
+(AssetBundleBuildMap)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(id))}
+}
+#[doc="`GetAssetBundleWithNameAndVariant(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn get_asset_bundle_with_name_and_variant(self,registerer_id:impl::core::convert::Into< ::unity2::Il2CppString> ,asset_bundle_name:impl::core::convert::Into< ::unity2::Il2CppString> ,variant_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry{unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2119110usize)as*mut u8,crate::unity_engine::asset_graph::assetbundlebuildmap::AssetBundleBuildMap_AssetBundleEntry;
+(AssetBundleBuildMap)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(registerer_id),(::unity2::Il2CppString)::core::convert::Into::into(asset_bundle_name),(::unity2::Il2CppString)::core::convert::Into::into(variant_name))}
+}
+#[doc="`GetAssetPathsFromAssetBundleAndAssetName(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn get_asset_paths_from_asset_bundle_and_asset_name(self,assetbundle_name:impl::core::convert::Into< ::unity2::Il2CppString> ,asset_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2119150usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(AssetBundleBuildMap)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(assetbundle_name),(::unity2::Il2CppString)::core::convert::Into::into(asset_name))}
+}
+#[doc="`GetAssetPathsFromAssetBundle(::unity2::Il2CppString)` overload"]fn get_asset_paths_from_asset_bundle(self,asset_bundle_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2119330usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(AssetBundleBuildMap)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(asset_bundle_name))}
+}
+#[doc="`GetAssetBundleName(::unity2::Il2CppString)` overload"]fn get_asset_bundle_name(self,asset_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2119640usize)as*mut u8, ::unity2::Il2CppString;
+(AssetBundleBuildMap)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(asset_path))}
+}
+#[doc="`GetImplicitAssetBundleName(::unity2::Il2CppString)` overload"]fn get_implicit_asset_bundle_name(self,asset_path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2119770usize)as*mut u8, ::unity2::Il2CppString;
+(AssetBundleBuildMap)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(asset_path))}
+}
+#[doc="`GetAllAssetBundleNames()` overload"]fn get_all_asset_bundle_names(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2119780usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(AssetBundleBuildMap)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetBundleBuildMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21198d0usize)as*mut u8,();
+(AssetBundleBuildMap)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-impl AssetBundleBuildMap_AssetBundleEntry {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (registerer_id : :: unity2 :: Il2CppString , asset_bundle_name : :: unity2 :: Il2CppString , variant_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetBundleBuildMap_AssetBundleEntry) , :: core :: stringify ! (new) ,)) ; < Self as IAssetBundleBuildMap_AssetBundleEntryMethods > :: ctor (this , registerer_id , asset_bundle_name , variant_name) ; this }
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl<__T:IAssetBundleBuildMap>IAssetBundleBuildMapMethods for __T{}
+
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap{pub fn get_build_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_map_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn make_full_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn full_name_to_name_and_variant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_asset_bundle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn clear_from_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_asset_bundle_with_name_and_variant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_asset_paths_from_asset_bundle_and_asset_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_asset_paths_from_asset_bundle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_asset_bundle_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_implicit_asset_bundle_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_all_asset_bundle_names_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetBundleBuildMap), ::core::stringify!(new),));
+ <Self as IAssetBundleBuildMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]pub trait IAssetBundleBuildMap_AssetBundleEntryMethods:IAssetBundleBuildMap_AssetBundleEntry{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetBundleBuildMap_AssetBundleEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf0f0usize)as*mut u8, ::unity2::Il2CppString;
+(AssetBundleBuildMap_AssetBundleEntry)__receiver)}
+}
+#[doc="`get_Variant()` overload"]fn get_variant(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetBundleBuildMap_AssetBundleEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf100usize)as*mut u8, ::unity2::Il2CppString;
+(AssetBundleBuildMap_AssetBundleEntry)__receiver)}
+}
+#[doc="`get_FullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetBundleBuildMap_AssetBundleEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf110usize)as*mut u8, ::unity2::Il2CppString;
+(AssetBundleBuildMap_AssetBundleEntry)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,registerer_id:impl::core::convert::Into< ::unity2::Il2CppString> ,asset_bundle_name:impl::core::convert::Into< ::unity2::Il2CppString> ,variant_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetBundleBuildMap_AssetBundleEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf120usize)as*mut u8,();
+(AssetBundleBuildMap_AssetBundleEntry)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(registerer_id),(::unity2::Il2CppString)::core::convert::Into::into(asset_bundle_name),(::unity2::Il2CppString)::core::convert::Into::into(variant_name))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AssetBundleBuildMap_AssetBundleEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf230usize)as*mut u8,();
+(AssetBundleBuildMap_AssetBundleEntry)__receiver)}
+}
+#[doc="`AddAssets(::unity2::Il2CppString, crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>)` overload"]fn add_assets(self,id:impl::core::convert::Into< ::unity2::Il2CppString> ,assets:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <AssetBundleBuildMap_AssetBundleEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baf290usize)as*mut u8,();
+(AssetBundleBuildMap_AssetBundleEntry)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(id),(crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString>)::core::convert::Into::into(assets))}
+}
+#[doc="`GetAssetFromAssetName(::unity2::Il2CppString)` overload"]fn get_asset_from_asset_name(self,asset_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString>{unsafe{let __receiver= <AssetBundleBuildMap_AssetBundleEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baedd0usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString> ;
+(AssetBundleBuildMap_AssetBundleEntry)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(asset_name))}
+}
+}
+
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl<__T:IAssetBundleBuildMap_AssetBundleEntry>IAssetBundleBuildMap_AssetBundleEntryMethods for __T{}
+
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap_AssetBundleEntry{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_variant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_full_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_assets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_asset_from_asset_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="unity_engine-asset_graph-assetbundlebuildmap")]impl AssetBundleBuildMap_AssetBundleEntry{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(registerer_id: ::unity2::Il2CppString,asset_bundle_name: ::unity2::Il2CppString,variant_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetBundleBuildMap_AssetBundleEntry), ::core::stringify!(new),));
+ <Self as IAssetBundleBuildMap_AssetBundleEntryMethods> ::ctor(this,registerer_id,asset_bundle_name,variant_name);
+this}
 }
 
 #[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]

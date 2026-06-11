@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maprange/MapRange.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapRange {
-    pub x: i32,
-    pub z: i32,
-    pub range: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maprange/MapRange.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapRange{pub x:i32,pub z:i32,pub range:i32,}
+impl::unity2::ClassIdentity for MapRange{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapRange";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for MapRange {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapRange";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapRange {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MapRange{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,11 +26,25 @@ impl ::unity2::IlType for MapRange {
 #[cfg(feature = "app-maprange-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-maprange")]
-impl MapRange { # [doc = "`.ctor(crate::app::maprange::MapRange)` overload"] pub fn ctor (& mut self , other : impl :: core :: convert :: Into < crate :: app :: maprange :: MapRange >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapRange , crate :: app :: maprange :: MapRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235ce00usize) as * mut u8) ; __inner (self as * mut MapRange , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32, i32)` overload"] pub fn ctor_2 (& mut self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , range : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapRange , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235ce10usize) as * mut u8) ; __inner (self as * mut MapRange , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (range) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MapRange , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235ce20usize) as * mut u8) ; __inner (self as * mut MapRange , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut MapRange , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235ce30usize) as * mut u8) ; __inner (self as * mut MapRange , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-maprange")]impl MapRange{#[doc="`.ctor(crate::app::maprange::MapRange)` overload"]pub fn ctor(&mut self,other:impl::core::convert::Into<crate::app::maprange::MapRange>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235ce00usize)as*mut u8,();
+(*mut MapRange)self as*mut MapRange,(crate::app::maprange::MapRange)::core::convert::Into::into(other))}
+}
+#[doc="`.ctor(i32, i32, i32)` overload"]pub fn ctor_2(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235ce10usize)as*mut u8,();
+(*mut MapRange)self as*mut MapRange,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(range))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235ce20usize)as*mut u8,();
+(*mut MapRange)self as*mut MapRange)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235ce30usize)as*mut u8, ::unity2::Il2CppString;
+(*mut MapRange)self as*mut MapRange)}
+}
+}
 
-#[cfg(feature = "app-maprange")]
-impl MapRange { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRange as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-maprange")]impl MapRange{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "app-maprange")]
 #[doc(hidden)]

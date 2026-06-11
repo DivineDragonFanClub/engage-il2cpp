@@ -4,69 +4,88 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maprestartmenu/MapRestartMenu_ConfirmRestartItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapRestartMenu.ConfirmRestartItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct MapRestartMenu_ConfirmRestartItemYes {
-# [offset (112)] # [rename (name = "m_KeepLevel")] pub m_keep_level : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maprestartmenu/MapRestartMenu.md"))]#[::unity2::class(namespace="App",name="MapRestartMenu")]#[parent(crate::system::object::Object)]pub struct MapRestartMenu{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maprestartmenu/MapRestartMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapRestartMenu")] # [parent (crate :: system :: object :: Object)] pub struct MapRestartMenu {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maprestartmenu/MapRestartMenu_ConfirmRestartItemYes.md"))]#[::unity2::class(namespace="App",name="MapRestartMenu.ConfirmRestartItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct MapRestartMenu_ConfirmRestartItemYes{#[offset(112)]#[rename(name="m_KeepLevel")]pub m_keep_level:bool,}
 
 }
 
 #[cfg(feature = "app-maprestartmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-maprestartmenu")]
-pub trait IMapRestartMenu_ConfirmRestartItemYesMethods : IMapRestartMenu_ConfirmRestartItemYes { # [doc = "`.ctor(::unity2::Il2CppString, bool)` overload"] fn ctor (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , keep_level : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MapRestartMenu_ConfirmRestartItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRestartMenu_ConfirmRestartItemYes , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: convert :: Into :: into (keep_level) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < MapRestartMenu_ConfirmRestartItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRestartMenu_ConfirmRestartItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < MapRestartMenu_ConfirmRestartItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRestartMenu_ConfirmRestartItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x218d6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-maprestartmenu")]
-impl < __T : IMapRestartMenu_ConfirmRestartItemYes > IMapRestartMenu_ConfirmRestartItemYesMethods for __T { }
-
-#[cfg(feature = "app-maprestartmenu")]
-impl MapRestartMenu_ConfirmRestartItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRestartMenu_ConfirmRestartItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRestartMenu_ConfirmRestartItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRestartMenu_ConfirmRestartItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-maprestartmenu")]
-impl MapRestartMenu_ConfirmRestartItemYes {
-# [doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"] pub fn new (text : :: unity2 :: Il2CppString , keep_level : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapRestartMenu_ConfirmRestartItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IMapRestartMenu_ConfirmRestartItemYesMethods > :: ctor (this , text , keep_level) ; this }
+#[cfg(feature="app-maprestartmenu")]impl MapRestartMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235de20usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-maprestartmenu")]
-impl MapRestartMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235de20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-maprestartmenu")]pub trait IMapRestartMenuMethods:IMapRestartMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapRestartMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x235e400usize)as*mut u8,();
+(MapRestartMenu)__receiver)}
+}
+}
 
-#[cfg(feature = "app-maprestartmenu")]
-pub trait IMapRestartMenuMethods : IMapRestartMenu { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapRestartMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapRestartMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235e400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-maprestartmenu")]impl<__T:IMapRestartMenu>IMapRestartMenuMethods for __T{}
 
-#[cfg(feature = "app-maprestartmenu")]
-impl < __T : IMapRestartMenu > IMapRestartMenuMethods for __T { }
+#[cfg(feature="app-maprestartmenu")]impl MapRestartMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-maprestartmenu")]
-impl MapRestartMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRestartMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapRestartMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-maprestartmenu")]impl MapRestartMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapRestartMenu), ::core::stringify!(new),));
+ <Self as IMapRestartMenuMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-maprestartmenu")]
-impl MapRestartMenu {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapRestartMenu) , :: core :: stringify ! (new) ,)) ; < Self as IMapRestartMenuMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-maprestartmenu")]pub trait IMapRestartMenu_ConfirmRestartItemYesMethods:IMapRestartMenu_ConfirmRestartItemYes{#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,keep_level:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapRestartMenu_ConfirmRestartItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d6b0usize)as*mut u8,();
+(MapRestartMenu_ConfirmRestartItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(bool)::core::convert::Into::into(keep_level))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapRestartMenu_ConfirmRestartItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d6e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(MapRestartMenu_ConfirmRestartItemYes)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapRestartMenu_ConfirmRestartItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218d6f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(MapRestartMenu_ConfirmRestartItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-maprestartmenu")]impl<__T:IMapRestartMenu_ConfirmRestartItemYes>IMapRestartMenu_ConfirmRestartItemYesMethods for __T{}
+
+#[cfg(feature="app-maprestartmenu")]impl MapRestartMenu_ConfirmRestartItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-maprestartmenu")]impl MapRestartMenu_ConfirmRestartItemYes{#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new(text: ::unity2::Il2CppString,keep_level:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapRestartMenu_ConfirmRestartItemYes), ::core::stringify!(new),));
+ <Self as IMapRestartMenu_ConfirmRestartItemYesMethods> ::ctor(this,text,keep_level);
+this}
 }
 
 #[cfg(feature = "app-maprestartmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapRestartMenu_ConfirmRestartItemYes;
-    pub use super::IMapRestartMenu_ConfirmRestartItemYes;
-    pub use super::IMapRestartMenu_ConfirmRestartItemYesMethods;
     pub use super::MapRestartMenu;
     pub use super::IMapRestartMenu;
     pub use super::IMapRestartMenuMethods;
+    pub use super::MapRestartMenu_ConfirmRestartItemYes;
+    pub use super::IMapRestartMenu_ConfirmRestartItemYes;
+    pub use super::IMapRestartMenu_ConfirmRestartItemYesMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

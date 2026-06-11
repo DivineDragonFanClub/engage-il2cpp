@@ -4,36 +4,86 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: versusservermetadata :: { IVersusServerMetaData , VersusServerMetaData }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::versusservermetadata::{IVersusServerMetaData,VersusServerMetaData}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualmetadata/VersusServerCasualMetaData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusServerCasualMetaData")] # [parent (crate :: app :: versusservermetadata :: VersusServerMetaData)] pub struct VersusServerCasualMetaData {
-# [static_field] # [rename (name = "Version")] pub version : u16 ,
-# [offset (48)] # [rename (name = "m_OwnerId")] pub m_owner_id : u64 ,
-# [offset (56)] # [rename (name = "m_OwnerName")] pub m_owner_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusservercasualmetadata/VersusServerCasualMetaData.md"))]#[::unity2::class(namespace="App",name="VersusServerCasualMetaData")]#[parent(crate::app::versusservermetadata::VersusServerMetaData)]pub struct VersusServerCasualMetaData{#[static_field]#[rename(name="Version")]pub version:u16, #[offset(48)]#[rename(name="m_OwnerId")]pub m_owner_id:u64, #[offset(56)]#[rename(name="m_OwnerName")]pub m_owner_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-versusservercasualmetadata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusservercasualmetadata")]
-pub trait IVersusServerCasualMetaDataMethods : IVersusServerCasualMetaData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b7360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b7490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetOwnerInfo(u64, ::unity2::Il2CppString)` overload"] fn set_owner_info (self , owner_id : impl :: core :: convert :: Into < u64 > , owner_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , u64 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b7560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (owner_id) , :: core :: convert :: Into :: into (owner_name) , :: core :: option :: Option :: None) } } } # [doc = "`CopyFrom(crate::app::versusservermetadata::VersusServerMetaData)` overload"] fn copy_from (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusservermetadata :: VersusServerMetaData >) -> () { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , crate :: app :: versusservermetadata :: VersusServerMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b7570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetOwnerName()` overload"] fn get_owner_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b76d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dump(::unity2::Il2CppString)` overload"] fn dump (self , opt : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b7700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (opt) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b7960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> bool { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b7b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_OwnerId()` overload"] fn get_owner_id (self ,) -> u64 { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> u64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b80c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FriendName()` overload"] fn get_friend_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b80e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FriendName(::unity2::Il2CppString)` overload"] fn set_friend_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusServerCasualMetaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusServerCasualMetaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b80f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusservercasualmetadata")]pub trait IVersusServerCasualMetaDataMethods:IVersusServerCasualMetaData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b7360usize)as*mut u8,();
+(VersusServerCasualMetaData)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b7490usize)as*mut u8,();
+(VersusServerCasualMetaData)__receiver)}
+}
+#[doc="`SetOwnerInfo(u64, ::unity2::Il2CppString)` overload"]fn set_owner_info(self,owner_id:impl::core::convert::Into<u64> ,owner_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b7560usize)as*mut u8,();
+(VersusServerCasualMetaData)__receiver,(u64)::core::convert::Into::into(owner_id),(::unity2::Il2CppString)::core::convert::Into::into(owner_name))}
+}
+#[doc="`CopyFrom(crate::app::versusservermetadata::VersusServerMetaData)` overload"]fn copy_from(self,meta_data:impl::core::convert::Into<crate::app::versusservermetadata::VersusServerMetaData>)->(){unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b7570usize)as*mut u8,();
+(VersusServerCasualMetaData)__receiver,(crate::app::versusservermetadata::VersusServerMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`GetOwnerName()` overload"]fn get_owner_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b76d0usize)as*mut u8, ::unity2::Il2CppString;
+(VersusServerCasualMetaData)__receiver)}
+}
+#[doc="`Dump(::unity2::Il2CppString)` overload"]fn dump(self,opt:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b7700usize)as*mut u8,();
+(VersusServerCasualMetaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(opt))}
+}
+#[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b7960usize)as*mut u8,();
+(VersusServerCasualMetaData)__receiver)}
+}
+#[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b7b10usize)as*mut u8,bool;
+(VersusServerCasualMetaData)__receiver)}
+}
+#[doc="`get_OwnerId()` overload"]fn get_owner_id(self,)->u64{unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b80c0usize)as*mut u8,u64;
+(VersusServerCasualMetaData)__receiver)}
+}
+#[doc="`get_FriendName()` overload"]fn get_friend_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b80e0usize)as*mut u8, ::unity2::Il2CppString;
+(VersusServerCasualMetaData)__receiver)}
+}
+#[doc="`set_FriendName(::unity2::Il2CppString)` overload"]fn set_friend_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusServerCasualMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b80f0usize)as*mut u8,();
+(VersusServerCasualMetaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-versusservercasualmetadata")]
-impl < __T : IVersusServerCasualMetaData > IVersusServerCasualMetaDataMethods for __T { }
+#[cfg(feature="app-versusservercasualmetadata")]impl<__T:IVersusServerCasualMetaData>IVersusServerCasualMetaDataMethods for __T{}
 
-#[cfg(feature = "app-versusservercasualmetadata")]
-impl VersusServerCasualMetaData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_owner_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_owner_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_owner_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_friend_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_friend_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusServerCasualMetaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-versusservercasualmetadata")]impl VersusServerCasualMetaData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_owner_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_owner_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_owner_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_friend_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_friend_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "app-versusservercasualmetadata")]
-impl VersusServerCasualMetaData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusServerCasualMetaData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusServerCasualMetaDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusservercasualmetadata")]impl VersusServerCasualMetaData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusServerCasualMetaData), ::core::stringify!(new),));
+ <Self as IVersusServerCasualMetaDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusservercasualmetadata")]

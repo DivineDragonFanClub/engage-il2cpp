@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/profilingsample/ProfilingSample.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ProfilingSample {
-    pub m_cmd: crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer,
-    pub m_name: :: unity2 :: Il2CppString,
-    pub m_disposed: bool,
-    pub m_sampler: crate :: unity_engine :: profiling :: customsampler :: CustomSampler,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/profilingsample/ProfilingSample.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ProfilingSample{pub m_cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,pub m_name: ::unity2::Il2CppString,pub m_disposed:bool,pub m_sampler:crate::unity_engine::profiling::customsampler::CustomSampler,}
+impl::unity2::ClassIdentity for ProfilingSample{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="ProfilingSample";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ProfilingSample {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "ProfilingSample";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ProfilingSample {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ProfilingSample{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,29 @@ impl ::unity2::IlType for ProfilingSample {
 #[cfg(feature = "unity_engine-rendering-profilingsample-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-profilingsample")]
-impl ProfilingSample { # [doc = "`.ctor(crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::Il2CppString, crate::unity_engine::profiling::customsampler::CustomSampler)` overload"] pub fn ctor (& mut self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , sampler : impl :: core :: convert :: Into < crate :: unity_engine :: profiling :: customsampler :: CustomSampler >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProfilingSample , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , :: unity2 :: Il2CppString , crate :: unity_engine :: profiling :: customsampler :: CustomSampler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30acb60usize) as * mut u8) ; __inner (self as * mut ProfilingSample , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (sampler) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::Il2CppString, crate::system::object::Object)` overload"] pub fn ctor_2 (& mut self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProfilingSample , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , :: unity2 :: Il2CppString , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30acc20usize) as * mut u8) ; __inner (self as * mut ProfilingSample , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (format) , :: core :: convert :: Into :: into (arg) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] pub fn ctor_3 (& mut self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProfilingSample , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30acce0usize) as * mut u8) ; __inner (self as * mut ProfilingSample , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (format) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut ProfilingSample , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30acda0usize) as * mut u8) ; __inner (self as * mut ProfilingSample , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] pub fn dispose_2 (& mut self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProfilingSample , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30ace30usize) as * mut u8) ; __inner (self as * mut ProfilingSample , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-profilingsample")]impl ProfilingSample{#[doc="`.ctor(crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::Il2CppString, crate::unity_engine::profiling::customsampler::CustomSampler)` overload"]pub fn ctor(&mut self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,sampler:impl::core::convert::Into<crate::unity_engine::profiling::customsampler::CustomSampler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30acb60usize)as*mut u8,();
+(*mut ProfilingSample)self as*mut ProfilingSample,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::profiling::customsampler::CustomSampler)::core::convert::Into::into(sampler))}
+}
+#[doc="`.ctor(crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::Il2CppString, crate::system::object::Object)` overload"]pub fn ctor_2(&mut self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,arg:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30acc20usize)as*mut u8,();
+(*mut ProfilingSample)self as*mut ProfilingSample,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(::unity2::Il2CppString)::core::convert::Into::into(format),(crate::system::object::Object)::core::convert::Into::into(arg))}
+}
+#[doc="`.ctor(crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn ctor_3(&mut self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30acce0usize)as*mut u8,();
+(*mut ProfilingSample)self as*mut ProfilingSample,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30acda0usize)as*mut u8,();
+(*mut ProfilingSample)self as*mut ProfilingSample)}
+}
+#[doc="`Dispose(bool)` overload"]pub fn dispose_2(&mut self,disposing:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30ace30usize)as*mut u8,();
+(*mut ProfilingSample)self as*mut ProfilingSample,(bool)::core::convert::Into::into(disposing))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-profilingsample")]
-impl ProfilingSample { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfilingSample as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfilingSample as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfilingSample as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfilingSample as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfilingSample as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-profilingsample")]impl ProfilingSample{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-rendering-profilingsample")]
 #[doc(hidden)]

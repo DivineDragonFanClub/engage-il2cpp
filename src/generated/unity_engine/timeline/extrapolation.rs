@@ -4,25 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/extrapolation/Extrapolation.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "Extrapolation")] # [parent (crate :: system :: object :: Object)] pub struct Extrapolation {
-# [static_field] # [rename (name = "kMinExtrapolationTime")] pub k_min_extrapolation_time : f64 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/extrapolation/Extrapolation.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="Extrapolation")]#[parent(crate::system::object::Object)]pub struct Extrapolation{#[static_field]#[rename(name="kMinExtrapolationTime")]pub k_min_extrapolation_time:f64,}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-extrapolation-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-extrapolation")]
-impl Extrapolation { # [doc = "`CalculateExtrapolationTimes(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"] pub fn calculate_extrapolation_times (asset : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: trackasset :: TrackAsset >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: timeline :: trackasset :: TrackAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6610usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset) , :: core :: option :: Option :: None) } } } # [doc = "`SortClipsByStartTime(::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>)` overload"] pub fn sort_clips_by_start_time (clips : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip > >) -> :: unity2 :: Array < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: timeline :: timelineclip :: TimelineClip > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (clips) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6be0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-extrapolation")]impl Extrapolation{#[doc="`CalculateExtrapolationTimes(crate::unity_engine::timeline::trackasset::TrackAsset)` overload"]pub fn calculate_extrapolation_times(asset:impl::core::convert::Into<crate::unity_engine::timeline::trackasset::TrackAsset>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6610usize)as*mut u8,();
+(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(asset))}
+}
+#[doc="`SortClipsByStartTime(::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>)` overload"]pub fn sort_clips_by_start_time(clips:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip> >)-> ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6a20usize)as*mut u8, ::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip> ;
+(::unity2::Array<crate::unity_engine::timeline::timelineclip::TimelineClip>)::core::convert::Into::into(clips))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d6be0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-extrapolation")]
-impl Extrapolation { pub fn calculate_extrapolation_times_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Extrapolation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn sort_clips_by_start_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Extrapolation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Extrapolation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-timeline-extrapolation")]impl Extrapolation{pub fn calculate_extrapolation_times_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn sort_clips_by_start_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-timeline-extrapolation")]
 #[doc(hidden)]

@@ -4,55 +4,288 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: graphic :: { Graphic , IGraphic }
- ;
- use crate :: unity_engine :: ui :: maskablegraphic :: { IMaskableGraphic , MaskableGraphic }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::graphic::{Graphic,IGraphic}
+;
+use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/text/Text.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "Text")] # [parent (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic)] pub struct Text {
-# [offset (208)] # [rename (name = "m_FontData")] pub m_font_data : crate :: unity_engine :: ui :: fontdata :: FontData ,
-# [offset (216)] # [rename (name = "m_Text")] pub m_text : :: unity2 :: Il2CppString ,
-# [offset (224)] # [rename (name = "m_TextCache")] pub m_text_cache : crate :: unity_engine :: textgenerator :: TextGenerator ,
-# [offset (232)] # [rename (name = "m_TextCacheForLayout")] pub m_text_cache_for_layout : crate :: unity_engine :: textgenerator :: TextGenerator ,
-# [static_field] # [rename (name = "s_DefaultText")] pub s_default_text : crate :: unity_engine :: material :: Material ,
-# [offset (240)] # [rename (name = "m_DisableFontTextureRebuiltCallback")] pub m_disable_font_texture_rebuilt_callback : bool ,
-# [offset (248)] # [rename (name = "m_TempVerts")] pub m_temp_verts : :: unity2 :: Array < crate :: unity_engine :: uivertex :: UIVertex > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/text/Text.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Text")]#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]pub struct Text{#[offset(208)]#[rename(name="m_FontData")]pub m_font_data:crate::unity_engine::ui::fontdata::FontData, #[offset(216)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(224)]#[rename(name="m_TextCache")]pub m_text_cache:crate::unity_engine::textgenerator::TextGenerator, #[offset(232)]#[rename(name="m_TextCacheForLayout")]pub m_text_cache_for_layout:crate::unity_engine::textgenerator::TextGenerator, #[static_field]#[rename(name="s_DefaultText")]pub s_default_text:crate::unity_engine::material::Material, #[offset(240)]#[rename(name="m_DisableFontTextureRebuiltCallback")]pub m_disable_font_texture_rebuilt_callback:bool, #[offset(248)]#[rename(name="m_TempVerts")]pub m_temp_verts: ::unity2::Array<crate::unity_engine::uivertex::UIVertex> ,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-text-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-text")]
-impl Text { # [doc = "`GetTextAnchorPivot(crate::unity_engine::textanchor::TextAnchor)` overload"] pub fn get_text_anchor_pivot (anchor : impl :: core :: convert :: Into < crate :: unity_engine :: textanchor :: TextAnchor >) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: textanchor :: TextAnchor , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (anchor) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c07c80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-text")]impl Text{#[doc="`GetTextAnchorPivot(crate::unity_engine::textanchor::TextAnchor)` overload"]pub fn get_text_anchor_pivot(anchor:impl::core::convert::Into<crate::unity_engine::textanchor::TextAnchor>)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c06ec0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(crate::unity_engine::textanchor::TextAnchor)::core::convert::Into::into(anchor))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c07c80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-text")]
-pub trait ITextMethods : IText { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c05c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_cachedTextGenerator()` overload"] fn get_cached_text_generator (self ,) -> crate :: unity_engine :: textgenerator :: TextGenerator { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: textgenerator :: TextGenerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c05d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_cachedTextGeneratorForLayout()` overload"] fn get_cached_text_generator_for_layout (self ,) -> crate :: unity_engine :: textgenerator :: TextGenerator { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: textgenerator :: TextGenerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c05df0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_mainTexture()` overload"] fn get_main_texture (self ,) -> crate :: unity_engine :: texture :: Texture { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture :: Texture = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c05e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FontTextureChanged()` overload"] fn font_texture_changed (self ,) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_font()` overload"] fn get_font (self ,) -> crate :: unity_engine :: font :: Font { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: font :: Font = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_font(crate::unity_engine::font::Font)` overload"] fn set_font (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: font :: Font >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , crate :: unity_engine :: font :: Font , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_text()` overload"] fn get_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_text(::unity2::Il2CppString)` overload"] fn set_text (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_supportRichText()` overload"] fn get_support_rich_text (self ,) -> bool { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_supportRichText(bool)` overload"] fn set_support_rich_text (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_resizeTextForBestFit()` overload"] fn get_resize_text_for_best_fit (self ,) -> bool { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c064c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_resizeTextForBestFit(bool)` overload"] fn set_resize_text_for_best_fit (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c064d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_resizeTextMinSize()` overload"] fn get_resize_text_min_size (self ,) -> i32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_resizeTextMinSize(i32)` overload"] fn set_resize_text_min_size (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_resizeTextMaxSize()` overload"] fn get_resize_text_max_size (self ,) -> i32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c065b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_resizeTextMaxSize(i32)` overload"] fn set_resize_text_max_size (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c065c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_alignment()` overload"] fn get_alignment (self ,) -> crate :: unity_engine :: textanchor :: TextAnchor { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: textanchor :: TextAnchor = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_alignment(crate::unity_engine::textanchor::TextAnchor)` overload"] fn set_alignment (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: textanchor :: TextAnchor >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , crate :: unity_engine :: textanchor :: TextAnchor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06630usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_alignByGeometry()` overload"] fn get_align_by_geometry (self ,) -> bool { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_alignByGeometry(bool)` overload"] fn set_align_by_geometry (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c066a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fontSize()` overload"] fn get_font_size (self ,) -> i32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c066e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fontSize(i32)` overload"] fn set_font_size (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c066f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_horizontalOverflow()` overload"] fn get_horizontal_overflow (self ,) -> crate :: unity_engine :: horizontalwrapmode :: HorizontalWrapMode { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: horizontalwrapmode :: HorizontalWrapMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_horizontalOverflow(crate::unity_engine::horizontalwrapmode::HorizontalWrapMode)` overload"] fn set_horizontal_overflow (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: horizontalwrapmode :: HorizontalWrapMode >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , crate :: unity_engine :: horizontalwrapmode :: HorizontalWrapMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_verticalOverflow()` overload"] fn get_vertical_overflow (self ,) -> crate :: unity_engine :: verticalwrapmode :: VerticalWrapMode { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: verticalwrapmode :: VerticalWrapMode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c067c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_verticalOverflow(crate::unity_engine::verticalwrapmode::VerticalWrapMode)` overload"] fn set_vertical_overflow (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: verticalwrapmode :: VerticalWrapMode >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , crate :: unity_engine :: verticalwrapmode :: VerticalWrapMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c067d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_lineSpacing()` overload"] fn get_line_spacing (self ,) -> f32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_lineSpacing(f32)` overload"] fn set_line_spacing (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06840usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fontStyle()` overload"] fn get_font_style (self ,) -> crate :: unity_engine :: fontstyle :: FontStyle { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: fontstyle :: FontStyle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c068a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fontStyle(crate::unity_engine::fontstyle::FontStyle)` overload"] fn set_font_style (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: fontstyle :: FontStyle >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , crate :: unity_engine :: fontstyle :: FontStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c068b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pixelsPerUnit()` overload"] fn get_pixels_per_unit (self ,) -> f32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06b60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateGeometry()` overload"] fn update_geometry (self ,) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AssignDefaultFont()` overload"] fn assign_default_font (self ,) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGenerationSettings(crate::unity_engine::vector2::Vector2)` overload"] fn get_generation_settings (self , extents : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: textgenerationsettings :: TextGenerationSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (extents) , :: core :: option :: Option :: None) } } } # [doc = "`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn on_populate_mesh (self , to_fill : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c06f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (to_fill) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputHorizontal()` overload"] fn calculate_layout_input_horizontal (self ,) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c079d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputVertical()` overload"] fn calculate_layout_input_vertical (self ,) -> () { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c079e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_minWidth()` overload"] fn get_min_width (self ,) -> f32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c079f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_preferredWidth()` overload"] fn get_preferred_width (self ,) -> f32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c07a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_flexibleWidth()` overload"] fn get_flexible_width (self ,) -> f32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c07b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_minHeight()` overload"] fn get_min_height (self ,) -> f32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c07b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_preferredHeight()` overload"] fn get_preferred_height (self ,) -> f32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c07b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_flexibleHeight()` overload"] fn get_flexible_height (self ,) -> f32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c07c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_layoutPriority()` overload"] fn get_layout_priority (self ,) -> i32 { unsafe { let __receiver = < Text as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Text , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c07c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-text")]pub trait ITextMethods:IText{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c05c90usize)as*mut u8,();
+(Text)__receiver)}
+}
+#[doc="`get_cachedTextGenerator()` overload"]fn get_cached_text_generator(self,)->crate::unity_engine::textgenerator::TextGenerator{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c05d50usize)as*mut u8,crate::unity_engine::textgenerator::TextGenerator;
+(Text)__receiver)}
+}
+#[doc="`get_cachedTextGeneratorForLayout()` overload"]fn get_cached_text_generator_for_layout(self,)->crate::unity_engine::textgenerator::TextGenerator{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c05df0usize)as*mut u8,crate::unity_engine::textgenerator::TextGenerator;
+(Text)__receiver)}
+}
+#[doc="`get_mainTexture()` overload"]fn get_main_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c05e80usize)as*mut u8,crate::unity_engine::texture::Texture;
+(Text)__receiver)}
+}
+#[doc="`FontTextureChanged()` overload"]fn font_texture_changed(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06050usize)as*mut u8,();
+(Text)__receiver)}
+}
+#[doc="`get_font()` overload"]fn get_font(self,)->crate::unity_engine::font::Font{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06040usize)as*mut u8,crate::unity_engine::font::Font;
+(Text)__receiver)}
+}
+#[doc="`set_font(crate::unity_engine::font::Font)` overload"]fn set_font(self,value:impl::core::convert::Into<crate::unity_engine::font::Font>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06200usize)as*mut u8,();
+(Text)__receiver,(crate::unity_engine::font::Font)::core::convert::Into::into(value))}
+}
+#[doc="`get_text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06340usize)as*mut u8, ::unity2::Il2CppString;
+(Text)__receiver)}
+}
+#[doc="`set_text(::unity2::Il2CppString)` overload"]fn set_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06350usize)as*mut u8,();
+(Text)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_supportRichText()` overload"]fn get_support_rich_text(self,)->bool{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06440usize)as*mut u8,bool;
+(Text)__receiver)}
+}
+#[doc="`set_supportRichText(bool)` overload"]fn set_support_rich_text(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06450usize)as*mut u8,();
+(Text)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_resizeTextForBestFit()` overload"]fn get_resize_text_for_best_fit(self,)->bool{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c064c0usize)as*mut u8,bool;
+(Text)__receiver)}
+}
+#[doc="`set_resizeTextForBestFit(bool)` overload"]fn set_resize_text_for_best_fit(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c064d0usize)as*mut u8,();
+(Text)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_resizeTextMinSize()` overload"]fn get_resize_text_min_size(self,)->i32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06540usize)as*mut u8,i32;
+(Text)__receiver)}
+}
+#[doc="`set_resizeTextMinSize(i32)` overload"]fn set_resize_text_min_size(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06550usize)as*mut u8,();
+(Text)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_resizeTextMaxSize()` overload"]fn get_resize_text_max_size(self,)->i32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c065b0usize)as*mut u8,i32;
+(Text)__receiver)}
+}
+#[doc="`set_resizeTextMaxSize(i32)` overload"]fn set_resize_text_max_size(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c065c0usize)as*mut u8,();
+(Text)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_alignment()` overload"]fn get_alignment(self,)->crate::unity_engine::textanchor::TextAnchor{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06620usize)as*mut u8,crate::unity_engine::textanchor::TextAnchor;
+(Text)__receiver)}
+}
+#[doc="`set_alignment(crate::unity_engine::textanchor::TextAnchor)` overload"]fn set_alignment(self,value:impl::core::convert::Into<crate::unity_engine::textanchor::TextAnchor>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06630usize)as*mut u8,();
+(Text)__receiver,(crate::unity_engine::textanchor::TextAnchor)::core::convert::Into::into(value))}
+}
+#[doc="`get_alignByGeometry()` overload"]fn get_align_by_geometry(self,)->bool{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06690usize)as*mut u8,bool;
+(Text)__receiver)}
+}
+#[doc="`set_alignByGeometry(bool)` overload"]fn set_align_by_geometry(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c066a0usize)as*mut u8,();
+(Text)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_fontSize()` overload"]fn get_font_size(self,)->i32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c066e0usize)as*mut u8,i32;
+(Text)__receiver)}
+}
+#[doc="`set_fontSize(i32)` overload"]fn set_font_size(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c066f0usize)as*mut u8,();
+(Text)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_horizontalOverflow()` overload"]fn get_horizontal_overflow(self,)->crate::unity_engine::horizontalwrapmode::HorizontalWrapMode{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06750usize)as*mut u8,crate::unity_engine::horizontalwrapmode::HorizontalWrapMode;
+(Text)__receiver)}
+}
+#[doc="`set_horizontalOverflow(crate::unity_engine::horizontalwrapmode::HorizontalWrapMode)` overload"]fn set_horizontal_overflow(self,value:impl::core::convert::Into<crate::unity_engine::horizontalwrapmode::HorizontalWrapMode>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06760usize)as*mut u8,();
+(Text)__receiver,(crate::unity_engine::horizontalwrapmode::HorizontalWrapMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_verticalOverflow()` overload"]fn get_vertical_overflow(self,)->crate::unity_engine::verticalwrapmode::VerticalWrapMode{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c067c0usize)as*mut u8,crate::unity_engine::verticalwrapmode::VerticalWrapMode;
+(Text)__receiver)}
+}
+#[doc="`set_verticalOverflow(crate::unity_engine::verticalwrapmode::VerticalWrapMode)` overload"]fn set_vertical_overflow(self,value:impl::core::convert::Into<crate::unity_engine::verticalwrapmode::VerticalWrapMode>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c067d0usize)as*mut u8,();
+(Text)__receiver,(crate::unity_engine::verticalwrapmode::VerticalWrapMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_lineSpacing()` overload"]fn get_line_spacing(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06830usize)as*mut u8,f32;
+(Text)__receiver)}
+}
+#[doc="`set_lineSpacing(f32)` overload"]fn set_line_spacing(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06840usize)as*mut u8,();
+(Text)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fontStyle()` overload"]fn get_font_style(self,)->crate::unity_engine::fontstyle::FontStyle{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c068a0usize)as*mut u8,crate::unity_engine::fontstyle::FontStyle;
+(Text)__receiver)}
+}
+#[doc="`set_fontStyle(crate::unity_engine::fontstyle::FontStyle)` overload"]fn set_font_style(self,value:impl::core::convert::Into<crate::unity_engine::fontstyle::FontStyle>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c068b0usize)as*mut u8,();
+(Text)__receiver,(crate::unity_engine::fontstyle::FontStyle)::core::convert::Into::into(value))}
+}
+#[doc="`get_pixelsPerUnit()` overload"]fn get_pixels_per_unit(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06910usize)as*mut u8,f32;
+(Text)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06a60usize)as*mut u8,();
+(Text)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06b60usize)as*mut u8,();
+(Text)__receiver)}
+}
+#[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06be0usize)as*mut u8,();
+(Text)__receiver)}
+}
+#[doc="`AssignDefaultFont()` overload"]fn assign_default_font(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06c80usize)as*mut u8,();
+(Text)__receiver)}
+}
+#[doc="`GetGenerationSettings(crate::unity_engine::vector2::Vector2)` overload"]fn get_generation_settings(self,extents:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->crate::unity_engine::textgenerationsettings::TextGenerationSettings{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06d00usize)as*mut u8,crate::unity_engine::textgenerationsettings::TextGenerationSettings;
+(Text)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(extents))}
+}
+#[doc="`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn on_populate_mesh(self,to_fill:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06f10usize)as*mut u8,();
+(Text)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(to_fill))}
+}
+#[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c079d0usize)as*mut u8,();
+(Text)__receiver)}
+}
+#[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c079e0usize)as*mut u8,();
+(Text)__receiver)}
+}
+#[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c079f0usize)as*mut u8,f32;
+(Text)__receiver)}
+}
+#[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07a00usize)as*mut u8,f32;
+(Text)__receiver)}
+}
+#[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07b10usize)as*mut u8,f32;
+(Text)__receiver)}
+}
+#[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07b20usize)as*mut u8,f32;
+(Text)__receiver)}
+}
+#[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07b30usize)as*mut u8,f32;
+(Text)__receiver)}
+}
+#[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07c60usize)as*mut u8,f32;
+(Text)__receiver)}
+}
+#[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07c70usize)as*mut u8,i32;
+(Text)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-text")]
-impl < __T : IText > ITextMethods for __T { }
+#[cfg(feature="unity_engine-ui-text")]impl<__T:IText>ITextMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-text")]
-impl Text { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_cached_text_generator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_cached_text_generator_for_layout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_main_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn font_texture_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_font_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_font_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_support_rich_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_support_rich_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_resize_text_for_best_fit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_resize_text_for_best_fit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_resize_text_min_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_resize_text_min_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_resize_text_max_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_resize_text_max_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_alignment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_alignment_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_align_by_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn set_align_by_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_font_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_font_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_horizontal_overflow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_horizontal_overflow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_vertical_overflow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn set_vertical_overflow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_line_spacing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_line_spacing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_font_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn set_font_style_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn get_pixels_per_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn update_geometry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn assign_default_font_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_generation_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn get_text_anchor_pivot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn on_populate_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn calculate_layout_input_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn calculate_layout_input_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn get_min_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_preferred_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn get_flexible_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_min_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn get_preferred_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_flexible_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn get_layout_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Text as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } }
+#[cfg(feature="unity_engine-ui-text")]impl Text{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_cached_text_generator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_cached_text_generator_for_layout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_main_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn font_texture_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_font_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_font_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_support_rich_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_support_rich_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_resize_text_for_best_fit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_resize_text_for_best_fit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_resize_text_min_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_resize_text_min_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_resize_text_max_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_resize_text_max_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_alignment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_alignment_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_align_by_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_align_by_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_font_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_font_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_horizontal_overflow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_horizontal_overflow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_vertical_overflow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_vertical_overflow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_line_spacing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_line_spacing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_font_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_font_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_pixels_per_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn update_geometry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn assign_default_font_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_generation_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_text_anchor_pivot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn on_populate_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn calculate_layout_input_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn calculate_layout_input_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_min_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_preferred_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_flexible_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_min_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_preferred_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_flexible_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn get_layout_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+}
 
-#[cfg(feature = "unity_engine-ui-text")]
-impl Text {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Text) , :: core :: stringify ! (new) ,)) ; < Self as ITextMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-text")]impl Text{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Text), ::core::stringify!(new),));
+ <Self as ITextMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-text")]

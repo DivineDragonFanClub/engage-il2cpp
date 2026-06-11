@@ -4,37 +4,98 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: reflection :: memberinfo :: { IMemberInfo , MemberInfo }
- ;
- use crate :: system :: reflection :: methodbase :: { IMethodBase , MethodBase }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
+;
+use crate::system::reflection::methodbase::{IMethodBase,MethodBase}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/methodinfo/MethodInfo.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "MethodInfo")] # [parent (crate :: system :: reflection :: methodbase :: MethodBase)] pub struct MethodInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/methodinfo/MethodInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="MethodInfo")]#[parent(crate::system::reflection::methodbase::MethodBase)]pub struct MethodInfo{}
 
 }
 
 #[cfg(feature = "system-reflection-methodinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-methodinfo")]
-impl MethodInfo { # [doc = "`op_Equality(crate::system::reflection::methodinfo::MethodInfo, crate::system::reflection::methodinfo::MethodInfo)` overload"] pub fn op_equality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: methodinfo :: MethodInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: methodinfo :: MethodInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: methodinfo :: MethodInfo , crate :: system :: reflection :: methodinfo :: MethodInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3370d30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::system::reflection::methodinfo::MethodInfo, crate::system::reflection::methodinfo::MethodInfo)` overload"] pub fn op_inequality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: methodinfo :: MethodInfo > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: methodinfo :: MethodInfo >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: methodinfo :: MethodInfo , crate :: system :: reflection :: methodinfo :: MethodInfo , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3374d60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-methodinfo")]impl MethodInfo{#[doc="`op_Equality(crate::system::reflection::methodinfo::MethodInfo, crate::system::reflection::methodinfo::MethodInfo)` overload"]pub fn op_equality(left:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo> ,right:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3370d30usize)as*mut u8,bool;
+(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(left),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(right))}
+}
+#[doc="`op_Inequality(crate::system::reflection::methodinfo::MethodInfo, crate::system::reflection::methodinfo::MethodInfo)` overload"]pub fn op_inequality(left:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo> ,right:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3374d60usize)as*mut u8,bool;
+(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(left),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(right))}
+}
+}
 
-#[cfg(feature = "system-reflection-methodinfo")]
-pub trait IMethodInfoMethods : IMethodInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_MemberType()` overload"] fn get_member_type (self ,) -> crate :: system :: reflection :: membertypes :: MemberTypes { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: membertypes :: MemberTypes = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReturnType()` overload"] fn get_return_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGenericArguments()` overload"] fn get_generic_arguments (self ,) -> :: unity2 :: Array < :: unity2 :: SystemType > { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: SystemType > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGenericMethodDefinition()` overload"] fn get_generic_method_definition (self ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33779f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MakeGenericMethod(::unity2::Array<::unity2::SystemType>)` overload"] fn make_generic_method (self , type_arguments : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: SystemType > >) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: Array < :: unity2 :: SystemType > , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377a50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (type_arguments) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDelegate(::unity2::SystemType)` overload"] fn create_delegate (self , delegate_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: delegate :: Delegate { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: delegate :: Delegate = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (delegate_type) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDelegate(::unity2::SystemType, crate::system::object::Object)` overload"] fn create_delegate_2 (self , delegate_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , target : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> crate :: system :: delegate :: Delegate { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: SystemType , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> crate :: system :: delegate :: Delegate = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (delegate_type) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`GetBaseMethod()` overload"] fn get_base_method (self ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo { unsafe { let __receiver = < MethodInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MethodInfo , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: methodinfo :: MethodInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3377b70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-methodinfo")]pub trait IMethodInfoMethods:IMethodInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377910usize)as*mut u8,();
+(MethodInfo)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377920usize)as*mut u8,bool;
+(MethodInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377930usize)as*mut u8,i32;
+(MethodInfo)__receiver)}
+}
+#[doc="`get_MemberType()` overload"]fn get_member_type(self,)->crate::system::reflection::membertypes::MemberTypes{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377940usize)as*mut u8,crate::system::reflection::membertypes::MemberTypes;
+(MethodInfo)__receiver)}
+}
+#[doc="`get_ReturnType()` overload"]fn get_return_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377950usize)as*mut u8, ::unity2::SystemType;
+(MethodInfo)__receiver)}
+}
+#[doc="`GetGenericArguments()` overload"]fn get_generic_arguments(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377990usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
+(MethodInfo)__receiver)}
+}
+#[doc="`GetGenericMethodDefinition()` overload"]fn get_generic_method_definition(self,)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33779f0usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(MethodInfo)__receiver)}
+}
+#[doc="`MakeGenericMethod(::unity2::Array<::unity2::SystemType>)` overload"]fn make_generic_method(self,type_arguments:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> >)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377a50usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(MethodInfo)__receiver,(::unity2::Array< ::unity2::SystemType>)::core::convert::Into::into(type_arguments))}
+}
+#[doc="`CreateDelegate(::unity2::SystemType)` overload"]fn create_delegate(self,delegate_type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::delegate::Delegate{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377ab0usize)as*mut u8,crate::system::delegate::Delegate;
+(MethodInfo)__receiver,(::unity2::SystemType)::core::convert::Into::into(delegate_type))}
+}
+#[doc="`CreateDelegate(::unity2::SystemType, crate::system::object::Object)` overload"]fn create_delegate_2(self,delegate_type:impl::core::convert::Into< ::unity2::SystemType> ,target:impl::core::convert::Into<crate::system::object::Object>)->crate::system::delegate::Delegate{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377b10usize)as*mut u8,crate::system::delegate::Delegate;
+(MethodInfo)__receiver,(::unity2::SystemType)::core::convert::Into::into(delegate_type),(crate::system::object::Object)::core::convert::Into::into(target))}
+}
+#[doc="`GetBaseMethod()` overload"]fn get_base_method(self,)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MethodInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3377b70usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
+(MethodInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-methodinfo")]
-impl < __T : IMethodInfo > IMethodInfoMethods for __T { }
+#[cfg(feature="system-reflection-methodinfo")]impl<__T:IMethodInfo>IMethodInfoMethods for __T{}
 
-#[cfg(feature = "system-reflection-methodinfo")]
-impl MethodInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_member_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_return_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_generic_arguments_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_generic_method_definition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn make_generic_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_delegate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_delegate_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_base_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MethodInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="system-reflection-methodinfo")]impl MethodInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_member_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_return_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_generic_arguments_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_generic_method_definition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn make_generic_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_delegate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_delegate_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_base_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "system-reflection-methodinfo")]
-impl MethodInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MethodInfo) , :: core :: stringify ! (new) ,)) ; < Self as IMethodInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-methodinfo")]impl MethodInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MethodInfo), ::core::stringify!(new),));
+ <Self as IMethodInfoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-methodinfo")]

@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/iinitializableobject/IInitializableObject.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "IInitializableObject")] pub struct IInitializableObject {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/iinitializableobject/IInitializableObject.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Util",name="IInitializableObject")]pub struct IInitializableObject{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-iinitializableobject-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-util-iinitializableobject")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IInitializableObject_unity2_raw { use super :: * ; pub unsafe fn initialize (this : IInitializableObject , id : :: unity2 :: Il2CppString , data : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> bool { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Initialize") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Initialize" , < IInitializableObject as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IInitializableObject , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , id , data , __mi) } pub unsafe fn initialize_async (this : IInitializableObject , rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , id : :: unity2 :: Il2CppString , data : :: unity2 :: Il2CppString , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("InitializeAsync") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "InitializeAsync" , < IInitializableObject as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IInitializableObject , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , rm , id , data , __mi) } }
+#[cfg(feature="unity_engine-resource_management-util-iinitializableobject")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IInitializableObject_unity2_raw{use super:: * ;
+pub unsafe fn initialize(this:IInitializableObject,id: ::unity2::Il2CppString,data: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Initialize").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Initialize", <IInitializableObject as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IInitializableObject, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,id,data,__mi)}
+pub unsafe fn initialize_async(this:IInitializableObject,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,id: ::unity2::Il2CppString,data: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("InitializeAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","InitializeAsync", <IInitializableObject as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IInitializableObject,crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,rm,id,data,__mi)}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-iinitializableobject")]
-pub trait IIInitializableObjectMethods : IIInitializableObject { # [doc = "`Initialize(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn initialize (self , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < IInitializableObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IInitializableObject_unity2_raw :: initialize (__receiver , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } # [doc = "`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn initialize_async (self , rm : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager > , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > { unsafe { let __receiver = < IInitializableObject as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IInitializableObject_unity2_raw :: initialize_async (__receiver , :: core :: convert :: Into :: into (rm) , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-resource_management-util-iinitializableobject")]pub trait IIInitializableObjectMethods:IIInitializableObject{#[doc="`Initialize(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn initialize(self,id:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <IInitializableObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IInitializableObject_unity2_raw::initialize(__receiver, ::core::convert::Into::into(id), ::core::convert::Into::into(data), ::core::option::Option::None)}
+}
+#[doc="`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn initialize_async(self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,id:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool>{unsafe{let __receiver= <IInitializableObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IInitializableObject_unity2_raw::initialize_async(__receiver, ::core::convert::Into::into(rm), ::core::convert::Into::into(id), ::core::convert::Into::into(data), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-iinitializableobject")]
-impl < __T : IIInitializableObject > IIInitializableObjectMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-util-iinitializableobject")]impl<__T:IIInitializableObject>IIInitializableObjectMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-util-iinitializableobject")]
-impl IInitializableObject { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IInitializableObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn initialize_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IInitializableObject as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-resource_management-util-iinitializableobject")]impl IInitializableObject{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-util-iinitializableobject")]
 #[doc(hidden)]

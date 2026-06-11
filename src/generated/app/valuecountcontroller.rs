@@ -4,46 +4,66 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/valuecountcontroller/ValueCountController.md"))] # [:: unity2 :: class (namespace = "App" , name = "ValueCountController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ValueCountController {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_ObjRoot")] pub m_obj_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_TextValue")] pub m_text_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_Anim")] pub m_anim : crate :: unity_engine :: animator :: Animator ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/valuecountcontroller/ValueCountController.md"))]#[::unity2::class(namespace="App",name="ValueCountController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ValueCountController{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_ObjRoot")]pub m_obj_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_TextValue")]pub m_text_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_Anim")]pub m_anim:crate::unity_engine::animator::Animator,}
 
 }
 
 #[cfg(feature = "app-valuecountcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-valuecountcontroller")]
-impl ValueCountController { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5910usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a59b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create(crate::unity_engine::vector3::Vector3, i32)` overload"] pub fn create (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , value : impl :: core :: convert :: Into < i32 >) -> crate :: app :: valuecountcontroller :: ValueCountController { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: valuecountcontroller :: ValueCountController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5a30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-valuecountcontroller")]impl ValueCountController{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a5910usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a59b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`Create(crate::unity_engine::vector3::Vector3, i32)` overload"]pub fn create(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,value:impl::core::convert::Into<i32>)->crate::app::valuecountcontroller::ValueCountController{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a5a30usize)as*mut u8,crate::app::valuecountcontroller::ValueCountController;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(i32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-valuecountcontroller")]
-pub trait IValueCountControllerMethods : IValueCountController { # [doc = "`Initialize(crate::unity_engine::vector3::Vector3, i32)` overload"] fn initialize (self , pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ValueCountController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ValueCountController , crate :: unity_engine :: vector3 :: Vector3 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5b90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pos) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < ValueCountController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ValueCountController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ValueCountController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ValueCountController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-valuecountcontroller")]pub trait IValueCountControllerMethods:IValueCountController{#[doc="`Initialize(crate::unity_engine::vector3::Vector3, i32)` overload"]fn initialize(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ValueCountController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5b90usize)as*mut u8,();
+(ValueCountController)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <ValueCountController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5dc0usize)as*mut u8,();
+(ValueCountController)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ValueCountController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5ea0usize)as*mut u8,();
+(ValueCountController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-valuecountcontroller")]
-impl < __T : IValueCountController > IValueCountControllerMethods for __T { }
+#[cfg(feature="app-valuecountcontroller")]impl<__T:IValueCountController>IValueCountControllerMethods for __T{}
 
-#[cfg(feature = "app-valuecountcontroller")]
-impl ValueCountController { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ValueCountController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ValueCountController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ValueCountController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ValueCountController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ValueCountController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ValueCountController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-valuecountcontroller")]impl ValueCountController{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-valuecountcontroller")]
-impl ValueCountController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ValueCountController) , :: core :: stringify ! (new) ,)) ; < Self as IValueCountControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-valuecountcontroller")]impl ValueCountController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ValueCountController), ::core::stringify!(new),));
+ <Self as IValueCountControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-valuecountcontroller")]

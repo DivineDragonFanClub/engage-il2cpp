@@ -4,45 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hudpopupgroup/HUDPopupGroup.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "HUDPopupGroup")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HUDPopupGroup {
-# [offset (24)] # [rename (name = "m_RectTransform")] pub m_rect_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (32)] # [rename (name = "m_WorldPos")] pub m_world_pos : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (44)] # [rename (name = "spos")] pub spos : crate :: unity_engine :: vector3 :: Vector3 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/hudpopupgroup/HUDPopupGroup.md"))]#[::unity2::class(namespace="Combat",name="HUDPopupGroup")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HUDPopupGroup{#[offset(24)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_WorldPos")]pub m_world_pos:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="spos")]pub spos:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "combat-hudpopupgroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-hudpopupgroup")]
-impl HUDPopupGroup { # [doc = "`DamagePopup(crate::combat::phase::Phase)` overload"] pub fn damage_popup (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> () { unsafe { { let __inner : extern "C" fn (crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2979280usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } # [doc = "`SetAsUnscaled(crate::unity_engine::transform::Transform)` overload"] pub fn set_as_unscaled (root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29799b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`DoesNeedForAttacker(crate::combat::phase::Phase)` overload"] pub fn does_need_for_attacker (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2979a90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } # [doc = "`GetDamage(crate::combat::phase::Phase)` overload"] pub fn get_damage (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297a400usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } # [doc = "`GetNumberPrefabName(crate::combat::phase::Phase, *muti32)` overload"] pub fn get_number_prefab_name (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> (:: unity2 :: Il2CppString , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: combat :: phase :: Phase , * mut i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297a1c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (phase) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetPopupPrefabName(crate::combat::phase::Phase, crate::combat::combatstyle::CombatStyle)` overload"] pub fn get_popup_prefab_name (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , style : impl :: core :: convert :: Into < crate :: combat :: combatstyle :: CombatStyle >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: combat :: phase :: Phase , crate :: combat :: combatstyle :: CombatStyle , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297a540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (style) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-hudpopupgroup")]impl HUDPopupGroup{#[doc="`DamagePopup(crate::combat::phase::Phase)` overload"]pub fn damage_popup(phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2979280usize)as*mut u8,();
+(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+#[doc="`SetAsUnscaled(crate::unity_engine::transform::Transform)` overload"]pub fn set_as_unscaled(root:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29799b0usize)as*mut u8,();
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(root))}
+}
+#[doc="`DoesNeedForAttacker(crate::combat::phase::Phase)` overload"]pub fn does_need_for_attacker(phase:impl::core::convert::Into<crate::combat::phase::Phase>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2979a90usize)as*mut u8,bool;
+(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+#[doc="`GetDamage(crate::combat::phase::Phase)` overload"]pub fn get_damage(phase:impl::core::convert::Into<crate::combat::phase::Phase>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x297a400usize)as*mut u8,i32;
+(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+#[doc="`GetNumberPrefabName(crate::combat::phase::Phase, *muti32)` overload"]pub fn get_number_prefab_name(phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(::unity2::Il2CppString,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x297a1c0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::combat::phase::Phase)::core::convert::Into::into(phase),(*mut i32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetPopupPrefabName(crate::combat::phase::Phase, crate::combat::combatstyle::CombatStyle)` overload"]pub fn get_popup_prefab_name(phase:impl::core::convert::Into<crate::combat::phase::Phase> ,style:impl::core::convert::Into<crate::combat::combatstyle::CombatStyle>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x297a540usize)as*mut u8, ::unity2::Il2CppString;
+(crate::combat::phase::Phase)::core::convert::Into::into(phase),(crate::combat::combatstyle::CombatStyle)::core::convert::Into::into(style))}
+}
+}
 
-#[cfg(feature = "combat-hudpopupgroup")]
-pub trait IHUDPopupGroupMethods : IHUDPopupGroup { # [doc = "`get_IsAlive()` overload"] fn get_is_alive (self ,) -> bool { unsafe { let __receiver = < HUDPopupGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopupGroup , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2979210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitialUpdate()` overload"] fn initial_update (self ,) -> () { unsafe { let __receiver = < HUDPopupGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopupGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2979a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HUDPopupGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopupGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2979cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupAsAttacker(crate::combat::phase::Phase, crate::unity_engine::vector3::Vector3)` overload"] fn setup_as_attacker (self , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , world_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < HUDPopupGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopupGroup , crate :: combat :: phase :: Phase , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2979ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (world_pos) , :: core :: option :: Option :: None) } } } # [doc = "`SetupAsDamager(crate::combat::phase::Phase, crate::unity_engine::vector3::Vector3)` overload"] fn setup_as_damager (self , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , world_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < HUDPopupGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopupGroup , crate :: combat :: phase :: Phase , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29794d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (world_pos) , :: core :: option :: Option :: None) } } } # [doc = "`init(crate::unity_engine::vector3::Vector3)` overload"] fn init (self , world_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < HUDPopupGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopupGroup , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297a010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (world_pos) , :: core :: option :: Option :: None) } } } # [doc = "`CreateHUD(::unity2::Il2CppString, f32)` overload"] fn create_hud (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , y : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: hudpopup :: HUDPopup { unsafe { let __receiver = < HUDPopupGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopupGroup , :: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: hudpopup :: HUDPopup = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297a280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (y) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HUDPopupGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HUDPopupGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297a690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-hudpopupgroup")]pub trait IHUDPopupGroupMethods:IHUDPopupGroup{#[doc="`get_IsAlive()` overload"]fn get_is_alive(self,)->bool{unsafe{let __receiver= <HUDPopupGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2979210usize)as*mut u8,bool;
+(HUDPopupGroup)__receiver)}
+}
+#[doc="`InitialUpdate()` overload"]fn initial_update(self,)->(){unsafe{let __receiver= <HUDPopupGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2979a70usize)as*mut u8,();
+(HUDPopupGroup)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HUDPopupGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2979cb0usize)as*mut u8,();
+(HUDPopupGroup)__receiver)}
+}
+#[doc="`SetupAsAttacker(crate::combat::phase::Phase, crate::unity_engine::vector3::Vector3)` overload"]fn setup_as_attacker(self,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,world_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <HUDPopupGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2979ad0usize)as*mut u8,();
+(HUDPopupGroup)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(phase),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(world_pos))}
+}
+#[doc="`SetupAsDamager(crate::combat::phase::Phase, crate::unity_engine::vector3::Vector3)` overload"]fn setup_as_damager(self,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,world_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <HUDPopupGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29794d0usize)as*mut u8,();
+(HUDPopupGroup)__receiver,(crate::combat::phase::Phase)::core::convert::Into::into(phase),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(world_pos))}
+}
+#[doc="`init(crate::unity_engine::vector3::Vector3)` overload"]fn init(self,world_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <HUDPopupGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297a010usize)as*mut u8,();
+(HUDPopupGroup)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(world_pos))}
+}
+#[doc="`CreateHUD(::unity2::Il2CppString, f32)` overload"]fn create_hud(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,y:impl::core::convert::Into<f32>)->crate::combat::hudpopup::HUDPopup{unsafe{let __receiver= <HUDPopupGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297a280usize)as*mut u8,crate::combat::hudpopup::HUDPopup;
+(HUDPopupGroup)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(f32)::core::convert::Into::into(y))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HUDPopupGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297a690usize)as*mut u8,();
+(HUDPopupGroup)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-hudpopupgroup")]
-impl < __T : IHUDPopupGroup > IHUDPopupGroupMethods for __T { }
+#[cfg(feature="combat-hudpopupgroup")]impl<__T:IHUDPopupGroup>IHUDPopupGroupMethods for __T{}
 
-#[cfg(feature = "combat-hudpopupgroup")]
-impl HUDPopupGroup { pub fn get_is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn damage_popup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_as_unscaled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn initial_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn does_need_for_attacker_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn setup_as_attacker_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn setup_as_damager_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_number_prefab_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_popup_prefab_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn create_hud_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HUDPopupGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="combat-hudpopupgroup")]impl HUDPopupGroup{pub fn get_is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn damage_popup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_as_unscaled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn initial_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn does_need_for_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn setup_as_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn setup_as_damager_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_number_prefab_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_popup_prefab_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn create_hud_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "combat-hudpopupgroup")]
-impl HUDPopupGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HUDPopupGroup) , :: core :: stringify ! (new) ,)) ; < Self as IHUDPopupGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-hudpopupgroup")]impl HUDPopupGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HUDPopupGroup), ::core::stringify!(new),));
+ <Self as IHUDPopupGroupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-hudpopupgroup")]

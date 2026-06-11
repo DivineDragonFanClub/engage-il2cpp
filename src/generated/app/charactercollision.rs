@@ -4,111 +4,103 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/charactercollision/CharacterCollision.md"))] # [:: unity2 :: class (namespace = "App" , name = "CharacterCollision")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterCollision {
-# [offset (24)] # [rename (name = "m_Kinds")] pub m_kinds : crate :: app :: charactercollision :: CharacterCollision_Kinds ,
-# [offset (28)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-# [offset (44)] # [rename (name = "m_Radius")] pub m_radius : f32 ,
-# [offset (48)] # [rename (name = "m_Result")] pub m_result : f32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/charactercollision/CharacterCollision_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CharacterCollision_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for CharacterCollision_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="CharacterCollision.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CharacterCollision_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CharacterCollision_Kinds{pub fn 無し()->Self{Self{value:0}
+}
+pub fn 透過()->Self{Self{value:1}
+}
+pub fn 破壊()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/charactercollision/CharacterCollision_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CharacterCollision_Kinds  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for CharacterCollision_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "CharacterCollision.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for CharacterCollision_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  CharacterCollision_Kinds  {
-    pub fn 無し() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn 透過() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn 破壊() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/charactercollision/CharacterCollision.md"))]#[::unity2::class(namespace="App",name="CharacterCollision")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterCollision{#[offset(24)]#[rename(name="m_Kinds")]pub m_kinds:crate::app::charactercollision::CharacterCollision_Kinds, #[offset(28)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(44)]#[rename(name="m_Radius")]pub m_radius:f32, #[offset(48)]#[rename(name="m_Result")]pub m_result:f32,}
 
 }
 
 #[cfg(feature = "app-charactercollision-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-charactercollision")]
-pub trait ICharacterCollisionMethods : ICharacterCollision { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < CharacterCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterCollision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d9950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < CharacterCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterCollision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d99e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < CharacterCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterCollision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d99f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetKind()` overload"] fn get_kind (self ,) -> crate :: app :: charactercollision :: CharacterCollision_Kinds { unsafe { let __receiver = < CharacterCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterCollision , :: unity2 :: OptionalMethod ,) -> crate :: app :: charactercollision :: CharacterCollision_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d9a00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRadius()` overload"] fn get_radius (self ,) -> f32 { unsafe { let __receiver = < CharacterCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterCollision , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d9a10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetOffset(f32, f32)` overload"] fn set_offset (self , move_offset : impl :: core :: convert :: Into < f32 > , size_offset : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CharacterCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterCollision , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d9a20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (move_offset) , :: core :: convert :: Into :: into (size_offset) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterCollision as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterCollision , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d9aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-charactercollision")]pub trait ICharacterCollisionMethods:ICharacterCollision{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <CharacterCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d9950usize)as*mut u8,();
+(CharacterCollision)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <CharacterCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d99e0usize)as*mut u8,();
+(CharacterCollision)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <CharacterCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d99f0usize)as*mut u8,();
+(CharacterCollision)__receiver)}
+}
+#[doc="`GetKind()` overload"]fn get_kind(self,)->crate::app::charactercollision::CharacterCollision_Kinds{unsafe{let __receiver= <CharacterCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d9a00usize)as*mut u8,crate::app::charactercollision::CharacterCollision_Kinds;
+(CharacterCollision)__receiver)}
+}
+#[doc="`GetRadius()` overload"]fn get_radius(self,)->f32{unsafe{let __receiver= <CharacterCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d9a10usize)as*mut u8,f32;
+(CharacterCollision)__receiver)}
+}
+#[doc="`SetOffset(f32, f32)` overload"]fn set_offset(self,move_offset:impl::core::convert::Into<f32> ,size_offset:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CharacterCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d9a20usize)as*mut u8,();
+(CharacterCollision)__receiver,(f32)::core::convert::Into::into(move_offset),(f32)::core::convert::Into::into(size_offset))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterCollision as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27d9aa0usize)as*mut u8,();
+(CharacterCollision)__receiver)}
+}
+}
 
-#[cfg(feature = "app-charactercollision")]
-impl < __T : ICharacterCollision > ICharacterCollisionMethods for __T { }
+#[cfg(feature="app-charactercollision")]impl<__T:ICharacterCollision>ICharacterCollisionMethods for __T{}
 
-#[cfg(feature = "app-charactercollision")]
-impl CharacterCollision { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_radius_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterCollision as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-charactercollision")]impl CharacterCollision{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_radius_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-charactercollision")]
-impl CharacterCollision {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterCollision) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterCollisionMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-charactercollision")]impl CharacterCollision{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterCollision), ::core::stringify!(new),));
+ <Self as ICharacterCollisionMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-charactercollision")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CharacterCollision_Kinds;
     pub use super::CharacterCollision;
     pub use super::ICharacterCollision;
     pub use super::ICharacterCollisionMethods;
-    pub use super::CharacterCollision_Kinds;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

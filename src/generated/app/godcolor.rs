@@ -4,51 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonscriptableobject_1 :: { ISingletonScriptableObject_1 , SingletonScriptableObject_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonscriptableobject_1::{ISingletonScriptableObject_1,SingletonScriptableObject_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godcolor/GodColor.md"))] # [:: unity2 :: class (namespace = "App" , name = "GodColor")] # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: godcolor :: GodColor >)] pub struct GodColor {
-# [offset (24)] # [rename (name = "マルス")] pub マルス : crate :: unity_engine :: color :: Color ,
-# [offset (40)] # [rename (name = "シグルド")] pub シグルド : crate :: unity_engine :: color :: Color ,
-# [offset (56)] # [rename (name = "セリカ")] pub セリカ : crate :: unity_engine :: color :: Color ,
-# [offset (72)] # [rename (name = "ミカヤ")] pub ミカヤ : crate :: unity_engine :: color :: Color ,
-# [offset (88)] # [rename (name = "ロイ")] pub ロイ : crate :: unity_engine :: color :: Color ,
-# [offset (104)] # [rename (name = "リーフ")] pub リーフ : crate :: unity_engine :: color :: Color ,
-# [offset (120)] # [rename (name = "ルキナ")] pub ルキナ : crate :: unity_engine :: color :: Color ,
-# [offset (136)] # [rename (name = "リン")] pub リン : crate :: unity_engine :: color :: Color ,
-# [offset (152)] # [rename (name = "アイク")] pub アイク : crate :: unity_engine :: color :: Color ,
-# [offset (168)] # [rename (name = "ベレト")] pub ベレト : crate :: unity_engine :: color :: Color ,
-# [offset (184)] # [rename (name = "カムイ")] pub カムイ : crate :: unity_engine :: color :: Color ,
-# [offset (200)] # [rename (name = "エイリーク")] pub エイリーク : crate :: unity_engine :: color :: Color ,
-# [offset (216)] # [rename (name = "エフラム")] pub エフラム : crate :: unity_engine :: color :: Color ,
-# [offset (232)] # [rename (name = "リュール")] pub リュール : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godcolor/GodColor.md"))]#[::unity2::class(namespace="App",name="GodColor")]#[parent(crate::app::singletonscriptableobject_1::SingletonScriptableObject_1<crate::app::godcolor::GodColor>)]pub struct GodColor{#[offset(24)]#[rename(name="マルス")]pub マルス:crate::unity_engine::color::Color, #[offset(40)]#[rename(name="シグルド")]pub シグルド:crate::unity_engine::color::Color, #[offset(56)]#[rename(name="セリカ")]pub セリカ:crate::unity_engine::color::Color, #[offset(72)]#[rename(name="ミカヤ")]pub ミカヤ:crate::unity_engine::color::Color, #[offset(88)]#[rename(name="ロイ")]pub ロイ:crate::unity_engine::color::Color, #[offset(104)]#[rename(name="リーフ")]pub リーフ:crate::unity_engine::color::Color, #[offset(120)]#[rename(name="ルキナ")]pub ルキナ:crate::unity_engine::color::Color, #[offset(136)]#[rename(name="リン")]pub リン:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="アイク")]pub アイク:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="ベレト")]pub ベレト:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="カムイ")]pub カムイ:crate::unity_engine::color::Color, #[offset(200)]#[rename(name="エイリーク")]pub エイリーク:crate::unity_engine::color::Color, #[offset(216)]#[rename(name="エフラム")]pub エフラム:crate::unity_engine::color::Color, #[offset(232)]#[rename(name="リュール")]pub リュール:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-godcolor-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-godcolor")]
-pub trait IGodColorMethods : IGodColor { # [doc = "`GetGodColor(crate::app::goddata::GodData)` overload"] fn get_god_color (self , god : impl :: core :: convert :: Into < crate :: app :: goddata :: GodData >) -> crate :: unity_engine :: color :: Color { unsafe { let __receiver = < GodColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodColor , crate :: app :: goddata :: GodData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: color :: Color = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b51400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GodColor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GodColor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2b518b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-godcolor")]pub trait IGodColorMethods:IGodColor{#[doc="`GetGodColor(crate::app::goddata::GodData)` overload"]fn get_god_color(self,god:impl::core::convert::Into<crate::app::goddata::GodData>)->crate::unity_engine::color::Color{unsafe{let __receiver= <GodColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b51400usize)as*mut u8,crate::unity_engine::color::Color;
+(GodColor)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2b518b0usize)as*mut u8,();
+(GodColor)__receiver)}
+}
+}
 
-#[cfg(feature = "app-godcolor")]
-impl < __T : IGodColor > IGodColorMethods for __T { }
+#[cfg(feature="app-godcolor")]impl<__T:IGodColor>IGodColorMethods for __T{}
 
-#[cfg(feature = "app-godcolor")]
-impl GodColor { pub fn get_god_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GodColor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-godcolor")]impl GodColor{pub fn get_god_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-godcolor")]
-impl GodColor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GodColor) , :: core :: stringify ! (new) ,)) ; < Self as IGodColorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-godcolor")]impl GodColor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodColor), ::core::stringify!(new),));
+ <Self as IGodColorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-godcolor")]

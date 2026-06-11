@@ -4,70 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceskipreplay/MapSequenceSkipReplay_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceSkipReplay_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceskipreplay/MapSequenceSkipReplay.md"))]#[::unity2::class(namespace="App",name="MapSequenceSkipReplay")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequenceskipreplay::MapSequenceSkipReplay>)]pub struct MapSequenceSkipReplay{#[offset(120)]#[rename(name="m_SetupFieldFunc")]pub m_setup_field_func:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceskipreplay/MapSequenceSkipReplay_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceSkipReplay_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceSkipReplay_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceSkipReplay.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for MapSequenceSkipReplay_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceSkipReplay.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for MapSequenceSkipReplay_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for MapSequenceSkipReplay_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl MapSequenceSkipReplay_Label{pub fn skip_load()->Self{Self{value:0}
 }
-
-
-impl  MapSequenceSkipReplay_Label  {
-    pub fn skip_load() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn end()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceskipreplay/MapSequenceSkipReplay.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceSkipReplay")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceskipreplay :: MapSequenceSkipReplay >)] pub struct MapSequenceSkipReplay {
-# [offset (120)] # [rename (name = "m_SetupFieldFunc")] pub m_setup_field_func : crate :: system :: action :: Action ,
 }
 
 }
@@ -75,30 +40,57 @@ impl  MapSequenceSkipReplay_Label  {
 #[cfg(feature = "app-mapsequenceskipreplay-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequenceskipreplay")]
-impl MapSequenceSkipReplay { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , setup_field_func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f35290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (setup_field_func) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequenceskipreplay")]impl MapSequenceSkipReplay{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,setup_field_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f35290usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(setup_field_func))}
+}
+}
 
-#[cfg(feature = "app-mapsequenceskipreplay")]
-pub trait IMapSequenceSkipReplayMethods : IMapSequenceSkipReplay { # [doc = "`.ctor(crate::system::action::Action)` overload"] fn ctor (self , setup_field_func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < MapSequenceSkipReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceSkipReplay , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f34d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (setup_field_func) , :: core :: option :: Option :: None) } } } # [doc = "`SkipReplay()` overload"] fn skip_replay (self ,) -> () { unsafe { let __receiver = < MapSequenceSkipReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceSkipReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f34e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupField()` overload"] fn setup_field (self ,) -> () { unsafe { let __receiver = < MapSequenceSkipReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceSkipReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f34ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadActor()` overload"] fn load_actor (self ,) -> () { unsafe { let __receiver = < MapSequenceSkipReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceSkipReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f34fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup()` overload"] fn setup (self ,) -> () { unsafe { let __receiver = < MapSequenceSkipReplay as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceSkipReplay , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f350e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequenceskipreplay")]pub trait IMapSequenceSkipReplayMethods:IMapSequenceSkipReplay{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,setup_field_func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapSequenceSkipReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f34d90usize)as*mut u8,();
+(MapSequenceSkipReplay)__receiver,(crate::system::action::Action)::core::convert::Into::into(setup_field_func))}
+}
+#[doc="`SkipReplay()` overload"]fn skip_replay(self,)->(){unsafe{let __receiver= <MapSequenceSkipReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f34e30usize)as*mut u8,();
+(MapSequenceSkipReplay)__receiver)}
+}
+#[doc="`SetupField()` overload"]fn setup_field(self,)->(){unsafe{let __receiver= <MapSequenceSkipReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f34ea0usize)as*mut u8,();
+(MapSequenceSkipReplay)__receiver)}
+}
+#[doc="`LoadActor()` overload"]fn load_actor(self,)->(){unsafe{let __receiver= <MapSequenceSkipReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f34fb0usize)as*mut u8,();
+(MapSequenceSkipReplay)__receiver)}
+}
+#[doc="`Setup()` overload"]fn setup(self,)->(){unsafe{let __receiver= <MapSequenceSkipReplay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f350e0usize)as*mut u8,();
+(MapSequenceSkipReplay)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequenceskipreplay")]
-impl < __T : IMapSequenceSkipReplay > IMapSequenceSkipReplayMethods for __T { }
+#[cfg(feature="app-mapsequenceskipreplay")]impl<__T:IMapSequenceSkipReplay>IMapSequenceSkipReplayMethods for __T{}
 
-#[cfg(feature = "app-mapsequenceskipreplay")]
-impl MapSequenceSkipReplay { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceSkipReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn skip_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceSkipReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn setup_field_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceSkipReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceSkipReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceSkipReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceSkipReplay as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-mapsequenceskipreplay")]impl MapSequenceSkipReplay{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn skip_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn setup_field_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-mapsequenceskipreplay")]
-impl MapSequenceSkipReplay {
-# [doc = "`.ctor(crate::system::action::Action)` — overload selector"] pub fn new (setup_field_func : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceSkipReplay) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceSkipReplayMethods > :: ctor (this , setup_field_func) ; this }
+#[cfg(feature="app-mapsequenceskipreplay")]impl MapSequenceSkipReplay{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(setup_field_func:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceSkipReplay), ::core::stringify!(new),));
+ <Self as IMapSequenceSkipReplayMethods> ::ctor(this,setup_field_func);
+this}
 }
 
 #[cfg(feature = "app-mapsequenceskipreplay")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceSkipReplay_Label;
     pub use super::MapSequenceSkipReplay;
     pub use super::IMapSequenceSkipReplay;
     pub use super::IMapSequenceSkipReplayMethods;
+    pub use super::MapSequenceSkipReplay_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

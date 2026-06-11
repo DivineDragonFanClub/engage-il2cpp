@@ -4,47 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideeventfader/DragonRideEventFader.md"))] # [:: unity2 :: class (namespace = "App" , name = "DragonRideEventFader")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DragonRideEventFader {
-# [offset (24)] # [rename (name = "m_Color")] pub m_color : crate :: unity_engine :: color :: Color ,
-# [offset (40)] # [rename (name = "m_Layer")] pub m_layer : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (56)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
-# [offset (60)] # [rename (name = "m_FinishTime")] pub m_finish_time : f32 ,
-# [offset (64)] # [rename (name = "IsFadeIn")] pub is_fade_in : bool ,
-# [offset (65)] # [rename (name = "IsRun")] pub is_run : bool ,
-# [offset (72)] # [rename (name = "m_FadeTimeList")] pub m_fade_time_list : :: unity2 :: Array < f32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonrideeventfader/DragonRideEventFader.md"))]#[::unity2::class(namespace="App",name="DragonRideEventFader")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DragonRideEventFader{#[offset(24)]#[rename(name="m_Color")]pub m_color:crate::unity_engine::color::Color, #[offset(40)]#[rename(name="m_Layer")]pub m_layer:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_Timer")]pub m_timer:f32, #[offset(60)]#[rename(name="m_FinishTime")]pub m_finish_time:f32, #[offset(64)]#[rename(name="IsFadeIn")]pub is_fade_in:bool, #[offset(65)]#[rename(name="IsRun")]pub is_run:bool, #[offset(72)]#[rename(name="m_FadeTimeList")]pub m_fade_time_list: ::unity2::Array<f32> ,}
 
 }
 
 #[cfg(feature = "app-dragonrideeventfader-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dragonrideeventfader")]
-pub trait IDragonRideEventFaderMethods : IDragonRideEventFader { # [doc = "`Create()` overload"] fn create (self ,) -> () { unsafe { let __receiver = < DragonRideEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac5720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < DragonRideEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac5960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BlackIn(crate::app::dragon_ride::fadetype_2::FadeType_2)` overload"] fn black_in (self , r#type : impl :: core :: convert :: Into < crate :: app :: dragon_ride :: fadetype_2 :: FadeType_2 >) -> () { unsafe { let __receiver = < DragonRideEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideEventFader , crate :: app :: dragon_ride :: fadetype_2 :: FadeType_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac5a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`BlackOut(crate::app::dragon_ride::fadetype_2::FadeType_2)` overload"] fn black_out (self , r#type : impl :: core :: convert :: Into < crate :: app :: dragon_ride :: fadetype_2 :: FadeType_2 >) -> () { unsafe { let __receiver = < DragonRideEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideEventFader , crate :: app :: dragon_ride :: fadetype_2 :: FadeType_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac5a70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < DragonRideEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac5ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DragonRideEventFader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DragonRideEventFader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ac5c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dragonrideeventfader")]pub trait IDragonRideEventFaderMethods:IDragonRideEventFader{#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <DragonRideEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac5720usize)as*mut u8,();
+(DragonRideEventFader)__receiver)}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <DragonRideEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac5960usize)as*mut u8,();
+(DragonRideEventFader)__receiver)}
+}
+#[doc="`BlackIn(crate::app::dragon_ride::fadetype_2::FadeType_2)` overload"]fn black_in(self,r#type:impl::core::convert::Into<crate::app::dragon_ride::fadetype_2::FadeType_2>)->(){unsafe{let __receiver= <DragonRideEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac5a10usize)as*mut u8,();
+(DragonRideEventFader)__receiver,(crate::app::dragon_ride::fadetype_2::FadeType_2)::core::convert::Into::into(r#type))}
+}
+#[doc="`BlackOut(crate::app::dragon_ride::fadetype_2::FadeType_2)` overload"]fn black_out(self,r#type:impl::core::convert::Into<crate::app::dragon_ride::fadetype_2::FadeType_2>)->(){unsafe{let __receiver= <DragonRideEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac5a70usize)as*mut u8,();
+(DragonRideEventFader)__receiver,(crate::app::dragon_ride::fadetype_2::FadeType_2)::core::convert::Into::into(r#type))}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <DragonRideEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac5ad0usize)as*mut u8,();
+(DragonRideEventFader)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideEventFader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac5c40usize)as*mut u8,();
+(DragonRideEventFader)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dragonrideeventfader")]
-impl < __T : IDragonRideEventFader > IDragonRideEventFaderMethods for __T { }
+#[cfg(feature="app-dragonrideeventfader")]impl<__T:IDragonRideEventFader>IDragonRideEventFaderMethods for __T{}
 
-#[cfg(feature = "app-dragonrideeventfader")]
-impl DragonRideEventFader { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn black_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn black_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DragonRideEventFader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-dragonrideeventfader")]impl DragonRideEventFader{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn black_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn black_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-dragonrideeventfader")]
-impl DragonRideEventFader {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DragonRideEventFader) , :: core :: stringify ! (new) ,)) ; < Self as IDragonRideEventFaderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-dragonrideeventfader")]impl DragonRideEventFader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DragonRideEventFader), ::core::stringify!(new),));
+ <Self as IDragonRideEventFaderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-dragonrideeventfader")]

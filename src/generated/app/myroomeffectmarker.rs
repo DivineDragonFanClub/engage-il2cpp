@@ -4,39 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: marker :: { IMarker , Marker }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::marker::{IMarker,Marker}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeffectmarker/MyRoomEffectMarker.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomEffectMarker")] # [parent (crate :: unity_engine :: timeline :: marker :: Marker)] pub struct MyRoomEffectMarker {
-# [offset (40)] # [rename (name = "EffectName")] pub effect_name : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "duration")] pub duration : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeffectmarker/MyRoomEffectMarker.md"))]#[::unity2::class(namespace="App",name="MyRoomEffectMarker")]#[parent(crate::unity_engine::timeline::marker::Marker)]pub struct MyRoomEffectMarker{#[offset(40)]#[rename(name="EffectName")]pub effect_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="duration")]pub duration:f32,}
 
 }
 
 #[cfg(feature = "app-myroomeffectmarker-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomeffectmarker")]
-pub trait IMyRoomEffectMarkerMethods : IMyRoomEffectMarker { # [doc = "`get_id()` overload"] fn get_id (self ,) -> crate :: unity_engine :: propertyname :: PropertyName { unsafe { let __receiver = < MyRoomEffectMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEffectMarker , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: propertyname :: PropertyName = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238df50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomEffectMarker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEffectMarker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238dfb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomeffectmarker")]pub trait IMyRoomEffectMarkerMethods:IMyRoomEffectMarker{#[doc="`get_id()` overload"]fn get_id(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <MyRoomEffectMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238df50usize)as*mut u8,crate::unity_engine::propertyname::PropertyName;
+(MyRoomEffectMarker)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomEffectMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238dfb0usize)as*mut u8,();
+(MyRoomEffectMarker)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomeffectmarker")]
-impl < __T : IMyRoomEffectMarker > IMyRoomEffectMarkerMethods for __T { }
+#[cfg(feature="app-myroomeffectmarker")]impl<__T:IMyRoomEffectMarker>IMyRoomEffectMarkerMethods for __T{}
 
-#[cfg(feature = "app-myroomeffectmarker")]
-impl MyRoomEffectMarker { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEffectMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEffectMarker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-myroomeffectmarker")]impl MyRoomEffectMarker{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-myroomeffectmarker")]
-impl MyRoomEffectMarker {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomEffectMarker) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomEffectMarkerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomeffectmarker")]impl MyRoomEffectMarker{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomEffectMarker), ::core::stringify!(new),));
+ <Self as IMyRoomEffectMarkerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomeffectmarker")]

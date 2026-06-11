@@ -4,33 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharacterpreloader/TalkCharacterPreLoader.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkCharacterPreLoader")] # [parent (crate :: system :: object :: Object)] pub struct TalkCharacterPreLoader {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkcharacterpreloader/TalkCharacterPreLoader.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkCharacterPreLoader")]#[parent(crate::system::object::Object)]pub struct TalkCharacterPreLoader{}
 
 }
 
 #[cfg(feature = "app-talk3_d-talkcharacterpreloader-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
-impl TalkCharacterPreLoader { # [doc = "`PreLoadAllCharacter(::unity2::Il2CppString)` overload"] pub fn pre_load_all_character (mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20bde80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } # [doc = "`PreLoadAllCharactorDirect(crate::app::talk3_d::talkptr::TalkPtr)` overload"] pub fn pre_load_all_charactor_direct (talk_ptr : impl :: core :: convert :: Into < crate :: app :: talk3_d :: talkptr :: TalkPtr >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: talk3_d :: talkptr :: TalkPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be030usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (talk_ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkcharacterpreloader")]impl TalkCharacterPreLoader{#[doc="`PreLoadAllCharacter(::unity2::Il2CppString)` overload"]pub fn pre_load_all_character(mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20bde80usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`PreLoadAllCharactorDirect(crate::app::talk3_d::talkptr::TalkPtr)` overload"]pub fn pre_load_all_charactor_direct(talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20be030usize)as*mut u8,();
+(crate::app::talk3_d::talkptr::TalkPtr)::core::convert::Into::into(talk_ptr))}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
-pub trait ITalkCharacterPreLoaderMethods : ITalkCharacterPreLoader { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkCharacterPreLoader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkCharacterPreLoader , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20be0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkcharacterpreloader")]pub trait ITalkCharacterPreLoaderMethods:ITalkCharacterPreLoader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkCharacterPreLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20be0d0usize)as*mut u8,();
+(TalkCharacterPreLoader)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
-impl < __T : ITalkCharacterPreLoader > ITalkCharacterPreLoaderMethods for __T { }
+#[cfg(feature="app-talk3_d-talkcharacterpreloader")]impl<__T:ITalkCharacterPreLoader>ITalkCharacterPreLoaderMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
-impl TalkCharacterPreLoader { pub fn pre_load_all_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterPreLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn pre_load_all_charactor_direct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterPreLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkCharacterPreLoader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-talk3_d-talkcharacterpreloader")]impl TalkCharacterPreLoader{pub fn pre_load_all_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn pre_load_all_charactor_direct_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
-impl TalkCharacterPreLoader {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkCharacterPreLoader) , :: core :: stringify ! (new) ,)) ; < Self as ITalkCharacterPreLoaderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talkcharacterpreloader")]impl TalkCharacterPreLoader{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkCharacterPreLoader), ::core::stringify!(new),));
+ <Self as ITalkCharacterPreLoaderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talkcharacterpreloader")]

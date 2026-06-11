@@ -4,176 +4,226 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalcatchsequence/AnimalCatchSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct AnimalCatchSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalcatchsequence::AnimalCatchSequence>)]pub struct AnimalCatchSequence{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence.CatchConfirm.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalCatchSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for AnimalCatchSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AnimalCatchSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AnimalCatchSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AnimalCatchSequence_Label{pub fn init()->Self{Self{value:0}
+}
+pub fn main()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for AnimalCatchSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AnimalCatchSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence.CatchConfirm")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct AnimalCatchSequence_CatchConfirm{}
 
 
-impl  ::unity2::IlType for AnimalCatchSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  AnimalCatchSequence_Label  {
-    pub fn init() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn main() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalcatchsequence/AnimalCatchSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalCatchSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalcatchsequence :: AnimalCatchSequence >)] pub struct AnimalCatchSequence {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalCatchSequence.CatchConfirm.ConfirmDialogItemNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalCatchSequence.CatchConfirm")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct AnimalCatchSequence_CatchConfirm {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalCatchSequence.CatchConfirm.ConfirmDialogItemYes")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="AnimalCatchSequence.CatchConfirm.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{}
 
 }
 
 #[cfg(feature = "app-animalcatchsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> crate :: app :: procinst :: ProcInst { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> crate :: app :: procinst :: ProcInst = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c91da0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-animalcatchsequence")]
-pub trait IAnimalCatchSequenceMethods : IAnimalCatchSequence { # [doc = "`get_Access()` overload"] fn get_access (self ,) -> crate :: app :: hubaccess :: HubAccess { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccess :: HubAccess = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c911e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Access(crate::app::hubaccess::HubAccess)` overload"] fn set_access (self , value : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c911f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Animal()` overload"] fn get_animal (self ,) -> crate :: app :: animaldata :: AnimalData { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: animaldata :: AnimalData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c91200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Animal(crate::app::animaldata::AnimalData)` overload"] fn set_animal (self , value : impl :: core :: convert :: Into < crate :: app :: animaldata :: AnimalData >) -> () { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , crate :: app :: animaldata :: AnimalData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c91210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Player()` overload"] fn get_player (self ,) -> crate :: app :: hubplayercontroller :: HubPlayerController { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubplayercontroller :: HubPlayerController = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c91220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Camera()` overload"] fn get_camera (self ,) -> crate :: app :: hubcamera :: HubCamera { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubcamera :: HubCamera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c912a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::hubaccess::HubAccess)` overload"] fn ctor (self , access : impl :: core :: convert :: Into < crate :: app :: hubaccess :: HubAccess >) -> () { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , crate :: app :: hubaccess :: HubAccess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c91320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (access) , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c913e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c91480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartCapture()` overload"] fn start_capture (self ,) -> () { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c91510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MainCapture()` overload"] fn main_capture (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c91970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndCapture()` overload"] fn end_capture (self ,) -> () { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c919f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FinishCapture()` overload"] fn finish_capture (self ,) -> () { unsafe { let __receiver = < AnimalCatchSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c91c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-animalcatchsequence")]
-impl < __T : IAnimalCatchSequence > IAnimalCatchSequenceMethods for __T { }
-
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence { pub fn get_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_access_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_animal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_player_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn start_capture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn main_capture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn end_capture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn finish_capture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
-
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence {
-# [doc = "`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"] pub fn new (access : crate :: app :: hubaccess :: HubAccess) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalCatchSequence) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalCatchSequenceMethods > :: ctor (this , access) ; this }
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c91da0usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+}
 }
 
-#[cfg(feature = "app-animalcatchsequence")]
-pub trait IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods : IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b31890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-animalcatchsequence")]
-impl < __T : IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo > IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods for __T { }
-
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequenceMethods:IAnimalCatchSequence{#[doc="`get_Access()` overload"]fn get_access(self,)->crate::app::hubaccess::HubAccess{unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c911e0usize)as*mut u8,crate::app::hubaccess::HubAccess;
+(AnimalCatchSequence)__receiver)}
+}
+#[doc="`set_Access(crate::app::hubaccess::HubAccess)` overload"]fn set_access(self,value:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c911f0usize)as*mut u8,();
+(AnimalCatchSequence)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(value))}
+}
+#[doc="`get_Animal()` overload"]fn get_animal(self,)->crate::app::animaldata::AnimalData{unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c91200usize)as*mut u8,crate::app::animaldata::AnimalData;
+(AnimalCatchSequence)__receiver)}
+}
+#[doc="`set_Animal(crate::app::animaldata::AnimalData)` overload"]fn set_animal(self,value:impl::core::convert::Into<crate::app::animaldata::AnimalData>)->(){unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c91210usize)as*mut u8,();
+(AnimalCatchSequence)__receiver,(crate::app::animaldata::AnimalData)::core::convert::Into::into(value))}
+}
+#[doc="`get_Player()` overload"]fn get_player(self,)->crate::app::hubplayercontroller::HubPlayerController{unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c91220usize)as*mut u8,crate::app::hubplayercontroller::HubPlayerController;
+(AnimalCatchSequence)__receiver)}
+}
+#[doc="`get_Camera()` overload"]fn get_camera(self,)->crate::app::hubcamera::HubCamera{unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c912a0usize)as*mut u8,crate::app::hubcamera::HubCamera;
+(AnimalCatchSequence)__receiver)}
+}
+#[doc="`.ctor(crate::app::hubaccess::HubAccess)` overload"]fn ctor(self,access:impl::core::convert::Into<crate::app::hubaccess::HubAccess>)->(){unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c91320usize)as*mut u8,();
+(AnimalCatchSequence)__receiver,(crate::app::hubaccess::HubAccess)::core::convert::Into::into(access))}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c913e0usize)as*mut u8,();
+(AnimalCatchSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c91480usize)as*mut u8,();
+(AnimalCatchSequence)__receiver)}
+}
+#[doc="`StartCapture()` overload"]fn start_capture(self,)->(){unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c91510usize)as*mut u8,();
+(AnimalCatchSequence)__receiver)}
+}
+#[doc="`MainCapture()` overload"]fn main_capture(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c91970usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(AnimalCatchSequence)__receiver)}
+}
+#[doc="`EndCapture()` overload"]fn end_capture(self,)->(){unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c919f0usize)as*mut u8,();
+(AnimalCatchSequence)__receiver)}
+}
+#[doc="`FinishCapture()` overload"]fn finish_capture(self,)->(){unsafe{let __receiver= <AnimalCatchSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c91c80usize)as*mut u8,();
+(AnimalCatchSequence)__receiver)}
+}
 }
 
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence_CatchConfirm { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba5780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence>IAnimalCatchSequenceMethods for __T{}
 
-#[cfg(feature = "app-animalcatchsequence")]
-pub trait IAnimalCatchSequence_CatchConfirmMethods : IAnimalCatchSequence_CatchConfirm { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > >) -> () { unsafe { let __receiver = < AnimalCatchSequence_CatchConfirm as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence_CatchConfirm , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba5700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-animalcatchsequence")]
-impl < __T : IAnimalCatchSequence_CatchConfirm > IAnimalCatchSequence_CatchConfirmMethods for __T { }
-
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence_CatchConfirm { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence_CatchConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence_CatchConfirm as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence_CatchConfirm {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalCatchSequence_CatchConfirm) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalCatchSequence_CatchConfirmMethods > :: ctor (this , menu_item_list) ; this }
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence{pub fn get_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_access_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_animal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_player_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn start_capture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn main_capture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn end_capture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn finish_capture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
 }
 
-#[cfg(feature = "app-animalcatchsequence")]
-pub trait IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods : IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b31920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b319b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence{#[doc="`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]pub fn new(access:crate::app::hubaccess::HubAccess)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalCatchSequence), ::core::stringify!(new),));
+ <Self as IAnimalCatchSequenceMethods> ::ctor(this,access);
+this}
+}
 
-#[cfg(feature = "app-animalcatchsequence")]
-impl < __T : IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes > IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods for __T { }
+#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31890usize)as*mut u8,();
+(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo)__receiver)}
+}
+}
 
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo>IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods for __T{}
 
-#[cfg(feature = "app-animalcatchsequence")]
-impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5780usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequence_CatchConfirmMethods:IAnimalCatchSequence_CatchConfirm{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5700usize)as*mut u8,();
+(AnimalCatchSequence_CatchConfirm)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
+}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence_CatchConfirm>IAnimalCatchSequence_CatchConfirmMethods for __T{}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalCatchSequence_CatchConfirm), ::core::stringify!(new),));
+ <Self as IAnimalCatchSequence_CatchConfirmMethods> ::ctor(this,menu_item_list);
+this}
+}
+
+#[cfg(feature="app-animalcatchsequence")]pub trait IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31920usize)as*mut u8,();
+(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b319b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes)__receiver)}
+}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl<__T:IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes>IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-animalcatchsequence")]impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-animalcatchsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimalCatchSequence_Label;
     pub use super::AnimalCatchSequence;
     pub use super::IAnimalCatchSequence;
     pub use super::IAnimalCatchSequenceMethods;
     pub use super::AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo;
     pub use super::IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo;
     pub use super::IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods;
+    pub use super::AnimalCatchSequence_Label;
     pub use super::AnimalCatchSequence_CatchConfirm;
     pub use super::IAnimalCatchSequence_CatchConfirm;
     pub use super::IAnimalCatchSequence_CatchConfirmMethods;

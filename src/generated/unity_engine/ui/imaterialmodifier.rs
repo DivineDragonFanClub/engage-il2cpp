@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imaterialmodifier/IMaterialModifier.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IMaterialModifier")] pub struct IMaterialModifier {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/imaterialmodifier/IMaterialModifier.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="IMaterialModifier")]pub struct IMaterialModifier{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IMaterialModifier_unity2_raw { use super :: * ; pub unsafe fn get_modified_material (this : IMaterialModifier , base_material : crate :: unity_engine :: material :: Material , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetModifiedMaterial") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetModifiedMaterial" , < IMaterialModifier as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IMaterialModifier , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , base_material , __mi) } }
+#[cfg(feature="unity_engine-ui-imaterialmodifier")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMaterialModifier_unity2_raw{use super:: * ;
+pub unsafe fn get_modified_material(this:IMaterialModifier,base_material:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetModifiedMaterial").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetModifiedMaterial", <IMaterialModifier as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IMaterialModifier,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,base_material,__mi)}
+}
 
-#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
-pub trait IIMaterialModifierMethods : IIMaterialModifier { # [doc = "`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"] fn get_modified_material (self , base_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> crate :: unity_engine :: material :: Material { unsafe { let __receiver = < IMaterialModifier as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IMaterialModifier_unity2_raw :: get_modified_material (__receiver , :: core :: convert :: Into :: into (base_material) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-ui-imaterialmodifier")]pub trait IIMaterialModifierMethods:IIMaterialModifier{#[doc="`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]fn get_modified_material(self,base_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <IMaterialModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IMaterialModifier_unity2_raw::get_modified_material(__receiver, ::core::convert::Into::into(base_material), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
-impl < __T : IIMaterialModifier > IIMaterialModifierMethods for __T { }
+#[cfg(feature="unity_engine-ui-imaterialmodifier")]impl<__T:IIMaterialModifier>IIMaterialModifierMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
-impl IMaterialModifier { pub fn get_modified_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IMaterialModifier as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-ui-imaterialmodifier")]impl IMaterialModifier{pub fn get_modified_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier")]
 #[doc(hidden)]

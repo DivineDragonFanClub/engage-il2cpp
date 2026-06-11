@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyconfigurationattribute/AssemblyConfigurationAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyConfigurationAttribute")] pub struct AssemblyConfigurationAttribute {
-# [offset (16)] # [rename (name = "m_configuration")] pub m_configuration : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblyconfigurationattribute/AssemblyConfigurationAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyConfigurationAttribute")]pub struct AssemblyConfigurationAttribute{#[offset(16)]#[rename(name="m_configuration")]pub m_configuration: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblyconfigurationattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblyconfigurationattribute")]
-pub trait IAssemblyConfigurationAttributeMethods : IAssemblyConfigurationAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , configuration : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyConfigurationAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyConfigurationAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (configuration) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblyconfigurationattribute")]pub trait IAssemblyConfigurationAttributeMethods:IAssemblyConfigurationAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,configuration:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyConfigurationAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401ae0usize)as*mut u8,();
+(AssemblyConfigurationAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(configuration))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblyconfigurationattribute")]
-impl < __T : IAssemblyConfigurationAttribute > IAssemblyConfigurationAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblyconfigurationattribute")]impl<__T:IAssemblyConfigurationAttribute>IAssemblyConfigurationAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblyconfigurationattribute")]
-impl AssemblyConfigurationAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyConfigurationAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblyconfigurationattribute")]impl AssemblyConfigurationAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblyconfigurationattribute")]
-impl AssemblyConfigurationAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (configuration : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyConfigurationAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyConfigurationAttributeMethods > :: ctor (this , configuration) ; this }
+#[cfg(feature="system-reflection-assemblyconfigurationattribute")]impl AssemblyConfigurationAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(configuration: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyConfigurationAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyConfigurationAttributeMethods> ::ctor(this,configuration);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblyconfigurationattribute")]

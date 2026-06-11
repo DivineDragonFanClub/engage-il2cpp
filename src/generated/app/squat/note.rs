@@ -4,241 +4,228 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/note/Note.md"))] # [:: unity2 :: class (namespace = "App.Squat" , name = "Note")] # [parent (crate :: system :: object :: Object)] pub struct Note {
-# [static_field] # [rename (name = "cUIRootPath")] pub c_ui_root_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cUINotesLeft")] pub c_ui_notes_left : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cUINotesRight")] pub c_ui_notes_right : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cUINotesUp")] pub c_ui_notes_up : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cUINotesDown")] pub c_ui_notes_down : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cUINotesClockwise")] pub c_ui_notes_clockwise : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cUINotesUnclockwise")] pub c_ui_notes_unclockwise : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "DisplayHeight")] pub display_height : f32 ,
-# [offset (16)] # [rename (name = "m_NodeImage")] pub m_node_image : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (24)] # [rename (name = "m_ImageAnime")] pub m_image_anime : crate :: unity_engine :: animator :: Animator ,
-# [offset (32)] # [rename (name = "m_ImageTrans")] pub m_image_trans : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (40)] # [rename (name = "m_StickImageTrans")] pub m_stick_image_trans : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (48)] # [rename (name = "m_BaseTrans")] pub m_base_trans : crate :: unity_engine :: transform :: Transform ,
-# [offset (56)] # [rename (name = "m_BaseHeightPerFrame")] pub m_base_height_per_frame : f32 ,
-# [offset (60)] # [rename (name = "m_BaseDiffLength")] pub m_base_diff_length : f32 ,
-# [offset (64)] # [rename (name = "m_StickRangeMult")] pub m_stick_range_mult : f32 ,
-# [offset (80)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
-# [offset (84)] # [rename (name = "m_ClockwiseTimer")] pub m_clockwise_timer : f32 ,
-# [offset (88)] # [rename (name = "m_TimeMult")] pub m_time_mult : f32 ,
-# [offset (92)] # [rename (name = "m_IsPlayClockwiseInputAnime")] pub m_is_play_clockwise_input_anime : bool ,
-# [offset (96)] # [rename (name = "m_FirstP")] pub m_first_p : f32 ,
-# [offset (100)] # [rename (name = "m_FirstG")] pub m_first_g : f32 ,
-# [offset (104)] # [rename (name = "m_FirstB")] pub m_first_b : f32 ,
-# [offset (108)] # [rename (name = "m_LatterP")] pub m_latter_p : f32 ,
-# [offset (112)] # [rename (name = "m_LatterG")] pub m_latter_g : f32 ,
-# [offset (116)] # [rename (name = "m_LatterB")] pub m_latter_b : f32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/squat/note/Note_ResultRank.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Note_ResultRank{pub value:i32,}
+impl::unity2::ClassIdentity for Note_ResultRank{const NAMESPACE: &'static str="App.Squat";
+const NAME: &'static str="Note.ResultRank";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Note_ResultRank{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Note_ResultRank{pub fn perfect()->Self{Self{value:0}
+}
+pub fn good()->Self{Self{value:1}
+}
+pub fn bad()->Self{Self{value:2}
+}
+pub fn miss()->Self{Self{value:3}
+}
+pub fn assist()->Self{Self{value:4}
+}
+pub fn rank_num()->Self{Self{value:5}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_ResultRank.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Note_ResultRank  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/squat/note/Note_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Note_Type{pub value:i32,}
+impl::unity2::ClassIdentity for Note_Type{const NAMESPACE: &'static str="App.Squat";
+const NAME: &'static str="Note.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Note_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Note_Type{pub fn skip()->Self{Self{value:0}
+}
+pub fn right()->Self{Self{value:1}
+}
+pub fn left()->Self{Self{value:2}
+}
+pub fn up()->Self{Self{value:3}
+}
+pub fn down()->Self{Self{value:4}
+}
+pub fn clockwise()->Self{Self{value:5}
+}
+pub fn un_clockwise()->Self{Self{value:6}
+}
+pub fn clockwise_end()->Self{Self{value:50}
+}
+pub fn un_clockwise_end()->Self{Self{value:60}
+}
+pub fn type_count()->Self{Self{value:61}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Note_ResultRank  {
-    const NAMESPACE: &'static str = "App.Squat";
-
-    const NAME: &'static str = "Note.ResultRank";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Note_ResultRank  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Note_ResultRank  {
-    pub fn perfect() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn good() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn bad() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn miss() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn assist() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn rank_num() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Note_Type  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Note_Type  {
-    const NAMESPACE: &'static str = "App.Squat";
-
-    const NAME: &'static str = "Note.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Note_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Note_Type  {
-    pub fn skip() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn up() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn down() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn clockwise() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn un_clockwise() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn clockwise_end() -> Self {
-        Self { value: 50 }
-
-    }
-
-
-    pub fn un_clockwise_end() -> Self {
-        Self { value: 60 }
-
-    }
-
-
-    pub fn type_count() -> Self {
-        Self { value: 61 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/squat/note/Note.md"))]#[::unity2::class(namespace="App.Squat",name="Note")]#[parent(crate::system::object::Object)]pub struct Note{#[static_field]#[rename(name="cUIRootPath")]pub c_ui_root_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cUINotesLeft")]pub c_ui_notes_left: ::unity2::Il2CppString, #[static_field]#[rename(name="cUINotesRight")]pub c_ui_notes_right: ::unity2::Il2CppString, #[static_field]#[rename(name="cUINotesUp")]pub c_ui_notes_up: ::unity2::Il2CppString, #[static_field]#[rename(name="cUINotesDown")]pub c_ui_notes_down: ::unity2::Il2CppString, #[static_field]#[rename(name="cUINotesClockwise")]pub c_ui_notes_clockwise: ::unity2::Il2CppString, #[static_field]#[rename(name="cUINotesUnclockwise")]pub c_ui_notes_unclockwise: ::unity2::Il2CppString, #[static_field]#[rename(name="DisplayHeight")]pub display_height:f32, #[offset(16)]#[rename(name="m_NodeImage")]pub m_node_image:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_ImageAnime")]pub m_image_anime:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_ImageTrans")]pub m_image_trans:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_StickImageTrans")]pub m_stick_image_trans:crate::unity_engine::recttransform::RectTransform, #[offset(48)]#[rename(name="m_BaseTrans")]pub m_base_trans:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="m_BaseHeightPerFrame")]pub m_base_height_per_frame:f32, #[offset(60)]#[rename(name="m_BaseDiffLength")]pub m_base_diff_length:f32, #[offset(64)]#[rename(name="m_StickRangeMult")]pub m_stick_range_mult:f32, #[offset(80)]#[rename(name="m_Timer")]pub m_timer:f32, #[offset(84)]#[rename(name="m_ClockwiseTimer")]pub m_clockwise_timer:f32, #[offset(88)]#[rename(name="m_TimeMult")]pub m_time_mult:f32, #[offset(92)]#[rename(name="m_IsPlayClockwiseInputAnime")]pub m_is_play_clockwise_input_anime:bool, #[offset(96)]#[rename(name="m_FirstP")]pub m_first_p:f32, #[offset(100)]#[rename(name="m_FirstG")]pub m_first_g:f32, #[offset(104)]#[rename(name="m_FirstB")]pub m_first_b:f32, #[offset(108)]#[rename(name="m_LatterP")]pub m_latter_p:f32, #[offset(112)]#[rename(name="m_LatterG")]pub m_latter_g:f32, #[offset(116)]#[rename(name="m_LatterB")]pub m_latter_b:f32,}
 
 }
 
 #[cfg(feature = "app-squat-note-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-squat-note")]
-pub trait INoteMethods : INote { # [doc = "`get_NoteType()` overload"] fn get_note_type (self ,) -> crate :: app :: squat :: note :: Note_Type { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , :: unity2 :: OptionalMethod ,) -> crate :: app :: squat :: note :: Note_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NoteType(crate::app::squat::note::Note_Type)` overload"] fn set_note_type (self , value : impl :: core :: convert :: Into < crate :: app :: squat :: note :: Note_Type >) -> () { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , crate :: app :: squat :: note :: Note_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18bb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFinish()` overload"] fn get_is_finish (self ,) -> bool { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18bc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsFinish(bool)` overload"] fn set_is_finish (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsTrigger()` overload"] fn get_is_trigger (self ,) -> bool { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsTrigger(bool)` overload"] fn set_is_trigger (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsAccepted()` overload"] fn get_is_accepted (self ,) -> bool { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsAccepted(bool)` overload"] fn set_is_accepted (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsClockwiseCheck()` overload"] fn get_is_clockwise_check (self ,) -> bool { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsClockwiseCheck(bool)` overload"] fn set_is_clockwise_check (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18c30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Result()` overload"] fn get_result (self ,) -> crate :: app :: squat :: note :: Note_ResultRank { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , :: unity2 :: OptionalMethod ,) -> crate :: app :: squat :: note :: Note_ResultRank = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18c40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Result(crate::app::squat::note::Note_ResultRank)` overload"] fn set_result (self , value : impl :: core :: convert :: Into < crate :: app :: squat :: note :: Note_ResultRank >) -> () { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , crate :: app :: squat :: note :: Note_ResultRank , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18c50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_RectPos()` overload"] fn get_rect_pos (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetJudgeParam(crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData)` overload"] fn set_judge_param (self , set_judge : impl :: core :: convert :: Into < crate :: app :: musclesquatjudgeareadata :: MuscleSquatJudgeAreaData >) -> () { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , crate :: app :: musclesquatjudgeareadata :: MuscleSquatJudgeAreaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18cb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set_judge) , :: core :: option :: Option :: None) } } } # [doc = "`CreateArrow(bool, *mutcrate::unity_engine::gameobject::GameObject, crate::app::squat::note::Note_Type, f32, f32, crate::unity_engine::transform::Transform, f32)` overload"] fn create_arrow (self , is_right : impl :: core :: convert :: Into < bool > , set_type : impl :: core :: convert :: Into < crate :: app :: squat :: note :: Note_Type > , set_time : impl :: core :: convert :: Into < f32 > , move_height_pf : impl :: core :: convert :: Into < f32 > , base_trans : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , first_time_mult : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: gameobject :: GameObject > :: uninit () ; { let __inner : extern "C" fn (Note , bool , * mut crate :: unity_engine :: gameobject :: GameObject , crate :: app :: squat :: note :: Note_Type , f32 , f32 , crate :: unity_engine :: transform :: Transform , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_right) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (set_type) , :: core :: convert :: Into :: into (set_time) , :: core :: convert :: Into :: into (move_height_pf) , :: core :: convert :: Into :: into (base_trans) , :: core :: convert :: Into :: into (first_time_mult) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`CreateClockWise(bool, *mutcrate::unity_engine::gameobject::GameObject, crate::app::squat::note::Note_Type, f32, f32, f32, crate::unity_engine::transform::Transform, f32, i32)` overload"] fn create_clock_wise (self , is_right : impl :: core :: convert :: Into < bool > , set_type : impl :: core :: convert :: Into < crate :: app :: squat :: note :: Note_Type > , start_time : impl :: core :: convert :: Into < f32 > , end_time : impl :: core :: convert :: Into < f32 > , move_height_pf : impl :: core :: convert :: Into < f32 > , base_trans : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , first_time_mult : impl :: core :: convert :: Into < f32 > , radius_count : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: gameobject :: GameObject > :: uninit () ; { let __inner : extern "C" fn (Note , bool , * mut crate :: unity_engine :: gameobject :: GameObject , crate :: app :: squat :: note :: Note_Type , f32 , f32 , f32 , crate :: unity_engine :: transform :: Transform , f32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f18fa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_right) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (set_type) , :: core :: convert :: Into :: into (start_time) , :: core :: convert :: Into :: into (end_time) , :: core :: convert :: Into :: into (move_height_pf) , :: core :: convert :: Into :: into (base_trans) , :: core :: convert :: Into :: into (first_time_mult) , :: core :: convert :: Into :: into (radius_count) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Note , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f192f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick(f32, *mutcrate::app::squat::stick::Stick, f32, bool, f32, f32, f32, f32, f32, f32, f32)` overload"] fn tick (self , time_mult : impl :: core :: convert :: Into < f32 > , height_pf : impl :: core :: convert :: Into < f32 > , is_top : impl :: core :: convert :: Into < bool > , setfb : impl :: core :: convert :: Into < f32 > , setfg : impl :: core :: convert :: Into < f32 > , setfp : impl :: core :: convert :: Into < f32 > , setlp : impl :: core :: convert :: Into < f32 > , setlg : impl :: core :: convert :: Into < f32 > , setlb : impl :: core :: convert :: Into < f32 > , overwrite_range : impl :: core :: convert :: Into < f32 >) -> crate :: app :: squat :: stick :: Stick { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: squat :: stick :: Stick > :: uninit () ; { let __inner : extern "C" fn (Note , f32 , * mut crate :: app :: squat :: stick :: Stick , f32 , bool , f32 , f32 , f32 , f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f19360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time_mult) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (height_pf) , :: core :: convert :: Into :: into (is_top) , :: core :: convert :: Into :: into (setfb) , :: core :: convert :: Into :: into (setfg) , :: core :: convert :: Into :: into (setfp) , :: core :: convert :: Into :: into (setlp) , :: core :: convert :: Into :: into (setlg) , :: core :: convert :: Into :: into (setlb) , :: core :: convert :: Into :: into (overwrite_range) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`TickArrow(bool, f32, f32, *mutcrate::app::squat::stick::Stick)` overload"] fn tick_arrow (self , is_top : impl :: core :: convert :: Into < bool > , center : impl :: core :: convert :: Into < f32 > , not_check_area : impl :: core :: convert :: Into < f32 >) -> crate :: app :: squat :: stick :: Stick { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: squat :: stick :: Stick > :: uninit () ; { let __inner : extern "C" fn (Note , bool , f32 , f32 , * mut crate :: app :: squat :: stick :: Stick , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f19750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_top) , :: core :: convert :: Into :: into (center) , :: core :: convert :: Into :: into (not_check_area) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`TickArrowJudge(f32, f32, *mutcrate::app::squat::stick::Stick)` overload"] fn tick_arrow_judge (self , center : impl :: core :: convert :: Into < f32 > , not_check_area : impl :: core :: convert :: Into < f32 >) -> crate :: app :: squat :: stick :: Stick { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: squat :: stick :: Stick > :: uninit () ; { let __inner : extern "C" fn (Note , f32 , f32 , * mut crate :: app :: squat :: stick :: Stick , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f19870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (center) , :: core :: convert :: Into :: into (not_check_area) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`TickClockwise(bool, *mutcrate::app::squat::stick::Stick, f32)` overload"] fn tick_clockwise (self , is_top : impl :: core :: convert :: Into < bool > , overwrite_range : impl :: core :: convert :: Into < f32 >) -> crate :: app :: squat :: stick :: Stick { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: squat :: stick :: Stick > :: uninit () ; { let __inner : extern "C" fn (Note , bool , * mut crate :: app :: squat :: stick :: Stick , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f194e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_top) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (overwrite_range) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`TickClockwiseJudge(*mutcrate::app::squat::stick::Stick)` overload"] fn tick_clockwise_judge (self ,) -> crate :: app :: squat :: stick :: Stick { unsafe { let __receiver = < Note as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: app :: squat :: stick :: Stick > :: uninit () ; { let __inner : extern "C" fn (Note , * mut crate :: app :: squat :: stick :: Stick , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f19a20usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="app-squat-note")]pub trait INoteMethods:INote{#[doc="`get_NoteType()` overload"]fn get_note_type(self,)->crate::app::squat::note::Note_Type{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18ba0usize)as*mut u8,crate::app::squat::note::Note_Type;
+(Note)__receiver)}
+}
+#[doc="`set_NoteType(crate::app::squat::note::Note_Type)` overload"]fn set_note_type(self,value:impl::core::convert::Into<crate::app::squat::note::Note_Type>)->(){unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18bb0usize)as*mut u8,();
+(Note)__receiver,(crate::app::squat::note::Note_Type)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsFinish()` overload"]fn get_is_finish(self,)->bool{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18bc0usize)as*mut u8,bool;
+(Note)__receiver)}
+}
+#[doc="`set_IsFinish(bool)` overload"]fn set_is_finish(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18bd0usize)as*mut u8,();
+(Note)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsTrigger()` overload"]fn get_is_trigger(self,)->bool{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18be0usize)as*mut u8,bool;
+(Note)__receiver)}
+}
+#[doc="`set_IsTrigger(bool)` overload"]fn set_is_trigger(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18bf0usize)as*mut u8,();
+(Note)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsAccepted()` overload"]fn get_is_accepted(self,)->bool{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18c00usize)as*mut u8,bool;
+(Note)__receiver)}
+}
+#[doc="`set_IsAccepted(bool)` overload"]fn set_is_accepted(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18c10usize)as*mut u8,();
+(Note)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsClockwiseCheck()` overload"]fn get_is_clockwise_check(self,)->bool{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18c20usize)as*mut u8,bool;
+(Note)__receiver)}
+}
+#[doc="`set_IsClockwiseCheck(bool)` overload"]fn set_is_clockwise_check(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18c30usize)as*mut u8,();
+(Note)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Result()` overload"]fn get_result(self,)->crate::app::squat::note::Note_ResultRank{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18c40usize)as*mut u8,crate::app::squat::note::Note_ResultRank;
+(Note)__receiver)}
+}
+#[doc="`set_Result(crate::app::squat::note::Note_ResultRank)` overload"]fn set_result(self,value:impl::core::convert::Into<crate::app::squat::note::Note_ResultRank>)->(){unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18c50usize)as*mut u8,();
+(Note)__receiver,(crate::app::squat::note::Note_ResultRank)::core::convert::Into::into(value))}
+}
+#[doc="`get_RectPos()` overload"]fn get_rect_pos(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18c60usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(Note)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18c70usize)as*mut u8,();
+(Note)__receiver)}
+}
+#[doc="`SetJudgeParam(crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData)` overload"]fn set_judge_param(self,set_judge:impl::core::convert::Into<crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData>)->(){unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18cb0usize)as*mut u8,();
+(Note)__receiver,(crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData)::core::convert::Into::into(set_judge))}
+}
+#[doc="`CreateArrow(bool, *mutcrate::unity_engine::gameobject::GameObject, crate::app::squat::note::Note_Type, f32, f32, crate::unity_engine::transform::Transform, f32)` overload"]fn create_arrow(self,is_right:impl::core::convert::Into<bool> ,set_type:impl::core::convert::Into<crate::app::squat::note::Note_Type> ,set_time:impl::core::convert::Into<f32> ,move_height_pf:impl::core::convert::Into<f32> ,base_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,first_time_mult:impl::core::convert::Into<f32>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::gameobject::GameObject> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18cf0usize)as*mut u8,();
+(Note)__receiver,(bool)::core::convert::Into::into(is_right),(*mut crate::unity_engine::gameobject::GameObject)__out_0.as_mut_ptr(),(crate::app::squat::note::Note_Type)::core::convert::Into::into(set_type),(f32)::core::convert::Into::into(set_time),(f32)::core::convert::Into::into(move_height_pf),(crate::unity_engine::transform::Transform)::core::convert::Into::into(base_trans),(f32)::core::convert::Into::into(first_time_mult));
+__out_0.assume_init()}
+}
+#[doc="`CreateClockWise(bool, *mutcrate::unity_engine::gameobject::GameObject, crate::app::squat::note::Note_Type, f32, f32, f32, crate::unity_engine::transform::Transform, f32, i32)` overload"]fn create_clock_wise(self,is_right:impl::core::convert::Into<bool> ,set_type:impl::core::convert::Into<crate::app::squat::note::Note_Type> ,start_time:impl::core::convert::Into<f32> ,end_time:impl::core::convert::Into<f32> ,move_height_pf:impl::core::convert::Into<f32> ,base_trans:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,first_time_mult:impl::core::convert::Into<f32> ,radius_count:impl::core::convert::Into<i32>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::gameobject::GameObject> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f18fa0usize)as*mut u8,();
+(Note)__receiver,(bool)::core::convert::Into::into(is_right),(*mut crate::unity_engine::gameobject::GameObject)__out_0.as_mut_ptr(),(crate::app::squat::note::Note_Type)::core::convert::Into::into(set_type),(f32)::core::convert::Into::into(start_time),(f32)::core::convert::Into::into(end_time),(f32)::core::convert::Into::into(move_height_pf),(crate::unity_engine::transform::Transform)::core::convert::Into::into(base_trans),(f32)::core::convert::Into::into(first_time_mult),(i32)::core::convert::Into::into(radius_count));
+__out_0.assume_init()}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f192f0usize)as*mut u8,();
+(Note)__receiver)}
+}
+#[doc="`Tick(f32, *mutcrate::app::squat::stick::Stick, f32, bool, f32, f32, f32, f32, f32, f32, f32)` overload"]fn tick(self,time_mult:impl::core::convert::Into<f32> ,height_pf:impl::core::convert::Into<f32> ,is_top:impl::core::convert::Into<bool> ,setfb:impl::core::convert::Into<f32> ,setfg:impl::core::convert::Into<f32> ,setfp:impl::core::convert::Into<f32> ,setlp:impl::core::convert::Into<f32> ,setlg:impl::core::convert::Into<f32> ,setlb:impl::core::convert::Into<f32> ,overwrite_range:impl::core::convert::Into<f32>)->crate::app::squat::stick::Stick{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::squat::stick::Stick> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f19360usize)as*mut u8,();
+(Note)__receiver,(f32)::core::convert::Into::into(time_mult),(*mut crate::app::squat::stick::Stick)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(height_pf),(bool)::core::convert::Into::into(is_top),(f32)::core::convert::Into::into(setfb),(f32)::core::convert::Into::into(setfg),(f32)::core::convert::Into::into(setfp),(f32)::core::convert::Into::into(setlp),(f32)::core::convert::Into::into(setlg),(f32)::core::convert::Into::into(setlb),(f32)::core::convert::Into::into(overwrite_range));
+__out_0.assume_init()}
+}
+#[doc="`TickArrow(bool, f32, f32, *mutcrate::app::squat::stick::Stick)` overload"]fn tick_arrow(self,is_top:impl::core::convert::Into<bool> ,center:impl::core::convert::Into<f32> ,not_check_area:impl::core::convert::Into<f32>)->crate::app::squat::stick::Stick{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::squat::stick::Stick> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f19750usize)as*mut u8,();
+(Note)__receiver,(bool)::core::convert::Into::into(is_top),(f32)::core::convert::Into::into(center),(f32)::core::convert::Into::into(not_check_area),(*mut crate::app::squat::stick::Stick)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`TickArrowJudge(f32, f32, *mutcrate::app::squat::stick::Stick)` overload"]fn tick_arrow_judge(self,center:impl::core::convert::Into<f32> ,not_check_area:impl::core::convert::Into<f32>)->crate::app::squat::stick::Stick{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::squat::stick::Stick> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f19870usize)as*mut u8,();
+(Note)__receiver,(f32)::core::convert::Into::into(center),(f32)::core::convert::Into::into(not_check_area),(*mut crate::app::squat::stick::Stick)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`TickClockwise(bool, *mutcrate::app::squat::stick::Stick, f32)` overload"]fn tick_clockwise(self,is_top:impl::core::convert::Into<bool> ,overwrite_range:impl::core::convert::Into<f32>)->crate::app::squat::stick::Stick{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::squat::stick::Stick> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f194e0usize)as*mut u8,();
+(Note)__receiver,(bool)::core::convert::Into::into(is_top),(*mut crate::app::squat::stick::Stick)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(overwrite_range));
+__out_0.assume_init()}
+}
+#[doc="`TickClockwiseJudge(*mutcrate::app::squat::stick::Stick)` overload"]fn tick_clockwise_judge(self,)->crate::app::squat::stick::Stick{unsafe{let __receiver= <Note as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::squat::stick::Stick> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f19a20usize)as*mut u8,();
+(Note)__receiver,(*mut crate::app::squat::stick::Stick)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "app-squat-note")]
-impl < __T : INote > INoteMethods for __T { }
+#[cfg(feature="app-squat-note")]impl<__T:INote>INoteMethods for __T{}
 
-#[cfg(feature = "app-squat-note")]
-impl Note { pub fn get_note_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_note_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_is_finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_is_trigger_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_accepted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_is_accepted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_is_clockwise_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_is_clockwise_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_rect_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_judge_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn create_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn create_clock_wise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn tick_arrow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn tick_arrow_judge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn tick_clockwise_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn tick_clockwise_judge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Note as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } }
+#[cfg(feature="app-squat-note")]impl Note{pub fn get_note_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_note_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_finish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_finish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_is_trigger_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_accepted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_is_accepted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_is_clockwise_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_is_clockwise_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_rect_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_judge_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn create_arrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn create_clock_wise_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn tick_arrow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn tick_arrow_judge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn tick_clockwise_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn tick_clockwise_judge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+}
 
-#[cfg(feature = "app-squat-note")]
-impl Note {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Note) , :: core :: stringify ! (new) ,)) ; < Self as INoteMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-squat-note")]impl Note{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Note), ::core::stringify!(new),));
+ <Self as INoteMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-squat-note")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Note_ResultRank;
+    pub use super::Note_Type;
     pub use super::Note;
     pub use super::INote;
     pub use super::INoteMethods;
-    pub use super::Note_ResultRank;
-    pub use super::Note_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

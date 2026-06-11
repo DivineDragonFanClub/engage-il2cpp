@@ -4,94 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistdata/FriendListData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FriendListData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: friendlistdata :: FriendListData >)] pub struct FriendListData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistdata/FriendListData.md"))]#[::unity2::class(namespace="App",name="FriendListData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::friendlistdata::FriendListData>)]pub struct FriendListData{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistdata/FriendListData_States.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FriendListData_States  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistdata/FriendListData_States.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FriendListData_States{pub value:i32,}
+impl::unity2::ClassIdentity for FriendListData_States{const NAMESPACE: &'static str="App";
+const NAME: &'static str="FriendListData.States";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for FriendListData_States  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FriendListData.States";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for FriendListData_States{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for FriendListData_States  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl FriendListData_States{pub fn hide()->Self{Self{value:0}
 }
-
-
-impl  FriendListData_States  {
-    pub fn hide() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn level_none() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn level_c() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn level_b() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn level_a() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn level_a_plus() -> Self {
-        Self { value: 5 }
-
-    }
-
+pub fn level_none()->Self{Self{value:1}
+}
+pub fn level_c()->Self{Self{value:2}
+}
+pub fn level_b()->Self{Self{value:3}
+}
+pub fn level_a()->Self{Self{value:4}
+}
+pub fn level_a_plus()->Self{Self{value:5}
+}
 }
 
 }
@@ -99,21 +50,149 @@ impl  FriendListData_States  {
 #[cfg(feature = "app-friendlistdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-friendlistdata")]
-impl FriendListData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ea60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetFlagName(crate::app::persondata::PersonData)` overload"] pub fn get_flag_name (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ec20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`GetState(::unity2::Il2CppString)` overload"] pub fn get_state (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: friendlistdata :: FriendListData_States { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: friendlistdata :: FriendListData_States = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ec90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`GetState(crate::app::persondata::PersonData)` overload"] pub fn get_state_2 (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> crate :: app :: friendlistdata :: FriendListData_States { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> crate :: app :: friendlistdata :: FriendListData_States = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ed20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`SetState(::unity2::Il2CppString, crate::app::friendlistdata::FriendListData_States)` overload"] pub fn set_state (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , state : impl :: core :: convert :: Into < crate :: app :: friendlistdata :: FriendListData_States >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: friendlistdata :: FriendListData_States , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ee50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`SetState(crate::app::persondata::PersonData, crate::app::friendlistdata::FriendListData_States)` overload"] pub fn set_state_2 (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData > , state : impl :: core :: convert :: Into < crate :: app :: friendlistdata :: FriendListData_States >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , crate :: app :: friendlistdata :: FriendListData_States , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eee0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateState(::unity2::Il2CppString)` overload"] pub fn update_state (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226f100usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateState(crate::app::persondata::PersonData)` overload"] pub fn update_state_2 (person : impl :: core :: convert :: Into < crate :: app :: persondata :: PersonData >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: persondata :: PersonData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226f190usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (person) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateStateForMascot(crate::app::friendlistdata::FriendListData_States)` overload"] pub fn update_state_for_mascot (state : impl :: core :: convert :: Into < crate :: app :: friendlistdata :: FriendListData_States >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: friendlistdata :: FriendListData_States , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226f390usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226f5e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-friendlistdata")]impl FriendListData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226ea60usize)as*mut u8,();
+)}
+}
+#[doc="`GetFlagName(crate::app::persondata::PersonData)` overload"]pub fn get_flag_name(person:impl::core::convert::Into<crate::app::persondata::PersonData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226ec20usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`GetState(::unity2::Il2CppString)` overload"]pub fn get_state(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::friendlistdata::FriendListData_States{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226ec90usize)as*mut u8,crate::app::friendlistdata::FriendListData_States;
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`GetState(crate::app::persondata::PersonData)` overload"]pub fn get_state_2(person:impl::core::convert::Into<crate::app::persondata::PersonData>)->crate::app::friendlistdata::FriendListData_States{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226ed20usize)as*mut u8,crate::app::friendlistdata::FriendListData_States;
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`SetState(::unity2::Il2CppString, crate::app::friendlistdata::FriendListData_States)` overload"]pub fn set_state(pid:impl::core::convert::Into< ::unity2::Il2CppString> ,state:impl::core::convert::Into<crate::app::friendlistdata::FriendListData_States>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226ee50usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(pid),(crate::app::friendlistdata::FriendListData_States)::core::convert::Into::into(state))}
+}
+#[doc="`SetState(crate::app::persondata::PersonData, crate::app::friendlistdata::FriendListData_States)` overload"]pub fn set_state_2(person:impl::core::convert::Into<crate::app::persondata::PersonData> ,state:impl::core::convert::Into<crate::app::friendlistdata::FriendListData_States>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226eee0usize)as*mut u8,();
+(crate::app::persondata::PersonData)::core::convert::Into::into(person),(crate::app::friendlistdata::FriendListData_States)::core::convert::Into::into(state))}
+}
+#[doc="`UpdateState(::unity2::Il2CppString)` overload"]pub fn update_state(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226f100usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`UpdateState(crate::app::persondata::PersonData)` overload"]pub fn update_state_2(person:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226f190usize)as*mut u8,();
+(crate::app::persondata::PersonData)::core::convert::Into::into(person))}
+}
+#[doc="`UpdateStateForMascot(crate::app::friendlistdata::FriendListData_States)` overload"]pub fn update_state_for_mascot(state:impl::core::convert::Into<crate::app::friendlistdata::FriendListData_States>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226f390usize)as*mut u8,();
+(crate::app::friendlistdata::FriendListData_States)::core::convert::Into::into(state))}
+}
+#[doc="`RegistGlobalFlags()` overload"]pub fn regist_global_flags()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226f5e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-friendlistdata")]
-pub trait IFriendListDataMethods : IFriendListData { # [doc = "`get_FLID()` overload"] fn get_flid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eb10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FLID(::unity2::Il2CppString)` overload"] fn set_flid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eb20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PID()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PID(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eb40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> i8 { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eb50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level(i8)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eb60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ContentText()` overload"] fn get_content_text (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eb70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ContentText(::unity2::Il2CppString)` overload"] fn set_content_text (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eb80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_StampName()` overload"] fn get_stamp_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eb90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_StampName(::unity2::Il2CppString)` overload"] fn set_stamp_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226eba0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ImageName()` overload"] fn get_image_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ebb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ImageName(::unity2::Il2CppString)` overload"] fn set_image_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ebc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ImageNameS()` overload"] fn get_image_name_s (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ebd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ImageNameS(::unity2::Il2CppString)` overload"] fn set_image_name_s (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ebe0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Country()` overload"] fn get_country (self ,) -> i8 { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> i8 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ebf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Country(i8)` overload"] fn set_country (self , value : impl :: core :: convert :: Into < i8 >) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , i8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ec00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226ec10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FriendListData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FriendListData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x226f860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-friendlistdata")]pub trait IFriendListDataMethods:IFriendListData{#[doc="`get_FLID()` overload"]fn get_flid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eb10usize)as*mut u8, ::unity2::Il2CppString;
+(FriendListData)__receiver)}
+}
+#[doc="`set_FLID(::unity2::Il2CppString)` overload"]fn set_flid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eb20usize)as*mut u8,();
+(FriendListData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PID()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eb30usize)as*mut u8, ::unity2::Il2CppString;
+(FriendListData)__receiver)}
+}
+#[doc="`set_PID(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eb40usize)as*mut u8,();
+(FriendListData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->i8{unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eb50usize)as*mut u8,i8;
+(FriendListData)__receiver)}
+}
+#[doc="`set_Level(i8)` overload"]fn set_level(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eb60usize)as*mut u8,();
+(FriendListData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_ContentText()` overload"]fn get_content_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eb70usize)as*mut u8, ::unity2::Il2CppString;
+(FriendListData)__receiver)}
+}
+#[doc="`set_ContentText(::unity2::Il2CppString)` overload"]fn set_content_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eb80usize)as*mut u8,();
+(FriendListData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_StampName()` overload"]fn get_stamp_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eb90usize)as*mut u8, ::unity2::Il2CppString;
+(FriendListData)__receiver)}
+}
+#[doc="`set_StampName(::unity2::Il2CppString)` overload"]fn set_stamp_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226eba0usize)as*mut u8,();
+(FriendListData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ImageName()` overload"]fn get_image_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ebb0usize)as*mut u8, ::unity2::Il2CppString;
+(FriendListData)__receiver)}
+}
+#[doc="`set_ImageName(::unity2::Il2CppString)` overload"]fn set_image_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ebc0usize)as*mut u8,();
+(FriendListData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_ImageNameS()` overload"]fn get_image_name_s(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ebd0usize)as*mut u8, ::unity2::Il2CppString;
+(FriendListData)__receiver)}
+}
+#[doc="`set_ImageNameS(::unity2::Il2CppString)` overload"]fn set_image_name_s(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ebe0usize)as*mut u8,();
+(FriendListData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Country()` overload"]fn get_country(self,)->i8{unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ebf0usize)as*mut u8,i8;
+(FriendListData)__receiver)}
+}
+#[doc="`set_Country(i8)` overload"]fn set_country(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ec00usize)as*mut u8,();
+(FriendListData)__receiver,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ec10usize)as*mut u8, ::unity2::Il2CppString;
+(FriendListData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FriendListData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226f860usize)as*mut u8,();
+(FriendListData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-friendlistdata")]
-impl < __T : IFriendListData > IFriendListDataMethods for __T { }
+#[cfg(feature="app-friendlistdata")]impl<__T:IFriendListData>IFriendListDataMethods for __T{}
 
-#[cfg(feature = "app-friendlistdata")]
-impl FriendListData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_flid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_flid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_content_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_content_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_stamp_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_stamp_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_image_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_image_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_image_name_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_image_name_s_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_country_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_country_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_flag_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_state_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_state_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn update_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn update_state_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn update_state_for_mascot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FriendListData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } }
+#[cfg(feature="app-friendlistdata")]impl FriendListData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_flid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_flid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_content_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_content_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_stamp_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_stamp_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_image_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_image_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_image_name_s_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_image_name_s_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_country_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_country_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_flag_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_state_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_state_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn update_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn update_state_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn update_state_for_mascot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn regist_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+}
 
-#[cfg(feature = "app-friendlistdata")]
-impl FriendListData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FriendListData) , :: core :: stringify ! (new) ,)) ; < Self as IFriendListDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-friendlistdata")]impl FriendListData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FriendListData), ::core::stringify!(new),));
+ <Self as IFriendListDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-friendlistdata")]

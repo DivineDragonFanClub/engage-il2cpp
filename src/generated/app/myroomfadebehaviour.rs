@@ -4,32 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: playables :: playablebehaviour :: { IPlayableBehaviour , PlayableBehaviour }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomfadebehaviour/MyRoomFadeBehaviour.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomFadeBehaviour")] # [parent (crate :: unity_engine :: playables :: playablebehaviour :: PlayableBehaviour)] pub struct MyRoomFadeBehaviour {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomfadebehaviour/MyRoomFadeBehaviour.md"))]#[::unity2::class(namespace="App",name="MyRoomFadeBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct MyRoomFadeBehaviour{}
 
 }
 
 #[cfg(feature = "app-myroomfadebehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomfadebehaviour")]
-pub trait IMyRoomFadeBehaviourMethods : IMyRoomFadeBehaviour { # [doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"] fn process_frame (self , playable : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playable :: Playable > , info : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData > , player_data : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < MyRoomFadeBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomFadeBehaviour , crate :: unity_engine :: playables :: playable :: Playable , crate :: unity_engine :: playables :: framedata :: FrameData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238fc40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (playable) , :: core :: convert :: Into :: into (info) , :: core :: convert :: Into :: into (player_data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomFadeBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomFadeBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238ff50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomfadebehaviour")]pub trait IMyRoomFadeBehaviourMethods:IMyRoomFadeBehaviour{#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <MyRoomFadeBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238fc40usize)as*mut u8,();
+(MyRoomFadeBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomFadeBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238ff50usize)as*mut u8,();
+(MyRoomFadeBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomfadebehaviour")]
-impl < __T : IMyRoomFadeBehaviour > IMyRoomFadeBehaviourMethods for __T { }
+#[cfg(feature="app-myroomfadebehaviour")]impl<__T:IMyRoomFadeBehaviour>IMyRoomFadeBehaviourMethods for __T{}
 
-#[cfg(feature = "app-myroomfadebehaviour")]
-impl MyRoomFadeBehaviour { pub fn process_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomFadeBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomFadeBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-myroomfadebehaviour")]impl MyRoomFadeBehaviour{pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-myroomfadebehaviour")]
-impl MyRoomFadeBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomFadeBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomFadeBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomfadebehaviour")]impl MyRoomFadeBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomFadeBehaviour), ::core::stringify!(new),));
+ <Self as IMyRoomFadeBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomfadebehaviour")]

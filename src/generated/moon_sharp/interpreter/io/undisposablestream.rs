@@ -4,37 +4,394 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: stream :: { IStream , Stream }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::stream::{IStream,Stream}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/io/undisposablestream/UndisposableStream.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.IO" , name = "UndisposableStream")] # [parent (crate :: system :: io :: stream :: Stream)] pub struct UndisposableStream {
-# [offset (40)] # [rename (name = "m_Stream")] pub m_stream : crate :: system :: io :: stream :: Stream ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/io/undisposablestream/UndisposableStream.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.IO",name="UndisposableStream")]#[parent(crate::system::io::stream::Stream)]pub struct UndisposableStream{#[offset(40)]#[rename(name="m_Stream")]pub m_stream:crate::system::io::stream::Stream,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-io-undisposablestream-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-io-undisposablestream")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __UndisposableStream_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: io :: stream :: Stream as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dispose { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "Dispose" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "Dispose" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_close { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "Close" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "Close" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_can_read { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "get_CanRead" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "get_CanRead" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_can_seek { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "get_CanSeek" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "get_CanSeek" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_can_write { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "get_CanWrite" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "get_CanWrite" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_flush { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "Flush" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "Flush" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "get_Length" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "get_Length" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "get_Position" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "get_Position" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_position { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "set_Position" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "set_Position" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "Read" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "Read" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_seek { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i64 as :: unity2 :: IlType > :: il_type () , < crate :: system :: io :: seekorigin :: SeekOrigin as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "Seek" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "Seek" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_length { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i64 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "SetLength" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "SetLength" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Array < u8 > as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type () , < i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "Write" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "Write" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_can_timeout { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "get_CanTimeout" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "get_CanTimeout" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "Equals" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "Equals" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_hash_code { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "GetHashCode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "GetHashCode" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_read_byte { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "ReadByte" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "ReadByte" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_read_timeout { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "get_ReadTimeout" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "get_ReadTimeout" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_read_timeout { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "set_ReadTimeout" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "set_ReadTimeout" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_to_string { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "ToString" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "ToString" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_write_byte { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< u8 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "WriteByte" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "WriteByte" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_write_timeout { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "get_WriteTimeout" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "get_WriteTimeout" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_write_timeout { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< UndisposableStream as :: unity2 :: ClassIdentity > :: class () , "set_WriteTimeout" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < UndisposableStream as :: unity2 :: ClassIdentity > :: NAME , "set_WriteTimeout" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-io-undisposablestream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UndisposableStream_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::io::stream::Stream as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_dispose{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"Dispose",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"Dispose",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_close{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"Close",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"Close",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_can_read{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"get_CanRead",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"get_CanRead",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_can_seek{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"get_CanSeek",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"get_CanSeek",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_can_write{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"get_CanWrite",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"get_CanWrite",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_flush{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"Flush",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"Flush",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_length{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"get_Length",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"get_Length",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_position{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"get_Position",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"get_Position",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_position{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i64 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"set_Position",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"set_Position",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<u8>as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"Read",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"Read",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_seek{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i64 as::unity2::IlType> ::il_type(), <crate::system::io::seekorigin::SeekOrigin as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"Seek",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"Seek",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_length{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i64 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"SetLength",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"SetLength",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_write{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<u8>as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"Write",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"Write",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_can_timeout{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"get_CanTimeout",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"get_CanTimeout",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"Equals",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_hash_code{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"GetHashCode",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"GetHashCode",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read_byte{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"ReadByte",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"ReadByte",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_read_timeout{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"get_ReadTimeout",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"get_ReadTimeout",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_read_timeout{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"set_ReadTimeout",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"set_ReadTimeout",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"ToString",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_write_byte{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<u8 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"WriteByte",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"WriteByte",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_write_timeout{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"get_WriteTimeout",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"get_WriteTimeout",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_write_timeout{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<UndisposableStream as::unity2::ClassIdentity> ::class(),"set_WriteTimeout",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <UndisposableStream as::unity2::ClassIdentity> ::NAME,"set_WriteTimeout",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-io-undisposablestream")]
-pub trait IUndisposableStreamMethods : IUndisposableStream { # [doc = "`.ctor(crate::system::io::stream::Stream)` overload"] fn ctor (self , stream : impl :: core :: convert :: Into < crate :: system :: io :: stream :: Stream >) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , crate :: system :: io :: stream :: Stream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose(bool)` overload"] fn dispose (self , disposing : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_dispose :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (disposing) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_close :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanRead()` overload"] fn get_can_read (self ,) -> bool { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_get_can_read :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanSeek()` overload"] fn get_can_seek (self ,) -> bool { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_get_can_seek :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanWrite()` overload"] fn get_can_write (self ,) -> bool { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_get_can_write :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Flush()` overload"] fn flush (self ,) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_flush :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Length()` overload"] fn get_length (self ,) -> i64 { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_get_length :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Position()` overload"] fn get_position (self ,) -> i64 { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_get_position :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Position(i64)` overload"] fn set_position (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_set_position :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u8>, i32, i32)` overload"] fn read (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_read :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"] fn seek (self , offset : impl :: core :: convert :: Into < i64 > , origin : impl :: core :: convert :: Into < crate :: system :: io :: seekorigin :: SeekOrigin >) -> i64 { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , i64 , crate :: system :: io :: seekorigin :: SeekOrigin , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_seek :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (origin) , :: core :: option :: Option :: None) } } } # [doc = "`SetLength(i64)` overload"] fn set_length (self , value : impl :: core :: convert :: Into < i64 >) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_set_length :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Write(::unity2::Array<u8>, i32, i32)` overload"] fn write (self , buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , offset : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: Array < u8 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_write :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (buffer) , :: core :: convert :: Into :: into (offset) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`get_CanTimeout()` overload"] fn get_can_timeout (self ,) -> bool { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_get_can_timeout :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_equals :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_get_hash_code :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadByte()` overload"] fn read_byte (self ,) -> i32 { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_read_byte :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReadTimeout()` overload"] fn get_read_timeout (self ,) -> i32 { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_get_read_timeout :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ReadTimeout(i32)` overload"] fn set_read_timeout (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_set_read_timeout :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_to_string :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WriteByte(u8)` overload"] fn write_byte (self , value : impl :: core :: convert :: Into < u8 >) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , u8 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_write_byte :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WriteTimeout()` overload"] fn get_write_timeout (self ,) -> i32 { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_get_write_timeout :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WriteTimeout(i32)` overload"] fn set_write_timeout (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UndisposableStream as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UndisposableStream , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__UndisposableStream_unity2_raw :: __lookup_set_write_timeout :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-io-undisposablestream")]pub trait IUndisposableStreamMethods:IUndisposableStream{#[doc="`.ctor(crate::system::io::stream::Stream)` overload"]fn ctor(self,stream:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(UndisposableStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream))}
+}
+#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_dispose::get_method_info().method_ptr,();
+(UndisposableStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_close::get_method_info().method_ptr,();
+(UndisposableStream)__receiver)}
+}
+#[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_get_can_read::get_method_info().method_ptr,bool;
+(UndisposableStream)__receiver)}
+}
+#[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_get_can_seek::get_method_info().method_ptr,bool;
+(UndisposableStream)__receiver)}
+}
+#[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_get_can_write::get_method_info().method_ptr,bool;
+(UndisposableStream)__receiver)}
+}
+#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_flush::get_method_info().method_ptr,();
+(UndisposableStream)__receiver)}
+}
+#[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_get_length::get_method_info().method_ptr,i64;
+(UndisposableStream)__receiver)}
+}
+#[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_get_position::get_method_info().method_ptr,i64;
+(UndisposableStream)__receiver)}
+}
+#[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_set_position::get_method_info().method_ptr,();
+(UndisposableStream)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_read::get_method_info().method_ptr,i32;
+(UndisposableStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_seek::get_method_info().method_ptr,i64;
+(UndisposableStream)__receiver,(i64)::core::convert::Into::into(offset),(crate::system::io::seekorigin::SeekOrigin)::core::convert::Into::into(origin))}
+}
+#[doc="`SetLength(i64)` overload"]fn set_length(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_set_length::get_method_info().method_ptr,();
+(UndisposableStream)__receiver,(i64)::core::convert::Into::into(value))}
+}
+#[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_write::get_method_info().method_ptr,();
+(UndisposableStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`get_CanTimeout()` overload"]fn get_can_timeout(self,)->bool{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_get_can_timeout::get_method_info().method_ptr,bool;
+(UndisposableStream)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_equals::get_method_info().method_ptr,bool;
+(UndisposableStream)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_get_hash_code::get_method_info().method_ptr,i32;
+(UndisposableStream)__receiver)}
+}
+#[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_read_byte::get_method_info().method_ptr,i32;
+(UndisposableStream)__receiver)}
+}
+#[doc="`get_ReadTimeout()` overload"]fn get_read_timeout(self,)->i32{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_get_read_timeout::get_method_info().method_ptr,i32;
+(UndisposableStream)__receiver)}
+}
+#[doc="`set_ReadTimeout(i32)` overload"]fn set_read_timeout(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_set_read_timeout::get_method_info().method_ptr,();
+(UndisposableStream)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
+(UndisposableStream)__receiver)}
+}
+#[doc="`WriteByte(u8)` overload"]fn write_byte(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_write_byte::get_method_info().method_ptr,();
+(UndisposableStream)__receiver,(u8)::core::convert::Into::into(value))}
+}
+#[doc="`get_WriteTimeout()` overload"]fn get_write_timeout(self,)->i32{unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_get_write_timeout::get_method_info().method_ptr,i32;
+(UndisposableStream)__receiver)}
+}
+#[doc="`set_WriteTimeout(i32)` overload"]fn set_write_timeout(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UndisposableStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__UndisposableStream_unity2_raw::__lookup_set_write_timeout::get_method_info().method_ptr,();
+(UndisposableStream)__receiver,(i32)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-io-undisposablestream")]
-impl < __T : IUndisposableStream > IUndisposableStreamMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-io-undisposablestream")]impl<__T:IUndisposableStream>IUndisposableStreamMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-io-undisposablestream")]
-impl UndisposableStream { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_can_read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_can_seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_can_write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn flush_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn seek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn write_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_can_timeout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn read_byte_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_read_timeout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_read_timeout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn write_byte_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_write_timeout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_write_timeout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UndisposableStream as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } }
+#[cfg(feature="moon_sharp-interpreter-io-undisposablestream")]impl UndisposableStream{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_can_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_can_seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_can_write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn flush_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn seek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_can_timeout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn read_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_read_timeout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_read_timeout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn write_byte_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_write_timeout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_write_timeout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-io-undisposablestream")]
-impl UndisposableStream {
-# [doc = "`.ctor(crate::system::io::stream::Stream)` — overload selector"] pub fn new (stream : crate :: system :: io :: stream :: Stream) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UndisposableStream) , :: core :: stringify ! (new) ,)) ; < Self as IUndisposableStreamMethods > :: ctor (this , stream) ; this }
+#[cfg(feature="moon_sharp-interpreter-io-undisposablestream")]impl UndisposableStream{#[doc="`.ctor(crate::system::io::stream::Stream)` — overload selector"]pub fn new(stream:crate::system::io::stream::Stream)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UndisposableStream), ::core::stringify!(new),));
+ <Self as IUndisposableStreamMethods> ::ctor(this,stream);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-io-undisposablestream")]

@@ -4,45 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/resourcecache/ResourceCache.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ResourceCache")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: combat :: resourcecache :: ResourceCache >)] pub struct ResourceCache {
-# [offset (32)] # [rename (name = "dic")] pub dic : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/resourcecache/ResourceCache.md"))]#[::unity2::class(namespace="Combat",name="ResourceCache")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::combat::resourcecache::ResourceCache>)]pub struct ResourceCache{#[offset(32)]#[rename(name="dic")]pub dic:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::resourcehandle_2::ResourceHandle_2> ,}
 
 }
 
 #[cfg(feature = "combat-resourcecache-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-resourcecache")]
-impl ResourceCache { # [doc = "`LoadAsync(::unity2::Il2CppString, crate::system::action_1::Action_1<crate::unity_engine::object_2::Object_2>)` overload"] pub fn load_async (asset_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , done_callback : impl :: core :: convert :: Into < crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: object_2 :: Object_2 > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: object_2 :: Object_2 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013890usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset_path) , :: core :: convert :: Into :: into (done_callback) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-resourcecache")]impl ResourceCache{#[doc="`LoadAsync(::unity2::Il2CppString, crate::system::action_1::Action_1<crate::unity_engine::object_2::Object_2>)` overload"]pub fn load_async(asset_path:impl::core::convert::Into< ::unity2::Il2CppString> ,done_callback:impl::core::convert::Into<crate::system::action_1::Action_1<crate::unity_engine::object_2::Object_2> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2013890usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(asset_path),(crate::system::action_1::Action_1<crate::unity_engine::object_2::Object_2>)::core::convert::Into::into(done_callback))}
+}
+}
 
-#[cfg(feature = "combat-resourcecache")]
-pub trait IResourceCacheMethods : IResourceCache { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < ResourceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20134c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < ResourceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Create(::unity2::Il2CppString)` overload"] fn create (self , asset_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: resourcehandle_2 :: ResourceHandle_2 { unsafe { let __receiver = < ResourceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceCache , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: resourcehandle_2 :: ResourceHandle_2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013700usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (asset_path) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ResourceCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceCache , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2013a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-resourcecache")]pub trait IResourceCacheMethods:IResourceCache{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <ResourceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20134c0usize)as*mut u8,();
+(ResourceCache)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <ResourceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2013570usize)as*mut u8,();
+(ResourceCache)__receiver)}
+}
+#[doc="`Create(::unity2::Il2CppString)` overload"]fn create(self,asset_path:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::resourcehandle_2::ResourceHandle_2{unsafe{let __receiver= <ResourceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2013700usize)as*mut u8,crate::app::resourcehandle_2::ResourceHandle_2;
+(ResourceCache)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(asset_path))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ResourceCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2013a60usize)as*mut u8,();
+(ResourceCache)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-resourcecache")]
-impl < __T : IResourceCache > IResourceCacheMethods for __T { }
+#[cfg(feature="combat-resourcecache")]impl<__T:IResourceCache>IResourceCacheMethods for __T{}
 
-#[cfg(feature = "combat-resourcecache")]
-impl ResourceCache { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-resourcecache")]impl ResourceCache{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-resourcecache")]
-impl ResourceCache {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ResourceCache) , :: core :: stringify ! (new) ,)) ; < Self as IResourceCacheMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-resourcecache")]impl ResourceCache{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ResourceCache), ::core::stringify!(new),));
+ <Self as IResourceCacheMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-resourcecache")]

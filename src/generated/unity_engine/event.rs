@@ -4,39 +4,204 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event/Event.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Event")] # [parent (crate :: system :: object :: Object)] pub struct Event {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-# [static_field] # [rename (name = "s_Current")] pub s_current : crate :: unity_engine :: event :: Event ,
-# [static_field] # [rename (name = "s_MasterEvent")] pub s_master_event : crate :: unity_engine :: event :: Event ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event/Event.md"))]#[::unity2::class(namespace="UnityEngine",name="Event")]#[parent(crate::system::object::Object)]pub struct Event{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[static_field]#[rename(name="s_Current")]pub s_current:crate::unity_engine::event::Event, #[static_field]#[rename(name="s_MasterEvent")]pub s_master_event:crate::unity_engine::event::Event,}
 
 }
 
 #[cfg(feature = "unity_engine-event-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event")]
-impl Event { # [doc = "`Internal_Create(i32)` overload"] pub fn internal_create (display_index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37c20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (display_index) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_Destroy(::unity2::IntPtr)` overload"] pub fn internal_destroy (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37c70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } # [doc = "`PopEvent(crate::unity_engine::event::Event)` overload"] pub fn pop_event (out_event : impl :: core :: convert :: Into < crate :: unity_engine :: event :: Event >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: event :: Event , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37d10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (out_event) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_SetNativeEvent(::unity2::IntPtr)` overload"] pub fn internal_set_native_event (ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37d60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_MakeMasterEventCurrent(i32)` overload"] pub fn internal_make_master_event_current (display_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37db0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (display_index) , :: core :: option :: Option :: None) } } } # [doc = "`get_current()` overload"] pub fn get_current () -> crate :: unity_engine :: event :: Event { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event :: Event = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c381d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event")]impl Event{#[doc="`Internal_Create(i32)` overload"]pub fn internal_create(display_index:impl::core::convert::Into<i32>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c37c20usize)as*mut u8, ::unity2::IntPtr;
+(i32)::core::convert::Into::into(display_index))}
+}
+#[doc="`Internal_Destroy(::unity2::IntPtr)` overload"]pub fn internal_destroy(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c37c70usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+#[doc="`PopEvent(crate::unity_engine::event::Event)` overload"]pub fn pop_event(out_event:impl::core::convert::Into<crate::unity_engine::event::Event>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c37d10usize)as*mut u8,bool;
+(crate::unity_engine::event::Event)::core::convert::Into::into(out_event))}
+}
+#[doc="`Internal_SetNativeEvent(::unity2::IntPtr)` overload"]pub fn internal_set_native_event(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c37d60usize)as*mut u8,();
+(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+#[doc="`Internal_MakeMasterEventCurrent(i32)` overload"]pub fn internal_make_master_event_current(display_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c37db0usize)as*mut u8,();
+(i32)::core::convert::Into::into(display_index))}
+}
+#[doc="`get_current()` overload"]pub fn get_current()->crate::unity_engine::event::Event{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c381d0usize)as*mut u8,crate::unity_engine::event::Event;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-event")]
-pub trait IEventMethods : IEvent { # [doc = "`get_rawType()` overload"] fn get_raw_type (self ,) -> crate :: unity_engine :: eventtype :: EventType { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: eventtype :: EventType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c377f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_mousePosition()` overload"] fn get_mouse_position (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_delta()` overload"] fn get_delta (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c378f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_pointerType()` overload"] fn get_pointer_type (self ,) -> crate :: unity_engine :: pointertype :: PointerType { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: pointertype :: PointerType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c379a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_modifiers()` overload"] fn get_modifiers (self ,) -> crate :: unity_engine :: eventmodifiers :: EventModifiers { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: eventmodifiers :: EventModifiers = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c379f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_character()` overload"] fn get_character (self ,) -> u16 { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_keyCode()` overload"] fn get_key_code (self ,) -> crate :: unity_engine :: keycode :: KeyCode { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: keycode :: KeyCode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_displayIndex(i32)` overload"] fn set_display_index (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_type()` overload"] fn get_type (self ,) -> crate :: unity_engine :: eventtype :: EventType { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: eventtype :: EventType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_commandName()` overload"] fn get_command_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Internal_Use()` overload"] fn internal_use (self ,) -> () { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTypeForControl(i32)` overload"] fn get_type_for_control (self , control_id : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: eventtype :: EventType { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: eventtype :: EventType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (control_id) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37f60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32)` overload"] fn ctor_2 (self , display_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (display_index) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37fb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_shift()` overload"] fn get_shift (self ,) -> bool { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c38090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_control()` overload"] fn get_control (self ,) -> bool { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c380e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_alt()` overload"] fn get_alt (self ,) -> bool { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c38130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_command()` overload"] fn get_command (self ,) -> bool { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c38180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_isKey()` overload"] fn get_is_key (self ,) -> bool { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c38220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_isMouse()` overload"] fn get_is_mouse (self ,) -> bool { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c38270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_isDirectManipulationDevice()` overload"] fn get_is_direct_manipulation_device (self ,) -> bool { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c382e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c38380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c384e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c387c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Use()` overload"] fn r#use (self ,) -> () { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Event , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c39230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_mousePosition_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"] fn get_mouse_position_injected (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; { let __inner : extern "C" fn (Event , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c378a0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`get_delta_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"] fn get_delta_injected (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < Event as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector2 :: Vector2 > :: uninit () ; { let __inner : extern "C" fn (Event , * mut crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c37950usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-event")]pub trait IEventMethods:IEvent{#[doc="`get_rawType()` overload"]fn get_raw_type(self,)->crate::unity_engine::eventtype::EventType{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c377f0usize)as*mut u8,crate::unity_engine::eventtype::EventType;
+(Event)__receiver)}
+}
+#[doc="`get_mousePosition()` overload"]fn get_mouse_position(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37840usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(Event)__receiver)}
+}
+#[doc="`get_delta()` overload"]fn get_delta(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c378f0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(Event)__receiver)}
+}
+#[doc="`get_pointerType()` overload"]fn get_pointer_type(self,)->crate::unity_engine::pointertype::PointerType{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c379a0usize)as*mut u8,crate::unity_engine::pointertype::PointerType;
+(Event)__receiver)}
+}
+#[doc="`get_modifiers()` overload"]fn get_modifiers(self,)->crate::unity_engine::eventmodifiers::EventModifiers{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c379f0usize)as*mut u8,crate::unity_engine::eventmodifiers::EventModifiers;
+(Event)__receiver)}
+}
+#[doc="`get_character()` overload"]fn get_character(self,)->u16{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37a40usize)as*mut u8,u16;
+(Event)__receiver)}
+}
+#[doc="`get_keyCode()` overload"]fn get_key_code(self,)->crate::unity_engine::keycode::KeyCode{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37a90usize)as*mut u8,crate::unity_engine::keycode::KeyCode;
+(Event)__receiver)}
+}
+#[doc="`set_displayIndex(i32)` overload"]fn set_display_index(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37ae0usize)as*mut u8,();
+(Event)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_type()` overload"]fn get_type(self,)->crate::unity_engine::eventtype::EventType{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37b30usize)as*mut u8,crate::unity_engine::eventtype::EventType;
+(Event)__receiver)}
+}
+#[doc="`get_commandName()` overload"]fn get_command_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37b80usize)as*mut u8, ::unity2::Il2CppString;
+(Event)__receiver)}
+}
+#[doc="`Internal_Use()` overload"]fn internal_use(self,)->(){unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37bd0usize)as*mut u8,();
+(Event)__receiver)}
+}
+#[doc="`GetTypeForControl(i32)` overload"]fn get_type_for_control(self,control_id:impl::core::convert::Into<i32>)->crate::unity_engine::eventtype::EventType{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37cc0usize)as*mut u8,crate::unity_engine::eventtype::EventType;
+(Event)__receiver,(i32)::core::convert::Into::into(control_id))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37f60usize)as*mut u8,();
+(Event)__receiver)}
+}
+#[doc="`.ctor(i32)` overload"]fn ctor_2(self,display_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37f00usize)as*mut u8,();
+(Event)__receiver,(i32)::core::convert::Into::into(display_index))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37fb0usize)as*mut u8,();
+(Event)__receiver)}
+}
+#[doc="`get_shift()` overload"]fn get_shift(self,)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c38090usize)as*mut u8,bool;
+(Event)__receiver)}
+}
+#[doc="`get_control()` overload"]fn get_control(self,)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c380e0usize)as*mut u8,bool;
+(Event)__receiver)}
+}
+#[doc="`get_alt()` overload"]fn get_alt(self,)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c38130usize)as*mut u8,bool;
+(Event)__receiver)}
+}
+#[doc="`get_command()` overload"]fn get_command(self,)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c38180usize)as*mut u8,bool;
+(Event)__receiver)}
+}
+#[doc="`get_isKey()` overload"]fn get_is_key(self,)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c38220usize)as*mut u8,bool;
+(Event)__receiver)}
+}
+#[doc="`get_isMouse()` overload"]fn get_is_mouse(self,)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c38270usize)as*mut u8,bool;
+(Event)__receiver)}
+}
+#[doc="`get_isDirectManipulationDevice()` overload"]fn get_is_direct_manipulation_device(self,)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c382e0usize)as*mut u8,bool;
+(Event)__receiver)}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c38380usize)as*mut u8,i32;
+(Event)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c384e0usize)as*mut u8,bool;
+(Event)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c387c0usize)as*mut u8, ::unity2::Il2CppString;
+(Event)__receiver)}
+}
+#[doc="`Use()` overload"]fn r#use(self,)->(){unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c39230usize)as*mut u8,();
+(Event)__receiver)}
+}
+#[doc="`get_mousePosition_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]fn get_mouse_position_injected(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c378a0usize)as*mut u8,();
+(Event)__receiver,(*mut crate::unity_engine::vector2::Vector2)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`get_delta_Injected(*mutcrate::unity_engine::vector2::Vector2)` overload"]fn get_delta_injected(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector2::Vector2> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37950usize)as*mut u8,();
+(Event)__receiver,(*mut crate::unity_engine::vector2::Vector2)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-event")]
-impl < __T : IEvent > IEventMethods for __T { }
+#[cfg(feature="unity_engine-event")]impl<__T:IEvent>IEventMethods for __T{}
 
-#[cfg(feature = "unity_engine-event")]
-impl Event { pub fn get_raw_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_mouse_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_delta_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_pointer_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_modifiers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_key_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_display_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_command_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn internal_use_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn internal_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn internal_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_type_for_control_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn pop_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn internal_set_native_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn internal_make_master_event_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_shift_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_control_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_alt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_command_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_current_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_is_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_is_mouse_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_is_direct_manipulation_device_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn use_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_mouse_position_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn get_delta_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Event as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } }
+#[cfg(feature="unity_engine-event")]impl Event{pub fn get_raw_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_mouse_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_delta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_pointer_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_modifiers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_key_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_display_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_command_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn internal_use_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn internal_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn internal_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_type_for_control_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn pop_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn internal_set_native_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn internal_make_master_event_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_shift_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_control_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_alt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_command_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_current_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_is_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_is_mouse_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_is_direct_manipulation_device_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn use_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_mouse_position_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_delta_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+}
 
-#[cfg(feature = "unity_engine-event")]
-impl Event {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Event) , :: core :: stringify ! (new) ,)) ; < Self as IEventMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new_2 (display_index : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Event) , :: core :: stringify ! (new_2) ,)) ; < Self as IEventMethods > :: ctor_2 (this , display_index) ; this }
+#[cfg(feature="unity_engine-event")]impl Event{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Event), ::core::stringify!(new),));
+ <Self as IEventMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(i32)` — overload selector"]pub fn new_2(display_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Event), ::core::stringify!(new_2),));
+ <Self as IEventMethods> ::ctor_2(this,display_index);
+this}
 }
 
 #[cfg(feature = "unity_engine-event")]

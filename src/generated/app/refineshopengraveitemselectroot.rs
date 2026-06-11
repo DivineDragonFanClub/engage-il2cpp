@@ -4,46 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: refineshoprefinebaseroot :: { IRefineShopRefineBaseRoot , RefineShopRefineBaseRoot }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::refineshoprefinebaseroot::{IRefineShopRefineBaseRoot,RefineShopRefineBaseRoot}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengraveitemselectroot/RefineShopEngraveItemSelectRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopEngraveItemSelectRoot")] # [parent (crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot)] pub struct RefineShopEngraveItemSelectRoot {
-# [offset (120)] # [rename (name = "m_RefineShopEngraveItemSelectMenu")] pub m_refine_shop_engrave_item_select_menu : crate :: app :: refineshopengraveitemselectmenu :: RefineShopEngraveItemSelectMenu ,
-# [offset (128)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopengraveitemselectroot/RefineShopEngraveItemSelectRoot.md"))]#[::unity2::class(namespace="App",name="RefineShopEngraveItemSelectRoot")]#[parent(crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot)]pub struct RefineShopEngraveItemSelectRoot{#[offset(120)]#[rename(name="m_RefineShopEngraveItemSelectMenu")]pub m_refine_shop_engrave_item_select_menu:crate::app::refineshopengraveitemselectmenu::RefineShopEngraveItemSelectMenu, #[offset(128)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material,}
 
 }
 
 #[cfg(feature = "app-refineshopengraveitemselectroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshopengraveitemselectroot")]
-impl RefineShopEngraveItemSelectRoot { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , default_item_index : impl :: core :: convert :: Into < i32 > , default_item_kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds > , return_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler >) -> crate :: app :: refineshopengraveitemselectroot :: RefineShopEngraveItemSelectRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unit :: Unit , i32 , crate :: app :: itemdata :: ItemData_Kinds , crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> crate :: app :: refineshopengraveitemselectroot :: RefineShopEngraveItemSelectRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295e8f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (default_unit) , :: core :: convert :: Into :: into (default_item_index) , :: core :: convert :: Into :: into (default_item_kind) , :: core :: convert :: Into :: into (return_event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopengraveitemselectroot")]impl RefineShopEngraveItemSelectRoot{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_item_index:impl::core::convert::Into<i32> ,default_item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,return_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler>)->crate::app::refineshopengraveitemselectroot::RefineShopEngraveItemSelectRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x295e8f0usize)as*mut u8,crate::app::refineshopengraveitemselectroot::RefineShopEngraveItemSelectRoot;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(default_item_kind),(crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
+}
+}
 
-#[cfg(feature = "app-refineshopengraveitemselectroot")]
-pub trait IRefineShopEngraveItemSelectRootMethods : IRefineShopEngraveItemSelectRoot { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , shop_weapon_model_renderer : impl :: core :: convert :: Into < crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer > , default_unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , default_item_index : impl :: core :: convert :: Into < i32 > , default_item_kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds > , return_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler >) -> () { unsafe { let __receiver = < RefineShopEngraveItemSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveItemSelectRoot , crate :: app :: procinst :: ProcInst , crate :: app :: shopweaponmodelrenderer :: ShopWeaponModelRenderer , crate :: app :: unit :: Unit , i32 , crate :: app :: itemdata :: ItemData_Kinds , crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295ea90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (shop_weapon_model_renderer) , :: core :: convert :: Into :: into (default_unit) , :: core :: convert :: Into :: into (default_item_index) , :: core :: convert :: Into :: into (default_item_kind) , :: core :: convert :: Into :: into (return_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] fn destroy (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveItemSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveItemSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295f160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] fn close (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveItemSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveItemSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295f300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RefineShopEngraveItemSelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopEngraveItemSelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x295f3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshopengraveitemselectroot")]pub trait IRefineShopEngraveItemSelectRootMethods:IRefineShopEngraveItemSelectRoot{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_item_index:impl::core::convert::Into<i32> ,default_item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,return_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler>)->(){unsafe{let __receiver= <RefineShopEngraveItemSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295ea90usize)as*mut u8,();
+(RefineShopEngraveItemSelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(default_item_kind),(crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
+}
+#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RefineShopEngraveItemSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295f160usize)as*mut u8,();
+(RefineShopEngraveItemSelectRoot)__receiver)}
+}
+#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RefineShopEngraveItemSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295f300usize)as*mut u8,();
+(RefineShopEngraveItemSelectRoot)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopEngraveItemSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x295f3b0usize)as*mut u8,();
+(RefineShopEngraveItemSelectRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshopengraveitemselectroot")]
-impl < __T : IRefineShopEngraveItemSelectRoot > IRefineShopEngraveItemSelectRootMethods for __T { }
+#[cfg(feature="app-refineshopengraveitemselectroot")]impl<__T:IRefineShopEngraveItemSelectRoot>IRefineShopEngraveItemSelectRootMethods for __T{}
 
-#[cfg(feature = "app-refineshopengraveitemselectroot")]
-impl RefineShopEngraveItemSelectRoot { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveItemSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveItemSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveItemSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveItemSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopEngraveItemSelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-refineshopengraveitemselectroot")]impl RefineShopEngraveItemSelectRoot{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-refineshopengraveitemselectroot")]
-impl RefineShopEngraveItemSelectRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopEngraveItemSelectRoot) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopEngraveItemSelectRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-refineshopengraveitemselectroot")]impl RefineShopEngraveItemSelectRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopEngraveItemSelectRoot), ::core::stringify!(new),));
+ <Self as IRefineShopEngraveItemSelectRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-refineshopengraveitemselectroot")]

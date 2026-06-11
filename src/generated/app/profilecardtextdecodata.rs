@@ -4,39 +4,136 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtextdecodata/ProfileCardTextDecoData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardTextDecoData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardtextdecodata :: ProfileCardTextDecoData >)] pub struct ProfileCardTextDecoData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardtextdecodata/ProfileCardTextDecoData.md"))]#[::unity2::class(namespace="App",name="ProfileCardTextDecoData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardtextdecodata::ProfileCardTextDecoData>)]pub struct ProfileCardTextDecoData{}
 
 }
 
 #[cfg(feature = "app-profilecardtextdecodata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardtextdecodata")]
-impl ProfileCardTextDecoData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc510usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardtextdecodata")]impl ProfileCardTextDecoData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc510usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-profilecardtextdecodata")]
-pub trait IProfileCardTextDecoDataMethods : IProfileCardTextDecoData { # [doc = "`get_Id()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Id(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc4a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Image()` overload"] fn get_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Image(::unity2::Il2CppString)` overload"] fn set_image (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc4c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Condition()` overload"] fn get_condition (self ,) -> crate :: app :: profilecardcondition :: ProfileCardCondition { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardcondition :: ProfileCardCondition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Condition(crate::app::profilecardcondition::ProfileCardCondition)` overload"] fn set_condition (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardcondition :: ProfileCardCondition >) -> () { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , crate :: app :: profilecardcondition :: ProfileCardCondition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc4e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg()` overload"] fn get_arg (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg(::unity2::Il2CppString)` overload"] fn set_arg (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNameImage()` overload"] fn get_name_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc5d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCommentImage()` overload"] fn get_comment_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTitleLargeImage()` overload"] fn get_title_large_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTitleSmallImage()` overload"] fn get_title_small_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetColumnImage()` overload"] fn get_column_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLineImage()` overload"] fn get_line_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUnitNameImage()` overload"] fn get_unit_name_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAchievement1Image()` overload"] fn get_achievement1_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAchievement2Image()` overload"] fn get_achievement2_image (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardTextDecoData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardTextDecoData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardtextdecodata")]pub trait IProfileCardTextDecoDataMethods:IProfileCardTextDecoData{#[doc="`get_Id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc490usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`set_Id(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc4a0usize)as*mut u8,();
+(ProfileCardTextDecoData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Image()` overload"]fn get_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc4b0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`set_Image(::unity2::Il2CppString)` overload"]fn set_image(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc4c0usize)as*mut u8,();
+(ProfileCardTextDecoData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Condition()` overload"]fn get_condition(self,)->crate::app::profilecardcondition::ProfileCardCondition{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc4d0usize)as*mut u8,crate::app::profilecardcondition::ProfileCardCondition;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`set_Condition(crate::app::profilecardcondition::ProfileCardCondition)` overload"]fn set_condition(self,value:impl::core::convert::Into<crate::app::profilecardcondition::ProfileCardCondition>)->(){unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc4e0usize)as*mut u8,();
+(ProfileCardTextDecoData)__receiver,(crate::app::profilecardcondition::ProfileCardCondition)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg()` overload"]fn get_arg(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc4f0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`set_Arg(::unity2::Il2CppString)` overload"]fn set_arg(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc500usize)as*mut u8,();
+(ProfileCardTextDecoData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc5c0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`GetNameImage()` overload"]fn get_name_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc5d0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`GetCommentImage()` overload"]fn get_comment_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc630usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`GetTitleLargeImage()` overload"]fn get_title_large_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc690usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`GetTitleSmallImage()` overload"]fn get_title_small_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc6f0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`GetColumnImage()` overload"]fn get_column_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc750usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`GetLineImage()` overload"]fn get_line_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc7b0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`GetUnitNameImage()` overload"]fn get_unit_name_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc810usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`GetAchievement1Image()` overload"]fn get_achievement1_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc870usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`GetAchievement2Image()` overload"]fn get_achievement2_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc8d0usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardTextDecoData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardTextDecoData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc930usize)as*mut u8,();
+(ProfileCardTextDecoData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardtextdecodata")]
-impl < __T : IProfileCardTextDecoData > IProfileCardTextDecoDataMethods for __T { }
+#[cfg(feature="app-profilecardtextdecodata")]impl<__T:IProfileCardTextDecoData>IProfileCardTextDecoDataMethods for __T{}
 
-#[cfg(feature = "app-profilecardtextdecodata")]
-impl ProfileCardTextDecoData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_name_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_comment_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_title_large_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_title_small_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_column_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_line_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_unit_name_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_achievement1_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_achievement2_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardTextDecoData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
+#[cfg(feature="app-profilecardtextdecodata")]impl ProfileCardTextDecoData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_name_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_comment_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_title_large_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_title_small_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_column_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_line_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_unit_name_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_achievement1_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_achievement2_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
 
-#[cfg(feature = "app-profilecardtextdecodata")]
-impl ProfileCardTextDecoData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardTextDecoData) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardTextDecoDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardtextdecodata")]impl ProfileCardTextDecoData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardTextDecoData), ::core::stringify!(new),));
+ <Self as IProfileCardTextDecoDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardtextdecodata")]

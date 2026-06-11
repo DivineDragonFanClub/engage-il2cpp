@@ -4,42 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/profilingscope/ProfilingScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ProfilingScope {}
-
-
-impl ::unity2::ClassIdentity for ProfilingScope {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "ProfilingScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/profilingscope/ProfilingScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ProfilingScope{}
+impl::unity2::ClassIdentity for ProfilingScope{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="ProfilingScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for ProfilingScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ProfilingScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -47,11 +26,17 @@ impl ::unity2::IlType for ProfilingScope {
 #[cfg(feature = "unity_engine-rendering-profilingscope-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-profilingscope")]
-impl ProfilingScope { # [doc = "`.ctor(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"] pub fn ctor (& mut self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , sampler : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler >) -> () { unsafe { { let __inner : extern "C" fn (* mut ProfilingScope , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30ad3f0usize) as * mut u8) ; __inner (self as * mut ProfilingScope , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (sampler) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut ProfilingScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30ad400usize) as * mut u8) ; __inner (self as * mut ProfilingScope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-profilingscope")]impl ProfilingScope{#[doc="`.ctor(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendering::profilingsampler::ProfilingSampler)` overload"]pub fn ctor(&mut self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,sampler:impl::core::convert::Into<crate::unity_engine::rendering::profilingsampler::ProfilingSampler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30ad3f0usize)as*mut u8,();
+(*mut ProfilingScope)self as*mut ProfilingScope,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(crate::unity_engine::rendering::profilingsampler::ProfilingSampler)::core::convert::Into::into(sampler))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30ad400usize)as*mut u8,();
+(*mut ProfilingScope)self as*mut ProfilingScope)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-profilingscope")]
-impl ProfilingScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfilingScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfilingScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-profilingscope")]impl ProfilingScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-rendering-profilingscope")]
 #[doc(hidden)]

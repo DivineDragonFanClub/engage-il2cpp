@@ -4,23 +4,73 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debughost/DebugHost.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugHost")] # [parent (crate :: system :: object :: Object)] pub struct DebugHost {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debughost/DebugHost.md"))]#[::unity2::class(namespace="App",name="DebugHost")]#[parent(crate::system::object::Object)]pub struct DebugHost{}
 
 }
 
 #[cfg(feature = "app-debughost-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debughost")]
-impl DebugHost { # [doc = "`Setup(::unity2::Il2CppString)` overload"] pub fn setup (root : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04980usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`Cleanup()` overload"] pub fn cleanup () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04990usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`HasEnv(::unity2::Il2CppString)` overload"] pub fn has_env (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a049a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnv(::unity2::Il2CppString)` overload"] pub fn get_env (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a049b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`GetUserName()` overload"] pub fn get_user_name () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a049c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_IsConnected()` overload"] pub fn get_is_connected () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a049d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_Root()` overload"] pub fn get_root () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a049e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`WriteToHost(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn write_to_host (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a049f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`WriteToHost(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"] pub fn write_to_host_2 (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`WriteToSdCard(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn write_to_sd_card (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04a10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`WriteToSdCard(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"] pub fn write_to_sd_card_2 (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`Exists(::unity2::Il2CppString)` overload"] pub fn exists (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04a30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Il2CppString)` overload"] pub fn load (path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04a40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debughost")]impl DebugHost{#[doc="`Setup(::unity2::Il2CppString)` overload"]pub fn setup(root:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04980usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(root))}
+}
+#[doc="`Cleanup()` overload"]pub fn cleanup()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04990usize)as*mut u8,();
+)}
+}
+#[doc="`HasEnv(::unity2::Il2CppString)` overload"]pub fn has_env(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a049a0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetEnv(::unity2::Il2CppString)` overload"]pub fn get_env(name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a049b0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetUserName()` overload"]pub fn get_user_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a049c0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_IsConnected()` overload"]pub fn get_is_connected()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a049d0usize)as*mut u8,bool;
+)}
+}
+#[doc="`get_Root()` overload"]pub fn get_root()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a049e0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`WriteToHost(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn write_to_host(path:impl::core::convert::Into< ::unity2::Il2CppString> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a049f0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`WriteToHost(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]pub fn write_to_host_2(path:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Array<u8> >)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04a00usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+#[doc="`WriteToSdCard(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn write_to_sd_card(path:impl::core::convert::Into< ::unity2::Il2CppString> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04a10usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`WriteToSdCard(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]pub fn write_to_sd_card_2(path:impl::core::convert::Into< ::unity2::Il2CppString> ,data:impl::core::convert::Into< ::unity2::Array<u8> >)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04a20usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+#[doc="`Exists(::unity2::Il2CppString)` overload"]pub fn exists(path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04a30usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`Load(::unity2::Il2CppString)` overload"]pub fn load(path:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a04a40usize)as*mut u8, ::unity2::Array<u8> ;
+(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+}
 
-#[cfg(feature = "app-debughost")]
-impl DebugHost { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn has_env_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_env_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_user_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_connected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn write_to_host_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn write_to_host_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn write_to_sd_card_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn write_to_sd_card_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugHost as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-debughost")]impl DebugHost{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn has_env_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_env_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_user_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_connected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn write_to_host_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn write_to_host_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn write_to_sd_card_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn write_to_sd_card_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
 #[cfg(feature = "app-debughost")]
 #[doc(hidden)]

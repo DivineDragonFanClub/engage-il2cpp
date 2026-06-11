@@ -4,37 +4,95 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagecorebit/MapImageCoreBit.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageCoreBit")] # [parent (crate :: system :: object :: Object)] pub struct MapImageCoreBit {
-# [static_field] # [rename (name = "MaxCount")] pub max_count : i32 ,
-# [offset (16)] # [rename (name = "m_Images")] pub m_images : :: unity2 :: Array < u32 > ,
-# [static_field] # [rename (name = "s_Fill")] pub s_fill : :: unity2 :: Array < u32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagecorebit/MapImageCoreBit.md"))]#[::unity2::class(namespace="App",name="MapImageCoreBit")]#[parent(crate::system::object::Object)]pub struct MapImageCoreBit{#[static_field]#[rename(name="MaxCount")]pub max_count:i32, #[offset(16)]#[rename(name="m_Images")]pub m_images: ::unity2::Array<u32> , #[static_field]#[rename(name="s_Fill")]pub s_fill: ::unity2::Array<u32> ,}
 
 }
 
 #[cfg(feature = "app-mapimagecorebit-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapimagecorebit")]
-impl MapImageCoreBit { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4a30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagecorebit")]impl MapImageCoreBit{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1de4a30usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-mapimagecorebit")]
-pub trait IMapImageCoreBitMethods : IMapImageCoreBit { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopyFrom(crate::app::mapimagecorebit::MapImageCoreBit)` overload"] fn copy_from (self , src : impl :: core :: convert :: Into < crate :: app :: mapimagecorebit :: MapImageCoreBit >) -> () { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , crate :: app :: mapimagecorebit :: MapImageCoreBit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (src) , :: core :: option :: Option :: None) } } } # [doc = "`Fill()` overload"] fn fill (self ,) -> () { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MergeFrom(crate::app::mapimagecorebit::MapImageCoreBit)` overload"] fn merge_from (self , src : impl :: core :: convert :: Into < crate :: app :: mapimagecorebit :: MapImageCoreBit >) -> () { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , crate :: app :: mapimagecorebit :: MapImageCoreBit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de3e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (src) , :: core :: option :: Option :: None) } } } # [doc = "`Set(i32, i32)` overload"] fn set (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Get(i32, i32)` overload"] fn get (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de44d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Clr(i32, i32)` overload"] fn clr (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Get(i32, i32, i32)` overload"] fn get_2 (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , size : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (size) , :: core :: option :: Option :: None) } } } # [doc = "`Exists()` overload"] fn exists (self ,) -> bool { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dump()` overload"] fn dump (self ,) -> () { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < MapImageCoreBit as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageCoreBit , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1de4880usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagecorebit")]pub trait IMapImageCoreBitMethods:IMapImageCoreBit{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3d20usize)as*mut u8,();
+(MapImageCoreBit)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3da0usize)as*mut u8,();
+(MapImageCoreBit)__receiver)}
+}
+#[doc="`CopyFrom(crate::app::mapimagecorebit::MapImageCoreBit)` overload"]fn copy_from(self,src:impl::core::convert::Into<crate::app::mapimagecorebit::MapImageCoreBit>)->(){unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3dc0usize)as*mut u8,();
+(MapImageCoreBit)__receiver,(crate::app::mapimagecorebit::MapImageCoreBit)::core::convert::Into::into(src))}
+}
+#[doc="`Fill()` overload"]fn fill(self,)->(){unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3de0usize)as*mut u8,();
+(MapImageCoreBit)__receiver)}
+}
+#[doc="`MergeFrom(crate::app::mapimagecorebit::MapImageCoreBit)` overload"]fn merge_from(self,src:impl::core::convert::Into<crate::app::mapimagecorebit::MapImageCoreBit>)->(){unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3e60usize)as*mut u8,();
+(MapImageCoreBit)__receiver,(crate::app::mapimagecorebit::MapImageCoreBit)::core::convert::Into::into(src))}
+}
+#[doc="`Set(i32, i32)` overload"]fn set(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de4480usize)as*mut u8,();
+(MapImageCoreBit)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Get(i32, i32)` overload"]fn get(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de44d0usize)as*mut u8,bool;
+(MapImageCoreBit)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Clr(i32, i32)` overload"]fn clr(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de4510usize)as*mut u8,();
+(MapImageCoreBit)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Get(i32, i32, i32)` overload"]fn get_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,size:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de4560usize)as*mut u8,bool;
+(MapImageCoreBit)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(size))}
+}
+#[doc="`Exists()` overload"]fn exists(self,)->bool{unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de4680usize)as*mut u8,bool;
+(MapImageCoreBit)__receiver)}
+}
+#[doc="`Dump()` overload"]fn dump(self,)->(){unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de4870usize)as*mut u8,();
+(MapImageCoreBit)__receiver)}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MapImageCoreBit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1de4880usize)as*mut u8,i32;
+(MapImageCoreBit)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapimagecorebit")]
-impl < __T : IMapImageCoreBit > IMapImageCoreBitMethods for __T { }
+#[cfg(feature="app-mapimagecorebit")]impl<__T:IMapImageCoreBit>IMapImageCoreBitMethods for __T{}
 
-#[cfg(feature = "app-mapimagecorebit")]
-impl MapImageCoreBit { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn fill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn merge_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn clr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn exists_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageCoreBit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-mapimagecorebit")]impl MapImageCoreBit{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn fill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn merge_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn clr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-mapimagecorebit")]
-impl MapImageCoreBit {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageCoreBit) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageCoreBitMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapimagecorebit")]impl MapImageCoreBit{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImageCoreBit), ::core::stringify!(new),));
+ <Self as IMapImageCoreBitMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapimagecorebit")]

@@ -4,49 +4,67 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/cameraswitcher/CameraSwitcher.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "CameraSwitcher")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CameraSwitcher {
-# [offset (24)] # [rename (name = "m_Cameras")] pub m_cameras : :: unity2 :: Array < crate :: unity_engine :: camera :: Camera > ,
-# [offset (32)] # [rename (name = "m_CurrentCameraIndex")] pub m_current_camera_index : i32 ,
-# [offset (40)] # [rename (name = "m_OriginalCamera")] pub m_original_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (48)] # [rename (name = "m_OriginalCameraPosition")] pub m_original_camera_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (60)] # [rename (name = "m_OriginalCameraRotation")] pub m_original_camera_rotation : crate :: unity_engine :: quaternion :: Quaternion ,
-# [offset (80)] # [rename (name = "m_CurrentCamera")] pub m_current_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (88)] # [rename (name = "m_CameraNames")] pub m_camera_names : :: unity2 :: Array < crate :: unity_engine :: guicontent :: GUIContent > ,
-# [offset (96)] # [rename (name = "m_CameraIndices")] pub m_camera_indices : :: unity2 :: Array < i32 > ,
-# [offset (104)] # [rename (name = "m_DebugEntry")] pub m_debug_entry : crate :: unity_engine :: rendering :: debugui :: DebugUI_EnumField ,
-# [offset (112)] # [rename (name = "m_DebugEntryEnumIndex")] pub m_debug_entry_enum_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/cameraswitcher/CameraSwitcher.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="CameraSwitcher")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CameraSwitcher{#[offset(24)]#[rename(name="m_Cameras")]pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera> , #[offset(32)]#[rename(name="m_CurrentCameraIndex")]pub m_current_camera_index:i32, #[offset(40)]#[rename(name="m_OriginalCamera")]pub m_original_camera:crate::unity_engine::camera::Camera, #[offset(48)]#[rename(name="m_OriginalCameraPosition")]pub m_original_camera_position:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="m_OriginalCameraRotation")]pub m_original_camera_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(80)]#[rename(name="m_CurrentCamera")]pub m_current_camera:crate::unity_engine::camera::Camera, #[offset(88)]#[rename(name="m_CameraNames")]pub m_camera_names: ::unity2::Array<crate::unity_engine::guicontent::GUIContent> , #[offset(96)]#[rename(name="m_CameraIndices")]pub m_camera_indices: ::unity2::Array<i32> , #[offset(104)]#[rename(name="m_DebugEntry")]pub m_debug_entry:crate::unity_engine::rendering::debugui::DebugUI_EnumField, #[offset(112)]#[rename(name="m_DebugEntryEnumIndex")]pub m_debug_entry_enum_index:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-cameraswitcher")]
-pub trait ICameraSwitcherMethods : ICameraSwitcher { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352e810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352f210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraCount()` overload"] fn get_camera_count (self ,) -> i32 { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352ee90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNextCamera()` overload"] fn get_next_camera (self ,) -> crate :: unity_engine :: camera :: Camera { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352f2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCameraIndex(i32)` overload"] fn set_camera_index (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraSwitcher , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352f2f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraSwitcher as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraSwitcher , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x352f530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-cameraswitcher")]pub trait ICameraSwitcherMethods:ICameraSwitcher{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <CameraSwitcher as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352e810usize)as*mut u8,();
+(CameraSwitcher)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <CameraSwitcher as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352f210usize)as*mut u8,();
+(CameraSwitcher)__receiver)}
+}
+#[doc="`GetCameraCount()` overload"]fn get_camera_count(self,)->i32{unsafe{let __receiver= <CameraSwitcher as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352ee90usize)as*mut u8,i32;
+(CameraSwitcher)__receiver)}
+}
+#[doc="`GetNextCamera()` overload"]fn get_next_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <CameraSwitcher as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352f2a0usize)as*mut u8,crate::unity_engine::camera::Camera;
+(CameraSwitcher)__receiver)}
+}
+#[doc="`SetCameraIndex(i32)` overload"]fn set_camera_index(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CameraSwitcher as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352f2f0usize)as*mut u8,();
+(CameraSwitcher)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraSwitcher as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x352f530usize)as*mut u8,();
+(CameraSwitcher)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-cameraswitcher")]
-impl < __T : ICameraSwitcher > ICameraSwitcherMethods for __T { }
+#[cfg(feature="unity_engine-rendering-cameraswitcher")]impl<__T:ICameraSwitcher>ICameraSwitcherMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-cameraswitcher")]
-impl CameraSwitcher { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraSwitcher as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraSwitcher as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_camera_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraSwitcher as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_next_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraSwitcher as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_camera_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraSwitcher as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraSwitcher as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-rendering-cameraswitcher")]impl CameraSwitcher{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_camera_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_next_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_camera_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-rendering-cameraswitcher")]
-impl CameraSwitcher {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraSwitcher) , :: core :: stringify ! (new) ,)) ; < Self as ICameraSwitcherMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-cameraswitcher")]impl CameraSwitcher{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraSwitcher), ::core::stringify!(new),));
+ <Self as ICameraSwitcherMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraswitcher")]

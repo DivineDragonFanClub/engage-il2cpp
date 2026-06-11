@@ -4,40 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: helpitembase :: { HelpItemBase , IHelpItemBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::helpitembase::{HelpItemBase,IHelpItemBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemunitlevel/HelpItemUnitLevel.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemUnitLevel")] # [parent (crate :: app :: helpitembase :: HelpItemBase)] pub struct HelpItemUnitLevel {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpitemunitlevel/HelpItemUnitLevel.md"))]#[::unity2::class(namespace="App",name="HelpItemUnitLevel")]#[parent(crate::app::helpitembase::HelpItemBase)]pub struct HelpItemUnitLevel{}
 
 }
 
 #[cfg(feature = "app-helpitemunitlevel-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpitemunitlevel")]
-pub trait IHelpItemUnitLevelMethods : IHelpItemUnitLevel { # [doc = "`get_HelpItemType()` overload"] fn get_help_item_type (self ,) -> crate :: app :: helpmanager :: HelpManager_HelpItemType { unsafe { let __receiver = < HelpItemUnitLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitLevel , :: unity2 :: OptionalMethod ,) -> crate :: app :: helpmanager :: HelpManager_HelpItemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297e370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsValid()` overload"] fn is_valid (self ,) -> bool { unsafe { let __receiver = < HelpItemUnitLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitLevel , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297e380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"] fn set_contents (self , setter : impl :: core :: convert :: Into < crate :: app :: helpparamsetter :: HelpParamSetter >) -> () { unsafe { let __receiver = < HelpItemUnitLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitLevel , crate :: app :: helpparamsetter :: HelpParamSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297e400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (setter) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemUnitLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemUnitLevel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297e7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpitemunitlevel")]pub trait IHelpItemUnitLevelMethods:IHelpItemUnitLevel{#[doc="`get_HelpItemType()` overload"]fn get_help_item_type(self,)->crate::app::helpmanager::HelpManager_HelpItemType{unsafe{let __receiver= <HelpItemUnitLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297e370usize)as*mut u8,crate::app::helpmanager::HelpManager_HelpItemType;
+(HelpItemUnitLevel)__receiver)}
+}
+#[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemUnitLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297e380usize)as*mut u8,bool;
+(HelpItemUnitLevel)__receiver)}
+}
+#[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemUnitLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297e400usize)as*mut u8,();
+(HelpItemUnitLevel)__receiver,(crate::app::helpparamsetter::HelpParamSetter)::core::convert::Into::into(setter))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemUnitLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297e7b0usize)as*mut u8,();
+(HelpItemUnitLevel)__receiver)}
+}
+}
 
-#[cfg(feature = "app-helpitemunitlevel")]
-impl < __T : IHelpItemUnitLevel > IHelpItemUnitLevelMethods for __T { }
+#[cfg(feature="app-helpitemunitlevel")]impl<__T:IHelpItemUnitLevel>IHelpItemUnitLevelMethods for __T{}
 
-#[cfg(feature = "app-helpitemunitlevel")]
-impl HelpItemUnitLevel { pub fn get_help_item_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_contents_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemUnitLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-helpitemunitlevel")]impl HelpItemUnitLevel{pub fn get_help_item_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_contents_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-helpitemunitlevel")]
-impl HelpItemUnitLevel {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemUnitLevel) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemUnitLevelMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpitemunitlevel")]impl HelpItemUnitLevel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpItemUnitLevel), ::core::stringify!(new),));
+ <Self as IHelpItemUnitLevelMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpitemunitlevel")]

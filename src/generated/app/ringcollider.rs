@@ -4,43 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcollider/RingCollider.md"))] # [:: unity2 :: class (namespace = "App" , name = "RingCollider")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RingCollider {
-# [offset (24)] # [rename (name = "m_Colliders")] pub m_colliders : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: capsulecollider :: CapsuleCollider > ,
-# [offset (32)] # [rename (name = "m_Radius")] pub m_radius : f32 ,
-# [offset (36)] # [rename (name = "m_Height")] pub m_height : f32 ,
-# [offset (40)] # [rename (name = "m_ColliderRadius")] pub m_collider_radius : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringcollider/RingCollider.md"))]#[::unity2::class(namespace="App",name="RingCollider")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RingCollider{#[offset(24)]#[rename(name="m_Colliders")]pub m_colliders:crate::system::collections::generic::list_1::List_1<crate::unity_engine::capsulecollider::CapsuleCollider> , #[offset(32)]#[rename(name="m_Radius")]pub m_radius:f32, #[offset(36)]#[rename(name="m_Height")]pub m_height:f32, #[offset(40)]#[rename(name="m_ColliderRadius")]pub m_collider_radius:f32,}
 
 }
 
 #[cfg(feature = "app-ringcollider-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ringcollider")]
-pub trait IRingColliderMethods : IRingCollider { # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCritical()` overload"] fn set_critical (self ,) -> i32 { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x241e0d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ClearCritical()` overload"] fn clear_critical (self ,) -> () { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCriticalIndex()` overload"] fn get_critical_index (self ,) -> i32 { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2423e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RingCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RingCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2424010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ringcollider")]pub trait IRingColliderMethods:IRingCollider{#[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <RingCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423c10usize)as*mut u8,();
+(RingCollider)__receiver)}
+}
+#[doc="`SetCritical()` overload"]fn set_critical(self,)->i32{unsafe{let __receiver= <RingCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x241e0d0usize)as*mut u8,i32;
+(RingCollider)__receiver)}
+}
+#[doc="`ClearCritical()` overload"]fn clear_critical(self,)->(){unsafe{let __receiver= <RingCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423d60usize)as*mut u8,();
+(RingCollider)__receiver)}
+}
+#[doc="`GetCriticalIndex()` overload"]fn get_critical_index(self,)->i32{unsafe{let __receiver= <RingCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2423e90usize)as*mut u8,i32;
+(RingCollider)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RingCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2424010usize)as*mut u8,();
+(RingCollider)__receiver)}
+}
+}
 
-#[cfg(feature = "app-ringcollider")]
-impl < __T : IRingCollider > IRingColliderMethods for __T { }
+#[cfg(feature="app-ringcollider")]impl<__T:IRingCollider>IRingColliderMethods for __T{}
 
-#[cfg(feature = "app-ringcollider")]
-impl RingCollider { pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn clear_critical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_critical_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RingCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-ringcollider")]impl RingCollider{pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_critical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_critical_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-ringcollider")]
-impl RingCollider {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RingCollider) , :: core :: stringify ! (new) ,)) ; < Self as IRingColliderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ringcollider")]impl RingCollider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RingCollider), ::core::stringify!(new),));
+ <Self as IRingColliderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ringcollider")]

@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/u2d/spritechannelinfo/SpriteChannelInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SpriteChannelInfo {
-    pub m_buffer: :: unity2 :: IntPtr,
-    pub m_count: i32,
-    pub m_offset: i32,
-    pub m_stride: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/u2d/spritechannelinfo/SpriteChannelInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SpriteChannelInfo{pub m_buffer: ::unity2::IntPtr,pub m_count:i32,pub m_offset:i32,pub m_stride:i32,}
+impl::unity2::ClassIdentity for SpriteChannelInfo{const NAMESPACE: &'static str="UnityEngine.U2D";
+const NAME: &'static str="SpriteChannelInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for SpriteChannelInfo {
-    const NAMESPACE: &'static str = "UnityEngine.U2D";
-
-    const NAME: &'static str = "SpriteChannelInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for SpriteChannelInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SpriteChannelInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,21 @@ impl ::unity2::IlType for SpriteChannelInfo {
 #[cfg(feature = "unity_engine-u2d-spritechannelinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-u2d-spritechannelinfo")]
-impl SpriteChannelInfo { # [doc = "`get_count()` overload"] pub fn get_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SpriteChannelInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f994a0usize) as * mut u8) ; __inner (self as * mut SpriteChannelInfo , :: core :: option :: Option :: None) } } } # [doc = "`get_offset()` overload"] pub fn get_offset (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SpriteChannelInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f994b0usize) as * mut u8) ; __inner (self as * mut SpriteChannelInfo , :: core :: option :: Option :: None) } } } # [doc = "`get_stride()` overload"] pub fn get_stride (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut SpriteChannelInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f994c0usize) as * mut u8) ; __inner (self as * mut SpriteChannelInfo , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-u2d-spritechannelinfo")]impl SpriteChannelInfo{#[doc="`get_count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f994a0usize)as*mut u8,i32;
+(*mut SpriteChannelInfo)self as*mut SpriteChannelInfo)}
+}
+#[doc="`get_offset()` overload"]pub fn get_offset(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f994b0usize)as*mut u8,i32;
+(*mut SpriteChannelInfo)self as*mut SpriteChannelInfo)}
+}
+#[doc="`get_stride()` overload"]pub fn get_stride(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f994c0usize)as*mut u8,i32;
+(*mut SpriteChannelInfo)self as*mut SpriteChannelInfo)}
+}
+}
 
-#[cfg(feature = "unity_engine-u2d-spritechannelinfo")]
-impl SpriteChannelInfo { pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteChannelInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteChannelInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_stride_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteChannelInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-u2d-spritechannelinfo")]impl SpriteChannelInfo{pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_stride_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-u2d-spritechannelinfo")]
 #[doc(hidden)]

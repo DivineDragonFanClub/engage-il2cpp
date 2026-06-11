@@ -4,88 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponlevel/WeaponLevel.md"))] # [:: unity2 :: class (namespace = "App" , name = "WeaponLevel")] # [parent (crate :: system :: object :: Object)] pub struct WeaponLevel {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponlevel/WeaponLevel.md"))]#[::unity2::class(namespace="App",name="WeaponLevel")]#[parent(crate::system::object::Object)]pub struct WeaponLevel{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponlevel/WeaponLevel_Kind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct WeaponLevel_Kind  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponlevel/WeaponLevel_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WeaponLevel_Kind{pub value:i32,}
+impl::unity2::ClassIdentity for WeaponLevel_Kind{const NAMESPACE: &'static str="App";
+const NAME: &'static str="WeaponLevel.Kind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for WeaponLevel_Kind  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "WeaponLevel.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for WeaponLevel_Kind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for WeaponLevel_Kind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl WeaponLevel_Kind{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  WeaponLevel_Kind  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn d() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn c() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn b() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn a() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn s() -> Self {
-        Self { value: 5 }
-
-    }
-
+pub fn d()->Self{Self{value:1}
+}
+pub fn c()->Self{Self{value:2}
+}
+pub fn b()->Self{Self{value:3}
+}
+pub fn a()->Self{Self{value:4}
+}
+pub fn s()->Self{Self{value:5}
+}
 }
 
 }
@@ -93,21 +44,28 @@ impl  WeaponLevel_Kind  {
 #[cfg(feature = "app-weaponlevel-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-weaponlevel")]
-impl WeaponLevel { # [doc = "`GetKind(::unity2::Il2CppString)` overload"] pub fn get_kind (level : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: weaponlevel :: WeaponLevel_Kind { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: weaponlevel :: WeaponLevel_Kind = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c93f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-weaponlevel")]impl WeaponLevel{#[doc="`GetKind(::unity2::Il2CppString)` overload"]pub fn get_kind(level:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::weaponlevel::WeaponLevel_Kind{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21c93f0usize)as*mut u8,crate::app::weaponlevel::WeaponLevel_Kind;
+(::unity2::Il2CppString)::core::convert::Into::into(level))}
+}
+}
 
-#[cfg(feature = "app-weaponlevel")]
-pub trait IWeaponLevelMethods : IWeaponLevel { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WeaponLevel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WeaponLevel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21c9570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-weaponlevel")]pub trait IWeaponLevelMethods:IWeaponLevel{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WeaponLevel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21c9570usize)as*mut u8,();
+(WeaponLevel)__receiver)}
+}
+}
 
-#[cfg(feature = "app-weaponlevel")]
-impl < __T : IWeaponLevel > IWeaponLevelMethods for __T { }
+#[cfg(feature="app-weaponlevel")]impl<__T:IWeaponLevel>IWeaponLevelMethods for __T{}
 
-#[cfg(feature = "app-weaponlevel")]
-impl WeaponLevel { pub fn get_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WeaponLevel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-weaponlevel")]impl WeaponLevel{pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-weaponlevel")]
-impl WeaponLevel {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WeaponLevel) , :: core :: stringify ! (new) ,)) ; < Self as IWeaponLevelMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-weaponlevel")]impl WeaponLevel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WeaponLevel), ::core::stringify!(new),));
+ <Self as IWeaponLevelMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-weaponlevel")]

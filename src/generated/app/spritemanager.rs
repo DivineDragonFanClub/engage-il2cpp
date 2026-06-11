@@ -4,33 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/spritemanager/SpriteManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "SpriteManager")] # [parent (crate :: system :: object :: Object)] pub struct SpriteManager {
-# [offset (16)] # [rename (name = "m_Sprites")] pub m_sprites : :: unity2 :: Array < crate :: unity_engine :: sprite :: Sprite > ,
-# [offset (24)] # [rename (name = "m_Dictionary")] pub m_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: sprite :: Sprite > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/spritemanager/SpriteManager.md"))]#[::unity2::class(namespace="App",name="SpriteManager")]#[parent(crate::system::object::Object)]pub struct SpriteManager{#[offset(16)]#[rename(name="m_Sprites")]pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(24)]#[rename(name="m_Dictionary")]pub m_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::sprite::Sprite> ,}
 
 }
 
 #[cfg(feature = "app-spritemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-spritemanager")]
-pub trait ISpriteManagerMethods : ISpriteManager { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SpriteManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ffc80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Il2CppString)` overload"] fn load (self , path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < SpriteManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ffd10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < SpriteManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ffe40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString)` overload"] fn get (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < SpriteManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fff70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`TryGet(::unity2::Il2CppString)` overload"] fn try_get (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { let __receiver = < SpriteManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SpriteManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24fffd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-spritemanager")]pub trait ISpriteManagerMethods:ISpriteManager{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SpriteManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ffc80usize)as*mut u8,();
+(SpriteManager)__receiver)}
+}
+#[doc="`Load(::unity2::Il2CppString)` overload"]fn load(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SpriteManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ffd10usize)as*mut u8,();
+(SpriteManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+}
+#[doc="`Unload()` overload"]fn unload(self,)->(){unsafe{let __receiver= <SpriteManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ffe40usize)as*mut u8,();
+(SpriteManager)__receiver)}
+}
+#[doc="`Get(::unity2::Il2CppString)` overload"]fn get(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <SpriteManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fff70usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(SpriteManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`TryGet(::unity2::Il2CppString)` overload"]fn try_get(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <SpriteManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24fffd0usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(SpriteManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+}
 
-#[cfg(feature = "app-spritemanager")]
-impl < __T : ISpriteManager > ISpriteManagerMethods for __T { }
+#[cfg(feature="app-spritemanager")]impl<__T:ISpriteManager>ISpriteManagerMethods for __T{}
 
-#[cfg(feature = "app-spritemanager")]
-impl SpriteManager { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn try_get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SpriteManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-spritemanager")]impl SpriteManager{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn try_get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-spritemanager")]
-impl SpriteManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SpriteManager) , :: core :: stringify ! (new) ,)) ; < Self as ISpriteManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-spritemanager")]impl SpriteManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SpriteManager), ::core::stringify!(new),));
+ <Self as ISpriteManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-spritemanager")]

@@ -4,135 +4,221 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound.md"))] # [:: unity2 :: class (namespace = "App" , name = "TalkSound")] # [parent (crate :: system :: object :: Object)] pub struct TalkSound {
-# [offset (16)] # [rename (name = "m_Mid")] pub m_mid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_SoundCmdExecBefore")] pub m_sound_cmd_exec_before : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_SoundCmdExecAfter")] pub m_sound_cmd_exec_after : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_ReservedTalkVoice")] pub m_reserved_talk_voice : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_ReservedPersonVoice")] pub m_reserved_person_voice : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "m_ReservedPersonPid")] pub m_reserved_person_pid : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "m_ReservedPersonSwitchName")] pub m_reserved_person_switch_name : :: unity2 :: Il2CppString ,
-# [offset (72)] # [rename (name = "m_PersonVoice")] pub m_person_voice : :: unity2 :: Il2CppString ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talksound/TalkSound.md"))]#[::unity2::class(namespace="App",name="TalkSound")]#[parent(crate::system::object::Object)]pub struct TalkSound{#[offset(16)]#[rename(name="m_Mid")]pub m_mid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_SoundCmdExecBefore")]pub m_sound_cmd_exec_before: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_SoundCmdExecAfter")]pub m_sound_cmd_exec_after: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_ReservedTalkVoice")]pub m_reserved_talk_voice: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ReservedPersonVoice")]pub m_reserved_person_voice: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_ReservedPersonPid")]pub m_reserved_person_pid: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_ReservedPersonSwitchName")]pub m_reserved_person_switch_name: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_PersonVoice")]pub m_person_voice: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talksound/TalkSound_SoundType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkSound_SoundType{pub value:i32,}
+impl::unity2::ClassIdentity for TalkSound_SoundType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TalkSound.SoundType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TalkSound_SoundType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TalkSound_SoundType{pub fn se()->Self{Self{value:0}
+}
+pub fn voice()->Self{Self{value:1}
+}
+pub fn general()->Self{Self{value:2}
+}
+pub fn bgm()->Self{Self{value:2}
+}
+pub fn env()->Self{Self{value:2}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talksound/TalkSound_SoundType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TalkSound_SoundType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for TalkSound_SoundType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TalkSound.SoundType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TalkSound_SoundType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TalkSound_SoundType  {
-    pub fn se() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn voice() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn general() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn bgm() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn env() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))] # [:: unity2 :: class (namespace = "App" , name = "TalkSound.WaitSE")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TalkSound_WaitSE {
-# [static_field] # [rename (name = "MinimumWaitSec")] pub minimum_wait_sec : f32 ,
-# [offset (112)] # [rename (name = "m_Sec")] pub m_sec : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talksound/TalkSound_WaitSE.md"))]#[::unity2::class(namespace="App",name="TalkSound.WaitSE")]#[parent(crate::app::procinst::ProcInst)]pub struct TalkSound_WaitSE{#[static_field]#[rename(name="MinimumWaitSec")]pub minimum_wait_sec:f32, #[offset(112)]#[rename(name="m_Sec")]pub m_sec:f32,}
 
 }
 
 #[cfg(feature = "app-talksound-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talksound")]
-impl TalkSound { # [doc = "`MessFileNameToSoundBankName(::unity2::Il2CppString)` overload"] pub fn mess_file_name_to_sound_bank_name (mess_file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c1640usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mess_file_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetRelianceSoundBankName(i32)` overload"] pub fn get_reliance_sound_bank_name (patch_index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ca6c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (patch_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetRelianceSoundBankNameAll()` overload"] pub fn get_reliance_sound_bank_name_all () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c11c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetGodRelianceSoundBankName(i32)` overload"] pub fn get_god_reliance_sound_bank_name (patch_index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ca770usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (patch_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetGodRelianceSoundBankNameAll()` overload"] pub fn get_god_reliance_sound_bank_name_all () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c1340usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetHubCommonSoundBankName(i32)` overload"] pub fn get_hub_common_sound_bank_name (patch_index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ca820usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (patch_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetHubCommonSoundBankNameAll()` overload"] pub fn get_hub_common_sound_bank_name_all () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c14c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`MidToSoundEvent(::unity2::Il2CppString)` overload"] pub fn mid_to_sound_event (mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20befa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } # [doc = "`GetInt(::unity2::Il2CppString)` overload"] pub fn get_int (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ca8d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`GetFloat(::unity2::Il2CppString)` overload"] pub fn get_float (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ca970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`GetFadeSpeedMsec(::unity2::Il2CppString)` overload"] pub fn get_fade_speed_msec (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20caa10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } # [doc = "`GetForceType(::unity2::Il2CppString)` overload"] pub fn get_force_type (str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: force :: Force_Type { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: force :: Force_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20cac90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (str) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-talksound")]
-pub trait ITalkSoundMethods : ITalkSound { # [doc = "`GetPersonVoice()` overload"] fn get_person_voice (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init(::unity2::Il2CppString)` overload"] fn init (self , mid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c66c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mid) , :: core :: option :: Option :: None) } } } # [doc = "`TickBefore(crate::app::procinst::ProcInst)` overload"] fn tick_before (self , parent_proc : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c63e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent_proc) , :: core :: option :: Option :: None) } } } # [doc = "`TickAfter(crate::app::procinst::ProcInst)` overload"] fn tick_after (self , parent_proc : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent_proc) , :: core :: option :: Option :: None) } } } # [doc = "`PostTalkStartSoundEvent()` overload"] fn post_talk_start_sound_event (self ,) -> () { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c6590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PostTalkEndSoundEvent()` overload"] fn post_talk_end_sound_event (self ,) -> () { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetArgs(::unity2::Il2CppString)` overload"] fn get_args (self , line : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (line) , :: core :: option :: Option :: None) } } } # [doc = "`GetSoundType(::unity2::Array<::unity2::Il2CppString>)` overload"] fn get_sound_type (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> crate :: app :: talksound :: TalkSound_SoundType { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> crate :: app :: talksound :: TalkSound_SoundType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`ExecLine(::unity2::Il2CppString, crate::app::procinst::ProcInst)` overload"] fn exec_line (self , line : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , parent_proc : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> bool { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: Il2CppString , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (line) , :: core :: convert :: Into :: into (parent_proc) , :: core :: option :: Option :: None) } } } # [doc = "`GetLine(::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] fn get_line (self , str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { { let __inner : extern "C" fn (TalkSound , :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c96a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (str) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`TryPlayReservedVoice(crate::combat::character::Character)` overload"] fn try_play_reserved_voice (self , character : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c7810usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character) , :: core :: option :: Option :: None) } } } # [doc = "`TryPlayReservedTalkVoice(crate::combat::character::Character)` overload"] fn try_play_reserved_talk_voice (self , character : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> bool { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ca3b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character) , :: core :: option :: Option :: None) } } } # [doc = "`TryPlayReservedPersonVoice(crate::combat::character::Character)` overload"] fn try_play_reserved_person_voice (self , character : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ca470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (character) , :: core :: option :: Option :: None) } } } # [doc = "`StopAllVoice()` overload"] fn stop_all_voice (self ,) -> () { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c7790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDrawMonitor(crate::app::debugmonitor::DebugMonitor)` overload"] fn on_draw_monitor (self , monitor : impl :: core :: convert :: Into < crate :: app :: debugmonitor :: DebugMonitor >) -> () { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , crate :: app :: debugmonitor :: DebugMonitor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20ca6b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (monitor) , :: core :: option :: Option :: None) } } } # [doc = "`TryExecAction(::unity2::Array<::unity2::Il2CppString>)` overload"] fn try_exec_action (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> bool { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c9be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c66b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-talksound")]
-impl < __T : ITalkSound > ITalkSoundMethods for __T { }
-
-#[cfg(feature = "app-talksound")]
-impl TalkSound { pub fn get_person_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn tick_before_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn tick_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn post_talk_start_sound_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn post_talk_end_sound_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_args_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_sound_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn exec_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn try_play_reserved_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn try_play_reserved_talk_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn try_play_reserved_person_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn stop_all_voice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn on_draw_monitor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn mess_file_name_to_sound_bank_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_reliance_sound_bank_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_reliance_sound_bank_name_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_god_reliance_sound_bank_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_god_reliance_sound_bank_name_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_hub_common_sound_bank_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_hub_common_sound_bank_name_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn mid_to_sound_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn get_int_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_float_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_fade_speed_msec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_force_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn try_exec_action_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } }
-
-#[cfg(feature = "app-talksound")]
-impl TalkSound {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkSound) , :: core :: stringify ! (new) ,)) ; < Self as ITalkSoundMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talksound")]impl TalkSound{#[doc="`MessFileNameToSoundBankName(::unity2::Il2CppString)` overload"]pub fn mess_file_name_to_sound_bank_name(mess_file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c1640usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+(::unity2::Il2CppString)::core::convert::Into::into(mess_file_name))}
+}
+#[doc="`GetRelianceSoundBankName(i32)` overload"]pub fn get_reliance_sound_bank_name(patch_index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ca6c0usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(patch_index))}
+}
+#[doc="`GetRelianceSoundBankNameAll()` overload"]pub fn get_reliance_sound_bank_name_all()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c11c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`GetGodRelianceSoundBankName(i32)` overload"]pub fn get_god_reliance_sound_bank_name(patch_index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ca770usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(patch_index))}
+}
+#[doc="`GetGodRelianceSoundBankNameAll()` overload"]pub fn get_god_reliance_sound_bank_name_all()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c1340usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`GetHubCommonSoundBankName(i32)` overload"]pub fn get_hub_common_sound_bank_name(patch_index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ca820usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(patch_index))}
+}
+#[doc="`GetHubCommonSoundBankNameAll()` overload"]pub fn get_hub_common_sound_bank_name_all()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c14c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`MidToSoundEvent(::unity2::Il2CppString)` overload"]pub fn mid_to_sound_event(mid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20befa0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`GetInt(::unity2::Il2CppString)` overload"]pub fn get_int(str:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ca8d0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`GetFloat(::unity2::Il2CppString)` overload"]pub fn get_float(str:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ca970usize)as*mut u8,f32;
+(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`GetFadeSpeedMsec(::unity2::Il2CppString)` overload"]pub fn get_fade_speed_msec(str:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20caa10usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
+#[doc="`GetForceType(::unity2::Il2CppString)` overload"]pub fn get_force_type(str:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::force::Force_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20cac90usize)as*mut u8,crate::app::force::Force_Type;
+(::unity2::Il2CppString)::core::convert::Into::into(str))}
+}
 }
 
-#[cfg(feature = "app-talksound")]
-pub trait ITalkSound_WaitSEMethods : ITalkSound_WaitSE { # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < TalkSound_WaitSE as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound_WaitSE , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21fc5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkSound_WaitSE as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkSound_WaitSE , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21fc690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talksound")]pub trait ITalkSoundMethods:ITalkSound{#[doc="`GetPersonVoice()` overload"]fn get_person_voice(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9690usize)as*mut u8, ::unity2::Il2CppString;
+(TalkSound)__receiver)}
+}
+#[doc="`Init(::unity2::Il2CppString)` overload"]fn init(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c66c0usize)as*mut u8,();
+(TalkSound)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`TickBefore(crate::app::procinst::ProcInst)` overload"]fn tick_before(self,parent_proc:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c63e0usize)as*mut u8,bool;
+(TalkSound)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(parent_proc))}
+}
+#[doc="`TickAfter(crate::app::procinst::ProcInst)` overload"]fn tick_after(self,parent_proc:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6500usize)as*mut u8,bool;
+(TalkSound)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(parent_proc))}
+}
+#[doc="`PostTalkStartSoundEvent()` overload"]fn post_talk_start_sound_event(self,)->(){unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c6590usize)as*mut u8,();
+(TalkSound)__receiver)}
+}
+#[doc="`PostTalkEndSoundEvent()` overload"]fn post_talk_end_sound_event(self,)->(){unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9530usize)as*mut u8,();
+(TalkSound)__receiver)}
+}
+#[doc="`GetArgs(::unity2::Il2CppString)` overload"]fn get_args(self,line:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9aa0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(TalkSound)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(line))}
+}
+#[doc="`GetSoundType(::unity2::Array<::unity2::Il2CppString>)` overload"]fn get_sound_type(self,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->crate::app::talksound::TalkSound_SoundType{unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9b30usize)as*mut u8,crate::app::talksound::TalkSound_SoundType;
+(TalkSound)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(args))}
+}
+#[doc="`ExecLine(::unity2::Il2CppString, crate::app::procinst::ProcInst)` overload"]fn exec_line(self,line:impl::core::convert::Into< ::unity2::Il2CppString> ,parent_proc:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9760usize)as*mut u8,bool;
+(TalkSound)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(line),(crate::app::procinst::ProcInst)::core::convert::Into::into(parent_proc))}
+}
+#[doc="`GetLine(::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]fn get_line(self,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x20c96a0usize)as*mut u8, ::unity2::Il2CppString;
+(TalkSound)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`TryPlayReservedVoice(crate::combat::character::Character)` overload"]fn try_play_reserved_voice(self,character:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c7810usize)as*mut u8,();
+(TalkSound)__receiver,(crate::combat::character::Character)::core::convert::Into::into(character))}
+}
+#[doc="`TryPlayReservedTalkVoice(crate::combat::character::Character)` overload"]fn try_play_reserved_talk_voice(self,character:impl::core::convert::Into<crate::combat::character::Character>)->bool{unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ca3b0usize)as*mut u8,bool;
+(TalkSound)__receiver,(crate::combat::character::Character)::core::convert::Into::into(character))}
+}
+#[doc="`TryPlayReservedPersonVoice(crate::combat::character::Character)` overload"]fn try_play_reserved_person_voice(self,character:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ca470usize)as*mut u8,();
+(TalkSound)__receiver,(crate::combat::character::Character)::core::convert::Into::into(character))}
+}
+#[doc="`StopAllVoice()` overload"]fn stop_all_voice(self,)->(){unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c7790usize)as*mut u8,();
+(TalkSound)__receiver)}
+}
+#[doc="`OnDrawMonitor(crate::app::debugmonitor::DebugMonitor)` overload"]fn on_draw_monitor(self,monitor:impl::core::convert::Into<crate::app::debugmonitor::DebugMonitor>)->(){unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20ca6b0usize)as*mut u8,();
+(TalkSound)__receiver,(crate::app::debugmonitor::DebugMonitor)::core::convert::Into::into(monitor))}
+}
+#[doc="`TryExecAction(::unity2::Array<::unity2::Il2CppString>)` overload"]fn try_exec_action(self,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9be0usize)as*mut u8,bool;
+(TalkSound)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c66b0usize)as*mut u8,();
+(TalkSound)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talksound")]
-impl < __T : ITalkSound_WaitSE > ITalkSound_WaitSEMethods for __T { }
+#[cfg(feature="app-talksound")]impl<__T:ITalkSound>ITalkSoundMethods for __T{}
 
-#[cfg(feature = "app-talksound")]
-impl TalkSound_WaitSE { pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound_WaitSE as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkSound_WaitSE as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-talksound")]impl TalkSound{pub fn get_person_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_before_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn post_talk_start_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn post_talk_end_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_sound_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn exec_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn try_play_reserved_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn try_play_reserved_talk_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn try_play_reserved_person_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn stop_all_voice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_draw_monitor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn mess_file_name_to_sound_bank_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_reliance_sound_bank_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_reliance_sound_bank_name_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_god_reliance_sound_bank_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_god_reliance_sound_bank_name_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_hub_common_sound_bank_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_hub_common_sound_bank_name_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn mid_to_sound_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_float_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_fade_speed_msec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn try_exec_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
 
-#[cfg(feature = "app-talksound")]
-impl TalkSound_WaitSE {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkSound_WaitSE) , :: core :: stringify ! (new) ,)) ; < Self as ITalkSound_WaitSEMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talksound")]impl TalkSound{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkSound), ::core::stringify!(new),));
+ <Self as ITalkSoundMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-talksound")]pub trait ITalkSound_WaitSEMethods:ITalkSound_WaitSE{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <TalkSound_WaitSE as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc5c0usize)as*mut u8,();
+(TalkSound_WaitSE)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkSound_WaitSE as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21fc690usize)as*mut u8,();
+(TalkSound_WaitSE)__receiver)}
+}
+}
+
+#[cfg(feature="app-talksound")]impl<__T:ITalkSound_WaitSE>ITalkSound_WaitSEMethods for __T{}
+
+#[cfg(feature="app-talksound")]impl TalkSound_WaitSE{pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-talksound")]impl TalkSound_WaitSE{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkSound_WaitSE), ::core::stringify!(new),));
+ <Self as ITalkSound_WaitSEMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talksound")]

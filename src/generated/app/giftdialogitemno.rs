@@ -4,36 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemno :: { BasicDialogItemNo , IBasicDialogItemNo }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/giftdialogitemno/GiftDialogItemNo.md"))] # [:: unity2 :: class (namespace = "App" , name = "GiftDialogItemNo")] # [parent (crate :: app :: basicdialogitemno :: BasicDialogItemNo)] pub struct GiftDialogItemNo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/giftdialogitemno/GiftDialogItemNo.md"))]#[::unity2::class(namespace="App",name="GiftDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct GiftDialogItemNo{}
 
 }
 
 #[cfg(feature = "app-giftdialogitemno-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-giftdialogitemno")]
-pub trait IGiftDialogItemNoMethods : IGiftDialogItemNo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GiftDialogItemNo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GiftDialogItemNo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25244b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-giftdialogitemno")]pub trait IGiftDialogItemNoMethods:IGiftDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GiftDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25244b0usize)as*mut u8,();
+(GiftDialogItemNo)__receiver)}
+}
+}
 
-#[cfg(feature = "app-giftdialogitemno")]
-impl < __T : IGiftDialogItemNo > IGiftDialogItemNoMethods for __T { }
+#[cfg(feature="app-giftdialogitemno")]impl<__T:IGiftDialogItemNo>IGiftDialogItemNoMethods for __T{}
 
-#[cfg(feature = "app-giftdialogitemno")]
-impl GiftDialogItemNo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GiftDialogItemNo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-giftdialogitemno")]impl GiftDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-giftdialogitemno")]
-impl GiftDialogItemNo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GiftDialogItemNo) , :: core :: stringify ! (new) ,)) ; < Self as IGiftDialogItemNoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-giftdialogitemno")]impl GiftDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GiftDialogItemNo), ::core::stringify!(new),));
+ <Self as IGiftDialogItemNoMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-giftdialogitemno")]

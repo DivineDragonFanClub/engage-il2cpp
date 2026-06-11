@@ -4,55 +4,131 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenucontent/WellItemSelectMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "WellItemSelectMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct WellItemSelectMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_RootObject")] pub m_root_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "m_ItemListContent")] pub m_item_list_content : crate :: app :: menuaccessorycontent :: MenuAccessoryContent ,
-# [offset (248)] # [rename (name = "m_ItemHelpContent")] pub m_item_help_content : crate :: app :: menuaccessorycontent :: MenuAccessoryContent ,
-# [offset (256)] # [rename (name = "m_ExpectedContent")] pub m_expected_content : crate :: app :: menuaccessorycontent :: MenuAccessoryContent ,
-# [offset (264)] # [rename (name = "m_SelectedItemContentList")] pub m_selected_item_content_list : :: unity2 :: Array < crate :: app :: basicitemmenuitemcontent :: BasicItemMenuItemContent > ,
-# [offset (272)] # [rename (name = "m_StarList")] pub m_star_list : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (280)] # [rename (name = "m_StockValueText")] pub m_stock_value_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (288)] # [rename (name = "m_StockValueMaxText")] pub m_stock_value_max_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (296)] # [rename (name = "m_KindIconBgImageList")] pub m_kind_icon_bg_image_list : :: unity2 :: Array < crate :: unity_engine :: ui :: image :: Image > ,
-# [offset (304)] # [rename (name = "m_SelectedKindIndex")] pub m_selected_kind_index : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellitemselectmenucontent/WellItemSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="WellItemSelectMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct WellItemSelectMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_ItemListContent")]pub m_item_list_content:crate::app::menuaccessorycontent::MenuAccessoryContent, #[offset(248)]#[rename(name="m_ItemHelpContent")]pub m_item_help_content:crate::app::menuaccessorycontent::MenuAccessoryContent, #[offset(256)]#[rename(name="m_ExpectedContent")]pub m_expected_content:crate::app::menuaccessorycontent::MenuAccessoryContent, #[offset(264)]#[rename(name="m_SelectedItemContentList")]pub m_selected_item_content_list: ::unity2::Array<crate::app::basicitemmenuitemcontent::BasicItemMenuItemContent> , #[offset(272)]#[rename(name="m_StarList")]pub m_star_list: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(280)]#[rename(name="m_StockValueText")]pub m_stock_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_StockValueMaxText")]pub m_stock_value_max_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_KindIconBgImageList")]pub m_kind_icon_bg_image_list: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(304)]#[rename(name="m_SelectedKindIndex")]pub m_selected_kind_index:i32,}
 
 }
 
 #[cfg(feature = "app-wellitemselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-wellitemselectmenucontent")]
-impl WellItemSelectMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7b20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7bc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7c40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: wellitemselectmenucontent :: WellItemSelectMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: wellitemselectmenucontent :: WellItemSelectMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d4d70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::app::wellitemselectmenucontent::WellItemSelectMenuContent)` overload"] pub fn destroy (content : impl :: core :: convert :: Into < crate :: app :: wellitemselectmenucontent :: WellItemSelectMenuContent >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: wellitemselectmenucontent :: WellItemSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7cc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-wellitemselectmenucontent")]impl WellItemSelectMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d7b20usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d7bc0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d7c40usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::wellitemselectmenucontent::WellItemSelectMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d4d70usize)as*mut u8,crate::app::wellitemselectmenucontent::WellItemSelectMenuContent;
+)}
+}
+#[doc="`Destroy(crate::app::wellitemselectmenucontent::WellItemSelectMenuContent)` overload"]pub fn destroy(content:impl::core::convert::Into<crate::app::wellitemselectmenucontent::WellItemSelectMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d7cc0usize)as*mut u8,();
+(crate::app::wellitemselectmenucontent::WellItemSelectMenuContent)::core::convert::Into::into(content))}
+}
+}
 
-#[cfg(feature = "app-wellitemselectmenucontent")]
-pub trait IWellItemSelectMenuContentMethods : IWellItemSelectMenuContent { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitMenuAccessoryContent(crate::app::basicmenu::BasicMenu)` overload"] fn init_menu_accessory_content (self , menu : impl :: core :: convert :: Into < crate :: app :: basicmenu :: BasicMenu >) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , crate :: app :: basicmenu :: BasicMenu , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d5500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu) , :: core :: option :: Option :: None) } } } # [doc = "`OpenAnime()` overload"] fn open_anime (self ,) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CloseAnime()` overload"] fn close_anime (self ,) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSelectedItemList(crate::system::collections::generic::list_1::List_1<crate::app::basicitemmenuitem::BasicItemMenuItem>)` overload"] fn update_selected_item_list (self , list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicitemmenuitem :: BasicItemMenuItem > >) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicitemmenuitem :: BasicItemMenuItem > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d5550usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateExpectedStar(i32)` overload"] fn update_expected_star (self , expected : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d80a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (expected) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateItemHelp(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"] fn update_item_help (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , crate :: app :: unit :: Unit , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d5bd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`SetSelectedItemKindIndex(i32)` overload"] fn set_selected_item_kind_index (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d6fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SetStockValue(i32)` overload"] fn set_stock_value (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetStockValueMax(i32)` overload"] fn set_stock_value_max (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d7190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WellItemSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WellItemSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21d8290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-wellitemselectmenucontent")]pub trait IWellItemSelectMenuContentMethods:IWellItemSelectMenuContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7d40usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7d50usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver)}
+}
+#[doc="`InitMenuAccessoryContent(crate::app::basicmenu::BasicMenu)` overload"]fn init_menu_accessory_content(self,menu:impl::core::convert::Into<crate::app::basicmenu::BasicMenu>)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d5500usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver,(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(menu))}
+}
+#[doc="`OpenAnime()` overload"]fn open_anime(self,)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7dd0usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver)}
+}
+#[doc="`CloseAnime()` overload"]fn close_anime(self,)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7e80usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver)}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7f90usize)as*mut u8,i32;
+(WellItemSelectMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7fb0usize)as*mut u8,f32;
+(WellItemSelectMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`UpdateSelectedItemList(crate::system::collections::generic::list_1::List_1<crate::app::basicitemmenuitem::BasicItemMenuItem>)` overload"]fn update_selected_item_list(self,list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicitemmenuitem::BasicItemMenuItem> >)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d5550usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicitemmenuitem::BasicItemMenuItem>)::core::convert::Into::into(list))}
+}
+#[doc="`UpdateExpectedStar(i32)` overload"]fn update_expected_star(self,expected:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d80a0usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver,(i32)::core::convert::Into::into(expected))}
+}
+#[doc="`UpdateItemHelp(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]fn update_item_help(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d5bd0usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unititem::UnitItem)::core::convert::Into::into(item))}
+}
+#[doc="`SetSelectedItemKindIndex(i32)` overload"]fn set_selected_item_kind_index(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d6fb0usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SetStockValue(i32)` overload"]fn set_stock_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7110usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`SetStockValueMax(i32)` overload"]fn set_stock_value_max(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7190usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WellItemSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21d8290usize)as*mut u8,();
+(WellItemSelectMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-wellitemselectmenucontent")]
-impl < __T : IWellItemSelectMenuContent > IWellItemSelectMenuContentMethods for __T { }
+#[cfg(feature="app-wellitemselectmenucontent")]impl<__T:IWellItemSelectMenuContent>IWellItemSelectMenuContentMethods for __T{}
 
-#[cfg(feature = "app-wellitemselectmenucontent")]
-impl WellItemSelectMenuContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_menu_accessory_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn open_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn close_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn update_selected_item_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn update_expected_star_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn update_item_help_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_selected_item_kind_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_stock_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_stock_value_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WellItemSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-wellitemselectmenucontent")]impl WellItemSelectMenuContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_menu_accessory_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn open_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn close_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_selected_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn update_expected_star_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn update_item_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_selected_item_kind_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_stock_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_stock_value_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
-#[cfg(feature = "app-wellitemselectmenucontent")]
-impl WellItemSelectMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WellItemSelectMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IWellItemSelectMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-wellitemselectmenucontent")]impl WellItemSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WellItemSelectMenuContent), ::core::stringify!(new),));
+ <Self as IWellItemSelectMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-wellitemselectmenucontent")]

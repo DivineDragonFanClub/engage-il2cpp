@@ -4,33 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesoundutil/GameSoundUtil.md"))] # [:: unity2 :: class (namespace = "App" , name = "GameSoundUtil")] # [parent (crate :: system :: object :: Object)] pub struct GameSoundUtil {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesoundutil/GameSoundUtil.md"))]#[::unity2::class(namespace="App",name="GameSoundUtil")]#[parent(crate::system::object::Object)]pub struct GameSoundUtil{}
 
 }
 
 #[cfg(feature = "app-gamesoundutil-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-gamesoundutil")]
-impl GameSoundUtil { # [doc = "`GetGroundMaterialName(crate::unity_engine::vector3::Vector3)` overload"] pub fn get_ground_material_name (pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bde0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pos) , :: core :: option :: Option :: None) } } } # [doc = "`GetAttackTypeName(crate::app::attacktype::AttackType)` overload"] pub fn get_attack_type_name (attack_type : impl :: core :: convert :: Into < crate :: app :: attacktype :: AttackType >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: attacktype :: AttackType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bea0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (attack_type) , :: core :: option :: Option :: None) } } } # [doc = "`GetDamageLevelName(crate::app::damagelevel::DamageLevel)` overload"] pub fn get_damage_level_name (damage_level : impl :: core :: convert :: Into < crate :: app :: damagelevel :: DamageLevel >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: damagelevel :: DamageLevel , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bf30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (damage_level) , :: core :: option :: Option :: None) } } } # [doc = "`GetWeaponName(::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds)` overload"] pub fn get_weapon_name (asset_weapon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , item_kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250bff0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (asset_weapon_name) , :: core :: convert :: Into :: into (item_kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetDefaultWeaponNameByItemKind(crate::app::itemdata::ItemData_Kinds)` overload"] pub fn get_default_weapon_name_by_item_kind (item_kind : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData_Kinds >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData_Kinds , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250c080usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item_kind) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gamesoundutil")]impl GameSoundUtil{#[doc="`GetGroundMaterialName(crate::unity_engine::vector3::Vector3)` overload"]pub fn get_ground_material_name(pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250bde0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+}
+#[doc="`GetAttackTypeName(crate::app::attacktype::AttackType)` overload"]pub fn get_attack_type_name(attack_type:impl::core::convert::Into<crate::app::attacktype::AttackType>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250bea0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::attacktype::AttackType)::core::convert::Into::into(attack_type))}
+}
+#[doc="`GetDamageLevelName(crate::app::damagelevel::DamageLevel)` overload"]pub fn get_damage_level_name(damage_level:impl::core::convert::Into<crate::app::damagelevel::DamageLevel>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250bf30usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::damagelevel::DamageLevel)::core::convert::Into::into(damage_level))}
+}
+#[doc="`GetWeaponName(::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds)` overload"]pub fn get_weapon_name(asset_weapon_name:impl::core::convert::Into< ::unity2::Il2CppString> ,item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250bff0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(asset_weapon_name),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(item_kind))}
+}
+#[doc="`GetDefaultWeaponNameByItemKind(crate::app::itemdata::ItemData_Kinds)` overload"]pub fn get_default_weapon_name_by_item_kind(item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250c080usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(item_kind))}
+}
+}
 
-#[cfg(feature = "app-gamesoundutil")]
-pub trait IGameSoundUtilMethods : IGameSoundUtil { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GameSoundUtil as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GameSoundUtil , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x250c150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-gamesoundutil")]pub trait IGameSoundUtilMethods:IGameSoundUtil{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameSoundUtil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x250c150usize)as*mut u8,();
+(GameSoundUtil)__receiver)}
+}
+}
 
-#[cfg(feature = "app-gamesoundutil")]
-impl < __T : IGameSoundUtil > IGameSoundUtilMethods for __T { }
+#[cfg(feature="app-gamesoundutil")]impl<__T:IGameSoundUtil>IGameSoundUtilMethods for __T{}
 
-#[cfg(feature = "app-gamesoundutil")]
-impl GameSoundUtil { pub fn get_ground_material_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSoundUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_attack_type_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSoundUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_damage_level_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSoundUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_weapon_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSoundUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_default_weapon_name_by_item_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSoundUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GameSoundUtil as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-gamesoundutil")]impl GameSoundUtil{pub fn get_ground_material_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_attack_type_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_damage_level_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_weapon_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_default_weapon_name_by_item_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-gamesoundutil")]
-impl GameSoundUtil {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GameSoundUtil) , :: core :: stringify ! (new) ,)) ; < Self as IGameSoundUtilMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-gamesoundutil")]impl GameSoundUtil{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSoundUtil), ::core::stringify!(new),));
+ <Self as IGameSoundUtilMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-gamesoundutil")]

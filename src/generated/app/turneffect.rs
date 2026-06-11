@@ -4,74 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/turneffect/TurnEffect.md"))] # [:: unity2 :: class (namespace = "App" , name = "TurnEffect")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TurnEffect {
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/turneffect/TurnEffect.md"))]#[::unity2::class(namespace="App",name="TurnEffect")]#[parent(crate::app::procinst::ProcInst)]pub struct TurnEffect{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/turneffect/TurnEffect_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TurnEffect_Label{pub value:i32,}
+impl::unity2::ClassIdentity for TurnEffect_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TurnEffect.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/turneffect/TurnEffect_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TurnEffect_Label  {
-    pub value: i32,
+impl::unity2::IlType for TurnEffect_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for TurnEffect_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TurnEffect.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl TurnEffect_Label{pub fn search()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for TurnEffect_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn next()->Self{Self{value:1}
 }
-
-
-impl  TurnEffect_Label  {
-    pub fn search() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn next() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn end()->Self{Self{value:2}
+}
 }
 
 }
@@ -79,21 +40,79 @@ impl  TurnEffect_Label  {
 #[cfg(feature = "app-turneffect-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-turneffect")]
-impl TurnEffect { pub fn create_bind < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< TurnEffect as :: unity2 :: ClassIdentity > :: class () , "CreateBind" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < TurnEffect as :: unity2 :: ClassIdentity > :: NAME , "CreateBind" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } }
+#[cfg(feature="app-turneffect")]impl TurnEffect{pub fn create_bind<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<TurnEffect as::unity2::ClassIdentity> ::class(),"CreateBind",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <TurnEffect as::unity2::ClassIdentity> ::NAME,"CreateBind",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(super_), ::core::option::Option::Some(__mi_opaque),)}
+}
+}
 
-#[cfg(feature = "app-turneffect")]
-pub trait ITurnEffectMethods : ITurnEffect { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TurnEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22acdc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CanWaitSkip()` overload"] fn get_can_wait_skip (self ,) -> bool { unsafe { let __receiver = < TurnEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnEffect , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ace70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Search()` overload"] fn search (self ,) -> () { unsafe { let __receiver = < TurnEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ace80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NextUnit()` overload"] fn next_unit (self ,) -> () { unsafe { let __receiver = < TurnEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnEffect , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22acf40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Damage(i32)` overload"] fn damage (self , damage : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TurnEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnEffect , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22acfd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (damage) , :: core :: option :: Option :: None) } } } # [doc = "`Heal(i32)` overload"] fn heal (self , heal : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TurnEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnEffect , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ad0d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (heal) , :: core :: option :: Option :: None) } } } # [doc = "`Execute()` overload"] fn execute (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < TurnEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnEffect , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ad0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryWaitTime(f32)` overload"] fn try_wait_time (self , time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TurnEffect as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TurnEffect , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ad170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-turneffect")]pub trait ITurnEffectMethods:ITurnEffect{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22acdc0usize)as*mut u8,();
+(TurnEffect)__receiver)}
+}
+#[doc="`get_CanWaitSkip()` overload"]fn get_can_wait_skip(self,)->bool{unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ace70usize)as*mut u8,bool;
+(TurnEffect)__receiver)}
+}
+#[doc="`Search()` overload"]fn search(self,)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ace80usize)as*mut u8,();
+(TurnEffect)__receiver)}
+}
+#[doc="`NextUnit()` overload"]fn next_unit(self,)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22acf40usize)as*mut u8,();
+(TurnEffect)__receiver)}
+}
+#[doc="`Damage(i32)` overload"]fn damage(self,damage:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22acfd0usize)as*mut u8,();
+(TurnEffect)__receiver,(i32)::core::convert::Into::into(damage))}
+}
+#[doc="`Heal(i32)` overload"]fn heal(self,heal:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ad0d0usize)as*mut u8,();
+(TurnEffect)__receiver,(i32)::core::convert::Into::into(heal))}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ad0f0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(TurnEffect)__receiver)}
+}
+#[doc="`TryWaitTime(f32)` overload"]fn try_wait_time(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ad170usize)as*mut u8,();
+(TurnEffect)__receiver,(f32)::core::convert::Into::into(time))}
+}
+}
 
-#[cfg(feature = "app-turneffect")]
-impl < __T : ITurnEffect > ITurnEffectMethods for __T { }
+#[cfg(feature="app-turneffect")]impl<__T:ITurnEffect>ITurnEffectMethods for __T{}
 
-#[cfg(feature = "app-turneffect")]
-impl TurnEffect { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_can_wait_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn search_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn next_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn heal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn try_wait_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TurnEffect as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-turneffect")]impl TurnEffect{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_can_wait_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn search_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn next_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn try_wait_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-turneffect")]
-impl TurnEffect {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TurnEffect) , :: core :: stringify ! (new) ,)) ; < Self as ITurnEffectMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-turneffect")]impl TurnEffect{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TurnEffect), ::core::stringify!(new),));
+ <Self as ITurnEffectMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-turneffect")]

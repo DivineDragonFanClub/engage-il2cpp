@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: integratedsubsystemdescriptor :: { IIntegratedSubsystemDescriptor , IntegratedSubsystemDescriptor }
- ;
- use crate :: unity_engine :: integratedsubsystemdescriptor_1 :: { IIntegratedSubsystemDescriptor_1 , IntegratedSubsystemDescriptor_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::integratedsubsystemdescriptor::{IIntegratedSubsystemDescriptor,IntegratedSubsystemDescriptor}
+;
+use crate::unity_engine::integratedsubsystemdescriptor_1::{IIntegratedSubsystemDescriptor_1,IntegratedSubsystemDescriptor_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrinputsubsystemdescriptor/XRInputSubsystemDescriptor.md"))] # [:: unity2 :: class (namespace = "UnityEngine.XR" , name = "XRInputSubsystemDescriptor")] # [parent (crate :: unity_engine :: integratedsubsystemdescriptor_1 :: IntegratedSubsystemDescriptor_1 < crate :: unity_engine :: xr :: xrinputsubsystem :: XRInputSubsystem >)] pub struct XRInputSubsystemDescriptor {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrinputsubsystemdescriptor/XRInputSubsystemDescriptor.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="XRInputSubsystemDescriptor")]#[parent(crate::unity_engine::integratedsubsystemdescriptor_1::IntegratedSubsystemDescriptor_1<crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem>)]pub struct XRInputSubsystemDescriptor{}
 
 }
 
 #[cfg(feature = "unity_engine-xr-xrinputsubsystemdescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-xr-xrinputsubsystemdescriptor")]
-pub trait IXRInputSubsystemDescriptorMethods : IXRInputSubsystemDescriptor { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < XRInputSubsystemDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (XRInputSubsystemDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1fc60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-xr-xrinputsubsystemdescriptor")]pub trait IXRInputSubsystemDescriptorMethods:IXRInputSubsystemDescriptor{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <XRInputSubsystemDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1fc60usize)as*mut u8,();
+(XRInputSubsystemDescriptor)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-xr-xrinputsubsystemdescriptor")]
-impl < __T : IXRInputSubsystemDescriptor > IXRInputSubsystemDescriptorMethods for __T { }
+#[cfg(feature="unity_engine-xr-xrinputsubsystemdescriptor")]impl<__T:IXRInputSubsystemDescriptor>IXRInputSubsystemDescriptorMethods for __T{}
 
-#[cfg(feature = "unity_engine-xr-xrinputsubsystemdescriptor")]
-impl XRInputSubsystemDescriptor { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < XRInputSubsystemDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-xr-xrinputsubsystemdescriptor")]impl XRInputSubsystemDescriptor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-xr-xrinputsubsystemdescriptor")]
-impl XRInputSubsystemDescriptor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (XRInputSubsystemDescriptor) , :: core :: stringify ! (new) ,)) ; < Self as IXRInputSubsystemDescriptorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-xr-xrinputsubsystemdescriptor")]impl XRInputSubsystemDescriptor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(XRInputSubsystemDescriptor), ::core::stringify!(new),));
+ <Self as IXRInputSubsystemDescriptorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-xr-xrinputsubsystemdescriptor")]

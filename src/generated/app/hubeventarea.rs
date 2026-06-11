@@ -4,40 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubeventarea/HubEventArea.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubEventArea")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HubEventArea {
-# [offset (24)] # [rename (name = "m_Data")] pub m_data : crate :: app :: hubdemodata :: HubDemoData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubeventarea/HubEventArea.md"))]#[::unity2::class(namespace="App",name="HubEventArea")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubEventArea{#[offset(24)]#[rename(name="m_Data")]pub m_data:crate::app::hubdemodata::HubDemoData,}
 
 }
 
 #[cfg(feature = "app-hubeventarea-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubeventarea")]
-pub trait IHubEventAreaMethods : IHubEventArea { # [doc = "`get_IsComplete()` overload"] fn get_is_complete (self ,) -> bool { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a6ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_FlagName()` overload"] fn get_flag_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a6e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsEnabled()` overload"] fn is_enabled (self ,) -> bool { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a6e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsExecuted()` overload"] fn is_executed (self ,) -> bool { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a70d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetExecute()` overload"] fn set_execute (self ,) -> () { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a7270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a74f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a7590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Enter()` overload"] fn enter (self ,) -> () { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a76f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Leave()` overload"] fn leave (self ,) -> () { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a7810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubEventArea as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubEventArea , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a7820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubeventarea")]pub trait IHubEventAreaMethods:IHubEventArea{#[doc="`get_IsComplete()` overload"]fn get_is_complete(self,)->bool{unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a6ca0usize)as*mut u8,bool;
+(HubEventArea)__receiver)}
+}
+#[doc="`get_FlagName()` overload"]fn get_flag_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a6e10usize)as*mut u8, ::unity2::Il2CppString;
+(HubEventArea)__receiver)}
+}
+#[doc="`IsEnabled()` overload"]fn is_enabled(self,)->bool{unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a6e80usize)as*mut u8,bool;
+(HubEventArea)__receiver)}
+}
+#[doc="`IsExecuted()` overload"]fn is_executed(self,)->bool{unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a70d0usize)as*mut u8,bool;
+(HubEventArea)__receiver)}
+}
+#[doc="`SetExecute()` overload"]fn set_execute(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a7270usize)as*mut u8,();
+(HubEventArea)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a74f0usize)as*mut u8,();
+(HubEventArea)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a7590usize)as*mut u8,();
+(HubEventArea)__receiver)}
+}
+#[doc="`Enter()` overload"]fn enter(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a76f0usize)as*mut u8,();
+(HubEventArea)__receiver)}
+}
+#[doc="`Leave()` overload"]fn leave(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a7810usize)as*mut u8,();
+(HubEventArea)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a7820usize)as*mut u8,();
+(HubEventArea)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubeventarea")]
-impl < __T : IHubEventArea > IHubEventAreaMethods for __T { }
+#[cfg(feature="app-hubeventarea")]impl<__T:IHubEventArea>IHubEventAreaMethods for __T{}
 
-#[cfg(feature = "app-hubeventarea")]
-impl HubEventArea { pub fn get_is_complete_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_flag_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_enabled_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_executed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn leave_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubEventArea as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-hubeventarea")]impl HubEventArea{pub fn get_is_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_flag_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_executed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn leave_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-hubeventarea")]
-impl HubEventArea {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubEventArea) , :: core :: stringify ! (new) ,)) ; < Self as IHubEventAreaMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubeventarea")]impl HubEventArea{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubEventArea), ::core::stringify!(new),));
+ <Self as IHubEventAreaMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubeventarea")]

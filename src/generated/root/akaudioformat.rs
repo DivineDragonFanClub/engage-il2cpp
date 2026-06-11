@@ -4,38 +4,160 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akaudioformat/AkAudioFormat.md"))] # [:: unity2 :: class (namespace = "" , name = "AkAudioFormat")] # [parent (crate :: system :: object :: Object)] pub struct AkAudioFormat {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akaudioformat/AkAudioFormat.md"))]#[::unity2::class(namespace="",name="AkAudioFormat")]#[parent(crate::system::object::Object)]pub struct AkAudioFormat{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akaudioformat-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akaudioformat")]
-impl AkAudioFormat { # [doc = "`getCPtr(crate::root::akaudioformat::AkAudioFormat)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akaudioformat :: AkAudioFormat >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akaudioformat :: AkAudioFormat , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcdad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akaudioformat")]impl AkAudioFormat{#[doc="`getCPtr(crate::root::akaudioformat::AkAudioFormat)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akaudioformat::AkAudioFormat>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcdad0usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akaudioformat::AkAudioFormat)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akaudioformat")]
-pub trait IAkAudioFormatMethods : IAkAudioFormat { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcda90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcdb30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcdb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcdbd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uSampleRate(u32)` overload"] fn set_u_sample_rate (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcdd60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uSampleRate()` overload"] fn get_u_sample_rate (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcdde0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_channelConfig(crate::root::akchannelconfig::AkChannelConfig)` overload"] fn set_channel_config (self , value : impl :: core :: convert :: Into < crate :: root :: akchannelconfig :: AkChannelConfig >) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , crate :: root :: akchannelconfig :: AkChannelConfig , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcde50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_channelConfig()` overload"] fn get_channel_config (self ,) -> crate :: root :: akchannelconfig :: AkChannelConfig { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> crate :: root :: akchannelconfig :: AkChannelConfig = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcdee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uBitsPerSample(u32)` overload"] fn set_u_bits_per_sample (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bcdfc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uBitsPerSample()` overload"] fn get_u_bits_per_sample (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uBlockAlign(u32)` overload"] fn set_u_block_align (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce0b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uBlockAlign()` overload"] fn get_u_block_align (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uTypeID(u32)` overload"] fn set_u_type_id (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce1a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uTypeID()` overload"] fn get_u_type_id (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uInterleaveID(u32)` overload"] fn set_u_interleave_id (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uInterleaveID()` overload"] fn get_u_interleave_id (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNumChannels()` overload"] fn get_num_channels (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBitsPerSample()` overload"] fn get_bits_per_sample (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetBlockAlign()` overload"] fn get_block_align (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTypeID()` overload"] fn get_type_id (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce4d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetInterleaveID()` overload"] fn get_interleave_id (self ,) -> u32 { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAll(u32, crate::root::akchannelconfig::AkChannelConfig, u32, u32, u32, u32)` overload"] fn set_all (self , in_u_sample_rate : impl :: core :: convert :: Into < u32 > , in_channel_config : impl :: core :: convert :: Into < crate :: root :: akchannelconfig :: AkChannelConfig > , in_u_bits_per_sample : impl :: core :: convert :: Into < u32 > , in_u_block_align : impl :: core :: convert :: Into < u32 > , in_u_type_id : impl :: core :: convert :: Into < u32 > , in_u_interleave_id : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , u32 , crate :: root :: akchannelconfig :: AkChannelConfig , u32 , u32 , u32 , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce5b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_u_sample_rate) , :: core :: convert :: Into :: into (in_channel_config) , :: core :: convert :: Into :: into (in_u_bits_per_sample) , :: core :: convert :: Into :: into (in_u_block_align) , :: core :: convert :: Into :: into (in_u_type_id) , :: core :: convert :: Into :: into (in_u_interleave_id) , :: core :: option :: Option :: None) } } } # [doc = "`IsChannelConfigSupported()` overload"] fn is_channel_config_supported (self ,) -> bool { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkAudioFormat as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkAudioFormat , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bce6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akaudioformat")]pub trait IAkAudioFormatMethods:IAkAudioFormat{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcda90usize)as*mut u8,();
+(AkAudioFormat)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcdb30usize)as*mut u8,();
+(AkAudioFormat)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcdb60usize)as*mut u8,();
+(AkAudioFormat)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcdbd0usize)as*mut u8,();
+(AkAudioFormat)__receiver)}
+}
+#[doc="`set_uSampleRate(u32)` overload"]fn set_u_sample_rate(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcdd60usize)as*mut u8,();
+(AkAudioFormat)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uSampleRate()` overload"]fn get_u_sample_rate(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcdde0usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`set_channelConfig(crate::root::akchannelconfig::AkChannelConfig)` overload"]fn set_channel_config(self,value:impl::core::convert::Into<crate::root::akchannelconfig::AkChannelConfig>)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcde50usize)as*mut u8,();
+(AkAudioFormat)__receiver,(crate::root::akchannelconfig::AkChannelConfig)::core::convert::Into::into(value))}
+}
+#[doc="`get_channelConfig()` overload"]fn get_channel_config(self,)->crate::root::akchannelconfig::AkChannelConfig{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcdee0usize)as*mut u8,crate::root::akchannelconfig::AkChannelConfig;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`set_uBitsPerSample(u32)` overload"]fn set_u_bits_per_sample(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcdfc0usize)as*mut u8,();
+(AkAudioFormat)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uBitsPerSample()` overload"]fn get_u_bits_per_sample(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce040usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`set_uBlockAlign(u32)` overload"]fn set_u_block_align(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce0b0usize)as*mut u8,();
+(AkAudioFormat)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uBlockAlign()` overload"]fn get_u_block_align(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce130usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`set_uTypeID(u32)` overload"]fn set_u_type_id(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce1a0usize)as*mut u8,();
+(AkAudioFormat)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uTypeID()` overload"]fn get_u_type_id(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce220usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`set_uInterleaveID(u32)` overload"]fn set_u_interleave_id(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce290usize)as*mut u8,();
+(AkAudioFormat)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uInterleaveID()` overload"]fn get_u_interleave_id(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce310usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`GetNumChannels()` overload"]fn get_num_channels(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce380usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`GetBitsPerSample()` overload"]fn get_bits_per_sample(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce3f0usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`GetBlockAlign()` overload"]fn get_block_align(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce460usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`GetTypeID()` overload"]fn get_type_id(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce4d0usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`GetInterleaveID()` overload"]fn get_interleave_id(self,)->u32{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce540usize)as*mut u8,u32;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`SetAll(u32, crate::root::akchannelconfig::AkChannelConfig, u32, u32, u32, u32)` overload"]fn set_all(self,in_u_sample_rate:impl::core::convert::Into<u32> ,in_channel_config:impl::core::convert::Into<crate::root::akchannelconfig::AkChannelConfig> ,in_u_bits_per_sample:impl::core::convert::Into<u32> ,in_u_block_align:impl::core::convert::Into<u32> ,in_u_type_id:impl::core::convert::Into<u32> ,in_u_interleave_id:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce5b0usize)as*mut u8,();
+(AkAudioFormat)__receiver,(u32)::core::convert::Into::into(in_u_sample_rate),(crate::root::akchannelconfig::AkChannelConfig)::core::convert::Into::into(in_channel_config),(u32)::core::convert::Into::into(in_u_bits_per_sample),(u32)::core::convert::Into::into(in_u_block_align),(u32)::core::convert::Into::into(in_u_type_id),(u32)::core::convert::Into::into(in_u_interleave_id))}
+}
+#[doc="`IsChannelConfigSupported()` overload"]fn is_channel_config_supported(self,)->bool{unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce680usize)as*mut u8,bool;
+(AkAudioFormat)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkAudioFormat as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bce6f0usize)as*mut u8,();
+(AkAudioFormat)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akaudioformat")]
-impl < __T : IAkAudioFormat > IAkAudioFormatMethods for __T { }
+#[cfg(feature="root-akaudioformat")]impl<__T:IAkAudioFormat>IAkAudioFormatMethods for __T{}
 
-#[cfg(feature = "root-akaudioformat")]
-impl AkAudioFormat { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_u_sample_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_u_sample_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_channel_config_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_channel_config_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_u_bits_per_sample_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_u_bits_per_sample_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_u_block_align_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_u_block_align_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_u_type_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_u_type_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_u_interleave_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_u_interleave_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_num_channels_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_bits_per_sample_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_block_align_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_type_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_interleave_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn set_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn is_channel_config_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkAudioFormat as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } }
+#[cfg(feature="root-akaudioformat")]impl AkAudioFormat{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_u_sample_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_u_sample_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_channel_config_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_channel_config_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_u_bits_per_sample_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_u_bits_per_sample_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_u_block_align_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_u_block_align_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_u_type_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_u_type_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_u_interleave_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_u_interleave_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_num_channels_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_bits_per_sample_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_block_align_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_type_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_interleave_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn is_channel_config_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
 
-#[cfg(feature = "root-akaudioformat")]
-impl AkAudioFormat {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAudioFormat) , :: core :: stringify ! (new) ,)) ; < Self as IAkAudioFormatMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkAudioFormat) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkAudioFormatMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akaudioformat")]impl AkAudioFormat{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioFormat), ::core::stringify!(new),));
+ <Self as IAkAudioFormatMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkAudioFormat), ::core::stringify!(new_2),));
+ <Self as IAkAudioFormatMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akaudioformat")]

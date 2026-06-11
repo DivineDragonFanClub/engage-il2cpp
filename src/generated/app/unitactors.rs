@@ -4,49 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactors/UnitActors.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitActors")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: unitactors :: UnitActors >)] pub struct UnitActors {
-# [offset (32)] # [rename (name = "m_Actors")] pub m_actors : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unitactor :: UnitActor > ,
-# [offset (40)] # [rename (name = "m_ChangeEnableInfoList")] pub m_change_enable_info_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapinforoot :: MapInfoRoot > ,
-# [offset (48)] # [rename (name = "m_ChangeDisableInfoList")] pub m_change_disable_info_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapinforoot :: MapInfoRoot > ,
-# [offset (56)] # [rename (name = "m_UnitPositionScales")] pub m_unit_position_scales : :: unity2 :: Array < crate :: unity_engine :: vector4 :: Vector4 > ,
-# [static_field] # [rename (name = "CanvasVisibilityChangeCountParFrame")] pub canvas_visibility_change_count_par_frame : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitactors/UnitActors.md"))]#[::unity2::class(namespace="App",name="UnitActors")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::unitactors::UnitActors>)]pub struct UnitActors{#[offset(32)]#[rename(name="m_Actors")]pub m_actors:crate::system::collections::generic::list_1::List_1<crate::app::unitactor::UnitActor> , #[offset(40)]#[rename(name="m_ChangeEnableInfoList")]pub m_change_enable_info_list:crate::system::collections::generic::list_1::List_1<crate::app::mapinforoot::MapInfoRoot> , #[offset(48)]#[rename(name="m_ChangeDisableInfoList")]pub m_change_disable_info_list:crate::system::collections::generic::list_1::List_1<crate::app::mapinforoot::MapInfoRoot> , #[offset(56)]#[rename(name="m_UnitPositionScales")]pub m_unit_position_scales: ::unity2::Array<crate::unity_engine::vector4::Vector4> , #[static_field]#[rename(name="CanvasVisibilityChangeCountParFrame")]pub canvas_visibility_change_count_par_frame:i32,}
 
 }
 
 #[cfg(feature = "app-unitactors-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitactors")]
-impl UnitActors { # [doc = "`CreateActor(crate::app::unit::Unit)` overload"] pub fn create_actor (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f71230usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteActor(crate::app::unit::Unit)` overload"] pub fn delete_actor (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f712f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitactors")]impl UnitActors{#[doc="`CreateActor(crate::app::unit::Unit)` overload"]pub fn create_actor(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f71230usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`DeleteActor(crate::app::unit::Unit)` overload"]pub fn delete_actor(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f712f0usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
 
-#[cfg(feature = "app-unitactors")]
-pub trait IUnitActorsMethods : IUnitActors { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < UnitActors as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitActors , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f6f2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < UnitActors as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitActors , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f6f3f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateActorImpl(crate::app::unit::Unit)` overload"] fn create_actor_impl (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitActors as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitActors , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f70e90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`DeleteActorImpl(crate::app::unit::Unit)` overload"] fn delete_actor_impl (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < UnitActors as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitActors , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f71100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitActors as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitActors , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f713a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitactors")]pub trait IUnitActorsMethods:IUnitActors{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <UnitActors as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f6f2f0usize)as*mut u8,();
+(UnitActors)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <UnitActors as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f6f3f0usize)as*mut u8,();
+(UnitActors)__receiver)}
+}
+#[doc="`CreateActorImpl(crate::app::unit::Unit)` overload"]fn create_actor_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitActors as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f70e90usize)as*mut u8,();
+(UnitActors)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`DeleteActorImpl(crate::app::unit::Unit)` overload"]fn delete_actor_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitActors as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f71100usize)as*mut u8,();
+(UnitActors)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitActors as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f713a0usize)as*mut u8,();
+(UnitActors)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitactors")]
-impl < __T : IUnitActors > IUnitActorsMethods for __T { }
+#[cfg(feature="app-unitactors")]impl<__T:IUnitActors>IUnitActorsMethods for __T{}
 
-#[cfg(feature = "app-unitactors")]
-impl UnitActors { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitActors as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitActors as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_actor_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitActors as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn delete_actor_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitActors as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitActors as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn delete_actor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitActors as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitActors as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-unitactors")]impl UnitActors{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_actor_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn delete_actor_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn delete_actor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-unitactors")]
-impl UnitActors {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitActors) , :: core :: stringify ! (new) ,)) ; < Self as IUnitActorsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitactors")]impl UnitActors{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitActors), ::core::stringify!(new),));
+ <Self as IUnitActorsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitactors")]

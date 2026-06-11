@@ -4,44 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitemcontent :: { BasicMenuItemContent , IBasicMenuItemContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicitemmenuitemcontentold/BasicItemMenuItemContentOld.md"))] # [:: unity2 :: class (namespace = "App" , name = "BasicItemMenuItemContentOld")] # [parent (crate :: app :: basicmenuitemcontent :: BasicMenuItemContent)] pub struct BasicItemMenuItemContentOld {
-# [offset (72)] # [rename (name = "m_icon")] pub m_icon : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (80)] # [rename (name = "m_text")] pub m_text : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "m_count")] pub m_count : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicitemmenuitemcontentold/BasicItemMenuItemContentOld.md"))]#[::unity2::class(namespace="App",name="BasicItemMenuItemContentOld")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct BasicItemMenuItemContentOld{#[offset(72)]#[rename(name="m_icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(80)]#[rename(name="m_text")]pub m_text:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_count")]pub m_count:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-basicitemmenuitemcontentold-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-basicitemmenuitemcontentold")]
-pub trait IBasicItemMenuItemContentOldMethods : IBasicItemMenuItemContentOld { # [doc = "`SetupObject()` overload"] fn setup_object (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContentOld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContentOld , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245af10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Blank()` overload"] fn blank (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContentOld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContentOld , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245b0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"] fn build (self , menu_item : impl :: core :: convert :: Into < crate :: app :: basicmenuitem :: BasicMenuItem >) -> () { unsafe { let __receiver = < BasicItemMenuItemContentOld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContentOld , crate :: app :: basicmenuitem :: BasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245b1b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item) , :: core :: option :: Option :: None) } } } # [doc = "`BuildText()` overload"] fn build_text (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContentOld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContentOld , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245b1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTextColor()` overload"] fn update_text_color (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContentOld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContentOld , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245b3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTextComponent()` overload"] fn get_text_component (self ,) -> crate :: unity_engine :: ui :: text :: Text { unsafe { let __receiver = < BasicItemMenuItemContentOld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContentOld , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: text :: Text = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245b4c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BasicItemMenuItemContentOld as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BasicItemMenuItemContentOld , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x245b520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-basicitemmenuitemcontentold")]pub trait IBasicItemMenuItemContentOldMethods:IBasicItemMenuItemContentOld{#[doc="`SetupObject()` overload"]fn setup_object(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContentOld as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245af10usize)as*mut u8,();
+(BasicItemMenuItemContentOld)__receiver)}
+}
+#[doc="`Blank()` overload"]fn blank(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContentOld as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245b0f0usize)as*mut u8,();
+(BasicItemMenuItemContentOld)__receiver)}
+}
+#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <BasicItemMenuItemContentOld as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245b1b0usize)as*mut u8,();
+(BasicItemMenuItemContentOld)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+}
+#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContentOld as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245b1e0usize)as*mut u8,();
+(BasicItemMenuItemContentOld)__receiver)}
+}
+#[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContentOld as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245b3b0usize)as*mut u8,();
+(BasicItemMenuItemContentOld)__receiver)}
+}
+#[doc="`GetTextComponent()` overload"]fn get_text_component(self,)->crate::unity_engine::ui::text::Text{unsafe{let __receiver= <BasicItemMenuItemContentOld as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245b4c0usize)as*mut u8,crate::unity_engine::ui::text::Text;
+(BasicItemMenuItemContentOld)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicItemMenuItemContentOld as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x245b520usize)as*mut u8,();
+(BasicItemMenuItemContentOld)__receiver)}
+}
+}
 
-#[cfg(feature = "app-basicitemmenuitemcontentold")]
-impl < __T : IBasicItemMenuItemContentOld > IBasicItemMenuItemContentOldMethods for __T { }
+#[cfg(feature="app-basicitemmenuitemcontentold")]impl<__T:IBasicItemMenuItemContentOld>IBasicItemMenuItemContentOldMethods for __T{}
 
-#[cfg(feature = "app-basicitemmenuitemcontentold")]
-impl BasicItemMenuItemContentOld { pub fn setup_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContentOld as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn blank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContentOld as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContentOld as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn build_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContentOld as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_text_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContentOld as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_text_component_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContentOld as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BasicItemMenuItemContentOld as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-basicitemmenuitemcontentold")]impl BasicItemMenuItemContentOld{pub fn setup_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_text_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_text_component_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-basicitemmenuitemcontentold")]
-impl BasicItemMenuItemContentOld {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BasicItemMenuItemContentOld) , :: core :: stringify ! (new) ,)) ; < Self as IBasicItemMenuItemContentOldMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-basicitemmenuitemcontentold")]impl BasicItemMenuItemContentOld{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BasicItemMenuItemContentOld), ::core::stringify!(new),));
+ <Self as IBasicItemMenuItemContentOldMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-basicitemmenuitemcontentold")]

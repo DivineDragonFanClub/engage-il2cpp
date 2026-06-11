@@ -4,32 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/kerningtable/KerningTable.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "KerningTable")] # [parent (crate :: system :: object :: Object)] pub struct KerningTable {
-# [offset (16)] # [rename (name = "kerningPairs")] pub kerning_pairs : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: kerningpair :: KerningPair > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/kerningtable/KerningTable.md"))]#[::unity2::class(namespace="TMPro",name="KerningTable")]#[parent(crate::system::object::Object)]pub struct KerningTable{#[offset(16)]#[rename(name="kerningPairs")]pub kerning_pairs:crate::system::collections::generic::list_1::List_1<crate::tm_pro::kerningpair::KerningPair> ,}
 
 }
 
 #[cfg(feature = "tm_pro-kerningtable-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-kerningtable")]
-pub trait IKerningTableMethods : IKerningTable { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < KerningTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KerningTable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c6e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddKerningPair()` overload"] fn add_kerning_pair (self ,) -> () { unsafe { let __receiver = < KerningTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KerningTable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddKerningPair(u32, u32, f32)` overload"] fn add_kerning_pair_2 (self , first : impl :: core :: convert :: Into < u32 > , second : impl :: core :: convert :: Into < u32 > , offset : impl :: core :: convert :: Into < f32 >) -> i32 { unsafe { let __receiver = < KerningTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KerningTable , u32 , u32 , f32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8c8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (first) , :: core :: convert :: Into :: into (second) , :: core :: convert :: Into :: into (offset) , :: core :: option :: Option :: None) } } } # [doc = "`AddGlyphPairAdjustmentRecord(u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"] fn add_glyph_pair_adjustment_record (self , first : impl :: core :: convert :: Into < u32 > , first_adjustments : impl :: core :: convert :: Into < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy > , second : impl :: core :: convert :: Into < u32 > , second_adjustments : impl :: core :: convert :: Into < crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy >) -> i32 { unsafe { let __receiver = < KerningTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KerningTable , u32 , crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy , u32 , crate :: tm_pro :: glyphvaluerecord_legacy :: GlyphValueRecord_Legacy , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8ca30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (first) , :: core :: convert :: Into :: into (first_adjustments) , :: core :: convert :: Into :: into (second) , :: core :: convert :: Into :: into (second_adjustments) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveKerningPair(i32, i32)` overload"] fn remove_kerning_pair (self , left : impl :: core :: convert :: Into < i32 > , right : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < KerningTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KerningTable , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8cc00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveKerningPair(i32)` overload"] fn remove_kerning_pair_2 (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < KerningTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KerningTable , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8cd50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`SortKerningPairs()` overload"] fn sort_kerning_pairs (self ,) -> () { unsafe { let __receiver = < KerningTable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KerningTable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8cdb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-kerningtable")]pub trait IKerningTableMethods:IKerningTable{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <KerningTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c6e0usize)as*mut u8,();
+(KerningTable)__receiver)}
+}
+#[doc="`AddKerningPair()` overload"]fn add_kerning_pair(self,)->(){unsafe{let __receiver= <KerningTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c770usize)as*mut u8,();
+(KerningTable)__receiver)}
+}
+#[doc="`AddKerningPair(u32, u32, f32)` overload"]fn add_kerning_pair_2(self,first:impl::core::convert::Into<u32> ,second:impl::core::convert::Into<u32> ,offset:impl::core::convert::Into<f32>)->i32{unsafe{let __receiver= <KerningTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c8a0usize)as*mut u8,i32;
+(KerningTable)__receiver,(u32)::core::convert::Into::into(first),(u32)::core::convert::Into::into(second),(f32)::core::convert::Into::into(offset))}
+}
+#[doc="`AddGlyphPairAdjustmentRecord(u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, u32, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]fn add_glyph_pair_adjustment_record(self,first:impl::core::convert::Into<u32> ,first_adjustments:impl::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy> ,second:impl::core::convert::Into<u32> ,second_adjustments:impl::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy>)->i32{unsafe{let __receiver= <KerningTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8ca30usize)as*mut u8,i32;
+(KerningTable)__receiver,(u32)::core::convert::Into::into(first),(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)::core::convert::Into::into(first_adjustments),(u32)::core::convert::Into::into(second),(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)::core::convert::Into::into(second_adjustments))}
+}
+#[doc="`RemoveKerningPair(i32, i32)` overload"]fn remove_kerning_pair(self,left:impl::core::convert::Into<i32> ,right:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <KerningTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8cc00usize)as*mut u8,();
+(KerningTable)__receiver,(i32)::core::convert::Into::into(left),(i32)::core::convert::Into::into(right))}
+}
+#[doc="`RemoveKerningPair(i32)` overload"]fn remove_kerning_pair_2(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <KerningTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8cd50usize)as*mut u8,();
+(KerningTable)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`SortKerningPairs()` overload"]fn sort_kerning_pairs(self,)->(){unsafe{let __receiver= <KerningTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8cdb0usize)as*mut u8,();
+(KerningTable)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-kerningtable")]
-impl < __T : IKerningTable > IKerningTableMethods for __T { }
+#[cfg(feature="tm_pro-kerningtable")]impl<__T:IKerningTable>IKerningTableMethods for __T{}
 
-#[cfg(feature = "tm_pro-kerningtable")]
-impl KerningTable { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KerningTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_kerning_pair_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KerningTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_kerning_pair_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KerningTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_glyph_pair_adjustment_record_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KerningTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn remove_kerning_pair_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KerningTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn remove_kerning_pair_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KerningTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn sort_kerning_pairs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KerningTable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="tm_pro-kerningtable")]impl KerningTable{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_kerning_pair_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_kerning_pair_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_glyph_pair_adjustment_record_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn remove_kerning_pair_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn remove_kerning_pair_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn sort_kerning_pairs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "tm_pro-kerningtable")]
-impl KerningTable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KerningTable) , :: core :: stringify ! (new) ,)) ; < Self as IKerningTableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-kerningtable")]impl KerningTable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KerningTable), ::core::stringify!(new),));
+ <Self as IKerningTableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-kerningtable")]

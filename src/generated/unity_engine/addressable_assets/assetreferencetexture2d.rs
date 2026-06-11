@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: addressable_assets :: assetreference :: { AssetReference , IAssetReference }
- ;
- use crate :: unity_engine :: addressable_assets :: assetreferencet_1 :: { AssetReferenceT_1 , IAssetReferenceT_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::addressable_assets::assetreference::{AssetReference,IAssetReference}
+;
+use crate::unity_engine::addressable_assets::assetreferencet_1::{AssetReferenceT_1,IAssetReferenceT_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencetexture2d/AssetReferenceTexture2D.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets" , name = "AssetReferenceTexture2D")] # [parent (crate :: unity_engine :: addressable_assets :: assetreferencet_1 :: AssetReferenceT_1 < crate :: unity_engine :: texture2d :: Texture2D >)] pub struct AssetReferenceTexture2D {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/assetreferencetexture2d/AssetReferenceTexture2D.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AssetReferenceTexture2D")]#[parent(crate::unity_engine::addressable_assets::assetreferencet_1::AssetReferenceT_1<crate::unity_engine::texture2d::Texture2D>)]pub struct AssetReferenceTexture2D{}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture2d-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture2d")]
-pub trait IAssetReferenceTexture2DMethods : IAssetReferenceTexture2D { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , guid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssetReferenceTexture2D as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssetReferenceTexture2D , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db3070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (guid) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-assetreferencetexture2d")]pub trait IAssetReferenceTexture2DMethods:IAssetReferenceTexture2D{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,guid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetReferenceTexture2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3070usize)as*mut u8,();
+(AssetReferenceTexture2D)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(guid))}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture2d")]
-impl < __T : IAssetReferenceTexture2D > IAssetReferenceTexture2DMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-assetreferencetexture2d")]impl<__T:IAssetReferenceTexture2D>IAssetReferenceTexture2DMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture2d")]
-impl AssetReferenceTexture2D { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssetReferenceTexture2D as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-addressable_assets-assetreferencetexture2d")]impl AssetReferenceTexture2D{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture2d")]
-impl AssetReferenceTexture2D {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (guid : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssetReferenceTexture2D) , :: core :: stringify ! (new) ,)) ; < Self as IAssetReferenceTexture2DMethods > :: ctor (this , guid) ; this }
+#[cfg(feature="unity_engine-addressable_assets-assetreferencetexture2d")]impl AssetReferenceTexture2D{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(guid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssetReferenceTexture2D), ::core::stringify!(new),));
+ <Self as IAssetReferenceTexture2DMethods> ::ctor(this,guid);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture2d")]

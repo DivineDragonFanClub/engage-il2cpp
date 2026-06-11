@@ -4,14 +4,12 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animatorlayer/AnimatorLayer.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AnimatorLayer")] # [parent (crate :: system :: object :: Object)] pub struct AnimatorLayer {
-# [static_field] # [rename (name = "Default")] pub default : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/animatorlayer/AnimatorLayer.md"))]#[::unity2::class(namespace="Combat",name="AnimatorLayer")]#[parent(crate::system::object::Object)]pub struct AnimatorLayer{#[static_field]#[rename(name="Default")]pub default:i32,}
 
 }
 

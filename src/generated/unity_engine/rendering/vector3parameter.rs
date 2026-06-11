@@ -4,34 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
+;
+use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/vector3parameter/Vector3Parameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "Vector3Parameter")] # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: vector3 :: Vector3 >)] pub struct Vector3Parameter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/vector3parameter/Vector3Parameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="Vector3Parameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::vector3::Vector3>)]pub struct Vector3Parameter{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-vector3parameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-vector3parameter")]
-pub trait IVector3ParameterMethods : IVector3Parameter { # [doc = "`.ctor(crate::unity_engine::vector3::Vector3, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Vector3Parameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Vector3Parameter , crate :: unity_engine :: vector3 :: Vector3 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4830usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } # [doc = "`Interp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"] fn interp (self , from : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , to : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , t : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Vector3Parameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Vector3Parameter , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e48c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from) , :: core :: convert :: Into :: into (to) , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-vector3parameter")]pub trait IVector3ParameterMethods:IVector3Parameter{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Vector3Parameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4830usize)as*mut u8,();
+(Vector3Parameter)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
+}
+#[doc="`Interp(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]fn interp(self,from:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,to:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,t:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Vector3Parameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e48c0usize)as*mut u8,();
+(Vector3Parameter)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(from),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(to),(f32)::core::convert::Into::into(t))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-vector3parameter")]
-impl < __T : IVector3Parameter > IVector3ParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-vector3parameter")]impl<__T:IVector3Parameter>IVector3ParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-vector3parameter")]
-impl Vector3Parameter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Parameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn interp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vector3Parameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-rendering-vector3parameter")]impl Vector3Parameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn interp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-rendering-vector3parameter")]
-impl Vector3Parameter {
-# [doc = "`.ctor(crate::unity_engine::vector3::Vector3, bool)` — overload selector"] pub fn new (value : crate :: unity_engine :: vector3 :: Vector3 , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Vector3Parameter) , :: core :: stringify ! (new) ,)) ; < Self as IVector3ParameterMethods > :: ctor (this , value , override_state) ; this }
+#[cfg(feature="unity_engine-rendering-vector3parameter")]impl Vector3Parameter{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, bool)` — overload selector"]pub fn new(value:crate::unity_engine::vector3::Vector3,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Vector3Parameter), ::core::stringify!(new),));
+ <Self as IVector3ParameterMethods> ::ctor(this,value,override_state);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-vector3parameter")]

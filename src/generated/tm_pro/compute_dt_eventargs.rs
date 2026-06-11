@@ -4,36 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/compute_dt_eventargs/Compute_DT_EventArgs.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "Compute_DT_EventArgs")] # [parent (crate :: system :: object :: Object)] pub struct Compute_DT_EventArgs {
-# [offset (16)] # [rename (name = "EventType")] pub event_type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes ,
-# [offset (20)] # [rename (name = "ProgressPercentage")] pub progress_percentage : f32 ,
-# [offset (24)] # [rename (name = "Colors")] pub colors : :: unity2 :: Array < crate :: unity_engine :: color :: Color > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/compute_dt_eventargs/Compute_DT_EventArgs.md"))]#[::unity2::class(namespace="TMPro",name="Compute_DT_EventArgs")]#[parent(crate::system::object::Object)]pub struct Compute_DT_EventArgs{#[offset(16)]#[rename(name="EventType")]pub event_type:crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, #[offset(20)]#[rename(name="ProgressPercentage")]pub progress_percentage:f32, #[offset(24)]#[rename(name="Colors")]pub colors: ::unity2::Array<crate::unity_engine::color::Color> ,}
 
 }
 
 #[cfg(feature = "tm_pro-compute_dt_eventargs-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-compute_dt_eventargs")]
-pub trait ICompute_DT_EventArgsMethods : ICompute_DT_EventArgs { # [doc = "`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, f32)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes > , progress : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < Compute_DT_EventArgs as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Compute_DT_EventArgs , crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8b560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, ::unity2::Array<crate::unity_engine::color::Color>)` overload"] fn ctor_2 (self , r#type : impl :: core :: convert :: Into < crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes > , colors : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: color :: Color > >) -> () { unsafe { let __receiver = < Compute_DT_EventArgs as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Compute_DT_EventArgs , crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes , :: unity2 :: Array < crate :: unity_engine :: color :: Color > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2d8b5a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (colors) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-compute_dt_eventargs")]pub trait ICompute_DT_EventArgsMethods:ICompute_DT_EventArgs{#[doc="`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, f32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes> ,progress:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Compute_DT_EventArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8b560usize)as*mut u8,();
+(Compute_DT_EventArgs)__receiver,(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes)::core::convert::Into::into(r#type),(f32)::core::convert::Into::into(progress))}
+}
+#[doc="`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, ::unity2::Array<crate::unity_engine::color::Color>)` overload"]fn ctor_2(self,r#type:impl::core::convert::Into<crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes> ,colors:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::color::Color> >)->(){unsafe{let __receiver= <Compute_DT_EventArgs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2d8b5a0usize)as*mut u8,();
+(Compute_DT_EventArgs)__receiver,(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes)::core::convert::Into::into(r#type),(::unity2::Array<crate::unity_engine::color::Color>)::core::convert::Into::into(colors))}
+}
+}
 
-#[cfg(feature = "tm_pro-compute_dt_eventargs")]
-impl < __T : ICompute_DT_EventArgs > ICompute_DT_EventArgsMethods for __T { }
+#[cfg(feature="tm_pro-compute_dt_eventargs")]impl<__T:ICompute_DT_EventArgs>ICompute_DT_EventArgsMethods for __T{}
 
-#[cfg(feature = "tm_pro-compute_dt_eventargs")]
-impl Compute_DT_EventArgs { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Compute_DT_EventArgs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Compute_DT_EventArgs as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="tm_pro-compute_dt_eventargs")]impl Compute_DT_EventArgs{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "tm_pro-compute_dt_eventargs")]
-impl Compute_DT_EventArgs {
-# [doc = "`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, f32)` — overload selector"] pub fn new (r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes , progress : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Compute_DT_EventArgs) , :: core :: stringify ! (new) ,)) ; < Self as ICompute_DT_EventArgsMethods > :: ctor (this , r#type , progress) ; this }
-
-# [doc = "`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, ::unity2::Array<crate::unity_engine::color::Color>)` — overload selector"] pub fn new_2 (r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes , colors : :: unity2 :: Array < crate :: unity_engine :: color :: Color >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Compute_DT_EventArgs) , :: core :: stringify ! (new_2) ,)) ; < Self as ICompute_DT_EventArgsMethods > :: ctor_2 (this , r#type , colors) ; this }
+#[cfg(feature="tm_pro-compute_dt_eventargs")]impl Compute_DT_EventArgs{#[doc="`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, f32)` — overload selector"]pub fn new(r#type:crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,progress:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Compute_DT_EventArgs), ::core::stringify!(new),));
+ <Self as ICompute_DT_EventArgsMethods> ::ctor(this,r#type,progress);
+this}
+#[doc="`.ctor(crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes, ::unity2::Array<crate::unity_engine::color::Color>)` — overload selector"]pub fn new_2(r#type:crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,colors: ::unity2::Array<crate::unity_engine::color::Color>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Compute_DT_EventArgs), ::core::stringify!(new_2),));
+ <Self as ICompute_DT_EventArgsMethods> ::ctor_2(this,r#type,colors);
+this}
 }
 
 #[cfg(feature = "tm_pro-compute_dt_eventargs")]

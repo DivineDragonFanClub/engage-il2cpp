@@ -4,42 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystamp/RelayStamp.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayStamp")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RelayStamp {
-# [offset (24)] # [rename (name = "m_LastNameText")] pub m_last_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_TitleText")] pub m_title_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_StampImage")] pub m_stamp_image : crate :: unity_engine :: ui :: image :: Image ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaystamp/RelayStamp.md"))]#[::unity2::class(namespace="App",name="RelayStamp")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RelayStamp{#[offset(24)]#[rename(name="m_LastNameText")]pub m_last_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_StampImage")]pub m_stamp_image:crate::unity_engine::ui::image::Image,}
 
 }
 
 #[cfg(feature = "app-relaystamp-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relaystamp")]
-pub trait IRelayStampMethods : IRelayStamp { # [doc = "`SetData(crate::app::relaystampdata::RelayStampData)` overload"] fn set_data (self , data : impl :: core :: convert :: Into < crate :: app :: relaystampdata :: RelayStampData >) -> () { unsafe { let __receiver = < RelayStamp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStamp , crate :: app :: relaystampdata :: RelayStampData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayStamp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayStamp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x200d3b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relaystamp")]pub trait IRelayStampMethods:IRelayStamp{#[doc="`SetData(crate::app::relaystampdata::RelayStampData)` overload"]fn set_data(self,data:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData>)->(){unsafe{let __receiver= <RelayStamp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d090usize)as*mut u8,();
+(RelayStamp)__receiver,(crate::app::relaystampdata::RelayStampData)::core::convert::Into::into(data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayStamp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x200d3b0usize)as*mut u8,();
+(RelayStamp)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relaystamp")]
-impl < __T : IRelayStamp > IRelayStampMethods for __T { }
+#[cfg(feature="app-relaystamp")]impl<__T:IRelayStamp>IRelayStampMethods for __T{}
 
-#[cfg(feature = "app-relaystamp")]
-impl RelayStamp { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStamp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayStamp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-relaystamp")]impl RelayStamp{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-relaystamp")]
-impl RelayStamp {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayStamp) , :: core :: stringify ! (new) ,)) ; < Self as IRelayStampMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relaystamp")]impl RelayStamp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayStamp), ::core::stringify!(new),));
+ <Self as IRelayStampMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relaystamp")]

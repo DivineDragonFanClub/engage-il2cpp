@@ -4,27 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/signaltowhom/SignalToWhom.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "SignalToWhom")] # [parent (crate :: system :: object :: Object)] pub struct SignalToWhom {
-# [static_field] # [rename (name = "Player")] pub player : i32 ,
-# [static_field] # [rename (name = "Enemy")] pub enemy : i32 ,
-# [static_field] # [rename (name = "Optional")] pub optional : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/signaltowhom/SignalToWhom.md"))]#[::unity2::class(namespace="Combat",name="SignalToWhom")]#[parent(crate::system::object::Object)]pub struct SignalToWhom{#[static_field]#[rename(name="Player")]pub player:i32, #[static_field]#[rename(name="Enemy")]pub enemy:i32, #[static_field]#[rename(name="Optional")]pub optional:i32,}
 
 }
 
 #[cfg(feature = "combat-signaltowhom-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-signaltowhom")]
-impl SignalToWhom { # [doc = "`IsForMe(crate::combat::character::Character, i32)` overload"] pub fn is_for_me (cp : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , target_side : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: character :: Character , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247d520usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cp) , :: core :: convert :: Into :: into (target_side) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-signaltowhom")]impl SignalToWhom{#[doc="`IsForMe(crate::combat::character::Character, i32)` overload"]pub fn is_for_me(cp:impl::core::convert::Into<crate::combat::character::Character> ,target_side:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247d520usize)as*mut u8,bool;
+(crate::combat::character::Character)::core::convert::Into::into(cp),(i32)::core::convert::Into::into(target_side))}
+}
+}
 
-#[cfg(feature = "combat-signaltowhom")]
-impl SignalToWhom { pub fn is_for_me_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SignalToWhom as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-signaltowhom")]impl SignalToWhom{pub fn is_for_me_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-signaltowhom")]
 #[doc(hidden)]

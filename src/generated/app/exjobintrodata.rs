@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exjobintrodata/ExJobIntroData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExJobIntroData")] # [parent (crate :: system :: object :: Object)] pub struct ExJobIntroData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/exjobintrodata/ExJobIntroData.md"))]#[::unity2::class(namespace="App",name="ExJobIntroData")]#[parent(crate::system::object::Object)]pub struct ExJobIntroData{}
 
 }
 
 #[cfg(feature = "app-exjobintrodata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-exjobintrodata")]
-impl ExJobIntroData { # [doc = "`IsRevenge(crate::app::jobintrodata::JobIntroData_BattleType)` overload"] pub fn is_revenge (r#type : impl :: core :: convert :: Into < crate :: app :: jobintrodata :: JobIntroData_BattleType >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: jobintrodata :: JobIntroData_BattleType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4c90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-exjobintrodata")]impl ExJobIntroData{#[doc="`IsRevenge(crate::app::jobintrodata::JobIntroData_BattleType)` overload"]pub fn is_revenge(r#type:impl::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e4c90usize)as*mut u8,bool;
+(crate::app::jobintrodata::JobIntroData_BattleType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "app-exjobintrodata")]
-impl ExJobIntroData { pub fn is_revenge_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExJobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-exjobintrodata")]impl ExJobIntroData{pub fn is_revenge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "app-exjobintrodata")]
 #[doc(hidden)]

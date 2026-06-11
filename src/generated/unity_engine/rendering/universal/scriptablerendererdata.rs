@@ -4,40 +4,87 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerendererdata/ScriptableRendererData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "ScriptableRendererData")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct ScriptableRendererData {
-# [offset (32)] # [rename (name = "m_RendererFeatures")] pub m_renderer_features : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > ,
-# [offset (40)] # [rename (name = "m_RendererFeatureMap")] pub m_renderer_feature_map : crate :: system :: collections :: generic :: list_1 :: List_1 < i64 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/scriptablerendererdata/ScriptableRendererData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ScriptableRendererData")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct ScriptableRendererData{#[offset(32)]#[rename(name="m_RendererFeatures")]pub m_renderer_features:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature> , #[offset(40)]#[rename(name="m_RendererFeatureMap")]pub m_renderer_feature_map:crate::system::collections::generic::list_1::List_1<i64> ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScriptableRendererData_unity2_raw { use super :: * ; pub unsafe fn create (this : ScriptableRendererData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Create") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Create" , < ScriptableRendererData as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ScriptableRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-rendering-universal-scriptablerendererdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptableRendererData_unity2_raw{use super:: * ;
+pub unsafe fn create(this:ScriptableRendererData,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Create").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Create", <ScriptableRendererData as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ScriptableRendererData, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
-pub trait IScriptableRendererDataMethods : IScriptableRendererData { # [doc = "`get_isInvalidated()` overload"] fn get_is_invalidated (self ,) -> bool { unsafe { let __receiver = < ScriptableRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRendererData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed66c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_isInvalidated(bool)` overload"] fn set_is_invalidated (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ScriptableRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRendererData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed66d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] fn create (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer { unsafe { let __receiver = < ScriptableRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ScriptableRendererData_unity2_raw :: create (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_rendererFeatures()` overload"] fn get_renderer_features (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > { unsafe { let __receiver = < ScriptableRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRendererData , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed66e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDirty()` overload"] fn set_dirty (self ,) -> () { unsafe { let __receiver = < ScriptableRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed66f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InternalCreateRenderer()` overload"] fn internal_create_renderer (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer { unsafe { let __receiver = < ScriptableRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRendererData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed6700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < ScriptableRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed6710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < ScriptableRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed6720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ScriptableRendererData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ScriptableRendererData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ed6730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-scriptablerendererdata")]pub trait IScriptableRendererDataMethods:IScriptableRendererData{#[doc="`get_isInvalidated()` overload"]fn get_is_invalidated(self,)->bool{unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed66c0usize)as*mut u8,bool;
+(ScriptableRendererData)__receiver)}
+}
+#[doc="`set_isInvalidated(bool)` overload"]fn set_is_invalidated(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed66d0usize)as*mut u8,();
+(ScriptableRendererData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`Create()` overload"]fn create(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ScriptableRendererData_unity2_raw::create(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_rendererFeatures()` overload"]fn get_renderer_features(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature>{unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed66e0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature> ;
+(ScriptableRendererData)__receiver)}
+}
+#[doc="`SetDirty()` overload"]fn set_dirty(self,)->(){unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed66f0usize)as*mut u8,();
+(ScriptableRendererData)__receiver)}
+}
+#[doc="`InternalCreateRenderer()` overload"]fn internal_create_renderer(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed6700usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+(ScriptableRendererData)__receiver)}
+}
+#[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed6710usize)as*mut u8,();
+(ScriptableRendererData)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed6720usize)as*mut u8,();
+(ScriptableRendererData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptableRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed6730usize)as*mut u8,();
+(ScriptableRendererData)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
-impl < __T : IScriptableRendererData > IScriptableRendererDataMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-scriptablerendererdata")]impl<__T:IScriptableRendererData>IScriptableRendererDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
-impl ScriptableRendererData { pub fn get_is_invalidated_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_is_invalidated_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_renderer_features_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn internal_create_renderer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptableRendererData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-rendering-universal-scriptablerendererdata")]impl ScriptableRendererData{pub fn get_is_invalidated_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_invalidated_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_renderer_features_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn internal_create_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]
-impl ScriptableRendererData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ScriptableRendererData) , :: core :: stringify ! (new) ,)) ; < Self as IScriptableRendererDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-scriptablerendererdata")]impl ScriptableRendererData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptableRendererData), ::core::stringify!(new),));
+ <Self as IScriptableRendererDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerendererdata")]

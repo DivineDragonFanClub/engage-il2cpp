@@ -4,26 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coremodules_extensionmethods/CoreModules_ExtensionMethods.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter" , name = "CoreModules_ExtensionMethods")] # [parent (crate :: system :: object :: Object)] pub struct CoreModules_ExtensionMethods {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/coremodules_extensionmethods/CoreModules_ExtensionMethods.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="CoreModules_ExtensionMethods")]#[parent(crate::system::object::Object)]pub struct CoreModules_ExtensionMethods{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __CoreModules_ExtensionMethods_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_has { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: coremodules :: CoreModules as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: coremodules :: CoreModules as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< CoreModules_ExtensionMethods as :: unity2 :: ClassIdentity > :: class () , "Has" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < CoreModules_ExtensionMethods as :: unity2 :: ClassIdentity > :: NAME , "Has" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-coremodules_extensionmethods")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CoreModules_ExtensionMethods_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_has{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::coremodules::CoreModules as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::coremodules::CoreModules as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<CoreModules_ExtensionMethods as::unity2::ClassIdentity> ::class(),"Has",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <CoreModules_ExtensionMethods as::unity2::ClassIdentity> ::NAME,"Has",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods")]
-impl CoreModules_ExtensionMethods { # [doc = "`Has(crate::moon_sharp::interpreter::coremodules::CoreModules, crate::moon_sharp::interpreter::coremodules::CoreModules)` overload"] pub fn has (val : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: coremodules :: CoreModules > , flag : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: coremodules :: CoreModules >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: coremodules :: CoreModules , crate :: moon_sharp :: interpreter :: coremodules :: CoreModules , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__CoreModules_ExtensionMethods_unity2_raw :: __lookup_has :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (val) , :: core :: convert :: Into :: into (flag) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-coremodules_extensionmethods")]impl CoreModules_ExtensionMethods{#[doc="`Has(crate::moon_sharp::interpreter::coremodules::CoreModules, crate::moon_sharp::interpreter::coremodules::CoreModules)` overload"]pub fn has(val:impl::core::convert::Into<crate::moon_sharp::interpreter::coremodules::CoreModules> ,flag:impl::core::convert::Into<crate::moon_sharp::interpreter::coremodules::CoreModules>)->bool{unsafe{::unity2::il2cpp_call!(__CoreModules_ExtensionMethods_unity2_raw::__lookup_has::get_method_info().method_ptr,bool;
+(crate::moon_sharp::interpreter::coremodules::CoreModules)::core::convert::Into::into(val),(crate::moon_sharp::interpreter::coremodules::CoreModules)::core::convert::Into::into(flag))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods")]
-impl CoreModules_ExtensionMethods { pub fn has_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CoreModules_ExtensionMethods as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="moon_sharp-interpreter-coremodules_extensionmethods")]impl CoreModules_ExtensionMethods{pub fn has_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-coremodules_extensionmethods")]
 #[doc(hidden)]

@@ -4,39 +4,130 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopdata/ShopData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: shopdata :: ShopData >)] pub struct ShopData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopdata/ShopData.md"))]#[::unity2::class(namespace="App",name="ShopData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::shopdata::ShopData>)]pub struct ShopData{}
 
 }
 
 #[cfg(feature = "app-shopdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-shopdata")]
-impl ShopData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0d30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Regist()` overload"] pub fn regist () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1690usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopdata")]impl ShopData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21b0d30usize)as*mut u8,();
+)}
+}
+#[doc="`Regist()` overload"]pub fn regist()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21b1690usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-shopdata")]
-pub trait IShopDataMethods : IShopData { # [doc = "`get_Iid()` overload"] fn get_iid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iid(::unity2::Il2CppString)` overload"] fn set_iid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Stock()` overload"] fn get_stock (self ,) -> i32 { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0d60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Stock(i32)` overload"] fn set_stock (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0d70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Condition()` overload"] fn get_condition (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Condition(::unity2::Il2CppString)` overload"] fn set_condition (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetWithoutPrefix()` overload"] fn get_without_prefix (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_StockKey()` overload"] fn get_stock_key (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_StockKey(::unity2::Il2CppString)` overload"] fn set_stock_key (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PurchasedKey()` overload"] fn get_purchased_key (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PurchasedKey(::unity2::Il2CppString)` overload"] fn set_purchased_key (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b0de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetPurchased()` overload"] fn get_purchased (self ,) -> i32 { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b10a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPurchased(i32)` overload"] fn set_purchased (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`AddPurchased(i32)` overload"] fn add_purchased (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`IsCondition()` overload"] fn is_condition (self ,) -> bool { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RegistImpl(::unity2::Il2CppString)` overload"] fn regist_impl (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1490usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ShopData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b1830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopdata")]pub trait IShopDataMethods:IShopData{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0d40usize)as*mut u8, ::unity2::Il2CppString;
+(ShopData)__receiver)}
+}
+#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0d50usize)as*mut u8,();
+(ShopData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Stock()` overload"]fn get_stock(self,)->i32{unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0d60usize)as*mut u8,i32;
+(ShopData)__receiver)}
+}
+#[doc="`set_Stock(i32)` overload"]fn set_stock(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0d70usize)as*mut u8,();
+(ShopData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Condition()` overload"]fn get_condition(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0d80usize)as*mut u8, ::unity2::Il2CppString;
+(ShopData)__receiver)}
+}
+#[doc="`set_Condition(::unity2::Il2CppString)` overload"]fn set_condition(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0d90usize)as*mut u8,();
+(ShopData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetWithoutPrefix()` overload"]fn get_without_prefix(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0da0usize)as*mut u8, ::unity2::Il2CppString;
+(ShopData)__receiver)}
+}
+#[doc="`get_StockKey()` overload"]fn get_stock_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0db0usize)as*mut u8, ::unity2::Il2CppString;
+(ShopData)__receiver)}
+}
+#[doc="`set_StockKey(::unity2::Il2CppString)` overload"]fn set_stock_key(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0dc0usize)as*mut u8,();
+(ShopData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_PurchasedKey()` overload"]fn get_purchased_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0dd0usize)as*mut u8, ::unity2::Il2CppString;
+(ShopData)__receiver)}
+}
+#[doc="`set_PurchasedKey(::unity2::Il2CppString)` overload"]fn set_purchased_key(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b0de0usize)as*mut u8,();
+(ShopData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetPurchased()` overload"]fn get_purchased(self,)->i32{unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b10a0usize)as*mut u8,i32;
+(ShopData)__receiver)}
+}
+#[doc="`SetPurchased(i32)` overload"]fn set_purchased(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1180usize)as*mut u8,();
+(ShopData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`AddPurchased(i32)` overload"]fn add_purchased(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1350usize)as*mut u8,();
+(ShopData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`IsCondition()` overload"]fn is_condition(self,)->bool{unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1390usize)as*mut u8,bool;
+(ShopData)__receiver)}
+}
+#[doc="`RegistImpl(::unity2::Il2CppString)` overload"]fn regist_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1490usize)as*mut u8,();
+(ShopData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b1830usize)as*mut u8,();
+(ShopData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-shopdata")]
-impl < __T : IShopData > IShopDataMethods for __T { }
+#[cfg(feature="app-shopdata")]impl<__T:IShopData>IShopDataMethods for __T{}
 
-#[cfg(feature = "app-shopdata")]
-impl ShopData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_stock_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_without_prefix_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_stock_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_stock_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_purchased_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_purchased_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_purchased_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_purchased_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn add_purchased_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn regist_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn regist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } }
+#[cfg(feature="app-shopdata")]impl ShopData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_without_prefix_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_stock_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_stock_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_purchased_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_purchased_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_purchased_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_purchased_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn add_purchased_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn regist_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn regist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+}
 
-#[cfg(feature = "app-shopdata")]
-impl ShopData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopData) , :: core :: stringify ! (new) ,)) ; < Self as IShopDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-shopdata")]impl ShopData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopData), ::core::stringify!(new),));
+ <Self as IShopDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-shopdata")]

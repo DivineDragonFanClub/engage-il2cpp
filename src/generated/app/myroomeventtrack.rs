@@ -4,38 +4,47 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
- use crate :: unity_engine :: timeline :: trackasset :: { ITrackAsset , TrackAsset }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
+use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomeventtrack/MyRoomEventTrack.md"))] # [:: unity2 :: class (namespace = "App" , name = "MyRoomEventTrack")] # [parent (crate :: unity_engine :: timeline :: trackasset :: TrackAsset)] pub struct MyRoomEventTrack {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeventtrack/MyRoomEventTrack.md"))]#[::unity2::class(namespace="App",name="MyRoomEventTrack")]#[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]pub struct MyRoomEventTrack{}
 
 }
 
 #[cfg(feature = "app-myroomeventtrack-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-myroomeventtrack")]
-pub trait IMyRoomEventTrackMethods : IMyRoomEventTrack { # [doc = "`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"] fn create_track_mixer (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , input_count : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < MyRoomEventTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventTrack , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238faa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (go) , :: core :: convert :: Into :: into (input_count) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MyRoomEventTrack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MyRoomEventTrack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x238fb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-myroomeventtrack")]pub trait IMyRoomEventTrackMethods:IMyRoomEventTrack{#[doc="`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn create_track_mixer(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <MyRoomEventTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238faa0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(MyRoomEventTrack)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(input_count))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomEventTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x238fb60usize)as*mut u8,();
+(MyRoomEventTrack)__receiver)}
+}
+}
 
-#[cfg(feature = "app-myroomeventtrack")]
-impl < __T : IMyRoomEventTrack > IMyRoomEventTrackMethods for __T { }
+#[cfg(feature="app-myroomeventtrack")]impl<__T:IMyRoomEventTrack>IMyRoomEventTrackMethods for __T{}
 
-#[cfg(feature = "app-myroomeventtrack")]
-impl MyRoomEventTrack { pub fn create_track_mixer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MyRoomEventTrack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-myroomeventtrack")]impl MyRoomEventTrack{pub fn create_track_mixer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-myroomeventtrack")]
-impl MyRoomEventTrack {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MyRoomEventTrack) , :: core :: stringify ! (new) ,)) ; < Self as IMyRoomEventTrackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-myroomeventtrack")]impl MyRoomEventTrack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomEventTrack), ::core::stringify!(new),));
+ <Self as IMyRoomEventTrackMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-myroomeventtrack")]

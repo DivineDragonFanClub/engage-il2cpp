@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/delegateutility/DelegateUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "DelegateUtility")] # [parent (crate :: system :: object :: Object)] pub struct DelegateUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/delegateutility/DelegateUtility.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="DelegateUtility")]#[parent(crate::system::object::Object)]pub struct DelegateUtility{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-delegateutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-delegateutility")]
-impl DelegateUtility { # [doc = "`Cast(crate::system::delegate::Delegate, ::unity2::SystemType)` overload"] pub fn cast (source : impl :: core :: convert :: Into < crate :: system :: delegate :: Delegate > , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> crate :: system :: delegate :: Delegate { unsafe { { let __inner : extern "C" fn (crate :: system :: delegate :: Delegate , :: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> crate :: system :: delegate :: Delegate = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a9140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-delegateutility")]impl DelegateUtility{#[doc="`Cast(crate::system::delegate::Delegate, ::unity2::SystemType)` overload"]pub fn cast(source:impl::core::convert::Into<crate::system::delegate::Delegate> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::delegate::Delegate{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30a9140usize)as*mut u8,crate::system::delegate::Delegate;
+(crate::system::delegate::Delegate)::core::convert::Into::into(source),(::unity2::SystemType)::core::convert::Into::into(r#type))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-delegateutility")]
-impl DelegateUtility { pub fn cast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DelegateUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-delegateutility")]impl DelegateUtility{pub fn cast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-rendering-delegateutility")]
 #[doc(hidden)]

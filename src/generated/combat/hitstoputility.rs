@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hitstoputility/HitStopUtility.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "HitStopUtility")] # [parent (crate :: system :: object :: Object)] pub struct HitStopUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/hitstoputility/HitStopUtility.md"))]#[::unity2::class(namespace="Combat",name="HitStopUtility")]#[parent(crate::system::object::Object)]pub struct HitStopUtility{}
 
 }
 
 #[cfg(feature = "combat-hitstoputility-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-hitstoputility")]
-impl HitStopUtility { # [doc = "`CalcHitStopBaseTime(crate::combat::phase::Phase)` overload"] pub fn calc_hit_stop_base_time (phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase >) -> f32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: phase :: Phase , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21675e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (phase) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-hitstoputility")]impl HitStopUtility{#[doc="`CalcHitStopBaseTime(crate::combat::phase::Phase)` overload"]pub fn calc_hit_stop_base_time(phase:impl::core::convert::Into<crate::combat::phase::Phase>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21675e0usize)as*mut u8,f32;
+(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
+}
+}
 
-#[cfg(feature = "combat-hitstoputility")]
-impl HitStopUtility { pub fn calc_hit_stop_base_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HitStopUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-hitstoputility")]impl HitStopUtility{pub fn calc_hit_stop_base_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-hitstoputility")]
 #[doc(hidden)]

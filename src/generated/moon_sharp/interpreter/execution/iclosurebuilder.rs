@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/iclosurebuilder/IClosureBuilder.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Execution" , name = "IClosureBuilder")] pub struct IClosureBuilder {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/execution/iclosurebuilder/IClosureBuilder.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Execution",name="IClosureBuilder")]pub struct IClosureBuilder{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IClosureBuilder_unity2_raw { use super :: * ; pub unsafe fn create_upvalue (this : IClosureBuilder , scope : crate :: moon_sharp :: interpreter :: execution :: buildtimescope :: BuildTimeScope , symbol : crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CreateUpvalue") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CreateUpvalue" , < IClosureBuilder as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IClosureBuilder , crate :: moon_sharp :: interpreter :: execution :: buildtimescope :: BuildTimeScope , crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , scope , symbol , __mi) } }
+#[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IClosureBuilder_unity2_raw{use super:: * ;
+pub unsafe fn create_upvalue(this:IClosureBuilder,scope:crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,symbol:crate::moon_sharp::interpreter::symbolref::SymbolRef,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreateUpvalue").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CreateUpvalue", <IClosureBuilder as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IClosureBuilder,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,crate::moon_sharp::interpreter::symbolref::SymbolRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,scope,symbol,__mi)}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
-pub trait IIClosureBuilderMethods : IIClosureBuilder { # [doc = "`CreateUpvalue(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"] fn create_upvalue (self , scope : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: buildtimescope :: BuildTimeScope > , symbol : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef >) -> crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef { unsafe { let __receiver = < IClosureBuilder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClosureBuilder_unity2_raw :: create_upvalue (__receiver , :: core :: convert :: Into :: into (scope) , :: core :: convert :: Into :: into (symbol) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]pub trait IIClosureBuilderMethods:IIClosureBuilder{#[doc="`CreateUpvalue(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]fn create_upvalue(self,scope:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope> ,symbol:impl::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{let __receiver= <IClosureBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IClosureBuilder_unity2_raw::create_upvalue(__receiver, ::core::convert::Into::into(scope), ::core::convert::Into::into(symbol), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
-impl < __T : IIClosureBuilder > IIClosureBuilderMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]impl<__T:IIClosureBuilder>IIClosureBuilderMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
-impl IClosureBuilder { pub fn create_upvalue_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IClosureBuilder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="moon_sharp-interpreter-execution-iclosurebuilder")]impl IClosureBuilder{pub fn create_upvalue_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iclosurebuilder")]
 #[doc(hidden)]

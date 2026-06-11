@@ -4,41 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainexporter/TerrainExporter.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainExporter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TerrainExporter {
-# [offset (24)] # [rename (name = "m_TerrainSize")] pub m_terrain_size : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (40)] # [rename (name = "m_OriginalTerrainGuid")] pub m_original_terrain_guid : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terrainexporter/TerrainExporter.md"))]#[::unity2::class(namespace="App",name="TerrainExporter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TerrainExporter{#[offset(24)]#[rename(name="m_TerrainSize")]pub m_terrain_size:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="m_OriginalTerrainGuid")]pub m_original_terrain_guid: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-terrainexporter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-terrainexporter")]
-pub trait ITerrainExporterMethods : ITerrainExporter { # [doc = "`get_OriginalTerrainData()` overload"] fn get_original_terrain_data (self ,) -> crate :: unity_engine :: terraindata :: TerrainData { unsafe { let __receiver = < TerrainExporter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainExporter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: terraindata :: TerrainData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e3ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_OriginalTerrainData(crate::unity_engine::terraindata::TerrainData)` overload"] fn set_original_terrain_data (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: terraindata :: TerrainData >) -> () { unsafe { let __receiver = < TerrainExporter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainExporter , crate :: unity_engine :: terraindata :: TerrainData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e3cf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TerrainSize()` overload"] fn get_terrain_size (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < TerrainExporter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainExporter , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e3d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainExporter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainExporter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e3d10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-terrainexporter")]pub trait ITerrainExporterMethods:ITerrainExporter{#[doc="`get_OriginalTerrainData()` overload"]fn get_original_terrain_data(self,)->crate::unity_engine::terraindata::TerrainData{unsafe{let __receiver= <TerrainExporter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3ce0usize)as*mut u8,crate::unity_engine::terraindata::TerrainData;
+(TerrainExporter)__receiver)}
+}
+#[doc="`set_OriginalTerrainData(crate::unity_engine::terraindata::TerrainData)` overload"]fn set_original_terrain_data(self,value:impl::core::convert::Into<crate::unity_engine::terraindata::TerrainData>)->(){unsafe{let __receiver= <TerrainExporter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3cf0usize)as*mut u8,();
+(TerrainExporter)__receiver,(crate::unity_engine::terraindata::TerrainData)::core::convert::Into::into(value))}
+}
+#[doc="`get_TerrainSize()` overload"]fn get_terrain_size(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <TerrainExporter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3d00usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(TerrainExporter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainExporter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3d10usize)as*mut u8,();
+(TerrainExporter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-terrainexporter")]
-impl < __T : ITerrainExporter > ITerrainExporterMethods for __T { }
+#[cfg(feature="app-terrainexporter")]impl<__T:ITerrainExporter>ITerrainExporterMethods for __T{}
 
-#[cfg(feature = "app-terrainexporter")]
-impl TerrainExporter { pub fn get_original_terrain_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainExporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_original_terrain_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainExporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_terrain_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainExporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainExporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-terrainexporter")]impl TerrainExporter{pub fn get_original_terrain_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_original_terrain_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_terrain_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-terrainexporter")]
-impl TerrainExporter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainExporter) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainExporterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-terrainexporter")]impl TerrainExporter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainExporter), ::core::stringify!(new),));
+ <Self as ITerrainExporterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-terrainexporter")]

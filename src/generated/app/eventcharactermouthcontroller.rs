@@ -4,137 +4,109 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharactermouthcontroller/EventCharacterMouthController.md"))] # [:: unity2 :: class (namespace = "App" , name = "EventCharacterMouthController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EventCharacterMouthController {
-# [offset (24)] # [rename (name = "LayerNameArray")] pub layer_name_array : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (32)] # [rename (name = "m_animator")] pub m_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (40)] # [rename (name = "m_animLayerIndexArray")] pub m_anim_layer_index_array : :: unity2 :: Array < i32 > ,
-# [offset (48)] # [rename (name = "m_weight")] pub m_weight : :: unity2 :: Array < crate :: app :: weightfader :: WeightFader > ,
-# [offset (56)] # [rename (name = "m_voiceEventName")] pub m_voice_event_name : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "m_weight_a")] pub m_weight_a : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (72)] # [rename (name = "m_weight_i")] pub m_weight_i : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (80)] # [rename (name = "m_weight_u")] pub m_weight_u : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (88)] # [rename (name = "m_weight_e")] pub m_weight_e : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (96)] # [rename (name = "m_weight_o")] pub m_weight_o : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (104)] # [rename (name = "m_weightScale_vol")] pub m_weight_scale_vol : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (112)] # [rename (name = "m_weightOffset_vol")] pub m_weight_offset_vol : crate :: unity_engine :: animationcurve :: AnimationCurve ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventcharactermouthcontroller/EventCharacterMouthController_AnimLayer.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EventCharacterMouthController_AnimLayer{pub value:i32,}
+impl::unity2::ClassIdentity for EventCharacterMouthController_AnimLayer{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EventCharacterMouthController.AnimLayer";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for EventCharacterMouthController_AnimLayer{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl EventCharacterMouthController_AnimLayer{pub fn layer_a()->Self{Self{value:0}
+}
+pub fn layer_i()->Self{Self{value:1}
+}
+pub fn layer_u()->Self{Self{value:2}
+}
+pub fn layer_e()->Self{Self{value:3}
+}
+pub fn layer_o()->Self{Self{value:4}
+}
+pub fn max()->Self{Self{value:5}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventcharactermouthcontroller/EventCharacterMouthController_AnimLayer.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct EventCharacterMouthController_AnimLayer  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for EventCharacterMouthController_AnimLayer  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EventCharacterMouthController.AnimLayer";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for EventCharacterMouthController_AnimLayer  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  EventCharacterMouthController_AnimLayer  {
-    pub fn layer_a() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn layer_i() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn layer_u() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn layer_e() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn layer_o() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn max() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventcharactermouthcontroller/EventCharacterMouthController.md"))]#[::unity2::class(namespace="App",name="EventCharacterMouthController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventCharacterMouthController{#[offset(24)]#[rename(name="LayerNameArray")]pub layer_name_array: ::unity2::Array< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_animLayerIndexArray")]pub m_anim_layer_index_array: ::unity2::Array<i32> , #[offset(48)]#[rename(name="m_weight")]pub m_weight: ::unity2::Array<crate::app::weightfader::WeightFader> , #[offset(56)]#[rename(name="m_voiceEventName")]pub m_voice_event_name: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_weight_a")]pub m_weight_a:crate::unity_engine::animationcurve::AnimationCurve, #[offset(72)]#[rename(name="m_weight_i")]pub m_weight_i:crate::unity_engine::animationcurve::AnimationCurve, #[offset(80)]#[rename(name="m_weight_u")]pub m_weight_u:crate::unity_engine::animationcurve::AnimationCurve, #[offset(88)]#[rename(name="m_weight_e")]pub m_weight_e:crate::unity_engine::animationcurve::AnimationCurve, #[offset(96)]#[rename(name="m_weight_o")]pub m_weight_o:crate::unity_engine::animationcurve::AnimationCurve, #[offset(104)]#[rename(name="m_weightScale_vol")]pub m_weight_scale_vol:crate::unity_engine::animationcurve::AnimationCurve, #[offset(112)]#[rename(name="m_weightOffset_vol")]pub m_weight_offset_vol:crate::unity_engine::animationcurve::AnimationCurve,}
 
 }
 
 #[cfg(feature = "app-eventcharactermouthcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-eventcharactermouthcontroller")]
-pub trait IEventCharacterMouthControllerMethods : IEventCharacterMouthController { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EventCharacterMouthController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterMouthController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d2b80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < EventCharacterMouthController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterMouthController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d2f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < EventCharacterMouthController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterMouthController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d2f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < EventCharacterMouthController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterMouthController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetWeight(i32)` overload"] fn get_weight (self , anim_layer_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < EventCharacterMouthController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterMouthController , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (anim_layer_index) , :: core :: option :: Option :: None) } } } # [doc = "`SetVoiceEventName(::unity2::Il2CppString)` overload"] fn set_voice_event_name (self , voice_event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EventCharacterMouthController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterMouthController , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d3790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (voice_event_name) , :: core :: option :: Option :: None) } } } # [doc = "`SetWeight(i32, f32, f32)` overload"] fn set_weight (self , anim_layer_index : impl :: core :: convert :: Into < i32 > , weight : impl :: core :: convert :: Into < f32 > , msec : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < EventCharacterMouthController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EventCharacterMouthController , i32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24d36f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (anim_layer_index) , :: core :: convert :: Into :: into (weight) , :: core :: convert :: Into :: into (msec) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-eventcharactermouthcontroller")]pub trait IEventCharacterMouthControllerMethods:IEventCharacterMouthController{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventCharacterMouthController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d2b80usize)as*mut u8,();
+(EventCharacterMouthController)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <EventCharacterMouthController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d2f10usize)as*mut u8,();
+(EventCharacterMouthController)__receiver)}
+}
+#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <EventCharacterMouthController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d2f20usize)as*mut u8,();
+(EventCharacterMouthController)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <EventCharacterMouthController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3280usize)as*mut u8,();
+(EventCharacterMouthController)__receiver)}
+}
+#[doc="`GetWeight(i32)` overload"]fn get_weight(self,anim_layer_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <EventCharacterMouthController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3740usize)as*mut u8,f32;
+(EventCharacterMouthController)__receiver,(i32)::core::convert::Into::into(anim_layer_index))}
+}
+#[doc="`SetVoiceEventName(::unity2::Il2CppString)` overload"]fn set_voice_event_name(self,voice_event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventCharacterMouthController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3790usize)as*mut u8,();
+(EventCharacterMouthController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(voice_event_name))}
+}
+#[doc="`SetWeight(i32, f32, f32)` overload"]fn set_weight(self,anim_layer_index:impl::core::convert::Into<i32> ,weight:impl::core::convert::Into<f32> ,msec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EventCharacterMouthController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24d36f0usize)as*mut u8,();
+(EventCharacterMouthController)__receiver,(i32)::core::convert::Into::into(anim_layer_index),(f32)::core::convert::Into::into(weight),(f32)::core::convert::Into::into(msec))}
+}
+}
 
-#[cfg(feature = "app-eventcharactermouthcontroller")]
-impl < __T : IEventCharacterMouthController > IEventCharacterMouthControllerMethods for __T { }
+#[cfg(feature="app-eventcharactermouthcontroller")]impl<__T:IEventCharacterMouthController>IEventCharacterMouthControllerMethods for __T{}
 
-#[cfg(feature = "app-eventcharactermouthcontroller")]
-impl EventCharacterMouthController { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterMouthController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterMouthController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterMouthController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterMouthController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterMouthController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_voice_event_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterMouthController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EventCharacterMouthController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-eventcharactermouthcontroller")]impl EventCharacterMouthController{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_voice_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-eventcharactermouthcontroller")]
-impl EventCharacterMouthController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EventCharacterMouthController) , :: core :: stringify ! (new) ,)) ; < Self as IEventCharacterMouthControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-eventcharactermouthcontroller")]impl EventCharacterMouthController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventCharacterMouthController), ::core::stringify!(new),));
+ <Self as IEventCharacterMouthControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-eventcharactermouthcontroller")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::EventCharacterMouthController_AnimLayer;
     pub use super::EventCharacterMouthController;
     pub use super::IEventCharacterMouthController;
     pub use super::IEventCharacterMouthControllerMethods;
-    pub use super::EventCharacterMouthController_AnimLayer;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

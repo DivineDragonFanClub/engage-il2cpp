@@ -4,36 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: app :: procdesccallbase :: { IProcDescCallBase , ProcDescCallBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::app::procdesccallbase::{IProcDescCallBase,ProcDescCallBase}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescsound/ProcDescSound.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescSound")] # [parent (crate :: app :: procdesccallbase :: ProcDescCallBase)] pub struct ProcDescSound {
-# [offset (24)] # [rename (name = "m_EventName")] pub m_event_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescsound/ProcDescSound.md"))]#[::unity2::class(namespace="App",name="ProcDescSound")]#[parent(crate::app::procdesccallbase::ProcDescCallBase)]pub struct ProcDescSound{#[offset(24)]#[rename(name="m_EventName")]pub m_event_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-procdescsound-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdescsound")]
-pub trait IProcDescSoundMethods : IProcDescSound { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , event_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProcDescSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescSound , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281c1f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_name) , :: core :: option :: Option :: None) } } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescSound as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescSound , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281da90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdescsound")]pub trait IProcDescSoundMethods:IProcDescSound{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProcDescSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281c1f0usize)as*mut u8,();
+(ProcDescSound)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281da90usize)as*mut u8,();
+(ProcDescSound)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+}
 
-#[cfg(feature = "app-procdescsound")]
-impl < __T : IProcDescSound > IProcDescSoundMethods for __T { }
+#[cfg(feature="app-procdescsound")]impl<__T:IProcDescSound>IProcDescSoundMethods for __T{}
 
-#[cfg(feature = "app-procdescsound")]
-impl ProcDescSound { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescSound as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-procdescsound")]impl ProcDescSound{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-procdescsound")]
-impl ProcDescSound {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (event_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescSound) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescSoundMethods > :: ctor (this , event_name) ; this }
+#[cfg(feature="app-procdescsound")]impl ProcDescSound{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(event_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescSound), ::core::stringify!(new),));
+ <Self as IProcDescSoundMethods> ::ctor(this,event_name);
+this}
 }
 
 #[cfg(feature = "app-procdescsound")]

@@ -4,659 +4,212 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_LanguageScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Mess_LanguageScope {
-    pub m_count: i32,
-    pub m_name: :: unity2 :: Il2CppString,
-    pub m_lang: crate :: app :: language :: Language_Langs,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagGroup.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagGroup{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagGroup{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagGroup";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_TagGroup{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Mess_TagGroup{pub fn system()->Self{Self{value:0}
+}
+pub fn arg()->Self{Self{value:1}
+}
+pub fn talk_type()->Self{Self{value:2}
+}
+pub fn window()->Self{Self{value:3}
+}
+pub fn wait()->Self{Self{value:4}
+}
+pub fn expression()->Self{Self{value:5}
+}
+pub fn name()->Self{Self{value:6}
+}
+pub fn fade()->Self{Self{value:7}
+}
+pub fn icon()->Self{Self{value:8}
+}
+pub fn text()->Self{Self{value:9}
+}
+pub fn localize()->Self{Self{value:10}
+}
+pub fn picture()->Self{Self{value:11}
+}
 }
 
 
-impl ::unity2::ClassIdentity for Mess_LanguageScope {
-    const NAMESPACE: &'static str = "App";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_ReloadFileInfo.md"))]#[::unity2::class(namespace="App",name="Mess.ReloadFileInfo")]#[parent(crate::system::object::Object)]pub struct Mess_ReloadFileInfo{#[offset(16)]#[rename(name="m_fileName")]pub m_file_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_refCount")]pub m_ref_count:i32,}
 
-    const NAME: &'static str = "Mess.LanguageScope";
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_IconCategory.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_IconCategory{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_IconCategory{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.IconCategory";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_IconCategory{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Mess_IconCategory{pub fn item()->Self{Self{value:0}
+}
+pub fn skill()->Self{Self{value:1}
+}
+pub fn system()->Self{Self{value:2}
+}
+pub fn god_symbol_engrave()->Self{Self{value:3}
+}
 }
 
 
-impl ::unity2::IlType for Mess_LanguageScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess.md"))]#[::unity2::class(namespace="App",name="Mess")]#[parent(crate::system::object::Object)]pub struct Mess{#[static_field]#[rename(name="CharSize")]pub char_size:i32, #[static_field]#[rename(name="ShiftIn")]pub shift_in:u16, #[static_field]#[rename(name="ShiftOut")]pub shift_out:u16, #[static_field]#[rename(name="NotFoundText")]pub not_found_text: ::unity2::Il2CppString, #[static_field]#[rename(name="FileName_HubCommon")]pub file_name_hub_common: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_Reliance")]pub file_name_header_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_GodReliance")]pub file_name_header_god_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_MainScenario")]pub file_name_header_main_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_SideScenario")]pub file_name_header_side_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_GodScenario")]pub file_name_header_god_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="FileNameHeader_EvilScenario")]pub file_name_header_evil_scenario: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_Reliance")]pub label_header_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_GodReliance")]pub label_header_god_reliance: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_Die")]pub label_header_die: ::unity2::Il2CppString, #[static_field]#[rename(name="LabelHeader_Hub")]pub label_header_hub: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_DefaultHeroName")]pub replace_str_default_hero_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_DefaultMorphName")]pub replace_str_default_morph_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_DefaultMascotName")]pub replace_str_default_mascot_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_CNThirdTagMale")]pub replace_str_cn_third_tag_male: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_CNThirdTagFemale")]pub replace_str_cn_third_tag_female: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_TWThirdTagMale")]pub replace_str_tw_third_tag_male: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_TWThirdTagFemale")]pub replace_str_tw_third_tag_female: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelet")]pub replace_str_bracelet: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelets")]pub replace_str_bracelets: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelet_UNCAP")]pub replace_str_bracelet_uncap: ::unity2::Il2CppString, #[static_field]#[rename(name="ReplaceStr_Bracelets_UNCAP")]pub replace_str_bracelets_uncap: ::unity2::Il2CppString, #[static_field]#[rename(name="s_messFileDictionary")]pub s_mess_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> , #[static_field]#[rename(name="s_soundCmdFileDictionary")]pub s_sound_cmd_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> , #[static_field]#[rename(name="s_eventCmdFileDictionary")]pub s_event_cmd_file_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> , #[static_field]#[rename(name="s_messDataDictionary")]pub s_mess_data_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> , #[static_field]#[rename(name="s_soundCmdDataDictionary")]pub s_sound_cmd_data_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> , #[static_field]#[rename(name="s_eventCmdDataDictionary")]pub s_event_cmd_data_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> , #[static_field]#[rename(name="s_pathDictionary")]pub s_path_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[static_field]#[rename(name="s_checkStack")]pub s_check_stack:crate::system::collections::generic::stack_1::Stack_1<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,i32> > , #[static_field]#[rename(name="s_mess")]pub s_mess: ::unity2::Il2CppString, #[static_field]#[rename(name="s_isBody")]pub s_is_body:bool, #[static_field]#[rename(name="s_isStrToLower")]pub s_is_str_to_lower:bool, #[static_field]#[rename(name="s_isNesting")]pub s_is_nesting:bool, #[static_field]#[rename(name="ArgMax")]pub arg_max:i32, #[static_field]#[rename(name="ArgStack")]pub arg_stack:i32, #[static_field]#[rename(name="s_argArray")]pub s_arg_array: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_argStack")]pub s_arg_stack:crate::system::collections::generic::stack_1::Stack_1< ::unity2::Array< ::unity2::Il2CppString> > , #[static_field]#[rename(name="s_partnerPid")]pub s_partner_pid: ::unity2::Il2CppString, #[static_field]#[rename(name="s_spriteAssetHandleDictionary")]pub s_sprite_asset_handle_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::resourcehandle_2::ResourceHandle_2> ,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Picture.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Picture{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Picture{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Picture";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_TagID_Picture{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Mess_TagID_Picture{pub fn show()->Self{Self{value:0}
+}
+pub fn hide()->Self{Self{value:1}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagGroup.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Mess_TagGroup  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_LanguageScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mess_LanguageScope{pub m_count:i32,pub m_name: ::unity2::Il2CppString,pub m_lang:crate::app::language::Language_Langs,}
+impl::unity2::ClassIdentity for Mess_LanguageScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.LanguageScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_LanguageScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl  ::unity2::ClassIdentity for Mess_TagGroup  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Mess.TagGroup";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_ArgScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mess_ArgScope{pub current: ::unity2::Array< ::unity2::Il2CppString>,}
+impl::unity2::ClassIdentity for Mess_ArgScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.ArgScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_ArgScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl  ::unity2::IlType for Mess_TagGroup  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Localize.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Localize{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Localize{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Localize";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_TagID_Localize{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Mess_TagID_Localize{pub fn mf_tag()->Self{Self{value:0}
+}
+pub fn uncap()->Self{Self{value:1}
+}
+pub fn c_nthird()->Self{Self{value:2}
+}
+pub fn t_wthird()->Self{Self{value:3}
+}
+pub fn k_rppn01()->Self{Self{value:4}
+}
+pub fn k_rppn02()->Self{Self{value:5}
+}
 }
 
 
-impl  Mess_TagGroup  {
-    pub fn system() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn arg() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn talk_type() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn window() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn wait() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn expression() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn name() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn fade() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn icon() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn text() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn localize() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn picture() -> Self {
-        Self { value: 11 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Arg.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Arg{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Arg{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Arg";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_TagID_Arg{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Mess_TagID_Arg{pub fn arg0()->Self{Self{value:0}
+}
+pub fn arg1()->Self{Self{value:1}
+}
+pub fn arg2()->Self{Self{value:2}
+}
+pub fn arg3()->Self{Self{value:3}
+}
+pub fn arg4()->Self{Self{value:4}
+}
+pub fn arg5()->Self{Self{value:5}
+}
+pub fn arg6()->Self{Self{value:6}
+}
+pub fn arg7()->Self{Self{value:7}
+}
+pub fn arg_b()->Self{Self{value:8}
+}
+pub fn arg_bs()->Self{Self{value:9}
+}
+pub fn arg_b_uncap()->Self{Self{value:10}
+}
+pub fn arg_bs_uncap()->Self{Self{value:11}
+}
+pub fn arg_max()->Self{Self{value:8}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Text.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Mess_TagID_Text  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Text.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Text{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Text{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Text";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Mess_TagID_Text{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Mess_TagID_Text{pub fn space()->Self{Self{value:0}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Mess_TagID_Text  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Mess.TagID_Text";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mess/Mess_TagID_Name.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Mess_TagID_Name{pub value:i32,}
+impl::unity2::ClassIdentity for Mess_TagID_Name{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Mess.TagID_Name";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::IlType for Mess_TagID_Text  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Mess_TagID_Name{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  Mess_TagID_Text  {
-    pub fn space() -> Self {
-        Self { value: 0 }
-
-    }
-
+impl Mess_TagID_Name{pub fn replace()->Self{Self{value:0}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mess/Mess_ReloadFileInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "Mess.ReloadFileInfo")] # [parent (crate :: system :: object :: Object)] pub struct Mess_ReloadFileInfo {
-# [offset (16)] # [rename (name = "m_fileName")] pub m_file_name : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_refCount")] pub m_ref_count : i32 ,
+pub fn publish()->Self{Self{value:1}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Arg.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Mess_TagID_Arg  {
-    pub value: i32,
+pub fn private()->Self{Self{value:2}
 }
-
-
-impl  ::unity2::ClassIdentity for Mess_TagID_Arg  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Mess.TagID_Arg";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn user()->Self{Self{value:3}
 }
-
-
-impl  ::unity2::IlType for Mess_TagID_Arg  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn partner()->Self{Self{value:4}
 }
-
-
-impl  Mess_TagID_Arg  {
-    pub fn arg0() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn arg1() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn arg2() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn arg3() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn arg4() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn arg5() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn arg6() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn arg7() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn arg_b() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn arg_bs() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn arg_b_uncap() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn arg_bs_uncap() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn arg_max() -> Self {
-        Self { value: 8 }
-
-    }
-
+pub fn mascot()->Self{Self{value:5}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mess/Mess.md"))] # [:: unity2 :: class (namespace = "App" , name = "Mess")] # [parent (crate :: system :: object :: Object)] pub struct Mess {
-# [static_field] # [rename (name = "CharSize")] pub char_size : i32 ,
-# [static_field] # [rename (name = "ShiftIn")] pub shift_in : u16 ,
-# [static_field] # [rename (name = "ShiftOut")] pub shift_out : u16 ,
-# [static_field] # [rename (name = "NotFoundText")] pub not_found_text : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FileName_HubCommon")] pub file_name_hub_common : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FileNameHeader_Reliance")] pub file_name_header_reliance : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FileNameHeader_GodReliance")] pub file_name_header_god_reliance : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FileNameHeader_MainScenario")] pub file_name_header_main_scenario : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FileNameHeader_SideScenario")] pub file_name_header_side_scenario : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FileNameHeader_GodScenario")] pub file_name_header_god_scenario : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "FileNameHeader_EvilScenario")] pub file_name_header_evil_scenario : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "LabelHeader_Reliance")] pub label_header_reliance : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "LabelHeader_GodReliance")] pub label_header_god_reliance : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "LabelHeader_Die")] pub label_header_die : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "LabelHeader_Hub")] pub label_header_hub : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_DefaultHeroName")] pub replace_str_default_hero_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_DefaultMorphName")] pub replace_str_default_morph_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_DefaultMascotName")] pub replace_str_default_mascot_name : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_CNThirdTagMale")] pub replace_str_cn_third_tag_male : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_CNThirdTagFemale")] pub replace_str_cn_third_tag_female : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_TWThirdTagMale")] pub replace_str_tw_third_tag_male : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_TWThirdTagFemale")] pub replace_str_tw_third_tag_female : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_Bracelet")] pub replace_str_bracelet : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_Bracelets")] pub replace_str_bracelets : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_Bracelet_UNCAP")] pub replace_str_bracelet_uncap : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "ReplaceStr_Bracelets_UNCAP")] pub replace_str_bracelets_uncap : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_messFileDictionary")] pub s_mess_file_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > ,
-# [static_field] # [rename (name = "s_soundCmdFileDictionary")] pub s_sound_cmd_file_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > ,
-# [static_field] # [rename (name = "s_eventCmdFileDictionary")] pub s_event_cmd_file_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > ,
-# [static_field] # [rename (name = "s_messDataDictionary")] pub s_mess_data_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > ,
-# [static_field] # [rename (name = "s_soundCmdDataDictionary")] pub s_sound_cmd_data_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > ,
-# [static_field] # [rename (name = "s_eventCmdDataDictionary")] pub s_event_cmd_data_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > ,
-# [static_field] # [rename (name = "s_pathDictionary")] pub s_path_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "s_checkStack")] pub s_check_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 > > ,
-# [static_field] # [rename (name = "s_mess")] pub s_mess : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_isBody")] pub s_is_body : bool ,
-# [static_field] # [rename (name = "s_isStrToLower")] pub s_is_str_to_lower : bool ,
-# [static_field] # [rename (name = "s_isNesting")] pub s_is_nesting : bool ,
-# [static_field] # [rename (name = "ArgMax")] pub arg_max : i32 ,
-# [static_field] # [rename (name = "ArgStack")] pub arg_stack : i32 ,
-# [static_field] # [rename (name = "s_argArray")] pub s_arg_array : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "s_argStack")] pub s_arg_stack : crate :: system :: collections :: generic :: stack_1 :: Stack_1 < :: unity2 :: Array < :: unity2 :: Il2CppString > > ,
-# [static_field] # [rename (name = "s_partnerPid")] pub s_partner_pid : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_spriteAssetHandleDictionary")] pub s_sprite_asset_handle_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: resourcehandle_2 :: ResourceHandle_2 > ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Picture.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Mess_TagID_Picture  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Mess_TagID_Picture  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Mess.TagID_Picture";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Mess_TagID_Picture  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Mess_TagID_Picture  {
-    pub fn show() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn hide() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Localize.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Mess_TagID_Localize  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Mess_TagID_Localize  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Mess.TagID_Localize";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Mess_TagID_Localize  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Mess_TagID_Localize  {
-    pub fn mf_tag() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn uncap() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn c_nthird() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn t_wthird() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn k_rppn01() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn k_rppn02() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_TagID_Name.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Mess_TagID_Name  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Mess_TagID_Name  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Mess.TagID_Name";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Mess_TagID_Name  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Mess_TagID_Name  {
-    pub fn replace() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn publish() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn private() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn user() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn partner() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn mascot() -> Self {
-        Self { value: 5 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_IconCategory.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Mess_IconCategory  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Mess_IconCategory  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Mess.IconCategory";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Mess_IconCategory  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Mess_IconCategory  {
-    pub fn item() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn skill() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn system() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn god_symbol_engrave() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mess/Mess_ArgScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Mess_ArgScope {
-    pub current: :: unity2 :: Array < :: unity2 :: Il2CppString >,
-}
-
-
-impl ::unity2::ClassIdentity for Mess_ArgScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Mess.ArgScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Mess_ArgScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
 }
 
 }
@@ -664,67 +217,438 @@ impl ::unity2::IlType for Mess_ArgScope {
 #[cfg(feature = "app-mess-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mess")]
-impl Mess_LanguageScope { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::language::Language_Langs)` overload"] pub fn ctor (& mut self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , lang : impl :: core :: convert :: Into < crate :: app :: language :: Language_Langs >) -> () { unsafe { { let __inner : extern "C" fn (* mut Mess_LanguageScope , :: unity2 :: Il2CppString , crate :: app :: language :: Language_Langs , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208e060usize) as * mut u8) ; __inner (self as * mut Mess_LanguageScope , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (lang) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut Mess_LanguageScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208e330usize) as * mut u8) ; __inner (self as * mut Mess_LanguageScope , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mess")]
-impl Mess_LanguageScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess_LanguageScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess_LanguageScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-mess")]
-pub trait IMess_ReloadFileInfoMethods : IMess_ReloadFileInfo { # [doc = "`.ctor(::unity2::Il2CppString, i32)` overload"] fn ctor (self , file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , ref_count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Mess_ReloadFileInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mess_ReloadFileInfo , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208e470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (file_name) , :: core :: convert :: Into :: into (ref_count) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mess")]
-impl < __T : IMess_ReloadFileInfo > IMess_ReloadFileInfoMethods for __T { }
-
-#[cfg(feature = "app-mess")]
-impl Mess_ReloadFileInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess_ReloadFileInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-mess")]
-impl Mess_ReloadFileInfo {
-# [doc = "`.ctor(::unity2::Il2CppString, i32)` — overload selector"] pub fn new (file_name : :: unity2 :: Il2CppString , ref_count : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Mess_ReloadFileInfo) , :: core :: stringify ! (new) ,)) ; < Self as IMess_ReloadFileInfoMethods > :: ctor (this , file_name , ref_count) ; this }
+#[cfg(feature="app-mess")]pub trait IMess_ReloadFileInfoMethods:IMess_ReloadFileInfo{#[doc="`.ctor(::unity2::Il2CppString, i32)` overload"]fn ctor(self,file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,ref_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Mess_ReloadFileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208e470usize)as*mut u8,();
+(Mess_ReloadFileInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file_name),(i32)::core::convert::Into::into(ref_count))}
+}
 }
 
-#[cfg(feature = "app-mess")]
-impl Mess { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d2750usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UpdateReplaceStr()` overload"] pub fn update_replace_str () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d3f20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`LoadSpriteAsset()` overload"] pub fn load_sprite_asset () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d4500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`LoadSpriteAsset(::unity2::Il2CppString)` overload"] pub fn load_sprite_asset_2 (sprite_asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d4740usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite_asset_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsSpriteExistInSpriteAsset(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn is_sprite_exist_in_sprite_asset (sprite_asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , sprite_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d48b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite_asset_name) , :: core :: convert :: Into :: into (sprite_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetItemSpriteAssetsName(crate::app::itemdata::ItemData)` overload"] pub fn get_item_sprite_assets_name (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d4a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`GetSkillSpriteAssetsName(crate::app::skilldata::SkillData)` overload"] pub fn get_skill_sprite_assets_name (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d4bf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`GetSystemSpriteAssetsName(::unity2::Il2CppString)` overload"] pub fn get_system_sprite_assets_name (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d4dc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetGodSymbolEngraveSpriteAssetsName(::unity2::Il2CppString)` overload"] pub fn get_god_symbol_engrave_sprite_assets_name (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d4eb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } } # [doc = "`OnSpriteAssetRequestCallback(i32, ::unity2::Il2CppString)` overload"] pub fn on_sprite_asset_request_callback (arg : impl :: core :: convert :: Into < i32 > , sprite_asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_spriteasset :: TMP_SpriteAsset = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5020usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (arg) , :: core :: convert :: Into :: into (sprite_asset_name) , :: core :: option :: Option :: None) } } } # [doc = "`PushCheck()` overload"] pub fn push_check () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PopCheck()` overload"] pub fn pop_check () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5340usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Load(::unity2::Il2CppString)` overload"] pub fn load (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d3e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`TryLoad(::unity2::Il2CppString)` overload"] pub fn try_load (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d3eb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`LoadImpl(::unity2::Il2CppString, bool)` overload"] pub fn load_impl (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_warning : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d54f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: convert :: Into :: into (is_warning) , :: core :: option :: Option :: None) } } } # [doc = "`LoadImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"] pub fn load_impl_2 (file_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_warning : impl :: core :: convert :: Into < bool >) -> (bool , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d58a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_path) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (is_warning) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Free(::unity2::Il2CppString)` overload"] pub fn free (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5d80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`TryFree(::unity2::Il2CppString)` overload"] pub fn try_free (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5ed0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`FreeImpl(::unity2::Il2CppString, bool)` overload"] pub fn free_impl (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_warning : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5df0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: convert :: Into :: into (is_warning) , :: core :: option :: Option :: None) } } } # [doc = "`GetReference(::unity2::Il2CppString)` overload"] pub fn get_reference (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`FreeImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"] pub fn free_impl_2 (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_warning : impl :: core :: convert :: Into < bool >) -> (bool , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: msgfile :: MsgFile > , * mut crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (is_warning) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`Reload()` overload"] pub fn reload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6200usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadDone(::unity2::Il2CppString)` overload"] pub fn is_load_done (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d67f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsFileExist(::unity2::Il2CppString)` overload"] pub fn is_file_exist (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsHeroFemale()` overload"] pub fn is_hero_female () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6930usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetLanguageDirectoryName()` overload"] pub fn get_language_directory_name () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6ac0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateMessFilePath(::unity2::Il2CppString)` overload"] pub fn create_mess_file_path (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5670usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`CreateSoundCmdFilePath(::unity2::Il2CppString)` overload"] pub fn create_sound_cmd_file_path (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5ca0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`CreateEventCmdFilePath(::unity2::Il2CppString)` overload"] pub fn create_event_cmd_file_path (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d5d10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetFilePath(::unity2::Il2CppString)` overload"] pub fn get_file_path (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`GetMsgFile(::unity2::Il2CppString)` overload"] pub fn get_msg_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: msgfile :: MsgFile { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: msgfile :: MsgFile = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6d70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsMainReleaseScenarioMessFile(::unity2::Il2CppString)` overload"] pub fn is_main_release_scenario_mess_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6e10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsDLCScenarioMessFile(::unity2::Il2CppString)` overload"] pub fn is_dlc_scenario_mess_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6ef0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsRelianceMessFile(::unity2::Il2CppString)` overload"] pub fn is_reliance_mess_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d6fd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`IsGodRelianceMessFile(::unity2::Il2CppString)` overload"] pub fn is_god_reliance_mess_file (file_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d7060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (file_name) , :: core :: option :: Option :: None) } } } # [doc = "`DumpFile()` overload"] pub fn dump_file () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d70f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`DumpLabel()` overload"] pub fn dump_label () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d7220usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetAllLabel()` overload"] pub fn get_all_label () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d7500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString)` overload"] pub fn get (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25c9240usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg0 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d4410usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (arg0) , :: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_3 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg0 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg1 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d78a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (arg0) , :: core :: convert :: Into :: into (arg1) , :: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn get_4 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg0 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg1 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , arg2 : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d7a00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (arg0) , :: core :: convert :: Into :: into (arg1) , :: core :: convert :: Into :: into (arg2) , :: core :: option :: Option :: None) } } } # [doc = "`Get(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"] pub fn get_5 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d7bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetReplace(::unity2::Il2CppString)` overload"] pub fn try_get_replace (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d7d80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`GetIntPtr(::unity2::Il2CppString)` overload"] pub fn get_int_ptr (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d7f90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`GetImpl(::unity2::Il2CppString, bool)` overload"] pub fn get_impl (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_replace : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d76c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (is_replace) , :: core :: option :: Option :: None) } } } # [doc = "`GetSoundCmdText(::unity2::Il2CppString)` overload"] pub fn get_sound_cmd_text (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d8560usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`GetSoundCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn get_sound_cmd_text_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d86b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetEventCmdText(::unity2::Il2CppString)` overload"] pub fn get_event_cmd_text (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d8820usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`GetEventCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn get_event_cmd_text_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d88a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>)` overload"] pub fn get_cmd_impl (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data_dictionary : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d85e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (data_dictionary) , :: core :: option :: Option :: None) } } } # [doc = "`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn get_cmd_impl_2 (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , data_dictionary : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , :: unity2 :: IntPtr > , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d8740usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (data_dictionary) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`IsExist(::unity2::Il2CppString)` overload"] pub fn is_exist (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d8b20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`IsNesting()` overload"] pub fn is_nesting () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d8bb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetString(::unity2::Il2CppString, ::unity2::IntPtr, bool)` overload"] pub fn get_string (label : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , p_mess_data : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , is_replace : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d8040usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (label) , :: core :: convert :: Into :: into (p_mess_data) , :: core :: convert :: Into :: into (is_replace) , :: core :: option :: Option :: None) } } } # [doc = "`ReadChar(::unity2::IntPtr, i32)` overload"] pub fn read_char (p : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , offset : impl :: core :: convert :: Into < i32 >) -> u16 { unsafe { { let __inner : extern "C" fn (:: unity2 :: IntPtr , i32 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d8c20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (p) , :: core :: convert :: Into :: into (offset) , :: core :: option :: Option :: None) } } } # [doc = "`CalcTalkStringTotalWidth(::unity2::Il2CppString)` overload"] pub fn calc_talk_string_total_width (mess_str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d9100usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mess_str) , :: core :: option :: Option :: None) } } } # [doc = "`CalcWaitMsecForTalkAutoPlay(::unity2::Il2CppString)` overload"] pub fn calc_wait_msec_for_talk_auto_play (mess_str : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d9210usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mess_str) , :: core :: option :: Option :: None) } } } # [doc = "`SplitCmd(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"] pub fn split_cmd (cmd : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> (bool , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let __ret = { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , * mut :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d8930usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cmd) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`AddTagString(u16, u16, ::unity2::Array<u8>)` overload"] pub fn add_tag_string (tag_group_id : impl :: core :: convert :: Into < u16 > , tag_id : impl :: core :: convert :: Into < u16 > , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { { let __inner : extern "C" fn (u16 , u16 , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d8cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tag_group_id) , :: core :: convert :: Into :: into (tag_id) , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } } # [doc = "`ReplaceArgString(crate::app::mess::Mess_TagID_Arg)` overload"] pub fn replace_arg_string (tag_id : impl :: core :: convert :: Into < crate :: app :: mess :: Mess_TagID_Arg >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: mess :: Mess_TagID_Arg , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d9290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tag_id) , :: core :: option :: Option :: None) } } } # [doc = "`AddTagString_Localize(u16, ::unity2::Array<u8>)` overload"] pub fn add_tag_string_localize (tag_id : impl :: core :: convert :: Into < u16 > , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d9830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tag_id) , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } } # [doc = "`IsPatchim1(u16)` overload"] pub fn is_patchim1 (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d9da0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsPatchim2(u16)` overload"] pub fn is_patchim2 (c : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d9ee0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsPatchimStrCode(i32, bool)` overload"] pub fn is_patchim_str_code (chr_code : impl :: core :: convert :: Into < i32 > , is_without2 : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da020usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (chr_code) , :: core :: convert :: Into :: into (is_without2) , :: core :: option :: Option :: None) } } } # [doc = "`SetArgument(i32, i32)` overload"] pub fn set_argument (index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da0d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetArgument(i32, ::unity2::Il2CppString)` overload"] pub fn set_argument_2 (index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d77c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ClearArgument()` overload"] pub fn clear_argument () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d39f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetArgument(i32)` overload"] pub fn get_argument (index : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da160usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`get_NewArgScope()` overload"] pub fn get_new_arg_scope () -> crate :: app :: mess :: Mess_ArgScope { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: mess :: Mess_ArgScope = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da1f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateSpaceTag(u32)` overload"] pub fn create_space_tag (pixel : impl :: core :: convert :: Into < u32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d97a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pixel) , :: core :: option :: Option :: None) } } } # [doc = "`CreateSpriteTag(crate::app::mess::Mess_IconCategory, ::unity2::Il2CppString)` overload"] pub fn create_sprite_tag (icon_category : impl :: core :: convert :: Into < crate :: app :: mess :: Mess_IconCategory > , kind_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: mess :: Mess_IconCategory , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25d94d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (icon_category) , :: core :: convert :: Into :: into (kind_name) , :: core :: option :: Option :: None) } } } # [doc = "`CreateSpriteTag(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn create_sprite_tag_2 (sprite_asset_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da540usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sprite_asset_name) , :: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } } # [doc = "`CreateItemSpriteTag(crate::app::itemdata::ItemData, bool)` overload"] pub fn create_item_sprite_tag (item : impl :: core :: convert :: Into < crate :: app :: itemdata :: ItemData > , for_system : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: itemdata :: ItemData , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (item) , :: core :: convert :: Into :: into (for_system) , :: core :: option :: Option :: None) } } } # [doc = "`CreateSkillSpriteTag(crate::app::skilldata::SkillData)` overload"] pub fn create_skill_sprite_tag (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da3d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`CreateSystemSpriteTag(::unity2::Il2CppString)` overload"] pub fn create_system_sprite_tag (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da460usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } } # [doc = "`CreateGodSymbleEngraveSpriteTag(::unity2::Il2CppString)` overload"] pub fn create_god_symble_engrave_sprite_tag (icon_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da4d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (icon_name) , :: core :: option :: Option :: None) } } } # [doc = "`SetPartnerPID(::unity2::Il2CppString)` overload"] pub fn set_partner_pid (pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da7b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`GetPartnerPID()` overload"] pub fn get_partner_pid () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da830usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetPartnerName()` overload"] pub fn get_partner_name () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25da8a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetGameDataName(::unity2::Il2CppString)` overload"] pub fn get_game_data_name (value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25daae0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25dad50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mess")]impl<__T:IMess_ReloadFileInfo>IMess_ReloadFileInfoMethods for __T{}
 
-#[cfg(feature = "app-mess")]
-pub trait IMessMethods : IMess { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Mess as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Mess , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25dad40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mess")]
-impl < __T : IMess > IMessMethods for __T { }
-
-#[cfg(feature = "app-mess")]
-impl Mess { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_replace_str_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn load_sprite_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_sprite_asset_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_sprite_exist_in_sprite_asset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_item_sprite_assets_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_skill_sprite_assets_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_system_sprite_assets_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_god_symbol_engrave_sprite_assets_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_sprite_asset_request_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn push_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn pop_check_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn try_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn load_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn load_impl_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn free_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn try_free_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn free_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn get_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn free_impl_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn reload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn is_load_done_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn is_file_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn is_hero_female_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn get_language_directory_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn create_mess_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn create_sound_cmd_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn create_event_cmd_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_msg_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn is_main_release_scenario_mess_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn is_dlc_scenario_mess_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn is_reliance_mess_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn is_god_reliance_mess_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn dump_file_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn dump_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn get_all_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn get_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn get_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn try_get_replace_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn get_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_sound_cmd_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn get_sound_cmd_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn get_event_cmd_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn get_event_cmd_text_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn get_cmd_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn get_cmd_impl_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn is_nesting_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn get_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn read_char_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn calc_talk_string_total_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn calc_wait_msec_for_talk_auto_play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn split_cmd_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn add_tag_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn replace_arg_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn add_tag_string_localize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn is_patchim1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn is_patchim2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn is_patchim_str_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn set_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn set_argument_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn clear_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn get_argument_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn get_new_arg_scope_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn create_space_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn create_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn create_sprite_tag_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn create_item_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn create_skill_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn create_system_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn create_god_symble_engrave_sprite_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn set_partner_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn get_partner_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } pub fn get_partner_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [79] } pub fn get_game_data_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [80] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [81] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [82] } }
-
-#[cfg(feature = "app-mess")]
-impl Mess {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Mess) , :: core :: stringify ! (new) ,)) ; < Self as IMessMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mess")]impl Mess_ReloadFileInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "app-mess")]
-impl Mess_ArgScope { # [doc = "`.ctor(i32)` overload"] pub fn ctor (& mut self , dummy : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Mess_ArgScope , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208ded0usize) as * mut u8) ; __inner (self as * mut Mess_ArgScope , :: core :: convert :: Into :: into (dummy) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut Mess_ArgScope , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x208df90usize) as * mut u8) ; __inner (self as * mut Mess_ArgScope , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mess")]impl Mess_ReloadFileInfo{#[doc="`.ctor(::unity2::Il2CppString, i32)` — overload selector"]pub fn new(file_name: ::unity2::Il2CppString,ref_count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Mess_ReloadFileInfo), ::core::stringify!(new),));
+ <Self as IMess_ReloadFileInfoMethods> ::ctor(this,file_name,ref_count);
+this}
+}
 
-#[cfg(feature = "app-mess")]
-impl Mess_ArgScope { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess_ArgScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Mess_ArgScope as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-mess")]impl Mess{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d2750usize)as*mut u8,();
+)}
+}
+#[doc="`UpdateReplaceStr()` overload"]pub fn update_replace_str()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d3f20usize)as*mut u8,();
+)}
+}
+#[doc="`LoadSpriteAsset()` overload"]pub fn load_sprite_asset()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d4500usize)as*mut u8,();
+)}
+}
+#[doc="`LoadSpriteAsset(::unity2::Il2CppString)` overload"]pub fn load_sprite_asset_2(sprite_asset_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d4740usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(sprite_asset_name))}
+}
+#[doc="`IsSpriteExistInSpriteAsset(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn is_sprite_exist_in_sprite_asset(sprite_asset_name:impl::core::convert::Into< ::unity2::Il2CppString> ,sprite_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d48b0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(sprite_asset_name),(::unity2::Il2CppString)::core::convert::Into::into(sprite_name))}
+}
+#[doc="`GetItemSpriteAssetsName(crate::app::itemdata::ItemData)` overload"]pub fn get_item_sprite_assets_name(item:impl::core::convert::Into<crate::app::itemdata::ItemData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d4a20usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item))}
+}
+#[doc="`GetSkillSpriteAssetsName(crate::app::skilldata::SkillData)` overload"]pub fn get_skill_sprite_assets_name(skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d4bf0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`GetSystemSpriteAssetsName(::unity2::Il2CppString)` overload"]pub fn get_system_sprite_assets_name(icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d4dc0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`GetGodSymbolEngraveSpriteAssetsName(::unity2::Il2CppString)` overload"]pub fn get_god_symbol_engrave_sprite_assets_name(icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d4eb0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`OnSpriteAssetRequestCallback(i32, ::unity2::Il2CppString)` overload"]pub fn on_sprite_asset_request_callback(arg:impl::core::convert::Into<i32> ,sprite_asset_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d5020usize)as*mut u8,crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
+(i32)::core::convert::Into::into(arg),(::unity2::Il2CppString)::core::convert::Into::into(sprite_asset_name))}
+}
+#[doc="`PushCheck()` overload"]pub fn push_check()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d5140usize)as*mut u8,();
+)}
+}
+#[doc="`PopCheck()` overload"]pub fn pop_check()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d5340usize)as*mut u8,();
+)}
+}
+#[doc="`Load(::unity2::Il2CppString)` overload"]pub fn load(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d3e40usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`TryLoad(::unity2::Il2CppString)` overload"]pub fn try_load(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d3eb0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`LoadImpl(::unity2::Il2CppString, bool)` overload"]pub fn load_impl(file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_warning:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d54f0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name),(bool)::core::convert::Into::into(is_warning))}
+}
+#[doc="`LoadImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"]pub fn load_impl_2(file_path:impl::core::convert::Into< ::unity2::Il2CppString> ,is_warning:impl::core::convert::Into<bool>)->(bool,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> ,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr>){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> > ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> > ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25d58a0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_path),(*mut crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile>)__out_0.as_mut_ptr(),(*mut crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr>)__out_1.as_mut_ptr(),(bool)::core::convert::Into::into(is_warning))}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Free(::unity2::Il2CppString)` overload"]pub fn free(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d5d80usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`TryFree(::unity2::Il2CppString)` overload"]pub fn try_free(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d5ed0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`FreeImpl(::unity2::Il2CppString, bool)` overload"]pub fn free_impl(file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_warning:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d5df0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name),(bool)::core::convert::Into::into(is_warning))}
+}
+#[doc="`GetReference(::unity2::Il2CppString)` overload"]pub fn get_reference(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6140usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`FreeImpl(::unity2::Il2CppString, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,crate::app::msgfile::MsgFile>, *mutcrate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, bool)` overload"]pub fn free_impl_2(file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_warning:impl::core::convert::Into<bool>)->(bool,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> ,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr>){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile> > ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> > ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25d5f40usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name),(*mut crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::msgfile::MsgFile>)__out_0.as_mut_ptr(),(*mut crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr>)__out_1.as_mut_ptr(),(bool)::core::convert::Into::into(is_warning))}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`Reload()` overload"]pub fn reload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6200usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadDone(::unity2::Il2CppString)` overload"]pub fn is_load_done(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d67f0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`IsFileExist(::unity2::Il2CppString)` overload"]pub fn is_file_exist(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6880usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`IsHeroFemale()` overload"]pub fn is_hero_female()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6930usize)as*mut u8,bool;
+)}
+}
+#[doc="`GetLanguageDirectoryName()` overload"]pub fn get_language_directory_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6ac0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`CreateMessFilePath(::unity2::Il2CppString)` overload"]pub fn create_mess_file_path(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d5670usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`CreateSoundCmdFilePath(::unity2::Il2CppString)` overload"]pub fn create_sound_cmd_file_path(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d5ca0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`CreateEventCmdFilePath(::unity2::Il2CppString)` overload"]pub fn create_event_cmd_file_path(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d5d10usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`GetFilePath(::unity2::Il2CppString)` overload"]pub fn get_file_path(label:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6c50usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`GetMsgFile(::unity2::Il2CppString)` overload"]pub fn get_msg_file(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::msgfile::MsgFile{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6d70usize)as*mut u8,crate::app::msgfile::MsgFile;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`IsMainReleaseScenarioMessFile(::unity2::Il2CppString)` overload"]pub fn is_main_release_scenario_mess_file(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6e10usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`IsDLCScenarioMessFile(::unity2::Il2CppString)` overload"]pub fn is_dlc_scenario_mess_file(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6ef0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`IsRelianceMessFile(::unity2::Il2CppString)` overload"]pub fn is_reliance_mess_file(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d6fd0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`IsGodRelianceMessFile(::unity2::Il2CppString)` overload"]pub fn is_god_reliance_mess_file(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d7060usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
+}
+#[doc="`DumpFile()` overload"]pub fn dump_file()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d70f0usize)as*mut u8,();
+)}
+}
+#[doc="`DumpLabel()` overload"]pub fn dump_label()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d7220usize)as*mut u8,();
+)}
+}
+#[doc="`GetAllLabel()` overload"]pub fn get_all_label()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d7500usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`Get(::unity2::Il2CppString)` overload"]pub fn get(label:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c9240usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`Get(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn get_2(label:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d4410usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(::unity2::Il2CppString)::core::convert::Into::into(arg0))}
+}
+#[doc="`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn get_3(label:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into< ::unity2::Il2CppString> ,arg1:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d78a0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(::unity2::Il2CppString)::core::convert::Into::into(arg0),(::unity2::Il2CppString)::core::convert::Into::into(arg1))}
+}
+#[doc="`Get(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn get_4(label:impl::core::convert::Into< ::unity2::Il2CppString> ,arg0:impl::core::convert::Into< ::unity2::Il2CppString> ,arg1:impl::core::convert::Into< ::unity2::Il2CppString> ,arg2:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d7a00usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(::unity2::Il2CppString)::core::convert::Into::into(arg0),(::unity2::Il2CppString)::core::convert::Into::into(arg1),(::unity2::Il2CppString)::core::convert::Into::into(arg2))}
+}
+#[doc="`Get(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]pub fn get_5(label:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d7bd0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(args))}
+}
+#[doc="`TryGetReplace(::unity2::Il2CppString)` overload"]pub fn try_get_replace(label:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d7d80usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`GetIntPtr(::unity2::Il2CppString)` overload"]pub fn get_int_ptr(label:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d7f90usize)as*mut u8, ::unity2::IntPtr;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`GetImpl(::unity2::Il2CppString, bool)` overload"]pub fn get_impl(label:impl::core::convert::Into< ::unity2::Il2CppString> ,is_replace:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d76c0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(bool)::core::convert::Into::into(is_replace))}
+}
+#[doc="`GetSoundCmdText(::unity2::Il2CppString)` overload"]pub fn get_sound_cmd_text(label:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d8560usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`GetSoundCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]pub fn get_sound_cmd_text_2(label:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool, ::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25d86b0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetEventCmdText(::unity2::Il2CppString)` overload"]pub fn get_event_cmd_text(label:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d8820usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`GetEventCmdText(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]pub fn get_event_cmd_text_2(label:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool, ::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25d88a0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>)` overload"]pub fn get_cmd_impl(label:impl::core::convert::Into< ::unity2::Il2CppString> ,data_dictionary:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> >)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d85e0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr>)::core::convert::Into::into(data_dictionary))}
+}
+#[doc="`GetCmdImpl(::unity2::Il2CppString, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::IntPtr>, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]pub fn get_cmd_impl_2(label:impl::core::convert::Into< ::unity2::Il2CppString> ,data_dictionary:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr> >)->(bool, ::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25d8740usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::IntPtr>)::core::convert::Into::into(data_dictionary),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`IsExist(::unity2::Il2CppString)` overload"]pub fn is_exist(label:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d8b20usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(label))}
+}
+#[doc="`IsNesting()` overload"]pub fn is_nesting()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d8bb0usize)as*mut u8,bool;
+)}
+}
+#[doc="`GetString(::unity2::Il2CppString, ::unity2::IntPtr, bool)` overload"]pub fn get_string(label:impl::core::convert::Into< ::unity2::Il2CppString> ,p_mess_data:impl::core::convert::Into< ::unity2::IntPtr> ,is_replace:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d8040usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(label),(::unity2::IntPtr)::core::convert::Into::into(p_mess_data),(bool)::core::convert::Into::into(is_replace))}
+}
+#[doc="`ReadChar(::unity2::IntPtr, i32)` overload"]pub fn read_char(p:impl::core::convert::Into< ::unity2::IntPtr> ,offset:impl::core::convert::Into<i32>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d8c20usize)as*mut u8,u16;
+(::unity2::IntPtr)::core::convert::Into::into(p),(i32)::core::convert::Into::into(offset))}
+}
+#[doc="`CalcTalkStringTotalWidth(::unity2::Il2CppString)` overload"]pub fn calc_talk_string_total_width(mess_str:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d9100usize)as*mut u8,f32;
+(::unity2::Il2CppString)::core::convert::Into::into(mess_str))}
+}
+#[doc="`CalcWaitMsecForTalkAutoPlay(::unity2::Il2CppString)` overload"]pub fn calc_wait_msec_for_talk_auto_play(mess_str:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d9210usize)as*mut u8,f32;
+(::unity2::Il2CppString)::core::convert::Into::into(mess_str))}
+}
+#[doc="`SplitCmd(::unity2::Il2CppString, *mut::unity2::Il2CppString, *mut::unity2::Il2CppString)` overload"]pub fn split_cmd(cmd:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool, ::unity2::Il2CppString, ::unity2::Il2CppString){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x25d8930usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(cmd),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut::unity2::Il2CppString)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`AddTagString(u16, u16, ::unity2::Array<u8>)` overload"]pub fn add_tag_string(tag_group_id:impl::core::convert::Into<u16> ,tag_id:impl::core::convert::Into<u16> ,param:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d8cf0usize)as*mut u8,();
+(u16)::core::convert::Into::into(tag_group_id),(u16)::core::convert::Into::into(tag_id),(::unity2::Array<u8>)::core::convert::Into::into(param))}
+}
+#[doc="`ReplaceArgString(crate::app::mess::Mess_TagID_Arg)` overload"]pub fn replace_arg_string(tag_id:impl::core::convert::Into<crate::app::mess::Mess_TagID_Arg>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d9290usize)as*mut u8,();
+(crate::app::mess::Mess_TagID_Arg)::core::convert::Into::into(tag_id))}
+}
+#[doc="`AddTagString_Localize(u16, ::unity2::Array<u8>)` overload"]pub fn add_tag_string_localize(tag_id:impl::core::convert::Into<u16> ,param:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d9830usize)as*mut u8,();
+(u16)::core::convert::Into::into(tag_id),(::unity2::Array<u8>)::core::convert::Into::into(param))}
+}
+#[doc="`IsPatchim1(u16)` overload"]pub fn is_patchim1(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d9da0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsPatchim2(u16)` overload"]pub fn is_patchim2(c:impl::core::convert::Into<u16>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d9ee0usize)as*mut u8,bool;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`IsPatchimStrCode(i32, bool)` overload"]pub fn is_patchim_str_code(chr_code:impl::core::convert::Into<i32> ,is_without2:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da020usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(chr_code),(bool)::core::convert::Into::into(is_without2))}
+}
+#[doc="`SetArgument(i32, i32)` overload"]pub fn set_argument(index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da0d0usize)as*mut u8,();
+(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`SetArgument(i32, ::unity2::Il2CppString)` overload"]pub fn set_argument_2(index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d77c0usize)as*mut u8,();
+(i32)::core::convert::Into::into(index),(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`ClearArgument()` overload"]pub fn clear_argument()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d39f0usize)as*mut u8,();
+)}
+}
+#[doc="`GetArgument(i32)` overload"]pub fn get_argument(index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da160usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_NewArgScope()` overload"]pub fn get_new_arg_scope()->crate::app::mess::Mess_ArgScope{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da1f0usize)as*mut u8,crate::app::mess::Mess_ArgScope;
+)}
+}
+#[doc="`CreateSpaceTag(u32)` overload"]pub fn create_space_tag(pixel:impl::core::convert::Into<u32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d97a0usize)as*mut u8, ::unity2::Il2CppString;
+(u32)::core::convert::Into::into(pixel))}
+}
+#[doc="`CreateSpriteTag(crate::app::mess::Mess_IconCategory, ::unity2::Il2CppString)` overload"]pub fn create_sprite_tag(icon_category:impl::core::convert::Into<crate::app::mess::Mess_IconCategory> ,kind_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25d94d0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::mess::Mess_IconCategory)::core::convert::Into::into(icon_category),(::unity2::Il2CppString)::core::convert::Into::into(kind_name))}
+}
+#[doc="`CreateSpriteTag(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn create_sprite_tag_2(sprite_asset_name:impl::core::convert::Into< ::unity2::Il2CppString> ,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da540usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(sprite_asset_name),(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`CreateItemSpriteTag(crate::app::itemdata::ItemData, bool)` overload"]pub fn create_item_sprite_tag(item:impl::core::convert::Into<crate::app::itemdata::ItemData> ,for_system:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da220usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::itemdata::ItemData)::core::convert::Into::into(item),(bool)::core::convert::Into::into(for_system))}
+}
+#[doc="`CreateSkillSpriteTag(crate::app::skilldata::SkillData)` overload"]pub fn create_skill_sprite_tag(skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da3d0usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`CreateSystemSpriteTag(::unity2::Il2CppString)` overload"]pub fn create_system_sprite_tag(icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da460usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`CreateGodSymbleEngraveSpriteTag(::unity2::Il2CppString)` overload"]pub fn create_god_symble_engrave_sprite_tag(icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da4d0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`SetPartnerPID(::unity2::Il2CppString)` overload"]pub fn set_partner_pid(pid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da7b0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`GetPartnerPID()` overload"]pub fn get_partner_pid()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da830usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`GetPartnerName()` overload"]pub fn get_partner_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25da8a0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`GetGameDataName(::unity2::Il2CppString)` overload"]pub fn get_game_data_name(value:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25daae0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25dad50usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-mess")]pub trait IMessMethods:IMess{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Mess as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25dad40usize)as*mut u8,();
+(Mess)__receiver)}
+}
+}
+
+#[cfg(feature="app-mess")]impl<__T:IMess>IMessMethods for __T{}
+
+#[cfg(feature="app-mess")]impl Mess{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_replace_str_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn load_sprite_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_sprite_asset_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_sprite_exist_in_sprite_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_item_sprite_assets_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_skill_sprite_assets_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_system_sprite_assets_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_god_symbol_engrave_sprite_assets_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_sprite_asset_request_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn push_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn pop_check_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn try_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn load_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn load_impl_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn free_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn try_free_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn free_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn free_impl_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn reload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn is_load_done_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn is_file_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn is_hero_female_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_language_directory_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn create_mess_file_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn create_sound_cmd_file_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn create_event_cmd_file_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_file_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_msg_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn is_main_release_scenario_mess_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn is_dlc_scenario_mess_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn is_reliance_mess_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn is_god_reliance_mess_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn dump_file_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn dump_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_all_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn try_get_replace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_sound_cmd_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn get_sound_cmd_text_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_event_cmd_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn get_event_cmd_text_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn get_cmd_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn get_cmd_impl_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn is_nesting_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn get_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn read_char_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn calc_talk_string_total_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn calc_wait_msec_for_talk_auto_play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn split_cmd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn add_tag_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn replace_arg_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn add_tag_string_localize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn is_patchim1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn is_patchim2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn is_patchim_str_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn set_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn set_argument_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn clear_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn get_argument_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn get_new_arg_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn create_space_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn create_sprite_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn create_sprite_tag_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn create_item_sprite_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn create_skill_sprite_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn create_system_sprite_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn create_god_symble_engrave_sprite_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn set_partner_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn get_partner_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+pub fn get_partner_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[79]}
+pub fn get_game_data_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[80]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[81]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[82]}
+}
+
+#[cfg(feature="app-mess")]impl Mess{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Mess), ::core::stringify!(new),));
+ <Self as IMessMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mess")]impl Mess_LanguageScope{#[doc="`.ctor(::unity2::Il2CppString, crate::app::language::Language_Langs)` overload"]pub fn ctor(&mut self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,lang:impl::core::convert::Into<crate::app::language::Language_Langs>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x208e060usize)as*mut u8,();
+(*mut Mess_LanguageScope)self as*mut Mess_LanguageScope,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::language::Language_Langs)::core::convert::Into::into(lang))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x208e330usize)as*mut u8,();
+(*mut Mess_LanguageScope)self as*mut Mess_LanguageScope)}
+}
+}
+
+#[cfg(feature="app-mess")]impl Mess_LanguageScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mess")]impl Mess_ArgScope{#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,dummy:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x208ded0usize)as*mut u8,();
+(*mut Mess_ArgScope)self as*mut Mess_ArgScope,(i32)::core::convert::Into::into(dummy))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x208df90usize)as*mut u8,();
+(*mut Mess_ArgScope)self as*mut Mess_ArgScope)}
+}
+}
+
+#[cfg(feature="app-mess")]impl Mess_ArgScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "app-mess")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Mess_LanguageScope;
     pub use super::Mess_TagGroup;
-    pub use super::Mess_TagID_Text;
     pub use super::Mess_ReloadFileInfo;
     pub use super::IMess_ReloadFileInfo;
     pub use super::IMess_ReloadFileInfoMethods;
-    pub use super::Mess_TagID_Arg;
+    pub use super::Mess_IconCategory;
     pub use super::Mess;
     pub use super::IMess;
     pub use super::IMessMethods;
     pub use super::Mess_TagID_Picture;
-    pub use super::Mess_TagID_Localize;
-    pub use super::Mess_TagID_Name;
-    pub use super::Mess_IconCategory;
+    pub use super::Mess_LanguageScope;
     pub use super::Mess_ArgScope;
+    pub use super::Mess_TagID_Localize;
+    pub use super::Mess_TagID_Arg;
+    pub use super::Mess_TagID_Text;
+    pub use super::Mess_TagID_Name;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

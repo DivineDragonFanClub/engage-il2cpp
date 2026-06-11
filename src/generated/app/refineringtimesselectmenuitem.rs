@@ -4,34 +4,101 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineringtimesselectmenuitem/RefineRingTimesSelectMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineRingTimesSelectMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefineRingTimesSelectMenuItem {
-# [offset (112)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refineringtimesselectmenu :: RefineRingTimesSelectMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringtimesselectmenuitem/RefineRingTimesSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineRingTimesSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefineRingTimesSelectMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-refineringtimesselectmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineringtimesselectmenuitem")]
-pub trait IRefineRingTimesSelectMenuItemMethods : IRefineRingTimesSelectMenuItem { # [doc = "`get_m_Times()` overload"] fn get_m_times (self ,) -> i32 { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_Times(i32)` overload"] fn set_m_times (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_PiecesOfBond()` overload"] fn get_m_pieces_of_bond (self ,) -> i32 { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_PiecesOfBond(i32)` overload"] fn set_m_pieces_of_bond (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_IsEnoughPieceOfBond()` overload"] fn get_m_is_enough_piece_of_bond (self ,) -> bool { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_IsEnoughPieceOfBond(bool)` overload"] fn set_m_is_enough_piece_of_bond (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu_DecideEventHandler)` overload"] fn ctor (self , times : impl :: core :: convert :: Into < i32 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineringtimesselectmenu :: RefineRingTimesSelectMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , i32 , crate :: app :: refineringtimesselectmenu :: RefineRingTimesSelectMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (times) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957790usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetInitialColor()` overload"] fn set_initial_color (self ,) -> () { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineRingTimesSelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineRingTimesSelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2957ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineringtimesselectmenuitem")]pub trait IRefineRingTimesSelectMenuItemMethods:IRefineRingTimesSelectMenuItem{#[doc="`get_m_Times()` overload"]fn get_m_times(self,)->i32{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957730usize)as*mut u8,i32;
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+#[doc="`set_m_Times(i32)` overload"]fn set_m_times(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957740usize)as*mut u8,();
+(RefineRingTimesSelectMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_PiecesOfBond()` overload"]fn get_m_pieces_of_bond(self,)->i32{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957750usize)as*mut u8,i32;
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+#[doc="`set_m_PiecesOfBond(i32)` overload"]fn set_m_pieces_of_bond(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957760usize)as*mut u8,();
+(RefineRingTimesSelectMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_IsEnoughPieceOfBond()` overload"]fn get_m_is_enough_piece_of_bond(self,)->bool{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957770usize)as*mut u8,bool;
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+#[doc="`set_m_IsEnoughPieceOfBond(bool)` overload"]fn set_m_is_enough_piece_of_bond(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957780usize)as*mut u8,();
+(RefineRingTimesSelectMenuItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32, crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu_DecideEventHandler)` overload"]fn ctor(self,times:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957110usize)as*mut u8,();
+(RefineRingTimesSelectMenuItem)__receiver,(i32)::core::convert::Into::into(times),(crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957790usize)as*mut u8, ::unity2::Il2CppString;
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957820usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957840usize)as*mut u8,();
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957a30usize)as*mut u8,();
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+#[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957850usize)as*mut u8,();
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957a40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2957ab0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineRingTimesSelectMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineringtimesselectmenuitem")]
-impl < __T : IRefineRingTimesSelectMenuItem > IRefineRingTimesSelectMenuItemMethods for __T { }
+#[cfg(feature="app-refineringtimesselectmenuitem")]impl<__T:IRefineRingTimesSelectMenuItem>IRefineRingTimesSelectMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refineringtimesselectmenuitem")]
-impl RefineRingTimesSelectMenuItem { pub fn get_m_times_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_times_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_m_pieces_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_m_pieces_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_m_is_enough_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_m_is_enough_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_initial_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineRingTimesSelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-refineringtimesselectmenuitem")]impl RefineRingTimesSelectMenuItem{pub fn get_m_times_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_times_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_pieces_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_pieces_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_m_is_enough_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_m_is_enough_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_initial_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-refineringtimesselectmenuitem")]
-impl RefineRingTimesSelectMenuItem {
-# [doc = "`.ctor(i32, crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu_DecideEventHandler)` — overload selector"] pub fn new (times : i32 , decide_event_handler : crate :: app :: refineringtimesselectmenu :: RefineRingTimesSelectMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineRingTimesSelectMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineRingTimesSelectMenuItemMethods > :: ctor (this , times , decide_event_handler) ; this }
+#[cfg(feature="app-refineringtimesselectmenuitem")]impl RefineRingTimesSelectMenuItem{#[doc="`.ctor(i32, crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu_DecideEventHandler)` — overload selector"]pub fn new(times:i32,decide_event_handler:crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingTimesSelectMenuItem), ::core::stringify!(new),));
+ <Self as IRefineRingTimesSelectMenuItemMethods> ::ctor(this,times,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refineringtimesselectmenuitem")]

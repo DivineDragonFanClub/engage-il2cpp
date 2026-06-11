@@ -4,74 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/configbasicmenuitem/ConfigBasicMenuItem_ConfigMethodKind.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ConfigBasicMenuItem_ConfigMethodKind  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/configbasicmenuitem/ConfigBasicMenuItem.md"))]#[::unity2::class(namespace="",name="ConfigBasicMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ConfigBasicMenuItem{#[offset(100)]#[rename(name="m_ConfigMethod")]pub m_config_method:crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind, #[offset(104)]#[rename(name="m_TitleText")]pub m_title_text: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_CommandText")]pub m_command_text: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_HelpText")]pub m_help_text: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_IsArrow")]pub m_is_arrow:bool, #[offset(129)]#[rename(name="m_IsCommandIcon")]pub m_is_command_icon:bool, #[offset(132)]#[rename(name="m_GaugeRatio")]pub m_gauge_ratio:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/configbasicmenuitem/ConfigBasicMenuItem_ConfigMethodKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ConfigBasicMenuItem_ConfigMethodKind{pub value:i32,}
+impl::unity2::ClassIdentity for ConfigBasicMenuItem_ConfigMethodKind{const NAMESPACE: &'static str="";
+const NAME: &'static str="ConfigBasicMenuItem.ConfigMethodKind";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for ConfigBasicMenuItem_ConfigMethodKind  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "ConfigBasicMenuItem.ConfigMethodKind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for ConfigBasicMenuItem_ConfigMethodKind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for ConfigBasicMenuItem_ConfigMethodKind  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl ConfigBasicMenuItem_ConfigMethodKind{pub fn switch()->Self{Self{value:0}
 }
-
-
-impl  ConfigBasicMenuItem_ConfigMethodKind  {
-    pub fn switch() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn gauge() -> Self {
-        Self { value: 1 }
-
-    }
-
+pub fn gauge()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configbasicmenuitem/ConfigBasicMenuItem.md"))] # [:: unity2 :: class (namespace = "" , name = "ConfigBasicMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ConfigBasicMenuItem {
-# [offset (100)] # [rename (name = "m_ConfigMethod")] pub m_config_method : crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem_ConfigMethodKind ,
-# [offset (104)] # [rename (name = "m_TitleText")] pub m_title_text : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_CommandText")] pub m_command_text : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_HelpText")] pub m_help_text : :: unity2 :: Il2CppString ,
-# [offset (128)] # [rename (name = "m_IsArrow")] pub m_is_arrow : bool ,
-# [offset (129)] # [rename (name = "m_IsCommandIcon")] pub m_is_command_icon : bool ,
-# [offset (132)] # [rename (name = "m_GaugeRatio")] pub m_gauge_ratio : f32 ,
 }
 
 }
@@ -79,30 +38,90 @@ impl  ConfigBasicMenuItem_ConfigMethodKind  {
 #[cfg(feature = "root-configbasicmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-configbasicmenuitem")]
-impl ConfigBasicMenuItem { # [doc = "`ChangeKeyValueImpl(f64, f64, f64, f64, bool)` overload"] pub fn change_key_value_impl (value : impl :: core :: convert :: Into < f64 > , min : impl :: core :: convert :: Into < f64 > , max : impl :: core :: convert :: Into < f64 > , step : impl :: core :: convert :: Into < f64 > , is_repeat : impl :: core :: convert :: Into < bool >) -> f64 { unsafe { { let __inner : extern "C" fn (f64 , f64 , f64 , f64 , bool , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: convert :: Into :: into (step) , :: core :: convert :: Into :: into (is_repeat) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeKeyValue(i32, i32, i32, i32)` overload"] pub fn change_key_value (value : impl :: core :: convert :: Into < i32 > , min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 > , step : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537920usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: convert :: Into :: into (step) , :: core :: option :: Option :: None) } } } # [doc = "`ChangeKeyValue(f32, f32, f32, f32)` overload"] pub fn change_key_value_2 (value : impl :: core :: convert :: Into < f32 > , min : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 > , step : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (f32 , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537970usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: convert :: Into :: into (step) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-configbasicmenuitem")]impl ConfigBasicMenuItem{#[doc="`ChangeKeyValueImpl(f64, f64, f64, f64, bool)` overload"]pub fn change_key_value_impl(value:impl::core::convert::Into<f64> ,min:impl::core::convert::Into<f64> ,max:impl::core::convert::Into<f64> ,step:impl::core::convert::Into<f64> ,is_repeat:impl::core::convert::Into<bool>)->f64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2537150usize)as*mut u8,f64;
+(f64)::core::convert::Into::into(value),(f64)::core::convert::Into::into(min),(f64)::core::convert::Into::into(max),(f64)::core::convert::Into::into(step),(bool)::core::convert::Into::into(is_repeat))}
+}
+#[doc="`ChangeKeyValue(i32, i32, i32, i32)` overload"]pub fn change_key_value(value:impl::core::convert::Into<i32> ,min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32> ,step:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2537920usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(value),(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max),(i32)::core::convert::Into::into(step))}
+}
+#[doc="`ChangeKeyValue(f32, f32, f32, f32)` overload"]pub fn change_key_value_2(value:impl::core::convert::Into<f32> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32> ,step:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2537970usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(value),(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max),(f32)::core::convert::Into::into(step))}
+}
+}
 
-#[cfg(feature = "root-configbasicmenuitem")]
-pub trait IConfigBasicMenuItemMethods : IConfigBasicMenuItem { # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuildMenuItemContent()` overload"] fn on_build_menu_item_content (self ,) -> () { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536fd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDeselect()` overload"] fn on_deselect (self ,) -> () { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25370f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitContent()` overload"] fn init_content (self ,) -> () { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitColor()` overload"] fn init_color (self ,) -> () { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2536eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetTitleText(::unity2::Il2CppString)` overload"] fn set_title_text (self , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateText()` overload"] fn update_text (self ,) -> () { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsConfigMethod(crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind)` overload"] fn is_config_method (self , config_method : impl :: core :: convert :: Into < crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem_ConfigMethodKind >) -> bool { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , crate :: root :: configbasicmenuitem :: ConfigBasicMenuItem_ConfigMethodKind , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2537140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (config_method) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ConfigBasicMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ConfigBasicMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25379a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-configbasicmenuitem")]pub trait IConfigBasicMenuItemMethods:IConfigBasicMenuItem{#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2536ea0usize)as*mut u8,();
+(ConfigBasicMenuItem)__receiver)}
+}
+#[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2536fc0usize)as*mut u8,();
+(ConfigBasicMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2536fd0usize)as*mut u8,();
+(ConfigBasicMenuItem)__receiver)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25370f0usize)as*mut u8,();
+(ConfigBasicMenuItem)__receiver)}
+}
+#[doc="`InitContent()` overload"]fn init_content(self,)->(){unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537120usize)as*mut u8,();
+(ConfigBasicMenuItem)__receiver)}
+}
+#[doc="`InitColor()` overload"]fn init_color(self,)->(){unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2536eb0usize)as*mut u8,();
+(ConfigBasicMenuItem)__receiver)}
+}
+#[doc="`SetTitleText(::unity2::Il2CppString)` overload"]fn set_title_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537130usize)as*mut u8,();
+(ConfigBasicMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`UpdateText()` overload"]fn update_text(self,)->(){unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537000usize)as*mut u8,();
+(ConfigBasicMenuItem)__receiver)}
+}
+#[doc="`IsConfigMethod(crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind)` overload"]fn is_config_method(self,config_method:impl::core::convert::Into<crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind>)->bool{unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2537140usize)as*mut u8,bool;
+(ConfigBasicMenuItem)__receiver,(crate::root::configbasicmenuitem::ConfigBasicMenuItem_ConfigMethodKind)::core::convert::Into::into(config_method))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ConfigBasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25379a0usize)as*mut u8,();
+(ConfigBasicMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "root-configbasicmenuitem")]
-impl < __T : IConfigBasicMenuItem > IConfigBasicMenuItemMethods for __T { }
+#[cfg(feature="root-configbasicmenuitem")]impl<__T:IConfigBasicMenuItem>IConfigBasicMenuItemMethods for __T{}
 
-#[cfg(feature = "root-configbasicmenuitem")]
-impl ConfigBasicMenuItem { pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_deselect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn init_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn init_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_title_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_config_method_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn change_key_value_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn change_key_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn change_key_value_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ConfigBasicMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="root-configbasicmenuitem")]impl ConfigBasicMenuItem{pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn init_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn init_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_title_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_config_method_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn change_key_value_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn change_key_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn change_key_value_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "root-configbasicmenuitem")]
-impl ConfigBasicMenuItem {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ConfigBasicMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IConfigBasicMenuItemMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-configbasicmenuitem")]impl ConfigBasicMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConfigBasicMenuItem), ::core::stringify!(new),));
+ <Self as IConfigBasicMenuItemMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-configbasicmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConfigBasicMenuItem_ConfigMethodKind;
     pub use super::ConfigBasicMenuItem;
     pub use super::IConfigBasicMenuItem;
     pub use super::IConfigBasicMenuItemMethods;
+    pub use super::ConfigBasicMenuItem_ConfigMethodKind;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -4,40 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlercontainer/DebugUIHandlerContainer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerContainer")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DebugUIHandlerContainer {
-# [offset (24)] # [rename (name = "contentHolder")] pub content_holder : crate :: unity_engine :: recttransform :: RectTransform ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguihandlercontainer/DebugUIHandlerContainer.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIHandlerContainer")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DebugUIHandlerContainer{#[offset(24)]#[rename(name="contentHolder")]pub content_holder:crate::unity_engine::recttransform::RectTransform,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
-pub trait IDebugUIHandlerContainerMethods : IDebugUIHandlerContainer { # [doc = "`GetFirstItem()` overload"] fn get_first_item (self ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerContainer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c3e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetLastItem()` overload"] fn get_last_item (self ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerContainer , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c1b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDirectChild(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn is_direct_child (self , widget : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> bool { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerContainer , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353c090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (widget) , :: core :: option :: Option :: None) } } } # [doc = "`GetActiveChildren()` overload"] fn get_active_children (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget > { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerContainer , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353f370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerContainer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerContainer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x353f6f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlercontainer")]pub trait IDebugUIHandlerContainerMethods:IDebugUIHandlerContainer{#[doc="`GetFirstItem()` overload"]fn get_first_item(self,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{unsafe{let __receiver= <DebugUIHandlerContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c3e0usize)as*mut u8,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+(DebugUIHandlerContainer)__receiver)}
+}
+#[doc="`GetLastItem()` overload"]fn get_last_item(self,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{unsafe{let __receiver= <DebugUIHandlerContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c1b0usize)as*mut u8,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+(DebugUIHandlerContainer)__receiver)}
+}
+#[doc="`IsDirectChild(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn is_direct_child(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353c090usize)as*mut u8,bool;
+(DebugUIHandlerContainer)__receiver,(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(widget))}
+}
+#[doc="`GetActiveChildren()` overload"]fn get_active_children(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>{unsafe{let __receiver= <DebugUIHandlerContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353f370usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget> ;
+(DebugUIHandlerContainer)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x353f6f0usize)as*mut u8,();
+(DebugUIHandlerContainer)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
-impl < __T : IDebugUIHandlerContainer > IDebugUIHandlerContainerMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlercontainer")]impl<__T:IDebugUIHandlerContainer>IDebugUIHandlerContainerMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
-impl DebugUIHandlerContainer { pub fn get_first_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_last_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_direct_child_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_active_children_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerContainer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlercontainer")]impl DebugUIHandlerContainer{pub fn get_first_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_last_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_direct_child_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_active_children_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
-impl DebugUIHandlerContainer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerContainer) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerContainerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlercontainer")]impl DebugUIHandlerContainer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIHandlerContainer), ::core::stringify!(new),));
+ <Self as IDebugUIHandlerContainerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]

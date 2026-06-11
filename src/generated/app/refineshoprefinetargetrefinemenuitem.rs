@@ -4,40 +4,58 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: refineshoprefinetargetbasemenuitem :: { IRefineShopRefineTargetBaseMenuItem , RefineShopRefineTargetBaseMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::refineshoprefinetargetbasemenuitem::{IRefineShopRefineTargetBaseMenuItem,RefineShopRefineTargetBaseMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinetargetrefinemenuitem/RefineShopRefineTargetRefineMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefineShopRefineTargetRefineMenuItem")] # [parent (crate :: app :: refineshoprefinetargetbasemenuitem :: RefineShopRefineTargetBaseMenuItem)] pub struct RefineShopRefineTargetRefineMenuItem {
-# [offset (144)] # [rename (name = "m_RefinedUnitItem")] pub m_refined_unit_item : crate :: app :: unititem :: UnitItem ,
-# [offset (152)] # [rename (name = "m_RefineLevel")] pub m_refine_level : i32 ,
-# [offset (160)] # [rename (name = "m_RefineData")] pub m_refine_data : crate :: app :: itemrefinedata :: ItemRefineData ,
-# [offset (168)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_SelectEventHandler ,
-# [offset (176)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToRefineEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoprefinetargetrefinemenuitem/RefineShopRefineTargetRefineMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineShopRefineTargetRefineMenuItem")]#[parent(crate::app::refineshoprefinetargetbasemenuitem::RefineShopRefineTargetBaseMenuItem)]pub struct RefineShopRefineTargetRefineMenuItem{#[offset(144)]#[rename(name="m_RefinedUnitItem")]pub m_refined_unit_item:crate::app::unititem::UnitItem, #[offset(152)]#[rename(name="m_RefineLevel")]pub m_refine_level:i32, #[offset(160)]#[rename(name="m_RefineData")]pub m_refine_data:crate::app::itemrefinedata::ItemRefineData, #[offset(168)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler, #[offset(176)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToRefineEventHandler,}
 
 }
 
 #[cfg(feature = "app-refineshoprefinetargetrefinemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refineshoprefinetargetrefinemenuitem")]
-pub trait IRefineShopRefineTargetRefineMenuItemMethods : IRefineShopRefineTargetRefineMenuItem { # [doc = "`get_m_TargetUnitItem()` overload"] fn get_m_target_unit_item (self ,) -> crate :: app :: unititem :: UnitItem { unsafe { let __receiver = < RefineShopRefineTargetRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineTargetRefineMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: unititem :: UnitItem = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_TargetUnitItem(crate::app::unititem::UnitItem)` overload"] fn set_m_target_unit_item (self , value : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < RefineShopRefineTargetRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineTargetRefineMenuItem , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::unititem::UnitItem, i32, crate::app::itemrefinedata::ItemRefineData, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToRefineEventHandler)` overload"] fn ctor (self , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem > , refine_level : impl :: core :: convert :: Into < i32 > , refine_data : impl :: core :: convert :: Into < crate :: app :: itemrefinedata :: ItemRefineData > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToRefineEventHandler >) -> () { unsafe { let __receiver = < RefineShopRefineTargetRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineTargetRefineMenuItem , crate :: app :: unititem :: UnitItem , i32 , crate :: app :: itemrefinedata :: ItemRefineData , crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_SelectEventHandler , crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToRefineEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b3fc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_item) , :: core :: convert :: Into :: into (refine_level) , :: core :: convert :: Into :: into (refine_data) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < RefineShopRefineTargetRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineTargetRefineMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b41e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefineShopRefineTargetRefineMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefineShopRefineTargetRefineMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22b4230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refineshoprefinetargetrefinemenuitem")]pub trait IRefineShopRefineTargetRefineMenuItemMethods:IRefineShopRefineTargetRefineMenuItem{#[doc="`get_m_TargetUnitItem()` overload"]fn get_m_target_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <RefineShopRefineTargetRefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3fa0usize)as*mut u8,crate::app::unititem::UnitItem;
+(RefineShopRefineTargetRefineMenuItem)__receiver)}
+}
+#[doc="`set_m_TargetUnitItem(crate::app::unititem::UnitItem)` overload"]fn set_m_target_unit_item(self,value:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopRefineTargetRefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3fb0usize)as*mut u8,();
+(RefineShopRefineTargetRefineMenuItem)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::app::unititem::UnitItem, i32, crate::app::itemrefinedata::ItemRefineData, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToRefineEventHandler)` overload"]fn ctor(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,refine_level:impl::core::convert::Into<i32> ,refine_data:impl::core::convert::Into<crate::app::itemrefinedata::ItemRefineData> ,select_event_handler:impl::core::convert::Into<crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToRefineEventHandler>)->(){unsafe{let __receiver= <RefineShopRefineTargetRefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3fc0usize)as*mut u8,();
+(RefineShopRefineTargetRefineMenuItem)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(i32)::core::convert::Into::into(refine_level),(crate::app::itemrefinedata::ItemRefineData)::core::convert::Into::into(refine_data),(crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToRefineEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RefineShopRefineTargetRefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b41e0usize)as*mut u8,();
+(RefineShopRefineTargetRefineMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopRefineTargetRefineMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22b4230usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefineShopRefineTargetRefineMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refineshoprefinetargetrefinemenuitem")]
-impl < __T : IRefineShopRefineTargetRefineMenuItem > IRefineShopRefineTargetRefineMenuItemMethods for __T { }
+#[cfg(feature="app-refineshoprefinetargetrefinemenuitem")]impl<__T:IRefineShopRefineTargetRefineMenuItem>IRefineShopRefineTargetRefineMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refineshoprefinetargetrefinemenuitem")]
-impl RefineShopRefineTargetRefineMenuItem { pub fn get_m_target_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineTargetRefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_target_unit_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineTargetRefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineTargetRefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineTargetRefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefineShopRefineTargetRefineMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-refineshoprefinetargetrefinemenuitem")]impl RefineShopRefineTargetRefineMenuItem{pub fn get_m_target_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_target_unit_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-refineshoprefinetargetrefinemenuitem")]
-impl RefineShopRefineTargetRefineMenuItem {
-# [doc = "`.ctor(crate::app::unititem::UnitItem, i32, crate::app::itemrefinedata::ItemRefineData, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToRefineEventHandler)` — overload selector"] pub fn new (unit_item : crate :: app :: unititem :: UnitItem , refine_level : i32 , refine_data : crate :: app :: itemrefinedata :: ItemRefineData , select_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_SelectEventHandler , decide_event_handler : crate :: app :: refineshoprefinetargetmenu :: RefineShopRefineTargetMenu_DecideToRefineEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefineShopRefineTargetRefineMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefineShopRefineTargetRefineMenuItemMethods > :: ctor (this , unit_item , refine_level , refine_data , select_event_handler , decide_event_handler) ; this }
+#[cfg(feature="app-refineshoprefinetargetrefinemenuitem")]impl RefineShopRefineTargetRefineMenuItem{#[doc="`.ctor(crate::app::unititem::UnitItem, i32, crate::app::itemrefinedata::ItemRefineData, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler, crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToRefineEventHandler)` — overload selector"]pub fn new(unit_item:crate::app::unititem::UnitItem,refine_level:i32,refine_data:crate::app::itemrefinedata::ItemRefineData,select_event_handler:crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_SelectEventHandler,decide_event_handler:crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu_DecideToRefineEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopRefineTargetRefineMenuItem), ::core::stringify!(new),));
+ <Self as IRefineShopRefineTargetRefineMenuItemMethods> ::ctor(this,unit_item,refine_level,refine_data,select_event_handler,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refineshoprefinetargetrefinemenuitem")]

@@ -4,78 +4,257 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: sortconstant :: { ISortConstant , SortConstant }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::sortconstant::{ISortConstant,SortConstant}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortGeneric")] # [parent (crate :: app :: sortconstant :: SortConstant)] pub struct SortGeneric {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortgeneric/SortGeneric_DelegateComparer_1.md"))]#[::unity2::class(namespace="App",name="SortGeneric.DelegateComparer`1")]#[parent(crate::system::object::Object)]pub struct SortGeneric_DelegateComparer_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Comparison")]pub m_comparison:crate::system::comparison_1::Comparison_1<T0> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric_DelegateComparer_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortGeneric.DelegateComparer`1")] # [parent (crate :: system :: object :: Object)] pub struct SortGeneric_DelegateComparer_1 < T0 : :: unity2 :: ClassIdentity > {
-# [rename (name = "m_Comparison")] pub m_comparison : crate :: system :: comparison_1 :: Comparison_1 < T0 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortgeneric/SortGeneric.md"))]#[::unity2::class(namespace="App",name="SortGeneric")]#[parent(crate::app::sortconstant::SortConstant)]pub struct SortGeneric{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric_ElementComparer_1.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortGeneric.ElementComparer`1")] # [parent (crate :: system :: object :: Object)] pub struct SortGeneric_ElementComparer_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortgeneric/SortGeneric_ElementComparer_1.md"))]#[::unity2::class(namespace="App",name="SortGeneric.ElementComparer`1")]#[parent(crate::system::object::Object)]pub struct SortGeneric_ElementComparer_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "app-sortgeneric-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortgeneric")]
-impl SortGeneric { pub fn insertion_sort < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > > , comparison : impl :: core :: convert :: Into < crate :: system :: comparison_1 :: Comparison_1 < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SortGeneric as :: unity2 :: ClassIdentity > :: class () , "InsertionSort" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortGeneric as :: unity2 :: ClassIdentity > :: NAME , "InsertionSort" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > , crate :: system :: comparison_1 :: Comparison_1 < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (comparison) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn insertion_sort_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SortGeneric as :: unity2 :: ClassIdentity > :: class () , "InsertionSort" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortGeneric as :: unity2 :: ClassIdentity > :: NAME , "InsertionSort" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn insertion_sort_3 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SortGeneric as :: unity2 :: ClassIdentity > :: class () , "InsertionSort" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortGeneric as :: unity2 :: ClassIdentity > :: NAME , "InsertionSort" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > , crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn insertion_sort_partly < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > > , first : impl :: core :: convert :: Into < i32 > , last : impl :: core :: convert :: Into < i32 > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SortGeneric as :: unity2 :: ClassIdentity > :: class () , "InsertionSortPartly" , 4 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortGeneric as :: unity2 :: ClassIdentity > :: NAME , "InsertionSortPartly" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > , i32 , i32 , crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (first) , :: core :: convert :: Into :: into (last) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn merge_sort < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > > , comparison : impl :: core :: convert :: Into < crate :: system :: comparison_1 :: Comparison_1 < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SortGeneric as :: unity2 :: ClassIdentity > :: class () , "MergeSort" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortGeneric as :: unity2 :: ClassIdentity > :: NAME , "MergeSort" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > , crate :: system :: comparison_1 :: Comparison_1 < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (comparison) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn merge_sort_2 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SortGeneric as :: unity2 :: ClassIdentity > :: class () , "MergeSort" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortGeneric as :: unity2 :: ClassIdentity > :: NAME , "MergeSort" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn merge_sort_3 < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SortGeneric as :: unity2 :: ClassIdentity > :: class () , "MergeSort" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortGeneric as :: unity2 :: ClassIdentity > :: NAME , "MergeSort" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > , crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn merge_sort_partly < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > > , begin : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , work : impl :: core :: convert :: Into < :: unity2 :: Array < M0 > > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SortGeneric as :: unity2 :: ClassIdentity > :: class () , "MergeSortPartly" , 5 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortGeneric as :: unity2 :: ClassIdentity > :: NAME , "MergeSortPartly" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > , i32 , i32 , :: unity2 :: Array < M0 > , crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (begin) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (work) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn merge_sort_merge < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > > , begin : impl :: core :: convert :: Into < i32 > , middle : impl :: core :: convert :: Into < i32 > , end : impl :: core :: convert :: Into < i32 > , work : impl :: core :: convert :: Into < :: unity2 :: Array < M0 > > , comparer : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< SortGeneric as :: unity2 :: ClassIdentity > :: class () , "MergeSortMerge" , 6 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < SortGeneric as :: unity2 :: ClassIdentity > :: NAME , "MergeSortMerge" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < M0 > , i32 , i32 , i32 , :: unity2 :: Array < M0 > , crate :: system :: collections :: generic :: icomparer_1_interface :: IComparer_1_Interface < M0 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (list) , :: core :: convert :: Into :: into (begin) , :: core :: convert :: Into :: into (middle) , :: core :: convert :: Into :: into (end) , :: core :: convert :: Into :: into (work) , :: core :: convert :: Into :: into (comparer) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } }
-
-#[cfg(feature = "app-sortgeneric")]
-pub trait ISortGenericMethods : ISortGeneric { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortGeneric as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortGeneric , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe4900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-sortgeneric")]
-impl < __T : ISortGeneric > ISortGenericMethods for __T { }
-
-#[cfg(feature = "app-sortgeneric")]
-impl SortGeneric { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortGeneric as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
-
-#[cfg(feature = "app-sortgeneric")]
-impl SortGeneric {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortGeneric) , :: core :: stringify ! (new) ,)) ; < Self as ISortGenericMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortgeneric")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>SortGeneric_DelegateComparer_1<T0>{#[doc="`.ctor(crate::system::comparison_1::Comparison_1<T0>)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,comparison:crate::system::comparison_1::Comparison_1<T0>)->();
+ #[doc="`Compare(T0, T0)` overload"]#[method(name="Compare",args=2)]pub fn compare(self,a:T0,b:T0)->i32;
 }
 
-#[cfg(feature = "app-sortgeneric")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > SortGeneric_DelegateComparer_1 < T0 > {
-# [doc = "`.ctor(crate::system::comparison_1::Comparison_1<T0>)` overload"] # [method (name = ".ctor" , args = 1)] pub fn ctor (self , comparison : crate :: system :: comparison_1 :: Comparison_1 < T0 >) -> () ;
-
-# [doc = "`Compare(T0, T0)` overload"] # [method (name = "Compare" , args = 2)] pub fn compare (self , a : T0 , b : T0) -> i32 ;
+#[cfg(feature="app-sortgeneric")]impl<T0: ::unity2::ClassIdentity>SortGeneric_DelegateComparer_1<T0>{#[doc="`.ctor(crate::system::comparison_1::Comparison_1<T0>)` — overload selector"]pub fn new(comparison:crate::system::comparison_1::Comparison_1<T0>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortGeneric_DelegateComparer_1), ::core::stringify!(new),));
+ <Self as ISortGeneric_DelegateComparer_1Methods<T0> > ::ctor(this,comparison);
+this}
 }
 
-#[cfg(feature = "app-sortgeneric")]
-impl < T0 : :: unity2 :: ClassIdentity > SortGeneric_DelegateComparer_1 < T0 > {
-# [doc = "`.ctor(crate::system::comparison_1::Comparison_1<T0>)` — overload selector"] pub fn new (comparison : crate :: system :: comparison_1 :: Comparison_1 < T0 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortGeneric_DelegateComparer_1) , :: core :: stringify ! (new) ,)) ; < Self as ISortGeneric_DelegateComparer_1Methods < T0 > > :: ctor (this , comparison) ; this }
+#[cfg(feature="app-sortgeneric")]impl SortGeneric{pub fn insertion_sort<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> > ,comparison:impl::core::convert::Into<crate::system::comparison_1::Comparison_1<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SortGeneric as::unity2::ClassIdentity> ::class(),"InsertionSort",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SortGeneric as::unity2::ClassIdentity> ::NAME,"InsertionSort",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> ,crate::system::comparison_1::Comparison_1<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::convert::Into::into(comparison), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn insertion_sort_2<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SortGeneric as::unity2::ClassIdentity> ::class(),"InsertionSort",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SortGeneric as::unity2::ClassIdentity> ::NAME,"InsertionSort",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn insertion_sort_3<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> > ,comparer:impl::core::convert::Into<crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SortGeneric as::unity2::ClassIdentity> ::class(),"InsertionSort",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SortGeneric as::unity2::ClassIdentity> ::NAME,"InsertionSort",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> ,crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::convert::Into::into(comparer), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn insertion_sort_partly<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> > ,first:impl::core::convert::Into<i32> ,last:impl::core::convert::Into<i32> ,comparer:impl::core::convert::Into<crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SortGeneric as::unity2::ClassIdentity> ::class(),"InsertionSortPartly",4,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SortGeneric as::unity2::ClassIdentity> ::NAME,"InsertionSortPartly",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> ,i32,i32,crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::convert::Into::into(first), ::core::convert::Into::into(last), ::core::convert::Into::into(comparer), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn merge_sort<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> > ,comparison:impl::core::convert::Into<crate::system::comparison_1::Comparison_1<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SortGeneric as::unity2::ClassIdentity> ::class(),"MergeSort",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SortGeneric as::unity2::ClassIdentity> ::NAME,"MergeSort",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> ,crate::system::comparison_1::Comparison_1<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::convert::Into::into(comparison), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn merge_sort_2<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SortGeneric as::unity2::ClassIdentity> ::class(),"MergeSort",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SortGeneric as::unity2::ClassIdentity> ::NAME,"MergeSort",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn merge_sort_3<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> > ,comparer:impl::core::convert::Into<crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SortGeneric as::unity2::ClassIdentity> ::class(),"MergeSort",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SortGeneric as::unity2::ClassIdentity> ::NAME,"MergeSort",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> ,crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::convert::Into::into(comparer), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn merge_sort_partly<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> > ,begin:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32> ,work:impl::core::convert::Into< ::unity2::Array<M0> > ,comparer:impl::core::convert::Into<crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SortGeneric as::unity2::ClassIdentity> ::class(),"MergeSortPartly",5,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SortGeneric as::unity2::ClassIdentity> ::NAME,"MergeSortPartly",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> ,i32,i32, ::unity2::Array<M0> ,crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::convert::Into::into(begin), ::core::convert::Into::into(end), ::core::convert::Into::into(work), ::core::convert::Into::into(comparer), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn merge_sort_merge<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(list:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> > ,begin:impl::core::convert::Into<i32> ,middle:impl::core::convert::Into<i32> ,end:impl::core::convert::Into<i32> ,work:impl::core::convert::Into< ::unity2::Array<M0> > ,comparer:impl::core::convert::Into<crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> >)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<SortGeneric as::unity2::ClassIdentity> ::class(),"MergeSortMerge",6,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SortGeneric as::unity2::ClassIdentity> ::NAME,"MergeSortMerge",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<M0> ,i32,i32,i32, ::unity2::Array<M0> ,crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<M0> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(list), ::core::convert::Into::into(begin), ::core::convert::Into::into(middle), ::core::convert::Into::into(end), ::core::convert::Into::into(work), ::core::convert::Into::into(comparer), ::core::option::Option::Some(__mi_opaque),)}
+}
 }
 
-#[cfg(feature = "app-sortgeneric")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > SortGeneric_ElementComparer_1 < T0 > {
-# [doc = "`Compare(T0, T0)` overload"] # [method (name = "Compare" , args = 2)] pub fn compare (self , a : T0 , b : T0) -> i32 ;
-
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
+#[cfg(feature="app-sortgeneric")]pub trait ISortGenericMethods:ISortGeneric{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortGeneric as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe4900usize)as*mut u8,();
+(SortGeneric)__receiver)}
+}
 }
 
-#[cfg(feature = "app-sortgeneric")]
-impl < T0 : :: unity2 :: ClassIdentity > SortGeneric_ElementComparer_1 < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortGeneric_ElementComparer_1) , :: core :: stringify ! (new) ,)) ; < Self as ISortGeneric_ElementComparer_1Methods < T0 > > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortgeneric")]impl<__T:ISortGeneric>ISortGenericMethods for __T{}
+
+#[cfg(feature="app-sortgeneric")]impl SortGeneric{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-sortgeneric")]impl SortGeneric{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortGeneric), ::core::stringify!(new),));
+ <Self as ISortGenericMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-sortgeneric")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>SortGeneric_ElementComparer_1<T0>{#[doc="`Compare(T0, T0)` overload"]#[method(name="Compare",args=2)]pub fn compare(self,a:T0,b:T0)->i32;
+ #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
+}
+
+#[cfg(feature="app-sortgeneric")]impl<T0: ::unity2::ClassIdentity>SortGeneric_ElementComparer_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortGeneric_ElementComparer_1), ::core::stringify!(new),));
+ <Self as ISortGeneric_ElementComparer_1Methods<T0> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortgeneric")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortGeneric;
-    pub use super::ISortGeneric;
-    pub use super::ISortGenericMethods;
     pub use super::SortGeneric_DelegateComparer_1;
     pub use super::ISortGeneric_DelegateComparer_1;
     pub use super::ISortGeneric_DelegateComparer_1Methods;
+    pub use super::SortGeneric;
+    pub use super::ISortGeneric;
+    pub use super::ISortGenericMethods;
     pub use super::SortGeneric_ElementComparer_1;
     pub use super::ISortGeneric_ElementComparer_1;
     pub use super::ISortGeneric_ElementComparer_1Methods;

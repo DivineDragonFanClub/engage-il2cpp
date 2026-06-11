@@ -4,33 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/maskutilities/MaskUtilities.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "MaskUtilities")] # [parent (crate :: system :: object :: Object)] pub struct MaskUtilities {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/maskutilities/MaskUtilities.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="MaskUtilities")]#[parent(crate::system::object::Object)]pub struct MaskUtilities{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-maskutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-maskutilities")]
-impl MaskUtilities { # [doc = "`Notify2DMaskStateChanged(crate::unity_engine::component::Component)` overload"] pub fn notify2_d_mask_state_changed (mask : impl :: core :: convert :: Into < crate :: unity_engine :: component :: Component >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: component :: Component , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371b660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mask) , :: core :: option :: Option :: None) } } } # [doc = "`NotifyStencilStateChanged(crate::unity_engine::component::Component)` overload"] pub fn notify_stencil_state_changed (mask : impl :: core :: convert :: Into < crate :: unity_engine :: component :: Component >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: component :: Component , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371a590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mask) , :: core :: option :: Option :: None) } } } # [doc = "`FindRootSortOverrideCanvas(crate::unity_engine::transform::Transform)` overload"] pub fn find_root_sort_override_canvas (start : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: unity_engine :: transform :: Transform { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371b150usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (start) , :: core :: option :: Option :: None) } } } # [doc = "`GetStencilDepth(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"] pub fn get_stencil_depth (transform : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , stop_after : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371b310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (transform) , :: core :: convert :: Into :: into (stop_after) , :: core :: option :: Option :: None) } } } # [doc = "`IsDescendantOrSelf(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"] pub fn is_descendant_or_self (father : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , child : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371b8f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (father) , :: core :: convert :: Into :: into (child) , :: core :: option :: Option :: None) } } } # [doc = "`GetRectMaskForClippable(crate::unity_engine::ui::iclippable::IClippable)` overload"] pub fn get_rect_mask_for_clippable (clippable : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: iclippable :: IClippable >) -> crate :: unity_engine :: ui :: rectmask2d :: RectMask2D { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: iclippable :: IClippable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: rectmask2d :: RectMask2D = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371ba70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (clippable) , :: core :: option :: Option :: None) } } } # [doc = "`GetRectMasksForClip(crate::unity_engine::ui::rectmask2d::RectMask2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>)` overload"] pub fn get_rect_masks_for_clip (clipper : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: rectmask2d :: RectMask2D > , masks : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: rectmask2d :: RectMask2D > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: rectmask2d :: RectMask2D , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: ui :: rectmask2d :: RectMask2D > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371bed0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (clipper) , :: core :: convert :: Into :: into (masks) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-maskutilities")]impl MaskUtilities{#[doc="`Notify2DMaskStateChanged(crate::unity_engine::component::Component)` overload"]pub fn notify2_d_mask_state_changed(mask:impl::core::convert::Into<crate::unity_engine::component::Component>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371b660usize)as*mut u8,();
+(crate::unity_engine::component::Component)::core::convert::Into::into(mask))}
+}
+#[doc="`NotifyStencilStateChanged(crate::unity_engine::component::Component)` overload"]pub fn notify_stencil_state_changed(mask:impl::core::convert::Into<crate::unity_engine::component::Component>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371a590usize)as*mut u8,();
+(crate::unity_engine::component::Component)::core::convert::Into::into(mask))}
+}
+#[doc="`FindRootSortOverrideCanvas(crate::unity_engine::transform::Transform)` overload"]pub fn find_root_sort_override_canvas(start:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371b150usize)as*mut u8,crate::unity_engine::transform::Transform;
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(start))}
+}
+#[doc="`GetStencilDepth(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"]pub fn get_stencil_depth(transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,stop_after:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371b310usize)as*mut u8,i32;
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform),(crate::unity_engine::transform::Transform)::core::convert::Into::into(stop_after))}
+}
+#[doc="`IsDescendantOrSelf(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform)` overload"]pub fn is_descendant_or_self(father:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,child:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371b8f0usize)as*mut u8,bool;
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(father),(crate::unity_engine::transform::Transform)::core::convert::Into::into(child))}
+}
+#[doc="`GetRectMaskForClippable(crate::unity_engine::ui::iclippable::IClippable)` overload"]pub fn get_rect_mask_for_clippable(clippable:impl::core::convert::Into<crate::unity_engine::ui::iclippable::IClippable>)->crate::unity_engine::ui::rectmask2d::RectMask2D{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371ba70usize)as*mut u8,crate::unity_engine::ui::rectmask2d::RectMask2D;
+(crate::unity_engine::ui::iclippable::IClippable)::core::convert::Into::into(clippable))}
+}
+#[doc="`GetRectMasksForClip(crate::unity_engine::ui::rectmask2d::RectMask2D, crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>)` overload"]pub fn get_rect_masks_for_clip(clipper:impl::core::convert::Into<crate::unity_engine::ui::rectmask2d::RectMask2D> ,masks:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x371bed0usize)as*mut u8,();
+(crate::unity_engine::ui::rectmask2d::RectMask2D)::core::convert::Into::into(clipper),(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::rectmask2d::RectMask2D>)::core::convert::Into::into(masks))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-maskutilities")]
-pub trait IMaskUtilitiesMethods : IMaskUtilities { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MaskUtilities as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MaskUtilities , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371c240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-maskutilities")]pub trait IMaskUtilitiesMethods:IMaskUtilities{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaskUtilities as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371c240usize)as*mut u8,();
+(MaskUtilities)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-maskutilities")]
-impl < __T : IMaskUtilities > IMaskUtilitiesMethods for __T { }
+#[cfg(feature="unity_engine-ui-maskutilities")]impl<__T:IMaskUtilities>IMaskUtilitiesMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-maskutilities")]
-impl MaskUtilities { pub fn notify2_d_mask_state_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaskUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn notify_stencil_state_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaskUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn find_root_sort_override_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaskUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_stencil_depth_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaskUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_descendant_or_self_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaskUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_rect_mask_for_clippable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaskUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_rect_masks_for_clip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaskUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MaskUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-ui-maskutilities")]impl MaskUtilities{pub fn notify2_d_mask_state_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn notify_stencil_state_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn find_root_sort_override_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_stencil_depth_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_descendant_or_self_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_rect_mask_for_clippable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_rect_masks_for_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-ui-maskutilities")]
-impl MaskUtilities {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MaskUtilities) , :: core :: stringify ! (new) ,)) ; < Self as IMaskUtilitiesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-maskutilities")]impl MaskUtilities{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaskUtilities), ::core::stringify!(new),));
+ <Self as IMaskUtilitiesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-maskutilities")]

@@ -4,74 +4,116 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangemenucontent/AccessoryShopChangeMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopChangeMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct AccessoryShopChangeMenuContent {
-# [offset (232)] # [rename (name = "m_KindIcon")] pub m_kind_icon : :: unity2 :: Array < crate :: app :: accessoryshopchangemenucontent :: AccessoryShopChangeMenuContent_KindIcon > ,
-# [offset (240)] # [rename (name = "m_ContentObject")] pub m_content_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangemenucontent/AccessoryShopChangeMenuContent_KindIcon.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeMenuContent.KindIcon")]#[parent(crate::system::object::Object)]pub struct AccessoryShopChangeMenuContent_KindIcon{#[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::accessorydata::AccessoryData_Kinds,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangemenucontent/AccessoryShopChangeMenuContent_KindIcon.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopChangeMenuContent.KindIcon")] # [parent (crate :: system :: object :: Object)] pub struct AccessoryShopChangeMenuContent_KindIcon {
-# [offset (16)] # [rename (name = "m_Image")] pub m_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (24)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: accessorydata :: AccessoryData_Kinds ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangemenucontent/AccessoryShopChangeMenuContent.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct AccessoryShopChangeMenuContent{#[offset(232)]#[rename(name="m_KindIcon")]pub m_kind_icon: ::unity2::Array<crate::app::accessoryshopchangemenucontent::AccessoryShopChangeMenuContent_KindIcon> , #[offset(240)]#[rename(name="m_ContentObject")]pub m_content_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-accessoryshopchangemenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessoryshopchangemenucontent")]
-pub trait IAccessoryShopChangeMenuContentMethods : IAccessoryShopChangeMenuContent { # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < AccessoryShopChangeMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c13e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < AccessoryShopChangeMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c1480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`SetKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn set_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> () { unsafe { let __receiver = < AccessoryShopChangeMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c00b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`SetToPrevKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn set_to_prev_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> crate :: app :: accessorydata :: AccessoryData_Kinds { unsafe { let __receiver = < AccessoryShopChangeMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c0de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`SetToNextKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn set_to_next_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> crate :: app :: accessorydata :: AccessoryData_Kinds { unsafe { let __receiver = < AccessoryShopChangeMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: app :: accessorydata :: AccessoryData_Kinds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c1210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`IsFirstKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn is_first_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> bool { unsafe { let __receiver = < AccessoryShopChangeMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c0da0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`IsLastKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn is_last_kind (self , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> bool { unsafe { let __receiver = < AccessoryShopChangeMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c11c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`GetKindCount()` overload"] fn get_kind_count (self ,) -> i32 { unsafe { let __receiver = < AccessoryShopChangeMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c0230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryShopChangeMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c1570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-accessoryshopchangemenucontent")]
-impl < __T : IAccessoryShopChangeMenuContent > IAccessoryShopChangeMenuContentMethods for __T { }
-
-#[cfg(feature = "app-accessoryshopchangemenucontent")]
-impl AccessoryShopChangeMenuContent { pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_to_prev_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_to_next_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_first_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_last_kind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_kind_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
-
-#[cfg(feature = "app-accessoryshopchangemenucontent")]
-impl AccessoryShopChangeMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopChangeMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopChangeMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessoryshopchangemenucontent")]pub trait IAccessoryShopChangeMenuContent_KindIconMethods:IAccessoryShopChangeMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryShopChangeMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2904b40usize)as*mut u8,();
+(AccessoryShopChangeMenuContent_KindIcon)__receiver)}
+}
 }
 
-#[cfg(feature = "app-accessoryshopchangemenucontent")]
-pub trait IAccessoryShopChangeMenuContent_KindIconMethods : IAccessoryShopChangeMenuContent_KindIcon { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryShopChangeMenuContent_KindIcon as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopChangeMenuContent_KindIcon , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2904b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopchangemenucontent")]impl<__T:IAccessoryShopChangeMenuContent_KindIcon>IAccessoryShopChangeMenuContent_KindIconMethods for __T{}
 
-#[cfg(feature = "app-accessoryshopchangemenucontent")]
-impl < __T : IAccessoryShopChangeMenuContent_KindIcon > IAccessoryShopChangeMenuContent_KindIconMethods for __T { }
+#[cfg(feature="app-accessoryshopchangemenucontent")]impl AccessoryShopChangeMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-accessoryshopchangemenucontent")]
-impl AccessoryShopChangeMenuContent_KindIcon { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopChangeMenuContent_KindIcon as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-accessoryshopchangemenucontent")]impl AccessoryShopChangeMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopChangeMenuContent_KindIcon), ::core::stringify!(new),));
+ <Self as IAccessoryShopChangeMenuContent_KindIconMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-accessoryshopchangemenucontent")]
-impl AccessoryShopChangeMenuContent_KindIcon {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopChangeMenuContent_KindIcon) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopChangeMenuContent_KindIconMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessoryshopchangemenucontent")]pub trait IAccessoryShopChangeMenuContentMethods:IAccessoryShopChangeMenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <AccessoryShopChangeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c13e0usize)as*mut u8,i32;
+(AccessoryShopChangeMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <AccessoryShopChangeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c1480usize)as*mut u8,f32;
+(AccessoryShopChangeMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`SetKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn set_kind(self,kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->(){unsafe{let __receiver= <AccessoryShopChangeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c00b0usize)as*mut u8,();
+(AccessoryShopChangeMenuContent)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`SetToPrevKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn set_to_prev_kind(self,kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->crate::app::accessorydata::AccessoryData_Kinds{unsafe{let __receiver= <AccessoryShopChangeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c0de0usize)as*mut u8,crate::app::accessorydata::AccessoryData_Kinds;
+(AccessoryShopChangeMenuContent)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`SetToNextKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn set_to_next_kind(self,kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->crate::app::accessorydata::AccessoryData_Kinds{unsafe{let __receiver= <AccessoryShopChangeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c1210usize)as*mut u8,crate::app::accessorydata::AccessoryData_Kinds;
+(AccessoryShopChangeMenuContent)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`IsFirstKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn is_first_kind(self,kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->bool{unsafe{let __receiver= <AccessoryShopChangeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c0da0usize)as*mut u8,bool;
+(AccessoryShopChangeMenuContent)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`IsLastKind(crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn is_last_kind(self,kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->bool{unsafe{let __receiver= <AccessoryShopChangeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c11c0usize)as*mut u8,bool;
+(AccessoryShopChangeMenuContent)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`GetKindCount()` overload"]fn get_kind_count(self,)->i32{unsafe{let __receiver= <AccessoryShopChangeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c0230usize)as*mut u8,i32;
+(AccessoryShopChangeMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryShopChangeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c1570usize)as*mut u8,();
+(AccessoryShopChangeMenuContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-accessoryshopchangemenucontent")]impl<__T:IAccessoryShopChangeMenuContent>IAccessoryShopChangeMenuContentMethods for __T{}
+
+#[cfg(feature="app-accessoryshopchangemenucontent")]impl AccessoryShopChangeMenuContent{pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_to_prev_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_to_next_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_first_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_last_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_kind_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-accessoryshopchangemenucontent")]impl AccessoryShopChangeMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopChangeMenuContent), ::core::stringify!(new),));
+ <Self as IAccessoryShopChangeMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-accessoryshopchangemenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryShopChangeMenuContent;
-    pub use super::IAccessoryShopChangeMenuContent;
-    pub use super::IAccessoryShopChangeMenuContentMethods;
     pub use super::AccessoryShopChangeMenuContent_KindIcon;
     pub use super::IAccessoryShopChangeMenuContent_KindIcon;
     pub use super::IAccessoryShopChangeMenuContent_KindIconMethods;
+    pub use super::AccessoryShopChangeMenuContent;
+    pub use super::IAccessoryShopChangeMenuContent;
+    pub use super::IAccessoryShopChangeMenuContentMethods;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

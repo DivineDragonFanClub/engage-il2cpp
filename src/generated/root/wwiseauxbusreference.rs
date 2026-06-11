@@ -4,36 +4,45 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: wwiseobjectreference :: { IWwiseObjectReference , WwiseObjectReference }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::wwiseobjectreference::{IWwiseObjectReference,WwiseObjectReference}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/wwiseauxbusreference/WwiseAuxBusReference.md"))] # [:: unity2 :: class (namespace = "" , name = "WwiseAuxBusReference")] # [parent (crate :: root :: wwiseobjectreference :: WwiseObjectReference)] pub struct WwiseAuxBusReference {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/wwiseauxbusreference/WwiseAuxBusReference.md"))]#[::unity2::class(namespace="",name="WwiseAuxBusReference")]#[parent(crate::root::wwiseobjectreference::WwiseObjectReference)]pub struct WwiseAuxBusReference{}
 
 }
 
 #[cfg(feature = "root-wwiseauxbusreference-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-wwiseauxbusreference")]
-pub trait IWwiseAuxBusReferenceMethods : IWwiseAuxBusReference { # [doc = "`get_WwiseObjectType()` overload"] fn get_wwise_object_type (self ,) -> crate :: root :: wwiseobjecttype :: WwiseObjectType { unsafe { let __receiver = < WwiseAuxBusReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WwiseAuxBusReference , :: unity2 :: OptionalMethod ,) -> crate :: root :: wwiseobjecttype :: WwiseObjectType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293fa50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < WwiseAuxBusReference as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (WwiseAuxBusReference , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x293fa60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-wwiseauxbusreference")]pub trait IWwiseAuxBusReferenceMethods:IWwiseAuxBusReference{#[doc="`get_WwiseObjectType()` overload"]fn get_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseAuxBusReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293fa50usize)as*mut u8,crate::root::wwiseobjecttype::WwiseObjectType;
+(WwiseAuxBusReference)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WwiseAuxBusReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x293fa60usize)as*mut u8,();
+(WwiseAuxBusReference)__receiver)}
+}
+}
 
-#[cfg(feature = "root-wwiseauxbusreference")]
-impl < __T : IWwiseAuxBusReference > IWwiseAuxBusReferenceMethods for __T { }
+#[cfg(feature="root-wwiseauxbusreference")]impl<__T:IWwiseAuxBusReference>IWwiseAuxBusReferenceMethods for __T{}
 
-#[cfg(feature = "root-wwiseauxbusreference")]
-impl WwiseAuxBusReference { pub fn get_wwise_object_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WwiseAuxBusReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < WwiseAuxBusReference as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-wwiseauxbusreference")]impl WwiseAuxBusReference{pub fn get_wwise_object_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-wwiseauxbusreference")]
-impl WwiseAuxBusReference {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (WwiseAuxBusReference) , :: core :: stringify ! (new) ,)) ; < Self as IWwiseAuxBusReferenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-wwiseauxbusreference")]impl WwiseAuxBusReference{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(WwiseAuxBusReference), ::core::stringify!(new),));
+ <Self as IWwiseAuxBusReferenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-wwiseauxbusreference")]

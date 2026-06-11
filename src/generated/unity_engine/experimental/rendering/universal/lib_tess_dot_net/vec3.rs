@@ -4,69 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/vec3/Vec3.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Vec3 {
-    pub x: f32,
-    pub y: f32,
-    pub z: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/vec3/Vec3.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Vec3{pub x:f32,pub y:f32,pub z:f32,}
+impl::unity2::ClassIdentity for Vec3{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet";
+const NAME: &'static str="Vec3";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Vec3 {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet";
-
-    const NAME: &'static str = "Vec3";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for Vec3{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for Vec3 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl Vec3{#[inline]pub fn zero()->crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Zero");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_zero(value:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"Zero");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl Vec3 {
-    #[inline]
-    pub fn zero() -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Zero");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_zero(value: crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "Zero");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -74,14 +34,62 @@ impl Vec3 {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3")]
-impl Vec3 { # [doc = "`Sub(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"] pub fn sub () -> (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb0ce0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`Neg(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"] pub fn neg () -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb0d20usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`Dot(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutf32)` overload"] pub fn dot () -> (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , * mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , * mut f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb0d50usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init ()) } } # [doc = "`Normalize(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"] pub fn normalize () -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb0d80usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`LongAxis(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"] pub fn long_axis () -> (i32 , crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb0e50usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb1030usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3")]impl Vec3{#[doc="`Sub(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"]pub fn sub()->(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb0ce0usize)as*mut u8,();
+(*mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)__out_1.as_mut_ptr(),(*mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)__out_2.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+#[doc="`Neg(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"]pub fn neg()->crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb0d20usize)as*mut u8,();
+(*mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`Dot(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, *mutf32)` overload"]pub fn dot()->(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <f32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb0d50usize)as*mut u8,();
+(*mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)__out_1.as_mut_ptr(),(*mut f32)__out_2.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init())}
+}
+#[doc="`Normalize(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"]pub fn normalize()->crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb0d80usize)as*mut u8,();
+(*mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`LongAxis(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)` overload"]pub fn long_axis()->(i32,crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2cb0e50usize)as*mut u8,i32;
+(*mut crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb1030usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3")]
-impl Vec3 { # [doc = "`get_Item(i32)` overload"] pub fn get_item (& mut self , index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Vec3 , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb0bc0usize) as * mut u8) ; __inner (self as * mut Vec3 , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(i32, f32)` overload"] pub fn set_item (& mut self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Vec3 , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb0c50usize) as * mut u8) ; __inner (self as * mut Vec3 , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Vec3 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb0f60usize) as * mut u8) ; __inner (self as * mut Vec3 , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3")]impl Vec3{#[doc="`get_Item(i32)` overload"]pub fn get_item(&mut self,index:impl::core::convert::Into<i32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb0bc0usize)as*mut u8,f32;
+(*mut Vec3)self as*mut Vec3,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`set_Item(i32, f32)` overload"]pub fn set_item(&mut self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb0c50usize)as*mut u8,();
+(*mut Vec3)self as*mut Vec3,(i32)::core::convert::Into::into(index),(f32)::core::convert::Into::into(value))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb0f60usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Vec3)self as*mut Vec3)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3")]
-impl Vec3 { pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vec3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vec3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vec3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn neg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vec3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dot_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vec3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn normalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vec3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn long_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vec3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vec3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Vec3 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3")]impl Vec3{pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn neg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn normalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn long_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-vec3")]
 #[doc(hidden)]

@@ -4,33 +4,96 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/runtimeelement/RuntimeElement.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "RuntimeElement")] # [parent (crate :: system :: object :: Object)] pub struct RuntimeElement {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/runtimeelement/RuntimeElement.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="RuntimeElement")]#[parent(crate::system::object::Object)]pub struct RuntimeElement{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeelement-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-runtimeelement")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RuntimeElement_unity2_raw { use super :: * ; pub unsafe fn get_interval_start (this : RuntimeElement , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_intervalStart") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_intervalStart" , < RuntimeElement as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (RuntimeElement , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_interval_end (this : RuntimeElement , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i64 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_intervalEnd") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_intervalEnd" , < RuntimeElement as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (RuntimeElement , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn set_enable (this : RuntimeElement , value : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("set_enable") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "set_enable" , < RuntimeElement as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (RuntimeElement , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , value , __mi) } pub unsafe fn evaluate_at (this : RuntimeElement , local_time : f64 , frame_data : crate :: unity_engine :: playables :: framedata :: FrameData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("EvaluateAt") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "EvaluateAt" , < RuntimeElement as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (RuntimeElement , f64 , crate :: unity_engine :: playables :: framedata :: FrameData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , local_time , frame_data , __mi) } }
+#[cfg(feature="unity_engine-timeline-runtimeelement")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeElement_unity2_raw{use super:: * ;
+pub unsafe fn get_interval_start(this:RuntimeElement,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_intervalStart").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_intervalStart", <RuntimeElement as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(RuntimeElement, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_interval_end(this:RuntimeElement,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_intervalEnd").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_intervalEnd", <RuntimeElement as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(RuntimeElement, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_enable(this:RuntimeElement,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_enable").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_enable", <RuntimeElement as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(RuntimeElement,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn evaluate_at(this:RuntimeElement,local_time:f64,frame_data:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("EvaluateAt").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","EvaluateAt", <RuntimeElement as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(RuntimeElement,f64,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,local_time,frame_data,__mi)}
+}
 
-#[cfg(feature = "unity_engine-timeline-runtimeelement")]
-pub trait IRuntimeElementMethods : IRuntimeElement { # [doc = "`get_intervalStart()` overload"] fn get_interval_start (self ,) -> i64 { unsafe { let __receiver = < RuntimeElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeElement_unity2_raw :: get_interval_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_intervalEnd()` overload"] fn get_interval_end (self ,) -> i64 { unsafe { let __receiver = < RuntimeElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeElement_unity2_raw :: get_interval_end (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_intervalBit()` overload"] fn get_interval_bit (self ,) -> i32 { unsafe { let __receiver = < RuntimeElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeElement , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_intervalBit(i32)` overload"] fn set_interval_bit (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < RuntimeElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeElement , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da160usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_enable(bool)` overload"] fn set_enable (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < RuntimeElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeElement_unity2_raw :: set_enable (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } # [doc = "`EvaluateAt(f64, crate::unity_engine::playables::framedata::FrameData)` overload"] fn evaluate_at (self , local_time : impl :: core :: convert :: Into < f64 > , frame_data : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: framedata :: FrameData >) -> () { unsafe { let __receiver = < RuntimeElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeElement_unity2_raw :: evaluate_at (__receiver , :: core :: convert :: Into :: into (local_time) , :: core :: convert :: Into :: into (frame_data) , :: core :: option :: Option :: None) } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < RuntimeElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d6eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-runtimeelement")]pub trait IRuntimeElementMethods:IRuntimeElement{#[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RuntimeElement_unity2_raw::get_interval_start(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RuntimeElement_unity2_raw::get_interval_end(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_intervalBit()` overload"]fn get_interval_bit(self,)->i32{unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da150usize)as*mut u8,i32;
+(RuntimeElement)__receiver)}
+}
+#[doc="`set_intervalBit(i32)` overload"]fn set_interval_bit(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da160usize)as*mut u8,();
+(RuntimeElement)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`set_enable(bool)` overload"]fn set_enable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RuntimeElement_unity2_raw::set_enable(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`EvaluateAt(f64, crate::unity_engine::playables::framedata::FrameData)` overload"]fn evaluate_at(self,local_time:impl::core::convert::Into<f64> ,frame_data:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RuntimeElement_unity2_raw::evaluate_at(__receiver, ::core::convert::Into::into(local_time), ::core::convert::Into::into(frame_data), ::core::option::Option::None)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da170usize)as*mut u8,();
+(RuntimeElement)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d6eb0usize)as*mut u8,();
+(RuntimeElement)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-runtimeelement")]
-impl < __T : IRuntimeElement > IRuntimeElementMethods for __T { }
+#[cfg(feature="unity_engine-timeline-runtimeelement")]impl<__T:IRuntimeElement>IRuntimeElementMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-runtimeelement")]
-impl RuntimeElement { pub fn get_interval_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_interval_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_interval_bit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_interval_bit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn evaluate_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-timeline-runtimeelement")]impl RuntimeElement{pub fn get_interval_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_interval_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_interval_bit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_interval_bit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn evaluate_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-timeline-runtimeelement")]
-impl RuntimeElement {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeElement) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeElementMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-runtimeelement")]impl RuntimeElement{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeElement), ::core::stringify!(new),));
+ <Self as IRuntimeElementMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeelement")]

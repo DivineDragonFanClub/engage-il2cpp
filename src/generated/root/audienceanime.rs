@@ -4,37 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/audienceanime/AudienceAnime.md"))] # [:: unity2 :: class (namespace = "" , name = "AudienceAnime")] # [parent (crate :: system :: object :: Object)] pub struct AudienceAnime {
-# [offset (16)] # [rename (name = "m_Pattern")] pub m_pattern : i32 ,
-# [offset (20)] # [rename (name = "m_Now")] pub m_now : i32 ,
-# [offset (24)] # [rename (name = "m_Speed")] pub m_speed : f32 ,
-# [offset (32)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (40)] # [rename (name = "m_PatternInv")] pub m_pattern_inv : f32 ,
-# [offset (44)] # [rename (name = "m_Timer")] pub m_timer : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/audienceanime/AudienceAnime.md"))]#[::unity2::class(namespace="",name="AudienceAnime")]#[parent(crate::system::object::Object)]pub struct AudienceAnime{#[offset(16)]#[rename(name="m_Pattern")]pub m_pattern:i32, #[offset(20)]#[rename(name="m_Now")]pub m_now:i32, #[offset(24)]#[rename(name="m_Speed")]pub m_speed:f32, #[offset(32)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(40)]#[rename(name="m_PatternInv")]pub m_pattern_inv:f32, #[offset(44)]#[rename(name="m_Timer")]pub m_timer:f32,}
 
 }
 
 #[cfg(feature = "root-audienceanime-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-audienceanime")]
-pub trait IAudienceAnimeMethods : IAudienceAnime { # [doc = "`.ctor(crate::unity_engine::material::Material, i32, f32)` overload"] fn ctor (self , material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , pattern : impl :: core :: convert :: Into < i32 > , speed : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AudienceAnime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudienceAnime , crate :: unity_engine :: material :: Material , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211e4c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (material) , :: core :: convert :: Into :: into (pattern) , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } # [doc = "`GetMaterial()` overload"] fn get_material (self ,) -> crate :: unity_engine :: material :: Material { unsafe { let __receiver = < AudienceAnime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudienceAnime , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211e540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < AudienceAnime as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AudienceAnime , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x211e550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-audienceanime")]pub trait IAudienceAnimeMethods:IAudienceAnime{#[doc="`.ctor(crate::unity_engine::material::Material, i32, f32)` overload"]fn ctor(self,material:impl::core::convert::Into<crate::unity_engine::material::Material> ,pattern:impl::core::convert::Into<i32> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AudienceAnime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211e4c0usize)as*mut u8,();
+(AudienceAnime)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(material),(i32)::core::convert::Into::into(pattern),(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`GetMaterial()` overload"]fn get_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <AudienceAnime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211e540usize)as*mut u8,crate::unity_engine::material::Material;
+(AudienceAnime)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <AudienceAnime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x211e550usize)as*mut u8,();
+(AudienceAnime)__receiver)}
+}
+}
 
-#[cfg(feature = "root-audienceanime")]
-impl < __T : IAudienceAnime > IAudienceAnimeMethods for __T { }
+#[cfg(feature="root-audienceanime")]impl<__T:IAudienceAnime>IAudienceAnimeMethods for __T{}
 
-#[cfg(feature = "root-audienceanime")]
-impl AudienceAnime { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudienceAnime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudienceAnime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AudienceAnime as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-audienceanime")]impl AudienceAnime{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-audienceanime")]
-impl AudienceAnime {
-# [doc = "`.ctor(crate::unity_engine::material::Material, i32, f32)` — overload selector"] pub fn new (material : crate :: unity_engine :: material :: Material , pattern : i32 , speed : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AudienceAnime) , :: core :: stringify ! (new) ,)) ; < Self as IAudienceAnimeMethods > :: ctor (this , material , pattern , speed) ; this }
+#[cfg(feature="root-audienceanime")]impl AudienceAnime{#[doc="`.ctor(crate::unity_engine::material::Material, i32, f32)` — overload selector"]pub fn new(material:crate::unity_engine::material::Material,pattern:i32,speed:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AudienceAnime), ::core::stringify!(new),));
+ <Self as IAudienceAnimeMethods> ::ctor(this,material,pattern,speed);
+this}
 }
 
 #[cfg(feature = "root-audienceanime")]

@@ -4,39 +4,76 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenadata/ArenaData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ArenaData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: arenadata :: ArenaData >)] pub struct ArenaData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenadata/ArenaData.md"))]#[::unity2::class(namespace="App",name="ArenaData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::arenadata::ArenaData>)]pub struct ArenaData{}
 
 }
 
 #[cfg(feature = "app-arenadata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-arenadata")]
-impl ArenaData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca3e30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenadata")]impl ArenaData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3e30usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-arenadata")]
-pub trait IArenaDataMethods : IArenaData { # [doc = "`get_Rate()` overload"] fn get_rate (self ,) -> i32 { unsafe { let __receiver = < ArenaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca3ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Rate(i32)` overload"] fn set_rate (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ArenaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca3ef0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Pid()` overload"] fn get_pid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ArenaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca3f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Pid(::unity2::Il2CppString)` overload"] fn set_pid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ArenaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca3f10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Iid()` overload"] fn get_iid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ArenaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca3f20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iid(::unity2::Il2CppString)` overload"] fn set_iid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ArenaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca3f30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ArenaData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca3f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenadata")]pub trait IArenaDataMethods:IArenaData{#[doc="`get_Rate()` overload"]fn get_rate(self,)->i32{unsafe{let __receiver= <ArenaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3ee0usize)as*mut u8,i32;
+(ArenaData)__receiver)}
+}
+#[doc="`set_Rate(i32)` overload"]fn set_rate(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArenaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3ef0usize)as*mut u8,();
+(ArenaData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Pid()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ArenaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3f00usize)as*mut u8, ::unity2::Il2CppString;
+(ArenaData)__receiver)}
+}
+#[doc="`set_Pid(::unity2::Il2CppString)` overload"]fn set_pid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ArenaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3f10usize)as*mut u8,();
+(ArenaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ArenaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3f20usize)as*mut u8, ::unity2::Il2CppString;
+(ArenaData)__receiver)}
+}
+#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ArenaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3f30usize)as*mut u8,();
+(ArenaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3f40usize)as*mut u8,();
+(ArenaData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-arenadata")]
-impl < __T : IArenaData > IArenaDataMethods for __T { }
+#[cfg(feature="app-arenadata")]impl<__T:IArenaData>IArenaDataMethods for __T{}
 
-#[cfg(feature = "app-arenadata")]
-impl ArenaData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_rate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_iid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-arenadata")]impl ArenaData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-arenadata")]
-impl ArenaData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArenaData) , :: core :: stringify ! (new) ,)) ; < Self as IArenaDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-arenadata")]impl ArenaData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaData), ::core::stringify!(new),));
+ <Self as IArenaDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-arenadata")]

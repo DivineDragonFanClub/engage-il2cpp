@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/iloghandler/ILogHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ILogHandler")] pub struct ILogHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/iloghandler/ILogHandler.md"))]#[::unity2::class(namespace="UnityEngine",name="ILogHandler")]pub struct ILogHandler{}
 
 }
 
 #[cfg(feature = "unity_engine-iloghandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-iloghandler")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ILogHandler_unity2_raw { use super :: * ; pub unsafe fn log_format (this : ILogHandler , log_type : crate :: unity_engine :: logtype :: LogType , context : crate :: unity_engine :: object_2 :: Object_2 , format : :: unity2 :: Il2CppString , args : :: unity2 :: Array < crate :: system :: object :: Object > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("LogFormat") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "LogFormat" , < ILogHandler as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILogHandler , crate :: unity_engine :: logtype :: LogType , crate :: unity_engine :: object_2 :: Object_2 , :: unity2 :: Il2CppString , :: unity2 :: Array < crate :: system :: object :: Object > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , log_type , context , format , args , __mi) } }
+#[cfg(feature="unity_engine-iloghandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ILogHandler_unity2_raw{use super:: * ;
+pub unsafe fn log_format(this:ILogHandler,log_type:crate::unity_engine::logtype::LogType,context:crate::unity_engine::object_2::Object_2,format: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("LogFormat").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","LogFormat", <ILogHandler as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILogHandler,crate::unity_engine::logtype::LogType,crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,log_type,context,format,args,__mi)}
+}
 
-#[cfg(feature = "unity_engine-iloghandler")]
-pub trait IILogHandlerMethods : IILogHandler { # [doc = "`LogFormat(crate::unity_engine::logtype::LogType, crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"] fn log_format (self , log_type : impl :: core :: convert :: Into < crate :: unity_engine :: logtype :: LogType > , context : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 > , format : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: system :: object :: Object > >) -> () { unsafe { let __receiver = < ILogHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILogHandler_unity2_raw :: log_format (__receiver , :: core :: convert :: Into :: into (log_type) , :: core :: convert :: Into :: into (context) , :: core :: convert :: Into :: into (format) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-iloghandler")]pub trait IILogHandlerMethods:IILogHandler{#[doc="`LogFormat(crate::unity_engine::logtype::LogType, crate::unity_engine::object_2::Object_2, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn log_format(self,log_type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,context:impl::core::convert::Into<crate::unity_engine::object_2::Object_2> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <ILogHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILogHandler_unity2_raw::log_format(__receiver, ::core::convert::Into::into(log_type), ::core::convert::Into::into(context), ::core::convert::Into::into(format), ::core::convert::Into::into(args), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-iloghandler")]
-impl < __T : IILogHandler > IILogHandlerMethods for __T { }
+#[cfg(feature="unity_engine-iloghandler")]impl<__T:IILogHandler>IILogHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-iloghandler")]
-impl ILogHandler { pub fn log_format_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILogHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-iloghandler")]impl ILogHandler{pub fn log_format_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-iloghandler")]
 #[doc(hidden)]

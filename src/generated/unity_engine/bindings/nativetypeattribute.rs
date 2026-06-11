@@ -4,34 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/nativetypeattribute/NativeTypeAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "NativeTypeAttribute")] pub struct NativeTypeAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/nativetypeattribute/NativeTypeAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="NativeTypeAttribute")]pub struct NativeTypeAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-nativetypeattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-nativetypeattribute")]
-pub trait INativeTypeAttributeMethods : INativeTypeAttribute { # [doc = "`set_Header(::unity2::Il2CppString)` overload"] fn set_header (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NativeTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeTypeAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_IntermediateScriptingStructName(::unity2::Il2CppString)` overload"] fn set_intermediate_scripting_struct_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NativeTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeTypeAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`set_CodegenOptions(crate::unity_engine::bindings::codegenoptions::CodegenOptions)` overload"] fn set_codegen_options (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: bindings :: codegenoptions :: CodegenOptions >) -> () { unsafe { let __receiver = < NativeTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeTypeAttribute , crate :: unity_engine :: bindings :: codegenoptions :: CodegenOptions , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NativeTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeTypeAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f382a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::bindings::codegenoptions::CodegenOptions)` overload"] fn ctor_2 (self , codegen_options : impl :: core :: convert :: Into < crate :: unity_engine :: bindings :: codegenoptions :: CodegenOptions >) -> () { unsafe { let __receiver = < NativeTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeTypeAttribute , crate :: unity_engine :: bindings :: codegenoptions :: CodegenOptions , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f382d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (codegen_options) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_3 (self , header : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NativeTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeTypeAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (header) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::bindings::codegenoptions::CodegenOptions, ::unity2::Il2CppString)` overload"] fn ctor_4 (self , codegen_options : impl :: core :: convert :: Into < crate :: unity_engine :: bindings :: codegenoptions :: CodegenOptions > , intermediate_struct_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NativeTypeAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativeTypeAttribute , crate :: unity_engine :: bindings :: codegenoptions :: CodegenOptions , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f38420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (codegen_options) , :: core :: convert :: Into :: into (intermediate_struct_name) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-nativetypeattribute")]pub trait INativeTypeAttributeMethods:INativeTypeAttribute{#[doc="`set_Header(::unity2::Il2CppString)` overload"]fn set_header(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38270usize)as*mut u8,();
+(NativeTypeAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`set_IntermediateScriptingStructName(::unity2::Il2CppString)` overload"]fn set_intermediate_scripting_struct_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38280usize)as*mut u8,();
+(NativeTypeAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`set_CodegenOptions(crate::unity_engine::bindings::codegenoptions::CodegenOptions)` overload"]fn set_codegen_options(self,value:impl::core::convert::Into<crate::unity_engine::bindings::codegenoptions::CodegenOptions>)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38290usize)as*mut u8,();
+(NativeTypeAttribute)__receiver,(crate::unity_engine::bindings::codegenoptions::CodegenOptions)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f382a0usize)as*mut u8,();
+(NativeTypeAttribute)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::bindings::codegenoptions::CodegenOptions)` overload"]fn ctor_2(self,codegen_options:impl::core::convert::Into<crate::unity_engine::bindings::codegenoptions::CodegenOptions>)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f382d0usize)as*mut u8,();
+(NativeTypeAttribute)__receiver,(crate::unity_engine::bindings::codegenoptions::CodegenOptions)::core::convert::Into::into(codegen_options))}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_3(self,header:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38300usize)as*mut u8,();
+(NativeTypeAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(header))}
+}
+#[doc="`.ctor(crate::unity_engine::bindings::codegenoptions::CodegenOptions, ::unity2::Il2CppString)` overload"]fn ctor_4(self,codegen_options:impl::core::convert::Into<crate::unity_engine::bindings::codegenoptions::CodegenOptions> ,intermediate_struct_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38420usize)as*mut u8,();
+(NativeTypeAttribute)__receiver,(crate::unity_engine::bindings::codegenoptions::CodegenOptions)::core::convert::Into::into(codegen_options),(::unity2::Il2CppString)::core::convert::Into::into(intermediate_struct_name))}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativetypeattribute")]
-impl < __T : INativeTypeAttribute > INativeTypeAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-nativetypeattribute")]impl<__T:INativeTypeAttribute>INativeTypeAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-nativetypeattribute")]
-impl NativeTypeAttribute { pub fn set_header_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_intermediate_scripting_struct_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_codegen_options_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativeTypeAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-bindings-nativetypeattribute")]impl NativeTypeAttribute{pub fn set_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_intermediate_scripting_struct_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_codegen_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativetypeattribute")]
-impl NativeTypeAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativeTypeAttribute) , :: core :: stringify ! (new) ,)) ; < Self as INativeTypeAttributeMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::bindings::codegenoptions::CodegenOptions)` — overload selector"] pub fn new_2 (codegen_options : crate :: unity_engine :: bindings :: codegenoptions :: CodegenOptions) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativeTypeAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as INativeTypeAttributeMethods > :: ctor_2 (this , codegen_options) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_3 (header : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativeTypeAttribute) , :: core :: stringify ! (new_3) ,)) ; < Self as INativeTypeAttributeMethods > :: ctor_3 (this , header) ; this }
-
-# [doc = "`.ctor(crate::unity_engine::bindings::codegenoptions::CodegenOptions, ::unity2::Il2CppString)` — overload selector"] pub fn new_4 (codegen_options : crate :: unity_engine :: bindings :: codegenoptions :: CodegenOptions , intermediate_struct_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativeTypeAttribute) , :: core :: stringify ! (new_4) ,)) ; < Self as INativeTypeAttributeMethods > :: ctor_4 (this , codegen_options , intermediate_struct_name) ; this }
+#[cfg(feature="unity_engine-bindings-nativetypeattribute")]impl NativeTypeAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativeTypeAttribute), ::core::stringify!(new),));
+ <Self as INativeTypeAttributeMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::unity_engine::bindings::codegenoptions::CodegenOptions)` — overload selector"]pub fn new_2(codegen_options:crate::unity_engine::bindings::codegenoptions::CodegenOptions)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativeTypeAttribute), ::core::stringify!(new_2),));
+ <Self as INativeTypeAttributeMethods> ::ctor_2(this,codegen_options);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_3(header: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativeTypeAttribute), ::core::stringify!(new_3),));
+ <Self as INativeTypeAttributeMethods> ::ctor_3(this,header);
+this}
+#[doc="`.ctor(crate::unity_engine::bindings::codegenoptions::CodegenOptions, ::unity2::Il2CppString)` — overload selector"]pub fn new_4(codegen_options:crate::unity_engine::bindings::codegenoptions::CodegenOptions,intermediate_struct_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativeTypeAttribute), ::core::stringify!(new_4),));
+ <Self as INativeTypeAttributeMethods> ::ctor_4(this,codegen_options,intermediate_struct_name);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-nativetypeattribute")]

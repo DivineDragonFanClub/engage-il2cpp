@@ -4,43 +4,139 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/launchbehaviour/LaunchBehaviour.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "LaunchBehaviour")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct LaunchBehaviour {
-# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/launchbehaviour/LaunchBehaviour.md"))]#[::unity2::class(namespace="Combat",name="LaunchBehaviour")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct LaunchBehaviour{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character,}
 
 }
 
 #[cfg(feature = "combat-launchbehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-launchbehaviour")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LaunchBehaviour_unity2_raw { use super :: * ; pub unsafe fn on_character_setup (this : LaunchBehaviour , owner : crate :: combat :: character :: Character , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnCharacterSetup") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnCharacterSetup" , < LaunchBehaviour as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (LaunchBehaviour , crate :: combat :: character :: Character , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , owner , __mi) } pub unsafe fn on_enter_attack (this : LaunchBehaviour , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnEnterAttack") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnEnterAttack" , < LaunchBehaviour as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn on_hit_time_predicted (this : LaunchBehaviour , world_hit_time : f32 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("OnHitTimePredicted") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "OnHitTimePredicted" , < LaunchBehaviour as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (LaunchBehaviour , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , world_hit_time , __mi) } pub unsafe fn recalc_flying_time (this : LaunchBehaviour , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("RecalcFlyingTime") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "RecalcFlyingTime" , < LaunchBehaviour as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="combat-launchbehaviour")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LaunchBehaviour_unity2_raw{use super:: * ;
+pub unsafe fn on_character_setup(this:LaunchBehaviour,owner:crate::combat::character::Character,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnCharacterSetup").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnCharacterSetup", <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(LaunchBehaviour,crate::combat::character::Character, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,owner,__mi)}
+pub unsafe fn on_enter_attack(this:LaunchBehaviour,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnEnterAttack").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnEnterAttack", <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(LaunchBehaviour, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_hit_time_predicted(this:LaunchBehaviour,world_hit_time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnHitTimePredicted").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","OnHitTimePredicted", <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(LaunchBehaviour,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,world_hit_time,__mi)}
+pub unsafe fn recalc_flying_time(this:LaunchBehaviour,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("RecalcFlyingTime").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","RecalcFlyingTime", <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(LaunchBehaviour, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "combat-launchbehaviour")]
-pub trait ILaunchBehaviourMethods : ILaunchBehaviour { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_WeaponInstance()` overload"] fn get_weapon_instance (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WeaponInstance(crate::unity_engine::gameobject::GameObject)` overload"] fn set_weapon_instance (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnCharacterSetup(crate::combat::character::Character)` overload"] fn on_character_setup (self , owner : impl :: core :: convert :: Into < crate :: combat :: character :: Character >) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LaunchBehaviour_unity2_raw :: on_character_setup (__receiver , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } # [doc = "`OnEnterAttack()` overload"] fn on_enter_attack (self ,) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LaunchBehaviour_unity2_raw :: on_enter_attack (__receiver , :: core :: option :: Option :: None) } } # [doc = "`OnHitTimePredicted(f32)` overload"] fn on_hit_time_predicted (self , world_hit_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LaunchBehaviour_unity2_raw :: on_hit_time_predicted (__receiver , :: core :: convert :: Into :: into (world_hit_time) , :: core :: option :: Option :: None) } } # [doc = "`RecalcFlyingTime()` overload"] fn recalc_flying_time (self ,) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __LaunchBehaviour_unity2_raw :: recalc_flying_time (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_FlyingTime()` overload"] fn get_flying_time (self ,) -> f32 { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FlyingTime(f32)` overload"] fn set_flying_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WorldHitTime()` overload"] fn get_world_hit_time (self ,) -> f32 { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0160usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WorldHitTime(f32)` overload"] fn set_world_hit_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0170usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MakeAvoidObserver(crate::combat::character::Character, f32)` overload"] fn make_avoid_observer (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , time_to_hit : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , crate :: combat :: character :: Character , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (time_to_hit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LaunchBehaviour as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-launchbehaviour")]pub trait ILaunchBehaviourMethods:ILaunchBehaviour{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0060usize)as*mut u8,crate::combat::character::Character;
+(LaunchBehaviour)__receiver)}
+}
+#[doc="`get_WeaponInstance()` overload"]fn get_weapon_instance(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0120usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(LaunchBehaviour)__receiver)}
+}
+#[doc="`set_WeaponInstance(crate::unity_engine::gameobject::GameObject)` overload"]fn set_weapon_instance(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0130usize)as*mut u8,();
+(LaunchBehaviour)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`OnCharacterSetup(crate::combat::character::Character)` overload"]fn on_character_setup(self,owner:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__LaunchBehaviour_unity2_raw::on_character_setup(__receiver, ::core::convert::Into::into(owner), ::core::option::Option::None)}
+}
+#[doc="`OnEnterAttack()` overload"]fn on_enter_attack(self,)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__LaunchBehaviour_unity2_raw::on_enter_attack(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnHitTimePredicted(f32)` overload"]fn on_hit_time_predicted(self,world_hit_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__LaunchBehaviour_unity2_raw::on_hit_time_predicted(__receiver, ::core::convert::Into::into(world_hit_time), ::core::option::Option::None)}
+}
+#[doc="`RecalcFlyingTime()` overload"]fn recalc_flying_time(self,)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__LaunchBehaviour_unity2_raw::recalc_flying_time(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_FlyingTime()` overload"]fn get_flying_time(self,)->f32{unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0140usize)as*mut u8,f32;
+(LaunchBehaviour)__receiver)}
+}
+#[doc="`set_FlyingTime(f32)` overload"]fn set_flying_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0150usize)as*mut u8,();
+(LaunchBehaviour)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_WorldHitTime()` overload"]fn get_world_hit_time(self,)->f32{unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0160usize)as*mut u8,f32;
+(LaunchBehaviour)__receiver)}
+}
+#[doc="`set_WorldHitTime(f32)` overload"]fn set_world_hit_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0170usize)as*mut u8,();
+(LaunchBehaviour)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0180usize)as*mut u8,();
+(LaunchBehaviour)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0270usize)as*mut u8,();
+(LaunchBehaviour)__receiver)}
+}
+#[doc="`MakeAvoidObserver(crate::combat::character::Character, f32)` overload"]fn make_avoid_observer(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,time_to_hit:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0280usize)as*mut u8,();
+(LaunchBehaviour)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(f32)::core::convert::Into::into(time_to_hit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LaunchBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0560usize)as*mut u8,();
+(LaunchBehaviour)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-launchbehaviour")]
-impl < __T : ILaunchBehaviour > ILaunchBehaviourMethods for __T { }
+#[cfg(feature="combat-launchbehaviour")]impl<__T:ILaunchBehaviour>ILaunchBehaviourMethods for __T{}
 
-#[cfg(feature = "combat-launchbehaviour")]
-impl LaunchBehaviour { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_weapon_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_weapon_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_character_setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_enter_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_hit_time_predicted_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn recalc_flying_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_flying_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_flying_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_world_hit_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_world_hit_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn make_avoid_observer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaunchBehaviour as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="combat-launchbehaviour")]impl LaunchBehaviour{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_weapon_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_weapon_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_character_setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_enter_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_hit_time_predicted_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn recalc_flying_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_flying_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_flying_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_world_hit_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_world_hit_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn make_avoid_observer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "combat-launchbehaviour")]
-impl LaunchBehaviour {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LaunchBehaviour) , :: core :: stringify ! (new) ,)) ; < Self as ILaunchBehaviourMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-launchbehaviour")]impl LaunchBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LaunchBehaviour), ::core::stringify!(new),));
+ <Self as ILaunchBehaviourMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-launchbehaviour")]

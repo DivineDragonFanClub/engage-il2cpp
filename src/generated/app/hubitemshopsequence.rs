@@ -4,135 +4,141 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubitemshopsequence/HubItemShopSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubItemShopSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubItemShopSequence {
-# [offset (112)] # [rename (name = "m_ShopMenuResult")] pub m_shop_menu_result : crate :: app :: itemshoptopmenu :: ItemShopTopMenu_Result2 ,
-# [offset (116)] # [rename (name = "m_ShopUnitSelectMenuResult")] pub m_shop_unit_select_menu_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (120)] # [rename (name = "m_UnitSelectRoot")] pub m_unit_select_root : crate :: app :: shopunitselectroot :: ShopUnitSelectRoot ,
-# [offset (128)] # [rename (name = "m_ItemShopBuyRoot")] pub m_item_shop_buy_root : crate :: app :: itemshopbuyroot :: ItemShopBuyRoot ,
-# [offset (136)] # [rename (name = "m_ItemShopSellRoot")] pub m_item_shop_sell_root : crate :: app :: shopsellroot :: ShopSellRoot ,
-# [offset (144)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (152)] # [rename (name = "m_UnitSelectMenuScrollIndex")] pub m_unit_select_menu_scroll_index : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubitemshopsequence/HubItemShopSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubItemShopSequence_Label2{pub value:i32,}
+impl::unity2::ClassIdentity for HubItemShopSequence_Label2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubItemShopSequence.Label2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubItemShopSequence_Label2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubItemShopSequence_Label2{pub fn entry()->Self{Self{value:0}
+}
+pub fn top()->Self{Self{value:1}
+}
+pub fn unit_select_to_buy()->Self{Self{value:2}
+}
+pub fn buy()->Self{Self{value:3}
+}
+pub fn unit_select_to_sell()->Self{Self{value:4}
+}
+pub fn sell()->Self{Self{value:5}
+}
+pub fn end()->Self{Self{value:6}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubitemshopsequence/HubItemShopSequence_Label2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubItemShopSequence_Label2  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for HubItemShopSequence_Label2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubItemShopSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for HubItemShopSequence_Label2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  HubItemShopSequence_Label2  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn unit_select_to_buy() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn buy() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn unit_select_to_sell() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn sell() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 6 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubitemshopsequence/HubItemShopSequence.md"))]#[::unity2::class(namespace="App",name="HubItemShopSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct HubItemShopSequence{#[offset(112)]#[rename(name="m_ShopMenuResult")]pub m_shop_menu_result:crate::app::itemshoptopmenu::ItemShopTopMenu_Result2, #[offset(116)]#[rename(name="m_ShopUnitSelectMenuResult")]pub m_shop_unit_select_menu_result:crate::app::basicmenu::BasicMenu_Result, #[offset(120)]#[rename(name="m_UnitSelectRoot")]pub m_unit_select_root:crate::app::shopunitselectroot::ShopUnitSelectRoot, #[offset(128)]#[rename(name="m_ItemShopBuyRoot")]pub m_item_shop_buy_root:crate::app::itemshopbuyroot::ItemShopBuyRoot, #[offset(136)]#[rename(name="m_ItemShopSellRoot")]pub m_item_shop_sell_root:crate::app::shopsellroot::ShopSellRoot, #[offset(144)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(152)]#[rename(name="m_UnitSelectMenuScrollIndex")]pub m_unit_select_menu_scroll_index:i32,}
 
 }
 
 #[cfg(feature = "app-hubitemshopsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubitemshopsequence")]
-impl HubItemShopSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubitemshopsequence")]impl HubItemShopSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28ab140usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-hubitemshopsequence")]
-pub trait IHubItemShopSequenceMethods : IHubItemShopSequence { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ab1d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ac140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ac170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ac1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateItemShopTopMenu()` overload"] fn create_item_shop_top_menu (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ac2f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateShopUnitSelectMenu()` overload"] fn create_shop_unit_select_menu (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ac520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyShopUnitSelectMenu()` overload"] fn destroy_shop_unit_select_menu (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ac7b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateItemShopBuyMenu()` overload"] fn create_item_shop_buy_menu (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ac7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyItemShopBuyMenu()` overload"] fn destroy_item_shop_buy_menu (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28ac9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateItemShopSellMenu()` overload"] fn create_item_shop_sell_menu (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28aca00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyItemShopSellMenu()` overload"] fn destroy_item_shop_sell_menu (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28acbd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < HubItemShopSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubItemShopSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28acc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubitemshopsequence")]pub trait IHubItemShopSequenceMethods:IHubItemShopSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab1c0usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ab1d0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ac140usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ac170usize)as*mut u8,bool;
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ac1c0usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`CreateItemShopTopMenu()` overload"]fn create_item_shop_top_menu(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ac2f0usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`CreateShopUnitSelectMenu()` overload"]fn create_shop_unit_select_menu(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ac520usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`DestroyShopUnitSelectMenu()` overload"]fn destroy_shop_unit_select_menu(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ac7b0usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`CreateItemShopBuyMenu()` overload"]fn create_item_shop_buy_menu(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ac7f0usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`DestroyItemShopBuyMenu()` overload"]fn destroy_item_shop_buy_menu(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ac9c0usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`CreateItemShopSellMenu()` overload"]fn create_item_shop_sell_menu(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28aca00usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`DestroyItemShopSellMenu()` overload"]fn destroy_item_shop_sell_menu(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28acbd0usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+#[doc="`EndSequence()` overload"]fn end_sequence(self,)->(){unsafe{let __receiver= <HubItemShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28acc10usize)as*mut u8,();
+(HubItemShopSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubitemshopsequence")]
-impl < __T : IHubItemShopSequence > IHubItemShopSequenceMethods for __T { }
+#[cfg(feature="app-hubitemshopsequence")]impl<__T:IHubItemShopSequence>IHubItemShopSequenceMethods for __T{}
 
-#[cfg(feature = "app-hubitemshopsequence")]
-impl HubItemShopSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_item_shop_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_shop_unit_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn destroy_shop_unit_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_item_shop_buy_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn destroy_item_shop_buy_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_item_shop_sell_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn destroy_item_shop_sell_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubItemShopSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-hubitemshopsequence")]impl HubItemShopSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_item_shop_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_shop_unit_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn destroy_shop_unit_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_item_shop_buy_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn destroy_item_shop_buy_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_item_shop_sell_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn destroy_item_shop_sell_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-hubitemshopsequence")]
-impl HubItemShopSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubItemShopSequence) , :: core :: stringify ! (new) ,)) ; < Self as IHubItemShopSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubitemshopsequence")]impl HubItemShopSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubItemShopSequence), ::core::stringify!(new),));
+ <Self as IHubItemShopSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubitemshopsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubItemShopSequence_Label2;
     pub use super::HubItemShopSequence;
     pub use super::IHubItemShopSequence;
     pub use super::IHubItemShopSequenceMethods;
-    pub use super::HubItemShopSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

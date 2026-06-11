@@ -4,107 +4,212 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akbaseplatformsettings :: { AkBasePlatformSettings , IAkBasePlatformSettings }
- ;
- use crate :: root :: akcommonplatformsettings :: { AkCommonPlatformSettings , IAkCommonPlatformSettings }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akbaseplatformsettings::{AkBasePlatformSettings,IAkBasePlatformSettings}
+;
+use crate::root::akcommonplatformsettings::{AkCommonPlatformSettings,IAkCommonPlatformSettings}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings_PlatformSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkWwiseInitializationSettings.PlatformSettings")] # [parent (crate :: root :: akcommonplatformsettings :: AkCommonPlatformSettings)] pub struct AkWwiseInitializationSettings_PlatformSettings {
-# [offset (24)] # [rename (name = "IgnorePropertyNameList")] pub ignore_property_name_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (32)] # [rename (name = "GlobalPropertyNameList")] pub global_property_name_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (40)] # [rename (name = "_GlobalPropertyHashSet")] pub global_property_hash_set_field : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings_CommonPlatformSettings.md"))]#[::unity2::class(namespace="",name="AkWwiseInitializationSettings.CommonPlatformSettings")]#[parent(crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings)]pub struct AkWwiseInitializationSettings_CommonPlatformSettings{#[offset(48)]#[rename(name="UserSettings")]pub user_settings:crate::root::akcommonusersettings::AkCommonUserSettings, #[offset(56)]#[rename(name="AdvancedSettings")]pub advanced_settings:crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings, #[offset(64)]#[rename(name="CommsSettings")]pub comms_settings:crate::root::akcommoncommsettings::AkCommonCommSettings,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkWwiseInitializationSettings")] # [parent (crate :: root :: akcommonplatformsettings :: AkCommonPlatformSettings)] pub struct AkWwiseInitializationSettings {
-# [offset (24)] # [rename (name = "PlatformSettingsNameList")] pub platform_settings_name_list : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (32)] # [rename (name = "PlatformSettingsList")] pub platform_settings_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings_PlatformSettings > ,
-# [offset (40)] # [rename (name = "InvalidReferencePlatforms")] pub invalid_reference_platforms : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
-# [offset (48)] # [rename (name = "UserSettings")] pub user_settings : crate :: root :: akcommonusersettings :: AkCommonUserSettings ,
-# [offset (56)] # [rename (name = "AdvancedSettings")] pub advanced_settings : crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings ,
-# [offset (64)] # [rename (name = "CommsSettings")] pub comms_settings : crate :: root :: akcommoncommsettings :: AkCommonCommSettings ,
-# [static_field] # [rename (name = "AllGlobalValues")] pub all_global_values : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "m_Instance")] pub m_instance : crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings ,
-# [static_field] # [rename (name = "m_ActivePlatformSettings")] pub m_active_platform_settings : crate :: root :: akbaseplatformsettings :: AkBasePlatformSettings ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings.md"))]#[::unity2::class(namespace="",name="AkWwiseInitializationSettings")]#[parent(crate::root::akcommonplatformsettings::AkCommonPlatformSettings)]pub struct AkWwiseInitializationSettings{#[offset(24)]#[rename(name="PlatformSettingsNameList")]pub platform_settings_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="PlatformSettingsList")]pub platform_settings_list:crate::system::collections::generic::list_1::List_1<crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_PlatformSettings> , #[offset(40)]#[rename(name="InvalidReferencePlatforms")]pub invalid_reference_platforms:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(48)]#[rename(name="UserSettings")]pub user_settings:crate::root::akcommonusersettings::AkCommonUserSettings, #[offset(56)]#[rename(name="AdvancedSettings")]pub advanced_settings:crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings, #[offset(64)]#[rename(name="CommsSettings")]pub comms_settings:crate::root::akcommoncommsettings::AkCommonCommSettings, #[static_field]#[rename(name="AllGlobalValues")]pub all_global_values: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="m_Instance")]pub m_instance:crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings, #[static_field]#[rename(name="m_ActivePlatformSettings")]pub m_active_platform_settings:crate::root::akbaseplatformsettings::AkBasePlatformSettings,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings_CommonPlatformSettings.md"))] # [:: unity2 :: class (namespace = "" , name = "AkWwiseInitializationSettings.CommonPlatformSettings")] # [parent (crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings_PlatformSettings)] pub struct AkWwiseInitializationSettings_CommonPlatformSettings {
-# [offset (48)] # [rename (name = "UserSettings")] pub user_settings : crate :: root :: akcommonusersettings :: AkCommonUserSettings ,
-# [offset (56)] # [rename (name = "AdvancedSettings")] pub advanced_settings : crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings ,
-# [offset (64)] # [rename (name = "CommsSettings")] pub comms_settings : crate :: root :: akcommoncommsettings :: AkCommonCommSettings ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akwwiseinitializationsettings/AkWwiseInitializationSettings_PlatformSettings.md"))]#[::unity2::class(namespace="",name="AkWwiseInitializationSettings.PlatformSettings")]#[parent(crate::root::akcommonplatformsettings::AkCommonPlatformSettings)]pub struct AkWwiseInitializationSettings_PlatformSettings{#[offset(24)]#[rename(name="IgnorePropertyNameList")]pub ignore_property_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="GlobalPropertyNameList")]pub global_property_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(40)]#[rename(name="_GlobalPropertyHashSet")]pub global_property_hash_set_field:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "root-akwwiseinitializationsettings-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-pub trait IAkWwiseInitializationSettings_PlatformSettingsMethods : IAkWwiseInitializationSettings_PlatformSettings { # [doc = "`IgnorePropertyValue(::unity2::Il2CppString)` overload"] fn ignore_property_value (self , property_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_PlatformSettings , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2b70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (property_path) , :: core :: option :: Option :: None) } } } # [doc = "`IsPropertyIgnored(::unity2::Il2CppString)` overload"] fn is_property_ignored (self , property_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_PlatformSettings , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (property_path) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_PlatformSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUseGlobalPropertyValue(::unity2::Il2CppString, bool)` overload"] fn set_use_global_property_value (self , property_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , r#use : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_PlatformSettings , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (property_path) , :: core :: convert :: Into :: into (r#use) , :: core :: option :: Option :: None) } } } # [doc = "`SetGlobalPropertyValues(crate::system::collections::ienumerable::IEnumerable)` overload"] fn set_global_property_values (self , enumerable : impl :: core :: convert :: Into < crate :: system :: collections :: ienumerable :: IEnumerable >) -> () { unsafe { let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_PlatformSettings , crate :: system :: collections :: ienumerable :: IEnumerable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2e00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (enumerable) , :: core :: option :: Option :: None) } } } # [doc = "`IsUsingGlobalPropertyValue(::unity2::Il2CppString)` overload"] fn is_using_global_property_value (self , property_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_PlatformSettings , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba3130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (property_path) , :: core :: option :: Option :: None) } } } # [doc = "`get_GlobalPropertyHashSet()` overload"] fn get_global_property_hash_set (self ,) -> crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > { unsafe { let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_PlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba3190usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GlobalPropertyHashSet(crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>)` overload"] fn set_global_property_hash_set (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_PlatformSettings , crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba3250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl < __T : IAkWwiseInitializationSettings_PlatformSettings > IAkWwiseInitializationSettings_PlatformSettingsMethods for __T { }
-
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl AkWwiseInitializationSettings_PlatformSettings { pub fn ignore_property_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_property_ignored_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_use_global_property_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_global_property_values_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_using_global_property_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_global_property_hash_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_global_property_hash_set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_PlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl AkWwiseInitializationSettings_PlatformSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkWwiseInitializationSettings_PlatformSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkWwiseInitializationSettings_PlatformSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akwwiseinitializationsettings")]pub trait IAkWwiseInitializationSettings_CommonPlatformSettingsMethods:IAkWwiseInitializationSettings_CommonPlatformSettings{#[doc="`GetUserSettings()` overload"]fn get_user_settings(self,)->crate::root::akcommonusersettings::AkCommonUserSettings{unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a30usize)as*mut u8,crate::root::akcommonusersettings::AkCommonUserSettings;
+(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
+}
+#[doc="`GetAdvancedSettings()` overload"]fn get_advanced_settings(self,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a40usize)as*mut u8,crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings;
+(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
+}
+#[doc="`GetCommsSettings()` overload"]fn get_comms_settings(self,)->crate::root::akcommoncommsettings::AkCommonCommSettings{unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a50usize)as*mut u8,crate::root::akcommoncommsettings::AkCommonCommSettings;
+(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkWwiseInitializationSettings_CommonPlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a60usize)as*mut u8,();
+(AkWwiseInitializationSettings_CommonPlatformSettings)__receiver)}
+}
 }
 
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl AkWwiseInitializationSettings { # [doc = "`get_Instance()` overload"] pub fn get_instance () -> crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: root :: akwwiseinitializationsettings :: AkWwiseInitializationSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c690usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetPlatformSettings(::unity2::Il2CppString)` overload"] pub fn get_platform_settings (platform_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: root :: akbaseplatformsettings :: AkBasePlatformSettings { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: root :: akbaseplatformsettings :: AkBasePlatformSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c800usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (platform_name) , :: core :: option :: Option :: None) } } } # [doc = "`get_ActivePlatformSettings()` overload"] pub fn get_active_platform_settings () -> crate :: root :: akbaseplatformsettings :: AkBasePlatformSettings { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: root :: akbaseplatformsettings :: AkBasePlatformSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d1e1c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`InitializeSoundEngine()` overload"] pub fn initialize_sound_engine () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d1d140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ResetSoundEngine(bool)` overload"] pub fn reset_sound_engine (is_playing : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2cbe0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (is_playing) , :: core :: option :: Option :: None) } } } # [doc = "`TerminateSoundEngine()` overload"] pub fn terminate_sound_engine () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d1dbc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SleepForMilliseconds(f64)` overload"] pub fn sleep_for_milliseconds (milliseconds : impl :: core :: convert :: Into < f64 >) -> () { unsafe { { let __inner : extern "C" fn (f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2cd40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (milliseconds) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2cff0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akwwiseinitializationsettings")]impl<__T:IAkWwiseInitializationSettings_CommonPlatformSettings>IAkWwiseInitializationSettings_CommonPlatformSettingsMethods for __T{}
 
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-pub trait IAkWwiseInitializationSettingsMethods : IAkWwiseInitializationSettings { # [doc = "`get_IsValid()` overload"] fn get_is_valid (self ,) -> bool { unsafe { let __receiver = < AkWwiseInitializationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < AkWwiseInitializationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetUserSettings()` overload"] fn get_user_settings (self ,) -> crate :: root :: akcommonusersettings :: AkCommonUserSettings { unsafe { let __receiver = < AkWwiseInitializationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonusersettings :: AkCommonUserSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAdvancedSettings()` overload"] fn get_advanced_settings (self ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings { unsafe { let __receiver = < AkWwiseInitializationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCommsSettings()` overload"] fn get_comms_settings (self ,) -> crate :: root :: akcommoncommsettings :: AkCommonCommSettings { unsafe { let __receiver = < AkWwiseInitializationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommoncommsettings :: AkCommonCommSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2c680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < AkWwiseInitializationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2ca50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkWwiseInitializationSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2cee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl < __T : IAkWwiseInitializationSettings > IAkWwiseInitializationSettingsMethods for __T { }
-
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl AkWwiseInitializationSettings { pub fn get_is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_user_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_advanced_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_comms_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_platform_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_active_platform_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn initialize_sound_engine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn reset_sound_engine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn terminate_sound_engine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn sleep_for_milliseconds_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
-
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl AkWwiseInitializationSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkWwiseInitializationSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkWwiseInitializationSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings_CommonPlatformSettings{pub fn get_user_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_advanced_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_comms_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-pub trait IAkWwiseInitializationSettings_CommonPlatformSettingsMethods : IAkWwiseInitializationSettings_CommonPlatformSettings { # [doc = "`GetUserSettings()` overload"] fn get_user_settings (self ,) -> crate :: root :: akcommonusersettings :: AkCommonUserSettings { unsafe { let __receiver = < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_CommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonusersettings :: AkCommonUserSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetAdvancedSettings()` overload"] fn get_advanced_settings (self ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings { unsafe { let __receiver = < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_CommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommonadvancedsettings :: AkCommonAdvancedSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCommsSettings()` overload"] fn get_comms_settings (self ,) -> crate :: root :: akcommoncommsettings :: AkCommonCommSettings { unsafe { let __receiver = < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_CommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> crate :: root :: akcommoncommsettings :: AkCommonCommSettings = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkWwiseInitializationSettings_CommonPlatformSettings , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ba2a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings_CommonPlatformSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkWwiseInitializationSettings_CommonPlatformSettings), ::core::stringify!(new),));
+ <Self as IAkWwiseInitializationSettings_CommonPlatformSettingsMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl < __T : IAkWwiseInitializationSettings_CommonPlatformSettings > IAkWwiseInitializationSettings_CommonPlatformSettingsMethods for __T { }
+#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings{#[doc="`get_Instance()` overload"]pub fn get_instance()->crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c690usize)as*mut u8,crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings;
+)}
+}
+#[doc="`GetPlatformSettings(::unity2::Il2CppString)` overload"]pub fn get_platform_settings(platform_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::root::akbaseplatformsettings::AkBasePlatformSettings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c800usize)as*mut u8,crate::root::akbaseplatformsettings::AkBasePlatformSettings;
+(::unity2::Il2CppString)::core::convert::Into::into(platform_name))}
+}
+#[doc="`get_ActivePlatformSettings()` overload"]pub fn get_active_platform_settings()->crate::root::akbaseplatformsettings::AkBasePlatformSettings{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d1e1c0usize)as*mut u8,crate::root::akbaseplatformsettings::AkBasePlatformSettings;
+)}
+}
+#[doc="`InitializeSoundEngine()` overload"]pub fn initialize_sound_engine()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d1d140usize)as*mut u8,bool;
+)}
+}
+#[doc="`ResetSoundEngine(bool)` overload"]pub fn reset_sound_engine(is_playing:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2cbe0usize)as*mut u8,bool;
+(bool)::core::convert::Into::into(is_playing))}
+}
+#[doc="`TerminateSoundEngine()` overload"]pub fn terminate_sound_engine()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d1dbc0usize)as*mut u8,();
+)}
+}
+#[doc="`SleepForMilliseconds(f64)` overload"]pub fn sleep_for_milliseconds(milliseconds:impl::core::convert::Into<f64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2cd40usize)as*mut u8,();
+(f64)::core::convert::Into::into(milliseconds))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2cff0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl AkWwiseInitializationSettings_CommonPlatformSettings { pub fn get_user_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_advanced_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_comms_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkWwiseInitializationSettings_CommonPlatformSettings as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-akwwiseinitializationsettings")]pub trait IAkWwiseInitializationSettingsMethods:IAkWwiseInitializationSettings{#[doc="`get_IsValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <AkWwiseInitializationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c5b0usize)as*mut u8,bool;
+(AkWwiseInitializationSettings)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <AkWwiseInitializationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c610usize)as*mut u8,i32;
+(AkWwiseInitializationSettings)__receiver)}
+}
+#[doc="`GetUserSettings()` overload"]fn get_user_settings(self,)->crate::root::akcommonusersettings::AkCommonUserSettings{unsafe{let __receiver= <AkWwiseInitializationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c660usize)as*mut u8,crate::root::akcommonusersettings::AkCommonUserSettings;
+(AkWwiseInitializationSettings)__receiver)}
+}
+#[doc="`GetAdvancedSettings()` overload"]fn get_advanced_settings(self,)->crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings{unsafe{let __receiver= <AkWwiseInitializationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c670usize)as*mut u8,crate::root::akcommonadvancedsettings::AkCommonAdvancedSettings;
+(AkWwiseInitializationSettings)__receiver)}
+}
+#[doc="`GetCommsSettings()` overload"]fn get_comms_settings(self,)->crate::root::akcommoncommsettings::AkCommonCommSettings{unsafe{let __receiver= <AkWwiseInitializationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2c680usize)as*mut u8,crate::root::akcommoncommsettings::AkCommonCommSettings;
+(AkWwiseInitializationSettings)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkWwiseInitializationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2ca50usize)as*mut u8,();
+(AkWwiseInitializationSettings)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkWwiseInitializationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2cee0usize)as*mut u8,();
+(AkWwiseInitializationSettings)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akwwiseinitializationsettings")]
-impl AkWwiseInitializationSettings_CommonPlatformSettings {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkWwiseInitializationSettings_CommonPlatformSettings) , :: core :: stringify ! (new) ,)) ; < Self as IAkWwiseInitializationSettings_CommonPlatformSettingsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akwwiseinitializationsettings")]impl<__T:IAkWwiseInitializationSettings>IAkWwiseInitializationSettingsMethods for __T{}
+
+#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings{pub fn get_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_user_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_advanced_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_comms_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_platform_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_active_platform_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn initialize_sound_engine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn reset_sound_engine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn terminate_sound_engine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn sleep_for_milliseconds_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkWwiseInitializationSettings), ::core::stringify!(new),));
+ <Self as IAkWwiseInitializationSettingsMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root-akwwiseinitializationsettings")]pub trait IAkWwiseInitializationSettings_PlatformSettingsMethods:IAkWwiseInitializationSettings_PlatformSettings{#[doc="`IgnorePropertyValue(::unity2::Il2CppString)` overload"]fn ignore_property_value(self,property_path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkWwiseInitializationSettings_PlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2b70usize)as*mut u8,();
+(AkWwiseInitializationSettings_PlatformSettings)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(property_path))}
+}
+#[doc="`IsPropertyIgnored(::unity2::Il2CppString)` overload"]fn is_property_ignored(self,property_path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <AkWwiseInitializationSettings_PlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2ca0usize)as*mut u8,bool;
+(AkWwiseInitializationSettings_PlatformSettings)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(property_path))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkWwiseInitializationSettings_PlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2a70usize)as*mut u8,();
+(AkWwiseInitializationSettings_PlatformSettings)__receiver)}
+}
+#[doc="`SetUseGlobalPropertyValue(::unity2::Il2CppString, bool)` overload"]fn set_use_global_property_value(self,property_path:impl::core::convert::Into< ::unity2::Il2CppString> ,r#use:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkWwiseInitializationSettings_PlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2d00usize)as*mut u8,();
+(AkWwiseInitializationSettings_PlatformSettings)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(property_path),(bool)::core::convert::Into::into(r#use))}
+}
+#[doc="`SetGlobalPropertyValues(crate::system::collections::ienumerable::IEnumerable)` overload"]fn set_global_property_values(self,enumerable:impl::core::convert::Into<crate::system::collections::ienumerable::IEnumerable>)->(){unsafe{let __receiver= <AkWwiseInitializationSettings_PlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2e00usize)as*mut u8,();
+(AkWwiseInitializationSettings_PlatformSettings)__receiver,(crate::system::collections::ienumerable::IEnumerable)::core::convert::Into::into(enumerable))}
+}
+#[doc="`IsUsingGlobalPropertyValue(::unity2::Il2CppString)` overload"]fn is_using_global_property_value(self,property_path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <AkWwiseInitializationSettings_PlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3130usize)as*mut u8,bool;
+(AkWwiseInitializationSettings_PlatformSettings)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(property_path))}
+}
+#[doc="`get_GlobalPropertyHashSet()` overload"]fn get_global_property_hash_set(self,)->crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString>{unsafe{let __receiver= <AkWwiseInitializationSettings_PlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3190usize)as*mut u8,crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> ;
+(AkWwiseInitializationSettings_PlatformSettings)__receiver)}
+}
+#[doc="`set_GlobalPropertyHashSet(crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>)` overload"]fn set_global_property_hash_set(self,value:impl::core::convert::Into<crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <AkWwiseInitializationSettings_PlatformSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3250usize)as*mut u8,();
+(AkWwiseInitializationSettings_PlatformSettings)__receiver,(crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="root-akwwiseinitializationsettings")]impl<__T:IAkWwiseInitializationSettings_PlatformSettings>IAkWwiseInitializationSettings_PlatformSettingsMethods for __T{}
+
+#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings_PlatformSettings{pub fn ignore_property_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_property_ignored_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_use_global_property_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_global_property_values_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_using_global_property_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_global_property_hash_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_global_property_hash_set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="root-akwwiseinitializationsettings")]impl AkWwiseInitializationSettings_PlatformSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkWwiseInitializationSettings_PlatformSettings), ::core::stringify!(new),));
+ <Self as IAkWwiseInitializationSettings_PlatformSettingsMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akwwiseinitializationsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkWwiseInitializationSettings_PlatformSettings;
-    pub use super::IAkWwiseInitializationSettings_PlatformSettings;
-    pub use super::IAkWwiseInitializationSettings_PlatformSettingsMethods;
-    pub use super::AkWwiseInitializationSettings;
-    pub use super::IAkWwiseInitializationSettings;
-    pub use super::IAkWwiseInitializationSettingsMethods;
     pub use super::AkWwiseInitializationSettings_CommonPlatformSettings;
     pub use super::IAkWwiseInitializationSettings_CommonPlatformSettings;
     pub use super::IAkWwiseInitializationSettings_CommonPlatformSettingsMethods;
+    pub use super::AkWwiseInitializationSettings;
+    pub use super::IAkWwiseInitializationSettings;
+    pub use super::IAkWwiseInitializationSettingsMethods;
+    pub use super::AkWwiseInitializationSettings_PlatformSettings;
+    pub use super::IAkWwiseInitializationSettings_PlatformSettings;
+    pub use super::IAkWwiseInitializationSettings_PlatformSettingsMethods;
     pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettings;
     pub use crate::root::akcommonplatformsettings::IAkCommonPlatformSettings;
     pub use crate::system::object::IObject;

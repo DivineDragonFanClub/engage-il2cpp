@@ -4,30 +4,32 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyinformationalversionattribute/AssemblyInformationalVersionAttribute.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "AssemblyInformationalVersionAttribute")] pub struct AssemblyInformationalVersionAttribute {
-# [offset (16)] # [rename (name = "m_informationalVersion")] pub m_informational_version : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblyinformationalversionattribute/AssemblyInformationalVersionAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyInformationalVersionAttribute")]pub struct AssemblyInformationalVersionAttribute{#[offset(16)]#[rename(name="m_informationalVersion")]pub m_informational_version: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-reflection-assemblyinformationalversionattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-assemblyinformationalversionattribute")]
-pub trait IAssemblyInformationalVersionAttributeMethods : IAssemblyInformationalVersionAttribute { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor (self , informational_version : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AssemblyInformationalVersionAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AssemblyInformationalVersionAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3401c90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (informational_version) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-assemblyinformationalversionattribute")]pub trait IAssemblyInformationalVersionAttributeMethods:IAssemblyInformationalVersionAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,informational_version:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyInformationalVersionAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3401c90usize)as*mut u8,();
+(AssemblyInformationalVersionAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(informational_version))}
+}
+}
 
-#[cfg(feature = "system-reflection-assemblyinformationalversionattribute")]
-impl < __T : IAssemblyInformationalVersionAttribute > IAssemblyInformationalVersionAttributeMethods for __T { }
+#[cfg(feature="system-reflection-assemblyinformationalversionattribute")]impl<__T:IAssemblyInformationalVersionAttribute>IAssemblyInformationalVersionAttributeMethods for __T{}
 
-#[cfg(feature = "system-reflection-assemblyinformationalversionattribute")]
-impl AssemblyInformationalVersionAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AssemblyInformationalVersionAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="system-reflection-assemblyinformationalversionattribute")]impl AssemblyInformationalVersionAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "system-reflection-assemblyinformationalversionattribute")]
-impl AssemblyInformationalVersionAttribute {
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new (informational_version : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AssemblyInformationalVersionAttribute) , :: core :: stringify ! (new) ,)) ; < Self as IAssemblyInformationalVersionAttributeMethods > :: ctor (this , informational_version) ; this }
+#[cfg(feature="system-reflection-assemblyinformationalversionattribute")]impl AssemblyInformationalVersionAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(informational_version: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AssemblyInformationalVersionAttribute), ::core::stringify!(new),));
+ <Self as IAssemblyInformationalVersionAttributeMethods> ::ctor(this,informational_version);
+this}
 }
 
 #[cfg(feature = "system-reflection-assemblyinformationalversionattribute")]

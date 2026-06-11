@@ -4,95 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: actionbase :: { ActionBase , IActionBase }
- ;
- use crate :: combat :: actiondisposerholder :: { ActionDisposerHolder , IActionDisposerHolder }
- ;
- use crate :: combat :: actionobservable :: { ActionObservable , IActionObservable }
- ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::actionbase::{ActionBase,IActionBase}
+;
+use crate::combat::actiondisposerholder::{ActionDisposerHolder,IActionDisposerHolder}
+;
+use crate::combat::actionobservable::{ActionObservable,IActionObservable}
+;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionattack/ActionAttack.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionAttack")] # [parent (crate :: combat :: actionobservable :: ActionObservable)] pub struct ActionAttack {
-# [offset (48)] # [rename (name = "m_ChainAttackTimeout")] pub m_chain_attack_timeout : f32 ,
-# [offset (52)] # [rename (name = "m_ChainSpeedRate")] pub m_chain_speed_rate : f32 ,
-# [offset (56)] # [rename (name = "m_Stage")] pub m_stage : crate :: combat :: actionattack :: ActionAttack_Stage ,
-# [offset (60)] # [rename (name = "m_WorldArrivalTime")] pub m_world_arrival_time : f32 ,
-# [offset (64)] # [rename (name = "m_FarAttackRangeSq")] pub m_far_attack_range_sq : f32 ,
-# [offset (72)] # [rename (name = "m_ChainGuard")] pub m_chain_guard : crate :: combat :: character :: Character ,
-# [offset (80)] # [rename (name = "m_bHitPassed")] pub m_b_hit_passed : bool ,
-# [offset (84)] # [rename (name = "m_TimeToNext")] pub m_time_to_next : f32 ,
-# [offset (88)] # [rename (name = "m_IsNotRepelled")] pub m_is_not_repelled : bool ,
-# [offset (89)] # [rename (name = "m_再生ジャンプPassed")] pub m_再生ジャンプpassed : bool ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionattack/ActionAttack.md"))]#[::unity2::class(namespace="Combat",name="ActionAttack")]#[parent(crate::combat::actionobservable::ActionObservable)]pub struct ActionAttack{#[offset(48)]#[rename(name="m_ChainAttackTimeout")]pub m_chain_attack_timeout:f32, #[offset(52)]#[rename(name="m_ChainSpeedRate")]pub m_chain_speed_rate:f32, #[offset(56)]#[rename(name="m_Stage")]pub m_stage:crate::combat::actionattack::ActionAttack_Stage, #[offset(60)]#[rename(name="m_WorldArrivalTime")]pub m_world_arrival_time:f32, #[offset(64)]#[rename(name="m_FarAttackRangeSq")]pub m_far_attack_range_sq:f32, #[offset(72)]#[rename(name="m_ChainGuard")]pub m_chain_guard:crate::combat::character::Character, #[offset(80)]#[rename(name="m_bHitPassed")]pub m_b_hit_passed:bool, #[offset(84)]#[rename(name="m_TimeToNext")]pub m_time_to_next:f32, #[offset(88)]#[rename(name="m_IsNotRepelled")]pub m_is_not_repelled:bool, #[offset(89)]#[rename(name="m_再生ジャンプPassed")]pub m_再生ジャンプpassed:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionattack/ActionAttack_Stage.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ActionAttack_Stage{pub value:i32,}
+impl::unity2::ClassIdentity for ActionAttack_Stage{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="ActionAttack.Stage";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actionattack/ActionAttack_Stage.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ActionAttack_Stage  {
-    pub value: i32,
+impl::unity2::IlType for ActionAttack_Stage{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for ActionAttack_Stage  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "ActionAttack.Stage";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl ActionAttack_Stage{pub fn none()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for ActionAttack_Stage  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn approach()->Self{Self{value:1}
 }
-
-
-impl  ActionAttack_Stage  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn approach() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn attack() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn attack()->Self{Self{value:2}
+}
+pub fn end()->Self{Self{value:3}
+}
 }
 
 }
@@ -100,18 +48,97 @@ impl  ActionAttack_Stage  {
 #[cfg(feature = "combat-actionattack-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actionattack")]
-pub trait IActionAttackMethods : IActionAttack { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bbef00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` overload"] fn ctor (self , chr : impl :: core :: convert :: Into < crate :: combat :: character :: Character > , phase : impl :: core :: convert :: Into < crate :: combat :: phase :: Phase > , time_to_chain_attack : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , crate :: combat :: character :: Character , crate :: combat :: phase :: Phase , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bbef50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (chr) , :: core :: convert :: Into :: into (phase) , :: core :: convert :: Into :: into (time_to_chain_attack) , :: core :: option :: Option :: None) } } } # [doc = "`NextStage()` overload"] fn next_stage (self ,) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bbefa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc0860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnUpdate()` overload"] fn on_update (self ,) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc0a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnExit()` overload"] fn on_exit (self ,) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc0eb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnterApproach()` overload"] fn enter_approach (self ,) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bbefe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChainGuardPresentation()` overload"] fn chain_guard_presentation (self ,) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc1050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateApproach()` overload"] fn update_approach (self ,) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc0c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_AbortByInterrupt()` overload"] fn get_abort_by_interrupt (self ,) -> bool { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc1780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnterAttack()` overload"] fn enter_attack (self ,) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bbf9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAttack()` overload"] fn update_attack (self ,) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc0d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Miss(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn miss (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc18a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`Hit(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn hit (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc2060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`SelfHit(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn self_hit (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } # [doc = "`Guard(crate::unity_engine::animationevent::AnimationEvent)` overload"] fn guard (self , ev : impl :: core :: convert :: Into < crate :: unity_engine :: animationevent :: AnimationEvent >) -> () { unsafe { let __receiver = < ActionAttack as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionAttack , crate :: unity_engine :: animationevent :: AnimationEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc3210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ev) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actionattack")]pub trait IActionAttackMethods:IActionAttack{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbef00usize)as*mut u8, ::unity2::Il2CppString;
+(ActionAttack)__receiver)}
+}
+#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,time_to_chain_attack:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbef50usize)as*mut u8,();
+(ActionAttack)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase),(f32)::core::convert::Into::into(time_to_chain_attack))}
+}
+#[doc="`NextStage()` overload"]fn next_stage(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbefa0usize)as*mut u8,();
+(ActionAttack)__receiver)}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc0860usize)as*mut u8,();
+(ActionAttack)__receiver)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc0a40usize)as*mut u8,();
+(ActionAttack)__receiver)}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc0eb0usize)as*mut u8,();
+(ActionAttack)__receiver)}
+}
+#[doc="`EnterApproach()` overload"]fn enter_approach(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbefe0usize)as*mut u8,();
+(ActionAttack)__receiver)}
+}
+#[doc="`ChainGuardPresentation()` overload"]fn chain_guard_presentation(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc1050usize)as*mut u8,();
+(ActionAttack)__receiver)}
+}
+#[doc="`UpdateApproach()` overload"]fn update_approach(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc0c10usize)as*mut u8,();
+(ActionAttack)__receiver)}
+}
+#[doc="`get_AbortByInterrupt()` overload"]fn get_abort_by_interrupt(self,)->bool{unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc1780usize)as*mut u8,bool;
+(ActionAttack)__receiver)}
+}
+#[doc="`EnterAttack()` overload"]fn enter_attack(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbf9d0usize)as*mut u8,();
+(ActionAttack)__receiver)}
+}
+#[doc="`UpdateAttack()` overload"]fn update_attack(self,)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc0d80usize)as*mut u8,();
+(ActionAttack)__receiver)}
+}
+#[doc="`Miss(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn miss(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc18a0usize)as*mut u8,();
+(ActionAttack)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`Hit(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn hit(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc2060usize)as*mut u8,();
+(ActionAttack)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`SelfHit(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn self_hit(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3020usize)as*mut u8,();
+(ActionAttack)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+#[doc="`Guard(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn guard(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <ActionAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3210usize)as*mut u8,();
+(ActionAttack)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+}
+}
 
-#[cfg(feature = "combat-actionattack")]
-impl < __T : IActionAttack > IActionAttackMethods for __T { }
+#[cfg(feature="combat-actionattack")]impl<__T:IActionAttack>IActionAttackMethods for __T{}
 
-#[cfg(feature = "combat-actionattack")]
-impl ActionAttack { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn next_stage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn on_exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn enter_approach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn chain_guard_presentation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_approach_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_abort_by_interrupt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn enter_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn update_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn miss_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn self_hit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn guard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionAttack as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="combat-actionattack")]impl ActionAttack{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn next_stage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn enter_approach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn chain_guard_presentation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_approach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_abort_by_interrupt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn enter_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn update_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn miss_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn self_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn guard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "combat-actionattack")]
-impl ActionAttack {
-# [doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` — overload selector"] pub fn new (chr : crate :: combat :: character :: Character , phase : crate :: combat :: phase :: Phase , time_to_chain_attack : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionAttack) , :: core :: stringify ! (new) ,)) ; < Self as IActionAttackMethods > :: ctor (this , chr , phase , time_to_chain_attack) ; this }
+#[cfg(feature="combat-actionattack")]impl ActionAttack{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` — overload selector"]pub fn new(chr:crate::combat::character::Character,phase:crate::combat::phase::Phase,time_to_chain_attack:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionAttack), ::core::stringify!(new),));
+ <Self as IActionAttackMethods> ::ctor(this,chr,phase,time_to_chain_attack);
+this}
 }
 
 #[cfg(feature = "combat-actionattack")]

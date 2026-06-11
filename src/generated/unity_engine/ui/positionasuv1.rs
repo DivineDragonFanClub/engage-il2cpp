@@ -4,42 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: basemesheffect :: { BaseMeshEffect , IBaseMeshEffect }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::basemesheffect::{BaseMeshEffect,IBaseMeshEffect}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/positionasuv1/PositionAsUV1.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "PositionAsUV1")] # [parent (crate :: unity_engine :: ui :: basemesheffect :: BaseMeshEffect)] pub struct PositionAsUV1 {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/positionasuv1/PositionAsUV1.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="PositionAsUV1")]#[parent(crate::unity_engine::ui::basemesheffect::BaseMeshEffect)]pub struct PositionAsUV1{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-positionasuv1-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-positionasuv1")]
-pub trait IPositionAsUV1Methods : IPositionAsUV1 { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PositionAsUV1 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PositionAsUV1 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"] fn modify_mesh (self , vh : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: vertexhelper :: VertexHelper >) -> () { unsafe { let __receiver = < PositionAsUV1 as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PositionAsUV1 , crate :: unity_engine :: ui :: vertexhelper :: VertexHelper , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (vh) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-positionasuv1")]pub trait IPositionAsUV1Methods:IPositionAsUV1{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PositionAsUV1 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721850usize)as*mut u8,();
+(PositionAsUV1)__receiver)}
+}
+#[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <PositionAsUV1 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721860usize)as*mut u8,();
+(PositionAsUV1)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vh))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-positionasuv1")]
-impl < __T : IPositionAsUV1 > IPositionAsUV1Methods for __T { }
+#[cfg(feature="unity_engine-ui-positionasuv1")]impl<__T:IPositionAsUV1>IPositionAsUV1Methods for __T{}
 
-#[cfg(feature = "unity_engine-ui-positionasuv1")]
-impl PositionAsUV1 { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PositionAsUV1 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn modify_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PositionAsUV1 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-ui-positionasuv1")]impl PositionAsUV1{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn modify_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-ui-positionasuv1")]
-impl PositionAsUV1 {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PositionAsUV1) , :: core :: stringify ! (new) ,)) ; < Self as IPositionAsUV1Methods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-positionasuv1")]impl PositionAsUV1{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PositionAsUV1), ::core::stringify!(new),));
+ <Self as IPositionAsUV1Methods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-positionasuv1")]

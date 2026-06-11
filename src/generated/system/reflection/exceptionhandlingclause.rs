@@ -4,38 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/exceptionhandlingclause/ExceptionHandlingClause.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "ExceptionHandlingClause")] # [parent (crate :: system :: object :: Object)] pub struct ExceptionHandlingClause {
-# [offset (16)] # [rename (name = "catch_type")] pub catch_type : :: unity2 :: SystemType ,
-# [offset (24)] # [rename (name = "filter_offset")] pub filter_offset : i32 ,
-# [offset (28)] # [rename (name = "flags")] pub flags : crate :: system :: reflection :: exceptionhandlingclauseoptions :: ExceptionHandlingClauseOptions ,
-# [offset (32)] # [rename (name = "try_offset")] pub try_offset : i32 ,
-# [offset (36)] # [rename (name = "try_length")] pub try_length : i32 ,
-# [offset (40)] # [rename (name = "handler_offset")] pub handler_offset : i32 ,
-# [offset (44)] # [rename (name = "handler_length")] pub handler_length : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/exceptionhandlingclause/ExceptionHandlingClause.md"))]#[::unity2::class(namespace="System.Reflection",name="ExceptionHandlingClause")]#[parent(crate::system::object::Object)]pub struct ExceptionHandlingClause{#[offset(16)]#[rename(name="catch_type")]pub catch_type: ::unity2::SystemType, #[offset(24)]#[rename(name="filter_offset")]pub filter_offset:i32, #[offset(28)]#[rename(name="flags")]pub flags:crate::system::reflection::exceptionhandlingclauseoptions::ExceptionHandlingClauseOptions, #[offset(32)]#[rename(name="try_offset")]pub try_offset:i32, #[offset(36)]#[rename(name="try_length")]pub try_length:i32, #[offset(40)]#[rename(name="handler_offset")]pub handler_offset:i32, #[offset(44)]#[rename(name="handler_length")]pub handler_length:i32,}
 
 }
 
 #[cfg(feature = "system-reflection-exceptionhandlingclause-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-exceptionhandlingclause")]
-pub trait IExceptionHandlingClauseMethods : IExceptionHandlingClause { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ExceptionHandlingClause as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExceptionHandlingClause , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad62a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ExceptionHandlingClause as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExceptionHandlingClause , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ad62b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-exceptionhandlingclause")]pub trait IExceptionHandlingClauseMethods:IExceptionHandlingClause{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExceptionHandlingClause as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad62a0usize)as*mut u8,();
+(ExceptionHandlingClause)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ExceptionHandlingClause as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad62b0usize)as*mut u8, ::unity2::Il2CppString;
+(ExceptionHandlingClause)__receiver)}
+}
+}
 
-#[cfg(feature = "system-reflection-exceptionhandlingclause")]
-impl < __T : IExceptionHandlingClause > IExceptionHandlingClauseMethods for __T { }
+#[cfg(feature="system-reflection-exceptionhandlingclause")]impl<__T:IExceptionHandlingClause>IExceptionHandlingClauseMethods for __T{}
 
-#[cfg(feature = "system-reflection-exceptionhandlingclause")]
-impl ExceptionHandlingClause { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExceptionHandlingClause as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExceptionHandlingClause as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="system-reflection-exceptionhandlingclause")]impl ExceptionHandlingClause{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "system-reflection-exceptionhandlingclause")]
-impl ExceptionHandlingClause {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExceptionHandlingClause) , :: core :: stringify ! (new) ,)) ; < Self as IExceptionHandlingClauseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-exceptionhandlingclause")]impl ExceptionHandlingClause{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExceptionHandlingClause), ::core::stringify!(new),));
+ <Self as IExceptionHandlingClauseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-exceptionhandlingclause")]

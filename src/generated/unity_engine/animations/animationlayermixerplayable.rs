@@ -4,67 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animationlayermixerplayable/AnimationLayerMixerPlayable.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AnimationLayerMixerPlayable {
-    pub m_handle: crate :: unity_engine :: playables :: playablehandle :: PlayableHandle,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animations/animationlayermixerplayable/AnimationLayerMixerPlayable.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AnimationLayerMixerPlayable{pub m_handle:crate::unity_engine::playables::playablehandle::PlayableHandle,}
+impl::unity2::ClassIdentity for AnimationLayerMixerPlayable{const NAMESPACE: &'static str="UnityEngine.Animations";
+const NAME: &'static str="AnimationLayerMixerPlayable";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for AnimationLayerMixerPlayable {
-    const NAMESPACE: &'static str = "UnityEngine.Animations";
-
-    const NAME: &'static str = "AnimationLayerMixerPlayable";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for AnimationLayerMixerPlayable{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for AnimationLayerMixerPlayable {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl AnimationLayerMixerPlayable{#[inline]pub fn m_null_playable()->crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayable");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_m_null_playable(value:crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"m_NullPlayable");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl AnimationLayerMixerPlayable {
-    #[inline]
-    pub fn m_null_playable() -> crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_m_null_playable(value: crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "m_NullPlayable");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -72,14 +34,64 @@ impl AnimationLayerMixerPlayable {
 #[cfg(feature = "unity_engine-animations-animationlayermixerplayable-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-animations-animationlayermixerplayable")]
-impl AnimationLayerMixerPlayable { # [doc = "`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, i32)` overload"] pub fn create (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , input_count : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead7a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (input_count) , :: core :: option :: Option :: None) } } } # [doc = "`CreateHandle(crate::unity_engine::playables::playablegraph::PlayableGraph, i32)` overload"] pub fn create_handle (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , input_count : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead850usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (input_count) , :: core :: option :: Option :: None) } } } # [doc = "`op_Implicit(crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable)` overload"] pub fn op_implicit (playable : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eadb60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (playable) , :: core :: option :: Option :: None) } } } # [doc = "`CreateHandleInternal(crate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"] pub fn create_handle_internal (graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph >) -> (bool , crate :: unity_engine :: playables :: playablehandle :: PlayableHandle) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , * mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eadaa0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graph) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`SetLayerMaskFromAvatarMaskInternal(*mutcrate::unity_engine::playables::playablehandle::PlayableHandle, u32, crate::unity_engine::avatarmask::AvatarMask)` overload"] pub fn set_layer_mask_from_avatar_mask_internal (layer_index : impl :: core :: convert :: Into < u32 > , mask : impl :: core :: convert :: Into < crate :: unity_engine :: avatarmask :: AvatarMask >) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , u32 , crate :: unity_engine :: avatarmask :: AvatarMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eade40usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (layer_index) , :: core :: convert :: Into :: into (mask) , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eadef0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateHandleInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"] pub fn create_handle_internal_injected () -> (bool , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: playables :: playablehandle :: PlayableHandle) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , * mut crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eadea0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="unity_engine-animations-animationlayermixerplayable")]impl AnimationLayerMixerPlayable{#[doc="`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, i32)` overload"]pub fn create(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ead7a0usize)as*mut u8,crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable;
+(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(i32)::core::convert::Into::into(input_count))}
+}
+#[doc="`CreateHandle(crate::unity_engine::playables::playablegraph::PlayableGraph, i32)` overload"]pub fn create_handle(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playablehandle::PlayableHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ead850usize)as*mut u8,crate::unity_engine::playables::playablehandle::PlayableHandle;
+(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(i32)::core::convert::Into::into(input_count))}
+}
+#[doc="`op_Implicit(crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable)` overload"]pub fn op_implicit(playable:impl::core::convert::Into<crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable>)->crate::unity_engine::playables::playable::Playable{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eadb60usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable)::core::convert::Into::into(playable))}
+}
+#[doc="`CreateHandleInternal(crate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]pub fn create_handle_internal(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>)->(bool,crate::unity_engine::playables::playablehandle::PlayableHandle){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::playables::playablehandle::PlayableHandle> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3eadaa0usize)as*mut u8,bool;
+(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(*mut crate::unity_engine::playables::playablehandle::PlayableHandle)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SetLayerMaskFromAvatarMaskInternal(*mutcrate::unity_engine::playables::playablehandle::PlayableHandle, u32, crate::unity_engine::avatarmask::AvatarMask)` overload"]pub fn set_layer_mask_from_avatar_mask_internal(layer_index:impl::core::convert::Into<u32> ,mask:impl::core::convert::Into<crate::unity_engine::avatarmask::AvatarMask>)->crate::unity_engine::playables::playablehandle::PlayableHandle{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::playables::playablehandle::PlayableHandle> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3eade40usize)as*mut u8,();
+(*mut crate::unity_engine::playables::playablehandle::PlayableHandle)__out_0.as_mut_ptr(),(u32)::core::convert::Into::into(layer_index),(crate::unity_engine::avatarmask::AvatarMask)::core::convert::Into::into(mask));
+__out_0.assume_init()}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eadef0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateHandleInternal_Injected(*mutcrate::unity_engine::playables::playablegraph::PlayableGraph, *mutcrate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]pub fn create_handle_internal_injected()->(bool,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::playables::playablehandle::PlayableHandle){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::playables::playablegraph::PlayableGraph> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::playables::playablehandle::PlayableHandle> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3eadea0usize)as*mut u8,bool;
+(*mut crate::unity_engine::playables::playablegraph::PlayableGraph)__out_0.as_mut_ptr(),(*mut crate::unity_engine::playables::playablehandle::PlayableHandle)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+}
 
-#[cfg(feature = "unity_engine-animations-animationlayermixerplayable")]
-impl AnimationLayerMixerPlayable { # [doc = "`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"] pub fn ctor (& mut self , handle : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablehandle :: PlayableHandle >) -> () { unsafe { { let __inner : extern "C" fn (* mut AnimationLayerMixerPlayable , crate :: unity_engine :: playables :: playablehandle :: PlayableHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ead9e0usize) as * mut u8) ; __inner (self as * mut AnimationLayerMixerPlayable , :: core :: convert :: Into :: into (handle) , :: core :: option :: Option :: None) } } } # [doc = "`GetHandle()` overload"] pub fn get_handle (& mut self ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle { unsafe { { let __inner : extern "C" fn (* mut AnimationLayerMixerPlayable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playablehandle :: PlayableHandle = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eadb50usize) as * mut u8) ; __inner (self as * mut AnimationLayerMixerPlayable , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable)` overload"] pub fn equals (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable >) -> bool { unsafe { { let __inner : extern "C" fn (* mut AnimationLayerMixerPlayable , crate :: unity_engine :: animations :: animationlayermixerplayable :: AnimationLayerMixerPlayable , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eadba0usize) as * mut u8) ; __inner (self as * mut AnimationLayerMixerPlayable , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`SetLayerMaskFromAvatarMask(u32, crate::unity_engine::avatarmask::AvatarMask)` overload"] pub fn set_layer_mask_from_avatar_mask (& mut self , layer_index : impl :: core :: convert :: Into < u32 > , mask : impl :: core :: convert :: Into < crate :: unity_engine :: avatarmask :: AvatarMask >) -> () { unsafe { { let __inner : extern "C" fn (* mut AnimationLayerMixerPlayable , u32 , crate :: unity_engine :: avatarmask :: AvatarMask , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3eadc30usize) as * mut u8) ; __inner (self as * mut AnimationLayerMixerPlayable , :: core :: convert :: Into :: into (layer_index) , :: core :: convert :: Into :: into (mask) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-animations-animationlayermixerplayable")]impl AnimationLayerMixerPlayable{#[doc="`.ctor(crate::unity_engine::playables::playablehandle::PlayableHandle)` overload"]pub fn ctor(&mut self,handle:impl::core::convert::Into<crate::unity_engine::playables::playablehandle::PlayableHandle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ead9e0usize)as*mut u8,();
+(*mut AnimationLayerMixerPlayable)self as*mut AnimationLayerMixerPlayable,(crate::unity_engine::playables::playablehandle::PlayableHandle)::core::convert::Into::into(handle))}
+}
+#[doc="`GetHandle()` overload"]pub fn get_handle(&mut self,)->crate::unity_engine::playables::playablehandle::PlayableHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eadb50usize)as*mut u8,crate::unity_engine::playables::playablehandle::PlayableHandle;
+(*mut AnimationLayerMixerPlayable)self as*mut AnimationLayerMixerPlayable)}
+}
+#[doc="`Equals(crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eadba0usize)as*mut u8,bool;
+(*mut AnimationLayerMixerPlayable)self as*mut AnimationLayerMixerPlayable,(crate::unity_engine::animations::animationlayermixerplayable::AnimationLayerMixerPlayable)::core::convert::Into::into(other))}
+}
+#[doc="`SetLayerMaskFromAvatarMask(u32, crate::unity_engine::avatarmask::AvatarMask)` overload"]pub fn set_layer_mask_from_avatar_mask(&mut self,layer_index:impl::core::convert::Into<u32> ,mask:impl::core::convert::Into<crate::unity_engine::avatarmask::AvatarMask>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eadc30usize)as*mut u8,();
+(*mut AnimationLayerMixerPlayable)self as*mut AnimationLayerMixerPlayable,(u32)::core::convert::Into::into(layer_index),(crate::unity_engine::avatarmask::AvatarMask)::core::convert::Into::into(mask))}
+}
+}
 
-#[cfg(feature = "unity_engine-animations-animationlayermixerplayable")]
-impl AnimationLayerMixerPlayable { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_handle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_layer_mask_from_avatar_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_handle_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_layer_mask_from_avatar_mask_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn create_handle_internal_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationLayerMixerPlayable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-animations-animationlayermixerplayable")]impl AnimationLayerMixerPlayable{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_handle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_layer_mask_from_avatar_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_handle_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_layer_mask_from_avatar_mask_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn create_handle_internal_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "unity_engine-animations-animationlayermixerplayable")]
 #[doc(hidden)]

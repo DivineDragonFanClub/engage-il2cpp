@@ -4,26 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/gesture/Gesture.md"))] # [:: unity2 :: class (namespace = "nn.hid" , name = "Gesture")] # [parent (crate :: system :: object :: Object)] pub struct Gesture {
-# [static_field] # [rename (name = "PointCountMax")] pub point_count_max : i32 ,
-# [static_field] # [rename (name = "StateCountMax")] pub state_count_max : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/gesture/Gesture.md"))]#[::unity2::class(namespace="nn.hid",name="Gesture")]#[parent(crate::system::object::Object)]pub struct Gesture{#[static_field]#[rename(name="PointCountMax")]pub point_count_max:i32, #[static_field]#[rename(name="StateCountMax")]pub state_count_max:i32,}
 
 }
 
 #[cfg(feature = "nn-hid-gesture-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-gesture")]
-impl Gesture { # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25219e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetStates(::unity2::Array<crate::nn::hid::gesturestate::GestureState>, i32)` overload"] pub fn get_states (p_out_values : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: nn :: hid :: gesturestate :: GestureState > > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: nn :: hid :: gesturestate :: GestureState > , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25219f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (p_out_values) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-gesture")]impl Gesture{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25219e0usize)as*mut u8,();
+)}
+}
+#[doc="`GetStates(::unity2::Array<crate::nn::hid::gesturestate::GestureState>, i32)` overload"]pub fn get_states(p_out_values:impl::core::convert::Into< ::unity2::Array<crate::nn::hid::gesturestate::GestureState> > ,count:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25219f0usize)as*mut u8,i32;
+(::unity2::Array<crate::nn::hid::gesturestate::GestureState>)::core::convert::Into::into(p_out_values),(i32)::core::convert::Into::into(count))}
+}
+}
 
-#[cfg(feature = "nn-hid-gesture")]
-impl Gesture { pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gesture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_states_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gesture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="nn-hid-gesture")]impl Gesture{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_states_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "nn-hid-gesture")]
 #[doc(hidden)]

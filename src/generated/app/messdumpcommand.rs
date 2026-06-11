@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/messdumpcommand/MessDumpCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "MessDumpCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct MessDumpCommand {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/messdumpcommand/MessDumpCommand.md"))]#[::unity2::class(namespace="App",name="MessDumpCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct MessDumpCommand{}
 
 }
 
 #[cfg(feature = "app-messdumpcommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-messdumpcommand")]
-pub trait IMessDumpCommandMethods : IMessDumpCommand { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MessDumpCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MessDumpCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25db360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Func(crate::system::object::Object, crate::system::object::Object)` overload"] fn func (self , obj1 : impl :: core :: convert :: Into < crate :: system :: object :: Object > , obj2 : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> f32 { unsafe { let __receiver = < MessDumpCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MessDumpCommand , crate :: system :: object :: Object , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25db3b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj1) , :: core :: convert :: Into :: into (obj2) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MessDumpCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MessDumpCommand , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25db3c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-messdumpcommand")]pub trait IMessDumpCommandMethods:IMessDumpCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MessDumpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25db360usize)as*mut u8, ::unity2::Il2CppString;
+(MessDumpCommand)__receiver)}
+}
+#[doc="`Func(crate::system::object::Object, crate::system::object::Object)` overload"]fn func(self,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <MessDumpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25db3b0usize)as*mut u8,f32;
+(MessDumpCommand)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MessDumpCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25db3c0usize)as*mut u8,();
+(MessDumpCommand)__receiver)}
+}
+}
 
-#[cfg(feature = "app-messdumpcommand")]
-impl < __T : IMessDumpCommand > IMessDumpCommandMethods for __T { }
+#[cfg(feature="app-messdumpcommand")]impl<__T:IMessDumpCommand>IMessDumpCommandMethods for __T{}
 
-#[cfg(feature = "app-messdumpcommand")]
-impl MessDumpCommand { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MessDumpCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MessDumpCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MessDumpCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-messdumpcommand")]impl MessDumpCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-messdumpcommand")]
-impl MessDumpCommand {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MessDumpCommand) , :: core :: stringify ! (new) ,)) ; < Self as IMessDumpCommandMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-messdumpcommand")]impl MessDumpCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MessDumpCommand), ::core::stringify!(new),));
+ <Self as IMessDumpCommandMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-messdumpcommand")]

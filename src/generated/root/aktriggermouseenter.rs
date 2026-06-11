@@ -4,40 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: aktriggerbase :: { AkTriggerBase , IAkTriggerBase }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::aktriggerbase::{AkTriggerBase,IAkTriggerBase}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aktriggermouseenter/AkTriggerMouseEnter.md"))] # [:: unity2 :: class (namespace = "" , name = "AkTriggerMouseEnter")] # [parent (crate :: root :: aktriggerbase :: AkTriggerBase)] pub struct AkTriggerMouseEnter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktriggermouseenter/AkTriggerMouseEnter.md"))]#[::unity2::class(namespace="",name="AkTriggerMouseEnter")]#[parent(crate::root::aktriggerbase::AkTriggerBase)]pub struct AkTriggerMouseEnter{}
 
 }
 
 #[cfg(feature = "root-aktriggermouseenter-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aktriggermouseenter")]
-pub trait IAkTriggerMouseEnterMethods : IAkTriggerMouseEnter { # [doc = "`OnMouseEnter()` overload"] fn on_mouse_enter (self ,) -> () { unsafe { let __receiver = < AkTriggerMouseEnter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerMouseEnter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2bd80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkTriggerMouseEnter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkTriggerMouseEnter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2bda0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aktriggermouseenter")]pub trait IAkTriggerMouseEnterMethods:IAkTriggerMouseEnter{#[doc="`OnMouseEnter()` overload"]fn on_mouse_enter(self,)->(){unsafe{let __receiver= <AkTriggerMouseEnter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2bd80usize)as*mut u8,();
+(AkTriggerMouseEnter)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkTriggerMouseEnter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2bda0usize)as*mut u8,();
+(AkTriggerMouseEnter)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aktriggermouseenter")]
-impl < __T : IAkTriggerMouseEnter > IAkTriggerMouseEnterMethods for __T { }
+#[cfg(feature="root-aktriggermouseenter")]impl<__T:IAkTriggerMouseEnter>IAkTriggerMouseEnterMethods for __T{}
 
-#[cfg(feature = "root-aktriggermouseenter")]
-impl AkTriggerMouseEnter { pub fn on_mouse_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerMouseEnter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkTriggerMouseEnter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="root-aktriggermouseenter")]impl AkTriggerMouseEnter{pub fn on_mouse_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "root-aktriggermouseenter")]
-impl AkTriggerMouseEnter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkTriggerMouseEnter) , :: core :: stringify ! (new) ,)) ; < Self as IAkTriggerMouseEnterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-aktriggermouseenter")]impl AkTriggerMouseEnter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTriggerMouseEnter), ::core::stringify!(new),));
+ <Self as IAkTriggerMouseEnterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-aktriggermouseenter")]

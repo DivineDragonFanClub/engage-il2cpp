@@ -4,36 +4,136 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/playreportevent/PlayReportEvent.md"))] # [:: unity2 :: class (namespace = "App" , name = "PlayReportEvent")] # [parent (crate :: system :: object :: Object)] pub struct PlayReportEvent {
-# [static_field] # [rename (name = "s_EventId")] pub s_event_id : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_KeyValueCount")] pub s_key_value_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/playreportevent/PlayReportEvent.md"))]#[::unity2::class(namespace="App",name="PlayReportEvent")]#[parent(crate::system::object::Object)]pub struct PlayReportEvent{#[static_field]#[rename(name="s_EventId")]pub s_event_id: ::unity2::Il2CppString, #[static_field]#[rename(name="s_KeyValueCount")]pub s_key_value_count:i32,}
 
 }
 
 #[cfg(feature = "app-playreportevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-playreportevent")]
-impl PlayReportEvent { # [doc = "`End()` overload"] pub fn end () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280e220usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } pub fn add < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < i64 >) -> () { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< PlayReportEvent as :: unity2 :: ClassIdentity > :: class () , "Add" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportEvent as :: unity2 :: ClassIdentity > :: NAME , "Add" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: Il2CppString , i64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`Add(::unity2::Il2CppString, u64)` overload"] pub fn add_2 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < u64 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , u64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280cab0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, f32)` overload"] pub fn add_3 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2810890usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, f64)` overload"] pub fn add_4 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < f64 >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , f64 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2813850usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] pub fn add_5 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x280cbb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, bool)` overload"] pub fn add_6 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2811300usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"] pub fn add_7 (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , val : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2813960usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: convert :: Into :: into (val) , :: core :: option :: Option :: None) } } } # [doc = "`AddStruct(::unity2::Il2CppString)` overload"] pub fn add_struct (key : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28135c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (key) , :: core :: option :: Option :: None) } } } # [doc = "`PrepareAddReport()` overload"] pub fn prepare_add_report () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28137e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } pub fn to_bytes < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (data : impl :: core :: convert :: Into < M0 >) -> :: unity2 :: Array < u8 > { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< PlayReportEvent as :: unity2 :: ClassIdentity > :: class () , "ToBytes" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportEvent as :: unity2 :: ClassIdentity > :: NAME , "ToBytes" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (M0 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (data) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } pub fn from_bytes < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (bytes : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> M0 { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< PlayReportEvent as :: unity2 :: ClassIdentity > :: class () , "FromBytes" , 1 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = true ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < PlayReportEvent as :: unity2 :: ClassIdentity > :: NAME , "FromBytes" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __f : extern "C" fn (:: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> M0 = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (:: core :: convert :: Into :: into (bytes) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2813a80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-playreportevent")]impl PlayReportEvent{#[doc="`End()` overload"]pub fn end()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280e220usize)as*mut u8,();
+)}
+}
+pub fn add<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<i64>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<PlayReportEvent as::unity2::ClassIdentity> ::class(),"Add",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <PlayReportEvent as::unity2::ClassIdentity> ::NAME,"Add",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::Il2CppString,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(key), ::core::convert::Into::into(val), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`Add(::unity2::Il2CppString, u64)` overload"]pub fn add_2(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<u64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280cab0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(u64)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, f32)` overload"]pub fn add_3(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2810890usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(f32)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, f64)` overload"]pub fn add_4(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<f64>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2813850usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(f64)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn add_5(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x280cbb0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(::unity2::Il2CppString)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, bool)` overload"]pub fn add_6(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2811300usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(bool)::core::convert::Into::into(val))}
+}
+#[doc="`Add(::unity2::Il2CppString, ::unity2::Array<u8>)` overload"]pub fn add_7(key:impl::core::convert::Into< ::unity2::Il2CppString> ,val:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2813960usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key),(::unity2::Array<u8>)::core::convert::Into::into(val))}
+}
+#[doc="`AddStruct(::unity2::Il2CppString)` overload"]pub fn add_struct(key:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28135c0usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(key))}
+}
+#[doc="`PrepareAddReport()` overload"]pub fn prepare_add_report()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28137e0usize)as*mut u8,();
+)}
+}
+pub fn to_bytes<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(data:impl::core::convert::Into<M0>)-> ::unity2::Array<u8>{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<PlayReportEvent as::unity2::ClassIdentity> ::class(),"ToBytes",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <PlayReportEvent as::unity2::ClassIdentity> ::NAME,"ToBytes",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(M0, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(data), ::core::option::Option::Some(__mi_opaque),)}
+}
+pub fn from_bytes<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(bytes:impl::core::convert::Into< ::unity2::Array<u8> >)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<PlayReportEvent as::unity2::ClassIdentity> ::class(),"FromBytes",1,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=true;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <PlayReportEvent as::unity2::ClassIdentity> ::NAME,"FromBytes",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __f:extern "C" fn(::unity2::Array<u8> , ::unity2::OptionalMethod,)->M0= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(::core::convert::Into::into(bytes), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2813a80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-playreportevent")]
-pub trait IPlayReportEventMethods : IPlayReportEvent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PlayReportEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PlayReportEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2813a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-playreportevent")]pub trait IPlayReportEventMethods:IPlayReportEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayReportEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2813a70usize)as*mut u8,();
+(PlayReportEvent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-playreportevent")]
-impl < __T : IPlayReportEvent > IPlayReportEventMethods for __T { }
+#[cfg(feature="app-playreportevent")]impl<__T:IPlayReportEvent>IPlayReportEventMethods for __T{}
 
-#[cfg(feature = "app-playreportevent")]
-impl PlayReportEvent { pub fn end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_5_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn add_6_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_7_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_struct_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn prepare_add_report_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayReportEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-playreportevent")]impl PlayReportEvent{pub fn end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_7_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_struct_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn prepare_add_report_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-playreportevent")]
-impl PlayReportEvent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PlayReportEvent) , :: core :: stringify ! (new) ,)) ; < Self as IPlayReportEventMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-playreportevent")]impl PlayReportEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PlayReportEvent), ::core::stringify!(new),));
+ <Self as IPlayReportEventMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-playreportevent")]

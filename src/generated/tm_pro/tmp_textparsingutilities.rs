@@ -4,37 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_textparsingutilities/TMP_TextParsingUtilities.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_TextParsingUtilities")] # [parent (crate :: system :: object :: Object)] pub struct TMP_TextParsingUtilities {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : crate :: tm_pro :: tmp_textparsingutilities :: TMP_TextParsingUtilities ,
-# [static_field] # [rename (name = "k_LookupStringL")] pub k_lookup_string_l : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "k_LookupStringU")] pub k_lookup_string_u : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_textparsingutilities/TMP_TextParsingUtilities.md"))]#[::unity2::class(namespace="TMPro",name="TMP_TextParsingUtilities")]#[parent(crate::system::object::Object)]pub struct TMP_TextParsingUtilities{#[static_field]#[rename(name="s_Instance")]pub s_instance:crate::tm_pro::tmp_textparsingutilities::TMP_TextParsingUtilities, #[static_field]#[rename(name="k_LookupStringL")]pub k_lookup_string_l: ::unity2::Il2CppString, #[static_field]#[rename(name="k_LookupStringU")]pub k_lookup_string_u: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_textparsingutilities-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_textparsingutilities")]
-impl TMP_TextParsingUtilities { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61a00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_instance()` overload"] pub fn get_instance () -> crate :: tm_pro :: tmp_textparsingutilities :: TMP_TextParsingUtilities { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_textparsingutilities :: TMP_TextParsingUtilities = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61a80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetHashCode(::unity2::Il2CppString)` overload"] pub fn get_hash_code (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61af0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCodeCaseSensitive(::unity2::Il2CppString)` overload"] pub fn get_hash_code_case_sensitive (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61c90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`ToLowerASCIIFast(u16)` overload"] pub fn to_lower_ascii_fast (c : impl :: core :: convert :: Into < u16 >) -> u16 { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61d00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`ToUpperASCIIFast(u16)` overload"] pub fn to_upper_ascii_fast (c : impl :: core :: convert :: Into < u16 >) -> u16 { unsafe { { let __inner : extern "C" fn (u16 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61c10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`ToUpperASCIIFast(u32)` overload"] pub fn to_upper_ascii_fast_2 (c : impl :: core :: convert :: Into < u32 >) -> u32 { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61d80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`ToLowerASCIIFast(u32)` overload"] pub fn to_lower_ascii_fast_2 (c : impl :: core :: convert :: Into < u32 >) -> u32 { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61e00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsHighSurrogate(u32)` overload"] pub fn is_high_surrogate (c : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61e80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`IsLowSurrogate(u32)` overload"] pub fn is_low_surrogate (c : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61ea0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (c) , :: core :: option :: Option :: None) } } } # [doc = "`ConvertToUTF32(u32, u32)` overload"] pub fn convert_to_utf32 (high_surrogate : impl :: core :: convert :: Into < u32 > , low_surrogate : impl :: core :: convert :: Into < u32 >) -> u32 { unsafe { { let __inner : extern "C" fn (u32 , u32 , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (high_surrogate) , :: core :: convert :: Into :: into (low_surrogate) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_textparsingutilities")]impl TMP_TextParsingUtilities{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61a00usize)as*mut u8,();
+)}
+}
+#[doc="`get_instance()` overload"]pub fn get_instance()->crate::tm_pro::tmp_textparsingutilities::TMP_TextParsingUtilities{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61a80usize)as*mut u8,crate::tm_pro::tmp_textparsingutilities::TMP_TextParsingUtilities;
+)}
+}
+#[doc="`GetHashCode(::unity2::Il2CppString)` overload"]pub fn get_hash_code(s:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61af0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`GetHashCodeCaseSensitive(::unity2::Il2CppString)` overload"]pub fn get_hash_code_case_sensitive(s:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61c90usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`ToLowerASCIIFast(u16)` overload"]pub fn to_lower_ascii_fast(c:impl::core::convert::Into<u16>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61d00usize)as*mut u8,u16;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`ToUpperASCIIFast(u16)` overload"]pub fn to_upper_ascii_fast(c:impl::core::convert::Into<u16>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61c10usize)as*mut u8,u16;
+(u16)::core::convert::Into::into(c))}
+}
+#[doc="`ToUpperASCIIFast(u32)` overload"]pub fn to_upper_ascii_fast_2(c:impl::core::convert::Into<u32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61d80usize)as*mut u8,u32;
+(u32)::core::convert::Into::into(c))}
+}
+#[doc="`ToLowerASCIIFast(u32)` overload"]pub fn to_lower_ascii_fast_2(c:impl::core::convert::Into<u32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61e00usize)as*mut u8,u32;
+(u32)::core::convert::Into::into(c))}
+}
+#[doc="`IsHighSurrogate(u32)` overload"]pub fn is_high_surrogate(c:impl::core::convert::Into<u32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61e80usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(c))}
+}
+#[doc="`IsLowSurrogate(u32)` overload"]pub fn is_low_surrogate(c:impl::core::convert::Into<u32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61ea0usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(c))}
+}
+#[doc="`ConvertToUTF32(u32, u32)` overload"]pub fn convert_to_utf32(high_surrogate:impl::core::convert::Into<u32> ,low_surrogate:impl::core::convert::Into<u32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e61ec0usize)as*mut u8,u32;
+(u32)::core::convert::Into::into(high_surrogate),(u32)::core::convert::Into::into(low_surrogate))}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_textparsingutilities")]
-pub trait ITMP_TextParsingUtilitiesMethods : ITMP_TextParsingUtilities { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_TextParsingUtilities as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_TextParsingUtilities , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e61a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_textparsingutilities")]pub trait ITMP_TextParsingUtilitiesMethods:ITMP_TextParsingUtilities{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_TextParsingUtilities as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2e61a70usize)as*mut u8,();
+(TMP_TextParsingUtilities)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_textparsingutilities")]
-impl < __T : ITMP_TextParsingUtilities > ITMP_TextParsingUtilitiesMethods for __T { }
+#[cfg(feature="tm_pro-tmp_textparsingutilities")]impl<__T:ITMP_TextParsingUtilities>ITMP_TextParsingUtilitiesMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_textparsingutilities")]
-impl TMP_TextParsingUtilities { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_hash_code_case_sensitive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn to_lower_ascii_fast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn to_upper_ascii_fast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn to_upper_ascii_fast_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn to_lower_ascii_fast_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_high_surrogate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_low_surrogate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn convert_to_utf32_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_TextParsingUtilities as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="tm_pro-tmp_textparsingutilities")]impl TMP_TextParsingUtilities{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_hash_code_case_sensitive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_lower_ascii_fast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn to_upper_ascii_fast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn to_upper_ascii_fast_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn to_lower_ascii_fast_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_high_surrogate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_low_surrogate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn convert_to_utf32_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "tm_pro-tmp_textparsingutilities")]
-impl TMP_TextParsingUtilities {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_TextParsingUtilities) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_TextParsingUtilitiesMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_textparsingutilities")]impl TMP_TextParsingUtilities{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_TextParsingUtilities), ::core::stringify!(new),));
+ <Self as ITMP_TextParsingUtilitiesMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_textparsingutilities")]

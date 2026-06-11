@@ -4,45 +4,114 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/baseraycaster/BaseRaycaster.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "BaseRaycaster")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct BaseRaycaster {
-# [offset (24)] # [rename (name = "m_RootRaycaster")] pub m_root_raycaster : crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/baseraycaster/BaseRaycaster.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="BaseRaycaster")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct BaseRaycaster{#[offset(24)]#[rename(name="m_RootRaycaster")]pub m_root_raycaster:crate::unity_engine::event_systems::baseraycaster::BaseRaycaster,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-baseraycaster-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-baseraycaster")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __BaseRaycaster_unity2_raw { use super :: * ; pub unsafe fn raycast (this : BaseRaycaster , event_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , result_append_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Raycast") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Raycast" , < BaseRaycaster as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseRaycaster , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , event_data , result_append_list , __mi) } pub unsafe fn get_event_camera (this : BaseRaycaster , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_eventCamera") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_eventCamera" , < BaseRaycaster as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-event_systems-baseraycaster")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseRaycaster_unity2_raw{use super:: * ;
+pub unsafe fn raycast(this:BaseRaycaster,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,result_append_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Raycast").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Raycast", <BaseRaycaster as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseRaycaster,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,result_append_list,__mi)}
+pub unsafe fn get_event_camera(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_eventCamera").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_eventCamera", <BaseRaycaster as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-event_systems-baseraycaster")]
-pub trait IBaseRaycasterMethods : IBaseRaycaster { # [doc = "`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"] fn raycast (self , event_data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > , result_append_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult > >) -> () { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseRaycaster_unity2_raw :: raycast (__receiver , :: core :: convert :: Into :: into (event_data) , :: core :: convert :: Into :: into (result_append_list) , :: core :: option :: Option :: None) } } # [doc = "`get_eventCamera()` overload"] fn get_event_camera (self ,) -> crate :: unity_engine :: camera :: Camera { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __BaseRaycaster_unity2_raw :: get_event_camera (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_priority()` overload"] fn get_priority (self ,) -> i32 { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317bc10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_sortOrderPriority()` overload"] fn get_sort_order_priority (self ,) -> i32 { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317bc20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_renderOrderPriority()` overload"] fn get_render_order_priority (self ,) -> i32 { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317bc30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_rootRaycaster()` overload"] fn get_root_raycaster (self ,) -> crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: baseraycaster :: BaseRaycaster = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317bc40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317bd20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCanvasHierarchyChanged()` overload"] fn on_canvas_hierarchy_changed (self ,) -> () { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTransformParentChanged()` overload"] fn on_transform_parent_changed (self ,) -> () { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c1f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BaseRaycaster as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BaseRaycaster , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x317c220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-baseraycaster")]pub trait IBaseRaycasterMethods:IBaseRaycaster{#[doc="`Raycast(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult>)` overload"]fn raycast(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,result_append_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> >)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseRaycaster_unity2_raw::raycast(__receiver, ::core::convert::Into::into(event_data), ::core::convert::Into::into(result_append_list), ::core::option::Option::None)}
+}
+#[doc="`get_eventCamera()` overload"]fn get_event_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BaseRaycaster_unity2_raw::get_event_camera(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_priority()` overload"]fn get_priority(self,)->i32{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317bc10usize)as*mut u8,i32;
+(BaseRaycaster)__receiver)}
+}
+#[doc="`get_sortOrderPriority()` overload"]fn get_sort_order_priority(self,)->i32{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317bc20usize)as*mut u8,i32;
+(BaseRaycaster)__receiver)}
+}
+#[doc="`get_renderOrderPriority()` overload"]fn get_render_order_priority(self,)->i32{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317bc30usize)as*mut u8,i32;
+(BaseRaycaster)__receiver)}
+}
+#[doc="`get_rootRaycaster()` overload"]fn get_root_raycaster(self,)->crate::unity_engine::event_systems::baseraycaster::BaseRaycaster{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317bc40usize)as*mut u8,crate::unity_engine::event_systems::baseraycaster::BaseRaycaster;
+(BaseRaycaster)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317bd20usize)as*mut u8, ::unity2::Il2CppString;
+(BaseRaycaster)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c0c0usize)as*mut u8,();
+(BaseRaycaster)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c140usize)as*mut u8,();
+(BaseRaycaster)__receiver)}
+}
+#[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c1c0usize)as*mut u8,();
+(BaseRaycaster)__receiver)}
+}
+#[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c1f0usize)as*mut u8,();
+(BaseRaycaster)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x317c220usize)as*mut u8,();
+(BaseRaycaster)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-baseraycaster")]
-impl < __T : IBaseRaycaster > IBaseRaycasterMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-baseraycaster")]impl<__T:IBaseRaycaster>IBaseRaycasterMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-baseraycaster")]
-impl BaseRaycaster { pub fn raycast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_event_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_sort_order_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_render_order_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_root_raycaster_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_canvas_hierarchy_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn on_transform_parent_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BaseRaycaster as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="unity_engine-event_systems-baseraycaster")]impl BaseRaycaster{pub fn raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_event_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_sort_order_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_render_order_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_root_raycaster_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_canvas_hierarchy_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn on_transform_parent_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-baseraycaster")]
-impl BaseRaycaster {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BaseRaycaster) , :: core :: stringify ! (new) ,)) ; < Self as IBaseRaycasterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-baseraycaster")]impl BaseRaycaster{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BaseRaycaster), ::core::stringify!(new),));
+ <Self as IBaseRaycasterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-baseraycaster")]

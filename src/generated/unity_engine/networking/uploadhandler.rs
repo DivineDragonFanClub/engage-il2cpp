@@ -4,32 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/uploadhandler/UploadHandler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Networking" , name = "UploadHandler")] # [parent (crate :: system :: object :: Object)] pub struct UploadHandler {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/networking/uploadhandler/UploadHandler.md"))]#[::unity2::class(namespace="UnityEngine.Networking",name="UploadHandler")]#[parent(crate::system::object::Object)]pub struct UploadHandler{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-networking-uploadhandler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-networking-uploadhandler")]
-pub trait IUploadHandlerMethods : IUploadHandler { # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < UploadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UploadHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UploadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UploadHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cb80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < UploadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UploadHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cb90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < UploadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UploadHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f19810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_contentType(::unity2::Il2CppString)` overload"] fn set_content_type (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UploadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UploadHandler , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1cc60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`InternalSetContentType(::unity2::Il2CppString)` overload"] fn internal_set_content_type (self , new_content_type : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < UploadHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UploadHandler , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f1ccc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (new_content_type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-networking-uploadhandler")]pub trait IUploadHandlerMethods:IUploadHandler{#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <UploadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cb30usize)as*mut u8,();
+(UploadHandler)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UploadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cb80usize)as*mut u8,();
+(UploadHandler)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <UploadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cb90usize)as*mut u8,();
+(UploadHandler)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <UploadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f19810usize)as*mut u8,();
+(UploadHandler)__receiver)}
+}
+#[doc="`set_contentType(::unity2::Il2CppString)` overload"]fn set_content_type(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UploadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1cc60usize)as*mut u8,();
+(UploadHandler)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`InternalSetContentType(::unity2::Il2CppString)` overload"]fn internal_set_content_type(self,new_content_type:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UploadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f1ccc0usize)as*mut u8,();
+(UploadHandler)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(new_content_type))}
+}
+}
 
-#[cfg(feature = "unity_engine-networking-uploadhandler")]
-impl < __T : IUploadHandler > IUploadHandlerMethods for __T { }
+#[cfg(feature="unity_engine-networking-uploadhandler")]impl<__T:IUploadHandler>IUploadHandlerMethods for __T{}
 
-#[cfg(feature = "unity_engine-networking-uploadhandler")]
-impl UploadHandler { pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UploadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UploadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UploadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UploadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_content_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UploadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn internal_set_content_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UploadHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-networking-uploadhandler")]impl UploadHandler{pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_content_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn internal_set_content_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-networking-uploadhandler")]
-impl UploadHandler {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UploadHandler) , :: core :: stringify ! (new) ,)) ; < Self as IUploadHandlerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-networking-uploadhandler")]impl UploadHandler{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UploadHandler), ::core::stringify!(new),));
+ <Self as IUploadHandlerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-networking-uploadhandler")]

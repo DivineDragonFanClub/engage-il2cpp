@@ -4,32 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: state :: { IState , State }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::state::{IState,State}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiondisableskip/ActionDisableSkip.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ActionDisableSkip")] # [parent (crate :: combat :: state :: State)] pub struct ActionDisableSkip {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiondisableskip/ActionDisableSkip.md"))]#[::unity2::class(namespace="Combat",name="ActionDisableSkip")]#[parent(crate::combat::state::State)]pub struct ActionDisableSkip{}
 
 }
 
 #[cfg(feature = "combat-actiondisableskip-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-actiondisableskip")]
-pub trait IActionDisableSkipMethods : IActionDisableSkip { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ActionDisableSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDisableSkip , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc46a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnter()` overload"] fn on_enter (self ,) -> () { unsafe { let __receiver = < ActionDisableSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDisableSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc46f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ActionDisableSkip as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ActionDisableSkip , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bc4910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-actiondisableskip")]pub trait IActionDisableSkipMethods:IActionDisableSkip{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionDisableSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc46a0usize)as*mut u8, ::unity2::Il2CppString;
+(ActionDisableSkip)__receiver)}
+}
+#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionDisableSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc46f0usize)as*mut u8,();
+(ActionDisableSkip)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ActionDisableSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4910usize)as*mut u8,();
+(ActionDisableSkip)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-actiondisableskip")]
-impl < __T : IActionDisableSkip > IActionDisableSkipMethods for __T { }
+#[cfg(feature="combat-actiondisableskip")]impl<__T:IActionDisableSkip>IActionDisableSkipMethods for __T{}
 
-#[cfg(feature = "combat-actiondisableskip")]
-impl ActionDisableSkip { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDisableSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDisableSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActionDisableSkip as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-actiondisableskip")]impl ActionDisableSkip{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-actiondisableskip")]
-impl ActionDisableSkip {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ActionDisableSkip) , :: core :: stringify ! (new) ,)) ; < Self as IActionDisableSkipMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-actiondisableskip")]impl ActionDisableSkip{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ActionDisableSkip), ::core::stringify!(new),));
+ <Self as IActionDisableSkipMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-actiondisableskip")]

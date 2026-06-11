@@ -4,35 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapimagecorebit :: { IMapImageCoreBit , MapImageCoreBit }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagetalk/MapImageTalk.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapImageTalk")] # [parent (crate :: app :: mapimagecorebit :: MapImageCoreBit)] pub struct MapImageTalk {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagetalk/MapImageTalk.md"))]#[::unity2::class(namespace="App",name="MapImageTalk")]#[parent(crate::app::mapimagecorebit::MapImageCoreBit)]pub struct MapImageTalk{}
 
 }
 
 #[cfg(feature = "app-mapimagetalk-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapimagetalk")]
-impl MapImageTalk { # [doc = "`IsTalk(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] pub fn is_talk (from : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , to : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2062a90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (from) , :: core :: convert :: Into :: into (to) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagetalk")]impl MapImageTalk{#[doc="`IsTalk(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn is_talk(from:impl::core::convert::Into<crate::app::unit::Unit> ,to:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2062a90usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(from),(crate::app::unit::Unit)::core::convert::Into::into(to))}
+}
+}
 
-#[cfg(feature = "app-mapimagetalk")]
-pub trait IMapImageTalkMethods : IMapImageTalk { # [doc = "`Update(crate::app::unit::Unit)` overload"] fn update (self , from : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapImageTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageTalk , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2062fb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from) , :: core :: option :: Option :: None) } } } # [doc = "`IsImmediate(i32, i32)` overload"] fn is_immediate (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < MapImageTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageTalk , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2063be0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapImageTalk as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapImageTalk , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2064030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapimagetalk")]pub trait IMapImageTalkMethods:IMapImageTalk{#[doc="`Update(crate::app::unit::Unit)` overload"]fn update(self,from:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapImageTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2062fb0usize)as*mut u8,();
+(MapImageTalk)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(from))}
+}
+#[doc="`IsImmediate(i32, i32)` overload"]fn is_immediate(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapImageTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2063be0usize)as*mut u8,bool;
+(MapImageTalk)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageTalk as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2064030usize)as*mut u8,();
+(MapImageTalk)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapimagetalk")]
-impl < __T : IMapImageTalk > IMapImageTalkMethods for __T { }
+#[cfg(feature="app-mapimagetalk")]impl<__T:IMapImageTalk>IMapImageTalkMethods for __T{}
 
-#[cfg(feature = "app-mapimagetalk")]
-impl MapImageTalk { pub fn is_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_immediate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapImageTalk as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-mapimagetalk")]impl MapImageTalk{pub fn is_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_immediate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-mapimagetalk")]
-impl MapImageTalk {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapImageTalk) , :: core :: stringify ! (new) ,)) ; < Self as IMapImageTalkMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapimagetalk")]impl MapImageTalk{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapImageTalk), ::core::stringify!(new),));
+ <Self as IMapImageTalkMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapimagetalk")]

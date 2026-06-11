@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
+;
+use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/nointerpcubemapparameter/NoInterpCubemapParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "NoInterpCubemapParameter")] # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: cubemap :: Cubemap >)] pub struct NoInterpCubemapParameter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/nointerpcubemapparameter/NoInterpCubemapParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="NoInterpCubemapParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::cubemap::Cubemap>)]pub struct NoInterpCubemapParameter{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpcubemapparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-nointerpcubemapparameter")]
-pub trait INoInterpCubemapParameterMethods : INoInterpCubemapParameter { # [doc = "`.ctor(crate::unity_engine::cubemap::Cubemap, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: cubemap :: Cubemap > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NoInterpCubemapParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoInterpCubemapParameter , crate :: unity_engine :: cubemap :: Cubemap , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30ac0a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-nointerpcubemapparameter")]pub trait INoInterpCubemapParameterMethods:INoInterpCubemapParameter{#[doc="`.ctor(crate::unity_engine::cubemap::Cubemap, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::cubemap::Cubemap> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoInterpCubemapParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac0a0usize)as*mut u8,();
+(NoInterpCubemapParameter)__receiver,(crate::unity_engine::cubemap::Cubemap)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-nointerpcubemapparameter")]
-impl < __T : INoInterpCubemapParameter > INoInterpCubemapParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-nointerpcubemapparameter")]impl<__T:INoInterpCubemapParameter>INoInterpCubemapParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-nointerpcubemapparameter")]
-impl NoInterpCubemapParameter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoInterpCubemapParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-nointerpcubemapparameter")]impl NoInterpCubemapParameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-nointerpcubemapparameter")]
-impl NoInterpCubemapParameter {
-# [doc = "`.ctor(crate::unity_engine::cubemap::Cubemap, bool)` — overload selector"] pub fn new (value : crate :: unity_engine :: cubemap :: Cubemap , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NoInterpCubemapParameter) , :: core :: stringify ! (new) ,)) ; < Self as INoInterpCubemapParameterMethods > :: ctor (this , value , override_state) ; this }
+#[cfg(feature="unity_engine-rendering-nointerpcubemapparameter")]impl NoInterpCubemapParameter{#[doc="`.ctor(crate::unity_engine::cubemap::Cubemap, bool)` — overload selector"]pub fn new(value:crate::unity_engine::cubemap::Cubemap,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoInterpCubemapParameter), ::core::stringify!(new),));
+ <Self as INoInterpCubemapParameterMethods> ::ctor(this,value,override_state);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpcubemapparameter")]

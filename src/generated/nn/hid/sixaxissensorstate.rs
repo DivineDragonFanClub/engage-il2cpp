@@ -4,84 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/sixaxissensorstate/SixAxisSensorState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SixAxisSensorState {}
-
-
-impl ::unity2::ClassIdentity for SixAxisSensorState {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "SixAxisSensorState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/sixaxissensorstate/SixAxisSensorState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SixAxisSensorState{}
+impl::unity2::ClassIdentity for SixAxisSensorState{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="SixAxisSensorState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for SixAxisSensorState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for SixAxisSensorState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl SixAxisSensorState {
-    #[inline]
-    pub fn accelerometer_max() -> f32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "AccelerometerMax");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_accelerometer_max(value: f32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "AccelerometerMax");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-    #[inline]
-    pub fn angular_velocity_max() -> f32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "AngularVelocityMax");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_angular_velocity_max(value: f32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "AngularVelocityMax");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl SixAxisSensorState{#[inline]pub fn accelerometer_max()->f32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"AccelerometerMax");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_accelerometer_max(value:f32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"AccelerometerMax");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
+#[inline]pub fn angular_velocity_max()->f32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"AngularVelocityMax");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_angular_velocity_max(value:f32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"AngularVelocityMax");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 }
@@ -89,14 +41,34 @@ impl SixAxisSensorState {
 #[cfg(feature = "nn-hid-sixaxissensorstate-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-sixaxissensorstate")]
-impl SixAxisSensorState { # [doc = "`GetQuaternion(*mutcrate::nn::hid::sixaxissensorstate::SixAxisSensorState, *mutf32, *mutf32, *mutf32, *mutf32)` overload"] pub fn get_quaternion_2 () -> (crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState , f32 , f32 , f32 , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let mut __out_4 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: nn :: hid :: sixaxissensorstate :: SixAxisSensorState , * mut f32 , * mut f32 , * mut f32 , * mut f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247dbb0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , __out_4 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init () , __out_4 . assume_init ()) } } }
+#[cfg(feature="nn-hid-sixaxissensorstate")]impl SixAxisSensorState{#[doc="`GetQuaternion(*mutcrate::nn::hid::sixaxissensorstate::SixAxisSensorState, *mutf32, *mutf32, *mutf32, *mutf32)` overload"]pub fn get_quaternion_2()->(crate::nn::hid::sixaxissensorstate::SixAxisSensorState,f32,f32,f32,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::nn::hid::sixaxissensorstate::SixAxisSensorState> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_4= ::core::mem::MaybeUninit:: <f32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x247dbb0usize)as*mut u8,();
+(*mut crate::nn::hid::sixaxissensorstate::SixAxisSensorState)__out_0.as_mut_ptr(),(*mut f32)__out_1.as_mut_ptr(),(*mut f32)__out_2.as_mut_ptr(),(*mut f32)__out_3.as_mut_ptr(),(*mut f32)__out_4.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init(),__out_4.assume_init())}
+}
+}
 
-#[cfg(feature = "nn-hid-sixaxissensorstate")]
-impl SixAxisSensorState { # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut SixAxisSensorState , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247d860usize) as * mut u8) ; __inner (self as * mut SixAxisSensorState , :: core :: option :: Option :: None) } } } # [doc = "`GetQuaternion(*mutf32, *mutf32, *mutf32, *mutf32)` overload"] pub fn get_quaternion (& mut self ,) -> (f32 , f32 , f32 , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let mut __out_2 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let mut __out_3 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; { let __inner : extern "C" fn (* mut SixAxisSensorState , * mut f32 , * mut f32 , * mut f32 , * mut f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247dba0usize) as * mut u8) ; __inner (self as * mut SixAxisSensorState , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , __out_2 . as_mut_ptr () , __out_3 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init () , __out_2 . assume_init () , __out_3 . assume_init ()) } } }
+#[cfg(feature="nn-hid-sixaxissensorstate")]impl SixAxisSensorState{#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x247d860usize)as*mut u8, ::unity2::Il2CppString;
+(*mut SixAxisSensorState)self as*mut SixAxisSensorState)}
+}
+#[doc="`GetQuaternion(*mutf32, *mutf32, *mutf32, *mutf32)` overload"]pub fn get_quaternion(&mut self,)->(f32,f32,f32,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <f32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x247dba0usize)as*mut u8,();
+(*mut SixAxisSensorState)self as*mut SixAxisSensorState,(*mut f32)__out_0.as_mut_ptr(),(*mut f32)__out_1.as_mut_ptr(),(*mut f32)__out_2.as_mut_ptr(),(*mut f32)__out_3.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init())}
+}
+}
 
-#[cfg(feature = "nn-hid-sixaxissensorstate")]
-impl SixAxisSensorState { pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SixAxisSensorState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_quaternion_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SixAxisSensorState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_quaternion_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SixAxisSensorState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="nn-hid-sixaxissensorstate")]impl SixAxisSensorState{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_quaternion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_quaternion_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "nn-hid-sixaxissensorstate")]
 #[doc(hidden)]

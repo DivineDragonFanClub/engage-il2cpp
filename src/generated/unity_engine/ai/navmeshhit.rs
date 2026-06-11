@@ -4,48 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ai/navmeshhit/NavMeshHit.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct NavMeshHit {
-    pub m_position: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_normal: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_distance: f32,
-    pub m_mask: i32,
-    pub m_hit: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmeshhit/NavMeshHit.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NavMeshHit{pub m_position:crate::unity_engine::vector3::Vector3,pub m_normal:crate::unity_engine::vector3::Vector3,pub m_distance:f32,pub m_mask:i32,pub m_hit:i32,}
+impl::unity2::ClassIdentity for NavMeshHit{const NAMESPACE: &'static str="UnityEngine.AI";
+const NAME: &'static str="NavMeshHit";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for NavMeshHit {
-    const NAMESPACE: &'static str = "UnityEngine.AI";
-
-    const NAME: &'static str = "NavMeshHit";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for NavMeshHit {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for NavMeshHit{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -53,11 +26,13 @@ impl ::unity2::IlType for NavMeshHit {
 #[cfg(feature = "unity_engine-ai-navmeshhit-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ai-navmeshhit")]
-impl NavMeshHit { # [doc = "`get_position()` overload"] pub fn get_position (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut NavMeshHit , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43f60usize) as * mut u8) ; __inner (self as * mut NavMeshHit , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ai-navmeshhit")]impl NavMeshHit{#[doc="`get_position()` overload"]pub fn get_position(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f43f60usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut NavMeshHit)self as*mut NavMeshHit)}
+}
+}
 
-#[cfg(feature = "unity_engine-ai-navmeshhit")]
-impl NavMeshHit { pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMeshHit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-ai-navmeshhit")]impl NavMeshHit{pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-ai-navmeshhit")]
 #[doc(hidden)]

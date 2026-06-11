@@ -4,33 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/evasionspeed/EvasionSpeed.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "EvasionSpeed")] # [parent (crate :: system :: object :: Object)] pub struct EvasionSpeed {
-# [offset (16)] # [rename (name = "m_EvasionSpeedCurve")] pub m_evasion_speed_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (24)] # [rename (name = "t")] pub t : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/evasionspeed/EvasionSpeed.md"))]#[::unity2::class(namespace="Combat",name="EvasionSpeed")]#[parent(crate::system::object::Object)]pub struct EvasionSpeed{#[offset(16)]#[rename(name="m_EvasionSpeedCurve")]pub m_evasion_speed_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(24)]#[rename(name="t")]pub t:f32,}
 
 }
 
 #[cfg(feature = "combat-evasionspeed-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-evasionspeed")]
-pub trait IEvasionSpeedMethods : IEvasionSpeed { # [doc = "`get_Speed()` overload"] fn get_speed (self ,) -> f32 { unsafe { let __receiver = < EvasionSpeed as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EvasionSpeed , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eb290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` overload"] fn ctor (self , curve : impl :: core :: convert :: Into < crate :: unity_engine :: animationcurve :: AnimationCurve >) -> () { unsafe { let __receiver = < EvasionSpeed as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EvasionSpeed , crate :: unity_engine :: animationcurve :: AnimationCurve , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eb2c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (curve) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < EvasionSpeed as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EvasionSpeed , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eb300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < EvasionSpeed as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EvasionSpeed , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eb310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < EvasionSpeed as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EvasionSpeed , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22eb320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-evasionspeed")]pub trait IEvasionSpeedMethods:IEvasionSpeed{#[doc="`get_Speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <EvasionSpeed as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eb290usize)as*mut u8,f32;
+(EvasionSpeed)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` overload"]fn ctor(self,curve:impl::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>)->(){unsafe{let __receiver= <EvasionSpeed as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eb2c0usize)as*mut u8,();
+(EvasionSpeed)__receiver,(crate::unity_engine::animationcurve::AnimationCurve)::core::convert::Into::into(curve))}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <EvasionSpeed as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eb300usize)as*mut u8,();
+(EvasionSpeed)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <EvasionSpeed as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eb310usize)as*mut u8,();
+(EvasionSpeed)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <EvasionSpeed as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eb320usize)as*mut u8,();
+(EvasionSpeed)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-evasionspeed")]
-impl < __T : IEvasionSpeed > IEvasionSpeedMethods for __T { }
+#[cfg(feature="combat-evasionspeed")]impl<__T:IEvasionSpeed>IEvasionSpeedMethods for __T{}
 
-#[cfg(feature = "combat-evasionspeed")]
-impl EvasionSpeed { pub fn get_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvasionSpeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvasionSpeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvasionSpeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvasionSpeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EvasionSpeed as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-evasionspeed")]impl EvasionSpeed{pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-evasionspeed")]
-impl EvasionSpeed {
-# [doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` — overload selector"] pub fn new (curve : crate :: unity_engine :: animationcurve :: AnimationCurve) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EvasionSpeed) , :: core :: stringify ! (new) ,)) ; < Self as IEvasionSpeedMethods > :: ctor (this , curve) ; this }
+#[cfg(feature="combat-evasionspeed")]impl EvasionSpeed{#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` — overload selector"]pub fn new(curve:crate::unity_engine::animationcurve::AnimationCurve)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EvasionSpeed), ::core::stringify!(new),));
+ <Self as IEvasionSpeedMethods> ::ctor(this,curve);
+this}
 }
 
 #[cfg(feature = "combat-evasionspeed")]

@@ -4,36 +4,74 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: collider :: { Collider , ICollider }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::collider::{Collider,ICollider}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/spherecollider/SphereCollider.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "SphereCollider")] # [parent (crate :: unity_engine :: collider :: Collider)] pub struct SphereCollider {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/spherecollider/SphereCollider.md"))]#[::unity2::class(namespace="UnityEngine",name="SphereCollider")]#[parent(crate::unity_engine::collider::Collider)]pub struct SphereCollider{}
 
 }
 
 #[cfg(feature = "unity_engine-spherecollider-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-spherecollider")]
-pub trait ISphereColliderMethods : ISphereCollider { # [doc = "`get_center()` overload"] fn get_center (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < SphereCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SphereCollider , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f00da0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_center(crate::unity_engine::vector3::Vector3)` overload"] fn set_center (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < SphereCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SphereCollider , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f00e50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_radius()` overload"] fn get_radius (self ,) -> f32 { unsafe { let __receiver = < SphereCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SphereCollider , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f00f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_radius(f32)` overload"] fn set_radius (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < SphereCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SphereCollider , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f00f50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SphereCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SphereCollider , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f00fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn get_center_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < SphereCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (SphereCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f00e00usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`set_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"] fn set_center_injected (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < SphereCollider as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; { let __inner : extern "C" fn (SphereCollider , * mut crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f00eb0usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="unity_engine-spherecollider")]pub trait ISphereColliderMethods:ISphereCollider{#[doc="`get_center()` overload"]fn get_center(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <SphereCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f00da0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(SphereCollider)__receiver)}
+}
+#[doc="`set_center(crate::unity_engine::vector3::Vector3)` overload"]fn set_center(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <SphereCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f00e50usize)as*mut u8,();
+(SphereCollider)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_radius()` overload"]fn get_radius(self,)->f32{unsafe{let __receiver= <SphereCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f00f00usize)as*mut u8,f32;
+(SphereCollider)__receiver)}
+}
+#[doc="`set_radius(f32)` overload"]fn set_radius(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SphereCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f00f50usize)as*mut u8,();
+(SphereCollider)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SphereCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f00fa0usize)as*mut u8,();
+(SphereCollider)__receiver)}
+}
+#[doc="`get_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn get_center_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <SphereCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f00e00usize)as*mut u8,();
+(SphereCollider)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`set_center_Injected(*mutcrate::unity_engine::vector3::Vector3)` overload"]fn set_center_injected(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <SphereCollider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f00eb0usize)as*mut u8,();
+(SphereCollider)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "unity_engine-spherecollider")]
-impl < __T : ISphereCollider > ISphereColliderMethods for __T { }
+#[cfg(feature="unity_engine-spherecollider")]impl<__T:ISphereCollider>ISphereColliderMethods for __T{}
 
-#[cfg(feature = "unity_engine-spherecollider")]
-impl SphereCollider { pub fn get_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphereCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_center_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphereCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_radius_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphereCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_radius_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphereCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphereCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_center_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphereCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_center_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SphereCollider as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-spherecollider")]impl SphereCollider{pub fn get_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_radius_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_radius_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_center_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_center_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-spherecollider")]
-impl SphereCollider {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SphereCollider) , :: core :: stringify ! (new) ,)) ; < Self as ISphereColliderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-spherecollider")]impl SphereCollider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SphereCollider), ::core::stringify!(new),));
+ <Self as ISphereColliderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-spherecollider")]

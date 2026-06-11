@@ -4,99 +4,163 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/classchangesequence/ClassChangeSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct ClassChangeSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/classchangesequence/ClassChangeSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ClassChangeSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for ClassChangeSequence_Label{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="ClassChangeSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ClassChangeSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl ClassChangeSequence_Label{pub fn skip_fade_in()->Self{Self{value:0}
+}
+pub fn skip_fade_out()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for ClassChangeSequence_Label  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "ClassChangeSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for ClassChangeSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  ClassChangeSequence_Label  {
-    pub fn skip_fade_in() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn skip_fade_out() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/classchangesequence/ClassChangeSequence.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ClassChangeSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: combat :: classchangesequence :: ClassChangeSequence >)] pub struct ClassChangeSequence {
-# [static_field] # [rename (name = "SceneName")] pub scene_name : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_Before")] pub m_before : crate :: app :: unit :: Unit ,
-# [offset (128)] # [rename (name = "m_After")] pub m_after : crate :: app :: unit :: Unit ,
-# [offset (144)] # [rename (name = "m_Status")] pub m_status : :: unity2 :: Array < crate :: combat :: charactergamestatus :: CharacterGameStatus > ,
-# [offset (152)] # [rename (name = "m_Characters")] pub m_characters : :: unity2 :: Array < crate :: combat :: character :: Character > ,
-# [offset (160)] # [rename (name = "m_ZoneHandle")] pub m_zone_handle : crate :: app :: resourcehandle_2 :: ResourceHandle_2 ,
-# [offset (168)] # [rename (name = "m_ChangeEffect")] pub m_change_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (176)] # [rename (name = "m_GameObjects")] pub m_game_objects : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/classchangesequence/ClassChangeSequence.md"))]#[::unity2::class(namespace="Combat",name="ClassChangeSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::combat::classchangesequence::ClassChangeSequence>)]pub struct ClassChangeSequence{#[static_field]#[rename(name="SceneName")]pub scene_name: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_Before")]pub m_before:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_After")]pub m_after:crate::app::unit::Unit, #[offset(144)]#[rename(name="m_Status")]pub m_status: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> , #[offset(152)]#[rename(name="m_Characters")]pub m_characters: ::unity2::Array<crate::combat::character::Character> , #[offset(160)]#[rename(name="m_ZoneHandle")]pub m_zone_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(168)]#[rename(name="m_ChangeEffect")]pub m_change_effect:crate::unity_engine::gameobject::GameObject, #[offset(176)]#[rename(name="m_GameObjects")]pub m_game_objects:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "combat-classchangesequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-classchangesequence")]
-impl ClassChangeSequence { # [doc = "`IsExist()` overload"] pub fn is_exist () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea68c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, bool, crate::app::viewmode::ViewMode_Mode)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , before : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , after : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , do_fade : impl :: core :: convert :: Into < bool > , camera_mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , bool , crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea6940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (before) , :: core :: convert :: Into :: into (after) , :: core :: convert :: Into :: into (do_fade) , :: core :: convert :: Into :: into (camera_mode) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-classchangesequence")]impl ClassChangeSequence{#[doc="`IsExist()` overload"]pub fn is_exist()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea68c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, bool, crate::app::viewmode::ViewMode_Mode)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,before:impl::core::convert::Into<crate::app::unit::Unit> ,after:impl::core::convert::Into<crate::app::unit::Unit> ,do_fade:impl::core::convert::Into<bool> ,camera_mode:impl::core::convert::Into<crate::app::viewmode::ViewMode_Mode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea6940usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(before),(crate::app::unit::Unit)::core::convert::Into::into(after),(bool)::core::convert::Into::into(do_fade),(crate::app::viewmode::ViewMode_Mode)::core::convert::Into::into(camera_mode))}
+}
+}
 
-#[cfg(feature = "combat-classchangesequence")]
-pub trait IClassChangeSequenceMethods : IClassChangeSequence { # [doc = "`get_GlobalAssetPath()` overload"] fn get_global_asset_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea6870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReturnMode()` overload"] fn get_return_mode (self ,) -> crate :: app :: viewmode :: ViewMode_Mode { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> crate :: app :: viewmode :: ViewMode_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea7950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::viewmode::ViewMode_Mode)` overload"] fn ctor (self , before : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , after : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , camera_mode : impl :: core :: convert :: Into < crate :: app :: viewmode :: ViewMode_Mode >) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , crate :: app :: viewmode :: ViewMode_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea7680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (before) , :: core :: convert :: Into :: into (after) , :: core :: convert :: Into :: into (camera_mode) , :: core :: option :: Option :: None) } } } # [doc = "`Load()` overload"] fn load (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea7960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ChangeAnimation()` overload"] fn change_animation (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea79e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Change()` overload"] fn change (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea7a60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PoseAnimation()` overload"] fn pose_animation (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea7d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Telop()` overload"] fn telop (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea7db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisplayParams()` overload"] fn display_params (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea7e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea7ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCharacterLoading()` overload"] fn is_character_loading (self ,) -> bool { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea8430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ExitAfter()` overload"] fn exit_after (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea8580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartBeforeBGM()` overload"] fn start_before_bgm (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea86b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSkipBGM()` overload"] fn start_skip_bgm (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea8760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartAfterBGM()` overload"] fn start_after_bgm (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea8810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResumeBGM()` overload"] fn resume_bgm (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea88c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSE()` overload"] fn start_se (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea8970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopSE()` overload"] fn stop_se (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea89f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetupGameStatus()` overload"] fn setup_game_status (self ,) -> () { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea8a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateCharacter(i32, crate::combat::preloadanims::PreloadAnims, crate::combat::basecombatlocation::BaseCombatLocation, bool)` overload"] fn create_character (self , side : impl :: core :: convert :: Into < i32 > , preload_anim : impl :: core :: convert :: Into < crate :: combat :: preloadanims :: PreloadAnims > , locator : impl :: core :: convert :: Into < crate :: combat :: basecombatlocation :: BaseCombatLocation > , visible : impl :: core :: convert :: Into < bool >) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < ClassChangeSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ClassChangeSequence , i32 , crate :: combat :: preloadanims :: PreloadAnims , crate :: combat :: basecombatlocation :: BaseCombatLocation , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ea8c60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (side) , :: core :: convert :: Into :: into (preload_anim) , :: core :: convert :: Into :: into (locator) , :: core :: convert :: Into :: into (visible) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-classchangesequence")]pub trait IClassChangeSequenceMethods:IClassChangeSequence{#[doc="`get_GlobalAssetPath()` overload"]fn get_global_asset_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea6870usize)as*mut u8, ::unity2::Il2CppString;
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`get_ReturnMode()` overload"]fn get_return_mode(self,)->crate::app::viewmode::ViewMode_Mode{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7950usize)as*mut u8,crate::app::viewmode::ViewMode_Mode;
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::viewmode::ViewMode_Mode)` overload"]fn ctor(self,before:impl::core::convert::Into<crate::app::unit::Unit> ,after:impl::core::convert::Into<crate::app::unit::Unit> ,camera_mode:impl::core::convert::Into<crate::app::viewmode::ViewMode_Mode>)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7680usize)as*mut u8,();
+(ClassChangeSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(before),(crate::app::unit::Unit)::core::convert::Into::into(after),(crate::app::viewmode::ViewMode_Mode)::core::convert::Into::into(camera_mode))}
+}
+#[doc="`Load()` overload"]fn load(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7960usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`ChangeAnimation()` overload"]fn change_animation(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea79e0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`Change()` overload"]fn change(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7a60usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`PoseAnimation()` overload"]fn pose_animation(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7d30usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`Telop()` overload"]fn telop(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7db0usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`DisplayParams()` overload"]fn display_params(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7e30usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7ed0usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`IsCharacterLoading()` overload"]fn is_character_loading(self,)->bool{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea8430usize)as*mut u8,bool;
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`ExitAfter()` overload"]fn exit_after(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea8580usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`StartBeforeBGM()` overload"]fn start_before_bgm(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea86b0usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`StartSkipBGM()` overload"]fn start_skip_bgm(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea8760usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`StartAfterBGM()` overload"]fn start_after_bgm(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea8810usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`ResumeBGM()` overload"]fn resume_bgm(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea88c0usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`StartSE()` overload"]fn start_se(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea8970usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`StopSE()` overload"]fn stop_se(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea89f0usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`SetupGameStatus()` overload"]fn setup_game_status(self,)->(){unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea8a70usize)as*mut u8,();
+(ClassChangeSequence)__receiver)}
+}
+#[doc="`CreateCharacter(i32, crate::combat::preloadanims::PreloadAnims, crate::combat::basecombatlocation::BaseCombatLocation, bool)` overload"]fn create_character(self,side:impl::core::convert::Into<i32> ,preload_anim:impl::core::convert::Into<crate::combat::preloadanims::PreloadAnims> ,locator:impl::core::convert::Into<crate::combat::basecombatlocation::BaseCombatLocation> ,visible:impl::core::convert::Into<bool>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea8c60usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(ClassChangeSequence)__receiver,(i32)::core::convert::Into::into(side),(crate::combat::preloadanims::PreloadAnims)::core::convert::Into::into(preload_anim),(crate::combat::basecombatlocation::BaseCombatLocation)::core::convert::Into::into(locator),(bool)::core::convert::Into::into(visible))}
+}
+}
 
-#[cfg(feature = "combat-classchangesequence")]
-impl < __T : IClassChangeSequence > IClassChangeSequenceMethods for __T { }
+#[cfg(feature="combat-classchangesequence")]impl<__T:IClassChangeSequence>IClassChangeSequenceMethods for __T{}
 
-#[cfg(feature = "combat-classchangesequence")]
-impl ClassChangeSequence { pub fn get_global_asset_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_return_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn change_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn pose_animation_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn telop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn display_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_character_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn exit_after_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn start_before_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn start_skip_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn start_after_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn resume_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn start_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn stop_se_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn setup_game_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn create_character_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ClassChangeSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } }
+#[cfg(feature="combat-classchangesequence")]impl ClassChangeSequence{pub fn get_global_asset_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_return_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn change_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn pose_animation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn telop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn display_params_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_character_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn exit_after_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn start_before_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn start_skip_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn start_after_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn resume_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn start_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn stop_se_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn setup_game_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn create_character_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+}
 
-#[cfg(feature = "combat-classchangesequence")]
-impl ClassChangeSequence {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::viewmode::ViewMode_Mode)` — overload selector"] pub fn new (before : crate :: app :: unit :: Unit , after : crate :: app :: unit :: Unit , camera_mode : crate :: app :: viewmode :: ViewMode_Mode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ClassChangeSequence) , :: core :: stringify ! (new) ,)) ; < Self as IClassChangeSequenceMethods > :: ctor (this , before , after , camera_mode) ; this }
+#[cfg(feature="combat-classchangesequence")]impl ClassChangeSequence{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::viewmode::ViewMode_Mode)` — overload selector"]pub fn new(before:crate::app::unit::Unit,after:crate::app::unit::Unit,camera_mode:crate::app::viewmode::ViewMode_Mode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ClassChangeSequence), ::core::stringify!(new),));
+ <Self as IClassChangeSequenceMethods> ::ctor(this,before,after,camera_mode);
+this}
 }
 
 #[cfg(feature = "combat-classchangesequence")]

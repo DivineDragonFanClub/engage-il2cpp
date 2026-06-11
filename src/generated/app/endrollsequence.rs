@@ -4,43 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endrollsequence/EndRollSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "EndRollSequence")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: endrollsequence :: EndRollSequence >)] pub struct EndRollSequence {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_BgmHeader")] pub m_bgm_header : :: unity2 :: Il2CppString ,
-# [offset (136)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (144)] # [rename (name = "m_Canvas")] pub m_canvas : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (152)] # [rename (name = "m_Setter")] pub m_setter : crate :: app :: endrollsetter :: EndRollSetter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endrollsequence/EndRollSequence.md"))]#[::unity2::class(namespace="App",name="EndRollSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::endrollsequence::EndRollSequence>)]pub struct EndRollSequence{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_BgmHeader")]pub m_bgm_header: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(144)]#[rename(name="m_Canvas")]pub m_canvas:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_Setter")]pub m_setter:crate::app::endrollsetter::EndRollSetter,}
 
 }
 
 #[cfg(feature = "app-endrollsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-endrollsequence")]
-impl EndRollSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , bgm_header : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e3880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (bgm_header) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-endrollsequence")]impl EndRollSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,bgm_header:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22e3880usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(bgm_header))}
+}
+}
 
-#[cfg(feature = "app-endrollsequence")]
-pub trait IEndRollSequenceMethods : IEndRollSequence { # [doc = "`get_IsSkipped()` overload"] fn get_is_skipped (self ,) -> bool { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e4120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsSkipped(bool)` overload"] fn set_is_skipped (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e4130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`LoadScene()` overload"] fn load_scene (self ,) -> () { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e4140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] fn is_loading (self ,) -> bool { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e4250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup1()` overload"] fn setup1 (self ,) -> () { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e4280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Setup2()` overload"] fn setup2 (self ,) -> () { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e4480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] fn unload (self ,) -> () { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e47c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick1()` overload"] fn tick1 (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e49d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick2()` overload"] fn tick2 (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e4a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EnableControllerSupport()` overload"] fn enable_controller_support (self ,) -> () { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e4ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DisableControllerSupport()` overload"] fn disable_controller_support (self ,) -> () { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e4b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EndRollSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EndRollSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e40a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-endrollsequence")]pub trait IEndRollSequenceMethods:IEndRollSequence{#[doc="`get_IsSkipped()` overload"]fn get_is_skipped(self,)->bool{unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e4120usize)as*mut u8,bool;
+(EndRollSequence)__receiver)}
+}
+#[doc="`set_IsSkipped(bool)` overload"]fn set_is_skipped(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e4130usize)as*mut u8,();
+(EndRollSequence)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`LoadScene()` overload"]fn load_scene(self,)->(){unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e4140usize)as*mut u8,();
+(EndRollSequence)__receiver)}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e4250usize)as*mut u8,bool;
+(EndRollSequence)__receiver)}
+}
+#[doc="`Setup1()` overload"]fn setup1(self,)->(){unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e4280usize)as*mut u8,();
+(EndRollSequence)__receiver)}
+}
+#[doc="`Setup2()` overload"]fn setup2(self,)->(){unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e4480usize)as*mut u8,();
+(EndRollSequence)__receiver)}
+}
+#[doc="`Unload()` overload"]fn unload(self,)->(){unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e47c0usize)as*mut u8,();
+(EndRollSequence)__receiver)}
+}
+#[doc="`Tick1()` overload"]fn tick1(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e49d0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(EndRollSequence)__receiver)}
+}
+#[doc="`Tick2()` overload"]fn tick2(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e4a50usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(EndRollSequence)__receiver)}
+}
+#[doc="`EnableControllerSupport()` overload"]fn enable_controller_support(self,)->(){unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e4ad0usize)as*mut u8,();
+(EndRollSequence)__receiver)}
+}
+#[doc="`DisableControllerSupport()` overload"]fn disable_controller_support(self,)->(){unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e4b30usize)as*mut u8,();
+(EndRollSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EndRollSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e40a0usize)as*mut u8,();
+(EndRollSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-endrollsequence")]
-impl < __T : IEndRollSequence > IEndRollSequenceMethods for __T { }
+#[cfg(feature="app-endrollsequence")]impl<__T:IEndRollSequence>IEndRollSequenceMethods for __T{}
 
-#[cfg(feature = "app-endrollsequence")]
-impl EndRollSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_skipped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_is_skipped_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn setup1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn setup2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn tick1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn tick2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn enable_controller_support_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn disable_controller_support_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EndRollSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-endrollsequence")]impl EndRollSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_skipped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_is_skipped_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn setup1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn setup2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn tick1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn tick2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn enable_controller_support_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn disable_controller_support_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-endrollsequence")]
-impl EndRollSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EndRollSequence) , :: core :: stringify ! (new) ,)) ; < Self as IEndRollSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-endrollsequence")]impl EndRollSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EndRollSequence), ::core::stringify!(new),));
+ <Self as IEndRollSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-endrollsequence")]

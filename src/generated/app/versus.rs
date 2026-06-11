@@ -4,407 +4,143 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.DownloadHistory")] # [parent (crate :: system :: object :: Object)] pub struct Versus_DownloadHistory {
-# [static_field] # [rename (name = "CoolTimeSecond")] pub cool_time_second : i64 ,
-# [offset (16)] # [rename (name = "m_DownloadedDataList")] pub m_downloaded_data_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: versus :: Versus_DownloadHistory_CheckData > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_Error.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_Error{pub value:i32,}
+impl::unity2::ClassIdentity for Versus_Error{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Versus.Error";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Versus_Error{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Versus_Error{pub fn none()->Self{Self{value: -1}
+}
+pub fn ranked_report()->Self{Self{value:101}
+}
+pub fn ranked_offence_unit_none()->Self{Self{value:102}
+}
+pub fn invalid_data()->Self{Self{value:103}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MapResult.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Versus_MapResult  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_DownloadHistory.md"))]#[::unity2::class(namespace="App",name="Versus.DownloadHistory")]#[parent(crate::system::object::Object)]pub struct Versus_DownloadHistory{#[static_field]#[rename(name="CoolTimeSecond")]pub cool_time_second:i64, #[offset(16)]#[rename(name="m_DownloadedDataList")]pub m_downloaded_data_list:crate::system::collections::generic::list_1::List_1<crate::app::versus::Versus_DownloadHistory_CheckData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_MapObjectCounter.md"))]#[::unity2::class(namespace="App",name="Versus.MapObjectCounter")]#[parent(crate::system::object::Object)]pub struct Versus_MapObjectCounter{#[offset(16)]#[rename(name="m_Dict")]pub m_dict:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::mapeditorcategorydata::MapEditorCategoryData,i32> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_MatchingType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_MatchingType{pub value:i32,}
+impl::unity2::ClassIdentity for Versus_MatchingType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Versus.MatchingType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Versus_MatchingType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Versus_MatchingType{pub fn random()->Self{Self{value:0}
+}
+pub fn friend()->Self{Self{value:1}
+}
+pub fn data_code()->Self{Self{value:2}
+}
+pub fn profile()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Versus_MapResult  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Versus.MapResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for Versus_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Versus.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Versus_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Versus_Mode{pub fn none()->Self{Self{value:0}
+}
+pub fn edit()->Self{Self{value:1}
+}
+pub fn casual()->Self{Self{value:2}
+}
+pub fn ranked()->Self{Self{value:3}
+}
+pub fn replay()->Self{Self{value:4}
+}
+pub fn mock_battle()->Self{Self{value:5}
+}
 }
 
 
-impl  ::unity2::IlType for Versus_MapResult  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus.md"))]#[::unity2::class(namespace="App",name="Versus")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::versus::Versus>)]pub struct Versus{#[offset(32)]#[rename(name="m_PlayerMetaData")]pub m_player_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(40)]#[rename(name="m_PlayerData")]pub m_player_data:crate::app::versusserverrankeddata::VersusServerRankedData, #[offset(48)]#[rename(name="m_PlayerRatingList")]pub m_player_rating_list:crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> , #[offset(56)]#[rename(name="m_OpponentMetaData")]pub m_opponent_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(64)]#[rename(name="m_OpponentData")]pub m_opponent_data:crate::app::versusserverrankeddata::VersusServerRankedData, #[offset(72)]#[rename(name="m_ReplayData")]pub m_replay_data:crate::app::versusserverreplaydata::VersusServerReplayData, #[offset(80)]#[rename(name="m_ReplayMetaData")]pub m_replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(88)]#[rename(name="m_CasualOpponentMetaData")]pub m_casual_opponent_meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData, #[offset(96)]#[rename(name="m_CasualOpponentData")]pub m_casual_opponent_data:crate::app::versusservercasualdata::VersusServerCasualData, #[offset(104)]#[rename(name="m_CasualPlayerData")]pub m_casual_player_data:crate::app::versusservercasualdata::VersusServerCasualData, #[offset(112)]#[rename(name="m_CasualPlayerMetaData")]pub m_casual_player_meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData, #[offset(120)]#[rename(name="m_BackupData")]pub m_backup_data:crate::app::versusbackupdata::VersusBackupData, #[offset(128)]#[rename(name="m_EditBackupData")]pub m_edit_backup_data:crate::app::versuseditmodebackupdata::VersusEditModeBackupData, #[offset(136)]#[rename(name="m_Mode")]pub m_mode:crate::app::versus::Versus_Mode, #[offset(140)]#[rename(name="m_MatchingType")]pub m_matching_type:crate::app::versus::Versus_MatchingType, #[offset(144)]#[rename(name="m_Error")]pub m_error:crate::app::versus::Versus_Error, #[offset(148)]#[rename(name="m_Result")]pub m_result:crate::app::versus::Versus_MapResult, #[offset(152)]#[rename(name="m_IsSurrender")]pub m_is_surrender:bool, #[offset(156)]#[rename(name="m_CasualMapNumber")]pub m_casual_map_number:i32, #[static_field]#[rename(name="ReplaySlotCount")]pub replay_slot_count:i32, #[offset(169)]#[rename(name="m_IsExistOnServer")]pub m_is_exist_on_server:bool, #[offset(176)]#[rename(name="m_History")]pub m_history:crate::app::versus::Versus_DownloadHistory,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_MapResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_MapResult{pub value:i32,}
+impl::unity2::ClassIdentity for Versus_MapResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Versus.MapResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Versus_MapResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Versus_MapResult{pub fn win()->Self{Self{value:0}
+}
+pub fn lose()->Self{Self{value:1}
+}
+pub fn none()->Self{Self{value:2}
+}
+pub fn abort()->Self{Self{value:3}
+}
 }
 
 
-impl  Versus_MapResult  {
-    pub fn win() -> Self {
-        Self { value: 0 }
-
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_DownloadHistory_CheckData.md"))]#[::unity2::class(namespace="App",name="Versus.DownloadHistory.CheckData")]#[parent(crate::system::object::Object)]pub struct Versus_DownloadHistory_CheckData{#[offset(16)]#[rename(name="m_IsDownloaded")]pub m_is_downloaded:bool, #[offset(24)]#[rename(name="m_DataTime")]pub m_data_time:i64,}
 
 
-    pub fn lose() -> Self {
-        Self { value: 1 }
-
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_VersusCheck.md"))]#[::unity2::class(namespace="App",name="Versus.VersusCheck")]#[parent(crate::system::object::Object)]pub struct Versus_VersusCheck{}
 
 
-    pub fn none() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn abort() -> Self {
-        Self { value: 3 }
-
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_CheckDataType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_CheckDataType{pub value:i32,}
+impl::unity2::ClassIdentity for Versus_CheckDataType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Versus.CheckDataType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Mode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Versus_Mode  {
-    pub value: i32,
+impl::unity2::IlType for Versus_CheckDataType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for Versus_Mode  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Versus.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl Versus_CheckDataType{pub fn none()->Self{Self{value: -1}
 }
-
-
-impl  ::unity2::IlType for Versus_Mode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn player_casual_meta()->Self{Self{value:0}
 }
-
-
-impl  Versus_Mode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn edit() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn casual() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn ranked() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn replay() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn mock_battle() -> Self {
-        Self { value: 5 }
-
-    }
-
+pub fn player_ranked_meta()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_DownloadHistory_CheckData.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.DownloadHistory.CheckData")] # [parent (crate :: system :: object :: Object)] pub struct Versus_DownloadHistory_CheckData {
-# [offset (16)] # [rename (name = "m_IsDownloaded")] pub m_is_downloaded : bool ,
-# [offset (24)] # [rename (name = "m_DataTime")] pub m_data_time : i64 ,
+pub fn replay_meta()->Self{Self{value:2}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_MapObjectCounter.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.MapObjectCounter")] # [parent (crate :: system :: object :: Object)] pub struct Versus_MapObjectCounter {
-# [offset (16)] # [rename (name = "m_Dict")] pub m_dict : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > ,
+pub fn opponent_casual_friend()->Self{Self{value:3}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MatchingType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Versus_MatchingType  {
-    pub value: i32,
+pub fn opponent_ranked_friend()->Self{Self{value:4}
 }
-
-
-impl  ::unity2::ClassIdentity for Versus_MatchingType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Versus.MatchingType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+pub fn opponent_casual_profile()->Self{Self{value:5}
 }
-
-
-impl  ::unity2::IlType for Versus_MatchingType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn opponent_ranked_profile()->Self{Self{value:6}
 }
-
-
-impl  Versus_MatchingType  {
-    pub fn random() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn friend() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn data_code() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn profile() -> Self {
-        Self { value: 3 }
-
-    }
-
+pub fn num()->Self{Self{value:7}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Error.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Versus_Error  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Versus_Error  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Versus.Error";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Versus_Error  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Versus_Error  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn ranked_report() -> Self {
-        Self { value: 101 }
-
-    }
-
-
-    pub fn ranked_offence_unit_none() -> Self {
-        Self { value: 102 }
-
-    }
-
-
-    pub fn invalid_data() -> Self {
-        Self { value: 103 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: versus :: Versus >)] pub struct Versus {
-# [offset (32)] # [rename (name = "m_PlayerMetaData")] pub m_player_meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData ,
-# [offset (40)] # [rename (name = "m_PlayerData")] pub m_player_data : crate :: app :: versusserverrankeddata :: VersusServerRankedData ,
-# [offset (48)] # [rename (name = "m_PlayerRatingList")] pub m_player_rating_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > ,
-# [offset (56)] # [rename (name = "m_OpponentMetaData")] pub m_opponent_meta_data : crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData ,
-# [offset (64)] # [rename (name = "m_OpponentData")] pub m_opponent_data : crate :: app :: versusserverrankeddata :: VersusServerRankedData ,
-# [offset (72)] # [rename (name = "m_ReplayData")] pub m_replay_data : crate :: app :: versusserverreplaydata :: VersusServerReplayData ,
-# [offset (80)] # [rename (name = "m_ReplayMetaData")] pub m_replay_meta_data : crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData ,
-# [offset (88)] # [rename (name = "m_CasualOpponentMetaData")] pub m_casual_opponent_meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData ,
-# [offset (96)] # [rename (name = "m_CasualOpponentData")] pub m_casual_opponent_data : crate :: app :: versusservercasualdata :: VersusServerCasualData ,
-# [offset (104)] # [rename (name = "m_CasualPlayerData")] pub m_casual_player_data : crate :: app :: versusservercasualdata :: VersusServerCasualData ,
-# [offset (112)] # [rename (name = "m_CasualPlayerMetaData")] pub m_casual_player_meta_data : crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData ,
-# [offset (120)] # [rename (name = "m_BackupData")] pub m_backup_data : crate :: app :: versusbackupdata :: VersusBackupData ,
-# [offset (128)] # [rename (name = "m_EditBackupData")] pub m_edit_backup_data : crate :: app :: versuseditmodebackupdata :: VersusEditModeBackupData ,
-# [offset (136)] # [rename (name = "m_Mode")] pub m_mode : crate :: app :: versus :: Versus_Mode ,
-# [offset (140)] # [rename (name = "m_MatchingType")] pub m_matching_type : crate :: app :: versus :: Versus_MatchingType ,
-# [offset (144)] # [rename (name = "m_Error")] pub m_error : crate :: app :: versus :: Versus_Error ,
-# [offset (148)] # [rename (name = "m_Result")] pub m_result : crate :: app :: versus :: Versus_MapResult ,
-# [offset (152)] # [rename (name = "m_IsSurrender")] pub m_is_surrender : bool ,
-# [offset (156)] # [rename (name = "m_CasualMapNumber")] pub m_casual_map_number : i32 ,
-# [static_field] # [rename (name = "ReplaySlotCount")] pub replay_slot_count : i32 ,
-# [offset (169)] # [rename (name = "m_IsExistOnServer")] pub m_is_exist_on_server : bool ,
-# [offset (176)] # [rename (name = "m_History")] pub m_history : crate :: app :: versus :: Versus_DownloadHistory ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versus/Versus_VersusCheck.md"))] # [:: unity2 :: class (namespace = "App" , name = "Versus.VersusCheck")] # [parent (crate :: system :: object :: Object)] pub struct Versus_VersusCheck {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_CheckDataType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Versus_CheckDataType  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for Versus_CheckDataType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Versus.CheckDataType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Versus_CheckDataType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Versus_CheckDataType  {
-    pub fn none() -> Self {
-        Self { value: -1 }
-
-    }
-
-
-    pub fn player_casual_meta() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn player_ranked_meta() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn replay_meta() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn opponent_casual_friend() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn opponent_ranked_friend() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn opponent_casual_profile() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn opponent_ranked_profile() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 7 }
-
-    }
-
 }
 
 }
@@ -412,104 +148,630 @@ impl  Versus_CheckDataType  {
 #[cfg(feature = "app-versus-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versus")]
-impl Versus_DownloadHistory { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5f900usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versus")]
-pub trait IVersus_DownloadHistoryMethods : IVersus_DownloadHistory { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5f2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitializeCheckData()` overload"] fn initialize_check_data (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5f380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDonwloaded(crate::app::versus::Versus_CheckDataType)` overload"] fn set_donwloaded (self , data_type : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_CheckDataType >) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory , crate :: app :: versus :: Versus_CheckDataType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5f570usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data_type) , :: core :: option :: Option :: None) } } } # [doc = "`IsDownloaded(crate::app::versus::Versus_CheckDataType)` overload"] fn is_downloaded (self , data_type : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_CheckDataType >) -> bool { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory , crate :: app :: versus :: Versus_CheckDataType , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5f620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data_type) , :: core :: option :: Option :: None) } } } # [doc = "`ResetCheckData(crate::app::versus::Versus_CheckDataType)` overload"] fn reset_check_data (self , data_type : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_CheckDataType >) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory , crate :: app :: versus :: Versus_CheckDataType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5f690usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data_type) , :: core :: option :: Option :: None) } } } # [doc = "`AllReset()` overload"] fn all_reset (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5f700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versus")]
-impl < __T : IVersus_DownloadHistory > IVersus_DownloadHistoryMethods for __T { }
-
-#[cfg(feature = "app-versus")]
-impl Versus_DownloadHistory { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn initialize_check_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_donwloaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_downloaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn reset_check_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn all_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
-
-#[cfg(feature = "app-versus")]
-impl Versus_DownloadHistory {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_DownloadHistory) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_DownloadHistoryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versus")]impl Versus_DownloadHistory{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f900usize)as*mut u8,();
+)}
+}
 }
 
-#[cfg(feature = "app-versus")]
-pub trait IVersus_DownloadHistory_CheckDataMethods : IVersus_DownloadHistory_CheckData { # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f6370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsDownloaded()` overload"] fn is_downloaded (self ,) -> bool { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f6380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetElapsedTime()` overload"] fn get_elapsed_time (self ,) -> i64 { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f6480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_DownloadHistory_CheckData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_DownloadHistory_CheckData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22f6510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versus")]
-impl < __T : IVersus_DownloadHistory_CheckData > IVersus_DownloadHistory_CheckDataMethods for __T { }
-
-#[cfg(feature = "app-versus")]
-impl Versus_DownloadHistory_CheckData { pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_downloaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_elapsed_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_DownloadHistory_CheckData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-versus")]
-impl Versus_DownloadHistory_CheckData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_DownloadHistory_CheckData) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_DownloadHistory_CheckDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versus")]pub trait IVersus_DownloadHistoryMethods:IVersus_DownloadHistory{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f2e0usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver)}
+}
+#[doc="`InitializeCheckData()` overload"]fn initialize_check_data(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f380usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver)}
+}
+#[doc="`SetDonwloaded(crate::app::versus::Versus_CheckDataType)` overload"]fn set_donwloaded(self,data_type:impl::core::convert::Into<crate::app::versus::Versus_CheckDataType>)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f570usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver,(crate::app::versus::Versus_CheckDataType)::core::convert::Into::into(data_type))}
+}
+#[doc="`IsDownloaded(crate::app::versus::Versus_CheckDataType)` overload"]fn is_downloaded(self,data_type:impl::core::convert::Into<crate::app::versus::Versus_CheckDataType>)->bool{unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f620usize)as*mut u8,bool;
+(Versus_DownloadHistory)__receiver,(crate::app::versus::Versus_CheckDataType)::core::convert::Into::into(data_type))}
+}
+#[doc="`ResetCheckData(crate::app::versus::Versus_CheckDataType)` overload"]fn reset_check_data(self,data_type:impl::core::convert::Into<crate::app::versus::Versus_CheckDataType>)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f690usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver,(crate::app::versus::Versus_CheckDataType)::core::convert::Into::into(data_type))}
+}
+#[doc="`AllReset()` overload"]fn all_reset(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f700usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver)}
+}
 }
 
-#[cfg(feature = "app-versus")]
-pub trait IVersus_MapObjectCounterMethods : IVersus_MapObjectCounter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5f950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(::unity2::Il2CppString)` overload"] fn add (self , obj_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5f9e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj_name) , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] fn get_enumerator (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > { unsafe { let __receiver = < Versus_MapObjectCounter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2_Enumerator < crate :: app :: mapeditorcategorydata :: MapEditorCategoryData , i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5fb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versus")]impl<__T:IVersus_DownloadHistory>IVersus_DownloadHistoryMethods for __T{}
 
-#[cfg(feature = "app-versus")]
-impl < __T : IVersus_MapObjectCounter > IVersus_MapObjectCounterMethods for __T { }
-
-#[cfg(feature = "app-versus")]
-impl Versus_MapObjectCounter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_MapObjectCounter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-versus")]
-impl Versus_MapObjectCounter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_MapObjectCounter) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_MapObjectCounterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versus")]impl Versus_DownloadHistory{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_check_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_donwloaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_downloaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_check_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn all_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 }
 
-#[cfg(feature = "app-versus")]
-impl Versus { # [doc = "`IsValid()` overload"] pub fn is_valid () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a67a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsVersusMode()` overload"] pub fn is_versus_mode () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6ca0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsCasual()` overload"] pub fn is_casual () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a68b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsRanked()` overload"] pub fn is_ranked () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6980usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsMockBattle()` overload"] pub fn is_mock_battle () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6bd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsEditMode()` overload"] pub fn is_edit_mode () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6a50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsReplay()` overload"] pub fn is_replay () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6b20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetCasualSortieMax()` overload"] pub fn get_casual_sortie_max () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a90b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetOffenseSortieMax()` overload"] pub fn get_offense_sortie_max () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a90c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetDefenseSortieMax()` overload"] pub fn get_defense_sortie_max () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a91b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_IsForceEditDataOverwrite()` overload"] pub fn get_is_force_edit_data_overwrite () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9430usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsForceEditDataOverwrite(bool)` overload"] pub fn set_is_force_edit_data_overwrite (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a94a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CheckValid()` overload"] pub fn check_valid () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9520usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a95c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versus")]
-pub trait IVersusMethods : IVersus { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a5f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6740usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CanSortieRanked(crate::app::unit::Unit)` overload"] fn can_sortie_ranked (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a6e90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`CanSortieRanked(crate::app::godunit::GodUnit)` overload"] fn can_sortie_ranked_2 (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`SaveCasualUnits()` overload"] fn save_casual_units (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7110usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SaveCasualUnitsInit()` overload"] fn save_casual_units_init (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MapEndEdit()` overload"] fn map_end_edit (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetResult()` overload"] fn reset_result (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetAbort()` overload"] fn set_abort (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetSurrender()` overload"] fn set_surrender (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetResultReport()` overload"] fn set_result_report (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetError(crate::app::versus::Versus_Error)` overload"] fn set_error (self , error : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_Error >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: versus :: Versus_Error , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (error) , :: core :: option :: Option :: None) } } } # [doc = "`MapEndVersus()` overload"] fn map_end_versus (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MapEndVersusCasual()` overload"] fn map_end_versus_casual (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a75d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MapEndVersusRanked()` overload"] fn map_end_versus_ranked (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a75e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetGodPoolId()` overload"] fn reset_god_pool_id (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a79a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsExitsOnlineNode()` overload"] fn is_exits_online_node (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MapEndReplay()` overload"] fn map_end_replay (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RestoreStoryChapter()` overload"] fn restore_story_chapter (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TrySetPlayerMetaData(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"] fn try_set_player_meta_data (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData >) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7fd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`SetPlayerMetaData(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)` overload"] fn set_player_meta_data (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a80e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`SetOpponentMetaData(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"] fn set_opponent_meta_data (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a80f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`SetOpponentMetaData(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)` overload"] fn set_opponent_meta_data_2 (self , meta_data : impl :: core :: convert :: Into < crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8100usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`SetPlayerRatingList(crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>)` overload"] fn set_player_rating_list (self , rating_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: nexversus :: NexVersus_RatingData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8110usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rating_list) , :: core :: option :: Option :: None) } } } # [doc = "`SetMode(crate::app::versus::Versus_Mode)` overload"] fn set_mode (self , mode : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_Mode >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: versus :: Versus_Mode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8180usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`SetCasualMap(i32)` overload"] fn set_casual_map (self , map_number : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (map_number) , :: core :: option :: Option :: None) } } } # [doc = "`SetMatchingType(crate::app::versus::Versus_MatchingType)` overload"] fn set_matching_type (self , r#type : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_MatchingType >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: versus :: Versus_MatchingType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a81a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`IsHavePlayerEditData()` overload"] fn is_have_player_edit_data (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a81b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsSavedLocalEditData()` overload"] fn is_saved_local_edit_data (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsUseServerEditDataForBattle()` overload"] fn is_use_server_edit_data_for_battle (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a82e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsUseServerEditDataForEdit()` overload"] fn is_use_server_edit_data_for_edit (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a83b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMyMapEditDataForBattle()` overload"] fn get_my_map_edit_data_for_battle (self ,) -> crate :: app :: mapeditdata :: MapEditData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapeditdata :: MapEditData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a7010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMyMapEditDataForEdit()` overload"] fn get_my_map_edit_data_for_edit (self ,) -> crate :: app :: mapeditdata :: MapEditData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapeditdata :: MapEditData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a84b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetSortieTitle()` overload"] fn get_sortie_title (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryGetOpponentInfo(*mut::unity2::Il2CppString, *mutu64)` overload"] fn try_get_opponent_info (self ,) -> (bool , :: unity2 :: Il2CppString , u64) { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < u64 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (Versus , * mut :: unity2 :: Il2CppString , * mut u64 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8730usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`IsUseBackup()` overload"] fn is_use_backup (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a87e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SerializeBackup()` overload"] fn serialize_backup (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeserializeBackup()` overload"] fn deserialize_backup (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a8b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayerMetaData()` overload"] fn get_player_meta_data (self ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a92a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_PlayerData()` overload"] fn get_player_data (self ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a92b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_OpponentMetaData()` overload"] fn get_opponent_meta_data (self ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankedmetadata :: VersusServerRankedMetaData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a92c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_OpponentData()` overload"] fn get_opponent_data (self ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverrankeddata :: VersusServerRankedData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a92d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReplayData()` overload"] fn get_replay_data (self ,) -> crate :: app :: versusserverreplaydata :: VersusServerReplayData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverreplaydata :: VersusServerReplayData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a92e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReplayMetaData()` overload"] fn get_replay_meta_data (self ,) -> crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a92f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CasualOpponentMetaData()` overload"] fn get_casual_opponent_meta_data (self ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CasualOpponentData()` overload"] fn get_casual_opponent_data (self ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CasualPlayerData()` overload"] fn get_casual_player_data (self ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualdata :: VersusServerCasualData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CasualPlayerMetaData()` overload"] fn get_casual_player_meta_data (self ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versusservercasualmetadata :: VersusServerCasualMetaData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ReturnChapter()` overload"] fn get_return_chapter (self ,) -> crate :: app :: chapterdata :: ChapterData { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: chapterdata :: ChapterData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ReturnChapter(crate::app::chapterdata::ChapterData)` overload"] fn set_return_chapter (self , value : impl :: core :: convert :: Into < crate :: app :: chapterdata :: ChapterData >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , crate :: app :: chapterdata :: ChapterData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Result()` overload"] fn get_result (self ,) -> crate :: app :: versus :: Versus_MapResult { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_MapResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_OpponentResult()` overload"] fn get_opponent_result (self ,) -> crate :: app :: versus :: Versus_MapResult { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_MapResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSurrender()` overload"] fn get_is_surrender (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_VersusMode()` overload"] fn get_versus_mode (self ,) -> crate :: app :: versus :: Versus_Mode { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_Mode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9390usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Matching()` overload"] fn get_matching (self ,) -> crate :: app :: versus :: Versus_MatchingType { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_MatchingType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a93a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ResultError()` overload"] fn get_result_error (self ,) -> crate :: app :: versus :: Versus_Error { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_Error = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a93b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CasualMapNumber()` overload"] fn get_casual_map_number (self ,) -> i32 { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a93c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsSucceedDeserializeCasual()` overload"] fn get_is_succeed_deserialize_casual (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a93d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsSucceedDeserializeCasual(bool)` overload"] fn set_is_succeed_deserialize_casual (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a93e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsExistRankedOnServer()` overload"] fn get_is_exist_ranked_on_server (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a93f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsExistRankedOnServer(bool)` overload"] fn set_is_exist_ranked_on_server (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9400usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsUploadDifferentSaveID()` overload"] fn get_is_upload_different_save_id (self ,) -> bool { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsUploadDifferentSaveID(bool)` overload"] fn set_is_upload_different_save_id (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_History()` overload"] fn get_history (self ,) -> crate :: app :: versus :: Versus_DownloadHistory { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> crate :: app :: versus :: Versus_DownloadHistory = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26a9540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-versus")]
-impl < __T : IVersus > IVersusMethods for __T { }
-
-#[cfg(feature = "app-versus")]
-impl Versus { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_versus_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_mock_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_edit_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn can_sortie_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn can_sortie_ranked_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn save_casual_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn save_casual_units_init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn map_end_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn reset_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_abort_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_surrender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_result_report_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn map_end_versus_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn map_end_versus_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn map_end_versus_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn reset_god_pool_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn is_exits_online_node_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn map_end_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn restore_story_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn try_set_player_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_player_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn set_opponent_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_opponent_meta_data_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn set_player_rating_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn set_casual_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn set_matching_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn is_have_player_edit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn is_saved_local_edit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn is_use_server_edit_data_for_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn is_use_server_edit_data_for_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_my_map_edit_data_for_battle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn get_my_map_edit_data_for_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn get_sortie_title_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn try_get_opponent_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn is_use_backup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn serialize_backup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn deserialize_backup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn get_casual_sortie_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn get_offense_sortie_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn get_defense_sortie_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } pub fn get_player_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [48] } pub fn get_player_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [49] } pub fn get_opponent_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [50] } pub fn get_opponent_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [51] } pub fn get_replay_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [52] } pub fn get_replay_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [53] } pub fn get_casual_opponent_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [54] } pub fn get_casual_opponent_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [55] } pub fn get_casual_player_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [56] } pub fn get_casual_player_meta_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [57] } pub fn get_return_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [58] } pub fn set_return_chapter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [59] } pub fn get_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [60] } pub fn get_opponent_result_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [61] } pub fn get_is_surrender_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [62] } pub fn get_versus_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [63] } pub fn get_matching_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [64] } pub fn get_result_error_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [65] } pub fn get_casual_map_number_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [66] } pub fn get_is_succeed_deserialize_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [67] } pub fn set_is_succeed_deserialize_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [68] } pub fn get_is_exist_ranked_on_server_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [69] } pub fn set_is_exist_ranked_on_server_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [70] } pub fn get_is_upload_different_save_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [71] } pub fn set_is_upload_different_save_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [72] } pub fn get_is_force_edit_data_overwrite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [73] } pub fn set_is_force_edit_data_overwrite_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [74] } pub fn check_valid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [75] } pub fn get_history_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [76] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [77] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [78] } }
-
-#[cfg(feature = "app-versus")]
-impl Versus {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus) , :: core :: stringify ! (new) ,)) ; < Self as IVersusMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versus")]impl Versus_DownloadHistory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Versus_DownloadHistory), ::core::stringify!(new),));
+ <Self as IVersus_DownloadHistoryMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "app-versus")]
-impl Versus_VersusCheck { # [doc = "`Validate()` overload"] pub fn validate () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5fbb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ValidateCasual()` overload"] pub fn validate_casual () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5fc80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ValidateRanked()` overload"] pub fn validate_ranked () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5fc90usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ValidateSaveEdit()` overload"] pub fn validate_save_edit () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5fcc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ValidateUnits()` overload"] pub fn validate_units () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5fcf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ValidatePlayerUnits()` overload"] pub fn validate_player_units () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b601c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ValidateUnit(crate::app::unit::Unit)` overload"] pub fn validate_unit (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b604f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateParams(crate::app::unit::Unit)` overload"] pub fn validate_params (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b60550usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateSkills(crate::app::unit::Unit)` overload"] pub fn validate_skills (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b60690usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateEquipRing(crate::app::unit::Unit)` overload"] pub fn validate_equip_ring (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b60660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateJob(crate::app::unit::Unit)` overload"] pub fn validate_job (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b608b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateEquipSkill(crate::app::skilldata::SkillData)` overload"] pub fn validate_equip_skill (skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b60990usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateGodSkills(crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"] pub fn validate_god_skills (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b609a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetGrowthSkills(crate::app::godunit::GodUnit, *mutcrate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, *mutcrate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"] pub fn get_growth_skills (god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> (crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString >) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > > :: uninit () ; { let __inner : extern "C" fn (crate :: app :: godunit :: GodUnit , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b60de0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (god) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } ; (__out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`ValidateForce(u32)` overload"] pub fn validate_force (force_mask : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b602c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (force_mask) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateCount()` overload"] pub fn validate_count () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b60400usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ValidateEditMap()` overload"] pub fn validate_edit_map () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b5fe00usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CountObjects(crate::unity_engine::gameobject::GameObject, crate::app::versus::Versus_MapObjectCounter, crate::app::versus::Versus_MapObjectCounter)` overload"] pub fn count_objects (root : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , player : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_MapObjectCounter > , enemy : impl :: core :: convert :: Into < crate :: app :: versus :: Versus_MapObjectCounter >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: app :: versus :: Versus_MapObjectCounter , crate :: app :: versus :: Versus_MapObjectCounter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b61120usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: convert :: Into :: into (player) , :: core :: convert :: Into :: into (enemy) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versus")]pub trait IVersus_MapObjectCounterMethods:IVersus_MapObjectCounter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Versus_MapObjectCounter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f950usize)as*mut u8,();
+(Versus_MapObjectCounter)__receiver)}
+}
+#[doc="`Add(::unity2::Il2CppString)` overload"]fn add(self,obj_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Versus_MapObjectCounter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f9e0usize)as*mut u8,();
+(Versus_MapObjectCounter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(obj_name))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<crate::app::mapeditorcategorydata::MapEditorCategoryData,i32>{unsafe{let __receiver= <Versus_MapObjectCounter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fb30usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<crate::app::mapeditorcategorydata::MapEditorCategoryData,i32> ;
+(Versus_MapObjectCounter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versus")]
-pub trait IVersus_VersusCheckMethods : IVersus_VersusCheck { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Versus_VersusCheck as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Versus_VersusCheck , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b61310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versus")]impl<__T:IVersus_MapObjectCounter>IVersus_MapObjectCounterMethods for __T{}
 
-#[cfg(feature = "app-versus")]
-impl < __T : IVersus_VersusCheck > IVersus_VersusCheckMethods for __T { }
+#[cfg(feature="app-versus")]impl Versus_MapObjectCounter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-versus")]
-impl Versus_VersusCheck { pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn validate_casual_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn validate_ranked_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn validate_save_edit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn validate_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn validate_player_units_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn validate_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn validate_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn validate_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn validate_equip_ring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn validate_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn validate_equip_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn validate_god_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_growth_skills_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn validate_force_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn validate_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn validate_edit_map_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn count_objects_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Versus_VersusCheck as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-versus")]impl Versus_MapObjectCounter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Versus_MapObjectCounter), ::core::stringify!(new),));
+ <Self as IVersus_MapObjectCounterMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-versus")]
-impl Versus_VersusCheck {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Versus_VersusCheck) , :: core :: stringify ! (new) ,)) ; < Self as IVersus_VersusCheckMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versus")]impl Versus{#[doc="`IsValid()` overload"]pub fn is_valid()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a67a0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsVersusMode()` overload"]pub fn is_versus_mode()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a6ca0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsCasual()` overload"]pub fn is_casual()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a68b0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsRanked()` overload"]pub fn is_ranked()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a6980usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsMockBattle()` overload"]pub fn is_mock_battle()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a6bd0usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsEditMode()` overload"]pub fn is_edit_mode()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a6a50usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsReplay()` overload"]pub fn is_replay()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a6b20usize)as*mut u8,bool;
+)}
+}
+#[doc="`GetCasualSortieMax()` overload"]pub fn get_casual_sortie_max()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a90b0usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetOffenseSortieMax()` overload"]pub fn get_offense_sortie_max()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a90c0usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetDefenseSortieMax()` overload"]pub fn get_defense_sortie_max()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a91b0usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_IsForceEditDataOverwrite()` overload"]pub fn get_is_force_edit_data_overwrite()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a9430usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsForceEditDataOverwrite(bool)` overload"]pub fn set_is_force_edit_data_overwrite(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a94a0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`CheckValid()` overload"]pub fn check_valid()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a9520usize)as*mut u8,bool;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a95c0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-versus")]pub trait IVersusMethods:IVersus{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5f30usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a6740usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`CanSortieRanked(crate::app::unit::Unit)` overload"]fn can_sortie_ranked(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a6e90usize)as*mut u8,bool;
+(Versus)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`CanSortieRanked(crate::app::godunit::GodUnit)` overload"]fn can_sortie_ranked_2(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7020usize)as*mut u8,bool;
+(Versus)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`SaveCasualUnits()` overload"]fn save_casual_units(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7110usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`SaveCasualUnitsInit()` overload"]fn save_casual_units_init(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7120usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`MapEndEdit()` overload"]fn map_end_edit(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7330usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`ResetResult()` overload"]fn reset_result(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7420usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`SetAbort()` overload"]fn set_abort(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7440usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`SetSurrender()` overload"]fn set_surrender(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7450usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`SetResultReport()` overload"]fn set_result_report(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7460usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`SetError(crate::app::versus::Versus_Error)` overload"]fn set_error(self,error:impl::core::convert::Into<crate::app::versus::Versus_Error>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7470usize)as*mut u8,();
+(Versus)__receiver,(crate::app::versus::Versus_Error)::core::convert::Into::into(error))}
+}
+#[doc="`MapEndVersus()` overload"]fn map_end_versus(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7480usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`MapEndVersusCasual()` overload"]fn map_end_versus_casual(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a75d0usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`MapEndVersusRanked()` overload"]fn map_end_versus_ranked(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a75e0usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`ResetGodPoolId()` overload"]fn reset_god_pool_id(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a79a0usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`IsExitsOnlineNode()` overload"]fn is_exits_online_node(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7ae0usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`MapEndReplay()` overload"]fn map_end_replay(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7fc0usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`RestoreStoryChapter()` overload"]fn restore_story_chapter(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7340usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`TrySetPlayerMetaData(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]fn try_set_player_meta_data(self,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7fd0usize)as*mut u8,bool;
+(Versus)__receiver,(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`SetPlayerMetaData(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)` overload"]fn set_player_meta_data(self,meta_data:impl::core::convert::Into<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a80e0usize)as*mut u8,();
+(Versus)__receiver,(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`SetOpponentMetaData(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]fn set_opponent_meta_data(self,meta_data:impl::core::convert::Into<crate::app::versusserverrankedmetadata::VersusServerRankedMetaData>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a80f0usize)as*mut u8,();
+(Versus)__receiver,(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`SetOpponentMetaData(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)` overload"]fn set_opponent_meta_data_2(self,meta_data:impl::core::convert::Into<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a8100usize)as*mut u8,();
+(Versus)__receiver,(crate::app::versusservercasualmetadata::VersusServerCasualMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`SetPlayerRatingList(crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>)` overload"]fn set_player_rating_list(self,rating_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> >)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a8110usize)as*mut u8,();
+(Versus)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData>)::core::convert::Into::into(rating_list))}
+}
+#[doc="`SetMode(crate::app::versus::Versus_Mode)` overload"]fn set_mode(self,mode:impl::core::convert::Into<crate::app::versus::Versus_Mode>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a8180usize)as*mut u8,();
+(Versus)__receiver,(crate::app::versus::Versus_Mode)::core::convert::Into::into(mode))}
+}
+#[doc="`SetCasualMap(i32)` overload"]fn set_casual_map(self,map_number:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a8190usize)as*mut u8,();
+(Versus)__receiver,(i32)::core::convert::Into::into(map_number))}
+}
+#[doc="`SetMatchingType(crate::app::versus::Versus_MatchingType)` overload"]fn set_matching_type(self,r#type:impl::core::convert::Into<crate::app::versus::Versus_MatchingType>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a81a0usize)as*mut u8,();
+(Versus)__receiver,(crate::app::versus::Versus_MatchingType)::core::convert::Into::into(r#type))}
+}
+#[doc="`IsHavePlayerEditData()` overload"]fn is_have_player_edit_data(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a81b0usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`IsSavedLocalEditData()` overload"]fn is_saved_local_edit_data(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a8250usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`IsUseServerEditDataForBattle()` overload"]fn is_use_server_edit_data_for_battle(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a82e0usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`IsUseServerEditDataForEdit()` overload"]fn is_use_server_edit_data_for_edit(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a83b0usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`GetMyMapEditDataForBattle()` overload"]fn get_my_map_edit_data_for_battle(self,)->crate::app::mapeditdata::MapEditData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7010usize)as*mut u8,crate::app::mapeditdata::MapEditData;
+(Versus)__receiver)}
+}
+#[doc="`GetMyMapEditDataForEdit()` overload"]fn get_my_map_edit_data_for_edit(self,)->crate::app::mapeditdata::MapEditData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a84b0usize)as*mut u8,crate::app::mapeditdata::MapEditData;
+(Versus)__receiver)}
+}
+#[doc="`GetSortieTitle()` overload"]fn get_sortie_title(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a8550usize)as*mut u8, ::unity2::Il2CppString;
+(Versus)__receiver)}
+}
+#[doc="`TryGetOpponentInfo(*mut::unity2::Il2CppString, *mutu64)` overload"]fn try_get_opponent_info(self,)->(bool, ::unity2::Il2CppString,u64){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u64> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x26a8730usize)as*mut u8,bool;
+(Versus)__receiver,(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut u64)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`IsUseBackup()` overload"]fn is_use_backup(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a87e0usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`SerializeBackup()` overload"]fn serialize_backup(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a8850usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`DeserializeBackup()` overload"]fn deserialize_backup(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a8b00usize)as*mut u8,();
+(Versus)__receiver)}
+}
+#[doc="`get_PlayerMetaData()` overload"]fn get_player_meta_data(self,)->crate::app::versusserverrankedmetadata::VersusServerRankedMetaData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a92a0usize)as*mut u8,crate::app::versusserverrankedmetadata::VersusServerRankedMetaData;
+(Versus)__receiver)}
+}
+#[doc="`get_PlayerData()` overload"]fn get_player_data(self,)->crate::app::versusserverrankeddata::VersusServerRankedData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a92b0usize)as*mut u8,crate::app::versusserverrankeddata::VersusServerRankedData;
+(Versus)__receiver)}
+}
+#[doc="`get_OpponentMetaData()` overload"]fn get_opponent_meta_data(self,)->crate::app::versusserverrankedmetadata::VersusServerRankedMetaData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a92c0usize)as*mut u8,crate::app::versusserverrankedmetadata::VersusServerRankedMetaData;
+(Versus)__receiver)}
+}
+#[doc="`get_OpponentData()` overload"]fn get_opponent_data(self,)->crate::app::versusserverrankeddata::VersusServerRankedData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a92d0usize)as*mut u8,crate::app::versusserverrankeddata::VersusServerRankedData;
+(Versus)__receiver)}
+}
+#[doc="`get_ReplayData()` overload"]fn get_replay_data(self,)->crate::app::versusserverreplaydata::VersusServerReplayData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a92e0usize)as*mut u8,crate::app::versusserverreplaydata::VersusServerReplayData;
+(Versus)__receiver)}
+}
+#[doc="`get_ReplayMetaData()` overload"]fn get_replay_meta_data(self,)->crate::app::versusserverreplaymetadata::VersusServerReplayMetaData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a92f0usize)as*mut u8,crate::app::versusserverreplaymetadata::VersusServerReplayMetaData;
+(Versus)__receiver)}
+}
+#[doc="`get_CasualOpponentMetaData()` overload"]fn get_casual_opponent_meta_data(self,)->crate::app::versusservercasualmetadata::VersusServerCasualMetaData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9300usize)as*mut u8,crate::app::versusservercasualmetadata::VersusServerCasualMetaData;
+(Versus)__receiver)}
+}
+#[doc="`get_CasualOpponentData()` overload"]fn get_casual_opponent_data(self,)->crate::app::versusservercasualdata::VersusServerCasualData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9310usize)as*mut u8,crate::app::versusservercasualdata::VersusServerCasualData;
+(Versus)__receiver)}
+}
+#[doc="`get_CasualPlayerData()` overload"]fn get_casual_player_data(self,)->crate::app::versusservercasualdata::VersusServerCasualData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9320usize)as*mut u8,crate::app::versusservercasualdata::VersusServerCasualData;
+(Versus)__receiver)}
+}
+#[doc="`get_CasualPlayerMetaData()` overload"]fn get_casual_player_meta_data(self,)->crate::app::versusservercasualmetadata::VersusServerCasualMetaData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9330usize)as*mut u8,crate::app::versusservercasualmetadata::VersusServerCasualMetaData;
+(Versus)__receiver)}
+}
+#[doc="`get_ReturnChapter()` overload"]fn get_return_chapter(self,)->crate::app::chapterdata::ChapterData{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9340usize)as*mut u8,crate::app::chapterdata::ChapterData;
+(Versus)__receiver)}
+}
+#[doc="`set_ReturnChapter(crate::app::chapterdata::ChapterData)` overload"]fn set_return_chapter(self,value:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9350usize)as*mut u8,();
+(Versus)__receiver,(crate::app::chapterdata::ChapterData)::core::convert::Into::into(value))}
+}
+#[doc="`get_Result()` overload"]fn get_result(self,)->crate::app::versus::Versus_MapResult{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9360usize)as*mut u8,crate::app::versus::Versus_MapResult;
+(Versus)__receiver)}
+}
+#[doc="`get_OpponentResult()` overload"]fn get_opponent_result(self,)->crate::app::versus::Versus_MapResult{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9370usize)as*mut u8,crate::app::versus::Versus_MapResult;
+(Versus)__receiver)}
+}
+#[doc="`get_IsSurrender()` overload"]fn get_is_surrender(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9380usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`get_VersusMode()` overload"]fn get_versus_mode(self,)->crate::app::versus::Versus_Mode{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9390usize)as*mut u8,crate::app::versus::Versus_Mode;
+(Versus)__receiver)}
+}
+#[doc="`get_Matching()` overload"]fn get_matching(self,)->crate::app::versus::Versus_MatchingType{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a93a0usize)as*mut u8,crate::app::versus::Versus_MatchingType;
+(Versus)__receiver)}
+}
+#[doc="`get_ResultError()` overload"]fn get_result_error(self,)->crate::app::versus::Versus_Error{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a93b0usize)as*mut u8,crate::app::versus::Versus_Error;
+(Versus)__receiver)}
+}
+#[doc="`get_CasualMapNumber()` overload"]fn get_casual_map_number(self,)->i32{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a93c0usize)as*mut u8,i32;
+(Versus)__receiver)}
+}
+#[doc="`get_IsSucceedDeserializeCasual()` overload"]fn get_is_succeed_deserialize_casual(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a93d0usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`set_IsSucceedDeserializeCasual(bool)` overload"]fn set_is_succeed_deserialize_casual(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a93e0usize)as*mut u8,();
+(Versus)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsExistRankedOnServer()` overload"]fn get_is_exist_ranked_on_server(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a93f0usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`set_IsExistRankedOnServer(bool)` overload"]fn set_is_exist_ranked_on_server(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9400usize)as*mut u8,();
+(Versus)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsUploadDifferentSaveID()` overload"]fn get_is_upload_different_save_id(self,)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9410usize)as*mut u8,bool;
+(Versus)__receiver)}
+}
+#[doc="`set_IsUploadDifferentSaveID(bool)` overload"]fn set_is_upload_different_save_id(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9420usize)as*mut u8,();
+(Versus)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_History()` overload"]fn get_history(self,)->crate::app::versus::Versus_DownloadHistory{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9530usize)as*mut u8,crate::app::versus::Versus_DownloadHistory;
+(Versus)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26a9540usize)as*mut u8,();
+(Versus)__receiver)}
+}
+}
+
+#[cfg(feature="app-versus")]impl<__T:IVersus>IVersusMethods for __T{}
+
+#[cfg(feature="app-versus")]impl Versus{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_versus_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_casual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_ranked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_mock_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_edit_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn can_sortie_ranked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn can_sortie_ranked_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn save_casual_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn save_casual_units_init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn map_end_edit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn reset_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_abort_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_surrender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_result_report_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn map_end_versus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn map_end_versus_casual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn map_end_versus_ranked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn reset_god_pool_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn is_exits_online_node_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn map_end_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn restore_story_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn try_set_player_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_player_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_opponent_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_opponent_meta_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_player_rating_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn set_casual_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn set_matching_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn is_have_player_edit_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn is_saved_local_edit_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn is_use_server_edit_data_for_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn is_use_server_edit_data_for_edit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_my_map_edit_data_for_battle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_my_map_edit_data_for_edit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_sortie_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn try_get_opponent_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn is_use_backup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn serialize_backup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn deserialize_backup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_casual_sortie_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_offense_sortie_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn get_defense_sortie_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_player_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn get_player_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn get_opponent_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn get_opponent_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn get_replay_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn get_replay_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn get_casual_opponent_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn get_casual_opponent_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn get_casual_player_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn get_casual_player_meta_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn get_return_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn set_return_chapter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn get_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn get_opponent_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn get_is_surrender_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn get_versus_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn get_matching_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn get_result_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn get_casual_map_number_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn get_is_succeed_deserialize_casual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn set_is_succeed_deserialize_casual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn get_is_exist_ranked_on_server_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn set_is_exist_ranked_on_server_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn get_is_upload_different_save_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn set_is_upload_different_save_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn get_is_force_edit_data_overwrite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn set_is_force_edit_data_overwrite_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn check_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn get_history_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[77]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[78]}
+}
+
+#[cfg(feature="app-versus")]impl Versus{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Versus), ::core::stringify!(new),));
+ <Self as IVersusMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versus")]pub trait IVersus_DownloadHistory_CheckDataMethods:IVersus_DownloadHistory_CheckData{#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory_CheckData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6370usize)as*mut u8,();
+(Versus_DownloadHistory_CheckData)__receiver)}
+}
+#[doc="`IsDownloaded()` overload"]fn is_downloaded(self,)->bool{unsafe{let __receiver= <Versus_DownloadHistory_CheckData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6380usize)as*mut u8,bool;
+(Versus_DownloadHistory_CheckData)__receiver)}
+}
+#[doc="`GetElapsedTime()` overload"]fn get_elapsed_time(self,)->i64{unsafe{let __receiver= <Versus_DownloadHistory_CheckData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6480usize)as*mut u8,i64;
+(Versus_DownloadHistory_CheckData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory_CheckData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6510usize)as*mut u8,();
+(Versus_DownloadHistory_CheckData)__receiver)}
+}
+}
+
+#[cfg(feature="app-versus")]impl<__T:IVersus_DownloadHistory_CheckData>IVersus_DownloadHistory_CheckDataMethods for __T{}
+
+#[cfg(feature="app-versus")]impl Versus_DownloadHistory_CheckData{pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_downloaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_elapsed_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-versus")]impl Versus_DownloadHistory_CheckData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Versus_DownloadHistory_CheckData), ::core::stringify!(new),));
+ <Self as IVersus_DownloadHistory_CheckDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versus")]impl Versus_VersusCheck{#[doc="`Validate()` overload"]pub fn validate()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fbb0usize)as*mut u8,bool;
+)}
+}
+#[doc="`ValidateCasual()` overload"]pub fn validate_casual()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fc80usize)as*mut u8,bool;
+)}
+}
+#[doc="`ValidateRanked()` overload"]pub fn validate_ranked()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fc90usize)as*mut u8,bool;
+)}
+}
+#[doc="`ValidateSaveEdit()` overload"]pub fn validate_save_edit()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fcc0usize)as*mut u8,bool;
+)}
+}
+#[doc="`ValidateUnits()` overload"]pub fn validate_units()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fcf0usize)as*mut u8,bool;
+)}
+}
+#[doc="`ValidatePlayerUnits()` overload"]pub fn validate_player_units()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b601c0usize)as*mut u8,bool;
+)}
+}
+#[doc="`ValidateUnit(crate::app::unit::Unit)` overload"]pub fn validate_unit(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b604f0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ValidateParams(crate::app::unit::Unit)` overload"]pub fn validate_params(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b60550usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ValidateSkills(crate::app::unit::Unit)` overload"]pub fn validate_skills(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b60690usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ValidateEquipRing(crate::app::unit::Unit)` overload"]pub fn validate_equip_ring(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b60660usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ValidateJob(crate::app::unit::Unit)` overload"]pub fn validate_job(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b608b0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`ValidateEquipSkill(crate::app::skilldata::SkillData)` overload"]pub fn validate_equip_skill(skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b60990usize)as*mut u8,bool;
+(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`ValidateGodSkills(crate::app::godunit::GodUnit, crate::app::unit::Unit)` overload"]pub fn validate_god_skills(god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b609a0usize)as*mut u8,bool;
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetGrowthSkills(crate::app::godunit::GodUnit, *mutcrate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, *mutcrate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>)` overload"]pub fn get_growth_skills(god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> > ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> > ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b60de0usize)as*mut u8,();
+(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(*mut crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)__out_0.as_mut_ptr(),(*mut crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`ValidateForce(u32)` overload"]pub fn validate_force(force_mask:impl::core::convert::Into<u32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b602c0usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(force_mask))}
+}
+#[doc="`ValidateCount()` overload"]pub fn validate_count()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b60400usize)as*mut u8,bool;
+)}
+}
+#[doc="`ValidateEditMap()` overload"]pub fn validate_edit_map()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fe00usize)as*mut u8,bool;
+)}
+}
+#[doc="`CountObjects(crate::unity_engine::gameobject::GameObject, crate::app::versus::Versus_MapObjectCounter, crate::app::versus::Versus_MapObjectCounter)` overload"]pub fn count_objects(root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,player:impl::core::convert::Into<crate::app::versus::Versus_MapObjectCounter> ,enemy:impl::core::convert::Into<crate::app::versus::Versus_MapObjectCounter>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b61120usize)as*mut u8,();
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root),(crate::app::versus::Versus_MapObjectCounter)::core::convert::Into::into(player),(crate::app::versus::Versus_MapObjectCounter)::core::convert::Into::into(enemy))}
+}
+}
+
+#[cfg(feature="app-versus")]pub trait IVersus_VersusCheckMethods:IVersus_VersusCheck{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Versus_VersusCheck as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b61310usize)as*mut u8,();
+(Versus_VersusCheck)__receiver)}
+}
+}
+
+#[cfg(feature="app-versus")]impl<__T:IVersus_VersusCheck>IVersus_VersusCheckMethods for __T{}
+
+#[cfg(feature="app-versus")]impl Versus_VersusCheck{pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn validate_casual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn validate_ranked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn validate_save_edit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn validate_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn validate_player_units_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn validate_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn validate_params_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn validate_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn validate_equip_ring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn validate_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn validate_equip_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn validate_god_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_growth_skills_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn validate_force_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn validate_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn validate_edit_map_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn count_objects_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="app-versus")]impl Versus_VersusCheck{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Versus_VersusCheck), ::core::stringify!(new),));
+ <Self as IVersus_VersusCheckMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versus")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Versus_Error;
     pub use super::Versus_DownloadHistory;
     pub use super::IVersus_DownloadHistory;
     pub use super::IVersus_DownloadHistoryMethods;
-    pub use super::Versus_MapResult;
-    pub use super::Versus_Mode;
-    pub use super::Versus_DownloadHistory_CheckData;
-    pub use super::IVersus_DownloadHistory_CheckData;
-    pub use super::IVersus_DownloadHistory_CheckDataMethods;
     pub use super::Versus_MapObjectCounter;
     pub use super::IVersus_MapObjectCounter;
     pub use super::IVersus_MapObjectCounterMethods;
     pub use super::Versus_MatchingType;
-    pub use super::Versus_Error;
+    pub use super::Versus_Mode;
     pub use super::Versus;
     pub use super::IVersus;
     pub use super::IVersusMethods;
+    pub use super::Versus_MapResult;
+    pub use super::Versus_DownloadHistory_CheckData;
+    pub use super::IVersus_DownloadHistory_CheckData;
+    pub use super::IVersus_DownloadHistory_CheckDataMethods;
     pub use super::Versus_VersusCheck;
     pub use super::IVersus_VersusCheck;
     pub use super::IVersus_VersusCheckMethods;

@@ -4,36 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellemptymenuitem/ShopSellEmptyMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ShopSellEmptyMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ShopSellEmptyMenuItem {
-# [offset (104)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: shopsellmenu :: ShopSellMenu_SelectEventHandler ,
-# [offset (112)] # [rename (name = "m_ChangeUnitToPrevEventHandler")] pub m_change_unit_to_prev_event_handler : crate :: app :: shopsellmenu :: ShopSellMenu_ChangeUnitToPrevEventHandler ,
-# [offset (120)] # [rename (name = "m_ChangeUnitToNextEventHandler")] pub m_change_unit_to_next_event_handler : crate :: app :: shopsellmenu :: ShopSellMenu_ChangeUnitToNextEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellemptymenuitem/ShopSellEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="ShopSellEmptyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ShopSellEmptyMenuItem{#[offset(104)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::shopsellmenu::ShopSellMenu_SelectEventHandler, #[offset(112)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToPrevEventHandler, #[offset(120)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler,}
 
 }
 
 #[cfg(feature = "app-shopsellemptymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-shopsellemptymenuitem")]
-pub trait IShopSellEmptyMenuItemMethods : IShopSellEmptyMenuItem { # [doc = "`.ctor(crate::app::shopsellmenu::ShopSellMenu_SelectEventHandler, crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToPrevEventHandler, crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler)` overload"] fn ctor (self , select_event_handler : impl :: core :: convert :: Into < crate :: app :: shopsellmenu :: ShopSellMenu_SelectEventHandler > , change_unit_to_prev_event_handler : impl :: core :: convert :: Into < crate :: app :: shopsellmenu :: ShopSellMenu_ChangeUnitToPrevEventHandler > , change_unit_to_next_event_handler : impl :: core :: convert :: Into < crate :: app :: shopsellmenu :: ShopSellMenu_ChangeUnitToNextEventHandler >) -> () { unsafe { let __receiver = < ShopSellEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellEmptyMenuItem , crate :: app :: shopsellmenu :: ShopSellMenu_SelectEventHandler , crate :: app :: shopsellmenu :: ShopSellMenu_ChangeUnitToPrevEventHandler , crate :: app :: shopsellmenu :: ShopSellMenu_ChangeUnitToNextEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b2340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (change_unit_to_prev_event_handler) , :: core :: convert :: Into :: into (change_unit_to_next_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < ShopSellEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b2420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < ShopSellEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b2430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ShopSellEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b2470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CustomCall()` overload"] fn custom_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ShopSellEmptyMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ShopSellEmptyMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21b2480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-shopsellemptymenuitem")]pub trait IShopSellEmptyMenuItemMethods:IShopSellEmptyMenuItem{#[doc="`.ctor(crate::app::shopsellmenu::ShopSellMenu_SelectEventHandler, crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToPrevEventHandler, crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler)` overload"]fn ctor(self,select_event_handler:impl::core::convert::Into<crate::app::shopsellmenu::ShopSellMenu_SelectEventHandler> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToPrevEventHandler> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler>)->(){unsafe{let __receiver= <ShopSellEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b2340usize)as*mut u8,();
+(ShopSellEmptyMenuItem)__receiver,(crate::app::shopsellmenu::ShopSellMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToPrevEventHandler)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler)::core::convert::Into::into(change_unit_to_next_event_handler))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <ShopSellEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b2420usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(ShopSellEmptyMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ShopSellEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b2430usize)as*mut u8,();
+(ShopSellEmptyMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopSellEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b2470usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ShopSellEmptyMenuItem)__receiver)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopSellEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21b2480usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ShopSellEmptyMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-shopsellemptymenuitem")]
-impl < __T : IShopSellEmptyMenuItem > IShopSellEmptyMenuItemMethods for __T { }
+#[cfg(feature="app-shopsellemptymenuitem")]impl<__T:IShopSellEmptyMenuItem>IShopSellEmptyMenuItemMethods for __T{}
 
-#[cfg(feature = "app-shopsellemptymenuitem")]
-impl ShopSellEmptyMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn custom_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShopSellEmptyMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-shopsellemptymenuitem")]impl ShopSellEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-shopsellemptymenuitem")]
-impl ShopSellEmptyMenuItem {
-# [doc = "`.ctor(crate::app::shopsellmenu::ShopSellMenu_SelectEventHandler, crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToPrevEventHandler, crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler)` — overload selector"] pub fn new (select_event_handler : crate :: app :: shopsellmenu :: ShopSellMenu_SelectEventHandler , change_unit_to_prev_event_handler : crate :: app :: shopsellmenu :: ShopSellMenu_ChangeUnitToPrevEventHandler , change_unit_to_next_event_handler : crate :: app :: shopsellmenu :: ShopSellMenu_ChangeUnitToNextEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ShopSellEmptyMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IShopSellEmptyMenuItemMethods > :: ctor (this , select_event_handler , change_unit_to_prev_event_handler , change_unit_to_next_event_handler) ; this }
+#[cfg(feature="app-shopsellemptymenuitem")]impl ShopSellEmptyMenuItem{#[doc="`.ctor(crate::app::shopsellmenu::ShopSellMenu_SelectEventHandler, crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToPrevEventHandler, crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler)` — overload selector"]pub fn new(select_event_handler:crate::app::shopsellmenu::ShopSellMenu_SelectEventHandler,change_unit_to_prev_event_handler:crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToPrevEventHandler,change_unit_to_next_event_handler:crate::app::shopsellmenu::ShopSellMenu_ChangeUnitToNextEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopSellEmptyMenuItem), ::core::stringify!(new),));
+ <Self as IShopSellEmptyMenuItemMethods> ::ctor(this,select_event_handler,change_unit_to_prev_event_handler,change_unit_to_next_event_handler);
+this}
 }
 
 #[cfg(feature = "app-shopsellemptymenuitem")]

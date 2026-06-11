@@ -4,40 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: vfx :: visualeffectobject :: { IVisualEffectObject , VisualEffectObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::vfx::visualeffectobject::{IVisualEffectObject,VisualEffectObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/visualeffectasset/VisualEffectAsset.md"))] # [:: unity2 :: class (namespace = "UnityEngine.VFX" , name = "VisualEffectAsset")] # [parent (crate :: unity_engine :: vfx :: visualeffectobject :: VisualEffectObject)] pub struct VisualEffectAsset {
-# [static_field] # [rename (name = "PlayEventID")] pub play_event_id : i32 ,
-# [static_field] # [rename (name = "StopEventID")] pub stop_event_id : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vfx/visualeffectasset/VisualEffectAsset.md"))]#[::unity2::class(namespace="UnityEngine.VFX",name="VisualEffectAsset")]#[parent(crate::unity_engine::vfx::visualeffectobject::VisualEffectObject)]pub struct VisualEffectAsset{#[static_field]#[rename(name="PlayEventID")]pub play_event_id:i32, #[static_field]#[rename(name="StopEventID")]pub stop_event_id:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-vfx-visualeffectasset-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-vfx-visualeffectasset")]
-impl VisualEffectAsset { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44f80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-visualeffectasset")]impl VisualEffectAsset{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f44f80usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-visualeffectasset")]
-pub trait IVisualEffectAssetMethods : IVisualEffectAsset { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VisualEffectAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VisualEffectAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44ea0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-vfx-visualeffectasset")]pub trait IVisualEffectAssetMethods:IVisualEffectAsset{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VisualEffectAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44ea0usize)as*mut u8,();
+(VisualEffectAsset)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-vfx-visualeffectasset")]
-impl < __T : IVisualEffectAsset > IVisualEffectAssetMethods for __T { }
+#[cfg(feature="unity_engine-vfx-visualeffectasset")]impl<__T:IVisualEffectAsset>IVisualEffectAssetMethods for __T{}
 
-#[cfg(feature = "unity_engine-vfx-visualeffectasset")]
-impl VisualEffectAsset { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisualEffectAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VisualEffectAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-vfx-visualeffectasset")]impl VisualEffectAsset{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-vfx-visualeffectasset")]
-impl VisualEffectAsset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VisualEffectAsset) , :: core :: stringify ! (new) ,)) ; < Self as IVisualEffectAssetMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-vfx-visualeffectasset")]impl VisualEffectAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VisualEffectAsset), ::core::stringify!(new),));
+ <Self as IVisualEffectAssetMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-vfx-visualeffectasset")]

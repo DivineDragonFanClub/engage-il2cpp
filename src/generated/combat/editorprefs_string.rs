@@ -4,33 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/editorprefs_string/EditorPrefs_String.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "EditorPrefs_String")] # [parent (crate :: system :: object :: Object)] pub struct EditorPrefs_String {
-# [offset (16)] # [rename (name = "key")] pub key : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "defaultValue")] pub default_value : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/editorprefs_string/EditorPrefs_String.md"))]#[::unity2::class(namespace="Combat",name="EditorPrefs_String")]#[parent(crate::system::object::Object)]pub struct EditorPrefs_String{#[offset(16)]#[rename(name="key")]pub key: ::unity2::Il2CppString, #[offset(24)]#[rename(name="defaultValue")]pub default_value: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "combat-editorprefs_string-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-editorprefs_string")]
-pub trait IEditorPrefs_StringMethods : IEditorPrefs_String { # [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn ctor (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , dv : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EditorPrefs_String as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EditorPrefs_String , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d6cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (dv) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] fn get_value (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EditorPrefs_String as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EditorPrefs_String , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d6d20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Value(::unity2::Il2CppString)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EditorPrefs_String as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EditorPrefs_String , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d6d30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-editorprefs_string")]pub trait IEditorPrefs_StringMethods:IEditorPrefs_String{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,dv:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EditorPrefs_String as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d6cd0usize)as*mut u8,();
+(EditorPrefs_String)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(dv))}
+}
+#[doc="`get_Value()` overload"]fn get_value(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EditorPrefs_String as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d6d20usize)as*mut u8, ::unity2::Il2CppString;
+(EditorPrefs_String)__receiver)}
+}
+#[doc="`set_Value(::unity2::Il2CppString)` overload"]fn set_value(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EditorPrefs_String as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d6d30usize)as*mut u8,();
+(EditorPrefs_String)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "combat-editorprefs_string")]
-impl < __T : IEditorPrefs_String > IEditorPrefs_StringMethods for __T { }
+#[cfg(feature="combat-editorprefs_string")]impl<__T:IEditorPrefs_String>IEditorPrefs_StringMethods for __T{}
 
-#[cfg(feature = "combat-editorprefs_string")]
-impl EditorPrefs_String { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EditorPrefs_String as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EditorPrefs_String as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EditorPrefs_String as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="combat-editorprefs_string")]impl EditorPrefs_String{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "combat-editorprefs_string")]
-impl EditorPrefs_String {
-# [doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"] pub fn new (name : :: unity2 :: Il2CppString , dv : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EditorPrefs_String) , :: core :: stringify ! (new) ,)) ; < Self as IEditorPrefs_StringMethods > :: ctor (this , name , dv) ; this }
+#[cfg(feature="combat-editorprefs_string")]impl EditorPrefs_String{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,dv: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EditorPrefs_String), ::core::stringify!(new),));
+ <Self as IEditorPrefs_StringMethods> ::ctor(this,name,dv);
+this}
 }
 
 #[cfg(feature = "combat-editorprefs_string")]

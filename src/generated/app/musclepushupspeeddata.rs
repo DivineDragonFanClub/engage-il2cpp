@@ -4,39 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclepushupspeeddata/MusclePushUpSpeedData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MusclePushUpSpeedData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: musclepushupspeeddata :: MusclePushUpSpeedData >)] pub struct MusclePushUpSpeedData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclepushupspeeddata/MusclePushUpSpeedData.md"))]#[::unity2::class(namespace="App",name="MusclePushUpSpeedData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>)]pub struct MusclePushUpSpeedData{}
 
 }
 
 #[cfg(feature = "app-musclepushupspeeddata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-musclepushupspeeddata")]
-impl MusclePushUpSpeedData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a530usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetSpeedList(i32, *mutcrate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>)` overload"] pub fn get_speed_list (level : impl :: core :: convert :: Into < i32 >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: musclepushupspeeddata :: MusclePushUpSpeedData > { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: musclepushupspeeddata :: MusclePushUpSpeedData > > :: uninit () ; { let __inner : extern "C" fn (i32 , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: musclepushupspeeddata :: MusclePushUpSpeedData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a5f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="app-musclepushupspeeddata")]impl MusclePushUpSpeedData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x278a530usize)as*mut u8,();
+)}
+}
+#[doc="`GetSpeedList(i32, *mutcrate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>)` overload"]pub fn get_speed_list(level:impl::core::convert::Into<i32>)->crate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData> > ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a5f0usize)as*mut u8,();
+(i32)::core::convert::Into::into(level),(*mut crate::system::collections::generic::list_1::List_1<crate::app::musclepushupspeeddata::MusclePushUpSpeedData>)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "app-musclepushupspeeddata")]
-pub trait IMusclePushUpSpeedDataMethods : IMusclePushUpSpeedData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> i32 { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level(i32)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SpeedMin()` overload"] fn get_speed_min (self ,) -> f32 { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SpeedMin(f32)` overload"] fn set_speed_min (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SpeedMax()` overload"] fn get_speed_max (self ,) -> f32 { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SpeedMax(f32)` overload"] fn set_speed_max (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LevelUpCount()` overload"] fn get_level_up_count (self ,) -> i32 { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LevelUpCount(i32)` overload"] fn set_level_up_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a4a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MusclePushUpSpeedData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MusclePushUpSpeedData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x278a5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclepushupspeeddata")]pub trait IMusclePushUpSpeedDataMethods:IMusclePushUpSpeedData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a410usize)as*mut u8, ::unity2::Il2CppString;
+(MusclePushUpSpeedData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a420usize)as*mut u8,();
+(MusclePushUpSpeedData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->i32{unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a430usize)as*mut u8,i32;
+(MusclePushUpSpeedData)__receiver)}
+}
+#[doc="`set_Level(i32)` overload"]fn set_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a440usize)as*mut u8,();
+(MusclePushUpSpeedData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SpeedMin()` overload"]fn get_speed_min(self,)->f32{unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a450usize)as*mut u8,f32;
+(MusclePushUpSpeedData)__receiver)}
+}
+#[doc="`set_SpeedMin(f32)` overload"]fn set_speed_min(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a460usize)as*mut u8,();
+(MusclePushUpSpeedData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SpeedMax()` overload"]fn get_speed_max(self,)->f32{unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a470usize)as*mut u8,f32;
+(MusclePushUpSpeedData)__receiver)}
+}
+#[doc="`set_SpeedMax(f32)` overload"]fn set_speed_max(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a480usize)as*mut u8,();
+(MusclePushUpSpeedData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_LevelUpCount()` overload"]fn get_level_up_count(self,)->i32{unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a490usize)as*mut u8,i32;
+(MusclePushUpSpeedData)__receiver)}
+}
+#[doc="`set_LevelUpCount(i32)` overload"]fn set_level_up_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a4a0usize)as*mut u8,();
+(MusclePushUpSpeedData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a4b0usize)as*mut u8,();
+(MusclePushUpSpeedData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MusclePushUpSpeedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x278a5e0usize)as*mut u8,();
+(MusclePushUpSpeedData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-musclepushupspeeddata")]
-impl < __T : IMusclePushUpSpeedData > IMusclePushUpSpeedDataMethods for __T { }
+#[cfg(feature="app-musclepushupspeeddata")]impl<__T:IMusclePushUpSpeedData>IMusclePushUpSpeedDataMethods for __T{}
 
-#[cfg(feature = "app-musclepushupspeeddata")]
-impl MusclePushUpSpeedData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_speed_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_speed_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_speed_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_speed_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_level_up_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_level_up_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_speed_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MusclePushUpSpeedData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-musclepushupspeeddata")]impl MusclePushUpSpeedData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_speed_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_speed_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_speed_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_speed_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_level_up_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_level_up_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_speed_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-musclepushupspeeddata")]
-impl MusclePushUpSpeedData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MusclePushUpSpeedData) , :: core :: stringify ! (new) ,)) ; < Self as IMusclePushUpSpeedDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-musclepushupspeeddata")]impl MusclePushUpSpeedData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MusclePushUpSpeedData), ::core::stringify!(new),));
+ <Self as IMusclePushUpSpeedDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-musclepushupspeeddata")]

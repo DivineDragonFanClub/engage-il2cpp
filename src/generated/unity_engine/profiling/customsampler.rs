@@ -4,39 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: profiling :: sampler :: { ISampler , Sampler }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::profiling::sampler::{ISampler,Sampler}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/customsampler/CustomSampler.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Profiling" , name = "CustomSampler")] # [parent (crate :: unity_engine :: profiling :: sampler :: Sampler)] pub struct CustomSampler {
-# [static_field] # [rename (name = "s_InvalidCustomSampler")] pub s_invalid_custom_sampler : crate :: unity_engine :: profiling :: customsampler :: CustomSampler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/profiling/customsampler/CustomSampler.md"))]#[::unity2::class(namespace="UnityEngine.Profiling",name="CustomSampler")]#[parent(crate::unity_engine::profiling::sampler::Sampler)]pub struct CustomSampler{#[static_field]#[rename(name="s_InvalidCustomSampler")]pub s_invalid_custom_sampler:crate::unity_engine::profiling::customsampler::CustomSampler,}
 
 }
 
 #[cfg(feature = "unity_engine-profiling-customsampler-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-profiling-customsampler")]
-impl CustomSampler { # [doc = "`Create(::unity2::Il2CppString, bool)` overload"] pub fn create (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , collect_gpu_data : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: profiling :: customsampler :: CustomSampler { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: profiling :: customsampler :: CustomSampler = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a220usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (collect_gpu_data) , :: core :: option :: Option :: None) } } } # [doc = "`CreateInternal(::unity2::Il2CppString, bool)` overload"] pub fn create_internal (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , collect_gpu_data : impl :: core :: convert :: Into < bool >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a370usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (collect_gpu_data) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a3c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-profiling-customsampler")]impl CustomSampler{#[doc="`Create(::unity2::Il2CppString, bool)` overload"]pub fn create(name:impl::core::convert::Into< ::unity2::Il2CppString> ,collect_gpu_data:impl::core::convert::Into<bool>)->crate::unity_engine::profiling::customsampler::CustomSampler{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a220usize)as*mut u8,crate::unity_engine::profiling::customsampler::CustomSampler;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(collect_gpu_data))}
+}
+#[doc="`CreateInternal(::unity2::Il2CppString, bool)` overload"]pub fn create_internal(name:impl::core::convert::Into< ::unity2::Il2CppString> ,collect_gpu_data:impl::core::convert::Into<bool>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a370usize)as*mut u8, ::unity2::IntPtr;
+(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(collect_gpu_data))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a3c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-profiling-customsampler")]
-pub trait ICustomSamplerMethods : ICustomSampler { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CustomSampler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomSampler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::IntPtr)` overload"] fn ctor_2 (self , ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < CustomSampler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomSampler , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a1a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (ptr) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-profiling-customsampler")]pub trait ICustomSamplerMethods:ICustomSampler{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomSampler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a130usize)as*mut u8,();
+(CustomSampler)__receiver)}
+}
+#[doc="`.ctor(::unity2::IntPtr)` overload"]fn ctor_2(self,ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <CustomSampler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a1a0usize)as*mut u8,();
+(CustomSampler)__receiver,(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+}
+}
 
-#[cfg(feature = "unity_engine-profiling-customsampler")]
-impl < __T : ICustomSampler > ICustomSamplerMethods for __T { }
+#[cfg(feature="unity_engine-profiling-customsampler")]impl<__T:ICustomSampler>ICustomSamplerMethods for __T{}
 
-#[cfg(feature = "unity_engine-profiling-customsampler")]
-impl CustomSampler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomSampler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-profiling-customsampler")]impl CustomSampler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-profiling-customsampler")]
-impl CustomSampler {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomSampler) , :: core :: stringify ! (new) ,)) ; < Self as ICustomSamplerMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::IntPtr)` — overload selector"] pub fn new_2 (ptr : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomSampler) , :: core :: stringify ! (new_2) ,)) ; < Self as ICustomSamplerMethods > :: ctor_2 (this , ptr) ; this }
+#[cfg(feature="unity_engine-profiling-customsampler")]impl CustomSampler{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomSampler), ::core::stringify!(new),));
+ <Self as ICustomSamplerMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::IntPtr)` — overload selector"]pub fn new_2(ptr: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomSampler), ::core::stringify!(new_2),));
+ <Self as ICustomSamplerMethods> ::ctor_2(this,ptr);
+this}
 }
 
 #[cfg(feature = "unity_engine-profiling-customsampler")]

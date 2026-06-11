@@ -4,71 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_vertex/TMP_Vertex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_Vertex {
-    pub position: crate :: unity_engine :: vector3 :: Vector3,
-    pub uv: crate :: unity_engine :: vector2 :: Vector2,
-    pub uv2: crate :: unity_engine :: vector2 :: Vector2,
-    pub uv4: crate :: unity_engine :: vector2 :: Vector2,
-    pub color: crate :: unity_engine :: color32 :: Color32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_vertex/TMP_Vertex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_Vertex{pub position:crate::unity_engine::vector3::Vector3,pub uv:crate::unity_engine::vector2::Vector2,pub uv2:crate::unity_engine::vector2::Vector2,pub uv4:crate::unity_engine::vector2::Vector2,pub color:crate::unity_engine::color32::Color32,}
+impl::unity2::ClassIdentity for TMP_Vertex{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_Vertex";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for TMP_Vertex {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_Vertex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for TMP_Vertex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for TMP_Vertex {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl TMP_Vertex{#[inline]pub fn k_zero()->crate::tm_pro::tmp_vertex::TMP_Vertex{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"k_Zero");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_k_zero(value:crate::tm_pro::tmp_vertex::TMP_Vertex){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"k_Zero");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl TMP_Vertex {
-    #[inline]
-    pub fn k_zero() -> crate :: tm_pro :: tmp_vertex :: TMP_Vertex {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_Zero");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_k_zero(value: crate :: tm_pro :: tmp_vertex :: TMP_Vertex) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "k_Zero");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -76,11 +34,17 @@ impl TMP_Vertex {
 #[cfg(feature = "tm_pro-tmp_vertex-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_vertex")]
-impl TMP_Vertex { # [doc = "`get_zero()` overload"] pub fn get_zero () -> crate :: tm_pro :: tmp_vertex :: TMP_Vertex { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: tm_pro :: tmp_vertex :: TMP_Vertex = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e68830usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2e688c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_vertex")]impl TMP_Vertex{#[doc="`get_zero()` overload"]pub fn get_zero()->crate::tm_pro::tmp_vertex::TMP_Vertex{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e68830usize)as*mut u8,crate::tm_pro::tmp_vertex::TMP_Vertex;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e688c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_vertex")]
-impl TMP_Vertex { pub fn get_zero_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Vertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Vertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="tm_pro-tmp_vertex")]impl TMP_Vertex{pub fn get_zero_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "tm_pro-tmp_vertex")]
 #[doc(hidden)]

@@ -4,48 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplayselectroot/RelayReplaySelectRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayReplaySelectRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct RelayReplaySelectRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_MapHelpObject")] pub m_map_help_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "m_PlayerListObject")] pub m_player_list_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_MapMenu")] pub m_map_menu : crate :: app :: relayreplaymenu :: RelayReplayMenu ,
-# [offset (48)] # [rename (name = "m_WdwMapHelp")] pub m_wdw_map_help : crate :: app :: relaywdwmaphelp :: RelayWdwMapHelp ,
-# [offset (56)] # [rename (name = "m_WdwPlayerList")] pub m_wdw_player_list : crate :: app :: relaywdwplayerlist :: RelayWdwPlayerList ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayreplayselectroot/RelayReplaySelectRoot.md"))]#[::unity2::class(namespace="App",name="RelayReplaySelectRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RelayReplaySelectRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MapHelpObject")]pub m_map_help_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_PlayerListObject")]pub m_player_list_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_MapMenu")]pub m_map_menu:crate::app::relayreplaymenu::RelayReplayMenu, #[offset(48)]#[rename(name="m_WdwMapHelp")]pub m_wdw_map_help:crate::app::relaywdwmaphelp::RelayWdwMapHelp, #[offset(56)]#[rename(name="m_WdwPlayerList")]pub m_wdw_player_list:crate::app::relaywdwplayerlist::RelayWdwPlayerList,}
 
 }
 
 #[cfg(feature = "app-relayreplayselectroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relayreplayselectroot")]
-impl RelayReplaySelectRoot { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , search_results : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayservermetadata :: RelayServerMetaData > >) -> crate :: app :: relayreplayselectroot :: RelayReplaySelectRoot { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayservermetadata :: RelayServerMetaData > , :: unity2 :: OptionalMethod ,) -> crate :: app :: relayreplayselectroot :: RelayReplaySelectRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2004310usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (search_results) , :: core :: option :: Option :: None) } } } # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20046c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2004760usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20047e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayreplayselectroot")]impl RelayReplaySelectRoot{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,search_results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> >)->crate::app::relayreplayselectroot::RelayReplaySelectRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2004310usize)as*mut u8,crate::app::relayreplayselectroot::RelayReplaySelectRoot;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)::core::convert::Into::into(search_results))}
+}
+#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20046c0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2004760usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20047e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-relayreplayselectroot")]
-pub trait IRelayReplaySelectRootMethods : IRelayReplaySelectRoot { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RelayReplaySelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplaySelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2004860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Create(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"] fn create (self , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , search_results : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayservermetadata :: RelayServerMetaData > >) -> () { unsafe { let __receiver = < RelayReplaySelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplaySelectRoot , crate :: app :: procinst :: ProcInst , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: relayservermetadata :: RelayServerMetaData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2004470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (search_results) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelectMenuItem(crate::app::relayservermetadata::RelayServerMetaData)` overload"] fn on_select_menu_item (self , meta_data : impl :: core :: convert :: Into < crate :: app :: relayservermetadata :: RelayServerMetaData >) -> () { unsafe { let __receiver = < RelayReplaySelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplaySelectRoot , crate :: app :: relayservermetadata :: RelayServerMetaData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2004870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (meta_data) , :: core :: option :: Option :: None) } } } # [doc = "`OnDecideMenuItem()` overload"] fn on_decide_menu_item (self ,) -> () { unsafe { let __receiver = < RelayReplaySelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplaySelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2005220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnRequestCloseMenu()` overload"] fn on_request_close_menu (self ,) -> () { unsafe { let __receiver = < RelayReplaySelectRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayReplaySelectRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2005240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relayreplayselectroot")]pub trait IRelayReplaySelectRootMethods:IRelayReplaySelectRoot{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayReplaySelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2004860usize)as*mut u8,();
+(RelayReplaySelectRoot)__receiver)}
+}
+#[doc="`Create(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,search_results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData> >)->(){unsafe{let __receiver= <RelayReplaySelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2004470usize)as*mut u8,();
+(RelayReplaySelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)::core::convert::Into::into(search_results))}
+}
+#[doc="`OnSelectMenuItem(crate::app::relayservermetadata::RelayServerMetaData)` overload"]fn on_select_menu_item(self,meta_data:impl::core::convert::Into<crate::app::relayservermetadata::RelayServerMetaData>)->(){unsafe{let __receiver= <RelayReplaySelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2004870usize)as*mut u8,();
+(RelayReplaySelectRoot)__receiver,(crate::app::relayservermetadata::RelayServerMetaData)::core::convert::Into::into(meta_data))}
+}
+#[doc="`OnDecideMenuItem()` overload"]fn on_decide_menu_item(self,)->(){unsafe{let __receiver= <RelayReplaySelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2005220usize)as*mut u8,();
+(RelayReplaySelectRoot)__receiver)}
+}
+#[doc="`OnRequestCloseMenu()` overload"]fn on_request_close_menu(self,)->(){unsafe{let __receiver= <RelayReplaySelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2005240usize)as*mut u8,();
+(RelayReplaySelectRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relayreplayselectroot")]
-impl < __T : IRelayReplaySelectRoot > IRelayReplaySelectRootMethods for __T { }
+#[cfg(feature="app-relayreplayselectroot")]impl<__T:IRelayReplaySelectRoot>IRelayReplaySelectRootMethods for __T{}
 
-#[cfg(feature = "app-relayreplayselectroot")]
-impl RelayReplaySelectRoot { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplaySelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplaySelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplaySelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplaySelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplaySelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplaySelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn on_select_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplaySelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_decide_menu_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplaySelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_request_close_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayReplaySelectRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-relayreplayselectroot")]impl RelayReplaySelectRoot{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_select_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_decide_menu_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_request_close_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-relayreplayselectroot")]
-impl RelayReplaySelectRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayReplaySelectRoot) , :: core :: stringify ! (new) ,)) ; < Self as IRelayReplaySelectRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-relayreplayselectroot")]impl RelayReplaySelectRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayReplaySelectRoot), ::core::stringify!(new),));
+ <Self as IRelayReplaySelectRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-relayreplayselectroot")]

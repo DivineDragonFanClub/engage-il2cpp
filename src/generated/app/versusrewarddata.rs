@@ -4,39 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusrewarddata/VersusRewardData.md"))] # [:: unity2 :: class (namespace = "App" , name = "VersusRewardData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: versusrewarddata :: VersusRewardData >)] pub struct VersusRewardData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusrewarddata/VersusRewardData.md"))]#[::unity2::class(namespace="App",name="VersusRewardData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::versusrewarddata::VersusRewardData>)]pub struct VersusRewardData{}
 
 }
 
 #[cfg(feature = "app-versusrewarddata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-versusrewarddata")]
-impl VersusRewardData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusrewarddata")]impl VersusRewardData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b3500usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-versusrewarddata")]
-pub trait IVersusRewardDataMethods : IVersusRewardData { # [doc = "`get_TypeID()` overload"] fn get_type_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b35b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TypeID(::unity2::Il2CppString)` overload"] fn set_type_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b35c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Iids()` overload"] fn get_iids (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b35d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Iids(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_iids (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b35e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Nums()` overload"] fn get_nums (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b35f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Nums(::unity2::Array<i32>)` overload"] fn set_nums (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < i32 > >) -> () { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: Array < i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Conditions()` overload"] fn get_conditions (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Conditions(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_conditions (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnCompleted()` overload"] fn on_completed (self ,) -> () { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3640usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryGetRandomItem(*mut::unity2::Il2CppString, *muti32)` overload"] fn try_get_random_item (self ,) -> (bool , :: unity2 :: Il2CppString , i32) { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (VersusRewardData , * mut :: unity2 :: Il2CppString , * mut i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3650usize) as * mut u8) ; __inner (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < VersusRewardData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (VersusRewardData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26b3820usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-versusrewarddata")]pub trait IVersusRewardDataMethods:IVersusRewardData{#[doc="`get_TypeID()` overload"]fn get_type_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b35b0usize)as*mut u8, ::unity2::Il2CppString;
+(VersusRewardData)__receiver)}
+}
+#[doc="`set_TypeID(::unity2::Il2CppString)` overload"]fn set_type_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b35c0usize)as*mut u8,();
+(VersusRewardData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Iids()` overload"]fn get_iids(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b35d0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(VersusRewardData)__receiver)}
+}
+#[doc="`set_Iids(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_iids(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b35e0usize)as*mut u8,();
+(VersusRewardData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Nums()` overload"]fn get_nums(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b35f0usize)as*mut u8, ::unity2::Array<i32> ;
+(VersusRewardData)__receiver)}
+}
+#[doc="`set_Nums(::unity2::Array<i32>)` overload"]fn set_nums(self,value:impl::core::convert::Into< ::unity2::Array<i32> >)->(){unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b3600usize)as*mut u8,();
+(VersusRewardData)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Conditions()` overload"]fn get_conditions(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b3610usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(VersusRewardData)__receiver)}
+}
+#[doc="`set_Conditions(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_conditions(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b3620usize)as*mut u8,();
+(VersusRewardData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b3630usize)as*mut u8,();
+(VersusRewardData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b3640usize)as*mut u8, ::unity2::Il2CppString;
+(VersusRewardData)__receiver)}
+}
+#[doc="`TryGetRandomItem(*mut::unity2::Il2CppString, *muti32)` overload"]fn try_get_random_item(self,)->(bool, ::unity2::Il2CppString,i32){unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x26b3650usize)as*mut u8,bool;
+(VersusRewardData)__receiver,(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(*mut i32)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusRewardData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26b3820usize)as*mut u8,();
+(VersusRewardData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-versusrewarddata")]
-impl < __T : IVersusRewardData > IVersusRewardDataMethods for __T { }
+#[cfg(feature="app-versusrewarddata")]impl<__T:IVersusRewardData>IVersusRewardDataMethods for __T{}
 
-#[cfg(feature = "app-versusrewarddata")]
-impl VersusRewardData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_type_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_type_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_iids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_iids_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_nums_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_nums_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_conditions_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_conditions_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn on_completed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn try_get_random_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VersusRewardData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-versusrewarddata")]impl VersusRewardData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_type_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_type_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_iids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_iids_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_nums_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_nums_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_conditions_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_conditions_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn on_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn try_get_random_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-versusrewarddata")]
-impl VersusRewardData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (VersusRewardData) , :: core :: stringify ! (new) ,)) ; < Self as IVersusRewardDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-versusrewarddata")]impl VersusRewardData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VersusRewardData), ::core::stringify!(new),));
+ <Self as IVersusRewardDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-versusrewarddata")]

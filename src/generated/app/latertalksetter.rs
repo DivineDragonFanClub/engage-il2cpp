@@ -4,97 +4,224 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitInfo.md"))] # [:: unity2 :: class (namespace = "App" , name = "LaterTalkSetter.UnitInfo")] # [parent (crate :: system :: object :: Object)] pub struct LaterTalkSetter_UnitInfo {
-# [offset (16)] # [rename (name = "InfoLv")] pub info_lv : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (24)] # [rename (name = "InfoMostEmblem")] pub info_most_emblem : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "Title")] pub title : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "Name")] pub name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "Lv")] pub lv : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "Job")] pub job : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "BattleCount")] pub battle_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "WinCount")] pub win_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "MostEmblem")] pub most_emblem : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/latertalksetter/LaterTalkSetter_UnitInfo.md"))]#[::unity2::class(namespace="App",name="LaterTalkSetter.UnitInfo")]#[parent(crate::system::object::Object)]pub struct LaterTalkSetter_UnitInfo{#[offset(16)]#[rename(name="InfoLv")]pub info_lv:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="InfoMostEmblem")]pub info_most_emblem:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="Title")]pub title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="Name")]pub name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="Lv")]pub lv:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="Job")]pub job:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="BattleCount")]pub battle_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="WinCount")]pub win_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="MostEmblem")]pub most_emblem:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "LaterTalkSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct LaterTalkSetter {
-# [offset (24)] # [rename (name = "CharaSolo")] pub chara_solo : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "CharaPair")] pub chara_pair : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "Main")] pub main : crate :: app :: latertalksetter :: LaterTalkSetter_UnitInfo ,
-# [offset (48)] # [rename (name = "PairLeft")] pub pair_left : crate :: app :: latertalksetter :: LaterTalkSetter_UnitInfo ,
-# [offset (56)] # [rename (name = "PairRight")] pub pair_right : crate :: app :: latertalksetter :: LaterTalkSetter_UnitInfo ,
-# [offset (64)] # [rename (name = "Symbol")] pub symbol : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (72)] # [rename (name = "MainText")] pub main_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "m_BaseDispTime")] pub m_base_disp_time : f32 ,
-# [offset (84)] # [rename (name = "m_OthersTime")] pub m_others_time : f32 ,
-# [offset (88)] # [rename (name = "m_WaitTimeAfter")] pub m_wait_time_after : f32 ,
-# [offset (92)] # [rename (name = "m_CurrentTime")] pub m_current_time : f32 ,
-# [offset (96)] # [rename (name = "m_UnitData")] pub m_unit_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: latertalksetter :: LaterTalkSetter_UnitData > ,
-# [offset (104)] # [rename (name = "m_UnitIndex")] pub m_unit_index : i32 ,
-# [offset (112)] # [rename (name = "m_StartTime")] pub m_start_time : f64 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/latertalksetter/LaterTalkSetter_UnitData.md"))]#[::unity2::class(namespace="App",name="LaterTalkSetter.UnitData")]#[parent(crate::system::object::Object)]pub struct LaterTalkSetter_UnitData{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitData.md"))] # [:: unity2 :: class (namespace = "App" , name = "LaterTalkSetter.UnitData")] # [parent (crate :: system :: object :: Object)] pub struct LaterTalkSetter_UnitData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/latertalksetter/LaterTalkSetter.md"))]#[::unity2::class(namespace="App",name="LaterTalkSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct LaterTalkSetter{#[offset(24)]#[rename(name="CharaSolo")]pub chara_solo:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="CharaPair")]pub chara_pair:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="Main")]pub main:crate::app::latertalksetter::LaterTalkSetter_UnitInfo, #[offset(48)]#[rename(name="PairLeft")]pub pair_left:crate::app::latertalksetter::LaterTalkSetter_UnitInfo, #[offset(56)]#[rename(name="PairRight")]pub pair_right:crate::app::latertalksetter::LaterTalkSetter_UnitInfo, #[offset(64)]#[rename(name="Symbol")]pub symbol:crate::unity_engine::ui::image::Image, #[offset(72)]#[rename(name="MainText")]pub main_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_BaseDispTime")]pub m_base_disp_time:f32, #[offset(84)]#[rename(name="m_OthersTime")]pub m_others_time:f32, #[offset(88)]#[rename(name="m_WaitTimeAfter")]pub m_wait_time_after:f32, #[offset(92)]#[rename(name="m_CurrentTime")]pub m_current_time:f32, #[offset(96)]#[rename(name="m_UnitData")]pub m_unit_data:crate::system::collections::generic::list_1::List_1<crate::app::latertalksetter::LaterTalkSetter_UnitData> , #[offset(104)]#[rename(name="m_UnitIndex")]pub m_unit_index:i32, #[offset(112)]#[rename(name="m_StartTime")]pub m_start_time:f64,}
 
 }
 
 #[cfg(feature = "app-latertalksetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-latertalksetter")]
-pub trait ILaterTalkSetter_UnitInfoMethods : ILaterTalkSetter_UnitInfo { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LaterTalkSetter_UnitInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd63b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-latertalksetter")]
-impl < __T : ILaterTalkSetter_UnitInfo > ILaterTalkSetter_UnitInfoMethods for __T { }
-
-#[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter_UnitInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter_UnitInfo {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LaterTalkSetter_UnitInfo) , :: core :: stringify ! (new) ,)) ; < Self as ILaterTalkSetter_UnitInfoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-latertalksetter")]pub trait ILaterTalkSetter_UnitInfoMethods:ILaterTalkSetter_UnitInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LaterTalkSetter_UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd63b0usize)as*mut u8,();
+(LaterTalkSetter_UnitInfo)__receiver)}
+}
 }
 
-#[cfg(feature = "app-latertalksetter")]
-pub trait ILaterTalkSetterMethods : ILaterTalkSetter { # [doc = "`Init()` overload"] fn init (self ,) -> () { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bde710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateData()` overload"] fn update_data (self ,) -> () { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bde900usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitData(crate::app::unit::Unit, crate::app::latertalksetter::LaterTalkSetter_UnitInfo)` overload"] fn set_unit_data (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , info : impl :: core :: convert :: Into < crate :: app :: latertalksetter :: LaterTalkSetter_UnitInfo >) -> () { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , crate :: app :: unit :: Unit , crate :: app :: latertalksetter :: LaterTalkSetter_UnitInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdee20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (info) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsStarted()` overload"] fn get_is_started (self ,) -> bool { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdf490usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFinished()` overload"] fn get_is_finished (self ,) -> bool { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdf4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_IsFinishedCompletely()` overload"] fn get_is_finished_completely (self ,) -> bool { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdf4e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_CurrentUnit()` overload"] fn get_current_unit (self ,) -> crate :: app :: latertalksetter :: LaterTalkSetter_UnitData { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> crate :: app :: latertalksetter :: LaterTalkSetter_UnitData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bded90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_NextUnit()` overload"] fn get_next_unit (self ,) -> crate :: app :: latertalksetter :: LaterTalkSetter_UnitData { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> crate :: app :: latertalksetter :: LaterTalkSetter_UnitData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bde180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_LastDispTime()` overload"] fn get_last_disp_time (self ,) -> f32 { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdf510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_DisplayTime()` overload"] fn get_display_time (self ,) -> f32 { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdf4c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdf5b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdff20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveNext()` overload"] fn move_next (self ,) -> () { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdff70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ForceFinish(f32)` overload"] fn force_finish (self , fade_out_time : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdff80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (fade_out_time) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LaterTalkSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1be0050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-latertalksetter")]impl<__T:ILaterTalkSetter_UnitInfo>ILaterTalkSetter_UnitInfoMethods for __T{}
 
-#[cfg(feature = "app-latertalksetter")]
-impl < __T : ILaterTalkSetter > ILaterTalkSetterMethods for __T { }
-
-#[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_unit_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_is_started_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_finished_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_is_finished_completely_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_current_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_next_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_last_disp_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_display_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn move_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn force_finish_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
-
-#[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LaterTalkSetter) , :: core :: stringify ! (new) ,)) ; < Self as ILaterTalkSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter_UnitInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "app-latertalksetter")]
-pub trait ILaterTalkSetter_UnitDataMethods : ILaterTalkSetter_UnitData { # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd62c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Unit(crate::app::unit::Unit)` overload"] fn set_unit (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd62d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsAlive()` overload"] fn get_is_alive (self ,) -> bool { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd62e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_IsAlive(bool)` overload"] fn set_is_alive (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd62f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Marriage()` overload"] fn get_marriage (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Marriage(crate::app::unit::Unit)` overload"] fn set_marriage (self , value : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MapName()` overload"] fn get_map_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MapName(::unity2::Il2CppString)` overload"] fn set_map_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MapDegree()` overload"] fn get_map_degree (self ,) -> i32 { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_MapDegree(i32)` overload"] fn set_map_degree (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LightDegree()` overload"] fn get_light_degree (self ,) -> i32 { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LightDegree(i32)` overload"] fn set_light_degree (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EndDispTime()` overload"] fn get_end_disp_time (self ,) -> f32 { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EndDispTime(f32)` overload"] fn set_end_disp_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd6390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LaterTalkSetter_UnitData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LaterTalkSetter_UnitData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fd63a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter_UnitInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LaterTalkSetter_UnitInfo), ::core::stringify!(new),));
+ <Self as ILaterTalkSetter_UnitInfoMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-latertalksetter")]
-impl < __T : ILaterTalkSetter_UnitData > ILaterTalkSetter_UnitDataMethods for __T { }
+#[cfg(feature="app-latertalksetter")]pub trait ILaterTalkSetter_UnitDataMethods:ILaterTalkSetter_UnitData{#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd62c0usize)as*mut u8,crate::app::unit::Unit;
+(LaterTalkSetter_UnitData)__receiver)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]fn set_unit(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd62d0usize)as*mut u8,();
+(LaterTalkSetter_UnitData)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsAlive()` overload"]fn get_is_alive(self,)->bool{unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd62e0usize)as*mut u8,bool;
+(LaterTalkSetter_UnitData)__receiver)}
+}
+#[doc="`set_IsAlive(bool)` overload"]fn set_is_alive(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd62f0usize)as*mut u8,();
+(LaterTalkSetter_UnitData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Marriage()` overload"]fn get_marriage(self,)->crate::app::unit::Unit{unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6300usize)as*mut u8,crate::app::unit::Unit;
+(LaterTalkSetter_UnitData)__receiver)}
+}
+#[doc="`set_Marriage(crate::app::unit::Unit)` overload"]fn set_marriage(self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6310usize)as*mut u8,();
+(LaterTalkSetter_UnitData)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_MapName()` overload"]fn get_map_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6320usize)as*mut u8, ::unity2::Il2CppString;
+(LaterTalkSetter_UnitData)__receiver)}
+}
+#[doc="`set_MapName(::unity2::Il2CppString)` overload"]fn set_map_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6330usize)as*mut u8,();
+(LaterTalkSetter_UnitData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_MapDegree()` overload"]fn get_map_degree(self,)->i32{unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6340usize)as*mut u8,i32;
+(LaterTalkSetter_UnitData)__receiver)}
+}
+#[doc="`set_MapDegree(i32)` overload"]fn set_map_degree(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6350usize)as*mut u8,();
+(LaterTalkSetter_UnitData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_LightDegree()` overload"]fn get_light_degree(self,)->i32{unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6360usize)as*mut u8,i32;
+(LaterTalkSetter_UnitData)__receiver)}
+}
+#[doc="`set_LightDegree(i32)` overload"]fn set_light_degree(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6370usize)as*mut u8,();
+(LaterTalkSetter_UnitData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_EndDispTime()` overload"]fn get_end_disp_time(self,)->f32{unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6380usize)as*mut u8,f32;
+(LaterTalkSetter_UnitData)__receiver)}
+}
+#[doc="`set_EndDispTime(f32)` overload"]fn set_end_disp_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6390usize)as*mut u8,();
+(LaterTalkSetter_UnitData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LaterTalkSetter_UnitData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd63a0usize)as*mut u8,();
+(LaterTalkSetter_UnitData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter_UnitData { pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_marriage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_marriage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_map_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_map_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_map_degree_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_map_degree_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_light_degree_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_light_degree_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_end_disp_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_end_disp_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LaterTalkSetter_UnitData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="app-latertalksetter")]impl<__T:ILaterTalkSetter_UnitData>ILaterTalkSetter_UnitDataMethods for __T{}
 
-#[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter_UnitData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LaterTalkSetter_UnitData) , :: core :: stringify ! (new) ,)) ; < Self as ILaterTalkSetter_UnitDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter_UnitData{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_marriage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_marriage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_map_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_map_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_map_degree_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_map_degree_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_light_degree_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_light_degree_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_end_disp_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_end_disp_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter_UnitData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LaterTalkSetter_UnitData), ::core::stringify!(new),));
+ <Self as ILaterTalkSetter_UnitDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-latertalksetter")]pub trait ILaterTalkSetterMethods:ILaterTalkSetter{#[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bde710usize)as*mut u8,();
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`UpdateData()` overload"]fn update_data(self,)->(){unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bde900usize)as*mut u8,();
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`SetUnitData(crate::app::unit::Unit, crate::app::latertalksetter::LaterTalkSetter_UnitInfo)` overload"]fn set_unit_data(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,info:impl::core::convert::Into<crate::app::latertalksetter::LaterTalkSetter_UnitInfo>)->(){unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdee20usize)as*mut u8,();
+(LaterTalkSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::latertalksetter::LaterTalkSetter_UnitInfo)::core::convert::Into::into(info))}
+}
+#[doc="`get_IsStarted()` overload"]fn get_is_started(self,)->bool{unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdf490usize)as*mut u8,bool;
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`get_IsFinished()` overload"]fn get_is_finished(self,)->bool{unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdf4a0usize)as*mut u8,bool;
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`get_IsFinishedCompletely()` overload"]fn get_is_finished_completely(self,)->bool{unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdf4e0usize)as*mut u8,bool;
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`get_CurrentUnit()` overload"]fn get_current_unit(self,)->crate::app::latertalksetter::LaterTalkSetter_UnitData{unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bded90usize)as*mut u8,crate::app::latertalksetter::LaterTalkSetter_UnitData;
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`get_NextUnit()` overload"]fn get_next_unit(self,)->crate::app::latertalksetter::LaterTalkSetter_UnitData{unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bde180usize)as*mut u8,crate::app::latertalksetter::LaterTalkSetter_UnitData;
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`get_LastDispTime()` overload"]fn get_last_disp_time(self,)->f32{unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdf510usize)as*mut u8,f32;
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`get_DisplayTime()` overload"]fn get_display_time(self,)->f32{unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdf4c0usize)as*mut u8,f32;
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdf5b0usize)as*mut u8,();
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdff20usize)as*mut u8,();
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`MoveNext()` overload"]fn move_next(self,)->(){unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdff70usize)as*mut u8,();
+(LaterTalkSetter)__receiver)}
+}
+#[doc="`ForceFinish(f32)` overload"]fn force_finish(self,fade_out_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdff80usize)as*mut u8,();
+(LaterTalkSetter)__receiver,(f32)::core::convert::Into::into(fade_out_time))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LaterTalkSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1be0050usize)as*mut u8,();
+(LaterTalkSetter)__receiver)}
+}
+}
+
+#[cfg(feature="app-latertalksetter")]impl<__T:ILaterTalkSetter>ILaterTalkSetterMethods for __T{}
+
+#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_unit_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_started_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_finished_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_finished_completely_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_current_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_next_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_last_disp_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_display_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn move_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn force_finish_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-latertalksetter")]impl LaterTalkSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LaterTalkSetter), ::core::stringify!(new),));
+ <Self as ILaterTalkSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-latertalksetter")]
@@ -103,12 +230,12 @@ pub mod prelude {
     pub use super::LaterTalkSetter_UnitInfo;
     pub use super::ILaterTalkSetter_UnitInfo;
     pub use super::ILaterTalkSetter_UnitInfoMethods;
-    pub use super::LaterTalkSetter;
-    pub use super::ILaterTalkSetter;
-    pub use super::ILaterTalkSetterMethods;
     pub use super::LaterTalkSetter_UnitData;
     pub use super::ILaterTalkSetter_UnitData;
     pub use super::ILaterTalkSetter_UnitDataMethods;
+    pub use super::LaterTalkSetter;
+    pub use super::ILaterTalkSetter;
+    pub use super::ILaterTalkSetterMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappos/MapPos.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapPos {
-    pub x: i32,
-    pub z: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappos/MapPos.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapPos{pub x:i32,pub z:i32,}
+impl::unity2::ClassIdentity for MapPos{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapPos";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for MapPos {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPos";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for MapPos {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for MapPos{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,14 +26,87 @@ impl ::unity2::IlType for MapPos {
 #[cfg(feature = "app-mappos-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mappos")]
-impl MapPos { # [doc = "`op_Addition(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"] pub fn op_addition (lhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos > , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> crate :: app :: mappos :: MapPos { unsafe { { let __inner : extern "C" fn (crate :: app :: mappos :: MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b430usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Subtraction(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"] pub fn op_subtraction (lhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos > , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> crate :: app :: mappos :: MapPos { unsafe { { let __inner : extern "C" fn (crate :: app :: mappos :: MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> crate :: app :: mappos :: MapPos = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b450usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"] pub fn op_equality (lhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos > , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: mappos :: MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b470usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"] pub fn op_inequality (lhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos > , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: mappos :: MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b490usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (lhs) , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mappos")]impl MapPos{#[doc="`op_Addition(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"]pub fn op_addition(lhs:impl::core::convert::Into<crate::app::mappos::MapPos> ,rhs:impl::core::convert::Into<crate::app::mappos::MapPos>)->crate::app::mappos::MapPos{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b430usize)as*mut u8,crate::app::mappos::MapPos;
+(crate::app::mappos::MapPos)::core::convert::Into::into(lhs),(crate::app::mappos::MapPos)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Subtraction(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"]pub fn op_subtraction(lhs:impl::core::convert::Into<crate::app::mappos::MapPos> ,rhs:impl::core::convert::Into<crate::app::mappos::MapPos>)->crate::app::mappos::MapPos{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b450usize)as*mut u8,crate::app::mappos::MapPos;
+(crate::app::mappos::MapPos)::core::convert::Into::into(lhs),(crate::app::mappos::MapPos)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Equality(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::app::mappos::MapPos> ,rhs:impl::core::convert::Into<crate::app::mappos::MapPos>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b470usize)as*mut u8,bool;
+(crate::app::mappos::MapPos)::core::convert::Into::into(lhs),(crate::app::mappos::MapPos)::core::convert::Into::into(rhs))}
+}
+#[doc="`op_Inequality(crate::app::mappos::MapPos, crate::app::mappos::MapPos)` overload"]pub fn op_inequality(lhs:impl::core::convert::Into<crate::app::mappos::MapPos> ,rhs:impl::core::convert::Into<crate::app::mappos::MapPos>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b490usize)as*mut u8,bool;
+(crate::app::mappos::MapPos)::core::convert::Into::into(lhs),(crate::app::mappos::MapPos)::core::convert::Into::into(rhs))}
+}
+}
 
-#[cfg(feature = "app-mappos")]
-impl MapPos { # [doc = "`.ctor(crate::app::mappos::MapPos)` overload"] pub fn ctor (& mut self , other : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b340usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32)` overload"] pub fn ctor_2 (& mut self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b350usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b360usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::mappos::MapPos)` overload"] pub fn add (& mut self , other : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b370usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Add(i32, i32)` overload"] pub fn add_2 (& mut self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b390usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`AddX(i32)` overload"] pub fn add_x (& mut self , x : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b3b0usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`AddZ(i32)` overload"] pub fn add_z (& mut self , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b3c0usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Sub(crate::app::mappos::MapPos)` overload"] pub fn sub (& mut self , other : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b3d0usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`Sub(i32, i32)` overload"] pub fn sub_2 (& mut self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b3f0usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`SubX(i32)` overload"] pub fn sub_x (& mut self , x : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b410usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (x) , :: core :: option :: Option :: None) } } } # [doc = "`SubZ(i32)` overload"] pub fn sub_z (& mut self , z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut MapPos , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b420usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (z) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , rhs_obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut MapPos , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b4b0usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (rhs_obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::app::mappos::MapPos)` overload"] pub fn equals_2 (& mut self , rhs : impl :: core :: convert :: Into < crate :: app :: mappos :: MapPos >) -> bool { unsafe { { let __inner : extern "C" fn (* mut MapPos , crate :: app :: mappos :: MapPos , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b550usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: convert :: Into :: into (rhs) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut MapPos , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b580usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut MapPos , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x235b590usize) as * mut u8) ; __inner (self as * mut MapPos , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mappos")]impl MapPos{#[doc="`.ctor(crate::app::mappos::MapPos)` overload"]pub fn ctor(&mut self,other:impl::core::convert::Into<crate::app::mappos::MapPos>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b340usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(crate::app::mappos::MapPos)::core::convert::Into::into(other))}
+}
+#[doc="`.ctor(i32, i32)` overload"]pub fn ctor_2(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b350usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b360usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos)}
+}
+#[doc="`Add(crate::app::mappos::MapPos)` overload"]pub fn add(&mut self,other:impl::core::convert::Into<crate::app::mappos::MapPos>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b370usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(crate::app::mappos::MapPos)::core::convert::Into::into(other))}
+}
+#[doc="`Add(i32, i32)` overload"]pub fn add_2(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b390usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`AddX(i32)` overload"]pub fn add_x(&mut self,x:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b3b0usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(i32)::core::convert::Into::into(x))}
+}
+#[doc="`AddZ(i32)` overload"]pub fn add_z(&mut self,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b3c0usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Sub(crate::app::mappos::MapPos)` overload"]pub fn sub(&mut self,other:impl::core::convert::Into<crate::app::mappos::MapPos>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b3d0usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(crate::app::mappos::MapPos)::core::convert::Into::into(other))}
+}
+#[doc="`Sub(i32, i32)` overload"]pub fn sub_2(&mut self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b3f0usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`SubX(i32)` overload"]pub fn sub_x(&mut self,x:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b410usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(i32)::core::convert::Into::into(x))}
+}
+#[doc="`SubZ(i32)` overload"]pub fn sub_z(&mut self,z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b420usize)as*mut u8,();
+(*mut MapPos)self as*mut MapPos,(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,rhs_obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b4b0usize)as*mut u8,bool;
+(*mut MapPos)self as*mut MapPos,(crate::system::object::Object)::core::convert::Into::into(rhs_obj))}
+}
+#[doc="`Equals(crate::app::mappos::MapPos)` overload"]pub fn equals_2(&mut self,rhs:impl::core::convert::Into<crate::app::mappos::MapPos>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b550usize)as*mut u8,bool;
+(*mut MapPos)self as*mut MapPos,(crate::app::mappos::MapPos)::core::convert::Into::into(rhs))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b580usize)as*mut u8,i32;
+(*mut MapPos)self as*mut MapPos)}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x235b590usize)as*mut u8, ::unity2::Il2CppString;
+(*mut MapPos)self as*mut MapPos)}
+}
+}
 
-#[cfg(feature = "app-mappos")]
-impl MapPos { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn sub_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn sub_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn sub_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_addition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn op_subtraction_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } }
+#[cfg(feature="app-mappos")]impl MapPos{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn sub_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn sub_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn sub_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_addition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn op_subtraction_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
 
 #[cfg(feature = "app-mappos")]
 #[doc(hidden)]

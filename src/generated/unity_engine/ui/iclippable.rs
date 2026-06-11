@@ -4,27 +4,90 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/iclippable/IClippable.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "IClippable")] pub struct IClippable {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/iclippable/IClippable.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="IClippable")]pub struct IClippable{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-iclippable-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-iclippable")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IClippable_unity2_raw { use super :: * ; pub unsafe fn get_game_object (this : IClippable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_gameObject") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_gameObject" , < IClippable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IClippable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn recalculate_clipping (this : IClippable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("RecalculateClipping") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "RecalculateClipping" , < IClippable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IClippable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_rect_transform (this : IClippable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_rectTransform") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_rectTransform" , < IClippable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IClippable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn cull (this : IClippable , clip_rect : crate :: unity_engine :: rect :: Rect , valid_rect : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Cull") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Cull" , < IClippable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IClippable , crate :: unity_engine :: rect :: Rect , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , clip_rect , valid_rect , __mi) } pub unsafe fn set_clip_rect (this : IClippable , value : crate :: unity_engine :: rect :: Rect , valid_rect : bool , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("SetClipRect") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "SetClipRect" , < IClippable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IClippable , crate :: unity_engine :: rect :: Rect , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , value , valid_rect , __mi) } pub unsafe fn set_clip_softness (this : IClippable , clip_softness : crate :: unity_engine :: vector2 :: Vector2 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("SetClipSoftness") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "SetClipSoftness" , < IClippable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IClippable , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , clip_softness , __mi) } }
+#[cfg(feature="unity_engine-ui-iclippable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IClippable_unity2_raw{use super:: * ;
+pub unsafe fn get_game_object(this:IClippable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_gameObject").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_gameObject", <IClippable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IClippable, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn recalculate_clipping(this:IClippable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("RecalculateClipping").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","RecalculateClipping", <IClippable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IClippable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_rect_transform(this:IClippable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_rectTransform").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_rectTransform", <IClippable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IClippable, ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn cull(this:IClippable,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Cull").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Cull", <IClippable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IClippable,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip_rect,valid_rect,__mi)}
+pub unsafe fn set_clip_rect(this:IClippable,value:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetClipRect").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","SetClipRect", <IClippable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IClippable,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,valid_rect,__mi)}
+pub unsafe fn set_clip_softness(this:IClippable,clip_softness:crate::unity_engine::vector2::Vector2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetClipSoftness").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","SetClipSoftness", <IClippable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IClippable,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip_softness,__mi)}
+}
 
-#[cfg(feature = "unity_engine-ui-iclippable")]
-pub trait IIClippableMethods : IIClippable { # [doc = "`get_gameObject()` overload"] fn get_game_object (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: get_game_object (__receiver , :: core :: option :: Option :: None) } } # [doc = "`RecalculateClipping()` overload"] fn recalculate_clipping (self ,) -> () { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: recalculate_clipping (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_rectTransform()` overload"] fn get_rect_transform (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: get_rect_transform (__receiver , :: core :: option :: Option :: None) } } # [doc = "`Cull(crate::unity_engine::rect::Rect, bool)` overload"] fn cull (self , clip_rect : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , valid_rect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: cull (__receiver , :: core :: convert :: Into :: into (clip_rect) , :: core :: convert :: Into :: into (valid_rect) , :: core :: option :: Option :: None) } } # [doc = "`SetClipRect(crate::unity_engine::rect::Rect, bool)` overload"] fn set_clip_rect (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rect :: Rect > , valid_rect : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: set_clip_rect (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (valid_rect) , :: core :: option :: Option :: None) } } # [doc = "`SetClipSoftness(crate::unity_engine::vector2::Vector2)` overload"] fn set_clip_softness (self , clip_softness : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < IClippable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IClippable_unity2_raw :: set_clip_softness (__receiver , :: core :: convert :: Into :: into (clip_softness) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-ui-iclippable")]pub trait IIClippableMethods:IIClippable{#[doc="`get_gameObject()` overload"]fn get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <IClippable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IClippable_unity2_raw::get_game_object(__receiver, ::core::option::Option::None)}
+}
+#[doc="`RecalculateClipping()` overload"]fn recalculate_clipping(self,)->(){unsafe{let __receiver= <IClippable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IClippable_unity2_raw::recalculate_clipping(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_rectTransform()` overload"]fn get_rect_transform(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <IClippable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IClippable_unity2_raw::get_rect_transform(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Cull(crate::unity_engine::rect::Rect, bool)` overload"]fn cull(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IClippable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IClippable_unity2_raw::cull(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
+}
+#[doc="`SetClipRect(crate::unity_engine::rect::Rect, bool)` overload"]fn set_clip_rect(self,value:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IClippable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IClippable_unity2_raw::set_clip_rect(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
+}
+#[doc="`SetClipSoftness(crate::unity_engine::vector2::Vector2)` overload"]fn set_clip_softness(self,clip_softness:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <IClippable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IClippable_unity2_raw::set_clip_softness(__receiver, ::core::convert::Into::into(clip_softness), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-iclippable")]
-impl < __T : IIClippable > IIClippableMethods for __T { }
+#[cfg(feature="unity_engine-ui-iclippable")]impl<__T:IIClippable>IIClippableMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-iclippable")]
-impl IClippable { pub fn get_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IClippable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn recalculate_clipping_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IClippable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_rect_transform_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IClippable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn cull_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IClippable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_clip_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IClippable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_clip_softness_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IClippable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-ui-iclippable")]impl IClippable{pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn recalculate_clipping_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_rect_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn cull_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_clip_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_clip_softness_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
 #[cfg(feature = "unity_engine-ui-iclippable")]
 #[doc(hidden)]

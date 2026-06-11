@@ -4,159 +4,122 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_SpriteLightMeshVertex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LightUtility_SpriteLightMeshVertex {
-    pub position: crate :: unity_engine :: vector3 :: Vector3,
-    pub color: crate :: unity_engine :: color :: Color,
-    pub uv: crate :: unity_engine :: vector2 :: Vector2,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="LightUtility")]#[parent(crate::system::object::Object)]pub struct LightUtility{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_ParametricLightMeshVertex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LightUtility_ParametricLightMeshVertex{}
+impl::unity2::ClassIdentity for LightUtility_ParametricLightMeshVertex{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
+const NAME: &'static str="LightUtility.ParametricLightMeshVertex";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for LightUtility_ParametricLightMeshVertex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl LightUtility_ParametricLightMeshVertex{#[inline]pub fn vertex_layout()-> ::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"VertexLayout");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_vertex_layout(value: ::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"VertexLayout");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 
-impl ::unity2::ClassIdentity for LightUtility_SpriteLightMeshVertex {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
-    const NAME: &'static str = "LightUtility.SpriteLightMeshVertex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_SpriteLightMeshVertex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LightUtility_SpriteLightMeshVertex{pub position:crate::unity_engine::vector3::Vector3,pub color:crate::unity_engine::color::Color,pub uv:crate::unity_engine::vector2::Vector2,}
+impl::unity2::ClassIdentity for LightUtility_SpriteLightMeshVertex{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
+const NAME: &'static str="LightUtility.SpriteLightMeshVertex";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for LightUtility_SpriteLightMeshVertex {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for LightUtility_SpriteLightMeshVertex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl LightUtility_SpriteLightMeshVertex {
-    #[inline]
-    pub fn vertex_layout() -> :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_vertex_layout(value: :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor >) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl LightUtility_SpriteLightMeshVertex{#[inline]pub fn vertex_layout()-> ::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"VertexLayout");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_vertex_layout(value: ::unity2::Array<crate::unity_engine::rendering::vertexattributedescriptor::VertexAttributeDescriptor>){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"VertexLayout");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_ParametricLightMeshVertex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LightUtility_ParametricLightMeshVertex {}
-
-
-impl ::unity2::ClassIdentity for LightUtility_ParametricLightMeshVertex {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
-    const NAME: &'static str = "LightUtility.ParametricLightMeshVertex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
 }
-
-
-impl ::unity2::IlType for LightUtility_ParametricLightMeshVertex {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl LightUtility_ParametricLightMeshVertex {
-    #[inline]
-    pub fn vertex_layout() -> :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor > {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_vertex_layout(value: :: unity2 :: Array < crate :: unity_engine :: rendering :: vertexattributedescriptor :: VertexAttributeDescriptor >) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "VertexLayout");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "LightUtility")] # [parent (crate :: system :: object :: Object)] pub struct LightUtility {}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility_SpriteLightMeshVertex { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb7140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility{#[doc="`CheckForChange(i32, *muti32)` overload"]pub fn check_for_change(a:impl::core::convert::Into<i32>)->(bool,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2ef4200usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(a),(*mut i32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`CheckForChange(f32, *mutf32)` overload"]pub fn check_for_change_2(a:impl::core::convert::Into<f32>)->(bool,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2ef41e0usize)as*mut u8,bool;
+(f32)::core::convert::Into::into(a),(*mut f32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`CheckForChange(bool, *mutbool)` overload"]pub fn check_for_change_3(a:impl::core::convert::Into<bool>)->(bool,bool){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2ef5cf0usize)as*mut u8,bool;
+(bool)::core::convert::Into::into(a),(*mut bool)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GenerateParametricMesh(crate::unity_engine::mesh::Mesh, f32, f32, f32, i32)` overload"]pub fn generate_parametric_mesh(mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,radius:impl::core::convert::Into<f32> ,falloff_distance:impl::core::convert::Into<f32> ,angle:impl::core::convert::Into<f32> ,sides:impl::core::convert::Into<i32>)->crate::unity_engine::bounds::Bounds{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef3090usize)as*mut u8,crate::unity_engine::bounds::Bounds;
+(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(f32)::core::convert::Into::into(radius),(f32)::core::convert::Into::into(falloff_distance),(f32)::core::convert::Into::into(angle),(i32)::core::convert::Into::into(sides))}
+}
+#[doc="`GenerateSpriteMesh(crate::unity_engine::mesh::Mesh, crate::unity_engine::sprite::Sprite)` overload"]pub fn generate_sprite_mesh(mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->crate::unity_engine::bounds::Bounds{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef3690usize)as*mut u8,crate::unity_engine::bounds::Bounds;
+(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`GetFalloffShape(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]pub fn get_falloff_shape(shape_path:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> >)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef5d10usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector2::Vector2> ;
+(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(shape_path))}
+}
+#[doc="`GenerateShapeMesh(crate::unity_engine::mesh::Mesh, ::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]pub fn generate_shape_mesh(mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,shape_path:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,falloff_distance:impl::core::convert::Into<f32>)->crate::unity_engine::bounds::Bounds{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef2330usize)as*mut u8,crate::unity_engine::bounds::Bounds;
+(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(shape_path),(f32)::core::convert::Into::into(falloff_distance))}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility_SpriteLightMeshVertex { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightUtility_SpriteLightMeshVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility{pub fn check_for_change_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn check_for_change_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn check_for_change_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn generate_parametric_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn generate_sprite_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_falloff_shape_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn generate_shape_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility_ParametricLightMeshVertex { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2cb7050usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_ParametricLightMeshVertex{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7050usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility_ParametricLightMeshVertex { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightUtility_ParametricLightMeshVertex as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_ParametricLightMeshVertex{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility { # [doc = "`CheckForChange(i32, *muti32)` overload"] pub fn check_for_change (a : impl :: core :: convert :: Into < i32 >) -> (bool , i32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (i32 , * mut i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef4200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`CheckForChange(f32, *mutf32)` overload"] pub fn check_for_change_2 (a : impl :: core :: convert :: Into < f32 >) -> (bool , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (f32 , * mut f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef41e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`CheckForChange(bool, *mutbool)` overload"] pub fn check_for_change_3 (a : impl :: core :: convert :: Into < bool >) -> (bool , bool) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { { let __inner : extern "C" fn (bool , * mut bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef5cf0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GenerateParametricMesh(crate::unity_engine::mesh::Mesh, f32, f32, f32, i32)` overload"] pub fn generate_parametric_mesh (mesh : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh > , radius : impl :: core :: convert :: Into < f32 > , falloff_distance : impl :: core :: convert :: Into < f32 > , angle : impl :: core :: convert :: Into < f32 > , sides : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: bounds :: Bounds { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: mesh :: Mesh , f32 , f32 , f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef3090usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mesh) , :: core :: convert :: Into :: into (radius) , :: core :: convert :: Into :: into (falloff_distance) , :: core :: convert :: Into :: into (angle) , :: core :: convert :: Into :: into (sides) , :: core :: option :: Option :: None) } } } # [doc = "`GenerateSpriteMesh(crate::unity_engine::mesh::Mesh, crate::unity_engine::sprite::Sprite)` overload"] pub fn generate_sprite_mesh (mesh : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh > , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite >) -> crate :: unity_engine :: bounds :: Bounds { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: mesh :: Mesh , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef3690usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mesh) , :: core :: convert :: Into :: into (sprite) , :: core :: option :: Option :: None) } } } # [doc = "`GetFalloffShape(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"] pub fn get_falloff_shape (shape_path : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector2 :: Vector2 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: vector2 :: Vector2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef5d10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (shape_path) , :: core :: option :: Option :: None) } } } # [doc = "`GenerateShapeMesh(crate::unity_engine::mesh::Mesh, ::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"] pub fn generate_shape_mesh (mesh : impl :: core :: convert :: Into < crate :: unity_engine :: mesh :: Mesh > , shape_path : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > > , falloff_distance : impl :: core :: convert :: Into < f32 >) -> crate :: unity_engine :: bounds :: Bounds { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: mesh :: Mesh , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , f32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: bounds :: Bounds = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef2330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (mesh) , :: core :: convert :: Into :: into (shape_path) , :: core :: convert :: Into :: into (falloff_distance) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_SpriteLightMeshVertex{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7140usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-impl LightUtility { pub fn check_for_change_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn check_for_change_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn check_for_change_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn generate_parametric_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn generate_sprite_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_falloff_shape_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn generate_shape_mesh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LightUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_SpriteLightMeshVertex{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LightUtility_SpriteLightMeshVertex;
-    pub use super::LightUtility_ParametricLightMeshVertex;
     pub use super::LightUtility;
     pub use super::ILightUtility;
+    pub use super::LightUtility_ParametricLightMeshVertex;
+    pub use super::LightUtility_SpriteLightMeshVertex;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

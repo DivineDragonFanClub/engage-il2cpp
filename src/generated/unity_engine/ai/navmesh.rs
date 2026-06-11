@@ -4,55 +4,95 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ai/navmesh/NavMesh_OnNavMeshPreUpdate.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AI" , name = "NavMesh.OnNavMeshPreUpdate")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct NavMesh_OnNavMeshPreUpdate {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmesh/NavMesh.md"))]#[::unity2::class(namespace="UnityEngine.AI",name="NavMesh")]#[parent(crate::system::object::Object)]pub struct NavMesh{#[static_field]#[rename(name="onPreUpdate")]pub on_pre_update:crate::unity_engine::ai::navmesh::NavMesh_OnNavMeshPreUpdate,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ai/navmesh/NavMesh.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AI" , name = "NavMesh")] # [parent (crate :: system :: object :: Object)] pub struct NavMesh {
-# [static_field] # [rename (name = "onPreUpdate")] pub on_pre_update : crate :: unity_engine :: ai :: navmesh :: NavMesh_OnNavMeshPreUpdate ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmesh/NavMesh_OnNavMeshPreUpdate.md"))]#[::unity2::class(namespace="UnityEngine.AI",name="NavMesh.OnNavMeshPreUpdate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NavMesh_OnNavMeshPreUpdate{}
 
 }
 
 #[cfg(feature = "unity_engine-ai-navmesh-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ai-navmesh")]
-pub trait INavMesh_OnNavMeshPreUpdateMethods : INavMesh_OnNavMeshPreUpdate { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < NavMesh_OnNavMeshPreUpdate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMesh_OnNavMeshPreUpdate , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f44300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke()` overload"] fn invoke (self ,) -> () { unsafe { let __receiver = < NavMesh_OnNavMeshPreUpdate as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NavMesh_OnNavMeshPreUpdate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f431e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-ai-navmesh")]
-impl < __T : INavMesh_OnNavMeshPreUpdate > INavMesh_OnNavMeshPreUpdateMethods for __T { }
-
-#[cfg(feature = "unity_engine-ai-navmesh")]
-impl NavMesh_OnNavMeshPreUpdate { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMesh_OnNavMeshPreUpdate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMesh_OnNavMeshPreUpdate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "unity_engine-ai-navmesh")]
-impl NavMesh_OnNavMeshPreUpdate {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NavMesh_OnNavMeshPreUpdate) , :: core :: stringify ! (new) ,)) ; < Self as INavMesh_OnNavMeshPreUpdateMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh{#[doc="`Internal_CallOnNavMeshPreUpdate()` overload"]pub fn internal_call_on_nav_mesh_pre_update()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f43180usize)as*mut u8,();
+)}
+}
+#[doc="`CalculatePath(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"]pub fn calculate_path(source_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,target_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,area_mask:impl::core::convert::Into<i32> ,path:impl::core::convert::Into<crate::unity_engine::ai::navmeshpath::NavMeshPath>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f433f0usize)as*mut u8,bool;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(source_position),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target_position),(i32)::core::convert::Into::into(area_mask),(crate::unity_engine::ai::navmeshpath::NavMeshPath)::core::convert::Into::into(path))}
+}
+#[doc="`CalculatePathInternal(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"]pub fn calculate_path_internal(source_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,target_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,area_mask:impl::core::convert::Into<i32> ,path:impl::core::convert::Into<crate::unity_engine::ai::navmeshpath::NavMeshPath>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f43520usize)as*mut u8,bool;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(source_position),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target_position),(i32)::core::convert::Into::into(area_mask),(crate::unity_engine::ai::navmeshpath::NavMeshPath)::core::convert::Into::into(path))}
+}
+#[doc="`SamplePosition(crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::ai::navmeshhit::NavMeshHit, f32, i32)` overload"]pub fn sample_position(source_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,max_distance:impl::core::convert::Into<f32> ,area_mask:impl::core::convert::Into<i32>)->(bool,crate::unity_engine::ai::navmeshhit::NavMeshHit){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::ai::navmeshhit::NavMeshHit> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f43610usize)as*mut u8,bool;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(source_position),(*mut crate::unity_engine::ai::navmeshhit::NavMeshHit)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(max_distance),(i32)::core::convert::Into::into(area_mask))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`CalculatePathInternal_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"]pub fn calculate_path_internal_injected(area_mask:impl::core::convert::Into<i32> ,path:impl::core::convert::Into<crate::unity_engine::ai::navmeshpath::NavMeshPath>)->(bool,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f435a0usize)as*mut u8,bool;
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr(),(i32)::core::convert::Into::into(area_mask),(crate::unity_engine::ai::navmeshpath::NavMeshPath)::core::convert::Into::into(path))}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`SamplePosition_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::ai::navmeshhit::NavMeshHit, f32, i32)` overload"]pub fn sample_position_injected(max_distance:impl::core::convert::Into<f32> ,area_mask:impl::core::convert::Into<i32>)->(bool,crate::unity_engine::vector3::Vector3,crate::unity_engine::ai::navmeshhit::NavMeshHit){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::ai::navmeshhit::NavMeshHit> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f43690usize)as*mut u8,bool;
+(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::ai::navmeshhit::NavMeshHit)__out_1.as_mut_ptr(),(f32)::core::convert::Into::into(max_distance),(i32)::core::convert::Into::into(area_mask))}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
 }
 
-#[cfg(feature = "unity_engine-ai-navmesh")]
-impl NavMesh { # [doc = "`Internal_CallOnNavMeshPreUpdate()` overload"] pub fn internal_call_on_nav_mesh_pre_update () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43180usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CalculatePath(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"] pub fn calculate_path (source_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , target_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , area_mask : impl :: core :: convert :: Into < i32 > , path : impl :: core :: convert :: Into < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , i32 , crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f433f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source_position) , :: core :: convert :: Into :: into (target_position) , :: core :: convert :: Into :: into (area_mask) , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`CalculatePathInternal(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"] pub fn calculate_path_internal (source_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , target_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , area_mask : impl :: core :: convert :: Into < i32 > , path : impl :: core :: convert :: Into < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , i32 , crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43520usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source_position) , :: core :: convert :: Into :: into (target_position) , :: core :: convert :: Into :: into (area_mask) , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } } # [doc = "`SamplePosition(crate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::ai::navmeshhit::NavMeshHit, f32, i32)` overload"] pub fn sample_position (source_position : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , max_distance : impl :: core :: convert :: Into < f32 > , area_mask : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit > :: uninit () ; let __ret = { { let __inner : extern "C" fn (crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit , f32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43610usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source_position) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (max_distance) , :: core :: convert :: Into :: into (area_mask) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`CalculatePathInternal_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, i32, crate::unity_engine::ai::navmeshpath::NavMeshPath)` overload"] pub fn calculate_path_internal_injected (area_mask : impl :: core :: convert :: Into < i32 > , path : impl :: core :: convert :: Into < crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath >) -> (bool , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: vector3 :: Vector3 , i32 , crate :: unity_engine :: ai :: navmeshpath :: NavMeshPath , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f435a0usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (area_mask) , :: core :: convert :: Into :: into (path) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`SamplePosition_Injected(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::ai::navmeshhit::NavMeshHit, f32, i32)` overload"] pub fn sample_position_injected (max_distance : impl :: core :: convert :: Into < f32 > , area_mask : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: vector3 :: Vector3 > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut crate :: unity_engine :: vector3 :: Vector3 , * mut crate :: unity_engine :: ai :: navmeshhit :: NavMeshHit , f32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f43690usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (max_distance) , :: core :: convert :: Into :: into (area_mask) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } }
+#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh{pub fn internal_call_on_nav_mesh_pre_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calculate_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calculate_path_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn sample_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calculate_path_internal_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn sample_position_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-ai-navmesh")]
-impl NavMesh { pub fn internal_call_on_nav_mesh_pre_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calculate_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calculate_path_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn sample_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calculate_path_internal_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn sample_position_injected_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NavMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-ai-navmesh")]pub trait INavMesh_OnNavMeshPreUpdateMethods:INavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44300usize)as*mut u8,();
+(NavMesh_OnNavMeshPreUpdate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <NavMesh_OnNavMeshPreUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f431e0usize)as*mut u8,();
+(NavMesh_OnNavMeshPreUpdate)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl<__T:INavMesh_OnNavMeshPreUpdate>INavMesh_OnNavMeshPreUpdateMethods for __T{}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-ai-navmesh")]impl NavMesh_OnNavMeshPreUpdate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NavMesh_OnNavMeshPreUpdate), ::core::stringify!(new),));
+ <Self as INavMesh_OnNavMeshPreUpdateMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature = "unity_engine-ai-navmesh")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::NavMesh;
+    pub use super::INavMesh;
     pub use super::NavMesh_OnNavMeshPreUpdate;
     pub use super::INavMesh_OnNavMeshPreUpdate;
     pub use super::INavMesh_OnNavMeshPreUpdateMethods;
-    pub use super::NavMesh;
-    pub use super::INavMesh;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

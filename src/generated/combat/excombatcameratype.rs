@@ -4,23 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/excombatcameratype/ExCombatCameraType.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "ExCombatCameraType")] # [parent (crate :: system :: object :: Object)] pub struct ExCombatCameraType {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/excombatcameratype/ExCombatCameraType.md"))]#[::unity2::class(namespace="Combat",name="ExCombatCameraType")]#[parent(crate::system::object::Object)]pub struct ExCombatCameraType{}
 
 }
 
 #[cfg(feature = "combat-excombatcameratype-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-excombatcameratype")]
-impl ExCombatCameraType { # [doc = "`IsInterrupt(crate::combat::camerasituation::CameraSituation)` overload"] pub fn is_interrupt (style : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4c40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (style) , :: core :: option :: Option :: None) } } } # [doc = "`IsDead(crate::combat::camerasituation::CameraSituation)` overload"] pub fn is_dead (style : impl :: core :: convert :: Into < crate :: combat :: camerasituation :: CameraSituation >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: combat :: camerasituation :: CameraSituation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e4c70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (style) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-excombatcameratype")]impl ExCombatCameraType{#[doc="`IsInterrupt(crate::combat::camerasituation::CameraSituation)` overload"]pub fn is_interrupt(style:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e4c40usize)as*mut u8,bool;
+(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(style))}
+}
+#[doc="`IsDead(crate::combat::camerasituation::CameraSituation)` overload"]pub fn is_dead(style:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e4c70usize)as*mut u8,bool;
+(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(style))}
+}
+}
 
-#[cfg(feature = "combat-excombatcameratype")]
-impl ExCombatCameraType { pub fn is_interrupt_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExCombatCameraType as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_dead_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExCombatCameraType as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="combat-excombatcameratype")]impl ExCombatCameraType{pub fn is_interrupt_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_dead_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "combat-excombatcameratype")]
 #[doc(hidden)]

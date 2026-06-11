@@ -4,86 +4,155 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_MaterialManager")] # [parent (crate :: system :: object :: Object)] pub struct TMP_MaterialManager {
-# [static_field] # [rename (name = "m_materialList")] pub m_material_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_materialmanager :: TMP_MaterialManager_MaskingMaterial > ,
-# [static_field] # [rename (name = "m_fallbackMaterials")] pub m_fallback_materials : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i64 , crate :: tm_pro :: tmp_materialmanager :: TMP_MaterialManager_FallbackMaterial > ,
-# [static_field] # [rename (name = "m_fallbackMaterialLookup")] pub m_fallback_material_lookup : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , i64 > ,
-# [static_field] # [rename (name = "m_fallbackCleanupList")] pub m_fallback_cleanup_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: tm_pro :: tmp_materialmanager :: TMP_MaterialManager_FallbackMaterial > ,
-# [static_field] # [rename (name = "isFallbackListDirty")] pub is_fallback_list_dirty : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md"))]#[::unity2::class(namespace="TMPro",name="TMP_MaterialManager.MaskingMaterial")]#[parent(crate::system::object::Object)]pub struct TMP_MaterialManager_MaskingMaterial{#[offset(16)]#[rename(name="baseMaterial")]pub base_material:crate::unity_engine::material::Material, #[offset(24)]#[rename(name="stencilMaterial")]pub stencil_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="count")]pub count:i32, #[offset(36)]#[rename(name="stencilID")]pub stencil_id:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_MaterialManager.MaskingMaterial")] # [parent (crate :: system :: object :: Object)] pub struct TMP_MaterialManager_MaskingMaterial {
-# [offset (16)] # [rename (name = "baseMaterial")] pub base_material : crate :: unity_engine :: material :: Material ,
-# [offset (24)] # [rename (name = "stencilMaterial")] pub stencil_material : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "count")] pub count : i32 ,
-# [offset (36)] # [rename (name = "stencilID")] pub stencil_id : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_FallbackMaterial.md"))]#[::unity2::class(namespace="TMPro",name="TMP_MaterialManager.FallbackMaterial")]#[parent(crate::system::object::Object)]pub struct TMP_MaterialManager_FallbackMaterial{#[offset(16)]#[rename(name="fallbackID")]pub fallback_id:i64, #[offset(24)]#[rename(name="sourceMaterial")]pub source_material:crate::unity_engine::material::Material, #[offset(32)]#[rename(name="sourceMaterialCRC")]pub source_material_crc:i32, #[offset(40)]#[rename(name="fallbackMaterial")]pub fallback_material:crate::unity_engine::material::Material, #[offset(48)]#[rename(name="count")]pub count:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_FallbackMaterial.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_MaterialManager.FallbackMaterial")] # [parent (crate :: system :: object :: Object)] pub struct TMP_MaterialManager_FallbackMaterial {
-# [offset (16)] # [rename (name = "fallbackID")] pub fallback_id : i64 ,
-# [offset (24)] # [rename (name = "sourceMaterial")] pub source_material : crate :: unity_engine :: material :: Material ,
-# [offset (32)] # [rename (name = "sourceMaterialCRC")] pub source_material_crc : i32 ,
-# [offset (40)] # [rename (name = "fallbackMaterial")] pub fallback_material : crate :: unity_engine :: material :: Material ,
-# [offset (48)] # [rename (name = "count")] pub count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_materialmanager/TMP_MaterialManager.md"))]#[::unity2::class(namespace="TMPro",name="TMP_MaterialManager")]#[parent(crate::system::object::Object)]pub struct TMP_MaterialManager{#[static_field]#[rename(name="m_materialList")]pub m_material_list:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_MaskingMaterial> , #[static_field]#[rename(name="m_fallbackMaterials")]pub m_fallback_materials:crate::system::collections::generic::dictionary_2::Dictionary_2<i64,crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial> , #[static_field]#[rename(name="m_fallbackMaterialLookup")]pub m_fallback_material_lookup:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,i64> , #[static_field]#[rename(name="m_fallbackCleanupList")]pub m_fallback_cleanup_list:crate::system::collections::generic::list_1::List_1<crate::tm_pro::tmp_materialmanager::TMP_MaterialManager_FallbackMaterial> , #[static_field]#[rename(name="isFallbackListDirty")]pub is_fallback_list_dirty:bool,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_materialmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b1d70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`OnPreRender()` overload"] pub fn on_pre_render () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b1f60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetStencilMaterial(crate::unity_engine::material::Material, i32)` overload"] pub fn get_stencil_material (base_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , stencil_id : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: material :: Material { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b2250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (base_material) , :: core :: convert :: Into :: into (stencil_id) , :: core :: option :: Option :: None) } } } # [doc = "`ReleaseStencilMaterial(crate::unity_engine::material::Material)` overload"] pub fn release_stencil_material (stencil_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b2630usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stencil_material) , :: core :: option :: Option :: None) } } } # [doc = "`GetBaseMaterial(crate::unity_engine::material::Material)` overload"] pub fn get_base_material (stencil_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> crate :: unity_engine :: material :: Material { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b28a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stencil_material) , :: core :: option :: Option :: None) } } } # [doc = "`SetStencil(crate::unity_engine::material::Material, i32)` overload"] pub fn set_stencil (material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , stencil_id : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: material :: Material { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b2a40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (material) , :: core :: convert :: Into :: into (stencil_id) , :: core :: option :: Option :: None) } } } # [doc = "`AddMaskingMaterial(crate::unity_engine::material::Material, crate::unity_engine::material::Material, i32)` overload"] pub fn add_masking_material (base_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , stencil_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , stencil_id : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , crate :: unity_engine :: material :: Material , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b2b20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (base_material) , :: core :: convert :: Into :: into (stencil_material) , :: core :: convert :: Into :: into (stencil_id) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveStencilMaterial(crate::unity_engine::material::Material)` overload"] pub fn remove_stencil_material (stencil_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b2dc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (stencil_material) , :: core :: option :: Option :: None) } } } # [doc = "`ReleaseBaseMaterial(crate::unity_engine::material::Material)` overload"] pub fn release_base_material (base_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b2f60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (base_material) , :: core :: option :: Option :: None) } } } # [doc = "`ClearMaterials()` overload"] pub fn clear_materials () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b35a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetStencilID(crate::unity_engine::gameobject::GameObject)` overload"] pub fn get_stencil_id (obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b37b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`GetMaterialForRendering(crate::unity_engine::ui::maskablegraphic::MaskableGraphic, crate::unity_engine::material::Material)` overload"] pub fn get_material_for_rendering (graphic : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic > , base_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> crate :: unity_engine :: material :: Material { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: ui :: maskablegraphic :: MaskableGraphic , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b3c70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (graphic) , :: core :: convert :: Into :: into (base_material) , :: core :: option :: Option :: None) } } } # [doc = "`FindRootSortOverrideCanvas(crate::unity_engine::transform::Transform)` overload"] pub fn find_root_sort_override_canvas (start : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> crate :: unity_engine :: transform :: Transform { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b3ab0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (start) , :: core :: option :: Option :: None) } } } # [doc = "`GetFallbackMaterial(crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::unity_engine::material::Material, i32)` overload"] pub fn get_fallback_material (font_asset : impl :: core :: convert :: Into < crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset > , source_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , atlas_index : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: material :: Material { unsafe { { let __inner : extern "C" fn (crate :: tm_pro :: tmp_fontasset :: TMP_FontAsset , crate :: unity_engine :: material :: Material , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b3e80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (font_asset) , :: core :: convert :: Into :: into (source_material) , :: core :: convert :: Into :: into (atlas_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetFallbackMaterial(crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"] pub fn get_fallback_material_2 (source_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , target_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> crate :: unity_engine :: material :: Material { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: material :: Material = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b43e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source_material) , :: core :: convert :: Into :: into (target_material) , :: core :: option :: Option :: None) } } } # [doc = "`AddFallbackMaterialReference(crate::unity_engine::material::Material)` overload"] pub fn add_fallback_material_reference (target_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b4830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (target_material) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveFallbackMaterialReference(crate::unity_engine::material::Material)` overload"] pub fn remove_fallback_material_reference (target_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b4990usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (target_material) , :: core :: option :: Option :: None) } } } # [doc = "`CleanupFallbackMaterials()` overload"] pub fn cleanup_fallback_materials () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b1ff0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ReleaseFallbackMaterial(crate::unity_engine::material::Material)` overload"] pub fn release_fallback_material (fallback_material : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b4b30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (fallback_material) , :: core :: option :: Option :: None) } } } # [doc = "`CopyMaterialPresetProperties(crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"] pub fn copy_material_preset_properties (source : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material > , destination : impl :: core :: convert :: Into < crate :: unity_engine :: material :: Material >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: material :: Material , crate :: unity_engine :: material :: Material , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b4160usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source) , :: core :: convert :: Into :: into (destination) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_pre_render_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_stencil_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn release_stencil_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_base_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_stencil_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_masking_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn remove_stencil_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn release_base_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn clear_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_stencil_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_material_for_rendering_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn find_root_sort_override_canvas_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_fallback_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_fallback_material_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn add_fallback_material_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn remove_fallback_material_reference_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn cleanup_fallback_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn release_fallback_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn copy_material_preset_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-pub trait ITMP_MaterialManager_MaskingMaterialMethods : ITMP_MaterialManager_MaskingMaterial { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_MaterialManager_MaskingMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_MaterialManager_MaskingMaterial , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ea98b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl < __T : ITMP_MaterialManager_MaskingMaterial > ITMP_MaterialManager_MaskingMaterialMethods for __T { }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_MaskingMaterial { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager_MaskingMaterial as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_MaskingMaterial {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_MaterialManager_MaskingMaterial) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_MaterialManager_MaskingMaterialMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_materialmanager")]pub trait ITMP_MaterialManager_MaskingMaterialMethods:ITMP_MaterialManager_MaskingMaterial{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_MaterialManager_MaskingMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea98b0usize)as*mut u8,();
+(TMP_MaterialManager_MaskingMaterial)__receiver)}
+}
 }
 
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-pub trait ITMP_MaterialManager_FallbackMaterialMethods : ITMP_MaterialManager_FallbackMaterial { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_MaterialManager_FallbackMaterial as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_MaterialManager_FallbackMaterial , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ea98a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl<__T:ITMP_MaterialManager_MaskingMaterial>ITMP_MaterialManager_MaskingMaterialMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl < __T : ITMP_MaterialManager_FallbackMaterial > ITMP_MaterialManager_FallbackMaterialMethods for __T { }
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager_MaskingMaterial{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_FallbackMaterial { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_MaterialManager_FallbackMaterial as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager_MaskingMaterial{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_MaterialManager_MaskingMaterial), ::core::stringify!(new),));
+ <Self as ITMP_MaterialManager_MaskingMaterialMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_FallbackMaterial {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_MaterialManager_FallbackMaterial) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_MaterialManager_FallbackMaterialMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_materialmanager")]pub trait ITMP_MaterialManager_FallbackMaterialMethods:ITMP_MaterialManager_FallbackMaterial{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_MaterialManager_FallbackMaterial as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea98a0usize)as*mut u8,();
+(TMP_MaterialManager_FallbackMaterial)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl<__T:ITMP_MaterialManager_FallbackMaterial>ITMP_MaterialManager_FallbackMaterialMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager_FallbackMaterial{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager_FallbackMaterial{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_MaterialManager_FallbackMaterial), ::core::stringify!(new),));
+ <Self as ITMP_MaterialManager_FallbackMaterialMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b1d70usize)as*mut u8,();
+)}
+}
+#[doc="`OnPreRender()` overload"]pub fn on_pre_render()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b1f60usize)as*mut u8,();
+)}
+}
+#[doc="`GetStencilMaterial(crate::unity_engine::material::Material, i32)` overload"]pub fn get_stencil_material(base_material:impl::core::convert::Into<crate::unity_engine::material::Material> ,stencil_id:impl::core::convert::Into<i32>)->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b2250usize)as*mut u8,crate::unity_engine::material::Material;
+(crate::unity_engine::material::Material)::core::convert::Into::into(base_material),(i32)::core::convert::Into::into(stencil_id))}
+}
+#[doc="`ReleaseStencilMaterial(crate::unity_engine::material::Material)` overload"]pub fn release_stencil_material(stencil_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b2630usize)as*mut u8,();
+(crate::unity_engine::material::Material)::core::convert::Into::into(stencil_material))}
+}
+#[doc="`GetBaseMaterial(crate::unity_engine::material::Material)` overload"]pub fn get_base_material(stencil_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b28a0usize)as*mut u8,crate::unity_engine::material::Material;
+(crate::unity_engine::material::Material)::core::convert::Into::into(stencil_material))}
+}
+#[doc="`SetStencil(crate::unity_engine::material::Material, i32)` overload"]pub fn set_stencil(material:impl::core::convert::Into<crate::unity_engine::material::Material> ,stencil_id:impl::core::convert::Into<i32>)->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b2a40usize)as*mut u8,crate::unity_engine::material::Material;
+(crate::unity_engine::material::Material)::core::convert::Into::into(material),(i32)::core::convert::Into::into(stencil_id))}
+}
+#[doc="`AddMaskingMaterial(crate::unity_engine::material::Material, crate::unity_engine::material::Material, i32)` overload"]pub fn add_masking_material(base_material:impl::core::convert::Into<crate::unity_engine::material::Material> ,stencil_material:impl::core::convert::Into<crate::unity_engine::material::Material> ,stencil_id:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b2b20usize)as*mut u8,();
+(crate::unity_engine::material::Material)::core::convert::Into::into(base_material),(crate::unity_engine::material::Material)::core::convert::Into::into(stencil_material),(i32)::core::convert::Into::into(stencil_id))}
+}
+#[doc="`RemoveStencilMaterial(crate::unity_engine::material::Material)` overload"]pub fn remove_stencil_material(stencil_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b2dc0usize)as*mut u8,();
+(crate::unity_engine::material::Material)::core::convert::Into::into(stencil_material))}
+}
+#[doc="`ReleaseBaseMaterial(crate::unity_engine::material::Material)` overload"]pub fn release_base_material(base_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b2f60usize)as*mut u8,();
+(crate::unity_engine::material::Material)::core::convert::Into::into(base_material))}
+}
+#[doc="`ClearMaterials()` overload"]pub fn clear_materials()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b35a0usize)as*mut u8,();
+)}
+}
+#[doc="`GetStencilID(crate::unity_engine::gameobject::GameObject)` overload"]pub fn get_stencil_id(obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b37b0usize)as*mut u8,i32;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
+}
+#[doc="`GetMaterialForRendering(crate::unity_engine::ui::maskablegraphic::MaskableGraphic, crate::unity_engine::material::Material)` overload"]pub fn get_material_for_rendering(graphic:impl::core::convert::Into<crate::unity_engine::ui::maskablegraphic::MaskableGraphic> ,base_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b3c70usize)as*mut u8,crate::unity_engine::material::Material;
+(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)::core::convert::Into::into(graphic),(crate::unity_engine::material::Material)::core::convert::Into::into(base_material))}
+}
+#[doc="`FindRootSortOverrideCanvas(crate::unity_engine::transform::Transform)` overload"]pub fn find_root_sort_override_canvas(start:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b3ab0usize)as*mut u8,crate::unity_engine::transform::Transform;
+(crate::unity_engine::transform::Transform)::core::convert::Into::into(start))}
+}
+#[doc="`GetFallbackMaterial(crate::tm_pro::tmp_fontasset::TMP_FontAsset, crate::unity_engine::material::Material, i32)` overload"]pub fn get_fallback_material(font_asset:impl::core::convert::Into<crate::tm_pro::tmp_fontasset::TMP_FontAsset> ,source_material:impl::core::convert::Into<crate::unity_engine::material::Material> ,atlas_index:impl::core::convert::Into<i32>)->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b3e80usize)as*mut u8,crate::unity_engine::material::Material;
+(crate::tm_pro::tmp_fontasset::TMP_FontAsset)::core::convert::Into::into(font_asset),(crate::unity_engine::material::Material)::core::convert::Into::into(source_material),(i32)::core::convert::Into::into(atlas_index))}
+}
+#[doc="`GetFallbackMaterial(crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"]pub fn get_fallback_material_2(source_material:impl::core::convert::Into<crate::unity_engine::material::Material> ,target_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b43e0usize)as*mut u8,crate::unity_engine::material::Material;
+(crate::unity_engine::material::Material)::core::convert::Into::into(source_material),(crate::unity_engine::material::Material)::core::convert::Into::into(target_material))}
+}
+#[doc="`AddFallbackMaterialReference(crate::unity_engine::material::Material)` overload"]pub fn add_fallback_material_reference(target_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b4830usize)as*mut u8,();
+(crate::unity_engine::material::Material)::core::convert::Into::into(target_material))}
+}
+#[doc="`RemoveFallbackMaterialReference(crate::unity_engine::material::Material)` overload"]pub fn remove_fallback_material_reference(target_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b4990usize)as*mut u8,();
+(crate::unity_engine::material::Material)::core::convert::Into::into(target_material))}
+}
+#[doc="`CleanupFallbackMaterials()` overload"]pub fn cleanup_fallback_materials()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b1ff0usize)as*mut u8,();
+)}
+}
+#[doc="`ReleaseFallbackMaterial(crate::unity_engine::material::Material)` overload"]pub fn release_fallback_material(fallback_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b4b30usize)as*mut u8,();
+(crate::unity_engine::material::Material)::core::convert::Into::into(fallback_material))}
+}
+#[doc="`CopyMaterialPresetProperties(crate::unity_engine::material::Material, crate::unity_engine::material::Material)` overload"]pub fn copy_material_preset_properties(source:impl::core::convert::Into<crate::unity_engine::material::Material> ,destination:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33b4160usize)as*mut u8,();
+(crate::unity_engine::material::Material)::core::convert::Into::into(source),(crate::unity_engine::material::Material)::core::convert::Into::into(destination))}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_materialmanager")]impl TMP_MaterialManager{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_pre_render_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_stencil_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn release_stencil_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_base_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_stencil_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_masking_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn remove_stencil_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn release_base_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn clear_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_stencil_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_material_for_rendering_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn find_root_sort_override_canvas_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_fallback_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_fallback_material_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn add_fallback_material_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn remove_fallback_material_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn cleanup_fallback_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn release_fallback_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn copy_material_preset_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
 }
 
 #[cfg(feature = "tm_pro-tmp_materialmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TMP_MaterialManager;
-    pub use super::ITMP_MaterialManager;
     pub use super::TMP_MaterialManager_MaskingMaterial;
     pub use super::ITMP_MaterialManager_MaskingMaterial;
     pub use super::ITMP_MaterialManager_MaskingMaterialMethods;
     pub use super::TMP_MaterialManager_FallbackMaterial;
     pub use super::ITMP_MaterialManager_FallbackMaterial;
     pub use super::ITMP_MaterialManager_FallbackMaterialMethods;
+    pub use super::TMP_MaterialManager;
+    pub use super::ITMP_MaterialManager;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

@@ -4,40 +4,291 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: moon_sharp :: interpreter :: tree :: nodebase :: { INodeBase , NodeBase }
- ;
- use crate :: moon_sharp :: interpreter :: tree :: statement :: { IStatement , Statement }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::moon_sharp::interpreter::tree::nodebase::{INodeBase,NodeBase}
+;
+use crate::moon_sharp::interpreter::tree::statement::{IStatement,Statement}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/labelstatement/LabelStatement.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Tree.Statements" , name = "LabelStatement")] # [parent (crate :: moon_sharp :: interpreter :: tree :: statement :: Statement)] pub struct LabelStatement {
-# [offset (80)] # [rename (name = "m_Gotos")] pub m_gotos : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: tree :: statements :: gotostatement :: GotoStatement > ,
-# [offset (88)] # [rename (name = "m_StackFrame")] pub m_stack_frame : crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/statements/labelstatement/LabelStatement.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Tree.Statements",name="LabelStatement")]#[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]pub struct LabelStatement{#[offset(80)]#[rename(name="m_Gotos")]pub m_gotos:crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement> , #[offset(88)]#[rename(name="m_StackFrame")]pub m_stack_frame:crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-labelstatement-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-labelstatement")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LabelStatement_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "get_Label" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "get_Label" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_label { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "set_Label" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "set_Label" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_address { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "get_Address" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "get_Address" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_address { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "set_Address" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "set_Address" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_source_ref { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "get_SourceRef" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "get_SourceRef" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_source_ref { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "set_SourceRef" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "set_SourceRef" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_name_token { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "get_NameToken" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "get_NameToken" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_name_token { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: token :: Token as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "set_NameToken" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "set_NameToken" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_defined_vars_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "get_DefinedVarsCount" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "get_DefinedVarsCount" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_defined_vars_count { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "set_DefinedVarsCount" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "set_DefinedVarsCount" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_last_defined_var_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "get_LastDefinedVarName" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "get_LastDefinedVarName" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_last_defined_var_name { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "set_LastDefinedVarName" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "set_LastDefinedVarName" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_defined_vars { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< i32 as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "SetDefinedVars" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "SetDefinedVars" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_register_goto { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: tree :: statements :: gotostatement :: GotoStatement as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "RegisterGoto" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "RegisterGoto" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_compile { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "Compile" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "Compile" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_scope { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LabelStatement as :: unity2 :: ClassIdentity > :: class () , "SetScope" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LabelStatement as :: unity2 :: ClassIdentity > :: NAME , "SetScope" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-tree-statements-labelstatement")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LabelStatement_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_label{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"get_Label",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"get_Label",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_label{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"set_Label",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"set_Label",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_address{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"get_Address",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"get_Address",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_address{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"set_Address",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"set_Address",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_source_ref{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"get_SourceRef",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"get_SourceRef",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_source_ref{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"set_SourceRef",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"set_SourceRef",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_name_token{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"get_NameToken",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"get_NameToken",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_name_token{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::token::Token as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"set_NameToken",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"set_NameToken",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_defined_vars_count{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"get_DefinedVarsCount",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"get_DefinedVarsCount",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_defined_vars_count{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"set_DefinedVarsCount",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"set_DefinedVarsCount",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_last_defined_var_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"get_LastDefinedVarName",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"get_LastDefinedVarName",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_last_defined_var_name{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"set_LastDefinedVarName",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"set_LastDefinedVarName",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_defined_vars{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"SetDefinedVars",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"SetDefinedVars",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_register_goto{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"RegisterGoto",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"RegisterGoto",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"Compile",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"Compile",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_scope{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LabelStatement as::unity2::ClassIdentity> ::class(),"SetScope",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LabelStatement as::unity2::ClassIdentity> ::NAME,"SetScope",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-labelstatement")]
-pub trait ILabelStatementMethods : ILabelStatement { # [doc = "`get_Label()` overload"] fn get_label (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_get_label :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Label(::unity2::Il2CppString)` overload"] fn set_label (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_set_label :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Address()` overload"] fn get_address (self ,) -> i32 { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_get_address :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Address(i32)` overload"] fn set_address (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_set_address :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SourceRef()` overload"] fn get_source_ref (self ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_get_source_ref :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SourceRef(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"] fn set_source_ref (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_set_source_ref :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_NameToken()` overload"] fn get_name_token (self ,) -> crate :: moon_sharp :: interpreter :: tree :: token :: Token { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: tree :: token :: Token = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_get_name_token :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_NameToken(crate::moon_sharp::interpreter::tree::token::Token)` overload"] fn set_name_token (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: token :: Token >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , crate :: moon_sharp :: interpreter :: tree :: token :: Token , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_set_name_token :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DefinedVarsCount()` overload"] fn get_defined_vars_count (self ,) -> i32 { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_get_defined_vars_count :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DefinedVarsCount(i32)` overload"] fn set_defined_vars_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_set_defined_vars_count :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_LastDefinedVarName()` overload"] fn get_last_defined_var_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_get_last_defined_var_name :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_LastDefinedVarName(::unity2::Il2CppString)` overload"] fn set_last_defined_var_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_set_last_defined_var_name :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"] fn ctor (self , lcontext : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (lcontext) , :: core :: option :: Option :: None) } } } # [doc = "`SetDefinedVars(i32, ::unity2::Il2CppString)` overload"] fn set_defined_vars (self , defined_vars_count : impl :: core :: convert :: Into < i32 > , last_defined_vars_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_set_defined_vars :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (defined_vars_count) , :: core :: convert :: Into :: into (last_defined_vars_name) , :: core :: option :: Option :: None) } } } # [doc = "`RegisterGoto(crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement)` overload"] fn register_goto (self , gotostat : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: tree :: statements :: gotostatement :: GotoStatement >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , crate :: moon_sharp :: interpreter :: tree :: statements :: gotostatement :: GotoStatement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_register_goto :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (gotostat) , :: core :: option :: Option :: None) } } } # [doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"] fn compile (self , bc : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , crate :: moon_sharp :: interpreter :: execution :: vm :: bytecode :: ByteCode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_compile :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (bc) , :: core :: option :: Option :: None) } } } # [doc = "`SetScope(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"] fn set_scope (self , runtime_scope_block : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock >) -> () { unsafe { let __receiver = < LabelStatement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LabelStatement , crate :: moon_sharp :: interpreter :: execution :: runtimescopeblock :: RuntimeScopeBlock , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__LabelStatement_unity2_raw :: __lookup_set_scope :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (runtime_scope_block) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-tree-statements-labelstatement")]pub trait ILabelStatementMethods:ILabelStatement{#[doc="`get_Label()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_get_label::get_method_info().method_ptr, ::unity2::Il2CppString;
+(LabelStatement)__receiver)}
+}
+#[doc="`set_Label(::unity2::Il2CppString)` overload"]fn set_label(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_set_label::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Address()` overload"]fn get_address(self,)->i32{unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_get_address::get_method_info().method_ptr,i32;
+(LabelStatement)__receiver)}
+}
+#[doc="`set_Address(i32)` overload"]fn set_address(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_set_address::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SourceRef()` overload"]fn get_source_ref(self,)->crate::moon_sharp::interpreter::debugging::sourceref::SourceRef{unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_get_source_ref::get_method_info().method_ptr,crate::moon_sharp::interpreter::debugging::sourceref::SourceRef;
+(LabelStatement)__receiver)}
+}
+#[doc="`set_SourceRef(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]fn set_source_ref(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_set_source_ref::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)::core::convert::Into::into(value))}
+}
+#[doc="`get_NameToken()` overload"]fn get_name_token(self,)->crate::moon_sharp::interpreter::tree::token::Token{unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_get_name_token::get_method_info().method_ptr,crate::moon_sharp::interpreter::tree::token::Token;
+(LabelStatement)__receiver)}
+}
+#[doc="`set_NameToken(crate::moon_sharp::interpreter::tree::token::Token)` overload"]fn set_name_token(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_set_name_token::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(value))}
+}
+#[doc="`get_DefinedVarsCount()` overload"]fn get_defined_vars_count(self,)->i32{unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_get_defined_vars_count::get_method_info().method_ptr,i32;
+(LabelStatement)__receiver)}
+}
+#[doc="`set_DefinedVarsCount(i32)` overload"]fn set_defined_vars_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_set_defined_vars_count::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_LastDefinedVarName()` overload"]fn get_last_defined_var_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_get_last_defined_var_name::get_method_info().method_ptr, ::unity2::Il2CppString;
+(LabelStatement)__receiver)}
+}
+#[doc="`set_LastDefinedVarName(::unity2::Il2CppString)` overload"]fn set_last_defined_var_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_set_last_defined_var_name::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]fn ctor(self,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
+}
+#[doc="`SetDefinedVars(i32, ::unity2::Il2CppString)` overload"]fn set_defined_vars(self,defined_vars_count:impl::core::convert::Into<i32> ,last_defined_vars_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_set_defined_vars::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(i32)::core::convert::Into::into(defined_vars_count),(::unity2::Il2CppString)::core::convert::Into::into(last_defined_vars_name))}
+}
+#[doc="`RegisterGoto(crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement)` overload"]fn register_goto(self,gotostat:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_register_goto::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement)::core::convert::Into::into(gotostat))}
+}
+#[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_compile::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc))}
+}
+#[doc="`SetScope(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)` overload"]fn set_scope(self,runtime_scope_block:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock>)->(){unsafe{let __receiver= <LabelStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__LabelStatement_unity2_raw::__lookup_set_scope::get_method_info().method_ptr,();
+(LabelStatement)__receiver,(crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock)::core::convert::Into::into(runtime_scope_block))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-labelstatement")]
-impl < __T : ILabelStatement > ILabelStatementMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-tree-statements-labelstatement")]impl<__T:ILabelStatement>ILabelStatementMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-labelstatement")]
-impl LabelStatement { pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_address_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_address_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_source_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_source_ref_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_name_token_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_name_token_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_defined_vars_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_defined_vars_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_last_defined_var_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_last_defined_var_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_defined_vars_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn register_goto_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn compile_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_scope_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LabelStatement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="moon_sharp-interpreter-tree-statements-labelstatement")]impl LabelStatement{pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_address_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_address_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_source_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_source_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_name_token_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_name_token_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_defined_vars_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_defined_vars_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_last_defined_var_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_last_defined_var_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_defined_vars_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn register_goto_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn compile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-labelstatement")]
-impl LabelStatement {
-# [doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"] pub fn new (lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LabelStatement) , :: core :: stringify ! (new) ,)) ; < Self as ILabelStatementMethods > :: ctor (this , lcontext) ; this }
+#[cfg(feature="moon_sharp-interpreter-tree-statements-labelstatement")]impl LabelStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` — overload selector"]pub fn new(lcontext:crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LabelStatement), ::core::stringify!(new),));
+ <Self as ILabelStatementMethods> ::ctor(this,lcontext);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-labelstatement")]

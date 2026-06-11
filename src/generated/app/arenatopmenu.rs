@@ -4,94 +4,138 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenu/ArenaTopMenu_DecideEventHandler.md"))] # [:: unity2 :: class (namespace = "App" , name = "ArenaTopMenu.DecideEventHandler")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct ArenaTopMenu_DecideEventHandler {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenatopmenu/ArenaTopMenu_TrainingMenuItem.md"))]#[::unity2::class(namespace="App",name="ArenaTopMenu.TrainingMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ArenaTopMenu_TrainingMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler, #[offset(112)]#[rename(name="m_Index")]pub m_index:i32, #[offset(116)]#[rename(name="m_IsActive")]pub m_is_active:bool,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenu/ArenaTopMenu_TrainingMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "ArenaTopMenu.TrainingMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct ArenaTopMenu_TrainingMenuItem {
-# [offset (104)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler ,
-# [offset (112)] # [rename (name = "m_Index")] pub m_index : i32 ,
-# [offset (116)] # [rename (name = "m_IsActive")] pub m_is_active : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenatopmenu/ArenaTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ArenaTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ArenaTopMenu_DecideEventHandler{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenu/ArenaTopMenu.md"))] # [:: unity2 :: class (namespace = "App" , name = "ArenaTopMenu")] # [parent (crate :: app :: basicmenu :: BasicMenu)] pub struct ArenaTopMenu {
-# [offset (200)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenatopmenu/ArenaTopMenu.md"))]#[::unity2::class(namespace="App",name="ArenaTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct ArenaTopMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-arenatopmenu-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-arenatopmenu")]
-pub trait IArenaTopMenu_DecideEventHandlerMethods : IArenaTopMenu_DecideEventHandler { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < ArenaTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu_DecideEventHandler , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bae660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(bool, i32)` overload"] fn invoke (self , go_next : impl :: core :: convert :: Into < bool > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ArenaTopMenu_DecideEventHandler as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu_DecideEventHandler , bool , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bae680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (go_next) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-arenatopmenu")]
-impl < __T : IArenaTopMenu_DecideEventHandler > IArenaTopMenu_DecideEventHandlerMethods for __T { }
-
-#[cfg(feature = "app-arenatopmenu")]
-impl ArenaTopMenu_DecideEventHandler { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu_DecideEventHandler as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-arenatopmenu")]
-impl ArenaTopMenu_DecideEventHandler {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArenaTopMenu_DecideEventHandler) , :: core :: stringify ! (new) ,)) ; < Self as IArenaTopMenu_DecideEventHandlerMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="app-arenatopmenu")]pub trait IArenaTopMenu_TrainingMenuItemMethods:IArenaTopMenu_TrainingMenuItem{#[doc="`.ctor(crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler, i32, bool)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler> ,index:impl::core::convert::Into<i32> ,is_active:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ArenaTopMenu_TrainingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bae990usize)as*mut u8,();
+(ArenaTopMenu_TrainingMenuItem)__receiver,(crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(i32)::core::convert::Into::into(index),(bool)::core::convert::Into::into(is_active))}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <ArenaTopMenu_TrainingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baebb0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
+(ArenaTopMenu_TrainingMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ArenaTopMenu_TrainingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baebd0usize)as*mut u8,();
+(ArenaTopMenu_TrainingMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ArenaTopMenu_TrainingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1baec70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ArenaTopMenu_TrainingMenuItem)__receiver)}
+}
 }
 
-#[cfg(feature = "app-arenatopmenu")]
-pub trait IArenaTopMenu_TrainingMenuItemMethods : IArenaTopMenu_TrainingMenuItem { # [doc = "`.ctor(crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler, i32, bool)` overload"] fn ctor (self , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler > , index : impl :: core :: convert :: Into < i32 > , is_active : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ArenaTopMenu_TrainingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu_TrainingMenuItem , crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bae990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (is_active) , :: core :: option :: Option :: None) } } } # [doc = "`BuildAttribute()` overload"] fn build_attribute (self ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute { unsafe { let __receiver = < ArenaTopMenu_TrainingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu_TrainingMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenuitem :: BasicMenuItem_Attribute = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baebb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < ArenaTopMenu_TrainingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu_TrainingMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baebd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ArenaTopMenu_TrainingMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu_TrainingMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1baec70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenatopmenu")]impl<__T:IArenaTopMenu_TrainingMenuItem>IArenaTopMenu_TrainingMenuItemMethods for __T{}
 
-#[cfg(feature = "app-arenatopmenu")]
-impl < __T : IArenaTopMenu_TrainingMenuItem > IArenaTopMenu_TrainingMenuItemMethods for __T { }
-
-#[cfg(feature = "app-arenatopmenu")]
-impl ArenaTopMenu_TrainingMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu_TrainingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_attribute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu_TrainingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu_TrainingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu_TrainingMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-arenatopmenu")]
-impl ArenaTopMenu_TrainingMenuItem {
-# [doc = "`.ctor(crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler, i32, bool)` — overload selector"] pub fn new (decide_event_handler : crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler , index : i32 , is_active : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArenaTopMenu_TrainingMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IArenaTopMenu_TrainingMenuItemMethods > :: ctor (this , decide_event_handler , index , is_active) ; this }
+#[cfg(feature="app-arenatopmenu")]impl ArenaTopMenu_TrainingMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature = "app-arenatopmenu")]
-impl ArenaTopMenu { # [doc = "`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , default_index : impl :: core :: convert :: Into < i32 > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , i32 , crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21175a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (default_index) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenatopmenu")]impl ArenaTopMenu_TrainingMenuItem{#[doc="`.ctor(crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler, i32, bool)` — overload selector"]pub fn new(decide_event_handler:crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler,index:i32,is_active:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaTopMenu_TrainingMenuItem), ::core::stringify!(new),));
+ <Self as IArenaTopMenu_TrainingMenuItemMethods> ::ctor(this,decide_event_handler,index,is_active);
+this}
+}
 
-#[cfg(feature = "app-arenatopmenu")]
-pub trait IArenaTopMenuMethods : IArenaTopMenu { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenatopmenucontent::ArenaTopMenuContent, crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: arenatopmenucontent :: ArenaTopMenuContent > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < ArenaTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: arenatopmenucontent :: ArenaTopMenuContent , crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117a30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ArenaTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToggleNormal(i32)` overload"] fn toggle_normal (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ArenaTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < ArenaTopMenu as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaTopMenu , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2117c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenatopmenu")]pub trait IArenaTopMenu_DecideEventHandlerMethods:IArenaTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ArenaTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bae660usize)as*mut u8,();
+(ArenaTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool, i32)` overload"]fn invoke(self,go_next:impl::core::convert::Into<bool> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArenaTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bae680usize)as*mut u8,();
+(ArenaTopMenu_DecideEventHandler)__receiver,(bool)::core::convert::Into::into(go_next),(i32)::core::convert::Into::into(index))}
+}
+}
 
-#[cfg(feature = "app-arenatopmenu")]
-impl < __T : IArenaTopMenu > IArenaTopMenuMethods for __T { }
+#[cfg(feature="app-arenatopmenu")]impl<__T:IArenaTopMenu_DecideEventHandler>IArenaTopMenu_DecideEventHandlerMethods for __T{}
 
-#[cfg(feature = "app-arenatopmenu")]
-impl ArenaTopMenu { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn toggle_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaTopMenu as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-arenatopmenu")]impl ArenaTopMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-arenatopmenu")]
-impl ArenaTopMenu {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenatopmenucontent::ArenaTopMenuContent, crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: arenatopmenucontent :: ArenaTopMenuContent , decide_event_handler : crate :: app :: arenatopmenu :: ArenaTopMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArenaTopMenu) , :: core :: stringify ! (new) ,)) ; < Self as IArenaTopMenuMethods > :: ctor (this , menu_item_list , menu_content , decide_event_handler) ; this }
+#[cfg(feature="app-arenatopmenu")]impl ArenaTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaTopMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IArenaTopMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-arenatopmenu")]impl ArenaTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,default_index:impl::core::convert::Into<i32> ,decide_event_handler:impl::core::convert::Into<crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21175a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(default_index),(crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+}
+
+#[cfg(feature="app-arenatopmenu")]pub trait IArenaTopMenuMethods:IArenaTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenatopmenucontent::ArenaTopMenuContent, crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::arenatopmenucontent::ArenaTopMenuContent> ,decide_event_handler:impl::core::convert::Into<crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ArenaTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117a30usize)as*mut u8,();
+(ArenaTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::arenatopmenucontent::ArenaTopMenuContent)::core::convert::Into::into(menu_content),(crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ArenaTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117a70usize)as*mut u8, ::unity2::Il2CppString;
+(ArenaTopMenu)__receiver)}
+}
+#[doc="`ToggleNormal(i32)` overload"]fn toggle_normal(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArenaTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117ac0usize)as*mut u8,();
+(ArenaTopMenu)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ArenaTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2117c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(ArenaTopMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-arenatopmenu")]impl<__T:IArenaTopMenu>IArenaTopMenuMethods for __T{}
+
+#[cfg(feature="app-arenatopmenu")]impl ArenaTopMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn toggle_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-arenatopmenu")]impl ArenaTopMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::arenatopmenucontent::ArenaTopMenuContent, crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::arenatopmenucontent::ArenaTopMenuContent,decide_event_handler:crate::app::arenatopmenu::ArenaTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaTopMenu), ::core::stringify!(new),));
+ <Self as IArenaTopMenuMethods> ::ctor(this,menu_item_list,menu_content,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-arenatopmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArenaTopMenu_DecideEventHandler;
-    pub use super::IArenaTopMenu_DecideEventHandler;
-    pub use super::IArenaTopMenu_DecideEventHandlerMethods;
     pub use super::ArenaTopMenu_TrainingMenuItem;
     pub use super::IArenaTopMenu_TrainingMenuItem;
     pub use super::IArenaTopMenu_TrainingMenuItemMethods;
+    pub use super::ArenaTopMenu_DecideEventHandler;
+    pub use super::IArenaTopMenu_DecideEventHandler;
+    pub use super::IArenaTopMenu_DecideEventHandlerMethods;
     pub use super::ArenaTopMenu;
     pub use super::IArenaTopMenu;
     pub use super::IArenaTopMenuMethods;

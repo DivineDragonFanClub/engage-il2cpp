@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/computebufferdesc/ComputeBufferDesc.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ComputeBufferDesc {
-    pub count: i32,
-    pub stride: i32,
-    pub r#type: crate :: unity_engine :: computebuffertype :: ComputeBufferType,
-    pub name: :: unity2 :: Il2CppString,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/render_graph_module/computebufferdesc/ComputeBufferDesc.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ComputeBufferDesc{pub count:i32,pub stride:i32,pub r#type:crate::unity_engine::computebuffertype::ComputeBufferType,pub name: ::unity2::Il2CppString,}
+impl::unity2::ClassIdentity for ComputeBufferDesc{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.RenderGraphModule";
+const NAME: &'static str="ComputeBufferDesc";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ComputeBufferDesc {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
-    const NAME: &'static str = "ComputeBufferDesc";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ComputeBufferDesc {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ComputeBufferDesc{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,21 @@ impl ::unity2::IlType for ComputeBufferDesc {
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferdesc-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferdesc")]
-impl ComputeBufferDesc { # [doc = "`.ctor(i32, i32)` overload"] pub fn ctor (& mut self , count : impl :: core :: convert :: Into < i32 > , stride : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ComputeBufferDesc , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3530990usize) as * mut u8) ; __inner (self as * mut ComputeBufferDesc , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (stride) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32, crate::unity_engine::computebuffertype::ComputeBufferType)` overload"] pub fn ctor_2 (& mut self , count : impl :: core :: convert :: Into < i32 > , stride : impl :: core :: convert :: Into < i32 > , r#type : impl :: core :: convert :: Into < crate :: unity_engine :: computebuffertype :: ComputeBufferType >) -> () { unsafe { { let __inner : extern "C" fn (* mut ComputeBufferDesc , i32 , i32 , crate :: unity_engine :: computebuffertype :: ComputeBufferType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35309b0usize) as * mut u8) ; __inner (self as * mut ComputeBufferDesc , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (stride) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ComputeBufferDesc , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35309d0usize) as * mut u8) ; __inner (self as * mut ComputeBufferDesc , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferdesc")]impl ComputeBufferDesc{#[doc="`.ctor(i32, i32)` overload"]pub fn ctor(&mut self,count:impl::core::convert::Into<i32> ,stride:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3530990usize)as*mut u8,();
+(*mut ComputeBufferDesc)self as*mut ComputeBufferDesc,(i32)::core::convert::Into::into(count),(i32)::core::convert::Into::into(stride))}
+}
+#[doc="`.ctor(i32, i32, crate::unity_engine::computebuffertype::ComputeBufferType)` overload"]pub fn ctor_2(&mut self,count:impl::core::convert::Into<i32> ,stride:impl::core::convert::Into<i32> ,r#type:impl::core::convert::Into<crate::unity_engine::computebuffertype::ComputeBufferType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35309b0usize)as*mut u8,();
+(*mut ComputeBufferDesc)self as*mut ComputeBufferDesc,(i32)::core::convert::Into::into(count),(i32)::core::convert::Into::into(stride),(crate::unity_engine::computebuffertype::ComputeBufferType)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35309d0usize)as*mut u8,i32;
+(*mut ComputeBufferDesc)self as*mut ComputeBufferDesc)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferdesc")]
-impl ComputeBufferDesc { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ComputeBufferDesc as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-computebufferdesc")]impl ComputeBufferDesc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferdesc")]
 #[doc(hidden)]

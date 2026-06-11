@@ -4,35 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: timeline :: runtimeelement :: { IRuntimeElement , RuntimeElement }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::timeline::runtimeelement::{IRuntimeElement,RuntimeElement}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/runtimeclipbase/RuntimeClipBase.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "RuntimeClipBase")] # [parent (crate :: unity_engine :: timeline :: runtimeelement :: RuntimeElement)] pub struct RuntimeClipBase {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/runtimeclipbase/RuntimeClipBase.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="RuntimeClipBase")]#[parent(crate::unity_engine::timeline::runtimeelement::RuntimeElement)]pub struct RuntimeClipBase{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __RuntimeClipBase_unity2_raw { use super :: * ; pub unsafe fn get_start (this : RuntimeClipBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f64 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_start") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_start" , < RuntimeClipBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_duration (this : RuntimeClipBase , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f64 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_duration") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_duration" , < RuntimeClipBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> f64 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-timeline-runtimeclipbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeClipBase_unity2_raw{use super:: * ;
+pub unsafe fn get_start(this:RuntimeClipBase,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_start").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_start", <RuntimeClipBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_duration(this:RuntimeClipBase,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_duration").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_duration", <RuntimeClipBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(RuntimeClipBase, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
-pub trait IRuntimeClipBaseMethods : IRuntimeClipBase { # [doc = "`get_start()` overload"] fn get_start (self ,) -> f64 { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeClipBase_unity2_raw :: get_start (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_duration()` overload"] fn get_duration (self ,) -> f64 { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __RuntimeClipBase_unity2_raw :: get_duration (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_intervalStart()` overload"] fn get_interval_start (self ,) -> i64 { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_intervalEnd()` overload"] fn get_interval_end (self ,) -> i64 { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> i64 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35da0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < RuntimeClipBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RuntimeClipBase , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35d9600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-runtimeclipbase")]pub trait IRuntimeClipBaseMethods:IRuntimeClipBase{#[doc="`get_start()` overload"]fn get_start(self,)->f64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RuntimeClipBase_unity2_raw::get_start(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RuntimeClipBase_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da020usize)as*mut u8,i64;
+(RuntimeClipBase)__receiver)}
+}
+#[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35da0b0usize)as*mut u8,i64;
+(RuntimeClipBase)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RuntimeClipBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9600usize)as*mut u8,();
+(RuntimeClipBase)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
-impl < __T : IRuntimeClipBase > IRuntimeClipBaseMethods for __T { }
+#[cfg(feature="unity_engine-timeline-runtimeclipbase")]impl<__T:IRuntimeClipBase>IRuntimeClipBaseMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
-impl RuntimeClipBase { pub fn get_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_interval_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_interval_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RuntimeClipBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-timeline-runtimeclipbase")]impl RuntimeClipBase{pub fn get_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_interval_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_interval_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-timeline-runtimeclipbase")]
-impl RuntimeClipBase {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RuntimeClipBase) , :: core :: stringify ! (new) ,)) ; < Self as IRuntimeClipBaseMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-timeline-runtimeclipbase")]impl RuntimeClipBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RuntimeClipBase), ::core::stringify!(new),));
+ <Self as IRuntimeClipBaseMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-runtimeclipbase")]

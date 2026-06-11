@@ -4,44 +4,97 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/module/Module.md"))] # [:: unity2 :: class (namespace = "System.Reflection" , name = "Module")] # [parent (crate :: system :: object :: Object)] pub struct Module {
-# [static_field] # [rename (name = "FilterTypeName")] pub filter_type_name : crate :: system :: reflection :: typefilter :: TypeFilter ,
-# [static_field] # [rename (name = "FilterTypeNameIgnoreCase")] pub filter_type_name_ignore_case : crate :: system :: reflection :: typefilter :: TypeFilter ,
-# [offset (16)] # [rename (name = "_impl")] pub r#impl : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "assembly")] pub assembly : crate :: system :: reflection :: assembly :: Assembly ,
-# [offset (32)] # [rename (name = "fqname")] pub fqname : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "scopename")] pub scopename : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "is_resource")] pub is_resource_field : bool ,
-# [offset (60)] # [rename (name = "token")] pub token : i32 ,
-# [static_field] # [rename (name = "defaultBindingFlags")] pub default_binding_flags : crate :: system :: reflection :: bindingflags :: BindingFlags ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/module/Module.md"))]#[::unity2::class(namespace="System.Reflection",name="Module")]#[parent(crate::system::object::Object)]pub struct Module{#[static_field]#[rename(name="FilterTypeName")]pub filter_type_name:crate::system::reflection::typefilter::TypeFilter, #[static_field]#[rename(name="FilterTypeNameIgnoreCase")]pub filter_type_name_ignore_case:crate::system::reflection::typefilter::TypeFilter, #[offset(16)]#[rename(name="_impl")]pub r#impl: ::unity2::IntPtr, #[offset(24)]#[rename(name="assembly")]pub assembly:crate::system::reflection::assembly::Assembly, #[offset(32)]#[rename(name="fqname")]pub fqname: ::unity2::Il2CppString, #[offset(40)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="scopename")]pub scopename: ::unity2::Il2CppString, #[offset(56)]#[rename(name="is_resource")]pub is_resource_field:bool, #[offset(60)]#[rename(name="token")]pub token:i32, #[static_field]#[rename(name="defaultBindingFlags")]pub default_binding_flags:crate::system::reflection::bindingflags::BindingFlags,}
 
 }
 
 #[cfg(feature = "system-reflection-module-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-reflection-module")]
-impl Module { # [doc = "`filter_by_type_name(::unity2::SystemType, crate::system::object::Object)` overload"] pub fn filter_by_type_name (m : impl :: core :: convert :: Into < :: unity2 :: SystemType > , filter_criteria : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337a850usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (m) , :: core :: convert :: Into :: into (filter_criteria) , :: core :: option :: Option :: None) } } } # [doc = "`filter_by_type_name_ignore_case(::unity2::SystemType, crate::system::object::Object)` overload"] pub fn filter_by_type_name_ignore_case (m : impl :: core :: convert :: Into < :: unity2 :: SystemType > , filter_criteria : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337a940usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (m) , :: core :: convert :: Into :: into (filter_criteria) , :: core :: option :: Option :: None) } } } # [doc = "`op_Equality(crate::system::reflection::module::Module, crate::system::reflection::module::Module)` overload"] pub fn op_equality (left : impl :: core :: convert :: Into < crate :: system :: reflection :: module :: Module > , right : impl :: core :: convert :: Into < crate :: system :: reflection :: module :: Module >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: reflection :: module :: Module , crate :: system :: reflection :: module :: Module , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337aa70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (left) , :: core :: convert :: Into :: into (right) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337add0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-module")]impl Module{#[doc="`filter_by_type_name(::unity2::SystemType, crate::system::object::Object)` overload"]pub fn filter_by_type_name(m:impl::core::convert::Into< ::unity2::SystemType> ,filter_criteria:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337a850usize)as*mut u8,bool;
+(::unity2::SystemType)::core::convert::Into::into(m),(crate::system::object::Object)::core::convert::Into::into(filter_criteria))}
+}
+#[doc="`filter_by_type_name_ignore_case(::unity2::SystemType, crate::system::object::Object)` overload"]pub fn filter_by_type_name_ignore_case(m:impl::core::convert::Into< ::unity2::SystemType> ,filter_criteria:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337a940usize)as*mut u8,bool;
+(::unity2::SystemType)::core::convert::Into::into(m),(crate::system::object::Object)::core::convert::Into::into(filter_criteria))}
+}
+#[doc="`op_Equality(crate::system::reflection::module::Module, crate::system::reflection::module::Module)` overload"]pub fn op_equality(left:impl::core::convert::Into<crate::system::reflection::module::Module> ,right:impl::core::convert::Into<crate::system::reflection::module::Module>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337aa70usize)as*mut u8,bool;
+(crate::system::reflection::module::Module)::core::convert::Into::into(left),(crate::system::reflection::module::Module)::core::convert::Into::into(right))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337add0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-reflection-module")]
-pub trait IModuleMethods : IModule { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337a7a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337a7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGuidInternal()` overload"] fn get_guid_internal (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337a840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , o : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337aa50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (o) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337aa60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Assembly()` overload"] fn get_assembly (self ,) -> crate :: system :: reflection :: assembly :: Assembly { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , :: unity2 :: OptionalMethod ,) -> crate :: system :: reflection :: assembly :: Assembly = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337aab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ScopeName()` overload"] fn get_scope_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337aba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsResource()` overload"] fn is_resource (self ,) -> bool { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337ac80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCustomAttributes(::unity2::SystemType, bool)` overload"] fn get_custom_attributes (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> :: unity2 :: Array < crate :: system :: object :: Object > { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: system :: object :: Object > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337acf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } # [doc = "`IsDefined(::unity2::SystemType, bool)` overload"] fn is_defined (self , attribute_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , inherit : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < Module as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Module , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x337ad60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (attribute_type) , :: core :: convert :: Into :: into (inherit) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-reflection-module")]pub trait IModuleMethods:IModule{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337a7a0usize)as*mut u8,();
+(Module)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337a7f0usize)as*mut u8, ::unity2::Il2CppString;
+(Module)__receiver)}
+}
+#[doc="`GetGuidInternal()` overload"]fn get_guid_internal(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337a840usize)as*mut u8, ::unity2::Il2CppString;
+(Module)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337aa50usize)as*mut u8,bool;
+(Module)__receiver,(crate::system::object::Object)::core::convert::Into::into(o))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337aa60usize)as*mut u8,i32;
+(Module)__receiver)}
+}
+#[doc="`get_Assembly()` overload"]fn get_assembly(self,)->crate::system::reflection::assembly::Assembly{unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337aab0usize)as*mut u8,crate::system::reflection::assembly::Assembly;
+(Module)__receiver)}
+}
+#[doc="`get_ScopeName()` overload"]fn get_scope_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337aba0usize)as*mut u8, ::unity2::Il2CppString;
+(Module)__receiver)}
+}
+#[doc="`IsResource()` overload"]fn is_resource(self,)->bool{unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337ac80usize)as*mut u8,bool;
+(Module)__receiver)}
+}
+#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337acf0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
+(Module)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <Module as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x337ad60usize)as*mut u8,bool;
+(Module)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+}
+}
 
-#[cfg(feature = "system-reflection-module")]
-impl < __T : IModule > IModuleMethods for __T { }
+#[cfg(feature="system-reflection-module")]impl<__T:IModule>IModuleMethods for __T{}
 
-#[cfg(feature = "system-reflection-module")]
-impl Module { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn filter_by_type_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn filter_by_type_name_ignore_case_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_guid_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_assembly_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_scope_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_custom_attributes_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn is_defined_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Module as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="system-reflection-module")]impl Module{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn filter_by_type_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn filter_by_type_name_ignore_case_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_guid_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_assembly_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_scope_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "system-reflection-module")]
-impl Module {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Module) , :: core :: stringify ! (new) ,)) ; < Self as IModuleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="system-reflection-module")]impl Module{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Module), ::core::stringify!(new),));
+ <Self as IModuleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "system-reflection-module")]

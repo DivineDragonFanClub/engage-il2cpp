@@ -4,41 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: hubmovestate :: { HubMoveState , IHubMoveState }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::hubmovestate::{HubMoveState,IHubMoveState}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmovestatewait/HubMoveStateWait.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubMoveStateWait")] # [parent (crate :: app :: hubmovestate :: HubMoveState)] pub struct HubMoveStateWait {
-# [offset (16)] # [rename (name = "m_unit")] pub m_unit : crate :: app :: hubunitcontroller :: HubUnitController ,
-# [offset (24)] # [rename (name = "m_target")] pub m_target : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (40)] # [rename (name = "m_bodyAnim")] pub m_body_anim : :: unity2 :: Il2CppString ,
-# [offset (48)] # [rename (name = "m_faceAnim")] pub m_face_anim : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "m_isTurn")] pub m_is_turn : bool ,
-# [offset (60)] # [rename (name = "m_startSec")] pub m_start_sec : f32 ,
-# [offset (64)] # [rename (name = "m_endSec")] pub m_end_sec : f32 ,
-# [offset (68)] # [rename (name = "m_interval")] pub m_interval : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmovestatewait/HubMoveStateWait.md"))]#[::unity2::class(namespace="App",name="HubMoveStateWait")]#[parent(crate::app::hubmovestate::HubMoveState)]pub struct HubMoveStateWait{#[offset(16)]#[rename(name="m_unit")]pub m_unit:crate::app::hubunitcontroller::HubUnitController, #[offset(24)]#[rename(name="m_target")]pub m_target:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="m_bodyAnim")]pub m_body_anim: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_faceAnim")]pub m_face_anim: ::unity2::Il2CppString, #[offset(56)]#[rename(name="m_isTurn")]pub m_is_turn:bool, #[offset(60)]#[rename(name="m_startSec")]pub m_start_sec:f32, #[offset(64)]#[rename(name="m_endSec")]pub m_end_sec:f32, #[offset(68)]#[rename(name="m_interval")]pub m_interval:f32,}
 
 }
 
 #[cfg(feature = "app-hubmovestatewait-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubmovestatewait")]
-pub trait IHubMoveStateWaitMethods : IHubMoveStateWait { # [doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32, f32)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: hubunitcontroller :: HubUnitController > , target : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , body_anim : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , face_anim : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_turn : impl :: core :: convert :: Into < bool > , start_sec : impl :: core :: convert :: Into < f32 > , end_sec : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < HubMoveStateWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveStateWait , crate :: app :: hubunitcontroller :: HubUnitController , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , bool , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: convert :: Into :: into (body_anim) , :: core :: convert :: Into :: into (face_anim) , :: core :: convert :: Into :: into (is_turn) , :: core :: convert :: Into :: into (start_sec) , :: core :: convert :: Into :: into (end_sec) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnd()` overload"] fn is_end (self ,) -> bool { unsafe { let __receiver = < HubMoveStateWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveStateWait , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start(bool)` overload"] fn start (self , resume : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubMoveStateWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveStateWait , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (resume) , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < HubMoveStateWait as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubMoveStateWait , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23d4540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubmovestatewait")]pub trait IHubMoveStateWaitMethods:IHubMoveStateWait{#[doc="`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32, f32)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::hubunitcontroller::HubUnitController> ,target:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,body_anim:impl::core::convert::Into< ::unity2::Il2CppString> ,face_anim:impl::core::convert::Into< ::unity2::Il2CppString> ,is_turn:impl::core::convert::Into<bool> ,start_sec:impl::core::convert::Into<f32> ,end_sec:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HubMoveStateWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4350usize)as*mut u8,();
+(HubMoveStateWait)__receiver,(crate::app::hubunitcontroller::HubUnitController)::core::convert::Into::into(unit),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target),(::unity2::Il2CppString)::core::convert::Into::into(body_anim),(::unity2::Il2CppString)::core::convert::Into::into(face_anim),(bool)::core::convert::Into::into(is_turn),(f32)::core::convert::Into::into(start_sec),(f32)::core::convert::Into::into(end_sec))}
+}
+#[doc="`IsEnd()` overload"]fn is_end(self,)->bool{unsafe{let __receiver= <HubMoveStateWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4410usize)as*mut u8,bool;
+(HubMoveStateWait)__receiver)}
+}
+#[doc="`Start(bool)` overload"]fn start(self,resume:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubMoveStateWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4440usize)as*mut u8,();
+(HubMoveStateWait)__receiver,(bool)::core::convert::Into::into(resume))}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <HubMoveStateWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23d4540usize)as*mut u8,();
+(HubMoveStateWait)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubmovestatewait")]
-impl < __T : IHubMoveStateWait > IHubMoveStateWaitMethods for __T { }
+#[cfg(feature="app-hubmovestatewait")]impl<__T:IHubMoveStateWait>IHubMoveStateWaitMethods for __T{}
 
-#[cfg(feature = "app-hubmovestatewait")]
-impl HubMoveStateWait { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveStateWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveStateWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveStateWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubMoveStateWait as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-hubmovestatewait")]impl HubMoveStateWait{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-hubmovestatewait")]
-impl HubMoveStateWait {
-# [doc = "`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32, f32)` — overload selector"] pub fn new (unit : crate :: app :: hubunitcontroller :: HubUnitController , target : crate :: unity_engine :: vector3 :: Vector3 , body_anim : :: unity2 :: Il2CppString , face_anim : :: unity2 :: Il2CppString , is_turn : bool , start_sec : f32 , end_sec : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubMoveStateWait) , :: core :: stringify ! (new) ,)) ; < Self as IHubMoveStateWaitMethods > :: ctor (this , unit , target , body_anim , face_anim , is_turn , start_sec , end_sec) ; this }
+#[cfg(feature="app-hubmovestatewait")]impl HubMoveStateWait{#[doc="`.ctor(crate::app::hubunitcontroller::HubUnitController, crate::unity_engine::vector3::Vector3, ::unity2::Il2CppString, ::unity2::Il2CppString, bool, f32, f32)` — overload selector"]pub fn new(unit:crate::app::hubunitcontroller::HubUnitController,target:crate::unity_engine::vector3::Vector3,body_anim: ::unity2::Il2CppString,face_anim: ::unity2::Il2CppString,is_turn:bool,start_sec:f32,end_sec:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMoveStateWait), ::core::stringify!(new),));
+ <Self as IHubMoveStateWaitMethods> ::ctor(this,unit,target,body_anim,face_anim,is_turn,start_sec,end_sec);
+this}
 }
 
 #[cfg(feature = "app-hubmovestatewait")]

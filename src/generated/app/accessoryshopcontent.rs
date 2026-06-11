@@ -4,33 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopcontent/AccessoryShopContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "AccessoryShopContent")] # [parent (crate :: system :: object :: Object)] pub struct AccessoryShopContent {
-# [offset (16)] # [rename (name = "m_Aid")] pub m_aid : :: unity2 :: Il2CppString ,
-# [offset (24)] # [rename (name = "m_NewArrival")] pub m_new_arrival : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopcontent/AccessoryShopContent.md"))]#[::unity2::class(namespace="App",name="AccessoryShopContent")]#[parent(crate::system::object::Object)]pub struct AccessoryShopContent{#[offset(16)]#[rename(name="m_Aid")]pub m_aid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_NewArrival")]pub m_new_arrival:bool,}
 
 }
 
 #[cfg(feature = "app-accessoryshopcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-accessoryshopcontent")]
-pub trait IAccessoryShopContentMethods : IAccessoryShopContent { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AccessoryShopContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AccessoryShopContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27c4860usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-accessoryshopcontent")]pub trait IAccessoryShopContentMethods:IAccessoryShopContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AccessoryShopContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27c4860usize)as*mut u8,();
+(AccessoryShopContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-accessoryshopcontent")]
-impl < __T : IAccessoryShopContent > IAccessoryShopContentMethods for __T { }
+#[cfg(feature="app-accessoryshopcontent")]impl<__T:IAccessoryShopContent>IAccessoryShopContentMethods for __T{}
 
-#[cfg(feature = "app-accessoryshopcontent")]
-impl AccessoryShopContent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AccessoryShopContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-accessoryshopcontent")]impl AccessoryShopContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-accessoryshopcontent")]
-impl AccessoryShopContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AccessoryShopContent) , :: core :: stringify ! (new) ,)) ; < Self as IAccessoryShopContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-accessoryshopcontent")]impl AccessoryShopContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopContent), ::core::stringify!(new),));
+ <Self as IAccessoryShopContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-accessoryshopcontent")]

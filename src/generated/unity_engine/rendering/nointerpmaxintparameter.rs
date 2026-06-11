@@ -4,36 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
+;
+use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/nointerpmaxintparameter/NoInterpMaxIntParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "NoInterpMaxIntParameter")] # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < i32 >)] pub struct NoInterpMaxIntParameter {
-# [offset (24)] # [rename (name = "max")] pub max : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/nointerpmaxintparameter/NoInterpMaxIntParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="NoInterpMaxIntParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<i32>)]pub struct NoInterpMaxIntParameter{#[offset(24)]#[rename(name="max")]pub max:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpmaxintparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-nointerpmaxintparameter")]
-pub trait INoInterpMaxIntParameterMethods : INoInterpMaxIntParameter { # [doc = "`get_value()` overload"] fn get_value (self ,) -> i32 { unsafe { let __receiver = < NoInterpMaxIntParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoInterpMaxIntParameter , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30ac3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_value(i32)` overload"] fn set_value (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < NoInterpMaxIntParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoInterpMaxIntParameter , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30ac3b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NoInterpMaxIntParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoInterpMaxIntParameter , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30ac3f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (max) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-nointerpmaxintparameter")]pub trait INoInterpMaxIntParameterMethods:INoInterpMaxIntParameter{#[doc="`get_value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <NoInterpMaxIntParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac3a0usize)as*mut u8,i32;
+(NoInterpMaxIntParameter)__receiver)}
+}
+#[doc="`set_value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <NoInterpMaxIntParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac3b0usize)as*mut u8,();
+(NoInterpMaxIntParameter)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32, i32, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoInterpMaxIntParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac3f0usize)as*mut u8,();
+(NoInterpMaxIntParameter)__receiver,(i32)::core::convert::Into::into(value),(i32)::core::convert::Into::into(max),(bool)::core::convert::Into::into(override_state))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-nointerpmaxintparameter")]
-impl < __T : INoInterpMaxIntParameter > INoInterpMaxIntParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-nointerpmaxintparameter")]impl<__T:INoInterpMaxIntParameter>INoInterpMaxIntParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-nointerpmaxintparameter")]
-impl NoInterpMaxIntParameter { pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoInterpMaxIntParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoInterpMaxIntParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoInterpMaxIntParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-nointerpmaxintparameter")]impl NoInterpMaxIntParameter{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "unity_engine-rendering-nointerpmaxintparameter")]
-impl NoInterpMaxIntParameter {
-# [doc = "`.ctor(i32, i32, bool)` — overload selector"] pub fn new (value : i32 , max : i32 , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NoInterpMaxIntParameter) , :: core :: stringify ! (new) ,)) ; < Self as INoInterpMaxIntParameterMethods > :: ctor (this , value , max , override_state) ; this }
+#[cfg(feature="unity_engine-rendering-nointerpmaxintparameter")]impl NoInterpMaxIntParameter{#[doc="`.ctor(i32, i32, bool)` — overload selector"]pub fn new(value:i32,max:i32,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoInterpMaxIntParameter), ::core::stringify!(new),));
+ <Self as INoInterpMaxIntParameterMethods> ::ctor(this,value,max,override_state);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpmaxintparameter")]

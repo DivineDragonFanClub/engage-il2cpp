@@ -4,43 +4,73 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/effecthandle/EffectHandle.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "EffectHandle")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EffectHandle {
-# [offset (24)] # [rename (name = "m_ParticleSystem")] pub m_particle_system : crate :: unity_engine :: particlesystem :: ParticleSystem ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/effecthandle/EffectHandle.md"))]#[::unity2::class(namespace="Combat",name="EffectHandle")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EffectHandle{#[offset(24)]#[rename(name="m_ParticleSystem")]pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
 
 }
 
 #[cfg(feature = "combat-effecthandle-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-effecthandle")]
-impl EffectHandle { # [doc = "`Create(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, bool)` overload"] pub fn create (prefab : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform > , uncached : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: transform :: Transform , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7060usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (prefab) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (uncached) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-effecthandle")]impl EffectHandle{#[doc="`Create(crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, bool)` overload"]pub fn create(prefab:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,uncached:impl::core::convert::Into<bool>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7060usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(prefab),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(bool)::core::convert::Into::into(uncached))}
+}
+}
 
-#[cfg(feature = "combat-effecthandle")]
-pub trait IEffectHandleMethods : IEffectHandle { # [doc = "`IsAlive()` overload"] fn is_alive (self ,) -> bool { unsafe { let __receiver = < EffectHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectHandle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < EffectHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d89b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < EffectHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Stop()` overload"] fn stop (self ,) -> () { unsafe { let __receiver = < EffectHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8c60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopAndClear()` overload"] fn stop_and_clear (self ,) -> () { unsafe { let __receiver = < EffectHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8c80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectHandle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectHandle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-effecthandle")]pub trait IEffectHandleMethods:IEffectHandle{#[doc="`IsAlive()` overload"]fn is_alive(self,)->bool{unsafe{let __receiver= <EffectHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8910usize)as*mut u8,bool;
+(EffectHandle)__receiver)}
+}
+#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <EffectHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d89b0usize)as*mut u8,();
+(EffectHandle)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <EffectHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8b40usize)as*mut u8,();
+(EffectHandle)__receiver)}
+}
+#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <EffectHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8c60usize)as*mut u8,();
+(EffectHandle)__receiver)}
+}
+#[doc="`StopAndClear()` overload"]fn stop_and_clear(self,)->(){unsafe{let __receiver= <EffectHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8c80usize)as*mut u8,();
+(EffectHandle)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8ca0usize)as*mut u8,();
+(EffectHandle)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-effecthandle")]
-impl < __T : IEffectHandle > IEffectHandleMethods for __T { }
+#[cfg(feature="combat-effecthandle")]impl<__T:IEffectHandle>IEffectHandleMethods for __T{}
 
-#[cfg(feature = "combat-effecthandle")]
-impl EffectHandle { pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn stop_and_clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectHandle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="combat-effecthandle")]impl EffectHandle{pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn stop_and_clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "combat-effecthandle")]
-impl EffectHandle {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectHandle) , :: core :: stringify ! (new) ,)) ; < Self as IEffectHandleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-effecthandle")]impl EffectHandle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EffectHandle), ::core::stringify!(new),));
+ <Self as IEffectHandleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-effecthandle")]

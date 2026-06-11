@@ -4,26 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2dlookuptexture/Light2DLookupTexture.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "Light2DLookupTexture")] # [parent (crate :: system :: object :: Object)] pub struct Light2DLookupTexture {
-# [static_field] # [rename (name = "s_PointLightLookupTexture")] pub s_point_light_lookup_texture : crate :: unity_engine :: texture2d :: Texture2D ,
-# [static_field] # [rename (name = "s_FalloffLookupTexture")] pub s_falloff_lookup_texture : crate :: unity_engine :: texture2d :: Texture2D ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dlookuptexture/Light2DLookupTexture.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="Light2DLookupTexture")]#[parent(crate::system::object::Object)]pub struct Light2DLookupTexture{#[static_field]#[rename(name="s_PointLightLookupTexture")]pub s_point_light_lookup_texture:crate::unity_engine::texture2d::Texture2D, #[static_field]#[rename(name="s_FalloffLookupTexture")]pub s_falloff_lookup_texture:crate::unity_engine::texture2d::Texture2D,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dlookuptexture-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dlookuptexture")]
-impl Light2DLookupTexture { # [doc = "`GetLightLookupTexture()` overload"] pub fn get_light_lookup_texture () -> crate :: unity_engine :: texture :: Texture { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture :: Texture = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef5000usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetFalloffLookupTexture()` overload"] pub fn get_falloff_lookup_texture () -> crate :: unity_engine :: texture :: Texture { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture :: Texture = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef5440usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreatePointLightLookupTexture()` overload"] pub fn create_point_light_lookup_texture () -> crate :: unity_engine :: texture2d :: Texture2D { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef50c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateFalloffLookupTexture()` overload"] pub fn create_falloff_lookup_texture () -> crate :: unity_engine :: texture2d :: Texture2D { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: texture2d :: Texture2D = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef5500usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-light2dlookuptexture")]impl Light2DLookupTexture{#[doc="`GetLightLookupTexture()` overload"]pub fn get_light_lookup_texture()->crate::unity_engine::texture::Texture{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef5000usize)as*mut u8,crate::unity_engine::texture::Texture;
+)}
+}
+#[doc="`GetFalloffLookupTexture()` overload"]pub fn get_falloff_lookup_texture()->crate::unity_engine::texture::Texture{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef5440usize)as*mut u8,crate::unity_engine::texture::Texture;
+)}
+}
+#[doc="`CreatePointLightLookupTexture()` overload"]pub fn create_point_light_lookup_texture()->crate::unity_engine::texture2d::Texture2D{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef50c0usize)as*mut u8,crate::unity_engine::texture2d::Texture2D;
+)}
+}
+#[doc="`CreateFalloffLookupTexture()` overload"]pub fn create_falloff_lookup_texture()->crate::unity_engine::texture2d::Texture2D{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef5500usize)as*mut u8,crate::unity_engine::texture2d::Texture2D;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dlookuptexture")]
-impl Light2DLookupTexture { pub fn get_light_lookup_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DLookupTexture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_falloff_lookup_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DLookupTexture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_point_light_lookup_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DLookupTexture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_falloff_lookup_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DLookupTexture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-light2dlookuptexture")]impl Light2DLookupTexture{pub fn get_light_lookup_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_falloff_lookup_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_point_light_lookup_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_falloff_lookup_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dlookuptexture")]
 #[doc(hidden)]

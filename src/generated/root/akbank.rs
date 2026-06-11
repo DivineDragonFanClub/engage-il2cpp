@@ -4,47 +4,79 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: aktriggerhandler :: { AkTriggerHandler , IAkTriggerHandler }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::aktriggerhandler::{AkTriggerHandler,IAkTriggerHandler}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akbank/AkBank.md"))] # [:: unity2 :: class (namespace = "" , name = "AkBank")] # [parent (crate :: root :: aktriggerhandler :: AkTriggerHandler)] pub struct AkBank {
-# [offset (56)] # [rename (name = "decodeBank")] pub decode_bank : bool ,
-# [offset (57)] # [rename (name = "loadAsynchronous")] pub load_asynchronous : bool ,
-# [offset (58)] # [rename (name = "saveDecodedBank")] pub save_decoded_bank : bool ,
-# [offset (64)] # [rename (name = "unloadTriggerList")] pub unload_trigger_list : crate :: system :: collections :: generic :: list_1 :: List_1 < i32 > ,
-# [offset (72)] # [rename (name = "bankNameInternal")] pub bank_name_internal : :: unity2 :: Il2CppString ,
-# [offset (80)] # [rename (name = "valueGuidInternal")] pub value_guid_internal : :: unity2 :: Array < u8 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akbank/AkBank.md"))]#[::unity2::class(namespace="",name="AkBank")]#[parent(crate::root::aktriggerhandler::AkTriggerHandler)]pub struct AkBank{#[offset(56)]#[rename(name="decodeBank")]pub decode_bank:bool, #[offset(57)]#[rename(name="loadAsynchronous")]pub load_asynchronous:bool, #[offset(58)]#[rename(name="saveDecodedBank")]pub save_decoded_bank:bool, #[offset(64)]#[rename(name="unloadTriggerList")]pub unload_trigger_list:crate::system::collections::generic::list_1::List_1<i32> , #[offset(72)]#[rename(name="bankNameInternal")]pub bank_name_internal: ::unity2::Il2CppString, #[offset(80)]#[rename(name="valueGuidInternal")]pub value_guid_internal: ::unity2::Array<u8> ,}
 
 }
 
 #[cfg(feature = "root-akbank-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akbank")]
-pub trait IAkBankMethods : IAkBank { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"] fn handle_event (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1c80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } } # [doc = "`UnloadBank(crate::unity_engine::gameobject::GameObject)` overload"] fn unload_bank (self , in_game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1c70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (in_game_object) , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_bankName()` overload"] fn get_bank_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_valueGuid()` overload"] fn get_value_guid (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AkBank as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkBank , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bd1e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akbank")]pub trait IAkBankMethods:IAkBank{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <AkBank as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1b40usize)as*mut u8,();
+(AkBank)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkBank as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1be0usize)as*mut u8,();
+(AkBank)__receiver)}
+}
+#[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkBank as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1c80usize)as*mut u8,();
+(AkBank)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+}
+#[doc="`UnloadBank(crate::unity_engine::gameobject::GameObject)` overload"]fn unload_bank(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkBank as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1c70usize)as*mut u8,();
+(AkBank)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <AkBank as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1cb0usize)as*mut u8,();
+(AkBank)__receiver)}
+}
+#[doc="`get_bankName()` overload"]fn get_bank_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AkBank as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1d50usize)as*mut u8, ::unity2::Il2CppString;
+(AkBank)__receiver)}
+}
+#[doc="`get_valueGuid()` overload"]fn get_value_guid(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <AkBank as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1dc0usize)as*mut u8, ::unity2::Array<u8> ;
+(AkBank)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkBank as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2bd1e80usize)as*mut u8,();
+(AkBank)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akbank")]
-impl < __T : IAkBank > IAkBankMethods for __T { }
+#[cfg(feature="root-akbank")]impl<__T:IAkBank>IAkBankMethods for __T{}
 
-#[cfg(feature = "root-akbank")]
-impl AkBank { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn handle_event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_bank_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_bank_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_value_guid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkBank as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="root-akbank")]impl AkBank{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn handle_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_bank_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_value_guid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "root-akbank")]
-impl AkBank {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkBank) , :: core :: stringify ! (new) ,)) ; < Self as IAkBankMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-akbank")]impl AkBank{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkBank), ::core::stringify!(new),));
+ <Self as IAkBankMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-akbank")]

@@ -4,40 +4,110 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procbattlecallback :: { IProcBattleCallback , ProcBattleCallback }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procbattlecallback::{IProcBattleCallback,ProcBattleCallback}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dieevent/DieEvent.md"))] # [:: unity2 :: class (namespace = "App" , name = "DieEvent")] # [parent (crate :: app :: procbattlecallback :: ProcBattleCallback)] pub struct DieEvent {
-# [offset (136)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (144)] # [rename (name = "m_IsInCombat")] pub m_is_in_combat : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dieevent/DieEvent.md"))]#[::unity2::class(namespace="App",name="DieEvent")]#[parent(crate::app::procbattlecallback::ProcBattleCallback)]pub struct DieEvent{#[offset(136)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(144)]#[rename(name="m_IsInCombat")]pub m_is_in_combat:bool,}
 
 }
 
 #[cfg(feature = "app-dieevent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-dieevent")]
-impl DieEvent { # [doc = "`IsEnable(crate::app::battlecalculator::BattleCalculator)` overload"] pub fn is_enable (calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battlecalculator :: BattleCalculator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ced5d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (calculator) , :: core :: option :: Option :: None) } } } # [doc = "`IsImportant(crate::app::battlecalculator::BattleCalculator)` overload"] pub fn is_important (calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: battlecalculator :: BattleCalculator , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ced760usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (calculator) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnable(crate::app::unit::Unit)` overload"] pub fn is_enable_2 (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ced6a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, crate::system::action::Action)` overload"] pub fn try_create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , calculator : impl :: core :: convert :: Into < crate :: app :: battlecalculator :: BattleCalculator > , completed : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: battlecalculator :: BattleCalculator , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceda00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (calculator) , :: core :: convert :: Into :: into (completed) , :: core :: option :: Option :: None) } } } # [doc = "`TryCreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::system::action::Action)` overload"] pub fn try_create_bind_2 (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , completed : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceda70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (completed) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dieevent")]impl DieEvent{#[doc="`IsEnable(crate::app::battlecalculator::BattleCalculator)` overload"]pub fn is_enable(calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ced5d0usize)as*mut u8,bool;
+(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator))}
+}
+#[doc="`IsImportant(crate::app::battlecalculator::BattleCalculator)` overload"]pub fn is_important(calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ced760usize)as*mut u8,bool;
+(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator))}
+}
+#[doc="`IsEnable(crate::app::unit::Unit)` overload"]pub fn is_enable_2(unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ced6a0usize)as*mut u8,bool;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, crate::system::action::Action)` overload"]pub fn try_create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,completed:impl::core::convert::Into<crate::system::action::Action>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ceda00usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::system::action::Action)::core::convert::Into::into(completed))}
+}
+#[doc="`TryCreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::system::action::Action)` overload"]pub fn try_create_bind_2(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,completed:impl::core::convert::Into<crate::system::action::Action>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ceda70usize)as*mut u8,bool;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::action::Action)::core::convert::Into::into(completed))}
+}
+}
 
-#[cfg(feature = "app-dieevent")]
-pub trait IDieEventMethods : IDieEvent { # [doc = "`.ctor(crate::app::unit::Unit, crate::system::action::Action)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , completed : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , crate :: app :: unit :: Unit , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ceccb0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (completed) , :: core :: option :: Option :: None) } } } # [doc = "`IsSkipCancel()` overload"] fn is_skip_cancel (self ,) -> bool { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cece30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cecf40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cecf70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DieTalk()` overload"] fn die_talk (self ,) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cecfa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GodTalk()` overload"] fn god_talk (self ,) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1cecff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Event()` overload"] fn event (self ,) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ced040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitDieBgm()` overload"] fn init_die_bgm (self ,) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ced0e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitDieBgmEnd()` overload"] fn wait_die_bgm_end (self ,) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ced170usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PlayDieBgm()` overload"] fn play_die_bgm (self ,) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ced250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StopDieBgm()` overload"] fn stop_die_bgm (self ,) -> () { unsafe { let __receiver = < DieEvent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DieEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ced420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-dieevent")]pub trait IDieEventMethods:IDieEvent{#[doc="`.ctor(crate::app::unit::Unit, crate::system::action::Action)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,completed:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceccb0usize)as*mut u8,();
+(DieEvent)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::action::Action)::core::convert::Into::into(completed))}
+}
+#[doc="`IsSkipCancel()` overload"]fn is_skip_cancel(self,)->bool{unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cece30usize)as*mut u8,bool;
+(DieEvent)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cecf40usize)as*mut u8,();
+(DieEvent)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cecf70usize)as*mut u8,();
+(DieEvent)__receiver)}
+}
+#[doc="`DieTalk()` overload"]fn die_talk(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cecfa0usize)as*mut u8,();
+(DieEvent)__receiver)}
+}
+#[doc="`GodTalk()` overload"]fn god_talk(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cecff0usize)as*mut u8,();
+(DieEvent)__receiver)}
+}
+#[doc="`Event()` overload"]fn event(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ced040usize)as*mut u8,();
+(DieEvent)__receiver)}
+}
+#[doc="`InitDieBgm()` overload"]fn init_die_bgm(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ced0e0usize)as*mut u8,();
+(DieEvent)__receiver)}
+}
+#[doc="`WaitDieBgmEnd()` overload"]fn wait_die_bgm_end(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ced170usize)as*mut u8,();
+(DieEvent)__receiver)}
+}
+#[doc="`PlayDieBgm()` overload"]fn play_die_bgm(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ced250usize)as*mut u8,();
+(DieEvent)__receiver)}
+}
+#[doc="`StopDieBgm()` overload"]fn stop_die_bgm(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ced420usize)as*mut u8,();
+(DieEvent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-dieevent")]
-impl < __T : IDieEvent > IDieEventMethods for __T { }
+#[cfg(feature="app-dieevent")]impl<__T:IDieEvent>IDieEventMethods for __T{}
 
-#[cfg(feature = "app-dieevent")]
-impl DieEvent { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_skip_cancel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn die_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn god_talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn event_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_die_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn wait_die_bgm_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn play_die_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn stop_die_bgm_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_important_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_enable_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn try_create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn try_create_bind_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DieEvent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-dieevent")]impl DieEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_skip_cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn die_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn god_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_die_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn wait_die_bgm_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn play_die_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn stop_die_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_important_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_enable_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn try_create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn try_create_bind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-dieevent")]
-impl DieEvent {
-# [doc = "`.ctor(crate::app::unit::Unit, crate::system::action::Action)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , completed : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DieEvent) , :: core :: stringify ! (new) ,)) ; < Self as IDieEventMethods > :: ctor (this , unit , completed) ; this }
+#[cfg(feature="app-dieevent")]impl DieEvent{#[doc="`.ctor(crate::app::unit::Unit, crate::system::action::Action)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,completed:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DieEvent), ::core::stringify!(new),));
+ <Self as IDieEventMethods> ::ctor(this,unit,completed);
+this}
 }
 
 #[cfg(feature = "app-dieevent")]

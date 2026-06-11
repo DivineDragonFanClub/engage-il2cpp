@@ -4,30 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/customtaginfo/CustomTagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "CustomTagInfo")] # [parent (crate :: system :: object :: Object)] pub struct CustomTagInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/customtaginfo/CustomTagInfo.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="CustomTagInfo")]#[parent(crate::system::object::Object)]pub struct CustomTagInfo{}
 
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-customtaginfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "nintendo-message_studio-lib-customtaginfo")]
-pub trait ICustomTagInfoMethods : ICustomTagInfo { # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < CustomTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f2ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Tag(u16)` overload"] fn set_tag (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < CustomTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomTagInfo , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < CustomTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TagGroup(u16)` overload"] fn set_tag_group (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < CustomTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomTagInfo , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Params()` overload"] fn get_params (self ,) -> :: unity2 :: Array < u8 > { unsafe { let __receiver = < CustomTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomTagInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Params(::unity2::Array<u8>)` overload"] fn set_params (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < CustomTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomTagInfo , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(u16, u16, ::unity2::Array<u8>)` overload"] fn ctor (self , group : impl :: core :: convert :: Into < u16 > , tag : impl :: core :: convert :: Into < u16 > , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < CustomTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomTagInfo , u16 , u16 , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29f3050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (group) , :: core :: convert :: Into :: into (tag) , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nintendo-message_studio-lib-customtaginfo")]pub trait ICustomTagInfoMethods:ICustomTagInfo{#[doc="`get_Tag()` overload"]fn get_tag(self,)->u16{unsafe{let __receiver= <CustomTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29f2ff0usize)as*mut u8,u16;
+(CustomTagInfo)__receiver)}
+}
+#[doc="`set_Tag(u16)` overload"]fn set_tag(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <CustomTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29f3000usize)as*mut u8,();
+(CustomTagInfo)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_TagGroup()` overload"]fn get_tag_group(self,)->u16{unsafe{let __receiver= <CustomTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29f3010usize)as*mut u8,u16;
+(CustomTagInfo)__receiver)}
+}
+#[doc="`set_TagGroup(u16)` overload"]fn set_tag_group(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <CustomTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29f3020usize)as*mut u8,();
+(CustomTagInfo)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`get_Params()` overload"]fn get_params(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <CustomTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29f3030usize)as*mut u8, ::unity2::Array<u8> ;
+(CustomTagInfo)__receiver)}
+}
+#[doc="`set_Params(::unity2::Array<u8>)` overload"]fn set_params(self,value:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <CustomTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29f3040usize)as*mut u8,();
+(CustomTagInfo)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(u16, u16, ::unity2::Array<u8>)` overload"]fn ctor(self,group:impl::core::convert::Into<u16> ,tag:impl::core::convert::Into<u16> ,param:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <CustomTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29f3050usize)as*mut u8,();
+(CustomTagInfo)__receiver,(u16)::core::convert::Into::into(group),(u16)::core::convert::Into::into(tag),(::unity2::Array<u8>)::core::convert::Into::into(param))}
+}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-customtaginfo")]
-impl < __T : ICustomTagInfo > ICustomTagInfoMethods for __T { }
+#[cfg(feature="nintendo-message_studio-lib-customtaginfo")]impl<__T:ICustomTagInfo>ICustomTagInfoMethods for __T{}
 
-#[cfg(feature = "nintendo-message_studio-lib-customtaginfo")]
-impl CustomTagInfo { pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_params_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="nintendo-message_studio-lib-customtaginfo")]impl CustomTagInfo{pub fn get_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_tag_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_tag_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_params_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_params_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-customtaginfo")]
-impl CustomTagInfo {
-# [doc = "`.ctor(u16, u16, ::unity2::Array<u8>)` — overload selector"] pub fn new (group : u16 , tag : u16 , param : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomTagInfo) , :: core :: stringify ! (new) ,)) ; < Self as ICustomTagInfoMethods > :: ctor (this , group , tag , param) ; this }
+#[cfg(feature="nintendo-message_studio-lib-customtaginfo")]impl CustomTagInfo{#[doc="`.ctor(u16, u16, ::unity2::Array<u8>)` — overload selector"]pub fn new(group:u16,tag:u16,param: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomTagInfo), ::core::stringify!(new),));
+ <Self as ICustomTagInfoMethods> ::ctor(this,group,tag,param);
+this}
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-customtaginfo")]

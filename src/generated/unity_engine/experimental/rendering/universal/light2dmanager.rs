@@ -4,25 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/light2dmanager/Light2DManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.Rendering.Universal" , name = "Light2DManager")] # [parent (crate :: system :: object :: Object)] pub struct Light2DManager {
-# [static_field] # [rename (name = "s_SortingLayers")] pub s_sorting_layers : :: unity2 :: Array < crate :: unity_engine :: sortinglayer :: SortingLayer > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dmanager/Light2DManager.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="Light2DManager")]#[parent(crate::system::object::Object)]pub struct Light2DManager{#[static_field]#[rename(name="s_SortingLayers")]pub s_sorting_layers: ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer> ,}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dmanager")]
-impl Light2DManager { # [doc = "`get_lights()` overload"] pub fn get_lights () -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef56c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`RegisterLight(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"] pub fn register_light (light : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef3ef0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (light) , :: core :: option :: Option :: None) } } } # [doc = "`DeregisterLight(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"] pub fn deregister_light (light : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef4050usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (light) , :: core :: option :: Option :: None) } } } # [doc = "`ErrorIfDuplicateGlobalLight(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"] pub fn error_if_duplicate_global_light (light : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: experimental :: rendering :: universal :: light2d_2 :: Light2D_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef1e10usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (light) , :: core :: option :: Option :: None) } } } # [doc = "`GetGlobalColor(i32, i32, *mutcrate::unity_engine::color::Color)` overload"] pub fn get_global_color (sorting_layer_index : impl :: core :: convert :: Into < i32 > , blend_style_index : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: color :: Color) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: color :: Color > :: uninit () ; let __ret = { { let __inner : extern "C" fn (i32 , i32 , * mut crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef59e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sorting_layer_index) , :: core :: convert :: Into :: into (blend_style_index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`ContainsDuplicateGlobalLight(i32, i32)` overload"] pub fn contains_duplicate_global_light (sorting_layer_index : impl :: core :: convert :: Into < i32 > , blend_style_index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef5730usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (sorting_layer_index) , :: core :: convert :: Into :: into (blend_style_index) , :: core :: option :: Option :: None) } } } # [doc = "`GetCachedSortingLayer()` overload"] pub fn get_cached_sorting_layer () -> :: unity2 :: Array < crate :: unity_engine :: sortinglayer :: SortingLayer > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: sortinglayer :: SortingLayer > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef2250usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ef5c50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-light2dmanager")]impl Light2DManager{#[doc="`get_lights()` overload"]pub fn get_lights()->crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef56c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2> ;
+)}
+}
+#[doc="`RegisterLight(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"]pub fn register_light(light:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef3ef0usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)::core::convert::Into::into(light))}
+}
+#[doc="`DeregisterLight(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"]pub fn deregister_light(light:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef4050usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)::core::convert::Into::into(light))}
+}
+#[doc="`ErrorIfDuplicateGlobalLight(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)` overload"]pub fn error_if_duplicate_global_light(light:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef1e10usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2)::core::convert::Into::into(light))}
+}
+#[doc="`GetGlobalColor(i32, i32, *mutcrate::unity_engine::color::Color)` overload"]pub fn get_global_color(sorting_layer_index:impl::core::convert::Into<i32> ,blend_style_index:impl::core::convert::Into<i32>)->(bool,crate::unity_engine::color::Color){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::color::Color> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2ef59e0usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(sorting_layer_index),(i32)::core::convert::Into::into(blend_style_index),(*mut crate::unity_engine::color::Color)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`ContainsDuplicateGlobalLight(i32, i32)` overload"]pub fn contains_duplicate_global_light(sorting_layer_index:impl::core::convert::Into<i32> ,blend_style_index:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef5730usize)as*mut u8,bool;
+(i32)::core::convert::Into::into(sorting_layer_index),(i32)::core::convert::Into::into(blend_style_index))}
+}
+#[doc="`GetCachedSortingLayer()` overload"]pub fn get_cached_sorting_layer()-> ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef2250usize)as*mut u8, ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer> ;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef5c50usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dmanager")]
-impl Light2DManager { pub fn get_lights_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn register_light_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn deregister_light_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn error_if_duplicate_global_light_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_global_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn contains_duplicate_global_light_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_cached_sorting_layer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Light2DManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-experimental-rendering-universal-light2dmanager")]impl Light2DManager{pub fn get_lights_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn register_light_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn deregister_light_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn error_if_duplicate_global_light_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_global_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn contains_duplicate_global_light_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_cached_sorting_layer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dmanager")]
 #[doc(hidden)]

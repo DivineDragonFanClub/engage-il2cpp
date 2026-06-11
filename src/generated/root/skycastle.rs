@@ -4,90 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/skycastle/SkyCastle_MovingSkyCastle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SkyCastle_MovingSkyCastle  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/skycastle/SkyCastle.md"))]#[::unity2::class(namespace="",name="SkyCastle")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::root::skycastle::SkyCastle>)]pub struct SkyCastle{#[offset(32)]#[rename(name="m_LeftSkyCastleObject")]pub m_left_sky_castle_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_RightSkyCastleObject")]pub m_right_sky_castle_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_LeftSkyCastleAnimator")]pub m_left_sky_castle_animator:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="m_RightSkyCastleAnimator")]pub m_right_sky_castle_animator:crate::unity_engine::animator::Animator, #[offset(64)]#[rename(name="m_SkyCastleEffect")]pub m_sky_castle_effect: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(72)]#[rename(name="m_Now")]pub m_now: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(80)]#[rename(name="m_Old")]pub m_old: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(88)]#[rename(name="m_Vec")]pub m_vec: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(96)]#[rename(name="m_IsUpdate")]pub m_is_update: ::unity2::Array<bool> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/skycastle/SkyCastle_MovingSkyCastle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkyCastle_MovingSkyCastle{pub value:i32,}
+impl::unity2::ClassIdentity for SkyCastle_MovingSkyCastle{const NAMESPACE: &'static str="";
+const NAME: &'static str="SkyCastle.MovingSkyCastle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for SkyCastle_MovingSkyCastle  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "SkyCastle.MovingSkyCastle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for SkyCastle_MovingSkyCastle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for SkyCastle_MovingSkyCastle  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl SkyCastle_MovingSkyCastle{pub fn left()->Self{Self{value:0}
 }
-
-
-impl  SkyCastle_MovingSkyCastle  {
-    pub fn left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn right()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/skycastle/SkyCastle.md"))] # [:: unity2 :: class (namespace = "" , name = "SkyCastle")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: root :: skycastle :: SkyCastle >)] pub struct SkyCastle {
-# [offset (32)] # [rename (name = "m_LeftSkyCastleObject")] pub m_left_sky_castle_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "m_RightSkyCastleObject")] pub m_right_sky_castle_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_LeftSkyCastleAnimator")] pub m_left_sky_castle_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (56)] # [rename (name = "m_RightSkyCastleAnimator")] pub m_right_sky_castle_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (64)] # [rename (name = "m_SkyCastleEffect")] pub m_sky_castle_effect : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (72)] # [rename (name = "m_Now")] pub m_now : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (80)] # [rename (name = "m_Old")] pub m_old : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (88)] # [rename (name = "m_Vec")] pub m_vec : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (96)] # [rename (name = "m_IsUpdate")] pub m_is_update : :: unity2 :: Array < bool > ,
+pub fn num()->Self{Self{value:2}
+}
 }
 
 }
@@ -95,27 +48,66 @@ impl  SkyCastle_MovingSkyCastle  {
 #[cfg(feature = "root-skycastle-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-skycastle")]
-pub trait ISkyCastleMethods : ISkyCastle { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < SkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkyCastle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdc440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < SkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkyCastle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdc550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateSkyCastle(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animator::Animator, i32)` overload"] fn update_sky_castle (self , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , animator : impl :: core :: convert :: Into < crate :: unity_engine :: animator :: Animator > , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < SkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkyCastle , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: animator :: Animator , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdc590usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (animator) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`IsPlayingSkyCastle()` overload"] fn is_playing_sky_castle (self ,) -> bool { unsafe { let __receiver = < SkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkyCastle , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdc7d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetVec(crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"] fn get_vec (self , index : impl :: core :: convert :: Into < crate :: root :: skycastle :: SkyCastle_MovingSkyCastle >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < SkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkyCastle , crate :: root :: skycastle :: SkyCastle_MovingSkyCastle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdc890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`get_LeftSkyCastleAnimator()` overload"] fn get_left_sky_castle_animator (self ,) -> crate :: unity_engine :: animator :: Animator { unsafe { let __receiver = < SkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkyCastle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animator :: Animator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdc8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RightSkyCastleAnimator()` overload"] fn get_right_sky_castle_animator (self ,) -> crate :: unity_engine :: animator :: Animator { unsafe { let __receiver = < SkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkyCastle , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: animator :: Animator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdc8e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SkyCastle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fdc8f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-skycastle")]pub trait ISkyCastleMethods:ISkyCastle{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <SkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdc440usize)as*mut u8,();
+(SkyCastle)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <SkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdc550usize)as*mut u8,();
+(SkyCastle)__receiver)}
+}
+#[doc="`UpdateSkyCastle(crate::unity_engine::gameobject::GameObject, crate::unity_engine::animator::Animator, i32)` overload"]fn update_sky_castle(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdc590usize)as*mut u8,();
+(SkyCastle)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsPlayingSkyCastle()` overload"]fn is_playing_sky_castle(self,)->bool{unsafe{let __receiver= <SkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdc7d0usize)as*mut u8,bool;
+(SkyCastle)__receiver)}
+}
+#[doc="`GetVec(crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"]fn get_vec(self,index:impl::core::convert::Into<crate::root::skycastle::SkyCastle_MovingSkyCastle>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <SkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdc890usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(SkyCastle)__receiver,(crate::root::skycastle::SkyCastle_MovingSkyCastle)::core::convert::Into::into(index))}
+}
+#[doc="`get_LeftSkyCastleAnimator()` overload"]fn get_left_sky_castle_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <SkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdc8d0usize)as*mut u8,crate::unity_engine::animator::Animator;
+(SkyCastle)__receiver)}
+}
+#[doc="`get_RightSkyCastleAnimator()` overload"]fn get_right_sky_castle_animator(self,)->crate::unity_engine::animator::Animator{unsafe{let __receiver= <SkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdc8e0usize)as*mut u8,crate::unity_engine::animator::Animator;
+(SkyCastle)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdc8f0usize)as*mut u8,();
+(SkyCastle)__receiver)}
+}
+}
 
-#[cfg(feature = "root-skycastle")]
-impl < __T : ISkyCastle > ISkyCastleMethods for __T { }
+#[cfg(feature="root-skycastle")]impl<__T:ISkyCastle>ISkyCastleMethods for __T{}
 
-#[cfg(feature = "root-skycastle")]
-impl SkyCastle { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn update_sky_castle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_playing_sky_castle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_vec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_left_sky_castle_animator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_right_sky_castle_animator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="root-skycastle")]impl SkyCastle{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn update_sky_castle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_playing_sky_castle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_vec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_left_sky_castle_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_right_sky_castle_animator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "root-skycastle")]
-impl SkyCastle {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SkyCastle) , :: core :: stringify ! (new) ,)) ; < Self as ISkyCastleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-skycastle")]impl SkyCastle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkyCastle), ::core::stringify!(new),));
+ <Self as ISkyCastleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-skycastle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SkyCastle_MovingSkyCastle;
     pub use super::SkyCastle;
     pub use super::ISkyCastle;
     pub use super::ISkyCastleMethods;
+    pub use super::SkyCastle_MovingSkyCastle;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

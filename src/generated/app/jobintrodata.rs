@@ -4,146 +4,224 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdataarray_1 :: { IStructDataArray_1 , StructDataArray_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintrodata/JobIntroData_BattleType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct JobIntroData_BattleType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobintrodata/JobIntroData_BattleType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct JobIntroData_BattleType{pub value:i32,}
+impl::unity2::ClassIdentity for JobIntroData_BattleType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="JobIntroData.BattleType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for JobIntroData_BattleType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl JobIntroData_BattleType{pub fn none()->Self{Self{value:0}
+}
+pub fn attack1()->Self{Self{value:1}
+}
+pub fn attack2()->Self{Self{value:2}
+}
+pub fn attack3()->Self{Self{value:3}
+}
+pub fn attack4()->Self{Self{value:4}
+}
+pub fn attack5()->Self{Self{value:5}
+}
+pub fn miss()->Self{Self{value:6}
+}
+pub fn parry()->Self{Self{value:7}
+}
+pub fn guard()->Self{Self{value:8}
+}
+pub fn heal()->Self{Self{value:9}
+}
+pub fn finish()->Self{Self{value:10}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for JobIntroData_BattleType  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "JobIntroData.BattleType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for JobIntroData_BattleType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  JobIntroData_BattleType  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn attack1() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn attack2() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn attack3() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn attack4() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn attack5() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn miss() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn parry() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn guard() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn heal() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn finish() -> Self {
-        Self { value: 10 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrodata/JobIntroData.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroData")] # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: jobintrodata :: JobIntroData >)] pub struct JobIntroData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobintrodata/JobIntroData.md"))]#[::unity2::class(namespace="App",name="JobIntroData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::jobintrodata::JobIntroData>)]pub struct JobIntroData{}
 
 }
 
 #[cfg(feature = "app-jobintrodata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-jobintrodata")]
-impl JobIntroData { # [doc = "`Load(::unity2::Il2CppString)` overload"] pub fn load (progress : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057440usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (progress) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-jobintrodata")]impl JobIntroData{#[doc="`Load(::unity2::Il2CppString)` overload"]pub fn load(progress:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2057440usize)as*mut u8,();
+(::unity2::Il2CppString)::core::convert::Into::into(progress))}
+}
+}
 
-#[cfg(feature = "app-jobintrodata")]
-pub trait IJobIntroDataMethods : IJobIntroData { # [doc = "`get_DLC()` overload"] fn get_dlc (self ,) -> bool { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DLC(bool)` overload"] fn set_dlc (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Person()` overload"] fn get_person (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20572a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Person(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_person (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20572b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Job()` overload"] fn get_job (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20572c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Job(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_job (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20572d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Weapon()` overload"] fn get_weapon (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20572e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Weapon(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_weapon (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20572f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Enemy()` overload"] fn get_enemy (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Enemy(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_enemy (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EnemyJob()` overload"] fn get_enemy_job (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EnemyJob(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_enemy_job (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_EnemyWeapon()` overload"] fn get_enemy_weapon (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_EnemyWeapon(::unity2::Array<::unity2::Il2CppString>)` overload"] fn set_enemy_weapon (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_X()` overload"] fn get_x (self ,) -> i32 { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_X(i32)` overload"] fn set_x (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Z()` overload"] fn get_z (self ,) -> i32 { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Z(i32)` overload"] fn set_z (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Distance()` overload"] fn get_distance (self ,) -> f32 { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20573a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Distance(f32)` overload"] fn set_distance (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20573b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Field()` overload"] fn get_field (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20573c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Field(::unity2::Il2CppString)` overload"] fn set_field (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20573d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Attack()` overload"] fn get_attack (self ,) -> crate :: app :: jobintrodata :: JobIntroData_BattleType { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobintrodata :: JobIntroData_BattleType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20573e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Attack(crate::app::jobintrodata::JobIntroData_BattleType)` overload"] fn set_attack (self , value : impl :: core :: convert :: Into < crate :: app :: jobintrodata :: JobIntroData_BattleType >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , crate :: app :: jobintrodata :: JobIntroData_BattleType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20573f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Counter()` overload"] fn get_counter (self ,) -> crate :: app :: jobintrodata :: JobIntroData_BattleType { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobintrodata :: JobIntroData_BattleType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Counter(crate::app::jobintrodata::JobIntroData_BattleType)` overload"] fn set_counter (self , value : impl :: core :: convert :: Into < crate :: app :: jobintrodata :: JobIntroData_BattleType >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , crate :: app :: jobintrodata :: JobIntroData_BattleType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Pursuit()` overload"] fn get_pursuit (self ,) -> crate :: app :: jobintrodata :: JobIntroData_BattleType { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> crate :: app :: jobintrodata :: JobIntroData_BattleType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Pursuit(crate::app::jobintrodata::JobIntroData_BattleType)` overload"] fn set_pursuit (self , value : impl :: core :: convert :: Into < crate :: app :: jobintrodata :: JobIntroData_BattleType >) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , crate :: app :: jobintrodata :: JobIntroData_BattleType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057430usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < JobIntroData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2057810usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-jobintrodata")]pub trait IJobIntroDataMethods:IJobIntroData{#[doc="`get_DLC()` overload"]fn get_dlc(self,)->bool{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057280usize)as*mut u8,bool;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_DLC(bool)` overload"]fn set_dlc(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057290usize)as*mut u8,();
+(JobIntroData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Person()` overload"]fn get_person(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20572a0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Person(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_person(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20572b0usize)as*mut u8,();
+(JobIntroData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Job()` overload"]fn get_job(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20572c0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Job(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_job(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20572d0usize)as*mut u8,();
+(JobIntroData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Weapon()` overload"]fn get_weapon(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20572e0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Weapon(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_weapon(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20572f0usize)as*mut u8,();
+(JobIntroData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Enemy()` overload"]fn get_enemy(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057300usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Enemy(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_enemy(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057310usize)as*mut u8,();
+(JobIntroData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_EnemyJob()` overload"]fn get_enemy_job(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057320usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_EnemyJob(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_enemy_job(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057330usize)as*mut u8,();
+(JobIntroData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_EnemyWeapon()` overload"]fn get_enemy_weapon(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057340usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_EnemyWeapon(::unity2::Array<::unity2::Il2CppString>)` overload"]fn set_enemy_weapon(self,value:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057350usize)as*mut u8,();
+(JobIntroData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(value))}
+}
+#[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057360usize)as*mut u8,i32;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_X(i32)` overload"]fn set_x(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057370usize)as*mut u8,();
+(JobIntroData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057380usize)as*mut u8,i32;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Z(i32)` overload"]fn set_z(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057390usize)as*mut u8,();
+(JobIntroData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Distance()` overload"]fn get_distance(self,)->f32{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20573a0usize)as*mut u8,f32;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Distance(f32)` overload"]fn set_distance(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20573b0usize)as*mut u8,();
+(JobIntroData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Field()` overload"]fn get_field(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20573c0usize)as*mut u8, ::unity2::Il2CppString;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Field(::unity2::Il2CppString)` overload"]fn set_field(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20573d0usize)as*mut u8,();
+(JobIntroData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Attack()` overload"]fn get_attack(self,)->crate::app::jobintrodata::JobIntroData_BattleType{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20573e0usize)as*mut u8,crate::app::jobintrodata::JobIntroData_BattleType;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Attack(crate::app::jobintrodata::JobIntroData_BattleType)` overload"]fn set_attack(self,value:impl::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20573f0usize)as*mut u8,();
+(JobIntroData)__receiver,(crate::app::jobintrodata::JobIntroData_BattleType)::core::convert::Into::into(value))}
+}
+#[doc="`get_Counter()` overload"]fn get_counter(self,)->crate::app::jobintrodata::JobIntroData_BattleType{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057400usize)as*mut u8,crate::app::jobintrodata::JobIntroData_BattleType;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Counter(crate::app::jobintrodata::JobIntroData_BattleType)` overload"]fn set_counter(self,value:impl::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057410usize)as*mut u8,();
+(JobIntroData)__receiver,(crate::app::jobintrodata::JobIntroData_BattleType)::core::convert::Into::into(value))}
+}
+#[doc="`get_Pursuit()` overload"]fn get_pursuit(self,)->crate::app::jobintrodata::JobIntroData_BattleType{unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057420usize)as*mut u8,crate::app::jobintrodata::JobIntroData_BattleType;
+(JobIntroData)__receiver)}
+}
+#[doc="`set_Pursuit(crate::app::jobintrodata::JobIntroData_BattleType)` overload"]fn set_pursuit(self,value:impl::core::convert::Into<crate::app::jobintrodata::JobIntroData_BattleType>)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057430usize)as*mut u8,();
+(JobIntroData)__receiver,(crate::app::jobintrodata::JobIntroData_BattleType)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <JobIntroData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2057810usize)as*mut u8,();
+(JobIntroData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-jobintrodata")]
-impl < __T : IJobIntroData > IJobIntroDataMethods for __T { }
+#[cfg(feature="app-jobintrodata")]impl<__T:IJobIntroData>IJobIntroDataMethods for __T{}
 
-#[cfg(feature = "app-jobintrodata")]
-impl JobIntroData { pub fn get_dlc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_dlc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_person_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_enemy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_enemy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_enemy_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_enemy_job_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_enemy_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_enemy_weapon_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_x_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_z_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_field_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_field_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_counter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_counter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_pursuit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_pursuit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } }
+#[cfg(feature="app-jobintrodata")]impl JobIntroData{pub fn get_dlc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_dlc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_person_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_enemy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_enemy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_enemy_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_enemy_job_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_enemy_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_enemy_weapon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_field_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_field_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_counter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_pursuit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_pursuit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+}
 
-#[cfg(feature = "app-jobintrodata")]
-impl JobIntroData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (JobIntroData) , :: core :: stringify ! (new) ,)) ; < Self as IJobIntroDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-jobintrodata")]impl JobIntroData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(JobIntroData), ::core::stringify!(new),));
+ <Self as IJobIntroDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-jobintrodata")]

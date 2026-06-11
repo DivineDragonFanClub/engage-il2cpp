@@ -4,27 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/idebugdata/IDebugData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "IDebugData")] pub struct IDebugData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/idebugdata/IDebugData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="IDebugData")]pub struct IDebugData{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-idebugdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-idebugdata")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __IDebugData_unity2_raw { use super :: * ; pub unsafe fn get_reset (this : IDebugData , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: system :: action :: Action { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("GetReset") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "GetReset" , < IDebugData as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (IDebugData , :: unity2 :: OptionalMethod ,) -> crate :: system :: action :: Action = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-rendering-idebugdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDebugData_unity2_raw{use super:: * ;
+pub unsafe fn get_reset(this:IDebugData,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::action::Action{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetReset").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","GetReset", <IDebugData as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(IDebugData, ::unity2::OptionalMethod,)->crate::system::action::Action= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-rendering-idebugdata")]
-pub trait IIDebugDataMethods : IIDebugData { # [doc = "`GetReset()` overload"] fn get_reset (self ,) -> crate :: system :: action :: Action { unsafe { let __receiver = < IDebugData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __IDebugData_unity2_raw :: get_reset (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-rendering-idebugdata")]pub trait IIDebugDataMethods:IIDebugData{#[doc="`GetReset()` overload"]fn get_reset(self,)->crate::system::action::Action{unsafe{let __receiver= <IDebugData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IDebugData_unity2_raw::get_reset(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-idebugdata")]
-impl < __T : IIDebugData > IIDebugDataMethods for __T { }
+#[cfg(feature="unity_engine-rendering-idebugdata")]impl<__T:IIDebugData>IIDebugDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-idebugdata")]
-impl IDebugData { pub fn get_reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IDebugData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-idebugdata")]impl IDebugData{pub fn get_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "unity_engine-rendering-idebugdata")]
 #[doc(hidden)]

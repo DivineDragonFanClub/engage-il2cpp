@@ -4,42 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/expsequence/ExpSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ExpSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ExpSequence {
-# [static_field] # [rename (name = "resNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
-# [offset (112)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (120)] # [rename (name = "m_Exp")] pub m_exp : i32 ,
-# [offset (124)] # [rename (name = "m_SkillPoint")] pub m_skill_point : i32 ,
-# [offset (128)] # [rename (name = "m_isExpSe")] pub m_is_exp_se : bool ,
-# [offset (136)] # [rename (name = "m_Window")] pub m_window : crate :: app :: expsetter :: ExpSetter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/expsequence/ExpSequence.md"))]#[::unity2::class(namespace="App",name="ExpSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ExpSequence{#[static_field]#[rename(name="resNameC")]pub res_name_c: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_Exp")]pub m_exp:i32, #[offset(124)]#[rename(name="m_SkillPoint")]pub m_skill_point:i32, #[offset(128)]#[rename(name="m_isExpSe")]pub m_is_exp_se:bool, #[offset(136)]#[rename(name="m_Window")]pub m_window:crate::app::expsetter::ExpSetter,}
 
 }
 
 #[cfg(feature = "app-expsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-expsequence")]
-impl ExpSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , exp : impl :: core :: convert :: Into < i32 > , skill_point : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e8c20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (exp) , :: core :: convert :: Into :: into (skill_point) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-expsequence")]impl ExpSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,exp:impl::core::convert::Into<i32> ,skill_point:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e8c20usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(exp),(i32)::core::convert::Into::into(skill_point))}
+}
+}
 
-#[cfg(feature = "app-expsequence")]
-pub trait IExpSequenceMethods : IExpSequence { # [doc = "`.ctor(crate::app::unit::Unit, i32, i32)` overload"] fn ctor (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , exp : impl :: core :: convert :: Into < i32 > , skill_point : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ExpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExpSequence , crate :: app :: unit :: Unit , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e8150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (exp) , :: core :: convert :: Into :: into (skill_point) , :: core :: option :: Option :: None) } } } # [doc = "`SoundStart()` overload"] fn sound_start (self ,) -> () { unsafe { let __receiver = < ExpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e8250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SoundStop()` overload"] fn sound_stop (self ,) -> () { unsafe { let __receiver = < ExpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e82e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < ExpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e8370usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitLoad()` overload"] fn wait_load (self ,) -> () { unsafe { let __receiver = < ExpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e87c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < ExpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e8870usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitAnime()` overload"] fn wait_anime (self ,) -> () { unsafe { let __receiver = < ExpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e8a30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Release()` overload"] fn release (self ,) -> () { unsafe { let __receiver = < ExpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e8b40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateAddExp()` overload"] fn update_add_exp (self ,) -> () { unsafe { let __receiver = < ExpSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ExpSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24e8720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-expsequence")]pub trait IExpSequenceMethods:IExpSequence{#[doc="`.ctor(crate::app::unit::Unit, i32, i32)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,exp:impl::core::convert::Into<i32> ,skill_point:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ExpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e8150usize)as*mut u8,();
+(ExpSequence)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(exp),(i32)::core::convert::Into::into(skill_point))}
+}
+#[doc="`SoundStart()` overload"]fn sound_start(self,)->(){unsafe{let __receiver= <ExpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e8250usize)as*mut u8,();
+(ExpSequence)__receiver)}
+}
+#[doc="`SoundStop()` overload"]fn sound_stop(self,)->(){unsafe{let __receiver= <ExpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e82e0usize)as*mut u8,();
+(ExpSequence)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <ExpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e8370usize)as*mut u8,();
+(ExpSequence)__receiver)}
+}
+#[doc="`WaitLoad()` overload"]fn wait_load(self,)->(){unsafe{let __receiver= <ExpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e87c0usize)as*mut u8,();
+(ExpSequence)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <ExpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e8870usize)as*mut u8,();
+(ExpSequence)__receiver)}
+}
+#[doc="`WaitAnime()` overload"]fn wait_anime(self,)->(){unsafe{let __receiver= <ExpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e8a30usize)as*mut u8,();
+(ExpSequence)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <ExpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e8b40usize)as*mut u8,();
+(ExpSequence)__receiver)}
+}
+#[doc="`UpdateAddExp()` overload"]fn update_add_exp(self,)->(){unsafe{let __receiver= <ExpSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24e8720usize)as*mut u8,();
+(ExpSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-expsequence")]
-impl < __T : IExpSequence > IExpSequenceMethods for __T { }
+#[cfg(feature="app-expsequence")]impl<__T:IExpSequence>IExpSequenceMethods for __T{}
 
-#[cfg(feature = "app-expsequence")]
-impl ExpSequence { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn sound_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn sound_stop_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn wait_load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn wait_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn release_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_add_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ExpSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-expsequence")]impl ExpSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn sound_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn sound_stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn wait_load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn wait_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_add_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "app-expsequence")]
-impl ExpSequence {
-# [doc = "`.ctor(crate::app::unit::Unit, i32, i32)` — overload selector"] pub fn new (unit : crate :: app :: unit :: Unit , exp : i32 , skill_point : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ExpSequence) , :: core :: stringify ! (new) ,)) ; < Self as IExpSequenceMethods > :: ctor (this , unit , exp , skill_point) ; this }
+#[cfg(feature="app-expsequence")]impl ExpSequence{#[doc="`.ctor(crate::app::unit::Unit, i32, i32)` — overload selector"]pub fn new(unit:crate::app::unit::Unit,exp:i32,skill_point:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ExpSequence), ::core::stringify!(new),));
+ <Self as IExpSequenceMethods> ::ctor(this,unit,exp,skill_point);
+this}
 }
 
 #[cfg(feature = "app-expsequence")]

@@ -4,27 +4,123 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/ilayoutelement_interface/ILayoutElement_Interface.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "ILayoutElement")] pub struct ILayoutElement_Interface {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/ilayoutelement_interface/ILayoutElement_Interface.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ILayoutElement")]pub struct ILayoutElement_Interface{}
 
 }
 
 #[cfg(feature = "unity_engine-ui-ilayoutelement_interface-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-ilayoutelement_interface")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ILayoutElement_Interface_unity2_raw { use super :: * ; pub unsafe fn calculate_layout_input_horizontal (this : ILayoutElement_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CalculateLayoutInputHorizontal") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CalculateLayoutInputHorizontal" , < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILayoutElement_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn calculate_layout_input_vertical (this : ILayoutElement_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("CalculateLayoutInputVertical") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "CalculateLayoutInputVertical" , < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILayoutElement_Interface , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_min_width (this : ILayoutElement_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_minWidth") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_minWidth" , < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILayoutElement_Interface , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_preferred_width (this : ILayoutElement_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_preferredWidth") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_preferredWidth" , < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILayoutElement_Interface , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_flexible_width (this : ILayoutElement_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_flexibleWidth") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_flexibleWidth" , < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILayoutElement_Interface , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_min_height (this : ILayoutElement_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_minHeight") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_minHeight" , < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILayoutElement_Interface , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_preferred_height (this : ILayoutElement_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_preferredHeight") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_preferredHeight" , < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILayoutElement_Interface , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_flexible_height (this : ILayoutElement_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> f32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_flexibleHeight") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_flexibleHeight" , < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILayoutElement_Interface , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn get_layout_priority (this : ILayoutElement_Interface , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> i32 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_layoutPriority") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_layoutPriority" , < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ILayoutElement_Interface , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } }
+#[cfg(feature="unity_engine-ui-ilayoutelement_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ILayoutElement_Interface_unity2_raw{use super:: * ;
+pub unsafe fn calculate_layout_input_horizontal(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CalculateLayoutInputHorizontal").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CalculateLayoutInputHorizontal", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate_layout_input_vertical(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CalculateLayoutInputVertical").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","CalculateLayoutInputVertical", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_width(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_minWidth").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_minWidth", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_width(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_preferredWidth").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_preferredWidth", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_width(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_flexibleWidth").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_flexibleWidth", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_height(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_minHeight").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_minHeight", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_height(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_preferredHeight").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_preferredHeight", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_height(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_flexibleHeight").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_flexibleHeight", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_layout_priority(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_layoutPriority").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_layoutPriority", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
-#[cfg(feature = "unity_engine-ui-ilayoutelement_interface")]
-pub trait IILayoutElement_InterfaceMethods : IILayoutElement_Interface { # [doc = "`CalculateLayoutInputHorizontal()` overload"] fn calculate_layout_input_horizontal (self ,) -> () { unsafe { let __receiver = < ILayoutElement_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutElement_Interface_unity2_raw :: calculate_layout_input_horizontal (__receiver , :: core :: option :: Option :: None) } } # [doc = "`CalculateLayoutInputVertical()` overload"] fn calculate_layout_input_vertical (self ,) -> () { unsafe { let __receiver = < ILayoutElement_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutElement_Interface_unity2_raw :: calculate_layout_input_vertical (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_minWidth()` overload"] fn get_min_width (self ,) -> f32 { unsafe { let __receiver = < ILayoutElement_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutElement_Interface_unity2_raw :: get_min_width (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_preferredWidth()` overload"] fn get_preferred_width (self ,) -> f32 { unsafe { let __receiver = < ILayoutElement_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutElement_Interface_unity2_raw :: get_preferred_width (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_flexibleWidth()` overload"] fn get_flexible_width (self ,) -> f32 { unsafe { let __receiver = < ILayoutElement_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutElement_Interface_unity2_raw :: get_flexible_width (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_minHeight()` overload"] fn get_min_height (self ,) -> f32 { unsafe { let __receiver = < ILayoutElement_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutElement_Interface_unity2_raw :: get_min_height (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_preferredHeight()` overload"] fn get_preferred_height (self ,) -> f32 { unsafe { let __receiver = < ILayoutElement_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutElement_Interface_unity2_raw :: get_preferred_height (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_flexibleHeight()` overload"] fn get_flexible_height (self ,) -> f32 { unsafe { let __receiver = < ILayoutElement_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutElement_Interface_unity2_raw :: get_flexible_height (__receiver , :: core :: option :: Option :: None) } } # [doc = "`get_layoutPriority()` overload"] fn get_layout_priority (self ,) -> i32 { unsafe { let __receiver = < ILayoutElement_Interface as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ILayoutElement_Interface_unity2_raw :: get_layout_priority (__receiver , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-ui-ilayoutelement_interface")]pub trait IILayoutElement_InterfaceMethods:IILayoutElement_Interface{#[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <ILayoutElement_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILayoutElement_Interface_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
+}
+#[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <ILayoutElement_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILayoutElement_Interface_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <ILayoutElement_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILayoutElement_Interface_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <ILayoutElement_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILayoutElement_Interface_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <ILayoutElement_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILayoutElement_Interface_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <ILayoutElement_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILayoutElement_Interface_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <ILayoutElement_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILayoutElement_Interface_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <ILayoutElement_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILayoutElement_Interface_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <ILayoutElement_Interface as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ILayoutElement_Interface_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-ilayoutelement_interface")]
-impl < __T : IILayoutElement_Interface > IILayoutElement_InterfaceMethods for __T { }
+#[cfg(feature="unity_engine-ui-ilayoutelement_interface")]impl<__T:IILayoutElement_Interface>IILayoutElement_InterfaceMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-ilayoutelement_interface")]
-impl ILayoutElement_Interface { pub fn calculate_layout_input_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calculate_layout_input_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_min_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_preferred_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_flexible_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_min_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_preferred_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_flexible_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_layout_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ILayoutElement_Interface as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-ui-ilayoutelement_interface")]impl ILayoutElement_Interface{pub fn calculate_layout_input_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calculate_layout_input_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_min_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_preferred_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_flexible_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_min_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_preferred_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_flexible_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_layout_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-ui-ilayoutelement_interface")]
 #[doc(hidden)]

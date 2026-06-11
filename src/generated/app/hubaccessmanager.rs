@@ -4,124 +4,286 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessManager")] # [parent (crate :: system :: object :: Object)] pub struct HubAccessManager {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))]#[::unity2::class(namespace="App",name="HubAccessManager.MaterialCalculator")]#[parent(crate::system::object::Object)]pub struct HubAccessManager_MaterialCalculator{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubAccessManager_MaterialCalculator_Type  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessmanager/HubAccessManager.md"))]#[::unity2::class(namespace="App",name="HubAccessManager")]#[parent(crate::system::object::Object)]pub struct HubAccessManager{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubAccessManager_MaterialCalculator_Type{pub value:i32,}
+impl::unity2::ClassIdentity for HubAccessManager_MaterialCalculator_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubAccessManager.MaterialCalculator.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for HubAccessManager_MaterialCalculator_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubAccessManager.MaterialCalculator.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for HubAccessManager_MaterialCalculator_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for HubAccessManager_MaterialCalculator_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl HubAccessManager_MaterialCalculator_Type{pub fn iron()->Self{Self{value:0}
 }
-
-
-impl  HubAccessManager_MaterialCalculator_Type  {
-    pub fn iron() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn steel() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn silver() -> Self {
-        Self { value: 2 }
-
-    }
-
+pub fn steel()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubAccessManager.MaterialCalculator")] # [parent (crate :: system :: object :: Object)] pub struct HubAccessManager_MaterialCalculator {}
+pub fn silver()->Self{Self{value:2}
+}
+}
 
 }
 
 #[cfg(feature = "app-hubaccessmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubaccessmanager")]
-impl HubAccessManager { # [doc = "`IsItemType(crate::app::hubdisposdata::HubDisposData)` overload"] pub fn is_item_type (dispos : impl :: core :: convert :: Into < crate :: app :: hubdisposdata :: HubDisposData >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: app :: hubdisposdata :: HubDisposData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216fa20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (dispos) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubaccessmanager")]
-pub trait IHubAccessManagerMethods : IHubAccessManager { # [doc = "`get_SceneName()` overload"] fn get_scene_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216f960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SceneName(::unity2::Il2CppString)` overload"] fn set_scene_name (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216f970usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AccessList()` overload"] fn get_access_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubaccessdata :: HubAccessData > { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubaccessdata :: HubAccessData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216f980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AccessList(crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>)` overload"] fn set_access_list (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubaccessdata :: HubAccessData > >) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubaccessdata :: HubAccessData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216f990usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DisposList()` overload"] fn get_dispos_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216f9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DisposList(crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>)` overload"] fn set_dispos_list (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > >) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216f9b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DisposItemList()` overload"] fn get_dispos_item_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216f9c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DisposItemList(crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>)` overload"] fn set_dispos_item_list (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > >) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216f9d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_AnimalDataList()` overload"] fn get_animal_data_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: animaldata :: AnimalData > { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: animaldata :: AnimalData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216fa00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AnimalDataList(crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>)` overload"] fn set_animal_data_list (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: animaldata :: AnimalData > >) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: animaldata :: AnimalData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216fa10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType)` overload"] fn setup (self , scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , timezone_type : impl :: core :: convert :: Into < crate :: app :: hubutil :: HubUtil_TimezoneType >) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , crate :: app :: hubutil :: HubUtil_TimezoneType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216fa50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (scene_name) , :: core :: convert :: Into :: into (timezone_type) , :: core :: option :: Option :: None) } } } # [doc = "`ConfirmContent()` overload"] fn confirm_content (self ,) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21708f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Reset()` overload"] fn reset (self ,) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2170380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Refresh()` overload"] fn refresh (self ,) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2170ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsUsedLocator(::unity2::Il2CppString)` overload"] fn is_used_locator (self , locator_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21706a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator_name) , :: core :: option :: Option :: None) } } } # [doc = "`TrySetAccessObject(crate::app::hubdisposdata::HubDisposData, crate::app::random_2::Random_2)` overload"] fn try_set_access_object (self , data : impl :: core :: convert :: Into < crate :: app :: hubdisposdata :: HubDisposData > , random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 >) -> bool { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , crate :: app :: hubdisposdata :: HubDisposData , crate :: app :: random_2 :: Random_2 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2170750usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (random) , :: core :: option :: Option :: None) } } } # [doc = "`TryRemoveAccessObject(crate::app::hubdisposdata::HubDisposData)` overload"] fn try_remove_access_object (self , data : impl :: core :: convert :: Into < crate :: app :: hubdisposdata :: HubDisposData >) -> bool { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , crate :: app :: hubdisposdata :: HubDisposData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2170850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`AddNewLocator(::unity2::Il2CppString)` overload"] fn add_new_locator (self , locator : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: hubaccessdata :: HubAccessData { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessdata :: HubAccessData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2171ad0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`ClearLocator(::unity2::Il2CppString)` overload"] fn clear_locator (self , locator : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2171c40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`FindLocator(::unity2::Il2CppString)` overload"] fn find_locator (self , locator : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: hubaccessdata :: HubAccessData { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessdata :: HubAccessData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2169bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (locator) , :: core :: option :: Option :: None) } } } # [doc = "`FindPID(::unity2::Il2CppString)` overload"] fn find_pid (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: hubaccessdata :: HubAccessData { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessdata :: HubAccessData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2171cc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`IsAlreadyLocated(::unity2::Il2CppString)` overload"] fn is_already_located (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2171e40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: option :: Option :: None) } } } # [doc = "`IsAvailablePID(::unity2::Il2CppString, bool)` overload"] fn is_available_pid (self , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , disabled_talk : impl :: core :: convert :: Into < bool >) -> bool { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2171e60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (disabled_talk) , :: core :: option :: Option :: None) } } } # [doc = "`GetSelectedGodWithSpecial(crate::app::godunit::GodUnit)` overload"] fn get_selected_god_with_special (self , god_unit : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2172310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god_unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetPlayerGod()` overload"] fn get_player_god (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21725d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetChooseID(crate::app::hubdisposdata::HubDisposData, *muti32, crate::app::random_2::Random_2)` overload"] fn get_choose_id (self , data : impl :: core :: convert :: Into < crate :: app :: hubdisposdata :: HubDisposData > , random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 >) -> (:: unity2 :: Il2CppString , i32) { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (HubAccessManager , crate :: app :: hubdisposdata :: HubDisposData , * mut i32 , crate :: app :: random_2 :: Random_2 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2171000usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (random) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`GetChooseAnimalID(crate::app::hubdisposdata::HubDisposData, crate::app::random_2::Random_2)` overload"] fn get_choose_animal_id (self , data : impl :: core :: convert :: Into < crate :: app :: hubdisposdata :: HubDisposData > , random : impl :: core :: convert :: Into < crate :: app :: random_2 :: Random_2 >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , crate :: app :: hubdisposdata :: HubDisposData , crate :: app :: random_2 :: Random_2 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21726d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (random) , :: core :: option :: Option :: None) } } } # [doc = "`GetChooseAnimalItem(crate::app::hubdisposdata::HubDisposData)` overload"] fn get_choose_animal_item (self , data : impl :: core :: convert :: Into < crate :: app :: hubdisposdata :: HubDisposData >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , crate :: app :: hubdisposdata :: HubDisposData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2172fd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`EntryTalkLimit(::unity2::Il2CppString)` overload"] fn entry_talk_limit (self , talk_type : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x216ee20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (talk_type) , :: core :: option :: Option :: None) } } } # [doc = "`GetNotTakedPieceOfBond()` overload"] fn get_not_taked_piece_of_bond (self ,) -> i32 { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21733a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dump()` overload"] fn dump (self ,) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2173500usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CopyDisposList(::unity2::Il2CppString)` overload"] fn copy_dispos_list (self , scene_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: hubdisposdata :: HubDisposData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21703e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (scene_name) , :: core :: option :: Option :: None) } } } # [doc = "`CopyAnimalList()` overload"] fn copy_animal_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: animaldata :: AnimalData > { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: animaldata :: AnimalData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2170560usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ConfirmMaterial()` overload"] fn confirm_material (self ,) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2170c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubAccessManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2173590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-hubaccessmanager")]
-impl < __T : IHubAccessManager > IHubAccessManagerMethods for __T { }
-
-#[cfg(feature = "app-hubaccessmanager")]
-impl HubAccessManager { pub fn get_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_scene_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_access_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_access_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_dispos_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_dispos_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_dispos_item_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_dispos_item_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_animal_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_animal_data_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_item_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn confirm_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn reset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn refresh_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn is_used_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn try_set_access_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn try_remove_access_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn add_new_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn clear_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn find_locator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn find_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn is_already_located_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn is_available_pid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_selected_god_with_special_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn get_player_god_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_choose_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn get_choose_animal_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_choose_animal_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn entry_talk_limit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_not_taked_piece_of_bond_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn dump_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn copy_dispos_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn copy_animal_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn confirm_material_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } }
-
-#[cfg(feature = "app-hubaccessmanager")]
-impl HubAccessManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubAccessManager) , :: core :: stringify ! (new) ,)) ; < Self as IHubAccessManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager_MaterialCalculator{#[doc="`GenerateHigherMaterials(i32)` overload"]pub fn generate_higher_materials(num:impl::core::convert::Into<i32>)->crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce2c00usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32> ;
+(i32)::core::convert::Into::into(num))}
+}
+#[doc="`GetValidHigherMateriaslType(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]pub fn get_valid_higher_materiasl_type(materials:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32> >)->crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3260usize)as*mut u8,crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
+(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)::core::convert::Into::into(materials))}
+}
+#[doc="`ConvertToLowerMaterialType(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)` overload"]pub fn convert_to_lower_material_type(r#type:impl::core::convert::Into<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type>)->crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3330usize)as*mut u8,crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
+(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`FilterLowerMaterials(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]pub fn filter_lower_materials(materials:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3140usize)as*mut u8,();
+(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)::core::convert::Into::into(materials))}
+}
 }
 
-#[cfg(feature = "app-hubaccessmanager")]
-impl HubAccessManager_MaterialCalculator { # [doc = "`GenerateHigherMaterials(i32)` overload"] pub fn generate_higher_materials (num : impl :: core :: convert :: Into < i32 >) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , i32 > { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce2c00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (num) , :: core :: option :: Option :: None) } } } # [doc = "`GetValidHigherMateriaslType(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"] pub fn get_valid_higher_materiasl_type (materials : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , i32 > >) -> crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , i32 > , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (materials) , :: core :: option :: Option :: None) } } } # [doc = "`ConvertToLowerMaterialType(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)` overload"] pub fn convert_to_lower_material_type (r#type : impl :: core :: convert :: Into < crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type >) -> crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type { unsafe { { let __inner : extern "C" fn (crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3330usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`FilterLowerMaterials(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"] pub fn filter_lower_materials (materials : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , i32 > >) -> () { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: app :: hubaccessmanager :: HubAccessManager_MaterialCalculator_Type , i32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (materials) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubaccessmanager")]pub trait IHubAccessManager_MaterialCalculatorMethods:IHubAccessManager_MaterialCalculator{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubAccessManager_MaterialCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3350usize)as*mut u8,();
+(HubAccessManager_MaterialCalculator)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubaccessmanager")]
-pub trait IHubAccessManager_MaterialCalculatorMethods : IHubAccessManager_MaterialCalculator { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HubAccessManager_MaterialCalculator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubAccessManager_MaterialCalculator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ce3350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubaccessmanager")]impl<__T:IHubAccessManager_MaterialCalculator>IHubAccessManager_MaterialCalculatorMethods for __T{}
 
-#[cfg(feature = "app-hubaccessmanager")]
-impl < __T : IHubAccessManager_MaterialCalculator > IHubAccessManager_MaterialCalculatorMethods for __T { }
+#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager_MaterialCalculator{pub fn generate_higher_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_valid_higher_materiasl_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn convert_to_lower_material_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn filter_lower_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-hubaccessmanager")]
-impl HubAccessManager_MaterialCalculator { pub fn generate_higher_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager_MaterialCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_valid_higher_materiasl_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager_MaterialCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn convert_to_lower_material_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager_MaterialCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn filter_lower_materials_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager_MaterialCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubAccessManager_MaterialCalculator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager_MaterialCalculator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubAccessManager_MaterialCalculator), ::core::stringify!(new),));
+ <Self as IHubAccessManager_MaterialCalculatorMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-hubaccessmanager")]
-impl HubAccessManager_MaterialCalculator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubAccessManager_MaterialCalculator) , :: core :: stringify ! (new) ,)) ; < Self as IHubAccessManager_MaterialCalculatorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager{#[doc="`IsItemType(crate::app::hubdisposdata::HubDisposData)` overload"]pub fn is_item_type(dispos:impl::core::convert::Into<crate::app::hubdisposdata::HubDisposData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x216fa20usize)as*mut u8,bool;
+(crate::app::hubdisposdata::HubDisposData)::core::convert::Into::into(dispos))}
+}
+}
+
+#[cfg(feature="app-hubaccessmanager")]pub trait IHubAccessManagerMethods:IHubAccessManager{#[doc="`get_SceneName()` overload"]fn get_scene_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216f960usize)as*mut u8, ::unity2::Il2CppString;
+(HubAccessManager)__receiver)}
+}
+#[doc="`set_SceneName(::unity2::Il2CppString)` overload"]fn set_scene_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216f970usize)as*mut u8,();
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_AccessList()` overload"]fn get_access_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216f980usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData> ;
+(HubAccessManager)__receiver)}
+}
+#[doc="`set_AccessList(crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>)` overload"]fn set_access_list(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData> >)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216f990usize)as*mut u8,();
+(HubAccessManager)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::hubaccessdata::HubAccessData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_DisposList()` overload"]fn get_dispos_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216f9a0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> ;
+(HubAccessManager)__receiver)}
+}
+#[doc="`set_DisposList(crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>)` overload"]fn set_dispos_list(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> >)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216f9b0usize)as*mut u8,();
+(HubAccessManager)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_DisposItemList()` overload"]fn get_dispos_item_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216f9c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> ;
+(HubAccessManager)__receiver)}
+}
+#[doc="`set_DisposItemList(crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>)` overload"]fn set_dispos_item_list(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> >)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216f9d0usize)as*mut u8,();
+(HubAccessManager)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>)::core::convert::Into::into(value))}
+}
+#[doc="`get_AnimalDataList()` overload"]fn get_animal_data_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216fa00usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> ;
+(HubAccessManager)__receiver)}
+}
+#[doc="`set_AnimalDataList(crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>)` overload"]fn set_animal_data_list(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> >)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216fa10usize)as*mut u8,();
+(HubAccessManager)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>)::core::convert::Into::into(value))}
+}
+#[doc="`Setup(::unity2::Il2CppString, crate::app::hubutil::HubUtil_TimezoneType)` overload"]fn setup(self,scene_name:impl::core::convert::Into< ::unity2::Il2CppString> ,timezone_type:impl::core::convert::Into<crate::app::hubutil::HubUtil_TimezoneType>)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216fa50usize)as*mut u8,();
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(scene_name),(crate::app::hubutil::HubUtil_TimezoneType)::core::convert::Into::into(timezone_type))}
+}
+#[doc="`ConfirmContent()` overload"]fn confirm_content(self,)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21708f0usize)as*mut u8,();
+(HubAccessManager)__receiver)}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2170380usize)as*mut u8,();
+(HubAccessManager)__receiver)}
+}
+#[doc="`Refresh()` overload"]fn refresh(self,)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2170ee0usize)as*mut u8,();
+(HubAccessManager)__receiver)}
+}
+#[doc="`IsUsedLocator(::unity2::Il2CppString)` overload"]fn is_used_locator(self,locator_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21706a0usize)as*mut u8,bool;
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(locator_name))}
+}
+#[doc="`TrySetAccessObject(crate::app::hubdisposdata::HubDisposData, crate::app::random_2::Random_2)` overload"]fn try_set_access_object(self,data:impl::core::convert::Into<crate::app::hubdisposdata::HubDisposData> ,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->bool{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2170750usize)as*mut u8,bool;
+(HubAccessManager)__receiver,(crate::app::hubdisposdata::HubDisposData)::core::convert::Into::into(data),(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
+}
+#[doc="`TryRemoveAccessObject(crate::app::hubdisposdata::HubDisposData)` overload"]fn try_remove_access_object(self,data:impl::core::convert::Into<crate::app::hubdisposdata::HubDisposData>)->bool{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2170850usize)as*mut u8,bool;
+(HubAccessManager)__receiver,(crate::app::hubdisposdata::HubDisposData)::core::convert::Into::into(data))}
+}
+#[doc="`AddNewLocator(::unity2::Il2CppString)` overload"]fn add_new_locator(self,locator:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::hubaccessdata::HubAccessData{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2171ad0usize)as*mut u8,crate::app::hubaccessdata::HubAccessData;
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(locator))}
+}
+#[doc="`ClearLocator(::unity2::Il2CppString)` overload"]fn clear_locator(self,locator:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2171c40usize)as*mut u8,();
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(locator))}
+}
+#[doc="`FindLocator(::unity2::Il2CppString)` overload"]fn find_locator(self,locator:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::hubaccessdata::HubAccessData{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2169bf0usize)as*mut u8,crate::app::hubaccessdata::HubAccessData;
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(locator))}
+}
+#[doc="`FindPID(::unity2::Il2CppString)` overload"]fn find_pid(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::hubaccessdata::HubAccessData{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2171cc0usize)as*mut u8,crate::app::hubaccessdata::HubAccessData;
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`IsAlreadyLocated(::unity2::Il2CppString)` overload"]fn is_already_located(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2171e40usize)as*mut u8,bool;
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid))}
+}
+#[doc="`IsAvailablePID(::unity2::Il2CppString, bool)` overload"]fn is_available_pid(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,disabled_talk:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2171e60usize)as*mut u8,bool;
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(bool)::core::convert::Into::into(disabled_talk))}
+}
+#[doc="`GetSelectedGodWithSpecial(crate::app::godunit::GodUnit)` overload"]fn get_selected_god_with_special(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2172310usize)as*mut u8, ::unity2::Il2CppString;
+(HubAccessManager)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
+}
+#[doc="`GetPlayerGod()` overload"]fn get_player_god(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21725d0usize)as*mut u8, ::unity2::Il2CppString;
+(HubAccessManager)__receiver)}
+}
+#[doc="`GetChooseID(crate::app::hubdisposdata::HubDisposData, *muti32, crate::app::random_2::Random_2)` overload"]fn get_choose_id(self,data:impl::core::convert::Into<crate::app::hubdisposdata::HubDisposData> ,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->(::unity2::Il2CppString,i32){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2171000usize)as*mut u8, ::unity2::Il2CppString;
+(HubAccessManager)__receiver,(crate::app::hubdisposdata::HubDisposData)::core::convert::Into::into(data),(*mut i32)__out_0.as_mut_ptr(),(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetChooseAnimalID(crate::app::hubdisposdata::HubDisposData, crate::app::random_2::Random_2)` overload"]fn get_choose_animal_id(self,data:impl::core::convert::Into<crate::app::hubdisposdata::HubDisposData> ,random:impl::core::convert::Into<crate::app::random_2::Random_2>)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21726d0usize)as*mut u8, ::unity2::Il2CppString;
+(HubAccessManager)__receiver,(crate::app::hubdisposdata::HubDisposData)::core::convert::Into::into(data),(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
+}
+#[doc="`GetChooseAnimalItem(crate::app::hubdisposdata::HubDisposData)` overload"]fn get_choose_animal_item(self,data:impl::core::convert::Into<crate::app::hubdisposdata::HubDisposData>)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2172fd0usize)as*mut u8, ::unity2::Il2CppString;
+(HubAccessManager)__receiver,(crate::app::hubdisposdata::HubDisposData)::core::convert::Into::into(data))}
+}
+#[doc="`EntryTalkLimit(::unity2::Il2CppString)` overload"]fn entry_talk_limit(self,talk_type:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x216ee20usize)as*mut u8,bool;
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(talk_type))}
+}
+#[doc="`GetNotTakedPieceOfBond()` overload"]fn get_not_taked_piece_of_bond(self,)->i32{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21733a0usize)as*mut u8,i32;
+(HubAccessManager)__receiver)}
+}
+#[doc="`Dump()` overload"]fn dump(self,)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2173500usize)as*mut u8,();
+(HubAccessManager)__receiver)}
+}
+#[doc="`CopyDisposList(::unity2::Il2CppString)` overload"]fn copy_dispos_list(self,scene_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData>{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21703e0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::hubdisposdata::HubDisposData> ;
+(HubAccessManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(scene_name))}
+}
+#[doc="`CopyAnimalList()` overload"]fn copy_animal_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData>{unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2170560usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::animaldata::AnimalData> ;
+(HubAccessManager)__receiver)}
+}
+#[doc="`ConfirmMaterial()` overload"]fn confirm_material(self,)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2170c00usize)as*mut u8,();
+(HubAccessManager)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubAccessManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2173590usize)as*mut u8,();
+(HubAccessManager)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubaccessmanager")]impl<__T:IHubAccessManager>IHubAccessManagerMethods for __T{}
+
+#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager{pub fn get_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_scene_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_access_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_access_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_dispos_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_dispos_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_dispos_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_dispos_item_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_animal_data_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_animal_data_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_item_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn confirm_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn refresh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn is_used_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn try_set_access_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn try_remove_access_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn add_new_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn clear_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn find_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn find_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn is_already_located_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn is_available_pid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_selected_god_with_special_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_player_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_choose_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_choose_animal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_choose_animal_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn entry_talk_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_not_taked_piece_of_bond_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn dump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn copy_dispos_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn copy_animal_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn confirm_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+}
+
+#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubAccessManager), ::core::stringify!(new),));
+ <Self as IHubAccessManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-hubaccessmanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubAccessManager_MaterialCalculator;
+    pub use super::IHubAccessManager_MaterialCalculator;
+    pub use super::IHubAccessManager_MaterialCalculatorMethods;
     pub use super::HubAccessManager;
     pub use super::IHubAccessManager;
     pub use super::IHubAccessManagerMethods;
     pub use super::HubAccessManager_MaterialCalculator_Type;
-    pub use super::HubAccessManager_MaterialCalculator;
-    pub use super::IHubAccessManager_MaterialCalculator;
-    pub use super::IHubAccessManager_MaterialCalculatorMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

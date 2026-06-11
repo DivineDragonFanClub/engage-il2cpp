@@ -4,36 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: bindings :: nativemethodattribute :: { INativeMethodAttribute , NativeMethodAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::bindings::nativemethodattribute::{INativeMethodAttribute,NativeMethodAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/nativepropertyattribute/NativePropertyAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Bindings" , name = "NativePropertyAttribute")] # [parent (crate :: unity_engine :: bindings :: nativemethodattribute :: NativeMethodAttribute)] pub struct NativePropertyAttribute {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/nativepropertyattribute/NativePropertyAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="NativePropertyAttribute")]#[parent(crate::unity_engine::bindings::nativemethodattribute::NativeMethodAttribute)]pub struct NativePropertyAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-bindings-nativepropertyattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-bindings-nativepropertyattribute")]
-pub trait INativePropertyAttributeMethods : INativePropertyAttribute { # [doc = "`set_TargetType(crate::unity_engine::bindings::targettype::TargetType)` overload"] fn set_target_type (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: bindings :: targettype :: TargetType >) -> () { unsafe { let __receiver = < NativePropertyAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativePropertyAttribute , crate :: unity_engine :: bindings :: targettype :: TargetType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f381c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < NativePropertyAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativePropertyAttribute , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f381d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < NativePropertyAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativePropertyAttribute , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f381e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, bool, crate::unity_engine::bindings::targettype::TargetType)` overload"] fn ctor_3 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , is_free : impl :: core :: convert :: Into < bool > , target_type : impl :: core :: convert :: Into < crate :: unity_engine :: bindings :: targettype :: TargetType >) -> () { unsafe { let __receiver = < NativePropertyAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NativePropertyAttribute , :: unity2 :: Il2CppString , bool , crate :: unity_engine :: bindings :: targettype :: TargetType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f381f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (is_free) , :: core :: convert :: Into :: into (target_type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-bindings-nativepropertyattribute")]pub trait INativePropertyAttributeMethods:INativePropertyAttribute{#[doc="`set_TargetType(crate::unity_engine::bindings::targettype::TargetType)` overload"]fn set_target_type(self,value:impl::core::convert::Into<crate::unity_engine::bindings::targettype::TargetType>)->(){unsafe{let __receiver= <NativePropertyAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f381c0usize)as*mut u8,();
+(NativePropertyAttribute)__receiver,(crate::unity_engine::bindings::targettype::TargetType)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NativePropertyAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f381d0usize)as*mut u8,();
+(NativePropertyAttribute)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativePropertyAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f381e0usize)as*mut u8,();
+(NativePropertyAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, bool, crate::unity_engine::bindings::targettype::TargetType)` overload"]fn ctor_3(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_free:impl::core::convert::Into<bool> ,target_type:impl::core::convert::Into<crate::unity_engine::bindings::targettype::TargetType>)->(){unsafe{let __receiver= <NativePropertyAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f381f0usize)as*mut u8,();
+(NativePropertyAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(is_free),(crate::unity_engine::bindings::targettype::TargetType)::core::convert::Into::into(target_type))}
+}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativepropertyattribute")]
-impl < __T : INativePropertyAttribute > INativePropertyAttributeMethods for __T { }
+#[cfg(feature="unity_engine-bindings-nativepropertyattribute")]impl<__T:INativePropertyAttribute>INativePropertyAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-bindings-nativepropertyattribute")]
-impl NativePropertyAttribute { pub fn set_target_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativePropertyAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativePropertyAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativePropertyAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NativePropertyAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-bindings-nativepropertyattribute")]impl NativePropertyAttribute{pub fn set_target_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-bindings-nativepropertyattribute")]
-impl NativePropertyAttribute {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativePropertyAttribute) , :: core :: stringify ! (new) ,)) ; < Self as INativePropertyAttributeMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativePropertyAttribute) , :: core :: stringify ! (new_2) ,)) ; < Self as INativePropertyAttributeMethods > :: ctor_2 (this , name) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, bool, crate::unity_engine::bindings::targettype::TargetType)` — overload selector"] pub fn new_3 (name : :: unity2 :: Il2CppString , is_free : bool , target_type : crate :: unity_engine :: bindings :: targettype :: TargetType) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NativePropertyAttribute) , :: core :: stringify ! (new_3) ,)) ; < Self as INativePropertyAttributeMethods > :: ctor_3 (this , name , is_free , target_type) ; this }
+#[cfg(feature="unity_engine-bindings-nativepropertyattribute")]impl NativePropertyAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativePropertyAttribute), ::core::stringify!(new),));
+ <Self as INativePropertyAttributeMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativePropertyAttribute), ::core::stringify!(new_2),));
+ <Self as INativePropertyAttributeMethods> ::ctor_2(this,name);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, bool, crate::unity_engine::bindings::targettype::TargetType)` — overload selector"]pub fn new_3(name: ::unity2::Il2CppString,is_free:bool,target_type:crate::unity_engine::bindings::targettype::TargetType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NativePropertyAttribute), ::core::stringify!(new_3),));
+ <Self as INativePropertyAttributeMethods> ::ctor_3(this,name,is_free,target_type);
+this}
 }
 
 #[cfg(feature = "unity_engine-bindings-nativepropertyattribute")]

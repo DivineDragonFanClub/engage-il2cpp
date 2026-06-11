@@ -4,37 +4,56 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_inputvalidator/TMP_InputValidator.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_InputValidator")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct TMP_InputValidator {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputvalidator/TMP_InputValidator.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputValidator")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct TMP_InputValidator{}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_inputvalidator-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_inputvalidator")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __TMP_InputValidator_unity2_raw { use super :: * ; pub unsafe fn validate (this : TMP_InputValidator , text : * mut :: unity2 :: Il2CppString , pos : * mut i32 , ch : u16 , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> u16 { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("Validate") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "Validate" , < TMP_InputValidator as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (TMP_InputValidator , * mut :: unity2 :: Il2CppString , * mut i32 , u16 , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , text , pos , ch , __mi) } }
+#[cfg(feature="tm_pro-tmp_inputvalidator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_InputValidator_unity2_raw{use super:: * ;
+pub unsafe fn validate(this:TMP_InputValidator,text: *mut::unity2::Il2CppString,pos: *mut i32,ch:u16,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Validate").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","Validate", <TMP_InputValidator as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(TMP_InputValidator, *mut::unity2::Il2CppString, *mut i32,u16, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,text,pos,ch,__mi)}
+}
 
-#[cfg(feature = "tm_pro-tmp_inputvalidator")]
-pub trait ITMP_InputValidatorMethods : ITMP_InputValidator { # [doc = "`Validate(*mut::unity2::Il2CppString, *muti32, u16)` overload"] fn validate (self , ch : impl :: core :: convert :: Into < u16 >) -> (u16 , :: unity2 :: Il2CppString , i32) { unsafe { let __receiver = < TMP_InputValidator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < :: unity2 :: Il2CppString > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; let __ret = { __TMP_InputValidator_unity2_raw :: validate (__receiver , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: convert :: Into :: into (ch) , :: core :: option :: Option :: None) } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_InputValidator as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_InputValidator , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33b1ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_inputvalidator")]pub trait ITMP_InputValidatorMethods:ITMP_InputValidator{#[doc="`Validate(*mut::unity2::Il2CppString, *muti32, u16)` overload"]fn validate(self,ch:impl::core::convert::Into<u16>)->(u16, ::unity2::Il2CppString,i32){unsafe{let __receiver= <TMP_InputValidator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
+let __ret={__TMP_InputValidator_unity2_raw::validate(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::convert::Into::into(ch), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_InputValidator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1ac0usize)as*mut u8,();
+(TMP_InputValidator)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_inputvalidator")]
-impl < __T : ITMP_InputValidator > ITMP_InputValidatorMethods for __T { }
+#[cfg(feature="tm_pro-tmp_inputvalidator")]impl<__T:ITMP_InputValidator>ITMP_InputValidatorMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_inputvalidator")]
-impl TMP_InputValidator { pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_InputValidator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_InputValidator as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="tm_pro-tmp_inputvalidator")]impl TMP_InputValidator{pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "tm_pro-tmp_inputvalidator")]
-impl TMP_InputValidator {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_InputValidator) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_InputValidatorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_inputvalidator")]impl TMP_InputValidator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_InputValidator), ::core::stringify!(new),));
+ <Self as ITMP_InputValidatorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_inputvalidator")]

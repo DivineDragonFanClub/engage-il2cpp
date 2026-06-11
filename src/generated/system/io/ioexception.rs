@@ -4,36 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/ioexception/IOException.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "IOException")] pub struct IOException {
-# [offset (136)] # [rename (name = "_maybeFullPath")] pub maybe_full_path : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/ioexception/IOException.md"))]#[::unity2::class(namespace="System.IO",name="IOException")]pub struct IOException{#[offset(136)]#[rename(name="_maybeFullPath")]pub maybe_full_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "system-io-ioexception-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-ioexception")]
-pub trait IIOExceptionMethods : IIOException { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < IOException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IOException , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x325d700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < IOException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IOException , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x325d780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, i32)` overload"] fn ctor_3 (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , hresult : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < IOException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IOException , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x325d7c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: convert :: Into :: into (hresult) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString, i32, ::unity2::Il2CppString)` overload"] fn ctor_4 (self , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , hresult : impl :: core :: convert :: Into < i32 > , maybe_full_path : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < IOException as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IOException , :: unity2 :: Il2CppString , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x325d800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (message) , :: core :: convert :: Into :: into (hresult) , :: core :: convert :: Into :: into (maybe_full_path) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-ioexception")]pub trait IIOExceptionMethods:IIOException{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IOException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x325d700usize)as*mut u8,();
+(IOException)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <IOException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x325d780usize)as*mut u8,();
+(IOException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, i32)` overload"]fn ctor_3(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,hresult:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IOException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x325d7c0usize)as*mut u8,();
+(IOException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(i32)::core::convert::Into::into(hresult))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, i32, ::unity2::Il2CppString)` overload"]fn ctor_4(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,hresult:impl::core::convert::Into<i32> ,maybe_full_path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <IOException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x325d800usize)as*mut u8,();
+(IOException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(i32)::core::convert::Into::into(hresult),(::unity2::Il2CppString)::core::convert::Into::into(maybe_full_path))}
+}
+}
 
-#[cfg(feature = "system-io-ioexception")]
-impl < __T : IIOException > IIOExceptionMethods for __T { }
+#[cfg(feature="system-io-ioexception")]impl<__T:IIOException>IIOExceptionMethods for __T{}
 
-#[cfg(feature = "system-io-ioexception")]
-impl IOException { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IOException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IOException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IOException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_4_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IOException as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="system-io-ioexception")]impl IOException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "system-io-ioexception")]
-impl IOException {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IOException) , :: core :: stringify ! (new) ,)) ; < Self as IIOExceptionMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (message : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IOException) , :: core :: stringify ! (new_2) ,)) ; < Self as IIOExceptionMethods > :: ctor_2 (this , message) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, i32)` — overload selector"] pub fn new_3 (message : :: unity2 :: Il2CppString , hresult : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IOException) , :: core :: stringify ! (new_3) ,)) ; < Self as IIOExceptionMethods > :: ctor_3 (this , message , hresult) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString, i32, ::unity2::Il2CppString)` — overload selector"] pub fn new_4 (message : :: unity2 :: Il2CppString , hresult : i32 , maybe_full_path : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IOException) , :: core :: stringify ! (new_4) ,)) ; < Self as IIOExceptionMethods > :: ctor_4 (this , message , hresult , maybe_full_path) ; this }
+#[cfg(feature="system-io-ioexception")]impl IOException{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IOException), ::core::stringify!(new),));
+ <Self as IIOExceptionMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IOException), ::core::stringify!(new_2),));
+ <Self as IIOExceptionMethods> ::ctor_2(this,message);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, i32)` — overload selector"]pub fn new_3(message: ::unity2::Il2CppString,hresult:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IOException), ::core::stringify!(new_3),));
+ <Self as IIOExceptionMethods> ::ctor_3(this,message,hresult);
+this}
+#[doc="`.ctor(::unity2::Il2CppString, i32, ::unity2::Il2CppString)` — overload selector"]pub fn new_4(message: ::unity2::Il2CppString,hresult:i32,maybe_full_path: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IOException), ::core::stringify!(new_4),));
+ <Self as IIOExceptionMethods> ::ctor_4(this,message,hresult,maybe_full_path);
+this}
 }
 
 #[cfg(feature = "system-io-ioexception")]

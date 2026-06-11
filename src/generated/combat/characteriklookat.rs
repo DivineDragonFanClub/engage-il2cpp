@@ -4,41 +4,82 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characteriklookat/CharacterIKLookAt.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterIKLookAt")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterIKLookAt {
-# [offset (32)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [offset (48)] # [rename (name = "m_LookTargetGO")] pub m_look_target_go : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/characteriklookat/CharacterIKLookAt.md"))]#[::unity2::class(namespace="Combat",name="CharacterIKLookAt")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterIKLookAt{#[offset(32)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(48)]#[rename(name="m_LookTargetGO")]pub m_look_target_go:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "combat-characteriklookat-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-characteriklookat")]
-pub trait ICharacterIKLookAtMethods : ICharacterIKLookAt { # [doc = "`get_FixedLookTargetHeight()` overload"] fn get_fixed_look_target_height (self ,) -> bool { unsafe { let __receiver = < CharacterIKLookAt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKLookAt , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FixedLookTargetHeight(bool)` overload"] fn set_fixed_look_target_height (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterIKLookAt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKLookAt , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterIKLookAt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKLookAt , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CharacterIKLookAt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKLookAt , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyStart()` overload"] fn my_start (self ,) -> () { unsafe { let __receiver = < CharacterIKLookAt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKLookAt , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e52f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyLateUpdate()` overload"] fn my_late_update (self ,) -> () { unsafe { let __receiver = < CharacterIKLookAt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKLookAt , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5520usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetWeight(f32)` overload"] fn set_weight (self , w : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CharacterIKLookAt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKLookAt , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e5660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (w) , :: core :: option :: Option :: None) } } } # [doc = "`Skip()` overload"] fn skip (self ,) -> () { unsafe { let __receiver = < CharacterIKLookAt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKLookAt , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e56c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterIKLookAt as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterIKLookAt , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27e57d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-characteriklookat")]pub trait ICharacterIKLookAtMethods:ICharacterIKLookAt{#[doc="`get_FixedLookTargetHeight()` overload"]fn get_fixed_look_target_height(self,)->bool{unsafe{let __receiver= <CharacterIKLookAt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5120usize)as*mut u8,bool;
+(CharacterIKLookAt)__receiver)}
+}
+#[doc="`set_FixedLookTargetHeight(bool)` overload"]fn set_fixed_look_target_height(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterIKLookAt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5130usize)as*mut u8,();
+(CharacterIKLookAt)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterIKLookAt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5150usize)as*mut u8,crate::combat::character::Character;
+(CharacterIKLookAt)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CharacterIKLookAt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5210usize)as*mut u8,();
+(CharacterIKLookAt)__receiver)}
+}
+#[doc="`MyStart()` overload"]fn my_start(self,)->(){unsafe{let __receiver= <CharacterIKLookAt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e52f0usize)as*mut u8,();
+(CharacterIKLookAt)__receiver)}
+}
+#[doc="`MyLateUpdate()` overload"]fn my_late_update(self,)->(){unsafe{let __receiver= <CharacterIKLookAt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5520usize)as*mut u8,();
+(CharacterIKLookAt)__receiver)}
+}
+#[doc="`SetWeight(f32)` overload"]fn set_weight(self,w:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CharacterIKLookAt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e5660usize)as*mut u8,();
+(CharacterIKLookAt)__receiver,(f32)::core::convert::Into::into(w))}
+}
+#[doc="`Skip()` overload"]fn skip(self,)->(){unsafe{let __receiver= <CharacterIKLookAt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e56c0usize)as*mut u8,();
+(CharacterIKLookAt)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterIKLookAt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27e57d0usize)as*mut u8,();
+(CharacterIKLookAt)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-characteriklookat")]
-impl < __T : ICharacterIKLookAt > ICharacterIKLookAtMethods for __T { }
+#[cfg(feature="combat-characteriklookat")]impl<__T:ICharacterIKLookAt>ICharacterIKLookAtMethods for __T{}
 
-#[cfg(feature = "combat-characteriklookat")]
-impl CharacterIKLookAt { pub fn get_fixed_look_target_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKLookAt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_fixed_look_target_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKLookAt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKLookAt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKLookAt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKLookAt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn my_late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKLookAt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKLookAt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKLookAt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterIKLookAt as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="combat-characteriklookat")]impl CharacterIKLookAt{pub fn get_fixed_look_target_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_fixed_look_target_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn my_late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "combat-characteriklookat")]
-impl CharacterIKLookAt {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterIKLookAt) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterIKLookAtMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-characteriklookat")]impl CharacterIKLookAt{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterIKLookAt), ::core::stringify!(new),));
+ <Self as ICharacterIKLookAtMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-characteriklookat")]

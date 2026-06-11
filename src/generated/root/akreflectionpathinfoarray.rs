@@ -4,32 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akbasearray_1 :: { AkBaseArray_1 , IAkBaseArray_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akbasearray_1::{AkBaseArray_1,IAkBaseArray_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akreflectionpathinfoarray/AkReflectionPathInfoArray.md"))] # [:: unity2 :: class (namespace = "" , name = "AkReflectionPathInfoArray")] # [parent (crate :: root :: akbasearray_1 :: AkBaseArray_1 < crate :: root :: akreflectionpathinfo :: AkReflectionPathInfo >)] pub struct AkReflectionPathInfoArray {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akreflectionpathinfoarray/AkReflectionPathInfoArray.md"))]#[::unity2::class(namespace="",name="AkReflectionPathInfoArray")]#[parent(crate::root::akbasearray_1::AkBaseArray_1<crate::root::akreflectionpathinfo::AkReflectionPathInfo>)]pub struct AkReflectionPathInfoArray{}
 
 }
 
 #[cfg(feature = "root-akreflectionpathinfoarray-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akreflectionpathinfoarray")]
-pub trait IAkReflectionPathInfoArrayMethods : IAkReflectionPathInfoArray { # [doc = "`.ctor(i32)` overload"] fn ctor (self , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkReflectionPathInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfoArray , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f314b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`get_StructureSize()` overload"] fn get_structure_size (self ,) -> i32 { unsafe { let __receiver = < AkReflectionPathInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfoArray , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31510usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"] fn create_new_reference_from_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: root :: akreflectionpathinfo :: AkReflectionPathInfo { unsafe { let __receiver = < AkReflectionPathInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfoArray , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: root :: akreflectionpathinfo :: AkReflectionPathInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f31580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (address) , :: core :: option :: Option :: None) } } } # [doc = "`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akreflectionpathinfo::AkReflectionPathInfo)` overload"] fn clone_into_reference_from_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , other : impl :: core :: convert :: Into < crate :: root :: akreflectionpathinfo :: AkReflectionPathInfo >) -> () { unsafe { let __receiver = < AkReflectionPathInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkReflectionPathInfoArray , :: unity2 :: IntPtr , crate :: root :: akreflectionpathinfo :: AkReflectionPathInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f315f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (address) , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akreflectionpathinfoarray")]pub trait IAkReflectionPathInfoArrayMethods:IAkReflectionPathInfoArray{#[doc="`.ctor(i32)` overload"]fn ctor(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkReflectionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f314b0usize)as*mut u8,();
+(AkReflectionPathInfoArray)__receiver,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`get_StructureSize()` overload"]fn get_structure_size(self,)->i32{unsafe{let __receiver= <AkReflectionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31510usize)as*mut u8,i32;
+(AkReflectionPathInfoArray)__receiver)}
+}
+#[doc="`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]fn create_new_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->crate::root::akreflectionpathinfo::AkReflectionPathInfo{unsafe{let __receiver= <AkReflectionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31580usize)as*mut u8,crate::root::akreflectionpathinfo::AkReflectionPathInfo;
+(AkReflectionPathInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+}
+#[doc="`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akreflectionpathinfo::AkReflectionPathInfo)` overload"]fn clone_into_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr> ,other:impl::core::convert::Into<crate::root::akreflectionpathinfo::AkReflectionPathInfo>)->(){unsafe{let __receiver= <AkReflectionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f315f0usize)as*mut u8,();
+(AkReflectionPathInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address),(crate::root::akreflectionpathinfo::AkReflectionPathInfo)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "root-akreflectionpathinfoarray")]
-impl < __T : IAkReflectionPathInfoArray > IAkReflectionPathInfoArrayMethods for __T { }
+#[cfg(feature="root-akreflectionpathinfoarray")]impl<__T:IAkReflectionPathInfoArray>IAkReflectionPathInfoArrayMethods for __T{}
 
-#[cfg(feature = "root-akreflectionpathinfoarray")]
-impl AkReflectionPathInfoArray { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_structure_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_new_reference_from_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn clone_into_reference_from_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkReflectionPathInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="root-akreflectionpathinfoarray")]impl AkReflectionPathInfoArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_structure_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_new_reference_from_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn clone_into_reference_from_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "root-akreflectionpathinfoarray")]
-impl AkReflectionPathInfoArray {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (count : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkReflectionPathInfoArray) , :: core :: stringify ! (new) ,)) ; < Self as IAkReflectionPathInfoArrayMethods > :: ctor (this , count) ; this }
+#[cfg(feature="root-akreflectionpathinfoarray")]impl AkReflectionPathInfoArray{#[doc="`.ctor(i32)` — overload selector"]pub fn new(count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkReflectionPathInfoArray), ::core::stringify!(new),));
+ <Self as IAkReflectionPathInfoArrayMethods> ::ctor(this,count);
+this}
 }
 
 #[cfg(feature = "root-akreflectionpathinfoarray")]

@@ -4,46 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerpanel/DebugUIHandlerPanel.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerPanel")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct DebugUIHandlerPanel {
-# [offset (24)] # [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
-# [offset (32)] # [rename (name = "scrollRect")] pub scroll_rect : crate :: unity_engine :: ui :: scrollrect :: ScrollRect ,
-# [offset (40)] # [rename (name = "viewport")] pub viewport : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (48)] # [rename (name = "m_ScrollTransform")] pub m_scroll_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (56)] # [rename (name = "m_ContentTransform")] pub m_content_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (64)] # [rename (name = "m_MaskTransform")] pub m_mask_transform : crate :: unity_engine :: recttransform :: RectTransform ,
-# [offset (72)] # [rename (name = "m_Panel")] pub m_panel : crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguihandlerpanel/DebugUIHandlerPanel.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIHandlerPanel")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DebugUIHandlerPanel{#[offset(24)]#[rename(name="nameLabel")]pub name_label:crate::unity_engine::ui::text::Text, #[offset(32)]#[rename(name="scrollRect")]pub scroll_rect:crate::unity_engine::ui::scrollrect::ScrollRect, #[offset(40)]#[rename(name="viewport")]pub viewport:crate::unity_engine::recttransform::RectTransform, #[offset(48)]#[rename(name="m_ScrollTransform")]pub m_scroll_transform:crate::unity_engine::recttransform::RectTransform, #[offset(56)]#[rename(name="m_ContentTransform")]pub m_content_transform:crate::unity_engine::recttransform::RectTransform, #[offset(64)]#[rename(name="m_MaskTransform")]pub m_mask_transform:crate::unity_engine::recttransform::RectTransform, #[offset(72)]#[rename(name="m_Panel")]pub m_panel:crate::unity_engine::rendering::debugui::DebugUI_Panel,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
-pub trait IDebugUIHandlerPanelMethods : IDebugUIHandlerPanel { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerPanel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a4a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetPanel(crate::unity_engine::rendering::debugui::DebugUI_Panel)` overload"] fn set_panel (self , panel : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel >) -> () { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerPanel , crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a4b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (panel) , :: core :: option :: Option :: None) } } } # [doc = "`GetPanel()` overload"] fn get_panel (self ,) -> crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerPanel , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: debugui :: DebugUI_Panel = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a4be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ScrollTo(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn scroll_to (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> () { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerPanel , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a4bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`GetYPosInScroll(crate::unity_engine::recttransform::RectTransform)` overload"] fn get_y_pos_in_scroll (self , target : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform >) -> f32 { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerPanel , crate :: unity_engine :: recttransform :: RectTransform , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a4d80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`GetFirstItem()` overload"] fn get_first_item (self ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerPanel , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a4e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerPanel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerPanel , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a4ee0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerpanel")]pub trait IDebugUIHandlerPanelMethods:IDebugUIHandlerPanel{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <DebugUIHandlerPanel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a4a50usize)as*mut u8,();
+(DebugUIHandlerPanel)__receiver)}
+}
+#[doc="`SetPanel(crate::unity_engine::rendering::debugui::DebugUI_Panel)` overload"]fn set_panel(self,panel:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Panel>)->(){unsafe{let __receiver= <DebugUIHandlerPanel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a4b30usize)as*mut u8,();
+(DebugUIHandlerPanel)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Panel)::core::convert::Into::into(panel))}
+}
+#[doc="`GetPanel()` overload"]fn get_panel(self,)->crate::unity_engine::rendering::debugui::DebugUI_Panel{unsafe{let __receiver= <DebugUIHandlerPanel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a4be0usize)as*mut u8,crate::unity_engine::rendering::debugui::DebugUI_Panel;
+(DebugUIHandlerPanel)__receiver)}
+}
+#[doc="`ScrollTo(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn scroll_to(self,target:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->(){unsafe{let __receiver= <DebugUIHandlerPanel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a4bf0usize)as*mut u8,();
+(DebugUIHandlerPanel)__receiver,(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(target))}
+}
+#[doc="`GetYPosInScroll(crate::unity_engine::recttransform::RectTransform)` overload"]fn get_y_pos_in_scroll(self,target:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform>)->f32{unsafe{let __receiver= <DebugUIHandlerPanel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a4d80usize)as*mut u8,f32;
+(DebugUIHandlerPanel)__receiver,(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(target))}
+}
+#[doc="`GetFirstItem()` overload"]fn get_first_item(self,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{unsafe{let __receiver= <DebugUIHandlerPanel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a4e80usize)as*mut u8,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+(DebugUIHandlerPanel)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerPanel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a4ee0usize)as*mut u8,();
+(DebugUIHandlerPanel)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
-impl < __T : IDebugUIHandlerPanel > IDebugUIHandlerPanelMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerpanel")]impl<__T:IDebugUIHandlerPanel>IDebugUIHandlerPanelMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
-impl DebugUIHandlerPanel { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_panel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_panel_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn scroll_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_y_pos_in_scroll_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_first_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerPanel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerpanel")]impl DebugUIHandlerPanel{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_panel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_panel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn scroll_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_y_pos_in_scroll_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_first_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]
-impl DebugUIHandlerPanel {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerPanel) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerPanelMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerpanel")]impl DebugUIHandlerPanel{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIHandlerPanel), ::core::stringify!(new),));
+ <Self as IDebugUIHandlerPanelMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpanel")]

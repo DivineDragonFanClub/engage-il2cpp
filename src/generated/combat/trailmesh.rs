@@ -4,45 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/trailmesh/TrailMesh.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "TrailMesh")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TrailMesh {
-# [offset (48)] # [rename (name = "NumberOfJoints__ReadOnly")] pub number_of_joints_read_only : :: unity2 :: Il2CppString ,
-# [offset (56)] # [rename (name = "JointsRoot")] pub joints_root : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: transform :: Transform > ,
-# [offset (64)] # [rename (name = "JointsTip")] pub joints_tip : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: transform :: Transform > ,
-# [offset (72)] # [rename (name = "m_Renderer")] pub m_renderer : crate :: unity_engine :: skinnedmeshrenderer :: SkinnedMeshRenderer ,
-# [offset (80)] # [rename (name = "m_Material")] pub m_material : crate :: unity_engine :: material :: Material ,
-# [offset (88)] # [rename (name = "m_HashColor")] pub m_hash_color : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/trailmesh/TrailMesh.md"))]#[::unity2::class(namespace="Combat",name="TrailMesh")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TrailMesh{#[offset(48)]#[rename(name="NumberOfJoints__ReadOnly")]pub number_of_joints_read_only: ::unity2::Il2CppString, #[offset(56)]#[rename(name="JointsRoot")]pub joints_root:crate::system::collections::generic::list_1::List_1<crate::unity_engine::transform::Transform> , #[offset(64)]#[rename(name="JointsTip")]pub joints_tip:crate::system::collections::generic::list_1::List_1<crate::unity_engine::transform::Transform> , #[offset(72)]#[rename(name="m_Renderer")]pub m_renderer:crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer, #[offset(80)]#[rename(name="m_Material")]pub m_material:crate::unity_engine::material::Material, #[offset(88)]#[rename(name="m_HashColor")]pub m_hash_color:i32,}
 
 }
 
 #[cfg(feature = "combat-trailmesh-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-trailmesh")]
-pub trait ITrailMeshMethods : ITrailMesh { # [doc = "`get_PosRoot()` overload"] fn get_pos_root (self ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229ece0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PosRoot(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"] fn set_pos_root (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > >) -> () { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229ecf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PosTip()` overload"] fn get_pos_tip (self ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229ed00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PosTip(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"] fn set_pos_tip (self , value : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > >) -> () { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229ed10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Alpha()` overload"] fn get_alpha (self ,) -> f32 { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229ed20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Alpha(f32)` overload"] fn set_alpha (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229ed30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_IsAlive()` overload"] fn get_is_alive (self ,) -> bool { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229e480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229ed40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229f0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LateUpdate()` overload"] fn late_update (self ,) -> () { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229f250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TrailMesh as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TrailMesh , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229f660usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-trailmesh")]pub trait ITrailMeshMethods:ITrailMesh{#[doc="`get_PosRoot()` overload"]fn get_pos_root(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229ece0usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;
+(TrailMesh)__receiver)}
+}
+#[doc="`set_PosRoot(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]fn set_pos_root(self,value:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> >)->(){unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229ecf0usize)as*mut u8,();
+(TrailMesh)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(value))}
+}
+#[doc="`get_PosTip()` overload"]fn get_pos_tip(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229ed00usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;
+(TrailMesh)__receiver)}
+}
+#[doc="`set_PosTip(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]fn set_pos_tip(self,value:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> >)->(){unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229ed10usize)as*mut u8,();
+(TrailMesh)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(value))}
+}
+#[doc="`get_Alpha()` overload"]fn get_alpha(self,)->f32{unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229ed20usize)as*mut u8,f32;
+(TrailMesh)__receiver)}
+}
+#[doc="`set_Alpha(f32)` overload"]fn set_alpha(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229ed30usize)as*mut u8,();
+(TrailMesh)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsAlive()` overload"]fn get_is_alive(self,)->bool{unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229e480usize)as*mut u8,bool;
+(TrailMesh)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229ed40usize)as*mut u8,();
+(TrailMesh)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229f0c0usize)as*mut u8,();
+(TrailMesh)__receiver)}
+}
+#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229f250usize)as*mut u8,();
+(TrailMesh)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TrailMesh as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x229f660usize)as*mut u8,();
+(TrailMesh)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-trailmesh")]
-impl < __T : ITrailMesh > ITrailMeshMethods for __T { }
+#[cfg(feature="combat-trailmesh")]impl<__T:ITrailMesh>ITrailMeshMethods for __T{}
 
-#[cfg(feature = "combat-trailmesh")]
-impl TrailMesh { pub fn get_pos_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_pos_root_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_pos_tip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_pos_tip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_is_alive_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn late_update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TrailMesh as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="combat-trailmesh")]impl TrailMesh{pub fn get_pos_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pos_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_pos_tip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_pos_tip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_alive_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "combat-trailmesh")]
-impl TrailMesh {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TrailMesh) , :: core :: stringify ! (new) ,)) ; < Self as ITrailMeshMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-trailmesh")]impl TrailMesh{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TrailMesh), ::core::stringify!(new),));
+ <Self as ITrailMeshMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-trailmesh")]

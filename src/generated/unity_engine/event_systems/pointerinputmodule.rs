@@ -4,111 +4,242 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: baseinputmodule :: { BaseInputModule , IBaseInputModule }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::baseinputmodule::{BaseInputModule,IBaseInputModule}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseButtonEventData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "PointerInputModule.MouseButtonEventData")] # [parent (crate :: system :: object :: Object)] pub struct PointerInputModule_MouseButtonEventData {
-# [offset (16)] # [rename (name = "buttonState")] pub button_state : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_FramePressState ,
-# [offset (24)] # [rename (name = "buttonData")] pub button_data : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseButtonEventData.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="PointerInputModule.MouseButtonEventData")]#[parent(crate::system::object::Object)]pub struct PointerInputModule_MouseButtonEventData{#[offset(16)]#[rename(name="buttonState")]pub button_state:crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState, #[offset(24)]#[rename(name="buttonData")]pub button_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseState.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "PointerInputModule.MouseState")] # [parent (crate :: system :: object :: Object)] pub struct PointerInputModule_MouseState {
-# [offset (16)] # [rename (name = "m_TrackedButtons")] pub m_tracked_buttons : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_ButtonState > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseState.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="PointerInputModule.MouseState")]#[parent(crate::system::object::Object)]pub struct PointerInputModule_MouseState{#[offset(16)]#[rename(name="m_TrackedButtons")]pub m_tracked_buttons:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_ButtonState> ,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_ButtonState.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "PointerInputModule.ButtonState")] # [parent (crate :: system :: object :: Object)] pub struct PointerInputModule_ButtonState {
-# [offset (16)] # [rename (name = "m_Button")] pub m_button : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton ,
-# [offset (24)] # [rename (name = "m_EventData")] pub m_event_data : crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="PointerInputModule")]#[parent(crate::unity_engine::event_systems::baseinputmodule::BaseInputModule)]pub struct PointerInputModule{#[static_field]#[rename(name="kMouseLeftId")]pub k_mouse_left_id:i32, #[static_field]#[rename(name="kMouseRightId")]pub k_mouse_right_id:i32, #[static_field]#[rename(name="kMouseMiddleId")]pub k_mouse_middle_id:i32, #[static_field]#[rename(name="kFakeTouchesId")]pub k_fake_touches_id:i32, #[offset(72)]#[rename(name="m_PointerData")]pub m_pointer_data:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::unity_engine::event_systems::pointereventdata::PointerEventData> , #[offset(80)]#[rename(name="m_MouseState")]pub m_mouse_state:crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseState,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "PointerInputModule")] # [parent (crate :: unity_engine :: event_systems :: baseinputmodule :: BaseInputModule)] pub struct PointerInputModule {
-# [static_field] # [rename (name = "kMouseLeftId")] pub k_mouse_left_id : i32 ,
-# [static_field] # [rename (name = "kMouseRightId")] pub k_mouse_right_id : i32 ,
-# [static_field] # [rename (name = "kMouseMiddleId")] pub k_mouse_middle_id : i32 ,
-# [static_field] # [rename (name = "kFakeTouchesId")] pub k_fake_touches_id : i32 ,
-# [offset (72)] # [rename (name = "m_PointerData")] pub m_pointer_data : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > ,
-# [offset (80)] # [rename (name = "m_MouseState")] pub m_mouse_state : crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseState ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_ButtonState.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="PointerInputModule.ButtonState")]#[parent(crate::system::object::Object)]pub struct PointerInputModule_ButtonState{#[offset(16)]#[rename(name="m_Button")]pub m_button:crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton, #[offset(24)]#[rename(name="m_EventData")]pub m_event_data:crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-pub trait IPointerInputModule_MouseButtonEventDataMethods : IPointerInputModule_MouseButtonEventData { # [doc = "`PressedThisFrame()` overload"] fn pressed_this_frame (self ,) -> bool { unsafe { let __receiver = < PointerInputModule_MouseButtonEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_MouseButtonEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c04d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReleasedThisFrame()` overload"] fn released_this_frame (self ,) -> bool { unsafe { let __receiver = < PointerInputModule_MouseButtonEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_MouseButtonEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c04d90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PointerInputModule_MouseButtonEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_MouseButtonEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0e010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl < __T : IPointerInputModule_MouseButtonEventData > IPointerInputModule_MouseButtonEventDataMethods for __T { }
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_MouseButtonEventData { pub fn pressed_this_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_MouseButtonEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn released_this_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_MouseButtonEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_MouseButtonEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_MouseButtonEventData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PointerInputModule_MouseButtonEventData) , :: core :: stringify ! (new) ,)) ; < Self as IPointerInputModule_MouseButtonEventDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]pub trait IPointerInputModule_MouseButtonEventDataMethods:IPointerInputModule_MouseButtonEventData{#[doc="`PressedThisFrame()` overload"]fn pressed_this_frame(self,)->bool{unsafe{let __receiver= <PointerInputModule_MouseButtonEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c04d80usize)as*mut u8,bool;
+(PointerInputModule_MouseButtonEventData)__receiver)}
+}
+#[doc="`ReleasedThisFrame()` overload"]fn released_this_frame(self,)->bool{unsafe{let __receiver= <PointerInputModule_MouseButtonEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c04d90usize)as*mut u8,bool;
+(PointerInputModule_MouseButtonEventData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PointerInputModule_MouseButtonEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e010usize)as*mut u8,();
+(PointerInputModule_MouseButtonEventData)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-pub trait IPointerInputModule_MouseStateMethods : IPointerInputModule_MouseState { # [doc = "`AnyPressesThisFrame()` overload"] fn any_presses_this_frame (self ,) -> bool { unsafe { let __receiver = < PointerInputModule_MouseState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_MouseState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0e020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AnyReleasesThisFrame()` overload"] fn any_releases_this_frame (self ,) -> bool { unsafe { let __receiver = < PointerInputModule_MouseState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_MouseState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0e0f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetButtonState(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"] fn get_button_state (self , button : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton >) -> crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_ButtonState { unsafe { let __receiver = < PointerInputModule_MouseState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_MouseState , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_ButtonState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c047f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (button) , :: core :: option :: Option :: None) } } } # [doc = "`SetButtonState(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton, crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState, crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn set_button_state (self , button : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton > , state_for_mouse_button : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_FramePressState > , data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < PointerInputModule_MouseState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_MouseState , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_FramePressState , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0e1c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (button) , :: core :: convert :: Into :: into (state_for_mouse_button) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PointerInputModule_MouseState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_MouseState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0e200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl<__T:IPointerInputModule_MouseButtonEventData>IPointerInputModule_MouseButtonEventDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl < __T : IPointerInputModule_MouseState > IPointerInputModule_MouseStateMethods for __T { }
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_MouseState { pub fn any_presses_this_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_MouseState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn any_releases_this_frame_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_MouseState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_button_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_MouseState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_button_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_MouseState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_MouseState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_MouseState {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PointerInputModule_MouseState) , :: core :: stringify ! (new) ,)) ; < Self as IPointerInputModule_MouseStateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl PointerInputModule_MouseButtonEventData{pub fn pressed_this_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn released_this_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-pub trait IPointerInputModule_ButtonStateMethods : IPointerInputModule_ButtonState { # [doc = "`get_eventData()` overload"] fn get_event_data (self ,) -> crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData { unsafe { let __receiver = < PointerInputModule_ButtonState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_ButtonState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0dfc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_eventData(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData)` overload"] fn set_event_data (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData >) -> () { unsafe { let __receiver = < PointerInputModule_ButtonState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_ButtonState , crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseButtonEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0dfd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_button()` overload"] fn get_button (self ,) -> crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton { unsafe { let __receiver = < PointerInputModule_ButtonState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_ButtonState , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0dfe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_button(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"] fn set_button (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton >) -> () { unsafe { let __receiver = < PointerInputModule_ButtonState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_ButtonState , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0dff0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PointerInputModule_ButtonState as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule_ButtonState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0e000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl < __T : IPointerInputModule_ButtonState > IPointerInputModule_ButtonStateMethods for __T { }
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_ButtonState { pub fn get_event_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_ButtonState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_event_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_ButtonState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_ButtonState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_ButtonState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule_ButtonState as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_ButtonState {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PointerInputModule_ButtonState) , :: core :: stringify ! (new) ,)) ; < Self as IPointerInputModule_ButtonStateMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl PointerInputModule_MouseButtonEventData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PointerInputModule_MouseButtonEventData), ::core::stringify!(new),));
+ <Self as IPointerInputModule_MouseButtonEventDataMethods> ::ctor(this,);
+this}
 }
 
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule { # [doc = "`ShouldStartDrag(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, bool)` overload"] pub fn should_start_drag (press_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , current_pos : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , threshold : impl :: core :: convert :: Into < f32 > , use_drag_threshold : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , f32 , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3720d60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (press_pos) , :: core :: convert :: Into :: into (current_pos) , :: core :: convert :: Into :: into (threshold) , :: core :: convert :: Into :: into (use_drag_threshold) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]pub trait IPointerInputModule_MouseStateMethods:IPointerInputModule_MouseState{#[doc="`AnyPressesThisFrame()` overload"]fn any_presses_this_frame(self,)->bool{unsafe{let __receiver= <PointerInputModule_MouseState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e020usize)as*mut u8,bool;
+(PointerInputModule_MouseState)__receiver)}
+}
+#[doc="`AnyReleasesThisFrame()` overload"]fn any_releases_this_frame(self,)->bool{unsafe{let __receiver= <PointerInputModule_MouseState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e0f0usize)as*mut u8,bool;
+(PointerInputModule_MouseState)__receiver)}
+}
+#[doc="`GetButtonState(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"]fn get_button_state(self,button:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton>)->crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_ButtonState{unsafe{let __receiver= <PointerInputModule_MouseState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c047f0usize)as*mut u8,crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_ButtonState;
+(PointerInputModule_MouseState)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)::core::convert::Into::into(button))}
+}
+#[doc="`SetButtonState(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton, crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState, crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn set_button_state(self,button:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton> ,state_for_mouse_button:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState> ,data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <PointerInputModule_MouseState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e1c0usize)as*mut u8,();
+(PointerInputModule_MouseState)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)::core::convert::Into::into(button),(crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState)::core::convert::Into::into(state_for_mouse_button),(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PointerInputModule_MouseState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e200usize)as*mut u8,();
+(PointerInputModule_MouseState)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-pub trait IPointerInputModuleMethods : IPointerInputModule { # [doc = "`GetPointerData(i32, *mutcrate::unity_engine::event_systems::pointereventdata::PointerEventData, bool)` overload"] fn get_pointer_data (self , id : impl :: core :: convert :: Into < i32 > , create : impl :: core :: convert :: Into < bool >) -> (bool , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData) { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > :: uninit () ; let __ret = { { let __inner : extern "C" fn (PointerInputModule , i32 , * mut crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3720380usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , __out_0 . as_mut_ptr () , :: core :: convert :: Into :: into (create) , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`RemovePointerData(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn remove_pointer_data (self , data : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3720470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } # [doc = "`GetTouchPointerEventData(crate::unity_engine::touch::Touch, *mutbool, *mutbool)` overload"] fn get_touch_pointer_event_data (self , input : impl :: core :: convert :: Into < crate :: unity_engine :: touch :: Touch >) -> (crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , bool , bool) { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let mut __out_1 = :: core :: mem :: MaybeUninit :: < bool > :: uninit () ; let __ret = { { let __inner : extern "C" fn (PointerInputModule , crate :: unity_engine :: touch :: Touch , * mut bool , * mut bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37204d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (input) , __out_0 . as_mut_ptr () , __out_1 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init () , __out_1 . assume_init ()) } } # [doc = "`CopyFromTo(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn copy_from_to (self , from : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > , to : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3720730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from) , :: core :: convert :: Into :: into (to) , :: core :: option :: Option :: None) } } } # [doc = "`StateForMouseButton(i32)` overload"] fn state_for_mouse_button (self , button_id : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_FramePressState { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_FramePressState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37207b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (button_id) , :: core :: option :: Option :: None) } } } # [doc = "`GetMousePointerEventData()` overload"] fn get_mouse_pointer_event_data (self ,) -> crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseState { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3720840usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMousePointerEventData(i32)` overload"] fn get_mouse_pointer_event_data_2 (self , id : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseState { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule_MouseState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3720860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`GetLastPointerEventData(i32)` overload"] fn get_last_pointer_event_data (self , id : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3720cd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (id) , :: core :: option :: Option :: None) } } } # [doc = "`ProcessMove(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn process_move (self , pointer_event : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3720dc0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pointer_event) , :: core :: option :: Option :: None) } } } # [doc = "`ProcessDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"] fn process_drag (self , pointer_event : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData >) -> () { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3720e10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pointer_event) , :: core :: option :: Option :: None) } } } # [doc = "`IsPointerOverGameObject(i32)` overload"] fn is_pointer_over_game_object (self , pointer_id : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37211b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pointer_id) , :: core :: option :: Option :: None) } } } # [doc = "`ClearSelection()` overload"] fn clear_selection (self ,) -> () { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x37212a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeselectIfSelectionChanged(crate::unity_engine::gameobject::GameObject, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"] fn deselect_if_selection_changed (self , current_over_go : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , pointer_event : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >) -> () { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current_over_go) , :: core :: convert :: Into :: into (pointer_event) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PointerInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3721780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl<__T:IPointerInputModule_MouseState>IPointerInputModule_MouseStateMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl < __T : IPointerInputModule > IPointerInputModuleMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl PointerInputModule_MouseState{pub fn any_presses_this_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn any_releases_this_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_button_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_button_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule { pub fn get_pointer_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn remove_pointer_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_touch_pointer_event_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn copy_from_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn state_for_mouse_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_mouse_pointer_event_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_mouse_pointer_event_data_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_last_pointer_event_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn should_start_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn process_move_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn process_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_pointer_over_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn clear_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn deselect_if_selection_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl PointerInputModule_MouseState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PointerInputModule_MouseState), ::core::stringify!(new),));
+ <Self as IPointerInputModule_MouseStateMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PointerInputModule) , :: core :: stringify ! (new) ,)) ; < Self as IPointerInputModuleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl PointerInputModule{#[doc="`ShouldStartDrag(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, bool)` overload"]pub fn should_start_drag(press_pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,current_pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,threshold:impl::core::convert::Into<f32> ,use_drag_threshold:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3720d60usize)as*mut u8,bool;
+(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(press_pos),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(current_pos),(f32)::core::convert::Into::into(threshold),(bool)::core::convert::Into::into(use_drag_threshold))}
+}
+}
+
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]pub trait IPointerInputModuleMethods:IPointerInputModule{#[doc="`GetPointerData(i32, *mutcrate::unity_engine::event_systems::pointereventdata::PointerEventData, bool)` overload"]fn get_pointer_data(self,id:impl::core::convert::Into<i32> ,create:impl::core::convert::Into<bool>)->(bool,crate::unity_engine::event_systems::pointereventdata::PointerEventData){unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::event_systems::pointereventdata::PointerEventData> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3720380usize)as*mut u8,bool;
+(PointerInputModule)__receiver,(i32)::core::convert::Into::into(id),(*mut crate::unity_engine::event_systems::pointereventdata::PointerEventData)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(create))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`RemovePointerData(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn remove_pointer_data(self,data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3720470usize)as*mut u8,();
+(PointerInputModule)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(data))}
+}
+#[doc="`GetTouchPointerEventData(crate::unity_engine::touch::Touch, *mutbool, *mutbool)` overload"]fn get_touch_pointer_event_data(self,input:impl::core::convert::Into<crate::unity_engine::touch::Touch>)->(crate::unity_engine::event_systems::pointereventdata::PointerEventData,bool,bool){unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <bool> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x37204d0usize)as*mut u8,crate::unity_engine::event_systems::pointereventdata::PointerEventData;
+(PointerInputModule)__receiver,(crate::unity_engine::touch::Touch)::core::convert::Into::into(input),(*mut bool)__out_0.as_mut_ptr(),(*mut bool)__out_1.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`CopyFromTo(crate::unity_engine::event_systems::pointereventdata::PointerEventData, crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn copy_from_to(self,from:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,to:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3720730usize)as*mut u8,();
+(PointerInputModule)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(from),(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(to))}
+}
+#[doc="`StateForMouseButton(i32)` overload"]fn state_for_mouse_button(self,button_id:impl::core::convert::Into<i32>)->crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState{unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37207b0usize)as*mut u8,crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState;
+(PointerInputModule)__receiver,(i32)::core::convert::Into::into(button_id))}
+}
+#[doc="`GetMousePointerEventData()` overload"]fn get_mouse_pointer_event_data(self,)->crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseState{unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3720840usize)as*mut u8,crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseState;
+(PointerInputModule)__receiver)}
+}
+#[doc="`GetMousePointerEventData(i32)` overload"]fn get_mouse_pointer_event_data_2(self,id:impl::core::convert::Into<i32>)->crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseState{unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3720860usize)as*mut u8,crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseState;
+(PointerInputModule)__receiver,(i32)::core::convert::Into::into(id))}
+}
+#[doc="`GetLastPointerEventData(i32)` overload"]fn get_last_pointer_event_data(self,id:impl::core::convert::Into<i32>)->crate::unity_engine::event_systems::pointereventdata::PointerEventData{unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3720cd0usize)as*mut u8,crate::unity_engine::event_systems::pointereventdata::PointerEventData;
+(PointerInputModule)__receiver,(i32)::core::convert::Into::into(id))}
+}
+#[doc="`ProcessMove(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn process_move(self,pointer_event:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3720dc0usize)as*mut u8,();
+(PointerInputModule)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(pointer_event))}
+}
+#[doc="`ProcessDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn process_drag(self,pointer_event:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3720e10usize)as*mut u8,();
+(PointerInputModule)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(pointer_event))}
+}
+#[doc="`IsPointerOverGameObject(i32)` overload"]fn is_pointer_over_game_object(self,pointer_id:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37211b0usize)as*mut u8,bool;
+(PointerInputModule)__receiver,(i32)::core::convert::Into::into(pointer_id))}
+}
+#[doc="`ClearSelection()` overload"]fn clear_selection(self,)->(){unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x37212a0usize)as*mut u8,();
+(PointerInputModule)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721430usize)as*mut u8, ::unity2::Il2CppString;
+(PointerInputModule)__receiver)}
+}
+#[doc="`DeselectIfSelectionChanged(crate::unity_engine::gameobject::GameObject, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn deselect_if_selection_changed(self,current_over_go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,pointer_event:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721670usize)as*mut u8,();
+(PointerInputModule)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(current_over_go),(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(pointer_event))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PointerInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3721780usize)as*mut u8,();
+(PointerInputModule)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl<__T:IPointerInputModule>IPointerInputModuleMethods for __T{}
+
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl PointerInputModule{pub fn get_pointer_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn remove_pointer_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_touch_pointer_event_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn copy_from_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn state_for_mouse_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_mouse_pointer_event_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_mouse_pointer_event_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_last_pointer_event_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn should_start_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn process_move_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn process_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_pointer_over_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn deselect_if_selection_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
+
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl PointerInputModule{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PointerInputModule), ::core::stringify!(new),));
+ <Self as IPointerInputModuleMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]pub trait IPointerInputModule_ButtonStateMethods:IPointerInputModule_ButtonState{#[doc="`get_eventData()` overload"]fn get_event_data(self,)->crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData{unsafe{let __receiver= <PointerInputModule_ButtonState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0dfc0usize)as*mut u8,crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData;
+(PointerInputModule_ButtonState)__receiver)}
+}
+#[doc="`set_eventData(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData)` overload"]fn set_event_data(self,value:impl::core::convert::Into<crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData>)->(){unsafe{let __receiver= <PointerInputModule_ButtonState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0dfd0usize)as*mut u8,();
+(PointerInputModule_ButtonState)__receiver,(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_MouseButtonEventData)::core::convert::Into::into(value))}
+}
+#[doc="`get_button()` overload"]fn get_button(self,)->crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton{unsafe{let __receiver= <PointerInputModule_ButtonState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0dfe0usize)as*mut u8,crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton;
+(PointerInputModule_ButtonState)__receiver)}
+}
+#[doc="`set_button(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"]fn set_button(self,value:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton>)->(){unsafe{let __receiver= <PointerInputModule_ButtonState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0dff0usize)as*mut u8,();
+(PointerInputModule_ButtonState)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PointerInputModule_ButtonState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0e000usize)as*mut u8,();
+(PointerInputModule_ButtonState)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl<__T:IPointerInputModule_ButtonState>IPointerInputModule_ButtonStateMethods for __T{}
+
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl PointerInputModule_ButtonState{pub fn get_event_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_event_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-event_systems-pointerinputmodule")]impl PointerInputModule_ButtonState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PointerInputModule_ButtonState), ::core::stringify!(new),));
+ <Self as IPointerInputModule_ButtonStateMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
@@ -120,12 +251,12 @@ pub mod prelude {
     pub use super::PointerInputModule_MouseState;
     pub use super::IPointerInputModule_MouseState;
     pub use super::IPointerInputModule_MouseStateMethods;
-    pub use super::PointerInputModule_ButtonState;
-    pub use super::IPointerInputModule_ButtonState;
-    pub use super::IPointerInputModule_ButtonStateMethods;
     pub use super::PointerInputModule;
     pub use super::IPointerInputModule;
     pub use super::IPointerInputModuleMethods;
+    pub use super::PointerInputModule_ButtonState;
+    pub use super::IPointerInputModule_ButtonState;
+    pub use super::IPointerInputModule_ButtonStateMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

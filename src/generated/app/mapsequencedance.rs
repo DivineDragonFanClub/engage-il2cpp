@@ -4,113 +4,114 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: commonbattlesequence_1 :: { CommonBattleSequence_1 , ICommonBattleSequence_1 }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::commonbattlesequence_1::{CommonBattleSequence_1,ICommonBattleSequence_1}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencedance/MapSequenceDance.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSequenceDance")] # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencedance :: MapSequenceDance >)] pub struct MapSequenceDance {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencedance/MapSequenceDance_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapSequenceDance_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencedance/MapSequenceDance_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceDance_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapSequenceDance_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSequenceDance.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSequenceDance_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapSequenceDance_Label{pub fn simple()->Self{Self{value:0}
+}
+pub fn detail()->Self{Self{value:1}
+}
+pub fn skip()->Self{Self{value:2}
+}
+pub fn after()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapSequenceDance_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceDance.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapSequenceDance_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapSequenceDance_Label  {
-    pub fn simple() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn detail() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn skip() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn after() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencedance/MapSequenceDance.md"))]#[::unity2::class(namespace="App",name="MapSequenceDance")]#[parent(crate::app::commonbattlesequence_1::CommonBattleSequence_1<crate::app::mapsequencedance::MapSequenceDance>)]pub struct MapSequenceDance{}
 
 }
 
 #[cfg(feature = "app-mapsequencedance-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsequencedance")]
-impl MapSequenceDance { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c7e40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencedance")]impl MapSequenceDance{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23c7e40usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-mapsequencedance")]
-pub trait IMapSequenceDanceMethods : IMapSequenceDance { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSequenceDance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceDance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c7750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Calculate()` overload"] fn calculate (self ,) -> () { unsafe { let __receiver = < MapSequenceDance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceDance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c77b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Branch()` overload"] fn branch (self ,) -> () { unsafe { let __receiver = < MapSequenceDance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceDance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c7950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SimpleDance()` overload"] fn simple_dance (self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { let __receiver = < MapSequenceDance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceDance , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c7a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CombatDance()` overload"] fn combat_dance (self ,) -> () { unsafe { let __receiver = < MapSequenceDance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceDance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c7ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < MapSequenceDance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceDance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c7ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Grow()` overload"] fn grow (self ,) -> () { unsafe { let __receiver = < MapSequenceDance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceDance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c7db0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GodExp()` overload"] fn god_exp (self ,) -> () { unsafe { let __receiver = < MapSequenceDance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSequenceDance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23c7dc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsequencedance")]pub trait IMapSequenceDanceMethods:IMapSequenceDance{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceDance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c7750usize)as*mut u8,();
+(MapSequenceDance)__receiver)}
+}
+#[doc="`Calculate()` overload"]fn calculate(self,)->(){unsafe{let __receiver= <MapSequenceDance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c77b0usize)as*mut u8,();
+(MapSequenceDance)__receiver)}
+}
+#[doc="`Branch()` overload"]fn branch(self,)->(){unsafe{let __receiver= <MapSequenceDance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c7950usize)as*mut u8,();
+(MapSequenceDance)__receiver)}
+}
+#[doc="`SimpleDance()` overload"]fn simple_dance(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceDance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c7a40usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(MapSequenceDance)__receiver)}
+}
+#[doc="`CombatDance()` overload"]fn combat_dance(self,)->(){unsafe{let __receiver= <MapSequenceDance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c7ac0usize)as*mut u8,();
+(MapSequenceDance)__receiver)}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <MapSequenceDance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c7ad0usize)as*mut u8,();
+(MapSequenceDance)__receiver)}
+}
+#[doc="`Grow()` overload"]fn grow(self,)->(){unsafe{let __receiver= <MapSequenceDance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c7db0usize)as*mut u8,();
+(MapSequenceDance)__receiver)}
+}
+#[doc="`GodExp()` overload"]fn god_exp(self,)->(){unsafe{let __receiver= <MapSequenceDance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23c7dc0usize)as*mut u8,();
+(MapSequenceDance)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsequencedance")]
-impl < __T : IMapSequenceDance > IMapSequenceDanceMethods for __T { }
+#[cfg(feature="app-mapsequencedance")]impl<__T:IMapSequenceDance>IMapSequenceDanceMethods for __T{}
 
-#[cfg(feature = "app-mapsequencedance")]
-impl MapSequenceDance { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceDance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn calculate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceDance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn branch_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceDance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn simple_dance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceDance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn combat_dance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceDance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceDance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn grow_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceDance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn god_exp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceDance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSequenceDance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-mapsequencedance")]impl MapSequenceDance{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn branch_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn simple_dance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn combat_dance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn grow_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn god_exp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-mapsequencedance")]
-impl MapSequenceDance {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSequenceDance) , :: core :: stringify ! (new) ,)) ; < Self as IMapSequenceDanceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsequencedance")]impl MapSequenceDance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceDance), ::core::stringify!(new),));
+ <Self as IMapSequenceDanceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsequencedance")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequenceDance_Label;
     pub use super::MapSequenceDance;
     pub use super::IMapSequenceDance;
     pub use super::IMapSequenceDanceMethods;
-    pub use super::MapSequenceDance_Label;
     pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

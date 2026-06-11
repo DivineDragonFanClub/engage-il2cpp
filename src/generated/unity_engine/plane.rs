@@ -4,45 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/plane/Plane.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Plane {
-    pub m_normal: crate :: unity_engine :: vector3 :: Vector3,
-    pub m_distance: f32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/plane/Plane.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Plane{pub m_normal:crate::unity_engine::vector3::Vector3,pub m_distance:f32,}
+impl::unity2::ClassIdentity for Plane{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="Plane";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for Plane {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Plane";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for Plane {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for Plane{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -50,11 +26,32 @@ impl ::unity2::IlType for Plane {
 #[cfg(feature = "unity_engine-plane-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-plane")]
-impl Plane { # [doc = "`get_normal()` overload"] pub fn get_normal (& mut self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (* mut Plane , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f11b0usize) as * mut u8) ; __inner (self as * mut Plane , :: core :: option :: Option :: None) } } } # [doc = "`get_distance()` overload"] pub fn get_distance (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut Plane , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f11c0usize) as * mut u8) ; __inner (self as * mut Plane , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"] pub fn ctor (& mut self , in_normal : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 > , in_point : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { { let __inner : extern "C" fn (* mut Plane , crate :: unity_engine :: vector3 :: Vector3 , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f11d0usize) as * mut u8) ; __inner (self as * mut Plane , :: core :: convert :: Into :: into (in_normal) , :: core :: convert :: Into :: into (in_point) , :: core :: option :: Option :: None) } } } # [doc = "`Raycast(crate::unity_engine::ray::Ray, *mutf32)` overload"] pub fn raycast (& mut self , ray : impl :: core :: convert :: Into < crate :: unity_engine :: ray :: Ray >) -> (bool , f32) { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < f32 > :: uninit () ; let __ret = { { let __inner : extern "C" fn (* mut Plane , crate :: unity_engine :: ray :: Ray , * mut f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1240usize) as * mut u8) ; __inner (self as * mut Plane , :: core :: convert :: Into :: into (ray) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut Plane , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f1380usize) as * mut u8) ; __inner (self as * mut Plane , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-plane")]impl Plane{#[doc="`get_normal()` overload"]pub fn get_normal(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f11b0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut Plane)self as*mut Plane)}
+}
+#[doc="`get_distance()` overload"]pub fn get_distance(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f11c0usize)as*mut u8,f32;
+(*mut Plane)self as*mut Plane)}
+}
+#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn ctor(&mut self,in_normal:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,in_point:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f11d0usize)as*mut u8,();
+(*mut Plane)self as*mut Plane,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_normal),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_point))}
+}
+#[doc="`Raycast(crate::unity_engine::ray::Ray, *mutf32)` overload"]pub fn raycast(&mut self,ray:impl::core::convert::Into<crate::unity_engine::ray::Ray>)->(bool,f32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x32f1240usize)as*mut u8,bool;
+(*mut Plane)self as*mut Plane,(crate::unity_engine::ray::Ray)::core::convert::Into::into(ray),(*mut f32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f1380usize)as*mut u8, ::unity2::Il2CppString;
+(*mut Plane)self as*mut Plane)}
+}
+}
 
-#[cfg(feature = "unity_engine-plane")]
-impl Plane { pub fn get_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Plane as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Plane as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Plane as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn raycast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Plane as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Plane as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-plane")]impl Plane{pub fn get_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-plane")]
 #[doc(hidden)]

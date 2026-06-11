@@ -4,86 +4,110 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "DeferredShaderData")] # [parent (crate :: system :: object :: Object)] pub struct DeferredShaderData {
-# [static_field] # [rename (name = "m_Instance")] pub m_instance : crate :: unity_engine :: rendering :: universal :: deferredshaderdata :: DeferredShaderData ,
-# [offset (24)] # [rename (name = "m_Buffers")] pub m_buffers : :: unity2 :: Array < crate :: unity_engine :: computebuffer :: ComputeBuffer > ,
-# [offset (32)] # [rename (name = "m_BufferInfos")] pub m_buffer_infos : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: deferredshaderdata :: DeferredShaderData_ComputeBufferInfo > ,
-# [offset (40)] # [rename (name = "m_BufferCount")] pub m_buffer_count : i32 ,
-# [offset (44)] # [rename (name = "m_CachedBufferIndex")] pub m_cached_buffer_index : i32 ,
-# [offset (48)] # [rename (name = "m_FrameIndex")] pub m_frame_index : u32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData_ComputeBufferInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DeferredShaderData_ComputeBufferInfo{pub frame_used:u32,pub r#type:crate::unity_engine::computebuffertype::ComputeBufferType,}
+impl::unity2::ClassIdentity for DeferredShaderData_ComputeBufferInfo{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
+const NAME: &'static str="DeferredShaderData.ComputeBufferInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DeferredShaderData_ComputeBufferInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData_ComputeBufferInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DeferredShaderData_ComputeBufferInfo {
-    pub frame_used: u32,
-    pub r#type: crate :: unity_engine :: computebuffertype :: ComputeBufferType,
-}
-
-
-impl ::unity2::ClassIdentity for DeferredShaderData_ComputeBufferInfo {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "DeferredShaderData.ComputeBufferInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for DeferredShaderData_ComputeBufferInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="DeferredShaderData")]#[parent(crate::system::object::Object)]pub struct DeferredShaderData{#[static_field]#[rename(name="m_Instance")]pub m_instance:crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData, #[offset(24)]#[rename(name="m_Buffers")]pub m_buffers: ::unity2::Array<crate::unity_engine::computebuffer::ComputeBuffer> , #[offset(32)]#[rename(name="m_BufferInfos")]pub m_buffer_infos: ::unity2::Array<crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData_ComputeBufferInfo> , #[offset(40)]#[rename(name="m_BufferCount")]pub m_buffer_count:i32, #[offset(44)]#[rename(name="m_CachedBufferIndex")]pub m_cached_buffer_index:i32, #[offset(48)]#[rename(name="m_FrameIndex")]pub m_frame_index:u32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
-impl DeferredShaderData { # [doc = "`get_instance()` overload"] pub fn get_instance () -> crate :: unity_engine :: rendering :: universal :: deferredshaderdata :: DeferredShaderData { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: deferredshaderdata :: DeferredShaderData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee3e20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLessCircular(u32, u32)` overload"] pub fn is_less_circular (a : impl :: core :: convert :: Into < u32 > , b : impl :: core :: convert :: Into < u32 >) -> bool { unsafe { { let __inner : extern "C" fn (u32 , u32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4440usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Align(i32, i32)` overload"] pub fn align (s : impl :: core :: convert :: Into < i32 > , alignment : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4570usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: convert :: Into :: into (alignment) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4590usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-deferredshaderdata")]impl DeferredShaderData{#[doc="`get_instance()` overload"]pub fn get_instance()->crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee3e20usize)as*mut u8,crate::unity_engine::rendering::universal::deferredshaderdata::DeferredShaderData;
+)}
+}
+#[doc="`IsLessCircular(u32, u32)` overload"]pub fn is_less_circular(a:impl::core::convert::Into<u32> ,b:impl::core::convert::Into<u32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4440usize)as*mut u8,bool;
+(u32)::core::convert::Into::into(a),(u32)::core::convert::Into::into(b))}
+}
+#[doc="`Align(i32, i32)` overload"]pub fn align(s:impl::core::convert::Into<i32> ,alignment:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4570usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(s),(i32)::core::convert::Into::into(alignment))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4590usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
-pub trait IDeferredShaderDataMethods : IDeferredShaderData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeferredShaderData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee3d40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeferredShaderData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee3f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ResetBuffers()` overload"] fn reset_buffers (self ,) -> () { unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeferredShaderData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee3fe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } fn reserve_buffer < M0 : :: unity2 :: IlType + :: core :: marker :: Copy + :: unity2 :: ClassIdentity > (self , count : impl :: core :: convert :: Into < i32 > , as_c_buffer : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: computebuffer :: ComputeBuffer { static OPEN : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { :: unity2 :: lookup :: method_info_on_class (< DeferredShaderData as :: unity2 :: ClassIdentity > :: class () , "ReserveBuffer" , 2 ,) }) ; # [allow (clippy :: type_complexity)] static CACHE : :: std :: sync :: OnceLock < :: std :: sync :: Mutex < :: std :: collections :: HashMap < usize , & 'static :: unity2 :: il2cpp :: MethodInfo > , > , > = :: std :: sync :: OnceLock :: new () ; let _ = false ; let __open : & 'static :: unity2 :: il2cpp :: MethodInfo = match & * OPEN { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < DeferredShaderData as :: unity2 :: ClassIdentity > :: NAME , "ReserveBuffer" , e) , } ; let __cache = CACHE . get_or_init (|| { :: std :: sync :: Mutex :: new (:: std :: collections :: HashMap :: new ()) }) ; let __key : usize = < M0 as :: unity2 :: IlType > :: il_type () as * const _ as usize ; let __inflated : & 'static :: unity2 :: il2cpp :: MethodInfo = { let mut __guard = __cache . lock () . unwrap () ; * __guard . entry (__key) . or_insert_with (|| { :: unity2 :: il2cpp :: generic :: create_generic_method_info (__open , & [< M0 as :: unity2 :: IlType > :: il_type ()] ,) }) } ; unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let __f : extern "C" fn (DeferredShaderData , i32 , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: computebuffer :: ComputeBuffer = :: core :: mem :: transmute (__inflated . method_ptr) ; let __mi_opaque : & 'static () = & * (__inflated as * const _ as * const ()) ; __f (__receiver , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (as_c_buffer) , :: core :: option :: Option :: Some (__mi_opaque) ,) } } # [doc = "`GetOrUpdateBuffer(i32, i32, bool)` overload"] fn get_or_update_buffer (self , count : impl :: core :: convert :: Into < i32 > , stride : impl :: core :: convert :: Into < i32 > , is_constant_buffer : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: computebuffer :: ComputeBuffer { unsafe { let __receiver = < DeferredShaderData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DeferredShaderData , i32 , i32 , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: computebuffer :: ComputeBuffer = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2ee4060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (count) , :: core :: convert :: Into :: into (stride) , :: core :: convert :: Into :: into (is_constant_buffer) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-deferredshaderdata")]pub trait IDeferredShaderDataMethods:IDeferredShaderData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DeferredShaderData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee3d40usize)as*mut u8,();
+(DeferredShaderData)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DeferredShaderData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee3f00usize)as*mut u8,();
+(DeferredShaderData)__receiver)}
+}
+#[doc="`ResetBuffers()` overload"]fn reset_buffers(self,)->(){unsafe{let __receiver= <DeferredShaderData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee3fe0usize)as*mut u8,();
+(DeferredShaderData)__receiver)}
+}
+fn reserve_buffer<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,count:impl::core::convert::Into<i32> ,as_c_buffer:impl::core::convert::Into<bool>)->crate::unity_engine::computebuffer::ComputeBuffer{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<DeferredShaderData as::unity2::ClassIdentity> ::class(),"ReserveBuffer",2,)}
+);
+ #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
+let _=false;
+let __open: & 'static::unity2::il2cpp::MethodInfo=match& *OPEN{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <DeferredShaderData as::unity2::ClassIdentity> ::NAME,"ReserveBuffer",e),}
+;
+let __cache=CACHE.get_or_init(||{::std::sync::Mutex::new(::std::collections::HashMap::new())}
+);
+let __key:usize= <M0 as::unity2::IlType> ::il_type()as*const _ as usize;
+let __inflated: & 'static::unity2::il2cpp::MethodInfo={let mut __guard=__cache.lock().unwrap();
+ *__guard.entry(__key).or_insert_with(||{::unity2::il2cpp::generic::create_generic_method_info(__open, &[<M0 as::unity2::IlType> ::il_type()],)}
+)}
+;
+unsafe{let __receiver= <DeferredShaderData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let __f:extern "C" fn(DeferredShaderData,i32,bool, ::unity2::OptionalMethod,)->crate::unity_engine::computebuffer::ComputeBuffer= ::core::mem::transmute(__inflated.method_ptr);
+let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
+__f(__receiver, ::core::convert::Into::into(count), ::core::convert::Into::into(as_c_buffer), ::core::option::Option::Some(__mi_opaque),)}
+}
+#[doc="`GetOrUpdateBuffer(i32, i32, bool)` overload"]fn get_or_update_buffer(self,count:impl::core::convert::Into<i32> ,stride:impl::core::convert::Into<i32> ,is_constant_buffer:impl::core::convert::Into<bool>)->crate::unity_engine::computebuffer::ComputeBuffer{unsafe{let __receiver= <DeferredShaderData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee4060usize)as*mut u8,crate::unity_engine::computebuffer::ComputeBuffer;
+(DeferredShaderData)__receiver,(i32)::core::convert::Into::into(count),(i32)::core::convert::Into::into(stride),(bool)::core::convert::Into::into(is_constant_buffer))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
-impl < __T : IDeferredShaderData > IDeferredShaderDataMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-deferredshaderdata")]impl<__T:IDeferredShaderData>IDeferredShaderDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
-impl DeferredShaderData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredShaderData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredShaderData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredShaderData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn reset_buffers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredShaderData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_or_update_buffer_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredShaderData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_less_circular_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredShaderData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn align_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredShaderData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DeferredShaderData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="unity_engine-rendering-universal-deferredshaderdata")]impl DeferredShaderData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_buffers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_or_update_buffer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_less_circular_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn align_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
-impl DeferredShaderData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DeferredShaderData) , :: core :: stringify ! (new) ,)) ; < Self as IDeferredShaderDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-deferredshaderdata")]impl DeferredShaderData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DeferredShaderData), ::core::stringify!(new),));
+ <Self as IDeferredShaderDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-deferredshaderdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DeferredShaderData_ComputeBufferInfo;
     pub use super::DeferredShaderData;
     pub use super::IDeferredShaderData;
     pub use super::IDeferredShaderDataMethods;
-    pub use super::DeferredShaderData_ComputeBufferInfo;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

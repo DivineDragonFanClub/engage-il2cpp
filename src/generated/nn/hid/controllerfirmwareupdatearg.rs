@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/controllerfirmwareupdatearg/ControllerFirmwareUpdateArg.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ControllerFirmwareUpdateArg {
-    pub enable_force_update: bool,
-    pub padding0: u8,
-    pub padding1: u8,
-    pub padding2: u8,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/controllerfirmwareupdatearg/ControllerFirmwareUpdateArg.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ControllerFirmwareUpdateArg{pub enable_force_update:bool,pub padding0:u8,pub padding1:u8,pub padding2:u8,}
+impl::unity2::ClassIdentity for ControllerFirmwareUpdateArg{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="ControllerFirmwareUpdateArg";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ControllerFirmwareUpdateArg {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "ControllerFirmwareUpdateArg";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for ControllerFirmwareUpdateArg {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for ControllerFirmwareUpdateArg{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,13 @@ impl ::unity2::IlType for ControllerFirmwareUpdateArg {
 #[cfg(feature = "nn-hid-controllerfirmwareupdatearg-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-controllerfirmwareupdatearg")]
-impl ControllerFirmwareUpdateArg { # [doc = "`SetDefault()` overload"] pub fn set_default (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut ControllerFirmwareUpdateArg , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x253e120usize) as * mut u8) ; __inner (self as * mut ControllerFirmwareUpdateArg , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-controllerfirmwareupdatearg")]impl ControllerFirmwareUpdateArg{#[doc="`SetDefault()` overload"]pub fn set_default(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x253e120usize)as*mut u8,();
+(*mut ControllerFirmwareUpdateArg)self as*mut ControllerFirmwareUpdateArg)}
+}
+}
 
-#[cfg(feature = "nn-hid-controllerfirmwareupdatearg")]
-impl ControllerFirmwareUpdateArg { pub fn set_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ControllerFirmwareUpdateArg as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="nn-hid-controllerfirmwareupdatearg")]impl ControllerFirmwareUpdateArg{pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "nn-hid-controllerfirmwareupdatearg")]
 #[doc(hidden)]

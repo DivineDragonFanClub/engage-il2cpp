@@ -4,39 +4,100 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoritemapdata/ProfileCardFavoriteMapData.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardFavoriteMapData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData >)] pub struct ProfileCardFavoriteMapData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardfavoritemapdata/ProfileCardFavoriteMapData.md"))]#[::unity2::class(namespace="App",name="ProfileCardFavoriteMapData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData>)]pub struct ProfileCardFavoriteMapData{}
 
 }
 
 #[cfg(feature = "app-profilecardfavoritemapdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardfavoritemapdata")]
-impl ProfileCardFavoriteMapData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315490usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`TryGetFromCid(::unity2::Il2CppString)` overload"] pub fn try_get_from_cid (cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardfavoritemapdata :: ProfileCardFavoriteMapData = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315620usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (cid) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardfavoritemapdata")]impl ProfileCardFavoriteMapData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2315490usize)as*mut u8,();
+)}
+}
+#[doc="`TryGetFromCid(::unity2::Il2CppString)` overload"]pub fn try_get_from_cid(cid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2315620usize)as*mut u8,crate::app::profilecardfavoritemapdata::ProfileCardFavoriteMapData;
+(::unity2::Il2CppString)::core::convert::Into::into(cid))}
+}
+}
 
-#[cfg(feature = "app-profilecardfavoritemapdata")]
-pub trait IProfileCardFavoriteMapDataMethods : IProfileCardFavoriteMapData { # [doc = "`get_Id()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Id(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Cid()` overload"] fn get_cid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315430usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Cid(::unity2::Il2CppString)` overload"] fn set_cid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Condition()` overload"] fn get_condition (self ,) -> crate :: app :: profilecardcondition :: ProfileCardCondition { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: OptionalMethod ,) -> crate :: app :: profilecardcondition :: ProfileCardCondition = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Condition(crate::app::profilecardcondition::ProfileCardCondition)` overload"] fn set_condition (self , value : impl :: core :: convert :: Into < crate :: app :: profilecardcondition :: ProfileCardCondition >) -> () { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , crate :: app :: profilecardcondition :: ProfileCardCondition , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315460usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Arg()` overload"] fn get_arg (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Arg(::unity2::Il2CppString)` overload"] fn set_arg (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315480usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardFavoriteMapData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardFavoriteMapData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2315750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardfavoritemapdata")]pub trait IProfileCardFavoriteMapDataMethods:IProfileCardFavoriteMapData{#[doc="`get_Id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315410usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardFavoriteMapData)__receiver)}
+}
+#[doc="`set_Id(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315420usize)as*mut u8,();
+(ProfileCardFavoriteMapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315430usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardFavoriteMapData)__receiver)}
+}
+#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315440usize)as*mut u8,();
+(ProfileCardFavoriteMapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Condition()` overload"]fn get_condition(self,)->crate::app::profilecardcondition::ProfileCardCondition{unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315450usize)as*mut u8,crate::app::profilecardcondition::ProfileCardCondition;
+(ProfileCardFavoriteMapData)__receiver)}
+}
+#[doc="`set_Condition(crate::app::profilecardcondition::ProfileCardCondition)` overload"]fn set_condition(self,value:impl::core::convert::Into<crate::app::profilecardcondition::ProfileCardCondition>)->(){unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315460usize)as*mut u8,();
+(ProfileCardFavoriteMapData)__receiver,(crate::app::profilecardcondition::ProfileCardCondition)::core::convert::Into::into(value))}
+}
+#[doc="`get_Arg()` overload"]fn get_arg(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315470usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardFavoriteMapData)__receiver)}
+}
+#[doc="`set_Arg(::unity2::Il2CppString)` overload"]fn set_arg(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315480usize)as*mut u8,();
+(ProfileCardFavoriteMapData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315540usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardFavoriteMapData)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315550usize)as*mut u8, ::unity2::Il2CppString;
+(ProfileCardFavoriteMapData)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardFavoriteMapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2315750usize)as*mut u8,();
+(ProfileCardFavoriteMapData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardfavoritemapdata")]
-impl < __T : IProfileCardFavoriteMapData > IProfileCardFavoriteMapDataMethods for __T { }
+#[cfg(feature="app-profilecardfavoritemapdata")]impl<__T:IProfileCardFavoriteMapData>IProfileCardFavoriteMapDataMethods for __T{}
 
-#[cfg(feature = "app-profilecardfavoritemapdata")]
-impl ProfileCardFavoriteMapData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_condition_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_arg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn try_get_from_cid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardFavoriteMapData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-profilecardfavoritemapdata")]impl ProfileCardFavoriteMapData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn try_get_from_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-profilecardfavoritemapdata")]
-impl ProfileCardFavoriteMapData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardFavoriteMapData) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardFavoriteMapDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardfavoritemapdata")]impl ProfileCardFavoriteMapData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardFavoriteMapData), ::core::stringify!(new),));
+ <Self as IProfileCardFavoriteMapDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardfavoritemapdata")]

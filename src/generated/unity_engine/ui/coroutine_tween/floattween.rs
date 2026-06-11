@@ -4,55 +4,28 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: events :: unityevent_1 :: { IUnityEvent_1 , UnityEvent_1 }
- ;
- use crate :: unity_engine :: events :: unityeventbase :: { IUnityEventBase , UnityEventBase }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::events::unityevent_1::{IUnityEvent_1,UnityEvent_1}
+;
+use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween_FloatTweenCallback.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI.CoroutineTween" , name = "FloatTween.FloatTweenCallback")] # [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)] pub struct FloatTween_FloatTweenCallback {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/floattween/FloatTween_FloatTweenCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI.CoroutineTween",name="FloatTween.FloatTweenCallback")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<f32>)]pub struct FloatTween_FloatTweenCallback{}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FloatTween {
-    pub m_target: crate :: unity_engine :: ui :: coroutine_tween :: floattween :: FloatTween_FloatTweenCallback,
-    pub m_start_value: f32,
-    pub m_target_value: f32,
-    pub m_duration: f32,
-    pub m_ignore_time_scale: bool,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/floattween/FloatTween.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FloatTween{pub m_target:crate::unity_engine::ui::coroutine_tween::floattween::FloatTween_FloatTweenCallback,pub m_start_value:f32,pub m_target_value:f32,pub m_duration:f32,pub m_ignore_time_scale:bool,}
+impl::unity2::ClassIdentity for FloatTween{const NAMESPACE: &'static str="UnityEngine.UI.CoroutineTween";
+const NAME: &'static str="FloatTween";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for FloatTween {
-    const NAMESPACE: &'static str = "UnityEngine.UI.CoroutineTween";
-
-    const NAME: &'static str = "FloatTween";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for FloatTween {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for FloatTween{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -60,25 +33,75 @@ impl ::unity2::IlType for FloatTween {
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-pub trait IFloatTween_FloatTweenCallbackMethods : IFloatTween_FloatTweenCallback { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FloatTween_FloatTweenCallback as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FloatTween_FloatTweenCallback , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0c730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-impl < __T : IFloatTween_FloatTweenCallback > IFloatTween_FloatTweenCallbackMethods for __T { }
-
-#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-impl FloatTween_FloatTweenCallback { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween_FloatTweenCallback as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-impl FloatTween_FloatTweenCallback {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FloatTween_FloatTweenCallback) , :: core :: stringify ! (new) ,)) ; < Self as IFloatTween_FloatTweenCallbackMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-coroutine_tween-floattween")]pub trait IFloatTween_FloatTweenCallbackMethods:IFloatTween_FloatTweenCallback{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FloatTween_FloatTweenCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c730usize)as*mut u8,();
+(FloatTween_FloatTweenCallback)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-impl FloatTween { # [doc = "`get_startValue()` overload"] pub fn get_start_value (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FloatTween , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b490usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: option :: Option :: None) } } } # [doc = "`set_startValue(f32)` overload"] pub fn set_start_value (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FloatTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b4a0usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_targetValue()` overload"] pub fn get_target_value (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FloatTween , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b4b0usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: option :: Option :: None) } } } # [doc = "`set_targetValue(f32)` overload"] pub fn set_target_value (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FloatTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b4c0usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_duration()` overload"] pub fn get_duration (& mut self ,) -> f32 { unsafe { { let __inner : extern "C" fn (* mut FloatTween , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b4d0usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: option :: Option :: None) } } } # [doc = "`set_duration(f32)` overload"] pub fn set_duration (& mut self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FloatTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b4e0usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ignoreTimeScale()` overload"] pub fn get_ignore_time_scale (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut FloatTween , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b4f0usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: option :: Option :: None) } } } # [doc = "`set_ignoreTimeScale(bool)` overload"] pub fn set_ignore_time_scale (& mut self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (* mut FloatTween , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b500usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`TweenValue(f32)` overload"] pub fn tween_value (& mut self , float_percentage : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut FloatTween , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b510usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: convert :: Into :: into (float_percentage) , :: core :: option :: Option :: None) } } } # [doc = "`AddOnChangedCallback(crate::unity_engine::events::unityaction_1::UnityAction_1<f32>)` overload"] pub fn add_on_changed_callback (& mut self , callback : impl :: core :: convert :: Into < crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < f32 > >) -> () { unsafe { { let __inner : extern "C" fn (* mut FloatTween , crate :: unity_engine :: events :: unityaction_1 :: UnityAction_1 < f32 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31875d0usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: convert :: Into :: into (callback) , :: core :: option :: Option :: None) } } } # [doc = "`GetIgnoreTimescale()` overload"] pub fn get_ignore_timescale (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut FloatTween , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b5a0usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: option :: Option :: None) } } } # [doc = "`ValidTarget()` overload"] pub fn valid_target (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut FloatTween , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x318b590usize) as * mut u8) ; __inner (self as * mut FloatTween , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-coroutine_tween-floattween")]impl<__T:IFloatTween_FloatTweenCallback>IFloatTween_FloatTweenCallbackMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-impl FloatTween { pub fn get_start_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_start_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_target_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_target_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_ignore_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_ignore_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn tween_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_on_changed_callback_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_ignore_timescale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn valid_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FloatTween as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="unity_engine-ui-coroutine_tween-floattween")]impl FloatTween_FloatTweenCallback{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-coroutine_tween-floattween")]impl FloatTween_FloatTweenCallback{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FloatTween_FloatTweenCallback), ::core::stringify!(new),));
+ <Self as IFloatTween_FloatTweenCallbackMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-ui-coroutine_tween-floattween")]impl FloatTween{#[doc="`get_startValue()` overload"]pub fn get_start_value(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b490usize)as*mut u8,f32;
+(*mut FloatTween)self as*mut FloatTween)}
+}
+#[doc="`set_startValue(f32)` overload"]pub fn set_start_value(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b4a0usize)as*mut u8,();
+(*mut FloatTween)self as*mut FloatTween,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_targetValue()` overload"]pub fn get_target_value(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b4b0usize)as*mut u8,f32;
+(*mut FloatTween)self as*mut FloatTween)}
+}
+#[doc="`set_targetValue(f32)` overload"]pub fn set_target_value(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b4c0usize)as*mut u8,();
+(*mut FloatTween)self as*mut FloatTween,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_duration()` overload"]pub fn get_duration(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b4d0usize)as*mut u8,f32;
+(*mut FloatTween)self as*mut FloatTween)}
+}
+#[doc="`set_duration(f32)` overload"]pub fn set_duration(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b4e0usize)as*mut u8,();
+(*mut FloatTween)self as*mut FloatTween,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ignoreTimeScale()` overload"]pub fn get_ignore_time_scale(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b4f0usize)as*mut u8,bool;
+(*mut FloatTween)self as*mut FloatTween)}
+}
+#[doc="`set_ignoreTimeScale(bool)` overload"]pub fn set_ignore_time_scale(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b500usize)as*mut u8,();
+(*mut FloatTween)self as*mut FloatTween,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`TweenValue(f32)` overload"]pub fn tween_value(&mut self,float_percentage:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b510usize)as*mut u8,();
+(*mut FloatTween)self as*mut FloatTween,(f32)::core::convert::Into::into(float_percentage))}
+}
+#[doc="`AddOnChangedCallback(crate::unity_engine::events::unityaction_1::UnityAction_1<f32>)` overload"]pub fn add_on_changed_callback(&mut self,callback:impl::core::convert::Into<crate::unity_engine::events::unityaction_1::UnityAction_1<f32> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31875d0usize)as*mut u8,();
+(*mut FloatTween)self as*mut FloatTween,(crate::unity_engine::events::unityaction_1::UnityAction_1<f32>)::core::convert::Into::into(callback))}
+}
+#[doc="`GetIgnoreTimescale()` overload"]pub fn get_ignore_timescale(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b5a0usize)as*mut u8,bool;
+(*mut FloatTween)self as*mut FloatTween)}
+}
+#[doc="`ValidTarget()` overload"]pub fn valid_target(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x318b590usize)as*mut u8,bool;
+(*mut FloatTween)self as*mut FloatTween)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-coroutine_tween-floattween")]impl FloatTween{pub fn get_start_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_start_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_target_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_target_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_ignore_time_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_ignore_time_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn tween_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_on_changed_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_ignore_timescale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn valid_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
 #[doc(hidden)]

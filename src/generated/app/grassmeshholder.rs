@@ -4,46 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassmeshholder/GrassMeshHolder.md"))] # [:: unity2 :: class (namespace = "App" , name = "GrassMeshHolder")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct GrassMeshHolder {
-# [static_field] # [rename (name = "StartNameWithOrgMeshNoVersion")] pub start_name_with_org_mesh_no_version : i32 ,
-# [static_field] # [rename (name = "UV3MeshNoVersion")] pub uv3_mesh_no_version : i32 ,
-# [static_field] # [rename (name = "CurrentVersion")] pub current_version : i32 ,
-# [offset (24)] # [rename (name = "m_version")] pub m_version : i32 ,
-# [offset (28)] # [rename (name = "m_splitNum")] pub m_split_num : i32 ,
-# [offset (32)] # [rename (name = "m_offset")] pub m_offset : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (44)] # [rename (name = "m_size")] pub m_size : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (56)] # [rename (name = "m_meshes")] pub m_meshes : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: mesh :: Mesh > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/grassmeshholder/GrassMeshHolder.md"))]#[::unity2::class(namespace="App",name="GrassMeshHolder")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct GrassMeshHolder{#[static_field]#[rename(name="StartNameWithOrgMeshNoVersion")]pub start_name_with_org_mesh_no_version:i32, #[static_field]#[rename(name="UV3MeshNoVersion")]pub uv3_mesh_no_version:i32, #[static_field]#[rename(name="CurrentVersion")]pub current_version:i32, #[offset(24)]#[rename(name="m_version")]pub m_version:i32, #[offset(28)]#[rename(name="m_splitNum")]pub m_split_num:i32, #[offset(32)]#[rename(name="m_offset")]pub m_offset:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="m_size")]pub m_size:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="m_meshes")]pub m_meshes:crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh> ,}
 
 }
 
 #[cfg(feature = "app-grassmeshholder-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-grassmeshholder")]
-impl GrassMeshHolder { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d3c0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-grassmeshholder")]impl GrassMeshHolder{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x296d3c0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-grassmeshholder")]
-pub trait IGrassMeshHolderMethods : IGrassMeshHolder { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GrassMeshHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GrassMeshHolder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x296d300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-grassmeshholder")]pub trait IGrassMeshHolderMethods:IGrassMeshHolder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GrassMeshHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x296d300usize)as*mut u8,();
+(GrassMeshHolder)__receiver)}
+}
+}
 
-#[cfg(feature = "app-grassmeshholder")]
-impl < __T : IGrassMeshHolder > IGrassMeshHolderMethods for __T { }
+#[cfg(feature="app-grassmeshholder")]impl<__T:IGrassMeshHolder>IGrassMeshHolderMethods for __T{}
 
-#[cfg(feature = "app-grassmeshholder")]
-impl GrassMeshHolder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GrassMeshHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GrassMeshHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-grassmeshholder")]impl GrassMeshHolder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-grassmeshholder")]
-impl GrassMeshHolder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GrassMeshHolder) , :: core :: stringify ! (new) ,)) ; < Self as IGrassMeshHolderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-grassmeshholder")]impl GrassMeshHolder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GrassMeshHolder), ::core::stringify!(new),));
+ <Self as IGrassMeshHolderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-grassmeshholder")]

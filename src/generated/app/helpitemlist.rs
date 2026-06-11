@@ -4,41 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpitemlist/HelpItemList.md"))] # [:: unity2 :: class (namespace = "App" , name = "HelpItemList")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct HelpItemList {
-# [offset (24)] # [rename (name = "m_SituationType")] pub m_situation_type : crate :: app :: helpmanager :: HelpManager_SituationType ,
-# [offset (32)] # [rename (name = "m_List")] pub m_list : :: unity2 :: Array < crate :: app :: helpitembase :: HelpItemBase > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpitemlist/HelpItemList.md"))]#[::unity2::class(namespace="App",name="HelpItemList")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HelpItemList{#[offset(24)]#[rename(name="m_SituationType")]pub m_situation_type:crate::app::helpmanager::HelpManager_SituationType, #[offset(32)]#[rename(name="m_List")]pub m_list: ::unity2::Array<crate::app::helpitembase::HelpItemBase> ,}
 
 }
 
 #[cfg(feature = "app-helpitemlist-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-helpitemlist")]
-pub trait IHelpItemListMethods : IHelpItemList { # [doc = "`get_SituationType()` overload"] fn get_situation_type (self ,) -> crate :: app :: helpmanager :: HelpManager_SituationType { unsafe { let __receiver = < HelpItemList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemList , :: unity2 :: OptionalMethod ,) -> crate :: app :: helpmanager :: HelpManager_SituationType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d950usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < HelpItemList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297d960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < HelpItemList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297da30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < HelpItemList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HelpItemList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x297db00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-helpitemlist")]pub trait IHelpItemListMethods:IHelpItemList{#[doc="`get_SituationType()` overload"]fn get_situation_type(self,)->crate::app::helpmanager::HelpManager_SituationType{unsafe{let __receiver= <HelpItemList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d950usize)as*mut u8,crate::app::helpmanager::HelpManager_SituationType;
+(HelpItemList)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <HelpItemList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297d960usize)as*mut u8,();
+(HelpItemList)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <HelpItemList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297da30usize)as*mut u8,();
+(HelpItemList)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x297db00usize)as*mut u8,();
+(HelpItemList)__receiver)}
+}
+}
 
-#[cfg(feature = "app-helpitemlist")]
-impl < __T : IHelpItemList > IHelpItemListMethods for __T { }
+#[cfg(feature="app-helpitemlist")]impl<__T:IHelpItemList>IHelpItemListMethods for __T{}
 
-#[cfg(feature = "app-helpitemlist")]
-impl HelpItemList { pub fn get_situation_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HelpItemList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-helpitemlist")]impl HelpItemList{pub fn get_situation_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-helpitemlist")]
-impl HelpItemList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HelpItemList) , :: core :: stringify ! (new) ,)) ; < Self as IHelpItemListMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-helpitemlist")]impl HelpItemList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HelpItemList), ::core::stringify!(new),));
+ <Self as IHelpItemListMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-helpitemlist")]

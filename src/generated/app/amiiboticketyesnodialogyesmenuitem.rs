@@ -4,38 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialogitem :: { BasicDialogItem , IBasicDialogItem }
- ;
- use crate :: app :: basicdialogitemyes :: { BasicDialogItemYes , IBasicDialogItemYes }
- ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
+;
+use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
+;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboticketyesnodialogyesmenuitem/AmiiboTicketYesNoDialogYesMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboTicketYesNoDialogYesMenuItem")] # [parent (crate :: app :: basicdialogitemyes :: BasicDialogItemYes)] pub struct AmiiboTicketYesNoDialogYesMenuItem {
-# [offset (112)] # [rename (name = "m_YesEventHandler")] pub m_yes_event_handler : crate :: system :: action :: Action ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiiboticketyesnodialogyesmenuitem/AmiiboTicketYesNoDialogYesMenuItem.md"))]#[::unity2::class(namespace="App",name="AmiiboTicketYesNoDialogYesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct AmiiboTicketYesNoDialogYesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "app-amiiboticketyesnodialogyesmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-amiiboticketyesnodialogyesmenuitem")]
-pub trait IAmiiboTicketYesNoDialogYesMenuItemMethods : IAmiiboTicketYesNoDialogYesMenuItem { # [doc = "`.ctor(crate::system::action::Action)` overload"] fn ctor (self , yes_event_handler : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> () { unsafe { let __receiver = < AmiiboTicketYesNoDialogYesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTicketYesNoDialogYesMenuItem , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8be50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (yes_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AmiiboTicketYesNoDialogYesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTicketYesNoDialogYesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8bfe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BCall()` overload"] fn b_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < AmiiboTicketYesNoDialogYesMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboTicketYesNoDialogYesMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8c080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiiboticketyesnodialogyesmenuitem")]pub trait IAmiiboTicketYesNoDialogYesMenuItemMethods:IAmiiboTicketYesNoDialogYesMenuItem{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <AmiiboTicketYesNoDialogYesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8be50usize)as*mut u8,();
+(AmiiboTicketYesNoDialogYesMenuItem)__receiver,(crate::system::action::Action)::core::convert::Into::into(yes_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AmiiboTicketYesNoDialogYesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8bfe0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AmiiboTicketYesNoDialogYesMenuItem)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AmiiboTicketYesNoDialogYesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8c080usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(AmiiboTicketYesNoDialogYesMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-amiiboticketyesnodialogyesmenuitem")]
-impl < __T : IAmiiboTicketYesNoDialogYesMenuItem > IAmiiboTicketYesNoDialogYesMenuItemMethods for __T { }
+#[cfg(feature="app-amiiboticketyesnodialogyesmenuitem")]impl<__T:IAmiiboTicketYesNoDialogYesMenuItem>IAmiiboTicketYesNoDialogYesMenuItemMethods for __T{}
 
-#[cfg(feature = "app-amiiboticketyesnodialogyesmenuitem")]
-impl AmiiboTicketYesNoDialogYesMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTicketYesNoDialogYesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTicketYesNoDialogYesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn b_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboTicketYesNoDialogYesMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-amiiboticketyesnodialogyesmenuitem")]impl AmiiboTicketYesNoDialogYesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-amiiboticketyesnodialogyesmenuitem")]
-impl AmiiboTicketYesNoDialogYesMenuItem {
-# [doc = "`.ctor(crate::system::action::Action)` — overload selector"] pub fn new (yes_event_handler : crate :: system :: action :: Action) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AmiiboTicketYesNoDialogYesMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IAmiiboTicketYesNoDialogYesMenuItemMethods > :: ctor (this , yes_event_handler) ; this }
+#[cfg(feature="app-amiiboticketyesnodialogyesmenuitem")]impl AmiiboTicketYesNoDialogYesMenuItem{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(yes_event_handler:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AmiiboTicketYesNoDialogYesMenuItem), ::core::stringify!(new),));
+ <Self as IAmiiboTicketYesNoDialogYesMenuItemMethods> ::ctor(this,yes_event_handler);
+this}
 }
 
 #[cfg(feature = "app-amiiboticketyesnodialogyesmenuitem")]

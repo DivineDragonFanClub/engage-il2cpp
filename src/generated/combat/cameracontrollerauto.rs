@@ -4,64 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerauto/CameraControllerAuto.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerAuto")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerAuto {
-# [offset (168)] # [rename (name = "DistanceCurve")] pub distance_curve : crate :: unity_engine :: animationcurve :: AnimationCurve ,
-# [offset (176)] # [rename (name = "VirticalMinMax")] pub virtical_min_max : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (184)] # [rename (name = "HorizontalMinMax")] pub horizontal_min_max : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (220)] # [rename (name = "m_Time")] pub m_time : f32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerauto/CameraControllerAuto.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerAuto")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerAuto{#[offset(168)]#[rename(name="DistanceCurve")]pub distance_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(176)]#[rename(name="VirticalMinMax")]pub virtical_min_max:crate::unity_engine::vector2::Vector2, #[offset(184)]#[rename(name="HorizontalMinMax")]pub horizontal_min_max:crate::unity_engine::vector2::Vector2, #[offset(220)]#[rename(name="m_Time")]pub m_time:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerauto/CameraControllerAuto_CamRotate.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CameraControllerAuto_CamRotate{pub start_degree:f32,pub end_degree:f32,pub speed:f32,}
+impl::unity2::ClassIdentity for CameraControllerAuto_CamRotate{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="CameraControllerAuto.CamRotate";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerauto/CameraControllerAuto_CamRotate.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CameraControllerAuto_CamRotate {
-    pub start_degree: f32,
-    pub end_degree: f32,
-    pub speed: f32,
-}
-
-
-impl ::unity2::ClassIdentity for CameraControllerAuto_CamRotate {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "CameraControllerAuto.CamRotate";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for CameraControllerAuto_CamRotate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for CameraControllerAuto_CamRotate{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -69,25 +39,91 @@ impl ::unity2::IlType for CameraControllerAuto_CamRotate {
 #[cfg(feature = "combat-cameracontrollerauto-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollerauto")]
-pub trait ICameraControllerAutoMethods : ICameraControllerAuto { # [doc = "`get_TimeLength()` overload"] fn get_time_length (self ,) -> f32 { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2995a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_TimeLength(f32)` overload"] fn set_time_length (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2995aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Vertical()` overload"] fn get_vertical (self ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2995ab0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Vertical(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)` overload"] fn set_vertical (self , value : impl :: core :: convert :: Into < crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate >) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2995ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Horizontal()` overload"] fn get_horizontal (self ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2995ad0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Horizontal(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)` overload"] fn set_horizontal (self , value : impl :: core :: convert :: Into < crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate >) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2995ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CheckUsable(bool)` overload"] fn check_usable (self , is_routine : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_routine) , :: core :: option :: Option :: None) } } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] fn initialize (self ,) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2995f80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deactivate()` overload"] fn deactivate (self ,) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29962a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateRandom(f32, f32, f32)` overload"] fn create_random (self , time : impl :: core :: convert :: Into < f32 > , min : impl :: core :: convert :: Into < f32 > , max : impl :: core :: convert :: Into < f32 >) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , f32 , f32 , f32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerauto :: CameraControllerAuto_CamRotate = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29962b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerAuto as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerAuto , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2996320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "combat-cameracontrollerauto")]
-impl < __T : ICameraControllerAuto > ICameraControllerAutoMethods for __T { }
-
-#[cfg(feature = "combat-cameracontrollerauto")]
-impl CameraControllerAuto { pub fn get_time_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_time_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn check_usable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn deactivate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_random_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
-
-#[cfg(feature = "combat-cameracontrollerauto")]
-impl CameraControllerAuto {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerAuto) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerAutoMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollerauto")]pub trait ICameraControllerAutoMethods:ICameraControllerAuto{#[doc="`get_TimeLength()` overload"]fn get_time_length(self,)->f32{unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2995a90usize)as*mut u8,f32;
+(CameraControllerAuto)__receiver)}
+}
+#[doc="`set_TimeLength(f32)` overload"]fn set_time_length(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2995aa0usize)as*mut u8,();
+(CameraControllerAuto)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Vertical()` overload"]fn get_vertical(self,)->crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate{unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2995ab0usize)as*mut u8,crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate;
+(CameraControllerAuto)__receiver)}
+}
+#[doc="`set_Vertical(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)` overload"]fn set_vertical(self,value:impl::core::convert::Into<crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate>)->(){unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2995ac0usize)as*mut u8,();
+(CameraControllerAuto)__receiver,(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)::core::convert::Into::into(value))}
+}
+#[doc="`get_Horizontal()` overload"]fn get_horizontal(self,)->crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate{unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2995ad0usize)as*mut u8,crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate;
+(CameraControllerAuto)__receiver)}
+}
+#[doc="`set_Horizontal(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)` overload"]fn set_horizontal(self,value:impl::core::convert::Into<crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate>)->(){unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2995ae0usize)as*mut u8,();
+(CameraControllerAuto)__receiver,(crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate)::core::convert::Into::into(value))}
+}
+#[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996150usize)as*mut u8,();
+(CameraControllerAuto)__receiver,(bool)::core::convert::Into::into(is_routine))}
+}
+#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996220usize)as*mut u8,();
+(CameraControllerAuto)__receiver)}
+}
+#[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2995f80usize)as*mut u8,();
+(CameraControllerAuto)__receiver)}
+}
+#[doc="`Deactivate()` overload"]fn deactivate(self,)->(){unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29962a0usize)as*mut u8,();
+(CameraControllerAuto)__receiver)}
+}
+#[doc="`CreateRandom(f32, f32, f32)` overload"]fn create_random(self,time:impl::core::convert::Into<f32> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32>)->crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate{unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996230usize)as*mut u8,crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate;
+(CameraControllerAuto)__receiver,(f32)::core::convert::Into::into(time),(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max))}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29962b0usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerAuto)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerAuto as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2996320usize)as*mut u8,();
+(CameraControllerAuto)__receiver)}
+}
 }
 
-#[cfg(feature = "combat-cameracontrollerauto")]
-impl CameraControllerAuto_CamRotate { # [doc = "`Get(f32)` overload"] pub fn get (& mut self , rate : impl :: core :: convert :: Into < f32 >) -> f32 { unsafe { { let __inner : extern "C" fn (* mut CameraControllerAuto_CamRotate , f32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x19bd7b0usize) as * mut u8) ; __inner (self as * mut CameraControllerAuto_CamRotate , :: core :: convert :: Into :: into (rate) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollerauto")]impl<__T:ICameraControllerAuto>ICameraControllerAutoMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollerauto")]
-impl CameraControllerAuto_CamRotate { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerAuto_CamRotate as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-cameracontrollerauto")]impl CameraControllerAuto{pub fn get_time_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_time_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn check_usable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn deactivate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
+
+#[cfg(feature="combat-cameracontrollerauto")]impl CameraControllerAuto{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerAuto), ::core::stringify!(new),));
+ <Self as ICameraControllerAutoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="combat-cameracontrollerauto")]impl CameraControllerAuto_CamRotate{#[doc="`Get(f32)` overload"]pub fn get(&mut self,rate:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19bd7b0usize)as*mut u8,f32;
+(*mut CameraControllerAuto_CamRotate)self as*mut CameraControllerAuto_CamRotate,(f32)::core::convert::Into::into(rate))}
+}
+}
+
+#[cfg(feature="combat-cameracontrollerauto")]impl CameraControllerAuto_CamRotate{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-cameracontrollerauto")]
 #[doc(hidden)]

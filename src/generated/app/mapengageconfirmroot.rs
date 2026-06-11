@@ -4,44 +4,72 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapengageconfirmroot/MapEngageConfirmRoot.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapEngageConfirmRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapEngageConfirmRoot {
-# [offset (24)] # [rename (name = "m_unitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_godName")] pub m_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_unitNameR")] pub m_unit_name_r : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_item")] pub m_item : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (56)] # [rename (name = "m_skill")] pub m_skill : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapengageconfirmroot/MapEngageConfirmRoot.md"))]#[::unity2::class(namespace="App",name="MapEngageConfirmRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapEngageConfirmRoot{#[offset(24)]#[rename(name="m_unitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_godName")]pub m_god_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_unitNameR")]pub m_unit_name_r:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_item")]pub m_item:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(56)]#[rename(name="m_skill")]pub m_skill:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "app-mapengageconfirmroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapengageconfirmroot")]
-pub trait IMapEngageConfirmRootMethods : IMapEngageConfirmRoot { # [doc = "`Setup(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"] fn setup (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < MapEngageConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEngageConfirmRoot , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dbf2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`Setup(crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn setup_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapEngageConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEngageConfirmRoot , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dbfd80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (target) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitName(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit)` overload"] fn set_unit_name (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapEngageConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEngageConfirmRoot , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dbf350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetGodName(crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit)` overload"] fn set_god_name (self , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < MapEngageConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEngageConfirmRoot , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dbf470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`SetGodData(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"] fn set_god_data (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , link_target : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < MapEngageConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEngageConfirmRoot , crate :: app :: godunit :: GodUnit , crate :: app :: unit :: Unit , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dbf5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (link_target) , :: core :: option :: Option :: None) } } } # [doc = "`SetSkill(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject, crate::app::skilldata::SkillData)` overload"] fn set_skill (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , obj : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , skill : impl :: core :: convert :: Into < crate :: app :: skilldata :: SkillData >) -> () { unsafe { let __receiver = < MapEngageConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEngageConfirmRoot , crate :: app :: unit :: Unit , crate :: unity_engine :: gameobject :: GameObject , crate :: app :: skilldata :: SkillData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dbfea0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (obj) , :: core :: convert :: Into :: into (skill) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapEngageConfirmRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapEngageConfirmRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1dc0210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapengageconfirmroot")]pub trait IMapEngageConfirmRootMethods:IMapEngageConfirmRoot{#[doc="`Setup(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn setup(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <MapEngageConfirmRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbf2d0usize)as*mut u8,();
+(MapEngageConfirmRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`Setup(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn setup_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapEngageConfirmRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbfd80usize)as*mut u8,();
+(MapEngageConfirmRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`SetUnitName(crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit)` overload"]fn set_unit_name(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapEngageConfirmRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbf350usize)as*mut u8,();
+(MapEngageConfirmRoot)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetGodName(crate::unity_engine::gameobject::GameObject, crate::app::godunit::GodUnit)` overload"]fn set_god_name(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <MapEngageConfirmRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbf470usize)as*mut u8,();
+(MapEngageConfirmRoot)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`SetGodData(crate::app::godunit::GodUnit, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn set_god_data(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,link_target:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapEngageConfirmRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbf5f0usize)as*mut u8,();
+(MapEngageConfirmRoot)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(link_target))}
+}
+#[doc="`SetSkill(crate::app::unit::Unit, crate::unity_engine::gameobject::GameObject, crate::app::skilldata::SkillData)` overload"]fn set_skill(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <MapEngageConfirmRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbfea0usize)as*mut u8,();
+(MapEngageConfirmRoot)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEngageConfirmRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1dc0210usize)as*mut u8,();
+(MapEngageConfirmRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapengageconfirmroot")]
-impl < __T : IMapEngageConfirmRoot > IMapEngageConfirmRootMethods for __T { }
+#[cfg(feature="app-mapengageconfirmroot")]impl<__T:IMapEngageConfirmRoot>IMapEngageConfirmRootMethods for __T{}
 
-#[cfg(feature = "app-mapengageconfirmroot")]
-impl MapEngageConfirmRoot { pub fn setup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEngageConfirmRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn setup_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEngageConfirmRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_unit_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEngageConfirmRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_god_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEngageConfirmRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_god_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEngageConfirmRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEngageConfirmRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapEngageConfirmRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-mapengageconfirmroot")]impl MapEngageConfirmRoot{pub fn setup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn setup_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_unit_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_god_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_god_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-mapengageconfirmroot")]
-impl MapEngageConfirmRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapEngageConfirmRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapEngageConfirmRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapengageconfirmroot")]impl MapEngageConfirmRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEngageConfirmRoot), ::core::stringify!(new),));
+ <Self as IMapEngageConfirmRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapengageconfirmroot")]

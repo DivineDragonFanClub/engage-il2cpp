@@ -4,63 +4,71 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: { IScriptableRenderPass , ScriptableRenderPass }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptableRenderPass,ScriptableRenderPass}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomShadowNoCasterPass")] # [parent (crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass)] pub struct CustomShadowNoCasterPass {
-# [static_field] # [rename (name = "k_MaxCascades")] pub k_max_cascades : i32 ,
-# [static_field] # [rename (name = "k_ShadowmapBufferBits")] pub k_shadowmap_buffer_bits : i32 ,
-# [static_field] # [rename (name = "k_ShadowmapWidth")] pub k_shadowmap_width : i32 ,
-# [static_field] # [rename (name = "k_ShadowmapHeight")] pub k_shadowmap_height : i32 ,
-# [offset (112)] # [rename (name = "m_CustomShadowmap")] pub m_custom_shadowmap : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
-# [offset (160)] # [rename (name = "m_CustomShadowmapTexture")] pub m_custom_shadowmap_texture : crate :: unity_engine :: rendertexture :: RenderTexture ,
-# [offset (168)] # [rename (name = "m_CustomShadowMatrices")] pub m_custom_shadow_matrices : :: unity2 :: Array < crate :: unity_engine :: matrix4x4 :: Matrix4x4 > ,
-# [static_field] # [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
-# [offset (176)] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass_CustomShadowConstantBuffer.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom.Internal",name="CustomShadowNoCasterPass.CustomShadowConstantBuffer")]#[parent(crate::system::object::Object)]pub struct CustomShadowNoCasterPass_CustomShadowConstantBuffer{#[static_field]#[rename(name="_WorldToShadow")]pub world_to_shadow:i32, #[static_field]#[rename(name="_ShadowParams")]pub shadow_params:i32, #[static_field]#[rename(name="_ShadowOffset0")]pub shadow_offset0:i32, #[static_field]#[rename(name="_ShadowOffset1")]pub shadow_offset1:i32, #[static_field]#[rename(name="_ShadowOffset2")]pub shadow_offset2:i32, #[static_field]#[rename(name="_ShadowOffset3")]pub shadow_offset3:i32, #[static_field]#[rename(name="_ShadowmapSize")]pub shadowmap_size:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass_CustomShadowConstantBuffer.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom.Internal" , name = "CustomShadowNoCasterPass.CustomShadowConstantBuffer")] # [parent (crate :: system :: object :: Object)] pub struct CustomShadowNoCasterPass_CustomShadowConstantBuffer {
-# [static_field] # [rename (name = "_WorldToShadow")] pub world_to_shadow : i32 ,
-# [static_field] # [rename (name = "_ShadowParams")] pub shadow_params : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset0")] pub shadow_offset0 : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset1")] pub shadow_offset1 : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset2")] pub shadow_offset2 : i32 ,
-# [static_field] # [rename (name = "_ShadowOffset3")] pub shadow_offset3 : i32 ,
-# [static_field] # [rename (name = "_ShadowmapSize")] pub shadowmap_size : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom.Internal",name="CustomShadowNoCasterPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct CustomShadowNoCasterPass{#[static_field]#[rename(name="k_MaxCascades")]pub k_max_cascades:i32, #[static_field]#[rename(name="k_ShadowmapBufferBits")]pub k_shadowmap_buffer_bits:i32, #[static_field]#[rename(name="k_ShadowmapWidth")]pub k_shadowmap_width:i32, #[static_field]#[rename(name="k_ShadowmapHeight")]pub k_shadowmap_height:i32, #[offset(112)]#[rename(name="m_CustomShadowmap")]pub m_custom_shadowmap:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(160)]#[rename(name="m_CustomShadowmapTexture")]pub m_custom_shadowmap_texture:crate::unity_engine::rendertexture::RenderTexture, #[offset(168)]#[rename(name="m_CustomShadowMatrices")]pub m_custom_shadow_matrices: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> , #[static_field]#[rename(name="m_ProfilerTag")]pub m_profiler_tag: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_ProfilingSampler")]pub m_profiling_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]
-pub trait ICustomShadowNoCasterPassMethods : ICustomShadowNoCasterPass { # [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` overload"] fn ctor (self , evt : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent >) -> () { unsafe { let __receiver = < CustomShadowNoCasterPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomShadowNoCasterPass , crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a48210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (evt) , :: core :: option :: Option :: None) } } } # [doc = "`Configure(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"] fn configure (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > , camera_texture_descriptor : impl :: core :: convert :: Into < crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor >) -> () { unsafe { let __receiver = < CustomShadowNoCasterPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomShadowNoCasterPass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4e770usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: convert :: Into :: into (camera_texture_descriptor) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"] fn execute (self , context : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext >) -> crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData { unsafe { let __receiver = < CustomShadowNoCasterPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData > :: uninit () ; { let __inner : extern "C" fn (CustomShadowNoCasterPass , crate :: unity_engine :: rendering :: scriptablerendercontext :: ScriptableRenderContext , * mut crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4e860usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (context) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"] fn on_camera_cleanup (self , cmd : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer >) -> () { unsafe { let __receiver = < CustomShadowNoCasterPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomShadowNoCasterPass , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4eca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cmd) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < CustomShadowNoCasterPass as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomShadowNoCasterPass , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a4eda0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]pub trait ICustomShadowNoCasterPassMethods:ICustomShadowNoCasterPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>)->(){unsafe{let __receiver= <CustomShadowNoCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a48210usize)as*mut u8,();
+(CustomShadowNoCasterPass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt))}
+}
+#[doc="`Configure(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]fn configure(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,camera_texture_descriptor:impl::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>)->(){unsafe{let __receiver= <CustomShadowNoCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4e770usize)as*mut u8,();
+(CustomShadowNoCasterPass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)::core::convert::Into::into(camera_texture_descriptor))}
+}
+#[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <CustomShadowNoCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4e860usize)as*mut u8,();
+(CustomShadowNoCasterPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn on_camera_cleanup(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <CustomShadowNoCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4eca0usize)as*mut u8,();
+(CustomShadowNoCasterPass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <CustomShadowNoCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4eda0usize)as*mut u8,();
+(CustomShadowNoCasterPass)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]
-impl < __T : ICustomShadowNoCasterPass > ICustomShadowNoCasterPassMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]impl<__T:ICustomShadowNoCasterPass>ICustomShadowNoCasterPassMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]
-impl CustomShadowNoCasterPass { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomShadowNoCasterPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn configure_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomShadowNoCasterPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomShadowNoCasterPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_camera_cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomShadowNoCasterPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomShadowNoCasterPass as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]impl CustomShadowNoCasterPass{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn configure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_camera_cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]
-impl CustomShadowNoCasterPass {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` — overload selector"] pub fn new (evt : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomShadowNoCasterPass) , :: core :: stringify ! (new) ,)) ; < Self as ICustomShadowNoCasterPassMethods > :: ctor (this , evt) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]impl CustomShadowNoCasterPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` — overload selector"]pub fn new(evt:crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomShadowNoCasterPass), ::core::stringify!(new),));
+ <Self as ICustomShadowNoCasterPassMethods> ::ctor(this,evt);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadownocasterpass")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CustomShadowNoCasterPass_CustomShadowConstantBuffer;
+    pub use super::ICustomShadowNoCasterPass_CustomShadowConstantBuffer;
     pub use super::CustomShadowNoCasterPass;
     pub use super::ICustomShadowNoCasterPass;
     pub use super::ICustomShadowNoCasterPassMethods;
-    pub use super::CustomShadowNoCasterPass_CustomShadowConstantBuffer;
-    pub use super::ICustomShadowNoCasterPass_CustomShadowConstantBuffer;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

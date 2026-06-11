@@ -4,34 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: collections :: generic :: list_1 :: { IList_1 , List_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::collections::generic::list_1::{IList_1,List_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbackuplist/MapBackupList.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapBackupList")] # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapbackup :: MapBackup >)] pub struct MapBackupList {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapbackuplist/MapBackupList.md"))]#[::unity2::class(namespace="App",name="MapBackupList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::mapbackup::MapBackup>)]pub struct MapBackupList{#[static_field]#[rename(name="Version")]pub version:i32,}
 
 }
 
 #[cfg(feature = "app-mapbackuplist-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapbackuplist")]
-pub trait IMapBackupListMethods : IMapBackupList { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapBackupList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBackupList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f02ff0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapBackupList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBackupList , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f03080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < MapBackupList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBackupList , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f032f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < MapBackupList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapBackupList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f03460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapbackuplist")]pub trait IMapBackupListMethods:IMapBackupList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBackupList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f02ff0usize)as*mut u8,();
+(MapBackupList)__receiver)}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapBackupList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f03080usize)as*mut u8,();
+(MapBackupList)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapBackupList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f032f0usize)as*mut u8,();
+(MapBackupList)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <MapBackupList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f03460usize)as*mut u8,();
+(MapBackupList)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapbackuplist")]
-impl < __T : IMapBackupList > IMapBackupListMethods for __T { }
+#[cfg(feature="app-mapbackuplist")]impl<__T:IMapBackupList>IMapBackupListMethods for __T{}
 
-#[cfg(feature = "app-mapbackuplist")]
-impl MapBackupList { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBackupList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBackupList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBackupList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapBackupList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-mapbackuplist")]impl MapBackupList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-mapbackuplist")]
-impl MapBackupList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapBackupList) , :: core :: stringify ! (new) ,)) ; < Self as IMapBackupListMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapbackuplist")]impl MapBackupList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapBackupList), ::core::stringify!(new),));
+ <Self as IMapBackupListMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapbackuplist")]

@@ -4,36 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bondsringfacepicture/BondsRingFacePicture.md"))] # [:: unity2 :: class (namespace = "App" , name = "BondsRingFacePicture")] # [parent (crate :: system :: object :: Object)] pub struct BondsRingFacePicture {
-# [static_field] # [rename (name = "Path")] pub path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_FacePicture")] pub s_face_picture : crate :: app :: spriteatlasmanager_2 :: SpriteAtlasManager_2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bondsringfacepicture/BondsRingFacePicture.md"))]#[::unity2::class(namespace="App",name="BondsRingFacePicture")]#[parent(crate::system::object::Object)]pub struct BondsRingFacePicture{#[static_field]#[rename(name="Path")]pub path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_FacePicture")]pub s_face_picture:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,}
 
 }
 
 #[cfg(feature = "app-bondsringfacepicture-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bondsringfacepicture")]
-impl BondsRingFacePicture { # [doc = "`LoadAsync()` overload"] pub fn load_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298a970usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoading()` overload"] pub fn is_loading () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298aa60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoaded()` overload"] pub fn is_loaded () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298ab10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Unload()` overload"] pub fn unload () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298abc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Get(crate::app::ringdata::RingData)` overload"] pub fn get (ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> crate :: unity_engine :: sprite :: Sprite { unsafe { { let __inner : extern "C" fn (crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: sprite :: Sprite = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298ac80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ring_data) , :: core :: option :: Option :: None) } } } # [doc = "`GetPath(crate::app::ringdata::RingData)` overload"] pub fn get_path (ring_data : impl :: core :: convert :: Into < crate :: app :: ringdata :: RingData >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: ringdata :: RingData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298ae00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (ring_data) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298ae20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bondsringfacepicture")]impl BondsRingFacePicture{#[doc="`LoadAsync()` overload"]pub fn load_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298a970usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoading()` overload"]pub fn is_loading()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298aa60usize)as*mut u8,bool;
+)}
+}
+#[doc="`IsLoaded()` overload"]pub fn is_loaded()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298ab10usize)as*mut u8,bool;
+)}
+}
+#[doc="`Unload()` overload"]pub fn unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298abc0usize)as*mut u8,();
+)}
+}
+#[doc="`Get(crate::app::ringdata::RingData)` overload"]pub fn get(ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298ac80usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+#[doc="`GetPath(crate::app::ringdata::RingData)` overload"]pub fn get_path(ring_data:impl::core::convert::Into<crate::app::ringdata::RingData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298ae00usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::ringdata::RingData)::core::convert::Into::into(ring_data))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x298ae20usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-bondsringfacepicture")]
-pub trait IBondsRingFacePictureMethods : IBondsRingFacePicture { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BondsRingFacePicture as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BondsRingFacePicture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x298ae10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bondsringfacepicture")]pub trait IBondsRingFacePictureMethods:IBondsRingFacePicture{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BondsRingFacePicture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x298ae10usize)as*mut u8,();
+(BondsRingFacePicture)__receiver)}
+}
+}
 
-#[cfg(feature = "app-bondsringfacepicture")]
-impl < __T : IBondsRingFacePicture > IBondsRingFacePictureMethods for __T { }
+#[cfg(feature="app-bondsringfacepicture")]impl<__T:IBondsRingFacePicture>IBondsRingFacePictureMethods for __T{}
 
-#[cfg(feature = "app-bondsringfacepicture")]
-impl BondsRingFacePicture { pub fn load_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondsRingFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondsRingFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loaded_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondsRingFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn unload_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondsRingFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondsRingFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondsRingFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondsRingFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BondsRingFacePicture as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="app-bondsringfacepicture")]impl BondsRingFacePicture{pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "app-bondsringfacepicture")]
-impl BondsRingFacePicture {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BondsRingFacePicture) , :: core :: stringify ! (new) ,)) ; < Self as IBondsRingFacePictureMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-bondsringfacepicture")]impl BondsRingFacePicture{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BondsRingFacePicture), ::core::stringify!(new),));
+ <Self as IBondsRingFacePictureMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-bondsringfacepicture")]

@@ -4,26 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/customrendertexturemanager/CustomRenderTextureManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "CustomRenderTextureManager")] # [parent (crate :: system :: object :: Object)] pub struct CustomRenderTextureManager {
-# [static_field] # [rename (name = "textureLoaded")] pub texture_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: customrendertexture :: CustomRenderTexture > ,
-# [static_field] # [rename (name = "textureUnloaded")] pub texture_unloaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: customrendertexture :: CustomRenderTexture > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/customrendertexturemanager/CustomRenderTextureManager.md"))]#[::unity2::class(namespace="UnityEngine",name="CustomRenderTextureManager")]#[parent(crate::system::object::Object)]pub struct CustomRenderTextureManager{#[static_field]#[rename(name="textureLoaded")]pub texture_loaded:crate::system::action_1::Action_1<crate::unity_engine::customrendertexture::CustomRenderTexture> , #[static_field]#[rename(name="textureUnloaded")]pub texture_unloaded:crate::system::action_1::Action_1<crate::unity_engine::customrendertexture::CustomRenderTexture> ,}
 
 }
 
 #[cfg(feature = "unity_engine-customrendertexturemanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-customrendertexturemanager")]
-impl CustomRenderTextureManager { # [doc = "`InvokeOnTextureLoaded_Internal(crate::unity_engine::customrendertexture::CustomRenderTexture)` overload"] pub fn invoke_on_texture_loaded_internal (source : impl :: core :: convert :: Into < crate :: unity_engine :: customrendertexture :: CustomRenderTexture >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: customrendertexture :: CustomRenderTexture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a010usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } } # [doc = "`InvokeOnTextureUnloaded_Internal(crate::unity_engine::customrendertexture::CustomRenderTexture)` overload"] pub fn invoke_on_texture_unloaded_internal (source : impl :: core :: convert :: Into < crate :: unity_engine :: customrendertexture :: CustomRenderTexture >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: customrendertexture :: CustomRenderTexture , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4a0a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (source) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-customrendertexturemanager")]impl CustomRenderTextureManager{#[doc="`InvokeOnTextureLoaded_Internal(crate::unity_engine::customrendertexture::CustomRenderTexture)` overload"]pub fn invoke_on_texture_loaded_internal(source:impl::core::convert::Into<crate::unity_engine::customrendertexture::CustomRenderTexture>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a010usize)as*mut u8,();
+(crate::unity_engine::customrendertexture::CustomRenderTexture)::core::convert::Into::into(source))}
+}
+#[doc="`InvokeOnTextureUnloaded_Internal(crate::unity_engine::customrendertexture::CustomRenderTexture)` overload"]pub fn invoke_on_texture_unloaded_internal(source:impl::core::convert::Into<crate::unity_engine::customrendertexture::CustomRenderTexture>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a0a0usize)as*mut u8,();
+(crate::unity_engine::customrendertexture::CustomRenderTexture)::core::convert::Into::into(source))}
+}
+}
 
-#[cfg(feature = "unity_engine-customrendertexturemanager")]
-impl CustomRenderTextureManager { pub fn invoke_on_texture_loaded_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomRenderTextureManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_on_texture_unloaded_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomRenderTextureManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-customrendertexturemanager")]impl CustomRenderTextureManager{pub fn invoke_on_texture_loaded_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_on_texture_unloaded_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-customrendertexturemanager")]
 #[doc(hidden)]

@@ -4,38 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: playables :: playableasset :: { IPlayableAsset , PlayableAsset }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/cinemachineshot/CinemachineShot.md"))] # [:: unity2 :: class (namespace = "" , name = "CinemachineShot")] # [parent (crate :: unity_engine :: playables :: playableasset :: PlayableAsset)] pub struct CinemachineShot {
-# [offset (24)] # [rename (name = "DisplayName")] pub display_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/cinemachineshot/CinemachineShot.md"))]#[::unity2::class(namespace="",name="CinemachineShot")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct CinemachineShot{#[offset(24)]#[rename(name="DisplayName")]pub display_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "root-cinemachineshot-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-cinemachineshot")]
-pub trait ICinemachineShotMethods : ICinemachineShot { # [doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"] fn create_playable (self , graph : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playablegraph :: PlayableGraph > , owner : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: unity_engine :: playables :: playable :: Playable { unsafe { let __receiver = < CinemachineShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineShot , crate :: unity_engine :: playables :: playablegraph :: PlayableGraph , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: playables :: playable :: Playable = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x388d360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (graph) , :: core :: convert :: Into :: into (owner) , :: core :: option :: Option :: None) } } } # [doc = "`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"] fn gather_properties (self , director : impl :: core :: convert :: Into < crate :: unity_engine :: playables :: playabledirector :: PlayableDirector > , driver : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector >) -> () { unsafe { let __receiver = < CinemachineShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineShot , crate :: unity_engine :: playables :: playabledirector :: PlayableDirector , crate :: unity_engine :: timeline :: ipropertycollector :: IPropertyCollector , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x388d4a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (director) , :: core :: convert :: Into :: into (driver) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CinemachineShot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CinemachineShot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x388da00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-cinemachineshot")]pub trait ICinemachineShotMethods:ICinemachineShot{#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <CinemachineShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x388d360usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
+(CinemachineShot)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(owner))}
+}
+#[doc="`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]fn gather_properties(self,director:impl::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector> ,driver:impl::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>)->(){unsafe{let __receiver= <CinemachineShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x388d4a0usize)as*mut u8,();
+(CinemachineShot)__receiver,(crate::unity_engine::playables::playabledirector::PlayableDirector)::core::convert::Into::into(director),(crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)::core::convert::Into::into(driver))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CinemachineShot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x388da00usize)as*mut u8,();
+(CinemachineShot)__receiver)}
+}
+}
 
-#[cfg(feature = "root-cinemachineshot")]
-impl < __T : ICinemachineShot > ICinemachineShotMethods for __T { }
+#[cfg(feature="root-cinemachineshot")]impl<__T:ICinemachineShot>ICinemachineShotMethods for __T{}
 
-#[cfg(feature = "root-cinemachineshot")]
-impl CinemachineShot { pub fn create_playable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn gather_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CinemachineShot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="root-cinemachineshot")]impl CinemachineShot{pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn gather_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "root-cinemachineshot")]
-impl CinemachineShot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CinemachineShot) , :: core :: stringify ! (new) ,)) ; < Self as ICinemachineShotMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-cinemachineshot")]impl CinemachineShot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CinemachineShot), ::core::stringify!(new),));
+ <Self as ICinemachineShotMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-cinemachineshot")]

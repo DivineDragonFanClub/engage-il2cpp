@@ -4,38 +4,69 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/resourcelocationdata/ResourceLocationData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.AddressableAssets.ResourceLocators" , name = "ResourceLocationData")] # [parent (crate :: system :: object :: Object)] pub struct ResourceLocationData {
-# [offset (16)] # [rename (name = "m_Keys")] pub m_keys : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (24)] # [rename (name = "m_InternalId")] pub m_internal_id : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "m_Provider")] pub m_provider : :: unity2 :: Il2CppString ,
-# [offset (40)] # [rename (name = "m_Dependencies")] pub m_dependencies : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [offset (48)] # [rename (name = "m_ResourceType")] pub m_resource_type : crate :: unity_engine :: resource_management :: util :: serializedtype :: SerializedType ,
-# [offset (80)] # [rename (name = "SerializedData")] pub serialized_data : :: unity2 :: Array < u8 > ,
-# [offset (88)] # [rename (name = "_Data")] pub data_field : :: unity2 :: IlInstance ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/resource_locators/resourcelocationdata/ResourceLocationData.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets.ResourceLocators",name="ResourceLocationData")]#[parent(crate::system::object::Object)]pub struct ResourceLocationData{#[offset(16)]#[rename(name="m_Keys")]pub m_keys: ::unity2::Array< ::unity2::Il2CppString> , #[offset(24)]#[rename(name="m_InternalId")]pub m_internal_id: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Provider")]pub m_provider: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Dependencies")]pub m_dependencies: ::unity2::Array< ::unity2::Il2CppString> , #[offset(48)]#[rename(name="m_ResourceType")]pub m_resource_type:crate::unity_engine::resource_management::util::serializedtype::SerializedType, #[offset(80)]#[rename(name="SerializedData")]pub serialized_data: ::unity2::Array<u8> , #[offset(88)]#[rename(name="_Data")]pub data_field: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata")]
-pub trait IResourceLocationDataMethods : IResourceLocationData { # [doc = "`get_Keys()` overload"] fn get_keys (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < ResourceLocationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceLocationData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbda0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_InternalId()` overload"] fn get_internal_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ResourceLocationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceLocationData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbdb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Provider()` overload"] fn get_provider (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < ResourceLocationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceLocationData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbdc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Dependencies()` overload"] fn get_dependencies (self ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { let __receiver = < ResourceLocationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceLocationData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbdd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ResourceType()` overload"] fn get_resource_type (self ,) -> :: unity2 :: SystemType { unsafe { let __receiver = < ResourceLocationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceLocationData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: SystemType = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbde0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Data()` overload"] fn get_data (self ,) -> crate :: system :: object :: Object { unsafe { let __receiver = < ResourceLocationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceLocationData , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2db8d50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Data(crate::system::object::Object)` overload"] fn set_data (self , value : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> () { unsafe { let __receiver = < ResourceLocationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceLocationData , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbbdf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::SystemType, ::unity2::Array<::unity2::Il2CppString>)` overload"] fn ctor (self , keys : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > > , id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , provider : impl :: core :: convert :: Into < :: unity2 :: SystemType > , t : impl :: core :: convert :: Into < :: unity2 :: SystemType > , dependencies : impl :: core :: convert :: Into < :: unity2 :: Array < :: unity2 :: Il2CppString > >) -> () { unsafe { let __receiver = < ResourceLocationData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ResourceLocationData , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: Il2CppString , :: unity2 :: SystemType , :: unity2 :: SystemType , :: unity2 :: Array < :: unity2 :: Il2CppString > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dbc790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (keys) , :: core :: convert :: Into :: into (id) , :: core :: convert :: Into :: into (provider) , :: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (dependencies) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-resourcelocationdata")]pub trait IResourceLocationDataMethods:IResourceLocationData{#[doc="`get_Keys()` overload"]fn get_keys(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <ResourceLocationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbda0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(ResourceLocationData)__receiver)}
+}
+#[doc="`get_InternalId()` overload"]fn get_internal_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ResourceLocationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbdb0usize)as*mut u8, ::unity2::Il2CppString;
+(ResourceLocationData)__receiver)}
+}
+#[doc="`get_Provider()` overload"]fn get_provider(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ResourceLocationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbdc0usize)as*mut u8, ::unity2::Il2CppString;
+(ResourceLocationData)__receiver)}
+}
+#[doc="`get_Dependencies()` overload"]fn get_dependencies(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <ResourceLocationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbdd0usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(ResourceLocationData)__receiver)}
+}
+#[doc="`get_ResourceType()` overload"]fn get_resource_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <ResourceLocationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbde0usize)as*mut u8, ::unity2::SystemType;
+(ResourceLocationData)__receiver)}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::object::Object{unsafe{let __receiver= <ResourceLocationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db8d50usize)as*mut u8,crate::system::object::Object;
+(ResourceLocationData)__receiver)}
+}
+#[doc="`set_Data(crate::system::object::Object)` overload"]fn set_data(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ResourceLocationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbbdf0usize)as*mut u8,();
+(ResourceLocationData)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::SystemType, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,keys:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> > ,id:impl::core::convert::Into< ::unity2::Il2CppString> ,provider:impl::core::convert::Into< ::unity2::SystemType> ,t:impl::core::convert::Into< ::unity2::SystemType> ,dependencies:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <ResourceLocationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbc790usize)as*mut u8,();
+(ResourceLocationData)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(keys),(::unity2::Il2CppString)::core::convert::Into::into(id),(::unity2::SystemType)::core::convert::Into::into(provider),(::unity2::SystemType)::core::convert::Into::into(t),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(dependencies))}
+}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata")]
-impl < __T : IResourceLocationData > IResourceLocationDataMethods for __T { }
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-resourcelocationdata")]impl<__T:IResourceLocationData>IResourceLocationDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata")]
-impl ResourceLocationData { pub fn get_keys_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceLocationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_internal_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceLocationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_provider_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceLocationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_dependencies_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceLocationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_resource_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceLocationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceLocationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceLocationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ResourceLocationData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-resourcelocationdata")]impl ResourceLocationData{pub fn get_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_internal_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_provider_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_resource_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata")]
-impl ResourceLocationData {
-# [doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::SystemType, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"] pub fn new (keys : :: unity2 :: Array < :: unity2 :: Il2CppString > , id : :: unity2 :: Il2CppString , provider : :: unity2 :: SystemType , t : :: unity2 :: SystemType , dependencies : :: unity2 :: Array < :: unity2 :: Il2CppString >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ResourceLocationData) , :: core :: stringify ! (new) ,)) ; < Self as IResourceLocationDataMethods > :: ctor (this , keys , id , provider , t , dependencies) ; this }
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-resourcelocationdata")]impl ResourceLocationData{#[doc="`.ctor(::unity2::Array<::unity2::Il2CppString>, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::SystemType, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new(keys: ::unity2::Array< ::unity2::Il2CppString> ,id: ::unity2::Il2CppString,provider: ::unity2::SystemType,t: ::unity2::SystemType,dependencies: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ResourceLocationData), ::core::stringify!(new),));
+ <Self as IResourceLocationDataMethods> ::ctor(this,keys,id,provider,t,dependencies);
+this}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata")]

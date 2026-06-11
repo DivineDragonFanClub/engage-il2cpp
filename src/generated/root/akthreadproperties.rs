@@ -4,38 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akthreadproperties/AkThreadProperties.md"))] # [:: unity2 :: class (namespace = "" , name = "AkThreadProperties")] # [parent (crate :: system :: object :: Object)] pub struct AkThreadProperties {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akthreadproperties/AkThreadProperties.md"))]#[::unity2::class(namespace="",name="AkThreadProperties")]#[parent(crate::system::object::Object)]pub struct AkThreadProperties{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-akthreadproperties-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akthreadproperties")]
-impl AkThreadProperties { # [doc = "`getCPtr(crate::root::akthreadproperties::AkThreadProperties)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: akthreadproperties :: AkThreadProperties >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: akthreadproperties :: AkThreadProperties , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d14b70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akthreadproperties")]impl AkThreadProperties{#[doc="`getCPtr(crate::root::akthreadproperties::AkThreadProperties)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akthreadproperties::AkThreadProperties>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d14b70usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::akthreadproperties::AkThreadProperties)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-akthreadproperties")]
-pub trait IAkThreadPropertiesMethods : IAkThreadProperties { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d26210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d26250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d26280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d262f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_nPriority(i32)` overload"] fn set_n_priority (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d26470usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_nPriority()` overload"] fn get_n_priority (self ,) -> i32 { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d264f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_uStackSize(u32)` overload"] fn set_u_stack_size (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d26560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_uStackSize()` overload"] fn get_u_stack_size (self ,) -> u32 { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d265e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_iIdealCore(i32)` overload"] fn set_i_ideal_core (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d26650usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_iIdealCore()` overload"] fn get_i_ideal_core (self ,) -> i32 { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d266d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_affinityMask(u32)` overload"] fn set_affinity_mask (self , value : impl :: core :: convert :: Into < u32 >) -> () { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , u32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d26740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_affinityMask()` overload"] fn get_affinity_mask (self ,) -> u32 { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , :: unity2 :: OptionalMethod ,) -> u32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d267c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkThreadProperties as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkThreadProperties , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d26830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akthreadproperties")]pub trait IAkThreadPropertiesMethods:IAkThreadProperties{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d26210usize)as*mut u8,();
+(AkThreadProperties)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d26250usize)as*mut u8,();
+(AkThreadProperties)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d26280usize)as*mut u8,();
+(AkThreadProperties)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d262f0usize)as*mut u8,();
+(AkThreadProperties)__receiver)}
+}
+#[doc="`set_nPriority(i32)` overload"]fn set_n_priority(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d26470usize)as*mut u8,();
+(AkThreadProperties)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_nPriority()` overload"]fn get_n_priority(self,)->i32{unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d264f0usize)as*mut u8,i32;
+(AkThreadProperties)__receiver)}
+}
+#[doc="`set_uStackSize(u32)` overload"]fn set_u_stack_size(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d26560usize)as*mut u8,();
+(AkThreadProperties)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_uStackSize()` overload"]fn get_u_stack_size(self,)->u32{unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d265e0usize)as*mut u8,u32;
+(AkThreadProperties)__receiver)}
+}
+#[doc="`set_iIdealCore(i32)` overload"]fn set_i_ideal_core(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d26650usize)as*mut u8,();
+(AkThreadProperties)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_iIdealCore()` overload"]fn get_i_ideal_core(self,)->i32{unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d266d0usize)as*mut u8,i32;
+(AkThreadProperties)__receiver)}
+}
+#[doc="`set_affinityMask(u32)` overload"]fn set_affinity_mask(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d26740usize)as*mut u8,();
+(AkThreadProperties)__receiver,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_affinityMask()` overload"]fn get_affinity_mask(self,)->u32{unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d267c0usize)as*mut u8,u32;
+(AkThreadProperties)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkThreadProperties as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d26830usize)as*mut u8,();
+(AkThreadProperties)__receiver)}
+}
+}
 
-#[cfg(feature = "root-akthreadproperties")]
-impl < __T : IAkThreadProperties > IAkThreadPropertiesMethods for __T { }
+#[cfg(feature="root-akthreadproperties")]impl<__T:IAkThreadProperties>IAkThreadPropertiesMethods for __T{}
 
-#[cfg(feature = "root-akthreadproperties")]
-impl AkThreadProperties { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_n_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_n_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_u_stack_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_u_stack_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_i_ideal_core_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_i_ideal_core_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_affinity_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_affinity_mask_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkThreadProperties as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="root-akthreadproperties")]impl AkThreadProperties{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_n_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_n_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_u_stack_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_u_stack_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_i_ideal_core_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_i_ideal_core_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_affinity_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_affinity_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "root-akthreadproperties")]
-impl AkThreadProperties {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkThreadProperties) , :: core :: stringify ! (new) ,)) ; < Self as IAkThreadPropertiesMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkThreadProperties) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkThreadPropertiesMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-akthreadproperties")]impl AkThreadProperties{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkThreadProperties), ::core::stringify!(new),));
+ <Self as IAkThreadPropertiesMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkThreadProperties), ::core::stringify!(new_2),));
+ <Self as IAkThreadPropertiesMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-akthreadproperties")]

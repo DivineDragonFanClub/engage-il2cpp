@@ -4,23 +4,25 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/playerprefsutility/PlayerPrefsUtility.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PlayerPrefsUtility")] # [parent (crate :: system :: object :: Object)] pub struct PlayerPrefsUtility {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/playerprefsutility/PlayerPrefsUtility.md"))]#[::unity2::class(namespace="Combat",name="PlayerPrefsUtility")]#[parent(crate::system::object::Object)]pub struct PlayerPrefsUtility{}
 
 }
 
 #[cfg(feature = "combat-playerprefsutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-playerprefsutility")]
-impl PlayerPrefsUtility { # [doc = "`GetKeys()` overload"] pub fn get_keys () -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2814460usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-playerprefsutility")]impl PlayerPrefsUtility{#[doc="`GetKeys()` overload"]pub fn get_keys()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2814460usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
+)}
+}
+}
 
-#[cfg(feature = "combat-playerprefsutility")]
-impl PlayerPrefsUtility { pub fn get_keys_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PlayerPrefsUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-playerprefsutility")]impl PlayerPrefsUtility{pub fn get_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature = "combat-playerprefsutility")]
 #[doc(hidden)]

@@ -4,210 +4,206 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: collections :: generic :: dictionary_2 :: { Dictionary_2 , IDictionary_2 }
- ;
- use crate :: system :: delegate :: { Delegate , IDelegate }
- ;
- use crate :: system :: multicastdelegate :: { IMulticastDelegate , MulticastDelegate }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::collections::generic::dictionary_2::{Dictionary_2,IDictionary_2}
+;
+use crate::system::delegate::{Delegate,IDelegate}
+;
+use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainGroups.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.TerrainAPI" , name = "TerrainUtility.TerrainGroups")] # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap >)] pub struct TerrainUtility_TerrainGroups {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.TerrainAPI" , name = "TerrainUtility.TerrainMap")] # [parent (crate :: system :: object :: Object)] pub struct TerrainUtility_TerrainMap {
-# [offset (16)] # [rename (name = "m_patchSize")] pub m_patch_size : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (28)] # [rename (name = "m_errorCode")] pub m_error_code : crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_ErrorCode ,
-# [offset (32)] # [rename (name = "m_terrainTiles")] pub m_terrain_tiles : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TileCoord , crate :: unity_engine :: terrain :: Terrain > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_ErrorCode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TerrainUtility_TerrainMap_ErrorCode{pub value:i32,}
+impl::unity2::ClassIdentity for TerrainUtility_TerrainMap_ErrorCode{const NAMESPACE: &'static str="UnityEngine.Experimental.TerrainAPI";
+const NAME: &'static str="TerrainUtility.TerrainMap.ErrorCode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TerrainUtility_TerrainMap_ErrorCode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TerrainUtility_TerrainMap_ErrorCode{pub fn ok()->Self{Self{value:0}
+}
+pub fn overlapping()->Self{Self{value:1}
+}
+pub fn size_mismatch()->Self{Self{value:4}
+}
+pub fn edge_alignment_mismatch()->Self{Self{value:8}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_ErrorCode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TerrainUtility_TerrainMap_ErrorCode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TileCoord.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TerrainUtility_TerrainMap_TileCoord{pub tile_x:i32,pub tile_z:i32,}
+impl::unity2::ClassIdentity for TerrainUtility_TerrainMap_TileCoord{const NAMESPACE: &'static str="UnityEngine.Experimental.TerrainAPI";
+const NAME: &'static str="TerrainUtility.TerrainMap.TileCoord";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TerrainUtility_TerrainMap_TileCoord{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-impl  ::unity2::ClassIdentity for TerrainUtility_TerrainMap_ErrorCode  {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.TerrainAPI";
-
-    const NAME: &'static str = "TerrainUtility.TerrainMap.ErrorCode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainGroups.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.TerrainAPI",name="TerrainUtility.TerrainGroups")]#[parent(crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap>)]pub struct TerrainUtility_TerrainGroups{}
 
 
-impl  ::unity2::IlType for TerrainUtility_TerrainMap_ErrorCode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.TerrainAPI",name="TerrainUtility.TerrainMap")]#[parent(crate::system::object::Object)]pub struct TerrainUtility_TerrainMap{#[offset(16)]#[rename(name="m_patchSize")]pub m_patch_size:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="m_errorCode")]pub m_error_code:crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_ErrorCode, #[offset(32)]#[rename(name="m_terrainTiles")]pub m_terrain_tiles:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TileCoord,crate::unity_engine::terrain::Terrain> ,}
 
 
-impl  TerrainUtility_TerrainMap_ErrorCode  {
-    pub fn ok() -> Self {
-        Self { value: 0 }
-
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.TerrainAPI",name="TerrainUtility")]#[parent(crate::system::object::Object)]pub struct TerrainUtility{}
 
 
-    pub fn overlapping() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn size_mismatch() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn edge_alignment_mismatch() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TerrainFilter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.TerrainAPI" , name = "TerrainUtility.TerrainMap.TerrainFilter")] # [parent (crate :: system :: multicastdelegate :: MulticastDelegate)] pub struct TerrainUtility_TerrainMap_TerrainFilter {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Experimental.TerrainAPI" , name = "TerrainUtility")] # [parent (crate :: system :: object :: Object)] pub struct TerrainUtility {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TileCoord.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TerrainUtility_TerrainMap_TileCoord {
-    pub tile_x: i32,
-    pub tile_z: i32,
-}
-
-
-impl ::unity2::ClassIdentity for TerrainUtility_TerrainMap_TileCoord {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.TerrainAPI";
-
-    const NAME: &'static str = "TerrainUtility.TerrainMap.TileCoord";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TerrainUtility_TerrainMap_TileCoord {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TerrainFilter.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.TerrainAPI",name="TerrainUtility.TerrainMap.TerrainFilter")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct TerrainUtility_TerrainMap_TerrainFilter{}
 
 }
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-pub trait ITerrainUtility_TerrainGroupsMethods : ITerrainUtility_TerrainGroups { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainUtility_TerrainGroups as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainUtility_TerrainGroups , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2a320usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl < __T : ITerrainUtility_TerrainGroups > ITerrainUtility_TerrainGroupsMethods for __T { }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainGroups { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainGroups as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainGroups {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainUtility_TerrainGroups) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainUtility_TerrainGroupsMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap_TileCoord{#[doc="`.ctor(i32, i32)` overload"]pub fn ctor(&mut self,tile_x:impl::core::convert::Into<i32> ,tile_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2af00usize)as*mut u8,();
+(*mut TerrainUtility_TerrainMap_TileCoord)self as*mut TerrainUtility_TerrainMap_TileCoord,(i32)::core::convert::Into::into(tile_x),(i32)::core::convert::Into::into(tile_z))}
+}
 }
 
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap { # [doc = "`CreateFromPlacement(crate::unity_engine::terrain::Terrain, crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter, bool)` overload"] pub fn create_from_placement (origin_terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain > , filter : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter > , full_validation : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: terrain :: Terrain , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2a3b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (origin_terrain) , :: core :: convert :: Into :: into (filter) , :: core :: convert :: Into :: into (full_validation) , :: core :: option :: Option :: None) } } } # [doc = "`CreateFromPlacement(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter, bool)` overload"] pub fn create_from_placement_2 (grid_origin : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , grid_size : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 > , filter : impl :: core :: convert :: Into < crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter > , full_validation : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: vector2 :: Vector2 , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_TerrainFilter , bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2af20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (grid_origin) , :: core :: convert :: Into :: into (grid_size) , :: core :: convert :: Into :: into (filter) , :: core :: convert :: Into :: into (full_validation) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-pub trait ITerrainUtility_TerrainMapMethods : ITerrainUtility_TerrainMap { # [doc = "`GetTerrain(i32, i32)` overload"] fn get_terrain (self , tile_x : impl :: core :: convert :: Into < i32 > , tile_z : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: terrain :: Terrain { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainUtility_TerrainMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: terrain :: Terrain = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2ab90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tile_x) , :: core :: convert :: Into :: into (tile_z) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainUtility_TerrainMap , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2b330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddTerrainInternal(i32, i32, crate::unity_engine::terrain::Terrain)` overload"] fn add_terrain_internal (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> () { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainUtility_TerrainMap , i32 , i32 , crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2b9c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (terrain) , :: core :: option :: Option :: None) } } } # [doc = "`TryToAddTerrain(i32, i32, crate::unity_engine::terrain::Terrain)` overload"] fn try_to_add_terrain (self , tile_x : impl :: core :: convert :: Into < i32 > , tile_z : impl :: core :: convert :: Into < i32 > , terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> bool { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainUtility_TerrainMap , i32 , i32 , crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2b720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tile_x) , :: core :: convert :: Into :: into (tile_z) , :: core :: convert :: Into :: into (terrain) , :: core :: option :: Option :: None) } } } # [doc = "`ValidateTerrain(i32, i32)` overload"] fn validate_terrain (self , tile_x : impl :: core :: convert :: Into < i32 > , tile_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainUtility_TerrainMap , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2bb10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (tile_x) , :: core :: convert :: Into :: into (tile_z) , :: core :: option :: Option :: None) } } } # [doc = "`Validate()` overload"] fn validate (self ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_ErrorCode { unsafe { let __receiver = < TerrainUtility_TerrainMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainUtility_TerrainMap , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap_ErrorCode = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2b890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl < __T : ITerrainUtility_TerrainMap > ITerrainUtility_TerrainMapMethods for __T { }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap { pub fn get_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_from_placement_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_from_placement_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn add_terrain_internal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn try_to_add_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn validate_terrain_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainUtility_TerrainMap) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainUtility_TerrainMapMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap_TileCoord{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-pub trait ITerrainUtility_TerrainMap_TerrainFilterMethods : ITerrainUtility_TerrainMap_TerrainFilter { # [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"] fn ctor (self , object : impl :: core :: convert :: Into < crate :: system :: object :: Object > , method : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainUtility_TerrainMap_TerrainFilter , crate :: system :: object :: Object , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2a390usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (object) , :: core :: convert :: Into :: into (method) , :: core :: option :: Option :: None) } } } # [doc = "`Invoke(crate::unity_engine::terrain::Terrain)` overload"] fn invoke (self , terrain : impl :: core :: convert :: Into < crate :: unity_engine :: terrain :: Terrain >) -> bool { unsafe { let __receiver = < TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainUtility_TerrainMap_TerrainFilter , crate :: unity_engine :: terrain :: Terrain , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2b3c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (terrain) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl < __T : ITerrainUtility_TerrainMap_TerrainFilter > ITerrainUtility_TerrainMap_TerrainFilterMethods for __T { }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap_TerrainFilter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap_TerrainFilter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap_TerrainFilter {
-# [doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"] pub fn new (object : crate :: system :: object :: Object , method : :: unity2 :: IntPtr) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainUtility_TerrainMap_TerrainFilter) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainUtility_TerrainMap_TerrainFilterMethods > :: ctor (this , object , method) ; this }
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]pub trait ITerrainUtility_TerrainGroupsMethods:ITerrainUtility_TerrainGroups{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainUtility_TerrainGroups as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2a320usize)as*mut u8,();
+(TerrainUtility_TerrainGroups)__receiver)}
+}
 }
 
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility { # [doc = "`HasValidTerrains()` overload"] pub fn has_valid_terrains () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29df0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ClearConnectivity()` overload"] pub fn clear_connectivity () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29e70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CollectTerrains(bool)` overload"] pub fn collect_terrains (only_auto_connected_terrains : impl :: core :: convert :: Into < bool >) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainGroups { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainGroups = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f29f60usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (only_auto_connected_terrains) , :: core :: option :: Option :: None) } } } # [doc = "`AutoConnect()` overload"] pub fn auto_connect () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2a6e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl<__T:ITerrainUtility_TerrainGroups>ITerrainUtility_TerrainGroupsMethods for __T{}
 
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility { pub fn has_valid_terrains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_connectivity_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn collect_terrains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn auto_connect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainGroups{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap_TileCoord { # [doc = "`.ctor(i32, i32)` overload"] pub fn ctor (& mut self , tile_x : impl :: core :: convert :: Into < i32 > , tile_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TerrainUtility_TerrainMap_TileCoord , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f2af00usize) as * mut u8) ; __inner (self as * mut TerrainUtility_TerrainMap_TileCoord , :: core :: convert :: Into :: into (tile_x) , :: core :: convert :: Into :: into (tile_z) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainGroups{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainUtility_TerrainGroups), ::core::stringify!(new),));
+ <Self as ITerrainUtility_TerrainGroupsMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainMap_TileCoord { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainUtility_TerrainMap_TileCoord as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap{#[doc="`CreateFromPlacement(crate::unity_engine::terrain::Terrain, crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter, bool)` overload"]pub fn create_from_placement(origin_terrain:impl::core::convert::Into<crate::unity_engine::terrain::Terrain> ,filter:impl::core::convert::Into<crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter> ,full_validation:impl::core::convert::Into<bool>)->crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2a3b0usize)as*mut u8,crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap;
+(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(origin_terrain),(crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter)::core::convert::Into::into(filter),(bool)::core::convert::Into::into(full_validation))}
+}
+#[doc="`CreateFromPlacement(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter, bool)` overload"]pub fn create_from_placement_2(grid_origin:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,grid_size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,filter:impl::core::convert::Into<crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter> ,full_validation:impl::core::convert::Into<bool>)->crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2af20usize)as*mut u8,crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap;
+(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(grid_origin),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(grid_size),(crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_TerrainFilter)::core::convert::Into::into(filter),(bool)::core::convert::Into::into(full_validation))}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]pub trait ITerrainUtility_TerrainMapMethods:ITerrainUtility_TerrainMap{#[doc="`GetTerrain(i32, i32)` overload"]fn get_terrain(self,tile_x:impl::core::convert::Into<i32> ,tile_z:impl::core::convert::Into<i32>)->crate::unity_engine::terrain::Terrain{unsafe{let __receiver= <TerrainUtility_TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2ab90usize)as*mut u8,crate::unity_engine::terrain::Terrain;
+(TerrainUtility_TerrainMap)__receiver,(i32)::core::convert::Into::into(tile_x),(i32)::core::convert::Into::into(tile_z))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainUtility_TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2b330usize)as*mut u8,();
+(TerrainUtility_TerrainMap)__receiver)}
+}
+#[doc="`AddTerrainInternal(i32, i32, crate::unity_engine::terrain::Terrain)` overload"]fn add_terrain_internal(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<crate::unity_engine::terrain::Terrain>)->(){unsafe{let __receiver= <TerrainUtility_TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2b9c0usize)as*mut u8,();
+(TerrainUtility_TerrainMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(terrain))}
+}
+#[doc="`TryToAddTerrain(i32, i32, crate::unity_engine::terrain::Terrain)` overload"]fn try_to_add_terrain(self,tile_x:impl::core::convert::Into<i32> ,tile_z:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<crate::unity_engine::terrain::Terrain>)->bool{unsafe{let __receiver= <TerrainUtility_TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2b720usize)as*mut u8,bool;
+(TerrainUtility_TerrainMap)__receiver,(i32)::core::convert::Into::into(tile_x),(i32)::core::convert::Into::into(tile_z),(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(terrain))}
+}
+#[doc="`ValidateTerrain(i32, i32)` overload"]fn validate_terrain(self,tile_x:impl::core::convert::Into<i32> ,tile_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TerrainUtility_TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2bb10usize)as*mut u8,();
+(TerrainUtility_TerrainMap)__receiver,(i32)::core::convert::Into::into(tile_x),(i32)::core::convert::Into::into(tile_z))}
+}
+#[doc="`Validate()` overload"]fn validate(self,)->crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_ErrorCode{unsafe{let __receiver= <TerrainUtility_TerrainMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2b890usize)as*mut u8,crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainMap_ErrorCode;
+(TerrainUtility_TerrainMap)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl<__T:ITerrainUtility_TerrainMap>ITerrainUtility_TerrainMapMethods for __T{}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap{pub fn get_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_from_placement_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_from_placement_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_terrain_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn try_to_add_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn validate_terrain_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainUtility_TerrainMap), ::core::stringify!(new),));
+ <Self as ITerrainUtility_TerrainMapMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility{#[doc="`HasValidTerrains()` overload"]pub fn has_valid_terrains()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f29df0usize)as*mut u8,bool;
+)}
+}
+#[doc="`ClearConnectivity()` overload"]pub fn clear_connectivity()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f29e70usize)as*mut u8,();
+)}
+}
+#[doc="`CollectTerrains(bool)` overload"]pub fn collect_terrains(only_auto_connected_terrains:impl::core::convert::Into<bool>)->crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainGroups{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f29f60usize)as*mut u8,crate::unity_engine::experimental::terrain_api::terrainutility::TerrainUtility_TerrainGroups;
+(bool)::core::convert::Into::into(only_auto_connected_terrains))}
+}
+#[doc="`AutoConnect()` overload"]pub fn auto_connect()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2a6e0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility{pub fn has_valid_terrains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_connectivity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn collect_terrains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn auto_connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]pub trait ITerrainUtility_TerrainMap_TerrainFilterMethods:ITerrainUtility_TerrainMap_TerrainFilter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TerrainUtility_TerrainMap_TerrainFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2a390usize)as*mut u8,();
+(TerrainUtility_TerrainMap_TerrainFilter)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::terrain::Terrain)` overload"]fn invoke(self,terrain:impl::core::convert::Into<crate::unity_engine::terrain::Terrain>)->bool{unsafe{let __receiver= <TerrainUtility_TerrainMap_TerrainFilter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2b3c0usize)as*mut u8,bool;
+(TerrainUtility_TerrainMap_TerrainFilter)__receiver,(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(terrain))}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl<__T:ITerrainUtility_TerrainMap_TerrainFilter>ITerrainUtility_TerrainMap_TerrainFilterMethods for __T{}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap_TerrainFilter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]impl TerrainUtility_TerrainMap_TerrainFilter{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainUtility_TerrainMap_TerrainFilter), ::core::stringify!(new),));
+ <Self as ITerrainUtility_TerrainMap_TerrainFilterMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TerrainUtility_TerrainMap_ErrorCode;
+    pub use super::TerrainUtility_TerrainMap_TileCoord;
     pub use super::TerrainUtility_TerrainGroups;
     pub use super::ITerrainUtility_TerrainGroups;
     pub use super::ITerrainUtility_TerrainGroupsMethods;
     pub use super::TerrainUtility_TerrainMap;
     pub use super::ITerrainUtility_TerrainMap;
     pub use super::ITerrainUtility_TerrainMapMethods;
-    pub use super::TerrainUtility_TerrainMap_ErrorCode;
+    pub use super::TerrainUtility;
+    pub use super::ITerrainUtility;
     pub use super::TerrainUtility_TerrainMap_TerrainFilter;
     pub use super::ITerrainUtility_TerrainMap_TerrainFilter;
     pub use super::ITerrainUtility_TerrainMap_TerrainFilterMethods;
-    pub use super::TerrainUtility;
-    pub use super::ITerrainUtility;
-    pub use super::TerrainUtility_TerrainMap_TileCoord;
     pub use crate::system::collections::generic::dictionary_2::IDictionary_2;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

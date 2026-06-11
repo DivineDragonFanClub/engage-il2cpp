@@ -4,53 +4,102 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiiboaccessorymenucontent/AmiiboAccessoryMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "AmiiboAccessoryMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct AmiiboAccessoryMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_HelpObj")] pub m_help_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (240)] # [rename (name = "m_HelpAccessoryName")] pub m_help_accessory_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (248)] # [rename (name = "m_HelpAccessoryHelp")] pub m_help_accessory_help : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (256)] # [rename (name = "m_HelpPartsIcon")] pub m_help_parts_icon : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (264)] # [rename (name = "m_HelpPartsName")] pub m_help_parts_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (272)] # [rename (name = "m_HelpNgObj")] pub m_help_ng_obj : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (280)] # [rename (name = "m_TicketValue")] pub m_ticket_value : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (288)] # [rename (name = "m_UnitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiiboaccessorymenucontent/AmiiboAccessoryMenuContent.md"))]#[::unity2::class(namespace="App",name="AmiiboAccessoryMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct AmiiboAccessoryMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_HelpObj")]pub m_help_obj:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_HelpAccessoryName")]pub m_help_accessory_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_HelpAccessoryHelp")]pub m_help_accessory_help:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_HelpPartsIcon")]pub m_help_parts_icon:crate::unity_engine::ui::image::Image, #[offset(264)]#[rename(name="m_HelpPartsName")]pub m_help_parts_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_HelpNgObj")]pub m_help_ng_obj:crate::unity_engine::gameobject::GameObject, #[offset(280)]#[rename(name="m_TicketValue")]pub m_ticket_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-amiiboaccessorymenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-amiiboaccessorymenucontent")]
-impl AmiiboAccessoryMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d318d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d31970usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d319f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: amiiboaccessorymenucontent :: AmiiboAccessoryMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: amiiboaccessorymenucontent :: AmiiboAccessoryMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2ee10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiiboaccessorymenucontent")]impl AmiiboAccessoryMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d318d0usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d31970usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d319f0usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::amiiboaccessorymenucontent::AmiiboAccessoryMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2ee10usize)as*mut u8,crate::app::amiiboaccessorymenucontent::AmiiboAccessoryMenuContent;
+)}
+}
+}
 
-#[cfg(feature = "app-amiiboaccessorymenucontent")]
-pub trait IAmiiboAccessoryMenuContentMethods : IAmiiboAccessoryMenuContent { # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < AmiiboAccessoryMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboAccessoryMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d31a70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < AmiiboAccessoryMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboAccessoryMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d31ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AfterBuild()` overload"] fn after_build (self ,) -> () { unsafe { let __receiver = < AmiiboAccessoryMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboAccessoryMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d31b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < AmiiboAccessoryMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboAccessoryMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d31b80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateTicketValue()` overload"] fn update_ticket_value (self ,) -> () { unsafe { let __receiver = < AmiiboAccessoryMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboAccessoryMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d311e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`HideMenuInfo()` overload"] fn hide_menu_info (self ,) -> () { unsafe { let __receiver = < AmiiboAccessoryMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboAccessoryMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2f060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetMenuInfo(crate::app::accessorydata::AccessoryData, bool)` overload"] fn set_menu_info (self , data : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , is_ng : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AmiiboAccessoryMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboAccessoryMenuContent , crate :: app :: accessorydata :: AccessoryData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d30880usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (is_ng) , :: core :: option :: Option :: None) } } } # [doc = "`SetUnitName(::unity2::Il2CppString)` overload"] fn set_unit_name (self , unit_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AmiiboAccessoryMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboAccessoryMenuContent , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d2f500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit_name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AmiiboAccessoryMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AmiiboAccessoryMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d31c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-amiiboaccessorymenucontent")]pub trait IAmiiboAccessoryMenuContentMethods:IAmiiboAccessoryMenuContent{#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <AmiiboAccessoryMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d31a70usize)as*mut u8,f32;
+(AmiiboAccessoryMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <AmiiboAccessoryMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d31ae0usize)as*mut u8,f32;
+(AmiiboAccessoryMenuContent)__receiver)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <AmiiboAccessoryMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d31b50usize)as*mut u8,();
+(AmiiboAccessoryMenuContent)__receiver)}
+}
+#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <AmiiboAccessoryMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d31b80usize)as*mut u8,f32;
+(AmiiboAccessoryMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`UpdateTicketValue()` overload"]fn update_ticket_value(self,)->(){unsafe{let __receiver= <AmiiboAccessoryMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d311e0usize)as*mut u8,();
+(AmiiboAccessoryMenuContent)__receiver)}
+}
+#[doc="`HideMenuInfo()` overload"]fn hide_menu_info(self,)->(){unsafe{let __receiver= <AmiiboAccessoryMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2f060usize)as*mut u8,();
+(AmiiboAccessoryMenuContent)__receiver)}
+}
+#[doc="`SetMenuInfo(crate::app::accessorydata::AccessoryData, bool)` overload"]fn set_menu_info(self,data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,is_ng:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AmiiboAccessoryMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d30880usize)as*mut u8,();
+(AmiiboAccessoryMenuContent)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(data),(bool)::core::convert::Into::into(is_ng))}
+}
+#[doc="`SetUnitName(::unity2::Il2CppString)` overload"]fn set_unit_name(self,unit_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AmiiboAccessoryMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d2f500usize)as*mut u8,();
+(AmiiboAccessoryMenuContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(unit_name))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboAccessoryMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d31c70usize)as*mut u8,();
+(AmiiboAccessoryMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-amiiboaccessorymenucontent")]
-impl < __T : IAmiiboAccessoryMenuContent > IAmiiboAccessoryMenuContentMethods for __T { }
+#[cfg(feature="app-amiiboaccessorymenucontent")]impl<__T:IAmiiboAccessoryMenuContent>IAmiiboAccessoryMenuContentMethods for __T{}
 
-#[cfg(feature = "app-amiiboaccessorymenucontent")]
-impl AmiiboAccessoryMenuContent { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn after_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_ticket_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn hide_menu_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_menu_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_unit_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AmiiboAccessoryMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-amiiboaccessorymenucontent")]impl AmiiboAccessoryMenuContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_ticket_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn hide_menu_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_menu_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_unit_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-amiiboaccessorymenucontent")]
-impl AmiiboAccessoryMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AmiiboAccessoryMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IAmiiboAccessoryMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-amiiboaccessorymenucontent")]impl AmiiboAccessoryMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AmiiboAccessoryMenuContent), ::core::stringify!(new),));
+ <Self as IAmiiboAccessoryMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-amiiboaccessorymenucontent")]

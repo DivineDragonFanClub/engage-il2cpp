@@ -4,54 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlerecordlinesetter/BattleRecordLineSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "BattleRecordLineSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct BattleRecordLineSetter {
-# [offset (24)] # [rename (name = "InfoTurnCount")] pub info_turn_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "InfoTime")] pub info_time : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "InfoMVP")] pub info_mvp : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "ChapterNumber")] pub chapter_number : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "ChapterName")] pub chapter_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (64)] # [rename (name = "TurnCount")] pub turn_count : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (72)] # [rename (name = "Time")] pub time : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (80)] # [rename (name = "MVPSolo")] pub mvp_solo : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (88)] # [rename (name = "MVPSoloUnit")] pub mvp_solo_unit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (96)] # [rename (name = "MVPSoloImg")] pub mvp_solo_img : crate :: app :: uniticon :: UnitIcon ,
-# [offset (104)] # [rename (name = "MVPDuet")] pub mvp_duet : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (112)] # [rename (name = "MVPDuetUnit")] pub mvp_duet_unit : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (120)] # [rename (name = "MVPDuetEmblem")] pub mvp_duet_emblem : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (128)] # [rename (name = "MVPDuetUnitImg")] pub mvp_duet_unit_img : crate :: app :: uniticon :: UnitIcon ,
-# [offset (136)] # [rename (name = "MVPDuetEmblemImg")] pub mvp_duet_emblem_img : crate :: app :: uniticon :: UnitIcon ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlerecordlinesetter/BattleRecordLineSetter.md"))]#[::unity2::class(namespace="App",name="BattleRecordLineSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct BattleRecordLineSetter{#[offset(24)]#[rename(name="InfoTurnCount")]pub info_turn_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="InfoTime")]pub info_time:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="InfoMVP")]pub info_mvp:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="ChapterNumber")]pub chapter_number:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="ChapterName")]pub chapter_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(64)]#[rename(name="TurnCount")]pub turn_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="Time")]pub time:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="MVPSolo")]pub mvp_solo:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="MVPSoloUnit")]pub mvp_solo_unit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="MVPSoloImg")]pub mvp_solo_img:crate::app::uniticon::UnitIcon, #[offset(104)]#[rename(name="MVPDuet")]pub mvp_duet:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="MVPDuetUnit")]pub mvp_duet_unit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="MVPDuetEmblem")]pub mvp_duet_emblem:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="MVPDuetUnitImg")]pub mvp_duet_unit_img:crate::app::uniticon::UnitIcon, #[offset(136)]#[rename(name="MVPDuetEmblemImg")]pub mvp_duet_emblem_img:crate::app::uniticon::UnitIcon,}
 
 }
 
 #[cfg(feature = "app-battlerecordlinesetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-battlerecordlinesetter")]
-pub trait IBattleRecordLineSetterMethods : IBattleRecordLineSetter { # [doc = "`Set(crate::app::chapterrecord::ChapterRecord_Record)` overload"] fn set (self , rec : impl :: core :: convert :: Into < crate :: app :: chapterrecord :: ChapterRecord_Record >) -> () { unsafe { let __receiver = < BattleRecordLineSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordLineSetter , crate :: app :: chapterrecord :: ChapterRecord_Record , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8de70usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (rec) , :: core :: option :: Option :: None) } } } # [doc = "`SetData(::unity2::Il2CppString, i32, f32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"] fn set_data (self , cid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , turn : impl :: core :: convert :: Into < i32 > , time : impl :: core :: convert :: Into < f32 > , pid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , jid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , gid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < BattleRecordLineSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordLineSetter , :: unity2 :: Il2CppString , i32 , f32 , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8dfd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (cid) , :: core :: convert :: Into :: into (turn) , :: core :: convert :: Into :: into (time) , :: core :: convert :: Into :: into (pid) , :: core :: convert :: Into :: into (jid) , :: core :: convert :: Into :: into (gid) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BattleRecordLineSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BattleRecordLineSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1e8e7c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-battlerecordlinesetter")]pub trait IBattleRecordLineSetterMethods:IBattleRecordLineSetter{#[doc="`Set(crate::app::chapterrecord::ChapterRecord_Record)` overload"]fn set(self,rec:impl::core::convert::Into<crate::app::chapterrecord::ChapterRecord_Record>)->(){unsafe{let __receiver= <BattleRecordLineSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8de70usize)as*mut u8,();
+(BattleRecordLineSetter)__receiver,(crate::app::chapterrecord::ChapterRecord_Record)::core::convert::Into::into(rec))}
+}
+#[doc="`SetData(::unity2::Il2CppString, i32, f32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set_data(self,cid:impl::core::convert::Into< ::unity2::Il2CppString> ,turn:impl::core::convert::Into<i32> ,time:impl::core::convert::Into<f32> ,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,jid:impl::core::convert::Into< ::unity2::Il2CppString> ,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BattleRecordLineSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8dfd0usize)as*mut u8,();
+(BattleRecordLineSetter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cid),(i32)::core::convert::Into::into(turn),(f32)::core::convert::Into::into(time),(::unity2::Il2CppString)::core::convert::Into::into(pid),(::unity2::Il2CppString)::core::convert::Into::into(jid),(::unity2::Il2CppString)::core::convert::Into::into(gid))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleRecordLineSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8e7c0usize)as*mut u8,();
+(BattleRecordLineSetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-battlerecordlinesetter")]
-impl < __T : IBattleRecordLineSetter > IBattleRecordLineSetterMethods for __T { }
+#[cfg(feature="app-battlerecordlinesetter")]impl<__T:IBattleRecordLineSetter>IBattleRecordLineSetterMethods for __T{}
 
-#[cfg(feature = "app-battlerecordlinesetter")]
-impl BattleRecordLineSetter { pub fn set_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordLineSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordLineSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BattleRecordLineSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-battlerecordlinesetter")]impl BattleRecordLineSetter{pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-battlerecordlinesetter")]
-impl BattleRecordLineSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BattleRecordLineSetter) , :: core :: stringify ! (new) ,)) ; < Self as IBattleRecordLineSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-battlerecordlinesetter")]impl BattleRecordLineSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleRecordLineSetter), ::core::stringify!(new),));
+ <Self as IBattleRecordLineSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-battlerecordlinesetter")]

@@ -4,25 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/graphics/Graphics.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Graphics")] # [parent (crate :: system :: object :: Object)] pub struct Graphics {
-# [static_field] # [rename (name = "kMaxDrawMeshInstanceCount")] pub k_max_draw_mesh_instance_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/graphics/Graphics.md"))]#[::unity2::class(namespace="UnityEngine",name="Graphics")]#[parent(crate::system::object::Object)]pub struct Graphics{#[static_field]#[rename(name="kMaxDrawMeshInstanceCount")]pub k_max_draw_mesh_instance_count:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-graphics-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-graphics")]
-impl Graphics { # [doc = "`Internal_GetMaxDrawMeshInstanceCount()` overload"] pub fn internal_get_max_draw_mesh_instance_count () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c50070usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_activeTier()` overload"] pub fn get_active_tier () -> crate :: unity_engine :: rendering :: graphicstier :: GraphicsTier { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: graphicstier :: GraphicsTier = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c500b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_activeTier(crate::unity_engine::rendering::graphicstier::GraphicsTier)` overload"] pub fn set_active_tier (value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: graphicstier :: GraphicsTier >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: graphicstier :: GraphicsTier , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c500f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`GetPreserveFramebufferAlpha()` overload"] pub fn get_preserve_framebuffer_alpha () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c50140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetMinOpenGLESVersion()` overload"] pub fn get_min_open_gles_version () -> crate :: unity_engine :: rendering :: openglesversion :: OpenGLESVersion { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: openglesversion :: OpenGLESVersion = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c50210usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CopyTexture_Slice(crate::unity_engine::texture::Texture, i32, i32, crate::unity_engine::texture::Texture, i32, i32)` overload"] pub fn copy_texture_slice (src : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture > , src_element : impl :: core :: convert :: Into < i32 > , src_mip : impl :: core :: convert :: Into < i32 > , dst : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture > , dst_element : impl :: core :: convert :: Into < i32 > , dst_mip : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: texture :: Texture , i32 , i32 , crate :: unity_engine :: texture :: Texture , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c502e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (src) , :: core :: convert :: Into :: into (src_element) , :: core :: convert :: Into :: into (src_mip) , :: core :: convert :: Into :: into (dst) , :: core :: convert :: Into :: into (dst_element) , :: core :: convert :: Into :: into (dst_mip) , :: core :: option :: Option :: None) } } } # [doc = "`Internal_DrawTexture(*mutcrate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments)` overload"] pub fn internal_draw_texture () -> crate :: unity_engine :: internal_drawtexturearguments :: Internal_DrawTextureArguments { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: internal_drawtexturearguments :: Internal_DrawTextureArguments > :: uninit () ; { let __inner : extern "C" fn (* mut crate :: unity_engine :: internal_drawtexturearguments :: Internal_DrawTextureArguments , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c50360usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`CopyTexture(crate::unity_engine::texture::Texture, i32, i32, crate::unity_engine::texture::Texture, i32, i32)` overload"] pub fn copy_texture (src : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture > , src_element : impl :: core :: convert :: Into < i32 > , src_mip : impl :: core :: convert :: Into < i32 > , dst : impl :: core :: convert :: Into < crate :: unity_engine :: texture :: Texture > , dst_element : impl :: core :: convert :: Into < i32 > , dst_mip : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: texture :: Texture , i32 , i32 , crate :: unity_engine :: texture :: Texture , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c503b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (src) , :: core :: convert :: Into :: into (src_element) , :: core :: convert :: Into :: into (src_mip) , :: core :: convert :: Into :: into (dst) , :: core :: convert :: Into :: into (dst_element) , :: core :: convert :: Into :: into (dst_mip) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c50480usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-graphics")]impl Graphics{#[doc="`Internal_GetMaxDrawMeshInstanceCount()` overload"]pub fn internal_get_max_draw_mesh_instance_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c50070usize)as*mut u8,i32;
+)}
+}
+#[doc="`get_activeTier()` overload"]pub fn get_active_tier()->crate::unity_engine::rendering::graphicstier::GraphicsTier{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c500b0usize)as*mut u8,crate::unity_engine::rendering::graphicstier::GraphicsTier;
+)}
+}
+#[doc="`set_activeTier(crate::unity_engine::rendering::graphicstier::GraphicsTier)` overload"]pub fn set_active_tier(value:impl::core::convert::Into<crate::unity_engine::rendering::graphicstier::GraphicsTier>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c500f0usize)as*mut u8,();
+(crate::unity_engine::rendering::graphicstier::GraphicsTier)::core::convert::Into::into(value))}
+}
+#[doc="`GetPreserveFramebufferAlpha()` overload"]pub fn get_preserve_framebuffer_alpha()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c50140usize)as*mut u8,bool;
+)}
+}
+#[doc="`GetMinOpenGLESVersion()` overload"]pub fn get_min_open_gles_version()->crate::unity_engine::rendering::openglesversion::OpenGLESVersion{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c50210usize)as*mut u8,crate::unity_engine::rendering::openglesversion::OpenGLESVersion;
+)}
+}
+#[doc="`CopyTexture_Slice(crate::unity_engine::texture::Texture, i32, i32, crate::unity_engine::texture::Texture, i32, i32)` overload"]pub fn copy_texture_slice(src:impl::core::convert::Into<crate::unity_engine::texture::Texture> ,src_element:impl::core::convert::Into<i32> ,src_mip:impl::core::convert::Into<i32> ,dst:impl::core::convert::Into<crate::unity_engine::texture::Texture> ,dst_element:impl::core::convert::Into<i32> ,dst_mip:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c502e0usize)as*mut u8,();
+(crate::unity_engine::texture::Texture)::core::convert::Into::into(src),(i32)::core::convert::Into::into(src_element),(i32)::core::convert::Into::into(src_mip),(crate::unity_engine::texture::Texture)::core::convert::Into::into(dst),(i32)::core::convert::Into::into(dst_element),(i32)::core::convert::Into::into(dst_mip))}
+}
+#[doc="`Internal_DrawTexture(*mutcrate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments)` overload"]pub fn internal_draw_texture()->crate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c50360usize)as*mut u8,();
+(*mut crate::unity_engine::internal_drawtexturearguments::Internal_DrawTextureArguments)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`CopyTexture(crate::unity_engine::texture::Texture, i32, i32, crate::unity_engine::texture::Texture, i32, i32)` overload"]pub fn copy_texture(src:impl::core::convert::Into<crate::unity_engine::texture::Texture> ,src_element:impl::core::convert::Into<i32> ,src_mip:impl::core::convert::Into<i32> ,dst:impl::core::convert::Into<crate::unity_engine::texture::Texture> ,dst_element:impl::core::convert::Into<i32> ,dst_mip:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c503b0usize)as*mut u8,();
+(crate::unity_engine::texture::Texture)::core::convert::Into::into(src),(i32)::core::convert::Into::into(src_element),(i32)::core::convert::Into::into(src_mip),(crate::unity_engine::texture::Texture)::core::convert::Into::into(dst),(i32)::core::convert::Into::into(dst_element),(i32)::core::convert::Into::into(dst_mip))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c50480usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-graphics")]
-impl Graphics { pub fn internal_get_max_draw_mesh_instance_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Graphics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_active_tier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Graphics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_active_tier_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Graphics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_preserve_framebuffer_alpha_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Graphics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_min_open_gles_version_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Graphics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn copy_texture_slice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Graphics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn internal_draw_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Graphics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn copy_texture_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Graphics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Graphics as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="unity_engine-graphics")]impl Graphics{pub fn internal_get_max_draw_mesh_instance_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_active_tier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_active_tier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_preserve_framebuffer_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_min_open_gles_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn copy_texture_slice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn internal_draw_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn copy_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
 #[cfg(feature = "unity_engine-graphics")]
 #[doc(hidden)]

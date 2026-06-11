@@ -4,38 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainimporter/TerrainImporter.md"))] # [:: unity2 :: class (namespace = "App" , name = "TerrainImporter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct TerrainImporter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terrainimporter/TerrainImporter.md"))]#[::unity2::class(namespace="App",name="TerrainImporter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TerrainImporter{}
 
 }
 
 #[cfg(feature = "app-terrainimporter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-terrainimporter")]
-pub trait ITerrainImporterMethods : ITerrainImporter { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TerrainImporter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TerrainImporter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21e4400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-terrainimporter")]pub trait ITerrainImporterMethods:ITerrainImporter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainImporter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21e4400usize)as*mut u8,();
+(TerrainImporter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-terrainimporter")]
-impl < __T : ITerrainImporter > ITerrainImporterMethods for __T { }
+#[cfg(feature="app-terrainimporter")]impl<__T:ITerrainImporter>ITerrainImporterMethods for __T{}
 
-#[cfg(feature = "app-terrainimporter")]
-impl TerrainImporter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TerrainImporter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-terrainimporter")]impl TerrainImporter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-terrainimporter")]
-impl TerrainImporter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TerrainImporter) , :: core :: stringify ! (new) ,)) ; < Self as ITerrainImporterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-terrainimporter")]impl TerrainImporter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TerrainImporter), ::core::stringify!(new),));
+ <Self as ITerrainImporterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-terrainimporter")]

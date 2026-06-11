@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
+;
+use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/nointerpvector4parameter/NoInterpVector4Parameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "NoInterpVector4Parameter")] # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: vector4 :: Vector4 >)] pub struct NoInterpVector4Parameter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/nointerpvector4parameter/NoInterpVector4Parameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="NoInterpVector4Parameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::vector4::Vector4>)]pub struct NoInterpVector4Parameter{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpvector4parameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-nointerpvector4parameter")]
-pub trait INoInterpVector4ParameterMethods : INoInterpVector4Parameter { # [doc = "`.ctor(crate::unity_engine::vector4::Vector4, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector4 :: Vector4 > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < NoInterpVector4Parameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (NoInterpVector4Parameter , crate :: unity_engine :: vector4 :: Vector4 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30ac7f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-nointerpvector4parameter")]pub trait INoInterpVector4ParameterMethods:INoInterpVector4Parameter{#[doc="`.ctor(crate::unity_engine::vector4::Vector4, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::vector4::Vector4> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoInterpVector4Parameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac7f0usize)as*mut u8,();
+(NoInterpVector4Parameter)__receiver,(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-nointerpvector4parameter")]
-impl < __T : INoInterpVector4Parameter > INoInterpVector4ParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-nointerpvector4parameter")]impl<__T:INoInterpVector4Parameter>INoInterpVector4ParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-nointerpvector4parameter")]
-impl NoInterpVector4Parameter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < NoInterpVector4Parameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-nointerpvector4parameter")]impl NoInterpVector4Parameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-nointerpvector4parameter")]
-impl NoInterpVector4Parameter {
-# [doc = "`.ctor(crate::unity_engine::vector4::Vector4, bool)` — overload selector"] pub fn new (value : crate :: unity_engine :: vector4 :: Vector4 , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (NoInterpVector4Parameter) , :: core :: stringify ! (new) ,)) ; < Self as INoInterpVector4ParameterMethods > :: ctor (this , value , override_state) ; this }
+#[cfg(feature="unity_engine-rendering-nointerpvector4parameter")]impl NoInterpVector4Parameter{#[doc="`.ctor(crate::unity_engine::vector4::Vector4, bool)` — overload selector"]pub fn new(value:crate::unity_engine::vector4::Vector4,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(NoInterpVector4Parameter), ::core::stringify!(new),));
+ <Self as INoInterpVector4ParameterMethods> ::ctor(this,value,override_state);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpvector4parameter")]

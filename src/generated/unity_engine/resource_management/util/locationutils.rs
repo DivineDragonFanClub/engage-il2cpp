@@ -4,26 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/locationutils/LocationUtils.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.Util" , name = "LocationUtils")] # [parent (crate :: system :: object :: Object)] pub struct LocationUtils {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/locationutils/LocationUtils.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Util",name="LocationUtils")]#[parent(crate::system::object::Object)]pub struct LocationUtils{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-locationutils-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-util-locationutils")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __LocationUtils_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_location_equals { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type () , < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LocationUtils as :: unity2 :: ClassIdentity > :: class () , "LocationEquals" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LocationUtils as :: unity2 :: ClassIdentity > :: NAME , "LocationEquals" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dependencies_equal { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< LocationUtils as :: unity2 :: ClassIdentity > :: class () , "DependenciesEqual" , 2 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < LocationUtils as :: unity2 :: ClassIdentity > :: NAME , "DependenciesEqual" , e) , } } } }
+#[cfg(feature="unity_engine-resource_management-util-locationutils")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LocationUtils_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_location_equals{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type(), <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LocationUtils as::unity2::ClassIdentity> ::class(),"LocationEquals",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LocationUtils as::unity2::ClassIdentity> ::NAME,"LocationEquals",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_dependencies_equal{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>as::unity2::IlType> ::il_type(), <crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<LocationUtils as::unity2::ClassIdentity> ::class(),"DependenciesEqual",2,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <LocationUtils as::unity2::ClassIdentity> ::NAME,"DependenciesEqual",e),}
+}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-locationutils")]
-impl LocationUtils { # [doc = "`LocationEquals(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"] pub fn location_equals (loc1 : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , loc2 : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__LocationUtils_unity2_raw :: __lookup_location_equals :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (loc1) , :: core :: convert :: Into :: into (loc2) , :: core :: option :: Option :: None) } } } # [doc = "`DependenciesEqual(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"] pub fn dependencies_equal (deps1 : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > , deps2 : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute (__LocationUtils_unity2_raw :: __lookup_dependencies_equal :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (deps1) , :: core :: convert :: Into :: into (deps2) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-resource_management-util-locationutils")]impl LocationUtils{#[doc="`LocationEquals(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]pub fn location_equals(loc1:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,loc2:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->bool{unsafe{::unity2::il2cpp_call!(__LocationUtils_unity2_raw::__lookup_location_equals::get_method_info().method_ptr,bool;
+(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(loc1),(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(loc2))}
+}
+#[doc="`DependenciesEqual(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]pub fn dependencies_equal(deps1:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> > ,deps2:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> >)->bool{unsafe{::unity2::il2cpp_call!(__LocationUtils_unity2_raw::__lookup_dependencies_equal::get_method_info().method_ptr,bool;
+(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)::core::convert::Into::into(deps1),(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)::core::convert::Into::into(deps2))}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-util-locationutils")]
-impl LocationUtils { pub fn location_equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LocationUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dependencies_equal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LocationUtils as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-resource_management-util-locationutils")]impl LocationUtils{pub fn location_equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dependencies_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-util-locationutils")]
 #[doc(hidden)]

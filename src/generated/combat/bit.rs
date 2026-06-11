@@ -4,23 +4,37 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/bit/Bit.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Bit")] # [parent (crate :: system :: object :: Object)] pub struct Bit {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/bit/Bit.md"))]#[::unity2::class(namespace="Combat",name="Bit")]#[parent(crate::system::object::Object)]pub struct Bit{}
 
 }
 
 #[cfg(feature = "combat-bit-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-bit")]
-impl Bit { # [doc = "`Get(i32, i32, i32)` overload"] pub fn get (src_value : impl :: core :: convert :: Into < i32 > , bits : impl :: core :: convert :: Into < i32 > , shift : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29871c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (src_value) , :: core :: convert :: Into :: into (bits) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } } # [doc = "`GetSigned(i32, i32, i32)` overload"] pub fn get_signed (src_value : impl :: core :: convert :: Into < i32 > , bits : impl :: core :: convert :: Into < i32 > , shift : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29871e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (src_value) , :: core :: convert :: Into :: into (bits) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } } # [doc = "`Combine(i32, i32, i32, i32)` overload"] pub fn combine (src_value : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 > , bits : impl :: core :: convert :: Into < i32 > , shift : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2987200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (src_value) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (bits) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } } # [doc = "`Combine(i32, bool, i32)` overload"] pub fn combine_2 (src_value : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < bool > , shift : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , bool , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2987230usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (src_value) , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (shift) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-bit")]impl Bit{#[doc="`Get(i32, i32, i32)` overload"]pub fn get(src_value:impl::core::convert::Into<i32> ,bits:impl::core::convert::Into<i32> ,shift:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29871c0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(src_value),(i32)::core::convert::Into::into(bits),(i32)::core::convert::Into::into(shift))}
+}
+#[doc="`GetSigned(i32, i32, i32)` overload"]pub fn get_signed(src_value:impl::core::convert::Into<i32> ,bits:impl::core::convert::Into<i32> ,shift:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29871e0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(src_value),(i32)::core::convert::Into::into(bits),(i32)::core::convert::Into::into(shift))}
+}
+#[doc="`Combine(i32, i32, i32, i32)` overload"]pub fn combine(src_value:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<i32> ,bits:impl::core::convert::Into<i32> ,shift:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2987200usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(src_value),(i32)::core::convert::Into::into(value),(i32)::core::convert::Into::into(bits),(i32)::core::convert::Into::into(shift))}
+}
+#[doc="`Combine(i32, bool, i32)` overload"]pub fn combine_2(src_value:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<bool> ,shift:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2987230usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(src_value),(bool)::core::convert::Into::into(value),(i32)::core::convert::Into::into(shift))}
+}
+}
 
-#[cfg(feature = "combat-bit")]
-impl Bit { pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_signed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn combine_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn combine_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Bit as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-bit")]impl Bit{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_signed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn combine_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn combine_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "combat-bit")]
 #[doc(hidden)]

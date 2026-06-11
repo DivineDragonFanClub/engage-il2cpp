@@ -4,218 +4,189 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: layoutgroup :: { ILayoutGroup , LayoutGroup }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::layoutgroup::{ILayoutGroup,LayoutGroup}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Axis.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GridLayoutGroup_Axis  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Axis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GridLayoutGroup_Axis{pub value:i32,}
+impl::unity2::ClassIdentity for GridLayoutGroup_Axis{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="GridLayoutGroup.Axis";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GridLayoutGroup_Axis{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GridLayoutGroup_Axis{pub fn horizontal()->Self{Self{value:0}
+}
+pub fn vertical()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for GridLayoutGroup_Axis  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "GridLayoutGroup.Axis";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Constraint.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GridLayoutGroup_Constraint{pub value:i32,}
+impl::unity2::ClassIdentity for GridLayoutGroup_Constraint{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="GridLayoutGroup.Constraint";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GridLayoutGroup_Constraint{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GridLayoutGroup_Constraint{pub fn flexible()->Self{Self{value:0}
+}
+pub fn fixed_column_count()->Self{Self{value:1}
+}
+pub fn fixed_row_count()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::IlType for GridLayoutGroup_Axis  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Corner.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GridLayoutGroup_Corner{pub value:i32,}
+impl::unity2::ClassIdentity for GridLayoutGroup_Corner{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="GridLayoutGroup.Corner";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GridLayoutGroup_Corner{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GridLayoutGroup_Corner{pub fn upper_left()->Self{Self{value:0}
+}
+pub fn upper_right()->Self{Self{value:1}
+}
+pub fn lower_left()->Self{Self{value:2}
+}
+pub fn lower_right()->Self{Self{value:3}
+}
 }
 
 
-impl  GridLayoutGroup_Axis  {
-    pub fn horizontal() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn vertical() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Constraint.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GridLayoutGroup_Constraint  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GridLayoutGroup_Constraint  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "GridLayoutGroup.Constraint";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GridLayoutGroup_Constraint  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GridLayoutGroup_Constraint  {
-    pub fn flexible() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn fixed_column_count() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn fixed_row_count() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup_Corner.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct GridLayoutGroup_Corner  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for GridLayoutGroup_Corner  {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "GridLayoutGroup.Corner";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for GridLayoutGroup_Corner  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  GridLayoutGroup_Corner  {
-    pub fn upper_left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn upper_right() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn lower_left() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn lower_right() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "GridLayoutGroup")] # [parent (crate :: unity_engine :: ui :: layoutgroup :: LayoutGroup)] pub struct GridLayoutGroup {
-# [offset (88)] # [rename (name = "m_StartCorner")] pub m_start_corner : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner ,
-# [offset (92)] # [rename (name = "m_StartAxis")] pub m_start_axis : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis ,
-# [offset (96)] # [rename (name = "m_CellSize")] pub m_cell_size : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (104)] # [rename (name = "m_Spacing")] pub m_spacing : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (112)] # [rename (name = "m_Constraint")] pub m_constraint : crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint ,
-# [offset (116)] # [rename (name = "m_ConstraintCount")] pub m_constraint_count : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/gridlayoutgroup/GridLayoutGroup.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="GridLayoutGroup")]#[parent(crate::unity_engine::ui::layoutgroup::LayoutGroup)]pub struct GridLayoutGroup{#[offset(88)]#[rename(name="m_StartCorner")]pub m_start_corner:crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner, #[offset(92)]#[rename(name="m_StartAxis")]pub m_start_axis:crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis, #[offset(96)]#[rename(name="m_CellSize")]pub m_cell_size:crate::unity_engine::vector2::Vector2, #[offset(104)]#[rename(name="m_Spacing")]pub m_spacing:crate::unity_engine::vector2::Vector2, #[offset(112)]#[rename(name="m_Constraint")]pub m_constraint:crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint, #[offset(116)]#[rename(name="m_ConstraintCount")]pub m_constraint_count:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
-pub trait IGridLayoutGroupMethods : IGridLayoutGroup { # [doc = "`get_startCorner()` overload"] fn get_start_corner (self ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3191f50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_startCorner(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner)` overload"] fn set_start_corner (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Corner , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3191f60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_startAxis()` overload"] fn get_start_axis (self ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3191fc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_startAxis(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis)` overload"] fn set_start_axis (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Axis , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3191fd0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_cellSize()` overload"] fn get_cell_size (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_cellSize(crate::unity_engine::vector2::Vector2)` overload"] fn set_cell_size (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192040usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_spacing()` overload"] fn get_spacing (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31920b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_spacing(crate::unity_engine::vector2::Vector2)` overload"] fn set_spacing (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31920c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_constraint()` overload"] fn get_constraint (self ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_constraint(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint)` overload"] fn set_constraint (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , crate :: unity_engine :: ui :: gridlayoutgroup :: GridLayoutGroup_Constraint , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_constraintCount()` overload"] fn get_constraint_count (self ,) -> i32 { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31921a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_constraintCount(i32)` overload"] fn set_constraint_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31921b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputHorizontal()` overload"] fn calculate_layout_input_horizontal (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputVertical()` overload"] fn calculate_layout_input_vertical (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x31923d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLayoutHorizontal()` overload"] fn set_layout_horizontal (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetLayoutVertical()` overload"] fn set_layout_vertical (self ,) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192b30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetCellsAlongAxis(i32)` overload"] fn set_cells_along_axis (self , axis : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < GridLayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GridLayoutGroup , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3192560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (axis) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-gridlayoutgroup")]pub trait IGridLayoutGroupMethods:IGridLayoutGroup{#[doc="`get_startCorner()` overload"]fn get_start_corner(self,)->crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner{unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3191f50usize)as*mut u8,crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner;
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`set_startCorner(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner)` overload"]fn set_start_corner(self,value:impl::core::convert::Into<crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner>)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3191f60usize)as*mut u8,();
+(GridLayoutGroup)__receiver,(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Corner)::core::convert::Into::into(value))}
+}
+#[doc="`get_startAxis()` overload"]fn get_start_axis(self,)->crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis{unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3191fc0usize)as*mut u8,crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis;
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`set_startAxis(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis)` overload"]fn set_start_axis(self,value:impl::core::convert::Into<crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis>)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3191fd0usize)as*mut u8,();
+(GridLayoutGroup)__receiver,(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Axis)::core::convert::Into::into(value))}
+}
+#[doc="`get_cellSize()` overload"]fn get_cell_size(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192030usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`set_cellSize(crate::unity_engine::vector2::Vector2)` overload"]fn set_cell_size(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192040usize)as*mut u8,();
+(GridLayoutGroup)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_spacing()` overload"]fn get_spacing(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31920b0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`set_spacing(crate::unity_engine::vector2::Vector2)` overload"]fn set_spacing(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31920c0usize)as*mut u8,();
+(GridLayoutGroup)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_constraint()` overload"]fn get_constraint(self,)->crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint{unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192130usize)as*mut u8,crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint;
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`set_constraint(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint)` overload"]fn set_constraint(self,value:impl::core::convert::Into<crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint>)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192140usize)as*mut u8,();
+(GridLayoutGroup)__receiver,(crate::unity_engine::ui::gridlayoutgroup::GridLayoutGroup_Constraint)::core::convert::Into::into(value))}
+}
+#[doc="`get_constraintCount()` overload"]fn get_constraint_count(self,)->i32{unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31921a0usize)as*mut u8,i32;
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`set_constraintCount(i32)` overload"]fn set_constraint_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31921b0usize)as*mut u8,();
+(GridLayoutGroup)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192230usize)as*mut u8,();
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192280usize)as*mut u8,();
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x31923d0usize)as*mut u8,();
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192550usize)as*mut u8,();
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`SetLayoutVertical()` overload"]fn set_layout_vertical(self,)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192b30usize)as*mut u8,();
+(GridLayoutGroup)__receiver)}
+}
+#[doc="`SetCellsAlongAxis(i32)` overload"]fn set_cells_along_axis(self,axis:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GridLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3192560usize)as*mut u8,();
+(GridLayoutGroup)__receiver,(i32)::core::convert::Into::into(axis))}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
-impl < __T : IGridLayoutGroup > IGridLayoutGroupMethods for __T { }
+#[cfg(feature="unity_engine-ui-gridlayoutgroup")]impl<__T:IGridLayoutGroup>IGridLayoutGroupMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
-impl GridLayoutGroup { pub fn get_start_corner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_start_corner_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_start_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_start_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_cell_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_cell_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_spacing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_spacing_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_constraint_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_constraint_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_constraint_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_constraint_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn calculate_layout_input_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn calculate_layout_input_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_layout_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_layout_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_cells_along_axis_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GridLayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } }
+#[cfg(feature="unity_engine-ui-gridlayoutgroup")]impl GridLayoutGroup{pub fn get_start_corner_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_start_corner_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_start_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_start_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_cell_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_cell_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_spacing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_spacing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_constraint_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_constraint_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_constraint_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_constraint_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn calculate_layout_input_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn calculate_layout_input_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_layout_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_layout_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_cells_along_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
 
-#[cfg(feature = "unity_engine-ui-gridlayoutgroup")]
-impl GridLayoutGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GridLayoutGroup) , :: core :: stringify ! (new) ,)) ; < Self as IGridLayoutGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-gridlayoutgroup")]impl GridLayoutGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GridLayoutGroup), ::core::stringify!(new),));
+ <Self as IGridLayoutGroupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-gridlayoutgroup")]

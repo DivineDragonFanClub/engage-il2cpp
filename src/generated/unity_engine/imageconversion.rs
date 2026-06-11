@@ -4,23 +4,41 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/imageconversion/ImageConversion.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "ImageConversion")] # [parent (crate :: system :: object :: Object)] pub struct ImageConversion {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/imageconversion/ImageConversion.md"))]#[::unity2::class(namespace="UnityEngine",name="ImageConversion")]#[parent(crate::system::object::Object)]pub struct ImageConversion{}
 
 }
 
 #[cfg(feature = "unity_engine-imageconversion-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-imageconversion")]
-impl ImageConversion { # [doc = "`EncodeToPNG(crate::unity_engine::texture2d::Texture2D)` overload"] pub fn encode_to_png (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46dd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tex) , :: core :: option :: Option :: None) } } } # [doc = "`EncodeToJPG(crate::unity_engine::texture2d::Texture2D, i32)` overload"] pub fn encode_to_jpg (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D > , quality : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46e20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tex) , :: core :: convert :: Into :: into (quality) , :: core :: option :: Option :: None) } } } # [doc = "`EncodeToJPG(crate::unity_engine::texture2d::Texture2D)` overload"] pub fn encode_to_jpg_2 (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D >) -> :: unity2 :: Array < u8 > { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < u8 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46e70usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tex) , :: core :: option :: Option :: None) } } } # [doc = "`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>, bool)` overload"] pub fn load_image (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > > , mark_non_readable : impl :: core :: convert :: Into < bool >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: Array < u8 > , bool , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46ec0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tex) , :: core :: convert :: Into :: into (data) , :: core :: convert :: Into :: into (mark_non_readable) , :: core :: option :: Option :: None) } } } # [doc = "`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>)` overload"] pub fn load_image_2 (tex : impl :: core :: convert :: Into < crate :: unity_engine :: texture2d :: Texture2D > , data : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: texture2d :: Texture2D , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f46f20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tex) , :: core :: convert :: Into :: into (data) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-imageconversion")]impl ImageConversion{#[doc="`EncodeToPNG(crate::unity_engine::texture2d::Texture2D)` overload"]pub fn encode_to_png(tex:impl::core::convert::Into<crate::unity_engine::texture2d::Texture2D>)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46dd0usize)as*mut u8, ::unity2::Array<u8> ;
+(crate::unity_engine::texture2d::Texture2D)::core::convert::Into::into(tex))}
+}
+#[doc="`EncodeToJPG(crate::unity_engine::texture2d::Texture2D, i32)` overload"]pub fn encode_to_jpg(tex:impl::core::convert::Into<crate::unity_engine::texture2d::Texture2D> ,quality:impl::core::convert::Into<i32>)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46e20usize)as*mut u8, ::unity2::Array<u8> ;
+(crate::unity_engine::texture2d::Texture2D)::core::convert::Into::into(tex),(i32)::core::convert::Into::into(quality))}
+}
+#[doc="`EncodeToJPG(crate::unity_engine::texture2d::Texture2D)` overload"]pub fn encode_to_jpg_2(tex:impl::core::convert::Into<crate::unity_engine::texture2d::Texture2D>)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46e70usize)as*mut u8, ::unity2::Array<u8> ;
+(crate::unity_engine::texture2d::Texture2D)::core::convert::Into::into(tex))}
+}
+#[doc="`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>, bool)` overload"]pub fn load_image(tex:impl::core::convert::Into<crate::unity_engine::texture2d::Texture2D> ,data:impl::core::convert::Into< ::unity2::Array<u8> > ,mark_non_readable:impl::core::convert::Into<bool>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46ec0usize)as*mut u8,bool;
+(crate::unity_engine::texture2d::Texture2D)::core::convert::Into::into(tex),(::unity2::Array<u8>)::core::convert::Into::into(data),(bool)::core::convert::Into::into(mark_non_readable))}
+}
+#[doc="`LoadImage(crate::unity_engine::texture2d::Texture2D, ::unity2::Array<u8>)` overload"]pub fn load_image_2(tex:impl::core::convert::Into<crate::unity_engine::texture2d::Texture2D> ,data:impl::core::convert::Into< ::unity2::Array<u8> >)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f46f20usize)as*mut u8,bool;
+(crate::unity_engine::texture2d::Texture2D)::core::convert::Into::into(tex),(::unity2::Array<u8>)::core::convert::Into::into(data))}
+}
+}
 
-#[cfg(feature = "unity_engine-imageconversion")]
-impl ImageConversion { pub fn encode_to_png_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ImageConversion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn encode_to_jpg_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ImageConversion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn encode_to_jpg_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ImageConversion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_image_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ImageConversion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn load_image_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ImageConversion as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-imageconversion")]impl ImageConversion{pub fn encode_to_png_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn encode_to_jpg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn encode_to_jpg_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn load_image_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "unity_engine-imageconversion")]
 #[doc(hidden)]

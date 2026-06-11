@@ -4,42 +4,59 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: { DebugUIHandlerWidget , IDebugUIHandlerWidget }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWidget,IDebugUIHandlerWidget}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlervbox/DebugUIHandlerVBox.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "DebugUIHandlerVBox")] # [parent (crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget)] pub struct DebugUIHandlerVBox {
-# [offset (88)] # [rename (name = "m_Container")] pub m_container : crate :: unity_engine :: rendering :: ui :: debuguihandlercontainer :: DebugUIHandlerContainer ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/debuguihandlervbox/DebugUIHandlerVBox.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="DebugUIHandlerVBox")]#[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]pub struct DebugUIHandlerVBox{#[offset(88)]#[rename(name="m_Container")]pub m_container:crate::unity_engine::rendering::ui::debuguihandlercontainer::DebugUIHandlerContainer,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlervbox-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlervbox")]
-pub trait IDebugUIHandlerVBoxMethods : IDebugUIHandlerVBox { # [doc = "`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"] fn set_widget (self , widget : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget >) -> () { unsafe { let __receiver = < DebugUIHandlerVBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerVBox , crate :: unity_engine :: rendering :: debugui :: DebugUI_Widget , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a67d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (widget) , :: core :: option :: Option :: None) } } } # [doc = "`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"] fn on_selection (self , from_next : impl :: core :: convert :: Into < bool > , previous : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget >) -> bool { unsafe { let __receiver = < DebugUIHandlerVBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerVBox , bool , crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a6850usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (from_next) , :: core :: convert :: Into :: into (previous) , :: core :: option :: Option :: None) } } } # [doc = "`Next()` overload"] fn next (self ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget { unsafe { let __receiver = < DebugUIHandlerVBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerVBox , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: ui :: debuguihandlerwidget :: DebugUIHandlerWidget = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a6920usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIHandlerVBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIHandlerVBox , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x30a69f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlervbox")]pub trait IDebugUIHandlerVBoxMethods:IDebugUIHandlerVBox{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerVBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a67d0usize)as*mut u8,();
+(DebugUIHandlerVBox)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Widget)::core::convert::Into::into(widget))}
+}
+#[doc="`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn on_selection(self,from_next:impl::core::convert::Into<bool> ,previous:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerVBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a6850usize)as*mut u8,bool;
+(DebugUIHandlerVBox)__receiver,(bool)::core::convert::Into::into(from_next),(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(previous))}
+}
+#[doc="`Next()` overload"]fn next(self,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{unsafe{let __receiver= <DebugUIHandlerVBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a6920usize)as*mut u8,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+(DebugUIHandlerVBox)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerVBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x30a69f0usize)as*mut u8,();
+(DebugUIHandlerVBox)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlervbox")]
-impl < __T : IDebugUIHandlerVBox > IDebugUIHandlerVBoxMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlervbox")]impl<__T:IDebugUIHandlerVBox>IDebugUIHandlerVBoxMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlervbox")]
-impl DebugUIHandlerVBox { pub fn set_widget_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerVBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_selection_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerVBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerVBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIHandlerVBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlervbox")]impl DebugUIHandlerVBox{pub fn set_widget_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_selection_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-debuguihandlervbox")]
-impl DebugUIHandlerVBox {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIHandlerVBox) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIHandlerVBoxMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlervbox")]impl DebugUIHandlerVBox{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIHandlerVBox), ::core::stringify!(new),));
+ <Self as IDebugUIHandlerVBoxMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlervbox")]

@@ -4,44 +4,52 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistdialogitemcontent/ItemListDialogItemContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemListDialogItemContent")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct ItemListDialogItemContent {
-# [offset (24)] # [rename (name = "m_IconImage")] pub m_icon_image : crate :: unity_engine :: ui :: image :: Image ,
-# [offset (32)] # [rename (name = "m_NameText")] pub m_name_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_CountObject")] pub m_count_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "m_CountText")] pub m_count_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (56)] # [rename (name = "m_CountGText")] pub m_count_g_text : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemlistdialogitemcontent/ItemListDialogItemContent.md"))]#[::unity2::class(namespace="App",name="ItemListDialogItemContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ItemListDialogItemContent{#[offset(24)]#[rename(name="m_IconImage")]pub m_icon_image:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_NameText")]pub m_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_CountObject")]pub m_count_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_CountText")]pub m_count_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_CountGText")]pub m_count_g_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-itemlistdialogitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-itemlistdialogitemcontent")]
-pub trait IItemListDialogItemContentMethods : IItemListDialogItemContent { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < ItemListDialogItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListDialogItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2040ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Build(crate::unity_engine::sprite::Sprite, ::unity2::Il2CppString, i32, bool)` overload"] fn build (self , sprite : impl :: core :: convert :: Into < crate :: unity_engine :: sprite :: Sprite > , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , num : impl :: core :: convert :: Into < i32 > , enabled_num : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < ItemListDialogItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListDialogItemContent , crate :: unity_engine :: sprite :: Sprite , :: unity2 :: Il2CppString , i32 , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20404e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (sprite) , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (num) , :: core :: convert :: Into :: into (enabled_num) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ItemListDialogItemContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListDialogItemContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2040af0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemlistdialogitemcontent")]pub trait IItemListDialogItemContentMethods:IItemListDialogItemContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ItemListDialogItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2040ae0usize)as*mut u8,();
+(ItemListDialogItemContent)__receiver)}
+}
+#[doc="`Build(crate::unity_engine::sprite::Sprite, ::unity2::Il2CppString, i32, bool)` overload"]fn build(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,num:impl::core::convert::Into<i32> ,enabled_num:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ItemListDialogItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20404e0usize)as*mut u8,();
+(ItemListDialogItemContent)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite),(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(num),(bool)::core::convert::Into::into(enabled_num))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemListDialogItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2040af0usize)as*mut u8,();
+(ItemListDialogItemContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-itemlistdialogitemcontent")]
-impl < __T : IItemListDialogItemContent > IItemListDialogItemContentMethods for __T { }
+#[cfg(feature="app-itemlistdialogitemcontent")]impl<__T:IItemListDialogItemContent>IItemListDialogItemContentMethods for __T{}
 
-#[cfg(feature = "app-itemlistdialogitemcontent")]
-impl ItemListDialogItemContent { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListDialogItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListDialogItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListDialogItemContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-itemlistdialogitemcontent")]impl ItemListDialogItemContent{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-itemlistdialogitemcontent")]
-impl ItemListDialogItemContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemListDialogItemContent) , :: core :: stringify ! (new) ,)) ; < Self as IItemListDialogItemContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-itemlistdialogitemcontent")]impl ItemListDialogItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemListDialogItemContent), ::core::stringify!(new),));
+ <Self as IItemListDialogItemContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-itemlistdialogitemcontent")]

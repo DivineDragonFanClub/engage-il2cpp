@@ -4,57 +4,112 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: guilayoutentry :: { GUILayoutEntry , IGUILayoutEntry }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::guilayoutentry::{GUILayoutEntry,IGUILayoutEntry}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutgroup/GUILayoutGroup.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "GUILayoutGroup")] # [parent (crate :: unity_engine :: guilayoutentry :: GUILayoutEntry)] pub struct GUILayoutGroup {
-# [offset (72)] # [rename (name = "entries")] pub entries : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: guilayoutentry :: GUILayoutEntry > ,
-# [offset (80)] # [rename (name = "isVertical")] pub is_vertical : bool ,
-# [offset (81)] # [rename (name = "resetCoords")] pub reset_coords : bool ,
-# [offset (84)] # [rename (name = "spacing")] pub spacing : f32 ,
-# [offset (88)] # [rename (name = "sameSize")] pub same_size : bool ,
-# [offset (89)] # [rename (name = "isWindow")] pub is_window : bool ,
-# [offset (92)] # [rename (name = "windowID")] pub window_id : i32 ,
-# [offset (96)] # [rename (name = "m_Cursor")] pub m_cursor : i32 ,
-# [offset (100)] # [rename (name = "m_StretchableCountX")] pub m_stretchable_count_x : i32 ,
-# [offset (104)] # [rename (name = "m_StretchableCountY")] pub m_stretchable_count_y : i32 ,
-# [offset (108)] # [rename (name = "m_UserSpecifiedWidth")] pub m_user_specified_width : bool ,
-# [offset (109)] # [rename (name = "m_UserSpecifiedHeight")] pub m_user_specified_height : bool ,
-# [offset (112)] # [rename (name = "m_ChildMinWidth")] pub m_child_min_width : f32 ,
-# [offset (116)] # [rename (name = "m_ChildMaxWidth")] pub m_child_max_width : f32 ,
-# [offset (120)] # [rename (name = "m_ChildMinHeight")] pub m_child_min_height : f32 ,
-# [offset (124)] # [rename (name = "m_ChildMaxHeight")] pub m_child_max_height : f32 ,
-# [offset (128)] # [rename (name = "m_MarginLeft")] pub m_margin_left : i32 ,
-# [offset (132)] # [rename (name = "m_MarginRight")] pub m_margin_right : i32 ,
-# [offset (136)] # [rename (name = "m_MarginTop")] pub m_margin_top : i32 ,
-# [offset (140)] # [rename (name = "m_MarginBottom")] pub m_margin_bottom : i32 ,
-# [static_field] # [rename (name = "none")] pub none : crate :: unity_engine :: guilayoutentry :: GUILayoutEntry ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayoutgroup/GUILayoutGroup.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayoutGroup")]#[parent(crate::unity_engine::guilayoutentry::GUILayoutEntry)]pub struct GUILayoutGroup{#[offset(72)]#[rename(name="entries")]pub entries:crate::system::collections::generic::list_1::List_1<crate::unity_engine::guilayoutentry::GUILayoutEntry> , #[offset(80)]#[rename(name="isVertical")]pub is_vertical:bool, #[offset(81)]#[rename(name="resetCoords")]pub reset_coords:bool, #[offset(84)]#[rename(name="spacing")]pub spacing:f32, #[offset(88)]#[rename(name="sameSize")]pub same_size:bool, #[offset(89)]#[rename(name="isWindow")]pub is_window:bool, #[offset(92)]#[rename(name="windowID")]pub window_id:i32, #[offset(96)]#[rename(name="m_Cursor")]pub m_cursor:i32, #[offset(100)]#[rename(name="m_StretchableCountX")]pub m_stretchable_count_x:i32, #[offset(104)]#[rename(name="m_StretchableCountY")]pub m_stretchable_count_y:i32, #[offset(108)]#[rename(name="m_UserSpecifiedWidth")]pub m_user_specified_width:bool, #[offset(109)]#[rename(name="m_UserSpecifiedHeight")]pub m_user_specified_height:bool, #[offset(112)]#[rename(name="m_ChildMinWidth")]pub m_child_min_width:f32, #[offset(116)]#[rename(name="m_ChildMaxWidth")]pub m_child_max_width:f32, #[offset(120)]#[rename(name="m_ChildMinHeight")]pub m_child_min_height:f32, #[offset(124)]#[rename(name="m_ChildMaxHeight")]pub m_child_max_height:f32, #[offset(128)]#[rename(name="m_MarginLeft")]pub m_margin_left:i32, #[offset(132)]#[rename(name="m_MarginRight")]pub m_margin_right:i32, #[offset(136)]#[rename(name="m_MarginTop")]pub m_margin_top:i32, #[offset(140)]#[rename(name="m_MarginBottom")]pub m_margin_bottom:i32, #[static_field]#[rename(name="none")]pub none:crate::unity_engine::guilayoutentry::GUILayoutEntry,}
 
 }
 
 #[cfg(feature = "unity_engine-guilayoutgroup-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-guilayoutgroup")]
-impl GUILayoutGroup { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c498b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-guilayoutgroup")]impl GUILayoutGroup{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c498b0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-guilayoutgroup")]
-pub trait IGUILayoutGroupMethods : IGUILayoutGroup { # [doc = "`get_marginLeft()` overload"] fn get_margin_left (self ,) -> i32 { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c46bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_marginRight()` overload"] fn get_margin_right (self ,) -> i32 { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c46be0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_marginTop()` overload"] fn get_margin_top (self ,) -> i32 { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c46bf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_marginBottom()` overload"] fn get_margin_bottom (self ,) -> i32 { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c46c00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c46c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ApplyOptions(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"] fn apply_options (self , options : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > >) -> () { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: Array < crate :: unity_engine :: guilayoutoption :: GUILayoutOption > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c46d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (options) , :: core :: option :: Option :: None) } } } # [doc = "`ApplyStyleSettings(crate::unity_engine::guistyle::GUIStyle)` overload"] fn apply_style_settings (self , style : impl :: core :: convert :: Into < crate :: unity_engine :: guistyle :: GUIStyle >) -> () { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , crate :: unity_engine :: guistyle :: GUIStyle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c46e80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (style) , :: core :: option :: Option :: None) } } } # [doc = "`ResetCursor()` overload"] fn reset_cursor (self ,) -> () { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c46f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetNext()` overload"] fn get_next (self ,) -> crate :: unity_engine :: guilayoutentry :: GUILayoutEntry { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: guilayoutentry :: GUILayoutEntry = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c46fa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::unity_engine::guilayoutentry::GUILayoutEntry)` overload"] fn add (self , e : impl :: core :: convert :: Into < crate :: unity_engine :: guilayoutentry :: GUILayoutEntry >) -> () { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , crate :: unity_engine :: guilayoutentry :: GUILayoutEntry , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c472f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (e) , :: core :: option :: Option :: None) } } } # [doc = "`CalcWidth()` overload"] fn calc_width (self ,) -> () { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c47350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetHorizontal(f32, f32)` overload"] fn set_horizontal (self , x : impl :: core :: convert :: Into < f32 > , width : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c47c10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (width) , :: core :: option :: Option :: None) } } } # [doc = "`CalcHeight()` overload"] fn calc_height (self ,) -> () { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c48470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetVertical(f32, f32)` overload"] fn set_vertical (self , y : impl :: core :: convert :: Into < f32 > , height : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c48bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (y) , :: core :: convert :: Into :: into (height) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < GUILayoutGroup as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (GUILayoutGroup , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c49450usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-guilayoutgroup")]pub trait IGUILayoutGroupMethods:IGUILayoutGroup{#[doc="`get_marginLeft()` overload"]fn get_margin_left(self,)->i32{unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46bd0usize)as*mut u8,i32;
+(GUILayoutGroup)__receiver)}
+}
+#[doc="`get_marginRight()` overload"]fn get_margin_right(self,)->i32{unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46be0usize)as*mut u8,i32;
+(GUILayoutGroup)__receiver)}
+}
+#[doc="`get_marginTop()` overload"]fn get_margin_top(self,)->i32{unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46bf0usize)as*mut u8,i32;
+(GUILayoutGroup)__receiver)}
+}
+#[doc="`get_marginBottom()` overload"]fn get_margin_bottom(self,)->i32{unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46c00usize)as*mut u8,i32;
+(GUILayoutGroup)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46c10usize)as*mut u8,();
+(GUILayoutGroup)__receiver)}
+}
+#[doc="`ApplyOptions(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]fn apply_options(self,options:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> >)->(){unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46d50usize)as*mut u8,();
+(GUILayoutGroup)__receiver,(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options))}
+}
+#[doc="`ApplyStyleSettings(crate::unity_engine::guistyle::GUIStyle)` overload"]fn apply_style_settings(self,style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)->(){unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46e80usize)as*mut u8,();
+(GUILayoutGroup)__receiver,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style))}
+}
+#[doc="`ResetCursor()` overload"]fn reset_cursor(self,)->(){unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46f90usize)as*mut u8,();
+(GUILayoutGroup)__receiver)}
+}
+#[doc="`GetNext()` overload"]fn get_next(self,)->crate::unity_engine::guilayoutentry::GUILayoutEntry{unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46fa0usize)as*mut u8,crate::unity_engine::guilayoutentry::GUILayoutEntry;
+(GUILayoutGroup)__receiver)}
+}
+#[doc="`Add(crate::unity_engine::guilayoutentry::GUILayoutEntry)` overload"]fn add(self,e:impl::core::convert::Into<crate::unity_engine::guilayoutentry::GUILayoutEntry>)->(){unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c472f0usize)as*mut u8,();
+(GUILayoutGroup)__receiver,(crate::unity_engine::guilayoutentry::GUILayoutEntry)::core::convert::Into::into(e))}
+}
+#[doc="`CalcWidth()` overload"]fn calc_width(self,)->(){unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c47350usize)as*mut u8,();
+(GUILayoutGroup)__receiver)}
+}
+#[doc="`SetHorizontal(f32, f32)` overload"]fn set_horizontal(self,x:impl::core::convert::Into<f32> ,width:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c47c10usize)as*mut u8,();
+(GUILayoutGroup)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(width))}
+}
+#[doc="`CalcHeight()` overload"]fn calc_height(self,)->(){unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c48470usize)as*mut u8,();
+(GUILayoutGroup)__receiver)}
+}
+#[doc="`SetVertical(f32, f32)` overload"]fn set_vertical(self,y:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c48bf0usize)as*mut u8,();
+(GUILayoutGroup)__receiver,(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(height))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GUILayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c49450usize)as*mut u8, ::unity2::Il2CppString;
+(GUILayoutGroup)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-guilayoutgroup")]
-impl < __T : IGUILayoutGroup > IGUILayoutGroupMethods for __T { }
+#[cfg(feature="unity_engine-guilayoutgroup")]impl<__T:IGUILayoutGroup>IGUILayoutGroupMethods for __T{}
 
-#[cfg(feature = "unity_engine-guilayoutgroup")]
-impl GUILayoutGroup { pub fn get_margin_left_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_margin_right_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_margin_top_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_margin_bottom_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn apply_options_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn apply_style_settings_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn reset_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_next_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn calc_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn calc_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < GUILayoutGroup as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="unity_engine-guilayoutgroup")]impl GUILayoutGroup{pub fn get_margin_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_margin_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_margin_top_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_margin_bottom_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn apply_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn apply_style_settings_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reset_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn calc_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn calc_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "unity_engine-guilayoutgroup")]
-impl GUILayoutGroup {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (GUILayoutGroup) , :: core :: stringify ! (new) ,)) ; < Self as IGUILayoutGroupMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-guilayoutgroup")]impl GUILayoutGroup{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUILayoutGroup), ::core::stringify!(new),));
+ <Self as IGUILayoutGroupMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-guilayoutgroup")]

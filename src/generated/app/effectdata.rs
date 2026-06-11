@@ -4,218 +4,239 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectdata/EffectData_Residents.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct EffectData_Residents  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectdata/EffectData_Types.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EffectData_Types{pub value:i32,}
+impl::unity2::ClassIdentity for EffectData_Types{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EffectData.Types";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for EffectData_Types{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl EffectData_Types{pub fn once()->Self{Self{value:0}
+}
+pub fn endless()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for EffectData_Residents  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EffectData.Residents";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectdata/EffectData_Residents.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EffectData_Residents{pub value:i32,}
+impl::unity2::ClassIdentity for EffectData_Residents{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EffectData.Residents";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for EffectData_Residents{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl EffectData_Residents{pub fn none()->Self{Self{value:0}
+}
+pub fn map()->Self{Self{value:1}
+}
+pub fn combat()->Self{Self{value:2}
+}
+pub fn both()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::IlType for EffectData_Residents  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectdata/EffectData_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EffectData_Modes{pub value:i32,}
+impl::unity2::ClassIdentity for EffectData_Modes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EffectData.Modes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for EffectData_Modes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl EffectData_Modes{pub fn bmap()->Self{Self{value:0}
+}
+pub fn combat()->Self{Self{value:1}
+}
+pub fn num()->Self{Self{value:2}
+}
 }
 
 
-impl  EffectData_Residents  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn map() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn combat() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn both() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectdata/EffectData_Types.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct EffectData_Types  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for EffectData_Types  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EffectData.Types";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for EffectData_Types  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  EffectData_Types  {
-    pub fn once() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn endless() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectdata/EffectData_Modes.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct EffectData_Modes  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for EffectData_Modes  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EffectData.Modes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for EffectData_Modes  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  EffectData_Modes  {
-    pub fn bmap() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn combat() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectdata/EffectData.md"))] # [:: unity2 :: class (namespace = "App" , name = "EffectData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectdata :: EffectData >)] pub struct EffectData {
-# [offset (80)] # [rename (name = "m_FilePaths")] pub m_file_paths : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "s_Binder")] pub s_binder : crate :: app :: bindholder :: BindHolder ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectdata/EffectData.md"))]#[::unity2::class(namespace="App",name="EffectData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::effectdata::EffectData>)]pub struct EffectData{#[offset(80)]#[rename(name="m_FilePaths")]pub m_file_paths: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_Binder")]pub s_binder:crate::app::bindholder::BindHolder,}
 
 }
 
 #[cfg(feature = "app-effectdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-effectdata")]
-impl EffectData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8140usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsBind()` overload"] pub fn is_bind () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8790usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8880usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-effectdata")]impl EffectData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d8140usize)as*mut u8,();
+)}
+}
+#[doc="`IsBind()` overload"]pub fn is_bind()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d8790usize)as*mut u8,bool;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d8880usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-effectdata")]
-pub trait IEffectDataMethods : IEffectData { # [doc = "`get_Eid()` overload"] fn get_eid (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d81f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Eid(::unity2::Il2CppString)` overload"] fn set_eid (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FilePath()` overload"] fn get_file_path (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8210usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FilePath(::unity2::Il2CppString)` overload"] fn set_file_path (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8220usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_SoundLabel()` overload"] fn get_sound_label (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8230usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_SoundLabel(::unity2::Il2CppString)` overload"] fn set_sound_label (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8240usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Type()` overload"] fn get_type (self ,) -> crate :: app :: effectdata :: EffectData_Types { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData_Types = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Type(crate::app::effectdata::EffectData_Types)` overload"] fn set_type (self , value : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Types >) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , crate :: app :: effectdata :: EffectData_Types , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8260usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_DelayTime()` overload"] fn get_delay_time (self ,) -> f32 { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_DelayTime(f32)` overload"] fn set_delay_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_WaitTime()` overload"] fn get_wait_time (self ,) -> f32 { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8290usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_WaitTime(f32)` overload"] fn set_wait_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d82a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ShakeTime()` overload"] fn get_shake_time (self ,) -> f32 { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d82b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ShakeTime(f32)` overload"] fn set_shake_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d82c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ShakeMagnitude()` overload"] fn get_shake_magnitude (self ,) -> f32 { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d82d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ShakeMagnitude(f32)` overload"] fn set_shake_magnitude (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d82e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Resident()` overload"] fn get_resident (self ,) -> crate :: app :: effectdata :: EffectData_Residents { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> crate :: app :: effectdata :: EffectData_Residents = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d82f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Resident(crate::app::effectdata::EffectData_Residents)` overload"] fn set_resident (self , value : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Residents >) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , crate :: app :: effectdata :: EffectData_Residents , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8300usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetDebugName()` overload"] fn get_debug_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d84a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetPath(crate::app::effectdata::EffectData_Modes)` overload"] fn get_path (self , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , crate :: app :: effectdata :: EffectData_Modes , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d84b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: option :: Option :: None) } } } # [doc = "`PlayCombat(crate::unity_engine::gameobject::GameObject)` overload"] fn play_combat (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: app :: resourceobject :: ResourceObject { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: app :: resourceobject :: ResourceObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d84f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`PlayBmap(crate::unity_engine::gameobject::GameObject)` overload"] fn play_bmap (self , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> crate :: app :: resourceobject :: ResourceObject { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> crate :: app :: resourceobject :: ResourceObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8780usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } # [doc = "`Play(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, f32)` overload"] fn play (self , mode : impl :: core :: convert :: Into < crate :: app :: effectdata :: EffectData_Modes > , parent : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , delay_time : impl :: core :: convert :: Into < f32 >) -> crate :: app :: resourceobject :: ResourceObject { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , crate :: app :: effectdata :: EffectData_Modes , crate :: unity_engine :: gameobject :: GameObject , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: resourceobject :: ResourceObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8500usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (mode) , :: core :: convert :: Into :: into (parent) , :: core :: convert :: Into :: into (delay_time) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8800usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-effectdata")]pub trait IEffectDataMethods:IEffectData{#[doc="`get_Eid()` overload"]fn get_eid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d81f0usize)as*mut u8, ::unity2::Il2CppString;
+(EffectData)__receiver)}
+}
+#[doc="`set_Eid(::unity2::Il2CppString)` overload"]fn set_eid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8200usize)as*mut u8,();
+(EffectData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_FilePath()` overload"]fn get_file_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8210usize)as*mut u8, ::unity2::Il2CppString;
+(EffectData)__receiver)}
+}
+#[doc="`set_FilePath(::unity2::Il2CppString)` overload"]fn set_file_path(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8220usize)as*mut u8,();
+(EffectData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_SoundLabel()` overload"]fn get_sound_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8230usize)as*mut u8, ::unity2::Il2CppString;
+(EffectData)__receiver)}
+}
+#[doc="`set_SoundLabel(::unity2::Il2CppString)` overload"]fn set_sound_label(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8240usize)as*mut u8,();
+(EffectData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Type()` overload"]fn get_type(self,)->crate::app::effectdata::EffectData_Types{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8250usize)as*mut u8,crate::app::effectdata::EffectData_Types;
+(EffectData)__receiver)}
+}
+#[doc="`set_Type(crate::app::effectdata::EffectData_Types)` overload"]fn set_type(self,value:impl::core::convert::Into<crate::app::effectdata::EffectData_Types>)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8260usize)as*mut u8,();
+(EffectData)__receiver,(crate::app::effectdata::EffectData_Types)::core::convert::Into::into(value))}
+}
+#[doc="`get_DelayTime()` overload"]fn get_delay_time(self,)->f32{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8270usize)as*mut u8,f32;
+(EffectData)__receiver)}
+}
+#[doc="`set_DelayTime(f32)` overload"]fn set_delay_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8280usize)as*mut u8,();
+(EffectData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_WaitTime()` overload"]fn get_wait_time(self,)->f32{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8290usize)as*mut u8,f32;
+(EffectData)__receiver)}
+}
+#[doc="`set_WaitTime(f32)` overload"]fn set_wait_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d82a0usize)as*mut u8,();
+(EffectData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ShakeTime()` overload"]fn get_shake_time(self,)->f32{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d82b0usize)as*mut u8,f32;
+(EffectData)__receiver)}
+}
+#[doc="`set_ShakeTime(f32)` overload"]fn set_shake_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d82c0usize)as*mut u8,();
+(EffectData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ShakeMagnitude()` overload"]fn get_shake_magnitude(self,)->f32{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d82d0usize)as*mut u8,f32;
+(EffectData)__receiver)}
+}
+#[doc="`set_ShakeMagnitude(f32)` overload"]fn set_shake_magnitude(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d82e0usize)as*mut u8,();
+(EffectData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Resident()` overload"]fn get_resident(self,)->crate::app::effectdata::EffectData_Residents{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d82f0usize)as*mut u8,crate::app::effectdata::EffectData_Residents;
+(EffectData)__receiver)}
+}
+#[doc="`set_Resident(crate::app::effectdata::EffectData_Residents)` overload"]fn set_resident(self,value:impl::core::convert::Into<crate::app::effectdata::EffectData_Residents>)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8300usize)as*mut u8,();
+(EffectData)__receiver,(crate::app::effectdata::EffectData_Residents)::core::convert::Into::into(value))}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8310usize)as*mut u8,();
+(EffectData)__receiver)}
+}
+#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d84a0usize)as*mut u8, ::unity2::Il2CppString;
+(EffectData)__receiver)}
+}
+#[doc="`GetPath(crate::app::effectdata::EffectData_Modes)` overload"]fn get_path(self,mode:impl::core::convert::Into<crate::app::effectdata::EffectData_Modes>)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d84b0usize)as*mut u8, ::unity2::Il2CppString;
+(EffectData)__receiver,(crate::app::effectdata::EffectData_Modes)::core::convert::Into::into(mode))}
+}
+#[doc="`PlayCombat(crate::unity_engine::gameobject::GameObject)` overload"]fn play_combat(self,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::app::resourceobject::ResourceObject{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d84f0usize)as*mut u8,crate::app::resourceobject::ResourceObject;
+(EffectData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent))}
+}
+#[doc="`PlayBmap(crate::unity_engine::gameobject::GameObject)` overload"]fn play_bmap(self,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::app::resourceobject::ResourceObject{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8780usize)as*mut u8,crate::app::resourceobject::ResourceObject;
+(EffectData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent))}
+}
+#[doc="`Play(crate::app::effectdata::EffectData_Modes, crate::unity_engine::gameobject::GameObject, f32)` overload"]fn play(self,mode:impl::core::convert::Into<crate::app::effectdata::EffectData_Modes> ,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,delay_time:impl::core::convert::Into<f32>)->crate::app::resourceobject::ResourceObject{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8500usize)as*mut u8,crate::app::resourceobject::ResourceObject;
+(EffectData)__receiver,(crate::app::effectdata::EffectData_Modes)::core::convert::Into::into(mode),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent),(f32)::core::convert::Into::into(delay_time))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8800usize)as*mut u8,();
+(EffectData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-effectdata")]
-impl < __T : IEffectData > IEffectDataMethods for __T { }
+#[cfg(feature="app-effectdata")]impl<__T:IEffectData>IEffectDataMethods for __T{}
 
-#[cfg(feature = "app-effectdata")]
-impl EffectData { pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_eid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_eid_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_file_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_sound_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn set_sound_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_delay_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_delay_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn get_wait_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn set_wait_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_shake_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn set_shake_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn get_shake_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn set_shake_magnitude_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn get_resident_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn set_resident_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_debug_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn get_path_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn play_combat_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn play_bmap_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn play_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn is_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } }
+#[cfg(feature="app-effectdata")]impl EffectData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_eid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_eid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_file_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_file_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_sound_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_sound_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_delay_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_delay_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_wait_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_wait_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_shake_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_shake_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_shake_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_shake_magnitude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_resident_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_resident_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn play_combat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn play_bmap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn is_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+}
 
-#[cfg(feature = "app-effectdata")]
-impl EffectData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectData) , :: core :: stringify ! (new) ,)) ; < Self as IEffectDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-effectdata")]impl EffectData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EffectData), ::core::stringify!(new),));
+ <Self as IEffectDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-effectdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EffectData_Residents;
     pub use super::EffectData_Types;
+    pub use super::EffectData_Residents;
     pub use super::EffectData_Modes;
     pub use super::EffectData;
     pub use super::IEffectData;

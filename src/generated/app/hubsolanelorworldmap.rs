@@ -4,39 +4,50 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsolanelorworldmap/HubSolanelOrWorldMap.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubSolanelOrWorldMap")] # [parent (crate :: app :: basicdialog :: BasicDialog)] pub struct HubSolanelOrWorldMap {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubsolanelorworldmap/HubSolanelOrWorldMap.md"))]#[::unity2::class(namespace="App",name="HubSolanelOrWorldMap")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct HubSolanelOrWorldMap{}
 
 }
 
 #[cfg(feature = "app-hubsolanelorworldmap-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubsolanelorworldmap")]
-impl HubSolanelOrWorldMap { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> crate :: app :: hubsolanelorworldmap :: HubSolanelOrWorldMap { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubsolanelorworldmap :: HubSolanelOrWorldMap = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5a1d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } # [doc = "`CreateBindForWell(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"] pub fn create_bind_for_well (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , func : impl :: core :: convert :: Into < crate :: system :: action :: Action >) -> crate :: app :: hubsolanelorworldmap :: HubSolanelOrWorldMap { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: system :: action :: Action , :: unity2 :: OptionalMethod ,) -> crate :: app :: hubsolanelorworldmap :: HubSolanelOrWorldMap = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5a840usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (func) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubsolanelorworldmap")]impl HubSolanelOrWorldMap{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,func:impl::core::convert::Into<crate::system::action::Action>)->crate::app::hubsolanelorworldmap::HubSolanelOrWorldMap{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5a1d0usize)as*mut u8,crate::app::hubsolanelorworldmap::HubSolanelOrWorldMap;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(func))}
+}
+#[doc="`CreateBindForWell(crate::app::procinst::ProcInst, crate::system::action::Action)` overload"]pub fn create_bind_for_well(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,func:impl::core::convert::Into<crate::system::action::Action>)->crate::app::hubsolanelorworldmap::HubSolanelOrWorldMap{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5a840usize)as*mut u8,crate::app::hubsolanelorworldmap::HubSolanelOrWorldMap;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::action::Action)::core::convert::Into::into(func))}
+}
+}
 
-#[cfg(feature = "app-hubsolanelorworldmap")]
-pub trait IHubSolanelOrWorldMapMethods : IHubSolanelOrWorldMap { # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: basicdialogcontent :: BasicDialogContent >) -> () { unsafe { let __receiver = < HubSolanelOrWorldMap as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubSolanelOrWorldMap , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: basicdialogcontent :: BasicDialogContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a5a1c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubsolanelorworldmap")]pub trait IHubSolanelOrWorldMapMethods:IHubSolanelOrWorldMap{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <HubSolanelOrWorldMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a5a1c0usize)as*mut u8,();
+(HubSolanelOrWorldMap)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
+}
 
-#[cfg(feature = "app-hubsolanelorworldmap")]
-impl < __T : IHubSolanelOrWorldMap > IHubSolanelOrWorldMapMethods for __T { }
+#[cfg(feature="app-hubsolanelorworldmap")]impl<__T:IHubSolanelOrWorldMap>IHubSolanelOrWorldMapMethods for __T{}
 
-#[cfg(feature = "app-hubsolanelorworldmap")]
-impl HubSolanelOrWorldMap { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubSolanelOrWorldMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubSolanelOrWorldMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_for_well_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubSolanelOrWorldMap as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-hubsolanelorworldmap")]impl HubSolanelOrWorldMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_for_well_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-hubsolanelorworldmap")]
-impl HubSolanelOrWorldMap {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: basicdialogcontent :: BasicDialogContent) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubSolanelOrWorldMap) , :: core :: stringify ! (new) ,)) ; < Self as IHubSolanelOrWorldMapMethods > :: ctor (this , menu_item_list , menu_content) ; this }
+#[cfg(feature="app-hubsolanelorworldmap")]impl HubSolanelOrWorldMap{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubSolanelOrWorldMap), ::core::stringify!(new),));
+ <Self as IHubSolanelOrWorldMapMethods> ::ctor(this,menu_item_list,menu_content);
+this}
 }
 
 #[cfg(feature = "app-hubsolanelorworldmap")]

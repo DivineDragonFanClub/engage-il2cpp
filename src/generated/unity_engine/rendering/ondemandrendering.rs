@@ -4,25 +4,35 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ondemandrendering/OnDemandRendering.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering" , name = "OnDemandRendering")] # [parent (crate :: system :: object :: Object)] pub struct OnDemandRendering {
-# [static_field] # [rename (name = "m_RenderFrameInterval")] pub m_render_frame_interval : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ondemandrendering/OnDemandRendering.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="OnDemandRendering")]#[parent(crate::system::object::Object)]pub struct OnDemandRendering{#[static_field]#[rename(name="m_RenderFrameInterval")]pub m_render_frame_interval:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ondemandrendering-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ondemandrendering")]
-impl OnDemandRendering { # [doc = "`get_renderFrameInterval()` overload"] pub fn get_render_frame_interval () -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f01b0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetRenderFrameInterval(*muti32)` overload"] pub fn get_render_frame_interval_2 () -> i32 { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < i32 > :: uninit () ; { let __inner : extern "C" fn (* mut i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f0220usize) as * mut u8) ; __inner (__out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x32f02e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ondemandrendering")]impl OnDemandRendering{#[doc="`get_renderFrameInterval()` overload"]pub fn get_render_frame_interval()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f01b0usize)as*mut u8,i32;
+)}
+}
+#[doc="`GetRenderFrameInterval(*muti32)` overload"]pub fn get_render_frame_interval_2()->i32{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x32f0220usize)as*mut u8,();
+(*mut i32)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32f02e0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ondemandrendering")]
-impl OnDemandRendering { pub fn get_render_frame_interval_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < OnDemandRendering as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_render_frame_interval_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < OnDemandRendering as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < OnDemandRendering as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="unity_engine-rendering-ondemandrendering")]impl OnDemandRendering{pub fn get_render_frame_interval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_render_frame_interval_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "unity_engine-rendering-ondemandrendering")]
 #[doc(hidden)]

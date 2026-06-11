@@ -4,40 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenucontent/ArenaBondLevelSelectMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "ArenaBondLevelSelectMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct ArenaBondLevelSelectMenuContent {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenucontent/ArenaBondLevelSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct ArenaBondLevelSelectMenuContent{}
 
 }
 
 #[cfg(feature = "app-arenabondlevelselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-arenabondlevelselectmenucontent")]
-pub trait IArenaBondLevelSelectMenuContentMethods : IArenaBondLevelSelectMenuContent { # [doc = "`CalcCursorMovedPosY(i32)` overload"] fn calc_cursor_moved_pos_y (self , menu_item_index : impl :: core :: convert :: Into < i32 >) -> f32 { unsafe { let __receiver = < ArenaBondLevelSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondLevelSelectMenuContent , i32 , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca0ae0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_index) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ArenaBondLevelSelectMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ArenaBondLevelSelectMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ca0bd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-arenabondlevelselectmenucontent")]pub trait IArenaBondLevelSelectMenuContentMethods:IArenaBondLevelSelectMenuContent{#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <ArenaBondLevelSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0ae0usize)as*mut u8,f32;
+(ArenaBondLevelSelectMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0bd0usize)as*mut u8,();
+(ArenaBondLevelSelectMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-arenabondlevelselectmenucontent")]
-impl < __T : IArenaBondLevelSelectMenuContent > IArenaBondLevelSelectMenuContentMethods for __T { }
+#[cfg(feature="app-arenabondlevelselectmenucontent")]impl<__T:IArenaBondLevelSelectMenuContent>IArenaBondLevelSelectMenuContentMethods for __T{}
 
-#[cfg(feature = "app-arenabondlevelselectmenucontent")]
-impl ArenaBondLevelSelectMenuContent { pub fn calc_cursor_moved_pos_y_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondLevelSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ArenaBondLevelSelectMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-arenabondlevelselectmenucontent")]impl ArenaBondLevelSelectMenuContent{pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-arenabondlevelselectmenucontent")]
-impl ArenaBondLevelSelectMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ArenaBondLevelSelectMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as IArenaBondLevelSelectMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-arenabondlevelselectmenucontent")]impl ArenaBondLevelSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenuContent), ::core::stringify!(new),));
+ <Self as IArenaBondLevelSelectMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-arenabondlevelselectmenucontent")]

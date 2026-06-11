@@ -4,32 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustunitdataholder/SortieEntrustUnitDataHolder.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieEntrustUnitDataHolder")] # [parent (crate :: system :: object :: Object)] pub struct SortieEntrustUnitDataHolder {
-# [offset (16)] # [rename (name = "m_Data")] pub m_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustunitdataholder/SortieEntrustUnitDataHolder.md"))]#[::unity2::class(namespace="App",name="SortieEntrustUnitDataHolder")]#[parent(crate::system::object::Object)]pub struct SortieEntrustUnitDataHolder{#[offset(16)]#[rename(name="m_Data")]pub m_data:crate::system::collections::generic::list_1::List_1<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,}
 
 }
 
 #[cfg(feature = "app-sortieentrustunitdataholder-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortieentrustunitdataholder")]
-pub trait ISortieEntrustUnitDataHolderMethods : ISortieEntrustUnitDataHolder { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitDataHolder , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`RegisterUnit(crate::app::unit::Unit)` overload"] fn register_unit (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitDataHolder , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7d00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"] fn add (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , unit_item : impl :: core :: convert :: Into < crate :: app :: unititem :: UnitItem >) -> () { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitDataHolder , crate :: app :: unit :: Unit , crate :: app :: unititem :: UnitItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7d90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (unit_item) , :: core :: option :: Option :: None) } } } # [doc = "`get_Data()` overload"] fn get_data (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData > { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitDataHolder , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: sortieentrustunitdata :: SortieEntrustUnitData > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < SortieEntrustUnitDataHolder as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieEntrustUnitDataHolder , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fe7e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortieentrustunitdataholder")]pub trait ISortieEntrustUnitDataHolderMethods:ISortieEntrustUnitDataHolder{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieEntrustUnitDataHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7c70usize)as*mut u8,();
+(SortieEntrustUnitDataHolder)__receiver)}
+}
+#[doc="`RegisterUnit(crate::app::unit::Unit)` overload"]fn register_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <SortieEntrustUnitDataHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7d00usize)as*mut u8,();
+(SortieEntrustUnitDataHolder)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Add(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]fn add(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <SortieEntrustUnitDataHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7d90usize)as*mut u8,();
+(SortieEntrustUnitDataHolder)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
+}
+#[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::collections::generic::list_1::List_1<crate::app::sortieentrustunitdata::SortieEntrustUnitData>{unsafe{let __receiver= <SortieEntrustUnitDataHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7e80usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ;
+(SortieEntrustUnitDataHolder)__receiver)}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <SortieEntrustUnitDataHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe7e90usize)as*mut u8,i32;
+(SortieEntrustUnitDataHolder)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortieentrustunitdataholder")]
-impl < __T : ISortieEntrustUnitDataHolder > ISortieEntrustUnitDataHolderMethods for __T { }
+#[cfg(feature="app-sortieentrustunitdataholder")]impl<__T:ISortieEntrustUnitDataHolder>ISortieEntrustUnitDataHolderMethods for __T{}
 
-#[cfg(feature = "app-sortieentrustunitdataholder")]
-impl SortieEntrustUnitDataHolder { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn register_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieEntrustUnitDataHolder as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-sortieentrustunitdataholder")]impl SortieEntrustUnitDataHolder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn register_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-sortieentrustunitdataholder")]
-impl SortieEntrustUnitDataHolder {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieEntrustUnitDataHolder) , :: core :: stringify ! (new) ,)) ; < Self as ISortieEntrustUnitDataHolderMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortieentrustunitdataholder")]impl SortieEntrustUnitDataHolder{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieEntrustUnitDataHolder), ::core::stringify!(new),));
+ <Self as ISortieEntrustUnitDataHolderMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortieentrustunitdataholder")]

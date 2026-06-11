@@ -4,26 +4,89 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combat_viewer_ex_methods/acts2i/ActS2I.md"))] # [:: unity2 :: class (namespace = "Combat.CombatViewerExMethods" , name = "ActS2I")] # [parent (crate :: system :: object :: Object)] pub struct ActS2I {
-# [static_field] # [rename (name = "items")] pub items : :: unity2 :: Array < :: unity2 :: Il2CppString > ,
-# [static_field] # [rename (name = "hashes")] pub hashes : :: unity2 :: Array < i32 > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combat_viewer_ex_methods/acts2i/ActS2I.md"))]#[::unity2::class(namespace="Combat.CombatViewerExMethods",name="ActS2I")]#[parent(crate::system::object::Object)]pub struct ActS2I{#[static_field]#[rename(name="items")]pub items: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="hashes")]pub hashes: ::unity2::Array<i32> ,}
 
 }
 
 #[cfg(feature = "combat-combat_viewer_ex_methods-acts2i-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-combat_viewer_ex_methods-acts2i")]
-impl ActS2I { # [doc = "`get_Popup()` overload"] pub fn get_popup () -> :: unity2 :: Array < :: unity2 :: Il2CppString > { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < :: unity2 :: Il2CppString > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d1e80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`ToTableIndex(::unity2::Il2CppString)` overload"] pub fn to_table_index (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d1ef0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`ToName(i32)` overload"] pub fn to_name (i : impl :: core :: convert :: Into < i32 >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d1fe0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`ToHash(::unity2::Il2CppString)` overload"] pub fn to_hash (name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d20c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`IsEnd(::unity2::Il2CppString)` overload"] pub fn is_end (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d21a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsChainAttack(::unity2::Il2CppString)` overload"] pub fn is_chain_attack (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d2260usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsAttack(::unity2::Il2CppString)` overload"] pub fn is_attack (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d22c0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`HasWild(::unity2::Il2CppString)` overload"] pub fn has_wild (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d2350usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsDamage(::unity2::Il2CppString)` overload"] pub fn is_damage (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d23b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsEvade(::unity2::Il2CppString)` overload"] pub fn is_evade (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d2410usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsGuard(::unity2::Il2CppString)` overload"] pub fn is_guard (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d2470usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsParry(::unity2::Il2CppString)` overload"] pub fn is_parry (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d24d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsDie(::unity2::Il2CppString)` overload"] pub fn is_die (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d2530usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsSkill(::unity2::Il2CppString)` overload"] pub fn is_skill (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d2590usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`SkillName(::unity2::Il2CppString)` overload"] pub fn skill_name (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d25f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`IsDamageGroup(::unity2::Il2CppString)` overload"] pub fn is_damage_group (s : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d2660usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (s) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x27d2860usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-combat_viewer_ex_methods-acts2i")]impl ActS2I{#[doc="`get_Popup()` overload"]pub fn get_popup()-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d1e80usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+)}
+}
+#[doc="`ToTableIndex(::unity2::Il2CppString)` overload"]pub fn to_table_index(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d1ef0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`ToName(i32)` overload"]pub fn to_name(i:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d1fe0usize)as*mut u8, ::unity2::Il2CppString;
+(i32)::core::convert::Into::into(i))}
+}
+#[doc="`ToHash(::unity2::Il2CppString)` overload"]pub fn to_hash(name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d20c0usize)as*mut u8,i32;
+(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`IsEnd(::unity2::Il2CppString)` overload"]pub fn is_end(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d21a0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`IsChainAttack(::unity2::Il2CppString)` overload"]pub fn is_chain_attack(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d2260usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`IsAttack(::unity2::Il2CppString)` overload"]pub fn is_attack(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d22c0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`HasWild(::unity2::Il2CppString)` overload"]pub fn has_wild(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d2350usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`IsDamage(::unity2::Il2CppString)` overload"]pub fn is_damage(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d23b0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`IsEvade(::unity2::Il2CppString)` overload"]pub fn is_evade(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d2410usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`IsGuard(::unity2::Il2CppString)` overload"]pub fn is_guard(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d2470usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`IsParry(::unity2::Il2CppString)` overload"]pub fn is_parry(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d24d0usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`IsDie(::unity2::Il2CppString)` overload"]pub fn is_die(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d2530usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`IsSkill(::unity2::Il2CppString)` overload"]pub fn is_skill(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d2590usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`SkillName(::unity2::Il2CppString)` overload"]pub fn skill_name(s:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d25f0usize)as*mut u8, ::unity2::Il2CppString;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`IsDamageGroup(::unity2::Il2CppString)` overload"]pub fn is_damage_group(s:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d2660usize)as*mut u8,bool;
+(::unity2::Il2CppString)::core::convert::Into::into(s))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d2860usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "combat-combat_viewer_ex_methods-acts2i")]
-impl ActS2I { pub fn get_popup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn to_table_index_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn to_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn to_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_chain_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_attack_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn has_wild_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_damage_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn is_evade_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn is_guard_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn is_parry_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn is_die_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn is_skill_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn skill_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn is_damage_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ActS2I as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } }
+#[cfg(feature="combat-combat_viewer_ex_methods-acts2i")]impl ActS2I{pub fn get_popup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn to_table_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_chain_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn has_wild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn is_evade_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn is_guard_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_parry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_die_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn is_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn skill_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn is_damage_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
 
 #[cfg(feature = "combat-combat_viewer_ex_methods-acts2i")]
 #[doc(hidden)]

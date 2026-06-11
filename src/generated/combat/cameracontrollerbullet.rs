@@ -4,120 +4,117 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbullet/CameraControllerBullet.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerBullet")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerBullet {
-# [offset (184)] # [rename (name = "StartVector")] pub start_vector : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (196)] # [rename (name = "HoldVector")] pub hold_vector : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (208)] # [rename (name = "BulletVector")] pub bullet_vector : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (220)] # [rename (name = "SpeedBrake")] pub speed_brake : f32 ,
-# [offset (224)] # [rename (name = "m_LastSpeed")] pub m_last_speed : crate :: unity_engine :: vector3 :: Vector3 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerbullet/CameraControllerBullet_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CameraControllerBullet_State{pub value:i32,}
+impl::unity2::ClassIdentity for CameraControllerBullet_State{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="CameraControllerBullet.State";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for CameraControllerBullet_State{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl CameraControllerBullet_State{pub fn ready()->Self{Self{value:0}
+}
+pub fn before_shoot()->Self{Self{value:1}
+}
+pub fn shooting()->Self{Self{value:2}
+}
+pub fn after_shoot()->Self{Self{value:3}
+}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerbullet/CameraControllerBullet_State.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct CameraControllerBullet_State  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for CameraControllerBullet_State  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "CameraControllerBullet.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for CameraControllerBullet_State  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  CameraControllerBullet_State  {
-    pub fn ready() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn before_shoot() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn shooting() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn after_shoot() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerbullet/CameraControllerBullet.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerBullet")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerBullet{#[offset(184)]#[rename(name="StartVector")]pub start_vector:crate::unity_engine::vector3::Vector3, #[offset(196)]#[rename(name="HoldVector")]pub hold_vector:crate::unity_engine::vector3::Vector3, #[offset(208)]#[rename(name="BulletVector")]pub bullet_vector:crate::unity_engine::vector3::Vector3, #[offset(220)]#[rename(name="SpeedBrake")]pub speed_brake:f32, #[offset(224)]#[rename(name="m_LastSpeed")]pub m_last_speed:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "combat-cameracontrollerbullet-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollerbullet")]
-pub trait ICameraControllerBulletMethods : ICameraControllerBullet { # [doc = "`get_ShootState()` overload"] fn get_shoot_state (self ,) -> crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25aea10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ShootState(crate::combat::cameracontrollerbullet::CameraControllerBullet_State)` overload"] fn set_shoot_state (self , value : impl :: core :: convert :: Into < crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State >) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBullet , crate :: combat :: cameracontrollerbullet :: CameraControllerBullet_State , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25aea20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Lancher()` overload"] fn get_lancher (self ,) -> crate :: combat :: launchbehaviour :: LaunchBehaviour { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> crate :: combat :: launchbehaviour :: LaunchBehaviour = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25aea30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Lancher(crate::combat::launchbehaviour::LaunchBehaviour)` overload"] fn set_lancher (self , value : impl :: core :: convert :: Into < crate :: combat :: launchbehaviour :: LaunchBehaviour >) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBullet , crate :: combat :: launchbehaviour :: LaunchBehaviour , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25aea40usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CheckState()` overload"] fn check_state (self ,) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25aeb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCombatVector(crate::unity_engine::vector3::Vector3)` overload"] fn get_combat_vector (self , look_at_vector : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBullet , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25af440usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (look_at_vector) , :: core :: option :: Option :: None) } } } # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25af590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25af620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerBullet as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerBullet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25af690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollerbullet")]pub trait ICameraControllerBulletMethods:ICameraControllerBullet{#[doc="`get_ShootState()` overload"]fn get_shoot_state(self,)->crate::combat::cameracontrollerbullet::CameraControllerBullet_State{unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25aea10usize)as*mut u8,crate::combat::cameracontrollerbullet::CameraControllerBullet_State;
+(CameraControllerBullet)__receiver)}
+}
+#[doc="`set_ShootState(crate::combat::cameracontrollerbullet::CameraControllerBullet_State)` overload"]fn set_shoot_state(self,value:impl::core::convert::Into<crate::combat::cameracontrollerbullet::CameraControllerBullet_State>)->(){unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25aea20usize)as*mut u8,();
+(CameraControllerBullet)__receiver,(crate::combat::cameracontrollerbullet::CameraControllerBullet_State)::core::convert::Into::into(value))}
+}
+#[doc="`get_Lancher()` overload"]fn get_lancher(self,)->crate::combat::launchbehaviour::LaunchBehaviour{unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25aea30usize)as*mut u8,crate::combat::launchbehaviour::LaunchBehaviour;
+(CameraControllerBullet)__receiver)}
+}
+#[doc="`set_Lancher(crate::combat::launchbehaviour::LaunchBehaviour)` overload"]fn set_lancher(self,value:impl::core::convert::Into<crate::combat::launchbehaviour::LaunchBehaviour>)->(){unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25aea40usize)as*mut u8,();
+(CameraControllerBullet)__receiver,(crate::combat::launchbehaviour::LaunchBehaviour)::core::convert::Into::into(value))}
+}
+#[doc="`CheckState()` overload"]fn check_state(self,)->(){unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25aeb00usize)as*mut u8,();
+(CameraControllerBullet)__receiver)}
+}
+#[doc="`GetCombatVector(crate::unity_engine::vector3::Vector3)` overload"]fn get_combat_vector(self,look_at_vector:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25af440usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(CameraControllerBullet)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(look_at_vector))}
+}
+#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25af590usize)as*mut u8,();
+(CameraControllerBullet)__receiver)}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25af620usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerBullet)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25af690usize)as*mut u8,();
+(CameraControllerBullet)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameracontrollerbullet")]
-impl < __T : ICameraControllerBullet > ICameraControllerBulletMethods for __T { }
+#[cfg(feature="combat-cameracontrollerbullet")]impl<__T:ICameraControllerBullet>ICameraControllerBulletMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollerbullet")]
-impl CameraControllerBullet { pub fn get_shoot_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_shoot_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_lancher_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_lancher_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn check_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_combat_vector_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerBullet as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="combat-cameracontrollerbullet")]impl CameraControllerBullet{pub fn get_shoot_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_shoot_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_lancher_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_lancher_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn check_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_combat_vector_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "combat-cameracontrollerbullet")]
-impl CameraControllerBullet {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerBullet) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerBulletMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollerbullet")]impl CameraControllerBullet{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerBullet), ::core::stringify!(new),));
+ <Self as ICameraControllerBulletMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameracontrollerbullet")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CameraControllerBullet_State;
     pub use super::CameraControllerBullet;
     pub use super::ICameraControllerBullet;
     pub use super::ICameraControllerBulletMethods;
-    pub use super::CameraControllerBullet_State;
     pub use crate::combat::basecameracontroller::IBaseCameraController;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

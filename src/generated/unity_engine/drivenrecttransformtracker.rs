@@ -4,42 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/drivenrecttransformtracker/DrivenRectTransformTracker.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DrivenRectTransformTracker {}
-
-
-impl ::unity2::ClassIdentity for DrivenRectTransformTracker {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "DrivenRectTransformTracker";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/drivenrecttransformtracker/DrivenRectTransformTracker.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DrivenRectTransformTracker{}
+impl::unity2::ClassIdentity for DrivenRectTransformTracker{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="DrivenRectTransformTracker";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for DrivenRectTransformTracker {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for DrivenRectTransformTracker{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -47,11 +26,17 @@ impl ::unity2::IlType for DrivenRectTransformTracker {
 #[cfg(feature = "unity_engine-drivenrecttransformtracker-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-drivenrecttransformtracker")]
-impl DrivenRectTransformTracker { # [doc = "`Add(crate::unity_engine::object_2::Object_2, crate::unity_engine::recttransform::RectTransform, crate::unity_engine::driventransformproperties::DrivenTransformProperties)` overload"] pub fn add (& mut self , driver : impl :: core :: convert :: Into < crate :: unity_engine :: object_2 :: Object_2 > , rect_transform : impl :: core :: convert :: Into < crate :: unity_engine :: recttransform :: RectTransform > , driven_properties : impl :: core :: convert :: Into < crate :: unity_engine :: driventransformproperties :: DrivenTransformProperties >) -> () { unsafe { { let __inner : extern "C" fn (* mut DrivenRectTransformTracker , crate :: unity_engine :: object_2 :: Object_2 , crate :: unity_engine :: recttransform :: RectTransform , crate :: unity_engine :: driventransformproperties :: DrivenTransformProperties , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d4f0usize) as * mut u8) ; __inner (self as * mut DrivenRectTransformTracker , :: core :: convert :: Into :: into (driver) , :: core :: convert :: Into :: into (rect_transform) , :: core :: convert :: Into :: into (driven_properties) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut DrivenRectTransformTracker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4d500usize) as * mut u8) ; __inner (self as * mut DrivenRectTransformTracker , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-drivenrecttransformtracker")]impl DrivenRectTransformTracker{#[doc="`Add(crate::unity_engine::object_2::Object_2, crate::unity_engine::recttransform::RectTransform, crate::unity_engine::driventransformproperties::DrivenTransformProperties)` overload"]pub fn add(&mut self,driver:impl::core::convert::Into<crate::unity_engine::object_2::Object_2> ,rect_transform:impl::core::convert::Into<crate::unity_engine::recttransform::RectTransform> ,driven_properties:impl::core::convert::Into<crate::unity_engine::driventransformproperties::DrivenTransformProperties>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d4f0usize)as*mut u8,();
+(*mut DrivenRectTransformTracker)self as*mut DrivenRectTransformTracker,(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(driver),(crate::unity_engine::recttransform::RectTransform)::core::convert::Into::into(rect_transform),(crate::unity_engine::driventransformproperties::DrivenTransformProperties)::core::convert::Into::into(driven_properties))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d500usize)as*mut u8,();
+(*mut DrivenRectTransformTracker)self as*mut DrivenRectTransformTracker)}
+}
+}
 
-#[cfg(feature = "unity_engine-drivenrecttransformtracker")]
-impl DrivenRectTransformTracker { pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrivenRectTransformTracker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DrivenRectTransformTracker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-drivenrecttransformtracker")]impl DrivenRectTransformTracker{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-drivenrecttransformtracker")]
 #[doc(hidden)]

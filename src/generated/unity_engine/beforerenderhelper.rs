@@ -4,69 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/beforerenderhelper/BeforeRenderHelper.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "BeforeRenderHelper")] # [parent (crate :: system :: object :: Object)] pub struct BeforeRenderHelper {
-# [static_field] # [rename (name = "s_OrderBlocks")] pub s_order_blocks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: beforerenderhelper :: BeforeRenderHelper_OrderBlock > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/beforerenderhelper/BeforeRenderHelper_OrderBlock.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BeforeRenderHelper_OrderBlock{pub order:i32,pub callback:crate::unity_engine::events::unityaction::UnityAction,}
+impl::unity2::ClassIdentity for BeforeRenderHelper_OrderBlock{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="BeforeRenderHelper.OrderBlock";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for BeforeRenderHelper_OrderBlock{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/beforerenderhelper/BeforeRenderHelper_OrderBlock.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BeforeRenderHelper_OrderBlock {
-    pub order: i32,
-    pub callback: crate :: unity_engine :: events :: unityaction :: UnityAction,
-}
-
-
-impl ::unity2::ClassIdentity for BeforeRenderHelper_OrderBlock {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "BeforeRenderHelper.OrderBlock";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for BeforeRenderHelper_OrderBlock {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/beforerenderhelper/BeforeRenderHelper.md"))]#[::unity2::class(namespace="UnityEngine",name="BeforeRenderHelper")]#[parent(crate::system::object::Object)]pub struct BeforeRenderHelper{#[static_field]#[rename(name="s_OrderBlocks")]pub s_order_blocks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::beforerenderhelper::BeforeRenderHelper_OrderBlock> ,}
 
 }
 
 #[cfg(feature = "unity_engine-beforerenderhelper-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-beforerenderhelper")]
-impl BeforeRenderHelper { # [doc = "`Invoke()` overload"] pub fn invoke () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c36000usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c37560usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-beforerenderhelper")]impl BeforeRenderHelper{#[doc="`Invoke()` overload"]pub fn invoke()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c36000usize)as*mut u8,();
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c37560usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-beforerenderhelper")]
-impl BeforeRenderHelper { pub fn invoke_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BeforeRenderHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BeforeRenderHelper as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-beforerenderhelper")]impl BeforeRenderHelper{pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-beforerenderhelper")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::BeforeRenderHelper_OrderBlock;
     pub use super::BeforeRenderHelper;
     pub use super::IBeforeRenderHelper;
-    pub use super::BeforeRenderHelper_OrderBlock;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

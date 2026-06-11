@@ -4,47 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/vertexgradient/VertexGradient.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct VertexGradient {
-    pub top_left: crate :: unity_engine :: color :: Color,
-    pub top_right: crate :: unity_engine :: color :: Color,
-    pub bottom_left: crate :: unity_engine :: color :: Color,
-    pub bottom_right: crate :: unity_engine :: color :: Color,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/vertexgradient/VertexGradient.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VertexGradient{pub top_left:crate::unity_engine::color::Color,pub top_right:crate::unity_engine::color::Color,pub bottom_left:crate::unity_engine::color::Color,pub bottom_right:crate::unity_engine::color::Color,}
+impl::unity2::ClassIdentity for VertexGradient{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="VertexGradient";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for VertexGradient {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "VertexGradient";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for VertexGradient {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for VertexGradient{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -52,11 +26,17 @@ impl ::unity2::IlType for VertexGradient {
 #[cfg(feature = "tm_pro-vertexgradient-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-vertexgradient")]
-impl VertexGradient { # [doc = "`.ctor(crate::unity_engine::color::Color)` overload"] pub fn ctor (& mut self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { { let __inner : extern "C" fn (* mut VertexGradient , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ea8130usize) as * mut u8) ; __inner (self as * mut VertexGradient , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"] pub fn ctor_2 (& mut self , color0 : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , color1 : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , color2 : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color > , color3 : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { { let __inner : extern "C" fn (* mut VertexGradient , crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3ea8180usize) as * mut u8) ; __inner (self as * mut VertexGradient , :: core :: convert :: Into :: into (color0) , :: core :: convert :: Into :: into (color1) , :: core :: convert :: Into :: into (color2) , :: core :: convert :: Into :: into (color3) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-vertexgradient")]impl VertexGradient{#[doc="`.ctor(crate::unity_engine::color::Color)` overload"]pub fn ctor(&mut self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8130usize)as*mut u8,();
+(*mut VertexGradient)self as*mut VertexGradient,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`.ctor(crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]pub fn ctor_2(&mut self,color0:impl::core::convert::Into<crate::unity_engine::color::Color> ,color1:impl::core::convert::Into<crate::unity_engine::color::Color> ,color2:impl::core::convert::Into<crate::unity_engine::color::Color> ,color3:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8180usize)as*mut u8,();
+(*mut VertexGradient)self as*mut VertexGradient,(crate::unity_engine::color::Color)::core::convert::Into::into(color0),(crate::unity_engine::color::Color)::core::convert::Into::into(color1),(crate::unity_engine::color::Color)::core::convert::Into::into(color2),(crate::unity_engine::color::Color)::core::convert::Into::into(color3))}
+}
+}
 
-#[cfg(feature = "tm_pro-vertexgradient")]
-impl VertexGradient { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VertexGradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < VertexGradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="tm_pro-vertexgradient")]impl VertexGradient{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "tm_pro-vertexgradient")]
 #[doc(hidden)]

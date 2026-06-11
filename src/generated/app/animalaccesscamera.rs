@@ -4,42 +4,92 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalaccesscamera/AnimalAccessCamera.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimalAccessCamera")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AnimalAccessCamera {
-# [offset (48)] # [rename (name = "m_Camera")] pub m_camera : crate :: unity_engine :: camera :: Camera ,
-# [offset (56)] # [rename (name = "m_AngleX")] pub m_angle_x : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
-# [offset (64)] # [rename (name = "m_AngleY")] pub m_angle_y : crate :: app :: interpolatorrotation :: InterpolatorRotation ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalaccesscamera/AnimalAccessCamera.md"))]#[::unity2::class(namespace="App",name="AnimalAccessCamera")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AnimalAccessCamera{#[offset(48)]#[rename(name="m_Camera")]pub m_camera:crate::unity_engine::camera::Camera, #[offset(56)]#[rename(name="m_AngleX")]pub m_angle_x:crate::app::interpolatorrotation::InterpolatorRotation, #[offset(64)]#[rename(name="m_AngleY")]pub m_angle_y:crate::app::interpolatorrotation::InterpolatorRotation,}
 
 }
 
 #[cfg(feature = "app-animalaccesscamera-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-animalaccesscamera")]
-pub trait IAnimalAccessCameraMethods : IAnimalAccessCamera { # [doc = "`get_Target()` overload"] fn get_target (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Target(crate::unity_engine::vector3::Vector3)` overload"] fn set_target (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f720usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Distance()` overload"] fn get_distance (self ,) -> f32 { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f730usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Distance(f32)` overload"] fn set_distance (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f740usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_InitAngle()` overload"] fn get_init_angle (self ,) -> f32 { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_InitAngle(f32)` overload"] fn set_init_angle (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8f7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UpdateKey()` overload"] fn update_key (self ,) -> () { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8fa60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Commit()` overload"] fn commit (self ,) -> () { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8feb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimalAccessCamera as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimalAccessCamera , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c90030usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animalaccesscamera")]pub trait IAnimalAccessCameraMethods:IAnimalAccessCamera{#[doc="`get_Target()` overload"]fn get_target(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f710usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(AnimalAccessCamera)__receiver)}
+}
+#[doc="`set_Target(crate::unity_engine::vector3::Vector3)` overload"]fn set_target(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f720usize)as*mut u8,();
+(AnimalAccessCamera)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_Distance()` overload"]fn get_distance(self,)->f32{unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f730usize)as*mut u8,f32;
+(AnimalAccessCamera)__receiver)}
+}
+#[doc="`set_Distance(f32)` overload"]fn set_distance(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f740usize)as*mut u8,();
+(AnimalAccessCamera)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_InitAngle()` overload"]fn get_init_angle(self,)->f32{unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f750usize)as*mut u8,f32;
+(AnimalAccessCamera)__receiver)}
+}
+#[doc="`set_InitAngle(f32)` overload"]fn set_init_angle(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f760usize)as*mut u8,();
+(AnimalAccessCamera)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f770usize)as*mut u8,();
+(AnimalAccessCamera)__receiver)}
+}
+#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8f7e0usize)as*mut u8,();
+(AnimalAccessCamera)__receiver)}
+}
+#[doc="`UpdateKey()` overload"]fn update_key(self,)->(){unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8fa60usize)as*mut u8,();
+(AnimalAccessCamera)__receiver)}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8feb0usize)as*mut u8,();
+(AnimalAccessCamera)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalAccessCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c90030usize)as*mut u8,();
+(AnimalAccessCamera)__receiver)}
+}
+}
 
-#[cfg(feature = "app-animalaccesscamera")]
-impl < __T : IAnimalAccessCamera > IAnimalAccessCameraMethods for __T { }
+#[cfg(feature="app-animalaccesscamera")]impl<__T:IAnimalAccessCamera>IAnimalAccessCameraMethods for __T{}
 
-#[cfg(feature = "app-animalaccesscamera")]
-impl AnimalAccessCamera { pub fn get_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_target_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_distance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_init_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_init_angle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn update_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn commit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimalAccessCamera as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-animalaccesscamera")]impl AnimalAccessCamera{pub fn get_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_init_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_init_angle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "app-animalaccesscamera")]
-impl AnimalAccessCamera {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimalAccessCamera) , :: core :: stringify ! (new) ,)) ; < Self as IAnimalAccessCameraMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-animalaccesscamera")]impl AnimalAccessCamera{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalAccessCamera), ::core::stringify!(new),));
+ <Self as IAnimalAccessCameraMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-animalaccesscamera")]

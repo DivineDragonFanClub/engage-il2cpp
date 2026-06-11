@@ -4,141 +4,48 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate15/TouchScreenState15.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TouchScreenState15 {
-    pub sampling_number: i64,
-    pub count: i32,
-    pub reserved: i32,
-    pub touches: crate :: nn :: hid :: touchscreenstate15 :: TouchScreenState15_TouchStateArray15,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/touchscreenstate15/TouchScreenState15.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TouchScreenState15{pub sampling_number:i64,pub count:i32,pub reserved:i32,pub touches:crate::nn::hid::touchscreenstate15::TouchScreenState15_TouchStateArray15,}
+impl::unity2::ClassIdentity for TouchScreenState15{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="TouchScreenState15";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TouchScreenState15{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TouchScreenState15{#[inline]pub fn touch_count()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TouchCount");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_touch_count(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"TouchCount");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
+}
 }
 
 
-impl ::unity2::ClassIdentity for TouchScreenState15 {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "TouchScreenState15";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/touchscreenstate15/TouchScreenState15_TouchStateArray15.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TouchScreenState15_TouchStateArray15{pub value0:crate::nn::hid::touchstate::TouchState,pub value1:crate::nn::hid::touchstate::TouchState,pub value2:crate::nn::hid::touchstate::TouchState,pub value3:crate::nn::hid::touchstate::TouchState,pub value4:crate::nn::hid::touchstate::TouchState,pub value5:crate::nn::hid::touchstate::TouchState,pub value6:crate::nn::hid::touchstate::TouchState,pub value7:crate::nn::hid::touchstate::TouchState,pub value8:crate::nn::hid::touchstate::TouchState,pub value9:crate::nn::hid::touchstate::TouchState,pub value10:crate::nn::hid::touchstate::TouchState,pub value11:crate::nn::hid::touchstate::TouchState,pub value12:crate::nn::hid::touchstate::TouchState,pub value13:crate::nn::hid::touchstate::TouchState,pub value14:crate::nn::hid::touchstate::TouchState,}
+impl::unity2::ClassIdentity for TouchScreenState15_TouchStateArray15{const NAMESPACE: &'static str="nn.hid";
+const NAME: &'static str="TouchScreenState15.TouchStateArray15";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::IlType for TouchScreenState15 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for TouchScreenState15_TouchStateArray15{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl TouchScreenState15 {
-    #[inline]
-    pub fn touch_count() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "TouchCount");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_touch_count(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "TouchCount");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
+impl TouchScreenState15_TouchStateArray15{#[inline]pub fn length()->i32{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"_Length");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_length(value:i32){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"_Length");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nn/hid/touchscreenstate15/TouchScreenState15_TouchStateArray15.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TouchScreenState15_TouchStateArray15 {
-    pub value0: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value1: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value2: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value3: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value4: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value5: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value6: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value7: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value8: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value9: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value10: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value11: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value12: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value13: crate :: nn :: hid :: touchstate :: TouchState,
-    pub value14: crate :: nn :: hid :: touchstate :: TouchState,
-}
-
-
-impl ::unity2::ClassIdentity for TouchScreenState15_TouchStateArray15 {
-    const NAMESPACE: &'static str = "nn.hid";
-
-    const NAME: &'static str = "TouchScreenState15.TouchStateArray15";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for TouchScreenState15_TouchStateArray15 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl TouchScreenState15_TouchStateArray15 {
-    #[inline]
-    pub fn length() -> i32 {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "_Length");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_length(value: i32) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "_Length");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -146,17 +53,81 @@ impl TouchScreenState15_TouchStateArray15 {
 #[cfg(feature = "nn-hid-touchscreenstate15-types")]
 pub use __types::*;
 
-#[cfg(feature = "nn-hid-touchscreenstate15")]
-impl TouchScreenState15 { # [doc = "`SetDefault()` overload"] pub fn set_default (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x229a960usize) as * mut u8) ; __inner (self as * mut TouchScreenState15 , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-touchscreenstate15")]impl TouchScreenState15{#[doc="`SetDefault()` overload"]pub fn set_default(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x229a960usize)as*mut u8,();
+(*mut TouchScreenState15)self as*mut TouchScreenState15)}
+}
+}
 
-#[cfg(feature = "nn-hid-touchscreenstate15")]
-impl TouchScreenState15 { pub fn set_default_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="nn-hid-touchscreenstate15")]impl TouchScreenState15{pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "nn-hid-touchscreenstate15")]
-impl TouchScreenState15_TouchStateArray15 { # [doc = "`get_Length()` overload"] pub fn get_length (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x220e980usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] pub fn get_item (& mut self , index : impl :: core :: convert :: Into < i32 >) -> crate :: nn :: hid :: touchstate :: TouchState { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: nn :: hid :: touchstate :: TouchState = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x220e990usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`set_Item(i32, crate::nn::hid::touchstate::TouchState)` overload"] pub fn set_item (& mut self , index : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> () { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , i32 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x220eb40usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Count()` overload"] pub fn get_count (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x220ec30usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: option :: Option :: None) } } } # [doc = "`get_IsReadOnly()` overload"] pub fn get_is_read_only (& mut self ,) -> bool { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x220ec40usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: option :: Option :: None) } } } # [doc = "`Contains(crate::nn::hid::touchstate::TouchState)` overload"] pub fn contains (& mut self , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x220ec50usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`IndexOf(crate::nn::hid::touchstate::TouchState)` overload"] pub fn index_of (& mut self , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> i32 { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x220f180usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`CopyTo(::unity2::Array<crate::nn::hid::touchstate::TouchState>, i32)` overload"] pub fn copy_to (& mut self , array : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: nn :: hid :: touchstate :: TouchState > > , array_index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , :: unity2 :: Array < crate :: nn :: hid :: touchstate :: TouchState > , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x220f6e0usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: convert :: Into :: into (array) , :: core :: convert :: Into :: into (array_index) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] pub fn to_string (& mut self ,) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x220fb40usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: option :: Option :: None) } } } # [doc = "`GetEnumerator()` overload"] pub fn get_enumerator (& mut self ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: nn :: hid :: touchstate :: TouchState > { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: nn :: hid :: touchstate :: TouchState > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2210170usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: option :: Option :: None) } } } # [doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"] pub fn system_collections_i_enumerable_get_enumerator (& mut self ,) -> crate :: system :: collections :: ienumerator :: IEnumerator { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: ienumerator :: IEnumerator = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22101f0usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::nn::hid::touchstate::TouchState)` overload"] pub fn add (& mut self , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> () { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2210270usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] pub fn clear (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22102b0usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: option :: Option :: None) } } } # [doc = "`Insert(i32, crate::nn::hid::touchstate::TouchState)` overload"] pub fn insert (& mut self , index : impl :: core :: convert :: Into < i32 > , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> () { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , i32 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22102f0usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`Remove(crate::nn::hid::touchstate::TouchState)` overload"] pub fn remove (& mut self , item : impl :: core :: convert :: Into < crate :: nn :: hid :: touchstate :: TouchState >) -> bool { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , crate :: nn :: hid :: touchstate :: TouchState , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2210330usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: convert :: Into :: into (item) , :: core :: option :: Option :: None) } } } # [doc = "`RemoveAt(i32)` overload"] pub fn remove_at (& mut self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut TouchScreenState15_TouchStateArray15 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2210370usize) as * mut u8) ; __inner (self as * mut TouchScreenState15_TouchStateArray15 , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nn-hid-touchscreenstate15")]impl TouchScreenState15_TouchStateArray15{#[doc="`get_Length()` overload"]pub fn get_length(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x220e980usize)as*mut u8,i32;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15)}
+}
+#[doc="`get_Item(i32)` overload"]pub fn get_item(&mut self,index:impl::core::convert::Into<i32>)->crate::nn::hid::touchstate::TouchState{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x220e990usize)as*mut u8,crate::nn::hid::touchstate::TouchState;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`set_Item(i32, crate::nn::hid::touchstate::TouchState)` overload"]pub fn set_item(&mut self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x220eb40usize)as*mut u8,();
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15,(i32)::core::convert::Into::into(index),(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(value))}
+}
+#[doc="`get_Count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x220ec30usize)as*mut u8,i32;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15)}
+}
+#[doc="`get_IsReadOnly()` overload"]pub fn get_is_read_only(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x220ec40usize)as*mut u8,bool;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15)}
+}
+#[doc="`Contains(crate::nn::hid::touchstate::TouchState)` overload"]pub fn contains(&mut self,item:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x220ec50usize)as*mut u8,bool;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15,(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(item))}
+}
+#[doc="`IndexOf(crate::nn::hid::touchstate::TouchState)` overload"]pub fn index_of(&mut self,item:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x220f180usize)as*mut u8,i32;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15,(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(item))}
+}
+#[doc="`CopyTo(::unity2::Array<crate::nn::hid::touchstate::TouchState>, i32)` overload"]pub fn copy_to(&mut self,array:impl::core::convert::Into< ::unity2::Array<crate::nn::hid::touchstate::TouchState> > ,array_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x220f6e0usize)as*mut u8,();
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15,(::unity2::Array<crate::nn::hid::touchstate::TouchState>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+}
+#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x220fb40usize)as*mut u8, ::unity2::Il2CppString;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15)}
+}
+#[doc="`GetEnumerator()` overload"]pub fn get_enumerator(&mut self,)->crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::nn::hid::touchstate::TouchState>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2210170usize)as*mut u8,crate::system::collections::generic::ienumerator_1::IEnumerator_1<crate::nn::hid::touchstate::TouchState> ;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15)}
+}
+#[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]pub fn system_collections_i_enumerable_get_enumerator(&mut self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22101f0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15)}
+}
+#[doc="`Add(crate::nn::hid::touchstate::TouchState)` overload"]pub fn add(&mut self,item:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2210270usize)as*mut u8,();
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15,(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(item))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22102b0usize)as*mut u8,();
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15)}
+}
+#[doc="`Insert(i32, crate::nn::hid::touchstate::TouchState)` overload"]pub fn insert(&mut self,index:impl::core::convert::Into<i32> ,item:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22102f0usize)as*mut u8,();
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15,(i32)::core::convert::Into::into(index),(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(item))}
+}
+#[doc="`Remove(crate::nn::hid::touchstate::TouchState)` overload"]pub fn remove(&mut self,item:impl::core::convert::Into<crate::nn::hid::touchstate::TouchState>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2210330usize)as*mut u8,bool;
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15,(crate::nn::hid::touchstate::TouchState)::core::convert::Into::into(item))}
+}
+#[doc="`RemoveAt(i32)` overload"]pub fn remove_at(&mut self,index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2210370usize)as*mut u8,();
+(*mut TouchScreenState15_TouchStateArray15)self as*mut TouchScreenState15_TouchStateArray15,(i32)::core::convert::Into::into(index))}
+}
+}
 
-#[cfg(feature = "nn-hid-touchscreenstate15")]
-impl TouchScreenState15_TouchStateArray15 { pub fn get_length_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_is_read_only_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn contains_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn index_of_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn copy_to_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn system_collections_i_enumerable_get_enumerator_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn insert_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn remove_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn remove_at_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchScreenState15_TouchStateArray15 as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="nn-hid-touchscreenstate15")]impl TouchScreenState15_TouchStateArray15{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn system_collections_i_enumerable_get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn insert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
 #[cfg(feature = "nn-hid-touchscreenstate15")]
 #[doc(hidden)]

@@ -4,28 +4,28 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: integratedsubsystem :: { IIntegratedSubsystem , IntegratedSubsystem }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::integratedsubsystem::{IIntegratedSubsystem,IntegratedSubsystem}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/integratedsubsystem_1/IntegratedSubsystem_1.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "IntegratedSubsystem`1")] # [parent (crate :: unity_engine :: integratedsubsystem :: IntegratedSubsystem)] # [parent (crate :: system :: object :: Object)] pub struct IntegratedSubsystem_1 < T0 : :: unity2 :: ClassIdentity > {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/integratedsubsystem_1/IntegratedSubsystem_1.md"))]#[::unity2::class(namespace="UnityEngine",name="IntegratedSubsystem`1")]#[parent(crate::unity_engine::integratedsubsystem::IntegratedSubsystem)]#[parent(crate::system::object::Object)]pub struct IntegratedSubsystem_1<T0: ::unity2::ClassIdentity>{}
 
 }
 
 #[cfg(feature = "unity_engine-integratedsubsystem_1-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-integratedsubsystem_1")]
-# [:: unity2 :: methods] impl < T0 : :: unity2 :: ClassIdentity > IntegratedSubsystem_1 < T0 > {
-# [doc = "`.ctor()` overload"] # [method (name = ".ctor" , args = 0)] pub fn ctor (self ,) -> () ;
+#[cfg(feature="unity_engine-integratedsubsystem_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>IntegratedSubsystem_1<T0>{#[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
 }
 
-#[cfg(feature = "unity_engine-integratedsubsystem_1")]
-impl < T0 : :: unity2 :: ClassIdentity > IntegratedSubsystem_1 < T0 > {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IntegratedSubsystem_1) , :: core :: stringify ! (new) ,)) ; < Self as IIntegratedSubsystem_1Methods < T0 > > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-integratedsubsystem_1")]impl<T0: ::unity2::ClassIdentity>IntegratedSubsystem_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IntegratedSubsystem_1), ::core::stringify!(new),));
+ <Self as IIntegratedSubsystem_1Methods<T0> > ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-integratedsubsystem_1")]

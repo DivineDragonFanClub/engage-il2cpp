@@ -4,36 +4,60 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvariable/ProfileCardVariable.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProfileCardVariable")] # [parent (crate :: system :: object :: Object)] pub struct ProfileCardVariable {
-# [static_field] # [rename (name = "m_Flag_IsStampHide")] pub m_flag_is_stamp_hide : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "m_Flag_MyCard_UgcNotice")] pub m_flag_my_card_ugc_notice : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardvariable/ProfileCardVariable.md"))]#[::unity2::class(namespace="App",name="ProfileCardVariable")]#[parent(crate::system::object::Object)]pub struct ProfileCardVariable{#[static_field]#[rename(name="m_Flag_IsStampHide")]pub m_flag_is_stamp_hide: ::unity2::Il2CppString, #[static_field]#[rename(name="m_Flag_MyCard_UgcNotice")]pub m_flag_my_card_ugc_notice: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-profilecardvariable-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-profilecardvariable")]
-impl ProfileCardVariable { # [doc = "`RegistGlobalFlags()` overload"] pub fn regist_global_flags () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00690usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_IsStampHide()` overload"] pub fn get_is_stamp_hide () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2bfc050usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_IsStampHide(bool)` overload"] pub fn set_is_stamp_hide (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00780usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_MyCard_UgcNotice()` overload"] pub fn get_my_card_ugc_notice () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00ab0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_MyCard_UgcNotice(bool)` overload"] pub fn set_my_card_ugc_notice (value : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00bd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00f10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvariable")]impl ProfileCardVariable{#[doc="`RegistGlobalFlags()` overload"]pub fn regist_global_flags()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c00690usize)as*mut u8,();
+)}
+}
+#[doc="`get_IsStampHide()` overload"]pub fn get_is_stamp_hide()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bfc050usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_IsStampHide(bool)` overload"]pub fn set_is_stamp_hide(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c00780usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_MyCard_UgcNotice()` overload"]pub fn get_my_card_ugc_notice()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c00ab0usize)as*mut u8,bool;
+)}
+}
+#[doc="`set_MyCard_UgcNotice(bool)` overload"]pub fn set_my_card_ugc_notice(value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c00bd0usize)as*mut u8,();
+(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c00f10usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-profilecardvariable")]
-pub trait IProfileCardVariableMethods : IProfileCardVariable { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ProfileCardVariable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProfileCardVariable , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c00f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-profilecardvariable")]pub trait IProfileCardVariableMethods:IProfileCardVariable{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardVariable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c00f00usize)as*mut u8,();
+(ProfileCardVariable)__receiver)}
+}
+}
 
-#[cfg(feature = "app-profilecardvariable")]
-impl < __T : IProfileCardVariable > IProfileCardVariableMethods for __T { }
+#[cfg(feature="app-profilecardvariable")]impl<__T:IProfileCardVariable>IProfileCardVariableMethods for __T{}
 
-#[cfg(feature = "app-profilecardvariable")]
-impl ProfileCardVariable { pub fn regist_global_flags_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_is_stamp_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_is_stamp_hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_my_card_ugc_notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_my_card_ugc_notice_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProfileCardVariable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } }
+#[cfg(feature="app-profilecardvariable")]impl ProfileCardVariable{pub fn regist_global_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_is_stamp_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_is_stamp_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_my_card_ugc_notice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_my_card_ugc_notice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
 
-#[cfg(feature = "app-profilecardvariable")]
-impl ProfileCardVariable {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProfileCardVariable) , :: core :: stringify ! (new) ,)) ; < Self as IProfileCardVariableMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-profilecardvariable")]impl ProfileCardVariable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardVariable), ::core::stringify!(new),));
+ <Self as IProfileCardVariableMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-profilecardvariable")]

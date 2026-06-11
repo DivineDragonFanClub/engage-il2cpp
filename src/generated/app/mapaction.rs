@@ -4,404 +4,665 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction")] # [parent (crate :: system :: object :: Object)] pub struct MapAction {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcRouteMove.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcRouteMove")]#[parent(crate::app::procinst::ProcInst)]pub struct MapAction_ProcRouteMove{#[static_field]#[rename(name="SmokeCount")]pub smoke_count:i32, #[static_field]#[rename(name="MoveSpeed")]pub move_speed:f32, #[offset(112)]#[rename(name="m_Actor")]pub m_actor:crate::app::unitactor::UnitActor, #[offset(120)]#[rename(name="m_MoveFlag")]pub m_move_flag:crate::app::mapmoveflag::MapMoveFlag, #[offset(128)]#[rename(name="m_Routes")]pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type> , #[offset(136)]#[rename(name="m_RouteCount")]pub m_route_count:i32, #[offset(140)]#[rename(name="m_Position")]pub m_position:crate::unity_engine::vector3::Vector3, #[offset(152)]#[rename(name="m_FromX")]pub m_from_x:i32, #[offset(156)]#[rename(name="m_FromZ")]pub m_from_z:i32, #[offset(160)]#[rename(name="m_ToX")]pub m_to_x:i32, #[offset(164)]#[rename(name="m_ToZ")]pub m_to_z:i32, #[offset(168)]#[rename(name="m_Spline")]pub m_spline:crate::app::mapaction::MapAction_ProcRouteMove_Spline, #[offset(176)]#[rename(name="m_Fraction")]pub m_fraction:f32, #[offset(180)]#[rename(name="m_Distance")]pub m_distance:f32, #[offset(184)]#[rename(name="m_IsPass")]pub m_is_pass:bool, #[offset(185)]#[rename(name="m_IsStay")]pub m_is_stay:bool,}
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapaction/MapAction_ProcRouteMove_Result.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapAction_ProcRouteMove_Result  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcSyncSkyCastle.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcSyncSkyCastle")]#[parent(crate::app::mapaction::MapAction_ProcUnitAction)]pub struct MapAction_ProcSyncSkyCastle{#[offset(156)]#[rename(name="m_MovingSkyCastle")]pub m_moving_sky_castle:crate::root::skycastle::SkyCastle_MovingSkyCastle, #[offset(160)]#[rename(name="m_IsUpdate")]pub m_is_update:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcUnitAction.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcUnitAction")]#[parent(crate::app::procinst::ProcInst)]pub struct MapAction_ProcUnitAction{#[offset(112)]#[rename(name="m_Actor")]pub m_actor:crate::app::unitactor::UnitActor, #[offset(120)]#[rename(name="m_From")]pub m_from:crate::unity_engine::vector3::Vector3, #[offset(132)]#[rename(name="m_To")]pub m_to:crate::unity_engine::vector3::Vector3, #[offset(144)]#[rename(name="m_Dist")]pub m_dist:f32, #[offset(148)]#[rename(name="m_Range")]pub m_range:f32, #[offset(152)]#[rename(name="m_Time")]pub m_time:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcChangePos.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcChangePos")]#[parent(crate::app::mapaction::MapAction_ProcUnitAction)]pub struct MapAction_ProcChangePos{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcWarp.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcWarp")]#[parent(crate::app::mapaction::MapAction_ProcUnitAction)]pub struct MapAction_ProcWarp{#[static_field]#[rename(name="FadeTime")]pub fade_time:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcJump.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcJump")]#[parent(crate::app::mapaction::MapAction_ProcUnitAction)]pub struct MapAction_ProcJump{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcBlow.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcBlow")]#[parent(crate::app::mapaction::MapAction_ProcUnitAction)]pub struct MapAction_ProcBlow{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction.md"))]#[::unity2::class(namespace="App",name="MapAction")]#[parent(crate::system::object::Object)]pub struct MapAction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcRouteMove_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapAction_ProcRouteMove_Result{pub value:i32,}
+impl::unity2::ClassIdentity for MapAction_ProcRouteMove_Result{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapAction.ProcRouteMove.Result";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapAction_ProcRouteMove_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapAction_ProcRouteMove_Result{pub fn r#move()->Self{Self{value:0}
+}
+pub fn next()->Self{Self{value:1}
+}
+pub fn end()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapAction_ProcRouteMove_Result  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapAction.ProcRouteMove.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcRouteMove_Spline.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcRouteMove.Spline")]#[parent(crate::system::object::Object)]pub struct MapAction_ProcRouteMove_Spline{#[static_field]#[rename(name="CurveMax")]pub curve_max:i32, #[offset(16)]#[rename(name="From")]pub from:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="To")]pub to:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="Curves")]pub curves: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
 
 
-impl  ::unity2::IlType for MapAction_ProcRouteMove_Result  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcDead.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcDead")]#[parent(crate::app::mapaction::MapAction_ProcUnitAction)]pub struct MapAction_ProcDead{#[static_field]#[rename(name="FadeTime")]pub fade_time:f32,}
 
 
-impl  MapAction_ProcRouteMove_Result  {
-    pub fn r#move() -> Self {
-        Self { value: 0 }
-
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcTranslation.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcTranslation")]#[parent(crate::app::mapaction::MapAction_ProcUnitAction)]pub struct MapAction_ProcTranslation{}
 
 
-    pub fn next() -> Self {
-        Self { value: 1 }
-
-    }
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcRevive.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcRevive")]#[parent(crate::app::mapaction::MapAction_ProcUnitAction)]pub struct MapAction_ProcRevive{#[static_field]#[rename(name="FadeTime")]pub fade_time:f32,}
 
 
-    pub fn end() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcBounce.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcBounce")] # [parent (crate :: app :: mapaction :: MapAction_ProcUnitAction)] pub struct MapAction_ProcBounce {
-# [offset (156)] # [rename (name = "m_impacted")] pub m_impacted : bool ,
-# [offset (160)] # [rename (name = "m_Hit")] pub m_hit : crate :: unity_engine :: vector3 :: Vector3 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcChangePos.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcChangePos")] # [parent (crate :: app :: mapaction :: MapAction_ProcUnitAction)] pub struct MapAction_ProcChangePos {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcUnitAction.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcUnitAction")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapAction_ProcUnitAction {
-# [offset (112)] # [rename (name = "m_Actor")] pub m_actor : crate :: app :: unitactor :: UnitActor ,
-# [offset (120)] # [rename (name = "m_From")] pub m_from : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (132)] # [rename (name = "m_To")] pub m_to : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (144)] # [rename (name = "m_Dist")] pub m_dist : f32 ,
-# [offset (148)] # [rename (name = "m_Range")] pub m_range : f32 ,
-# [offset (152)] # [rename (name = "m_Time")] pub m_time : f32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcSyncSkyCastle.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcSyncSkyCastle")] # [parent (crate :: app :: mapaction :: MapAction_ProcUnitAction)] pub struct MapAction_ProcSyncSkyCastle {
-# [offset (156)] # [rename (name = "m_MovingSkyCastle")] pub m_moving_sky_castle : crate :: root :: skycastle :: SkyCastle_MovingSkyCastle ,
-# [offset (160)] # [rename (name = "m_IsUpdate")] pub m_is_update : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcDead.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcDead")] # [parent (crate :: app :: mapaction :: MapAction_ProcUnitAction)] pub struct MapAction_ProcDead {
-# [static_field] # [rename (name = "FadeTime")] pub fade_time : f32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcRouteMove.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcRouteMove")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct MapAction_ProcRouteMove {
-# [static_field] # [rename (name = "SmokeCount")] pub smoke_count : i32 ,
-# [static_field] # [rename (name = "MoveSpeed")] pub move_speed : f32 ,
-# [offset (112)] # [rename (name = "m_Actor")] pub m_actor : crate :: app :: unitactor :: UnitActor ,
-# [offset (120)] # [rename (name = "m_MoveFlag")] pub m_move_flag : crate :: app :: mapmoveflag :: MapMoveFlag ,
-# [offset (128)] # [rename (name = "m_Routes")] pub m_routes : :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > ,
-# [offset (136)] # [rename (name = "m_RouteCount")] pub m_route_count : i32 ,
-# [offset (140)] # [rename (name = "m_Position")] pub m_position : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (152)] # [rename (name = "m_FromX")] pub m_from_x : i32 ,
-# [offset (156)] # [rename (name = "m_FromZ")] pub m_from_z : i32 ,
-# [offset (160)] # [rename (name = "m_ToX")] pub m_to_x : i32 ,
-# [offset (164)] # [rename (name = "m_ToZ")] pub m_to_z : i32 ,
-# [offset (168)] # [rename (name = "m_Spline")] pub m_spline : crate :: app :: mapaction :: MapAction_ProcRouteMove_Spline ,
-# [offset (176)] # [rename (name = "m_Fraction")] pub m_fraction : f32 ,
-# [offset (180)] # [rename (name = "m_Distance")] pub m_distance : f32 ,
-# [offset (184)] # [rename (name = "m_IsPass")] pub m_is_pass : bool ,
-# [offset (185)] # [rename (name = "m_IsStay")] pub m_is_stay : bool ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcBlow.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcBlow")] # [parent (crate :: app :: mapaction :: MapAction_ProcUnitAction)] pub struct MapAction_ProcBlow {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcRevive.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcRevive")] # [parent (crate :: app :: mapaction :: MapAction_ProcUnitAction)] pub struct MapAction_ProcRevive {
-# [static_field] # [rename (name = "FadeTime")] pub fade_time : f32 ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcTranslation.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcTranslation")] # [parent (crate :: app :: mapaction :: MapAction_ProcUnitAction)] pub struct MapAction_ProcTranslation {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcRouteMove_Spline.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcRouteMove.Spline")] # [parent (crate :: system :: object :: Object)] pub struct MapAction_ProcRouteMove_Spline {
-# [static_field] # [rename (name = "CurveMax")] pub curve_max : i32 ,
-# [offset (16)] # [rename (name = "From")] pub from : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (28)] # [rename (name = "To")] pub to : crate :: unity_engine :: vector3 :: Vector3 ,
-# [offset (40)] # [rename (name = "Curves")] pub curves : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcJump.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcJump")] # [parent (crate :: app :: mapaction :: MapAction_ProcUnitAction)] pub struct MapAction_ProcJump {}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapaction/MapAction_ProcWarp.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapAction.ProcWarp")] # [parent (crate :: app :: mapaction :: MapAction_ProcUnitAction)] pub struct MapAction_ProcWarp {
-# [static_field] # [rename (name = "FadeTime")] pub fade_time : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapaction/MapAction_ProcBounce.md"))]#[::unity2::class(namespace="App",name="MapAction.ProcBounce")]#[parent(crate::app::mapaction::MapAction_ProcUnitAction)]pub struct MapAction_ProcBounce{#[offset(156)]#[rename(name="m_impacted")]pub m_impacted:bool, #[offset(160)]#[rename(name="m_Hit")]pub m_hit:crate::unity_engine::vector3::Vector3,}
 
 }
 
 #[cfg(feature = "app-mapaction-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction { # [doc = "`ChangePosBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"] pub fn change_pos_bind (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef87d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`WarpBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"] pub fn warp_bind (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef87f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`WarpInBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"] pub fn warp_in_bind (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef8810usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`WarpOutBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"] pub fn warp_out_bind (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef8830usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`DeadBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst)` overload"] pub fn dead_bind (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef8850usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`ReviveBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst)` overload"] pub fn revive_bind (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef8870usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`BlowBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"] pub fn blow_bind (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef8890usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`BounceBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, i32)` overload"] pub fn bounce_bind (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , dx : impl :: core :: convert :: Into < i32 > , dz : impl :: core :: convert :: Into < i32 > , distance : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef88b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (dx) , :: core :: convert :: Into :: into (dz) , :: core :: convert :: Into :: into (distance) , :: core :: option :: Option :: None) } } } # [doc = "`SyncSkyCastleCreate(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"] pub fn sync_sky_castle_create (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 > , moving_sky_castle : impl :: core :: convert :: Into < crate :: root :: skycastle :: SkyCastle_MovingSkyCastle >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , i32 , i32 , crate :: root :: skycastle :: SkyCastle_MovingSkyCastle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef88d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: convert :: Into :: into (moving_sky_castle) , :: core :: option :: Option :: None) } } } # [doc = "`JumpCreate(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, f32)` overload"] pub fn jump_create (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 > , range : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , i32 , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef88f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: convert :: Into :: into (range) , :: core :: option :: Option :: None) } } } # [doc = "`TranslationBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"] pub fn translation_bind (actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unitactor :: UnitActor , crate :: app :: procinst :: ProcInst , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ef8910usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction { pub fn change_pos_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn warp_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn warp_in_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn warp_out_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dead_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn revive_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn blow_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn bounce_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn sync_sky_castle_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn jump_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn translation_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcBounce { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , dx : impl :: core :: convert :: Into < i32 > , dz : impl :: core :: convert :: Into < i32 > , distance : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b55b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (dx) , :: core :: convert :: Into :: into (dz) , :: core :: convert :: Into :: into (distance) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcBounceMethods : IMapAction_ProcBounce { # [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, i32)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , dx : impl :: core :: convert :: Into < i32 > , dz : impl :: core :: convert :: Into < i32 > , distance : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapAction_ProcBounce as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcBounce , crate :: app :: unitactor :: UnitActor , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5130usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (dx) , :: core :: convert :: Into :: into (dz) , :: core :: convert :: Into :: into (distance) , :: core :: option :: Option :: None) } } } # [doc = "`get_Speed()` overload"] fn get_speed (self ,) -> f32 { unsafe { let __receiver = < MapAction_ProcBounce as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcBounce , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5410usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapAction_ProcBounce as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcBounce , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcBounce > IMapAction_ProcBounceMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcBounce { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcBounce as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcBounce as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcBounce as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcBounce as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcBounce {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, i32)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor , dx : i32 , dz : i32 , distance : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcBounce) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcBounceMethods > :: ctor (this , actor , dx , dz , distance) ; this }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcRouteMove{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,routes:impl::core::convert::Into< ::unity2::Array<crate::app::dir_2::Dir_Type> > ,from_x:impl::core::convert::Into<i32> ,from_z:impl::core::convert::Into<i32> ,move_flag:impl::core::convert::Into<crate::app::mapmoveflag::MapMoveFlag>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b7d80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(::unity2::Array<crate::app::dir_2::Dir_Type>)::core::convert::Into::into(routes),(i32)::core::convert::Into::into(from_x),(i32)::core::convert::Into::into(from_z),(crate::app::mapmoveflag::MapMoveFlag)::core::convert::Into::into(move_flag))}
+}
 }
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcChangePos { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b59a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcChangePosMethods : IMapAction_ProcChangePos { # [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapAction_ProcChangePos as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcChangePos , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5670usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapAction_ProcChangePos as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcChangePos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapAction_ProcChangePos as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcChangePos , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5710usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcChangePos > IMapAction_ProcChangePosMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcChangePos { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcChangePos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcChangePos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcChangePos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcChangePos as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcChangePos {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor , to_x : i32 , to_z : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcChangePos) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcChangePosMethods > :: ctor (this , actor , to_x , to_z) ; this }
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcRouteMoveMethods:IMapAction_ProcRouteMove{#[doc="`.ctor(crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,routes:impl::core::convert::Into< ::unity2::Array<crate::app::dir_2::Dir_Type> > ,from_x:impl::core::convert::Into<i32> ,from_z:impl::core::convert::Into<i32> ,move_flag:impl::core::convert::Into<crate::app::mapmoveflag::MapMoveFlag>)->(){unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b6370usize)as*mut u8,();
+(MapAction_ProcRouteMove)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(::unity2::Array<crate::app::dir_2::Dir_Type>)::core::convert::Into::into(routes),(i32)::core::convert::Into::into(from_x),(i32)::core::convert::Into::into(from_z),(crate::app::mapmoveflag::MapMoveFlag)::core::convert::Into::into(move_flag))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b6890usize)as*mut u8,();
+(MapAction_ProcRouteMove)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b6940usize)as*mut u8,();
+(MapAction_ProcRouteMove)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b7910usize)as*mut u8,();
+(MapAction_ProcRouteMove)__receiver)}
+}
+#[doc="`GetTimeScale()` overload"]fn get_time_scale(self,)->i32{unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b7bb0usize)as*mut u8,i32;
+(MapAction_ProcRouteMove)__receiver)}
+}
+#[doc="`IsPass(i32, i32, ::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"]fn is_pass(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,routes:impl::core::convert::Into< ::unity2::Array<crate::app::dir_2::Dir_Type> >)->bool{unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b6610usize)as*mut u8,bool;
+(MapAction_ProcRouteMove)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Array<crate::app::dir_2::Dir_Type>)::core::convert::Into::into(routes))}
+}
+#[doc="`IsStay()` overload"]fn is_stay(self,)->bool{unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b6780usize)as*mut u8,bool;
+(MapAction_ProcRouteMove)__receiver)}
+}
+#[doc="`InitRoute(::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"]fn init_route(self,routes:impl::core::convert::Into< ::unity2::Array<crate::app::dir_2::Dir_Type> >)->(){unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b64d0usize)as*mut u8,();
+(MapAction_ProcRouteMove)__receiver,(::unity2::Array<crate::app::dir_2::Dir_Type>)::core::convert::Into::into(routes))}
+}
+#[doc="`InitPosition()` overload"]fn init_position(self,)->(){unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b67b0usize)as*mut u8,();
+(MapAction_ProcRouteMove)__receiver)}
+}
+#[doc="`CalcPosition()` overload"]fn calc_position(self,)->bool{unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b6a20usize)as*mut u8,bool;
+(MapAction_ProcRouteMove)__receiver)}
+}
+#[doc="`MoveRoute(f32)` overload"]fn move_route(self,speed:impl::core::convert::Into<f32>)->crate::app::mapaction::MapAction_ProcRouteMove_Result{unsafe{let __receiver= <MapAction_ProcRouteMove as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b7bf0usize)as*mut u8,crate::app::mapaction::MapAction_ProcRouteMove_Result;
+(MapAction_ProcRouteMove)__receiver,(f32)::core::convert::Into::into(speed))}
+}
 }
 
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcUnitActionMethods : IMapAction_ProcUnitAction { # [doc = "`get_CanWaitSkip()` overload"] fn get_can_wait_skip (self ,) -> bool { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b9250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Speed()` overload"] fn get_speed (self ,) -> f32 { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b9260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::unitactor::UnitActor)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor >) -> () { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , crate :: app :: unitactor :: UnitActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b52d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"] fn ctor_2 (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b4060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`CalcRange(f32, f32)` overload"] fn calc_range (self , dx : impl :: core :: convert :: Into < f32 > , dz : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , f32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5330usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dx) , :: core :: convert :: Into :: into (dz) , :: core :: option :: Option :: None) } } } # [doc = "`AddTime()` overload"] fn add_time (self ,) -> bool { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b4f70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetRatio()` overload"] fn get_ratio (self ,) -> f32 { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b8080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Unit()` overload"] fn get_unit (self ,) -> crate :: app :: unit :: Unit { unsafe { let __receiver = < MapAction_ProcUnitAction as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcUnitAction , :: unity2 :: OptionalMethod ,) -> crate :: app :: unit :: Unit = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b9270usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcRouteMove>IMapAction_ProcRouteMoveMethods for __T{}
 
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcUnitAction > IMapAction_ProcUnitActionMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcUnitAction { pub fn get_can_wait_skip_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn add_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_ratio_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcUnitAction as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcUnitAction {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcUnitAction) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcUnitActionMethods > :: ctor (this , actor) ; this }
-
-# [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"] pub fn new_2 (actor : crate :: app :: unitactor :: UnitActor , to_x : i32 , to_z : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcUnitAction) , :: core :: stringify ! (new_2) ,)) ; < Self as IMapAction_ProcUnitActionMethods > :: ctor_2 (this , actor , to_x , to_z) ; this }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcRouteMove{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_time_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_pass_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_stay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn init_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn init_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn calc_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn move_route_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 }
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcSyncSkyCastle { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"] pub fn create (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 > , moving_sky_castle : impl :: core :: convert :: Into < crate :: root :: skycastle :: SkyCastle_MovingSkyCastle >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , i32 , i32 , crate :: root :: skycastle :: SkyCastle_MovingSkyCastle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b8200usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: convert :: Into :: into (moving_sky_castle) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcSyncSkyCastleMethods : IMapAction_ProcSyncSkyCastle { # [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 > , moving_sky_castle : impl :: core :: convert :: Into < crate :: root :: skycastle :: SkyCastle_MovingSkyCastle >) -> () { unsafe { let __receiver = < MapAction_ProcSyncSkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcSyncSkyCastle , crate :: app :: unitactor :: UnitActor , i32 , i32 , crate :: root :: skycastle :: SkyCastle_MovingSkyCastle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b7e20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: convert :: Into :: into (moving_sky_castle) , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapAction_ProcSyncSkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcSyncSkyCastle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b7e60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapAction_ProcSyncSkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcSyncSkyCastle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b7f00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapAction_ProcSyncSkyCastle as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcSyncSkyCastle , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b80c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcSyncSkyCastle > IMapAction_ProcSyncSkyCastleMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcSyncSkyCastle { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcSyncSkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcSyncSkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcSyncSkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcSyncSkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcSyncSkyCastle as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcSyncSkyCastle {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor , to_x : i32 , to_z : i32 , moving_sky_castle : crate :: root :: skycastle :: SkyCastle_MovingSkyCastle) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcSyncSkyCastle) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcSyncSkyCastleMethods > :: ctor (this , actor , to_x , to_z , moving_sky_castle) ; this }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcRouteMove{#[doc="`.ctor(crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor,routes: ::unity2::Array<crate::app::dir_2::Dir_Type> ,from_x:i32,from_z:i32,move_flag:crate::app::mapmoveflag::MapMoveFlag)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcRouteMove), ::core::stringify!(new),));
+ <Self as IMapAction_ProcRouteMoveMethods> ::ctor(this,actor,routes,from_x,from_z,move_flag);
+this}
 }
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcDead { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5b80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcDeadMethods : IMapAction_ProcDead { # [doc = "`.ctor(crate::app::unitactor::UnitActor)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor >) -> () { unsafe { let __receiver = < MapAction_ProcDead as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcDead , crate :: app :: unitactor :: UnitActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5a60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } # [doc = "`Executed()` overload"] fn executed (self ,) -> () { unsafe { let __receiver = < MapAction_ProcDead as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcDead , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5ac0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcDead > IMapAction_ProcDeadMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcDead { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcDead as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn executed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcDead as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcDead as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcDead {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcDead) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcDeadMethods > :: ctor (this , actor) ; this }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcSyncSkyCastle{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32> ,moving_sky_castle:impl::core::convert::Into<crate::root::skycastle::SkyCastle_MovingSkyCastle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b8200usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z),(crate::root::skycastle::SkyCastle_MovingSkyCastle)::core::convert::Into::into(moving_sky_castle))}
+}
 }
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcRouteMove { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` overload"] pub fn create (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , routes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > > , from_x : impl :: core :: convert :: Into < i32 > , from_z : impl :: core :: convert :: Into < i32 > , move_flag : impl :: core :: convert :: Into < crate :: app :: mapmoveflag :: MapMoveFlag >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > , i32 , i32 , crate :: app :: mapmoveflag :: MapMoveFlag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b7d80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (routes) , :: core :: convert :: Into :: into (from_x) , :: core :: convert :: Into :: into (from_z) , :: core :: convert :: Into :: into (move_flag) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcRouteMoveMethods : IMapAction_ProcRouteMove { # [doc = "`.ctor(crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , routes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > > , from_x : impl :: core :: convert :: Into < i32 > , from_z : impl :: core :: convert :: Into < i32 > , move_flag : impl :: core :: convert :: Into < crate :: app :: mapmoveflag :: MapMoveFlag >) -> () { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , crate :: app :: unitactor :: UnitActor , :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > , i32 , i32 , crate :: app :: mapmoveflag :: MapMoveFlag , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b6370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (routes) , :: core :: convert :: Into :: into (from_x) , :: core :: convert :: Into :: into (from_z) , :: core :: convert :: Into :: into (move_flag) , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b6890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b6940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b7910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetTimeScale()` overload"] fn get_time_scale (self ,) -> i32 { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b7bb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsPass(i32, i32, ::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"] fn is_pass (self , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , routes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > >) -> bool { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , i32 , i32 , :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b6610usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (routes) , :: core :: option :: Option :: None) } } } # [doc = "`IsStay()` overload"] fn is_stay (self ,) -> bool { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b6780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitRoute(::unity2::Array<crate::app::dir_2::Dir_Type>)` overload"] fn init_route (self , routes : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > >) -> () { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b64d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (routes) , :: core :: option :: Option :: None) } } } # [doc = "`InitPosition()` overload"] fn init_position (self ,) -> () { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b67b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcPosition()` overload"] fn calc_position (self ,) -> bool { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b6a20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MoveRoute(f32)` overload"] fn move_route (self , speed : impl :: core :: convert :: Into < f32 >) -> crate :: app :: mapaction :: MapAction_ProcRouteMove_Result { unsafe { let __receiver = < MapAction_ProcRouteMove as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove , f32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: mapaction :: MapAction_ProcRouteMove_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b7bf0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (speed) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcRouteMove > IMapAction_ProcRouteMoveMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcRouteMove { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_time_scale_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_pass_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_stay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn init_route_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn init_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn calc_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn move_route_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcRouteMove {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor, ::unity2::Array<crate::app::dir_2::Dir_Type>, i32, i32, crate::app::mapmoveflag::MapMoveFlag)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor , routes : :: unity2 :: Array < crate :: app :: dir_2 :: Dir_Type > , from_x : i32 , from_z : i32 , move_flag : crate :: app :: mapmoveflag :: MapMoveFlag) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcRouteMove) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcRouteMoveMethods > :: ctor (this , actor , routes , from_x , from_z , move_flag) ; this }
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcSyncSkyCastleMethods:IMapAction_ProcSyncSkyCastle{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32> ,moving_sky_castle:impl::core::convert::Into<crate::root::skycastle::SkyCastle_MovingSkyCastle>)->(){unsafe{let __receiver= <MapAction_ProcSyncSkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b7e20usize)as*mut u8,();
+(MapAction_ProcSyncSkyCastle)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z),(crate::root::skycastle::SkyCastle_MovingSkyCastle)::core::convert::Into::into(moving_sky_castle))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapAction_ProcSyncSkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b7e60usize)as*mut u8,();
+(MapAction_ProcSyncSkyCastle)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapAction_ProcSyncSkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b7f00usize)as*mut u8,();
+(MapAction_ProcSyncSkyCastle)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapAction_ProcSyncSkyCastle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b80c0usize)as*mut u8,();
+(MapAction_ProcSyncSkyCastle)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcBlow { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5070usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcSyncSkyCastle>IMapAction_ProcSyncSkyCastleMethods for __T{}
 
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcBlowMethods : IMapAction_ProcBlow { # [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapAction_ProcBlow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcBlow , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b4050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`get_Speed()` overload"] fn get_speed (self ,) -> f32 { unsafe { let __receiver = < MapAction_ProcBlow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcBlow , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b4e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapAction_ProcBlow as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcBlow , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b4e30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcBlow > IMapAction_ProcBlowMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcBlow { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcBlow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcBlow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcBlow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcBlow as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcBlow {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor , to_x : i32 , to_z : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcBlow) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcBlowMethods > :: ctor (this , actor , to_x , to_z) ; this }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcSyncSkyCastle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcRevive { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b6110usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcReviveMethods : IMapAction_ProcRevive { # [doc = "`.ctor(crate::app::unitactor::UnitActor)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor >) -> () { unsafe { let __receiver = < MapAction_ProcRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRevive , crate :: app :: unitactor :: UnitActor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b6060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: option :: Option :: None) } } } # [doc = "`Executed()` overload"] fn executed (self ,) -> () { unsafe { let __receiver = < MapAction_ProcRevive as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRevive , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b60c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcRevive > IMapAction_ProcReviveMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcRevive { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn executed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRevive as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcRevive {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcRevive) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcReviveMethods > :: ctor (this , actor) ; this }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcSyncSkyCastle{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor,to_x:i32,to_z:i32,moving_sky_castle:crate::root::skycastle::SkyCastle_MovingSkyCastle)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcSyncSkyCastle), ::core::stringify!(new),));
+ <Self as IMapAction_ProcSyncSkyCastleMethods> ::ctor(this,actor,to_x,to_z,moving_sky_castle);
+this}
 }
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcTranslation { # [doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b9170usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcTranslationMethods : IMapAction_ProcTranslation { # [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapAction_ProcTranslation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcTranslation , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b8360usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`get_Speed()` overload"] fn get_speed (self ,) -> f32 { unsafe { let __receiver = < MapAction_ProcTranslation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcTranslation , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b83a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < MapAction_ProcTranslation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcTranslation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b83b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < MapAction_ProcTranslation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcTranslation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b8400usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapAction_ProcTranslation as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcTranslation , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b8460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcTranslation > IMapAction_ProcTranslationMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcTranslation { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcTranslation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcTranslation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcTranslation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcTranslation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcTranslation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcTranslation as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcTranslation {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor , to_x : i32 , to_z : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcTranslation) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcTranslationMethods > :: ctor (this , actor , to_x , to_z) ; this }
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcUnitActionMethods:IMapAction_ProcUnitAction{#[doc="`get_CanWaitSkip()` overload"]fn get_can_wait_skip(self,)->bool{unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b9250usize)as*mut u8,bool;
+(MapAction_ProcUnitAction)__receiver)}
+}
+#[doc="`get_Speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b9260usize)as*mut u8,f32;
+(MapAction_ProcUnitAction)__receiver)}
+}
+#[doc="`.ctor(crate::app::unitactor::UnitActor)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor>)->(){unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b52d0usize)as*mut u8,();
+(MapAction_ProcUnitAction)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor))}
+}
+#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]fn ctor_2(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b4060usize)as*mut u8,();
+(MapAction_ProcUnitAction)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`CalcRange(f32, f32)` overload"]fn calc_range(self,dx:impl::core::convert::Into<f32> ,dz:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5330usize)as*mut u8,();
+(MapAction_ProcUnitAction)__receiver,(f32)::core::convert::Into::into(dx),(f32)::core::convert::Into::into(dz))}
+}
+#[doc="`AddTime()` overload"]fn add_time(self,)->bool{unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b4f70usize)as*mut u8,bool;
+(MapAction_ProcUnitAction)__receiver)}
+}
+#[doc="`GetRatio()` overload"]fn get_ratio(self,)->f32{unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5050usize)as*mut u8,f32;
+(MapAction_ProcUnitAction)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5700usize)as*mut u8,();
+(MapAction_ProcUnitAction)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b8080usize)as*mut u8,();
+(MapAction_ProcUnitAction)__receiver)}
+}
+#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MapAction_ProcUnitAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b9270usize)as*mut u8,crate::app::unit::Unit;
+(MapAction_ProcUnitAction)__receiver)}
+}
 }
 
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcRouteMove_SplineMethods : IMapAction_ProcRouteMove_Spline { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapAction_ProcRouteMove_Spline as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcRouteMove_Spline , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1b69aa0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcUnitAction>IMapAction_ProcUnitActionMethods for __T{}
 
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcRouteMove_Spline > IMapAction_ProcRouteMove_SplineMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcRouteMove_Spline { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcRouteMove_Spline as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcRouteMove_Spline {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcRouteMove_Spline) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcRouteMove_SplineMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcUnitAction{pub fn get_can_wait_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_ratio_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 }
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcJump { # [doc = "`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, f32)` overload"] pub fn create (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 > , range : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , i32 , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5f80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: convert :: Into :: into (range) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcJumpMethods : IMapAction_ProcJump { # [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, f32)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 > , range : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MapAction_ProcJump as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcJump , crate :: app :: unitactor :: UnitActor , i32 , i32 , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5de0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: convert :: Into :: into (range) , :: core :: option :: Option :: None) } } } # [doc = "`OnTick()` overload"] fn on_tick (self ,) -> () { unsafe { let __receiver = < MapAction_ProcJump as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcJump , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b5e10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcJump > IMapAction_ProcJumpMethods for __T { }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcJump { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcJump as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcJump as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcJump as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
-
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcJump {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32, f32)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor , to_x : i32 , to_z : i32 , range : f32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcJump) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcJumpMethods > :: ctor (this , actor , to_x , to_z , range) ; this }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcUnitAction{#[doc="`.ctor(crate::app::unitactor::UnitActor)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcUnitAction), ::core::stringify!(new),));
+ <Self as IMapAction_ProcUnitActionMethods> ::ctor(this,actor);
+this}
+#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]pub fn new_2(actor:crate::app::unitactor::UnitActor,to_x:i32,to_z:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcUnitAction), ::core::stringify!(new_2),));
+ <Self as IMapAction_ProcUnitActionMethods> ::ctor_2(this,actor,to_x,to_z);
+this}
 }
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcWarp { # [doc = "`GetWarpOutEffect(crate::app::unit::Unit)` overload"] pub fn get_warp_out_effect (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b9290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`GetWarpInEffect(crate::app::unit::Unit)` overload"] pub fn get_warp_in_effect (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b9350usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`WarpBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"] pub fn warp_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bc6a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`WarpInBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"] pub fn warp_in_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bcad0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`WarpOutBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"] pub fn warp_out_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bcdc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcChangePos{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b59a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+}
 
-#[cfg(feature = "app-mapaction")]
-pub trait IMapAction_ProcWarpMethods : IMapAction_ProcWarp { # [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"] fn ctor (self , actor : impl :: core :: convert :: Into < crate :: app :: unitactor :: UnitActor > , to_x : impl :: core :: convert :: Into < i32 > , to_z : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapAction_ProcWarp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcWarp , crate :: app :: unitactor :: UnitActor , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b9280usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (actor) , :: core :: convert :: Into :: into (to_x) , :: core :: convert :: Into :: into (to_z) , :: core :: option :: Option :: None) } } } # [doc = "`WarpOut()` overload"] fn warp_out (self ,) -> () { unsafe { let __receiver = < MapAction_ProcWarp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcWarp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24b9460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WarpIn()` overload"] fn warp_in (self ,) -> () { unsafe { let __receiver = < MapAction_ProcWarp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcWarp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bad30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FadeOut()` overload"] fn fade_out (self ,) -> () { unsafe { let __receiver = < MapAction_ProcWarp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcWarp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bc580usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FadeIn()` overload"] fn fade_in (self ,) -> () { unsafe { let __receiver = < MapAction_ProcWarp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcWarp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bc5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`WaitTick()` overload"] fn wait_tick (self ,) -> () { unsafe { let __receiver = < MapAction_ProcWarp as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapAction_ProcWarp , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24bc600usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcChangePosMethods:IMapAction_ProcChangePos{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapAction_ProcChangePos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5670usize)as*mut u8,();
+(MapAction_ProcChangePos)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapAction_ProcChangePos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5680usize)as*mut u8,();
+(MapAction_ProcChangePos)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapAction_ProcChangePos as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5710usize)as*mut u8,();
+(MapAction_ProcChangePos)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapaction")]
-impl < __T : IMapAction_ProcWarp > IMapAction_ProcWarpMethods for __T { }
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcChangePos>IMapAction_ProcChangePosMethods for __T{}
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcWarp { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_warp_out_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_warp_in_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn warp_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn warp_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn fade_out_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn fade_in_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn wait_tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn warp_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn warp_in_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn warp_out_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapAction_ProcWarp as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcChangePos{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-mapaction")]
-impl MapAction_ProcWarp {
-# [doc = "`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"] pub fn new (actor : crate :: app :: unitactor :: UnitActor , to_x : i32 , to_z : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapAction_ProcWarp) , :: core :: stringify ! (new) ,)) ; < Self as IMapAction_ProcWarpMethods > :: ctor (this , actor , to_x , to_z) ; this }
+#[cfg(feature="app-mapaction")]impl MapAction_ProcChangePos{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor,to_x:i32,to_z:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcChangePos), ::core::stringify!(new),));
+ <Self as IMapAction_ProcChangePosMethods> ::ctor(this,actor,to_x,to_z);
+this}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcWarp{#[doc="`GetWarpOutEffect(crate::app::unit::Unit)` overload"]pub fn get_warp_out_effect(unit:impl::core::convert::Into<crate::app::unit::Unit>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b9290usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetWarpInEffect(crate::app::unit::Unit)` overload"]pub fn get_warp_in_effect(unit:impl::core::convert::Into<crate::app::unit::Unit>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b9350usize)as*mut u8, ::unity2::Il2CppString;
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`WarpBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]pub fn warp_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24bc6a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`WarpInBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]pub fn warp_in_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24bcad0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`WarpOutBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]pub fn warp_out_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24bcdc0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+}
+
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcWarpMethods:IMapAction_ProcWarp{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapAction_ProcWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b9280usize)as*mut u8,();
+(MapAction_ProcWarp)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`WarpOut()` overload"]fn warp_out(self,)->(){unsafe{let __receiver= <MapAction_ProcWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b9460usize)as*mut u8,();
+(MapAction_ProcWarp)__receiver)}
+}
+#[doc="`WarpIn()` overload"]fn warp_in(self,)->(){unsafe{let __receiver= <MapAction_ProcWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bad30usize)as*mut u8,();
+(MapAction_ProcWarp)__receiver)}
+}
+#[doc="`FadeOut()` overload"]fn fade_out(self,)->(){unsafe{let __receiver= <MapAction_ProcWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bc580usize)as*mut u8,();
+(MapAction_ProcWarp)__receiver)}
+}
+#[doc="`FadeIn()` overload"]fn fade_in(self,)->(){unsafe{let __receiver= <MapAction_ProcWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bc5c0usize)as*mut u8,();
+(MapAction_ProcWarp)__receiver)}
+}
+#[doc="`WaitTick()` overload"]fn wait_tick(self,)->(){unsafe{let __receiver= <MapAction_ProcWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24bc600usize)as*mut u8,();
+(MapAction_ProcWarp)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcWarp>IMapAction_ProcWarpMethods for __T{}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcWarp{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_warp_out_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_warp_in_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn warp_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn warp_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn fade_out_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn fade_in_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn wait_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn warp_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn warp_in_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn warp_out_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcWarp{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor,to_x:i32,to_z:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcWarp), ::core::stringify!(new),));
+ <Self as IMapAction_ProcWarpMethods> ::ctor(this,actor,to_x,to_z);
+this}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcJump{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, f32)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b5f80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z),(f32)::core::convert::Into::into(range))}
+}
+}
+
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcJumpMethods:IMapAction_ProcJump{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32, f32)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapAction_ProcJump as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5de0usize)as*mut u8,();
+(MapAction_ProcJump)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z),(f32)::core::convert::Into::into(range))}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapAction_ProcJump as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5e10usize)as*mut u8,();
+(MapAction_ProcJump)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcJump>IMapAction_ProcJumpMethods for __T{}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcJump{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcJump{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32, f32)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor,to_x:i32,to_z:i32,range:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcJump), ::core::stringify!(new),));
+ <Self as IMapAction_ProcJumpMethods> ::ctor(this,actor,to_x,to_z,range);
+this}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcBlow{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b5070usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+}
+
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcBlowMethods:IMapAction_ProcBlow{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapAction_ProcBlow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b4050usize)as*mut u8,();
+(MapAction_ProcBlow)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`get_Speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <MapAction_ProcBlow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b4e20usize)as*mut u8,f32;
+(MapAction_ProcBlow)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapAction_ProcBlow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b4e30usize)as*mut u8,();
+(MapAction_ProcBlow)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcBlow>IMapAction_ProcBlowMethods for __T{}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcBlow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcBlow{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor,to_x:i32,to_z:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcBlow), ::core::stringify!(new),));
+ <Self as IMapAction_ProcBlowMethods> ::ctor(this,actor,to_x,to_z);
+this}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction{#[doc="`ChangePosBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]pub fn change_pos_bind(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef87d0usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`WarpBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]pub fn warp_bind(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef87f0usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`WarpInBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]pub fn warp_in_bind(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef8810usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`WarpOutBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]pub fn warp_out_bind(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef8830usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`DeadBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst)` overload"]pub fn dead_bind(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef8850usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`ReviveBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst)` overload"]pub fn revive_bind(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef8870usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`BlowBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]pub fn blow_bind(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef8890usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`BounceBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, i32)` overload"]pub fn bounce_bind(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,dx:impl::core::convert::Into<i32> ,dz:impl::core::convert::Into<i32> ,distance:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef88b0usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(dx),(i32)::core::convert::Into::into(dz),(i32)::core::convert::Into::into(distance))}
+}
+#[doc="`SyncSkyCastleCreate(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, crate::root::skycastle::SkyCastle_MovingSkyCastle)` overload"]pub fn sync_sky_castle_create(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32> ,moving_sky_castle:impl::core::convert::Into<crate::root::skycastle::SkyCastle_MovingSkyCastle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef88d0usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z),(crate::root::skycastle::SkyCastle_MovingSkyCastle)::core::convert::Into::into(moving_sky_castle))}
+}
+#[doc="`JumpCreate(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32, f32)` overload"]pub fn jump_create(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32> ,range:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef88f0usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z),(f32)::core::convert::Into::into(range))}
+}
+#[doc="`TranslationBind(crate::app::unitactor::UnitActor, crate::app::procinst::ProcInst, i32, i32)` overload"]pub fn translation_bind(actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ef8910usize)as*mut u8,();
+(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction{pub fn change_pos_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn warp_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn warp_in_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn warp_out_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dead_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn revive_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn blow_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn bounce_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn sync_sky_castle_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn jump_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn translation_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcRouteMove_SplineMethods:IMapAction_ProcRouteMove_Spline{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapAction_ProcRouteMove_Spline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b69aa0usize)as*mut u8,();
+(MapAction_ProcRouteMove_Spline)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcRouteMove_Spline>IMapAction_ProcRouteMove_SplineMethods for __T{}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcRouteMove_Spline{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcRouteMove_Spline{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcRouteMove_Spline), ::core::stringify!(new),));
+ <Self as IMapAction_ProcRouteMove_SplineMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcDead{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b5b80usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor))}
+}
+}
+
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcDeadMethods:IMapAction_ProcDead{#[doc="`.ctor(crate::app::unitactor::UnitActor)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor>)->(){unsafe{let __receiver= <MapAction_ProcDead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5a60usize)as*mut u8,();
+(MapAction_ProcDead)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor))}
+}
+#[doc="`Executed()` overload"]fn executed(self,)->(){unsafe{let __receiver= <MapAction_ProcDead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5ac0usize)as*mut u8,();
+(MapAction_ProcDead)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcDead>IMapAction_ProcDeadMethods for __T{}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcDead{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn executed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcDead{#[doc="`.ctor(crate::app::unitactor::UnitActor)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcDead), ::core::stringify!(new),));
+ <Self as IMapAction_ProcDeadMethods> ::ctor(this,actor);
+this}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcTranslation{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b9170usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+}
+
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcTranslationMethods:IMapAction_ProcTranslation{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,to_x:impl::core::convert::Into<i32> ,to_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapAction_ProcTranslation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b8360usize)as*mut u8,();
+(MapAction_ProcTranslation)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(to_x),(i32)::core::convert::Into::into(to_z))}
+}
+#[doc="`get_Speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <MapAction_ProcTranslation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b83a0usize)as*mut u8,f32;
+(MapAction_ProcTranslation)__receiver)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapAction_ProcTranslation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b83b0usize)as*mut u8,();
+(MapAction_ProcTranslation)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapAction_ProcTranslation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b8400usize)as*mut u8,();
+(MapAction_ProcTranslation)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapAction_ProcTranslation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b8460usize)as*mut u8,();
+(MapAction_ProcTranslation)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcTranslation>IMapAction_ProcTranslationMethods for __T{}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcTranslation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcTranslation{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor,to_x:i32,to_z:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcTranslation), ::core::stringify!(new),));
+ <Self as IMapAction_ProcTranslationMethods> ::ctor(this,actor,to_x,to_z);
+this}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcRevive{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b6110usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor))}
+}
+}
+
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcReviveMethods:IMapAction_ProcRevive{#[doc="`.ctor(crate::app::unitactor::UnitActor)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor>)->(){unsafe{let __receiver= <MapAction_ProcRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b6060usize)as*mut u8,();
+(MapAction_ProcRevive)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor))}
+}
+#[doc="`Executed()` overload"]fn executed(self,)->(){unsafe{let __receiver= <MapAction_ProcRevive as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b60c0usize)as*mut u8,();
+(MapAction_ProcRevive)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcRevive>IMapAction_ProcReviveMethods for __T{}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcRevive{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn executed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcRevive{#[doc="`.ctor(crate::app::unitactor::UnitActor)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcRevive), ::core::stringify!(new),));
+ <Self as IMapAction_ProcReviveMethods> ::ctor(this,actor);
+this}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcBounce{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unitactor::UnitActor, i32, i32, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,dx:impl::core::convert::Into<i32> ,dz:impl::core::convert::Into<i32> ,distance:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24b55b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(dx),(i32)::core::convert::Into::into(dz),(i32)::core::convert::Into::into(distance))}
+}
+}
+
+#[cfg(feature="app-mapaction")]pub trait IMapAction_ProcBounceMethods:IMapAction_ProcBounce{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32, i32)` overload"]fn ctor(self,actor:impl::core::convert::Into<crate::app::unitactor::UnitActor> ,dx:impl::core::convert::Into<i32> ,dz:impl::core::convert::Into<i32> ,distance:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapAction_ProcBounce as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5130usize)as*mut u8,();
+(MapAction_ProcBounce)__receiver,(crate::app::unitactor::UnitActor)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(dx),(i32)::core::convert::Into::into(dz),(i32)::core::convert::Into::into(distance))}
+}
+#[doc="`get_Speed()` overload"]fn get_speed(self,)->f32{unsafe{let __receiver= <MapAction_ProcBounce as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5410usize)as*mut u8,f32;
+(MapAction_ProcBounce)__receiver)}
+}
+#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MapAction_ProcBounce as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24b5420usize)as*mut u8,();
+(MapAction_ProcBounce)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapaction")]impl<__T:IMapAction_ProcBounce>IMapAction_ProcBounceMethods for __T{}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcBounce{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapaction")]impl MapAction_ProcBounce{#[doc="`.ctor(crate::app::unitactor::UnitActor, i32, i32, i32)` — overload selector"]pub fn new(actor:crate::app::unitactor::UnitActor,dx:i32,dz:i32,distance:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapAction_ProcBounce), ::core::stringify!(new),));
+ <Self as IMapAction_ProcBounceMethods> ::ctor(this,actor,dx,dz,distance);
+this}
 }
 
 #[cfg(feature = "app-mapaction")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapAction;
-    pub use super::IMapAction;
-    pub use super::MapAction_ProcRouteMove_Result;
-    pub use super::MapAction_ProcBounce;
-    pub use super::IMapAction_ProcBounce;
-    pub use super::IMapAction_ProcBounceMethods;
-    pub use super::MapAction_ProcChangePos;
-    pub use super::IMapAction_ProcChangePos;
-    pub use super::IMapAction_ProcChangePosMethods;
-    pub use super::MapAction_ProcUnitAction;
-    pub use super::IMapAction_ProcUnitAction;
-    pub use super::IMapAction_ProcUnitActionMethods;
-    pub use super::MapAction_ProcSyncSkyCastle;
-    pub use super::IMapAction_ProcSyncSkyCastle;
-    pub use super::IMapAction_ProcSyncSkyCastleMethods;
-    pub use super::MapAction_ProcDead;
-    pub use super::IMapAction_ProcDead;
-    pub use super::IMapAction_ProcDeadMethods;
     pub use super::MapAction_ProcRouteMove;
     pub use super::IMapAction_ProcRouteMove;
     pub use super::IMapAction_ProcRouteMoveMethods;
-    pub use super::MapAction_ProcBlow;
-    pub use super::IMapAction_ProcBlow;
-    pub use super::IMapAction_ProcBlowMethods;
-    pub use super::MapAction_ProcRevive;
-    pub use super::IMapAction_ProcRevive;
-    pub use super::IMapAction_ProcReviveMethods;
-    pub use super::MapAction_ProcTranslation;
-    pub use super::IMapAction_ProcTranslation;
-    pub use super::IMapAction_ProcTranslationMethods;
-    pub use super::MapAction_ProcRouteMove_Spline;
-    pub use super::IMapAction_ProcRouteMove_Spline;
-    pub use super::IMapAction_ProcRouteMove_SplineMethods;
-    pub use super::MapAction_ProcJump;
-    pub use super::IMapAction_ProcJump;
-    pub use super::IMapAction_ProcJumpMethods;
+    pub use super::MapAction_ProcSyncSkyCastle;
+    pub use super::IMapAction_ProcSyncSkyCastle;
+    pub use super::IMapAction_ProcSyncSkyCastleMethods;
+    pub use super::MapAction_ProcUnitAction;
+    pub use super::IMapAction_ProcUnitAction;
+    pub use super::IMapAction_ProcUnitActionMethods;
+    pub use super::MapAction_ProcChangePos;
+    pub use super::IMapAction_ProcChangePos;
+    pub use super::IMapAction_ProcChangePosMethods;
     pub use super::MapAction_ProcWarp;
     pub use super::IMapAction_ProcWarp;
     pub use super::IMapAction_ProcWarpMethods;
+    pub use super::MapAction_ProcJump;
+    pub use super::IMapAction_ProcJump;
+    pub use super::IMapAction_ProcJumpMethods;
+    pub use super::MapAction_ProcBlow;
+    pub use super::IMapAction_ProcBlow;
+    pub use super::IMapAction_ProcBlowMethods;
+    pub use super::MapAction;
+    pub use super::IMapAction;
+    pub use super::MapAction_ProcRouteMove_Result;
+    pub use super::MapAction_ProcRouteMove_Spline;
+    pub use super::IMapAction_ProcRouteMove_Spline;
+    pub use super::IMapAction_ProcRouteMove_SplineMethods;
+    pub use super::MapAction_ProcDead;
+    pub use super::IMapAction_ProcDead;
+    pub use super::IMapAction_ProcDeadMethods;
+    pub use super::MapAction_ProcTranslation;
+    pub use super::IMapAction_ProcTranslation;
+    pub use super::IMapAction_ProcTranslationMethods;
+    pub use super::MapAction_ProcRevive;
+    pub use super::IMapAction_ProcRevive;
+    pub use super::IMapAction_ProcReviveMethods;
+    pub use super::MapAction_ProcBounce;
+    pub use super::IMapAction_ProcBounce;
+    pub use super::IMapAction_ProcBounceMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

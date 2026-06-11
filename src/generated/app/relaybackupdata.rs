@@ -4,73 +4,31 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaybackupdata/RelayBackupData.md"))] # [:: unity2 :: class (namespace = "App" , name = "RelayBackupData")] # [parent (crate :: system :: object :: Object)] pub struct RelayBackupData {
-# [static_field] # [rename (name = "BufferSizeReplay")] pub buffer_size_replay : i32 ,
-# [static_field] # [rename (name = "BufferSizeAll")] pub buffer_size_all : i32 ,
-# [static_field] # [rename (name = "VersionReplay")] pub version_replay : u8 ,
-# [static_field] # [rename (name = "VersionAll")] pub version_all : u8 ,
-# [offset (16)] # [rename (name = "m_Kind")] pub m_kind : crate :: app :: relaybackupdata :: RelayBackupData_Kinds ,
-# [offset (24)] # [rename (name = "m_Buffer")] pub m_buffer : :: unity2 :: Array < u8 > ,
-# [offset (32)] # [rename (name = "m_Stream")] pub m_stream : crate :: app :: stream_2 :: Stream_2 ,
-# [offset (40)] # [rename (name = "m_SaveData")] pub m_save_data : crate :: app :: gamesavedata :: GameSaveData ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaybackupdata/RelayBackupData.md"))]#[::unity2::class(namespace="App",name="RelayBackupData")]#[parent(crate::system::object::Object)]pub struct RelayBackupData{#[static_field]#[rename(name="BufferSizeReplay")]pub buffer_size_replay:i32, #[static_field]#[rename(name="BufferSizeAll")]pub buffer_size_all:i32, #[static_field]#[rename(name="VersionReplay")]pub version_replay:u8, #[static_field]#[rename(name="VersionAll")]pub version_all:u8, #[offset(16)]#[rename(name="m_Kind")]pub m_kind:crate::app::relaybackupdata::RelayBackupData_Kinds, #[offset(24)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::Array<u8> , #[offset(32)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(40)]#[rename(name="m_SaveData")]pub m_save_data:crate::app::gamesavedata::GameSaveData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaybackupdata/RelayBackupData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayBackupData_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for RelayBackupData_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RelayBackupData.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaybackupdata/RelayBackupData_Kinds.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct RelayBackupData_Kinds  {
-    pub value: i32,
+impl::unity2::IlType for RelayBackupData_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for RelayBackupData_Kinds  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayBackupData.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl RelayBackupData_Kinds{pub fn replay()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for RelayBackupData_Kinds  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn all()->Self{Self{value:1}
 }
-
-
-impl  RelayBackupData_Kinds  {
-    pub fn replay() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn all() -> Self {
-        Self { value: 1 }
-
-    }
-
 }
 
 }
@@ -78,21 +36,63 @@ impl  RelayBackupData_Kinds  {
 #[cfg(feature = "app-relaybackupdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-relaybackupdata")]
-impl RelayBackupData { # [doc = "`GetBufferSize(crate::app::relaybackupdata::RelayBackupData_Kinds)` overload"] pub fn get_buffer_size (kind : impl :: core :: convert :: Into < crate :: app :: relaybackupdata :: RelayBackupData_Kinds >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: relaybackupdata :: RelayBackupData_Kinds , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0c80usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relaybackupdata")]impl RelayBackupData{#[doc="`GetBufferSize(crate::app::relaybackupdata::RelayBackupData_Kinds)` overload"]pub fn get_buffer_size(kind:impl::core::convert::Into<crate::app::relaybackupdata::RelayBackupData_Kinds>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d0c80usize)as*mut u8,i32;
+(crate::app::relaybackupdata::RelayBackupData_Kinds)::core::convert::Into::into(kind))}
+}
+}
 
-#[cfg(feature = "app-relaybackupdata")]
-pub trait IRelayBackupDataMethods : IRelayBackupData { # [doc = "`.ctor(crate::app::relaybackupdata::RelayBackupData_Kinds)` overload"] fn ctor (self , kind : impl :: core :: convert :: Into < crate :: app :: relaybackupdata :: RelayBackupData_Kinds >) -> () { unsafe { let __receiver = < RelayBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayBackupData , crate :: app :: relaybackupdata :: RelayBackupData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22c8c20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < RelayBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ccb40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Serialize()` overload"] fn serialize (self ,) -> () { unsafe { let __receiver = < RelayBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0ca0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize()` overload"] fn deserialize (self ,) -> () { unsafe { let __receiver = < RelayBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0ed0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SerializeForReplay()` overload"] fn serialize_for_replay (self ,) -> () { unsafe { let __receiver = < RelayBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeserializeForReplay()` overload"] fn deserialize_for_replay (self ,) -> () { unsafe { let __receiver = < RelayBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0ef0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SerializeForAll()` overload"] fn serialize_for_all (self ,) -> () { unsafe { let __receiver = < RelayBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d0e20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DeserializeForAll()` overload"] fn deserialize_for_all (self ,) -> () { unsafe { let __receiver = < RelayBackupData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RelayBackupData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d1000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-relaybackupdata")]pub trait IRelayBackupDataMethods:IRelayBackupData{#[doc="`.ctor(crate::app::relaybackupdata::RelayBackupData_Kinds)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::relaybackupdata::RelayBackupData_Kinds>)->(){unsafe{let __receiver= <RelayBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22c8c20usize)as*mut u8,();
+(RelayBackupData)__receiver,(crate::app::relaybackupdata::RelayBackupData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RelayBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ccb40usize)as*mut u8,();
+(RelayBackupData)__receiver)}
+}
+#[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <RelayBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0ca0usize)as*mut u8,();
+(RelayBackupData)__receiver)}
+}
+#[doc="`Deserialize()` overload"]fn deserialize(self,)->(){unsafe{let __receiver= <RelayBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0ed0usize)as*mut u8,();
+(RelayBackupData)__receiver)}
+}
+#[doc="`SerializeForReplay()` overload"]fn serialize_for_replay(self,)->(){unsafe{let __receiver= <RelayBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0cc0usize)as*mut u8,();
+(RelayBackupData)__receiver)}
+}
+#[doc="`DeserializeForReplay()` overload"]fn deserialize_for_replay(self,)->(){unsafe{let __receiver= <RelayBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0ef0usize)as*mut u8,();
+(RelayBackupData)__receiver)}
+}
+#[doc="`SerializeForAll()` overload"]fn serialize_for_all(self,)->(){unsafe{let __receiver= <RelayBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d0e20usize)as*mut u8,();
+(RelayBackupData)__receiver)}
+}
+#[doc="`DeserializeForAll()` overload"]fn deserialize_for_all(self,)->(){unsafe{let __receiver= <RelayBackupData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d1000usize)as*mut u8,();
+(RelayBackupData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-relaybackupdata")]
-impl < __T : IRelayBackupData > IRelayBackupDataMethods for __T { }
+#[cfg(feature="app-relaybackupdata")]impl<__T:IRelayBackupData>IRelayBackupDataMethods for __T{}
 
-#[cfg(feature = "app-relaybackupdata")]
-impl RelayBackupData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn serialize_for_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn deserialize_for_replay_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn serialize_for_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn deserialize_for_all_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_buffer_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RelayBackupData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-relaybackupdata")]impl RelayBackupData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn serialize_for_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn deserialize_for_replay_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn serialize_for_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn deserialize_for_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_buffer_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-relaybackupdata")]
-impl RelayBackupData {
-# [doc = "`.ctor(crate::app::relaybackupdata::RelayBackupData_Kinds)` — overload selector"] pub fn new (kind : crate :: app :: relaybackupdata :: RelayBackupData_Kinds) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RelayBackupData) , :: core :: stringify ! (new) ,)) ; < Self as IRelayBackupDataMethods > :: ctor (this , kind) ; this }
+#[cfg(feature="app-relaybackupdata")]impl RelayBackupData{#[doc="`.ctor(crate::app::relaybackupdata::RelayBackupData_Kinds)` — overload selector"]pub fn new(kind:crate::app::relaybackupdata::RelayBackupData_Kinds)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayBackupData), ::core::stringify!(new),));
+ <Self as IRelayBackupDataMethods> ::ctor(this,kind);
+this}
 }
 
 #[cfg(feature = "app-relaybackupdata")]

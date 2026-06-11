@@ -4,46 +4,21 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/roundvalue/RoundValue.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RoundValue {
-    pub m_min: i32,
-    pub m_max: i32,
-    pub m_value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/roundvalue/RoundValue.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct RoundValue{pub m_min:i32,pub m_max:i32,pub m_value:i32,}
+impl::unity2::ClassIdentity for RoundValue{const NAMESPACE: &'static str="App";
+const NAME: &'static str="RoundValue";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for RoundValue {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RoundValue";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for RoundValue {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for RoundValue{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -51,14 +26,59 @@ impl ::unity2::IlType for RoundValue {
 #[cfg(feature = "app-roundvalue-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-roundvalue")]
-impl RoundValue { # [doc = "`op_Implicit(crate::app::roundvalue::RoundValue)` overload"] pub fn op_implicit (value : impl :: core :: convert :: Into < crate :: app :: roundvalue :: RoundValue >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: app :: roundvalue :: RoundValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec33a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-roundvalue")]impl RoundValue{#[doc="`op_Implicit(crate::app::roundvalue::RoundValue)` overload"]pub fn op_implicit(value:impl::core::convert::Into<crate::app::roundvalue::RoundValue>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec33a0usize)as*mut u8,i32;
+(crate::app::roundvalue::RoundValue)::core::convert::Into::into(value))}
+}
+}
 
-#[cfg(feature = "app-roundvalue")]
-impl RoundValue { # [doc = "`.ctor(i32)` overload"] pub fn ctor (& mut self , max : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RoundValue , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec31c0usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: convert :: Into :: into (max) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32)` overload"] pub fn ctor_2 (& mut self , max : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RoundValue , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec31d0usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: convert :: Into :: into (max) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(i32, i32, i32)` overload"] pub fn ctor_3 (& mut self , min : impl :: core :: convert :: Into < i32 > , max : impl :: core :: convert :: Into < i32 > , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RoundValue , i32 , i32 , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec31e0usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: convert :: Into :: into (min) , :: core :: convert :: Into :: into (max) , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] pub fn dispose (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut RoundValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec31f0usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: option :: Option :: None) } } } # [doc = "`Inc()` overload"] pub fn inc (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut RoundValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3200usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: option :: Option :: None) } } } # [doc = "`Dec()` overload"] pub fn dec (& mut self ,) -> () { unsafe { { let __inner : extern "C" fn (* mut RoundValue , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec32e0usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: option :: Option :: None) } } } # [doc = "`Add(i32)` overload"] pub fn add (& mut self , addend : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RoundValue , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3240usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: convert :: Into :: into (addend) , :: core :: option :: Option :: None) } } } # [doc = "`Sub(i32)` overload"] pub fn sub (& mut self , subtrahend : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut RoundValue , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3320usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: convert :: Into :: into (subtrahend) , :: core :: option :: Option :: None) } } } # [doc = "`get_Value()` overload"] pub fn get_value (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RoundValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3370usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: option :: Option :: None) } } } # [doc = "`get_Min()` overload"] pub fn get_min (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RoundValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3380usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: option :: Option :: None) } } } # [doc = "`get_Max()` overload"] pub fn get_max (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut RoundValue , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ec3390usize) as * mut u8) ; __inner (self as * mut RoundValue , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-roundvalue")]impl RoundValue{#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,max:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec31c0usize)as*mut u8,();
+(*mut RoundValue)self as*mut RoundValue,(i32)::core::convert::Into::into(max))}
+}
+#[doc="`.ctor(i32, i32)` overload"]pub fn ctor_2(&mut self,max:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec31d0usize)as*mut u8,();
+(*mut RoundValue)self as*mut RoundValue,(i32)::core::convert::Into::into(max),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32, i32, i32)` overload"]pub fn ctor_3(&mut self,min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec31e0usize)as*mut u8,();
+(*mut RoundValue)self as*mut RoundValue,(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec31f0usize)as*mut u8,();
+(*mut RoundValue)self as*mut RoundValue)}
+}
+#[doc="`Inc()` overload"]pub fn inc(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3200usize)as*mut u8,();
+(*mut RoundValue)self as*mut RoundValue)}
+}
+#[doc="`Dec()` overload"]pub fn dec(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec32e0usize)as*mut u8,();
+(*mut RoundValue)self as*mut RoundValue)}
+}
+#[doc="`Add(i32)` overload"]pub fn add(&mut self,addend:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3240usize)as*mut u8,();
+(*mut RoundValue)self as*mut RoundValue,(i32)::core::convert::Into::into(addend))}
+}
+#[doc="`Sub(i32)` overload"]pub fn sub(&mut self,subtrahend:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3320usize)as*mut u8,();
+(*mut RoundValue)self as*mut RoundValue,(i32)::core::convert::Into::into(subtrahend))}
+}
+#[doc="`get_Value()` overload"]pub fn get_value(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3370usize)as*mut u8,i32;
+(*mut RoundValue)self as*mut RoundValue)}
+}
+#[doc="`get_Min()` overload"]pub fn get_min(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3380usize)as*mut u8,i32;
+(*mut RoundValue)self as*mut RoundValue)}
+}
+#[doc="`get_Max()` overload"]pub fn get_max(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ec3390usize)as*mut u8,i32;
+(*mut RoundValue)self as*mut RoundValue)}
+}
+}
 
-#[cfg(feature = "app-roundvalue")]
-impl RoundValue { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn inc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn dec_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn sub_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_value_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn get_min_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn op_implicit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RoundValue as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } }
+#[cfg(feature="app-roundvalue")]impl RoundValue{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn inc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn dec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
 
 #[cfg(feature = "app-roundvalue")]
 #[doc(hidden)]

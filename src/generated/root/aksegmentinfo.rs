@@ -4,38 +4,155 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/aksegmentinfo/AkSegmentInfo.md"))] # [:: unity2 :: class (namespace = "" , name = "AkSegmentInfo")] # [parent (crate :: system :: object :: Object)] pub struct AkSegmentInfo {
-# [offset (16)] # [rename (name = "swigCPtr")] pub swig_c_ptr : :: unity2 :: IntPtr ,
-# [offset (24)] # [rename (name = "swigCMemOwn")] pub swig_c_mem_own : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aksegmentinfo/AkSegmentInfo.md"))]#[::unity2::class(namespace="",name="AkSegmentInfo")]#[parent(crate::system::object::Object)]pub struct AkSegmentInfo{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
 
 }
 
 #[cfg(feature = "root-aksegmentinfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-aksegmentinfo")]
-impl AkSegmentInfo { # [doc = "`getCPtr(crate::root::aksegmentinfo::AkSegmentInfo)` overload"] pub fn get_c_ptr (obj : impl :: core :: convert :: Into < crate :: root :: aksegmentinfo :: AkSegmentInfo >) -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (crate :: root :: aksegmentinfo :: AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03a50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aksegmentinfo")]impl AkSegmentInfo{#[doc="`getCPtr(crate::root::aksegmentinfo::AkSegmentInfo)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::aksegmentinfo::AkSegmentInfo>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d03a50usize)as*mut u8, ::unity2::IntPtr;
+(crate::root::aksegmentinfo::AkSegmentInfo)::core::convert::Into::into(obj))}
+}
+}
 
-#[cfg(feature = "root-aksegmentinfo")]
-pub trait IAkSegmentInfoMethods : IAkSegmentInfo { # [doc = "`.ctor(::unity2::IntPtr, bool)` overload"] fn ctor (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , c_memory_own : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: IntPtr , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03a10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: convert :: Into :: into (c_memory_own) , :: core :: option :: Option :: None) } } } # [doc = "`setCPtr(::unity2::IntPtr)` overload"] fn set_c_ptr (self , c_ptr : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03ab0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (c_ptr) , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03ae0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Dispose()` overload"] fn dispose (self ,) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03b50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_iCurrentPosition(i32)` overload"] fn set_i_current_position (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03ce0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_iCurrentPosition()` overload"] fn get_i_current_position (self ,) -> i32 { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03d70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_iPreEntryDuration(i32)` overload"] fn set_i_pre_entry_duration (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03df0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_iPreEntryDuration()` overload"] fn get_i_pre_entry_duration (self ,) -> i32 { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03e80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_iActiveDuration(i32)` overload"] fn set_i_active_duration (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03f00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_iActiveDuration()` overload"] fn get_i_active_duration (self ,) -> i32 { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d03f90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_iPostExitDuration(i32)` overload"] fn set_i_post_exit_duration (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_iPostExitDuration()` overload"] fn get_i_post_exit_duration (self ,) -> i32 { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d040a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_iRemainingLookAheadTime(i32)` overload"] fn set_i_remaining_look_ahead_time (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04120usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_iRemainingLookAheadTime()` overload"] fn get_i_remaining_look_ahead_time (self ,) -> i32 { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d041b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fBeatDuration(f32)` overload"] fn set_f_beat_duration (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fBeatDuration()` overload"] fn get_f_beat_duration (self ,) -> f32 { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d042c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fBarDuration(f32)` overload"] fn set_f_bar_duration (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04340usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fBarDuration()` overload"] fn get_f_bar_duration (self ,) -> f32 { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d043d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fGridDuration(f32)` overload"] fn set_f_grid_duration (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fGridDuration()` overload"] fn get_f_grid_duration (self ,) -> f32 { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d044e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_fGridOffset(f32)` overload"] fn set_f_grid_offset (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_fGridOffset()` overload"] fn get_f_grid_offset (self ,) -> f32 { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d045f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor_2 (self ,) -> () { unsafe { let __receiver = < AkSegmentInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkSegmentInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1d04670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-aksegmentinfo")]pub trait IAkSegmentInfoMethods:IAkSegmentInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` overload"]fn ctor(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,c_memory_own:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03a10usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
+}
+#[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03ab0usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03ae0usize)as*mut u8,();
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03b50usize)as*mut u8,();
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`set_iCurrentPosition(i32)` overload"]fn set_i_current_position(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03ce0usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_iCurrentPosition()` overload"]fn get_i_current_position(self,)->i32{unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03d70usize)as*mut u8,i32;
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`set_iPreEntryDuration(i32)` overload"]fn set_i_pre_entry_duration(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03df0usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_iPreEntryDuration()` overload"]fn get_i_pre_entry_duration(self,)->i32{unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03e80usize)as*mut u8,i32;
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`set_iActiveDuration(i32)` overload"]fn set_i_active_duration(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03f00usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_iActiveDuration()` overload"]fn get_i_active_duration(self,)->i32{unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d03f90usize)as*mut u8,i32;
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`set_iPostExitDuration(i32)` overload"]fn set_i_post_exit_duration(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04010usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_iPostExitDuration()` overload"]fn get_i_post_exit_duration(self,)->i32{unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d040a0usize)as*mut u8,i32;
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`set_iRemainingLookAheadTime(i32)` overload"]fn set_i_remaining_look_ahead_time(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04120usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_iRemainingLookAheadTime()` overload"]fn get_i_remaining_look_ahead_time(self,)->i32{unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d041b0usize)as*mut u8,i32;
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`set_fBeatDuration(f32)` overload"]fn set_f_beat_duration(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04230usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fBeatDuration()` overload"]fn get_f_beat_duration(self,)->f32{unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d042c0usize)as*mut u8,f32;
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`set_fBarDuration(f32)` overload"]fn set_f_bar_duration(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04340usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fBarDuration()` overload"]fn get_f_bar_duration(self,)->f32{unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d043d0usize)as*mut u8,f32;
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`set_fGridDuration(f32)` overload"]fn set_f_grid_duration(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04450usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fGridDuration()` overload"]fn get_f_grid_duration(self,)->f32{unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d044e0usize)as*mut u8,f32;
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`set_fGridOffset(f32)` overload"]fn set_f_grid_offset(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04560usize)as*mut u8,();
+(AkSegmentInfo)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_fGridOffset()` overload"]fn get_f_grid_offset(self,)->f32{unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d045f0usize)as*mut u8,f32;
+(AkSegmentInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkSegmentInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04670usize)as*mut u8,();
+(AkSegmentInfo)__receiver)}
+}
+}
 
-#[cfg(feature = "root-aksegmentinfo")]
-impl < __T : IAkSegmentInfo > IAkSegmentInfoMethods for __T { }
+#[cfg(feature="root-aksegmentinfo")]impl<__T:IAkSegmentInfo>IAkSegmentInfoMethods for __T{}
 
-#[cfg(feature = "root-aksegmentinfo")]
-impl AkSegmentInfo { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_c_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_i_current_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_i_current_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_i_pre_entry_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_i_pre_entry_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_i_active_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_i_active_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_i_post_exit_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_i_post_exit_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_i_remaining_look_ahead_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_i_remaining_look_ahead_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_f_beat_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_f_beat_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_f_bar_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_f_bar_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_f_grid_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_f_grid_duration_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_f_grid_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_f_grid_offset_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkSegmentInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } }
+#[cfg(feature="root-aksegmentinfo")]impl AkSegmentInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_c_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_i_current_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_i_current_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_i_pre_entry_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_i_pre_entry_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_i_active_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_i_active_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_i_post_exit_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_i_post_exit_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_i_remaining_look_ahead_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_i_remaining_look_ahead_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_f_beat_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_f_beat_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_f_bar_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_f_bar_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_f_grid_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_f_grid_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_f_grid_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_f_grid_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
 
-#[cfg(feature = "root-aksegmentinfo")]
-impl AkSegmentInfo {
-# [doc = "`.ctor(::unity2::IntPtr, bool)` — overload selector"] pub fn new (c_ptr : :: unity2 :: IntPtr , c_memory_own : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSegmentInfo) , :: core :: stringify ! (new) ,)) ; < Self as IAkSegmentInfoMethods > :: ctor (this , c_ptr , c_memory_own) ; this }
-
-# [doc = "`.ctor()` — no args"] pub fn new_2 () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkSegmentInfo) , :: core :: stringify ! (new_2) ,)) ; < Self as IAkSegmentInfoMethods > :: ctor_2 (this ,) ; this }
+#[cfg(feature="root-aksegmentinfo")]impl AkSegmentInfo{#[doc="`.ctor(::unity2::IntPtr, bool)` — overload selector"]pub fn new(c_ptr: ::unity2::IntPtr,c_memory_own:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSegmentInfo), ::core::stringify!(new),));
+ <Self as IAkSegmentInfoMethods> ::ctor(this,c_ptr,c_memory_own);
+this}
+#[doc="`.ctor()` — no args"]pub fn new_2()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSegmentInfo), ::core::stringify!(new_2),));
+ <Self as IAkSegmentInfoMethods> ::ctor_2(this,);
+this}
 }
 
 #[cfg(feature = "root-aksegmentinfo")]

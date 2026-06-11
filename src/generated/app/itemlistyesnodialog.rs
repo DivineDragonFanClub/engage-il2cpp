@@ -4,95 +4,124 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicdialog :: { BasicDialog , IBasicDialog }
- ;
- use crate :: app :: basicmenu :: { BasicMenu , IBasicMenu }
- ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: yesnodialog :: { IYesNoDialog , YesNoDialog }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicdialog::{BasicDialog,IBasicDialog}
+;
+use crate::app::basicmenu::{BasicMenu,IBasicMenu}
+;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemListYesNoDialog")] # [parent (crate :: app :: yesnodialog :: YesNoDialog)] pub struct ItemListYesNoDialog {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemlistyesnodialog/ItemListYesNoDialog_MoneyParam.md"))]#[::unity2::class(namespace="App",name="ItemListYesNoDialog.MoneyParam")]#[parent(crate::system::object::Object)]pub struct ItemListYesNoDialog_MoneyParam{#[offset(16)]#[rename(name="num")]pub num:i32,}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_ItemParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemListYesNoDialog.ItemParam")] # [parent (crate :: system :: object :: Object)] pub struct ItemListYesNoDialog_ItemParam {
-# [offset (16)] # [rename (name = "sprite")] pub sprite : crate :: unity_engine :: sprite :: Sprite ,
-# [offset (24)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (32)] # [rename (name = "num")] pub num : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))]#[::unity2::class(namespace="App",name="ItemListYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct ItemListYesNoDialog{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_MoneyParam.md"))] # [:: unity2 :: class (namespace = "App" , name = "ItemListYesNoDialog.MoneyParam")] # [parent (crate :: system :: object :: Object)] pub struct ItemListYesNoDialog_MoneyParam {
-# [offset (16)] # [rename (name = "num")] pub num : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemlistyesnodialog/ItemListYesNoDialog_ItemParam.md"))]#[::unity2::class(namespace="App",name="ItemListYesNoDialog.ItemParam")]#[parent(crate::system::object::Object)]pub struct ItemListYesNoDialog_ItemParam{#[offset(16)]#[rename(name="sprite")]pub sprite:crate::unity_engine::sprite::Sprite, #[offset(24)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="num")]pub num:i32,}
 
 }
 
 #[cfg(feature = "app-itemlistyesnodialog-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog { # [doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > > , money_param : impl :: core :: convert :: Into < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam >) -> crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > , crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2040b40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (message) , :: core :: convert :: Into :: into (item_param_list) , :: core :: convert :: Into :: into (money_param) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-pub trait IItemListYesNoDialogMethods : IItemListYesNoDialog { # [doc = "`get_m_ItemParamList()` overload"] fn get_m_item_param_list (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > { unsafe { let __receiver = < ItemListYesNoDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListYesNoDialog , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2040b00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_ItemParamList(crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>)` overload"] fn set_m_item_param_list (self , value : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > >) -> () { unsafe { let __receiver = < ItemListYesNoDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListYesNoDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2040b10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_m_MoneyParam()` overload"] fn get_m_money_param (self ,) -> crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam { unsafe { let __receiver = < ItemListYesNoDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListYesNoDialog , :: unity2 :: OptionalMethod ,) -> crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2040b20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_m_MoneyParam(crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"] fn set_m_money_param (self , value : impl :: core :: convert :: Into < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam >) -> () { unsafe { let __receiver = < ItemListYesNoDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListYesNoDialog , crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2040b30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::itemlistdialogcontent::ItemListDialogContent, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"] fn ctor (self , menu_item_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > > , menu_content : impl :: core :: convert :: Into < crate :: app :: itemlistdialogcontent :: ItemListDialogContent > , message : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , item_param_list : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > > , money_param : impl :: core :: convert :: Into < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam >) -> () { unsafe { let __receiver = < ItemListYesNoDialog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListYesNoDialog , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , crate :: app :: itemlistdialogcontent :: ItemListDialogContent , :: unity2 :: Il2CppString , crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > , crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2040d50usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (menu_item_list) , :: core :: convert :: Into :: into (menu_content) , :: core :: convert :: Into :: into (message) , :: core :: convert :: Into :: into (item_param_list) , :: core :: convert :: Into :: into (money_param) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl < __T : IItemListYesNoDialog > IItemListYesNoDialogMethods for __T { }
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog { pub fn get_m_item_param_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListYesNoDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_m_item_param_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListYesNoDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_m_money_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListYesNoDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_m_money_param_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListYesNoDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListYesNoDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListYesNoDialog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog {
-# [doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::itemlistdialogcontent::ItemListDialogContent, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` — overload selector"] pub fn new (menu_item_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: basicmenuitem :: BasicMenuItem > , menu_content : crate :: app :: itemlistdialogcontent :: ItemListDialogContent , message : :: unity2 :: Il2CppString , item_param_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_ItemParam > , money_param : crate :: app :: itemlistyesnodialog :: ItemListYesNoDialog_MoneyParam) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemListYesNoDialog) , :: core :: stringify ! (new) ,)) ; < Self as IItemListYesNoDialogMethods > :: ctor (this , menu_item_list , menu_content , message , item_param_list , money_param) ; this }
+#[cfg(feature="app-itemlistyesnodialog")]pub trait IItemListYesNoDialog_MoneyParamMethods:IItemListYesNoDialog_MoneyParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemListYesNoDialog_MoneyParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcf010usize)as*mut u8,();
+(ItemListYesNoDialog_MoneyParam)__receiver)}
+}
 }
 
-#[cfg(feature = "app-itemlistyesnodialog")]
-pub trait IItemListYesNoDialog_ItemParamMethods : IItemListYesNoDialog_ItemParam { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ItemListYesNoDialog_ItemParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListYesNoDialog_ItemParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcf000usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemlistyesnodialog")]impl<__T:IItemListYesNoDialog_MoneyParam>IItemListYesNoDialog_MoneyParamMethods for __T{}
 
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl < __T : IItemListYesNoDialog_ItemParam > IItemListYesNoDialog_ItemParamMethods for __T { }
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_ItemParam { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListYesNoDialog_ItemParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_ItemParam {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemListYesNoDialog_ItemParam) , :: core :: stringify ! (new) ,)) ; < Self as IItemListYesNoDialog_ItemParamMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-itemlistyesnodialog")]impl ItemListYesNoDialog_MoneyParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature = "app-itemlistyesnodialog")]
-pub trait IItemListYesNoDialog_MoneyParamMethods : IItemListYesNoDialog_MoneyParam { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ItemListYesNoDialog_MoneyParam as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ItemListYesNoDialog_MoneyParam , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fcf010usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-itemlistyesnodialog")]impl ItemListYesNoDialog_MoneyParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemListYesNoDialog_MoneyParam), ::core::stringify!(new),));
+ <Self as IItemListYesNoDialog_MoneyParamMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl < __T : IItemListYesNoDialog_MoneyParam > IItemListYesNoDialog_MoneyParamMethods for __T { }
+#[cfg(feature="app-itemlistyesnodialog")]impl ItemListYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam> > ,money_param:impl::core::convert::Into<crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam>)->crate::app::itemlistyesnodialog::ItemListYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2040b40usize)as*mut u8,crate::app::itemlistyesnodialog::ItemListYesNoDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>)::core::convert::Into::into(item_param_list),(crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)::core::convert::Into::into(money_param))}
+}
+}
 
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_MoneyParam { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ItemListYesNoDialog_MoneyParam as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-itemlistyesnodialog")]pub trait IItemListYesNoDialogMethods:IItemListYesNoDialog{#[doc="`get_m_ItemParamList()` overload"]fn get_m_item_param_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>{unsafe{let __receiver= <ItemListYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2040b00usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam> ;
+(ItemListYesNoDialog)__receiver)}
+}
+#[doc="`set_m_ItemParamList(crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>)` overload"]fn set_m_item_param_list(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam> >)->(){unsafe{let __receiver= <ItemListYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2040b10usize)as*mut u8,();
+(ItemListYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>)::core::convert::Into::into(value))}
+}
+#[doc="`get_m_MoneyParam()` overload"]fn get_m_money_param(self,)->crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam{unsafe{let __receiver= <ItemListYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2040b20usize)as*mut u8,crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam;
+(ItemListYesNoDialog)__receiver)}
+}
+#[doc="`set_m_MoneyParam(crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"]fn set_m_money_param(self,value:impl::core::convert::Into<crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam>)->(){unsafe{let __receiver= <ItemListYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2040b30usize)as*mut u8,();
+(ItemListYesNoDialog)__receiver,(crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::itemlistdialogcontent::ItemListDialogContent, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::itemlistdialogcontent::ItemListDialogContent> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,item_param_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam> > ,money_param:impl::core::convert::Into<crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam>)->(){unsafe{let __receiver= <ItemListYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2040d50usize)as*mut u8,();
+(ItemListYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::itemlistdialogcontent::ItemListDialogContent)::core::convert::Into::into(menu_content),(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>)::core::convert::Into::into(item_param_list),(crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)::core::convert::Into::into(money_param))}
+}
+}
 
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_MoneyParam {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ItemListYesNoDialog_MoneyParam) , :: core :: stringify ! (new) ,)) ; < Self as IItemListYesNoDialog_MoneyParamMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-itemlistyesnodialog")]impl<__T:IItemListYesNoDialog>IItemListYesNoDialogMethods for __T{}
+
+#[cfg(feature="app-itemlistyesnodialog")]impl ItemListYesNoDialog{pub fn get_m_item_param_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_m_item_param_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_m_money_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_m_money_param_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-itemlistyesnodialog")]impl ItemListYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::itemlistdialogcontent::ItemListDialogContent, ::unity2::Il2CppString, crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam>, crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::itemlistdialogcontent::ItemListDialogContent,message: ::unity2::Il2CppString,item_param_list:crate::system::collections::generic::list_1::List_1<crate::app::itemlistyesnodialog::ItemListYesNoDialog_ItemParam> ,money_param:crate::app::itemlistyesnodialog::ItemListYesNoDialog_MoneyParam)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemListYesNoDialog), ::core::stringify!(new),));
+ <Self as IItemListYesNoDialogMethods> ::ctor(this,menu_item_list,menu_content,message,item_param_list,money_param);
+this}
+}
+
+#[cfg(feature="app-itemlistyesnodialog")]pub trait IItemListYesNoDialog_ItemParamMethods:IItemListYesNoDialog_ItemParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemListYesNoDialog_ItemParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcf000usize)as*mut u8,();
+(ItemListYesNoDialog_ItemParam)__receiver)}
+}
+}
+
+#[cfg(feature="app-itemlistyesnodialog")]impl<__T:IItemListYesNoDialog_ItemParam>IItemListYesNoDialog_ItemParamMethods for __T{}
+
+#[cfg(feature="app-itemlistyesnodialog")]impl ItemListYesNoDialog_ItemParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-itemlistyesnodialog")]impl ItemListYesNoDialog_ItemParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemListYesNoDialog_ItemParam), ::core::stringify!(new),));
+ <Self as IItemListYesNoDialog_ItemParamMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-itemlistyesnodialog")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ItemListYesNoDialog_MoneyParam;
+    pub use super::IItemListYesNoDialog_MoneyParam;
+    pub use super::IItemListYesNoDialog_MoneyParamMethods;
     pub use super::ItemListYesNoDialog;
     pub use super::IItemListYesNoDialog;
     pub use super::IItemListYesNoDialogMethods;
     pub use super::ItemListYesNoDialog_ItemParam;
     pub use super::IItemListYesNoDialog_ItemParam;
     pub use super::IItemListYesNoDialog_ItemParamMethods;
-    pub use super::ItemListYesNoDialog_MoneyParam;
-    pub use super::IItemListYesNoDialog_MoneyParam;
-    pub use super::IItemListYesNoDialog_MoneyParamMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;

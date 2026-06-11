@@ -4,38 +4,42 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animationplayer/AnimationPlayer.md"))] # [:: unity2 :: class (namespace = "App" , name = "AnimationPlayer")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct AnimationPlayer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animationplayer/AnimationPlayer.md"))]#[::unity2::class(namespace="App",name="AnimationPlayer")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AnimationPlayer{}
 
 }
 
 #[cfg(feature = "app-animationplayer-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-animationplayer")]
-pub trait IAnimationPlayerMethods : IAnimationPlayer { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimationPlayer as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimationPlayer , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c9ca80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-animationplayer")]pub trait IAnimationPlayerMethods:IAnimationPlayer{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimationPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9ca80usize)as*mut u8,();
+(AnimationPlayer)__receiver)}
+}
+}
 
-#[cfg(feature = "app-animationplayer")]
-impl < __T : IAnimationPlayer > IAnimationPlayerMethods for __T { }
+#[cfg(feature="app-animationplayer")]impl<__T:IAnimationPlayer>IAnimationPlayerMethods for __T{}
 
-#[cfg(feature = "app-animationplayer")]
-impl AnimationPlayer { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimationPlayer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-animationplayer")]impl AnimationPlayer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-animationplayer")]
-impl AnimationPlayer {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimationPlayer) , :: core :: stringify ! (new) ,)) ; < Self as IAnimationPlayerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-animationplayer")]impl AnimationPlayer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimationPlayer), ::core::stringify!(new),));
+ <Self as IAnimationPlayerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-animationplayer")]

@@ -4,67 +4,29 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/shadertagid/ShaderTagId.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ShaderTagId {
-    pub m_id: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/shadertagid/ShaderTagId.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ShaderTagId{pub m_id:i32,}
+impl::unity2::ClassIdentity for ShaderTagId{const NAMESPACE: &'static str="UnityEngine.Rendering";
+const NAME: &'static str="ShaderTagId";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl ::unity2::ClassIdentity for ShaderTagId {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "ShaderTagId";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for ShaderTagId{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl ::unity2::IlType for ShaderTagId {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl ShaderTagId{#[inline]pub fn none()->crate::unity_engine::rendering::shadertagid::ShaderTagId{static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"none");
+ ::unity2::static_field_get_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset)}
+#[inline]pub fn set_none(value:crate::unity_engine::rendering::shadertagid::ShaderTagId){static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
+let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"none");
+ ::unity2::static_field_set_value_at_offset(<Self as::unity2::ClassIdentity>::class(),__offset,value);
 }
-
-
-impl ShaderTagId {
-    #[inline]
-    pub fn none() -> crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "none");
-
-        ::unity2::static_field_get_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset)
-    }
-
-    #[inline]
-    pub fn set_none(value: crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId) {
-        static OFFSET: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
-
-        let __offset = ::unity2::cached_field_offset_static::<Self>(&OFFSET, "none");
-
-        ::unity2::static_field_set_value_at_offset(<Self as ::unity2::ClassIdentity>::class(), __offset, value);
-
-    }
-
 }
 
 }
@@ -72,14 +34,47 @@ impl ShaderTagId {
 #[cfg(feature = "unity_engine-rendering-shadertagid-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-shadertagid")]
-impl ShaderTagId { # [doc = "`op_Equality(crate::unity_engine::rendering::shadertagid::ShaderTagId, crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"] pub fn op_equality (tag1 : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > , tag2 : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId , crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f92f40usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tag1) , :: core :: convert :: Into :: into (tag2) , :: core :: option :: Option :: None) } } } # [doc = "`op_Inequality(crate::unity_engine::rendering::shadertagid::ShaderTagId, crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"] pub fn op_inequality (tag1 : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > , tag2 : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId >) -> bool { unsafe { { let __inner : extern "C" fn (crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId , crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f92f50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (tag1) , :: core :: convert :: Into :: into (tag2) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f92fc0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-shadertagid")]impl ShaderTagId{#[doc="`op_Equality(crate::unity_engine::rendering::shadertagid::ShaderTagId, crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"]pub fn op_equality(tag1:impl::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId> ,tag2:impl::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f92f40usize)as*mut u8,bool;
+(crate::unity_engine::rendering::shadertagid::ShaderTagId)::core::convert::Into::into(tag1),(crate::unity_engine::rendering::shadertagid::ShaderTagId)::core::convert::Into::into(tag2))}
+}
+#[doc="`op_Inequality(crate::unity_engine::rendering::shadertagid::ShaderTagId, crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"]pub fn op_inequality(tag1:impl::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId> ,tag2:impl::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f92f50usize)as*mut u8,bool;
+(crate::unity_engine::rendering::shadertagid::ShaderTagId)::core::convert::Into::into(tag1),(crate::unity_engine::rendering::shadertagid::ShaderTagId)::core::convert::Into::into(tag2))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f92fc0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-shadertagid")]
-impl ShaderTagId { # [doc = "`.ctor(::unity2::Il2CppString)` overload"] pub fn ctor (& mut self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { { let __inner : extern "C" fn (* mut ShaderTagId , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8e420usize) as * mut u8) ; __inner (self as * mut ShaderTagId , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`get_id()` overload"] pub fn get_id (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ShaderTagId , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8f270usize) as * mut u8) ; __inner (self as * mut ShaderTagId , :: core :: option :: Option :: None) } } } # [doc = "`set_id(i32)` overload"] pub fn set_id (& mut self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { { let __inner : extern "C" fn (* mut ShaderTagId , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f8f2e0usize) as * mut u8) ; __inner (self as * mut ShaderTagId , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] pub fn equals (& mut self , obj : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { { let __inner : extern "C" fn (* mut ShaderTagId , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f92e70usize) as * mut u8) ; __inner (self as * mut ShaderTagId , :: core :: convert :: Into :: into (obj) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"] pub fn equals_2 (& mut self , other : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId >) -> bool { unsafe { { let __inner : extern "C" fn (* mut ShaderTagId , crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f92f00usize) as * mut u8) ; __inner (self as * mut ShaderTagId , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] pub fn get_hash_code (& mut self ,) -> i32 { unsafe { { let __inner : extern "C" fn (* mut ShaderTagId , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f92f10usize) as * mut u8) ; __inner (self as * mut ShaderTagId , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-shadertagid")]impl ShaderTagId{#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8e420usize)as*mut u8,();
+(*mut ShaderTagId)self as*mut ShaderTagId,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`get_id()` overload"]pub fn get_id(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8f270usize)as*mut u8,i32;
+(*mut ShaderTagId)self as*mut ShaderTagId)}
+}
+#[doc="`set_id(i32)` overload"]pub fn set_id(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f8f2e0usize)as*mut u8,();
+(*mut ShaderTagId)self as*mut ShaderTagId,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f92e70usize)as*mut u8,bool;
+(*mut ShaderTagId)self as*mut ShaderTagId,(crate::system::object::Object)::core::convert::Into::into(obj))}
+}
+#[doc="`Equals(crate::unity_engine::rendering::shadertagid::ShaderTagId)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::shadertagid::ShaderTagId>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f92f00usize)as*mut u8,bool;
+(*mut ShaderTagId)self as*mut ShaderTagId,(crate::unity_engine::rendering::shadertagid::ShaderTagId)::core::convert::Into::into(other))}
+}
+#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f92f10usize)as*mut u8,i32;
+(*mut ShaderTagId)self as*mut ShaderTagId)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-shadertagid")]
-impl ShaderTagId { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderTagId as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderTagId as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderTagId as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderTagId as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderTagId as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderTagId as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn op_equality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderTagId as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn op_inequality_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderTagId as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ShaderTagId as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="unity_engine-rendering-shadertagid")]impl ShaderTagId{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn op_equality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn op_inequality_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
 #[cfg(feature = "unity_engine-rendering-shadertagid")]
 #[doc(hidden)]

@@ -4,30 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/sizetaginfo/SizeTagInfo.md"))] # [:: unity2 :: class (namespace = "Nintendo.MessageStudio.Lib" , name = "SizeTagInfo")] # [parent (crate :: system :: object :: Object)] pub struct SizeTagInfo {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/sizetaginfo/SizeTagInfo.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="SizeTagInfo")]#[parent(crate::system::object::Object)]pub struct SizeTagInfo{}
 
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo-types")]
 pub use __types::*;
 
-#[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
-pub trait ISizeTagInfoMethods : ISizeTagInfo { # [doc = "`get_Tag()` overload"] fn get_tag (self ,) -> u16 { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SizeTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247dbd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_TagGroup()` overload"] fn get_tag_group (self ,) -> u16 { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SizeTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247dbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Size()` overload"] fn get_size (self ,) -> u16 { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SizeTagInfo , :: unity2 :: OptionalMethod ,) -> u16 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247dbf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Size(u16)` overload"] fn set_size (self , value : impl :: core :: convert :: Into < u16 >) -> () { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SizeTagInfo , u16 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247dc00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Array<u8>)` overload"] fn ctor (self , param : impl :: core :: convert :: Into < :: unity2 :: Array < u8 > >) -> () { unsafe { let __receiver = < SizeTagInfo as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SizeTagInfo , :: unity2 :: Array < u8 > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x247dc10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (param) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="nintendo-message_studio-lib-sizetaginfo")]pub trait ISizeTagInfoMethods:ISizeTagInfo{#[doc="`get_Tag()` overload"]fn get_tag(self,)->u16{unsafe{let __receiver= <SizeTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x247dbd0usize)as*mut u8,u16;
+(SizeTagInfo)__receiver)}
+}
+#[doc="`get_TagGroup()` overload"]fn get_tag_group(self,)->u16{unsafe{let __receiver= <SizeTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x247dbe0usize)as*mut u8,u16;
+(SizeTagInfo)__receiver)}
+}
+#[doc="`get_Size()` overload"]fn get_size(self,)->u16{unsafe{let __receiver= <SizeTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x247dbf0usize)as*mut u8,u16;
+(SizeTagInfo)__receiver)}
+}
+#[doc="`set_Size(u16)` overload"]fn set_size(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <SizeTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x247dc00usize)as*mut u8,();
+(SizeTagInfo)__receiver,(u16)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,param:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <SizeTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x247dc10usize)as*mut u8,();
+(SizeTagInfo)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(param))}
+}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
-impl < __T : ISizeTagInfo > ISizeTagInfoMethods for __T { }
+#[cfg(feature="nintendo-message_studio-lib-sizetaginfo")]impl<__T:ISizeTagInfo>ISizeTagInfoMethods for __T{}
 
-#[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
-impl SizeTagInfo { pub fn get_tag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SizeTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_tag_group_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SizeTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SizeTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SizeTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SizeTagInfo as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="nintendo-message_studio-lib-sizetaginfo")]impl SizeTagInfo{pub fn get_tag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_tag_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]
-impl SizeTagInfo {
-# [doc = "`.ctor(::unity2::Array<u8>)` — overload selector"] pub fn new (param : :: unity2 :: Array < u8 >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SizeTagInfo) , :: core :: stringify ! (new) ,)) ; < Self as ISizeTagInfoMethods > :: ctor (this , param) ; this }
+#[cfg(feature="nintendo-message_studio-lib-sizetaginfo")]impl SizeTagInfo{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(param: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SizeTagInfo), ::core::stringify!(new),));
+ <Self as ISizeTagInfoMethods> ::ctor(this,param);
+this}
 }
 
 #[cfg(feature = "nintendo-message_studio-lib-sizetaginfo")]

@@ -4,34 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: characterassett_1 :: { CharacterAssetT_1 , ICharacterAssetT_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::characterassett_1::{CharacterAssetT_1,ICharacterAssetT_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animasset/AnimAsset.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "AnimAsset")] # [parent (crate :: combat :: characterassett_1 :: CharacterAssetT_1 < crate :: unity_engine :: animationclip :: AnimationClip >)] pub struct AnimAsset {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/animasset/AnimAsset.md"))]#[::unity2::class(namespace="Combat",name="AnimAsset")]#[parent(crate::combat::characterassett_1::CharacterAssetT_1<crate::unity_engine::animationclip::AnimationClip>)]pub struct AnimAsset{}
 
 }
 
 #[cfg(feature = "combat-animasset-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-animasset")]
-pub trait IAnimAssetMethods : IAnimAsset { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimAsset , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8dfc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::Il2CppString)` overload"] fn ctor_2 (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimAsset , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e020usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`get_Hash()` overload"] fn get_hash (self ,) -> i32 { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimAsset , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e0b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Hash(i32)` overload"] fn set_hash (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimAsset , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`SetNameAndHash(::unity2::Il2CppString, i32)` overload"] fn set_name_and_hash (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , hash : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AnimAsset as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AnimAsset , :: unity2 :: Il2CppString , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c8e0d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: convert :: Into :: into (hash) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-animasset")]pub trait IAnimAssetMethods:IAnimAsset{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8dfc0usize)as*mut u8,();
+(AnimAsset)__receiver)}
+}
+#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AnimAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e020usize)as*mut u8,();
+(AnimAsset)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`get_Hash()` overload"]fn get_hash(self,)->i32{unsafe{let __receiver= <AnimAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e0b0usize)as*mut u8,i32;
+(AnimAsset)__receiver)}
+}
+#[doc="`set_Hash(i32)` overload"]fn set_hash(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AnimAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e0c0usize)as*mut u8,();
+(AnimAsset)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`SetNameAndHash(::unity2::Il2CppString, i32)` overload"]fn set_name_and_hash(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AnimAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8e0d0usize)as*mut u8,();
+(AnimAsset)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(hash))}
+}
+}
 
-#[cfg(feature = "combat-animasset")]
-impl < __T : IAnimAsset > IAnimAssetMethods for __T { }
+#[cfg(feature="combat-animasset")]impl<__T:IAnimAsset>IAnimAssetMethods for __T{}
 
-#[cfg(feature = "combat-animasset")]
-impl AnimAsset { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_name_and_hash_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AnimAsset as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="combat-animasset")]impl AnimAsset{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_name_and_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "combat-animasset")]
-impl AnimAsset {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimAsset) , :: core :: stringify ! (new) ,)) ; < Self as IAnimAssetMethods > :: ctor (this ,) ; this }
-
-# [doc = "`.ctor(::unity2::Il2CppString)` — overload selector"] pub fn new_2 (name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AnimAsset) , :: core :: stringify ! (new_2) ,)) ; < Self as IAnimAssetMethods > :: ctor_2 (this , name) ; this }
+#[cfg(feature="combat-animasset")]impl AnimAsset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimAsset), ::core::stringify!(new),));
+ <Self as IAnimAssetMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimAsset), ::core::stringify!(new_2),));
+ <Self as IAnimAssetMethods> ::ctor_2(this,name);
+this}
 }
 
 #[cfg(feature = "combat-animasset")]

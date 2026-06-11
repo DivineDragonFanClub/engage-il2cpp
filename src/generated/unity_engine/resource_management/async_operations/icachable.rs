@@ -4,27 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/icachable/ICachable.md"))] # [:: unity2 :: class (namespace = "UnityEngine.ResourceManagement.AsyncOperations" , name = "ICachable")] pub struct ICachable {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/async_operations/icachable/ICachable.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.AsyncOperations",name="ICachable")]pub struct ICachable{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-icachable-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-resource_management-async_operations-icachable")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ICachable_unity2_raw { use super :: * ; pub unsafe fn get_key (this : ICachable , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("get_Key") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "get_Key" , < ICachable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ICachable , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , __mi) } pub unsafe fn set_key (this : ICachable , value : crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("set_Key") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "set_Key" , < ICachable as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ICachable , crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , value , __mi) } }
+#[cfg(feature="unity_engine-resource_management-async_operations-icachable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ICachable_unity2_raw{use super:: * ;
+pub unsafe fn get_key(this:ICachable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Key").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","get_Key", <ICachable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ICachable, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_key(this:ICachable,value:crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_Key").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","set_Key", <ICachable as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ICachable,crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
 
-#[cfg(feature = "unity_engine-resource_management-async_operations-icachable")]
-pub trait IICachableMethods : IICachable { # [doc = "`get_Key()` overload"] fn get_key (self ,) -> crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey { unsafe { let __receiver = < ICachable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICachable_unity2_raw :: get_key (__receiver , :: core :: option :: Option :: None) } } # [doc = "`set_Key(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"] fn set_key (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey >) -> () { unsafe { let __receiver = < ICachable as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ICachable_unity2_raw :: set_key (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="unity_engine-resource_management-async_operations-icachable")]pub trait IICachableMethods:IICachable{#[doc="`get_Key()` overload"]fn get_key(self,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey{unsafe{let __receiver= <ICachable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ICachable_unity2_raw::get_key(__receiver, ::core::option::Option::None)}
+}
+#[doc="`set_Key(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"]fn set_key(self,value:impl::core::convert::Into<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey>)->(){unsafe{let __receiver= <ICachable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ICachable_unity2_raw::set_key(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "unity_engine-resource_management-async_operations-icachable")]
-impl < __T : IICachable > IICachableMethods for __T { }
+#[cfg(feature="unity_engine-resource_management-async_operations-icachable")]impl<__T:IICachable>IICachableMethods for __T{}
 
-#[cfg(feature = "unity_engine-resource_management-async_operations-icachable")]
-impl ICachable { pub fn get_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ICachable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_key_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ICachable as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-resource_management-async_operations-icachable")]impl ICachable{pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-icachable")]
 #[doc(hidden)]

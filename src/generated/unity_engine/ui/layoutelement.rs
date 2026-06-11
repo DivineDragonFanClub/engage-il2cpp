@@ -4,49 +4,164 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/layoutelement/LayoutElement.md"))] # [:: unity2 :: class (namespace = "UnityEngine.UI" , name = "LayoutElement")] # [parent (crate :: unity_engine :: event_systems :: uibehaviour :: UIBehaviour)] pub struct LayoutElement {
-# [offset (24)] # [rename (name = "m_IgnoreLayout")] pub m_ignore_layout : bool ,
-# [offset (28)] # [rename (name = "m_MinWidth")] pub m_min_width : f32 ,
-# [offset (32)] # [rename (name = "m_MinHeight")] pub m_min_height : f32 ,
-# [offset (36)] # [rename (name = "m_PreferredWidth")] pub m_preferred_width : f32 ,
-# [offset (40)] # [rename (name = "m_PreferredHeight")] pub m_preferred_height : f32 ,
-# [offset (44)] # [rename (name = "m_FlexibleWidth")] pub m_flexible_width : f32 ,
-# [offset (48)] # [rename (name = "m_FlexibleHeight")] pub m_flexible_height : f32 ,
-# [offset (52)] # [rename (name = "m_LayoutPriority")] pub m_layout_priority : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/layoutelement/LayoutElement.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="LayoutElement")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct LayoutElement{#[offset(24)]#[rename(name="m_IgnoreLayout")]pub m_ignore_layout:bool, #[offset(28)]#[rename(name="m_MinWidth")]pub m_min_width:f32, #[offset(32)]#[rename(name="m_MinHeight")]pub m_min_height:f32, #[offset(36)]#[rename(name="m_PreferredWidth")]pub m_preferred_width:f32, #[offset(40)]#[rename(name="m_PreferredHeight")]pub m_preferred_height:f32, #[offset(44)]#[rename(name="m_FlexibleWidth")]pub m_flexible_width:f32, #[offset(48)]#[rename(name="m_FlexibleHeight")]pub m_flexible_height:f32, #[offset(52)]#[rename(name="m_LayoutPriority")]pub m_layout_priority:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-layoutelement-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-ui-layoutelement")]
-pub trait ILayoutElementMethods : ILayoutElement { # [doc = "`get_ignoreLayout()` overload"] fn get_ignore_layout (self ,) -> bool { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff530usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ignoreLayout(bool)` overload"] fn set_ignore_layout (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff540usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputHorizontal()` overload"] fn calculate_layout_input_horizontal (self ,) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalculateLayoutInputVertical()` overload"] fn calculate_layout_input_vertical (self ,) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff6a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_minWidth()` overload"] fn get_min_width (self ,) -> f32 { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_minWidth(f32)` overload"] fn set_min_width (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff6c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_minHeight()` overload"] fn get_min_height (self ,) -> f32 { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff750usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_minHeight(f32)` overload"] fn set_min_height (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff760usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_preferredWidth()` overload"] fn get_preferred_width (self ,) -> f32 { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff7f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_preferredWidth(f32)` overload"] fn set_preferred_width (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_preferredHeight()` overload"] fn get_preferred_height (self ,) -> f32 { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_preferredHeight(f32)` overload"] fn set_preferred_height (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff8a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_flexibleWidth()` overload"] fn get_flexible_width (self ,) -> f32 { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_flexibleWidth(f32)` overload"] fn set_flexible_width (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff940usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_flexibleHeight()` overload"] fn get_flexible_height (self ,) -> f32 { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff9d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_flexibleHeight(f32)` overload"] fn set_flexible_height (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff9e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_layoutPriority()` overload"] fn get_layout_priority (self ,) -> i32 { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bffa70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_layoutPriority(i32)` overload"] fn set_layout_priority (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bffa80usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bffb00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bffb30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnTransformParentChanged()` overload"] fn on_transform_parent_changed (self ,) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bffb60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bffb70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDidApplyAnimationProperties()` overload"] fn on_did_apply_animation_properties (self ,) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bffba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBeforeTransformParentChanged()` overload"] fn on_before_transform_parent_changed (self ,) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bffbb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetDirty()` overload"] fn set_dirty (self ,) -> () { unsafe { let __receiver = < LayoutElement as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (LayoutElement , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3bff5c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-ui-layoutelement")]pub trait ILayoutElementMethods:ILayoutElement{#[doc="`get_ignoreLayout()` overload"]fn get_ignore_layout(self,)->bool{unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff530usize)as*mut u8,bool;
+(LayoutElement)__receiver)}
+}
+#[doc="`set_ignoreLayout(bool)` overload"]fn set_ignore_layout(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff540usize)as*mut u8,();
+(LayoutElement)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff690usize)as*mut u8,();
+(LayoutElement)__receiver)}
+}
+#[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff6a0usize)as*mut u8,();
+(LayoutElement)__receiver)}
+}
+#[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff6b0usize)as*mut u8,f32;
+(LayoutElement)__receiver)}
+}
+#[doc="`set_minWidth(f32)` overload"]fn set_min_width(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff6c0usize)as*mut u8,();
+(LayoutElement)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff750usize)as*mut u8,f32;
+(LayoutElement)__receiver)}
+}
+#[doc="`set_minHeight(f32)` overload"]fn set_min_height(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff760usize)as*mut u8,();
+(LayoutElement)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff7f0usize)as*mut u8,f32;
+(LayoutElement)__receiver)}
+}
+#[doc="`set_preferredWidth(f32)` overload"]fn set_preferred_width(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff800usize)as*mut u8,();
+(LayoutElement)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff890usize)as*mut u8,f32;
+(LayoutElement)__receiver)}
+}
+#[doc="`set_preferredHeight(f32)` overload"]fn set_preferred_height(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff8a0usize)as*mut u8,();
+(LayoutElement)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff930usize)as*mut u8,f32;
+(LayoutElement)__receiver)}
+}
+#[doc="`set_flexibleWidth(f32)` overload"]fn set_flexible_width(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff940usize)as*mut u8,();
+(LayoutElement)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff9d0usize)as*mut u8,f32;
+(LayoutElement)__receiver)}
+}
+#[doc="`set_flexibleHeight(f32)` overload"]fn set_flexible_height(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff9e0usize)as*mut u8,();
+(LayoutElement)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bffa70usize)as*mut u8,i32;
+(LayoutElement)__receiver)}
+}
+#[doc="`set_layoutPriority(i32)` overload"]fn set_layout_priority(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bffa80usize)as*mut u8,();
+(LayoutElement)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bffb00usize)as*mut u8,();
+(LayoutElement)__receiver)}
+}
+#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bffb30usize)as*mut u8,();
+(LayoutElement)__receiver)}
+}
+#[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bffb60usize)as*mut u8,();
+(LayoutElement)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bffb70usize)as*mut u8,();
+(LayoutElement)__receiver)}
+}
+#[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bffba0usize)as*mut u8,();
+(LayoutElement)__receiver)}
+}
+#[doc="`OnBeforeTransformParentChanged()` overload"]fn on_before_transform_parent_changed(self,)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bffbb0usize)as*mut u8,();
+(LayoutElement)__receiver)}
+}
+#[doc="`SetDirty()` overload"]fn set_dirty(self,)->(){unsafe{let __receiver= <LayoutElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff5c0usize)as*mut u8,();
+(LayoutElement)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-ui-layoutelement")]
-impl < __T : ILayoutElement > ILayoutElementMethods for __T { }
+#[cfg(feature="unity_engine-ui-layoutelement")]impl<__T:ILayoutElement>ILayoutElementMethods for __T{}
 
-#[cfg(feature = "unity_engine-ui-layoutelement")]
-impl LayoutElement { pub fn get_ignore_layout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_ignore_layout_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn calculate_layout_input_horizontal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn calculate_layout_input_vertical_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_min_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_min_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_min_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_min_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_preferred_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_preferred_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_preferred_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_preferred_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_flexible_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_flexible_width_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_flexible_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_flexible_height_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_layout_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_layout_priority_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn on_transform_parent_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn on_did_apply_animation_properties_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn on_before_transform_parent_changed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn set_dirty_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < LayoutElement as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } }
+#[cfg(feature="unity_engine-ui-layoutelement")]impl LayoutElement{pub fn get_ignore_layout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_ignore_layout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calculate_layout_input_horizontal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calculate_layout_input_vertical_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_min_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_min_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_min_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_min_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_preferred_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_preferred_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_preferred_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_preferred_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_flexible_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_flexible_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_flexible_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_flexible_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_layout_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_layout_priority_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn on_transform_parent_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn on_did_apply_animation_properties_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn on_before_transform_parent_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_dirty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+}
 
-#[cfg(feature = "unity_engine-ui-layoutelement")]
-impl LayoutElement {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (LayoutElement) , :: core :: stringify ! (new) ,)) ; < Self as ILayoutElementMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-ui-layoutelement")]impl LayoutElement{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(LayoutElement), ::core::stringify!(new),));
+ <Self as ILayoutElementMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-ui-layoutelement")]

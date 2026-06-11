@@ -4,34 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter :: { IVolumeParameter , VolumeParameter }
- ;
- use crate :: unity_engine :: rendering :: volumeparameter_1 :: { IVolumeParameter_1 , VolumeParameter_1 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
+;
+use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/motionblurqualityparameter/MotionBlurQualityParameter.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal" , name = "MotionBlurQualityParameter")] # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: rendering :: universal :: motionblurquality :: MotionBlurQuality >)] pub struct MotionBlurQualityParameter {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/motionblurqualityparameter/MotionBlurQualityParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="MotionBlurQualityParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::rendering::universal::motionblurquality::MotionBlurQuality>)]pub struct MotionBlurQualityParameter{}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-motionblurqualityparameter-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-motionblurqualityparameter")]
-pub trait IMotionBlurQualityParameterMethods : IMotionBlurQualityParameter { # [doc = "`.ctor(crate::unity_engine::rendering::universal::motionblurquality::MotionBlurQuality, bool)` overload"] fn ctor (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: motionblurquality :: MotionBlurQuality > , override_state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < MotionBlurQualityParameter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MotionBlurQualityParameter , crate :: unity_engine :: rendering :: universal :: motionblurquality :: MotionBlurQuality , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3195730usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (override_state) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-motionblurqualityparameter")]pub trait IMotionBlurQualityParameterMethods:IMotionBlurQualityParameter{#[doc="`.ctor(crate::unity_engine::rendering::universal::motionblurquality::MotionBlurQuality, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::rendering::universal::motionblurquality::MotionBlurQuality> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MotionBlurQualityParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3195730usize)as*mut u8,();
+(MotionBlurQualityParameter)__receiver,(crate::unity_engine::rendering::universal::motionblurquality::MotionBlurQuality)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-motionblurqualityparameter")]
-impl < __T : IMotionBlurQualityParameter > IMotionBlurQualityParameterMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-motionblurqualityparameter")]impl<__T:IMotionBlurQualityParameter>IMotionBlurQualityParameterMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-motionblurqualityparameter")]
-impl MotionBlurQualityParameter { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MotionBlurQualityParameter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-rendering-universal-motionblurqualityparameter")]impl MotionBlurQualityParameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-motionblurqualityparameter")]
-impl MotionBlurQualityParameter {
-# [doc = "`.ctor(crate::unity_engine::rendering::universal::motionblurquality::MotionBlurQuality, bool)` — overload selector"] pub fn new (value : crate :: unity_engine :: rendering :: universal :: motionblurquality :: MotionBlurQuality , override_state : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MotionBlurQualityParameter) , :: core :: stringify ! (new) ,)) ; < Self as IMotionBlurQualityParameterMethods > :: ctor (this , value , override_state) ; this }
+#[cfg(feature="unity_engine-rendering-universal-motionblurqualityparameter")]impl MotionBlurQualityParameter{#[doc="`.ctor(crate::unity_engine::rendering::universal::motionblurquality::MotionBlurQuality, bool)` — overload selector"]pub fn new(value:crate::unity_engine::rendering::universal::motionblurquality::MotionBlurQuality,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MotionBlurQualityParameter), ::core::stringify!(new),));
+ <Self as IMotionBlurQualityParameterMethods> ::ctor(this,value,override_state);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-motionblurqualityparameter")]

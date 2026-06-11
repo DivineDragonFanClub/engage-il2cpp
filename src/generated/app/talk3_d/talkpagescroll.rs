@@ -4,35 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkpagescroll/TalkPageScroll.md"))] # [:: unity2 :: class (namespace = "App.Talk3D" , name = "TalkPageScroll")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct TalkPageScroll {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talkpagescroll/TalkPageScroll.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkPageScroll")]#[parent(crate::app::procinst::ProcInst)]pub struct TalkPageScroll{}
 
 }
 
 #[cfg(feature = "app-talk3_d-talkpagescroll-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-talk3_d-talkpagescroll")]
-impl TalkPageScroll { # [doc = "`CreateInstBind(crate::app::procinst::ProcInst)` overload"] pub fn create_inst_bind (parent : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: talk3_d :: talkpagescroll :: TalkPageScroll { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: talk3_d :: talkpagescroll :: TalkPageScroll = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c47a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (parent) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkpagescroll")]impl TalkPageScroll{#[doc="`CreateInstBind(crate::app::procinst::ProcInst)` overload"]pub fn create_inst_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::talk3_d::talkpagescroll::TalkPageScroll{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c47a0usize)as*mut u8,crate::app::talk3_d::talkpagescroll::TalkPageScroll;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkpagescroll")]
-pub trait ITalkPageScrollMethods : ITalkPageScroll { # [doc = "`OnCreate()` overload"] fn on_create (self ,) -> () { unsafe { let __receiver = < TalkPageScroll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPageScroll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDispose()` overload"] fn on_dispose (self ,) -> () { unsafe { let __receiver = < TalkPageScroll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPageScroll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c45d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < TalkPageScroll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPageScroll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c4700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TalkPageScroll as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TalkPageScroll , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20c49b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-talk3_d-talkpagescroll")]pub trait ITalkPageScrollMethods:ITalkPageScroll{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <TalkPageScroll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4540usize)as*mut u8,();
+(TalkPageScroll)__receiver)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TalkPageScroll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c45d0usize)as*mut u8,();
+(TalkPageScroll)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <TalkPageScroll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c4700usize)as*mut u8,();
+(TalkPageScroll)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkPageScroll as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x20c49b0usize)as*mut u8,();
+(TalkPageScroll)__receiver)}
+}
+}
 
-#[cfg(feature = "app-talk3_d-talkpagescroll")]
-impl < __T : ITalkPageScroll > ITalkPageScrollMethods for __T { }
+#[cfg(feature="app-talk3_d-talkpagescroll")]impl<__T:ITalkPageScroll>ITalkPageScrollMethods for __T{}
 
-#[cfg(feature = "app-talk3_d-talkpagescroll")]
-impl TalkPageScroll { pub fn on_create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPageScroll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_dispose_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPageScroll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPageScroll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_inst_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPageScroll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TalkPageScroll as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-talk3_d-talkpagescroll")]impl TalkPageScroll{pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_inst_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-talk3_d-talkpagescroll")]
-impl TalkPageScroll {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TalkPageScroll) , :: core :: stringify ! (new) ,)) ; < Self as ITalkPageScrollMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-talk3_d-talkpagescroll")]impl TalkPageScroll{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TalkPageScroll), ::core::stringify!(new),));
+ <Self as ITalkPageScrollMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-talk3_d-talkpagescroll")]

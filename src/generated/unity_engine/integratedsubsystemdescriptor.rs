@@ -4,32 +4,39 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/integratedsubsystemdescriptor/IntegratedSubsystemDescriptor.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "IntegratedSubsystemDescriptor")] # [parent (crate :: system :: object :: Object)] pub struct IntegratedSubsystemDescriptor {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/integratedsubsystemdescriptor/IntegratedSubsystemDescriptor.md"))]#[::unity2::class(namespace="UnityEngine",name="IntegratedSubsystemDescriptor")]#[parent(crate::system::object::Object)]pub struct IntegratedSubsystemDescriptor{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-integratedsubsystemdescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-integratedsubsystemdescriptor")]
-pub trait IIntegratedSubsystemDescriptorMethods : IIntegratedSubsystemDescriptor { # [doc = "`get_id()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < IntegratedSubsystemDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IntegratedSubsystemDescriptor , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < IntegratedSubsystemDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (IntegratedSubsystemDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3f3a8d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-integratedsubsystemdescriptor")]pub trait IIntegratedSubsystemDescriptorMethods:IIntegratedSubsystemDescriptor{#[doc="`get_id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <IntegratedSubsystemDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a830usize)as*mut u8, ::unity2::Il2CppString;
+(IntegratedSubsystemDescriptor)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IntegratedSubsystemDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a8d0usize)as*mut u8,();
+(IntegratedSubsystemDescriptor)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-integratedsubsystemdescriptor")]
-impl < __T : IIntegratedSubsystemDescriptor > IIntegratedSubsystemDescriptorMethods for __T { }
+#[cfg(feature="unity_engine-integratedsubsystemdescriptor")]impl<__T:IIntegratedSubsystemDescriptor>IIntegratedSubsystemDescriptorMethods for __T{}
 
-#[cfg(feature = "unity_engine-integratedsubsystemdescriptor")]
-impl IntegratedSubsystemDescriptor { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntegratedSubsystemDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < IntegratedSubsystemDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="unity_engine-integratedsubsystemdescriptor")]impl IntegratedSubsystemDescriptor{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "unity_engine-integratedsubsystemdescriptor")]
-impl IntegratedSubsystemDescriptor {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (IntegratedSubsystemDescriptor) , :: core :: stringify ! (new) ,)) ; < Self as IIntegratedSubsystemDescriptorMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-integratedsubsystemdescriptor")]impl IntegratedSubsystemDescriptor{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IntegratedSubsystemDescriptor), ::core::stringify!(new),));
+ <Self as IIntegratedSubsystemDescriptorMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-integratedsubsystemdescriptor")]

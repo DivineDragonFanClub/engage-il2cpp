@@ -4,40 +4,44 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsandbox/MapSandBox.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapSandBox")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapsandbox :: MapSandBox >)] pub struct MapSandBox {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsandbox/MapSandBox.md"))]#[::unity2::class(namespace="App",name="MapSandBox")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::mapsandbox::MapSandBox>)]pub struct MapSandBox{}
 
 }
 
 #[cfg(feature = "app-mapsandbox-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mapsandbox")]
-pub trait IMapSandBoxMethods : IMapSandBox { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapSandBox as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapSandBox , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2362610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mapsandbox")]pub trait IMapSandBoxMethods:IMapSandBox{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSandBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2362610usize)as*mut u8,();
+(MapSandBox)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mapsandbox")]
-impl < __T : IMapSandBox > IMapSandBoxMethods for __T { }
+#[cfg(feature="app-mapsandbox")]impl<__T:IMapSandBox>IMapSandBoxMethods for __T{}
 
-#[cfg(feature = "app-mapsandbox")]
-impl MapSandBox { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapSandBox as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-mapsandbox")]impl MapSandBox{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-mapsandbox")]
-impl MapSandBox {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapSandBox) , :: core :: stringify ! (new) ,)) ; < Self as IMapSandBoxMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mapsandbox")]impl MapSandBox{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSandBox), ::core::stringify!(new),));
+ <Self as IMapSandBoxMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mapsandbox")]

@@ -4,40 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuglodcrossfade/DebugLodCrossFade.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugLodCrossFade")] # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: debuglodcrossfade :: DebugLodCrossFade >)] pub struct DebugLodCrossFade {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debuglodcrossfade/DebugLodCrossFade.md"))]#[::unity2::class(namespace="App",name="DebugLodCrossFade")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::debuglodcrossfade::DebugLodCrossFade>)]pub struct DebugLodCrossFade{}
 
 }
 
 #[cfg(feature = "app-debuglodcrossfade-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debuglodcrossfade")]
-pub trait IDebugLodCrossFadeMethods : IDebugLodCrossFade { # [doc = "`OnEnable()` overload"] fn on_enable (self ,) -> () { unsafe { let __receiver = < DebugLodCrossFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugLodCrossFade , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04c20usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDisable()` overload"] fn on_disable (self ,) -> () { unsafe { let __receiver = < DebugLodCrossFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugLodCrossFade , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugLodCrossFade as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugLodCrossFade , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a04de0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debuglodcrossfade")]pub trait IDebugLodCrossFadeMethods:IDebugLodCrossFade{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <DebugLodCrossFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04c20usize)as*mut u8,();
+(DebugLodCrossFade)__receiver)}
+}
+#[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <DebugLodCrossFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04d00usize)as*mut u8,();
+(DebugLodCrossFade)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugLodCrossFade as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04de0usize)as*mut u8,();
+(DebugLodCrossFade)__receiver)}
+}
+}
 
-#[cfg(feature = "app-debuglodcrossfade")]
-impl < __T : IDebugLodCrossFade > IDebugLodCrossFadeMethods for __T { }
+#[cfg(feature="app-debuglodcrossfade")]impl<__T:IDebugLodCrossFade>IDebugLodCrossFadeMethods for __T{}
 
-#[cfg(feature = "app-debuglodcrossfade")]
-impl DebugLodCrossFade { pub fn on_enable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugLodCrossFade as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_disable_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugLodCrossFade as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugLodCrossFade as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-debuglodcrossfade")]impl DebugLodCrossFade{pub fn on_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_disable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-debuglodcrossfade")]
-impl DebugLodCrossFade {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugLodCrossFade) , :: core :: stringify ! (new) ,)) ; < Self as IDebugLodCrossFadeMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debuglodcrossfade")]impl DebugLodCrossFade{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugLodCrossFade), ::core::stringify!(new),));
+ <Self as IDebugLodCrossFadeMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debuglodcrossfade")]

@@ -4,88 +4,57 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/quantizer/Quantizer_MajorAxis.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct Quantizer_MajorAxis  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/quantizer/Quantizer_MajorAxis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Quantizer_MajorAxis{pub value:i32,}
+impl::unity2::ClassIdentity for Quantizer_MajorAxis{const NAMESPACE: &'static str="Combat";
+const NAME: &'static str="Quantizer.MajorAxis";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Quantizer_MajorAxis{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Quantizer_MajorAxis{pub fn x()->Self{Self{value:0}
+}
+pub fn y()->Self{Self{value:1}
+}
+pub fn z()->Self{Self{value:2}
+}
+pub fn mask()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for Quantizer_MajorAxis  {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "Quantizer.MajorAxis";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for Quantizer_MajorAxis  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  Quantizer_MajorAxis  {
-    pub fn x() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn y() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn z() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn mask() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/quantizer/Quantizer.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "Quantizer")] # [parent (crate :: system :: object :: Object)] pub struct Quantizer {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/quantizer/Quantizer.md"))]#[::unity2::class(namespace="Combat",name="Quantizer")]#[parent(crate::system::object::Object)]pub struct Quantizer{}
 
 }
 
 #[cfg(feature = "combat-quantizer-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-quantizer")]
-impl Quantizer { # [doc = "`FItoVec3(f32, i32)` overload"] pub fn f_ito_vec3 (f : impl :: core :: convert :: Into < f32 > , i : impl :: core :: convert :: Into < i32 >) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { { let __inner : extern "C" fn (f32 , i32 , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2372090usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (f) , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`FXZtoI(crate::combat::fxz::FXZ)` overload"] pub fn fx_zto_i (xz : impl :: core :: convert :: Into < crate :: combat :: fxz :: FXZ >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: combat :: fxz :: FXZ , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23720f0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (xz) , :: core :: option :: Option :: None) } } } # [doc = "`ItoFXZ(i32)` overload"] pub fn ito_fxz (i : impl :: core :: convert :: Into < i32 >) -> crate :: combat :: fxz :: FXZ { unsafe { { let __inner : extern "C" fn (i32 , :: unity2 :: OptionalMethod ,) -> crate :: combat :: fxz :: FXZ = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2372140usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-quantizer")]impl Quantizer{#[doc="`FItoVec3(f32, i32)` overload"]pub fn f_ito_vec3(f:impl::core::convert::Into<f32> ,i:impl::core::convert::Into<i32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2372090usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(f32)::core::convert::Into::into(f),(i32)::core::convert::Into::into(i))}
+}
+#[doc="`FXZtoI(crate::combat::fxz::FXZ)` overload"]pub fn fx_zto_i(xz:impl::core::convert::Into<crate::combat::fxz::FXZ>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23720f0usize)as*mut u8,i32;
+(crate::combat::fxz::FXZ)::core::convert::Into::into(xz))}
+}
+#[doc="`ItoFXZ(i32)` overload"]pub fn ito_fxz(i:impl::core::convert::Into<i32>)->crate::combat::fxz::FXZ{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2372140usize)as*mut u8,crate::combat::fxz::FXZ;
+(i32)::core::convert::Into::into(i))}
+}
+}
 
-#[cfg(feature = "combat-quantizer")]
-impl Quantizer { pub fn f_ito_vec3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Quantizer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn fx_zto_i_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Quantizer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ito_fxz_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Quantizer as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-quantizer")]impl Quantizer{pub fn f_ito_vec3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn fx_zto_i_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ito_fxz_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "combat-quantizer")]
 #[doc(hidden)]

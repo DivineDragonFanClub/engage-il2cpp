@@ -4,35 +4,70 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gradient/Gradient.md"))] # [:: unity2 :: class (namespace = "UnityEngine" , name = "Gradient")] # [parent (crate :: system :: object :: Object)] pub struct Gradient {
-# [offset (16)] # [rename (name = "m_Ptr")] pub m_ptr : :: unity2 :: IntPtr ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/gradient/Gradient.md"))]#[::unity2::class(namespace="UnityEngine",name="Gradient")]#[parent(crate::system::object::Object)]pub struct Gradient{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr,}
 
 }
 
 #[cfg(feature = "unity_engine-gradient-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-gradient")]
-impl Gradient { # [doc = "`Init()` overload"] pub fn init () -> :: unity2 :: IntPtr { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: IntPtr = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4fc70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-gradient")]impl Gradient{#[doc="`Init()` overload"]pub fn init()-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c4fc70usize)as*mut u8, ::unity2::IntPtr;
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-gradient")]
-pub trait IGradientMethods : IGradient { # [doc = "`Cleanup()` overload"] fn cleanup (self ,) -> () { unsafe { let __receiver = < Gradient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Gradient , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4fcb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Internal_Equals(::unity2::IntPtr)` overload"] fn internal_equals (self , other : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> bool { unsafe { let __receiver = < Gradient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Gradient , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4fd00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < Gradient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Gradient , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4fd50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Finalize()` overload"] fn finalize (self ,) -> () { unsafe { let __receiver = < Gradient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Gradient , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4fda0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::system::object::Object)` overload"] fn equals (self , o : impl :: core :: convert :: Into < crate :: system :: object :: Object >) -> bool { unsafe { let __receiver = < Gradient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Gradient , crate :: system :: object :: Object , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4fe30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (o) , :: core :: option :: Option :: None) } } } # [doc = "`Equals(crate::unity_engine::gradient::Gradient)` overload"] fn equals_2 (self , other : impl :: core :: convert :: Into < crate :: unity_engine :: gradient :: Gradient >) -> bool { unsafe { let __receiver = < Gradient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Gradient , crate :: unity_engine :: gradient :: Gradient , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c4ff90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } # [doc = "`GetHashCode()` overload"] fn get_hash_code (self ,) -> i32 { unsafe { let __receiver = < Gradient as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (Gradient , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2c50060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-gradient")]pub trait IGradientMethods:IGradient{#[doc="`Cleanup()` overload"]fn cleanup(self,)->(){unsafe{let __receiver= <Gradient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4fcb0usize)as*mut u8,();
+(Gradient)__receiver)}
+}
+#[doc="`Internal_Equals(::unity2::IntPtr)` overload"]fn internal_equals(self,other:impl::core::convert::Into< ::unity2::IntPtr>)->bool{unsafe{let __receiver= <Gradient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4fd00usize)as*mut u8,bool;
+(Gradient)__receiver,(::unity2::IntPtr)::core::convert::Into::into(other))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Gradient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4fd50usize)as*mut u8,();
+(Gradient)__receiver)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Gradient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4fda0usize)as*mut u8,();
+(Gradient)__receiver)}
+}
+#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Gradient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4fe30usize)as*mut u8,bool;
+(Gradient)__receiver,(crate::system::object::Object)::core::convert::Into::into(o))}
+}
+#[doc="`Equals(crate::unity_engine::gradient::Gradient)` overload"]fn equals_2(self,other:impl::core::convert::Into<crate::unity_engine::gradient::Gradient>)->bool{unsafe{let __receiver= <Gradient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4ff90usize)as*mut u8,bool;
+(Gradient)__receiver,(crate::unity_engine::gradient::Gradient)::core::convert::Into::into(other))}
+}
+#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Gradient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2c50060usize)as*mut u8,i32;
+(Gradient)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-gradient")]
-impl < __T : IGradient > IGradientMethods for __T { }
+#[cfg(feature="unity_engine-gradient")]impl<__T:IGradient>IGradientMethods for __T{}
 
-#[cfg(feature = "unity_engine-gradient")]
-impl Gradient { pub fn init_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn cleanup_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn internal_equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn finalize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn equals_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn equals_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_hash_code_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < Gradient as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="unity_engine-gradient")]impl Gradient{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cleanup_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn internal_equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
-#[cfg(feature = "unity_engine-gradient")]
-impl Gradient {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (Gradient) , :: core :: stringify ! (new) ,)) ; < Self as IGradientMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-gradient")]impl Gradient{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Gradient), ::core::stringify!(new),));
+ <Self as IGradientMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-gradient")]

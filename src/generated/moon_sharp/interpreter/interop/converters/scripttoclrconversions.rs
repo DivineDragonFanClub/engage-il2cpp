@@ -4,49 +4,80 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/converters/scripttoclrconversions/ScriptToClrConversions.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop.Converters" , name = "ScriptToClrConversions")] # [parent (crate :: system :: object :: Object)] pub struct ScriptToClrConversions {
-# [static_field] # [rename (name = "WEIGHT_MAX_VALUE")] pub weight_max_value : i32 ,
-# [static_field] # [rename (name = "WEIGHT_CUSTOM_CONVERTER_MATCH")] pub weight_custom_converter_match : i32 ,
-# [static_field] # [rename (name = "WEIGHT_EXACT_MATCH")] pub weight_exact_match : i32 ,
-# [static_field] # [rename (name = "WEIGHT_STRING_TO_STRINGBUILDER")] pub weight_string_to_stringbuilder : i32 ,
-# [static_field] # [rename (name = "WEIGHT_STRING_TO_CHAR")] pub weight_string_to_char : i32 ,
-# [static_field] # [rename (name = "WEIGHT_NIL_TO_NULLABLE")] pub weight_nil_to_nullable : i32 ,
-# [static_field] # [rename (name = "WEIGHT_NIL_TO_REFTYPE")] pub weight_nil_to_reftype : i32 ,
-# [static_field] # [rename (name = "WEIGHT_VOID_WITH_DEFAULT")] pub weight_void_with_default : i32 ,
-# [static_field] # [rename (name = "WEIGHT_VOID_WITHOUT_DEFAULT")] pub weight_void_without_default : i32 ,
-# [static_field] # [rename (name = "WEIGHT_NIL_WITH_DEFAULT")] pub weight_nil_with_default : i32 ,
-# [static_field] # [rename (name = "WEIGHT_BOOL_TO_STRING")] pub weight_bool_to_string : i32 ,
-# [static_field] # [rename (name = "WEIGHT_NUMBER_TO_STRING")] pub weight_number_to_string : i32 ,
-# [static_field] # [rename (name = "WEIGHT_NUMBER_TO_ENUM")] pub weight_number_to_enum : i32 ,
-# [static_field] # [rename (name = "WEIGHT_USERDATA_TO_STRING")] pub weight_userdata_to_string : i32 ,
-# [static_field] # [rename (name = "WEIGHT_TABLE_CONVERSION")] pub weight_table_conversion : i32 ,
-# [static_field] # [rename (name = "WEIGHT_NUMBER_DOWNCAST")] pub weight_number_downcast : i32 ,
-# [static_field] # [rename (name = "WEIGHT_NO_MATCH")] pub weight_no_match : i32 ,
-# [static_field] # [rename (name = "WEIGHT_NO_EXTRA_PARAMS_BONUS")] pub weight_no_extra_params_bonus : i32 ,
-# [static_field] # [rename (name = "WEIGHT_EXTRA_PARAMS_MALUS")] pub weight_extra_params_malus : i32 ,
-# [static_field] # [rename (name = "WEIGHT_BYREF_BONUSMALUS")] pub weight_byref_bonusmalus : i32 ,
-# [static_field] # [rename (name = "WEIGHT_VARARGS_MALUS")] pub weight_varargs_malus : i32 ,
-# [static_field] # [rename (name = "WEIGHT_VARARGS_EMPTY")] pub weight_varargs_empty : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/converters/scripttoclrconversions/ScriptToClrConversions.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop.Converters",name="ScriptToClrConversions")]#[parent(crate::system::object::Object)]pub struct ScriptToClrConversions{#[static_field]#[rename(name="WEIGHT_MAX_VALUE")]pub weight_max_value:i32, #[static_field]#[rename(name="WEIGHT_CUSTOM_CONVERTER_MATCH")]pub weight_custom_converter_match:i32, #[static_field]#[rename(name="WEIGHT_EXACT_MATCH")]pub weight_exact_match:i32, #[static_field]#[rename(name="WEIGHT_STRING_TO_STRINGBUILDER")]pub weight_string_to_stringbuilder:i32, #[static_field]#[rename(name="WEIGHT_STRING_TO_CHAR")]pub weight_string_to_char:i32, #[static_field]#[rename(name="WEIGHT_NIL_TO_NULLABLE")]pub weight_nil_to_nullable:i32, #[static_field]#[rename(name="WEIGHT_NIL_TO_REFTYPE")]pub weight_nil_to_reftype:i32, #[static_field]#[rename(name="WEIGHT_VOID_WITH_DEFAULT")]pub weight_void_with_default:i32, #[static_field]#[rename(name="WEIGHT_VOID_WITHOUT_DEFAULT")]pub weight_void_without_default:i32, #[static_field]#[rename(name="WEIGHT_NIL_WITH_DEFAULT")]pub weight_nil_with_default:i32, #[static_field]#[rename(name="WEIGHT_BOOL_TO_STRING")]pub weight_bool_to_string:i32, #[static_field]#[rename(name="WEIGHT_NUMBER_TO_STRING")]pub weight_number_to_string:i32, #[static_field]#[rename(name="WEIGHT_NUMBER_TO_ENUM")]pub weight_number_to_enum:i32, #[static_field]#[rename(name="WEIGHT_USERDATA_TO_STRING")]pub weight_userdata_to_string:i32, #[static_field]#[rename(name="WEIGHT_TABLE_CONVERSION")]pub weight_table_conversion:i32, #[static_field]#[rename(name="WEIGHT_NUMBER_DOWNCAST")]pub weight_number_downcast:i32, #[static_field]#[rename(name="WEIGHT_NO_MATCH")]pub weight_no_match:i32, #[static_field]#[rename(name="WEIGHT_NO_EXTRA_PARAMS_BONUS")]pub weight_no_extra_params_bonus:i32, #[static_field]#[rename(name="WEIGHT_EXTRA_PARAMS_MALUS")]pub weight_extra_params_malus:i32, #[static_field]#[rename(name="WEIGHT_BYREF_BONUSMALUS")]pub weight_byref_bonusmalus:i32, #[static_field]#[rename(name="WEIGHT_VARARGS_MALUS")]pub weight_varargs_malus:i32, #[static_field]#[rename(name="WEIGHT_VARARGS_EMPTY")]pub weight_varargs_empty:i32,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ScriptToClrConversions_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dyn_value_to_object { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptToClrConversions as :: unity2 :: ClassIdentity > :: class () , "DynValueToObject" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptToClrConversions as :: unity2 :: ClassIdentity > :: NAME , "DynValueToObject" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dyn_value_to_object_of_type { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: system :: object :: Object as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptToClrConversions as :: unity2 :: ClassIdentity > :: class () , "DynValueToObjectOfType" , 4 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptToClrConversions as :: unity2 :: ClassIdentity > :: NAME , "DynValueToObjectOfType" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_dyn_value_to_object_of_type_weight { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: dynvalue :: DynValue as :: unity2 :: IlType > :: il_type () , < :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < bool as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptToClrConversions as :: unity2 :: ClassIdentity > :: class () , "DynValueToObjectOfTypeWeight" , 3 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptToClrConversions as :: unity2 :: ClassIdentity > :: NAME , "DynValueToObjectOfTypeWeight" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_numeric_type_weight { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< ScriptToClrConversions as :: unity2 :: ClassIdentity > :: class () , "GetNumericTypeWeight" , 1 , param_types , true ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < ScriptToClrConversions as :: unity2 :: ClassIdentity > :: NAME , "GetNumericTypeWeight" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-converters-scripttoclrconversions")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptToClrConversions_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_dyn_value_to_object{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptToClrConversions as::unity2::ClassIdentity> ::class(),"DynValueToObject",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptToClrConversions as::unity2::ClassIdentity> ::NAME,"DynValueToObject",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_dyn_value_to_object_of_type{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type(), < ::unity2::SystemType as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptToClrConversions as::unity2::ClassIdentity> ::class(),"DynValueToObjectOfType",4,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptToClrConversions as::unity2::ClassIdentity> ::NAME,"DynValueToObjectOfType",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_dyn_value_to_object_of_type_weight{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type(), < ::unity2::SystemType as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptToClrConversions as::unity2::ClassIdentity> ::class(),"DynValueToObjectOfTypeWeight",3,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptToClrConversions as::unity2::ClassIdentity> ::NAME,"DynValueToObjectOfTypeWeight",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_numeric_type_weight{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<ScriptToClrConversions as::unity2::ClassIdentity> ::class(),"GetNumericTypeWeight",1,param_types,true,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <ScriptToClrConversions as::unity2::ClassIdentity> ::NAME,"GetNumericTypeWeight",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions")]
-impl ScriptToClrConversions { # [doc = "`DynValueToObject(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"] pub fn dyn_value_to_object (value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__ScriptToClrConversions_unity2_raw :: __lookup_dyn_value_to_object :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`DynValueToObjectOfType(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::SystemType, crate::system::object::Object, bool)` overload"] pub fn dyn_value_to_object_of_type (value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , desired_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , default_value : impl :: core :: convert :: Into < crate :: system :: object :: Object > , is_optional : impl :: core :: convert :: Into < bool >) -> crate :: system :: object :: Object { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: SystemType , crate :: system :: object :: Object , bool , :: unity2 :: OptionalMethod ,) -> crate :: system :: object :: Object = :: core :: mem :: transmute (__ScriptToClrConversions_unity2_raw :: __lookup_dyn_value_to_object_of_type :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (desired_type) , :: core :: convert :: Into :: into (default_value) , :: core :: convert :: Into :: into (is_optional) , :: core :: option :: Option :: None) } } } # [doc = "`DynValueToObjectOfTypeWeight(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::SystemType, bool)` overload"] pub fn dyn_value_to_object_of_type_weight (value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , desired_type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , is_optional : impl :: core :: convert :: Into < bool >) -> i32 { unsafe { { let __inner : extern "C" fn (crate :: moon_sharp :: interpreter :: dynvalue :: DynValue , :: unity2 :: SystemType , bool , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__ScriptToClrConversions_unity2_raw :: __lookup_dyn_value_to_object_of_type_weight :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: convert :: Into :: into (desired_type) , :: core :: convert :: Into :: into (is_optional) , :: core :: option :: Option :: None) } } } # [doc = "`GetNumericTypeWeight(::unity2::SystemType)` overload"] pub fn get_numeric_type_weight (desired_type : impl :: core :: convert :: Into < :: unity2 :: SystemType >) -> i32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: SystemType , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute (__ScriptToClrConversions_unity2_raw :: __lookup_get_numeric_type_weight :: get_method_info () . method_ptr) ; __inner (:: core :: convert :: Into :: into (desired_type) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-converters-scripttoclrconversions")]impl ScriptToClrConversions{#[doc="`DynValueToObject(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]pub fn dyn_value_to_object(value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!(__ScriptToClrConversions_unity2_raw::__lookup_dyn_value_to_object::get_method_info().method_ptr,crate::system::object::Object;
+(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+}
+#[doc="`DynValueToObjectOfType(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::SystemType, crate::system::object::Object, bool)` overload"]pub fn dyn_value_to_object_of_type(value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,desired_type:impl::core::convert::Into< ::unity2::SystemType> ,default_value:impl::core::convert::Into<crate::system::object::Object> ,is_optional:impl::core::convert::Into<bool>)->crate::system::object::Object{unsafe{::unity2::il2cpp_call!(__ScriptToClrConversions_unity2_raw::__lookup_dyn_value_to_object_of_type::get_method_info().method_ptr,crate::system::object::Object;
+(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value),(::unity2::SystemType)::core::convert::Into::into(desired_type),(crate::system::object::Object)::core::convert::Into::into(default_value),(bool)::core::convert::Into::into(is_optional))}
+}
+#[doc="`DynValueToObjectOfTypeWeight(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::SystemType, bool)` overload"]pub fn dyn_value_to_object_of_type_weight(value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,desired_type:impl::core::convert::Into< ::unity2::SystemType> ,is_optional:impl::core::convert::Into<bool>)->i32{unsafe{::unity2::il2cpp_call!(__ScriptToClrConversions_unity2_raw::__lookup_dyn_value_to_object_of_type_weight::get_method_info().method_ptr,i32;
+(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value),(::unity2::SystemType)::core::convert::Into::into(desired_type),(bool)::core::convert::Into::into(is_optional))}
+}
+#[doc="`GetNumericTypeWeight(::unity2::SystemType)` overload"]pub fn get_numeric_type_weight(desired_type:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{::unity2::il2cpp_call!(__ScriptToClrConversions_unity2_raw::__lookup_get_numeric_type_weight::get_method_info().method_ptr,i32;
+(::unity2::SystemType)::core::convert::Into::into(desired_type))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions")]
-impl ScriptToClrConversions { pub fn dyn_value_to_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptToClrConversions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn dyn_value_to_object_of_type_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptToClrConversions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn dyn_value_to_object_of_type_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptToClrConversions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_numeric_type_weight_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ScriptToClrConversions as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="moon_sharp-interpreter-interop-converters-scripttoclrconversions")]impl ScriptToClrConversions{pub fn dyn_value_to_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dyn_value_to_object_of_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dyn_value_to_object_of_type_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_numeric_type_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions")]
 #[doc(hidden)]

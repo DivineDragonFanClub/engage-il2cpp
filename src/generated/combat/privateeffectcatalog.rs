@@ -4,41 +4,38 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: scriptableobject :: { IScriptableObject , ScriptableObject }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/privateeffectcatalog/PrivateEffectCatalog.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "PrivateEffectCatalog")] # [parent (crate :: unity_engine :: scriptableobject :: ScriptableObject)] pub struct PrivateEffectCatalog {
-# [offset (24)] # [rename (name = "TrailMeshPrefab")] pub trail_mesh_prefab : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (32)] # [rename (name = "AppearEffect")] pub appear_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (40)] # [rename (name = "DisappearEffect")] pub disappear_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (48)] # [rename (name = "SyncHitEffect")] pub sync_hit_effect : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (56)] # [rename (name = "GuardEffectPrefab")] pub guard_effect_prefab : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (64)] # [rename (name = "GuardEffectNodeName")] pub guard_effect_node_name : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/privateeffectcatalog/PrivateEffectCatalog.md"))]#[::unity2::class(namespace="Combat",name="PrivateEffectCatalog")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct PrivateEffectCatalog{#[offset(24)]#[rename(name="TrailMeshPrefab")]pub trail_mesh_prefab:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="AppearEffect")]pub appear_effect:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="DisappearEffect")]pub disappear_effect:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="SyncHitEffect")]pub sync_hit_effect:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="GuardEffectPrefab")]pub guard_effect_prefab:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="GuardEffectNodeName")]pub guard_effect_node_name: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "combat-privateeffectcatalog-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-privateeffectcatalog")]
-pub trait IPrivateEffectCatalogMethods : IPrivateEffectCatalog { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < PrivateEffectCatalog as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PrivateEffectCatalog , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2819960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-privateeffectcatalog")]pub trait IPrivateEffectCatalogMethods:IPrivateEffectCatalog{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PrivateEffectCatalog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2819960usize)as*mut u8,();
+(PrivateEffectCatalog)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-privateeffectcatalog")]
-impl < __T : IPrivateEffectCatalog > IPrivateEffectCatalogMethods for __T { }
+#[cfg(feature="combat-privateeffectcatalog")]impl<__T:IPrivateEffectCatalog>IPrivateEffectCatalogMethods for __T{}
 
-#[cfg(feature = "combat-privateeffectcatalog")]
-impl PrivateEffectCatalog { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PrivateEffectCatalog as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="combat-privateeffectcatalog")]impl PrivateEffectCatalog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "combat-privateeffectcatalog")]
-impl PrivateEffectCatalog {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PrivateEffectCatalog) , :: core :: stringify ! (new) ,)) ; < Self as IPrivateEffectCatalogMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-privateeffectcatalog")]impl PrivateEffectCatalog{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PrivateEffectCatalog), ::core::stringify!(new),));
+ <Self as IPrivateEffectCatalogMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-privateeffectcatalog")]

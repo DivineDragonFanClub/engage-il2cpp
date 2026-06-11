@@ -4,36 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customenvsetmanager/CustomEnvSetManager.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.Universal.Custom" , name = "CustomEnvSetManager")] # [parent (crate :: system :: object :: Object)] pub struct CustomEnvSetManager {
-# [static_field] # [rename (name = "s_Instance")] pub s_instance : :: unity2 :: IlInstance ,
-# [offset (16)] # [rename (name = "m_EnvSets")] pub m_env_sets : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: custom :: customenvset :: CustomEnvSet > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/custom/customenvsetmanager/CustomEnvSetManager.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Custom",name="CustomEnvSetManager")]#[parent(crate::system::object::Object)]pub struct CustomEnvSetManager{#[static_field]#[rename(name="s_Instance")]pub s_instance: ::unity2::IlInstance, #[offset(16)]#[rename(name="m_EnvSets")]pub m_env_sets:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet> ,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customenvsetmanager-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customenvsetmanager")]
-impl CustomEnvSetManager { # [doc = "`get_instance()` overload"] pub fn get_instance () -> crate :: unity_engine :: rendering :: universal :: custom :: customenvsetmanager :: CustomEnvSetManager { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: customenvsetmanager :: CustomEnvSetManager = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46a40usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46f20usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customenvsetmanager")]impl CustomEnvSetManager{#[doc="`get_instance()` overload"]pub fn get_instance()->crate::unity_engine::rendering::universal::custom::customenvsetmanager::CustomEnvSetManager{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a46a40usize)as*mut u8,crate::unity_engine::rendering::universal::custom::customenvsetmanager::CustomEnvSetManager;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a46f20usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customenvsetmanager")]
-pub trait ICustomEnvSetManagerMethods : ICustomEnvSetManager { # [doc = "`Register(crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet)` overload"] fn register (self , set : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: customenvset :: CustomEnvSet >) -> () { unsafe { let __receiver = < CustomEnvSetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEnvSetManager , crate :: unity_engine :: rendering :: universal :: custom :: customenvset :: CustomEnvSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46ac0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set) , :: core :: option :: Option :: None) } } } # [doc = "`Unregister(crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet)` overload"] fn unregister (self , set : impl :: core :: convert :: Into < crate :: unity_engine :: rendering :: universal :: custom :: customenvset :: CustomEnvSet >) -> () { unsafe { let __receiver = < CustomEnvSetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEnvSetManager , crate :: unity_engine :: rendering :: universal :: custom :: customenvset :: CustomEnvSet , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46c30usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (set) , :: core :: option :: Option :: None) } } } # [doc = "`TryGetReflectionProbe(i32, *mutcrate::unity_engine::reflectionprobe::ReflectionProbe)` overload"] fn try_get_reflection_probe (self , index : impl :: core :: convert :: Into < i32 >) -> (bool , crate :: unity_engine :: reflectionprobe :: ReflectionProbe) { unsafe { let __receiver = < CustomEnvSetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: unity_engine :: reflectionprobe :: ReflectionProbe > :: uninit () ; let __ret = { { let __inner : extern "C" fn (CustomEnvSetManager , i32 , * mut crate :: unity_engine :: reflectionprobe :: ReflectionProbe , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } } ; (__ret , __out_0 . assume_init ()) } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CustomEnvSetManager as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CustomEnvSetManager , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a46e90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customenvsetmanager")]pub trait ICustomEnvSetManagerMethods:ICustomEnvSetManager{#[doc="`Register(crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet)` overload"]fn register(self,set:impl::core::convert::Into<crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet>)->(){unsafe{let __receiver= <CustomEnvSetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a46ac0usize)as*mut u8,();
+(CustomEnvSetManager)__receiver,(crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet)::core::convert::Into::into(set))}
+}
+#[doc="`Unregister(crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet)` overload"]fn unregister(self,set:impl::core::convert::Into<crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet>)->(){unsafe{let __receiver= <CustomEnvSetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a46c30usize)as*mut u8,();
+(CustomEnvSetManager)__receiver,(crate::unity_engine::rendering::universal::custom::customenvset::CustomEnvSet)::core::convert::Into::into(set))}
+}
+#[doc="`TryGetReflectionProbe(i32, *mutcrate::unity_engine::reflectionprobe::ReflectionProbe)` overload"]fn try_get_reflection_probe(self,index:impl::core::convert::Into<i32>)->(bool,crate::unity_engine::reflectionprobe::ReflectionProbe){unsafe{let __receiver= <CustomEnvSetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::reflectionprobe::ReflectionProbe> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2a46ca0usize)as*mut u8,bool;
+(CustomEnvSetManager)__receiver,(i32)::core::convert::Into::into(index),(*mut crate::unity_engine::reflectionprobe::ReflectionProbe)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomEnvSetManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a46e90usize)as*mut u8,();
+(CustomEnvSetManager)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customenvsetmanager")]
-impl < __T : ICustomEnvSetManager > ICustomEnvSetManagerMethods for __T { }
+#[cfg(feature="unity_engine-rendering-universal-custom-customenvsetmanager")]impl<__T:ICustomEnvSetManager>ICustomEnvSetManagerMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customenvsetmanager")]
-impl CustomEnvSetManager { pub fn get_instance_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEnvSetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn register_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEnvSetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unregister_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEnvSetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn try_get_reflection_probe_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEnvSetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEnvSetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CustomEnvSetManager as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="unity_engine-rendering-universal-custom-customenvsetmanager")]impl CustomEnvSetManager{pub fn get_instance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn register_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unregister_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn try_get_reflection_probe_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "unity_engine-rendering-universal-custom-customenvsetmanager")]
-impl CustomEnvSetManager {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CustomEnvSetManager) , :: core :: stringify ! (new) ,)) ; < Self as ICustomEnvSetManagerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-universal-custom-customenvsetmanager")]impl CustomEnvSetManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CustomEnvSetManager), ::core::stringify!(new),));
+ <Self as ICustomEnvSetManagerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-custom-customenvsetmanager")]

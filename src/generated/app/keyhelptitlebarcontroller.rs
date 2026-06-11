@@ -4,188 +4,77 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController_Type.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct KeyHelpTitleBarController_Type  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController.md"))]#[::unity2::class(namespace="App",name="KeyHelpTitleBarController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct KeyHelpTitleBarController{#[offset(24)]#[rename(name="m_HelpObject")]pub m_help_object:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct KeyHelpTitleBarController_Type{pub value:i32,}
+impl::unity2::ClassIdentity for KeyHelpTitleBarController_Type{const NAMESPACE: &'static str="App";
+const NAME: &'static str="KeyHelpTitleBarController.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-impl  ::unity2::ClassIdentity for KeyHelpTitleBarController_Type  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "KeyHelpTitleBarController.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl::unity2::IlType for KeyHelpTitleBarController_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::IlType for KeyHelpTitleBarController_Type  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl KeyHelpTitleBarController_Type{pub fn a()->Self{Self{value:0}
 }
-
-
-impl  KeyHelpTitleBarController_Type  {
-    pub fn a() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn b() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn x() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn y() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn l() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn r() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn lr() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn zl() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn zr() -> Self {
-        Self { value: 8 }
-
-    }
-
-
-    pub fn zlr() -> Self {
-        Self { value: 9 }
-
-    }
-
-
-    pub fn plus() -> Self {
-        Self { value: 10 }
-
-    }
-
-
-    pub fn minus() -> Self {
-        Self { value: 11 }
-
-    }
-
-
-    pub fn up() -> Self {
-        Self { value: 12 }
-
-    }
-
-
-    pub fn down() -> Self {
-        Self { value: 13 }
-
-    }
-
-
-    pub fn up_down() -> Self {
-        Self { value: 14 }
-
-    }
-
-
-    pub fn left() -> Self {
-        Self { value: 15 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 16 }
-
-    }
-
-
-    pub fn left_right() -> Self {
-        Self { value: 17 }
-
-    }
-
-
-    pub fn stick_l() -> Self {
-        Self { value: 18 }
-
-    }
-
-
-    pub fn stick_r() -> Self {
-        Self { value: 19 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 20 }
-
-    }
-
+pub fn b()->Self{Self{value:1}
 }
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController.md"))] # [:: unity2 :: class (namespace = "App" , name = "KeyHelpTitleBarController")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct KeyHelpTitleBarController {
-# [offset (24)] # [rename (name = "m_HelpObject")] pub m_help_object : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+pub fn x()->Self{Self{value:2}
+}
+pub fn y()->Self{Self{value:3}
+}
+pub fn l()->Self{Self{value:4}
+}
+pub fn r()->Self{Self{value:5}
+}
+pub fn lr()->Self{Self{value:6}
+}
+pub fn zl()->Self{Self{value:7}
+}
+pub fn zr()->Self{Self{value:8}
+}
+pub fn zlr()->Self{Self{value:9}
+}
+pub fn plus()->Self{Self{value:10}
+}
+pub fn minus()->Self{Self{value:11}
+}
+pub fn up()->Self{Self{value:12}
+}
+pub fn down()->Self{Self{value:13}
+}
+pub fn up_down()->Self{Self{value:14}
+}
+pub fn left()->Self{Self{value:15}
+}
+pub fn right()->Self{Self{value:16}
+}
+pub fn left_right()->Self{Self{value:17}
+}
+pub fn stick_l()->Self{Self{value:18}
+}
+pub fn stick_r()->Self{Self{value:19}
+}
+pub fn num()->Self{Self{value:20}
+}
 }
 
 }
@@ -193,27 +82,46 @@ impl  KeyHelpTitleBarController_Type  {
 #[cfg(feature = "app-keyhelptitlebarcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-keyhelptitlebarcontroller")]
-pub trait IKeyHelpTitleBarControllerMethods : IKeyHelpTitleBarController { # [doc = "`SetKeyHelpMessage(::unity2::Il2CppString)` overload"] fn set_key_help_message (self , key_help_id : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < KeyHelpTitleBarController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyHelpTitleBarController , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bda5c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (key_help_id) , :: core :: option :: Option :: None) } } } # [doc = "`Hide()` overload"] fn hide (self ,) -> () { unsafe { let __receiver = < KeyHelpTitleBarController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyHelpTitleBarController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bda9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"] fn set_text (self , game_object : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject > , text : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < KeyHelpTitleBarController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyHelpTitleBarController , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bda920usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (game_object) , :: core :: convert :: Into :: into (text) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < KeyHelpTitleBarController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (KeyHelpTitleBarController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bdaaf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-keyhelptitlebarcontroller")]pub trait IKeyHelpTitleBarControllerMethods:IKeyHelpTitleBarController{#[doc="`SetKeyHelpMessage(::unity2::Il2CppString)` overload"]fn set_key_help_message(self,key_help_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <KeyHelpTitleBarController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bda5c0usize)as*mut u8,();
+(KeyHelpTitleBarController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key_help_id))}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <KeyHelpTitleBarController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bda9f0usize)as*mut u8,();
+(KeyHelpTitleBarController)__receiver)}
+}
+#[doc="`SetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]fn set_text(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <KeyHelpTitleBarController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bda920usize)as*mut u8,();
+(KeyHelpTitleBarController)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <KeyHelpTitleBarController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdaaf0usize)as*mut u8,();
+(KeyHelpTitleBarController)__receiver)}
+}
+}
 
-#[cfg(feature = "app-keyhelptitlebarcontroller")]
-impl < __T : IKeyHelpTitleBarController > IKeyHelpTitleBarControllerMethods for __T { }
+#[cfg(feature="app-keyhelptitlebarcontroller")]impl<__T:IKeyHelpTitleBarController>IKeyHelpTitleBarControllerMethods for __T{}
 
-#[cfg(feature = "app-keyhelptitlebarcontroller")]
-impl KeyHelpTitleBarController { pub fn set_key_help_message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpTitleBarController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn hide_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpTitleBarController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_text_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpTitleBarController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < KeyHelpTitleBarController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-keyhelptitlebarcontroller")]impl KeyHelpTitleBarController{pub fn set_key_help_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-keyhelptitlebarcontroller")]
-impl KeyHelpTitleBarController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (KeyHelpTitleBarController) , :: core :: stringify ! (new) ,)) ; < Self as IKeyHelpTitleBarControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-keyhelptitlebarcontroller")]impl KeyHelpTitleBarController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(KeyHelpTitleBarController), ::core::stringify!(new),));
+ <Self as IKeyHelpTitleBarControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-keyhelptitlebarcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::KeyHelpTitleBarController_Type;
     pub use super::KeyHelpTitleBarController;
     pub use super::IKeyHelpTitleBarController;
     pub use super::IKeyHelpTitleBarControllerMethods;
+    pub use super::KeyHelpTitleBarController_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

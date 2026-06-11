@@ -4,107 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubfleamarketsequence/HubFleaMarketSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "HubFleaMarketSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct HubFleaMarketSequence {
-# [static_field] # [rename (name = "RandomGiftCount")] pub random_gift_count : i32 ,
-# [offset (112)] # [rename (name = "m_ShopMenuResult")] pub m_shop_menu_result : crate :: app :: itemshoptopmenu :: ItemShopTopMenu_Result2 ,
-# [offset (116)] # [rename (name = "m_ShopUnitSelectMenuResult")] pub m_shop_unit_select_menu_result : crate :: app :: basicmenu :: BasicMenu_Result ,
-# [offset (120)] # [rename (name = "m_UnitSelectRoot")] pub m_unit_select_root : crate :: app :: shopunitselectroot :: ShopUnitSelectRoot ,
-# [offset (128)] # [rename (name = "m_FleaMarketBuyRoot")] pub m_flea_market_buy_root : crate :: app :: fleamarketbuyroot :: FleaMarketBuyRoot ,
-# [offset (136)] # [rename (name = "m_ItemShopSellRoot")] pub m_item_shop_sell_root : crate :: app :: shopsellroot :: ShopSellRoot ,
-# [offset (144)] # [rename (name = "m_Unit")] pub m_unit : crate :: app :: unit :: Unit ,
-# [offset (152)] # [rename (name = "m_UnitSelectMenuScrollIndex")] pub m_unit_select_menu_scroll_index : i32 ,
-# [offset (156)] # [rename (name = "m_IsEnabledVoice")] pub m_is_enabled_voice : bool ,
-# [offset (160)] # [rename (name = "m_FishingPlayCountAtStart")] pub m_fishing_play_count_at_start : i32 ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubfleamarketsequence/HubFleaMarketSequence.md"))]#[::unity2::class(namespace="App",name="HubFleaMarketSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct HubFleaMarketSequence{#[static_field]#[rename(name="RandomGiftCount")]pub random_gift_count:i32, #[offset(112)]#[rename(name="m_ShopMenuResult")]pub m_shop_menu_result:crate::app::itemshoptopmenu::ItemShopTopMenu_Result2, #[offset(116)]#[rename(name="m_ShopUnitSelectMenuResult")]pub m_shop_unit_select_menu_result:crate::app::basicmenu::BasicMenu_Result, #[offset(120)]#[rename(name="m_UnitSelectRoot")]pub m_unit_select_root:crate::app::shopunitselectroot::ShopUnitSelectRoot, #[offset(128)]#[rename(name="m_FleaMarketBuyRoot")]pub m_flea_market_buy_root:crate::app::fleamarketbuyroot::FleaMarketBuyRoot, #[offset(136)]#[rename(name="m_ItemShopSellRoot")]pub m_item_shop_sell_root:crate::app::shopsellroot::ShopSellRoot, #[offset(144)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(152)]#[rename(name="m_UnitSelectMenuScrollIndex")]pub m_unit_select_menu_scroll_index:i32, #[offset(156)]#[rename(name="m_IsEnabledVoice")]pub m_is_enabled_voice:bool, #[offset(160)]#[rename(name="m_FishingPlayCountAtStart")]pub m_fishing_play_count_at_start:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubfleamarketsequence/HubFleaMarketSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubFleaMarketSequence_Label2{pub value:i32,}
+impl::unity2::ClassIdentity for HubFleaMarketSequence_Label2{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubFleaMarketSequence.Label2";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubfleamarketsequence/HubFleaMarketSequence_Label2.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct HubFleaMarketSequence_Label2  {
-    pub value: i32,
+impl::unity2::IlType for HubFleaMarketSequence_Label2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-impl  ::unity2::ClassIdentity for HubFleaMarketSequence_Label2  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubFleaMarketSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+impl HubFleaMarketSequence_Label2{pub fn entry()->Self{Self{value:0}
 }
-
-
-impl  ::unity2::IlType for HubFleaMarketSequence_Label2  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+pub fn top()->Self{Self{value:1}
 }
-
-
-impl  HubFleaMarketSequence_Label2  {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn unit_select_to_buy() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn buy() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn unit_select_to_sell() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn sell() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 6 }
-
-    }
-
+pub fn unit_select_to_buy()->Self{Self{value:2}
+}
+pub fn buy()->Self{Self{value:3}
+}
+pub fn unit_select_to_sell()->Self{Self{value:4}
+}
+pub fn sell()->Self{Self{value:5}
+}
+pub fn end()->Self{Self{value:6}
+}
 }
 
 }
@@ -112,21 +48,97 @@ impl  HubFleaMarketSequence_Label2  {
 #[cfg(feature = "app-hubfleamarketsequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-hubfleamarketsequence")]
-impl HubFleaMarketSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , is_enabled_voice : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a8700usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (is_enabled_voice) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9ea0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubfleamarketsequence")]impl HubFleaMarketSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_enabled_voice:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28a8700usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_enabled_voice))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28a9ea0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-hubfleamarketsequence")]
-pub trait IHubFleaMarketSequenceMethods : IHubFleaMarketSequence { # [doc = "`.ctor(bool)` overload"] fn ctor (self , is_enabled_voice : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a8790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_enabled_voice) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDesc()` overload"] fn create_desc (self ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a87c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResources()` overload"] fn load_resources (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a8cb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResources()` overload"] fn is_loading_resources (self ,) -> bool { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a8ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartSequence()` overload"] fn start_sequence (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a8d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateFleaMarketTopMenu()` overload"] fn create_flea_market_top_menu (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a8e70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateShopUnitSelectMenu()` overload"] fn create_shop_unit_select_menu (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyShopUnitSelectMenu()` overload"] fn destroy_shop_unit_select_menu (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9310usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateFleaMarketBuyMenu()` overload"] fn create_flea_market_buy_menu (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9350usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyFleaMarketBuyMenu()` overload"] fn destroy_flea_market_buy_menu (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9780usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreateFleaMarketSellMenu()` overload"] fn create_flea_market_sell_menu (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9890usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DestroyFleaMarketSellMenu()` overload"] fn destroy_flea_market_sell_menu (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9a50usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetFishingPlayCount()` overload"] fn set_fishing_play_count (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9a90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`EndSequence()` overload"] fn end_sequence (self ,) -> () { unsafe { let __receiver = < HubFleaMarketSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HubFleaMarketSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28a9cf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-hubfleamarketsequence")]pub trait IHubFleaMarketSequenceMethods:IHubFleaMarketSequence{#[doc="`.ctor(bool)` overload"]fn ctor(self,is_enabled_voice:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a8790usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver,(bool)::core::convert::Into::into(is_enabled_voice))}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a87c0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`LoadResources()` overload"]fn load_resources(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a8cb0usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`IsLoadingResources()` overload"]fn is_loading_resources(self,)->bool{unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a8ce0usize)as*mut u8,bool;
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`StartSequence()` overload"]fn start_sequence(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a8d30usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`CreateFleaMarketTopMenu()` overload"]fn create_flea_market_top_menu(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a8e70usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`CreateShopUnitSelectMenu()` overload"]fn create_shop_unit_select_menu(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a9090usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`DestroyShopUnitSelectMenu()` overload"]fn destroy_shop_unit_select_menu(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a9310usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`CreateFleaMarketBuyMenu()` overload"]fn create_flea_market_buy_menu(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a9350usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`DestroyFleaMarketBuyMenu()` overload"]fn destroy_flea_market_buy_menu(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a9780usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`CreateFleaMarketSellMenu()` overload"]fn create_flea_market_sell_menu(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a9890usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`DestroyFleaMarketSellMenu()` overload"]fn destroy_flea_market_sell_menu(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a9a50usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`SetFishingPlayCount()` overload"]fn set_fishing_play_count(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a9a90usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+#[doc="`EndSequence()` overload"]fn end_sequence(self,)->(){unsafe{let __receiver= <HubFleaMarketSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28a9cf0usize)as*mut u8,();
+(HubFleaMarketSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-hubfleamarketsequence")]
-impl < __T : IHubFleaMarketSequence > IHubFleaMarketSequenceMethods for __T { }
+#[cfg(feature="app-hubfleamarketsequence")]impl<__T:IHubFleaMarketSequence>IHubFleaMarketSequenceMethods for __T{}
 
-#[cfg(feature = "app-hubfleamarketsequence")]
-impl HubFleaMarketSequence { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_desc_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn load_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_loading_resources_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn start_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_flea_market_top_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_shop_unit_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn destroy_shop_unit_select_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_flea_market_buy_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn destroy_flea_market_buy_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn create_flea_market_sell_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn destroy_flea_market_sell_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_fishing_play_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn end_sequence_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HubFleaMarketSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } }
+#[cfg(feature="app-hubfleamarketsequence")]impl HubFleaMarketSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn load_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_loading_resources_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn start_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_flea_market_top_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_shop_unit_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn destroy_shop_unit_select_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_flea_market_buy_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn destroy_flea_market_buy_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn create_flea_market_sell_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn destroy_flea_market_sell_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_fishing_play_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn end_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
 
-#[cfg(feature = "app-hubfleamarketsequence")]
-impl HubFleaMarketSequence {
-# [doc = "`.ctor(bool)` — overload selector"] pub fn new (is_enabled_voice : bool) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HubFleaMarketSequence) , :: core :: stringify ! (new) ,)) ; < Self as IHubFleaMarketSequenceMethods > :: ctor (this , is_enabled_voice) ; this }
+#[cfg(feature="app-hubfleamarketsequence")]impl HubFleaMarketSequence{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_enabled_voice:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubFleaMarketSequence), ::core::stringify!(new),));
+ <Self as IHubFleaMarketSequenceMethods> ::ctor(this,is_enabled_voice);
+this}
 }
 
 #[cfg(feature = "app-hubfleamarketsequence")]

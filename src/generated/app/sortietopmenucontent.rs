@@ -4,54 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenucontent :: { BasicMenuContent , IBasicMenuContent }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietopmenucontent/SortieTopMenuContent.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieTopMenuContent")] # [parent (crate :: app :: basicmenucontent :: BasicMenuContent)] pub struct SortieTopMenuContent {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-# [offset (232)] # [rename (name = "m_MenuListAnimator")] pub m_menu_list_animator : crate :: unity_engine :: animator :: Animator ,
-# [offset (240)] # [rename (name = "m_GridSize")] pub m_grid_size : i32 ,
-# [offset (244)] # [rename (name = "m_ColorPlayer")] pub m_color_player : crate :: unity_engine :: color :: Color ,
-# [offset (260)] # [rename (name = "m_ColorEnemy")] pub m_color_enemy : crate :: unity_engine :: color :: Color ,
-# [offset (276)] # [rename (name = "m_ColorAlly")] pub m_color_ally : crate :: unity_engine :: color :: Color ,
-# [offset (296)] # [rename (name = "m_CostTypeColors")] pub m_cost_type_colors : :: unity2 :: Array < crate :: unity_engine :: color :: Color > ,
-# [offset (304)] # [rename (name = "m_DifficultyFrameColorNormal")] pub m_difficulty_frame_color_normal : crate :: unity_engine :: color :: Color ,
-# [offset (320)] # [rename (name = "m_DifficultyFrameColorHard")] pub m_difficulty_frame_color_hard : crate :: unity_engine :: color :: Color ,
-# [offset (336)] # [rename (name = "m_DifficultyFrameColorLunatic")] pub m_difficulty_frame_color_lunatic : crate :: unity_engine :: color :: Color ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietopmenucontent/SortieTopMenuContent.md"))]#[::unity2::class(namespace="App",name="SortieTopMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct SortieTopMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_MenuListAnimator")]pub m_menu_list_animator:crate::unity_engine::animator::Animator, #[offset(240)]#[rename(name="m_GridSize")]pub m_grid_size:i32, #[offset(244)]#[rename(name="m_ColorPlayer")]pub m_color_player:crate::unity_engine::color::Color, #[offset(260)]#[rename(name="m_ColorEnemy")]pub m_color_enemy:crate::unity_engine::color::Color, #[offset(276)]#[rename(name="m_ColorAlly")]pub m_color_ally:crate::unity_engine::color::Color, #[offset(296)]#[rename(name="m_CostTypeColors")]pub m_cost_type_colors: ::unity2::Array<crate::unity_engine::color::Color> , #[offset(304)]#[rename(name="m_DifficultyFrameColorNormal")]pub m_difficulty_frame_color_normal:crate::unity_engine::color::Color, #[offset(320)]#[rename(name="m_DifficultyFrameColorHard")]pub m_difficulty_frame_color_hard:crate::unity_engine::color::Color, #[offset(336)]#[rename(name="m_DifficultyFrameColorLunatic")]pub m_difficulty_frame_color_lunatic:crate::unity_engine::color::Color,}
 
 }
 
 #[cfg(feature = "app-sortietopmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortietopmenucontent")]
-impl SortieTopMenuContent { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24eda10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24edab0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24edb50usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: app :: sortietopmenucontent :: SortieTopMenuContent { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: app :: sortietopmenucontent :: SortieTopMenuContent = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ebdf0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ede60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortietopmenucontent")]impl SortieTopMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24eda10usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24edab0usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24edb50usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::app::sortietopmenucontent::SortieTopMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ebdf0usize)as*mut u8,crate::app::sortietopmenucontent::SortieTopMenuContent;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ede60usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-sortietopmenucontent")]
-pub trait ISortieTopMenuContentMethods : ISortieTopMenuContent { # [doc = "`UpdateInfo(bool)` overload"] fn update_info (self , is_sortie_top : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < SortieTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuContent , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ec450usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (is_sortie_top) , :: core :: option :: Option :: None) } } } # [doc = "`GetSubItemMenuRect()` overload"] fn get_sub_item_menu_rect (self ,) -> crate :: unity_engine :: recttransform :: RectTransform { unsafe { let __receiver = < SortieTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuContent , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: recttransform :: RectTransform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ed7e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < SortieTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuContent , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ed890usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`GetMenuItemContentMax()` overload"] fn get_menu_item_content_max (self ,) -> i32 { unsafe { let __receiver = < SortieTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuContent , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ed8a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcW()` overload"] fn calc_w (self ,) -> f32 { unsafe { let __receiver = < SortieTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ed940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CalcH()` overload"] fn calc_h (self ,) -> f32 { unsafe { let __receiver = < SortieTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuContent , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24ed9a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`BuildMenuItemContent()` overload"] fn build_menu_item_content (self ,) -> () { unsafe { let __receiver = < SortieTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24edbf0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OpenAnime()` overload"] fn open_anime (self ,) -> () { unsafe { let __receiver = < SortieTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24edd70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieTopMenuContent as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieTopMenuContent , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x24edde0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortietopmenucontent")]pub trait ISortieTopMenuContentMethods:ISortieTopMenuContent{#[doc="`UpdateInfo(bool)` overload"]fn update_info(self,is_sortie_top:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ec450usize)as*mut u8,();
+(SortieTopMenuContent)__receiver,(bool)::core::convert::Into::into(is_sortie_top))}
+}
+#[doc="`GetSubItemMenuRect()` overload"]fn get_sub_item_menu_rect(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed7e0usize)as*mut u8,crate::unity_engine::recttransform::RectTransform;
+(SortieTopMenuContent)__receiver)}
+}
+#[doc="`SetColor(crate::unity_engine::color::Color)` overload"]fn set_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed890usize)as*mut u8,();
+(SortieTopMenuContent)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed8a0usize)as*mut u8,i32;
+(SortieTopMenuContent)__receiver)}
+}
+#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed940usize)as*mut u8,f32;
+(SortieTopMenuContent)__receiver)}
+}
+#[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed9a0usize)as*mut u8,f32;
+(SortieTopMenuContent)__receiver)}
+}
+#[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24edbf0usize)as*mut u8,();
+(SortieTopMenuContent)__receiver)}
+}
+#[doc="`OpenAnime()` overload"]fn open_anime(self,)->(){unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24edd70usize)as*mut u8,();
+(SortieTopMenuContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24edde0usize)as*mut u8,();
+(SortieTopMenuContent)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortietopmenucontent")]
-impl < __T : ISortieTopMenuContent > ISortieTopMenuContentMethods for __T { }
+#[cfg(feature="app-sortietopmenucontent")]impl<__T:ISortieTopMenuContent>ISortieTopMenuContentMethods for __T{}
 
-#[cfg(feature = "app-sortietopmenucontent")]
-impl SortieTopMenuContent { pub fn update_info_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_sub_item_menu_rect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_menu_item_content_max_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn calc_w_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn calc_h_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn build_menu_item_content_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn open_anime_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieTopMenuContent as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-sortietopmenucontent")]impl SortieTopMenuContent{pub fn update_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_sub_item_menu_rect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_menu_item_content_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn calc_w_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn calc_h_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn build_menu_item_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn open_anime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-sortietopmenucontent")]
-impl SortieTopMenuContent {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieTopMenuContent) , :: core :: stringify ! (new) ,)) ; < Self as ISortieTopMenuContentMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortietopmenucontent")]impl SortieTopMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieTopMenuContent), ::core::stringify!(new),));
+ <Self as ISortieTopMenuContentMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortietopmenucontent")]

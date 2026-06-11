@@ -4,36 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: basicmenuitem :: { BasicMenuItem , IBasicMenuItem }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshfacilityselectmenuitem/RefreshFacilitySelectMenuItem.md"))] # [:: unity2 :: class (namespace = "App" , name = "RefreshFacilitySelectMenuItem")] # [parent (crate :: app :: basicmenuitem :: BasicMenuItem)] pub struct RefreshFacilitySelectMenuItem {
-# [offset (104)] # [rename (name = "m_FacilityData")] pub m_facility_data : crate :: app :: hubfacilitydata :: HubFacilityData ,
-# [offset (112)] # [rename (name = "m_SelectEventHandler")] pub m_select_event_handler : crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_SelectEventHandler ,
-# [offset (120)] # [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_DecideEventHandler ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshfacilityselectmenuitem/RefreshFacilitySelectMenuItem.md"))]#[::unity2::class(namespace="App",name="RefreshFacilitySelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RefreshFacilitySelectMenuItem{#[offset(104)]#[rename(name="m_FacilityData")]pub m_facility_data:crate::app::hubfacilitydata::HubFacilityData, #[offset(112)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler,}
 
 }
 
 #[cfg(feature = "app-refreshfacilityselectmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-refreshfacilityselectmenuitem")]
-pub trait IRefreshFacilitySelectMenuItemMethods : IRefreshFacilitySelectMenuItem { # [doc = "`.ctor(::unity2::Il2CppString, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler)` overload"] fn ctor (self , facility_aid : impl :: core :: convert :: Into < :: unity2 :: Il2CppString > , select_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_SelectEventHandler > , decide_event_handler : impl :: core :: convert :: Into < crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_DecideEventHandler >) -> () { unsafe { let __receiver = < RefreshFacilitySelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshFacilitySelectMenuItem , :: unity2 :: Il2CppString , crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_SelectEventHandler , crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_DecideEventHandler , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bb350usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (facility_aid) , :: core :: convert :: Into :: into (select_event_handler) , :: core :: convert :: Into :: into (decide_event_handler) , :: core :: option :: Option :: None) } } } # [doc = "`GetName()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < RefreshFacilitySelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshFacilitySelectMenuItem , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bb960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnSelect()` overload"] fn on_select (self ,) -> () { unsafe { let __receiver = < RefreshFacilitySelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshFacilitySelectMenuItem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bb9e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ACall()` overload"] fn a_call (self ,) -> crate :: app :: basicmenu :: BasicMenu_Result { unsafe { let __receiver = < RefreshFacilitySelectMenuItem as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (RefreshFacilitySelectMenuItem , :: unity2 :: OptionalMethod ,) -> crate :: app :: basicmenu :: BasicMenu_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22bba00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-refreshfacilityselectmenuitem")]pub trait IRefreshFacilitySelectMenuItemMethods:IRefreshFacilitySelectMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler)` overload"]fn ctor(self,facility_aid:impl::core::convert::Into< ::unity2::Il2CppString> ,select_event_handler:impl::core::convert::Into<crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler>)->(){unsafe{let __receiver= <RefreshFacilitySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22bb350usize)as*mut u8,();
+(RefreshFacilitySelectMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(facility_aid),(crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefreshFacilitySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22bb960usize)as*mut u8, ::unity2::Il2CppString;
+(RefreshFacilitySelectMenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RefreshFacilitySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22bb9e0usize)as*mut u8,();
+(RefreshFacilitySelectMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshFacilitySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22bba00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
+(RefreshFacilitySelectMenuItem)__receiver)}
+}
+}
 
-#[cfg(feature = "app-refreshfacilityselectmenuitem")]
-impl < __T : IRefreshFacilitySelectMenuItem > IRefreshFacilitySelectMenuItemMethods for __T { }
+#[cfg(feature="app-refreshfacilityselectmenuitem")]impl<__T:IRefreshFacilitySelectMenuItem>IRefreshFacilitySelectMenuItemMethods for __T{}
 
-#[cfg(feature = "app-refreshfacilityselectmenuitem")]
-impl RefreshFacilitySelectMenuItem { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshFacilitySelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshFacilitySelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshFacilitySelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn a_call_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < RefreshFacilitySelectMenuItem as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-refreshfacilityselectmenuitem")]impl RefreshFacilitySelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-refreshfacilityselectmenuitem")]
-impl RefreshFacilitySelectMenuItem {
-# [doc = "`.ctor(::unity2::Il2CppString, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler)` — overload selector"] pub fn new (facility_aid : :: unity2 :: Il2CppString , select_event_handler : crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_SelectEventHandler , decide_event_handler : crate :: app :: refreshfacilityselectmenu :: RefreshFacilitySelectMenu_DecideEventHandler) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (RefreshFacilitySelectMenuItem) , :: core :: stringify ! (new) ,)) ; < Self as IRefreshFacilitySelectMenuItemMethods > :: ctor (this , facility_aid , select_event_handler , decide_event_handler) ; this }
+#[cfg(feature="app-refreshfacilityselectmenuitem")]impl RefreshFacilitySelectMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler, crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler)` — overload selector"]pub fn new(facility_aid: ::unity2::Il2CppString,select_event_handler:crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_SelectEventHandler,decide_event_handler:crate::app::refreshfacilityselectmenu::RefreshFacilitySelectMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshFacilitySelectMenuItem), ::core::stringify!(new),));
+ <Self as IRefreshFacilitySelectMenuItemMethods> ::ctor(this,facility_aid,select_event_handler,decide_event_handler);
+this}
 }
 
 #[cfg(feature = "app-refreshfacilityselectmenuitem")]

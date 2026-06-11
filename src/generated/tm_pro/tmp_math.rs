@@ -4,32 +4,33 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_math/TMP_Math.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Math")] # [parent (crate :: system :: object :: Object)] pub struct TMP_Math {
-# [static_field] # [rename (name = "FLOAT_MAX")] pub float_max : f32 ,
-# [static_field] # [rename (name = "FLOAT_MIN")] pub float_min : f32 ,
-# [static_field] # [rename (name = "INT_MAX")] pub int_max : i32 ,
-# [static_field] # [rename (name = "INT_MIN")] pub int_min : i32 ,
-# [static_field] # [rename (name = "FLOAT_UNSET")] pub float_unset : f32 ,
-# [static_field] # [rename (name = "INT_UNSET")] pub int_unset : i32 ,
-# [static_field] # [rename (name = "MAX_16BIT")] pub max_16bit : crate :: unity_engine :: vector2 :: Vector2 ,
-# [static_field] # [rename (name = "MIN_16BIT")] pub min_16bit : crate :: unity_engine :: vector2 :: Vector2 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_math/TMP_Math.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Math")]#[parent(crate::system::object::Object)]pub struct TMP_Math{#[static_field]#[rename(name="FLOAT_MAX")]pub float_max:f32, #[static_field]#[rename(name="FLOAT_MIN")]pub float_min:f32, #[static_field]#[rename(name="INT_MAX")]pub int_max:i32, #[static_field]#[rename(name="INT_MIN")]pub int_min:i32, #[static_field]#[rename(name="FLOAT_UNSET")]pub float_unset:f32, #[static_field]#[rename(name="INT_UNSET")]pub int_unset:i32, #[static_field]#[rename(name="MAX_16BIT")]pub max_16bit:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="MIN_16BIT")]pub min_16bit:crate::unity_engine::vector2::Vector2,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_math-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_math")]
-impl TMP_Math { # [doc = "`Approximately(f32, f32)` overload"] pub fn approximately (a : impl :: core :: convert :: Into < f32 > , b : impl :: core :: convert :: Into < f32 >) -> bool { unsafe { { let __inner : extern "C" fn (f32 , f32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2827290usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`Mod(i32, i32)` overload"] pub fn r#mod (a : impl :: core :: convert :: Into < i32 > , b : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { { let __inner : extern "C" fn (i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28272d0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (a) , :: core :: convert :: Into :: into (b) , :: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x28272f0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_math")]impl TMP_Math{#[doc="`Approximately(f32, f32)` overload"]pub fn approximately(a:impl::core::convert::Into<f32> ,b:impl::core::convert::Into<f32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2827290usize)as*mut u8,bool;
+(f32)::core::convert::Into::into(a),(f32)::core::convert::Into::into(b))}
+}
+#[doc="`Mod(i32, i32)` overload"]pub fn r#mod(a:impl::core::convert::Into<i32> ,b:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28272d0usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b))}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28272f0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_math")]
-impl TMP_Math { pub fn approximately_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Math as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn mod_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Math as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Math as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="tm_pro-tmp_math")]impl TMP_Math{pub fn approximately_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn mod_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature = "tm_pro-tmp_math")]
 #[doc(hidden)]

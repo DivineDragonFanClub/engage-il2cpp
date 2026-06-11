@@ -4,37 +4,34 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingresultdata/FishingResultData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingResultData")] # [parent (crate :: system :: object :: Object)] pub struct FishingResultData {
-# [offset (16)] # [rename (name = "BaseData")] pub base_data : crate :: app :: fishingfishdata :: FishingFishData ,
-# [offset (24)] # [rename (name = "Size")] pub size : f32 ,
-# [offset (28)] # [rename (name = "Rank")] pub rank : crate :: app :: fishing :: sizerank :: SizeRank ,
-# [offset (32)] # [rename (name = "IsBonus")] pub is_bonus : bool ,
-# [offset (36)] # [rename (name = "ItemNum")] pub item_num : i32 ,
-# [offset (40)] # [rename (name = "Cench2Inch")] pub cench2_inch : f32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingresultdata/FishingResultData.md"))]#[::unity2::class(namespace="App",name="FishingResultData")]#[parent(crate::system::object::Object)]pub struct FishingResultData{#[offset(16)]#[rename(name="BaseData")]pub base_data:crate::app::fishingfishdata::FishingFishData, #[offset(24)]#[rename(name="Size")]pub size:f32, #[offset(28)]#[rename(name="Rank")]pub rank:crate::app::fishing::sizerank::SizeRank, #[offset(32)]#[rename(name="IsBonus")]pub is_bonus:bool, #[offset(36)]#[rename(name="ItemNum")]pub item_num:i32, #[offset(40)]#[rename(name="Cench2Inch")]pub cench2_inch:f32,}
 
 }
 
 #[cfg(feature = "app-fishingresultdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingresultdata")]
-pub trait IFishingResultDataMethods : IFishingResultData { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingResultData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingResultData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingresultdata")]pub trait IFishingResultDataMethods:IFishingResultData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingResultData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606980usize)as*mut u8,();
+(FishingResultData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingresultdata")]
-impl < __T : IFishingResultData > IFishingResultDataMethods for __T { }
+#[cfg(feature="app-fishingresultdata")]impl<__T:IFishingResultData>IFishingResultDataMethods for __T{}
 
-#[cfg(feature = "app-fishingresultdata")]
-impl FishingResultData { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingResultData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-fishingresultdata")]impl FishingResultData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-fishingresultdata")]
-impl FishingResultData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingResultData) , :: core :: stringify ! (new) ,)) ; < Self as IFishingResultDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingresultdata")]impl FishingResultData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingResultData), ::core::stringify!(new),));
+ <Self as IFishingResultDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingresultdata")]

@@ -4,38 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: tm_pro :: tmp_textelement_legacy :: { ITMP_TextElement_Legacy , TMP_TextElement_Legacy }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::tm_pro::tmp_textelement_legacy::{ITMP_TextElement_Legacy,TMP_TextElement_Legacy}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_sprite/TMP_Sprite.md"))] # [:: unity2 :: class (namespace = "TMPro" , name = "TMP_Sprite")] # [parent (crate :: tm_pro :: tmp_textelement_legacy :: TMP_TextElement_Legacy)] pub struct TMP_Sprite {
-# [offset (56)] # [rename (name = "name")] pub name : :: unity2 :: Il2CppString ,
-# [offset (64)] # [rename (name = "hashCode")] pub hash_code : i32 ,
-# [offset (68)] # [rename (name = "unicode")] pub unicode : i32 ,
-# [offset (72)] # [rename (name = "pivot")] pub pivot : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (80)] # [rename (name = "sprite")] pub sprite : crate :: unity_engine :: sprite :: Sprite ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_sprite/TMP_Sprite.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Sprite")]#[parent(crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy)]pub struct TMP_Sprite{#[offset(56)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(64)]#[rename(name="hashCode")]pub hash_code:i32, #[offset(68)]#[rename(name="unicode")]pub unicode:i32, #[offset(72)]#[rename(name="pivot")]pub pivot:crate::unity_engine::vector2::Vector2, #[offset(80)]#[rename(name="sprite")]pub sprite:crate::unity_engine::sprite::Sprite,}
 
 }
 
 #[cfg(feature = "tm_pro-tmp_sprite-types")]
 pub use __types::*;
 
-#[cfg(feature = "tm_pro-tmp_sprite")]
-pub trait ITMP_SpriteMethods : ITMP_Sprite { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TMP_Sprite as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TMP_Sprite , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x282b4f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="tm_pro-tmp_sprite")]pub trait ITMP_SpriteMethods:ITMP_Sprite{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Sprite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x282b4f0usize)as*mut u8,();
+(TMP_Sprite)__receiver)}
+}
+}
 
-#[cfg(feature = "tm_pro-tmp_sprite")]
-impl < __T : ITMP_Sprite > ITMP_SpriteMethods for __T { }
+#[cfg(feature="tm_pro-tmp_sprite")]impl<__T:ITMP_Sprite>ITMP_SpriteMethods for __T{}
 
-#[cfg(feature = "tm_pro-tmp_sprite")]
-impl TMP_Sprite { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TMP_Sprite as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="tm_pro-tmp_sprite")]impl TMP_Sprite{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "tm_pro-tmp_sprite")]
-impl TMP_Sprite {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TMP_Sprite) , :: core :: stringify ! (new) ,)) ; < Self as ITMP_SpriteMethods > :: ctor (this ,) ; this }
+#[cfg(feature="tm_pro-tmp_sprite")]impl TMP_Sprite{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_Sprite), ::core::stringify!(new),));
+ <Self as ITMP_SpriteMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "tm_pro-tmp_sprite")]

@@ -4,32 +4,51 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: calculatorcommand :: { CalculatorCommand , ICalculatorCommand }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitcommand/BitCommand.md"))] # [:: unity2 :: class (namespace = "App" , name = "BitCommand")] # [parent (crate :: app :: calculatorcommand :: CalculatorCommand)] pub struct BitCommand {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/bitcommand/BitCommand.md"))]#[::unity2::class(namespace="App",name="BitCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct BitCommand{}
 
 }
 
 #[cfg(feature = "app-bitcommand-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-bitcommand")]
-pub trait IBitCommandMethods : IBitCommand { # [doc = "`get_Name()` overload"] fn get_name (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < BitCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitCommand , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2987250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_ArgNum()` overload"] fn get_arg_num (self ,) -> i32 { unsafe { let __receiver = < BitCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitCommand , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29872a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"] fn func (self , args : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > >) -> f32 { unsafe { let __receiver = < BitCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitCommand , crate :: system :: collections :: generic :: list_1 :: List_1 < f32 > , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29872b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < BitCommand as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (BitCommand , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2987380usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-bitcommand")]pub trait IBitCommandMethods:IBitCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BitCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2987250usize)as*mut u8, ::unity2::Il2CppString;
+(BitCommand)__receiver)}
+}
+#[doc="`get_ArgNum()` overload"]fn get_arg_num(self,)->i32{unsafe{let __receiver= <BitCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29872a0usize)as*mut u8,i32;
+(BitCommand)__receiver)}
+}
+#[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <BitCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29872b0usize)as*mut u8,f32;
+(BitCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BitCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2987380usize)as*mut u8,();
+(BitCommand)__receiver)}
+}
+}
 
-#[cfg(feature = "app-bitcommand")]
-impl < __T : IBitCommand > IBitCommandMethods for __T { }
+#[cfg(feature="app-bitcommand")]impl<__T:IBitCommand>IBitCommandMethods for __T{}
 
-#[cfg(feature = "app-bitcommand")]
-impl BitCommand { pub fn get_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_arg_num_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn func_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < BitCommand as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-bitcommand")]impl BitCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_arg_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-bitcommand")]
-impl BitCommand {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (BitCommand) , :: core :: stringify ! (new) ,)) ; < Self as IBitCommandMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-bitcommand")]impl BitCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BitCommand), ::core::stringify!(new),));
+ <Self as IBitCommandMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-bitcommand")]

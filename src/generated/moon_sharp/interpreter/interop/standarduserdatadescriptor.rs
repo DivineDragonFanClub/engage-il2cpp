@@ -4,35 +4,124 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: dispatchinguserdatadescriptor :: { DispatchingUserDataDescriptor , IDispatchingUserDataDescriptor }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::{DispatchingUserDataDescriptor,IDispatchingUserDataDescriptor}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/standarduserdatadescriptor/StandardUserDataDescriptor.md"))] # [:: unity2 :: class (namespace = "MoonSharp.Interpreter.Interop" , name = "StandardUserDataDescriptor")] # [parent (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: dispatchinguserdatadescriptor :: DispatchingUserDataDescriptor)] pub struct StandardUserDataDescriptor {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/standarduserdatadescriptor/StandardUserDataDescriptor.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="StandardUserDataDescriptor")]#[parent(crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::DispatchingUserDataDescriptor)]pub struct StandardUserDataDescriptor{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __StandardUserDataDescriptor_unity2_raw { use super :: * ; # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_get_access_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () , "get_AccessMode" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: NAME , "get_AccessMode" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_set_access_mode { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () , "set_AccessMode" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: NAME , "set_AccessMode" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_ctor { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< :: unity2 :: SystemType as :: unity2 :: IlType > :: il_type () , < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode as :: unity2 :: IlType > :: il_type () , < :: unity2 :: Il2CppString as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () , ".ctor" , 3 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: NAME , ".ctor" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_fill_member_list { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () , "FillMemberList" , 0 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: NAME , "FillMemberList" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_prepare_for_wiring { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () , "PrepareForWiring" , 1 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: NAME , "PrepareForWiring" , e) , } } } # [doc (hidden)] # [allow (non_snake_case)] pub mod __lookup_serialize { use super :: * ; static METHOD : :: std :: sync :: LazyLock < :: unity2 :: Il2CppResult < & 'static :: unity2 :: il2cpp :: MethodInfo > , > = :: std :: sync :: LazyLock :: new (|| { let param_types : & [& 'static :: unity2 :: il2cpp :: Il2CppType] = & [< crate :: moon_sharp :: interpreter :: table :: Table as :: unity2 :: IlType > :: il_type () , < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface > > as :: unity2 :: IlType > :: il_type ()] ; :: unity2 :: lookup :: method_info_on_class_with_signature (< StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () , "Serialize" , 2 , param_types , false ,) }) ; pub fn get_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { match & * METHOD { :: core :: result :: Result :: Ok (mi) => * mi , :: core :: result :: Result :: Err (e) => panic ! ("method lookup failed: {}::{}: {}" , < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: NAME , "Serialize" , e) , } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-standarduserdatadescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StandardUserDataDescriptor_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_access_mode{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<StandardUserDataDescriptor as::unity2::ClassIdentity> ::class(),"get_AccessMode",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <StandardUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"get_AccessMode",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_access_mode{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<StandardUserDataDescriptor as::unity2::ClassIdentity> ::class(),"set_AccessMode",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <StandardUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"set_AccessMode",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<StandardUserDataDescriptor as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <StandardUserDataDescriptor as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_fill_member_list{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<StandardUserDataDescriptor as::unity2::ClassIdentity> ::class(),"FillMemberList",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <StandardUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"FillMemberList",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_prepare_for_wiring{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<StandardUserDataDescriptor as::unity2::ClassIdentity> ::class(),"PrepareForWiring",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <StandardUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_serialize{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type(), <crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2< ::unity2::Il2CppString,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface> >as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<StandardUserDataDescriptor as::unity2::ClassIdentity> ::class(),"Serialize",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <StandardUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"Serialize",e),}
+}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor")]
-pub trait IStandardUserDataDescriptorMethods : IStandardUserDataDescriptor { # [doc = "`get_AccessMode()` overload"] fn get_access_mode (self ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode { unsafe { let __receiver = < StandardUserDataDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandardUserDataDescriptor , :: unity2 :: OptionalMethod ,) -> crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode = :: core :: mem :: transmute (__StandardUserDataDescriptor_unity2_raw :: __lookup_get_access_mode :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_AccessMode(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"] fn set_access_mode (self , value : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode >) -> () { unsafe { let __receiver = < StandardUserDataDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandardUserDataDescriptor , crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__StandardUserDataDescriptor_unity2_raw :: __lookup_set_access_mode :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(::unity2::SystemType, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, ::unity2::Il2CppString)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < :: unity2 :: SystemType > , access_mode : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode > , friendly_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < StandardUserDataDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandardUserDataDescriptor , :: unity2 :: SystemType , crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__StandardUserDataDescriptor_unity2_raw :: __lookup_ctor :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: convert :: Into :: into (access_mode) , :: core :: convert :: Into :: into (friendly_name) , :: core :: option :: Option :: None) } } } # [doc = "`FillMemberList()` overload"] fn fill_member_list (self ,) -> () { unsafe { let __receiver = < StandardUserDataDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandardUserDataDescriptor , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__StandardUserDataDescriptor_unity2_raw :: __lookup_fill_member_list :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"] fn prepare_for_wiring (self , t : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table >) -> () { unsafe { let __receiver = < StandardUserDataDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandardUserDataDescriptor , crate :: moon_sharp :: interpreter :: table :: Table , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__StandardUserDataDescriptor_unity2_raw :: __lookup_prepare_for_wiring :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::moon_sharp::interpreter::table::Table, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<::unity2::Il2CppString,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface>>)` overload"] fn serialize (self , t : impl :: core :: convert :: Into < crate :: moon_sharp :: interpreter :: table :: Table > , members : impl :: core :: convert :: Into < crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface > > >) -> () { unsafe { let __receiver = < StandardUserDataDescriptor as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (StandardUserDataDescriptor , crate :: moon_sharp :: interpreter :: table :: Table , crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface > > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__StandardUserDataDescriptor_unity2_raw :: __lookup_serialize :: get_method_info () . method_ptr) ; __inner (__receiver , :: core :: convert :: Into :: into (t) , :: core :: convert :: Into :: into (members) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="moon_sharp-interpreter-interop-standarduserdatadescriptor")]pub trait IStandardUserDataDescriptorMethods:IStandardUserDataDescriptor{#[doc="`get_AccessMode()` overload"]fn get_access_mode(self,)->crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode{unsafe{let __receiver= <StandardUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__StandardUserDataDescriptor_unity2_raw::__lookup_get_access_mode::get_method_info().method_ptr,crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode;
+(StandardUserDataDescriptor)__receiver)}
+}
+#[doc="`set_AccessMode(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]fn set_access_mode(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>)->(){unsafe{let __receiver= <StandardUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__StandardUserDataDescriptor_unity2_raw::__lookup_set_access_mode::get_method_info().method_ptr,();
+(StandardUserDataDescriptor)__receiver,(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(::unity2::SystemType, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, ::unity2::Il2CppString)` overload"]fn ctor(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,access_mode:impl::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode> ,friendly_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StandardUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__StandardUserDataDescriptor_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(StandardUserDataDescriptor)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type),(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)::core::convert::Into::into(access_mode),(::unity2::Il2CppString)::core::convert::Into::into(friendly_name))}
+}
+#[doc="`FillMemberList()` overload"]fn fill_member_list(self,)->(){unsafe{let __receiver= <StandardUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__StandardUserDataDescriptor_unity2_raw::__lookup_fill_member_list::get_method_info().method_ptr,();
+(StandardUserDataDescriptor)__receiver)}
+}
+#[doc="`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]fn prepare_for_wiring(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <StandardUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__StandardUserDataDescriptor_unity2_raw::__lookup_prepare_for_wiring::get_method_info().method_ptr,();
+(StandardUserDataDescriptor)__receiver,(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(t))}
+}
+#[doc="`Serialize(crate::moon_sharp::interpreter::table::Table, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<::unity2::Il2CppString,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface>>)` overload"]fn serialize(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table> ,members:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2< ::unity2::Il2CppString,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface> > >)->(){unsafe{let __receiver= <StandardUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__StandardUserDataDescriptor_unity2_raw::__lookup_serialize::get_method_info().method_ptr,();
+(StandardUserDataDescriptor)__receiver,(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(t),(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2< ::unity2::Il2CppString,crate::moon_sharp::interpreter::interop::basic_descriptors::imemberdescriptor_interface::IMemberDescriptor_Interface> >)::core::convert::Into::into(members))}
+}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor")]
-impl < __T : IStandardUserDataDescriptor > IStandardUserDataDescriptorMethods for __T { }
+#[cfg(feature="moon_sharp-interpreter-interop-standarduserdatadescriptor")]impl<__T:IStandardUserDataDescriptor>IStandardUserDataDescriptorMethods for __T{}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor")]
-impl StandardUserDataDescriptor { pub fn get_access_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_access_mode_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn fill_member_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn prepare_for_wiring_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < StandardUserDataDescriptor as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="moon_sharp-interpreter-interop-standarduserdatadescriptor")]impl StandardUserDataDescriptor{pub fn get_access_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_access_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn fill_member_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn prepare_for_wiring_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor")]
-impl StandardUserDataDescriptor {
-# [doc = "`.ctor(::unity2::SystemType, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, ::unity2::Il2CppString)` — overload selector"] pub fn new (r#type : :: unity2 :: SystemType , access_mode : crate :: moon_sharp :: interpreter :: interopaccessmode :: InteropAccessMode , friendly_name : :: unity2 :: Il2CppString) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (StandardUserDataDescriptor) , :: core :: stringify ! (new) ,)) ; < Self as IStandardUserDataDescriptorMethods > :: ctor (this , r#type , access_mode , friendly_name) ; this }
+#[cfg(feature="moon_sharp-interpreter-interop-standarduserdatadescriptor")]impl StandardUserDataDescriptor{#[doc="`.ctor(::unity2::SystemType, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, ::unity2::Il2CppString)` — overload selector"]pub fn new(r#type: ::unity2::SystemType,access_mode:crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,friendly_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StandardUserDataDescriptor), ::core::stringify!(new),));
+ <Self as IStandardUserDataDescriptorMethods> ::ctor(this,r#type,access_mode,friendly_name);
+this}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standarduserdatadescriptor")]

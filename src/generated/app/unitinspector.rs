@@ -4,37 +4,43 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinspector/UnitInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitInspector")] # [parent (crate :: app :: mapinspector :: MapInspector)] pub struct UnitInspector {
-# [offset (48)] # [rename (name = "m_Person")] pub m_person : i32 ,
-# [offset (52)] # [rename (name = "m_Force")] pub m_force : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitinspector/UnitInspector.md"))]#[::unity2::class(namespace="App",name="UnitInspector")]#[parent(crate::app::mapinspector::MapInspector)]pub struct UnitInspector{#[offset(48)]#[rename(name="m_Person")]pub m_person:i32, #[offset(52)]#[rename(name="m_Force")]pub m_force:i32,}
 
 }
 
 #[cfg(feature = "app-unitinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitinspector")]
-pub trait IUnitInspectorMethods : IUnitInspector { # [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , kind : impl :: core :: convert :: Into < crate :: app :: mapinspector :: MapInspector_Kind > , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < UnitInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInspector , crate :: app :: mapinspector :: MapInspector_Kind , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fad7a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } # [doc = "`IsEanble(i32, i32)` overload"] fn is_eanble (self , person : impl :: core :: convert :: Into < i32 > , force : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < UnitInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitInspector , i32 , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fad8c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (person) , :: core :: convert :: Into :: into (force) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitinspector")]pub trait IUnitInspectorMethods:IUnitInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <UnitInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fad7a0usize)as*mut u8,();
+(UnitInspector)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+#[doc="`IsEanble(i32, i32)` overload"]fn is_eanble(self,person:impl::core::convert::Into<i32> ,force:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <UnitInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fad8c0usize)as*mut u8,bool;
+(UnitInspector)__receiver,(i32)::core::convert::Into::into(person),(i32)::core::convert::Into::into(force))}
+}
+}
 
-#[cfg(feature = "app-unitinspector")]
-impl < __T : IUnitInspector > IUnitInspectorMethods for __T { }
+#[cfg(feature="app-unitinspector")]impl<__T:IUnitInspector>IUnitInspectorMethods for __T{}
 
-#[cfg(feature = "app-unitinspector")]
-impl UnitInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_eanble_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
+#[cfg(feature="app-unitinspector")]impl UnitInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_eanble_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-unitinspector")]
-impl UnitInspector {
-# [doc = "`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (kind : crate :: app :: mapinspector :: MapInspector_Kind , args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitInspector) , :: core :: stringify ! (new) ,)) ; < Self as IUnitInspectorMethods > :: ctor (this , kind , args) ; this }
+#[cfg(feature="app-unitinspector")]impl UnitInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(kind:crate::app::mapinspector::MapInspector_Kind,args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitInspector), ::core::stringify!(new),));
+ <Self as IUnitInspectorMethods> ::ctor(this,kind,args);
+this}
 }
 
 #[cfg(feature = "app-unitinspector")]

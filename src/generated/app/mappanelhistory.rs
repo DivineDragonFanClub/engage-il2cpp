@@ -4,44 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonmonobehaviour_1 :: { ISingletonMonoBehaviour_1 , SingletonMonoBehaviour_1 }
- ;
- use crate :: root :: mappanelbase_1 :: { IMapPanelBase_1 , MapPanelBase_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
+;
+use crate::root::mappanelbase_1::{IMapPanelBase_1,MapPanelBase_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelhistory/MapPanelHistory.md"))] # [:: unity2 :: class (namespace = "App" , name = "MapPanelHistory")] # [parent (crate :: root :: mappanelbase_1 :: MapPanelBase_1 < crate :: app :: mappanelhistory :: MapPanelHistory >)] pub struct MapPanelHistory {
-# [offset (64)] # [rename (name = "m_Hash")] pub m_hash : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelhistory/MapPanelHistory.md"))]#[::unity2::class(namespace="App",name="MapPanelHistory")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelhistory::MapPanelHistory>)]pub struct MapPanelHistory{#[offset(64)]#[rename(name="m_Hash")]pub m_hash:i32,}
 
 }
 
 #[cfg(feature = "app-mappanelhistory-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-mappanelhistory")]
-pub trait IMapPanelHistoryMethods : IMapPanelHistory { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < MapPanelHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2351c10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`AddVertex(crate::app::mapimagehistory::MapImageHistory_HeatMap, i32, i32, crate::app::force::Force_Type, crate::unity_engine::color::Color)` overload"] fn add_vertex (self , map : impl :: core :: convert :: Into < crate :: app :: mapimagehistory :: MapImageHistory_HeatMap > , x : impl :: core :: convert :: Into < i32 > , z : impl :: core :: convert :: Into < i32 > , force : impl :: core :: convert :: Into < crate :: app :: force :: Force_Type > , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapPanelHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelHistory , crate :: app :: mapimagehistory :: MapImageHistory_HeatMap , i32 , i32 , crate :: app :: force :: Force_Type , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2351ca0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (map) , :: core :: convert :: Into :: into (x) , :: core :: convert :: Into :: into (z) , :: core :: convert :: Into :: into (force) , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`SetVertex()` overload"] fn set_vertex (self ,) -> () { unsafe { let __receiver = < MapPanelHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2351c90usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapPanelHistory as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapPanelHistory , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x23523d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-mappanelhistory")]pub trait IMapPanelHistoryMethods:IMapPanelHistory{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapPanelHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2351c10usize)as*mut u8,();
+(MapPanelHistory)__receiver)}
+}
+#[doc="`AddVertex(crate::app::mapimagehistory::MapImageHistory_HeatMap, i32, i32, crate::app::force::Force_Type, crate::unity_engine::color::Color)` overload"]fn add_vertex(self,map:impl::core::convert::Into<crate::app::mapimagehistory::MapImageHistory_HeatMap> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,force:impl::core::convert::Into<crate::app::force::Force_Type> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapPanelHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2351ca0usize)as*mut u8,();
+(MapPanelHistory)__receiver,(crate::app::mapimagehistory::MapImageHistory_HeatMap)::core::convert::Into::into(map),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::force::Force_Type)::core::convert::Into::into(force),(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`SetVertex()` overload"]fn set_vertex(self,)->(){unsafe{let __receiver= <MapPanelHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2351c90usize)as*mut u8,();
+(MapPanelHistory)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapPanelHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23523d0usize)as*mut u8,();
+(MapPanelHistory)__receiver)}
+}
+}
 
-#[cfg(feature = "app-mappanelhistory")]
-impl < __T : IMapPanelHistory > IMapPanelHistoryMethods for __T { }
+#[cfg(feature="app-mappanelhistory")]impl<__T:IMapPanelHistory>IMapPanelHistoryMethods for __T{}
 
-#[cfg(feature = "app-mappanelhistory")]
-impl MapPanelHistory { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn add_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_vertex_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapPanelHistory as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="app-mappanelhistory")]impl MapPanelHistory{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "app-mappanelhistory")]
-impl MapPanelHistory {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapPanelHistory) , :: core :: stringify ! (new) ,)) ; < Self as IMapPanelHistoryMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-mappanelhistory")]impl MapPanelHistory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapPanelHistory), ::core::stringify!(new),));
+ <Self as IMapPanelHistoryMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-mappanelhistory")]

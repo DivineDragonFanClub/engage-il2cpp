@@ -4,167 +4,325 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: event_systems :: abstracteventdata :: { AbstractEventData , IAbstractEventData }
- ;
- use crate :: unity_engine :: event_systems :: baseeventdata :: { BaseEventData , IBaseEventData }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::event_systems::abstracteventdata::{AbstractEventData,IAbstractEventData}
+;
+use crate::unity_engine::event_systems::baseeventdata::{BaseEventData,IBaseEventData}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_FramePressState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PointerEventData_FramePressState  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PointerEventData_InputButton{pub value:i32,}
+impl::unity2::ClassIdentity for PointerEventData_InputButton{const NAMESPACE: &'static str="UnityEngine.EventSystems";
+const NAME: &'static str="PointerEventData.InputButton";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PointerEventData_InputButton{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PointerEventData_InputButton{pub fn left()->Self{Self{value:0}
+}
+pub fn right()->Self{Self{value:1}
+}
+pub fn middle()->Self{Self{value:2}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for PointerEventData_FramePressState  {
-    const NAMESPACE: &'static str = "UnityEngine.EventSystems";
-
-    const NAME: &'static str = "PointerEventData.FramePressState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointereventdata/PointerEventData_FramePressState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PointerEventData_FramePressState{pub value:i32,}
+impl::unity2::ClassIdentity for PointerEventData_FramePressState{const NAMESPACE: &'static str="UnityEngine.EventSystems";
+const NAME: &'static str="PointerEventData.FramePressState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for PointerEventData_FramePressState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl PointerEventData_FramePressState{pub fn pressed()->Self{Self{value:0}
+}
+pub fn released()->Self{Self{value:1}
+}
+pub fn pressed_and_released()->Self{Self{value:2}
+}
+pub fn not_changed()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::IlType for PointerEventData_FramePressState  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  PointerEventData_FramePressState  {
-    pub fn pressed() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn released() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn pressed_and_released() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn not_changed() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointereventdata/PointerEventData.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "PointerEventData")] # [parent (crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData)] pub struct PointerEventData {
-# [offset (40)] # [rename (name = "m_PointerPress")] pub m_pointer_press : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (224)] # [rename (name = "hovered")] pub hovered : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct PointerEventData_InputButton  {
-    pub value: i32,
-}
-
-
-impl  ::unity2::ClassIdentity for PointerEventData_InputButton  {
-    const NAMESPACE: &'static str = "UnityEngine.EventSystems";
-
-    const NAME: &'static str = "PointerEventData.InputButton";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for PointerEventData_InputButton  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  PointerEventData_InputButton  {
-    pub fn left() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn middle() -> Self {
-        Self { value: 2 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/pointereventdata/PointerEventData.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="PointerEventData")]#[parent(crate::unity_engine::event_systems::baseeventdata::BaseEventData)]pub struct PointerEventData{#[offset(40)]#[rename(name="m_PointerPress")]pub m_pointer_press:crate::unity_engine::gameobject::GameObject, #[offset(224)]#[rename(name="hovered")]pub hovered:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointereventdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-pointereventdata")]
-pub trait IPointerEventDataMethods : IPointerEventData { # [doc = "`get_pointerEnter()` overload"] fn get_pointer_enter (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f020usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pointerEnter(crate::unity_engine::gameobject::GameObject)` overload"] fn set_pointer_enter (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_lastPress()` overload"] fn get_last_press (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f040usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_lastPress(crate::unity_engine::gameobject::GameObject)` overload"] fn set_last_press (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_rawPointerPress()` overload"] fn get_raw_pointer_press (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f060usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_rawPointerPress(crate::unity_engine::gameobject::GameObject)` overload"] fn set_raw_pointer_press (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f070usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pointerDrag()` overload"] fn get_pointer_drag (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f080usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pointerDrag(crate::unity_engine::gameobject::GameObject)` overload"] fn set_pointer_drag (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pointerClick()` overload"] fn get_pointer_click (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f0a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pointerClick(crate::unity_engine::gameobject::GameObject)` overload"] fn set_pointer_click (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f0b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pointerCurrentRaycast()` overload"] fn get_pointer_current_raycast (self ,) -> crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f0c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pointerCurrentRaycast(crate::unity_engine::event_systems::raycastresult::RaycastResult)` overload"] fn set_pointer_current_raycast (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f0f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pointerPressRaycast()` overload"] fn get_pointer_press_raycast (self ,) -> crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f120usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pointerPressRaycast(crate::unity_engine::event_systems::raycastresult::RaycastResult)` overload"] fn set_pointer_press_raycast (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: event_systems :: raycastresult :: RaycastResult , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f150usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_eligibleForClick()` overload"] fn get_eligible_for_click (self ,) -> bool { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f180usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_eligibleForClick(bool)` overload"] fn set_eligible_for_click (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pointerId()` overload"] fn get_pointer_id (self ,) -> i32 { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f1a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pointerId(i32)` overload"] fn set_pointer_id (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f1b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_position()` overload"] fn get_position (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f1c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_position(crate::unity_engine::vector2::Vector2)` overload"] fn set_position (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f1d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_delta()` overload"] fn get_delta (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f1e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_delta(crate::unity_engine::vector2::Vector2)` overload"] fn set_delta (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f1f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_pressPosition()` overload"] fn get_press_position (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f200usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pressPosition(crate::unity_engine::vector2::Vector2)` overload"] fn set_press_position (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f210usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_worldPosition()` overload"] fn get_world_position (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_worldPosition(crate::unity_engine::vector3::Vector3)` overload"] fn set_world_position (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f230usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_worldNormal()` overload"] fn get_world_normal (self ,) -> crate :: unity_engine :: vector3 :: Vector3 { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector3 :: Vector3 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_worldNormal(crate::unity_engine::vector3::Vector3)` overload"] fn set_world_normal (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector3 :: Vector3 >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: vector3 :: Vector3 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f250usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_clickTime()` overload"] fn get_click_time (self ,) -> f32 { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f260usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_clickTime(f32)` overload"] fn set_click_time (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f270usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_clickCount()` overload"] fn get_click_count (self ,) -> i32 { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f280usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_clickCount(i32)` overload"] fn set_click_count (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f290usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_scrollDelta()` overload"] fn get_scroll_delta (self ,) -> crate :: unity_engine :: vector2 :: Vector2 { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: vector2 :: Vector2 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f2a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_scrollDelta(crate::unity_engine::vector2::Vector2)` overload"] fn set_scroll_delta (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: vector2 :: Vector2 >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: vector2 :: Vector2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f2b0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_useDragThreshold()` overload"] fn get_use_drag_threshold (self ,) -> bool { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f2c0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_useDragThreshold(bool)` overload"] fn set_use_drag_threshold (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f2d0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_dragging()` overload"] fn get_dragging (self ,) -> bool { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f2e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_dragging(bool)` overload"] fn set_dragging (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f2f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_button()` overload"] fn get_button (self ,) -> crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_button(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"] fn set_button (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_InputButton , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f310usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` overload"] fn ctor (self , event_system : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: eventsystem :: EventSystem >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: event_systems :: eventsystem :: EventSystem , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f320usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (event_system) , :: core :: option :: Option :: None) } } } # [doc = "`IsPointerMoving()` overload"] fn is_pointer_moving (self ,) -> bool { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsScrolling()` overload"] fn is_scrolling (self ,) -> bool { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f460usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_enterEventCamera()` overload"] fn get_enter_event_camera (self ,) -> crate :: unity_engine :: camera :: Camera { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f4a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_pressEventCamera()` overload"] fn get_press_event_camera (self ,) -> crate :: unity_engine :: camera :: Camera { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: camera :: Camera = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f540usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_pointerPress()` overload"] fn get_pointer_press (self ,) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f5e0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_pointerPress(crate::unity_engine::gameobject::GameObject)` overload"] fn set_pointer_press (self , value : impl :: core :: convert :: Into < crate :: unity_engine :: gameobject :: GameObject >) -> () { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , crate :: unity_engine :: gameobject :: GameObject , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f5f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < PointerEventData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (PointerEventData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x371f6b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-pointereventdata")]pub trait IPointerEventDataMethods:IPointerEventData{#[doc="`get_pointerEnter()` overload"]fn get_pointer_enter(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f020usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_pointerEnter(crate::unity_engine::gameobject::GameObject)` overload"]fn set_pointer_enter(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f030usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_lastPress()` overload"]fn get_last_press(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f040usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_lastPress(crate::unity_engine::gameobject::GameObject)` overload"]fn set_last_press(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f050usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_rawPointerPress()` overload"]fn get_raw_pointer_press(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f060usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_rawPointerPress(crate::unity_engine::gameobject::GameObject)` overload"]fn set_raw_pointer_press(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f070usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_pointerDrag()` overload"]fn get_pointer_drag(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f080usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_pointerDrag(crate::unity_engine::gameobject::GameObject)` overload"]fn set_pointer_drag(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f090usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_pointerClick()` overload"]fn get_pointer_click(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f0a0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_pointerClick(crate::unity_engine::gameobject::GameObject)` overload"]fn set_pointer_click(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f0b0usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_pointerCurrentRaycast()` overload"]fn get_pointer_current_raycast(self,)->crate::unity_engine::event_systems::raycastresult::RaycastResult{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f0c0usize)as*mut u8,crate::unity_engine::event_systems::raycastresult::RaycastResult;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_pointerCurrentRaycast(crate::unity_engine::event_systems::raycastresult::RaycastResult)` overload"]fn set_pointer_current_raycast(self,value:impl::core::convert::Into<crate::unity_engine::event_systems::raycastresult::RaycastResult>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f0f0usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::event_systems::raycastresult::RaycastResult)::core::convert::Into::into(value))}
+}
+#[doc="`get_pointerPressRaycast()` overload"]fn get_pointer_press_raycast(self,)->crate::unity_engine::event_systems::raycastresult::RaycastResult{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f120usize)as*mut u8,crate::unity_engine::event_systems::raycastresult::RaycastResult;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_pointerPressRaycast(crate::unity_engine::event_systems::raycastresult::RaycastResult)` overload"]fn set_pointer_press_raycast(self,value:impl::core::convert::Into<crate::unity_engine::event_systems::raycastresult::RaycastResult>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f150usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::event_systems::raycastresult::RaycastResult)::core::convert::Into::into(value))}
+}
+#[doc="`get_eligibleForClick()` overload"]fn get_eligible_for_click(self,)->bool{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f180usize)as*mut u8,bool;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_eligibleForClick(bool)` overload"]fn set_eligible_for_click(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f190usize)as*mut u8,();
+(PointerEventData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_pointerId()` overload"]fn get_pointer_id(self,)->i32{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f1a0usize)as*mut u8,i32;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_pointerId(i32)` overload"]fn set_pointer_id(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f1b0usize)as*mut u8,();
+(PointerEventData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_position()` overload"]fn get_position(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f1c0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_position(crate::unity_engine::vector2::Vector2)` overload"]fn set_position(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f1d0usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_delta()` overload"]fn get_delta(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f1e0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_delta(crate::unity_engine::vector2::Vector2)` overload"]fn set_delta(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f1f0usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_pressPosition()` overload"]fn get_press_position(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f200usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_pressPosition(crate::unity_engine::vector2::Vector2)` overload"]fn set_press_position(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f210usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_worldPosition()` overload"]fn get_world_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f220usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_worldPosition(crate::unity_engine::vector3::Vector3)` overload"]fn set_world_position(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f230usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_worldNormal()` overload"]fn get_world_normal(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f240usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_worldNormal(crate::unity_engine::vector3::Vector3)` overload"]fn set_world_normal(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f250usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_clickTime()` overload"]fn get_click_time(self,)->f32{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f260usize)as*mut u8,f32;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_clickTime(f32)` overload"]fn set_click_time(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f270usize)as*mut u8,();
+(PointerEventData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_clickCount()` overload"]fn get_click_count(self,)->i32{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f280usize)as*mut u8,i32;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_clickCount(i32)` overload"]fn set_click_count(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f290usize)as*mut u8,();
+(PointerEventData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_scrollDelta()` overload"]fn get_scroll_delta(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f2a0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_scrollDelta(crate::unity_engine::vector2::Vector2)` overload"]fn set_scroll_delta(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f2b0usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_useDragThreshold()` overload"]fn get_use_drag_threshold(self,)->bool{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f2c0usize)as*mut u8,bool;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_useDragThreshold(bool)` overload"]fn set_use_drag_threshold(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f2d0usize)as*mut u8,();
+(PointerEventData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_dragging()` overload"]fn get_dragging(self,)->bool{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f2e0usize)as*mut u8,bool;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_dragging(bool)` overload"]fn set_dragging(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f2f0usize)as*mut u8,();
+(PointerEventData)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_button()` overload"]fn get_button(self,)->crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f300usize)as*mut u8,crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_button(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"]fn set_button(self,value:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f310usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` overload"]fn ctor(self,event_system:impl::core::convert::Into<crate::unity_engine::event_systems::eventsystem::EventSystem>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f320usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::event_systems::eventsystem::EventSystem)::core::convert::Into::into(event_system))}
+}
+#[doc="`IsPointerMoving()` overload"]fn is_pointer_moving(self,)->bool{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f420usize)as*mut u8,bool;
+(PointerEventData)__receiver)}
+}
+#[doc="`IsScrolling()` overload"]fn is_scrolling(self,)->bool{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f460usize)as*mut u8,bool;
+(PointerEventData)__receiver)}
+}
+#[doc="`get_enterEventCamera()` overload"]fn get_enter_event_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f4a0usize)as*mut u8,crate::unity_engine::camera::Camera;
+(PointerEventData)__receiver)}
+}
+#[doc="`get_pressEventCamera()` overload"]fn get_press_event_camera(self,)->crate::unity_engine::camera::Camera{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f540usize)as*mut u8,crate::unity_engine::camera::Camera;
+(PointerEventData)__receiver)}
+}
+#[doc="`get_pointerPress()` overload"]fn get_pointer_press(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f5e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(PointerEventData)__receiver)}
+}
+#[doc="`set_pointerPress(crate::unity_engine::gameobject::GameObject)` overload"]fn set_pointer_press(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f5f0usize)as*mut u8,();
+(PointerEventData)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PointerEventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x371f6b0usize)as*mut u8, ::unity2::Il2CppString;
+(PointerEventData)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-pointereventdata")]
-impl < __T : IPointerEventData > IPointerEventDataMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-pointereventdata")]impl<__T:IPointerEventData>IPointerEventDataMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-pointereventdata")]
-impl PointerEventData { pub fn get_pointer_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_pointer_enter_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_last_press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_last_press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_raw_pointer_press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_raw_pointer_press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_pointer_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_pointer_drag_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_pointer_click_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_pointer_click_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_pointer_current_raycast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_pointer_current_raycast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_pointer_press_raycast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_pointer_press_raycast_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_eligible_for_click_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_eligible_for_click_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_pointer_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_pointer_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_delta_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_delta_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_press_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_press_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_world_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_world_position_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn get_world_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn set_world_normal_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn get_click_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } pub fn set_click_time_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [29] } pub fn get_click_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [30] } pub fn set_click_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [31] } pub fn get_scroll_delta_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [32] } pub fn set_scroll_delta_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [33] } pub fn get_use_drag_threshold_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [34] } pub fn set_use_drag_threshold_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [35] } pub fn get_dragging_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [36] } pub fn set_dragging_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [37] } pub fn get_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [38] } pub fn set_button_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [39] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [40] } pub fn is_pointer_moving_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [41] } pub fn is_scrolling_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [42] } pub fn get_enter_event_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [43] } pub fn get_press_event_camera_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [44] } pub fn get_pointer_press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [45] } pub fn set_pointer_press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [46] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < PointerEventData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [47] } }
+#[cfg(feature="unity_engine-event_systems-pointereventdata")]impl PointerEventData{pub fn get_pointer_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pointer_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_last_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_last_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_raw_pointer_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_raw_pointer_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_pointer_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_pointer_drag_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_pointer_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_pointer_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_pointer_current_raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_pointer_current_raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_pointer_press_raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_pointer_press_raycast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_eligible_for_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_eligible_for_click_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_pointer_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_pointer_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_delta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_delta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_press_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_press_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_world_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_world_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_world_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_world_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn get_click_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_click_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_click_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn set_click_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_scroll_delta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn set_scroll_delta_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn get_use_drag_threshold_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_use_drag_threshold_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn get_dragging_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn set_dragging_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn get_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn set_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn is_pointer_moving_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn is_scrolling_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_enter_event_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_press_event_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn get_pointer_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn set_pointer_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-pointereventdata")]
-impl PointerEventData {
-# [doc = "`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` — overload selector"] pub fn new (event_system : crate :: unity_engine :: event_systems :: eventsystem :: EventSystem) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (PointerEventData) , :: core :: stringify ! (new) ,)) ; < Self as IPointerEventDataMethods > :: ctor (this , event_system) ; this }
+#[cfg(feature="unity_engine-event_systems-pointereventdata")]impl PointerEventData{#[doc="`.ctor(crate::unity_engine::event_systems::eventsystem::EventSystem)` — overload selector"]pub fn new(event_system:crate::unity_engine::event_systems::eventsystem::EventSystem)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PointerEventData), ::core::stringify!(new),));
+ <Self as IPointerEventDataMethods> ::ctor(this,event_system);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-pointereventdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::PointerEventData_InputButton;
     pub use super::PointerEventData_FramePressState;
     pub use super::PointerEventData;
     pub use super::IPointerEventData;
     pub use super::IPointerEventDataMethods;
-    pub use super::PointerEventData_InputButton;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

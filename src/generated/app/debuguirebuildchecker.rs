@@ -4,32 +4,36 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: singletonclass_1 :: { ISingletonClass_1 , SingletonClass_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuguirebuildchecker/DebugUIRebuildChecker.md"))] # [:: unity2 :: class (namespace = "App" , name = "DebugUIRebuildChecker")] # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: debuguirebuildchecker :: DebugUIRebuildChecker >)] pub struct DebugUIRebuildChecker {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debuguirebuildchecker/DebugUIRebuildChecker.md"))]#[::unity2::class(namespace="App",name="DebugUIRebuildChecker")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::debuguirebuildchecker::DebugUIRebuildChecker>)]pub struct DebugUIRebuildChecker{}
 
 }
 
 #[cfg(feature = "app-debuguirebuildchecker-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-debuguirebuildchecker")]
-pub trait IDebugUIRebuildCheckerMethods : IDebugUIRebuildChecker { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < DebugUIRebuildChecker as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (DebugUIRebuildChecker , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2a10ce0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-debuguirebuildchecker")]pub trait IDebugUIRebuildCheckerMethods:IDebugUIRebuildChecker{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIRebuildChecker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a10ce0usize)as*mut u8,();
+(DebugUIRebuildChecker)__receiver)}
+}
+}
 
-#[cfg(feature = "app-debuguirebuildchecker")]
-impl < __T : IDebugUIRebuildChecker > IDebugUIRebuildCheckerMethods for __T { }
+#[cfg(feature="app-debuguirebuildchecker")]impl<__T:IDebugUIRebuildChecker>IDebugUIRebuildCheckerMethods for __T{}
 
-#[cfg(feature = "app-debuguirebuildchecker")]
-impl DebugUIRebuildChecker { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < DebugUIRebuildChecker as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-debuguirebuildchecker")]impl DebugUIRebuildChecker{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-debuguirebuildchecker")]
-impl DebugUIRebuildChecker {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (DebugUIRebuildChecker) , :: core :: stringify ! (new) ,)) ; < Self as IDebugUIRebuildCheckerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-debuguirebuildchecker")]impl DebugUIRebuildChecker{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugUIRebuildChecker), ::core::stringify!(new),));
+ <Self as IDebugUIRebuildCheckerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-debuguirebuildchecker")]

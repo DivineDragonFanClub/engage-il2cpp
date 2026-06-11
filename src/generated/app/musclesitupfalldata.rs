@@ -4,39 +4,107 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclesitupfalldata/MuscleSitUpFallData.md"))] # [:: unity2 :: class (namespace = "App" , name = "MuscleSitUpFallData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: musclesitupfalldata :: MuscleSitUpFallData >)] pub struct MuscleSitUpFallData {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclesitupfalldata/MuscleSitUpFallData.md"))]#[::unity2::class(namespace="App",name="MuscleSitUpFallData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::musclesitupfalldata::MuscleSitUpFallData>)]pub struct MuscleSitUpFallData{}
 
 }
 
 #[cfg(feature = "app-musclesitupfalldata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-musclesitupfalldata")]
-impl MuscleSitUpFallData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc1170usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetSpeedList(i32, *mutcrate::system::collections::generic::list_1::List_1<crate::app::musclesitupfalldata::MuscleSitUpFallData>)` overload"] pub fn get_speed_list (level : impl :: core :: convert :: Into < i32 >) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: musclesitupfalldata :: MuscleSitUpFallData > { unsafe { let mut __out_0 = :: core :: mem :: MaybeUninit :: < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: musclesitupfalldata :: MuscleSitUpFallData > > :: uninit () ; { let __inner : extern "C" fn (i32 , * mut crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: musclesitupfalldata :: MuscleSitUpFallData > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc1230usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (level) , __out_0 . as_mut_ptr () , :: core :: option :: Option :: None) } ; __out_0 . assume_init () } } }
+#[cfg(feature="app-musclesitupfalldata")]impl MuscleSitUpFallData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dc1170usize)as*mut u8,();
+)}
+}
+#[doc="`GetSpeedList(i32, *mutcrate::system::collections::generic::list_1::List_1<crate::app::musclesitupfalldata::MuscleSitUpFallData>)` overload"]pub fn get_speed_list(level:impl::core::convert::Into<i32>)->crate::system::collections::generic::list_1::List_1<crate::app::musclesitupfalldata::MuscleSitUpFallData>{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::app::musclesitupfalldata::MuscleSitUpFallData> > ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc1230usize)as*mut u8,();
+(i32)::core::convert::Into::into(level),(*mut crate::system::collections::generic::list_1::List_1<crate::app::musclesitupfalldata::MuscleSitUpFallData>)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
 
-#[cfg(feature = "app-musclesitupfalldata")]
-pub trait IMuscleSitUpFallDataMethods : IMuscleSitUpFallData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc1050usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc1060usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Level()` overload"] fn get_level (self ,) -> i32 { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc1070usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Level(i32)` overload"] fn set_level (self , value : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc1080usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_PerfectLimit()` overload"] fn get_perfect_limit (self ,) -> f32 { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc1090usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_PerfectLimit(f32)` overload"] fn set_perfect_limit (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc10a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_GainPower()` overload"] fn get_gain_power (self ,) -> f32 { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc10b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_GainPower(f32)` overload"] fn set_gain_power (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc10c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_FallSpeed()` overload"] fn get_fall_speed (self ,) -> f32 { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc10d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_FallSpeed(f32)` overload"] fn set_fall_speed (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc10e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc10f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < MuscleSitUpFallData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MuscleSitUpFallData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2dc1220usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-musclesitupfalldata")]pub trait IMuscleSitUpFallDataMethods:IMuscleSitUpFallData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc1050usize)as*mut u8, ::unity2::Il2CppString;
+(MuscleSitUpFallData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc1060usize)as*mut u8,();
+(MuscleSitUpFallData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Level()` overload"]fn get_level(self,)->i32{unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc1070usize)as*mut u8,i32;
+(MuscleSitUpFallData)__receiver)}
+}
+#[doc="`set_Level(i32)` overload"]fn set_level(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc1080usize)as*mut u8,();
+(MuscleSitUpFallData)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PerfectLimit()` overload"]fn get_perfect_limit(self,)->f32{unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc1090usize)as*mut u8,f32;
+(MuscleSitUpFallData)__receiver)}
+}
+#[doc="`set_PerfectLimit(f32)` overload"]fn set_perfect_limit(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc10a0usize)as*mut u8,();
+(MuscleSitUpFallData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_GainPower()` overload"]fn get_gain_power(self,)->f32{unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc10b0usize)as*mut u8,f32;
+(MuscleSitUpFallData)__receiver)}
+}
+#[doc="`set_GainPower(f32)` overload"]fn set_gain_power(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc10c0usize)as*mut u8,();
+(MuscleSitUpFallData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_FallSpeed()` overload"]fn get_fall_speed(self,)->f32{unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc10d0usize)as*mut u8,f32;
+(MuscleSitUpFallData)__receiver)}
+}
+#[doc="`set_FallSpeed(f32)` overload"]fn set_fall_speed(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc10e0usize)as*mut u8,();
+(MuscleSitUpFallData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc10f0usize)as*mut u8,();
+(MuscleSitUpFallData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MuscleSitUpFallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dc1220usize)as*mut u8,();
+(MuscleSitUpFallData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-musclesitupfalldata")]
-impl < __T : IMuscleSitUpFallData > IMuscleSitUpFallDataMethods for __T { }
+#[cfg(feature="app-musclesitupfalldata")]impl<__T:IMuscleSitUpFallData>IMuscleSitUpFallDataMethods for __T{}
 
-#[cfg(feature = "app-musclesitupfalldata")]
-impl MuscleSitUpFallData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_level_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_perfect_limit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_perfect_limit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_gain_power_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_gain_power_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_fall_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_fall_speed_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn get_speed_list_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MuscleSitUpFallData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-musclesitupfalldata")]impl MuscleSitUpFallData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_perfect_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_perfect_limit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_gain_power_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_gain_power_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_fall_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_fall_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_speed_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-musclesitupfalldata")]
-impl MuscleSitUpFallData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MuscleSitUpFallData) , :: core :: stringify ! (new) ,)) ; < Self as IMuscleSitUpFallDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-musclesitupfalldata")]impl MuscleSitUpFallData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MuscleSitUpFallData), ::core::stringify!(new),));
+ <Self as IMuscleSitUpFallDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-musclesitupfalldata")]

@@ -4,71 +4,106 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/effectcontroller/EffectController_AutoDelete.md"))] # [:: unity2 :: class (namespace = "App.RingCleaning" , name = "EffectController.AutoDelete")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EffectController_AutoDelete {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/effectcontroller/EffectController_AutoDelete.md"))]#[::unity2::class(namespace="App.RingCleaning",name="EffectController.AutoDelete")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EffectController_AutoDelete{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ring_cleaning/effectcontroller/EffectController.md"))] # [:: unity2 :: class (namespace = "App.RingCleaning" , name = "EffectController")] # [parent (crate :: system :: object :: Object)] pub struct EffectController {
-# [static_field] # [rename (name = "GlitterEffectPrefab")] pub glitter_effect_prefab : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "GlitterStrongEffectPrefab")] pub glitter_strong_effect_prefab : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "GlitterWeakNotHit")] pub glitter_weak_not_hit : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "GlitterWeakNear")] pub glitter_weak_near : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "GlitterStrongA")] pub glitter_strong_a : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "GlitterStrongB")] pub glitter_strong_b : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "NoteEffectA")] pub note_effect_a : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "NoteEffectB")] pub note_effect_b : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "HitEffect2D")] pub hit_effect2_d : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "RubEffect")] pub rub_effect : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "s_EffectRoot")] pub s_effect_root : crate :: unity_engine :: gameobject :: GameObject ,
-# [static_field] # [rename (name = "s_Rub")] pub s_rub : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/effectcontroller/EffectController.md"))]#[::unity2::class(namespace="App.RingCleaning",name="EffectController")]#[parent(crate::system::object::Object)]pub struct EffectController{#[static_field]#[rename(name="GlitterEffectPrefab")]pub glitter_effect_prefab: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterStrongEffectPrefab")]pub glitter_strong_effect_prefab: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterWeakNotHit")]pub glitter_weak_not_hit: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterWeakNear")]pub glitter_weak_near: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterStrongA")]pub glitter_strong_a: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterStrongB")]pub glitter_strong_b: ::unity2::Il2CppString, #[static_field]#[rename(name="NoteEffectA")]pub note_effect_a: ::unity2::Il2CppString, #[static_field]#[rename(name="NoteEffectB")]pub note_effect_b: ::unity2::Il2CppString, #[static_field]#[rename(name="HitEffect2D")]pub hit_effect2_d: ::unity2::Il2CppString, #[static_field]#[rename(name="RubEffect")]pub rub_effect: ::unity2::Il2CppString, #[static_field]#[rename(name="s_EffectRoot")]pub s_effect_root:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="s_Rub")]pub s_rub:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-pub trait IEffectController_AutoDeleteMethods : IEffectController_AutoDelete { # [doc = "`Update()` overload"] fn update (self ,) -> () { unsafe { let __receiver = < EffectController_AutoDelete as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectController_AutoDelete , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd6550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectController_AutoDelete as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectController_AutoDelete , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1bd65f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl < __T : IEffectController_AutoDelete > IEffectController_AutoDeleteMethods for __T { }
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl EffectController_AutoDelete { pub fn update_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController_AutoDelete as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController_AutoDelete as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } }
-
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl EffectController_AutoDelete {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectController_AutoDelete) , :: core :: stringify ! (new) ,)) ; < Self as IEffectController_AutoDeleteMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ring_cleaning-effectcontroller")]pub trait IEffectController_AutoDeleteMethods:IEffectController_AutoDelete{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <EffectController_AutoDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6550usize)as*mut u8,();
+(EffectController_AutoDelete)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectController_AutoDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd65f0usize)as*mut u8,();
+(EffectController_AutoDelete)__receiver)}
+}
 }
 
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl EffectController { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7650usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7840usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7af0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Initialize()` overload"] pub fn initialize () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7cb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`CreateGlitterEffect(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"] pub fn create_glitter_effect (strength : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength > , hit_result : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult >) -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (crate :: app :: ringcleaningsequence :: RingCleaningSequence_Strength , crate :: app :: ringcleaningsequence :: RingCleaningSequence_HitResult , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7d30usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (strength) , :: core :: convert :: Into :: into (hit_result) , :: core :: option :: Option :: None) } } } # [doc = "`PlayHitScreen()` overload"] pub fn play_hit_screen () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7eb0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`PlayRubEffect()` overload"] pub fn play_rub_effect () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d7f80usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_NoteEffect()` overload"] pub fn get_note_effect () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8090usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`get_NoteEffectBig()` overload"] pub fn get_note_effect_big () -> :: unity2 :: Il2CppString { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d80e0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl<__T:IEffectController_AutoDelete>IEffectController_AutoDeleteMethods for __T{}
 
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-pub trait IEffectControllerMethods : IEffectController { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EffectController as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EffectController , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22d8130usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController_AutoDelete{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl < __T : IEffectController > IEffectControllerMethods for __T { }
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController_AutoDelete{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EffectController_AutoDelete), ::core::stringify!(new),));
+ <Self as IEffectController_AutoDeleteMethods> ::ctor(this,);
+this}
+}
 
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl EffectController { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn initialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_glitter_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn play_hit_screen_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn play_rub_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn get_note_effect_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_note_effect_big_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EffectController as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7650usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7840usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7af0usize)as*mut u8,();
+)}
+}
+#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7cb0usize)as*mut u8,();
+)}
+}
+#[doc="`CreateGlitterEffect(crate::app::ringcleaningsequence::RingCleaningSequence_Strength, crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)` overload"]pub fn create_glitter_effect(strength:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_Strength> ,hit_result:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_HitResult>)->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7d30usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(crate::app::ringcleaningsequence::RingCleaningSequence_Strength)::core::convert::Into::into(strength),(crate::app::ringcleaningsequence::RingCleaningSequence_HitResult)::core::convert::Into::into(hit_result))}
+}
+#[doc="`PlayHitScreen()` overload"]pub fn play_hit_screen()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7eb0usize)as*mut u8,();
+)}
+}
+#[doc="`PlayRubEffect()` overload"]pub fn play_rub_effect()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7f80usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+#[doc="`get_NoteEffect()` overload"]pub fn get_note_effect()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d8090usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+#[doc="`get_NoteEffectBig()` overload"]pub fn get_note_effect_big()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d80e0usize)as*mut u8, ::unity2::Il2CppString;
+)}
+}
+}
 
-#[cfg(feature = "app-ring_cleaning-effectcontroller")]
-impl EffectController {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EffectController) , :: core :: stringify ! (new) ,)) ; < Self as IEffectControllerMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-ring_cleaning-effectcontroller")]pub trait IEffectControllerMethods:IEffectController{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8130usize)as*mut u8,();
+(EffectController)__receiver)}
+}
+}
+
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl<__T:IEffectController>IEffectControllerMethods for __T{}
+
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_glitter_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn play_hit_screen_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn play_rub_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_note_effect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_note_effect_big_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EffectController), ::core::stringify!(new),));
+ <Self as IEffectControllerMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller")]

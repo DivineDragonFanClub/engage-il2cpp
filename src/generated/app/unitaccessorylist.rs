@@ -4,33 +4,94 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitaccessorylist/UnitAccessoryList.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitAccessoryList")] # [parent (crate :: system :: object :: Object)] pub struct UnitAccessoryList {
-# [static_field] # [rename (name = "Version")] pub version : i32 ,
-# [offset (16)] # [rename (name = "m_UnitAccessorys")] pub m_unit_accessorys : :: unity2 :: Array < crate :: app :: unitaccessory :: UnitAccessory > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitaccessorylist/UnitAccessoryList.md"))]#[::unity2::class(namespace="App",name="UnitAccessoryList")]#[parent(crate::system::object::Object)]pub struct UnitAccessoryList{#[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_UnitAccessorys")]pub m_unit_accessorys: ::unity2::Array<crate::app::unitaccessory::UnitAccessory> ,}
 
 }
 
 #[cfg(feature = "app-unitaccessorylist-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitaccessorylist")]
-pub trait IUnitAccessoryListMethods : IUnitAccessoryList { # [doc = "`get_Count()` overload"] fn get_count (self ,) -> i32 { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f61b10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(i32)` overload"] fn get_item (self , i : impl :: core :: convert :: Into < i32 >) -> crate :: app :: unitaccessory :: UnitAccessory { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , i32 , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitaccessory :: UnitAccessory = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f61b20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (i) , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn get_item_2 (self , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> crate :: app :: unitaccessory :: UnitAccessory { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> crate :: app :: unitaccessory :: UnitAccessory = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f61b60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f61ba0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Clear()` overload"] fn clear (self ,) -> () { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f61d80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsExist(crate::app::accessorydata::AccessoryData)` overload"] fn is_exist (self , accessory : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData >) -> bool { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , crate :: app :: accessorydata :: AccessoryData , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f61e00usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (accessory) , :: core :: option :: Option :: None) } } } # [doc = "`Clear(i32)` overload"] fn clear_2 (self , index : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f62010usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`Clear(crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn clear_3 (self , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> () { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f62050usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData_Kinds)` overload"] fn add (self , accessory : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , kind : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData_Kinds >) -> bool { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , crate :: app :: accessorydata :: AccessoryData , crate :: app :: accessorydata :: AccessoryData_Kinds , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f62090usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (accessory) , :: core :: convert :: Into :: into (kind) , :: core :: option :: Option :: None) } } } # [doc = "`Add(crate::app::accessorydata::AccessoryData, i32)` overload"] fn add_2 (self , accessory : impl :: core :: convert :: Into < crate :: app :: accessorydata :: AccessoryData > , index : impl :: core :: convert :: Into < i32 >) -> bool { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , crate :: app :: accessorydata :: AccessoryData , i32 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f620a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (accessory) , :: core :: convert :: Into :: into (index) , :: core :: option :: Option :: None) } } } # [doc = "`CopyFrom(crate::app::unitaccessorylist::UnitAccessoryList)` overload"] fn copy_from (self , list : impl :: core :: convert :: Into < crate :: app :: unitaccessorylist :: UnitAccessoryList >) -> () { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , crate :: app :: unitaccessorylist :: UnitAccessoryList , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f62420usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (list) , :: core :: option :: Option :: None) } } } # [doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"] fn serialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f62510usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } # [doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"] fn deserialize (self , stream : impl :: core :: convert :: Into < crate :: app :: stream_2 :: Stream_2 >) -> () { unsafe { let __receiver = < UnitAccessoryList as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitAccessoryList , crate :: app :: stream_2 :: Stream_2 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f625c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (stream) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitaccessorylist")]pub trait IUnitAccessoryListMethods:IUnitAccessoryList{#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f61b10usize)as*mut u8,i32;
+(UnitAccessoryList)__receiver)}
+}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,i:impl::core::convert::Into<i32>)->crate::app::unitaccessory::UnitAccessory{unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f61b20usize)as*mut u8,crate::app::unitaccessory::UnitAccessory;
+(UnitAccessoryList)__receiver,(i32)::core::convert::Into::into(i))}
+}
+#[doc="`get_Item(crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn get_item_2(self,kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->crate::app::unitaccessory::UnitAccessory{unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f61b60usize)as*mut u8,crate::app::unitaccessory::UnitAccessory;
+(UnitAccessoryList)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f61ba0usize)as*mut u8,();
+(UnitAccessoryList)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f61d80usize)as*mut u8,();
+(UnitAccessoryList)__receiver)}
+}
+#[doc="`IsExist(crate::app::accessorydata::AccessoryData)` overload"]fn is_exist(self,accessory:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->bool{unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f61e00usize)as*mut u8,bool;
+(UnitAccessoryList)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory))}
+}
+#[doc="`Clear(i32)` overload"]fn clear_2(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f62010usize)as*mut u8,();
+(UnitAccessoryList)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`Clear(crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn clear_3(self,kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->(){unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f62050usize)as*mut u8,();
+(UnitAccessoryList)__receiver,(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`Add(crate::app::accessorydata::AccessoryData, crate::app::accessorydata::AccessoryData_Kinds)` overload"]fn add(self,accessory:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,kind:impl::core::convert::Into<crate::app::accessorydata::AccessoryData_Kinds>)->bool{unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f62090usize)as*mut u8,bool;
+(UnitAccessoryList)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory),(crate::app::accessorydata::AccessoryData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`Add(crate::app::accessorydata::AccessoryData, i32)` overload"]fn add_2(self,accessory:impl::core::convert::Into<crate::app::accessorydata::AccessoryData> ,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f620a0usize)as*mut u8,bool;
+(UnitAccessoryList)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`CopyFrom(crate::app::unitaccessorylist::UnitAccessoryList)` overload"]fn copy_from(self,list:impl::core::convert::Into<crate::app::unitaccessorylist::UnitAccessoryList>)->(){unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f62420usize)as*mut u8,();
+(UnitAccessoryList)__receiver,(crate::app::unitaccessorylist::UnitAccessoryList)::core::convert::Into::into(list))}
+}
+#[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f62510usize)as*mut u8,();
+(UnitAccessoryList)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <UnitAccessoryList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f625c0usize)as*mut u8,();
+(UnitAccessoryList)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+}
 
-#[cfg(feature = "app-unitaccessorylist")]
-impl < __T : IUnitAccessoryList > IUnitAccessoryListMethods for __T { }
+#[cfg(feature="app-unitaccessorylist")]impl<__T:IUnitAccessoryList>IUnitAccessoryListMethods for __T{}
 
-#[cfg(feature = "app-unitaccessorylist")]
-impl UnitAccessoryList { pub fn get_count_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_item_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn clear_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn is_exist_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn clear_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn clear_3_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn add_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn add_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn copy_from_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn serialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn deserialize_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitAccessoryList as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } }
+#[cfg(feature="app-unitaccessorylist")]impl UnitAccessoryList{pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_item_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn clear_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn copy_from_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn serialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn deserialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
-#[cfg(feature = "app-unitaccessorylist")]
-impl UnitAccessoryList {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitAccessoryList) , :: core :: stringify ! (new) ,)) ; < Self as IUnitAccessoryListMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitaccessorylist")]impl UnitAccessoryList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitAccessoryList), ::core::stringify!(new),));
+ <Self as IUnitAccessoryListMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitaccessorylist")]

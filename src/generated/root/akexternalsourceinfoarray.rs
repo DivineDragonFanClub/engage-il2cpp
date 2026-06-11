@@ -4,32 +4,61 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: root :: akbasearray_1 :: { AkBaseArray_1 , IAkBaseArray_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::root::akbasearray_1::{AkBaseArray_1,IAkBaseArray_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/akexternalsourceinfoarray/AkExternalSourceInfoArray.md"))] # [:: unity2 :: class (namespace = "" , name = "AkExternalSourceInfoArray")] # [parent (crate :: root :: akbasearray_1 :: AkBaseArray_1 < crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo >)] pub struct AkExternalSourceInfoArray {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akexternalsourceinfoarray/AkExternalSourceInfoArray.md"))]#[::unity2::class(namespace="",name="AkExternalSourceInfoArray")]#[parent(crate::root::akbasearray_1::AkBaseArray_1<crate::root::akexternalsourceinfo::AkExternalSourceInfo>)]pub struct AkExternalSourceInfoArray{}
 
 }
 
 #[cfg(feature = "root-akexternalsourceinfoarray-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-akexternalsourceinfoarray")]
-pub trait IAkExternalSourceInfoArrayMethods : IAkExternalSourceInfoArray { # [doc = "`.ctor(i32)` overload"] fn ctor (self , count : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfoArray , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d6c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`get_StructureSize()` overload"] fn get_structure_size (self ,) -> i32 { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d720usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"] fn default_construct_at_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d790usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (address) , :: core :: option :: Option :: None) } } } # [doc = "`ReleaseAllocatedMemoryFromReferenceAtIntPtr(::unity2::IntPtr)` overload"] fn release_allocated_memory_from_reference_at_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> () { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d800usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (address) , :: core :: option :: Option :: None) } } } # [doc = "`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"] fn create_new_reference_from_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr >) -> crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: IntPtr , :: unity2 :: OptionalMethod ,) -> crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d870usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (address) , :: core :: option :: Option :: None) } } } # [doc = "`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akexternalsourceinfo::AkExternalSourceInfo)` overload"] fn clone_into_reference_from_int_ptr (self , address : impl :: core :: convert :: Into < :: unity2 :: IntPtr > , other : impl :: core :: convert :: Into < crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo >) -> () { unsafe { let __receiver = < AkExternalSourceInfoArray as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (AkExternalSourceInfoArray , :: unity2 :: IntPtr , crate :: root :: akexternalsourceinfo :: AkExternalSourceInfo , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2f1d8e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (address) , :: core :: convert :: Into :: into (other) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-akexternalsourceinfoarray")]pub trait IAkExternalSourceInfoArrayMethods:IAkExternalSourceInfoArray{#[doc="`.ctor(i32)` overload"]fn ctor(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d6c0usize)as*mut u8,();
+(AkExternalSourceInfoArray)__receiver,(i32)::core::convert::Into::into(count))}
+}
+#[doc="`get_StructureSize()` overload"]fn get_structure_size(self,)->i32{unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d720usize)as*mut u8,i32;
+(AkExternalSourceInfoArray)__receiver)}
+}
+#[doc="`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"]fn default_construct_at_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d790usize)as*mut u8,();
+(AkExternalSourceInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+}
+#[doc="`ReleaseAllocatedMemoryFromReferenceAtIntPtr(::unity2::IntPtr)` overload"]fn release_allocated_memory_from_reference_at_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d800usize)as*mut u8,();
+(AkExternalSourceInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+}
+#[doc="`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]fn create_new_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->crate::root::akexternalsourceinfo::AkExternalSourceInfo{unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d870usize)as*mut u8,crate::root::akexternalsourceinfo::AkExternalSourceInfo;
+(AkExternalSourceInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+}
+#[doc="`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akexternalsourceinfo::AkExternalSourceInfo)` overload"]fn clone_into_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr> ,other:impl::core::convert::Into<crate::root::akexternalsourceinfo::AkExternalSourceInfo>)->(){unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d8e0usize)as*mut u8,();
+(AkExternalSourceInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address),(crate::root::akexternalsourceinfo::AkExternalSourceInfo)::core::convert::Into::into(other))}
+}
+}
 
-#[cfg(feature = "root-akexternalsourceinfoarray")]
-impl < __T : IAkExternalSourceInfoArray > IAkExternalSourceInfoArrayMethods for __T { }
+#[cfg(feature="root-akexternalsourceinfoarray")]impl<__T:IAkExternalSourceInfoArray>IAkExternalSourceInfoArrayMethods for __T{}
 
-#[cfg(feature = "root-akexternalsourceinfoarray")]
-impl AkExternalSourceInfoArray { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_structure_size_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn default_construct_at_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn release_allocated_memory_from_reference_at_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_new_reference_from_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn clone_into_reference_from_int_ptr_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < AkExternalSourceInfoArray as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="root-akexternalsourceinfoarray")]impl AkExternalSourceInfoArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_structure_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn default_construct_at_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn release_allocated_memory_from_reference_at_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_new_reference_from_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clone_into_reference_from_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "root-akexternalsourceinfoarray")]
-impl AkExternalSourceInfoArray {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (count : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (AkExternalSourceInfoArray) , :: core :: stringify ! (new) ,)) ; < Self as IAkExternalSourceInfoArrayMethods > :: ctor (this , count) ; this }
+#[cfg(feature="root-akexternalsourceinfoarray")]impl AkExternalSourceInfoArray{#[doc="`.ctor(i32)` — overload selector"]pub fn new(count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkExternalSourceInfoArray), ::core::stringify!(new),));
+ <Self as IAkExternalSourceInfoArrayMethods> ::ctor(this,count);
+this}
 }
 
 #[cfg(feature = "root-akexternalsourceinfoarray")]

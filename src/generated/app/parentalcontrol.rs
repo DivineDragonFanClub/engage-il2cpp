@@ -4,47 +4,85 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl_BeginFCSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "ParentalControl.BeginFCSequence")] # [parent (crate :: app :: procinst :: ProcInst)] pub struct ParentalControl_BeginFCSequence {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/parentalcontrol/ParentalControl_BeginFCSequence.md"))]#[::unity2::class(namespace="App",name="ParentalControl.BeginFCSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct ParentalControl_BeginFCSequence{}
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl.md"))] # [:: unity2 :: class (namespace = "App" , name = "ParentalControl")] # [parent (crate :: system :: object :: Object)] pub struct ParentalControl {
-# [static_field] # [rename (name = "s_IsBeginFC")] pub s_is_begin_fc : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/parentalcontrol/ParentalControl.md"))]#[::unity2::class(namespace="App",name="ParentalControl")]#[parent(crate::system::object::Object)]pub struct ParentalControl{#[static_field]#[rename(name="s_IsBeginFC")]pub s_is_begin_fc:bool,}
 
 }
 
 #[cfg(feature = "app-parentalcontrol-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-parentalcontrol")]
-impl ParentalControl_BeginFCSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2260a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-parentalcontrol")]
-pub trait IParentalControl_BeginFCSequenceMethods : IParentalControl_BeginFCSequence { # [doc = "`NetKeepAliveOn()` overload"] fn net_keep_alive_on (self ,) -> () { unsafe { let __receiver = < ParentalControl_BeginFCSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParentalControl_BeginFCSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2260980usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`NetKeepAliveOff()` overload"] fn net_keep_alive_off (self ,) -> () { unsafe { let __receiver = < ParentalControl_BeginFCSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParentalControl_BeginFCSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2260990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`TryBegin()` overload"] fn try_begin (self ,) -> () { unsafe { let __receiver = < ParentalControl_BeginFCSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParentalControl_BeginFCSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22609a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < ParentalControl_BeginFCSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ParentalControl_BeginFCSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2260cc0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
-
-#[cfg(feature = "app-parentalcontrol")]
-impl < __T : IParentalControl_BeginFCSequence > IParentalControl_BeginFCSequenceMethods for __T { }
-
-#[cfg(feature = "app-parentalcontrol")]
-impl ParentalControl_BeginFCSequence { pub fn net_keep_alive_on_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn net_keep_alive_off_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn try_begin_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl_BeginFCSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
-
-#[cfg(feature = "app-parentalcontrol")]
-impl ParentalControl_BeginFCSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ParentalControl_BeginFCSequence) , :: core :: stringify ! (new) ,)) ; < Self as IParentalControl_BeginFCSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-parentalcontrol")]impl ParentalControl_BeginFCSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2260a20usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
 }
 
-#[cfg(feature = "app-parentalcontrol")]
-impl ParentalControl { # [doc = "`BeginFreeCommunication(crate::app::procinst::ProcInst)` overload"] pub fn begin_free_communication (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f24ef0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`get_ResultBeginFreeCommunication()` overload"] pub fn get_result_begin_free_communication () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f24f70usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`EndFreeCommunication()` overload"] pub fn end_free_communication () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f24fe0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsFreeCommunicationAvailable()` overload"] pub fn is_free_communication_available () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f25060usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1f250a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-parentalcontrol")]pub trait IParentalControl_BeginFCSequenceMethods:IParentalControl_BeginFCSequence{#[doc="`NetKeepAliveOn()` overload"]fn net_keep_alive_on(self,)->(){unsafe{let __receiver= <ParentalControl_BeginFCSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2260980usize)as*mut u8,();
+(ParentalControl_BeginFCSequence)__receiver)}
+}
+#[doc="`NetKeepAliveOff()` overload"]fn net_keep_alive_off(self,)->(){unsafe{let __receiver= <ParentalControl_BeginFCSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2260990usize)as*mut u8,();
+(ParentalControl_BeginFCSequence)__receiver)}
+}
+#[doc="`TryBegin()` overload"]fn try_begin(self,)->(){unsafe{let __receiver= <ParentalControl_BeginFCSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22609a0usize)as*mut u8,();
+(ParentalControl_BeginFCSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ParentalControl_BeginFCSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2260cc0usize)as*mut u8,();
+(ParentalControl_BeginFCSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-parentalcontrol")]
-impl ParentalControl { pub fn begin_free_communication_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_result_begin_free_communication_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn end_free_communication_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn is_free_communication_available_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ParentalControl as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-parentalcontrol")]impl<__T:IParentalControl_BeginFCSequence>IParentalControl_BeginFCSequenceMethods for __T{}
+
+#[cfg(feature="app-parentalcontrol")]impl ParentalControl_BeginFCSequence{pub fn net_keep_alive_on_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn net_keep_alive_off_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn try_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-parentalcontrol")]impl ParentalControl_BeginFCSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ParentalControl_BeginFCSequence), ::core::stringify!(new),));
+ <Self as IParentalControl_BeginFCSequenceMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-parentalcontrol")]impl ParentalControl{#[doc="`BeginFreeCommunication(crate::app::procinst::ProcInst)` overload"]pub fn begin_free_communication(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f24ef0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`get_ResultBeginFreeCommunication()` overload"]pub fn get_result_begin_free_communication()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f24f70usize)as*mut u8,bool;
+)}
+}
+#[doc="`EndFreeCommunication()` overload"]pub fn end_free_communication()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f24fe0usize)as*mut u8,();
+)}
+}
+#[doc="`IsFreeCommunicationAvailable()` overload"]pub fn is_free_communication_available()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f25060usize)as*mut u8,bool;
+)}
+}
+#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f250a0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-parentalcontrol")]impl ParentalControl{pub fn begin_free_communication_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_result_begin_free_communication_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn end_free_communication_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_free_communication_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
 #[cfg(feature = "app-parentalcontrol")]
 #[doc(hidden)]

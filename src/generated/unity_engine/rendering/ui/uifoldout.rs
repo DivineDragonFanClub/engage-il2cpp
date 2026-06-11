@@ -4,48 +4,68 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
- use crate :: unity_engine :: ui :: selectable :: { ISelectable , Selectable }
- ;
- use crate :: unity_engine :: ui :: toggle :: { IToggle , Toggle }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
+use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
+;
+use crate::unity_engine::ui::toggle::{IToggle,Toggle}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/uifoldout/UIFoldout.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Rendering.UI" , name = "UIFoldout")] # [parent (crate :: unity_engine :: ui :: toggle :: Toggle)] pub struct UIFoldout {
-# [offset (288)] # [rename (name = "content")] pub content : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (296)] # [rename (name = "arrowOpened")] pub arrow_opened : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (304)] # [rename (name = "arrowClosed")] pub arrow_closed : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/ui/uifoldout/UIFoldout.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.UI",name="UIFoldout")]#[parent(crate::unity_engine::ui::toggle::Toggle)]pub struct UIFoldout{#[offset(288)]#[rename(name="content")]pub content:crate::unity_engine::gameobject::GameObject, #[offset(296)]#[rename(name="arrowOpened")]pub arrow_opened:crate::unity_engine::gameobject::GameObject, #[offset(304)]#[rename(name="arrowClosed")]pub arrow_closed:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
-pub trait IUIFoldoutMethods : IUIFoldout { # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnValidate()` overload"] fn on_validate (self ,) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetState(bool)` overload"] fn set_state (self , state : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIFoldout , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (state) , :: core :: option :: Option :: None) } } } # [doc = "`SetState(bool, bool)` overload"] fn set_state_2 (self , state : impl :: core :: convert :: Into < bool > , rebuild_layout : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIFoldout , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (state) , :: core :: convert :: Into :: into (rebuild_layout) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UIFoldout as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UIFoldout , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x33e4770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-rendering-ui-uifoldout")]pub trait IUIFoldoutMethods:IUIFoldout{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <UIFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4480usize)as*mut u8,();
+(UIFoldout)__receiver)}
+}
+#[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <UIFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4570usize)as*mut u8,();
+(UIFoldout)__receiver)}
+}
+#[doc="`SetState(bool)` overload"]fn set_state(self,state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UIFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4560usize)as*mut u8,();
+(UIFoldout)__receiver,(bool)::core::convert::Into::into(state))}
+}
+#[doc="`SetState(bool, bool)` overload"]fn set_state_2(self,state:impl::core::convert::Into<bool> ,rebuild_layout:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UIFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4580usize)as*mut u8,();
+(UIFoldout)__receiver,(bool)::core::convert::Into::into(state),(bool)::core::convert::Into::into(rebuild_layout))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UIFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4770usize)as*mut u8,();
+(UIFoldout)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
-impl < __T : IUIFoldout > IUIFoldoutMethods for __T { }
+#[cfg(feature="unity_engine-rendering-ui-uifoldout")]impl<__T:IUIFoldout>IUIFoldoutMethods for __T{}
 
-#[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
-impl UIFoldout { pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_validate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_state_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_state_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UIFoldout as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="unity_engine-rendering-ui-uifoldout")]impl UIFoldout{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_validate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_state_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "unity_engine-rendering-ui-uifoldout")]
-impl UIFoldout {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UIFoldout) , :: core :: stringify ! (new) ,)) ; < Self as IUIFoldoutMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-rendering-ui-uifoldout")]impl UIFoldout{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UIFoldout), ::core::stringify!(new),));
+ <Self as IUIFoldoutMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout")]

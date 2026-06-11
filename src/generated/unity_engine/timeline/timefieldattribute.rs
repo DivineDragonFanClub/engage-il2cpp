@@ -4,94 +4,65 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: propertyattribute :: { IPropertyAttribute , PropertyAttribute }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute.md"))] # [:: unity2 :: class (namespace = "UnityEngine.Timeline" , name = "TimeFieldAttribute")] # [parent (crate :: unity_engine :: propertyattribute :: PropertyAttribute)] pub struct TimeFieldAttribute {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute_UseEditMode.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct TimeFieldAttribute_UseEditMode  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute_UseEditMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimeFieldAttribute_UseEditMode{pub value:i32,}
+impl::unity2::ClassIdentity for TimeFieldAttribute_UseEditMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
+const NAME: &'static str="TimeFieldAttribute.UseEditMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TimeFieldAttribute_UseEditMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TimeFieldAttribute_UseEditMode{pub fn none()->Self{Self{value:0}
+}
+pub fn apply_edit_mode()->Self{Self{value:1}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for TimeFieldAttribute_UseEditMode  {
-    const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-    const NAME: &'static str = "TimeFieldAttribute.UseEditMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for TimeFieldAttribute_UseEditMode  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  TimeFieldAttribute_UseEditMode  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn apply_edit_mode() -> Self {
-        Self { value: 1 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimeFieldAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct TimeFieldAttribute{}
 
 }
 
 #[cfg(feature = "unity_engine-timeline-timefieldattribute-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-timeline-timefieldattribute")]
-pub trait ITimeFieldAttributeMethods : ITimeFieldAttribute { # [doc = "`.ctor(crate::unity_engine::timeline::timefieldattribute::TimeFieldAttribute_UseEditMode)` overload"] fn ctor (self , use_edit_mode : impl :: core :: convert :: Into < crate :: unity_engine :: timeline :: timefieldattribute :: TimeFieldAttribute_UseEditMode >) -> () { unsafe { let __receiver = < TimeFieldAttribute as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TimeFieldAttribute , crate :: unity_engine :: timeline :: timefieldattribute :: TimeFieldAttribute_UseEditMode , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35db410usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (use_edit_mode) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-timeline-timefieldattribute")]pub trait ITimeFieldAttributeMethods:ITimeFieldAttribute{#[doc="`.ctor(crate::unity_engine::timeline::timefieldattribute::TimeFieldAttribute_UseEditMode)` overload"]fn ctor(self,use_edit_mode:impl::core::convert::Into<crate::unity_engine::timeline::timefieldattribute::TimeFieldAttribute_UseEditMode>)->(){unsafe{let __receiver= <TimeFieldAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35db410usize)as*mut u8,();
+(TimeFieldAttribute)__receiver,(crate::unity_engine::timeline::timefieldattribute::TimeFieldAttribute_UseEditMode)::core::convert::Into::into(use_edit_mode))}
+}
+}
 
-#[cfg(feature = "unity_engine-timeline-timefieldattribute")]
-impl < __T : ITimeFieldAttribute > ITimeFieldAttributeMethods for __T { }
+#[cfg(feature="unity_engine-timeline-timefieldattribute")]impl<__T:ITimeFieldAttribute>ITimeFieldAttributeMethods for __T{}
 
-#[cfg(feature = "unity_engine-timeline-timefieldattribute")]
-impl TimeFieldAttribute { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TimeFieldAttribute as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="unity_engine-timeline-timefieldattribute")]impl TimeFieldAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "unity_engine-timeline-timefieldattribute")]
-impl TimeFieldAttribute {
-# [doc = "`.ctor(crate::unity_engine::timeline::timefieldattribute::TimeFieldAttribute_UseEditMode)` — overload selector"] pub fn new (use_edit_mode : crate :: unity_engine :: timeline :: timefieldattribute :: TimeFieldAttribute_UseEditMode) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TimeFieldAttribute) , :: core :: stringify ! (new) ,)) ; < Self as ITimeFieldAttributeMethods > :: ctor (this , use_edit_mode) ; this }
+#[cfg(feature="unity_engine-timeline-timefieldattribute")]impl TimeFieldAttribute{#[doc="`.ctor(crate::unity_engine::timeline::timefieldattribute::TimeFieldAttribute_UseEditMode)` — overload selector"]pub fn new(use_edit_mode:crate::unity_engine::timeline::timefieldattribute::TimeFieldAttribute_UseEditMode)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TimeFieldAttribute), ::core::stringify!(new),));
+ <Self as ITimeFieldAttributeMethods> ::ctor(this,use_edit_mode);
+this}
 }
 
 #[cfg(feature = "unity_engine-timeline-timefieldattribute")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TimeFieldAttribute_UseEditMode;
     pub use super::TimeFieldAttribute;
     pub use super::ITimeFieldAttribute;
     pub use super::ITimeFieldAttributeMethods;
-    pub use super::TimeFieldAttribute_UseEditMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

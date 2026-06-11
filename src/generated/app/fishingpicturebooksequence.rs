@@ -4,109 +4,105 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: procscenesequence_1 :: { IProcSceneSequence_1 , ProcSceneSequence_1 }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::procscenesequence_1::{IProcSceneSequence_1,ProcSceneSequence_1}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingpicturebooksequence/FishingPictureBookSequence_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct FishingPictureBookSequence_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingpicturebooksequence/FishingPictureBookSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FishingPictureBookSequence_Label{pub value:i32,}
+impl::unity2::ClassIdentity for FishingPictureBookSequence_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="FishingPictureBookSequence.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for FishingPictureBookSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl FishingPictureBookSequence_Label{pub fn none()->Self{Self{value:0}
+}
+pub fn ready_menu()->Self{Self{value:1}
+}
+pub fn create_menu()->Self{Self{value:2}
+}
+pub fn exit()->Self{Self{value:3}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for FishingPictureBookSequence_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FishingPictureBookSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for FishingPictureBookSequence_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  FishingPictureBookSequence_Label  {
-    pub fn none() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn ready_menu() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn create_menu() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn exit() -> Self {
-        Self { value: 3 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpicturebooksequence/FishingPictureBookSequence.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingPictureBookSequence")] # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)] pub struct FishingPictureBookSequence {
-# [static_field] # [rename (name = "cTextureAtlasPath")] pub c_texture_atlas_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cResultTextureGold")] pub c_result_texture_gold : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cResultTextureSilver")] pub c_result_texture_silver : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "cResultTextureBronze")] pub c_result_texture_bronze : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingpicturebooksequence/FishingPictureBookSequence.md"))]#[::unity2::class(namespace="App",name="FishingPictureBookSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct FishingPictureBookSequence{#[static_field]#[rename(name="cTextureAtlasPath")]pub c_texture_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cResultTextureGold")]pub c_result_texture_gold: ::unity2::Il2CppString, #[static_field]#[rename(name="cResultTextureSilver")]pub c_result_texture_silver: ::unity2::Il2CppString, #[static_field]#[rename(name="cResultTextureBronze")]pub c_result_texture_bronze: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "app-fishingpicturebooksequence-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingpicturebooksequence")]
-impl FishingPictureBookSequence { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604680usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingpicturebooksequence")]impl FishingPictureBookSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2604680usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-fishingpicturebooksequence")]
-pub trait IFishingPictureBookSequenceMethods : IFishingPictureBookSequence { # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < FishingPictureBookSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26040d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`LoadResource()` overload"] fn load_resource (self ,) -> () { unsafe { let __receiver = < FishingPictureBookSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604140usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsLoadingResource()` overload"] fn is_loading_resource (self ,) -> bool { unsafe { let __receiver = < FishingPictureBookSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookSequence , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604250usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Open()` overload"] fn open (self ,) -> () { unsafe { let __receiver = < FishingPictureBookSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604340usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UnloadResource()` overload"] fn unload_resource (self ,) -> () { unsafe { let __receiver = < FishingPictureBookSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604470usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Exit()` overload"] fn exit (self ,) -> () { unsafe { let __receiver = < FishingPictureBookSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`CreatePictureBookMenu()` overload"] fn create_picture_book_menu (self ,) -> () { unsafe { let __receiver = < FishingPictureBookSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingPictureBookSequence as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingPictureBookSequence , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2604d30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingpicturebooksequence")]pub trait IFishingPictureBookSequenceMethods:IFishingPictureBookSequence{#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26040d0usize)as*mut u8,();
+(FishingPictureBookSequence)__receiver)}
+}
+#[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604140usize)as*mut u8,();
+(FishingPictureBookSequence)__receiver)}
+}
+#[doc="`IsLoadingResource()` overload"]fn is_loading_resource(self,)->bool{unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604250usize)as*mut u8,bool;
+(FishingPictureBookSequence)__receiver)}
+}
+#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604340usize)as*mut u8,();
+(FishingPictureBookSequence)__receiver)}
+}
+#[doc="`UnloadResource()` overload"]fn unload_resource(self,)->(){unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604470usize)as*mut u8,();
+(FishingPictureBookSequence)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604550usize)as*mut u8,();
+(FishingPictureBookSequence)__receiver)}
+}
+#[doc="`CreatePictureBookMenu()` overload"]fn create_picture_book_menu(self,)->(){unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604670usize)as*mut u8,();
+(FishingPictureBookSequence)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2604d30usize)as*mut u8,();
+(FishingPictureBookSequence)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingpicturebooksequence")]
-impl < __T : IFishingPictureBookSequence > IFishingPictureBookSequenceMethods for __T { }
+#[cfg(feature="app-fishingpicturebooksequence")]impl<__T:IFishingPictureBookSequence>IFishingPictureBookSequenceMethods for __T{}
 
-#[cfg(feature = "app-fishingpicturebooksequence")]
-impl FishingPictureBookSequence { pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn load_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn is_loading_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn open_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn unload_resource_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn exit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_picture_book_menu_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingPictureBookSequence as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } }
+#[cfg(feature="app-fishingpicturebooksequence")]impl FishingPictureBookSequence{pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_picture_book_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
 
-#[cfg(feature = "app-fishingpicturebooksequence")]
-impl FishingPictureBookSequence {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingPictureBookSequence) , :: core :: stringify ! (new) ,)) ; < Self as IFishingPictureBookSequenceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingpicturebooksequence")]impl FishingPictureBookSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingPictureBookSequence), ::core::stringify!(new),));
+ <Self as IFishingPictureBookSequenceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingpicturebooksequence")]

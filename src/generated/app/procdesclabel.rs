@@ -4,34 +4,46 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesclabel/ProcDescLabel.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescLabel")] # [parent (crate :: app :: procdesc :: ProcDesc)] pub struct ProcDescLabel {
-# [offset (20)] # [rename (name = "m_Label")] pub m_label : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesclabel/ProcDescLabel.md"))]#[::unity2::class(namespace="App",name="ProcDescLabel")]#[parent(crate::app::procdesc::ProcDesc)]pub struct ProcDescLabel{#[offset(20)]#[rename(name="m_Label")]pub m_label:i32,}
 
 }
 
 #[cfg(feature = "app-procdesclabel-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdesclabel")]
-pub trait IProcDescLabelMethods : IProcDescLabel { # [doc = "`.ctor(i32)` overload"] fn ctor (self , label : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < ProcDescLabel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescLabel , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281af20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (label) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDescLabel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescLabel , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d2c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } # [doc = "`get_Label()` overload"] fn get_label (self ,) -> i32 { unsafe { let __receiver = < ProcDescLabel as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescLabel , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d2d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-procdesclabel")]pub trait IProcDescLabelMethods:IProcDescLabel{#[doc="`.ctor(i32)` overload"]fn ctor(self,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProcDescLabel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281af20usize)as*mut u8,();
+(ProcDescLabel)__receiver,(i32)::core::convert::Into::into(label))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescLabel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d2c0usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(ProcDescLabel)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+#[doc="`get_Label()` overload"]fn get_label(self,)->i32{unsafe{let __receiver= <ProcDescLabel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d2d0usize)as*mut u8,i32;
+(ProcDescLabel)__receiver)}
+}
+}
 
-#[cfg(feature = "app-procdesclabel")]
-impl < __T : IProcDescLabel > IProcDescLabelMethods for __T { }
+#[cfg(feature="app-procdesclabel")]impl<__T:IProcDescLabel>IProcDescLabelMethods for __T{}
 
-#[cfg(feature = "app-procdesclabel")]
-impl ProcDescLabel { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescLabel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescLabel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_label_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescLabel as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-procdesclabel")]impl ProcDescLabel{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-procdesclabel")]
-impl ProcDescLabel {
-# [doc = "`.ctor(i32)` — overload selector"] pub fn new (label : i32) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescLabel) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescLabelMethods > :: ctor (this , label) ; this }
+#[cfg(feature="app-procdesclabel")]impl ProcDescLabel{#[doc="`.ctor(i32)` — overload selector"]pub fn new(label:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescLabel), ::core::stringify!(new),));
+ <Self as IProcDescLabelMethods> ::ctor(this,label);
+this}
 }
 
 #[cfg(feature = "app-procdesclabel")]

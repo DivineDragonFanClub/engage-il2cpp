@@ -4,117 +4,99 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencereliance/SortieSequenceReliance.md"))] # [:: unity2 :: class (namespace = "App" , name = "SortieSequenceReliance")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencereliance :: SortieSequenceReliance >)] pub struct SortieSequenceReliance {}
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencereliance/SortieSequenceReliance_Label.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct SortieSequenceReliance_Label  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequencereliance/SortieSequenceReliance_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSequenceReliance_Label{pub value:i32,}
+impl::unity2::ClassIdentity for SortieSequenceReliance_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SortieSequenceReliance.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SortieSequenceReliance_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SortieSequenceReliance_Label{pub fn selection_unit()->Self{Self{value:0}
+}
+pub fn selection_partner()->Self{Self{value:1}
+}
+pub fn talk()->Self{Self{value:2}
+}
+pub fn buddy()->Self{Self{value:3}
+}
+pub fn end()->Self{Self{value:4}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for SortieSequenceReliance_Label  {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSequenceReliance.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for SortieSequenceReliance_Label  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  SortieSequenceReliance_Label  {
-    pub fn selection_unit() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn selection_partner() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn talk() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn buddy() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn end() -> Self {
-        Self { value: 4 }
-
-    }
-
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequencereliance/SortieSequenceReliance.md"))]#[::unity2::class(namespace="App",name="SortieSequenceReliance")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequencereliance::SortieSequenceReliance>)]pub struct SortieSequenceReliance{}
 
 }
 
 #[cfg(feature = "app-sortiesequencereliance-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-sortiesequencereliance")]
-impl SortieSequenceReliance { # [doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"] pub fn create_bind (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1fefbc0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequencereliance")]impl SortieSequenceReliance{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fefbc0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
 
-#[cfg(feature = "app-sortiesequencereliance")]
-pub trait ISortieSequenceRelianceMethods : ISortieSequenceReliance { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < SortieSequenceReliance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceReliance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff02d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnShutdown()` overload"] fn on_shutdown (self ,) -> () { unsafe { let __receiver = < SortieSequenceReliance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceReliance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff0440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Talk()` overload"] fn talk (self ,) -> () { unsafe { let __receiver = < SortieSequenceReliance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceReliance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff04b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Buddy()` overload"] fn buddy (self ,) -> () { unsafe { let __receiver = < SortieSequenceReliance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceReliance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff0680usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Message()` overload"] fn message (self ,) -> () { unsafe { let __receiver = < SortieSequenceReliance as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (SortieSequenceReliance , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1ff0760usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-sortiesequencereliance")]pub trait ISortieSequenceRelianceMethods:ISortieSequenceReliance{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieSequenceReliance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff02d0usize)as*mut u8,();
+(SortieSequenceReliance)__receiver)}
+}
+#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <SortieSequenceReliance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0440usize)as*mut u8,();
+(SortieSequenceReliance)__receiver)}
+}
+#[doc="`Talk()` overload"]fn talk(self,)->(){unsafe{let __receiver= <SortieSequenceReliance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff04b0usize)as*mut u8,();
+(SortieSequenceReliance)__receiver)}
+}
+#[doc="`Buddy()` overload"]fn buddy(self,)->(){unsafe{let __receiver= <SortieSequenceReliance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0680usize)as*mut u8,();
+(SortieSequenceReliance)__receiver)}
+}
+#[doc="`Message()` overload"]fn message(self,)->(){unsafe{let __receiver= <SortieSequenceReliance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ff0760usize)as*mut u8,();
+(SortieSequenceReliance)__receiver)}
+}
+}
 
-#[cfg(feature = "app-sortiesequencereliance")]
-impl < __T : ISortieSequenceReliance > ISortieSequenceRelianceMethods for __T { }
+#[cfg(feature="app-sortiesequencereliance")]impl<__T:ISortieSequenceReliance>ISortieSequenceRelianceMethods for __T{}
 
-#[cfg(feature = "app-sortiesequencereliance")]
-impl SortieSequenceReliance { pub fn create_bind_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceReliance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceReliance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn on_shutdown_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceReliance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn talk_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceReliance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn buddy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceReliance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn message_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < SortieSequenceReliance as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="app-sortiesequencereliance")]impl SortieSequenceReliance{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn buddy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "app-sortiesequencereliance")]
-impl SortieSequenceReliance {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (SortieSequenceReliance) , :: core :: stringify ! (new) ,)) ; < Self as ISortieSequenceRelianceMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-sortiesequencereliance")]impl SortieSequenceReliance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieSequenceReliance), ::core::stringify!(new),));
+ <Self as ISortieSequenceRelianceMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-sortiesequencereliance")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SortieSequenceReliance_Label;
     pub use super::SortieSequenceReliance;
     pub use super::ISortieSequenceReliance;
     pub use super::ISortieSequenceRelianceMethods;
-    pub use super::SortieSequenceReliance_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

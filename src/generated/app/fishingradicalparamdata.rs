@@ -4,57 +4,30 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: structbase :: { IStructBase , StructBase }
- ;
- use crate :: app :: structdata_1 :: { IStructData_1 , StructData_1 }
- ;
- use crate :: app :: structtemplate_1 :: { IStructTemplate_1 , StructTemplate_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::structbase::{IStructBase,StructBase}
+;
+use crate::app::structdata_1::{IStructData_1,StructData_1}
+;
+use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingradicalparamdata/FishingRadicalParamData.md"))] # [:: unity2 :: class (namespace = "App" , name = "FishingRadicalParamData")] # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData >)] pub struct FishingRadicalParamData {
-# [offset (88)] # [rename (name = "Param")] pub param : :: unity2 :: Array < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData_RadicalParam > ,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingradicalparamdata/FishingRadicalParamData.md"))]#[::unity2::class(namespace="App",name="FishingRadicalParamData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::fishingradicalparamdata::FishingRadicalParamData>)]pub struct FishingRadicalParamData{#[offset(88)]#[rename(name="Param")]pub param: ::unity2::Array<crate::app::fishingradicalparamdata::FishingRadicalParamData_RadicalParam> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingradicalparamdata/FishingRadicalParamData_RadicalParam.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FishingRadicalParamData_RadicalParam{pub sec:f32,pub power:f32,pub regene_speed:f32,}
+impl::unity2::ClassIdentity for FishingRadicalParamData_RadicalParam{const NAMESPACE: &'static str="App";
+const NAME: &'static str="FishingRadicalParamData.RadicalParam";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
 }
-
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingradicalparamdata/FishingRadicalParamData_RadicalParam.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FishingRadicalParamData_RadicalParam {
-    pub sec: f32,
-    pub power: f32,
-    pub regene_speed: f32,
-}
-
-
-impl ::unity2::ClassIdentity for FishingRadicalParamData_RadicalParam {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FishingRadicalParamData.RadicalParam";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl ::unity2::IlType for FishingRadicalParamData_RadicalParam {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
+impl::unity2::IlType for FishingRadicalParamData_RadicalParam{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -62,21 +35,163 @@ impl ::unity2::IlType for FishingRadicalParamData_RadicalParam {
 #[cfg(feature = "app-fishingradicalparamdata-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-fishingradicalparamdata")]
-impl FishingRadicalParamData { # [doc = "`Load()` overload"] pub fn load () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26067a0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingradicalparamdata")]impl FishingRadicalParamData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26067a0usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-fishingradicalparamdata")]
-pub trait IFishingRadicalParamDataMethods : IFishingRadicalParamData { # [doc = "`get_ID()` overload"] fn get_id (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606550usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_ID(::unity2::Il2CppString)` overload"] fn set_id (self , value : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606560usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Sec_01()` overload"] fn get_sec_01 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606570usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Sec_01(f32)` overload"] fn set_sec_01 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606580usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Power_01()` overload"] fn get_power_01 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606590usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Power_01(f32)` overload"] fn set_power_01 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26065a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Regene_01()` overload"] fn get_regene_01 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26065b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Regene_01(f32)` overload"] fn set_regene_01 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26065c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Sec_02()` overload"] fn get_sec_02 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26065d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Sec_02(f32)` overload"] fn set_sec_02 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26065e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Power_02()` overload"] fn get_power_02 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26065f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Power_02(f32)` overload"] fn set_power_02 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606600usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Regene_02()` overload"] fn get_regene_02 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606610usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Regene_02(f32)` overload"] fn set_regene_02 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606620usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Sec_03()` overload"] fn get_sec_03 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Sec_03(f32)` overload"] fn set_sec_03 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Power_03()` overload"] fn get_power_03 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Power_03(f32)` overload"] fn set_power_03 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Regene_03()` overload"] fn get_regene_03 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Regene_03(f32)` overload"] fn set_regene_03 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606680usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Sec_04()` overload"] fn get_sec_04 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606690usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Sec_04(f32)` overload"] fn set_sec_04 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26066a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Power_04()` overload"] fn get_power_04 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26066b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Power_04(f32)` overload"] fn set_power_04 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26066c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_Regene_04()` overload"] fn get_regene_04 (self ,) -> f32 { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26066d0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_Regene_04(f32)` overload"] fn set_regene_04 (self , value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26066e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x26066f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnBuild()` overload"] fn on_build (self ,) -> () { unsafe { let __receiver = < FishingRadicalParamData as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (FishingRadicalParamData , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2606850usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-fishingradicalparamdata")]pub trait IFishingRadicalParamDataMethods:IFishingRadicalParamData{#[doc="`get_ID()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606550usize)as*mut u8, ::unity2::Il2CppString;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_ID(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606560usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Sec_01()` overload"]fn get_sec_01(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606570usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Sec_01(f32)` overload"]fn set_sec_01(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606580usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Power_01()` overload"]fn get_power_01(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606590usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Power_01(f32)` overload"]fn set_power_01(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26065a0usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Regene_01()` overload"]fn get_regene_01(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26065b0usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Regene_01(f32)` overload"]fn set_regene_01(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26065c0usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Sec_02()` overload"]fn get_sec_02(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26065d0usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Sec_02(f32)` overload"]fn set_sec_02(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26065e0usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Power_02()` overload"]fn get_power_02(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26065f0usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Power_02(f32)` overload"]fn set_power_02(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606600usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Regene_02()` overload"]fn get_regene_02(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606610usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Regene_02(f32)` overload"]fn set_regene_02(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606620usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Sec_03()` overload"]fn get_sec_03(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606630usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Sec_03(f32)` overload"]fn set_sec_03(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606640usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Power_03()` overload"]fn get_power_03(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606650usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Power_03(f32)` overload"]fn set_power_03(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606660usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Regene_03()` overload"]fn get_regene_03(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606670usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Regene_03(f32)` overload"]fn set_regene_03(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606680usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Sec_04()` overload"]fn get_sec_04(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606690usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Sec_04(f32)` overload"]fn set_sec_04(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26066a0usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Power_04()` overload"]fn get_power_04(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26066b0usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Power_04(f32)` overload"]fn set_power_04(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26066c0usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Regene_04()` overload"]fn get_regene_04(self,)->f32{unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26066d0usize)as*mut u8,f32;
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`set_Regene_04(f32)` overload"]fn set_regene_04(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26066e0usize)as*mut u8,();
+(FishingRadicalParamData)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x26066f0usize)as*mut u8,();
+(FishingRadicalParamData)__receiver)}
+}
+#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <FishingRadicalParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2606850usize)as*mut u8,();
+(FishingRadicalParamData)__receiver)}
+}
+}
 
-#[cfg(feature = "app-fishingradicalparamdata")]
-impl < __T : IFishingRadicalParamData > IFishingRadicalParamDataMethods for __T { }
+#[cfg(feature="app-fishingradicalparamdata")]impl<__T:IFishingRadicalParamData>IFishingRadicalParamDataMethods for __T{}
 
-#[cfg(feature = "app-fishingradicalparamdata")]
-impl FishingRadicalParamData { pub fn get_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_id_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_sec_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_sec_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_power_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn set_power_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn get_regene_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn set_regene_01_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn get_sec_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn set_sec_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn get_power_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_power_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_regene_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn set_regene_02_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn get_sec_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } pub fn set_sec_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [15] } pub fn get_power_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [16] } pub fn set_power_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [17] } pub fn get_regene_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [18] } pub fn set_regene_03_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [19] } pub fn get_sec_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [20] } pub fn set_sec_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [21] } pub fn get_power_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [22] } pub fn set_power_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [23] } pub fn get_regene_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [24] } pub fn set_regene_04_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [25] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [26] } pub fn load_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [27] } pub fn on_build_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < FishingRadicalParamData as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [28] } }
+#[cfg(feature="app-fishingradicalparamdata")]impl FishingRadicalParamData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sec_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_sec_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_power_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_power_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_regene_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_regene_01_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_sec_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_sec_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_power_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_power_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_regene_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_regene_02_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_sec_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_sec_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_power_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn set_power_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_regene_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn set_regene_03_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_sec_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn set_sec_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_power_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn set_power_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_regene_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_regene_04_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+}
 
-#[cfg(feature = "app-fishingradicalparamdata")]
-impl FishingRadicalParamData {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (FishingRadicalParamData) , :: core :: stringify ! (new) ,)) ; < Self as IFishingRadicalParamDataMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-fishingradicalparamdata")]impl FishingRadicalParamData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FishingRadicalParamData), ::core::stringify!(new),));
+ <Self as IFishingRadicalParamDataMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-fishingradicalparamdata")]

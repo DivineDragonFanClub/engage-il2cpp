@@ -4,50 +4,54 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: combat :: basecameracontroller :: { BaseCameraController , IBaseCameraController }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
+;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerorbital/CameraControllerOrbital.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CameraControllerOrbital")] # [parent (crate :: combat :: basecameracontroller :: BaseCameraController)] pub struct CameraControllerOrbital {
-# [offset (168)] # [rename (name = "Target")] pub target : crate :: combat :: camerapositiondata :: CameraPositionData_TargetJoint ,
-# [offset (172)] # [rename (name = "Distance")] pub distance : f32 ,
-# [offset (176)] # [rename (name = "StartDegree")] pub start_degree : f32 ,
-# [offset (180)] # [rename (name = "RotateSpeed")] pub rotate_speed : f32 ,
-# [offset (184)] # [rename (name = "CameraHeight")] pub camera_height : f32 ,
-# [offset (188)] # [rename (name = "FOVWalk")] pub fov_walk : f32 ,
-# [offset (192)] # [rename (name = "FOVRide")] pub fov_ride : f32 ,
-# [offset (196)] # [rename (name = "m_Rotate")] pub m_rotate : f32 ,
-# [offset (200)] # [rename (name = "m_LookAt")] pub m_look_at : crate :: combat :: fxz :: FXZ ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrollerorbital/CameraControllerOrbital.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerOrbital")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerOrbital{#[offset(168)]#[rename(name="Target")]pub target:crate::combat::camerapositiondata::CameraPositionData_TargetJoint, #[offset(172)]#[rename(name="Distance")]pub distance:f32, #[offset(176)]#[rename(name="StartDegree")]pub start_degree:f32, #[offset(180)]#[rename(name="RotateSpeed")]pub rotate_speed:f32, #[offset(184)]#[rename(name="CameraHeight")]pub camera_height:f32, #[offset(188)]#[rename(name="FOVWalk")]pub fov_walk:f32, #[offset(192)]#[rename(name="FOVRide")]pub fov_ride:f32, #[offset(196)]#[rename(name="m_Rotate")]pub m_rotate:f32, #[offset(200)]#[rename(name="m_LookAt")]pub m_look_at:crate::combat::fxz::FXZ,}
 
 }
 
 #[cfg(feature = "combat-cameracontrollerorbital-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-cameracontrollerorbital")]
-pub trait ICameraControllerOrbitalMethods : ICameraControllerOrbital { # [doc = "`Activate()` overload"] fn activate (self ,) -> () { unsafe { let __receiver = < CameraControllerOrbital as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerOrbital , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b1770usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetCameraTargets()` overload"] fn get_camera_targets (self ,) -> :: unity2 :: Array < i32 > { unsafe { let __receiver = < CameraControllerOrbital as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerOrbital , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < i32 > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b2100usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CameraControllerOrbital as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CameraControllerOrbital , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25b2150usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-cameracontrollerorbital")]pub trait ICameraControllerOrbitalMethods:ICameraControllerOrbital{#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerOrbital as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b1770usize)as*mut u8,();
+(CameraControllerOrbital)__receiver)}
+}
+#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerOrbital as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2100usize)as*mut u8, ::unity2::Array<i32> ;
+(CameraControllerOrbital)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerOrbital as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2150usize)as*mut u8,();
+(CameraControllerOrbital)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-cameracontrollerorbital")]
-impl < __T : ICameraControllerOrbital > ICameraControllerOrbitalMethods for __T { }
+#[cfg(feature="combat-cameracontrollerorbital")]impl<__T:ICameraControllerOrbital>ICameraControllerOrbitalMethods for __T{}
 
-#[cfg(feature = "combat-cameracontrollerorbital")]
-impl CameraControllerOrbital { pub fn activate_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerOrbital as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_camera_targets_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerOrbital as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CameraControllerOrbital as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-cameracontrollerorbital")]impl CameraControllerOrbital{pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-cameracontrollerorbital")]
-impl CameraControllerOrbital {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CameraControllerOrbital) , :: core :: stringify ! (new) ,)) ; < Self as ICameraControllerOrbitalMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-cameracontrollerorbital")]impl CameraControllerOrbital{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraControllerOrbital), ::core::stringify!(new),));
+ <Self as ICameraControllerOrbitalMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-cameracontrollerorbital")]

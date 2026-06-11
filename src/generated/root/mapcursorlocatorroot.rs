@@ -4,153 +4,121 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: system :: r#enum :: { Enum , IEnum }
- ;
- use crate :: system :: valuetype :: { IValueType , ValueType }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::system::r#enum::{Enum,IEnum}
+;
+use crate::system::valuetype::{IValueType,ValueType}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/mapcursorlocatorroot/MapCursorLocatorRoot_PartType.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
-pub struct MapCursorLocatorRoot_PartType  {
-    pub value: i32,
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapcursorlocatorroot/MapCursorLocatorRoot_PartType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapCursorLocatorRoot_PartType{pub value:i32,}
+impl::unity2::ClassIdentity for MapCursorLocatorRoot_PartType{const NAMESPACE: &'static str="";
+const NAME: &'static str="MapCursorLocatorRoot.PartType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapCursorLocatorRoot_PartType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapCursorLocatorRoot_PartType{pub fn map_cursor1()->Self{Self{value:0}
+}
+pub fn map_cursor2()->Self{Self{value:1}
+}
+pub fn map_cursor3()->Self{Self{value:2}
+}
+pub fn map_cursor4()->Self{Self{value:3}
+}
+pub fn lock_root1()->Self{Self{value:4}
+}
+pub fn lock_root2()->Self{Self{value:5}
+}
+pub fn lock_root3()->Self{Self{value:6}
+}
+pub fn lock_root4()->Self{Self{value:7}
+}
+pub fn num()->Self{Self{value:8}
+}
 }
 
 
-impl  ::unity2::ClassIdentity for MapCursorLocatorRoot_PartType  {
-    const NAMESPACE: &'static str = "";
-
-    const NAME: &'static str = "MapCursorLocatorRoot.PartType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> =
-            ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-        }
-)
-    }
-
-}
-
-
-impl  ::unity2::IlType for MapCursorLocatorRoot_PartType  {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class().raw()._1.byval_arg
-    }
-
-}
-
-
-impl  MapCursorLocatorRoot_PartType  {
-    pub fn map_cursor1() -> Self {
-        Self { value: 0 }
-
-    }
-
-
-    pub fn map_cursor2() -> Self {
-        Self { value: 1 }
-
-    }
-
-
-    pub fn map_cursor3() -> Self {
-        Self { value: 2 }
-
-    }
-
-
-    pub fn map_cursor4() -> Self {
-        Self { value: 3 }
-
-    }
-
-
-    pub fn lock_root1() -> Self {
-        Self { value: 4 }
-
-    }
-
-
-    pub fn lock_root2() -> Self {
-        Self { value: 5 }
-
-    }
-
-
-    pub fn lock_root3() -> Self {
-        Self { value: 6 }
-
-    }
-
-
-    pub fn lock_root4() -> Self {
-        Self { value: 7 }
-
-    }
-
-
-    pub fn num() -> Self {
-        Self { value: 8 }
-
-    }
-
-}
-
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/mapcursorlocatorroot/MapCursorLocatorRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "MapCursorLocatorRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MapCursorLocatorRoot {
-# [offset (24)] # [rename (name = "m_MapCursor1")] pub m_map_cursor1 : crate :: unity_engine :: transform :: Transform ,
-# [offset (32)] # [rename (name = "m_MapCursor2")] pub m_map_cursor2 : crate :: unity_engine :: transform :: Transform ,
-# [offset (40)] # [rename (name = "m_MapCursor3")] pub m_map_cursor3 : crate :: unity_engine :: transform :: Transform ,
-# [offset (48)] # [rename (name = "m_MapCursor4")] pub m_map_cursor4 : crate :: unity_engine :: transform :: Transform ,
-# [offset (56)] # [rename (name = "m_LockRoot1")] pub m_lock_root1 : crate :: unity_engine :: transform :: Transform ,
-# [offset (64)] # [rename (name = "m_LockRoot2")] pub m_lock_root2 : crate :: unity_engine :: transform :: Transform ,
-# [offset (72)] # [rename (name = "m_LockRoot3")] pub m_lock_root3 : crate :: unity_engine :: transform :: Transform ,
-# [offset (80)] # [rename (name = "m_LockRoot4")] pub m_lock_root4 : crate :: unity_engine :: transform :: Transform ,
-# [offset (88)] # [rename (name = "m_LockCursor1")] pub m_lock_cursor1 : crate :: unity_engine :: transform :: Transform ,
-# [offset (96)] # [rename (name = "m_LockCursor2")] pub m_lock_cursor2 : crate :: unity_engine :: transform :: Transform ,
-# [offset (104)] # [rename (name = "m_LockCursor3")] pub m_lock_cursor3 : crate :: unity_engine :: transform :: Transform ,
-# [offset (112)] # [rename (name = "m_LockCursor4")] pub m_lock_cursor4 : crate :: unity_engine :: transform :: Transform ,
-# [offset (120)] # [rename (name = "m_MapCursors")] pub m_map_cursors : :: unity2 :: Array < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (128)] # [rename (name = "m_Colors")] pub m_colors : :: unity2 :: Array < crate :: root :: mapcursorcolor :: MapCursorColor > ,
-# [offset (136)] # [rename (name = "m_OrigPos")] pub m_orig_pos : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
-# [offset (144)] # [rename (name = "m_SizeX")] pub m_size_x : i32 ,
-# [offset (148)] # [rename (name = "m_SizeZ")] pub m_size_z : i32 ,
-# [offset (152)] # [rename (name = "m_CursorCount")] pub m_cursor_count : i32 ,
-# [static_field] # [rename (name = "MOVE_CURSOR_FRAME")] pub move_cursor_frame : i32 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapcursorlocatorroot/MapCursorLocatorRoot.md"))]#[::unity2::class(namespace="",name="MapCursorLocatorRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapCursorLocatorRoot{#[offset(24)]#[rename(name="m_MapCursor1")]pub m_map_cursor1:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="m_MapCursor2")]pub m_map_cursor2:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="m_MapCursor3")]pub m_map_cursor3:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="m_MapCursor4")]pub m_map_cursor4:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="m_LockRoot1")]pub m_lock_root1:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="m_LockRoot2")]pub m_lock_root2:crate::unity_engine::transform::Transform, #[offset(72)]#[rename(name="m_LockRoot3")]pub m_lock_root3:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="m_LockRoot4")]pub m_lock_root4:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="m_LockCursor1")]pub m_lock_cursor1:crate::unity_engine::transform::Transform, #[offset(96)]#[rename(name="m_LockCursor2")]pub m_lock_cursor2:crate::unity_engine::transform::Transform, #[offset(104)]#[rename(name="m_LockCursor3")]pub m_lock_cursor3:crate::unity_engine::transform::Transform, #[offset(112)]#[rename(name="m_LockCursor4")]pub m_lock_cursor4:crate::unity_engine::transform::Transform, #[offset(120)]#[rename(name="m_MapCursors")]pub m_map_cursors: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(128)]#[rename(name="m_Colors")]pub m_colors: ::unity2::Array<crate::root::mapcursorcolor::MapCursorColor> , #[offset(136)]#[rename(name="m_OrigPos")]pub m_orig_pos: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(144)]#[rename(name="m_SizeX")]pub m_size_x:i32, #[offset(148)]#[rename(name="m_SizeZ")]pub m_size_z:i32, #[offset(152)]#[rename(name="m_CursorCount")]pub m_cursor_count:i32, #[static_field]#[rename(name="MOVE_CURSOR_FRAME")]pub move_cursor_frame:i32,}
 
 }
 
 #[cfg(feature = "root-mapcursorlocatorroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-mapcursorlocatorroot")]
-pub trait IMapCursorLocatorRootMethods : IMapCursorLocatorRoot { # [doc = "`Awake()` overload"] fn awake (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c2970usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`OnDestroy()` overload"] fn on_destroy (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c31b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetGameObject()` overload"] fn get_game_object (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c29b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetMapCursorColor()` overload"] fn get_map_cursor_color (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c2c70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GetOrigPos()` overload"] fn get_orig_pos (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c2f40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`InitMapCursor()` overload"] fn init_map_cursor (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29b1700usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ScaleCursor(i32)` overload"] fn scale_cursor (self , frame : impl :: core :: convert :: Into < i32 >) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , i32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29affa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (frame) , :: core :: option :: Option :: None) } } } # [doc = "`IsScaleCursor()` overload"] fn is_scale_cursor (self ,) -> bool { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c31f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`SetColor(crate::unity_engine::color::Color)` overload"] fn set_color (self , color : impl :: core :: convert :: Into < crate :: unity_engine :: color :: Color >) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , crate :: unity_engine :: color :: Color , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29bf0c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (color) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MapCursorLocatorRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MapCursorLocatorRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x29c3330usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-mapcursorlocatorroot")]pub trait IMapCursorLocatorRootMethods:IMapCursorLocatorRoot{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c2970usize)as*mut u8,();
+(MapCursorLocatorRoot)__receiver)}
+}
+#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c31b0usize)as*mut u8,();
+(MapCursorLocatorRoot)__receiver)}
+}
+#[doc="`GetGameObject()` overload"]fn get_game_object(self,)->(){unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c29b0usize)as*mut u8,();
+(MapCursorLocatorRoot)__receiver)}
+}
+#[doc="`GetMapCursorColor()` overload"]fn get_map_cursor_color(self,)->(){unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c2c70usize)as*mut u8,();
+(MapCursorLocatorRoot)__receiver)}
+}
+#[doc="`GetOrigPos()` overload"]fn get_orig_pos(self,)->(){unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c2f40usize)as*mut u8,();
+(MapCursorLocatorRoot)__receiver)}
+}
+#[doc="`InitMapCursor()` overload"]fn init_map_cursor(self,)->(){unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29b1700usize)as*mut u8,();
+(MapCursorLocatorRoot)__receiver)}
+}
+#[doc="`ScaleCursor(i32)` overload"]fn scale_cursor(self,frame:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29affa0usize)as*mut u8,();
+(MapCursorLocatorRoot)__receiver,(i32)::core::convert::Into::into(frame))}
+}
+#[doc="`IsScaleCursor()` overload"]fn is_scale_cursor(self,)->bool{unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c31f0usize)as*mut u8,bool;
+(MapCursorLocatorRoot)__receiver)}
+}
+#[doc="`SetColor(crate::unity_engine::color::Color)` overload"]fn set_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29bf0c0usize)as*mut u8,();
+(MapCursorLocatorRoot)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCursorLocatorRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3330usize)as*mut u8,();
+(MapCursorLocatorRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "root-mapcursorlocatorroot")]
-impl < __T : IMapCursorLocatorRoot > IMapCursorLocatorRootMethods for __T { }
+#[cfg(feature="root-mapcursorlocatorroot")]impl<__T:IMapCursorLocatorRoot>IMapCursorLocatorRootMethods for __T{}
 
-#[cfg(feature = "root-mapcursorlocatorroot")]
-impl MapCursorLocatorRoot { pub fn awake_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn on_destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_map_cursor_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn get_orig_pos_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn init_map_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn scale_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn is_scale_cursor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn set_color_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MapCursorLocatorRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } }
+#[cfg(feature="root-mapcursorlocatorroot")]impl MapCursorLocatorRoot{pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_map_cursor_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_orig_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn init_map_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn scale_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_scale_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
 
-#[cfg(feature = "root-mapcursorlocatorroot")]
-impl MapCursorLocatorRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MapCursorLocatorRoot) , :: core :: stringify ! (new) ,)) ; < Self as IMapCursorLocatorRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-mapcursorlocatorroot")]impl MapCursorLocatorRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapCursorLocatorRoot), ::core::stringify!(new),));
+ <Self as IMapCursorLocatorRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-mapcursorlocatorroot")]

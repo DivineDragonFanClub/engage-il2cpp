@@ -4,45 +4,88 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/charactersignalobserver/CharacterSignalObserver.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "CharacterSignalObserver")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct CharacterSignalObserver {
-# [offset (24)] # [rename (name = "_cp")] pub cp : crate :: combat :: character :: Character ,
-# [offset (32)] # [rename (name = "_radialBlur")] pub radial_blur : crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur ,
-# [offset (48)] # [rename (name = "pushedFootIKEnabled")] pub pushed_foot_ik_enabled : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/charactersignalobserver/CharacterSignalObserver.md"))]#[::unity2::class(namespace="Combat",name="CharacterSignalObserver")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CharacterSignalObserver{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(32)]#[rename(name="_radialBlur")]pub radial_blur:crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur, #[offset(48)]#[rename(name="pushedFootIKEnabled")]pub pushed_foot_ik_enabled:bool,}
 
 }
 
 #[cfg(feature = "combat-charactersignalobserver-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-charactersignalobserver")]
-impl CharacterSignalObserver { # [doc = "`FindVolumeFromScene()` overload"] pub fn find_volume_from_scene () -> crate :: unity_engine :: rendering :: volume :: Volume { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: volume :: Volume = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25eead0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-charactersignalobserver")]impl CharacterSignalObserver{#[doc="`FindVolumeFromScene()` overload"]pub fn find_volume_from_scene()->crate::unity_engine::rendering::volume::Volume{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25eead0usize)as*mut u8,crate::unity_engine::rendering::volume::Volume;
+)}
+}
+}
 
-#[cfg(feature = "combat-charactersignalobserver")]
-pub trait ICharacterSignalObserverMethods : ICharacterSignalObserver { # [doc = "`get_CP()` overload"] fn get_cp (self ,) -> crate :: combat :: character :: Character { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> crate :: combat :: character :: Character = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ee930usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_RadialBlur()` overload"] fn get_radial_blur (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: rendering :: universal :: custom :: customradialblur :: CustomRadialBlur = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ee9f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Start()` overload"] fn start (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25eebd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`MyStart()` overload"] fn my_start (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25eec70usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`PushAndEnableFootIK(bool)` overload"] fn push_and_enable_foot_ik (self , v : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSignalObserver , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25efb10usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (v) , :: core :: option :: Option :: None) } } } # [doc = "`PopFootIK()` overload"] fn pop_foot_ik (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25efbe0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`GroundParticle(i32, ::unity2::Il2CppString)` overload"] fn ground_particle (self , effect_type : impl :: core :: convert :: Into < i32 > , node_name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSignalObserver , i32 , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25e6030usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (effect_type) , :: core :: convert :: Into :: into (node_name) , :: core :: option :: Option :: None) } } } # [doc = "`StopFootstepObservers()` overload"] fn stop_footstep_observers (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25efdb0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < CharacterSignalObserver as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (CharacterSignalObserver , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25efe60usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-charactersignalobserver")]pub trait ICharacterSignalObserverMethods:ICharacterSignalObserver{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <CharacterSignalObserver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ee930usize)as*mut u8,crate::combat::character::Character;
+(CharacterSignalObserver)__receiver)}
+}
+#[doc="`get_RadialBlur()` overload"]fn get_radial_blur(self,)->crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur{unsafe{let __receiver= <CharacterSignalObserver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ee9f0usize)as*mut u8,crate::unity_engine::rendering::universal::custom::customradialblur::CustomRadialBlur;
+(CharacterSignalObserver)__receiver)}
+}
+#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <CharacterSignalObserver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25eebd0usize)as*mut u8,();
+(CharacterSignalObserver)__receiver)}
+}
+#[doc="`MyStart()` overload"]fn my_start(self,)->(){unsafe{let __receiver= <CharacterSignalObserver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25eec70usize)as*mut u8,();
+(CharacterSignalObserver)__receiver)}
+}
+#[doc="`PushAndEnableFootIK(bool)` overload"]fn push_and_enable_foot_ik(self,v:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CharacterSignalObserver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25efb10usize)as*mut u8,();
+(CharacterSignalObserver)__receiver,(bool)::core::convert::Into::into(v))}
+}
+#[doc="`PopFootIK()` overload"]fn pop_foot_ik(self,)->(){unsafe{let __receiver= <CharacterSignalObserver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25efbe0usize)as*mut u8,();
+(CharacterSignalObserver)__receiver)}
+}
+#[doc="`GroundParticle(i32, ::unity2::Il2CppString)` overload"]fn ground_particle(self,effect_type:impl::core::convert::Into<i32> ,node_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CharacterSignalObserver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25e6030usize)as*mut u8,();
+(CharacterSignalObserver)__receiver,(i32)::core::convert::Into::into(effect_type),(::unity2::Il2CppString)::core::convert::Into::into(node_name))}
+}
+#[doc="`StopFootstepObservers()` overload"]fn stop_footstep_observers(self,)->(){unsafe{let __receiver= <CharacterSignalObserver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25efdb0usize)as*mut u8,();
+(CharacterSignalObserver)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterSignalObserver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25efe60usize)as*mut u8,();
+(CharacterSignalObserver)__receiver)}
+}
+}
 
-#[cfg(feature = "combat-charactersignalobserver")]
-impl < __T : ICharacterSignalObserver > ICharacterSignalObserverMethods for __T { }
+#[cfg(feature="combat-charactersignalobserver")]impl<__T:ICharacterSignalObserver>ICharacterSignalObserverMethods for __T{}
 
-#[cfg(feature = "combat-charactersignalobserver")]
-impl CharacterSignalObserver { pub fn get_cp_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_radial_blur_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn find_volume_from_scene_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn my_start_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn push_and_enable_foot_ik_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn pop_foot_ik_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn ground_particle_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn stop_footstep_observers_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < CharacterSignalObserver as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } }
+#[cfg(feature="combat-charactersignalobserver")]impl CharacterSignalObserver{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_radial_blur_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn find_volume_from_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn push_and_enable_foot_ik_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn pop_foot_ik_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ground_particle_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn stop_footstep_observers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
 
-#[cfg(feature = "combat-charactersignalobserver")]
-impl CharacterSignalObserver {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (CharacterSignalObserver) , :: core :: stringify ! (new) ,)) ; < Self as ICharacterSignalObserverMethods > :: ctor (this ,) ; this }
+#[cfg(feature="combat-charactersignalobserver")]impl CharacterSignalObserver{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CharacterSignalObserver), ::core::stringify!(new),));
+ <Self as ICharacterSignalObserverMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "combat-charactersignalobserver")]

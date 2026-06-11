@@ -4,41 +4,96 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatus/UnitStatus.md"))] # [:: unity2 :: class (namespace = "App" , name = "UnitStatus")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unitstatus :: UnitStatus >)] pub struct UnitStatus {
-# [static_field] # [rename (name = "ResNameC")] pub res_name_c : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_PrefabHandle")] pub m_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [static_field] # [rename (name = "m_GameObject")] pub m_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitstatus/UnitStatus.md"))]#[::unity2::class(namespace="App",name="UnitStatus")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::unitstatus::UnitStatus>)]pub struct UnitStatus{#[static_field]#[rename(name="ResNameC")]pub res_name_c: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[static_field]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-unitstatus-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-unitstatus")]
-impl UnitStatus { # [doc = "`CreateAsync(crate::app::procinst::ProcInst)` overload"] pub fn create_async (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c63880usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateImpl(crate::app::procinst::ProcInst, crate::app::unitstatus::UnitStatus)` overload"] pub fn create_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , p : impl :: core :: convert :: Into < crate :: app :: unitstatus :: UnitStatus >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: unitstatus :: UnitStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c639e0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDescs(crate::app::unitstatus::UnitStatus)` overload"] pub fn create_descs (p : impl :: core :: convert :: Into < crate :: app :: unitstatus :: UnitStatus >) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { { let __inner : extern "C" fn (crate :: app :: unitstatus :: UnitStatus , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c63a20usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } } # [doc = "`StartJobIntro(crate::app::unit::Unit)` overload"] pub fn start_job_intro (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c640a0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`StartUnitSelect(crate::app::unit::Unit, bool)` overload"] pub fn start_unit_select (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , is_sortie : impl :: core :: convert :: Into < bool >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c64250usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (is_sortie) , :: core :: option :: Option :: None) } } } # [doc = "`Close()` overload"] pub fn close () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c64410usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`SetUnit(crate::app::unit::Unit)` overload"] pub fn set_unit (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c61c50usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`SetFront()` overload"] pub fn set_front () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c64bd0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`GetGameObject()` overload"] pub fn get_game_object () -> crate :: unity_engine :: gameobject :: GameObject { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: gameobject :: GameObject = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c64c30usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitstatus")]impl UnitStatus{#[doc="`CreateAsync(crate::app::procinst::ProcInst)` overload"]pub fn create_async(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c63880usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateImpl(crate::app::procinst::ProcInst, crate::app::unitstatus::UnitStatus)` overload"]pub fn create_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,p:impl::core::convert::Into<crate::app::unitstatus::UnitStatus>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c639e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitstatus::UnitStatus)::core::convert::Into::into(p))}
+}
+#[doc="`CreateDescs(crate::app::unitstatus::UnitStatus)` overload"]pub fn create_descs(p:impl::core::convert::Into<crate::app::unitstatus::UnitStatus>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c63a20usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(crate::app::unitstatus::UnitStatus)::core::convert::Into::into(p))}
+}
+#[doc="`StartJobIntro(crate::app::unit::Unit)` overload"]pub fn start_job_intro(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c640a0usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`StartUnitSelect(crate::app::unit::Unit, bool)` overload"]pub fn start_unit_select(unit:impl::core::convert::Into<crate::app::unit::Unit> ,is_sortie:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c64250usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(is_sortie))}
+}
+#[doc="`Close()` overload"]pub fn close()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c64410usize)as*mut u8,();
+)}
+}
+#[doc="`SetUnit(crate::app::unit::Unit)` overload"]pub fn set_unit(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c61c50usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`SetFront()` overload"]pub fn set_front()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c64bd0usize)as*mut u8,();
+)}
+}
+#[doc="`GetGameObject()` overload"]pub fn get_game_object()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c64c30usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+)}
+}
+}
 
-#[cfg(feature = "app-unitstatus")]
-pub trait IUnitStatusMethods : IUnitStatus { # [doc = "`CreateAsync()` overload"] fn create_async_2 (self ,) -> () { unsafe { let __receiver = < UnitStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c63d00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCreating()` overload"] fn is_creating (self ,) -> bool { unsafe { let __receiver = < UnitStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitStatus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c63dd0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Prepare()` overload"] fn prepare (self ,) -> () { unsafe { let __receiver = < UnitStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c63e00usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < UnitStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c63f30usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < UnitStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnitStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x1c63960usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-unitstatus")]pub trait IUnitStatusMethods:IUnitStatus{#[doc="`CreateAsync()` overload"]fn create_async_2(self,)->(){unsafe{let __receiver= <UnitStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c63d00usize)as*mut u8,();
+(UnitStatus)__receiver)}
+}
+#[doc="`IsCreating()` overload"]fn is_creating(self,)->bool{unsafe{let __receiver= <UnitStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c63dd0usize)as*mut u8,bool;
+(UnitStatus)__receiver)}
+}
+#[doc="`Prepare()` overload"]fn prepare(self,)->(){unsafe{let __receiver= <UnitStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c63e00usize)as*mut u8,();
+(UnitStatus)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <UnitStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c63f30usize)as*mut u8,();
+(UnitStatus)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c63960usize)as*mut u8,();
+(UnitStatus)__receiver)}
+}
+}
 
-#[cfg(feature = "app-unitstatus")]
-impl < __T : IUnitStatus > IUnitStatusMethods for __T { }
+#[cfg(feature="app-unitstatus")]impl<__T:IUnitStatus>IUnitStatusMethods for __T{}
 
-#[cfg(feature = "app-unitstatus")]
-impl UnitStatus { pub fn create_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn create_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn create_descs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_async_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn is_creating_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn prepare_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn start_job_intro_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn start_unit_select_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn close_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn set_unit_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn set_front_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn get_game_object_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnitStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-unitstatus")]impl UnitStatus{pub fn create_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_descs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_async_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_creating_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn start_job_intro_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn start_unit_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_front_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-unitstatus")]
-impl UnitStatus {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (UnitStatus) , :: core :: stringify ! (new) ,)) ; < Self as IUnitStatusMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-unitstatus")]impl UnitStatus{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitStatus), ::core::stringify!(new),));
+ <Self as IUnitStatusMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-unitstatus")]

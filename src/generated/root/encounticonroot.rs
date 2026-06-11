@@ -4,43 +4,64 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/encounticonroot/EncountIconRoot.md"))] # [:: unity2 :: class (namespace = "" , name = "EncountIconRoot")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct EncountIconRoot {
-# [static_field] # [rename (name = "PrefabPath")] pub prefab_path : :: unity2 :: Il2CppString ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/encounticonroot/EncountIconRoot.md"))]#[::unity2::class(namespace="",name="EncountIconRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EncountIconRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
 
 }
 
 #[cfg(feature = "root-encounticonroot-types")]
 pub use __types::*;
 
-#[cfg(feature = "root-encounticonroot")]
-impl EncountIconRoot { # [doc = "`LoadPrefabAsync()` overload"] pub fn load_prefab_async () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22ddf10usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`IsLoadingPrefab()` overload"] pub fn is_loading_prefab () -> bool { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de010usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`UnloadPrefab()` overload"] pub fn unload_prefab () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de100usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Create()` overload"] pub fn create () -> crate :: root :: encounticonroot :: EncountIconRoot { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> crate :: root :: encounticonroot :: EncountIconRoot = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de1d0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`Destroy(crate::root::encounticonroot::EncountIconRoot)` overload"] pub fn destroy (root : impl :: core :: convert :: Into < crate :: root :: encounticonroot :: EncountIconRoot >) -> () { unsafe { { let __inner : extern "C" fn (crate :: root :: encounticonroot :: EncountIconRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de280usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-encounticonroot")]impl EncountIconRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ddf10usize)as*mut u8,();
+)}
+}
+#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22de010usize)as*mut u8,bool;
+)}
+}
+#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22de100usize)as*mut u8,();
+)}
+}
+#[doc="`Create()` overload"]pub fn create()->crate::root::encounticonroot::EncountIconRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22de1d0usize)as*mut u8,crate::root::encounticonroot::EncountIconRoot;
+)}
+}
+#[doc="`Destroy(crate::root::encounticonroot::EncountIconRoot)` overload"]pub fn destroy(root:impl::core::convert::Into<crate::root::encounticonroot::EncountIconRoot>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22de280usize)as*mut u8,();
+(crate::root::encounticonroot::EncountIconRoot)::core::convert::Into::into(root))}
+}
+}
 
-#[cfg(feature = "root-encounticonroot")]
-pub trait IEncountIconRootMethods : IEncountIconRoot { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < EncountIconRoot as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EncountIconRoot , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22de300usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="root-encounticonroot")]pub trait IEncountIconRootMethods:IEncountIconRoot{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EncountIconRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22de300usize)as*mut u8,();
+(EncountIconRoot)__receiver)}
+}
+}
 
-#[cfg(feature = "root-encounticonroot")]
-impl < __T : IEncountIconRoot > IEncountIconRootMethods for __T { }
+#[cfg(feature="root-encounticonroot")]impl<__T:IEncountIconRoot>IEncountIconRootMethods for __T{}
 
-#[cfg(feature = "root-encounticonroot")]
-impl EncountIconRoot { pub fn load_prefab_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIconRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn is_loading_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIconRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn unload_prefab_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIconRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn create_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIconRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIconRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EncountIconRoot as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } }
+#[cfg(feature="root-encounticonroot")]impl EncountIconRoot{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
 
-#[cfg(feature = "root-encounticonroot")]
-impl EncountIconRoot {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EncountIconRoot) , :: core :: stringify ! (new) ,)) ; < Self as IEncountIconRootMethods > :: ctor (this ,) ; this }
+#[cfg(feature="root-encounticonroot")]impl EncountIconRoot{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EncountIconRoot), ::core::stringify!(new),));
+ <Self as IEncountIconRootMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "root-encounticonroot")]

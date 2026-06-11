@@ -4,36 +4,40 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: mapinspector :: { IMapInspector , MapInspector }
- ;
- use crate :: app :: personinspector :: { IPersonInspector , PersonInspector }
- ;
- use crate :: app :: scriptutil :: { IScriptUtil , ScriptUtil }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::mapinspector::{IMapInspector,MapInspector}
+;
+use crate::app::personinspector::{IPersonInspector,PersonInspector}
+;
+use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/engagebeforeinspector/EngageBeforeInspector.md"))] # [:: unity2 :: class (namespace = "App" , name = "EngageBeforeInspector")] # [parent (crate :: app :: personinspector :: PersonInspector)] pub struct EngageBeforeInspector {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/engagebeforeinspector/EngageBeforeInspector.md"))]#[::unity2::class(namespace="App",name="EngageBeforeInspector")]#[parent(crate::app::personinspector::PersonInspector)]pub struct EngageBeforeInspector{}
 
 }
 
 #[cfg(feature = "app-engagebeforeinspector-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-engagebeforeinspector")]
-pub trait IEngageBeforeInspectorMethods : IEngageBeforeInspector { # [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"] fn ctor (self , args : impl :: core :: convert :: Into < :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > >) -> () { unsafe { let __receiver = < EngageBeforeInspector as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (EngageBeforeInspector , :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue > , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x22e9aa0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (args) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-engagebeforeinspector")]pub trait IEngageBeforeInspectorMethods:IEngageBeforeInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EngageBeforeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9aa0usize)as*mut u8,();
+(EngageBeforeInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
+}
+}
 
-#[cfg(feature = "app-engagebeforeinspector")]
-impl < __T : IEngageBeforeInspector > IEngageBeforeInspectorMethods for __T { }
+#[cfg(feature="app-engagebeforeinspector")]impl<__T:IEngageBeforeInspector>IEngageBeforeInspectorMethods for __T{}
 
-#[cfg(feature = "app-engagebeforeinspector")]
-impl EngageBeforeInspector { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < EngageBeforeInspector as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } }
+#[cfg(feature="app-engagebeforeinspector")]impl EngageBeforeInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
-#[cfg(feature = "app-engagebeforeinspector")]
-impl EngageBeforeInspector {
-# [doc = "`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"] pub fn new (args : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: dynvalue :: DynValue >) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (EngageBeforeInspector) , :: core :: stringify ! (new) ,)) ; < Self as IEngageBeforeInspectorMethods > :: ctor (this , args) ; this }
+#[cfg(feature="app-engagebeforeinspector")]impl EngageBeforeInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EngageBeforeInspector), ::core::stringify!(new),));
+ <Self as IEngageBeforeInspectorMethods> ::ctor(this,args);
+this}
 }
 
 #[cfg(feature = "app-engagebeforeinspector")]

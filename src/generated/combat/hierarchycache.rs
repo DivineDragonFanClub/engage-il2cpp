@@ -4,32 +4,49 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/hierarchycache/HierarchyCache.md"))] # [:: unity2 :: class (namespace = "Combat" , name = "HierarchyCache")] # [parent (crate :: system :: object :: Object)] pub struct HierarchyCache {
-# [offset (16)] # [rename (name = "dic")] pub dic : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform > ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/hierarchycache/HierarchyCache.md"))]#[::unity2::class(namespace="Combat",name="HierarchyCache")]#[parent(crate::system::object::Object)]pub struct HierarchyCache{#[offset(16)]#[rename(name="dic")]pub dic:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::transform::Transform> ,}
 
 }
 
 #[cfg(feature = "combat-hierarchycache-types")]
 pub use __types::*;
 
-#[cfg(feature = "combat-hierarchycache")]
-pub trait IHierarchyCacheMethods : IHierarchyCache { # [doc = "`get_Dic()` overload"] fn get_dic (self ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform > { unsafe { let __receiver = < HierarchyCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HierarchyCache , :: unity2 :: OptionalMethod ,) -> crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: unity_engine :: transform :: Transform > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2166360usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_Item(::unity2::Il2CppString)` overload"] fn get_item (self , name : impl :: core :: convert :: Into < :: unity2 :: Il2CppString >) -> crate :: unity_engine :: transform :: Transform { unsafe { let __receiver = < HierarchyCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HierarchyCache , :: unity2 :: Il2CppString , :: unity2 :: OptionalMethod ,) -> crate :: unity_engine :: transform :: Transform = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2166370usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (name) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"] fn ctor (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < HierarchyCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HierarchyCache , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21663f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } # [doc = "`AddRange(crate::unity_engine::transform::Transform)` overload"] fn add_range (self , root : impl :: core :: convert :: Into < crate :: unity_engine :: transform :: Transform >) -> () { unsafe { let __receiver = < HierarchyCache as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (HierarchyCache , crate :: unity_engine :: transform :: Transform , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x21664a0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (root) , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="combat-hierarchycache")]pub trait IHierarchyCacheMethods:IHierarchyCache{#[doc="`get_Dic()` overload"]fn get_dic(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::transform::Transform>{unsafe{let __receiver= <HierarchyCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2166360usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::unity_engine::transform::Transform> ;
+(HierarchyCache)__receiver)}
+}
+#[doc="`get_Item(::unity2::Il2CppString)` overload"]fn get_item(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <HierarchyCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2166370usize)as*mut u8,crate::unity_engine::transform::Transform;
+(HierarchyCache)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <HierarchyCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21663f0usize)as*mut u8,();
+(HierarchyCache)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(root))}
+}
+#[doc="`AddRange(crate::unity_engine::transform::Transform)` overload"]fn add_range(self,root:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <HierarchyCache as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21664a0usize)as*mut u8,();
+(HierarchyCache)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(root))}
+}
+}
 
-#[cfg(feature = "combat-hierarchycache")]
-impl < __T : IHierarchyCache > IHierarchyCacheMethods for __T { }
+#[cfg(feature="combat-hierarchycache")]impl<__T:IHierarchyCache>IHierarchyCacheMethods for __T{}
 
-#[cfg(feature = "combat-hierarchycache")]
-impl HierarchyCache { pub fn get_dic_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HierarchyCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_item_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HierarchyCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HierarchyCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn add_range_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < HierarchyCache as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } }
+#[cfg(feature="combat-hierarchycache")]impl HierarchyCache{pub fn get_dic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
-#[cfg(feature = "combat-hierarchycache")]
-impl HierarchyCache {
-# [doc = "`.ctor(crate::unity_engine::transform::Transform)` — overload selector"] pub fn new (root : crate :: unity_engine :: transform :: Transform) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (HierarchyCache) , :: core :: stringify ! (new) ,)) ; < Self as IHierarchyCacheMethods > :: ctor (this , root) ; this }
+#[cfg(feature="combat-hierarchycache")]impl HierarchyCache{#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(root:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HierarchyCache), ::core::stringify!(new),));
+ <Self as IHierarchyCacheMethods> ::ctor(this,root);
+this}
 }
 
 #[cfg(feature = "combat-hierarchycache")]

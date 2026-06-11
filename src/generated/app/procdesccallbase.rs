@@ -4,35 +4,55 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procdesc :: { IProcDesc , ProcDesc }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procdesc::{IProcDesc,ProcDesc}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesccallbase/ProcDescCallBase.md"))] # [:: unity2 :: class (namespace = "App" , name = "ProcDescCallBase")] # [parent (crate :: app :: procdesc :: ProcDesc)] pub struct ProcDescCallBase {}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesccallbase/ProcDescCallBase.md"))]#[::unity2::class(namespace="App",name="ProcDescCallBase")]#[parent(crate::app::procdesc::ProcDesc)]pub struct ProcDescCallBase{}
 
 }
 
 #[cfg(feature = "app-procdesccallbase-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-procdesccallbase")]
-# [doc (hidden)] # [allow (non_snake_case , non_camel_case_types , clippy :: too_many_arguments)] mod __ProcDescCallBase_unity2_raw { use super :: * ; pub unsafe fn execute_impl (this : ProcDescCallBase , inst : crate :: app :: procinst :: ProcInst , __unity2_method_info : :: unity2 :: OptionalMethod ,) -> () { let __vi = :: unity2 :: Cast :: get_class (this) . raw () . get_virtual_method ("ExecuteImpl") . unwrap_or_else (|| panic ! ("unity2: abstract method `{}` not found on the runtime class behind {}" , "ExecuteImpl" , < ProcDescCallBase as :: unity2 :: ClassIdentity > :: NAME ,)) ; let inner : extern "C" fn (ProcDescCallBase , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute (__vi . method_ptr) ; let _ = __unity2_method_info ; let __mi : :: unity2 :: OptionalMethod = :: core :: option :: Option :: Some (& * (__vi . method_info as * const :: unity2 :: MethodInfo as * const ()) ,) ; inner (this , inst , __mi) } }
+#[cfg(feature="app-procdesccallbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescCallBase_unity2_raw{use super:: * ;
+pub unsafe fn execute_impl(this:ProcDescCallBase,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ExecuteImpl").unwrap_or_else(||panic!("unity2: abstract method `{}
+` not found on the runtime class behind {}
+","ExecuteImpl", <ProcDescCallBase as::unity2::ClassIdentity> ::NAME,));
+let inner:extern "C" fn(ProcDescCallBase,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+}
 
-#[cfg(feature = "app-procdesccallbase")]
-pub trait IProcDescCallBaseMethods : IProcDescCallBase { # [doc = "`.ctor(crate::app::procdesc::ProcDesc_Type)` overload"] fn ctor (self , r#type : impl :: core :: convert :: Into < crate :: app :: procdesc :: ProcDesc_Type >) -> () { unsafe { let __receiver = < ProcDescCallBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescCallBase , crate :: app :: procdesc :: ProcDesc_Type , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281cd90usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`Execute(crate::app::procinst::ProcInst)` overload"] fn execute (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> crate :: app :: procdesc :: ProcDesc_Result { unsafe { let __receiver = < ProcDescCallBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (ProcDescCallBase , crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> crate :: app :: procdesc :: ProcDesc_Result = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x281d190usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } } # [doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"] fn execute_impl (self , inst : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { let __receiver = < ProcDescCallBase as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; __ProcDescCallBase_unity2_raw :: execute_impl (__receiver , :: core :: convert :: Into :: into (inst) , :: core :: option :: Option :: None) } } }
+#[cfg(feature="app-procdesccallbase")]pub trait IProcDescCallBaseMethods:IProcDescCallBase{#[doc="`.ctor(crate::app::procdesc::ProcDesc_Type)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::procdesc::ProcDesc_Type>)->(){unsafe{let __receiver= <ProcDescCallBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd90usize)as*mut u8,();
+(ProcDescCallBase)__receiver,(crate::app::procdesc::ProcDesc_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescCallBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x281d190usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
+(ProcDescCallBase)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+}
+#[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescCallBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ProcDescCallBase_unity2_raw::execute_impl(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
+}
+}
 
-#[cfg(feature = "app-procdesccallbase")]
-impl < __T : IProcDescCallBase > IProcDescCallBaseMethods for __T { }
+#[cfg(feature="app-procdesccallbase")]impl<__T:IProcDescCallBase>IProcDescCallBaseMethods for __T{}
 
-#[cfg(feature = "app-procdesccallbase")]
-impl ProcDescCallBase { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescCallBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn execute_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescCallBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn execute_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < ProcDescCallBase as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } }
+#[cfg(feature="app-procdesccallbase")]impl ProcDescCallBase{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
-#[cfg(feature = "app-procdesccallbase")]
-impl ProcDescCallBase {
-# [doc = "`.ctor(crate::app::procdesc::ProcDesc_Type)` — overload selector"] pub fn new (r#type : crate :: app :: procdesc :: ProcDesc_Type) -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (ProcDescCallBase) , :: core :: stringify ! (new) ,)) ; < Self as IProcDescCallBaseMethods > :: ctor (this , r#type) ; this }
+#[cfg(feature="app-procdesccallbase")]impl ProcDescCallBase{#[doc="`.ctor(crate::app::procdesc::ProcDesc_Type)` — overload selector"]pub fn new(r#type:crate::app::procdesc::ProcDesc_Type)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProcDescCallBase), ::core::stringify!(new),));
+ <Self as IProcDescCallBaseMethods> ::ctor(this,r#type);
+this}
 }
 
 #[cfg(feature = "app-procdesccallbase")]

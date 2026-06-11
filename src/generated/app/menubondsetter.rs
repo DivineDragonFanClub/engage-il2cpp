@@ -4,43 +4,62 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menubondsetter/MenuBondSetter.md"))] # [:: unity2 :: class (namespace = "App" , name = "MenuBondSetter")] # [parent (crate :: unity_engine :: monobehaviour :: MonoBehaviour)] pub struct MenuBondSetter {
-# [offset (24)] # [rename (name = "m_UnitName")] pub m_unit_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (32)] # [rename (name = "m_GodName")] pub m_god_name : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (40)] # [rename (name = "m_BondLv")] pub m_bond_lv : crate :: tm_pro :: textmeshprougui :: TextMeshProUGUI ,
-# [offset (48)] # [rename (name = "m_BondGauge")] pub m_bond_gauge : crate :: unity_engine :: gameobject :: GameObject ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/menubondsetter/MenuBondSetter.md"))]#[::unity2::class(namespace="App",name="MenuBondSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MenuBondSetter{#[offset(24)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_GodName")]pub m_god_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_BondLv")]pub m_bond_lv:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_BondGauge")]pub m_bond_gauge:crate::unity_engine::gameobject::GameObject,}
 
 }
 
 #[cfg(feature = "app-menubondsetter-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-menubondsetter")]
-pub trait IMenuBondSetterMethods : IMenuBondSetter { # [doc = "`SetData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"] fn set_data (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit >) -> () { unsafe { let __receiver = < MenuBondSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MenuBondSetter , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25cde60usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: option :: Option :: None) } } } # [doc = "`SetData(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn set_data_2 (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < MenuBondSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MenuBondSetter , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ce140usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`SetStatus(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn set_status (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit > , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> () { unsafe { let __receiver = < MenuBondSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MenuBondSetter , crate :: app :: unit :: Unit , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25cdf20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`GetGodName(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"] fn get_god_name (self , god : impl :: core :: convert :: Into < crate :: app :: godunit :: GodUnit > , r#type : impl :: core :: convert :: Into < crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType >) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < MenuBondSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MenuBondSetter , crate :: app :: godunit :: GodUnit , crate :: app :: ringcleaningsequence :: RingCleaningSequence_GodType , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ce200usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (god) , :: core :: convert :: Into :: into (r#type) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < MenuBondSetter as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (MenuBondSetter , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x25ce2b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-menubondsetter")]pub trait IMenuBondSetterMethods:IMenuBondSetter{#[doc="`SetData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn set_data(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <MenuBondSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25cde60usize)as*mut u8,();
+(MenuBondSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`SetData(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn set_data_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <MenuBondSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ce140usize)as*mut u8,();
+(MenuBondSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`SetStatus(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn set_status(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)->(){unsafe{let __receiver= <MenuBondSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25cdf20usize)as*mut u8,();
+(MenuBondSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`GetGodName(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]fn get_god_name(self,god:impl::core::convert::Into<crate::app::godunit::GodUnit> ,r#type:impl::core::convert::Into<crate::app::ringcleaningsequence::RingCleaningSequence_GodType>)-> ::unity2::Il2CppString{unsafe{let __receiver= <MenuBondSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ce200usize)as*mut u8, ::unity2::Il2CppString;
+(MenuBondSetter)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god),(crate::app::ringcleaningsequence::RingCleaningSequence_GodType)::core::convert::Into::into(r#type))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MenuBondSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x25ce2b0usize)as*mut u8,();
+(MenuBondSetter)__receiver)}
+}
+}
 
-#[cfg(feature = "app-menubondsetter")]
-impl < __T : IMenuBondSetter > IMenuBondSetterMethods for __T { }
+#[cfg(feature="app-menubondsetter")]impl<__T:IMenuBondSetter>IMenuBondSetterMethods for __T{}
 
-#[cfg(feature = "app-menubondsetter")]
-impl MenuBondSetter { pub fn set_data_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuBondSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_data_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuBondSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_status_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuBondSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_god_name_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuBondSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < MenuBondSetter as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } }
+#[cfg(feature="app-menubondsetter")]impl MenuBondSetter{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_data_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_status_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_god_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
 
-#[cfg(feature = "app-menubondsetter")]
-impl MenuBondSetter {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (MenuBondSetter) , :: core :: stringify ! (new) ,)) ; < Self as IMenuBondSetterMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-menubondsetter")]impl MenuBondSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MenuBondSetter), ::core::stringify!(new),));
+ <Self as IMenuBondSetterMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-menubondsetter")]

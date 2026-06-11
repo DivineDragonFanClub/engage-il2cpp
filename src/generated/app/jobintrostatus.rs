@@ -4,46 +4,96 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: app :: procinst :: { IProcInst , ProcInst }
- ;
- use crate :: app :: singletonprocinst_1 :: { ISingletonProcInst_1 , SingletonProcInst_1 }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::app::procinst::{IProcInst,ProcInst}
+;
+use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrostatus/JobIntroStatus.md"))] # [:: unity2 :: class (namespace = "App" , name = "JobIntroStatus")] # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: jobintrostatus :: JobIntroStatus >)] pub struct JobIntroStatus {
-# [static_field] # [rename (name = "TitlePrefabPath")] pub title_prefab_path : :: unity2 :: Il2CppString ,
-# [static_field] # [rename (name = "InfoPrefabPath")] pub info_prefab_path : :: unity2 :: Il2CppString ,
-# [offset (120)] # [rename (name = "m_TitlePrefabHandle")] pub m_title_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (128)] # [rename (name = "m_TitleGameObject")] pub m_title_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (136)] # [rename (name = "m_TitleSetter")] pub m_title_setter : crate :: app :: jobintrotitlesetter :: JobIntroTitleSetter ,
-# [offset (144)] # [rename (name = "m_InfoPrefabHandle")] pub m_info_prefab_handle : crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
-# [offset (152)] # [rename (name = "m_InfoGameObject")] pub m_info_game_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [offset (160)] # [rename (name = "m_InfoSetter")] pub m_info_setter : crate :: app :: jobintroinfosetter :: JobIntroInfoSetter ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/jobintrostatus/JobIntroStatus.md"))]#[::unity2::class(namespace="App",name="JobIntroStatus")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::jobintrostatus::JobIntroStatus>)]pub struct JobIntroStatus{#[static_field]#[rename(name="TitlePrefabPath")]pub title_prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="InfoPrefabPath")]pub info_prefab_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_TitlePrefabHandle")]pub m_title_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(128)]#[rename(name="m_TitleGameObject")]pub m_title_game_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_TitleSetter")]pub m_title_setter:crate::app::jobintrotitlesetter::JobIntroTitleSetter, #[offset(144)]#[rename(name="m_InfoPrefabHandle")]pub m_info_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(152)]#[rename(name="m_InfoGameObject")]pub m_info_game_object:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_InfoSetter")]pub m_info_setter:crate::app::jobintroinfosetter::JobIntroInfoSetter,}
 
 }
 
 #[cfg(feature = "app-jobintrostatus-types")]
 pub use __types::*;
 
-#[cfg(feature = "app-jobintrostatus")]
-impl JobIntroStatus { # [doc = "`get_ReadyTime1()` overload"] pub fn get_ready_time1 () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2059db0usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_ReadyTime1(f32)` overload"] pub fn set_ready_time1 (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2059e00usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_ReadyTime2()` overload"] pub fn get_ready_time2 () -> f32 { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> f32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2059e60usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } # [doc = "`set_ReadyTime2(f32)` overload"] pub fn set_ready_time2 (value : impl :: core :: convert :: Into < f32 >) -> () { unsafe { { let __inner : extern "C" fn (f32 , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2059eb0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`CreateAsync(crate::app::procinst::ProcInst)` overload"] pub fn create_async (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x20593b0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: option :: Option :: None) } } } # [doc = "`CreateImpl(crate::app::procinst::ProcInst, crate::app::jobintrostatus::JobIntroStatus)` overload"] pub fn create_impl (super_ : impl :: core :: convert :: Into < crate :: app :: procinst :: ProcInst > , p : impl :: core :: convert :: Into < crate :: app :: jobintrostatus :: JobIntroStatus >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: procinst :: ProcInst , crate :: app :: jobintrostatus :: JobIntroStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2059f90usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (super_) , :: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } } # [doc = "`CreateDescs(crate::app::jobintrostatus::JobIntroStatus)` overload"] pub fn create_descs (p : impl :: core :: convert :: Into < crate :: app :: jobintrostatus :: JobIntroStatus >) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > { unsafe { { let __inner : extern "C" fn (crate :: app :: jobintrostatus :: JobIntroStatus , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Array < crate :: app :: procdesc :: ProcDesc > = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2059fd0usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (p) , :: core :: option :: Option :: None) } } } # [doc = "`StartJobIntro(crate::app::unit::Unit)` overload"] pub fn start_job_intro (unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { { let __inner : extern "C" fn (crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205a440usize) as * mut u8) ; __inner (:: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`Destroy()` overload"] pub fn destroy () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2059800usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-jobintrostatus")]impl JobIntroStatus{#[doc="`get_ReadyTime1()` overload"]pub fn get_ready_time1()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2059db0usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_ReadyTime1(f32)` overload"]pub fn set_ready_time1(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2059e00usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ReadyTime2()` overload"]pub fn get_ready_time2()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2059e60usize)as*mut u8,f32;
+)}
+}
+#[doc="`set_ReadyTime2(f32)` overload"]pub fn set_ready_time2(value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2059eb0usize)as*mut u8,();
+(f32)::core::convert::Into::into(value))}
+}
+#[doc="`CreateAsync(crate::app::procinst::ProcInst)` overload"]pub fn create_async(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20593b0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`CreateImpl(crate::app::procinst::ProcInst, crate::app::jobintrostatus::JobIntroStatus)` overload"]pub fn create_impl(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,p:impl::core::convert::Into<crate::app::jobintrostatus::JobIntroStatus>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2059f90usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::jobintrostatus::JobIntroStatus)::core::convert::Into::into(p))}
+}
+#[doc="`CreateDescs(crate::app::jobintrostatus::JobIntroStatus)` overload"]pub fn create_descs(p:impl::core::convert::Into<crate::app::jobintrostatus::JobIntroStatus>)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2059fd0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(crate::app::jobintrostatus::JobIntroStatus)::core::convert::Into::into(p))}
+}
+#[doc="`StartJobIntro(crate::app::unit::Unit)` overload"]pub fn start_job_intro(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x205a440usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Destroy()` overload"]pub fn destroy()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2059800usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "app-jobintrostatus")]
-pub trait IJobIntroStatusMethods : IJobIntroStatus { # [doc = "`CreateAsync()` overload"] fn create_async_2 (self ,) -> () { unsafe { let __receiver = < JobIntroStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205a240usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsCreating()` overload"] fn is_creating (self ,) -> bool { unsafe { let __receiver = < JobIntroStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroStatus , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205a3a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Tick()` overload"] fn tick (self ,) -> () { unsafe { let __receiver = < JobIntroStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205a420usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`StartJobIntroImpl(crate::app::unit::Unit)` overload"] fn start_job_intro_impl (self , unit : impl :: core :: convert :: Into < crate :: app :: unit :: Unit >) -> () { unsafe { let __receiver = < JobIntroStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroStatus , crate :: app :: unit :: Unit , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x205a4f0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (unit) , :: core :: option :: Option :: None) } } } # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < JobIntroStatus as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (JobIntroStatus , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x2059f10usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="app-jobintrostatus")]pub trait IJobIntroStatusMethods:IJobIntroStatus{#[doc="`CreateAsync()` overload"]fn create_async_2(self,)->(){unsafe{let __receiver= <JobIntroStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205a240usize)as*mut u8,();
+(JobIntroStatus)__receiver)}
+}
+#[doc="`IsCreating()` overload"]fn is_creating(self,)->bool{unsafe{let __receiver= <JobIntroStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205a3a0usize)as*mut u8,bool;
+(JobIntroStatus)__receiver)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <JobIntroStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205a420usize)as*mut u8,();
+(JobIntroStatus)__receiver)}
+}
+#[doc="`StartJobIntroImpl(crate::app::unit::Unit)` overload"]fn start_job_intro_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <JobIntroStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x205a4f0usize)as*mut u8,();
+(JobIntroStatus)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <JobIntroStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2059f10usize)as*mut u8,();
+(JobIntroStatus)__receiver)}
+}
+}
 
-#[cfg(feature = "app-jobintrostatus")]
-impl < __T : IJobIntroStatus > IJobIntroStatusMethods for __T { }
+#[cfg(feature="app-jobintrostatus")]impl<__T:IJobIntroStatus>IJobIntroStatusMethods for __T{}
 
-#[cfg(feature = "app-jobintrostatus")]
-impl JobIntroStatus { pub fn get_ready_time1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn set_ready_time1_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn get_ready_time2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn set_ready_time2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn create_async_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn create_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn create_descs_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn create_async_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn is_creating_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn tick_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn start_job_intro_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn start_job_intro_impl_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn destroy_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < JobIntroStatus as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } }
+#[cfg(feature="app-jobintrostatus")]impl JobIntroStatus{pub fn get_ready_time1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_ready_time1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_ready_time2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_ready_time2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn create_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn create_descs_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn create_async_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_creating_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn start_job_intro_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn start_job_intro_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
 
-#[cfg(feature = "app-jobintrostatus")]
-impl JobIntroStatus {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (JobIntroStatus) , :: core :: stringify ! (new) ,)) ; < Self as IJobIntroStatusMethods > :: ctor (this ,) ; this }
+#[cfg(feature="app-jobintrostatus")]impl JobIntroStatus{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(JobIntroStatus), ::core::stringify!(new),));
+ <Self as IJobIntroStatusMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "app-jobintrostatus")]

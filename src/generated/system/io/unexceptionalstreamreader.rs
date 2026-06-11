@@ -4,36 +4,63 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: io :: streamreader :: { IStreamReader , StreamReader }
- ;
- use crate :: system :: io :: textreader :: { ITextReader , TextReader }
- ;
- use crate :: system :: object :: { IObject , Object }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::io::streamreader::{IStreamReader,StreamReader}
+;
+use crate::system::io::textreader::{ITextReader,TextReader}
+;
+use crate::system::object::{IObject,Object}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/unexceptionalstreamreader/UnexceptionalStreamReader.md"))] # [:: unity2 :: class (namespace = "System.IO" , name = "UnexceptionalStreamReader")] # [parent (crate :: system :: io :: streamreader :: StreamReader)] pub struct UnexceptionalStreamReader {
-# [static_field] # [rename (name = "newline")] pub newline : :: unity2 :: Array < bool > ,
-# [static_field] # [rename (name = "newlineChar")] pub newline_char : u16 ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/unexceptionalstreamreader/UnexceptionalStreamReader.md"))]#[::unity2::class(namespace="System.IO",name="UnexceptionalStreamReader")]#[parent(crate::system::io::streamreader::StreamReader)]pub struct UnexceptionalStreamReader{#[static_field]#[rename(name="newline")]pub newline: ::unity2::Array<bool> , #[static_field]#[rename(name="newlineChar")]pub newline_char:u16,}
 
 }
 
 #[cfg(feature = "system-io-unexceptionalstreamreader-types")]
 pub use __types::*;
 
-#[cfg(feature = "system-io-unexceptionalstreamreader")]
-impl UnexceptionalStreamReader { # [doc = "`.cctor()` overload"] pub fn cctor () -> () { unsafe { { let __inner : extern "C" fn (:: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3572260usize) as * mut u8) ; __inner (:: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-unexceptionalstreamreader")]impl UnexceptionalStreamReader{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3572260usize)as*mut u8,();
+)}
+}
+}
 
-#[cfg(feature = "system-io-unexceptionalstreamreader")]
-pub trait IUnexceptionalStreamReaderMethods : IUnexceptionalStreamReader { # [doc = "`Peek()` overload"] fn peek (self ,) -> i32 { unsafe { let __receiver = < UnexceptionalStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35723a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read()` overload"] fn read (self ,) -> i32 { unsafe { let __receiver = < UnexceptionalStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamReader , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3572440usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"] fn read_2 (self , dest_buffer : impl :: core :: convert :: Into < :: unity2 :: Array < u16 > > , index : impl :: core :: convert :: Into < i32 > , count : impl :: core :: convert :: Into < i32 >) -> i32 { unsafe { let __receiver = < UnexceptionalStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamReader , :: unity2 :: Array < u16 > , i32 , i32 , :: unity2 :: OptionalMethod ,) -> i32 = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35724e0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (dest_buffer) , :: core :: convert :: Into :: into (index) , :: core :: convert :: Into :: into (count) , :: core :: option :: Option :: None) } } } # [doc = "`CheckEOL(u16)` overload"] fn check_eol (self , current : impl :: core :: convert :: Into < u16 >) -> bool { unsafe { let __receiver = < UnexceptionalStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamReader , u16 , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35727c0usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (current) , :: core :: option :: Option :: None) } } } # [doc = "`ReadLine()` overload"] fn read_line (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnexceptionalStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x35729a0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ReadToEnd()` overload"] fn read_to_end (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < UnexceptionalStreamReader as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (UnexceptionalStreamReader , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3572a40usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="system-io-unexceptionalstreamreader")]pub trait IUnexceptionalStreamReaderMethods:IUnexceptionalStreamReader{#[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <UnexceptionalStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35723a0usize)as*mut u8,i32;
+(UnexceptionalStreamReader)__receiver)}
+}
+#[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <UnexceptionalStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3572440usize)as*mut u8,i32;
+(UnexceptionalStreamReader)__receiver)}
+}
+#[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read_2(self,dest_buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <UnexceptionalStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35724e0usize)as*mut u8,i32;
+(UnexceptionalStreamReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(dest_buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+}
+#[doc="`CheckEOL(u16)` overload"]fn check_eol(self,current:impl::core::convert::Into<u16>)->bool{unsafe{let __receiver= <UnexceptionalStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35727c0usize)as*mut u8,bool;
+(UnexceptionalStreamReader)__receiver,(u16)::core::convert::Into::into(current))}
+}
+#[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnexceptionalStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x35729a0usize)as*mut u8, ::unity2::Il2CppString;
+(UnexceptionalStreamReader)__receiver)}
+}
+#[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnexceptionalStreamReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3572a40usize)as*mut u8, ::unity2::Il2CppString;
+(UnexceptionalStreamReader)__receiver)}
+}
+}
 
-#[cfg(feature = "system-io-unexceptionalstreamreader")]
-impl < __T : IUnexceptionalStreamReader > IUnexceptionalStreamReaderMethods for __T { }
+#[cfg(feature="system-io-unexceptionalstreamreader")]impl<__T:IUnexceptionalStreamReader>IUnexceptionalStreamReaderMethods for __T{}
 
-#[cfg(feature = "system-io-unexceptionalstreamreader")]
-impl UnexceptionalStreamReader { pub fn cctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn peek_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn read_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn read_2_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn check_eol_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn read_line_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn read_to_end_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < UnexceptionalStreamReader as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } }
+#[cfg(feature="system-io-unexceptionalstreamreader")]impl UnexceptionalStreamReader{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn read_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn check_eol_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn read_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn read_to_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
 
 #[cfg(feature = "system-io-unexceptionalstreamreader")]
 #[doc(hidden)]

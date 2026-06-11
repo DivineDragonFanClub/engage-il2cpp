@@ -4,49 +4,118 @@
 mod __types {
     use super::*;
 
-# [allow (unused_imports)] use :: unity2 :: prelude :: * ;
- use crate :: system :: object :: { IObject , Object }
- ;
- use crate :: unity_engine :: behaviour :: { Behaviour , IBehaviour }
- ;
- use crate :: unity_engine :: component :: { Component , IComponent }
- ;
- use crate :: unity_engine :: event_systems :: baseinputmodule :: { BaseInputModule , IBaseInputModule }
- ;
- use crate :: unity_engine :: event_systems :: pointerinputmodule :: { IPointerInputModule , PointerInputModule }
- ;
- use crate :: unity_engine :: event_systems :: uibehaviour :: { IUIBehaviour , UIBehaviour }
- ;
- use crate :: unity_engine :: monobehaviour :: { IMonoBehaviour , MonoBehaviour }
- ;
- use crate :: unity_engine :: object_2 :: { IObject_2 , Object_2 }
- ;
+#[allow(unused_imports)]use::unity2::prelude:: * ;
+use crate::system::object::{IObject,Object}
+;
+use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
+;
+use crate::unity_engine::component::{Component,IComponent}
+;
+use crate::unity_engine::event_systems::baseinputmodule::{BaseInputModule,IBaseInputModule}
+;
+use crate::unity_engine::event_systems::pointerinputmodule::{IPointerInputModule,PointerInputModule}
+;
+use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
+;
+use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
+;
+use crate::unity_engine::object_2::{IObject_2,Object_2}
+;
 
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/touchinputmodule/TouchInputModule.md"))] # [:: unity2 :: class (namespace = "UnityEngine.EventSystems" , name = "TouchInputModule")] # [parent (crate :: unity_engine :: event_systems :: pointerinputmodule :: PointerInputModule)] pub struct TouchInputModule {
-# [offset (88)] # [rename (name = "m_LastMousePosition")] pub m_last_mouse_position : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (96)] # [rename (name = "m_MousePosition")] pub m_mouse_position : crate :: unity_engine :: vector2 :: Vector2 ,
-# [offset (104)] # [rename (name = "m_InputPointerEvent")] pub m_input_pointer_event : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData ,
-# [offset (112)] # [rename (name = "m_ForceModuleActive")] pub m_force_module_active : bool ,
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/touchinputmodule/TouchInputModule.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="TouchInputModule")]#[parent(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule)]pub struct TouchInputModule{#[offset(88)]#[rename(name="m_LastMousePosition")]pub m_last_mouse_position:crate::unity_engine::vector2::Vector2, #[offset(96)]#[rename(name="m_MousePosition")]pub m_mouse_position:crate::unity_engine::vector2::Vector2, #[offset(104)]#[rename(name="m_InputPointerEvent")]pub m_input_pointer_event:crate::unity_engine::event_systems::pointereventdata::PointerEventData, #[offset(112)]#[rename(name="m_ForceModuleActive")]pub m_force_module_active:bool,}
 
 }
 
 #[cfg(feature = "unity_engine-event_systems-touchinputmodule-types")]
 pub use __types::*;
 
-#[cfg(feature = "unity_engine-event_systems-touchinputmodule")]
-pub trait ITouchInputModuleMethods : ITouchInputModule { # [doc = "`.ctor()` overload"] fn ctor (self ,) -> () { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09620usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`get_allowActivationOnStandalone()` overload"] fn get_allow_activation_on_standalone (self ,) -> bool { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09630usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_allowActivationOnStandalone(bool)` overload"] fn set_allow_activation_on_standalone (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09640usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`get_forceModuleActive()` overload"] fn get_force_module_active (self ,) -> bool { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09650usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`set_forceModuleActive(bool)` overload"] fn set_force_module_active (self , value : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09660usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (value) , :: core :: option :: Option :: None) } } } # [doc = "`UpdateModule()` overload"] fn update_module (self ,) -> () { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09670usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`IsModuleSupported()` overload"] fn is_module_supported (self ,) -> bool { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c097f0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ShouldActivateModule()` overload"] fn should_activate_module (self ,) -> bool { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09830usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`UseFakeInput()` overload"] fn use_fake_input (self ,) -> bool { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> bool = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09910usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`Process()` overload"] fn process (self ,) -> () { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09940usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`FakeTouches()` overload"] fn fake_touches (self ,) -> () { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09990usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessTouchEvents()` overload"] fn process_touch_events (self ,) -> () { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09a80usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ProcessTouchPress(crate::unity_engine::event_systems::pointereventdata::PointerEventData, bool, bool)` overload"] fn process_touch_press (self , pointer_event : impl :: core :: convert :: Into < crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData > , pressed : impl :: core :: convert :: Into < bool > , released : impl :: core :: convert :: Into < bool >) -> () { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData , bool , bool , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c09c20usize) as * mut u8) ; __inner (__receiver , :: core :: convert :: Into :: into (pointer_event) , :: core :: convert :: Into :: into (pressed) , :: core :: convert :: Into :: into (released) , :: core :: option :: Option :: None) } } } # [doc = "`DeactivateModule()` overload"] fn deactivate_module (self ,) -> () { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> () = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a480usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } # [doc = "`ToString()` overload"] fn to_string (self ,) -> :: unity2 :: Il2CppString { unsafe { let __receiver = < TouchInputModule as :: unity2 :: FromIlInstance > :: from_il_instance (< Self as :: unity2 :: SystemObject > :: as_instance (self) ,) ; { let __inner : extern "C" fn (TouchInputModule , :: unity2 :: OptionalMethod ,) -> :: unity2 :: Il2CppString = :: core :: mem :: transmute ((:: unity2 :: module_base () + 0x3c0a4b0usize) as * mut u8) ; __inner (__receiver , :: core :: option :: Option :: None) } } } }
+#[cfg(feature="unity_engine-event_systems-touchinputmodule")]pub trait ITouchInputModuleMethods:ITouchInputModule{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09620usize)as*mut u8,();
+(TouchInputModule)__receiver)}
+}
+#[doc="`get_allowActivationOnStandalone()` overload"]fn get_allow_activation_on_standalone(self,)->bool{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09630usize)as*mut u8,bool;
+(TouchInputModule)__receiver)}
+}
+#[doc="`set_allowActivationOnStandalone(bool)` overload"]fn set_allow_activation_on_standalone(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09640usize)as*mut u8,();
+(TouchInputModule)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_forceModuleActive()` overload"]fn get_force_module_active(self,)->bool{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09650usize)as*mut u8,bool;
+(TouchInputModule)__receiver)}
+}
+#[doc="`set_forceModuleActive(bool)` overload"]fn set_force_module_active(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09660usize)as*mut u8,();
+(TouchInputModule)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`UpdateModule()` overload"]fn update_module(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09670usize)as*mut u8,();
+(TouchInputModule)__receiver)}
+}
+#[doc="`IsModuleSupported()` overload"]fn is_module_supported(self,)->bool{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c097f0usize)as*mut u8,bool;
+(TouchInputModule)__receiver)}
+}
+#[doc="`ShouldActivateModule()` overload"]fn should_activate_module(self,)->bool{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09830usize)as*mut u8,bool;
+(TouchInputModule)__receiver)}
+}
+#[doc="`UseFakeInput()` overload"]fn use_fake_input(self,)->bool{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09910usize)as*mut u8,bool;
+(TouchInputModule)__receiver)}
+}
+#[doc="`Process()` overload"]fn process(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09940usize)as*mut u8,();
+(TouchInputModule)__receiver)}
+}
+#[doc="`FakeTouches()` overload"]fn fake_touches(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09990usize)as*mut u8,();
+(TouchInputModule)__receiver)}
+}
+#[doc="`ProcessTouchEvents()` overload"]fn process_touch_events(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09a80usize)as*mut u8,();
+(TouchInputModule)__receiver)}
+}
+#[doc="`ProcessTouchPress(crate::unity_engine::event_systems::pointereventdata::PointerEventData, bool, bool)` overload"]fn process_touch_press(self,pointer_event:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData> ,pressed:impl::core::convert::Into<bool> ,released:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09c20usize)as*mut u8,();
+(TouchInputModule)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(pointer_event),(bool)::core::convert::Into::into(pressed),(bool)::core::convert::Into::into(released))}
+}
+#[doc="`DeactivateModule()` overload"]fn deactivate_module(self,)->(){unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a480usize)as*mut u8,();
+(TouchInputModule)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TouchInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0a4b0usize)as*mut u8, ::unity2::Il2CppString;
+(TouchInputModule)__receiver)}
+}
+}
 
-#[cfg(feature = "unity_engine-event_systems-touchinputmodule")]
-impl < __T : ITouchInputModule > ITouchInputModuleMethods for __T { }
+#[cfg(feature="unity_engine-event_systems-touchinputmodule")]impl<__T:ITouchInputModule>ITouchInputModuleMethods for __T{}
 
-#[cfg(feature = "unity_engine-event_systems-touchinputmodule")]
-impl TouchInputModule { pub fn ctor_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [0] } pub fn get_allow_activation_on_standalone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [1] } pub fn set_allow_activation_on_standalone_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [2] } pub fn get_force_module_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [3] } pub fn set_force_module_active_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [4] } pub fn update_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [5] } pub fn is_module_supported_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [6] } pub fn should_activate_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [7] } pub fn use_fake_input_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [8] } pub fn process_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [9] } pub fn fake_touches_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [10] } pub fn process_touch_events_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [11] } pub fn process_touch_press_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [12] } pub fn deactivate_module_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [13] } pub fn to_string_method_info () -> & 'static :: unity2 :: il2cpp :: MethodInfo { < TouchInputModule as :: unity2 :: ClassIdentity > :: class () . raw () . get_methods () [14] } }
+#[cfg(feature="unity_engine-event_systems-touchinputmodule")]impl TouchInputModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_allow_activation_on_standalone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_allow_activation_on_standalone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_force_module_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_force_module_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_module_supported_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn should_activate_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn use_fake_input_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn process_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn fake_touches_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn process_touch_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn process_touch_press_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn deactivate_module_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
 
-#[cfg(feature = "unity_engine-event_systems-touchinputmodule")]
-impl TouchInputModule {
-# [doc = "`.ctor()` — no args"] pub fn new () -> Self { let this = < Self as :: unity2 :: FromIlInstance > :: instantiate () . unwrap_or_else (|| panic ! ("{}::{} failed to instantiate" , :: core :: stringify ! (TouchInputModule) , :: core :: stringify ! (new) ,)) ; < Self as ITouchInputModuleMethods > :: ctor (this ,) ; this }
+#[cfg(feature="unity_engine-event_systems-touchinputmodule")]impl TouchInputModule{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TouchInputModule), ::core::stringify!(new),));
+ <Self as ITouchInputModuleMethods> ::ctor(this,);
+this}
 }
 
 #[cfg(feature = "unity_engine-event_systems-touchinputmodule")]
